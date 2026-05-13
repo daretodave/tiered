@@ -53,6 +53,7 @@ export default defineConfig({
     env: {
       DISABLE_ANALYTICS: '1',
       PLAYWRIGHT_BASE_URL: BASE_URL,
+      INTERNAL_DEMOS: '1',
     },
   },
 })
