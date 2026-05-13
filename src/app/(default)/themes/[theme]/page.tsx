@@ -33,6 +33,8 @@ export default function ThemePage({ params }: { params: Params }) {
     name: theme.title,
     description: theme.description,
     path: `/themes/${theme.slug}`,
+    author: theme.curator,
+    dateModified: theme.last_revised,
     items: theme.entries.map((entry) => ({
       position: entry.rank,
       name: `${entry.show} S${entry.season}`,

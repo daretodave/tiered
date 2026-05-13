@@ -100,10 +100,14 @@ Sixteen Americans on a Malaysian island and a host with a torch — that was the
 slug: firsts
 title: Firsts that hold up
 description: Reality competitions get rebooted constantly. These are the season-zeros and resets that earned their reputation.
+tagline: A pull-quote for the detail page.
+category: tone
+last_revised: 2026-05-01
 entries:
   - show: survivor
     season: 1
     rank: 1
+    title: The literal first.
     blurb: The literal first.
 ---
 `,

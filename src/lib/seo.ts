@@ -92,6 +92,8 @@ type ItemListArgs = {
   description?: string
   path: string
   items: ItemListEntry[]
+  author?: string
+  dateModified?: string
 }
 
 type ArticleArgs = {
@@ -142,6 +144,10 @@ export function buildJsonLd(
       name: args.name,
       ...(args.description ? { description: args.description } : {}),
       url: canonicalUrl(args.path),
+      ...(args.author
+        ? { author: { '@type': 'Person', name: args.author } }
+        : {}),
+      ...(args.dateModified ? { dateModified: args.dateModified } : {}),
       itemListElement: args.items.map((entry) => ({
         '@type': 'ListItem',
         position: entry.position,

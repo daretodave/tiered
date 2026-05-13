@@ -199,27 +199,45 @@ describe('themeSchema', () => {
     show: 'survivor',
     season: 1,
     rank: 1,
+    title: 'Sixteen Americans, no rulebook.',
     blurb: 'A line about the entry',
+  }
+
+  const base = {
+    slug: 'best-premieres',
+    title: 'Best Premieres',
+    description: 'Pilots that landed.',
+    tagline: 'The first hour that taught us what a season would be.',
+    category: 'tone' as const,
+    last_revised: '2026-05-01',
   }
 
   it('accepts a 3-entry theme', () => {
     expect(() =>
       themeFrontmatterSchema.parse({
-        slug: 'best-premieres',
-        title: 'Best Premieres',
-        description: 'Pilots that landed.',
+        ...base,
         entries: [entry, entry, entry],
       }),
     ).not.toThrow()
   })
 
-  it('rejects a 16-entry theme', () => {
-    const entries = Array.from({ length: 16 }, () => entry)
+  it('accepts the new 30-entry cap', () => {
+    const entries = Array.from({ length: 30 }, () => entry)
     expect(() =>
       themeFrontmatterSchema.parse({
+        ...base,
+        entries,
+      }),
+    ).not.toThrow()
+  })
+
+  it('rejects a 31-entry theme', () => {
+    const entries = Array.from({ length: 31 }, () => entry)
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
         slug: 'too-many',
         title: 'Too many',
-        description: 'over the cap',
         entries,
       }),
     ).toThrow()
@@ -228,32 +246,107 @@ describe('themeSchema', () => {
   it('rejects an empty theme', () => {
     expect(() =>
       themeFrontmatterSchema.parse({
+        ...base,
         slug: 'empty',
         title: 'Empty',
-        description: 'nothing',
         entries: [],
       }),
     ).toThrow()
   })
 
+  it('rejects missing per-entry title', () => {
+    const { title: _t, ...entryNoTitle } = entry
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        entries: [entryNoTitle],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects missing tagline', () => {
+    const { tagline: _t, ...rest } = base
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...rest,
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects missing category', () => {
+    const { category: _c, ...rest } = base
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...rest,
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects unknown category', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        category: 'vibes',
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects missing last_revised', () => {
+    const { last_revised: _l, ...rest } = base
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...rest,
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects category=era without era_range', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        category: 'era',
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('accepts category=era with era_range', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        category: 'era',
+        era_range: [2003, 2010],
+        entries: [entry],
+      }),
+    ).not.toThrow()
+  })
+
   it('themeSchema defaults body_md to empty string', () => {
     const parsed = themeSchema.parse({
+      ...base,
       slug: 'simple',
       title: 'Simple',
-      description: 'Body optional',
       entries: [entry],
     })
     expect(parsed.body_md).toBe('')
   })
 
-  it('themeFrontmatter defaults sentiment to "neutral" when omitted', () => {
+  it('defaults sentiment, status, curator, featured, related when omitted', () => {
     const parsed = themeFrontmatterSchema.parse({
-      slug: 'no-sentiment',
-      title: 'No sentiment',
-      description: 'Defaults apply.',
+      ...base,
+      slug: 'defaults',
+      title: 'Defaults',
       entries: [entry],
     })
-    expect(parsed.sentiment).toBe('neutral')
+    expect(parsed.sentiment).toBe('hold')
+    expect(parsed.status).toBe('stable')
+    expect(parsed.curator).toBe('Pantheon Editors')
+    expect(parsed.featured).toBe(false)
+    expect(parsed.related).toEqual([])
   })
 
   it('themeFrontmatter accepts every valid sentiment value', () => {
@@ -266,9 +359,9 @@ describe('themeSchema', () => {
       'consensus',
     ] as const) {
       const parsed = themeFrontmatterSchema.parse({
+        ...base,
         slug: `s-${sentiment}`,
         title: sentiment,
-        description: 'covering sentiment',
         sentiment,
         entries: [entry],
       })
@@ -279,10 +372,38 @@ describe('themeSchema', () => {
   it('themeFrontmatter rejects unknown sentiment values', () => {
     expect(() =>
       themeFrontmatterSchema.parse({
+        ...base,
         slug: 'bad',
         title: 'Bad',
-        description: 'invalid sentiment',
         sentiment: 'spicy',
+        entries: [entry],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects per-entry blurb over 280 chars', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        entries: [{ ...entry, blurb: 'x'.repeat(281) }],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects season_label over 60 chars', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        entries: [{ ...entry, season_label: 'x'.repeat(61) }],
+      }),
+    ).toThrow()
+  })
+
+  it('rejects related list over 4 entries', () => {
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        related: ['a', 'b', 'c', 'd', 'e'],
         entries: [entry],
       }),
     ).toThrow()

@@ -4,12 +4,19 @@ export {
   getAllShows,
   getAllThemes,
   getCanon,
+  getFeaturedThemes,
   getLegalDoc,
+  getRelatedThemes,
   getSeason,
   getShow,
+  getShowsForTheme,
   getTheme,
+  getThemeStats,
+  getThemesByCategory,
   loadAllContent,
 } from './loaders'
+
+export type { ThemeStats } from './loaders'
 
 export { ContentValidationError } from './errors'
 
@@ -22,9 +29,11 @@ export type {
   Show,
   ShowFrontmatter,
   Theme,
+  ThemeCategory,
   ThemeEntry,
   ThemeFrontmatter,
   ThemeSentiment,
+  ThemeStatus,
 } from './schemas'
 
 export { FEATURED_SHOW_SLUG } from './featured'

@@ -8,11 +8,18 @@ function theme(overrides: Partial<Theme> = {}): Theme {
     slug: 'survivor-pillars',
     title: 'Survivor: the load-bearing seasons',
     description: 'Four seasons that define the show.',
+    tagline: 'Four seasons doing the work the rest stand on.',
+    category: 'single',
     sentiment: 'neutral',
+    status: 'stable',
+    curator: 'Pantheon Editors',
+    last_revised: '2026-04-15',
+    featured: false,
+    related: [],
     entries: [
-      { show: 'survivor', season: 1, rank: 1, blurb: 'b1' },
-      { show: 'survivor', season: 28, rank: 2, blurb: 'b2' },
-      { show: 'survivor', season: 41, rank: 3, blurb: 'b3' },
+      { show: 'survivor', season: 1, rank: 1, title: 't1', blurb: 'b1' },
+      { show: 'survivor', season: 28, rank: 2, title: 't2', blurb: 'b2' },
+      { show: 'survivor', season: 41, rank: 3, title: 't3', blurb: 'b3' },
     ],
     body_md: '',
     ...overrides,
@@ -37,7 +44,7 @@ describe('<ListTile>', () => {
   it('singular entry count noun', () => {
     render(
       <ListTile
-        theme={theme({ entries: [{ show: 'survivor', season: 1, rank: 1, blurb: 'b' }] })}
+        theme={theme({ entries: [{ show: 'survivor', season: 1, rank: 1, title: 't', blurb: 'b' }] })}
       />,
     )
     expect(screen.getByTestId('home-list-tile').textContent).toContain('1 entry')

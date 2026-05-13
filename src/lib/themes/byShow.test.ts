@@ -66,10 +66,14 @@ Sixteen Americans on a Malaysian island and a host with a torch — that was the
 slug: survivor-only
 title: Survivor only
 description: Themed list referencing only survivor seasons.
+tagline: A pull-quote for the detail page.
+category: single
+last_revised: 2026-01-01
 entries:
   - show: survivor
     season: 1
     rank: 1
+    title: The founding text.
     blurb: The founding text.
 ---
 `,
@@ -80,10 +84,14 @@ entries:
 slug: empty-theme
 title: Empty theme
 description: Themed list referencing a show with no surviving entries.
+tagline: Another pull-quote for the detail page.
+category: tone
+last_revised: 2026-01-02
 entries:
   - show: survivor
     season: 1
     rank: 1
+    title: irrelevant
     blurb: irrelevant
 ---
 `,

@@ -87,11 +87,31 @@ export const seasonSchema = seasonFrontmatterSchema.extend({
 
 export type Season = z.infer<typeof seasonSchema>
 
+export const themeCategorySchema = z.enum([
+  'tone',
+  'craft',
+  'era',
+  'single',
+])
+
+export type ThemeCategory = z.infer<typeof themeCategorySchema>
+
+export const themeStatusSchema = z.enum([
+  'growing',
+  'stable',
+  'updated',
+  'started',
+])
+
+export type ThemeStatus = z.infer<typeof themeStatusSchema>
+
 export const themeEntrySchema = z.object({
   show: slug,
   season: z.number().int().positive(),
   rank: z.number().int().positive(),
+  title: z.string().min(1).max(140),
   blurb: z.string().min(1).max(280),
+  season_label: z.string().min(1).max(60).optional(),
 })
 
 export type ThemeEntry = z.infer<typeof themeEntrySchema>
@@ -107,19 +127,48 @@ export const themeSentimentEnum = z.enum([
 
 export type ThemeSentiment = z.infer<typeof themeSentimentEnum>
 
-export const themeFrontmatterSchema = z.object({
+const themeFrontmatterObject = z.object({
   slug,
-  title: z.string().min(1),
+  title: z.string().min(1).max(80),
   description: z.string().min(1).max(280),
-  sentiment: themeSentimentEnum.default('neutral'),
-  entries: z.array(themeEntrySchema).min(1).max(15),
+  tagline: z.string().min(1).max(360),
+  category: themeCategorySchema,
+  sentiment: themeSentimentEnum.default('hold'),
+  status: themeStatusSchema.default('stable'),
+  curator: z.string().min(1).max(80).default('Pantheon Editors'),
+  last_revised: isoDate,
+  featured: z.boolean().default(false),
+  related: z.array(slug).max(4).default([]),
+  era_range: z
+    .tuple([
+      z.number().int().min(1900).max(2100),
+      z.number().int().min(1900).max(2100),
+    ])
+    .optional(),
+  entries: z.array(themeEntrySchema).min(1).max(30),
 })
+
+function checkEraRange(
+  data: { category: ThemeCategory; era_range?: [number, number] },
+  ctx: z.RefinementCtx,
+): void {
+  if (data.category === 'era' && !data.era_range) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['era_range'],
+      message: 'era_range is required when category=era',
+    })
+  }
+}
+
+export const themeFrontmatterSchema =
+  themeFrontmatterObject.superRefine(checkEraRange)
 
 export type ThemeFrontmatter = z.infer<typeof themeFrontmatterSchema>
 
-export const themeSchema = themeFrontmatterSchema.extend({
-  body_md: z.string().default(''),
-})
+export const themeSchema = themeFrontmatterObject
+  .extend({ body_md: z.string().default('') })
+  .superRefine(checkEraRange)
 
 export type Theme = z.infer<typeof themeSchema>
 

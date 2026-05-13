@@ -82,14 +82,19 @@ const themeSample = `---
 slug: best-premieres
 title: Best Premieres
 description: Pilots that landed.
+tagline: The first hour that taught us what a season would be.
+category: tone
+last_revised: 2026-05-01
 entries:
   - show: survivor
     season: 1
     rank: 1
+    title: Sixteen Americans, no rulebook.
     blurb: The mother format begins.
   - show: survivor
     season: 28
     rank: 2
+    title: Tactical density from the jump.
     blurb: Tactical density from the jump.
 ---
 

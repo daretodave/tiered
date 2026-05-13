@@ -8,10 +8,15 @@ import {
   getAllShows,
   getAllThemes,
   getCanon,
+  getFeaturedThemes,
   getLegalDoc,
+  getRelatedThemes,
   getSeason,
   getShow,
+  getShowsForTheme,
   getTheme,
+  getThemeStats,
+  getThemesByCategory,
   loadAllContent,
 } from '../loaders'
 import { setContentRoot } from '../paths'
@@ -73,21 +78,48 @@ ${headings}
   )
 }
 
-function makeTheme(root: string, slug: string, entries: Array<{ show: string; season: number; rank: number }>): void {
+type ThemeOpts = {
+  category?: 'tone' | 'craft' | 'era' | 'single'
+  featured?: boolean
+  last_revised?: string
+  related?: string[]
+  era_range?: [number, number]
+}
+
+function makeTheme(
+  root: string,
+  slug: string,
+  entries: Array<{ show: string; season: number; rank: number }>,
+  opts: ThemeOpts = {},
+): void {
   const themePath = path.join(root, 'themes', `${slug}.md`)
   mkdirSync(path.dirname(themePath), { recursive: true })
   const entryYaml = entries
     .map(
       (e) =>
-        `  - show: ${e.show}\n    season: ${e.season}\n    rank: ${e.rank}\n    blurb: A line.`,
+        `  - show: ${e.show}\n    season: ${e.season}\n    rank: ${e.rank}\n    title: An entry title.\n    blurb: A line.`,
     )
     .join('\n')
+  const category = opts.category ?? 'tone'
+  const featured = opts.featured ?? false
+  const lastRevised = opts.last_revised ?? '2026-01-01'
+  const related = opts.related ?? []
+  const relatedYaml =
+    related.length === 0 ? '[]' : `\n  - ${related.join('\n  - ')}`
+  const eraYaml = opts.era_range
+    ? `\nera_range:\n  - ${opts.era_range[0]}\n  - ${opts.era_range[1]}`
+    : ''
   writeFileSync(
     themePath,
     `---
 slug: ${slug}
 title: ${slug}
 description: Themed list.
+tagline: Themed list pull.
+category: ${category}
+last_revised: ${lastRevised}
+featured: ${featured}
+related: ${relatedYaml}${eraYaml}
 entries:
 ${entryYaml}
 ---
@@ -214,6 +246,127 @@ describe('loaders', () => {
     __resetContentCache()
     rmSync(path.join(tmp, 'shows', 'alpha.md'))
     expect(getAllShows()).toHaveLength(0)
+  })
+
+  it('getFeaturedThemes returns only featured, capped by limit', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeTheme(tmp, 'a', [{ show: 'alpha', season: 1, rank: 1 }], {
+      featured: true,
+    })
+    makeTheme(tmp, 'b', [{ show: 'alpha', season: 1, rank: 1 }], {
+      featured: false,
+    })
+    makeTheme(tmp, 'c', [{ show: 'alpha', season: 1, rank: 1 }], {
+      featured: true,
+    })
+    makeTheme(tmp, 'd', [{ show: 'alpha', season: 1, rank: 1 }], {
+      featured: true,
+    })
+    expect(getFeaturedThemes(2).map((t) => t.slug)).toEqual(['a', 'c'])
+    expect(getFeaturedThemes(10).map((t) => t.slug)).toEqual(['a', 'c', 'd'])
+  })
+
+  it('getThemesByCategory groups themes and exposes every category key', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeTheme(tmp, 't1', [{ show: 'alpha', season: 1, rank: 1 }], {
+      category: 'tone',
+      last_revised: '2026-04-01',
+    })
+    makeTheme(tmp, 't2', [{ show: 'alpha', season: 1, rank: 1 }], {
+      category: 'tone',
+      last_revised: '2026-05-01',
+    })
+    makeTheme(tmp, 'c1', [{ show: 'alpha', season: 1, rank: 1 }], {
+      category: 'craft',
+    })
+    const grouped = getThemesByCategory()
+    expect(Object.keys(grouped).sort()).toEqual([
+      'craft',
+      'era',
+      'single',
+      'tone',
+    ])
+    expect(grouped.tone.map((t) => t.slug)).toEqual(['t2', 't1'])
+    expect(grouped.craft.map((t) => t.slug)).toEqual(['c1'])
+    expect(grouped.era).toEqual([])
+    expect(grouped.single).toEqual([])
+  })
+
+  it('getShowsForTheme returns shows in first-appearance order without duplicates', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeShow(tmp, 'beta', 'Beta')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeSeason(tmp, 'alpha', 2, 'Two')
+    makeSeason(tmp, 'beta', 1, 'One')
+    makeTheme(tmp, 'mix', [
+      { show: 'beta', season: 1, rank: 1 },
+      { show: 'alpha', season: 1, rank: 2 },
+      { show: 'beta', season: 1, rank: 3 },
+      { show: 'alpha', season: 2, rank: 4 },
+    ])
+    const theme = getTheme('mix')
+    if (!theme) throw new Error('expected theme to exist')
+    expect(getShowsForTheme(theme)).toEqual(['beta', 'alpha'])
+  })
+
+  it('getRelatedThemes drops unknown slugs and self-references silently', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeTheme(tmp, 'a', [{ show: 'alpha', season: 1, rank: 1 }], {
+      related: ['b', 'ghost', 'a'],
+    })
+    makeTheme(tmp, 'b', [{ show: 'alpha', season: 1, rank: 1 }])
+    const a = getTheme('a')
+    if (!a) throw new Error('expected theme a to exist')
+    const related = getRelatedThemes(a, 5)
+    expect(related.map((t) => t.slug)).toEqual(['b'])
+  })
+
+  it('getRelatedThemes honors the default limit of 2', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeTheme(tmp, 'a', [{ show: 'alpha', season: 1, rank: 1 }], {
+      related: ['b', 'c', 'd'],
+    })
+    for (const slug of ['b', 'c', 'd']) {
+      makeTheme(tmp, slug, [{ show: 'alpha', season: 1, rank: 1 }])
+    }
+    const a = getTheme('a')
+    if (!a) throw new Error('expected theme a to exist')
+    expect(getRelatedThemes(a).map((t) => t.slug)).toEqual(['b', 'c'])
+  })
+
+  it('getThemeStats aggregates totals across the theme set', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeShow(tmp, 'beta', 'Beta')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeSeason(tmp, 'alpha', 2, 'Two')
+    makeSeason(tmp, 'beta', 1, 'One')
+    makeTheme(
+      tmp,
+      'a',
+      [
+        { show: 'alpha', season: 1, rank: 1 },
+        { show: 'beta', season: 1, rank: 2 },
+      ],
+      { last_revised: '2026-04-15' },
+    )
+    makeTheme(
+      tmp,
+      'b',
+      [
+        { show: 'alpha', season: 2, rank: 1 },
+      ],
+      { last_revised: '2026-05-20' },
+    )
+    expect(getThemeStats()).toEqual({
+      total: 2,
+      totalEntries: 3,
+      showsCovered: 2,
+      lastIndexRevision: '2026-05-20',
+    })
   })
 
   it('throws when show slug in frontmatter mismatches filename', () => {

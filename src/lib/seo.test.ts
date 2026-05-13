@@ -147,6 +147,37 @@ describe('buildJsonLd', () => {
     )
   })
 
+  it('returns an ItemList block with optional author + dateModified', () => {
+    const ld = buildJsonLd({
+      type: 'ItemList',
+      name: 'Firsts that hold up',
+      path: '/themes/firsts',
+      author: 'M. Reyes',
+      dateModified: '2026-05-01',
+      items: [
+        { position: 1, name: 'Survivor S1', path: '/shows/survivor/season/1' },
+      ],
+    })
+    expect(ld['author']).toMatchObject({
+      '@type': 'Person',
+      name: 'M. Reyes',
+    })
+    expect(ld['dateModified']).toBe('2026-05-01')
+  })
+
+  it('omits author + dateModified from ItemList when not provided', () => {
+    const ld = buildJsonLd({
+      type: 'ItemList',
+      name: 'No byline',
+      path: '/themes/anon',
+      items: [
+        { position: 1, name: 'Survivor S1', path: '/shows/survivor/season/1' },
+      ],
+    })
+    expect(ld).not.toHaveProperty('author')
+    expect(ld).not.toHaveProperty('dateModified')
+  })
+
   it('returns an Article block with optional fields', () => {
     const ld = buildJsonLd({
       type: 'Article',

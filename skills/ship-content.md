@@ -53,8 +53,16 @@ Called from:
 - **Canon completeness (Rule 2) → ship a batch of 3-5 season
   blurbs.** Amortize the show context lookup across multiple
   blurbs in one tick.
-- **Themed list (Rule 3) → ship one themed list per tick.**
-  10-entry ordered list with cross-show entries.
+- **Themed list (Rule 3) → ship one themed list per tick** at
+  the 19f schema — `title`, `description`, `tagline`,
+  `category` (one of `tone` / `craft` / `era` / `single`),
+  `sentiment`, `status`, `curator` byline, `last_revised` ISO,
+  `featured` boolean (default false), `related` (0–2 slugs in
+  practice; cap is 4), and 10–24 entries each with `title` +
+  `blurb` + optional `season_label`. `category` and
+  `last_revised` are non-negotiable — `pnpm content:check`
+  rejects themes missing either, and the filter chips +
+  index-last-revised stat both depend on them.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`
   and skipped. Do not file new ones.
@@ -199,12 +207,24 @@ After both return, confirm:
 #### For Rule 3 (themed list)
 
 **`content-curator` brief:**
-- Theme slug + theme description.
-- Write `content/themes/<slug>.md` with 10-entry ordered list.
-- Each entry: `{ show: <slug>, season: <n>, position: <1..10>,
-  why: "<60-100 words explaining placement, spoiler-safe>" }`.
-- Cross-show by design — no themed list should pull >3
-  entries from one show.
+- Theme slug + theme `title` + 1-line `description`.
+- Write `content/themes/<slug>.md` at the 19f schema:
+  - Theme fields: `slug`, `title`, `description`, `tagline`
+    (1–2 sentences, one optional `<b>...</b>`),
+    `category` (`tone` / `craft` / `era` / `single`),
+    `sentiment` (default `hold`), `status` (default `stable`),
+    `curator` (default `"Pantheon Editors"`),
+    `last_revised` (today's ISO date), `featured` (default
+    false), `related` (0–2 sibling theme slugs).
+  - For `category: era` lists, include `era_range: [<year>,
+    <year>]`. Required.
+  - 10–24 entries (cap is 30). Each entry:
+    `{ show, season, rank, title (≤140 chars, spoiler-safe
+    framing), blurb (≤280 chars, 1–3 sentences),
+    season_label? (e.g. "S07 · Texas") }`.
+- Cross-show by design — no `tone` or `craft` themed list
+  should pull >3 entries from one show. `single` lists are
+  the exception by definition.
 
 **No `brander`** unless this is the FIRST themed list (in
 which case spawn brander to create `public/themes/<slug>/banner.svg`

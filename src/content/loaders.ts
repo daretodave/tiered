@@ -16,7 +16,14 @@ import {
   parseShowFile,
   parseThemeFile,
 } from './parse'
-import type { CanonFile, LegalDoc, Season, Show, Theme } from './schemas'
+import type {
+  CanonFile,
+  LegalDoc,
+  Season,
+  Show,
+  Theme,
+  ThemeCategory,
+} from './schemas'
 
 type LegalSlug = 'about' | 'terms' | 'privacy'
 
@@ -183,6 +190,78 @@ export function getAllThemes(): Theme[] {
 export function getTheme(slug: string): Theme | null {
   const c = ensure()
   return c.themes.get(slug) ?? null
+}
+
+export function getFeaturedThemes(limit = 3): Theme[] {
+  return getAllThemes()
+    .filter((t) => t.featured)
+    .slice(0, limit)
+}
+
+const THEME_CATEGORIES: ThemeCategory[] = ['tone', 'craft', 'era', 'single']
+
+export function getThemesByCategory(): Record<ThemeCategory, Theme[]> {
+  const out: Record<ThemeCategory, Theme[]> = {
+    tone: [],
+    craft: [],
+    era: [],
+    single: [],
+  }
+  for (const theme of getAllThemes()) {
+    out[theme.category].push(theme)
+  }
+  for (const cat of THEME_CATEGORIES) {
+    out[cat].sort((a, b) => b.last_revised.localeCompare(a.last_revised))
+  }
+  return out
+}
+
+export function getShowsForTheme(theme: Theme): string[] {
+  const seen = new Set<string>()
+  const out: string[] = []
+  for (const entry of theme.entries) {
+    if (seen.has(entry.show)) continue
+    seen.add(entry.show)
+    out.push(entry.show)
+  }
+  return out
+}
+
+export function getRelatedThemes(theme: Theme, limit = 2): Theme[] {
+  const out: Theme[] = []
+  for (const slug of theme.related) {
+    const t = getTheme(slug)
+    if (!t) continue
+    if (t.slug === theme.slug) continue
+    out.push(t)
+    if (out.length >= limit) break
+  }
+  return out
+}
+
+export type ThemeStats = {
+  total: number
+  totalEntries: number
+  showsCovered: number
+  lastIndexRevision: string
+}
+
+export function getThemeStats(): ThemeStats {
+  const themes = getAllThemes()
+  const shows = new Set<string>()
+  let totalEntries = 0
+  let lastIndexRevision = ''
+  for (const t of themes) {
+    totalEntries += t.entries.length
+    for (const e of t.entries) shows.add(e.show)
+    if (t.last_revised > lastIndexRevision) lastIndexRevision = t.last_revised
+  }
+  return {
+    total: themes.length,
+    totalEntries,
+    showsCovered: shows.size,
+    lastIndexRevision,
+  }
 }
 
 export function getLegalDoc(slug: LegalSlug): LegalDoc | null {
