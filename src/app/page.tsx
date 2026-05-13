@@ -1,6 +1,9 @@
 export default function HomePage() {
   return (
-    <section className="mx-auto flex max-w-3xl flex-col items-start gap-6 px-6 py-24 md:py-32">
+    <section
+      data-testid="hero"
+      className="mx-auto flex max-w-3xl flex-col items-start gap-6 px-6 py-24 md:py-32"
+    >
       <h1 className="font-serif text-4xl leading-tight text-ink-0 md:text-5xl">Pantheon</h1>
       <p className="font-serif text-lg leading-relaxed text-ink-1 md:text-xl">
         The seasons, ranked. No spoilers.

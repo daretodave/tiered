@@ -75,6 +75,23 @@ jobs:
         if: hashFiles('apps/e2e/package.json') != ''
         run: pnpm e2e:install
 
+      # Supabase CLI for the hermetic e2e leg. Docker is pre-installed
+      # on ubuntu-latest; setup-cli adds the `supabase` binary. The
+      # playwright webServer chain in apps/e2e/playwright.config.ts
+      # then runs `supabase start` (idempotent — fast cache hit if
+      # we pre-start here) and `supabase db reset --no-seed` before
+      # `next start`. Skipped if supabase/ isn't on the branch yet.
+      - name: Install Supabase CLI
+        if: hashFiles('supabase/config.toml') != ''
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Pre-start Supabase containers
+        if: hashFiles('supabase/config.toml') != ''
+        run: supabase start
+        timeout-minutes: 5
+
       - name: Daily commit ceiling check
         id: ceiling
         run: |
