@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="Pantheon sigil placeholder">
+  <title>Pantheon — placeholder sigil</title>
+  <rect width="320" height="320" fill="#15110C" rx="40"/>
+  <g fill="none" stroke="#E8B65A" stroke-width="14" stroke-linecap="square">
+    <line x1="92" y1="64" x2="92" y2="256"/>
+    <path d="M92 76 H188 a52 52 0 0 1 0 104 H92" fill="none"/>
+  </g>
+  <circle cx="92" cy="64" r="7" fill="#E8B65A"/>
+  <circle cx="92" cy="256" r="7" fill="#E8B65A"/>
+</svg>

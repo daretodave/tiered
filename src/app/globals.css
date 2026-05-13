@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@import '../styles/tokens.css';
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-paper-0);
+    color: var(--color-ink-0);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-primary-base);
+  }
+
+  ::selection {
+    background: var(--color-primary-base);
+    color: var(--color-paper-0);
+  }
+
+  /* Reduced motion — replace transforms with opacity per tokens.json motion.reduced. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: var(--duration-base) !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: var(--duration-base) !important;
+      transition-property: opacity !important;
+    }
+  }
+}
