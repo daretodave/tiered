@@ -10,6 +10,7 @@ import {
   ShowSplit,
 } from '@/components/composition'
 import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
+import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
 import { ShowFacadeArt } from './ShowFacadeArt'
 
 type Params = { show: string }
@@ -128,6 +129,9 @@ export default function ShowHomePage({ params }: { params: Params }) {
             </SeasonGrid>
           )}
         </section>
+        <div style={{ margin: '0 32px 56px' }}>
+          <FeaturedThemes show={show.slug} />
+        </div>
       </div>
     </PaletteScope>
   )
