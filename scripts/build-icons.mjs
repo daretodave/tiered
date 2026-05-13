@@ -45,20 +45,30 @@ async function main() {
 
   await mkdir(OUT_DIR, { recursive: true })
   const rawSvg = await readFile(SOURCE, 'utf8')
-  // The canonical sigil.svg uses `currentColor` so it inherits the
-  // surrounding ink token when rendered inline (HTML / OG). For raster
-  // output we resolve `currentColor` to Pantheon ink-0 (#F2EADB) so the
-  // mark is visible against the dark paper-1 (#15110C) tile we render
-  // beneath it — same recipe Stripe / Linear use for monochrome glyph
-  // favicons on a solid brand tile.
-  const svg = rawSvg.replace(/currentColor/g, '#F2EADB')
-  const BG = '#15110C'
 
-  console.log(`Rendering ${SIZES.length} PNG variants from ${SOURCE}...`)
+  // Two render variants from the same source SVG:
+  //
+  //   1. Tile variant (apple-touch-icon + icon-NN.png): cream stroke
+  //      (#F2EADB) on a solid Pantheon paper-1 tile (#15110C). Looks
+  //      like an app tile when installed to a home screen — Stripe /
+  //      Linear recipe.
+  //
+  //   2. Favicon variant (favicon.ico + favicon.svg): Pantheon
+  //      ceremonial gold (#E8B65A) on a TRANSPARENT background. Browser
+  //      tabs handle dark/light tab chrome themselves; the gold mark
+  //      pops against both. The favicon does not represent an
+  //      installable app tile, so it doesn't carry the paper-1 bg.
+  const TILE_INK = '#F2EADB'         // Pantheon ink-0 (cream)
+  const TILE_BG = '#15110C'          // Pantheon paper-1
+  const FAVICON_INK = '#E8B65A'      // Pantheon primary-base (gold)
+  const svgTile = rawSvg.replace(/currentColor/g, TILE_INK)
+  const svgFavicon = rawSvg.replace(/currentColor/g, FAVICON_INK)
+
+  console.log(`Rendering ${SIZES.length} tile PNG variants from ${SOURCE}...`)
   for (const size of SIZES) {
-    const png = new Resvg(svg, {
+    const png = new Resvg(svgTile, {
       fitTo: { mode: 'width', value: size },
-      background: BG,
+      background: TILE_BG,
     })
       .render()
       .asPng()
@@ -67,11 +77,11 @@ async function main() {
     console.log(`  -> ${out} (${png.length} bytes)`)
   }
 
-  // Apple touch icon: 180x180 with no transparency (iOS quirk; matches
-  // the PNG tiles above).
-  const apple = new Resvg(svg, {
+  // Apple touch icon: 180x180 with the tile recipe (iOS quirk — no
+  // transparency on the apple icon).
+  const apple = new Resvg(svgTile, {
     fitTo: { mode: 'width', value: 180 },
-    background: BG,
+    background: TILE_BG,
   })
     .render()
     .asPng()
@@ -79,11 +89,31 @@ async function main() {
   await writeFile(appleOut, apple)
   console.log(`  -> ${appleOut}`)
 
-  // favicon.ico: bundle 16, 32, 48 PNGs.
-  const ico = await pngToIco(ICO_SIZES.map(s => resolve(OUT_DIR, `icon-${s}.png`)))
+  // favicon.svg: vector favicon for modern browsers (FF / Chrome /
+  // Safari / Edge). Gold stroke, transparent background.
+  const svgFaviconOut = resolve(OUT_DIR, 'favicon.svg')
+  await writeFile(svgFaviconOut, svgFavicon)
+  console.log(`  -> ${svgFaviconOut}`)
+
+  // favicon.ico: bundle 16/32/48 PNGs rendered with the favicon recipe
+  // (gold on transparent), independent of the tile icon-NN.png set
+  // written above.
+  const icoPngs = await Promise.all(
+    ICO_SIZES.map(size =>
+      Promise.resolve(
+        new Resvg(svgFavicon, {
+          fitTo: { mode: 'width', value: size },
+          background: 'rgba(0,0,0,0)',
+        })
+          .render()
+          .asPng(),
+      ),
+    ),
+  )
+  const ico = await pngToIco(icoPngs)
   const icoOut = resolve(OUT_DIR, 'favicon.ico')
   await writeFile(icoOut, ico)
-  console.log(`  -> ${icoOut} (${ico.length} bytes, ${ICO_SIZES.length} sizes)`)
+  console.log(`  -> ${icoOut} (${ico.length} bytes, ${ICO_SIZES.length} sizes, gold on transparent)`)
 
   console.log('Done.')
 }

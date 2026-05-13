@@ -15,7 +15,13 @@ export const metadata: Metadata = {
   applicationName: 'Pantheon',
   icons: {
     icon: [
+      // Modern browsers prefer the SVG (vector, scales at any tab size).
+      // .ico is the universal fallback. Both render the gold mark on
+      // transparent so it sits cleanly against any tab chrome.
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon.ico', sizes: 'any' },
+      // The PNG tiles are the cream-on-paper variant used by PWAs and
+      // the home-screen install prompt — NOT the browser-tab favicon.
       { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
     ],
