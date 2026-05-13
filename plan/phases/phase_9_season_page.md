@@ -4,6 +4,16 @@
 > per-season page that ships in any later phase mirrors this
 > one's structure. The vote pair, comment shell, and 72-hour
 > rank pill are working components — not mocks.
+>
+> **Layout source of truth:** `design/compositions/screens.jsx`
+> → `SeasonScreen({ mobile })` + the `.season-page`,
+> `.season-shell`, `.season-main`, `.season-head*`,
+> `.season-rankrow`, `.season-vote*`, `.season-comments*`,
+> `.season-aside*`, `.shift-pill`, `.shield-pill` selectors in
+> `screens.css`. Phase 4a ported these into `<SeasonShell>`,
+> `<SeasonHead>`, `<RankShiftPill>`, `<ShieldBadge>` primitives.
+> THIS phase wires data + the working vote/comment behavior on
+> top — it does NOT re-derive the page shell.
 
 ## Goal
 

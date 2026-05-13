@@ -5,6 +5,16 @@
 > mirrors this one's structure exactly. Time spent here amortizes
 > across every show in the launch quota and beyond. **Spend
 > the time.**
+>
+> **Layout source of truth:** `design/compositions/screens.jsx`
+> → `ShowScreen({ mobile })` + `design/compositions/screens.css`
+> (the `.show-home`, `.show-hero*`, `.show-split*`, `.season-grid`,
+> `.season-card*` selectors). Phase 4a ported these into
+> `<ShowHero>`, `<ShowSplit>`, `<SeasonCard>` React primitives;
+> THIS phase's job is data + JSON-LD wiring on top, not layout
+> re-derivation. If a primitive feels missing, extend phase 4a
+> first (sibling primitive PR) — do not inline a one-off in this
+> phase.
 
 ## Goal
 
