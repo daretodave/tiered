@@ -3,9 +3,11 @@ import { VercelAnalytics } from '@/components/analytics/VercelAnalytics'
 import { VercelSpeedInsights } from '@/components/analytics/VercelSpeedInsights'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
+import { siteConfig } from '@/lib/seo'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.baseUrl),
   title: {
     default: 'Pantheon — the seasons, ranked. no spoilers.',
     template: '%s — Pantheon',

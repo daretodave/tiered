@@ -180,6 +180,26 @@ describe('buildJsonLd', () => {
     expect(items[2]?.['position']).toBe(3)
     expect(items[2]?.['item']).toBe(`${siteConfig.baseUrl}/shows/survivor`)
   })
+
+  it('returns a FAQPage with mainEntity Question + Answer entries', () => {
+    const ld = buildJsonLd({
+      type: 'FAQPage',
+      path: '/about',
+      faqs: [
+        { question: 'Q1?', answer: 'A1.' },
+        { question: 'Q2?', answer: 'A2.' },
+      ],
+    })
+    expect(ld['@type']).toBe('FAQPage')
+    expect(ld['url']).toBe(`${siteConfig.baseUrl}/about`)
+    const entities = ld['mainEntity'] as Array<Record<string, unknown>>
+    expect(entities).toHaveLength(2)
+    expect(entities[0]?.['@type']).toBe('Question')
+    expect(entities[0]?.['name']).toBe('Q1?')
+    const ans = entities[0]?.['acceptedAnswer'] as Record<string, unknown>
+    expect(ans['@type']).toBe('Answer')
+    expect(ans['text']).toBe('A1.')
+  })
 })
 
 describe('jsonLdScriptProps', () => {

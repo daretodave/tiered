@@ -42,3 +42,62 @@ test('opengraph-image renders a PNG', async ({ page }) => {
   const ct = response?.headers()['content-type'] ?? ''
   expect(ct).toMatch(/image\/png/i)
 })
+
+// Per-route OG image routes return image/png. page.goto resolves
+// once the network reply lands.
+
+test('per-route opengraph-image: /shows/[show]', async ({ page }) => {
+  const response = await page.goto('/shows/survivor/opengraph-image')
+  expect(response?.status()).toBe(200)
+  expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
+})
+
+test('per-route opengraph-image: /shows/[show]/canon', async ({ page }) => {
+  const response = await page.goto('/shows/survivor/canon/opengraph-image')
+  expect(response?.status()).toBe(200)
+  expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
+})
+
+test('per-route opengraph-image: /shows/[show]/community', async ({ page }) => {
+  const response = await page.goto('/shows/survivor/community/opengraph-image')
+  expect(response?.status()).toBe(200)
+  expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
+})
+
+test('per-route opengraph-image: /shows/[show]/season/[n]', async ({ page }) => {
+  const response = await page.goto('/shows/survivor/season/1/opengraph-image')
+  expect(response?.status()).toBe(200)
+  expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
+})
+
+test('per-route opengraph-image: /themes/[theme]', async ({ page }) => {
+  const response = await page.goto('/themes/survivor-pillars/opengraph-image')
+  expect(response?.status()).toBe(200)
+  expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
+})
+
+test('/about emits FAQPage JSON-LD with ≥4 questions', async ({ page }) => {
+  await page.goto('/about', { waitUntil: 'domcontentloaded' })
+  const raw = await page.locator('script#ld-about-faq').textContent()
+  expect(raw).toBeTruthy()
+  const parsed = JSON.parse(raw ?? '{}')
+  expect(parsed['@type']).toBe('FAQPage')
+  const entities = parsed.mainEntity as Array<Record<string, unknown>>
+  expect(entities.length).toBeGreaterThanOrEqual(4)
+  for (const q of entities) {
+    expect(q['@type']).toBe('Question')
+    expect(typeof q.name).toBe('string')
+    const ans = q.acceptedAnswer as Record<string, unknown>
+    expect(ans['@type']).toBe('Answer')
+    expect(typeof ans.text).toBe('string')
+  }
+})
+
+test('sitemap entry count matches expected canonical URL count', async ({ page }) => {
+  const response = await page.goto('/sitemap.xml', { waitUntil: 'domcontentloaded' })
+  const body = (await response?.text()) ?? ''
+  // Count <url> blocks (each entry).
+  const urlCount = (body.match(/<url>/g) ?? []).length
+  const expected = canonicalUrls.filter((u) => !SITEMAP_EXCLUDE.has(u.pattern)).length
+  expect(urlCount, `sitemap has ${urlCount} entries, expected ${expected}`).toBe(expected)
+})

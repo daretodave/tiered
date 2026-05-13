@@ -108,12 +108,23 @@ type BreadcrumbListArgs = {
   trail: BreadcrumbItem[]
 }
 
+type FAQItem = {
+  question: string
+  answer: string
+}
+
+type FAQPageArgs = {
+  path: string
+  faqs: FAQItem[]
+}
+
 export function buildJsonLd(
   args:
     | ({ type: 'CollectionPage' } & CollectionPageArgs)
     | ({ type: 'ItemList' } & ItemListArgs)
     | ({ type: 'Article' } & ArticleArgs)
-    | ({ type: 'BreadcrumbList' } & BreadcrumbListArgs),
+    | ({ type: 'BreadcrumbList' } & BreadcrumbListArgs)
+    | ({ type: 'FAQPage' } & FAQPageArgs),
 ): Record<string, unknown> {
   if (args.type === 'CollectionPage') {
     return {
@@ -159,14 +170,29 @@ export function buildJsonLd(
       ...(args.image ? { image: canonicalUrl(args.image) } : {}),
     }
   }
+  if (args.type === 'BreadcrumbList') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: args.trail.map((item, ix) => ({
+        '@type': 'ListItem',
+        position: ix + 1,
+        name: item.name,
+        item: canonicalUrl(item.path),
+      })),
+    }
+  }
   return {
     '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: args.trail.map((item, ix) => ({
-      '@type': 'ListItem',
-      position: ix + 1,
-      name: item.name,
-      item: canonicalUrl(item.path),
+    '@type': 'FAQPage',
+    url: canonicalUrl(args.path),
+    mainEntity: args.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
     })),
   }
 }
