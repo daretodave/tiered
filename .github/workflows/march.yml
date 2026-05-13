@@ -4,17 +4,19 @@ name: march
 # one /march tick. State of truth is the repo on origin/main;
 # every tick reads it fresh, no memory between runs.
 #
-# Schedule: hourly cron + manual dispatch. Enabled 2026-05-13 after
-# vetting the first Opus tick (phase 19a shipped clean in 30m).
-# Concurrency group below serializes overlapping ticks. Daily
-# commit ceiling (24 cloud-shipped / 24h) bounds runaway volume.
+# Schedule: every 40 minutes (cron `*/40 * * * *` → fires at :00
+# and :40, so the gap alternates 40min/20min — ~1.5 ticks/hour)
+# + manual dispatch. Enabled 2026-05-13 after vetting the first
+# Opus tick (phase 19a shipped clean in 30m). Concurrency group
+# below serializes overlapping ticks. Daily commit ceiling (40
+# cloud-shipped / 24h) bounds runaway volume.
 #
 # See .github/CLOUD_LOOP.md for setup, debugging, and the upgrade
 # path.
 
 on:
   schedule:
-    - cron: '0 * * * *'   # hourly, on the hour UTC
+    - cron: '*/40 * * * *'   # every 40 min UTC (fires :00 and :40)
   workflow_dispatch:
 
 concurrency:
@@ -100,11 +102,12 @@ jobs:
           since="$(date -u -d '24 hours ago' '+%Y-%m-%d %H:%M:%S')"
           count=$(git log --since="$since" --grep='Cloud-Run:' --oneline | wc -l | tr -d ' ')
           echo "Cloud-shipped commits in last 24h: $count"
-          # Ceiling: 24/day — matches the hourly cron cadence so
-          # every scheduled tick has headroom. Reduce if the
-          # weekly cap pinches.
-          if [ "$count" -ge 24 ]; then
-            echo "Cloud ceiling reached (24 cloud-shipped commits / 24h). Exiting cleanly — no work this tick."
+          # Ceiling: 40/day — paired with the every-40-min cron
+          # (~1.5 ticks/hour ≈ 36 scheduled ticks/day) so every
+          # scheduled tick has headroom. Reduce if the weekly cap
+          # pinches.
+          if [ "$count" -ge 40 ]; then
+            echo "Cloud ceiling reached (40 cloud-shipped commits / 24h). Exiting cleanly — no work this tick."
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
