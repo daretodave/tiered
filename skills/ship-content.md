@@ -142,53 +142,46 @@ Both run concurrently; their inputs are independent.
 
 #### For Rule 1 (new show)
 
-**`content-curator` brief:**
-- Target: write `content/shows/<slug>.md` frontmatter +
-  `content/shows/<slug>/canon.md` initial stub +
-  `content/shows/<slug>/seasons/01-<title>.md`,
-  `02-<title>.md`, `03-<title>.md` (the first 3 aired
-  seasons).
-- Required frontmatter fields (per bearings facade grammar):
-  `slug`, `name`, `network`, `format`, `hero_motifs`
-  (3-element array), `palette` (primary/ink/paper hex codes —
-  see brander brief for coordinates), `aired_season_count`,
-  `status` (airing | concluded | hiatus), `tagline` (single
-  sentence), `air_year_start`, `air_year_end`.
-- Voice: knowledgeable peer, confident-warm-plain.
-- Spoiler discipline: NO winners, NO eliminations, NO plot,
-  NO deaths, NO twists, NO finale outcomes, NO relationship
+**`content-curator` brief** (post-19a seven-field contract per
+`design/CLAUDE.md`):
+
+- Target paths — frontmatter file is the minimum unit:
+  - `content/shows/<slug>.md` (required)
+  - `content/shows/<slug>/canon.md` (optional — defer to a
+    Rule 2 canon-completion tick when the show has enough
+    season backfill to rank)
+  - `content/shows/<slug>/seasons/NN-<title>.md` (optional —
+    season blurbs drain through Rule 2)
+- Frontmatter fields, **exactly seven**, no more:
+  - `slug` (lowercase kebab-case)
+  - `name` (display name)
+  - `palette` — object with `paper`, `ink`, `primary` hex
+    codes (the show's tinted-chrome editorial palette; WCAG
+    AA contrast against the ink/paper pair; distinct from
+    every sibling show)
+  - `seasons` (integer count of aired/airing seasons)
+  - `status` — `airing` | `ended` | `hiatus`
+  - `blurb` — ≤120 chars, the short hero subtitle
+  - `tagline` — ≤280 chars, the longer editorial sentence
+- Voice: knowledgeable peer, confident-warm-plain. No
+  exclamation points.
+- Spoiler discipline P0: NO winners, NO eliminations, NO
+  plot, NO twists, NO finale outcomes, NO relationship
   outcomes. Format changes / casting energy / location /
   tonal shifts / structural innovations are fair.
-- Word counts:
-  - Show tagline: ≤140 chars.
-  - canon.md per-rank rationale: 80-120 words.
-  - Each season blurb: 50-80 words. STRICT.
-- Output paths exact: `content/shows/<slug>.md`,
-  `content/shows/<slug>/canon.md`,
-  `content/shows/<slug>/seasons/NN-<title>.md`.
 
-**`brander` brief:**
-- Show slug + name + 3 hero_motifs (which curator must
-  decide first — pass via brief).
-- Generate facade per the Pantheon facade grammar (1200×800
-  viewBox, four slots: column / pediment / frieze / ornament).
-- Derive the sigil by cropping the pediment + center column
-  to a 320×320 square.
-- Generate 3 ornament SVGs reusable on season pages.
-- Pick the show's 3-color palette: primary (warm, distinct
-  from any sibling show), ink (deep, paper-tinted), paper
-  (warm-tinted background slightly off Pantheon's default).
-  WCAG AA contrast against `tokens.json` ink scale required.
-- Output paths exact: `public/shows/<slug>/facade.svg`,
-  `public/shows/<slug>/sigil.svg`,
-  `public/shows/<slug>/ornament-{1,2,3}.svg`.
+**No `brander` for new shows.** Per-show illustration is
+prohibited by `design/CLAUDE.md` Hard Rule 1. The visual
+identity is **color + typography** plus the shared Pantheon
+brand mark — the palette in the frontmatter is the entire
+visual contribution. Do not commission per-show SVG.
 
-After both return, confirm:
-1. All required files exist.
-2. The frontmatter `palette` matches the brander's chosen
-   palette. (If they diverged, brander wins; rewrite frontmatter
-   palette block.)
-3. `pnpm content:check` validates the new frontmatter.
+After the curator returns, confirm:
+
+1. The two new files parse against
+   `showFrontmatterSchema` in `src/content/schemas.ts`.
+2. `pnpm content:check` validates the new frontmatter.
+3. `pnpm content:quota` reports one fewer missing show.
 
 #### For Rule 2 (canon completion — batch)
 
@@ -201,8 +194,9 @@ After both return, confirm:
   on tonal/structural commentary; canon position can shift
   later via `/iterate`).
 
-**No `brander` for canon completion.** Existing show's facade
-+ ornaments cover the new season pages.
+**No `brander` for canon completion.** Per-show illustration
+is prohibited; the show's palette + the shared brand mark are
+the entire visual contribution.
 
 #### For Rule 3 (themed list)
 
@@ -226,19 +220,18 @@ After both return, confirm:
   should pull >3 entries from one show. `single` lists are
   the exception by definition.
 
-**No `brander`** unless this is the FIRST themed list (in
-which case spawn brander to create `public/themes/<slug>/banner.svg`
-— a horizontal composition borrowing motifs from the top-3
-shows in the list).
+**No `brander` for themed lists.** Per-show illustration is
+prohibited (`design/CLAUDE.md` Hard Rule 1); themed-list
+banner art was never shipped and should not be reintroduced.
+The list page does its visual work through type + the
+per-show bullet color.
 
-#### For Rule 4 (facade backfill)
+#### For Rule 4 (retired — facade grammar)
 
-**`brander` only.**
-- Target show slug.
-- Read `content/shows/<slug>.md` for hero_motifs + existing
-  palette declarations.
-- Generate facade + sigil + ornaments per the facade grammar.
-- Replace placeholder `<!-- placeholder -->` markers if present.
+Skip any audit row tagged `category: facade-gap` or referencing
+`hero_motifs`. Mark `[x] superseded by 19a` and move on. See
+the autonomy contract §3 for the canonical retirement note;
+the May 2026 facade grammar was prototyped and rejected.
 
 ### Step 4 — Validate
 
@@ -286,10 +279,10 @@ agents.md):
 content: <unit-type> — <show-or-theme-name>
 
 - Audit row: rule-<N> content-gap, score <X>.
-- Rule: <Rule 1 show coverage | Rule 2 canon completion | Rule 3 themed list | Rule 4 facade backfill>.
+- Rule: <Rule 1 show coverage | Rule 2 canon completion | Rule 3 themed list>.
 - Files shipped:
   - <list>
-- Brander palette: primary <#hex>, ink <#hex>, paper <#hex>.
+- Palette (Rule 1 only): paper <#hex>, ink <#hex>, primary <#hex>.
 - <Optional: any decision the agent made worth noting>
 
 Closes #<N if mirrored>
@@ -348,8 +341,10 @@ content-gap row (or another verb if the queue is drained).
 5. **No `Co-Authored-By:` trailers, no emojis** (agents.md §2).
    Cloud-loop ticks include the `Cloud-Run:` trailer; nothing
    else.
-6. **Brander palette wins over content-curator's frontmatter
-   guess.** Rewrite frontmatter to match.
+6. **No per-show illustration.** `design/CLAUDE.md` Hard Rule
+   1 — color + typography only, with the shared Pantheon
+   brand mark. The frontmatter `palette` is the entire
+   visual contribution for a new show.
 7. **Word counts are strict.** Blurbs 50-80 words; canon
    rationales 80-120 words. The verify gate's
    `pnpm content:check` enforces if a `wordCount` schema
@@ -360,23 +355,19 @@ content-gap row (or another verb if the queue is drained).
 ```bash
 # Read state
 plan/AUDIT.md                                 # content-gap queue
-plan/bearings.md                              # voice + spoiler rules + facade grammar
+plan/bearings.md                              # voice + spoiler discipline + content velocity rules
 content/shows/                                # existing shows
 content/themes/                               # existing themes
-public/shows/<slug>/                          # facade + sigil + ornaments
 
 # Write
 content/shows/<slug>.md                       # via content-curator (Rule 1)
-content/shows/<slug>/canon.md                 # via content-curator (Rules 1, 2)
-content/shows/<slug>/seasons/NN-<title>.md    # via content-curator (Rules 1, 2)
+content/shows/<slug>/canon.md                 # via content-curator (Rule 2)
+content/shows/<slug>/seasons/NN-<title>.md    # via content-curator (Rule 2)
 content/themes/<slug>.md                      # via content-curator (Rule 3)
-public/shows/<slug>/{facade,sigil}.svg        # via brander (Rules 1, 4)
-public/shows/<slug>/ornament-{1,2,3}.svg      # via brander (Rules 1, 4)
 plan/AUDIT.md                                 # tick the addressed row
 
 # Sub-agents
 Agent({ subagent_type: "content-curator", prompt: "..." })
-Agent({ subagent_type: "brander", prompt: "..." })
 
 # Verify + commit + push
 pnpm verify
@@ -413,12 +404,10 @@ git push origin main
    with explicit brief. If still malformed, mark row
    `[blocked: content-curator <ISO timestamp>]`, skip to next
    row, ship that.
-5. **brander fails.** Ship placeholder facade + AUDIT row
-   `[brander-retry] <slug>` (severity LOW).
-6. **No content-gap rows scoring ≥ 3.0.** Exit cleanly. Log
+5. **No content-gap rows scoring ≥ 3.0.** Exit cleanly. Log
    "no content queue." Caller falls through.
-7. **`git pull` divergence.** Stop and report; do not
+6. **`git pull` divergence.** Stop and report; do not
    blind-rebase.
-8. **Spoiler check fails for a blurb in review.** Reject the
+7. **Spoiler check fails for a blurb in review.** Reject the
    curator output, retry once with explicit redaction notes,
    else block the row.

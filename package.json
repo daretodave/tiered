@@ -18,6 +18,7 @@
     "e2e:install": "pnpm --dir apps/e2e install && pnpm --dir apps/e2e exec playwright install --with-deps chromium",
     "e2e:ui": "pnpm --dir apps/e2e exec playwright test --ui",
     "content:check": "tsx scripts/content-check.ts",
+    "content:quota": "node scripts/content-quota.mjs",
     "check:no-raw-img": "node scripts/check-no-raw-img.mjs",
     "size": "node scripts/size.mjs",
     "verify": "pnpm tokens && pnpm typecheck && pnpm check:no-raw-img && pnpm test:run && pnpm test:scripts && pnpm content:check && pnpm build && pnpm e2e",
