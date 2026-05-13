@@ -478,13 +478,23 @@
     </div>
   </div>
 </div>
+<!-- secondary nav row -->
+<div style="border-bottom:1px solid var(--line-soft);background:var(--paper-0);">
+  <div class="wrap" style="padding-top:12px;padding-bottom:12px;display:flex;gap:8px;align-items:center;">
+    <a href="#" style="font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-0);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid var(--line);">01 · Tokens</a>
+    <a href="Pantheon · Show Identity.html" style="font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid transparent;">02 · Show identity</a>
+    <a href="Pantheon · Compositions.html" style="font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid transparent;">03 · Compositions</a>
+    <a href="Pantheon · Brand.html" style="font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid transparent;">+ Brand</a>
+    <a href="Pantheon · Survivor.html" style="font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid transparent;">+ Survivor page</a>
+  </div>
+</div>
 
 <!-- ====================================================== hero -->
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Phase 01 · Tokens · Pending approval</div>
     <h1 class="title">The seasons,<br/>ranked. <em>no spoilers.</em></h1>
-    <p class="lede">A confident, editorial system for ranking television without ruining it. This page locks the foundation — palette, type, spacing, motion — before the per-show facades arrive in phase 02.</p>
+    <p class="lede">A confident, editorial system for ranking television without ruining it. This page locks the foundation — palette, type, spacing, motion — before the show-identity rules arrive in phase 02.</p>
     <div class="meta-row">
       <span>Project / <b>Pantheon</b></span>
       <span>Phase / <b>01 of 03</b></span>
@@ -628,10 +638,10 @@
   <div class="wrap">
     <div class="next">
       <div>
-        <h3>Next, with your approval: the facade grammar.</h3>
-        <p>Phase 02 documents the shared column / pediment / frieze / ornament vocabulary, then materializes Survivor, Top Chef, and RuPaul's Drag Race as benchmarks.</p>
+        <h3>Next: the show identity rules.</h3>
+        <p>Phase 02 documents the system's one hard rule — every show is identified by color and typography only — plus the three canonical show palettes and the bullet-marker pattern that replaces icons.</p>
       </div>
-      <div class="stamp">awaiting sign-off</div>
+      <a class="stamp" href="Pantheon · Show Identity.html" style="text-decoration:none;">read phase 02 →</a>
     </div>
   </div>
 </section>
@@ -695,7 +705,7 @@
       { token: "9",  px: 96  }, { token: "10", px: 128 },
     ],
     motion: [
-      { name: "rise",   curve: "cubic-bezier(.2,.8,.2,1)",  klass: "m-rise",   duration: "calm · 480ms", use: "Entrances · facade reveal" },
+      { name: "rise",   curve: "cubic-bezier(.2,.8,.2,1)",  klass: "m-rise",   duration: "calm · 480ms", use: "Entrances · cover reveal" },
       { name: "settle", curve: "cubic-bezier(.4,0,.2,1)",   klass: "m-settle", duration: "base · 240ms", use: "State changes · hovers" },
       { name: "linear", curve: "linear",                     klass: "m-linear", duration: "base · 240ms", use: "Crossfades · scrub" },
       { name: "dwell",  curve: "cubic-bezier(.6,0,.8,0)",   klass: "m-dwell",  duration: "calm · 480ms", use: "Anticipation · vote-lock" },

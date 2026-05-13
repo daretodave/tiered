@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heroes vs. Villains · Survivor · Pantheon</title>
+<meta name="description" content="The Editor's Canon entry for Survivor: Heroes vs. Villains. No spoilers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Pantheon · Heroes vs. Villains — production season page.
+     Reader landed here from the Survivor show home, by clicking
+     the #07 canon card. Full-bleed, tinted, live vote + comment.
+     ============================================================ */
+  :root {
+    --paper-0:#0E0B08;
+    --s-warm-up:#E0843A; --s-warm-down:#5A8FA6; --s-neutral:#8C8275; --s-hold:#7A8F5C;
+    /* Survivor palette */
+    --show-paper:#0E2A2A; --show-ink:#EFE2BD; --show-primary:#D55E36;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --r-sm:4px; --r-md:8px; --r-lg:16px;
+    --d-quick:120ms; --d-base:240ms; --d-calm:480ms;
+    --e-rise:cubic-bezier(.2,.8,.2,1); --e-settle:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{background:var(--show-paper)}
+  body{
+    font-family:var(--sans);
+    background:var(--show-paper);color:var(--show-ink);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--show-primary);color:var(--show-paper)}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+
+  .bullet{display:inline-block;border-radius:999px;flex-shrink:0;vertical-align:baseline;background:var(--show-primary)}
+
+  /* ============================================================ NAV */
+  .topnav{
+    position:sticky;top:0;z-index:30;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 40px;
+    background:color-mix(in oklab, var(--show-paper) 92%, #000);
+    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    backdrop-filter:blur(8px);
+  }
+  @media(max-width:720px){.topnav{padding:14px 16px}}
+  .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:-0.01em}
+  .topnav-links{display:flex;gap:28px;font-size:14px;opacity:0.78}
+  .topnav-links a:hover{opacity:1}
+  @media(max-width:720px){.topnav-links{display:none}}
+  .topnav-right{display:flex;align-items:center;gap:18px}
+  .topnav-search{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.7}
+  @media(max-width:720px){.topnav-search{display:none}}
+  .topnav-signin{font:500 12px/1 var(--sans);letter-spacing:.04em;padding:9px 16px;border-radius:999px;background:var(--show-ink);color:var(--show-paper)}
+
+  /* ============================================================ SHELL */
+  .season-shell{
+    display:grid;grid-template-columns:1fr 420px;gap:0;
+    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    min-height:calc(100vh - 64px);
+  }
+  @media(max-width:1024px){.season-shell{grid-template-columns:1fr}}
+
+  /* ============================================================ ARTICLE */
+  .season-main{padding:80px 80px 96px;max-width:780px;margin-left:auto;width:100%}
+  @media(max-width:1024px){.season-main{margin-left:0;max-width:none;padding:64px 56px 80px}}
+  @media(max-width:720px){.season-main{padding:40px 20px 56px}}
+
+  .season-crumb{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--show-ink) 55%, transparent);
+    margin-bottom:36px;
+  }
+  .season-crumb .bullet{width:9px;height:9px}
+  .season-crumb a:hover{color:var(--show-ink)}
+  .season-crumb span{color:color-mix(in oklab, var(--show-ink) 80%, transparent)}
+
+  .season-eyebrow{
+    font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+    color:var(--show-primary);margin-bottom:20px;
+  }
+
+  .season-h1{
+    font-family:var(--serif);font-weight:500;
+    font-size:80px;line-height:1;letter-spacing:-0.03em;
+    color:var(--show-ink);margin:0 0 32px;text-wrap:balance;
+  }
+  @media(max-width:1024px){.season-h1{font-size:64px}}
+  @media(max-width:560px){.season-h1{font-size:44px}}
+
+  .season-rankrow{
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+    margin-bottom:32px;
+  }
+  .rank-tag{
+    display:inline-flex;gap:10px;align-items:center;
+    padding:10px 16px;
+    border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+    border-radius:999px;
+  }
+  .rank-label{font:500 11px/1 var(--mono);letter-spacing:.1em;color:color-mix(in oklab, var(--show-ink) 65%, transparent);text-transform:uppercase}
+  .rank-num{font:500 15px/1 var(--mono);color:var(--show-ink)}
+  .rank-pill{
+    display:inline-flex;align-items:center;gap:4px;
+    padding:4px 10px;border-radius:999px;
+    font:600 11px/1 var(--mono);letter-spacing:.08em;
+  }
+  .rank-pill.up{color:var(--s-warm-up);background:color-mix(in oklab, var(--s-warm-up) 16%, transparent)}
+  .rank-pill.down{color:var(--s-warm-down);background:color-mix(in oklab, var(--s-warm-down) 16%, transparent)}
+
+  .shield{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:9px 14px;border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+    border-radius:999px;
+    font:500 11px/1.3 var(--mono);letter-spacing:.04em;
+    color:color-mix(in oklab, var(--show-ink) 75%, transparent);
+    background:color-mix(in oklab, var(--show-ink) 4%, transparent);
+  }
+  .shield-dot{color:var(--s-hold);font-size:8px}
+
+  /* body copy */
+  .season-body{margin-top:48px;border-top:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);padding-top:48px}
+  .season-lede{
+    font-family:var(--serif);font-size:24px;line-height:1.45;
+    color:var(--show-ink);margin:0 0 28px;
+    text-wrap:pretty;letter-spacing:-0.01em;
+  }
+  @media(max-width:560px){.season-lede{font-size:19px}}
+  .season-body p{
+    font-family:var(--serif);font-size:18px;line-height:1.7;
+    color:color-mix(in oklab, var(--show-ink) 86%, transparent);
+    margin:0 0 22px;text-wrap:pretty;
+  }
+  @media(max-width:560px){.season-body p{font-size:16px}}
+  .season-pull{
+    font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.4;
+    color:var(--show-ink);
+    border-left:3px solid var(--show-primary);
+    padding:8px 0 8px 24px;margin:36px 0;
+    text-wrap:pretty;
+  }
+
+  /* details strip */
+  .season-details{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    margin-top:48px;
+    border:1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+    border-radius:var(--r-md);overflow:hidden;
+  }
+  @media(max-width:720px){.season-details{grid-template-columns:repeat(2,1fr)}}
+  .detail{
+    padding:18px 20px;
+    border-right:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    background:color-mix(in oklab, var(--show-ink) 3%, var(--show-paper));
+  }
+  .detail:last-child{border-right:0}
+  @media(max-width:720px){.detail:nth-child(2n){border-right:0}}
+  .detail-key{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent);margin-bottom:8px}
+  .detail-val{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--show-ink);letter-spacing:-0.01em}
+
+  /* ============================================================ VOTE */
+  .season-vote-block{
+    margin-top:56px;
+    padding:32px;
+    border:1px solid color-mix(in oklab, var(--show-ink) 16%, transparent);
+    border-radius:var(--r-md);
+    background:color-mix(in oklab, var(--show-ink) 5%, var(--show-paper));
+  }
+  .season-vote-head{margin-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .season-vote-q{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--show-ink);letter-spacing:-0.015em;line-height:1.25;text-wrap:balance;max-width:480px}
+  @media(max-width:560px){.season-vote-q{font-size:20px}}
+  .season-vote-meta{font:400 12px/1.5 var(--mono);color:color-mix(in oklab, var(--show-ink) 55%, transparent);letter-spacing:.04em;text-align:right}
+  @media(max-width:560px){.season-vote-meta{text-align:left}}
+
+  /* vote pair (interactive) */
+  .vote-pair{
+    display:inline-grid;grid-template-columns:auto auto auto;
+    align-items:stretch;
+    border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+    border-radius:999px;
+    background:var(--show-paper);overflow:hidden;
+  }
+  .vote-btn{
+    appearance:none;background:transparent;border:0;
+    width:72px;height:72px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--show-ink);
+    transition:background var(--d-base) var(--e-settle), color var(--d-base) var(--e-settle);
+  }
+  .vote-btn:hover:not(:disabled){background:color-mix(in oklab, var(--show-ink) 8%, transparent)}
+  .vote-btn:disabled{cursor:default}
+  .vote-btn.vote-down.flash{background:color-mix(in oklab, var(--s-warm-down) 32%, transparent);color:var(--s-warm-down)}
+  .vote-btn.vote-up.flash{background:color-mix(in oklab, var(--s-warm-up) 32%, transparent);color:var(--s-warm-up)}
+  .vote-count{
+    min-width:160px;padding:0 24px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    border-left:1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+    border-right:1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+    overflow:hidden;
+  }
+  .vote-num{font:500 32px/1 var(--mono);color:var(--show-ink);letter-spacing:-0.01em;transition:transform var(--d-base) var(--e-rise)}
+  .vote-num.reduced{transition:opacity var(--d-base)}
+  .vote-label{margin-top:6px;font:500 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 50%, transparent)}
+
+  /* ============================================================ ADJACENT */
+  .season-related{
+    margin-top:64px;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border-radius:var(--r-md);overflow:hidden;
+  }
+  @media(max-width:560px){.season-related{grid-template-columns:1fr}}
+  .related-link{padding:24px;background:var(--show-paper);display:block;transition:background var(--d-base) var(--e-settle)}
+  .related-link:hover{background:color-mix(in oklab, var(--show-ink) 5%, var(--show-paper))}
+  .related-next{text-align:right}
+  .related-tag{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--show-primary);margin-bottom:8px}
+  .related-title{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--show-ink);letter-spacing:-0.015em}
+  .related-cap{font-family:var(--serif);font-style:italic;font-size:14px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin-top:6px}
+
+  /* appears in */
+  .appears-in{margin-top:64px}
+  .appears-head{
+    font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+    color:color-mix(in oklab, var(--show-ink) 55%, transparent);
+    margin-bottom:16px;
+  }
+  .appears-list{display:flex;flex-direction:column;gap:0;border:1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);border-radius:var(--r-md);overflow:hidden}
+  .appears-row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+    padding:16px 20px;border-bottom:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);
+    background:var(--show-paper);
+  }
+  .appears-row:last-child{border-bottom:0}
+  .appears-row:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));cursor:pointer}
+  .appears-row .bullet{width:9px;height:9px}
+  .appears-row .name{font-family:var(--serif);font-size:17px;color:var(--show-ink);letter-spacing:-0.01em}
+  .appears-row .meta{font:500 11px/1 var(--mono);color:color-mix(in oklab, var(--show-ink) 55%, transparent);letter-spacing:.06em;text-transform:uppercase}
+
+  /* ============================================================ ASIDE */
+  .season-aside{
+    padding:80px 36px 96px;
+    background:color-mix(in oklab, var(--show-paper) 90%, #000);
+    border-left:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    display:flex;flex-direction:column;gap:24px;
+  }
+  @media(max-width:1024px){.season-aside{padding:48px 32px 64px;border-left:0;border-top:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent)}}
+  @media(max-width:720px){.season-aside{padding:32px 20px 48px}}
+
+  .aside-head{display:flex;justify-content:space-between;align-items:baseline}
+  .aside-head h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0;color:var(--show-ink);letter-spacing:-0.015em}
+  .aside-meta{font:500 11px/1 var(--mono);color:color-mix(in oklab, var(--show-ink) 55%, transparent);letter-spacing:.1em;text-transform:uppercase}
+
+  /* comment input */
+  .comment{
+    border-radius:12px;
+    border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+    background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
+    transition:border-color var(--d-base) var(--e-settle);
+  }
+  .comment.warn{border-color:var(--s-warm-down)}
+  .comment-stub{
+    width:100%;appearance:none;background:transparent;border:0;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 20px;color:color-mix(in oklab, var(--show-ink) 55%, transparent);
+    font-family:var(--serif);font-style:italic;font-size:15px;text-align:left;
+  }
+  .comment-stub:hover{color:var(--show-ink)}
+  .comment-stub-mono{font:500 11px/1 var(--mono);letter-spacing:.1em;font-style:normal}
+  .comment-open{padding:16px 20px;display:none;flex-direction:column;gap:0}
+  .comment.open .comment-open{display:flex}
+  .comment.open .comment-stub{display:none}
+  .comment-reminder{
+    display:flex;gap:10px;align-items:center;
+    font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;
+    color:var(--s-hold);padding-bottom:12px;
+  }
+  .comment-shield{font-size:8px}
+  .comment-ta{
+    width:100%;resize:vertical;min-height:80px;
+    background:transparent;color:var(--show-ink);
+    border:0;padding:8px 0;outline:0;
+    font-family:var(--serif);font-size:16px;line-height:1.55;
+  }
+  .comment-ta::placeholder{color:color-mix(in oklab, var(--show-ink) 40%, transparent)}
+  .comment-flag{
+    display:none;margin-top:8px;
+    gap:10px;align-items:flex-start;
+    padding:10px 12px;border-radius:6px;
+    background:color-mix(in oklab, var(--s-warm-down) 14%, transparent);
+    color:var(--s-warm-down);
+    font:500 13px/1.4 var(--sans);
+  }
+  .comment.warn .comment-flag{display:flex}
+  .comment-flag b{color:inherit;font-weight:600}
+  .comment-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+  .comment-cancel{appearance:none;background:transparent;border:0;color:color-mix(in oklab, var(--show-ink) 60%, transparent);font:500 13px/1 var(--sans);padding:10px 16px}
+  .comment-cancel:hover{color:var(--show-ink)}
+  .comment-post{appearance:none;border:0;background:var(--show-ink);color:var(--show-paper);font:500 13px/1 var(--sans);padding:10px 18px;border-radius:999px}
+  .comment-post:disabled{opacity:.4;cursor:not-allowed}
+
+  /* comment list */
+  .comment-list{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:0}
+  .comment-item{padding:22px 0;border-top:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent)}
+  .comment-item:first-child{border-top:0;padding-top:8px}
+  .comment-meta{display:flex;gap:12px;align-items:center;margin-bottom:8px;font:500 12px/1 var(--mono);letter-spacing:.04em}
+  .comment-author{color:var(--show-ink)}
+  .comment-when{color:color-mix(in oklab, var(--show-ink) 50%, transparent)}
+  .comment-hot{color:var(--show-primary)}
+  .comment-body{font-family:var(--serif);font-size:15px;line-height:1.6;color:color-mix(in oklab, var(--show-ink) 86%, transparent);margin:0;text-wrap:pretty}
+  .comment-actions{display:flex;gap:14px;margin-top:10px}
+  .comment-actions button{appearance:none;background:transparent;border:0;color:color-mix(in oklab, var(--show-ink) 55%, transparent);font:500 12px/1 var(--mono);letter-spacing:.06em;padding:4px 0}
+  .comment-actions button:hover{color:var(--show-ink)}
+  .aside-more{appearance:none;background:transparent;border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);color:var(--show-ink);font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;border-radius:999px;margin-top:8px}
+  .aside-more:hover{border-color:var(--show-ink)}
+
+  /* footer */
+  footer.pf-footer{
+    padding:48px 56px 40px;
+    border-top:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
+  }
+  @media(max-width:820px){footer.pf-footer{grid-template-columns:1fr;padding:32px 20px}}
+  .foot-brand{display:flex;flex-direction:column;gap:10px}
+  .foot-brand .topnav-brand{font-size:18px}
+  .foot-promise{font-family:var(--serif);font-style:italic;font-size:15px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin:0}
+  .foot-promise em{color:var(--show-primary)}
+  .foot-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent);margin:0 0 14px}
+  .foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .foot-col a{font:400 14px/1.4 var(--sans);color:color-mix(in oklab, var(--show-ink) 82%, transparent)}
+  .foot-col a:hover{color:var(--show-ink)}
+  .foot-meta{grid-column:1 / -1;padding-top:24px;margin-top:8px;border-top:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 12px/1.5 var(--mono);color:color-mix(in oklab, var(--show-ink) 50%, transparent);letter-spacing:.04em}
+
+  @media (prefers-reduced-motion: reduce) {
+    *,*::before,*::after{transition-duration:0ms !important;animation-duration:0ms !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ NAV -->
+<nav class="topnav">
+  <a class="topnav-brand" href="Pantheon · Survivor.html">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+    <span>Pantheon</span>
+  </a>
+  <div class="topnav-links">
+    <a href="#">Shows</a>
+    <a href="#">Lists</a>
+    <a href="#">About</a>
+  </div>
+  <div class="topnav-right">
+    <a class="topnav-search" href="#">⌕ Search</a>
+    <a class="topnav-signin" href="#">Sign in</a>
+  </div>
+</nav>
+
+<!-- ============================================================ SHELL -->
+<div class="season-shell">
+  <article class="season-main">
+    <div class="season-crumb">
+      <span class="bullet"></span>
+      <a href="#">Pantheons</a>
+      <span style="opacity:.4">/</span>
+      <a href="Pantheon · Survivor.html">Survivor</a>
+      <span style="opacity:.4">/</span>
+      <span>Season 20</span>
+    </div>
+
+    <div class="season-eyebrow">Aired spring 2010 · Samoa</div>
+    <h1 class="season-h1">Heroes vs.<br/>Villains</h1>
+
+    <div class="season-rankrow">
+      <div class="rank-tag">
+        <span class="rank-label">Editor's Canon</span>
+        <span class="rank-num">#07</span>
+      </div>
+      <div class="rank-tag">
+        <span class="rank-label">Community</span>
+        <span class="rank-num">#04</span>
+        <span class="rank-pill up">↑ 3</span>
+      </div>
+      <div class="shield"><span class="shield-dot">●</span>No spoilers · reviewed</div>
+    </div>
+
+    <section class="season-body">
+      <p class="season-lede">A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep.</p>
+
+      <p>Twenty veterans, ten cast as heroes and ten as villains, sent back to Samoa with no patience for the early-game small-talk. The first day plays like the eighth day of any other season. Production has the cast they deserve and seems to know it; the camera barely cuts away.</p>
+
+      <p>It earns its reputation. The middle stretch, in particular, runs at a tempo the show has never replicated — every challenge counts, every conversation is loaded, every confessional is a small thesis on what these people thought the game was. Whether you read it as the franchise's peak or the moment it started favoring chaos over arc is a question worth having with someone over coffee.</p>
+
+      <p class="season-pull">Twenty-five years in, this is the season Survivor will still be measured against. We'd defend it without footnotes.</p>
+
+      <p>The supporting performances are the season's real surprise — players who'd been read as one-note in their first runs reveal a second register here, and the editors clearly know it. Watch for the way the show handles its first elimination; the cold-open of the final eight; the unbroken three-minute confessional in episode eleven. None of it is accidental, and none of it has been replicated.</p>
+    </section>
+
+    <div class="season-details">
+      <div class="detail">
+        <div class="detail-key">Filmed</div>
+        <div class="detail-val">Samoa</div>
+      </div>
+      <div class="detail">
+        <div class="detail-key">Episodes</div>
+        <div class="detail-val">14</div>
+      </div>
+      <div class="detail">
+        <div class="detail-key">Format</div>
+        <div class="detail-val">Returnees, 2 tribes</div>
+      </div>
+      <div class="detail">
+        <div class="detail-key">Canon entry by</div>
+        <div class="detail-val">M. Reyes</div>
+      </div>
+    </div>
+
+    <div class="season-vote-block">
+      <div class="season-vote-head">
+        <div class="season-vote-q">Does this belong in the canon top 10?</div>
+        <div class="season-vote-meta">vote once per reader<br/>change your mind within 72h</div>
+      </div>
+      <div class="vote-pair" aria-label="Vote on Heroes vs. Villains">
+        <button class="vote-btn vote-down" aria-label="Vote down" data-vote="down">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M5 12 L12 19 L19 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="vote-count">
+          <div class="vote-num" id="vote-num">274</div>
+          <div class="vote-label">net votes</div>
+        </div>
+        <button class="vote-btn vote-up" aria-label="Vote up" data-vote="up">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M5 12 L12 5 L19 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="12" y1="19" x2="12" y2="5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="season-related" aria-label="Adjacent seasons">
+      <a class="related-link related-prev" href="#">
+        <div class="related-tag">← #06 in Canon</div>
+        <div class="related-title">The Amazon</div>
+        <div class="related-cap">the season the show started thinking about itself</div>
+      </a>
+      <a class="related-link related-next" href="#">
+        <div class="related-tag">#08 in Canon →</div>
+        <div class="related-title">Philippines</div>
+        <div class="related-cap">a quietly perfect reset</div>
+      </a>
+    </nav>
+
+    <section class="appears-in">
+      <div class="appears-head">Heroes vs. Villains also appears in</div>
+      <div class="appears-list">
+        <a class="appears-row" href="#">
+          <span class="bullet"></span>
+          <span class="name">Returnees that earned the invitation</span>
+          <span class="meta">list · 12 entries</span>
+        </a>
+        <a class="appears-row" href="#">
+          <span class="bullet"></span>
+          <span class="name">The Borneo lineage</span>
+          <span class="meta">list · 18 entries</span>
+        </a>
+        <a class="appears-row" href="#">
+          <span class="bullet"></span>
+          <span class="name">Best premieres ever</span>
+          <span class="meta">cross-show · 24 entries</span>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <!-- ============================================================ ASIDE -->
+  <aside class="season-aside">
+    <div class="aside-head">
+      <h3>The thread</h3>
+      <span class="aside-meta">spoiler-safe</span>
+    </div>
+
+    <div class="comment" id="comment">
+      <button class="comment-stub" id="comment-stub">
+        <span>Add a thought · no spoilers, please.</span>
+        <span class="comment-stub-mono">⏎</span>
+      </button>
+      <div class="comment-open">
+        <div class="comment-reminder">
+          <span class="comment-shield">●</span>
+          <span>No spoilers — past or future. Talk about the season, not the result.</span>
+        </div>
+        <textarea class="comment-ta" id="comment-ta" placeholder="Say what you actually think." rows="3"></textarea>
+        <div class="comment-flag" role="alert">
+          <span>✱</span>
+          <span>"<b id="flag-phrase"></b>" reads like a spoiler. Reword before posting.</span>
+        </div>
+        <div class="comment-foot">
+          <button class="comment-cancel" id="comment-cancel">Cancel</button>
+          <button class="comment-post" id="comment-post" disabled>Post</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="comment-list">
+      <li class="comment-item">
+        <div class="comment-meta">
+          <span class="comment-author">margaux.r</span>
+          <span class="comment-when">2h</span>
+        </div>
+        <p class="comment-body">The middle stretch is genuinely the best run of episodes the show has ever put together. I will die on this hill.</p>
+        <div class="comment-actions"><button>Reply</button><button>↑ 41</button><button>↓ 3</button></div>
+      </li>
+      <li class="comment-item">
+        <div class="comment-meta">
+          <span class="comment-author">thunderdomeguy</span>
+          <span class="comment-when">9h</span>
+          <span class="comment-hot">★ much-liked</span>
+        </div>
+        <p class="comment-body">A rare returnee season where casting actually matched the premise. Most fall apart by the merge — this one tightens.</p>
+        <div class="comment-actions"><button>Reply</button><button>↑ 128</button><button>↓ 11</button></div>
+      </li>
+      <li class="comment-item">
+        <div class="comment-meta">
+          <span class="comment-author">ngarrett</span>
+          <span class="comment-when">1d</span>
+        </div>
+        <p class="comment-body">Some of the camera work here is doing real ethnographic labor. Watch the establishing shots in episodes 3 and 4 — production is composing for the long take, and you can feel it.</p>
+        <div class="comment-actions"><button>Reply</button><button>↑ 27</button><button>↓ 2</button></div>
+      </li>
+      <li class="comment-item">
+        <div class="comment-meta">
+          <span class="comment-author">boredathome</span>
+          <span class="comment-when">2d</span>
+        </div>
+        <p class="comment-body">Overrated by people who don't want to admit later seasons made the format better. Fight me (politely).</p>
+        <div class="comment-actions"><button>Reply</button><button>↑ 18</button><button>↓ 44</button></div>
+      </li>
+    </ul>
+
+    <button class="aside-more">Show 408 more →</button>
+  </aside>
+</div>
+
+<!-- ============================================================ FOOTER -->
+<footer class="pf-footer">
+  <div class="foot-brand">
+    <a class="topnav-brand" href="#">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span>Pantheon</span>
+    </a>
+    <p class="foot-promise">the seasons, ranked. <em>no spoilers.</em></p>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheons</h5>
+    <ul>
+      <li><a href="Pantheon · Survivor.html"><span class="bullet" style="width:8px;height:8px;margin-right:8px;display:inline-block"></span>Survivor</a></li>
+      <li><a href="#"><span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:#B86A2E;margin-right:8px"></span>Top Chef</a></li>
+      <li><a href="#"><span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:#E64B86;margin-right:8px"></span>Drag Race</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheon</h5>
+    <ul>
+      <li><a href="#">About the canon</a></li>
+      <li><a href="#">How voting works</a></li>
+      <li><a href="#">Spoilers policy</a></li>
+      <li><a href="#">Become an editor</a></li>
+    </ul>
+  </div>
+  <div class="foot-meta">
+    <span>© 2026 Pantheon · est. as a quiet rebellion against ranked lists that ruin the show</span>
+    <span>Season 20 · canon entry rev. 04 / 2026</span>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================ VOTE PAIR */
+  const numEl = document.getElementById("vote-num");
+  let count = 274, locked = false;
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) numEl.classList.add("reduced");
+
+  document.querySelectorAll(".vote-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (locked) return;
+      const dir = btn.dataset.vote;
+      const sign = dir === "up" ? 1 : -1;
+      locked = true;
+      btn.classList.add("flash");
+      count += sign;
+      if (reduced) {
+        numEl.style.opacity = "0.4";
+        setTimeout(() => { numEl.textContent = count.toLocaleString(); numEl.style.opacity = "1"; }, 160);
+      } else {
+        numEl.style.transform = `translateY(${sign * -10}px)`;
+        setTimeout(() => {
+          numEl.textContent = count.toLocaleString();
+          numEl.style.transform = `translateY(${sign * 10}px)`;
+          requestAnimationFrame(() => { numEl.style.transform = "translateY(0)"; });
+        }, 160);
+      }
+      setTimeout(() => { btn.classList.remove("flash"); locked = false; }, 800);
+    });
+  });
+
+  /* ============================================================ COMMENT */
+  const comment = document.getElementById("comment");
+  const stub = document.getElementById("comment-stub");
+  const ta = document.getElementById("comment-ta");
+  const post = document.getElementById("comment-post");
+  const cancel = document.getElementById("comment-cancel");
+  const flagPhrase = document.getElementById("flag-phrase");
+
+  const SPOILERS = ["wins", "winner", "wins it", "gets eliminated", "votes out", "final tribal", "season finale", "eliminated in the final", "won it all"];
+
+  stub.addEventListener("click", () => {
+    comment.classList.add("open");
+    setTimeout(() => ta.focus(), 0);
+  });
+  cancel.addEventListener("click", () => {
+    comment.classList.remove("open", "warn");
+    ta.value = "";
+    post.disabled = true;
+  });
+  ta.addEventListener("input", () => {
+    const t = ta.value.toLowerCase();
+    let found = null;
+    for (const p of SPOILERS) {
+      const i = t.indexOf(p);
+      if (i !== -1) { found = ta.value.substr(i, p.length); break; }
+    }
+    if (found) {
+      comment.classList.add("warn");
+      flagPhrase.textContent = found;
+      post.disabled = true;
+    } else {
+      comment.classList.remove("warn");
+      post.disabled = !ta.value.trim();
+    }
+  });
+  post.addEventListener("click", () => {
+    post.disabled = true;
+    post.textContent = "Posted";
+    setTimeout(() => {
+      ta.value = "";
+      post.textContent = "Post";
+      comment.classList.remove("open");
+    }, 1200);
+  });
+</script>
+</body>
+</html>

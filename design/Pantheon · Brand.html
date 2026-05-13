@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pantheon · Brand · Mark, header, footer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper-0:#0E0B08; --paper-1:#15110C; --paper-2:#1E1812; --paper-3:#2A2218;
+    --line-soft:#241D14; --line:#3A2F22; --line-loud:#5A4A35;
+    --ink-3:#6E6353; --ink-2:#9D9485; --ink-1:#D8CFBE; --ink-0:#F2EADB;
+    --primary:#E8B65A;
+    --warn:#C24A4A;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --r-md:8px;
+    --d-base:240ms;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper-0);color:var(--ink-1);-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--primary);color:var(--paper-0)}
+  a{color:inherit}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  @media(max-width:720px){.wrap{padding:0 20px}}
+
+  /* topbar */
+  .topbar{position:sticky;top:0;z-index:10;background:color-mix(in oklab, var(--paper-0) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft);}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap;}
+  .brand-bar{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink-0);letter-spacing:-0.01em;text-decoration:none;}
+  .brand-bar small{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);letter-spacing:.04em;margin-left:4px;}
+  .nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .nav a{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid transparent;transition:color var(--d-base),border-color var(--d-base);}
+  .nav a:hover{color:var(--ink-1);border-color:var(--line)}
+  .nav a.current{color:var(--ink-0);border-color:var(--line)}
+
+  /* hero */
+  header.hero{padding:96px 0 80px;border-bottom:1px solid var(--line-soft)}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink-3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--line-loud)}
+  h1.title{font-family:var(--serif);font-weight:500;font-size:76px;line-height:1;letter-spacing:-0.025em;color:var(--ink-0);margin:0 0 24px;text-wrap:balance;}
+  @media(max-width:720px){h1.title{font-size:48px}}
+  h1.title em{color:var(--primary);font-style:italic;font-weight:500}
+  .lede{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--ink-1);max-width:680px;margin:0;text-wrap:pretty;}
+  .lede b{color:var(--ink-0);font-weight:500}
+
+  /* sections */
+  section{padding:96px 0;border-bottom:1px solid var(--line-soft)}
+  section:last-of-type{border-bottom:0}
+  .sec-head{display:grid;grid-template-columns:220px 1fr;gap:48px;margin-bottom:48px;align-items:start}
+  @media(max-width:820px){.sec-head{grid-template-columns:1fr;gap:16px}}
+  .sec-num{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;padding-top:6px}
+  .sec-title{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.08;letter-spacing:-0.02em;color:var(--ink-0);margin:0 0 16px}
+  .sec-desc{font-family:var(--serif);font-size:17px;line-height:1.6;color:var(--ink-2);max-width:680px;margin:0;text-wrap:pretty}
+
+  /* ============================================================ §01 MARK */
+  .mark-row{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+    border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
+  }
+  @media(max-width:820px){.mark-row{grid-template-columns:1fr}}
+  .mark-stage{
+    background:var(--paper-1);
+    padding:64px;
+    display:flex;align-items:center;justify-content:center;
+    aspect-ratio:1/1;
+    position:relative;
+  }
+  .mark-stage svg.glyph{width:60%;height:60%;color:var(--ink-0)}
+  /* construction grid overlay */
+  .mark-stage.gridded{
+    background:
+      linear-gradient(var(--line-soft) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px) 0 0/40px 40px,
+      var(--paper-1);
+  }
+  .clearspace-x{
+    position:absolute;border:1px dashed color-mix(in oklab, var(--primary) 60%, transparent);
+    pointer-events:none;
+  }
+  .clearspace-label{
+    position:absolute;
+    font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--primary);
+  }
+  .mark-data{
+    padding:48px;background:var(--paper-1);
+    display:flex;flex-direction:column;gap:32px;justify-content:center;
+    border-left:1px solid var(--line);
+  }
+  @media(max-width:820px){.mark-data{border-left:0;border-top:1px solid var(--line);padding:32px 24px}}
+  .mark-line{display:flex;flex-direction:column;gap:8px}
+  .mark-line-key{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .mark-line-val{font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--ink-0);text-wrap:pretty}
+  .mark-line-val code{font-family:var(--mono);font-size:13px;background:var(--paper-3);padding:2px 6px;border-radius:4px;color:var(--ink-1)}
+
+  /* ============================================================ §02 SCALE */
+  .scale-row{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);
+    overflow:hidden;
+  }
+  @media(max-width:1024px){.scale-row{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.scale-row{grid-template-columns:repeat(2,1fr)}}
+  .scale-cell{
+    background:var(--paper-1);
+    padding:32px 18px 18px;
+    display:flex;flex-direction:column;align-items:center;gap:16px;
+    min-height:200px;justify-content:space-between;
+  }
+  .scale-glyph{display:flex;align-items:center;justify-content:center;flex:1;width:100%;color:var(--ink-0)}
+  .scale-meta{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+  .scale-px{font:500 13px/1 var(--mono);color:var(--ink-0);letter-spacing:.04em}
+  .scale-use{font:400 11px/1.3 var(--sans);color:var(--ink-3);letter-spacing:.02em}
+
+  /* ============================================================ §03 MODES */
+  .modes-row{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+  }
+  @media(max-width:1024px){.modes-row{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.modes-row{grid-template-columns:1fr}}
+  .mode-tile{
+    aspect-ratio:1/1;border-radius:var(--r-md);overflow:hidden;
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+  }
+  .mode-stage{
+    flex:1;display:flex;align-items:center;justify-content:center;
+  }
+  .mode-stage svg{width:48%;height:48%}
+  .mode-meta{
+    padding:12px 14px;
+    border-top:1px solid var(--line);
+    background:var(--paper-1);
+    display:flex;justify-content:space-between;align-items:center;
+    font:500 11px/1 var(--mono);letter-spacing:.04em;
+  }
+  .mode-meta b{color:var(--ink-0);font-weight:500}
+  .mode-meta span{color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
+
+  /* ============================================================ §04 / §05 LOCKUPS */
+  .lockup-frame{
+    border:1px solid var(--line);border-radius:var(--r-md);
+    overflow:hidden;
+  }
+  .lockup-anno{
+    padding:14px 20px;background:var(--paper-2);
+    border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  }
+
+  /* live header demo */
+  .demo-header{
+    background:var(--paper-0);
+    border-bottom:1px solid var(--line-soft);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;
+  }
+  .demo-header .h-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-0);letter-spacing:-0.01em;}
+  .demo-header .h-links{display:flex;gap:24px;font-size:14px;color:var(--ink-2)}
+  .demo-header .h-right{display:flex;align-items:center;gap:14px}
+  .demo-header .h-search{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  .demo-header .h-signin{font:500 12px/1 var(--sans);padding:9px 16px;background:var(--ink-0);color:var(--paper-0);border-radius:999px;letter-spacing:.02em}
+
+  /* live footer demo */
+  .demo-footer{
+    background:var(--paper-0);
+    padding:36px 32px 32px;
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
+    border-top:1px solid var(--line-soft);
+  }
+  @media(max-width:720px){.demo-footer{grid-template-columns:1fr;padding:24px}}
+  .demo-footer .f-brand{display:flex;flex-direction:column;gap:10px}
+  .demo-footer .f-brand .h-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-0);letter-spacing:-0.01em}
+  .demo-footer .f-promise{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);margin:0}
+  .demo-footer .f-promise em{color:var(--primary);font-style:italic}
+  .demo-footer .f-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px}
+  .demo-footer .f-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+  .demo-footer .f-col a{font-family:var(--sans);font-size:13px;color:var(--ink-1);text-decoration:none}
+  .demo-footer .f-col a:hover{color:var(--ink-0)}
+  .demo-footer .f-meta{
+    grid-column:1 / -1;padding-top:20px;margin-top:8px;
+    border-top:1px solid var(--line-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font:400 11px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.04em;
+  }
+
+  /* tinted-on-show variants */
+  .tinted-set{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  @media(max-width:820px){.tinted-set{grid-template-columns:1fr}}
+  .tinted-card{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  .tinted-anno{padding:12px 16px;background:var(--paper-2);border-bottom:1px solid var(--line);font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .tinted-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;}
+  .tinted-header .h-brand{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:-0.01em;}
+
+  /* ============================================================ §06 DO/DON'T */
+  .rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  @media(max-width:720px){.rule-grid{grid-template-columns:1fr}}
+  .rule{padding:24px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-1)}
+  .rule:nth-child(2n){border-right:0}
+  @media(max-width:720px){.rule{border-right:0}}
+  .rule:nth-last-child(-n+2){border-bottom:0}
+  @media(max-width:720px){.rule{border-bottom:1px solid var(--line)}.rule:last-child{border-bottom:0}}
+  .rule-tag{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+  .rule-tag.do{color:var(--primary)}
+  .rule-tag.dont{color:var(--warn)}
+  .rule-tag::before{content:"";width:8px;height:8px;border-radius:999px;background:currentColor}
+  .rule h4{font-family:var(--serif);font-weight:500;font-size:19px;line-height:1.25;color:var(--ink-0);margin:0 0 10px;letter-spacing:-0.015em;text-wrap:balance}
+  .rule p{font-family:var(--serif);font-size:14px;line-height:1.55;color:var(--ink-2);margin:0;text-wrap:pretty}
+
+  /* ============================================================ §07 DIRECTIVES */
+  .directives{border:1px solid var(--line-loud);background:var(--paper-1);border-radius:var(--r-md);padding:40px}
+  .directives-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+  .directives-head h3{font-family:var(--serif);font-weight:500;font-size:26px;color:var(--ink-0);margin:0;letter-spacing:-0.015em}
+  .directives-link{font:500 11px/1 var(--mono);color:var(--primary);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:10px 14px;border:1px solid var(--primary);border-radius:999px}
+  .directives p{font-family:var(--serif);font-size:15px;line-height:1.6;color:var(--ink-2);margin:0 0 14px;text-wrap:pretty}
+  .directives p b{color:var(--ink-0);font-weight:500}
+  .directives p code{font-family:var(--mono);font-size:13px;background:var(--paper-2);padding:2px 6px;border-radius:4px;color:var(--ink-1)}
+
+  /* footer */
+  footer.foot{padding:48px 0;color:var(--ink-3);font:400 12px/1.6 var(--mono);}
+  footer.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+</style>
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand-bar" href="#">
+      <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
+        <path d="M2 11 L14 3 L26 11 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="5" y1="14" x2="5" y2="25" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="14" y1="14" x2="14" y2="25" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="23" y1="14" x2="23" y2="25" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="2" y1="26" x2="26" y2="26" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span>Pantheon <small>visual system / v0.2</small></span>
+    </a>
+    <div class="nav">
+      <a href="Pantheon · Tokens.html">01 · Tokens</a>
+      <a href="Pantheon · Show Identity.html">02 · Show identity</a>
+      <a href="Pantheon · Compositions.html">03 · Compositions</a>
+      <a href="#" class="current">+ Brand</a>
+      <a href="Pantheon · Survivor.html">+ Survivor page</a>
+    </div>
+  </div>
+</div>
+
+<!-- hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Brand · the mark, the header, the footer</div>
+    <h1 class="title">One mark.<br/><em>Every page.</em></h1>
+    <p class="lede">The Pantheon brand mark is a small pediment over three columns. It is the only SVG illustration in the entire product. It appears in every header and every footer, in one of three modes — dark default, light secondary, and tinted on a show's paper. <b>It is shared. It is the system's single illustration. Do not invent variants.</b></p>
+  </div>
+</header>
+
+<!-- ============================================================ §01 THE MARK -->
+<section id="mark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 01 · The mark</div>
+      <div>
+        <h2 class="sec-title">A pediment, three columns, a stylobate.</h2>
+        <p class="sec-desc">The mark fits a 28-unit square viewBox. The pediment apex sits at <code style="font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1px 6px;border-radius:4px;color:var(--ink-1);">(14, 3)</code>, the centerline is column-axis, the stylobate is the ground at <code style="font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1px 6px;border-radius:4px;color:var(--ink-1);">y=26</code>. Every value is an integer. Strokes are 1.4 units. Nothing else.</p>
+      </div>
+    </div>
+
+    <div class="mark-row">
+      <div class="mark-stage gridded">
+        <!-- the mark at display size, on construction grid -->
+        <svg viewBox="0 0 28 28" class="glyph" style="width:60%;height:60%">
+          <path d="M2 11 L14 3 L26 11 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="5" y1="14" x2="5" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="14" y1="14" x2="14" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="23" y1="14" x2="23" y2="25" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="2" y1="26" x2="26" y2="26" stroke="currentColor" stroke-width="1.4"/>
+        </svg>
+        <!-- clearspace box: one column-width of space on every side -->
+        <div class="clearspace-x" style="left:14%;top:14%;right:14%;bottom:14%"></div>
+        <div class="clearspace-label" style="top:6%;left:50%;transform:translateX(-50%)">clearspace · ≥ 1 column-width</div>
+      </div>
+      <div class="mark-data">
+        <div class="mark-line">
+          <div class="mark-line-key">viewBox</div>
+          <div class="mark-line-val"><code>0 0 28 28</code> · integers only · no decimals</div>
+        </div>
+        <div class="mark-line">
+          <div class="mark-line-key">stroke</div>
+          <div class="mark-line-val"><code>1.4</code> units · <code>currentColor</code> · no fill anywhere</div>
+        </div>
+        <div class="mark-line">
+          <div class="mark-line-key">apex</div>
+          <div class="mark-line-val"><code>14, 3</code> · centerline, top edge of design space</div>
+        </div>
+        <div class="mark-line">
+          <div class="mark-line-key">column anchors</div>
+          <div class="mark-line-val"><code>x = 5, 14, 23</code> · evenly spaced, never four, never two</div>
+        </div>
+        <div class="mark-line">
+          <div class="mark-line-key">stylobate</div>
+          <div class="mark-line-val"><code>y = 26</code> · the ground line · always present</div>
+        </div>
+        <div class="mark-line">
+          <div class="mark-line-key">clearspace</div>
+          <div class="mark-line-val">No competing element within one column-width (~4px at 28px display) of the bounding box.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ §02 SCALE -->
+<section id="scale">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 02 · Size scale</div>
+      <div>
+        <h2 class="sec-title">From favicon to about-page hero.</h2>
+        <p class="sec-desc">The same SVG, rendered at six standard sizes. Stroke scales with the glyph — the integer viewBox means crisp edges at every step. Never render below 16px.</p>
+      </div>
+    </div>
+
+    <div class="scale-row" id="scale-row"></div>
+  </div>
+</section>
+
+<!-- ============================================================ §03 MODES -->
+<section id="modes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 03 · Color modes</div>
+      <div>
+        <h2 class="sec-title">Two defaults. Three tints.</h2>
+        <p class="sec-desc">The mark always uses <code style="font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1px 6px;border-radius:4px;color:var(--ink-1);">currentColor</code>, so it picks up the surrounding ink token automatically. Dark on a Pantheon paper, dark-ink on a light paper, show-ink on a show paper. Three behaviors, one file.</p>
+      </div>
+    </div>
+
+    <div class="modes-row" id="modes-row"></div>
+  </div>
+</section>
+
+<!-- ============================================================ §04 HEADER LOCKUP -->
+<section id="header-lockup">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 04 · Header lockup</div>
+      <div>
+        <h2 class="sec-title">The mark, lockuped with the wordmark.</h2>
+        <p class="sec-desc">Every page begins with this header. The mark sits to the left of the serif wordmark "Pantheon," at a fixed 10px gap. Navigation links sit centered; sign-in sits right. The header takes its background from the page — neutral on home, tinted on show pages.</p>
+      </div>
+    </div>
+
+    <div class="lockup-frame">
+      <div class="lockup-anno">
+        <span>Default header · pantheon.tv</span>
+        <span>56px tall · 32px x-padding</span>
+      </div>
+      <div class="demo-header">
+        <a class="h-brand" href="#">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+          <span>Pantheon</span>
+        </a>
+        <div class="h-links">
+          <a href="#">Shows</a>
+          <a href="#">Lists</a>
+          <a href="#">About</a>
+        </div>
+        <div class="h-right">
+          <a class="h-search" href="#">⌕ Search</a>
+          <a class="h-signin" href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink-1);margin:32px 0 12px;letter-spacing:-0.01em;">When tinted by a show</h3>
+    <div class="tinted-set" id="tinted-headers"></div>
+  </div>
+</section>
+
+<!-- ============================================================ §05 FOOTER LOCKUP -->
+<section id="footer-lockup">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 05 · Footer lockup</div>
+      <div>
+        <h2 class="sec-title">The same mark, in repose.</h2>
+        <p class="sec-desc">Every page ends with the brand mark, the promise, and three short link columns. The footer is the page's last word — never crowded, never legal-heavy. The promise tagline sits in serif italic; the bullet system carries through to the Pantheons column. Tints with the show on show pages.</p>
+      </div>
+    </div>
+
+    <div class="lockup-frame">
+      <div class="lockup-anno">
+        <span>Default footer · pantheon.tv</span>
+        <span>3 columns · 32px gutter · 48px x-padding</span>
+      </div>
+      <div class="demo-footer">
+        <div class="f-brand">
+          <a class="h-brand" href="#">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+              <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+            </svg>
+            <span>Pantheon</span>
+          </a>
+          <p class="f-promise">the seasons, ranked. <em>no spoilers.</em></p>
+        </div>
+        <div class="f-col">
+          <h5>Pantheons</h5>
+          <ul>
+            <li><a href="#"><span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:#D55E36;margin-right:8px;vertical-align:1px"></span>Survivor</a></li>
+            <li><a href="#"><span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:#B86A2E;margin-right:8px;vertical-align:1px"></span>Top Chef</a></li>
+            <li><a href="#"><span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:#E64B86;margin-right:8px;vertical-align:1px"></span>Drag Race</a></li>
+            <li><a href="#">All shows →</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h5>Pantheon</h5>
+          <ul>
+            <li><a href="#">About the canon</a></li>
+            <li><a href="#">How voting works</a></li>
+            <li><a href="#">Spoilers policy</a></li>
+            <li><a href="#">Become an editor</a></li>
+          </ul>
+        </div>
+        <div class="f-meta">
+          <span>© 2026 Pantheon · est. as a quiet rebellion against ranked lists that ruin the show</span>
+          <span>v2.1.0 · canon last revised 04 / 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ §06 DO/DON'T -->
+<section id="do-dont">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 06 · Do · don't</div>
+      <div>
+        <h2 class="sec-title">Four rules for keeping the mark itself.</h2>
+        <p class="sec-desc">The mark is small, geometric, and built on integers — which means almost any modification breaks it. Treat it as a finished object, not a starting point.</p>
+      </div>
+    </div>
+
+    <div class="rule-grid">
+      <div class="rule">
+        <div class="rule-tag do">Do</div>
+        <h4>Render at the six published sizes.</h4>
+        <p>16 / 22 / 28 / 48 / 96 / 240. These are the only sizes the mark is allowed to appear at. Pixel-snap any new placement.</p>
+      </div>
+      <div class="rule">
+        <div class="rule-tag dont">Don't</div>
+        <h4>Never recolor with a gradient.</h4>
+        <p>The mark uses <code style="font-family:var(--mono);font-size:13px;background:var(--paper-3);padding:1px 6px;border-radius:4px;color:var(--ink-1);">currentColor</code> only. Pantheon gold, ink, show-ink — fine. Gradients, glows, drop-shadows, outlines, fills — never.</p>
+      </div>
+      <div class="rule">
+        <div class="rule-tag dont">Don't</div>
+        <h4>Never invent per-show variants.</h4>
+        <p>No "Survivor Pantheon mark with a flame on top." No "Drag Race mark with sequins." The mark is universal — the show's identity comes from color and wordmark, never from a custom glyph.</p>
+      </div>
+      <div class="rule">
+        <div class="rule-tag dont">Don't</div>
+        <h4>Never crop or rotate.</h4>
+        <p>The pediment apex must remain centered above the columns, and the stylobate must remain horizontal. Crop the bounding box if you must — never the glyph itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ §07 DIRECTIVES -->
+<section id="directives" style="border-bottom:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">§ 07 · For the autonomous loop</div>
+      <div>
+        <h2 class="sec-title">The mark is finished.</h2>
+        <p class="sec-desc">If a future loop is tempted to redesign the brand mark, add per-show variants, or replace the wordmark — read this section and stop.</p>
+      </div>
+    </div>
+
+    <div class="directives">
+      <div class="directives-head">
+        <h3>Brand directives — do not break.</h3>
+        <a class="directives-link" href="CLAUDE.md">read CLAUDE.md →</a>
+      </div>
+      <p>The Pantheon brand mark is the <b>only</b> SVG illustration in the entire product. Its source is the inline <code>&lt;svg viewBox="0 0 28 28"&gt;</code> block found in every page header. It is built on integers, stroked at 1.4 units in <code>currentColor</code>, with no fill anywhere. It is shared across every show.</p>
+      <p>The wordmark "Pantheon" is set in Source Serif 4, weight 600, with the mark sitting 10px to its left. This lockup appears in every header and footer. It does not change. There are no per-show wordmark variants.</p>
+      <p>Where you would otherwise be tempted to add a custom show glyph, mascot, badge, or icon — <b>use the bullet pattern</b>: a filled circle in <code>var(--show-primary)</code> at 8–16px. See <code>Pantheon · Show Identity.html</code> § 03 for the canonical examples.</p>
+      <p style="margin-top:24px"><b>Files that carry the mark:</b> <code>Pantheon · Tokens.html</code>, <code>Pantheon · Show Identity.html</code>, <code>Pantheon · Compositions.html</code>, <code>Pantheon · Brand.html</code>, <code>Pantheon · Survivor.html</code>, and every production page via <code>compositions/screens.jsx</code> (<code>&lt;TopNav&gt;</code>). Change in one place — the inline SVG — only with explicit human review.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Pantheon · visual system · v0.2 · 2026</span>
+    <span>the seasons, ranked. no spoilers.</span>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================ MARK SOURCE
+     The single source of truth for the brand mark. Every rendering on this
+     page reads from this template — change one number, see it everywhere. */
+  const MARK = (size, color = "currentColor", paper = null) => `
+    <svg viewBox="0 0 28 28" width="${size}" height="${size}" aria-hidden="true" style="display:block">
+      <path d="M2 11 L14 3 L26 11 Z" fill="none" stroke="${color}" stroke-width="1.4"/>
+      <line x1="5" y1="14" x2="5" y2="25" stroke="${color}" stroke-width="1.4"/>
+      <line x1="14" y1="14" x2="14" y2="25" stroke="${color}" stroke-width="1.4"/>
+      <line x1="23" y1="14" x2="23" y2="25" stroke="${color}" stroke-width="1.4"/>
+      <line x1="2" y1="26" x2="26" y2="26" stroke="${color}" stroke-width="1.4"/>
+    </svg>
+  `;
+
+  // ============================================================ §02 SCALE
+  const SCALE = [
+    { size: 16,  label: "16px",  use: "Favicon · OG mark" },
+    { size: 22,  label: "22px",  use: "Topnav · default header" },
+    { size: 28,  label: "28px",  use: "Doc topbar · light density" },
+    { size: 48,  label: "48px",  use: "About page · section heads" },
+    { size: 96,  label: "96px",  use: "Splash · share images" },
+    { size: 240, label: "240px", use: "Hero · brand reference only" },
+  ];
+  document.getElementById("scale-row").innerHTML = SCALE.map(s => `
+    <div class="scale-cell">
+      <div class="scale-glyph">${MARK(s.size > 88 ? 88 : s.size, "var(--ink-0)")}</div>
+      <div class="scale-meta">
+        <div class="scale-px">${s.label}</div>
+        <div class="scale-use">${s.use}</div>
+      </div>
+    </div>
+  `).join("");
+
+  // ============================================================ §03 MODES
+  const MODES = [
+    { paper: "var(--paper-0)", ink: "var(--ink-0)",  label: "dark",      sub: "default" },
+    { paper: "#F5EFE3",        ink: "#1A1610",       label: "light",     sub: "secondary" },
+    { paper: "#0E2A2A",        ink: "#EFE2BD",       label: "Survivor",  sub: "tinted" },
+    { paper: "#1B2418",        ink: "#ECDFC6",       label: "Top Chef",  sub: "tinted" },
+    { paper: "#2D0B2A",        ink: "#F2E1D2",       label: "Drag Race", sub: "tinted" },
+  ];
+  document.getElementById("modes-row").innerHTML = MODES.map(m => `
+    <div class="mode-tile">
+      <div class="mode-stage" style="background:${m.paper};color:${m.ink}">
+        ${MARK(72, m.ink)}
+      </div>
+      <div class="mode-meta">
+        <b>${m.label}</b>
+        <span>${m.sub}</span>
+      </div>
+    </div>
+  `).join("");
+
+  // ============================================================ §04 TINTED HEADERS
+  const TINTED = [
+    { paper: "#0E2A2A", ink: "#EFE2BD", primary: "#D55E36", name: "Pantheons / Survivor"   },
+    { paper: "#1B2418", ink: "#ECDFC6", primary: "#B86A2E", name: "Pantheons / Top Chef"   },
+    { paper: "#2D0B2A", ink: "#F2E1D2", primary: "#E64B86", name: "Pantheons / Drag Race"  },
+  ];
+  document.getElementById("tinted-headers").innerHTML = TINTED.map(t => `
+    <div class="tinted-card">
+      <div class="tinted-anno">${t.name}</div>
+      <div class="tinted-header" style="background:${t.paper};color:${t.ink}">
+        <a class="h-brand" href="#">
+          ${MARK(20, t.ink)}
+          <span>Pantheon</span>
+        </a>
+        <span style="display:inline-flex;align-items:center;gap:8px;font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:0.55">
+          <span style="width:8px;height:8px;border-radius:999px;background:${t.primary}"></span>
+          live
+        </span>
+      </div>
+    </div>
+  `).join("");
+</script>
+
+</body>
+</html>
