@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useRef } from 'react'
 import { initialState, reduce, type VotePairState } from '@/lib/votePair'
 
 type VotePairProps = {
@@ -18,13 +18,34 @@ function reducer(state: VotePairState, action: Action): VotePairState {
   return reduce(state, action)
 }
 
+/**
+ * VotePair — design port of `design/compositions/interactions.jsx`.
+ *
+ * Pill-shaped container with three cells: down button, count, up button.
+ * Clicking flashes the button background in the matching sentiment color
+ * for the lock window, and the count slides 8px in the vote's direction
+ * (up vote = count slides up). `prefers-reduced-motion` collapses the
+ * slide to an opacity fade per `design/tokens.json` motion.reduced.
+ *
+ * Wiring to `/api/vote` is fire-and-forget for phase 9; phase 11 lands
+ * the real persistence + error recovery. The optimistic count + flash
+ * runs regardless of network outcome — see decisions in
+ * plan/phases/phase_9_season_page.md.
+ */
 export function VotePair({
   initialCount = 0,
   targetType,
   targetId,
-  label = 'votes',
+  label = 'net votes',
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
+  const reduced = useRef(false)
+
+  useEffect(() => {
+    reduced.current =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true
+  }, [])
 
   useEffect(() => {
     if (state.phase !== 'locked' || state.lockedUntil == null) return
@@ -41,43 +62,93 @@ export function VotePair({
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ targetType, targetId, value: direction === 'up' ? 1 : -1 }),
     }).catch(() => {
-      /* phase 9 ships the optimistic update only — network failures are
-         tolerated; the user sees the count change either way. phase 11
-         wires real persistence + error recovery. */
+      /* Optimistic-only path for phase 9. Phase 11 wires recovery. */
     })
   }
 
   const disabled = state.phase === 'locked'
-  const flashUp = state.flash === 'up' ? ' flash' : ''
-  const flashDown = state.flash === 'down' ? ' flash' : ''
+  // Bump derives from flash so the count slides UP for an up-vote and
+  // DOWN for a down-vote. -8px translation in the slide direction.
+  const bump = state.flash === 'up' ? 1 : state.flash === 'down' ? -1 : 0
+  const flashUpClass = state.flash === 'up' ? ' flash' : ''
+  const flashDownClass = state.flash === 'down' ? ' flash' : ''
+
+  const numStyle = reduced.current
+    ? { transform: 'none', opacity: state.flash ? 0.6 : 1 }
+    : { transform: `translateY(${bump * -8}px)` }
 
   return (
-    <div className="vote-pair" data-testid="vote-pair" data-vote-value={state.value}>
+    <div
+      className="vote-pair"
+      data-testid="vote-pair"
+      data-vote-value={state.value}
+      aria-label={`Vote on ${label}`}
+    >
       <button
         type="button"
-        className={`vote-btn vote-down${flashDown}`}
+        className={`vote-btn vote-down${flashDownClass}`}
         onClick={onClick('down')}
         disabled={disabled}
-        aria-label="Vote down"
+        aria-label={`Vote down ${label}`}
         data-testid="vote-down"
       >
-        −
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path
+            d="M5 12 L12 19 L19 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <line
+            x1="12"
+            y1="5"
+            x2="12"
+            y2="19"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
-      <div className="vote-count">
-        <span className="vote-num" data-testid="vote-count">
-          {state.count}
+      <div className={`vote-count${state.flash ? ' moving' : ''}`}>
+        <span
+          className={`vote-num${reduced.current ? ' reduced' : ''}`}
+          data-testid="vote-count"
+          style={numStyle}
+        >
+          {state.count.toLocaleString()}
         </span>
         <span className="vote-label">{label}</span>
       </div>
       <button
         type="button"
-        className={`vote-btn vote-up${flashUp}`}
+        className={`vote-btn vote-up${flashUpClass}`}
         onClick={onClick('up')}
         disabled={disabled}
-        aria-label="Vote up"
+        aria-label={`Vote up ${label}`}
         data-testid="vote-up"
       >
-        +
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path
+            d="M5 12 L12 5 L19 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <line
+            x1="12"
+            y1="19"
+            x2="12"
+            y2="5"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
     </div>
   )

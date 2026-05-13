@@ -25,4 +25,25 @@ describe('<ShowPaletteScope>', () => {
     const node = screen.getByTestId('show-palette-scope') as HTMLDivElement
     expect(node.style.getPropertyValue('--show-primary')).toBe('')
   })
+
+  it('asSegment mode fills the viewport with the show paper', () => {
+    render(
+      <ShowPaletteScope palette={PALETTE} asSegment>
+        x
+      </ShowPaletteScope>,
+    )
+    const node = screen.getByTestId('show-palette-scope') as HTMLDivElement
+    expect(node.dataset['segment']).toBe('true')
+    expect(node.style.background).toBe('var(--show-paper)')
+    expect(node.style.minHeight).toBe('100dvh')
+    expect(node.className).toMatch(/flex/)
+  })
+
+  it('asSegment defaults to off — no segment data attr, no bg', () => {
+    render(<ShowPaletteScope palette={PALETTE}>x</ShowPaletteScope>)
+    const node = screen.getByTestId('show-palette-scope') as HTMLDivElement
+    expect(node.dataset['segment']).toBeUndefined()
+    expect(node.style.background).toBe('')
+    expect(node.style.minHeight).toBe('')
+  })
 })

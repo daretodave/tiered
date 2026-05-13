@@ -16,23 +16,23 @@ export function FeaturedThemes({ show }: FeaturedThemesProps) {
 
   return (
     <aside
-      className="flex flex-col gap-2 rounded-lg border border-line-soft bg-paper-1 p-5"
+      className="featured-themes"
       data-testid="featured-themes"
       aria-labelledby={`featured-themes-${show}`}
     >
       <h2
         id={`featured-themes-${show}`}
-        className="font-serif text-lg text-ink-0"
+        className="featured-themes-head"
       >
         Featured in themes
       </h2>
-      <ul className="flex flex-col gap-1">
+      <ul className="featured-themes-list">
         {themes.map((theme) => (
           <li key={theme.slug}>
             <Link
               href={`/themes/${theme.slug}`}
               prefetch={false}
-              className="text-primary-base underline hover:opacity-80"
+              className="featured-themes-link"
               data-testid="featured-theme-link"
             >
               {theme.title}

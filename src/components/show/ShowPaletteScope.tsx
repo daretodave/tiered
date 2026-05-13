@@ -10,6 +10,17 @@ type Palette = {
 type ShowPaletteScopeProps = {
   show?: string
   palette?: Palette | null
+  /**
+   * When true, the scope div takes over the full segment: it fills the
+   * body flex column (flex-1 + min-height: 100dvh), sets the show paper
+   * as background, and the show ink as color. Use on a route segment
+   * layout (e.g. `src/app/shows/[show]/layout.tsx`) so no Pantheon dark
+   * paper bleeds through above / below / between sections. When false
+   * (default), the scope is a region-level CSS-var injector only — no
+   * background or sizing, suitable for wrapping a single hero block on
+   * an otherwise-neutral page.
+   */
+  asSegment?: boolean
   children?: ReactNode
 } & Omit<HTMLAttributes<HTMLDivElement>, 'style' | 'children'>
 
@@ -25,6 +36,7 @@ function paletteCssVars(palette: Palette | null | undefined): CSSProperties {
 export function ShowPaletteScope({
   show,
   palette,
+  asSegment = false,
   children,
   className,
   ...rest
@@ -38,12 +50,25 @@ export function ShowPaletteScope({
     if (fromContent) resolved = fromContent.palette
   }
 
+  const vars = paletteCssVars(resolved)
+  const segmentStyle: CSSProperties = asSegment
+    ? {
+        background: 'var(--show-paper)',
+        color: 'var(--show-ink)',
+        minHeight: '100dvh',
+      }
+    : {}
+
+  const segmentClass = asSegment ? 'flex flex-1 flex-col' : ''
+  const composedClass = [segmentClass, className].filter(Boolean).join(' ') || undefined
+
   return (
     <div
       data-show={show ?? undefined}
       data-testid="show-palette-scope"
-      style={paletteCssVars(resolved)}
-      className={className}
+      data-segment={asSegment ? 'true' : undefined}
+      style={{ ...vars, ...segmentStyle }}
+      className={composedClass}
       {...rest}
     >
       {children}

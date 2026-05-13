@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Sign in',
-    description: 'Sign in to pantheon via magic link.',
+    description: 'Sign in to pantheon. Magic link by email.',
     path: '/sign-in',
     noIndex: true,
   })
@@ -63,7 +63,7 @@ export default async function SignInPage({
       </form>
 
       <p className="text-xs text-ink-3">
-        We use Auth0 magic links. Your email is only used to send the link.
+        Magic link by email. Your address is only used to send the link.
       </p>
     </section>
   )

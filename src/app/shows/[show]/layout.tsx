@@ -18,7 +18,7 @@ export default function ShowSegmentLayout({
   if (!show) notFound()
 
   return (
-    <ShowPaletteScope show={show.slug} palette={show.palette}>
+    <ShowPaletteScope show={show.slug} palette={show.palette} asSegment>
       <SkipToMain />
       <Header tinted />
       <main id="main" className="flex-1">

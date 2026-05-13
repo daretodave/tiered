@@ -262,6 +262,80 @@
 .season-vote-q { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--show-ink); letter-spacing: -0.01em; }
 .season-vote-meta { font: 400 12px/1.4 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-top: 6px; letter-spacing: 0.04em; }
 
+/* ============================================================ VOTE PAIR
+   Design source: design/compositions/interactions.jsx (VotePair) +
+   design/compositions/screens.css §VOTE PAIR. Pill container; three
+   cells (down / count / up); flash on the clicked button; count
+   slides 8px in the vote direction; reduced-motion replaces slide
+   with opacity fade. */
+.vote-pair {
+  display: inline-grid; grid-template-columns: auto auto auto;
+  align-items: stretch;
+  border: 1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+  border-radius: 999px;
+  background: var(--show-paper);
+  overflow: hidden;
+}
+.vote-btn {
+  appearance: none; background: transparent; border: 0;
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--show-ink);
+  cursor: pointer;
+  transition: background 240ms cubic-bezier(.4,0,.2,1), color 240ms cubic-bezier(.4,0,.2,1);
+}
+.vote-btn:hover:not(:disabled) { background: color-mix(in oklab, var(--show-ink) 8%, transparent); }
+.vote-btn:disabled { cursor: default; }
+.vote-btn.vote-down.flash { background: color-mix(in oklab, var(--s-warm-down) 30%, transparent); color: var(--s-warm-down); }
+.vote-btn.vote-up.flash   { background: color-mix(in oklab, var(--s-warm-up)   30%, transparent); color: var(--s-warm-up);   }
+.vote-count {
+  min-width: 140px;
+  padding: 0 22px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  border-left: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+  border-right: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+  overflow: hidden;
+}
+.vote-num {
+  font: 500 28px/1 var(--mono); color: var(--show-ink); letter-spacing: -0.01em;
+  transition: transform 240ms cubic-bezier(.4,0,.2,1);
+}
+.vote-num.reduced { transition: opacity 240ms cubic-bezier(.4,0,.2,1); }
+.vote-label {
+  margin-top: 6px;
+  font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--show-ink) 50%, transparent);
+}
+
+/* ============================================================ FEATURED THEMES
+   The cross-link strip below the season grid on a show home. Lives in
+   the show segment so it inherits the show palette via CSS vars —
+   transparent background + show-ink border keeps the show paper
+   visible end-to-end (no dark Pantheon paper island). */
+.featured-themes {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 24px 28px;
+  border: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
+  color: var(--show-ink);
+}
+.featured-themes-head {
+  font-family: var(--serif); font-weight: 500; font-size: 20px;
+  letter-spacing: -0.01em; color: var(--show-ink);
+  margin: 0;
+}
+.featured-themes-list {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.featured-themes-link {
+  font-family: var(--serif); font-size: 16px; line-height: 1.55;
+  color: var(--show-primary);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.featured-themes-link:hover { opacity: 0.8; }
+
 .season-related {
   margin-top: 64px;
   display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
