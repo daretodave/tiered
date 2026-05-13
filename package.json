@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.20.0",
+    "@supabase/supabase-js": "^2.105.4",
     "@vercel/analytics": "^2.0.0",
     "@vercel/speed-insights": "^1.0.0",
     "gray-matter": "^4.0.3",
