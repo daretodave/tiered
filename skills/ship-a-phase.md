@@ -78,12 +78,24 @@ Spawn sub-agents aggressively. They protect main-agent context
 and parallelize independent work.
 
 - **`scout`** — every external research need.
-- **Domain specialists** — for prose drafting, schema work,
-  observation. See `.claude/agents/`.
-- **Parallel calls** when work is independent.
+- **`brander`** — canonical delegate for phase 4 (facade
+  primitives), phase 5 (three pioneer show facades — three
+  parallel calls), phase 17 (per-route OG image PNG rendering),
+  phase 25 (sigil refresh). See
+  `plan/phases/phase_5_pioneer_facades.md` for the parallel
+  invocation pattern.
+- **`content-curator`** — canonical delegate for any phase
+  that writes content/ (show frontmatter, season blurbs, canon
+  rationales, themed lists). Strict word counts + spoiler
+  discipline live in the agent.
+- **`data-steward`** — canonical delegate for phases 10–13
+  (auth + vote + comment + mod backends). SQL migrations + RLS.
+- **Parallel calls** when work is independent. The phase 5
+  brander triple is the canonical example — three Agent calls
+  in one message, not three sequential ones.
 
-The main agent's job is wiring, code, decisions. Delegate prose
-and research.
+The main agent's job is wiring, code, decisions. Delegate prose,
+research, asset generation, and schema work.
 
 ## 5. The page-family / feature-surface shape
 
