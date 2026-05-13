@@ -20,15 +20,33 @@
 }
 
 .screen {
-  --paper-0:#0E0B08; --paper-1:#15110C; --paper-2:#1E1812; --paper-3:#2A2218;
-  --line-soft:#241D14; --line:#3A2F22; --line-loud:#5A4A35;
-  --ink-3:#6E6353; --ink-2:#9D9485; --ink-1:#D8CFBE; --ink-0:#F2EADB;
-  --primary:#E8B65A;
-  --s-warm-up:#E0843A; --s-warm-down:#5A8FA6; --s-neutral:#8C8275;
-  --s-hold:#7A8F5C; --s-verdict:#B57FB8; --s-consensus:#D5A93D;
-  --serif:'Source Serif 4', Georgia, serif;
-  --sans:'Inter', system-ui, sans-serif;
-  --mono:'JetBrains Mono', ui-monospace, monospace;
+  /* Aliases to the global theme tokens (declared in tokens.css). These
+     short names date back to the design's HTML pages where the theme
+     was hardcoded to dark; in production they MUST forward to the
+     theme-aware --color-* tokens so light mode actually flips the
+     paper. Previously these were hardcoded dark hex, which is why the
+     home page bled black in light mode. */
+  --paper-0: var(--color-paper-0);
+  --paper-1: var(--color-paper-1);
+  --paper-2: var(--color-paper-2);
+  --paper-3: var(--color-paper-3);
+  --line-soft: var(--color-line-soft);
+  --line: var(--color-line-base);
+  --line-loud: var(--color-line-loud);
+  --ink-0: var(--color-ink-0);
+  --ink-1: var(--color-ink-1);
+  --ink-2: var(--color-ink-2);
+  --ink-3: var(--color-ink-3);
+  --primary: var(--color-primary-base);
+  --s-warm-up: var(--color-sentiment-warm-up);
+  --s-warm-down: var(--color-sentiment-warm-down);
+  --s-neutral: var(--color-sentiment-neutral);
+  --s-hold: var(--color-sentiment-hold);
+  --s-verdict: var(--color-sentiment-verdict);
+  --s-consensus: var(--color-sentiment-consensus);
+  --serif: var(--font-family-serif);
+  --sans: var(--font-family-sans);
+  --mono: var(--font-family-mono);
   background: var(--paper-0);
   color: var(--ink-1);
   font-family: var(--sans);
