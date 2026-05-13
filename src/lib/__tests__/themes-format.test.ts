@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   filterModeText,
   formatRevisedAgo,
+  formatRevisedRelative,
   formatRevisedYear,
   formatThemeStatus,
   GROUP_HEAD_LABELS,
@@ -34,6 +35,24 @@ describe('formatRevisedAgo', () => {
   it('returns "this year" beyond 31 days', () => {
     expect(formatRevisedAgo('2026-01-01', today)).toBe('this year')
     expect(formatRevisedAgo('2024-08-01', today)).toBe('this year')
+  })
+})
+
+describe('formatRevisedRelative', () => {
+  const today = new Date('2026-05-13T00:00:00Z')
+
+  it('returns "this week" within 7 days', () => {
+    expect(formatRevisedRelative('2026-05-10', today)).toBe('this week')
+    expect(formatRevisedRelative('2026-05-13', today)).toBe('this week')
+  })
+
+  it('returns "this month" within 31 days', () => {
+    expect(formatRevisedRelative('2026-04-20', today)).toBe('this month')
+  })
+
+  it('returns YYYY-MM beyond 31 days', () => {
+    expect(formatRevisedRelative('2026-01-01', today)).toBe('2026-01')
+    expect(formatRevisedRelative('2024-08-15', today)).toBe('2024-08')
   })
 })
 

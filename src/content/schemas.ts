@@ -127,11 +127,24 @@ export const themeSentimentEnum = z.enum([
 
 export type ThemeSentiment = z.infer<typeof themeSentimentEnum>
 
+// Theme taglines may include at most one well-formed `<b>…</b>` emphasis
+// span — the renderer is regex-bounded (see <ListDetailHero>'s parser).
+// Anything richer is rejected here at validation time so curator errors
+// surface in `pnpm content:check` rather than at render time.
+const taglineEmphasis = /^[^<]*(<b>[^<]*<\/b>[^<]*)?$/
+
 const themeFrontmatterObject = z.object({
   slug,
   title: z.string().min(1).max(80),
   description: z.string().min(1).max(280),
-  tagline: z.string().min(1).max(360),
+  tagline: z
+    .string()
+    .min(1)
+    .max(360)
+    .regex(taglineEmphasis, {
+      message:
+        'tagline allows at most one well-formed <b>...</b> emphasis span',
+    }),
   category: themeCategorySchema,
   sentiment: themeSentimentEnum.default('hold'),
   status: themeStatusSchema.default('stable'),

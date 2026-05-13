@@ -23,4 +23,27 @@ describe('<Wrap>', () => {
     expect(screen.getByTestId('wrap').className).toContain('extra')
     expect(screen.getByTestId('wrap').className).toContain('wrap')
   })
+
+  it('defaults to width="default" with no narrow class', () => {
+    render(
+      <Wrap>
+        <span />
+      </Wrap>,
+    )
+    const wrap = screen.getByTestId('wrap')
+    expect(wrap.dataset.width).toBe('default')
+    expect(wrap.className).not.toContain('narrow')
+  })
+
+  it('renders width="narrow" with the narrow class for 1100px shells', () => {
+    render(
+      <Wrap width="narrow">
+        <span />
+      </Wrap>,
+    )
+    const wrap = screen.getByTestId('wrap')
+    expect(wrap.dataset.width).toBe('narrow')
+    expect(wrap.className).toContain('narrow')
+    expect(wrap.className).toContain('wrap')
+  })
 })

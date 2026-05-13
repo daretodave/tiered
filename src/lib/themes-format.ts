@@ -20,6 +20,20 @@ export function formatRevisedAgo(iso: string, today: Date = new Date()): string 
   return 'this year'
 }
 
+// List-detail meta strip variant: "this week" / "this month" / "YYYY-MM"
+// for the "Last revised" cell on /themes/[theme]. Older revisions surface
+// as a year-month stamp so the cell stays terse rather than collapsing to
+// the vague "this year".
+export function formatRevisedRelative(
+  iso: string,
+  today: Date = new Date(),
+): string {
+  const diff = dayDiff(iso, today)
+  if (diff <= 7) return 'this week'
+  if (diff <= 31) return 'this month'
+  return iso.slice(0, 7)
+}
+
 export function formatThemeStatus(
   status: ThemeStatus,
   lastRevised: string,
