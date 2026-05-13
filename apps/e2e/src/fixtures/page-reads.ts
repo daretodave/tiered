@@ -19,7 +19,13 @@ export const pageReads: Record<string, PageReadAssertion> = {
     expectJsonLdType: 'CollectionPage',
   },
   '/shows/[show]': {
-    expectVisible: ['[data-testid=facade]', '[data-testid=season-grid]'],
+    expectVisible: [
+      '[data-testid=facade]',
+      '[data-testid=season-grid]',
+      '[data-testid=shield-badge]',
+      '[data-testid=show-hero]',
+      '[data-testid=show-split]',
+    ],
     expectJsonLdType: 'CollectionPage',
   },
   '/shows/[show]/canon': {
