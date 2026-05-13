@@ -1,7 +1,10 @@
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
+import { auth0 } from '@/lib/auth0'
 import { buildMetadata } from '@/lib/seo'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
@@ -12,44 +15,56 @@ export function generateMetadata(): Metadata {
   })
 }
 
-export default function SignInPage() {
+export default async function SignInPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ return?: string }>
+}) {
+  const session = await auth0.getSession()
+  const params = (await searchParams) ?? {}
+  const returnTo = params.return ?? '/'
+
+  if (session?.user) {
+    redirect(returnTo)
+  }
+
+  const loginHref = `/auth/login?returnTo=${encodeURIComponent(returnTo)}`
+
   return (
-    <section className="mx-auto flex max-w-md flex-col gap-6 px-6 py-16 md:py-24">
+    <section
+      className="mx-auto flex max-w-md flex-col gap-6 px-6 py-16 md:py-24"
+      data-testid="sign-in-page"
+    >
       <header className="flex flex-col gap-2">
         <h1 className="font-serif text-3xl leading-tight text-ink-0 md:text-4xl">
           Sign in
         </h1>
         <p className="text-ink-2">
-          Magic link via email. No password. Lands in phase 10.
+          Magic link via email. No passwords, no social. The link arrives in
+          your inbox; click it to land back here, signed in.
         </p>
       </header>
 
       <form
-        action="/api/auth/login"
+        action={loginHref}
         method="get"
         className="flex flex-col gap-3"
         aria-label="Sign in with email"
+        data-testid="sign-in-form"
       >
-        <label htmlFor="email" className="text-sm text-ink-1">
-          Email
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          placeholder="you@example.com"
-          disabled
-          className="rounded border border-line-base bg-paper-1 px-3 py-2 text-ink-1"
-        />
-        <button
-          type="submit"
-          disabled
-          className="rounded border border-line-base bg-paper-1 px-4 py-2 text-ink-2"
+        <Link
+          href={loginHref}
+          prefetch={false}
+          className="inline-flex items-center justify-center rounded border border-primary-base bg-primary-base px-4 py-3 text-sm font-medium text-paper-0 hover:opacity-90"
+          data-testid="sign-in-continue"
         >
-          Send magic link
-        </button>
+          Continue with email
+        </Link>
       </form>
+
+      <p className="text-xs text-ink-3">
+        We use Auth0 magic links. Your email is only used to send the link.
+      </p>
     </section>
   )
 }
