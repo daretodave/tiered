@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Best premieres ever · Lists · Pantheon</title>
+<meta name="description" content="The cold opens that promised a season worth staying for. Ranked across every Pantheon canon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper-0:#0E0B08; --paper-1:#15110C; --paper-2:#1E1812; --paper-3:#2A2218;
+    --line-soft:#241D14; --line:#3A2F22; --line-loud:#5A4A35;
+    --ink-3:#6E6353; --ink-2:#9D9485; --ink-1:#D8CFBE; --ink-0:#F2EADB;
+    --primary:#E8B65A;
+    --s-warm-up:#E0843A; --s-hold:#7A8F5C;
+    --c-survivor:#D55E36; --c-topchef:#B86A2E; --c-dragrace:#E64B86;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --r-md:8px;
+    --d-base:240ms; --e-settle:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper-0);color:var(--ink-1);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--primary);color:var(--paper-0)}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+  .bullet{display:inline-block;border-radius:999px;flex-shrink:0;vertical-align:baseline}
+
+  /* NAV */
+  .topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:color-mix(in oklab, var(--paper-0) 92%, transparent);border-bottom:1px solid var(--line-soft);backdrop-filter:blur(10px)}
+  @media(max-width:720px){.topnav{padding:14px 16px}}
+  .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-0);letter-spacing:-0.01em}
+  .topnav-links{display:flex;gap:28px;font-size:14px;color:var(--ink-2)}
+  .topnav-links a:hover, .topnav-links a.current{color:var(--ink-0)}
+  @media(max-width:720px){.topnav-links{display:none}}
+  .topnav-right{display:flex;align-items:center;gap:18px}
+  .topnav-search{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  @media(max-width:720px){.topnav-search{display:none}}
+  .topnav-signin{font:500 12px/1 var(--sans);padding:9px 16px;background:var(--ink-0);color:var(--paper-0);border-radius:999px;letter-spacing:.02em}
+
+  /* SHELL */
+  .shell{max-width:1100px;margin:0 auto;padding:0 40px}
+  @media(max-width:720px){.shell{padding:0 20px}}
+
+  /* HERO */
+  header.hero{padding:80px 0 64px;border-bottom:1px solid var(--line-soft)}
+  @media(max-width:720px){header.hero{padding:48px 0 40px}}
+  .crumb{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:32px}
+  .crumb .bullet-stack{display:inline-flex;gap:3px}
+  .crumb .bullet-stack .bullet{width:9px;height:9px}
+  .crumb a:hover{color:var(--ink-1)}
+  .crumb span.current{color:var(--ink-1)}
+  h1.list-title{font-family:var(--serif);font-weight:500;font-size:88px;line-height:0.96;letter-spacing:-0.03em;color:var(--ink-0);margin:0 0 24px;text-wrap:balance}
+  @media(max-width:820px){h1.list-title{font-size:56px}}
+  @media(max-width:560px){h1.list-title{font-size:40px}}
+  .list-blurb{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.5;color:var(--ink-1);max-width:680px;margin:0 0 32px;text-wrap:pretty}
+  @media(max-width:560px){.list-blurb{font-size:17px}}
+  .list-blurb b{color:var(--ink-0);font-style:normal;font-weight:500}
+
+  .list-meta{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
+    margin-top:32px;
+  }
+  @media(max-width:720px){.list-meta{grid-template-columns:repeat(2,1fr)}}
+  .meta-cell{padding:18px 20px;background:var(--paper-1);border-right:1px solid var(--line)}
+  .meta-cell:last-child{border-right:0}
+  @media(max-width:720px){.meta-cell:nth-child(2n){border-right:0};.meta-cell:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+  .meta-key{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+  .meta-val{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink-0);letter-spacing:-0.01em}
+
+  .list-tools{
+    margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  }
+  .tools-left{display:flex;gap:8px;flex-wrap:wrap}
+  .tool-btn{appearance:none;background:transparent;border:1px solid var(--line);color:var(--ink-2);font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;cursor:pointer;transition:all var(--d-base) var(--e-settle)}
+  .tool-btn:hover{color:var(--ink-0);border-color:var(--ink-3)}
+  .tool-btn.shield{display:inline-flex;align-items:center;gap:8px;border-color:color-mix(in oklab, var(--s-hold) 35%, var(--line));color:var(--s-hold);cursor:default}
+  .tool-btn.shield .dot{font-size:7px}
+  .tool-btn.shield:hover{color:var(--s-hold);border-color:color-mix(in oklab, var(--s-hold) 35%, var(--line))}
+
+  /* LIST BODY */
+  section.entries{padding:64px 0;border-bottom:1px solid var(--line-soft)}
+  @media(max-width:720px){section.entries{padding:48px 0}}
+  .entries-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;gap:16px;flex-wrap:wrap}
+  .entries-head h2{font-family:var(--serif);font-weight:500;font-size:28px;color:var(--ink-0);margin:0;letter-spacing:-0.02em}
+  @media(max-width:720px){.entries-head h2{font-size:22px}}
+  .entries-meta{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+
+  .entry-stack{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper-1)}
+
+  .entry-row{
+    display:grid;grid-template-columns:72px auto 1fr auto;gap:24px;align-items:start;
+    padding:24px 28px;border-bottom:1px solid var(--line-soft);
+    transition:background var(--d-base) var(--e-settle);
+  }
+  .entry-row:last-child{border-bottom:0}
+  .entry-row:hover{background:var(--paper-2);cursor:pointer}
+  @media(max-width:820px){.entry-row{grid-template-columns:48px auto 1fr;gap:14px;padding:18px 18px}.entry-row .entry-arrow{display:none}}
+  .entry-rank{font:500 26px/1 var(--mono);color:var(--primary);letter-spacing:-0.015em;padding-top:4px}
+  @media(max-width:820px){.entry-rank{font-size:20px}}
+  .entry-bullet{padding-top:9px}
+  .entry-bullet .bullet{width:14px;height:14px}
+  @media(max-width:820px){.entry-bullet{padding-top:6px}.entry-bullet .bullet{width:12px;height:12px}}
+  .entry-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .entry-meta-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .entry-meta-line .show{color:var(--ink-1)}
+  .entry-title{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ink-0);letter-spacing:-0.015em;line-height:1.2;text-wrap:balance}
+  @media(max-width:560px){.entry-title{font-size:18px}}
+  .entry-blurb{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-2);line-height:1.55;margin:0;text-wrap:pretty}
+  @media(max-width:560px){.entry-blurb{font-size:14px}}
+  .entry-arrow{color:var(--ink-3);font-size:18px;padding-top:6px}
+  .entry-row:hover .entry-arrow{color:var(--primary)}
+
+  /* ADJACENT */
+  section.adjacent{padding:64px 0;border-bottom:1px solid var(--line-soft)}
+  .adj-head{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+  .adj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  @media(max-width:560px){.adj-grid{grid-template-columns:1fr}}
+  .adj-link{padding:24px 28px;background:var(--paper-1);display:block;transition:background var(--d-base) var(--e-settle)}
+  .adj-link:hover{background:var(--paper-2)}
+  .adj-next{text-align:right}
+  .adj-tag{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
+  .adj-title{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ink-0);letter-spacing:-0.015em;line-height:1.25;text-wrap:balance}
+  .adj-blurb{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.45}
+
+  /* FOOTER */
+  footer.pf-footer{padding:48px 40px 40px;border-top:1px solid var(--line-soft);display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;max-width:1240px;margin:0 auto;width:100%}
+  @media(max-width:820px){footer.pf-footer{grid-template-columns:1fr;padding:32px 20px}}
+  .foot-brand{display:flex;flex-direction:column;gap:10px}
+  .foot-promise{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);margin:0}
+  .foot-promise em{color:var(--primary)}
+  .foot-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+  .foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .foot-col a{font:400 14px/1.4 var(--sans);color:var(--ink-1)}
+  .foot-col a:hover{color:var(--ink-0)}
+  .foot-meta{grid-column:1 / -1;padding-top:20px;margin-top:8px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 12px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a class="topnav-brand" href="#">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+    <span>Pantheon</span>
+  </a>
+  <div class="topnav-links">
+    <a href="#">Shows</a>
+    <a href="Pantheon · Lists.html" class="current">Lists</a>
+    <a href="#">About</a>
+  </div>
+  <div class="topnav-right">
+    <a class="topnav-search" href="#">⌕ Search</a>
+    <a class="topnav-signin" href="#">Sign in</a>
+  </div>
+</nav>
+
+<div class="shell">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="crumb">
+    <span class="bullet-stack">
+      <span class="bullet" style="background:var(--c-survivor)"></span>
+      <span class="bullet" style="background:var(--c-topchef)"></span>
+      <span class="bullet" style="background:var(--c-dragrace)"></span>
+    </span>
+    <a href="Pantheon · Lists.html">Lists</a>
+    <span style="opacity:.4">/</span>
+    <span class="current">Best premieres ever</span>
+  </div>
+
+  <h1 class="list-title">Best premieres ever.</h1>
+  <p class="list-blurb">The cold opens, the casting reveals, the first hours that taught us what a season would be. <b>Cross-canon and spoiler-safe by definition</b> — there's nothing to spoil in episode one.</p>
+
+  <div class="list-meta">
+    <div class="meta-cell">
+      <div class="meta-key">Entries</div>
+      <div class="meta-val">24 episodes</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-key">Spans</div>
+      <div class="meta-val">3 shows</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-key">Curated by</div>
+      <div class="meta-val">M. Reyes</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-key">Last revised</div>
+      <div class="meta-val">this week</div>
+    </div>
+  </div>
+
+  <div class="list-tools">
+    <div class="tools-left">
+      <button class="tool-btn">Save list</button>
+      <button class="tool-btn">Share</button>
+      <button class="tool-btn">Suggest an entry</button>
+    </div>
+    <span class="tool-btn shield"><span class="dot">●</span>No spoilers · reviewed</span>
+  </div>
+</header>
+
+<!-- LIST -->
+<section class="entries">
+  <div class="entries-head">
+    <h2>The 24, in order.</h2>
+    <span class="entries-meta">Ranked · Editor's Canon</span>
+  </div>
+  <div class="entry-stack" id="entry-stack"></div>
+</section>
+
+<!-- ADJACENT -->
+<section class="adjacent">
+  <div class="adj-head">More lists in this vein</div>
+  <div class="adj-grid">
+    <a class="adj-link" href="#">
+      <div class="adj-tag">↩ similar craft list</div>
+      <div class="adj-title">The casting director's high-water marks</div>
+      <div class="adj-blurb">15 seasons where casting did the editors' work for them.</div>
+    </a>
+    <a class="adj-link adj-next" href="#">
+      <div class="adj-tag">cross-canon list ↪</div>
+      <div class="adj-title">Quietly perfect bottle seasons</div>
+      <div class="adj-blurb">Single locations, fixed casts, full arcs. Nine of them.</div>
+    </a>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="pf-footer">
+  <div class="foot-brand">
+    <a class="topnav-brand" href="#">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span>Pantheon</span>
+    </a>
+    <p class="foot-promise">the seasons, ranked. <em>no spoilers.</em></p>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheons</h5>
+    <ul>
+      <li><a href="Pantheon · Survivor.html"><span class="bullet" style="width:8px;height:8px;background:var(--c-survivor);margin-right:8px"></span>Survivor</a></li>
+      <li><a href="#"><span class="bullet" style="width:8px;height:8px;background:var(--c-topchef);margin-right:8px"></span>Top Chef</a></li>
+      <li><a href="#"><span class="bullet" style="width:8px;height:8px;background:var(--c-dragrace);margin-right:8px"></span>Drag Race</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheon</h5>
+    <ul>
+      <li><a href="Pantheon · Lists.html">All lists</a></li>
+      <li><a href="#">About the canon</a></li>
+      <li><a href="#">Spoilers policy</a></li>
+      <li><a href="#">Become an editor</a></li>
+    </ul>
+  </div>
+  <div class="foot-meta">
+    <span>© 2026 Pantheon · est. as a quiet rebellion against ranked lists that ruin the show</span>
+    <span>List · best-premieres · rev. 04 / 2026</span>
+  </div>
+</footer>
+
+<script>
+  const SHOW_COLOR = { survivor: "var(--c-survivor)", topchef: "var(--c-topchef)", dragrace: "var(--c-dragrace)" };
+  const SHOW_NAME  = { survivor: "Survivor", topchef: "Top Chef", dragrace: "Drag Race" };
+
+  const ENTRIES = [
+    { show: "survivor", season: "S01 · Borneo",          title: "Sixteen Americans, no rulebook.",         blurb: "Episode one of the show that didn't yet know what it was. Still the only premiere where the audience and the cast were learning together." },
+    { show: "topchef",  season: "S06 · Las Vegas",       title: "The first hour Top Chef trusted its viewer.", blurb: "No tutorial, no easing-in. Sixteen veterans, a Quickfire that mattered, and a cold-open knife-skills challenge that filtered the room." },
+    { show: "dragrace", season: "S02 premiere",          title: "Mannequins. The runway. The genre.",       blurb: "RuPaul opens with three sentences and a wink. The franchise's grammar is fully formed inside ten minutes." },
+    { show: "survivor", season: "S07 · Pearl Islands",   title: "Marooned in costume.",                     blurb: "The premise inverted within the first commercial break — players left a town in 18th-century pirate gear, no warning. A masterclass in cold-open economy." },
+    { show: "dragrace", season: "S06 premiere",          title: "The split-tribe gambit.",                  blurb: "Two episodes that worked as one. The first split-premiere the franchise pulled off without losing momentum, and the format has tried it eight times since." },
+    { show: "topchef",  season: "S14 · Charleston",      title: "Vets vs. rookies, no preamble.",           blurb: "Eight returning chefs, eight newcomers, knives drawn at the cold open. The first half-hour did the cast-introduction work three episodes' worth." },
+    { show: "survivor", season: "S20 · Heroes vs. Villains", title: "The format finally without a tutorial.", blurb: "Twenty veterans, sorted into archetypes, walking onto the beach with full memory. The premiere assumed you already knew the rules — and rewarded you for it." },
+    { show: "dragrace", season: "S11 premiere",          title: "A nine-queen lip sync.",                   blurb: "The premiere everyone remembered for one performance, in a season nobody remembers for much else. Still a textbook cold open." },
+    { show: "topchef",  season: "S10 · Seattle",         title: "The deep bench audition.",                 blurb: "An over-cast season where the premiere worked as a thinning exercise — production cutting the room to the cast they actually wanted on screen." },
+    { show: "survivor", season: "S16 · Micronesia",      title: "Fans vs. favorites, opened cold.",         blurb: "The premiere that made an asymmetric premise feel symmetric — by spending its first hour acknowledging exactly how lopsided it was." },
+    { show: "dragrace", season: "S12 premiere",          title: "The most-stacked top four was visible by minute eight.", blurb: "A casting victory you could see in the cold open. Which of the eight would matter was settled before the runway." },
+    { show: "topchef",  season: "S17 · World All-Stars", title: "London, every winner ever.",               blurb: "The franchise's biggest swing, in its premiere — a returnees-of-returnees season that could have collapsed under itself. The first hour earned the rest." },
+    { show: "survivor", season: "S31 · Cambodia",        title: "Second-chance returnees, voted in.",        blurb: "The premiere had to do double work — establish who twenty veterans were now, after years away, and why the audience had asked for each one back. It did." },
+    { show: "dragrace", season: "S14 premiere",          title: "Fourteen queens, two-part entrance.",      blurb: "A premiere that risked everything on its split-cast gimmick and made the gimmick disappear by the end of episode two. Confident." },
+    { show: "topchef",  season: "S18 · Portland",        title: "The premiere that the moment demanded.",    blurb: "Restaurants closed, kitchens borrowed, a guest-judge roster that meant something. The premiere couldn't have been made any other year." },
+    { show: "survivor", season: "S37 · David vs. Goliath", title: "The slow-renaissance opener.",           blurb: "Nobody wanted to defend the premise on paper. The premiere did the work the press materials couldn't — by letting the cast simply be funny." },
+    { show: "dragrace", season: "S13 premiere",          title: "The competition twist as cold open.",       blurb: "An inversion of the franchise's premiere grammar — the test happened before the runway, and the runway answered the test. The pacing has been copied since." },
+    { show: "topchef",  season: "S19 premiere",          title: "Houston, full pace.",                       blurb: "No grace period. The premiere's elimination round was a full restaurant service the cast had ninety minutes to set up. Brutal and exact." },
+    { show: "survivor", season: "S40 · Winners at War",  title: "Twenty winners on one beach.",              blurb: "A premiere that was, structurally, twenty introductions. The fact that it didn't drag is the achievement of the season." },
+    { show: "dragrace", season: "S15 premiere",          title: "The runway-as-thesis episode.",             blurb: "Sixteen queens, one prompt, fifteen interpretations that argued. The premiere read as a craft statement before it read as a competition." },
+    { show: "survivor", season: "S45 premiere",          title: "The reboot, in full bloom.",                blurb: "By premiere forty-five, the show knew exactly what it was again. The cold open played like a network ad for itself — and earned every second." },
+    { show: "topchef",  season: "S20 premiere",          title: "The London anniversary cold open.",         blurb: "An anniversary premiere that didn't lean on its own history. Confident enough to assume you'd brought yours along." },
+    { show: "dragrace", season: "S16 premiere",          title: "The newcomer cohort, on parade.",           blurb: "A premiere that worked specifically because it didn't try to retcon the franchise's lineage. The cast got to be themselves before they got to be heirs." },
+    { show: "survivor", season: "S46 premiere",          title: "The cast you want to live with.",           blurb: "Few premieres have done less and felt more. By the end of the hour you had favorites — not because the editors told you to, but because the cast made it inevitable." },
+  ];
+
+  document.getElementById("entry-stack").innerHTML = ENTRIES.map((e, i) => `
+    <a class="entry-row" href="#">
+      <div class="entry-rank">#${String(i+1).padStart(2,"0")}</div>
+      <div class="entry-bullet"><span class="bullet" style="background:${SHOW_COLOR[e.show]}"></span></div>
+      <div class="entry-body">
+        <div class="entry-meta-line"><span class="show">${SHOW_NAME[e.show]}</span><span>·</span><span>${e.season}</span></div>
+        <div class="entry-title">${e.title}</div>
+        <p class="entry-blurb">${e.blurb}</p>
+      </div>
+      <div class="entry-arrow">→</div>
+    </a>
+  `).join("");
+</script>
+</body>
+</html>

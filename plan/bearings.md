@@ -446,6 +446,17 @@ best post-merge, etc. — see `plan/PHASE_CANDIDATES.md` for
 seed themes). If `count(content/themes/*.md) < 10`, file a row;
 `/ship-content` ships one themed list per tick.
 
+After phase 19f lands the schema refresh, every new themed list
+**must carry**: `category` (one of tone / craft / era / single),
+`tagline` (detail-page pull, ≤360 chars, one optional `<b>`
+span), `sentiment`, `status`, `curator`, `last_revised` (ISO),
+`featured` (boolean, default false), `related` (0-4 slugs), and
+optional `era_range` (required for category=era). Every entry
+**must carry** `title` (≤140 chars, the curator's framing
+phrase) plus the existing `blurb`. The schema enforces this; a
+list without a `category` or with a tagline missing the `<b>`
+discipline will fail `pnpm content:check` and block the commit.
+
 ### Rule 4 — retired (was: facade completeness)
 
 The May 2026 facade grammar was prototyped and rejected. There

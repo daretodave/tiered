@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Themed lists · Pantheon</title>
+<meta name="description" content="Themed lists across every Pantheon canon. Curated, ranked, never spoiler-loud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper-0:#0E0B08; --paper-1:#15110C; --paper-2:#1E1812; --paper-3:#2A2218;
+    --line-soft:#241D14; --line:#3A2F22; --line-loud:#5A4A35;
+    --ink-3:#6E6353; --ink-2:#9D9485; --ink-1:#D8CFBE; --ink-0:#F2EADB;
+    --primary:#E8B65A;
+    --s-warm-up:#E0843A; --s-warm-down:#5A8FA6; --s-neutral:#8C8275;
+    --s-hold:#7A8F5C; --s-verdict:#B57FB8; --s-consensus:#D5A93D;
+    --c-survivor:#D55E36; --c-topchef:#B86A2E; --c-dragrace:#E64B86;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --r-md:8px;
+    --d-base:240ms; --e-settle:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper-0);color:var(--ink-1);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--primary);color:var(--paper-0)}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+  .bullet{display:inline-block;border-radius:999px;flex-shrink:0;vertical-align:baseline}
+
+  /* TOPNAV */
+  .topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:color-mix(in oklab, var(--paper-0) 92%, transparent);border-bottom:1px solid var(--line-soft);backdrop-filter:blur(10px)}
+  @media(max-width:720px){.topnav{padding:14px 16px}}
+  .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-0);letter-spacing:-0.01em}
+  .topnav-links{display:flex;gap:28px;font-size:14px;color:var(--ink-2)}
+  .topnav-links a:hover{color:var(--ink-0)}
+  .topnav-links a.current{color:var(--ink-0)}
+  @media(max-width:720px){.topnav-links{display:none}}
+  .topnav-right{display:flex;align-items:center;gap:18px}
+  .topnav-search{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+  @media(max-width:720px){.topnav-search{display:none}}
+  .topnav-signin{font:500 12px/1 var(--sans);padding:9px 16px;background:var(--ink-0);color:var(--paper-0);border-radius:999px;letter-spacing:.02em}
+
+  /* HERO */
+  header.hero{padding:96px 40px 72px;border-bottom:1px solid var(--line-soft);max-width:1240px;margin:0 auto;width:100%}
+  @media(max-width:720px){header.hero{padding:64px 20px 48px}}
+  .eyebrow{font:500 12px/1 var(--mono);color:var(--ink-3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--line-loud)}
+  h1.hero-title{font-family:var(--serif);font-weight:500;font-size:96px;line-height:0.96;letter-spacing:-0.03em;color:var(--ink-0);margin:0 0 24px;text-wrap:balance}
+  @media(max-width:820px){h1.hero-title{font-size:64px}}
+  @media(max-width:560px){h1.hero-title{font-size:44px}}
+  h1.hero-title em{color:var(--primary);font-style:italic;font-weight:500}
+  .lede{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--ink-1);max-width:680px;margin:0 0 32px;text-wrap:pretty}
+  @media(max-width:560px){.lede{font-size:18px}}
+  .hero-stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:32px}
+  .stat{display:flex;flex-direction:column;gap:6px}
+  .stat-val{font-family:var(--serif);font-weight:500;font-size:32px;color:var(--ink-0);line-height:1;letter-spacing:-0.015em}
+  .stat-key{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* FILTER BAR */
+  .filter-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    padding:32px 40px 0;max-width:1240px;margin:0 auto;
+  }
+  @media(max-width:720px){.filter-bar{padding:24px 20px 0}}
+  .filter-set{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{appearance:none;background:transparent;border:1px solid var(--line);color:var(--ink-2);font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;cursor:pointer;transition:all var(--d-base) var(--e-settle)}
+  .chip:hover{color:var(--ink-0);border-color:var(--ink-3)}
+  .chip.on{background:var(--ink-0);color:var(--paper-0);border-color:var(--ink-0)}
+  .filter-mode{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* SECTIONS */
+  section.block{padding:80px 0;border-bottom:1px solid var(--line-soft)}
+  @media(max-width:720px){section.block{padding:48px 0}}
+  section.block:last-of-type{border-bottom:0}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1240px;margin:0 auto 32px;padding:0 40px}
+  @media(max-width:720px){.section-head{padding:0 20px;margin-bottom:24px}}
+  .section-head h2{font-family:var(--serif);font-weight:500;font-size:34px;color:var(--ink-0);margin:0;letter-spacing:-0.02em;line-height:1.1;text-wrap:balance}
+  @media(max-width:720px){.section-head h2{font-size:24px}}
+  .section-head .sec-meta{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* FEATURED ROW — 3 hero cards */
+  .featured-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1px;max-width:1240px;margin:0 auto;padding:0 40px;background:transparent}
+  @media(max-width:1024px){.featured-row{grid-template-columns:1fr;padding:0 20px}}
+  .feat-card{
+    background:var(--paper-1);border:1px solid var(--line);
+    padding:36px 36px 32px;display:flex;flex-direction:column;gap:18px;justify-content:space-between;
+    min-height:280px;transition:transform var(--d-base) var(--e-settle), background var(--d-base) var(--e-settle);
+  }
+  .feat-card:hover{transform:translateY(-2px);background:var(--paper-2)}
+  .feat-card.big{min-height:380px;padding:48px 44px 40px}
+  .feat-tag{display:flex;align-items:center;gap:10px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  .feat-bullets{display:inline-flex;gap:3px}
+  .feat-bullets .bullet{width:9px;height:9px}
+  .feat-card h3{font-family:var(--serif);font-weight:500;font-size:30px;color:var(--ink-0);margin:0;letter-spacing:-0.02em;line-height:1.1;text-wrap:balance}
+  .feat-card.big h3{font-size:42px}
+  @media(max-width:560px){.feat-card.big h3{font-size:30px}}
+  .feat-blurb{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;color:var(--ink-2);margin:0;text-wrap:pretty}
+  .feat-card.big .feat-blurb{font-size:18px}
+  .feat-foot{display:flex;justify-content:space-between;align-items:center;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink-3);padding-top:16px;border-top:1px solid var(--line)}
+  .feat-foot b{color:var(--primary);font-weight:500}
+
+  /* ALL LISTS — vertical rows */
+  .lists-wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+  @media(max-width:720px){.lists-wrap{padding:0 20px}}
+  .list-group{margin-bottom:48px}
+  .list-group:last-child{margin-bottom:0}
+  .list-group-head{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .list-group-head::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+  .list-stack{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper-1)}
+  .list-row{
+    display:grid;grid-template-columns:auto 1fr auto auto;gap:24px;align-items:center;
+    padding:22px 28px;border-bottom:1px solid var(--line-soft);
+    transition:background var(--d-base) var(--e-settle);
+  }
+  .list-row:last-child{border-bottom:0}
+  .list-row:hover{background:var(--paper-2);cursor:pointer}
+  @media(max-width:720px){.list-row{grid-template-columns:auto 1fr auto;gap:14px;padding:16px 18px}.list-row .list-row-meta{display:none}}
+  .list-row-bullets{display:inline-flex;gap:3px}
+  .list-row-bullets .bullet{width:10px;height:10px}
+  .list-row-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .list-row-title{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink-0);letter-spacing:-0.015em;line-height:1.25;text-wrap:balance}
+  .list-row-blurb{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);line-height:1.4;text-wrap:pretty}
+  .list-row-meta{font:500 11px/1.4 var(--mono);letter-spacing:.06em;color:var(--ink-3);text-align:right}
+  .list-row-arrow{color:var(--primary);font-size:18px}
+
+  /* FOOTER */
+  footer.pf-footer{padding:48px 40px 40px;border-top:1px solid var(--line-soft);display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;max-width:1240px;margin:0 auto;width:100%}
+  @media(max-width:820px){footer.pf-footer{grid-template-columns:1fr;padding:32px 20px}}
+  .foot-brand{display:flex;flex-direction:column;gap:10px}
+  .foot-promise{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-2);margin:0}
+  .foot-promise em{color:var(--primary)}
+  .foot-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+  .foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .foot-col a{font:400 14px/1.4 var(--sans);color:var(--ink-1)}
+  .foot-col a:hover{color:var(--ink-0)}
+  .foot-meta{grid-column:1 / -1;padding-top:20px;margin-top:8px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 12px/1.5 var(--mono);color:var(--ink-3);letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a class="topnav-brand" href="#">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+    <span>Pantheon</span>
+  </a>
+  <div class="topnav-links">
+    <a href="#">Shows</a>
+    <a href="#" class="current">Lists</a>
+    <a href="#">About</a>
+  </div>
+  <div class="topnav-right">
+    <a class="topnav-search" href="#">⌕ Search</a>
+    <a class="topnav-signin" href="#">Sign in</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">Pantheon / Lists</div>
+  <h1 class="hero-title">Themed lists.<br/><em>Cross-canon.</em></h1>
+  <p class="lede">Twenty-three pieces of editorial opinion, organized by the part of the craft they admire. Some span every show. Some live inside one. None of them spoil what they rank.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">23</div><div class="stat-key">Lists</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-key">Shows covered</div></div>
+    <div class="stat"><div class="stat-val">2026</div><div class="stat-key">Index last revised</div></div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-set" id="filter-set">
+    <button class="chip on" data-filter="all">All</button>
+    <button class="chip" data-filter="tone">By tone</button>
+    <button class="chip" data-filter="craft">By craft</button>
+    <button class="chip" data-filter="era">By era</button>
+    <button class="chip" data-filter="single">Single-show</button>
+  </div>
+  <span class="filter-mode" id="filter-mode">view · all 23 lists</span>
+</div>
+
+<!-- FEATURED -->
+<section class="block">
+  <div class="section-head">
+    <h2>Featured this month.</h2>
+    <span class="sec-meta">Editor-selected · refreshed every 1st</span>
+  </div>
+  <div class="featured-row">
+    <a class="feat-card big" href="Pantheon · Best Premieres.html">
+      <div class="feat-tag">
+        <span class="feat-bullets">
+          <span class="bullet" style="background:var(--c-survivor)"></span>
+          <span class="bullet" style="background:var(--c-topchef)"></span>
+          <span class="bullet" style="background:var(--c-dragrace)"></span>
+        </span>
+        Cross-canon · 24 entries
+      </div>
+      <h3>Best premieres ever.</h3>
+      <p class="feat-blurb">The cold opens, the casting reveals, the first hours that taught us what a season would be — across every show in the canon.</p>
+      <div class="feat-foot"><span>updated this week</span><b>read the list →</b></div>
+    </a>
+    <a class="feat-card" href="#">
+      <div class="feat-tag">
+        <span class="feat-bullets"><span class="bullet" style="background:var(--c-survivor)"></span></span>
+        Survivor · 12 entries
+      </div>
+      <h3>Returnees that earned the invitation.</h3>
+      <p class="feat-blurb">The bar for asking a veteran back is high; the dozen times the show cleared it.</p>
+      <div class="feat-foot"><span>updated this month</span><b>read →</b></div>
+    </a>
+    <a class="feat-card" href="#">
+      <div class="feat-tag">
+        <span class="feat-bullets">
+          <span class="bullet" style="background:var(--c-survivor)"></span>
+          <span class="bullet" style="background:var(--c-topchef)"></span>
+        </span>
+        Cross-canon · 9 entries
+      </div>
+      <h3>Quietly perfect bottle seasons.</h3>
+      <p class="feat-blurb">Single locations, fixed casts, full arcs. The seasons that didn't reach.</p>
+      <div class="feat-foot"><span>started 2023</span><b>read →</b></div>
+    </a>
+  </div>
+</section>
+
+<!-- ALL LISTS -->
+<section class="block">
+  <div class="section-head">
+    <h2>All lists.</h2>
+    <span class="sec-meta">Organized by what they're admiring</span>
+  </div>
+  <div class="lists-wrap" id="lists-wrap"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pf-footer">
+  <div class="foot-brand">
+    <a class="topnav-brand" href="#">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span>Pantheon</span>
+    </a>
+    <p class="foot-promise">the seasons, ranked. <em>no spoilers.</em></p>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheons</h5>
+    <ul>
+      <li><a href="Pantheon · Survivor.html"><span class="bullet" style="width:8px;height:8px;background:var(--c-survivor);margin-right:8px"></span>Survivor</a></li>
+      <li><a href="#"><span class="bullet" style="width:8px;height:8px;background:var(--c-topchef);margin-right:8px"></span>Top Chef</a></li>
+      <li><a href="#"><span class="bullet" style="width:8px;height:8px;background:var(--c-dragrace);margin-right:8px"></span>Drag Race</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h5>Pantheon</h5>
+    <ul>
+      <li><a href="#">About the canon</a></li>
+      <li><a href="#">How voting works</a></li>
+      <li><a href="#">Spoilers policy</a></li>
+      <li><a href="#">Become an editor</a></li>
+    </ul>
+  </div>
+  <div class="foot-meta">
+    <span>© 2026 Pantheon · est. as a quiet rebellion against ranked lists that ruin the show</span>
+    <span>23 lists · index rev. 04 / 2026</span>
+  </div>
+</footer>
+
+<script>
+  const LISTS = [
+    /* tone */
+    { group: "tone", category: "tone", title: "Best premieres ever",                 blurb: "The cold opens that promised a season worth staying for.",                              shows: ["survivor","topchef","dragrace"], count: 24, meta: "updated this week",  href: "Pantheon · Best Premieres.html" },
+    { group: "tone", category: "tone", title: "Quietly perfect bottle seasons",      blurb: "Single locations, fixed casts, full arcs. The seasons that didn't reach.",            shows: ["survivor","topchef"],            count: 9,  meta: "started 2023" },
+    { group: "tone", category: "tone", title: "Finales we'd argue about",            blurb: "Endings whose craft is worth defending, whatever you thought of who took the title.", shows: ["survivor","topchef","dragrace"], count: 12, meta: "updated this month" },
+    { group: "tone", category: "tone", title: "Seasons that ate their own premise",  blurb: "When the format twisted itself into something neither show nor audience expected.",    shows: ["survivor","dragrace"],            count: 7,  meta: "started 2024" },
+
+    /* craft */
+    { group: "craft", category: "craft", title: "The casting director's high-water marks", blurb: "Seasons where the casting department did the work the editors couldn't reach.", shows: ["survivor","topchef","dragrace"], count: 15, meta: "updated this month" },
+    { group: "craft", category: "craft", title: "Returnees that earned the invitation",   blurb: "The dozen times the show cleared a very high bar for asking a veteran back.",  shows: ["survivor"],                       count: 12, meta: "updated this month" },
+    { group: "craft", category: "craft", title: "Seasons where production listened",      blurb: "When the show heard what the audience was saying and changed shape mid-air.", shows: ["topchef","dragrace"],             count: 11, meta: "started 2025" },
+    { group: "craft", category: "craft", title: "The slow-tv canon",                       blurb: "Episodes that earn their length, by sitting still with the people who matter.", shows: ["survivor","topchef"],             count: 7,  meta: "updated this year" },
+    { group: "craft", category: "craft", title: "Underrated by canon, beloved by community", blurb: "Seasons the editor undersold. The running tally of where the readers were right.", shows: ["survivor","topchef","dragrace"], count: 9, meta: "updated weekly" },
+
+    /* era */
+    { group: "era", category: "era", title: "The 2000s peak: 2003–2010",             blurb: "Seven years when the format was settling into its second gear.",                       shows: ["survivor","topchef"],             count: 14, meta: "stable list" },
+    { group: "era", category: "era", title: "The franchise's quiet decade",          blurb: "The middle years when nobody was watching closely, where the canon actually got built.", shows: ["survivor"],                   count: 10, meta: "stable list" },
+    { group: "era", category: "era", title: "The reboot era at its best",            blurb: "Post-2021 seasons that found their footing without erasing their lineage.",            shows: ["survivor"],                       count: 6,  meta: "growing" },
+
+    /* single-show */
+    { group: "single", category: "single", title: "The Borneo lineage",              blurb: "Seasons most like Survivor 1: strangers, a beach, a real game of social inference.", shows: ["survivor"],                       count: 18, meta: "started 2024" },
+    { group: "single", category: "single", title: "Knives-out kitchens",             blurb: "Top Chef at its most professional and most ruthless. Service mode, full time.",       shows: ["topchef"],                        count: 11, meta: "updated this year" },
+    { group: "single", category: "single", title: "The runway as thesis",            blurb: "Drag Race episodes where the runway didn't just present looks — it argued them.",   shows: ["dragrace"],                       count: 13, meta: "updated this month" },
+    { group: "single", category: "single", title: "Snatch Game, ranked",             blurb: "The franchise's most consistent format, ranked by the seasons that delivered.",    shows: ["dragrace"],                       count: 17, meta: "stable list" },
+  ];
+
+  const SHOW_COLOR = { survivor: "var(--c-survivor)", topchef: "var(--c-topchef)", dragrace: "var(--c-dragrace)" };
+  const GROUP_TITLES = { tone: "By tone", craft: "By craft", era: "By era", single: "Single-show pantheons" };
+
+  function render(filter) {
+    const groups = filter === "all" ? ["tone","craft","era","single"] : [filter];
+    const rows = LISTS.filter(l => filter === "all" || l.group === filter);
+    document.getElementById("filter-mode").textContent =
+      "view · " + (filter === "all" ? `all ${rows.length} lists` : `${rows.length} ${GROUP_TITLES[filter].toLowerCase()}`);
+
+    document.getElementById("lists-wrap").innerHTML = groups.map(g => {
+      const items = LISTS.filter(l => l.group === g);
+      if (items.length === 0) return "";
+      return `
+        <div class="list-group">
+          <div class="list-group-head">${GROUP_TITLES[g]} · ${items.length}</div>
+          <div class="list-stack">
+            ${items.map(l => `
+              <a class="list-row" href="${l.href || "#"}">
+                <span class="list-row-bullets">
+                  ${l.shows.map(s => `<span class="bullet" style="background:${SHOW_COLOR[s]}"></span>`).join("")}
+                </span>
+                <span class="list-row-body">
+                  <span class="list-row-title">${l.title}</span>
+                  <span class="list-row-blurb">${l.blurb}</span>
+                </span>
+                <span class="list-row-meta">${l.count} entries<br/>${l.meta}</span>
+                <span class="list-row-arrow">→</span>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+  render("all");
+
+  document.getElementById("filter-set").addEventListener("click", e => {
+    const btn = e.target.closest(".chip"); if (!btn) return;
+    document.querySelectorAll("#filter-set .chip").forEach(c => c.classList.remove("on"));
+    btn.classList.add("on");
+    render(btn.dataset.filter);
+  });
+</script>
+</body>
+</html>
