@@ -34,3 +34,5 @@ test-results/
 .claude/settings.local.json
 
 setup/
+
+.cache/
