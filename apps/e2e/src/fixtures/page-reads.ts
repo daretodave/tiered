@@ -11,8 +11,13 @@ export type PageReadAssertion = {
 
 export const pageReads: Record<string, PageReadAssertion> = {
   '/': {
-    expectH1Pattern: /Pantheon/,
-    expectVisible: ['[data-testid=hero]'],
+    expectH1Pattern: /The seasons.*ranked.*No spoilers/i,
+    expectVisible: [
+      '[data-testid=hero]',
+      '[data-testid=home-hero]',
+      '[data-testid=home-show-grid]',
+      '[data-testid=home-list-grid]',
+    ],
   },
   '/shows': {
     expectH1Pattern: /Shows/i,

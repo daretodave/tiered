@@ -16,6 +16,12 @@ type ShowFacadeArtProps = {
   name: string
 }
 
+// Server-component reader for the per-show facade SVG. Inlines
+// the SVG (after stripping the XML prolog) so the markup is in
+// the document and Lighthouse doesn't penalize for a network
+// fetch. Falls back to an empty styled placeholder if the file
+// is missing — the show is still in flight from brander.
+
 export function ShowFacadeArt({ slug, name }: ShowFacadeArtProps) {
   const svg = readFacadeSvg(slug)
   if (!svg) {

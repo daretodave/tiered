@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAllSeasons, getAllShows, getShow } from '@/content'
-import { PaletteScope } from '@/components/facade'
+import { PaletteScope, ShowFacadeArt } from '@/components/facade'
 import {
   SeasonCard,
   SeasonGrid,
@@ -11,7 +11,6 @@ import {
 } from '@/components/composition'
 import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
-import { ShowFacadeArt } from './ShowFacadeArt'
 
 type Params = { show: string }
 

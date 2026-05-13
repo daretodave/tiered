@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { ShowFacadeArt } from '../ShowFacadeArt'
+import { ShowFacadeArt } from '@/components/facade'
 
 describe('<ShowFacadeArt>', () => {
   it('inlines the facade.svg for a seeded show', () => {
