@@ -54,7 +54,7 @@ in the same commit that ships the phase.
 - [x] Phase 18 — Performance + a11y polish (`@axe-core/playwright` + `apps/e2e/tests/a11y.spec.ts` covering 7 canonical pages desktop + 3 mobile WCAG 2.1 AA critical-only hard gate; skip-to-main-content link; `id="main"` on all routes; raw-`<img>` discipline gate; `pnpm size` script gating homepage gzipped JS at 250 KB) — 917291b
 
 **External-signal wiring (phase 19):**
-- [ ] Phase 19 — `/critique` + `/triage` wiring (reader sub-agent walks live site with anon AND authed cookie passes; findings tagged `anon:`/`authed:`; triage skill enabled with the 13 labels; loop-issue mirror script; `/march` Step 3a starts dispatching to triage when unlabeled issues exist)
+- [x] Phase 19 — `/critique` + `/triage` wiring (reader sub-agent walks live site with anon AND authed cookie passes; findings tagged `anon:`/`authed:`; triage skill enabled with the 13 labels; loop-issue mirror script; `/march` Step 3a starts dispatching to triage when unlabeled issues exist) — e3bc4e5
 
 **Content velocity endgame (phases 20+):**
 - [ ] Phase 20 — `/ship-content` skill landed + first show backfill (Amazing Race, Big Brother — `brander` + `content-curator` in parallel per show; bearings Rule 1 quota check goes live)
