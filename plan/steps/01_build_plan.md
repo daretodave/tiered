@@ -89,7 +89,7 @@ in the same commit that ships the phase.
 - [x] Phase 19h — List detail page to spec (rebuild `/themes/[theme]` against `design/Pantheon · Best Premieres.html`: bounded 1100px `<Wrap width="narrow">`, tall hero with crumb [bullet stack + Lists / title] + h1 + serif italic tagline with `<b>` emphasis + 4-cell meta strip [Entries / Spans / Curated / Revised] + tools row [Save/Share/Suggest stubs + Shield badge]. Ranked entry stack with rank-mono + show-palette bullet + show-name/season-label + entry title + entry blurb. Adjacent-lists section using `getRelatedThemes` with same-category fallback. JSON-LD adds `author` + `dateModified`.) — see `phase_19h_list_detail.md` — ec07a99
 
 **Content velocity endgame (phases 20+):**
-- [ ] Phase 20 — `/ship-content` skill landed + first show backfill (Amazing Race, Big Brother — `content-curator` per show; bearings Rule 1 quota check goes live. **No facade work** — color + type only per `design/CLAUDE.md`. The show frontmatter is the seven-field contract from 19a.)
+- [x] Phase 20 — `/ship-content` skill landed + first show backfill (Amazing Race, Big Brother — `content-curator` per show; bearings Rule 1 quota check goes live. **No facade work** — color + type only per `design/CLAUDE.md`. The show frontmatter is the seven-field contract from 19a.) — 495c9e8
 - [ ] Phase 21 — Show backfill round 2 (Bachelor, Bachelorette, Traitors)
 - [ ] Phase 22 — Show backfill round 3 (Love Island US, Love Island UK, Bake Off, Project Runway, The Challenge — completes the 12-show launch quota per bearings Rule 1)
 - [ ] Phase 23 — Themed lists round 1 (best premieres, best finales, best post-merge runs, best returnee seasons, best newbie casts — 5 themes drains bearings Rule 3 to ≥5/10)
