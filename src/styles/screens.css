@@ -393,6 +393,84 @@
   color: color-mix(in oklab, var(--show-ink) 50%, transparent);
 }
 
+/* comment input — design port of `design/compositions/interactions.jsx`
+   lines 76–143 + `design/compositions/screens.css` lines 472–532. The
+   collapsed stub is a full-width button; the open state is a textarea
+   with a serif placeholder, a reminder banner, and a foot row of
+   Cancel + Post. A spoiler-flag or post-error toggles `.warn` on the
+   container, swapping the border color to the warm-down sentiment. */
+.comment {
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
+  background: color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
+  transition: border-color 240ms cubic-bezier(.4,0,.2,1);
+}
+.comment.warn { border-color: var(--s-warm-down); }
+.comment-stub {
+  width: 100%; appearance: none; background: transparent; border: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+  font-family: var(--serif); font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+.comment-stub:hover { color: var(--show-ink); }
+.comment-stub-mono { font: 500 11px/1 var(--mono); letter-spacing: 0.1em; }
+.comment-open { padding: 16px 20px; }
+.comment-reminder {
+  display: flex; gap: 10px; align-items: center;
+  font: 500 11px/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--s-hold);
+  padding-bottom: 12px;
+}
+.comment-shield { font-size: 8px; }
+.comment-ta {
+  width: 100%; resize: vertical;
+  background: transparent; color: var(--show-ink);
+  border: 0; padding: 8px 0;
+  font-family: var(--serif); font-size: 16px; line-height: 1.55;
+  outline: 0;
+}
+.comment-ta::placeholder { color: color-mix(in oklab, var(--show-ink) 40%, transparent); }
+.comment-flag {
+  margin-top: 8px;
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 12px;
+  background: color-mix(in oklab, var(--s-warm-down) 14%, transparent);
+  color: var(--s-warm-down);
+  border-radius: 6px;
+  font: 500 13px/1.4 var(--sans);
+}
+.comment-flag b { color: inherit; font-weight: 600; }
+.comment-toast {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: color-mix(in oklab, var(--s-hold) 14%, transparent);
+  color: var(--s-hold);
+  border-radius: 6px;
+  font: 500 12px/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.comment-foot {
+  display: flex; justify-content: flex-end; gap: 10px;
+  margin-top: 16px;
+}
+.comment-cancel {
+  appearance: none; background: transparent; border: 0;
+  color: color-mix(in oklab, var(--show-ink) 60%, transparent);
+  font: 500 13px/1 var(--sans); padding: 10px 16px;
+  cursor: pointer;
+}
+.comment-cancel:hover { color: var(--show-ink); }
+.comment-post {
+  appearance: none; border: 0;
+  background: var(--show-ink); color: var(--show-paper);
+  font: 500 13px/1 var(--sans); padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.comment-post:disabled { opacity: 0.4; cursor: not-allowed; }
+
 /* ============================================================ FEATURED THEMES
    The cross-link strip below the season grid on a show home. Lives in
    the show segment so it inherits the show palette via CSS vars —

@@ -58,4 +58,29 @@ describe('<VotePair>', () => {
     })
     expect(screen.getByTestId('vote-up').className).not.toContain('flash')
   })
+
+  it('drops the slide transform when prefers-reduced-motion matches', () => {
+    const original = window.matchMedia
+    Object.defineProperty(window, 'matchMedia', {
+      configurable: true,
+      value: (query: string) => ({
+        matches: query.includes('reduce'),
+        media: query,
+        onchange: null,
+        addListener: () => undefined,
+        removeListener: () => undefined,
+        addEventListener: () => undefined,
+        removeEventListener: () => undefined,
+        dispatchEvent: () => false,
+      }),
+    })
+    render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+    fireEvent.click(screen.getByTestId('vote-up'))
+    const num = screen.getByTestId('vote-count')
+    expect(num.style.transform).toBe('none')
+    Object.defineProperty(window, 'matchMedia', {
+      configurable: true,
+      value: original,
+    })
+  })
 })

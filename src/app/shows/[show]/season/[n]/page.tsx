@@ -13,6 +13,7 @@ import { ShowPaletteScope } from '@/components/show/ShowPaletteScope'
 import {
   AdjacentSeasons,
   AppearsInList,
+  CommentInput,
   CommentInputStub,
   CommentThread,
   RankTag,
@@ -27,6 +28,7 @@ import {
   type SeasonDetail,
 } from '@/components/composition'
 import { Bullet } from '@/components/atoms/Bullet'
+import { auth0 } from '@/lib/auth0'
 import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 
 type Params = { show: string; n: string }
@@ -171,13 +173,19 @@ function appearsInRowsFor(
   return rows
 }
 
-export default function SeasonPage({ params }: { params: Params }) {
+export default async function SeasonPage({ params }: { params: Params }) {
   const show = getShow(params.show)
   if (!show) notFound()
   const num = Number.parseInt(params.n, 10)
   if (!Number.isFinite(num)) notFound()
   const season = getSeason(show.slug, num)
   if (!season) notFound()
+
+  // The CommentInput is authed-only — anon callers see the sign-in
+  // stub instead. Read auth on the server so we don't ship a session
+  // hook to the client just for this branch.
+  const session = await auth0.getSession().catch(() => null)
+  const authed = Boolean(session?.user)
 
   const seasons = getAllSeasons(show.slug)
   const themes = getAllThemes()
@@ -274,9 +282,16 @@ export default function SeasonPage({ params }: { params: Params }) {
             <CommentThread
               count={0}
               input={
-                <CommentInputStub
-                  signInHref={`/sign-in?return=/shows/${show.slug}/season/${season.number}`}
-                />
+                authed ? (
+                  <CommentInput
+                    targetType="season"
+                    targetId={seasonTargetId}
+                  />
+                ) : (
+                  <CommentInputStub
+                    signInHref={`/sign-in?return=/shows/${show.slug}/season/${season.number}`}
+                  />
+                )
               }
             />
           }
