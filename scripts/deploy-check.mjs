@@ -120,14 +120,15 @@ else if (PROVIDER === 'vercel') {
     const match = data.deployments?.find((d) => d.meta?.githubCommitSha === sha)
     if (!match) return { state: 'pending' }
     if (match.readyState === 'READY') return { state: 'ready', url: `https://${match.url}` }
+    const matchId = match.id ?? match.uid ?? ''
     if (match.readyState === 'ERROR' || match.readyState === 'CANCELED') {
       return {
         state: 'error',
         message: match.errorMessage,
-        admin: `https://vercel.com/${match.ownerId}/${match.name}/${match.id}`,
+        admin: `https://vercel.com/${match.ownerId}/${match.name}/${matchId}`,
       }
     }
-    return { state: match.readyState.toLowerCase(), id: match.id.slice(0, 8) }
+    return { state: match.readyState.toLowerCase(), id: matchId.slice(0, 8) }
   })
 }
 
