@@ -132,11 +132,12 @@ jobs:
           # sessions. (Alternative: ANTHROPIC_API_KEY for
           # pay-per-token — not used.)
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # Sonnet for cheap-on-quota dispatch. Promote to Opus
-          # once we've measured a week of weekly-cap consumption
-          # and confirmed headroom.
+          # Opus — the cloud loop is doing real design + content
+          # work (phases 19a–19e and the content-velocity endgame)
+          # where Sonnet undersells. Headroom on the weekly cap is
+          # the gate; if we hit it, drop back to claude-sonnet-4-6.
           claude_args: |
-            --model claude-sonnet-4-6
+            --model claude-opus-4-7
             --dangerously-skip-permissions
           prompt: |
             You are running Pantheon's autonomous loop in CI (GitHub Actions).
