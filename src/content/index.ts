@@ -28,6 +28,7 @@ export type {
   SeasonFrontmatter,
   Show,
   ShowFrontmatter,
+  ShowTier,
   Theme,
   ThemeCategory,
   ThemeEntry,

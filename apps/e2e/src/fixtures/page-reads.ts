@@ -35,8 +35,21 @@ export const pageReads: Record<string, PageReadAssertion> = {
     ],
   },
   '/shows': {
-    expectH1Pattern: /Shows/i,
+    expectH1Pattern: /All shows/i,
     expectJsonLdType: 'CollectionPage',
+    expectVisible: [
+      '[data-testid=shows-tiered]',
+      '[data-testid=shows-hero]',
+      '[data-testid=shows-hero-stats]',
+      '[data-testid=shows-stat-shows]',
+      '[data-testid=shows-stat-seasons]',
+      '[data-testid=shows-stat-revised]',
+      '[data-testid=tier-section]',
+      '[data-testid=tier-head]',
+      '[data-testid=tier-glyph]',
+      '[data-testid=shows-tile]',
+      '[data-testid=how-tiers-move]',
+    ],
   },
   '/shows/[show]': {
     expectVisible: [

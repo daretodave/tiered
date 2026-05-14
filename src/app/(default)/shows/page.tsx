@@ -1,62 +1,62 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getAllShows } from '@/content'
+import {
+  HowTiersMove,
+  ShowsHero,
+  TierSection,
+  TIER_ORDER,
+  computeShowsStats,
+  groupShowsByTier,
+  showsForTier,
+} from '@/components/shows'
 import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: 'Shows',
-    description: 'Every show covered by tiered, with editor and community rankings side by side.',
+    title: 'All shows',
+    description:
+      'Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon, B tier is in review.',
     path: '/shows',
   })
 }
 
 export default function ShowsIndexPage() {
   const shows = getAllShows()
+  const stats = computeShowsStats(shows)
+  const grouped = groupShowsByTier(shows)
   const ld = buildJsonLd({
     type: 'CollectionPage',
-    name: 'Shows — tiered',
-    description: 'Browse every covered show.',
+    name: 'Shows — tiered.tv',
+    description:
+      'Every show tiered.tv covers, grouped by editorial confidence in the canon.',
     path: '/shows',
   })
 
   return (
-    <section className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 md:py-24">
+    <div className="shows-tiered" data-testid="shows-tiered">
       <script {...jsonLdScriptProps({ id: 'ld-shows-index', data: ld })} />
-      <header className="flex flex-col gap-2">
-        <h1 className="font-serif text-4xl leading-tight text-ink-0 md:text-5xl">
-          Shows
-        </h1>
-        <p className="font-serif text-lg text-ink-1">
-          Every show tiered covers, ranked two ways.
-        </p>
-      </header>
-
       {shows.length === 0 ? (
-        <p className="text-ink-2">
-          Shows haven&rsquo;t been added yet — this page populates as the loop ships them.
-        </p>
+        <section className="shows-empty">
+          <h1 className="shows-hero-title">No shows yet.</h1>
+          <p className="shows-hero-lede">
+            Shows will appear here as the loop ships them.
+          </p>
+        </section>
       ) : (
-        <ul
-          data-testid="shows-grid"
-          className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-        >
-          {shows.map((show) => (
-            <li key={show.slug} className="rounded-lg border border-line-soft bg-paper-1 p-5">
-              <Link
-                href={`/shows/${show.slug}`}
-                prefetch={false}
-                className="flex flex-col gap-2"
-              >
-                <h2 className="font-serif text-xl text-ink-0">{show.name}</h2>
-                <p className="text-sm text-ink-2">{show.blurb}</p>
-              </Link>
-            </li>
+        <>
+          <ShowsHero stats={stats} />
+          {TIER_ORDER.map((tier) => (
+            <TierSection
+              key={tier}
+              tier={tier}
+              shows={showsForTier(grouped, tier)}
+            />
           ))}
-        </ul>
+          <HowTiersMove />
+        </>
       )}
-    </section>
+    </div>
   )
 }
