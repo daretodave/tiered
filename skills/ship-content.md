@@ -200,16 +200,40 @@ After the curator returns, confirm:
 2. `pnpm content:check` validates the new frontmatter.
 3. `pnpm content:quota` reports one fewer missing show.
 
-#### For Rule 2 (canon completion — batch)
+#### For Rule 2 (season backfill — high-volume drain)
 
 **`content-curator` brief:**
-- Target show slug + list of missing season numbers (3-5).
-- For each: write `content/shows/<slug>/seasons/NN-<title>.md`
-  with 50-80 word blurb. Spoiler discipline same as Rule 1.
+- Target show slug + list of missing season numbers (**up to
+  10 per tick** post phase 26a — drain hard until the show's
+  season floor is cleared).
+- For each season, write
+  `content/shows/<slug>/seasons/NN-<title>.md` with:
+  - Required: `show`, `number`, `title`, `body` (50-80 words,
+    spoiler-safe).
+  - `display_title` if the title has a natural accent point
+    (e.g. `vs.`, `&`, a colon): set
+    `display_title: "Foo <em>vs.</em><br/>Bar"`. Only `<em>`
+    and `<br/>` permitted; the renderer turns `<em>` into the
+    show-primary italic accent.
+  - Stats block — fill whatever's public-record: `location`,
+    `host`, `premiere_date`, `ep_count`, `aired_year`,
+    `episodes`. Captions are optional but well-rewarded — they
+    surface as subtext under each stat tile per
+    `design/tiered.tv · Heroes vs. Villains.html`.
+  - Editorial block — `eyebrow`, `lede`, `pull`,
+    `format_summary`, `format_caption`, `cast_size`,
+    `cast_size_caption`, `host_caption`. Omit any field where
+    you don't have a confident answer; the renderer collapses
+    gracefully.
+  - `episode_heat` if you can rank ep intensity from public
+    discourse (length = `ep_count`); skip otherwise.
+  - `watch_list` of 3-6 items is the single highest-value
+    editorial addition — 1-2 sentence pointers at moments worth
+    attention. Spoiler discipline P0: pointers, not outcomes.
 - Update `content/shows/<slug>/canon.md` to include each
-  newly-blurbed season's `canonical_position` (estimate based
-  on tonal/structural commentary; canon position can shift
-  later via `/iterate`).
+  newly-blurbed season's `canonical_position` when the canon
+  exists; the cloud loop ranks separately once season coverage
+  is in place (phase 26 long-truck workflow).
 
 **No `brander` for canon completion.** Per-show illustration
 is prohibited; the show's palette + the shared brand mark are

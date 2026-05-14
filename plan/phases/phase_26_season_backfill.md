@@ -1,121 +1,152 @@
-# Phase 26 — Season backfill across the show roster
+# Phase 26 — Season backfill, full drain (10/tick) + canon
 
-> **Goal.** Bring every currently-tracked show up to at least
-> three shipped season files so the show pages have real surfaces
-> to walk and `/critique` has prose to react against. Today the
-> roster has 13 shows but only Survivor, Top Chef, and Drag Race
-> ship multi-season coverage. The other ten shows render the
-> show-home page against an empty seasons grid.
+> **Goal.** Drain every missing season for every tracked show
+> until coverage is complete, then promote each show's
+> Editor's Canon to a full ranking. The redesigned season page
+> (per `design/tiered.tv · Heroes vs. Villains.html`) consumes
+> a richer data shape than we used to ship; phase 26a put that
+> shape in place, and this phase fills it in across the catalog.
 >
-> **Why now.** The /shows tier-list redesign (added with the
-> data-model evolution that landed alongside this brief) reads
-> tier + season-count + canon presence. Tier B is currently a
-> dumping ground for "shows without canon coverage" rather than
-> a curated editorial floor. The faster every show clears the
-> three-season floor, the faster B drains and tiers reflect
-> real editorial confidence rather than authoring backlog.
+> **Posture.** This is the long truck. The cloud loop runs it
+> at a steady cadence with one show per tick (10 seasons per
+> tick maximum, drain until done), then transitions into the
+> canon-ranking pass. Expect this phase to run over many
+> march ticks — the goal is completeness, not a single-tick
+> finish.
+>
+> **Ordering note.** This phase sits BEHIND the redesign phases
+> (27 / 28 / 29). The redesign work changes the surfaces that
+> consume this data; running it after the rebuilds lets the
+> cloud loop see the new pages as it ships content.
 
-## Outcome
+## Pre-flight
 
-After this phase ships, every one of the following shows has
-**at least three season files** at
-`content/shows/<slug>/seasons/NN-<slug>.md`, each with a 50–80
-word spoiler-safe blurb under the same schema phase 22 used:
+Phase 26a must be shipped first. This phase assumes:
 
-- amazing-race
-- bachelor
-- bachelorette
-- bake-off
-- big-brother
-- love-island-uk
-- love-island-us
-- project-runway
-- the-challenge
-- traitors
+- `seasonFrontmatterSchema` carries the editorial block
+  (`display_title`, stats captions, `episode_heat`,
+  `watch_list`, etc.).
+- `.claude/agents/content-curator.md` and
+  `skills/ship-content.md` document the twelve-field show
+  contract + the season editorial-metadata block with examples.
+- The 17 existing season files validate against the new
+  schema.
 
-Seasons selected per show should be the **three most defensibly
-notable** — the canon-worthy entries the show's eventual
-`canon.md` will likely anchor on. Pick conservatively: format-
-defining premieres, widely-recognized format pivots, and
-generally accepted standouts. Skip any season whose status the
-editor would have to qualify or hedge on.
+If any of the above is false, ship phase 26a in the same
+commit as the first 26 tick rather than red-out the verify
+gate.
 
-For each season file:
+## Outcome (per show)
 
-- Frontmatter: `show`, `number`, `title`, `premiere_date`,
-  `ep_count`, `location` (or studio), `host` if relevant,
-  `format_changes: []` (empty unless genuinely notable),
-  plus the 19c editorial fields where applicable
-  (`eyebrow`, `lede`, `pull`, `vote_question`, `aired_year`,
-  `episodes`, `cast_note`, `tag`).
-- Body: 50–80 word blurb. Voice = knowledgeable peer. Spoiler
-  discipline P0 — no winners, no eliminations, no finale
-  outcomes. Format / casting / location / tonal-shift commentary
-  is fair.
+For every show under `content/shows/*.md`, a full season set
+exists at `content/shows/<slug>/seasons/NN-<title>.md` covering
+every aired season. Each file carries:
 
-## Approach
+- Required: `show`, `number`, `title`, body (50-80 words,
+  spoiler-safe).
+- `display_title` when the title has a natural accent
+  (`vs.`, `&`, a colon, etc.) — render via `<em>...</em>` +
+  optional `<br/>`.
+- Stats — `premiere_date`, `ep_count`, `location`, `host` from
+  public record. Captions where editorially confident:
+  `filming_caption`, `premiere_caption`, `episodes_caption`,
+  `host_caption`.
+- `format_summary` (60c) + `format_caption` (80c).
+- `cast_size` (int) + `cast_size_caption`.
+- `eyebrow`, `lede`, `pull` for the hero.
+- `episode_heat` array (length = `ep_count`) when a confident
+  read on episode intensity is possible. Skip otherwise.
+- `watch_list` of 3-6 `{ episode_label, body }` entries — the
+  single highest-value editorial element. Pointers at moments,
+  never outcomes. Spoiler discipline P0.
 
-The cleanest dispatch is one **/ship-content** invocation per
-show. The `content-curator` sub-agent already knows the season
-shape from the phase-25 canon iteration; the brief here is
-purely additive volume against an existing template.
+Once a show's seasons clear the floor, the canon pass runs:
 
-A march tick can chain three shows per pass:
+- If `content/shows/<slug>/canon.md` doesn't exist yet, write
+  it with at least the show's three strongest entries (3 ranked
+  rationales, 80-120 words each).
+- If a canon exists with fewer entries than seasons, extend it
+  one batch at a time toward full coverage. `canonical_position`
+  on each season file is the cross-link.
+- After each canon batch, check the show's `tier` in
+  `content/shows/<slug>.md` frontmatter. Shows clearing **3+
+  canon entries AND ≥75% season coverage** promote from B to
+  A. Shows with full coverage + a 10+ entry canon are eligible
+  for S, but tier-S is reserved for format-defining work —
+  promote conservatively.
 
-```
-/ship-content amazing-race seasons
-/ship-content bachelor seasons
-/ship-content bachelorette seasons
-```
+## Per-tick budget
 
-After each pass the verify gate runs `pnpm content:check`,
-which counts seasons per show — the check will gain a row when
-this phase lands (see "Schema + check" below).
+- **Up to 10 season files per tick.** Lower the count if the
+  show only has fewer ungenerated; never split editorial
+  judgment across ticks to hit a quota.
+- **One show per tick.** Don't chain shows in the same commit
+  — the editorial context for one show is dense enough.
+- **Canon updates ride alongside.** If a tick ships seasons
+  for show X and X's canon needs a corresponding rerank, the
+  canon edit goes in the same commit.
+- **Tier promotion is inline.** If the tick brings show X over
+  the A-tier floor, flip the `tier` field in `<slug>.md` in
+  the same commit.
 
-## Schema + check
+The 60/24h cloud commit ceiling (per
+`.github/workflows/march.yml`) holds. Expect the phase to span
+several days at the every-40-min cadence.
 
-The schema already accommodates this — `seasonFrontmatterSchema`
-is unchanged. The change is just `scripts/content-check.ts`
-counting per-show season coverage and surfacing shows below the
-floor in the post-build summary. Existing season fixtures
-already test the shape; no test churn needed.
+## Dispatch order
 
-`scripts/content-quota.mjs` already enforces "every launch show
-has a frontmatter file" (bearings Rule 1). Extend it with an
-optional `--min-seasons N` flag that exits non-zero if any
-covered show ships fewer than N season files. Plug `--min-seasons 3`
-into the post-build summary print so the gap stays visible
-between phases, but **not** into `pnpm verify` until this phase
-ships — otherwise verify reds out the moment the brief lands.
+When a tick lands on this phase, pick the **show with the
+largest gap** (= `show.seasons` − count of files under
+`seasons/`). Tie-break on the order in
+`scripts/launch-shows.mjs` (the launch-quota canonical list).
 
-## Tier promotion
+Within a show, dispatch the **earliest unfilled season number
+first**, then walk forward. This keeps the canon's "S1 →
+canonical references" pattern intact and gives the editorial
+agent the show's chronology as it builds.
 
-Once a show clears the three-season floor AND ships a canon
-file with at least three entries, its tier in
-`content/shows/<slug>.md` frontmatter moves from B to A. The
-march loop can do this inline as part of the ship-content tick
-that ships the third season — just update the tier line and
-include the change in the same commit.
+## Workflow
 
-The pioneer trio (survivor, dragrace, top-chef) stays at S / A
-respectively — their tier reflects "format-defining" /
-"deep canon" judgment, not just coverage volume.
+1. Read the show's frontmatter + any existing canon + any
+   already-shipped seasons.
+2. Identify the 10-or-fewer next seasons to ship.
+3. Invoke `content-curator` with:
+   - Show slug + the season numbers to draft.
+   - Twelve-field show frontmatter as context.
+   - The full editorial-metadata block to fill per season.
+   - The watch-list rubric: 3-6 entries, episode label leading
+     with `Ep N`, 1-2 sentence body, spoiler-safe pointers.
+4. `pnpm content:check` validates.
+5. `pnpm verify` is the gate.
+6. Commit with `Cloud-Run:` trailer + push.
 
-## Verify gate
+## Canon pass — long truck
 
-`pnpm verify` stays the gate. The new season files validate
-under the existing schema; the season-page e2e
-(`apps/e2e/tests/season-page.spec.ts`) already walks every
-covered season via the canonical-URL fixture — extending
-coverage to ten more shows means the fixture grows
-automatically through the loader-derived URL set.
+Separate from the season drain. Once a show clears the
+season-coverage floor, the next tick on this phase enters
+"canon mode" for that show:
 
-## Acceptance
+- Read all `seasons/*.md` for the show.
+- Decide a ranked order. The seasons themselves carry the
+  signals — `tier_signal`-ish reads in `format_summary`,
+  `format_caption`, `pull`, the editorial slant of the body,
+  the `episode_heat` density.
+- Write `content/shows/<slug>/canon.md` with the full ranking,
+  80-120 word rationales per entry.
+- Apply `canonical_position` to each season's frontmatter.
+- Update the show's `tier`.
 
-- 30 new season files (3 × 10 shows) under
-  `content/shows/<slug>/seasons/`.
-- `pnpm content:check` reports `≥3 seasons` for all 13 shows.
-- `pnpm verify` passes green (typecheck + tests + build + e2e).
-- For every show that gained ≥3 seasons AND a ≥3-entry canon,
-  the `tier` frontmatter field moved from B to A.
-- Build plan check-mark: `[x] Phase 26` with commit hash.
+A single canon-mode tick can ship one show's full canon (12-30
+ranked entries). The `60/24h` ceiling absorbs it.
+
+## Acceptance — overall phase
+
+- Every show has at least one season file per aired season,
+  validated by `pnpm content:check`.
+- Every show has a `canon.md` with at least one ranked entry.
+- The B tier (in show frontmatter) has drained — no show
+  remains in B once its canon + ≥75% season coverage is
+  shipped.
+- Build plan check-mark: `[x] Phase 26` with commit hash on
+  the final tick. (Earlier ticks add WIP commits but don't
+  mark the phase done.)

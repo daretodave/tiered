@@ -7,6 +7,11 @@ ep_count: 14
 location: Pearl Islands, Panama
 host: Jeff Probst
 format_changes: [outcasts-twist]
+premiere_caption: "CBS · Thursday 8/7c"
+format_summary: "Originals · 2 tribes"
+format_caption: "pirate-themed marooning"
+cast_size: 16
+host_caption: "fourth season at the helm"
 ---
 
 A pirate-coded season in Panama, dropped into an early run of

@@ -7,6 +7,9 @@ ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
 format_changes: []
+premiere_caption: "Logo · Monday 9/8c"
+format_summary: "Standard format"
+cast_size: 14
 ---
 
 Logo TV's last era of small-scale Drag Race, and the franchise

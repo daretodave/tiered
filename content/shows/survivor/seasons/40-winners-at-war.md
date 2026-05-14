@@ -7,6 +7,12 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [all-winners-cast, edge-of-extinction, fire-tokens]
+display_title: "Winners <em>at</em><br/>War"
+premiere_caption: "CBS · Wednesday 8/7c"
+format_summary: "Winners only · returnees"
+format_caption: "anniversary season"
+cast_size: 20
+cast_size_caption: "all twenty past winners"
 ---
 
 Twenty former champions on one beach in Fiji, framed by the show

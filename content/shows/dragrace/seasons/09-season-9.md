@@ -7,6 +7,10 @@ ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
 format_changes: [vh1-network-move]
+premiere_caption: "VH1 · Friday 8/7c"
+format_summary: "Standard format"
+format_caption: "the VH1 move season"
+cast_size: 13
 ---
 
 Drag Race's VH1 debut, and the format's biggest production-

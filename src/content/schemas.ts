@@ -71,10 +71,49 @@ const blurbBody = z
     return wc >= 50 && wc <= 80
   }, { message: 'season blurb must be 50–80 words' })
 
+// `display_title` allows a constrained subset of HTML so the season
+// hero can render a colored accent inside the title — the canonical
+// case is "Heroes <em>vs.</em><br>Villains" where `vs.` renders in
+// `var(--show-primary)` and the line breaks before "Villains" per the
+// Heroes vs. Villains design reference. Only <em>...</em> + <br/>
+// permitted; renderers turn <em> into `<span class="amp">` and drop
+// the rest as text. When absent, the season h1 falls back to the
+// plain `title` string.
+const displayTitleHtml = /^[^<]*(?:<em>[^<]+<\/em>|<br\s*\/?>)?[^<]*(?:<em>[^<]+<\/em>|<br\s*\/?>)?[^<]*(?:<em>[^<]+<\/em>|<br\s*\/?>)?[^<]*$/
+
+// Episode-heat marks ride the "Episode rhythm" bar at the top of the
+// season page. One entry per aired episode. Editor's judgment — `hot`
+// is a peak the canon entry will reference; `med` is the show working
+// well; `cold` is a slack ep. Length should match `ep_count` /
+// `episodes` when supplied.
+const episodeHeatEnum = z.enum(['cold', 'med', 'hot'])
+
+const watchListItemSchema = z.object({
+  // The episode label as printed in the "Watch for" card — e.g.
+  // "Ep 1 · cold open" or "Ep 7 · long take". Lead with the episode
+  // number; an optional thin-space-separated tag follows the bullet.
+  episode_label: z.string().min(1).max(48),
+  // 1-2 sentence pointer at what to notice. Spoiler-safe by P0 rule.
+  body: z.string().min(1).max(320),
+})
+
+export type WatchListItem = z.infer<typeof watchListItemSchema>
+
 export const seasonFrontmatterSchema = z.object({
   show: slug,
   number: z.number().int().positive(),
   title: z.string().min(1),
+  // Rich-display variant of `title` — limited HTML, optional. See
+  // `displayTitleHtml` above.
+  display_title: z
+    .string()
+    .min(1)
+    .max(160)
+    .regex(displayTitleHtml, {
+      message:
+        'display_title allows only <em>...</em> and <br/> inside plain text',
+    })
+    .optional(),
   premiere_date: isoDate.optional(),
   ep_count: z.number().int().positive().optional(),
   location: z.string().min(1).optional(),
@@ -93,6 +132,23 @@ export const seasonFrontmatterSchema = z.object({
   episodes: z.number().int().positive().optional(),
   cast_note: z.string().min(1).max(80).optional(),
   tag: z.string().min(1).max(80).optional(),
+  // 26a: stats-strip captions surfaced under each stat key in the
+  // new season hero (per `design/tiered.tv · Heroes vs. Villains.html`
+  // § STATS STRIP). All optional — renderer collapses each stat when
+  // both the value field and its caption are absent.
+  filming_caption: z.string().min(1).max(80).optional(),
+  premiere_caption: z.string().min(1).max(80).optional(),
+  episodes_caption: z.string().min(1).max(80).optional(),
+  format_summary: z.string().min(1).max(60).optional(),
+  format_caption: z.string().min(1).max(80).optional(),
+  cast_size: z.number().int().positive().max(999).optional(),
+  cast_size_caption: z.string().min(1).max(80).optional(),
+  host_caption: z.string().min(1).max(80).optional(),
+  // Episode-heat strip + caption.
+  episode_heat: z.array(episodeHeatEnum).min(1).max(60).optional(),
+  episode_heat_caption: z.string().min(1).max(60).optional(),
+  // Watch-list (the "What to watch for" section).
+  watch_list: z.array(watchListItemSchema).min(1).max(8).optional(),
 })
 
 export type SeasonFrontmatter = z.infer<typeof seasonFrontmatterSchema>

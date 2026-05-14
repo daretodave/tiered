@@ -7,6 +7,9 @@ ep_count: 17
 location: New Orleans, Louisiana
 host: Padma Lakshmi
 format_changes: []
+premiere_caption: "Bravo · Wednesday 10/9c"
+format_summary: "Standard format"
+cast_size: 17
 ---
 
 The city carried the season. Creole and Cajun traditions, gulf

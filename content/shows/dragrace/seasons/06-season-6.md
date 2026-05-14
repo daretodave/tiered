@@ -7,6 +7,10 @@ ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
 format_changes: [split-premiere]
+premiere_caption: "Logo · Monday 9/8c"
+format_summary: "Standard format"
+format_caption: "Bianca and Adore turning point"
+cast_size: 14
 ---
 
 The split-premiere season — two workroom intros, two cast

@@ -7,6 +7,10 @@ ep_count: 13
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [shorter-season, hourglass-twist, shot-in-the-dark, journeys]
+premiere_caption: "CBS · Wednesday 8/7c"
+format_summary: "New Era · 2 tribes"
+format_caption: "26 days, hard-mode format reset"
+cast_size: 18
 ---
 
 The first season back after the pandemic pause, shot in Fiji's

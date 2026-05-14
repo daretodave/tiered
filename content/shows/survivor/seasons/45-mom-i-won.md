@@ -7,6 +7,9 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [ninety-minute-episode, sanctuary]
+premiere_caption: "CBS · Wednesday 8/7c"
+format_summary: "New Era · 3 tribes"
+cast_size: 18
 ---
 
 By season 45 the new-era format has settled. The 26-day clock

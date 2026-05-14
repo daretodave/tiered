@@ -7,6 +7,10 @@ ep_count: 14
 location: Koh Rong, Cambodia
 host: Jeff Probst
 format_changes: [fan-voted-returnee-cast, second-chance]
+premiere_caption: "CBS · Wednesday 8/7c"
+format_summary: "Second Chance · 2 tribes"
+format_caption: "viewer-voted returnees"
+cast_size: 20
 ---
 
 Subtitled Second Chance, the cast voted in by viewers from a

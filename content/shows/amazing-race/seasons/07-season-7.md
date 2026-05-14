@@ -7,6 +7,9 @@ ep_count: 12
 location: "Global route, starting Long Beach, California"
 host: Phil Keoghan
 format_changes: [first-crossover-returnees]
+premiere_caption: "CBS · Tuesday 9/8c"
+format_summary: "11 teams of 2 · standard"
+cast_size: 22
 ---
 
 The crossover season, with a pair of returning Survivor

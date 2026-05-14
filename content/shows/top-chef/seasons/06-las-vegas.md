@@ -7,6 +7,11 @@ ep_count: 15
 location: Las Vegas, Nevada
 host: Padma Lakshmi
 format_changes: []
+display_title: "Las Vegas: <em>the</em><br/>Voltaggio season"
+premiere_caption: "Bravo · Wednesday 10/9c"
+format_summary: "Standard format"
+format_caption: "deepest knife-skill cast on the show"
+cast_size: 17
 ---
 
 The Strip provided the staging — Mandalay Bay kitchens,

@@ -7,6 +7,11 @@ ep_count: 13
 location: "Global route, starting New York"
 host: Phil Keoghan
 format_changes: []
+premiere_caption: "CBS · Wednesday 9/8c"
+format_summary: "11 teams of 2 · standard"
+format_caption: "the show finding the format on-air"
+cast_size: 22
+cast_size_caption: "11 teams of 2"
 ---
 
 Eleven teams, a route marker, and a host nobody had heard of

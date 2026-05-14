@@ -7,6 +7,13 @@ ep_count: 13
 location: Pulau Tiga, Malaysia
 host: Jeff Probst
 format_changes: []
+premiere_caption: "CBS · Wednesday 8/7c"
+format_summary: "Originals · 2 tribes"
+format_caption: "the season that invented the format"
+cast_size: 16
+cast_size_caption: "8 Pagong, 8 Tagi"
+host_caption: "the first season at the helm"
+filming_caption: "the show shot before the format existed"
 ---
 
 Sixteen Americans on a Malaysian island and a host with a torch

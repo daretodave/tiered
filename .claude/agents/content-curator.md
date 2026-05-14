@@ -115,19 +115,58 @@ featured:  true|false  # exactly one show should be true (anchors the home hero)
 ---
 ```
 
-Frontmatter for a season:
+Frontmatter for a season — required + the editorial-metadata
+block added with phase 26a. All editorial fields are OPTIONAL;
+omit them when you don't have a confident answer (the renderer
+collapses the corresponding surface). Mandatory fields are
+`show`, `number`, `title`:
 
 ```yaml
 ---
 show: <show-slug>
 number: <N>
 title: <season title or location>
+
+# Display variant — limited HTML only. Use <em>...</em> around the
+# part you want rendered in show-primary italic accent (the "vs."
+# in "Heroes vs. Villains"), and <br/> for the editorial linebreak.
+# Optional. Omit when the title has no natural accent.
+display_title: "<plain text + optional <em>...</em> + <br/>>"
+
 premiere_date: <YYYY-MM-DD>
 ep_count: <N>
 location: <city, country | studio name>
 host: <name>
 format_changes: ["<change-1>", ...]
 canonical_position: <N>     # editor's ranking; can be refined later
+
+# Hero copy — short editorial block above the body.
+eyebrow:        "<≤80 chars, e.g. \"Aired spring 2010 · Filmed in Samoa\">"
+lede:           "<≤280 chars, one-paragraph rich intro>"
+pull:           "<≤240 chars, the season's argument, set as italic pull quote>"
+vote_question:  "<≤120 chars, fallback uses generic 'belong in canon top 10?'>"
+
+# Stats strip — each pair (value + caption) renders one tile. Omit
+# the pair entirely if no editorial fact is known.
+filming_caption:  "<≤80 chars, subtext under the Location tile>"
+premiere_caption: "<≤80 chars, network + slot, e.g. \"CBS · Thursday 8/7c\">"
+episodes_caption: "<≤80 chars, e.g. \"39 days in country\">"
+format_summary:   "<≤60 chars, one-line format tag, e.g. \"Returnees · 2 tribes\">"
+format_caption:   "<≤80 chars, format subtext, e.g. \"all-veteran cast\">"
+cast_size:        <int>     # numeric cast count
+cast_size_caption: "<≤80 chars, e.g. \"10 heroes, 10 villains\">"
+host_caption:     "<≤80 chars, e.g. \"tenth season at the helm\">"
+
+# Episode-heat bar (one mark per aired ep). Length should match
+# ep_count when both are present.
+episode_heat: [cold | med | hot, ...]
+episode_heat_caption: "<≤60 chars, e.g. \"peak run · eps 7–9, 11\">"
+
+# Watch-list — the "What to watch for" card. 3-6 entries.
+# Spoiler discipline P0: pointers, not outcomes.
+watch_list:
+  - episode_label: "Ep N · short tag"   # ≤48 chars
+    body: "<≤320 chars, one to two sentences>"
 ---
 ```
 
