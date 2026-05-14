@@ -9,4 +9,9 @@ seasons: 15
 status: airing
 blurb: "15 seasons. A tent, a field, a sponge."
 tagline: "15 seasons of amateur bakers in a white tent on a country estate, racing the clock through signature, technical, and showstopper. The gentlest competition on television, and somehow the most watchable. Ranked without spoiling a single Star Baker."
+tier: A
+network: "Channel 4"
+est_year: 2010
+genre_tag: "Culinary competition"
+featured: false
 ---

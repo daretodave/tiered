@@ -18,6 +18,11 @@ seasons: 47
 status: airing
 blurb: 47 seasons. One torch at a time.
 tagline: The mother format.
+tier: S
+network: "CBS"
+est_year: 2000
+genre_tag: "Reality competition"
+featured: true
 ---
 
 Survivor flavor body.
@@ -34,6 +39,11 @@ seasons: 47
 status: airing
 blurb: 47 seasons. One torch at a time.
 tagline: The mother format.
+tier: S
+network: "CBS"
+est_year: 2000
+genre_tag: "Reality competition"
+featured: true
 hero_motifs: [palm-column]
 ---
 `

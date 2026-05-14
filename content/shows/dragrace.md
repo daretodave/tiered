@@ -9,4 +9,9 @@ seasons: 17
 status: airing
 blurb: "17 seasons. Quiet velvet, loud pink."
 tagline: "17 seasons of queens, runways, and Snatch Game. Ranked without spoiling a single crowning."
+tier: S
+network: "MTV"
+est_year: 2009
+genre_tag: "Drag competition"
+featured: false
 ---

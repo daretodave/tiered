@@ -9,4 +9,9 @@ seasons: 26
 status: airing
 blurb: "26 seasons. The house is always watching."
 tagline: "26 seasons of houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre. Ranked without ruining a single eviction."
+tier: A
+network: "CBS"
+est_year: 2000
+genre_tag: "Social competition"
+featured: false
 ---

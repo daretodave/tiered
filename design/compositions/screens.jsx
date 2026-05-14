@@ -66,7 +66,7 @@ function HomeScreen({ mobile = false }) {
           </a>
         </div>
         <div className="home-hero-copy">
-          <div className="home-hero-eyebrow">Pantheon · est. 2026</div>
+          <div className="home-hero-eyebrow">tiered.tv · est. 2026</div>
           <h1 className="home-hero-title">
             The seasons,<br/>ranked. <em>no spoilers.</em>
           </h1>
@@ -84,7 +84,7 @@ function HomeScreen({ mobile = false }) {
 
       <section className="home-shows">
         <div className="section-head">
-          <h2>Pantheons</h2>
+          <h2>Shows</h2>
           <a className="section-link" href="#">All shows →</a>
         </div>
         <div className="home-show-grid">
@@ -158,7 +158,7 @@ function ShowScreen({ mobile = false, show = "survivor" }) {
         <div className="show-hero-meta">
           <div className="show-hero-crumb">
             <Bullet color={s.primary} size={10}/>
-            Pantheons / {s.name}
+            Shows / {s.name}
           </div>
           <p className="show-hero-line">{s.tagline}</p>
           <ShieldBadge/>
@@ -242,7 +242,7 @@ function SeasonScreen({ mobile = false, show = "survivor" }) {
           <header className="season-head">
             <div className="season-crumb">
               <Bullet color={s.primary} size={9}/>
-              <a href="#">Pantheons</a> / <a href="#">{s.name}</a> / <span>Season 20</span>
+              <a href="#">Shows</a> / <a href="#">{s.name}</a> / <span>Season 20</span>
             </div>
             <h1 className="season-h1">Heroes vs. Villains</h1>
             <div className="season-rankrow">
@@ -330,13 +330,11 @@ function TopNav({ mobile, tinted = false }) {
     <nav className={`topnav ${tinted ? "tinted" : ""}`}>
       <a className="topnav-brand" href="#">
         <svg viewBox="0 0 24 24" width={mobile ? 18 : 22} height={mobile ? 18 : 22} aria-hidden="true">
-          <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" strokeWidth="1.4"/>
-          <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" strokeWidth="1.4"/>
-          <line x1="12" y1="12" x2="12" y2="21" stroke="currentColor" strokeWidth="1.4"/>
-          <line x1="20" y1="12" x2="20" y2="21" stroke="currentColor" strokeWidth="1.4"/>
-          <line x1="2" y1="22" x2="22" y2="22" stroke="currentColor" strokeWidth="1.4"/>
-        </svg>
-        <span>Pantheon</span>
+      <rect x="3" y="4.5" width="18" height="3.5" fill="currentColor"/>
+      <rect x="3" y="10.25" width="13" height="3.5" fill="currentColor"/>
+      <rect x="3" y="16" width="8" height="3.5" fill="currentColor"/>
+    </svg>
+        <span>tiered.tv</span>
       </a>
       {!mobile && (
         <div className="topnav-links">
@@ -366,7 +364,7 @@ function Footer({ mobile }) {
   return (
     <footer className="pf-footer">
       <div className="pf-foot-row">
-        <span>Pantheon · the seasons, ranked. no spoilers.</span>
+        <span>tiered.tv · the seasons, ranked. no spoilers.</span>
         {!mobile && <span>About · Contact · Press · 2026</span>}
       </div>
     </footer>

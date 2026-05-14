@@ -30,6 +30,11 @@ seasons: 47
 status: airing
 blurb: One torch at a time.
 tagline: 47 seasons of strangers on a beach.
+tier: S
+network: "CBS"
+est_year: 2000
+genre_tag: "Reality competition"
+featured: true
 ---
 `,
     )
@@ -46,6 +51,11 @@ seasons: 22
 status: airing
 blurb: Knives drawn, herbs fresh.
 tagline: 22 seasons of professional cooks.
+tier: A
+network: "Bravo"
+est_year: 2006
+genre_tag: "Culinary competition"
+featured: false
 ---
 `,
     )

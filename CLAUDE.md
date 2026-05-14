@@ -83,23 +83,29 @@ Type does the editorial work. Everything else is text.
 
 ## Show identity, formalized
 
-Each show carries **exactly seven fields** in
+Each show carries **exactly twelve fields** in
 `content/shows/<slug>.md` frontmatter. No more, no less:
 
-| field      | type      | example                                                       |
-|------------|-----------|---------------------------------------------------------------|
-| `slug`     | string    | `survivor`                                                    |
-| `name`     | string    | `Survivor`                                                    |
-| `palette`  | object    | `{ paper: "#0E2A2A", ink: "#EFE2BD", primary: "#D55E36" }`    |
-| `seasons`  | int       | `47`                                                          |
-| `status`   | enum      | `airing` / `ended` / `hiatus`                                 |
-| `blurb`    | string    | `47 seasons. One torch at a time.`                            |
-| `tagline`  | string    | `47 seasons of strangers on a beach. We've ranked every one.` |
+| field        | type      | example                                                       |
+|--------------|-----------|---------------------------------------------------------------|
+| `slug`       | string    | `survivor`                                                    |
+| `name`       | string    | `Survivor`                                                    |
+| `palette`    | object    | `{ paper: "#0E2A2A", ink: "#EFE2BD", primary: "#D55E36" }`    |
+| `seasons`    | int       | `47`                                                          |
+| `status`     | enum      | `airing` / `ended` / `hiatus`                                 |
+| `blurb`      | string    | `47 seasons. One torch at a time.`                            |
+| `tagline`    | string    | `47 seasons of strangers on a beach. We've ranked every one.` |
+| `tier`       | enum      | `S` / `A` / `B` — editorial confidence in the canon order     |
+| `network`    | string    | `CBS`                                                         |
+| `est_year`   | int       | `2000` (first-aired year)                                     |
+| `genre_tag`  | string    | `Reality competition`                                         |
+| `featured`   | bool      | `true` for the single show that anchors the home hero         |
 
-No `hero_motifs`. No `format`. No `network`. No SVG path. No
-icon name. No mascot reference. If a future contributor
-proposes an eighth field that is graphical in nature, reject
-it.
+No `hero_motifs`. No `format`. No SVG path. No icon name. No
+mascot reference. If a future contributor proposes a graphical
+field, reject it. Non-graphical editorial metadata (like the
+tier / network / est_year set added with the /shows redesign)
+is permitted when a page genuinely needs it.
 
 (The `seasons` int is the count of aired/airing seasons. The
 `blurb` is the short hero subtitle. The `tagline` is the longer

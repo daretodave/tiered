@@ -9,4 +9,9 @@ seasons: 22
 status: airing
 blurb: "22 seasons. Knives drawn, herbs fresh."
 tagline: "22 seasons of professional cooks in unfamiliar kitchens. Ranked by people who actually liked the food."
+tier: A
+network: "Bravo"
+est_year: 2006
+genre_tag: "Culinary competition"
+featured: false
 ---

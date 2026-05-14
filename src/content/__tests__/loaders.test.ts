@@ -40,6 +40,11 @@ seasons: 1
 status: airing
 blurb: A short blurb.
 tagline: A short tagline.
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
 ---
 `,
   )
@@ -385,6 +390,11 @@ seasons: 1
 status: airing
 blurb: A blurb.
 tagline: A tagline.
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
 ---
 `,
     )

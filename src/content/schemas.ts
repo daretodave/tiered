@@ -24,6 +24,10 @@ export const paletteSchema = z.object({
 
 export const showStatusEnum = z.enum(['airing', 'ended', 'hiatus'])
 
+export const showTierEnum = z.enum(['S', 'A', 'B'])
+
+export type ShowTier = z.infer<typeof showTierEnum>
+
 export const showFrontmatterSchema = z
   .object({
     slug,
@@ -33,6 +37,18 @@ export const showFrontmatterSchema = z
     status: showStatusEnum,
     blurb: z.string().min(1).max(120),
     tagline: z.string().min(1).max(280),
+    // Editorial fields added with the /shows tier-list redesign.
+    // tier is the editor's confidence in the canon for this show:
+    //   S — format-defining, we'd defend the order at a bar
+    //   A — deep canon, we'd defend it at a kitchen table
+    //   B — recent / under review, we haven't watched twice yet
+    // network, est_year, genre_tag are surfaced on the show tile.
+    // featured flags the single show that anchors the home hero.
+    tier: showTierEnum,
+    network: z.string().min(1).max(40),
+    est_year: z.number().int().min(1900).max(2100),
+    genre_tag: z.string().min(1).max(60),
+    featured: z.boolean().default(false),
   })
   .strict()
 

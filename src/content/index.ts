@@ -36,6 +36,6 @@ export type {
   ThemeStatus,
 } from './schemas'
 
-export { FEATURED_SHOW_SLUG } from './featured'
+export { getFeaturedShow, getFeaturedShowSlug } from './featured'
 
 export { setContentRoot } from './paths'

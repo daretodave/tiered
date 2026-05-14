@@ -11,6 +11,11 @@ function fakeShow(slug: string): Show {
     status: 'airing',
     blurb: 'blurb',
     tagline: 'tagline',
+    tier: 'B',
+    network: 'N/A',
+    est_year: 2000,
+    genre_tag: 'Reality',
+    featured: false,
   }
 }
 

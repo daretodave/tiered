@@ -1,4 +1,4 @@
-import { FEATURED_SHOW_SLUG, getAllSeasons, getAllShows, getAllThemes, getShow } from '@/content'
+import { getAllSeasons, getAllShows, getAllThemes, getFeaturedShow } from '@/content'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeShowGrid } from '@/components/home/HomeShowGrid'
 import { HomeListGrid } from '@/components/home/HomeListGrid'
@@ -15,7 +15,7 @@ export const dynamic = 'force-static'
 const FEATURED_TILES = 3
 
 export default function HomePage() {
-  const featured = getShow(FEATURED_SHOW_SLUG)
+  const featured = getFeaturedShow()
   const shows = getAllShows()
     .slice()
     .sort((a, b) => a.slug.localeCompare(b.slug))

@@ -13,6 +13,11 @@ export function show(overrides: Partial<Show> = {}): Show {
     status: 'airing',
     blurb: '47 seasons. One torch at a time.',
     tagline: 'Survivor tagline.',
+    tier: 'S',
+    network: 'CBS',
+    est_year: 2000,
+    genre_tag: 'Reality competition',
+    featured: true,
     ...overrides,
   }
 }

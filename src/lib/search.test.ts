@@ -75,6 +75,11 @@ seasons: 47
 status: airing
 blurb: One torch at a time.
 tagline: Sixteen Americans on an island
+tier: S
+network: "CBS"
+est_year: 2000
+genre_tag: "Reality competition"
+featured: true
 ---
 `,
     )

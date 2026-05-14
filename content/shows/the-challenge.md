@@ -9,4 +9,9 @@ seasons: 40
 status: airing
 blurb: "40 seasons. Reality alumni, full contact."
 tagline: "40 seasons of reality veterans hurling themselves off cliffs, into water, and at each other, in service of a final that punishes the legs and the lungs. The longest-running competition on MTV, and the genre's true combat league. Ranked without spoiling a single elimination."
+tier: A
+network: "MTV"
+est_year: 1998
+genre_tag: "Reality competition"
+featured: false
 ---

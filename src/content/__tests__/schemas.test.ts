@@ -23,6 +23,11 @@ const VALID_SHOW = {
   status: 'airing' as const,
   blurb: '47 seasons. One torch at a time.',
   tagline: '47 seasons of strangers on a beach.',
+  tier: 'S' as const,
+  network: 'CBS',
+  est_year: 2000,
+  genre_tag: 'Reality competition',
+  featured: true,
 }
 
 const validSeasonBlurb = (wordCount: number): string =>
@@ -107,9 +112,9 @@ describe('showFrontmatterSchema', () => {
     ).toThrow()
   })
 
-  it('rejects extra legacy fields like network (strict)', () => {
+  it('rejects extra legacy fields like format (strict)', () => {
     expect(() =>
-      showFrontmatterSchema.parse({ ...VALID_SHOW, network: 'CBS' }),
+      showFrontmatterSchema.parse({ ...VALID_SHOW, format: 'serial' }),
     ).toThrow()
   })
 })

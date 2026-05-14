@@ -88,9 +88,12 @@ location, not filler.
 When invoked for a single content unit, you write the
 markdown file(s) to disk with full frontmatter and body.
 
-Frontmatter for a show — **seven fields only** (per
-`design/CLAUDE.md` Show identity contract). No `hero_motifs`,
-no `format`, no `network`, no illustration field of any kind:
+Frontmatter for a show — **twelve fields only** (per
+`CLAUDE.md` Show identity contract). No `hero_motifs`, no
+`format`, no illustration field of any kind. The editorial
+metadata block (tier / network / est_year / genre_tag / featured)
+was added with the /shows tier-list redesign and is required
+on every show:
 
 ```yaml
 ---
@@ -104,6 +107,11 @@ seasons: <int>         # count of aired/airing seasons
 status: airing | ended | hiatus
 blurb:   "<one sentence, two short lines as printed (≤80 chars)>"
 tagline: "<longer editorial sentence readers would quote (≤200 chars)>"
+tier:      S | A | B   # editorial confidence in the canon order (see CLAUDE.md)
+network:   "<channel>" # CBS / MTV / Bravo / Peacock / ITV2 / etc.
+est_year:  <int>       # first-aired year, e.g. 2000
+genre_tag: "<label>"   # short editorial category, e.g. "Reality competition"
+featured:  true|false  # exactly one show should be true (anchors the home hero)
 ---
 ```
 
