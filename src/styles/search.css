@@ -1,7 +1,7 @@
 /* ========================================================================
    SEARCH — cmd+K overlay. Phase 29.
    Ported from design/tiered.tv · Home.html (.search-overlay block).
-   Uses the canonical --color-*/--duration-*/--ease-* tokens directly
+   Uses the canonical --color-, --duration-, --ease- tokens directly
    so the overlay lives outside `.screen` (mounted in chrome layouts).
    ======================================================================== */
 
@@ -352,7 +352,7 @@
   display: inline-flex;
   align-items: center;
   margin-left: 8px;
-  padding: 3px 7px;
+  padding: 5px 7px 3px;
   border: 1px solid var(--color-line-base);
   border-radius: 4px;
   font-family: var(--font-family-mono);
