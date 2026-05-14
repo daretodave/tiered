@@ -46,8 +46,12 @@ Called from:
 - **Ambiguous gap → pick the top row.** If two rows tie on
   score, prefer the one with the older filing date.
 - **Show coverage gap (Rule 1) → ship one full show per tick.**
-  Show metadata (seven fields per `design/CLAUDE.md`) + initial
-  canon stub + 3 seed season blurbs. ~5-7 files in one commit.
+  Show metadata (twelve fields per `CLAUDE.md` — seven core +
+  the editorial block `tier` / `network` / `est_year` /
+  `genre_tag` / `featured`) + initial canon stub + 3 seed
+  season blurbs. ~5-7 files in one commit. New shows default
+  `tier: B`, `featured: false`; promotion to A happens inline
+  with phase 26 when canon + season coverage clears the floor.
   **No facade work** — the visual identity is color + typography
   + the shared brand mark; per-show illustration is prohibited.
 - **Canon completeness (Rule 2) → ship a batch of 3-5 season
@@ -142,8 +146,8 @@ Both run concurrently; their inputs are independent.
 
 #### For Rule 1 (new show)
 
-**`content-curator` brief** (post-19a seven-field contract per
-`design/CLAUDE.md`):
+**`content-curator` brief** (twelve-field contract per
+`CLAUDE.md`):
 
 - Target paths — frontmatter file is the minimum unit:
   - `content/shows/<slug>.md` (required)
@@ -152,7 +156,7 @@ Both run concurrently; their inputs are independent.
     season backfill to rank)
   - `content/shows/<slug>/seasons/NN-<title>.md` (optional —
     season blurbs drain through Rule 2)
-- Frontmatter fields, **exactly seven**, no more:
+- Frontmatter fields, **exactly twelve**, no more:
   - `slug` (lowercase kebab-case)
   - `name` (display name)
   - `palette` — object with `paper`, `ink`, `primary` hex
@@ -163,6 +167,19 @@ Both run concurrently; their inputs are independent.
   - `status` — `airing` | `ended` | `hiatus`
   - `blurb` — ≤120 chars, the short hero subtitle
   - `tagline` — ≤280 chars, the longer editorial sentence
+  - `tier` — `S` | `A` | `B`. New shows default `B`;
+    promotion to A is inline with phase 26 once canon +
+    seasons clear the floor. Reserve `S` for format-defining
+    shows (currently survivor, dragrace).
+  - `network` — string, the airing channel (CBS / MTV / Bravo
+    / Peacock / ITV2 / Channel 4 / ABC, etc.)
+  - `est_year` — int, the first-aired year
+  - `genre_tag` — short editorial label, e.g.
+    "Reality competition", "Culinary competition", "Dating"
+  - `featured` — bool. **Exactly one show in the index has
+    `true`.** New shows default `false`. To rotate the home
+    hero, flip the existing featured to `false` and the new
+    one to `true` in the same commit.
 - Voice: knowledgeable peer, confident-warm-plain. No
   exclamation points.
 - Spoiler discipline P0: NO winners, NO eliminations, NO
