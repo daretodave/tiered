@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 
-// Phase 9 wires the working VotePair interaction. The walker
-// exercises one click per seeded season and asserts the
-// optimistic-update + 800ms lock contract.
+// Phase 30: season detail page rework. Every season URL gets a
+// baseline render check + the working VotePair interaction. The
+// gold-standard Survivor S20 gets additional design-spec assertions
+// (display_title accent, 6-tile stats strip, episode-rhythm bar,
+// 4-card watch list).
 
 const seasonUrls = canonicalUrls.filter((u) => u.pattern === '/shows/[show]/season/[n]')
 
@@ -11,20 +13,19 @@ for (const url of seasonUrls) {
   const slug = url.show ?? ''
   const num = url.season ?? 0
   test.describe(`season page: /shows/${slug}/season/${num}`, () => {
-    test('renders SeasonShell + working vote pair + comment thread shell', async ({
-      page,
-    }) => {
+    test('renders hero + info card + body grid + thread', async ({ page }) => {
       const response = await page.goto(url.path, { waitUntil: 'domcontentloaded' })
       expect(response?.status()).toBe(200)
 
       await expect(page.getByTestId('season-page-screen')).toBeVisible()
-      await expect(page.getByTestId('season-shell')).toBeVisible()
-      await expect(page.getByTestId('season-head')).toBeVisible()
-      await expect(page.getByTestId('season-body')).toBeVisible()
-      await expect(page.getByTestId('season-lede')).toBeVisible()
-      await expect(page.getByTestId('season-rank-row')).toBeVisible()
-      await expect(page.getByTestId('rank-tag').first()).toBeVisible()
+      await expect(page.getByTestId('season-hero')).toBeVisible()
+      await expect(page.getByTestId('season-h1')).toBeVisible()
+      await expect(page.getByTestId('season-lede').first()).toBeVisible()
+      await expect(page.getByTestId('info-card')).toBeVisible()
+      await expect(page.getByTestId('info-row-canon')).toBeVisible()
+      await expect(page.getByTestId('info-row-vote')).toBeVisible()
       await expect(page.getByTestId('vote-pair')).toBeVisible()
+      await expect(page.getByTestId('season-thread')).toBeVisible()
       await expect(page.getByTestId('comment-thread')).toBeVisible()
       await expect(page.getByTestId('shield-badge').first()).toBeVisible()
 
@@ -45,13 +46,60 @@ for (const url of seasonUrls) {
       await expect(up).toBeDisabled()
       await expect(down).toBeDisabled()
 
-      // Lock window is 800ms. Wait past it and assert re-enable.
       await page.waitForTimeout(900)
       await expect(up).toBeEnabled()
       await expect(down).toBeEnabled()
     })
   })
 }
+
+test.describe('survivor S20 — gold-standard reference', () => {
+  const path = '/shows/survivor/season/20'
+
+  test('renders display_title accent, 6-tile stats, ep-strip, watch-list', async ({ page }) => {
+    const response = await page.goto(path, { waitUntil: 'domcontentloaded' })
+    expect(response?.status()).toBe(200)
+
+    // display_title accent
+    const accent = page.getByTestId('display-title-accent')
+    await expect(accent).toBeVisible()
+    await expect(accent).toHaveText('vs.')
+
+    // stats strip — 6 populated tiles on S20
+    const stats = page.getByTestId('stat-tile')
+    await expect(stats).toHaveCount(6)
+
+    // ep strip — 14 cells
+    const epBars = page.getByTestId('ep-bar')
+    await expect(epBars).toHaveCount(14)
+
+    // watch-list — 4 cards
+    const watch = page.getByTestId('watch-list-item')
+    await expect(watch).toHaveCount(4)
+
+    // TOC visible on desktop, 6 entries (all sections present)
+    const tocLinks = page.getByTestId('toc-link')
+    await expect(tocLinks).toHaveCount(6)
+  })
+})
+
+test.describe('survivor S1 — graceful collapse without deep editorial', () => {
+  const path = '/shows/survivor/season/1'
+
+  test('renders cleanly without watch-list or ep-strip', async ({ page }) => {
+    const response = await page.goto(path, { waitUntil: 'domcontentloaded' })
+    expect(response?.status()).toBe(200)
+
+    await expect(page.getByTestId('season-hero')).toBeVisible()
+    await expect(page.getByTestId('section-take')).toBeVisible()
+    await expect(page.getByTestId('section-where')).toBeVisible()
+
+    // No watch list, no ep-strip on this season.
+    await expect(page.getByTestId('watch-list')).toHaveCount(0)
+    await expect(page.getByTestId('ep-strip')).toHaveCount(0)
+    await expect(page.getByTestId('section-watch')).toHaveCount(0)
+  })
+})
 
 test.describe('mobile @ 375px viewport', () => {
   test.use({ viewport: { width: 375, height: 812 } })

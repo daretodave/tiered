@@ -16,16 +16,18 @@ import {
   CommentInput,
   CommentInputStub,
   CommentThread,
-  RankTag,
-  SeasonBody,
-  SeasonDetails,
-  SeasonHead,
-  SeasonShell,
+  SeasonEpStrip,
+  SeasonHero,
+  SeasonInfoCard,
+  SeasonStatsStrip,
+  SeasonTOC,
   ShieldBadge,
   VotePair,
+  WatchList,
   type AdjacentSide,
   type AppearsInRow,
-  type SeasonDetail,
+  type SeasonStat,
+  type TOCSection,
 } from '@/components/composition'
 import { Bullet } from '@/components/atoms/Bullet'
 import { auth0 } from '@/lib/auth0'
@@ -70,9 +72,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   })
 }
 
-function padRank(n: number | null | undefined): string {
-  if (n == null) return '—'
-  return `#${String(n).padStart(2, '0')}`
+function pad2(n: number): string {
+  return String(n).padStart(2, '0')
 }
 
 function ledeOf(season: Season): string {
@@ -82,8 +83,6 @@ function ledeOf(season: Season): string {
 
 function bodyOf(season: Season): string | undefined {
   if (season.body) return season.body
-  // When `lede` is authored separately, fall the file body into the
-  // section as bonus prose. Otherwise leave it for the lede slot.
   if (season.lede) {
     const rest = season.blurb_md.trim()
     return rest.length > 0 ? rest : undefined
@@ -91,25 +90,41 @@ function bodyOf(season: Season): string | undefined {
   return undefined
 }
 
-function detailsOf(season: Season, show: Show): SeasonDetail[] {
-  const out: SeasonDetail[] = []
-  if (season.location) out.push({ key: 'Filmed', value: season.location })
-  const yr = season.aired_year ?? (
-    season.premiere_date ? new Date(season.premiere_date).getUTCFullYear() : null
-  )
-  if (yr) out.push({ key: 'Aired', value: String(yr) })
-  const eps = season.episodes ?? season.ep_count
-  if (eps) out.push({ key: 'Episodes', value: String(eps) })
-  if (season.cast_note) {
-    out.push({ key: 'Cast', value: season.cast_note })
-  }
-  if (out.length < 4 && season.host) {
-    out.push({ key: 'Host', value: season.host })
-  }
-  if (out.length < 4) {
-    out.push({ key: 'Show', value: show.name })
-  }
-  return out.slice(0, 4)
+function statsFor(season: Season): SeasonStat[] {
+  const premieredVal = season.premiere_date
+    ? new Date(season.premiere_date).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })
+    : season.aired_year
+      ? String(season.aired_year)
+      : undefined
+  const epsVal = season.ep_count ?? season.episodes
+  return [
+    { key: 'Filmed', value: season.location, caption: season.filming_caption },
+    { key: 'Premiered', value: premieredVal, caption: season.premiere_caption },
+    {
+      key: 'Episodes',
+      value: epsVal != null ? String(epsVal) : undefined,
+      caption: season.episodes_caption,
+    },
+    {
+      key: 'Format',
+      value: season.format_summary,
+      caption: season.format_caption,
+    },
+    {
+      key: 'Cast size',
+      value:
+        season.cast_size != null
+          ? `${season.cast_size} ${season.cast_size === 1 ? 'player' : 'players'}`
+          : season.cast_note,
+      caption: season.cast_size_caption,
+    },
+    { key: 'Host', value: season.host, caption: season.host_caption },
+  ]
 }
 
 function adjacentByCanon(
@@ -131,7 +146,6 @@ function adjacentByCanon(
     }
   }
   if (pos === -1) {
-    // Current season isn't ranked yet — fall back to by-number siblings.
     const ordered = [...seasons].sort((a, b) => a.number - b.number)
     const idx = ordered.findIndex((s) => s.number === current.number)
     return {
@@ -167,10 +181,31 @@ function appearsInRowsFor(
     rows.push({
       href: `/shows/${show.slug}/canon`,
       name: `${show.name} — Editor's Canon`,
-      meta: `Editor's Canon · ${padRank(canonRank)}`,
+      meta: `Editor's Canon · #${pad2(canonRank)}`,
     })
   }
   return rows
+}
+
+function paragraphsOf(body: string): string[] {
+  return body
+    .split(/\n{2,}/g)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0)
+}
+
+function whereItSitsCopy(
+  show: Show,
+  canonRank: number | null,
+  canonTotal: number,
+): string {
+  if (canonRank == null || canonTotal === 0) {
+    return `Canon position not assigned yet — the editors' draft is still in progress for ${show.name}. Check back as the canon fills in.`
+  }
+  if (canonTotal === 1) {
+    return `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
+  }
+  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The neighbors below frame what we ranked above and below it.`
 }
 
 export default async function SeasonPage({ params }: { params: Params }) {
@@ -181,9 +216,6 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const season = getSeason(show.slug, num)
   if (!season) notFound()
 
-  // The CommentInput is authed-only — anon callers see the sign-in
-  // stub instead. Read auth on the server so we don't ship a session
-  // hook to the client just for this branch.
   const session = await auth0.getSession().catch(() => null)
   const authed = Boolean(session?.user)
 
@@ -192,6 +224,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const canonFile = getCanon(show.slug)
   const canonHit = canonFile?.entries.find((e) => e.season === season.number)
   const canonRank = canonHit?.rank ?? season.canonical_position ?? null
+  const canonTotal = canonFile?.entries.length ?? show.seasons
 
   const articleLd = buildJsonLd({
     type: 'Article',
@@ -216,69 +249,149 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const voteQuestion =
     season.vote_question ?? 'Does this belong in the canon top 10?'
 
+  const lede = ledeOf(season)
+  const body = bodyOf(season)
+  const bodyParagraphs = body ? paragraphsOf(body) : []
+  const wordsForRead = `${lede} ${body ?? ''}`
+    .split(/\s+/)
+    .filter(Boolean).length
+  const readMinutes = Math.max(1, Math.round(wordsForRead / 220))
+
+  const stats = statsFor(season)
+  const populatedStats = stats.filter(
+    (s) => (s.value && s.value.length > 0) || (s.caption && s.caption.length > 0),
+  )
+  const statsVisible = populatedStats.length >= 3
+  const epHeatVisible = (season.episode_heat?.length ?? 0) > 0
+  const watchVisible = (season.watch_list?.length ?? 0) > 0
+  const shapeHasCopy = bodyParagraphs.length > 0
+  const adjacentVisible = Boolean(prev || next)
+
+  const sections: TOCSection[] = [
+    { id: 's-take', num: '01', label: 'The take' },
+    ...(shapeHasCopy ? [{ id: 's-shape', num: '02', label: 'The shape of the season' }] : []),
+    { id: 's-where', num: '03', label: 'Where it sits in the canon' },
+    ...(watchVisible ? [{ id: 's-watch', num: '04', label: 'What to watch for' }] : []),
+    ...(adjacentVisible ? [{ id: 's-related', num: '05', label: 'Adjacent in the canon' }] : []),
+    ...(appearsIn.length > 0 ? [{ id: 's-appears', num: '06', label: 'Also appears in' }] : []),
+  ]
+
   return (
     <ShowPaletteScope show={show.slug}>
       <script {...jsonLdScriptProps({ id: 'ld-season', data: articleLd })} />
       <script {...jsonLdScriptProps({ id: 'ld-season-breadcrumb', data: crumbsLd })} />
       <div className="screen season-page" data-testid="season-page-screen">
-        <SeasonShell
-          main={
+        <SeasonHero
+          crumb={
             <>
-              <SeasonHead
-                crumb={
-                  <>
-                    <Bullet color="var(--show-primary)" size={9} />
-                    <a href="/shows">Tiers</a>
-                    <span aria-hidden="true">/</span>
-                    <a href={`/shows/${show.slug}`}>{show.name}</a>
-                    <span aria-hidden="true">/</span>
-                    <span>Season {season.number}</span>
-                  </>
-                }
-                title={season.title}
-                eyebrow={season.eyebrow}
-                rankRow={
-                  <>
-                    <RankTag label="Editor's Canon" value={padRank(canonRank)} />
-                    <RankTag label="Community" value="—" />
-                    <ShieldBadge inline />
-                  </>
-                }
-              />
-
-              <SeasonBody
-                lede={ledeOf(season)}
-                body={bodyOf(season)}
-                pull={season.pull}
-              />
-
-              <SeasonDetails details={detailsOf(season, show)} />
-
-              <div
-                className="season-vote-block"
-                data-testid="season-vote-block"
-                aria-label="Vote on this season"
-              >
-                <div className="season-vote-head">
-                  <div className="season-vote-q">{voteQuestion}</div>
-                  <div className="season-vote-meta">
-                    vote once per reader · change your mind within 72h
-                  </div>
-                </div>
+              <Bullet color="var(--show-primary)" size={9} />
+              <a href="/shows">Tiers</a>
+              <span aria-hidden="true">/</span>
+              <a href={`/shows/${show.slug}`}>{show.name}</a>
+              <span aria-hidden="true">/</span>
+              <span>Season {season.number}</span>
+            </>
+          }
+          eyebrow={season.eyebrow}
+          title={season.title}
+          displayTitle={season.display_title}
+          lede={lede}
+          byline={
+            <>
+              <span>Canon entry by <span className="who">tiered.tv Editors</span></span>
+              <span className="dot" aria-hidden="true" />
+              <span className="read">{readMinutes} min read</span>
+            </>
+          }
+          infoCard={
+            <SeasonInfoCard
+              canonRank={canonRank}
+              canonTotal={canonTotal}
+              canonMeta={`${canonTotal} ${canonTotal === 1 ? 'season' : 'seasons'}`}
+              voteQuestion={voteQuestion}
+              voteSlot={
                 <VotePair
                   initialCount={0}
                   targetType="season"
                   targetId={seasonTargetId}
                   label="net votes"
                 />
-              </div>
-
-              <AdjacentSeasons prev={prev} next={next} />
-
-              <AppearsInList rows={appearsIn} />
-            </>
+              }
+            />
           }
-          aside={
+        />
+
+        {statsVisible ? <SeasonStatsStrip stats={populatedStats} /> : null}
+
+        {epHeatVisible ? (
+          <SeasonEpStrip
+            heat={season.episode_heat}
+            caption={season.episode_heat_caption}
+          />
+        ) : null}
+
+        <div className="body-grid">
+          <SeasonTOC sections={sections} />
+
+          <article className="article" data-testid="season-article">
+            <section id="s-take" data-testid="section-take">
+              <div className="article-eyebrow"><span className="num">01</span><span>The take</span></div>
+              <h2>{season.title}.</h2>
+              <p data-testid="season-lede">{lede}</p>
+              {season.pull ? (
+                <blockquote className="season-pull" data-testid="season-pull">
+                  {season.pull}
+                </blockquote>
+              ) : null}
+            </section>
+
+            {shapeHasCopy ? (
+              <section id="s-shape" data-testid="section-shape">
+                <div className="article-eyebrow"><span className="num">02</span><span>The shape of the season</span></div>
+                <h2>A rhythm worth tracking.</h2>
+                {bodyParagraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </section>
+            ) : null}
+
+            <section id="s-where" data-testid="section-where">
+              <div className="article-eyebrow"><span className="num">03</span><span>Where it sits in the canon</span></div>
+              <h2>
+                {canonRank != null
+                  ? `The #${pad2(canonRank)} slot.`
+                  : 'Awaiting a canon slot.'}
+              </h2>
+              <p>{whereItSitsCopy(show, canonRank, canonTotal)}</p>
+              <ShieldBadge />
+            </section>
+
+            {watchVisible ? (
+              <section id="s-watch" data-testid="section-watch">
+                <div className="article-eyebrow"><span className="num">04</span><span>What to watch for</span></div>
+                <h2>{`${season.watch_list?.length ?? 0} moments, no spoilers.`}</h2>
+                <WatchList items={season.watch_list} />
+              </section>
+            ) : null}
+
+            {adjacentVisible ? (
+              <section id="s-related" data-testid="section-related">
+                <div className="article-eyebrow"><span className="num">05</span><span>Adjacent in the canon</span></div>
+                <h2>Read next.</h2>
+                <AdjacentSeasons prev={prev} next={next} />
+              </section>
+            ) : null}
+
+            {appearsIn.length > 0 ? (
+              <section id="s-appears" data-testid="section-appears">
+                <div className="article-eyebrow"><span className="num">06</span><span>Also appears in</span></div>
+                <h2>Cross-references.</h2>
+                <AppearsInList rows={appearsIn} />
+              </section>
+            ) : null}
+          </article>
+
+          <aside className="thread" data-testid="season-thread" aria-label="Reader thread">
             <CommentThread
               count={0}
               input={
@@ -294,8 +407,8 @@ export default async function SeasonPage({ params }: { params: Params }) {
                 )
               }
             />
-          }
-        />
+          </aside>
+        </div>
       </div>
     </ShowPaletteScope>
   )

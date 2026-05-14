@@ -35,6 +35,7 @@ export type {
   ThemeFrontmatter,
   ThemeSentiment,
   ThemeStatus,
+  WatchListItem,
 } from './schemas'
 
 export { getFeaturedShow, getFeaturedShowSlug } from './featured'

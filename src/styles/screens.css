@@ -452,59 +452,288 @@
 .season-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
 .season-num { font: 400 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.08em; text-transform: uppercase; }
 
-/* ============================================================ SEASON PAGE
-   Ported from design/tiered.tv · Heroes vs. Villains.html as part of
-   phase 19c — full-bleed, 2-col shell, eyebrow + h1 + rank row,
-   body + pull-quote + 4-cell details strip, vote block, adjacent
-   pair, appears-in stack, sticky aside thread on desktop. */
-.season-page { background: var(--show-paper); color: var(--show-ink); }
-.season-shell {
-  display: grid; grid-template-columns: 1fr 420px; gap: 0;
-  border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-  min-height: calc(100vh - 64px);
+/* ========================================================
+   SEASON PAGE — phase 30, ported from Heroes vs. Villains.
+   Full-bleed hero with sticky info card, stats strip,
+   episode rhythm bar, 3-col body grid (TOC + article +
+   sticky thread). The phase-19c .season-shell layout was
+   retired in this phase.
+   ============================================================ */
+.season-page {
+  background: var(--show-paper);
+  color: var(--show-ink);
+  --s-gutter: 56px;
 }
+@media (max-width: 980px) { .season-page { --s-gutter: 32px; } }
+@media (max-width: 560px) { .season-page { --s-gutter: 20px; } }
 
-.season-main { padding: 80px 80px 96px; max-width: 780px; margin-left: auto; width: 100%; }
+/* HERO */
+.season-page .hero {
+  padding: 56px var(--s-gutter) 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) 380px;
+  column-gap: 80px; align-items: start;
+}
+@media (max-width: 1180px) { .season-page .hero { grid-template-columns: minmax(0, 1fr) 340px; column-gap: 56px; } }
+@media (max-width: 980px) { .season-page .hero { grid-template-columns: 1fr; padding: 48px 32px 0; } }
+@media (max-width: 560px) { .season-page .hero { padding: 32px 20px 0; } }
 
-.season-head { margin-bottom: 40px; }
-.season-crumb { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 500 11px/1.5 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 36px; }
+.season-page .hero-left { min-width: 0; }
+
+.season-crumb {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font: 500 11px/1.5 var(--mono); letter-spacing: 0.14em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+  margin-bottom: 40px;
+}
+.season-crumb .bullet { width: 9px; height: 9px; }
 .season-crumb a { color: inherit; }
 .season-crumb a:hover { color: var(--show-ink); }
-.season-crumb > span:not([data-testid="bullet"]) { color: color-mix(in oklab, var(--show-ink) 80%, transparent); }
-.season-eyebrow { font: 500 11px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--show-primary); margin-bottom: 20px; }
-.season-h1 { font-family: var(--serif); font-weight: 500; font-size: 80px; line-height: 1; letter-spacing: -0.03em; color: var(--show-ink); margin: 0 0 32px; text-wrap: balance; overflow-wrap: anywhere; }
-
-.season-rankrow { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 0; }
-.rank-tag, .season-rank-tag {
-  display: inline-flex; gap: 10px; align-items: center;
-  padding: 10px 16px;
-  border: 1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
-  border-radius: 999px;
+.season-crumb > span:not([data-testid="bullet"]) {
+  color: color-mix(in oklab, var(--show-ink) 80%, transparent);
 }
-.rank-label, .season-rank-label { font: 500 11px/1 var(--mono); letter-spacing: 0.1em; color: color-mix(in oklab, var(--show-ink) 65%, transparent); text-transform: uppercase; }
-.rank-num, .season-rank-num { font: 500 15px/1 var(--mono); color: var(--show-ink); }
 
-.season-body { margin-top: 48px; border-top: 1px solid color-mix(in oklab, var(--show-ink) 10%, transparent); padding-top: 48px; }
-.season-lede { font-family: var(--serif); font-size: 24px; line-height: 1.45; color: var(--show-ink); margin: 0 0 28px; text-wrap: pretty; letter-spacing: -0.01em; }
-.season-body p { font-family: var(--serif); font-size: 18px; line-height: 1.7; color: color-mix(in oklab, var(--show-ink) 86%, transparent); margin: 0 0 22px; text-wrap: pretty; }
-.season-pull { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.4; color: var(--show-ink); border-left: 3px solid var(--show-primary); padding: 8px 0 8px 24px; margin: 36px 0; text-wrap: pretty; }
-
-.season-details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; border: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent); border-radius: 8px; overflow: hidden; }
-.season-details .detail { padding: 18px 20px; border-right: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); background: color-mix(in oklab, var(--show-ink) 3%, var(--show-paper)); }
-.season-details .detail:last-child { border-right: 0; }
-.detail-key { font: 500 10px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 8px; }
-.detail-val { font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--show-ink); letter-spacing: -0.01em; }
-
-.season-vote-block {
-  margin-top: 48px;
-  padding: 28px;
-  border: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent);
-  border-radius: 12px;
-  background: color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
+.season-eyebrow {
+  font: 500 11px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--show-primary); margin-bottom: 24px;
 }
-.season-vote-head { margin-bottom: 20px; }
-.season-vote-q { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--show-ink); letter-spacing: -0.01em; }
-.season-vote-meta { font: 400 12px/1.4 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-top: 6px; letter-spacing: 0.04em; }
+
+.season-h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(56px, 9.5vw, 144px); line-height: 0.92; letter-spacing: -0.035em;
+  color: var(--show-ink); margin: 0 0 32px; text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.season-h1 .amp {
+  font-style: italic; font-weight: 400; color: var(--show-primary);
+  font-size: 0.78em; letter-spacing: -0.02em;
+  display: inline-block; transform: translateY(-0.08em);
+}
+
+.hero-lede {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(20px, 1.9vw, 28px); line-height: 1.4; letter-spacing: -0.01em;
+  color: color-mix(in oklab, var(--show-ink) 90%, transparent);
+  max-width: 680px; text-wrap: pretty;
+  margin: 0 0 32px;
+}
+
+.hero-byline {
+  display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+  font: 500 12px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+  padding: 18px 0 56px;
+  border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+}
+.hero-byline .who { color: var(--show-ink); }
+.hero-byline .dot { width: 4px; height: 4px; border-radius: 999px; background: color-mix(in oklab, var(--show-ink) 40%, transparent); }
+.hero-byline .read { color: var(--show-primary); }
+
+/* INFO CARD (right rail) */
+.info-card {
+  position: sticky; top: 96px;
+  display: flex; flex-direction: column;
+  background: color-mix(in oklab, var(--show-ink) 5%, var(--show-paper));
+  border: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 980px) { .info-card { position: static; margin: 8px 0 16px; } }
+
+.info-row { padding: 22px 24px; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); }
+.info-row:last-child { border-bottom: 0; }
+.info-row-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+  margin-bottom: 14px;
+}
+.info-row-head .meta {
+  color: color-mix(in oklab, var(--show-ink) 40%, transparent);
+  letter-spacing: 0.06em;
+}
+
+.scale-line { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+.scale-rank { font: 500 38px/1 var(--mono); color: var(--show-ink); letter-spacing: -0.01em; }
+.scale-of { font: 500 13px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.06em; }
+.scale-track {
+  position: relative; height: 4px; border-radius: 2px;
+  background: color-mix(in oklab, var(--show-ink) 10%, transparent);
+  margin-top: 6px;
+}
+.scale-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; background: var(--show-primary); }
+.scale-marks {
+  display: flex; justify-content: space-between;
+  margin-top: 8px;
+  font: 500 10px/1 var(--mono); letter-spacing: 0.08em;
+  color: color-mix(in oklab, var(--show-ink) 40%, transparent);
+}
+.scale-marks .here { color: var(--show-primary); }
+
+.community-line { display: flex; align-items: baseline; gap: 12px; }
+.community-num { font: 500 38px/1 var(--mono); color: var(--show-ink); letter-spacing: -0.01em; }
+.community-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 10px; border-radius: 999px;
+  font: 600 11px/1 var(--mono); letter-spacing: 0.06em;
+  background: color-mix(in oklab, var(--s-warm-up) 16%, transparent);
+  color: var(--s-warm-up);
+}
+.community-cap {
+  margin-top: 10px;
+  font-family: var(--serif); font-style: italic; font-size: 14px;
+  color: color-mix(in oklab, var(--show-ink) 70%, transparent);
+  line-height: 1.4;
+}
+
+.vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 12px; text-wrap: pretty; }
+.vote-help { margin-top: 10px; font: 400 11px/1.5 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
+
+.shield-stack { display: flex; flex-direction: column; gap: 10px; }
+.shield-stack .line {
+  display: flex; gap: 10px; align-items: center;
+  font: 500 12px/1.3 var(--mono); letter-spacing: 0.04em;
+  color: color-mix(in oklab, var(--show-ink) 70%, transparent);
+}
+.shield-stack .line .dot { color: var(--s-hold); font-size: 8px; }
+.shield-stack .line.warm .dot { color: var(--show-primary); }
+
+/* STATS STRIP */
+.season-page .stats {
+  margin-top: 0;
+  border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  background: color-mix(in oklab, var(--show-paper) 96%, #000);
+}
+.stats-inner { display: grid; grid-template-columns: repeat(6, 1fr); padding: 0 var(--s-gutter); }
+@media (max-width: 1180px) { .stats-inner { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 0 20px; } }
+
+.stat {
+  padding: 24px 24px 24px 0;
+  border-right: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent);
+  min-width: 0;
+}
+.stat:last-child { border-right: 0; }
+@media (max-width: 1180px) {
+  .stat:nth-child(3n) { border-right: 0; }
+  .stat:nth-child(n+4) { border-top: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); padding-top: 24px; }
+}
+@media (max-width: 560px) {
+  .stat { border-right: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); }
+  .stat:nth-child(3n) { border-right: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); }
+  .stat:nth-child(2n) { border-right: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); padding-top: 24px; }
+}
+.stat-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 10px; }
+.stat-val { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--show-ink); letter-spacing: -0.015em; line-height: 1.15; text-wrap: balance; }
+.stat-cap { margin-top: 4px; font: 400 12px/1.4 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
+
+/* EPISODE RHYTHM */
+.ep-strip {
+  padding: 20px var(--s-gutter);
+  border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  display: flex; align-items: center; gap: 18px;
+}
+@media (max-width: 560px) { .ep-strip { padding: 16px 20px; flex-wrap: wrap; } }
+.ep-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); white-space: nowrap; }
+.ep-bars { flex: 1; display: grid; gap: 3px; min-width: 0; }
+.ep-bar { height: 14px; background: color-mix(in oklab, var(--show-ink) 12%, transparent); border-radius: 2px; }
+.ep-bar.hot { background: var(--show-primary); }
+.ep-bar.med { background: color-mix(in oklab, var(--show-primary) 55%, color-mix(in oklab, var(--show-ink) 12%, transparent)); }
+.ep-foot { font: 500 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.06em; white-space: nowrap; }
+.ep-foot em { color: var(--show-ink); font-style: normal; }
+
+/* BODY GRID — 3 col */
+.body-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 360px;
+  column-gap: 56px;
+  padding: 64px var(--s-gutter) 96px;
+  align-items: start;
+}
+@media (max-width: 1280px) { .body-grid { grid-template-columns: 180px minmax(0, 1fr) 340px; column-gap: 48px; } }
+@media (max-width: 1100px) { .body-grid { grid-template-columns: minmax(0, 1fr) 340px; column-gap: 48px; } .toc { display: none; } }
+@media (max-width: 820px) { .body-grid { grid-template-columns: 1fr; padding: 48px 32px 64px; row-gap: 48px; } }
+@media (max-width: 560px) { .body-grid { padding: 40px 20px 48px; } }
+
+/* TOC */
+.toc { position: sticky; top: 96px; }
+.toc-head { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 16px; }
+.toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+.toc-list li { border-top: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); }
+.toc-list li:first-child { border-top: 0; }
+.toc-list a {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 12px 0;
+  font-family: var(--serif); font-size: 15px; line-height: 1.35;
+  color: color-mix(in oklab, var(--show-ink) 70%, transparent);
+  letter-spacing: -0.005em;
+  transition: color 240ms cubic-bezier(.4,0,.2,1);
+}
+.toc-list a:hover, .toc-list a.active { color: var(--show-ink); }
+.toc-list a.active { color: var(--show-primary); }
+.toc-num {
+  font: 500 11px/1.4 var(--mono);
+  color: color-mix(in oklab, var(--show-ink) 40%, transparent);
+  letter-spacing: 0.06em; flex-shrink: 0; min-width: 18px;
+}
+.toc-list a:hover .toc-num, .toc-list a.active .toc-num { color: var(--show-primary); }
+
+/* ARTICLE column */
+.article { min-width: 0; max-width: 720px; }
+.article-eyebrow {
+  font: 500 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+  margin: 0 0 16px;
+  display: flex; gap: 12px; align-items: center;
+}
+.article-eyebrow .num { color: var(--show-primary); }
+.article section + section { margin-top: 64px; padding-top: 48px; border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); }
+.article h2 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: 36px; line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--show-ink); margin: 0 0 28px; text-wrap: balance;
+}
+@media (max-width: 560px) { .article h2 { font-size: 28px; } }
+.article p {
+  font-family: var(--serif); font-size: 19px; line-height: 1.7;
+  color: color-mix(in oklab, var(--show-ink) 90%, transparent);
+  margin: 0 0 22px; text-wrap: pretty;
+}
+@media (max-width: 560px) { .article p { font-size: 17px; } }
+
+.season-pull {
+  font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.35;
+  color: var(--show-ink);
+  border-left: 3px solid var(--show-primary);
+  padding: 8px 0 8px 24px; margin: 36px 0;
+  text-wrap: pretty; letter-spacing: -0.01em;
+}
+@media (max-width: 560px) { .season-pull { font-size: 20px; } }
+
+/* WATCH LIST */
+.watch-list {
+  list-style: none; padding: 0; margin: 24px 0 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: color-mix(in oklab, var(--show-ink) 12%, transparent);
+  border: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  border-radius: 8px; overflow: hidden;
+}
+@media (max-width: 680px) { .watch-list { grid-template-columns: 1fr; } }
+.watch-list li { padding: 20px 22px; background: var(--show-paper); }
+.watch-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--show-primary); margin-bottom: 8px; }
+.watch-body { font-family: var(--serif); font-size: 16px; line-height: 1.45; color: color-mix(in oklab, var(--show-ink) 90%, transparent); text-wrap: pretty; margin: 0; }
+
+/* THREAD rail */
+.season-page .thread {
+  position: sticky; top: 96px; align-self: start;
+  max-height: calc(100vh - 120px);
+  display: flex; flex-direction: column;
+}
+@media (max-width: 1100px) { .season-page .thread { position: static; max-height: none; } }
+.season-page .thread .aside-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); margin-bottom: 18px; }
+.season-page .thread .aside-head h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0; color: var(--show-ink); letter-spacing: -0.015em; }
+.season-page .thread .aside-meta { font: 500 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ============================================================ VOTE PAIR
    Design source: design/compositions/interactions.jsx (VotePair) +
@@ -713,15 +942,10 @@
 .appears-row .name { font-family: var(--serif); font-size: 17px; color: var(--show-ink); letter-spacing: -0.01em; }
 .appears-row .meta { font: 500 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.06em; text-transform: uppercase; }
 
-/* aside (comments) — sticky on desktop, stacks below article on mobile */
-.season-aside {
-  padding: 80px 36px 96px;
-  background: color-mix(in oklab, var(--show-paper) 90%, #000);
-  border-left: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-  display: flex; flex-direction: column; gap: 24px;
-  position: sticky; top: 64px; align-self: start;
-  max-height: calc(100vh - 64px); overflow-y: auto;
-}
+/* CommentThread chrome — used inside .season-page .thread (phase 30)
+   and inside other contexts where a thread surface lands. The thread
+   container itself owns sticky / max-height; this ruleset is just the
+   inner head + comment-list rhythm. */
 .aside-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
 .aside-head h3 { font-family: var(--serif); font-weight: 500; font-size: 22px; margin: 0; color: var(--show-ink); letter-spacing: -0.01em; }
 .aside-meta { font: 500 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.1em; text-transform: uppercase; }
@@ -875,8 +1099,7 @@
 }
 
 /* Intermediate (≤1024px) breakpoint matching the design source:
-   the wordmark drops from 144px to 96px and the season-main shell
-   loses its right-edge constraint so reading column flows wider. */
+   the wordmark drops from 144px to 96px and tinted layouts simplify. */
 @media (max-width: 1280px) {
   .home-hero-title { font-size: 72px; }
 }
@@ -889,15 +1112,6 @@
 
 @media (max-width: 1024px) {
   .wordmark { font-size: 96px; }
-  .season-shell { grid-template-columns: 1fr; min-height: auto; }
-  .season-main { margin-left: 0; max-width: none; padding: 64px 56px 80px; }
-  .season-h1 { font-size: 64px; }
-  .season-aside {
-    border-left: 0;
-    border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    padding: 48px 32px 64px;
-    position: static; max-height: none; overflow-y: visible;
-  }
   .shifts-row { grid-template-columns: repeat(2, 1fr); }
   .lists-grid { grid-template-columns: 1fr; margin: 0 24px; }
   .list-card { border-right: 0; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); }
@@ -1002,19 +1216,7 @@
   .community-page .show-hero-art { min-height: 220px; padding: 24px; }
   .community-page .show-hero-art svg { max-height: 180px; }
 
-  .season-shell { grid-template-columns: 1fr; min-height: auto; }
-  .season-main { padding: 40px 20px 56px; max-width: 100%; margin: 0; }
-  .season-h1 { font-size: 44px; }
-  .season-lede { font-size: 19px; }
-  .season-body p { font-size: 16px; }
-  .season-details { grid-template-columns: repeat(2, 1fr); }
-  .season-details .detail:nth-child(2n) { border-right: 0; }
   .season-related { grid-template-columns: 1fr; }
-  .season-aside {
-    padding: 32px 20px 48px;
-    border-left: 0; border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    position: static; max-height: none; overflow-y: visible;
-  }
 
   .pf-footer { padding: 16px; }
 }
