@@ -34,7 +34,7 @@ roughly:
 - Sonnet 4.6: ~$0.40–0.60/tick → ~$3–5/day at 7 ticks
 - Opus 4.7:   ~$2.00–3.00/tick → ~$15–20/day at 7 ticks
 
-The 12-commit/24h ceiling caps the worst case either way.
+The 60-commit/24h ceiling caps the worst case either way.
 
 ## Identity choice — bot or you
 
