@@ -6,7 +6,7 @@ import { ShowTile } from '@/components/home/ShowTile'
 import { ListTile } from '@/components/home/ListTile'
 
 // Phase 19e — homepage to spec. Split hero with featured-show cover
-// + cold-search promise, Pantheons grid (3-up), themed lists rail
+// + cold-search promise, Tiers grid (3-up), themed lists rail
 // (1-column). Color + type only; the chrome wrap is applied by the
 // (default) layout — no full-bleed escape for the home page.
 

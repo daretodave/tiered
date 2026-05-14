@@ -12,7 +12,7 @@ ambition. The tactical vocabulary modern fans take for granted —
 the read on idol plays, the math of vote splits, the open
 negotiation that now drives tribal council — largely consolidated
 here. It is loud, dense, and unembarrassed about being a game.
-Pantheon's canon places it first because no other season has
+tiered.tv's canon places it first because no other season has
 shaped what the show is allowed to be more decisively.
 
 ## 1. Borneo

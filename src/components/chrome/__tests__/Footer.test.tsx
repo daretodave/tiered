@@ -3,11 +3,11 @@ import { describe, expect, it } from 'vitest'
 import { Footer } from '../Footer'
 
 describe('<Footer>', () => {
-  it('renders the BrandMark + Pantheon wordmark', () => {
+  it('renders the BrandMark + tiered.tv wordmark', () => {
     render(<Footer />)
     expect(screen.getAllByTestId('brand-mark').length).toBeGreaterThan(0)
     const brand = screen.getByTestId('site-footer-brand')
-    expect(brand).toHaveTextContent('Pantheon')
+    expect(brand).toHaveTextContent('tiered.tv')
   })
 
   it('renders the italic promise with "no spoilers"', () => {
@@ -19,10 +19,10 @@ describe('<Footer>', () => {
     expect(em?.textContent).toBe('no spoilers.')
   })
 
-  it('renders three columns: brand + Pantheons + Pantheon (about)', () => {
+  it('renders three columns: brand + Tiers + tiered.tv (about)', () => {
     render(<Footer />)
     expect(screen.getByTestId('site-footer-brand')).toBeInTheDocument()
-    expect(screen.getByTestId('site-footer-pantheons-col')).toBeInTheDocument()
+    expect(screen.getByTestId('site-footer-tiers-col')).toBeInTheDocument()
     expect(screen.getByTestId('site-footer-about-col')).toBeInTheDocument()
   })
 
@@ -39,9 +39,9 @@ describe('<Footer>', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders a bullet next to each show in the Pantheons column', () => {
+  it('renders a bullet next to each show in the Tiers column', () => {
     render(<Footer />)
-    const col = screen.getByTestId('site-footer-pantheons-col')
+    const col = screen.getByTestId('site-footer-tiers-col')
     const bullets = col.querySelectorAll('[data-testid=bullet]')
     expect(bullets.length).toBeGreaterThan(0)
   })

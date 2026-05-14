@@ -41,7 +41,7 @@ describe('<ListsHero>', () => {
     expect(em?.textContent).toContain('Cross-canon')
   })
 
-  it('renders the "Pantheon / Lists" eyebrow', () => {
+  it('renders the "tiered.tv / Lists" eyebrow', () => {
     render(
       <ListsHero
         stats={{
@@ -52,7 +52,7 @@ describe('<ListsHero>', () => {
         }}
       />,
     )
-    expect(screen.getByText('Pantheon / Lists')).toBeTruthy()
+    expect(screen.getByText('tiered.tv / Lists')).toBeTruthy()
   })
 
   it('uses singular "List" key when total is 1', () => {

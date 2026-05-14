@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-// Phase 19c: pill matching design/Pantheon · Heroes vs. Villains.html
+// Phase 19c: pill matching design/tiered.tv · Heroes vs. Villains.html
 // §SHELL .rank-tag. Two cells (label + value) with an optional trailing
 // slot for a <RankShiftPill>.
 

@@ -22,13 +22,13 @@ describe('<BrandMark>', () => {
     expect(screen.getByTestId('brand-mark').getAttribute('aria-hidden')).toBe('true')
   })
 
-  it('uses currentColor for stroke on every drawn element', () => {
+  it('uses currentColor for fill on every drawn element', () => {
     render(<BrandMark />)
     const svg = screen.getByTestId('brand-mark')
-    const stroked = svg.querySelectorAll('[stroke]')
-    expect(stroked.length).toBeGreaterThan(0)
-    for (const el of Array.from(stroked)) {
-      expect(el.getAttribute('stroke')).toBe('currentColor')
+    const filled = svg.querySelectorAll('[fill]')
+    expect(filled.length).toBeGreaterThan(0)
+    for (const el of Array.from(filled)) {
+      expect(el.getAttribute('fill')).toBe('currentColor')
     }
   })
 

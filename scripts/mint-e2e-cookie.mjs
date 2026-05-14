@@ -1,7 +1,11 @@
-#!/usr/bin/env node
 // scripts/mint-e2e-cookie.mjs
 //
-// Mints OIDC tokens for the `e2e@pantheon.app` Auth0 user via the
+// (No shebang at the top — this file is imported by
+// `src/lib/__tests__/mint-e2e-cookie.test.ts`, and vitest's parser
+// throws SyntaxError when it sees a `#!` line. Invoke directly via
+// `node scripts/mint-e2e-cookie.mjs`.)
+//
+// Mints OIDC tokens for the `e2e@tiered.app` Auth0 user via the
 // password-realm grant flow, builds the @auth0/nextjs-auth0 v4
 // encrypted-session cookie, and caches both at
 // `.cache/e2e-cookie.json`. Also upserts CRITIQUE_SESSION_COOKIE

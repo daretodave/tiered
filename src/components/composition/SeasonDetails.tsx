@@ -1,5 +1,5 @@
 // Phase 19c: 4-cell strip matching
-// design/Pantheon · Heroes vs. Villains.html §SHELL.season-details.
+// design/tiered.tv · Heroes vs. Villains.html §SHELL.season-details.
 // Hidden entirely when no details are available.
 
 export type SeasonDetail = {

@@ -9,7 +9,7 @@ export function HomeShowGrid({ children }: HomeShowGridProps) {
   return (
     <section className="home-shows" data-testid="home-show-section">
       <div className="section-head">
-        <h2>Pantheons</h2>
+        <h2>Tiers</h2>
         <Link href="/shows" prefetch={false} className="section-link">
           All shows →
         </Link>

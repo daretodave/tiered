@@ -107,7 +107,7 @@ export function buildOgImage({
             letterSpacing: 1,
           }}
         >
-          <span style={{ color: p.primary, fontWeight: 600 }}>Pantheon</span>
+          <span style={{ color: p.primary, fontWeight: 600 }}>tiered.tv</span>
           <span style={{ color: p.ink, opacity: 0.6 }}>
             the seasons, ranked. no spoilers.
           </span>

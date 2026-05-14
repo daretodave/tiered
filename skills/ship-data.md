@@ -1,7 +1,7 @@
 # Skill: ship-data
 
-> **Pantheon DB posture.** Per `plan/bearings.md` "Database
-> posture" and `agents.md` §8: Pantheon v1 is an experiment.
+> **tiered.tv DB posture.** Per `plan/bearings.md` "Database
+> posture" and `agents.md` §8: tiered.tv v1 is an experiment.
 > The agent has full destructive authority on Supabase — drop
 > tables, drop indexes, truncate, rewrite migrations, drop the
 > entire database if a clean rebuild is the simplest path
@@ -10,7 +10,7 @@
 > `supabase/migrations/`) and Supabase's daily backups (7-day
 > retention on free tier).
 >
-> **Pantheon's `ship-data` is Supabase-shaped.** Records live
+> **tiered.tv's `ship-data` is Supabase-shaped.** Records live
 > in Postgres tables, not markdown files. Migrations are
 > versioned `.sql` files at `supabase/migrations/NNNN_<topic>.sql`.
 > Schema validation runs via `supabase db lint`. Loaders live

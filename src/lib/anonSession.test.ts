@@ -7,8 +7,8 @@ import {
 } from './anonSession'
 
 describe('anonSession constants', () => {
-  it('uses pantheon_anon_id as the cookie name', () => {
-    expect(ANON_COOKIE_NAME).toBe('pantheon_anon_id')
+  it('uses tiered_anon_id as the cookie name', () => {
+    expect(ANON_COOKIE_NAME).toBe('tiered_anon_id')
   })
 
   it('max-age is the Chrome 400-day clamp', () => {

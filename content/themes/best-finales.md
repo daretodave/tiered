@@ -5,7 +5,7 @@ tagline: "The closing run is where a season either pays off its promise or quiet
 category: craft
 sentiment: verdict
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: true
 related:

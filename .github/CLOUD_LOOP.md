@@ -1,6 +1,6 @@
 # Cloud loop — operator's guide
 
-> The cloud half of Pantheon's autonomous loop. One scheduled
+> The cloud half of tiered.tv's autonomous loop. One scheduled
 > GitHub Actions invocation = one `/march` tick. Local half is
 > unchanged (`/loop /march` still works on your laptop); the
 > cloud half just runs alongside.
@@ -152,7 +152,7 @@ Every commit shipped from the cloud loop ends with a single
 trailer:
 
 ```
-Cloud-Run: https://github.com/daretodave/pantheon/actions/runs/<run-id>
+Cloud-Run: https://github.com/daretodave/tiered/actions/runs/<run-id>
 ```
 
 In **bot mode**, the trailer is redundant with the bot author

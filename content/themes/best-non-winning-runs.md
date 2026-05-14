@@ -5,7 +5,7 @@ tagline: "Survivor's most-quoted arcs don't always belong to the player holding 
 category: tone
 sentiment: hold
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: false
 related:

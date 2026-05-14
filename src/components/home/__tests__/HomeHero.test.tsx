@@ -67,6 +67,6 @@ describe('<HomeHero>', () => {
   it('renders the est-2026 eyebrow on the copy column', () => {
     render(<HomeHero featured={survivor()} />)
     const hero = screen.getByTestId('home-hero')
-    expect(hero.textContent).toContain('Pantheon · est. 2026')
+    expect(hero.textContent).toContain('tiered.tv · est. 2026')
   })
 })

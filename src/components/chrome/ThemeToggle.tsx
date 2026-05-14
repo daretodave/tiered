@@ -26,7 +26,7 @@ export function ThemeToggle() {
     setTheme(next)
     document.documentElement.dataset['theme'] = next
     try {
-      window.localStorage.setItem('pantheon_theme', next)
+      window.localStorage.setItem('tiered_theme', next)
     } catch {
       /* private mode or quota — ignore. */
     }

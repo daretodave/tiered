@@ -8,7 +8,7 @@ describe('<TopNavTinted>', () => {
     const nav = screen.getByTestId('top-nav-tinted')
     expect(nav).toHaveClass('topnav')
     expect(nav).toHaveClass('tinted')
-    expect(screen.getByRole('link', { name: /pantheon home/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /tiered\.tv home/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /shows/i })).toHaveAttribute('href', '/shows')
     expect(screen.getByRole('link', { name: /lists/i })).toHaveAttribute('href', '/themes')
   })
@@ -20,7 +20,7 @@ describe('<TopNavTinted>', () => {
 
   it('honors a custom brand label', () => {
     render(<TopNavTinted brand="Demo" />)
-    expect(screen.getByLabelText(/pantheon home/i).textContent).toContain('Demo')
+    expect(screen.getByLabelText(/tiered\.tv home/i).textContent).toContain('Demo')
   })
 
   it('honors a custom link list', () => {

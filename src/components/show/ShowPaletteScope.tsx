@@ -14,7 +14,7 @@ type ShowPaletteScopeProps = {
    * When true, the scope div takes over the full segment: it fills the
    * body flex column (flex-1 + min-height: 100dvh), sets the show paper
    * as background, and the show ink as color. Use on a route segment
-   * layout (e.g. `src/app/shows/[show]/layout.tsx`) so no Pantheon dark
+   * layout (e.g. `src/app/shows/[show]/layout.tsx`) so no tiered.tv dark
    * paper bleeds through above / below / between sections. When false
    * (default), the scope is a region-level CSS-var injector only — no
    * background or sizing, suitable for wrapping a single hero block on

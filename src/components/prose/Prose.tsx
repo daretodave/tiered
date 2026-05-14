@@ -13,7 +13,7 @@ type ProseProps = {
 export function Prose({ source }: ProseProps) {
   const blocks = parseMarkdownBlocks(source)
   return (
-    <div className="prose-pantheon flex flex-col gap-6">
+    <div className="prose-tiered flex flex-col gap-6">
       {blocks.map((block, ix) => renderBlock(block, ix))}
     </div>
   )

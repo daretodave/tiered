@@ -78,7 +78,7 @@ export async function POST(request: Request) {
 
   if (!sessionId) {
     return NextResponse.json(
-      { ok: false, error: 'no_session', detail: 'missing pantheon_anon_id cookie' },
+      { ok: false, error: 'no_session', detail: 'missing tiered_anon_id cookie' },
       { status: 400 },
     )
   }

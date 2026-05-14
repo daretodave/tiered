@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Themes',
     description:
-      'Themed lists across every Pantheon canon — best premieres, best finales, cross-canon and single-show pantheons, organized by what they admire.',
+      'Themed lists across every tiered.tv canon — best premieres, best finales, cross-canon and single-show tiers, organized by what they admire.',
     path: '/themes',
   })
 }
@@ -57,8 +57,8 @@ export default function ThemesIndexPage() {
   const ld = {
     ...buildJsonLd({
       type: 'CollectionPage',
-      name: 'Themes — pantheon',
-      description: 'Themed lists across every Pantheon canon.',
+      name: 'Themes — tiered',
+      description: 'Themed lists across every tiered.tv canon.',
       path: '/themes',
     }),
     numberOfItems: themes.length,

@@ -8,7 +8,7 @@ type SeasonHeadProps = {
 }
 
 // Phase 19c: header of the season article, matching
-// design/Pantheon · Heroes vs. Villains.html §SHELL. The crumb
+// design/tiered.tv · Heroes vs. Villains.html §SHELL. The crumb
 // includes a show-primary bullet; the optional eyebrow renders
 // between crumb and h1 in show-primary; the rank row holds the
 // two RankTag pills + ShieldBadge.

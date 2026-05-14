@@ -11,8 +11,8 @@ export function Wordmark({ href = '/', className = '' }: WordmarkProps) {
   const compiled = className ? `${styles} ${className}` : styles
 
   return (
-    <Link href={href} className={compiled} aria-label="Pantheon home">
-      Pantheon
+    <Link href={href} className={compiled} aria-label="tiered.tv home">
+      tiered.tv
     </Link>
   )
 }

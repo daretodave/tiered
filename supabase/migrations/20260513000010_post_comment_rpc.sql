@@ -203,7 +203,7 @@ begin
   )
   values (
     v_comment_id,
-    coalesce(current_setting('pantheon.ai_model', true), 'gpt-5-mini-2025-08-07'),
+    coalesce(current_setting('tiered.ai_model', true), 'gpt-5-mini-2025-08-07'),
     p_verdict,
     coalesce(p_categories, '{}'::text[]),
     p_confidence,

@@ -5,7 +5,7 @@ tagline: "The best villain edits aren't cheap heel turns — they're the seasons
 category: craft
 sentiment: consensus
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: true
 related:

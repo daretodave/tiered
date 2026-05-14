@@ -17,7 +17,7 @@ type ShowHeroProps = {
 }
 
 // Phase 19c: two-column hero ported from
-// design/Pantheon · Survivor.html §HERO. Left cover holds the big
+// design/tiered.tv · Survivor.html §HERO. Left cover holds the big
 // wordmark + serif italic sub; right meta column holds the crumb,
 // the stats strip, the tagline, and the shield. The chrome is
 // already tinted via the segment layout's <ShowPaletteScope>.

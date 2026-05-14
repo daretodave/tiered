@@ -6,7 +6,7 @@ export function SearchForm({ initialQuery = '' }: SearchFormProps) {
   return (
     <form action="/search" method="get" className="flex flex-col gap-2" data-testid="search-form">
       <label htmlFor="search-q" className="text-sm text-ink-2">
-        Search Pantheon
+        Search tiered.tv
       </label>
       <div className="flex gap-2">
         <input

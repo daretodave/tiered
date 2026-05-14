@@ -5,7 +5,7 @@ tagline: "A reunion can either tidy the season up or genuinely close it. These a
 category: tone
 sentiment: verdict
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: false
 related:

@@ -1,17 +1,17 @@
-# pantheon
+# tiered
 
-> *pantheon* /ˈpan.θi.ən/ — *n.* a temple housing the gods of a people; a small group of figures regarded as the most important of their kind.
+> *tiered* /ˈpan.θi.ən/ — *n.* a temple housing the gods of a people; a small group of figures regarded as the most important of their kind.
 
-[![march](https://github.com/daretodave/pantheon/actions/workflows/march.yml/badge.svg?branch=main)](https://github.com/daretodave/pantheon/actions/workflows/march.yml)
-[![site](https://img.shields.io/website?url=https%3A%2F%2Fpantheon-coral.vercel.app&label=pantheon-coral.vercel.app&up_message=live)](https://pantheon-coral.vercel.app)
+[![march](https://github.com/daretodave/tiered/actions/workflows/march.yml/badge.svg?branch=main)](https://github.com/daretodave/tiered/actions/workflows/march.yml)
+[![site](https://img.shields.io/website?url=https%3A%2F%2Ftiered.tv&label=tiered.tv&up_message=live)](https://tiered.tv)
 [![built with](https://img.shields.io/badge/built%20with-claude%20code-d97757)](https://claude.com/claude-code)
 [![methodology: nexus](https://img.shields.io/badge/methodology-nexus-lightgrey)](https://github.com/daretodave/nexus)
 
-A spoiler-free home for ranked TV seasons. **The seasons, ranked. No spoilers.** Live at [pantheon-coral.vercel.app](https://pantheon-coral.vercel.app).
+A spoiler-free home for ranked TV seasons. **The seasons, ranked. No spoilers.** Live at [tiered.tv](https://tiered.tv).
 
-Every show on Pantheon gets two rankings side by side: an **Editor's Canon** (written by someone with the whole series in their head) and a **Community Rank** (vote-driven, weekly). The launch cluster is reality TV — Survivor, Top Chef, Drag Race, and ~9 more — covering ~250 seasons in total. The promise is reinforced at every depth: hero headline, shield pill, vote question, inline comment reminder.
+Every show on tiered.tv gets two rankings side by side: an **Editor's Canon** (written by someone with the whole series in their head) and a **Community Rank** (vote-driven, weekly). The launch cluster is reality TV — Survivor, Top Chef, Drag Race, and ~9 more — covering ~250 seasons in total. The promise is reinforced at every depth: hero headline, shield pill, vote question, inline comment reminder.
 
-**This site is always being worked on.** An autonomous loop ships improvements 24/7 through a small set of slash commands — new shows, season blurbs, canon rationales, themed lists, broken-link fixes, schema updates, SEO catches, design landings. The cloud half ticks **hourly** via [GitHub Actions](https://github.com/daretodave/pantheon/actions/workflows/march.yml); the local half runs on my laptop. No human in the per-commit loop, but every commit is gated by a hermetic verify (`typecheck → test → build → e2e`) and a post-push deploy gate.
+**This site is always being worked on.** An autonomous loop ships improvements 24/7 through a small set of slash commands — new shows, season blurbs, canon rationales, themed lists, broken-link fixes, schema updates, SEO catches, design landings. The cloud half ticks **hourly** via [GitHub Actions](https://github.com/daretodave/tiered/actions/workflows/march.yml); the local half runs on my laptop. No human in the per-commit loop, but every commit is gated by a hermetic verify (`typecheck → test → build → e2e`) and a post-push deploy gate.
 
 The visual law is uncompromising and lives in [`design/CLAUDE.md`](./design/CLAUDE.md): **color + typography only**, with a single shared brand mark. No per-show illustration, no facades, no sigils, no mascots. Where a show needs a marker in a list, a 12–16px filled circle in the show's primary color does the job.
 
@@ -53,7 +53,7 @@ Source: [`skills/ship-data.md`](./skills/ship-data.md)
 
 ### `/ship-content`
 
-Ship one content unit end-to-end (show, canon batch, themed list). The four content-velocity rules in [`plan/bearings.md`](./plan/bearings.md) generate a continuous stream of content-gap findings until Pantheon's corpus reaches its launch quota (12 shows, every aired season blurbed, ≥10 themed lists). The skill drains them one tick at a time, spawning `content-curator` for the prose work.
+Ship one content unit end-to-end (show, canon batch, themed list). The four content-velocity rules in [`plan/bearings.md`](./plan/bearings.md) generate a continuous stream of content-gap findings until tiered.tv's corpus reaches its launch quota (12 shows, every aired season blurbed, ≥10 themed lists). The skill drains them one tick at a time, spawning `content-curator` for the prose work.
 
 ```
 /ship-content                       # highest-scoring content-gap row
@@ -91,7 +91,7 @@ Source: [`skills/iterate.md`](./skills/iterate.md)
 
 ### `/critique`
 
-The **external-observer** pass. Spawns the `reader` sub-agent to visit https://pantheon-coral.vercel.app as a first-time reader would, take notes (visual, voice fidelity, mobile reflow, comprehension, navigation honesty, spoiler discipline), self-assess what was returned, and append the surviving findings to [`plan/CRITIQUE.md`](./plan/CRITIQUE.md). `/iterate` reads CRITIQUE.md as one of its audit sources — that's the **feedback address loop**.
+The **external-observer** pass. Spawns the `reader` sub-agent to visit https://tiered.tv as a first-time reader would, take notes (visual, voice fidelity, mobile reflow, comprehension, navigation honesty, spoiler discipline), self-assess what was returned, and append the surviving findings to [`plan/CRITIQUE.md`](./plan/CRITIQUE.md). `/iterate` reads CRITIQUE.md as one of its audit sources — that's the **feedback address loop**.
 
 Two passes per invocation — anonymous + authenticated — so member-only paths get observed too. Rate-limited: only fires when there's a green deploy + ≥12 commits or ≥24h since the last pass. Caps at 6 filed findings per pass.
 
@@ -105,7 +105,7 @@ Source: [`skills/critique.md`](./skills/critique.md)
 
 ### `/triage`
 
-The **issue review** loop. Reads open unlabeled issues at github.com/daretodave/pantheon, classifies each (bug, feature, content, data, docs, spoiler, etc.), applies the right label, posts a short comment, and routes actionable issues into the right backlog (`plan/AUDIT.md`, build plan, or content-gap queue). When there are zero unlabeled issues, exits in <1s — the loop hums on. **Spoilers are P0** — any merged spoiler is a same-day patch.
+The **issue review** loop. Reads open unlabeled issues at github.com/daretodave/tiered, classifies each (bug, feature, content, data, docs, spoiler, etc.), applies the right label, posts a short comment, and routes actionable issues into the right backlog (`plan/AUDIT.md`, build plan, or content-gap queue). When there are zero unlabeled issues, exits in <1s — the loop hums on. **Spoilers are P0** — any merged spoiler is a same-day patch.
 
 `/iterate`, `/ship-data`, and `/ship-content` close issues automatically when their addressing commits ship.
 
@@ -193,7 +193,7 @@ Each skill delegates aggressively to specialist sub-agents (definitions in [`.cl
 | `reader` | Fresh-eyes external observer of the live site (used by `/critique`). Anonymous + authenticated passes. |
 | `content-curator` | Spoiler-disciplined editorial prose — show frontmatter, season blurbs (50–80 words), Editor's Canon rationales (80–120 words per ranked position), themed-list curation. Voice: knowledgeable peer. |
 | `data-steward` | Versioned Supabase migrations, RLS policies, indexes, RPC functions. Has destructive authority on v1. |
-| `brander` | Shared asset rendering **only** — the single Pantheon brand mark, favicons + apple-touch-icon, OG / social-card composites, the wordmark lockup, svg2png. **Never per-show illustration** (see [`design/CLAUDE.md`](./design/CLAUDE.md)). |
+| `brander` | Shared asset rendering **only** — the single tiered.tv brand mark, favicons + apple-touch-icon, OG / social-card composites, the wordmark lockup, svg2png. **Never per-show illustration** (see [`design/CLAUDE.md`](./design/CLAUDE.md)). |
 
 ---
 

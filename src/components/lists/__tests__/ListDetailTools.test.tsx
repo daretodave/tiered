@@ -20,19 +20,19 @@ describe('<ListDetailTools>', () => {
 
     expect(btn.getAttribute('aria-pressed')).toBe('true')
     expect(
-      JSON.parse(window.localStorage.getItem('pantheon_saved_lists') ?? '[]'),
+      JSON.parse(window.localStorage.getItem('tiered_saved_lists') ?? '[]'),
     ).toEqual(['firsts'])
 
     fireEvent.click(btn)
     expect(btn.getAttribute('aria-pressed')).toBe('false')
     expect(
-      JSON.parse(window.localStorage.getItem('pantheon_saved_lists') ?? '[]'),
+      JSON.parse(window.localStorage.getItem('tiered_saved_lists') ?? '[]'),
     ).toEqual([])
   })
 
   it('initialises from existing localStorage state on mount', () => {
     window.localStorage.setItem(
-      'pantheon_saved_lists',
+      'tiered_saved_lists',
       JSON.stringify(['firsts', 'other']),
     )
     render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts" />)
@@ -56,7 +56,7 @@ describe('<ListDetailTools>', () => {
   it('suggest is a mailto link with subject including the theme title', () => {
     render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
     const a = screen.getByTestId('list-suggest')
-    expect(a.getAttribute('href')).toMatch(/^mailto:editors@pantheon\.app/)
+    expect(a.getAttribute('href')).toMatch(/^mailto:editors@tiered\.app/)
     expect(a.getAttribute('href')).toContain(
       encodeURIComponent('Suggest entry: Firsts that hold up'),
     )

@@ -2,15 +2,15 @@ import Link from 'next/link'
 import { getAllShows } from '@/content/loaders'
 import { Bullet } from '@/components/atoms/Bullet'
 
-export function FooterPantheonsCol() {
+export function FooterTiersCol() {
   const shows = getAllShows().slice(0, 3)
   return (
     <nav
       className="site-footer-col"
-      aria-label="Pantheons"
-      data-testid="site-footer-pantheons-col"
+      aria-label="Tiers"
+      data-testid="site-footer-tiers-col"
     >
-      <h2 className="site-footer-col-head">Pantheons</h2>
+      <h2 className="site-footer-col-head">Tiers</h2>
       <ul>
         {shows.map((s) => (
           <li key={s.slug}>

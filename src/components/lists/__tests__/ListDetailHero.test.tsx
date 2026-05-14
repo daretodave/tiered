@@ -70,7 +70,7 @@ describe('<ListDetailHero>', () => {
     expect(screen.getByTestId('list-save')).toBeTruthy()
     expect(screen.getByTestId('list-share')).toBeTruthy()
     expect(screen.getByTestId('list-suggest').getAttribute('href')).toMatch(
-      /^mailto:editors@pantheon\.app/,
+      /^mailto:editors@tiered\.app/,
     )
     const shield = screen.getByTestId('list-shield')
     expect(shield.getAttribute('aria-label')).toContain('No spoilers')

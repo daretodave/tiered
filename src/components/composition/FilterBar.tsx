@@ -1,5 +1,5 @@
 // Phase 19c: presentational filter bar matching
-// design/Pantheon · Survivor.html §FILTERS. The three chips are
+// design/tiered.tv · Survivor.html §FILTERS. The three chips are
 // rendered as <button>s with `data-active-filter` markup so SEO sees
 // a stable default order; real filter wiring (a per-tab data sort)
 // is a separate phase candidate. For 19c, clicks are no-ops — the

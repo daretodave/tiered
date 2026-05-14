@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const STORAGE_KEY = 'pantheon_saved_lists'
+const STORAGE_KEY = 'tiered_saved_lists'
 
 function readSaved(): string[] {
   if (typeof window === 'undefined') return []
@@ -68,7 +68,7 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
     }
   }
 
-  const mailto = `mailto:editors@pantheon.app?subject=${encodeURIComponent(
+  const mailto = `mailto:editors@tiered.app?subject=${encodeURIComponent(
     `Suggest entry: ${themeTitle}`,
   )}`
 

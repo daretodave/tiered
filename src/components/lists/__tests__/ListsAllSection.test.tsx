@@ -64,7 +64,7 @@ describe('<ListsAllSection>', () => {
     expect(cats).toEqual(['tone', 'craft', 'era', 'single'])
   })
 
-  it('uses "Single-show pantheons" head text — not "By single"', () => {
+  it('uses "Single-show tiers" head text — not "By single"', () => {
     render(
       <ListsAllSection
         byCategory={build({
@@ -74,7 +74,7 @@ describe('<ListsAllSection>', () => {
         today={today}
       />,
     )
-    expect(screen.getByText(/Single-show pantheons/i)).toBeTruthy()
+    expect(screen.getByText(/Single-show tiers/i)).toBeTruthy()
   })
 
   it('returns null when every category is empty', () => {

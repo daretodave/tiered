@@ -5,7 +5,7 @@ tagline: "Survivor's location reveal is the first thing the audience sees. The s
 category: craft
 sentiment: warm-up
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: false
 related:

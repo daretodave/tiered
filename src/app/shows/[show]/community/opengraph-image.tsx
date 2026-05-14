@@ -3,7 +3,7 @@ import { getShow } from '@/content'
 import { buildOgImage } from '@/lib/og/template'
 
 export const runtime = 'nodejs'
-export const alt = 'Pantheon — the seasons, ranked. no spoilers.'
+export const alt = 'tiered.tv — the seasons, ranked. no spoilers.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -14,7 +14,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<Param
   const show = getShow(slug)
   if (!show) notFound()
   return buildOgImage({
-    eyebrow: `Pantheon · ${show.name} · Community Rank`,
+    eyebrow: `tiered.tv · ${show.name} · Community Rank`,
     title: `${show.name}, by the vote`,
     blurb: 'Voted by readers. Weighted by account age and engagement. No spoilers.',
     palette: {

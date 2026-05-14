@@ -344,7 +344,7 @@ describe('themeSchema', () => {
     })
     expect(parsed.sentiment).toBe('hold')
     expect(parsed.status).toBe('stable')
-    expect(parsed.curator).toBe('Pantheon Editors')
+    expect(parsed.curator).toBe('tiered.tv Editors')
     expect(parsed.featured).toBe(false)
     expect(parsed.related).toEqual([])
   })
@@ -472,7 +472,7 @@ describe('legalDocSchema', () => {
     expect(() =>
       legalDocSchema.parse({
         slug: 'about',
-        title: 'About Pantheon',
+        title: 'About tiered.tv',
         body_md: '# About\n\nA paragraph.',
       }),
     ).not.toThrow()

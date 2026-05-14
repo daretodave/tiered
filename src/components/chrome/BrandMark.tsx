@@ -24,16 +24,9 @@ export function BrandMark({ size = 22, className }: BrandMarkProps) {
       className={className}
       data-testid="brand-mark"
     >
-      <path
-        d="M2 11 L14 3 L26 11 Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <line x1="5" y1="14" x2="5" y2="25" stroke="currentColor" strokeWidth="1.4" />
-      <line x1="14" y1="14" x2="14" y2="25" stroke="currentColor" strokeWidth="1.4" />
-      <line x1="23" y1="14" x2="23" y2="25" stroke="currentColor" strokeWidth="1.4" />
-      <line x1="2" y1="26" x2="26" y2="26" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="4" y="5" width="20" height="4" fill="currentColor" />
+      <rect x="4" y="12" width="14" height="4" fill="currentColor" />
+      <rect x="4" y="19" width="8" height="4" fill="currentColor" />
     </svg>
   )
 }

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Bullet } from '@/components/atoms/Bullet'
 
 // Phase 19c: list matching
-// design/Pantheon · Heroes vs. Villains.html §APPEARS-IN. One row per
+// design/tiered.tv · Heroes vs. Villains.html §APPEARS-IN. One row per
 // themed list or canon membership for this <show, season>.
 
 export type AppearsInRow = {

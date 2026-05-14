@@ -13,7 +13,7 @@ more. We don't sell your data. We use first-party analytics
 
 ## What we collect
 
-If you visit Pantheon **without signing in**:
+If you visit tiered.tv **without signing in**:
 
 - A short-lived HttpOnly cookie holds an anonymous session
   ID so your votes can be counted (rate-limited per IP).
@@ -78,7 +78,7 @@ list above.
 
 ## Cookies
 
-- One HttpOnly session cookie (`__pantheon_session`) for
+- One HttpOnly session cookie (`__tiered_session`) for
   anonymous voting. 30-day rolling expiry.
 - One `__session` cookie set by Auth0 if you sign in.
   Standard authentication cookie.
@@ -88,7 +88,7 @@ list above.
 
 - **Don't sign in:** read everything, vote anonymously
   (rate-limited), no account exists. To clear your guest
-  session, delete cookies for `pantheon-coral.vercel.app`
+  session, delete cookies for `tiered.tv`
   in your browser.
 - **Delete your account / export your data:** contact paths
   will be added before any public launch. Until then, the
@@ -96,7 +96,7 @@ list above.
 
 ## Children
 
-Pantheon isn't directed at children under 13. If you believe
+tiered.tv isn't directed at children under 13. If you believe
 we've inadvertently collected data from a child under 13,
 contact paths will be added before any public launch.
 

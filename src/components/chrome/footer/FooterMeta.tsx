@@ -8,7 +8,7 @@ export function FooterMeta() {
   return (
     <div className="site-footer-meta" data-testid="site-footer-meta">
       <span className="site-footer-meta-rebellion">
-        © {year} Pantheon · est. as a quiet rebellion against ranked lists that
+        © {year} tiered.tv · est. as a quiet rebellion against ranked lists that
         ruin the show
       </span>
       <span

@@ -1,7 +1,7 @@
-# Pantheon
+# tiered.tv
 
 > A spoiler-free home for ranked TV seasons. Every show gets its
-> own pantheon — an editorial canon and a community rank, side
+> own tiered — an editorial canon and a community rank, side
 > by side. Reality first, scripted later.
 >
 > Tagline: **The seasons, ranked. No spoilers.**
@@ -16,13 +16,13 @@ Three concentric audiences:
 2. **Show binge-prep** — someone about to start a show, wants to know which seasons are worth watching and in what order, without learning any plot.
 3. **Returning fans** — someone who has watched, wants to argue rankings, vote, comment, defend their favorite season. This is the social loop.
 
-Pantheon serves all three from the same page surface. The editorial canon is the search-magnet; the community rank + comments is the engagement engine.
+tiered.tv serves all three from the same page surface. The editorial canon is the search-magnet; the community rank + comments is the engagement engine.
 
 ---
 
 ## What it is (v1)
 
-For each covered show, Pantheon publishes:
+For each covered show, tiered.tv publishes:
 
 - **A show home** — a hero illustration (the show's "facade"), a one-liner, a season grid, links to the two rankings.
 - **An Editor's Canon** — `/[show]/canon`. AI-generated ranked list. Each season has a 50–80 word "knowledgeable peer" blurb explaining why it lands where it does, with zero plot, winners, deaths, or twists.
@@ -95,7 +95,7 @@ GET  /api/ranking/[show]     cached aggregate, served via ISR
 | Hosting | Vercel |
 | Static content | Markdown + frontmatter in `content/` |
 | Dynamic data | Supabase (Postgres + Auth helpers + RLS) |
-| Auth | Auth0 (magic-link passwordless) for verified users; HttpOnly cookie + Supabase `sessions` row for anonymous guests (no Auth0 round-trip). Tenant: `pantheon-app.us.auth0.com`. Audience: `https://api.pantheon.app`. Full setup runbook in `setup/04_auth0.md`. |
+| Auth | Auth0 (magic-link passwordless) for verified users; HttpOnly cookie + Supabase `sessions` row for anonymous guests (no Auth0 round-trip). Tenant: `tiered-app.us.auth0.com`. Audience: `https://api.tiered.app`. Full setup runbook in `setup/04_auth0.md`. |
 | Search | Supabase full-text (Algolia later if needed) |
 | AI — editorial (build-time) | Claude Code agent itself (Pro/Max subscription). Blurbs, canon rationales, post-finale pieces are written by /iterate and committed as markdown. No external API. |
 | AI — moderation (runtime) | OpenAI (`gpt-4o-mini` or equivalent fast model) called from Next.js server actions. Pre-filters comments for spoilers + abuse at submit. |
@@ -177,7 +177,7 @@ Vote weighting (anti-brigade):
 - **Read** — no auth needed.
 - **Vote** — HttpOnly cookie session issued by Next.js middleware (UUID-v4 session_id, mapped to Supabase `sessions` row). No Auth0 round-trip for guests. IP-rate-limited. Counts at 0.1×. When the same session later authenticates via magic link, the row is upgraded with the Auth0 sub and prior guest votes follow the user into their account.
 - **Comment** — magic-link verified via Auth0 passwordless. Counts at 1.0× after 7-day account age.
-- **Mod** — Auth0 `mod` role granted manually in dashboard; gated via the `permissions` claim in the access token (RBAC enabled on the Pantheon API). Drains the queue at `/mod`.
+- **Mod** — Auth0 `mod` role granted manually in dashboard; gated via the `permissions` claim in the access token (RBAC enabled on the tiered.tv API). Drains the queue at `/mod`.
 
 **Comment moderation flow:**
 1. AI pre-filter at submit (OpenAI `gpt-4o-mini`, fast, structured-output JSON): blocks slurs, spoilers (winners/deaths/twists/finale outcomes), and obvious abuse.
@@ -192,7 +192,7 @@ Every AI moderation decision is logged in `ai_decisions` for audit.
 
 ## Visual system (the agnostic theme)
 
-**Concept:** every show is a *Pantheon* — a flat-illustrated architectural facade composed of motifs unique to that show. The common theme is the architectural language (column / pediment / frieze / ornament), not the motifs themselves.
+**Concept:** every show is a *tiered.tv* — a flat-illustrated architectural facade composed of motifs unique to that show. The common theme is the architectural language (column / pediment / frieze / ornament), not the motifs themselves.
 
 Examples:
 - **Survivor** — palm-trunk columns, torch-pediment, woven frieze.
@@ -264,7 +264,7 @@ Anti-tactics (deliberate non-goals): no AI-spam landing pages, no doorway pages,
 1. Bootstrap (Next.js + nexus overlay + Supabase + Auth0 wiring stubs).
 2. Static content layer (markdown loader, frontmatter validators, content schemas).
 3. URL contract scaffolding (every route returns 200 with stubs).
-4. Pantheon facade system (SVG primitives + first 3 shows' facades).
+4. tiered.tv facade system (SVG primitives + first 3 shows' facades).
 5. Show home page **(canonical sibling — every later show mirrors this)**.
 6. Editor's Canon page.
 7. Community Rank page.
@@ -294,4 +294,4 @@ After phases 1–18 ship, the project enters **/iterate endgame**:
 - Event triggers (a finale air date in `content/calendar.yml`) prompt `/iterate` to write a "post-finale ranking shift" piece spoiler-free, ship it, and bump that show's canon position if warranted.
 - Every change goes through verify + deploy gates. Drift is caught by `/oversight` checkpoints.
 
-The loop's job is to keep Pantheon's content fresh, the canons defensible, and the community healthy — without you watching every commit.
+The loop's job is to keep tiered.tv's content fresh, the canons defensible, and the community healthy — without you watching every commit.

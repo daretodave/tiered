@@ -5,7 +5,7 @@ tagline: "Survivor's comeback seasons are the ones with the highest pre-air risk
 category: tone
 sentiment: warm-up
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: true
 related:

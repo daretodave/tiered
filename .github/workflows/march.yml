@@ -1,6 +1,6 @@
 name: march
 
-# Cloud half of the Pantheon autonomous loop. One invocation =
+# Cloud half of the tiered.tv autonomous loop. One invocation =
 # one /march tick. State of truth is the repo on origin/main;
 # every tick reads it fresh, no memory between runs.
 #
@@ -43,7 +43,7 @@ jobs:
           fetch-depth: 0
           # PAT (not GITHUB_TOKEN) so git push commits as the
           # human user, not as github-actions[bot]. Required for
-          # uniform git log per Pantheon's posture.
+          # uniform git log per tiered.tv's posture.
           token: ${{ secrets.ACTIONS_PAT }}
 
       - name: Set up pnpm
@@ -140,7 +140,7 @@ jobs:
             --model claude-opus-4-7
             --dangerously-skip-permissions
           prompt: |
-            You are running Pantheon's autonomous loop in CI (GitHub Actions).
+            You are running tiered.tv's autonomous loop in CI (GitHub Actions).
             Read agents.md first for the standing rules — they all apply.
 
             Cloud-mode adjustments on top of agents.md:

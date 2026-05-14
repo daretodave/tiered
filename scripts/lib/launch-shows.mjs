@@ -1,4 +1,4 @@
-// The Pantheon launch-show list referenced by `plan/bearings.md`
+// The tiered.tv launch-show list referenced by `plan/bearings.md`
 // "Content velocity & editorial cadence" Rule 1. Source of truth
 // in code lives here so the `pnpm content:quota` check computes
 // `missing` identically to a human reading bearings.

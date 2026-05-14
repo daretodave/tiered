@@ -1,4 +1,4 @@
-# Pantheon — read this first
+# tiered.tv — read this first
 
 Every agent landing in this repo reads this file before doing
 anything else. The standing rules are listed once below; the
@@ -12,13 +12,13 @@ and `plan/bearings.md`. **Honor this file before improvising.**
 1. **`design/CLAUDE.md`** — visual law. Read it cold before any
    UI work. It overrides any older guidance found elsewhere in
    the repo, including this file.
-2. **`design/Pantheon · Brand.html`** — header, footer, brand
+2. **`design/tiered.tv · Brand.html`** — header, footer, brand
    mark spec. The mark is the **only** SVG illustration in the
    product.
-3. **`design/Pantheon · Survivor.html`** — the canonical
+3. **`design/tiered.tv · Survivor.html`** — the canonical
    production show page (full-bleed, tinted chrome, all
    seasons). When you build a show page, this is the reference.
-4. **`design/Pantheon · Heroes vs. Villains.html`** — the
+4. **`design/tiered.tv · Heroes vs. Villains.html`** — the
    canonical production season page (lede, body, vote block,
    adjacent seasons, "also appears in," sticky thread aside).
 5. **`design/compositions/screens.jsx` + `screens.css`** — the
@@ -37,15 +37,15 @@ the design files win.
 
 ## The visual law (in one paragraph)
 
-Pantheon's identity is **color + typography**. Each show carries
+tiered.tv's identity is **color + typography**. Each show carries
 a three-color palette (paper / ink / primary) and a serif
 wordmark. That is the whole identity. **There is no
 illustration, no per-show iconography, no sigil, no facade, no
 mascot, no thematic ornamentation.** The only SVG in the product
-is the shared Pantheon brand mark (a small pediment over three
-columns) which appears in every header and footer. Color does
-the visual work. Type does the editorial work. Everything else
-is text.
+is the shared tiered.tv brand mark (three horizontal bars,
+stacked, descending in width — a literal tier list) which
+appears in every header and footer. Color does the visual work.
+Type does the editorial work. Everything else is text.
 
 ### The five hard rules — never break
 
@@ -62,10 +62,12 @@ is text.
    **12–16px filled circle** in `var(--show-primary)`. Class
    `.bullet`. This is the only show-specific graphic permitted
    in the entire system.
-3. **The only SVG in the product is the Pantheon brand mark** —
-   monochromatic pediment + three columns + stylobate, shared
-   across every show. See `design/Pantheon · Brand.html` for
-   spec. Never invent per-show variants.
+3. **The only SVG in the product is the tiered.tv brand mark** —
+   three horizontal bars on a 28-unit viewBox (widths 20/14/8),
+   filled `currentColor`, no stroke, shared across every show.
+   See `design/tiered.tv · Brand.html` for spec. Never invent
+   per-show variants. Never equalize the bars, reverse them, or
+   tighten the gaps.
 4. **Color identity flows through chrome tinting.** On a show
    page the chrome reads `--show-paper / --show-ink /
    --show-primary` and the body becomes the show paper. Big
@@ -120,8 +122,9 @@ and is the kind of line a reader quotes to a friend.)
 5a. **Every commit ships unit tests AND e2e contributions.** New
     URL → row in `apps/e2e/src/fixtures/canonical-urls.ts` +
     `page-reads.ts`. New page family → dedicated spec.
-6. **Pantheon is lowercase in running prose, capital P at
-   headlines.**
+6. **The brand name is `tiered.tv` — always lowercase, including
+   the `.tv` suffix.** Never capitalize the T. The dot is part
+   of the wordmark; never stylize, color, or kern it apart.
 7. **Spoilers are P0.**
 8. **Database mutations are autonomous in v1.**
 9. **Content stays in `content/`. Data stays in Supabase.** No
@@ -134,7 +137,7 @@ and is the kind of line a reader quotes to a friend.)
 
 | If you need… | Read |
 |---|---|
-| What Pantheon is | `spec.md` |
+| What tiered.tv is | `spec.md` |
 | Visual law (UI, brand, chrome) | `design/CLAUDE.md` |
 | Stack, conventions, voice | `plan/bearings.md` |
 | What ships next | `plan/steps/01_build_plan.md` |

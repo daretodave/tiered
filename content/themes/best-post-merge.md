@@ -5,7 +5,7 @@ tagline: "The merge is where a season either compresses into something dense or 
 category: tone
 sentiment: consensus
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: false
 related:

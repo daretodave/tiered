@@ -38,7 +38,7 @@ test('anon vote round-trip persists in Supabase', async ({ page, context }) => {
   // First page load — middleware mints the anon cookie.
   await page.goto('/', { waitUntil: 'domcontentloaded' })
   const cookies = await context.cookies()
-  expect(cookies.find((c) => c.name === 'pantheon_anon_id')?.value).toBeDefined()
+  expect(cookies.find((c) => c.name === 'tiered_anon_id')?.value).toBeDefined()
 
   // Cast +1.
   const cast = await castVote(page, {

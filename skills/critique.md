@@ -27,7 +27,7 @@ read well as a real reader would experience it.
 /critique authenticated      # logged-in pass only (requires Auth: != none)
 ```
 
-**Auth handling for Pantheon.** Bearings declares
+**Auth handling for tiered.tv.** Bearings declares
 `Auth: session-cookie`. **Default `/critique` runs TWO passes
 in sequence** — both required, both filed:
 
@@ -38,7 +38,7 @@ in sequence** — both required, both filed:
   "sign in to comment" prompt, public canon + community
   pages.
 - **Authenticated pass** — cookie attached as the
-  `e2e@pantheon.app` user. Walks the URL set as a returning
+  `e2e@tiered.app` user. Walks the URL set as a returning
   member would. Captures: /sign-in's authed-redirect target,
   /u/[handle] for itself, the comment-input affordance in
   its live state, the vote-pair in its post-click state with
@@ -153,7 +153,7 @@ non-existent pages), recent shipping focus.
 ```
 Agent({
   subagent_type: "reader",
-  prompt: "Visit these URLs of https://pantheon-coral.vercel.app: [list].
+  prompt: "Visit these URLs of https://tiered.tv: [list].
            Voice cue from plan/bearings.md: <quote>.
            Already-addressed (skip): <Done section>.
            Focus: <from arg or 'general'>.

@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Something Pantheon doesn't do yet that you wish it did.
+about: Something tiered.tv doesn't do yet that you wish it did.
 title: 'feature: '
 labels: feature
 ---

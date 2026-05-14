@@ -12,7 +12,7 @@ function theme(overrides: Partial<Theme> = {}): Theme {
     category: 'single',
     sentiment: 'neutral',
     status: 'stable',
-    curator: 'Pantheon Editors',
+    curator: 'tiered.tv Editors',
     last_revised: '2026-04-15',
     featured: false,
     related: [],

@@ -1,6 +1,6 @@
 # Skill: ship-a-phase
 
-> **Pantheon discipline reminder.** Every phase ships unit
+> **tiered.tv discipline reminder.** Every phase ships unit
 > tests AND contributions to the e2e harness (per agents.md
 > §5a):
 > - Pure helpers → colocated `__tests__/<name>.test.ts`.
@@ -27,7 +27,7 @@
 
 ## 1. Purpose
 
-`plan/steps/01_build_plan.md` carves Pantheon into ~10–20 phases.
+`plan/steps/01_build_plan.md` carves tiered.tv into ~10–20 phases.
 Each phase is one self-contained slice that ships end-to-end:
 code + unit tests + e2e + commit + push (deploy follows).
 
@@ -80,7 +80,7 @@ and parallelize independent work.
 - **`scout`** — every external research need.
 - **`brander`** — shared asset rendering ONLY: the shared brand
   mark, favicons + apple-touch-icon, OG image composites for
-  routes, social cards, the Pantheon wordmark lockup, svg2png.
+  routes, social cards, the tiered.tv wordmark lockup, svg2png.
   **Never per-show illustration** — `design/CLAUDE.md` Hard
   Rule 1 prohibits it. Canonical delegate for phase 17
   (per-route OG PNG rendering), phase 19b (regenerate the
@@ -183,7 +183,7 @@ cat > /tmp/phase-issue-body.md <<EOF
 
 <2–4 line summary of what shipping this phase delivers>
 
-**Brief:** [\`plan/phases/phase_<N>_<topic>.md\`](https://github.com/daretodave/pantheon/blob/main/plan/phases/phase_<N>_<topic>.md)
+**Brief:** [\`plan/phases/phase_<N>_<topic>.md\`](https://github.com/daretodave/tiered/blob/main/plan/phases/phase_<N>_<topic>.md)
 
 ---
 _Tracked by the autonomous loop. The phase commit will close this issue via a \`Closes #<this-issue>\` trailer; deploy URL is posted as a follow-up comment._

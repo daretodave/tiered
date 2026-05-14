@@ -63,7 +63,7 @@ export default function CanonPage({ params }: { params: Params }) {
   const crumbsLd = buildJsonLd({
     type: 'BreadcrumbList',
     trail: [
-      { name: 'Pantheons', path: '/shows' },
+      { name: 'Tiers', path: '/shows' },
       { name: show.name, path: `/shows/${show.slug}` },
       { name: "Editor's Canon", path: `/shows/${show.slug}/canon` },
     ],
@@ -77,7 +77,7 @@ export default function CanonPage({ params }: { params: Params }) {
         <ShowHero
           crumb={
             <>
-              <a href="/shows">Pantheons</a> / <a href={`/shows/${show.slug}`}>{show.name}</a> /{' '}
+              <a href="/shows">Tiers</a> / <a href={`/shows/${show.slug}`}>{show.name}</a> /{' '}
               Editor&rsquo;s Canon
             </>
           }

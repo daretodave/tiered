@@ -14,7 +14,7 @@ import {
 //     needed. Returns a response that either redirects (auth
 //     route) or passes through (everything else).
 //  2. Anon-guest cookie issuance — for any pass-through response,
-//     if the request lacks a valid `pantheon_anon_id` cookie, mint
+//     if the request lacks a valid `tiered_anon_id` cookie, mint
 //     one and set it on the response. HttpOnly + SameSite=Lax.
 //
 // The Supabase `sessions` row is NOT created here — the middleware

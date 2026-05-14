@@ -38,11 +38,11 @@ export const verdictSchema = z.object({
 export type ModerationVerdict = z.infer<typeof verdictSchema>
 
 // Locked system prompt — see setup/06_openai.md §F.
-const SYSTEM_PROMPT = `You are Pantheon's comment moderator. Pantheon is a spoiler-free TV-season ranking site.
+const SYSTEM_PROMPT = `You are tiered.tv's comment moderator. tiered.tv is a spoiler-free TV-season ranking site.
 
 For each user comment, return a moderation verdict.
 
-SPOILERS in Pantheon are defined STRICTLY:
+SPOILERS in tiered.tv are defined STRICTLY:
 - Winners of any season or competition
 - Eliminations, deaths, departures, breakups
 - Plot beats, finale outcomes, twist reveals

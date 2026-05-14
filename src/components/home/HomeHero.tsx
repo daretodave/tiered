@@ -53,7 +53,7 @@ export function HomeHero({ featured }: HomeHeroProps) {
         </Link>
       </div>
       <div className="home-hero-copy">
-        <div className="home-hero-eyebrow">Pantheon · est. 2026</div>
+        <div className="home-hero-eyebrow">tiered.tv · est. 2026</div>
         <h1 className="home-hero-title">
           The seasons,
           <br />

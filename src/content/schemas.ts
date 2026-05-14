@@ -148,7 +148,7 @@ const themeFrontmatterObject = z.object({
   category: themeCategorySchema,
   sentiment: themeSentimentEnum.default('hold'),
   status: themeStatusSchema.default('stable'),
-  curator: z.string().min(1).max(80).default('Pantheon Editors'),
+  curator: z.string().min(1).max(80).default('tiered.tv Editors'),
   last_revised: isoDate,
   featured: z.boolean().default(false),
   related: z.array(slug).max(4).default([]),

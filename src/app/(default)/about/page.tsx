@@ -8,10 +8,10 @@ export const dynamic = 'force-static'
 
 export function generateMetadata(): Metadata {
   const doc = getLegalDoc('about')
-  if (!doc) return buildMetadata({ title: 'About', description: 'About Pantheon.', path: '/about' })
+  if (!doc) return buildMetadata({ title: 'About', description: 'About tiered.tv.', path: '/about' })
   return buildMetadata({
     title: doc.title,
-    description: doc.description ?? 'About Pantheon.',
+    description: doc.description ?? 'About tiered.tv.',
     path: '/about',
   })
 }
@@ -22,7 +22,7 @@ const FAQS = [
   {
     question: 'Are the rankings actually spoiler-free?',
     answer:
-      'Yes. Spoiler-free in Pantheon means no winners, no eliminations, no plot beats, no deaths, no twists, no finale outcomes, no relationship outcomes. Format changes, casting energy, location, tonal shifts, and structural innovations are fair. Every comment is checked by an AI pre-filter before it posts; flagged comments enter a human-reviewed mod queue.',
+      'Yes. Spoiler-free in tiered.tv means no winners, no eliminations, no plot beats, no deaths, no twists, no finale outcomes, no relationship outcomes. Format changes, casting energy, location, tonal shifts, and structural innovations are fair. Every comment is checked by an AI pre-filter before it posts; flagged comments enter a human-reviewed mod queue.',
   },
   {
     question: 'How is the editor’s canon ranking made?',

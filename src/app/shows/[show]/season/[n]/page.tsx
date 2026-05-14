@@ -198,13 +198,13 @@ export default async function SeasonPage({ params }: { params: Params }) {
     headline: `${show.name} S${season.number} — ${season.title}`,
     description: (season.lede ?? season.blurb_md).slice(0, 200),
     path: `/shows/${show.slug}/season/${season.number}`,
-    author: 'Pantheon Editors',
+    author: 'tiered.tv Editors',
     ...(season.premiere_date ? { datePublished: season.premiere_date } : {}),
   })
   const crumbsLd = buildJsonLd({
     type: 'BreadcrumbList',
     trail: [
-      { name: 'Pantheons', path: '/shows' },
+      { name: 'Tiers', path: '/shows' },
       { name: show.name, path: `/shows/${show.slug}` },
       { name: `Season ${season.number}`, path: `/shows/${show.slug}/season/${season.number}` },
     ],
@@ -228,7 +228,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
                 crumb={
                   <>
                     <Bullet color="var(--show-primary)" size={9} />
-                    <a href="/shows">Pantheons</a>
+                    <a href="/shows">Tiers</a>
                     <span aria-hidden="true">/</span>
                     <a href={`/shows/${show.slug}`}>{show.name}</a>
                     <span aria-hidden="true">/</span>

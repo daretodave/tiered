@@ -1,5 +1,5 @@
 // Phase 19c: editorial body block matching
-// design/Pantheon · Heroes vs. Villains.html §SHELL.season-body.
+// design/tiered.tv · Heroes vs. Villains.html §SHELL.season-body.
 // Renders a serif lede, optional body paragraphs (from a multi-line
 // `body` frontmatter field), and an optional pull-quote.
 

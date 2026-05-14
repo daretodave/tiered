@@ -57,14 +57,14 @@ export default function ShowHomePage({ params }: { params: Params }) {
 
   const collectionLd = buildJsonLd({
     type: 'CollectionPage',
-    name: `${show.name} — pantheon`,
+    name: `${show.name} — tiered`,
     description: show.tagline,
     path: `/shows/${show.slug}`,
   })
   const crumbsLd = buildJsonLd({
     type: 'BreadcrumbList',
     trail: [
-      { name: 'Pantheons', path: '/shows' },
+      { name: 'Tiers', path: '/shows' },
       { name: show.name, path: `/shows/${show.slug}` },
     ],
   })
@@ -88,7 +88,7 @@ export default function ShowHomePage({ params }: { params: Params }) {
             <>
               <Bullet color="var(--show-primary)" size={10} />
               <span>
-                <a href="/shows">Pantheons</a> / {show.name}
+                <a href="/shows">Tiers</a> / {show.name}
               </span>
             </>
           }

@@ -10,7 +10,7 @@ export type PageReadAssertion = {
 }
 
 // Chrome assertions that hold for every URL — phase 19b contract.
-// One <header> + one <footer> + brand mark + "Pantheon" wordmark in
+// One <header> + one <footer> + brand mark + "tiered.tv" wordmark in
 // both + theme toggle in footer + the "an experiment" line is gone.
 const chromeVisible = [
   '[data-testid=site-header]',

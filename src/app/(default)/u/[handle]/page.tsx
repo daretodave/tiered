@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 export function generateMetadata({ params }: { params: Params }): Metadata {
   return buildMetadata({
     title: `@${params.handle}`,
-    description: `Profile of @${params.handle} on pantheon.`,
+    description: `Profile of @${params.handle} on tiered.`,
     path: `/u/${params.handle}`,
     noIndex: true,
   })

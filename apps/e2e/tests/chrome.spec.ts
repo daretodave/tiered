@@ -4,8 +4,8 @@ import { canonicalUrls } from '../src/fixtures/canonical-urls'
 // Phase 19b — chrome contract.
 //
 //   - Exactly one <header> and one <footer> per page.
-//   - Header carries the BrandMark + serif "Pantheon" wordmark.
-//   - Footer carries the BrandMark + serif "Pantheon" wordmark + theme
+//   - Header carries the BrandMark + serif "tiered.tv" wordmark.
+//   - Footer carries the BrandMark + serif "tiered.tv" wordmark + theme
 //     toggle + italic promise. Footer does NOT contain "an experiment".
 //   - Show routes render tinted chrome (data-tinted=true).
 //   - Non-show routes render the default chrome (no data-tinted).
@@ -39,8 +39,8 @@ for (const url of canonicalUrls) {
       const brandCount = await brandMarks.count()
       expect(brandCount).toBeGreaterThanOrEqual(2)
 
-      await expect(page.locator('[data-testid=site-header-brand]')).toContainText('Pantheon')
-      await expect(page.locator('[data-testid=site-footer-brand]')).toContainText('Pantheon')
+      await expect(page.locator('[data-testid=site-header-brand]')).toContainText('tiered.tv')
+      await expect(page.locator('[data-testid=site-footer-brand]')).toContainText('tiered.tv')
 
       // Footer no longer contains the "an experiment" line.
       const footerText = (await footers.first().innerText()).toLowerCase()

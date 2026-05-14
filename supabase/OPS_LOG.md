@@ -39,7 +39,7 @@ Applied (in order), each in a single transaction via
 Followed by `NOTIFY pgrst, 'reload schema'`.
 
 Outcome: `cast_vote` returns `{value, weight, count, persisted}`
-end-to-end. `curl -X POST https://pantheon-coral.vercel.app/api/vote`
+end-to-end. `curl -X POST https://tiered.tv/api/vote`
 with a guest cookie returns `{"ok":true,"value":1,"weight":0.1,…}`
 — the path the reader hits when they click the vote pair on a
 season page. Closes #23.

@@ -1,7 +1,7 @@
 import { FooterAboutCol } from './footer/FooterAboutCol'
 import { FooterBrand } from './footer/FooterBrand'
 import { FooterMeta } from './footer/FooterMeta'
-import { FooterPantheonsCol } from './footer/FooterPantheonsCol'
+import { FooterTiersCol } from './footer/FooterTiersCol'
 
 type FooterProps = {
   tinted?: boolean
@@ -17,7 +17,7 @@ export function Footer({ tinted = false }: FooterProps) {
     >
       <div className="site-footer-cols">
         <FooterBrand />
-        <FooterPantheonsCol />
+        <FooterTiersCol />
         <FooterAboutCol />
       </div>
       <FooterMeta />

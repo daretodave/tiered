@@ -1,6 +1,6 @@
 /* ========================================================================
    LISTS — /themes overview page.
-   Ported from design/Pantheon · Lists.html with tokens forwarded to
+   Ported from design/tiered.tv · Lists.html with tokens forwarded to
    theme-aware --color-* (so dark/light flip work).
    ======================================================================== */
 
@@ -410,7 +410,7 @@ h1.lists-hero-title em {
 
 /* ========================================================================
    LIST DETAIL — /themes/[theme] page.
-   Ported from design/Pantheon · Best Premieres.html. Bounded 1100px shell
+   Ported from design/tiered.tv · Best Premieres.html. Bounded 1100px shell
    (via <Wrap width="narrow">), tall hero with crumb + tagline + meta strip
    + tools row, ranked entry stack, adjacent-lists pair.
    ======================================================================== */

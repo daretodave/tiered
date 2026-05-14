@@ -2,7 +2,7 @@
 --   Creates `public.users` — the authenticated-identity table.
 --   Phase 11 (vote backend) substrate.
 --
---   Users are keyed by Auth0's `sub` claim, which Pantheon treats
+--   Users are keyed by Auth0's `sub` claim, which tiered.tv treats
 --   as the canonical user identity. We don't store password
 --   material; we don't own the email field — Auth0 does, and we
 --   merely cache it here for display purposes. The row is

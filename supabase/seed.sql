@@ -1,4 +1,4 @@
--- Pantheon seed.sql — applied after `supabase db reset` on every
+-- tiered.tv seed.sql — applied after `supabase db reset` on every
 -- e2e run. Intentionally minimal: the migrations are the source of
 -- truth for schema; seed only carries values needed for local boot.
 --

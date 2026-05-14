@@ -49,18 +49,18 @@ async function main() {
   // Two render variants from the same source SVG:
   //
   //   1. Tile variant (apple-touch-icon + icon-NN.png): cream stroke
-  //      (#F2EADB) on a solid Pantheon paper-1 tile (#15110C). Looks
+  //      (#F2EADB) on a solid tiered.tv paper-1 tile (#15110C). Looks
   //      like an app tile when installed to a home screen — Stripe /
   //      Linear recipe.
   //
-  //   2. Favicon variant (favicon.ico + favicon.svg): Pantheon
+  //   2. Favicon variant (favicon.ico + favicon.svg): tiered.tv
   //      ceremonial gold (#E8B65A) on a TRANSPARENT background. Browser
   //      tabs handle dark/light tab chrome themselves; the gold mark
   //      pops against both. The favicon does not represent an
   //      installable app tile, so it doesn't carry the paper-1 bg.
-  const TILE_INK = '#F2EADB'         // Pantheon ink-0 (cream)
-  const TILE_BG = '#15110C'          // Pantheon paper-1
-  const FAVICON_INK = '#E8B65A'      // Pantheon primary-base (gold)
+  const TILE_INK = '#F2EADB'         // tiered.tv ink-0 (cream)
+  const TILE_BG = '#15110C'          // tiered.tv paper-1
+  const FAVICON_INK = '#E8B65A'      // tiered.tv primary-base (gold)
   const svgTile = rawSvg.replace(/currentColor/g, TILE_INK)
   const svgFavicon = rawSvg.replace(/currentColor/g, FAVICON_INK)
 

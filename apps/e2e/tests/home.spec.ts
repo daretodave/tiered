@@ -30,7 +30,7 @@ test('home renders the promise + hero + grids', async ({ page }) => {
 
   // The chrome.
   await expect(page.getByRole('contentinfo')).toBeVisible()
-  await expect(page.getByRole('link', { name: /pantheon home/i }).first()).toBeVisible()
+  await expect(page.getByRole('link', { name: /tiered\.tv home/i }).first()).toBeVisible()
   await expect(page.getByRole('button', { name: /switch to (light|dark) mode/i })).toBeVisible()
 
   expect(failedResponses, `failed responses: ${failedResponses.join(', ')}`).toEqual([])
@@ -63,7 +63,7 @@ test('hero cover names the featured show + go-pill links to /shows/<slug>', asyn
 
 test('hero copy column carries the est-2026 eyebrow + the CTAs', async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByTestId('home-hero')).toContainText(/pantheon · est\. 2026/i)
+  await expect(page.getByTestId('home-hero')).toContainText(/tiered\.tv · est\. 2026/i)
   await expect(page.getByTestId('home-cta-shows')).toHaveAttribute('href', '/shows')
   await expect(page.getByTestId('home-cta-about')).toHaveAttribute('href', '/about')
 })

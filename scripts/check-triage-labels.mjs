@@ -41,7 +41,7 @@ function loadDotenv(path = resolve(REPO_ROOT, '.env')) {
 loadDotenv()
 
 const GH_TOKEN = process.env['GH_TOKEN']
-const GH_REPO = process.env['GH_REPO'] ?? 'daretodave/pantheon'
+const GH_REPO = process.env['GH_REPO'] ?? 'daretodave/tiered'
 
 if (!GH_TOKEN) {
   console.error('GH_TOKEN missing from .env. Aborting.')

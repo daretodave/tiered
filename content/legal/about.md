@@ -1,13 +1,13 @@
 ---
 slug: about
-title: About Pantheon
+title: About tiered.tv
 description: A spoiler-free home for ranked TV seasons. How it works.
 updated: 2026-05-13
 ---
 
 # About
 
-Pantheon ranks TV seasons without spoiling them.
+tiered.tv ranks TV seasons without spoiling them.
 
 For every show we cover, two rankings live side by side:
 

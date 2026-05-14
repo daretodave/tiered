@@ -73,7 +73,7 @@ export const GROUP_HEAD_LABELS: Record<Exclude<FilterKey, 'all'>, string> = {
   tone: 'By tone',
   craft: 'By craft',
   era: 'By era',
-  single: 'Single-show pantheons',
+  single: 'Single-show tiers',
 }
 
 export const FILTER_MODE_LABELS: Record<FilterKey, string> = {

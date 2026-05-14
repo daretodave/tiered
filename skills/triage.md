@@ -38,7 +38,7 @@ Triage needs `gh` CLI authenticated. The PAT lives in `.env`:
 
 ```
 GH_TOKEN=github_pat_...
-GH_REPO=daretodave/pantheon           # optional; defaults to daretodave/pantheon
+GH_REPO=daretodave/tiered           # optional; defaults to daretodave/tiered
 ```
 
 `gh` auto-reads `GH_TOKEN`. Before any `gh` call, ensure env is
@@ -47,7 +47,7 @@ loaded:
 ```bash
 export GH_TOKEN=$(awk -F= '/^GH_TOKEN=/ {sub(/^GH_TOKEN=/, ""); print; exit}' .env)
 export GH_REPO=$(awk -F= '/^GH_REPO=/ {sub(/^GH_REPO=/, ""); print; exit}' .env)
-GH_REPO=${GH_REPO:-daretodave/pantheon}
+GH_REPO=${GH_REPO:-daretodave/tiered}
 gh auth status >/dev/null || { echo "GH_TOKEN missing/invalid"; exit 3; }
 ```
 
@@ -126,7 +126,7 @@ gh issue edit "$NUM" --repo "$GH_REPO" --add-label "triage:loop-queued,bug"
 
 gh issue comment "$NUM" --repo "$GH_REPO" --body "$(cat <<'EOF'
 Triaged → bug. The loop will address this; tracked in
-[plan/AUDIT.md](https://github.com/daretodave/pantheon/blob/main/plan/AUDIT.md)
+[plan/AUDIT.md](https://github.com/daretodave/tiered/blob/main/plan/AUDIT.md)
 under external-issue category. A future /iterate tick will ship
 the fix and reference this issue's number in the commit body.
 EOF
@@ -260,7 +260,7 @@ warning and fall through. Triage is non-blocking by design.
 # Auth
 export GH_TOKEN=$(awk -F= '/^GH_TOKEN=/ {sub(/^GH_TOKEN=/, ""); print; exit}' .env)
 export GH_REPO=$(awk -F= '/^GH_REPO=/ {sub(/^GH_REPO=/, ""); print; exit}' .env)
-GH_REPO=${GH_REPO:-daretodave/pantheon}
+GH_REPO=${GH_REPO:-daretodave/tiered}
 
 # Operations
 gh issue list --repo "$GH_REPO" --state open --search "..."

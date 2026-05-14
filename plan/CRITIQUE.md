@@ -7,7 +7,7 @@
 >
 > Each row tagged with the pass that filed it: `anon:` (no
 > cookie; first-time visitor perspective) or `authed:`
-> (signed-in as `e2e@pantheon.app`; returning-member
+> (signed-in as `e2e@tiered.app`; returning-member
 > perspective). Both passes run on every `/critique` invocation;
 > findings deduped by message.
 
@@ -18,7 +18,7 @@
 -->
 
 _(empty — populates after the first `/critique` invocation,
-which requires a green deploy at `pantheon-coral.vercel.app`)_
+which requires a green deploy at `tiered.tv`)_
 
 ## Done
 

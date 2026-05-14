@@ -25,7 +25,7 @@ delivery, OR when its rate-limit window opens (every ~20
 commits or ~48h) AND the bearings posture is **bold** or
 **autonomous**.
 
-This means: an overnight run can take Pantheon from
+This means: an overnight run can take tiered.tv from
 "scaffolded" to "shipped, populated, iteratively polished,
 critiqued, addressed, inbox-zero on issues, and growing its
 own plan when reality outpaces the original spec" without a
@@ -62,7 +62,7 @@ Load `GH_TOKEN` from `.env` and count unlabeled open issues:
 ```bash
 export GH_TOKEN=$(awk -F= '/^GH_TOKEN=/ {sub(/^GH_TOKEN=/, ""); print; exit}' .env)
 export GH_REPO=$(awk -F= '/^GH_REPO=/ {sub(/^GH_REPO=/, ""); print; exit}' .env)
-GH_REPO=${GH_REPO:-daretodave/pantheon}
+GH_REPO=${GH_REPO:-daretodave/tiered}
 
 unlabeled=$(gh issue list --repo "$GH_REPO" --state open \
   --search "-label:triage:loop-queued -label:triage:needs-user -label:triage:closed -label:triage:reviewed -label:loop:opened" \
@@ -119,8 +119,8 @@ Open `plan/steps/01_build_plan.md`. If any `[ ]` row in the
 
 #### 3b. Pending data?
 
-For Pantheon: data work means Supabase migrations / RLS
-changes / data ops. There's no `data/BACKLOG.md` (Pantheon
+For tiered.tv: data work means Supabase migrations / RLS
+changes / data ops. There's no `data/BACKLOG.md` (tiered.tv
 is hybrid-with-managed-postgres, not gh-as-db). Instead,
 check `plan/AUDIT.md` for `category: data` rows.
 
@@ -143,7 +143,7 @@ If any row scores ≥ 3.0:
 - Execute its procedure end-to-end.
 - Return.
 
-(Pantheon has 3 live content-velocity rules in
+(tiered.tv has 3 live content-velocity rules in
 `plan/bearings.md` "Content velocity & editorial cadence"
 that consistently surface content-gap rows: show coverage
 quota, canon completeness, themed list quota. Rule 4

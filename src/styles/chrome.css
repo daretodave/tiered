@@ -1,7 +1,7 @@
 /* ========================================================================
    CHROME — Header + Footer + page-width Wrap.
 
-   Spec: design/Pantheon · Brand.html §04 (header) + §05 (footer).
+   Spec: design/tiered.tv · Brand.html §04 (header) + §05 (footer).
    Phase 19b ports the design's header / footer lockup into the
    production chrome. Per-show palette flows in through CSS vars
    (--show-paper / --show-ink / --show-primary) set by a wrapping

@@ -1,4 +1,4 @@
-// Phase 19c: stub of design/Pantheon · Survivor.html §SHIFTS. The
+// Phase 19c: stub of design/tiered.tv · Survivor.html §SHIFTS. The
 // real shifts row reads a 72-hour rank-delta signal that hasn't
 // been wired yet (separate phase candidate). For 19c we render the
 // section heading + an honest empty state, so the visual surface is

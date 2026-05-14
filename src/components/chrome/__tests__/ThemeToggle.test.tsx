@@ -27,11 +27,11 @@ describe('ThemeToggle', () => {
 
     act(() => btn.click())
     expect(document.documentElement.dataset['theme']).toBe('light')
-    expect(window.localStorage.getItem('pantheon_theme')).toBe('light')
+    expect(window.localStorage.getItem('tiered_theme')).toBe('light')
 
     act(() => btn.click())
     expect(document.documentElement.dataset['theme']).toBe('dark')
-    expect(window.localStorage.getItem('pantheon_theme')).toBe('dark')
+    expect(window.localStorage.getItem('tiered_theme')).toBe('dark')
   })
 
   it('survives localStorage failure (private mode)', () => {

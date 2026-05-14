@@ -19,7 +19,7 @@ plan/
 ```
 
 Read order on session start:
-1. `spec.md` (repo root) — what Pantheon is
+1. `spec.md` (repo root) — what tiered.tv is
 2. `agents.md` (repo root) — standing rules
 3. `plan/bearings.md` — stack + decisions
 4. `plan/steps/01_build_plan.md` — what's pending

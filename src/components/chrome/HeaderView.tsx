@@ -19,11 +19,11 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
       <Link
         href="/"
         className="site-header-brand"
-        aria-label="Pantheon home"
+        aria-label="tiered.tv home"
         data-testid="site-header-brand"
       >
         <BrandMark size={22} />
-        <span>Pantheon</span>
+        <span>tiered.tv</span>
       </Link>
       <nav aria-label="Primary" className="site-header-links">
         <Link href="/shows" prefetch={false}>

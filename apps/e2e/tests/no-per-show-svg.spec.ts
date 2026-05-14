@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test'
 
 // Phase 19a — the scorched-earth contract. After this phase, no
 // per-show SVG illustration may appear anywhere in the product.
-// The only SVG permitted is the shared Pantheon brand mark
-// (pediment + columns, viewBox="0 0 28 28").
+// The only SVG permitted is the shared tiered.tv brand mark
+// (three horizontal bars, viewBox="0 0 28 28").
 //
 // This spec walks every show-bearing surface and asserts three
 // independent invariants:

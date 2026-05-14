@@ -19,7 +19,7 @@ const BASE_URL = `http://127.0.0.1:${PORT}`
 // runners forward the remote project hash), the CLI mistakenly
 // looks for containers under that name. Strip it before any
 // `supabase …` command so local-stack ops always match the
-// config.toml project_id ("pantheon").
+// config.toml project_id ("tiered").
 const stripProjectId = 'unset SUPABASE_PROJECT_ID'
 
 const chain = [

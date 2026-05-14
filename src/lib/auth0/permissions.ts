@@ -1,7 +1,7 @@
 // Helpers for reading the Auth0 `permissions` custom claim.
-// Set by the `Add Pantheon claims` Auth0 Action — see
+// Set by the `Add tiered.tv claims` Auth0 Action — see
 // setup/04_auth0.md §H. The claim is stored under the
-// `https://pantheon.app/permissions` namespace per bearings
+// `https://tiered.app/permissions` namespace per bearings
 // line 116.
 //
 // Auth0 sometimes emits the claim as a JSON array of strings
@@ -9,7 +9,7 @@
 // on how the dashboard was configured). This helper normalizes
 // both shapes.
 
-export const PERMISSIONS_CLAIM = 'https://pantheon.app/permissions'
+export const PERMISSIONS_CLAIM = 'https://tiered.app/permissions'
 
 export type Permission =
   | 'mod:read'

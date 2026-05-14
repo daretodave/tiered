@@ -3,7 +3,7 @@ import { getCanon, getSeason, getShow } from '@/content'
 import { buildOgImage } from '@/lib/og/template'
 
 export const runtime = 'nodejs'
-export const alt = 'Pantheon — the seasons, ranked. no spoilers.'
+export const alt = 'tiered.tv — the seasons, ranked. no spoilers.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -30,8 +30,8 @@ export default async function OpenGraphImage({
   const canonHit = canonFile?.entries.find((e) => e.season === season.number)
   const canonRank = canonHit?.rank ?? season.canonical_position ?? null
   const eyebrow = canonRank
-    ? `Pantheons / ${show.name} · Editor's Canon ${padRank(canonRank)}`
-    : `Pantheons / ${show.name} · Season ${season.number}`
+    ? `Tiers / ${show.name} · Editor's Canon ${padRank(canonRank)}`
+    : `Tiers / ${show.name} · Season ${season.number}`
 
   return buildOgImage({
     eyebrow,

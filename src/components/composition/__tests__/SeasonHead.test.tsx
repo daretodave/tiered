@@ -4,11 +4,11 @@ import { SeasonHead } from '../SeasonHead'
 
 describe('<SeasonHead>', () => {
   it('renders crumb + title and omits optional slots when not given', () => {
-    render(<SeasonHead crumb={<span>Pantheons / Survivor / S20</span>} title="Heroes vs. Villains" />)
+    render(<SeasonHead crumb={<span>Tiers / Survivor / S20</span>} title="Heroes vs. Villains" />)
     const head = screen.getByTestId('season-head')
     expect(head.tagName.toLowerCase()).toBe('header')
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Heroes vs. Villains')
-    expect(head.textContent).toMatch(/pantheons \/ survivor/i)
+    expect(head.textContent).toMatch(/tiers \/ survivor/i)
     expect(screen.queryByTestId('season-rank-row')).not.toBeInTheDocument()
   })
 

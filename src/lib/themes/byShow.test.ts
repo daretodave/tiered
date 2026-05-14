@@ -12,7 +12,7 @@ describe('themesContainingShow', () => {
   let tmpRoot: string
 
   beforeEach(async () => {
-    tmpRoot = mkdtempSync(join(tmpdir(), 'pantheon-bs-'))
+    tmpRoot = mkdtempSync(join(tmpdir(), 'tiered-bs-'))
     mkdirSync(join(tmpRoot, 'shows', 'survivor', 'seasons'), { recursive: true })
     mkdirSync(join(tmpRoot, 'shows', 'top-chef'), { recursive: true })
     mkdirSync(join(tmpRoot, 'themes'), { recursive: true })

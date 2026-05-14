@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 // Phase 19c: prev/next pair matching
-// design/Pantheon · Heroes vs. Villains.html §ADJACENT. Either side
+// design/tiered.tv · Heroes vs. Villains.html §ADJACENT. Either side
 // can be omitted (first season has no prev, last has no next); the
 // component renders a single column when only one side exists.
 

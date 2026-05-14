@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Pantheon — the seasons, ranked. no spoilers.'
+export const alt = 'tiered.tv — the seasons, ranked. no spoilers.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -22,7 +22,7 @@ export default function OpenGraphImage(): ImageResponse {
       }}
     >
       <div style={{ fontSize: 140, color: '#E8B65A', lineHeight: 1 }}>
-        Pantheon
+        tiered.tv
       </div>
       <div
         style={{

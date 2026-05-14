@@ -1,6 +1,6 @@
 # Skill: iterate
 
-> **Full autonomy.** Audit Pantheon, pick the highest-impact
+> **Full autonomy.** Audit tiered.tv, pick the highest-impact
 > weakness, ship one improvement end-to-end. The post-build
 > loop. Drains queues from `/critique` and `/triage` alongside
 > its own audit.

@@ -146,7 +146,7 @@ describe('loaders', () => {
   let tmp: string
 
   beforeEach(() => {
-    tmp = mkdtempSync(path.join(tmpdir(), 'pantheon-content-'))
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-'))
     setContentRoot(tmp)
     __resetContentCache()
   })

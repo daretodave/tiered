@@ -5,7 +5,7 @@ description: Review unlabeled open GitHub issues, classify, label, comment, rout
 You are invoked under the `triage` skill. Read `skills/triage.md`
 end to end before touching anything else.
 
-This skill reads issues from `daretodave/pantheon` (or `$GH_REPO`),
+This skill reads issues from `daretodave/tiered` (or `$GH_REPO`),
 classifies, applies a `triage:*` label, posts a short comment,
 routes actionable issues into the right backlog (`plan/AUDIT.md`,
 `data/BACKLOG.md`, or build-plan row). Already-labeled issues

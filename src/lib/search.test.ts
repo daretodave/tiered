@@ -58,7 +58,7 @@ describe('search() — integration via temp content/', () => {
   let tmpRoot: string
 
   beforeEach(async () => {
-    tmpRoot = mkdtempSync(join(tmpdir(), 'pantheon-search-'))
+    tmpRoot = mkdtempSync(join(tmpdir(), 'tiered-search-'))
     mkdirSync(join(tmpRoot, 'shows', 'survivor', 'seasons'), { recursive: true })
     mkdirSync(join(tmpRoot, 'themes'), { recursive: true })
 

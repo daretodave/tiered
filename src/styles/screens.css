@@ -239,7 +239,7 @@
 .list-tile-arrow { color: var(--ink-3); font-size: 18px; }
 
 /* ============================================================ SHOW HOME
-   Ported verbatim from design/Pantheon · Survivor.html as part of
+   Ported verbatim from design/tiered.tv · Survivor.html as part of
    phase 19c — full-bleed, no facade art, color + type only. */
 .show-home { background: var(--show-paper); color: var(--show-ink); }
 .show-hero {
@@ -338,7 +338,7 @@
 .season-num { font: 400 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.08em; text-transform: uppercase; }
 
 /* ============================================================ SEASON PAGE
-   Ported from design/Pantheon · Heroes vs. Villains.html as part of
+   Ported from design/tiered.tv · Heroes vs. Villains.html as part of
    phase 19c — full-bleed, 2-col shell, eyebrow + h1 + rank row,
    body + pull-quote + 4-cell details strip, vote block, adjacent
    pair, appears-in stack, sticky aside thread on desktop. */
@@ -518,7 +518,7 @@
    The cross-link strip below the season grid on a show home. Lives in
    the show segment so it inherits the show palette via CSS vars —
    transparent background + show-ink border keeps the show paper
-   visible end-to-end (no dark Pantheon paper island). */
+   visible end-to-end (no dark tiered.tv paper island). */
 .featured-themes {
   display: flex; flex-direction: column; gap: 12px;
   padding: 24px 28px;

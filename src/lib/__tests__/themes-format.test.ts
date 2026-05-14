@@ -104,8 +104,8 @@ describe('filterModeText', () => {
 })
 
 describe('GROUP_HEAD_LABELS', () => {
-  it('uses "Single-show pantheons" — not "By single"', () => {
-    expect(GROUP_HEAD_LABELS.single).toBe('Single-show pantheons')
+  it('uses "Single-show tiers" — not "By single"', () => {
+    expect(GROUP_HEAD_LABELS.single).toBe('Single-show tiers')
   })
 })
 

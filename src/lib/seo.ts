@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const siteConfig = {
-  name: 'Pantheon',
+  name: 'tiered.tv',
   promise: 'the seasons, ranked. no spoilers.',
-  baseUrl: 'https://pantheon-coral.vercel.app',
+  baseUrl: 'https://tiered.tv',
   defaultOgImage: '/opengraph-image',
   locale: 'en',
   twitterHandle: undefined as string | undefined,

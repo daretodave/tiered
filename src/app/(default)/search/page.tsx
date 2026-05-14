@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic'
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Search',
-    description: 'Find a show, season, or themed list across Pantheon.',
+    description: 'Find a show, season, or themed list across tiered.tv.',
     path: '/search',
   })
 }

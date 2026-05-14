@@ -5,7 +5,7 @@ tagline: "Reality competitions get rebooted constantly. The seasons on this list
 category: tone
 sentiment: hold
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-01
 featured: false
 related:

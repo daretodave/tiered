@@ -8,7 +8,7 @@ export const dynamic = 'force-static'
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Shows',
-    description: 'Every show covered by pantheon, with editor and community rankings side by side.',
+    description: 'Every show covered by tiered, with editor and community rankings side by side.',
     path: '/shows',
   })
 }
@@ -17,7 +17,7 @@ export default function ShowsIndexPage() {
   const shows = getAllShows()
   const ld = buildJsonLd({
     type: 'CollectionPage',
-    name: 'Shows — pantheon',
+    name: 'Shows — tiered',
     description: 'Browse every covered show.',
     path: '/shows',
   })
@@ -30,7 +30,7 @@ export default function ShowsIndexPage() {
           Shows
         </h1>
         <p className="font-serif text-lg text-ink-1">
-          Every show pantheon covers, ranked two ways.
+          Every show tiered covers, ranked two ways.
         </p>
       </header>
 

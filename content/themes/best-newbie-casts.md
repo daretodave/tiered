@@ -5,7 +5,7 @@ tagline: "Some first-time casts step off the boat playing like they've already d
 category: tone
 sentiment: warm-up
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-05-14
 featured: false
 related:

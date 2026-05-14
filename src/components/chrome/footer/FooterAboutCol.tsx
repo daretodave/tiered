@@ -11,10 +11,10 @@ export function FooterAboutCol() {
   return (
     <nav
       className="site-footer-col"
-      aria-label="Pantheon"
+      aria-label="tiered.tv"
       data-testid="site-footer-about-col"
     >
-      <h2 className="site-footer-col-head">Pantheon</h2>
+      <h2 className="site-footer-col-head">tiered.tv</h2>
       <ul>
         {LINKS.map((l) => (
           <li key={l.href}>

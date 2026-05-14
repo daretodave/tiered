@@ -46,14 +46,14 @@ drop policy if exists sessions_insert_anon  on public.sessions;
 drop policy if exists sessions_update_claim on public.sessions;
 
 -- SELECT: a client may read its own anon row (via the cookie GUC
---   request.cookie.pantheon_anon_id that the Next.js middleware sets
+--   request.cookie.tiered_anon_id that the Next.js middleware sets
 --   via `set_config`) OR its own authed row (by Auth0 sub claim).
 --   service_role bypasses RLS by default.
 create policy sessions_select_own
   on public.sessions
   for select
   using (
-    id = nullif(current_setting('request.cookie.pantheon_anon_id', true), '')::uuid
+    id = nullif(current_setting('request.cookie.tiered_anon_id', true), '')::uuid
     or auth0_sub = nullif(current_setting('request.jwt.claims', true)::jsonb ->> 'sub', '')
   );
 

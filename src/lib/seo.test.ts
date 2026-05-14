@@ -62,11 +62,11 @@ describe('canonicalUrl', () => {
 describe('buildMetadata', () => {
   it('sets title, description, and canonical alternate', () => {
     const meta = buildMetadata({
-      title: 'Shows — Pantheon',
+      title: 'Shows — tiered.tv',
       description: 'Browse every covered show.',
       path: '/shows',
     })
-    expect(meta.title).toBe('Shows — Pantheon')
+    expect(meta.title).toBe('Shows — tiered.tv')
     expect(meta.description).toBe('Browse every covered show.')
     expect(meta.alternates?.canonical).toBe(`${siteConfig.baseUrl}/shows`)
   })
@@ -185,14 +185,14 @@ describe('buildJsonLd', () => {
       description: 'Vote and discuss.',
       path: '/shows/survivor/season/20',
       datePublished: '2026-01-01',
-      author: 'Pantheon Editors',
+      author: 'tiered.tv Editors',
     })
     expect(ld['@type']).toBe('Article')
     expect(ld['headline']).toBe('Survivor Season 20')
     expect(ld['datePublished']).toBe('2026-01-01')
     expect(ld['author']).toMatchObject({
       '@type': 'Person',
-      name: 'Pantheon Editors',
+      name: 'tiered.tv Editors',
     })
   })
 

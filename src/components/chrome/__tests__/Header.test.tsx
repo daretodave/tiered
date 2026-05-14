@@ -3,12 +3,12 @@ import { describe, expect, it } from 'vitest'
 import { HeaderView } from '../HeaderView'
 
 describe('<HeaderView>', () => {
-  it('renders the BrandMark + Pantheon wordmark linked to /', () => {
+  it('renders the BrandMark + tiered.tv wordmark linked to /', () => {
     render(<HeaderView />)
     expect(screen.getByTestId('brand-mark')).toBeInTheDocument()
     const brand = screen.getByTestId('site-header-brand')
     expect(brand).toHaveAttribute('href', '/')
-    expect(brand).toHaveTextContent('Pantheon')
+    expect(brand).toHaveTextContent('tiered.tv')
   })
 
   it('renders the three nav links: Shows / Lists / About', () => {

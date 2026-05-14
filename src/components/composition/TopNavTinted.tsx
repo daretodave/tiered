@@ -17,14 +17,14 @@ const DEFAULT_LINKS: TopNavLink[] = [
 ]
 
 export function TopNavTinted({
-  brand = 'Pantheon',
+  brand = 'tiered.tv',
   links = DEFAULT_LINKS,
   search,
   signIn,
 }: TopNavTintedProps) {
   return (
     <nav className="topnav tinted" data-testid="top-nav-tinted" aria-label="site">
-      <Link href="/" className="topnav-brand" aria-label="Pantheon home">
+      <Link href="/" className="topnav-brand" aria-label="tiered.tv home">
         <svg viewBox="0 0 24 24" width={22} height={22} aria-hidden="true">
           <path d="M2 10 L12 3 L22 10" fill="none" stroke="currentColor" strokeWidth="1.4" />
           <line x1="4" y1="12" x2="4" y2="21" stroke="currentColor" strokeWidth="1.4" />

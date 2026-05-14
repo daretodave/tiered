@@ -5,7 +5,7 @@ tagline: "Four seasons that hold the show up: the original experiment, the tacti
 category: single
 sentiment: hold
 status: stable
-curator: "Pantheon Editors"
+curator: "tiered.tv Editors"
 last_revised: 2026-04-15
 featured: false
 related:

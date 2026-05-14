@@ -146,7 +146,7 @@ cat > /tmp/phase-issue-body.md <<EOF
 
 <2–4 line summary of what shipping this phase delivers>
 
-**Brief:** [\`plan/phases/phase_<N>_<topic>.md\`](https://github.com/daretodave/pantheon/blob/main/plan/phases/phase_<N>_<topic>.md)
+**Brief:** [\`plan/phases/phase_<N>_<topic>.md\`](https://github.com/daretodave/tiered/blob/main/plan/phases/phase_<N>_<topic>.md)
 
 ---
 _Tracked by the autonomous loop. The phase commit will close this issue via a \`Closes #<this-issue>\` trailer; deploy URL is posted as a follow-up comment._

@@ -25,7 +25,7 @@ single source of truth. The reading order is in
 `CLAUDE.md` at the repo root. Files older than
 `design/CLAUDE.md` that conflict with it are superseded.
 
-**The No-Per-Show-SVG rule.** Pantheon does NOT ship per-show
+**The No-Per-Show-SVG rule.** tiered.tv does NOT ship per-show
 illustration. No facades, no per-show sigils, no mascots, no
 ornaments. The identity is **color + typography only**, with a
 single shared brand mark (pediment + columns) in every header
@@ -116,10 +116,10 @@ The verify gate enforces this; reviewers and the next loop
 tick depend on it. A commit that touches a new URL family
 without adding to the e2e harness gets reverted.
 
-### 6. Pantheon is lowercase in copy when used as a body word.
+### 6. tiered.tv is lowercase in copy when used as a body word.
 
-The brand is "Pantheon" (capital P) at headline / wordmark
-positions. In running prose ("…how pantheon ranks seasons…")
+The brand is "tiered.tv" (capital P) at headline / wordmark
+positions. In running prose ("…how tiered ranks seasons…")
 keep it lowercase. In commit subjects, lowercase. The single
 exception: the literal product name in headers, taglines, and
 the `<title>`.
@@ -139,7 +139,7 @@ spoilers and ARE fair game.
 
 ### 8. Database mutations are autonomous.
 
-Pantheon v1 is an experiment. The agent has full authority to:
+tiered.tv v1 is an experiment. The agent has full authority to:
 - Add tables and columns
 - Drop tables, drop columns, drop indexes
 - Run destructive migrations
@@ -150,7 +150,7 @@ No confirmation, no question to the user. Every migration is a
 committed file in `supabase/migrations/`; the audit trail is
 git. Supabase's built-in daily backups (7-day retention on
 free tier) are the safety net if a cataclysm needs reversal.
-Once Pantheon graduates from experiment, this rule tightens
+Once tiered.tv graduates from experiment, this rule tightens
 (see `plan/bearings.md` "Database posture").
 
 ### 9. Content stays in `content/`. Data stays in Supabase.
@@ -164,8 +164,8 @@ or per-action state" is a Supabase row.
 
 ## Project
 
-**Pantheon** — A spoiler-free home for ranked TV seasons. Reality
-genre cluster at launch. Live at https://pantheon-coral.vercel.app.
+**tiered.tv** — A spoiler-free home for ranked TV seasons. Reality
+genre cluster at launch. Live at https://tiered.tv.
 
 The product spec is `spec.md` at the repo root. Read it once.
 
@@ -191,7 +191,7 @@ setup/               External-service runbooks. Pre-flighted dashboards.
 
 ## How work happens
 
-Pantheon is **driven autonomously** by a small set of skills.
+tiered.tv is **driven autonomously** by a small set of skills.
 You don't normally edit files by hand; you invoke a skill that
 does the right thing end-to-end.
 
@@ -234,7 +234,7 @@ does the right thing end-to-end.
 |---|---|
 | `scout` | Open-web research (cast lists, air dates, format changes, casting news). Citations required. |
 | `reader` | Fresh-eyes critique of the live site (anonymous; no auth needed for public pages). |
-| `brander` | Shared-asset renderer ONLY: the shared brand mark (pediment + columns), favicons, apple-touch-icon, OG / social-card composites, the Pantheon wordmark lockup, svg2png. **Never per-show illustration** — see `design/CLAUDE.md` Hard Rule 1. |
+| `brander` | Shared-asset renderer ONLY: the shared brand mark (pediment + columns), favicons, apple-touch-icon, OG / social-card composites, the tiered.tv wordmark lockup, svg2png. **Never per-show illustration** — see `design/CLAUDE.md` Hard Rule 1. |
 | `data-steward` | Supabase migrations, RLS policies, query optimization, drop ops. |
 | `content-curator` | Spoiler-disciplined editorial blurbs. Voice: knowledgeable peer. |
 
@@ -270,7 +270,7 @@ failure-mode condition rather than inventing a placeholder.
 
 | If you need… | Read |
 |---|---|
-| What Pantheon is | `spec.md` |
+| What tiered.tv is | `spec.md` |
 | Stack, conventions, defaults, voice | `plan/bearings.md` |
 | External-service config status | `setup/00_files.md` |
 | What ships next | `plan/steps/01_build_plan.md` |
@@ -280,6 +280,6 @@ failure-mode condition rather than inventing a placeholder.
 | Latest weaknesses | `plan/AUDIT.md` |
 | Critique queue | `plan/CRITIQUE.md` |
 | Phase candidates from `/expand` | `plan/PHASE_CANDIDATES.md` |
-| Visual law (UI, brand, chrome, page composition) | `design/CLAUDE.md` then `design/Pantheon · *.html` |
+| Visual law (UI, brand, chrome, page composition) | `design/CLAUDE.md` then `design/tiered.tv · *.html` |
 | Design tokens | `design/tokens.json` |
 | Design compositions (page shells, interactions) | `design/compositions/screens.{jsx,css}`, `design/compositions/interactions.jsx` |

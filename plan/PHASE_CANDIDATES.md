@@ -122,7 +122,7 @@ a vendor dependency (Buttondown account + DNS records once a
 domain swap lands) that RSS doesn't share. Lower priority than
 RSS because RSS already serves the "return-reader" need; the
 newsletter is incremental on top. File so it isn't lost — but
-defer until S1 (domain swap) lands, since `noreply@pantheon.app`
+defer until S1 (domain swap) lands, since `noreply@tiered.app`
 or similar makes the sign-up trust signal real.
 
 **Scope sketch:**
@@ -174,13 +174,13 @@ These aren't promoted; they're seeds the user pre-emptied so
 `/expand` doesn't have to discover them. `/expand` may score,
 score-and-defer, or merge with newly-discovered candidates.
 
-### S1. Custom domain swap (`pantheon.app` → primary)
+### S1. Custom domain swap (`tiered.app` → primary)
 
-**Trigger:** when `pantheon.app` is purchased + DNS configured.
+**Trigger:** when `tiered.app` is purchased + DNS configured.
 **Scope sketch:** add domain in Vercel, update Auth0 Allowed
 URLs, swap `AUTH0_BASE_URL`, swap `EMAIL_FROM_ADDRESS` to
-`noreply@pantheon.app`, run `setup/05_email.md` v2 swap,
-update all hardcoded `pantheon-coral.vercel.app` refs in
+`noreply@tiered.app`, run `setup/05_email.md` v2 swap,
+update all hardcoded `tiered.tv` refs in
 content + canonicalUrl helpers.
 
 ### S2. Resend email provider migration

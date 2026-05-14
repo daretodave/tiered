@@ -7,12 +7,12 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: {
-    default: 'Pantheon — the seasons, ranked. no spoilers.',
-    template: '%s — Pantheon',
+    default: 'tiered.tv — the seasons, ranked. no spoilers.',
+    template: '%s — tiered.tv',
   },
   description:
     'A spoiler-free home for ranked TV seasons. Editor’s Canon and Community Rank side by side.',
-  applicationName: 'Pantheon',
+  applicationName: 'tiered.tv',
   icons: {
     icon: [
       // Modern browsers prefer the SVG (vector, scales at any tab size).
@@ -35,7 +35,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-const themeBootstrap = `(function(){try{var t=localStorage.getItem('pantheon_theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}})();`
+const themeBootstrap = `(function(){try{var t=localStorage.getItem('tiered_theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}})();`
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

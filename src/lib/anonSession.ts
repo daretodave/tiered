@@ -6,7 +6,7 @@
 // `sessions` row is created lazily (first vote / first comment)
 // — this cookie is the durable identifier.
 
-export const ANON_COOKIE_NAME = 'pantheon_anon_id'
+export const ANON_COOKIE_NAME = 'tiered_anon_id'
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 

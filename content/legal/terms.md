@@ -1,7 +1,7 @@
 ---
 slug: terms
 title: Terms of Service
-description: Plain-language terms for using Pantheon.
+description: Plain-language terms for using tiered.tv.
 updated: 2026-05-13
 ---
 
@@ -12,7 +12,7 @@ use. We make no promises. Don't be a jerk in the comments.**
 
 ## What this is
 
-Pantheon is a free, experimental web application that ranks TV
+tiered.tv is a free, experimental web application that ranks TV
 seasons and lets visitors vote and comment. The site is
 operated as a personal project. It may go offline, change
 shape, or shut down at any time without notice. We make no
@@ -55,7 +55,7 @@ without notice.
 
 ## What we cover
 
-Pantheon writes editorial commentary about television shows.
+tiered.tv writes editorial commentary about television shows.
 Show names are used in their nominative editorial sense — we
 make no claim of affiliation with, endorsement by, or
 licensing from any production company, network, or streaming

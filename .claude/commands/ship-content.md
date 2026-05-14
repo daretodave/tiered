@@ -1,5 +1,5 @@
 ---
-description: Ship one content unit end-to-end (show / canon batch / themed list). Content velocity for Pantheon.
+description: Ship one content unit end-to-end (show / canon batch / themed list). Content velocity for tiered.tv.
 ---
 
 You are invoked under the `ship-content` skill — full autonomy,

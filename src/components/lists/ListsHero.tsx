@@ -10,7 +10,7 @@ export function ListsHero({ stats }: ListsHeroProps) {
 
   return (
     <header className="lists-hero" data-testid="lists-hero">
-      <div className="lists-hero-eyebrow">Pantheon / Lists</div>
+      <div className="lists-hero-eyebrow">tiered.tv / Lists</div>
       <h1 className="lists-hero-title">
         Themed lists.
         <br />

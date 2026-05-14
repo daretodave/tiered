@@ -1,4 +1,4 @@
-# Bearings — Pantheon
+# Bearings — tiered.tv
 
 > Standing context for every command. Read alongside the
 > relevant skill file and the matching phase brief. If anything
@@ -9,8 +9,8 @@
 `spec.md` at the repo root is the canonical product description.
 TL;DR:
 
-> **Pantheon** — a spoiler-free home for ranked TV seasons.
-> Every show gets its own pantheon: an Editor's Canon (AI-written,
+> **tiered.tv** — a spoiler-free home for ranked TV seasons.
+> Every show gets its own tiered: an Editor's Canon (AI-written,
 > blurb-rich) and a Community Rank (vote-driven), side by side.
 > Reality genre cluster at launch (~12 shows, ~250 seasons).
 
@@ -18,14 +18,14 @@ The promise (reinforced at every depth — pediment flame, hero
 headline, shield pill, vote question, inline comment reminder):
 **The seasons, ranked. No spoilers.**
 
-**Live at:** `https://pantheon-coral.vercel.app`
+**Live at:** `https://tiered.tv`
 
 ## Surface
 
 **Surface:** `site`
 
 **Auth:** `session-cookie` (per nexus's auth-aware-critique
-patterns). Pantheon's read pages are public — meaning
+patterns). tiered.tv's read pages are public — meaning
 `/critique` runs **two passes per invocation**:
 
 1. **Anonymous pass** — no cookie attached. Walks the URL set
@@ -34,7 +34,7 @@ patterns). Pantheon's read pages are public — meaning
    in its un-acted state, comment-area "sign in to comment"
    prompt, public canon + community pages.
 2. **Authenticated pass** — cookie attached as the
-   `e2e@pantheon.app` user. Walks the URL set as a returning
+   `e2e@tiered.app` user. Walks the URL set as a returning
    member would. Captures: /sign-in's authed-redirect target,
    /u/[handle] for itself, the comment-input affordance in its
    live state, the vote-pair in its post-click state with
@@ -62,7 +62,7 @@ See `setup/04_auth0.md` Section M for the e2e user setup; see
 |---|---|---|
 | Repo | single-package Next.js (no monorepo) | small surface; defer pnpm workspaces until justified |
 | Framework | Next.js 15 (App Router) | SSG/ISR for SEO pages; server actions for vote/comment/mod |
-| Language | TypeScript strict | match Pantheon's editorial precision |
+| Language | TypeScript strict | match tiered.tv's editorial precision |
 | Styling | Tailwind CSS reading from CSS custom properties | per-show palette swap is the delight moment; CSS vars are the cleanest path |
 | Content | Markdown + frontmatter (Zod-validated) under `content/` | nexus's GitHub-as-DB sweet spot for SEO pages |
 | Structured data (dynamic) | Supabase Postgres (hybrid-with-managed-postgres) | votes, comments, sessions, mod actions, ai_decisions |
@@ -76,15 +76,15 @@ See `setup/04_auth0.md` Section M for the e2e user setup; see
 
 ## External services
 
-Per `nexus/customization/external-services.md`, Pantheon ships
+Per `nexus/customization/external-services.md`, tiered.tv ships
 its `setup/` runbooks pre-flighted before phase 1.
 
 | # | Service | Runbook | Status | Last verified | Dashboard |
 |---|---|---|---|---|---|
-| 01 | GitHub | `setup/01_github.md` | ✅ | 2026-05-12 | github.com/daretodave/pantheon |
-| 02 | Vercel | `setup/02_vercel.md` | 🟡 | 2026-05-12 | vercel.com/<team>/pantheon |
+| 01 | GitHub | `setup/01_github.md` | ✅ | 2026-05-12 | github.com/daretodave/tiered |
+| 02 | Vercel | `setup/02_vercel.md` | 🟡 | 2026-05-12 | vercel.com/<team>/tiered |
 | 03 | Supabase | `setup/03_supabase.md` | 🟡 | 2026-05-12 | supabase.com/dashboard/project/dvdzfugmmivjxzvmpiiq |
-| 04 | Auth0 | `setup/04_auth0.md` | 🟡 | 2026-05-12 | manage.auth0.com (tenant: pantheon-app.us.auth0.com) |
+| 04 | Auth0 | `setup/04_auth0.md` | 🟡 | 2026-05-12 | manage.auth0.com (tenant: tiered-app.us.auth0.com) |
 | 05 | Email (Resend) | `setup/05_email.md` | ⏸️ | n/a | deferred until domain owned |
 | 06 | OpenAI | `setup/06_openai.md` | 🟡 | 2026-05-12 | platform.openai.com |
 
@@ -95,8 +95,8 @@ drift before it stalls a `/march` run.
 
 **Auth provider:** Auth0
 
-Tenant: `pantheon-app.us.auth0.com`. API audience:
-`https://api.pantheon.app` (logical identifier — does not
+Tenant: `tiered-app.us.auth0.com`. API audience:
+`https://api.tiered.app` (logical identifier — does not
 require domain ownership). Magic-link passwordless only; no
 social, no password DB. RBAC enabled for the `mod` role gate.
 
@@ -133,7 +133,7 @@ Full runbook: `setup/04_auth0.md`.
 - **Comment rate-limit:** 5 comments/user/hour, 30/day. 20
   comments/IP/hour for guest-attempted writes (rejected
   pre-DB; comments require auth).
-- **Submission rate-limit:** N/A — Pantheon doesn't accept user
+- **Submission rate-limit:** N/A — tiered.tv doesn't accept user
   submissions in v1.
 - **IP-hash retention:** SHA-256 of `(ip + monthly_salt)`,
   retained 30 days.
@@ -159,7 +159,7 @@ Full runbook: `setup/04_auth0.md`.
   rows, every action logged with mod_id + target + reason)
 - **Mod role membership:** Auth0 `mod` role granted manually
   in Auth0 dashboard → User Management → Users → Roles. The
-  Auth0 Action `Add Pantheon claims` ships the `permissions`
+  Auth0 Action `Add tiered.tv claims` ships the `permissions`
   claim that includes `mod:read`, `mod:approve`, etc.
 
 See `nexus/customization/moderation-loop.md` for queue-drain
@@ -167,7 +167,7 @@ mechanics.
 
 ## Database posture
 
-**Pantheon v1 is an experiment.** The agent has full destructive
+**tiered.tv v1 is an experiment.** The agent has full destructive
 authority on Supabase: drop tables, drop the database, truncate,
 rewrite migrations, replay schemas. No confirmation required.
 
@@ -236,7 +236,7 @@ POST /api/webhooks/resend           bounce/complaint webhook (deferred)
 ## Repository shape
 
 ```
-pantheon/
+tiered/
 ├── spec.md
 ├── agents.md
 ├── package.json
@@ -282,13 +282,13 @@ composition, brand mark, interactions, type, color. Read order:
 
 1. `design/CLAUDE.md` — visual law. Supreme on conflict with
    any older guidance in this file or elsewhere.
-2. `design/Pantheon · Brand.html` — brand mark, header, footer
+2. `design/tiered.tv · Brand.html` — brand mark, header, footer
    spec.
-3. `design/Pantheon · Survivor.html` — canonical production
+3. `design/tiered.tv · Survivor.html` — canonical production
    show page.
-4. `design/Pantheon · Heroes vs. Villains.html` — canonical
+4. `design/tiered.tv · Heroes vs. Villains.html` — canonical
    production season page.
-5. `design/Pantheon · {Show Identity, Compositions, Tokens}.html`
+5. `design/tiered.tv · {Show Identity, Compositions, Tokens}.html`
    — supporting reference.
 6. `design/compositions/screens.jsx` + `screens.css` — React +
    CSS source of truth for chrome and page shells.
@@ -306,11 +306,11 @@ bearings if a piece is missing; integrate when it lands.
 
 ## Visual & tonal defaults
 
-Pantheon's identity rests on **color + typography**. Each show
+tiered.tv's identity rests on **color + typography**. Each show
 has a three-color palette (paper / ink / primary) and a serif
 wordmark. **There is no per-show illustration**: no facades, no
 per-show sigils, no mascots, no ornaments. The only SVG in the
-product is the **shared Pantheon brand mark** (pediment + three
+product is the **shared tiered.tv brand mark** (pediment + three
 columns, monochromatic, `0 0 28 28` viewBox, 1.4-unit strokes
 in `currentColor`) which appears in every header and footer.
 
@@ -326,12 +326,12 @@ icon." `design/CLAUDE.md` carries the binding statement.
 
 Locked specifics:
 - **Mode:** dark default + light opt-in. Toggle lives in the
-  footer. Persisted in `localStorage.pantheon_theme`. Ships in
+  footer. Persisted in `localStorage.tiered_theme`. Ships in
   phase 1.
 - **Palette tokens:** `design/tokens.json` is canonical. Dark
   primary `#E8B65A` (ceremonial gold); light primary `#8B5A1F`
   (warm clay). Never override paper / ink / line colors
-  per-show — those are the Pantheon defaults; per-show tinting
+  per-show — those are the tiered.tv defaults; per-show tinting
   uses `--show-paper / --show-ink / --show-primary` CSS vars
   on a page wrapper, not token overrides.
 - **Per-show chrome tinting:** on a show page (show home,
@@ -340,7 +340,7 @@ Locked specifics:
   --show-primary`. The brand mark uses `currentColor` so it
   picks up the show ink automatically. On non-show pages
   (home, themes, search, about, terms, privacy, sign-in,
-  /u/[handle], /mod) the chrome reads the neutral Pantheon
+  /u/[handle], /mod) the chrome reads the neutral tiered.tv
   paper. Implementation: CSS custom properties scoped to
   `[data-show=<slug>]` on the page wrapper, or to the page
   layout file directly.
@@ -348,13 +348,13 @@ Locked specifics:
   whole viewport tints to the show palette); home, themes,
   search, and editorial routes are **bounded** by a max-width
   1240px wrap with 32px x-padding (20px on mobile). The wrap
-  pattern is `class="wrap"` in design/. See `Pantheon · Brand.html`
+  pattern is `class="wrap"` in design/. See `tiered.tv · Brand.html`
   for the header/footer wrap usage.
 - **The brand mark:** a single inline SVG, shared across every
   show. Rendered at six standard sizes only: **16 / 22 / 28 /
   48 / 96 / 240**. Never recolor with a gradient; never crop or
   rotate; never invent per-show variants.
-- **Wordmark:** the serif word "Pantheon" in Source Serif 4
+- **Wordmark:** the serif word "tiered.tv" in Source Serif 4
   weight 600, sized to context, sitting 10px right of the
   brand mark in the header and footer lockup.
 - **Type families:** Source Serif 4 (headlines / blurbs / body
@@ -411,12 +411,12 @@ build plan. This balances autonomous growth (the loop notices
 gaps and proposes work) with human curation (only promoted
 candidates ship).
 
-Switch to `autonomous` once Pantheon has shipped 15+ phases
+Switch to `autonomous` once tiered.tv has shipped 15+ phases
 cleanly and the user trusts `/expand`'s judgment.
 
 ## Content velocity & editorial cadence
 
-Pantheon's `/iterate` and `/ship-content` skills enforce four
+tiered.tv's `/iterate` and `/ship-content` skills enforce four
 content rules. The loop dispatches to `/ship-content` when any
 of these surface in `plan/AUDIT.md` with score ≥ 3.0:
 
@@ -460,7 +460,7 @@ discipline will fail `pnpm content:check` and block the commit.
 ### Rule 4 — retired (was: facade completeness)
 
 The May 2026 facade grammar was prototyped and rejected. There
-is no per-show illustration in Pantheon. The visual identity
+is no per-show illustration in tiered.tv. The visual identity
 is **color + typography** with a shared brand mark — see the
 Visual & tonal defaults section above and `design/CLAUDE.md`.
 
@@ -499,7 +499,7 @@ direct the loop into content velocity.
 - **Themed list size:** 10 entries default; 15 max.
 - **Mobile breakpoint:** 768px (Tailwind `md`).
 - **Theme toggle:** lives in the footer. Reads/writes
-  `localStorage.pantheon_theme` (`'dark' | 'light'`). On
+  `localStorage.tiered_theme` (`'dark' | 'light'`). On
   mount, falls back to `'dark'` if absent. Sets
   `<html data-theme="...">` so the token sheets switch
   cleanly. Ships in phase 1.
@@ -510,7 +510,7 @@ direct the loop into content velocity.
   (per `setup/04_auth0.md` Section F). Magic links arrive from
   `no-reply@auth0.com`-flavored addresses until domain is owned.
 - **Custom domain:** deferred. All references stay at
-  `pantheon-coral.vercel.app`. When the domain lands, swap
+  `tiered.tv`. When the domain lands, swap
   refs via a single `chore: custom domain` commit.
 
 ## Hard rules
@@ -526,7 +526,7 @@ this echoes.)
 5. **Every commit ships unit tests AND contributions to the
    e2e harness** (canonical-urls + page-reads if new URL).
    See agents.md §5a for the discipline.
-6. **Pantheon is lowercase in body prose.**
+6. **tiered.tv is lowercase in body prose.**
 7. **Spoilers are P0.**
 8. **DB mutations are autonomous in v1 experiment posture.**
 9. **Content stays in `content/`; data stays in Supabase.**
@@ -610,7 +610,7 @@ v4 SDK's exact JWE algorithm (HKDF SHA-256 → A256GCM, info
 `"JWE CEK"`, 32-byte length) → cache at
 `.cache/e2e-cookie.json` with a 5-minute pre-expiry refresh
 window → upsert `CRITIQUE_SESSION_COOKIE=__session=<value>`
-in `.env`. Pantheon's port lands as part of phase 3 at
+in `.env`. tiered.tv's port lands as part of phase 3 at
 `scripts/mint-e2e-cookie.mjs`.
 
 ## Deploy gate

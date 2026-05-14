@@ -11,7 +11,7 @@
 
 The three live content-velocity rules in `plan/bearings.md`
 "Content velocity & editorial cadence" generate a continuous
-stream of content-gap findings until Pantheon's corpus reaches
+stream of content-gap findings until tiered.tv's corpus reaches
 its launch quota (12 shows, every aired season blurbed, ≥10
 themed lists). Rule 4 (facade completeness) is **retired** —
 per-show illustration is prohibited per `design/CLAUDE.md`. The
@@ -172,7 +172,7 @@ Both run concurrently; their inputs are independent.
 
 **No `brander` for new shows.** Per-show illustration is
 prohibited by `design/CLAUDE.md` Hard Rule 1. The visual
-identity is **color + typography** plus the shared Pantheon
+identity is **color + typography** plus the shared tiered.tv
 brand mark — the palette in the frontmatter is the entire
 visual contribution. Do not commission per-show SVG.
 
@@ -207,7 +207,7 @@ the entire visual contribution.
     (1–2 sentences, one optional `<b>...</b>`),
     `category` (`tone` / `craft` / `era` / `single`),
     `sentiment` (default `hold`), `status` (default `stable`),
-    `curator` (default `"Pantheon Editors"`),
+    `curator` (default `"tiered.tv Editors"`),
     `last_revised` (today's ISO date), `featured` (default
     false), `related` (0–2 sibling theme slugs).
   - For `category: era` lists, include `era_range: [<year>,
@@ -272,7 +272,7 @@ git add public/shows/<slug>/
 git add content/themes/<slug>.md
 ```
 
-Commit message (lowercase "pantheon" in subject; rule 6 in
+Commit message (lowercase "tiered" in subject; rule 6 in
 agents.md):
 
 ```
@@ -317,7 +317,7 @@ pnpm deploy:check
 If `$N` was set, close-comment the issue:
 
 ```bash
-gh issue comment "$N" --body "Shipped: $(git rev-parse HEAD~1) → https://pantheon-coral.vercel.app/<route>"
+gh issue comment "$N" --body "Shipped: $(git rev-parse HEAD~1) → https://tiered.tv/<route>"
 gh issue close "$N"
 ```
 
@@ -342,7 +342,7 @@ content-gap row (or another verb if the queue is drained).
    Cloud-loop ticks include the `Cloud-Run:` trailer; nothing
    else.
 6. **No per-show illustration.** `design/CLAUDE.md` Hard Rule
-   1 — color + typography only, with the shared Pantheon
+   1 — color + typography only, with the shared tiered.tv
    brand mark. The frontmatter `palette` is the entire
    visual contribution for a new show.
 7. **Word counts are strict.** Blurbs 50-80 words; canon
