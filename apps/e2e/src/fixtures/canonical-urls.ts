@@ -20,6 +20,7 @@ export type CanonicalUrl = {
   show?: string
   season?: number
   theme?: string
+  seasonsCount?: number
 }
 
 function listDir(dir: string): string[] {
@@ -58,6 +59,7 @@ function build(): CanonicalUrl[] {
   ]
 
   for (const showSlug of listDir(SHOWS_DIR)) {
+    const seasonNumbers = listSeasons(showSlug)
     out.push({ pattern: '/shows/[show]', path: `/shows/${showSlug}`, show: showSlug })
     out.push({
       pattern: '/shows/[show]/canon',
@@ -68,8 +70,9 @@ function build(): CanonicalUrl[] {
       pattern: '/shows/[show]/community',
       path: `/shows/${showSlug}/community`,
       show: showSlug,
+      seasonsCount: seasonNumbers.length,
     })
-    for (const n of listSeasons(showSlug)) {
+    for (const n of seasonNumbers) {
       out.push({
         pattern: '/shows/[show]/season/[n]',
         path: `/shows/${showSlug}/season/${n}`,

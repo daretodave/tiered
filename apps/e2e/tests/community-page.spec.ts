@@ -40,13 +40,14 @@ for (const url of communityUrls) {
       const grid = page.getByTestId('season-grid').first()
       await expect(grid).toBeVisible()
 
-      if (EXPECTED_SOURCE[slug] === 'canon') {
-        // Pioneer trio (survivor, top-chef, dragrace) have canons +
-        // matching season files, so the grid renders ranked cards.
+      const seasonsCount = url.seasonsCount ?? 0
+      if (EXPECTED_SOURCE[slug] === 'canon' || seasonsCount > 0) {
+        // Pioneer trio canon-ranked, or a backfilled show with seasons →
+        // grid renders one card per ranked season.
         const cards = page.getByTestId('season-card')
         expect(await cards.count()).toBeGreaterThanOrEqual(1)
       } else {
-        // Other shows have no canon and no seasons yet → empty state.
+        // No canon, no seasons → empty state.
         expect(await grid.getAttribute('data-empty')).toBe('true')
       }
     })
