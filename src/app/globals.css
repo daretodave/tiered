@@ -38,6 +38,16 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Full-bleed sections (like the home hero) use a `width: 100vw` escape
+     to break out of `.wrap`. On platforms with classic vertical scrollbars
+     `100vw` is wider than `innerWidth`, which surfaces as a stray
+     horizontal scrollbar. `overflow-x: clip` neutralizes that without
+     creating a new scroll-containing block (which `overflow-x: hidden`
+     would, breaking `position: sticky` descendants like the season aside). */
+  html {
+    overflow-x: clip;
+  }
+
   body {
     min-height: 100dvh;
   }

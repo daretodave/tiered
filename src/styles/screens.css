@@ -112,6 +112,12 @@
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 0;
   border-bottom: 1px solid var(--line-soft);
   min-height: 600px;
+  /* Full-bleed escape from the (default) layout's .wrap (max-width 1240,
+     padding 0 32). Per design/tiered.tv · Home.html the hero sits at body
+     root; everything below it stays bounded by the wrap. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .home-hero-cover {
   padding: 80px 64px;
