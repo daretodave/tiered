@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 1
+canonical_position: 10
 title: Road Rules All Stars
 eyebrow: "Aired summer 1998 · The franchise's first crossover"
 lede: "The season that started it all. MTV pulled veterans from the first three Road Rules casts, put them in an RV, and turned a road trip into a mission-driven competition. The template for everything the franchise would later become."

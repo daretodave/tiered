@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 9
+canonical_position: 4
 title: Battle of the Sexes 2
 host: Jonny Moseley
 eyebrow: "Aired 2004–2005 · Men vs Women, second pass"

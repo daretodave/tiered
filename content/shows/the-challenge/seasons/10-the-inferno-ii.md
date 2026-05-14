@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 10
+canonical_position: 2
 title: The Inferno II
 host: Jonny Moseley
 eyebrow: "Aired 2005 · Good Guys vs Bad Asses, again"

@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 6
+canonical_position: 5
 title: Battle of the Sexes
 host: Jonny Moseley
 eyebrow: "Aired 2003 · Men vs. Women · Jonny Moseley's first season"

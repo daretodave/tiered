@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 7
+canonical_position: 1
 title: The Gauntlet
 host: Jonny Moseley
 eyebrow: "Aired 2004 · Introduced the elimination round"

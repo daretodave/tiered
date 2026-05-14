@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 8
+canonical_position: 3
 title: The Inferno
 host: Jonny Moseley
 eyebrow: "Aired 2004 · The Gauntlet becomes The Inferno"

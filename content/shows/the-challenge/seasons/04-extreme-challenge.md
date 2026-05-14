@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 4
+canonical_position: 7
 title: Extreme Challenge
 eyebrow: "Aired 2001 · The franchise leans into stunts"
 lede: "MTV pushed the missions toward bigger, more physical stunts and rebranded the season accordingly. The cast is still split RW versus RR, but the show is starting to figure out that the spectacle of the challenges matters as much as the cast dynamics."

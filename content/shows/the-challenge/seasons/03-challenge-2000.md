@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 3
+canonical_position: 9
 title: Challenge 2000
 eyebrow: "Aired 2000 · Second RW vs RR crossover"
 lede: "The follow-up to the first crossover, and the season where MTV started to understand it had a franchise on its hands. Real World versus Road Rules, again, with the rivalry sharper and the cast more aware that the camera was rewarding confrontation."

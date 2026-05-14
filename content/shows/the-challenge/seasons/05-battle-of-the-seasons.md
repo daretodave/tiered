@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 5
+canonical_position: 6
 title: Battle of the Seasons
 eyebrow: "Aired 2002 · Casts grouped by their original season"
 lede: "MTV's first attempt at the season-versus-season format. Instead of one Real World team against one Road Rules team, the show grouped cast by their original season — a structural idea the franchise would return to for the rest of its run."

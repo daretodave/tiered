@@ -1,6 +1,7 @@
 ---
 show: the-challenge
 number: 2
+canonical_position: 8
 title: Real World/Road Rules Challenge
 eyebrow: "Aired 1999 · Real World meets Road Rules for the first time"
 lede: "The crossover that defined the franchise's DNA. MTV finally put Real World alumni against Road Rules alumni in a head-to-head team competition, and the rivalry between the two casts became the show's argument for the next decade."

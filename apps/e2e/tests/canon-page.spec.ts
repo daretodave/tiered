@@ -11,7 +11,7 @@ import { canonicalUrls } from '../src/fixtures/canonical-urls'
 
 const canonUrls = canonicalUrls.filter((u) => u.pattern === '/shows/[show]/canon')
 
-const SHOWS_WITH_CANON = new Set(['survivor', 'top-chef', 'dragrace', 'amazing-race'])
+const SHOWS_WITH_CANON = new Set(['survivor', 'top-chef', 'dragrace', 'amazing-race', 'the-challenge'])
 
 for (const url of canonUrls) {
   const slug = url.show ?? ''
