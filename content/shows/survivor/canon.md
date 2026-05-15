@@ -527,3 +527,189 @@ stayed divided. The canon places Nicaragua twenty-eighth
 because the show was pushing the format faster than the
 players were ready to push back, and the texture of that
 mismatch reads on screen.
+
+## 25. Philippines
+
+tag: The quiet strategy-renaissance peak.
+slot_argument: Three tribes seeded with returnees whose original runs ended early, a cast bench fifteen newcomers deep, and a post-merge stretch the fandom has been quietly defending for a decade.
+community_rank_hint: rank=28 delta=-1 sentiment=down
+
+Philippines is the canon's strongest entry in this batch
+because the season runs cleanly across every editorial axis
+the format weighs. Three tribes, each seeded with a returnee
+whose original run ended too early to count, paired with
+fifteen newcomers who held the room. The Caramoan limestone
+coast pulled visible weight in the post-merge stretch, and
+confessional time spread unusually evenly across the bench.
+The canon places Philippines twenty-ninth because the season
+delivers exactly what the strategy renaissance was reaching
+for — a clean cast playing a confident format on a location
+the editors trusted, with no structural ambition fighting
+the show it wanted to make.
+
+## 32. Kaôh Rōng
+
+tag: The Brains/Brawn/Beauty premise, run a second time without losing texture.
+slot_argument: Six players per archetype, a heat-honest Cambodian shoot, and the strategic vocabulary Cagayan installed two years earlier running at full strength.
+community_rank_hint: rank=29 delta=-1 sentiment=down
+
+Kaôh Rōng is the rare returning-format season the show earns.
+Two years after Cagayan wrote the Brains/Brawn/Beauty
+template, the season doubles down — six players per archetype
+this time, with casting that leans harder into the brief.
+Koh Rong's heat profile reads on camera in a way classic-era
+shoots rarely allowed, and the editors let medical attention
+breathe instead of cutting around it. The post-merge stretch
+carries the strategic vocabulary Cagayan installed without
+feeling like a copy. The canon places Kaôh Rōng thirtieth
+because the season delivers the reprise without falling into
+the trap most twist-heavy returns to a premise hit.
+
+## 33. Millennials vs. Gen X
+
+tag: The franchise finding the home it would stay in for a decade.
+slot_argument: First modern-era Mamanuca shoot, a generational casting frame that plays without overworking itself, and a cast bench deep enough to carry post-strategy-renaissance pace.
+community_rank_hint: rank=30 delta=-1 sentiment=down
+
+Millennials vs. Gen X is the season Survivor finds Fiji, and
+Fiji finds Survivor. The first modern-era Mamanuca shoot sets
+up the location the franchise would settle into long-term,
+and the generational casting frame plays as a frame the
+editors lean on without overworking. The cast bench is the
+deepest the show had assembled since the strategy renaissance
+peaked, and production handles a major weather event with
+unusual transparency in the front half. The canon places it
+thirty-first because the season quietly installs the home
+base the franchise has used ever since, while running a clean
+twist-heavy-era game on its own terms.
+
+## 27. Blood vs. Water
+
+tag: The casting frame returnee seasons have inherited since.
+slot_argument: Ten returnees opposite ten loved ones, paired-cast architecture the franchise had never quite tried, and Redemption Island returning tightened from its prior runs.
+community_rank_hint: rank=31 delta=-1 sentiment=down
+
+Blood vs. Water is the season the show asked what relationship
+pressure could do to the format. Ten returnees brought back
+opposite ten loved ones — partners, siblings, parents — split
+into two tribes from the marooning. The paired-cast premise
+gave the franchise a casting shape it had never tried, and the
+emotional math runs through every confessional after episode
+one. Redemption Island returns as the structural mechanic, now
+on its third run and tightened accordingly. The canon places
+Blood vs. Water thirty-second because the season reshaped how
+returnee runs cast their benches, and the franchise leaned on
+the template afterward in shapes it had not before.
+
+## 35. Heroes vs. Healers vs. Hustlers
+
+tag: The casting department's read on what archetype means in 2017.
+slot_argument: Three tribes split by motivational frame, six players per archetype, a clean run on the Mamanucas the franchise was now using as a permanent base.
+community_rank_hint: rank=32 delta=-1 sentiment=down
+
+Heroes vs. Healers vs. Hustlers is the casting department's
+read on what motivates a modern Survivor applicant. Three
+tribes split by archetypal frame — heroes, healers, hustlers
+— with six players per archetype on the Mamanuca base the
+franchise was now settling into permanently. The casting
+frame lands cleanly, with each tribe carrying a coherent
+internal voice, and the hustler tribe reads as a
+modernization of the older underdog cast slot. The post-merge
+runs at the dense pace the twist-heavy era taught the format
+to deliver. The canon places it thirty-third because the
+premise runs cleanly without ever pushing the format into
+something it cannot handle.
+
+## 34. Game Changers
+
+tag: The polarizing all-returnee run the fandom still debates.
+slot_argument: Twenty veterans cast under a loud premise, a strategic temperature that runs hot from week two, and a casting brief the franchise wore on its sleeve through the whole season.
+community_rank_hint: rank=33 delta=-1 sentiment=down
+
+Game Changers is the all-star format running on a casting
+brief that polarized the fandom. Twenty returnees cast under
+the premise that each had made a meaningful move in a prior
+run, shot on the Mamanucas the franchise was settling into
+long-term. The casting bench mixes eras, and the strategic
+temperature runs hot from week two — no quiet pre-merge
+stretch waiting for the merge to start the season. The
+polarization stays present through the final stretch; the
+format does not back away from it. The canon places Game
+Changers thirty-fourth because the season delivers on its
+own terms even where the fandom has never quite found common
+ground on the run.
+
+## 30. Worlds Apart
+
+tag: The class-split season the canon weighs honestly.
+slot_argument: Three tribes split by working-life frame, casting heat the franchise never quite ran the same way again, and a pre-merge stretch the editors did not soften for the audience.
+community_rank_hint: rank=34 delta=-1 sentiment=down
+
+Worlds Apart is the class-split season the canon has to weigh
+honestly. Three tribes split by the casting team's read on
+working life — white collar, blue collar, no collar — on the
+San Juan del Sur beach the franchise had used the prior fall.
+The premise leans on class as casting frame, and the cast
+plays it loudly. Confrontational chemistry on at least one
+tribe runs unusually hot for early-season Survivor, and the
+editors let the friction breathe. The canon places Worlds
+Apart thirty-fifth because the season produced casting heat
+the franchise never quite ran the same way again, and the
+texture reads as both ambitious and uncomfortable on watch.
+
+## 24. One World
+
+tag: The shared-beach experiment the show tried once.
+slot_argument: Men versus women on a single camp for the full pre-merge — a structural premise the format never returned to, and a casting frame whose proximity pressure produced its own kind of texture.
+community_rank_hint: rank=35 delta=-1 sentiment=down
+
+One World is the season the show asked what happens when two
+tribes can never get away from each other. The men-versus-women
+premise revived after eight years, with a structural twist —
+both tribes share a single beach for the pre-merge stretch.
+The Upolu camp handled its fourth consecutive Samoa shoot,
+and the format experimented with proximity as a casting
+pressure the editors had to manage carefully. Once the merge
+arrives, the season releases its grip and runs more like
+classic-era Survivor. The canon places One World thirty-sixth
+because the structural premise is genuinely interesting even
+where the cast cannot quite carry the conditions the format
+imposed on it.
+
+## 29. San Juan del Sur
+
+tag: Blood vs. Water without the returnee credential.
+slot_argument: Nine pairs of newbies asked to carry the relationship math the prior Blood vs. Water leaned on returnees to deliver. The structural premise repeats; the casting weight does not.
+community_rank_hint: rank=36 delta=-1 sentiment=down
+
+San Juan del Sur is the Blood vs. Water premise without the
+casting credential the first run had. Nine pairs of newbies —
+siblings, parents, partners — split across two tribes from
+the marooning, asked to carry the relationship math the prior
+season leaned on returnees to deliver. The pre-merge stretch
+shows the casting weight Blood vs. Water needed, and without
+the prior context, the editors lean on relationship math the
+audience has to build from scratch. The merge releases the
+format into something closer to classic Survivor. The canon
+places San Juan del Sur thirty-seventh because the season
+shows the gap between a strong premise and the casting bench
+needed to carry it.
+
+## 26. Caramoan
+
+tag: The premise revival that could not win the comparison.
+slot_argument: Fans vs. Favorites returns five years after Micronesia, with a casting bench whose favorites tier polarized the fandom and a fans tribe the editors had to work to shape.
+community_rank_hint: rank=37 delta=-1 sentiment=down
+
+Caramoan is the season the canon weighs against the season it
+followed. The Fans vs. Favorites premise revived five years
+after Micronesia, with ten favorites opposite ten fans on the
+Caramoan beach the franchise was treating as a recurring
+Philippines base. The casting choices polarized the fandom in
+ways Micronesia had not, and the comparison the season has to
+carry from minute one is the one it cannot win. The post-merge
+stretch runs cleaner than the pre-merge stretch, but the
+season's reputation has stayed mixed. The canon places
+Caramoan thirty-eighth because the premise revival is the
+hardest editorial weight to carry, and the season carries it
+honestly rather than well.
