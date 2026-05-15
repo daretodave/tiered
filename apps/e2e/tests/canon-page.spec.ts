@@ -15,6 +15,7 @@ const SHOWS_WITH_CANON = new Set([
   'dragrace',
   'amazing-race',
   'the-challenge',
+  'bachelor',
 ])
 
 for (const url of canonUrls) {
