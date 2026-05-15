@@ -19,6 +19,7 @@ const SHOWS_WITH_CANON = new Set([
   'big-brother',
   'bachelorette',
   'project-runway',
+  'bake-off',
 ])
 
 for (const url of canonUrls) {
