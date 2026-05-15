@@ -238,3 +238,167 @@ the domestic route gave up the geographic argument the show
 relies on. Phil Keoghan hosts with care. The canon places it
 thirteenth because the experiment never returned — and the
 franchise's reluctance to retry it is the verdict.
+
+## 18. Unfinished Business
+
+tag: The second full returnee outing — the All-Stars template re-tested four years on.
+
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Unfinished Business is the franchise's second full returnee
+outing, four years after All-Stars set the template. Eleven
+teams from prior seasons came back to a spring route through
+Australia, Japan, Switzerland, Liechtenstein, Austria, India,
+and Brazil before finishing in Miami. CBS held the Sunday hour
+and the editing leaned hard into the histories the audience
+already had with the field — the kind of confessional weight
+only race veterans can produce. Phil Keoghan hosts the format
+re-pressured by a different generation of returnees. The canon
+places it fourteenth because the season earns its argument
+even where the original All-Stars argument lands harder.
+
+## 15. Season 15
+
+tag: A confident fall outing — geography sharper than the years on either side.
+
+Season 15 is the late-classic franchise running with quiet
+confidence. Twelve teams left Los Angeles into a twelve-leg
+autumn route through Japan, Vietnam, Cambodia, Dubai, Sweden,
+Estonia, and the Netherlands. CBS held the Sunday hour and the
+production widened the cast count by one — a small structural
+tweak that the editing room used to open the first two legs
+into broader team-by-team coverage. The casting goes deep on
+archetypes the audience already trusts. Phil Keoghan paces a
+fall outing whose geography lands sharper than the seasons on
+either side. The canon places it fifteenth because the season
+earns its slot without straining for novelty.
+
+## 17. Season 17
+
+tag: A polished late-classic run — the format on rails.
+
+Season 17 is the late-classic franchise on full polish. Eleven
+teams left Boston into a twelve-leg autumn route through
+England, Ghana, Norway, Russia, Sweden, Bangladesh, and Hong
+Kong. CBS held the Sunday hour and the production delivered
+the kind of season the show had earned the right to make —
+longer legs in fewer countries, the editing room trusting the
+geography to fill the hour without leaning on manufactured
+friction. The casting widens its demographic reach again. Phil
+Keoghan hosts the format running cleanly on rails. The canon
+places it sixteenth because the season is polished across
+every leg without making a distinct format-historical argument.
+
+## 14. Season 14
+
+tag: A solid spring outing — the franchise running cleanly in its lane.
+
+Season 14 is the late-classic show running inside its own
+lane. Eleven teams started from Locarno into a twelve-leg
+spring route through Romania, Russia, India, Thailand, and
+China. CBS held the Sunday hour and the production ran the
+format cleanly inside the rhythms it had spent eight years
+tuning. The casting leans on long-running partner duos and the
+editing trusts the unfamiliar Eastern European start to do the
+heavy lifting across the opening legs. Phil Keoghan hosts an
+outing that earns its slot without reaching for novelty. The
+canon places it seventeenth because the season is solid and
+predictable in the way the late-classic franchise had taught
+the audience to expect.
+
+## 22. Season 22
+
+tag: The franchise still pacing well into its second decade.
+
+Season 22 is the franchise still pacing well into its second
+decade. Eleven teams started from French Polynesia into a
+twelve-leg spring route through New Zealand, Indonesia,
+Vietnam, Botswana, Switzerland, Germany, and Northern Ireland
+before finishing in Washington. CBS held the Sunday hour and
+the production opened with a starting line outside the United
+States — a quiet structural tweak the editing room used to
+push the early legs into broader coverage. Phil Keoghan paces
+a season whose geography is the argument. The canon places it
+eighteenth because the season holds its shape across the
+route, even where the casting does not produce the kind of
+chemistry the higher-canon outings depend on.
+
+## 16. Season 16
+
+tag: A competent late-classic spring run — the format running on muscle memory.
+
+Season 16 is the franchise running on muscle memory. Eleven
+teams left Los Angeles into a twelve-leg spring route through
+Chile, Argentina, Germany, France, the Seychelles, Malaysia,
+Singapore, and China. CBS held the Sunday hour and the
+production delivered the kind of season the franchise can
+build in its sleep after a full decade on the road. The
+casting leans on the dating-couple and partner-pair archetypes
+the show had refined. Phil Keoghan keeps the pit-stop cadence
+honest across the legs. The canon places it nineteenth because
+the season is competent across the route without making a
+distinct argument about what the format can do next.
+
+## 19. Season 19
+
+tag: The Unfinished Business follow-up — the cast couldn't quite carry it.
+
+Season 19 is the follow-up to the spring returnee outing, and
+the canon places it where the cast lands. Eleven teams left
+Los Angeles into a twelve-leg autumn route through Taiwan,
+Indonesia, Malawi, Denmark, Belgium, the Netherlands, and
+Panama before finishing in Atlanta. CBS held the Sunday hour
+and the production ran the format with the muscle memory of
+eleven years on the road. The casting widens across age and
+partner type but the editing room couldn't quite find the kind
+of central friction it had spent the spring leaning on. Phil
+Keoghan hosts. The canon places it twentieth because the
+season is competent without quite carrying the room.
+
+## 20. Season 20
+
+tag: The mid-era show running its established lane.
+
+Season 20 is the mid-era show running its established lane.
+Eleven teams left Santa Barbara into a twelve-leg spring route
+through Argentina, Paraguay, Italy, Germany, Tanzania, India,
+Azerbaijan, and Turkey before a Hawaiian finish line. CBS held
+the Sunday hour and the production ran the format in its
+established lane — the version the show had been making for a
+decade now. The casting leans on partner pairs and dating
+couples. Phil Keoghan paces an outing that is competent across
+the legs without reaching for novelty. The canon places it
+twenty-first because the season is dependable but its texture
+does not particularly reward a second pass on the route.
+
+## 21. Season 21
+
+tag: A workmanlike outing in the format's twelfth year.
+
+Season 21 is the workmanlike outing in the format's twelfth
+year. Eleven teams left Los Angeles into a twelve-leg autumn
+route through China, Russia, Turkey, Spain, the Netherlands,
+France, Bangladesh, and Indonesia before a New York finish.
+CBS held the Sunday hour and the production ran a competent
+fall outing in a year when the franchise was visibly between
+arguments about itself. The casting widens across partner
+types again. Phil Keoghan hosts the format running its trusted
+lane. The canon places it twenty-second because the season is
+competent across the route without making a distinctive
+argument about what the show was for in its twelfth year.
+
+## 23. Season 23
+
+tag: The closing run before the franchise's next pivot.
+
+Season 23 is the closing run before the franchise's next
+pivot. Eleven teams left Los Angeles into a twelve-leg autumn
+route through Chile, Norway, Poland, Portugal, Abu Dhabi,
+Indonesia, and Japan before an Alaskan finish line. CBS held
+the Sunday hour and the production delivered a season the
+audience could watch in muscle memory — familiar geographies,
+a few sharper detours, and the franchise visibly waiting for
+the structural tweak it would land in the next outing. The
+casting leans on partner pairs and dating couples. Phil
+Keoghan paces the cadence. The canon places it twenty-third
+because the season closes the late-classic run cleanly.
