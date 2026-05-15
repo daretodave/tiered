@@ -11,6 +11,7 @@ premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Texas · multi-city"
 format_caption: "audition round opens the show"
 cast_size: 16
+canonical_position: 2
 ---
 
 Top Chef went on the road for the first time, splitting the
