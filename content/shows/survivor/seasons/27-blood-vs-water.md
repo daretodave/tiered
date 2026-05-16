@@ -8,7 +8,7 @@ ep_count: 14
 location: Caramoan, Philippines
 host: Jeff Probst
 format_changes: [paired-tribes, returnee-loved-one, redemption-island-return]
-canonical_position: 32
+canonical_position: 39
 eyebrow: "Aired fall 2013 · Filmed in Caramoan"
 lede: "Ten returning players brought back opposite ten loved ones — partners, siblings, parents — split into two tribes. Redemption Island returns as the structural mechanic, and the paired-cast premise produced a casting shape the franchise had never quite tried before."
 pull: "Blood vs. Water is the season the show asked what relationship pressure could do to the format. The answer reshaped how returnee seasons cast their benches."

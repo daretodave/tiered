@@ -7,7 +7,7 @@ ep_count: 14
 location: Upolu, Samoa
 host: Jeff Probst
 format_changes: []
-canonical_position: 21
+canonical_position: 25
 eyebrow: "Aired fall 2009 · Filmed in Samoa"
 lede: "The nineteenth season opens on the Upolu beach the show would return to for Heroes vs. Villains. The casting and editorial frame builds around a single dominant personality whose play reshaped what the format would accept as a villain archetype for years afterward."
 pull: "Samoa is the season that recast the villain mold. The format leans into a single player to an unusual degree, and the cast feels the weight."

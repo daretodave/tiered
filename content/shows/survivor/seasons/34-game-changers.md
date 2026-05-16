@@ -7,7 +7,7 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [all-returnee-cast, mamanuca-base]
-canonical_position: 34
+canonical_position: 41
 eyebrow: "Aired spring 2017 · Filmed in Fiji"
 lede: "Twenty returning players, all cast under the premise that each had made a meaningful move in their original run. Shot on the Mamanucas, the season inherited the location the franchise was settling into and asked an all-returnee bench to play under it."
 pull: "Game Changers is the all-star format running on a casting brief that polarized the fandom. The premise was loud; the season delivered on its own terms."

@@ -8,7 +8,7 @@ ep_count: 14
 location: Jalapão, Tocantins, Brazil
 host: Jeff Probst
 format_changes: []
-canonical_position: 19
+canonical_position: 23
 eyebrow: "Aired spring 2009 · Filmed in Brazil"
 lede: "The Brazilian highlands season, shot in the Jalapão region of Tocantins. The savanna interior gives production a textured visual run — red rock, freshwater springs, miles of low scrub — and a confident classic-era cast builds character through-lines the format thrives on."
 pull: "Tocantins is often cited as the last pure classic-era season before the strategy renaissance kicked in. The cast plays the game the show used to be."

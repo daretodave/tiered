@@ -8,7 +8,7 @@ ep_count: 14
 location: Loango, Gabon
 host: Jeff Probst
 format_changes: []
-canonical_position: 26
+canonical_position: 30
 eyebrow: "Aired fall 2008 · Filmed in Gabon"
 lede: "Survivor returns to the African continent with a younger cast and a savanna setting that puts visible pressure on every campfire scene. Elephants block the water sources, the heat is real, and the editing leans on landscape in stretches the strategy can't carry."
 pull: "Gabon is the show running its hard-conditions experiment a second time. The cinematography earns its keep; the gameplay is uneven by stretches."

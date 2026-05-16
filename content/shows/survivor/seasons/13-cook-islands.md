@@ -7,7 +7,7 @@ ep_count: 14
 location: Aitutaki, Cook Islands
 host: Jeff Probst
 format_changes: [ethnicity-divided-tribes, mutiny-twist]
-canonical_position: 15
+canonical_position: 17
 eyebrow: "Aired fall 2006 · Filmed in the Cook Islands"
 lede: "A casting premise the show backed away from after one cycle — four tribes drawn along ethnic lines. The premise dominates the early run; once the format reshuffles, the season settles into a strong classic-era game on one of the cleanest lagoons Survivor ever shot."
 pull: "Cook Islands is the season where the show's casting net visibly widened. The opening twist gets the attention; the reshaped post-merge cast is the durable contribution."

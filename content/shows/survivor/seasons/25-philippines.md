@@ -7,7 +7,7 @@ ep_count: 14
 location: Caramoan, Philippines
 host: Jeff Probst
 format_changes: [three-tribes, returnee-injection]
-canonical_position: 29
+canonical_position: 34
 eyebrow: "Aired fall 2012 · Filmed in Caramoan"
 lede: "Three new tribes, each seeded with one returning player whose previous run ended early. The casting tightened the show's mid-era voice, and Caramoan's limestone coast gave the editors a backdrop they trusted."
 pull: "Philippines is the canon's quiet argument that the show always knew how to find a confident cast — when production let casting do its work."

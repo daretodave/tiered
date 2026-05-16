@@ -8,7 +8,7 @@ ep_count: 14
 location: San Juan del Sur, Nicaragua
 host: Jeff Probst
 format_changes: [redemption-island-mechanic, returnee-injection]
-canonical_position: 22
+canonical_position: 26
 eyebrow: "Aired spring 2011 · Filmed in Nicaragua"
 lede: "The first Redemption Island season — voted-out players head to a parallel beach to play duels for re-entry, instead of going home. Two returnees, Boston Rob and Russell, anchor the casting. The mechanic creates a pacing problem the format would spend a decade learning to manage."
 pull: "Redemption Island is the season the show stops sending people home. The format the franchise still runs in modified form gets invented here."

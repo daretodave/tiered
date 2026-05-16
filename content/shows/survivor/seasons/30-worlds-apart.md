@@ -8,7 +8,7 @@ ep_count: 14
 location: San Juan del Sur, Nicaragua
 host: Jeff Probst
 format_changes: [three-tribes, collar-split]
-canonical_position: 35
+canonical_position: 42
 eyebrow: "Aired spring 2015 · Filmed in Nicaragua"
 lede: "Three tribes split by the casting team's read on working life — white collar, blue collar, no collar. Shot on the San Juan del Sur beach the franchise had used the prior fall. The premise leans on class as casting frame, and the cast plays it loudly."
 pull: "Worlds Apart is the class-split season the canon has to weigh honestly. The premise produced casting heat the franchise never quite ran the same way again."

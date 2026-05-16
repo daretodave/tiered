@@ -8,7 +8,7 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [three-tribes, archetypal-casting]
-canonical_position: 33
+canonical_position: 40
 eyebrow: "Aired fall 2017 · Filmed in Fiji"
 lede: "Three new tribes split by archetypal frame — heroes, healers, hustlers — the casting team's read on what motivates a modern Survivor applicant. Shot on the Mamanucas, the season runs as a clean three-tribe twist-heavy entry."
 pull: "Heroes vs. Healers vs. Hustlers is the casting department asking what archetype means in 2017. The cast plays the brief without being defined by it."

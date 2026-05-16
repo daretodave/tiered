@@ -7,7 +7,7 @@ ep_count: 14
 location: Upolu, Samoa
 host: Jeff Probst
 format_changes: [redemption-island-mechanic, returnee-injection]
-canonical_position: 24
+canonical_position: 28
 eyebrow: "Aired fall 2011 · Filmed in Samoa"
 lede: "The second Redemption Island season, with two veterans — Coach and Ozzy — anchoring the casting. Shot on the Upolu beach the show now treated as a recurring base. The first season the franchise committed to returnees in matched pairs as a casting move."
 pull: "South Pacific is where the show learns to make Redemption Island work. The mechanic settles; the casting frame around veterans-in-pairs sticks."

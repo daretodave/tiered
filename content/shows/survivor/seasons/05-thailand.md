@@ -7,7 +7,7 @@ ep_count: 13
 location: Ko Tarutao, Thailand
 host: Jeff Probst
 format_changes: [schoolyard-pick]
-canonical_position: 25
+canonical_position: 29
 eyebrow: "Aired fall 2002 · Filmed in Thailand"
 lede: "Shot on an uninhabited island off Thailand's western coast, with a marooning that asked the two oldest castaways to draft their own tribes on the beach. The casting choice frames the season — a tonally serious cast and a setting that doesn't accommodate."
 filming_caption: "Ko Tarutao · uninhabited Andaman island"

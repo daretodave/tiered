@@ -1,7 +1,7 @@
 ---
 show: survivor
 editor: tiered.tv Editors
-last_revised: 2026-05-15
+last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We've watched Survivor since Pulau Tiga and we've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Survivor fans agree on after a kitchen-table argument runs long enough. We're not pretending to be objective; we are pretending to be honest.
 meth_how_h: How do we weigh it?
@@ -205,6 +205,23 @@ audience. Most format resets at this scale fail. This one
 introduced the vocabulary the show still runs on. The canon
 places it tenth because the gamble worked.
 
+## 37. David vs. Goliath
+
+tag: The twist-heavy era's casting frame running at its ceiling.
+slot_argument: Two tribes split by the team's read on who got an edge and who had to scrap, with one of the deepest new-player benches the era assembled. The frame works because the cast never has to lean on it.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+David vs. Goliath is the twist-heavy era proving its casting
+frame can carry a season on cast alone. Two tribes split by the
+team's read on who life handed an edge to and who had to scrap —
+twenty new players on the Mamanucas, with a bench deep enough
+that the premise never has to be propped up. Confessional time
+spreads across nearly the whole cast, the merge runs at a high
+strategic temperature, and the underdog framing still reads
+through the closing rounds. The canon places it eleventh because
+the season is the era's clearest evidence that a new-player cast,
+well chosen, can run at this much sustained pressure.
+
 ## 4. Marquesas
 
 tag: The season that proved the format could think for itself.
@@ -222,6 +239,23 @@ Polynesian production design that still influences scout-team
 reels two decades later. The canon places it eleventh because the
 show, before this point, had been a simple game with simple
 math.
+
+## 47. Survivor 47
+
+tag: The new era showing its ceiling on cast alone.
+slot_argument: By season 47 the 26-day format is mature enough that a confident bench is all the season needs. The strongest recent new-era run, landing near the top of its era on clean execution.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Survivor 47 is the new era showing what its ceiling looks like
+when the format gets out of the way. By the fall of 2024 the
+26-day clock had matured enough that a strong bench was the only
+variable left — three tribes of new players on the Mamanucas, a
+casting lineup that read strong from the marooning. The
+compressed clock keeps the merge dense and fast, the bench holds
+the room, and the back half runs hot into the finale. The canon
+places it thirteenth because it is the clearest case the new era
+has made that the reset, fully settled, can produce a season this
+clean without a marquee returnee cast to lean on.
 
 ## 2. The Australian Outback
 
@@ -311,6 +345,40 @@ dynamic that keeps both tribes legible. The canon places it
 sixteenth because Exile Island is a contribution the format
 genuinely needs at this point, even where the season's back half
 cannot quite sustain the early pace.
+
+## 43. Survivor 43
+
+tag: The new era running clean.
+slot_argument: By fall 2022 the 26-day format had stopped feeling like a compromise and started producing seasons that simply work. A reliable new-era entry with a bench deep enough for early character work.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Survivor 43 is the new era running clean. By the fall of 2022 the
+26-day format had stopped feeling like a compromise and started
+producing seasons that simply work — three tribes of new players
+on the Mamanucas, a casting bench deep enough to build character
+through-lines from the marooning. The compressed clock keeps the
+merge dense and fast, and the journeys and advantages add texture
+without clutter. The canon places it nineteenth because the
+season earns its rank the simple way — confident cast, settled
+format, almost no friction between the show and the game it
+wanted to play — and the new era needed an entry that just works.
+
+## 44. Survivor 44
+
+tag: The new era at full confidence.
+slot_argument: By spring 2023 the 26-day format had matured into something the show executes rather than tests, with a cast that arrives knowing exactly what game it signed up for. A strong, reliable run.
+community_rank_hint: rank=20 delta=0 sentiment=hold
+
+Survivor 44 is the new era at full confidence. By the spring of
+2023 the 26-day format had matured into something the show
+executes rather than tests — three tribes of new players on the
+Mamanucas, a casting bench that arrives knowing exactly what game
+it signed up for. The compressed clock keeps the merge dense and
+fast, and the journeys and advantages add texture without
+overwhelming the social game. The canon places it twentieth,
+just below its sibling season, because the run is every bit as
+clean but the bench produces slightly less of the early
+character work that pushes a new-era season up the order.
 
 ## 8. All-Stars
 
@@ -528,6 +596,24 @@ because the show was pushing the format faster than the
 players were ready to push back, and the texture of that
 mismatch reads on screen.
 
+## 36. Ghost Island
+
+tag: The franchise mining its own archive.
+slot_argument: A twist built on relics from past seasons, collected on a separate island. The mechanic is the hook; the season works when a deep superfan bench plays through it instead of around it.
+community_rank_hint: rank=33 delta=0 sentiment=hold
+
+Ghost Island is the twist-heavy era's most self-referential
+entry — a mechanic built on relics from the franchise's own
+past, collected on a separate island the cast keeps circling
+back to. Twenty new players on the Mamanucas, a bench deep in
+studied superfans who arrive knowing the archive the twist draws
+from. The season runs dense once the merge lands, and the
+mythology framing reads through the closing rounds. The canon
+places it thirty-third because the season plays its gimmick
+straighter than its premise suggests — solid, watchable
+twist-heavy Survivor that never quite turns its hook into the
+season's defining strength.
+
 ## 25. Philippines
 
 tag: The quiet strategy-renaissance peak.
@@ -547,6 +633,24 @@ for — a clean cast playing a confident format on a location
 the editors trusted, with no structural ambition fighting
 the show it wanted to make.
 
+## 39. Island of the Idols
+
+tag: The show putting its own history in a teaching role.
+slot_argument: Two returning legends set up to coach new players who visit one at a time. The mentor frame is novel and gives production a recurring venue, but the season runs on a new-player bench rather than the twist.
+community_rank_hint: rank=35 delta=0 sentiment=hold
+
+Island of the Idols is the twist-heavy era turning the
+franchise's own history into a teaching role — two returning
+legends on a separate beach, coaching new players who visit one
+at a time. Twenty newcomers on the Mamanucas, with the mentor
+visits giving production a recurring venue distinct from camp.
+The bench is deep in studied superfans, the merge runs at the
+era's dense pace, and the teaching frame shadows the strategic
+reads through the close. The canon places it thirty-fifth
+because the season earns its novel premise without leaning on
+it, even where the mentor mechanic stays more interesting as a
+device than as the engine of the game.
+
 ## 32. Kaôh Rōng
 
 tag: The Brains/Brawn/Beauty premise, run a second time without losing texture.
@@ -564,6 +668,24 @@ carries the strategic vocabulary Cagayan installed without
 feeling like a copy. The canon places Kaôh Rōng thirtieth
 because the season delivers the reprise without falling into
 the trap most twist-heavy returns to a premise hit.
+
+## 42. Survivor 42
+
+tag: The new era past its proving stretch.
+slot_argument: The second numbered-only season, with the post-2020 mechanics now default rather than experimental. A solid mid-pack run that proves the reset works without making a new argument for it.
+community_rank_hint: rank=37 delta=0 sentiment=hold
+
+Survivor 42 is the new era past its proving stretch. The second
+season under numbered-only branding runs on the 26-day clock the
+reset installed, with the post-2020 mechanics now default rather
+than experimental — eighteen new players across three tribes on
+the Mamanucas, a bench deep in superfans who studied the new-era
+playbook before applying. The compressed clock forces a fast
+strategic pace, and the journeys and advantages stay live through
+the close. The canon places it thirty-seventh because the season
+runs the format reset as a known quantity rather than a question
+— competent, watchable, but without the cast spike that lifts
+the better new-era entries up the order.
 
 ## 33. Millennials vs. Gen X
 
@@ -657,6 +779,24 @@ Apart thirty-fifth because the season produced casting heat
 the franchise never quite ran the same way again, and the
 texture reads as both ambitious and uncomfortable on watch.
 
+## 46. Survivor 46
+
+tag: The new era running on cast when the format stopped being the story.
+slot_argument: By 2024 the 26-day format is default grammar; the season's texture follows the bench it brings. An emotive casting energy carries a run the fandom reads as solidly mixed rather than glowing.
+community_rank_hint: rank=43 delta=0 sentiment=hold
+
+Survivor 46 is the new era running on cast. By the spring of
+2024 the format is no longer the story — three tribes of new
+players on the Mamanucas, the 26-day clock fully established as
+default grammar. The season's texture follows the bench it
+brings: an emotive casting energy that runs warm in the early
+going and a merge that moves at the new era's fast pace. The
+canon places it forty-third because the season lives on its
+players when the format itself has stopped being the argument,
+and the bench, while watchable, does not produce the through-
+lines that lift the stronger new-era runs — a season the fandom
+reads as solidly mixed rather than a standout.
+
 ## 24. One World
 
 tag: The shared-beach experiment the show tried once.
@@ -694,6 +834,24 @@ format into something closer to classic Survivor. The canon
 places San Juan del Sur thirty-seventh because the season
 shows the gap between a strong premise and the casting bench
 needed to carry it.
+
+## 38. Edge of Extinction
+
+tag: The structural swing the fandom never agreed on.
+slot_argument: The mechanic that lets voted-out players stay in the game's orbit on a separate beach. The ambition is large, the pacing problem is real, and the run has stayed divisive since it aired.
+community_rank_hint: rank=46 delta=0 sentiment=hold
+
+Edge of Extinction is the twist-heavy era's most-debated
+structural swing — the mechanic that lets voted-out players
+stay in the game's orbit on a separate beach. A mixed cast of
+new players and returning faces on the Mamanucas, running at an
+uneven tempo the twist constantly shadows. The casting split
+produces a textured but inconsistent pre-merge, and the Edge
+stays a live factor through every late vote. The canon places
+it forty-sixth because the experiment is bold enough to matter
+historically but the fandom has never settled on whether it
+lands — a season the canon weighs honestly rather than warmly,
+the way it does the format's other large structural gambles.
 
 ## 26. Caramoan
 

@@ -8,7 +8,7 @@ ep_count: 14
 location: Koh Rong, Cambodia
 host: Jeff Probst
 format_changes: [brains-brawn-beauty, second-themed-split]
-canonical_position: 30
+canonical_position: 36
 eyebrow: "Aired spring 2016 · Filmed in Cambodia"
 lede: "The second Brains/Brawn/Beauty run, two years after Cagayan installed the template. Shot on Koh Rong, the season turned heat and humidity into a visible character — the conditions read on camera in a way classic-era shoots rarely allowed."
 pull: "Kaôh Rōng is the rare returning-format season that earns the reprise. The premise works because the cast plays the archetype, not the label."

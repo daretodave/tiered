@@ -8,7 +8,7 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [generational-tribes, fiji-shift]
-canonical_position: 31
+canonical_position: 38
 eyebrow: "Aired fall 2016 · Filmed in Fiji"
 lede: "The first season shot on the Mamanuca Islands, the location the show would settle into long-term. The cast splits along generational lines — one tribe of millennials, one of Gen X — and the premise plays as a casting frame the editors lean on without overworking."
 pull: "Millennials vs. Gen X is the season Survivor finds Fiji, and Fiji finds Survivor. The franchise's permanent base starts here."

@@ -7,7 +7,7 @@ ep_count: 14
 location: Upolu, Samoa
 host: Jeff Probst
 format_changes: [shared-beach, men-vs-women]
-canonical_position: 36
+canonical_position: 44
 eyebrow: "Aired spring 2012 · Filmed in Samoa"
 lede: "The men-vs-women premise revived after eight years, with a structural twist — both tribes share a single beach for the pre-merge. The Upolu camp was the franchise's recurring base, and the format experimented with proximity as a casting pressure."
 pull: "One World is the season the show asked what happens when two tribes can never get away from each other. The answer reads on camera, for better and worse."

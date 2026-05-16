@@ -7,7 +7,7 @@ ep_count: 14
 location: San Juan del Sur, Nicaragua
 host: Jeff Probst
 format_changes: [medallion-of-power, hidden-idol-clues]
-canonical_position: 28
+canonical_position: 32
 eyebrow: "Aired fall 2010 · Filmed in Nicaragua"
 lede: "The first Survivor shoot in Nicaragua. A new advantage — the Medallion of Power — arrives at the marooning, and idol-clue tweaks reshape the early game. The cast pushes back where the show pushes forward, and the season's reputation has stayed divided ever since."
 pull: "Nicaragua is the season the format experiments without the cast on side. Twists land where the players don't want them, and the texture shows it."
