@@ -126,25 +126,30 @@ jobs:
       - name: Run /march (cloud mode)
         id: claude_run
         if: steps.ceiling.outputs.skip != 'true'
-        # Bound the STEP, not just the 300min job. claude-code-action
-        # has an upstream defect: the `claude` CLI does not self-exit
-        # after the agent's final turn (leaked handle — see the
-        # "directory mismatch … v1/tsconfig.json, fd 4 … indicates a
-        # bug" internal error in run logs). Without a step cap the
-        # zombie squats the runner for the full 5h job timeout and —
-        # because concurrency is serialized (cancel-in-progress:
-        # false) — every later scheduled tick queues behind it, so
-        # the whole loop stalls until a human cancels by hand. 60min
-        # sits well above true tick p95 (~40min) so real ticks are
-        # untouched, but a post-turn hang now fails fast: the job
-        # ends, the slot frees, the next cron tick runs, and the
-        # failure() step below files a (deduped) issue for /triage.
-        timeout-minutes: 60
-        # Pinned to the v1 tag's commit (resolved 2026-05-16, tagged
-        # 2026-05-14) so a future upstream retag of the floating v1
-        # can't regress this further. Bump deliberately once upstream
-        # ships a fix for the post-turn exit hang.
-        uses: anthropics/claude-code-action@51ea8ea73a139f2a74ff649e3092c25a904aed7e # v1
+# HARD BACKSTOP only. claude-code-action has a post-turn exit
+        # hang: the `claude` CLI does not self-exit after the agent's
+        # final turn (leaked handle — see the "directory mismatch …
+        # tsconfig.json, fd 4 … indicates a bug" internal error in
+        # run logs). Primary detection is now the `watchdog` job
+        # below, which cancels the moment work is confirmed shipped
+        # (this run's Cloud-Run commit lands on main) but the step is
+        # still running — that fires in minutes regardless of whether
+        # the tick is 12min or 90min, and never touches a tick that
+        # is genuinely still working. This timeout is just the floor
+        # for the rarer "wedged before it ever commits" case. Sized
+        # well above the observed legit max (~75min for a heavy
+        # ship-a-phase) so it never false-kills real work; the
+        # watchdog, not this number, is what keeps the loop moving.
+        timeout-minutes: 120
+        # Pinned to v1.0.122 (86eb26bf — 2026-05-13), the last
+        # release BEFORE v1.0.123 (51ea8ea — 2026-05-14) bumped the
+        # Agent SDK 0.2.141 → 0.3.142 + Claude Code → 2.1.142. The
+        # post-turn exit hang began ~2026-05-16, correlating with
+        # that 0.3 SDK jump — this is a root-cause shot, not just
+        # drift-freezing. If hangs persist on 122 the bug predates
+        # it; bump forward only once upstream confirms a fix for the
+        # exit hang (the watchdog covers us either way).
+        uses: anthropics/claude-code-action@86eb26bf01 # v1.0.122
         with:
           # OAuth token bills against the user's Claude Pro/Max
           # subscription. $0 marginal cost; quota shared with local
@@ -251,3 +256,75 @@ jobs:
           else
             echo "An open 'Cloud march tick crashed' issue already exists — skipping dedupe."
           fi
+
+  # ── Cancel-on-hang watchdog ────────────────────────────────────
+  # Runs in parallel with `march` (no `needs:`). The hang signature
+  # is precise: the workflow already stamps every shipped commit
+  # with `Cloud-Run: <this run's URL>`. So "this run's Cloud-Run
+  # commit is on origin/main" == the tick's work is done and pushed.
+  # If that commit exists while the claude step is STILL running
+  # (past a short grace for the post-push deploy:check), the agent
+  # finished but the process is wedged — cancel within a poll.
+  # A genuinely-still-working 75min tick has not pushed its
+  # Cloud-Run commit yet, so the watchdog never touches it. A no-op
+  # tick never commits and exits on its own. The only thing the
+  # 120min step backstop is left to catch is a wedge BEFORE any
+  # commit. This is what unblocks the serialized queue fast without
+  # ever false-killing real work.
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 130   # one tick over the march step backstop
+    permissions:
+      actions: write       # gh run cancel on the hang
+      contents: read
+    steps:
+      - name: Cancel the run if the agent finishes but hangs on exit
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
+          RUN_ID: ${{ github.run_id }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          FRAG="actions/runs/${RUN_ID}"   # this run's Cloud-Run stamp
+          BACKSTOP_MIN=120                 # pre-commit wedge cap (== step cap)
+          GRACE_MIN=15                     # post-push window (covers deploy:check)
+          start=$(date +%s); shipped_at=""
+          while true; do
+            sleep 75
+            now=$(date +%s); elapsed=$(( (now - start) / 60 ))
+
+            # Poll the march job's claude-step status.
+            cs=$(gh run view "$RUN_ID" --repo "$REPO" --json jobs \
+                  --jq '.jobs[]|select(.name=="march").steps[]|select(.name=="Run /march (cloud mode)").status' \
+                  2>/dev/null || echo "unknown")
+            # The hang IS the claude step staying in_progress. Once it
+            # reaches `completed` (clean exit OR the 120min step
+            # timeout firing), the march job drains + finalizes
+            # itself — stand down. Anything else (queued during the
+            # ~5min setup, empty jq, transient API failure → unknown)
+            # means keep holding; never exit early.
+            if [ "$cs" = "completed" ]; then
+              echo "claude step completed at +${elapsed}min — watchdog standing down."
+              exit 0
+            fi
+
+            # Arm the cancel logic only while the step is actually
+            # running (not during setup, not on a transient unknown).
+            if [ "$cs" = "in_progress" ]; then
+              if gh api "repos/${REPO}/commits?sha=main&per_page=25" \
+                   --jq '.[].commit.message' 2>/dev/null | grep -qF "$FRAG"; then
+                [ -z "$shipped_at" ] && { shipped_at=$now; \
+                  echo "+${elapsed}min: this run's Cloud-Run commit is on main — work shipped. Grace ${GRACE_MIN}min for deploy:check."; }
+                if [ $(( (now - shipped_at) / 60 )) -ge "$GRACE_MIN" ]; then
+                  echo "HANG CONFIRMED: shipped >=${GRACE_MIN}min ago, claude step still in_progress. Cancelling run ${RUN_ID}."
+                  gh run cancel "$RUN_ID" --repo "$REPO" || true
+                  exit 0
+                fi
+              elif [ "$elapsed" -ge "$BACKSTOP_MIN" ]; then
+                echo "BACKSTOP: +${elapsed}min, no Cloud-Run commit (wedged pre-commit). Cancelling run ${RUN_ID}."
+                gh run cancel "$RUN_ID" --repo "$REPO" || true
+                exit 0
+              fi
+            fi
+            echo "watchdog +${elapsed}min: claude=${cs} shipped=${shipped_at:+yes} — holding."
+          done
