@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 23
-canonical_position: 30
+canonical_position: 39
 title: Battle of the Seasons
 host: TJ Lavin
 premiere_date: 2012-09-19

@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 26
-canonical_position: 26
+canonical_position: 31
 title: Battle of the Exes II
 display_title: "Battle of the <em>Exes</em> II"
 host: TJ Lavin

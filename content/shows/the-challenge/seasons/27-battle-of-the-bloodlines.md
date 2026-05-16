@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 27
-canonical_position: 27
+canonical_position: 33
 title: Battle of the Bloodlines
 display_title: "Battle of the <em>Bloodlines</em>"
 host: TJ Lavin

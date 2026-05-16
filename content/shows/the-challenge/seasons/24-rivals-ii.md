@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 24
-canonical_position: 25
+canonical_position: 30
 title: Rivals II
 display_title: "Rivals <em>II</em>"
 host: TJ Lavin

@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 25
-canonical_position: 23
+canonical_position: 27
 title: Free Agents
 host: TJ Lavin
 premiere_date: 2014-04-10

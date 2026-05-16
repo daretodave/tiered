@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 28
-canonical_position: 29
+canonical_position: 37
 title: Rivals III
 display_title: "Rivals <em>III</em>"
 host: TJ Lavin

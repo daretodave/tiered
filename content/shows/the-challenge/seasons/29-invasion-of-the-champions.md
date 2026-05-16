@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 29
-canonical_position: 28
+canonical_position: 35
 title: Invasion of the Champions
 display_title: "Invasion of the <em>Champions</em>"
 host: TJ Lavin

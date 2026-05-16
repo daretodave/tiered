@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 30
-canonical_position: 24
+canonical_position: 26
 title: "XXX: Dirty 30"
 display_title: "<em>XXX</em>: Dirty 30"
 host: TJ Lavin
