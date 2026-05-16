@@ -10,7 +10,7 @@ format_changes: []
 premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format"
 cast_size: 17
-canonical_position: 4
+canonical_position: 5
 ---
 
 The city carried the season. Creole and Cajun traditions, gulf

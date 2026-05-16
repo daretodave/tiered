@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 5
-canonical_position: 11
+canonical_position: 17
 title: New York
 host: Padma Lakshmi
 premiere_date: 2008-11-12

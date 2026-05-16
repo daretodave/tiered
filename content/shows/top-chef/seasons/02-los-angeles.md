@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 2
-canonical_position: 12
+canonical_position: 21
 title: Los Angeles
 host: Padma Lakshmi
 premiere_date: 2006-10-18

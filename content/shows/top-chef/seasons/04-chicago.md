@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 4
-canonical_position: 6
+canonical_position: 8
 title: Chicago
 host: Padma Lakshmi
 premiere_date: 2008-03-12

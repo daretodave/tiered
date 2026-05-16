@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 13
-canonical_position: 9
+canonical_position: 13
 title: California
 host: Padma Lakshmi
 premiere_date: 2015-12-02

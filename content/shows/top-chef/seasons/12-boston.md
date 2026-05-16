@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 12
-canonical_position: 10
+canonical_position: 16
 title: Boston
 host: Padma Lakshmi
 premiere_date: 2014-10-15

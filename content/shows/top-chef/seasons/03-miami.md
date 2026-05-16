@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 3
-canonical_position: 7
+canonical_position: 10
 title: Miami
 host: Padma Lakshmi
 premiere_date: 2007-10-10

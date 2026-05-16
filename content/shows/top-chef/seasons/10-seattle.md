@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 10
-canonical_position: 5
+canonical_position: 6
 title: Seattle
 host: Padma Lakshmi
 premiere_date: 2012-11-07
