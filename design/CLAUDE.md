@@ -60,7 +60,7 @@ No SVG path. No icon name. No mascot reference. If a future contributor proposes
 | `tiered.tv · Show Identity.html`      | The color+type rules + canonical three-show set.       |
 | `tiered.tv · Compositions.html`       | Home / Show / Season + interactions + micro-copy.      |
 | `tiered.tv · Brand.html`              | Brand mark + header + footer lockups + scale.          |
-| `tiered.tv · Survivor.html`           | Production show page (full-bleed, all 47 seasons).     |
+| `tiered.tv · Survivor.html`           | Production show page — hero, what-moved, the canon (with Community tab), themed lists. |
 | `tiered.tv · Lists.html`              | Themed cross-show lists index.                         |
 | `tiered.tv · Best Premieres.html`     | One representative themed list.                        |
 | `tiered.tv · Heroes vs. Villains.html`| One representative season page.                        |

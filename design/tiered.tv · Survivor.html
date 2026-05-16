@@ -11,15 +11,11 @@
 <style>
   /* ============================================================
      tiered.tv · Survivor — production show page.
-     This is the page itself, full-bleed, not a design-system doc.
-     Styles are inlined so it stands alone; values come from tokens.
+     The canon is the page. Hero → what moved → the canon
+     (Editor's Canon / Community tabs) → themed lists.
      ============================================================ */
   :root {
-    /* tiered.tv defaults */
-    --paper-0:#0E0B08; --paper-1:#15110C; --paper-2:#1E1812; --paper-3:#2A2218;
-    --line-soft:#241D14; --line:#3A2F22; --line-loud:#5A4A35;
-    --ink-3:#6E6353; --ink-2:#9D9485; --ink-1:#D8CFBE; --ink-0:#F2EADB;
-    --primary:#E8B65A;
+    --paper-0:#0E0B08;
     --s-warm-up:#E0843A; --s-warm-down:#5A8FA6; --s-neutral:#8C8275;
     --s-hold:#7A8F5C; --s-verdict:#B57FB8; --s-consensus:#D5A93D;
     /* Survivor palette */
@@ -33,6 +29,14 @@
     --d-quick:120ms; --d-base:240ms; --d-calm:480ms;
     --e-rise:cubic-bezier(.2,.8,.2,1);
     --e-settle:cubic-bezier(.4,0,.2,1);
+    /* layout */
+    --gutter:56px;
+    --rule: color-mix(in oklab, var(--show-ink) 12%, transparent);
+    --rule-soft: color-mix(in oklab, var(--show-ink) 8%, transparent);
+    --ink-90: color-mix(in oklab, var(--show-ink) 90%, transparent);
+    --ink-70: color-mix(in oklab, var(--show-ink) 70%, transparent);
+    --ink-55: color-mix(in oklab, var(--show-ink) 55%, transparent);
+    --ink-40: color-mix(in oklab, var(--show-ink) 40%, transparent);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -47,49 +51,40 @@
   ::selection{background:var(--show-primary);color:var(--show-paper)}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit;cursor:pointer}
-
-  /* The only show-specific graphic. */
-  .bullet{
-    display:inline-block;border-radius:999px;flex-shrink:0;
-    vertical-align:baseline;background:var(--show-primary);
-  }
+  .bullet{display:inline-block;border-radius:999px;flex-shrink:0;vertical-align:baseline;background:var(--show-primary)}
 
   /* ============================================================ NAV */
   .topnav{
     position:sticky;top:0;z-index:30;
     display:flex;align-items:center;justify-content:space-between;
-    padding:18px 40px;
+    padding:18px var(--gutter);
     background:color-mix(in oklab, var(--show-paper) 90%, #000);
-    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border-bottom:1px solid var(--rule);
     backdrop-filter:blur(8px);
   }
   @media(max-width:720px){.topnav{padding:14px 16px}}
-  .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:-0.01em;}
+  .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:-0.01em}
   .topnav-links{display:flex;gap:28px;font-size:14px;opacity:0.78}
   .topnav-links a:hover{opacity:1}
   @media(max-width:720px){.topnav-links{display:none}}
   .topnav-right{display:flex;align-items:center;gap:18px}
   .topnav-search{font-family:var(--mono);font-size:12px;letter-spacing:.06em;opacity:.7}
   @media(max-width:720px){.topnav-search{display:none}}
-  .topnav-signin{
-    font:500 12px/1 var(--sans);letter-spacing:.04em;
-    padding:9px 16px;border-radius:999px;
-    background:var(--show-ink);color:var(--show-paper);
-  }
+  .topnav-signin{font:500 12px/1 var(--sans);letter-spacing:.04em;padding:9px 16px;border-radius:999px;background:var(--show-ink);color:var(--show-paper)}
 
   /* ============================================================ HERO */
   .show-hero{
     display:grid;grid-template-columns:1.4fr 1fr;gap:0;
-    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border-bottom:1px solid var(--rule);
   }
   @media(max-width:820px){.show-hero{grid-template-columns:1fr}}
   .show-hero-cover{
     padding:96px 64px 80px;
     display:flex;flex-direction:column;justify-content:flex-end;gap:28px;
     min-height:560px;
-    border-right:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border-right:1px solid var(--rule);
   }
-  @media(max-width:820px){.show-hero-cover{padding:64px 24px 40px;min-height:0;border-right:0;border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);}}
+  @media(max-width:820px){.show-hero-cover{padding:64px 24px 40px;min-height:0;border-right:0;border-bottom:1px solid var(--rule)}}
   .wordmark{
     font-family:var(--serif);font-weight:500;
     font-size:144px;line-height:0.92;letter-spacing:-0.04em;
@@ -97,12 +92,7 @@
   }
   @media(max-width:1024px){.wordmark{font-size:96px}}
   @media(max-width:480px){.wordmark{font-size:64px}}
-  .show-hero-sub{
-    font-family:var(--serif);font-style:italic;
-    font-size:24px;line-height:1.4;
-    color:color-mix(in oklab, var(--show-ink) 82%, transparent);
-    margin:0;max-width:560px;text-wrap:pretty;
-  }
+  .show-hero-sub{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.4;color:color-mix(in oklab, var(--show-ink) 82%, transparent);margin:0;max-width:560px;text-wrap:pretty}
   @media(max-width:820px){.show-hero-sub{font-size:18px}}
 
   .show-hero-meta{
@@ -114,22 +104,14 @@
   .show-hero-crumb{
     display:flex;align-items:center;gap:10px;
     font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
-    color:color-mix(in oklab, var(--show-ink) 55%, transparent);
+    color:var(--ink-55);
   }
   .show-hero-crumb .bullet{width:10px;height:10px}
-  .show-hero-stats{
-    display:flex;gap:32px;flex-wrap:wrap;
-    padding:0 0 8px;
-    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-  }
-  .stat{display:flex;flex-direction:column;gap:6px}
-  .stat-val{font-family:var(--serif);font-weight:500;font-size:28px;color:var(--show-ink);letter-spacing:-0.015em;line-height:1}
-  .stat-key{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent)}
-  .show-hero-line{
-    font-family:var(--serif);font-size:19px;line-height:1.55;
-    color:color-mix(in oklab, var(--show-ink) 86%, transparent);
-    margin:0;text-wrap:pretty;
-  }
+  .show-hero-stats{display:flex;gap:32px;flex-wrap:wrap;padding:0 0 8px;border-bottom:1px solid var(--rule)}
+  .h-stat{display:flex;flex-direction:column;gap:6px}
+  .h-stat-val{font-family:var(--serif);font-weight:500;font-size:28px;color:var(--show-ink);letter-spacing:-0.015em;line-height:1}
+  .h-stat-key{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-55)}
+  .show-hero-line{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink-90);margin:0;text-wrap:pretty}
   @media(max-width:820px){.show-hero-line{font-size:16px}}
   .shield{
     display:inline-flex;align-items:center;gap:10px;
@@ -141,196 +123,361 @@
   }
   .shield-dot{color:var(--s-hold);font-size:9px}
 
-  /* ============================================================ SPLIT */
-  .show-split{
-    display:grid;grid-template-columns:1fr 1fr;gap:0;
-    border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-  }
-  @media(max-width:820px){.show-split{grid-template-columns:1fr}}
-  .split-btn{
-    padding:48px 56px;display:block;
-    border-right:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    transition:background var(--d-base) var(--e-settle);
-  }
-  .split-btn:last-child{border-right:0}
-  @media(max-width:820px){.split-btn{padding:32px 24px;border-right:0;border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent)}.split-btn:last-child{border-bottom:0}}
-  .split-btn:hover{background:color-mix(in oklab, var(--show-ink) 6%, transparent)}
-  .split-btn-tag{font:600 11px/1 var(--mono);letter-spacing:.16em;color:var(--show-primary);margin-bottom:14px}
-  .split-btn-title{font-family:var(--serif);font-weight:500;font-size:36px;letter-spacing:-0.02em;color:var(--show-ink);margin-bottom:10px;letter-spacing:-0.02em}
-  @media(max-width:820px){.split-btn-title{font-size:26px}}
-  .split-btn-blurb{font-family:var(--serif);font-size:16px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin-bottom:24px;text-wrap:pretty;line-height:1.5;max-width:380px}
-  .split-btn-go{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--show-primary)}
-
-  /* ============================================================ SECTION HEAD */
+  /* ============================================================ SECTION HEAD (shared) */
   .section-head{
     display:flex;align-items:flex-end;justify-content:space-between;
-    margin:0 0 32px;padding:0 56px;
+    margin:0 0 32px;padding:0 var(--gutter);
     gap:24px;flex-wrap:wrap;
   }
   @media(max-width:820px){.section-head{padding:0 24px;margin-bottom:24px}}
-  .section-head h2{
-    font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.1;
-    color:var(--show-ink);margin:0;letter-spacing:-0.02em;text-wrap:balance;
-  }
+  .section-head h2{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.1;color:var(--show-ink);margin:0;letter-spacing:-0.02em;text-wrap:balance}
   @media(max-width:720px){.section-head h2{font-size:24px}}
-  .section-head .sec-meta{
-    font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;
-    color:color-mix(in oklab, var(--show-ink) 55%, transparent);
-  }
+  .section-head .sec-meta{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-55)}
 
-  section.block{padding:80px 0;border-bottom:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent)}
+  section.block{padding:80px 0;border-bottom:1px solid var(--rule-soft)}
   @media(max-width:720px){section.block{padding:56px 0}}
 
-  /* ============================================================ SHIFTS */
+  /* ============================================================ WHAT MOVED */
   .shifts-row{
     display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-    margin:0 56px;
-    background:color-mix(in oklab, var(--show-ink) 12%, transparent);
-    border:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    margin:0 var(--gutter);
+    background:var(--rule);border:1px solid var(--rule);
     border-radius:var(--r-md);overflow:hidden;
   }
   @media(max-width:1024px){.shifts-row{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.shifts-row{grid-template-columns:1fr;margin:0 16px}}
-  .shift-card{
-    background:var(--show-paper);
-    padding:24px 24px 22px;
-    display:flex;flex-direction:column;gap:14px;
-    transition:background var(--d-base) var(--e-settle);
-  }
+  .shift-card{background:var(--show-paper);padding:24px;display:flex;flex-direction:column;gap:14px;transition:background var(--d-base) var(--e-settle)}
   .shift-card:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
   .shift-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .shift-pill{
-    display:inline-flex;align-items:center;gap:5px;
-    padding:5px 10px;border-radius:999px;
-    font:600 11px/1 var(--mono);letter-spacing:.06em;
-  }
+  .shift-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;font:600 11px/1 var(--mono);letter-spacing:.06em}
   .shift-pill.up{color:var(--s-warm-up);background:color-mix(in oklab, var(--s-warm-up) 16%, transparent)}
   .shift-pill.down{color:var(--s-warm-down);background:color-mix(in oklab, var(--s-warm-down) 16%, transparent)}
   .shift-pill.hold{color:var(--s-hold);background:color-mix(in oklab, var(--s-hold) 16%, transparent)}
   .shift-pill.neutral{color:var(--s-neutral);background:color-mix(in oklab, var(--s-neutral) 16%, transparent)}
-  .shift-time{font:500 11px/1 var(--mono);letter-spacing:.06em;color:color-mix(in oklab, var(--show-ink) 50%, transparent)}
+  .shift-time{font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink-40)}
   .shift-title{font-family:var(--serif);font-weight:500;font-size:20px;color:var(--show-ink);letter-spacing:-0.015em;line-height:1.2;text-wrap:balance}
-  .shift-note{font-family:var(--serif);font-size:14px;line-height:1.5;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin:0;text-wrap:pretty}
-  .shift-card .ranks{
-    display:flex;justify-content:space-between;align-items:baseline;
-    padding-top:12px;border-top:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);
-    font:500 11px/1 var(--mono);letter-spacing:.06em;color:color-mix(in oklab, var(--show-ink) 55%, transparent);
-  }
+  .shift-note{font-family:var(--serif);font-size:14px;line-height:1.5;color:var(--ink-70);margin:0;text-wrap:pretty}
+  .shift-card .ranks{display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;border-top:1px solid var(--rule-soft);font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink-55)}
   .shift-card .ranks b{color:var(--show-ink);font-weight:500;font-size:13px;letter-spacing:0}
 
-  /* ============================================================ FILTERS */
-  .filter-bar{
-    display:flex;align-items:center;gap:24px;justify-content:space-between;
-    padding:0 56px;margin-bottom:32px;flex-wrap:wrap;
+  /* ============================================================ RANKING SECTION */
+  .ranking{padding:88px 0 0;border-bottom:1px solid var(--rule)}
+  @media(max-width:720px){.ranking{padding:64px 0 0}}
+
+  .ranking-intro{
+    padding:0 var(--gutter);
+    display:grid;grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap:48px;align-items:end;margin-bottom:36px;
   }
-  @media(max-width:820px){.filter-bar{padding:0 24px}}
-  .filter-set{display:flex;gap:8px;flex-wrap:wrap}
+  @media(max-width:820px){.ranking-intro{grid-template-columns:1fr;padding:0 24px;gap:20px}}
+  .ranking-intro h2{
+    font-family:var(--serif);font-weight:500;font-size:48px;line-height:1.02;letter-spacing:-0.028em;
+    color:var(--show-ink);margin:0;text-wrap:balance;
+  }
+  @media(max-width:720px){.ranking-intro h2{font-size:32px}}
+  .ranking-intro .meta{
+    font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;
+    color:var(--ink-70);max-width:520px;text-wrap:pretty;
+  }
+  body[data-view="canon"] .ranking-intro .com-only{display:none}
+  body[data-view="community"] .ranking-intro .can-only{display:none}
+
+  /* TABS */
+  .tabs{
+    display:flex;align-items:stretch;gap:0;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    background:color-mix(in oklab, var(--show-paper) 96%, #000);
+    position:sticky;top:64px;z-index:20;
+    backdrop-filter:blur(8px);
+  }
+  .tab{
+    appearance:none;background:transparent;border:0;
+    padding:22px var(--gutter);
+    display:flex;align-items:center;gap:14px;
+    color:var(--ink-55);text-align:left;
+    border-right:1px solid var(--rule);
+    transition:background var(--d-base) var(--e-settle), color var(--d-base) var(--e-settle);
+    flex:0 0 auto;
+    position:relative;
+  }
+  .tab::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+    background:transparent;transition:background var(--d-base) var(--e-rise);
+  }
+  .tab:hover{color:var(--show-ink)}
+  .tab.on{color:var(--show-ink);background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
+  .tab.on::after{background:var(--show-primary)}
+  .tab-marker{font:500 11px/1 var(--mono);letter-spacing:.12em;color:var(--ink-40);min-width:18px}
+  .tab.on .tab-marker{color:var(--show-primary)}
+  .tab-name{font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:-0.012em}
+  .tab-cap{font:400 11px/1 var(--mono);color:var(--ink-40);letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+  @media(max-width:720px){.tab{padding:16px 20px}.tab-name{font-size:16px}.tab-cap{display:none}}
+
+  /* TOOLBAR (canon view only) */
+  .toolbar{
+    padding:18px var(--gutter);
+    border-bottom:1px solid var(--rule);
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  @media(max-width:560px){.toolbar{padding:14px 20px}}
+  .toolbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .chip{
     appearance:none;background:transparent;
     border:1px solid color-mix(in oklab, var(--show-ink) 18%, transparent);
-    color:color-mix(in oklab, var(--show-ink) 70%, transparent);
+    color:var(--ink-70);
     font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
     padding:9px 14px;border-radius:999px;
-    cursor:pointer;transition:all var(--d-base) var(--e-settle);
+    transition:all var(--d-base) var(--e-settle);
   }
   .chip:hover{color:var(--show-ink);border-color:color-mix(in oklab, var(--show-ink) 30%, transparent)}
   .chip.on{background:var(--show-ink);color:var(--show-paper);border-color:var(--show-ink)}
-  .filter-mode{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent)}
+  .toolbar-mode{font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.1em;text-transform:uppercase}
+  .toolbar-mode em{color:var(--show-ink);font-style:normal;letter-spacing:.06em}
 
-  /* ============================================================ SEASON GRID */
-  .season-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    margin:0 56px;
-    background:color-mix(in oklab, var(--show-ink) 12%, transparent);
-    border:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    border-radius:var(--r-md);overflow:hidden;
+  /* VIEW PANES */
+  [data-view-pane]{display:none}
+  body[data-view="canon"] [data-view-pane="canon"]{display:block}
+  body[data-view="community"] [data-view-pane="community"]{display:block}
+
+  /* ============================================================ METHODOLOGY */
+  .methodology{
+    display:grid;grid-template-columns:repeat(3, 1fr);
+    border-bottom:1px solid var(--rule);
   }
-  @media(max-width:1024px){.season-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.season-grid{grid-template-columns:1fr;margin:0 16px}}
-  .season-card{
-    display:grid;grid-template-columns:64px 1fr;gap:18px;
+  @media(max-width:820px){.methodology{grid-template-columns:1fr}}
+  .meth-cell{padding:36px var(--gutter);border-right:1px solid var(--rule)}
+  .meth-cell:last-child{border-right:0}
+  @media(max-width:820px){.meth-cell{border-right:0;border-bottom:1px solid var(--rule);padding:28px 24px} .meth-cell:last-child{border-bottom:0}}
+  .meth-num{font:500 11px/1 var(--mono);color:var(--show-primary);letter-spacing:.14em;margin-bottom:14px}
+  .meth-cell h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.2;color:var(--show-ink);margin:0 0 10px;letter-spacing:-0.015em;text-wrap:balance}
+  .meth-cell p{font-family:var(--serif);font-size:15px;line-height:1.55;color:var(--ink-70);margin:0;text-wrap:pretty}
+
+  /* ============================================================ TIER */
+  .tier{padding:80px var(--gutter) 0;border-bottom:1px solid var(--rule)}
+  @media(max-width:820px){.tier{padding:56px 24px 0}}
+  @media(max-width:560px){.tier{padding:48px 16px 0}}
+  .tier:last-of-type{border-bottom:0}
+  .tier-head{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:24px;margin-bottom:48px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+  @media(max-width:720px){.tier-head{grid-template-columns:1fr;gap:8px;margin-bottom:32px}}
+  .tier-letter{
+    font-family:var(--serif);font-weight:500;
+    font-size:clamp(72px, 10vw, 140px);line-height:.85;letter-spacing:-0.04em;
+    color:var(--show-primary);
+  }
+  .tier-mid{padding-bottom:14px}
+  .tier-mid h3{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1.1;letter-spacing:-0.02em;color:var(--show-ink);margin:0 0 8px;text-wrap:balance}
+  @media(max-width:720px){.tier-mid h3{font-size:26px}}
+  .tier-mid p{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.4;color:var(--ink-70);margin:0;text-wrap:pretty;max-width:600px}
+  .tier-count{font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.12em;text-transform:uppercase;padding-bottom:14px}
+
+  /* TIER S — hero entries */
+  .hero-entries{padding:0 0 80px;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden}
+  .hero-entry{
+    display:grid;grid-template-columns: 140px minmax(0, 1fr) 280px;
+    column-gap:48px;
     background:var(--show-paper);
-    padding:22px 24px;align-items:start;
+    padding:40px;align-items:start;
     transition:background var(--d-base) var(--e-settle);
   }
-  .season-card:hover{background:color-mix(in oklab, var(--show-ink) 5%, var(--show-paper))}
-  .season-rank{font:500 22px/1 var(--mono);color:var(--show-primary);padding-top:4px;letter-spacing:-0.02em}
-  .season-title{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--show-ink);letter-spacing:-0.012em;line-height:1.2}
-  .season-tag{font-family:var(--serif);font-style:italic;font-size:14px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin-top:6px;line-height:1.45;text-wrap:pretty}
-  .season-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
-  .season-num{font:400 11px/1 var(--mono);color:color-mix(in oklab, var(--show-ink) 55%, transparent);letter-spacing:.08em;text-transform:uppercase}
-  .season-card .shift-pill{padding:4px 8px;font-size:10px}
+  @media(max-width:1100px){.hero-entry{grid-template-columns:120px minmax(0,1fr);column-gap:32px;row-gap:24px}.hero-entry .he-aside{grid-column:1 / -1}}
+  @media(max-width:640px){.hero-entry{grid-template-columns:1fr;padding:28px 24px}.hero-entry .he-rank{margin-bottom:8px}}
+  .hero-entry:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
+  .he-rank-stack{display:flex;flex-direction:column;gap:10px;padding-top:8px}
+  .he-rank{font:500 64px/1 var(--mono);color:var(--show-primary);letter-spacing:-0.03em}
+  .he-season-tag{
+    display:inline-flex;align-items:baseline;gap:6px;
+    font:500 26px/1 var(--mono);color:var(--show-ink);letter-spacing:-0.01em;
+    padding-top:8px;border-top:1px solid var(--rule-soft);
+  }
+  .he-season-tag .pre{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);font-weight:500}
+  @media(max-width:640px){.he-rank{font-size:44px}.he-season-tag{font-size:22px}}
+  .he-body{min-width:0}
+  .he-title{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.05;letter-spacing:-0.025em;color:var(--show-ink);margin:0 0 8px;text-wrap:balance}
+  @media(max-width:720px){.he-title{font-size:30px}}
+  .he-season{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-55);margin-bottom:18px}
+  .he-tag{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;color:var(--show-primary);margin:0 0 18px;letter-spacing:-0.005em;text-wrap:pretty}
+  .he-blurb{font-family:var(--serif);font-size:17px;line-height:1.6;color:var(--ink-90);margin:0;text-wrap:pretty;max-width:64ch}
+  .he-aside{display:flex;flex-direction:column;gap:14px;padding-top:8px}
+  .he-mini{padding:14px 16px;border:1px solid var(--rule);border-radius:var(--r-sm);background:color-mix(in oklab, var(--show-ink) 4%, transparent)}
+  .he-mini-k{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .he-mini-v{font-family:var(--serif);font-size:16px;color:var(--show-ink);line-height:1.4;letter-spacing:-0.005em}
+  .he-mini-v.mono{font-family:var(--mono);font-size:18px;font-weight:500;letter-spacing:-0.01em}
 
-  /* ============================================================ EDITOR'S NOTES */
-  .notes-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:32px;
-    padding:0 56px;
+  /* TIER A — mid entries */
+  .mid-entries{
+    padding:0 0 80px;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--rule);border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;
   }
-  @media(max-width:820px){.notes-grid{grid-template-columns:1fr;padding:0 24px}}
-  .note{
-    display:flex;flex-direction:column;gap:14px;
-    padding:32px 36px;
-    background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
-    border:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);
-    border-radius:var(--r-md);
+  @media(max-width:820px){.mid-entries{grid-template-columns:1fr}}
+  .mid-entry{
+    display:grid;grid-template-columns: 56px 1fr;column-gap:20px;
+    background:var(--show-paper);
+    padding:24px 28px;align-items:start;
+    transition:background var(--d-base) var(--e-settle);
   }
-  @media(max-width:720px){.note{padding:24px}}
-  .note-tag{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--show-primary);display:flex;align-items:center;gap:10px}
-  .note h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.2;color:var(--show-ink);margin:0;letter-spacing:-0.015em;text-wrap:balance}
-  .note p{font-family:var(--serif);font-size:16px;line-height:1.6;color:color-mix(in oklab, var(--show-ink) 84%, transparent);margin:0;text-wrap:pretty}
-  .note-by{display:flex;align-items:center;gap:10px;margin-top:8px;font:500 11px/1 var(--mono);color:color-mix(in oklab, var(--show-ink) 55%, transparent);letter-spacing:.04em}
-  .note-by b{color:var(--show-ink);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+  .mid-entry:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
+  .mid-rank{font:500 22px/1 var(--mono);color:var(--show-primary);letter-spacing:-0.01em;padding-top:4px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+  .mid-rank .mid-season-tag{
+    font:500 14px/1 var(--mono);color:var(--show-ink);letter-spacing:-0.005em;
+    padding-top:8px;border-top:1px solid var(--rule-soft);min-width:32px;
+  }
+  .mid-title{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-0.015em;color:var(--show-ink);margin:0 0 4px;text-wrap:balance}
+  .mid-tag{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.4;color:var(--ink-70);margin:0 0 10px;text-wrap:pretty}
+  .mid-blurb{font-family:var(--serif);font-size:14.5px;line-height:1.55;color:var(--ink-90);margin:0;text-wrap:pretty;opacity:.92}
+  .mid-meta{display:flex;align-items:center;gap:12px;margin-top:10px;font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.06em;text-transform:uppercase}
+
+  /* TIER B — compact entries */
+  .compact-entries{padding:0 0 80px;border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;gap:1px;background:var(--rule)}
+  .compact-entry{
+    display:grid;grid-template-columns:56px 1fr 280px auto;column-gap:24px;align-items:center;
+    background:var(--show-paper);padding:18px 24px;
+    transition:background var(--d-base) var(--e-settle);
+  }
+  .compact-entry:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
+  @media(max-width:820px){.compact-entry{grid-template-columns:48px 1fr;column-gap:16px;row-gap:6px}.compact-entry .ce-tag, .compact-entry .ce-meta{grid-column:2 / -1}}
+  .ce-rank{font:500 18px/1 var(--mono);color:var(--show-primary);letter-spacing:-0.01em}
+  .ce-title{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--show-ink);letter-spacing:-0.01em;line-height:1.25}
+  .ce-tag{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-70);line-height:1.4;text-wrap:pretty}
+  .ce-meta{font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.06em;text-transform:uppercase;text-align:right;white-space:nowrap}
+  @media(max-width:820px){.ce-meta{text-align:left}}
+
+  /* TIER C — tail table */
+  .tail-table{
+    border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;
+    margin-bottom:80px;
+    display:flex;flex-direction:column;gap:1px;background:var(--rule);
+  }
+  .tail-row{
+    display:grid;grid-template-columns:56px 1fr auto auto;column-gap:24px;align-items:center;
+    background:var(--show-paper);padding:14px 24px;
+    transition:background var(--d-base) var(--e-settle);
+  }
+  .tail-row:hover{background:color-mix(in oklab, var(--show-ink) 4%, var(--show-paper))}
+  @media(max-width:560px){.tail-row{grid-template-columns:48px 1fr auto;column-gap:14px;padding:12px 18px}.tail-row .tr-tag{display:none}}
+  .tr-rank{font:500 15px/1 var(--mono);color:var(--show-primary);letter-spacing:-0.005em}
+  .tr-title{font-family:var(--serif);font-weight:500;font-size:16px;color:var(--show-ink);letter-spacing:-0.005em}
+  .tr-tag{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink-55);text-align:right;line-height:1.4}
+  .tr-num{font:400 11px/1 var(--mono);color:var(--ink-40);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+
+  /* ============================================================ COMMUNITY VIEW */
+  .live-strip{
+    padding:16px var(--gutter);
+    border-bottom:1px solid var(--rule);
+    background:color-mix(in oklab, var(--show-paper) 96%, #000);
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  }
+  @media(max-width:560px){.live-strip{padding:12px 20px}}
+  .live-left{display:flex;gap:18px;align-items:center;color:var(--ink-70);flex-wrap:wrap}
+  .live-left b{color:var(--show-ink);font-weight:500;letter-spacing:.04em}
+  .live-right{color:var(--ink-55)}
+  .live-right b{color:var(--show-ink)}
+  .live-dot{display:inline-block;width:7px;height:7px;border-radius:999px;background:var(--show-primary);margin-right:8px;vertical-align:middle;animation:pulse 1.8s var(--e-settle) infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.85)}}
+
+  /* community list */
+  .community-list{padding:64px var(--gutter) 96px}
+  @media(max-width:820px){.community-list{padding:48px 24px 64px}}
+  @media(max-width:560px){.community-list{padding:40px 16px 56px}}
+  .cq-card{
+    margin:0 0 40px;padding:32px;
+    border:1px solid var(--rule);border-radius:var(--r-md);
+    background:color-mix(in oklab, var(--show-ink) 5%, var(--show-paper));
+    display:grid;grid-template-columns:1fr auto;column-gap:32px;align-items:center;gap:16px;
+  }
+  @media(max-width:820px){.cq-card{grid-template-columns:1fr;padding:24px}}
+  .cq-key{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--show-primary);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .cq-q{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.25;color:var(--show-ink);margin:0;letter-spacing:-0.015em;text-wrap:balance}
+  .cq-help{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-70);margin-top:8px}
+  .cq-cta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  @media(max-width:820px){.cq-cta{align-items:flex-start}}
+  .cq-btn{appearance:none;border:0;background:var(--show-ink);color:var(--show-paper);font:500 13px/1 var(--sans);padding:14px 24px;border-radius:999px}
+  .cq-meta{font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.06em;text-transform:uppercase}
+
+  .community-list-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+  .community-list-head h3{font-family:var(--serif);font-weight:500;font-size:32px;letter-spacing:-0.02em;color:var(--show-ink);margin:0;text-wrap:balance}
+  @media(max-width:560px){.community-list-head h3{font-size:24px}}
+  .community-list-head .meta{font:500 11px/1 var(--mono);color:var(--ink-55);letter-spacing:.12em;text-transform:uppercase}
+
+  .cl-cols{
+    display:grid;
+    grid-template-columns: 56px minmax(0,1.6fr) 1fr 110px 70px 80px;
+    column-gap:20px;align-items:center;
+    padding:0 18px 12px;border-bottom:1px solid var(--rule);
+    font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);
+  }
+  .cl-cols .col-r{text-align:right}
+  @media(max-width:980px){.cl-cols{grid-template-columns: 48px minmax(0,1.4fr) 1fr 80px;column-gap:14px} .cl-cols .col-pct, .cl-cols .col-trend{display:none}}
+  @media(max-width:640px){.cl-cols{grid-template-columns: 40px 1fr 80px}.cl-cols .col-bar{display:none}}
+  .cl-rows{display:flex;flex-direction:column}
+  .cl-row{
+    display:grid;
+    grid-template-columns: 56px minmax(0,1.6fr) 1fr 110px 70px 80px;
+    column-gap:20px;align-items:center;
+    padding:14px 18px;border-bottom:1px solid var(--rule-soft);
+    transition:background var(--d-base) var(--e-settle);
+  }
+  .cl-row:last-child{border-bottom:0}
+  .cl-row:hover{background:color-mix(in oklab, var(--show-ink) 4%, transparent)}
+  @media(max-width:980px){.cl-row{grid-template-columns: 48px minmax(0,1.4fr) 1fr 80px;column-gap:14px} .cl-row .clr-pct, .cl-row .clr-trend-cell{display:none}}
+  @media(max-width:640px){.cl-row{grid-template-columns: 40px 1fr 80px}.cl-row .clr-bar{display:none}}
+  .clr-rank{font:500 17px/1 var(--mono);color:var(--show-ink);letter-spacing:-0.005em}
+  .clr-title{font-family:var(--serif);font-weight:500;font-size:17px;color:var(--show-ink);letter-spacing:-0.005em;line-height:1.25;text-wrap:balance;min-width:0}
+  .clr-title .sub{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:13px;color:var(--ink-55);line-height:1.4;margin-top:2px}
+  .clr-bar{display:flex;align-items:center;gap:10px;min-width:0}
+  .clr-bar-track{flex:1;height:6px;background:color-mix(in oklab, var(--show-ink) 8%, transparent);border-radius:3px;overflow:hidden;position:relative;min-width:60px}
+  .clr-bar-fill{position:absolute;left:0;top:0;bottom:0;background:var(--show-primary);border-radius:3px}
+  .clr-bar-track.cool .clr-bar-fill{background:color-mix(in oklab, var(--s-warm-down) 60%, var(--show-ink))}
+  .clr-pct{font:500 13px/1 var(--mono);color:var(--show-ink);letter-spacing:-0.01em;text-align:right}
+  .clr-pct.mid{color:var(--s-warm-up)}
+  .clr-pct.cool{color:var(--s-warm-down)}
+  .clr-trend{display:inline-flex;align-items:center;gap:4px;justify-self:end;padding:4px 9px;border-radius:999px;font:600 11px/1 var(--mono);letter-spacing:.04em}
+  .clr-trend.up{color:var(--s-warm-up);background:color-mix(in oklab, var(--s-warm-up) 16%, transparent)}
+  .clr-trend.down{color:var(--s-warm-down);background:color-mix(in oklab, var(--s-warm-down) 16%, transparent)}
+  .clr-trend.hold{color:var(--s-hold);background:color-mix(in oklab, var(--s-hold) 14%, transparent)}
+  .clr-votes{font:400 12px/1 var(--mono);color:var(--ink-55);letter-spacing:.04em;text-align:right;white-space:nowrap}
 
   /* ============================================================ THEMED LISTS */
   .lists-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-    margin:0 56px;
-    border:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    margin:0 var(--gutter);
+    border:1px solid var(--rule);
     border-radius:var(--r-md);overflow:hidden;
   }
   @media(max-width:1024px){.lists-grid{grid-template-columns:1fr;margin:0 24px}}
   @media(max-width:560px){.lists-grid{margin:0 16px}}
-  .list-card{
-    display:flex;flex-direction:column;gap:14px;
-    padding:28px 28px 24px;
-    border-right:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    transition:background var(--d-base) var(--e-settle);
-  }
+  .list-card{display:flex;flex-direction:column;gap:14px;padding:28px;border-right:1px solid var(--rule);transition:background var(--d-base) var(--e-settle)}
   .list-card:last-child{border-right:0}
-  @media(max-width:1024px){.list-card{border-right:0;border-bottom:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent)}.list-card:last-child{border-bottom:0}}
+  @media(max-width:1024px){.list-card{border-right:0;border-bottom:1px solid var(--rule)}.list-card:last-child{border-bottom:0}}
   .list-card:hover{background:color-mix(in oklab, var(--show-ink) 5%, transparent)}
-  .list-card-tag{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent);display:flex;align-items:center;gap:10px}
+  .list-card-tag{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);display:flex;align-items:center;gap:10px}
   .list-card-tag .bullet{width:9px;height:9px}
   .list-card h4{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--show-ink);margin:0;letter-spacing:-0.015em;line-height:1.2;text-wrap:balance}
-  .list-card-blurb{font-family:var(--serif);font-style:italic;font-size:14px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin:0;line-height:1.45}
-  .list-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:color-mix(in oklab, var(--show-ink) 55%, transparent)}
+  .list-card-blurb{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-70);margin:0;line-height:1.45}
+  .list-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink-55)}
   .list-card-foot b{color:var(--show-primary);font-weight:500}
 
   /* ============================================================ FOOTER */
   footer.pf-footer{
-    padding:48px 56px 40px;
-    border-top:1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
-    display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
-    align-items:start;
+    padding:48px var(--gutter) 40px;
+    border-top:1px solid var(--rule);
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;align-items:start;
   }
   @media(max-width:820px){footer.pf-footer{grid-template-columns:1fr;padding:32px 24px}}
   .foot-brand{display:flex;flex-direction:column;gap:12px}
   .foot-brand .topnav-brand{font-size:18px}
-  .foot-promise{font-family:var(--serif);font-style:italic;font-size:15px;color:color-mix(in oklab, var(--show-ink) 70%, transparent);margin:0}
-  .foot-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--show-ink) 55%, transparent);margin:0 0 14px}
+  .foot-promise{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-70);margin:0}
+  .foot-col h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);margin:0 0 14px}
   .foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
   .foot-col a{font-family:var(--sans);font-size:14px;color:color-mix(in oklab, var(--show-ink) 82%, transparent);transition:color var(--d-base)}
   .foot-col a:hover{color:var(--show-ink)}
-  .foot-meta{
-    grid-column:1 / -1;
-    padding-top:24px;margin-top:8px;
-    border-top:1px solid color-mix(in oklab, var(--show-ink) 10%, transparent);
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    font:400 12px/1.5 var(--mono);color:color-mix(in oklab, var(--show-ink) 50%, transparent);letter-spacing:.04em;
-  }
+  .foot-meta{grid-column:1 / -1;padding-top:24px;margin-top:8px;border-top:1px solid var(--rule-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 12px/1.5 var(--mono);color:var(--ink-40);letter-spacing:.04em}
+
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:0ms !important;animation-duration:0ms !important}}
 </style>
 </head>
-<body>
+<body data-view="canon">
 
 <!-- ============================================================ TOP NAV -->
 <nav class="topnav">
@@ -365,8 +512,8 @@
       Shows / Survivor
     </div>
     <div class="show-hero-stats">
-      <div class="stat"><div class="stat-val">47</div><div class="stat-key">Seasons aired</div></div>
-      <div class="stat"><div class="stat-val">2026</div><div class="stat-key">Canon last revised</div></div>
+      <div class="h-stat"><div class="h-stat-val">47</div><div class="h-stat-key">Seasons aired</div></div>
+      <div class="h-stat"><div class="h-stat-val">2026</div><div class="h-stat-key">Canon last revised</div></div>
     </div>
     <p class="show-hero-line">47 seasons of strangers on a beach. The genre that invented itself in episode one, and has spent twenty-five years rediscovering what it is. We've ranked every single one.</p>
     <div class="shield">
@@ -374,22 +521,6 @@
       No spoilers. Every page is reviewed before it goes live.
     </div>
   </div>
-</section>
-
-<!-- ============================================================ SPLIT -->
-<section class="show-split">
-  <a class="split-btn" href="tiered.tv · Survivor Canon.html#canon">
-    <div class="split-btn-tag">01 · CURATED</div>
-    <div class="split-btn-title">Editor's Canon</div>
-    <div class="split-btn-blurb">One ranking, written by someone who has seen every season twice and can tell you which episode broke their heart.</div>
-    <div class="split-btn-go">Read the canon →</div>
-  </a>
-  <a class="split-btn" href="tiered.tv · Survivor Canon.html#community">
-    <div class="split-btn-tag">02 · LIVE</div>
-    <div class="split-btn-title">Community Rank</div>
-    <div class="split-btn-blurb">Voted weekly by readers. Updated as the votes come in. Refresh and watch.</div>
-    <div class="split-btn-go">See the vote →</div>
-  </a>
 </section>
 
 <!-- ============================================================ WHAT CHANGED -->
@@ -401,20 +532,402 @@
   <div class="shifts-row" id="shifts"></div>
 </section>
 
-<!-- ============================================================ ALL SEASONS -->
-<section class="block">
-  <div class="section-head">
-    <h2>All 47 seasons, ranked.</h2>
-    <span class="sec-meta">Sorted by Editor's Canon · last revised April 2026</span>
+<!-- ============================================================ THE RANKING -->
+<section class="ranking" aria-label="The ranking">
+  <div class="ranking-intro">
+    <h2>
+      <span class="can-only">The canon, top to bottom.</span>
+      <span class="com-only">What 17,402 readers think.</span>
+    </h2>
+    <p class="meta">
+      <span class="can-only">One ranking, written by an editor who has rewatched every season at least twice in the last three years. We argue with the community out loud — but we ship one number.</span>
+      <span class="com-only">Recomputed every Thursday at 9pm ET. Last refresh was 2h 14m ago. Approval % is the share of voters who'd keep the season in its current slot or move it up.</span>
+    </p>
   </div>
-  <div class="filter-bar">
-    <div class="filter-set" role="tablist" id="filter-set">
-      <button class="chip on" data-sort="canon">Canon</button>
-      <button class="chip" data-sort="community">Community</button>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist" id="tabs">
+    <button class="tab on" data-tab="canon" role="tab" aria-selected="true">
+      <span class="tab-marker">01</span>
+      <span><span class="tab-name">Editor's Canon</span><span class="tab-cap">curated</span></span>
+    </button>
+    <button class="tab" data-tab="community" role="tab" aria-selected="false">
+      <span class="tab-marker">02</span>
+      <span><span class="tab-name">Community</span><span class="tab-cap">live</span></span>
+    </button>
+  </div>
+
+  <!-- ======================================================== CANON PANE -->
+  <div data-view-pane="canon">
+    <!-- methodology -->
+    <div class="methodology" aria-label="How the canon works">
+      <div class="meth-cell">
+        <div class="meth-num">01 · WHO</div>
+        <h3>One editor, named.</h3>
+        <p>Survivor's canon editor is M. Reyes, who has rewatched every season at least twice in the last three years. The canon is one opinion, defended in public.</p>
+      </div>
+      <div class="meth-cell">
+        <div class="meth-num">02 · HOW</div>
+        <h3>Position, not score.</h3>
+        <p>Seasons aren't given numbers out of ten. They're placed against each other, one slot at a time. If two seasons argue for the same slot, we write the argument and choose. There are no ties.</p>
+      </div>
+      <div class="meth-cell">
+        <div class="meth-num">03 · WHEN</div>
+        <h3>Revised quarterly.</h3>
+        <p>The canon moves slowly. Quarterly revisions, with public diff notes. The community rank, on the other tab, updates every Thursday — that's where the noise lives.</p>
+      </div>
     </div>
-    <span class="filter-mode" id="filter-mode">view · canon order</span>
-  </div>
-  <div class="season-grid" id="grid"></div>
+
+    <!-- toolbar -->
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <button class="chip on" data-filter="all">All 47</button>
+        <button class="chip" data-filter="early">Pre-2005</button>
+        <button class="chip" data-filter="2000s">2005 – 2010</button>
+        <button class="chip" data-filter="2010s">2010 – 2020</button>
+        <button class="chip" data-filter="2020s">Reboot era</button>
+      </div>
+      <div class="toolbar-mode">view · <em>canon order</em></div>
+    </div>
+
+    <!-- TIER S: top 5 -->
+    <section class="tier">
+      <div class="tier-head">
+        <div class="tier-letter">S</div>
+        <div class="tier-mid">
+          <h3>The seasons that defend the show.</h3>
+          <p>If a friend asks where to start with Survivor and you've got one answer, it comes from this drawer. Reading from one is a complete argument for the genre.</p>
+        </div>
+        <div class="tier-count">01 — 05 · five entries</div>
+      </div>
+
+      <div class="hero-entries">
+        <a class="hero-entry" href="tiered.tv · Heroes vs. Villains.html">
+          <div class="he-rank-stack">
+            <div class="he-rank">01</div>
+            <div class="he-season-tag"><span class="pre">S</span>20</div>
+          </div>
+          <div class="he-body">
+            <h4 class="he-title">Heroes vs. Villains</h4>
+            <div class="he-season">Season 20 · 2010 · Samoa</div>
+            <p class="he-tag">The format at its loudest, finally with a cast that had earned the volume.</p>
+            <p class="he-blurb">A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The first day plays like the eighth day of any other season. We'd defend it without footnotes — twenty-five years in, this is the season Survivor will still be measured against.</p>
+          </div>
+          <div class="he-aside">
+            <div class="he-mini">
+              <div class="he-mini-k"><span>Community</span><span class="clr-trend up" style="padding:2px 7px;font-size:10px">↑ 3</span></div>
+              <div class="he-mini-v mono">#04</div>
+            </div>
+            <div class="he-mini">
+              <div class="he-mini-k">Why this slot</div>
+              <div class="he-mini-v">No other returnee season has matched its baseline of competence across two tribes.</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="hero-entry" href="#">
+          <div class="he-rank-stack">
+            <div class="he-rank">02</div>
+            <div class="he-season-tag"><span class="pre">S</span>01</div>
+          </div>
+          <div class="he-body">
+            <h4 class="he-title">Borneo</h4>
+            <div class="he-season">Season 1 · 2000 · Pulau Tiga</div>
+            <p class="he-tag">The genre, invented mid-air.</p>
+            <p class="he-blurb">The first season is also one of the best, which is unfair, and it's the kind of unfair the show has never recovered from. You can see them deciding what reality television is going to mean while they're shooting it. The cast is too smart for the show to lie to them; the editing learns its grammar in real time.</p>
+          </div>
+          <div class="he-aside">
+            <div class="he-mini">
+              <div class="he-mini-k"><span>Community</span><span class="clr-trend hold" style="padding:2px 7px;font-size:10px">◆ hold</span></div>
+              <div class="he-mini-v mono">#02</div>
+            </div>
+            <div class="he-mini">
+              <div class="he-mini-k">Held since</div>
+              <div class="he-mini-v">18 weeks at #2 in the community rank.</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="hero-entry" href="#">
+          <div class="he-rank-stack">
+            <div class="he-rank">03</div>
+            <div class="he-season-tag"><span class="pre">S</span>07</div>
+          </div>
+          <div class="he-body">
+            <h4 class="he-title">Pearl Islands</h4>
+            <div class="he-season">Season 7 · 2003 · Panama</div>
+            <p class="he-tag">Pirates, marooning, theater — a season that knew what it was.</p>
+            <p class="he-blurb">The marooning premise is theatre, and the show commits to the bit. Production trusts the cast to be the show, and the cast obliges. The mid-season twist is the rare one that earned its setup; everything after it, including the parts you'd rather not relitigate, is the cost of doing business when the show is this confident.</p>
+          </div>
+          <div class="he-aside">
+            <div class="he-mini">
+              <div class="he-mini-k"><span>Community</span><span class="clr-trend up" style="padding:2px 7px;font-size:10px">↑ 1</span></div>
+              <div class="he-mini-v mono">#03</div>
+            </div>
+            <div class="he-mini">
+              <div class="he-mini-k">Why this slot</div>
+              <div class="he-mini-v">The clearest example of premise meeting cast in the show's history.</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="hero-entry" href="#">
+          <div class="he-rank-stack">
+            <div class="he-rank">04</div>
+            <div class="he-season-tag"><span class="pre">S</span>16</div>
+          </div>
+          <div class="he-body">
+            <h4 class="he-title">Micronesia</h4>
+            <div class="he-season">Season 16 · 2008 · Palau</div>
+            <p class="he-tag">The meta-season that earned its meta.</p>
+            <p class="he-blurb">Fans vs. Favorites was a premise the show should have been allergic to and instead pulled off with a kind of weary mastery. The "favorites" know the show is a show and play that way; the "fans" don't, and the friction between those two registers carries the whole season. The final third is some of the show's most patient editing.</p>
+          </div>
+          <div class="he-aside">
+            <div class="he-mini">
+              <div class="he-mini-k"><span>Community</span><span class="clr-trend down" style="padding:2px 7px;font-size:10px">↓ 2</span></div>
+              <div class="he-mini-v mono">#06</div>
+            </div>
+            <div class="he-mini">
+              <div class="he-mini-k">Friction with the community</div>
+              <div class="he-mini-v">Two slots above where readers vote it. We disagree, on the record.</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="hero-entry" href="#">
+          <div class="he-rank-stack">
+            <div class="he-rank">05</div>
+            <div class="he-season-tag"><span class="pre">S</span>31</div>
+          </div>
+          <div class="he-body">
+            <h4 class="he-title">Cambodia</h4>
+            <div class="he-season">Season 31 · 2015 · Koh Rong Samloem</div>
+            <p class="he-tag">An all-returnee gamble that, against the odds, worked.</p>
+            <p class="he-blurb">The show had been doing returnees for fifteen years and finally figured out what they were for. The cast was selected for argument, not nostalgia, and the resulting season is the show at its most legible — every move you watch is doing two or three things at once. The pace doesn't slow.</p>
+          </div>
+          <div class="he-aside">
+            <div class="he-mini">
+              <div class="he-mini-k"><span>Community</span><span class="clr-trend up" style="padding:2px 7px;font-size:10px">↑ 1</span></div>
+              <div class="he-mini-v mono">#05</div>
+            </div>
+            <div class="he-mini">
+              <div class="he-mini-k">Why this slot</div>
+              <div class="he-mini-v">The clearest argument that the cast-selection process can be a craft.</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TIER A: 06-15 -->
+    <section class="tier">
+      <div class="tier-head">
+        <div class="tier-letter">A</div>
+        <div class="tier-mid">
+          <h3>The seasons we'd watch again next week.</h3>
+          <p>The middle of the canon top half. Each one a complete season; each one with a defense more interesting than its complaints.</p>
+        </div>
+        <div class="tier-count">06 — 15 · ten entries</div>
+      </div>
+
+      <div class="mid-entries">
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">06<div class="mid-season-tag">S06</div></div>
+          <div>
+            <h4 class="mid-title">The Amazon</h4>
+            <p class="mid-tag">The season the show started thinking about itself.</p>
+            <p class="mid-blurb">A real-time argument about gender, premise, and what the cast was being asked to perform. Rough at the edges; honest in the middle.</p>
+            <div class="mid-meta"><span>S06 · 2003</span><span>●</span><span>Community #11</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">07<div class="mid-season-tag">S28</div></div>
+          <div>
+            <h4 class="mid-title">Cagayan</h4>
+            <p class="mid-tag">Three tribes, no quiet hour.</p>
+            <p class="mid-blurb">The tribe-split structure should have produced chaos and instead produced a season with the cleanest mid-game pacing the show has ever shot.</p>
+            <div class="mid-meta"><span>S28 · 2014</span><span>●</span><span>Community #07</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">08<div class="mid-season-tag">S25</div></div>
+          <div>
+            <h4 class="mid-title">Philippines</h4>
+            <p class="mid-tag">A quietly perfect reset.</p>
+            <p class="mid-blurb">After a stretch where the show forgot what a stranger on a beach looked like, this one remembered, and the cast rewarded the patience.</p>
+            <div class="mid-meta"><span>S25 · 2012</span><span>●</span><span>Community #09</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">09<div class="mid-season-tag">S10</div></div>
+          <div>
+            <h4 class="mid-title">Palau</h4>
+            <p class="mid-tag">The rout that became a season.</p>
+            <p class="mid-blurb">A premise that should have collapsed by episode four, propped up by a single dominant performance and one of the show's best location shoots.</p>
+            <div class="mid-meta"><span>S10 · 2005</span><span>●</span><span>Community #14</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">10<div class="mid-season-tag">S37</div></div>
+          <div>
+            <h4 class="mid-title">David vs. Goliath</h4>
+            <p class="mid-tag">A quiet renaissance year.</p>
+            <p class="mid-blurb">The era of twists had finally tired itself out, and this one snuck back to a baseline of competent storytelling that the show kept losing and finding.</p>
+            <div class="mid-meta"><span>S37 · 2018</span><span>●</span><span>Community #08</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">11<div class="mid-season-tag">S13</div></div>
+          <div>
+            <h4 class="mid-title">Cook Islands</h4>
+            <p class="mid-tag">The season that retooled itself on air.</p>
+            <p class="mid-blurb">A cast-split premise was scrapped two episodes in and the show carried on anyway. The honesty of that move sets the tone.</p>
+            <div class="mid-meta"><span>S13 · 2006</span><span>●</span><span>Community #18</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">12<div class="mid-season-tag">S15</div></div>
+          <div>
+            <h4 class="mid-title">China</h4>
+            <p class="mid-tag">The show at its travel-channel best.</p>
+            <p class="mid-blurb">The location does more storytelling work than usual, and the cast has the patience to let it. Watch episode 4 with the sound off.</p>
+            <div class="mid-meta"><span>S15 · 2007</span><span>●</span><span>Community #13</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">13<div class="mid-season-tag">S18</div></div>
+          <div>
+            <h4 class="mid-title">Tocantins</h4>
+            <p class="mid-tag">An era of two.</p>
+            <p class="mid-blurb">Two players run an unusually clean game and the editing room finally has the confidence to step back. It reads, watching it now, like footage from a different show.</p>
+            <div class="mid-meta"><span>S18 · 2009</span><span>●</span><span>Community #19</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">14<div class="mid-season-tag">S03</div></div>
+          <div>
+            <h4 class="mid-title">Africa</h4>
+            <p class="mid-tag">Every dawn an hour earlier.</p>
+            <p class="mid-blurb">The harshest production of the early era, and a cast that takes it personally. Reads now as the show's first real adolescent stretch.</p>
+            <div class="mid-meta"><span>S03 · 2001</span><span>●</span><span>Community #22</span></div>
+          </div>
+        </a>
+        <a class="mid-entry" href="#">
+          <div class="mid-rank">15<div class="mid-season-tag">S40</div></div>
+          <div>
+            <h4 class="mid-title">Winners at War</h4>
+            <p class="mid-tag">Twenty winners, one beach.</p>
+            <p class="mid-blurb">A premise built to overpromise and a finale that nearly delivers. The middle stretch is the strongest argument for the format the late period made.</p>
+            <div class="mid-meta"><span>S40 · 2020</span><span>●</span><span>Community #10</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TIER B: 16-30 -->
+    <section class="tier">
+      <div class="tier-head">
+        <div class="tier-letter">B</div>
+        <div class="tier-mid">
+          <h3>The seasons that count.</h3>
+          <p>The middle of the canon. We're proud to have them, we'd recommend three of them tonight, and none of them needs apologies.</p>
+        </div>
+        <div class="tier-count">16 — 30 · fifteen entries</div>
+      </div>
+
+      <div class="compact-entries">
+        <a class="compact-entry" href="#"><div class="ce-rank">16</div><div class="ce-title">Kaôh Rōng</div><div class="ce-tag">the harshest production yet</div><div class="ce-meta">S32 · Community #16</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">17</div><div class="ce-title">Game Changers</div><div class="ce-tag">a misnomer that grew into its name</div><div class="ce-meta">S34 · Community #20</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">18</div><div class="ce-title">Survivor 41</div><div class="ce-tag">the reboot finds its footing</div><div class="ce-meta">S41 · Community #21</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">19</div><div class="ce-title">Survivor 45</div><div class="ce-tag">the era's quiet high-water mark</div><div class="ce-meta">S45 · Community #12</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">20</div><div class="ce-title">Survivor 46</div><div class="ce-tag">the cast you want to live with</div><div class="ce-meta">S46 · Community #15</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">21</div><div class="ce-title">Fiji</div><div class="ce-tag">production's least-defended swing</div><div class="ce-meta">S14 · Community #28</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">22</div><div class="ce-title">Marquesas</div><div class="ce-tag">the original twist of the format</div><div class="ce-meta">S04 · Community #26</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">23</div><div class="ce-title">Gabon</div><div class="ce-tag">Sugar, Bob, a slower beat</div><div class="ce-meta">S17 · Community #30</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">24</div><div class="ce-title">Blood vs. Water</div><div class="ce-tag">a premise that finally fit the show</div><div class="ce-meta">S27 · Community #17</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">25</div><div class="ce-title">All-Stars</div><div class="ce-tag">what the franchise learned not to do</div><div class="ce-meta">S08 · Community #34</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">26</div><div class="ce-title">Vanuatu</div><div class="ce-tag">Chris Daugherty, outright</div><div class="ce-meta">S09 · Community #25</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">27</div><div class="ce-title">Australian Outback</div><div class="ce-tag">season two: the format meets its second self</div><div class="ce-meta">S02 · Community #24</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">28</div><div class="ce-title">Survivor 42</div><div class="ce-tag">the reboot's adolescent stretch</div><div class="ce-meta">S42 · Community #29</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">29</div><div class="ce-title">San Juan del Sur</div><div class="ce-tag">the format's quietest cousins-season</div><div class="ce-meta">S29 · Community #33</div></a>
+        <a class="compact-entry" href="#"><div class="ce-rank">30</div><div class="ce-title">Caramoan</div><div class="ce-tag">the fans-vs-favorites that didn't</div><div class="ce-meta">S26 · Community #32</div></a>
+      </div>
+    </section>
+
+    <!-- TIER C: 31-47 -->
+    <section class="tier">
+      <div class="tier-head">
+        <div class="tier-letter">C</div>
+        <div class="tier-mid">
+          <h3>The seasons we've made peace with.</h3>
+          <p>Even the bottom of a 47-season show has texture. These are the seasons we don't actively recommend; we still watched, and we still wrote them up.</p>
+        </div>
+        <div class="tier-count">31 — 47 · seventeen entries</div>
+      </div>
+
+      <div class="tail-table">
+        <a class="tail-row" href="#"><div class="tr-rank">31</div><div class="tr-title">Worlds Apart</div><div class="tr-tag">the season nobody wants to recap</div><div class="tr-num">S30</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">32</div><div class="tr-title">Survivor 43</div><div class="tr-tag">between two better seasons</div><div class="tr-num">S43</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">33</div><div class="tr-title">Survivor 47</div><div class="tr-tag">the canon-in-progress entry</div><div class="tr-num">S47</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">34</div><div class="tr-title">Edge of Extinction</div><div class="tr-tag">a twist the show never really earned</div><div class="tr-num">S38</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">35</div><div class="tr-title">Survivor 44</div><div class="tr-tag">the cast tries; the format strains</div><div class="tr-num">S44</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">36</div><div class="tr-title">Millennials vs. Gen X</div><div class="tr-tag">Adam Klein, ascendant</div><div class="tr-num">S33</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">37</div><div class="tr-title">Heroes vs. Healers vs. Hustlers</div><div class="tr-tag">three tribes; the magic stays in Cagayan</div><div class="tr-num">S35</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">38</div><div class="tr-title">Island of the Idols</div><div class="tr-tag">the season everyone agreed to forget</div><div class="tr-num">S39</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">39</div><div class="tr-title">Ghost Island</div><div class="tr-tag">Wendell, a quiet championship</div><div class="tr-num">S36</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">40</div><div class="tr-title">Samoa</div><div class="tr-tag">Russell Hantz, for better and mostly for worse</div><div class="tr-num">S19</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">41</div><div class="tr-title">South Pacific</div><div class="tr-tag">the redemption-island experiment, again</div><div class="tr-num">S23</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">42</div><div class="tr-title">Redemption Island</div><div class="tr-tag">the show, on autopilot</div><div class="tr-num">S22</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">43</div><div class="tr-title">Nicaragua</div><div class="tr-tag">the season that ended with a question</div><div class="tr-num">S21</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">44</div><div class="tr-title">One World</div><div class="tr-tag">a premise that didn't survive contact with the cast</div><div class="tr-num">S24</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">45</div><div class="tr-title">Guatemala</div><div class="tr-tag">a thin season made thinner by the heat</div><div class="tr-num">S11</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">46</div><div class="tr-title">Panama</div><div class="tr-tag">Cirie's start; the show's middle drift</div><div class="tr-num">S12</div></a>
+        <a class="tail-row" href="#"><div class="tr-rank">47</div><div class="tr-title">Thailand</div><div class="tr-tag">the season nobody defends, and the show knows it</div><div class="tr-num">S05</div></a>
+      </div>
+    </section>
+  </div><!-- /canon pane -->
+
+  <!-- ======================================================== COMMUNITY PANE -->
+  <div data-view-pane="community">
+    <div class="live-strip">
+      <div class="live-left">
+        <span><span class="live-dot"></span>live</span>
+        <span>last recompute · <b>2h 14m ago</b></span>
+        <span>next recompute · <b>Thursday 9pm ET</b></span>
+        <span>voters this week · <b>17,402</b></span>
+      </div>
+      <div class="live-right">v <b>14.21.04</b> · <b>open</b> to anyone</div>
+    </div>
+
+    <div class="community-list">
+      <div class="cq-card">
+        <div>
+          <div class="cq-key"><span class="bullet" style="width:8px;height:8px"></span>this week's question</div>
+          <div class="cq-q">Does Heroes vs. Villains belong in the community top 5?</div>
+          <div class="cq-help">Your vote feeds the next recompute. One vote per reader; change your mind within 72h.</div>
+        </div>
+        <div class="cq-cta">
+          <button class="cq-btn">Cast my vote</button>
+          <span class="cq-meta">3,214 voted · closes Thursday</span>
+        </div>
+      </div>
+
+      <div class="community-list-head">
+        <h3>The full ranking.</h3>
+        <span class="meta">Computed Thursdays · 17,402 voters · approval %</span>
+      </div>
+
+      <div class="cl-cols">
+        <span>Rank</span>
+        <span>Season</span>
+        <span class="col-bar">Approval</span>
+        <span class="col-pct col-r">%</span>
+        <span class="col-trend col-r">7d</span>
+        <span class="col-r">Votes</span>
+      </div>
+      <div class="cl-rows" id="cl-rows"></div>
+    </div>
+  </div><!-- /community pane -->
 </section>
 
 <!-- ============================================================ THEMED LISTS -->
@@ -450,10 +963,10 @@
   <div class="foot-brand">
     <a class="topnav-brand" href="#">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <rect x="3" y="4.5" width="18" height="3.5" fill="currentColor"/>
-      <rect x="3" y="10.25" width="13" height="3.5" fill="currentColor"/>
-      <rect x="3" y="16" width="8" height="3.5" fill="currentColor"/>
-    </svg>
+        <rect x="3" y="4.5" width="18" height="3.5" fill="currentColor"/>
+        <rect x="3" y="10.25" width="13" height="3.5" fill="currentColor"/>
+        <rect x="3" y="16" width="8" height="3.5" fill="currentColor"/>
+      </svg>
       <span>tiered.tv</span>
     </a>
     <p class="foot-promise">the seasons, ranked. <span style="color:var(--show-primary);font-style:italic">no spoilers.</span></p>
@@ -479,17 +992,12 @@
   </div>
   <div class="foot-meta">
     <span>© 2026 tiered.tv · est. as a quiet rebellion against ranked lists that ruin the show</span>
-    <span>v2.1.0 · canon last revised 04 / 2026</span>
+    <span>v2.2.0 · canon last revised 04 / 2026</span>
   </div>
 </footer>
 
 <script>
-  // ============================================================ DATA
-  // Real Survivor seasons (titles + season numbers). The canon order
-  // below is editorial — built to feel like a real ranking, not random.
-  // tag = the italic editorial subtitle on each card.
-  // shift = the rank-pill if the season moved in the last update cycle.
-
+  /* ============================================================ WHAT CHANGED */
   const SHIFTS = [
     { rank: 7,  prev: 10, season: "Heroes vs. Villains", n: 20, sentiment: "up",
       time: "this week", note: "Climbed three spots after the finale-week reread series." },
@@ -500,68 +1008,6 @@
     { rank: 10, prev: 15, season: "David vs. Goliath",   n: 37, sentiment: "up",
       time: "this month", note: "Biggest move of the cycle. A slow renaissance, finally rewarded." },
   ];
-
-  const SEASONS = [
-    /* TOP 10 — canon's confident calls */
-    { rank: 1,  title: "Heroes vs. Villains",            n: 20, era: "2010s", tag: "the format at its loudest", shift: { d: 3, s: "up" } },
-    { rank: 2,  title: "Borneo",                          n: 1,  era: "early", tag: "the genre, invented mid-air", shift: { d: 0, s: "hold" } },
-    { rank: 3,  title: "Pearl Islands",                   n: 7,  era: "2000s", tag: "pirates, marooning, theater" },
-    { rank: 4,  title: "Micronesia",                      n: 16, era: "2000s", tag: "the meta-season that earned it" },
-    { rank: 5,  title: "Cambodia",                        n: 31, era: "2010s", tag: "an all-returnee gamble that worked", shift: { d: 1, s: "up" } },
-    { rank: 6,  title: "The Amazon",                      n: 6,  era: "2000s", tag: "the season the show started thinking about itself" },
-    { rank: 7,  title: "Cagayan",                         n: 28, era: "2010s", tag: "three tribes, no quiet hour", shift: { d: -2, s: "down" } },
-    { rank: 8,  title: "Philippines",                     n: 25, era: "2010s", tag: "a quietly perfect reset" },
-    { rank: 9,  title: "Palau",                           n: 10, era: "2000s", tag: "the rout that became a season" },
-    { rank: 10, title: "David vs. Goliath",               n: 37, era: "2010s", tag: "a quiet renaissance year", shift: { d: 5, s: "up" } },
-
-    /* 11-20 */
-    { rank: 11, title: "Cook Islands",                    n: 13, era: "2000s", tag: "the season that retooled itself" },
-    { rank: 12, title: "China",                           n: 15, era: "2000s", tag: "the show at its travel-channel best" },
-    { rank: 13, title: "Tocantins",                       n: 18, era: "2000s", tag: "Stephen and JT, an era of two" },
-    { rank: 14, title: "Africa",                          n: 3,  era: "early", tag: "every dawn an hour earlier" },
-    { rank: 15, title: "Winners at War",                  n: 40, era: "2010s", tag: "twenty winners, one beach" },
-    { rank: 16, title: "Kaôh Rōng",                       n: 32, era: "2010s", tag: "the harshest production yet" },
-    { rank: 17, title: "Game Changers",                   n: 34, era: "2010s", tag: "a misnomer that grew into its name" },
-    { rank: 18, title: "Survivor 41",                     n: 41, era: "2020s", tag: "the reboot finds its footing" },
-    { rank: 19, title: "Survivor 45",                     n: 45, era: "2020s", tag: "the era's quiet high-water mark" },
-    { rank: 20, title: "Survivor 46",                     n: 46, era: "2020s", tag: "the cast you want to live with" },
-
-    /* 21-30 */
-    { rank: 21, title: "Fiji",                            n: 14, era: "2000s", tag: "production's least-defended swing" },
-    { rank: 22, title: "Marquesas",                       n: 4,  era: "early", tag: "the original twist of the format" },
-    { rank: 23, title: "Gabon",                           n: 17, era: "2000s", tag: "Sugar, Bob, a slower beat" },
-    { rank: 24, title: "Blood vs. Water",                 n: 27, era: "2010s", tag: "a premise that finally fit the show" },
-    { rank: 25, title: "All-Stars",                       n: 8,  era: "2000s", tag: "what the franchise learned not to do" },
-    { rank: 26, title: "Vanuatu",                         n: 9,  era: "2000s", tag: "the season Chris Daugherty won outright" },
-    { rank: 27, title: "Australian Outback",              n: 2,  era: "early", tag: "season two: the format meets its second self" },
-    { rank: 28, title: "Survivor 42",                     n: 42, era: "2020s", tag: "the reboot's adolescent stretch" },
-    { rank: 29, title: "San Juan del Sur",                n: 29, era: "2010s", tag: "the format's quietest cousins-season" },
-    { rank: 30, title: "Caramoan",                        n: 26, era: "2010s", tag: "the fans-vs-favorites that didn't" },
-
-    /* 31-40 */
-    { rank: 31, title: "Worlds Apart",                    n: 30, era: "2010s", tag: "the season nobody wants to recap" },
-    { rank: 32, title: "Survivor 43",                     n: 43, era: "2020s", tag: "between two better seasons" },
-    { rank: 33, title: "Survivor 47",                     n: 47, era: "2020s", tag: "the canon-in-progress entry" },
-    { rank: 34, title: "Edge of Extinction",              n: 38, era: "2010s", tag: "a twist the show never really earned" },
-    { rank: 35, title: "Survivor 44",                     n: 44, era: "2020s", tag: "the cast tries; the format strains" },
-    { rank: 36, title: "Millennials vs. Gen X",           n: 33, era: "2010s", tag: "Adam Klein, ascendant" },
-    { rank: 37, title: "Heroes vs. Healers vs. Hustlers", n: 35, era: "2010s", tag: "three tribes; the magic stays in Cagayan" },
-    { rank: 38, title: "Island of the Idols",             n: 39, era: "2010s", tag: "the season everyone agreed to forget" },
-    { rank: 39, title: "Ghost Island",                    n: 36, era: "2010s", tag: "Wendell, a quiet championship" },
-    { rank: 40, title: "Samoa",                           n: 19, era: "2000s", tag: "Russell Hantz, for better and mostly for worse" },
-
-    /* 41-47 */
-    { rank: 41, title: "South Pacific",                   n: 23, era: "2010s", tag: "the redemption-island experiment, again" },
-    { rank: 42, title: "Redemption Island",               n: 22, era: "2010s", tag: "Boston Rob and Phillip; the show, on autopilot" },
-    { rank: 43, title: "Nicaragua",                       n: 21, era: "2010s", tag: "the season that ended with a question" },
-    { rank: 44, title: "One World",                       n: 24, era: "2010s", tag: "a premise that didn't survive contact with the cast" },
-    { rank: 45, title: "Guatemala",                       n: 11, era: "2000s", tag: "a thin season made thinner by the heat" },
-    { rank: 46, title: "Panama",                          n: 12, era: "2000s", tag: "Cirie's start; the show's middle drift" },
-    { rank: 47, title: "Thailand",                        n: 5,  era: "early", tag: "the season nobody defends, and the show knows it" },
-  ];
-
-  // ============================================================ RENDER
-  const fmt = (n) => "#" + String(n).padStart(2, "0");
   const shiftPill = (d, s) => {
     if (!d && s === "hold") return `<span class="shift-pill hold">◆</span>`;
     if (!d) return ``;
@@ -569,12 +1015,10 @@
     const sign = d > 0 ? "↑" : d < 0 ? "↓" : "—";
     return `<span class="shift-pill ${cls}">${sign} ${Math.abs(d)}</span>`;
   };
-
-  // SHIFTS row
   document.getElementById("shifts").innerHTML = SHIFTS.map(s => `
     <div class="shift-card">
       <div class="shift-top">
-        ${shiftPill(s.rank - s.prev || (s.sentiment === "hold" ? 0 : 0), s.sentiment)}
+        ${shiftPill(s.rank - s.prev, s.sentiment)}
         <span class="shift-time">${s.time}</span>
       </div>
       <div class="shift-title">${s.season}</div>
@@ -587,51 +1031,98 @@
     </div>
   `).join("");
 
-  // SEASON grid
-  const renderGrid = (mode) => {
-    let rows = [...SEASONS];
-    if (mode === "community") rows.sort((a, b) => {
-      // pretend the community ordering is slightly different from canon
-      const noise = (x) => ((x.n * 17) % 11) - 5;
-      return (a.rank + noise(a)) - (b.rank + noise(b));
+  /* ============================================================ TAB TOGGLE */
+  const tabs = document.querySelectorAll(".tab");
+  const setView = (view) => {
+    document.body.dataset.view = view;
+    tabs.forEach(t => {
+      const on = t.dataset.tab === view;
+      t.classList.toggle("on", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
     });
-    else if (mode === "era") {
-      const order = { "early": 0, "2000s": 1, "2010s": 2, "2020s": 3 };
-      rows.sort((a, b) => order[a.era] - order[b.era] || a.n - b.n);
-    }
-    else if (mode === "movement") {
-      rows = rows.filter(r => r.shift).sort((a, b) => Math.abs(b.shift.d) - Math.abs(a.shift.d));
-    }
-    document.getElementById("grid").innerHTML = rows.map((r, i) => {
-      const displayRank = mode === "era" ? `s${String(r.n).padStart(2,"0")}` : fmt(r.rank);
-      return `
-        <a class="season-card" href="#">
-          <div class="season-rank">${displayRank}</div>
-          <div>
-            <div class="season-title">${r.title}</div>
-            <div class="season-tag">${r.tag}</div>
-            <div class="season-bottom">
-              <span class="season-num">Season ${r.n} · ${r.era}</span>
-              ${r.shift ? shiftPill(r.shift.d, r.shift.s) : ""}
-            </div>
-          </div>
-        </a>
-      `;
-    }).join("");
+    history.replaceState(null, "", "#" + view);
   };
-  renderGrid("canon");
+  tabs.forEach(t => t.addEventListener("click", () => setView(t.dataset.tab)));
+  if (location.hash === "#community") setView("community");
 
-  // chip behavior
-  document.getElementById("filter-set").addEventListener("click", (e) => {
-    const btn = e.target.closest(".chip"); if (!btn) return;
-    document.querySelectorAll("#filter-set .chip").forEach(c => c.classList.remove("on"));
-    btn.classList.add("on");
-    const mode = btn.dataset.sort;
-    renderGrid(mode);
-    document.getElementById("filter-mode").textContent =
-      "view · " + ({ canon: "canon order", community: "community vote" }[mode]);
-  });
+  /* ============================================================ TOOLBAR CHIPS (visual) */
+  document.querySelectorAll(".toolbar .chip").forEach(c => c.addEventListener("click", () => {
+    document.querySelectorAll(".toolbar .chip").forEach(x => x.classList.remove("on"));
+    c.classList.add("on");
+    document.querySelector(".toolbar-mode em").textContent =
+      ({all:"canon order", early:"pre-2005 only", "2000s":"2005-2010 only", "2010s":"2010-2020 only", "2020s":"reboot era only"})[c.dataset.filter];
+  }));
+
+  /* ============================================================ COMMUNITY LIST */
+  const community = [
+    [1,  "Heroes vs. Villains",            "the format at its loudest",                 93, "up:3",   12104],
+    [2,  "Borneo",                          "the genre, invented mid-air",              92, "hold",   11218],
+    [3,  "Pearl Islands",                   "pirates, marooning, theater",              90, "up:1",   10334],
+    [4,  "Cambodia",                        "an all-returnee gamble that worked",       89, "hold",    9870],
+    [5,  "Cook Islands",                    "the season that retooled itself on air",   88, "up:2",    9344],
+    [6,  "Micronesia",                      "the meta-season that earned it",           87, "down:2",  9221],
+    [7,  "Cagayan",                         "three tribes, no quiet hour",              86, "down:2",  8902],
+    [8,  "David vs. Goliath",               "a quiet renaissance year",                 86, "up:5",    8770],
+    [9,  "Philippines",                     "a quietly perfect reset",                  85, "hold",    8421],
+    [10, "Winners at War",                  "twenty winners, one beach",                85, "up:1",    8190],
+    [11, "The Amazon",                      "the show started thinking about itself",   84, "hold",    7903],
+    [12, "Survivor 45",                     "the era's quiet high-water mark",          83, "up:7",    7811],
+    [13, "China",                           "the show at its travel-channel best",      83, "down:1",  7704],
+    [14, "Palau",                           "the rout that became a season",            82, "down:3",  7401],
+    [15, "Survivor 46",                     "the cast you want to live with",           81, "up:4",    7220],
+    [16, "Kaôh Rōng",                       "the harshest production yet",              80, "hold",    7011],
+    [17, "Blood vs. Water",                 "a premise that finally fit",               80, "up:5",    6920],
+    [18, "Tocantins",                       "an era of two",                            79, "down:2",  6722],
+    [19, "Game Changers",                   "a misnomer that grew into its name",       78, "down:1",  6510],
+    [20, "Survivor 41",                     "the reboot finds its footing",             77, "down:1",  6418],
+    [21, "Africa",                          "every dawn an hour earlier",               76, "up:2",    6210],
+    [22, "Australian Outback",              "the second self",                          75, "down:3",  6010],
+    [23, "Vanuatu",                         "Chris, outright",                          73, "hold",    5700],
+    [24, "Marquesas",                       "the original twist",                       72, "up:1",    5510],
+    [25, "Fiji",                            "the least-defended swing",                 70, "up:3",    5302],
+    [26, "Survivor 42",                     "adolescent stretch",                       68, "down:4",  5114],
+    [27, "Gabon",                           "Sugar, Bob, a slower beat",                66, "hold",    4801],
+    [28, "Caramoan",                        "the fans-vs-favorites that didn't",        64, "up:2",    4612],
+    [29, "Worlds Apart",                    "nobody wants to recap",                    62, "down:1",  4422],
+    [30, "San Juan del Sur",                "the cousins-season",                       60, "hold",    4210],
+    [31, "All-Stars",                       "learned not to do",                        58, "down:5",  4078],
+    [32, "Survivor 43",                     "between two better seasons",               55, "hold",    3890],
+    [33, "Survivor 47",                     "canon-in-progress",                        54, "up:1",    3712],
+    [34, "Survivor 44",                     "the cast tries; format strains",           52, "down:2",  3501],
+    [35, "Millennials vs. Gen X",           "Adam, ascendant",                          50, "hold",    3402],
+    [36, "Heroes vs. Healers vs. Hustlers", "the magic stays in Cagayan",               48, "down:3",  3260],
+    [37, "Edge of Extinction",              "a twist never earned",                     45, "down:1",  3100],
+    [38, "Ghost Island",                    "Wendell, quiet",                           43, "hold",    2950],
+    [39, "Samoa",                           "Russell, mostly for worse",                40, "down:2",  2710],
+    [40, "Island of the Idols",             "agreed to forget",                         36, "down:1",  2520],
+    [41, "South Pacific",                   "the experiment, again",                    33, "hold",    2401],
+    [42, "Redemption Island",               "the show on autopilot",                    29, "down:1",  2210],
+    [43, "Nicaragua",                       "ended with a question",                    27, "hold",    2010],
+    [44, "One World",                       "premise didn't survive the cast",          24, "hold",    1840],
+    [45, "Guatemala",                       "thin, hot",                                23, "hold",    1701],
+    [46, "Panama",                          "Cirie's start; the show's drift",          22, "down:1",  1502],
+    [47, "Thailand",                        "nobody defends it",                        19, "down:2",  1410],
+  ];
+  const trendHTML = (t) => {
+    if (t === "hold") return `<span class="clr-trend hold">◆</span>`;
+    const [dir, n] = t.split(":");
+    const sign = dir === "up" ? "↑" : "↓";
+    return `<span class="clr-trend ${dir}">${sign} ${n}</span>`;
+  };
+  const pctClass = (p) => p >= 75 ? "" : p >= 55 ? "mid" : "cool";
+  const barClass = (p) => p >= 55 ? "" : "cool";
+  document.getElementById("cl-rows").innerHTML = community.map(([rank, title, sub, pct, trend, votes]) => `
+    <a class="cl-row" href="#">
+      <div class="clr-rank">${String(rank).padStart(2,"0")}</div>
+      <div class="clr-title">${title}<span class="sub">${sub}</span></div>
+      <div class="clr-bar">
+        <div class="clr-bar-track ${barClass(pct)}"><div class="clr-bar-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="clr-pct ${pctClass(pct)}">${pct}%</div>
+      <div class="clr-trend-cell">${trendHTML(trend)}</div>
+      <div class="clr-votes">${votes.toLocaleString()}</div>
+    </a>
+  `).join("");
 </script>
-
 </body>
 </html>
