@@ -2,7 +2,7 @@
 show: project-runway
 number: 6
 title: Los Angeles
-canonical_position: 10
+canonical_position: 20
 premiere_date: 2009-08-20
 ep_count: 14
 location: Los Angeles, California
