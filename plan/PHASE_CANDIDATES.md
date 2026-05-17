@@ -53,6 +53,32 @@ or similar makes the sign-up trust signal real.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
 
+## Considered (below threshold)
+
+### B1. `content/calendar.yml` + post-finale event triggers
+
+**Score:** 2.0 (impact: 5, ease: 4, -2 expensive/uncertain)
+**Source signals:** `spec.md:294` promises "Event triggers (a
+finale air date in `content/calendar.yml`) prompt `/iterate` to
+write a 'post-finale ranking shift' piece spoiler-free."
+Calendar doesn't exist; no `/iterate` hook.
+**Why deferred:** The auto-write piece is still hand-wavy
+(what does "write a post-finale ranking shift piece" mean in
+skill terms?). **Pass-2 re-eval:** the build plan is now fully
+exhausted, and the event-trigger half of spec.md's "How
+self-sustaining works here" (spec.md:289-296) is the single
+remaining unbuilt self-sustaining mechanism — a second signal.
+Still below threshold because the scope is undefined in skill
+terms, not because the signal is thin. Worth raising to a
+Pending candidate once a real finale produces a hand-authored
+"shift" post the loop can pattern from, or once `/oversight`
+defines what the auto-write contract should be.
+
+## Promoted
+
+<!-- Same format with **Promoted in:** <oversight commit hash>
+     and **Build-plan row:** <link to row in 01_build_plan.md> -->
+
 ### 04. `/u/[handle]` real public profile (drain the phase-10 shell)
 
 **Score:** 5.5 (impact: 6, ease: 5, +2 multi, +1 cheap-and-bounded)
@@ -105,78 +131,8 @@ unpublished season position.
 **Conflicts:** none. Fulfils `spec.md:73`; no contract change.
 Spoiler-safety is a build constraint, not a conflict.
 
-### 05. Critique-harness repair (anon clean-profile + authed cookie-injection)
-
-**Score:** 3.0 (impact: 7, ease: 3, +1 multi, -3 needs-user-call)
-**Source pass:** 2
-**Filed:** 2026-05-17
-**Source signals:**
-- `plan/CRITIQUE.md:37` — needs-user-call: the anon critique
-  pass cannot run clean; the Chrome profile carries a
-  persistent tiered.tv login so the "anonymous" walk runs
-  authenticated.
-- `plan/CRITIQUE.md:38` — needs-user-call: the authed critique
-  pass cannot run at all; no cookie-injection primitive in the
-  environment (httpOnly `__session`, no set-cookie browser
-  tool, `WebFetch` has no header param).
-- `/critique` pass count is still **0** — the external-observer
-  loop has never produced a scored pass since it was wired
-  (phase 19). Both passes are infra-blocked on the same root.
-
-**Why:** Two independent needs-user-call rows converge on one
-root cause: the critique harness has no clean-anon profile and
-no authed cookie-injection path, so the entire external-observer
-feedback channel is dark. `/march` Step 2 will keep skipping
-critique forever because its precondition (a runnable harness)
-is unmet. This is the kind of systemic gap `/expand` exists to
-name. Filed so it is not lost; flagged `[needs-user-call]`
-because the fix needs an environment decision (an incognito /
-clean-profile harness for anon, plus a set-cookie primitive or
-pre-seeded profile for authed) that only the user/oversight can
-authorize — and the cloud runner has no Chrome MCP at all, so
-this can only ever land via a local pass.
-
-**Scope sketch:**
-- Anon: a clean/incognito Chrome profile (or a documented
-  profile-reset step) so the anonymous walk is genuinely
-  logged-out.
-- Authed: pre-seed the freshly-minted `CRITIQUE_SESSION_COOKIE`
-  into the harness profile before the authed pass, or adopt a
-  browser tool with a set-cookie primitive.
-- Update `skills/critique.md` + the reader sub-agent doc with
-  the working harness contract; reset CRITIQUE pass metadata so
-  the first real scored pass counts.
-
-**Estimated phases:** 1.
-**Conflicts:** `[needs-user-call]` — requires a user/oversight
-environment decision; not autonomously shippable, and never
-shippable from the cloud loop (no Chrome MCP on the runner).
-
-## Considered (below threshold)
-
-### B1. `content/calendar.yml` + post-finale event triggers
-
-**Score:** 2.0 (impact: 5, ease: 4, -2 expensive/uncertain)
-**Source signals:** `spec.md:294` promises "Event triggers (a
-finale air date in `content/calendar.yml`) prompt `/iterate` to
-write a 'post-finale ranking shift' piece spoiler-free."
-Calendar doesn't exist; no `/iterate` hook.
-**Why deferred:** The auto-write piece is still hand-wavy
-(what does "write a post-finale ranking shift piece" mean in
-skill terms?). **Pass-2 re-eval:** the build plan is now fully
-exhausted, and the event-trigger half of spec.md's "How
-self-sustaining works here" (spec.md:289-296) is the single
-remaining unbuilt self-sustaining mechanism — a second signal.
-Still below threshold because the scope is undefined in skill
-terms, not because the signal is thin. Worth raising to a
-Pending candidate once a real finale produces a hand-authored
-"shift" post the loop can pattern from, or once `/oversight`
-defines what the auto-write contract should be.
-
-## Promoted
-
-<!-- Same format with **Promoted in:** <oversight commit hash>
-     and **Build-plan row:** <link to row in 01_build_plan.md> -->
+**Promoted in:** oversight 2026-05-17 (build plan exhausted; strongest pending candidate, user-approved).
+**Build-plan row:** Phase 38 — `/u/[handle]` real public profile (`01_build_plan.md`)
 
 ### 01. RSS feeds (`/feed.xml` + `/feed/<show>.xml`)
 
@@ -278,7 +234,15 @@ close, ↑/↓ navigation) matches what phase 29 e2e covers.
 <!-- Same format with **Rejected at:** <oversight commit hash>
      and **Reason:** <why> -->
 
-_(empty)_
+### 05. Critique-harness repair (anon clean-profile + authed cookie-injection)
+
+**Score:** 3.0 — not promoted; **resolved instead.**
+**Filed:** 2026-05-17  **Resolved:** 2026-05-17 (oversight)
+
+**Reason:** Reviewed live during the 2026-05-17 oversight pass at user request. Neither blocker reproduces: a fresh Chrome MCP tab group is genuinely logged-out (anon pass clean), and on that clean profile `document.cookie`-injecting `CRITIQUE_SESSION_COOKIE` as `__session` is accepted by the server (`/api/auth/me` → `signedIn:true`; chrome shows `@e2e / Sign out`). No code or environment change was needed — the 2026-05-16 `httpOnly` reasoning was wrong for a clean profile. Working harness contract recorded in `plan/bearings.md` → "Critique cadence" and the two `CRITIQUE.md` rows moved to Done. Nothing to ship; closing rather than promoting.
+
+**Rejected at:** oversight 2026-05-17.
+
 
 ---
 

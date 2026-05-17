@@ -416,23 +416,46 @@ cleanly and the user trusts `/expand`'s judgment.
 
 ## Critique cadence
 
-**Mode: shipping (suppressed until Phase 36 ships).**
+**Mode: normal (shipping gate lifted 2026-05-17 via oversight).**
 
-No `/critique` passes run while the project is in shipping
-mode. Shipping mode holds until the **Phase 36** row in
-`plan/steps/01_build_plan.md` is `[x]` (Phase 36 is the last
-phase in the shipping queue: 26 → 34 → 32 → 35 → 36).
+`/march` Step 2's standard rate-limited `/critique` cadence is
+active. The shipping-mode suppression that held from 2026-05-16
+is **retired**: Phase 36 shipped (e95b019; row `[x]`), so the
+community/auth read path is live and an auth-aware critique can
+now meaningfully evaluate the returning-member experience. The
+historical rationale (static routes rendered permanently
+signed-out until 36) no longer applies.
 
-Rationale: phases 35 and 36 build the community/auth **read**
-path — live ranking data, auth-state chrome, the comment
-display thread. Until 36 ships, every show/season route is
-static and renders permanently signed-out, so an auth-aware
-`/critique` cannot meaningfully evaluate the returning-member
-experience — it would only re-file "chrome shows signed-out"
-findings that Phase 36 is already scoped to fix. Set by the
-user 2026-05-16 ("we are still in shipping mode"). When Phase
-36 is `[x]`, this gate lifts and `/march` Step 2's normal
-rate-limited critique cadence resumes.
+### Working harness contract (verified live 2026-05-17)
+
+The two `[needs-user-call]` blockers recorded in `CRITIQUE.md`
+on 2026-05-16 **do not reproduce** in a fresh local Chrome MCP
+session. Verified against `https://tiered.tv/` during the
+2026-05-17 oversight pass:
+
+- **Anon pass** — a new `tabs_create_mcp` tab group starts with
+  no tiered.tv cookies; the header renders "Sign in"
+  (`document.cookie` empty, `/api/auth/me` → `signedIn:false`).
+  The anonymous walk is genuinely logged-out. No incognito
+  profile needed; the earlier "persistent login" symptom was a
+  stale-profile artifact, not a structural block.
+- **Authed pass** — on that clean profile (no pre-existing
+  httpOnly `__session`), `document.cookie = "__session=" +
+  CRITIQUE_SESSION_COOKIE` is **accepted by the server**:
+  `/api/auth/me` → `signedIn:true, handle:"e2e"` and the chrome
+  reflects `@e2e / Sign out` after reload. The 2026-05-16
+  reasoning ("httpOnly ⇒ document.cookie cannot write it") was
+  wrong for a clean profile — httpOnly only blocks JS from
+  shadowing a cookie the server already set; with none present,
+  the JS-set cookie is sent and validated.
+
+Harness steps for a local `/critique`: (1) `tabs_create_mcp`
+for a clean group; run the anon walk first (no cookie). (2) For
+the authed walk, read `CRITIQUE_SESSION_COOKIE` from `.env`,
+`document.cookie`-inject it as `__session` on the live origin,
+reload, walk. This path is **local-only** — the cloud `/march`
+runner has no Chrome MCP, so scored critique passes only ever
+originate from a local invocation.
 
 ## Content velocity & editorial cadence
 

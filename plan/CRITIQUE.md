@@ -1,11 +1,13 @@
 # CRITIQUE
 
-> Last pass: never
+> Last pass: never (harness verified 2026-05-17; no scored pass yet)
 > Pass count: 0
-> Gated: NO `/critique` passes until Phase 36 ships (shipping
-> mode). `/march` Step 2.0 enforces this; rationale in
-> `plan/bearings.md` "Critique cadence" (user-set 2026-05-16).
-> Pass count stays 0 until the first post-gate scored pass.
+> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
+> (Phase 36 shipped). `/march` Step 2's normal rate-limited
+> cadence is active. Harness is verified working (see
+> `plan/bearings.md` "Critique cadence" → Working harness
+> contract). Pass count increments on the first local scored
+> pass. **Local-only**: the cloud runner has no Chrome MCP.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -20,24 +22,22 @@
 
 ## Pending
 
-> No scored critique pass has run (pass count 0; critique is
-> gated until Phase 36 — see header). The rows below were
-> captured **incidentally** during the 2026-05-16 local-march
-> debug session, in which **both** critique passes infra-failed
-> (see the harness rows). They are NOT a scored pass. The four
-> product rows are auth-invariant and were vetted valid by the
-> reader regardless of session state; `/iterate` may drain them
-> once shipping mode ends.
+> Shipping mode ended 2026-05-17 (Phase 36 shipped; gate
+> lifted via oversight). The two harness `[needs-user-call]`
+> rows were **verified resolved** the same day — both blockers
+> failed to reproduce in a fresh Chrome MCP session (evidence
+> in `plan/bearings.md` → Working harness contract) and are
+> moved to Done. The four product rows below were captured
+> incidentally during the 2026-05-16 debug session; they are
+> auth-invariant, vetted valid, and are **NOT** a scored pass
+> (pass count stays 0 until the first real local `/critique`).
+> `/iterate` may drain them now alongside `plan/AUDIT.md`.
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-### Harness / needs-user-call (local-march infra — not product defects)
-- [ ] [needs-user-call] critique anon pass cannot run clean: the Chrome profile carries a persistent tiered.tv login (`@me` / `Sign out` in every page header), so the anon walk runs authenticated. Needs an incognito / clean-profile harness for the anonymous pass. (source: debug 2026-05-16) — 978ac48
-- [ ] [needs-user-call] critique authed pass cannot run at all: no cookie-injection path in this environment — browser MCP has no JS-eval/set-cookie primitive, the Auth0 `__session` cookie is `httpOnly` (so `document.cookie` cannot write it), and `WebFetch` has no header parameter. The freshly-minted `CRITIQUE_SESSION_COOKIE` is well-formed but unattachable. Needs the cookie pre-seeded into the Chrome profile before the authed pass, or a set-cookie browser tool. (source: debug 2026-05-16) — 978ac48
-
-### Product findings (auth-invariant; valid; drain after Phase 36)
+### Product findings (auth-invariant; valid; drain now)
 - [ ] [MED] [anon] Canon prose ordinals are off-by-one vs the displayed slot numeral — slot 12 "Marquesas" reads "places it eleventh", slot 14 "The Australian Outback" reads "twelfth", slot 15 "China" reads "thirteenth" (URL: /shows/survivor, source: debug 2026-05-16) — 978ac48
 - [ ] [MED] [anon] Bachelorette home card says "21 seasons. She holds the roses now." while its own meta line on the same card reads "20 seasons · canon + community" — derive both from one `seasons` field (URL: /, source: debug 2026-05-16) — 978ac48
 - [ ] [LOW] [anon] Survivor S4 titled "Micronesia" in the Editor's Canon view but "Micronesia: Fans vs. Favorites" in the community ranking table — use one canonical season display name for both (URL: /shows/survivor?view=community, source: debug 2026-05-16) — 978ac48
@@ -45,4 +45,5 @@
 
 ## Done
 
-_(empty)_
+- [x] [needs-user-call] critique anon pass cannot run clean (persistent tiered.tv login in the Chrome profile). (source: debug 2026-05-16) — 978ac48 — RESOLVED 2026-05-17 (oversight): does not reproduce. A fresh `tabs_create_mcp` group has no tiered.tv cookies; `https://tiered.tv/` renders "Sign in", `document.cookie` empty, `/api/auth/me` → `signedIn:false`. The anon walk is genuinely logged-out; no incognito profile needed. Stale-profile artifact, not a structural block.
+- [x] [needs-user-call] critique authed pass cannot run at all (no cookie-injection path; httpOnly `__session` unattachable). (source: debug 2026-05-16) — 978ac48 — RESOLVED 2026-05-17 (oversight): the httpOnly reasoning was wrong for a clean profile. With no pre-existing `__session`, `document.cookie="__session="+CRITIQUE_SESSION_COOKIE` is accepted by the server: `/api/auth/me` → `signedIn:true, handle:"e2e"`, chrome shows `@e2e / Sign out` after reload. Verified live. Harness contract recorded in `plan/bearings.md` → Working harness contract.
