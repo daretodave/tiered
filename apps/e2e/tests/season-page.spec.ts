@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test'
-import { canonicalUrls } from '../src/fixtures/canonical-urls'
+import { urlsForRun } from '../src/fixtures/sample-urls'
 
-// Phase 30: season detail page rework. Every season URL gets a
-// baseline render check + the working VotePair interaction. The
-// gold-standard Survivor S20 gets additional design-spec assertions
-// (display_title accent, 6-tile stats strip, episode-rhythm bar,
-// 4-card watch list).
+// Phase 30: season detail page rework. Each sampled season URL gets a
+// baseline render check + the working VotePair interaction (archetype
+// sample by default; E2E_FULL=1 walks every season). The gold-standard
+// Survivor S20 / S28 / S1 describes below are explicit, not sampled —
+// they always run regardless of mode.
 
-const seasonUrls = canonicalUrls.filter((u) => u.pattern === '/shows/[show]/season/[slug]')
+const seasonUrls = urlsForRun().filter((u) => u.pattern === '/shows/[show]/season/[slug]')
 
 for (const url of seasonUrls) {
   const slug = url.show ?? ''

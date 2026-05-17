@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { canonicalUrls } from '../src/fixtures/canonical-urls'
+import { urlsForRun } from '../src/fixtures/sample-urls'
 import { pageReads } from '../src/fixtures/page-reads'
 
 // Mobile pass at 375px (iPhone SE) viewport. Every page that exists at
@@ -21,7 +21,7 @@ const NOISE_PATTERNS: RegExp[] = [
   /Failed to load resource: net::ERR_FAILED.*sourcemap/i,
 ]
 
-for (const url of canonicalUrls) {
+for (const url of urlsForRun()) {
   test(`mobile: ${url.path}`, async ({ page }) => {
     const errors: string[] = []
     page.on('console', (msg) => {

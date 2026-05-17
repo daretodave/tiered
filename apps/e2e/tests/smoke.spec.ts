@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test'
-import { canonicalUrls } from '../src/fixtures/canonical-urls'
+import { urlsForRun } from '../src/fixtures/sample-urls'
 import { pageReads, type PageReadAssertion } from '../src/fixtures/page-reads'
 
 // Some console errors are unavoidable in dev / preview (font 404s in
@@ -68,7 +68,7 @@ async function runAssertion(
   expect(meaningfulFailures, `failed responses on ${url.path}: ${meaningfulFailures.join('\n')}`).toEqual([])
 }
 
-for (const url of canonicalUrls) {
+for (const url of urlsForRun()) {
   test(`smoke: ${url.path}`, async ({ page }) => {
     const errors: string[] = []
     const failedResponses: string[] = []

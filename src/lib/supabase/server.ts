@@ -82,20 +82,39 @@ export type UpsertUserArgs = {
   displayName?: string | null
 }
 
+// Deterministic per-sub suffix (djb2 → base36). Stable across
+// logins so a disambiguated user keeps the same handle; pure, no
+// crypto dependency.
+function handleSuffix(sub: string): string {
+  let h = 5381
+  for (let i = 0; i < sub.length; i++) h = ((h << 5) + h + sub.charCodeAt(i)) >>> 0
+  return h.toString(36).slice(0, 6)
+}
+
 export async function upsertUser(args: UpsertUserArgs): Promise<void> {
   const client = serviceRoleClient()
-  const { error } = await client
-    .from('users')
-    .upsert(
+  const write = (handle: string) =>
+    client.from('users').upsert(
       {
         auth0_sub: args.sub,
-        handle: args.handle,
+        handle,
         email: args.email ?? null,
         display_name: args.displayName ?? null,
         updated_at: new Date().toISOString(),
       },
       { onConflict: 'auth0_sub', ignoreDuplicates: false },
     )
+
+  let { error } = await write(args.handle)
+  // auth0_sub is the identity (PK); `handle` carries its own
+  // UNIQUE (users_handle_key) but is derived non-uniquely from the
+  // Auth0 profile (nickname / email-localpart), so two distinct
+  // subs can legitimately collide (e.g. dave@gmail vs dave@yahoo →
+  // both "dave"). The handle is cosmetic — on collision, claim a
+  // deterministic sub-scoped variant rather than 500 the request.
+  if (error && error.code === '23505' && /users_handle_key/.test(error.message)) {
+    ;({ error } = await write(`${args.handle}-${handleSuffix(args.sub)}`))
+  }
   if (error) throw new Error(`upsertUser: ${error.message}`)
 }
 

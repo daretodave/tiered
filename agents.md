@@ -74,6 +74,20 @@ piece — it boots the production build on a separate port and
 walks every URL with no live network. Never `--no-verify`. Fix
 the root cause.
 
+**Never run the gate in the background.** Run each leg as a
+foreground, blocking call and wait for it. `run_in_background:
+true` on `pnpm verify` (or any leg) is forbidden — in a
+non-interactive run the SDK ends the turn while the gate is
+still alive, the resume notification is unreliable, and the
+process cannot exit because the gate's children (`next-server`,
+chromium, Supabase) keep the tree alive. That is the cloud
+post-result exit hang (root-caused 2026-05-17). Foreground the
+gate; let it block; never `tail`-truncate its output (you need
+the full failure). Splitting `verify` into its sequential legs
+as separate foreground calls is encouraged — it is identical to
+the `&&` chain and gives per-leg progress and failure
+attribution.
+
 ### 4. The deploy gate runs after every push
 
 `pnpm deploy:check` polls Vercel for the deploy at HEAD. Exits

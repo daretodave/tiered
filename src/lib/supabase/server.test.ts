@@ -1,7 +1,78 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+
+const { upsertMock } = vi.hoisted(() => ({ upsertMock: vi.fn() }))
+vi.mock('@supabase/supabase-js', () => ({
+  createClient: () => ({ from: () => ({ upsert: upsertMock }) }),
+}))
+
+const HANDLE_DUP = {
+  code: '23505',
+  message: 'duplicate key value violates unique constraint "users_handle_key"',
+}
 
 const savedUrl = process.env['NEXT_PUBLIC_SUPABASE_URL']
 const savedKey = process.env['SUPABASE_SERVICE_ROLE_KEY']
+
+describe('upsertUser handle-collision disambiguation', () => {
+  beforeEach(() => {
+    upsertMock.mockReset()
+    process.env['NEXT_PUBLIC_SUPABASE_URL'] = 'https://example.supabase.co'
+    process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-key'
+    vi.resetModules()
+  })
+  afterEach(() => {
+    if (savedUrl !== undefined) process.env['NEXT_PUBLIC_SUPABASE_URL'] = savedUrl
+    else delete process.env['NEXT_PUBLIC_SUPABASE_URL']
+    if (savedKey !== undefined) process.env['SUPABASE_SERVICE_ROLE_KEY'] = savedKey
+    else delete process.env['SUPABASE_SERVICE_ROLE_KEY']
+  })
+
+  // Strict-null-safe accessor for the nth upsert payload's handle.
+  const handleArg = (i: number): string => {
+    const arg = upsertMock.mock.calls[i]?.[0] as { handle?: unknown } | undefined
+    if (!arg || typeof arg.handle !== 'string') {
+      throw new Error(`expected an upsert call #${i} with a string handle`)
+    }
+    return arg.handle
+  }
+
+  it('writes once with the base handle when there is no collision', async () => {
+    upsertMock.mockResolvedValueOnce({ error: null })
+    const { upsertUser } = await import('./server')
+    await upsertUser({ sub: 'auth0|alice', handle: 'dave' })
+    expect(upsertMock).toHaveBeenCalledTimes(1)
+    expect(handleArg(0)).toBe('dave')
+  })
+
+  it('retries with a deterministic sub-scoped handle on a users_handle_key 23505', async () => {
+    upsertMock
+      .mockResolvedValueOnce({ error: HANDLE_DUP })
+      .mockResolvedValueOnce({ error: null })
+    const { upsertUser } = await import('./server')
+    await upsertUser({ sub: 'auth0|bob', handle: 'dave' })
+    expect(upsertMock).toHaveBeenCalledTimes(2)
+    const retried = handleArg(1)
+    expect(retried).toMatch(/^dave-[a-z0-9]{1,6}$/)
+
+    // Stable per sub: a second resolve for the same sub disambiguates
+    // to the exact same handle (idempotent re-login).
+    upsertMock.mockReset()
+    upsertMock
+      .mockResolvedValueOnce({ error: HANDLE_DUP })
+      .mockResolvedValueOnce({ error: null })
+    vi.resetModules()
+    const again = await import('./server')
+    await again.upsertUser({ sub: 'auth0|bob', handle: 'dave' })
+    expect(handleArg(1)).toBe(retried)
+  })
+
+  it('propagates non-collision errors without retrying', async () => {
+    upsertMock.mockResolvedValueOnce({ error: { code: '42501', message: 'rls denied' } })
+    const { upsertUser } = await import('./server')
+    await expect(upsertUser({ sub: 'auth0|x', handle: 'dave' })).rejects.toThrow(/rls denied/)
+    expect(upsertMock).toHaveBeenCalledTimes(1)
+  })
+})
 
 describe('serviceRoleClient', () => {
   afterEach(() => {
