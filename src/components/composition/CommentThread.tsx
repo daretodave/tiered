@@ -9,13 +9,18 @@ type CommentThreadProps = {
 /**
  * CommentThread — the season-page aside.
  *
- * When `count > 0` and `children` are provided, renders the children
- * as the thread body and the count in the meta strip. When `count === 0`,
- * renders an honest empty-state line that invites the first comment
- * without referencing internal phase numbers or implementation status.
+ * When `children` are provided, renders them as the thread body and
+ * the published `count` in the meta strip. When there are no
+ * `children` (no published comments and nothing held for the
+ * viewer), renders an honest empty-state line that invites the
+ * first comment without referencing internal phase numbers or
+ * implementation status. `count` is the public published count, so
+ * a held-only thread still reads "Be the first" in the meta strip
+ * while showing the author's held row below.
  */
 export function CommentThread({ count = 0, input, children }: CommentThreadProps) {
   const hasComments = count > 0
+  const hasBody = children != null
   return (
     <div data-testid="comment-thread" className="comment-thread">
       <div className="aside-head">
@@ -27,7 +32,7 @@ export function CommentThread({ count = 0, input, children }: CommentThreadProps
         </span>
       </div>
       {input}
-      {hasComments ? (
+      {hasBody ? (
         children
       ) : (
         <p

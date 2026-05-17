@@ -236,6 +236,113 @@ export async function flagComment(args: FlagCommentArgs): Promise<FlagCommentRes
   }
 }
 
+// Read path for the season-page thread (phase 36). Returns the
+// public published rows plus — when `sub` is given — that viewer's
+// own non-published rows so the author sees their held comment.
+// Author handle is resolved from sessions.auth0_sub → users.handle
+// (anon sessions resolve to null → rendered as "reader"). Any DB
+// failure degrades to empty lists so the page still renders
+// (always-working rule); the visibility split itself is enforced
+// downstream in lib/comments/thread.ts.
+export type ThreadCommentRow = {
+  id: string
+  body: string
+  author: string | null
+  created_at: string
+  status: 'published' | 'pending' | 'hidden' | 'removed'
+}
+
+type EmbeddedCommentRow = {
+  id: string
+  body: string
+  created_at: string
+  status: ThreadCommentRow['status']
+  sessions: { auth0_sub: string | null } | { auth0_sub: string | null }[] | null
+}
+
+function subOf(row: EmbeddedCommentRow): string | null {
+  const s = row.sessions
+  if (!s) return null
+  const one = Array.isArray(s) ? s[0] : s
+  return one?.auth0_sub ?? null
+}
+
+export async function listThreadComments(args: {
+  targetType: 'season' | 'comment'
+  targetId: string
+  sub: string | null
+  limit?: number
+}): Promise<{ published: ThreadCommentRow[]; ownPending: ThreadCommentRow[] }> {
+  const empty = { published: [], ownPending: [] }
+  try {
+    const client = serviceRoleClient()
+    const limit = Math.min(Math.max(args.limit ?? 100, 1), 200)
+    const sel = 'id, body, created_at, status, sessions!inner(auth0_sub)'
+
+    const pubQ = await client
+      .from('comments')
+      .select(sel)
+      .eq('target_type', args.targetType)
+      .eq('target_id', args.targetId)
+      .eq('status', 'published')
+      .order('created_at', { ascending: false })
+      .limit(limit)
+    if (pubQ.error) return empty
+    const published = (pubQ.data ?? []) as unknown as EmbeddedCommentRow[]
+
+    let ownPending: EmbeddedCommentRow[] = []
+    if (args.sub) {
+      const ownQ = await client
+        .from('comments')
+        .select(sel)
+        .eq('target_type', args.targetType)
+        .eq('target_id', args.targetId)
+        .eq('status', 'pending')
+        .eq('sessions.auth0_sub', args.sub)
+        .order('created_at', { ascending: false })
+        .limit(limit)
+      if (!ownQ.error) {
+        ownPending = (ownQ.data ?? []) as unknown as EmbeddedCommentRow[]
+      }
+    }
+
+    const subs = new Set<string>()
+    for (const r of [...published, ...ownPending]) {
+      const s = subOf(r)
+      if (s) subs.add(s)
+    }
+    const handleBySub = new Map<string, string>()
+    if (subs.size > 0) {
+      const usersQ = await client
+        .from('users')
+        .select('auth0_sub, handle')
+        .in('auth0_sub', [...subs])
+      if (!usersQ.error) {
+        for (const u of usersQ.data ?? []) {
+          if (u.auth0_sub && u.handle) handleBySub.set(u.auth0_sub, u.handle)
+        }
+      }
+    }
+
+    const shape = (r: EmbeddedCommentRow): ThreadCommentRow => {
+      const s = subOf(r)
+      return {
+        id: String(r.id),
+        body: String(r.body),
+        author: s ? (handleBySub.get(s) ?? null) : null,
+        created_at: String(r.created_at),
+        status: r.status,
+      }
+    }
+    return {
+      published: published.map(shape),
+      ownPending: ownPending.map(shape),
+    }
+  } catch {
+    return empty
+  }
+}
+
 // Ensure the authed user has a sessions row linked to their sub,
 // optionally claiming an anon row. Returns the canonical session id.
 export async function claimAnonSession(args: {

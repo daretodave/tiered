@@ -175,3 +175,25 @@ describe('serviceRoleClient', () => {
     expect(() => mod.serviceRoleClient()).toThrow(/SUPABASE_SERVICE_ROLE_KEY/i)
   })
 })
+
+describe('listThreadComments graceful degradation', () => {
+  afterEach(() => {
+    if (savedUrl !== undefined) process.env['NEXT_PUBLIC_SUPABASE_URL'] = savedUrl
+    else delete process.env['NEXT_PUBLIC_SUPABASE_URL']
+    if (savedKey !== undefined) process.env['SUPABASE_SERVICE_ROLE_KEY'] = savedKey
+    else delete process.env['SUPABASE_SERVICE_ROLE_KEY']
+  })
+
+  it('returns empty lists when the service-role client is unavailable (always-working)', async () => {
+    delete process.env['NEXT_PUBLIC_SUPABASE_URL']
+    delete process.env['SUPABASE_SERVICE_ROLE_KEY']
+    vi.resetModules()
+    const mod = await import('./server')
+    const out = await mod.listThreadComments({
+      targetType: 'season',
+      targetId: 'survivor:20',
+      sub: null,
+    })
+    expect(out).toEqual({ published: [], ownPending: [] })
+  })
+})

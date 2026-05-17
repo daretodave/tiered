@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { SearchTrigger } from '@/components/search/SearchTrigger'
 import { BrandMark } from './BrandMark'
 import type { HeaderUser } from './headerUser'
@@ -8,13 +11,44 @@ type HeaderViewProps = {
   user?: HeaderUser | null
 }
 
+/**
+ * HeaderView — the chrome lockup.
+ *
+ * Phase 36: the header is rendered into SSG/ISR pages (home, show,
+ * season) where server-side getSession() sees no request at build
+ * time, so `user` arrives null on those routes even for a signed-in
+ * viewer. On mount the auth island fetches `GET /api/auth/me` and
+ * corrects the static output — the "Sign in" pill flips to the
+ * account chrome client-side without a full dynamic re-render.
+ * `user` is still passed for best-effort SSR on dynamic routes and
+ * as the pre-hydration value.
+ */
 export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
+  const [authUser, setAuthUser] = useState<HeaderUser | null>(user)
+
+  useEffect(() => {
+    if (typeof fetch !== 'function') return
+    let cancelled = false
+    fetch('/api/auth/me', { headers: { accept: 'application/json' } })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: { ok?: boolean; user?: HeaderUser | null } | null) => {
+        if (cancelled || !json || json.ok !== true) return
+        setAuthUser(json.user ?? null)
+      })
+      .catch(() => {
+        /* Keep the SSR value — best effort, no error affordance. */
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   const rootClass = tinted ? 'site-header tinted' : 'site-header'
   return (
     <header
       data-testid="site-header"
       data-tinted={tinted ? 'true' : undefined}
-      data-signed-in={user ? 'true' : 'false'}
+      data-signed-in={authUser ? 'true' : 'false'}
       className={rootClass}
     >
       <Link
@@ -39,15 +73,15 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
       </nav>
       <div className="site-header-right">
         <SearchTrigger />
-        {user ? (
+        {authUser ? (
           <>
             <Link
               className="site-header-user"
-              href={user.profileHref}
+              href={authUser.profileHref}
               prefetch={false}
               data-testid="site-header-user-link"
             >
-              {user.displayLabel}
+              {authUser.displayLabel}
             </Link>
             <Link
               className="site-header-signin"

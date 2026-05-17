@@ -25,3 +25,33 @@ select count(*) as votes_row_count from public.votes;
 select count(*) as comments_row_count from public.comments;
 select count(*) as flags_row_count from public.flags;
 select count(*) as ai_decisions_row_count from public.ai_decisions;
+
+-- Phase 36: deterministic thread fixtures on Survivor S20
+-- (`survivor:20`, /shows/survivor/season/heroes-villains). The
+-- e2e read-path spec asserts:
+--   * the published row renders for everyone (anon + authed)
+--   * the pending row is invisible to the public AND to the
+--     authed e2e viewer (it belongs to an anon session with no
+--     auth0_sub, so it is never anyone's "own held" row) —
+--     proves the spoiler/mod P0 split.
+-- Both sessions are anon (auth0_sub NULL) → author renders as
+-- "reader". Fixed UUIDs so the spec can be deterministic.
+insert into public.sessions (id, auth0_sub)
+values
+  ('00000000-0000-4000-8000-0000000000a1', null),
+  ('00000000-0000-4000-8000-0000000000a2', null)
+on conflict (id) do nothing;
+
+insert into public.comments (id, session_id, target_type, target_id, body, status)
+values
+  ('00000000-0000-4000-8000-0000000000b1',
+   '00000000-0000-4000-8000-0000000000a1',
+   'season', 'survivor:20',
+   'The pacing in the back half is the best argument for this whole format.',
+   'published'),
+  ('00000000-0000-4000-8000-0000000000b2',
+   '00000000-0000-4000-8000-0000000000a2',
+   'season', 'survivor:20',
+   'This pending row must never reach the public thread.',
+   'pending')
+on conflict (id) do nothing;

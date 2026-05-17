@@ -1005,6 +1005,11 @@
 .comment-when   { color: color-mix(in oklab, var(--show-ink) 50%, transparent); }
 .comment-hot    { color: var(--show-primary); }
 .comment-body   { font-family: var(--serif); font-size: 15px; line-height: 1.55; color: color-mix(in oklab, var(--show-ink) 85%, transparent); margin: 0; text-wrap: pretty; }
+.comment-held { color: var(--show-primary); text-transform: uppercase; letter-spacing: 0.08em; }
+.comment-item[data-held="true"] { border-left: 2px solid color-mix(in oklab, var(--show-primary) 55%, transparent); padding-left: 14px; }
+.comment-item[data-held="true"]:first-child { padding-top: 18px; border-top: 0; }
+.comment-reveal { appearance: none; background: transparent; border: 1px dashed color-mix(in oklab, var(--show-ink) 28%, transparent); color: color-mix(in oklab, var(--show-ink) 60%, transparent); font-family: var(--serif); font-size: 14px; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+.comment-reveal:hover { color: var(--show-ink); border-color: color-mix(in oklab, var(--show-ink) 45%, transparent); }
 .comment-actions { display: flex; gap: 14px; margin-top: 10px; }
 .comment-actions button { appearance: none; background: transparent; border: 0; color: color-mix(in oklab, var(--show-ink) 55%, transparent); font: 500 12px/1 var(--mono); letter-spacing: 0.06em; padding: 4px 0; }
 .comment-actions button:hover { color: var(--show-ink); }

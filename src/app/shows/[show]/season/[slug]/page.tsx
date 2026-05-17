@@ -14,9 +14,7 @@ import { ShowPaletteScope } from '@/components/show/ShowPaletteScope'
 import {
   AdjacentSeasons,
   AppearsInList,
-  CommentInput,
-  CommentInputStub,
-  CommentThread,
+  CommentThreadLive,
   SeasonEpStrip,
   SeasonHero,
   SeasonInfoCard,
@@ -31,7 +29,6 @@ import {
   type TOCSection,
 } from '@/components/composition'
 import { Bullet } from '@/components/atoms/Bullet'
-import { auth0 } from '@/lib/auth0'
 import {
   buildJsonLd,
   buildMetadata,
@@ -244,9 +241,6 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const season = getSeasonBySlug(show.slug, params.slug)
   if (!season) notFound()
 
-  const session = await auth0.getSession().catch(() => null)
-  const authed = Boolean(session?.user)
-
   const seasons = getAllSeasons(show.slug)
   const themes = getAllThemes()
   const canonFile = getCanon(show.slug)
@@ -420,20 +414,10 @@ export default async function SeasonPage({ params }: { params: Params }) {
           </article>
 
           <aside className="thread" data-testid="season-thread" aria-label="Reader thread">
-            <CommentThread
-              count={0}
-              input={
-                authed ? (
-                  <CommentInput
-                    targetType="season"
-                    targetId={seasonTargetId}
-                  />
-                ) : (
-                  <CommentInputStub
-                    signInHref={`/sign-in?return=/shows/${show.slug}/season/${season.slug}`}
-                  />
-                )
-              }
+            <CommentThreadLive
+              targetType="season"
+              targetId={seasonTargetId}
+              signInHref={`/sign-in?return=/shows/${show.slug}/season/${season.slug}`}
             />
           </aside>
         </div>

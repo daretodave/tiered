@@ -1,6 +1,10 @@
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HeaderView } from '../HeaderView'
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
 
 describe('<HeaderView>', () => {
   it('renders the BrandMark + tiered.tv wordmark linked to /', () => {
@@ -63,6 +67,51 @@ describe('<HeaderView>', () => {
       'data-signed-in',
       'true',
     )
+  })
+
+  it('hydrates from /api/auth/me and flips a static signed-out header to the account chrome', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          ok: true,
+          signedIn: true,
+          user: {
+            handle: 'asha',
+            displayLabel: '@asha',
+            profileHref: '/u/asha',
+          },
+        }),
+      }),
+    )
+    // SSR value is signed-out (the SSG/ISR bug condition).
+    render(<HeaderView user={null} />)
+    expect(screen.getByTestId('site-header-signin-link')).toBeInTheDocument()
+    await waitFor(() => {
+      expect(screen.getByTestId('site-header-user-link')).toHaveTextContent(
+        '@asha',
+      )
+    })
+    expect(screen.queryByTestId('site-header-signin-link')).toBeNull()
+    expect(screen.getByTestId('site-header')).toHaveAttribute(
+      'data-signed-in',
+      'true',
+    )
+    expect(fetch).toHaveBeenCalledWith('/api/auth/me', expect.anything())
+  })
+
+  it('keeps the SSR value when /api/auth/me fails', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('offline')))
+    render(
+      <HeaderView
+        user={{ handle: 'rui', displayLabel: '@rui', profileHref: '/u/rui' }}
+      />,
+    )
+    expect(screen.getByTestId('site-header-user-link')).toHaveTextContent('@rui')
+    // Give the rejected fetch a tick; state must not regress.
+    await new Promise((r) => setTimeout(r, 0))
+    expect(screen.getByTestId('site-header-user-link')).toHaveTextContent('@rui')
   })
 
   it('applies tinted class + data-tinted attribute when tinted={true}', () => {
