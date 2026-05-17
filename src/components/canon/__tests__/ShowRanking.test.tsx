@@ -2,6 +2,28 @@ import { describe, expect, it } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { ShowRanking } from '../ShowRanking'
 import type { CanonFile, Season, Show } from '@/content'
+import type { LiveCommunityRanking } from '@/lib/community/ranking'
+
+function liveRanking(
+  seasons: Season[],
+  source: LiveCommunityRanking['source'] = 'canon',
+): LiveCommunityRanking {
+  return {
+    entries: seasons.map((s, i) => ({
+      rank: i + 1,
+      season: s,
+      tag: '2010',
+      score: 0,
+      approval: null,
+      voteCount: 0,
+      trend: null,
+    })),
+    source,
+    votersThisWeek: 0,
+    lastRecomputeAt: null,
+    version: null,
+  }
+}
 
 const SHOW: Show = {
   slug: 'survivor',
@@ -48,12 +70,14 @@ function canon(): CanonFile {
 
 describe('<ShowRanking>', () => {
   it('initial view = canon seeds data-view + SSRs both panes', () => {
+    const seasons = [season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]
     render(
       <ShowRanking
         show={SHOW}
-        seasons={[season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]}
+        seasons={seasons}
         canon={canon()}
         initialView="canon"
+        community={liveRanking(seasons)}
       />,
     )
     expect(screen.getByTestId('show-ranking')).toHaveAttribute(
@@ -69,12 +93,14 @@ describe('<ShowRanking>', () => {
   })
 
   it('?view=community seeds data-view=community', () => {
+    const seasons = [season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]
     render(
       <ShowRanking
         show={SHOW}
-        seasons={[season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]}
+        seasons={seasons}
         canon={canon()}
         initialView="community"
+        community={liveRanking(seasons)}
       />,
     )
     expect(screen.getByTestId('show-ranking')).toHaveAttribute(
@@ -92,6 +118,7 @@ describe('<ShowRanking>', () => {
         seasons={[season(20, 'Heroes vs. Villains')]}
         canon={canon()}
         initialView="canon"
+        community={liveRanking([season(20, 'Heroes vs. Villains')])}
       />,
     )
     const intro = screen.getByTestId('ranking-intro')
@@ -101,19 +128,27 @@ describe('<ShowRanking>', () => {
 
   it('renders the empty state when canon is null', () => {
     render(
-      <ShowRanking show={SHOW} seasons={[]} canon={null} initialView="canon" />,
+      <ShowRanking
+        show={SHOW}
+        seasons={[]}
+        canon={null}
+        initialView="canon"
+        community={liveRanking([], 'seasons')}
+      />,
     )
     expect(screen.getByTestId('canon-empty')).toBeInTheDocument()
   })
 
   it('tab click flips data-view in place without navigating', () => {
     const pathBefore = window.location.pathname
+    const seasons = [season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]
     render(
       <ShowRanking
         show={SHOW}
-        seasons={[season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]}
+        seasons={seasons}
         canon={canon()}
         initialView="canon"
+        community={liveRanking(seasons)}
       />,
     )
     fireEvent.click(screen.getByTestId('canon-tab-community'))

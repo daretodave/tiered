@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { type Browser, expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
 
@@ -64,6 +64,69 @@ for (const row of showRows) {
     })
   })
 }
+
+// Phase 35 stage 3: with enough distinct voters the community pane
+// stops mirroring the canon and renders Supabase-derived counters.
+// `top-chef` is unused by ranking-api / vote-backend specs so the
+// shared hermetic DB stays collision-free.
+const LIVE_SHOW = 'top-chef'
+
+async function castOneSession(
+  browser: Browser,
+  targetId: string,
+): Promise<void> {
+  const ctx = await browser.newContext()
+  try {
+    const page = await ctx.newPage()
+    await page.goto('/', { waitUntil: 'domcontentloaded' })
+    const status = await page.evaluate(async (tid) => {
+      const r = await fetch('/api/vote', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          targetType: 'season',
+          targetId: tid,
+          value: 1,
+        }),
+        credentials: 'include',
+      })
+      return r.status
+    }, targetId)
+    expect(status).toBe(200)
+  } finally {
+    await ctx.close()
+  }
+}
+
+test.describe('live community pane (votes cleared the threshold)', () => {
+  test('renders Supabase-derived counters once voters >= threshold', async ({
+    browser,
+    page,
+  }) => {
+    // Six distinct anon sessions, each a single keep-vote, clears the
+    // VOTE_THRESHOLD (5) so the pane flips canon-mirror -> live.
+    for (let i = 1; i <= 6; i += 1) {
+      await castOneSession(browser, `${LIVE_SHOW}:${i}`)
+    }
+
+    const response = await page.goto(`/shows/${LIVE_SHOW}?view=community`, {
+      waitUntil: 'domcontentloaded',
+    })
+    expect(response?.status()).toBe(200)
+
+    const strip = page.getByTestId('community-live-strip')
+    await expect(strip).toBeVisible()
+    expect(await strip.getAttribute('data-source')).toBe('votes')
+    await expect(strip).toContainText('live votes')
+    await expect(strip).toContainText('Thursday 9pm ET')
+
+    const list = page.getByTestId('community-rank-list')
+    await expect(list).toBeVisible()
+    expect(await list.getAttribute('data-source')).toBe('votes')
+    // At least one row now carries a real approval percentage.
+    await expect(list.locator('.cp-clr-pct').first()).toContainText('%')
+  })
+})
 
 test.describe('mobile @ 375px viewport', () => {
   test.use({ viewport: { width: 375, height: 812 } })

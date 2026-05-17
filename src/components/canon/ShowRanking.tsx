@@ -1,5 +1,6 @@
 import type { CanonEntry, CanonFile, Season, Show } from '@/content'
-import { computeCommunityRank } from '@/lib/community/rank'
+import type { LiveCommunityRanking } from '@/lib/community/ranking'
+import { pickMovers } from '@/lib/community/live'
 import { buildTierBands } from '@/lib/canon/tier-bands'
 import { makeEraOf } from '@/lib/canon/era-bands'
 import { CanonTabSwitch } from './CanonTabSwitch'
@@ -18,6 +19,10 @@ type ShowRankingProps = {
   seasons: Season[]
   canon: CanonFile | null
   initialView: View
+  // The live, Supabase-derived community ranking (phase 35). Below
+  // the vote threshold this is the canon-mirror with empty counters
+  // (always-working rule) — `source` is what the copy keys off.
+  community: LiveCommunityRanking
 }
 
 function seasonHrefFor(
@@ -41,7 +46,13 @@ function seasonHrefFor(
 // `[data-view]` / `[data-view-pane]` CSS keys off it (the body
 // element is owned by the App Router root layout — the phase-31c
 // adaptation note in canon.css).
-export function ShowRanking({ show, seasons, canon, initialView }: ShowRankingProps) {
+export function ShowRanking({
+  show,
+  seasons,
+  canon,
+  initialView,
+  community,
+}: ShowRankingProps) {
   const entries = canon?.entries ?? []
   const seasonByNumber = new Map<number, Season>()
   for (const s of seasons) seasonByNumber.set(s.number, s)
@@ -53,8 +64,8 @@ export function ShowRanking({ show, seasons, canon, initialView }: ShowRankingPr
     c: canon?.tier_c_blurb ?? null,
   })
 
-  const community = computeCommunityRank(show, seasons, canon)
   const hasLiveVotes = community.source === 'votes'
+  const movers = pickMovers(community.entries)
 
   const seasonHref = (entry: CanonEntry) =>
     seasonHrefFor(show.slug, seasonByNumber, entry)
@@ -119,8 +130,13 @@ export function ShowRanking({ show, seasons, canon, initialView }: ShowRankingPr
       </div>
 
       <div data-view-pane="community" data-testid="community-view-pane">
-        <CommunityLiveStrip source={community.source} />
-        <CommunityMovers />
+        <CommunityLiveStrip
+          source={community.source}
+          lastRecomputeAt={community.lastRecomputeAt}
+          votersThisWeek={community.votersThisWeek}
+          version={community.version}
+        />
+        <CommunityMovers movers={movers} />
         <div className="cp-community-list" data-testid="community-weekly-wrapper">
           <CommunityWeeklyQuestionCard question={canon?.weekly_question ?? null} />
         </div>

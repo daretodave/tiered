@@ -16,9 +16,20 @@ import {
   canonicalUrl,
   jsonLdScriptProps,
 } from '@/lib/seo'
-import { computeCommunityRank } from '@/lib/community/rank'
+import { getCommunityRanking } from '@/lib/community/ranking'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
 import type { Season } from '@/content'
+
+// Phase 35 stage 3: the consolidated show page reads the live,
+// Supabase-derived community ranking (getCommunityRanking) at render.
+// A statically prerendered page would bake the canon-mirror fallback
+// at build time and never reflect votes on refresh — that staleness
+// IS the user-reported "refresh always shows 0" bug (the same
+// reasoning the stage-1 commit used to keep /api/ranking dynamic
+// rather than ISR). Render per request; the aggregate is a cheap
+// indexed SUM and the canon-mirror still serves on any DB failure
+// (always-working rule).
+export const dynamic = 'force-dynamic'
 
 type Params = { show: string }
 type Search = { view?: string }
@@ -117,7 +128,7 @@ export default async function ShowHomePage({
           ],
   })
 
-  const community = computeCommunityRank(show, seasons, canon)
+  const community = await getCommunityRanking(show, seasons, canon)
   const communityItemListLd = buildJsonLd({
     type: 'ItemList',
     name: `${show.name} — Community Rank`,
@@ -175,6 +186,7 @@ export default async function ShowHomePage({
           seasons={seasons}
           canon={canon}
           initialView={initialView}
+          community={community}
         />
         <FeaturedThemes show={show.slug} showName={show.name} />
       </div>

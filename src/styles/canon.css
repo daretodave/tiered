@@ -732,6 +732,55 @@
   border-radius: 8px;
   overflow: hidden;
 }
+/* phase 35: mover cards — design port of the Survivor.html
+   .shift-card vocabulary, data-only (no invented note copy). */
+.cp-mv-card {
+  background: var(--show-paper);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background var(--duration-base) var(--ease-settle);
+}
+.cp-mv-card:hover {
+  background: color-mix(in oklab, var(--show-ink) 4%, var(--show-paper));
+}
+.cp-mv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cp-mv-tag {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-40);
+}
+.cp-mv-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--show-ink);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.cp-mv-ranks {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule-soft);
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-55);
+}
+.cp-mv-ranks b {
+  color: var(--show-ink);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0;
+}
 .cp-movers-empty {
   border: 1px dashed var(--rule);
   border-radius: 8px;
@@ -870,6 +919,10 @@
 .cp-clr-trend.up { color: var(--s-warm-up); background: color-mix(in oklab, var(--s-warm-up) 16%, transparent); }
 .cp-clr-trend.down { color: var(--s-warm-down); background: color-mix(in oklab, var(--s-warm-down) 16%, transparent); }
 .cp-clr-trend.hold { color: var(--s-hold); background: color-mix(in oklab, var(--s-hold) 14%, transparent); }
+/* phase 35: the 7d trend cell is now a production <RankShiftPill>
+   (.rank-pill) off the real snapshot delta; this only places it in
+   the grid column. Color/shape come from the shared pill token. */
+.cp-clr-trend-pill { justify-self: end; }
 .cp-clr-votes {
   font: 400 12px/1 var(--mono);
   color: var(--ink-55);
@@ -972,7 +1025,8 @@
   .cp-cl-cols .col-pct,
   .cp-cl-cols .col-trend,
   .cp-cl-row .cp-clr-pct,
-  .cp-cl-row .cp-clr-trend { display: none; }
+  .cp-cl-row .cp-clr-trend,
+  .cp-cl-row .cp-clr-trend-pill { display: none; }
 }
 
 @media (max-width: 820px) {

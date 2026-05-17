@@ -1,24 +1,24 @@
-import type { CommunityRankEntry, CommunityRankSource } from '@/lib/community/rank'
+import type { CommunityRankSource } from '@/lib/community/rank'
+import type { CommunityRankRow } from '@/lib/community/ranking'
+import { trendSentiment } from '@/lib/community/live'
+import { RankShiftPill } from '@/components/composition/RankShiftPill'
 
 type CommunityRankListProps = {
-  entries: CommunityRankEntry[]
+  entries: CommunityRankRow[]
   showSlug: string
   source: CommunityRankSource
-}
-
-type RowVoteData = {
-  approval: number
-  trend: 'up' | 'down' | 'hold'
-  votes: number
 }
 
 function padRank(rank: number): string {
   return String(rank).padStart(2, '0')
 }
 
-function rowVoteData(_entry: CommunityRankEntry, source: CommunityRankSource): RowVoteData | null {
-  if (source !== 'votes') return null
-  return null
+// A row carries decisive vote data only when at least one weighted
+// vote produced an approval share. Below that we render the honest
+// em-dash placeholders (always-working rule — the canon-mirror order
+// still shows, just without invented counters).
+function hasVoteData(entry: CommunityRankRow): boolean {
+  return entry.voteCount > 0 && entry.approval != null
 }
 
 export function CommunityRankList({
@@ -26,15 +26,19 @@ export function CommunityRankList({
   showSlug,
   source,
 }: CommunityRankListProps) {
-  const empty = source !== 'votes'
+  const live = source === 'votes'
   return (
-    <div className="cp-community-list" data-testid="community-rank-list" data-source={source}>
+    <div
+      className="cp-community-list"
+      data-testid="community-rank-list"
+      data-source={source}
+    >
       <div className="cp-community-list-head">
         <h2>The full ranking.</h2>
         <span className="meta">
-          {empty
-            ? 'No community votes yet — list mirrors the editor canon.'
-            : 'Recomputed as votes land · approval %'}
+          {live
+            ? 'Recomputed Thursdays · approval %'
+            : 'No community votes yet — list mirrors the editor canon.'}
         </span>
       </div>
       <div className="cp-cl-cols" data-testid="community-rank-cols">
@@ -47,8 +51,9 @@ export function CommunityRankList({
       </div>
       <div className="cp-cl-rows" data-testid="community-rank-rows">
         {entries.map((entry) => {
-          const vote = rowVoteData(entry, source)
-          const subtitle = entry.tag
+          const voted = hasVoteData(entry)
+          const pct =
+            entry.approval == null ? null : Math.round(entry.approval * 100)
           return (
             <a
               key={entry.season.number}
@@ -60,38 +65,51 @@ export function CommunityRankList({
               <div className="cp-clr-rank">{padRank(entry.rank)}</div>
               <div className="cp-clr-title">
                 {entry.season.title}
-                <span className="sub">{subtitle}</span>
+                <span className="sub">{entry.tag}</span>
               </div>
-              <div className="cp-clr-bar" data-empty={vote ? 'false' : 'true'}>
+              <div
+                className="cp-clr-bar"
+                data-empty={voted && pct != null ? 'false' : 'true'}
+              >
                 <div className="cp-clr-bar-track">
-                  {vote ? (
+                  {voted && pct != null ? (
                     <div
                       className="cp-clr-bar-fill"
-                      style={{ width: `${vote.approval}%` }}
+                      style={{ width: `${pct}%` }}
                     />
                   ) : null}
                 </div>
               </div>
-              {vote ? (
-                <div className="cp-clr-pct">{vote.approval}%</div>
+              {voted && pct != null ? (
+                <div className="cp-clr-pct">{pct}%</div>
               ) : (
                 <div className="cp-clr-pct cp-cl-cell--empty" aria-hidden="true">
                   —
                 </div>
               )}
-              {vote ? (
-                <div className={`cp-clr-trend ${vote.trend}`}>
-                  {vote.trend === 'hold' ? '◆' : vote.trend === 'up' ? '↑' : '↓'}
-                </div>
+              {entry.trend != null && entry.trend !== 0 ? (
+                <RankShiftPill
+                  className="cp-clr-trend-pill"
+                  delta={entry.trend}
+                  sentiment={trendSentiment(entry.trend)}
+                />
               ) : (
-                <div className="cp-clr-trend cp-cl-cell--empty" aria-hidden="true">
+                <div
+                  className="cp-clr-trend cp-cl-cell--empty"
+                  aria-hidden="true"
+                >
                   —
                 </div>
               )}
-              {vote ? (
-                <div className="cp-clr-votes">{vote.votes.toLocaleString()}</div>
+              {voted ? (
+                <div className="cp-clr-votes">
+                  {entry.voteCount.toLocaleString()}
+                </div>
               ) : (
-                <div className="cp-clr-votes cp-cl-cell--empty" aria-hidden="true">
+                <div
+                  className="cp-clr-votes cp-cl-cell--empty"
+                  aria-hidden="true"
+                >
                   —
                 </div>
               )}
