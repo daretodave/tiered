@@ -2,13 +2,16 @@ import { describe, expect, it } from 'vitest'
 import type { Season } from '@/content'
 import type { CommunityRankRow } from './ranking'
 import {
+  communitySignalForSeason,
   formatLastRecompute,
   formatVersion,
   moverNote,
   NEXT_RECOMPUTE_LABEL,
   pickMovers,
+  RECOMPUTE_DAY,
   SHIFT_TIME_LABEL,
   trendSentiment,
+  weeklyQuestionMeta,
 } from './live'
 import type { CommunityMover } from './live'
 
@@ -110,6 +113,65 @@ describe('NEXT_RECOMPUTE_LABEL', () => {
 describe('SHIFT_TIME_LABEL', () => {
   it('is the weekly-cadence framing', () => {
     expect(SHIFT_TIME_LABEL).toBe('this week')
+  })
+})
+
+describe('RECOMPUTE_DAY', () => {
+  it('is the single source for the cadence label', () => {
+    expect(RECOMPUTE_DAY).toBe('Thursday')
+    expect(NEXT_RECOMPUTE_LABEL.startsWith(RECOMPUTE_DAY)).toBe(true)
+  })
+})
+
+describe('weeklyQuestionMeta', () => {
+  it('shows the trailing-7d tally + close day when voters are in', () => {
+    expect(weeklyQuestionMeta(3214)).toBe('3,214 voted · closes Thursday')
+    expect(weeklyQuestionMeta(1)).toBe('1 voted · closes Thursday')
+  })
+
+  it('stays honest below the threshold — no fabricated count', () => {
+    expect(weeklyQuestionMeta(0)).toBe('votes pending · closes Thursday')
+    expect(weeklyQuestionMeta(-1)).toBe('votes pending · closes Thursday')
+  })
+})
+
+describe('communitySignalForSeason', () => {
+  const live = [row(5, 9, -3), row(1, 20, 2)]
+  const hint = { rank: 2, delta: 1, sentiment: 'up' as const }
+
+  it('reflects the live ranking + snapshot trend when votes are in', () => {
+    expect(communitySignalForSeason(20, live, 'votes', hint)).toEqual({
+      rank: 1,
+      delta: 2,
+      sentiment: 'up',
+    })
+    expect(communitySignalForSeason(9, live, 'votes', hint)).toEqual({
+      rank: 5,
+      delta: -3,
+      sentiment: 'down',
+    })
+  })
+
+  it('treats a null/zero trend as hold', () => {
+    expect(communitySignalForSeason(7, [row(3, 7, null)], 'votes', null)).toEqual({
+      rank: 3,
+      delta: 0,
+      sentiment: 'hold',
+    })
+  })
+
+  it('falls back to the static hint below the vote threshold', () => {
+    expect(communitySignalForSeason(20, live, 'canon', hint)).toEqual(hint)
+    expect(communitySignalForSeason(20, live, 'seasons', hint)).toEqual(hint)
+  })
+
+  it('falls back to the hint when the season is absent from the live ranking', () => {
+    expect(communitySignalForSeason(99, live, 'votes', hint)).toEqual(hint)
+  })
+
+  it('returns null when neither live data nor a hint exists', () => {
+    expect(communitySignalForSeason(99, live, 'votes', null)).toBeNull()
+    expect(communitySignalForSeason(99, live, 'canon', undefined)).toBeNull()
   })
 })
 

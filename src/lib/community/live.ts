@@ -94,7 +94,57 @@ export function formatLastRecompute(
 // The recompute cadence is the v1 contract (Thursday 9pm ET, Vercel
 // Cron). The next-recompute label is the cadence, not a computed
 // countdown — "fresh within the cadence" per the phase brief.
-export const NEXT_RECOMPUTE_LABEL = 'Thursday 9pm ET'
+// RECOMPUTE_DAY is the single source for both the live-strip's
+// next-recompute label and the weekly-question close affordance, so
+// the cadence is stated in exactly one place.
+export const RECOMPUTE_DAY = 'Thursday'
+export const NEXT_RECOMPUTE_LABEL = `${RECOMPUTE_DAY} 9pm ET`
+
+// The weekly-question card's meta line. The tally is the trailing-7d
+// distinct voter count (the same authoritative number the live-strip
+// shows) — the votes that feed the next recompute. Below the vote
+// threshold (no voters this week) there is no fabricated count, just
+// the honest close affordance — same posture as CommunityLiveStrip's
+// "votes pending". Mirrors the design's "3,214 voted · closes
+// Thursday".
+export function weeklyQuestionMeta(votersThisWeek: number): string {
+  const closes = `closes ${RECOMPUTE_DAY}`
+  if (votersThisWeek <= 0) return `votes pending · ${closes}`
+  return `${votersThisWeek.toLocaleString()} voted · ${closes}`
+}
+
+// The Tier-S canon he-aside community mini-pill cross-references the
+// live community ranking (phase 35 stage 3). When real votes are in
+// (`source === 'votes'`) and the season is in the live ranking, the
+// pill reflects the live rank + snapshot trend. Below the threshold
+// the static `community_rank_hint` frontmatter is the always-working
+// fallback (returns null when absent → the pill is omitted). The
+// return shape matches CommunityRankHint so the renderer is unchanged.
+export type CommunitySignal = {
+  rank: number
+  delta: number
+  sentiment: 'up' | 'down' | 'hold'
+}
+
+export function communitySignalForSeason(
+  seasonNumber: number,
+  entries: CommunityRankRow[],
+  source: 'votes' | 'canon' | 'seasons',
+  fallback: CommunitySignal | null | undefined,
+): CommunitySignal | null {
+  if (source === 'votes') {
+    const row = entries.find((e) => e.season.number === seasonNumber)
+    if (row) {
+      const delta = row.trend ?? 0
+      return {
+        rank: row.rank,
+        delta,
+        sentiment: delta > 0 ? 'up' : delta < 0 ? 'down' : 'hold',
+      }
+    }
+  }
+  return fallback ?? null
+}
 
 export function formatVersion(version: number | null): string {
   return version == null ? 'pending' : `v${version}`

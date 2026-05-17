@@ -21,6 +21,10 @@ function season(number: number, title: string): Season {
   } as unknown as Season
 }
 
+// Mirrors the production fallback resolver (ShowRanking) for the
+// no-live-votes path: the static frontmatter hint, or null.
+const hintSignal = (e: CanonEntry) => e.community_rank_hint ?? null
+
 describe('<CanonHeroEntries>', () => {
   it('renders one row per entry with title and rank padded', () => {
     const entries = [
@@ -37,6 +41,7 @@ describe('<CanonHeroEntries>', () => {
         seasonHref={(e) => `/shows/survivor/season/${seasons.get(e.season)?.slug ?? e.season}`}
         seasonOf={(e) => seasons.get(e.season)}
         eraOf={() => undefined}
+        communitySignal={hintSignal}
       />,
     )
     const rows = screen.getAllByTestId('canon-hero-entry')
@@ -55,6 +60,7 @@ describe('<CanonHeroEntries>', () => {
         seasonHref={() => '/x'}
         seasonOf={() => undefined}
         eraOf={() => undefined}
+        communitySignal={hintSignal}
       />,
     )
     const tag = screen.getByTestId('canon-hero-season-tag')
@@ -64,7 +70,7 @@ describe('<CanonHeroEntries>', () => {
     expect(stack?.querySelector('.cp-he-rank')?.textContent).toBe('01')
   })
 
-  it('collapses absent tag / slot_argument / community_rank_hint', () => {
+  it('collapses absent slot_argument / community signal', () => {
     const entries = [
       entry({ rank: 1, season: 1, title: 'Borneo' }),
     ]
@@ -74,6 +80,7 @@ describe('<CanonHeroEntries>', () => {
         seasonHref={() => '/x'}
         seasonOf={() => undefined}
         eraOf={() => undefined}
+        communitySignal={hintSignal}
       />,
     )
     expect(screen.queryByTestId('canon-hero-mini-community')).toBeNull()
@@ -81,7 +88,7 @@ describe('<CanonHeroEntries>', () => {
     expect(screen.queryByText(/tag/i)).toBeNull()
   })
 
-  it('renders community + slot mini-cards when present', () => {
+  it('renders community + slot mini-cards from the static hint fallback', () => {
     const entries = [
       entry({
         rank: 1,
@@ -97,10 +104,37 @@ describe('<CanonHeroEntries>', () => {
         seasonHref={() => '/x'}
         seasonOf={() => undefined}
         eraOf={() => undefined}
+        communitySignal={hintSignal}
       />,
     )
     expect(screen.getByTestId('canon-hero-mini-community')).toBeInTheDocument()
     expect(screen.getByTestId('canon-hero-mini-slot')).toBeInTheDocument()
     expect(screen.getByText('#02')).toBeInTheDocument()
+  })
+
+  it('the community mini-pill reflects the live signal, overriding the static hint', () => {
+    const entries = [
+      entry({
+        rank: 1,
+        season: 1,
+        title: 'Borneo',
+        // Static hint says #02 ↑1; the live resolver says #05 ↓3.
+        community_rank_hint: { rank: 2, delta: 1, sentiment: 'up' },
+      }),
+    ]
+    render(
+      <CanonHeroEntries
+        entries={entries}
+        seasonHref={() => '/x'}
+        seasonOf={() => undefined}
+        eraOf={() => undefined}
+        communitySignal={() => ({ rank: 5, delta: 3, sentiment: 'down' })}
+      />,
+    )
+    const mini = screen.getByTestId('canon-hero-mini-community')
+    expect(mini).toHaveTextContent('#05')
+    expect(mini.querySelector('.cp-mini-trend')?.className).toContain('down')
+    expect(mini.querySelector('.cp-mini-trend')?.textContent).toBe('↓ 3')
+    expect(screen.queryByText('#02')).toBeNull()
   })
 })

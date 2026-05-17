@@ -1,13 +1,19 @@
 import { Bullet } from '@/components/atoms/Bullet'
+import { weeklyQuestionMeta } from '@/lib/community/live'
 
 type CommunityWeeklyQuestionCardProps = {
   question: string | null | undefined
+  // Trailing-7d distinct voter count — the Supabase-derived tally
+  // that feeds the next recompute (phase 35 stage 3). Below the
+  // threshold this is 0 and the meta stays honest ("votes pending").
+  votersThisWeek: number
 }
 
 const DEFAULT_QUESTION = 'Which season are you defending tonight?'
 
 export function CommunityWeeklyQuestionCard({
   question,
+  votersThisWeek,
 }: CommunityWeeklyQuestionCardProps) {
   const q = question ?? DEFAULT_QUESTION
   return (
@@ -28,7 +34,7 @@ export function CommunityWeeklyQuestionCard({
         </div>
       </div>
       <div className="cp-cq-cta">
-        <span className="cp-cq-meta">closes when votes flow</span>
+        <span className="cp-cq-meta">{weeklyQuestionMeta(votersThisWeek)}</span>
       </div>
     </div>
   )

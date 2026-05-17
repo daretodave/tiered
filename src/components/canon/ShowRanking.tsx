@@ -1,6 +1,6 @@
 import type { CanonEntry, CanonFile, Season, Show } from '@/content'
 import type { LiveCommunityRanking } from '@/lib/community/ranking'
-import { pickMovers } from '@/lib/community/live'
+import { pickMovers, communitySignalForSeason } from '@/lib/community/live'
 import { buildTierBands } from '@/lib/canon/tier-bands'
 import { makeEraOf } from '@/lib/canon/era-bands'
 import { CanonTabSwitch } from './CanonTabSwitch'
@@ -70,6 +70,13 @@ export function ShowRanking({
   const seasonHref = (entry: CanonEntry) =>
     seasonHrefFor(show.slug, seasonByNumber, entry)
   const seasonOf = (entry: CanonEntry) => seasonByNumber.get(entry.season)
+  const communitySignal = (entry: CanonEntry) =>
+    communitySignalForSeason(
+      entry.season,
+      community.entries,
+      community.source,
+      entry.community_rank_hint,
+    )
   const eraBands = canon?.era_bands ?? []
   const eraOf = makeEraOf(seasonOf, eraBands)
 
@@ -123,6 +130,7 @@ export function ShowRanking({
                 seasonHref={seasonHref}
                 seasonOf={seasonOf}
                 eraOf={eraOf}
+                communitySignal={communitySignal}
               />
             ))}
           </>
@@ -138,7 +146,10 @@ export function ShowRanking({
         />
         <CommunityMovers movers={movers} />
         <div className="cp-community-list" data-testid="community-weekly-wrapper">
-          <CommunityWeeklyQuestionCard question={canon?.weekly_question ?? null} />
+          <CommunityWeeklyQuestionCard
+            question={canon?.weekly_question ?? null}
+            votersThisWeek={community.votersThisWeek}
+          />
         </div>
         {community.entries.length > 0 ? (
           <CommunityRankList

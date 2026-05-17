@@ -1,4 +1,5 @@
 import type { CanonEntry, Season } from '@/content'
+import type { CommunitySignal } from '@/lib/community/live'
 import {
   DEFAULT_TIER_HEADINGS,
   tierRangeLabel,
@@ -14,6 +15,7 @@ type CanonTierBandProps = {
   seasonHref: (entry: CanonEntry) => string
   seasonOf: (entry: CanonEntry) => Season | undefined
   eraOf: (entry: CanonEntry) => string | undefined
+  communitySignal: (entry: CanonEntry) => CommunitySignal | null
 }
 
 const TIER_HEADLINES: Record<TierBand['key'], string> = {
@@ -28,6 +30,7 @@ function bodyForBand(
   seasonHref: CanonTierBandProps['seasonHref'],
   seasonOf: CanonTierBandProps['seasonOf'],
   eraOf: CanonTierBandProps['eraOf'],
+  communitySignal: CanonTierBandProps['communitySignal'],
 ) {
   switch (band.key) {
     case 'S':
@@ -37,6 +40,7 @@ function bodyForBand(
           seasonHref={seasonHref}
           seasonOf={seasonOf}
           eraOf={eraOf}
+          communitySignal={communitySignal}
         />
       )
     case 'A':
@@ -72,6 +76,7 @@ export function CanonTierBand({
   seasonHref,
   seasonOf,
   eraOf,
+  communitySignal,
 }: CanonTierBandProps) {
   const headline = TIER_HEADLINES[band.key]
   const blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]
@@ -91,7 +96,7 @@ export function CanonTierBand({
           {tierRangeLabel(band)} · {count}
         </div>
       </div>
-      {bodyForBand(band, seasonHref, seasonOf, eraOf)}
+      {bodyForBand(band, seasonHref, seasonOf, eraOf, communitySignal)}
     </section>
   )
 }

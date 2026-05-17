@@ -1,10 +1,16 @@
 import type { CanonEntry, Season } from '@/content'
+import type { CommunitySignal } from '@/lib/community/live'
 
 type CanonHeroEntriesProps = {
   entries: CanonEntry[]
   seasonHref: (entry: CanonEntry) => string
   seasonOf: (entry: CanonEntry) => Season | undefined
   eraOf: (entry: CanonEntry) => string | undefined
+  // Cross-reference into the live community ranking (phase 35 stage
+  // 3). Returns the live rank + snapshot trend when real votes are
+  // in, the static `community_rank_hint` as the always-working
+  // fallback, or null when neither exists (pill omitted).
+  communitySignal: (entry: CanonEntry) => CommunitySignal | null
 }
 
 function padRank(rank: number): string {
@@ -34,12 +40,13 @@ export function CanonHeroEntries({
   seasonHref,
   seasonOf,
   eraOf,
+  communitySignal,
 }: CanonHeroEntriesProps) {
   return (
     <div className="cp-hero-entries" data-testid="canon-hero-entries">
       {entries.map((entry) => {
         const season = seasonOf(entry)
-        const hint = entry.community_rank_hint
+        const hint = communitySignal(entry)
         return (
           <a
             key={entry.rank}

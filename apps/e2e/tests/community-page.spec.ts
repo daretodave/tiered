@@ -132,6 +132,17 @@ test.describe('live community pane (votes cleared the threshold)', () => {
     // against — the surface stays absent (the design's intended empty
     // behavior), it does not render an empty box.
     await expect(page.getByTestId('shifts-row')).toHaveCount(0)
+
+    // Phase 35 stage 3d: the weekly-question card's meta is the
+    // Supabase-derived trailing-7d tally + the honest close day. Once
+    // voters cleared the threshold it must show "<n> voted · closes
+    // Thursday", never the below-threshold "votes pending".
+    const weekly = page.getByTestId('community-weekly-question')
+    await expect(weekly).toBeVisible()
+    const meta = weekly.locator('.cp-cq-meta')
+    await expect(meta).toContainText('closes Thursday')
+    await expect(meta).toContainText('voted')
+    await expect(meta).not.toContainText('votes pending')
   })
 })
 
