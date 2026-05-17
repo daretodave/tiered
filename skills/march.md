@@ -82,6 +82,21 @@ the march** — log warning and fall through.
 
 ### Step 2 — Critique gate (rate-limited)
 
+**Step 2.0 — Shipping-mode gate (hard precondition, checked
+first).** Open `plan/steps/01_build_plan.md` "Status
+(at-a-glance)". If the **Phase 36** row is not `[x]` (i.e. any
+of the shipping-queue phases 26 / 32 / 34 / 35 / 36 is still
+`[ ]`), the project is in **shipping mode**: **skip the entire
+critique gate and fall straight through to Step 3.** Do not
+read the metadata header, do not run `deploy:check`, do not
+spawn `reader`. This precondition overrides the "never + a
+phase shipped" clause below — that clause must not fire during
+shipping mode. Rationale + ownership: `plan/bearings.md`
+"Critique cadence" (set by the user 2026-05-16); the gate line
+also appears in `plan/CRITIQUE.md`'s header. Once Phase 36 is
+`[x]`, this gate lifts and the rate-limited logic below applies
+normally.
+
 Read metadata header at top of `plan/CRITIQUE.md`:
 
 ```

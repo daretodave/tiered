@@ -278,7 +278,17 @@ Critique findings **compete fairly** with other audit sources.
 > Pass count: <N>
 ```
 
-Conditions to dispatch:
+**Precondition (Step 2.0 — shipping-mode gate).** Before any
+of the conditions below, `/march` checks
+`plan/steps/01_build_plan.md`: if **Phase 36** is not `[x]`,
+the project is in shipping mode and `/critique` is **not
+dispatched at all** — the conditions below are not even
+evaluated. This overrides condition 1's "never + a phase
+shipped" clause. See `plan/bearings.md` "Critique cadence"
+(user-set 2026-05-16). The conditions below apply only once
+Phase 36 has shipped.
+
+Conditions to dispatch (post-shipping-mode only):
 
 1. **At least 12 commits** after `Last pass` commit, OR
    `Last pass` more than **24 hours** ago, OR `Last pass` is
@@ -286,4 +296,5 @@ Conditions to dispatch:
 2. `pnpm deploy:check` shows green.
 3. No pending HIGH critique already queued for iterate.
 
-If all three: `/march` calls `/critique` for that tick.
+If all three (and shipping mode has ended): `/march` calls
+`/critique` for that tick.

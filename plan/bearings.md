@@ -414,6 +414,26 @@ candidates ship).
 Switch to `autonomous` once tiered.tv has shipped 15+ phases
 cleanly and the user trusts `/expand`'s judgment.
 
+## Critique cadence
+
+**Mode: shipping (suppressed until Phase 36 ships).**
+
+No `/critique` passes run while the project is in shipping
+mode. Shipping mode holds until the **Phase 36** row in
+`plan/steps/01_build_plan.md` is `[x]` (Phase 36 is the last
+phase in the shipping queue: 26 → 34 → 32 → 35 → 36).
+
+Rationale: phases 35 and 36 build the community/auth **read**
+path — live ranking data, auth-state chrome, the comment
+display thread. Until 36 ships, every show/season route is
+static and renders permanently signed-out, so an auth-aware
+`/critique` cannot meaningfully evaluate the returning-member
+experience — it would only re-file "chrome shows signed-out"
+findings that Phase 36 is already scoped to fix. Set by the
+user 2026-05-16 ("we are still in shipping mode"). When Phase
+36 is `[x]`, this gate lifts and `/march` Step 2's normal
+rate-limited critique cadence resumes.
+
 ## Content velocity & editorial cadence
 
 tiered.tv's `/iterate` and `/ship-content` skills enforce four

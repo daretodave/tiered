@@ -123,13 +123,21 @@ in the same commit that ships the phase.
 - [ ] Phase 35 — Live community data (the read half of the vote system). The vote **write** path works (phase 11 `votes` + `cast_vote()`); the **read** path was never built — no ranking RPC, no `/api/ranking/[show]` route (it sits in the *locked URL contract* but ships as nothing), no rank history. Every community number is an honest placeholder. Phase 35 builds it real, nothing hardcoded: `compute_weighted_rank()` read RPC + `rank_snapshots` + scheduled recompute (pg_cron Thursday 9pm ET, or Vercel-Cron fallback) → real order / approval % / 7-day trend / vote counts / voters-this-week / movers; the contracted `/api/ranking/[show]` ISR route finally built (fulfilment, not a contract change); `computeCommunityRank` rewired with the canon-mirror surviving as the always-working fallback; **VotePair correctness** (already-voted state, no double-count, true net on refresh — closes the three user-reported vote bugs); `RankShiftPill` finally placed in production off real deltas; e2e seed votes/snapshot. **Agent is the data admin — bold with schema + routes** (bearings §Database posture). After phase 32 per user direction. Detailed brief: `phase_35_live_community.md`.
 - [ ] Phase 36 — Auth-state chrome + comment read/display. Same root cause as 35 (write works, read/reflect on SSG/ISR pages absent). Header calls `auth0.getSession()` but show/season routes are static → permanently signed-out chrome; comments post (`status:pending`) but the thread never reads Supabase and RLS hides `pending` from its own author → "No comments yet" after a successful post. Fixes: auth-state island hydrated from a bold-but-tiny `GET /api/auth/me` so chrome reflects sign-in on every route; server-side comment read path (published + the author's own held comment with a "held for review" affordance); spoiler/mod P0 intact (public never sees pending/hidden/removed). **Agent is the data admin — bold with routes** (bearings §Database posture). Sits after 35; **may be pulled ahead** — it is the smaller, higher-trust fix (user's call). Detailed brief: `phase_36_auth_chrome_comments.md`.
 
-> **After phase 25:** the loop transitions back into `/iterate`
-> + `/ship-content` + `/critique` + `/triage` cycles. Content
-> grows by ship-content draining content-gap rows; design grows
-> by critique findings; data integrity grows by ship-data
-> draining DB findings; the build plan grows via `/expand`
-> proposing new candidates that `/oversight` promotes. `/march`
-> handles the dispatch automatically.
+> **After phase 25:** the shipping queue is not done — phases
+> 26 / 32 / 34 / 35 / 36 are still `[ ]`, so `/march` Step 3a
+> keeps shipping them (`/ship-a-phase` wins every tick while
+> any remain). Meanwhile `/iterate`, `/ship-content`, and
+> `/triage` run per their own gates: content grows by
+> ship-content draining content-gap rows; data integrity grows
+> by ship-data draining DB findings; the build plan grows via
+> `/expand` proposing candidates that `/oversight` promotes.
+> **`/critique` is the one exception — it stays fully suppressed
+> until the Phase 36 row is `[x]`** (shipping mode, enforced by
+> `/march` Step 2.0; rationale in `plan/bearings.md` "Critique
+> cadence", user-set 2026-05-16). Once Phase 36 ships, shipping
+> mode ends and the full `/iterate` + `/ship-content` +
+> `/critique` + `/triage` cycle resumes — `/march` handles the
+> dispatch automatically.
 
 > **Note on Vercel auto-deploy before phase 1:** auto-publish
 > stays on; deploys will fail until `package.json` and `next`
