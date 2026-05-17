@@ -3,7 +3,7 @@ show: bachelorette
 number: 16
 title: Clare Crawley & Tayshia Adams
 display_title: "Clare Crawley <em>&</em> Tayshia Adams"
-canonical_position: 18
+canonical_position: 19
 premiere_date: 2020-10-13
 ep_count: 12
 location: La Quinta, California

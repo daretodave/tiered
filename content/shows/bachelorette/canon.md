@@ -1,7 +1,7 @@
 ---
 show: bachelorette
 editor: tiered.tv Editors
-last_revised: 2026-05-15
+last_revised: 2026-05-17
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every Bachelorette season, calibrated against the kitchen-table consensus of long-running franchise fans. The read treats the show as its own animal rather than a flipped Bachelor footnote — warmer casting, sharper leads, and a producing voice that found its own pitch quickly.
 meth_how_h: How do we weigh it?
@@ -83,86 +83,93 @@ community_rank_hint: rank=8 delta=0 sentiment=hold
 
 The season the passport opens. An interior designer from British Columbia becomes the franchise's first Canadian Bachelorette, the producers expand the cast to thirty men, and the calendar stretches to twelve episodes with travel dates that finally take the format overseas. The casting reads broader and warmer than the founding run, the international stops do real editorial work rather than serving as backdrop, and the production scale clears a bar the show had been circling since the post-hiatus reboot. The modern Bachelorette starts to look like itself here. Required viewing for understanding how the travelogue era became possible at all.
 
+## 21. Jenn Tran
+tag: The franchise's most overdue first since Rachel Lindsay, carried on argument over a mixed back half.
+slot_argument: First Asian American lead in franchise history, plus a real format wrinkle off the traditional mansion; major-argument season that ranks below the cleanly executed structural courage above it.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+The franchise's most historically significant season since Rachel Lindsay's. A physician-assistant student becomes the first Asian American lead in Bachelor or Bachelorette history, and the producers pair the milestone with a structural shift, moving the home base from the traditional Agoura Hills mansion to Hummingbird Nest Ranch for the first time in three years. Ten episodes, roughly twenty-five men, and travel to Seattle, Hawaii, Australia, and New Zealand under Jesse Palmer's third season. The argument is genuine and overdue, and it carries the season past every well-built-but-unambitious modern entry below it. The execution wobbles across a more mixed back half, which is what keeps it out of the cleanly run structural-courage tier above. A high-confidence hold on significance.
+
 ## 14. Becca Kufrin
 tag: A confident modern travelogue with a grounded, likable center.
 slot_argument: Well-built and warm with real location work; a solid deep-middle modern hold that never quite reaches era-defining.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 A confident modern travelogue with a likable center. A Minnesota publicist drawn from the prior Bachelor season takes the calendar, and the producers run eleven episodes with dates in Richmond, Utah, the Bahamas, Thailand, and the Maldives. The casting reads warm, and the location work does real editorial lifting rather than serving as backdrop. The lead carries the season with a grounded, unflustered presence that suits the format and keeps the pacing honest across the long book. A solid hold in the deep middle of the modern run — well-built and easy to recommend, even if it doesn't reach for the structural ambition the seasons above it carry.
 
 ## 19. Gabby Windey & Rachel Recchia
 tag: The boldest structural swing in years. Two co-leads, one full season.
 slot_argument: First US season to run two co-leads across the entire book; ranks on format ambition even where the experiment strains.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 The franchise's boldest structural swing in years. For the first US season, two co-leads share the entire run rather than splitting it midway — a format gamble that doubles the storytelling and complicates every rose ceremony in ways the producers were still learning to use. Twelve episodes, travel across France, Belgium, the Netherlands, and Mexico, and Jesse Palmer's first season in the hosting chair. The dual-lead premise gives the season a structural tension no single-lead book carries, even when the split attention strains the pacing. An ambitious experiment worth studying for the format alone, and the cleanest argument for the modern run still taking real swings.
 
 ## 7. Ashley Hebert
 tag: The heaviest passport run yet. Twelve episodes, Thailand and Fiji, a deep bench.
 slot_argument: Production-scale peak of the early travelogue era; a high-confidence hold that confirms the modern template can stretch.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 The franchise's most ambitious passport run to that point. A dental student from Maine and the show's first dentist lead takes the calendar, and the producers respond with twelve episodes, dates in Thailand and Fiji, and a casting bench deep enough to fill the longer runway. The locations do cinematic work the mansion never could, and the season carries the travelogue confidence Ali Fedotowsky's run had locked in the year before. A high-confidence hold in the upper-middle — the production scale is real, even when the season's emotional pitch sits a notch below the very top. The kind of season the franchise needed to prove the template could stretch this far.
 
 ## 10. Andi Dorfman
 tag: The early era closes on confidence. First lawyer lead, sharpest cocktail parties of the founding run.
 slot_argument: The most articulate Bachelorette of the early canon; cross-examination cadence reshapes the format in small but real ways.
-community_rank_hint: rank=12 delta=0 sentiment=hold
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
 The early era closes on confidence. An assistant district attorney from Atlanta becomes the franchise's first lawyer Bachelorette, and the producers respond with eleven episodes, dates across France, Italy, Belgium, and the Dominican Republic, and a casting bench that holds up under cross-examination. The lead's bench-side cadence reshapes the cocktail parties in small but real ways — questions land sharper, dodges land worse, and the season's editorial pace tightens around her. The most articulate Bachelorette of the early canon and a clean send-off for the show's first ten seasons. A confident hold that earns its slot on argument and pacing both.
 
 ## 18. Michelle Young
 tag: The passport reopens. International travel returns after two confined seasons.
 slot_argument: Restored the format's range after the pandemic-era runs; a strong, well-cast fall season with a poised lead.
-community_rank_hint: rank=13 delta=0 sentiment=hold
+community_rank_hint: rank=14 delta=0 sentiment=hold
 
 The season the passport reopens. After two confined pandemic-era runs, the franchise travels again — Indian Wells, the lead's home state of Minnesota, and Mexico — with the alumnae hosting duo returning for their second outing. Eleven episodes and a poised, articulate elementary-school-teacher lead who runs the cocktail parties with unusual composure for the modern run. The location work feels earned rather than routine after the single-resort years, and the season quietly restored a range the format had lost. A strong fall season, well-built and easy to recommend, that ranks on craft and the relief of the format breathing again.
 
 ## 4. DeAnna Pappas
 tag: The reboot. The franchise comes back from a three-year pause with a lead ready for the chair.
 slot_argument: The season that re-established the show as a permanent franchise rather than a curiosity-run; middle-canon weight on argument.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+community_rank_hint: rank=15 delta=0 sentiment=hold
 
 The reboot. After a three-year pause, the franchise brings the flipped format back with a Bachelor runner-up from Georgia who reads ready for the chair from her first limo step. Nine episodes is the longest the show had tried, and the extra runway gets used on travel dates that push past the mansion gates with more confidence than the founding run could afford. The casting tightens. The producing tightens. Chris Harrison settles into a cadence that suggests the show is here to stay. The season that re-established the Bachelorette as a permanent fixture rather than a curious experiment, and the bridge to the travelogue era that followed.
 
 ## 20. Charity Lawson
 tag: A tight, warm modern run under the new host. Short book, brisk pacing.
 slot_argument: The shortest book since the reboot; clean and well-cast but ranks behind the more ambitious modern entries above it.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
 A tight, warm season under the new host. A child-and-family therapist takes the calendar, and the producers run the shortest book the show had attempted since the reboot — nine episodes, with dates in Agoura Hills, New Orleans, and Fiji, and Jesse Palmer settling into his second season. The compression keeps the pacing brisk and the cocktail parties load-bearing, and the lead's therapist's ear reshapes how conversations land across the season. A clean, well-cast modern run that does a lot with a short runway. It ranks here on craft — solid, recommendable, just short of the ambition the modern entries above it carry.
 
 ## 9. Desiree Hartsock
 tag: A return to the mansion, with softer texture. Competent middle-canon hold.
 slot_argument: The franchise dialing back from peak production scale without losing its footing; respectable B-tier weight.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+community_rank_hint: rank=17 delta=0 sentiment=hold
 
 A return to the mansion, with softer texture. A bridal stylist from Los Angeles takes the calendar, the producers run a competent eleven-episode book with international stops in Portugal, Barbados, Madeira, and Antigua, and the season plays more understated than the two travelogue-heavy runs that preceded it. The casting reads warm rather than wattage-loud, and Chris Harrison gets to settle into a quieter cadence the format had earned by this point. A respectable middle-canon hold that confirms the franchise can step back from peak production scale without losing its footing, even if the long-tail rewatch case is modest.
 
 ## 17. Katie Thurston
 tag: The hosting chair changes hands. First season guided by franchise alumnae.
 slot_argument: A genuine transitional document — first alumnae-hosted season — more interesting for what it changes than for rewatch pull.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 The season the hosting chair changed hands. Two former Bachelorettes step in to guide the season — the first time the franchise handed hosting to its own alumnae — and the shift gives the season a peer-level warmth a single emcee never could. Ten episodes, a bio-secure single-resort format at a New Mexico resort, and a direct, unsentimental lead at the center. A genuine transitional document for the franchise, and a useful study in how the show's hosting voice changed. More interesting for what it changes than for its rewatch pull, but the change itself is real and earns the slot.
 
 ## 16. Clare Crawley & Tayshia Adams
 tag: Produced under 2020 protocols. One resort, no travel, a mid-season handoff.
 slot_argument: An unrepeatable production document; worth watching for how the format bent, even though the texture runs claustrophobic.
-community_rank_hint: rank=18 delta=0 sentiment=hold
+community_rank_hint: rank=19 delta=0 sentiment=hold
 
 The season produced under 2020 protocols, and the structure shows it. Filming stays entirely at the La Quinta resort with no international travel, the franchise's first fall airing of the run, and a mid-season lead handoff built into the season's premise from the start. The single-resort confinement gives the season a hothouse closeness the travelogue years never had — interesting as texture, wearing as a watch. An unrepeatable production document worth studying for how the format bent without breaking. It ranks low on rewatch and high on curiosity, which is exactly the kind of season this slot is for.
 
 ## 2. Meredith Phillips
 tag: The quieter second swing. The franchise proves the flip can scale past one curiosity-run.
 slot_argument: Founding-era weight is real but the rewatch case is modest; a B-tier hold with historical interest.
-community_rank_hint: rank=19 delta=0 sentiment=hold
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
 The franchise's quieter second swing at the flipped format. A makeup artist and model from Oregon takes the mansion, the producers stretch the runway to eight episodes, and the energy reads more measured than the splashy debut. The cocktail parties play softer, the casting skews understated, and Chris Harrison continues finding the cadence the inverted show needs from him. A respectable hold that confirms the format can scale past its first season without the lift of a returnee narrative, even when the wattage dims a little. A useful study in how the show's second runs tend to play, and a season the franchise needed to make.
 
 ## 3. Jen Schefft
 tag: The returnee playbook, run for the second time. A transitional document before the pause.
 slot_argument: Caught between the founding run and the post-hiatus reboot; useful to study, less rewarding to rewatch.
-community_rank_hint: rank=20 delta=0 sentiment=hold
+community_rank_hint: rank=21 delta=0 sentiment=hold
 
 A former Bachelor finalist takes the calendar back, and the franchise leans into the returnee playbook for the second time. Eight episodes, the Agoura Hills compound, and travel dates that nudge the show off the property in ways the producers were still learning to use. The casting is competent without ever quite catching fire, and the season earns its place in the lineage more for what it teaches the format than for what it leaves behind on rewatch. A transitional document before the show paused and reset, and the season that taught the producers that the returnee story needed something more than its own gravity to carry an eight-episode book.

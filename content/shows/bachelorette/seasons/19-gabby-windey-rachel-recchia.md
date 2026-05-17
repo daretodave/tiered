@@ -3,7 +3,7 @@ show: bachelorette
 number: 19
 title: Gabby Windey & Rachel Recchia
 display_title: "Gabby Windey <em>&</em> Rachel Recchia"
-canonical_position: 10
+canonical_position: 11
 premiere_date: 2022-07-11
 ep_count: 12
 location: Agoura Hills, California

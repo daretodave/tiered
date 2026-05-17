@@ -2,7 +2,7 @@
 show: bachelorette
 number: 18
 title: Michelle Young
-canonical_position: 13
+canonical_position: 14
 premiere_date: 2021-10-19
 ep_count: 11
 location: Indian Wells, California

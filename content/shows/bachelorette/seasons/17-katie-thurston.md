@@ -2,7 +2,7 @@
 show: bachelorette
 number: 17
 title: Katie Thurston
-canonical_position: 17
+canonical_position: 18
 premiere_date: 2021-06-07
 ep_count: 10
 location: Santa Ana Pueblo, New Mexico

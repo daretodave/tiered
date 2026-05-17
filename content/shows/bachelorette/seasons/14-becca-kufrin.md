@@ -2,7 +2,7 @@
 show: bachelorette
 number: 14
 title: Becca Kufrin
-canonical_position: 9
+canonical_position: 10
 premiere_date: 2018-05-28
 ep_count: 11
 location: Agoura Hills, California

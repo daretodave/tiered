@@ -2,7 +2,7 @@
 show: bachelorette
 number: 20
 title: Charity Lawson
-canonical_position: 15
+canonical_position: 16
 premiere_date: 2023-06-26
 ep_count: 9
 location: Agoura Hills, California

@@ -2,7 +2,7 @@
 show: bachelorette
 number: 9
 title: Desiree Hartsock
-canonical_position: 16
+canonical_position: 17
 premiere_date: 2013-05-27
 ep_count: 11
 location: Agoura Hills, California
