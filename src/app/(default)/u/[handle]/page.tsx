@@ -1,65 +1,151 @@
+import { cache } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { auth0 } from '@/lib/auth0'
-import { buildMetadata } from '@/lib/seo'
+import { getSeason, getShow } from '@/content'
+import {
+  ProfileComments,
+  ProfileEmpty,
+  ProfileHeader,
+  ProfileStats,
+} from '@/components/profile'
+import type { ProfileCommentView, ProfileView } from '@/components/profile'
+import { formatWhen } from '@/lib/comments/thread'
+import {
+  formatMemberSince,
+  isPopulatedProfile,
+  shapeProfileComment,
+} from '@/lib/profile/context'
+import { buildMetadata, canonicalUrl, jsonLdScriptProps } from '@/lib/seo'
+import { getProfileActivity } from '@/lib/supabase/server'
 
 type Params = { handle: string }
 
 export const dynamic = 'force-dynamic'
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+// Shared by generateMetadata + the page so the profile_activity
+// RPC + recent-comments read run once per request, not twice.
+const loadProfile = cache(async (handle: string): Promise<ProfileView | null> => {
+  const activity = await getProfileActivity({ handle })
+  if (!activity) return null
+
+  const comments: ProfileCommentView[] = activity.recentComments.map((raw) => {
+    const shaped = shapeProfileComment(raw)
+    let context: ProfileCommentView['context'] = null
+    if (shaped.season) {
+      const show = getShow(shaped.season.showSlug)
+      const season = getSeason(shaped.season.showSlug, shaped.season.seasonNumber)
+      if (show && season) {
+        context = {
+          label: `${show.name} · Season ${shaped.season.seasonNumber}`,
+          href: `/shows/${show.slug}/season/${season.slug}`,
+        }
+      }
+    }
+    return {
+      id: shaped.id,
+      excerpt: shaped.excerpt,
+      when: formatWhen(shaped.createdAt),
+      context,
+    }
+  })
+
+  const populated = isPopulatedProfile({
+    publishedCommentCount: activity.publishedCommentCount,
+    votedSeasonCount: activity.votedSeasonCount,
+  })
+
+  return {
+    handle: activity.handle,
+    displayName: activity.displayName,
+    memberSince: formatMemberSince(activity.createdAt),
+    publishedCommentCount: activity.publishedCommentCount,
+    votedSeasonCount: activity.votedSeasonCount,
+    votedShowCount: activity.votedShowCount,
+    comments,
+    populated,
+  }
+})
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params
+}): Promise<Metadata> {
+  const handle = params.handle
+  const profile = await loadProfile(handle)
+  if (!profile) {
+    return buildMetadata({
+      title: `@${handle}`,
+      description: 'Profile not found on tiered.tv.',
+      path: `/u/${handle}`,
+      noIndex: true,
+    })
+  }
+  // Empty profiles stay out of the index (no thin-content pages);
+  // populated profiles are indexable.
   return buildMetadata({
-    title: `@${params.handle}`,
-    description: `Profile of @${params.handle} on tiered.`,
-    path: `/u/${params.handle}`,
-    noIndex: true,
+    title: `@${profile.handle}`,
+    description: profile.populated
+      ? `${profile.handle} on tiered.tv — published comments and the seasons they've voted on. No spoilers.`
+      : `${profile.handle} on tiered.tv.`,
+    path: `/u/${profile.handle}`,
+    noIndex: !profile.populated,
   })
 }
 
-function handleFromSession(user: Record<string, unknown> | null | undefined): string | null {
-  if (!user) return null
-  const nickname = typeof user['nickname'] === 'string' ? user['nickname'] : null
-  if (nickname) return nickname.replace(/^@+/, '')
-  const email = typeof user['email'] === 'string' ? user['email'] : null
-  if (email) return email.split('@')[0] ?? null
-  const sub = typeof user['sub'] === 'string' ? user['sub'] : null
-  if (sub) return sub.replace(/[^a-z0-9-]/gi, '-').slice(0, 32)
-  return null
-}
+export default async function UserProfilePage({
+  params,
+}: {
+  params: Params
+}) {
+  const profile = await loadProfile(params.handle)
+  // 404 ONLY on a genuinely-unknown handle. A real member who
+  // isn't the signed-in viewer must render for any visitor.
+  if (!profile) notFound()
 
-export default async function UserProfilePage({ params }: { params: Params }) {
-  const handle = params.handle?.toLowerCase()
-  if (!handle) notFound()
-
-  const session = await auth0.getSession()
-  const sessionHandle = handleFromSession(session?.user as Record<string, unknown> | undefined)
-  const isOwn = sessionHandle ? sessionHandle.toLowerCase() === handle : false
-
-  // Pre-real-users-table: only the signed-in viewer's own profile
-  // renders. Other handles 404 until phase 12 lights up real
-  // users table writes.
-  if (!isOwn && !session) notFound()
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: canonicalUrl(`/u/${profile.handle}`),
+    mainEntity: {
+      '@type': 'Person',
+      name: profile.displayName ?? `@${profile.handle}`,
+      identifier: profile.handle,
+      url: canonicalUrl(`/u/${profile.handle}`),
+    },
+  }
 
   return (
     <section
-      className="mx-auto flex max-w-3xl flex-col gap-6 px-6 py-16 md:py-24"
+      className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-16 md:py-24"
       data-testid="user-profile"
-      data-handle={handle}
+      data-handle={profile.handle}
+      data-populated={profile.populated ? 'true' : 'false'}
     >
-      <header className="flex flex-col gap-2">
-        <h1 className="font-serif text-4xl leading-tight text-ink-0 md:text-5xl">
-          @{handle}
-        </h1>
-        <p className="text-ink-2">
-          {isOwn
-            ? 'Your public profile. Activity surfaces here as you vote and comment.'
-            : 'Public profile. Activity surfaces here as the member votes and comments.'}
-        </p>
-      </header>
+      {profile.populated ? (
+        <script {...jsonLdScriptProps({ id: 'ld-profile', data: ld })} />
+      ) : null}
 
-      <p className="text-ink-2" data-testid="user-profile-status">
-        {session ? 'Signed in.' : 'Sign in to see your activity here.'}
-      </p>
+      <ProfileHeader
+        handle={profile.handle}
+        displayName={profile.displayName}
+        memberSince={profile.memberSince}
+      />
+
+      <ProfileStats
+        publishedCommentCount={profile.publishedCommentCount}
+        votedSeasonCount={profile.votedSeasonCount}
+        votedShowCount={profile.votedShowCount}
+      />
+
+      {profile.populated ? (
+        <div className="flex flex-col gap-4">
+          <h2 className="font-serif text-xl text-ink-0">Recent comments</h2>
+          <ProfileComments comments={profile.comments} />
+        </div>
+      ) : (
+        <ProfileEmpty />
+      )}
     </section>
   )
 }
