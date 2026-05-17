@@ -21,6 +21,7 @@
 
 - [ ] [HIGH] show-home season grid sorts by season number, not canon rank — label reads "Sorted by Editor's Canon" but the actual order on `/shows/[show]` is season order. `src/app/shows/[show]/page.tsx:72` does `[...seasons].sort((a, b) => a.number - b.number)`; should sort by `canonical_position` (ascending; missing values fall back to end, tie-break on season number). Cards already render `rank={season.canonical_position ?? season.number}`, so cards display correct rank but in wrong sequence. Fix touches the one sort + a unit test asserting the order matches canon. (category: bug, source: user-jot, score: 5.6) — oversight 2026-05-14
 - [ ] [MED] season-page comment thread renders empty state — read path not wired to Supabase (#24) (category: bug, source: triage, score: 4.2) — cf69494
+- [ ] [HIGH] auth-chrome gap — Header resolves auth server-side but `/` is SSG (Phase 27) so it renders permanently signed-out; real fix is Phase 36 (auth-state island via GET /api/auth/me). `authed-example.spec.ts:30` is `test.fixme()`'d as a deterministic stopgap so the gap is declared rather than intermittently red-gating the cloud loop; un-fixme when Phase 36 ships. Resequencing 36 ahead of 26/32/34/35 is a user/oversight call. (#54) (category: bug, source: triage, score: 5.4) — cloud 2026-05-17
 
 ## Done
 
