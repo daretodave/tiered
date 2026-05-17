@@ -1,3 +1,6 @@
+import { existsSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
@@ -12,20 +15,19 @@ const showSlugs = canonicalUrls
   .filter((u) => u.pattern === '/shows/[show]' && u.show)
   .map((u) => u.show as string)
 
-const SHOWS_WITH_CANON = new Set([
-  'survivor',
-  'top-chef',
-  'dragrace',
-  'amazing-race',
-  'the-challenge',
-  'bachelor',
-  'big-brother',
-  'bachelorette',
-  'project-runway',
-  'bake-off',
-  'love-island-uk',
-  'love-island-us',
-])
+// Derived from the filesystem, not hardcoded: the phase-26 / 31b
+// canon drain adds a canon.md per show one tick at a time, so a
+// static list goes stale every drain tick. A show "has a canon"
+// iff content/shows/<slug>/canon.md exists.
+const CONTENT_SHOWS_DIR = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  '../../../content/shows',
+)
+const SHOWS_WITH_CANON = new Set(
+  showSlugs.filter((slug) =>
+    existsSync(resolve(CONTENT_SHOWS_DIR, slug, 'canon.md')),
+  ),
+)
 
 const canonRedirects = rankingRedirects.filter((r) =>
   r.fromPath.endsWith('/canon'),

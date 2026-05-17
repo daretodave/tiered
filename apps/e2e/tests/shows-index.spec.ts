@@ -14,12 +14,22 @@ test.describe('/shows tier-list', () => {
     await expect(page.getByTestId('shows-stat-seasons')).toBeVisible()
     await expect(page.getByTestId('shows-stat-revised')).toBeVisible()
 
+    // Empty tiers render nothing (TierSection returns null). The
+    // phase-26 canon drain promotes shows out of B, so B can be
+    // empty once it has drained — the rendered sections must still
+    // be an in-order subsequence of S → A → B, S and A always
+    // populated by the launch catalog.
     const tierSections = page.getByTestId('tier-section')
-    await expect(tierSections).toHaveCount(3)
     const tierOrder = await tierSections.evaluateAll((els) =>
       els.map((el) => (el as HTMLElement).dataset['tier']),
     )
-    expect(tierOrder).toEqual(['S', 'A', 'B'])
+    expect(tierOrder.length).toBeGreaterThanOrEqual(2)
+    expect(tierOrder).toContain('S')
+    expect(tierOrder).toContain('A')
+    const canonical = ['S', 'A', 'B']
+    expect(tierOrder).toEqual(
+      canonical.filter((t) => tierOrder.includes(t)),
+    )
 
     await expect(page.getByTestId('how-tiers-move')).toBeVisible()
   })
@@ -41,13 +51,19 @@ test.describe('/shows tier-list', () => {
   }) => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
 
+    // B may have fully drained (phase 26 promotes shows out of B as
+    // their canon matures). When a B section exists, every tile in
+    // it must carry the in-progress status pill; when B is empty the
+    // section is absent and there is nothing to assert there. The
+    // S-tier no-pill invariant below always holds.
     const bSection = page.getByTestId('tier-section').filter({
       has: page.locator('[data-tier="B"]'),
     })
-    const bPills = bSection.getByTestId('show-tile-status')
-    const bCount = await bPills.count()
-    expect(bCount).toBeGreaterThan(0)
-    await expect(bPills.first()).toBeVisible()
+    if ((await bSection.count()) > 0) {
+      const bPills = bSection.getByTestId('show-tile-status')
+      expect(await bPills.count()).toBeGreaterThan(0)
+      await expect(bPills.first()).toBeVisible()
+    }
 
     const sSection = page.getByTestId('tier-section').filter({
       has: page.locator('[data-tier="S"]'),
