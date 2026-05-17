@@ -1,4 +1,4 @@
-import { getAllSeasons, getAllShows, getAllThemes, getFeaturedShow } from '@/content'
+import { getAllShows, getAllThemes, getFeaturedShow } from '@/content'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeShowGrid } from '@/components/home/HomeShowGrid'
 import { HomeMoreShows } from '@/components/home/HomeMoreShows'
@@ -42,24 +42,14 @@ export default function HomePage() {
 
       <HomeShowGrid totalShows={allShows.length}>
         {featuredShows.map((show) => (
-          <ShowTile
-            key={show.slug}
-            show={show}
-            seasonCount={getAllSeasons(show.slug).length}
-            variant="featured"
-          />
+          <ShowTile key={show.slug} show={show} variant="featured" />
         ))}
       </HomeShowGrid>
 
       {compactShows.length > 0 ? (
         <HomeMoreShows count={compactShows.length}>
           {compactShows.map((show) => (
-            <ShowTile
-              key={show.slug}
-              show={show}
-              seasonCount={getAllSeasons(show.slug).length}
-              variant="compact"
-            />
+            <ShowTile key={show.slug} show={show} variant="compact" />
           ))}
         </HomeMoreShows>
       ) : null}
