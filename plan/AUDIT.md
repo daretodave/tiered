@@ -19,7 +19,7 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
-_(none — both Phase-36-dependent rows resolved; see Done.)_
+- [ ] [HIGH] season-page vote UX leaks Bayesian-prior internals — optimistic update shows `0.2`/`-0.55` blips before settling, "0.2 votes" on first visit, no voted/unvoting affordance, no graceful load-in, negative-direction phrasing is confusing (#64) (category: bug, source: triage, score: 3.2) — 73ca4e4
 
 ## Done
 
