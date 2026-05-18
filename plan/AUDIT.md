@@ -25,6 +25,9 @@ _(empty — all findings addressed)_
 
 <!-- Same format with [x] and the commit-hash that addressed it -->
 
+- [x] [LOW] src/lib/seo.ts not under the §5a colocated `__tests__/` path — every page's `<head>` (canonical, OG, Twitter, robots, RSS alternates) + all five JSON-LD shapes derive from this pure helper; it had a sibling `src/lib/seo.test.ts` rather than the `src/lib/__tests__/seo.test.ts` convention the rest of `src/lib` uses (#73) (category: tests, source: self, score: 6.3)
+  - issue: #73
+  - 807d0da: consolidated into `src/lib/__tests__/seo.test.ts` as a strict superset (every prior case retained) + new edge coverage: multi-trailing-slash collapse, query-internal-slash not stripped, ItemList url-vs-path precedence across all three entry forms, exact whole-object `.toEqual` locks per buildJsonLd shape, `not.toHaveProperty` omit-when-absent assertions. Misplaced duplicate removed. Verify green (leg1 121 test files + 33 script tests + content:check, leg2 build, leg3 1300 e2e). GitHub #73 closed by this commit.
 - [x] [LOW] SearchHost ships with no colocated test — standing rule §5a gap; mounted once per layout so it renders on the highest-traffic surface (every page), yet every sibling in `src/components/search/` (SearchOverlay/SearchTrigger/highlight/scoring) is tested while the host that owns the overlay open/close state is not — untested logic: cmd+K/ctrl+K keydown toggle with `preventDefault`, `SEARCH_OPEN_EVENT` window-event open, `onClose` close, listener cleanup on unmount (#71) (category: tests, source: self, score: 4.8)
   - issue: #71
   - added `src/components/search/__tests__/SearchHost.test.tsx` (7 tests: closed-by-default, cmd+K toggle + `defaultPrevented`, ctrl+K toggle, bare-k ignored, `dispatchSearchOpen` opens + idempotent re-fire, `onClose` closes, both listeners removed on unmount). SearchOverlay mocked to surface `open`/`onClose`. Verify green (unit / build / 1300 e2e). GitHub #71 closed by this commit.
