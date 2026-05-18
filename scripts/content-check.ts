@@ -34,6 +34,7 @@ export function collectFailures(strict = false): Failure[] {
     const canon = getCanon(show.slug)
     const seasons = getAllSeasons(show.slug)
     const seasonNumbers = new Set(seasons.map((s) => s.number))
+    const seasonTitleByNumber = new Map(seasons.map((s) => [s.number, s.title]))
     const seasonBySlug = new Map<string, string>()
 
     for (const season of seasons) {
@@ -69,6 +70,29 @@ export function collectFailures(strict = false): Failure[] {
           failures.push({
             file: `content/shows/${show.slug}/canon.md`,
             message: `canon entry #${entry.rank} ("${entry.title}") prose states placement ${spoken}, not ${entry.rank} — rebase the placement ordinal to the slot`,
+          })
+        }
+
+        // The canon heading is the season's display name on the
+        // canon pane; the community pane renders the season
+        // frontmatter title. When the heading is a clean prefix of
+        // the season title that drops a separator-led subtitle
+        // (e.g. "Micronesia" vs "Micronesia: Fans vs. Favorites"),
+        // a reader sees the same season under two names on one page
+        // (critique 2026-05-16). Editorial headings that *rename*
+        // or *add* a disambiguating suffix (e.g. "Brad Womack
+        // (first run)") are not prefixes-with-dropped-subtitle and
+        // stay legal.
+        const seasonTitle = seasonTitleByNumber.get(entry.season)
+        if (
+          seasonTitle != null &&
+          seasonTitle !== entry.title &&
+          seasonTitle.startsWith(entry.title) &&
+          /^\s*[:—–-]\s/.test(seasonTitle.slice(entry.title.length))
+        ) {
+          failures.push({
+            file: `content/shows/${show.slug}/canon.md`,
+            message: `canon entry #${entry.rank} heading "${entry.title}" drops the subtitle of season ${entry.season} ("${seasonTitle}") — use the full season title so the canon and community panes name it identically`,
           })
         }
       }

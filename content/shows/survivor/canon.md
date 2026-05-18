@@ -83,7 +83,7 @@ way television barely does anymore. The case for Borneo is
 simple: every season since 2000 is a refinement of the
 experiment that ran here first.
 
-## 16. Micronesia
+## 16. Micronesia: Fans vs. Favorites
 
 tag: The returnee experiment the format had been reaching for.
 slot_argument: Ten favorites, ten fans, a clean premise, and a post-merge stretch every modern returnee season has been trying to imitate ever since. Micronesia is what the format looks like at full strength.

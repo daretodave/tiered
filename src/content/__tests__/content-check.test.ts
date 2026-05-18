@@ -333,6 +333,78 @@ describe('content-check — canon placement ordinal (#63)', () => {
   })
 })
 
+// A season whose frontmatter `title` carries a separator-led
+// subtitle, paired with a canon heading the test controls — used
+// to exercise the canon-heading-vs-season-title invariant
+// (critique 2026-05-16: "Micronesia" vs "Micronesia: Fans vs.
+// Favorites" naming the same season twice on one page).
+function makeSeasonWithTitle(
+  root: string,
+  show: string,
+  n: number,
+  slug: string,
+  title: string,
+): void {
+  const file = path.join(
+    root,
+    'shows',
+    show,
+    'seasons',
+    `${String(n).padStart(2, '0')}-${slug}.md`,
+  )
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---\nshow: ${show}\nnumber: ${n}\ntitle: "${title}"\n---\n\n${sixtyWords}\n`,
+  )
+}
+
+describe('content-check — canon heading vs season title (critique 2026-05-16)', () => {
+  let tmp: string
+  const nameMsg = (fs: ReturnType<typeof collectFailures>) =>
+    fs.filter((f) => /drops the subtitle/.test(f.message))
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-name-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('fails (even in lax) when the canon heading drops a separator-led subtitle', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 16, 'micronesia', 'Micronesia: Fans vs. Favorites')
+    makeCanon(tmp, 'alpha', [{ rank: 1, season: 16, title: 'Micronesia' }])
+    const problems = nameMsg(collectFailures(false))
+    expect(problems.some((f) => /season 16/.test(f.message))).toBe(true)
+  })
+
+  it('passes when the canon heading is the full season title', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 16, 'micronesia', 'Micronesia: Fans vs. Favorites')
+    makeCanon(tmp, 'alpha', [
+      { rank: 1, season: 16, title: 'Micronesia: Fans vs. Favorites' },
+    ])
+    expect(nameMsg(collectFailures(false))).toEqual([])
+  })
+
+  it('allows an editorial heading that adds a disambiguating suffix', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 11, 'brad-womack-1', 'Brad Womack')
+    makeSeasonWithTitle(tmp, 'alpha', 15, 'brad-womack-2', 'Brad Womack')
+    makeCanon(tmp, 'alpha', [
+      { rank: 1, season: 11, title: 'Brad Womack (first run)' },
+      { rank: 2, season: 15, title: 'Brad Womack (return run)' },
+    ])
+    expect(nameMsg(collectFailures(false))).toEqual([])
+  })
+})
+
 describe('content-check — era-band coverage (phase 34)', () => {
   let tmp: string
   const eraMsg = (fs: ReturnType<typeof collectFailures>) =>
