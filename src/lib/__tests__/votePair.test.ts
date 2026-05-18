@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { LOCK_MS, initialState, isDisabled, nextValue, reduce } from './votePair'
+import { LOCK_MS, initialState, isDisabled, nextValue, reduce } from '../votePair'
 
 describe('votePair.initialState', () => {
   it('starts idle with the given count and value 0 by default', () => {
@@ -10,6 +10,17 @@ describe('votePair.initialState', () => {
   it('honors an explicit initialValue', () => {
     const s = initialState({ initialCount: 5, initialValue: 1 })
     expect(s.value).toBe(1)
+  })
+
+  it('produces the exact full state shape (userActed false on mount)', () => {
+    expect(initialState({ initialCount: 3, initialValue: -1 })).toEqual({
+      phase: 'idle',
+      value: -1,
+      count: 3,
+      lockedUntil: null,
+      flash: null,
+      userActed: false,
+    })
   })
 })
 
@@ -174,5 +185,116 @@ describe('votePair.isDisabled', () => {
       now: 100,
     })
     expect(isDisabled(locked, 100 + LOCK_MS)).toBe(false)
+  })
+})
+
+// --- Edge coverage added on the §5a consolidation (#78) ---
+// Every case above is retained verbatim from the prior sibling
+// src/lib/votePair.test.ts. The block below hardens branches the
+// sibling left implicit: the down/swap flash+lock+userActed path,
+// the negative-direction retract/swap symmetry, hydrate count-only
+// updates, reconcile's same-reference short-circuit and its
+// idle-state (no in-flight write) path, and the exact lock
+// boundary on isDisabled / tick.
+
+describe('votePair.reduce — click (down/swap lock + userActed symmetry)', () => {
+  it('a down click from neutral also locks, flashes down, and marks userActed', () => {
+    const s = reduce(initialState({ initialCount: 4 }), { type: 'click', direction: 'down', now: 50 })
+    expect(s.phase).toBe('locked')
+    expect(s.lockedUntil).toBe(50 + LOCK_MS)
+    expect(s.flash).toBe('down')
+    expect(s.userActed).toBe(true)
+  })
+
+  it('a fresh up click marks userActed true', () => {
+    const s = reduce(initialState({ initialCount: 0 }), { type: 'click', direction: 'up', now: 0 })
+    expect(s.userActed).toBe(true)
+  })
+
+  it('re-clicking down from -1 retracts to 0 and raises count by 1', () => {
+    const after = reduce(initialState({ initialCount: 10, initialValue: -1 }), {
+      type: 'click',
+      direction: 'down',
+      now: 100,
+    })
+    expect(after.value).toBe(0)
+    expect(after.count).toBe(11)
+  })
+
+  it('clicking up from -1 swaps to +1 and shifts count by 2', () => {
+    const after = reduce(initialState({ initialCount: 10, initialValue: -1 }), {
+      type: 'click',
+      direction: 'up',
+      now: 100,
+    })
+    expect(after.value).toBe(1)
+    expect(after.count).toBe(12)
+    expect(after.flash).toBe('up')
+  })
+})
+
+describe('votePair.reduce — hydrate (count-only / value-only deltas)', () => {
+  it('applies a server snapshot that differs only in count', () => {
+    const s = initialState({ initialCount: 5, initialValue: 1 })
+    const after = reduce(s, { type: 'hydrate', value: 1, count: 9 })
+    expect(after).not.toBe(s)
+    expect(after.value).toBe(1)
+    expect(after.count).toBe(9)
+  })
+
+  it('applies a negative server snapshot before the viewer acts', () => {
+    const after = reduce(initialState({ initialCount: 0 }), {
+      type: 'hydrate',
+      value: -1,
+      count: -3,
+    })
+    expect(after.value).toBe(-1)
+    expect(after.count).toBe(-3)
+    expect(after.userActed).toBe(false)
+  })
+})
+
+describe('votePair.reduce — reconcile (short-circuit + idle path)', () => {
+  it('returns the same state reference when the server snapshot already matches', () => {
+    const clicked = reduce(initialState({ initialCount: 0 }), {
+      type: 'click',
+      direction: 'up',
+      now: 100,
+    })
+    // clicked is value 1 / count 1 — server agrees exactly.
+    expect(reduce(clicked, { type: 'reconcile', value: 1, count: 1 })).toBe(clicked)
+  })
+
+  it('snaps an idle (no in-flight write) state to server truth without inventing a lock', () => {
+    const idle = initialState({ initialCount: 2 })
+    const reconciled = reduce(idle, { type: 'reconcile', value: -1, count: -0.7 })
+    expect(reconciled.value).toBe(-1)
+    expect(reconciled.count).toBe(-0.7)
+    expect(reconciled.phase).toBe('idle')
+    expect(reconciled.lockedUntil).toBeNull()
+    expect(reconciled.flash).toBeNull()
+  })
+})
+
+describe('votePair lock-boundary exactness', () => {
+  it('isDisabled is true one ms before the lock elapses and false at the boundary', () => {
+    const locked = reduce(initialState({ initialCount: 0 }), {
+      type: 'click',
+      direction: 'up',
+      now: 100,
+    })
+    expect(isDisabled(locked, 100 + LOCK_MS - 1)).toBe(true)
+    expect(isDisabled(locked, 100 + LOCK_MS)).toBe(false)
+  })
+
+  it('a tick exactly at lockedUntil unlocks; one ms earlier does not', () => {
+    const locked = reduce(initialState({ initialCount: 0 }), {
+      type: 'click',
+      direction: 'up',
+      now: 100,
+    })
+    expect(reduce(locked, { type: 'tick', now: 100 + LOCK_MS - 1 })).toBe(locked)
+    const unlocked = reduce(locked, { type: 'tick', now: 100 + LOCK_MS })
+    expect(unlocked.phase).toBe('idle')
   })
 })
