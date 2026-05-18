@@ -871,3 +871,39 @@ season's reputation has stayed mixed. The canon places
 Caramoan forty-seventh because the premise revival is the
 hardest editorial weight to carry, and the season carries it
 honestly rather than well.
+
+## 48. Survivor 48
+
+tag: A recent new-era run, provisionally placed.
+slot_argument: By season 48 the 26-day format is fully settled grammar. The canon revisits its tail less often, and a brand-new, not-yet-replayed run sits here provisionally pending the next post-finale pass.
+community_rank_hint: rank=48 delta=0 sentiment=hold
+
+Survivor 48 is the new era running as a known quantity. By the
+spring of 2025 the 26-day format is no longer the story — three
+tribes of new players on the Mamanucas, the compressed clock
+and its journeys and advantages all default grammar by now. The
+season's texture follows the casting bench it brings rather than
+any structural argument. The canon places it forty-eighth and
+treats the slot as provisional: this is one of the show's most
+recent runs, fresh enough that it has not had a kitchen-table
+replay yet. The order revisits its tail less often than its top,
+and a season this new earns a settled standing only after the
+next post-finale pass.
+
+## 49. Survivor 49
+
+tag: The newest entry, provisionally placed.
+slot_argument: The most recent run, on the fully settled 26-day format. The canon revisits its tail less often; a brand-new, not-yet-replayed season sits here provisionally pending the next post-finale pass.
+community_rank_hint: rank=49 delta=0 sentiment=hold
+
+Survivor 49 is the newest entry the canon has to weigh. By the
+fall of 2025 the 26-day format is fully settled — three tribes
+of new players on the Mamanucas, the compressed clock and its
+journeys and advantages all default grammar at this point. The
+season's texture follows the casting bench it brings rather than
+any structural argument the format still needs to make. The
+canon places it forty-ninth and treats the slot as provisional:
+this is the show's most recent run, fresh enough that no replay
+read exists yet. The order revisits its tail less often than its
+top, and a season this new earns a settled standing only after
+the next post-finale pass.
