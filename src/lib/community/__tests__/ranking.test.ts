@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import type { CanonFile, Season, Show } from '@/content'
 import {
+  VOTE_THRESHOLD,
   type VoteAggregateRow,
   buildLiveRanking,
-} from './ranking'
+} from '../ranking'
 
 function fakeShow(slug: string): Show {
   return {
@@ -160,5 +161,128 @@ describe('buildLiveRanking', () => {
     expect(result.source).toBe('canon')
     expect(result.entries.map((e) => e.season.number)).toEqual([28, 1, 20, 45])
     expect(result.entries.every((e) => e.score === 0)).toBe(true)
+  })
+
+  // --- edge coverage added on the §5a consolidation (#79) ---
+
+  it('derives the tag from the premiere year when premiere_date is set', () => {
+    const dated = [
+      fakeSeason(1, { premiere_date: '2000-05-31' }),
+      fakeSeason(20),
+    ]
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons: dated,
+      canon: null,
+      rows: [],
+      votersThisWeek: 0,
+      baseline: [],
+      lastRecomputeAt: null,
+      version: null,
+    })
+    // canon null + empty seasons-aside → 'seasons' source, air order
+    expect(result.source).toBe('seasons')
+    const s1 = result.entries.find((e) => e.season.number === 1)
+    const s20 = result.entries.find((e) => e.season.number === 20)
+    // dated season → UTC year string; undated → "Season N · <show>"
+    expect(s1?.tag).toBe('2000')
+    expect(s20?.tag).toBe('Season 20 · survivor')
+  })
+
+  it('falls back to air-order seasons source when canon is null below threshold', () => {
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons,
+      canon: null,
+      rows: [row(45, 12, 1)],
+      votersThisWeek: 1, // below threshold
+      baseline: [],
+      lastRecomputeAt: null,
+      version: null,
+    })
+    expect(result.source).toBe('seasons')
+    // air order by season number, not canon order
+    expect(result.entries.map((e) => e.season.number)).toEqual([1, 20, 28, 45])
+    // the voted season still gets its counter
+    expect(result.entries.find((e) => e.season.number === 45)?.score).toBe(12)
+  })
+
+  it('annotates trend and passes version/lastRecomputeAt through on the below-threshold path', () => {
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons,
+      canon,
+      rows: [row(28, 7, 1)],
+      votersThisWeek: 2, // below threshold → mirror branch
+      baseline: [
+        { seasonNumber: 28, rank: 3 }, // canon-mirror puts 28 at rank 1 → +2
+      ],
+      lastRecomputeAt: '2026-05-01T12:00:00.000Z',
+      version: 42,
+    })
+    expect(result.source).toBe('canon')
+    // mirror branch must still carry the baseline trend + passthrough
+    const s28 = result.entries.find((e) => e.season.number === 28)
+    expect(s28?.rank).toBe(1)
+    expect(s28?.trend).toBe(2)
+    expect(result.version).toBe(42)
+    expect(result.lastRecomputeAt).toBe('2026-05-01T12:00:00.000Z')
+  })
+
+  it('treats exactly VOTE_THRESHOLD voters as over the threshold (>=, not >)', () => {
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons,
+      canon,
+      rows: [row(45, 99, 1), row(20, 50, 2)],
+      votersThisWeek: VOTE_THRESHOLD, // exactly 5
+      baseline: [],
+      lastRecomputeAt: null,
+      version: null,
+    })
+    expect(VOTE_THRESHOLD).toBe(5)
+    expect(result.source).toBe('votes')
+    // live order: 45, 20 — then canon remainder 28, 1
+    expect(result.entries.map((e) => e.season.number)).toEqual([45, 20, 28, 1])
+  })
+
+  it('dedupes a season that appears twice in the live rows', () => {
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons,
+      canon,
+      // 20 listed twice — the second occurrence must be ignored
+      rows: [row(20, 50, 1), row(20, 999, 2), row(1, 10, 3)],
+      votersThisWeek: 8,
+      baseline: [],
+      lastRecomputeAt: null,
+      version: null,
+    })
+    expect(result.source).toBe('votes')
+    expect(result.entries.map((e) => e.season.number)).toEqual([20, 1, 28, 45])
+    expect(result.entries.map((e) => e.rank)).toEqual([1, 2, 3, 4])
+    // placement dedupes on first occurrence (rank 1), but the per-row
+    // counter map is last-write-wins, so the score reflects the
+    // duplicate (999) — assert the real, deterministic behavior.
+    expect(result.entries.find((e) => e.season.number === 20)?.score).toBe(999)
+  })
+
+  it('skips a live row whose season is not in the season list', () => {
+    const result = buildLiveRanking({
+      show: fakeShow('survivor'),
+      seasons,
+      canon,
+      // 999 is not a real season — must be dropped, ranks stay contiguous
+      rows: [row(999, 80, 1), row(20, 50, 2)],
+      votersThisWeek: 8,
+      baseline: [],
+      lastRecomputeAt: null,
+      version: null,
+    })
+    expect(result.source).toBe('votes')
+    // 20 placed live, then canon remainder 28, 1, then uncanoned 45
+    expect(result.entries.map((e) => e.season.number)).toEqual([20, 28, 1, 45])
+    expect(result.entries.map((e) => e.rank)).toEqual([1, 2, 3, 4])
+    expect(result.entries.some((e) => e.season.number === 999)).toBe(false)
   })
 })
