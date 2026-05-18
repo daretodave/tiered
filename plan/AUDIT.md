@@ -19,7 +19,7 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
-_(no pending rows)_
+- [ ] [MED] Survivor missing seasons 48 & 49 — write season blurbs + canon placement, bump `seasons` 47→49 (#65) (category: content-gaps, source: triage, score: 4.8) — filed this commit
 
 ## Done
 
