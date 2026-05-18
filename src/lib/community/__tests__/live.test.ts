@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Season } from '@/content'
-import type { CommunityRankRow } from './ranking'
+import type { CommunityRankRow } from '../ranking'
 import {
   communitySignalForSeason,
   formatLastRecompute,
@@ -12,8 +12,8 @@ import {
   SHIFT_TIME_LABEL,
   trendSentiment,
   weeklyQuestionMeta,
-} from './live'
-import type { CommunityMover } from './live'
+} from '../live'
+import type { CommunityMover } from '../live'
 
 function season(number: number): Season {
   return {
@@ -48,6 +48,11 @@ describe('trendSentiment', () => {
     expect(trendSentiment(0)).toBe('hold')
     expect(trendSentiment(null)).toBe('hold')
   })
+
+  it('treats the +/-1 boundary as a directional move, not a hold', () => {
+    expect(trendSentiment(1)).toBe('warm-up')
+    expect(trendSentiment(-1)).toBe('warm-down')
+  })
 })
 
 describe('pickMovers', () => {
@@ -81,6 +86,30 @@ describe('pickMovers', () => {
     expect(movers).toHaveLength(3)
     expect(movers.map((m) => m.delta)).toEqual([9, 8, 7])
   })
+
+  it('defaults to a 4-mover limit when none is passed', () => {
+    const movers = pickMovers([
+      row(1, 1, 9),
+      row(2, 2, 8),
+      row(3, 3, 7),
+      row(4, 4, 6),
+      row(5, 5, 5),
+    ])
+    expect(movers).toHaveLength(4)
+    expect(movers.map((m) => m.delta)).toEqual([9, 8, 7, 6])
+  })
+
+  it('returns an empty list when nothing moved', () => {
+    expect(pickMovers([row(1, 1, 0), row(2, 2, null)])).toEqual([])
+    expect(pickMovers([])).toEqual([])
+  })
+
+  it('reconstructs prevRank for a faller (rank + negative delta) and tags the sentiment', () => {
+    const [faller] = pickMovers([row(8, 8, -5)])
+    expect(faller!.prevRank).toBe(3)
+    expect(faller!.delta).toBe(-5)
+    expect(faller!.sentiment).toBe('warm-down')
+  })
 })
 
 describe('formatLastRecompute', () => {
@@ -95,12 +124,28 @@ describe('formatLastRecompute', () => {
     expect(formatLastRecompute('2026-05-15T12:00:00Z', now)).toBe('2d ago')
     expect(formatLastRecompute('2026-05-16T12:00:00Z', now)).toBe('1d ago')
   })
+
+  it('treats an unparseable timestamp as just now (NaN guard)', () => {
+    expect(formatLastRecompute('not-a-date', now)).toBe('just now')
+  })
+
+  it('drops the trailing minutes at an exact hour boundary', () => {
+    expect(formatLastRecompute('2026-05-17T11:00:00Z', now)).toBe('1h ago')
+  })
+
+  it('renders the last whole minute before the hour rolls over', () => {
+    expect(formatLastRecompute('2026-05-17T11:01:00Z', now)).toBe('59m ago')
+  })
 })
 
 describe('formatVersion', () => {
   it('formats or marks pending', () => {
     expect(formatVersion(null)).toBe('pending')
     expect(formatVersion(42)).toBe('v42')
+  })
+
+  it('renders v0 — zero is a real version, not pending', () => {
+    expect(formatVersion(0)).toBe('v0')
   })
 })
 
@@ -133,6 +178,12 @@ describe('weeklyQuestionMeta', () => {
     expect(weeklyQuestionMeta(0)).toBe('votes pending · closes Thursday')
     expect(weeklyQuestionMeta(-1)).toBe('votes pending · closes Thursday')
   })
+
+  it('groups large tallies with locale separators', () => {
+    expect(weeklyQuestionMeta(1234567)).toBe(
+      '1,234,567 voted · closes Thursday',
+    )
+  })
 })
 
 describe('communitySignalForSeason', () => {
@@ -160,6 +211,14 @@ describe('communitySignalForSeason', () => {
     })
   })
 
+  it('treats an explicit zero trend (not just null) as hold', () => {
+    expect(communitySignalForSeason(7, [row(3, 7, 0)], 'votes', null)).toEqual({
+      rank: 3,
+      delta: 0,
+      sentiment: 'hold',
+    })
+  })
+
   it('falls back to the static hint below the vote threshold', () => {
     expect(communitySignalForSeason(20, live, 'canon', hint)).toEqual(hint)
     expect(communitySignalForSeason(20, live, 'seasons', hint)).toEqual(hint)
@@ -167,6 +226,10 @@ describe('communitySignalForSeason', () => {
 
   it('falls back to the hint when the season is absent from the live ranking', () => {
     expect(communitySignalForSeason(99, live, 'votes', hint)).toEqual(hint)
+  })
+
+  it('falls back to the hint when votes are in but the live ranking is empty', () => {
+    expect(communitySignalForSeason(20, [], 'votes', hint)).toEqual(hint)
   })
 
   it('returns null when neither live data nor a hint exists', () => {
