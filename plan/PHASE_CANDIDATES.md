@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-17 at commit dcf29f2
-> Pass count: 2
+> Last pass: 2026-05-18 at commit a4bfb09
+> Pass count: 3
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,73 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+### 06. `content/calendar.yml` + finale-event detection hook (mechanical half of spec.md:294)
+
+**Score:** 5.5 (impact: 6, ease: 5, +2 multi, +2 cheap-and-bounded, -1.5 needs-user-call boundary)
+**Source pass:** 3
+**Filed:** 2026-05-18
+**Source signals:**
+- `spec.md:294` — "Event triggers (a finale air date in
+  `content/calendar.yml`) prompt `/iterate` to write a
+  'post-finale ranking shift' piece spoiler-free, ship it, and
+  bump that show's canon position if warranted." `content/calendar.yml`
+  does not exist; no loader, no gate, no hook. This is the only
+  spec-promised self-sustaining mechanism never built.
+- `plan/PHASE_CANDIDATES.md` B1 — filed pass 1, re-evaluated
+  pass 2; held below threshold both times *not* because the
+  signal is thin but because the auto-write contract was
+  undefined in skill terms. Two independent prior passes
+  pointing at the same gap.
+- Build-plan full exhaustion: every row in `01_build_plan.md`
+  is `[x]`, including Phase 38 (the last promoted candidate).
+  Per `spec.md` "How self-sustaining works here", the project
+  is now in `/iterate` endgame — but the event-trigger leg of
+  that endgame is structurally absent and no remaining phase
+  owns building it. This is the exact structural argument that
+  promoted candidate #04 → Phase 38: a contracted mechanism the
+  loop will never pick up unless a phase is proposed.
+
+**Why:** B1's blocker was always "what does *auto-write a
+shift piece* mean in skill terms?" — fuzzy editorial semantics.
+This candidate resolves that by **scoping the fuzzy half out**
+and shipping only the mechanical, well-defined half: the
+`content/calendar.yml` schema, a Zod-validated loader, and a
+gate that — when a listed finale date has passed and no shift
+note exists for that season yet — **files a `category:
+content-gaps` row in `plan/AUDIT.md`** ("post-finale shift due
+for <show> S<n>"). That reuses the existing, proven AUDIT →
+`/iterate` / `/ship-content` drain instead of inventing new
+skill semantics. The genuinely undefined parts — what a
+"shift piece" *is* editorially, and whether canon
+`canonical_position` auto-bumps — stay `[needs-user-call]`
+for `/oversight` to define before promotion, per expand hard
+rule 3. Spoiler discipline (P0) applies: a post-finale note
+must never name the winner/elimination — it frames the
+*ranking shift*, not the outcome.
+
+**Scope sketch (bounded mechanical half only):**
+- `content/calendar.yml` — list of `{ show, season,
+  finale_date (ISO), status }`; seed with the few shows whose
+  next finale is publicly dated.
+- `src/content/calendar.ts` loader + Zod schema + colocated
+  `__tests__/calendar.test.ts` (parse, malformed-row reject,
+  past/future partition).
+- A gate (in `/march` or `/iterate` Step 0) that reads the
+  calendar, finds finales with `finale_date < today` lacking a
+  corresponding shift note, and writes a `category:
+  content-gaps, source: self` row into `plan/AUDIT.md`.
+  Idempotent — never double-files for the same season.
+- No new URL, no UI, no e2e route addition (data + script +
+  unit tests only); content:check learns the calendar shape.
+
+**Estimated phases:** 1.
+**Conflicts:** none on the bounded scope; it fulfils
+`spec.md:294`'s mechanical half with no contract change. The
+editorial auto-write + canon-bump semantics are explicitly
+**`[needs-user-call]`** — `/oversight` must define the
+"shift piece" contract (and whether canon auto-bumps) before or
+at promotion. Absorbs and supersedes B1.
 
 ### 03. Newsletter subscribe (Buttondown embed)
 
@@ -55,24 +122,28 @@ sender identity; can ship before but trust signal will be weak.
 
 ## Considered (below threshold)
 
-### B1. `content/calendar.yml` + post-finale event triggers
+### B1. `content/calendar.yml` + post-finale event triggers — ABSORBED by candidate #06 (pass 3)
 
 **Score:** 2.0 (impact: 5, ease: 4, -2 expensive/uncertain)
 **Source signals:** `spec.md:294` promises "Event triggers (a
 finale air date in `content/calendar.yml`) prompt `/iterate` to
 write a 'post-finale ranking shift' piece spoiler-free."
 Calendar doesn't exist; no `/iterate` hook.
-**Why deferred:** The auto-write piece is still hand-wavy
-(what does "write a post-finale ranking shift piece" mean in
-skill terms?). **Pass-2 re-eval:** the build plan is now fully
-exhausted, and the event-trigger half of spec.md's "How
-self-sustaining works here" (spec.md:289-296) is the single
-remaining unbuilt self-sustaining mechanism — a second signal.
-Still below threshold because the scope is undefined in skill
-terms, not because the signal is thin. Worth raising to a
-Pending candidate once a real finale produces a hand-authored
-"shift" post the loop can pattern from, or once `/oversight`
-defines what the auto-write contract should be.
+**Why deferred (pass 1–2):** The auto-write piece was
+hand-wavy (what does "write a post-finale ranking shift piece"
+mean in skill terms?). Pass-2 re-eval noted the build plan was
+fully exhausted and this is the single remaining unbuilt
+self-sustaining mechanism, but kept it below threshold because
+the scope was undefined in skill terms, not because the signal
+was thin.
+**Pass-3 resolution:** Absorbed and superseded by **candidate
+#06** (above, score 5.5). Pass 3 lifts it above threshold by
+scoping out the undefined editorial half (the "shift piece"
+semantics + canon auto-bump → flagged `[needs-user-call]` for
+`/oversight`) and filing only the bounded mechanical half
+(schema + loader + an AUDIT-row-writing gate that reuses the
+existing `/iterate` drain). B1 stays here for the audit trail;
+do not re-score it independently — track #06.
 
 ## Promoted
 
