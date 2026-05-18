@@ -25,6 +25,9 @@ _(empty — all findings addressed)_
 
 <!-- Same format with [x] and the commit-hash that addressed it -->
 
+- [x] [LOW] SearchHost ships with no colocated test — standing rule §5a gap; mounted once per layout so it renders on the highest-traffic surface (every page), yet every sibling in `src/components/search/` (SearchOverlay/SearchTrigger/highlight/scoring) is tested while the host that owns the overlay open/close state is not — untested logic: cmd+K/ctrl+K keydown toggle with `preventDefault`, `SEARCH_OPEN_EVENT` window-event open, `onClose` close, listener cleanup on unmount (#71) (category: tests, source: self, score: 4.8)
+  - issue: #71
+  - added `src/components/search/__tests__/SearchHost.test.tsx` (7 tests: closed-by-default, cmd+K toggle + `defaultPrevented`, ctrl+K toggle, bare-k ignored, `dispatchSearchOpen` opens + idempotent re-fire, `onClose` closes, both listeners removed on unmount). SearchOverlay mocked to surface `open`/`onClose`. Verify green (unit / build / 1300 e2e). GitHub #71 closed by this commit.
 - [x] [LOW] TierSection ships with no colocated test — standing rule §5a gap; high-traffic `/shows` index renders one section per S/A/B tier band, with an empty-shows null guard, `gridCols` (B→cols-3 / else cols-2), `tileVariant` (S→tall / B→small / else regular) and the B-only `showStatus` branch threading `canonProgress(slug)` into each tile — all uncovered while every sibling (TierHead/ShowsTile/ShowsStatusPill/TierGlyph) is tested (#70) (category: tests, source: self, score: 3.4)
   - issue: #70
   - added `src/components/shows/__tests__/TierSection.test.tsx` (5 tests: empty-array null return, tier stamp + TierHead count + one tile per show, S→cols-2/tall/no-pill, A default→cols-2/regular/no-pill, B→cols-3/small/canon-progress pill via a null-canon slug). Verify green (unit / build / 1300 e2e). GitHub #70 closed by this commit.
