@@ -19,11 +19,13 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
-- [ ] [MED] Survivor missing seasons 48 & 49 — write season blurbs + canon placement, bump `seasons` 47→49 (#65) (category: content-gaps, source: triage, score: 4.8) — filed this commit
+_(empty — all findings addressed)_
 
 ## Done
 
 <!-- Same format with [x] and the commit-hash that addressed it -->
+
+- [x] [MED] Survivor missing seasons 48 & 49 — write season blurbs + canon placement, bump `seasons` 47→49 (#65) (category: content-gaps, source: triage, score: 4.8) — c598c6c: shipped 48-survivor-48.md + 49-survivor-49.md (canonical_position 48/49), appended canon ranks 48/49 at the tail (no cascade — zero existing canonical_position changed), bumped survivor.md seasons 47→49 + blurb/tagline count. Spoiler-safe format/casting framing. GitHub #65 closed by the content commit.
 
 - [x] [HIGH] season-page vote UX leaks Bayesian-prior internals — optimistic update shows `0.2`/`-0.55` blips before settling, "0.2 votes" on first visit, no voted/unvoting affordance, no graceful load-in, negative-direction phrasing is confusing (#64) (category: bug, source: triage, score: 3.2) — RESOLVED this commit: root cause was VotePair displaying the weighted aggregate `SUM(value*weight)` (a fractional ranking signal) as "net votes". Migration `20260518000001_vote_raw_count.sql` adds `raw_count = SUM(value)` to `cast_vote`/`read_vote`; the `/api/vote` route now sends the clean integer net to the client (weighted value stays internal). VotePair gains `aria-pressed` + persistent `.voted` tint + "click to undo" labels (clear voted/unvoting state), and a `data-hydrated` opacity fade so the number doesn't pop `0 → <X>`. Optimistic ±1 now reconciles exactly against the integer server delta — no more blips. Unit + e2e green. GitHub #64 closed by this commit.
 - [x] [MED] season-page comment thread renders empty state — read path not wired to Supabase (#24) (category: bug, source: triage, score: 4.2) — RESOLVED by Phase 36 (e95b019): server-side comment read path (`src/lib/comments/thread.ts` + `CommentThreadLive`) wired into `src/app/shows/[show]/season/[slug]/page.tsx`; published rows visible to all, the author's own `pending` row pinned as "held for review", `hidden`/`removed` never public (spoiler/mod P0 intact). e2e `apps/e2e/tests/comment-read.spec.ts` covers authed-sees-own-held + anon-sees-empty. GitHub #24 closed by this commit.
