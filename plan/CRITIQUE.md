@@ -1,13 +1,15 @@
 # CRITIQUE
 
-> Last pass: never (harness verified 2026-05-17; no scored pass yet)
-> Pass count: 0
+> Last pass: 2026-05-19 at commit b57b536
+> Pass count: 1
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Harness is verified working (see
-> `plan/bearings.md` "Critique cadence" → Working harness
-> contract). Pass count increments on the first local scored
-> pass. **Local-only**: the cloud runner has no Chrome MCP.
+> cadence is active. Pass 1 ran local via the reader sub-agent
+> (anon walk completed; authed walk blocked — see the
+> `[needs-user-call]` row in Pending: the `reader` toolset has
+> no cookie-injection primitive, distinct from the
+> human-operated Chrome MCP harness verified 2026-05-17).
+> **Local-only**: the cloud runner has no Chrome MCP.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -37,7 +39,75 @@
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-_(empty — all product findings drained)_
+### [HIGH] / (site-wide) — anonymous visitors are served signed-in chrome (`@me` / Sign out)
+- pass: 1 (commit b57b536)
+- viewport: desktop (reproduces on every page walked)
+- category: infra
+- auth_state: anon
+- observation: A request with **no cookie attached** is served signed-in chrome on `/`, `/shows/survivor`, and the season page: header renders a profile link `@me` (href `/u/me`) plus a `Sign out` link (`/auth/logout`). The handle is the literal placeholder `@me`/`/u/me`, not a real user — i.e. the phase-36 auth-state island's **static/SSR default is the signed-in shape** instead of the safe signed-out default, so anonymous and no-JS visitors see a false identity site-wide and never see a "Sign in" affordance. Downstream consequence (do not score separately): the season page therefore suppresses the anonymous "sign in to comment" prompt and the un-acted vote-pair gate — a stranger is invited to act with no indication an account exists.
+- evidence: `read_page` on `/` with no cookie: link "@me" href=`/u/me`; link "Sign out" href=`/auth/logout?returnTo=https%3A%2F%2Ftiered.tv%2F`. Identical on `/shows/survivor` and `/shows/survivor/season/heroes-villains`. `/api/auth/me` with no cookie → `signedIn:false` (server agrees the request is anon — only the rendered chrome disagrees).
+- suggested fix: Make the auth-state island's static/SSR default the **signed-out** state ("Sign in"); only swap to `@handle`/Sign out after `/api/auth/me` hydration confirms a session. Never emit a literal `@me`/`/u/me` placeholder.
+- source: browser
+
+### [MED] /themes, /themes/[theme] — "cross-canon" copy overpromises against an all-Survivor catalog
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: comprehension
+- auth_state: anon
+- observation: The Lists hero says lists are "Cross-canon" and "Some span every show," but the stat strip reads "1 SHOWS COVERED" and every list is tagged SURVIVOR. `/themes/best-premieres` reinforces it: entries labelled "CROSS-CANON LIST" contain only Survivor seasons ("SPANS 1 show"). A first-time reader sees the contradiction immediately — the voice promises breadth the catalog does not yet have.
+- evidence: `/themes`: "Themed lists. Cross-canon. … Some span every show." beside stat "1 SHOWS COVERED". `/themes/best-premieres`: "SPANS 1 show"; related items tagged "CROSS-CANON LIST", all rows SURVIVOR.
+- suggested fix: Until multi-show lists exist, derive the hero/tag copy from actual show-coverage — single-show-honest language; drop the "CROSS-CANON" tag where a list covers one show.
+- source: browser
+
+### [MED] /themes/best-premieres vs /shows/survivor — Survivor 41 named "New Era I" in canon, "S41 · REBOOT" on the list
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: comprehension
+- auth_state: anon
+- observation: The same season carries different names across pages a reader crosses: Survivor 41 is "New Era I" in the Survivor canon list and on home references, but "S41 · REBOOT" on `/themes/best-premieres`. Distinct from the already-addressed S16 mismatch (different season, different surface) — indicates list-entry titles are authored free-hand rather than sourced from the canonical season display name.
+- evidence: `/shows/survivor` canon row "10 · S41 · New Era I"; `/themes/best-premieres` entry #02 "S41 · REBOOT — The reset announces itself…".
+- suggested fix: Source themed-list entry display names from the one canonical season title field so list rows and canon rows agree (same root cause class as the S16 fix; consider extending that content-check invariant to list entries).
+- source: browser
+
+### [MED] /shows/survivor/season/survivor-20 — plausible `<show>-<n>` season form 404s while the digit form 308-redirects
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: navigation
+- auth_state: anon
+- observation: The digit season form (`/season/20`) 308-redirects to the canonical slug, but the equally-plausible show-prefixed numeric form (`/season/survivor-20`) hard-404s instead of redirecting to `/season/heroes-villains`. The contracted redirect only covers the bare-digit form; a reader or external link constructing the show-slug-number form dead-ends. Lower-confidence than HIGH: the site only formally contracts digit→slug, so this is a robustness gap, not a broken promise.
+- evidence: GET `/shows/survivor/season/survivor-20` → "404: This page could not be found." (no redirect). Canonical working URL: `/shows/survivor/season/heroes-villains`.
+- suggested fix: Extend the season redirect resolver to also 308 the `<show>-<n>` / `<slug>-<n>` numeric forms to the canonical season slug, matching the existing digit-redirect contract; add the form to `redirects.spec.ts`.
+- source: browser
+
+### [LOW] /themes — document title says "Themes", every user-facing surface says "Lists"
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: navigation
+- auth_state: anon
+- observation: Route is `/themes` and `<title>` is "Themes — tiered.tv", but the nav link, breadcrumb ("TIERED.TV / LISTS"), section heading, and list-detail crumb all say "Lists". A reader scanning the browser tab or sharing the link sees a word the product UI never uses. Route can stay; the visible/title vocabulary should be consistent.
+- evidence: Tab title "Themes — tiered.tv" at `/themes`; on-page nav link "Lists", breadcrumb "TIERED.TV / LISTS", heading "Themed lists."
+- suggested fix: Set the document `<title>` (and any remaining "Themes" labels) to "Lists" to match product vocabulary; leave the `/themes` route as-is.
+- source: browser
+
+### [LOW] / vs /shows/survivor — canon-revised date rendered two different ways
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: visual
+- auth_state: anon
+- observation: The same datum is formatted differently across a common navigation path: home renders "05 / 26 — CANON REVISED" (month/year), the Survivor show page renders "2026 — CANON LAST REVISED" (year only). Minor, but catchable when navigating home → show.
+- evidence: `/`: "05 / 26 · CANON REVISED". `/shows/survivor`: "2026 · CANON LAST REVISED".
+- suggested fix: Render the canon-revised stat through one shared formatter so granularity and format agree across surfaces.
+- source: browser
+
+### [needs-user-call] authed critique pass — `reader` sub-agent has no cookie-injection primitive
+- pass: 1 (commit b57b536)
+- viewport: desktop
+- category: infra
+- auth_state: auth-failed
+- observation: The authenticated walk could not run. The `reader` sub-agent's toolset has no JS-eval / `document.cookie` set / request-header primitive; `navigate` rejects `javascript:` URLs and `WebFetch` accepts no `Cookie` header, so `CRITIQUE_SESSION_COOKIE` (present and well-formed in `.env`) cannot be attached. This is distinct from the human-operated Chrome MCP harness verified working 2026-05-17 (that uses `document.cookie` injection on a clean profile, which the *reader* agent cannot perform). Not a product defect — a harness/tooling gap. The authed page set (`/`, `/u/e2e` [phase 38 profile], season live state, `/sign-in` redirect) is **unwalked** this pass.
+- evidence: `navigate(javascript:document.cookie=…)` → "Invalid URL: javascript:"; `WebFetch /api/auth/me` (no Cookie sendable) → `{ok:true,signedIn:false}`. `CRITIQUE_SESSION_COOKIE` read OK from `.env`.
+- suggested fix (user-call): give `/critique`'s authed leg a reader-compatible session path — either add a cookie-injection step the `reader` toolset can execute (CDP `Network.setCookie` / a `javascript_tool` grant in `reader.md`), or run the authed pass via the human-operated Chrome MCP harness rather than the sub-agent. Until then the HIGH anon auth-leak above also blocks an honest authed comparison.
+- source: browser
 
 ## Done
 
