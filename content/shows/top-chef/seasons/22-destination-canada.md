@@ -1,15 +1,15 @@
 ---
 show: top-chef
 number: 22
-canonical_position: 20
+canonical_position: 19
 title: Destination Canada
 host: Kristen Kish
 premiere_date: 2025-03-13
 ep_count: 14
 location: Toronto, Ontario & Calgary/Canmore, Alberta
 eyebrow: "Aired spring 2025 · The first Canada-set U.S. season"
-lede: "Top Chef leaves the country for the first time on its flagship run, staging the season across Toronto and the Calgary–Canmore corridor. Kristen Kish hosts her second season, Tom Colicchio runs a supersized judge's table, and the international premise drives the briefs."
-pull: "The first Canada-set flagship season — Kish's second outing, supersized, and across the border."
+lede: "The first time the U.S. Top Chef flagship left the country, staged across Toronto and the Calgary–Canmore corridor. Kristen Kish's second season as host, Tom Colicchio at a supersized judge's table. With the run complete, the first-Canada-set argument is what holds."
+pull: "The first Canada-set flagship season — the run where the U.S. show left the country and the road-show grammar crossed a border."
 format_summary: "International road show"
 format_caption: "Toronto and Alberta, supersized eps"
 cast_size: 15
@@ -28,12 +28,12 @@ watch_list:
     body: "The closing stretch across Canada. The cast has spent the runway adapting across borders and regions, and the finals approach reads off the season's international structure."
 ---
 
-Destination Canada. Top Chef leaves the country for the first
-time, staging the season across Toronto and the
-Calgary–Canmore corridor. Kristen Kish hosts her
-second season, Tom Colicchio runs a supersized judge's table,
-Gail Simmons sits in the critic seat. The cross-border
-premise gives the road-show grammar a register it had not
-used on the U.S. run, and the cast adapts across cities and
-regions the flagship had never cooked in. A confident
-international swing in the new era.
+Destination Canada. The first time the U.S. Top Chef flagship
+left the country, staged across Toronto and the
+Calgary–Canmore corridor. Kristen Kish hosts her second
+season, Tom Colicchio runs a supersized judge's table. With
+the full run behind it, the season's case is the
+format-history first: the road-show grammar carried across an
+international border for the first time on the U.S. run. It
+has settled into the canon's deep middle at a confident
+rank-nineteen standing.

@@ -1,7 +1,7 @@
 ---
 show: top-chef
 editor: tiered.tv Editors
-last_revised: 2026-05-16
+last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We have watched Top Chef since the Tom-Colicchio-era Bravo seasons, and replay every U.S.-flagship run that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable food fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
 meth_how_h: How do we weigh it?
@@ -360,13 +360,32 @@ held the table, Gail Simmons sat in the critic seat. It does
 not push for the upper tier, but it treats a hard-to-cook city
 seriously and holds its shape. A solid road-show year.
 
+## 22. Destination Canada
+
+tag: The first Canada-set flagship season — the run where the U.S. show left the country, road-show grammar across a border.
+slot_argument: A Toronto-and-Alberta immersive, the first time the U.S. flagship left the country. Supersized episodes, Kristen Kish's second season, and the road-show grammar carried across an international border.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Destination Canada earns the nineteenth slot because it is a
+genuine format-history first, and with the full run behind it
+that case has hardened. The season ran across Toronto and the
+Calgary–Canmore corridor — the first time the U.S. flagship
+left the country — with Kristen Kish hosting her second
+season, Tom Colicchio at a supersized judge's table, and Gail
+Simmons in the critic seat. The cross-border premise gave the
+road-show grammar an international register the U.S. run had
+never used, and the cast adapted across cities the flagship
+had never cooked in. A clean transition is worth crediting,
+but a real format-first outranks one. It has settled into the
+canon's deep middle on the strength of the swing.
+
 ## 21. Wisconsin
 
 tag: The Kish-era opener — a new host, a familiar table, and a regional immersive across Wisconsin.
 slot_argument: A Milwaukee-and-Madison immersive that handed the host chair to Kristen Kish for the first time, with Tom Colicchio still at the table. A confident handoff that kept the format's shape intact.
-community_rank_hint: rank=19 delta=0 sentiment=hold
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
-Wisconsin earns the nineteenth slot because it is a solid
+Wisconsin earns the twentieth slot because it is a solid
 opening to a new era. Kristen Kish took the host chair for the
 first time, replacing Padma Lakshmi, with Tom Colicchio still
 at the judge's table and Gail Simmons in the critic seat. The
@@ -378,24 +397,6 @@ seriously, and the handoff reads as confident rather than
 tentative. It does not reach for the canon's upper tier, but a
 clean transition under new direction is its own kind of
 achievement.
-
-## 22. Destination Canada
-
-tag: The first Canada-set flagship season — Kish's second outing, supersized, and across the border.
-slot_argument: A Toronto-and-Alberta immersive, the first time the U.S. flagship left the country. Supersized episodes, Kristen Kish's second season, and the road-show grammar carried across an international border.
-community_rank_hint: rank=20 delta=0 sentiment=hold
-
-Destination Canada takes the twentieth slot because it is a
-confident international swing in the new era. The season ran
-across Toronto and the Calgary–Canmore corridor — the first
-time the U.S. flagship left the country — with Kristen Kish
-hosting her second season, Tom Colicchio at a supersized
-judge's table, and Gail Simmons in the critic seat. The cross-
-border premise gave the road-show grammar a register it had
-not used on the U.S. run, and the cast adapted across cities
-and regions the flagship had never cooked in. It is too new to
-have hardened in the catalogue, but the swing is real and the
-execution holds. A solid early Kish-era road show.
 
 ## 2. Los Angeles
 

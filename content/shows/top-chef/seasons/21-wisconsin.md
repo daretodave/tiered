@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 21
-canonical_position: 19
+canonical_position: 20
 title: Wisconsin
 host: Kristen Kish
 premiere_date: 2024-03-20
