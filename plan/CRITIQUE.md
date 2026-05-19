@@ -24,30 +24,35 @@
 
 ## Pending
 
-> Shipping mode ended 2026-05-17 (Phase 36 shipped; gate
-> lifted via oversight). The two harness `[needs-user-call]`
-> rows were **verified resolved** the same day — both blockers
-> failed to reproduce in a fresh Chrome MCP session (evidence
-> in `plan/bearings.md` → Working harness contract) and are
-> moved to Done. The four product rows below were captured
-> incidentally during the 2026-05-16 debug session; they are
-> auth-invariant, vetted valid, and are **NOT** a scored pass
-> (pass count stays 0 until the first real local `/critique`).
-> `/iterate` may drain them now alongside `plan/AUDIT.md`.
+> Pass 1 (2026-05-19) ran via the `reader` sub-agent and
+> exposed that **reader-driven critique is not auth-isolatable**
+> (see the `[needs-user-call]` harness row below): the reader
+> drives the operator's real Chrome profile, so the "anon" walk
+> inherited the operator's live signed-in session, and the
+> reader has no cookie-injection primitive to run a controlled
+> authed walk either. The 2026-05-17 "fresh tab group is clean"
+> contract held only incidentally (operator was logged out
+> then). The product rows below are the **auth-invariant**
+> subset that survives that contamination (true regardless of
+> session state); the false "anon auth-leak" HIGH was withdrawn
+> as a harness artifact. `/iterate` may drain the product rows
+> alongside `plan/AUDIT.md`.
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-### [HIGH] / (site-wide) — anonymous visitors are served signed-in chrome (`@me` / Sign out)
-- pass: 1 (commit b57b536)
-- viewport: desktop (reproduces on every page walked)
-- category: infra
-- auth_state: anon
-- observation: A request with **no cookie attached** is served signed-in chrome on `/`, `/shows/survivor`, and the season page: header renders a profile link `@me` (href `/u/me`) plus a `Sign out` link (`/auth/logout`). The handle is the literal placeholder `@me`/`/u/me`, not a real user — i.e. the phase-36 auth-state island's **static/SSR default is the signed-in shape** instead of the safe signed-out default, so anonymous and no-JS visitors see a false identity site-wide and never see a "Sign in" affordance. Downstream consequence (do not score separately): the season page therefore suppresses the anonymous "sign in to comment" prompt and the un-acted vote-pair gate — a stranger is invited to act with no indication an account exists.
-- evidence: `read_page` on `/` with no cookie: link "@me" href=`/u/me`; link "Sign out" href=`/auth/logout?returnTo=https%3A%2F%2Ftiered.tv%2F`. Identical on `/shows/survivor` and `/shows/survivor/season/heroes-villains`. `/api/auth/me` with no cookie → `signedIn:false` (server agrees the request is anon — only the rendered chrome disagrees).
-- suggested fix: Make the auth-state island's static/SSR default the **signed-out** state ("Sign in"); only swap to `@handle`/Sign out after `/api/auth/me` hydration confirms a session. Never emit a literal `@me`/`/u/me` placeholder.
-- source: browser
+> WITHDRAWN — false finding. Pass 1's reader reported a HIGH
+> "anonymous visitors served `@me`/Sign out chrome site-wide."
+> Root cause confirmed by the user 2026-05-19: the `reader`
+> sub-agent drives the operator's real Chrome profile, which
+> was signed in to tiered.tv; the "anon" walk was actually
+> authed-as-operator. The server correctly treated the no-cookie
+> request class as anon (`/api/auth/me` → `signedIn:false`). Not
+> a product defect — a harness contamination artifact. Folded
+> into the `[needs-user-call]` harness row below. The dependent
+> "season anon affordances suppressed" observation falls with
+> it (same cause).
 
 ### [MED] /themes, /themes/[theme] — "cross-canon" copy overpromises against an all-Survivor catalog
 - pass: 1 (commit b57b536)
@@ -99,14 +104,14 @@
 - suggested fix: Render the canon-revised stat through one shared formatter so granularity and format agree across surfaces.
 - source: browser
 
-### [needs-user-call] authed critique pass — `reader` sub-agent has no cookie-injection primitive
+### [needs-user-call] reader-driven critique is not auth-isolatable in EITHER direction
 - pass: 1 (commit b57b536)
 - viewport: desktop
 - category: infra
 - auth_state: auth-failed
-- observation: The authenticated walk could not run. The `reader` sub-agent's toolset has no JS-eval / `document.cookie` set / request-header primitive; `navigate` rejects `javascript:` URLs and `WebFetch` accepts no `Cookie` header, so `CRITIQUE_SESSION_COOKIE` (present and well-formed in `.env`) cannot be attached. This is distinct from the human-operated Chrome MCP harness verified working 2026-05-17 (that uses `document.cookie` injection on a clean profile, which the *reader* agent cannot perform). Not a product defect — a harness/tooling gap. The authed page set (`/`, `/u/e2e` [phase 38 profile], season live state, `/sign-in` redirect) is **unwalked** this pass.
-- evidence: `navigate(javascript:document.cookie=…)` → "Invalid URL: javascript:"; `WebFetch /api/auth/me` (no Cookie sendable) → `{ok:true,signedIn:false}`. `CRITIQUE_SESSION_COOKIE` read OK from `.env`.
-- suggested fix (user-call): give `/critique`'s authed leg a reader-compatible session path — either add a cookie-injection step the `reader` toolset can execute (CDP `Network.setCookie` / a `javascript_tool` grant in `reader.md`), or run the authed pass via the human-operated Chrome MCP harness rather than the sub-agent. Until then the HIGH anon auth-leak above also blocks an honest authed comparison.
+- observation: Pass 1 proved the `reader` sub-agent cannot run a controlled critique in either auth state, so neither the anon nor the authed walk is trustworthy. **(a) Anon leg — contaminated:** `reader` drives the operator's real Chrome profile via the claude-in-chrome MCP; with the operator signed in to tiered.tv, the "anonymous" walk inherited that live session and reported a false HIGH "anon sees `@me`/Sign out" (withdrawn above). The 2026-05-17 "fresh `tabs_create` group is cookieless" contract in `plan/bearings.md` held only because the operator was incidentally logged out then — it is not structural. **(b) Authed leg — impossible:** the `reader` toolset (per `.claude/agents/reader.md`) has no JS-eval / `document.cookie` / request-header primitive (`navigate` rejects `javascript:`; `WebFetch` sends no `Cookie`), so it cannot deliberately attach `CRITIQUE_SESSION_COOKIE` (present and well-formed in `.env`). Result: the reader can only ever observe "whatever session the operator's Chrome happens to hold" — never a controlled anon, never a controlled authed. The authed page set (`/`, `/u/e2e` phase-38 profile, season live state, `/sign-in` redirect) is unwalked.
+- evidence: anon walk returned `@me`/`/u/me`/Sign-out on every page with no cookie attached, while `WebFetch /api/auth/me` (no Cookie) → `{signedIn:false}` — i.e. the profile, not the request class, carried the session. `navigate(javascript:document.cookie=…)` → "Invalid URL: javascript:". User confirmed 2026-05-19: "the @me is because my local account is signed in."
+- suggested fix (user-call): pick the harness model for reader-driven `/critique` — options: (1) grant `reader.md` a cookie-injection primitive (`javascript_tool` or a CDP `Network.setCookie` MCP step) so it can *clear* cookies for a true anon pass AND *set* `__session` for the authed pass deterministically; (2) keep `/critique` reader-driven for anon only but mandate a guaranteed-clean profile (incognito/dedicated profile, not the operator's), and run the authed pass exclusively via the human-operated Chrome MCP harness; (3) drop the sub-agent for critique entirely and run both passes through the human Chrome MCP harness with explicit cookie control. Until one is chosen, `plan/bearings.md` "Working harness contract" overstates reliability and pass-1 anon results must be treated as auth-unknown (only auth-invariant findings survive — the product rows above).
 - source: browser
 
 ## Done
