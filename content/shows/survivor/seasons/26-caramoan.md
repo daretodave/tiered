@@ -8,7 +8,7 @@ ep_count: 14
 location: Caramoan, Philippines
 host: Jeff Probst
 format_changes: [fans-vs-favorites, returnee-injection]
-canonical_position: 47
+canonical_position: 48
 eyebrow: "Aired spring 2013 · Filmed in Caramoan"
 lede: "The Fans vs. Favorites premise revived, five years after Micronesia. Ten favorites from recent seasons opposite ten fans who applied to play, shot on the Caramoan beach the franchise was now treating as a recurring Philippines base."
 pull: "Caramoan is the canon's reminder that returning to a premise is hard. The casting choices polarized the fandom in ways Micronesia had not."

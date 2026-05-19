@@ -853,6 +853,24 @@ historically but the fandom has never settled on whether it
 lands — a season the canon weighs honestly rather than warmly,
 the way it does the format's other large structural gambles.
 
+## 48. Survivor 48
+
+tag: A settled new-era run that delivered a clean watch.
+slot_argument: By season 48 the 26-day format is fully settled grammar. With its first full discourse cycle behind it, this is a complete, competently run new-era season that earns a stable tail slot.
+community_rank_hint: rank=48 delta=0 sentiment=hold
+
+Survivor 48 is the new era running as a known quantity, and a
+full discourse cycle later it reads as exactly that — a
+complete, competently built run on the now-fully-settled 26-day
+format. Three tribes of new players on the Mamanucas, the
+compressed clock and its journeys all default grammar by now,
+the texture following the casting bench rather than any
+structural argument. The canon moves it up out of the
+provisional tail and places it forty-seventh: a settled
+new-era run that delivered a clean watch defensibly edges ahead
+of a polarizing premise-revival the order itself rates as
+carried honestly rather than earned.
+
 ## 26. Caramoan
 
 tag: The premise revival that could not win the comparison.
@@ -868,27 +886,9 @@ ways Micronesia had not, and the comparison the season has to
 carry from minute one is the one it cannot win. The post-merge
 stretch runs cleaner than the pre-merge stretch, but the
 season's reputation has stayed mixed. The canon places
-Caramoan forty-seventh because the premise revival is the
-hardest editorial weight to carry, and the season carries it
-honestly rather than well.
-
-## 48. Survivor 48
-
-tag: A recent new-era run, provisionally placed.
-slot_argument: By season 48 the 26-day format is fully settled grammar. The canon revisits its tail less often, and a brand-new, not-yet-replayed run sits here provisionally pending the next post-finale pass.
-community_rank_hint: rank=48 delta=0 sentiment=hold
-
-Survivor 48 is the new era running as a known quantity. By the
-spring of 2025 the 26-day format is no longer the story — three
-tribes of new players on the Mamanucas, the compressed clock
-and its journeys and advantages all default grammar by now. The
-season's texture follows the casting bench it brings rather than
-any structural argument. The canon places it forty-eighth and
-treats the slot as provisional: this is one of the show's most
-recent runs, fresh enough that it has not had a kitchen-table
-replay yet. The order revisits its tail less often than its top,
-and a season this new earns a settled standing only after the
-next post-finale pass.
+Caramoan forty-eighth, just below a settled new-era run,
+because the premise revival is the hardest editorial weight to
+carry, and the season carries it honestly rather than well.
 
 ## 49. Survivor 49
 
