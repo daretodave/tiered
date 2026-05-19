@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { computeYearsOnAir } from './show-format'
+import { computeYearsOnAir } from '../show-format'
 
 describe('computeYearsOnAir', () => {
   it('returns "<min>–present" when status is airing', () => {
