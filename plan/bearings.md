@@ -426,12 +426,24 @@ now meaningfully evaluate the returning-member experience. The
 historical rationale (static routes rendered permanently
 signed-out until 36) no longer applies.
 
-### Working harness contract (verified live 2026-05-17)
+### Working harness contract (revised 2026-05-19)
 
-The two `[needs-user-call]` blockers recorded in `CRITIQUE.md`
-on 2026-05-16 **do not reproduce** in a fresh local Chrome MCP
-session. Verified against `https://tiered.tv/` during the
-2026-05-17 oversight pass:
+> **2026-05-19 correction (oversight).** The 2026-05-17
+> contract below was true only *incidentally* — it held because
+> the operator's shared Chrome profile happened to be logged
+> out that day. Critique pass 1 (2026-05-19) proved the
+> `reader` sub-agent **drives the operator's real, shared
+> Chrome profile** and had **no cookie primitive**, so its
+> "anon" walk inherited the operator's live session (false HIGH
+> filed and withdrawn) and its authed walk could not run at
+> all. **Resolved this oversight (user-approved):** `reader.md`
+> now (a) carries `mcp__claude-in-chrome__javascript_tool` and
+> (b) has a mandatory Step 0 that *deterministically* clears
+> cookies + verifies `/api/auth/me → signedIn:false` for the
+> anon pass, and sets `__session` + verifies `signedIn:true`
+> for the authed pass, exiting `auth-failed` rather than
+> walking a contaminated profile. Reliability is now structural,
+> not incidental. The verified mechanics below still hold:
 
 - **Anon pass** — a new `tabs_create_mcp` tab group starts with
   no tiered.tv cookies; the header renders "Sign in"
@@ -449,13 +461,20 @@ session. Verified against `https://tiered.tv/` during the
   shadowing a cookie the server already set; with none present,
   the JS-set cookie is sent and validated.
 
-Harness steps for a local `/critique`: (1) `tabs_create_mcp`
-for a clean group; run the anon walk first (no cookie). (2) For
-the authed walk, read `CRITIQUE_SESSION_COOKIE` from `.env`,
-`document.cookie`-inject it as `__session` on the live origin,
-reload, walk. This path is **local-only** — the cloud `/march`
-runner has no Chrome MCP, so scored critique passes only ever
-originate from a local invocation.
+Harness steps for a local `/critique` (now enforced in
+`reader.md` Step 0, both modes): (1) open the origin; **anon
+walk** — expire all `tiered.tv` cookies via `javascript_tool`,
+reload, and **verify** `/api/auth/me → signedIn:false` before
+walking (exit `auth-failed` if the shared profile re-hydrates a
+session — never walk-and-mislabel). (2) **Authed walk** — read
+`CRITIQUE_SESSION_COOKIE` from `.env`, `document.cookie`-inject
+it as `__session` on the live origin, reload, and **verify**
+`signedIn:true` with the expected handle before walking. This
+path is **local-only** — the cloud `/march` runner has no
+Chrome MCP, so scored critique passes only ever originate from
+a local invocation. The shared-profile contamination caveat is
+permanent: the verify-or-exit gate, not profile luck, is what
+keeps a pass honest.
 
 ## Content velocity & editorial cadence
 
