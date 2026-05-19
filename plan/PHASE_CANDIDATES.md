@@ -23,73 +23,6 @@
 **Scope sketch:** <2-3 lines of what would ship>
 -->
 
-### 06. `content/calendar.yml` + finale-event detection hook (mechanical half of spec.md:294)
-
-**Score:** 5.5 (impact: 6, ease: 5, +2 multi, +2 cheap-and-bounded, -1.5 needs-user-call boundary)
-**Source pass:** 3
-**Filed:** 2026-05-18
-**Source signals:**
-- `spec.md:294` — "Event triggers (a finale air date in
-  `content/calendar.yml`) prompt `/iterate` to write a
-  'post-finale ranking shift' piece spoiler-free, ship it, and
-  bump that show's canon position if warranted." `content/calendar.yml`
-  does not exist; no loader, no gate, no hook. This is the only
-  spec-promised self-sustaining mechanism never built.
-- `plan/PHASE_CANDIDATES.md` B1 — filed pass 1, re-evaluated
-  pass 2; held below threshold both times *not* because the
-  signal is thin but because the auto-write contract was
-  undefined in skill terms. Two independent prior passes
-  pointing at the same gap.
-- Build-plan full exhaustion: every row in `01_build_plan.md`
-  is `[x]`, including Phase 38 (the last promoted candidate).
-  Per `spec.md` "How self-sustaining works here", the project
-  is now in `/iterate` endgame — but the event-trigger leg of
-  that endgame is structurally absent and no remaining phase
-  owns building it. This is the exact structural argument that
-  promoted candidate #04 → Phase 38: a contracted mechanism the
-  loop will never pick up unless a phase is proposed.
-
-**Why:** B1's blocker was always "what does *auto-write a
-shift piece* mean in skill terms?" — fuzzy editorial semantics.
-This candidate resolves that by **scoping the fuzzy half out**
-and shipping only the mechanical, well-defined half: the
-`content/calendar.yml` schema, a Zod-validated loader, and a
-gate that — when a listed finale date has passed and no shift
-note exists for that season yet — **files a `category:
-content-gaps` row in `plan/AUDIT.md`** ("post-finale shift due
-for <show> S<n>"). That reuses the existing, proven AUDIT →
-`/iterate` / `/ship-content` drain instead of inventing new
-skill semantics. The genuinely undefined parts — what a
-"shift piece" *is* editorially, and whether canon
-`canonical_position` auto-bumps — stay `[needs-user-call]`
-for `/oversight` to define before promotion, per expand hard
-rule 3. Spoiler discipline (P0) applies: a post-finale note
-must never name the winner/elimination — it frames the
-*ranking shift*, not the outcome.
-
-**Scope sketch (bounded mechanical half only):**
-- `content/calendar.yml` — list of `{ show, season,
-  finale_date (ISO), status }`; seed with the few shows whose
-  next finale is publicly dated.
-- `src/content/calendar.ts` loader + Zod schema + colocated
-  `__tests__/calendar.test.ts` (parse, malformed-row reject,
-  past/future partition).
-- A gate (in `/march` or `/iterate` Step 0) that reads the
-  calendar, finds finales with `finale_date < today` lacking a
-  corresponding shift note, and writes a `category:
-  content-gaps, source: self` row into `plan/AUDIT.md`.
-  Idempotent — never double-files for the same season.
-- No new URL, no UI, no e2e route addition (data + script +
-  unit tests only); content:check learns the calendar shape.
-
-**Estimated phases:** 1.
-**Conflicts:** none on the bounded scope; it fulfils
-`spec.md:294`'s mechanical half with no contract change. The
-editorial auto-write + canon-bump semantics are explicitly
-**`[needs-user-call]`** — `/oversight` must define the
-"shift piece" contract (and whether canon auto-bumps) before or
-at promotion. Absorbs and supersedes B1.
-
 ### 03. Newsletter subscribe (Buttondown embed)
 
 **Score:** 3.0 (impact: 4, ease: 5, +1 multi, -1 vendor)
@@ -149,6 +82,64 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in 01_build_plan.md> -->
+
+### 06. `content/calendar.yml` + finale-event detection hook (mechanical + autonomous editorial half of spec.md:294)
+
+**Score:** 5.5 (impact: 6, ease: 5, +2 multi, +2 cheap-and-bounded, -1.5 needs-user-call boundary — boundary now resolved)
+**Source pass:** 3
+**Filed:** 2026-05-18
+**Source signals:**
+- `spec.md:294` — "Event triggers (a finale air date in
+  `content/calendar.yml`) prompt `/iterate` to write a
+  'post-finale ranking shift' piece spoiler-free, ship it, and
+  bump that show's canon position if warranted." `content/calendar.yml`
+  did not exist; no loader, no gate, no hook. The only
+  spec-promised self-sustaining mechanism never built.
+- `PHASE_CANDIDATES.md` B1 — filed pass 1, re-evaluated pass 2;
+  held below threshold both times because the auto-write
+  contract was undefined in skill terms, not because the signal
+  was thin. Absorbed here.
+- Build-plan re-exhaustion at 205862b (Phase 38 + a 44-commit
+  §5a test-colocation drain; AUDIT/critique/issues all empty).
+  No remaining phase owned this; the loop would iterate-polish
+  forever and never build the event-trigger leg.
+
+**Why:** Same structural argument that promoted #04 → Phase 38:
+a contracted self-sustaining mechanism the loop will never pick
+up unless a phase is proposed. The candidate originally scoped
+the fuzzy editorial half out as `[needs-user-call]`; oversight
+2026-05-19 **resolved that boundary** rather than deferring it.
+
+**Editorial contract (resolved at promotion — oversight
+2026-05-19, user-chosen):** **full autonomy.** When the gate
+files the `content-gaps` AUDIT row, the content drain that
+picks it up **may autonomously write the spoiler-safe
+post-finale ranking-shift note AND adjust that season's
+`canonical_position`** if the editorial rationale warrants it.
+Spoiler discipline is P0 — the note frames the *ranking shift*,
+never the winner/elimination/outcome; any `canonical_position`
+cascade follows the always-working + content-check invariants.
+
+**Scope sketch (as promoted):**
+- `content/calendar.yml` — `{ show, season, finale_date (ISO),
+  status }`; seed publicly-dated finales only.
+- `src/content/calendar.ts` loader + Zod schema + colocated
+  `__tests__/calendar.test.ts` (parse, malformed-row reject,
+  past/future partition).
+- Idempotent gate (in `/march` or `/iterate` Step 0): finales
+  with `finale_date < today` lacking a shift note → one
+  `category: content-gaps, source: self` AUDIT row; never
+  double-files for the same season.
+- `content-check` learns the calendar shape. No new URL, no UI,
+  no e2e route addition.
+
+**Estimated phases:** 1. Absorbs and supersedes B1.
+**Conflicts:** none. Fulfils `spec.md:294` end-to-end (both
+halves) with no contract change; spoiler-safety is a build
+constraint, not a conflict.
+
+**Promoted in:** oversight 2026-05-19 (build plan re-exhausted; only candidate above threshold; editorial `[needs-user-call]` resolved to full autonomy by user at promotion).
+**Build-plan row:** Phase 39 — `content/calendar.yml` + finale-event detection hook (`01_build_plan.md`)
 
 ### 04. `/u/[handle]` real public profile (drain the phase-10 shell)
 

@@ -133,6 +133,21 @@ in the same commit that ships the phase.
 
 - [x] Phase 38 — `/u/[handle]` real public profile (163f79a). Drains the phase-10 shell: `src/app/(default)/u/[handle]/page.tsx` currently renders only the signed-in viewer's own handle, 404s every other handle, surfaces zero activity, and is `noIndex:true` — yet `spec.md:73`'s locked URL contract lists `/u/[handle]` as "public user profile" and every data substrate it needs (phase 11 `users`+`votes`, 12 `comments`, 35 vote read, 36 comment read) has shipped. Resolve `handle` → `users` row (handle/nickname/sub; 404 only on genuinely-unknown handles, not "not me"); render a **spoiler-safe** activity surface from that user's *published* comments + public vote participation counts (never pending/hidden; never raw ballot detail that could spoil an unrevealed canon position); drop `noIndex` for populated profiles, keep it for empty ones. Spoiler discipline is P0 — the profile must never echo a held/hidden comment or leak an unpublished season position. **Agent is the data admin — bold with read RPCs/routes** (bearings §Database posture). One cloud tick. Detailed brief: `phase_38_user_profile.md`.
 
+**Self-sustaining endgame (phase 39) — promoted via oversight 2026-05-19:**
+
+> Build plan re-exhausted at 205862b (Phase 38 + a 44-commit
+> §5a test-colocation drain; AUDIT/critique/issues all empty).
+> Phase 39 promotes `PHASE_CANDIDATES.md` #06 (score 5.5) — the
+> mechanical half of `spec.md:294`, the only spec-promised
+> self-sustaining mechanism never built. The editorial
+> `[needs-user-call]` was resolved at promotion: **full
+> autonomy** — the content loop may autonomously write the
+> spoiler-safe shift note AND adjust `canonical_position` when
+> the editorial rationale warrants it (oversight 2026-05-19,
+> user-chosen). Brief drafted on-demand at pickup.
+
+- [ ] Phase 39 — `content/calendar.yml` + finale-event detection hook (mechanical + autonomous editorial half of `spec.md:294`). Ship: (1) `content/calendar.yml` — list of `{ show, season, finale_date (ISO), status }`, seeded with the few shows whose next finale is publicly dated; (2) `src/content/calendar.ts` loader + Zod schema + colocated `__tests__/calendar.test.ts` (parse, malformed-row reject, past/future partition); (3) an **idempotent** gate (in `/march` or `/iterate` Step 0) that reads the calendar, finds finales with `finale_date < today` lacking a corresponding shift note, and writes a `category: content-gaps, source: self` row into `plan/AUDIT.md` — never double-files for the same season; (4) `content-check` learns the calendar shape. **Editorial contract (oversight 2026-05-19, user-set, supersedes the candidate's `[needs-user-call]`):** when the gate fires, the content drain that picks the AUDIT row up **may autonomously write the spoiler-safe post-finale ranking-shift note AND adjust that season's `canonical_position`** if the editorial rationale warrants it. **Spoiler discipline is P0** — the note frames the *ranking shift*, never the winner/elimination/outcome; the canon rationale stays spoiler-safe and any `canonical_position` cascade follows the always-working + content-check invariants. No new URL, no UI, no e2e route addition (data + script + unit tests only). One cloud tick. Promoted from `PHASE_CANDIDATES.md` #06; brief drafted on-demand from this row.
+
 > **After phase 25:** the shipping queue is not done — phase
 > 36 is still `[ ]` (26 / 32 / 34 / 35 shipped), so `/march` Step 3a
 > keeps shipping them (`/ship-a-phase` wins every tick while
