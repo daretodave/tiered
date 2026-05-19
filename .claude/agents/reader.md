@@ -128,11 +128,63 @@ Use `mcp__claude-in-chrome__*` when available. You can:
 
 Always check both viewports. Always read the console.
 
+### Path A2 — Playwright walk (CI)
+
+When the Chrome MCP tools are **not** available (the cloud loop
+on a GitHub Actions runner), use the Playwright walk driver
+instead of falling back to WebFetch. The runner already has the
+headless chromium cached for the e2e leg; `scripts/critique-walk.mjs`
+drives it.
+
+Run it **once per pass mode**:
+
+```bash
+node scripts/critique-walk.mjs \
+  --mode anonymous \
+  --base https://tiered.tv \
+  --urls /,/shows,/shows/survivor,/shows/survivor/season/heroes-vs-villains,/themes
+
+# authed pass (only when bearings Auth: != none): the __session
+# pair is read from $CRITIQUE_SESSION_COOKIE automatically.
+node scripts/critique-walk.mjs \
+  --mode authenticated \
+  --base https://tiered.tv \
+  --urls /,/u/<bot-handle>,/shows/survivor/season/heroes-vs-villains
+```
+
+It prints `{ meta, captures[], findings[] }`:
+
+- `findings[]` are already in the finding format below (every
+  one carries `auth_state` and `source: "browser"`) — they are
+  the mechanically-detectable defects (HTTP status, blank
+  render, missing H1, 375px horizontal scroll, console errors,
+  failed first-party requests, missing SEO tags). Merge them
+  directly.
+- `captures[]` carry each page's rendered `text`, `title`,
+  metadata, and reflow metrics. Do the **qualitative** pass
+  (comprehension, voice fidelity, navigation honesty) by
+  reading `captures[].text` — that is the part a script cannot
+  judge.
+
+Mode determinism replaces the Step 0 cookie dance: the walk
+runs in a **fresh isolated `browser.newContext()`** with no
+operator profile to inherit, so the shared-profile
+contamination class (the 2026-05-19 pass-1 false HIGH) is
+structurally impossible here. `--mode anonymous` attaches no
+cookie; `--mode authenticated` attaches exactly the
+`$CRITIQUE_SESSION_COOKIE` pair. You do **not** need to clear /
+verify `document.cookie` — there was never a stale session to
+clear. If the authed pass's `__session` pair is missing or
+malformed the script emits a single `auth-failed` finding and
+walks nothing (Step 0 hard rule 1 — no silent fallback to
+anon); treat it exactly as a failed Step 0 handshake.
+
 ### Path B — WebFetch fallback
 
-When browser tools aren't available. You see rendered HTML but
-lose visual layout, console errors, network timing,
-interactivity. Mark findings as `source: web-fetch`.
+When neither browser tools nor Playwright are available. You
+see rendered HTML but lose visual layout, console errors,
+network timing, interactivity. Mark findings as `source:
+web-fetch`.
 
 ## What to look for (in order; stop at ~5–8 strong findings)
 

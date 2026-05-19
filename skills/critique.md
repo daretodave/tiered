@@ -104,6 +104,19 @@ fresh-eyes observer. **Always delegate the visit.** Reasons:
 - Fresh sub-agent context = genuine first-time-reader perspective.
 - Output is structured JSON; easy to filter and file.
 
+**Tooling path selection.** Locally, `reader` uses Path A
+(Chrome MCP). **In the cloud loop** (GitHub Actions — no Chrome
+MCP) `reader` uses **Path A2 — the Playwright walk**
+(`scripts/critique-walk.mjs`), which the runner can drive
+because chromium is already cached for e2e. Path A2 runs in a
+fresh isolated context, so the shared-profile false-finding
+class that made `/critique` local-only is structurally
+impossible there — this is what makes a cloud `/critique` pass
+trustworthy. Tell `reader` which path applies (it auto-selects
+A2 when Chrome MCP is absent, but the prompt should name it for
+the cloud case). Path B (WebFetch) only when neither is
+available.
+
 Pass it:
 - The URL list.
 - The **pass mode** (`anonymous` or `authenticated`).
