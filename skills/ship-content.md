@@ -189,6 +189,20 @@ Confirm the top row maps to one of the 4 bearings rules:
   `category: facade-gap` (auto-mark `[x] superseded by 19a`).
   Per-show illustration is prohibited per `design/CLAUDE.md`.
 
+**Finale-shift rows (`source: self`, phase 39).** A row filed by
+`scripts/finale-gate.mjs` ("post-finale ranking-shift note owed
+for <Show> season <N>…", carrying a `<!-- finale-shift:… -->`
+marker) is editorially **autonomous** (oversight 2026-05-19).
+When you pick one up: write a spoiler-safe note framing the
+*ranking shift* the finale caused, and adjust that season's
+`canonical_position` (and the canon entry order, cascading the
+always-working + content-check invariants like any Rule 2
+rebase) **if the editorial rationale warrants it**. **Spoiler
+discipline is P0** — never state the winner, elimination,
+finale outcome, or any plot beat; frame only the shift in where
+the season sits. Leave the `<!-- finale-shift:… -->` marker on
+the row when it moves to `## Done` so the gate never re-files it.
+
 If no content-gap rows or all score < 3.0: exit cleanly. Log
 "no content queue — falling through" and return.
 

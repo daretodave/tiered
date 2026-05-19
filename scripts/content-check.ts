@@ -10,6 +10,7 @@ import {
   getLegalDoc,
   loadAllContent,
 } from '../src/content/loaders'
+import { getCalendar } from '../src/content/calendar'
 import { ContentValidationError } from '../src/content/errors'
 import {
   validateEraBandCoverage,
@@ -163,6 +164,54 @@ export function collectFailures(strict = false): Failure[] {
   return failures
 }
 
+// Phase 39: the finale calendar. The Zod schema (getCalendar)
+// owns structural validation — a malformed row throws
+// ContentValidationError, surfaced here as a failure. This
+// function additionally owns the referential checks the schema
+// deliberately cannot express: every calendared show slug must
+// resolve to a real show (a typo would silently disable the gate
+// for that show), and no duplicate (show, season) pair. The
+// referenced season file is intentionally NOT required — a
+// calendared future finale legitimately precedes its seeded
+// season file; surfacing that gap is the gate's whole purpose.
+// Exported so the vitest suite can exercise it against a temp
+// content tree without spawning a child process.
+export function collectCalendarFailures(): Failure[] {
+  const failures: Failure[] = []
+  const showSlugs = new Set(getAllShows().map((s) => s.slug))
+  try {
+    const calendar = getCalendar()
+    const seenFinale = new Set<string>()
+    for (const entry of calendar.finales) {
+      if (!showSlugs.has(entry.show)) {
+        failures.push({
+          file: 'content/calendar.yml',
+          message: `finale references unknown show "${entry.show}" (season ${entry.season})`,
+        })
+      }
+      const key = `${entry.show}:${entry.season}`
+      if (seenFinale.has(key)) {
+        failures.push({
+          file: 'content/calendar.yml',
+          message: `duplicate finale entry for "${entry.show}" season ${entry.season}`,
+        })
+      } else {
+        seenFinale.add(key)
+      }
+    }
+  } catch (err) {
+    if (err instanceof ContentValidationError) {
+      failures.push({ file: err.file, message: err.message })
+    } else {
+      failures.push({
+        file: 'content/calendar.yml',
+        message: err instanceof Error ? err.message : String(err),
+      })
+    }
+  }
+  return failures
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -225,6 +274,8 @@ function main(): number {
       })
     }
   }
+
+  failures.push(...collectCalendarFailures())
 
   if (!existsSync('content')) {
     failures.push({

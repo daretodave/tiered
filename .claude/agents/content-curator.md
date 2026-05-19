@@ -346,6 +346,19 @@ frontmatter so the lax-mode content-check passes (e.g.
 S20.canonical_position: 1 → 2, S1.canonical_position: 2 → 3,
 etc.).
 
+### Post-finale ranking-shift notes (phase 39, `source: self`)
+
+`scripts/finale-gate.mjs` files an AUDIT row when a calendared
+finale (`content/calendar.yml`) has aired. Picking one up grants
+**full editorial autonomy** (oversight 2026-05-19): write a
+spoiler-safe note framing the *ranking shift* the season earned,
+and rebase its `canonical_position` (cascading the rest of the
+canon exactly as a Rule 2 rebase above) **if the rationale
+warrants it**. **NEVER spoiler** — P0, see §"Spoilers are
+forbidden". The note is about where the season *sits*, never the
+winner, elimination, or any finale beat. A finale air date is
+not a spoiler; a finale outcome always is.
+
 ### The always-working rule
 
 A show with one or more seeded seasons should always have a

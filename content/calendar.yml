@@ -1,0 +1,50 @@
+# content/calendar.yml
+#
+# Finale air dates for shows tiered.tv ranks. This file drives
+# the self-sustaining loop's finale-detection gate (phase 39,
+# spec.md:294): on every /march and /iterate tick a Step 0 gate
+# reads this calendar, finds finales whose `finale_date` is in
+# the past with no shift note filed yet, and writes one
+# `category: content-gaps, source: self` row into plan/AUDIT.md.
+# The next content drain picks that row up and — with full
+# editorial autonomy, spoiler discipline P0 — writes the
+# post-finale ranking-shift note and adjusts canonical_position
+# if warranted.
+#
+# A finale AIR DATE is not a spoiler (standing rule §7: air
+# dates / format are fair game). Never put winner / elimination
+# / outcome data in this file.
+#
+# Shape (validated by content-check):
+#   show:        known show slug (must resolve to content/shows/<slug>.md)
+#   season:      positive integer (the season number)
+#   finale_date: ISO YYYY-MM-DD
+#   status:      'scheduled' (finale upcoming) | 'aired' (finale has aired)
+#
+# `status` is the human/curator partition; the gate keys off
+# `finale_date < today`. No duplicate (show, season) pair.
+#
+# Seeded 2026-05-19 from scout-cited public network / press
+# dates — see plan/phases/phase_39_calendar_finale_gate.md.
+
+finales:
+  - show: survivor
+    season: 50
+    finale_date: 2026-05-20
+    status: scheduled
+  - show: survivor
+    season: 48
+    finale_date: 2025-05-21
+    status: aired
+  - show: amazing-race
+    season: 38
+    finale_date: 2025-12-10
+    status: aired
+  - show: top-chef
+    season: 22
+    finale_date: 2025-06-12
+    status: aired
+  - show: dragrace
+    season: 17
+    finale_date: 2025-04-18
+    status: aired

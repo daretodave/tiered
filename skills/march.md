@@ -55,6 +55,30 @@ git pull --ff-only
 
 If divergence, stop per §5.
 
+### Step 0.5 — Finale-detection gate (phase 39)
+
+Run the idempotent finale gate before triage. It reads
+`content/calendar.yml`, finds finales whose `finale_date` is in
+the past with no shift note filed yet, and appends one
+`category: content-gaps, source: self` row per finale into
+`plan/AUDIT.md`'s `## Pending` block:
+
+```bash
+node scripts/finale-gate.mjs
+```
+
+This is a fast, side-effect-light no-op when nothing is due (and
+when the calendar file is absent). It is **not** a gate that can
+fail the march — exit non-zero only on an unexpected I/O error;
+log it and continue. If it filed rows, they flow into the normal
+content-gap dispatch (Step 3b.5) on this or a later tick. The
+content drain that picks up a `source: self` finale-shift row
+**may autonomously write the spoiler-safe post-finale
+ranking-shift note AND adjust that season's `canonical_position`**
+if the editorial rationale warrants it (oversight 2026-05-19;
+spoiler discipline is P0 — the note frames the *ranking shift*,
+never the winner/elimination/outcome).
+
 ### Step 1 — Triage gate (cheapest check)
 
 Load `GH_TOKEN` from `.env` and count unlabeled open issues:

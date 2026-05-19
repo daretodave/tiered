@@ -6,7 +6,10 @@ import { __resetContentCache } from '../loaders'
 import { setContentRoot } from '../paths'
 // scripts/content-check.ts exports its assertion logic so the same
 // rules can be exercised in vitest without spawning a child process.
-import { collectFailures } from '../../../scripts/content-check'
+import {
+  collectCalendarFailures,
+  collectFailures,
+} from '../../../scripts/content-check'
 
 const sixtyWords = Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')
 const ninetyWords = Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')
@@ -503,5 +506,106 @@ describe('content-check — era-band coverage (phase 34)', () => {
     ])
     expect(eraMsg(collectFailures(false))).toEqual([])
     expect(eraMsg(collectFailures(true))).toEqual([])
+  })
+})
+
+describe('content-check — finale calendar (phase 39)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-cal-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function writeCalendar(body: string): void {
+    writeFileSync(path.join(tmp, 'calendar.yml'), body)
+  }
+
+  it('passes when calendar.yml is absent (optional infrastructure)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCalendarFailures()).toEqual([])
+  })
+
+  it('passes a well-formed calendar referencing a known show', () => {
+    makeShow(tmp, 'alpha')
+    writeCalendar(
+      `finales:
+  - show: alpha
+    season: 3
+    finale_date: 2025-05-21
+    status: aired`,
+    )
+    expect(collectCalendarFailures()).toEqual([])
+  })
+
+  it('does NOT require the referenced season file to exist', () => {
+    makeShow(tmp, 'alpha')
+    // No season files for alpha at all — a future finale precedes
+    // its seeded season; that gap is exactly what the gate exists
+    // to surface, so content-check must not fail it.
+    writeCalendar(
+      `finales:
+  - show: alpha
+    season: 99
+    finale_date: 2030-05-21
+    status: scheduled`,
+    )
+    expect(collectCalendarFailures()).toEqual([])
+  })
+
+  it('fails on an unknown show slug', () => {
+    makeShow(tmp, 'alpha')
+    writeCalendar(
+      `finales:
+  - show: ghost-show
+    season: 1
+    finale_date: 2025-05-21
+    status: aired`,
+    )
+    const failures = collectCalendarFailures()
+    expect(
+      failures.some((f) => /unknown show "ghost-show"/.test(f.message)),
+    ).toBe(true)
+  })
+
+  it('fails on a duplicate (show, season) pair', () => {
+    makeShow(tmp, 'alpha')
+    writeCalendar(
+      `finales:
+  - show: alpha
+    season: 2
+    finale_date: 2024-05-21
+    status: aired
+  - show: alpha
+    season: 2
+    finale_date: 2025-05-21
+    status: aired`,
+    )
+    const failures = collectCalendarFailures()
+    expect(
+      failures.some((f) => /duplicate finale entry for "alpha" season 2/.test(f.message)),
+    ).toBe(true)
+  })
+
+  it('fails (surfacing the Zod error) on a malformed row', () => {
+    makeShow(tmp, 'alpha')
+    writeCalendar(
+      `finales:
+  - show: alpha
+    season: not-a-number
+    finale_date: 2025-05-21
+    status: aired`,
+    )
+    const failures = collectCalendarFailures()
+    expect(failures.length).toBeGreaterThan(0)
+    expect(failures[0]?.file).toMatch(/calendar\.yml$/)
+    expect(failures[0]?.message).toMatch(/calendar validation failed/)
   })
 })

@@ -126,6 +126,24 @@ findings, cheapest-to-ship.
 git pull --ff-only
 ```
 
+### Step 0.5 — Finale-detection gate (phase 39)
+
+```bash
+node scripts/finale-gate.mjs
+```
+
+Idempotent: reads `content/calendar.yml`, files one
+`category: content-gaps, source: self` AUDIT row per past finale
+that has no shift note yet (HTML-comment marker dedupes — never
+double-files, even after the row moves to `## Done`). A clean
+no-op when nothing is due or the calendar is absent; never fails
+the tick (log an unexpected I/O error and continue). A
+gate-filed finale-shift row is editorially **autonomous**: the
+drain that picks it up may write the spoiler-safe ranking-shift
+note AND adjust `canonical_position` if warranted (oversight
+2026-05-19; spoilers are P0 — frame the shift, never the
+outcome).
+
 ### Step 1 — Audit (or read latest)
 
 Run §4. Write to `plan/AUDIT.md`:
