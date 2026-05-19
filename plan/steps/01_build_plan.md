@@ -133,6 +133,25 @@ in the same commit that ships the phase.
 
 - [x] Phase 38 — `/u/[handle]` real public profile (163f79a). Drains the phase-10 shell: `src/app/(default)/u/[handle]/page.tsx` currently renders only the signed-in viewer's own handle, 404s every other handle, surfaces zero activity, and is `noIndex:true` — yet `spec.md:73`'s locked URL contract lists `/u/[handle]` as "public user profile" and every data substrate it needs (phase 11 `users`+`votes`, 12 `comments`, 35 vote read, 36 comment read) has shipped. Resolve `handle` → `users` row (handle/nickname/sub; 404 only on genuinely-unknown handles, not "not me"); render a **spoiler-safe** activity surface from that user's *published* comments + public vote participation counts (never pending/hidden; never raw ballot detail that could spoil an unrevealed canon position); drop `noIndex` for populated profiles, keep it for empty ones. Spoiler discipline is P0 — the profile must never echo a held/hidden comment or leak an unpublished season position. **Agent is the data admin — bold with read RPCs/routes** (bearings §Database posture). One cloud tick. Detailed brief: `phase_38_user_profile.md`.
 
+**Loop observability (phase 40) — promoted via oversight 2026-05-19; SHIPS BEFORE PHASE 39:**
+
+> Priority inversion, user-set 2026-05-19. Phase 40 is numbered
+> after 39 but its row sits **above** 39 deliberately — `/march`
+> + `/ship-a-phase` read this Status block top-to-bottom for the
+> first `[ ]`, so Phase 40 is picked first. Reason: `/critique`
+> is structurally absent from the cloud loop (`march.yml:174`
+> hard-skips it: "reader sub-agent depends on a Chrome MCP not
+> available on the runner"), yet the runner already installs +
+> caches headless chromium for e2e (`march.yml:63-72`). The
+> only blocker is that `reader` drives the local-only
+> claude-in-chrome MCP. Until this is fixed, the entire
+> external-observer leg of the self-sustaining loop never runs
+> autonomously — the same structural-gap argument that promoted
+> Phase 38 and Phase 39, applied to critique itself. The user
+> ruled this more urgent than Phase 39's calendar hook.
+
+- [ ] Phase 40 — Cloud-runnable `/critique` via a Playwright reader path. Add a headless-browser harness (`scripts/critique-walk.mjs` or equivalent) that drives the **already-installed, already-cached** Playwright chromium in `apps/e2e`: launches a **fresh isolated browser context** (genuinely clean — no shared operator profile, so the pass-1 contamination class cannot occur in CI), uses `context.addCookies()` to deterministically set `__session` for the authed pass or none for the anon pass, walks the page set, and emits the same JSON shape `reader` already returns (rendered DOM text + console + network + 375/1280 viewport reflow). Wire `reader.md` with a "Path A2 — Playwright (CI)" alongside Path A (local Chrome MCP) and Path B (WebFetch); update `critique.md` so a cloud invocation selects Path A2; flip `march.yml:174` from "skip /critique" to dispatching it (respecting the existing `/march` Step 2 rate-limit + green-deploy gate). Colocated tests for the walk script (anon→no `__session`, authed→`__session` present, malformed-page → finding not crash). Net: scored `/critique` passes originate from the cloud loop, not only local; the local Chrome MCP path stays as an operator-driven supplement. Spoiler/P0 unchanged — critique never mutates. Brief drafted on-demand from this row. Promoted from `PHASE_CANDIDATES.md` #07.
+
 **Self-sustaining endgame (phase 39) — promoted via oversight 2026-05-19:**
 
 > Build plan re-exhausted at 205862b (Phase 38 + a 44-commit

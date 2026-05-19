@@ -83,6 +83,50 @@ do not re-score it independently — track #06.
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in 01_build_plan.md> -->
 
+### 07. Cloud-runnable `/critique` via a Playwright reader path
+
+**Score:** 5.5 (impact: 7, ease: 5, +2 multi — unblocks every future cloud critique pass + eliminates the shared-profile false-finding class)
+**Source pass:** filed + promoted same act (oversight 2026-05-19)
+**Filed:** 2026-05-19
+**Source signals:**
+- Critique pass 1 (2026-05-19) produced a false HIGH because
+  the `reader` sub-agent drives the operator's shared local
+  Chrome profile. Even with the cookie-primitive fix applied
+  this oversight, `/critique` remains **local-only**.
+- `march.yml:174` hard-skips `/critique` ("reader sub-agent
+  depends on a Chrome MCP not available on the runner") while
+  `march.yml:63-72` already installs + caches headless
+  chromium for e2e — the browser is present; only the harness
+  path is missing.
+- Structural-gap argument (same as Phase 38 / Phase 39): the
+  external-observer leg of the self-sustaining loop never runs
+  autonomously, and no existing phase owns fixing that.
+- User raised it directly twice 2026-05-19: "critique should
+  not be local only: it can and should run in actions."
+
+**Why:** A Playwright-driven reader path is *more* deterministic
+than the local Chrome MCP — a fresh isolated context has no
+operator profile to inherit, so the entire contamination class
+that produced the pass-1 false finding cannot occur in CI.
+Playwright + chromium are already in the repo and cached in the
+cloud workflow, so the lift is the walk script + harness wiring,
+not new infrastructure.
+
+**Scope sketch:** `scripts/critique-walk.mjs` (Playwright,
+fresh isolated context, `context.addCookies()` for authed /
+none for anon, emits the existing `reader` JSON shape incl.
+console + network + 375/1280 reflow); `reader.md` "Path A2 —
+Playwright (CI)"; `critique.md` selects Path A2 on cloud
+invocation; `march.yml:174` flipped from skip to dispatch under
+the existing rate-limit + green-deploy gate; colocated tests.
+
+**Estimated phases:** 1.
+**Conflicts:** none. Critique never mutates (P0 unchanged).
+Local Chrome MCP path stays as an operator-driven supplement.
+
+**Promoted in:** oversight 2026-05-19 — user ruled it **ahead of Phase 39** (priority inversion; row placed above Phase 39 in the Status block).
+**Build-plan row:** Phase 40 — Cloud-runnable `/critique` via a Playwright reader path (`01_build_plan.md`, ships before Phase 39).
+
 ### 06. `content/calendar.yml` + finale-event detection hook (mechanical + autonomous editorial half of spec.md:294)
 
 **Score:** 5.5 (impact: 6, ease: 5, +2 multi, +2 cheap-and-bounded, -1.5 needs-user-call boundary — boundary now resolved)
