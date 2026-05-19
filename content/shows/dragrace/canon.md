@@ -1,7 +1,7 @@
 ---
 show: dragrace
 editor: tiered.tv Editors
-last_revised: 2026-05-16
+last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We have watched Drag Race since the Logo years, and replayed every U.S.-flagship season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable drag fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
 meth_how_h: How do we weigh it?
@@ -228,30 +228,13 @@ tier. We rank it here because its argument is structural — the
 panel that defined the next decade is set, and the show stops
 guessing about what it is.
 
-## 17. Season 17
-
-tag: The most recent flagship — the established grammar run cleanly, still settling in the canon.
-slot_argument: A standard-format MTV-era season at the franchise's settled production scale, with a fresh modern cast. No structural experiment — just the show running its grammar confidently. The newest entry, with the least time to settle.
-community_rank_hint: rank=13 delta=0 sentiment=hold
-
-Season 17 lands thirteenth as the newest U.S.-flagship run. It
-plays a standard MTV-era competition at the production scale
-the franchise has settled into, with RuPaul Charles and
-Michelle Visage anchoring a familiar panel and a fresh modern
-cast. The workroom-and-runway shape is intact and confident,
-but there is no structural experiment driving it the way the
-modern seasons above it carry one. We rank it here as an honest
-provisional read: it is competent and watchable, and as the
-most recent season it has had the least time to settle. The
-placement may sharpen on a replay.
-
 ## 13. Season 13
 
 tag: The restructured premiere — a real format swing wrapped around an uneven contest.
 slot_argument: An unusual opening lip-sync structure that rewires episode one and resets expectations for what a premiere can be. The structural argument is the headline; the competition behind it is solid but uneven, filmed under tightened conditions.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
-Season 13 lands fourteenth on the strength of its structural
+Season 13 lands thirteenth on the strength of its structural
 swing. The season opens with an unusual premiere lip-sync
 conceit that rewires how episode one functions and resets
 expectations for what a Drag Race premiere can be. RuPaul
@@ -261,6 +244,24 @@ environment, which gives the season a slightly contained feel.
 We rank it here because the premiere experiment is a genuine
 format argument, even though the contest behind it stays solid
 rather than sharp — the swing outranks the execution.
+
+## 17. Season 17
+
+tag: The most recent flagship — the settled grammar run clean, no format swing to carry it past the structural seasons.
+slot_argument: A standard-format MTV-era season at the franchise's settled production scale with a fresh modern cast. The contest runs clean, but carries no structural experiment — the canon's argument lens seats it under the seasons that do.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season 17 settles at fourteenth on a full post-finale read. It
+plays a standard MTV-era competition at the production scale
+the franchise has settled into, with RuPaul Charles and
+Michelle Visage anchoring a familiar panel and a fresh modern
+cast. The workroom-and-runway shape is intact and confident
+across the run. What it lacks is a structural argument — there
+is no format experiment reshaping the season the way the
+entries above it carry one. On a settled read it sits just
+below the restructured-premiere season directly above: a
+clean, competent flagship year whose case is execution rather
+than invention.
 
 ## 2. Season 2
 
