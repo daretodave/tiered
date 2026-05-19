@@ -1,7 +1,7 @@
 ---
 show: amazing-race
 editor: tiered.tv Editors
-last_revised: 2026-05-16
+last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We've watched The Amazing Race since the original Keoghan summer in 2001, and we've replayed every season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable race fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
 meth_how_h: How do we weigh it?
@@ -630,11 +630,30 @@ flights, the season ran no non-elimination legs, and the
 The canon places it thirty-sixth because the structural set is
 competent but quieter than the modern entries above it.
 
+## 38. Season 38
+
+tag: The Big Brother crossover — every team carrying a former houseguest, started where the format was born.
+slot_argument: Thirteen teams stocked with Big Brother veterans, a start in the format's Dutch birthplace, and the first new U-Turn penalty since Season 33. The cross-franchise lineage gives it a more concrete format hook than the season below it.
+community_rank_hint: rank=37 delta=0 sentiment=hold
+
+Season 38 stocked its entire field with Big Brother veterans —
+thirteen teams, each carrying at least one former US houseguest
+— and the canon rewards the cross-franchise argument. The field
+left Hoorn, the Netherlands, the birthplace of the Big Brother
+format, through the Czech Republic, Hungary, Croatia, Romania,
+Greece, Italy, and France before a New York finish. A U-Turn
+penalty carried by a non-elimination survivor is the first
+genuinely new mechanic since Season 33, joining a returning
+Express Pass, Hazard, and Double U-Turn Vote. The canon places
+it thirty-seventh because the crossover concept and new
+mechanic give it a more concrete format-historical reason to
+exist than the season below it.
+
 ## 37. Season 37
 
 tag: The season of surprises — the largest US cast ever, with a twist built into every leg.
-slot_argument: Fourteen teams, the biggest US cast in franchise history, run through a structure where every leg carries a twist. The premise is a concept layer rather than a format argument, and it is the least-settled season in the canon.
-community_rank_hint: rank=37 delta=0 sentiment=hold
+slot_argument: Fourteen teams, the biggest US cast in franchise history, run through a structure where every leg carries a twist. The premise is a concept layer rather than a format argument, and it now sits below the crossover season.
+community_rank_hint: rank=38 delta=0 sentiment=hold
 
 Season 37 ran the largest US cast the franchise has ever
 assembled, and the canon places it where the concept lands.
@@ -644,6 +663,7 @@ with several first-time stops along the route. The season is
 built so every leg carries a twist, and the toolkit reflects it
 — Fork in the Road, Driver's Seat, and Valet Roulette debut
 alongside returning mechanics like the Intersection and
-Head-to-Head. The canon places it thirty-seventh because the
+Head-to-Head. The canon places it thirty-eighth because the
 twist-saturation premise is a concept layer rather than a
-format argument, and it is the least-settled read in the canon.
+format argument, and it now sits below the crossover season,
+whose cross-franchise lineage makes the more concrete case.

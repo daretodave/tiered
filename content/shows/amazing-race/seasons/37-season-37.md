@@ -10,7 +10,7 @@ format_changes:
   - "Branded a season of surprises — every leg carries a twist"
   - "New elements: Fork in the Road, Driver's Seat, Valet Roulette"
   - "Returning: Intersection, Fast Forward, Double U-Turn, Head-to-Head, Scramble, non-elimination leg"
-canonical_position: 37
+canonical_position: 38
 premiere_caption: "CBS · Wednesday"
 format_summary: "14 teams of 2 · twist per leg"
 cast_size: 28
