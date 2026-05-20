@@ -54,16 +54,6 @@
 > "season anon affordances suppressed" observation falls with
 > it (same cause).
 
-### [MED] /themes, /themes/[theme] — "cross-canon" copy overpromises against an all-Survivor catalog
-- pass: 1 (commit b57b536)
-- viewport: desktop
-- category: comprehension
-- auth_state: anon
-- observation: The Lists hero says lists are "Cross-canon" and "Some span every show," but the stat strip reads "1 SHOWS COVERED" and every list is tagged SURVIVOR. `/themes/best-premieres` reinforces it: entries labelled "CROSS-CANON LIST" contain only Survivor seasons ("SPANS 1 show"). A first-time reader sees the contradiction immediately — the voice promises breadth the catalog does not yet have.
-- evidence: `/themes`: "Themed lists. Cross-canon. … Some span every show." beside stat "1 SHOWS COVERED". `/themes/best-premieres`: "SPANS 1 show"; related items tagged "CROSS-CANON LIST", all rows SURVIVOR.
-- suggested fix: Until multi-show lists exist, derive the hero/tag copy from actual show-coverage — single-show-honest language; drop the "CROSS-CANON" tag where a list covers one show.
-- source: browser
-
 ### [MED] /themes/best-premieres vs /shows/survivor — Survivor 41 named "New Era I" in canon, "S41 · REBOOT" on the list
 - pass: 1 (commit b57b536)
 - viewport: desktop
@@ -107,6 +97,8 @@
 _(no open needs-user-call — the pass-1 harness blocker was resolved this oversight; see Done)_
 
 ## Done
+
+- [x] [MED] [anon] /themes, /themes/[theme] — "cross-canon" copy overpromises against an all-Survivor catalog (URL: /themes, /themes/[theme], source: critique-pass-1) — issue #98 — RESOLVED this commit: `ListsHero` and `AdjacentLists` are now coverage-aware. `ListsHero` derives both the H1 accent and the lede from `stats.showsCovered`: when ≥2 shows are covered it keeps the current "Cross-canon." accent + "Some span every show. Some live inside one." lede; when exactly 1 show is covered (today's reality at 12 lists / 1 show) it switches to "Inside one canon." + "Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in." `AdjacentLists.tagFor` now checks the *other* theme's actual show-coverage on the cross-category branch: when the other list spans only one show, the qualifier drops from "cross-canon list" to "<category> list" (e.g. "↩ single-show list" / "single-show list ↪"); the genuine cross-canon-list label survives only when the other list truly spans ≥2 shows. New `data-coverage` attribute on the hero (`cross-canon|single-canon`) and two new locks: a single-canon `ListsHero` test asserts the accent + lede swap, and a cross-category `AdjacentLists` test asserts the "cross-canon" label survives only on a multi-show fixture. Surfaces touched: `/themes` index + every `/themes/[theme]` detail with related lists. Spoiler discipline unaffected; voice now matches the live catalog. Home stack heading ("Themed lists, cross-canon.") is the same root cause but a separate surface — filed as a follow-up critique observation on the next pass.
 
 - [x] [needs-user-call] reader-driven critique was not auth-isolatable in either direction — RESOLVED 2026-05-19 (oversight): pass 1 proved the `reader` sub-agent drives the operator's real, shared Chrome profile and had no cookie primitive, so its "anon" walk inherited the operator's live session (false HIGH filed + withdrawn) and its authed walk could not run. **Fix applied (user-approved, option 1):** `.claude/agents/reader.md` now carries `mcp__claude-in-chrome__javascript_tool` and a mandatory Step 0 that *deterministically* clears cookies + verifies `/api/auth/me → signedIn:false` for the anon pass and sets `__session` + verifies `signedIn:true` for the authed pass, exiting `auth-failed` rather than walking a contaminated profile. `plan/bearings.md` "Working harness contract" rewritten — reliability is now structural (verify-or-exit gate), not incidental profile luck. **Separate open question** (raised by user 2026-05-19, not a blocker for the above): whether `/critique` should also run in GitHub Actions, not just local — see the oversight summary; that needs a headless-browser reader path and is a phase-candidate decision, tracked outside this row.
 

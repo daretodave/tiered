@@ -14,9 +14,13 @@ const CATEGORY_LABELS: Record<Theme['category'], string> = {
 }
 
 function tagFor(theme: Theme, other: Theme, side: 'left' | 'right'): string {
+  const otherCat = CATEGORY_LABELS[other.category]
   if (theme.category === other.category) {
-    const cat = CATEGORY_LABELS[other.category]
-    return side === 'left' ? `↩ similar ${cat} list` : `${cat} list ↪`
+    return side === 'left' ? `↩ similar ${otherCat} list` : `${otherCat} list ↪`
+  }
+  const otherShows = new Set(other.entries.map((e) => e.show))
+  if (otherShows.size <= 1) {
+    return side === 'left' ? `↩ ${otherCat} list` : `${otherCat} list ↪`
   }
   return side === 'left' ? '↩ cross-canon list' : 'cross-canon list ↪'
 }

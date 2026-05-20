@@ -6,15 +6,23 @@ type ListsHeroProps = {
 }
 
 export function ListsHero({ stats }: ListsHeroProps) {
-  const lede = `${stats.total} ${plural(stats.total, 'piece', 'pieces')} of editorial opinion, organized by the part of the craft they admire. Some span every show. Some live inside one. None of them spoil what they rank.`
+  const isCrossCanon = stats.showsCovered > 1
+  const accent = isCrossCanon ? 'Cross-canon.' : 'Inside one canon.'
+  const lede = isCrossCanon
+    ? `${stats.total} ${plural(stats.total, 'piece', 'pieces')} of editorial opinion, organized by the part of the craft they admire. Some span every show. Some live inside one. None of them spoil what they rank.`
+    : `${stats.total} ${plural(stats.total, 'piece', 'pieces')} of editorial opinion, organized by the part of the craft they admire. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
 
   return (
-    <header className="lists-hero" data-testid="lists-hero">
+    <header
+      className="lists-hero"
+      data-testid="lists-hero"
+      data-coverage={isCrossCanon ? 'cross-canon' : 'single-canon'}
+    >
       <div className="lists-hero-eyebrow">tiered.tv / Lists</div>
       <h1 className="lists-hero-title">
         Themed lists.
         <br />
-        <em>Cross-canon.</em>
+        <em>{accent}</em>
       </h1>
       <p className="lists-hero-lede">{lede}</p>
       <div className="lists-hero-stats" data-testid="lists-hero-stats">

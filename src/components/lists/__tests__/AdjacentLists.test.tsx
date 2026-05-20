@@ -62,7 +62,41 @@ describe('<AdjacentLists>', () => {
     expect(tags[1]).toMatch(/craft list/i)
   })
 
-  it('labels cross-category pairs as "cross-canon list"', () => {
+  it('labels cross-category pairs as "cross-canon list" when the other list spans multiple shows', () => {
+    render(
+      <AdjacentLists
+        theme={theme({ category: 'tone' })}
+        related={[
+          theme({
+            slug: 'a',
+            category: 'single',
+            entries: [
+              {
+                show: 'survivor',
+                season: 1,
+                rank: 1,
+                title: 't',
+                blurb: 'b',
+              },
+              {
+                show: 'top-chef',
+                season: 1,
+                rank: 2,
+                title: 't',
+                blurb: 'b',
+              },
+            ],
+          }),
+        ]}
+      />,
+    )
+    const tag = screen
+      .getByTestId('list-adjacent-link')
+      .querySelector('.adj-tag')?.textContent
+    expect(tag).toMatch(/cross-canon/i)
+  })
+
+  it('drops the "cross-canon" qualifier on cross-category pairs when the other list covers only one show', () => {
     render(
       <AdjacentLists
         theme={theme({ category: 'tone' })}
@@ -72,6 +106,7 @@ describe('<AdjacentLists>', () => {
     const tag = screen
       .getByTestId('list-adjacent-link')
       .querySelector('.adj-tag')?.textContent
-    expect(tag).toMatch(/cross-canon/i)
+    expect(tag).not.toMatch(/cross-canon/i)
+    expect(tag).toMatch(/single-show list/i)
   })
 })
