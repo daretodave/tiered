@@ -8,6 +8,14 @@ import { canonicalUrls } from './canonical-urls'
 // We pick one season per show (the lowest-number aired season) so
 // the assertion catches the redirect contract without exploding
 // fixture size.
+//
+// The show-prefixed numeric form (`/season/<show>-<n>`) is
+// included on the same row (CRITIQUE pass 1, issue #102 —
+// readers and external links plausibly construct it from the
+// show slug + season number; before this it 404'd). Skipped when
+// `<show>-<n>` collides with a real canonical slug (e.g.
+// `survivor-46` — the season at number 46 *is* `survivor-46`,
+// so there's nothing to redirect).
 
 export type SeasonRedirect = {
   show: string
@@ -27,9 +35,20 @@ function buildSeasonRedirects(): SeasonRedirect[] {
       toPath: `/shows/${row.show}/season/${row.seasonSlug}`,
     })
   }
-  return [...firstByShow.values()].sort((a, b) =>
+  const digitForm = [...firstByShow.values()].sort((a, b) =>
     a.show.localeCompare(b.show),
   )
+  const prefixed: SeasonRedirect[] = []
+  for (const r of digitForm) {
+    const candidate = `${r.show}-${r.fromPath.split('/').pop()}`
+    if (candidate === r.toPath.split('/').pop()) continue
+    prefixed.push({
+      show: r.show,
+      fromPath: `/shows/${r.show}/season/${candidate}`,
+      toPath: r.toPath,
+    })
+  }
+  return [...digitForm, ...prefixed]
 }
 
 export const seasonRedirects: SeasonRedirect[] = buildSeasonRedirects()

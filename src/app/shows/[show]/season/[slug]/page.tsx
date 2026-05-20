@@ -225,6 +225,13 @@ function whereItSitsCopy(
 // the middleware onto an experimental Node.js runtime — the
 // user-visible behavior (`/season/4` → `/season/marquesas`) is
 // identical, and Next.js's permanentRedirect emits a 308.
+//
+// Same precedent extended to the show-prefixed numeric form
+// (`/season/<show.slug>-<n>` — e.g. `/season/survivor-20`), which
+// readers and external links plausibly construct from the show
+// slug + season number. Looked up only when the literal slug
+// isn't a real season, so canonical slugs that legitimately end
+// in `-<n>` (e.g. `survivor-46`) still serve directly.
 const DIGIT_PARAM_RE = /^\d+$/
 
 export default async function SeasonPage({ params }: { params: Params }) {
@@ -239,7 +246,20 @@ export default async function SeasonPage({ params }: { params: Params }) {
     notFound()
   }
   const season = getSeasonBySlug(show.slug, params.slug)
-  if (!season) notFound()
+  if (!season) {
+    const prefix = `${show.slug}-`
+    if (params.slug.startsWith(prefix)) {
+      const rest = params.slug.slice(prefix.length)
+      if (DIGIT_PARAM_RE.test(rest)) {
+        const n = Number.parseInt(rest, 10)
+        const bySeason = getSeason(show.slug, n)
+        if (bySeason) {
+          permanentRedirect(`/shows/${show.slug}/season/${bySeason.slug}`)
+        }
+      }
+    }
+    notFound()
+  }
 
   const seasons = getAllSeasons(show.slug)
   const themes = getAllThemes()
