@@ -20,7 +20,7 @@ export const dynamic = 'force-static'
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: 'Themes',
+    title: 'Lists',
     description:
       'Themed lists across every tiered.tv canon — best premieres, best finales, cross-canon and single-show tiers, organized by what they admire.',
     path: '/themes',
@@ -57,7 +57,7 @@ export default function ThemesIndexPage() {
   const ld = {
     ...buildJsonLd({
       type: 'CollectionPage',
-      name: 'Themes — tiered',
+      name: 'Lists — tiered',
       description: 'Themed lists across every tiered.tv canon.',
       path: '/themes',
     }),

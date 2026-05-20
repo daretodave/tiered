@@ -7,6 +7,7 @@ export type PageReadAssertion = {
   expectNoHorizontalScroll?: boolean
   expectMetaDescription?: RegExp
   expectJsonLdType?: string
+  expectTitlePattern?: RegExp
 }
 
 // Chrome assertions that hold for every URL — phase 19b contract.
@@ -99,6 +100,7 @@ export const pageReads: Record<string, PageReadAssertion> = {
   },
   '/themes': {
     expectH1Pattern: /Themed lists/i,
+    expectTitlePattern: /^Lists\b/,
     expectJsonLdType: 'CollectionPage',
     expectVisible: [
       '[data-testid=wrap]',

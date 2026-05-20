@@ -43,6 +43,10 @@ async function runAssertion(
   if (reads.expectH1Pattern) {
     await expect(page.locator('h1').first()).toContainText(reads.expectH1Pattern)
   }
+  if (reads.expectTitlePattern) {
+    const title = await page.title()
+    expect(title, `<title> on ${url.path}`).toMatch(reads.expectTitlePattern)
+  }
   for (const sel of reads.expectVisible ?? []) {
     await expect(page.locator(sel).first()).toBeVisible()
   }
