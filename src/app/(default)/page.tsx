@@ -6,7 +6,7 @@ import { HomeDualCallout } from '@/components/home/HomeDualCallout'
 import { HomeListsStack } from '@/components/home/HomeListsStack'
 import { HomeListRow } from '@/components/home/HomeListRow'
 import { ShowTile } from '@/components/home/ShowTile'
-import { getCanonRevisedLabel } from '@/lib/home/canon-revised'
+import { getCanonRevisedLabel } from '@/lib/canon/last-revised'
 
 // Phase 27 — homepage rebuilt against `design/tiered.tv · Home.html`.
 // Fluid hero + stat strip; 3-up featured tiles + a sub-row + 6 compact

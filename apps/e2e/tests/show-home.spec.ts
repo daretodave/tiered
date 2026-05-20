@@ -29,7 +29,20 @@ for (const url of showHomeUrls) {
       await expect(page.getByTestId('show-home-screen')).toBeVisible()
       await expect(page.getByTestId('show-hero')).toBeVisible()
       await expect(page.getByTestId('show-hero-cover')).toBeVisible()
-      await expect(page.getByTestId('show-hero-stats')).toBeVisible()
+      const heroStats = page.getByTestId('show-hero-stats')
+      await expect(heroStats).toBeVisible()
+      // Issue #104: canon-revised stat is the shared formatter — the
+      // same MM / YY shape + same "Canon revised" key the home renders
+      // so a reader navigating home → show sees one consistent label.
+      // The label and value live in adjacent spans inside the same .stat
+      // block; isolate the value span so the regex pins format exactly
+      // (`toContainText` on the parent container concatenates sibling
+      // text with no separator, defeating `\b` word boundaries).
+      await expect(heroStats).toContainText(/canon revised/i)
+      const revisedValue = heroStats
+        .locator('.stat', { hasText: /canon revised/i })
+        .locator('.stat-val')
+      await expect(revisedValue).toHaveText(/^\d{2}\s\/\s\d{2}$/)
       await expect(page.getByTestId('bullet').first()).toBeVisible()
       // Phase 37 nit 4: the 72-hour shift signal is unwired (phase 35),
       // so the "What changed this week." section is absent entirely —

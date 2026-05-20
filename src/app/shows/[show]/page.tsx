@@ -17,6 +17,7 @@ import {
   canonicalUrl,
   jsonLdScriptProps,
 } from '@/lib/seo'
+import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 import { getCommunityRanking } from '@/lib/community/ranking'
 import { pickMovers } from '@/lib/community/live'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
@@ -61,13 +62,6 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       },
     ],
   })
-}
-
-function canonRevisedYear(iso: string | undefined): number | null {
-  if (!iso) return null
-  const d = new Date(`${iso}T00:00:00Z`)
-  if (Number.isNaN(d.getTime())) return null
-  return d.getUTCFullYear()
 }
 
 export default async function ShowHomePage({
@@ -154,9 +148,9 @@ export default async function ShowHomePage({
   })
 
   const stats: ShowHeroStat[] = [{ value: show.seasons, key: 'seasons aired' }]
-  const revisedYear = canonRevisedYear(canon?.last_revised)
-  if (revisedYear != null) {
-    stats.push({ value: revisedYear, key: 'Canon last revised' })
+  const revisedLabel = canonRevisedLabelFromIso(canon?.last_revised)
+  if (revisedLabel != null) {
+    stats.push({ value: revisedLabel, key: 'Canon revised' })
   }
 
   return (
