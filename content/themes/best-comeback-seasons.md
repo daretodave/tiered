@@ -15,7 +15,7 @@ description: "Seasons that arrived with everything to prove — a reset, a retur
 entries:
   - show: survivor
     season: 41
-    season_label: "S41 · Reboot"
+    season_label: "S41 · New Era I"
     rank: 1
     title: "The post-pandemic comeback that rebuilt the show out loud."
     blurb: "Eighteen months off the air, a 26-day clock, three new mechanics arriving at once. The reboot could have read as cautious — instead it played as a thesis statement. The kind of comeback that resets the next decade of seasons."

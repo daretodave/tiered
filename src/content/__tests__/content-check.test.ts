@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectCalendarFailures,
   collectFailures,
+  collectThemeFailures,
 } from '../../../scripts/content-check'
 
 const sixtyWords = Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')
@@ -405,6 +406,136 @@ describe('content-check — canon heading vs season title (critique 2026-05-16)'
       { rank: 2, season: 15, title: 'Brad Womack (return run)' },
     ])
     expect(nameMsg(collectFailures(false))).toEqual([])
+  })
+})
+
+// A theme file with a single entry — used to exercise the
+// themed-list `season_label` vs canonical-title invariant
+// (critique 2026-05-19, #101: S41 "Reboot" / S45 "Survivor 45"
+// list labels diverging from the season frontmatter title).
+function makeTheme(
+  root: string,
+  slug: string,
+  entry: {
+    show: string
+    season: number
+    season_label?: string
+    rank?: number
+  },
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  const labelLine =
+    entry.season_label != null
+      ? `\n    season_label: "${entry.season_label}"`
+      : ''
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: "${slug}"
+entries:
+  - show: ${entry.show}
+    season: ${entry.season}
+    rank: ${entry.rank ?? 1}${labelLine}
+    title: "t"
+    blurb: "b"
+---
+`,
+  )
+}
+
+describe('content-check — themed-list season_label vs canonical title (#101)', () => {
+  let tmp: string
+  const labelMsg = (fs: ReturnType<typeof collectThemeFailures>) =>
+    fs.filter((f) => /season_label/.test(f.message))
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-label-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('fails when the suffix after " · " diverges from the season title', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 41, 's41', 'New Era I')
+    makeTheme(tmp, 'best-premieres', {
+      show: 'alpha',
+      season: 41,
+      season_label: 'S41 · Reboot',
+    })
+    const problems = labelMsg(collectThemeFailures())
+    expect(problems.length).toBe(1)
+    expect(problems[0]?.file).toBe('content/themes/best-premieres.md')
+    expect(problems[0]?.message).toMatch(/"Reboot"/)
+    expect(problems[0]?.message).toMatch(/"New Era I"/)
+    expect(problems[0]?.message).toMatch(/rank 1/)
+  })
+
+  it('passes when the suffix after " · " equals the season title', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 41, 's41', 'New Era I')
+    makeTheme(tmp, 'best-premieres', {
+      show: 'alpha',
+      season: 41,
+      season_label: 'S41 · New Era I',
+    })
+    expect(labelMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('tolerates a label with no " · " separator (bare "S41")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 41, 's41', 'New Era I')
+    makeTheme(tmp, 'best-premieres', {
+      show: 'alpha',
+      season: 41,
+      season_label: 'S41',
+    })
+    expect(labelMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('tolerates an entry with no season_label at all', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 41, 's41', 'New Era I')
+    makeTheme(tmp, 'best-premieres', { show: 'alpha', season: 41 })
+    expect(labelMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('still flags unknown show / missing season referential errors', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 41, 's41', 'New Era I')
+    makeTheme(tmp, 'best-premieres', {
+      show: 'ghost',
+      season: 41,
+      season_label: 'S41 · New Era I',
+    })
+    const all = collectThemeFailures()
+    expect(all.some((f) => /unknown show "ghost"/.test(f.message))).toBe(true)
+  })
+
+  it('handles a multi-word season title with embedded spaces', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 20, 's20', 'Heroes vs. Villains')
+    makeTheme(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 20,
+      season_label: 'S20 · Heroes vs. Villains',
+    })
+    expect(labelMsg(collectThemeFailures())).toEqual([])
   })
 })
 

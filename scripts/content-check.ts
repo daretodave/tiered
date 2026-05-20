@@ -164,6 +164,54 @@ export function collectFailures(strict = false): Failure[] {
   return failures
 }
 
+// Themed-list invariants. Two referential checks (unknown show,
+// missing season file) plus #101's `season_label`-vs-canonical
+// title check: when `season_label` carries a ` · `-delimited name
+// suffix, the suffix must equal the season's frontmatter `title`
+// so themed-list rows and canon/season-page rows name the same
+// season identically (S41 "Reboot" vs "New Era I"; S45 "Survivor
+// 45" vs "Mom I Won"). Labels with no separator (e.g. a bare
+// "S41") stay legal — only a stated-but-divergent name fails.
+// Exported so the vitest suite can exercise it directly.
+export function collectThemeFailures(): Failure[] {
+  const failures: Failure[] = []
+  const showSlugs = new Set(getAllShows().map((s) => s.slug))
+  for (const theme of getAllThemes()) {
+    for (const entry of theme.entries) {
+      if (!showSlugs.has(entry.show)) {
+        failures.push({
+          file: `content/themes/${theme.slug}.md`,
+          message: `theme entry rank ${entry.rank} references unknown show "${entry.show}"`,
+        })
+        continue
+      }
+      const seasons = getAllSeasons(entry.show)
+      const matchingSeason = seasons.find((s) => s.number === entry.season)
+      if (!matchingSeason) {
+        failures.push({
+          file: `content/themes/${theme.slug}.md`,
+          message: `theme entry rank ${entry.rank} references show "${entry.show}" season ${entry.season} but that season file is missing`,
+        })
+        continue
+      }
+      if (entry.season_label != null) {
+        const sep = ' · '
+        const sepIdx = entry.season_label.indexOf(sep)
+        if (sepIdx !== -1) {
+          const namePart = entry.season_label.slice(sepIdx + sep.length).trim()
+          if (namePart !== matchingSeason.title) {
+            failures.push({
+              file: `content/themes/${theme.slug}.md`,
+              message: `theme entry rank ${entry.rank} season_label "${entry.season_label}" names season ${entry.season} as "${namePart}" but the canonical season title is "${matchingSeason.title}" — align the label so themed-list and season-page rows name the same season identically`,
+            })
+          }
+        }
+      }
+    }
+  }
+  return failures
+}
+
 // Phase 39: the finale calendar. The Zod schema (getCalendar)
 // owns structural validation — a malformed row throws
 // ContentValidationError, surfaced here as a failure. This
@@ -246,25 +294,7 @@ function main(): number {
   const STRICT = true
   failures.push(...collectFailures(STRICT))
 
-  const showSlugs = new Set(getAllShows().map((s) => s.slug))
-  for (const theme of getAllThemes()) {
-    for (const entry of theme.entries) {
-      if (!showSlugs.has(entry.show)) {
-        failures.push({
-          file: `content/themes/${theme.slug}.md`,
-          message: `theme entry rank ${entry.rank} references unknown show "${entry.show}"`,
-        })
-        continue
-      }
-      const seasons = getAllSeasons(entry.show)
-      if (!seasons.some((s) => s.number === entry.season)) {
-        failures.push({
-          file: `content/themes/${theme.slug}.md`,
-          message: `theme entry rank ${entry.rank} references show "${entry.show}" season ${entry.season} but that season file is missing`,
-        })
-      }
-    }
-  }
+  failures.push(...collectThemeFailures())
 
   for (const slug of ['about', 'terms', 'privacy'] as const) {
     if (!getLegalDoc(slug)) {

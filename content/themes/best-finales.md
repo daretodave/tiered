@@ -27,7 +27,7 @@ entries:
     blurb: "The milestone framing earns itself in the closing run. Edge of Extinction reshapes the home stretch, the fire-token economy compresses into real currency, and the final tribal carries the weight of a roster that has played this game before."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 3
     title: "The new-era format landing its closing run with no apology."
     blurb: "By 45 the 26-day clock and 90-minute episode have found their natural altitude, and the finale lets them breathe. The closing stretch is tight, the jury read is sharp, and the show closes on the kind of confident note it had been chasing since the reboot."

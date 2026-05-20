@@ -39,7 +39,7 @@ entries:
     blurb: "Cagayan's loud paranoid energy doesn't flow from a single read — it flows from a cast that all played hard. The post-merge runs the franchise quotes spread across the Brains, Brawn, and Beauty tribes, and the season's grammar is built out of all of them."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 5
     title: "A new-era season whose texture lives in the runs the format gave room to."
     blurb: "By 45 the 90-minute episode and 26-day clock give multiple arcs space to breathe. The season's most-discussed moments scatter across journeys, sanctuary visits, and post-merge votes — texture distributed widely rather than carried by one through-line."

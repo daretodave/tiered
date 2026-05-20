@@ -27,13 +27,13 @@ entries:
     blurb: "The pirate framing could have swallowed a smaller cast. This one met it — confrontational chemistry, sharp edges, players who treated the marooning like the audition for the rest of the season. A roster the era still gets quoted on."
   - show: survivor
     season: 41
-    season_label: "S41 · Reboot"
+    season_label: "S41 · New Era I"
     rank: 3
     title: "The first post-pandemic cast, fluent in the modern playbook."
     blurb: "Day one back from the pause and the newbies already knew the game — idols, advantages, the shape of a vote. The reset needed a cast that could carry new mechanics without flinching, and this one did. The era's starting roster."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 4
     title: "The new-era cast type, fully formed."
     blurb: "Superfans who studied the modern playbook and big personalities who play loud — by 45 the new-era roster type has settled into itself. A cast that walks in knowing exactly what kind of season they're trying to make, and makes it."

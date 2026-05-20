@@ -39,7 +39,7 @@ entries:
     blurb: "Second Chance closed with the players the viewers had picked sitting down to talk through what they did with the do-over. The reunion has a built-in editorial frame — the audience as co-author — and the hour pays it off."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 5
     title: "The new-era reunion finally landing at the right tempo."
     blurb: "By 45 the new-era closing hour has settled. The 90-minute episode format extends naturally into a reunion that doesn't feel rushed, and the cast types — superfans, big personalities — sit on stage like they always belonged there."

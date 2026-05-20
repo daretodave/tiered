@@ -26,13 +26,13 @@ entries:
     blurb: "Brains, Brawn, Beauty — a casting conceit that lands because the cast plays it hard. This is where modern Survivor's tactical grammar gets written: idol plays, vote splits, loud paranoid energy."
   - show: survivor
     season: 41
-    season_label: "S41 · Reboot"
+    season_label: "S41 · New Era I"
     rank: 3
     title: "First season back after the pandemic pause."
     blurb: "First season back after the pandemic pause. Days drop from 39 to 26, the hourglass twist and shot in the dark arrive, and the pacing tightens. Survivor remembering itself out loud."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 4
     title: "The new-era format settled into its natural rhythm."
     blurb: "By 45 the new-era format has settled. The 26-day clock and 90-minute episodes feel like the show's natural rhythm, and the cast types stabilize. Confident television that knows what it is."

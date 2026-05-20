@@ -21,7 +21,7 @@ entries:
     blurb: "The premiere that taught television what a marooning looks like. The cast steps off the raft half-convinced this is a documentary, and by the end of the hour the show has invented the visual grammar every season since."
   - show: survivor
     season: 41
-    season_label: "S41 · Reboot"
+    season_label: "S41 · New Era I"
     rank: 2
     title: "The reset announces itself in the first ninety minutes."
     blurb: "Day one back from the pandemic pause and the new mechanics arrive front-loaded — hourglass, shot in the dark, journeys. The premiere reads like a thesis statement, telling you the show is faster, louder, and rebuilt on purpose."

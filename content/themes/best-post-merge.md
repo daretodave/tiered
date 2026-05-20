@@ -27,7 +27,7 @@ entries:
     blurb: "Returnees on both sides, alliances older than some seasons, and a vote cadence that never lets up. The Heroes vs. Villains post-merge plays like a master class — the kind of stretch every all-returnee run since has tried to match."
   - show: survivor
     season: 45
-    season_label: "S45 · Survivor 45"
+    season_label: "S45 · Mom I Won"
     rank: 3
     title: "The new-era post-merge finally breathing at the right tempo."
     blurb: "Ninety-minute episodes and 26-day clock combine into a post-merge that doesn't feel rushed or padded. Journeys and the sanctuary mechanic add texture, the cast types stabilize, and the stretch reads as Survivor at cruising altitude."

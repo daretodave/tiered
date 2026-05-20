@@ -54,16 +54,6 @@
 > "season anon affordances suppressed" observation falls with
 > it (same cause).
 
-### [MED] /themes/best-premieres vs /shows/survivor — Survivor 41 named "New Era I" in canon, "S41 · REBOOT" on the list
-- pass: 1 (commit b57b536)
-- viewport: desktop
-- category: comprehension
-- auth_state: anon
-- observation: The same season carries different names across pages a reader crosses: Survivor 41 is "New Era I" in the Survivor canon list and on home references, but "S41 · REBOOT" on `/themes/best-premieres`. Distinct from the already-addressed S16 mismatch (different season, different surface) — indicates list-entry titles are authored free-hand rather than sourced from the canonical season display name.
-- evidence: `/shows/survivor` canon row "10 · S41 · New Era I"; `/themes/best-premieres` entry #02 "S41 · REBOOT — The reset announces itself…".
-- suggested fix: Source themed-list entry display names from the one canonical season title field so list rows and canon rows agree (same root cause class as the S16 fix; consider extending that content-check invariant to list entries).
-- source: browser
-
 ### [MED] /shows/survivor/season/survivor-20 — plausible `<show>-<n>` season form 404s while the digit form 308-redirects
 - pass: 1 (commit b57b536)
 - viewport: desktop
@@ -97,6 +87,8 @@
 _(no open needs-user-call — the pass-1 harness blocker was resolved this oversight; see Done)_
 
 ## Done
+
+- [x] [MED] [anon] /themes/best-premieres vs /shows/survivor — Survivor 41 named "New Era I" in canon, "S41 · REBOOT" on the list (URL: /themes/best-premieres, /shows/survivor, source: critique-pass-1) — issue #101 — RESOLVED this commit: same root-cause class as the S16 canon-heading mismatch in #66 (themed-list entry names were authored free-hand rather than sourced from the canonical season title). Repo-wide audit of `content/themes/*.md` `season_label` found two divergent seasons — S41 (canonical title "New Era I", labeled "Reboot" across `best-premieres`, `best-comeback-seasons`, `best-newbie-casts`, `firsts`, `survivor-pillars` — 5 occurrences) and S45 (canonical title "Mom I Won", labeled "Survivor 45" across `best-finales`, `best-newbie-casts`, `best-non-winning-runs`, `best-post-merge`, `best-reunion-specials`, `survivor-pillars` — 6 occurrences). Aligned every divergent label to the canonical title; the season's editorial framing ("the reboot", "the new normal") stays in the entry blurb where it belongs, only the label itself was retuned. Durable guard added: a new `collectThemeFailures()` invariant in `scripts/content-check.ts` — when `season_label` carries a ` · `-delimited name suffix, the suffix must equal the season's frontmatter `title`. Lax-mode failure, same shape as the canon-heading rule from #66. Labels with no separator (e.g. a bare "S41") and entries with no `season_label` at all stay legal. Colocated tests cover the failure case, the passing case, the no-separator and no-label tolerances, a multi-word season title (`Heroes vs. Villains`), and the referential-error preservation (unknown-show still surfaces).
 
 - [x] [MED] [anon] /themes, /themes/[theme] — "cross-canon" copy overpromises against an all-Survivor catalog (URL: /themes, /themes/[theme], source: critique-pass-1) — issue #98 — RESOLVED this commit: `ListsHero` and `AdjacentLists` are now coverage-aware. `ListsHero` derives both the H1 accent and the lede from `stats.showsCovered`: when ≥2 shows are covered it keeps the current "Cross-canon." accent + "Some span every show. Some live inside one." lede; when exactly 1 show is covered (today's reality at 12 lists / 1 show) it switches to "Inside one canon." + "Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in." `AdjacentLists.tagFor` now checks the *other* theme's actual show-coverage on the cross-category branch: when the other list spans only one show, the qualifier drops from "cross-canon list" to "<category> list" (e.g. "↩ single-show list" / "single-show list ↪"); the genuine cross-canon-list label survives only when the other list truly spans ≥2 shows. New `data-coverage` attribute on the hero (`cross-canon|single-canon`) and two new locks: a single-canon `ListsHero` test asserts the accent + lede swap, and a cross-category `AdjacentLists` test asserts the "cross-canon" label survives only on a multi-show fixture. Surfaces touched: `/themes` index + every `/themes/[theme]` detail with related lists. Spoiler discipline unaffected; voice now matches the live catalog. Home stack heading ("Themed lists, cross-canon.") is the same root cause but a separate surface — filed as a follow-up critique observation on the next pass.
 
