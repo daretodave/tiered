@@ -11,8 +11,13 @@
 // a content-author tool that intentionally bypasses
 // optimization).
 
-import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+
+import {
+  collectViolationsForFiles,
+  formatViolations,
+} from './lib/check-no-raw-img.mjs'
 
 const ROOT = process.cwd()
 const SRC = join(ROOT, 'src')
@@ -41,36 +46,17 @@ function relative(p) {
 const files = []
 walk(SRC, files)
 
-const violations = []
-const IMG_RE = /<img(\s|>|\/)/g
-
-for (const file of files) {
-  const rel = relative(file)
-  if (ALLOWLIST.has(rel)) continue
-  const src = readFileSync(file, 'utf8')
-  const matches = [...src.matchAll(IMG_RE)]
-  if (matches.length === 0) continue
-  for (const m of matches) {
-    const idx = m.index ?? 0
-    const lineNumber = src.slice(0, idx).split(/\r?\n/).length
-    const lineEnd = src.indexOf('\n', idx)
-    const snippet = src
-      .slice(idx, lineEnd === -1 ? idx + 80 : lineEnd)
-      .trim()
-    violations.push({ file: rel, line: lineNumber, snippet })
-  }
-}
+const violations = collectViolationsForFiles({
+  files,
+  readFile: (p) => readFileSync(p, 'utf8'),
+  toRelative: relative,
+  allowlist: ALLOWLIST,
+})
 
 if (violations.length === 0) {
   // Be terse on success; the verify chain has more important output.
   process.exit(0)
 }
 
-console.error(`check-no-raw-img: found ${violations.length} raw <img> usage(s):\n`)
-for (const v of violations) {
-  console.error(`  ${v.file}:${v.line} — ${v.snippet}`)
-}
-console.error(
-  '\nUse next/image instead. If the case is intentional, add the file to the ALLOWLIST in scripts/check-no-raw-img.mjs.',
-)
+console.error(formatViolations(violations))
 process.exit(1)
