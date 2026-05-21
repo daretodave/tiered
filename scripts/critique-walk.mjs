@@ -24,13 +24,18 @@
 //     [--cookie '__session=...'] \
 //     [--out path.json] [--timeout 20000]
 //
-// In authenticated mode the `__session` pair comes from --cookie
-// or $CRITIQUE_SESSION_COOKIE. A missing/garbage pair emits a
-// single `auth-failed` finding and walks NOTHING — no silent
-// fallback to anonymous (reader.md Step 0 hard rule 1).
+// In authenticated mode the `__session` pair is resolved in
+// precedence order: --cookie  →  $CRITIQUE_SESSION_COOKIE  →
+// `.cache/e2e-cookie.json` (the artifact `scripts/mint-e2e-cookie.mjs`
+// writes; `/critique` Step 0 runs the mint right before the walk).
+// The cache fallback is the seam that lets the cloud authed pass
+// work without `.env` being sourced into the runner shell. A
+// missing, garbage, or stale pair emits a single `auth-failed`
+// finding and walks NOTHING — no silent fallback to anonymous
+// (reader.md Step 0 hard rule 1).
 
 import { createRequire } from 'node:module'
-import { writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
@@ -80,6 +85,70 @@ export function buildSessionCookies(mode, sessionPair, baseUrl) {
       sameSite: 'Lax',
     },
   ]
+}
+
+// The artifact `scripts/mint-e2e-cookie.mjs` writes. Reading it
+// here is the seam that lets the cloud authed critique pass work:
+// `/critique` Step 0 runs the mint (writing this file), and the
+// walk picks the cookie up without depending on `.env` being
+// sourced into the runner shell.
+export const COOKIE_CACHE_PATH = resolve(REPO_ROOT, '.cache/e2e-cookie.json')
+
+// Mirror of mint-e2e-cookie.mjs's REFRESH_WINDOW_MS — a cache
+// within 5 min of expiry is treated as absent so a stale cookie
+// never produces a silently-signed-out (and false-finding) walk.
+const COOKIE_REFRESH_WINDOW_MS = 5 * 60_000
+
+function readCookieCache(path) {
+  try {
+    if (!existsSync(path)) return null
+    return JSON.parse(readFileSync(path, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+// Mirrors mint-e2e-cookie.mjs#isFresh. Kept local rather than
+// imported so critique-walk pulls neither that module's jose/hkdf
+// deps nor its top-level loadDotenv() side effect.
+function cookieCacheFresh(cached, now) {
+  if (
+    !cached ||
+    typeof cached.cookieName !== 'string' ||
+    typeof cached.cookieValue !== 'string' ||
+    cached.cookieName.length === 0 ||
+    cached.cookieValue.length === 0 ||
+    !cached.expiresAt
+  ) {
+    return false
+  }
+  const exp = Date.parse(cached.expiresAt)
+  if (Number.isNaN(exp)) return false
+  return exp - now > COOKIE_REFRESH_WINDOW_MS
+}
+
+// Resolve the authenticated-pass `__session` pair, in precedence:
+//   1. cliCookie  — an explicit `--cookie '__session=...'`
+//   2. envCookie  — $CRITIQUE_SESSION_COOKIE, when exported
+//   3. cache      — `.cache/e2e-cookie.json`, the mint artifact
+// A non-empty cliCookie or envCookie is used verbatim (even if
+// malformed — buildSessionCookies then rejects it, so a caller
+// who passed one gets a clear `auth-failed` rather than a
+// surprising cache fallback). Returns '' when nothing usable
+// exists; a stale cache counts as absent.
+export function resolveSessionPair({
+  cliCookie,
+  envCookie,
+  cachePath = COOKIE_CACHE_PATH,
+  now = Date.now(),
+} = {}) {
+  if (typeof cliCookie === 'string' && cliCookie.length > 0) return cliCookie
+  if (typeof envCookie === 'string' && envCookie.length > 0) return envCookie
+  const cached = readCookieCache(cachePath)
+  if (cached && cookieCacheFresh(cached, now)) {
+    return `${cached.cookieName}=${cached.cookieValue}`
+  }
+  return ''
 }
 
 function finding(capture, category, severity, observation, evidence, suggestedFix) {
@@ -371,8 +440,10 @@ async function main() {
     .map((u) => u.trim())
     .filter(Boolean)
   const timeout = Number(args.timeout || 20000)
-  const sessionPair =
-    args.cookie || process.env.CRITIQUE_SESSION_COOKIE || ''
+  const sessionPair = resolveSessionPair({
+    cliCookie: args.cookie,
+    envCookie: process.env.CRITIQUE_SESSION_COOKIE,
+  })
   const authState = mode === 'anonymous' ? 'anonymous' : 'authenticated:cloud'
 
   const cookies = buildSessionCookies(mode, sessionPair, base)
@@ -400,7 +471,8 @@ async function main() {
           severity: 'high',
           observation:
             'authenticated critique pass requested but no valid __session cookie was provided',
-          evidence: 'CRITIQUE_SESSION_COOKIE / --cookie missing or not a __session pair',
+          evidence:
+            '--cookie, $CRITIQUE_SESSION_COOKIE, and the .cache/e2e-cookie.json mint artifact are all missing, stale, or not a __session pair',
           suggested_fix: 'refresh the cookie via scripts/mint-e2e-cookie.mjs and retry',
           source: 'browser',
         },

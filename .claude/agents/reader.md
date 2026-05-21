@@ -145,7 +145,10 @@ node scripts/critique-walk.mjs \
   --urls /,/shows,/shows/survivor,/shows/survivor/season/heroes-vs-villains,/themes
 
 # authed pass (only when bearings Auth: != none): the __session
-# pair is read from $CRITIQUE_SESSION_COOKIE automatically.
+# pair is resolved automatically — --cookie, then
+# $CRITIQUE_SESSION_COOKIE, then the .cache/e2e-cookie.json
+# artifact /critique Step 0's `node scripts/mint-e2e-cookie.mjs`
+# writes. No exported env var or extra wiring needed.
 node scripts/critique-walk.mjs \
   --mode authenticated \
   --base https://tiered.tv \
@@ -171,11 +174,12 @@ runs in a **fresh isolated `browser.newContext()`** with no
 operator profile to inherit, so the shared-profile
 contamination class (the 2026-05-19 pass-1 false HIGH) is
 structurally impossible here. `--mode anonymous` attaches no
-cookie; `--mode authenticated` attaches exactly the
-`$CRITIQUE_SESSION_COOKIE` pair. You do **not** need to clear /
-verify `document.cookie` — there was never a stale session to
-clear. If the authed pass's `__session` pair is missing or
-malformed the script emits a single `auth-failed` finding and
+cookie; `--mode authenticated` attaches exactly the resolved
+`__session` pair (see the resolution order above). You do
+**not** need to clear / verify `document.cookie` — there was
+never a stale session to clear. If the authed pass's `__session`
+pair is missing, stale, or malformed the script emits a single
+`auth-failed` finding and
 walks nothing (Step 0 hard rule 1 — no silent fallback to
 anon); treat it exactly as a failed Step 0 handshake.
 

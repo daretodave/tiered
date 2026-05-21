@@ -1,8 +1,13 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import {
   buildSessionCookies,
   analyzeCapture,
+  resolveSessionPair,
+  COOKIE_CACHE_PATH,
   VIEWPORTS,
   SESSION_COOKIE_NAME,
 } from '../critique-walk.mjs'
@@ -193,5 +198,166 @@ test('analyzeCapture findings always carry the reader shape', () => {
     ]) {
       assert.ok(k in x, `finding missing ${k}`)
     }
+  }
+})
+
+// --- resolveSessionPair: the cookie-resolution chain -------------
+// This is the seam that lets the cloud authed pass work — mint
+// writes .cache/e2e-cookie.json, the walk reads it here without
+// relying on .env being sourced into the runner shell.
+
+// Write a throwaway cookie cache and hand back its path + cleanup.
+function withCache(contents) {
+  const dir = mkdtempSync(join(tmpdir(), 'critique-walk-'))
+  const path = join(dir, 'e2e-cookie.json')
+  writeFileSync(
+    path,
+    typeof contents === 'string' ? contents : JSON.stringify(contents),
+  )
+  return { path, cleanup: () => rmSync(dir, { recursive: true, force: true }) }
+}
+
+const FIXED_NOW = Date.UTC(2026, 4, 21, 12, 0, 0)
+const freshCacheValue = {
+  cookieName: '__session',
+  cookieValue: 'jwe-fresh-token',
+  expiresAt: new Date(FIXED_NOW + 60 * 60 * 1000).toISOString(),
+}
+
+test('COOKIE_CACHE_PATH points at the mint artifact .cache/e2e-cookie.json', () => {
+  assert.ok(COOKIE_CACHE_PATH.replace(/\\/g, '/').endsWith('.cache/e2e-cookie.json'))
+})
+
+test('resolveSessionPair: explicit --cookie wins over env and cache', () => {
+  const { path, cleanup } = withCache(freshCacheValue)
+  try {
+    const pair = resolveSessionPair({
+      cliCookie: '__session=from-cli',
+      envCookie: '__session=from-env',
+      cachePath: path,
+      now: FIXED_NOW,
+    })
+    assert.equal(pair, '__session=from-cli')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: env used when no --cookie, wins over cache', () => {
+  const { path, cleanup } = withCache(freshCacheValue)
+  try {
+    const pair = resolveSessionPair({
+      envCookie: '__session=from-env',
+      cachePath: path,
+      now: FIXED_NOW,
+    })
+    assert.equal(pair, '__session=from-env')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: empty --cookie / env fall through to the cache', () => {
+  const { path, cleanup } = withCache(freshCacheValue)
+  try {
+    const pair = resolveSessionPair({
+      cliCookie: '',
+      envCookie: '',
+      cachePath: path,
+      now: FIXED_NOW,
+    })
+    assert.equal(pair, '__session=jwe-fresh-token')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: cache fallback when no --cookie and no env', () => {
+  const { path, cleanup } = withCache(freshCacheValue)
+  try {
+    const pair = resolveSessionPair({ cachePath: path, now: FIXED_NOW })
+    assert.equal(pair, '__session=jwe-fresh-token')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: a stale cache (past refresh window) is treated as absent', () => {
+  const { path, cleanup } = withCache({
+    ...freshCacheValue,
+    expiresAt: new Date(FIXED_NOW - 1000).toISOString(),
+  })
+  try {
+    assert.equal(resolveSessionPair({ cachePath: path, now: FIXED_NOW }), '')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: a cache inside the 5-min refresh window counts as stale', () => {
+  const { path, cleanup } = withCache({
+    ...freshCacheValue,
+    expiresAt: new Date(FIXED_NOW + 60 * 1000).toISOString(),
+  })
+  try {
+    assert.equal(resolveSessionPair({ cachePath: path, now: FIXED_NOW }), '')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: missing cache file → empty string', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'critique-walk-'))
+  try {
+    const pair = resolveSessionPair({
+      cachePath: join(dir, 'does-not-exist.json'),
+      now: FIXED_NOW,
+    })
+    assert.equal(pair, '')
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test('resolveSessionPair: malformed cache JSON → empty string, no throw', () => {
+  const { path, cleanup } = withCache('{ not valid json')
+  try {
+    assert.equal(resolveSessionPair({ cachePath: path, now: FIXED_NOW }), '')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: cache missing cookieValue → empty string', () => {
+  const { path, cleanup } = withCache({
+    cookieName: '__session',
+    expiresAt: new Date(FIXED_NOW + 60 * 60 * 1000).toISOString(),
+  })
+  try {
+    assert.equal(resolveSessionPair({ cachePath: path, now: FIXED_NOW }), '')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: cache with a non-parseable expiresAt → empty string', () => {
+  const { path, cleanup } = withCache({ ...freshCacheValue, expiresAt: 'whenever' })
+  try {
+    assert.equal(resolveSessionPair({ cachePath: path, now: FIXED_NOW }), '')
+  } finally {
+    cleanup()
+  }
+})
+
+test('resolveSessionPair: a resolved cache pair flows through buildSessionCookies', () => {
+  const { path, cleanup } = withCache(freshCacheValue)
+  try {
+    const pair = resolveSessionPair({ cachePath: path, now: FIXED_NOW })
+    const cookies = buildSessionCookies('authenticated', pair, BASE)
+    assert.equal(cookies.length, 1)
+    assert.equal(cookies[0].name, SESSION_COOKIE_NAME)
+    assert.equal(cookies[0].value, 'jwe-fresh-token')
+  } finally {
+    cleanup()
   }
 })
