@@ -135,6 +135,16 @@ Pre-flight checklist before committing a content tick:
   `last_revised` are non-negotiable — `pnpm content:check`
   rejects themes missing either, and the filter chips +
   index-last-revised stat both depend on them.
+- **Cross-canon coverage (Rule 3, phase 41).** Every themed list
+  tagged `tone`, `craft`, or `era` must carry entries from **≥ 3
+  distinct shows** — `category: single` is the only carve-out for
+  a deliberately one-show tier. New lists are born cross-show; an
+  existing `tone`/`craft`/`era` list still below the floor is
+  itself a valid content-tick target — author 3–5 cross-show
+  entries into it. An entry's `title`/`season_label` must match
+  the season's frontmatter `title` exactly, never free-hand.
+  `pnpm content:check` warns during the phase-41 drain and fails
+  strict once it completes.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`
   and skipped. Do not file new ones.
@@ -184,7 +194,9 @@ Confirm the top row maps to one of the 4 bearings rules:
   candidates" or invent one (cross-show pattern: best
   premieres, best finales, best returnee seasons, best
   villain editing, best post-merge runs, best location
-  reveals, etc.).
+  reveals, etc.). A `tone`/`craft`/`era` list already shipped
+  but covering < 3 distinct shows is also a valid Rule 3 target
+  (phase 41) — author cross-show entries into it.
 - **Rule 4 — retired.** Skip any row tagged
   `category: facade-gap` (auto-mark `[x] superseded by 19a`).
   Per-show illustration is prohibited per `design/CLAUDE.md`.

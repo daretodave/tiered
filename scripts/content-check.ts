@@ -212,6 +212,33 @@ export function collectThemeFailures(): Failure[] {
   return failures
 }
 
+// Phase 41: cross-canon coverage. Every themed list tagged
+// `category` tone / craft / era must carry entries from >= 3
+// distinct shows — the /themes hero copy and every CROSS-CANON
+// tag promise cross-show coverage, so the data has to back the
+// claim. `category: single` is the legal carve-out for a
+// deliberately mono-show tier. Lax (warns) during the phase-41
+// drain; `CROSS_SHOW_STRICT` in main() flips on the final drain
+// tick, the same lax->strict pattern as the canon (STRICT) and
+// era-band invariants. Exported so the vitest suite can exercise
+// it directly.
+const CROSS_SHOW_CATEGORIES = new Set(['tone', 'craft', 'era'])
+
+export function collectCrossShowIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (!CROSS_SHOW_CATEGORIES.has(theme.category)) continue
+    const distinctShows = new Set(theme.entries.map((e) => e.show)).size
+    if (distinctShows < 3) {
+      issues.push({
+        file: `content/themes/${theme.slug}.md`,
+        message: `themed list "${theme.slug}" (category: ${theme.category}) covers ${distinctShows} distinct show${distinctShows === 1 ? '' : 's'} — cross-canon lists require entries from >= 3 shows (re-tag to category: single if it is deliberately one-show)`,
+      })
+    }
+  }
+  return issues
+}
+
 // Phase 39: the finale calendar. The Zod schema (getCalendar)
 // owns structural validation — a malformed row throws
 // ContentValidationError, surfaced here as a failure. This
@@ -295,6 +322,22 @@ function main(): number {
   failures.push(...collectFailures(STRICT))
 
   failures.push(...collectThemeFailures())
+
+  // Phase 41: cross-canon coverage. Lax during the drain — a list
+  // below the >= 3-distinct-shows floor is printed as a warning,
+  // not pushed into `failures`. The final drain tick flips
+  // CROSS_SHOW_STRICT to true (one-line change, like STRICT
+  // above), at which point every tone/craft/era list must clear
+  // the floor or be re-tagged `category: single`.
+  const CROSS_SHOW_STRICT = false
+  const crossShowIssues = collectCrossShowIssues()
+  if (CROSS_SHOW_STRICT) {
+    failures.push(...crossShowIssues)
+  } else {
+    for (const issue of crossShowIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
 
   for (const slug of ['about', 'terms', 'privacy'] as const) {
     if (!getLegalDoc(slug)) {

@@ -225,10 +225,10 @@ test.describe('show page → themes cross-link retrofit', () => {
     expect(count).toBeGreaterThanOrEqual(2)
   })
 
-  test('top-chef show page does NOT surface the block (no themes reference it)', async ({
+  test('bachelor show page does NOT surface the block (no themes reference it)', async ({
     page,
   }) => {
-    await page.goto('/shows/top-chef', { waitUntil: 'domcontentloaded' })
+    await page.goto('/shows/bachelor', { waitUntil: 'domcontentloaded' })
     const featured = page.getByTestId('featured-themes')
     await expect(featured).toHaveCount(0)
   })

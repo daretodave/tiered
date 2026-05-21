@@ -519,6 +519,18 @@ phrase) plus the existing `blurb`. The schema enforces this; a
 list without a `category` or with a tagline missing the `<b>`
 discipline will fail `pnpm content:check` and block the commit.
 
+**Cross-canon coverage (phase 41).** Every themed list with
+`category` in {`tone`, `craft`, `era`} must carry entries from
+**≥ 3 distinct shows**. The `/themes` hero copy and every
+`CROSS-CANON LIST` tag promise cross-show coverage, so the data
+has to back the claim. `category: single` is the legal carve-out
+for a deliberately one-show tier. `scripts/content-check.ts`
+enforces this — lax (warns) during the phase-41 drain, strict
+(fails) once the drain completes. A themed-list entry's `title`
+and `season_label` must also match the season's own frontmatter
+`title` — never authored free-hand — so list rows and
+canon/season-page rows name the same season identically.
+
 ### Rule 4 — retired (was: facade completeness)
 
 The May 2026 facade grammar was prototyped and rejected. There

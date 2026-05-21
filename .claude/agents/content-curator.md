@@ -233,9 +233,10 @@ entries:
       never future. Spoiler-safe.>"
     blurb: "<≤280-char 1-3 sentence rationale. Same spoiler
       discipline as season blurbs.>"
-    season_label: "S01 · Borneo"        # optional. Free-form.
-                                        # Defaults to the season's
-                                        # canonical title at render.
+    season_label: "S01 · Borneo"        # optional. The suffix
+                                        # after " · " MUST equal
+                                        # the season frontmatter
+                                        # `title` exactly.
 ---
 ```
 
@@ -249,6 +250,23 @@ Tagging discipline:
   `single` or sibling-pattern lists.
 - `featured: true` is editorial — only set when the list is
   ready for the home-page hero row.
+- **Cross-canon coverage (phase 41).** A list tagged `tone`,
+  `craft`, or `era` must be **born cross-show** — author entries
+  from **≥ 3 distinct shows** in the first pass. The `/themes`
+  hero and the `CROSS-CANON LIST` tag promise cross-show
+  coverage; `pnpm content:check` enforces ≥ 3 shows on every
+  `tone`/`craft`/`era` list (strict once the phase-41 drain
+  completes). A genuinely one-show tier is tagged
+  `category: single` instead — that is the only legal carve-out.
+- **Entry-title discipline.** An entry's `title` is your framing
+  phrase, but its `season_label` suffix (the text after ` · `)
+  and any season name the `title`/`blurb` states **must match
+  the season file's frontmatter `title` exactly**. Open the
+  season file and read it — never author the name free-hand.
+  `S41 · New Era I`, not `S41 · Reboot`. This keeps list rows,
+  canon headings, and season-page headings naming the same
+  season identically; `content:check` fails a divergent
+  `season_label`.
 
 Frontmatter for canon.md — the **31a editorial block**.
 Every field below the `show:` line is OPTIONAL on the schema

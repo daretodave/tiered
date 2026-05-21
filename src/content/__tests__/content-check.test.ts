@@ -8,6 +8,7 @@ import { setContentRoot } from '../paths'
 // rules can be exercised in vitest without spawning a child process.
 import {
   collectCalendarFailures,
+  collectCrossShowIssues,
   collectFailures,
   collectThemeFailures,
 } from '../../../scripts/content-check'
@@ -738,5 +739,115 @@ describe('content-check — finale calendar (phase 39)', () => {
     expect(failures.length).toBeGreaterThan(0)
     expect(failures[0]?.file).toMatch(/calendar\.yml$/)
     expect(failures[0]?.message).toMatch(/calendar validation failed/)
+  })
+})
+
+// A themed list with one entry per supplied show slug and a chosen
+// category — used to exercise the phase-41 cross-canon coverage
+// invariant (every tone/craft/era list must span >= 3 distinct
+// shows). The referenced shows/seasons need not exist:
+// collectCrossShowIssues only counts distinct entry.show values.
+function makeCategoryTheme(
+  root: string,
+  slug: string,
+  category: string,
+  showSlugs: string[],
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  const entries = showSlugs
+    .map(
+      (show, i) =>
+        `  - show: ${show}\n    season: ${i + 1}\n    rank: ${i + 1}\n    title: "t${i}"\n    blurb: "b${i}"`,
+    )
+    .join('\n')
+  const eraRange = category === 'era' ? '\nera_range: [2000, 2020]' : ''
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: ${category}${eraRange}
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-21
+featured: false
+description: "${slug}"
+entries:
+${entries}
+---
+`,
+  )
+}
+
+describe('content-check — cross-canon coverage (phase 41)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-xshow-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a craft list that covers only one show', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'best-premieres', 'craft', ['alpha'])
+    const issues = collectCrossShowIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-premieres.md')
+    expect(issues[0]?.message).toMatch(/1 distinct show\b/)
+    expect(issues[0]?.message).toMatch(/category: single/)
+  })
+
+  it('flags a tone list that covers only two shows', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'best-villain-editing', 'tone', ['alpha', 'beta'])
+    const issues = collectCrossShowIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.message).toMatch(/2 distinct shows/)
+  })
+
+  it('passes a craft list that covers three distinct shows', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'best-finales', 'craft', ['alpha', 'beta', 'gamma'])
+    expect(collectCrossShowIssues()).toEqual([])
+  })
+
+  it('passes an era list once it clears the >= 3-show floor', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'best-of-the-2010s', 'era', [
+      'alpha',
+      'beta',
+      'gamma',
+      'delta',
+    ])
+    expect(collectCrossShowIssues()).toEqual([])
+  })
+
+  it('exempts category: single — a deliberately one-show tier never fails', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'survivor-pillars', 'single', ['alpha'])
+    expect(collectCrossShowIssues()).toEqual([])
+  })
+
+  it('reports one issue per under-covered list across the catalogue', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'list-a', 'craft', ['alpha'])
+    makeCategoryTheme(tmp, 'list-b', 'tone', ['alpha', 'beta'])
+    makeCategoryTheme(tmp, 'list-c', 'craft', ['alpha', 'beta', 'gamma'])
+    const issues = collectCrossShowIssues()
+    expect(issues.length).toBe(2)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/list-a.md',
+      'content/themes/list-b.md',
+    ])
   })
 })
