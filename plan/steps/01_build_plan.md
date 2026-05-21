@@ -167,6 +167,23 @@ in the same commit that ships the phase.
 
 - [x] Phase 39 — `content/calendar.yml` + finale-event detection hook (mechanical + autonomous editorial half of `spec.md:294`). — d058dc0 Ship: (1) `content/calendar.yml` — list of `{ show, season, finale_date (ISO), status }`, seeded with the few shows whose next finale is publicly dated; (2) `src/content/calendar.ts` loader + Zod schema + colocated `__tests__/calendar.test.ts` (parse, malformed-row reject, past/future partition); (3) an **idempotent** gate (in `/march` or `/iterate` Step 0) that reads the calendar, finds finales with `finale_date < today` lacking a corresponding shift note, and writes a `category: content-gaps, source: self` row into `plan/AUDIT.md` — never double-files for the same season; (4) `content-check` learns the calendar shape. **Editorial contract (oversight 2026-05-19, user-set, supersedes the candidate's `[needs-user-call]`):** when the gate fires, the content drain that picks the AUDIT row up **may autonomously write the spoiler-safe post-finale ranking-shift note AND adjust that season's `canonical_position`** if the editorial rationale warrants it. **Spoiler discipline is P0** — the note frames the *ranking shift*, never the winner/elimination/outcome; the canon rationale stays spoiler-safe and any `canonical_position` cascade follows the always-working + content-check invariants. No new URL, no UI, no e2e route addition (data + script + unit tests only). One cloud tick. Promoted from `PHASE_CANDIDATES.md` #06; brief drafted on-demand from this row.
 
+**Cross-canon delivery (phase 41) — promoted via oversight 2026-05-21:**
+
+> Build plan re-exhausted (every row above `[x]`; ~24h of §5a
+> test-colocation iterate-polish — #108–#120 — since Phase 40 at
+> `8ed69ef`; AUDIT, critique, and data-backlog all empty). Phase
+> 41 promotes `PHASE_CANDIDATES.md` #08 (score 5.4) — the
+> strongest pending candidate. It makes the lists hero's
+> "Cross-canon" promise true: all 12 themed lists are currently
+> mono-show (every entry is Survivor) while the `/themes` hero
+> copy and every `CROSS-CANON LIST` tag claim cross-show
+> coverage. Same structural argument that promoted #04→38,
+> #06→39, #07→40: a contracted/branded promise no `/ship-content`
+> quota row demands, so the loop will never pick it up on its
+> own. Brief drafted at promotion.
+
+- [ ] Phase 41 — Cross-canon themed-list drain (deliver the "cross-canon" promise). Multi-tick **auto-draining** content phase (phase-26 / 31b / 34 mechanic): the `/themes` hero and every `/themes/[theme]` `CROSS-CANON LIST` tag claim cross-show coverage, but all 12 themed lists carry entries from exactly one show (Survivor) — `CRITIQUE` pass-1 flagged it MED ("'cross-canon' copy overpromises against an all-Survivor catalog"; the stat strip reads "1 SHOWS COVERED"). Ship: (1) a new `bearings.md` Rule 3 sub-rule — every themed list with `category in {tone, craft, era}` must carry entries from **≥3 distinct shows**; `category: single` is the legal carve-out for deliberately mono-show lists (`survivor-pillars` re-tags to `single`); (2) the invariant in `scripts/content-check.ts` (lax mode; **final tick flips it strict**, matching the 31b/34 pattern); (3) `content-curator` brief + `ship-content` Rule 3 updated so new lists are born cross-show and existing `{tone,craft,era}` lists get a content-tick authoring 3–5 cross-show entries with full editorial blurbs + canonical `title`/`season_label` matching the season frontmatter (one pass extends the canon-heading discipline to themed-list entry titles — closes the related CRITIQUE finding "Survivor 41 named 'New Era I' in canon, 'S41 · REBOOT' on the list"); (4) `/themes` + `/themes/[theme]` stat strip ("N SHOWS COVERED") + the `CROSS-CANON LIST` tag derive honestly from `getShowsForTheme()` count, tag drops on `category: single` lists — no hero copy change, the data finally backs it. Per-tick budget: one list per tick (or `/ship-content`'s natural batch). Priority: `best-premieres` (already MED-flagged) → `best-finales` → rest of `craft/tone/era` → re-tag `survivor-pillars` to `single`. No URL change; UI work bounded to the stat-strip + tag wiring. **Spoiler discipline is P0** — cross-show entry blurbs stay spoiler-safe per agents.md §7. Promoted from `PHASE_CANDIDATES.md` #08. Detailed brief: `phase_41_cross_canon_lists.md`.
+
 > **After phase 25:** the shipping queue is not done — phase
 > 36 is still `[ ]` (26 / 32 / 34 / 35 shipped), so `/march` Step 3a
 > keeps shipping them (`/ship-a-phase` wins every tick while

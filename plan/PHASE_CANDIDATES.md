@@ -23,94 +23,6 @@
 **Scope sketch:** <2-3 lines of what would ship>
 -->
 
-### 08. Cross-canon themed-list drain (deliver the "cross-canon" promise)
-
-**Score:** 5.4 (impact: 6, ease: 4, +2 multi, +1 cheap-and-impactful)
-**Source pass:** 4
-**Filed:** 2026-05-19
-**Source signals:**
-- `plan/CRITIQUE.md` pass-1 row [MED] "/themes, /themes/[theme]
-  — 'cross-canon' copy overpromises against an all-Survivor
-  catalog" (commit b57b536). The lists hero claims "Cross-canon.
-  Some span every show" beside a stat strip reading "1 SHOWS
-  COVERED"; every `/themes/[theme]` page is tagged
-  `CROSS-CANON LIST` while every row inside is Survivor. A
-  first-time reader sees the contradiction immediately.
-- Catalog measurement (this pass): all **12 of 12** themed
-  lists carry entries from exactly **1 distinct show**
-  (Survivor). `for f in content/themes/*.md; do awk
-  '/^entries:/{p=1;next} p&&/^---/{exit} p' "$f" | grep -E
-  '^\s+- show:' | sort -u | wc -l; done` → `1` every time.
-  Total entries across the catalog: 46; cross-show entries: 0.
-- CRITIQUE pass-1 row [MED] "Survivor 41 named 'New Era I' in
-  canon, 'S41 · REBOOT' on the list" — same UX surface, same
-  root cluster (list-entry titles are authored free-hand
-  rather than sourced from canonical show data). Fixing the
-  cross-canon promise without also disciplining entry titles
-  reintroduces the cross-page-naming mismatch class at scale.
-- `plan/bearings.md` Rule 3 ("themed list quota") locks
-  `count >= 10` but never requires cross-show coverage. The
-  quota was cleared at 12 lists during phases 23+24, and the
-  natural shape of that drain (most-canon'd show first) made
-  every list mono-show. The rule never noticed because the
-  invariant was never written.
-- Brand promise on `spec.md`/home/lists hero ("the seasons,
-  ranked. no spoilers." + "Themed lists. Cross-canon.") relies
-  on the catalog being demonstrably cross-show. The data does
-  not currently support the promise.
-
-**Why:** Same structural argument that promoted #04 → Phase 38
-and #06 → Phase 39: a contracted/branded promise the loop
-cannot pick up on its own because no `/ship-content` quota row
-demands it. The lists hero copy makes a load-bearing
-cross-canon claim; the catalog wholly contradicts it; CRITIQUE
-flagged it as a comprehension-class finding (MED, not LOW —
-the contradiction is immediate and brand-level). The minimal
-fix is to soften the copy ("single-show lists" everywhere),
-but that retreats from the spec rather than delivering it.
-The honest fix is to **make the promise true**: add genuine
-cross-show entries to existing lists, write the invariant that
-will keep future lists honest, and reinforce list-entry title
-discipline so the second CRITIQUE finding's whole class
-(free-hand title drift) doesn't survive the drain. Scope is
-bounded — 12 existing lists × N cross-show entries each, modeled
-on the phase-26/31b/34 multi-tick drain pattern (one show or
-list per tick; final tick flips the lax invariant strict).
-
-**Scope sketch:**
-- Add `bearings.md` Rule 3 sub-rule: every themed list with
-  `category in {tone, craft, era}` must carry entries from
-  **≥3 distinct shows**; `category: single` is the legal
-  carve-out for deliberately mono-show lists (e.g.
-  `survivor-pillars` would re-tag to `category: single`).
-- `scripts/content-check.ts` learns the new invariant in lax
-  mode; the final tick flips it strict (matches the 31b/34
-  pattern).
-- `content-curator` brief + `ship-content` Rule 3 updated:
-  new lists are born cross-show; existing lists in
-  `{tone, craft, era}` get a content-tick that authors 3–5
-  cross-show entries with full editorial blurbs + canonical
-  `title`/`season_label` matching the season frontmatter (one
-  pass extends the canon-heading invariant to themed-list
-  entry titles — closes the second CRITIQUE finding's root
-  class).
-- `/themes` + `/themes/[theme]` stat strip ("N SHOWS COVERED")
-  and `CROSS-CANON LIST` tag honestly derive from
-  `getShowsForTheme()` count; tag drops on `category: single`
-  lists. No copy change at the hero — the data finally backs
-  it.
-- Multi-tick drain (~12 ticks at one list/tick, or fewer with
-  `/ship-content`'s natural batch size). Priority order:
-  `best-premieres` (already MED-flagged) → `best-finales` →
-  rest of `craft/tone/era` lists → re-tag `survivor-pillars`
-  to `single`.
-
-**Estimated phases:** 1 (multi-tick drain, like phase 34/31b).
-**Conflicts:** none. Aligns with `spec.md` brand promise; no
-URL change; no UI rebuild beyond the stat-strip wiring. The
-copy/data alignment is editorial-direction-positive — delivers
-on a stated contract rather than rewriting it.
-
 ### 03. Newsletter subscribe (Buttondown embed)
 
 **Score:** 3.0 (impact: 4, ease: 5, +1 multi, -1 vendor)
@@ -170,6 +82,81 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in 01_build_plan.md> -->
+
+### 08. Cross-canon themed-list drain (deliver the "cross-canon" promise)
+
+**Score:** 5.4 (impact: 6, ease: 4, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 4
+**Filed:** 2026-05-19
+**Source signals:**
+- `plan/CRITIQUE.md` pass-1 row [MED] "/themes, /themes/[theme]
+  — 'cross-canon' copy overpromises against an all-Survivor
+  catalog" (commit b57b536). The lists hero claims "Cross-canon.
+  Some span every show" beside a stat strip reading "1 SHOWS
+  COVERED"; every `/themes/[theme]` page is tagged
+  `CROSS-CANON LIST` while every row inside is Survivor. A
+  first-time reader sees the contradiction immediately.
+- Catalog measurement (this pass): all **12 of 12** themed
+  lists carry entries from exactly **1 distinct show**
+  (Survivor). Total entries across the catalog: 46; cross-show
+  entries: 0.
+- CRITIQUE pass-1 row [MED] "Survivor 41 named 'New Era I' in
+  canon, 'S41 · REBOOT' on the list" — same UX surface, same
+  root cluster (list-entry titles are authored free-hand
+  rather than sourced from canonical show data). Fixing the
+  cross-canon promise without also disciplining entry titles
+  reintroduces the cross-page-naming mismatch class at scale.
+- `plan/bearings.md` Rule 3 ("themed list quota") locks
+  `count >= 10` but never requires cross-show coverage. The
+  quota was cleared at 12 lists during phases 23+24, and the
+  natural shape of that drain (most-canon'd show first) made
+  every list mono-show. The rule never noticed because the
+  invariant was never written.
+- Brand promise on `spec.md`/home/lists hero relies on the
+  catalog being demonstrably cross-show. The data does not
+  currently support the promise.
+
+**Why:** Same structural argument that promoted #04 → Phase 38,
+#06 → Phase 39, #07 → Phase 40: a contracted/branded promise
+the loop cannot pick up on its own because no `/ship-content`
+quota row demands it. The lists hero copy makes a load-bearing
+cross-canon claim; the catalog wholly contradicts it; CRITIQUE
+flagged it as a comprehension-class finding (MED, not LOW). The
+minimal fix is to soften the copy ("single-show lists"), but
+that retreats from the spec rather than delivering it. The
+honest fix is to **make the promise true**: add genuine
+cross-show entries to existing lists, write the invariant that
+keeps future lists honest, and reinforce list-entry title
+discipline so the second CRITIQUE finding's whole class
+(free-hand title drift) doesn't survive the drain. Modeled on
+the phase-26/31b/34 multi-tick drain (one list per tick; final
+tick flips the lax invariant strict).
+
+**Scope sketch:**
+- `bearings.md` Rule 3 sub-rule: every themed list with
+  `category in {tone, craft, era}` carries entries from **≥3
+  distinct shows**; `category: single` is the carve-out for
+  deliberately mono-show lists (`survivor-pillars` re-tags).
+- `scripts/content-check.ts` learns the invariant in lax mode;
+  the final tick flips it strict (31b/34 pattern).
+- `content-curator` + `ship-content` Rule 3 updated: new lists
+  born cross-show; existing `{tone,craft,era}` lists get a
+  content-tick authoring 3–5 cross-show entries with canonical
+  `title`/`season_label` (extends canon-heading discipline to
+  themed-list entry titles — closes the second CRITIQUE row).
+- `/themes` + `/themes/[theme]` stat strip + `CROSS-CANON LIST`
+  tag derive honestly from `getShowsForTheme()`; tag drops on
+  `category: single`. No hero copy change — the data backs it.
+
+**Estimated phases:** 1 (multi-tick drain, like phase 34/31b).
+**Conflicts:** none. Aligns with `spec.md` brand promise; no
+URL change; UI work bounded to the stat-strip + tag wiring.
+
+**Promoted in:** oversight 2026-05-21 (build plan re-exhausted
+after ~24h of §5a test-colocation iterate-polish; strongest
+pending candidate; user-approved).
+**Build-plan row:** Phase 41 — Cross-canon themed-list drain
+(`01_build_plan.md`). Brief: `plan/phases/phase_41_cross_canon_lists.md`.
 
 ### 07. Cloud-runnable `/critique` via a Playwright reader path
 
