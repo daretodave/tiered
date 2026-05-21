@@ -180,10 +180,13 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
     expect(parsed.dateModified).toMatch(/^\d{4}-\d{2}-\d{2}$/)
   })
 
-  test('firsts: renders 2 entries (the shorter list)', async ({ page }) => {
+  test('firsts: renders cross-canon entries spanning multiple shows', async ({
+    page,
+  }) => {
     await page.goto('/themes/firsts', { waitUntil: 'domcontentloaded' })
     const entries = page.getByTestId('list-entry')
-    await expect(entries).toHaveCount(2)
+    await expect(entries).toHaveCount(7)
+    await expect(page.getByTestId('list-meta-spans')).toContainText('6 shows')
   })
 
   test('adjacent-lists section either shows links or is absent', async ({
