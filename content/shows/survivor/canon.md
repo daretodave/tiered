@@ -1,7 +1,7 @@
 ---
 show: survivor
 editor: tiered.tv Editors
-last_revised: 2026-05-16
+last_revised: 2026-05-21
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We've watched Survivor since Pulau Tiga and we've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Survivor fans agree on after a kitchen-table argument runs long enough. We're not pretending to be objective; we are pretending to be honest.
 meth_how_h: How do we weigh it?
@@ -892,18 +892,36 @@ carry, and the season carries it honestly rather than well.
 
 ## 49. Survivor 49
 
-tag: The newest entry, provisionally placed.
-slot_argument: The most recent run, on the fully settled 26-day format. The canon revisits its tail less often; a brand-new, not-yet-replayed season sits here provisionally pending the next post-finale pass.
+tag: The provisional new-era tail, awaiting its discourse cycle.
+slot_argument: The fall-2025 new-era run on the fully settled 26-day format. The canon holds it at the tail pending its first full replay read; the milestone closer below is a different kind of placeholder.
 community_rank_hint: rank=49 delta=0 sentiment=hold
 
-Survivor 49 is the newest entry the canon has to weigh. By the
-fall of 2025 the 26-day format is fully settled — three tribes
-of new players on the Mamanucas, the compressed clock and its
-journeys and advantages all default grammar at this point. The
-season's texture follows the casting bench it brings rather than
-any structural argument the format still needs to make. The
-canon places it forty-ninth and treats the slot as provisional:
-this is the show's most recent run, fresh enough that no replay
-read exists yet. The order revisits its tail less often than its
-top, and a season this new earns a settled standing only after
-the next post-finale pass.
+Survivor 49 is the new era running on the fully settled format,
+slotted one rung above the milestone closer. By the fall of 2025
+the 26-day clock is default grammar — three tribes of new
+players on the Mamanucas, the compressed clock and its journeys
+and advantages all settled at this point. The season's texture
+follows the casting bench it brings rather than any structural
+argument the format still needs to make. The canon holds it at
+forty-ninth provisionally, pending its first full replay read:
+the milestone below earns its own kind of placeholder slot,
+while this season waits for the discourse cycle to settle around
+the casting and the season's standing.
+
+## 50. Survivor 50
+
+tag: The milestone closer, provisionally placed.
+slot_argument: The fiftieth season closes the show's first quarter-century. The canon takes the tail slot provisionally — milestone seasons hold pending the next discourse cycle.
+community_rank_hint: rank=50 delta=0 sentiment=hold
+
+Survivor 50 is the franchise's milestone, and the canon weighs
+it the way the show itself frames the run — as the fiftieth
+season's own ceremony, hung on twenty-five years of casting work
+rather than on a new structural argument. The fiftieth ran
+through spring 2026, the franchise's own marker year, and the
+format around it stayed settled grammar at this point. The canon
+places it fiftieth and treats the slot as provisional: this is
+the most recent run, fresh enough that no replay read exists
+yet, and the order revisits its tail less often than its top. A
+season this new earns its settled standing only after the next
+post-finale pass.

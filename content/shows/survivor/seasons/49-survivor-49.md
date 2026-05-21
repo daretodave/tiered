@@ -9,8 +9,8 @@ location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [twenty-six-day-format]
 eyebrow: "Aired fall 2025 · Filmed in Fiji"
-lede: "The most recent new-era run on the 26-day clock, with three tribes of new players on the Mamanucas. The format is fully settled by now — the season lives on the casting bench it brings to the marooning."
-pull: "Survivor 49 is the newest entry on the board. The format is no longer the question; the bench is, and the canon holds its read provisional until the next post-finale revisit."
+lede: "A new-era run on the 26-day clock, with three tribes of new players on the Mamanucas. The format is fully settled by now — the season lives on the casting bench it brings to the marooning, slotted one rung above the milestone closer."
+pull: "Survivor 49 is the new era running clean, one rung above the milestone closer. The format is no longer the question; the bench is, and the canon holds the slot provisional until the next post-finale revisit."
 filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"
@@ -30,10 +30,10 @@ watch_list:
     body: "The new-era mechanics stay live into the close. The cast's energy carries the late-game texture."
 ---
 
-Survivor 49 is the newest entry the canon has to weigh. By fall
-2025 the 26-day format is fully settled: three tribes of new
-players on the Mamanucas, the compressed clock and its journeys
-and advantages all default grammar. The season's texture follows
-the bench it brings rather than any structural argument the
-format still needs to make. The show's most recent run, fresh
-enough that no replay read exists yet. Probst hosts it.
+Survivor 49 is the new era running on the fully settled format,
+slotted one rung above the milestone closer. By fall 2025 the
+26-day clock is default grammar: three tribes of new players on
+the Mamanucas, the compressed clock and its journeys and
+advantages all settled by now. The season's texture follows the
+bench it brings rather than any structural argument the format
+still needs to make. Probst hosts it.
