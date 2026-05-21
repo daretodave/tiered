@@ -1,15 +1,12 @@
 # CRITIQUE
 
-> Last pass: 2026-05-19 at commit b57b536
-> Pass count: 1
+> Last pass: 2026-05-21 at commit 4ea5ae9
+> Pass count: 2
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 1 ran local via the reader sub-agent
-> (anon walk completed; authed walk blocked — see the
-> `[needs-user-call]` row in Pending: the `reader` toolset has
-> no cookie-injection primitive, distinct from the
-> human-operated Chrome MCP harness verified 2026-05-17).
-> **Local-only**: the cloud runner has no Chrome MCP.
+> cadence is active. Pass 2 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed).
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -24,37 +21,33 @@
 
 ## Pending
 
-> Pass 1 (2026-05-19) ran via the `reader` sub-agent and
-> exposed that **reader-driven critique is not auth-isolatable**
-> (see the `[needs-user-call]` harness row below): the reader
-> drives the operator's real Chrome profile, so the "anon" walk
-> inherited the operator's live signed-in session, and the
-> reader has no cookie-injection primitive to run a controlled
-> authed walk either. The 2026-05-17 "fresh tab group is clean"
-> contract held only incidentally (operator was logged out
-> then). The product rows below are the **auth-invariant**
-> subset that survives that contamination (true regardless of
-> session state); the false "anon auth-leak" HIGH was withdrawn
-> as a harness artifact. `/iterate` may drain the product rows
-> alongside `plan/AUDIT.md`.
+> Pass 2 (2026-05-21, commit 4ea5ae9) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> in a fresh isolated context (anon walk: no cookie; authed
+> walk: the `e2e@pantheon.app` `__session`). The shared-profile
+> contamination that made pass 1 local-only is structurally
+> impossible on this path. Two HIGH auth-state observations from
+> the authed walk were **withdrawn in self-assessment** as
+> harness artifacts — the walk reads `innerText` before the
+> client auth islands (`HeaderView`, `CommentThreadLive`)
+> hydrate, so a signed-in member's static-route chrome looks
+> signed-out in the capture; filed instead as the MED infra row
+> so `/iterate` corrects the walk. Six findings filed: 1 high,
+> 4 medium, 1 low. (Pass 1's harness-contamination story is in
+> the Done `[needs-user-call]` row.)
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-> WITHDRAWN — false finding. Pass 1's reader reported a HIGH
-> "anonymous visitors served `@me`/Sign out chrome site-wide."
-> Root cause confirmed by the user 2026-05-19: the `reader`
-> sub-agent drives the operator's real Chrome profile, which
-> was signed in to tiered.tv; the "anon" walk was actually
-> authed-as-operator. The server correctly treated the no-cookie
-> request class as anon (`/api/auth/me` → `signedIn:false`). Not
-> a product defect — a harness contamination artifact. Folded
-> into the `[needs-user-call]` harness row below. The dependent
-> "season anon affordances suppressed" observation falls with
-> it (same cause).
+- [ ] [HIGH] [anon] /u/[handle] public profile renders the member's account email as the display name — any anonymous visitor sees a real user's email address (URL: /u/e2e, source: critique-pass-2)
+- [ ] [MED] [anon] / (home) emits no `<link rel="canonical">` — every other route sets one via buildMetadata; the home page defines no generateMetadata at all (URL: /, source: critique-pass-2)
+- [ ] [MED] [anon] / (home) "Themed lists, cross-canon." stack heading overpromises against an all-Survivor list catalog — the home surface CRITIQUE pass-1 #98 explicitly deferred to "the next pass" (URL: /, source: critique-pass-2)
+- [ ] [MED] [anon] / (home) show-count copy doesn't reconcile — "13 shows tracked" but only 9 tiles surface (3 featured + a "+ 6 more in the index" sub-row), leaving 4 shows unreachable from home (URL: /, source: critique-pass-2)
+- [ ] [MED] [authed] scripts/critique-walk.mjs captures page innerText immediately after the `load` event, before client auth islands hydrate — the authed pass-2 walk produced two false-positive HIGH auth-state findings; the walk should settle for network-idle / island hydration before capture (URL: n/a, source: critique-pass-2)
+- [ ] [LOW] [anon] /shows/survivor/season/heroes-villains body reads "The tiered season the franchise measures itself against" — "tiered" as an adjective garbles the sentence and collides with the brand name (URL: /shows/survivor/season/heroes-villains, source: critique-pass-2)
 
-_(no open needs-user-call — the pass-1 harness blocker was resolved this oversight; see Done)_
+_(no open needs-user-call — Path A2 runs the walk without the cookie-injection blocker that gated pass 1; see Done)_
 
 ## Done
 
