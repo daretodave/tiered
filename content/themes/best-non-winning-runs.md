@@ -1,7 +1,7 @@
 ---
 slug: best-non-winning-runs
 title: "Non-winning runs that defined the season"
-tagline: "A competition season's loudest, most-quoted narratives don't always belong to whoever took the title at the end. Across five franchises, these are the seasons where the <b>shape of the story lived in the runs that didn't reach the final outcome</b> — and each season is what it is because of them."
+tagline: "A competition season's loudest, most-quoted narratives don't always belong to whoever took the title at the end. Across six franchises, these are the seasons where the <b>shape of the story lived in the runs that didn't reach the final outcome</b> — and each season is what it is because of them."
 category: tone
 sentiment: hold
 status: stable
@@ -11,7 +11,7 @@ featured: false
 related:
   - best-post-merge
   - best-comeback-seasons
-description: "Seasons across five franchises whose most-discussed arcs lived outside the title-taking. The runs that gave a season its shape, its quote-density, its texture — without needing to end up at the final outcome."
+description: "Seasons across six franchises whose most-discussed arcs lived outside the title-taking. The runs that gave a season its shape, its quote-density, its texture — without needing to end up at the final outcome."
 entries:
   - show: survivor
     season: 20
