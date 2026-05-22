@@ -1,10 +1,10 @@
 # CRITIQUE
 
-> Last pass: 2026-05-21 at commit 4ea5ae9
-> Pass count: 2
+> Last pass: 2026-05-22 at commit 6a0dea4
+> Pass count: 3
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 2 ran in the cloud loop via Path A2
+> cadence is active. Pass 3 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed).
 
@@ -21,20 +21,21 @@
 
 ## Pending
 
-> Pass 2 (2026-05-21, commit 4ea5ae9) ran in the cloud loop via
+> Pass 3 (2026-05-22, commit 6a0dea4) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
-> in a fresh isolated context (anon walk: no cookie; authed
-> walk: the `e2e@pantheon.app` `__session`). The shared-profile
-> contamination that made pass 1 local-only is structurally
-> impossible on this path. Two HIGH auth-state observations from
-> the authed walk were **withdrawn in self-assessment** as
-> harness artifacts — the walk reads `innerText` before the
-> client auth islands (`HeaderView`, `CommentThreadLive`)
-> hydrate, so a signed-in member's static-route chrome looks
-> signed-out in the capture; filed instead as the MED infra row
-> so `/iterate` corrects the walk. Six findings filed: 1 high,
-> 4 medium, 1 low. (Pass 1's harness-contamination story is in
-> the Done `[needs-user-call]` row.)
+> in a fresh isolated context across 6 anon URLs + 3 authed
+> URLs. Four findings filed: 1 medium, 3 low. One authed
+> observation — the season-page comment composer reading "Sign
+> in to comment" while the header showed `@e2e / Sign out` in
+> the same capture — was **withdrawn in self-assessment**: it
+> cannot be told apart from the known pre-hydration capture
+> artifact without the open MED infra row's walk-timing fix
+> (the walk reads `innerText` before client auth islands settle,
+> and header vs. thread islands hydrate independently). The four
+> pass-2 home-page rows and the LOW "tiered" garble were
+> re-observed live and left in place, not re-filed. (Pass 2's
+> withdrawal story — two HIGH auth-state false positives — and
+> pass 1's harness-contamination story are in the Done section.)
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
@@ -45,6 +46,10 @@
 - [ ] [MED] [anon] / (home) show-count copy doesn't reconcile — "13 shows tracked" but only 9 tiles surface (3 featured + a "+ 6 more in the index" sub-row), leaving 4 shows unreachable from home (URL: /, source: critique-pass-2)
 - [ ] [MED] [authed] scripts/critique-walk.mjs captures page innerText immediately after the `load` event, before client auth islands hydrate — the authed pass-2 walk produced two false-positive HIGH auth-state findings; the walk should settle for network-idle / island hydration before capture (URL: n/a, source: critique-pass-2)
 - [ ] [LOW] [anon] /shows/survivor/season/heroes-villains body reads "The tiered season the franchise measures itself against" — "tiered" as an adjective garbles the sentence and collides with the brand name (URL: /shows/survivor/season/heroes-villains, source: critique-pass-2)
+- [ ] [MED] [anon] /shows/survivor/season/heroes-villains FILMED stat sub-line reads "same beach as S19, S18" — factually wrong: S19 (Samoa) was shot at Upolu but S18 (Tocantins) was filmed in Brazil, not the HvV beach; `filming_caption` in content/shows/survivor/seasons/20-heroes-villains.md should drop the S18 reference (URL: /shows/survivor/season/heroes-villains, source: critique-pass-3)
+- [ ] [LOW] [anon] /shows hero lede describes a three-tier system — "The B tier we're still working through — every season reviewed before it lands" — but no show currently sits in B tier, so the page renders only S + A sections and the lede's B-tier sentence has no on-page referent; either soften the lede or render an "in review" empty B-tier section (URL: /shows, source: critique-pass-3)
+- [ ] [LOW] [anon] /themes "All lists" section group headers read "BY TONE · 7" + "BY CRAFT · 4" = 11, which doesn't reconcile to the "12 LISTS" stat — the era group is empty (0) and the single-show group (survivor-pillars, 1) surfaces no count; show every group count so they sum to 12 or drop per-group counts (URL: /themes, source: critique-pass-3)
+- [ ] [LOW] [anon] /themes "Finales that stuck the landing" description ends "six shows, six landings" but the list carries 7 entries (the card shows "7 ENTRIES") — "six shows" is correct (6 distinct shows) yet "six landings" undercounts; reword to seven or recount, and audit sibling lists (e.g. best-comeback-seasons) for the same prose/count drift (URL: /themes/best-finales, source: critique-pass-3)
 
 _(no open needs-user-call — Path A2 runs the walk without the cookie-injection blocker that gated pass 1; see Done)_
 
