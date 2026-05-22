@@ -75,6 +75,21 @@ export function shapeProfileComment(
   }
 }
 
+// `users.display_name` is sourced from the Auth0 profile's `name`
+// claim, and for an email magic-link / passwordless sign-in Auth0
+// sets `name` to the member's email address. Rendering that on the
+// public `/u/[handle]` page (the `<p>` byline and the JSON-LD
+// `name`) exposes a real address to anonymous visitors. A genuine
+// human display name never contains `@`, so any value carrying one
+// is treated as email-shaped PII and dropped — the page falls back
+// to `@handle`, which is already public by design.
+export function publicDisplayName(value: string | null): string | null {
+  if (!value) return null
+  const trimmed = value.trim()
+  if (!trimmed || trimmed.includes('@')) return null
+  return trimmed
+}
+
 // A profile is "populated" — and therefore worth indexing — when
 // the member has at least one published comment OR a live vote on
 // a real season. An empty profile stays noIndex so we never put a

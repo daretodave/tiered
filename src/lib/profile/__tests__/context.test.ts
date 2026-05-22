@@ -4,6 +4,7 @@ import {
   formatMemberSince,
   isPopulatedProfile,
   parseSeasonTarget,
+  publicDisplayName,
   shapeProfileComment,
 } from '../context'
 
@@ -111,5 +112,33 @@ describe('isPopulatedProfile', () => {
     expect(
       isPopulatedProfile({ publishedCommentCount: 0, votedSeasonCount: 0 }),
     ).toBe(false)
+  })
+})
+
+describe('publicDisplayName', () => {
+  it('keeps a genuine human display name', () => {
+    expect(publicDisplayName('Dave Pemberton')).toBe('Dave Pemberton')
+  })
+
+  it('drops an email address (Auth0 magic-link sets name = email)', () => {
+    expect(publicDisplayName('dave@example.com')).toBeNull()
+  })
+
+  it('drops any value containing an @ — email-shaped PII never renders', () => {
+    expect(publicDisplayName('dave@localhost')).toBeNull()
+    expect(publicDisplayName('@dave')).toBeNull()
+  })
+
+  it('returns null for a null value', () => {
+    expect(publicDisplayName(null)).toBeNull()
+  })
+
+  it('returns null for an empty or whitespace-only value', () => {
+    expect(publicDisplayName('')).toBeNull()
+    expect(publicDisplayName('   ')).toBeNull()
+  })
+
+  it('trims surrounding whitespace on a kept name', () => {
+    expect(publicDisplayName('  Dave  ')).toBe('Dave')
   })
 })

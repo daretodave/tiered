@@ -13,6 +13,7 @@ import { formatWhen } from '@/lib/comments/thread'
 import {
   formatMemberSince,
   isPopulatedProfile,
+  publicDisplayName,
   shapeProfileComment,
 } from '@/lib/profile/context'
 import { buildMetadata, canonicalUrl, jsonLdScriptProps } from '@/lib/seo'
@@ -56,7 +57,7 @@ const loadProfile = cache(async (handle: string): Promise<ProfileView | null> =>
 
   return {
     handle: activity.handle,
-    displayName: activity.displayName,
+    displayName: publicDisplayName(activity.displayName),
     memberSince: formatMemberSince(activity.createdAt),
     publishedCommentCount: activity.publishedCommentCount,
     votedSeasonCount: activity.votedSeasonCount,
