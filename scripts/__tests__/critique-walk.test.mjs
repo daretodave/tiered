@@ -10,6 +10,9 @@ import {
   COOKIE_CACHE_PATH,
   VIEWPORTS,
   SESSION_COOKIE_NAME,
+  SETTLE_TIMEOUT,
+  isAuthMeRequest,
+  settleForHydration,
 } from '../critique-walk.mjs'
 
 const BASE = 'https://tiered.tv'
@@ -199,6 +202,90 @@ test('analyzeCapture findings always carry the reader shape', () => {
       assert.ok(k in x, `finding missing ${k}`)
     }
   }
+})
+
+// --- hydration settle: capture the post-hydration DOM -----------
+// The walk used to read innerText at the `load` event, before the
+// header auth-state island fetched /api/auth/me — producing
+// false-positive auth-state findings. isAuthMeRequest +
+// settleForHydration are the fix: wait for that fetch, then for
+// the network to fall idle, before capturing.
+
+test('SETTLE_TIMEOUT is a positive millisecond budget under the nav timeout', () => {
+  assert.equal(typeof SETTLE_TIMEOUT, 'number')
+  assert.ok(SETTLE_TIMEOUT > 0 && SETTLE_TIMEOUT < 20000)
+})
+
+test('isAuthMeRequest: matches /api/auth/me regardless of origin or query', () => {
+  assert.equal(isAuthMeRequest('https://tiered.tv/api/auth/me'), true)
+  assert.equal(isAuthMeRequest('https://tiered.tv/api/auth/me?nocache=1'), true)
+  assert.equal(isAuthMeRequest('http://127.0.0.1:4173/api/auth/me'), true)
+})
+
+test('isAuthMeRequest: rejects sibling and unrelated endpoints', () => {
+  assert.equal(isAuthMeRequest('https://tiered.tv/api/auth/login'), false)
+  assert.equal(isAuthMeRequest('https://tiered.tv/api/comment'), false)
+  assert.equal(isAuthMeRequest('https://tiered.tv/api/auth/me/extra'), false)
+})
+
+test('isAuthMeRequest: a non-URL string returns false, never throws', () => {
+  assert.equal(isAuthMeRequest('not a url'), false)
+  assert.equal(isAuthMeRequest(''), false)
+})
+
+test('settleForHydration: awaits the auth response, then waits for network idle', async () => {
+  const order = []
+  const authResponse = Promise.resolve('ok').then((v) => {
+    order.push('auth')
+    return v
+  })
+  const page = {
+    waitForLoadState(state, opts) {
+      order.push('networkidle')
+      assert.equal(state, 'networkidle')
+      assert.deepEqual(opts, { timeout: 1234 })
+      return Promise.resolve()
+    },
+  }
+  await settleForHydration(page, authResponse, 1234)
+  assert.deepEqual(order, ['auth', 'networkidle'])
+})
+
+test('settleForHydration: a networkidle timeout is swallowed — the walk still proceeds', async () => {
+  const page = {
+    waitForLoadState() {
+      return Promise.reject(new Error('Timeout 8000ms exceeded'))
+    },
+  }
+  await assert.doesNotReject(
+    settleForHydration(page, Promise.resolve(null), 8000),
+  )
+})
+
+test('settleForHydration: an auth-response rejection is swallowed and still triggers the idle wait', async () => {
+  let idleWaited = false
+  const page = {
+    waitForLoadState() {
+      idleWaited = true
+      return Promise.resolve()
+    },
+  }
+  await assert.doesNotReject(
+    settleForHydration(page, Promise.reject(new Error('no /api/auth/me')), 8000),
+  )
+  assert.equal(idleWaited, true)
+})
+
+test('settleForHydration: a null auth response (the pre-caught shape) settles cleanly', async () => {
+  let idleWaited = false
+  const page = {
+    waitForLoadState() {
+      idleWaited = true
+      return Promise.resolve()
+    },
+  }
+  await settleForHydration(page, Promise.resolve(null), 8000)
+  assert.equal(idleWaited, true)
 })
 
 // --- resolveSessionPair: the cookie-resolution chain -------------

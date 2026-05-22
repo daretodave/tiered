@@ -22,7 +22,7 @@
 //     --base https://tiered.tv \
 //     --urls /,/shows,/shows/survivor \
 //     [--cookie '__session=...'] \
-//     [--out path.json] [--timeout 20000]
+//     [--out path.json] [--timeout 20000] [--settle-timeout 8000]
 //
 // In authenticated mode the `__session` pair is resolved in
 // precedence order: --cookie  →  $CRITIQUE_SESSION_COOKIE  →
@@ -48,6 +48,17 @@ export const VIEWPORTS = {
 }
 
 export const SESSION_COOKIE_NAME = '__session'
+
+// After the `load` event the page's client islands are still
+// hydrating. The header auth-state island (HeaderView) fetches
+// /api/auth/me on mount and only then re-renders the chrome
+// between signed-out and signed-in; the season comment composer
+// hydrates the same way. Capturing innerText at `load` (the
+// pre-2026-05-22 behavior) read the SSR DOM and produced
+// false-positive auth-state findings — see settleForHydration.
+// SETTLE_TIMEOUT caps how long each post-load settle wait blocks
+// before the walk proceeds with whatever has rendered.
+export const SETTLE_TIMEOUT = 8000
 
 // Build the cookie array handed to `context.addCookies()`.
 //   anonymous           → []                       (no session)
@@ -366,7 +377,48 @@ function sameOrigin(reqUrl, baseUrl) {
   }
 }
 
-async function walk({ chromium, base, mode, authState, cookies, urls, timeout }) {
+// The header auth-state island fetches exactly this endpoint on
+// mount; its response is what flips the captured chrome between
+// signed-out and signed-in. settleForHydration waits on it.
+export function isAuthMeRequest(url) {
+  try {
+    return new URL(url).pathname === '/api/auth/me'
+  } catch {
+    return false
+  }
+}
+
+// Block until the page's client islands have settled, so the
+// capture reflects the hydrated DOM rather than the SSR output.
+// `authResponse` is the (pre-armed, pre-caught) /api/auth/me
+// response promise; awaiting it pins the one request whose result
+// changes the chrome. The networkidle wait then gives the island
+// re-render — and any other island — a bounded window to flush.
+// Both waits are best-effort: a slow page or a chatty third-party
+// beacon must delay the capture, never fail it.
+export async function settleForHydration(page, authResponse, settleTimeout) {
+  try {
+    await authResponse
+  } catch {
+    /* auth fetch never fired or errored — proceed with what loaded */
+  }
+  try {
+    await page.waitForLoadState('networkidle', { timeout: settleTimeout })
+  } catch {
+    /* network never fell idle within the budget — proceed anyway */
+  }
+}
+
+async function walk({
+  chromium,
+  base,
+  mode,
+  authState,
+  cookies,
+  urls,
+  timeout,
+  settleTimeout,
+}) {
   const captures = []
   const browser = await chromium.launch({ headless: true })
   try {
@@ -395,8 +447,19 @@ async function walk({ chromium, base, mode, authState, cookies, urls, timeout })
         const target = new URL(path, base).href
         const capture = { url: path, viewport: vpName, authState }
         try {
+          // Arm the auth-island wait BEFORE navigating so the
+          // response can't resolve in the gap between goto
+          // returning and the listener attaching. Pre-catch it so
+          // a timeout can't surface as an unhandled rejection
+          // while goto is still in flight.
+          const authResponse = page
+            .waitForResponse((res) => isAuthMeRequest(res.url()), {
+              timeout: settleTimeout,
+            })
+            .catch(() => null)
           const resp = await page.goto(target, { waitUntil: 'load', timeout })
           capture.status = resp ? resp.status() : null
+          await settleForHydration(page, authResponse, settleTimeout)
           const meta = await page.evaluate(() => {
             const m = (sel) =>
               document.querySelector(sel)?.getAttribute('content') ?? null
@@ -440,6 +503,7 @@ async function main() {
     .map((u) => u.trim())
     .filter(Boolean)
   const timeout = Number(args.timeout || 20000)
+  const settleTimeout = Number(args['settle-timeout'] || SETTLE_TIMEOUT)
   const sessionPair = resolveSessionPair({
     cliCookie: args.cookie,
     envCookie: process.env.CRITIQUE_SESSION_COOKIE,
@@ -492,6 +556,7 @@ async function main() {
     cookies,
     urls,
     timeout,
+    settleTimeout,
   })
   const findings = captures.flatMap(analyzeCapture)
 
