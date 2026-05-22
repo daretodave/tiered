@@ -39,5 +39,5 @@ The casting is the format — recognizable players placed opposite
 each other in a way that lets old grudges and old alliances do
 half the work. The pace is unrelenting, the post-merge stretch
 is dense with moves, and the season has cast a long shadow over
-every all-returnee run since. The tiered season the franchise
+every all-returnee run since. The season the franchise
 measures itself against.
