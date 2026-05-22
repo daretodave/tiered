@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-19 at commit 554f462
-> Pass count: 4
+> Last pass: 2026-05-22 at commit 04427df
+> Pass count: 5
 
 ## Considered (awaiting promotion)
 
@@ -52,6 +52,121 @@ or similar makes the sign-up trust signal real.
 **Estimated phases:** 1.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
+
+### 09. Editorial-copy honesty sweep + derived-count invariant
+
+**Score:** 5.4 (impact: 6, ease: 4, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 5
+**Filed:** 2026-05-22
+**Source signals:**
+- `plan/CRITIQUE.md` pass-2/3 cluster — **4 Pending findings of
+  one class** across **4 distinct URLs**: editorial copy carries
+  a hardcoded count/claim that drifts from the data the page
+  actually renders.
+  - [MED] `/` — "13 shows tracked" but only 9 tiles surface (3
+    featured + a "+ 6 more in the index" sub-row).
+  - [LOW] `/shows` — hero lede names a B tier ("The B tier we're
+    still working through") but no show sits in B, so the page
+    renders no B-tier section — the sentence has no referent.
+  - [LOW] `/themes` — "All lists" group headers read "BY TONE ·
+    7" + "BY CRAFT · 4" = 11, which doesn't reconcile to the
+    "12 LISTS" stat.
+  - [LOW] `/themes/best-finales` — description ends "six shows,
+    six landings" but the card shows "7 ENTRIES"; the finding
+    itself asks to "audit sibling lists for the same drift."
+- Commit pattern (signal G) — the loop has been hand-patching
+  this exact class one surface at a time: `b9944bb` "derive
+  /themes hero + adjacent tags from real show-coverage",
+  `82b7b13` "unify canon-revised stat format across home + show
+  page", `4acd1ad` "align themed-list season_label with
+  canonical season titles".
+- Prior art — Phase 41 already proved the pattern for one
+  surface: the `/themes` stat strip's "N SHOWS COVERED" now
+  derives from `getShowsForTheme()`, pinned by the
+  `CROSS_SHOW_STRICT` content-check invariant.
+
+**Why:** This is a class, not 4 fixes. Drained one finding per
+tick, `/iterate` patches each instance's copy — but the class
+re-opens the next time hand-authored copy with a literal count
+lands, because no invariant forces "counts derive from data."
+The honest fix is the phase-41 move applied catalog-wide: sweep
+every count/claim in editorial copy, derive it from a content
+loader where one exists, drop the literal where it doesn't, and
+add a content-check / unit invariant so a future drift fails the
+verify gate instead of waiting for the next critique pass. The
+home show-count finding additionally carries a real UX question
+(4 of 13 shows unreachable from home) that a pure copy edit
+would paper over.
+
+**Scope sketch:**
+- Sweep editorial-copy counts/claims across home, `/shows`,
+  `/themes`, `/themes/[theme]`, show pages, season pages. Per
+  instance: derive from the loader, or drop the hardcoded
+  number.
+- Where a number must stay literal for editorial voice, pin it
+  with a content-check invariant or unit test against the real
+  catalog count so drift is a hard failure.
+- Reconcile the home show-count copy specifically — surface all
+  shows from home or reword (UX reachability, not just prose).
+- No URL change; UI work bounded to copy + count-derivation
+  wiring.
+
+**Estimated phases:** 1 (likely multi-tick per-surface, like
+phase 41's drain).
+**Conflicts:** none. Reinforces phase 41's precedent and the
+brand's honest, no-spoilers voice.
+
+### 10. Colocated-test coverage gate (shift §5a left into verify)
+
+**Score:** 5.5 (impact: 5, ease: 5, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 5
+**Filed:** 2026-05-22
+**Source signals:**
+- Commit pattern (signal G) — a **16-commit reactive drain**,
+  `#105`–`#120` (`e03938d` … `f3de16f`), each `test: lock <X>
+  contract` paired with an `audit: finding […] addressed`. The
+  loop spent 16 consecutive ticks hand-colocating tests for
+  component/helper files that shipped untested. §5a ("every
+  commit ships unit tests AND e2e contributions") is a
+  non-negotiable standing rule (`CLAUDE.md`, `agents.md` §5a,
+  build-plan guardrails) — but it is enforced **reactively**:
+  `/iterate`'s audit finds one violator per tick.
+- The `#120` audit row (resolved `f3de16f`) explicitly flagged
+  the detection mechanism as fragile: "a testless-file scan
+  keyed on filename treats `Header.tsx` as covered when it is
+  not" — the test file's `describe()` targeted `HeaderView`,
+  not `Header`. The current informal detection false-negatives.
+- Prior art — `pnpm check:no-raw-img` (phase 18,
+  `scripts/check-no-raw-img`) is the exact shape: a
+  discipline-gate script wired into `pnpm verify`.
+
+**Why:** §5a is load-bearing but enforced after the fact; a
+16-commit drain is the measured cost of having no gate. A
+proactive gate shifts enforcement left — verify fails the moment
+an untested component/helper lands, instead of `/iterate`
+catching it ticks later and burning a polish tick per file. The
+gate must beat the filename-keyed false-negative class the #120
+row exposed: it should confirm the colocated test actually
+imports/exercises the target module, not merely that a
+same-named file exists.
+
+**Scope sketch:**
+- `scripts/check-test-colocation.ts` (or `.mjs`) — walks
+  `src/components/**`, `src/lib/**`, `src/content/**` for
+  `.ts`/`.tsx` modules lacking a colocated
+  `__tests__/<name>.test.{ts,tsx}`; verifies the test file
+  references the target module (not filename-only). Allowlist
+  for genuine no-logic files (type-only modules; barrels
+  already covered by barrel tests).
+- Wire into `pnpm verify` alongside `check:no-raw-img`.
+- Colocated tests for the script itself (covered file passes,
+  testless file fails, filename-match-but-wrong-target fails).
+- Fix any stragglers the script newly catches (the recent
+  drain cleared most; expect few).
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens an existing non-negotiable standing
+rule; no URL change, no schema change.
 
 ## Considered (below threshold)
 
