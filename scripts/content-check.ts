@@ -329,7 +329,7 @@ function main(): number {
   // CROSS_SHOW_STRICT to true (one-line change, like STRICT
   // above), at which point every tone/craft/era list must clear
   // the floor or be re-tagged `category: single`.
-  const CROSS_SHOW_STRICT = false
+  const CROSS_SHOW_STRICT = true
   const crossShowIssues = collectCrossShowIssues()
   if (CROSS_SHOW_STRICT) {
     failures.push(...crossShowIssues)
