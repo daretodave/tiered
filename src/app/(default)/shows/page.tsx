@@ -26,6 +26,9 @@ export default function ShowsIndexPage() {
   const shows = getAllShows()
   const stats = computeShowsStats(shows)
   const grouped = groupShowsByTier(shows)
+  const populatedTiers = TIER_ORDER.filter(
+    (tier) => showsForTier(grouped, tier).length > 0,
+  )
   const ld = buildJsonLd({
     type: 'CollectionPage',
     name: 'Shows — tiered.tv',
@@ -46,7 +49,7 @@ export default function ShowsIndexPage() {
         </section>
       ) : (
         <>
-          <ShowsHero stats={stats} />
+          <ShowsHero stats={stats} tiers={populatedTiers} />
           {TIER_ORDER.map((tier) => (
             <TierSection
               key={tier}

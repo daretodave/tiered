@@ -46,6 +46,7 @@ export const pageReads: Record<string, PageReadAssertion> = {
     expectVisible: [
       '[data-testid=shows-tiered]',
       '[data-testid=shows-hero]',
+      '[data-testid=shows-hero-lede]',
       '[data-testid=shows-hero-stats]',
       '[data-testid=shows-stat-shows]',
       '[data-testid=shows-stat-seasons]',

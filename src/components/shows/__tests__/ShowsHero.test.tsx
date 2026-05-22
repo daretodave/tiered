@@ -7,6 +7,7 @@ describe('<ShowsHero>', () => {
     render(
       <ShowsHero
         stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        tiers={['S', 'A']}
       />,
     )
     const hero = screen.getByTestId('shows-hero')
@@ -19,6 +20,7 @@ describe('<ShowsHero>', () => {
     render(
       <ShowsHero
         stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        tiers={['S', 'A']}
       />,
     )
     expect(screen.getByTestId('shows-stat-shows').textContent).toContain('13')
@@ -43,10 +45,38 @@ describe('<ShowsHero>', () => {
     const { container } = render(
       <ShowsHero
         stats={{ showCount: 1, totalSeasons: 1, lastRevision: '01 / 26' }}
+        tiers={['S']}
       />,
     )
     const em = container.querySelector('h1.shows-hero-title em')
     expect(em).not.toBeNull()
     expect(em?.textContent).toBe('Tiered.')
+  })
+
+  it('omits the B-tier sentence when no show sits in B', () => {
+    render(
+      <ShowsHero
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        tiers={['S', 'A']}
+      />,
+    )
+    const lede = screen.getByTestId('shows-hero-lede')
+    expect(lede.textContent).toContain('S tier')
+    expect(lede.textContent).toContain('A tier')
+    expect(lede.textContent).not.toContain('B tier')
+    expect(lede.getAttribute('data-tier-coverage')).toBe('SA')
+  })
+
+  it('includes the B-tier sentence once a show lands in B', () => {
+    render(
+      <ShowsHero
+        stats={{ showCount: 14, totalSeasons: 300, lastRevision: '05 / 26' }}
+        tiers={['S', 'A', 'B']}
+      />,
+    )
+    const lede = screen.getByTestId('shows-hero-lede')
+    expect(lede.textContent).toContain('B tier')
+    expect(lede.textContent).toContain('still working through')
+    expect(lede.getAttribute('data-tier-coverage')).toBe('SAB')
   })
 })

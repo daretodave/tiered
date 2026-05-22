@@ -34,6 +34,31 @@ test.describe('/shows tier-list', () => {
     await expect(page.getByTestId('how-tiers-move')).toBeVisible()
   })
 
+  test('hero lede describes only the tiers that have a section on the page', async ({
+    page,
+  }) => {
+    await page.goto('/shows', { waitUntil: 'domcontentloaded' })
+
+    const lede = page.getByTestId('shows-hero-lede')
+    await expect(lede).toBeVisible()
+
+    // The lede's data-tier-coverage must equal the set of tier
+    // sections actually rendered — a regression to a hardcoded
+    // sentence about an empty (unrendered) tier fails here.
+    const coverage = (await lede.getAttribute('data-tier-coverage')) ?? ''
+    const renderedTiers = await page
+      .getByTestId('tier-section')
+      .evaluateAll((els) =>
+        els.map((el) => (el as HTMLElement).dataset['tier']),
+      )
+    expect(coverage.split('')).toEqual(renderedTiers)
+
+    const ledeText = (await lede.textContent()) ?? ''
+    expect(ledeText.includes('S tier')).toBe(coverage.includes('S'))
+    expect(ledeText.includes('A tier')).toBe(coverage.includes('A'))
+    expect(ledeText.includes('B tier')).toBe(coverage.includes('B'))
+  })
+
   test('every show appears in exactly one tier tile', async ({ page }) => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
 

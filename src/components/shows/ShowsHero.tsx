@@ -1,10 +1,14 @@
+import type { ShowTier } from '@/content'
 import type { ShowsStats } from './showsStats'
+import { tierLedeSentences } from './tierLede'
 
 type ShowsHeroProps = {
   stats: ShowsStats
+  tiers: readonly ShowTier[]
 }
 
-export function ShowsHero({ stats }: ShowsHeroProps) {
+export function ShowsHero({ stats, tiers }: ShowsHeroProps) {
+  const ledeSentences = tierLedeSentences(tiers)
   return (
     <header className="shows-hero" data-testid="shows-hero">
       <div className="shows-hero-headline">
@@ -15,12 +19,13 @@ export function ShowsHero({ stats }: ShowsHeroProps) {
         </h1>
       </div>
       <div className="shows-hero-side">
-        <p className="shows-hero-lede">
+        <p
+          className="shows-hero-lede"
+          data-testid="shows-hero-lede"
+          data-tier-coverage={tiers.join('')}
+        >
           Reality-TV canons, sorted not by personal taste but by{' '}
-          <b>how settled the ranking is.</b> The S tier invented or perfected
-          its format. The A tier has the deep canon and the years to defend
-          it. The B tier we&rsquo;re still working through &mdash; every
-          season reviewed before it lands.
+          <b>how settled the ranking is.</b> {ledeSentences.join(' ')}
         </p>
         <div className="shows-hero-stats" data-testid="shows-hero-stats">
           <div className="shows-stat" data-testid="shows-stat-shows">
