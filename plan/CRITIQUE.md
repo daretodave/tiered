@@ -1,10 +1,10 @@
 # CRITIQUE
 
-> Last pass: 2026-05-22 at commit 6a0dea4
-> Pass count: 3
+> Last pass: 2026-05-22 at commit 50462e1
+> Pass count: 4
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 3 ran in the cloud loop via Path A2
+> cadence is active. Pass 4 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed).
 
@@ -21,27 +21,38 @@
 
 ## Pending
 
-> Pass 3 (2026-05-22, commit 6a0dea4) ran in the cloud loop via
+> Pass 4 (2026-05-22, commit 50462e1) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > in a fresh isolated context across 6 anon URLs + 3 authed
-> URLs. Four findings filed: 1 medium, 3 low. One authed
-> observation — the season-page comment composer reading "Sign
-> in to comment" while the header showed `@e2e / Sign out` in
-> the same capture — was **withdrawn in self-assessment**: it
-> cannot be told apart from the known pre-hydration capture
-> artifact without the open MED infra row's walk-timing fix
-> (the walk reads `innerText` before client auth islands settle,
-> and header vs. thread islands hydrate independently). The four
-> pass-2 home-page rows and the LOW "tiered" garble were
-> re-observed live and left in place, not re-filed. (Pass 2's
-> withdrawal story — two HIGH auth-state false positives — and
-> pass 1's harness-contamination story are in the Done section.)
+> URLs. One finding filed (MED). The anon mechanical pass was
+> clean (0 findings). The authed mechanical pass surfaced 3
+> "failed first-party request" rows — all `net::ERR_ABORTED` on
+> Next.js RSC prefetch requests (`https://tiered.tv/?_rsc=…`,
+> the `<Link prefetch>` payload for the header wordmark's `/`
+> route) — **withdrawn in self-assessment**: an aborted
+> in-flight prefetch is the browser cancelling when the walk
+> tears the page context down, not a broken endpoint (same
+> walk-teardown-artifact class as pass-3's withdrawn
+> pre-hydration observation). The qualitative pass (reader
+> sub-agent over the captured DOM text) returned 6 candidates;
+> 5 dropped in self-assessment — 2 were faithful ports of
+> binding design files (`/shows` H1 "All shows. Tiered." =
+> `design/tiered.tv · All Shows.html:306`; `/themes/best-premieres`
+> "Ranked · Editor's Canon" = `… Best Premieres.html:218` —
+> design law is supreme on anything visible), 1 re-litigated the
+> deliberate coverage-aware `/shows` lede shipped the same day
+> as #130, 1 was self-negating (reader's own text: "the count
+> is fine", "not a contradiction"), and 1 ("twenty-five years"
+> vs EST. 2000) is sound — Survivor premiered 2000-05-31, so as
+> of 2026-05-22 the franchise is 25 years old, not 26. (Pass 3's
+> withdrawal story is in the Done section.)
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-_(no open Pending findings — pass-3's four findings have all drained to Done.)_
+- [ ] [MED] [anon] /themes hero lede claims "Some span every show" but the page's own stat block reads "10 SHOWS COVERED" (of 13 tracked) and no themed list spans more than six shows — the hero overclaims coverage against its own numbers. Reword to something honest that keeps the parallel with the next sentence ("Some live inside one", which pairs with `category: single` lists) — e.g. "Some span the catalog. Some live inside one." The sentence is verbatim design-placeholder copy from `design/tiered.tv · Lists.html:170`; this is the same class of fix as the "23 lists"→"12 lists" count the page already makes data-honest, and the same coverage-aware-copy precedent as #98/#129/#130. (URL: /themes, source: critique-pass-4)
+
 _(no open needs-user-call — Path A2 runs the walk without the cookie-injection blocker that gated pass 1; see Done)_
 
 ## Done
