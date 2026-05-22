@@ -47,6 +47,17 @@ async function runAssertion(
     const title = await page.title()
     expect(title, `<title> on ${url.path}`).toMatch(reads.expectTitlePattern)
   }
+  if (reads.expectCanonical) {
+    const canonical = page.locator('link[rel="canonical"]')
+    await expect(
+      canonical,
+      `<link rel=canonical> count on ${url.path}`,
+    ).toHaveCount(1)
+    const href = await canonical.getAttribute('href')
+    expect(href ?? '', `canonical href on ${url.path}`).toMatch(
+      reads.expectCanonical,
+    )
+  }
   for (const sel of reads.expectVisible ?? []) {
     await expect(page.locator(sel).first()).toBeVisible()
   }

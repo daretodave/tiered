@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { getAllShows, getAllThemes, getFeaturedShow } from '@/content'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeShowGrid } from '@/components/home/HomeShowGrid'
@@ -7,12 +8,34 @@ import { HomeListsStack } from '@/components/home/HomeListsStack'
 import { HomeListRow } from '@/components/home/HomeListRow'
 import { ShowTile } from '@/components/home/ShowTile'
 import { getCanonRevisedLabel } from '@/lib/canon/last-revised'
+import { buildMetadata } from '@/lib/seo'
 
 // Phase 27 — homepage rebuilt against `design/tiered.tv · Home.html`.
 // Fluid hero + stat strip; 3-up featured tiles + a sub-row + 6 compact
 // tiles below; dual-rank callout; themed-list stack. Color + type only.
 
 export const dynamic = 'force-static'
+
+const HOME_TITLE = 'tiered.tv — the seasons, ranked. no spoilers.'
+const HOME_DESCRIPTION =
+  'A spoiler-free home for ranked TV seasons. Editor’s Canon and Community Rank side by side.'
+
+// The home page defined no metadata at all — it inherited the root
+// layout's title/description but emitted no <link rel="canonical">,
+// the one route on the site without one. buildMetadata supplies the
+// self-referential canonical (plus OG/Twitter and the RSS discovery
+// link); the title is pinned absolute so the root `%s — tiered.tv`
+// template doesn't double-suffix the brand line.
+export function generateMetadata(): Metadata {
+  return {
+    ...buildMetadata({
+      title: HOME_TITLE,
+      description: HOME_DESCRIPTION,
+      path: '/',
+    }),
+    title: { absolute: HOME_TITLE },
+  }
+}
 
 const FEATURED_TILES = 3
 const COMPACT_TILES = 6

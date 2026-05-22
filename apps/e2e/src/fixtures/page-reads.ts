@@ -8,6 +8,7 @@ export type PageReadAssertion = {
   expectMetaDescription?: RegExp
   expectJsonLdType?: string
   expectTitlePattern?: RegExp
+  expectCanonical?: RegExp
 }
 
 // Chrome assertions that hold for every URL — phase 19b contract.
@@ -22,6 +23,10 @@ const chromeVisible = [
 export const pageReads: Record<string, PageReadAssertion> = {
   '/': {
     expectH1Pattern: /The seasons.*ranked.*no spoilers/i,
+    // Next normalizes the root canonical to the bare origin (default
+    // trailingSlash:false), so the rendered href drops the slash that
+    // buildMetadata's canonicalUrl('/') carries.
+    expectCanonical: /^https:\/\/tiered\.tv\/?$/,
     expectVisible: [
       '[data-testid=hero]',
       '[data-testid=home-hero]',
