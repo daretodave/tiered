@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
-import { getAllShows, getAllThemes, getFeaturedShow } from '@/content'
+import {
+  getAllShows,
+  getAllThemes,
+  getFeaturedShow,
+  getThemeStats,
+} from '@/content'
 import { HomeHero } from '@/components/home/HomeHero'
 import { HomeShowGrid } from '@/components/home/HomeShowGrid'
 import { HomeMoreShows } from '@/components/home/HomeMoreShows'
@@ -50,6 +55,7 @@ export default function HomePage() {
   const { featured: featuredShows, compact: compactShows } =
     partitionHomeShows(allShows)
   const themes = getAllThemes().slice(0, LIST_ROWS)
+  const themesShowsCovered = getThemeStats().showsCovered
   const canonRevisedLabel = getCanonRevisedLabel()
 
   return (
@@ -77,7 +83,7 @@ export default function HomePage() {
 
       <HomeDualCallout />
 
-      <HomeListsStack>
+      <HomeListsStack showsCovered={themesShowsCovered}>
         {themes.map((theme) => (
           <HomeListRow key={theme.slug} theme={theme} />
         ))}

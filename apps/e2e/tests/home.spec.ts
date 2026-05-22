@@ -28,6 +28,18 @@ test('home renders the promise + hero + all the spec sections', async ({
   await expect(page.getByTestId('home-dual-callout')).toBeVisible()
   await expect(page.getByTestId('home-lists-stack')).toBeVisible()
 
+  // The themed-lists heading derives its "cross-canon" accent from the
+  // catalog's real show coverage (critique #129) — not a hardcoded claim.
+  const listSection = page.getByTestId('home-list-section')
+  await expect(listSection).toHaveAttribute(
+    'data-coverage',
+    /^(cross-canon|single-canon)$/,
+  )
+  const coverage = await listSection.getAttribute('data-coverage')
+  await expect(listSection.locator('.section-head h2 em')).toHaveText(
+    coverage === 'cross-canon' ? 'cross-canon.' : 'inside one canon.',
+  )
+
   // The home page is bounded — it lives inside the (default) layout's <Wrap>.
   await expect(page.getByTestId('wrap')).toBeVisible()
 
