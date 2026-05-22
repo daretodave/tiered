@@ -15,6 +15,11 @@ test.describe('/themes index (phase 19g shape)', () => {
     await expect(page.getByTestId('lists-stat-revised')).toContainText(
       /\d{4}/,
     )
+    // The hero lede must not overclaim coverage: no themed list spans
+    // every tracked show, so "span every show" is a false claim.
+    await expect(page.locator('.lists-hero-lede')).not.toContainText(
+      /every show/i,
+    )
   })
 
   test('filter bar has 5 chips with the right data-filter attrs', async ({

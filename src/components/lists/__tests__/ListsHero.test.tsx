@@ -43,7 +43,8 @@ describe('<ListsHero>', () => {
       'data-coverage',
       'cross-canon',
     )
-    expect(screen.getByText(/Some span every show/)).toBeTruthy()
+    expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
+    expect(screen.queryByText(/span every show/i)).toBeNull()
   })
 
   it('swaps the accent and lede to single-canon-honest copy when only one show is covered', () => {
@@ -64,7 +65,7 @@ describe('<ListsHero>', () => {
       'data-coverage',
       'single-canon',
     )
-    expect(screen.queryByText(/Some span every show/)).toBeNull()
+    expect(screen.queryByText(/Some span the catalog/)).toBeNull()
     expect(
       screen.getByText(/Every list lives inside one canon today/),
     ).toBeTruthy()
