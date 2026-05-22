@@ -8,6 +8,7 @@ import { HomeListsStack } from '@/components/home/HomeListsStack'
 import { HomeListRow } from '@/components/home/HomeListRow'
 import { ShowTile } from '@/components/home/ShowTile'
 import { getCanonRevisedLabel } from '@/lib/canon/last-revised'
+import { partitionHomeShows } from '@/lib/home/show-partition'
 import { buildMetadata } from '@/lib/seo'
 
 // Phase 27 — homepage rebuilt against `design/tiered.tv · Home.html`.
@@ -37,8 +38,6 @@ export function generateMetadata(): Metadata {
   }
 }
 
-const FEATURED_TILES = 3
-const COMPACT_TILES = 6
 const LIST_ROWS = 4
 
 export default function HomePage() {
@@ -46,11 +45,10 @@ export default function HomePage() {
   const allShows = getAllShows()
     .slice()
     .sort((a, b) => a.slug.localeCompare(b.slug))
-  const featuredShows = allShows.slice(0, FEATURED_TILES)
-  const compactShows = allShows.slice(
-    FEATURED_TILES,
-    FEATURED_TILES + COMPACT_TILES,
-  )
+  // The compact grid takes every non-featured show — no fixed cap —
+  // so the "N shows tracked" headline always equals what renders.
+  const { featured: featuredShows, compact: compactShows } =
+    partitionHomeShows(allShows)
   const themes = getAllThemes().slice(0, LIST_ROWS)
   const canonRevisedLabel = getCanonRevisedLabel()
 

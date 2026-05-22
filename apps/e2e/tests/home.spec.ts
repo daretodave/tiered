@@ -121,8 +121,8 @@ test('compact tiles drop the blurb but keep bullet + name + meta', async ({
   const compactGrid = page.getByTestId('home-more-shows-grid')
   const compact = compactGrid.getByTestId('home-show-tile')
   const count = await compact.count()
+  // No upper bound — the compact grid carries every non-featured show.
   expect(count).toBeGreaterThan(0)
-  expect(count).toBeLessThanOrEqual(6)
   for (let i = 0; i < count; i++) {
     const tile = compact.nth(i)
     expect(await tile.locator('.show-tile-blurb').count()).toBe(0)
@@ -136,6 +136,35 @@ test('sub-row label surfaces the index remainder', async ({ page }) => {
   await expect(page.getByTestId('home-more-shows-label')).toContainText(
     /^\+\s\d+\smore in the index$/,
   )
+})
+
+test('home surfaces every tracked show — headline reconciles with the grids', async ({
+  page,
+}) => {
+  await page.goto('/')
+
+  const headingText =
+    (await page.getByTestId('home-shows-heading').textContent()) ?? ''
+  const tracked = Number(headingText.match(/(\d+)\s+shows tracked/i)?.[1])
+  expect(tracked).toBeGreaterThan(0)
+
+  const featuredCount = await page
+    .getByTestId('home-show-grid')
+    .getByTestId('home-show-tile')
+    .count()
+  const compactCount = await page
+    .getByTestId('home-more-shows-grid')
+    .getByTestId('home-show-tile')
+    .count()
+
+  // Every tracked show appears on the home page — none stranded.
+  expect(featuredCount + compactCount).toBe(tracked)
+
+  // The "+ N more in the index" label matches the compact tiles rendered.
+  const label =
+    (await page.getByTestId('home-more-shows-label').textContent()) ?? ''
+  const labelCount = Number(label.match(/\+\s(\d+)\smore/)?.[1])
+  expect(labelCount).toBe(compactCount)
 })
 
 test('dual-rank callout names canon + community without naming a show', async ({
