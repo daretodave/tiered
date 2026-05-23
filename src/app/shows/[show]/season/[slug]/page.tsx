@@ -35,6 +35,7 @@ import {
   canonicalUrl,
   jsonLdScriptProps,
 } from '@/lib/seo'
+import { computeReadMinutes } from '@/lib/season/read-minutes'
 
 type Params = { show: string; slug: string }
 
@@ -294,10 +295,14 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const lede = ledeOf(season)
   const body = bodyOf(season)
   const bodyParagraphs = body ? paragraphsOf(body) : []
-  const wordsForRead = `${lede} ${body ?? ''}`
-    .split(/\s+/)
-    .filter(Boolean).length
-  const readMinutes = Math.max(1, Math.round(wordsForRead / 220))
+  const whereItSits = whereItSitsCopy(show, canonRank, canonTotal)
+  const readMinutes = computeReadMinutes({
+    lede,
+    body,
+    pull: season.pull,
+    whereItSits,
+    watchList: season.watch_list,
+  })
 
   const stats = statsFor(season)
   const populatedStats = stats.filter(
@@ -404,7 +409,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
                   ? `The #${pad2(canonRank)} slot.`
                   : 'Awaiting a canon slot.'}
               </h2>
-              <p>{whereItSitsCopy(show, canonRank, canonTotal)}</p>
+              <p>{whereItSits}</p>
               <ShieldBadge />
             </section>
 
