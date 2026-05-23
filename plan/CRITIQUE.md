@@ -1,12 +1,22 @@
 # CRITIQUE
 
-> Last pass: 2026-05-22 at commit 50462e1
-> Pass count: 4
+> Last pass: 2026-05-23 at commit e14c0fc
+> Pass count: 5
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 4 ran in the cloud loop via Path A2
+> cadence is active. Pass 5 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed).
+> isolated context, no Chrome MCP needed). The walk was driven
+> from the parent /critique context, not from inside `reader`,
+> because the `reader` sub-agent's tool allow-list in
+> `.claude/agents/reader.md` does not include Bash and therefore
+> cannot shell out to the walk script; the parent /critique has
+> Bash, so it ran the walk and used the captured JSON
+> (`{ findings, captures }`) directly for both mechanical
+> detection and the qualitative reading. Filing a follow-up
+> would tighten the contract, but the pass is uncompromised —
+> the captures are the same artifact `reader` would have
+> produced, just bridged one step earlier.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -21,39 +31,37 @@
 
 ## Pending
 
-> Pass 4 (2026-05-22, commit 50462e1) ran in the cloud loop via
+> Pass 5 (2026-05-23, commit e14c0fc) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > in a fresh isolated context across 6 anon URLs + 3 authed
-> URLs. One finding filed (MED). The anon mechanical pass was
-> clean (0 findings). The authed mechanical pass surfaced 3
-> "failed first-party request" rows — all `net::ERR_ABORTED` on
-> Next.js RSC prefetch requests (`https://tiered.tv/?_rsc=…`,
-> the `<Link prefetch>` payload for the header wordmark's `/`
-> route) — **withdrawn in self-assessment**: an aborted
-> in-flight prefetch is the browser cancelling when the walk
-> tears the page context down, not a broken endpoint (same
-> walk-teardown-artifact class as pass-3's withdrawn
-> pre-hydration observation). The qualitative pass (reader
-> sub-agent over the captured DOM text) returned 6 candidates;
-> 5 dropped in self-assessment — 2 were faithful ports of
-> binding design files (`/shows` H1 "All shows. Tiered." =
-> `design/tiered.tv · All Shows.html:306`; `/themes/best-premieres`
-> "Ranked · Editor's Canon" = `… Best Premieres.html:218` —
-> design law is supreme on anything visible), 1 re-litigated the
-> deliberate coverage-aware `/shows` lede shipped the same day
-> as #130, 1 was self-negating (reader's own text: "the count
-> is fine", "not a contradiction"), and 1 ("twenty-five years"
-> vs EST. 2000) is sound — Survivor premiered 2000-05-31, so as
-> of 2026-05-22 the franchise is 25 years old, not 26. (Pass 3's
-> withdrawal story is in the Done section.)
+> URLs. Two findings filed (both LOW). The anon mechanical pass
+> was clean (0 findings). The authed mechanical pass surfaced
+> the SAME 3 `net::ERR_ABORTED` RSC-prefetch rows pass-4
+> withdrew (`https://tiered.tv/?_rsc=…`, the `<Link prefetch>`
+> for the header wordmark's `/` route) — **withdrawn again in
+> self-assessment** as a walk-teardown artifact, but the pattern
+> recurring across two consecutive passes is itself a finding:
+> the noise is consuming critique attention every pass and the
+> right fix is in the script, not in self-assessment. Filed as
+> a LOW infra row below. The qualitative pass (over
+> `captures[].text` from the same JSON, since `reader` couldn't
+> shell out — see metadata header note) found one genuine
+> product issue: VotePair's "net votes" label is not
+> pluralize-aware, so a season with exactly one net vote
+> renders the grammatically-broken "1 NET VOTES" on every
+> season page. Filed as LOW.
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-_(no open Pending findings)_
+- [ ] [LOW] [anon] /shows/<show>/season/<slug> VotePair renders "1 NET VOTES" when the net is exactly 1 — the plural "VOTES" doesn't agree with the singular leading "1"; the label is hardcoded `'net votes'` in `src/components/composition/VotePair.tsx:55` (and passed verbatim from `src/app/shows/[show]/season/[slug]/page.tsx:359`), uppercased via CSS, with no count-aware branch. Reproduces on every season page during the long early-stage where most net counts are 0 or 1. Fix: pluralize-aware label — `count === 1 ? 'net vote' : 'net votes'` — or a fixed noun phrase that doesn't fight the count. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-5)
+
+- [ ] [LOW] [authed] scripts/critique-walk.mjs keeps emitting `net::ERR_ABORTED` findings on Next.js RSC prefetch URLs (`https://tiered.tv/?_rsc=…`) — the in-flight `<Link prefetch>` payload for the header wordmark's `/` route is cancelled by the browser when the walk tears the page context down at the end of capture; not a broken endpoint. Same walk-teardown-artifact class withdrawn in pass-3 (pre-hydration capture, fixed by #125's `settleForHydration`) and pass-4 (these exact rows), now recurring in pass-5; each pass spends self-assessment cycles re-litigating the same artifact. Filter these out at the script level: in the network-failure emitter, drop rows whose URL pathname is `/` AND whose querystring contains `_rsc=` AND whose error is `net::ERR_ABORTED`. Keep filtering narrow so a genuine `/?_rsc=` 500 still surfaces. Add a colocated test in `scripts/__tests__/critique-walk.test.mjs` pinning the filter (alongside the existing `isAuthMeRequest` / `SETTLE_TIMEOUT` tests). (URL: n/a — tooling, source: critique-pass-5)
 
 _(no open needs-user-call — Path A2 runs the walk without the cookie-injection blocker that gated pass 1; see Done)_
+
+_Separate observation worth tracking but not filing as a critique row: the `reader` sub-agent's tool allow-list in `.claude/agents/reader.md` does not include Bash, so it cannot shell out to `node scripts/critique-walk.mjs` itself — both sub-agent invocations in pass-5 surfaced this as `category: infra, severity: medium`. The parent /critique skill has Bash and bridged it this pass, so the contract still holds; but the right structural fix is to add Bash to reader's `tools:` line (or to formalise the parent-runs-the-walk bridge in `skills/critique.md` Step 4). Not filed as a Pending row because it's a skill/agent-contract polish, not a product/tooling defect a future /iterate tick would naturally pick up — flag it next time the loop touches reader or critique._
 
 ## Done
 
