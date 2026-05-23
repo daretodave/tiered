@@ -18,6 +18,7 @@ type VotePairProps = {
   targetType: 'season' | 'comment'
   targetId: string
   label?: string
+  labelSingular?: string
 }
 
 type Action =
@@ -53,6 +54,7 @@ export function VotePair({
   targetType,
   targetId,
   label = 'net votes',
+  labelSingular = 'net vote',
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
   const reduced = useRef(false)
@@ -143,6 +145,12 @@ export function VotePair({
     ? { transform: 'none', opacity: state.flash ? 0.6 : 1 }
     : { transform: `translateY(${bump * -8}px)` }
 
+  // Pluralize-aware visible label so the unit agrees with the
+  // displayed count. The aria-labels describe the action (vote
+  // direction), not the result, so they stay on the plural form
+  // — the displayed count is already announced by the count cell.
+  const displayLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
+
   return (
     <div
       className="vote-pair"
@@ -192,7 +200,7 @@ export function VotePair({
         >
           {Math.round(state.count).toLocaleString()}
         </span>
-        <span className="vote-label">{label}</span>
+        <span className="vote-label">{displayLabel}</span>
       </div>
       <button
         type="button"

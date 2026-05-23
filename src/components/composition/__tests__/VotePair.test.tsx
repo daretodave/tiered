@@ -192,4 +192,80 @@ describe('<VotePair>', () => {
     await flushAsync()
     expect(screen.getByTestId('vote-count').textContent).toBe('3')
   })
+
+  // --- pluralize-aware label (critique pass-5 LOW): the visible
+  // unit must agree with the displayed count so a net of exactly
+  // 1 doesn't render "1 NET VOTES".
+  describe('pluralize-aware label', () => {
+    function labelText() {
+      return screen
+        .getByTestId('vote-pair')
+        .querySelector('.vote-label')?.textContent
+    }
+
+    it('renders the plural form when the count is 0', () => {
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('renders the singular form when the count is exactly 1', async () => {
+      getBody = { ok: true, value: 1, count: 1 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(labelText()).toBe('net vote')
+    })
+
+    it('renders the singular form when the count is exactly -1', async () => {
+      getBody = { ok: true, value: -1, count: -1 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.getByTestId('vote-count').textContent).toBe('-1')
+      expect(labelText()).toBe('net vote')
+    })
+
+    it('renders the plural form when the count is 2', () => {
+      render(<VotePair initialCount={2} targetType="season" targetId="survivor:20" />)
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('honors custom singular + plural label props', async () => {
+      getBody = { ok: true, value: 1, count: 1 }
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          label="approvals"
+          labelSingular="approval"
+        />,
+      )
+      await flushAsync()
+      expect(labelText()).toBe('approval')
+    })
+
+    it('flips to the plural label after a singular-count round-trip retract', async () => {
+      getBody = { ok: true, value: 1, count: 1 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('net vote')
+      // Re-click up to retract; optimistic count drops to 0, plural.
+      fireEvent.click(screen.getByTestId('vote-up'))
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('keeps the action-describing aria-labels on the plural form regardless of count', async () => {
+      getBody = { ok: true, value: 1, count: 1 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      // Displayed unit pluralizes, but aria describes the action.
+      expect(labelText()).toBe('net vote')
+      expect(
+        screen.getByTestId('vote-pair').getAttribute('aria-label'),
+      ).toBe('Vote on net votes')
+      expect(
+        screen.getByTestId('vote-down').getAttribute('aria-label'),
+      ).toBe('Vote down net votes')
+    })
+  })
 })
