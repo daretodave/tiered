@@ -119,6 +119,16 @@ tagline: "<longer editorial sentence readers would quote (≤200 chars)>"
   # loader substitutes against `est_year` on every read so the count
   # stays honest as the anniversary rolls. Use a token whenever the
   # surface cites years; never hardcode a literal years count.
+  # Tick 6 (catalog sweep): the year-tenure invariant also scans
+  # every canon-level field (tier_*_blurb, weekly_question, the
+  # meth_*_p paragraphs) AND every canon entry's tag /
+  # slot_argument / rationale for bare and compound spelled-out
+  # year phrases ("twenty years", "twenty-five years"). Milestone
+  # anniversaries (e.g. Survivor S40 Winners at War = 20-year
+  # mark) are exempted via TENURE_ANCHOR_ALLOWLIST keyed on
+  # (show, canon-entry-title, exact phrase) — never as a global
+  # escape. Rephrase rotting non-milestone phrases to drop the
+  # literal ("across the franchise's run", "leg after leg").
 tier:      S | A | B   # editorial confidence in the canon order (see CLAUDE.md)
 network:   "<channel>" # CBS / MTV / Bravo / Peacock / ITV2 / etc.
 est_year:  <int>       # first-aired year, e.g. 2000

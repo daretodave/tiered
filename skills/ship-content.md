@@ -161,7 +161,20 @@ Pre-flight checklist before committing a content tick:
   "20th") instead of writing the ordinal by hand; the loader
   substitutes against the season's `number`. For hosts who
   joined mid-run, keep the literal — the token derives from
-  `number`, not from a host-start offset. Detail:
+  `number`, not from a host-start offset. **Tick 6 (catalog
+  sweep):** the `content-check` year-tenure invariant now
+  scans bare spelled-out year phrases ("twenty years") as well
+  as compound ("twenty-five years"), and covers the canon
+  tier blurbs (`tier_s_blurb` / `tier_a_blurb` / `tier_b_blurb`
+  / `tier_c_blurb`), the methodology paragraphs (`meth_who_p`
+  / `meth_how_p` / `meth_when_p`), and `weekly_question` —
+  every canon-level field the page renders. Milestone
+  anniversaries (Survivor S40 Winners at War = 20-year mark)
+  are exempted via `TENURE_ANCHOR_ALLOWLIST` in
+  `scripts/content-check.ts`, keyed on (show, entry title
+  regex, exact phrase) — add a row only when the anchor is
+  historically pinned to a specific aired season, never as a
+  general escape valve. Detail:
   `plan/phases/phase_43_editorial_honesty.md`.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`

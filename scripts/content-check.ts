@@ -304,8 +304,53 @@ export function collectCalendarFailures(): Failure[] {
 // CROSS_SHOW_STRICT toggles above. Exported so the vitest suite
 // can exercise it directly against a temp content tree and a
 // stable `asOfDate`.
+//
+// Tick 6 (catalog sweep): the regex was tightened from "compound
+// only" (twenty-five years) to "compound or bare" (twenty years
+// also counts). Bare forms like "lasting twenty years" only stay
+// editorially honest at multiple-of-ten anniversaries — Survivor
+// S40 (2020) was the 20-year milestone, so the canon's Winners-at-
+// War entry can cite "twenty years" historically. To allow that
+// without re-licensing the rotting blurbs, callers can anchor a
+// specific phrase to a specific (show, canon-entry-title) pair via
+// `TENURE_ANCHOR_ALLOWLIST`. The anchor is intentionally narrow —
+// each entry names the show, the canon entry's title, and the
+// exact phrase it permits — so a future copy that just happens to
+// say "twenty years" outside that entry still fails.
 const YEAR_TENURE_RE =
-  /\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-\w+ years\b/g
+  /\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:-\w+)? years\b/g
+
+type TenureAnchor = {
+  show: string
+  /** Matched against the canon entry's `title` (case-insensitive). */
+  entryTitle: RegExp
+  /** Exact phrase (full match against the year-tenure regex) to allow. */
+  phrase: string
+}
+
+export const TENURE_ANCHOR_ALLOWLIST: readonly TenureAnchor[] = [
+  // Survivor S40 (Winners at War, aired 2020) is the franchise's
+  // 20-year milestone. The slot_argument and rationale anchor on
+  // that exact fact ("twenty winners back on the same beach with
+  // twenty years of franchise history sitting behind them"). The
+  // literal stays historically accurate forever because it is
+  // pinned to the milestone season's airing, not to today's count.
+  { show: 'survivor', entryTitle: /winners at war/i, phrase: 'twenty years' },
+]
+
+function isAnchorAllowed(
+  show: string,
+  entryTitle: string | undefined,
+  phrase: string,
+): boolean {
+  if (!entryTitle) return false
+  for (const anchor of TENURE_ANCHOR_ALLOWLIST) {
+    if (anchor.show !== show) continue
+    if (anchor.phrase !== phrase) continue
+    if (anchor.entryTitle.test(entryTitle)) return true
+  }
+  return false
+}
 
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
@@ -320,7 +365,12 @@ export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
       continue
     }
 
-    type Source = { where: string; text: string | null | undefined }
+    type Source = {
+      where: string
+      text: string | null | undefined
+      /** Canon entry title for sources scoped to one entry; undefined otherwise. */
+      entryTitle?: string
+    }
     const sources: Source[] = [
       { where: `content/shows/${show.slug}.md (tagline)`, text: show.tagline },
       { where: `content/shows/${show.slug}.md (body)`, text: show.body_md },
@@ -338,24 +388,47 @@ export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
     const canon = getCanon(show.slug)
     if (canon) {
       const canonFile = `content/shows/${show.slug}/canon.md`
+      sources.push(
+        { where: `${canonFile} (tier_s_blurb)`, text: canon.tier_s_blurb },
+        { where: `${canonFile} (tier_a_blurb)`, text: canon.tier_a_blurb },
+        { where: `${canonFile} (tier_b_blurb)`, text: canon.tier_b_blurb },
+        { where: `${canonFile} (tier_c_blurb)`, text: canon.tier_c_blurb },
+        { where: `${canonFile} (weekly_question)`, text: canon.weekly_question },
+        { where: `${canonFile} (meth_who_p)`, text: canon.meth_who_p },
+        { where: `${canonFile} (meth_how_p)`, text: canon.meth_how_p },
+        { where: `${canonFile} (meth_when_p)`, text: canon.meth_when_p },
+      )
       for (const entry of canon.entries) {
         sources.push(
-          { where: `${canonFile} (#${entry.rank} rationale)`, text: entry.rationale },
-          { where: `${canonFile} (#${entry.rank} slot_argument)`, text: entry.slot_argument },
-          { where: `${canonFile} (#${entry.rank} tag)`, text: entry.tag },
+          {
+            where: `${canonFile} (#${entry.rank} rationale)`,
+            text: entry.rationale,
+            entryTitle: entry.title,
+          },
+          {
+            where: `${canonFile} (#${entry.rank} slot_argument)`,
+            text: entry.slot_argument,
+            entryTitle: entry.title,
+          },
+          {
+            where: `${canonFile} (#${entry.rank} tag)`,
+            text: entry.tag,
+            entryTitle: entry.title,
+          },
         )
       }
     }
 
     const expectedPhrase = `${expectedWord} years`
-    for (const { where, text } of sources) {
+    for (const { where, text, entryTitle } of sources) {
       if (!text) continue
       for (const match of text.matchAll(YEAR_TENURE_RE)) {
         const phrase = match[0]
         if (phrase === expectedPhrase) continue
+        if (isAnchorAllowed(show.slug, entryTitle, phrase)) continue
         issues.push({
           file: where,
-          message: `editorial-tenure drift — phrase "${phrase}" but show "${show.slug}" reads "${expectedPhrase}" today (est_year ${show.est_year}); derive via the show-tenure helper or rephrase to a milestone-anchored form ("a quarter-century", "the franchise's first decade")`,
+          message: `editorial-tenure drift — phrase "${phrase}" but show "${show.slug}" reads "${expectedPhrase}" today (est_year ${show.est_year}); derive via the show-tenure helper, anchor to a milestone canon entry (TENURE_ANCHOR_ALLOWLIST), or rephrase to drop the literal ("a quarter-century", "the franchise's first decade")`,
         })
       }
     }

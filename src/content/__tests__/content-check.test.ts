@@ -994,7 +994,154 @@ hung on twenty-six years of casting work ${padding}
         'a first quarter-century closer — the twenty-fifth anniversary season',
     })
     // "quarter-century" and "twenty-fifth anniversary" never match
-    // the `\b<tens>-<word> years\b` regex, so they pass silently.
+    // the year-tenure regex, so they pass silently.
     expect(collectYearTenureIssues(asOf)).toEqual([])
+  })
+
+  // Tick 6: the regex was tightened from "compound only" (twenty-five
+  // years) to "compound or bare" (twenty years). The bare form is
+  // legal only when (a) it matches today's helper-derived value or
+  // (b) the source is in a canon entry whose title matches a
+  // TENURE_ANCHOR_ALLOWLIST row.
+
+  it('catches a bare spelled-out year phrase that does not match today', () => {
+    // est_year=2000, asOf=2026-05-23 (before Survivor's May 31
+    // anniversary) → 25 years today; "twenty years" rots vs the
+    // helper. The pre-tick-6 regex (compound only) missed this.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline:
+        'a quiet sixty seconds and twenty years of casting work in the can.',
+    })
+    const issues = collectYearTenureIssues(asOf)
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toMatch(/survivor\.md \(tagline\)/)
+    expect(issues[0]?.message).toMatch(/twenty years/)
+    expect(issues[0]?.message).toMatch(/twenty-five years/)
+  })
+
+  it('catches a rotting bare phrase in a tier blurb', () => {
+    // The tier_b_blurb sits on the canon frontmatter, scanned by
+    // tick 6's source set. A literal that drifts here would reach
+    // the /shows/<slug> tier-blurb surface in production.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A clean tagline.',
+    })
+    makeSeason(tmp, 'survivor', 50, 'survivor-50', { canonical_position: 50 })
+    const canonFile = path.join(tmp, 'shows', 'survivor', 'canon.md')
+    mkdirSync(path.dirname(canonFile), { recursive: true })
+    writeFileSync(
+      canonFile,
+      `---
+show: survivor
+tier_b_blurb: Classic-era stalwarts — shapes the next twenty years lean on.
+---
+
+## 50. Survivor 50
+
+${Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')}
+`,
+    )
+    const issues = collectYearTenureIssues(asOf)
+    expect(issues.some((i) => /tier_b_blurb/.test(i.file))).toBe(true)
+  })
+
+  it('allowlists Winners at War — the S40 milestone canon entry can cite "twenty years"', () => {
+    // Survivor S40 (Winners at War, 2020) is the 20-year milestone.
+    // The slot_argument and rationale anchor on that exact fact and
+    // stay historically accurate forever — the literal is pinned to
+    // the season's airing, not to today's count.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A clean tagline.',
+    })
+    makeSeason(tmp, 'survivor', 40, 'winners-at-war', {
+      canonical_position: 1,
+    })
+    const canonFile = path.join(tmp, 'shows', 'survivor', 'canon.md')
+    mkdirSync(path.dirname(canonFile), { recursive: true })
+    const padding = Array.from({ length: 85 }, (_, i) => `w${i}`).join(' ')
+    writeFileSync(
+      canonFile,
+      `---
+show: survivor
+---
+
+## 40. Winners at War
+
+slot_argument: Twenty winners with twenty years of franchise history sitting behind them.
+
+The franchise milestone the format earns by lasting twenty years. ${padding}
+`,
+    )
+    expect(collectYearTenureIssues(asOf)).toEqual([])
+  })
+
+  it('allowlist is scoped to the specific canon entry — the same phrase elsewhere still fails', () => {
+    // The allowlist row names a (show, entryTitle, phrase) triple.
+    // "twenty years" inside the WaW entry passes; the same phrase
+    // inside the Heroes vs. Villains entry fails. This keeps a
+    // future editor from accidentally re-licensing the literal
+    // across the canon by typing "Winners at War" once.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A clean tagline.',
+    })
+    makeSeason(tmp, 'survivor', 20, 'heroes-villains', {
+      canonical_position: 1,
+    })
+    const canonFile = path.join(tmp, 'shows', 'survivor', 'canon.md')
+    mkdirSync(path.dirname(canonFile), { recursive: true })
+    writeFileSync(
+      canonFile,
+      `---
+show: survivor
+---
+
+## 20. Heroes vs. Villains
+
+slot_argument: spanning twenty years of franchise history collapsing on one beach.
+
+${Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')}
+`,
+    )
+    const issues = collectYearTenureIssues(asOf)
+    expect(
+      issues.some((i) => /slot_argument/.test(i.file) && /twenty years/.test(i.message)),
+    ).toBe(true)
+  })
+
+  it('allowlist is scoped to the specific show — "Winners at War" in a non-Survivor canon still fails', () => {
+    // The triple is (show, entryTitle, phrase). A different show
+    // that happens to title an entry "Winners at War" does not
+    // inherit the allowance. Keeps the anchor literal to its
+    // intended franchise.
+    makeShowWithTagline(tmp, 'bachelor', {
+      estYear: 2002,
+      tagline: 'A clean tagline.',
+    })
+    makeSeason(tmp, 'bachelor', 30, 'winners-at-war', {
+      canonical_position: 1,
+    })
+    const canonFile = path.join(tmp, 'shows', 'bachelor', 'canon.md')
+    mkdirSync(path.dirname(canonFile), { recursive: true })
+    writeFileSync(
+      canonFile,
+      `---
+show: bachelor
+---
+
+## 30. Winners at War
+
+slot_argument: spanning twenty years of franchise history at the rose ceremony.
+
+${Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')}
+`,
+    )
+    const issues = collectYearTenureIssues(asOf)
+    expect(
+      issues.some((i) => /bachelor/.test(i.file) && /twenty years/.test(i.message)),
+    ).toBe(true)
   })
 })
