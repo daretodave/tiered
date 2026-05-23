@@ -19,7 +19,7 @@ format_summary: "Returnees · 2 tribes"
 format_caption: "all-veteran cast"
 cast_size: 20
 cast_size_caption: "10 heroes, 10 villains"
-host_caption: "tenth season at the helm"
+host_caption: "{seasonOrdinalWord} season at the helm"
 episode_heat: [med, hot, med, hot, hot, med, hot, hot, hot, med, hot, med, hot, hot]
 episode_heat_caption: "peak run · eps 7–9, 11"
 watch_list:

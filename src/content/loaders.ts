@@ -24,7 +24,10 @@ import type {
   Theme,
   ThemeCategory,
 } from './schemas'
-import { renderShowTaglineTokens } from '../lib/show-tenure'
+import {
+  renderSeasonCaptionTokens,
+  renderShowTaglineTokens,
+} from '../lib/show-tenure'
 
 type LegalSlug = 'about' | 'terms' | 'privacy'
 
@@ -186,6 +189,17 @@ function materializeShow(show: Show): Show {
   return tagline === show.tagline ? show : { ...show, tagline }
 }
 
+// Phase 43 tick 5: per-season caption fields may use
+// `{seasonOrdinalWord}` / `{seasonOrdinal}` to keep host-tenure
+// claims accurate without the editor having to write the ordinal
+// out by hand. Same read-time substitution shape as `materializeShow`.
+function materializeSeason(season: Season): Season {
+  if (!season.host_caption) return season
+  const ctx = { seasonNumber: season.number }
+  const host_caption = renderSeasonCaptionTokens(season.host_caption, ctx)
+  return host_caption === season.host_caption ? season : { ...season, host_caption }
+}
+
 export function getAllShows(): Show[] {
   const c = ensure()
   return [...c.shows.values()]
@@ -201,7 +215,8 @@ export function getShow(slug: string): Show | null {
 
 export function getAllSeasons(showSlug: string): Season[] {
   const c = ensure()
-  return c.seasons.get(showSlug) ?? []
+  const seasons = c.seasons.get(showSlug)
+  return seasons ? seasons.map(materializeSeason) : []
 }
 
 export function getSeason(showSlug: string, n: number): Season | null {

@@ -58,16 +58,25 @@ featured: false
   )
 }
 
-function makeSeason(root: string, slug: string, n: number, title: string): void {
+function makeSeason(
+  root: string,
+  slug: string,
+  n: number,
+  title: string,
+  overrides: { host_caption?: string } = {},
+): void {
   const seasonFile = path.join(root, 'shows', slug, 'seasons', `${String(n).padStart(2, '0')}-${title.toLowerCase()}.md`)
   mkdirSync(path.dirname(seasonFile), { recursive: true })
+  const hostCaptionLine = overrides.host_caption
+    ? `host_caption: "${overrides.host_caption}"\n`
+    : ''
   writeFileSync(
     seasonFile,
     `---
 show: ${slug}
 number: ${n}
 title: ${title}
----
+${hostCaptionLine}---
 
 ${sixtyWords}
 `,
@@ -304,6 +313,63 @@ describe('loaders', () => {
       const first = getShow('survivor')?.tagline
       const second = getShow('survivor')?.tagline
       expect(first).toBe(second)
+    })
+  })
+
+  // Phase 43 tick 5 — `host_caption` tokens (`{seasonOrdinalWord}`,
+  // `{seasonOrdinal}`) render at read time against the season's
+  // `number`. Token-free captions pass through unchanged so the
+  // 200+ existing literal captions keep working.
+  describe('season host_caption token substitution', () => {
+    it('passes a token-free host_caption through unchanged', () => {
+      makeShow(tmp, 'alpha', 'Alpha')
+      makeSeason(tmp, 'alpha', 5, 'Five', {
+        host_caption: 'Heidi Klum returns to the host chair',
+      })
+      expect(getSeason('alpha', 5)?.host_caption).toBe(
+        'Heidi Klum returns to the host chair',
+      )
+    })
+
+    it('substitutes {seasonOrdinalWord} against the season number', () => {
+      makeShow(tmp, 'alpha', 'Alpha')
+      makeSeason(tmp, 'alpha', 20, 'Twenty', {
+        host_caption: '{seasonOrdinalWord} season at the helm',
+      })
+      expect(getSeason('alpha', 20)?.host_caption).toBe(
+        'twentieth season at the helm',
+      )
+    })
+
+    it('substitutes {seasonOrdinal} numerically', () => {
+      makeShow(tmp, 'alpha', 'Alpha')
+      makeSeason(tmp, 'alpha', 23, 'TwentyThree', {
+        host_caption: "Probst's {seasonOrdinal} season",
+      })
+      expect(getSeason('alpha', 23)?.host_caption).toBe(
+        "Probst's 23rd season",
+      )
+    })
+
+    it('substitutes through getAllSeasons too', () => {
+      makeShow(tmp, 'alpha', 'Alpha')
+      makeSeason(tmp, 'alpha', 1, 'One', {
+        host_caption: '{seasonOrdinalWord} season at the helm',
+      })
+      makeSeason(tmp, 'alpha', 2, 'Two', {
+        host_caption: '{seasonOrdinalWord} season at the helm',
+      })
+      const seasons = getAllSeasons('alpha')
+      expect(seasons.map((s) => s.host_caption)).toEqual([
+        'first season at the helm',
+        'second season at the helm',
+      ])
+    })
+
+    it('leaves seasons without a host_caption untouched', () => {
+      makeShow(tmp, 'alpha', 'Alpha')
+      makeSeason(tmp, 'alpha', 1, 'One')
+      expect(getSeason('alpha', 1)?.host_caption).toBeUndefined()
     })
   })
 

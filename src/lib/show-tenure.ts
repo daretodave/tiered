@@ -129,3 +129,102 @@ export function renderShowTaglineTokens(
     .replaceAll('{yearsWord}', numberToWords(years))
     .replaceAll('{years}', String(years))
 }
+
+// Spelled-out ordinals 1-19 (irregular forms).
+const ORDINAL_UNITS: readonly string[] = [
+  'zeroth',
+  'first',
+  'second',
+  'third',
+  'fourth',
+  'fifth',
+  'sixth',
+  'seventh',
+  'eighth',
+  'ninth',
+  'tenth',
+  'eleventh',
+  'twelfth',
+  'thirteenth',
+  'fourteenth',
+  'fifteenth',
+  'sixteenth',
+  'seventeenth',
+  'eighteenth',
+  'nineteenth',
+]
+
+// Spelled-out tens, ordinal form (used when the units digit is 0).
+const ORDINAL_TENS: Readonly<Record<number, string>> = {
+  20: 'twentieth',
+  30: 'thirtieth',
+  40: 'fortieth',
+  50: 'fiftieth',
+  60: 'sixtieth',
+  70: 'seventieth',
+  80: 'eightieth',
+  90: 'ninetieth',
+}
+
+// Converts a non-negative integer (1-99) to its spelled-out
+// ordinal form. Same range as `numberToWords`. Throws on values
+// outside 1-99 so a typo at the call site surfaces during verify
+// rather than rendering "undefined".
+export function ordinalWord(n: number): string {
+  if (!Number.isInteger(n)) {
+    throw new RangeError(`ordinalWord expects an integer, got ${n}`)
+  }
+  if (n < 1 || n >= 100) {
+    throw new RangeError(`ordinalWord supports 1-99, got ${n}`)
+  }
+  if (n < 20) return ORDINAL_UNITS[n] as string
+  const tens = Math.floor(n / 10) * 10
+  const unit = n % 10
+  if (unit === 0) return ORDINAL_TENS[tens] as string
+  // Compound — tens stay in cardinal form, units switch to ordinal.
+  return `${TENS[tens]}-${ORDINAL_UNITS[unit]}`
+}
+
+// Numeric ordinal suffix: 1 -> "1st", 22 -> "22nd", 113 -> "113th".
+// Handles the 11/12/13 irregularity. Range is 0-999 to give the
+// renderer headroom; ordinals beyond a show's season count never
+// surface in real copy.
+export function ordinalSuffix(n: number): string {
+  if (!Number.isInteger(n) || n < 0) {
+    throw new RangeError(`ordinalSuffix expects a non-negative integer, got ${n}`)
+  }
+  const lastTwo = n % 100
+  if (lastTwo >= 11 && lastTwo <= 13) return `${n}th`
+  const last = n % 10
+  if (last === 1) return `${n}st`
+  if (last === 2) return `${n}nd`
+  if (last === 3) return `${n}rd`
+  return `${n}th`
+}
+
+export type SeasonCaptionContext = {
+  /** The season's `number` field — 1, 2, …, N. */
+  seasonNumber: number
+}
+
+// Substitutes `{seasonOrdinalWord}` (spelled-out — "twentieth")
+// and `{seasonOrdinal}` (numeric — "20th") in a season-scoped
+// caption template. Token-free templates pass through unchanged,
+// so calling this on every season read is safe for the 200+
+// existing literal captions.
+//
+// Phase 43 tick 5 introduced this for the `host_caption` field on
+// shows where the host has been at the helm since season 1 (Probst
+// on Survivor, Heidi Klum on Project Runway's classic era, Phil
+// Keoghan on Amazing Race, Alan Cumming on The Traitors). The
+// token form makes the caption mechanically correct without
+// requiring the editor to count seasons on every author pass.
+export function renderSeasonCaptionTokens(
+  template: string,
+  ctx: SeasonCaptionContext,
+): string {
+  if (!template.includes('{seasonOrdinal')) return template
+  return template
+    .replaceAll('{seasonOrdinalWord}', ordinalWord(ctx.seasonNumber))
+    .replaceAll('{seasonOrdinal}', ordinalSuffix(ctx.seasonNumber))
+}

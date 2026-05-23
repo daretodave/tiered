@@ -186,7 +186,16 @@ format_summary:   "<≤60 chars, one-line format tag, e.g. \"Returnees · 2 trib
 format_caption:   "<≤80 chars, format subtext, e.g. \"all-veteran cast\">"
 cast_size:        <int>     # numeric cast count
 cast_size_caption: "<≤80 chars, e.g. \"10 heroes, 10 villains\">"
-host_caption:     "<≤80 chars, e.g. \"tenth season at the helm\">"
+host_caption:     "<≤80 chars, e.g. \"{seasonOrdinalWord} season at the helm\">"
+  # Phase 43 tick 5 — when the host has been at the helm since
+  # season 1 (Probst on Survivor, Heidi Klum on Project Runway's
+  # classic run, Phil Keoghan on Amazing Race, Alan Cumming on
+  # The Traitors), use `{seasonOrdinalWord}` (spelled-out — e.g.
+  # "twentieth") or `{seasonOrdinal}` (numeric — e.g. "20th"). The
+  # loader substitutes against the season's `number` field. For
+  # hosts who joined mid-run (Karlie Kloss on Project Runway,
+  # Jesse Palmer on Bachelorette), write the ordinal as a literal
+  # — the token derives from `number`, not from a host-start offset.
 
 # Episode-heat bar (one mark per aired ep). Length should match
 # ep_count when both are present.

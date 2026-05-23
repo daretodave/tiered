@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest'
 import {
   SHOW_ANNIVERSARIES,
   numberToWords,
+  ordinalSuffix,
+  ordinalWord,
+  renderSeasonCaptionTokens,
   renderShowTaglineTokens,
   yearsSinceEst,
 } from '../show-tenure'
@@ -169,5 +172,133 @@ describe('renderShowTaglineTokens', () => {
       slug: 'survivor',
     })
     expect(out).not.toContain('{')
+  })
+})
+
+describe('ordinalWord', () => {
+  it.each([
+    [1, 'first'],
+    [2, 'second'],
+    [3, 'third'],
+    [4, 'fourth'],
+    [5, 'fifth'],
+    [8, 'eighth'],
+    [9, 'ninth'],
+    [10, 'tenth'],
+    [11, 'eleventh'],
+    [12, 'twelfth'],
+    [13, 'thirteenth'],
+    [19, 'nineteenth'],
+    [20, 'twentieth'],
+    [21, 'twenty-first'],
+    [22, 'twenty-second'],
+    [25, 'twenty-fifth'],
+    [30, 'thirtieth'],
+    [42, 'forty-second'],
+    [47, 'forty-seventh'],
+    [99, 'ninety-ninth'],
+  ])('renders %i as %s', (n, word) => {
+    expect(ordinalWord(n)).toBe(word)
+  })
+
+  it('rejects 0 (no ordinal sense)', () => {
+    expect(() => ordinalWord(0)).toThrow(/1-99/)
+  })
+
+  it('rejects negatives', () => {
+    expect(() => ordinalWord(-1)).toThrow(/1-99/)
+  })
+
+  it('rejects >= 100', () => {
+    expect(() => ordinalWord(100)).toThrow(/1-99/)
+  })
+
+  it('rejects non-integers', () => {
+    expect(() => ordinalWord(1.5)).toThrow(/integer/)
+  })
+})
+
+describe('ordinalSuffix', () => {
+  it.each([
+    [0, '0th'],
+    [1, '1st'],
+    [2, '2nd'],
+    [3, '3rd'],
+    [4, '4th'],
+    [10, '10th'],
+    [11, '11th'],
+    [12, '12th'],
+    [13, '13th'],
+    [20, '20th'],
+    [21, '21st'],
+    [22, '22nd'],
+    [23, '23rd'],
+    [101, '101st'],
+    [111, '111th'],
+    [112, '112th'],
+    [113, '113th'],
+    [121, '121st'],
+  ])('renders %i as %s', (n, suffixed) => {
+    expect(ordinalSuffix(n)).toBe(suffixed)
+  })
+
+  it('rejects negatives', () => {
+    expect(() => ordinalSuffix(-1)).toThrow(/non-negative/)
+  })
+
+  it('rejects non-integers', () => {
+    expect(() => ordinalSuffix(2.5)).toThrow(/integer/)
+  })
+})
+
+describe('renderSeasonCaptionTokens', () => {
+  it('passes a token-free template through unchanged', () => {
+    expect(
+      renderSeasonCaptionTokens('Karlie Kloss takes the host chair', {
+        seasonNumber: 17,
+      }),
+    ).toBe('Karlie Kloss takes the host chair')
+  })
+
+  it('substitutes {seasonOrdinalWord} against the season number', () => {
+    expect(
+      renderSeasonCaptionTokens('{seasonOrdinalWord} season at the helm', {
+        seasonNumber: 20,
+      }),
+    ).toBe('twentieth season at the helm')
+  })
+
+  it('substitutes {seasonOrdinal} numerically', () => {
+    expect(
+      renderSeasonCaptionTokens("Probst's {seasonOrdinal} run", {
+        seasonNumber: 47,
+      }),
+    ).toBe("Probst's 47th run")
+  })
+
+  it('substitutes both tokens in one pass', () => {
+    expect(
+      renderSeasonCaptionTokens('{seasonOrdinalWord} ({seasonOrdinal})', {
+        seasonNumber: 1,
+      }),
+    ).toBe('first (1st)')
+  })
+
+  it('handles the 11/12/13 ordinalSuffix edge case', () => {
+    expect(
+      renderSeasonCaptionTokens('{seasonOrdinal} round', { seasonNumber: 11 }),
+    ).toBe('11th round')
+    expect(
+      renderSeasonCaptionTokens('{seasonOrdinal} round', { seasonNumber: 12 }),
+    ).toBe('12th round')
+    expect(
+      renderSeasonCaptionTokens('{seasonOrdinal} round', { seasonNumber: 13 }),
+    ).toBe('13th round')
+  })
+
+  it('throws on season 0 via ordinalWord', () => {
+    expect(() =>
+      renderSeasonCaptionTokens('{seasonOrdinalWord}', { seasonNumber: 0 }),
+    ).toThrow(/1-99/)
   })
 })

@@ -155,7 +155,14 @@ Pre-flight checklist before committing a content tick:
   count get rewritten to drop the count or pinned by a
   `content-check` invariant against the derived value. Never
   ship a hardcoded years count in show frontmatter or season
-  copy. Detail: `plan/phases/phase_43_editorial_honesty.md`.
+  copy. **Season `host_caption` (tick 5):** when the host has
+  been at the helm since season 1, use `{seasonOrdinalWord}`
+  (spelled-out — "twentieth") or `{seasonOrdinal}` (numeric —
+  "20th") instead of writing the ordinal by hand; the loader
+  substitutes against the season's `number`. For hosts who
+  joined mid-run, keep the literal — the token derives from
+  `number`, not from a host-start offset. Detail:
+  `plan/phases/phase_43_editorial_honesty.md`.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`
   and skipped. Do not file new ones.
