@@ -502,6 +502,21 @@ word blurb in `content/shows/<slug>/seasons/NN-<title>.md`,
 If either is missing, file a row. `/ship-content` ships a
 batch (3-5 season blurbs per tick to amortize show context).
 
+**Editorial-tenure honesty (phase 43).** Any spelled-out year
+count that cites a show's tenure — "twenty-five years of
+casting work", "twenty years in" — must either substitute via
+the `{yearsWord}` / `{years}` tagline tokens (loader runs
+`renderShowTaglineTokens` on every read), call the show-tenure
+helper directly from a render component, or be rephrased to a
+milestone-anchored form that does not rot ("a quarter-century",
+"the franchise's first decade", "the twenty-fifth anniversary
+season"). The `content-check` invariant `collectYearTenureIssues`
+scans every editorial surface (show frontmatter, season
+frontmatter + body, canon entry rationale + metadata) for
+`\b<tens>-<word> years\b` and pins each match to today's
+`numberToWords(yearsSinceEst(estYear))`. Lax during the phase-43
+drain, strict at the final tick.
+
 ### Rule 3 — themed list quota
 Launch ships ≥ 10 themed lists (best premieres, best finales,
 best post-merge, etc. — see `plan/PHASE_CANDIDATES.md` for

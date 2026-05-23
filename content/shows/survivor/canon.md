@@ -916,7 +916,7 @@ community_rank_hint: rank=50 delta=0 sentiment=hold
 
 Survivor 50 is the franchise's milestone, and the canon weighs
 it the way the show itself frames the run — as the fiftieth
-season's own ceremony, hung on twenty-five years of casting work
+season's own ceremony, hung on a quarter-century of casting work
 rather than on a new structural argument. The fiftieth ran
 through spring 2026, the franchise's own marker year, and the
 format around it stayed settled grammar at this point. The canon

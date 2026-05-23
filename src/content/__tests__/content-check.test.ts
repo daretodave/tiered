@@ -11,6 +11,7 @@ import {
   collectCrossShowIssues,
   collectFailures,
   collectThemeFailures,
+  collectYearTenureIssues,
 } from '../../../scripts/content-check'
 
 const sixtyWords = Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')
@@ -849,5 +850,151 @@ describe('content-check — cross-canon coverage (phase 41)', () => {
       'content/themes/list-a.md',
       'content/themes/list-b.md',
     ])
+  })
+})
+
+// Phase 43: spelled-out year drift in editorial copy. Each test
+// pins `asOfDate` so the helper's wall-clock reading is
+// deterministic regardless of when the suite runs.
+function makeShowWithTagline(root: string, slug: string, opts: {
+  estYear: number
+  tagline: string
+}): void {
+  const file = path.join(root, 'shows', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: ${JSON.stringify(opts.tagline)}
+tier: B
+network: "Test"
+est_year: ${opts.estYear}
+genre_tag: "Reality"
+featured: false
+---
+`,
+  )
+}
+
+describe('content-check — year-tenure drift (phase 43)', () => {
+  let tmp: string
+  // 2026-05-23: Survivor's 25th year (est_year 2000, anchor May 31).
+  // Any est_year=2000 show with this asOfDate reads "twenty-five
+  // years" today; any est_year=2001 show reads "twenty-five years"
+  // (year math + Jan 1 anchor) — that is fine, the only thing the
+  // helper cares about is the rendered word matching the phrase.
+  const asOf = new Date(Date.UTC(2026, 4, 23))
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-tenure-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes when no editorial surface carries a spelled-out year phrase', () => {
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A franchise that has spent a quarter-century inventing itself.',
+    })
+    expect(collectYearTenureIssues(asOf)).toEqual([])
+  })
+
+  it('passes when the spelled-out year in the tagline matches the helper-derived value today', () => {
+    // est_year=2002, asOf=2026-05-23 (after Jan 1 anchor) → 24
+    // years today; "twenty-four" matches the helper exactly.
+    makeShowWithTagline(tmp, 'bachelor', {
+      estYear: 2002,
+      tagline: 'twenty-four years of one franchise reinventing the format.',
+    })
+    expect(collectYearTenureIssues(asOf)).toEqual([])
+  })
+
+  it('reports drift when a season pull cites a year count that is no longer accurate', () => {
+    // est_year=2002, asOf=2026-05-23 (after Jan 1 anchor) → 24
+    // years today (numberToWords(24) = "twenty-four"). "twenty-five
+    // years" rots vs the helper.
+    makeShowWithTagline(tmp, 'bachelor', {
+      estYear: 2002,
+      tagline: 'A clean tagline.',
+    })
+    const seasonFile = path.join(
+      tmp,
+      'shows',
+      'bachelor',
+      'seasons',
+      '26-clayton.md',
+    )
+    mkdirSync(path.dirname(seasonFile), { recursive: true })
+    writeFileSync(
+      seasonFile,
+      `---
+show: bachelor
+number: 26
+title: Clayton
+pull: "After twenty-five years, the franchise changes the voice in the room."
+---
+
+${Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')}
+`,
+    )
+    const issues = collectYearTenureIssues(asOf)
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toMatch(/26-clayton\.md \(pull\)/)
+    expect(issues[0]?.message).toMatch(/twenty-five years/)
+    expect(issues[0]?.message).toMatch(/twenty-four years/)
+  })
+
+  it('reports drift inside a canon entry rationale', () => {
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A clean tagline.',
+    })
+    makeSeason(tmp, 'survivor', 50, 'survivor-50', { canonical_position: 50 })
+    const canonFile = path.join(tmp, 'shows', 'survivor', 'canon.md')
+    mkdirSync(path.dirname(canonFile), { recursive: true })
+    // Rationale must be 80-120 words; embed the rotting phrase in a
+    // 90-word body where the helper would expect "twenty-five years"
+    // (Survivor anchor) but the prose says "twenty-six years".
+    const padding = Array.from({ length: 87 }, (_, i) => `w${i}`).join(' ')
+    writeFileSync(
+      canonFile,
+      `---
+show: survivor
+---
+
+## 50. Survivor 50
+
+hung on twenty-six years of casting work ${padding}
+`,
+    )
+    const issues = collectYearTenureIssues(asOf)
+    expect(issues.some((i) => /\(#1 rationale\)/.test(i.file))).toBe(true)
+    expect(issues[0]?.message).toMatch(/twenty-six years/)
+  })
+
+  it('ignores milestone-anchored phrases that do not match the regex', () => {
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline:
+        'a first quarter-century closer — the twenty-fifth anniversary season',
+    })
+    // "quarter-century" and "twenty-fifth anniversary" never match
+    // the `\b<tens>-<word> years\b` regex, so they pass silently.
+    expect(collectYearTenureIssues(asOf)).toEqual([])
   })
 })

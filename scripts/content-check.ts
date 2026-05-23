@@ -17,6 +17,11 @@ import {
   yearOfSeason,
 } from '../src/lib/canon/era-bands'
 import { extractPlacementOrdinal } from '../src/lib/canon/placement-ordinal'
+import {
+  SHOW_ANNIVERSARIES,
+  numberToWords,
+  yearsSinceEst,
+} from '../src/lib/show-tenure'
 
 export type Failure = { file: string; message: string }
 
@@ -287,6 +292,77 @@ export function collectCalendarFailures(): Failure[] {
   return failures
 }
 
+// Phase 43: editorial-tenure honesty. Editorial copy that spells
+// out a show's tenure ("twenty-five years of casting work") rots
+// silently as the show ages. Tick 1 introduced the
+// `{yearsWord}` token + loader substitution; this invariant pins
+// every remaining spelled-out year phrase in catalog markdown to
+// the value `numberToWords(yearsSinceEst(estYear))` reads today.
+// A mismatch surfaces as a warning (lax) during the phase-43
+// drain, then as a verify-gate failure when the final tick flips
+// strict — same lax->strict pattern as the canon STRICT and
+// CROSS_SHOW_STRICT toggles above. Exported so the vitest suite
+// can exercise it directly against a temp content tree and a
+// stable `asOfDate`.
+const YEAR_TENURE_RE =
+  /\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-\w+ years\b/g
+
+export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const anniversary =
+      SHOW_ANNIVERSARIES[show.slug] ?? { month: 1, day: 1 }
+    const years = yearsSinceEst(show.est_year, asOfDate, anniversary)
+    let expectedWord: string
+    try {
+      expectedWord = numberToWords(years)
+    } catch {
+      continue
+    }
+
+    type Source = { where: string; text: string | null | undefined }
+    const sources: Source[] = [
+      { where: `content/shows/${show.slug}.md (tagline)`, text: show.tagline },
+      { where: `content/shows/${show.slug}.md (body)`, text: show.body_md },
+    ]
+    for (const season of getAllSeasons(show.slug)) {
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      sources.push(
+        { where: `${seasonFile} (eyebrow)`, text: season.eyebrow },
+        { where: `${seasonFile} (lede)`, text: season.lede },
+        { where: `${seasonFile} (body)`, text: season.body },
+        { where: `${seasonFile} (pull)`, text: season.pull },
+        { where: `${seasonFile} (blurb_md)`, text: season.blurb_md },
+      )
+    }
+    const canon = getCanon(show.slug)
+    if (canon) {
+      const canonFile = `content/shows/${show.slug}/canon.md`
+      for (const entry of canon.entries) {
+        sources.push(
+          { where: `${canonFile} (#${entry.rank} rationale)`, text: entry.rationale },
+          { where: `${canonFile} (#${entry.rank} slot_argument)`, text: entry.slot_argument },
+          { where: `${canonFile} (#${entry.rank} tag)`, text: entry.tag },
+        )
+      }
+    }
+
+    const expectedPhrase = `${expectedWord} years`
+    for (const { where, text } of sources) {
+      if (!text) continue
+      for (const match of text.matchAll(YEAR_TENURE_RE)) {
+        const phrase = match[0]
+        if (phrase === expectedPhrase) continue
+        issues.push({
+          file: where,
+          message: `editorial-tenure drift — phrase "${phrase}" but show "${show.slug}" reads "${expectedPhrase}" today (est_year ${show.est_year}); derive via the show-tenure helper or rephrase to a milestone-anchored form ("a quarter-century", "the franchise's first decade")`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -345,6 +421,22 @@ function main(): number {
         file: `content/legal/${slug}.md`,
         message: 'required legal doc missing',
       })
+    }
+  }
+
+  // Phase 43: year-tenure invariant. Lax during the drain — a
+  // phrase like "twenty-five years" that does not match today's
+  // `numberToWords(yearsSinceEst(estYear))` is printed as a
+  // warning so the editor can see the rot before the final tick
+  // flips `YEAR_TENURE_STRICT` to true (one-line change, mirrors
+  // STRICT and CROSS_SHOW_STRICT above).
+  const YEAR_TENURE_STRICT = false
+  const yearTenureIssues = collectYearTenureIssues()
+  if (YEAR_TENURE_STRICT) {
+    failures.push(...yearTenureIssues)
+  } else {
+    for (const issue of yearTenureIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
 
