@@ -1,22 +1,21 @@
 # CRITIQUE
 
-> Last pass: 2026-05-23 at commit e14c0fc
-> Pass count: 5
+> Last pass: 2026-05-23 at commit 8d71196
+> Pass count: 6
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 5 ran in the cloud loop via Path A2
+> cadence is active. Pass 6 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). The walk was driven
-> from the parent /critique context, not from inside `reader`,
-> because the `reader` sub-agent's tool allow-list in
-> `.claude/agents/reader.md` does not include Bash and therefore
-> cannot shell out to the walk script; the parent /critique has
-> Bash, so it ran the walk and used the captured JSON
-> (`{ findings, captures }`) directly for both mechanical
-> detection and the qualitative reading. Filing a follow-up
-> would tighten the contract, but the pass is uncompromised —
-> the captures are the same artifact `reader` would have
-> produced, just bridged one step earlier.
+> isolated context, no Chrome MCP needed). Reader sub-agent
+> shelled out to the walk script itself this pass — the Bash
+> tool now sits in `.claude/agents/reader.md`'s tool allow-list
+> (added 2026-05-23 via oversight, commit 907386d, closing the
+> pass-5 metadata-note follow-up). Both anon and authed walks
+> ran end-to-end. The walk-teardown `net::ERR_ABORTED` artifact
+> filtered in #139 did not resurface — `isRscPrefetchAbort` is
+> holding. The `settleForHydration` settle (#125) is also
+> holding: authed chrome captured post-hydration as `@e2e /
+> Sign out`, not the pre-hydration "Sign in" SSR DOM.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -31,35 +30,41 @@
 
 ## Pending
 
-> Pass 5 (2026-05-23, commit e14c0fc) ran in the cloud loop via
+> Pass 6 (2026-05-23, commit 8d71196) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
-> in a fresh isolated context across 6 anon URLs + 3 authed
-> URLs. Two findings filed (both LOW). The anon mechanical pass
-> was clean (0 findings). The authed mechanical pass surfaced
-> the SAME 3 `net::ERR_ABORTED` RSC-prefetch rows pass-4
-> withdrew (`https://tiered.tv/?_rsc=…`, the `<Link prefetch>`
-> for the header wordmark's `/` route) — **withdrawn again in
-> self-assessment** as a walk-teardown artifact, but the pattern
-> recurring across two consecutive passes is itself a finding:
-> the noise is consuming critique attention every pass and the
-> right fix is in the script, not in self-assessment. Filed as
-> a LOW infra row below. The qualitative pass (over
-> `captures[].text` from the same JSON, since `reader` couldn't
-> shell out — see metadata header note) found one genuine
-> product issue: VotePair's "net votes" label is not
-> pluralize-aware, so a season with exactly one net vote
-> renders the grammatically-broken "1 NET VOTES" on every
-> season page. Filed as LOW.
+> in a fresh isolated context across 6 anon URLs + 4 authed
+> URLs. Six findings filed (0 HIGH, 3 MED, 3 LOW). The walks
+> emitted zero mechanical findings — every URL returned 200, no
+> console errors, no failed network, no reflow violations, no
+> missing SEO. The pass-5 follow-up filters held: the RSC
+> walk-teardown filter (#139) didn't resurface and the
+> `settleForHydration` settle (#125) captured the authed chrome
+> post-hydration. The qualitative pass surfaced one editorial
+> factual error (S20 host caption "tenth season at the helm"
+> when Probst is in his 20th), three editorial-honesty class
+> rows (Phase 43: a hardcoded "twenty-five years in" Survivor
+> count that will silently rot on May 31, a hardcoded "1 MIN
+> READ" chip on a multi-section canon entry, and a "YOUR VOTE"
+> block that doesn't disambiguate not-yet-voted from
+> just-voted), one navigation-honesty row (/themes "By era"
+> filter chip exposes a category with zero lists), and one
+> voice row (/u/<handle> empty state reads as CMS scaffolding).
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
-_(no open rows — pass-5's walk-teardown artifact drained this tick; see Done)_
+- [ ] [MED] [anon] /shows/survivor/season/heroes-villains HOST stat caption reads "tenth season at the helm" on Season 20 — Probst hosted Survivor from S1 unbroken, so by S20 he is in his 20th season at the helm, not his tenth; the caption is a hardcoded constant misapplied per-season. Phase 43 editorial-honesty class with a sharper edge — this one is factually wrong now, not just drifting. Fix: derive the ordinal from the season number, or drop the per-season caption and lean on the host's tenure on the show page rather than the season page. Source: `content/shows/survivor/seasons/20-heroes-villains.md` line 22 (`host_caption: "tenth season at the helm"`). (URL: /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
 
-_(no open needs-user-call — Path A2 runs the walk without the cookie-injection blocker that gated pass 1; see Done)_
+- [ ] [MED] [authed] /shows/survivor/season/heroes-villains "YOUR VOTE / CHANGE WITHIN 72H" block does not disambiguate the not-yet-voted state from the just-voted state for the signed-in viewer — a member with zero votes cast still sees the section labeled "YOUR VOTE" next to "1 NET VOTE" with no pill or affordance distinguishing "you haven't voted" from "you voted yes/no". /u/<handle> confirms 0 SEASONS VOTED for the bot user, so today the answer is they have not voted — but the page does not say so. The auth-island data the comment composer reads is already wired; piggyback on it. Fix: render a state pill inside the YOUR VOTE block ("you haven't voted" / "you voted higher" / "you voted lower"). (URL: /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
 
-_Separate observation worth tracking but not filing as a critique row: the `reader` sub-agent's tool allow-list in `.claude/agents/reader.md` does not include Bash, so it cannot shell out to `node scripts/critique-walk.mjs` itself — both sub-agent invocations in pass-5 surfaced this as `category: infra, severity: medium`. The parent /critique skill has Bash and bridged it this pass, so the contract still holds; but the right structural fix is to add Bash to reader's `tools:` line (or to formalise the parent-runs-the-walk bridge in `skills/critique.md` Step 4). Not filed as a Pending row because it's a skill/agent-contract polish, not a product/tooling defect a future /iterate tick would naturally pick up — flag it next time the loop touches reader or critique._
+- [ ] [MED] [authed] /u/<handle> empty state reads as generic CMS scaffolding — "No public activity yet. Votes and published comments will show up here." doesn't carry the knowledgeable-peer voice that holds elsewhere on the site (compare to season pages' "Weigh in on the season, not the result."). For a signed-in member this is their *own* page — the first product-as-member impression — and the copy gives nothing back. Fix: rewrite the empty state to address the member directly and in voice — something like "Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here." Source: likely `src/components/profile/ProfileEmpty.tsx`. (URL: /u/e2e, source: critique-pass-6) — 8d71196
+
+- [ ] [LOW] [anon] Survivor "twenty-five years" copy is hardcoded in 5 places and currently accurate (S1 premiered 2000-05-31, today 2026-05-23, so 25y 11mo) but unpinned — it silently rots on 2026-05-31 when Survivor's 26th year begins. Phase 43 editorial-honesty class: derive from `show.est_year` and `Date.now()` where the surface can, OR pin with a `content-check` invariant that fails when the spelled-out years count drifts from the real value. Occurrences: `content/shows/survivor.md:11` (tagline "spent twenty-five years rediscovering what it is"), `content/shows/survivor/seasons/20-heroes-villains.md:14` (pull), `content/shows/survivor/seasons/50-survivor-50.md:11` (body, twice including "twenty-fifth anniversary"), `content/shows/survivor/canon.md:919`, plus the parallel "After twenty-five years" line in `content/shows/bachelor/seasons/26-clayton-echard.md:12`. (URL: /, /shows, /shows/survivor, /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
+
+- [ ] [LOW] [anon] /themes filter strip exposes a "By era" chip but no list lives under that taxon — the catalog renders "By tone · 7", "By craft · 4", "Single-show tiers · 1" (total 12, matching the "12 LISTS" headline), and the "By era" chip is the only one with no count appended. Selecting it returns an empty filter scope. Either hide the chip when `counts.era === 0` (mirroring the `length > 0` filter that already governs the All-Lists section in `ListsAllSection.tsx`) or render an empty-state card under the filter explaining the category is curated and currently has zero entries. Source: `src/components/lists/ListsFilterController.tsx` renders every key in `FILTER_KEYS` unconditionally; `FILTER_LABELS.era` = "By era" in `src/lib/themes-format.ts`. (URL: /themes, source: critique-pass-6) — 8d71196
+
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-villains header chip reads "1 MIN READ" on a page with a lede, 6 numbered sections, and 4 watch-for callouts — capture body length 3632 chars, closer to 3–4 minutes at a typical read rate. The number reads suspiciously round and is likely hardcoded. Phase 43 editorial-honesty class: derive read-time from rendered word count (a small helper, ~half the work of `tierLede.ts`), or drop the chip if it isn't load-bearing. Source: search the canon-entry header component for the "MIN READ" literal. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
 
 ## Done
 
