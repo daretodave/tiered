@@ -21,8 +21,9 @@
     "content:check": "tsx scripts/content-check.ts",
     "content:quota": "node scripts/content-quota.mjs",
     "check:no-raw-img": "node scripts/check-no-raw-img.mjs",
+    "check:test-colocation": "node scripts/check-test-colocation.mjs",
     "size": "node scripts/size.mjs",
-    "verify": "pnpm tokens && pnpm typecheck && pnpm check:no-raw-img && pnpm test:run && pnpm test:scripts && pnpm content:check && pnpm build && pnpm e2e",
+    "verify": "pnpm tokens && pnpm typecheck && pnpm check:no-raw-img && pnpm check:test-colocation && pnpm test:run && pnpm test:scripts && pnpm content:check && pnpm build && pnpm e2e",
     "deploy:check": "node scripts/deploy-check.mjs"
   },
   "dependencies": {
