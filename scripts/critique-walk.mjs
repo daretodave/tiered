@@ -377,6 +377,25 @@ function sameOrigin(reqUrl, baseUrl) {
   }
 }
 
+// Next.js `<Link prefetch>` cancellation artifact, not a broken
+// endpoint. The header wordmark renders `<Link href="/" prefetch>`
+// on every page, so the browser issues a `/?_rsc=…` prefetch
+// payload — and the walk's per-page `context.close()` cancels any
+// in-flight prefetch as `net::ERR_ABORTED`. Pass-3, pass-4, and
+// pass-5 each spent self-assessment cycles re-litigating the
+// same class of finding. Filter narrowly so a real `/?_rsc=` 500
+// (or any non-aborted failure) still surfaces.
+export function isRscPrefetchAbort(url, errorText) {
+  if (errorText !== 'net::ERR_ABORTED') return false
+  try {
+    const u = new URL(url)
+    if (u.pathname !== '/') return false
+    return u.searchParams.has('_rsc')
+  } catch {
+    return false
+  }
+}
+
 // The header auth-state island fetches exactly this endpoint on
 // mount; its response is what flips the captured chrome between
 // signed-out and signed-in. settleForHydration waits on it.
@@ -435,9 +454,10 @@ async function walk({
           if (msg.type() === 'error') consoleErrors.push(msg.text().slice(0, 300))
         })
         page.on('requestfailed', (req) => {
-          if (sameOrigin(req.url(), base)) {
-            failedRequests.push(`${req.url()} — ${req.failure()?.errorText ?? 'failed'}`)
-          }
+          if (!sameOrigin(req.url(), base)) return
+          const errorText = req.failure()?.errorText ?? 'failed'
+          if (isRscPrefetchAbort(req.url(), errorText)) return
+          failedRequests.push(`${req.url()} — ${errorText}`)
         })
         page.on('response', (res) => {
           if (res.status() >= 400 && sameOrigin(res.url(), base)) {

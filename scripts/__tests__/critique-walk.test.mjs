@@ -12,6 +12,7 @@ import {
   SESSION_COOKIE_NAME,
   SETTLE_TIMEOUT,
   isAuthMeRequest,
+  isRscPrefetchAbort,
   settleForHydration,
 } from '../critique-walk.mjs'
 
@@ -231,6 +232,69 @@ test('isAuthMeRequest: rejects sibling and unrelated endpoints', () => {
 test('isAuthMeRequest: a non-URL string returns false, never throws', () => {
   assert.equal(isAuthMeRequest('not a url'), false)
   assert.equal(isAuthMeRequest(''), false)
+})
+
+// --- isRscPrefetchAbort: walk-teardown filter --------------------
+// The header wordmark's `<Link href="/" prefetch>` issues a
+// `/?_rsc=…` payload that the per-page context.close() cancels as
+// net::ERR_ABORTED. Pass-3, pass-4, and pass-5 each re-litigated
+// this same class; the filter is narrow enough to leave any
+// real `/?_rsc=` failure visible.
+
+test('isRscPrefetchAbort: header `/` prefetch + ERR_ABORTED → filtered', () => {
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/?_rsc=abc123', 'net::ERR_ABORTED'),
+    true,
+  )
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/?_rsc=', 'net::ERR_ABORTED'),
+    true,
+  )
+})
+
+test('isRscPrefetchAbort: a real 500 / non-aborted failure on `/?_rsc=` still surfaces', () => {
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/?_rsc=abc', 'net::ERR_FAILED'),
+    false,
+  )
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/?_rsc=abc', 'failed'),
+    false,
+  )
+})
+
+test('isRscPrefetchAbort: `/?_rsc=` ABORTED on a non-root path still surfaces', () => {
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/shows?_rsc=abc', 'net::ERR_ABORTED'),
+    false,
+  )
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/shows/survivor?_rsc=abc', 'net::ERR_ABORTED'),
+    false,
+  )
+})
+
+test('isRscPrefetchAbort: root ABORTED with no _rsc query still surfaces', () => {
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/', 'net::ERR_ABORTED'),
+    false,
+  )
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/?other=1', 'net::ERR_ABORTED'),
+    false,
+  )
+})
+
+test('isRscPrefetchAbort: a non-URL string returns false, never throws', () => {
+  assert.equal(isRscPrefetchAbort('not a url', 'net::ERR_ABORTED'), false)
+  assert.equal(isRscPrefetchAbort('', 'net::ERR_ABORTED'), false)
+})
+
+test('isRscPrefetchAbort: filter matches both https and http origins', () => {
+  assert.equal(
+    isRscPrefetchAbort('http://127.0.0.1:4173/?_rsc=abc', 'net::ERR_ABORTED'),
+    true,
+  )
 })
 
 test('settleForHydration: awaits the auth response, then waits for network idle', async () => {
