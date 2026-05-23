@@ -48,7 +48,11 @@ export function ShowHero({
             ))}
           </div>
         ) : null}
-        {tagline ? <p className="show-hero-line">{tagline}</p> : null}
+        {tagline ? (
+          <p className="show-hero-line" data-testid="show-hero-tagline">
+            {tagline}
+          </p>
+        ) : null}
         {shield}
       </div>
     </section>

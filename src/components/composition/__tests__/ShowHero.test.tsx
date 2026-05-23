@@ -61,4 +61,16 @@ describe('<ShowHero>', () => {
     render(<ShowHero title="t" blurb="b" crumb="x" />)
     expect(screen.queryByTestId('show-hero-art')).not.toBeInTheDocument()
   })
+
+  it('exposes show-hero-tagline testid when tagline is given', () => {
+    render(<ShowHero title="t" blurb="b" crumb="x" tagline="hello world" />)
+    const tagline = screen.getByTestId('show-hero-tagline')
+    expect(tagline).toBeInTheDocument()
+    expect(tagline).toHaveTextContent('hello world')
+  })
+
+  it('omits show-hero-tagline testid when tagline is absent', () => {
+    render(<ShowHero title="t" blurb="b" crumb="x" />)
+    expect(screen.queryByTestId('show-hero-tagline')).not.toBeInTheDocument()
+  })
 })

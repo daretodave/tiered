@@ -145,6 +145,17 @@ Pre-flight checklist before committing a content tick:
   the season's frontmatter `title` exactly, never free-hand.
   `pnpm content:check` warns during the phase-41 drain and fails
   strict once it completes.
+- **Editorial-copy honesty (phase 43).** Any editorial copy
+  that cites a show's tenure in years uses the `{yearsWord}`
+  (spelled-out) or `{years}` (numeric) token instead of a
+  literal count — the loader substitutes against `est_year` at
+  read time, so the rendered string stays honest as the
+  show's anniversary rolls. Tokens land first in the show
+  `tagline`; pulls/bodies/canon entries that need a literal
+  count get rewritten to drop the count or pinned by a
+  `content-check` invariant against the derived value. Never
+  ship a hardcoded years count in show frontmatter or season
+  copy. Detail: `plan/phases/phase_43_editorial_honesty.md`.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`
   and skipped. Do not file new ones.

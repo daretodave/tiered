@@ -24,6 +24,7 @@ import type {
   Theme,
   ThemeCategory,
 } from './schemas'
+import { renderShowTaglineTokens } from '../lib/show-tenure'
 
 type LegalSlug = 'about' | 'terms' | 'privacy'
 
@@ -172,14 +173,30 @@ function loadLegal(c: Cache): void {
   }
 }
 
+// Phase 43: tagline copy uses `{yearsWord}` / `{years}` tokens
+// to keep tenure honest as the show's anniversary rolls over.
+// Substitution happens at read time (not load time) so a long-
+// lived `next start` process renders today's count on every
+// request without busting the parse cache.
+function materializeShow(show: Show): Show {
+  const tagline = renderShowTaglineTokens(show.tagline, {
+    estYear: show.est_year,
+    slug: show.slug,
+  })
+  return tagline === show.tagline ? show : { ...show, tagline }
+}
+
 export function getAllShows(): Show[] {
   const c = ensure()
-  return [...c.shows.values()].sort((a, b) => a.slug.localeCompare(b.slug))
+  return [...c.shows.values()]
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+    .map(materializeShow)
 }
 
 export function getShow(slug: string): Show | null {
   const c = ensure()
-  return c.shows.get(slug) ?? null
+  const show = c.shows.get(slug)
+  return show ? materializeShow(show) : null
 }
 
 export function getAllSeasons(showSlug: string): Season[] {

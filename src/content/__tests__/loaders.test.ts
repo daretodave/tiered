@@ -25,8 +25,15 @@ import { setContentRoot } from '../paths'
 const sixtyWords = Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')
 const ninetyWords = Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')
 
-function makeShow(root: string, slug: string, name: string): void {
+function makeShow(
+  root: string,
+  slug: string,
+  name: string,
+  overrides: { tagline?: string; est_year?: number } = {},
+): void {
   const showFile = path.join(root, 'shows', `${slug}.md`)
+  const tagline = overrides.tagline ?? 'A short tagline.'
+  const estYear = overrides.est_year ?? 2000
   mkdirSync(path.dirname(showFile), { recursive: true })
   writeFileSync(
     showFile,
@@ -40,10 +47,10 @@ palette:
 seasons: 1
 status: airing
 blurb: A short blurb.
-tagline: A short tagline.
+tagline: "${tagline}"
 tier: B
 network: "Test"
-est_year: 2000
+est_year: ${estYear}
 genre_tag: "Reality"
 featured: false
 ---
@@ -252,6 +259,52 @@ describe('loaders', () => {
     __resetContentCache()
     rmSync(path.join(tmp, 'shows', 'alpha.md'))
     expect(getAllShows()).toHaveLength(0)
+  })
+
+  // Phase 43 — tagline tokens render at read time, not load
+  // time, so the substituted string reflects today's date on
+  // every request and a long-lived `next start` does not pin a
+  // stale count in the parse cache.
+  describe('tagline token substitution', () => {
+    it('passes a token-free tagline through unchanged', () => {
+      makeShow(tmp, 'alpha', 'Alpha', { tagline: 'A short tagline.' })
+      expect(getShow('alpha')?.tagline).toBe('A short tagline.')
+      expect(getAllShows()[0]?.tagline).toBe('A short tagline.')
+    })
+
+    it('substitutes {yearsWord} on getShow against the show anniversary', () => {
+      // Survivor is the only show with an explicit anniversary
+      // override (May 31). `est_year: 2000` paired with the wall
+      // clock means the rendered word stays in the 25/26 range
+      // for the life of this fixture — either is acceptable.
+      makeShow(tmp, 'survivor', 'Survivor', {
+        tagline: 'in its {yearsWord} year',
+        est_year: 2000,
+      })
+      const tagline = getShow('survivor')?.tagline
+      expect(tagline).not.toContain('{yearsWord}')
+      expect(tagline).toMatch(/in its (twenty-five|twenty-six) year/)
+    })
+
+    it('substitutes {years} on getAllShows numerically', () => {
+      makeShow(tmp, 'survivor', 'Survivor', {
+        tagline: '{years} in',
+        est_year: 2000,
+      })
+      const tagline = getAllShows()[0]?.tagline
+      expect(tagline).not.toContain('{years}')
+      expect(tagline).toMatch(/^(25|26) in$/)
+    })
+
+    it('preserves the underlying cache — calling getShow twice yields equal substituted output', () => {
+      makeShow(tmp, 'survivor', 'Survivor', {
+        tagline: 'in its {yearsWord} year',
+        est_year: 2000,
+      })
+      const first = getShow('survivor')?.tagline
+      const second = getShow('survivor')?.tagline
+      expect(first).toBe(second)
+    })
   })
 
   it('getFeaturedThemes returns only featured, capped by limit', () => {

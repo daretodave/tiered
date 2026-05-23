@@ -91,6 +91,26 @@ for (const url of showHomeUrls) {
   })
 }
 
+test.describe('phase 43 — tagline token substitution (Survivor)', () => {
+  test('show-hero-tagline renders the substituted years word, never the raw token', async ({
+    page,
+  }) => {
+    await page.goto('/shows/survivor', { waitUntil: 'domcontentloaded' })
+    const tagline = page.getByTestId('show-hero-tagline')
+    await expect(tagline).toBeVisible()
+    const text = (await tagline.textContent()) ?? ''
+    // The loader must substitute the token end-to-end — never let the
+    // raw template syntax leak to a reader.
+    expect(text).not.toContain('{yearsWord}')
+    expect(text).not.toContain('{years}')
+    // Survivor S1 premiered 2000-05-31, so today's reading is in the
+    // twenty-five / twenty-six range for the lifetime of this fixture.
+    // The pair stays accurate from now through Survivor's 27th
+    // anniversary in May 2027.
+    expect(text).toMatch(/twenty-(five|six|seven) years/)
+  })
+})
+
 test.describe('same-page tab toggle persists URL state (no navigation)', () => {
   test('Community tab flips data-view + writes ?view=community in place', async ({
     page,

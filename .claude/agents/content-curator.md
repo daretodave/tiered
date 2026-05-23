@@ -114,6 +114,11 @@ seasons: <int>         # count of aired/airing seasons
 status: airing | ended | hiatus
 blurb:   "<one sentence, two short lines as printed (≤80 chars)>"
 tagline: "<longer editorial sentence readers would quote (≤200 chars)>"
+  # Phase 43 — tagline copy may reference the show's tenure via
+  # `{yearsWord}` (spelled-out) or `{years}` (numeric) tokens; the
+  # loader substitutes against `est_year` on every read so the count
+  # stays honest as the anniversary rolls. Use a token whenever the
+  # surface cites years; never hardcode a literal years count.
 tier:      S | A | B   # editorial confidence in the canon order (see CLAUDE.md)
 network:   "<channel>" # CBS / MTV / Bravo / Peacock / ITV2 / etc.
 est_year:  <int>       # first-aired year, e.g. 2000
