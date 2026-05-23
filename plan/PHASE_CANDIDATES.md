@@ -53,11 +53,13 @@ or similar makes the sign-up trust signal real.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
 
-### 09. Editorial-copy honesty sweep + derived-count invariant
+### 09. Editorial-copy honesty sweep + derived-count invariant — PROMOTED as Phase 43 (oversight 2026-05-23)
 
 **Score:** 5.4 (impact: 6, ease: 4, +2 multi, +1 cheap-and-impactful)
 **Source pass:** 5
 **Filed:** 2026-05-22
+**Promoted in:** oversight 2026-05-23 (build plan re-exhausted; second-strongest pending candidate; promoted alongside #10 so the coverage gate lands before this sweep adds copy/test surface).
+**Build-plan row:** Phase 43 — Editorial-copy honesty sweep + derived-count invariant (`01_build_plan.md`).
 **Source signals:**
 - `plan/CRITIQUE.md` pass-2/3 cluster — **4 Pending findings of
   one class** across **4 distinct URLs**: editorial copy carries
@@ -116,11 +118,13 @@ phase 41's drain).
 **Conflicts:** none. Reinforces phase 41's precedent and the
 brand's honest, no-spoilers voice.
 
-### 10. Colocated-test coverage gate (shift §5a left into verify)
+### 10. Colocated-test coverage gate (shift §5a left into verify) — PROMOTED as Phase 42 (oversight 2026-05-23)
 
 **Score:** 5.5 (impact: 5, ease: 5, +2 multi, +1 cheap-and-impactful)
 **Source pass:** 5
 **Filed:** 2026-05-22
+**Promoted in:** oversight 2026-05-23 (build plan re-exhausted; strongest pending candidate; closes the §5a reactive-drain pattern — 25 test commits in 3 days, each one-violator-per-tick).
+**Build-plan row:** Phase 42 — Colocated-test coverage gate (`01_build_plan.md`).
 **Source signals:**
 - Commit pattern (signal G) — a **16-commit reactive drain**,
   `#105`–`#120` (`e03938d` … `f3de16f`), each `test: lock <X>

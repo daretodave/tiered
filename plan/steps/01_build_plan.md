@@ -184,6 +184,37 @@ in the same commit that ships the phase.
 
 - [x] Phase 41 — Cross-canon themed-list drain (deliver the "cross-canon" promise). Multi-tick **auto-draining** content phase (phase-26 / 31b / 34 mechanic): the `/themes` hero and every `/themes/[theme]` `CROSS-CANON LIST` tag claim cross-show coverage, but all 12 themed lists carry entries from exactly one show (Survivor) — `CRITIQUE` pass-1 flagged it MED ("'cross-canon' copy overpromises against an all-Survivor catalog"; the stat strip reads "1 SHOWS COVERED"). Ship: (1) a new `bearings.md` Rule 3 sub-rule — every themed list with `category in {tone, craft, era}` must carry entries from **≥3 distinct shows**; `category: single` is the legal carve-out for deliberately mono-show lists (`survivor-pillars` re-tags to `single`); (2) the invariant in `scripts/content-check.ts` (lax mode; **final tick flips it strict**, matching the 31b/34 pattern); (3) `content-curator` brief + `ship-content` Rule 3 updated so new lists are born cross-show and existing `{tone,craft,era}` lists get a content-tick authoring 3–5 cross-show entries with full editorial blurbs + canonical `title`/`season_label` matching the season frontmatter (one pass extends the canon-heading discipline to themed-list entry titles — closes the related CRITIQUE finding "Survivor 41 named 'New Era I' in canon, 'S41 · REBOOT' on the list"); (4) `/themes` + `/themes/[theme]` stat strip ("N SHOWS COVERED") + the `CROSS-CANON LIST` tag derive honestly from `getShowsForTheme()` count, tag drops on `category: single` lists — no hero copy change, the data finally backs it. Per-tick budget: one list per tick (or `/ship-content`'s natural batch). Priority: `best-premieres` (already MED-flagged) → `best-finales` → rest of `craft/tone/era` → re-tag `survivor-pillars` to `single`. No URL change; UI work bounded to the stat-strip + tag wiring. **Spoiler discipline is P0** — cross-show entry blurbs stay spoiler-safe per agents.md §7. Promoted from `PHASE_CANDIDATES.md` #08. Detailed brief: `phase_41_cross_canon_lists.md`. Final tick: `best-reunion-specials` taken cross-canon (Survivor + Drag Race + The Challenge + Top Chef + The Traitors — 5 shows); all 11 `{tone,craft,era}` lists now clear the >= 3-distinct-show floor, `survivor-pillars` carries `category: single`, and `scripts/content-check.ts`'s `CROSS_SHOW_STRICT` is flipped on — the invariant is now enforced strict.
 
+**Verify-time discipline gates (phase 42) — promoted via oversight 2026-05-23:**
+
+> Build plan re-exhausted (every row above `[x]`; ~48h of §5a
+> test-colocation iterate-polish — 25 test commits in 3 days,
+> each `test: pin …` paired with `audit: finding […] addressed`).
+> Phase 42 promotes `PHASE_CANDIDATES.md` #10 (score 5.5) — the
+> strongest pending candidate. Same structural argument that
+> promoted #04→38, #06→39, #07→40, #08→41: a non-negotiable
+> standing rule (§5a "every commit ships unit tests") is enforced
+> *reactively* by `/iterate`'s one-violator-per-tick drain; a
+> proactive verify-time gate shifts enforcement left so the loop
+> stops burning a polish tick per untested file. Brief drafted
+> on-demand at pickup.
+
+- [ ] Phase 42 — Colocated-test coverage gate (shift §5a left into verify). Add `scripts/check-test-colocation.ts` (or `.mjs`) — walks `src/components/**`, `src/lib/**`, `src/content/**` for `.ts`/`.tsx` modules lacking a colocated `__tests__/<name>.test.{ts,tsx}`; verifies the test file references the target module (not filename-only — the #120 audit row exposed this false-negative class where `Header.tsx` was treated as covered because the test's `describe()` targeted `HeaderView`). Allowlist for genuine no-logic files (type-only modules; barrels already covered by barrel tests). Wire into `pnpm verify` alongside `check:no-raw-img` (phase 18 precedent — the exact shape: a discipline-gate script wired into verify). Colocated tests for the script itself (covered file passes, testless file fails, filename-match-but-wrong-target fails). Fix any stragglers the script newly catches (the recent 16-commit + 11-commit drains cleared most; expect few). No URL change, no schema change. One cloud tick. Promoted from `PHASE_CANDIDATES.md` #10; brief drafted on-demand from this row.
+
+**Editorial-copy honesty (phase 43) — promoted via oversight 2026-05-23:**
+
+> Promoted alongside Phase 42. `PHASE_CANDIDATES.md` #09 (score
+> 5.4) — second-strongest pending candidate. The CRITIQUE
+> passes-2/3 cluster flagged 4 distinct findings of the same
+> class (editorial copy carrying a hardcoded count that drifts
+> from the data the page renders); `/iterate` has been
+> hand-patching one surface per tick (`b9944bb`, `82b7b13`,
+> `4acd1ad`). Phase 41's `CROSS_SHOW_STRICT` precedent proved an
+> invariant works. Drain order: Phase 42 first so the
+> coverage-gate is in place before any new helpers/components
+> land; Phase 43 next.
+
+- [ ] Phase 43 — Editorial-copy honesty sweep + derived-count invariant. Multi-tick sweep (phase-41 mechanic) of every count/claim in editorial copy across home, `/shows`, `/themes`, `/themes/[theme]`, show pages, season pages. Per instance: derive from the loader where one exists, or drop the hardcoded number. Where a number must stay literal for editorial voice, pin it with a `content-check` invariant or unit test against the real catalog count so drift is a hard failure. Reconcile the home show-count copy specifically — surface all shows from home or reword (UX reachability, not just prose — 4 of 13 shows currently unreachable from home). Per-tick budget: one surface or one class per tick. No URL change; UI work bounded to copy + count-derivation wiring. Spoiler-safe — editorial framing only. Promoted from `PHASE_CANDIDATES.md` #09; brief drafted on-demand from this row.
+
 > **After phase 25:** the shipping queue is not done — phase
 > 36 is still `[ ]` (26 / 32 / 34 / 35 shipped), so `/march` Step 3a
 > keeps shipping them (`/ship-a-phase` wins every tick while
