@@ -1,20 +1,21 @@
 # CRITIQUE
 
-> Last pass: 2026-05-24 at commit 4258083
-> Pass count: 7
+> Last pass: 2026-05-24 at commit 6b81691
+> Pass count: 8
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 7 ran in the cloud loop via Path A2
+> cadence is active. Pass 8 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5/6 filters (#139 RSC ERR_ABORTED,
-> #125 settleForHydration) continue to hold. Authed chrome
-> captured post-hydration as `@e2e / Sign out` across all four
-> URLs — Path A2's mode determinism intact.
+> innerWidth` at 375px). Pass-5/6/7 filters (#139 RSC ERR_ABORTED,
+> #125 settleForHydration, anon/authed shared-profile false-
+> positive class) continue to hold. Authed chrome captured
+> post-hydration as `@e2e / Sign out` across all four URLs —
+> Path A2's mode determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -29,6 +30,38 @@
 
 ## Pending
 
+> Pass 8 (2026-05-24, commit 6b81691) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
+> Four findings filed (0 HIGH, 2 MED, 2 LOW). Mechanical pass
+> emitted zero findings — every URL returned 200, no console
+> errors, no failed network, no horizontal scroll regression
+> on the new mobile chrome (the ≤720px header wrap and the
+> ≤1100px season-page TOC both held), all H1s present, all SEO
+> tags present. Pass-5/6/7 filters (#139, #125, the shared-
+> profile false-positive class) continue to hold. The
+> qualitative pass surfaced two mobile-comprehension rows on
+> the show page (CURATED / LIVE state badges on the ranking
+> tabs are dropped at 375px, flattening the editor-curated vs.
+> live-community distinction the site's central premise rests
+> on) and one curatorial-consistency row on a themed list
+> (best-finales entry rows mix three different secondary-label
+> patterns inside one ranking — named subtitle, bare "SEASON N",
+> parenthetical year — reads as template drift). Two voice/
+> comprehension rows on small-but-load-bearing surfaces (the
+> /themes lede's opening sentence reads as a CMS noun phrase
+> next to the rest of the page's voice; the empty /u/<handle>
+> profile announces its empty state twice — zero-valued stat
+> blocks above the empty-state sentence). One HIGH from the
+> authed walk (/sign-in renders home content with the URL bar
+> still on /sign-in) was dropped as a Path-A2 URL-labeling
+> artifact: `capture.url` records the *requested* path, not the
+> post-redirect URL, and the /sign-in route already does
+> `redirect(returnTo)` server-side when a session exists (see
+> `src/app/(default)/sign-in/page.tsx:27-28`). Filed-class —
+> add to the standing filter list alongside the icon-only-button
+> class from pass 7.
+>
 > Pass 7 (2026-05-24, commit 4258083) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
@@ -89,6 +122,14 @@
 - [ ] [LOW] [anon] /themes filter strip exposes a "By era" chip but no list lives under that taxon — the catalog renders "By tone · 7", "By craft · 4", "Single-show tiers · 1" (total 12, matching the "12 LISTS" headline), and the "By era" chip is the only one with no count appended. Selecting it returns an empty filter scope. Either hide the chip when `counts.era === 0` (mirroring the `length > 0` filter that already governs the All-Lists section in `ListsAllSection.tsx`) or render an empty-state card under the filter explaining the category is curated and currently has zero entries. Source: `src/components/lists/ListsFilterController.tsx` renders every key in `FILTER_KEYS` unconditionally; `FILTER_LABELS.era` = "By era" in `src/lib/themes-format.ts`. (URL: /themes, source: critique-pass-6) — 8d71196
 
 - [ ] [LOW] [authed] /shows/survivor/season/heroes-villains header chip reads "1 MIN READ" on a page with a lede, 6 numbered sections, and 4 watch-for callouts — capture body length 3632 chars, closer to 3–4 minutes at a typical read rate. The number reads suspiciously round and is likely hardcoded. Phase 43 editorial-honesty class: derive read-time from rendered word count (a small helper, ~half the work of `tierLede.ts`), or drop the chip if it isn't load-bearing. Source: search the canon-entry header component for the "MIN READ" literal. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
+
+- [ ] [MED] [anon] /shows/<show> at 375px drops the CURATED / LIVE state badges from the ranking tabs — desktop renders "01 Editor's CanonCURATED / 02 CommunityLIVE", mobile renders the bare "01 Editor's Canon / 02 Community". The CURATED / LIVE chips disambiguate the central product premise (editor-curated stable canon vs. live community vote) and the mobile reader loses the only on-page differentiator between the two ranking systems. Source: `src/styles/canon.css:1091` hides `.cp-tab-cap { display: none }` inside the `@media (max-width: <mobile-breakpoint>)` block. Fix: keep the CURATED / LIVE chips visible at 375px. If horizontal room is the concern, stack the chip under the tab name (so each tab becomes a two-line cell) or shorten to "STABLE" / "LIVE" rather than dropping the affordance entirely. Sample URL: /shows/survivor — same shape applies to every /shows/<show> page since the rule is global CSS. (URL: /shows/survivor, source: critique-pass-8) — 6b81691
+
+- [ ] [MED] [anon] /themes/best-finales entry rows mix three different secondary-label patterns inside one ranked list — five entries use a named subtitle (HEROES VS. VILLAINS, LAS VEGAS, WINNERS AT WAR, RENEGADES ERA), two fall back to the bare "SEASON N" (Amazing Race S07, Drag Race S06), and The Traitors uniquely tacks on a parenthetical year ("SEASON 2 (2024)"). A reader scanning the list registers the inconsistency before the picks. The labels are explicit `season_label:` strings in `content/themes/best-finales.md` frontmatter (curatorial, not derived), so this is editorial drift, not a templating bug. Underlying cause: some season `title:` fields are real names ("Heroes vs. Villains", "Winners at War", "Las Vegas") while others are bare "Season N" (e.g. `content/shows/dragrace/seasons/06-season-6.md`, `content/shows/amazing-race/seasons/07-season-7.md`). Fix: pick one rule for the secondary label across all `/themes/<list>/` rows and apply consistently — either always show the editorialized name (fill in the missing season titles in the source content) or always strip to bare "SEASON N" in `season_label`. Drop The Traitors' parenthetical year — no other entry asks for it. Sweep all 12 `content/themes/*.md` for the same pattern. (URL: /themes/best-finales, source: critique-pass-8) — 6b81691
+
+- [ ] [LOW] [anon] /themes lede opens "12 pieces of editorial opinion, organized by the part of the craft they admire." — "pieces of editorial opinion" reads as a CMS-field noun phrase, not the knowledgeable-peer voice the rest of the site holds. The very next sentence proves the voice is available ("Some span the catalog. Some live inside one. None of them spoil what they rank.") — the first half just doesn't reach for it. Fix: rework the first sentence into the same register as the second. Something like "12 lists we'd defend in a group chat. Some span the catalog, some live inside one show. None of them spoil what they rank." Keeps the count, keeps the structure, drops the noun phrase. (URL: /themes, source: critique-pass-8) — 6b81691
+
+- [ ] [LOW] [authed] /u/<handle> empty profile stacks three zero-valued stat blocks (0 COMMENTS / 0 SEASONS VOTED / 0 SHOWS FOLLOWED) directly above the empty-state sentence "Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here." — the sentence already says what the three zeros say, so the empty state is announced twice in the same column (roughly half of the page's 524 bodyText chars). Fix: hide the stat strip until at least one counter is non-zero, and let the sentence carry the empty state alone. Once the reader has any activity, the stat strip becomes the right summary and the sentence can go. Source likely `src/components/profile/` — paired with the existing `ProfileEmpty` component the #153 pass-6 row already rewrote. (URL: /u/e2e, source: critique-pass-8) — 6b81691
 
 ## Done
 
