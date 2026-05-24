@@ -367,4 +367,21 @@ test.describe('mobile @ 375px viewport', () => {
       ).toBeLessThanOrEqual(1)
     })
   }
+
+  // Critique pass 8 (#158): CURATED / LIVE captions must stay visible on
+  // mobile — they are the only on-page differentiator between the
+  // editor-curated and live-community ranking systems.
+  test('ranking tabs keep CURATED / LIVE chips visible at 375px', async ({
+    page,
+  }) => {
+    await page.goto('/shows/survivor', { waitUntil: 'domcontentloaded' })
+    const tabs = page.getByTestId('canon-tabs')
+    await expect(tabs).toBeVisible()
+    const caps = tabs.locator('.cp-tab-cap')
+    await expect(caps).toHaveCount(2)
+    await expect(caps.nth(0)).toBeVisible()
+    await expect(caps.nth(1)).toBeVisible()
+    await expect(caps.nth(0)).toHaveText(/curated/i)
+    await expect(caps.nth(1)).toHaveText(/live/i)
+  })
 })

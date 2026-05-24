@@ -60,4 +60,18 @@ describe('<CanonTabSwitch>', () => {
     expect(communityTab.tagName).toBe('BUTTON')
     expect(canonTab).toHaveAttribute('role', 'tab')
   })
+
+  // Critique pass 8 (#158): the .cp-tab-cap caption spans carry the
+  // CURATED / LIVE chips that differentiate the editor-curated vs.
+  // live-community ranking systems. Mobile CSS (canon.css :1091) keeps
+  // them visible — they must render in the DOM as siblings of the
+  // tab name so the breakpoint can stack them.
+  it('emits .cp-tab-cap spans carrying "curated" and "live"', () => {
+    window.history.replaceState({}, '', '/shows/survivor')
+    const { container } = render(<Harness initial="canon" />)
+    const caps = container.querySelectorAll('.cp-tab-cap')
+    expect(caps).toHaveLength(2)
+    expect(caps[0]?.textContent).toBe('curated')
+    expect(caps[1]?.textContent).toBe('live')
+  })
 })

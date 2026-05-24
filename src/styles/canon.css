@@ -1087,8 +1087,13 @@
   .cp-crumb { padding: 24px 20px 0; }
   .cp-head { padding: 24px 20px 8px; }
   .cp-tabs { margin: 24px 20px 0; max-width: none; }
-  .cp-tab { padding: 14px 18px; gap: 10px; }
-  .cp-tab-cap { display: none; }
+  .cp-tab { padding: 12px 18px; gap: 12px; }
+  /* Keep CURATED / LIVE chips visible at 375px — stack under the tab
+     name so each tab becomes a two-line cell. The chips are the only
+     on-page differentiator between the editor-curated and live-community
+     ranking systems; dropping them at mobile collapses the central
+     product premise (critique pass 8, #158). */
+  .cp-tab-cap { display: block; margin-left: 0; margin-top: 3px; }
   .cp-toolbar { padding: 14px 20px; }
   .cp-tier { padding: 48px 20px 0; }
   .cp-tail-row {
