@@ -21,15 +21,15 @@ cast_size: 20
 cast_size_caption: "10 heroes, 10 villains"
 host_caption: "{seasonOrdinalWord} season at the helm"
 episode_heat: [med, hot, med, hot, hot, med, hot, hot, hot, med, hot, med, hot, hot]
-episode_heat_caption: "peak run · eps 7–9, 11"
+episode_heat_caption: "peak run · the back half"
 watch_list:
-  - episode_label: "Ep 1 · cold open"
+  - episode_label: "Opener · cold open"
     body: "The opening shot — boat, water, twenty people who already know the camera is watching — does in 90 seconds what most premieres take an hour to set up."
-  - episode_label: "Ep 7 · long take"
+  - episode_label: "Early · long take"
     body: "An unbroken three-minute confessional that the show normally would have cut into ribbons. Watch the editor's patience."
-  - episode_label: "Ep 9 · merge"
+  - episode_label: "Mid · merge"
     body: "The first ten minutes after the merge are the cleanest piece of reality-TV staging the show has ever shot. No music, no inserts."
-  - episode_label: "Ep 11 · third act"
+  - episode_label: "Late · third act"
     body: "The cold-open of the final eight is doing real ethnographic labor — staging, blocking, who's eating where. Don't blink."
 ---
 
