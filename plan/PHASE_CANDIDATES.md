@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-24 at commit 5e21809
-> Pass count: 6
+> Last pass: 2026-05-24 at commit 979d880
+> Pass count: 7
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,40 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 7 (2026-05-24, commit 979d880) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (only the format-comment
+       placeholder; the most recent 12-tick #131-#146 colocated-test
+       drain landed every src/app/ route handler + RSS surfaces, and
+       all entries are RESOLVED).
+     - CRITIQUE.md: 3 Pending rows from passes-6/7/8 — all LOW:
+       (1) the "twenty-five years" hardcoded copy in 5 surfaces
+       (LOW, pass-6 #155), already absorbed into phase 43's
+       YEAR_TENURE_STRICT invariant's allowlist scope; (2) the
+       "1 MIN READ" hardcoded chip on /shows/survivor/season/
+       heroes-villains (LOW, pass-6 #155); (3) the /u/<handle>
+       empty-state stat-strip redundancy (LOW, pass-8 #158).
+       Single-surface polish targets, no cluster ≥3 HIGH on the
+       same family, no class-pattern beyond phase 43's existing
+       editorial-honesty scope. Each is one-iterate-tick work.
+     - GitHub issues: 0 unlabeled; backlog is #150 (triage:reviewed,
+       past cloud crash) + #148 (triage:needs-user, march.yml
+       coverage-gate wiring blocked on the cloud GitHub App's
+       missing `workflows` permission — known, intentional).
+     - spec.md + design/: no diffs since pass 6.
+     - Commit pattern: 21 commits since pass 6 — 9 critique-row
+       drains, 4 iterate-fix commits, 2 critique passes (7+8), 1
+       expand pass (6), 3 misc. All anticipated polish; no rogue
+       refactor surface, no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No change.
+
+     The remaining LOW critique findings are individual /iterate
+     polish targets, not phase shapes. The build plan stays in
+     its clean re-exhausted state. Bumping metadata; awaiting
+     the next pass' cadence window for fresh structural signals
+     to accumulate. -->
 
 <!-- Pass 6 (2026-05-24, commit 5e21809) — no new candidates filed.
      Signals reviewed:
