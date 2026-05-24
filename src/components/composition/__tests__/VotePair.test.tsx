@@ -15,7 +15,12 @@ async function flushAsync() {
 // `fetchMock` lets each test script the JSON each call resolves
 // to (keyed by method) so the optimistic + reconcile paths are
 // both exercised deterministically.
-type VoteBody = { ok: boolean; value: number; count: number }
+type VoteBody = {
+  ok: boolean
+  value: number
+  count: number
+  signedIn?: boolean
+}
 
 function jsonResponse(body: VoteBody) {
   return Promise.resolve({
@@ -266,6 +271,79 @@ describe('<VotePair>', () => {
       expect(
         screen.getByTestId('vote-down').getAttribute('aria-label'),
       ).toBe('Vote down net votes')
+    })
+  })
+
+  // --- #160 (critique pass-6): YOUR VOTE block disambiguation ---
+  //
+  // Signed-in members get a state pill above the buttons so the
+  // section never reads "YOUR VOTE / 1 NET VOTE" without telling
+  // the member whether they're part of that 1. Anon viewers see
+  // only the pair (same as today). The pill text maps 1:1 to the
+  // vote value union — keeps the affordance honest about the
+  // viewer's current ballot.
+  describe('state pill (signed-in only)', () => {
+    it('renders no state pill when /api/vote reports signedIn:false', async () => {
+      getBody = { ok: true, value: 0, count: 0, signedIn: false }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
+      expect(
+        screen.getByTestId('vote-pair-stack').getAttribute('data-signed-in'),
+      ).toBe('false')
+    })
+
+    it("renders \"you haven't voted\" for a signed-in viewer with value 0", async () => {
+      getBody = { ok: true, value: 0, count: 7, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      const cap = screen.getByTestId('vote-state-cap')
+      expect(cap.textContent).toBe("you haven't voted")
+      expect(cap.getAttribute('data-vote-state')).toBe('none')
+      expect(
+        screen.getByTestId('vote-pair-stack').getAttribute('data-signed-in'),
+      ).toBe('true')
+    })
+
+    it('renders "you voted higher" for a signed-in viewer with value 1', async () => {
+      getBody = { ok: true, value: 1, count: 7, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      const cap = screen.getByTestId('vote-state-cap')
+      expect(cap.textContent).toBe('you voted higher')
+      expect(cap.getAttribute('data-vote-state')).toBe('up')
+    })
+
+    it('renders "you voted lower" for a signed-in viewer with value -1', async () => {
+      getBody = { ok: true, value: -1, count: -3, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      const cap = screen.getByTestId('vote-state-cap')
+      expect(cap.textContent).toBe('you voted lower')
+      expect(cap.getAttribute('data-vote-state')).toBe('down')
+    })
+
+    it('updates the pill text as the viewer clicks (no second fetch needed)', async () => {
+      getBody = { ok: true, value: 0, count: 5, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.getByTestId('vote-state-cap').textContent).toBe(
+        "you haven't voted",
+      )
+      // Click up — pill flips immediately to the optimistic state.
+      fireEvent.click(screen.getByTestId('vote-up'))
+      expect(screen.getByTestId('vote-state-cap').textContent).toBe(
+        'you voted higher',
+      )
+    })
+
+    it("never reveals the pill when /api/vote omits signedIn (defensive default)", async () => {
+      // A bad-actor proxy could strip the field; absence must not
+      // accidentally surface the pill to an anon viewer.
+      getBody = { ok: true, value: 0, count: 0 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
     })
   })
 })

@@ -261,7 +261,14 @@ describe('GET /api/vote — query validation', () => {
       getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),
     )
     expect(res.status).toBe(200)
-    await expect(res.json()).resolves.toEqual({ ok: true, value: -1, count: 2 })
+    // signedIn = false because the default beforeEach mocks
+    // getSession → null (anon caller with cookie).
+    await expect(res.json()).resolves.toEqual({
+      ok: true,
+      value: -1,
+      count: 2,
+      signedIn: false,
+    })
     expect(readVoteMock).toHaveBeenCalledWith({
       sessionId: VALID_ANON_ID,
       targetType: 'season',
@@ -343,6 +350,56 @@ describe('GET /api/vote — RPC error mapping + leak guard', () => {
     // readVote returned rawCount 2 and the weighted aggregate 8.5.
     expect(body.count).toBe(2)
     expect(JSON.stringify(body)).not.toContain('8.5')
+  })
+})
+
+describe('GET /api/vote — signedIn surface (#160)', () => {
+  // The VotePair state pill ("you haven't voted" / "you voted higher" /
+  // "you voted lower") only renders for signed-in members; an anon
+  // viewer with a cookie must read `signedIn: false`, an Auth0-backed
+  // session must read `signedIn: true`. Both share the same vote
+  // read-back so the pill copy and the pair number arrive in one
+  // round-trip — no /api/auth/me piggyback.
+  it('returns signedIn:false for an anon caller with a valid cookie', async () => {
+    const res = await GET(
+      getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),
+    )
+    const body = await res.json()
+    expect(body.signedIn).toBe(false)
+  })
+
+  it('returns signedIn:false for an anon caller with no cookie at all', async () => {
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    const body = await res.json()
+    expect(body.signedIn).toBe(false)
+  })
+
+  it('returns signedIn:true when the Auth0 session resolves a sub', async () => {
+    getSessionMock.mockResolvedValue({
+      user: { sub: 'auth0|member-xyz', nickname: 'Member' },
+    })
+    const res = await GET(
+      getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),
+    )
+    const body = await res.json()
+    expect(body.signedIn).toBe(true)
+    // The vote read still runs against the claimed session id so the
+    // pill never disagrees with the count next to it.
+    expect(readVoteMock).toHaveBeenCalledWith(
+      expect.objectContaining({ sessionId: 'claimed-session-id' }),
+    )
+  })
+
+  it('omits signedIn from a 500 auth_resolve_failed body (the leak guard still fires first)', async () => {
+    getSessionMock.mockRejectedValue(new Error('auth0 unreachable'))
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    expect(res.status).toBe(500)
+    const body = await res.json()
+    expect(body).toMatchObject({ ok: false, error: 'auth_resolve_failed' })
+    // The success-shape `signedIn` field must not appear on an error
+    // body — VotePair's discriminant is `json.ok === true`, but
+    // shipping the field on a 500 would invite a client to inspect it.
+    expect(body).not.toHaveProperty('signedIn')
   })
 })
 

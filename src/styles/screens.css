@@ -616,6 +616,30 @@
 .vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 12px; text-wrap: pretty; }
 .vote-help { margin-top: 10px; font: 400 11px/1.5 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
 
+/* #160: signed-in members get a state pill above the buttons so the
+   YOUR VOTE block disambiguates "haven't voted" from "voted up/down".
+   Color tracks the vote sentiment — neutral for not-yet, warm primary
+   for voted-up, cool hold for voted-down — mirroring the same
+   sentiment system the community pill + shield stack already use. */
+.vote-pair-stack { display: flex; flex-direction: column; gap: 8px; }
+.vote-state-cap {
+  align-self: flex-start;
+  display: inline-flex; align-items: center;
+  padding: 4px 10px; border-radius: 999px;
+  font: 600 10px/1 var(--mono); letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, var(--show-ink) 8%, transparent);
+  color: color-mix(in oklab, var(--show-ink) 60%, transparent);
+}
+.vote-state-cap[data-vote-state='up'] {
+  background: color-mix(in oklab, var(--s-warm-up) 14%, transparent);
+  color: var(--s-warm-up);
+}
+.vote-state-cap[data-vote-state='down'] {
+  background: color-mix(in oklab, var(--s-warm-down) 14%, transparent);
+  color: var(--s-warm-down);
+}
+
 .shield-stack { display: flex; flex-direction: column; gap: 10px; }
 .shield-stack .line {
   display: flex; gap: 10px; align-items: center;

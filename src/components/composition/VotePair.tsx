@@ -62,6 +62,13 @@ export function VotePair({
   // number is a placeholder, not the true net. `hydrated` gates a
   // one-time opacity fade so it doesn't pop 0 -> <X> (issue #64).
   const [hydrated, setHydrated] = useState(false)
+  // Signed-in members get the disambiguating state pill above the
+  // buttons (#160 / critique pass-6); anons see only the buttons,
+  // matching the existing CommentInputStub / CommentInput swap
+  // pattern. `signedIn` is sourced from /api/vote so a single
+  // round-trip seeds both the vote read-back and the pill — no
+  // /api/auth/me piggyback needed.
+  const [signedIn, setSignedIn] = useState(false)
 
   useEffect(() => {
     reduced.current =
@@ -85,15 +92,22 @@ export function VotePair({
     const params = new URLSearchParams({ targetType, targetId })
     fetch(`/api/vote?${params.toString()}`)
       .then((res) => (res.ok ? res.json() : null))
-      .then((json: { ok?: boolean; value?: unknown; count?: unknown } | null) => {
-        if (cancelled || !json || json.ok !== true) return
-        dispatch({
-          type: 'hydrate',
-          value: asVoteValue(json.value),
-          count: Number(json.count) || 0,
-        })
-        setHydrated(true)
-      })
+      .then(
+        (
+          json:
+            | { ok?: boolean; value?: unknown; count?: unknown; signedIn?: unknown }
+            | null,
+        ) => {
+          if (cancelled || !json || json.ok !== true) return
+          dispatch({
+            type: 'hydrate',
+            value: asVoteValue(json.value),
+            count: Number(json.count) || 0,
+          })
+          setHydrated(true)
+          setSignedIn(json.signedIn === true)
+        },
+      )
       .catch(() => {
         /* Optimistic-only fallback — keep the static initialCount. */
       })
@@ -151,7 +165,30 @@ export function VotePair({
   // — the displayed count is already announced by the count cell.
   const displayLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
 
+  // State pill copy (#160): only surfaces for signed-in members.
+  // The three states map 1:1 to the value union — keeps the pill
+  // honest about what the viewer's ballot actually is right now.
+  const stateCaption = votedUp
+    ? 'you voted higher'
+    : votedDown
+      ? 'you voted lower'
+      : "you haven't voted"
+
   return (
+    <div
+      className="vote-pair-stack"
+      data-testid="vote-pair-stack"
+      data-signed-in={signedIn ? 'true' : 'false'}
+    >
+    {signedIn ? (
+      <div
+        className="vote-state-cap"
+        data-testid="vote-state-cap"
+        data-vote-state={votedDir}
+      >
+        {stateCaption}
+      </div>
+    ) : null}
     <div
       className="vote-pair"
       data-testid="vote-pair"
@@ -234,6 +271,7 @@ export function VotePair({
           />
         </svg>
       </button>
+    </div>
     </div>
   )
 }

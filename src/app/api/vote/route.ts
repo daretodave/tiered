@@ -50,7 +50,7 @@ function handleFromSession(user: Record<string, unknown> | null | undefined): st
 }
 
 type SessionResolution =
-  | { ok: true; sessionId: string | null }
+  | { ok: true; sessionId: string | null; signedIn: boolean }
   | { ok: false; status: number; body: Record<string, unknown> }
 
 // Shared by POST and GET so the read path resolves to the exact
@@ -61,7 +61,10 @@ type SessionResolution =
 // read may touch identity rows, but it can never disagree with
 // the write). `sessionId: null` means anon-with-no-cookie — a
 // legitimate state for GET (aggregate still readable), rejected
-// by POST (nothing to write against).
+// by POST (nothing to write against). `signedIn` carries the
+// Auth0 sub-presence so GET responders (the VotePair state pill
+// in particular) can disambiguate "anon with cookie" from
+// "signed-in member" without a second /api/auth/me round-trip.
 async function resolveSessionId(request: Request): Promise<SessionResolution> {
   const cookieHeader = request.headers.get('cookie') ?? ''
   const anonCookieMatch = cookieHeader.match(
@@ -82,10 +85,10 @@ async function resolveSessionId(request: Request): Promise<SessionResolution> {
         typeof user?.['name'] === 'string' ? (user['name'] as string) : null
       await upsertUser({ sub, handle, email, displayName })
       const claimed = await claimAnonSession({ anonId: validAnonId, sub })
-      return { ok: true, sessionId: claimed.sessionId }
+      return { ok: true, sessionId: claimed.sessionId, signedIn: true }
     }
-    if (validAnonId) return { ok: true, sessionId: validAnonId }
-    return { ok: true, sessionId: null }
+    if (validAnonId) return { ok: true, sessionId: validAnonId, signedIn: false }
+    return { ok: true, sessionId: null, signedIn: false }
   } catch (err) {
     return {
       ok: false,
@@ -182,10 +185,15 @@ export async function GET(request: Request) {
     })
     // Client sees the clean integer net (`raw_count`), never the
     // weighted ranking aggregate — that leak was issue #64.
+    // `signedIn` lets VotePair disambiguate "anon viewer with a
+    // cookie" from "signed-in member" so the state pill copy
+    // ("you haven't voted" / "you voted higher" / "you voted lower")
+    // only surfaces to members — closes #160.
     return NextResponse.json({
       ok: true,
       value: result.value,
       count: result.rawCount,
+      signedIn: resolved.signedIn,
     })
   } catch (err) {
     const e = err as { code?: string; message?: string }

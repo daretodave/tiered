@@ -94,6 +94,7 @@ export const pageReads: Record<string, PageReadAssertion> = {
       '[data-testid=info-row-canon]',
       '[data-testid=info-row-vote]',
       '[data-testid=info-row-shield]',
+      '[data-testid=vote-pair-stack]',
       '[data-testid=vote-pair]',
       '[data-testid=season-thread]',
       '[data-testid=comment-thread]',
