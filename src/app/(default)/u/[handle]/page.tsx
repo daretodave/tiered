@@ -133,17 +133,18 @@ export default async function UserProfilePage({
         memberSince={profile.memberSince}
       />
 
-      <ProfileStats
-        publishedCommentCount={profile.publishedCommentCount}
-        votedSeasonCount={profile.votedSeasonCount}
-        votedShowCount={profile.votedShowCount}
-      />
-
       {profile.populated ? (
-        <div className="flex flex-col gap-4">
-          <h2 className="font-serif text-xl text-ink-0">Recent comments</h2>
-          <ProfileComments comments={profile.comments} />
-        </div>
+        <>
+          <ProfileStats
+            publishedCommentCount={profile.publishedCommentCount}
+            votedSeasonCount={profile.votedSeasonCount}
+            votedShowCount={profile.votedShowCount}
+          />
+          <div className="flex flex-col gap-4">
+            <h2 className="font-serif text-xl text-ink-0">Recent comments</h2>
+            <ProfileComments comments={profile.comments} />
+          </div>
+        </>
       ) : (
         <ProfileEmpty />
       )}
