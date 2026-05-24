@@ -45,6 +45,8 @@ describe('<ListsHero>', () => {
     )
     expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
     expect(screen.queryByText(/span every show/i)).toBeNull()
+    expect(screen.queryByText(/pieces of editorial opinion/i)).toBeNull()
+    expect(screen.getByText(/lists we'd defend in a group chat/i)).toBeTruthy()
   })
 
   it('swaps the accent and lede to single-canon-honest copy when only one show is covered', () => {
@@ -69,6 +71,8 @@ describe('<ListsHero>', () => {
     expect(
       screen.getByText(/Every list lives inside one canon today/),
     ).toBeTruthy()
+    expect(screen.queryByText(/pieces of editorial opinion/i)).toBeNull()
+    expect(screen.getByText(/lists we'd defend in a group chat/i)).toBeTruthy()
   })
 
   it('renders the "tiered.tv / Lists" eyebrow', () => {

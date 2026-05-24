@@ -9,8 +9,8 @@ export function ListsHero({ stats }: ListsHeroProps) {
   const isCrossCanon = stats.showsCovered > 1
   const accent = isCrossCanon ? 'Cross-canon.' : 'Inside one canon.'
   const lede = isCrossCanon
-    ? `${stats.total} ${plural(stats.total, 'piece', 'pieces')} of editorial opinion, organized by the part of the craft they admire. Some span the catalog. Some live inside one. None of them spoil what they rank.`
-    : `${stats.total} ${plural(stats.total, 'piece', 'pieces')} of editorial opinion, organized by the part of the craft they admire. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
+    ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Some span the catalog, some live inside one show. None of them spoil what they rank.`
+    : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
 
   return (
     <header
