@@ -21,7 +21,7 @@ entries:
     blurb: "The reveal isn't an empty beach — it's a real village, with the cast sent to buy their own supplies off the locals before the game proper begins. Pearl Islands wrings every editorial dollar out of the pirate framing in its opening hour."
   - show: traitors
     season: 1
-    season_label: "S01 · Season 1 (2023)"
+    season_label: "S01"
     rank: 2
     title: "A Highland castle that hands you the whole tone before a word is spoken."
     blurb: "Ardross Castle, the cloaks, the candlelit Round Table, the morning breakfast reveal — the US adaptation lets the Scottish setting set the mood cold. The location does the work an exposition dump would, and never lets the air out of the room."
@@ -33,7 +33,7 @@ entries:
     blurb: "The first minutes of Borneo had zero vocabulary to inherit. The reveal is rough, real, and slightly disoriented — a Malaysian island filmed like a documentary because the show didn't yet know how to film it like a competition. The template starts here."
   - show: love-island-us
     season: 1
-    season_label: "S01 · Season 1 (2019)"
+    season_label: "S01"
     rank: 4
     title: "A Fijian villa that asks the cast to couple up the second they walk in."
     blurb: "The first US season opens on the villa itself — sun, pool, and a roster pairing off on sight. The setting is the format here: the location reveal and the coupling reveal arrive together, and the season trusts the villa to carry the premise."

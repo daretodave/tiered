@@ -21,7 +21,7 @@ entries:
     blurb: "The Heroes vs. Villains reunion sat twenty returnees on stage with two decades of franchise lore between them. Probst plays it as a celebration and a debrief at the same time, and the hour reads as the show talking to itself about what it had become."
   - show: dragrace
     season: 6
-    season_label: "S06 · Season 6"
+    season_label: "S06"
     rank: 2
     title: "The Reunited hour playing its closing-celebration role exactly right."
     blurb: "Drag Race's Reunited episode is a franchise institution, and Season 6's edition is the format at its most assured. A strong cast revisits the season together, the room reads as celebration first, and the hour does the closing-lap job a great season deserves."
@@ -51,7 +51,7 @@ entries:
     blurb: "Twenty former champions, the milestone framing the show had been building toward, and a reunion that played it with appropriate weight. Aired right as the pandemic hit, the hour reads now as the last of a particular era of Survivor television."
   - show: traitors
     season: 2
-    season_label: "S02 · Season 2 (2024)"
+    season_label: "S02"
     rank: 7
     title: "The closing gathering for a season the audience had been loud about."
     blurb: "The Traitors had become appointment television by its second year, and the reunion hour gathers a buzzy cast back together to revisit it. The episode meets the noise the season generated — a closing conversation among players the audience had argued over for weeks."

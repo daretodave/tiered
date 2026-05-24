@@ -210,6 +210,24 @@ export function collectThemeFailures(): Failure[] {
               message: `theme entry rank ${entry.rank} season_label "${entry.season_label}" names season ${entry.season} as "${namePart}" but the canonical season title is "${matchingSeason.title}" — align the label so themed-list and season-page rows name the same season identically`,
             })
           }
+          // Critique pass-8 #161: the `S<NN>` prefix already names
+          // the season number, so a `· Season N` (or `· Series N`)
+          // suffix is redundant — render reads "S07 · SEASON 7" on
+          // the list page and a scanning reader registers the
+          // duplication before they reach the entry blurb. A
+          // parenthetical year tagged onto the bare numeric subtitle
+          // (e.g. "S02 · Season 2 (2024)") is the same class plus
+          // an extra ornament no other entry asks for. Rule: when
+          // the subtitle is just the season number restated (with
+          // or without a year suffix), the label MUST be the bare
+          // `S<NN>`. Editorialized names ("Heroes vs. Villains",
+          // "Las Vegas", "Renegades Era") stay legal.
+          if (/^(Season|Series)\s+\d+(\s+\(\d{4}\))?$/i.test(namePart)) {
+            failures.push({
+              file: `content/themes/${theme.slug}.md`,
+              message: `theme entry rank ${entry.rank} season_label "${entry.season_label}" repeats the season number in its subtitle ("${namePart}") — the "S${String(entry.season).padStart(2, '0')}" prefix already names the season, so drop the " · ${namePart}" suffix and use the bare "S${String(entry.season).padStart(2, '0')}" label`,
+            })
+          }
         }
       }
     }

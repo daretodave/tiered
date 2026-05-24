@@ -21,13 +21,13 @@ entries:
     blurb: "The cast steps off the raft half-convinced this is a documentary, and by the end of the hour the show has invented the visual grammar every season since. Still the genre's clearest opening statement."
   - show: amazing-race
     season: 1
-    season_label: "S01 · Season 1"
+    season_label: "S01"
     rank: 2
     title: "A premiere that builds the format on the road and never looks back."
     blurb: "Eleven teams, a route marker, and a host nobody had heard of yet. The opening hour trusts geography to carry the story, finds its cadence almost immediately, and lays the bones every race season is built from."
   - show: traitors
     season: 1
-    season_label: "S01 · Season 1 (2023)"
+    season_label: "S01"
     rank: 3
     title: "The castle, the cloaks, and the Round Table all arrive in the first hour."
     blurb: "The US adaptation assembles itself live: the breakfast reveal, the candlelit table, a mixed cast of alumni and civilians meeting the format cold. The premiere hands you the whole machine and dares you to keep up."
@@ -39,7 +39,7 @@ entries:
     blurb: "Top Chef goes regional for the first time, opening with a qualifying round that puts twice the usual roster in the kitchen. The first hour tells you the season is bigger, faster, and willing to rebuild the format on purpose."
   - show: dragrace
     season: 4
-    season_label: "S04 · Season 4"
+    season_label: "S04"
     rank: 5
     title: "The premiere where the Logo formula finally clicks into place."
     blurb: "Season 4 walks in with a cast of real range and a panel fully in sync. The opening workroom runs sharp and personal — the kind of friction the show later learned to engineer, arriving here the moment the doors open."

@@ -27,7 +27,7 @@ entries:
     blurb: "Pearl Islands is where Survivor stopped treating antagonist energy as a problem to manage and started treating it as a feature. Big personalities, sharp edges, an Outcasts twist that rewards going for the throat. The edit leans all the way in."
   - show: traitors
     season: 2
-    season_label: "S02 · Season 2 (2024)"
+    season_label: "S02"
     rank: 3
     title: "A format where the antagonist role is built into the rules."
     blurb: "The Traitors hands a few players a villain edit by design — the format makes deception the job. Season two runs that engine at full strength, with an all-reality cast that knows how to play to a camera and a Round Table built to amplify every loaded glance."
@@ -39,7 +39,7 @@ entries:
     blurb: "Den Of Temptation builds its broadcast around a single house power center, and the edit leans all the way in. The temptation twist hands the season its loud antagonist frame, and the narrative bends around the loudest player in the room."
   - show: dragrace
     season: 11
-    season_label: "S11 · Season 11"
+    season_label: "S11"
     rank: 5
     title: "The combustible workroom the edit refused to cool off."
     blurb: "Season 11 stacks the workroom with large, confrontational personalities and spends its budget on the friction rather than the sewing machine. The antagonist reads run loud and sustained, and the season's whole shape is the argument the rest of the cast had to play inside."

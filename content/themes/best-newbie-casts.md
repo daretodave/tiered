@@ -33,7 +33,7 @@ entries:
     blurb: "Seventeen chefs walked into the Mandalay Bay kitchens in 2009 already technically ready, carrying the deepest pre-show resumes the show had assembled to that point. No returnees — just a rookie roster that cooked at a level the season set as a permanent bar for the franchise."
   - show: dragrace
     season: 6
-    season_label: "S06 · Season 6"
+    season_label: "S06"
     rank: 4
     title: "Queens whose aesthetics were fully formed before the workroom opened."
     blurb: "The split-premiere season ran two cast halves through the door, and the lineup walked in with individual aesthetics already settled — deep on identity and craft, no returnees. Snatch Game and the Shakespeare challenge produced runway moments still replayed today."

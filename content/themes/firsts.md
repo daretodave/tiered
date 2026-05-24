@@ -21,7 +21,7 @@ entries:
     blurb: "Sixteen Americans on a Malaysian island in the summer of 2000, with the format inventing itself on camera. A first that could inherit nothing because nothing came before it. The rough edges show in the best way, and everything after starts here."
   - show: amazing-race
     season: 1
-    season_label: "S01 · Season 1"
+    season_label: "S01"
     rank: 2
     title: "A first that found its cadence on the road almost immediately."
     blurb: "Eleven teams, a route marker, and a host nobody had heard of yet. The format barely changed after this — the casting, the geography, the rhythm all arrive close to finished. It holds up because so little ever had to be rebuilt."
@@ -39,7 +39,7 @@ entries:
     blurb: "Bravo opens its culinary competition in San Francisco with a small cast, tight kitchens, and a different host in the chair. No Last Chance Kitchen, no road show, no Padma yet. A historically important first draft whose bones held all the way through."
   - show: traitors
     season: 1
-    season_label: "S01 · Season 1 (2023)"
+    season_label: "S01"
     rank: 5
     title: "The origin, with the US adaptation inventing itself live at the castle."
     blurb: "The American version assembled in real time at Ardross Castle — cloaks, candlelit Round Table, breakfast reveal, a mixed cast of alumni and civilians meeting the format cold. Rougher than what follows, and it stuck: you watch the show learn itself."
@@ -51,7 +51,7 @@ entries:
     blurb: "New presenters at the tent flap, a new judge beside Paul Hollywood, and Welford Park as the single thread carrying the audience across. A structural experiment the franchise pulled off in one move. The reset the Channel 4 era was built on."
   - show: dragrace
     season: 1
-    season_label: "S01 · Season 1"
+    season_label: "S01"
     rank: 7
     title: "The rough draft — short, soft-focus, and made before the franchise knew itself."
     blurb: "A heavily stylized first run with a soft-focus filter, a visible budget, and a panel still working out its grammar. The cast is small and scrappy, the challenges rough-drafted. It earns its place precisely as the rough draft the format kept and sharpened."

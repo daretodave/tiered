@@ -39,7 +39,7 @@ entries:
     blurb: "Top Chef's compression point is the run of challenges before the finale, and Las Vegas turns it into a gauntlet. The deepest field the show had assembled stays deep all the way down — the back half plays as chef against chef at a defining level, no padding."
   - show: dragrace
     season: 6
-    season_label: "S06 · Season 6"
+    season_label: "S06"
     rank: 5
     title: "A top-five stretch that lifted the format's late-game ceiling."
     blurb: "Drag Race's compression happens in the final handful of queens, and the sixth season's back half is the run the franchise still cites. The challenges harden, the critiques sharpen, and the cast meets every one — a top five with no weak link and real tension."

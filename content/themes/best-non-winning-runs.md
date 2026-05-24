@@ -33,7 +33,7 @@ entries:
     blurb: "Project Runway's fourth season runs on the friction between several designers, all of them quotable. It is remembered as an ensemble — the most-cited workroom moments scatter across multiple arcs rather than gathering behind one through-line."
   - show: dragrace
     season: 5
-    season_label: "S05 · Season 5"
+    season_label: "S05"
     rank: 4
     title: "A celebrated cast whose energy spread across the whole room."
     blurb: "Drag Race's fifth season gets quoted as an ensemble. The texture is distributed across many performers — challenge runs, Untucked moments, and runway looks that all carry weight — so the season's lasting shape comes from a deep cast, not from whoever stood last on the stage."

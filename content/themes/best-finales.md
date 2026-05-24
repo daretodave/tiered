@@ -15,7 +15,7 @@ description: "Closing runs that pay off the season they spent a dozen episodes b
 entries:
   - show: amazing-race
     season: 7
-    season_label: "S07 · Season 7"
+    season_label: "S07"
     rank: 1
     title: "A final leg that proves the format's closing run is built right."
     blurb: "The Race always ends on a live sprint, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. The closing run is where this season turns a cult favorite into a network anchor."
@@ -39,13 +39,13 @@ entries:
     blurb: "The milestone framing earns itself in the closing run. Edge of Extinction reshapes the home stretch, the fire-token economy compresses into real currency, and the final tribal carries the weight of a roster that has played this game before."
   - show: traitors
     season: 2
-    season_label: "S02 · Season 2 (2024)"
+    season_label: "S02"
     rank: 5
     title: "The Round Table tightening into the closing run the format was built for."
     blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment freighted, the table smaller and louder each night. The closing stretch is where the US adaptation proves it can hold the tension all the way down."
   - show: dragrace
     season: 6
-    season_label: "S06 · Season 6"
+    season_label: "S06"
     rank: 6
     title: "A closing run that pays off two fully-formed queens at full height."
     blurb: "Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The closing hour lands a season whose cultural footprint outgrew its Logo airing."

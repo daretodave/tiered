@@ -541,6 +541,103 @@ describe('content-check — themed-list season_label vs canonical title (#101)',
   })
 })
 
+describe('content-check — themed-list season_label redundant "Season N" subtitle (#161)', () => {
+  let tmp: string
+  const redundantMsg = (fs: ReturnType<typeof collectThemeFailures>) =>
+    fs.filter((f) => /repeats the season number/.test(f.message))
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-redundant-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('fails when the subtitle restates "Season N" (matching the source title)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 7, 's7', 'Season 7')
+    makeTheme(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 7,
+      season_label: 'S07 · Season 7',
+    })
+    const problems = redundantMsg(collectThemeFailures())
+    expect(problems.length).toBe(1)
+    expect(problems[0]?.message).toMatch(/"Season 7"/)
+    expect(problems[0]?.message).toMatch(/use the bare "S07"/)
+  })
+
+  it('fails when the subtitle restates "Season N (YYYY)" with a parenthetical year', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 2, 's2', 'Season 2 (2024)')
+    makeTheme(tmp, 'best-villain-editing', {
+      show: 'alpha',
+      season: 2,
+      season_label: 'S02 · Season 2 (2024)',
+    })
+    const problems = redundantMsg(collectThemeFailures())
+    expect(problems.length).toBe(1)
+    expect(problems[0]?.message).toMatch(/"Season 2 \(2024\)"/)
+    expect(problems[0]?.message).toMatch(/use the bare "S02"/)
+  })
+
+  it('fails when the subtitle restates "Series N (YYYY)" (Love Island UK shape)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 1, 's1', 'Series 1 (2015)')
+    makeTheme(tmp, 'best-premieres', {
+      show: 'alpha',
+      season: 1,
+      season_label: 'S01 · Series 1 (2015)',
+    })
+    expect(redundantMsg(collectThemeFailures()).length).toBe(1)
+  })
+
+  it('passes the bare-numeric form "S07" (no subtitle, the canonical post-#161 shape)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 7, 's7', 'Season 7')
+    makeTheme(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 7,
+      season_label: 'S07',
+    })
+    expect(redundantMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('passes when the subtitle is a real proper name', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 20, 's20', 'Heroes vs. Villains')
+    makeTheme(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 20,
+      season_label: 'S20 · Heroes vs. Villains',
+    })
+    expect(redundantMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('passes a subtitle that starts with "Season" but reads as a real name (e.g. "Seasonal Cup")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 9, 's9', 'Seasonal Cup')
+    makeTheme(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 9,
+      season_label: 'S09 · Seasonal Cup',
+    })
+    expect(redundantMsg(collectThemeFailures())).toEqual([])
+  })
+
+  it('tolerates an entry with no season_label at all', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithTitle(tmp, 'alpha', 7, 's7', 'Season 7')
+    makeTheme(tmp, 'best-finales', { show: 'alpha', season: 7 })
+    expect(redundantMsg(collectThemeFailures())).toEqual([])
+  })
+})
+
 describe('content-check — era-band coverage (phase 34)', () => {
   let tmp: string
   const eraMsg = (fs: ReturnType<typeof collectFailures>) =>
