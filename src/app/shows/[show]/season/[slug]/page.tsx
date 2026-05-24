@@ -20,6 +20,7 @@ import {
   SeasonInfoCard,
   SeasonStatsStrip,
   SeasonTOC,
+  SeasonTOCMobile,
   ShieldBadge,
   VotePair,
   WatchList,
@@ -381,6 +382,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           <SeasonTOC sections={sections} />
 
           <article className="article" data-testid="season-article">
+            <SeasonTOCMobile sections={sections} />
             <section id="s-take" data-testid="section-take">
               <div className="article-eyebrow"><span className="num">01</span><span>The take</span></div>
               <h2>{season.title}.</h2>

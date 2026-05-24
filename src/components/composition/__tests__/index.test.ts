@@ -19,6 +19,7 @@ import * as SeasonHeroModule from '../SeasonHero'
 import * as SeasonInfoCardModule from '../SeasonInfoCard'
 import * as SeasonStatsStripModule from '../SeasonStatsStrip'
 import * as SeasonTOCModule from '../SeasonTOC'
+import * as SeasonTOCMobileModule from '../SeasonTOCMobile'
 import * as ShieldBadgeModule from '../ShieldBadge'
 import * as ShiftCardModule from '../ShiftCard'
 import * as ShiftsRowModule from '../ShiftsRow'
@@ -56,6 +57,7 @@ const EXPECTED_RUNTIME_KEYS = [
   'SeasonInfoCard',
   'SeasonStatsStrip',
   'SeasonTOC',
+  'SeasonTOCMobile',
   'ShieldBadge',
   'ShiftCard',
   'ShiftsRow',
@@ -87,6 +89,7 @@ describe('@/components/composition barrel — runtime re-exports', () => {
       expect(barrel.SeasonInfoCard).toBe(SeasonInfoCardModule.SeasonInfoCard)
       expect(barrel.SeasonStatsStrip).toBe(SeasonStatsStripModule.SeasonStatsStrip)
       expect(barrel.SeasonTOC).toBe(SeasonTOCModule.SeasonTOC)
+      expect(barrel.SeasonTOCMobile).toBe(SeasonTOCMobileModule.SeasonTOCMobile)
       expect(barrel.ShieldBadge).toBe(ShieldBadgeModule.ShieldBadge)
       expect(barrel.ShiftCard).toBe(ShiftCardModule.ShiftCard)
       expect(barrel.ShiftsRow).toBe(ShiftsRowModule.ShiftsRow)
@@ -102,7 +105,7 @@ describe('@/components/composition barrel — runtime re-exports', () => {
   })
 
   describe('public-surface key snapshot', () => {
-    it('exposes exactly the documented 26 runtime keys, nothing more, nothing less', () => {
+    it('exposes exactly the documented 27 runtime keys, nothing more, nothing less', () => {
       const keys = Object.keys(barrel).sort()
       expect(keys).toEqual([...EXPECTED_RUNTIME_KEYS].sort())
     })

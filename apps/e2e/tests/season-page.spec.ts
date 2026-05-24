@@ -148,6 +148,16 @@ test.describe('mobile @ 375px viewport', () => {
 
       await expect(page.getByTestId('vote-pair')).toBeVisible()
 
+      // Desktop right-rail TOC is hidden under 1100px (`.toc { display: none }`),
+      // so the mobile <details> companion must surface the same anchor list.
+      // Closes critique pass-7 finding #157: phone readers have no jump nav
+      // unless the mobile TOC ships.
+      const mobileToc = page.getByTestId('season-toc-mobile')
+      await expect(mobileToc).toBeVisible()
+      await expect(mobileToc).toHaveJSProperty('open', false)
+      const mobileLinks = page.getByTestId('toc-mobile-link')
+      expect(await mobileLinks.count()).toBeGreaterThanOrEqual(3)
+
       const overflow = await page.evaluate(() => ({
         scrollWidth: document.documentElement.scrollWidth,
         clientWidth: document.documentElement.clientWidth,

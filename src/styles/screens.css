@@ -727,6 +727,75 @@
 }
 .toc-list a:hover .toc-num, .toc-list a.active .toc-num { color: var(--show-primary); }
 
+/* Mobile TOC — collapsed details/summary at the top of the article.
+   Hidden by default; CSS-shown below 1100px when the desktop left-rail
+   TOC drops out. Native <details> so anchor jumps work without JS. */
+.toc-mobile { display: none; }
+@media (max-width: 1100px) {
+  .toc-mobile {
+    display: block;
+    margin: 0 0 32px;
+    padding: 0;
+    border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
+  }
+  .toc-mobile > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    color: var(--show-ink);
+  }
+  .toc-mobile > summary::-webkit-details-marker { display: none; }
+  .toc-mobile > summary::after {
+    content: "+";
+    font: 500 18px/1 var(--mono);
+    color: color-mix(in oklab, var(--show-ink) 55%, transparent);
+    margin-left: 8px;
+    transition: transform 200ms cubic-bezier(.4,0,.2,1);
+  }
+  .toc-mobile[open] > summary::after { content: "–"; }
+  .toc-mobile-head {
+    font: 500 11px/1 var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--show-ink) 70%, transparent);
+  }
+  .toc-mobile-meta {
+    font: 500 10px/1 var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--show-ink) 45%, transparent);
+  }
+  .toc-mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .toc-mobile-list li { border-top: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); }
+  .toc-mobile-list a {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.35;
+    color: color-mix(in oklab, var(--show-ink) 75%, transparent);
+    letter-spacing: -0.005em;
+  }
+  .toc-mobile-list a:hover { color: var(--show-primary); }
+  @media (prefers-reduced-motion: reduce) {
+    .toc-mobile > summary::after { transition: none; }
+  }
+}
+
 /* ARTICLE column */
 .article { min-width: 0; max-width: 720px; }
 .article-eyebrow {
