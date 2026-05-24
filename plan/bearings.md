@@ -514,8 +514,13 @@ season"). The `content-check` invariant `collectYearTenureIssues`
 scans every editorial surface (show frontmatter, season
 frontmatter + body, canon entry rationale + metadata) for
 `\b<tens>-<word> years\b` and pins each match to today's
-`numberToWords(yearsSinceEst(estYear))`. Lax during the phase-43
-drain, strict at the final tick.
+`numberToWords(yearsSinceEst(estYear))`. **Strict since the
+phase-43 final tick** — a literal that no longer matches today's
+helper-derived value fails `pnpm content:check` (allowlisted via
+`TENURE_ANCHOR_ALLOWLIST` only for milestone-anchored canon
+entries like Survivor S40 "Winners at War"). The `/shows/survivor`
+e2e additionally asserts the rendered tagline word equals
+exactly what the helper reads today.
 
 ### Rule 3 — themed list quota
 Launch ships ≥ 10 themed lists (best premieres, best finales,

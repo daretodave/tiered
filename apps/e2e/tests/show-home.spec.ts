@@ -91,6 +91,36 @@ for (const url of showHomeUrls) {
   })
 }
 
+// Phase 43 final tick — Survivor's `est_year` is 2000 with a
+// May 31 anniversary anchor (see SHOW_ANNIVERSARIES in
+// `src/lib/show-tenure.ts`). The helper reads "twenty-five" until
+// May 30 of any given year, then "twenty-six" / "twenty-seven" /
+// ... from May 31 onward. Mirrored inline because `apps/e2e` is
+// an isolated package without a path mapping back to `src/lib/`;
+// the four-entry fallback map covers the realistic lifetime of
+// this fixture (drop or extend when Survivor S30 hits the air).
+const SURVIVOR_TENURE_WORDS: Readonly<Record<number, string>> = {
+  25: 'twenty-five',
+  26: 'twenty-six',
+  27: 'twenty-seven',
+  28: 'twenty-eight',
+}
+
+function derivedSurvivorTenureWord(asOfDate: Date = new Date()): string {
+  const refYear = asOfDate.getUTCFullYear()
+  const refMonth = asOfDate.getUTCMonth() + 1
+  const refDay = asOfDate.getUTCDate()
+  const beforeAnniversary = refMonth < 5 || (refMonth === 5 && refDay < 31)
+  const years = refYear - 2000 - (beforeAnniversary ? 1 : 0)
+  const word = SURVIVOR_TENURE_WORDS[years]
+  if (!word) {
+    throw new Error(
+      `Survivor tenure ${years} outside this fixture's window (${Object.keys(SURVIVOR_TENURE_WORDS).join(', ')}); update SURVIVOR_TENURE_WORDS in show-home.spec.ts`,
+    )
+  }
+  return word
+}
+
 test.describe('phase 43 — tagline token substitution (Survivor)', () => {
   test('show-hero-tagline renders the substituted years word, never the raw token', async ({
     page,
@@ -103,11 +133,13 @@ test.describe('phase 43 — tagline token substitution (Survivor)', () => {
     // raw template syntax leak to a reader.
     expect(text).not.toContain('{yearsWord}')
     expect(text).not.toContain('{years}')
-    // Survivor S1 premiered 2000-05-31, so today's reading is in the
-    // twenty-five / twenty-six range for the lifetime of this fixture.
-    // The pair stays accurate from now through Survivor's 27th
-    // anniversary in May 2027.
-    expect(text).toMatch(/twenty-(five|six|seven) years/)
+    // Final-tick smoke assertion: the rendered word equals exactly
+    // what `numberToWords(yearsSinceEst(2000))` reads today. A
+    // hardcoded "twenty-five" that survives past May 31 is the rot
+    // class Phase 43 closed — this expectation flips red the moment
+    // the production substitution drifts from the helper.
+    const expectedWord = derivedSurvivorTenureWord()
+    expect(text).toContain(`${expectedWord} years`)
   })
 })
 

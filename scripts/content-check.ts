@@ -497,13 +497,15 @@ function main(): number {
     }
   }
 
-  // Phase 43: year-tenure invariant. Lax during the drain — a
-  // phrase like "twenty-five years" that does not match today's
-  // `numberToWords(yearsSinceEst(estYear))` is printed as a
-  // warning so the editor can see the rot before the final tick
-  // flips `YEAR_TENURE_STRICT` to true (one-line change, mirrors
-  // STRICT and CROSS_SHOW_STRICT above).
-  const YEAR_TENURE_STRICT = false
+  // Phase 43: year-tenure invariant. Strict since the final tick
+  // (this commit) — every spelled-out tenure phrase in editorial
+  // copy must either match today's
+  // `numberToWords(yearsSinceEst(estYear))`, be allowlisted via
+  // `TENURE_ANCHOR_ALLOWLIST` (milestone-anchored canon entries),
+  // or be rephrased to drop the literal ("a quarter-century",
+  // "the franchise's first decade"). Mirrors the STRICT and
+  // CROSS_SHOW_STRICT toggles above.
+  const YEAR_TENURE_STRICT = true
   const yearTenureIssues = collectYearTenureIssues()
   if (YEAR_TENURE_STRICT) {
     failures.push(...yearTenureIssues)
