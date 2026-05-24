@@ -6,7 +6,7 @@ type HomeHeroProps = {
   featured: Show
   /** "Seasons ranked" stat — defaults to `featured.seasons`. */
   seasonsRanked?: number
-  /** "Canon revised" stat label — pre-formatted as `MM / YY`. */
+  /** "Canon revised" stat label — pre-formatted as `Month YYYY`. */
   canonRevisedLabel: string
 }
 

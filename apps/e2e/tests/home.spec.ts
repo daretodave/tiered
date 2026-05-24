@@ -83,9 +83,10 @@ test('hero stat strip surfaces seasons ranked + canon revised', async ({
   const stats = page.getByTestId('home-hero-stats')
   await expect(stats).toContainText(/seasons ranked/i)
   await expect(stats).toContainText(/canon revised/i)
-  // Canon revised label is formatted "MM / YY"; cheap shape check.
+  // Canon revised label is the editorial "Month YYYY" form (critique
+  // pass 7 retired the ambiguous MM / YY shape); cheap shape check.
   const revised = page.getByTestId('home-hero-canon-revised')
-  await expect(revised).toHaveText(/^\d{2}\s\/\s\d{2}$/)
+  await expect(revised).toHaveText(/^[A-Z][a-z]+\s\d{4}$/)
 })
 
 test('hero copy column carries the est-2026 eyebrow + the CTAs', async ({ page }) => {

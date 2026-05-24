@@ -22,7 +22,7 @@ function survivor(overrides: Partial<Show> = {}): Show {
   }
 }
 
-const CANON_LABEL = '04 / 26'
+const CANON_LABEL = 'April 2026'
 
 describe('<HomeHero>', () => {
   it('renders the cover wordmark with the featured show name', () => {

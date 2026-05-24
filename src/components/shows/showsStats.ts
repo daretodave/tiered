@@ -1,4 +1,5 @@
 import type { Show } from '@/content'
+import { formatCanonRevisedLabel } from '@/lib/canon/last-revised'
 
 export type ShowsStats = {
   showCount: number
@@ -6,14 +7,11 @@ export type ShowsStats = {
   lastRevision: string
 }
 
-function pad2(n: number): string {
-  return n < 10 ? `0${n}` : `${n}`
-}
-
+// Reuses the canon-revised formatter so `/shows`, `/`, and per-show
+// pages all stamp the recency in the same editorial "Month YYYY" form
+// (critique pass 7 caught the MM / YY shape reading as machine output).
 export function formatRevision(today: Date): string {
-  const month = today.getUTCMonth() + 1
-  const year = today.getUTCFullYear() % 100
-  return `${pad2(month)} / ${pad2(year)}`
+  return formatCanonRevisedLabel(today)
 }
 
 export function computeShowsStats(

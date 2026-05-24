@@ -6,7 +6,7 @@ describe('<ShowsHero>', () => {
   it('renders the eyebrow + the All shows / Tiered title pair', () => {
     render(
       <ShowsHero
-        stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
         tiers={['S', 'A']}
       />,
     )
@@ -19,7 +19,7 @@ describe('<ShowsHero>', () => {
   it('renders the three stats with values + keys', () => {
     render(
       <ShowsHero
-        stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
         tiers={['S', 'A']}
       />,
     )
@@ -34,7 +34,7 @@ describe('<ShowsHero>', () => {
       'Seasons ranked',
     )
     expect(screen.getByTestId('shows-stat-revised').textContent).toContain(
-      '05 / 26',
+      'May 2026',
     )
     expect(screen.getByTestId('shows-stat-revised').textContent).toContain(
       'Last revision',
@@ -44,7 +44,7 @@ describe('<ShowsHero>', () => {
   it('puts the primary em accent on "Tiered."', () => {
     const { container } = render(
       <ShowsHero
-        stats={{ showCount: 1, totalSeasons: 1, lastRevision: '01 / 26' }}
+        stats={{ showCount: 1, totalSeasons: 1, lastRevision: 'January 2026' }}
         tiers={['S']}
       />,
     )
@@ -56,7 +56,7 @@ describe('<ShowsHero>', () => {
   it('omits the B-tier sentence when no show sits in B', () => {
     render(
       <ShowsHero
-        stats={{ showCount: 13, totalSeasons: 290, lastRevision: '05 / 26' }}
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
         tiers={['S', 'A']}
       />,
     )
@@ -70,7 +70,7 @@ describe('<ShowsHero>', () => {
   it('includes the B-tier sentence once a show lands in B', () => {
     render(
       <ShowsHero
-        stats={{ showCount: 14, totalSeasons: 300, lastRevision: '05 / 26' }}
+        stats={{ showCount: 14, totalSeasons: 300, lastRevision: 'May 2026' }}
         tiers={['S', 'A', 'B']}
       />,
     )

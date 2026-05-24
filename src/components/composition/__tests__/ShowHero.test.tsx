@@ -28,7 +28,7 @@ describe('<ShowHero>', () => {
         crumb="x"
         stats={[
           { value: 47, key: 'seasons aired' },
-          { value: '05 / 26', key: 'Canon revised' },
+          { value: 'May 2026', key: 'Canon revised' },
         ]}
       />,
     )
@@ -36,7 +36,7 @@ describe('<ShowHero>', () => {
     expect(stats).toBeInTheDocument()
     expect(stats.textContent).toContain('47')
     expect(stats.textContent).toContain('seasons aired')
-    expect(stats.textContent).toContain('05 / 26')
+    expect(stats.textContent).toContain('May 2026')
     expect(stats.textContent).toContain('Canon revised')
   })
 

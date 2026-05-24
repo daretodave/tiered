@@ -21,10 +21,10 @@ function show(overrides: Partial<Show> = {}): Show {
 }
 
 describe('formatRevision', () => {
-  it('returns MM / YY zero-padded', () => {
-    expect(formatRevision(new Date(Date.UTC(2026, 3, 15)))).toBe('04 / 26')
-    expect(formatRevision(new Date(Date.UTC(2026, 11, 1)))).toBe('12 / 26')
-    expect(formatRevision(new Date(Date.UTC(2030, 0, 1)))).toBe('01 / 30')
+  it('renders the editorial "Month YYYY" form', () => {
+    expect(formatRevision(new Date(Date.UTC(2026, 3, 15)))).toBe('April 2026')
+    expect(formatRevision(new Date(Date.UTC(2026, 11, 1)))).toBe('December 2026')
+    expect(formatRevision(new Date(Date.UTC(2030, 0, 1)))).toBe('January 2030')
   })
 })
 
@@ -41,7 +41,7 @@ describe('computeShowsStats', () => {
     )
     expect(stats.showCount).toBe(3)
     expect(stats.totalSeasons).toBe(88)
-    expect(stats.lastRevision).toBe('05 / 26')
+    expect(stats.lastRevision).toBe('May 2026')
   })
 
   it('returns zeros for an empty roster', () => {

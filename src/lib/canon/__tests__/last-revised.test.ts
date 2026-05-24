@@ -6,38 +6,38 @@ import {
 } from '../last-revised'
 
 describe('formatCanonRevisedLabel', () => {
-  it('formats April 2026 as "04 / 26"', () => {
+  it('formats April 2026 as "April 2026"', () => {
     expect(formatCanonRevisedLabel(new Date('2026-04-12T00:00:00Z'))).toBe(
-      '04 / 26',
+      'April 2026',
     )
   })
 
-  it('zero-pads single-digit months', () => {
+  it('renders single-digit months without zero padding', () => {
     expect(formatCanonRevisedLabel(new Date('2026-01-01T12:00:00Z'))).toBe(
-      '01 / 26',
+      'January 2026',
     )
   })
 
-  it('shows two-digit year for years beyond the century', () => {
+  it('renders the full four-digit year for years beyond the century', () => {
     expect(formatCanonRevisedLabel(new Date('2030-12-31T12:00:00Z'))).toBe(
-      '12 / 30',
+      'December 2030',
     )
   })
 
   it('uses UTC accessors — UTC midnight Jan 1 is January, not December', () => {
-    // A local-TZ formatter west of UTC would print "12 / 25" for this
-    // input. The formatter pins UTC to keep the home (`new Date()` at
-    // build) and show page (ISO frontmatter) in sync regardless of
+    // A local-TZ formatter west of UTC would print "December 2025" for
+    // this input. The formatter pins UTC to keep the home (`new Date()`
+    // at build) and show page (ISO frontmatter) in sync regardless of
     // where the build runs.
     expect(formatCanonRevisedLabel(new Date('2026-01-01T00:00:00Z'))).toBe(
-      '01 / 26',
+      'January 2026',
     )
   })
 })
 
 describe('canonRevisedLabelFromIso', () => {
   it('formats a real canon last_revised ISO date', () => {
-    expect(canonRevisedLabelFromIso('2026-05-19')).toBe('05 / 26')
+    expect(canonRevisedLabelFromIso('2026-05-19')).toBe('May 2026')
   })
 
   it('returns null for undefined input (canon without last_revised)', () => {
@@ -55,19 +55,19 @@ describe('canonRevisedLabelFromIso', () => {
   it('parses dates at the UTC day boundary consistently', () => {
     // 2026-01-01 must read as January 2026, not December 2025, no
     // matter what TZ the runner sits in.
-    expect(canonRevisedLabelFromIso('2026-01-01')).toBe('01 / 26')
+    expect(canonRevisedLabelFromIso('2026-01-01')).toBe('January 2026')
   })
 })
 
 describe('getCanonRevisedLabel', () => {
   it('delegates to formatCanonRevisedLabel for the supplied date', () => {
     expect(getCanonRevisedLabel(new Date('2026-05-20T00:00:00Z'))).toBe(
-      '05 / 26',
+      'May 2026',
     )
   })
 
   it('defaults the argument to a fresh `new Date()`', () => {
     const out = getCanonRevisedLabel()
-    expect(out).toMatch(/^\d{2}\s\/\s\d{2}$/)
+    expect(out).toMatch(/^[A-Z][a-z]+\s\d{4}$/)
   })
 })
