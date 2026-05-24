@@ -1,21 +1,20 @@
 # CRITIQUE
 
-> Last pass: 2026-05-23 at commit 8d71196
-> Pass count: 6
+> Last pass: 2026-05-24 at commit 4258083
+> Pass count: 7
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 6 ran in the cloud loop via Path A2
+> cadence is active. Pass 7 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Reader sub-agent
-> shelled out to the walk script itself this pass — the Bash
-> tool now sits in `.claude/agents/reader.md`'s tool allow-list
-> (added 2026-05-23 via oversight, commit 907386d, closing the
-> pass-5 metadata-note follow-up). Both anon and authed walks
-> ran end-to-end. The walk-teardown `net::ERR_ABORTED` artifact
-> filtered in #139 did not resurface — `isRscPrefetchAbort` is
-> holding. The `settleForHydration` settle (#125) is also
-> holding: authed chrome captured post-hydration as `@e2e /
-> Sign out`, not the pre-hydration "Sign in" SSR DOM.
+> isolated context, no Chrome MCP needed). Both anon (6 URLs)
+> and authed (4 URLs) walks ran end-to-end across desktop +
+> mobile viewports — 20 captures total. Mechanical health bar
+> remained clean (zero console errors, zero failed first-party
+> requests, all 200s, all H1s present, all `scrollWidth ===
+> innerWidth` at 375px). Pass-5/6 filters (#139 RSC ERR_ABORTED,
+> #125 settleForHydration) continue to hold. Authed chrome
+> captured post-hydration as `@e2e / Sign out` across all four
+> URLs — Path A2's mode determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -30,6 +29,31 @@
 
 ## Pending
 
+> Pass 7 (2026-05-24, commit 4258083) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
+> Six findings filed (0 HIGH, 5 MED, 1 LOW). Mechanical pass
+> emitted zero findings — every URL returned 200, no console
+> errors, no failed network, no horizontal scroll, all H1s
+> present, all SEO tags present. Pass-5/6 filters (#139, #125)
+> continue to hold. Reader's qualitative pass surfaced one
+> P0-adjacent spoiler-discipline edge (Heroes vs. Villains
+> EPISODE HEAT + EP-numbered "WHAT TO WATCH FOR" cards disclose
+> merge timing despite the no-spoilers promise), two mobile
+> chrome gaps (header nav drops below 768px so /shows + /themes
+> become unreachable from chrome at 375px; season-page TOC
+> absent on mobile), one voice/comprehension row on the date
+> format (`05 / 26 CANON REVISED` reads as machine output on
+> /, /shows, /shows/<show>), one composer redundancy on the
+> signed-in season render, and one footer-version row
+> (`v0.0.0` on every page undercuts the editorial confidence
+> claims). One HIGH from reader's authed walk (no visible
+> vote affordances) was dropped as likely text-capture
+> artifact — Path A2 reads `document.body.innerText` and would
+> miss icon-only buttons; previous passes walked the same URL
+> and didn't flag it. One MED on /u/e2e empty-state voice was
+> dropped as a duplicate of the open Pending row from pass 6.
+>
 > Pass 6 (2026-05-23, commit 8d71196) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > in a fresh isolated context across 6 anon URLs + 4 authed
@@ -53,6 +77,18 @@
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
+
+- [ ] [MED] [anon] / and /shows and /shows/<show> render the canon-revised date as `05 / 26` (eyebrow "CANON REVISED", "LAST REVISION") — the slash format is ambiguous to a first-time visitor (May 2026? 5-of-26 revisions? week 5 of 2026?) and reads as machine output rather than editorial. Bearings voice rule: plain-spoken. Fix: render the date in editorial form — "Revised May 2026" or "Last revised: May 2026" — wherever the slashed numeric appears. (URL: /, /shows, /shows/survivor, source: critique-pass-7) — 4258083
+
+- [ ] [MED] [anon] /shows/survivor/season/heroes-villains EPISODE HEAT block ("peak run · eps 7–9, 11") plus the "WHAT TO WATCH FOR" cards labeled "EP 7 · LONG TAKE", "EP 9 · MERGE", "EP 11 · THIRD ACT" disclose when the merge falls and which episodes carry the season's dramatic density. The page surfaces a "no spoilers" badge three times, but merge-episode timing is itself a story beat in a season where merge timing is the pivot — a reader 3 episodes in now knows to brace for ep 7 and ep 9. P0-adjacent spoiler-discipline edge. Fix: reframe the "WHAT TO WATCH FOR" cards without explicit episode numbers (phase labels — "EARLY · LONG TAKE", "MID · MERGE", "LATE · THIRD ACT") and drop the explicit ep range from EPISODE HEAT, or gate the precise eps behind a "show episode numbers" toggle. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-7) — 4258083
+
+- [ ] [LOW] [anon] Footer prints `v0.0.0` on every public page, immediately after the brand line `est. as a quiet rebellion against ranked lists that ruin the show`. The home and /shows pages make confidence claims — "editor's canon", "revised quarterly", "stable list" — and the version string undercuts them: a first-time visitor reads `v0.0.0` as "this is not finished". Either remove the version from the public footer, move it to a build-info attribute / `<meta>` tag, or bump past `0.0.0` so the public surface stops signaling pre-release. (URL: every page, source: critique-pass-7) — 4258083
+
+- [ ] [MED] [authed] /shows/survivor/season/heroes-villains thread section on the signed-in render places two empty-state prompts back-to-back with no content between them — the composer carries "BE THE FIRST · Add a thought · no spoilers, please. ⏎" and the next block reads "No comments yet. Weigh in on the season, not the result." Two voices doing the same job for the same user: one playful imperative, one stern editorial guardrail. A signed-in member about to type does not need both. Fix: collapse to one line on signed-in render — composer placeholder carries the "no spoilers" nudge; drop the "No comments yet. Weigh in…" empty-state when the composer is rendered. Reserve the empty-state line for the anonymous view where the composer is replaced by a sign-in prompt. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-7) — 4258083
+
+- [ ] [MED] [authed] /shows/survivor/season/heroes-villains at 375px drops the "ON THIS PAGE" right-rail TOC entirely — desktop renders a six-item jump nav ("01 The take … 06 Also appears in") that maps to a long, structurally-numbered body, but the mobile capture goes straight from EPISODE HEAT into "01 THE TAKE" with no jump affordance. A phone reader has to thumb-scroll the entire piece to skim. Fix: render the TOC as a collapsed `<details>/<summary>` at the top of the season body on mobile, or as a sticky pill nav; same six anchors as desktop. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-7) — 4258083
+
+- [ ] [MED] [authed] At 375px the global header drops the primary nav ("Shows", "Lists", "About") entirely on every page — only `tiered.tv`, ⌕ Search, the handle, and "Sign out" remain. No hamburger surface in the rendered text either. A signed-in mobile reader cannot reach /shows or /themes from the chrome without scrolling to in-page "Browse all shows" or to the footer. Same chrome shrinkage on the anon mobile walk (so it affects every visitor, not just members). Fix: add a visible menu trigger at <768px that exposes Shows / Lists / About, or move the three into a slim sub-bar below the brand mark so chrome navigation works at every viewport. Verify there is no icon-only hamburger already rendered that the text-only capture missed before implementing — but if missing, this blocks the entire mobile read of the catalog. (URL: every page at 375px, source: critique-pass-7) — 4258083
 
 - [ ] [MED] [anon] /shows/survivor/season/heroes-villains HOST stat caption reads "tenth season at the helm" on Season 20 — Probst hosted Survivor from S1 unbroken, so by S20 he is in his 20th season at the helm, not his tenth; the caption is a hardcoded constant misapplied per-season. Phase 43 editorial-honesty class with a sharper edge — this one is factually wrong now, not just drifting. Fix: derive the ordinal from the season number, or drop the per-season caption and lean on the host's tenure on the show page rather than the season page. Source: `content/shows/survivor/seasons/20-heroes-villains.md` line 22 (`host_caption: "tenth season at the helm"`). (URL: /shows/survivor/season/heroes-villains, source: critique-pass-6) — 8d71196
 
