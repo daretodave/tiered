@@ -243,7 +243,6 @@
   overflow-wrap: anywhere;
   word-break: break-word;
 }
-.site-footer-meta-version { opacity: 0.85; flex: 0 0 auto; }
 .site-footer-meta-toggle { display: inline-flex; flex: 0 0 auto; }
 
 @media (max-width: 720px) {

@@ -54,10 +54,16 @@ describe('<Footer>', () => {
     )
   })
 
-  it('renders the package version in the meta strip', () => {
+  it('does not surface a package version in the meta strip', () => {
+    // Critique pass 7: `v0.0.0` undercut every page's editorial-confidence
+    // claims. The footer carries no public version string.
     render(<Footer />)
-    const v = screen.getByTestId('site-footer-meta-version')
-    expect(v.textContent).toMatch(/^v\d/)
+    expect(
+      screen.queryByTestId('site-footer-meta-version'),
+    ).not.toBeInTheDocument()
+    expect(screen.getByTestId('site-footer').textContent ?? '').not.toMatch(
+      /\bv\d+\.\d+\.\d+/,
+    )
   })
 
   it('applies tinted class when tinted={true}', () => {
