@@ -102,7 +102,11 @@ export function CommentThreadLive({
   const hasBody = state.comments.length > 0
 
   return (
-    <CommentThread count={state.count} input={input}>
+    <CommentThread
+      count={state.count}
+      input={input}
+      hideEmpty={state.signedIn}
+    >
       {hasBody ? (
         <ul className="comment-list" data-testid="comment-list">
           {state.comments.map((c) => (

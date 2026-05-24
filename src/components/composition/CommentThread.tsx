@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 type CommentThreadProps = {
   count?: number
   input: ReactNode
+  hideEmpty?: boolean
   children?: ReactNode
 }
 
@@ -17,10 +18,22 @@ type CommentThreadProps = {
  * implementation status. `count` is the public published count, so
  * a held-only thread still reads "Be the first" in the meta strip
  * while showing the author's held row below.
+ *
+ * `hideEmpty` suppresses the empty-state line when the caller's
+ * `input` slot already carries the "weigh in, no spoilers" nudge —
+ * the signed-in composer placeholder doubles the message otherwise.
+ * Reserve the empty-state for the signed-out render where the
+ * composer is replaced by a sign-in stub.
  */
-export function CommentThread({ count = 0, input, children }: CommentThreadProps) {
+export function CommentThread({
+  count = 0,
+  input,
+  hideEmpty = false,
+  children,
+}: CommentThreadProps) {
   const hasComments = count > 0
   const hasBody = children != null
+  const showEmpty = !hasBody && !hideEmpty
   return (
     <div data-testid="comment-thread" className="comment-thread">
       <div className="aside-head">
@@ -32,9 +45,8 @@ export function CommentThread({ count = 0, input, children }: CommentThreadProps
         </span>
       </div>
       {input}
-      {hasBody ? (
-        children
-      ) : (
+      {hasBody ? children : null}
+      {showEmpty ? (
         <p
           className="comment-body"
           data-testid="comment-thread-empty"
@@ -42,7 +54,7 @@ export function CommentThread({ count = 0, input, children }: CommentThreadProps
         >
           No comments yet. Weigh in on the season, not the result.
         </p>
-      )}
+      ) : null}
     </div>
   )
 }

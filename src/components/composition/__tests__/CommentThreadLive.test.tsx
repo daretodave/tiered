@@ -99,6 +99,23 @@ describe('<CommentThreadLive>', () => {
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
 
+  it('drops the empty-state when signed in with zero comments — composer carries the nudge', async () => {
+    stubFetch({ ok: true, signedIn: true, count: 0, comments: [] })
+    render(
+      <CommentThreadLive
+        targetType="season"
+        targetId="survivor:20"
+        signInHref="/sign-in"
+      />,
+    )
+    await waitFor(() => {
+      expect(screen.getByTestId('comment-stub')).toBeInTheDocument()
+    })
+    expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
+    expect(screen.getByTestId('comment-count')).toHaveTextContent('Be the first')
+    expect(screen.queryByTestId('comment-list')).toBeNull()
+  })
+
   it('keeps the empty state when the fetch fails (always-working)', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('offline')))
     render(

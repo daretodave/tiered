@@ -55,4 +55,35 @@ describe('<CommentThread>', () => {
     expect(screen.getByTestId('comment-count').textContent).toContain('1 comment')
     expect(screen.getByTestId('comment-count').textContent).not.toContain('comments')
   })
+
+  it('hideEmpty suppresses the empty-state at count=0 even without children', () => {
+    render(
+      <CommentThread
+        count={0}
+        hideEmpty
+        input={<div data-testid="input-slot">composer</div>}
+      />,
+    )
+    expect(screen.getByTestId('input-slot')).toBeInTheDocument()
+    expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
+    expect(screen.getByTestId('comment-count').textContent).toContain('Be the first')
+  })
+
+  it('hideEmpty=false (default) keeps prior empty-state behavior at count=0', () => {
+    render(<CommentThread count={0} input={<div />} hideEmpty={false} />)
+    expect(screen.getByTestId('comment-thread-empty')).toBeInTheDocument()
+  })
+
+  it('hideEmpty does not suppress real thread children when present', () => {
+    render(
+      <CommentThread count={3} hideEmpty input={<div />}>
+        <ul data-testid="thread-list">
+          <li>x</li>
+        </ul>
+      </CommentThread>,
+    )
+    expect(screen.getByTestId('thread-list')).toBeInTheDocument()
+    expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
+    expect(screen.getByTestId('comment-count').textContent).toContain('3 comments')
+  })
 })
