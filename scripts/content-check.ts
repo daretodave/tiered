@@ -335,8 +335,13 @@ export function collectCalendarFailures(): Failure[] {
 // each entry names the show, the canon entry's title, and the
 // exact phrase it permits — so a future copy that just happens to
 // say "twenty years" outside that entry still fails.
+// Case-insensitive: editorial copy capitalizes the lede word
+// ("Twenty-five years in, ...") and the lowercase-only form let
+// the rotting H&V pull slip past the invariant. Comparison
+// against `expectedPhrase` and the anchor allowlist is also
+// case-insensitive below.
 const YEAR_TENURE_RE =
-  /\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:-\w+)? years\b/g
+  /\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:-\w+)? years\b/gi
 
 type TenureAnchor = {
   show: string
@@ -362,9 +367,10 @@ function isAnchorAllowed(
   phrase: string,
 ): boolean {
   if (!entryTitle) return false
+  const phraseLower = phrase.toLowerCase()
   for (const anchor of TENURE_ANCHOR_ALLOWLIST) {
     if (anchor.show !== show) continue
-    if (anchor.phrase !== phrase) continue
+    if (anchor.phrase.toLowerCase() !== phraseLower) continue
     if (anchor.entryTitle.test(entryTitle)) return true
   }
   return false
@@ -438,11 +444,12 @@ export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
     }
 
     const expectedPhrase = `${expectedWord} years`
+    const expectedPhraseLower = expectedPhrase.toLowerCase()
     for (const { where, text, entryTitle } of sources) {
       if (!text) continue
       for (const match of text.matchAll(YEAR_TENURE_RE)) {
         const phrase = match[0]
-        if (phrase === expectedPhrase) continue
+        if (phrase.toLowerCase() === expectedPhraseLower) continue
         if (isAnchorAllowed(show.slug, entryTitle, phrase)) continue
         issues.push({
           file: where,

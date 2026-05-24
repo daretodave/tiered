@@ -1241,4 +1241,43 @@ ${Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')}
       issues.some((i) => /bachelor/.test(i.file) && /twenty years/.test(i.message)),
     ).toBe(true)
   })
+
+  it('catches a capitalized spelled-out year phrase ("Twenty-five years")', () => {
+    // Phase 43 tick 7 originally landed the regex case-sensitive
+    // (lowercase only); editorial copy that starts a sentence with
+    // the literal ("Twenty-five years in, ...") slipped past until
+    // critique pass 6 (#163) flagged the H&V pull rotting on
+    // 2026-05-31. The `gi` flag + case-insensitive comparison
+    // closes the hole.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 1999,
+      tagline: 'A clean tagline.',
+    })
+    const seasonFile = path.join(
+      tmp,
+      'shows',
+      'survivor',
+      'seasons',
+      '20-heroes-villains.md',
+    )
+    mkdirSync(path.dirname(seasonFile), { recursive: true })
+    writeFileSync(
+      seasonFile,
+      `---
+show: survivor
+number: 20
+title: Heroes vs. Villains
+pull: "Twenty-five years in, this is the season Survivor will still be measured against."
+---
+
+${Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')}
+`,
+    )
+    // est_year=1999, asOf=2026-05-23 → 27 years today (Jan 1 anchor
+    // since this fixture has no SHOW_ANNIVERSARIES entry). Capital-T
+    // "Twenty-five years" rots vs the helper-derived "twenty-seven".
+    const issues = collectYearTenureIssues(asOf)
+    expect(issues.some((i) => /20-heroes-villains\.md \(pull\)/.test(i.file))).toBe(true)
+    expect(issues[0]?.message).toMatch(/Twenty-five years/)
+  })
 })
