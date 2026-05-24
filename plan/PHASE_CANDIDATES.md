@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-22 at commit 04427df
-> Pass count: 5
+> Last pass: 2026-05-24 at commit 5e21809
+> Pass count: 6
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,34 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 6 (2026-05-24, commit 5e21809) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 Pending rows.
+     - CRITIQUE.md: 7 Pending rows from pass-6; 3 already addressed
+       by phase 43 ticks (host-caption ordinal #5, twenty-five-years
+       sweep #6, MIN READ derivation #4) — the remaining 3 are
+       individual MED/LOW findings (voter-state pill on YOUR VOTE
+       block, /u/<handle> empty-state voice rewrite, /themes "By era"
+       zero-count chip) and 1 LOW that already absorbed into the
+       phase-43 year-tenure invariant scope. No cluster ≥3 HIGH
+       findings on the same surface; no class-pattern that would
+       warrant a phase rather than per-tick `/iterate` polish.
+     - GitHub issues: 0 unlabeled.
+     - spec.md + design/: no diffs since pass 5 (commit 04427df).
+     - Commit pattern: 41 commits since pass 5 — 16 phase-42 + 8
+       phase-43 + 7 misc iterate-polish; all anticipated drains from
+       previously-promoted candidates (#10 and #09), no rogue
+       refactor surface.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score 3.0)
+       still gated on S1 (domain swap). No change.
+
+     The two promoted candidates from pass 5 (#10 → Phase 42, #09 →
+     Phase 43) both shipped between pass 5 and pass 6, so the
+     accumulated signals that fed pass 5 have been drained. No new
+     structural gap has emerged; the build plan is in a clean
+     re-exhausted state. Bumping metadata; awaiting the next pass'
+     cadence window for fresh signals to accumulate. -->
 
 ### 03. Newsletter subscribe (Buttondown embed)
 
