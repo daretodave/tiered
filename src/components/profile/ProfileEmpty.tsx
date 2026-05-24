@@ -5,8 +5,8 @@
 export function ProfileEmpty() {
   return (
     <p className="text-ink-2" data-testid="profile-empty">
-      No public activity yet. Votes and published comments will show up
-      here.
+      Nothing on the public record yet. Vote on a season pair, weigh in
+      on a thread, and it will land here.
     </p>
   )
 }

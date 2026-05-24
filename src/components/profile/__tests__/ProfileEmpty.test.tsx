@@ -19,7 +19,7 @@ describe('<ProfileEmpty>', () => {
   it('renders the canonical empty-state copy verbatim', () => {
     render(<ProfileEmpty />)
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'No public activity yet. Votes and published comments will show up here.',
+      'Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here.',
     )
   })
 
