@@ -87,3 +87,22 @@ for (const url of canonicalUrls) {
     })
   })
 }
+
+// Critique-pass-7: at 375px the primary nav (Shows / Lists / About)
+// must remain reachable from the header. Previously it was hidden
+// via `display: none`, stranding mobile readers without a path to
+// the catalog from chrome.
+test.describe('chrome: mobile @ 375px primary nav', () => {
+  test.use({ viewport: { width: 375, height: 812 } })
+
+  for (const path of ['/', '/shows', '/themes/best-premieres'] as const) {
+    test(`primary nav links visible on ${path}`, async ({ page }) => {
+      await page.goto(path, { waitUntil: 'domcontentloaded' })
+      const nav = page.getByRole('navigation', { name: /primary/i })
+      await expect(nav).toBeVisible()
+      await expect(nav.getByRole('link', { name: 'Shows' })).toBeVisible()
+      await expect(nav.getByRole('link', { name: 'Lists' })).toBeVisible()
+      await expect(nav.getByRole('link', { name: 'About' })).toBeVisible()
+    })
+  }
+})

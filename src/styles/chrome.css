@@ -115,8 +115,26 @@
 .site-header.tinted .site-header-signin:hover { color: var(--show-paper); }
 
 @media (max-width: 720px) {
-  .site-header { padding: 14px 16px; }
-  .site-header-links { display: none; }
+  /* Pinned to a deterministic 80px so the sticky canon tab bar
+     (canon.css:1205) can pin flush underneath. */
+  .site-header {
+    padding: 0 16px;
+    min-height: 80px;
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 6px;
+  }
+  /* Critique-pass-7: primary nav stays reachable on mobile —
+     flows onto a second row instead of disappearing. Brand +
+     right cluster (search, sign-in/user) stay on the top row;
+     Shows / Lists / About center themselves below. */
+  .site-header-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    font-size: 13px;
+  }
   /* Phase 29: the search trigger button stays visible on mobile;
      only the cmd+K kbd hint (.site-header-search-kbd) drops out. */
 }

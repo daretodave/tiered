@@ -1200,9 +1200,9 @@
   .ranking .cp-tab {
     padding: 14px 20px;
   }
-  /* Mobile .site-header is shorter (chrome.css:118 padding 14px 16px
-     ≈ 64px) — pin the tab bar flush there too. */
+  /* Mobile .site-header has a deterministic min-height of 80px
+     (chrome.css's <720px block) — pin the tab bar flush there too. */
   .ranking .cp-tabs {
-    top: 64px;
+    top: 80px;
   }
 }
