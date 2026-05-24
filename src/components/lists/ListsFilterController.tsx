@@ -27,19 +27,21 @@ export function ListsFilterController({
     >
       <div className="lists-filter-bar" data-testid="lists-filter-bar">
         <div className="lists-filter-set" role="group" aria-label="Filter lists by category">
-          {FILTER_KEYS.map((key) => (
-            <button
-              key={key}
-              type="button"
-              className={`chip${filter === key ? ' on' : ''}`}
-              data-filter={key}
-              data-testid={`lists-chip-${key}`}
-              aria-pressed={filter === key}
-              onClick={() => setFilter(key)}
-            >
-              {FILTER_LABELS[key]}
-            </button>
-          ))}
+          {FILTER_KEYS.filter((key) => key === 'all' || counts[key] > 0).map(
+            (key) => (
+              <button
+                key={key}
+                type="button"
+                className={`chip${filter === key ? ' on' : ''}`}
+                data-filter={key}
+                data-testid={`lists-chip-${key}`}
+                aria-pressed={filter === key}
+                onClick={() => setFilter(key)}
+              >
+                {FILTER_LABELS[key]}
+              </button>
+            ),
+          )}
         </div>
         <span
           className="lists-filter-mode"

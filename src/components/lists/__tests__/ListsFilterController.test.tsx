@@ -54,4 +54,53 @@ describe('<ListsFilterController>', () => {
       'all 12 lists',
     )
   })
+
+  describe('empty-category chip suppression', () => {
+    it('hides the era chip when counts.era === 0', () => {
+      const emptyEra = { all: 12, tone: 7, craft: 4, era: 0, single: 1 }
+      render(
+        <ListsFilterController counts={emptyEra}>
+          <div>children</div>
+        </ListsFilterController>,
+      )
+      expect(screen.queryByTestId('lists-chip-era')).toBeNull()
+      const chips = screen
+        .getByTestId('lists-filter-bar')
+        .querySelectorAll('button.chip')
+      expect(chips).toHaveLength(4)
+      const filters = Array.from(chips).map((c) =>
+        c.getAttribute('data-filter'),
+      )
+      expect(filters).toEqual(['all', 'tone', 'craft', 'single'])
+    })
+
+    it('hides every zero-count chip independently', () => {
+      const onlyTone = { all: 7, tone: 7, craft: 0, era: 0, single: 0 }
+      render(
+        <ListsFilterController counts={onlyTone}>
+          <div>children</div>
+        </ListsFilterController>,
+      )
+      const filters = Array.from(
+        screen
+          .getByTestId('lists-filter-bar')
+          .querySelectorAll('button.chip'),
+      ).map((c) => c.getAttribute('data-filter'))
+      expect(filters).toEqual(['all', 'tone'])
+    })
+
+    it('always renders the all chip even when counts.all === 0', () => {
+      const empty = { all: 0, tone: 0, craft: 0, era: 0, single: 0 }
+      render(
+        <ListsFilterController counts={empty}>
+          <div>children</div>
+        </ListsFilterController>,
+      )
+      expect(screen.queryByTestId('lists-chip-all')).not.toBeNull()
+      const chips = screen
+        .getByTestId('lists-filter-bar')
+        .querySelectorAll('button.chip')
+      expect(chips).toHaveLength(1)
+    })
+  })
 })

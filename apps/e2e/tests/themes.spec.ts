@@ -22,15 +22,38 @@ test.describe('/themes index (phase 19g shape)', () => {
     )
   })
 
-  test('filter bar has 5 chips with the right data-filter attrs', async ({
+  test('filter bar chips mirror populated categories (always includes all)', async ({
     page,
   }) => {
     await page.goto('/themes', { waitUntil: 'domcontentloaded' })
-    const chips = page.locator('[data-testid=lists-filter-bar] .chip')
-    await expect(chips).toHaveCount(5)
-    for (const filter of ['all', 'tone', 'craft', 'era', 'single']) {
-      await expect(page.getByTestId(`lists-chip-${filter}`)).toBeVisible()
+
+    // Always-on contract: the "all" chip renders unconditionally.
+    await expect(page.getByTestId('lists-chip-all')).toBeVisible()
+
+    // Per-category contract: a chip renders iff that category has a group
+    // rendered below — mirrors the precedent in ListsAllSection.tsx, where
+    // groups are filtered by `byCategory[cat].length > 0`. A "By era" chip
+    // with zero era lists confuses readers (clicking it shows nothing); the
+    // chip is suppressed instead.
+    const groupCategories = await page
+      .getByTestId('lists-group')
+      .evaluateAll((els) =>
+        els.map((el) => el.getAttribute('data-category') ?? ''),
+      )
+    const populated = new Set(groupCategories.filter(Boolean))
+
+    for (const filter of ['tone', 'craft', 'era', 'single']) {
+      const chip = page.getByTestId(`lists-chip-${filter}`)
+      if (populated.has(filter)) {
+        await expect(chip).toBeVisible()
+      } else {
+        await expect(chip).toHaveCount(0)
+      }
     }
+
+    // Total chip count = 1 ("all") + one per populated category.
+    const chips = page.locator('[data-testid=lists-filter-bar] .chip')
+    await expect(chips).toHaveCount(1 + populated.size)
   })
 
   test('All-Lists section renders at least one group, each row has data-slug', async ({

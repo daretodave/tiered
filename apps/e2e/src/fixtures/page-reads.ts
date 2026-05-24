@@ -119,7 +119,6 @@ export const pageReads: Record<string, PageReadAssertion> = {
       '[data-testid=lists-chip-all]',
       '[data-testid=lists-chip-tone]',
       '[data-testid=lists-chip-craft]',
-      '[data-testid=lists-chip-era]',
       '[data-testid=lists-chip-single]',
       '[data-testid=lists-all-section]',
       '[data-testid=lists-group]',
