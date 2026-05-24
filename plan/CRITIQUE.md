@@ -1,21 +1,22 @@
 # CRITIQUE
 
-> Last pass: 2026-05-24 at commit 6b81691
-> Pass count: 8
+> Last pass: 2026-05-24 at commit 8b1018d
+> Pass count: 9
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 8 ran in the cloud loop via Path A2
+> cadence is active. Pass 9 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5/6/7 filters (#139 RSC ERR_ABORTED,
-> #125 settleForHydration, anon/authed shared-profile false-
-> positive class) continue to hold. Authed chrome captured
-> post-hydration as `@e2e / Sign out` across all four URLs —
-> Path A2's mode determinism intact.
+> innerWidth` at 375px). Pass-5/6/7/8 filters (#139 RSC
+> ERR_ABORTED, #125 settleForHydration, anon/authed shared-
+> profile false-positive class, /sign-in URL-labeling artifact)
+> continue to hold. Authed chrome captured post-hydration as
+> `@e2e / Sign out` across all four URLs — Path A2's mode
+> determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -29,6 +30,37 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 9 (2026-05-24, commit 8b1018d) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
+> Six findings filed (0 HIGH, 2 MED, 4 LOW). Mechanical pass
+> emitted zero findings — every URL returned 200, no console
+> errors, no failed network, no horizontal scroll, all H1s
+> present, all SEO tags present. Pass-5/6/7/8 filters (#139,
+> #125, shared-profile false-positives, /sign-in URL-labeling)
+> continue to hold. Two findings filed by reader were dropped on
+> self-assessment as math errors: a HIGH from anon claiming the
+> home hero ships rotted "twenty-five years" copy is wrong —
+> the source `tagline:` field in `content/shows/survivor.md:11`
+> carries `{yearsWord}` and the `renderShowTaglineTokens` helper
+> in `src/lib/show-tenure.ts` substitutes from `est_year=2000`
+> against today (2026-05-24); the anniversary rolls 2026-05-31,
+> so the substituted value is correctly "twenty-five" for the
+> next 7 days. A LOW on /shows/survivor/season/heroes-villains
+> claiming "1 MIN READ" understates was also dropped — the
+> derived helper (`computeReadMinutes` at `src/lib/season/
+> read-minutes.ts`) honestly rounds the actual H&V editorial
+> word count (~199 words across lede + body + pull + watch_list)
+> to 1 at 220 wpm; reader saw `bodyTextLength=3630 chars` and
+> assumed chars-on-page ≈ editorial-word-count, conflating
+> chrome + stat strip + nav with editorial copy. Two LOWs (mobile
+> H1 forced-break balance on H&V, generic OG image on /u/<handle>)
+> were dropped as weakly evidenced from a text-capture pass. One
+> LOW (empty-profile CTA on /u/<handle>) was dropped as borderline
+> UX preference — the bare empty-state sentence is consistent with
+> the rest of the site's restraint, and the row that just shipped
+> (#164) deliberately let the sentence carry the empty state alone.
 
 > Pass 8 (2026-05-24, commit 6b81691) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
@@ -111,6 +143,12 @@
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
 
+- [ ] [MED] [anon] /, /shows, /shows/survivor all serve the identical 3-sentence Survivor lede paragraph ("50 seasons of strangers on a beach. The genre that invented itself in episode one, and has spent twenty-five years rediscovering what it is. We've ranked every single one.") verbatim — same string on the home featured-show block, the /shows S-tier card, and the /shows/survivor page lede. A reader navigating Home → All shows → Survivor reads the identical paragraph three times across the primary nav path; makes the canon's most-promoted show read content-thin. Source: `content/shows/survivor.md:11` `tagline:` field is what all three surfaces consume (home pull, /shows S-tier blurb, /shows/survivor lede). Fix: author a tighter card-lede (one-sentence) for the home + /shows S-tier surfaces and reserve the full three-sentence tagline for the show page itself, OR split into a `card_tagline` (short) + `tagline` (full) field pair and migrate the three callers; same pattern applies to every featured show (Drag Race, Top Chef etc.) so the schema change drains across all 12 shows once. (URL: /, /shows, /shows/survivor, source: critique-pass-9) — 8b1018d
+- [ ] [MED] [anon] /shows/survivor "When do we revisit?" copy reads "We revisit the bottom of the canon less often than the top; you do not learn much by replaying Thailand." — Survivor S5 (Thailand) is named directly as an example of "the bottom of the canon," which pre-reveals editorial verdict on a season before the reader navigates to its canon entry. The brand promise is "no spoilers"; the spoiler-adjacent class (editorial verdict leakage on a specific season the reader may not have watched) is the same category of harm — the reader who hasn't watched Thailand now knows the editors rank it near the bottom before reaching its page. Fix: replace "replaying Thailand" with a generic reference ("replaying the bottom quartile" or "replaying the tail"), keeping the rhetorical beat but not naming a season. Source: search `content/shows/survivor.md` body for the literal "Thailand." (URL: /shows/survivor, source: critique-pass-9) — 8b1018d
+- [ ] [LOW] [anon] /themes/[theme] entries lose their per-row "→" affordance at mobile widths — `src/styles/lists.css:684` carries `.entry-row .entry-arrow { display: none }` inside the `max-width` block, so the arrow that signals each entry is a link to the season page is hidden at 375px. The whole row remains a `<Link>` (`src/components/lists/ListEntryStack.tsx:53` wraps every entry), but with no underline, no chevron, no other visible affordance, the rows read as static blocks on mobile. Fix: keep `.entry-arrow` visible at mobile (it's a `→` glyph, ~10px wide — doesn't blow the grid), or add an alternative mobile affordance (chevron in the right column, or a subtle underline on `.entry-title`). (URL: /themes/best-finales, /themes/best-premieres, every list-detail page, source: critique-pass-9) — 8b1018d
+- [ ] [LOW] [anon] /shows/survivor/season/heroes-villains renders the same lede paragraph twice in the top fold — hero subtitle shows the season `lede:` ("A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep.") then section "01 The take" opens with `<p data-testid="season-lede">` rendering the *same* lede string verbatim before the body copy starts. Source: `src/app/shows/[show]/season/[slug]/page.tsx:346` passes `lede={lede}` to `<SeasonHero>` AND `:389` renders `<p data-testid="season-lede">{lede}</p>` inside the `#s-take` section. Same pattern is structural — applies to every season page that carries a lede. Fix: render the lede in the hero only and let "01 The take" open with the body's first paragraph, OR drop the hero subtitle when a lede is present and let the take open with it. Pick one slot per page. (URL: /shows/survivor/season/heroes-villains, every season-detail page with a lede, source: critique-pass-9) — 8b1018d
+- [ ] [LOW] [authed] /u/[handle] meta description ships as the bare string "[handle] on tiered.tv." — flat, off-voice (no "knowledgeable peer" register; reads as a CMS placeholder), and SEO-thin. A profile link previewed in chat or social shows a sentence-fragment with no signal about what a tiered.tv profile actually contains. Fix: template the description based on profile populated state — populated: "[handle]'s public record on tiered.tv — votes, comments, the seasons they've weighed in on."; empty: "A reader on tiered.tv. Nothing on the public record yet." Source: search `src/app/(default)/u/[handle]/page.tsx` `generateMetadata` for the description literal. (URL: /u/e2e, every populated and empty /u/[handle] page, source: critique-pass-9) — 8b1018d
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-villains section 06 ships the "Also appears in" label twice in succession — page-side renders `<div className="article-eyebrow"><span className="num">06</span><span>Also appears in</span></div>` then an `<h2>Cross-references.</h2>`, then `<AppearsInList>` renders its own `<div className="appears-head" id="appears-in-heading">Also appears in</div>` right above the row list. Two "Also appears in" headings in immediate succession reads redundant — the inner one says nothing the section eyebrow hasn't already said. Source: `src/app/shows/[show]/season/[slug]/page.tsx:436` is the section eyebrow; `src/components/composition/AppearsInList.tsx:27` is the duplicate inner heading. Fix: drop the inner `.appears-head` `<div>` (the section's `<h2>Cross-references.</h2>` is the actual section heading; the eyebrow names the kind; the inner label is double-marking) and keep `aria-labelledby="appears-in-heading"` pointing at the section's existing `<h2>` instead. (URL: /shows/survivor/season/heroes-villains, every season-detail page with cross-references, source: critique-pass-9) — 8b1018d
 
 - [x] [MED] [authed] /shows/survivor/season/heroes-villains at 375px drops the "ON THIS PAGE" right-rail TOC entirely — desktop renders a six-item jump nav ("01 The take … 06 Also appears in") that maps to a long, structurally-numbered body, but the mobile capture goes straight from EPISODE HEAT into "01 THE TAKE" with no jump affordance. A phone reader has to thumb-scroll the entire piece to skim. Fix: render the TOC as a collapsed `<details>/<summary>` at the top of the season body on mobile, or as a sticky pill nav; same six anchors as desktop. (URL: /shows/survivor/season/heroes-villains, source: critique-pass-7) — 4258083 — RESOLVED 2b6b481: server-side `<SeasonTOCMobile>` ships at the top of `.article` rendering a collapsed `<details>` with all six section anchors; native `<details>` so hash-anchor jumps work without JS; CSS-gated `display: block` below 1100px (`.toc-mobile` block in `src/styles/screens.css`) so it appears exactly when the desktop right-rail `.toc` drops out. Reduced-motion path drops the chevron transition. Mobile e2e (`season-page.spec.ts:152-159`) asserts the TOC is visible + collapsed by default + has the section list across all 13 seeded season URLs at 375px. 10 colocated cases pin the component contract; barrel test gains the SeasonTOCMobile re-export.
   - issue: #157
