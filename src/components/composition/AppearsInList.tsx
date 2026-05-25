@@ -23,9 +23,6 @@ export function AppearsInList({ rows }: AppearsInListProps) {
       data-testid="appears-in"
       aria-labelledby="appears-in-heading"
     >
-      <div className="appears-head" id="appears-in-heading">
-        Also appears in
-      </div>
       <div className="appears-list">
         {rows.map((r) => (
           <Link

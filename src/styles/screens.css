@@ -1089,7 +1089,6 @@
 
 /* appears-in stack */
 .appears-in { margin-top: 64px; }
-.appears-head { font: 500 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 16px; }
 .appears-list { display: flex; flex-direction: column; gap: 0; border: 1px solid color-mix(in oklab, var(--show-ink) 14%, transparent); border-radius: 8px; overflow: hidden; }
 .appears-row { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 16px 20px; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 10%, transparent); background: var(--show-paper); transition: background 240ms cubic-bezier(.4,0,.2,1); }
 .appears-row:last-child { border-bottom: 0; }

@@ -434,7 +434,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             {appearsIn.length > 0 ? (
               <section id="s-appears" data-testid="section-appears">
                 <div className="article-eyebrow"><span className="num">06</span><span>Also appears in</span></div>
-                <h2>Cross-references.</h2>
+                <h2 id="appears-in-heading">Cross-references.</h2>
                 <AppearsInList rows={appearsIn} />
               </section>
             ) : null}
