@@ -5,6 +5,7 @@ import {
   ShowsHero,
   TierSection,
   TIER_ORDER,
+  buildShowsMetaDescription,
   computeShowsStats,
   groupShowsByTier,
   showsForTier,
@@ -14,10 +15,13 @@ import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 export const dynamic = 'force-static'
 
 export function generateMetadata(): Metadata {
+  const grouped = groupShowsByTier(getAllShows())
+  const populatedTiers = TIER_ORDER.filter(
+    (tier) => showsForTier(grouped, tier).length > 0,
+  )
   return buildMetadata({
     title: 'All shows',
-    description:
-      'Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon, B tier is in review.',
+    description: buildShowsMetaDescription(populatedTiers),
     path: '/shows',
   })
 }

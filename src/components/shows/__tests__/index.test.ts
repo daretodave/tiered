@@ -12,6 +12,7 @@ import * as tierMetaModule from '../tierMeta'
 import * as showsStatsModule from '../showsStats'
 import * as groupByTierModule from '../groupByTier'
 import * as canonProgressModule from '../canonProgress'
+import * as tierMetaDescriptionModule from '../tierMetaDescription'
 
 import type {
   ShowsTileVariant,
@@ -30,6 +31,7 @@ const EXPECTED_RUNTIME_KEYS = [
   'TierGlyph',
   'TierHead',
   'TierSection',
+  'buildShowsMetaDescription',
   'canonProgress',
   'computeShowsStats',
   'formatRevision',
@@ -46,6 +48,7 @@ const FUNCTION_KEYS = [
   'TierGlyph',
   'TierHead',
   'TierSection',
+  'buildShowsMetaDescription',
   'canonProgress',
   'computeShowsStats',
   'formatRevision',
@@ -85,10 +88,16 @@ describe('@/components/shows barrel — runtime re-exports', () => {
       expect(barrel.canonProgress).toBe(canonProgressModule.canonProgress)
       expect(barrel.CANON_TARGET).toBe(canonProgressModule.CANON_TARGET)
     })
+
+    it('forwards buildShowsMetaDescription verbatim from ./tierMetaDescription', () => {
+      expect(barrel.buildShowsMetaDescription).toBe(
+        tierMetaDescriptionModule.buildShowsMetaDescription,
+      )
+    })
   })
 
   describe('public-surface key snapshot', () => {
-    it('exposes exactly the documented 15 runtime keys, nothing more, nothing less', () => {
+    it('exposes exactly the documented 16 runtime keys, nothing more, nothing less', () => {
       const keys = Object.keys(barrel).sort()
       expect(keys).toEqual([...EXPECTED_RUNTIME_KEYS].sort())
     })
@@ -121,7 +130,7 @@ describe('@/components/shows barrel — runtime re-exports', () => {
       expect(barrel.CANON_TARGET).toBe(3)
     })
 
-    it('the barrel exports nothing besides the 15 documented symbols (no helpers, no constants, no types-promoted-to-runtime)', () => {
+    it('the barrel exports nothing besides the 16 documented symbols (no helpers, no constants, no types-promoted-to-runtime)', () => {
       const documented = new Set<string>(EXPECTED_RUNTIME_KEYS)
       const extras = Object.keys(barrel).filter((k) => !documented.has(k))
       expect(extras).toEqual([])
