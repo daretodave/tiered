@@ -386,7 +386,6 @@ export default async function SeasonPage({ params }: { params: Params }) {
             <section id="s-take" data-testid="section-take">
               <div className="article-eyebrow"><span className="num">01</span><span>The take</span></div>
               <h2>{season.title}.</h2>
-              <p data-testid="season-lede">{lede}</p>
               {season.pull ? (
                 <blockquote className="season-pull" data-testid="season-pull">
                   {season.pull}

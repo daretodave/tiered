@@ -20,7 +20,7 @@ for (const url of seasonUrls) {
       await expect(page.getByTestId('season-page-screen')).toBeVisible()
       await expect(page.getByTestId('season-hero')).toBeVisible()
       await expect(page.getByTestId('season-h1')).toBeVisible()
-      await expect(page.getByTestId('season-lede').first()).toBeVisible()
+      await expect(page.getByTestId('hero-lede')).toBeVisible()
       await expect(page.getByTestId('info-card')).toBeVisible()
       await expect(page.getByTestId('info-row-canon')).toBeVisible()
       await expect(page.getByTestId('info-row-vote')).toBeVisible()
