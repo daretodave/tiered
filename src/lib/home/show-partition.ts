@@ -6,7 +6,14 @@
 // over-counted and the surplus shows were stranded off the home page
 // entirely. The partition below has no cap: `compact` takes every
 // non-featured show, so featured.length + compact.length always
-// equals the catalog size and the headline stays honest.
+// equals the catalog size minus the optionally-excluded slug.
+//
+// /critique pass 10 (#174) caught the dual-render: the FEATURED hero
+// at the top of the page (`getFeaturedShow()`) and the compact tail
+// both paint the same show — Survivor renders as "CURRENTLY FEATURED"
+// and again 10 tiles down in "+ 10 MORE IN THE INDEX". The fix is the
+// optional `excludeSlug` arg below: callers pass the featured slug so
+// the partition omits it from both grids and the union is unique.
 
 import type { Show } from '@/content'
 
@@ -17,9 +24,15 @@ export type HomeShowPartition = {
   compact: Show[]
 }
 
-export function partitionHomeShows(shows: Show[]): HomeShowPartition {
+export function partitionHomeShows(
+  shows: Show[],
+  excludeSlug?: string,
+): HomeShowPartition {
+  const pool = excludeSlug
+    ? shows.filter((s) => s.slug !== excludeSlug)
+    : shows
   return {
-    featured: shows.slice(0, HOME_FEATURED_TILES),
-    compact: shows.slice(HOME_FEATURED_TILES),
+    featured: pool.slice(0, HOME_FEATURED_TILES),
+    compact: pool.slice(HOME_FEATURED_TILES),
   }
 }

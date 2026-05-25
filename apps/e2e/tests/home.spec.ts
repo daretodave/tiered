@@ -169,15 +169,48 @@ test('home surfaces every tracked show — headline reconciles with the grids', 
     .getByTestId('home-more-shows-grid')
     .getByTestId('home-show-tile')
     .count()
+  // The FEATURED hero counts toward the catalog total — it represents
+  // one tracked show that no longer appears in either grid (#174).
+  const heroCount = await page.getByTestId('home-hero-cover').count()
 
   // Every tracked show appears on the home page — none stranded.
-  expect(featuredCount + compactCount).toBe(tracked)
+  expect(featuredCount + compactCount + heroCount).toBe(tracked)
 
   // The "+ N more in the index" label matches the compact tiles rendered.
   const label =
     (await page.getByTestId('home-more-shows-label').textContent()) ?? ''
   const labelCount = Number(label.match(/\+\s(\d+)\smore/)?.[1])
   expect(labelCount).toBe(compactCount)
+})
+
+// critique pass 10 #174: the FEATURED hero block at the top of the
+// home page paints `getFeaturedShow()`; the compact "+ N more"
+// tail sliced the full alpha-sorted catalog so the featured slug
+// was repainted as a small-card row below. Pin the dedup contract:
+// the slug in the hero cover must not appear in either grid.
+test('featured hero slug never reappears in the show grids (#174)', async ({
+  page,
+}) => {
+  await page.goto('/')
+
+  const heroHref =
+    (await page
+      .getByTestId('home-cover-go')
+      .getAttribute('href')) ?? ''
+  expect(heroHref).toMatch(/^\/shows\/[a-z][a-z0-9-]*$/)
+
+  const collect = async (testid: string): Promise<string[]> => {
+    const tiles = page.getByTestId(testid).getByTestId('home-show-tile')
+    return await tiles.evaluateAll((els) =>
+      els.map((el) => el.getAttribute('href') ?? ''),
+    )
+  }
+
+  const featuredHrefs = await collect('home-show-grid')
+  const compactHrefs = await collect('home-more-shows-grid')
+
+  expect(featuredHrefs).not.toContain(heroHref)
+  expect(compactHrefs).not.toContain(heroHref)
 })
 
 test('dual-rank callout names canon + community without naming a show', async ({

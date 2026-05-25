@@ -52,8 +52,11 @@ export default function HomePage() {
     .sort((a, b) => a.slug.localeCompare(b.slug))
   // The compact grid takes every non-featured show — no fixed cap —
   // so the "N shows tracked" headline always equals what renders.
+  // The featured slug is excluded from the partition so the hero
+  // (`getFeaturedShow()`) is never repainted inside the compact tail
+  // (critique pass 10 #174).
   const { featured: featuredShows, compact: compactShows } =
-    partitionHomeShows(allShows)
+    partitionHomeShows(allShows, featured?.slug)
   const themes = getAllThemes().slice(0, LIST_ROWS)
   const themesShowsCovered = getThemeStats().showsCovered
   const canonRevisedLabel = getCanonRevisedLabel()
