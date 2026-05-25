@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-24 at commit 979d880
-> Pass count: 7
+> Last pass: 2026-05-25 at commit fa19f00
+> Pass count: 8
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,53 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 8 (2026-05-25, commit fa19f00) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows. The #172 row body
+       reads "RESOLVED this commit (#172)" but the checkbox is
+       still `[ ]` (stale tick from the iterate drain — content
+       resolved, scoreboard not flipped). Either way the surface
+       is closed; no structural gap.
+     - CRITIQUE.md: 4 Pending rows from passes 9 + 10 — 3 MED + 1
+       LOW. (1) `/shows/<show>` meta description bolts an SEO
+       prefix in front of the editorial tagline and overshoots
+       Google's truncation point (the sibling season-page fix
+       just shipped via fa19f00; same class, but bounded to one
+       remaining surface). (2) `/` renders Survivor twice in the
+       visible fold (the FEATURED hero and the "+ N MORE" tail
+       overlap — dedup bug in the home partition helper). (3)
+       `/shows/<show>/season/<slug>` ships the "Your vote /
+       change within 72h" eyebrow unconditionally for anon +
+       signed-in-no-vote viewers (state-aware copy gap on a
+       single surface). (4) `/u/[handle]` self-view is
+       indistinguishable from a stranger view + no next-action
+       on the empty state (LOW, single-surface UX nit). All
+       four are one-iterate-tick polish targets — no cluster
+       of ≥3 HIGH on a single family, no class-pattern beyond
+       what phases 41 + 43 already drained.
+     - GitHub issues: 0 unlabeled; backlog is #150 (triage:
+       reviewed, past cloud crash) + #148 (triage:needs-user,
+       march.yml coverage-gate wiring blocked on the cloud
+       GitHub App's missing `workflows` permission — known,
+       intentional).
+     - spec.md + design/: no diffs since pass 7.
+     - Commit pattern: 20 commits since pass 7 — 6 audit/critique
+       drains + paired iterate fixes, 2 colocated-test ticks for
+       OG image routes (continuing the §5a backfill), 2 critique
+       passes (9 + 10), 1 content schema split (`card_tagline`
+       optional split — CLAUDE.md updated in the same commit),
+       and routine polish. All anticipated drains from previously-
+       promoted phases (40/41/42/43); no rogue refactor surface,
+       no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No change.
+
+     The remaining MED/LOW critique findings are individual
+     /iterate polish targets, not phase shapes. The build plan
+     stays in its clean re-exhausted state. Bumping metadata;
+     awaiting the next pass' cadence window for fresh
+     structural signals to accumulate. -->
 
 <!-- Pass 7 (2026-05-24, commit 979d880) — no new candidates filed.
      Signals reviewed:
