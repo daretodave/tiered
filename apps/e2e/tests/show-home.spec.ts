@@ -89,8 +89,49 @@ for (const url of showHomeUrls) {
         expect(cssVars.paper.toLowerCase()).toBe(expected.paper.toLowerCase())
       }
     })
+
+    test('meta description fits Google\'s 155-char clip and drops the legacy SEO prefix', async ({
+      page,
+    }) => {
+      // CRITIQUE pass 10 MED (#176): the show page meta description
+      // previously bolted "every season ranked: the Editor's Canon
+      // and the live community vote on one page." in front of the
+      // full tagline, pushing total length past 270 chars on Survivor
+      // and overshooting Google's ~155-char clip on every show. Fix
+      // shape mirrors the season page's `descriptionFor` (cc58f17):
+      // prefer `card_tagline` when authored (schema caps it at 160),
+      // else `tagline`, else a word-boundary truncation. Pin the
+      // contract here so a regression to the prefix or to an
+      // over-clip tagline trips the gate.
+      await page.goto(url.path, { waitUntil: 'domcontentloaded' })
+      const description = await page
+        .locator('meta[name="description"]')
+        .getAttribute('content')
+      expect(description, `meta description on ${url.path}`).toBeTruthy()
+      expect(description!.length, `meta description length on ${url.path}`).toBeLessThanOrEqual(160)
+      expect(description).not.toMatch(/every season ranked: the Editor's Canon/)
+    })
   })
 }
+
+test.describe('survivor meta description — gold-standard reference', () => {
+  test('Survivor description equals the curator\'s card_tagline verbatim', async ({
+    page,
+  }) => {
+    // Survivor is the only show in the seeded set authoring a
+    // `card_tagline`. The fix prefers `card_tagline` over `tagline`
+    // when present, so the meta description reads as the curator's
+    // 104-char card-form sentence — well under the 160-char clip,
+    // and the editorial line a search reader actually sees.
+    await page.goto('/shows/survivor', { waitUntil: 'domcontentloaded' })
+    const description = await page
+      .locator('meta[name="description"]')
+      .getAttribute('content')
+    expect(description).toBe(
+      'The format that invented itself in episode one, and is still finding new ways to ask who you really are.',
+    )
+  })
+})
 
 // Phase 43 final tick — Survivor's `est_year` is 2000 with a
 // May 31 anniversary anchor (see SHOW_ANNIVERSARIES in

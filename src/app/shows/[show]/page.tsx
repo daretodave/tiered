@@ -21,7 +21,7 @@ import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 import { getCommunityRanking } from '@/lib/community/ranking'
 import { pickMovers } from '@/lib/community/live'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
-import type { Season } from '@/content'
+import type { Season, Show } from '@/content'
 
 // Phase 35 stage 3: the consolidated show page reads the live,
 // Supabase-derived community ranking (getCommunityRanking) at render.
@@ -53,7 +53,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   }
   return buildMetadata({
     title: `${show.name} — the canon + the community vote, no spoilers`,
-    description: `${show.name}, every season ranked: the Editor's Canon and the live community vote on one page. ${show.tagline}`,
+    description: descriptionFor(show),
     path: `/shows/${show.slug}`,
     feeds: [
       {
@@ -62,6 +62,26 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       },
     ],
   })
+}
+
+// CRITIQUE pass 10 MED: prefer the editorial tagline (the line a
+// reader would quote to a friend) over the SEO-boilerplate prefix
+// that overshot Google's ~155-char clip on every show. Use the
+// curator's `card_tagline` when authored (the schema caps it at
+// 160 so it always fits the meta description budget), fall back to
+// `tagline`, and on the rare tagline that runs long, cut at the
+// last word boundary inside 159 + ellipsis. Mirrors the season
+// page's `descriptionFor` (cc58f17) — same shape so a future
+// reader recognizes the pattern.
+function descriptionFor(show: Show): string {
+  const card = show.card_tagline?.trim()
+  if (card) return card
+  const tagline = show.tagline.trim()
+  if (tagline.length <= 160) return tagline
+  const slice = tagline.slice(0, 159)
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut = lastSpace > 0 ? lastSpace : 159
+  return `${tagline.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
 }
 
 export default async function ShowHomePage({
