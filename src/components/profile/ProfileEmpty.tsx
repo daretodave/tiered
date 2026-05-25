@@ -1,12 +1,36 @@
+import Link from 'next/link'
+
+type ProfileEmptyProps = {
+  // When the viewer is looking at their own empty profile, the
+  // rhetorical "Vote on a season pair" prompt becomes a concrete
+  // one — the CTA points at a real season-card grid so the
+  // next-action is one click, not a memory test.
+  selfView?: {
+    showName: string
+    showHref: string
+  }
+}
+
 // Shown when a real member has no published comments and no live
 // votes. The profile still renders (handle resolved, not a 404) —
 // it just has nothing to show yet. The page keeps this state
 // noIndex so a thin profile never enters the index.
-export function ProfileEmpty() {
+export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
   return (
-    <p className="text-ink-2" data-testid="profile-empty">
-      Nothing on the public record yet. Vote on a season pair, weigh in
-      on a thread, and it will land here.
-    </p>
+    <div className="flex flex-col gap-3" data-testid="profile-empty-block">
+      <p className="text-ink-2" data-testid="profile-empty">
+        Nothing on the public record yet. Vote on a season pair, weigh in
+        on a thread, and it will land here.
+      </p>
+      {selfView ? (
+        <Link
+          className="text-sm font-medium text-ink-0 underline-offset-2 hover:underline"
+          data-testid="profile-empty-cta"
+          href={selfView.showHref}
+        >
+          Start with {selfView.showName} →
+        </Link>
+      ) : null}
+    </div>
   )
 }

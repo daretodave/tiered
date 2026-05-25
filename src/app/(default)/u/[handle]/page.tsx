@@ -1,7 +1,7 @@
 import { cache } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getSeason, getShow } from '@/content'
+import { getFeaturedShow, getSeason, getShow } from '@/content'
 import {
   ProfileComments,
   ProfileEmpty,
@@ -9,6 +9,8 @@ import {
   ProfileStats,
 } from '@/components/profile'
 import type { ProfileCommentView, ProfileView } from '@/components/profile'
+import { headerUserFromSession } from '@/components/chrome/headerUser'
+import { auth0 } from '@/lib/auth0'
 import { formatWhen } from '@/lib/comments/thread'
 import {
   formatMemberSince,
@@ -104,6 +106,21 @@ export default async function UserProfilePage({
   // isn't the signed-in viewer must render for any visitor.
   if (!profile) notFound()
 
+  // Self-view detection: when the signed-in viewer's derived
+  // handle matches this profile's handle, the empty branch
+  // earns a concrete next-action CTA (the rhetorical prompt
+  // becomes one click).
+  const session = await auth0.getSession().catch(() => null)
+  const viewer = headerUserFromSession(
+    session?.user as Record<string, unknown> | undefined,
+  )
+  const isSelfView = viewer?.handle === profile.handle
+  const featuredShow = !profile.populated && isSelfView ? getFeaturedShow() : null
+  const selfViewCta =
+    featuredShow != null
+      ? { showName: featuredShow.name, showHref: `/shows/${featuredShow.slug}` }
+      : undefined
+
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -146,7 +163,7 @@ export default async function UserProfilePage({
           </div>
         </>
       ) : (
-        <ProfileEmpty />
+        <ProfileEmpty selfView={selfViewCta} />
       )}
     </section>
   )
