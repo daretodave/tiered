@@ -1,7 +1,7 @@
 # CRITIQUE
 
-> Last pass: 2026-05-25 at commit 1941e89
-> Pass count: 10
+> Last pass: 2026-05-25 at commit bbd3082
+> Pass count: 11
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
 > cadence is active. Pass 10 ran in the cloud loop via Path A2
@@ -32,6 +32,57 @@
 
 ## Pending
 
+> Pass 11 (2026-05-25, commit bbd3082) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows/survivor`, `/shows`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`,
+> `/shows/survivor`) at desktop + mobile. Six findings filed (0
+> HIGH, 5 MED, 1 LOW). Mechanical pass emitted zero **product**
+> findings — every URL that resolved returned 200 with the
+> expected H1, no console errors, no failed first-party network,
+> no horizontal scroll at 375px, all SEO tags present. Both anon
+> and authed walks surfaced 404 / blank-render / console-error
+> rows on `/shows/survivor/season/heroes-vs-villains` — those
+> are **input-set artifacts of my critique request**, not
+> product defects: the canonical S20 slug on disk is
+> `heroes-villains` (no `vs-`), distinct from `27-blood-vs-water`
+> / `33-millennials-vs-gen-x` / `35-heroes-vs-healers-vs-hustlers`
+> / `37-david-vs-goliath`. The walker rows are dropped. The
+> *real* finding folded out of them — that a reader typing the
+> natural `heroes-vs-villains` form dead-ends rather than
+> redirecting to the canonical slug — is filed as a single MED
+> navigation row (#A below). The qualitative sweep concentrated
+> on two structural classes the editorial drains have not yet
+> covered: meta-copy drift (the `/shows` description names a
+> B-tier section that the page does not render; the
+> signed-in-no-vote VoteRowHead meta reads ambiguously next to
+> its 72h sibling) and template-flourish drift on hand-authored
+> content (the "two decades / before two decades had passed"
+> conceit on the H&V best-finales entry is mathematically off;
+> "Renegades Era" used as the BB10 structural header slot names
+> an alliance from inside the season; "not pretending to be
+> objective; we are pretending to be honest" is replicated as
+> a clever-template across 5+ canon `meth_who_p` files where
+> bearings explicitly prefers plain sentences). Reader-filed
+> finding F2 (the "BE THE FIRST" composer eyebrow may misfire on
+> moderator-emptied threads on the H&V signed-in render) was
+> dropped on self-assessment as an *audit task* (reader admits
+> "if the e2e seed is the only authed reader the eyebrow is
+> fine") rather than a verified defect — the gate-source needs
+> proving before it can be filed as a finding. Reader-filed
+> finding J (self-view tab title `@e2e — tiered.tv` is identical
+> for self vs stranger) was dropped as marginal — a browser-tab
+> disambiguator on a `noIndex` empty profile is below the
+> filing threshold this pass. Auth-state determinism intact:
+> every authed capture rendered `@e2e / Sign out` in chrome.
+> Pass-5/6/7/8/9/10 filters (#139 RSC ERR_ABORTED, #125
+> settleForHydration, anon/authed shared-profile false-positive
+> class, /sign-in URL-labeling artifact, SeasonHero icon-only
+> text-capture, /shows/<show>/season/<slug> 404 on `vs-` slug
+> variant) continue to hold.
+>
 > Pass 10 (2026-05-25, commit 1941e89) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
@@ -194,6 +245,18 @@
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
+
+- [ ] [MED] [anon] /shows generateMetadata announces a B tier the page does not render — `src/app/(default)/shows/page.tsx:20` ships description "Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon, B tier is in review." A reader clicking the SEO snippet expects a B tier section, but `content/shows/*.md` carries `tier: S` on 2 shows + `tier: A` on 11 shows + `tier: B` on zero. The /shows page itself renders only the S and A tier-head blocks (the tier rail is gated on `tier-head` rows with members > 0), so the description overclaims against its own rendered content. Fix: in `src/app/(default)/shows/page.tsx` generateMetadata, derive the description from the tiers actually present — iterate `getAllShows()` and only mention tiers with `length > 0` (e.g. "S tier is format-defining, A tier has the deep canon"). Same shape as the existing tier-head rendering rule. Pin with a colocated unit case asserting the description does not name a tier that has zero members. (URL: /shows, source: critique-pass-11) — bbd3082
+
+- [ ] [MED] [authed] /shows/survivor/season/heroes-vs-villains returns 404 — the natural-form slug a reader would type (mirroring the editorial display "Heroes vs. Villains" and the existing `27-blood-vs-water` / `33-millennials-vs-gen-x` / `35-heroes-vs-healers-vs-hustlers` / `37-david-vs-goliath` slug pattern) dead-ends because the source file is `content/shows/survivor/seasons/20-heroes-villains.md` (no `vs-`). Every other season-name with "vs." on Survivor follows the `-vs-` slug convention; S20 is the one exception. External links typed by an unfamiliar reader or a clever-search guess therefore hard-404 instead of landing on the canonical page. Fix: either (a) rename the file to `20-heroes-vs-villains.md` and update internal references (themed-list entries, canon `season:` keys, JSON-LD), then ship a 308 redirect from the legacy `heroes-villains` slug for any in-the-wild links, OR (b) keep `heroes-villains` canonical and add a route-level 308 alias from `heroes-vs-villains` (and any other "natural-form" → canonical mapping the editorial display implies). Option (a) is preferable — it brings S20 in line with the other 4 `-vs-` siblings and removes the structural exception. Pin with a colocated route-redirect test (mirrors `/shows/[show]/canon` redirect contract). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-11) — bbd3082
+
+- [ ] [MED] [anon] /themes/best-finales S20 entry blurb closes with "every conversation freighted with two decades of history before two decades had passed" — clever but mathematically wrong: Survivor S1 (Borneo) premiered 2000-05-31, S20 (Heroes vs. Villains) premiered 2010-02-11, so ~10 years (one decade) of franchise history existed at filming, not two. A Survivor reader scanning the editorial blurb registers the inversion and the count immediately. Source: `content/themes/best-finales.md:27` (the entry blurb). The conceit is reachable both via /themes/best-finales and via any rendering surface that pulls the entry. Fix: rewrite the closing clause in `content/themes/best-finales.md:27` to either drop the inverted-time conceit ("every conversation freighted with the show's first decade of history") or recast it without the count ("every conversation freighted with everything Survivor had been"). Plain sentences over clever ones per bearings. The Phase 43 year-tenure invariant doesn't cover this surface (no `est_year` substitution, no anniversary anchor) — this is hand-authored editorial copy that drifted, addressable as a one-line content edit. (URL: /themes/best-finales, source: critique-pass-11) — bbd3082
+
+- [ ] [MED] [anon] /themes/best-finales BB10 entry uses "S10 · Renegades Era" as the structural header slot — every other entry in the same list uses the season's marketed identity in that slot (HEROES VS. VILLAINS, WINNERS AT WAR, LAS VEGAS) or a bare season number (S07, S06). "Renegades" is the in-season alliance nickname (Dan Gheesling + Memphis Garrett), not a Big-Brother-marketed season title — naming it in the chrome header (vs. the body prose where the era frame can be set up) anoints an alliance for a reader who hasn't watched BB10. Spoiler discipline is P0 and the soft-leak class is exactly what the bearings preserve. Source: `content/themes/best-finales.md:54` `season_label: "S10 · Renegades Era"`. Fix: drop the alliance-nickname suffix from the header slot — set `season_label: "S10"` like the AR S07 / Drag Race S06 entries do — and either remove the "Renegades Era" framing from the blurb prose or reframe it without naming the alliance ("the season that taught Big Brother its strategic vocabulary"). Standing rule to author into `ship-content` Rule 3 / `content-curator`: header-slot `season_label` quotes the season's *marketed* title, never an alliance / arc / outcome nickname authored by fans inside the season. (URL: /themes/best-finales, source: critique-pass-11) — bbd3082
+
+- [ ] [MED] [authed] VoteRowHead signed-in-no-vote meta "cast within the week" reads ambiguously next to its sibling state "change within 72h" — `src/components/composition/VoteRowHead.tsx:30` ships `{ title: 'Your vote', meta: 'cast within the week' }` for the `signed-in-no-vote` state. The 72h sibling at line 31 is unambiguous (verb + object + window: "change [your vote] within 72h"); "cast within the week" can parse as imperative ("cast [your vote] within the week") OR descriptive ("votes are cast within the week, then tallied"), and the surrounding panel already announces the weekly cadence elsewhere ("canon position recomputes weekly") so the reader sees the weekly window stated twice without the action becoming the obvious read. Phase 36 shipped the three-state head as #177 (e2c732d / VoteRowHead.tsx); pass-11 found the no-vote state's meta needs a second pass. Fix: rewrite the `signed-in-no-vote` meta to match the 72h sibling's verb-first imperative shape — e.g. `'cast yours this week'` or `'cast before the recompute'`. One-line change in the `COPY` map; the 8 colocated unit cases already pin the resolver behavior, only the literal copy assertion (if any) needs updating. Spoiler discipline P0 unchanged. (URL: every /shows/<show>/season/<slug> URL, source: critique-pass-11) — bbd3082
+
+- [ ] [LOW] [anon] "We're not pretending to be objective; we are pretending to be honest" — a clever-template flourish replicated as the closing sentence of `meth_who_p` across at least 5 canon files (`content/shows/survivor/canon.md:6`, `content/shows/amazing-race/canon.md:6`, `content/shows/top-chef/canon.md:6`, `content/shows/the-challenge/canon.md:6`, `content/shows/dragrace/canon.md:6`). The construction (semicolon, parallel paradox, deliberate cleverness) is exactly the form `plan/bearings.md` declares against ("Plain sentences over clever ones … never pretentious"). The surrounding sentences are in-voice; only the closing flourish drifts, and the drift compounds because the same line appears across every canonical-show methodology block — a reader hitting more than one show canon reads the same clever beat twice. Fix: rewrite the closing line uniformly to a plain form — e.g. "We aren't claiming to be objective. We are trying to be honest." — and update `.claude/agents/content-curator.md` so future canon `meth_who_p` blocks are born without the parallel-paradox flourish. Eight or so files; small content edit + agent-brief update. (URL: /shows/<show>/canon and any methodology-rendering surface, source: critique-pass-11) — bbd3082
 
 - [x] [MED] [anon] /shows/<show> meta description bolts an SEO prefix in front of the full tagline and overshoots Google's truncation point — `<meta name="description">` on /shows/survivor measures 273 chars ("Survivor, every season ranked: the Editor's Canon and the live community vote on one page. 50 seasons of strangers on a beach. The genre that invented itself in episode one, and has spent twenty-five years rediscovering what it is. We've ranked every single one."). Google snippets clip around 155 chars, so a search result lands on "Survivor, every season ranked: the Editor's Canon and the live community vote on one page. 50 seasons of strangers on a beach. The genre that invented itse..." — the editorial half (the part a reader clicks on) sits behind the boilerplate prefix and gets truncated. The boilerplate prefix is the same string on every show, so the variable / editorial half is the part that gets cut. Pattern applies to all 13 show pages. Fix: drop the "every season ranked: the Editor's Canon and the live community vote on one page" prefix; lead the description with the editorial `tagline` (the long form — the show page is the one surface CLAUDE.md reserves for the full tagline, and it's the one a search reader is most likely to land on). If the resulting description still runs over 155 chars on any show, switch to `card_tagline` for that show (Survivor's card_tagline is 110 chars and reads cleanly as a stand-alone first sentence). Pin the contract with a colocated test asserting the meta description equals `card_tagline ?? tagline` and is ≤ 160 chars on every /shows/<show>. (URL: /shows/survivor, every /shows/<show> URL, source: critique-pass-10) — 1941e89
 
