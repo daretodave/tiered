@@ -87,8 +87,8 @@ export async function generateMetadata({
   return buildMetadata({
     title: `@${profile.handle}`,
     description: profile.populated
-      ? `${profile.handle} on tiered.tv — published comments and the seasons they've voted on. No spoilers.`
-      : `${profile.handle} on tiered.tv.`,
+      ? `${profile.handle}'s public record on tiered.tv — votes, comments, the seasons they've weighed in on.`
+      : `A reader on tiered.tv. Nothing on the public record yet.`,
     path: `/u/${profile.handle}`,
     noIndex: !profile.populated,
   })

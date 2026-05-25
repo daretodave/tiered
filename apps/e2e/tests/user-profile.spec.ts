@@ -104,6 +104,17 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
     await expect(page.locator('meta[name="robots"]')).toHaveCount(0)
     await expect(page.getByTestId('profile-stat-seasons')).toContainText('1')
 
+    // Editorial-voice meta description (CRITIQUE pass 9 LOW): the
+    // populated branch reads as a "knowledgeable peer", not a CMS
+    // placeholder. Pins the public-record framing so a regression
+    // back to "${handle} on tiered.tv." trips the gate.
+    const description = await page
+      .locator('meta[name="description"]')
+      .getAttribute('content')
+    expect(description, 'populated profile must carry the editorial description').toMatch(
+      /public record on tiered\.tv — votes, comments, the seasons they've weighed in on\./,
+    )
+
     // Spoiler/mod P0: the pending comment is NOT a published
     // comment — the recent block stays empty and the phrase is
     // nowhere on the page (nor in the JSON-LD).
