@@ -47,7 +47,9 @@ export function HomeHero({
           {featured.name}
         </h2>
         <p className="cover-sub" style={{ color: featured.palette.ink }}>
-          {renderBlurbWithBreaks(featured.tagline ?? featured.blurb)}
+          {renderBlurbWithBreaks(
+            featured.card_tagline ?? featured.tagline ?? featured.blurb,
+          )}
         </p>
         <div className="cover-foot" data-testid="home-hero-foot">
           <div className="cover-stats" data-testid="home-hero-stats">

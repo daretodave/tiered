@@ -51,6 +51,22 @@ describe('<HomeHero>', () => {
     expect(cover.textContent).toContain('strangers on a beach')
   })
 
+  it('cover-sub prefers card_tagline over tagline when present', () => {
+    render(
+      <HomeHero
+        featured={survivor({
+          card_tagline: 'The format that invented itself in episode one.',
+        })}
+        canonRevisedLabel={CANON_LABEL}
+      />,
+    )
+    const cover = screen.getByTestId('home-hero-cover')
+    expect(cover.textContent).toContain(
+      'The format that invented itself in episode one.',
+    )
+    expect(cover.textContent).not.toContain('strangers on a beach')
+  })
+
   it('go-pill links to /shows/<slug>', () => {
     render(<HomeHero featured={survivor()} canonRevisedLabel={CANON_LABEL} />)
     const go = screen.getByTestId('home-cover-go')

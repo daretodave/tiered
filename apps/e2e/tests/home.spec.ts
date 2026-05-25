@@ -233,3 +233,53 @@ test('mobile @ 375px viewport: no horizontal scroll, H1 visible', async ({
   expect(overflow).toBeLessThanOrEqual(1)
   await expect(page.locator('h1')).toBeVisible()
 })
+
+// Critique pass 9 #170: /, /shows S-tier, and /shows/<show> all
+// consumed the same `tagline` field, so a reader walking Home →
+// All shows → Survivor saw the identical 3-sentence paragraph
+// three times. The `card_tagline` split puts a short editorial
+// lede on the two card surfaces and reserves the full tagline
+// for the show page hero. This regression test pins the contract:
+// the show page hero is not the literal card surface string.
+test('Survivor lede differs between card surfaces and the show page hero', async ({
+  page,
+}) => {
+  await page.goto('/')
+  const homeSub = (
+    (await page
+      .getByTestId('home-hero-cover')
+      .locator('.cover-sub')
+      .first()
+      .textContent()) ?? ''
+  ).trim()
+  expect(homeSub.length).toBeGreaterThan(0)
+
+  await page.goto('/shows')
+  const showsTile = page
+    .getByTestId('shows-tile')
+    .filter({ has: page.locator('[data-show="survivor"]') })
+    .first()
+  // `shows-tile` carries `data-show` on the link itself, so the
+  // `filter` above is belt-and-suspenders — fall back to the
+  // attribute selector if filter mis-resolves.
+  const survivorTile = (await showsTile.count())
+    ? showsTile
+    : page.locator('[data-testid="shows-tile"][data-show="survivor"]').first()
+  const tileBlurb = (
+    (await survivorTile.locator('.show-tile-tagline').textContent()) ?? ''
+  ).trim()
+  expect(tileBlurb.length).toBeGreaterThan(0)
+
+  await page.goto('/shows/survivor')
+  const showHero = (
+    (await page.getByTestId('show-hero-tagline').textContent()) ?? ''
+  ).trim()
+  expect(showHero.length).toBeGreaterThan(0)
+
+  // The two card surfaces may share the same card-lede (a deliberate
+  // brand-promise repeat); the show page hero must not be that same
+  // string. With `card_tagline` authored on Survivor, the show page
+  // renders the longer tagline.
+  expect(showHero).not.toBe(homeSub)
+  expect(showHero).not.toBe(tileBlurb)
+})

@@ -39,6 +39,24 @@ describe('<ShowsTile>', () => {
     expect(tile.textContent).toContain('est. 2000')
   })
 
+  it('prefers card_tagline over tagline when authored', () => {
+    render(
+      <ShowsTile
+        show={show({
+          card_tagline: 'The format that invented itself in episode one.',
+        })}
+        variant="tall"
+      />,
+    )
+    const tile = screen.getByTestId('shows-tile')
+    expect(tile.textContent).toContain(
+      'The format that invented itself in episode one.',
+    )
+    expect(tile.textContent).not.toContain(
+      '47 seasons of strangers on a beach.',
+    )
+  })
+
   it('renders the network in the head tag', () => {
     render(<ShowsTile show={show()} variant="regular" />)
     expect(screen.getByTestId('shows-tile').textContent).toContain(

@@ -83,23 +83,25 @@ Type does the editorial work. Everything else is text.
 
 ## Show identity, formalized
 
-Each show carries **exactly twelve fields** in
-`content/shows/<slug>.md` frontmatter. No more, no less:
+Each show carries **up to thirteen fields** in
+`content/shows/<slug>.md` frontmatter. Twelve required, one
+optional editorial split (`card_tagline`):
 
-| field        | type      | example                                                       |
-|--------------|-----------|---------------------------------------------------------------|
-| `slug`       | string    | `survivor`                                                    |
-| `name`       | string    | `Survivor`                                                    |
-| `palette`    | object    | `{ paper: "#0E2A2A", ink: "#EFE2BD", primary: "#D55E36" }`    |
-| `seasons`    | int       | `47`                                                          |
-| `status`     | enum      | `airing` / `ended` / `hiatus`                                 |
-| `blurb`      | string    | `47 seasons. One torch at a time.`                            |
-| `tagline`    | string    | `47 seasons of strangers on a beach. We've ranked every one.` |
-| `tier`       | enum      | `S` / `A` / `B` — editorial confidence in the canon order     |
-| `network`    | string    | `CBS`                                                         |
-| `est_year`   | int       | `2000` (first-aired year)                                     |
-| `genre_tag`  | string    | `Reality competition`                                         |
-| `featured`   | bool      | `true` for the single show that anchors the home hero         |
+| field          | type      | required | example                                                       |
+|----------------|-----------|----------|---------------------------------------------------------------|
+| `slug`         | string    | yes      | `survivor`                                                    |
+| `name`         | string    | yes      | `Survivor`                                                    |
+| `palette`      | object    | yes      | `{ paper: "#0E2A2A", ink: "#EFE2BD", primary: "#D55E36" }`    |
+| `seasons`      | int       | yes      | `47`                                                          |
+| `status`       | enum      | yes      | `airing` / `ended` / `hiatus`                                 |
+| `blurb`        | string    | yes      | `47 seasons. One torch at a time.`                            |
+| `tagline`      | string    | yes      | `47 seasons of strangers on a beach. We've ranked every one.` |
+| `card_tagline` | string    | no       | `The format that invented itself in episode one.`             |
+| `tier`         | enum      | yes      | `S` / `A` / `B` — editorial confidence in the canon order     |
+| `network`      | string    | yes      | `CBS`                                                         |
+| `est_year`     | int       | yes      | `2000` (first-aired year)                                     |
+| `genre_tag`    | string    | yes      | `Reality competition`                                         |
+| `featured`     | bool      | yes      | `true` for the single show that anchors the home hero         |
 
 No `hero_motifs`. No `format`. No SVG path. No icon name. No
 mascot reference. If a future contributor proposes a graphical
@@ -110,7 +112,12 @@ is permitted when a page genuinely needs it.
 (The `seasons` int is the count of aired/airing seasons. The
 `blurb` is the short hero subtitle. The `tagline` is the longer
 editorial sentence — it appears on the show page meta column
-and is the kind of line a reader quotes to a friend.)
+and is the kind of line a reader quotes to a friend. The
+optional `card_tagline` is the one-sentence form rendered by
+card surfaces — the home featured cover-sub and the /shows tier
+tile — so the show page hero is the only surface that quotes
+the full `tagline`. When `card_tagline` is absent, those
+surfaces fall back to `tagline`.)
 
 ---
 

@@ -60,7 +60,7 @@ export function ShowsTile({ show, variant, status }: ShowsTileProps) {
         </div>
         <h3 className="show-tile-name">{show.name}</h3>
       </div>
-      <p className="show-tile-tagline">{show.tagline}</p>
+      <p className="show-tile-tagline">{show.card_tagline ?? show.tagline}</p>
       <div className="show-tile-foot">
         <span className="show-tile-meta">{metaText(show, status)}</span>
         <span className="show-tile-arrow" aria-hidden="true">

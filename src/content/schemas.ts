@@ -37,6 +37,12 @@ export const showFrontmatterSchema = z
     status: showStatusEnum,
     blurb: z.string().min(1).max(120),
     tagline: z.string().min(1).max(280),
+    // Optional one-sentence card-lede consumed by surfaces that
+    // would otherwise repeat the full tagline (home featured
+    // cover-sub + /shows tier tile). The show page hero still
+    // renders the full tagline. Falls back to tagline when
+    // absent so non-featured shows need no migration.
+    card_tagline: z.string().min(1).max(160).optional(),
     // Editorial fields added with the /shows tier-list redesign.
     // tier is the editor's confidence in the canon for this show:
     //   S — format-defining, we'd defend the order at a bar

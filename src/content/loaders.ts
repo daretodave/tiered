@@ -182,11 +182,15 @@ function loadLegal(c: Cache): void {
 // lived `next start` process renders today's count on every
 // request without busting the parse cache.
 function materializeShow(show: Show): Show {
-  const tagline = renderShowTaglineTokens(show.tagline, {
-    estYear: show.est_year,
-    slug: show.slug,
-  })
-  return tagline === show.tagline ? show : { ...show, tagline }
+  const ctx = { estYear: show.est_year, slug: show.slug }
+  const tagline = renderShowTaglineTokens(show.tagline, ctx)
+  const card_tagline = show.card_tagline
+    ? renderShowTaglineTokens(show.card_tagline, ctx)
+    : show.card_tagline
+  if (tagline === show.tagline && card_tagline === show.card_tagline) {
+    return show
+  }
+  return { ...show, tagline, card_tagline }
 }
 
 // Phase 43 tick 5: per-season caption fields may use

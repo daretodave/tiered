@@ -29,11 +29,18 @@ function makeShow(
   root: string,
   slug: string,
   name: string,
-  overrides: { tagline?: string; est_year?: number } = {},
+  overrides: {
+    tagline?: string
+    card_tagline?: string
+    est_year?: number
+  } = {},
 ): void {
   const showFile = path.join(root, 'shows', `${slug}.md`)
   const tagline = overrides.tagline ?? 'A short tagline.'
   const estYear = overrides.est_year ?? 2000
+  const cardLine = overrides.card_tagline
+    ? `card_tagline: "${overrides.card_tagline}"\n`
+    : ''
   mkdirSync(path.dirname(showFile), { recursive: true })
   writeFileSync(
     showFile,
@@ -48,7 +55,7 @@ seasons: 1
 status: airing
 blurb: A short blurb.
 tagline: "${tagline}"
-tier: B
+${cardLine}tier: B
 network: "Test"
 est_year: ${estYear}
 genre_tag: "Reality"
@@ -313,6 +320,22 @@ describe('loaders', () => {
       const first = getShow('survivor')?.tagline
       const second = getShow('survivor')?.tagline
       expect(first).toBe(second)
+    })
+
+    it('also substitutes tokens inside an authored card_tagline', () => {
+      makeShow(tmp, 'survivor', 'Survivor', {
+        tagline: 'A short tagline.',
+        card_tagline: '{yearsWord} in',
+        est_year: 2000,
+      })
+      const show = getShow('survivor')
+      expect(show?.card_tagline).not.toContain('{yearsWord}')
+      expect(show?.card_tagline).toMatch(/^(twenty-five|twenty-six) in$/)
+    })
+
+    it('leaves card_tagline undefined when the frontmatter omits it', () => {
+      makeShow(tmp, 'alpha', 'Alpha', { tagline: 'A short tagline.' })
+      expect(getShow('alpha')?.card_tagline).toBeUndefined()
     })
   })
 
