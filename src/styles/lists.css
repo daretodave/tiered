@@ -677,12 +677,9 @@ h1.list-title {
 }
 @media (max-width: 820px) {
   .entry-row {
-    grid-template-columns: 48px auto 1fr;
+    grid-template-columns: 48px auto 1fr auto;
     gap: 14px;
     padding: 18px 18px;
-  }
-  .entry-row .entry-arrow {
-    display: none;
   }
 }
 .entry-rank {
