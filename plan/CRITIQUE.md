@@ -1,22 +1,23 @@
 # CRITIQUE
 
-> Last pass: 2026-05-24 at commit 8b1018d
-> Pass count: 9
+> Last pass: 2026-05-25 at commit 1941e89
+> Pass count: 10
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 9 ran in the cloud loop via Path A2
+> cadence is active. Pass 10 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5/6/7/8 filters (#139 RSC
+> innerWidth` at 375px). Pass-5/6/7/8/9 filters (#139 RSC
 > ERR_ABORTED, #125 settleForHydration, anon/authed shared-
-> profile false-positive class, /sign-in URL-labeling artifact)
-> continue to hold. Authed chrome captured post-hydration as
-> `@e2e / Sign out` across all four URLs — Path A2's mode
-> determinism intact.
+> profile false-positive class, /sign-in URL-labeling artifact,
+> SeasonHero text-only capture of icon-only buttons) continue
+> to hold. Authed chrome captured post-hydration as `@e2e /
+> Sign out` across all four URLs — Path A2's mode determinism
+> intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -31,6 +32,57 @@
 
 ## Pending
 
+> Pass 10 (2026-05-25, commit 1941e89) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
+> Five findings filed (0 HIGH, 4 MED, 1 LOW). Mechanical pass
+> emitted zero findings — every URL returned 200, no console
+> errors, no failed network, no horizontal scroll, all H1s
+> present, all SEO tags present. Pass-5..9 filters held. The
+> qualitative pass concentrated on two structural classes the
+> earlier passes had drained singletons of and now warranted
+> the broader sweep: SEO/meta voice drift (the editorial rewrite
+> #169 shipped for /u/[handle] is the pattern — pass 10 surfaces
+> the same drift on the 298 season pages and the 13 show pages,
+> with two MEDs to file the case before iterate picks them up),
+> and the SeasonInfoCard vote-row eyebrow ("Your vote / change
+> within 72h") which the #160 pill fix addressed *inside* the
+> vote-pair but left the surrounding row header rendering
+> unconditionally — both anon and authed-no-vote viewers see
+> copy that implies an account context or a vote they don't
+> have. One structural home-page row (Survivor renders in the
+> featured cover AND in the "+ 10 MORE IN THE INDEX" compact
+> grid below) is comprehension-class. One LOW on /u/[handle]
+> self-view (no next-action affordance, no self-view marker
+> distinguishing it from a stranger viewing the same handle)
+> closes the authed empty-state thread. Three findings filed by
+> reader were dropped on self-assessment: a MED claim that the
+> comment composer for signed-in users has no labeled submit
+> button — Path A2 captures `document.body.innerText` of the
+> two-stage CommentInput which renders a `.comment-stub` button
+> until clicked, then renders a textarea + labeled "Post" /
+> "Cancel" buttons; the stub's `⏎` glyph is a hint not the
+> primary affordance (same icon-only-button text-capture class
+> as pass 7's dropped vote-affordances HIGH). A LOW on /sign-in
+> for signed-in users rendering home content with the URL bar
+> still on /sign-in (already pass-8 filtered as a Path-A2 URL-
+> labeling artifact; the route does `redirect(returnTo)`
+> server-side). A LOW on "TIERS" being an opaque footer column
+> label was dropped as borderline editorial preference — the
+> label has shipped through 9 prior critique passes without
+> earlier readers flagging it, and "Tiers" is the site's central
+> classification noun (S/A/B on /shows), so the label-vs-content
+> match is defensible. Three editorial-polish LOWs (the
+> /themes/best-finales meta-vs-hero-lede mismatch, the /themes
+> "2026 INDEX LAST REVISED" year-only stat, the Survivor
+> card_tagline + tagline both leading with "invented itself in
+> episode one") were noted as candidates for a future content-
+> curator drain but not filed — each is single-row polish that
+> the current `card_tagline` split + meta-description work has
+> primed the codebase to drain cheaply when an iterate tick
+> picks them up; pre-filing them would crowd Pending against
+> the four MEDs.
+>
 > Pass 9 (2026-05-24, commit 8b1018d) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > across 6 anon URLs + 4 authed URLs × 2 viewports (20 captures).
@@ -142,6 +194,16 @@
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
+
+- [ ] [MED] [anon] /shows/<show>/season/<slug> ships a flat CMS-template meta description on every season detail page — `<meta name="description" content="Vote and discuss <show> season <n>: <title>.">`. The pattern surfaces on every social share, every Google snippet, and every chat-app unfurl for the canon's most-promoted reading surface; it reads as bot-generated and previews zero editorial signal next to the show / themed-list / /u/[handle] surfaces, which all carry editorial-voice descriptions (the /u/[handle] surface was rewritten at 590c6a0 / #169 — same class, same fix shape). The on-page hero lede (`season.lede`, eg. Heroes vs. Villains "A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep.") is the line a reader would quote to a friend, but `generateMetadata` ships the placeholder instead. Same template applies across all 298 season pages. Fix: in `src/app/shows/[show]/season/[slug]/page.tsx` `generateMetadata`, prefer `season.lede` as the description (truncate at ~155 chars on the rare lede that runs long), falling back to the current template only when no lede is authored. Pin the contract with a colocated test mirroring the #169 / 590c6a0 shape (`apps/e2e/tests/season-page.spec.ts` asserts `<meta name="description">` matches the season's `lede` for a representative URL). Spoiler-safe — `season.lede` is the same string already rendered in the hero (zero spoiler reasoning to redo). (URL: /shows/survivor/season/heroes-villains, every /shows/<show>/season/<slug> URL, source: critique-pass-10) — 1941e89
+
+- [ ] [MED] [anon] /shows/<show> meta description bolts an SEO prefix in front of the full tagline and overshoots Google's truncation point — `<meta name="description">` on /shows/survivor measures 273 chars ("Survivor, every season ranked: the Editor's Canon and the live community vote on one page. 50 seasons of strangers on a beach. The genre that invented itself in episode one, and has spent twenty-five years rediscovering what it is. We've ranked every single one."). Google snippets clip around 155 chars, so a search result lands on "Survivor, every season ranked: the Editor's Canon and the live community vote on one page. 50 seasons of strangers on a beach. The genre that invented itse..." — the editorial half (the part a reader clicks on) sits behind the boilerplate prefix and gets truncated. The boilerplate prefix is the same string on every show, so the variable / editorial half is the part that gets cut. Pattern applies to all 13 show pages. Fix: drop the "every season ranked: the Editor's Canon and the live community vote on one page" prefix; lead the description with the editorial `tagline` (the long form — the show page is the one surface CLAUDE.md reserves for the full tagline, and it's the one a search reader is most likely to land on). If the resulting description still runs over 155 chars on any show, switch to `card_tagline` for that show (Survivor's card_tagline is 110 chars and reads cleanly as a stand-alone first sentence). Pin the contract with a colocated test asserting the meta description equals `card_tagline ?? tagline` and is ≤ 160 chars on every /shows/<show>. (URL: /shows/survivor, every /shows/<show> URL, source: critique-pass-10) — 1941e89
+
+- [ ] [MED] [anon] / (home) renders Survivor twice in the visible fold — once as the "CURRENTLY FEATURED" hero block at the top of the page, and a second time inside the compact "+ 10 MORE IN THE INDEX" grid below the three expanded tier cards. Same show, same paint: a first-time visitor scans the home page and meets `Survivor / 50 SEASONS RANKED` at the top, then `REALITY COMPETITION / Survivor / 50 SEASONS →` in the compact tail. The duplication reads as a content-management bug — one of the strongest signals on the page (the FEATURED hero) is repeated as a small-card row alongside ten other shows, halving the hero's editorial weight and making the compact grid look like it skipped the dedup. Source: the home page consumer renders the featured cover from one selector and the "+ N more" compact tail from another selector that doesn't exclude `featured`. Fix: in the home-page partition (or `getHomeShows`/`partitionHomeShows` helper, whichever owns the split), drop the featured show's slug from the compact remainder so featured + compact-tail unions to N unique shows, no overlap. Add a unit + e2e assertion that the slug appearing in the FEATURED block does NOT appear in the compact grid (`apps/e2e/tests/home.spec.ts`). (URL: /, source: critique-pass-10) — 1941e89
+
+- [ ] [MED] [anon|authed] /shows/<show>/season/<slug> renders the vote-row eyebrow "Your vote / change within 72h" unconditionally on every season page — anon viewers (no account) read copy that implies an account context they don't have, and authed-no-vote viewers (signed in, never voted on this season) read "change within 72h" implying a vote-to-change they haven't cast. Issue #160 fix (27e732d) added the "you haven't voted / you voted higher / you voted lower" pill *inside* the vote-pair for signed-in viewers (good), but the surrounding `<div className="info-row-head">` at `src/components/composition/SeasonInfoCard.tsx:106-108` still ships `<span>Your vote</span><span className="meta">change within 72h</span>` with no `signedIn` or `hasVote` gate, so the eyebrow's premise is wrong in two of the three viewer states (anon, signed-in-no-vote). The fix shape mirrors the existing pill plumbing: thread `signedIn` (and ideally `hasVote`) through `SeasonInfoCard` to the row head, then render three states — anon ("Cast a vote · sign in to weigh in"), signed-in-no-vote ("Your vote · cast within the week"), signed-in-with-vote (current copy "Your vote · change within 72h"). Same `info-row-vote` testid stays; only the head copy switches by state. (URL: /shows/survivor/season/heroes-villains, every /shows/<show>/season/<slug> URL, source: critique-pass-10) — 1941e89
+
+- [ ] [LOW] [authed] /u/[handle] self-view is indistinguishable from a stranger viewing the same profile AND offers no next-action affordance on the empty state — the page renders `@<handle>`, `Member since <month> <year>`, the empty-state sentence ("Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here."), and the chrome — but no "this is your profile" marker, no "Edit display name", no "Start with Survivor" link, no link to a season pair to act on the empty-state prompt. A signed-in member landing on their own empty profile has zero next-action surface from the page itself; the prompt to act is rhetorical. The signed-in viewer also can't visually distinguish their own profile from a stranger's coincidentally-handled one. Fix: on self-view (viewer == owner), append one inline CTA inside `<ProfileEmpty>` — e.g. "Start with Survivor →" linking to `/shows/survivor` (the featured show) — so the prompt to act is one click, not a memory test. Optionally, add a small "Your profile" eyebrow adjacent to the handle (or surface the Sign out affordance from chrome). Empty-branch only — the populated branch (post-vote) is already the right summary per #164. (URL: /u/e2e, every /u/[handle] self-view of an empty profile, source: critique-pass-10) — 1941e89
 
 - [x] [MED] [anon] /, /shows, /shows/survivor all serve the identical 3-sentence Survivor lede paragraph ("50 seasons of strangers on a beach. The genre that invented itself in episode one, and has spent twenty-five years rediscovering what it is. We've ranked every single one.") verbatim — same string on the home featured-show block, the /shows S-tier card, and the /shows/survivor page lede. A reader navigating Home → All shows → Survivor reads the identical paragraph three times across the primary nav path; makes the canon's most-promoted show read content-thin. Source: `content/shows/survivor.md:11` `tagline:` field is what all three surfaces consume (home pull, /shows S-tier blurb, /shows/survivor lede). Fix: author a tighter card-lede (one-sentence) for the home + /shows S-tier surfaces and reserve the full three-sentence tagline for the show page itself, OR split into a `card_tagline` (short) + `tagline` (full) field pair and migrate the three callers; same pattern applies to every featured show (Drag Race, Top Chef etc.) so the schema change drains across all 12 shows once. (URL: /, /shows, /shows/survivor, source: critique-pass-9) — 8b1018d — issue #170 — RESOLVED this commit: adopted option 2 from the row — split into `card_tagline` (short, optional) + `tagline` (full). `src/content/schemas.ts:43` adds `card_tagline: z.string().min(1).max(160).optional()` to the strict show frontmatter; `src/content/loaders.ts:184` `materializeShow` also tokenizes `card_tagline` (so `{yearsWord}` / `{years}` substitution works on either field). Two card consumers prefer the new field with tagline fallback: `src/components/home/HomeHero.tsx:50` (`featured.card_tagline ?? featured.tagline ?? featured.blurb`) for the home featured cover-sub and `src/components/shows/ShowsTile.tsx:63` (`show.card_tagline ?? show.tagline`) for every /shows tier tile. The show page hero (`<ShowHero>` consuming `show.tagline`) is unchanged — it remains the only surface that quotes the full tagline. `content/shows/survivor.md:12` authors `card_tagline: "The format that invented itself in episode one, and is still finding new ways to ask who you really are."` — a single confident sentence, distinct from `blurb` ("50 seasons. One torch at a time.") and from the full `tagline`. CLAUDE.md "twelve fields" table updated to "up to thirteen" with the new optional row + a `required` column for clarity; the design law's anti-graphical-field rule + the explicit carve-out ("Non-graphical editorial metadata ... is permitted when a page genuinely needs it") cover the addition. Other shows fall back to `tagline` and need no migration today — a future `content-curator` tick can drain `card_tagline` for the other featured/S-tier shows when the editor authors them. §5a: two unit cases pin the consumption preference (`HomeHero.test.tsx` "prefers card_tagline over tagline when present"; `ShowsTile.test.tsx` "prefers card_tagline over tagline when authored"), two loader cases pin the materialization (`loaders.test.ts` token substitution inside an authored `card_tagline` + leaves the field undefined when omitted), and a new e2e (`home.spec.ts` "Survivor lede differs between card surfaces and the show page hero") walks /, /shows, /shows/survivor and asserts the show page hero's lede string is not equal to either card surface — the literal regression the critique row described. Spoiler discipline P0 intact — content field with no per-season editorial verdict. Verify green: leg1 tokens + typecheck + no-raw-img + 1766 unit tests + 127 script tests + content:check (13 shows/298 seasons/13 canons/12 themes/3 legal docs), leg2 build (374 static pages), leg3 1330 e2e (new home.spec assertion + 1329 prior cases).
   - issue: #170
