@@ -70,6 +70,36 @@ describe('<SeasonInfoCard>', () => {
     expect(screen.getByText('not yet ranked')).toBeInTheDocument()
   })
 
+  it('renders the static "Your vote / change within 72h" head when voteRowHead is absent (back-compat)', () => {
+    render(
+      <SeasonInfoCard
+        canonRank={1}
+        canonTotal={1}
+        voteQuestion="Q?"
+        voteSlot={voteSlot}
+      />,
+    )
+    const row = screen.getByTestId('info-row-vote')
+    expect(row).toHaveTextContent('Your vote')
+    expect(row).toHaveTextContent('change within 72h')
+  })
+
+  it('renders the voteRowHead slot in place of the default head when provided (#177)', () => {
+    render(
+      <SeasonInfoCard
+        canonRank={1}
+        canonTotal={1}
+        voteQuestion="Q?"
+        voteSlot={voteSlot}
+        voteRowHead={<div data-testid="vote-row-head-slot">Cast a vote · sign in to weigh in</div>}
+      />,
+    )
+    const row = screen.getByTestId('info-row-vote')
+    expect(screen.getByTestId('vote-row-head-slot')).toBeInTheDocument()
+    expect(row).not.toHaveTextContent('change within 72h')
+    expect(row).toHaveTextContent('Cast a vote · sign in to weigh in')
+  })
+
   it('renders two shield lines by default', () => {
     render(
       <SeasonInfoCard

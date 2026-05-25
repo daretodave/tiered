@@ -26,6 +26,7 @@ import * as ShiftsRowModule from '../ShiftsRow'
 import * as ShowHeroModule from '../ShowHero'
 import * as TopNavTintedModule from '../TopNavTinted'
 import * as VotePairModule from '../VotePair'
+import * as VoteRowHeadModule from '../VoteRowHead'
 import * as WatchListModule from '../WatchList'
 
 import type {
@@ -64,6 +65,7 @@ const EXPECTED_RUNTIME_KEYS = [
   'ShowHero',
   'TopNavTinted',
   'VotePair',
+  'VoteRowHead',
   'WatchList',
   'rankFillPercent',
 ] as const
@@ -96,6 +98,7 @@ describe('@/components/composition barrel — runtime re-exports', () => {
       expect(barrel.ShowHero).toBe(ShowHeroModule.ShowHero)
       expect(barrel.TopNavTinted).toBe(TopNavTintedModule.TopNavTinted)
       expect(barrel.VotePair).toBe(VotePairModule.VotePair)
+      expect(barrel.VoteRowHead).toBe(VoteRowHeadModule.VoteRowHead)
       expect(barrel.WatchList).toBe(WatchListModule.WatchList)
     })
 
@@ -105,7 +108,7 @@ describe('@/components/composition barrel — runtime re-exports', () => {
   })
 
   describe('public-surface key snapshot', () => {
-    it('exposes exactly the documented 27 runtime keys, nothing more, nothing less', () => {
+    it('exposes exactly the documented 28 runtime keys, nothing more, nothing less', () => {
       const keys = Object.keys(barrel).sort()
       expect(keys).toEqual([...EXPECTED_RUNTIME_KEYS].sort())
     })

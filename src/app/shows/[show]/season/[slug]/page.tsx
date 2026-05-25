@@ -23,6 +23,7 @@ import {
   SeasonTOCMobile,
   ShieldBadge,
   VotePair,
+  VoteRowHead,
   WatchList,
   type AdjacentSide,
   type AppearsInRow,
@@ -375,6 +376,9 @@ export default async function SeasonPage({ params }: { params: Params }) {
               canonTotal={canonTotal}
               canonMeta={`${canonTotal} ${canonTotal === 1 ? 'season' : 'seasons'}`}
               voteQuestion={voteQuestion}
+              voteRowHead={
+                <VoteRowHead targetType="season" targetId={seasonTargetId} />
+              }
               voteSlot={
                 <VotePair
                   initialCount={0}

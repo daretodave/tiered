@@ -21,6 +21,11 @@ type SeasonInfoCardProps = {
   voteQuestion: string
   voteHelp?: string
   voteSlot: ReactNode
+  // Replaces the static "Your vote / change within 72h" head with
+  // a viewer-state-aware version (anon / no-vote / voted). Season
+  // pages pass <VoteRowHead>; non-season call sites omit it and
+  // keep the static fallback. Closes #177.
+  voteRowHead?: ReactNode
   // Shield row
   shieldLines?: readonly string[]
 }
@@ -44,6 +49,7 @@ export function SeasonInfoCard({
   voteQuestion,
   voteHelp = 'one vote per reader. canon position recomputes weekly.',
   voteSlot,
+  voteRowHead,
   shieldLines = [
     'No spoilers — reviewed by an editor',
     'Watch order — start here, no prerequisites',
@@ -103,10 +109,12 @@ export function SeasonInfoCard({
       ) : null}
 
       <div className="info-row" data-testid="info-row-vote">
-        <div className="info-row-head">
-          <span>Your vote</span>
-          <span className="meta">change within 72h</span>
-        </div>
+        {voteRowHead ?? (
+          <div className="info-row-head">
+            <span>Your vote</span>
+            <span className="meta">change within 72h</span>
+          </div>
+        )}
         <p className="vote-q">{voteQuestion}</p>
         {voteSlot}
         <div className="vote-help">{voteHelp}</div>
