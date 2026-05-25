@@ -71,7 +71,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   }
   return buildMetadata({
     title: `${show.name} S${season.number} — ${season.title}`,
-    description: `Vote and discuss ${show.name} season ${season.number}: ${season.title}.`,
+    description: descriptionFor(show.name, season),
     path: `/shows/${show.slug}/season/${season.slug}`,
     feeds: [
       {
@@ -80,6 +80,24 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       },
     ],
   })
+}
+
+// CRITIQUE pass 10 MED: prefer the curator's lede (the line a reader
+// would quote to a friend) over the flat "Vote and discuss…" template.
+// Google snippets clip around 155–160 chars, so on the rare lede that
+// runs long we cut at the last word boundary inside 159 and append an
+// ellipsis. The template fallback survives for seasons authored without
+// a lede.
+function descriptionFor(showName: string, season: Season): string {
+  const lede = season.lede?.trim()
+  if (!lede) {
+    return `Vote and discuss ${showName} season ${season.number}: ${season.title}.`
+  }
+  if (lede.length <= 160) return lede
+  const slice = lede.slice(0, 159)
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut = lastSpace > 0 ? lastSpace : 159
+  return `${lede.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
 }
 
 function pad2(n: number): string {

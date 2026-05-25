@@ -99,6 +99,27 @@ test.describe('survivor S20 — gold-standard reference', () => {
     await expect(tocLinks.first()).toHaveClass(/active/)
     expect(await page.locator('.toc-dot').count()).toBe(6)
   })
+
+  test('meta description reads as the curator lede, not the "Vote and discuss" template', async ({
+    page,
+  }) => {
+    // CRITIQUE pass 10 MED: every season's <meta name="description">
+    // ships the curator's hand-authored lede (the line a reader would
+    // quote to a friend), not the flat "Vote and discuss <show> season
+    // <n>: <title>." CMS template that previously surfaced in every
+    // Google snippet, Slack unfurl, and Twitter card. Pin Heroes vs.
+    // Villains specifically because its lede sits under the 160-char
+    // truncation point and surfaces verbatim — a regression that
+    // re-introduced the template (or truncated mid-word) trips here.
+    await page.goto(path, { waitUntil: 'domcontentloaded' })
+    const description = await page
+      .locator('meta[name="description"]')
+      .getAttribute('content')
+    expect(description).toBe(
+      "A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep.",
+    )
+    expect(description).not.toMatch(/^Vote and discuss /)
+  })
 })
 
 test.describe('survivor S28 Cagayan — display_title entity render (33b)', () => {
