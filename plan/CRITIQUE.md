@@ -1,23 +1,23 @@
 # CRITIQUE
 
-> Last pass: 2026-05-25 at commit bbd3082
-> Pass count: 11
+> Last pass: 2026-05-26 at commit 60abb0d
+> Pass count: 12
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 10 ran in the cloud loop via Path A2
+> cadence is active. Pass 12 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5/6/7/8/9 filters (#139 RSC
+> innerWidth` at 375px). Pass-5/6/7/8/9/10/11 filters (#139 RSC
 > ERR_ABORTED, #125 settleForHydration, anon/authed shared-
 > profile false-positive class, /sign-in URL-labeling artifact,
-> SeasonHero text-only capture of icon-only buttons) continue
-> to hold. Authed chrome captured post-hydration as `@e2e /
-> Sign out` across all four URLs — Path A2's mode determinism
-> intact.
+> SeasonHero text-only capture of icon-only buttons, vs-slug
+> walker rows on canonical-renamed S20) continue to hold.
+> Authed chrome captured post-hydration as `@e2e / Sign out`
+> across all four URLs — Path A2's mode determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -32,6 +32,86 @@
 
 ## Pending
 
+> Pass 12 (2026-05-26, commit 60abb0d) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Six findings filed (1 HIGH,
+> 5 MED). Mechanical pass emitted zero product findings — every
+> URL returned 200 with H1, no console errors, no failed
+> first-party network, no horizontal scroll at 375px, all SEO
+> tags present. The pass-11 S20 vs-slug walker artifact is gone
+> (canonical slug renamed `heroes-villains` → `heroes-vs-villains`
+> at f3d039e); both anon and authed walks resolved the URL
+> cleanly. The qualitative sweep concentrated on one dominant
+> class: **template-fill drift on hand-authored editorial copy**
+> — the same class pass-11's row #263 (Pending LOW
+> "not-pretending-to-be-objective" methodology-block flourish)
+> opened against canon `meth_who_p:` files, now surfacing on
+> three additional content surfaces that share the pattern in
+> structurally separable ways. (1) Nine of thirteen show
+> taglines (`content/shows/*.md`) close on the identical
+> "Ranked without <verb> a single <noun>." construction — Drag
+> Race "crowning", Bachelor "final rose", Big Brother
+> "eviction", Bachelorette "hometown", Project Runway "finale
+> collection", GBBO "Star Baker", Love Island UK "final couple",
+> Love Island US "recoupling", The Challenge "elimination". Top
+> Chef and Amazing Race break the mold; Survivor's tagline is
+> longer-form. The repeating tail across nine of thirteen shows
+> is the strongest single AI-tell on /shows. (2) Eight of ten
+> themed-list blurbs (`content/themes/best-*.md`) end on the
+> "across <N> different franchises" / "<N> shows, <M> things"
+> construction — a count-of-shows tail that duplicates the
+> "N SHOWS COVERED" stat strip the same surface already renders
+> structurally. (3) All ten themed-list TITLES on disk
+> (`content/themes/best-*.md`) share one syntactic mold ("<plural
+> noun> that <past-tense verb> <optional object>" — *Finales
+> that stuck the landing / Comeback seasons that landed /
+> Location reveals that announced themselves / Newbie casts that
+> arrived ready / ...*); the four cross-canon home-page stack
+> reads as templated rather than authored. Three concrete,
+> bounded one-class-per-row fixes that the editorial drain (or a
+> targeted /iterate pass) can take cleanly. Two non-template
+> findings round out the pass: a `/themes` H1 ("Themed lists. /
+> Cross-canon.") that overclaims against the body sentence
+> already admitting some lists are single-show (the `SINGLE-SHOW`
+> filter chip + the `Survivor: the load-bearing seasons` card
+> are right there on the page), and a `/themes/best-finales`
+> `LAST REVISED / this week` stamp that conflicts with the
+> site-wide `May 2026 / LAST REVISION` calendar format on every
+> other surface (will rot silently). On the authed side, a
+> single voice/redundancy MED on the season-page vote block:
+> the pass-11 #182 head copy fix (`cast yours this week`) and
+> the pass-6 #160 state pill (`you haven't voted`) both ship to
+> the signed-in-no-vote viewer in the same column, four lines
+> apart, both nudging the same action against the same `1 NET
+> VOTE` — the same redundancy class pass-7 fixed for the
+> comment composer, now on the vote block. Reader-filed findings
+> dropped on self-assessment: (a) anon "+9 MORE IN THE INDEX"
+> sits above 9 inline tiles — the framing is a little odd but
+> the row is followed by a `BROWSE ALL →` link, marginal voice
+> tic below the filing threshold; (b) anon `SAVE LIST / SHARE /
+> SUGGEST AN ENTRY` actions undifferentiated for anon — design
+> tradeoff (the auth wall on tap is acceptable for first-time
+> visitors); (c) authed `/u/e2e` empty-state "Vote on a season
+> pair" — "pair" framing reads odd but the product IS pairwise
+> per home page copy; ambiguity not yet a defect; (d) authed
+> signed-in home reads identical to anon below chrome — real
+> signal but the suggested fix (signed-in-only home block) is a
+> feature add larger than polish-class scope; (e) authed season
+> eyebrow `SPRING 2010 · SAMOA` overlaps stats strip `Feb 11,
+> 2010 · Upolu, Samoa` — real editorial-hygiene tic but the
+> eyebrow's seasonal-shorthand voice is a deliberate frame the
+> stats strip's precision doesn't replace; below threshold this
+> pass; (f) authed `/shows/survivor` Community section identical
+> to anon — same feature-add scope as (d). Pass-5..11 filters
+> (#139 RSC ERR_ABORTED, #125 settleForHydration, anon/authed
+> shared-profile false-positive class, /sign-in URL-labeling
+> artifact, SeasonHero icon-only text-capture, vs-slug walker
+> artifact) continue to hold.
+>
 > Pass 11 (2026-05-25, commit bbd3082) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
 > across the anon URL set (`/`, `/shows/survivor`, `/shows`,
@@ -245,6 +325,18 @@
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
 -->
+
+- [ ] [HIGH] [anon] /shows nine of thirteen show taglines close on the identical "Ranked without <verb> a single <noun>." template — read top-to-bottom on the tier-list page the repeating clause scans as fill-in-the-blank generation, not a knowledgeable peer writing per show. Verified on disk via grep: Drag Race ("Ranked without spoiling a single crowning."), Love Island UK ("...final couple."), GBBO/Bake Off ("...Star Baker."), Project Runway ("...finale collection."), Bachelorette ("...hometown."), Love Island US ("...recoupling."), The Challenge ("...elimination."), Bachelor ("Ranked without giving away a single final rose."), Big Brother ("Ranked without ruining a single eviction."). Top Chef has no such tag; Amazing Race uses a different shape ("We've ranked every leg of every one"); Survivor's tagline is longer-form. The inconsistency makes the repeating nine stand out more, not less. The site-wide "No spoilers" promise is already carried structurally by the chrome (header + footer `<ShieldBadge>` + the home-page brand promise) — every per-show repetition is editorial dead weight. Fix: drop the trailing "Ranked without <verb> a single <noun>." clause from at least six of the nine offenders and let each show's tagline close on its own editorial observation, the way Top Chef and Amazing Race already do. The clause's content is already covered site-wide; the tagline space is editorial real estate that should land an idea unique to that show. Pin with a `scripts/content-check.ts` invariant (lax→strict in the existing `STRICT` / `CROSS_SHOW_STRICT` / `YEAR_TENURE_STRICT` pattern) asserting at most N shows carry the templated trailing clause (initial floor: ≤ 3; final strict floor: ≤ 1) — same shape as the cross-show-coverage and year-tenure invariants already in place. Spoiler discipline P0 unchanged — editorial-voice rewrite only. (URL: /shows, every show home-page card surface that quotes the tagline, source: critique-pass-12) — 60abb0d
+
+- [ ] [MED] [anon] /themes eight of ten themed-list blurbs close on the same count-of-shows tail ("across <N> different franchises" / "<N> shows, <M> [thing-noun]") — verified across `content/themes/best-*.md` blurb fields. Best premieres: "across six different franchises." Best finales: "six shows, seven landings." Best newbie casts: "six shows' worth of rookie rosters." Best returnee seasons: "five shows, one premise landed." Best post-merge runs: "Across five franchises." Best firsts/locations/comeback: same construction. The tail duplicates the structural "N SHOWS COVERED" / "N ENTRIES" stat strip that every /themes card AND every /themes/<theme> hero already renders — the blurb is paying twice for the same fact, and the parallel construction across eight of ten blurbs reads as one writer using one template (same class as the /shows tagline tail above). Fix: drop the count-of-shows tail from at least five of the eight offenders and let each blurb close on the editorial observation it actually has (already present in the prior sentences). Pin in the editorial drain via `.claude/agents/content-curator.md` + `skills/ship-content.md` Rule 3 — themed-list blurbs do not restate the show count; the chrome already renders it structurally. Optional lax-mode `content-check` invariant (floor: ≤ 3 blurbs carrying the count-of-shows tail) on the same pattern as the /shows tagline gate above; both can ship as one pure-script helper. Spoiler discipline P0 unchanged. (URL: /themes, every /themes/<theme> card surface that quotes the list blurb, source: critique-pass-12) — 60abb0d
+
+- [ ] [MED] [anon] /themes all ten themed-list TITLES on disk share one syntactic mold — "<plural noun> that <past-tense verb> <optional object>" (verified via `grep -h "^title:" content/themes/best-*.md`): *Location reveals that announced themselves / Finales that stuck the landing / Premieres that earned it / Comeback seasons that landed / Non-winning runs that defined the season / Post-merge runs that delivered / Newbie casts that arrived ready / Villain edits that ran the season / Returnee seasons that paid off / Reunion specials that closed the loop*. On `/themes` itself the ten titles sit in a category-grouped list and the parallelism is visible top-to-bottom; on the home page's `HomeListsStack` four titles stack adjacent in immediate succession and the syntactic uniformity reads as templated rather than authored. The bearings voice law says plain sentences over clever ones and the design law warns against AI-generated tells; ten-for-ten on one syntactic shape is the canonical example. Fix: re-author three to four titles to break the mold — drop the relative clause for at least two (e.g. *Newbie casts that arrived ready* → *Rookie casts that showed up ready*, *Location reveals that announced themselves* → *Locations that did the talking*) and rewrite one or two into a different shape entirely (a noun-only or imperative title — *The premieres that earned the rest of their seasons* / *Comebacks the franchises actually needed*). Author into `.claude/agents/content-curator.md` Title-discipline block: themed-list titles vary syntactically across the catalog; no more than N of M may share the "X that Y-ed Z" relative-clause shape (initial floor: ≤ 5/10; strict floor: ≤ 4/10). Spoiler discipline P0 unchanged. (URL: /themes, /, every surface that quotes themed-list titles, source: critique-pass-12) — 60abb0d
+
+- [ ] [MED] [anon] /themes H1 "Themed lists. / Cross-canon." overclaims against the body — the H1 sub-line frames every list as cross-show, but the same page surfaces a `SINGLE-SHOW` filter chip, a per-card `SINGLE-SHOW LIST` eyebrow on `survivor-pillars`, and the body sentence directly underneath the H1 already admits the mix ("Some span the catalog, some live inside one show. None of them spoil what they rank."). A first-time visitor reading only the H1 expects every list to span the catalog. The same pattern appears on the home page's `HomeListsStack` heading ("Themed lists, cross-canon.") which `iterate` already addressed (#129 made it data-derived from `showsCovered > 1`) — but that fix only checks the *overall* cross-canon threshold (today 10/12 lists cross-canon → still reads "cross-canon."). The H1 on `/themes` doesn't even derive — it's a hardcoded literal in `src/components/lists/ListsHero.tsx` (or wherever the H1 ships). Two clean shapes for the fix: (a) drop the "Cross-canon." sub-line entirely and let the per-card `CROSS-CANON / SINGLE-SHOW` eyebrow chips do the typing, OR (b) make the sub-line data-derived in the same shape as #129 — show "Cross-canon and single-show." when both populations exist, "Cross-canon." only when 100% of lists are cross-canon, "Single-show." only when 100% are single-show. The body's "Some span the catalog, some live inside one show." already does the work; the sub-line is editorial dead weight when it disagrees with the body two lines later. Same `getThemeStats()` helper #129 introduced is the source-of-truth. Pin with a `ListsHero.test.tsx` case asserting the sub-line never claims a coverage shape that disagrees with `showsCovered > 1` + `singleShowCount > 0`. Spoiler discipline P0 unchanged. (URL: /themes, source: critique-pass-12) — 60abb0d
+
+- [ ] [MED] [anon] /themes/<theme> `LAST REVISED` stamp renders relative-time ("this week" on best-finales today) while every other revised-stamp surface across the site renders calendar month + year ("May 2026" on the home `CANON REVISED` block, "May 2026" on /shows `LAST REVISION`, "2026" on the /themes `INDEX LAST REVISED` strip). Three different revision-timestamp formats across the same crawl is a chrome-consistency drift, and "this week" is the only format that will silently rot — by next week the stamp will be a lie no editor remembers to fix. The `content/themes/<theme>.md` frontmatter carries a `last_revised: <ISO date>` field (added in phase 19f); the page can derive a calendar-month stamp from that field with the same `formatLastRevised(iso)` helper the show-page hero presumably uses today (or, if no shared helper exists, the same shape /themes' overview stat strip already uses). Fix: render the list's `LAST REVISED` stamp from the source-of-truth field, formatted as calendar month + year (e.g. `May 2026`), matching the show-page convention. Drop any "this week" / "today" / "yesterday" branch — relative-time stamps require a freshness gate that the static site can't enforce. Pin with a colocated unit case asserting the stamp matches `MMM YYYY` shape, and with an e2e assertion on `/themes/best-finales` that `LAST REVISED` does not literally read "this week" (or any other relative-time token). Spoiler discipline P0 unchanged. (URL: /themes/best-finales, every /themes/<theme> URL, source: critique-pass-12) — 60abb0d
+
+- [ ] [MED] [authed] /shows/<show>/season/<slug> signed-in-no-vote viewer reads `YOUR VOTE · CAST YOURS THIS WEEK` (the head) and `YOU HAVEN'T VOTED` (the VotePair state pill) within four lines of each other — both nudging the same action against the same `1 NET VOTE`. The head meta `cast yours this week` (pass-11 #182, `src/components/composition/VoteRowHead.tsx:30`) is the imperative; the pill `you haven't voted` (pass-6 #160, `src/components/composition/VotePair.tsx`) is the diagnostic — two channels carrying the same job for the same viewer state. This is the same redundancy class pass-7 fixed for the comment composer (composer placeholder + empty-state line both told signed-in members the thread was empty). The two fixes shipped independently (#160 in pass-6, #182 in pass-11) without considering the overlap because pass-11 only tightened the head's grammar — not its overlap with the pill that already lived below it. Fix: pick one channel per state and let the other go silent. Two clean shapes: (a) when `vote-row-head` resolves to `signed-in-no-vote`, suppress the `VotePair` `you haven't voted` pill — the head already says it; or (b) on `signed-in-no-vote` swap the head meta to a non-redundant frame (drop `cast yours this week`, render `Your vote · weekly recompute` as a time-frame note and let the pill carry the action). Either shape works; (a) is the smaller surgery (one prop / one render gate in `<VotePair>`) and preserves the head's imperative voice; (b) keeps the pill the source-of-truth for state and rewrites the head into pure metadata. Pin with a unit case in `VotePair.test.tsx` OR `VoteRowHead.test.tsx` asserting the two strings (`cast yours this week` + `you haven't voted`) never both surface in the no-vote state. Anon viewers (no head, no pill) and signed-in-with-vote viewers (`change within 72h` head + `you voted higher/lower` pill — two different facts, not redundant) are unchanged. Spoiler discipline P0 unchanged. (URL: every /shows/<show>/season/<slug> URL, source: critique-pass-12) — 60abb0d
 
 - [x] [MED] [anon] /shows generateMetadata announces a B tier the page does not render — `src/app/(default)/shows/page.tsx:20` ships description "Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon, B tier is in review." A reader clicking the SEO snippet expects a B tier section, but `content/shows/*.md` carries `tier: S` on 2 shows + `tier: A` on 11 shows + `tier: B` on zero. The /shows page itself renders only the S and A tier-head blocks (the tier rail is gated on `tier-head` rows with members > 0), so the description overclaims against its own rendered content. Fix: in `src/app/(default)/shows/page.tsx` generateMetadata, derive the description from the tiers actually present — iterate `getAllShows()` and only mention tiers with `length > 0` (e.g. "S tier is format-defining, A tier has the deep canon"). Same shape as the existing tier-head rendering rule. Pin with a colocated unit case asserting the description does not name a tier that has zero members. (URL: /shows, source: critique-pass-11) — bbd3082 — issue #181 — RESOLVED this commit (7d86e6a): new pure helper `buildShowsMetaDescription(populatedTiers)` (`src/components/shows/tierMetaDescription.ts`) composes the SEO description from the same TIER_ORDER + members-gt-0 filter the page uses to gate `<TierSection>` — the snippet can never name a tier the page does not render. Pattern mirrors the existing `tierLedeSentences` helper (one fragment per populated tier, joined in S → A → B order). `src/app/(default)/shows/page.tsx` `generateMetadata` now derives `populatedTiers` from `getAllShows()` + `groupShowsByTier` + the existing `showsForTier(...).length > 0` predicate and hands them to `buildShowsMetaDescription`. With today's catalog (zero B-tier shows) the snippet now reads "Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon." — the B-tier overclaim is gone, but if a future `content-curator` tick lands a B-tier show the snippet drains the new fragment automatically, no second edit needed. Colocated unit tests for the helper (8 cases — empty / S-only / S+A / S+A+B / B+S ordering / dedup / A+B / always-ends-in-single-period) and for the page (9 cases — title + canonical pin, every catalog shape pins the description literal, plus the "never names a tier with zero members" invariant swept across every (S, A, B) presence combination, plus the empty-catalog opener-only path). `@/components/shows` barrel + barrel-test updated for the new export (documented runtime-key count 15 → 16). No new URL, no schema, no content edit. Verify green: leg1 tokens + typecheck + no-raw-img + 171 unit test files (incl. 2 new, 17 cases) + 127 script tests + content:check (13 shows / 298 seasons / 13 canons / 12 themes / 3 legal docs), leg2 build (374 static pages), leg3 1346 e2e.
 
