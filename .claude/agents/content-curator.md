@@ -306,6 +306,23 @@ Tagging discipline:
   nickname in the header anoints it for an unwatched reader —
   the soft-leak class that P0 spoiler discipline preserves
   (`plan/bearings.md` §spoilers; filed by /critique pass 11).
+- **Title-discipline (themed-list `title`).** Themed-list titles
+  must **vary syntactically across the catalog**. The default
+  shape — `"<plural noun> that <past-tense verb> [object]"` —
+  reads as a templated mold when more than half the catalog
+  shares it. Floor: **no more than 5 of N titles** may use the
+  relative-clause `"X that Y-ed Z"` shape (strict floor: ≤ 4 of
+  N). When the next list lands and pushes the catalog to the
+  floor, retitle one of the older clause-shape lists rather than
+  the new one — the freshly-authored framing is usually the
+  cleanest. Acceptable alternatives include: noun-only phrase
+  (`The back-half at full volume`), noun + participle (`Rookie
+  casts walking in fluent`), noun + appositive (`The villain edit
+  as through-line`), noun + prepositional phrase (`Comebacks worth
+  the swing`), declarative sentence (`The setting talks first`).
+  Never reach for an exclamation point or imperative-with-CTA
+  ("Watch these!"); the catalog stays in editorial register
+  (filed by /critique pass 12).
 
 Frontmatter for canon.md — the **31a editorial block**.
 Every field below the `show:` line is OPTIONAL on the schema

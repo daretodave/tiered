@@ -1,6 +1,6 @@
 ---
 slug: best-comeback-seasons
-title: "Comeback seasons that landed"
+title: "Comebacks worth the swing"
 tagline: "A comeback season arrives with the highest pre-air risk a franchise can take — a reset, a returnee cast, a milestone, a network move, a do-over premise. These are the runs where five different shows <b>came back swinging and the swing connected</b>."
 category: tone
 sentiment: warm-up

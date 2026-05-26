@@ -1,6 +1,6 @@
 ---
 slug: best-post-merge
-title: "Post-merge runs that delivered"
+title: "The back-half at full volume"
 tagline: "Every competition franchise has its compression point — Survivor calls it the merge, but Big Brother's jury phase, Top Chef's closing run, and Drag Race's top five all do the same job. These are the back-half stretches that <b>land round after round in the right register</b> — paranoid, tactical, loud where they need to be."
 category: tone
 sentiment: consensus
