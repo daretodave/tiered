@@ -291,6 +291,21 @@ Tagging discipline:
   canon headings, and season-page headings naming the same
   season identically; `content:check` fails a divergent
   `season_label`.
+- **Header-slot marketed-title rule.** The themed-list
+  `season_label` suffix is a chrome-header slot: it announces the
+  season to a reader who hasn't watched it. Only quote a
+  network-marketed subtitle there (`Heroes vs. Villains`,
+  `Winners at War`, `Las Vegas`, `Texas`). If the season's
+  editorial `title` is an in-season alliance / arc / outcome
+  nickname (e.g. Big Brother's `Renegades Era`, `The Brigade`,
+  `MVP Summer`), **drop the suffix and use the bare `S<N>`
+  label** — the same form Amazing Race S07 / Drag Race S06 use
+  in `content/themes/best-finales.md`. Set up the in-season
+  framing in the entry's `blurb` prose if you need it, never in
+  the header slot. Rationale: naming an alliance / outcome
+  nickname in the header anoints it for an unwatched reader —
+  the soft-leak class that P0 spoiler discipline preserves
+  (`plan/bearings.md` §spoilers; filed by /critique pass 11).
 
 Frontmatter for canon.md — the **31a editorial block**.
 Every field below the `show:` line is OPTIONAL on the schema

@@ -388,6 +388,17 @@ the entire visual contribution.
     `{ show, season, rank, title (≤140 chars, spoiler-safe
     framing), blurb (≤280 chars, 1–3 sentences),
     season_label? (e.g. "S07 · Texas") }`.
+  - **Header-slot marketed-title rule.** `season_label` is a
+    chrome-header slot that names the season for an unwatched
+    reader. The suffix (`· …`) may only quote a network-marketed
+    subtitle (`Heroes vs. Villains`, `Winners at War`,
+    `Las Vegas`). If the season's editorial `title` is an
+    in-season alliance / arc / outcome nickname (e.g. Big
+    Brother's `Renegades Era`, `The Brigade`, `MVP Summer`),
+    **drop the suffix and use bare `S<N>`** (matches the
+    AR S07 / Drag Race S06 pattern in `best-finales`). Naming
+    an alliance / outcome nickname in the header anoints it for
+    a reader who hasn't watched — the P0 soft-leak class.
 - Cross-show by design — no `tone` or `craft` themed list
   should pull >3 entries from one show. `single` lists are
   the exception by definition.

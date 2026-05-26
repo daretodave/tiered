@@ -51,8 +51,8 @@ entries:
     blurb: "Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The closing hour lands a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
-    season_label: "S10 · Renegades Era"
+    season_label: "S10"
     rank: 7
     title: "The endgame where the modern alliance game finally takes itself seriously."
-    blurb: "Renegades Era closes on the season that taught Big Brother its strategic vocabulary. The final stretch rewards the alliance play it spent the summer building — a closing run sharp enough to hold against every era that followed it."
+    blurb: "The season that taught Big Brother its strategic vocabulary closes on a finale built for it. The final stretch rewards the alliance play the summer spent building — a closing run sharp enough to hold against every era that followed it."
 ---
