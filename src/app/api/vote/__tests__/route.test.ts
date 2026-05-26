@@ -354,12 +354,13 @@ describe('GET /api/vote — RPC error mapping + leak guard', () => {
 })
 
 describe('GET /api/vote — signedIn surface (#160)', () => {
-  // The VotePair state pill ("you haven't voted" / "you voted higher" /
-  // "you voted lower") only renders for signed-in members; an anon
+  // The VotePair state pill ("you voted higher" / "you voted lower")
+  // only renders for signed-in members who have voted; an anon
   // viewer with a cookie must read `signedIn: false`, an Auth0-backed
   // session must read `signedIn: true`. Both share the same vote
   // read-back so the pill copy and the pair number arrive in one
-  // round-trip — no /api/auth/me piggyback.
+  // round-trip — no /api/auth/me piggyback. The no-vote channel
+  // is owned by VoteRowHead's head meta (#189).
   it('returns signedIn:false for an anon caller with a valid cookie', async () => {
     const res = await GET(
       getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),

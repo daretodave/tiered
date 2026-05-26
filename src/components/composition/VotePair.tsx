@@ -165,14 +165,14 @@ export function VotePair({
   // — the displayed count is already announced by the count cell.
   const displayLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
 
-  // State pill copy (#160): only surfaces for signed-in members.
-  // The three states map 1:1 to the value union — keeps the pill
-  // honest about what the viewer's ballot actually is right now.
-  const stateCaption = votedUp
-    ? 'you voted higher'
-    : votedDown
-      ? 'you voted lower'
-      : "you haven't voted"
+  // State pill copy (#160): only surfaces for signed-in members
+  // who have actually voted. The signed-in-no-vote channel is
+  // owned by <VoteRowHead>'s "cast yours this week" head meta
+  // — rendering "you haven't voted" here would double-nudge the
+  // same action against the same count (critique pass-12 #189).
+  // The pill survives as a pure post-action confirmation.
+  const stateCaption = votedUp ? 'you voted higher' : 'you voted lower'
+  const showStateCap = signedIn && (votedUp || votedDown)
 
   return (
     <div
@@ -180,7 +180,7 @@ export function VotePair({
       data-testid="vote-pair-stack"
       data-signed-in={signedIn ? 'true' : 'false'}
     >
-    {signedIn ? (
+    {showStateCap ? (
       <div
         className="vote-state-cap"
         data-testid="vote-state-cap"

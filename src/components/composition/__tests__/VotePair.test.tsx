@@ -275,14 +275,16 @@ describe('<VotePair>', () => {
   })
 
   // --- #160 (critique pass-6): YOUR VOTE block disambiguation ---
+  // --- #189 (critique pass-12): drop the no-vote cap ---
   //
-  // Signed-in members get a state pill above the buttons so the
-  // section never reads "YOUR VOTE / 1 NET VOTE" without telling
-  // the member whether they're part of that 1. Anon viewers see
-  // only the pair (same as today). The pill text maps 1:1 to the
-  // vote value union — keeps the affordance honest about the
-  // viewer's current ballot.
-  describe('state pill (signed-in only)', () => {
+  // Signed-in members who HAVE voted get a state pill above the
+  // buttons confirming which side they voted; signed-in members
+  // who have NOT voted get NO pill — the head meta "cast yours
+  // this week" (VoteRowHead, signed-in-no-vote state) owns that
+  // imperative, so rendering "you haven't voted" here would
+  // double-nudge the same action against the same count. Anon
+  // viewers see only the pair (same as before #160).
+  describe('state pill (signed-in + has voted only)', () => {
     it('renders no state pill when /api/vote reports signedIn:false', async () => {
       getBody = { ok: true, value: 0, count: 0, signedIn: false }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
@@ -293,16 +295,32 @@ describe('<VotePair>', () => {
       ).toBe('false')
     })
 
-    it("renders \"you haven't voted\" for a signed-in viewer with value 0", async () => {
+    it('renders no state pill for a signed-in viewer with value 0 (head owns the imperative)', async () => {
       getBody = { ok: true, value: 0, count: 7, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      const cap = screen.getByTestId('vote-state-cap')
-      expect(cap.textContent).toBe("you haven't voted")
-      expect(cap.getAttribute('data-vote-state')).toBe('none')
+      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
       expect(
         screen.getByTestId('vote-pair-stack').getAttribute('data-signed-in'),
       ).toBe('true')
+    })
+
+    it('the no-vote state never surfaces "you haven\'t voted" — pin against #189 regression', async () => {
+      // Pass-12 #189: the head ("cast yours this week") and the
+      // pill ("you haven't voted") used to both ship to the
+      // signed-in-no-vote viewer. The pill is now silent in that
+      // state; this assertion pins that the redundant string
+      // never reappears on the surface no matter the count value.
+      for (const count of [-9, -1, 0, 1, 9]) {
+        getBody = { ok: true, value: 0, count, signedIn: true }
+        const { unmount } = render(
+          <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
+        )
+        await flushAsync()
+        const stack = screen.getByTestId('vote-pair-stack')
+        expect(stack.textContent ?? '').not.toContain("haven't voted")
+        unmount()
+      }
     })
 
     it('renders "you voted higher" for a signed-in viewer with value 1', async () => {
@@ -323,18 +341,17 @@ describe('<VotePair>', () => {
       expect(cap.getAttribute('data-vote-state')).toBe('down')
     })
 
-    it('updates the pill text as the viewer clicks (no second fetch needed)', async () => {
+    it('the pill appears on click (signed-in-no-vote → signed-in-with-vote)', async () => {
       getBody = { ok: true, value: 0, count: 5, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.getByTestId('vote-state-cap').textContent).toBe(
-        "you haven't voted",
-      )
-      // Click up — pill flips immediately to the optimistic state.
+      // No pill initially — head owns the imperative.
+      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
+      // Click up — pill appears immediately with the optimistic state.
       fireEvent.click(screen.getByTestId('vote-up'))
-      expect(screen.getByTestId('vote-state-cap').textContent).toBe(
-        'you voted higher',
-      )
+      const cap = screen.getByTestId('vote-state-cap')
+      expect(cap.textContent).toBe('you voted higher')
+      expect(cap.getAttribute('data-vote-state')).toBe('up')
     })
 
     it("never reveals the pill when /api/vote omits signedIn (defensive default)", async () => {

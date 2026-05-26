@@ -616,11 +616,13 @@
 .vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 12px; text-wrap: pretty; }
 .vote-help { margin-top: 10px; font: 400 11px/1.5 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
 
-/* #160: signed-in members get a state pill above the buttons so the
-   YOUR VOTE block disambiguates "haven't voted" from "voted up/down".
-   Color tracks the vote sentiment — neutral for not-yet, warm primary
-   for voted-up, cool hold for voted-down — mirroring the same
-   sentiment system the community pill + shield stack already use. */
+/* #160 + #189: signed-in members who have voted get a state pill
+   above the buttons confirming which side ("you voted higher" /
+   "you voted lower"). The no-vote channel is owned by VoteRowHead's
+   "cast yours this week" head meta — rendering "you haven't voted"
+   here would double-nudge the same action against the same count.
+   Color tracks vote sentiment — warm primary for voted-up, cool hold
+   for voted-down — mirroring the community pill + shield stack. */
 .vote-pair-stack { display: flex; flex-direction: column; gap: 8px; }
 .vote-state-cap {
   align-self: flex-start;

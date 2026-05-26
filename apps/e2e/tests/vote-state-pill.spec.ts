@@ -2,10 +2,17 @@ import { expect, test } from '@playwright/test'
 import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 
 // #160 (critique pass-6) — the YOUR VOTE block must disambiguate
-// "you haven't voted" from "you voted higher/lower" for the
+// "you voted higher/lower" from the no-vote state for the
 // signed-in viewer. Before the fix the block read
 // "YOUR VOTE / 1 NET VOTE" with no signal that the 1 came from
-// someone else and the viewer's own ballot was still empty.
+// someone else.
+//
+// #189 (critique pass-12) — the no-vote channel is owned by
+// <VoteRowHead>'s "cast yours this week" head meta. VotePair
+// no longer renders "you haven't voted" in that state to avoid
+// double-nudging the same action against the same count. The
+// pill survives as a pure post-action confirmation
+// (signed-in-with-vote → "you voted higher"/"you voted lower").
 //
 // The pill ships from VotePair itself (driven by /api/vote
 // returning `signedIn` alongside the read-back value). Anon
@@ -28,7 +35,7 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
 
   test.use({ storageState: state ?? undefined })
 
-  test('signed-in viewer sees a state pill above the VotePair buttons', async ({
+  test('signed-in viewer sees disambiguated VotePair state (with-vote → pill, no-vote → silent)', async ({
     page,
   }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
@@ -53,30 +60,43 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     await expect(stack).toBeVisible()
     await expect(stack).toHaveAttribute('data-signed-in', 'true')
 
+    // The pill is silent when the viewer has not voted (the head
+    // owns the imperative). When the viewer HAS voted the pill
+    // confirms which side. Test runs share a hermetic DB across
+    // specs so the viewer's value is variable — assert both
+    // shapes against the same source of truth.
     const cap = page.getByTestId('vote-state-cap')
-    await expect(cap).toBeVisible()
-    // Whatever the viewer's recorded value is (test runs share a
-    // hermetic DB across specs), the pill must be one of the
-    // three legal copies — never a stale placeholder.
-    await expect(cap).toHaveText(
-      /you (haven't voted|voted higher|voted lower)/i,
-    )
-    await expect(cap).toHaveAttribute('data-vote-state', /^(none|up|down)$/)
+    if (api.value === 1) {
+      await expect(cap).toHaveText('you voted higher')
+      await expect(cap).toHaveAttribute('data-vote-state', 'up')
+    } else if (api.value === -1) {
+      await expect(cap).toHaveText('you voted lower')
+      await expect(cap).toHaveAttribute('data-vote-state', 'down')
+    } else {
+      await expect(cap).toHaveCount(0)
+    }
+    // Whatever the value, the redundant "haven't voted" copy
+    // must never surface on the stack (#189).
+    await expect(stack).not.toContainText("haven't voted")
   })
 
-  test('clicking up flips the pill to "you voted higher" without a refetch', async ({
+  test('clicking up flips the pill (silent → "you voted higher", or retracts to silent)', async ({
     page,
   }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
-    await expect(page.getByTestId('vote-state-cap')).toBeVisible()
+    await expect(page.getByTestId('vote-pair-stack')).toHaveAttribute(
+      'data-signed-in',
+      'true',
+    )
 
     // Drive the pair through up-vote. The pill is owned by the
     // same component so the optimistic state must show in the
     // pill text immediately — no network round-trip required.
     const up = page.getByTestId('vote-up')
     // If the viewer is already "up", a second click retracts to
-    // "haven't voted". Either transition is a valid assertion as
-    // long as the pill stays in sync with the data-voted attr.
+    // the no-vote state and the pill must disappear. Either
+    // transition is a valid assertion as long as the pill stays
+    // in sync with the data-voted attr.
     await up.click()
     const pair = page.getByTestId('vote-pair')
     const voted = await pair.getAttribute('data-voted')
@@ -88,8 +108,8 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       await expect(cap).toHaveText('you voted lower')
       await expect(cap).toHaveAttribute('data-vote-state', 'down')
     } else {
-      await expect(cap).toHaveText("you haven't voted")
-      await expect(cap).toHaveAttribute('data-vote-state', 'none')
+      // Retract → no pill; the head's imperative carries again.
+      await expect(cap).toHaveCount(0)
     }
   })
 })
@@ -121,9 +141,9 @@ test.describe('vote state pill — public never sees the pill', () => {
       'false',
     )
     // The pill must be absent — the affordance is for members
-    // only. Spoiler/account-confusion P0: an anon viewer reading
-    // "you haven't voted" would imply a viewer-identity surface
-    // they don't have.
+    // who have voted. Spoiler/account-confusion P0: an anon
+    // viewer reading a pill copy would imply a viewer-identity
+    // surface they don't have.
     await expect(page.getByTestId('vote-state-cap')).toHaveCount(0)
   })
 })

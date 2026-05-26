@@ -187,8 +187,9 @@ export async function GET(request: Request) {
     // weighted ranking aggregate — that leak was issue #64.
     // `signedIn` lets VotePair disambiguate "anon viewer with a
     // cookie" from "signed-in member" so the state pill copy
-    // ("you haven't voted" / "you voted higher" / "you voted lower")
-    // only surfaces to members — closes #160.
+    // ("you voted higher" / "you voted lower") only surfaces to
+    // members who have actually voted (#160 + #189 — the
+    // no-vote channel is owned by VoteRowHead's head meta).
     return NextResponse.json({
       ok: true,
       value: result.value,
