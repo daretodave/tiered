@@ -1,17 +1,17 @@
 # CRITIQUE
 
-> Last pass: 2026-05-26 at commit 60abb0d
-> Pass count: 12
+> Last pass: 2026-05-26 at commit 1241040
+> Pass count: 13
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 12 ran in the cloud loop via Path A2
+> cadence is active. Pass 13 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5/6/7/8/9/10/11 filters (#139 RSC
+> innerWidth` at 375px). Pass-5..12 filters (#139 RSC
 > ERR_ABORTED, #125 settleForHydration, anon/authed shared-
 > profile false-positive class, /sign-in URL-labeling artifact,
 > SeasonHero text-only capture of icon-only buttons, vs-slug
@@ -31,6 +31,81 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 13 (2026-05-26, commit 1241040) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Six findings filed (2 HIGH,
+> 4 MED). Mechanical pass emitted zero product findings — every
+> URL returned 200 with H1, no console errors, no failed
+> first-party network, no horizontal scroll at 375px, all SEO
+> tags present. Pass-12's three template-drift findings (show
+> tagline tail "Ranked without <verb> a single <noun>", themed-
+> list blurb count-of-shows tail, themed-list title syntactic
+> mold) all drained in the last 13 commits and are verified
+> absent on this pass. Two HIGH findings land on the central
+> two-rankings frame: (1) `/shows/survivor` canon ladder renders
+> Cagayan (canon #01, `◆ hold`) and Heroes vs. Villains (canon
+> #02, `↑ 1`) BOTH tagged COMMUNITY `#01` — verified against
+> `content/shows/survivor/canon.md` where both entries carry
+> `community_rank_hint: rank=1`, a content-data bug that the
+> canon-ladder renderer surfaces as a top-of-page contradiction;
+> (2) the season-page community-vote block's microcopy reads
+> "one vote per reader. canon position recomputes weekly." (in
+> `src/components/composition/SeasonInfoCard.tsx:50`) — the
+> two-rankings frame the site spends home-page real estate
+> separating ("Editor's Canon: curated, quarterly" vs "Community
+> Rank: live, weekly") collapses in the vote block by promising
+> canon weekly recompute. Four MED findings: a fourth template-
+> drift surface (`/themes/best-finales` `tagline:` field in
+> `content/themes/best-finales.md` still ends with "across six
+> different franchises" — the body-hero blurb the pass-12 drain
+> didn't reach, because the drain rewrote `description:` /
+> `blurb:` fields but not `tagline:`); a soft-spoiler finding on
+> the S40 Winners at War entry in best-finales naming "Edge of
+> Extinction" + "fire-token economy" by name in a public list
+> blurb against the "no spoilers" brand promise; an authed
+> follow-on to pass-12 #189 (the VotePair head `YOUR VOTE /
+> CAST YOURS THIS WEEK` paired with `1 NET VOTE` reads ambiguous
+> to an authed-not-yet-voted reader — is "1" the global net or
+> personal confirmation?); and an authed `/u/e2e` self-view
+> finding (the owner viewing their own profile sees the
+> identical surface a stranger sees; `isSelfView` is already
+> computed at `src/app/(default)/u/[handle]/page.tsx:117` and
+> available for an owner-only eyebrow). Reader-filed findings
+> dropped on self-assessment: (a) anon home `50 SEASONS RANKED`
+> vs `/shows/survivor` `50 SEASONS AIRED` verb-mismatch — real
+> alignment defect but lower-priority than the canon-vs-
+> community conflations already filed; (b) anon
+> `/themes/best-finales` verbal tic "at full <noun>" across three
+> entry blurbs (TAR S07 "at full strength", Survivor S20 "at full
+> volume", Drag Race S06 "at full height") — voice tic but
+> finer-grained than the bounded drains the loop is currently
+> running; (c) anon `/shows/survivor` COMMUNITY pill symbology
+> (`◆ HOLD` / `↑ 1`) lacking a legend — a11y/comprehension defect
+> but design-system-shaped rather than copy-shaped; (d) anon
+> `/themes` "REFRESHED EVERY 1ST" freshness promise — risk-of-
+> staleness but conditional on editorial publishing cadence;
+> (e) authed `/u/e2e` meta description duplicate-empty-state
+> risk — real SEO concern but conditional on indexable empty
+> profiles; (f) authed `/u/e2e` "Start with Survivor →" hardcoded
+> vs featured-show resolver — drift risk, defers until featured
+> rotates. Pass-5..12 filters continue to hold.
+
+- [ ] [HIGH] [anon] /shows/survivor canon ladder renders the top two entries both tagged COMMUNITY `#01` — Cagayan (canon #01) reads `COMMUNITY · ◆ hold · #01` and Heroes vs. Villains (canon #02) reads `COMMUNITY · ↑ 1 · #01` directly below. Two seasons cannot both occupy community position #01: either HvV's `↑ 1` is right (it moved from #02 to #01, in which case Cagayan should display #02) or HvV's `#01` is stale and the actual position is #02. A first-time reader inspecting the showcase canon's top two slots sees a contradiction. Root cause verified against `content/shows/survivor/canon.md`: both Cagayan and Heroes vs. Villains have `community_rank_hint: rank=1` authored in frontmatter; the canon-ladder renderer (`src/components/canon/CanonHeroEntries.tsx:84` prints `#{padRank(hint.rank)}`) faithfully renders both as `#01`. Fix: decide the right community ranking for the top two slots and edit `community_rank_hint` accordingly. If Cagayan is community #01 (the `◆ hold` claim), HvV must be `rank=2` with `delta=1 sentiment=up` to mean "moved up 1, now at #02". Optionally pin the invariant with a `content-check.ts` rule that no two `community_rank_hint.rank` values on a single show's canon are equal. (URL: /shows/survivor, source: critique-pass-13) — 1241040
+
+- [ ] [HIGH] [anon] /shows/<show>/season/<slug> community-vote-block microcopy reads `one vote per reader. canon position recomputes weekly.` — but the site's central editorial frame (home page `Editor's Canon · Revised quarterly` vs `Community Rank · numbers shift each week`; `plan/bearings.md` `What we're building`) explicitly separates the two ranking tracks. The vote block sits under the community-vote heading (`CAST A VOTE / SIGN IN TO WEIGH IN`, `1 NET VOTE` value) and yet promises that *canon* position recomputes weekly — collapsing the two-rankings frame in the one place the reader is being asked to participate in the community side. Root cause: the literal string ships from `src/components/composition/SeasonInfoCard.tsx:50` as the default `voteHelp` prop value. Fix: change `'one vote per reader. canon position recomputes weekly.'` → `'one vote per reader. community rank recomputes weekly.'` in `SeasonInfoCard.tsx:50` and any test fixture / e2e that pins the literal. Reserve "canon" exclusively for the editorial track everywhere. (URL: /shows/survivor/season/heroes-vs-villains, every /shows/<show>/season/<slug> URL, source: critique-pass-13) — 1241040
+
+- [ ] [MED] [anon] /themes/best-finales body-hero `tagline:` field still closes on `...across six different franchises.` — the count-of-shows tail the recent drain (commits 9dc9418 + 1241040, audit #191) removed from 10 themed-list `description:` / `blurb:` fields. The body-hero `tagline:` is a separate frontmatter field that wasn't covered: `content/themes/best-finales.md:5` reads `tagline: "The closing run is where a season either pays off its promise or quietly admits it didn't have one. These finales <b>land the season they were always making</b> — texture intact, stakes earned, the last hour built at the size it needed, across six different franchises."` A first-time reader scanning the hero meets the exact pattern (`across <N> different franchises`) the recent fix flagged as an AI-counting tic. Fix: extend the drain to the `tagline:` field across all 10 cross-canon themed lists — `grep -l "across.*franchise\|across.*shows" content/themes/*.md` to enumerate the survivors, then rewrite the closing clause in-voice (the description rewrites in commits 9dc9418 / 1241040 are the reference shape). Optionally widen `scripts/content-check.ts`'s template-tail rule to also scan `tagline:` so future drains catch the field. (URL: /themes/best-finales, audit every /themes/<theme> page, source: critique-pass-13) — 1241040
+
+- [ ] [MED] [anon] /themes/best-finales entry #04 (Survivor S40 Winners at War) blurb in `content/themes/best-finales.md` names two season-specific twist mechanics by name: `"The milestone framing earns itself in the closing run. Edge of Extinction reshapes the home stretch, the fire-token economy compresses into real currency, and the final tribal carries the weight of a roster that has played this game before."` Spoiler discipline is P0 (`CLAUDE.md` rules, brand promise "no spoilers" on home). The WaW premise (returning winners) is on the marketing box, but the twist mechanics — Edge of Extinction (a winners-return-from-elimination mechanic) and fire tokens (a season-specific in-game currency) — are exactly the kind of episode-by-episode reveal a viewer who hasn't watched is meant to discover. Cross-canon themed-list blurbs are public-list surfaces, not detail pages — they have to land without naming the twist set. Fix: rewrite the blurb to describe the closing-run quality without naming the twist mechanics — keep `"Twenty former champions taking the season to its full size"` and `"the final tribal carries the weight of a roster that has played this game before"`; drop the Edge-of-Extinction and fire-token clauses. Pair with a `scripts/content-check.ts` blocklist that flags the canonical-twist-name set (Edge of Extinction, fire token, redemption island, hidden immunity idol, etc.) on themed-list `entries[].blurb` fields so the spoiler invariant is mechanically enforced. (URL: /themes/best-finales, source: critique-pass-13) — 1241040
+
+- [ ] [MED] [authed] /shows/<show>/season/<slug> authed-but-not-yet-voted reader sees the VotePair head `YOUR VOTE / CAST YOURS THIS WEEK` paired with a numeric value `1 NET VOTE` — the head is a call to action and the numeric area is ambiguous: is "1" the global community net awaiting the reader's contribution, or confirmation that the reader already voted? Pass-12 #189 / commit 73c25eb fixed the inverse (the duplicated "YOU HAVEN'T VOTED" pill that nudged the same action twice), so the head now owns the no-vote channel — but the head is under-specified for the authed-not-yet-voted state because it doesn't disambiguate the numeric value's source (community-wide vs. personal). Fix: when authed-and-not-yet-voted, qualify the numeric area's k-label to make ownership explicit — render `COMMUNITY · 1 NET VOTE` (the `k` slot is already a span beside the number per `src/components/composition/SeasonInfoCard.tsx` styling). When authed-and-already-voted, the existing `YOUR VOTE` head + personal-confirmation styling already handles the reverse case; the gap is the in-between state. Don't reintroduce a "you haven't voted" pill — keep the channel on the head, just qualify the value's label. Unit + e2e: snapshot the authed-not-yet-voted state and assert the `k` label disambiguates. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-13) — 1241040
+
+- [ ] [MED] [authed] /u/e2e owner-view renders identically to a stranger's view of the same profile — H1 `@e2e`, sub `Member since May 2026`, body `Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here. Start with Survivor →` — with no second-person framing or ownership cue. The header chrome already shows `@e2e / Sign out`, but the page body never confirms "this is your page". The page already has the data: `src/app/(default)/u/[handle]/page.tsx:117` computes `isSelfView` from the session viewer's handle vs. the route handle. The branch just doesn't render anything owner-specific. Fix: when `isSelfView === true`, render an eyebrow above the H1 — `YOUR RECORD` or `YOU · @{handle}` — so the owner-view and the public-view are visually distinct without changing the public surface for strangers. Unit test the branch (`isSelfView=true` vs `false` from the existing helper), e2e walk the authed `/u/e2e` and assert the eyebrow is present + the anon `/u/e2e` walk asserts it is absent. (URL: /u/e2e, source: critique-pass-13) — 1241040
 
 > Pass 12 (2026-05-26, commit 60abb0d) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
