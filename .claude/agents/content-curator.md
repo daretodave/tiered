@@ -323,6 +323,26 @@ Tagging discipline:
   Never reach for an exclamation point or imperative-with-CTA
   ("Watch these!"); the catalog stays in editorial register
   (filed by /critique pass 12).
+- **Description-discipline (themed-list `description`).** Themed-list
+  descriptions must **never close on a count-of-shows tail**: drop
+  any construction of the form `across <N> [different]
+  (franchises|shows)` or `<N> shows[,'] <X>` (e.g. *"across six
+  different franchises."*, *"six shows, seven landings."*, *"five
+  shows' worth of rookie rosters"*, *"Across five franchises,"*).
+  The `/themes` overview cards and every `/themes/<theme>` hero
+  already render the show count structurally as `N SHOWS COVERED`
+  — restating it in prose is editorial dead weight, and the
+  repeating construction across siblings scans as fill-in-the-
+  blank generation. Close on the editorial observation the
+  description actually has. `pnpm content:check` enforces this
+  strict (floor 0) via `collectThemeDescriptionCountTailIssues`;
+  same pattern as the show-tagline templated-tail invariant. The
+  named-shows construction (*"done well across Survivor, Drag
+  Race, The Challenge, Top Chef, and The Traitors"*) is fine — it
+  reads as editorial texture, not a count. The "<N> seasons"
+  construction (e.g. survivor-pillars's *"Four seasons that
+  define…"*) is also fine — counts seasons, not shows (filed by
+  /critique pass 12, issue #191).
 
 Frontmatter for canon.md — the **31a editorial block**.
 Every field below the `show:` line is OPTIONAL on the schema

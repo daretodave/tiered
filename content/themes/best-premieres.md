@@ -11,7 +11,7 @@ featured: true
 related:
   - firsts
   - best-newbie-casts
-description: "First episodes that told you exactly what the show was. The format statement, the cast read, the structural swing — all in one hour, all on purpose, across six different franchises."
+description: "First episodes that told you exactly what the show was. The format statement, the cast read, the structural swing — all in one hour, all on purpose."
 entries:
   - show: survivor
     season: 1

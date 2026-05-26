@@ -11,7 +11,7 @@ featured: true
 related:
   - best-returnees
   - best-finales
-description: "Seasons that arrived with everything to prove — a hiatus, a network jump, a milestone, an anniversary, an all-star reunion — and made the premise pay off. Comebacks five franchises needed and the audience felt land."
+description: "Seasons that arrived with everything to prove — a hiatus, a network jump, a milestone, an anniversary, an all-star reunion — and made the premise pay off. The comebacks the audience felt land."
 entries:
   - show: survivor
     season: 41

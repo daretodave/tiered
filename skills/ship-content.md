@@ -145,6 +145,21 @@ Pre-flight checklist before committing a content tick:
   the season's frontmatter `title` exactly, never free-hand.
   `pnpm content:check` warns during the phase-41 drain and fails
   strict once it completes.
+- **Description count-tail discipline (Rule 3, /critique pass-12
+  issue #191).** A themed-list `description` field must never
+  close on a count-of-shows tail — drop any construction of the
+  form `across <N> [different] (franchises|shows)` or `<N>
+  shows[,'] <X>`. The `/themes` overview cards and the
+  `/themes/<theme>` hero already render the show count structurally
+  as `N SHOWS COVERED`; restating it in prose is editorial dead
+  weight, and the repeating construction across siblings reads as
+  templated. Close the description on the editorial observation
+  the prose actually has. Strict floor 0 (`pnpm content:check`
+  via `collectThemeDescriptionCountTailIssues`). Naming the
+  participating shows is fine (*"done well across Survivor, Drag
+  Race, The Challenge, Top Chef, and The Traitors"*); so is
+  counting *seasons* (e.g. *"Four seasons that define…"* on a
+  `category: single` tier).
 - **Editorial-copy honesty (phase 43).** Any editorial copy
   that cites a show's tenure in years uses the `{yearsWord}`
   (spelled-out) or `{years}` (numeric) token instead of a

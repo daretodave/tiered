@@ -11,7 +11,7 @@ featured: true
 related:
   - best-returnees
   - survivor-pillars
-description: "Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free — six shows, seven landings."
+description: "Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free."
 entries:
   - show: amazing-race
     season: 7

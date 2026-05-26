@@ -11,7 +11,7 @@ featured: false
 related:
   - best-finales
   - best-post-merge
-description: "Casts the audience already knew, framed so the recognition does real narrative work. Old grudges and old alliances carry half the load; the season builds the other half on purpose — five shows, one premise landed."
+description: "Casts the audience already knew, framed so the recognition does real narrative work. Old grudges and old alliances carry half the load; the season builds the other half on purpose."
 entries:
   - show: survivor
     season: 20

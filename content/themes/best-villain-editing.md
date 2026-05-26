@@ -11,7 +11,7 @@ featured: true
 related:
   - best-returnees
   - survivor-pillars
-description: "Seasons where the villain edit isn't a side dish — it's the through-line. Loud antagonist arcs, sharp confrontational chemistry, and runs the rest of the cast had to play inside — five shows, one shared craft."
+description: "Seasons where the villain edit isn't a side dish — it's the through-line. Loud antagonist arcs, sharp confrontational chemistry, and runs the rest of the cast had to play inside."
 entries:
   - show: survivor
     season: 20

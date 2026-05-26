@@ -11,7 +11,7 @@ featured: false
 related:
   - firsts
   - best-premieres
-description: "Seasons whose opening minutes used the setting to do the talking. The marooning, the castle, the villa, the city — locations that announced the season's intent before the cast did, across five different franchises."
+description: "Seasons whose opening minutes used the setting to do the talking. The marooning, the castle, the villa, the city — locations that announced the season's intent before the cast did."
 entries:
   - show: survivor
     season: 7

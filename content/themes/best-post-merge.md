@@ -11,7 +11,7 @@ featured: false
 related:
   - survivor-pillars
   - best-returnees
-description: "The late-game stretch where a season's field compresses and the pressure spikes. Across five franchises, these are the back-half runs that play at full volume — vote density, paranoia, and tension the franchise gets quoted on."
+description: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs that play at full volume — vote density, paranoia, and tension the franchise gets quoted on."
 entries:
   - show: survivor
     season: 28

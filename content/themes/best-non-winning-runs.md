@@ -11,7 +11,7 @@ featured: false
 related:
   - best-post-merge
   - best-comeback-seasons
-description: "Seasons across six franchises whose most-discussed arcs lived outside the title-taking. The runs that gave a season its shape, its quote-density, its texture — without needing to end up at the final outcome."
+description: "Seasons whose most-discussed arcs lived outside the title-taking. The runs that gave a season its shape, its quote-density, its texture — without needing to end up at the final outcome."
 entries:
   - show: survivor
     season: 20

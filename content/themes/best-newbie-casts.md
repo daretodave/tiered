@@ -11,7 +11,7 @@ featured: false
 related:
   - firsts
   - best-premieres
-description: "First-time casts that played like they'd done this before. Confident, prepared, fully formed on arrival — six shows' worth of rookie rosters that gave their seasons texture without needing to be told what the show was."
+description: "First-time casts that played like they'd done this before. Confident, prepared, fully formed on arrival — rookie rosters that gave their seasons texture without needing to be told what the show was."
 entries:
   - show: survivor
     season: 1

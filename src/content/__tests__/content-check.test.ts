@@ -11,6 +11,7 @@ import {
   collectCrossShowIssues,
   collectFailures,
   collectTaglineTemplatedTailIssues,
+  collectThemeDescriptionCountTailIssues,
   collectThemeFailures,
   collectYearTenureIssues,
 } from '../../../scripts/content-check'
@@ -1444,5 +1445,187 @@ describe('content-check — templated tagline tail (critique pass-12)', () => {
     )
     const issues = collectTaglineTemplatedTailIssues()
     expect(issues.length).toBe(1)
+  })
+})
+
+// Critique pass-12 MED finding (issue #191). Pins the
+// `collectThemeDescriptionCountTailIssues` invariant so a future
+// authoring pass cannot regress the catalog into the count-of-shows
+// template the rewrite just drained.
+function makeThemeWithRawDescription(
+  root: string,
+  slug: string,
+  description: string,
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: ${JSON.stringify(description)}
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+  )
+}
+
+describe('content-check — themed-list description count-of-shows tail (critique pass-12, issue #191)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-theme-count-tail-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a description that closes on "across <N> different franchises."', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'best-premieres',
+      'First episodes that told you what the show was. The format statement, the cast read — all in one hour, across six different franchises.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-premieres.md (description)')
+    expect(issues[0]?.message).toMatch(/count-of-shows tail/i)
+  })
+
+  it('flags the variant without "different" — "across <N> franchises"', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'best-post-merge',
+      'The late-game stretch where pressure spikes. Across five franchises, these are the back-half runs that play at full volume.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('flags "across <N> shows" as well as "across <N> franchises"', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'best-finales',
+      'Closing runs that pay off the season they spent a dozen episodes building, across six shows.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('flags the punch-list construction — "<N> shows, <M> [thing-noun]"', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'best-finales',
+      'Closing runs that pay off the season they spent a dozen episodes building — six shows, seven landings.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('flags the possessive variant — "<N> shows\' worth"', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'best-newbie-casts',
+      "Confident, prepared, fully formed on arrival — six shows' worth of rookie rosters.",
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('flags every offender shape pass-12 named in one pass', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'a-shape',
+      'Editorial setup. The story across six different franchises.',
+    )
+    makeThemeWithRawDescription(
+      tmp,
+      'b-shape',
+      'Editorial setup. Five shows, one premise landed.',
+    )
+    makeThemeWithRawDescription(
+      tmp,
+      'c-shape',
+      "Editorial setup. Five shows' worth of rookies.",
+    )
+    makeThemeWithRawDescription(
+      tmp,
+      'd-shape',
+      'Editorial setup. Across six franchises, the texture lands.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(4)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/a-shape.md (description)',
+      'content/themes/b-shape.md (description)',
+      'content/themes/c-shape.md (description)',
+      'content/themes/d-shape.md (description)',
+    ])
+  })
+
+  it('passes a description that closes on its own editorial observation (no count tail)', () => {
+    makeThemeWithRawDescription(
+      tmp,
+      'clean',
+      'First episodes that told you exactly what the show was. The format statement, the cast read, the structural swing — all in one hour, all on purpose.',
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('passes the named-shows construction (best-reunion-specials shape)', () => {
+    // The reunion-specials description names the participating
+    // shows explicitly ("done well across Survivor, Drag Race, The
+    // Challenge, Top Chef, and The Traitors") — that's editorial
+    // texture, not the count-of-shows tail. Must not be flagged.
+    makeThemeWithRawDescription(
+      tmp,
+      'best-reunion-specials',
+      'The reunion hour as a craft job — done well across Survivor, Drag Race, The Challenge, Top Chef, and The Traitors.',
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('passes the "<N> seasons" construction (survivor-pillars shape)', () => {
+    // survivor-pillars closes on "Four seasons that define the
+    // show's eras" — counts seasons, not shows/franchises; that's
+    // a legitimate construction the invariant must not catch.
+    makeThemeWithRawDescription(
+      tmp,
+      'survivor-pillars',
+      "Four seasons that define the show's eras — the original experiment, the tactical era's apex, the post-pandemic reset, and the steady-state new normal.",
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders (rewrite drained every theme in this tick)', () => {
+    // The production content tree is the source of truth — when
+    // this test runs with the default content root (no
+    // setContentRoot override), the live catalog must read zero.
+    // Pins the post-rewrite state so a future authoring pass
+    // cannot regress any of the rewritten themes back into the
+    // template.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
   })
 })

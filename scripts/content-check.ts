@@ -407,6 +407,53 @@ export function collectTaglineTemplatedTailIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-12 MED finding (issue #191): eight of ten themed-list
+// `description` fields closed on the same count-of-shows tail —
+// "across <N> different franchises." or "<N> shows, <M> [thing-noun]."
+// The construction duplicates the structural "N SHOWS COVERED" /
+// "N ENTRIES" stat strip every `/themes` card and every
+// `/themes/<theme>` hero already renders, so the blurb pays twice for
+// the same fact; the parallel template across eight of ten siblings
+// scanned as one writer using one mold. Same class as the show-tagline
+// tail above. The fix dropped the tail from every offender; this
+// invariant pins the absence so a future authoring pass cannot
+// regress the catalog into the same template. Strict floor 0 —
+// mirrors the lax->strict pattern of STRICT, CROSS_SHOW_STRICT,
+// YEAR_TENURE_STRICT, and TAGLINE_TAIL_STRICT; ships strict because
+// the rewrite drained every offender in one tick. Exported so the
+// vitest suite can exercise it directly against a temp content tree.
+const SPELLED_NUMBER =
+  '(?:two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen)'
+
+const THEME_DESCRIPTION_COUNT_TAIL_RE = new RegExp(
+  // (A) "across <N> [different] (franchises|shows)" — both end-of-clause
+  // and mid-sentence. Catches "across six different franchises.",
+  // "Across five franchises,", "Seasons across six franchises".
+  String.raw`\bacross\s+(?:` +
+    SPELLED_NUMBER +
+    String.raw`|\d+)\s+(?:different\s+)?(?:franchises?|shows?)\b` +
+    // (B) "<N> shows, ..." or "<N> shows' worth ..." — the punch-list
+    // construction. Catches "six shows, seven landings.", "five shows,
+    // one premise landed.", "six shows' worth of rookie rosters".
+    String.raw`|\b(?:` +
+    SPELLED_NUMBER +
+    String.raw`|\d+)\s+shows[,’']`,
+  'i',
+)
+
+export function collectThemeDescriptionCountTailIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (THEME_DESCRIPTION_COUNT_TAIL_RE.test(theme.description)) {
+      issues.push({
+        file: `content/themes/${theme.slug}.md (description)`,
+        message: `templated count-of-shows tail — description carries the "across <N> [different] (franchises|shows)" or "<N> shows[,'] <X>" construction that the chrome's "N SHOWS COVERED" stat strip already renders structurally; drop the count and close on the editorial observation already in the prior sentences`,
+      })
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -581,6 +628,19 @@ function main(): number {
     failures.push(...taglineTailIssues)
   } else {
     for (const issue of taglineTailIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-12 MED (issue #191): same lax->strict precedent —
+  // ships strict at floor 0 because the rewrite drained every
+  // offender in one tick. One-line toggle mirroring the four above.
+  const THEME_COUNT_TAIL_STRICT = true
+  const themeCountTailIssues = collectThemeDescriptionCountTailIssues()
+  if (THEME_COUNT_TAIL_STRICT) {
+    failures.push(...themeCountTailIssues)
+  } else {
+    for (const issue of themeCountTailIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
