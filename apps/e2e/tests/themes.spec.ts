@@ -244,6 +244,25 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
     expect(overflow).toBeLessThanOrEqual(1)
     await expect(page.locator('h1')).toBeVisible()
   })
+
+  test('LAST REVISED stamp renders calendar "Month YYYY" — no relative-time tokens', async ({
+    page,
+  }) => {
+    // Critique pass-12: the stamp used to render "this week" / "this month"
+    // — site-wide chrome stamps everything else as "Month YYYY". Pin the
+    // calendar shape on the list /critique flagged (best-finales) so a
+    // future regression to a relative-time formatter fails verify, not the
+    // next reader pass three weeks later when "this week" has rotted to a
+    // lie no one notices.
+    await page.goto('/themes/best-finales', {
+      waitUntil: 'domcontentloaded',
+    })
+    const revised = await page.getByTestId('list-meta-revised').textContent()
+    expect(revised).toBeTruthy()
+    const stamp = (revised ?? '').replace(/^Last revised\s*/i, '').trim()
+    expect(stamp).toMatch(/^[A-Z][a-z]+ \d{4}$/)
+    expect(stamp).not.toMatch(/this week|this month|this year|today|yesterday/i)
+  })
 })
 
 test.describe('show page → themes cross-link retrofit', () => {

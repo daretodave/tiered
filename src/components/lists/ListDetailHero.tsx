@@ -8,14 +8,13 @@ import { parseTagline } from './parseTagline'
 type ListDetailHeroProps = {
   theme: Theme
   shows: Show[]
-  today?: Date
 }
 
-export function ListDetailHero({ theme, shows, today }: ListDetailHeroProps) {
+export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
   const entryCount = theme.entries.length
   const showCount = shows.length
   const segments = parseTagline(theme.tagline)
-  const revised = formatRevisedRelative(theme.last_revised, today)
+  const revised = formatRevisedRelative(theme.last_revised)
 
   return (
     <header className="list-detail-hero" data-testid="list-hero">

@@ -1,4 +1,5 @@
 import type { Theme, ThemeStatus } from '@/content'
+import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 
 export function formatRevisedYear(iso: string): string {
   if (!iso) return ''
@@ -20,18 +21,13 @@ export function formatRevisedAgo(iso: string, today: Date = new Date()): string 
   return 'this year'
 }
 
-// List-detail meta strip variant: "this week" / "this month" / "YYYY-MM"
-// for the "Last revised" cell on /themes/[theme]. Older revisions surface
-// as a year-month stamp so the cell stays terse rather than collapsing to
-// the vague "this year".
-export function formatRevisedRelative(
-  iso: string,
-  today: Date = new Date(),
-): string {
-  const diff = dayDiff(iso, today)
-  if (diff <= 7) return 'this week'
-  if (diff <= 31) return 'this month'
-  return iso.slice(0, 7)
+// List-detail meta strip: calendar "Month YYYY" matching the home
+// `CANON REVISED` block and the show-page `LAST REVISION` stat. Relative
+// stamps ("this week") rot silently on a static site — /critique pass 12
+// flagged the chrome-consistency drift; the canon helper already renders
+// the editorial form for every other revised-stamp surface.
+export function formatRevisedRelative(iso: string): string {
+  return canonRevisedLabelFromIso(iso) ?? ''
 }
 
 export function formatThemeStatus(

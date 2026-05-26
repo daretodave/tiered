@@ -3,15 +3,12 @@ import { describe, expect, it } from 'vitest'
 import { ListDetailHero } from '../ListDetailHero'
 import { show, theme } from './fixtures'
 
-const today = new Date('2026-05-13T00:00:00Z')
-
 describe('<ListDetailHero>', () => {
   it('renders the crumb with bullets, Lists link, and theme title', () => {
     render(
       <ListDetailHero
         theme={theme({ slug: 'firsts', title: 'Firsts that hold up' })}
         shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
-        today={today}
       />,
     )
     const hero = screen.getByTestId('list-hero')
@@ -28,7 +25,6 @@ describe('<ListDetailHero>', () => {
           tagline: 'cold opens <b>that earned the rest</b> of the season',
         })}
         shows={[show()]}
-        today={today}
       />,
     )
     expect(screen.getByTestId('list-title').textContent).toBe('Best premieres ever')
@@ -46,7 +42,6 @@ describe('<ListDetailHero>', () => {
           last_revised: '2026-05-10',
         })}
         shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
-        today={today}
       />,
     )
     expect(screen.getByTestId('list-meta-entries').textContent).toContain(
@@ -59,13 +54,25 @@ describe('<ListDetailHero>', () => {
       'M. Reyes',
     )
     expect(screen.getByTestId('list-meta-revised').textContent).toContain(
-      'this week',
+      'May 2026',
     )
+  })
+
+  it('renders LAST REVISED as calendar "Month YYYY" (no relative-time tokens that rot)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({ last_revised: '2026-01-05' })}
+        shows={[show()]}
+      />,
+    )
+    const revised = screen.getByTestId('list-meta-revised').textContent ?? ''
+    expect(revised).toContain('January 2026')
+    expect(revised).not.toMatch(/this week|this month|this year|today|yesterday/i)
   })
 
   it('shows tools row with save/share/suggest + shield', () => {
     render(
-      <ListDetailHero theme={theme()} shows={[show()]} today={today} />,
+      <ListDetailHero theme={theme()} shows={[show()]} />,
     )
     expect(screen.getByTestId('list-save')).toBeTruthy()
     expect(screen.getByTestId('list-share')).toBeTruthy()
@@ -91,7 +98,6 @@ describe('<ListDetailHero>', () => {
           ],
         })}
         shows={[show()]}
-        today={today}
       />,
     )
     expect(screen.getByTestId('list-meta-entries').textContent).toContain(

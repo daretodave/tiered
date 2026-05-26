@@ -39,20 +39,31 @@ describe('formatRevisedAgo', () => {
 })
 
 describe('formatRevisedRelative', () => {
-  const today = new Date('2026-05-13T00:00:00Z')
-
-  it('returns "this week" within 7 days', () => {
-    expect(formatRevisedRelative('2026-05-10', today)).toBe('this week')
-    expect(formatRevisedRelative('2026-05-13', today)).toBe('this week')
+  it('renders calendar "Month YYYY" for any in-range date', () => {
+    expect(formatRevisedRelative('2026-05-10')).toBe('May 2026')
+    expect(formatRevisedRelative('2026-05-13')).toBe('May 2026')
+    expect(formatRevisedRelative('2026-04-20')).toBe('April 2026')
+    expect(formatRevisedRelative('2026-01-01')).toBe('January 2026')
+    expect(formatRevisedRelative('2024-08-15')).toBe('August 2024')
   })
 
-  it('returns "this month" within 31 days', () => {
-    expect(formatRevisedRelative('2026-04-20', today)).toBe('this month')
+  it('never renders relative-time tokens (would silently rot on a static site)', () => {
+    const stamp = formatRevisedRelative('2026-05-13')
+    expect(stamp).not.toMatch(/this week|this month|this year|today|yesterday/i)
   })
 
-  it('returns YYYY-MM beyond 31 days', () => {
-    expect(formatRevisedRelative('2026-01-01', today)).toBe('2026-01')
-    expect(formatRevisedRelative('2024-08-15', today)).toBe('2024-08')
+  it('matches the shared canon helper output for the same ISO input', () => {
+    // Same Month YYYY shape as the home CANON REVISED / show-page LAST
+    // REVISION stat — single source of truth at @/lib/canon/last-revised.
+    expect(formatRevisedRelative('2026-05-10')).toMatch(/^[A-Z][a-z]+ \d{4}$/)
+  })
+
+  it('returns "" for empty input (graceful drop)', () => {
+    expect(formatRevisedRelative('')).toBe('')
+  })
+
+  it('returns "" for an unparseable ISO string', () => {
+    expect(formatRevisedRelative('not-a-date')).toBe('')
   })
 })
 
