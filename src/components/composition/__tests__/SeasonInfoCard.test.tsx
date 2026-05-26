@@ -111,4 +111,36 @@ describe('<SeasonInfoCard>', () => {
     )
     expect(screen.getAllByTestId('shield-line')).toHaveLength(2)
   })
+
+  // The vote row sits under the community-vote heading; the default
+  // help copy must promise recompute for the community track, not for
+  // the editorial canon. Pins the two-rankings frame (#192).
+  it('defaults voteHelp to community-rank recompute copy, never canon', () => {
+    render(
+      <SeasonInfoCard
+        canonRank={1}
+        canonTotal={1}
+        voteQuestion="Q?"
+        voteSlot={voteSlot}
+      />,
+    )
+    const row = screen.getByTestId('info-row-vote')
+    expect(row).toHaveTextContent('community rank recomputes weekly')
+    expect(row).not.toHaveTextContent('canon position recomputes')
+  })
+
+  it('honors a custom voteHelp prop over the default', () => {
+    render(
+      <SeasonInfoCard
+        canonRank={1}
+        canonTotal={1}
+        voteQuestion="Q?"
+        voteSlot={voteSlot}
+        voteHelp="custom help line."
+      />,
+    )
+    const row = screen.getByTestId('info-row-vote')
+    expect(row).toHaveTextContent('custom help line.')
+    expect(row).not.toHaveTextContent('community rank recomputes weekly')
+  })
 })
