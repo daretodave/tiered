@@ -24,7 +24,7 @@ entries:
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
     title: "A closing stretch the franchise still measures itself against."
-    blurb: "The endgame plays at full volume — every conversation freighted with two decades of history before two decades had passed. The final tribal lands like a summary statement for the entire returnee era the show was about to enter."
+    blurb: "The endgame plays at full volume — every conversation freighted with everything Survivor had been. The final tribal lands like a summary statement for the entire returnee era the show was about to enter."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"
