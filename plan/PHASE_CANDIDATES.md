@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-25 at commit fa19f00
-> Pass count: 8
+> Last pass: 2026-05-26 at commit de1e037
+> Pass count: 9
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,55 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 9 (2026-05-26, commit de1e037) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The five audit rows
+       filed since pass 8 (#181 /shows B-tier overclaim, #182
+       VoteRowHead no-vote meta, #183 best-finales S20 "two
+       decades" math, #184 best-finales BB10 alliance-suffix,
+       #185 /shows/survivor/season/heroes-vs-villains 404) all
+       resolved within the same iterate cycle they were filed —
+       the reactive drain caught up to the pass-11 backlog.
+     - CRITIQUE.md: 1 real Pending row from pass 11 — LOW [anon]
+       clever-paradox flourish ("We're not pretending to be
+       objective; we are pretending to be honest") replicated
+       across 5 canon `meth_who_p` blocks (survivor, amazing-race,
+       top-chef, the-challenge, dragrace) plus an agent-brief
+       update to keep future canons born without it. Single-class
+       polish target across a known fixed-N file set; one
+       `/iterate` tick (and an agent-brief edit in the same
+       commit) drains it. No cluster ≥3 HIGH on the same family,
+       no class-pattern that warrants a phase rather than per-tick
+       polish.
+     - GitHub issues: 0 unlabeled; backlog unchanged from pass 8 —
+       #150 (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring blocked
+       on the cloud GitHub App's missing `workflows` permission —
+       known, intentional, awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 8 (commit fa19f00).
+     - Commit pattern: 21 commits since pass 8 — 1 critique pass
+       (11, cc73587), 5 audit-row drains paired with their fixes
+       (#181 7d86e6a/b2d7401, #182 0cfa15e/0007da0, #183
+       13d9cc6/d8eff2d, #184 e1d91a1/6f2388f, #185 f3d039e/de1e037),
+       2 polish/SEO fixes (1c87165 self-view CTA on /u/<handle>
+       empty, 471a64c season vote-row eyebrow auth/vote gating,
+       0b437ad show page meta description rewrite), 1 colocated-
+       test backfill (3957ea5 /themes/[theme]/opengraph-image),
+       1 home compact-tail dedup fix (2cbabda). All anticipated
+       drains from previously-promoted phases (40/41/42/43) plus
+       the pass-11 critique backlog; no rogue refactor surface,
+       no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No change.
+
+     The remaining LOW critique finding is a single-tick /iterate
+     polish target (5 known canon files + agent-brief edit), not
+     a phase shape. The build plan stays in its clean
+     re-exhausted state. Bumping metadata; awaiting the next
+     pass' cadence window for fresh structural signals to
+     accumulate. -->
 
 <!-- Pass 8 (2026-05-25, commit fa19f00) — no new candidates filed.
      Signals reviewed:
