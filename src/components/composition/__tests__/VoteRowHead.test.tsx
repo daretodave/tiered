@@ -65,7 +65,7 @@ describe('<VoteRowHead>', () => {
     const head = screen.getByTestId('vote-row-head')
     expect(head.getAttribute('data-vote-head-state')).toBe('signed-in-no-vote')
     expect(head).toHaveTextContent('Your vote')
-    expect(head).toHaveTextContent('cast within the week')
+    expect(head).toHaveTextContent('cast yours this week')
   })
 
   it('swaps to the signed-in-with-vote copy when signedIn=true and value=1', async () => {
