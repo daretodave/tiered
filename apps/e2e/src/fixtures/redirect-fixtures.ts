@@ -51,7 +51,33 @@ function buildSeasonRedirects(): SeasonRedirect[] {
   return [...digitForm, ...prefixed]
 }
 
-export const seasonRedirects: SeasonRedirect[] = buildSeasonRedirects()
+// Legacy season-slug aliases that 308 to their canonical slug
+// (e.g. Survivor S20: `heroes-villains` → `heroes-vs-villains`,
+// bringing the file in line with the other 4 vs.-named Survivor
+// seasons; #185). Inlined from src/lib/season/slug-aliases.ts —
+// e2e package intentionally has no @/ alias into src/.
+const SEASON_SLUG_ALIASES: Record<string, Record<string, string>> = {
+  survivor: { 'heroes-villains': 'heroes-vs-villains' },
+}
+
+function buildSlugAliasRedirects(): SeasonRedirect[] {
+  const out: SeasonRedirect[] = []
+  for (const [show, aliases] of Object.entries(SEASON_SLUG_ALIASES)) {
+    for (const [fromSlug, toSlug] of Object.entries(aliases)) {
+      out.push({
+        show,
+        fromPath: `/shows/${show}/season/${fromSlug}`,
+        toPath: `/shows/${show}/season/${toSlug}`,
+      })
+    }
+  }
+  return out
+}
+
+export const seasonRedirects: SeasonRedirect[] = [
+  ...buildSeasonRedirects(),
+  ...buildSlugAliasRedirects(),
+]
 
 // Phase 33: the standalone /canon + /community routes 308 into the
 // consolidated show page. One pair of rows per show — the smoke /

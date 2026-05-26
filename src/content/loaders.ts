@@ -89,7 +89,7 @@ function loadShows(c: Cache): void {
 }
 
 // 31a: filename-as-slug. Every season file matches `NN-<slug>.md`
-// (e.g. `04-marquesas.md`, `20-heroes-villains.md`). The captured
+// (e.g. `04-marquesas.md`, `20-heroes-vs-villains.md`). The captured
 // suffix becomes `season.slug`; an explicit frontmatter `slug:`
 // override beats the derivation, but the override is rare —
 // reserved for cases where renaming the file would be awkward

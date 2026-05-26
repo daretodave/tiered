@@ -54,7 +54,7 @@ describe('getAllRoutes', () => {
       .filter((r) => r.pattern === '/shows/[show]/season/[slug]')
       .map((r) => r.path)
     expect(seasonPaths).toContain('/shows/survivor/season/borneo')
-    expect(seasonPaths).toContain('/shows/survivor/season/heroes-villains')
+    expect(seasonPaths).toContain('/shows/survivor/season/heroes-vs-villains')
   })
 
   it('does not emit numeric-form season paths', () => {

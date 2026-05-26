@@ -67,7 +67,7 @@ for (const url of seasonUrls) {
 }
 
 test.describe('survivor S20 — gold-standard reference', () => {
-  const path = '/shows/survivor/season/heroes-villains'
+  const path = '/shows/survivor/season/heroes-vs-villains'
 
   test('renders display_title accent, 6-tile stats, ep-strip, watch-list', async ({ page }) => {
     const response = await page.goto(path, { waitUntil: 'domcontentloaded' })

@@ -38,6 +38,7 @@ import {
   jsonLdScriptProps,
 } from '@/lib/seo'
 import { computeReadMinutes } from '@/lib/season/read-minutes'
+import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
 
 type Params = { show: string; slug: string }
 
@@ -265,6 +266,10 @@ export default async function SeasonPage({ params }: { params: Params }) {
       permanentRedirect(`/shows/${show.slug}/season/${bySeason.slug}`)
     }
     notFound()
+  }
+  const aliasTarget = resolveSeasonSlugAlias(show.slug, params.slug)
+  if (aliasTarget) {
+    permanentRedirect(`/shows/${show.slug}/season/${aliasTarget}`)
   }
   const season = getSeasonBySlug(show.slug, params.slug)
   if (!season) {

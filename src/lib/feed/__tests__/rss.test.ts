@@ -17,7 +17,7 @@ const items: FeedItem[] = [
   },
   {
     title: 'Heroes <em>vs.</em> Villains & friends',
-    url: 'https://tiered.tv/shows/survivor/season/heroes-villains',
+    url: 'https://tiered.tv/shows/survivor/season/heroes-vs-villains',
     date: new Date('2010-02-11T00:00:00Z'),
     description: 'A "best-of" cast.',
   },

@@ -18,12 +18,12 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 //    state — a pending comment is invisible to the public AND it
 //    is not the anon viewer's own row. Spoiler/mod P0.
 //
-// Survivor S20 = `survivor:20`, /shows/survivor/season/heroes-villains.
+// Survivor S20 = `survivor:20`, /shows/survivor/season/heroes-vs-villains.
 
 const state = loadAuthedStorageState()
 const status = cookieCacheStatus()
 
-const SEASON_URL = '/shows/survivor/season/heroes-villains'
+const SEASON_URL = '/shows/survivor/season/heroes-vs-villains'
 const SEASON_TARGET = 'survivor:20'
 
 async function postComment(

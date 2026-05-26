@@ -23,7 +23,7 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 const state = loadAuthedStorageState()
 const status = cookieCacheStatus()
 
-const SEASON_URL = '/shows/survivor/season/heroes-villains'
+const SEASON_URL = '/shows/survivor/season/heroes-vs-villains'
 const VOTE_TARGET = 'survivor:20'
 const PENDING_PHRASE =
   'profile-spec pending sentinel — this must never surface publicly'

@@ -7,7 +7,7 @@ const withContext: ProfileCommentView = {
   id: 'c1',
   excerpt: 'The location work is a quiet argument for the format.',
   when: '2d ago',
-  context: { label: 'Survivor · Season 20', href: '/shows/survivor/season/heroes-villains' },
+  context: { label: 'Survivor · Season 20', href: '/shows/survivor/season/heroes-vs-villains' },
 }
 
 const noContext: ProfileCommentView = {
@@ -27,7 +27,7 @@ describe('<ProfileComments>', () => {
     render(<ProfileComments comments={[withContext]} />)
     const ctx = screen.getByTestId('profile-comment-context')
     expect(ctx.getAttribute('href')).toBe(
-      '/shows/survivor/season/heroes-villains',
+      '/shows/survivor/season/heroes-vs-villains',
     )
     expect(ctx.textContent).toBe('Survivor · Season 20')
     expect(screen.getByTestId('profile-comment-when').textContent).toBe(

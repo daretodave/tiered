@@ -17,7 +17,7 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 const state = loadAuthedStorageState()
 const status = cookieCacheStatus()
 
-const SEASON_URL = '/shows/survivor/season/heroes-villains'
+const SEASON_URL = '/shows/survivor/season/heroes-vs-villains'
 const SEASON_TARGET = 'survivor:20'
 
 test.describe('vote state pill — authed viewer sees disambiguation', () => {

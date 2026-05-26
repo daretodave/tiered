@@ -59,7 +59,7 @@ for (const showRow of archetypeShows) {
   const seasons = seasonsOf(showRow.show ?? '')
   if (seasons.length === 0) continue
   const idx = [0, Math.floor(seasons.length / 2), seasons.length - 1]
-  // A multi-token / entity slug (e.g. heroes-villains, winners-at-war)
+  // A multi-token / entity slug (e.g. heroes-vs-villains, winners-at-war)
   // exercises display_title / ampersand rendering — always include one
   // if the deepest show has it.
   const entity = seasons.find((s) => ((s.seasonSlug ?? '').match(/-/g)?.length ?? 0) >= 2)

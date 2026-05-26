@@ -1185,7 +1185,7 @@ The franchise milestone the format earns by lasting twenty years. ${padding}
       estYear: 2000,
       tagline: 'A clean tagline.',
     })
-    makeSeason(tmp, 'survivor', 20, 'heroes-villains', {
+    makeSeason(tmp, 'survivor', 20, 'heroes-vs-villains', {
       canonical_position: 1,
     })
     const canonFile = path.join(tmp, 'shows', 'survivor', 'canon.md')
@@ -1258,7 +1258,7 @@ ${Array.from({ length: 90 }, (_, i) => `w${i}`).join(' ')}
       'shows',
       'survivor',
       'seasons',
-      '20-heroes-villains.md',
+      '20-heroes-vs-villains.md',
     )
     mkdirSync(path.dirname(seasonFile), { recursive: true })
     writeFileSync(
@@ -1277,7 +1277,7 @@ ${Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')}
     // since this fixture has no SHOW_ANNIVERSARIES entry). Capital-T
     // "Twenty-five years" rots vs the helper-derived "twenty-seven".
     const issues = collectYearTenureIssues(asOf)
-    expect(issues.some((i) => /20-heroes-villains\.md \(pull\)/.test(i.file))).toBe(true)
+    expect(issues.some((i) => /20-heroes-vs-villains\.md \(pull\)/.test(i.file))).toBe(true)
     expect(issues[0]?.message).toMatch(/Twenty-five years/)
   })
 })
