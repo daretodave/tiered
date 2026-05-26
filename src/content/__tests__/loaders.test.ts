@@ -513,8 +513,40 @@ describe('loaders', () => {
       total: 2,
       totalEntries: 3,
       showsCovered: 2,
+      crossCanonCount: 1,
+      singleShowCount: 1,
       lastIndexRevision: '2026-05-20',
     })
+  })
+
+  it('getThemeStats reports crossCanonCount=0 when every list is single-show', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeSeason(tmp, 'alpha', 2, 'Two')
+    makeTheme(tmp, 'a', [{ show: 'alpha', season: 1, rank: 1 }])
+    makeTheme(tmp, 'b', [{ show: 'alpha', season: 2, rank: 1 }])
+    const stats = getThemeStats()
+    expect(stats.crossCanonCount).toBe(0)
+    expect(stats.singleShowCount).toBe(2)
+    expect(stats.showsCovered).toBe(1)
+  })
+
+  it('getThemeStats reports singleShowCount=0 when every list spans multiple shows', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeShow(tmp, 'beta', 'Beta')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeSeason(tmp, 'beta', 1, 'One')
+    makeTheme(tmp, 'a', [
+      { show: 'alpha', season: 1, rank: 1 },
+      { show: 'beta', season: 1, rank: 2 },
+    ])
+    makeTheme(tmp, 'b', [
+      { show: 'beta', season: 1, rank: 1 },
+      { show: 'alpha', season: 1, rank: 2 },
+    ])
+    const stats = getThemeStats()
+    expect(stats.crossCanonCount).toBe(2)
+    expect(stats.singleShowCount).toBe(0)
   })
 
   it('derives season slug from filename and exposes getSeasonBySlug', () => {

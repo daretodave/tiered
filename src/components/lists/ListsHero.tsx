@@ -6,17 +6,26 @@ type ListsHeroProps = {
 }
 
 export function ListsHero({ stats }: ListsHeroProps) {
-  const isCrossCanon = stats.showsCovered > 1
-  const accent = isCrossCanon ? 'Cross-canon.' : 'Inside one canon.'
-  const lede = isCrossCanon
-    ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Some span the catalog, some live inside one show. None of them spoil what they rank.`
-    : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
+  const hasCross = stats.crossCanonCount > 0
+  const hasSingle = stats.singleShowCount > 0
+  const coverage: 'mixed' | 'cross-canon' | 'single-canon' =
+    hasCross && hasSingle ? 'mixed' : hasCross ? 'cross-canon' : 'single-canon'
+  const accent =
+    coverage === 'mixed'
+      ? 'Cross-canon and single-show.'
+      : coverage === 'cross-canon'
+        ? 'Cross-canon.'
+        : 'Inside one canon.'
+  const lede =
+    coverage === 'single-canon'
+      ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
+      : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Some span the catalog, some live inside one show. None of them spoil what they rank.`
 
   return (
     <header
       className="lists-hero"
       data-testid="lists-hero"
-      data-coverage={isCrossCanon ? 'cross-canon' : 'single-canon'}
+      data-coverage={coverage}
     >
       <div className="lists-hero-eyebrow">tiered.tv / Lists</div>
       <h1 className="lists-hero-title">

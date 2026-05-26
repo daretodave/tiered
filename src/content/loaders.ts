@@ -302,6 +302,8 @@ export type ThemeStats = {
   total: number
   totalEntries: number
   showsCovered: number
+  crossCanonCount: number
+  singleShowCount: number
   lastIndexRevision: string
 }
 
@@ -309,16 +311,26 @@ export function getThemeStats(): ThemeStats {
   const themes = getAllThemes()
   const shows = new Set<string>()
   let totalEntries = 0
+  let crossCanonCount = 0
+  let singleShowCount = 0
   let lastIndexRevision = ''
   for (const t of themes) {
     totalEntries += t.entries.length
-    for (const e of t.entries) shows.add(e.show)
+    const perListShows = new Set<string>()
+    for (const e of t.entries) {
+      shows.add(e.show)
+      perListShows.add(e.show)
+    }
+    if (perListShows.size > 1) crossCanonCount += 1
+    else if (perListShows.size === 1) singleShowCount += 1
     if (t.last_revised > lastIndexRevision) lastIndexRevision = t.last_revised
   }
   return {
     total: themes.length,
     totalEntries,
     showsCovered: shows.size,
+    crossCanonCount,
+    singleShowCount,
     lastIndexRevision,
   }
 }

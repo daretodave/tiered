@@ -10,6 +10,8 @@ describe('<ListsHero>', () => {
           total: 23,
           totalEntries: 100,
           showsCovered: 3,
+          crossCanonCount: 23,
+          singleShowCount: 0,
           lastIndexRevision: '2026-05-01',
         }}
       />,
@@ -26,19 +28,22 @@ describe('<ListsHero>', () => {
     )
   })
 
-  it('puts the primary em accent on "Cross-canon" when more than one show is covered', () => {
+  it('puts the primary em accent on "Cross-canon" when every list is cross-canon', () => {
     const { container } = render(
       <ListsHero
         stats={{
           total: 12,
           totalEntries: 50,
-          showsCovered: 2,
+          showsCovered: 4,
+          crossCanonCount: 12,
+          singleShowCount: 0,
           lastIndexRevision: '2025-01-01',
         }}
       />,
     )
     const em = container.querySelector('h1.lists-hero-title em')
     expect(em?.textContent).toContain('Cross-canon')
+    expect(em?.textContent).not.toMatch(/single-show/i)
     expect(screen.getByTestId('lists-hero')).toHaveAttribute(
       'data-coverage',
       'cross-canon',
@@ -49,13 +54,57 @@ describe('<ListsHero>', () => {
     expect(screen.getByText(/lists we'd defend in a group chat/i)).toBeTruthy()
   })
 
-  it('swaps the accent and lede to single-canon-honest copy when only one show is covered', () => {
+  it('reads "Cross-canon and single-show." when the catalog mixes both shapes', () => {
+    const { container } = render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const em = container.querySelector('h1.lists-hero-title em')
+    expect(em?.textContent).toBe('Cross-canon and single-show.')
+    expect(screen.getByTestId('lists-hero')).toHaveAttribute(
+      'data-coverage',
+      'mixed',
+    )
+    expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
+  })
+
+  it('never claims "Cross-canon." alone when any single-show list is present', () => {
+    // Pin the critique-pass-12 finding: H1 coverage shape must not
+    // disagree with the per-list mix.
+    const { container } = render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const em = container.querySelector('h1.lists-hero-title em')
+    expect(em?.textContent).not.toBe('Cross-canon.')
+    expect(em?.textContent).toContain('single-show')
+  })
+
+  it('swaps the accent and lede to single-canon-honest copy when every list is single-show', () => {
     const { container } = render(
       <ListsHero
         stats={{
           total: 12,
           totalEntries: 50,
           showsCovered: 1,
+          crossCanonCount: 0,
+          singleShowCount: 12,
           lastIndexRevision: '2025-01-01',
         }}
       />,
@@ -82,6 +131,8 @@ describe('<ListsHero>', () => {
           total: 1,
           totalEntries: 1,
           showsCovered: 1,
+          crossCanonCount: 0,
+          singleShowCount: 1,
           lastIndexRevision: '2026-01-01',
         }}
       />,
@@ -96,6 +147,8 @@ describe('<ListsHero>', () => {
           total: 1,
           totalEntries: 1,
           showsCovered: 1,
+          crossCanonCount: 0,
+          singleShowCount: 1,
           lastIndexRevision: '2026-01-01',
         }}
       />,
