@@ -8,7 +8,7 @@ palette:
 seasons: 17
 status: airing
 blurb: "17 seasons. Quiet velvet, loud pink."
-tagline: "17 seasons of queens, runways, and Snatch Game. Ranked without spoiling a single crowning."
+tagline: "17 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
 tier: S
 network: "MTV"
 est_year: 2009

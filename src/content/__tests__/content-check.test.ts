@@ -10,6 +10,7 @@ import {
   collectCalendarFailures,
   collectCrossShowIssues,
   collectFailures,
+  collectTaglineTemplatedTailIssues,
   collectThemeFailures,
   collectYearTenureIssues,
 } from '../../../scripts/content-check'
@@ -1279,5 +1280,169 @@ ${Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')}
     const issues = collectYearTenureIssues(asOf)
     expect(issues.some((i) => /20-heroes-vs-villains\.md \(pull\)/.test(i.file))).toBe(true)
     expect(issues[0]?.message).toMatch(/Twenty-five years/)
+  })
+})
+
+// Critique pass-12 HIGH: the templated trailing clause invariant
+// (issue #187). After the rewrite drained every offender, the
+// invariant ships strict at floor 0 — any show whose tagline closes
+// on "Ranked without <verb> a single <noun>." regresses the catalog
+// back to the fill-in-the-blank shape pass-12 caught.
+function makeShowWithRawTagline(root: string, slug: string, tagline: string): void {
+  const file = path.join(root, 'shows', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: ${JSON.stringify(tagline)}
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+  )
+}
+
+describe('content-check — templated tagline tail (critique pass-12)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-tagline-tail-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a tagline that closes on the templated "Ranked without spoiling a single X." clause', () => {
+    makeShowWithRawTagline(
+      tmp,
+      'alpha',
+      'Two sentences of editorial setup. Ranked without spoiling a single crowning.',
+    )
+    const issues = collectTaglineTemplatedTailIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/shows/alpha.md (tagline)')
+    expect(issues[0]?.message).toMatch(/templated trailing clause/i)
+  })
+
+  it('flags every offender shape pass-12 named — spoiling / ruining / naming / giving away', () => {
+    makeShowWithRawTagline(
+      tmp,
+      'spoiling',
+      'Editorial setup. Ranked without spoiling a single hometown.',
+    )
+    makeShowWithRawTagline(
+      tmp,
+      'ruining',
+      'Editorial setup. Ranked without ruining a single eviction.',
+    )
+    makeShowWithRawTagline(
+      tmp,
+      'naming',
+      'Editorial setup. Ranked without naming a single traitor.',
+    )
+    makeShowWithRawTagline(
+      tmp,
+      'givingaway',
+      'Editorial setup. Ranked without giving away a single final rose.',
+    )
+    const issues = collectTaglineTemplatedTailIssues()
+    expect(issues.length).toBe(4)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/shows/givingaway.md (tagline)',
+      'content/shows/naming.md (tagline)',
+      'content/shows/ruining.md (tagline)',
+      'content/shows/spoiling.md (tagline)',
+    ])
+  })
+
+  it('flags multi-word noun phrases ("a single final couple", "a single Star Baker", "a single finale collection")', () => {
+    makeShowWithRawTagline(
+      tmp,
+      'two-noun',
+      'Editorial setup. Ranked without spoiling a single final couple.',
+    )
+    makeShowWithRawTagline(
+      tmp,
+      'proper-noun',
+      'Editorial setup. Ranked without spoiling a single Star Baker.',
+    )
+    makeShowWithRawTagline(
+      tmp,
+      'compound-noun',
+      'Editorial setup. Ranked without spoiling a single finale collection.',
+    )
+    const issues = collectTaglineTemplatedTailIssues()
+    expect(issues.length).toBe(3)
+  })
+
+  it('passes a tagline that closes on its own editorial observation (no templated tail)', () => {
+    makeShowWithRawTagline(
+      tmp,
+      'clean',
+      "21 seasons. The flip-the-script sibling that turned out to be its own show — warmer, sharper, and more willing to let the lead drive.",
+    )
+    expect(collectTaglineTemplatedTailIssues()).toEqual([])
+  })
+
+  it('passes a tagline that uses a different "ranked" construction', () => {
+    // Top Chef's actual closer — "Ranked by people who actually liked
+    // the food." — uses "ranked" but not the templated "without
+    // <verb> a single <noun>." shape. Must not be flagged.
+    makeShowWithRawTagline(
+      tmp,
+      'top-chef-shape',
+      '22 seasons of professional cooks in unfamiliar kitchens. Ranked by people who actually liked the food.',
+    )
+    expect(collectTaglineTemplatedTailIssues()).toEqual([])
+  })
+
+  it('passes a tagline that says "We have ranked every single one" (Survivor / Amazing Race shape)', () => {
+    // Survivor closes on "We've ranked every single one." which
+    // shares the word "single" with the offenders but is not the
+    // template — must not be flagged.
+    makeShowWithRawTagline(
+      tmp,
+      'survivor-shape',
+      'Editorial setup. The genre that invented itself in episode one. We have ranked every single one.',
+    )
+    expect(collectTaglineTemplatedTailIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders (rewrite drained every show in this tick)', () => {
+    // The production content tree is the source of truth — when this
+    // test runs with the default content root (no setContentRoot
+    // override), the live catalog must read zero. Pins the
+    // post-rewrite state so a future authoring pass cannot regress
+    // any of the ten rewritten shows back into the template.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectTaglineTemplatedTailIssues()).toEqual([])
+  })
+
+  it('handles taglines with multiple sentences before the tail', () => {
+    makeShowWithRawTagline(
+      tmp,
+      'three-sentences',
+      'First sentence here. Second editorial observation lands. Ranked without spoiling a single elimination.',
+    )
+    const issues = collectTaglineTemplatedTailIssues()
+    expect(issues.length).toBe(1)
   })
 })

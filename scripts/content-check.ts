@@ -376,6 +376,37 @@ function isAnchorAllowed(
   return false
 }
 
+// Critique pass-12 HIGH finding: ten of thirteen show taglines once
+// closed on the identical "Ranked without <verb> a single <noun>."
+// construction. The site-wide no-spoilers promise is already carried
+// structurally by the chrome (header + footer ShieldBadge + the home
+// brand promise), so per-show repetition is editorial dead weight —
+// and the parallel template across ten siblings read as fill-in-the-
+// blank generation on the /shows tier list. The fix dropped the tail
+// from every offender; this invariant pins the absence going forward
+// so a future authoring pass cannot regress the catalog into the
+// same template. Strict floor 0 — the construction is forbidden,
+// not capped. Mirrors the lax->strict pattern of STRICT,
+// CROSS_SHOW_STRICT, and YEAR_TENURE_STRICT above; ships strict
+// because the rewrite drained every offender in one tick. Exported
+// so the vitest suite can exercise it directly against a temp
+// content tree.
+const TAGLINE_TEMPLATED_TAIL_RE =
+  /\bRanked without \w+(?:\s+\w+)? a single [\w'-]+(?:\s+[\w'-]+){0,3}\./
+
+export function collectTaglineTemplatedTailIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    if (TAGLINE_TEMPLATED_TAIL_RE.test(show.tagline)) {
+      issues.push({
+        file: `content/shows/${show.slug}.md (tagline)`,
+        message: `templated trailing clause — tagline closes on the "Ranked without <verb> a single <noun>." construction; drop the tail and let the show's own editorial observation close the line (the site-wide no-spoilers promise is already carried by chrome)`,
+      })
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -536,6 +567,20 @@ function main(): number {
     failures.push(...yearTenureIssues)
   } else {
     for (const issue of yearTenureIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-12 HIGH: ships strict at floor 0 because the
+  // content rewrite drained every offender in one tick (issue
+  // #187). Same one-line strict toggle as STRICT,
+  // CROSS_SHOW_STRICT, and YEAR_TENURE_STRICT above.
+  const TAGLINE_TAIL_STRICT = true
+  const taglineTailIssues = collectTaglineTemplatedTailIssues()
+  if (TAGLINE_TAIL_STRICT) {
+    failures.push(...taglineTailIssues)
+  } else {
+    for (const issue of taglineTailIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
