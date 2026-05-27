@@ -3,9 +3,11 @@ import { TIER_ORDER } from './tierMeta'
 
 // One sentence per tier explaining what a show's membership in that
 // tier means. The /shows hero lede renders only the sentences for
-// tiers that actually hold a show, so the prose never describes an
-// empty tier whose section TierSection has already dropped from the
-// page (today no show sits in B, so the B sentence is withheld).
+// tiers that actually hold a show. Empty tiers still render a
+// placeholder band on /shows (critique-pass-14 #202) so the
+// editorial ladder honors its legend, but the lede prose stays
+// honest about which tiers carry content (today no show sits in B,
+// so the B sentence is withheld).
 const TIER_LEDE_SENTENCE: Record<ShowTier, string> = {
   S: 'The S tier invented or perfected its format.',
   A: 'The A tier has the deep canon and the years to defend it.',

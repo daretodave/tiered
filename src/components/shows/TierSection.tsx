@@ -20,23 +20,32 @@ function tileVariant(tier: ShowTier): ShowsTileVariant {
 }
 
 export function TierSection({ tier, shows }: TierSectionProps) {
-  if (shows.length === 0) return null
   const variant = tileVariant(tier)
   const showStatus = tier === 'B'
 
   return (
     <section data-testid="tier-section" data-tier={tier}>
       <TierHead tier={tier} count={shows.length} />
-      <div className={gridCols(tier)} data-testid="shows-grid">
-        {shows.map((show) => (
-          <ShowsTile
-            key={show.slug}
-            show={show}
-            variant={variant}
-            status={showStatus ? canonProgress(show.slug) : undefined}
-          />
-        ))}
-      </div>
+      {shows.length === 0 ? (
+        <div
+          className="tier-empty"
+          data-testid="tier-empty"
+          data-empty="true"
+        >
+          Nothing here yet.
+        </div>
+      ) : (
+        <div className={gridCols(tier)} data-testid="shows-grid">
+          {shows.map((show) => (
+            <ShowsTile
+              key={show.slug}
+              show={show}
+              variant={variant}
+              status={showStatus ? canonProgress(show.slug) : undefined}
+            />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

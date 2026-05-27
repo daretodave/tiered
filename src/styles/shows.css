@@ -240,6 +240,29 @@
   }
 }
 
+/* EMPTY BAND ----------------------------------------------------------- */
+/* Renders in place of .shows-grid when a tier has zero members, so the
+   ladder structure honors the legend in <HowTiersMove> even when a band
+   is currently empty (critique-pass-14 #202). */
+.shows-tiered .tier-empty {
+  margin: 0 8px;
+  padding: 48px 32px;
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--color-ink-3);
+  border: 1px dashed var(--color-line-soft);
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .shows-tiered .tier-empty {
+    margin: 0;
+    padding: 32px 20px;
+    font-size: 17px;
+  }
+}
+
 /* SHOW GRID ------------------------------------------------------------ */
 .shows-tiered .shows-grid {
   display: grid;

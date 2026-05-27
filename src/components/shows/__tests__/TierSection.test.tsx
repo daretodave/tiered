@@ -22,10 +22,15 @@ function show(overrides: Partial<Show> = {}): Show {
 }
 
 describe('<TierSection>', () => {
-  it('renders nothing when the tier holds no shows', () => {
-    const { container } = render(<TierSection tier="S" shows={[]} />)
-    expect(container.firstChild).toBeNull()
-    expect(screen.queryByTestId('tier-section')).not.toBeInTheDocument()
+  it('renders an empty-band placeholder when the tier holds no shows, so the legend in HowTiersMove always has a band to refer to (critique-pass-14 #202)', () => {
+    render(<TierSection tier="B" shows={[]} />)
+    const section = screen.getByTestId('tier-section')
+    expect(section.dataset['tier']).toBe('B')
+    expect(screen.queryByTestId('shows-grid')).not.toBeInTheDocument()
+    const empty = screen.getByTestId('tier-empty')
+    expect(empty.dataset['empty']).toBe('true')
+    expect(empty.textContent).toMatch(/Nothing here yet\./)
+    expect(screen.getByTestId('tier-count').textContent).toContain('0')
   })
 
   it('stamps the tier, renders a TierHead with the count, and one tile per show', () => {

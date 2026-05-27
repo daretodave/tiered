@@ -14,27 +14,21 @@ test.describe('/shows tier-list', () => {
     await expect(page.getByTestId('shows-stat-seasons')).toBeVisible()
     await expect(page.getByTestId('shows-stat-revised')).toBeVisible()
 
-    // Empty tiers render nothing (TierSection returns null). The
-    // phase-26 canon drain promotes shows out of B, so B can be
-    // empty once it has drained — the rendered sections must still
-    // be an in-order subsequence of S → A → B, S and A always
-    // populated by the launch catalog.
+    // Every tier in TIER_ORDER renders a section — populated bands
+    // carry a shows-grid, empty bands carry a tier-empty placeholder
+    // ("Nothing here yet.") so the legend in <HowTiersMove> always
+    // has a band to refer to (critique-pass-14 #202). Order is the
+    // canonical S → A → B.
     const tierSections = page.getByTestId('tier-section')
     const tierOrder = await tierSections.evaluateAll((els) =>
       els.map((el) => (el as HTMLElement).dataset['tier']),
     )
-    expect(tierOrder.length).toBeGreaterThanOrEqual(2)
-    expect(tierOrder).toContain('S')
-    expect(tierOrder).toContain('A')
-    const canonical = ['S', 'A', 'B']
-    expect(tierOrder).toEqual(
-      canonical.filter((t) => tierOrder.includes(t)),
-    )
+    expect(tierOrder).toEqual(['S', 'A', 'B'])
 
     await expect(page.getByTestId('how-tiers-move')).toBeVisible()
   })
 
-  test('hero lede describes only the tiers that have a section on the page', async ({
+  test('hero lede describes only the tiers whose section actually holds shows', async ({
     page,
   }) => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
@@ -42,16 +36,20 @@ test.describe('/shows tier-list', () => {
     const lede = page.getByTestId('shows-hero-lede')
     await expect(lede).toBeVisible()
 
-    // The lede's data-tier-coverage must equal the set of tier
-    // sections actually rendered — a regression to a hardcoded
-    // sentence about an empty (unrendered) tier fails here.
+    // Every tier renders a section (empty bands carry a tier-empty
+    // placeholder), so coverage must match the populated subset —
+    // sections whose body is a shows-grid, not a tier-empty. A
+    // regression to a hardcoded sentence about a tier with zero
+    // shows fails here.
     const coverage = (await lede.getAttribute('data-tier-coverage')) ?? ''
-    const renderedTiers = await page
-      .getByTestId('tier-section')
+    const populatedTiers = await page
+      .locator(
+        '[data-testid="tier-section"]:has([data-testid="shows-grid"])',
+      )
       .evaluateAll((els) =>
         els.map((el) => (el as HTMLElement).dataset['tier']),
       )
-    expect(coverage.split('')).toEqual(renderedTiers)
+    expect(coverage.split('')).toEqual(populatedTiers)
 
     const ledeText = (await lede.textContent()) ?? ''
     expect(ledeText.includes('S tier')).toBe(coverage.includes('S'))
@@ -77,14 +75,16 @@ test.describe('/shows tier-list', () => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
 
     // B may have fully drained (phase 26 promotes shows out of B as
-    // their canon matures). When a B section exists, every tile in
-    // it must carry the in-progress status pill; when B is empty the
-    // section is absent and there is nothing to assert there. The
-    // S-tier no-pill invariant below always holds.
+    // their canon matures). The B section always renders now — when
+    // empty it carries a tier-empty placeholder (critique-pass-14
+    // #202). Only when its body is a shows-grid (i.e. it actually
+    // holds tiles) must every tile carry the in-progress status pill.
+    // The S-tier no-pill invariant below always holds.
     const bSection = page.getByTestId('tier-section').filter({
       has: page.locator('[data-tier="B"]'),
     })
-    if ((await bSection.count()) > 0) {
+    const bGrid = bSection.getByTestId('shows-grid')
+    if ((await bGrid.count()) > 0) {
       const bPills = bSection.getByTestId('show-tile-status')
       expect(await bPills.count()).toBeGreaterThan(0)
       await expect(bPills.first()).toBeVisible()

@@ -3,10 +3,10 @@ import { TIER_ORDER } from './tierMeta'
 
 // One descriptor fragment per tier for the /shows SEO description.
 // The full sentence is composed at runtime from only the tiers that
-// actually carry shows, mirroring TierSection's render gate. A
-// description that names B tier when no show sits in B overclaims
-// to every crawler + share-link snippet — the SEO copy must track
-// the page's rendered content.
+// actually carry shows. Empty tiers still render a placeholder band
+// on /shows (critique-pass-14 #202) so the editorial ladder honors
+// its legend, but the SEO snippet must not claim a tier has content
+// when it does not — that overclaims to every crawler + share-link.
 const TIER_DESCRIPTION_FRAGMENT: Record<ShowTier, string> = {
   S: 'S tier is format-defining',
   A: 'A tier has the deep canon',
