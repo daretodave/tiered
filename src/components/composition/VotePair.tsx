@@ -164,17 +164,21 @@ export function VotePair({
   // direction), not the result, so they stay on the plural form
   // — the displayed count is already announced by the count cell.
   const baseLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
-  // Critique pass-13 #190: with the VoteRowHead reading "Your
-  // vote / cast yours this week" and the count rendering "N net
-  // vote(s)", an authed-but-not-yet-voted reader can't tell
+  // Critique pass-13 #190 / pass-14 #199: with the VoteRowHead
+  // reading "Your vote / cast yours this week" and the count
+  // rendering "N net vote(s)", an unacted reader can't tell
   // whether N is the community total or a (yet-uncast) personal
-  // value. Qualify the label — "community · net vote(s)" — so
-  // the source is explicit. Anon viewers have no personal vote
-  // to confuse it with; authed-and-voted viewers already see
-  // the "you voted higher/lower" cap below, so the qualifier
-  // stays silent in those two states.
-  const authedNoVote = signedIn && state.value === 0
-  const displayLabel = authedNoVote ? `community · ${baseLabel}` : baseLabel
+  // value. The pass-13 fix scoped the qualifier to authed-only on
+  // the theory that anon has no personal vote to confuse it with
+  // — pass-14 reopened that: anon also has no canon-vs-community
+  // frame yet, and a first-paint reader meets "1 NET VOTE" next
+  // to "EDITOR'S CANON #02" with no syntactic cue distinguishing
+  // them. Widen to both branches: any unacted reader (state.value
+  // === 0) sees "community · net vote(s)"; authed-and-voted
+  // viewers already see the "you voted higher/lower" cap below,
+  // so the qualifier stays silent in that one state.
+  const noVote = state.value === 0
+  const displayLabel = noVote ? `community · ${baseLabel}` : baseLabel
 
   // State pill copy (#160): only surfaces for signed-in members
   // who have actually voted. The signed-in-no-vote channel is

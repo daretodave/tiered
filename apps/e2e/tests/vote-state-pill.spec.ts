@@ -14,13 +14,17 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // pill survives as a pure post-action confirmation
 // (signed-in-with-vote → "you voted higher"/"you voted lower").
 //
-// #190 (critique pass-13) — when the head reads "Your vote /
-// cast yours this week" the count's label must qualify the
-// number's source: a plain "1 NET VOTE" reads ambiguously
-// (community total vs. personal). The label gains a
-// "community · " prefix in the authed-not-yet-voted state and
-// stays silent in the other two (anon has no personal vote to
-// confuse with; authed-voted has the pill).
+// #190 (critique pass-13) + #199 (critique pass-14) — when the
+// head reads "Your vote / cast yours this week" the count's
+// label must qualify the number's source: a plain "1 NET VOTE"
+// reads ambiguously (community total vs. personal). The label
+// gains a "community · " prefix in the unacted state for BOTH
+// anon and authed viewers (pass-14 widened the prefix to anon
+// after observing the first-paint reader meets "1 NET VOTE"
+// next to "EDITOR'S CANON #02" with no syntactic cue
+// distinguishing the two ranking frames). The qualifier stays
+// silent only for authed-and-voted, where the cap pill below
+// the buttons owns the disambiguation channel.
 //
 // The pill ships from VotePair itself (driven by /api/vote
 // returning `signedIn` alongside the read-back value). Anon
@@ -165,11 +169,15 @@ test.describe('vote state pill — public never sees the pill', () => {
     // surface they don't have.
     await expect(page.getByTestId('vote-state-cap')).toHaveCount(0)
 
-    // #190: the "community · " qualifier is authed-only — the
-    // anon viewer has no personal vote to confuse with, so the
-    // label stays plain. Surfacing the qualifier here would
-    // imply a viewer-identity channel an anon doesn't have.
+    // #199 (pass-14): the "community · " qualifier renders for
+    // anon-no-vote too — the first-paint reader meets the big
+    // "N NET VOTE" element next to "EDITOR'S CANON #02" with no
+    // syntactic cue distinguishing the canon vs. community
+    // frames. The qualifier carries the disambiguation; the
+    // anon's lack of a personal vote is irrelevant here because
+    // the imperative head ("SIGN IN TO WEIGH IN" for anon)
+    // already telegraphs the viewer-identity boundary.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).not.toHaveText(/^community · /)
+    await expect(label).toHaveText(/^community · /)
   })
 })
