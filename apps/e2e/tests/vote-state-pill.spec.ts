@@ -14,6 +14,14 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // pill survives as a pure post-action confirmation
 // (signed-in-with-vote → "you voted higher"/"you voted lower").
 //
+// #190 (critique pass-13) — when the head reads "Your vote /
+// cast yours this week" the count's label must qualify the
+// number's source: a plain "1 NET VOTE" reads ambiguously
+// (community total vs. personal). The label gains a
+// "community · " prefix in the authed-not-yet-voted state and
+// stays silent in the other two (anon has no personal vote to
+// confuse with; authed-voted has the pill).
+//
 // The pill ships from VotePair itself (driven by /api/vote
 // returning `signedIn` alongside the read-back value). Anon
 // viewers must never see the pill — the affordance is for
@@ -78,6 +86,17 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     // Whatever the value, the redundant "haven't voted" copy
     // must never surface on the stack (#189).
     await expect(stack).not.toContainText("haven't voted")
+
+    // #190: the count's label disambiguates the number's source.
+    // Authed-not-yet-voted gets "community · net vote(s)";
+    // authed-and-voted reverts to the plain label (the pill
+    // above the buttons owns the disambiguation in that state).
+    const label = page.getByTestId('vote-pair').locator('.vote-label')
+    if (api.value === 0) {
+      await expect(label).toHaveText(/^community · /)
+    } else {
+      await expect(label).not.toHaveText(/^community · /)
+    }
   })
 
   test('clicking up flips the pill (silent → "you voted higher", or retracts to silent)', async ({
@@ -145,5 +164,12 @@ test.describe('vote state pill — public never sees the pill', () => {
     // viewer reading a pill copy would imply a viewer-identity
     // surface they don't have.
     await expect(page.getByTestId('vote-state-cap')).toHaveCount(0)
+
+    // #190: the "community · " qualifier is authed-only — the
+    // anon viewer has no personal vote to confuse with, so the
+    // label stays plain. Surfacing the qualifier here would
+    // imply a viewer-identity channel an anon doesn't have.
+    const label = page.getByTestId('vote-pair').locator('.vote-label')
+    await expect(label).not.toHaveText(/^community · /)
   })
 })

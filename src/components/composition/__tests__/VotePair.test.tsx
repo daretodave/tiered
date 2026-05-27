@@ -363,4 +363,81 @@ describe('<VotePair>', () => {
       expect(screen.queryByTestId('vote-state-cap')).toBeNull()
     })
   })
+
+  // --- #190 (critique pass-13): community-source qualifier on
+  // the count's label for the authed-not-yet-voted reader. The
+  // head ("cast yours this week") owns the imperative; the
+  // label here owns the *source* of the rendered number so
+  // "1 net vote" isn't read as "you have 1 net vote".
+  describe('community-source qualifier (signed-in-no-vote only)', () => {
+    function labelText() {
+      return screen
+        .getByTestId('vote-pair')
+        .querySelector('.vote-label')?.textContent
+    }
+
+    it('prefixes the label with "community · " when authed-not-yet-voted (plural)', async () => {
+      getBody = { ok: true, value: 0, count: 7, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('community · net votes')
+    })
+
+    it('prefixes the label with "community · " when authed-not-yet-voted (singular)', async () => {
+      getBody = { ok: true, value: 0, count: 1, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(labelText()).toBe('community · net vote')
+    })
+
+    it('omits the qualifier for anon viewers — no personal vote to confuse it with', async () => {
+      getBody = { ok: true, value: 0, count: 7, signedIn: false }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('omits the qualifier for authed-and-voted viewers — the cap already disambiguates', async () => {
+      getBody = { ok: true, value: 1, count: 7, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('drops the qualifier on click (signed-in-no-vote → signed-in-with-vote)', async () => {
+      getBody = { ok: true, value: 0, count: 5, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('community · net votes')
+      // Optimistic state.value flips to 1; the cap takes over the
+      // disambiguation channel, so the qualifier must vanish.
+      fireEvent.click(screen.getByTestId('vote-up'))
+      expect(labelText()).toBe('net votes')
+    })
+
+    it('honors custom singular + plural labels when prefixing', async () => {
+      getBody = { ok: true, value: 0, count: 1, signedIn: true }
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          label="approvals"
+          labelSingular="approval"
+        />,
+      )
+      await flushAsync()
+      expect(labelText()).toBe('community · approval')
+    })
+
+    it('SSR fallback (pre-hydrate) omits the qualifier so anon and authed render structurally identical', () => {
+      // Before the mount fetch resolves, signedIn defaults to
+      // false and authedNoVote is false — the label is plain.
+      // This matches the anon SSR default and keeps the initial
+      // client render identical to the server's.
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      expect(labelText()).toBe('net votes')
+    })
+  })
 })
