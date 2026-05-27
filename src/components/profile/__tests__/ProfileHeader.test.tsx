@@ -24,4 +24,43 @@ describe('<ProfileHeader>', () => {
     )
     expect(screen.queryByTestId('profile-display-name')).toBeNull()
   })
+
+  it('omits the self-view eyebrow by default', () => {
+    render(
+      <ProfileHeader handle="dave" displayName={null} memberSince="May 2026" />,
+    )
+    expect(screen.queryByTestId('profile-self-eyebrow')).toBeNull()
+  })
+
+  it('omits the self-view eyebrow when isSelfView=false', () => {
+    render(
+      <ProfileHeader
+        handle="dave"
+        displayName={null}
+        memberSince="May 2026"
+        isSelfView={false}
+      />,
+    )
+    expect(screen.queryByTestId('profile-self-eyebrow')).toBeNull()
+  })
+
+  it('renders the self-view eyebrow when isSelfView=true', () => {
+    render(
+      <ProfileHeader
+        handle="dave"
+        displayName={null}
+        memberSince="May 2026"
+        isSelfView
+      />,
+    )
+    const eyebrow = screen.getByTestId('profile-self-eyebrow')
+    // CRITIQUE pass 13 fix: the owner-view needs an ownership cue
+    // distinct from the stranger-view, sitting above the @handle H1.
+    expect(eyebrow.textContent).toBe('Your record')
+    // Eyebrow precedes the H1 in document order so screen readers
+    // announce the ownership cue before the handle.
+    expect(
+      eyebrow.compareDocumentPosition(screen.getByTestId('profile-handle')),
+    ).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
+  })
 })

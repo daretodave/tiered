@@ -115,11 +115,35 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
       /public record on tiered\.tv — votes, comments, the seasons they've weighed in on\./,
     )
 
+    // CRITIQUE pass 13 #197: stranger-view (no session) must NOT
+    // surface the owner-view ownership eyebrow.
+    await expect(page.getByTestId('profile-self-eyebrow')).toHaveCount(0)
+
     // Spoiler/mod P0: the pending comment is NOT a published
     // comment — the recent block stays empty and the phrase is
     // nowhere on the page (nor in the JSON-LD).
     await expect(page.getByTestId('profile-no-comments')).toBeVisible()
     expect(await page.content()).not.toContain(PENDING_PHRASE)
+  })
+
+  test('owner-view renders the self-view eyebrow above the handle', async ({
+    page,
+  }) => {
+    // CRITIQUE pass 13 #197: when the signed-in viewer visits their
+    // own profile the page surfaces an ownership cue distinct from
+    // the public/stranger surface. Keep the authed cookie set (no
+    // clearCookies) so isSelfView resolves true.
+    await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
+    const href = await page
+      .getByTestId('site-header-user-link')
+      .getAttribute('href')
+    expect(href).toMatch(/^\/u\/.+/)
+    const profilePath = href as string
+
+    await page.goto(profilePath, { waitUntil: 'domcontentloaded' })
+    const eyebrow = page.getByTestId('profile-self-eyebrow')
+    await expect(eyebrow).toBeVisible()
+    await expect(eyebrow).toHaveText('Your record')
   })
 
   test('unknown handle 404s', async ({ page, context }) => {

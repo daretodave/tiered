@@ -148,6 +148,7 @@ export default async function UserProfilePage({
         handle={profile.handle}
         displayName={profile.displayName}
         memberSince={profile.memberSince}
+        isSelfView={isSelfView}
       />
 
       {profile.populated ? (
