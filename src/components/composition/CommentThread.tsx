@@ -16,8 +16,10 @@ type CommentThreadProps = {
  * viewer), renders an honest empty-state line that invites the
  * first comment without referencing internal phase numbers or
  * implementation status. `count` is the public published count, so
- * a held-only thread still reads "Be the first" in the meta strip
- * while showing the author's held row below.
+ * the meta strip ("42 comments" / "1 comment") only renders when
+ * the thread has live published activity — the empty state is
+ * carried by the composer placeholder + the empty-state sentence
+ * below, no caps eyebrow stamp.
  *
  * `hideEmpty` suppresses the empty-state line when the caller's
  * `input` slot already carries the "weigh in, no spoilers" nudge —
@@ -38,11 +40,11 @@ export function CommentThread({
     <div data-testid="comment-thread" className="comment-thread">
       <div className="aside-head">
         <h3>The thread</h3>
-        <span className="aside-meta" data-testid="comment-count">
-          {hasComments
-            ? `${count} ${count === 1 ? 'comment' : 'comments'}`
-            : 'Be the first'}
-        </span>
+        {hasComments ? (
+          <span className="aside-meta" data-testid="comment-count">
+            {`${count} ${count === 1 ? 'comment' : 'comments'}`}
+          </span>
+        ) : null}
       </div>
       {input}
       {hasBody ? children : null}

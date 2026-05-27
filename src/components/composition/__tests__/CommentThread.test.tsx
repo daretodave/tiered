@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { CommentThread } from '../CommentThread'
 
 describe('<CommentThread>', () => {
-  it('renders the thread head, "Be the first" meta, input slot, and empty-state copy at count=0', () => {
+  it('renders the thread head, omits the meta eyebrow at count=0, and shows input + empty-state copy', () => {
     render(
       <CommentThread
         count={0}
@@ -11,7 +11,7 @@ describe('<CommentThread>', () => {
       />,
     )
     expect(screen.getByTestId('comment-thread')).toBeInTheDocument()
-    expect(screen.getByTestId('comment-count').textContent).toContain('Be the first')
+    expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.getByTestId('input-slot')).toBeInTheDocument()
     expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
       'No comments yet. Weigh in on the season itself.',
@@ -45,7 +45,7 @@ describe('<CommentThread>', () => {
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
 
-  it('renders children with no empty state when count=0 but a held row exists', () => {
+  it('renders children with no empty state and no meta eyebrow when count=0 but a held row exists', () => {
     render(
       <CommentThread count={0} input={<div />}>
         <ul data-testid="held-only">
@@ -53,9 +53,7 @@ describe('<CommentThread>', () => {
         </ul>
       </CommentThread>,
     )
-    expect(screen.getByTestId('comment-count').textContent).toContain(
-      'Be the first',
-    )
+    expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.getByTestId('held-only')).toBeInTheDocument()
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
@@ -70,7 +68,7 @@ describe('<CommentThread>', () => {
     expect(screen.getByTestId('comment-count').textContent).not.toContain('comments')
   })
 
-  it('hideEmpty suppresses the empty-state at count=0 even without children', () => {
+  it('hideEmpty suppresses the empty-state at count=0 even without children, and meta eyebrow stays absent', () => {
     render(
       <CommentThread
         count={0}
@@ -80,7 +78,7 @@ describe('<CommentThread>', () => {
     )
     expect(screen.getByTestId('input-slot')).toBeInTheDocument()
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
-    expect(screen.getByTestId('comment-count').textContent).toContain('Be the first')
+    expect(screen.queryByTestId('comment-count')).toBeNull()
   })
 
   it('hideEmpty=false (default) keeps prior empty-state behavior at count=0', () => {

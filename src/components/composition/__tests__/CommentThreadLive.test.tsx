@@ -68,7 +68,7 @@ describe('<CommentThreadLive>', () => {
     expect(screen.queryByTestId('comment-list')).toBeNull()
   })
 
-  it('renders a held-only thread (count stays "Be the first", row shows)', async () => {
+  it('renders a held-only thread (meta eyebrow stays absent, row shows)', async () => {
     stubFetch({
       ok: true,
       signedIn: true,
@@ -95,7 +95,7 @@ describe('<CommentThreadLive>', () => {
     await waitFor(() => {
       expect(screen.getByTestId('comment-held-badge')).toBeInTheDocument()
     })
-    expect(screen.getByTestId('comment-count')).toHaveTextContent('Be the first')
+    expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
 
@@ -112,7 +112,7 @@ describe('<CommentThreadLive>', () => {
       expect(screen.getByTestId('comment-stub')).toBeInTheDocument()
     })
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
-    expect(screen.getByTestId('comment-count')).toHaveTextContent('Be the first')
+    expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.queryByTestId('comment-list')).toBeNull()
   })
 
