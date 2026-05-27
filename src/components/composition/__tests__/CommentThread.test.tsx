@@ -13,9 +13,23 @@ describe('<CommentThread>', () => {
     expect(screen.getByTestId('comment-thread')).toBeInTheDocument()
     expect(screen.getByTestId('comment-count').textContent).toContain('Be the first')
     expect(screen.getByTestId('input-slot')).toBeInTheDocument()
-    expect(screen.getByTestId('comment-thread-empty').textContent).toMatch(
-      /no comments yet/i,
+    expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
+      'No comments yet. Weigh in on the season itself.',
     )
+  })
+
+  it('empty-state copy avoids the soft-spoiler-shape "the result" phrasing', () => {
+    render(
+      <CommentThread
+        count={0}
+        input={<div data-testid="input-slot">stub-input</div>}
+      />,
+    )
+    const empty = screen.getByTestId('comment-thread-empty').textContent ?? ''
+    expect(empty).not.toMatch(/\bthe result\b/i)
+    expect(empty).not.toMatch(/\bthe winner\b/i)
+    expect(empty).not.toMatch(/\bthe twist\b/i)
+    expect(empty).not.toMatch(/\bthe elimination\b/i)
   })
 
   it('renders the count and children when count > 0', () => {
