@@ -47,7 +47,16 @@ Per `plan/bearings.md`:
 - **No exclamation points** unless you're quoting someone
   who actually used one.
 - **Plain sentences over clever ones.** Resist the
-  temptation to be quotable.
+  temptation to be quotable. The canon `meth_who_p` field is
+  the documented trap — past drafts closed on a
+  parallel-paradox flourish ("We're not pretending to be
+  objective; we are pretending to be honest.") that read as
+  performative cleverness, especially against the same beat
+  repeating across every show's methodology block. Close
+  `meth_who_p` on a plain declarative sentence ("We aren't
+  claiming to be objective. We are trying to be honest.") and
+  resist any closing construction built on a semicolon + a
+  parallel "we are X / we are Y" paradox.
 
 ## Spoiler discipline — P0
 
@@ -369,6 +378,11 @@ last_revised:  <YYYY-MM-DD>
 # Methodology cell triple — three short blocks across the
 # "How we ranked it" strip. Heading ≤ 80 chars; paragraph
 # 40–60 words. Cells collapse independently when absent.
+# meth_who_p closes on a plain declarative sentence (e.g.
+# "We aren't claiming to be objective. We are trying to be
+# honest."), never on a semicolon-paradox flourish — same beat
+# would land twice for a reader hitting more than one show's
+# canon (filed by /critique pass-11, issue #199).
 meth_who_h:    "<heading 1>"
 meth_who_p:    "<40-60 word paragraph>"
 meth_how_h:    "<heading 2>"

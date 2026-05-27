@@ -3,7 +3,7 @@ show: the-challenge
 editor: tiered.tv Editors
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
-meth_who_p: tiered.tv's editors. We have watched The Challenge since MTV's first RV pulled out in 1998, and replayed every founding-era season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable franchise fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
+meth_who_p: tiered.tv's editors. We have watched The Challenge since MTV's first RV pulled out in 1998, and replayed every founding-era season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable franchise fans agree on after a long argument. We aren't claiming to be objective. We are trying to be honest.
 meth_how_h: How do we weigh it?
 meth_how_p: Four lenses — format, whether the season's structure earns its airtime; cast, whether the returnees produce confessionals and chemistry that hold up; argument, whether the season changes what the franchise is later allowed to attempt; and finals, whether the closing run feels earned. The Challenge lives or dies on the beats it invents and the cast it trusts.
 meth_when_h: When do we revisit?

@@ -3,7 +3,7 @@ show: amazing-race
 editor: tiered.tv Editors
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
-meth_who_p: tiered.tv's editors. We've watched The Amazing Race since the original Keoghan summer in 2001, and we've replayed every season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable race fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
+meth_who_p: tiered.tv's editors. We've watched The Amazing Race since the original Keoghan summer in 2001, and we've replayed every season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable race fans agree on after a long argument. We aren't claiming to be objective. We are trying to be honest.
 meth_how_h: How do we weigh it?
 meth_how_p: Four lenses, in this order — cast, whether the teams produce confessionals and chemistry you remember; route, whether the geography earns its airtime; pacing, whether the leg-to-leg structure breathes; argument, whether the season changes what the format is later allowed to attempt. Travel television lives or dies on the cast it sends.
 meth_when_h: When do we revisit?

@@ -3,7 +3,7 @@ show: dragrace
 editor: tiered.tv Editors
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
-meth_who_p: tiered.tv's editors. We have watched Drag Race since the Logo years, and replayed every U.S.-flagship season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable drag fans agree on after a long argument. We are not pretending to be objective; we are pretending to be honest.
+meth_who_p: tiered.tv's editors. We have watched Drag Race since the Logo years, and replayed every U.S.-flagship season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable drag fans agree on after a long argument. We aren't claiming to be objective. We are trying to be honest.
 meth_how_h: How do we weigh it?
 meth_how_p: Four lenses — workroom, whether the cast produces moments and chemistry that hold up; runway, whether the categories pull craft out of the lineup; competition, whether the format chases a winner the lineup actually earned; argument, whether the season changes what Drag Race is later allowed to attempt. Drag Race lives or dies on the queens it casts.
 meth_when_h: When do we revisit?
