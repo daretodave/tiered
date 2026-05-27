@@ -4,6 +4,8 @@
 // slugs (for clean canonical hrefs) and renders; this module only
 // decides what a raw comment row means and how it reads.
 
+import type { CanonFile, Season } from '@/content/schemas'
+
 export type RawProfileComment = {
   id: string
   body: string
@@ -99,4 +101,23 @@ export function isPopulatedProfile(input: {
   votedSeasonCount: number
 }): boolean {
   return input.publishedCommentCount > 0 || input.votedSeasonCount > 0
+}
+
+// The self-view empty-state CTA promises "vote on a season pair,"
+// so it must land on a page that exposes VotePair above the fold —
+// a season page, not the canon ladder. Pick the show's #1 canon
+// entry's season; resolveSeason returns null if that season isn't
+// in the catalog, in which case the page should fall back to the
+// show home.
+export function pickFeaturedSeason(
+  canon: CanonFile | null,
+  resolveSeason: (seasonNumber: number) => Season | null,
+): Season | null {
+  if (!canon) return null
+  const top = canon.entries.reduce<typeof canon.entries[number] | null>(
+    (best, e) => (best == null || e.rank < best.rank ? e : best),
+    null,
+  )
+  if (!top) return null
+  return resolveSeason(top.season)
 }

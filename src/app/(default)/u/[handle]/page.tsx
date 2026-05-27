@@ -1,7 +1,7 @@
 import { cache } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getFeaturedShow, getSeason, getShow } from '@/content'
+import { getCanon, getFeaturedShow, getSeason, getShow } from '@/content'
 import {
   ProfileComments,
   ProfileEmpty,
@@ -15,6 +15,7 @@ import { formatWhen } from '@/lib/comments/thread'
 import {
   formatMemberSince,
   isPopulatedProfile,
+  pickFeaturedSeason,
   publicDisplayName,
   shapeProfileComment,
 } from '@/lib/profile/context'
@@ -116,9 +117,19 @@ export default async function UserProfilePage({
   )
   const isSelfView = viewer?.handle === profile.handle
   const featuredShow = !profile.populated && isSelfView ? getFeaturedShow() : null
+  const selfViewSeason = featuredShow
+    ? pickFeaturedSeason(getCanon(featuredShow.slug), (n) =>
+        getSeason(featuredShow.slug, n),
+      )
+    : null
   const selfViewCta =
     featuredShow != null
-      ? { showName: featuredShow.name, showHref: `/shows/${featuredShow.slug}` }
+      ? {
+          showName: featuredShow.name,
+          showHref: selfViewSeason
+            ? `/shows/${featuredShow.slug}/season/${selfViewSeason.slug}`
+            : `/shows/${featuredShow.slug}`,
+        }
       : undefined
 
   const ld = {

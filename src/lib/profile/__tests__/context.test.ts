@@ -1,9 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+import type { CanonFile, Season } from '@/content/schemas'
 import {
   excerpt,
   formatMemberSince,
   isPopulatedProfile,
   parseSeasonTarget,
+  pickFeaturedSeason,
   publicDisplayName,
   shapeProfileComment,
 } from '../context'
@@ -140,5 +142,72 @@ describe('publicDisplayName', () => {
 
   it('trims surrounding whitespace on a kept name', () => {
     expect(publicDisplayName('  Dave  ')).toBe('Dave')
+  })
+})
+
+// `pickFeaturedSeason` derives the empty-state self-view CTA's
+// destination. The CTA promises "vote on a season pair," so it must
+// land on a season page (VotePair above the fold), not the show's
+// canon ladder. The helper picks the canon's #1 entry's season; the
+// fallback to a bare show page lives at the call site, defended via
+// the contract that an unresolved season returns null.
+
+function canonOf(entries: Array<{ rank: number; season: number }>): CanonFile {
+  return {
+    show: 'survivor',
+    entries: entries.map((e) => ({
+      ...e,
+      title: `S${e.season}`,
+      rationale:
+        'Rationale text that comfortably clears the canonical rationale word floor so the helper test exercises only the picking logic, not schema validation downstream of it.',
+    })),
+  } as unknown as CanonFile
+}
+
+function seasonOf(n: number, slug = `s${n}`): Season {
+  return { number: n, slug, title: `Season ${n}` } as unknown as Season
+}
+
+describe('pickFeaturedSeason', () => {
+  it('returns null when canon is null', () => {
+    expect(pickFeaturedSeason(null, () => seasonOf(1))).toBeNull()
+  })
+
+  it('picks the canon entry with the lowest rank — not the first-listed', () => {
+    const canon = canonOf([
+      { rank: 5, season: 12 },
+      { rank: 1, season: 28 },
+      { rank: 3, season: 7 },
+    ])
+    const resolve = vi.fn((n: number) => seasonOf(n, `season-${n}`))
+    const out = pickFeaturedSeason(canon, resolve)
+    expect(out?.slug).toBe('season-28')
+    expect(resolve).toHaveBeenCalledWith(28)
+    // It must look up the rank-1 entry exactly once — no fan-out
+    // across every entry searching for the right one.
+    expect(resolve).toHaveBeenCalledTimes(1)
+  })
+
+  it('returns null when the resolver cannot find the picked entry season', () => {
+    const canon = canonOf([{ rank: 1, season: 99 }])
+    expect(pickFeaturedSeason(canon, () => null)).toBeNull()
+  })
+
+  it('keys on canon-entry rank, not season number — a low-numbered season at rank 5 is NOT picked', () => {
+    const canon = canonOf([
+      { rank: 1, season: 47 },
+      { rank: 5, season: 1 },
+    ])
+    const out = pickFeaturedSeason(canon, (n) => seasonOf(n))
+    // A regression matching on `season` (the season number) instead
+    // of `rank` would pick season 1; the right pick is the rank-1
+    // entry which is season 47.
+    expect(out?.number).toBe(47)
+  })
+
+  it('handles a single-entry canon', () => {
+    const canon = canonOf([{ rank: 1, season: 28 }])
+    const out = pickFeaturedSeason(canon, (n) => seasonOf(n, 'cagayan'))
+    expect(out?.slug).toBe('cagayan')
   })
 })
