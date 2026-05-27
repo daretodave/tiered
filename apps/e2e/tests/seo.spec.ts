@@ -86,6 +86,19 @@ test('/about emits FAQPage JSON-LD with ≥4 questions', async ({ page }) => {
   }
 })
 
+test('/about anchors voting / spoilers / editors at distinct sections', async ({ page }) => {
+  // Footer "tiered.tv" column promises /about#voting, /about#spoilers,
+  // /about#editors — without matching ids, all three would land at the
+  // page top (CRITIQUE pass-14 finding).
+  await page.goto('/about', { waitUntil: 'domcontentloaded' })
+  for (const id of ['voting', 'spoilers', 'editors']) {
+    const heading = page.locator(`#${id}`)
+    await expect(heading, `/about missing anchor #${id}`).toHaveCount(1)
+    const tag = await heading.evaluate((el) => el.tagName)
+    expect(tag, `/about #${id} not a heading`).toMatch(/^H[1-4]$/)
+  }
+})
+
 test('sitemap entry count matches expected canonical URL count', async ({ page }) => {
   const response = await page.goto('/sitemap.xml', { waitUntil: 'domcontentloaded' })
   const body = (await response?.text()) ?? ''

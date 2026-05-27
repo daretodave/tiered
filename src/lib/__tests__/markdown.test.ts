@@ -191,6 +191,66 @@ describe('parseMarkdownBlocks — edges', () => {
   })
 })
 
+describe('parseMarkdownBlocks — heading anchor ids', () => {
+  it('parses {#id} suffix as the heading id', () => {
+    expect(parseMarkdownBlocks('## How voting works {#voting}')).toEqual([
+      { type: 'heading', level: 2, text: 'How voting works', id: 'voting' },
+    ])
+  })
+
+  it('omits id field when no anchor suffix present', () => {
+    const [block] = parseMarkdownBlocks('## Plain heading')
+    expect(block).toEqual({ type: 'heading', level: 2, text: 'Plain heading' })
+    expect((block as { id?: string }).id).toBeUndefined()
+  })
+
+  it('strips the anchor suffix from the rendered text', () => {
+    expect(parseMarkdownBlocks('### Become an editor {#editors}')).toEqual([
+      { type: 'heading', level: 3, text: 'Become an editor', id: 'editors' },
+    ])
+  })
+
+  it('accepts kebab ids with digits', () => {
+    expect(parseMarkdownBlocks('## Section two {#section-2}')).toEqual([
+      { type: 'heading', level: 2, text: 'Section two', id: 'section-2' },
+    ])
+  })
+
+  it('rejects ids containing uppercase or other chars — suffix becomes part of text', () => {
+    // The HEADING_RE anchor capture only accepts [a-z0-9][a-z0-9-]*;
+    // anything else fails the optional group, so the trailing token
+    // is captured as part of the heading text.
+    const out = parseMarkdownBlocks('## Cap {#NotKebab}')
+    expect(out[0]).toMatchObject({
+      type: 'heading',
+      level: 2,
+      text: 'Cap {#NotKebab}',
+    })
+    expect((out[0] as { id?: string }).id).toBeUndefined()
+  })
+
+  it('rejects ids starting with a hyphen', () => {
+    const out = parseMarkdownBlocks('## Skip {#-bad}')
+    expect((out[0] as { id?: string }).id).toBeUndefined()
+  })
+
+  it('preserves trailing whitespace tolerance after the id', () => {
+    expect(parseMarkdownBlocks('## Title {#anchor}   ')).toEqual([
+      { type: 'heading', level: 2, text: 'Title', id: 'anchor' },
+    ])
+  })
+
+  it('applies to every supported heading level', () => {
+    const source = '# A {#a}\n\n## B {#b}\n\n### C {#c}\n\n#### D {#d}'
+    expect(parseMarkdownBlocks(source)).toEqual([
+      { type: 'heading', level: 1, text: 'A', id: 'a' },
+      { type: 'heading', level: 2, text: 'B', id: 'b' },
+      { type: 'heading', level: 3, text: 'C', id: 'c' },
+      { type: 'heading', level: 4, text: 'D', id: 'd' },
+    ])
+  })
+})
+
 describe('parseInline — edges', () => {
   it('treats an unterminated ** run as literal text', () => {
     expect(parseInline('a **b')).toEqual([{ type: 'text', value: 'a **b' }])

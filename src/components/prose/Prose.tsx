@@ -29,10 +29,11 @@ function renderBlock(block: MdBlock, key: number): React.ReactNode {
     }
     const inline = parseInline(block.text)
     const className = classes[block.level]
-    if (block.level === 1) return <h1 key={key} className={className}>{renderInline(inline)}</h1>
-    if (block.level === 2) return <h2 key={key} className={className}>{renderInline(inline)}</h2>
-    if (block.level === 3) return <h3 key={key} className={className}>{renderInline(inline)}</h3>
-    return <h4 key={key} className={className}>{renderInline(inline)}</h4>
+    const id = block.id
+    if (block.level === 1) return <h1 key={key} id={id} className={className}>{renderInline(inline)}</h1>
+    if (block.level === 2) return <h2 key={key} id={id} className={className}>{renderInline(inline)}</h2>
+    if (block.level === 3) return <h3 key={key} id={id} className={className}>{renderInline(inline)}</h3>
+    return <h4 key={key} id={id} className={className}>{renderInline(inline)}</h4>
   }
   if (block.type === 'paragraph') {
     return (

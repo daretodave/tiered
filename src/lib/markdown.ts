@@ -9,7 +9,7 @@
 // (remark, marked), this module's API stays the same.
 
 export type MdBlock =
-  | { type: 'heading'; level: 1 | 2 | 3 | 4; text: string }
+  | { type: 'heading'; level: 1 | 2 | 3 | 4; text: string; id?: string }
   | { type: 'paragraph'; text: string }
   | { type: 'list'; items: string[] }
 
@@ -20,7 +20,7 @@ export type MdInline =
   | { type: 'code'; value: string }
   | { type: 'link'; value: string; href: string }
 
-const HEADING_RE = /^(#{1,4})\s+(.+?)\s*$/
+const HEADING_RE = /^(#{1,4})\s+(.+?)(?:\s+\{#([a-z0-9][a-z0-9-]*)\})?\s*$/
 const LIST_ITEM_RE = /^-\s+(.+)$/
 
 export function parseMarkdownBlocks(source: string): MdBlock[] {
@@ -40,7 +40,9 @@ export function parseMarkdownBlocks(source: string): MdBlock[] {
     if (headingMatch) {
       const hashes = headingMatch[1] ?? '#'
       const level = Math.min(hashes.length, 4) as 1 | 2 | 3 | 4
-      blocks.push({ type: 'heading', level, text: (headingMatch[2] ?? '').trim() })
+      const text = (headingMatch[2] ?? '').trim()
+      const id = headingMatch[3]
+      blocks.push(id ? { type: 'heading', level, text, id } : { type: 'heading', level, text })
       i++
       continue
     }

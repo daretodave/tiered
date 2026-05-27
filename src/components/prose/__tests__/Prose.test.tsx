@@ -24,4 +24,16 @@ describe('Prose', () => {
     const link = screen.getByRole('link', { name: 'About' })
     expect(link.getAttribute('href')).toBe('/about')
   })
+
+  it('emits id attr on a heading carrying {#anchor} syntax', () => {
+    render(<Prose source={'## How voting works {#voting}'} />)
+    const heading = screen.getByRole('heading', { level: 2, name: 'How voting works' })
+    expect(heading.id).toBe('voting')
+  })
+
+  it('omits id attr on a plain heading without anchor syntax', () => {
+    render(<Prose source={'## Plain heading'} />)
+    const heading = screen.getByRole('heading', { level: 2, name: 'Plain heading' })
+    expect(heading.id).toBe('')
+  })
 })
