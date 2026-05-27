@@ -454,6 +454,53 @@ export function collectThemeDescriptionCountTailIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-13 MED finding: themed-list entry blurbs are public
+// list surfaces (`/themes/<theme>`), not detail pages — they must
+// land without naming season-specific twist mechanics a viewer who
+// hasn't watched is meant to discover. Spoiler discipline is P0 per
+// CLAUDE.md "the seasons, ranked. no spoilers." brand promise. The
+// pass-13 row caught Survivor S40 (Winners at War) naming both
+// "Edge of Extinction" and "fire-token economy" in its blurb on
+// `/themes/best-finales`. The rewrite drained the offender; this
+// invariant pins the absence so a future authoring pass cannot
+// regress a themed-list entry blurb back into naming a canonical
+// season-specific twist mechanic. Strict floor 0 — the names are
+// forbidden, not capped. Mirrors the lax->strict pattern of STRICT,
+// CROSS_SHOW_STRICT, YEAR_TENURE_STRICT, TAGLINE_TAIL_STRICT, and
+// THEME_COUNT_TAIL_STRICT; ships strict immediately. Exported so
+// the vitest suite can exercise it directly against a temp content
+// tree.
+//
+// Conservative scope: the blocklist names only Survivor mid-season
+// reveal mechanics the pass-13 finding flagged, plus the two
+// closely-paired returnee mechanics (Redemption Island is the
+// premise EoE iterates on). Future additions belong in a paired
+// /iterate tick — adding a name here without a content rewrite
+// would break verify.
+const THEMED_ENTRY_SPOILER_NAMES: ReadonlyArray<{ name: string; re: RegExp }> = [
+  { name: 'Edge of Extinction', re: /\bEdge of Extinction\b/i },
+  { name: 'Redemption Island', re: /\bRedemption Island\b/i },
+  { name: 'fire token', re: /\bfire[- ]tokens?\b/i },
+]
+
+export function collectThemedEntrySpoilerIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    for (const entry of theme.entries) {
+      if (!entry.blurb) continue
+      for (const { name, re } of THEMED_ENTRY_SPOILER_NAMES) {
+        if (re.test(entry.blurb)) {
+          issues.push({
+            file: `content/themes/${theme.slug}.md (entry #${entry.rank} blurb)`,
+            message: `spoiler-name in themed-list entry blurb — names "${name}", a season-specific twist mechanic a first-time viewer is meant to discover; rewrite the blurb to describe the closing-run quality without naming the twist set (brand promise "no spoilers")`,
+          })
+        }
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -641,6 +688,22 @@ function main(): number {
     failures.push(...themeCountTailIssues)
   } else {
     for (const issue of themeCountTailIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-13 MED (Survivor S40 Winners at War twist-name
+  // spoiler): ships strict at floor 0 — the WaW blurb rewrite
+  // drained the only offender in one tick. Spoiler discipline is
+  // P0, so the invariant is the mechanical floor that keeps a
+  // future authoring pass from naming twist mechanics on a public
+  // list surface. One-line toggle mirroring the five above.
+  const THEMED_ENTRY_SPOILER_STRICT = true
+  const themedEntrySpoilerIssues = collectThemedEntrySpoilerIssues()
+  if (THEMED_ENTRY_SPOILER_STRICT) {
+    failures.push(...themedEntrySpoilerIssues)
+  } else {
+    for (const issue of themedEntrySpoilerIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

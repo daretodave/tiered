@@ -12,6 +12,7 @@ import {
   collectFailures,
   collectTaglineTemplatedTailIssues,
   collectThemeDescriptionCountTailIssues,
+  collectThemedEntrySpoilerIssues,
   collectThemeFailures,
   collectYearTenureIssues,
 } from '../../../scripts/content-check'
@@ -1627,5 +1628,194 @@ describe('content-check — themed-list description count-of-shows tail (critiqu
     setContentRoot(null)
     __resetContentCache()
     expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+})
+
+// Critique pass-13 MED finding (Survivor S40 Winners at War twist
+// names on /themes/best-finales). Pins the
+// `collectThemedEntrySpoilerIssues` invariant so a future authoring
+// pass cannot regress a themed-list entry blurb back into naming
+// season-specific twist mechanics — spoiler discipline is P0 per
+// CLAUDE.md.
+function makeThemeWithRawEntryBlurb(
+  root: string,
+  slug: string,
+  entryBlurb: string,
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: "Editorial setup that closes on its own observation."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: ${JSON.stringify(entryBlurb)}
+---
+`,
+  )
+}
+
+describe('content-check — themed-list entry-blurb spoiler names (critique pass-13)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-themed-entry-spoiler-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags an entry blurb that names "Edge of Extinction"', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'best-finales',
+      'The closing run lands. Edge of Extinction reshapes the home stretch, and the final tribal carries the weight of a roster that has played this game before.',
+    )
+    const issues = collectThemedEntrySpoilerIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe(
+      'content/themes/best-finales.md (entry #1 blurb)',
+    )
+    expect(issues[0]?.message).toMatch(/Edge of Extinction/)
+    expect(issues[0]?.message).toMatch(/no spoilers/i)
+  })
+
+  it('flags an entry blurb that names "fire-token economy"', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'best-finales',
+      'The fire-token economy compresses into real currency by the final tribal.',
+    )
+    const issues = collectThemedEntrySpoilerIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.message).toMatch(/fire token/)
+  })
+
+  it('flags the singular "fire token" and plural "fire tokens" forms', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      'A fire token changes hands at the right moment.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      'Fire tokens compress into real currency.',
+    )
+    const issues = collectThemedEntrySpoilerIssues()
+    expect(issues.length).toBe(2)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/a-shape.md (entry #1 blurb)',
+      'content/themes/b-shape.md (entry #1 blurb)',
+    ])
+  })
+
+  it('flags "Redemption Island" (paired returnee mechanic)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'best-returnees',
+      'Redemption Island reshapes the home stretch on this season.',
+    )
+    const issues = collectThemedEntrySpoilerIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.message).toMatch(/Redemption Island/)
+  })
+
+  it('case-insensitive matching catches lower-cased twist names', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'best-finales',
+      'edge of extinction reshapes the home stretch.',
+    )
+    const issues = collectThemedEntrySpoilerIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('passes a blurb that lands the closing-run quality without naming a twist mechanic', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'best-finales',
+      "The milestone framing earns itself in the closing run. Every move lands heavier than it would in another season's room, and the final tribal carries the weight of a roster that has played this game before.",
+    )
+    expect(collectThemedEntrySpoilerIssues()).toEqual([])
+  })
+
+  it('does not false-positive on incidental words ("edge of the table", "tokens" alone)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      'The crew sits on the edge of the table awaiting the verdict.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      'The cast burned through their immunity tokens of trust by the merge.',
+    )
+    expect(collectThemedEntrySpoilerIssues()).toEqual([])
+  })
+
+  it('reports zero offenders against multiple clean entries on one theme', () => {
+    const file = path.join(tmp, 'themes', 'clean-theme.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: clean-theme
+title: "Clean theme"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: "A clean editorial sentence."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t1"
+    blurb: "A blurb that lands without naming any twist mechanic."
+  - show: alpha
+    season: 2
+    rank: 2
+    title: "t2"
+    blurb: "A second blurb that closes on its own editorial observation."
+---
+`,
+    )
+    expect(collectThemedEntrySpoilerIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders (Winners at War blurb rewrite drained the only known offender)', () => {
+    // The production content tree is the source of truth — when
+    // this test runs with the default content root (no
+    // setContentRoot override), the live catalog must read zero.
+    // Pins the post-rewrite state so a future authoring pass
+    // cannot regress a themed-list entry blurb back into naming
+    // a canonical twist mechanic.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemedEntrySpoilerIssues()).toEqual([])
   })
 })

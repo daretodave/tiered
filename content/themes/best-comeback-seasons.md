@@ -30,7 +30,7 @@ entries:
     season_label: "S40 · Winners at War"
     rank: 3
     title: "A milestone comeback that earned its season-forty framing."
-    blurb: "Twenty former champions on one beach, Edge of Extinction back, fire tokens layered in. The show framed it as a retrospective and the cast played accordingly — wary, respectful, loud when it counted. The pre-pandemic milestone that landed exactly as advertised."
+    blurb: "Twenty former champions on one beach, the season built around their shared history. The show framed it as a retrospective and the cast played accordingly — wary, respectful, loud when it counted. The pre-pandemic milestone that landed exactly as advertised."
   - show: the-challenge
     season: 40
     season_label: "S40 · Battle of the Eras"

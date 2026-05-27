@@ -24,7 +24,7 @@ entries:
     season_label: "S40 · Winners at War"
     rank: 2
     title: "Twenty former champions on one beach, and the show built around it."
-    blurb: "The roster is the premise — every cast member has won this before. Edge of Extinction and fire tokens give the season mechanics to match the stakes, and the milestone framing earns itself across a wide-screen retrospective of how the format learned to play itself."
+    blurb: "The roster is the premise — every cast member has won this before. The season layers in mechanics that match the stakes, and the milestone framing earns itself across a wide-screen retrospective of how the format learned to play itself."
   - show: top-chef
     season: 8
     season_label: "S08 · All-Stars"
