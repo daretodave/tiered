@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-26 at commit de1e037
-> Pass count: 9
+> Last pass: 2026-05-27 at commit eee86b2
+> Pass count: 10
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,72 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 10 (2026-05-27, commit eee86b2) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The audit drain since
+       pass 9 cleared each row in the same iterate cycle it filed
+       (#186 LAST REVISED relative-time stamp, #187 /shows
+       tagline templated tail, #188 /themes H1 cross-canon
+       overclaim, #189 /season vote head/pill no-vote
+       redundancy, #190 /themes title syntactic mold, #191
+       /themes blurb count-of-shows tail, plus the
+       phase-33-redirect-pair completion at #193 — community
+       redirect colocated test). No row carried over.
+     - CRITIQUE.md: 5 Pending rows — 4 MED from pass 13 + 1 LOW
+       from pass 11. (1) /themes/best-finales body-hero
+       `tagline:` still closes on "across six different
+       franchises" — one of 10 themed-list `tagline:` fields
+       owed the same drain commits 9dc9418 + 1241040 applied to
+       `description:`/`blurb:`. (2) /themes/best-finales entry
+       #04 blurb names two season-specific twist mechanics
+       (Edge of Extinction, fire tokens) — spoiler discipline
+       P0 row; fix is blurb rewrite + content-check blocklist
+       for canonical-twist-names on themed-list
+       `entries[].blurb`. (3) /season VotePair head ambiguous
+       in the authed-not-yet-voted state — `k`-label
+       disambiguation. (4) /u/e2e owner-view indistinguishable
+       from stranger view — `isSelfView` branch renders no
+       owner-specific cue. (5) [LOW] clever-paradox flourish
+       in 5 canon `meth_who_p` blocks (pass-11 carryover).
+       Each is a single-tick `/iterate` polish target — the
+       spoiler-blocklist row carries a structural defense
+       (content-check addition ~50 lines) but the scope is
+       still single-tick. No cluster ≥3 HIGH on the same
+       family, no class-pattern that warrants a phase rather
+       than per-tick polish (phases 41 + 43 already drained the
+       editorial-copy honesty + cross-canon classes).
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring
+       blocked on the cloud GitHub App's missing `workflows`
+       permission — known, intentional, awaiting a local
+       /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit
+       de1e037). The brand/voice surfaces are stable.
+     - Commit pattern: 20 commits since pass 9 — 1 critique
+       pass (12, 7afc057) + 5 critique-row drains paired with
+       their fixes (#186 fcb98ae/1da3349, #187 c4f0e6c/025464f,
+       #188 6b87f06/f17b462, #189 73c25eb/d61e520, #190
+       361a89b/e2816dd, #191 9dc9418/1241040), 1 critique pass
+       (13, 2ceca5b), 1 season vote-block recompute-copy fix
+       (fa683be / ea2b1fe), 1 test-colocation backfill (#193:
+       1b519f8 / 348a891) closing the phase-33 redirect-pair,
+       1 content polish (eee86b2 Survivor canon ladder
+       COMMUNITY #01 cascade dedup). All anticipated drains
+       from previously-promoted phases (40/41/42/43) plus the
+       pass-12 critique backlog; no rogue refactor surface, no
+       5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No change.
+
+     The remaining critique findings are individual `/iterate`
+     polish targets (one is paired with a small content-check
+     blocklist; still single-tick scope), not phase shapes.
+     The build plan stays in its clean re-exhausted state.
+     Bumping metadata; awaiting the next pass' cadence window
+     for fresh structural signals to accumulate. -->
 
 <!-- Pass 9 (2026-05-26, commit de1e037) — no new candidates filed.
      Signals reviewed:
