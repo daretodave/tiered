@@ -1,17 +1,17 @@
 # CRITIQUE
 
-> Last pass: 2026-05-27 at commit 9e2ac61
-> Pass count: 14
+> Last pass: 2026-05-27 at commit faf0767
+> Pass count: 15
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 14 ran in the cloud loop via Path A2
+> cadence is active. Pass 15 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5..13 filters (#139 RSC
+> innerWidth` at 375px). Pass-5..14 filters (#139 RSC
 > ERR_ABORTED, #125 settleForHydration, anon/authed shared-
 > profile false-positive class, /sign-in URL-labeling artifact,
 > SeasonHero text-only capture of icon-only buttons, vs-slug
@@ -31,6 +31,59 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 15 (2026-05-27, commit faf0767) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Four findings filed (0 HIGH,
+> 2 MED, 2 LOW). Mechanical pass emitted zero product findings —
+> every URL returned 200 with H1, no console errors, no failed
+> first-party network, no horizontal scroll at 375px, all SEO
+> tags present. Pass-14's six findings (anon VotePair bare `1 /
+> NET VOTE`, `/shows` B-tier empty band, `/about` anchor ids,
+> `/u/e2e` self-view CTA destination, season comment empty-state
+> `not the result` soft-leak, comment-thread caps eyebrow `BE
+> THE FIRST`) all drained in the last 13 commits and are
+> verified absent on this pass. No HIGH filings this round —
+> the central two-rankings frame and the spoiler-discipline
+> invariants both hold cleanly across both passes. Two MEDs
+> cluster on **promise-vs-deliverable copy** (the dominant
+> pass-12..14 class): (1) `/shows/survivor` hero eyebrow reads
+> `SEASONS AIRED` while the home featured stamp and `/shows`
+> total both read `SEASONS RANKED` on the same Survivor data
+> (every aired Survivor season has a canon slot — the show page
+> under-claims what the home page brags); (2) authed-unvoted
+> season `VotePair` eyebrow `YOUR VOTE / CAST YOURS THIS WEEK`
+> implies a weekly cadence but the explainer immediately below
+> says `one vote per reader. community rank recomputes weekly.`
+> — the vote is a one-time act, only the recompute is weekly,
+> and the eyebrow conflates the two. Two LOWs are voice work:
+> (3) authed `/u/e2e` self-view leads with all-caps eyebrow
+> `YOUR RECORD` above an otherwise warm empty-state body — same
+> CMS-template caps-stamp drift class the cloud loop closed for
+> `BE THE FIRST` (pass-14 #205) and is closing one surface at a
+> time; (4) home labels the two canon types `01 · CURATED /
+> Editor's Canon` and `02 · LIVE / Community Rank` — the numeric
+> prefix implies a 1→2 sequence but the immediately-preceding
+> prose frames them as parallel (`Two rankings for every show.
+> One written by an editor...; one voted by the readers...`).
+> Reader-filed findings dropped on self-assessment: (a) `RANKED
+> · EDITOR'S CANON` caps stamp on `/themes/best-finales` —
+> bearings reserves loud `ranked` for the masthead, but the
+> stamp is information-dense and a copy-only fix is risk-prone
+> across the themed-list family; defer. Pass-5..14 filters
+> continue to hold.
+
+- [ ] [MED] [anon] /shows/survivor hero stat eyebrow reads `SEASONS AIRED` (`/shows/survivor` capture: `50 / SEASONS AIRED / May 2026 / CANON REVISED`) while the home featured stamp under the same Survivor block reads `SEASONS RANKED` (home capture: `50 / SEASONS RANKED`) and the `/shows` index total reads `SEASONS RANKED` (capture: `298 / SEASONS RANKED`). The home → index → show-page reading sequence brags `RANKED, RANKED, AIRED` on the same data substrate — every aired Survivor season has a canon slot (the page below renders all 50 in tier bands), so the show page is under-claiming relative to its own contents and to what the two upstream surfaces just promised the reader. A first-time visitor arriving from home → show-page reads it as a step back ("the home page said 'ranked,' this page says 'aired' — did they only rank some of them?"). Fix: change the `/shows/[show]` hero stat label from `SEASONS AIRED` to `SEASONS RANKED` so the brag holds across the three surfaces. Verify the data substrate first: the label is only honest when `canon.entries.length >= seasons` for that show (i.e. every aired season has a canon slot). For shows where the canon is mid-drain (a future possibility), either keep `AIRED` only when `canon.entries.length < seasons`, or render `N RANKED / M AIRED` honestly. Survivor is fully drained today; Amazing Race / Top Chef / Drag Race / The Challenge are too (per the phase-31b drain final tick). Add a unit assertion in `src/components/show/ShowHero.test.tsx` or sibling that pins the chosen label and a content-check invariant (lax → strict) that fails when `SEASONS RANKED` is rendered on a show with `canon.entries.length < seasons`. (URL: /shows/survivor, source: critique-pass-15) — faf0767
+
+- [ ] [MED] [authed] /shows/survivor/season/heroes-vs-villains authed-and-unvoted VotePair block eyebrow reads `YOUR VOTE / CAST YOURS THIS WEEK`, but the explainer line directly below clarifies `one vote per reader. community rank recomputes weekly.` — the vote act is a one-time per-reader event; only the rank recompute is weekly. The eyebrow `CAST YOURS THIS WEEK` conflates the two cadences and tells a small lie about vote frequency (an authed-unvoted reader could reasonably interpret it as "the vote window closes weekly" or "I can only vote during this week's window"). A peer wouldn't say "cast yours this week" if the action is a one-shot lifetime vote per season; they'd say "cast yours." The two-rankings explainer next to it (`community · NET VOTE` after the pass-14 #201 widening) already carries the recompute-vs-vote framing in subtext, but the dominant typographic element (the eyebrow stamp) is louder and contradicts it. Fix: drop the `THIS WEEK` qualifier from the authed-unvoted VotePair eyebrow — `CAST YOURS` alone is honest (the rank still recomputes weekly per the explainer; the vote itself is not time-windowed). Locate in `src/components/composition/VotePair.tsx` (or `SeasonInfoCard.tsx` if the eyebrow string is hoisted there). Pair with a unit case pinning the new eyebrow on the authed-no-vote branch and an e2e assertion in the authed vote-state-pill spec. The anon branch already renders a different eyebrow (`SIGN IN TO WEIGH IN`) and is unaffected. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-15) — faf0767
+
+- [ ] [LOW] [authed] /u/e2e self-view profile page leads with an all-caps eyebrow `YOUR RECORD` directly above a warm conversational empty-state body (`@e2e / Member since May 2026 / Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here.`). The caps stamp reads as a generic CMS section-header against the peer voice immediately below it — same editorial drift class the cloud loop just closed for `BE THE FIRST` on the comment thread (pass-14 #205, resolved at 29a66e8). The handle line `@e2e / Member since May 2026` already orients the viewer to whose record they're looking at; the caps eyebrow above it is doing the same naming work in a louder register that's off-voice from the bearings standard (`knowledgeable peer — confident, warm, plain-spoken, never pretentious. Plain sentences over clever ones.`). Fix: either drop the `YOUR RECORD` eyebrow entirely (the handle + member-since line carry the orientation) or recast it title-case as `Your record`. Recommend drop — the empty-state sentence below is doing the work the eyebrow tries to set up. Locate in `src/app/(default)/u/[handle]/page.tsx` or the empty-state component (likely `src/components/profile/ProfileEmpty.tsx`). Unit-pin the chosen copy with a colocated test. The stranger-view (non-self) of a profile is a separate render path; check whether the same eyebrow renders there too and apply consistently. (URL: /u/e2e, source: critique-pass-15) — faf0767
+
+- [ ] [LOW] [anon] / home labels the two canon types `01 · CURATED / Editor's Canon` and `02 · LIVE / Community Rank` — the numeric `01 / 02` prefix implies a 1→2 sequence or hierarchy, but the immediately-preceding prose explicitly frames the two as parallel views of the same show: `Two rankings for every show. One written by an editor with the spoilers stripped; one voted by the readers as they watch.` The numbering walks back the parallelism the prose just established. A reader scanning chrome-first (the dominant pattern on a home page) reads `01 · CURATED` then `02 · LIVE` and infers Editor's Canon is primary and Community Rank is secondary — but the page's editorial intent (and the broader project's two-rankings frame) is genuinely parallel: both are first-class views, the user picks which to read. The numbering is a small visual lie. Fix: drop the `01 · / 02 · ` prefix on the two ranking-type cards on the home page and keep `CURATED` / `LIVE` as the eyebrow labels. The cards are already differentiated by their tinted background, headline, and body — the number adds nothing the existing chrome doesn't already do, and removes the ordering connotation. Locate in the home-page component (likely `src/app/(default)/page.tsx` or a `RankingTypeCards` / `TwoRankingsBlock` child). Unit-pin the absence of the `01 ·` / `02 ·` prefixes. (URL: /, source: critique-pass-15) — faf0767
 
 > Pass 14 (2026-05-27, commit 9e2ac61) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
