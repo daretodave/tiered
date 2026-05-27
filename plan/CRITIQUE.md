@@ -1,17 +1,17 @@
 # CRITIQUE
 
-> Last pass: 2026-05-26 at commit 1241040
-> Pass count: 13
+> Last pass: 2026-05-27 at commit 9e2ac61
+> Pass count: 14
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 13 ran in the cloud loop via Path A2
+> cadence is active. Pass 14 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5..12 filters (#139 RSC
+> innerWidth` at 375px). Pass-5..13 filters (#139 RSC
 > ERR_ABORTED, #125 settleForHydration, anon/authed shared-
 > profile false-positive class, /sign-in URL-labeling artifact,
 > SeasonHero text-only capture of icon-only buttons, vs-slug
@@ -31,6 +31,92 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 14 (2026-05-27, commit 9e2ac61) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Six findings filed (0 HIGH,
+> 4 MED, 2 LOW). Mechanical pass emitted zero product findings —
+> every URL returned 200 with H1, no console errors, no failed
+> first-party network, no horizontal scroll at 375px, all SEO
+> tags present. Pass-13's six findings (canon-ladder duplicate
+> community #01, vote-block canon-vs-community microcopy
+> collapse, themed-list `tagline:` count-of-shows tail, S40 WaW
+> twist-name spoiler, authed-not-yet-voted VotePair label
+> ambiguity, `/u/e2e` owner-view eyebrow) all drained in the
+> last 12 commits and are verified absent on this pass. No HIGH
+> filings this round — the central two-rankings frame and the
+> spoiler-discipline invariants both hold cleanly across both
+> passes. Four MEDs cluster on a shared theme: **promise vs.
+> deliverable**. (1) anon `/shows/survivor/season/<slug>` still
+> renders the bare numeric label `1 / NET VOTE` on the
+> unauthed-no-vote state — pass-13 #198 prefixed
+> `community · ` only when authed-and-no-vote, deliberately
+> leaving anon plain on the reasoning that anon has no personal
+> vote to confuse with — but the dominant typographic element
+> remains unqualified for an anon reader who hasn't yet
+> internalized the two-rankings frame; the helper line below
+> does say `community rank recomputes weekly` so the framing
+> survives in subtext. (2) anon `/shows` declares a three-tier
+> ladder (S / A / B) in its legend but the rendered ladder
+> contains zero shows in B; an unfilled named band reads as
+> either a missing render or an over-promised legend. (3) anon
+> footer `TIERED.TV` column lists four destinations
+> (`/about`, `/about#voting`, `/about#spoilers`,
+> `/about#editors`) but `/about` carries none of those anchor
+> ids — all four resolve to the same scroll position. (4)
+> authed `/u/e2e` empty-state body promises
+> `Vote on a season pair, weigh in on a thread, and it will
+> land here.` then ships a CTA `Start with Survivor →` that
+> routes to `/shows/survivor` (the 50-season canon ladder), not
+> to any surface that exposes a vote pair. Two LOWs are voice
+> work: (5) anon `/shows/survivor/season/<slug>` empty-comment
+> rubric `Weigh in on the season, not the result.` — the
+> phrase `the result` telegraphs that the season has a notable
+> result, a soft spoiler-shape in copy whose job is enforcing
+> the no-spoilers promise; (6) authed `/shows/survivor/season/<slug>`
+> comment thread stacks `The thread / BE THE FIRST / Add a
+> thought · no spoilers, please.` — the caps eyebrow
+> `BE THE FIRST` reads as a generic CMS empty-state stamp,
+> off-register from the bearings voice. Reader-filed findings
+> dropped on self-assessment: (a) anon breadcrumb-vs-header
+> naming split (`TIERS` in breadcrumb + footer column vs
+> `Shows` in header nav) — real IA inconsistency but lower
+> priority than the four promise/deliverable findings above and
+> ambiguous which form is canonical; (b) anon themed-list
+> metadata grammar split (home renders `5 SHOWS · 6 ENTRIES`,
+> `/themes` renders `CROSS-CANON · 6 ENTRIES`) — real
+> cross-surface inconsistency but both forms communicate
+> usefully; (c) authed `/u/e2e` meta description voice split
+> (third-person SEO description rendering for the owner's own
+> page) — reader self-qualified the suggested fix as "leave
+> the meta as-is"; (d) authed `/shows/survivor` parity (no
+> authed-specific affordance — same canon ladder for anon and
+> signed-in viewers) — real observation but design-system-
+> shaped rather than copy-shaped, and the reader's suggested
+> fix is "out of scope to design here"; (e) authed
+> `/shows/survivor/season/<slug>` VotePair Yes/No button text /
+> aria-label gap — speculative; Path A2's text extraction
+> cannot verify whether the buttons carry visible labels or
+> explicit aria-labels (pass-12 already filtered out a similar
+> SeasonHero icon-only false positive); (f) authed `/u/e2e`
+> missing zeroed stat tiles — design-shaped, defer.
+> Pass-5..13 filters continue to hold.
+
+- [ ] [MED] [anon] /shows/survivor/season/heroes-vs-villains anon VotePair head still renders bare `1 / NET VOTE` on the no-vote state — pass-13 #198's `community · ` qualifier prefix was deliberately scoped to the **authed-and-not-yet-voted** branch in `src/components/composition/VotePair.tsx` (the resolved row reasoned that anon "has no personal vote to confuse with"). The walker captures the anon SeasonInfoCard rendering `SIGN IN TO WEIGH IN / Does this belong in the community top 10? / 1 / NET VOTE / one vote per reader. community rank recomputes weekly.` — the helper line below carries the `community` framing in subtext, but the dominant typographic element (the big number + uppercase `NET VOTE`) is unqualified, and the anon stranger has not yet been taught the two-rankings frame the home + show pages spend real estate separating. A first-paint reader scanning the season page meets `1 NET VOTE` next to `EDITOR'S CANON #02` and has no syntactic cue distinguishing the two frames. Fix: extend the `community · ` prefix to the anon-and-no-vote branch as well — `authedNoVote` is the gating condition today; widen it to `state.value === 0 && !state.cast` (or equivalent) so the qualifier renders for both anon and authed in the unacted state. The original concern (anon has no personal vote to confuse with) is real, but the dual concern (anon has no canon-vs-community frame yet) is louder for a first-time visitor; both branches benefit from the same disambiguation. Add a unit case to `VotePair.test.tsx` pinning the anon-no-vote branch carries `community · ` and a matching e2e assertion on the anon `vote-state-pill` spec. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-14) — 9e2ac61
+
+- [ ] [MED] [anon] /shows declares a three-tier confidence ladder (S / A / B) in its legend strip — "B tier means we haven't watched everything twice yet — when we have, the show moves up" — but the rendered ladder contains zero shows in B. The page flows S (2 shows) → A (11 shows) → footer, with the B band absent entirely. A first-time visitor reading the legend then scrolling the ladder sees a named tier vanish from the surface that introduced it; the editorial-confidence framing the page is built on reads either as a missing render or as over-promised legend copy. Root cause is content-shape, not page code: every show in `content/shows/<slug>.md` currently carries `tier: S` or `tier: A` — no show is authored at `tier: B`, so the tier-grouping renderer correctly emits an empty band and the page elides it. Fix (two paths): (i) **content path** — promote at least one show to `tier: B` (or demote one from A) so the legend's promise is delivered; the `tier` enum in `CLAUDE.md` is explicitly an editorial confidence statement, and a B-tier show is not a content defect, it's an honest editorial signal; (ii) **page path** — render an explicit empty-band placeholder (`B — nothing here yet.`) when no shows occupy the tier, so the ladder structure honors the legend even when a band is empty; the placeholder reads as honesty about the editorial process the legend describes. The page path is the lower-effort fix; the content path is the truer fix. Recommend page path now + content path as a content-curator backlog item. (URL: /shows, source: critique-pass-14) — 9e2ac61
+
+- [ ] [MED] [anon] / footer `TIERED.TV` column lists four destinations — `About the canon` (`/about`), `How voting works` (`/about#voting`), `Spoilers policy` (`/about#spoilers`), `Become an editor` (`/about#editors`) — but `/about` carries none of the `voting`, `spoilers`, `editors` anchor ids. All four links resolve to the same scroll position on `/about`. A first-time visitor reading the footer sees four distinct destinations and clicks two or three to compare; each click lands at the page top with no visible difference, which reads as broken links or as four labels for one undifferentiated page. This is a navigation-honesty defect — the footer is making promises the destination does not keep. Fix: add `<section id="voting">`, `<section id="spoilers">`, `<section id="editors">` wrappers around the existing `/about` content sections. No copy changes needed — the sections already exist as headed editorial blocks; only the anchor ids are missing. Lowest-effort fix in the queue. Verify the four footer links scroll to distinct positions with a tiny e2e assertion (compare `window.scrollY` after clicking each). (URL: /, source: critique-pass-14) — 9e2ac61
+
+- [ ] [MED] [authed] /u/e2e owner-view empty-state body reads `Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here.` paired with a CTA `Start with Survivor →` that routes to `/shows/survivor`. The body's literal promise is "vote on a season pair" but `/shows/survivor` renders the 50-season canon ladder, not a vote-pair affordance. The user has to (a) recognize that a "vote pair" lives inside a season page, (b) scroll the ladder to find a season they've watched, (c) click into the season, (d) scroll to the vote block, (e) cast a vote. The empty state does not foreshadow that chain. A returning member taking the CTA at face value clicks into a list and stalls. Fix (two paths): (i) **destination path** — route the CTA directly to a season page that exposes VotePair above the fold (e.g. `/shows/survivor/season/heroes-vs-villains`, which is the canonical Phase-26a reference) so the next click is literally the vote the empty state promised; (ii) **label path** — change the CTA copy to match the destination ("See the Survivor canon →") so the promise narrows to what the click actually delivers. Destination path is the truer fix — the empty state is selling the vote, not the canon — but label path is the lower-risk one. Pair either fix with a unit/e2e check that the empty-state CTA's `href` matches a promise the link copy makes. (URL: /u/e2e, source: critique-pass-14) — 9e2ac61
+
+- [ ] [LOW] [anon] /shows/survivor/season/heroes-vs-villains comment empty-state reads `No comments yet. Weigh in on the season, not the result.` The `not the result` clause is well-intended spoiler-policy nudging, but for a first-time visitor who has not yet watched HvV, the phrase itself signals that the season has a notable "result" worth not-spoiling — a soft spoiler-shape leak in the very copy meant to enforce the no-spoilers brand promise. The rubric directly above the input (`No plot, no winners, no twists →`) already carries the policy unambiguously, so the empty-state clause is redundant with a slightly leaky reformulation. Fix: drop the `not the result` clause and let the empty state read `No comments yet. Weigh in on the season itself.` — the rubric above carries the policy, the empty state stays terse. Optionally widen `scripts/content-check.ts`'s spoiler-tail rule to flag the canonical-result phrasing set (`the result`, `the winner`, `the twist`, `the elimination`) on empty-state strings in `src/components/composition/` so future drafts don't reintroduce the soft-leak pattern. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-14) — 9e2ac61
+
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-vs-villains comment thread stacks three label-shaped strings vertically: `The thread` (section title) → `BE THE FIRST` (caps eyebrow) → `Add a thought · no spoilers, please.` (input placeholder). The middle line `BE THE FIRST` reads as a generic CMS empty-state stamp, off-register from the bearings voice ("knowledgeable peer — confident, warm, plain-spoken, never pretentious. Plain sentences over clever ones."). The section title + the placeholder together already carry the empty state; the caps eyebrow is doing the same work in a louder register. Fix: either drop the caps eyebrow entirely and let the placeholder carry the state, or rewrite it as a quiet sentence in mixed case ("No one's weighed in yet.") that matches the editorial voice of the rest of the page. Recommend drop — the placeholder ("Add a thought · no spoilers, please.") is doing useful policy + prompt work, and the section title ("The thread") already names the surface; the eyebrow is the line that can leave. Unit test the empty-state branch to pin the chosen copy. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-14) — 9e2ac61
 
 > Pass 13 (2026-05-26, commit 1241040) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
