@@ -1,7 +1,7 @@
 ---
 slug: best-returnees
 title: "Returnee seasons that paid off"
-tagline: "All-returnee casts are easy to pitch and hard to land. These are the ones where the roster, the framing, and the format <b>added up to something the show couldn't have made with newbies</b> — across five different franchises."
+tagline: "All-returnee casts are easy to pitch and hard to land. These are the ones where the roster, the framing, and the format <b>added up to something the show couldn't have made with newbies</b>."
 category: tone
 sentiment: hold
 status: stable

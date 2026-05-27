@@ -1,7 +1,7 @@
 ---
 slug: best-non-winning-runs
 title: "Non-winning runs that defined the season"
-tagline: "A competition season's loudest, most-quoted narratives don't always belong to whoever took the title at the end. Across six franchises, these are the seasons where the <b>shape of the story lived in the runs that didn't reach the final outcome</b> — and each season is what it is because of them."
+tagline: "A competition season's loudest, most-quoted narratives don't always belong to whoever took the title at the end. These are the seasons where the <b>shape of the story lived in the runs that didn't reach the final outcome</b> — and each season is what it is because of them."
 category: tone
 sentiment: hold
 status: stable

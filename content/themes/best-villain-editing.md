@@ -1,7 +1,7 @@
 ---
 slug: best-villain-editing
 title: "The villain edit as through-line"
-tagline: "The best villain edits aren't cheap heel turns — they're the seasons where the antagonist read is loud, sustained, and <b>shaped the narrative everyone else had to play inside</b>. Confrontational chemistry, calibrated antagonist arcs, post-merge stretches that wouldn't exist without them, across five different franchises."
+tagline: "The best villain edits aren't cheap heel turns — they're the seasons where the antagonist read is loud, sustained, and <b>shaped the narrative everyone else had to play inside</b>. Confrontational chemistry, calibrated antagonist arcs, post-merge stretches that wouldn't exist without them."
 category: craft
 sentiment: consensus
 status: stable

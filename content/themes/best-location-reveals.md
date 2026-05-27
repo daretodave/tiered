@@ -1,7 +1,7 @@
 ---
 slug: best-location-reveals
 title: "The setting talks first"
-tagline: "Some seasons let the setting talk first. These are the openings where a marooning, a castle, a villa, or a city <b>did half the season's editorial work before the cast had said a word</b> — the location as a deliberate format statement, across five different franchises."
+tagline: "Some seasons let the setting talk first. These are the openings where a marooning, a castle, a villa, or a city <b>did half the season's editorial work before the cast had said a word</b> — the location as a deliberate format statement, not a backdrop."
 category: craft
 sentiment: warm-up
 status: stable

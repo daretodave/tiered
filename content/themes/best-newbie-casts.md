@@ -1,7 +1,7 @@
 ---
 slug: best-newbie-casts
 title: "Rookie casts walking in fluent"
-tagline: "Some first-time casts step off the boat playing like they've already done this. Across six franchises, these are the rookie rosters that <b>walked in fluent</b> — confident, loud, prepared to make the season the show needed them to make."
+tagline: "Some first-time casts step off the boat playing like they've already done this. These are the rookie rosters that <b>walked in fluent</b> — confident, loud, prepared to make the season the show needed them to make."
 category: tone
 sentiment: warm-up
 status: stable

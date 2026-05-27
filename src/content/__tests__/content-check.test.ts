@@ -1631,6 +1631,175 @@ describe('content-check — themed-list description count-of-shows tail (critiqu
   })
 })
 
+// Critique pass-13 MED follow-up to issue #191: the same count-of-
+// shows tail surfaced on the `tagline` field (the body-hero copy on
+// `/themes/<theme>`) across six themed-list files the pass-12
+// description-drain didn't cover. The scan now checks both fields;
+// the helper emits one issue per offending field. These tests pin
+// the tagline branch of the scan so a future authoring pass cannot
+// regress the catalog into the count template via the second field.
+function makeThemeWithRawTagline(
+  root: string,
+  slug: string,
+  tagline: string,
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: ${JSON.stringify(tagline)}
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-27
+featured: false
+description: "Editorial setup that closes on its own observation."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+  )
+}
+
+describe('content-check — themed-list tagline count-of-shows tail (critique pass-13 follow-up to issue #191)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-theme-tagline-tail-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a tagline that closes on "across <N> different franchises."', () => {
+    makeThemeWithRawTagline(
+      tmp,
+      'best-finales',
+      'The closing run is where a season pays off its promise. These finales <b>land the season they were always making</b> — texture intact, stakes earned, across six different franchises.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-finales.md (tagline)')
+    expect(issues[0]?.message).toMatch(/count-of-shows tail/i)
+  })
+
+  it('flags the opener-position variant — "Across <N> franchises, ..."', () => {
+    makeThemeWithRawTagline(
+      tmp,
+      'best-newbie-casts',
+      "Some first-time casts step off the boat playing like they've already done this. Across six franchises, these are the rookie rosters that <b>walked in fluent</b>.",
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-newbie-casts.md (tagline)')
+  })
+
+  it('flags "across <N> shows" as well as "across <N> franchises"', () => {
+    makeThemeWithRawTagline(
+      tmp,
+      'best-premieres',
+      'Premieres get cited the wrong way. These are the first episodes that <b>told you what the show was actually doing</b>, across six shows.',
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-premieres.md (tagline)')
+  })
+
+  it('emits two issues when both fields carry the count tail', () => {
+    // Single theme with the count construction in both the
+    // tagline and the description. The scan emits one issue per
+    // offending field so a future drain catches both in a single
+    // pass.
+    const file = path.join(tmp, 'themes', 'two-fielder.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: two-fielder
+title: "Two-fielder"
+tagline: "Editorial setup. These are the seasons where the <b>shape held</b>, across six different franchises."
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-27
+featured: false
+description: "Editorial setup, across five different franchises."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+    )
+    const issues = collectThemeDescriptionCountTailIssues()
+    expect(issues.length).toBe(2)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/two-fielder.md (description)',
+      'content/themes/two-fielder.md (tagline)',
+    ])
+  })
+
+  it('passes a tagline that closes on its own editorial observation (no count tail)', () => {
+    makeThemeWithRawTagline(
+      tmp,
+      'clean',
+      "All-returnee casts are easy to pitch and hard to land. These are the ones where the roster, the framing, and the format <b>added up to something the show couldn't have made with newbies</b>.",
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('passes the named-shows construction in a tagline (best-reunion-specials shape)', () => {
+    // The reunion-specials tagline names the participating
+    // franchises explicitly. Editorial texture, not the
+    // count-of-shows tail.
+    makeThemeWithRawTagline(
+      tmp,
+      'best-reunion-specials',
+      "Every competition franchise has a closing hour to land — Survivor's reunion, Drag Race's Reunited, The Challenge's reunion special, Top Chef's reunion episode. These are the ones where that hour <b>read the season back to itself</b>.",
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('passes the "<N> seasons" construction in a tagline (survivor-pillars shape)', () => {
+    // survivor-pillars closes on "Four seasons that hold the show
+    // up" — counts seasons, not shows/franchises.
+    makeThemeWithRawTagline(
+      tmp,
+      'survivor-pillars',
+      'Four seasons that hold the show up: the original experiment, the tactical era apex, the post-pandemic reset, and the steady-state new normal. <b>Pull any one of them out and the canon falls over.</b>',
+    )
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders across both fields (rewrite drained every tagline in this tick)', () => {
+    // The production content tree is the source of truth — when
+    // this test runs with the default content root, the live
+    // catalog must read zero across the union of description AND
+    // tagline scans. Pins the post-rewrite state.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeDescriptionCountTailIssues()).toEqual([])
+  })
+})
+
 // Critique pass-13 MED finding (Survivor S40 Winners at War twist
 // names on /themes/best-finales). Pins the
 // `collectThemedEntrySpoilerIssues` invariant so a future authoring

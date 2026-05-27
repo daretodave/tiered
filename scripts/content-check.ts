@@ -422,6 +422,12 @@ export function collectTaglineTemplatedTailIssues(): Failure[] {
 // YEAR_TENURE_STRICT, and TAGLINE_TAIL_STRICT; ships strict because
 // the rewrite drained every offender in one tick. Exported so the
 // vitest suite can exercise it directly against a temp content tree.
+//
+// Critique pass-13 follow-up: the same scan now also covers the
+// `tagline` field — the body-hero copy on `/themes/<theme>` carries
+// the identical AI-counting tic and is reader-visible on the same
+// page surface. The function emits one issue per offending field so
+// a future drain can resolve both in a single pass.
 const SPELLED_NUMBER =
   '(?:two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen)'
 
@@ -441,13 +447,21 @@ const THEME_DESCRIPTION_COUNT_TAIL_RE = new RegExp(
   'i',
 )
 
+const THEME_COUNT_TAIL_MESSAGE = `templated count-of-shows tail — field carries the "across <N> [different] (franchises|shows)" or "<N> shows[,'] <X>" construction that the chrome's "N SHOWS COVERED" stat strip already renders structurally; drop the count and close on the editorial observation already in the prior sentences`
+
 export function collectThemeDescriptionCountTailIssues(): Failure[] {
   const issues: Failure[] = []
   for (const theme of getAllThemes()) {
     if (THEME_DESCRIPTION_COUNT_TAIL_RE.test(theme.description)) {
       issues.push({
         file: `content/themes/${theme.slug}.md (description)`,
-        message: `templated count-of-shows tail — description carries the "across <N> [different] (franchises|shows)" or "<N> shows[,'] <X>" construction that the chrome's "N SHOWS COVERED" stat strip already renders structurally; drop the count and close on the editorial observation already in the prior sentences`,
+        message: THEME_COUNT_TAIL_MESSAGE,
+      })
+    }
+    if (THEME_DESCRIPTION_COUNT_TAIL_RE.test(theme.tagline)) {
+      issues.push({
+        file: `content/themes/${theme.slug}.md (tagline)`,
+        message: THEME_COUNT_TAIL_MESSAGE,
       })
     }
   }
