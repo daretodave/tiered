@@ -52,7 +52,7 @@ shaped what the show is allowed to be more decisively.
 
 tag: The bar every all-star season measures itself against.
 slot_argument: Twenty returning players, two clean tribal premises, a decade of accumulated context. Every move carries seasons of prior text — this is what casting depth looks like.
-community_rank_hint: rank=1 delta=1 sentiment=up
+community_rank_hint: rank=2 delta=1 sentiment=up
 
 Heroes vs. Villains is the all-star format running at its
 ceiling. Twenty returning players, two clean tribal premises, a
@@ -70,7 +70,7 @@ this many recognizable faces.
 
 tag: The foundational document of American reality television.
 slot_argument: Every season since 2000 is a refinement of the experiment Borneo ran first. Without it, the genre has no grammar — no torch, no merge, no confessional cadence.
-community_rank_hint: rank=2 delta=-1 sentiment=down
+community_rank_hint: rank=3 delta=-1 sentiment=down
 
 Borneo earns the third slot as the foundational document of
 American reality television. Without it, the genre has no grammar
@@ -87,7 +87,7 @@ experiment that ran here first.
 
 tag: The returnee experiment the format had been reaching for.
 slot_argument: Ten favorites, ten fans, a clean premise, and a post-merge stretch every modern returnee season has been trying to imitate ever since. Micronesia is what the format looks like at full strength.
-community_rank_hint: rank=3 delta=0 sentiment=hold
+community_rank_hint: rank=4 delta=-1 sentiment=down
 
 Micronesia lands the returnee experiment All-Stars couldn't
 quite finish. Ten favorites from the first fourteen casts
@@ -105,7 +105,7 @@ later returnee runs a working blueprint to copy.
 
 tag: The best classic-era cast — every season after copies its casting math.
 slot_argument: Pearl Islands runs the strongest classic-era ensemble end to end. The pirates premise is dressing; the texture is the cast — sixteen players who all play.
-community_rank_hint: rank=4 delta=-1 sentiment=down
+community_rank_hint: rank=5 delta=-1 sentiment=down
 
 Pearl Islands is the season the classic-era hardliners point to
 first. The pirates-of-the-Caribbean dressing is theater, but the
