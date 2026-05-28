@@ -8,9 +8,27 @@ type CanonTabSwitchProps = {
   initialView: View
 }
 
-const TABS: Array<{ key: View; marker: string; name: string; cap: string }> = [
-  { key: 'canon', marker: '01', name: "Editor's Canon", cap: 'curated' },
-  { key: 'community', marker: '02', name: 'Community', cap: 'live' },
+const TABS: Array<{
+  key: View
+  marker: string
+  name: string
+  cap: string
+  label: string
+}> = [
+  {
+    key: 'canon',
+    marker: '01',
+    name: "Editor's Canon",
+    cap: 'curated',
+    label: "Editor's Canon — the curated ranking",
+  },
+  {
+    key: 'community',
+    marker: '02',
+    name: 'Community',
+    cap: 'live',
+    label: 'Community — the live ranking',
+  },
 ]
 
 // Phase 33: same-page toggle. The two-route canon/community split is
@@ -63,6 +81,7 @@ export function CanonTabSwitch({ initialView }: CanonTabSwitchProps) {
             type="button"
             role="tab"
             aria-selected={on}
+            aria-label={tab.label}
             className={on ? 'cp-tab on' : 'cp-tab'}
             data-tab={tab.key}
             data-testid={`canon-tab-${tab.key}`}

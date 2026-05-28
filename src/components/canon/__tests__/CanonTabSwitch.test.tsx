@@ -61,6 +61,24 @@ describe('<CanonTabSwitch>', () => {
     expect(canonTab).toHaveAttribute('role', 'tab')
   })
 
+  // Critique pass 16 (#215): the tab name and its state cap render as
+  // adjacent inline spans with no separator, so the computed accessible
+  // name ran together as `01Editor's Canoncurated` / `02Communitylive`.
+  // An explicit aria-label keeps the screen-reader name clean regardless
+  // of the visual span packing.
+  it('gives each tab button a clean aria-label', () => {
+    window.history.replaceState({}, '', '/shows/survivor')
+    render(<Harness initial="canon" />)
+    expect(screen.getByTestId('canon-tab-canon')).toHaveAttribute(
+      'aria-label',
+      "Editor's Canon — the curated ranking",
+    )
+    expect(screen.getByTestId('canon-tab-community')).toHaveAttribute(
+      'aria-label',
+      'Community — the live ranking',
+    )
+  })
+
   // Critique pass 8 (#158): the .cp-tab-cap caption spans carry the
   // CURATED / LIVE chips that differentiate the editor-curated vs.
   // live-community ranking systems. Mobile CSS (canon.css :1091) keeps
