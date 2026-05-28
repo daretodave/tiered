@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ProfileStats } from './ProfileStats'
 
 type ProfileEmptyProps = {
   // When the viewer is looking at their own empty profile, the
@@ -17,20 +18,34 @@ type ProfileEmptyProps = {
 // noIndex so a thin profile never enters the index.
 export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
   return (
-    <div className="flex flex-col gap-3" data-testid="profile-empty-block">
-      <p className="text-ink-2" data-testid="profile-empty">
-        Nothing on the public record yet. Vote on a season pair, weigh in
-        on a thread, and it will land here.
-      </p>
+    <div className="flex flex-col gap-6" data-testid="profile-empty-block">
+      {/* On the owner's own empty profile, a zeroed stat row shows the
+          shape of what will populate — a scannable skeleton in the same
+          treatment the populated profile uses, so the page reads as an
+          empty record, not an unbuilt page. A stranger viewing an empty
+          profile gets the sparse copy only (no owner scaffold). */}
       {selfView ? (
-        <Link
-          className="text-sm font-medium text-ink-0 underline-offset-2 hover:underline"
-          data-testid="profile-empty-cta"
-          href={selfView.showHref}
-        >
-          Start with {selfView.showName} →
-        </Link>
+        <ProfileStats
+          publishedCommentCount={0}
+          votedSeasonCount={0}
+          votedShowCount={0}
+        />
       ) : null}
+      <div className="flex flex-col gap-3">
+        <p className="text-ink-2" data-testid="profile-empty">
+          Nothing on the public record yet. Vote on a season pair, weigh in
+          on a thread, and it will land here.
+        </p>
+        {selfView ? (
+          <Link
+            className="text-sm font-medium text-ink-0 underline-offset-2 hover:underline"
+            data-testid="profile-empty-cta"
+            href={selfView.showHref}
+          >
+            Start with {selfView.showName} →
+          </Link>
+        ) : null}
+      </div>
     </div>
   )
 }

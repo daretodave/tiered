@@ -70,4 +70,39 @@ describe('<ProfileEmpty>', () => {
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
   })
+
+  // CRITIQUE pass 16 LOW (#217): the owner's own empty profile gets a
+  // zeroed stat skeleton above the empty-state copy so a new authed
+  // reader sees the *shape* of what will populate — in the same
+  // treatment the populated profile uses. A stranger viewing an empty
+  // profile must stay sparse (no owner scaffold).
+
+  it('renders a zeroed stat skeleton on self-view', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const stats = screen.getByTestId('profile-stats')
+    expect(stats).toBeTruthy()
+    // All three cells read zero — the shape of what will populate.
+    expect(screen.getByTestId('profile-stat-comments').textContent).toContain('0')
+    expect(screen.getByTestId('profile-stat-seasons').textContent).toContain('0')
+    expect(screen.getByTestId('profile-stat-shows').textContent).toContain('0')
+  })
+
+  it('places the zeroed stat skeleton above the empty-state copy', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const stats = screen.getByTestId('profile-stats')
+    const empty = screen.getByTestId('profile-empty')
+    // DOCUMENT_POSITION_FOLLOWING (4) → stats precedes empty in the DOM.
+    expect(stats.compareDocumentPosition(empty) & Node.DOCUMENT_POSITION_FOLLOWING).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    )
+  })
+
+  it('renders no stat skeleton on the stranger (non-self) empty view', () => {
+    render(<ProfileEmpty />)
+    expect(screen.queryByTestId('profile-stats')).toBeNull()
+  })
 })
