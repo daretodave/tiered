@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-27 at commit eee86b2
-> Pass count: 10
+> Last pass: 2026-05-28 at commit 0f0a2f0
+> Pass count: 11
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,76 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 11 (2026-05-28, commit 0f0a2f0) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The audit drain since
+       pass 10 cleared each row in the same iterate cycle it
+       filed (#198 /about footer-anchor mismatch, #199 vote-pair
+       anon-no-vote community-prefix, #200 /shows tier-b empty-
+       band-placeholder, #201 /u/<self> empty-state CTA dest,
+       #202 /shows/.../season/... empty-state soft-leak, #203
+       comment-thread caps eyebrow stamp, plus #206 sign-in
+       page testless drain closing the §5a coverage gap on the
+       only `src/app/` auth-flow page). No row carried over.
+     - CRITIQUE.md: 4 Pending rows from pass 15 — 2 MED + 2 LOW.
+       (1) [MED, anon] /shows/survivor hero stat eyebrow reads
+       `SEASONS AIRED` while the home + /shows surfaces brag
+       `SEASONS RANKED` on the same substrate — single-string
+       label flip + lax/strict invariant pinning the rule
+       (`canon.entries.length >= seasons` ⇒ RANKED). (2) [MED,
+       authed] /season VotePair authed-no-vote eyebrow reads
+       `CAST YOURS THIS WEEK` but the explainer below it
+       clarifies the vote is one-shot lifetime per reader;
+       drop `THIS WEEK` from the eyebrow string. (3) [LOW,
+       authed] /u/<self> empty-state `YOUR RECORD` caps eyebrow
+       is off-voice against the warm peer body below it —
+       single-string drop/recast (same editorial drift class
+       the cloud loop just closed for `BE THE FIRST` on the
+       comment thread, faf0767). (4) [LOW, anon] / home
+       `01 · CURATED / 02 · LIVE` numeric prefixes on the two
+       ranking-type cards walk back the parallelism the prose
+       just established — drop the prefixes. All four are
+       single-tick `/iterate` polish targets — one carries a
+       structural defense (the SEASONS RANKED content-check
+       invariant, ~30 LOC) but the scope is still single-tick.
+       No cluster ≥3 HIGH on the same family, no class-pattern
+       that warrants a phase rather than per-tick polish (phases
+       41 + 43 already drained the editorial-copy honesty +
+       cross-canon classes).
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring
+       blocked on the cloud GitHub App's missing `workflows`
+       permission — known, intentional, awaiting a local
+       /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit
+       de1e037). The brand/voice surfaces are stable.
+     - Commit pattern: 22 commits since pass 10 — 1 critique
+       pass (14, 4ac743b), 5 critique-row drains paired with
+       fixes (#198 b80e328/ca9ca8d, #199 966fe65/efd7a3f, #200
+       99b567c/f304756, #201 9a0fac3/c62c4e3, #202 5886ebe/
+       06c6898, #203 faf0767/29a66e8), 1 critique pass (15,
+       7861bb2), 1 phase-43 content-honesty drain pair (themed-
+       list tagline tail 319b314 + entry-blurb twist spoiler
+       5e9a09e), 2 voice/state polish fixes (dc36a6a /u owner-
+       view eyebrow, 439c093 VotePair count-label community
+       source qualifier), 1 canon meth_who_p flourish rewrite
+       (9e2ac61), 1 colocated-test backfill (#206: ff94ba7 /
+       0f0a2f0) closing /sign-in. All anticipated drains from
+       previously-promoted phases (40/41/42/43) plus the
+       pass-14 critique backlog; no rogue refactor surface, no
+       5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: only #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No change.
+
+     The remaining critique findings are individual `/iterate`
+     polish targets (one paired with a small content-check
+     invariant; still single-tick scope), not phase shapes.
+     The build plan stays in its clean re-exhausted state.
+     Bumping metadata; awaiting the next pass' cadence window
+     for fresh structural signals to accumulate. -->
 
 <!-- Pass 10 (2026-05-27, commit eee86b2) — no new candidates filed.
      Signals reviewed:
