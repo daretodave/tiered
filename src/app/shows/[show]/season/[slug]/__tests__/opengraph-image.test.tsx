@@ -182,7 +182,7 @@ describe('OpenGraphImage — canon-rank lookup and fallback chain', () => {
     })
     await OpenGraphImage({ params: params('survivor', 'heroes-vs-villains') })
     expect(lastCall()?.eyebrow).toBe(
-      "Tiers / Survivor · Editor's Canon #01",
+      "Shows / Survivor · Editor's Canon #01",
     )
   })
 
@@ -194,7 +194,7 @@ describe('OpenGraphImage — canon-rank lookup and fallback chain', () => {
     })
     await OpenGraphImage({ params: params('survivor', 'heroes-vs-villains') })
     expect(lastCall()?.eyebrow).toBe(
-      "Tiers / Survivor · Editor's Canon #03",
+      "Shows / Survivor · Editor's Canon #03",
     )
   })
 
@@ -211,7 +211,7 @@ describe('OpenGraphImage — canon-rank lookup and fallback chain', () => {
     })
     await OpenGraphImage({ params: params('survivor', 'heroes-vs-villains') })
     expect(lastCall()?.eyebrow).toBe(
-      "Tiers / Survivor · Editor's Canon #05",
+      "Shows / Survivor · Editor's Canon #05",
     )
   })
 
@@ -222,7 +222,7 @@ describe('OpenGraphImage — canon-rank lookup and fallback chain', () => {
       title: 'Pearl Islands',
     })
     await OpenGraphImage({ params: params('survivor', 'pearl-islands') })
-    expect(lastCall()?.eyebrow).toBe('Tiers / Survivor · Season 7')
+    expect(lastCall()?.eyebrow).toBe('Shows / Survivor · Season 7')
   })
 
   it('matches the canon entry by season.number — not by season.title or slug', async () => {
@@ -241,7 +241,7 @@ describe('OpenGraphImage — canon-rank lookup and fallback chain', () => {
     })
     await OpenGraphImage({ params: params('survivor', 'heroes-vs-villains') })
     expect(lastCall()?.eyebrow).toBe(
-      "Tiers / Survivor · Editor's Canon #02",
+      "Shows / Survivor · Editor's Canon #02",
     )
   })
 })

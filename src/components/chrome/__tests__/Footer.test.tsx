@@ -19,7 +19,7 @@ describe('<Footer>', () => {
     expect(em?.textContent).toBe('no spoilers.')
   })
 
-  it('renders three columns: brand + Tiers + tiered.tv (about)', () => {
+  it('renders three columns: brand + Shows + tiered.tv (about)', () => {
     render(<Footer />)
     expect(screen.getByTestId('site-footer-brand')).toBeInTheDocument()
     expect(screen.getByTestId('site-footer-tiers-col')).toBeInTheDocument()
@@ -39,7 +39,7 @@ describe('<Footer>', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders a bullet next to each show in the Tiers column', () => {
+  it('renders a bullet next to each show in the Shows column', () => {
     render(<Footer />)
     const col = screen.getByTestId('site-footer-tiers-col')
     const bullets = col.querySelectorAll('[data-testid=bullet]')

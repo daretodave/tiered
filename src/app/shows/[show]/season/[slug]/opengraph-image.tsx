@@ -29,8 +29,8 @@ export default async function OpenGraphImage({
   const canonHit = canonFile?.entries.find((e) => e.season === season.number)
   const canonRank = canonHit?.rank ?? season.canonical_position ?? null
   const eyebrow = canonRank
-    ? `Tiers / ${show.name} · Editor's Canon ${padRank(canonRank)}`
-    : `Tiers / ${show.name} · Season ${season.number}`
+    ? `Shows / ${show.name} · Editor's Canon ${padRank(canonRank)}`
+    : `Shows / ${show.name} · Season ${season.number}`
 
   return buildOgImage({
     eyebrow,

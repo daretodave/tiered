@@ -62,7 +62,7 @@ describe('decodeTitleEntities', () => {
 describe('<SeasonHero>', () => {
   function baseProps(overrides: Partial<Parameters<typeof SeasonHero>[0]> = {}) {
     return {
-      crumb: <span data-testid="crumb">Tiers / Survivor / S20</span>,
+      crumb: <span data-testid="crumb">Shows / Survivor / S20</span>,
       title: 'Heroes vs. Villains',
       lede: 'A returnees season.',
       infoCard: <div data-testid="ic">card</div>,

@@ -305,7 +305,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const crumbsLd = buildJsonLd({
     type: 'BreadcrumbList',
     trail: [
-      { name: 'Tiers', path: '/shows' },
+      { name: 'Shows', path: '/shows' },
       { name: show.name, path: `/shows/${show.slug}` },
       { name: `Season ${season.number}`, path: `/shows/${show.slug}/season/${season.slug}` },
     ],
@@ -357,7 +357,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           crumb={
             <>
               <Bullet color="var(--show-primary)" size={9} />
-              <a href="/shows">Tiers</a>
+              <a href="/shows">Shows</a>
               <span aria-hidden="true">/</span>
               <a href={`/shows/${show.slug}`}>{show.name}</a>
               <span aria-hidden="true">/</span>

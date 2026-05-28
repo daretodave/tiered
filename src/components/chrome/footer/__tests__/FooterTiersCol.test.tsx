@@ -53,15 +53,15 @@ describe('<FooterTiersCol> container', () => {
     const nav = screen.getByTestId('site-footer-tiers-col')
     expect(nav.tagName).toBe('NAV')
     expect(nav.classList.contains('site-footer-col')).toBe(true)
-    expect(nav.getAttribute('aria-label')).toBe('Tiers')
+    expect(nav.getAttribute('aria-label')).toBe('Shows')
   })
 
-  it('renders the "Tiers" column head as an <h2> with the head class', () => {
+  it('renders the "Shows" column head as an <h2> with the head class', () => {
     mockedGetAllShows.mockReturnValue([])
     render(<FooterTiersCol />)
     const head = screen.getByRole('heading', { level: 2 })
     expect(head.classList.contains('site-footer-col-head')).toBe(true)
-    expect(head.textContent).toBe('Tiers')
+    expect(head.textContent).toBe('Shows')
   })
 
   it('reads the show list from getAllShows()', () => {
@@ -181,7 +181,7 @@ describe('<FooterTiersCol> graceful counts', () => {
     expect(links).toHaveLength(1)
     expect(links[0]?.getAttribute('href')).toBe('/shows')
     // The column head still renders so the footer never collapses.
-    expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('Tiers')
+    expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('Shows')
   })
 })
 

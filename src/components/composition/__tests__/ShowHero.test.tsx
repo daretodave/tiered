@@ -8,7 +8,7 @@ describe('<ShowHero>', () => {
       <ShowHero
         title="Survivor"
         blurb="47 seasons. One torch at a time."
-        crumb={<span data-testid="crumb-content">Tiers / Survivor</span>}
+        crumb={<span data-testid="crumb-content">Shows / Survivor</span>}
         tagline="47 seasons of strangers on a beach."
       />,
     )

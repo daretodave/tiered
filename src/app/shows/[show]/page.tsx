@@ -117,7 +117,7 @@ export default async function ShowHomePage({
   const crumbsLd = buildJsonLd({
     type: 'BreadcrumbList',
     trail: [
-      { name: 'Tiers', path: '/shows' },
+      { name: 'Shows', path: '/shows' },
       { name: show.name, path: `/shows/${show.slug}` },
     ],
   })
@@ -192,7 +192,7 @@ export default async function ShowHomePage({
             <>
               <Bullet color="var(--show-primary)" size={10} />
               <span>
-                <a href="/shows">Tiers</a> / {show.name}
+                <a href="/shows">Shows</a> / {show.name}
               </span>
             </>
           }

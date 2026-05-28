@@ -7,10 +7,10 @@ export function FooterTiersCol() {
   return (
     <nav
       className="site-footer-col"
-      aria-label="Tiers"
+      aria-label="Shows"
       data-testid="site-footer-tiers-col"
     >
-      <h2 className="site-footer-col-head">Tiers</h2>
+      <h2 className="site-footer-col-head">Shows</h2>
       <ul>
         {shows.map((s) => (
           <li key={s.slug}>
