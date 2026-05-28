@@ -62,5 +62,9 @@ describe('<ProfileHeader>', () => {
     expect(
       eyebrow.compareDocumentPosition(screen.getByTestId('profile-handle')),
     ).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
+    // CRITIQUE pass 15 fix: the cue stays, but its register softens
+    // from an all-caps mono stamp to a quiet sentence-case label so
+    // it reads as peer voice, not a CMS section-header.
+    expect(eyebrow.className).not.toContain('uppercase')
   })
 })

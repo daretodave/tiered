@@ -15,7 +15,7 @@ export function ProfileHeader({
     <header className="flex flex-col gap-2" data-testid="profile-header">
       {isSelfView ? (
         <p
-          className="font-mono text-xs uppercase tracking-[0.18em] text-ink-3"
+          className="text-sm text-ink-3"
           data-testid="profile-self-eyebrow"
         >
           Your record
