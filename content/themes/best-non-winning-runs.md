@@ -1,17 +1,17 @@
 ---
 slug: best-non-winning-runs
-title: "Non-winning runs that defined the season"
-tagline: "A competition season's loudest, most-quoted narratives don't always belong to whoever took the title at the end. These are the seasons where the <b>shape of the story lived in the runs that didn't reach the final outcome</b> — and each season is what it is because of them."
+title: "Seasons that live in their loudest arcs"
+tagline: "A competition season's most-quoted stretches come from the personalities who fill the room, not from any one player. These are the seasons whose <b>lasting shape lives in their ensemble texture</b> — and each one is what it is because of those runs."
 category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv Editors"
-last_revised: 2026-05-21
+last_revised: 2026-05-28
 featured: false
 related:
   - best-post-merge
   - best-comeback-seasons
-description: "Seasons whose most-discussed arcs lived outside the title-taking. The runs that gave a season its shape, its quote-density, its texture — without needing to end up at the final outcome."
+description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at full volume."
 entries:
   - show: survivor
     season: 20
@@ -42,7 +42,7 @@ entries:
     season_label: "S07 · Pearl Islands"
     rank: 5
     title: "A season whose loudest narratives belonged to its sharpest edges."
-    blurb: "Pearl Islands gets quoted on its biggest personalities, and most of them don't make the final vote. The season's pirate framing rewarded going for the throat, and the runs the show still leans on are the ones that lived in the swinging."
+    blurb: "Pearl Islands gets quoted on its biggest personalities, the loud, sharp-edged players who fill every scene. The season's pirate framing rewarded going for the throat, and the runs the show still leans on are the ones that lived in the swinging."
   - show: the-challenge
     season: 28
     season_label: "S28 · Rivals III"
