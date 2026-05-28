@@ -18,6 +18,7 @@ import {
   jsonLdScriptProps,
 } from '@/lib/seo'
 import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
+import { seasonsStatLabel } from '@/lib/canon/seasons-stat-label'
 import { getCommunityRanking } from '@/lib/community/ranking'
 import { pickMovers } from '@/lib/community/live'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
@@ -167,7 +168,9 @@ export default async function ShowHomePage({
           ],
   })
 
-  const stats: ShowHeroStat[] = [{ value: show.seasons, key: 'seasons aired' }]
+  const stats: ShowHeroStat[] = [
+    { value: show.seasons, key: seasonsStatLabel(show.seasons, canonEntries.length) },
+  ]
   const revisedLabel = canonRevisedLabelFromIso(canon?.last_revised)
   if (revisedLabel != null) {
     stats.push({ value: revisedLabel, key: 'Canon revised' })

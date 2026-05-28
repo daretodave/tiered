@@ -44,6 +44,21 @@ for (const url of showHomeUrls) {
         .locator('.stat', { hasText: /canon revised/i })
         .locator('.stat-val')
       await expect(revisedValue).toHaveText(/^[A-Z][a-z]+\s\d{4}$/)
+      // Critique pass 15: the seasons stat label is derived from canon
+      // coverage (src/lib/canon/seasons-stat-label.ts). Survivor is the
+      // gold-standard fully-drained show — every aired season has a canon
+      // slot — so its hero must read "seasons ranked", matching the home
+      // featured stamp + /shows index total rather than under-claiming
+      // "seasons aired". Pins the page.tsx wiring end-to-end (the unit
+      // test pins the helper; this pins that the page feeds it the canon
+      // entry count, not the aired count).
+      if (slug === 'survivor') {
+        const seasonsStat = heroStats
+          .locator('.stat')
+          .filter({ hasText: /seasons (ranked|aired)/i })
+          .first()
+        await expect(seasonsStat.locator('.stat-key')).toHaveText(/seasons ranked/i)
+      }
       await expect(page.getByTestId('bullet').first()).toBeVisible()
       // Phase 37 nit 4: the 72-hour shift signal is unwired (phase 35),
       // so the "What changed this week." section is absent entirely —
