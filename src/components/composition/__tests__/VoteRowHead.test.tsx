@@ -65,7 +65,11 @@ describe('<VoteRowHead>', () => {
     const head = screen.getByTestId('vote-row-head')
     expect(head.getAttribute('data-vote-head-state')).toBe('signed-in-no-vote')
     expect(head).toHaveTextContent('Your vote')
-    expect(head).toHaveTextContent('cast yours this week')
+    expect(head).toHaveTextContent('cast yours')
+    // The vote is a one-time per-reader act; only the recompute is
+    // weekly. The meta must not carry a "this week" qualifier that
+    // would read as a time-windowed ballot (critique pass-15).
+    expect(head).not.toHaveTextContent('this week')
   })
 
   it('swaps to the signed-in-with-vote copy when signedIn=true and value=1', async () => {

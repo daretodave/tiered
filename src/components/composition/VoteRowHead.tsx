@@ -10,8 +10,13 @@ import { useEffect, useState } from 'react'
 // Mirrors VotePair's `/api/vote` GET on mount to read the same
 // `{ signedIn, value }` the buttons use, then renders one of:
 //   anon                 → "Cast a vote · sign in to weigh in"
-//   signed-in-no-vote    → "Your vote · cast yours this week"
+//   signed-in-no-vote    → "Your vote · cast yours"
 //   signed-in-with-vote  → "Your vote · change within 72h"
+//
+// The no-vote meta is "cast yours" (not "cast yours this week"):
+// the vote is a one-time per-reader act; only the rank recompute
+// is weekly, so a "this week" qualifier on the vote imperative
+// reads as a time-windowed ballot it isn't (critique pass-15).
 //
 // The SSR fallback is the anon copy — most viewers of a static
 // season page are unauthenticated, and the same useState default
@@ -27,7 +32,7 @@ type VoteHeadState = 'anon' | 'signed-in-no-vote' | 'signed-in-with-vote'
 
 const COPY: Record<VoteHeadState, { title: string; meta: string }> = {
   anon: { title: 'Cast a vote', meta: 'sign in to weigh in' },
-  'signed-in-no-vote': { title: 'Your vote', meta: 'cast yours this week' },
+  'signed-in-no-vote': { title: 'Your vote', meta: 'cast yours' },
   'signed-in-with-vote': { title: 'Your vote', meta: 'change within 72h' },
 }
 
