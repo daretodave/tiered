@@ -1,23 +1,27 @@
 # CRITIQUE
 
-> Last pass: 2026-05-27 at commit faf0767
-> Pass count: 15
+> Last pass: 2026-05-28 at commit e7a4614
+> Pass count: 16
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 15 ran in the cloud loop via Path A2
+> cadence is active. Pass 16 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Pass-5..14 filters (#139 RSC
-> ERR_ABORTED, #125 settleForHydration, anon/authed shared-
-> profile false-positive class, /sign-in URL-labeling artifact,
-> SeasonHero text-only capture of icon-only buttons, vs-slug
-> walker rows on canonical-renamed S20) continue to hold.
-> Authed chrome captured post-hydration as `@e2e / Sign out`
-> across all four URLs — Path A2's mode determinism intact.
+> innerWidth` at 375px). The walk's lone mechanical finding (an
+> `ERR_ABORTED` on a `/shows/survivor/season/cagayan?_rsc=…`
+> prefetch) is the known #139 cancelled-RSC false positive —
+> dropped on self-assessment (target returns 200, renders
+> fully). Pass-5..15 filters (#125 settleForHydration, anon/
+> authed shared-profile false-positive class, /sign-in URL-
+> labeling artifact, SeasonHero text-only capture of icon-only
+> buttons, vs-slug walker rows on canonical-renamed S20)
+> continue to hold. Authed chrome captured post-hydration as
+> `@e2e / Sign out` across all four URLs — Path A2's mode
+> determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -31,6 +35,46 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 16 (2026-05-28, commit e7a4614) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Four findings filed (0 HIGH,
+> 1 MED, 3 LOW). Mechanical pass emitted zero product findings —
+> every URL returned 200 with H1, no console errors, no failed
+> first-party network, no horizontal scroll at 375px, all SEO
+> tags present; the one mechanical `ERR_ABORTED` row is the
+> known #139 cancelled-RSC-prefetch false positive (dropped).
+> Pass-15's four findings (`/shows/survivor` hero `SEASONS
+> AIRED`, authed-unvoted `CAST YOURS THIS WEEK`, `/u/e2e` `YOUR
+> RECORD` caps stamp, home `01·/02·` dual-tag) all drained in
+> the last 12 commits and are verified absent. No HIGH this
+> round — the two-rankings frame and spoiler invariants hold
+> across both passes. The MED is a **faithful-port miss**: the
+> breadcrumb root + footer column render `Tiers` where every
+> binding design file uses `Shows` — this also resolves the
+> pass-14 "which IA term is canonical" ambiguity (design law
+> settles it: Shows). Two LOWs are voice/comprehension polish
+> (`/themes` non-winning-runs leak-by-negation; `/u/e2e`
+> empty-profile thinness) and one is a11y (the canon/community
+> tab's accessible name runs `Editor's Canon` and `curated`
+> together). Dropped on self-assessment: [authed] the
+> authed-unvoted net-vote caption "doesn't acknowledge the
+> signed-in reader can act" — the `CAST YOURS` eyebrow shipped
+> at #207 (7e0a8a0) already carries exactly that acknowledgment;
+> re-opening the just-closed surface for an additive caption
+> line is churn for marginal gain. Pass-5..15 filters hold.
+
+- [ ] [MED] [anon] The breadcrumb root and the footer's first link column both render the word `Tiers` (linking to `/shows`), but every binding design file uses `Shows` in those exact positions: `design/tiered.tv · Survivor.html:512` crumb reads `Shows / Survivor`; `design/tiered.tv · Heroes vs. Villains.html:515` crumb anchor is `<a href="#">Shows</a>`; `design/tiered.tv · All Shows.html` uses `Shows` for the nav current-item (`:292`), the hero eyebrow `tiered.tv / Shows` (`:305`), and the footer column head `<h5>Shows</h5>` (`:515`); `design/tiered.tv · Brand.html` describes "the bullet system carries through to the **Shows** column." In the design, `Tiers`/`Tiered` appears ONLY as a headline flourish (`All shows. Tiered.`) and as the conceptual name of the S/A/B bands ("How the tiers move"), never as a nav label, breadcrumb root, or footer column head. So a first-time visitor sees three different words for the site's navigation spine — header nav `Shows` / `Lists`, footer column `Tiers`, breadcrumb root `Tiers / Survivor` — and the inconsistency is a drift FROM the design, not a design-faithful choice. This recurs from pass-14's dropped finding (a) ("ambiguous which form is canonical"); the design files now settle it definitively in favor of `Shows`. Fix: rename `Tiers` → `Shows` in the breadcrumb anchor text at `src/app/shows/[show]/page.tsx:195` and `src/app/shows/[show]/season/[slug]/page.tsx:360`, in the matching `BreadcrumbList` JSON-LD `name` at the same files (`page.tsx:120` and `[slug]/page.tsx:308` — `{ name: 'Tiers', path: '/shows' }` → `{ name: 'Shows', … }`), and in the footer column head + aria-label at `src/components/chrome/footer/FooterTiersCol.tsx:10,13` (keep the `data-testid` stable to avoid spec churn, or rename it + its specs in the same tick). Update the colocated `ShowHero.test.tsx`/`SeasonHero.test.tsx` crumb fixtures (currently `Tiers / Survivor`) and `Footer.test.tsx`/`FooterTiersCol.test.tsx` head assertions. (URL: /shows/survivor, source: critique-pass-16)
+
+- [ ] [LOW] [anon] The `/shows/[show]` canon/community tab control (`src/components/canon/CanonTabSwitch.tsx`) renders each tab as `<span class="cp-tab-marker">01</span><span><span class="cp-tab-name">Editor's Canon</span><span class="cp-tab-cap">curated</span></span>` — the name and the state cap are adjacent inline spans with no whitespace or separator between them, and the `<button role="tab">` carries no `aria-label`. On desktop the two read as a single run-together token (`Editor's Canoncurated`, `Communitylive`); on mobile CSS line-breaks the cap so it separates. The button's accessible name therefore computes to `01Editor's Canoncurated` / `02Communitylive`, which a screen reader announces as one mashed token. Evidence: desktop capture text `01 / Editor's CanonCURATED / 02 / CommunityLIVE` vs mobile `01 / Editor's Canon / CURATED`. Fix: give each `<button>` an explicit `aria-label` (e.g. `aria-label="Editor's Canon — the curated ranking"` / `"Community — the live ranking"`) so the accessible name is clean regardless of the visual span packing; the visible run-together is acceptable as a styled lockup but the a11y name should not be. Pin with a colocated assertion in `CanonTabSwitch.test.tsx` on the new `aria-label`. (URL: /shows/survivor, source: critique-pass-16)
+
+- [ ] [LOW] [anon] The themed list `best-non-winning-runs` carries the title/tagline "Non-winning runs that defined the season" / "Seasons whose most-discussed arcs lived outside the title-taking … without needing to end up at the final outcome." It frames its members by negation — telling a reader that the standout arc in each listed season did NOT win. On the list page this is the list's established editorial premise (a deliberate phase-24 category), but the same title also renders as an "Also appears in" cross-ref on individual season pages (e.g. Heroes vs. Villains), where it becomes a soft placement-outcome leak about that specific season's most-discussed player — adjacent to the P0 no-spoilers promise. This is leak-by-inference, not by naming a winner/eliminee, hence LOW; the structural question (whether a "non-winning runs" category should exist at all) is out of scope for a copy tick and is an editorial-direction call, not an iterate fix. The actionable narrow fix: reframe the **tagline** to admire the run without asserting placement (e.g. "arcs that gave a season its shape, whatever the final tally") so the cross-ref on a season page doesn't telegraph a non-win; leave the list title as the known category name. Locate in `content/themes/best-non-winning-runs.md` (`tagline`). (URL: /themes, source: critique-pass-16)
+
+- [ ] [LOW] [authed] The signed-in self-view of `/u/e2e` is very thin: eyebrow `Your record`, `@e2e`, `Member since May 2026`, an empty-state sentence, and one CTA — with no zeroed activity scaffold. Capture (515 chars): `Your record / @e2e / Member since May 2026 / Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here. / Start with Survivor →`. The empty-state sentence ("Nothing on the public record yet … and it will land here") already does most of the disambiguation work (it reads as "empty record," not "unbuilt page"), so this is purely additive polish — a zeroed stat row (e.g. `0 votes · 0 threads`) above the empty-state copy would give the page a scannable activity skeleton so a new authed reader sees the *shape* of what will populate, not just a sentence promising it. Locate in `src/app/(default)/u/[handle]/page.tsx` / `src/components/profile/ProfileEmpty.tsx`; the populated-profile path presumably already renders these counts, so the fix is rendering them at zero rather than suppressing the row on an empty profile. Pin with a `ProfileEmpty.test.tsx` case asserting the zeroed row renders. Verify the stranger-view (non-self) empty path stays appropriately sparse (a stranger doesn't need the owner's zeroed scaffold). (URL: /u/e2e, source: critique-pass-16)
 
 > Pass 15 (2026-05-27, commit faf0767) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
