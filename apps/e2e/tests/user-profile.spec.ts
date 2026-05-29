@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
+import { runA11yScan } from '../src/fixtures/a11y'
 
 // Phase 38 — the public profile page (`/u/[handle]`).
 //
@@ -124,6 +125,32 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
     // nowhere on the page (nor in the JSON-LD).
     await expect(page.getByTestId('profile-no-comments')).toBeVisible()
     expect(await page.content()).not.toContain(PENDING_PHRASE)
+  })
+
+  test('public profile view is a11y-clean (WCAG 2.1 AA critical/serious)', async ({
+    page,
+    context,
+  }) => {
+    // The phase-38 profile family can't join the flat anon matrix in
+    // a11y.spec.ts: the handle is discovered at runtime and the users
+    // row only exists after the e2e user acts. Mirror the activity
+    // test's setup — authed populate (a vote → users row upserted →
+    // ProfileStats renders) + handle discovery — then scan the public
+    // view logged out, under the SAME axe config the matrix uses, so
+    // the whole src/components/profile/* cluster (ProfileHeader h1,
+    // the dl/dt/dd ProfileStats grid, the recent-comments block) is
+    // guarded against an a11y regression a 200/H1 smoke walk misses.
+    await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
+    const href = await page
+      .getByTestId('site-header-user-link')
+      .getAttribute('href')
+    expect(href, 'header must expose /u/<handle>').toMatch(/^\/u\/.+/)
+    const profilePath = href as string
+
+    expect(await castVote(page, 1)).toBe(200)
+
+    await context.clearCookies()
+    await runA11yScan({ page, url: profilePath })
   })
 
   test('owner-view renders the self-view eyebrow above the handle', async ({
