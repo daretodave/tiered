@@ -1,8 +1,8 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 11-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 8 canonical-path pages. Mobile (375x800): the 3 most
+// Phase 18 — 12-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 9 canonical-path pages. Mobile (375x800): the 3 most
 // load-bearing pages (home + show home + season page).
 //
 // The phase-38 public profile family (/u/[handle]) is NOT in this
@@ -25,6 +25,12 @@ const DESKTOP_PAGES = [
   // stack. best-premieres is the design gold-standard + cross-canon.
   '/themes/best-premieres',
   '/about',
+  // The auth-funnel entry — the only path into magic-link sign-in,
+  // reached from every header on every route. Anon-renderable (the
+  // page only redirects when session?.user is present), so it slots
+  // into the flat matrix without an authed setup. Pins the h1 +
+  // <form aria-label> + primary CTA contrast on bg-primary-base.
+  '/sign-in',
 ] as const
 
 const MOBILE_PAGES = [
