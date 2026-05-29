@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-28 at commit 0f0a2f0
-> Pass count: 11
+> Last pass: 2026-05-29 at commit 3326f0d
+> Pass count: 12
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,133 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+### 11. Extend the colocated-test coverage gate to `src/app/**`
+
+**Score:** 5.5 (impact: 5, ease: 5, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 12
+**Filed:** 2026-05-29
+**Source signals:**
+- Commit pattern (signal G) — an **~11-commit reactive
+  `/iterate` drain** of `src/app/**` colocated tests since the
+  phase-42 gate landed: #210 (`/mod`), #211 (root `layout.tsx`),
+  #212 (`shows/[show]/layout.tsx`), #218 (`shows/[show]`), #219
+  (`season/[slug]`), #220 (`themes/[theme]`), #221
+  (`(default)/layout.tsx`), #222 (`privacy`), #223 (`terms`),
+  #224 (`not-found.tsx`) — plus the earlier #180/#193/#206 and
+  the #131–#179 route-handler/OG/sitemap/robots batch. Each is a
+  `test: colocate <X>` commit paired with an `audit:` row.
+- Audit (signal A) — **every one of those AUDIT rows names the
+  gap in the same words**: "The phase-42 colocated-coverage gate
+  (`scripts/check-test-colocation.mjs`) walks `src/components/**`,
+  `src/lib/**`, `src/content/**` but **not** `src/app/**`, so
+  app-route files are drained reactively by `/iterate`."
+- Source confirmation — `scripts/check-test-colocation.mjs:24`
+  literally reads `const ROOTS = ['src/components', 'src/lib',
+  'src/content']`; `src/app` is absent.
+- Prior art — **Phase 42 is the proof.** It was promoted
+  (`PHASE_CANDIDATES` #10, score 5.5) on the *identical*
+  argument: a 16-commit reactive drain (#105–#120) of
+  `src/components/**`/`src/lib/**` files shipping untested,
+  fixed by shifting §5a enforcement left into `pnpm verify`.
+  Phase 42 deliberately stopped at the `src/app` boundary; the
+  loop has since spent ~11 ticks reactively draining exactly
+  that boundary. As of this pass the tree is drained to **one
+  remaining file** (`src/app/internal/rank-shift-demo/page.tsx`,
+  a build-flag-gated demo) — the same "drained to completion but
+  no gate guards the regression" state `src/components/**` was in
+  when Phase 42 shipped.
+
+**Why:** §5a ("every commit ships unit tests") is a
+non-negotiable standing rule, and the highest-traffic route tree
+on the site (`src/app/**` — every page, layout, and route
+handler) is the one tree the existing verify-time gate does not
+guard. The cost of leaving it ungated is now measured: an
+~11-tick reactive drain that re-opens the moment the next
+untested page/layout/route lands. The honest fix is the Phase 42
+move applied to one more tree: add `'src/app'` to the gate's
+`ROOTS`, allowlist the genuinely-untestable shapes, and let
+verify fail the instant an app-route module ships without a
+colocated test — instead of `/iterate` catching it ticks later
+and burning a polish tick per file. The drain already authored
+precedent tests for every app-route file shape (page, dynamic
+`[segment]` page, redirect-page, `route.ts` handler,
+`opengraph-image.tsx`, `sitemap.ts`/`robots.ts`, `layout.tsx`,
+`not-found.tsx`), so the gate flip is unlikely to surface new
+stragglers beyond the one demo to allowlist.
+
+**Scope sketch:**
+- Add `'src/app'` to `ROOTS` in
+  `scripts/check-test-colocation.mjs` (+ its pure-logic library
+  in `scripts/lib/`); keep the reference-check (the colocated
+  test must import the target module, not merely share a name).
+- Allowlist `src/app/internal/rank-shift-demo/page.tsx` (the
+  build-flag-gated internal demo that never ships to prod), plus
+  any App Router file types that genuinely carry no testable
+  logic (verify against the real tree at pickup — the drain
+  suggests there are none beyond the demo).
+- Extend the gate's own colocated tests: an `src/app` page
+  passes when colocated, fails when testless, fails on
+  filename-match-but-wrong-target (the #120 false-negative
+  class).
+- Follow-up housekeeping: #148 (the still-open `needs-user` issue
+  to wire `pnpm check:test-colocation` into `march.yml` call-1)
+  becomes more load-bearing once the gate covers `src/app` —
+  flag it in the brief but it stays a separate local-`/oversight`
+  push (cloud GitHub App lacks the `workflows` scope).
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens an existing non-negotiable standing
+rule across its last uncovered tree; no URL change, no schema
+change. Directly extends Phase 42's precedent.
+
+<!-- Pass 12 (2026-05-29, commit 3326f0d) — 1 candidate filed (#11).
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 11
+       cleared each row in the same iterate cycle it filed — the
+       large §5a `src/app/**` colocated-test batch (#210/#211/#212
+       + #218–#224) plus routine polish (#... profile self-view
+       zeroed-stat skeleton, best-non-winning-runs placement
+       reframe, CanonTabSwitch aria-labels, Tiers→Shows IA rename,
+       /shows hero seasons stat from canon coverage, season
+       VotePair this-week eyebrow). No row carried over.
+     - CRITIQUE.md: 2 Pending rows from pass 17 — both LOW. (1)
+       [authed] /shows/survivor hero `tagline` says "genre" while
+       the home/tile `card_tagline` says "format" for the same
+       claim — single-string curator copy edit in
+       `content/shows/survivor.md`. (2) [anon] /shows/survivor
+       canon community-state marker "◆ hold" has no legend
+       glossing the glyph/hold-climb-slide vocabulary — one-line
+       legend / aria gloss + a colocated assertion. Both are
+       single-tick `/iterate` polish targets; no cluster ≥3 HIGH
+       on one family, no class-pattern beyond what phases 41/43
+       already drained.
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring blocked
+       on the cloud GitHub App's missing `workflows` permission —
+       known, intentional). #148 is now cross-referenced by
+       candidate #11's scope.
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice surfaces are stable.
+     - Commit pattern: 22 commits since pass 11 — 2 critique
+       passes (16 987754d, 17 3326f0d), an 11-commit §5a
+       `src/app/**` colocated-test drain (#210–#224), and ~7
+       routine iterate-polish fixes. **This drain is the new
+       structural signal** — it is the exact shape (reactive
+       one-file-per-tick §5a backfill on a tree the verify gate
+       doesn't cover) that promoted Phase 42 for `src/components`;
+       filed here as candidate #11.
+     - PHASE_CANDIDATES.md pending: #03 (Newsletter, score 3.0)
+       still gated on S1 (domain swap). No change. New: #11
+       (src/app colocation gate, score 5.5).
+
+     One real structural candidate this pass — #11, the natural
+     continuation of the Phase 42 precedent onto the last
+     uncovered source tree. The two LOW critique findings stay
+     single-tick `/iterate` polish targets. Awaiting /oversight to
+     review and promote (cloud never promotes). -->
 
 <!-- Pass 11 (2026-05-28, commit 0f0a2f0) — no new candidates filed.
      Signals reviewed:
