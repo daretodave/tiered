@@ -1,8 +1,8 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 10-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 7 canonical-path pages. Mobile (375x800): the 3 most
+// Phase 18 — 11-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 8 canonical-path pages. Mobile (375x800): the 3 most
 // load-bearing pages (home + show home + season page).
 
 const DESKTOP_PAGES = [
@@ -12,6 +12,11 @@ const DESKTOP_PAGES = [
   '/shows/survivor?view=community',
   '/shows/survivor/season/borneo',
   '/themes',
+  // The list-detail family (12 lists, one template) is the most
+  // interactive surface the matrix previously skipped — Save/Share/
+  // Suggest tools, a meta strip, a shield badge, a ranked entry
+  // stack. best-premieres is the design gold-standard + cross-canon.
+  '/themes/best-premieres',
   '/about',
 ] as const
 
