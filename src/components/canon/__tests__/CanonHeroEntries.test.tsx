@@ -137,4 +137,43 @@ describe('<CanonHeroEntries>', () => {
     expect(mini.querySelector('.cp-mini-trend')?.textContent).toBe('↓ 3')
     expect(screen.queryByText('#02')).toBeNull()
   })
+
+  it('glosses the compact trend marker for hover + screen readers so the glyph is not color-only', () => {
+    function trendMarker(signal: { rank: number; delta: number; sentiment: 'up' | 'down' | 'hold' }) {
+      const entries = [entry({ rank: 1, season: 1, title: 'Borneo' })]
+      const { unmount } = render(
+        <CanonHeroEntries
+          entries={entries}
+          seasonHref={() => '/x'}
+          seasonOf={() => undefined}
+          eraOf={() => undefined}
+          communitySignal={() => signal}
+        />,
+      )
+      const marker = screen.getByTestId('canon-hero-mini-community').querySelector('.cp-mini-trend')
+      const result = { title: marker?.getAttribute('title'), aria: marker?.getAttribute('aria-label') }
+      unmount()
+      return result
+    }
+
+    // climb: visible "↑ 3" glyph glosses to plain language; color is no
+    // longer the sole carrier of the climb/slide distinction.
+    const up = trendMarker({ rank: 2, delta: 3, sentiment: 'up' })
+    expect(up.title).toBe('Climbing 3 spots in the community ranking')
+    expect(up.aria).toBe('Climbing 3 spots in the community ranking')
+
+    // slide
+    const down = trendMarker({ rank: 9, delta: 2, sentiment: 'down' })
+    expect(down.title).toBe('Sliding 2 spots in the community ranking')
+    expect(down.aria).toBe('Sliding 2 spots in the community ranking')
+
+    // hold: the cryptic ◆ glyph gets a readable expansion
+    const hold = trendMarker({ rank: 4, delta: 0, sentiment: 'hold' })
+    expect(hold.title).toBe('Holding steady in the community ranking')
+    expect(hold.aria).toBe('Holding steady in the community ranking')
+
+    // singular spot uses the singular noun so the gloss reads naturally
+    const oneUp = trendMarker({ rank: 1, delta: 1, sentiment: 'up' })
+    expect(oneUp.title).toBe('Climbing 1 spot in the community ranking')
+  })
 })

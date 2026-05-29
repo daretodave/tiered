@@ -35,6 +35,18 @@ function trendSymbol(sentiment: 'up' | 'down' | 'hold', delta: number): string {
   return `↓ ${Math.abs(delta)}`
 }
 
+// Plain-language gloss for the compact ◆/↑/↓ trend marker. Applied as
+// both title (hover) and aria-label (screen reader) so the cryptic
+// glyph reads without a separate legend and the climb/slide
+// distinction does not rest on sentiment color alone.
+function trendGloss(sentiment: 'up' | 'down' | 'hold', delta: number): string {
+  if (sentiment === 'hold') return 'Holding steady in the community ranking'
+  const n = Math.abs(delta)
+  const spots = n === 1 ? 'spot' : 'spots'
+  if (sentiment === 'up') return `Climbing ${n} ${spots} in the community ranking`
+  return `Sliding ${n} ${spots} in the community ranking`
+}
+
 export function CanonHeroEntries({
   entries,
   seasonHref,
@@ -77,7 +89,11 @@ export function CanonHeroEntries({
                 <div className="cp-he-mini" data-testid="canon-hero-mini-community">
                   <div className="cp-he-mini-k">
                     <span>Community</span>
-                    <span className={`cp-mini-trend ${hint.sentiment}`}>
+                    <span
+                      className={`cp-mini-trend ${hint.sentiment}`}
+                      title={trendGloss(hint.sentiment, hint.delta)}
+                      aria-label={trendGloss(hint.sentiment, hint.delta)}
+                    >
                       {trendSymbol(hint.sentiment, hint.delta)}
                     </span>
                   </div>
