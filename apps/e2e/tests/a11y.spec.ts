@@ -1,9 +1,13 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 12-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 9 canonical-path pages. Mobile (375x800): the 3 most
-// load-bearing pages (home + show home + season page).
+// Phase 18 — 13-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 9 canonical-path pages. Mobile (375x800): 4 high-interaction
+// pages (home + show home + season page + themed list-detail). The
+// list-detail row is the most interactive uncovered surface at 375px —
+// Save/Share/Suggest tool buttons (aria-pressed / aria-label), the
+// shield role=status, the meta strip and ranked entry stack all have
+// reflow + touch-target contracts the desktop scan can't observe.
 //
 // The phase-38 public profile family (/u/[handle]) is NOT in this
 // flat anon matrix: its handle is discovered at runtime and the
@@ -37,6 +41,12 @@ const MOBILE_PAGES = [
   '/',
   '/shows/survivor',
   '/shows/survivor/season/borneo',
+  // The list-detail family at 375px. Tools-row buttons (Save / Share /
+  // Suggest) and the shield role=status carry aria contracts the
+  // desktop scan already pins (#228); the mobile pass adds touch-target
+  // size + 375px reflow over the stats strip, tools row, and ranked
+  // entry stack. best-premieres mirrors the desktop pick for parity.
+  '/themes/best-premieres',
 ] as const
 
 const MOBILE_VIEWPORT = { width: 375, height: 800 } as const
