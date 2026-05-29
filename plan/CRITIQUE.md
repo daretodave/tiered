@@ -1,27 +1,33 @@
 # CRITIQUE
 
-> Last pass: 2026-05-28 at commit e7a4614
-> Pass count: 16
+> Last pass: 2026-05-29 at commit 31ca474
+> Pass count: 17
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 16 ran in the cloud loop via Path A2
+> cadence is active. Pass 17 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). The walk's lone mechanical finding (an
-> `ERR_ABORTED` on a `/shows/survivor/season/cagayan?_rsc=…`
-> prefetch) is the known #139 cancelled-RSC false positive —
-> dropped on self-assessment (target returns 200, renders
-> fully). Pass-5..15 filters (#125 settleForHydration, anon/
-> authed shared-profile false-positive class, /sign-in URL-
-> labeling artifact, SeasonHero text-only capture of icon-only
-> buttons, vs-slug walker rows on canonical-renamed S20)
-> continue to hold. Authed chrome captured post-hydration as
-> `@e2e / Sign out` across all four URLs — Path A2's mode
-> determinism intact.
+> innerWidth` at 375px) — and zero `ERR_ABORTED` rows this round,
+> the #139 root-prefetch filter held. Two findings filed (0 HIGH,
+> 0 MED, 2 LOW) after dropping four on self-assessment — most
+> notably a reader HIGH claiming `/shows/survivor`'s "spent
+> twenty-five years rediscovering what it is" is a year stale:
+> FALSE POSITIVE, the phrase is the `{yearsWord}` token and
+> `src/lib/show-tenure.ts:35` anchors Survivor to its May 31
+> premiere, so pre-anniversary (2026-05-29) the helper correctly
+> returns 25 completed years — the reader did naive 2026−2000=26
+> math (a recurring false-positive class: the anniversary-anchored
+> tenure token). Pass-5..16 filters (#125 settleForHydration,
+> #139 root-prefetch abort, anon/authed shared-profile false-
+> positive class, /sign-in URL-labeling artifact, SeasonHero
+> text-only capture of icon-only buttons, vs-slug walker rows on
+> canonical-renamed S20) continue to hold. Authed chrome captured
+> post-hydration as `@e2e / Sign out` across all four URLs —
+> Path A2's mode determinism intact.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -35,6 +41,50 @@
 > findings deduped by message.
 
 ## Pending
+
+> Pass 17 (2026-05-29, commit 31ca474) ran in the cloud loop via
+> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
+> across the anon URL set (`/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`) and the authed URL set (`/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> at desktop + mobile — 20 captures. Two findings filed (0 HIGH,
+> 0 MED, 2 LOW). Mechanical pass emitted zero product findings —
+> every URL 200 with H1, no console errors, no failed first-party
+> network, no 375px horizontal scroll, all SEO tags present; no
+> `ERR_ABORTED` rows (the #139 root-prefetch filter held).
+> Pass-16's four findings (`Tiers`→`Shows` breadcrumb/footer,
+> CanonTabSwitch run-together aria-label, best-non-winning-runs
+> leak-by-negation, /u/e2e thin empty profile) all drained in the
+> last 12 commits and are verified absent — chrome reads `Shows`,
+> the tab buttons carry clean aria-labels, the list is retitled
+> "Seasons that live in their loudest arcs", and /u/e2e renders a
+> zeroed stat row. **Dropped on self-assessment (4):** (1) [anon]
+> HIGH that `/shows/survivor`'s hero "spent twenty-five years
+> rediscovering what it is" is a year stale — FALSE POSITIVE: the
+> phrase is the `{yearsWord}` token and `src/lib/show-tenure.ts`
+> anchors Survivor to its May 31 premiere, so at 2026-05-29
+> (pre-anniversary) the helper correctly returns 25 completed
+> years; the reader did naive 2026−2000=26 math. Recurring
+> false-positive class — the anniversary-anchored tenure token.
+> (2) [anon] MED that `/themes/best-finales` "Suggest an entry"
+> over-promises a submission system v1 lacks — it is a working
+> `mailto:` to the editors (`ListDetailTools.tsx`) AND a faithful
+> port of `design/tiered.tv · Best Premieres.html:208`; honest +
+> design-mandated. (3) [anon] the season comment-stub "No plot,
+> no winners, no twists →" reads as a cryptic link — the whole
+> stub is a `<Link href="/sign-in">` whose primary label is "Sign
+> in to comment.", so the destination is clear; the reassurance
+> line is intentional brand voice (mirrors the /about FAQ).
+> (4) [authed] a 36-spot weekly mover on the canon movers strip
+> "reads as a glitch" — session/data-dependent magnitude +
+> sentiment is conveyed by color/glyph the text walk can't see;
+> dropped per "drop session-specific artifacts". Pass-5..16
+> filters continue to hold.
+
+- [ ] [LOW] [authed] `/shows/survivor` hero `tagline` and the home/tile `card_tagline` word the same idea two ways: the show-page lede reads "The **genre** that invented itself in episode one, and has spent {yearsWord} years rediscovering what it is" (`content/shows/survivor.md:11`) while the home featured cover + `/shows` tile read "The **format** that invented itself in episode one" (`:12`). Same construction, different noun for the same claim — and "genre" is the looser word (Survivor is a show/format within the reality-competition genre, not a genre itself; its `genre_tag` is literally "Reality competition"). A reader moving home → show page meets the idea twice, worded inconsistently. Fix: align the `tagline` noun to "format" (or deliberately keep both and note why) in `content/shows/survivor.md`; the `{yearsWord}` token stays untouched. Curator copy edit — no schema/e2e row owed. (URL: /shows/survivor, source: critique-pass-17) — 31ca474
+
+- [ ] [LOW] [anon] `/shows/survivor` canon entries carry a community-state marker rendered as "◆ hold" ("COMMUNITY ◆ HOLD #NN"; `src/components/canon/CanonHeroEntries.tsx:33` `trendSymbol` → `'◆ hold'`, with ▲/▼ siblings for climb/slide) but no legend glosses the ◆ glyph or the hold/climb/slide vocabulary anywhere on the page. The word "hold" carries most of the meaning, so this is genuinely LOW — but a first-time visitor scanning the canon meets the diamond + state word cold, and the sentiment color (the part distinguishing climb from slide) is invisible to anyone not perceiving color, so color is the sole carrier of that distinction. Fix: add a one-line legend above the canon ranking (or a `title`/`aria` gloss on the marker) defining the three community-state markers so the glyph reads on first paint and color isn't load-bearing alone. Pin with a colocated assertion on the legend/gloss. (URL: /shows/survivor, source: critique-pass-17) — 31ca474
 
 > Pass 16 (2026-05-28, commit e7a4614) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
