@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { auth0 } from '@/lib/auth0'
+import { headerUserFromSession } from '@/components/chrome/headerUser'
 import { buildThread } from '@/lib/comments/thread'
 import { listThreadComments } from '@/lib/supabase/server'
 
@@ -45,12 +46,15 @@ export async function GET(request: Request) {
   }
 
   let sub: string | null = null
+  let handle: string | null = null
   try {
     const session = await auth0.getSession()
     const user = session?.user as Record<string, unknown> | undefined
     sub = typeof user?.['sub'] === 'string' ? (user['sub'] as string) : null
+    if (sub) handle = headerUserFromSession(user)?.handle ?? null
   } catch {
     sub = null
+    handle = null
   }
 
   const rows = await listThreadComments({
@@ -64,7 +68,7 @@ export async function GET(request: Request) {
   })
 
   return NextResponse.json(
-    { ok: true, signedIn: Boolean(sub), count: publishedCount, comments },
+    { ok: true, signedIn: Boolean(sub), handle, count: publishedCount, comments },
     { headers: { 'Cache-Control': 'private, no-store' } },
   )
 }

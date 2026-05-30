@@ -152,6 +152,53 @@ describe('GET /api/comments — session resolution', () => {
     )
   })
 
+  it('returns the viewer handle on the signed-in response (CommentInput attribution source)', async () => {
+    // The /api/comments payload doubles as the auth-state probe the
+    // SSG/ISR season page's CommentThreadLive depends on; the handle
+    // drives CommentInput's "as @{handle}" affordance (CRITIQUE pass-18
+    // MED). Source-of-truth derivation lives in
+    // headerUserFromSession so the route never inlines its own
+    // nickname/email/sub heuristic.
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    await expect(res.json()).resolves.toMatchObject({
+      ok: true,
+      signedIn: true,
+      handle: 'tester',
+    })
+  })
+
+  it('returns handle: null on the anon response', async () => {
+    getSessionMock.mockResolvedValue(null)
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    await expect(res.json()).resolves.toMatchObject({
+      ok: true,
+      signedIn: false,
+      handle: null,
+    })
+  })
+
+  it('returns handle: null when getSession rejects (auth-resilient — no leak from the catch)', async () => {
+    getSessionMock.mockRejectedValue(new Error('auth0 unreachable'))
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    await expect(res.json()).resolves.toMatchObject({
+      signedIn: false,
+      handle: null,
+    })
+  })
+
+  it('returns handle: null when the session lacks any handle-derivable field (sub-only session)', async () => {
+    getSessionMock.mockResolvedValue({ user: { sub: AUTHED_SUB } })
+    const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))
+    const body = await res.json()
+    expect(body.signedIn).toBe(true)
+    // headerUserFromSession falls back to a sub-derived handle when
+    // nickname/email are absent; the route forwards verbatim. A
+    // sanitized non-empty string here proves the route did not
+    // inline its own heuristic.
+    expect(typeof body.handle).toBe('string')
+    expect(body.handle.length).toBeGreaterThan(0)
+  })
+
   it('passes sub=null when there is no session (anon viewer)', async () => {
     getSessionMock.mockResolvedValue(null)
     const res = await GET(getRequest({ targetType: 'season', targetId: 'survivor-20' }))

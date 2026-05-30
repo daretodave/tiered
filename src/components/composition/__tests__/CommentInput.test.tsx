@@ -28,6 +28,38 @@ describe('<CommentInput>', () => {
     expect(screen.queryByTestId('comment-input-textarea')).toBeNull()
   })
 
+  it('omits the "as @handle" attribution when no handle prop is supplied', () => {
+    // Without a handle, neither stub nor open-state foot may render
+    // any "as @..." caption — the affordance is gated entirely on
+    // the prop so the legacy un-attributed shape stays intact.
+    render(<CommentInput targetType="season" targetId="survivor:20" />)
+    expect(screen.queryByTestId('comment-stub-as')).toBeNull()
+    expect(screen.queryByText(/as @/)).toBeNull()
+    fireEvent.click(screen.getByTestId('comment-stub'))
+    expect(screen.queryByTestId('comment-foot-as')).toBeNull()
+    expect(screen.queryByText(/as @/)).toBeNull()
+  })
+
+  it('renders "as @handle" in the stub and the open-state foot when handle is set', () => {
+    // Closes CRITIQUE pass-18 MED: the un-acted authed surface must
+    // name the publishing identity. The stub caption sits next to
+    // the ⏎ glyph; the foot caption sits to the left of the
+    // Cancel/Post pair so the user sees the attribution at the
+    // moment they commit. Exact "as @e2e" matches the chrome
+    // header's "@e2e" lockup.
+    render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+    expect(screen.getByTestId('comment-stub-as')).toHaveTextContent('as @e2e')
+    fireEvent.click(screen.getByTestId('comment-stub'))
+    expect(screen.getByTestId('comment-foot-as')).toHaveTextContent('as @e2e')
+  })
+
+  it('treats an empty-string handle as absent (defensive — empty handle is meaningless)', () => {
+    render(<CommentInput targetType="season" targetId="survivor:20" handle="" />)
+    expect(screen.queryByTestId('comment-stub-as')).toBeNull()
+    fireEvent.click(screen.getByTestId('comment-stub'))
+    expect(screen.queryByTestId('comment-foot-as')).toBeNull()
+  })
+
   it('expands to the open state when the stub is clicked', () => {
     render(<CommentInput targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('comment-stub'))

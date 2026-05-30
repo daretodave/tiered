@@ -961,6 +961,11 @@
 }
 .comment-stub:hover { color: var(--show-ink); }
 .comment-stub-mono { font: 500 11px/1 var(--mono); letter-spacing: 0.1em; }
+.comment-stub-right { display: flex; gap: 12px; align-items: center; }
+.comment-stub-as {
+  font: 500 11px/1 var(--mono); letter-spacing: 0.06em;
+  color: color-mix(in oklab, var(--show-ink) 50%, transparent);
+}
 .comment-open { padding: 16px 20px; }
 .comment-reminder {
   display: flex; gap: 10px; align-items: center;
@@ -997,7 +1002,12 @@
 }
 .comment-foot {
   display: flex; justify-content: flex-end; gap: 10px;
-  margin-top: 16px;
+  margin-top: 16px; align-items: center;
+}
+.comment-foot-as {
+  margin-right: auto;
+  font: 500 11px/1 var(--mono); letter-spacing: 0.06em;
+  color: color-mix(in oklab, var(--show-ink) 55%, transparent);
 }
 .comment-cancel {
   appearance: none; background: transparent; border: 0;

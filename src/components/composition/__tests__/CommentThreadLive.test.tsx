@@ -49,6 +49,50 @@ describe('<CommentThreadLive>', () => {
     expect(screen.queryByTestId('comment-stub-link')).toBeNull()
   })
 
+  it('threads the response handle into the CommentInput stub as "as @handle"', async () => {
+    // Closes CRITIQUE pass-18 MED: the route's signed-in payload now
+    // carries the viewer handle; the live wrapper must pass it through
+    // so the un-acted authed surface names the publishing identity.
+    stubFetch({
+      ok: true,
+      signedIn: true,
+      handle: 'e2e',
+      count: 0,
+      comments: [],
+    })
+    render(
+      <CommentThreadLive
+        targetType="season"
+        targetId="survivor:20"
+        signInHref="/sign-in"
+      />,
+    )
+    await waitFor(() => {
+      expect(screen.getByTestId('comment-stub-as')).toHaveTextContent('as @e2e')
+    })
+  })
+
+  it('omits the attribution when the response signs the viewer in but reports no handle', async () => {
+    stubFetch({
+      ok: true,
+      signedIn: true,
+      handle: null,
+      count: 0,
+      comments: [],
+    })
+    render(
+      <CommentThreadLive
+        targetType="season"
+        targetId="survivor:20"
+        signInHref="/sign-in"
+      />,
+    )
+    await waitFor(() => {
+      expect(screen.getByTestId('comment-stub')).toBeInTheDocument()
+    })
+    expect(screen.queryByTestId('comment-stub-as')).toBeNull()
+  })
+
   it('shows the sign-in stub for an anon viewer and the empty state', async () => {
     stubFetch({ ok: true, signedIn: false, count: 0, comments: [] })
     render(

@@ -16,6 +16,7 @@ type CommentThreadLiveProps = {
 type FetchState = {
   loaded: boolean
   signedIn: boolean
+  handle: string | null
   count: number
   comments: ThreadComment[]
 }
@@ -41,6 +42,7 @@ export function CommentThreadLive({
   const [state, setState] = useState<FetchState>({
     loaded: false,
     signedIn: false,
+    handle: null,
     count: 0,
     comments: [],
   })
@@ -59,6 +61,7 @@ export function CommentThreadLive({
             | {
                 ok?: boolean
                 signedIn?: boolean
+                handle?: string | null
                 count?: number
                 comments?: ThreadComment[]
               }
@@ -68,6 +71,7 @@ export function CommentThreadLive({
           setState({
             loaded: true,
             signedIn: Boolean(json.signedIn),
+            handle: typeof json.handle === 'string' && json.handle.length > 0 ? json.handle : null,
             count: Number(json.count) || 0,
             comments: Array.isArray(json.comments) ? json.comments : [],
           })
@@ -93,6 +97,7 @@ export function CommentThreadLive({
     <CommentInput
       targetType={targetType}
       targetId={targetId}
+      handle={state.handle}
       onPosted={onPosted}
     />
   ) : (

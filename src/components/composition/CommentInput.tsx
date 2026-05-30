@@ -8,6 +8,7 @@ type CommentTarget = 'season' | 'show' | 'comment'
 type CommentInputProps = {
   targetType: CommentTarget
   targetId: string
+  handle?: string | null
   onPosted?: (status: 'accepted' | 'pending') => void
 }
 
@@ -28,7 +29,7 @@ type PostState = 'idle' | 'submitting' | 'success'
  * Authed-only — the parent (a server component) decides whether to
  * render this or the signed-out <CommentInputStub>.
  */
-export function CommentInput({ targetType, targetId, onPosted }: CommentInputProps) {
+export function CommentInput({ targetType, targetId, handle, onPosted }: CommentInputProps) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
   const [touched, setTouched] = useState(false)
@@ -130,7 +131,14 @@ export function CommentInput({ targetType, targetId, onPosted }: CommentInputPro
           data-testid="comment-stub"
         >
           <span className="comment-stub-text">Add a thought · no spoilers, please.</span>
-          <span className="comment-stub-mono">{'⏎'}</span>
+          <span className="comment-stub-right">
+            {handle ? (
+              <span className="comment-stub-as" data-testid="comment-stub-as">
+                {`as @${handle}`}
+              </span>
+            ) : null}
+            <span className="comment-stub-mono">{'⏎'}</span>
+          </span>
         </button>
       )}
       {open && (
@@ -185,6 +193,11 @@ export function CommentInput({ targetType, targetId, onPosted }: CommentInputPro
             </div>
           )}
           <div className="comment-foot">
+            {handle ? (
+              <span className="comment-foot-as" data-testid="comment-foot-as">
+                {`as @${handle}`}
+              </span>
+            ) : null}
             <button
               type="button"
               className="comment-cancel"
