@@ -1,31 +1,55 @@
 # CRITIQUE
 
-> Last pass: 2026-05-29 at commit 31ca474
-> Pass count: 17
+> Last pass: 2026-05-30 at commit 16ea88f
+> Pass count: 18
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 17 ran in the cloud loop via Path A2
+> cadence is active. Pass 18 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
 > mobile viewports — 20 captures total. Mechanical health bar
 > remained clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px) — and zero `ERR_ABORTED` rows this round,
-> the #139 root-prefetch filter held. Two findings filed (0 HIGH,
-> 0 MED, 2 LOW) after dropping four on self-assessment — most
-> notably a reader HIGH claiming `/shows/survivor`'s "spent
-> twenty-five years rediscovering what it is" is a year stale:
-> FALSE POSITIVE, the phrase is the `{yearsWord}` token and
-> `src/lib/show-tenure.ts:35` anchors Survivor to its May 31
-> premiere, so pre-anniversary (2026-05-29) the helper correctly
-> returns 25 completed years — the reader did naive 2026−2000=26
-> math (a recurring false-positive class: the anniversary-anchored
-> tenure token). Pass-5..16 filters (#125 settleForHydration,
-> #139 root-prefetch abort, anon/authed shared-profile false-
-> positive class, /sign-in URL-labeling artifact, SeasonHero
-> text-only capture of icon-only buttons, vs-slug walker rows on
-> canonical-renamed S20) continue to hold. Authed chrome captured
+> innerWidth` at 375px). Six findings filed (0 HIGH, 5 MED, 1
+> LOW) after dropping nine on self-assessment — most notably a
+> recurring class: a reader MED on both passes claiming a cadence
+> contradiction between the home page's "Editor's Canon · Revised
+> quarterly" (`HomeDualCallout.tsx:9`) and the show-page "What
+> changed this week" mover-strip (`ShiftsRow` rendered on
+> `/shows/[show]`). FALSE POSITIVE: `src/app/shows/[show]/page.tsx:149`
+> sources `shiftMovers` from `pickMovers(community.entries)` — the
+> strip tracks **community** rank movement (which IS weekly
+> recomputed by phase 35's `compute_weighted_rank`), not Editor's
+> Canon movement. The reader saw "Heroes vs. Villains was #07 now
+> #02" in the strip and "#02" in the canon table below and
+> conflated the two ranking surfaces (the canon happens to also
+> rank Heroes vs. Villains at #02 — coincidence, not the same
+> data). New filter class: the **two-rankings conflation** —
+> static text walks see two #N references on the same page and
+> infer one ranking. Also dropped on self-assessment: (a) [anon]
+> the `/themes/best-finales` Heroes vs. Villains entry blurb's
+> "the final tribal lands like a summary statement" — borderline,
+> "final tribal" is a format universal not an outcome leak, and
+> "returnee era" is context not placement; (b) [anon] the
+> `/shows` H1 mobile orphan "All shows. / Tiered." — intentional
+> brand voice (the period-as-statement aesthetic shipped
+> deliberately); (c) [authed] the canon/community tab labels
+> rendering run-together visible text on desktop ("Editor's
+> CanonCURATED") — pass-16 #158 accepted the styled lockup as a
+> visual design choice and pinned the a11y name only; re-opening
+> the visual layout contradicts the resolution; (d) [authed]
+> `/u/e2e` self-view eyebrow `Your record` followed by `@e2e` H1
+> "voice mix" — subjective polish, no objective break; (e)
+> [authed] home authed chrome having no continuity hook ("recent
+> for you" rail) — out-of-scope product addition, not iterate
+> work; (f) [anon+authed] the `1 NET VOTE` un-acted state semantic
+> opacity — the adjacent clarifier "one vote per reader" already
+> addresses cadence + meaning sufficiently. Pass-5..17 filters
+> (#125 settleForHydration, #139 root-prefetch abort,
+> shared-profile, /sign-in URL-labeling, SeasonHero icon-only
+> buttons, vs-slug walker rows, anniversary-anchored tenure
+> token) all continue to hold. Authed chrome captured
 > post-hydration as `@e2e / Sign out` across all four URLs —
 > Path A2's mode determinism intact.
 
@@ -41,6 +65,18 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] `/shows` S-tier presents two shows side-by-side and the editorial weight collapses because they render at different densities: Survivor's tile reads its short, focused `card_tagline` ("The format that invented itself in episode one, and is still finding new ways to ask who you really are.") while RuPaul's Drag Race renders its full two-clause `tagline` ("17 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases.") because no `card_tagline` is set in `content/shows/dragrace.md`, so the home-tile / shows-tile fallback at `HomeHero.tsx:51` and the equivalent `/shows` tile path uses the longer `tagline`. The two S-tier tiles read as a one-line punchy frame next to a two-clause descriptive paragraph — same tier, asymmetric density. Curator decision: either author a tile-form `card_tagline` for Drag Race that matches Survivor's punchy single-line density (recommended — preserves the "the format that…" pattern across S-tier), OR remove Survivor's `card_tagline` so both fall back to their full `tagline`. The CLAUDE.md `card_tagline` contract supports either path; the issue is the inconsistency, not the field itself. (URL: /shows, source: critique-pass-18) — 16ea88f
+
+- [ ] [MED] [anon] `/themes/[theme]` detail pages render the entries header as `<h2>The {count}, in order.</h2><span class="entries-meta">Ranked · Editor's Canon</span>` via `src/components/lists/ListEntryStack.tsx:32`. The phrase **"Editor's Canon"** is brand-load-bearing as the per-show canon name — it labels the `<button role="tab">` on `/shows/[show]` ("01 Editor's Canon — the curated ranking" from `CanonTabSwitch.tsx:21,23` after the pass-16 #215 fix), it titles the home dual-callout (`HomeDualCallout.tsx`), it appears in `RankTag` / `AppearsInList` / `SeasonInfoCard` meta as the per-show ranking source. Reusing it on a themed-list detail page (where the list is editor-ranked but NOT part of any show's Editor's Canon) bleeds the two concepts into one term — a reader arriving at `/themes/best-finales` from `/shows/survivor` reads "Ranked · Editor's Canon" as a claim that this list is part of an Editor's Canon, when it's actually a separately-curated themed list. Fix: scope the term — change the `<span class="entries-meta">` literal in `ListEntryStack.tsx:32` to `Ranked · Editor's pick` or `Editor-ranked` or just `Ranked`, and reserve "Editor's Canon" for the per-show canon. Pin with a `ListEntryStack.test.tsx` assertion on the new entries-meta text + a negative assertion that "Editor's Canon" no longer renders in that surface; the existing per-show canon tests (`CanonTabSwitch`, `RankTag`, `AppearsInList`) still hold on their unchanged surfaces. (URL: /themes/best-finales, source: critique-pass-18) — 16ea88f
+
+- [ ] [MED] [anon] Home page mobile source order at `src/components/home/HomeHero.tsx:36-117` renders `<div class="home-hero-cover">` (Currently Featured / Survivor — eyebrow + name + cover-sub + stats + Go-to-show CTA) BEFORE `<div class="home-hero-copy">` (the brand block: eyebrow `tiered.tv · est. 2026` + H1 `The seasons, ranked. no spoilers.` + brand blurb + Browse-all / How-it-works CTAs). On desktop the two sit side-by-side via grid/flex, so visual hierarchy doesn't lean on source order. On mobile (375px) they stack, and the source order makes Currently Featured / Survivor the first beat — the brand H1 sits as the second beat, below the fold for many devices. A first-time visitor's first impression is the featured show, not what tiered.tv *is*. Fix: at mobile breakpoint, reverse stack order via `flex-direction: column-reverse` on `.home-hero` (or apply `order: 1` to `.home-hero-copy` and `order: 2` to `.home-hero-cover` inside the mobile media query). Keep desktop side-by-side unchanged. Pin with an e2e at 375px asserting the H1 text-content precedes the "Currently featured" eyebrow in vertical DOM order via `boundingClientRect.top`. (URL: /, viewport: mobile, source: critique-pass-18) — 16ea88f
+
+- [ ] [MED] [authed] On `/shows/[show]/season/[slug]` the comment-input affordance gives no signal of which identity the comment will publish under. The signed-in state of `CommentInput` renders the placeholder "Add a thought · no spoilers, please." with a `⏎` return-key glyph — no `as @e2e` attribution, no avatar, no caption naming the active user. The chrome header correctly reads `@e2e / Sign out` so the system knows the user; the input itself doesn't echo it. A returning user with multiple browsers or shared devices loses the signal that *this* tab is signed in as *this* handle before they hit Enter. The corresponding signed-out stub (the `<Link href="/sign-in">` "Sign in to comment" — pass-17 #220 finding's context) had this implicit (you weren't anyone), so the un-acted authed state is the surface where the gap shows. Fix: add an unobtrusive `as @{handle}` label inside the input wrapper (e.g., a small caption above the textarea or a placeholder-prefix on the textarea itself) when authed; gate on the same `authStatus === "authed"` branch the existing component uses. Pin with a colocated `CommentInput.test.tsx` case asserting the `as @e2e` text renders only when authed, and the existing un-authed test stays clean. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-18) — 16ea88f
+
+- [ ] [MED] [authed] `/u/[handle]` self-view empty state in `ProfileEmpty.tsx` advertises three reader verbs in the copy — "Vote on a season pair, weigh in on a thread, and it will land here." — but offers a single CTA "Start with Survivor →". The two voting/thread verbs are doors; the CTA only opens one of them. After pass-16 #217 resolved the "thin profile" finding by adding the zeroed `ProfileStats` row (3 stat cells: comments / seasons voted / shows followed), the empty-state now has three doors named in the copy AND three door-shaped cells in the stat row — but still only one CTA wiring an action. The thread/list verbs read as advertised, not supported. Fix: either narrow the empty-state prose to match the single CTA ("Vote on a season pair and it will land here. / Start with Survivor →") OR add a thread/list CTA after the Survivor link (e.g., a secondary `Browse themed lists →` that surfaces `/themes`, the actual thread surfaces being season-scoped). Recommended: narrow the prose — adding two more CTAs would cost the editorial spareness the empty state earns by being short. Pin via the existing `ProfileEmpty.test.tsx` cases on the new copy. (URL: /u/e2e, source: critique-pass-18) — 16ea88f
+
+- [ ] [LOW] [anon] On `/shows/[show]/season/[slug]` mobile, the season hero meta reads `1 MIN READ` (the read-time estimate) immediately above an `<nav>` table-of-contents labelled `ON THIS PAGE / 6 SECTIONS`. The two are inconsistent length signals to a first-time visitor: one minute next to six section anchors reads as either undersold (the actual canonical-season reading time is longer than a minute given the body + canon entry + adjacent + appears-in blocks) or as the read-time only covering "The Take" (which would be honest but isn't disclosed). The TOC is already a length signal on its own. Fix: drop the `1 MIN READ` chip from the season hero meta (cleanest — TOC carries the signal), OR compute the estimate from the actual section body word count rather than just The Take and label it accordingly (e.g., `~3 MIN READ — full section`). Recommended: drop — the TOC is sufficient and the chip is the only place a numeric word-count estimate appears, so removing it doesn't lose any other surface its information. Locate the chip in the season-page `SeasonHero` or `SeasonMeta` component. (URL: /shows/survivor/season/heroes-vs-villains, viewport: mobile, source: critique-pass-18) — 16ea88f
 
 > Pass 17 (2026-05-29, commit 31ca474) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
