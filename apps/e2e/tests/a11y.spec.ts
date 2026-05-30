@@ -1,18 +1,21 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 15-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 9 canonical-path pages. Mobile (375x800): 6 high-interaction
-// pages (home + show home + season page + themed list-detail + shows
-// IA hub + themes IA hub). /themes mobile is the highest-traffic
-// uncovered surface after the /shows mobile row (#232) drained — it's
-// the parallel landing surface to /shows, the destination of every
-// "Lists" link in the header chrome on every route, and the only page
-// in the product that renders the ListsFilterController interactive
-// chip bar (role="group" with five aria-pressed chips for all / tone /
-// craft / era / single) paired with the ListsFeaturedRow 3-up featured
-// card row that reflows to a stacked column at 375px and the
-// ListsAllSection category-grouped grid of every themed list.
+// Phase 18 — 16-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 9 canonical-path pages. Mobile (375x800): 7 high-interaction
+// pages (home + show home canon pane + season page + themed list-detail
+// + shows IA hub + themes IA hub + show-home community pane).
+// `/shows/survivor?view=community` mobile is the highest-traffic
+// uncovered surface after the /themes mobile row (#233) drained — the
+// `?view=community` query swaps the canon tier-bands for an entirely
+// different component cluster (`CommunityLiveStrip` + `CommunityMovers`
+// + `CommunityWeeklyQuestionCard` + `CommunityRankList`,
+// src/components/canon/ShowRanking.tsx:140-170) which the canon-pane
+// scan at /shows/survivor never reaches (data-view="canon" CSS-hides
+// them). The desktop scan at `?view=community` (DESKTOP_PAGES line 28)
+// catches these at 1280px; mobile reflow is the actual risk surface
+// (live-strip eyebrow stack, movers row, WeeklyQuestion CTA touch
+// target, ranking-list rank+title+meta wrap at 375px).
 //
 // The phase-38 public profile family (/u/[handle]) is NOT in this
 // flat anon matrix: its handle is discovered at runtime and the
@@ -65,6 +68,17 @@ const MOBILE_PAGES = [
   // per-category heading order, and the ListsHero stats strip — all
   // axe-detectable mobile contracts the desktop scan can't observe.
   '/themes',
+  // The community ranking pane at 375px. The `?view=community` query
+  // swaps the canon tier-bands for the four community-only components
+  // (CommunityLiveStrip recompute strip, CommunityMovers row,
+  // CommunityWeeklyQuestionCard with its CTA, CommunityRankList
+  // live-vote table) which the canon-pane mobile scan above never
+  // reaches. Pins the live-strip eyebrow + recompute-caption heading
+  // order, the movers row reflow, the WeeklyQuestion CTA touch target,
+  // and the rank+title+meta wrap on the ranking list — all
+  // axe-detectable mobile contracts the desktop community-pane scan
+  // can't observe.
+  '/shows/survivor?view=community',
 ] as const
 
 const MOBILE_VIEWPORT = { width: 375, height: 800 } as const
