@@ -112,6 +112,32 @@ describe('<SeasonInfoCard>', () => {
     expect(screen.getAllByTestId('shield-line')).toHaveLength(2)
   })
 
+  // Critique pass-19 HIGH: the watch-order chip used to default to
+  // "start here, no prerequisites" on every season, including
+  // returnees seasons where the body argument is the opposite. The
+  // season page now passes a derived shieldLines prop per-season; the
+  // component must honor the override verbatim.
+  it('honors a custom shieldLines prop over the default returnee/start-here pair', () => {
+    render(
+      <SeasonInfoCard
+        canonRank={1}
+        canonTotal={1}
+        voteQuestion="Q?"
+        voteSlot={voteSlot}
+        shieldLines={[
+          'No spoilers — reviewed by an editor',
+          'Watch order — relies on prior-season recognition',
+        ]}
+      />,
+    )
+    const row = screen.getByTestId('info-row-shield')
+    expect(row).toHaveTextContent(
+      'Watch order — relies on prior-season recognition',
+    )
+    expect(row).not.toHaveTextContent('no prerequisites')
+    expect(row).not.toHaveTextContent('start here')
+  })
+
   // The vote row sits under the community-vote heading; the default
   // help copy must promise recompute for the community track, not for
   // the editorial canon. Pins the two-rankings frame (#192).

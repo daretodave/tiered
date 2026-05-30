@@ -39,6 +39,7 @@ import {
 } from '@/lib/seo'
 import { computeReadMinutes } from '@/lib/season/read-minutes'
 import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
+import { seasonWatchOrderLine } from '@/lib/season/watch-order'
 
 type Params = { show: string; slug: string }
 
@@ -339,6 +340,11 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const shapeHasCopy = bodyParagraphs.length > 0
   const adjacentVisible = Boolean(prev || next)
 
+  const shieldLines: readonly string[] = [
+    'No spoilers — reviewed by an editor',
+    seasonWatchOrderLine(season),
+  ]
+
   const sections: TOCSection[] = [
     { id: 's-take', num: '01', label: 'The take' },
     ...(shapeHasCopy ? [{ id: 's-shape', num: '02', label: 'The shape of the season' }] : []),
@@ -392,6 +398,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
                   label="net votes"
                 />
               }
+              shieldLines={shieldLines}
             />
           }
         />

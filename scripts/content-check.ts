@@ -22,6 +22,10 @@ import {
   numberToWords,
   yearsSinceEst,
 } from '../src/lib/show-tenure'
+import {
+  WATCH_ORDER_RETURNEE,
+  seasonWatchOrderLine,
+} from '../src/lib/season/watch-order'
 
 export type Failure = { file: string; message: string }
 
@@ -515,6 +519,50 @@ export function collectThemedEntrySpoilerIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-19 HIGH (issue #241): the season-page watch-order
+// chip used to default to "start here, no prerequisites" on every
+// season, including returnees seasons where prior-season recognition
+// is the actual entry contract. The fix gates the chip via
+// `seasonWatchOrderLine()`, which scans `format_changes` +
+// `format_summary` + `format_caption` for returnee/all-stars/veterans
+// signals. This invariant catches the case where a future editor
+// stuffs the returnees signal into a different field — `title` or
+// `eyebrow` or `lede` — and the helper would silently miss it,
+// re-introducing the standalone chip on a returnee season.
+//
+// Rule: if any of `title`/`eyebrow`/`lede` carries an explicit
+// all-stars / returnees / veterans signal AND the helper resolves
+// to the non-returnee chip, that's a content-check failure — either
+// the signal belongs in `format_summary`/`format_caption`, or the
+// editorial copy is misleading.
+const WATCH_ORDER_RETURNEE_SIGNAL =
+  /(returnee|returnees|all-?stars?|veteran|veterans)/i
+
+export function collectWatchOrderClassificationIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      const editorialHaystack = [
+        season.title ?? '',
+        season.eyebrow ?? '',
+        season.lede ?? '',
+      ].join(' ')
+      const editorialSignalsReturnees =
+        WATCH_ORDER_RETURNEE_SIGNAL.test(editorialHaystack)
+      if (!editorialSignalsReturnees) continue
+      const computed = seasonWatchOrderLine(season)
+      if (computed !== WATCH_ORDER_RETURNEE) {
+        const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+        issues.push({
+          file: seasonFile,
+          message: `watch-order chip drift — title/eyebrow/lede names returnees/all-stars/veterans but the helper resolves to "${computed}" (standalone copy). Move the signal into format_changes (e.g. add "all-returnee-cast" / "returnee-injection") or restate it in format_summary/format_caption so seasonWatchOrderLine() classifies it as returnee-flavored; a first-time viewer landing on this page would otherwise be told "start here, no prerequisites" on a returnees season.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -718,6 +766,24 @@ function main(): number {
     failures.push(...themedEntrySpoilerIssues)
   } else {
     for (const issue of themedEntrySpoilerIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-19 HIGH (issue #241): ships strict at floor 0 —
+  // the season-page watch-order chip rewrite resolves every existing
+  // season correctly via the helper's format-field scan. The
+  // invariant is the regression guard that catches a future editor
+  // stashing the returnees signal in title/eyebrow/lede only,
+  // re-surfacing "start here, no prerequisites" on a returnees
+  // season. One-line toggle mirroring the six above.
+  const WATCH_ORDER_CLASSIFICATION_STRICT = true
+  const watchOrderClassificationIssues =
+    collectWatchOrderClassificationIssues()
+  if (WATCH_ORDER_CLASSIFICATION_STRICT) {
+    failures.push(...watchOrderClassificationIssues)
+  } else {
+    for (const issue of watchOrderClassificationIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
