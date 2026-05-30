@@ -37,7 +37,6 @@ import {
   canonicalUrl,
   jsonLdScriptProps,
 } from '@/lib/seo'
-import { computeReadMinutes } from '@/lib/season/read-minutes'
 import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
 import { seasonWatchOrderLine } from '@/lib/season/watch-order'
 
@@ -322,13 +321,6 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const body = bodyOf(season)
   const bodyParagraphs = body ? paragraphsOf(body) : []
   const whereItSits = whereItSitsCopy(show, canonRank, canonTotal)
-  const readMinutes = computeReadMinutes({
-    lede,
-    body,
-    pull: season.pull,
-    whereItSits,
-    watchList: season.watch_list,
-  })
 
   const stats = statsFor(season)
   const populatedStats = stats.filter(
@@ -375,11 +367,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           displayTitle={season.display_title}
           lede={lede}
           byline={
-            <>
-              <span>Canon entry by <span className="who">tiered.tv Editors</span></span>
-              <span className="dot" aria-hidden="true" />
-              <span className="read">{readMinutes} min read</span>
-            </>
+            <span>Canon entry by <span className="who">tiered.tv Editors</span></span>
           }
           infoCard={
             <SeasonInfoCard

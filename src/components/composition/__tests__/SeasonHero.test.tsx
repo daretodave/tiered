@@ -110,7 +110,7 @@ describe('<SeasonHero>', () => {
       <SeasonHero
         {...baseProps({
           eyebrow: 'Aired spring 2010',
-          byline: <span data-testid="byline-inner">7 min read</span>,
+          byline: <span data-testid="byline-inner">Canon entry by Editors</span>,
         })}
       />,
     )

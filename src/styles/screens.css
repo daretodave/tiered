@@ -541,8 +541,6 @@
   border-top: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
 }
 .hero-byline .who { color: var(--show-ink); }
-.hero-byline .dot { width: 4px; height: 4px; border-radius: 999px; background: color-mix(in oklab, var(--show-ink) 40%, transparent); }
-.hero-byline .read { color: var(--show-primary); }
 
 /* INFO CARD (right rail) */
 .info-card {
