@@ -1,13 +1,15 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 13-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 9 canonical-path pages. Mobile (375x800): 4 high-interaction
-// pages (home + show home + season page + themed list-detail). The
-// list-detail row is the most interactive uncovered surface at 375px —
-// Save/Share/Suggest tool buttons (aria-pressed / aria-label), the
-// shield role=status, the meta strip and ranked entry stack all have
-// reflow + touch-target contracts the desktop scan can't observe.
+// Phase 18 — 14-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 9 canonical-path pages. Mobile (375x800): 5 high-interaction
+// pages (home + show home + season page + themed list-detail + the
+// shows IA hub). /shows mobile is the highest-traffic uncovered surface
+// after the list-detail row (#231) drained — it's the destination of
+// every header "Shows" link on every route, and the only page in the
+// product that renders the tier-grouped layout (S/A/B/C TierSection
+// bands × tile variants tall/regular/small) which reflows uniquely at
+// 375px and isn't exercised anywhere else.
 //
 // The phase-38 public profile family (/u/[handle]) is NOT in this
 // flat anon matrix: its handle is discovered at runtime and the
@@ -47,6 +49,12 @@ const MOBILE_PAGES = [
   // size + 375px reflow over the stats strip, tools row, and ranked
   // entry stack. best-premieres mirrors the desktop pick for parity.
   '/themes/best-premieres',
+  // The show IA hub at 375px. Pins tier-band heading order (TierHead /
+  // glyph / count per S/A/B/C), tile-variant reflow over the cols-2
+  // (S/A) and cols-3 (B) grids, the status pill (tier B only), and
+  // the ShowsHero stats strip + HowTiersMove landmark structure —
+  // all axe-detectable mobile contracts the desktop scan can't observe.
+  '/shows',
 ] as const
 
 const MOBILE_VIEWPORT = { width: 375, height: 800 } as const
