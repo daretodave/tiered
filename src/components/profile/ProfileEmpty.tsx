@@ -33,8 +33,8 @@ export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
       ) : null}
       <div className="flex flex-col gap-3">
         <p className="text-ink-2" data-testid="profile-empty">
-          Nothing on the public record yet. Vote on a season pair, weigh in
-          on a thread, and it will land here.
+          Nothing on the public record yet. Vote on a season pair and it
+          will land here.
         </p>
         {selfView ? (
           <Link

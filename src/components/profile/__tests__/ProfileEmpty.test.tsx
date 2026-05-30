@@ -19,8 +19,19 @@ describe('<ProfileEmpty>', () => {
   it('renders the canonical empty-state copy verbatim', () => {
     render(<ProfileEmpty />)
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here.',
+      'Nothing on the public record yet. Vote on a season pair and it will land here.',
     )
+  })
+
+  // CRITIQUE pass 18 MED (#238): the empty-state prose advertises
+  // only the surface the single CTA opens. The "weigh in on a thread"
+  // verb was naming a second door the CTA can't open — narrowed away
+  // so the promise matches the action.
+  it('does not name a thread/weigh-in verb in the prose (no second-door advertising)', () => {
+    render(<ProfileEmpty />)
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text.toLowerCase()).not.toContain('thread')
+    expect(text.toLowerCase()).not.toContain('weigh in')
   })
 
   it('carries the muted ink-2 class so the empty state reads as secondary chrome', () => {
@@ -66,7 +77,7 @@ describe('<ProfileEmpty>', () => {
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season pair, weigh in on a thread, and it will land here.',
+      'Nothing on the public record yet. Vote on a season pair and it will land here.',
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
   })
