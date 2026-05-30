@@ -7,7 +7,7 @@ palette:
   primary: "#F2B233"
 seasons: 38
 status: airing
-blurb: "38 seasons. Eleven teams, one route marker at a time."
+blurb: "38 seasons. 11 teams, one route marker at a time."
 tagline: "38 seasons of strangers running through airports with backpacks. The longest-running travel competition on television, and still the format every other race show is measured against. We've ranked every leg of every one."
 tier: A
 network: "CBS"
