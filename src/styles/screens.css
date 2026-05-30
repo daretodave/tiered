@@ -1198,16 +1198,23 @@
   .section-head h2 { font-size: 20px; }
 
   .home-hero { grid-template-columns: 1fr; min-height: 0; }
+  /* critique pass 18: at 375px the brand H1 ("The seasons, ranked. no spoilers.")
+     must be the first beat, not the featured-show cover. DOM order is
+     cover-then-copy so desktop side-by-side wins reading order; on mobile,
+     swap them via grid-item `order` and move the separator border to the
+     cover's `border-top` (now the visual seam between copy-above and
+     cover-below). Tracked: critique pass 18. */
+  .home-hero-copy { order: 1; padding: 48px 24px; }
   .home-hero-cover {
+    order: 2;
     padding: 56px 24px; gap: 24px;
-    border-right: 0; border-bottom: 1px solid var(--line-soft);
+    border-right: 0; border-top: 1px solid var(--line-soft); border-bottom: 0;
     min-height: 400px;
   }
   .cover-name { font-size: 64px; }
   .cover-sub { font-size: 18px; }
   .cover-stats { gap: 24px; }
   .cover-stat-val { font-size: 28px; }
-  .home-hero-copy { padding: 48px 24px; }
   .home-hero-title { font-size: 40px; }
   .home-hero-blurb { font-size: 16px; }
 

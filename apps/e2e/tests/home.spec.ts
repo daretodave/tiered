@@ -267,6 +267,29 @@ test('mobile @ 375px viewport: no horizontal scroll, H1 visible', async ({
   await expect(page.locator('h1')).toBeVisible()
 })
 
+// critique pass 18: at 375px the brand H1 ("The seasons, ranked. no spoilers.")
+// must precede the featured-show "Currently featured" eyebrow in vertical DOM
+// order. DOM source order is cover-then-copy so desktop side-by-side wins
+// reading order; the mobile media query reorders via grid-item `order:` so the
+// first beat on a phone is what tiered.tv *is*, not which show happens to be
+// featured this week. Asserts boundingClientRect.top order, not visual
+// occlusion, so it survives layout changes that keep the contract intact.
+test('mobile @ 375px: brand H1 sits above the featured-show cover', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 800 })
+  await page.goto('/')
+  const h1Top = await page
+    .locator('main h1')
+    .first()
+    .evaluate((el) => el.getBoundingClientRect().top)
+  const eyebrowTop = await page
+    .getByTestId('home-hero-eyebrow')
+    .first()
+    .evaluate((el) => el.getBoundingClientRect().top)
+  expect(h1Top).toBeLessThan(eyebrowTop)
+})
+
 // Critique pass 9 #170: /, /shows S-tier, and /shows/<show> all
 // consumed the same `tagline` field, so a reader walking Home →
 // All shows → Survivor saw the identical 3-sentence paragraph
