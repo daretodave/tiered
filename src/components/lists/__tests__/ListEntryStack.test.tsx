@@ -144,4 +144,16 @@ describe('<ListEntryStack>', () => {
       screen.getByRole('heading', { level: 2 }).textContent,
     ).toMatch(/The 2, in order\./)
   })
+
+  it('entries-meta scopes the editor-ranking phrase to "Editor’s pick" — reserves "Editor’s Canon" for the per-show canon', () => {
+    const { container } = render(
+      <ListEntryStack
+        theme={theme()}
+        showsBySlug={showsMap([show()])}
+      />,
+    )
+    const meta = container.querySelector('.entries-meta')
+    expect(meta?.textContent).toBe('Ranked · Editor’s pick')
+    expect(container.textContent).not.toContain('Editor’s Canon')
+  })
 })
