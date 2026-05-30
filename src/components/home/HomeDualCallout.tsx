@@ -14,9 +14,9 @@ export function HomeDualCallout() {
         <div className="dual-tag">02 · Live</div>
         <h3 className="dual-title">Community Rank</h3>
         <p className="dual-blurb">
-          Two seasons at a time, voted by readers.{' '}
-          <b>Pairwise. Restless. Honest.</b> The numbers shift each week. Every
-          voter has watched both seasons end to end.
+          One reader, one vote per season — does it belong in the community top
+          10? <b>Plain. Restless. Honest.</b> The numbers shift each week. Every
+          voter has watched the season end to end.
         </p>
       </div>
     </section>
