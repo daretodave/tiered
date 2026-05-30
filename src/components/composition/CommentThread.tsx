@@ -3,7 +3,6 @@ import type { ReactNode } from 'react'
 type CommentThreadProps = {
   count?: number
   input: ReactNode
-  hideEmpty?: boolean
   children?: ReactNode
 }
 
@@ -14,28 +13,22 @@ type CommentThreadProps = {
  * the published `count` in the meta strip. When there are no
  * `children` (no published comments and nothing held for the
  * viewer), renders an honest empty-state line that invites the
- * first comment without referencing internal phase numbers or
- * implementation status. `count` is the public published count, so
- * the meta strip ("42 comments" / "1 comment") only renders when
- * the thread has live published activity — the empty state is
- * carried by the composer placeholder + the empty-state sentence
- * below, no caps eyebrow stamp.
- *
- * `hideEmpty` suppresses the empty-state line when the caller's
- * `input` slot already carries the "weigh in, no spoilers" nudge —
- * the signed-in composer placeholder doubles the message otherwise.
- * Reserve the empty-state for the signed-out render where the
- * composer is replaced by a sign-in stub.
+ * first comment. `count` is the public published count, so the meta
+ * strip ("42 comments" / "1 comment") only renders when the thread
+ * has live published activity. The empty-state line renders for
+ * both anon and authed zero-comment viewers — the composer
+ * placeholder is a prompt to act, not a confirmation of surface
+ * state, so the two messages do different jobs and should both
+ * render.
  */
 export function CommentThread({
   count = 0,
   input,
-  hideEmpty = false,
   children,
 }: CommentThreadProps) {
   const hasComments = count > 0
   const hasBody = children != null
-  const showEmpty = !hasBody && !hideEmpty
+  const showEmpty = !hasBody
   return (
     <div data-testid="comment-thread" className="comment-thread">
       <div className="aside-head">

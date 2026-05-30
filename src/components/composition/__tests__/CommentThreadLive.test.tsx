@@ -143,7 +143,12 @@ describe('<CommentThreadLive>', () => {
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
 
-  it('drops the empty-state when signed in with zero comments — composer carries the nudge', async () => {
+  it('keeps the empty-state when signed in with zero comments — composer is a prompt, not a state confirmation', async () => {
+    // Closes CRITIQUE pass-19 MED: authed visitors used to see only
+    // the composer with no signal whether the thread was empty,
+    // suppressed, or failed to load. The empty-state line confirms
+    // the surface state; the composer placeholder confirms the
+    // policy. They do different jobs and should both render.
     stubFetch({ ok: true, signedIn: true, count: 0, comments: [] })
     render(
       <CommentThreadLive
@@ -155,7 +160,7 @@ describe('<CommentThreadLive>', () => {
     await waitFor(() => {
       expect(screen.getByTestId('comment-stub')).toBeInTheDocument()
     })
-    expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
+    expect(screen.getByTestId('comment-thread-empty')).toBeInTheDocument()
     expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.queryByTestId('comment-list')).toBeNull()
   })
