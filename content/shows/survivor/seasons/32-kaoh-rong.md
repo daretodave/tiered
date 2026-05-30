@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 8 · merge cycle"
     body: "The post-merge run leans into the strategic vocabulary Cagayan installed two years earlier. Watch how cleanly the cast picks up tactics the show now expects of new players."
   - episode_label: "Ep 12 · final stretch"
-    body: "The final four cycle is one of the densest the twist-heavy era produced. The pacing earns the long episodes the show was running by mid-2010s."
+    body: "The final-stretch cycle is one of the densest the twist-heavy era produced. The pacing earns the long episodes the show was running by mid-2010s."
 ---
 
 The second Brains/Brawn/Beauty season, two years after
