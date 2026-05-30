@@ -22,10 +22,36 @@ describe('<ListsHero>', () => {
     expect(screen.getByTestId('lists-stat-shows').textContent).toContain(
       'Shows covered',
     )
-    expect(screen.getByTestId('lists-stat-revised').textContent).toContain('2026')
+    expect(screen.getByTestId('lists-stat-revised').textContent).toContain(
+      'May 2026',
+    )
     expect(screen.getByTestId('lists-stat-revised').textContent).toContain(
       'Index last revised',
     )
+  })
+
+  it('stamps the index-revised value as calendar "Month YYYY" — matches the /shows hero shape, never a bare year', () => {
+    // Critique pass-19: /themes rendered "2026" while /shows rendered
+    // "May 2026" — density mismatch across the two IA hubs. Pin the
+    // month-year shape so a regression back to the year-only formatter
+    // fails verify, not the next reader pass.
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const val = screen
+      .getByTestId('lists-stat-revised')
+      .querySelector('.lists-stat-val')
+    expect(val?.textContent?.trim()).toMatch(/^[A-Z][a-z]+ \d{4}$/)
+    expect(val?.textContent?.trim()).not.toMatch(/^\d{4}$/)
   })
 
   it('puts the primary em accent on "Cross-canon" when every list is cross-canon', () => {

@@ -1,5 +1,6 @@
 import type { ThemeStats } from '@/content'
-import { formatRevisedYear, plural } from '@/lib/themes-format'
+import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
+import { plural } from '@/lib/themes-format'
 
 type ListsHeroProps = {
   stats: ThemeStats
@@ -45,7 +46,7 @@ export function ListsHero({ stats }: ListsHeroProps) {
         </div>
         <div className="lists-stat" data-testid="lists-stat-revised">
           <div className="lists-stat-val">
-            {formatRevisedYear(stats.lastIndexRevision)}
+            {canonRevisedLabelFromIso(stats.lastIndexRevision) ?? ''}
           </div>
           <div className="lists-stat-key">Index last revised</div>
         </div>
