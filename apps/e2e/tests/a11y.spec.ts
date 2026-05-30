@@ -1,15 +1,18 @@
 import { test } from '@playwright/test'
 import { runA11yScan } from '../src/fixtures/a11y'
 
-// Phase 18 — 14-surface a11y matrix at WCAG 2.1 AA critical+serious.
-// Desktop: 9 canonical-path pages. Mobile (375x800): 5 high-interaction
-// pages (home + show home + season page + themed list-detail + the
-// shows IA hub). /shows mobile is the highest-traffic uncovered surface
-// after the list-detail row (#231) drained — it's the destination of
-// every header "Shows" link on every route, and the only page in the
-// product that renders the tier-grouped layout (S/A/B/C TierSection
-// bands × tile variants tall/regular/small) which reflows uniquely at
-// 375px and isn't exercised anywhere else.
+// Phase 18 — 15-surface a11y matrix at WCAG 2.1 AA critical+serious.
+// Desktop: 9 canonical-path pages. Mobile (375x800): 6 high-interaction
+// pages (home + show home + season page + themed list-detail + shows
+// IA hub + themes IA hub). /themes mobile is the highest-traffic
+// uncovered surface after the /shows mobile row (#232) drained — it's
+// the parallel landing surface to /shows, the destination of every
+// "Lists" link in the header chrome on every route, and the only page
+// in the product that renders the ListsFilterController interactive
+// chip bar (role="group" with five aria-pressed chips for all / tone /
+// craft / era / single) paired with the ListsFeaturedRow 3-up featured
+// card row that reflows to a stacked column at 375px and the
+// ListsAllSection category-grouped grid of every themed list.
 //
 // The phase-38 public profile family (/u/[handle]) is NOT in this
 // flat anon matrix: its handle is discovered at runtime and the
@@ -55,6 +58,13 @@ const MOBILE_PAGES = [
   // the ShowsHero stats strip + HowTiersMove landmark structure —
   // all axe-detectable mobile contracts the desktop scan can't observe.
   '/shows',
+  // The themes IA hub at 375px — parallel to /shows. Pins the
+  // ListsFilterController chip bar (role="group" with five aria-pressed
+  // chips: all / tone / craft / era / single) touch-target sizes,
+  // the ListsFeaturedRow 3-up → stacked reflow, the ListsAllSection
+  // per-category heading order, and the ListsHero stats strip — all
+  // axe-detectable mobile contracts the desktop scan can't observe.
+  '/themes',
 ] as const
 
 const MOBILE_VIEWPORT = { width: 375, height: 800 } as const
