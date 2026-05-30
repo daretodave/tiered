@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-29 at commit 3326f0d
-> Pass count: 12
+> Last pass: 2026-05-30 at commit d24f1b5
+> Pass count: 13
 
 ## Considered (awaiting promotion)
 
@@ -101,6 +101,74 @@ stragglers beyond the one demo to allowlist.
 **Conflicts:** none. Hardens an existing non-negotiable standing
 rule across its last uncovered tree; no URL change, no schema
 change. Directly extends Phase 42's precedent.
+
+<!-- Pass 13 (2026-05-30, commit d24f1b5) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The 7-tick a11y matrix
+       expansion drain since pass 12 (#228 /sign-in desktop,
+       #229 /u/[handle] authed, #231 /themes/[theme] mobile, #232
+       /shows mobile, #233 /themes mobile, #234
+       /shows/[show]?view=community mobile, plus #227 the
+       /internal/rank-shift-demo §5a backfill) cleared each row in
+       the same iterate cycle it filed. No row carried over.
+     - CRITIQUE.md: 1 real Pending row from pass 18 — LOW [anon]
+       /shows/[show]/season/[slug] mobile `1 MIN READ` chip
+       contradicts the TOC's `6 SECTIONS` length signal; drop the
+       chip (TOC is sufficient) or derive from real section body
+       word count. Single-tick `/iterate` polish target (one
+       component + a colocated assertion). The other 5 Pass-18
+       MED findings (card_tagline parity, entries-meta term
+       bleed, home mobile cover/copy source order, profile-empty
+       prose, comment-input identity) all drained in the same
+       window (commits 042a84f, 5df0a36, 2f432f5, 51a491e,
+       8a57e87 + audit-row twins). No cluster ≥3 HIGH on the
+       same family, no class-pattern beyond what phases 41/43
+       already drained.
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring blocked
+       on the cloud GitHub App's missing `workflows` permission —
+       known, intentional, awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice surfaces are stable.
+     - Commit pattern: 22 commits since pass 12 — 1 critique pass
+       (18, 498f0a3), 5 critique-pass-18 fix-drain pairs (5 MED
+       findings, each one tick), a 7-tick a11y matrix expansion
+       (#228–#234 closing the family-by-family coverage backfill),
+       1 colocated-test backfill (#227 /internal/rank-shift-demo
+       — the last `src/app/` straggler before candidate #11's
+       gate would catch it), 1 canon community trend-marker gloss
+       fix (9e87f3b — pass 17 LOW drain), 1 Survivor tagline noun
+       alignment (a3bba30 — pass 17 critique drain). Considered
+       whether the 7-tick a11y matrix drain mirrors the phase-42
+       reactive-drain shape that would warrant a structural
+       candidate ("derive a11y matrix from canonical-urls.ts");
+       declined — the drain self-completed at the right boundary
+       (every high-traffic interactive canonical-URL surface now
+       covered desktop + mobile; /terms, /privacy, /mod
+       intentionally excluded as low-risk/RBAC-gated), there is
+       no analog to §5a's "every commit ships unit tests"
+       non-negotiable rule for axe matrix coverage, and a derived
+       matrix would just relocate the allowlist maintenance.
+       Future new canonical-URL families are infrequent given
+       spec stability, so the prophylactic value is bound.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) still awaits /oversight promotion — the
+       /internal/rank-shift-demo backfill (#227, d546215) closed
+       the last `src/app/` straggler this pass, so the gate flip
+       would now land with zero stragglers to allowlist (the demo
+       remains the only build-flag-gated allowlist target). #03
+       (Newsletter, score 3.0) still gated on S1 (domain swap).
+       No change to either.
+
+     One real structural candidate from pass 12 (#11) still
+     awaits oversight; this pass surfaces no new structural
+     shape. The pass-18 LOW critique row is a single-tick
+     `/iterate` polish target. The build plan stays in its clean
+     re-exhausted state. Bumping metadata; awaiting the next
+     pass' cadence window for fresh structural signals to
+     accumulate. -->
 
 <!-- Pass 12 (2026-05-29, commit 3326f0d) — 1 candidate filed (#11).
      Signals reviewed:
