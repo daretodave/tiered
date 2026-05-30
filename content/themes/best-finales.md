@@ -47,7 +47,7 @@ entries:
     season: 6
     season_label: "S06"
     rank: 6
-    title: "A closing run that pays off two fully-formed queens at full height."
+    title: "A closing run that pays off a finale built on real artistry."
     blurb: "Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The closing hour lands a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
