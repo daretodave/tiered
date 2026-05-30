@@ -103,12 +103,12 @@ export function isPopulatedProfile(input: {
   return input.publishedCommentCount > 0 || input.votedSeasonCount > 0
 }
 
-// The self-view empty-state CTA promises "vote on a season pair,"
-// so it must land on a page that exposes VotePair above the fold —
-// a season page, not the canon ladder. Pick the show's #1 canon
-// entry's season; resolveSeason returns null if that season isn't
-// in the catalog, in which case the page should fall back to the
-// show home.
+// The self-view empty-state CTA promises "vote on a season," so it
+// must land on a page that exposes a vote affordance above the
+// fold — a season page, not the canon ladder. Pick the show's #1
+// canon entry's season; resolveSeason returns null if that season
+// isn't in the catalog, in which case the page should fall back to
+// the show home.
 export function pickFeaturedSeason(
   canon: CanonFile | null,
   resolveSeason: (seasonNumber: number) => Season | null,

@@ -146,8 +146,8 @@ describe('publicDisplayName', () => {
 })
 
 // `pickFeaturedSeason` derives the empty-state self-view CTA's
-// destination. The CTA promises "vote on a season pair," so it must
-// land on a season page (VotePair above the fold), not the show's
+// destination. The CTA promises "vote on a season," so it must land
+// on a season page (vote affordance above the fold), not the show's
 // canon ladder. The helper picks the canon's #1 entry's season; the
 // fallback to a bare show page lives at the call site, defended via
 // the contract that an unresolved season returns null.

@@ -3,7 +3,7 @@ import { ProfileStats } from './ProfileStats'
 
 type ProfileEmptyProps = {
   // When the viewer is looking at their own empty profile, the
-  // rhetorical "Vote on a season pair" prompt becomes a concrete
+  // rhetorical "Vote on a season" prompt becomes a concrete
   // one — the CTA points at a real season-card grid so the
   // next-action is one click, not a memory test.
   selfView?: {
@@ -33,8 +33,8 @@ export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
       ) : null}
       <div className="flex flex-col gap-3">
         <p className="text-ink-2" data-testid="profile-empty">
-          Nothing on the public record yet. Vote on a season pair and it
-          will land here.
+          Nothing on the public record yet. Vote on a season and it will
+          land here.
         </p>
         {selfView ? (
           <Link

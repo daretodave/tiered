@@ -19,7 +19,7 @@ describe('<ProfileEmpty>', () => {
   it('renders the canonical empty-state copy verbatim', () => {
     render(<ProfileEmpty />)
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season pair and it will land here.',
+      'Nothing on the public record yet. Vote on a season and it will land here.',
     )
   })
 
@@ -34,6 +34,17 @@ describe('<ProfileEmpty>', () => {
     expect(text.toLowerCase()).not.toContain('weigh in')
   })
 
+  // CRITIQUE pass 20 MED (#247): the live vote mechanic is single-binary
+  // ("Does this belong in the community top 10?"), not pairwise. Pass-19
+  // #240 scrubbed the pairwise framing from the home explainer; this
+  // surface — the only place that explicitly tells a member how to
+  // populate their profile — must not regress back to "season pair".
+  it('does not promise a pairwise vote in the prose (regression guard for #247)', () => {
+    render(<ProfileEmpty />)
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/pair/i)
+  })
+
   it('carries the muted ink-2 class so the empty state reads as secondary chrome', () => {
     render(<ProfileEmpty />)
     expect(
@@ -41,9 +52,9 @@ describe('<ProfileEmpty>', () => {
     ).toBe(true)
   })
 
-  // CRITIQUE pass 10 LOW: the rhetorical "Vote on a season pair"
-  // prompt becomes a concrete one on self-view. The CTA is opt-in
-  // (the stranger-viewing-an-empty-profile path renders no CTA).
+  // CRITIQUE pass 10 LOW: the rhetorical "Vote on a season" prompt
+  // becomes a concrete one on self-view. The CTA is opt-in (the
+  // stranger-viewing-an-empty-profile path renders no CTA).
 
   it('renders no CTA when no selfView prop is passed (stranger view)', () => {
     render(<ProfileEmpty />)
@@ -77,7 +88,7 @@ describe('<ProfileEmpty>', () => {
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season pair and it will land here.',
+      'Nothing on the public record yet. Vote on a season and it will land here.',
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
   })
