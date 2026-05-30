@@ -252,22 +252,22 @@ describe('moverNote', () => {
 
   it('describes a climb, pluralizing spots', () => {
     expect(moverNote(mover(3))).toBe(
-      'Climbed 3 spots since the last weekly recompute.',
+      'Climbed 3 spots since the last weekly update.',
     )
   })
 
   it('describes a slide', () => {
     expect(moverNote(mover(-2))).toBe(
-      'Slid 2 spots since the last weekly recompute.',
+      'Slid 2 spots since the last weekly update.',
     )
   })
 
   it('uses singular phrasing for a one-spot move', () => {
     expect(moverNote(mover(1))).toBe(
-      'Climbed one spot since the last weekly recompute.',
+      'Climbed one spot since the last weekly update.',
     )
     expect(moverNote(mover(-1))).toBe(
-      'Slid one spot since the last weekly recompute.',
+      'Slid one spot since the last weekly update.',
     )
   })
 
@@ -275,8 +275,18 @@ describe('moverNote', () => {
     for (const d of [1, 2, 5, 12, -1, -3, -9]) {
       const note = moverNote(mover(d))
       expect(note).toMatch(
-        /^(Climbed|Slid) (one spot|\d+ spots) since the last weekly recompute\.$/,
+        /^(Climbed|Slid) (one spot|\d+ spots) since the last weekly update\.$/,
       )
+    }
+  })
+
+  // critique-pass-19 MED pin: the editorial voice swap from "recompute"
+  // (engineering) to "update" (peer) MUST hold across both directions
+  // and pluralization branches. Catches accidental reintroduction of the
+  // procedural word at the data layer.
+  it('never uses the engineering word "recompute" in mover-strip copy', () => {
+    for (const d of [1, 2, 5, 12, -1, -3, -9]) {
+      expect(moverNote(mover(d))).not.toMatch(/recompute/i)
     }
   })
 })

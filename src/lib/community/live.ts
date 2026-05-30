@@ -67,8 +67,8 @@ export function moverNote(mover: CommunityMover): string {
   const n = Math.abs(mover.delta)
   const spots = n === 1 ? 'one spot' : `${n} spots`
   return mover.delta > 0
-    ? `Climbed ${spots} since the last weekly recompute.`
-    : `Slid ${spots} since the last weekly recompute.`
+    ? `Climbed ${spots} since the last weekly update.`
+    : `Slid ${spots} since the last weekly update.`
 }
 
 // "2h 14m ago" relative label for the last recompute timestamp.

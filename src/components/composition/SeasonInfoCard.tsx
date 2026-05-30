@@ -47,7 +47,7 @@ export function SeasonInfoCard({
   communityShift,
   communityCaption,
   voteQuestion,
-  voteHelp = 'one vote per reader. community rank recomputes weekly.',
+  voteHelp = 'one vote per reader. community rank updates weekly.',
   voteSlot,
   voteRowHead,
   shieldLines = [

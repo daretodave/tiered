@@ -42,7 +42,7 @@ describe('<ShiftCard>', () => {
   it('renders the data-derived note for a climb', () => {
     render(<ShiftCard mover={mover({ delta: 3 })} />)
     expect(
-      screen.getByText('Climbed 3 spots since the last weekly recompute.'),
+      screen.getByText('Climbed 3 spots since the last weekly update.'),
     ).toBeInTheDocument()
   })
 
@@ -59,7 +59,7 @@ describe('<ShiftCard>', () => {
       />,
     )
     expect(
-      screen.getByText('Slid 2 spots since the last weekly recompute.'),
+      screen.getByText('Slid 2 spots since the last weekly update.'),
     ).toBeInTheDocument()
     expect(screen.getByText('Cagayan')).toBeInTheDocument()
     expect(screen.getByText('#21')).toBeInTheDocument()

@@ -139,9 +139,11 @@ describe('<SeasonInfoCard>', () => {
   })
 
   // The vote row sits under the community-vote heading; the default
-  // help copy must promise recompute for the community track, not for
-  // the editorial canon. Pins the two-rankings frame (#192).
-  it('defaults voteHelp to community-rank recompute copy, never canon', () => {
+  // help copy must promise weekly cadence for the community track, not
+  // for the editorial canon. Pins the two-rankings frame (#192). The
+  // verb is "updates", not "recomputes" — critique-pass-19 MED swap
+  // from engineering vocab to editorial voice.
+  it('defaults voteHelp to community-rank weekly-update copy, never canon', () => {
     render(
       <SeasonInfoCard
         canonRank={1}
@@ -151,8 +153,10 @@ describe('<SeasonInfoCard>', () => {
       />,
     )
     const row = screen.getByTestId('info-row-vote')
-    expect(row).toHaveTextContent('community rank recomputes weekly')
-    expect(row).not.toHaveTextContent('canon position recomputes')
+    expect(row).toHaveTextContent('community rank updates weekly')
+    expect(row).not.toHaveTextContent('canon position updates')
+    // critique-pass-19 MED pin: engineering vocab must not slip back in.
+    expect(row).not.toHaveTextContent(/recompute/i)
   })
 
   it('honors a custom voteHelp prop over the default', () => {
@@ -167,6 +171,6 @@ describe('<SeasonInfoCard>', () => {
     )
     const row = screen.getByTestId('info-row-vote')
     expect(row).toHaveTextContent('custom help line.')
-    expect(row).not.toHaveTextContent('community rank recomputes weekly')
+    expect(row).not.toHaveTextContent('community rank updates weekly')
   })
 })
