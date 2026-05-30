@@ -1,10 +1,71 @@
 # CRITIQUE
 
-> Last pass: 2026-05-30 at commit aa218ad
-> Pass count: 19
+> Last pass: 2026-05-30 at commit 01f74f7
+> Pass count: 20
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 19 ran in the cloud loop via Path A2
+> cadence is active. Pass 20 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Both anon (6 URLs)
+> and authed (4 URLs) walks ran end-to-end across desktop +
+> mobile viewports — 20 captures total. Mechanical health bar
+> remained clean (zero console errors, zero failed first-party
+> requests, all 200s, all H1s present, all `scrollWidth ===
+> innerWidth` at 375px). Six findings filed (0 HIGH, 3 MED, 3
+> LOW) after dropping four on self-assessment: (a) [authed]
+> the desktop CanonTabSwitch visible run-together text
+> ("Editor's CanonCURATED") — pass-18 + pass-19 drop-list
+> retired this as a styled-lockup design choice (pass-16 #158
+> + #215 land the a11y name on `aria-label`; the visual is
+> intentional). Re-filing would contradict the resolution.
+> (b) [authed] the /u/e2e `<meta description>` reading "A
+> reader on tiered.tv. Nothing on the public record yet." vs
+> the page body "Your record" — subjective stranger-vs-owner
+> framing call; the third-person meta is the safer default
+> because page-level metadata cannot vary by viewer (a stranger
+> sharing the link gets the same string a member does), and
+> "Your record" is owner-only chrome inside the page. Not a
+> drift, an intentional split. (c) [authed] the vote block on
+> /shows/<show>/season/<slug> not echoing the member's per-
+> season vote state (no "you voted YES", no "not yet voted")
+> — this is a feature-gap (would require new VotePair state
+> plumbing to read the viewer's own historic vote and reflect
+> it in the eyebrow), not a critique-fix; if real it belongs
+> in PHASE_CANDIDATES, not CRITIQUE.md. Pass-19's drop on the
+> same surface ("YOUR VOTE / CAST YOURS eyebrow-as-imperative")
+> also applies — the rest of the pair already reads cleanly.
+> (d) [anon] the /shows/survivor mover strip "What changed
+> this week" not labelling which canon is moving — "weekly"
+> already disambiguates (Editor's Canon is "Revised quarterly",
+> Community Rank is "updates weekly"), the show-page body
+> contrasts the two cadences explicitly, and the word "weekly"
+> in the strip header carries that signal. Softest of the four
+> LOW candidates; dropped to keep the cap honest. All five
+> prior-pass already-shipped findings (pass-19 #240-#245) plus
+> pass-18 #235-#239 verified intact on this walk — home blurb
+> single-binary, season-page watch-order returnee branch,
+> mover-strip "update" word, Amazing Race numeric tile,
+> authed-zero-comments empty-state line, /themes "May 2026"
+> stamp. Three MED filings this round: two anon spoiler-class
+> (P0-adjacent) — RPDR S6 entry on /themes/best-finales names
+> "two fully-formed queens" reaching the lip-sync stretch (the
+> only entry on that list that narrows the finalist count),
+> and HvV's WHAT TO WATCH FOR · LATE card still says "the
+> cold-open of the final eight" (same vector the episode-
+> numbers fix at 08c121d closed under a different name) — and
+> one authed mechanic-drift (the ProfileEmpty copy still
+> instructs "Vote on a season pair" while the live mechanic is
+> single-binary; this is the surface that explicitly tells a
+> member how to populate their profile, and the pass-19 #240
+> pairwise scrub missed it). Three LOW filings: HvV "neighbors
+> below frame what we ranked above and below" overloaded
+> "below"; /themes featured-rail duplicating three list tiles
+> already shown in the all-lists grid; /themes hero "some live
+> inside one show" while the single-show section carries
+> exactly one list. Pass-5..19 filters all continue to hold;
+> mode determinism intact in Path A2's fresh isolated context.
+
+> Pass 19 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
@@ -126,6 +187,18 @@
 - [x] [MED] [authed] On `/shows/[show]/season/[slug]` the signed-in view of the comment thread suppresses the empty-state confirmation line. Anon visitors see three clear beats — `The thread` heading, the sign-in stub, then `No comments yet. Weigh in on the season itself.` — so they know the surface, the action, and the current state. Authed visitors see only `The thread / Add a thought · no spoilers, please. / as @e2e / ⏎` and then the page ends — no signal whether the thread is genuinely empty, still loading, suppressed by the spoiler shield, or failed to fetch. The composer placeholder is a prompt to act, not a state confirmation, so a returning member with a quiet thread or a slow connection can't disambiguate "no comments yet" from "load failed silently". Source: `src/components/composition/CommentThreadLive.tsx:113` passes `hideEmpty={state.signedIn}` to `<CommentThread>`, which suppresses the `comment-thread-empty` line for any signed-in viewer regardless of count. The colocating comment in `CommentThread.tsx:24-28` justifies the suppression by claiming the composer placeholder doubles the message — but `Add a thought · no spoilers, please.` is a prompt to act, not a confirmation that the list is empty. Fix: drop `hideEmpty={state.signedIn}` (or narrow it to only when `count > 0`) so the `No comments yet. Weigh in on the season itself.` line renders for the authed-zero-comments case the same way it does for the anon case. The composer's policy nudge and the empty-state confirmation are doing different jobs and should both render. Pin with a new colocated case in `CommentThreadLive.test.tsx` asserting the empty-state testid is present when `signedIn=true` and `count=0`. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-19) — issue: #244 — RESOLVED 33cc695: dropped `hideEmpty={state.signedIn}` from `CommentThreadLive.tsx`; deleted the `hideEmpty` prop from `CommentThread.tsx` entirely (no other caller used it) so the `comment-thread-empty` line renders for any zero-children case (anon or authed). Flipped existing colocated case in `CommentThreadLive.test.tsx` to assert `comment-thread-empty` IS present at `signedIn=true, count=0`; removed the three `CommentThread.test.tsx` cases that pinned the prop's old contract. Verify gate green: leg1 188 unit files / 2236 tests + 127 script tests + content:check, leg2 build (374 pages), leg3 1358 e2e.
 
 - [x] [LOW] [anon] The `/themes` hub aggregate metric reads `INDEX LAST REVISED / 2026` — just the year, no month. The sibling hub `/shows` uses the same meta-stats column but reads `LAST REVISION / May 2026` — year plus month. Density and specificity don't match across the two IA hubs, and the year-only stamp on `/themes` is less honest about cadence than the year+month stamp on `/shows` (it suggests the lists were revised "sometime in 2026" when the actual revision is much fresher). Fix: render the lists-index `last_revision` as `<Month> 2026` on `/themes` to match the `/shows` shape — likely a content edit in the index frontmatter or a one-line stamp-format change in the page component. Locate: `src/app/(default)/themes/page.tsx` meta-stats block, or wherever the `INDEX LAST REVISED` literal is rendered. Pin with a colocated assertion that the rendered text matches a `^[A-Z][a-z]+ \d{4}$` (month-year) shape, not a bare-year shape. (URL: /themes, source: critique-pass-19) — issue: #245 — RESOLVED ca7dc7a: `src/components/lists/ListsHero.tsx` swapped `formatRevisedYear` → `canonRevisedLabelFromIso` (the same `Month YYYY` formatter the `/shows` hero, home hero, and per-show heroes already share for chrome-wide consistency), so the `/themes` index-revised stat now reads `May 2026` instead of `2026`. The drop-back-to-empty-string fallback (`?? ''`) preserves the prior empty-input behavior; `lastIndexRevision` is an ISO date that `getThemeStats` derives from the freshest theme's `last_revised`. Updated the existing `<ListsHero>` colocated case to assert `May 2026` and added a new case pinning the calendar shape — value matches `/^[A-Z][a-z]+ \d{4}$/` and never a bare-year — so a regression back to year-only fails verify, not the next reader pass. No e2e fixture row owed: `themes.spec.ts:15-17` already asserts `/\d{4}/` (any 4-digit year), which holds for both `2026` and `May 2026`. No URL/schema/page-family change. Verify gate green: leg1 188 unit files / 2237 tests + 127 script + content:check (13 shows / 298 seasons / 13 canons / 12 themes / 3 legal docs), leg2 build (374 pages), leg3 1358 e2e.
+
+- [ ] [MED] [anon] On `/themes/best-finales` the RuPaul's Drag Race S6 entry headline reads "A closing run that pays off **two fully-formed queens at full height.**" — in the same blurb that frames the finale as "a lip-sync stretch with genuine stakes." Naming "two" of the finalists for the closing lip-sync narrows the finale's spotlight in a way no other entry on the list does — every sibling keeps the cohort vague ("the final tribal lands like a summary statement", "the closing run", "the Round Table tightening before the last vote"). The Drag Race finale narrows to a top 3, not a top 2 — claiming "two fully-formed queens" carries the moment lands on two players, which is a placement-narrowing leak class adjacent to the spoiler-discipline P0 promise the rest of the list holds. Fix: rewrite the headline to keep the editorial admiration without the cohort count — e.g. "A closing run that pays off a finale built on real artistry." — and let the body's "lip-sync stretch with genuine stakes" carry the climactic framing. Curator-only edit in `content/themes/best-finales.md` (no schema/page/e2e change owed; no test pins the literal). Pin via the same `scripts/content-check.ts` channel that already enforces themed-list discipline if a structural rule emerges; otherwise the next critique pass re-verifies the absence. (URL: /themes/best-finales, source: critique-pass-20)
+
+- [ ] [MED] [anon] On `/shows/survivor/season/heroes-vs-villains` the "WHAT TO WATCH FOR · LATE · THIRD ACT" card body reads `The cold-open of the final eight is doing real ethnographic labor — staging, blocking, who's eating where. Don't blink.` Naming "the final eight" tells a viewer three episodes into the season that the cast contracts to exactly 8 players by the late phase — a structural attrition signal the brand's "scroll without losing the season you're three episodes into" promise rules out. This is the same vector the issue #152 / 08c121d fix closed when it swapped episode numbers for phase labels (Opener/Early/Mid/Late) on the four `watch_list` cards; the cards now carry phase labels in the eyebrow but the body still slips a cast-count milestone in the LATE card. Fix: replace "the final eight" with a non-numeric phase reference — e.g. "The cold-open of the late-game stretch is doing real ethnographic labor — staging, blocking, who's eating where. Don't blink." — matching the OPENER / EARLY / MID / LATE register the other three cards already carry in their bodies. Single-string content edit in `content/shows/survivor/seasons/20-heroes-villains.md` (the `watch_list[3].body` field). Sweep the other shows' `watch_list` bodies in the same tick for any "final N" / "final M" cast-count leaks; the rule should be: phase labels in the eyebrow AND in the body. Spoiler discipline P0-adjacent (no winner/eliminee named — the leak is structural attrition pace, not outcome). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-20)
+
+- [ ] [MED] [authed] On `/u/[handle]` self-view (member's own profile, empty state), the prose still reads `Nothing on the public record yet. Vote on a season **pair** and it will land here.` (`src/components/profile/ProfileEmpty.tsx` per issue #238's RESOLVED note). But the live vote mechanic on `/shows/<show>/season/<slug>` is single-binary — `Does this belong in the community top 10?` with `one vote per reader. community rank updates weekly.` — not pairwise. Pass-19 #240 scrubbed the pairwise framing from the home explainer (`HomeDualCallout.tsx` "One reader, one vote per season…") but missed this profile-empty surface, which is the one place that explicitly tells a member **how** to populate their profile. A returning member reads "vote on a season pair", clicks through to a season page, finds a single up/down tap, and lands on the same promise/delivery gap that #240 closed at the home level. Same class, different surface. Fix: drop the word "pair" — `Vote on a season pair and it will land here.` → `Vote on a season and it will land here.` Curator-style single-word edit in `src/components/profile/ProfileEmpty.tsx`. Pin: update the existing `ProfileEmpty.test.tsx` canonical-copy assertion (the verbatim-string check that pass-18 #238 added when it narrowed the two-door prose to one door) so the new text is locked, plus a negative pin asserting the rendered text does not contain `/pair/i` so a regression back to pairwise framing fails at unit time. Stranger view (same component, no `selfView` prop) inherits the same fix — the consistent voice across views remains. Spoiler P0 unchanged (copy edit only). (URL: /u/e2e, source: critique-pass-20)
+
+- [ ] [LOW] [anon] On `/shows/survivor/season/heroes-vs-villains` Section 03 "WHERE IT SITS IN THE CANON" body reads `Slot #02 of 50 in the Survivor Editor's Canon. The neighbors below frame what we ranked above and below it.` The sentence collides two senses of "below" — "**neighbors below**" (referring to the on-page adjacent strip immediately under this heading) and "**above and below it**" (referring to canon positions). A first-time reader parses "neighbors below" as lower-ranked, then immediately sees `← #01 IN CANON Cagayan` on the left of the adjacent strip — which is canon-above, contradicting the parse. Brand voice asks for plain sentences over clever ones; this sentence asks the reader to disambiguate before parsing. Fix: drop the "below" overload by losing the positional reference — `Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what we ranked it against.` Single-string edit in the section-03 helper (likely `src/lib/season/canon-context.ts` or wherever the "neighbors below frame…" template is constructed; grep for `neighbors below` should find it). Pin with a colocated unit test asserting the new copy AND a negative pin against the literal `neighbors below`. Spoiler-safe (no per-season verdict change, no canon position change). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-20)
+
+- [ ] [LOW] [anon] On `/themes` three lists (Comebacks worth the swing, Finales that stuck the landing, Premieres that earned it) appear twice on the same page — once in the "Featured this month" rail and again in the "All lists" grid under their BY TONE / BY CRAFT category — with identical blurbs verbatim both times. On a 12-list index this is a visible 25% repetition rate; a first-time visitor scrolls past the same paragraph twice within 1000px. Fix: either (a) filter the featured-rail's lists out of the all-lists grid so each list appears exactly once on the page (cleanest — the all-lists grid becomes "the rest of the catalog"), or (b) shorten the all-lists tile copy for items already featured above (the rail keeps the full blurb, the grid drops to a one-line eyebrow). Recommended path: (a) — filter the featured set out of the all-lists grid; the featured rail is the curator's spotlight, the grid is the exhaustive index, and excluding featured from the index reads as deliberate cadence rather than missing. Locate the filter site in `src/app/(default)/themes/page.tsx` / `ListsAllSection` (the consumer that calls `getThemesByCategory()`). Pin with an e2e at `/themes` asserting no list slug appears in both `lists-featured-rail` and `lists-all-section`, and the BY TONE/CRAFT/SINGLE counts drop by however many featured lists were filtered out. (URL: /themes, source: critique-pass-20)
+
+- [ ] [LOW] [anon] On `/themes` the hero subtitle reads `Some span the catalog, some live inside one show.` — plural "some" applied to single-show lists — but the page's own "SINGLE-SHOW TIERS" section header carries `· 1`, exactly one list (Survivor: the load-bearing seasons). "Some" reads as ≥2 in plain English; the page's own count contradicts the hero one screen later. The plural-drift class previously closed at #133 (`/themes` hero "Some span every show" vs 10/13 shows covered) recurs here on the other clause of the same hero lede. Fix: either (a) pluralize the catalog by shipping a second single-show list before the next critique pass (likely the existing `survivor-pillars` could split, or a second show's pillars list could be authored — content-curator call), or (b) singularize the hero copy — `Most span the catalog; one lives inside a single show.` (or similar) — matching the live `getThemeStats().singleCount` value. Recommended: (b) — coverage-aware copy mirrors the #98 / #129 / #130 / #133 precedent (data-derived from `getThemeStats()`, not hardcoded). Make the helper render the single-vs-plural form based on the actual count, so the lede stays honest as the catalog grows. Pin with a `ListsHero.test.tsx` case asserting the singular phrasing at single-count=1 + a plural-phrasing case at single-count=2. Spoiler-safe — hero copy only. (URL: /themes, source: critique-pass-20)
 
 > Pass 17 (2026-05-29, commit 31ca474) ran in the cloud loop via
 > Path A2 — `scripts/critique-walk.mjs` drove headless chromium
