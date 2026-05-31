@@ -77,6 +77,28 @@ test.describe('/themes index (phase 19g shape)', () => {
     expect(count).toBeLessThanOrEqual(3)
   })
 
+  test('no list slug appears in both the featured rail and the all-lists grid', async ({
+    page,
+  }) => {
+    // Critique pass-20: three lists used to appear twice on /themes — once
+    // in "Featured this month" and again in "All lists" under their
+    // category — with identical blurbs verbatim. Featured-out filtering
+    // means each list now appears exactly once per page.
+    await page.goto('/themes', { waitUntil: 'domcontentloaded' })
+    const featuredSlugs = await page
+      .getByTestId('lists-featured-card')
+      .evaluateAll((els) =>
+        els.map((el) => el.getAttribute('data-slug') ?? ''),
+      )
+    const rowSlugs = await page
+      .getByTestId('lists-row')
+      .evaluateAll((els) =>
+        els.map((el) => el.getAttribute('data-slug') ?? ''),
+      )
+    const overlap = featuredSlugs.filter((s) => rowSlugs.includes(s))
+    expect(overlap).toEqual([])
+  })
+
   test('clicking a category chip flips data-active-filter and hides off-filter groups', async ({
     page,
   }) => {

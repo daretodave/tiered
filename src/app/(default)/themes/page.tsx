@@ -7,7 +7,7 @@ import {
   getThemeStats,
   getThemesByCategory,
 } from '@/content'
-import type { Show, Theme } from '@/content'
+import type { Show, Theme, ThemeCategory } from '@/content'
 import { Wrap } from '@/components/chrome/Wrap'
 import { ListsHero } from '@/components/lists/ListsHero'
 import { ListsFilterController } from '@/components/lists/ListsFilterController'
@@ -46,12 +46,27 @@ export default function ThemesIndexPage() {
   const showsByTheme: Record<string, Show[]> = {}
   for (const t of themes) showsByTheme[t.slug] = resolveShows(t)
 
+  // The featured rail is the curator's spotlight; the grid below is the
+  // exhaustive index. Excluding featured from the grid keeps each list to
+  // a single appearance on the page (critique pass-20).
+  const featuredSlugs = new Set(featured.map((t) => t.slug))
+  const byCategoryRest: Record<ThemeCategory, Theme[]> = {
+    tone: byCategory.tone.filter((t) => !featuredSlugs.has(t.slug)),
+    craft: byCategory.craft.filter((t) => !featuredSlugs.has(t.slug)),
+    era: byCategory.era.filter((t) => !featuredSlugs.has(t.slug)),
+    single: byCategory.single.filter((t) => !featuredSlugs.has(t.slug)),
+  }
+
   const counts: Record<FilterKey, number> = {
-    all: themes.length,
-    tone: byCategory.tone.length,
-    craft: byCategory.craft.length,
-    era: byCategory.era.length,
-    single: byCategory.single.length,
+    all:
+      byCategoryRest.tone.length +
+      byCategoryRest.craft.length +
+      byCategoryRest.era.length +
+      byCategoryRest.single.length,
+    tone: byCategoryRest.tone.length,
+    craft: byCategoryRest.craft.length,
+    era: byCategoryRest.era.length,
+    single: byCategoryRest.single.length,
   }
 
   const ld = {
@@ -88,7 +103,7 @@ export default function ThemesIndexPage() {
       <ListsFilterController counts={counts}>
         <ListsFeaturedRow featured={featured} showsByTheme={showsByTheme} />
         <ListsAllSection
-          byCategory={byCategory}
+          byCategory={byCategoryRest}
           showsByTheme={showsByTheme}
         />
       </ListsFilterController>
