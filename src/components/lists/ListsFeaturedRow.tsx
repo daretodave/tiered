@@ -22,7 +22,7 @@ export function ListsFeaturedRow({
       <div className="lists-section-head">
         <h2>Featured this month.</h2>
         <span className="lists-section-meta">
-          Editor-selected · refreshed every 1st
+          Editor-selected · refreshed monthly
         </span>
       </div>
       <div className="lists-featured-row" data-testid="lists-featured-row">

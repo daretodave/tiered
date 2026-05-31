@@ -13,6 +13,19 @@ describe('<ListsFeaturedRow>', () => {
     expect(container.firstChild).toBeNull()
   })
 
+  it('subhead reads "Editor-selected · refreshed monthly" (regression guard for #254)', () => {
+    render(
+      <ListsFeaturedRow
+        featured={[theme({ slug: 'a', featured: true })]}
+        showsByTheme={{ a: [show()] }}
+        today={today}
+      />,
+    )
+    const meta = document.querySelector('.lists-section-meta')
+    expect(meta?.textContent).toBe('Editor-selected · refreshed monthly')
+    expect(meta?.textContent).not.toMatch(/every 1st/i)
+  })
+
   it('marks the first card as big', () => {
     render(
       <ListsFeaturedRow
