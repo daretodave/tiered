@@ -21,6 +21,13 @@ describe('<CommunityMovers>', () => {
     expect(screen.queryByTestId('community-movers-grid')).toBeNull()
   })
 
+  it('empty-state copy names weekly updates in editorial voice, not engineering (regression guard for #256)', () => {
+    render(<CommunityMovers movers={[]} />)
+    const empty = screen.getByTestId('community-movers-empty')
+    expect(empty).toHaveTextContent(/weekly updates/)
+    expect(empty).not.toHaveTextContent(/recompute/i)
+  })
+
   it('renders a card per mover with the pill + was/now ranks', () => {
     const movers: CommunityMover[] = [
       {

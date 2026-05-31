@@ -101,8 +101,8 @@ export function ShowRanking({
           </span>
           <span className="cp-community-only">
             {hasLiveVotes
-              ? 'Recomputed every Thursday at 9pm ET. Approval is the share of voters who would keep a season in its slot or move it up.'
-              : 'Recomputed every Thursday at 9pm ET. Until enough votes land, this mirrors the canon — be the first to move it.'}
+              ? 'Updated every Thursday at 9pm ET. Approval is the share of voters who would keep a season in its slot or move it up.'
+              : 'Updated every Thursday at 9pm ET. Until enough votes land, this mirrors the canon — be the first to move it.'}
           </span>
         </p>
       </div>

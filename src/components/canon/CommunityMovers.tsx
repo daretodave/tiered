@@ -27,7 +27,7 @@ export function CommunityMovers({ movers }: CommunityMoversProps) {
           data-testid="community-movers-empty"
           data-empty="true"
         >
-          Movers populate once weekly recomputes start producing deltas. Until
+          Movers populate once weekly updates start producing deltas. Until
           then, the community rank mirrors the canon and nothing has moved.
         </div>
       ) : (

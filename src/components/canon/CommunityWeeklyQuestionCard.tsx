@@ -29,7 +29,7 @@ export function CommunityWeeklyQuestionCard({
         </div>
         <div className="cp-cq-q">{q}</div>
         <div className="cp-cq-help">
-          Your vote feeds the next recompute. One vote per reader; change your mind within
+          Your vote feeds the next update. One vote per reader; change your mind within
           72h.
         </div>
       </div>

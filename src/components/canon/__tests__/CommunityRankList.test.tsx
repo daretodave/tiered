@@ -99,4 +99,20 @@ describe('<CommunityRankList>', () => {
     expect(screen.queryByTestId('rank-shift-pill')).toBeNull()
     expect(container.querySelector('.cp-clr-trend.cp-cl-cell--empty')).not.toBeNull()
   })
+
+  it('live-source meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
+    const entries = [
+      row(1, 20, 'Heroes vs. Villains', {
+        approval: 0.9,
+        voteCount: 50,
+        trend: 2,
+      }),
+    ]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
+    )
+    const list = screen.getByTestId('community-rank-list')
+    expect(list).toHaveTextContent(/Updated Thursdays · approval %/)
+    expect(list).not.toHaveTextContent(/recompute/i)
+  })
 })

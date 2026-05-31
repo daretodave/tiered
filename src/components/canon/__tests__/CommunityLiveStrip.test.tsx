@@ -36,4 +36,19 @@ describe('<CommunityLiveStrip>', () => {
     expect(strip).toHaveTextContent('v1421')
     expect(strip).toHaveTextContent('live votes')
   })
+
+  it('reads the cadence captions in editorial voice (last/next update), not engineering (regression guard for #256)', () => {
+    render(
+      <CommunityLiveStrip
+        source="votes"
+        lastRecomputeAt={new Date(Date.now() - 60 * 60 * 1000).toISOString()}
+        votersThisWeek={17402}
+        version={1421}
+      />,
+    )
+    const strip = screen.getByTestId('community-live-strip')
+    expect(strip).toHaveTextContent(/last update/)
+    expect(strip).toHaveTextContent(/next update/)
+    expect(strip).not.toHaveTextContent(/recompute/i)
+  })
 })

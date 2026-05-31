@@ -37,7 +37,7 @@ export function CommunityRankList({
         <h2>The full ranking.</h2>
         <span className="meta">
           {live
-            ? 'Recomputed Thursdays · approval %'
+            ? 'Updated Thursdays · approval %'
             : 'No community votes yet — list mirrors the editor canon.'}
         </span>
       </div>

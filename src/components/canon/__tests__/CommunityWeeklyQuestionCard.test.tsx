@@ -40,4 +40,11 @@ describe('<CommunityWeeklyQuestionCard>', () => {
       screen.getByText('votes pending · closes Thursday'),
     ).toBeInTheDocument()
   })
+
+  it('help copy names the next update in editorial voice, not engineering (regression guard for #256)', () => {
+    render(<CommunityWeeklyQuestionCard question="q" votersThisWeek={42} />)
+    const card = screen.getByTestId('community-weekly-question')
+    expect(card).toHaveTextContent(/feeds the next update/)
+    expect(card).not.toHaveTextContent(/recompute/i)
+  })
 })

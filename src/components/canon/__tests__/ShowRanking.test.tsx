@@ -126,6 +126,21 @@ describe('<ShowRanking>', () => {
     expect(intro).toHaveTextContent('What readers are voting on.')
   })
 
+  it('ranking-intro community meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={[season(20, 'Heroes vs. Villains')]}
+        canon={canon()}
+        initialView="canon"
+        community={liveRanking([season(20, 'Heroes vs. Villains')])}
+      />,
+    )
+    const intro = screen.getByTestId('ranking-intro')
+    expect(intro).toHaveTextContent(/Updated every Thursday at 9pm ET/)
+    expect(intro).not.toHaveTextContent(/Recomputed/i)
+  })
+
   it('renders the empty state when canon is null', () => {
     render(
       <ShowRanking

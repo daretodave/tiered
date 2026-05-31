@@ -40,10 +40,10 @@ export function CommunityLiveStrip({
           live
         </span>
         <span>
-          last recompute · <b>{formatLastRecompute(lastRecomputeAt)}</b>
+          last update · <b>{formatLastRecompute(lastRecomputeAt)}</b>
         </span>
         <span>
-          next recompute · <b>{NEXT_RECOMPUTE_LABEL}</b>
+          next update · <b>{NEXT_RECOMPUTE_LABEL}</b>
         </span>
         <span>
           voters this week · <b>{votersThisWeek.toLocaleString()}</b>
