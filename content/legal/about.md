@@ -13,8 +13,9 @@ For every show we cover, two rankings live side by side:
 
 - **Editor's Canon** — our editorial ranking, with a short
   reason per position. Confident but spoiler-safe.
-- **Community Rank** — vote-driven. Each ranked season has a
-  `[+]` and `[−]` button; signed-in members shape the order.
+- **Community Rank** — vote-driven. Each ranked season has an
+  upvote and a downvote button; signed-in members carry the
+  most weight.
 
 Browse the [shows index](/shows), pick one, and decide which
 season to watch next. Or skim the [themed lists](/themes) for
