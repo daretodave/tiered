@@ -226,7 +226,7 @@ function paragraphsOf(body: string): string[] {
     .filter((p) => p.length > 0)
 }
 
-function whereItSitsCopy(
+export function whereItSitsCopy(
   show: Show,
   canonRank: number | null,
   canonTotal: number,
@@ -237,7 +237,7 @@ function whereItSitsCopy(
   if (canonTotal === 1) {
     return `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
   }
-  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The neighbors below frame what we ranked above and below it.`
+  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what we ranked it against.`
 }
 
 // 31a: digit-form back-compat. URLs like `/shows/survivor/season/4`

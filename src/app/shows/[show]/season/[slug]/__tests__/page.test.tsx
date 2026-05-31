@@ -55,7 +55,7 @@ vi.mock('@/content', async () => {
   }
 })
 
-import { generateMetadata, generateStaticParams } from '../page'
+import { generateMetadata, generateStaticParams, whereItSitsCopy } from '../page'
 
 function makeShow(overrides: Partial<Show> = {}): Show {
   return {
@@ -292,5 +292,56 @@ describe('generateMetadata — description (SEO budget via descriptionFor)', () 
     )
     expect(description).toBe(`${head}…`)
     expect(description).not.toContain(',…')
+  })
+})
+
+describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () => {
+  // critique-pass-20 LOW: the legacy "neighbors below frame what we
+  // ranked above and below it" line overloads "below" (the on-page
+  // adjacent strip vs. canon position), forcing a first-time reader
+  // to disambiguate before parsing. The replacement loses the
+  // positional reference and reads cleanly against either neighbor.
+  it('renders the ranked-slot framing without the "neighbors below" overload', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    expect(whereItSitsCopy(show, 2, 50)).toBe(
+      "Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what we ranked it against.",
+    )
+  })
+
+  it('zero-pads single-digit canon ranks to keep the rank column monospaced-stable', () => {
+    const show = makeShow({ name: 'Top Chef', slug: 'top-chef' })
+    expect(whereItSitsCopy(show, 9, 17)).toContain('Slot #09 of 17')
+  })
+
+  it('never re-introduces the legacy "neighbors below" copy across any branch', () => {
+    // Negative pin: the critique fix removed the overloaded phrasing
+    // from the only branch that carried it. Future edits that
+    // re-introduce it (or a near-synonym carrying the same overload)
+    // would resurface the finding.
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    for (const copy of [
+      whereItSitsCopy(show, 1, 50),
+      whereItSitsCopy(show, 2, 50),
+      whereItSitsCopy(show, 50, 50),
+      whereItSitsCopy(show, null, 0),
+      whereItSitsCopy(show, 1, 1),
+    ]) {
+      expect(copy).not.toContain('neighbors below')
+      expect(copy).not.toContain('above and below')
+    }
+  })
+
+  it('falls back to a draft-in-progress sentence when no canon rank is assigned', () => {
+    const show = makeShow({ name: 'Bachelor', slug: 'bachelor' })
+    expect(whereItSitsCopy(show, null, 0)).toBe(
+      "Canon position not assigned yet — the editors' draft is still in progress for Bachelor. Check back as the canon fills in.",
+    )
+  })
+
+  it('falls back to a sole-entry sentence when the canon has exactly one entry', () => {
+    const show = makeShow({ name: 'Top Chef', slug: 'top-chef' })
+    expect(whereItSitsCopy(show, 1, 1)).toBe(
+      "Sole entry in the Top Chef Editor's Canon so far. Adjacent picks land as the canon grows.",
+    )
   })
 })
