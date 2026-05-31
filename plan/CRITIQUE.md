@@ -1,10 +1,59 @@
 # CRITIQUE
 
-> Last pass: 2026-05-30 at commit 01f74f7
-> Pass count: 20
+> Last pass: 2026-05-31 at commit 7841336
+> Pass count: 21
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 20 ran in the cloud loop via Path A2
+> cadence is active. Pass 21 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Both anon (6 URLs:
+> `/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-premieres`) and authed (4 URLs: `/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`) walks
+> ran end-to-end across desktop + mobile viewports — 20 captures
+> total. Mechanical health bar remained clean (zero console
+> errors, zero failed first-party requests, all 200s, all H1s
+> present, all `scrollWidth === innerWidth` at 375px). Three
+> findings filed (0 HIGH, 1 MED, 2 LOW) after dropping three on
+> self-assessment: (a) [anon] /themes/best-premieres entry #02
+> body "Eleven teams, a route marker, and a host nobody had
+> heard of yet" — pass-19 #243's fix message (ac493eb) explicitly
+> carved this out: "Long-form prose references to 'Eleven teams'
+> inside season bodies, canon rationales, and themed-list
+> entries stay untouched (editorially natural English in
+> paragraph context)." The themed-list entry body IS paragraph
+> context; only the home grid tile's single-line punchy frame
+> was normalized to numerals. Re-filing would re-litigate a
+> settled editorial split. (b) [anon] /themes Featured rail CTA
+> inconsistency ("read the list →" on card 1, "read →" on cards
+> 2 and 3) — `FeaturedCard.tsx:25` derives the CTA from
+> `big ? 'read the list →' : 'read →'`, intentional hierarchy
+> where the spotlight (big) card gets the longer CTA. Re-filing
+> would contradict the component contract. (c) [anon]
+> /themes/best-premieres "RANKED · EDITOR'S PICK" singular vs
+> 7-item list — `ListEntryStack.tsx:32` ships `Ranked · Editor's
+> pick` and the colocated test (pass-18 #236 fix, 5df0a36)
+> explicitly scopes the phrase as a singular collective noun
+> ("Editor's pick" reserved for themed-list ranking, "Editor's
+> Canon" for per-show canon). Re-filing would contradict that
+> scoping decision. One MED filing this round (anon density
+> mismatch on /shows A-tier: Top Chef tile body runs one short
+> sentence while every A-tier neighbor runs 2–3 sentences with
+> a year/location/format-claim beat — same density-mismatch
+> class as the S-tier fix a2f3571 shipped in pass-18, now
+> migrated to A-tier). Two LOW filings: /themes "REFRESHED EVERY
+> 1ST" awkward fragment (the `ListsFeaturedRow.tsx:25` literal
+> "refreshed every 1st" lacks the noun the phrase wants), and
+> /themes filter-mode text "VIEW · ALL 12 LISTS" reading as a
+> verb-led CTA when the page is already showing all 12 (the
+> `filterModeText()` helper at `themes-format.ts:88` returns a
+> mode-status string that opens with "view ·" — leading with a
+> verb on a passive status reads as a dead control). Pass-5..20
+> filters all continue to hold; mode determinism intact in
+> Path A2's fresh isolated context.
+
+> Pass 20 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs)
 > and authed (4 URLs) walks ran end-to-end across desktop +
@@ -163,6 +212,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] `/shows` A-tier renders Top Chef as the visual outlier among 11 A-tier tiles. Its tile body — sourced from `content/shows/top-chef.md`'s `tagline` field — reads "22 seasons of professional cooks in unfamiliar kitchens. Ranked by people who actually liked the food." (1 premise sentence + 1 wink half-sentence, ~117 chars). Every A-tier neighbor renders 2–3 sentences with a structural beat (year/network/location anchor + format-claim): Bachelorette ("21 seasons of one woman with the calendar, the keys, and the final say. The flip-the-script sibling that turned out to be its own show — warmer, sharper, and more willing to let the lead drive."), Bake Off ("15 seasons of amateur bakers in a white tent on a country estate, racing the clock through signature, technical, and showstopper. The gentlest competition on television, and somehow the most watchable."), Project Runway ("20 seasons of designers at sewing machines in a Manhattan workroom, racing a clock toward a runway show that judges everything. The format that made fashion competition a genre, still the one to beat."), The Challenge ("40 seasons of reality veterans hurling themselves off cliffs, into water, and at each other..."). This is the same density-mismatch class as pass-18 #235 (Drag Race vs Survivor in S-tier, RESOLVED a2f3571 by adding a tile-form `card_tagline` to Drag Race) — the issue has migrated from S-tier to A-tier and Top Chef is now the visual outlier. Curator decision: either lengthen Top Chef's `tagline` so the show-page hero matches A-tier density (a year/network anchor — Bravo, 2006 — plus a one-line editorial claim about the format, in the same shape as Bake Off / Project Runway), OR author a tile-form `card_tagline` for Top Chef that gives the A-tile a 2-sentence body without touching the show-page hero (mirrors the a2f3571 path for Drag Race). The CLAUDE.md `card_tagline` contract supports either path; the issue is the tile-density mismatch within the same tier, not the field itself. Suggested fix: take the show-page-hero path (lengthen `tagline`) — Top Chef's current `tagline` is shorter than is editorially natural even on the show page, so the fix improves both surfaces rather than only patching the tile. (URL: /shows, source: critique-pass-21)
+
+- [ ] [LOW] [anon] `/themes` Featured-this-month section subhead reads `EDITOR-SELECTED · REFRESHED EVERY 1ST` (sourced from `src/components/lists/ListsFeaturedRow.tsx:25` — the literal `Editor-selected · refreshed every 1st`, CSS-uppercased via `.lists-section-meta`). The fragment "every 1st" is grammatically incomplete — the natural English wants a noun ("every 1st of the month", "on the 1st", "monthly on the 1st") or a stand-alone adverb ("monthly"). Reads like a placeholder string that got truncated rather than the plain-spoken house voice ("knowledgeable peer · plain sentences over clever ones"). Adjacent meta strings on the same `/themes` page do this correctly — `ListsAllSection.tsx:29` reads `Organized by what they're admiring` (complete phrase), not `Organized by what`. Suggested fix: in `ListsFeaturedRow.tsx:25`, rewrite the literal to `Editor-selected · refreshed monthly` (shortest, voice-clean) or `Editor-selected · new on the 1st` (preserves the "1st" anchor but completes the phrase). No new test row owed if existing `ListsFeaturedRow.test.tsx` already pins the subhead string — update that assertion in the same commit. (URL: /themes, source: critique-pass-21)
+
+- [ ] [LOW] [anon] `/themes` filter bar renders a mode-status text element to the right of the filter pills (ALL / BY TONE / BY CRAFT / SINGLE-SHOW). When the ALL filter is active, this element reads `VIEW · ALL 12 LISTS` (sourced from `src/lib/themes-format.ts:88` — the `filterModeText()` helper returns `view · all ${counts.all} lists` for the all-filter case, CSS-uppercased via `.lists-filter-mode`). The string opens with the verb "view" which reads as an imperative CTA — a reader sees "VIEW · ALL 12 LISTS" sitting on the chip row and parses it as a clickable action ("view all 12 lists"), but it's a passive status indicator describing what the page is already showing. The mismatch makes the chip row feel like it has a dead control. Suggested fix: drop the leading verb in `filterModeText()` — change `view · all ${counts.all} lists` → `showing · all ${counts.all} lists` (or `${counts.all} lists`) and the per-category branch `view · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}` → `showing · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}` (or `${counts[filter]} ${FILTER_MODE_LABELS[filter]}`). The `filterModeText()` tests at `ListsFilterController.test.tsx:47` ("shows 'all 12 lists' mode text by default") will need the new string — update in the same commit. (URL: /themes, source: critique-pass-21)
 
 - [x] [MED] [anon] `/shows` S-tier presents two shows side-by-side and the editorial weight collapses because they render at different densities: Survivor's tile reads its short, focused `card_tagline` ("The format that invented itself in episode one, and is still finding new ways to ask who you really are.") while RuPaul's Drag Race renders its full two-clause `tagline` ("17 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases.") because no `card_tagline` is set in `content/shows/dragrace.md`, so the home-tile / shows-tile fallback at `HomeHero.tsx:51` and the equivalent `/shows` tile path uses the longer `tagline`. The two S-tier tiles read as a one-line punchy frame next to a two-clause descriptive paragraph — same tier, asymmetric density. Curator decision: either author a tile-form `card_tagline` for Drag Race that matches Survivor's punchy single-line density (recommended — preserves the "the format that…" pattern across S-tier), OR remove Survivor's `card_tagline` so both fall back to their full `tagline`. The CLAUDE.md `card_tagline` contract supports either path; the issue is the inconsistency, not the field itself. (URL: /shows, source: critique-pass-18) — 16ea88f — issue: #235 — RESOLVED a2f3571: took the finding's recommended path — `content-curator` authored a tile-form `card_tagline` for Drag Race in `content/shows/dragrace.md` ("The format that built a global drag economy, and still sets the bar every other franchise spends a season chasing.") distilling the show-page tagline's second clause into the single-line "The format that…" frame Survivor uses, so both S-tier tiles now share a syntactic register on `/shows`. Survivor's existing `card_tagline` untouched; Drag Race's full `tagline` (shown on the show page hero) untouched. Surfaces that fall back to `tagline` when `card_tagline` is absent (`HomeHero.tsx:51` + the equivalent `/shows` tile path) now read the punchy form for both S-tier shows. No e2e/schema row owed — no test pins the live `card_tagline` string at `/shows` (the existing tile-path tests assert on the resolved field, not on either show's value), and the CLAUDE.md `card_tagline` contract (frontmatter spec) already documents the field as optional. Verify gate green: leg1 typecheck + 186 unit files + 127 script + content:check (13 shows / 298 seasons / 13 canons / 12 themes / 3 legal docs), leg2 build (374 pages), leg3 1357 e2e.
 
