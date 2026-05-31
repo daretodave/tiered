@@ -16,6 +16,15 @@ type ProfileEmptyProps = {
 // votes. The profile still renders (handle resolved, not a 404) —
 // it just has nothing to show yet. The page keeps this state
 // noIndex so a thin profile never enters the index.
+//
+// CRITIQUE pass 22 MED (#262): /u/[handle] is publicly addressable
+// — a stranger landing here used to read the same second-person
+// prose the owner gets ("Vote on a season and it will land here"),
+// which addressed the wrong viewer. The empty-state copy now
+// splits on `selfView`: the owner branch keeps the second-person
+// prompt + CTA so the next-action is one click; the stranger branch
+// reads a sparse third-person status with no CTA (no door to open
+// on someone else's record).
 export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
   return (
     <div className="flex flex-col gap-6" data-testid="profile-empty-block">
@@ -33,8 +42,9 @@ export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
       ) : null}
       <div className="flex flex-col gap-3">
         <p className="text-ink-2" data-testid="profile-empty">
-          Nothing on the public record yet. Vote on a season and it will
-          land here.
+          {selfView
+            ? 'Nothing on your record yet. Vote on a season and it will land here.'
+            : 'No votes on the public record yet.'}
         </p>
         {selfView ? (
           <Link

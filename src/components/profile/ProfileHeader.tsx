@@ -20,7 +20,20 @@ export function ProfileHeader({
         >
           Your record
         </p>
-      ) : null}
+      ) : (
+        // CRITIQUE pass 22 MED (#262): the stranger view used to ship
+        // no ownership cue, leaving the page bare while the empty
+        // state below addressed the wrong viewer. Naming whose record
+        // this is — `@{handle}'s record` — frames the page for a
+        // visitor arriving from a thread or another reader's link,
+        // and balances the owner branch's `Your record` cue.
+        <p
+          className="text-sm text-ink-3"
+          data-testid="profile-stranger-eyebrow"
+        >
+          @{handle}&rsquo;s record
+        </p>
+      )}
       <h1
         className="font-serif text-4xl leading-tight text-ink-0 md:text-5xl"
         data-testid="profile-handle"

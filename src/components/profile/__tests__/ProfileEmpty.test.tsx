@@ -16,11 +16,24 @@ describe('<ProfileEmpty>', () => {
     expect(empty.tagName).toBe('P')
   })
 
-  it('renders the canonical empty-state copy verbatim', () => {
+  // CRITIQUE pass 22 MED (#262): the stranger view (no `selfView`)
+  // reads the third-person status — no second-person prose
+  // addressed at the wrong viewer. Owner branch keeps the
+  // second-person prompt below.
+  it('renders the canonical stranger-view empty-state copy verbatim', () => {
     render(<ProfileEmpty />)
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season and it will land here.',
+      'No votes on the public record yet.',
     )
+  })
+
+  // CRITIQUE pass 22 MED (#262) negative pin: the stranger branch
+  // must never address the viewer in the second person, since the
+  // record being viewed isn't theirs.
+  it('does not address the viewer with "your record" in the stranger view (regression guard for #262)', () => {
+    render(<ProfileEmpty />)
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/your record/i)
   })
 
   // CRITIQUE pass 18 MED (#238): the empty-state prose advertises
@@ -83,14 +96,28 @@ describe('<ProfileEmpty>', () => {
     )
   })
 
-  it('keeps the canonical empty-state sentence alongside the CTA on self-view', () => {
+  // CRITIQUE pass 22 MED (#262): the self-view prose flips to
+  // second-person framing ("your record") so the next-action prompt
+  // and the CTA address the actual owner of the page.
+  it('renders the second-person self-view empty-state sentence alongside the CTA', () => {
     render(
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on the public record yet. Vote on a season and it will land here.',
+      'Nothing on your record yet. Vote on a season and it will land here.',
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
+  })
+
+  // CRITIQUE pass 22 MED (#262) negative pin: the self branch must
+  // never reach for the third-person "public record" framing — that
+  // belongs to the stranger view above.
+  it('does not address the owner with "the public record" in the self view (regression guard for #262)', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/the public record/i)
   })
 
   // CRITIQUE pass 16 LOW (#217): the owner's own empty profile gets a
