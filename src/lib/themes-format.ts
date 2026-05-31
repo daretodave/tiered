@@ -85,9 +85,9 @@ export function filterModeText(
   counts: Record<FilterKey, number>,
 ): string {
   if (filter === 'all') {
-    return `view · all ${counts.all} lists`
+    return `showing · all ${counts.all} lists`
   }
-  return `view · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}`
+  return `showing · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}`
 }
 
 export function plural(n: number, singular: string, pluralForm: string): string {

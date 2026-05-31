@@ -101,16 +101,16 @@ describe('filterModeText', () => {
   it('formats "all" mode with total count', () => {
     expect(
       filterModeText('all', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
-    ).toBe('view · all 12 lists')
+    ).toBe('showing · all 12 lists')
   })
 
   it('formats a single category mode', () => {
     expect(
       filterModeText('tone', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
-    ).toBe('view · 4 tone lists')
+    ).toBe('showing · 4 tone lists')
     expect(
       filterModeText('single', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
-    ).toBe('view · 3 single-show lists')
+    ).toBe('showing · 3 single-show lists')
   })
 })
 
