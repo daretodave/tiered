@@ -1,22 +1,73 @@
 # CRITIQUE
 
-> Last pass: 2026-05-31 at commit 36f3f18
-> Pass count: 22
+> Last pass: 2026-05-31 at commit 3d3818b
+> Pass count: 23
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 21 ran in the cloud loop via Path A2
+> cadence is active. Pass 23 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (6 URLs:
 > `/`, `/shows`, `/shows/survivor`,
 > `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-premieres`) and authed (4 URLs: `/`, `/u/e2e`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`) walks
-> ran end-to-end across desktop + mobile viewports — 20 captures
-> total. Mechanical health bar remained clean (zero console
-> errors, zero failed first-party requests, all 200s, all H1s
-> present, all `scrollWidth === innerWidth` at 375px). Three
-> findings filed (0 HIGH, 1 MED, 2 LOW) after dropping three on
-> self-assessment: (a) [anon] /themes/best-premieres entry #02
+> `/sign-in`) and authed (4 URLs: `/`, `/u/e2e`,
+> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
+> walks ran end-to-end across desktop + mobile viewports — 20
+> captures total. Mechanical health bar remained clean (zero
+> console errors, zero failed first-party requests, all 200s,
+> all H1s present, all `scrollWidth === innerWidth` at 375px).
+> Six findings filed (1 HIGH, 3 MED, 2 LOW) after dropping eight
+> on self-assessment: (a) [anon] /themes section labels with
+> inline counts ("BY TONE · 6" etc.) reading as confusing tab
+> labels — the counts are honest and consistent with both the
+> stats and the visible grid; tab-label confusion was the user's
+> read of his own dump, not the rendered surface. (b) [anon]
+> /shows hero `298 SEASONS RANKED` — internal math checks out
+> (the sum of the 13 show counts), no finding. (c) [anon] home 4
+> list cards "selection rubric is invisible" — the section
+> header reads "Themed lists, cross-canon" and the four cards
+> link to /themes; "ALL LISTS →" is the rubric the surface
+> needs, and the cards themselves are an editorial sampling
+> (same shape as featured rails on /themes). Lower-grade tab
+> framing finding; dropped to keep cap honest. (d) [anon] home
+> "CURRENTLY FEATURED" lacking cadence — the eyebrow names the
+> slot; the cadence belongs in /about or in a small caption,
+> not in the eyebrow itself; the cadence-less eyebrow is
+> intentional (Survivor is the anchor; "currently" reads as
+> editorial deference). Dropped. (e) [anon] /sign-in too sparse
+> — minimalism is intentional (the page is a transactional
+> auth boundary, not a marketing surface); the surrounding
+> chrome carries the brand context. Dropped. (f) [authed]
+> /u/e2e meta description "A reader on tiered.tv..." third-
+> person on a self-page — page-level meta cannot vary by viewer
+> (the OG card a stranger sees vs the owner sees is the same
+> render); the third-person is the safer default for the
+> external surface. Dropped. (g) [authed] /u/e2e "will land
+> here" future-tense — voice nit; the recent #262 fix already
+> chose "will land here" deliberately as the self-view present-
+> looking framing; revisiting it would re-litigate that
+> editorial decision. Dropped. (h) [authed] /shows/survivor
+> "What changed this week" leans negative — the data is what
+> it is; framing the panel as "Biggest movers" would lie about
+> what it actually shows (it's a sorted shift list, not a
+> curated movers list). Dropped as a non-finding. Six filings
+> this round: one HIGH on /themes lede prose drift ("12 lists"
+> while the just-shipped hero stat fix split into "3 FEATURED ·
+> 9 IN THE INDEX"); three MED — the HvV community-vote `1`
+> ambiguity (caught in both anon and authed passes, filed once),
+> the /shows/survivor "SENTIMENT-TAGGED" eyebrow that the design
+> doesn't deliver on, and the /shows/survivor 01/02 numbering
+> collision between the canon/community tab pair and the
+> immediately-following methodology block; one MED on mobile
+> chrome exposing one-tap "Sign out" with no confirmation; one
+> LOW on the HvV thread empty-state "Weigh in on the season
+> itself" awkward qualifier. All prior critique pass fixes
+> (3d3818b /u/[handle] self-view, bf069c7 stranger eyebrow,
+> 973989e themes hero split, f739f96 watch-order, 5c07076
+> single-binary blurb, c4f0e6c tagline cleanups) verified live
+> and not re-filed.
+>
+> Pass 22 — Three findings filed (0 HIGH, 1 MED, 2 LOW) after
+> dropping three on self-assessment: (a) [anon] /themes/best-premieres entry #02
 > body "Eleven teams, a route marker, and a host nobody had
 > heard of yet" — pass-19 #243's fix message (ac493eb) explicitly
 > carved this out: "Long-form prose references to 'Eleven teams'
@@ -214,6 +265,18 @@
 ## Pending
 
 
+
+- [ ] [HIGH] [anon] `/themes` lede prose still reads `12 lists we'd defend in a group chat. Some span the catalog, one lives inside one show.` while the hero stat block immediately below now reads `3 FEATURED · 9 IN THE INDEX` (the just-shipped fix for #261 at 973989e). The lede was written when the page rendered 12 lists in a single grid; the post-#253 dedupe filters the 3 featured-this-month entries out of the index grid, and the post-#261 stat fix splits the hero number into FEATURED + INDEX — but the lede sentence was not updated in either fix. A first-time reader sees `12 lists` in the lede, then `3 FEATURED · 9 IN THE INDEX` in the stats, then a chip below reads `SHOWING · ALL 9 LISTS`, then the grid renders 9 list cards. The "12" appears only once on the page and is not labeled — it reads as the catalog total but contradicts everything below. This is a real promise/delivery drift on a brand-central editorial surface (the only home for the themed-list voice) and undoes part of the just-shipped #261 fix that was supposed to bridge exactly this gap. Source: `src/components/lists/ListsHero.tsx` lede literal (the number is hardcoded in the prose, not derived from `getThemeStats().total`). Fix: derive the lede number from `stats.total` instead of the hardcoded literal — change the lede to read from `${stats.total} lists we'd defend in a group chat. Some span the catalog, one lives inside one show.` so the prose stays in lockstep with whatever the catalog ships next. (The `total` value is already computed and passed to the hero per #261's split, so no new plumbing is needed.) Pin: extend the `ListsHero.test.tsx` cases #261 added — assert the lede text contains the same `total` the FEATURED+INDEX stats sum to (parse both `.lists-stat-val` numbers + the lede number, assert lede === featured + index), so a regression that re-introduces a literal divergent number fails at unit time. Also add a negative pin that the lede never contains the substring `12` while the stat row sums to a different total. Stretch: if the lede needs to scan as "x lists" only when total > 1, branch on that — the singular `1 list we'd defend...` reads fine; the current pluralized template at total=9 reads `9 lists we'd defend...` which scans naturally. Spoiler discipline P0 intact (lede prose edit only). (URL: /themes, source: critique-pass-23)
+
+- [ ] [MED] [anon+authed] On `/shows/[show]/season/[slug]` the community-vote block shows the bare number `1` under the label `COMMUNITY · NET VOTE` with no sign, no unit, and no positional context. A first-time reader (anon) and a signed-in member who has not yet voted (authed) both read the same display: the literal numeral `1` floating between the `CAST VOTE` button above and the `one vote per reader. community rank updates weekly.` clause below. The label `NET VOTE` implies signed math (upvotes minus downvotes), but the rendered value has no leading `+` or `-`. A reader has three reasonable guesses: (a) `1` means one total vote has been cast, (b) `+1` net (one more "yes" than "no"), (c) the season's current community rank position (top-of-mind because the show page's tab pair is "Editor's Canon" and "Community" by *position*, not by net). The widget itself answers none of them. Source: the VotePair / VoteRowHead component on the season page. Fix: format the net value with explicit sign — `+1` when positive, `-3` when negative, `0` when even — and lean on CSS for the `+` glyph if it's awkward in the data (the component already renders the prefixed `↑` / `↓` direction glyphs on the show-page mover strip, so the syntactic precedent is in-house). A signed integer reads unambiguously as a net delta and removes the rank-vs-count confusion. Bonus: consider moving the `one vote per reader. community rank updates weekly.` rule above the figure (or breaking it into an eyebrow above + the figure below) so the meaning of the number is established before it's shown. Pin: VotePair (or VoteRowHead) colocated test cases — positive value renders with leading `+`, negative renders with leading `-`, zero renders without sign (or as `0`); update e2e fixture on `/shows/survivor/season/heroes-vs-villains` to assert the rendered numeric carries an explicit sign character. Spoiler discipline P0 unchanged (UI-format edit only). Filed once though both passes hit it — see reader.md "Coverage is union, not intersection." (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-23)
+
+- [ ] [MED] [anon] `/shows/survivor` "What changed this week" panel eyebrow reads `UPDATED THURSDAY · SENTIMENT-TAGGED`, but every rendered mover row carries only the direction glyph (↑ / ↓), the numeric delta, the season title, the "was #NN now #NN" frame, and the season number — no sentiment tag is visible anywhere in the row. The word `SENTIMENT-TAGGED` reads as a promise the surface does not deliver on. This is the same class of voice violation the bearings cue warns against ("plain sentences over clever ones") — the eyebrow earns rhetorical weight by naming a feature that doesn't render. Two ways the design can pay it off honestly: (a) remove `· SENTIMENT-TAGGED` from the eyebrow so the eyebrow reads just `UPDATED THURSDAY` (matches the existing "What changed this week" / "since last week's update" rhythm post-#242), or (b) ship the sentiment tag as a visible small chip on each row (e.g., `fans disagree`, `editor concurs`, `consensus shift`) so the eyebrow earns it. Recommended: drop the `· SENTIMENT-TAGGED` clause — sentiment tagging is meaningful product work that should land as a deliberate phase (file as a candidate in PHASE_CANDIDATES.md), not ornamental jargon in the eyebrow. Source: the mover-strip eyebrow in `ShiftsRow.tsx` or the parent show-page component that composes the panel header. Fix: locate the eyebrow literal (`Updated Thursday · sentiment-tagged` CSS-uppercased) and trim the second clause. Pin with a colocated test asserting the eyebrow no longer contains `/sentiment/i` and never re-renders the orphan separator dot, plus a negative `content-check` assertion on any future mover-strip surface. (URL: /shows/survivor, source: critique-pass-23)
+
+- [ ] [MED] [anon] `/shows/survivor` carries two numbered enumerations in close vertical proximity that collide for a scanning reader: the canon/community tab pair labeled `01 Editor's Canon CURATED / 02 Community LIVE` (positioned as the show-page primary surface), then immediately below, the methodology block restarts at `01 · WHO / Who ranks? / ... / 02 · HOW / How do we weigh it? / ... / 03 · WHEN`. A reader scanning vertically reads `01 Editor's Canon` then `01 · WHO` — two `01`s separated by only a few hundred pixels, with no visible parent grouping that explains they belong to different lists. The visual register difference (the tab pair uses lockup labels, the methodology block uses an eyebrow `·` separator) is too subtle to make the structural separation obvious on first read. Two clean fixes: (a) drop the `01 / 02` numbering on the canon/community tab pair (use the labels `Editor's Canon / Community` directly — the position prefixes don't carry navigation value when there are only two items), or (b) change the methodology block to a non-numeric scheme (`WHO · HOW · WHEN` without the digit prefixes, since the section's editorial work is to *name* the three lenses, not to *order* them). Recommended: (a) — drop the canon/community numbering. The tab pair already enjoys typographic weight as the page's primary navigation; the `01 / 02` prefixes add visual noise and create the collision. Locate: `CanonTabSwitch.tsx` (the `01 Editor's Canon` / `02 Community` labels). Pin with a colocated test asserting the tab labels render without the leading digit prefix and that the methodology block's `01 · WHO` is the only `01` on the page. Bonus regression guard: a content-check invariant flagging any page surface where two `01` strings render within N vertical pixels of each other (over-engineered for now; revisit if other surfaces grow numbered duals). (URL: /shows/survivor, source: critique-pass-23)
+
+- [ ] [MED] [authed] Mobile chrome at 375px renders the full nav row inline — `tiered.tv / Shows / Lists / About / ⌕ Search / @e2e / Sign out` — with no hamburger collapse and `Sign out` exposed as a top-bar text link on every authed page. The text technically fits within the 375px viewport (scrollWidth === innerWidth, no horizontal scroll, mechanical reflow gate stays clean), but it puts a one-tap-away destructive action immediately beside the user handle on a small touch target, on every page. A user mis-tapping `@e2e` (intending to land on their own profile) and hitting `Sign out` instead is a real and recoverable-but-annoying error class — they re-auth via magic link, which takes a minute and may interrupt a vote or comment in flight. Two reasonable mobile UX fixes: (a) move `Sign out` behind the `@e2e` handle (the handle becomes a tap-to-reveal small menu with `Your record` and `Sign out` as the two items), so the top bar holds nav links only and signing out requires a second deliberate tap; or (b) collapse all secondary chrome behind a hamburger menu at < 480px breakpoint, which is the broader pattern but a bigger styling shift. Recommended: (a) — scoped to the user-island, no broader chrome refactor. The desktop chrome can keep `@e2e / Sign out` inline because the touch target is larger and the visual hierarchy is clearer. Locate: the auth-island component the phase-36 work hydrated (header right-side user controls). Pin: e2e assertion at 375px that `Sign out` is not rendered as a direct top-bar text link when the auth state is `authed` (it should be inside an expanded panel on tap of the handle). Spoiler discipline P0 unchanged (chrome composition only). (URL: / + every authed page, viewport: mobile, source: critique-pass-23)
+
+- [ ] [LOW] [authed] On `/shows/survivor/season/heroes-vs-villains` the authed comment-thread empty state reads `No comments yet. Weigh in on the season itself.` (rendered below the compose box for a signed-in user who has just opened the page and no comments have been published yet). The qualifier `on the season itself` reads as if there is somewhere else one could weigh in on something other than the season (the show? the canon slot? the franchise?). On a season page where the entire thread is scoped to that season, `itself` does not earn its place — it reads slightly arch, in the same voice-violation class as the pass-23 `SENTIMENT-TAGGED` finding ("plain sentences over clever ones"). Two clean trims: (a) `No comments yet. Be the first to weigh in.` (positive CTA, peer voice), or (b) `No comments yet. Open the thread.` (action-oriented, terse). Recommended: (a) — the "be the first to" frame echoes how the authed user is already invited to participate elsewhere on the page (the CAST VOTE button reads as the same kind of invitation), and matches the welcoming-peer register the bearings voice cue names. Locate: `CommentThreadLive.tsx` or the comment-thread empty-state composition that renders alongside `CommentInput` in the authed branch. Pin: colocated test asserting the empty-state text contains `Be the first to weigh in` and does not contain `/itself/i` (regression pin against the awkward qualifier). Spoiler discipline P0 unchanged (copy edit only). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-23)
 
 - [ ] [LOW] [authed] On `/u/[handle]` self-view the zeroed stat row renders in the order `0 COMMENTS / 0 SEASONS VOTED / 0 SHOWS FOLLOWED` — comments lead, votes are second. tiered.tv's brand mechanic is one-vote-per-season (the home Community Rank pane, every season page's vote prompt, and the empty-state CTA on this same page all foreground voting), so leading the stat row with COMMENTS misorders the participation hierarchy on the member's own record page. The empty-state line directly below the stat row reads `Nothing on the public record yet. Vote on a season and it will land here. / Start with Survivor →` — voting-first framing in the prose, comments-first in the stats two paragraphs apart. The contradiction is small but visible reading top-down. Suggested fix: reorder the three stat cells in `src/components/profile/ProfileStats.tsx` (or wherever the row is composed) to `SEASONS VOTED → COMMENTS → SHOWS FOLLOWED`. Aligns with the page's own voting-first empty-state and the site-wide voting-first mechanic. Single-component edit; update the colocated `ProfileStats.test.tsx` order assertion in the same commit. Spoiler P0 unchanged (UI-order edit only). (URL: /u/e2e, source: critique-pass-22)
 
