@@ -8,7 +8,7 @@ palette:
 seasons: 22
 status: airing
 blurb: "22 seasons. Knives drawn, herbs fresh."
-tagline: "22 seasons of professional cooks in unfamiliar kitchens. Ranked by people who actually liked the food."
+tagline: "22 seasons of professional cooks in unfamiliar kitchens, racing Quickfires and Eliminations toward the dining-room reckoning of Restaurant Wars. The format that took food seriously first, and still sets the bar every culinary competition gets measured against."
 tier: A
 network: "Bravo"
 est_year: 2006

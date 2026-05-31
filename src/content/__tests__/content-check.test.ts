@@ -1404,9 +1404,13 @@ describe('content-check — templated tagline tail (critique pass-12)', () => {
   })
 
   it('passes a tagline that uses a different "ranked" construction', () => {
-    // Top Chef's actual closer — "Ranked by people who actually liked
-    // the food." — uses "ranked" but not the templated "without
-    // <verb> a single <noun>." shape. Must not be flagged.
+    // A "Ranked by …" construction uses "ranked" but not the
+    // templated "Ranked without <verb> a single <noun>." shape.
+    // Must not be flagged. (Historical fixture — Top Chef's tagline
+    // was rewritten in pass-21 to match A-tier sibling density and no
+    // longer carries this exact closer; the synthetic fixture stays
+    // here to pin the regex's behavior on non-templated "Ranked by"
+    // constructions in case a future tagline reaches for the shape.)
     makeShowWithRawTagline(
       tmp,
       'top-chef-shape',
