@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-31 at commit 571e3b2
-> Pass count: 14
+> Last pass: 2026-05-31 at commit b69a2b2
+> Pass count: 15
 
 ## Considered (awaiting promotion)
 
@@ -101,6 +101,93 @@ stragglers beyond the one demo to allowlist.
 **Conflicts:** none. Hardens an existing non-negotiable standing
 rule across its last uncovered tree; no URL change, no schema
 change. Directly extends Phase 42's precedent.
+
+<!-- Pass 15 (2026-05-31, commit b69a2b2) — no new candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 14
+       cleared each row in the same iterate cycle it filed —
+       #pass-20-LOW themes-hero singular/plural drift, #pass-20-LOW
+       season WHERE-IT-SITS "neighbors below" overload, #pass-20-LOW
+       /themes featured-duplication, #pass-21-LOW /themes featured
+       subhead, #pass-21-LOW /themes filter-mode CTA→status, #pass-22
+       MED /shows community-pane "recompute" voice scrub, #pass-22
+       LOW /about vote-affordance copy ([+]/[−]→up/down), #pass-22
+       HIGH /about voting copy single-binary mechanic. No row carried
+       over.
+     - CRITIQUE.md: 5 Pending rows from passes 21+22 — 1 LOW + 4 MED.
+       (1) [MED, anon] /shows/survivor/season/heroes-vs-villains
+       WHAT-TO-WATCH-FOR LATE callout body uses "ethnographic labor"
+       — academic-register break vs. plain-speech siblings. Single
+       `watch_list[3].body` content edit. (2) [MED, anon] /themes
+       hero stat reads `12 LISTS` while the chip below reads
+       `SHOWING · ALL 9 LISTS` (post-#253 featured-dedup math
+       — 3 + 9 = 12); fix is split-into-two-numbers or one-side
+       reconciliation. Single component edit + tiny `getThemeStats()`
+       field. (3) [MED, authed] season VotePair CTA button label
+       `CAST YOURS` — possessive-elision fragment, sole clever
+       fragment in the authed walk vs. plain peers. Single string
+       relabel + colocated test. (4) [LOW, authed] /u/[handle]
+       self-view stat row orders comments-first while every other
+       surface foregrounds voting — reorder cells. Single component
+       edit. (5) [MED, authed] /u/[handle] is publicly addressable
+       but ships unconditional second-person `Your record` /
+       `Nothing on the public record yet` / `Start with Survivor →`
+       copy regardless of viewer identity; `ProfileEmpty.tsx`
+       already accepts `selfView` per #238 but the strings are not
+       gated on it. Single component edit + extend the pinned
+       copy tests. All five are single-tick `/iterate` polish targets.
+       No cluster ≥3 HIGH on the same family; no class-pattern beyond
+       what phases 41 + 43 already drained. Three of the five sit in
+       the editorial-copy-honesty family Phase 43's
+       `YEAR_TENURE_STRICT` invariant covers for year/tenure but
+       does not generalize over (voice register, CTA verb shape,
+       second-person-when-public) — declined to file a structural
+       candidate because the cases are heterogeneous (each fix is a
+       different invariant shape: copy register vs. plural-noun
+       relabel vs. selfView-prop gating) and the per-tick polish
+       drain has been keeping up since pass 14 (8 fix commits in 20
+       commits is on the healthy side of reactive, not the
+       phase-42-precedent reactive flood).
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring blocked
+       on the cloud GitHub App's missing `workflows` permission —
+       known, intentional, awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice surfaces are stable.
+     - Commit pattern: 20 commits since pass 14 — 2 critique passes
+       (21 95c76dc, 22 627342d), 8 critique/audit drain pairs
+       covering pass-20 LOW + pass-21 LOW + pass-22 LOW/MED/HIGH
+       findings (themes-hero singular/plural e0e84c0, season
+       WHERE-IT-SITS overload e6ddf5a, themes featured-dedup
+       1344e77, themes featured subhead e6466c2, themes
+       filter-mode-CTA→status 61ff81d, /shows community-pane
+       recompute scrub 7bcec01, /about vote-affordance copy
+       eac1163, /about voting copy single-binary 8cc9331), 1
+       content polish (Top Chef tagline e38fa1d). All anticipated
+       drains from already-shipped phases; no rogue refactor
+       surface, no 5+ fix-class cluster on one file. The /about-
+       page-twin drain (eac1163 + 8cc9331) is the closest thing
+       to a cluster — both surfaces in the same `/about` file in
+       one critique window — but the root cause is the same kind
+       of copy/UI drift that Phase 43's strict invariant catches
+       for year/tenure; declined to file a candidate to extend
+       the invariant to `/about` body text specifically because
+       the surface set is bounded (3 legal pages) and the next
+       drift would be flagged at the next critique pass before it
+       compounds.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) still awaits /oversight promotion. #03 (Newsletter,
+       score 3.0) still gated on S1 (domain swap). No change.
+
+     One real structural candidate (#11) still awaits oversight;
+     this pass surfaces no new structural shape. The five pending
+     critique findings are heterogeneous single-tick `/iterate`
+     polish targets, not a class-pattern that warrants a phase.
+     The build plan stays in its clean re-exhausted state.
+     Bumping metadata; awaiting the next pass' cadence window for
+     fresh structural signals to accumulate. -->
 
 <!-- Pass 13 (2026-05-30, commit d24f1b5) — no new candidates filed.
      Signals reviewed:
