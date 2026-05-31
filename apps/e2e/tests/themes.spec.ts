@@ -10,7 +10,25 @@ test.describe('/themes index (phase 19g shape)', () => {
     await expect(page.locator('h1')).toContainText(/Themed lists/i)
     const stats = page.getByTestId('lists-hero-stats')
     await expect(stats).toBeVisible()
-    await expect(page.getByTestId('lists-stat-total')).toContainText(/\d+/)
+    // Critique pass-22 #261: when the page surfaces a "Featured this month"
+    // rail, the hero splits its catalog count into FEATURED + IN THE INDEX
+    // so the filter chip below (which counts the index, not the rail) is
+    // narratively continuous. When no theme carries `featured: true`, the
+    // hero falls back to a single LISTS stat.
+    const featuredCount = await page.getByTestId('lists-stat-featured').count()
+    if (featuredCount > 0) {
+      await expect(page.getByTestId('lists-stat-featured')).toContainText(/\d+/)
+      await expect(page.getByTestId('lists-stat-featured')).toContainText(
+        /featured/i,
+      )
+      await expect(page.getByTestId('lists-stat-index')).toContainText(/\d+/)
+      await expect(page.getByTestId('lists-stat-index')).toContainText(
+        /in the index/i,
+      )
+      await expect(page.getByTestId('lists-stat-total')).toHaveCount(0)
+    } else {
+      await expect(page.getByTestId('lists-stat-total')).toContainText(/\d+/)
+    }
     await expect(page.getByTestId('lists-stat-shows')).toContainText(/\d+/)
     await expect(page.getByTestId('lists-stat-revised')).toContainText(
       /\d{4}/,
@@ -75,6 +93,43 @@ test.describe('/themes index (phase 19g shape)', () => {
     const cards = page.getByTestId('lists-featured-card')
     const count = await cards.count()
     expect(count).toBeLessThanOrEqual(3)
+  })
+
+  test('hero FEATURED count matches the featured rail; FEATURED + IN THE INDEX sums to the catalog (closes #261)', async ({
+    page,
+  }) => {
+    // Critique pass-22 #261: the hero stat "12 LISTS" disagreed with the
+    // chip "ALL 9 LISTS" below because the chip excluded the 3 featured
+    // entries. The fix splits the hero into FEATURED + IN THE INDEX so
+    // both numbers carry direct on-page referents.
+    await page.goto('/themes', { waitUntil: 'domcontentloaded' })
+    const featuredCards = page.getByTestId('lists-featured-card')
+    const railCount = await featuredCards.count()
+    if (railCount === 0) {
+      // No featured rail → hero uses the single-stat form.
+      await expect(page.getByTestId('lists-stat-featured')).toHaveCount(0)
+      await expect(page.getByTestId('lists-stat-index')).toHaveCount(0)
+      return
+    }
+    const featuredVal = Number(
+      (
+        await page
+          .getByTestId('lists-stat-featured')
+          .locator('.lists-stat-val')
+          .textContent()
+      )?.trim() ?? 'NaN',
+    )
+    const indexVal = Number(
+      (
+        await page
+          .getByTestId('lists-stat-index')
+          .locator('.lists-stat-val')
+          .textContent()
+      )?.trim() ?? 'NaN',
+    )
+    expect(featuredVal).toBe(railCount)
+    const rowCount = await page.getByTestId('lists-row').count()
+    expect(featuredVal + indexVal).toBe(railCount + rowCount)
   })
 
   test('no list slug appears in both the featured rail and the all-lists grid', async ({

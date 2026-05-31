@@ -251,7 +251,14 @@ export function getTheme(slug: string): Theme | null {
   return c.themes.get(slug) ?? null
 }
 
-export function getFeaturedThemes(limit = 3): Theme[] {
+// Cap on how many `featured: true` themes the /themes "Featured this month"
+// rail surfaces. Used by both `getFeaturedThemes` (rail rendering) and
+// `getThemeStats().featuredCount` (hero stat) so the hero's split numbers
+// (`{featuredCount} FEATURED · {total - featuredCount} IN THE INDEX`) stay
+// in lockstep with what the rail actually renders.
+export const LISTS_FEATURED_RAIL_LIMIT = 3
+
+export function getFeaturedThemes(limit: number = LISTS_FEATURED_RAIL_LIMIT): Theme[] {
   return getAllThemes()
     .filter((t) => t.featured)
     .slice(0, limit)
@@ -300,6 +307,7 @@ export function getRelatedThemes(theme: Theme, limit = 2): Theme[] {
 
 export type ThemeStats = {
   total: number
+  featuredCount: number
   totalEntries: number
   showsCovered: number
   crossCanonCount: number
@@ -313,9 +321,11 @@ export function getThemeStats(): ThemeStats {
   let totalEntries = 0
   let crossCanonCount = 0
   let singleShowCount = 0
+  let featuredFlagged = 0
   let lastIndexRevision = ''
   for (const t of themes) {
     totalEntries += t.entries.length
+    if (t.featured) featuredFlagged += 1
     const perListShows = new Set<string>()
     for (const e of t.entries) {
       shows.add(e.show)
@@ -327,6 +337,7 @@ export function getThemeStats(): ThemeStats {
   }
   return {
     total: themes.length,
+    featuredCount: Math.min(featuredFlagged, LISTS_FEATURED_RAIL_LIMIT),
     totalEntries,
     showsCovered: shows.size,
     crossCanonCount,

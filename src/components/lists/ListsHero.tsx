@@ -57,10 +57,23 @@ export function ListsHero({ stats }: ListsHeroProps) {
       </h1>
       <p className="lists-hero-lede">{lede}</p>
       <div className="lists-hero-stats" data-testid="lists-hero-stats">
-        <div className="lists-stat" data-testid="lists-stat-total">
-          <div className="lists-stat-val">{stats.total}</div>
-          <div className="lists-stat-key">{plural(stats.total, 'List', 'Lists')}</div>
-        </div>
+        {stats.featuredCount > 0 ? (
+          <>
+            <div className="lists-stat" data-testid="lists-stat-featured">
+              <div className="lists-stat-val">{stats.featuredCount}</div>
+              <div className="lists-stat-key">Featured</div>
+            </div>
+            <div className="lists-stat" data-testid="lists-stat-index">
+              <div className="lists-stat-val">{stats.total - stats.featuredCount}</div>
+              <div className="lists-stat-key">In the index</div>
+            </div>
+          </>
+        ) : (
+          <div className="lists-stat" data-testid="lists-stat-total">
+            <div className="lists-stat-val">{stats.total}</div>
+            <div className="lists-stat-key">{plural(stats.total, 'List', 'Lists')}</div>
+          </div>
+        )}
         <div className="lists-stat" data-testid="lists-stat-shows">
           <div className="lists-stat-val">{stats.showsCovered}</div>
           <div className="lists-stat-key">Shows covered</div>

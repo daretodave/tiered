@@ -46,6 +46,7 @@ const EXPECTED_RUNTIME_KEYS = [
   'getTheme',
   'getThemeStats',
   'getThemesByCategory',
+  'LISTS_FEATURED_RAIL_LIMIT',
   'loadAllContent',
   'setContentRoot',
 ] as const
@@ -68,6 +69,9 @@ describe('@/content barrel — runtime re-exports', () => {
       expect(barrel.getTheme).toBe(loadersModule.getTheme)
       expect(barrel.getThemeStats).toBe(loadersModule.getThemeStats)
       expect(barrel.getThemesByCategory).toBe(loadersModule.getThemesByCategory)
+      expect(barrel.LISTS_FEATURED_RAIL_LIMIT).toBe(
+        loadersModule.LISTS_FEATURED_RAIL_LIMIT,
+      )
       expect(barrel.loadAllContent).toBe(loadersModule.loadAllContent)
     })
 
@@ -86,7 +90,7 @@ describe('@/content barrel — runtime re-exports', () => {
   })
 
   describe('public-surface key snapshot', () => {
-    it('exposes exactly the documented 20 runtime keys, nothing more, nothing less', () => {
+    it('exposes exactly the documented 21 runtime keys, nothing more, nothing less', () => {
       const keys = Object.keys(barrel).sort()
       expect(keys).toEqual([...EXPECTED_RUNTIME_KEYS].sort())
     })
@@ -122,6 +126,16 @@ describe('@/content barrel — runtime re-exports', () => {
       for (const key of functionExports) {
         expect(typeof barrel[key]).toBe('function')
       }
+    })
+
+    it('LISTS_FEATURED_RAIL_LIMIT is a positive integer (number-shaped, not a function/object)', () => {
+      // Pin the type so a future refactor that swaps the constant for a
+      // helper function or a config object doesn't silently break the
+      // hero stat math (`featured + index = total` invariant in
+      // ListsHero).
+      expect(typeof barrel.LISTS_FEATURED_RAIL_LIMIT).toBe('number')
+      expect(Number.isInteger(barrel.LISTS_FEATURED_RAIL_LIMIT)).toBe(true)
+      expect(barrel.LISTS_FEATURED_RAIL_LIMIT).toBeGreaterThan(0)
     })
 
     it('ContentValidationError is the constructable Error subclass (not a stale value)', () => {

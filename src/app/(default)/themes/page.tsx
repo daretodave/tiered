@@ -6,6 +6,7 @@ import {
   getShowsForTheme,
   getThemeStats,
   getThemesByCategory,
+  LISTS_FEATURED_RAIL_LIMIT,
 } from '@/content'
 import type { Show, Theme, ThemeCategory } from '@/content'
 import { Wrap } from '@/components/chrome/Wrap'
@@ -41,7 +42,7 @@ export default function ThemesIndexPage() {
   const themes = getAllThemes()
   const stats = getThemeStats()
   const byCategory = getThemesByCategory()
-  const featured = getFeaturedThemes(3)
+  const featured = getFeaturedThemes(LISTS_FEATURED_RAIL_LIMIT)
 
   const showsByTheme: Record<string, Show[]> = {}
   for (const t of themes) showsByTheme[t.slug] = resolveShows(t)

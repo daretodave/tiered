@@ -511,6 +511,7 @@ describe('loaders', () => {
     )
     expect(getThemeStats()).toEqual({
       total: 2,
+      featuredCount: 0,
       totalEntries: 3,
       showsCovered: 2,
       crossCanonCount: 1,
@@ -529,6 +530,42 @@ describe('loaders', () => {
     expect(stats.crossCanonCount).toBe(0)
     expect(stats.singleShowCount).toBe(2)
     expect(stats.showsCovered).toBe(1)
+  })
+
+  it('getThemeStats reports featuredCount capped at LISTS_FEATURED_RAIL_LIMIT', async () => {
+    // Pin the contract: featuredCount mirrors what the page's "Featured this
+    // month" rail renders — i.e. min(featured-flag-count, 3). Critique
+    // pass-22 finding #261 (hero "12 LISTS" vs filter chip "9 LISTS") fixes
+    // by splitting the hero stat into FEATURED + IN THE INDEX, and the
+    // split number must match the page's actual rail length.
+    const { LISTS_FEATURED_RAIL_LIMIT } = await import('../loaders')
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    for (const slug of ['a', 'b', 'c', 'd', 'e']) {
+      makeTheme(tmp, slug, [{ show: 'alpha', season: 1, rank: 1 }], {
+        featured: true,
+      })
+    }
+    makeTheme(tmp, 'f', [{ show: 'alpha', season: 1, rank: 1 }], {
+      featured: false,
+    })
+    expect(LISTS_FEATURED_RAIL_LIMIT).toBe(3)
+    const stats = getThemeStats()
+    expect(stats.total).toBe(6)
+    expect(stats.featuredCount).toBe(LISTS_FEATURED_RAIL_LIMIT)
+    // The split FEATURED + IN THE INDEX must always sum back to total.
+    expect(stats.featuredCount + (stats.total - stats.featuredCount)).toBe(
+      stats.total,
+    )
+  })
+
+  it('getThemeStats reports featuredCount=0 when no theme carries the featured flag', () => {
+    makeShow(tmp, 'alpha', 'Alpha')
+    makeSeason(tmp, 'alpha', 1, 'One')
+    makeTheme(tmp, 'a', [{ show: 'alpha', season: 1, rank: 1 }])
+    makeTheme(tmp, 'b', [{ show: 'alpha', season: 1, rank: 1 }])
+    const stats = getThemeStats()
+    expect(stats.featuredCount).toBe(0)
   })
 
   it('getThemeStats reports singleShowCount=0 when every list spans multiple shows', () => {

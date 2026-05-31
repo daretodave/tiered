@@ -14,6 +14,7 @@ export {
   getTheme,
   getThemeStats,
   getThemesByCategory,
+  LISTS_FEATURED_RAIL_LIMIT,
   loadAllContent,
 } from './loaders'
 

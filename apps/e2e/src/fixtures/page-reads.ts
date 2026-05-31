@@ -113,7 +113,13 @@ export const pageReads: Record<string, PageReadAssertion> = {
       '[data-testid=wrap]',
       '[data-testid=lists-hero]',
       '[data-testid=lists-hero-stats]',
-      '[data-testid=lists-stat-total]',
+      // Critique pass-22 #261: hero splits the catalog count into
+      // FEATURED + IN THE INDEX while the page has a featured rail (the
+      // production case today — 3 featured themes). The single-stat
+      // `lists-stat-total` form returns only when no theme carries
+      // `featured: true`, which the colocated unit test covers.
+      '[data-testid=lists-stat-featured]',
+      '[data-testid=lists-stat-index]',
       '[data-testid=lists-stat-shows]',
       '[data-testid=lists-stat-revised]',
       '[data-testid=lists-filter-bar]',

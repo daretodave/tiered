@@ -3,11 +3,12 @@ import { describe, expect, it } from 'vitest'
 import { ListsHero } from '../ListsHero'
 
 describe('<ListsHero>', () => {
-  it('renders the three stats from fixture data', () => {
+  it('renders the three stats from fixture data (no featured)', () => {
     render(
       <ListsHero
         stats={{
           total: 23,
+          featuredCount: 0,
           totalEntries: 100,
           showsCovered: 3,
           crossCanonCount: 23,
@@ -18,6 +19,8 @@ describe('<ListsHero>', () => {
     )
     expect(screen.getByTestId('lists-stat-total').textContent).toContain('23')
     expect(screen.getByTestId('lists-stat-total').textContent).toContain('Lists')
+    expect(screen.queryByTestId('lists-stat-featured')).toBeNull()
+    expect(screen.queryByTestId('lists-stat-index')).toBeNull()
     expect(screen.getByTestId('lists-stat-shows').textContent).toContain('3')
     expect(screen.getByTestId('lists-stat-shows').textContent).toContain(
       'Shows covered',
@@ -30,6 +33,85 @@ describe('<ListsHero>', () => {
     )
   })
 
+  it('splits the hero stat into FEATURED + IN THE INDEX when featuredCount > 0 (critique-pass-22 #261 — closes "12 LISTS vs 9 LISTS" mismatch)', () => {
+    // The page's filter chip shows the catalog minus the featured rail
+    // (`byCategoryRest`, post-#253 dedupe), so a single "12 LISTS" hero
+    // stat reads as a contradiction when the chip below says "9 LISTS".
+    // The split makes both numbers narratively continuous with the
+    // page's structure (rail + index = catalog).
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          featuredCount: 3,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const featured = screen.getByTestId('lists-stat-featured')
+    const index = screen.getByTestId('lists-stat-index')
+    expect(featured.textContent).toContain('3')
+    expect(featured.textContent).toContain('Featured')
+    expect(index.textContent).toContain('9')
+    expect(index.textContent).toContain('In the index')
+    // The single-stat form must NOT also render — the split replaces it.
+    expect(screen.queryByTestId('lists-stat-total')).toBeNull()
+  })
+
+  it('featured + index sums to the catalog total (split invariant)', () => {
+    // Pin the math: critique pass-22's finding hinges on the user being
+    // able to add the two visible numbers and recover the catalog size.
+    const stats = {
+      total: 12,
+      featuredCount: 3,
+      totalEntries: 50,
+      showsCovered: 6,
+      crossCanonCount: 11,
+      singleShowCount: 1,
+      lastIndexRevision: '2026-05-01',
+    } as const
+    render(<ListsHero stats={stats} />)
+    const featuredVal = Number(
+      screen
+        .getByTestId('lists-stat-featured')
+        .querySelector('.lists-stat-val')?.textContent,
+    )
+    const indexVal = Number(
+      screen
+        .getByTestId('lists-stat-index')
+        .querySelector('.lists-stat-val')?.textContent,
+    )
+    expect(featuredVal + indexVal).toBe(stats.total)
+  })
+
+  it('falls back to a single "N LISTS" stat when featuredCount is 0', () => {
+    // The split only earns its keep when the page has a featured rail. If
+    // no theme carries `featured: true`, the chip below reads the full
+    // catalog and the single-stat form matches; the split would invent a
+    // zero ("0 FEATURED") with no on-page referent.
+    render(
+      <ListsHero
+        stats={{
+          total: 7,
+          featuredCount: 0,
+          totalEntries: 30,
+          showsCovered: 4,
+          crossCanonCount: 7,
+          singleShowCount: 0,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    expect(screen.getByTestId('lists-stat-total').textContent).toContain('7')
+    expect(screen.getByTestId('lists-stat-total').textContent).toContain('Lists')
+    expect(screen.queryByTestId('lists-stat-featured')).toBeNull()
+    expect(screen.queryByTestId('lists-stat-index')).toBeNull()
+  })
+
   it('stamps the index-revised value as calendar "Month YYYY" — matches the /shows hero shape, never a bare year', () => {
     // Critique pass-19: /themes rendered "2026" while /shows rendered
     // "May 2026" — density mismatch across the two IA hubs. Pin the
@@ -39,6 +121,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 11,
@@ -59,6 +142,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 4,
           crossCanonCount: 12,
@@ -85,6 +169,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 11,
@@ -111,6 +196,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 11,
@@ -133,6 +219,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 10,
@@ -153,6 +240,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 1,
@@ -172,6 +260,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 6,
           crossCanonCount: 11,
@@ -190,6 +279,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 12,
+          featuredCount: 0,
           totalEntries: 50,
           showsCovered: 1,
           crossCanonCount: 0,
@@ -218,6 +308,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 1,
+          featuredCount: 0,
           totalEntries: 1,
           showsCovered: 1,
           crossCanonCount: 0,
@@ -234,6 +325,7 @@ describe('<ListsHero>', () => {
       <ListsHero
         stats={{
           total: 1,
+          featuredCount: 0,
           totalEntries: 1,
           showsCovered: 1,
           crossCanonCount: 0,
