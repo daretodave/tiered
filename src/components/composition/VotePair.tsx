@@ -13,6 +13,20 @@ function asVoteValue(n: unknown): VoteValue {
   return n === 1 ? 1 : n === -1 ? -1 : 0
 }
 
+// Critique pass-23: the count cell used to render the bare integer
+// (`1`, `-1`, `0`) under the label "COMMUNITY · NET VOTE", but the
+// label promises signed math while the value carried no sign — a
+// first-paint reader couldn't tell whether `1` meant "1 total vote
+// cast", "+1 net", or the season's current rank. Format positives
+// with an explicit leading `+`; negatives already render with `-`
+// from `toLocaleString()`; zero stays bare (no sign earns its place
+// for an even net).
+function signedCountText(count: number): string {
+  const n = Math.round(count)
+  const base = n.toLocaleString()
+  return n > 0 ? `+${base}` : base
+}
+
 type VotePairProps = {
   initialCount?: number
   targetType: 'season' | 'comment'
@@ -250,7 +264,7 @@ export function VotePair({
           data-testid="vote-count"
           style={numStyle}
         >
-          {Math.round(state.count).toLocaleString()}
+          {signedCountText(state.count)}
         </span>
         <span className="vote-label">{displayLabel}</span>
       </div>

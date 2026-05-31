@@ -54,7 +54,7 @@ describe('<VotePair>', () => {
 
   it('renders the initial count and renders enabled buttons', () => {
     render(<VotePair initialCount={10} targetType="season" targetId="survivor:20" />)
-    expect(screen.getByTestId('vote-count').textContent).toBe('10')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+10')
     expect(screen.getByTestId('vote-up')).toBeEnabled()
     expect(screen.getByTestId('vote-down')).toBeEnabled()
   })
@@ -62,7 +62,7 @@ describe('<VotePair>', () => {
   it('clicking up increments the count, locks both buttons, and POSTs to /api/vote', () => {
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('6')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+6')
     expect(screen.getByTestId('vote-up')).toBeDisabled()
     expect(screen.getByTestId('vote-down')).toBeDisabled()
     const postCalls = fetchMock.mock.calls.filter(
@@ -74,14 +74,14 @@ describe('<VotePair>', () => {
   it('clicking down decrements the count', () => {
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-down'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('4')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+4')
   })
 
   it('reads the viewer existing vote + true net on mount and reflects it', async () => {
     getBody = { ok: true, value: 1, count: 42 }
     render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('42')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+42')
     expect(screen.getByTestId('vote-pair').getAttribute('data-vote-value')).toBe('1')
   })
 
@@ -97,16 +97,16 @@ describe('<VotePair>', () => {
     const sent = JSON.parse((postCall?.[1] as { body: string }).body)
     expect(sent.value).toBe(0)
     // Optimistic net dropped by the prior +1.
-    expect(screen.getByTestId('vote-count').textContent).toBe('9')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+9')
   })
 
   it('reconciles the count to the server aggregate after the POST resolves', async () => {
     postBody = { ok: true, value: 1, count: 3 }
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('6') // optimistic
+    expect(screen.getByTestId('vote-count').textContent).toBe('+6') // optimistic
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('3')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+3')
   })
 
   it('a vote that races the mount fetch is not clobbered by the stale snapshot', async () => {
@@ -188,14 +188,14 @@ describe('<VotePair>', () => {
     expect(
       screen.getByTestId('vote-pair').getAttribute('data-hydrated'),
     ).toBe('true')
-    expect(screen.getByTestId('vote-count').textContent).toBe('9')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+9')
   })
 
   it('rounds any stray fractional server count to a clean integer', async () => {
     getBody = { ok: true, value: 0, count: 2.6 }
     render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('3')
+    expect(screen.getByTestId('vote-count').textContent).toBe('+3')
   })
 
   // --- pluralize-aware label (critique pass-5 LOW): the visible
@@ -220,7 +220,7 @@ describe('<VotePair>', () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
       expect(labelText()).toBe('net vote')
     })
 
@@ -395,7 +395,7 @@ describe('<VotePair>', () => {
       getBody = { ok: true, value: 0, count: 1, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
       expect(labelText()).toBe('community · net vote')
     })
 
@@ -410,7 +410,7 @@ describe('<VotePair>', () => {
       getBody = { ok: true, value: 0, count: 1, signedIn: false }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
       expect(labelText()).toBe('community · net vote')
     })
 
@@ -456,6 +456,76 @@ describe('<VotePair>', () => {
       // honest first paint for both viewer classes.
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       expect(labelText()).toBe('community · net votes')
+    })
+  })
+
+  // --- critique pass-23 #264: explicit-sign count rendering ---
+  //
+  // The label promises signed math ("NET VOTE" = upvotes − downvotes),
+  // so the rendered numeral must carry an explicit sign. A bare `1`
+  // under "COMMUNITY · NET VOTE" reads as either "1 total vote cast"
+  // or the season's rank — neither is what the widget shows. Pin:
+  // positive → leading `+`, negative → leading `-`, zero → bare.
+  describe('explicit-sign count rendering', () => {
+    function countText() {
+      return screen.getByTestId('vote-count').textContent
+    }
+
+    it('prefixes positive integers with "+"', () => {
+      render(<VotePair initialCount={1} targetType="season" targetId="survivor:20" />)
+      expect(countText()).toBe('+1')
+    })
+
+    it('prefixes larger positive integers with "+"', () => {
+      render(<VotePair initialCount={42} targetType="season" targetId="survivor:20" />)
+      expect(countText()).toBe('+42')
+    })
+
+    it('prefixes negative integers with "-" (free from toLocaleString)', () => {
+      render(<VotePair initialCount={-3} targetType="season" targetId="survivor:20" />)
+      expect(countText()).toBe('-3')
+    })
+
+    it('renders zero bare — no sign earns its place for an even net', () => {
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      expect(countText()).toBe('0')
+    })
+
+    it('signs the count after a click that flips the optimistic net positive', () => {
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      expect(countText()).toBe('0')
+      fireEvent.click(screen.getByTestId('vote-up'))
+      expect(countText()).toBe('+1')
+    })
+
+    it('signs the count after a click that flips the optimistic net negative', () => {
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      fireEvent.click(screen.getByTestId('vote-down'))
+      expect(countText()).toBe('-1')
+    })
+
+    it('regression guard: an unsigned positive integer must never render', () => {
+      // The pre-#264 bug rendered the bare integer for positives.
+      // Pin against a regression that drops the prefix.
+      render(<VotePair initialCount={7} targetType="season" targetId="survivor:20" />)
+      expect(countText()).not.toMatch(/^\d/)
+      expect(countText()).toMatch(/^[+\-0]/)
+    })
+
+    it('signs the server-reconciled count after the POST resolves (positive)', async () => {
+      postBody = { ok: true, value: 1, count: 12 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      fireEvent.click(screen.getByTestId('vote-up'))
+      await flushAsync()
+      expect(countText()).toBe('+12')
+    })
+
+    it('signs the server-reconciled count after the POST resolves (negative)', async () => {
+      postBody = { ok: true, value: -1, count: -5 }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      fireEvent.click(screen.getByTestId('vote-down'))
+      await flushAsync()
+      expect(countText()).toBe('-5')
     })
   })
 })
