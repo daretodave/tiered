@@ -17,10 +17,31 @@ export function ListsHero({ stats }: ListsHeroProps) {
       : coverage === 'cross-canon'
         ? 'Cross-canon.'
         : 'Inside one canon.'
-  const lede =
-    coverage === 'single-canon'
-      ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in. None of them spoil what they rank.`
-      : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat. Some span the catalog, some live inside one show. None of them spoil what they rank.`
+  const opener = `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat.`
+  const closer = 'None of them spoil what they rank.'
+  const middle = (() => {
+    if (coverage === 'single-canon') {
+      return 'Every list lives inside one canon today — cross-canon entries arrive as more catalogues fill in.'
+    }
+    if (coverage === 'cross-canon') {
+      return 'Some span the catalog.'
+    }
+    // Mixed mode: both counts ≥ 1. Each clause picks singular vs plural
+    // from the live count so the lede never claims "some" when there's
+    // only one (closes the same plural-drift class as #133 / critique
+    // pass-20: today's 11-cross / 1-single catalog reads "Some span the
+    // catalog, one lives inside one show.").
+    const crossPart =
+      stats.crossCanonCount === 1
+        ? 'One spans the catalog'
+        : 'Some span the catalog'
+    const singlePart =
+      stats.singleShowCount === 1
+        ? 'one lives inside one show'
+        : 'some live inside one show'
+    return `${crossPart}, ${singlePart}.`
+  })()
+  const lede = `${opener} ${middle} ${closer}`
 
   return (
     <header

@@ -102,6 +102,69 @@ describe('<ListsHero>', () => {
     expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
   })
 
+  it('singularizes "one lives inside one show" when singleShowCount is exactly 1', () => {
+    // Pin the critique-pass-20 finding: the mixed-mode lede previously
+    // hardcoded "some live inside one show" regardless of count. With
+    // exactly one single-show list (today's 11/1 catalog), "some" reads
+    // as ≥2 and contradicts the page's own SINGLE-SHOW · 1 header.
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    expect(
+      screen.getByText(/one lives inside one show/i),
+    ).toBeTruthy()
+    expect(screen.queryByText(/some live inside one show/i)).toBeNull()
+  })
+
+  it('keeps "some live inside one show" plural when singleShowCount > 1', () => {
+    // Pin the plural-branch so a future catalog growth (2+ single-show
+    // lists) keeps the same lede shape #133 / pass-20 fixed for the
+    // count=1 case.
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 10,
+          singleShowCount: 2,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    expect(screen.getByText(/some live inside one show/i)).toBeTruthy()
+    expect(screen.queryByText(/one lives inside one show/i)).toBeNull()
+  })
+
+  it('singularizes "One spans the catalog" when crossCanonCount is exactly 1 in mixed mode', () => {
+    // Symmetric to the singleShowCount=1 fix — if the catalog ever has
+    // exactly one cross-canon list alongside multiple single-show ones,
+    // the cross clause must singularize too.
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 1,
+          singleShowCount: 11,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    expect(screen.getByText(/One spans the catalog/)).toBeTruthy()
+    expect(screen.queryByText(/Some span the catalog/)).toBeNull()
+  })
+
   it('never claims "Cross-canon." alone when any single-show list is present', () => {
     // Pin the critique-pass-12 finding: H1 coverage shape must not
     // disagree with the per-list mix.
