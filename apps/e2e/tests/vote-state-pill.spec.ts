@@ -8,18 +8,21 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // someone else.
 //
 // #189 (critique pass-12) — the no-vote channel is owned by
-// <VoteRowHead>'s "cast yours" head meta. VotePair no longer
-// renders "you haven't voted" in that state to avoid
+// <VoteRowHead>'s head meta (the plain imperative). VotePair no
+// longer renders "you haven't voted" in that state to avoid
 // double-nudging the same action against the same count. The
 // pill survives as a pure post-action confirmation
 // (signed-in-with-vote → "you voted higher"/"you voted lower").
 //
 // #207 (critique pass-15) — the no-vote head meta dropped its
 // "this week" qualifier: the vote is a one-time per-reader act;
-// only the recompute is weekly. "cast yours" alone is honest.
+// only the recompute is weekly. The bare imperative is honest.
+// Critique pass-22 swapped the literal from "cast yours"
+// (possessive-elision fragment, only clever-fragment CTA on
+// the authed walk) to the plain "cast vote".
 //
 // #190 (critique pass-13) + #199 (critique pass-14) — when the
-// head reads "Your vote / cast yours" the count's
+// head reads "Your vote / cast vote" the count's
 // label must qualify the number's source: a plain "1 NET VOTE"
 // reads ambiguously (community total vs. personal). The label
 // gains a "community · " prefix in the unacted state for BOTH
@@ -102,15 +105,17 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     const label = page.getByTestId('vote-pair').locator('.vote-label')
     if (api.value === 0) {
       await expect(label).toHaveText(/^community · /)
-      // #207 (pass-15): the signed-in-no-vote head meta reads
-      // "cast yours" with no "this week" qualifier — the vote is a
-      // one-time per-reader act; only the recompute is weekly.
+      // #207 (pass-15): the signed-in-no-vote head meta carries the
+      // bare imperative with no "this week" qualifier — the vote is
+      // a one-time per-reader act; only the recompute is weekly.
+      // Pass-22 swapped the literal from "cast yours" (clever-
+      // fragment elision) to the plain "cast vote".
       const head = page.getByTestId('vote-row-head')
       await expect(head).toHaveAttribute(
         'data-vote-head-state',
         'signed-in-no-vote',
       )
-      await expect(head.locator('.meta')).toHaveText('cast yours')
+      await expect(head.locator('.meta')).toHaveText('cast vote')
     } else {
       await expect(label).not.toHaveText(/^community · /)
     }

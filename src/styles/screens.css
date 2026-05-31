@@ -617,7 +617,7 @@
 /* #160 + #189: signed-in members who have voted get a state pill
    above the buttons confirming which side ("you voted higher" /
    "you voted lower"). The no-vote channel is owned by VoteRowHead's
-   "cast yours" head meta — rendering "you haven't voted"
+   "cast vote" head meta — rendering "you haven't voted"
    here would double-nudge the same action against the same count.
    Color tracks vote sentiment — warm primary for voted-up, cool hold
    for voted-down — mirroring the community pill + shield stack. */

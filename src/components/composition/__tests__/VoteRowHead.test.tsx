@@ -65,11 +65,18 @@ describe('<VoteRowHead>', () => {
     const head = screen.getByTestId('vote-row-head')
     expect(head.getAttribute('data-vote-head-state')).toBe('signed-in-no-vote')
     expect(head).toHaveTextContent('Your vote')
-    expect(head).toHaveTextContent('cast yours')
+    expect(head).toHaveTextContent('cast vote')
     // The vote is a one-time per-reader act; only the recompute is
     // weekly. The meta must not carry a "this week" qualifier that
     // would read as a time-windowed ballot (critique pass-15).
     expect(head).not.toHaveTextContent('this week')
+    // Critique pass-22: the prior "cast yours" possessive-elision
+    // fragment was the only clever-fragment CTA on the entire
+    // authed walk and broke plan/bearings's "plain sentences over
+    // clever ones" cue. Negative-pin the regression so a future
+    // edit cannot silently reintroduce the elision form without
+    // tripping the unit gate.
+    expect(head.textContent ?? '').not.toMatch(/cast yours/i)
   })
 
   it('swaps to the signed-in-with-vote copy when signedIn=true and value=1', async () => {

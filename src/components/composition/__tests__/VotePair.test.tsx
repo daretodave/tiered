@@ -284,7 +284,7 @@ describe('<VotePair>', () => {
   //
   // Signed-in members who HAVE voted get a state pill above the
   // buttons confirming which side they voted; signed-in members
-  // who have NOT voted get NO pill — the head meta "cast yours"
+  // who have NOT voted get NO pill — the head meta "cast vote"
   // (VoteRowHead, signed-in-no-vote state) owns that
   // imperative, so rendering "you haven't voted" here would
   // double-nudge the same action against the same count. Anon
@@ -311,7 +311,7 @@ describe('<VotePair>', () => {
     })
 
     it('the no-vote state never surfaces "you haven\'t voted" — pin against #189 regression', async () => {
-      // Pass-12 #189: the head ("cast yours") and the
+      // Pass-12 #189: the head ("cast vote") and the
       // pill ("you haven't voted") used to both ship to the
       // signed-in-no-vote viewer. The pill is now silent in that
       // state; this assertion pins that the redundant string
@@ -372,7 +372,7 @@ describe('<VotePair>', () => {
   // --- #190 (critique pass-13) + #199 (critique pass-14):
   // community-source qualifier on the count's label for the
   // unacted reader (anon OR authed, value === 0). The head
-  // ("cast yours") owns the imperative; the label here
+  // ("cast vote") owns the imperative; the label here
   // owns the *source* of the rendered number so "1 net vote"
   // isn't read as "you have 1 net vote" — and, for the anon
   // first-paint reader, isn't read as the same shape as the

@@ -165,7 +165,7 @@ export function VotePair({
   // — the displayed count is already announced by the count cell.
   const baseLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
   // Critique pass-13 #190 / pass-14 #199: with the VoteRowHead
-  // reading "Your vote / cast yours" and the count
+  // reading "Your vote / cast vote" and the count
   // rendering "N net vote(s)", an unacted reader can't tell
   // whether N is the community total or a (yet-uncast) personal
   // value. The pass-13 fix scoped the qualifier to authed-only on
@@ -182,7 +182,7 @@ export function VotePair({
 
   // State pill copy (#160): only surfaces for signed-in members
   // who have actually voted. The signed-in-no-vote channel is
-  // owned by <VoteRowHead>'s "cast yours" head meta
+  // owned by <VoteRowHead>'s "cast vote" head meta
   // — rendering "you haven't voted" here would double-nudge the
   // same action against the same count (critique pass-12 #189).
   // The pill survives as a pure post-action confirmation.
