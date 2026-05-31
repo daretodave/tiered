@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Mid · merge"
     body: "The first ten minutes after the merge are the cleanest piece of reality-TV staging the show has ever shot. No music, no inserts."
   - episode_label: "Late · third act"
-    body: "The cold-open of the late-game stretch is doing real ethnographic labor — staging, blocking, who's eating where. Don't blink."
+    body: "The cold-open of the late-game stretch is doing real work — staging, blocking, who's eating where. Don't blink."
 ---
 
 Twenty returnees split into two tribes by reputation, shot in
