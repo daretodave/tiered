@@ -13,8 +13,9 @@ For every show we cover, two rankings live side by side:
 
 - **Editor's Canon** — our editorial ranking, with a short
   reason per position. Confident but spoiler-safe.
-- **Community Rank** — vote-driven. Each ranked season has an
-  upvote and a downvote button; signed-in members carry the
+- **Community Rank** — vote-driven. Each season asks one
+  question: does it belong in the community top 10? Your
+  upvote or downvote answers it. Signed-in members carry the
   most weight.
 
 Browse the [shows index](/shows), pick one, and decide which
@@ -26,15 +27,17 @@ etc.).
 
 Two rankings live on every show page. The **Editor's Canon** is
 the editor's call — one person, one position per season, an
-80–120 word reason. The **Community Rank** is yours, weighted
-by how long your account has been around.
+80–120 word reason. The **Community Rank** is yours.
 
-Anonymous-guest votes count at 0.1×. Authenticated users with
-accounts under 7 days old count at 0.25×. Authenticated users
-7+ days old count at 1.0×. One live vote per season per
-session; flip it whenever you change your mind. Brigade
-rate-limits run behind the scenes and should never bite a
-normal reader.
+Every season asks one question — does it belong in the community
+top 10? — and your upvote or downvote answers it. One vote per
+reader per season. Change your mind within 72 hours; after that
+the vote locks. The community rank updates weekly.
+
+Long-standing accounts carry the most weight. Anonymous-guest
+votes count at 0.1×. Accounts under 7 days old count at 0.25×.
+Accounts 7+ days old count at 1.0×. Brigade rate-limits run
+behind the scenes and should never bite a normal reader.
 
 ## Spoilers policy {#spoilers}
 

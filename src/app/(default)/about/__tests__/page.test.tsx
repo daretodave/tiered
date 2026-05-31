@@ -20,26 +20,60 @@ describe('/about page module', () => {
   })
 })
 
-// Iterate finding #257 (issue #257): the prior copy described the
-// VotePair as a `[+]` and `[−]` button pair, but the live UI ships
-// up and down arrow buttons (chevron SVGs flanking a net-vote
-// count) per src/components/composition/VotePair.tsx and the
-// binding design source design/compositions/interactions.jsx. The
-// new copy describes the actual affordance ("upvote and a downvote
-// button"). This pin is bidirectional — asserts the new phrasing
-// AND the absence of the old glyphs — matching the critique-pass-19
-// #242 closure pattern (17ef819) so a future authoring pass cannot
-// silently reintroduce the affordance drift.
-describe('content/legal/about.md vote-affordance copy (#257)', () => {
-  it('describes the live VotePair as upvote / downvote buttons', () => {
+// Iterate finding #258 (issue #258): the prior `/about` "How voting
+// works" section described a per-session, unlimited-flip mechanic
+// with no mention of the post-#240 single-binary "belongs in the
+// community top 10?" framing the home + season pages now lead with.
+// New copy leads with the question (matching HomeDualCallout) and
+// pins per-reader scope + 72-hour change window + weekly recompute
+// (matching SeasonInfoCard). The weighting math stays — it is
+// accurate to the DB and /about is the granular surface where it
+// belongs. The earlier #257 closure ([+]/[−] regression guard)
+// folds into the bidirectional pins here so the prior contract
+// holds while the new one lands.
+describe('content/legal/about.md voting copy (#258, supersedes #257)', () => {
+  // Source markdown wraps at 65 cols, so positive pins use `\s+` for
+  // whitespace tolerance — the exact phrase may span a line break in
+  // the body_md (raw, pre-render) the assertions read.
+  it('leads with the single-binary "belongs in the community top 10" question (matches HomeDualCallout)', () => {
     const doc = getLegalDoc('about')
     expect(doc).not.toBeNull()
-    expect(doc?.body_md).toMatch(/upvote and a downvote button/)
+    expect(doc?.body_md).toMatch(/belong\s+in\s+the\s+community\s+top\s+10/)
   })
 
-  it('does not regress to the bracketed [+] / [−] glyphs that drifted from the live UI', () => {
+  it('describes the live VotePair as upvote / downvote (the question\'s answer)', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).toMatch(/upvote\s+or\s+downvote/)
+  })
+
+  it('pins per-reader scope (matches SeasonInfoCard voteHelp)', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).toMatch(/per\s+reader/)
+  })
+
+  it('pins the 72-hour change window (matches the season info-row "change within 72h")', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).toMatch(/72\s+hours/)
+  })
+
+  it('pins the weekly recompute cadence (matches SeasonInfoCard voteHelp)', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).toMatch(/updates\s+weekly/)
+  })
+
+  it('does not regress to the bracketed [+] / [−] glyphs that drifted from the live UI (#257)', () => {
     const doc = getLegalDoc('about')
     expect(doc?.body_md).not.toMatch(/\[\+\]/)
     expect(doc?.body_md).not.toMatch(/\[−\]/)
+  })
+
+  it('does not regress to the per-session scope claim that contradicts the live UI', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).not.toMatch(/per session/i)
+  })
+
+  it('does not regress to the unlimited-flip claim that contradicts the 72-hour window', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.body_md).not.toMatch(/flip it whenever/i)
   })
 })
