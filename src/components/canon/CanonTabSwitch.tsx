@@ -8,23 +8,27 @@ type CanonTabSwitchProps = {
   initialView: View
 }
 
+// Critique pass 23 (#266): the `01 / 02` position markers were
+// dropped — they collided with the methodology block's `01 · WHO`
+// running directly below, with no visible grouping cue separating
+// the two enumerations. With only two items, the markers add
+// ornament without navigation value; the serif tab name + curated
+// /live cap carry the differentiation. The methodology numbering
+// stays — its `01 · WHO` is now the only `01` on the canon pane.
 const TABS: Array<{
   key: View
-  marker: string
   name: string
   cap: string
   label: string
 }> = [
   {
     key: 'canon',
-    marker: '01',
     name: "Editor's Canon",
     cap: 'curated',
     label: "Editor's Canon — the curated ranking",
   },
   {
     key: 'community',
-    marker: '02',
     name: 'Community',
     cap: 'live',
     label: 'Community — the live ranking',
@@ -87,7 +91,6 @@ export function CanonTabSwitch({ initialView }: CanonTabSwitchProps) {
             data-testid={`canon-tab-${tab.key}`}
             onClick={() => activate(tab.key)}
           >
-            <span className="cp-tab-marker">{tab.marker}</span>
             <span>
               <span className="cp-tab-name">{tab.name}</span>
               <span className="cp-tab-cap">{tab.cap}</span>

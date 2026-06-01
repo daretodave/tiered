@@ -164,13 +164,6 @@
   background: color-mix(in oklab, var(--show-ink) 7%, var(--show-paper));
   color: var(--show-ink);
 }
-.cp-tab-marker {
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.12em;
-  color: var(--ink-40);
-  min-width: 18px;
-}
-.cp-tab.on .cp-tab-marker { color: var(--show-primary); }
 .cp-tab-name {
   font-family: var(--serif);
   font-weight: 500;

@@ -92,4 +92,29 @@ describe('<CanonTabSwitch>', () => {
     expect(caps[0]?.textContent).toBe('curated')
     expect(caps[1]?.textContent).toBe('live')
   })
+
+  // Critique pass 23 (#266): the `01 / 02` position markers were
+  // dropped — they collided with the methodology block's `01 · WHO`
+  // running directly below on the canon pane. Positive pins assert
+  // the serif tab names render; negative pins assert no leading
+  // digit prefix renders inside the tab buttons. A regression that
+  // reintroduces the markers fails at unit time.
+  it('renders only the serif tab name + cap inside each tab (no leading digit prefix)', () => {
+    window.history.replaceState({}, '', '/shows/survivor')
+    render(<Harness initial="canon" />)
+    const canonTab = screen.getByTestId('canon-tab-canon')
+    const communityTab = screen.getByTestId('canon-tab-community')
+
+    expect(canonTab.querySelector('.cp-tab-name')?.textContent).toBe(
+      "Editor's Canon",
+    )
+    expect(communityTab.querySelector('.cp-tab-name')?.textContent).toBe(
+      'Community',
+    )
+
+    expect(canonTab.querySelector('.cp-tab-marker')).toBeNull()
+    expect(communityTab.querySelector('.cp-tab-marker')).toBeNull()
+    expect(canonTab.textContent ?? '').not.toMatch(/^\s*0?1/)
+    expect(communityTab.textContent ?? '').not.toMatch(/^\s*0?2/)
+  })
 })
