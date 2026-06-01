@@ -73,6 +73,21 @@ describe('/sign-in generateMetadata', () => {
     expect(description).toMatch(/email/i)
   })
 
+  it("description carries the full brand wordmark 'tiered.tv' — never the truncated 'tiered.' form (CLAUDE.md hard rule 6)", () => {
+    // The brand name is `tiered.tv` — lowercase, the `.tv` is part of
+    // the wordmark, never stylized / kerned apart / dropped. Critique
+    // pass-24 caught this surface shipping `Sign in to tiered.` — a
+    // sentence-ending fullstop where the `.tv` belongs, reading as if
+    // the brand truncated mid-word. The unit gate now pins both sides:
+    // positive — the full wordmark is present; negative — the truncated
+    // `tiered.` form (a `tiered.` followed by a non-`tv` char, including
+    // whitespace or end-of-string) does not appear. A future authoring
+    // pass that re-drops the suffix trips this assertion immediately.
+    const description = String(generateMetadata().description)
+    expect(description).toContain('tiered.tv')
+    expect(description).not.toMatch(/\btiered\.(?!tv)/)
+  })
+
   it('canonical URL points at /sign-in absolute against siteConfig.baseUrl', () => {
     // The metadata flows through real buildMetadata + canonicalUrl, so
     // a regression in either layer (a trailing slash on baseUrl, a

@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Sign in',
-    description: 'Sign in to tiered. Magic link by email.',
+    description: 'Sign in to tiered.tv. Magic link by email.',
     path: '/sign-in',
     noIndex: true,
   })
