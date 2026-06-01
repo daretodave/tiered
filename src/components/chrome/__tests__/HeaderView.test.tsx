@@ -1,6 +1,12 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HeaderView } from '../HeaderView'
+
+const ASHA = {
+  handle: 'asha',
+  displayLabel: '@asha',
+  profileHref: '/u/asha',
+} as const
 
 afterEach(() => {
   vi.unstubAllGlobals()
@@ -40,6 +46,7 @@ describe('<HeaderView>', () => {
     expect(signIn).toHaveTextContent(/Sign in/i)
     expect(screen.queryByTestId('site-header-user-link')).toBeNull()
     expect(screen.queryByTestId('site-header-signout-link')).toBeNull()
+    expect(screen.queryByTestId('site-header-user-trigger')).toBeNull()
     expect(screen.getByTestId('site-header')).toHaveAttribute(
       'data-signed-in',
       'false',
@@ -47,15 +54,7 @@ describe('<HeaderView>', () => {
   })
 
   it('renders the user handle + Sign out link when signed in', () => {
-    render(
-      <HeaderView
-        user={{
-          handle: 'asha',
-          displayLabel: '@asha',
-          profileHref: '/u/asha',
-        }}
-      />,
-    )
+    render(<HeaderView user={ASHA} />)
     const handle = screen.getByTestId('site-header-user-link')
     expect(handle).toHaveAttribute('href', '/u/asha')
     expect(handle).toHaveTextContent('@asha')
@@ -87,11 +86,7 @@ describe('<HeaderView>', () => {
         json: async () => ({
           ok: true,
           signedIn: true,
-          user: {
-            handle: 'asha',
-            displayLabel: '@asha',
-            profileHref: '/u/asha',
-          },
+          user: ASHA,
         }),
       }),
     )
@@ -136,5 +131,105 @@ describe('<HeaderView>', () => {
     const header = screen.getByTestId('site-header')
     expect(header.className).not.toContain('tinted')
     expect(header.getAttribute('data-tinted')).toBeNull()
+  })
+
+  // ---- Critique pass-23 #MED: mobile account-menu disclosure ------
+  describe('mobile account menu (≤720px disclosure)', () => {
+    it('renders the trigger button alongside the desktop pair on the authed branch', () => {
+      render(<HeaderView user={ASHA} />)
+      const trigger = screen.getByTestId('site-header-user-trigger')
+      expect(trigger.tagName).toBe('BUTTON')
+      expect(trigger).toHaveTextContent('@asha')
+      expect(trigger).toHaveAttribute('aria-haspopup', 'menu')
+      expect(trigger).toHaveAttribute('aria-expanded', 'false')
+      expect(trigger).toHaveAttribute('aria-label', 'Account menu for @asha')
+      // Both desktop variants still in the DOM (CSS swaps them).
+      expect(screen.getByTestId('site-header-user-link')).toBeInTheDocument()
+      expect(screen.getByTestId('site-header-signout-link')).toBeInTheDocument()
+      // Menu starts closed.
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+    })
+
+    it('opens the menu on trigger click with Your record + Sign out items', () => {
+      render(<HeaderView user={ASHA} />)
+      const trigger = screen.getByTestId('site-header-user-trigger')
+      fireEvent.click(trigger)
+      expect(trigger).toHaveAttribute('aria-expanded', 'true')
+      const menu = screen.getByTestId('site-header-user-menu')
+      expect(menu).toHaveAttribute('role', 'menu')
+      const record = screen.getByTestId('site-header-user-menu-record')
+      expect(record).toHaveAttribute('href', '/u/asha')
+      expect(record).toHaveAttribute('role', 'menuitem')
+      expect(record).toHaveTextContent('Your record')
+      const signOut = screen.getByTestId('site-header-user-menu-signout')
+      expect(signOut).toHaveAttribute(
+        'href',
+        `/auth/logout?returnTo=${encodeURIComponent('https://tiered.tv/')}`,
+      )
+      expect(signOut).toHaveAttribute('role', 'menuitem')
+      expect(signOut).toHaveTextContent('Sign out')
+      // aria-controls wires the trigger to the rendered menu's id.
+      expect(trigger.getAttribute('aria-controls')).toBe(menu.getAttribute('id'))
+    })
+
+    it('toggles closed on a second trigger click', () => {
+      render(<HeaderView user={ASHA} />)
+      const trigger = screen.getByTestId('site-header-user-trigger')
+      fireEvent.click(trigger)
+      expect(screen.getByTestId('site-header-user-menu')).toBeInTheDocument()
+      fireEvent.click(trigger)
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+      expect(trigger).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('closes the menu on Escape and returns focus to the trigger', () => {
+      render(<HeaderView user={ASHA} />)
+      const trigger = screen.getByTestId('site-header-user-trigger')
+      fireEvent.click(trigger)
+      expect(screen.getByTestId('site-header-user-menu')).toBeInTheDocument()
+      fireEvent.keyDown(document, { key: 'Escape' })
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+      expect(document.activeElement).toBe(trigger)
+    })
+
+    it('closes when a pointer event lands outside the menu + trigger', () => {
+      render(
+        <div>
+          <span data-testid="outside-region">outside</span>
+          <HeaderView user={ASHA} />
+        </div>,
+      )
+      const trigger = screen.getByTestId('site-header-user-trigger')
+      fireEvent.click(trigger)
+      expect(screen.getByTestId('site-header-user-menu')).toBeInTheDocument()
+      const outside = screen.getByTestId('outside-region')
+      fireEvent.mouseDown(outside)
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+    })
+
+    it('does not close when a pointer lands inside the menu (selecting an item)', () => {
+      render(<HeaderView user={ASHA} />)
+      fireEvent.click(screen.getByTestId('site-header-user-trigger'))
+      const record = screen.getByTestId('site-header-user-menu-record')
+      // The pointerdown phase fires before the click navigates — at
+      // that moment the menu must still be open or the item never
+      // resolves to a navigation. (Anchor click handler follows on
+      // the same gesture and closes the menu via its own onClick.)
+      fireEvent.mouseDown(record)
+      expect(screen.getByTestId('site-header-user-menu')).toBeInTheDocument()
+    })
+
+    it('closes when a menu item is activated (click)', () => {
+      render(<HeaderView user={ASHA} />)
+      fireEvent.click(screen.getByTestId('site-header-user-trigger'))
+      fireEvent.click(screen.getByTestId('site-header-user-menu-record'))
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+    })
+
+    it('does not render the trigger when signed out', () => {
+      render(<HeaderView />)
+      expect(screen.queryByTestId('site-header-user-trigger')).toBeNull()
+      expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+    })
   })
 })

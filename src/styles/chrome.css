@@ -114,6 +114,23 @@
 }
 .site-header.tinted .site-header-signin:hover { color: var(--show-paper); }
 
+/* ---- AUTHED ACCOUNT CLUSTER (desktop pair + mobile menu) ----------
+   Critique pass-23 #MED. Desktop (>720px) keeps the inline
+   `@handle / Sign out` pair (large touch targets, clear hierarchy).
+   Mobile (≤720px) collapses the pair behind a tap-to-reveal account
+   menu — the handle becomes the trigger; `Your record` and
+   `Sign out` are the items. Both variants live in the DOM and swap
+   via media queries. The disclosed menu pins to the bottom-right of
+   the trigger and reads the chrome's tint when present. */
+.site-header-account {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.site-header-user-trigger,
+.site-header-user-menu { display: none; }
+
 @media (max-width: 720px) {
   /* Pinned to a deterministic 80px so the sticky canon tab bar
      (canon.css:1205) can pin flush underneath. */
@@ -137,6 +154,55 @@
   }
   /* Phase 29: the search trigger button stays visible on mobile;
      only the cmd+K kbd hint (.site-header-search-kbd) drops out. */
+
+  /* Account cluster: hide the desktop pair, expose the trigger. */
+  .site-header-user-desktop,
+  .site-header-signout-desktop { display: none; }
+  .site-header-user-trigger {
+    display: inline-flex;
+    background: none;
+    border: 0;
+    padding: 4px 0;
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    font-family: var(--font-family-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header-user-trigger:hover,
+  .site-header-user-trigger[aria-expanded='true'] { opacity: 1; }
+  .site-header-user-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 180px;
+    background: var(--color-paper-0);
+    border: 1px solid var(--color-line-soft);
+    border-radius: 8px;
+    padding: 6px 0;
+    z-index: 40;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  }
+  .site-header.tinted .site-header-user-menu {
+    background: color-mix(in oklab, var(--show-paper) 96%, var(--color-paper-0));
+    border-color: color-mix(in oklab, var(--show-ink) 14%, transparent);
+  }
+  .site-header-user-menu-item {
+    display: block;
+    padding: 10px 16px;
+    font-family: var(--font-family-sans);
+    font-size: 14px;
+    color: inherit;
+  }
+  .site-header-user-menu-item:hover {
+    background: color-mix(in oklab, currentColor 8%, transparent);
+    color: inherit;
+  }
 }
 
 /* ---- FOOTER ---------------------------------------------------------- */
