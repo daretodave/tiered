@@ -19,14 +19,14 @@ describe('<ShiftsRow>', () => {
     expect(screen.getByTestId('card')).toBeInTheDocument()
   })
 
-  it('eyebrow names the cadence plainly, never promises a sentiment chip the cards do not deliver (regression guard for #265)', () => {
+  it('eyebrow names the source-of-truth ranking plainly, never promises a sentiment chip the cards do not deliver (regression guard for #265 + #271)', () => {
     const { container } = render(
       <ShiftsRow cards={<div data-testid="card">card</div>} />,
     )
     const eyebrow = container.querySelector('.sec-meta')
     expect(eyebrow).not.toBeNull()
-    expect(eyebrow).toHaveTextContent(/^Updated Thursday$/)
+    expect(eyebrow).toHaveTextContent(/^Community rank · Updated Thursday$/)
+    expect(eyebrow?.textContent ?? '').toMatch(/community/i)
     expect(eyebrow?.textContent ?? '').not.toMatch(/sentiment/i)
-    expect(eyebrow?.textContent ?? '').not.toMatch(/·/)
   })
 })

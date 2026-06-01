@@ -21,7 +21,7 @@ export function ShiftsRow({ cards }: ShiftsRowProps) {
     >
       <div className="section-head">
         <h2 id="shifts-heading">What changed this week.</h2>
-        <span className="sec-meta">Updated Thursday</span>
+        <span className="sec-meta">Community rank · Updated Thursday</span>
       </div>
       <div className="shifts-row" data-testid="shifts-cards">
         {cards}
