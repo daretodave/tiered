@@ -68,7 +68,7 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
     }
   }
 
-  const mailto = `mailto:editors@tiered.app?subject=${encodeURIComponent(
+  const mailto = `mailto:editors@tiered.tv?subject=${encodeURIComponent(
     `Suggest entry: ${themeTitle}`,
   )}`
 

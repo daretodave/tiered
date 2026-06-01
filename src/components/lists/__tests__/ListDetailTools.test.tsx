@@ -72,8 +72,10 @@ describe('<ListDetailTools>', () => {
   it('suggest is a mailto link with subject including the theme title', () => {
     render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
     const a = screen.getByTestId('list-suggest')
-    expect(a.getAttribute('href')).toMatch(/^mailto:editors@tiered\.app/)
-    expect(a.getAttribute('href')).toContain(
+    const href = a.getAttribute('href') ?? ''
+    expect(href).toMatch(/^mailto:editors@tiered\.tv/)
+    expect(href).not.toMatch(/tiered\.app/)
+    expect(href).toContain(
       encodeURIComponent('Suggest entry: Firsts that hold up'),
     )
   })

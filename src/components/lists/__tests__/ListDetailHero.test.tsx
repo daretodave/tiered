@@ -76,9 +76,9 @@ describe('<ListDetailHero>', () => {
     )
     expect(screen.getByTestId('list-save')).toBeTruthy()
     expect(screen.getByTestId('list-share')).toBeTruthy()
-    expect(screen.getByTestId('list-suggest').getAttribute('href')).toMatch(
-      /^mailto:editors@tiered\.app/,
-    )
+    const suggestHref = screen.getByTestId('list-suggest').getAttribute('href') ?? ''
+    expect(suggestHref).toMatch(/^mailto:editors@tiered\.tv/)
+    expect(suggestHref).not.toMatch(/tiered\.app/)
     const shield = screen.getByTestId('list-shield')
     expect(shield.getAttribute('aria-label')).toContain('No spoilers')
   })
