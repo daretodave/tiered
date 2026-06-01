@@ -30,6 +30,22 @@ describe('<ListDetailTools>', () => {
     ).toEqual([])
   })
 
+  it('unsaved label reads "Save list" exactly and no caption is rendered', () => {
+    render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
+    const btn = screen.getByTestId('list-save')
+    expect(btn.textContent).toBe('Save list')
+    expect(screen.queryByTestId('list-save-caption')).toBeNull()
+  })
+
+  it('post-click label reads "Saved" and surface includes a "this device" caption', () => {
+    render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
+    const btn = screen.getByTestId('list-save')
+    fireEvent.click(btn)
+    expect(btn.textContent).toBe('Saved')
+    const caption = screen.getByTestId('list-save-caption')
+    expect(caption.textContent ?? '').toMatch(/this device/i)
+  })
+
   it('initialises from existing localStorage state on mount', () => {
     window.localStorage.setItem(
       'tiered_saved_lists',

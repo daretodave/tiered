@@ -86,6 +86,11 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
         >
           {saved ? 'Saved' : 'Save list'}
         </button>
+        {saved ? (
+          <span className="tool-caption" data-testid="list-save-caption">
+            saved on this device
+          </span>
+        ) : null}
         <button
           type="button"
           className="tool-btn"
