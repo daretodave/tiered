@@ -145,7 +145,7 @@ describe('<ListEntryStack>', () => {
     ).toMatch(/The 2, in order\./)
   })
 
-  it('entries-meta scopes the editor-ranking phrase to "Editor’s pick" — reserves "Editor’s Canon" for the per-show canon', () => {
+  it('entries-meta scopes the editor-ranking phrase to "Editor\'s pick" — reserves "Editor\'s Canon" for the per-show canon, with a straight ASCII apostrophe (critique pass-24 #275)', () => {
     const { container } = render(
       <ListEntryStack
         theme={theme()}
@@ -153,7 +153,15 @@ describe('<ListEntryStack>', () => {
       />,
     )
     const meta = container.querySelector('.entries-meta')
-    expect(meta?.textContent).toBe('Ranked · Editor’s pick')
+    expect(meta?.textContent).toBe("Ranked · Editor's pick")
+    // Bidirectional pin (critique pass-24 #275): the entries-meta
+    // surface renders mono-uppercase via CSS `text-transform`, where
+    // a curly U+2019 reads as a typographic inconsistency against
+    // every other apostrophe in the lists family. Guard against any
+    // regression back to the curly form, and keep the prior
+    // `Editor's Canon` reservation pin (closed at pass-18 #236).
+    expect(meta?.textContent).not.toMatch(/’/)
+    expect(container.textContent).not.toContain("Editor's Canon")
     expect(container.textContent).not.toContain('Editor’s Canon')
   })
 })

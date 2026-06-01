@@ -29,7 +29,7 @@ export function ListEntryStack({ theme, showsBySlug, seasonSlugByKey }: ListEntr
     <section className="entries" data-testid="list-entries">
       <div className="entries-head">
         <h2>The {count}, in order.</h2>
-        <span className="entries-meta">Ranked · Editor&rsquo;s pick</span>
+        <span className="entries-meta">Ranked · Editor's pick</span>
       </div>
       <ol className="entry-stack" data-testid="list-entry-stack">
         {ordered.map((entry) => {

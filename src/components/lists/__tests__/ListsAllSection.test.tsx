@@ -104,4 +104,24 @@ describe('<ListsAllSection>', () => {
     const rows = screen.getAllByTestId('lists-row')
     expect(rows.map((r) => r.getAttribute('data-slug'))).toEqual(['a', 'b'])
   })
+
+  it('lists-section-meta renders the subhead with a straight ASCII apostrophe (critique pass-24 #275)', () => {
+    // Bidirectional pin: the .lists-section-meta surface uppercases
+    // via CSS `text-transform`, where a curly U+2019 reads as a
+    // typographic inconsistency against every other apostrophe in
+    // the lists family. Guard against regression back to the curly
+    // form (the prior `&rsquo;` literal).
+    const { container } = render(
+      <ListsAllSection
+        byCategory={build({
+          tone: [theme({ slug: 'a', category: 'tone' })],
+        })}
+        showsByTheme={{ a: [show()] }}
+        today={today}
+      />,
+    )
+    const meta = container.querySelector('.lists-section-meta')
+    expect(meta?.textContent).toBe("Organized by what they're admiring")
+    expect(meta?.textContent).not.toMatch(/’/)
+  })
 })
