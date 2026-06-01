@@ -19,7 +19,7 @@ export function CommunityMovers({ movers }: CommunityMoversProps) {
     <section className="cp-movers" data-testid="community-movers">
       <div className="cp-movers-head">
         <h2>What moved this week.</h2>
-        <span className="meta">Top changes · sentiment-tagged</span>
+        <span className="meta">Top changes</span>
       </div>
       {movers.length === 0 ? (
         <div

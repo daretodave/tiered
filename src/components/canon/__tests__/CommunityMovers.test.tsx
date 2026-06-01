@@ -28,6 +28,15 @@ describe('<CommunityMovers>', () => {
     expect(empty).not.toHaveTextContent(/recompute/i)
   })
 
+  it('eyebrow names the section plainly, never promises a sentiment chip the cards do not deliver (regression guard for #265)', () => {
+    const { container } = render(<CommunityMovers movers={[]} />)
+    const eyebrow = container.querySelector('.cp-movers-head .meta')
+    expect(eyebrow).not.toBeNull()
+    expect(eyebrow).toHaveTextContent(/^Top changes$/)
+    expect(eyebrow?.textContent ?? '').not.toMatch(/sentiment/i)
+    expect(eyebrow?.textContent ?? '').not.toMatch(/·/)
+  })
+
   it('renders a card per mover with the pill + was/now ranks', () => {
     const movers: CommunityMover[] = [
       {
