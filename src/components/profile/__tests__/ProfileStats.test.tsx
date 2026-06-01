@@ -25,6 +25,31 @@ describe('<ProfileStats>', () => {
     expect(shows.textContent).toContain('shows followed')
   })
 
+  // Critique pass-22: lead the stat row with SEASONS VOTED so the
+  // participation hierarchy on the member's own record page matches
+  // tiered.tv's voting-first brand mechanic — and harmonises with the
+  // adjacent empty-state line ("Vote on a season and it will land
+  // here. / Start with Survivor →"). Pinned bidirectionally so a
+  // regression back to comments-first fails at unit time.
+  it('orders cells voting-first: seasons → comments → shows', () => {
+    render(
+      <ProfileStats
+        publishedCommentCount={4}
+        votedSeasonCount={9}
+        votedShowCount={2}
+      />,
+    )
+    const row = screen.getByTestId('profile-stats')
+    const cellOrder = Array.from(row.children).map((child) =>
+      child.getAttribute('data-testid'),
+    )
+    expect(cellOrder).toEqual([
+      'profile-stat-seasons',
+      'profile-stat-comments',
+      'profile-stat-shows',
+    ])
+  })
+
   it('renders zeros cleanly for an empty profile', () => {
     render(
       <ProfileStats
