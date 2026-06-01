@@ -6,8 +6,14 @@ type HomeHeroProps = {
   featured: Show
   /** "Seasons ranked" stat — defaults to `featured.seasons`. */
   seasonsRanked?: number
-  /** "Canon revised" stat label — pre-formatted as `Month YYYY`. */
-  canonRevisedLabel: string
+  /**
+   * "Canon revised" stat label — pre-formatted as `Month YYYY`, or
+   * `null` when the featured show's canon has no `last_revised`
+   * (the stat cell is hidden). Mirrors the show-page hero contract
+   * at `src/app/shows/[show]/page.tsx:174-177` so home → show never
+   * disagree on the same canon's last-revised month.
+   */
+  canonRevisedLabel: string | null
 }
 
 function renderBlurbWithBreaks(blurb: string) {
@@ -57,15 +63,17 @@ export function HomeHero({
               <div className="cover-stat-val">{seasons}</div>
               <div className="cover-stat-key">Seasons ranked</div>
             </div>
-            <div className="cover-stat">
-              <div
-                className="cover-stat-val"
-                data-testid="home-hero-canon-revised"
-              >
-                {canonRevisedLabel}
+            {canonRevisedLabel != null ? (
+              <div className="cover-stat">
+                <div
+                  className="cover-stat-val"
+                  data-testid="home-hero-canon-revised"
+                >
+                  {canonRevisedLabel}
+                </div>
+                <div className="cover-stat-key">Canon revised</div>
               </div>
-              <div className="cover-stat-key">Canon revised</div>
-            </div>
+            ) : null}
           </div>
           <Link
             href={`/shows/${featured.slug}`}

@@ -125,4 +125,33 @@ describe('<HomeHero>', () => {
     const hero = screen.getByTestId('home-hero')
     expect(hero.textContent).toContain('tiered.tv · est. 2026')
   })
+
+  // critique pass-24 #269: the canonRevisedLabel is sourced from the
+  // featured show's canon `last_revised`. When that field is absent
+  // (canon without last_revised, or no canon at all) the stat cell
+  // is hidden — mirrors the show-page hero behavior so the home
+  // never invents a date the canon didn't claim.
+  it('hides the Canon revised stat cell when label is null', () => {
+    render(<HomeHero featured={survivor()} canonRevisedLabel={null} />)
+    expect(screen.queryByTestId('home-hero-canon-revised')).toBeNull()
+    expect(screen.getByTestId('home-hero-stats').textContent).not.toContain(
+      'Canon revised',
+    )
+    // Seasons-ranked cell still renders alongside the empty slot.
+    expect(screen.getByTestId('home-hero-stats').textContent).toContain(
+      'Seasons ranked',
+    )
+  })
+
+  it('renders the canon-revised cell verbatim from the supplied label', () => {
+    // Regression pin against the prior derive-from-build-time path: the
+    // rendered label must match the caller's input character-for-character
+    // (no clock dependency, no month-name reformatting).
+    render(
+      <HomeHero featured={survivor()} canonRevisedLabel="May 2026" />,
+    )
+    expect(screen.getByTestId('home-hero-canon-revised').textContent).toBe(
+      'May 2026',
+    )
+  })
 })

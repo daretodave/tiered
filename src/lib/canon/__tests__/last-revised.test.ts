@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest'
 import {
   canonRevisedLabelFromIso,
   formatCanonRevisedLabel,
-  getCanonRevisedLabel,
 } from '../last-revised'
 
 describe('formatCanonRevisedLabel', () => {
@@ -59,15 +58,3 @@ describe('canonRevisedLabelFromIso', () => {
   })
 })
 
-describe('getCanonRevisedLabel', () => {
-  it('delegates to formatCanonRevisedLabel for the supplied date', () => {
-    expect(getCanonRevisedLabel(new Date('2026-05-20T00:00:00Z'))).toBe(
-      'May 2026',
-    )
-  })
-
-  it('defaults the argument to a fresh `new Date()`', () => {
-    const out = getCanonRevisedLabel()
-    expect(out).toMatch(/^[A-Z][a-z]+\s\d{4}$/)
-  })
-})

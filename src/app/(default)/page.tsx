@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import {
   getAllShows,
   getAllThemes,
+  getCanon,
   getFeaturedShow,
   getThemeStats,
 } from '@/content'
@@ -12,7 +13,7 @@ import { HomeDualCallout } from '@/components/home/HomeDualCallout'
 import { HomeListsStack } from '@/components/home/HomeListsStack'
 import { HomeListRow } from '@/components/home/HomeListRow'
 import { ShowTile } from '@/components/home/ShowTile'
-import { getCanonRevisedLabel } from '@/lib/canon/last-revised'
+import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 import { partitionHomeShows } from '@/lib/home/show-partition'
 import { buildMetadata } from '@/lib/seo'
 
@@ -59,7 +60,15 @@ export default function HomePage() {
     partitionHomeShows(allShows, featured?.slug)
   const themes = getAllThemes().slice(0, LIST_ROWS)
   const themesShowsCovered = getThemeStats().showsCovered
-  const canonRevisedLabel = getCanonRevisedLabel()
+  // critique pass-24 HIGH (#269): source the home `Canon revised` label
+  // from the featured show's actual `canon.last_revised` — the same path
+  // the show page reads (`src/app/shows/[show]/page.tsx:174`) — so a
+  // reader clicking through home → show never sees two different
+  // last-revised months for the same canon. The prior derivation from
+  // build-time `now` drifted on the 1st of every month.
+  const canonRevisedLabel = featured
+    ? canonRevisedLabelFromIso(getCanon(featured.slug)?.last_revised)
+    : null
 
   return (
     <div className="screen home" data-testid="hero">
