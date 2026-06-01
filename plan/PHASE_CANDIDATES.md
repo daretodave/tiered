@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-05-31 at commit b69a2b2
-> Pass count: 15
+> Last pass: 2026-06-01 at commit 34a7832
+> Pass count: 16
 
 ## Considered (awaiting promotion)
 
@@ -101,6 +101,261 @@ stragglers beyond the one demo to allowlist.
 **Conflicts:** none. Hardens an existing non-negotiable standing
 rule across its last uncovered tree; no URL change, no schema
 change. Directly extends Phase 42's precedent.
+
+### 12. Brand-spelling discipline (lax→strict invariant for `tiered.tv` wordmark)
+
+**Score:** 6.6 (impact: 6, ease: 6, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 16
+**Filed:** 2026-06-01
+**Source signals:**
+- Critique (signal B) — **two pass-24 findings of the same class**
+  on customer-facing surfaces, both explicitly invoking CLAUDE.md
+  hard rule 6 ("The brand name is `tiered.tv` — always lowercase,
+  including the `.tv` suffix. Never capitalize the T. The dot is
+  part of the wordmark; never stylize, color, or kern it apart").
+  (a) **MED** [anon] `/sign-in` page `<meta name="description">`
+  reads `Sign in to tiered.` — the brand has been truncated to
+  `tiered.`, dropping the `.tv` suffix while leaving the
+  wordmark's dot stranded as a sentence-ending fullstop. Source:
+  `src/app/(default)/sign-in/page.tsx:12`. The finding itself
+  proposes the invariant: "extend the existing
+  `scripts/content-check.ts` brand-spelling check (if any;
+  otherwise add one) that scans every `description` string
+  returned from a `buildMetadata` call across the route tree and
+  rejects any value matching `\btiered\.\s*(?!tv)`". (b) **LOW**
+  [authed] `/themes/[theme]` `Suggest an entry` mailto targets
+  `editors@tiered.app` — the internal auth-tenant TLD bleeding
+  into customer-facing copy. Source:
+  `src/components/lists/ListDetailTools.tsx:71`. The finding
+  proposes: "a new content-check invariant scanning all
+  user-facing mailto / href attributes for `tiered\.app` and
+  flagging any match outside the auth-tenant infrastructure
+  paths (Auth0 permissions claim, e2e test user, api audience)".
+- Source confirmation (signal A) — verified the violations exist
+  *and* a third instance the critique walks didn't surface:
+  (i) `src/app/(default)/sign-in/page.tsx:12` →
+  `'Sign in to tiered. Magic link by email.'`;
+  (ii) `src/components/lists/ListDetailTools.tsx:71` →
+  `\`mailto:editors@tiered.app?subject=...\``;
+  (iii) `src/app/(default)/mod/page.tsx:19` →
+  `'Moderation queue for tiered (mod role only).'` — same
+  truncation class as (i), this one without the stranded dot
+  (CLAUDE.md rule 6 covers both: the bare `tiered` token without
+  `.tv` is the brand truncated, period or no period); the route
+  is `noIndex: true` like `/sign-in` but the description still
+  ships in the rendered head and falls back as OG description on
+  preview crawlers per the same reasoning the critique pass-24
+  row already worked through. Three distinct customer-facing
+  surfaces, two classes (truncation + wrong-TLD bleed), zero
+  current automated enforcement.
+- Standing-rule alignment — CLAUDE.md hard rule 6 is one of five
+  "never break" rules in the project's primary entry-point
+  document ("Honor this file before improvising"). The rule is
+  enforced *reactively* today: every brand-spelling violation
+  has to be caught by a critique pass and drained by an iterate
+  tick. There is no proactive verify-time gate.
+- Prior art (signal A) — **Phases 41, 42, 43 are the proofs.**
+  Each was promoted on the identical argument: a standing rule
+  enforced reactively, drained per-tick, gated structurally only
+  after a phase shifted enforcement left into `pnpm verify`. The
+  exact pattern (lax→strict invariant in `scripts/content-check.ts`
+  with a `STRICT` flag flipped on the final drain tick) is now
+  used by 7 other invariants: `STRICT` (canon coverage),
+  `CROSS_SHOW_STRICT` (themed-list cross-show floor),
+  `YEAR_TENURE_STRICT` (year/tenure derivation, with
+  `TENURE_ANCHOR_ALLOWLIST` for milestone callouts),
+  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
+  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`
+  (`scripts/content-check.ts:682-780`). A `BRAND_SPELLING_STRICT`
+  alongside these is a clean extension of an established,
+  well-tested pattern.
+
+**Why:** CLAUDE.md hard rule 6 is one of the project's five
+non-negotiable identity rules — and the only one that ships
+*without* a verify-time gate, with three customer-facing surfaces
+currently violating it (two `tiered.` truncations and one
+`tiered.app` TLD bleed). The reactive cost is measured: the
+pass-24 critique surfaced (a) and (b), `/mod` (iii) only
+surfaced under this expand pass's targeted sweep, and there is
+no machinery to catch the *next* drift before the next critique
+window. The honest fix is the phase-43 move applied to the
+brand wordmark: a lax→strict invariant in
+`scripts/content-check.ts` that scans (1) every rendered
+`description` literal returned from `buildMetadata` callers
+across the route tree for `\btiered\b` not immediately followed
+by `\.tv\b`, (2) every customer-facing `mailto:` / `href`
+literal in `src/components/**` and `src/app/**` for
+`@tiered\.app` or `tiered\.app` outside an explicit
+infrastructure allowlist (Auth0 permissions claim `permissions.ts`,
+e2e test-user mailbox in test fixtures, api audience constants),
+(3) every editorial copy literal in `content/**/*.md` for the
+same patterns. Allowlist mechanism mirrors phase 43's
+`TENURE_ANCHOR_ALLOWLIST` precedent (`scripts/content-check.ts`)
+for legitimate uses of the bare english word `tiered` as a
+past-participle verb — e.g. `src/components/shows/ShowsHero.tsx:18`
+`<em>Tiered.</em>` ("All shows. Tiered.") is editorial wordplay
+on the english adjective; whether it stays as-is, gets
+lowercased to `<em>tiered.</em>` to honor the wordmark, or gets
+recast entirely is a curator call surfaced *by* the lax-mode
+sweep, not pre-decided in the phase brief. Ships strict on the
+final drain tick, matching the phase 41/43 cadence. Closes the
+class permanently; the verify gate then catches any future
+authoring drift the moment it lands instead of the next
+critique window.
+
+**Scope sketch:**
+- Add `collectBrandSpellingIssues` helper to
+  `scripts/content-check.ts` (or a new
+  `scripts/lib/check-brand-spelling.mjs` library + colocated test
+  per the phase-42 lib-pattern). Scans three surface families:
+  - rendered metadata `description` literals from `buildMetadata`
+    callers (mirrors phase 43's `collectYearTenureIssues` shape —
+    walks `src/app/**` for `buildMetadata({ ... description: ...
+    })` call sites and validates the string);
+  - customer-facing href / mailto literals in `src/components/**`
+    and `src/app/**` (excluding test files, the existing Auth0
+    permissions infrastructure path, and an explicit
+    `BRAND_DOMAIN_INFRA_ALLOWLIST`);
+  - editorial copy literals in `content/**/*.md` (excluding
+    intentional uses surfaced by the lax-mode drain and
+    documented in an editorial allowlist).
+- Add `BRAND_SPELLING_STRICT` constant (`= false` on the first
+  tick that lands the helper, paired with a 3-violation drain
+  across `/sign-in`, `/mod`, and the mailto on the same tick;
+  flip to `= true` on the final tick or the immediately following
+  tick once the surface is clean and the allowlist nuance for
+  `ShowsHero.tsx`'s `<em>Tiered.</em>` is editorially resolved —
+  exact lax→strict cadence as phase 43).
+- Allowlist scaffolding: `BRAND_DOMAIN_INFRA_ALLOWLIST` (paths
+  where `tiered.app` is the auth-tenant identifier and is
+  correct: `src/lib/auth0/permissions.ts`,
+  `src/lib/auth0/__tests__/permissions.test.ts`,
+  `src/app/api/mod/action/__tests__/route.test.ts`,
+  `src/app/(default)/mod/__tests__/page.test.tsx`,
+  `scripts/mint-e2e-cookie.mjs`, the bearings line that documents
+  the e2e@tiered.app user, the `audience: https://api.tiered.app`
+  Auth0 audience constant). `BRAND_ADJECTIVE_ALLOWLIST` for
+  editorial-intentional capital-T uses if any survive the curator
+  pass (default empty; populated only on explicit curator
+  decision).
+- Concrete drain order (priority queue, single-tick targets):
+  1. `/sign-in` description → `Sign in to tiered.tv. Magic link
+     by email.` (closes pass-24 MED, source-resolution in test +
+     production).
+  2. `/mod` description → `Moderation queue for tiered.tv (mod
+     role only).` (closes the third sibling violation).
+  3. `ListDetailTools.tsx` mailto → `editors@tiered.tv` (closes
+     pass-24 LOW; sister test in `ListDetailHero.test.tsx`
+     updated in lockstep; tests at
+     `ListDetailTools.test.tsx:59` + `ListDetailHero.test.tsx:80`
+     swap from `mailto:editors@tiered\.app` to
+     `mailto:editors@tiered\.tv`; operator question: whether an
+     `editors@tiered.tv` forwarder needs to be set up before the
+     code edit ships — the existing inbox lives at
+     `editors@tiered.app`; if not, the fix has a 2-tick shape
+     [code edit + operational forwarder]; if so, single tick).
+  4. `ShowsHero.tsx` `<em>Tiered.</em>` editorial decision (curator
+     call: lowercase the wordmark to `<em>tiered.</em>` for
+     identity consistency, OR recast the H1 to a non-wordmark
+     fragment that doesn't echo the brand, OR allowlist the
+     english-adjective use; document in commit body whichever
+     direction is taken).
+- Pin: colocated test of `collectBrandSpellingIssues` exercises
+  each shape — positive (clean surface), negative (each violation
+  class), allowlist match (auth-tenant infra path, editorial
+  adjective if allowed). Integration test: `pnpm content:check`
+  catches a fresh violation seeded in a fixture surface and
+  fails. e2e: no new spec owed — the verify gate is the
+  enforcement layer; no URL behavior change.
+- Follow-up housekeeping: the operational forwarder
+  (`editors@tiered.tv`) is the one external dependency outside
+  the verify gate's reach. The phase brief flags it for the
+  user's call at promotion time; the code change can land before
+  the forwarder if the editorial team is willing to redirect on
+  receipt or use a redirect rule, or after if a cleaner inbox
+  swap is preferred. Either way, the gate is the persistent
+  artifact.
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens an existing CLAUDE.md hard rule
+across the surface families that currently bleed it; no URL
+change, no schema change; the operational forwarder setup is the
+only external dependency, flagged for the user at promotion.
+Directly extends Phase 41/42/43's lax→strict invariant precedent
+established in `scripts/content-check.ts`.
+
+<!-- Pass 16 (2026-06-01, commit 34a7832) — 1 candidate filed (#12).
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 15
+       cleared each row in the same iterate cycle it filed —
+       #pass-22 MED cast-yours season vote eyebrow (1c24036), #pass-22
+       MED ethnographic-labor watch_list (5fe6bfe), #pass-22 MED
+       themes hero 12-vs-9 mismatch (973989e), #pass-22 MED
+       /u/[handle] self-vs-stranger copy (bf069c7), #pass-23 HIGH
+       /themes lede ↔ stats lockstep (03918b3), #pass-23 MED VotePair
+       NET VOTE sign (0d4dd79), #pass-23 MED SENTIMENT-TAGGED
+       eyebrow (5dd7e56), #pass-22 LOW /u/[handle] stat order
+       (8bce079), #pass-23 MED mobile authed Sign out exposure
+       (5435b96). One non-critique fix shipped (eff79c4 — drop 01/02
+       markers on canon tab pair). No row carried over.
+     - CRITIQUE.md: 7 Pending rows (1 HIGH + 3 MED + 3 LOW, 6 from
+       pass-24 + 1 from pass-23). Pass 24 (34a7832) shipped 5h ago
+       at this expand pass's filing — fresh signal. (1) [HIGH, anon]
+       Home / "CURRENTLY FEATURED" stat block stamps June 2026 vs
+       /shows/survivor's May 2026 (build-time vs canon.last_revised
+       drift, flipped today 2026-06-01); single-tick `/iterate`
+       polish target — derive home label from featured show's
+       canon.last_revised + colocated test. (2) [MED, anon] /sign-in
+       description `Sign in to tiered.` — brand truncated, filed
+       here as the strongest signal of the candidate #12 cluster.
+       (3) [MED, anon] /shows/survivor ShiftsRow eyebrow missing
+       community source label — single-tick eyebrow edit. (4) [MED,
+       authed] /themes Save list no return path — single-tick
+       caption ("saved on this device") OR phase-shape member-record
+       wiring; declined to file as a candidate because the recommended
+       fix (caption) is iterate-shape and the phase-shape alternative
+       (Supabase user_saved_lists table + /u/[handle] surface) is a
+       single critique row that would need 2-3 more saved-list-class
+       signals to clear "real demand vs model imagination" §3.1.
+       (5) [LOW, anon] /themes apostrophe smart-quote U+2019 — single-
+       tick component edit. (6) [LOW, authed] /themes/best-premieres
+       mailto editors@tiered.app — filed as the second pass-24
+       signal of the candidate #12 cluster. (7) [LOW, authed] season
+       comment empty-state "weigh in on the season itself" — single-
+       tick component edit; voice-break class, same shape as the
+       pass-23 SENTIMENT-TAGGED drain (declined as a structural
+       candidate because the cases are heterogeneous voice nits, not
+       a class-pattern phases 41/43 don't already drain).
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring blocked
+       on the cloud GitHub App's missing `workflows` permission —
+       known, intentional, awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice surfaces are stable.
+     - Commit pattern: 22 commits since pass 15 — 2 critique passes
+       (23 6b37f35, 24 34a7832), 9 critique/audit drain pairs
+       (pass-22 LOW/MED, pass-23 HIGH/MED/MED/MED, and a non-
+       critique fix). All anticipated drains from already-shipped
+       phases; no rogue refactor surface, no 5+ fix-class cluster
+       on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) still awaits /oversight promotion. #03 (Newsletter,
+       score 3.0) still gated on S1 (domain swap). New: #12
+       (brand-spelling discipline, score 6.6).
+
+     One real structural candidate this pass — #12 — the
+     natural continuation of the phase-41/42/43 precedent applied
+     to CLAUDE.md hard rule 6, the only rule of the project's
+     five non-negotiable identity rules currently lacking a
+     verify-time gate. Triangulated by 2 fresh pass-24 critique
+     findings + a third instance the expand sweep surfaced
+     (`/mod` description). Awaiting /oversight to review and
+     promote (cloud never promotes). The 7 critique findings stay
+     single-tick `/iterate` polish targets, including the HIGH
+     home/show canon-revised drift (the highest-priority iterate
+     pickup next tick). -->
 
 <!-- Pass 15 (2026-05-31, commit b69a2b2) — no new candidates filed.
      Signals reviewed:
