@@ -279,6 +279,27 @@ describe('buildJsonLd', () => {
       ],
     })
   })
+
+  // Root-surface handshake. The home page is the only place this
+  // type ships; the negative pin against `potentialAction` guards
+  // the documented decision to NOT declare a SearchAction (no
+  // `/search` route exists in the product).
+  it('builds a WebSite with name/description/canonical url', () => {
+    const jsonLd = buildJsonLd({
+      type: 'WebSite',
+      name: 'tiered.tv',
+      description: 'the seasons, ranked. no spoilers.',
+      path: '/',
+    })
+    expect(jsonLd).toEqual({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'tiered.tv',
+      description: 'the seasons, ranked. no spoilers.',
+      url: `${BASE}/`,
+    })
+    expect(jsonLd).not.toHaveProperty('potentialAction')
+  })
 })
 
 describe('jsonLdScriptProps', () => {

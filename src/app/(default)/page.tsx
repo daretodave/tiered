@@ -15,7 +15,7 @@ import { HomeListRow } from '@/components/home/HomeListRow'
 import { ShowTile } from '@/components/home/ShowTile'
 import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 import { partitionHomeShows } from '@/lib/home/show-partition'
-import { buildMetadata } from '@/lib/seo'
+import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 
 // Phase 27 — homepage rebuilt against `design/tiered.tv · Home.html`.
 // Fluid hero + stat strip; 3-up featured tiles + a sub-row + 6 compact
@@ -70,8 +70,26 @@ export default function HomePage() {
     ? canonRevisedLabelFromIso(getCanon(featured.slug)?.last_revised)
     : null
 
+  // Root-surface JSON-LD: every other public page family emits a
+  // type-specific JSON-LD (show / season / theme / themes / shows /
+  // about FAQ / profile) but `/` was bare. WebSite is schema.org's
+  // documented type for the brand's home page — declared once with
+  // name + description + url so crawlers can attach brand metadata
+  // to the domain rather than inferring it from OG tags. No
+  // SearchAction (tiered.tv has no `/search` route — the header's
+  // SearchTrigger replaced a legacy link).
+  const websiteLd = buildJsonLd({
+    type: 'WebSite',
+    name: 'tiered.tv',
+    description: HOME_DESCRIPTION,
+    path: '/',
+  })
+
   return (
     <div className="screen home" data-testid="hero">
+      <script
+        {...jsonLdScriptProps({ id: 'ld-website', data: websiteLd })}
+      />
       {featured ? (
         <HomeHero
           featured={featured}

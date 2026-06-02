@@ -268,3 +268,74 @@ describe('home canon-revised label sourced from featured show canon', () => {
     }
   })
 })
+
+// --------------------------------------------------------------------
+// SEO: WebSite JSON-LD on the home page
+// --------------------------------------------------------------------
+//
+// `/` was the only top-level public surface in the product emitting
+// zero JSON-LD — every other family ships a type-specific signal
+// (show / season / theme / themes / shows / about FAQ / profile).
+// The home page now emits a `WebSite` JSON-LD so crawlers can attach
+// brand metadata to the domain rather than inferring it from OG tags.
+// No `potentialAction` SearchAction: tiered.tv has no `/search` route,
+// and a SearchAction whose urlTemplate 404s would mislead crawlers.
+
+describe('home emits a WebSite JSON-LD script on render', () => {
+  it('renders <script id="ld-website" type="application/ld+json"> with a WebSite payload', async () => {
+    getFeaturedShowMock.mockReturnValue(fixtureShow())
+    getCanonMock.mockReturnValue({
+      show: 'survivor',
+      last_revised: '2026-05-15',
+      entries: [],
+    })
+
+    const mod = await import('../page')
+    const { container } = render(mod.default())
+
+    const script = container.querySelector(
+      'script#ld-website',
+    ) as HTMLScriptElement | null
+    expect(script).not.toBeNull()
+    expect(script?.getAttribute('type')).toBe('application/ld+json')
+
+    const ld = JSON.parse(script?.textContent ?? '{}') as Record<
+      string,
+      unknown
+    >
+    expect(ld['@context']).toBe('https://schema.org')
+    expect(ld['@type']).toBe('WebSite')
+    expect(ld['name']).toBe('tiered.tv')
+    expect(typeof ld['description']).toBe('string')
+    expect((ld['description'] as string).length).toBeGreaterThan(0)
+    expect(ld['url']).toBe('https://tiered.tv/')
+  })
+
+  it('does not declare a potentialAction SearchAction (no /search route exists)', async () => {
+    // Negative pin: schema.org's WebSite type accepts a
+    // potentialAction.SearchAction block that lights up the
+    // sitelinks searchbox in Google. tiered.tv has no `/search`
+    // route (the header's SearchTrigger replaced the legacy link),
+    // so declaring one whose urlTemplate 404s would mislead
+    // crawlers — worse than emitting nothing. If a future edit
+    // restores a real /search page AND adds the SearchAction in
+    // the same commit, this test should be updated alongside.
+    getFeaturedShowMock.mockReturnValue(fixtureShow())
+    getCanonMock.mockReturnValue({
+      show: 'survivor',
+      last_revised: '2026-05-15',
+      entries: [],
+    })
+
+    const mod = await import('../page')
+    const { container } = render(mod.default())
+
+    const script = container.querySelector('script#ld-website')
+    const ld = JSON.parse(script?.textContent ?? '{}') as Record<
+      string,
+      unknown
+    >
+    expect(ld).not.toHaveProperty('potentialAction')
+    expect(script?.textContent ?? '').not.toMatch(/SearchAction/i)
+  })
+})

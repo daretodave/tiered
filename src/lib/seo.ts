@@ -141,13 +141,26 @@ type FAQPageArgs = {
   faqs: FAQItem[]
 }
 
+// WebSite is the root-surface handshake — declared once on `/` so
+// crawlers can attach brand metadata to the domain (name, alternate
+// names, description) rather than inferring it from OG tags. No
+// `potentialAction` SearchAction: tiered.tv has no `/search` route
+// (the header's SearchTrigger replaced a legacy `/search` link); a
+// SearchAction whose urlTemplate 404s would mislead crawlers.
+type WebSiteArgs = {
+  name: string
+  description: string
+  path: string
+}
+
 export function buildJsonLd(
   args:
     | ({ type: 'CollectionPage' } & CollectionPageArgs)
     | ({ type: 'ItemList' } & ItemListArgs)
     | ({ type: 'Article' } & ArticleArgs)
     | ({ type: 'BreadcrumbList' } & BreadcrumbListArgs)
-    | ({ type: 'FAQPage' } & FAQPageArgs),
+    | ({ type: 'FAQPage' } & FAQPageArgs)
+    | ({ type: 'WebSite' } & WebSiteArgs),
 ): Record<string, unknown> {
   if (args.type === 'CollectionPage') {
     return {
@@ -207,6 +220,15 @@ export function buildJsonLd(
         name: item.name,
         item: canonicalUrl(item.path),
       })),
+    }
+  }
+  if (args.type === 'WebSite') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: args.name,
+      description: args.description,
+      url: canonicalUrl(args.path),
     }
   }
   return {
