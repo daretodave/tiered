@@ -14,7 +14,7 @@ describe('<CommentThread>', () => {
     expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.getByTestId('input-slot')).toBeInTheDocument()
     expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
-      'No comments yet. Weigh in on the season itself.',
+      'No comments yet. Be the first to weigh in.',
     )
   })
 
@@ -30,6 +30,17 @@ describe('<CommentThread>', () => {
     expect(empty).not.toMatch(/\bthe winner\b/i)
     expect(empty).not.toMatch(/\bthe twist\b/i)
     expect(empty).not.toMatch(/\bthe elimination\b/i)
+  })
+
+  it('empty-state copy avoids the arch "itself" qualifier (critique pass-23 regression pin)', () => {
+    render(
+      <CommentThread
+        count={0}
+        input={<div data-testid="input-slot">stub-input</div>}
+      />,
+    )
+    const empty = screen.getByTestId('comment-thread-empty').textContent ?? ''
+    expect(empty).not.toMatch(/itself/i)
   })
 
   it('renders the count and children when count > 0', () => {

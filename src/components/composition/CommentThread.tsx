@@ -47,7 +47,7 @@ export function CommentThread({
           data-testid="comment-thread-empty"
           style={{ marginTop: 24, opacity: 0.7 }}
         >
-          No comments yet. Weigh in on the season itself.
+          No comments yet. Be the first to weigh in.
         </p>
       ) : null}
     </div>
