@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-01 at commit 34a7832
-> Pass count: 16
+> Last pass: 2026-06-02 at commit 3e5b7c7
+> Pass count: 17
 
 ## Considered (awaiting promotion)
 
@@ -283,6 +283,217 @@ change, no schema change; the operational forwarder setup is the
 only external dependency, flagged for the user at promotion.
 Directly extends Phase 41/42/43's lax→strict invariant precedent
 established in `scripts/content-check.ts`.
+
+### 13. Editorial-cliché repetition guard (cross-corpus phrase-frequency invariant)
+
+**Score:** 6.0 (impact: 5, ease: 6, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 17
+**Filed:** 2026-06-02
+**Source signals:**
+- Critique (signal B) — **pass-25 MED finding** (`plan/CRITIQUE.md:416`)
+  catalogues `measures? itself against` / `measured against` as
+  the fallback canonical-claim closer across **10+ surfaces in
+  the content corpus**, reaching **4 in a single anon walk**
+  (home → /shows/survivor → /shows/survivor/season/heroes-vs-villains
+  → /themes/best-finales), with two of those four landing on the
+  *same page* (HvV pull-quote `content/shows/survivor/seasons/20-heroes-vs-villains.md:14`
+  AND HvV body closer `:43`). Other surfaces enumerated by the
+  finding: `content/shows/survivor/canon.md:53` slot #02 tag,
+  `content/themes/best-finales.md:26` entry #02,
+  `content/themes/best-returnees.md:20` entry #01,
+  `content/themes/best-post-merge.md:21` entry #01,
+  `content/themes/best-villain-editing.md:21` entry blurb,
+  `content/shows/amazing-race.md:11` tagline,
+  `content/shows/top-chef.md:11` tagline,
+  `content/shows/big-brother/canon.md:11` tier-S blurb + `:109`
+  entry body, `content/shows/project-runway/seasons/04-new-york-2007.md:12`
+  pull. **The finding itself proposes the invariant** verbatim:
+  "extend `scripts/content-check.ts` with a
+  `collectClicheRepetitionIssues` pass that counts cross-surface
+  occurrences of high-leverage editorial phrases (`measures?
+  itself against`, `measured against`, candidates for future
+  additions like `set the bar`, `the bar every`) and flags
+  >3-occurrence drift — the same guard pattern
+  `collectYearTenureIssues` uses for `est_year` math, but for
+  phrase-reuse."
+- Standing-rule alignment — `plan/bearings.md` voice rule
+  ("knowledgeable peer — confident, warm, plain-spoken, never
+  pretentious. Plain sentences over clever ones.") + CLAUDE.md
+  "Tone of voice" section ("knowledgeable peer. Confident, warm,
+  plain-spoken"). A clever fragment that lands the first time is
+  earned; the same fragment reused 10+ times is the editor's tic.
+  Pass-25 is the second walk to catch a cross-surface clever-tic
+  repetition (pass-19/20/22 caught **recompute** on the community
+  pane, drained reactively as the candidate-#12-class
+  BRAND_SPELLING precedent). No proactive verify-time gate
+  exists for cross-surface phrase-frequency drift today.
+- Prior art (signal A) — **Phases 41, 43 + candidate #12 are the
+  proofs.** Each carries the identical shape: an editorial
+  standing rule enforced reactively (drained per-tick by
+  critique→iterate), gated structurally only after a
+  `scripts/content-check.ts` lax→strict invariant phase lands. The
+  `STRICT`-flag pattern is now used by 7 invariants
+  (`scripts/content-check.ts:682-780`): `STRICT` (canon coverage),
+  `CROSS_SHOW_STRICT` (cross-show floor), `YEAR_TENURE_STRICT`
+  (with `TENURE_ANCHOR_ALLOWLIST` for milestone exceptions),
+  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
+  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`.
+  Candidate #12 (BRAND_SPELLING_STRICT, score 6.6) is the eighth,
+  already awaiting promotion. A `CLICHE_REPETITION_STRICT`
+  alongside these is a clean extension of an established pattern,
+  with the distinct twist that the check is *cross-surface
+  frequency* rather than per-surface shape — the existing
+  invariants validate one file at a time; this one aggregates
+  occurrences across `content/**/*.md` and rejects when a
+  registered phrase exceeds the threshold.
+- Source confirmation — `rg -n "measures? itself against|measured
+  against" content/` independently verifies the 10+ surface count
+  the critique row claims; the registry-extensibility argument
+  (`set the bar`, `the bar every`) is corroborated by a separate
+  `rg -n "sets? the bar|the bar every" content/` returning
+  additional pre-existing matches across show + theme corpora.
+
+**Why:** The editorial voice rule is one of the project's
+standing identity rules, and pass-25's finding measured the cost
+of leaving it ungated: a single clever fragment metastasised
+across 10+ surfaces and reaches a casual reader 4 times before
+they've left the survivor walk. The fix has two halves: (1)
+drain the 9+ extant uses down to one high-leverage retention
+(recommended: HvV's pull-quote at
+`content/shows/survivor/seasons/20-heroes-vs-villains.md:14`,
+where the metaphor lands cleanest and the editorial weight is
+highest), and (2) ship a `CLICHE_REPETITION_STRICT` invariant
+with an extensible phrase registry so the *next* cross-surface
+clever-tic drift fails at verify-time instead of after the next
+critique window. The drain alone is an iterate-shape job; the
+drain + invariant + extensible registry is honestly a phase
+shape and matches the cadence + structure of phases 41/43 + the
+already-pending candidate #12 exactly. Ships strict on the final
+drain tick (mirrors the phase 41/43 pattern). Closes the class
+permanently for any phrase the registry covers; subsequent
+critique passes that surface a new clever-tic cluster (e.g. the
+`set the bar` / `the bar every` candidates the finding itself
+flags) add a registry row instead of authoring a new phase.
+
+**Scope sketch:**
+- Add `collectClicheRepetitionIssues` to `scripts/content-check.ts`
+  (or a new `scripts/lib/check-cliche-repetition.mjs` library +
+  colocated test per the phase-42 lib-pattern). Walks
+  `content/**/*.md`, aggregates a per-phrase occurrence count
+  across the corpus (frontmatter + body), and flags when any
+  registered phrase exceeds a per-phrase threshold (default 3 —
+  the bearings voice rule's "the third time it's a tic"
+  threshold the pass-25 finding articulates).
+- Phrase registry seeds the proven repeat-offender from pass-25
+  (`measures? itself against` / `measured against`) at threshold
+  3, with the pass-25-flagged future candidates (`set the bar`,
+  `the bar every`) added at threshold 4 after a pre-flight `rg`
+  audit confirms the current corpus is below threshold (else
+  scope-creep risk — the drain budget owes those too).
+- Allowlist mechanism mirrors phase 43's `TENURE_ANCHOR_ALLOWLIST`
+  precedent: a per-phrase `{ phrase, threshold, allowlist:
+  [<filepath>:<line>] }` registry entry lets the curator pin
+  the one surface that retains the phrase (e.g. HvV pull-quote
+  for `measures itself against`) without tripping the gate.
+- Editorial drain (content-curator brief): rewrite the 9+ extant
+  `measures itself against` surfaces with material specific to
+  the work each entry does — HvV's body closer leans on the
+  post-merge density it already names; Survivor canon slot #02
+  tag foregrounds the casting-as-format observation;
+  best-finales #02 entry names what specifically lands in the
+  closing run; best-returnees #01 names the format-defining
+  returnee dynamic; per-show taglines (Amazing Race, Top Chef,
+  Big Brother) name the show-specific format leadership argument
+  (airport-backpack rhythm, Restaurant Wars reckoning,
+  alliance-as-format engine).
+- Lax→strict cadence (mirrors phases 41/43/candidate #12): each
+  drain tick reduces the corpus count by 1-2 phrases below
+  threshold; final tick flips `CLICHE_REPETITION_STRICT = true`
+  in `scripts/content-check.ts` and adds the strict-mode
+  invariant assertion to `pnpm content:check`.
+- Unit tests: colocated tests for the helper validate the
+  threshold-counting + allowlist exclusion + multi-phrase
+  aggregation; bonus regression-pin tests assert specific
+  current corpus counts (e.g. `measures itself against` count
+  after drain is exactly N) so a future re-introduction fails
+  at unit time.
+- No URL change. No schema change. No e2e fixture row owed (no
+  e2e pins any of the to-be-rewritten phrases). Spoiler P0
+  intact (voice/editorial edits only, no canon position or
+  verdict changes).
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens the editorial voice rule across its
+last uncovered surface (cross-corpus phrase-frequency), no URL
+change, no schema change. Directly extends Phase 41/43 +
+candidate #12's lax→strict invariant precedent established in
+`scripts/content-check.ts`, with the distinct twist that the
+check aggregates across files instead of validating one file at
+a time.
+
+<!-- Pass 17 (2026-06-02, commit 3e5b7c7) — 1 candidate filed (#13).
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 16
+       cleared each row in the same iterate cycle it filed —
+       pass-24 HIGH home/show canon-revised drift (edfba34),
+       pass-24 MED /sign-in description truncation (d3925da, the
+       candidate #12 anchor signal), pass-24 MED ShiftsRow eyebrow
+       source-of-truth (1b9b069), pass-24 MED /themes Save scope
+       (89796de), pass-24 LOW Suggest-an-entry mailto brand
+       (8e7b264, the second candidate #12 anchor signal), pass-24
+       LOW /themes smart-quote U+2019 (d9ade6d), pass-25 MED /about
+       meta description (ebc0633), pass-25 MED HomeMoreShows
+       teaser pill (beb62df), pass-25 MED /themes filter chip ALL
+       scope (bfe8ab0), pass-23 LOW comment-thread empty-state
+       itself qualifier (3e5b7c7). 10 fix/audit pairs total, all
+       single-tick polish; no row carried over.
+     - CRITIQUE.md: 1 actionable Pending row (the second is the
+       format placeholder at line 1077). Pass 25 (c91ee76) shipped
+       fresh signal this window. The remaining row is the pass-25
+       MED `measures itself against` cross-surface clever-tic
+       cluster filed as candidate #13's anchor signal. Could be
+       drained as a single-tick `/iterate` content edit but the
+       finding itself proposes a structural `collectClicheRepetitionIssues`
+       invariant + extensible phrase registry — the same shape as
+       phases 41/43 + the pending candidate #12, so a phase
+       promotion is the honest scope (drain + invariant + registry,
+       lax→strict cadence). /oversight resolves whether to promote
+       this as a phase or let /iterate drain the 9+ surfaces with
+       a smaller bonus-invariant scope.
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148 (triage:needs-user,
+       march.yml coverage-gate wiring still blocked on the cloud
+       GitHub App's missing `workflows` permission; awaiting a
+       local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The editorial-voice surface is stable.
+     - Commit pattern: 21 commits since pass 16 — 1 critique pass
+       (25 c91ee76), 1 single-tick non-critique fix (edfba34 home
+       canon revised label), 9 critique/audit drain pairs from
+       pass-22/23/24/25. All anticipated drains from already-shipped
+       phases or about-to-promote candidates; no rogue refactor
+       surface, no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) both
+       still await /oversight promotion. #03 (Newsletter, score 3.0)
+       still gated on S1 (domain swap). New: #13 (editorial-cliché
+       repetition guard, score 6.0).
+
+     One real structural candidate this pass — #13 — extending
+     the phase-41/43 + candidate-#12 lax→strict invariant
+     precedent to the editorial voice rule's last uncovered
+     surface (cross-corpus phrase-frequency). Anchored by a
+     fresh pass-25 critique row that itself proposes the
+     invariant shape verbatim, corroborated by independent `rg`
+     verification of the 10+ surface count. The drain budget
+     (9+ surface rewrites + invariant + registry) is honestly a
+     phase shape, not a single iterate tick; /oversight resolves
+     whether to promote vs. let /iterate drain the surfaces with
+     a smaller bonus-invariant scope. The only other actionable
+     signal (the pass-25 cluster) is the candidate #13 anchor
+     itself; remaining surfaces are all iterate-shape polish
+     already drained. -->
 
 <!-- Pass 16 (2026-06-01, commit 34a7832) — 1 candidate filed (#12).
      Signals reviewed:
