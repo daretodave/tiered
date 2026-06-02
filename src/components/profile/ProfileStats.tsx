@@ -12,14 +12,17 @@ function plural(n: number, one: string, many: string): string {
 // counts can't reveal an unpublished canon position or a season
 // outcome (phase 38 spoiler posture, agents.md §7).
 //
-// Cell order: SEASONS VOTED → COMMENTS → SHOWS FOLLOWED. tiered.tv's
+// Cell order: SEASONS VOTED → COMMENTS → SHOWS VOTED ON. tiered.tv's
 // brand mechanic is one-vote-per-season — the home Community Rank
 // pane, every season page's vote prompt, and this page's own
 // empty-state CTA ("Vote on a season and it will land here. / Start
 // with Survivor →") all foreground voting. Leading with seasons
 // keeps the participation hierarchy on a member's own record page
 // aligned with the voting-first frame the surrounding prose names
-// (critique pass-22).
+// (critique pass-22). The third cell counts distinct shows the user
+// has voted on — never frames the count as "followed", since no
+// follow / track / subscribe mechanic exists in the product
+// (critique pass-26: stronger promise than the data carries).
 export function ProfileStats({
   publishedCommentCount,
   votedSeasonCount,
@@ -39,7 +42,7 @@ export function ProfileStats({
     {
       key: 'shows',
       value: votedShowCount,
-      label: `${plural(votedShowCount, 'show', 'shows')} followed`,
+      label: `${plural(votedShowCount, 'show', 'shows')} voted on`,
     },
   ]
 

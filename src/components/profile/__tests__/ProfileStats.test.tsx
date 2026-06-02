@@ -22,7 +22,27 @@ describe('<ProfileStats>', () => {
 
     const shows = screen.getByTestId('profile-stat-shows')
     expect(shows.textContent).toContain('3')
-    expect(shows.textContent).toContain('shows followed')
+    expect(shows.textContent).toContain('shows voted on')
+  })
+
+  // Critique pass-26: the third cell counts distinct shows the user
+  // has voted on. No follow / track / subscribe mechanic exists in
+  // the product (verified: zero `follow` references outside this
+  // file), so the label must not promise one. Pinned bidirectionally
+  // — positive on /voted/ + negative against /followed/i — so a
+  // regression back to the ungrounded-counter framing fails at unit
+  // time.
+  it('labels the third cell against the data it counts, not a missing follow mechanic', () => {
+    render(
+      <ProfileStats
+        publishedCommentCount={2}
+        votedSeasonCount={5}
+        votedShowCount={3}
+      />,
+    )
+    const shows = screen.getByTestId('profile-stat-shows')
+    expect(shows.textContent ?? '').toMatch(/voted/i)
+    expect(shows.textContent ?? '').not.toMatch(/followed/i)
   })
 
   // Critique pass-22: lead the stat row with SEASONS VOTED so the
