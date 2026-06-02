@@ -23,7 +23,7 @@ entries:
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
-    title: "A closing stretch the franchise still measures itself against."
+    title: "Returnees playing the back half at full volume."
     blurb: "The endgame plays at full volume — every conversation freighted with everything Survivor had been. The final tribal lands like a summary statement for the entire returnee era the show was about to enter."
   - show: top-chef
     season: 6

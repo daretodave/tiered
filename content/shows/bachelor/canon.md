@@ -8,7 +8,7 @@ meth_how_h: How do we weigh it?
 meth_how_p: Four lenses, in roughly equal measure. Cast — does this group of women actually fill a room. Location — does the setting do editorial work, or is it backdrop. Format — does the season's structure hold or buckle. Argument — does this season say something the franchise hadn't said yet. Founding seasons get format credit; modern seasons get casting credit.
 meth_when_h: When do we revisit?
 meth_when_p: After every Bachelor finale, and whenever a Paradise run reshapes how we read an earlier lead. The top half of the canon moves rarely; the bottom half gets revisited when a returnee re-enters the franchise. We log every shift on this page and never quietly re-rank.
-tier_s_blurb: Format-defining or unrepeatable. The seasons the franchise's later runs are still measured against.
+tier_s_blurb: Format-defining or unrepeatable. The runs the franchise built its recruitment, its travel grammar, and its casting precedents around.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates badly.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
@@ -46,10 +46,10 @@ The original, and a remarkable thing to revisit. A management consultant from Vi
 
 ## 13. Jason Mesnick
 tag: The first single-dad lead, and the season the franchise learned to hold a longer story.
-slot_argument: A franchise pivot the show is still measured against; the domestic register changed what a Bachelor season could do.
+slot_argument: The first single-dad lead — a domestic register the format had never tried, and an eleven-episode book to use it on.
 community_rank_hint: rank=3 delta=0 sentiment=hold
 
-The first single-father lead, and the season the show figured out it could be a longer story. A Seattle real-estate agent with a son the producers folded into the frame from episode one takes the mansion, and eleven episodes is more runway than the format had used before. The extra room is spent in Seattle — a domestic register no prior season had tried — and on travel dates through New Zealand that open the cinematography wider than any winter season before it. Chris Harrison hosts. The final hour is the most-quoted in Bachelor history for reasons the franchise is still measuring its later runs against.
+The first single-father lead, and the season the show figured out it could be a longer story. A Seattle real-estate agent with a son the producers folded into the frame from episode one takes the mansion, and eleven episodes is more runway than the format had used before. The extra room is spent in Seattle — a domestic register no prior season had tried — and on travel dates through New Zealand that open the cinematography wider than any winter season before it. Chris Harrison hosts. The final hour is the most-quoted in Bachelor history, and the season the producers point to whenever they want to argue the format can hold a longer story.
 
 ## 15. Brad Womack (return run)
 tag: The franchise's first returnee Bachelor, and a season the show built on three years of unfinished business.
@@ -77,10 +77,10 @@ tag: The modern Bachelor begins here — deeper casting bench, more confident pr
 slot_argument: The first season of the modern era proper; the franchise newly aware of what it is earns a top-half slot.
 community_rank_hint: rank=7 delta=0 sentiment=hold
 
-The modern Bachelor begins here. A Denver software salesman with a sister-franchise final-rose run behind him takes the mansion, and the producers cast the season aware of what the post-Sean Lowe register had unlocked. Twelve episodes. Travel dates through Las Vegas, the Bahamas, Mexico City, Warsaw, and Jamaica. The casting roster is pulled from the deepest applicant pool the franchise had assembled to that point, and it reads on camera from episode one — the limo line is noticeably more polished than the prior winter. Chris Harrison hosts. Every casting choice and every travel beat reads as a franchise newly aware of what it is, and the modern era's later seasons are still measured against this one.
+The modern Bachelor begins here. A Denver software salesman with a sister-franchise final-rose run behind him takes the mansion, and the producers cast the season aware of what the post-Sean Lowe register had unlocked. Twelve episodes. Travel dates through Las Vegas, the Bahamas, Mexico City, Warsaw, and Jamaica. The casting roster is pulled from the deepest applicant pool the franchise had assembled to that point, and it reads on camera from episode one — the limo line is noticeably more polished than the prior winter. Chris Harrison hosts. Every casting choice and every travel beat reads as a franchise newly aware of what it is, and the modern era's recruitment pipeline opens its taps here.
 
 ## 25. Matt James
-tag: The franchise's first Black Bachelor — a casting precedent the show is measured against regardless of outcome.
+tag: The franchise's first Black Bachelor — a casting precedent the show had not made in twenty-four prior runs.
 slot_argument: Format and casting precedent earns the top-third slot; the franchise had not made this season in twenty-four prior runs.
 community_rank_hint: rank=8 delta=new sentiment=warm-up
 

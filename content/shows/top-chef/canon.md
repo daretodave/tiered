@@ -24,7 +24,7 @@ era_bands:
 
 ## 6. Las Vegas
 
-tag: The deepest bench Top Chef has ever cast — the season every later run gets measured against.
+tag: The deepest bench Top Chef has ever cast — brothers cooking against each other on a roster of kitchen veterans.
 slot_argument: A Strip-staged season whose pre-show resumes raised what a Quickfire was allowed to demand, with a judge's table that argued the food seriously and Padma Lakshmi anchoring across every round.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 

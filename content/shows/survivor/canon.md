@@ -50,7 +50,7 @@ shaped what the show is allowed to be more decisively.
 
 ## 20. Heroes vs. Villains
 
-tag: The bar every all-star season measures itself against.
+tag: Casting as format — heroes and villains as the season's whole structural argument.
 slot_argument: Twenty returning players, two clean tribal premises, a decade of accumulated context. Every move carries seasons of prior text — this is what casting depth looks like.
 community_rank_hint: rank=2 delta=1 sentiment=up
 

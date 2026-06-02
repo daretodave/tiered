@@ -8,7 +8,7 @@ meth_how_h: How do we weigh it?
 meth_how_p: Four lenses, in roughly equal measure. Lead — does the woman at the center actually drive the season. Cast — does the bench hold up across eleven cocktail parties. Format — does the season's structure stretch or buckle. Argument — does the season say something the franchise hadn't said yet. Founding seasons get format credit on top.
 meth_when_h: When do we revisit?
 meth_when_p: After every Bachelorette finale, and whenever a Paradise run reshapes how we read an early lead. The top of the canon moves rarely; the lower half gets revisited when a returnee from these seasons re-enters the franchise. We log every shift in the canon notes and never quietly re-rank an entry between revisions.
-tier_s_blurb: Format-defining or unrepeatable. The seasons the Bachelorette's later runs are still measured against.
+tier_s_blurb: Format-defining or unrepeatable. The runs that taught the Bachelorette what its own format could carry.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates a little.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the long argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
@@ -39,7 +39,7 @@ tag: The modern franchise peak. A magnetic lead and the longest book the show ha
 slot_argument: Widely regarded as the high-water mark of the modern run; the lead's unguarded presence carries the longest modern season cleanly.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
-A modern franchise peak built almost entirely on a magnetic lead. The youngest Bachelorette to that point takes the calendar, and the producers respond with the longest modern book yet — thirteen episodes and travel dates across Rhode Island, Boston, Scotland, the Netherlands, Latvia, and Greece, the first major US production to film in Latvia. The lead's unguarded, declarative presence reshapes every cocktail party and gives the season a center of gravity nothing in the cast can pull off. The most rewatched modern Bachelorette for a reason, and the season later runs are still measured against. A high-confidence hold near the top of the canon.
+A modern franchise peak built almost entirely on a magnetic lead. The youngest Bachelorette to that point takes the calendar, and the producers respond with the longest modern book yet — thirteen episodes and travel dates across Rhode Island, Boston, Scotland, the Netherlands, Latvia, and Greece, the first major US production to film in Latvia. The lead's unguarded, declarative presence reshapes every cocktail party and gives the season a center of gravity nothing in the cast can pull off. The most rewatched modern Bachelorette for a reason — and a thirteen-episode runway no later season has been willing to commit to. A high-confidence hold near the top of the canon.
 
 ## 11. Kaitlyn Bristowe
 tag: The premiere splits the lead. A first-night vote, a sharp lead, a loud cast.
@@ -67,7 +67,7 @@ tag: The franchise leaves the mansion, builds a season around a real life, and c
 slot_argument: Structural experiment of the era — home-state filming, single-mom lead, production reorganized around the lead's existing world.
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
-The franchise leaves the mansion. A single mother and former Bachelor winner takes the calendar with one condition — the show comes to her. The producers move production to Charlotte, build the eleven-episode book around the lead's existing life, and the result is a tonal pivot no Bachelorette had tried before. The casting matches the setting, with men measured against a real home and a real daughter from cocktail party one. International travel dates still land cleanly, but the season's argument is the home-state experiment itself. A canonical slot earned on structural courage as much as on the final cut, and a template the franchise has revisited carefully ever since.
+The franchise leaves the mansion. A single mother and former Bachelor winner takes the calendar with one condition — the show comes to her. The producers move production to Charlotte, build the eleven-episode book around the lead's existing life, and the result is a tonal pivot no Bachelorette had tried before. The casting matches the setting — men cast for how they walk into a real home and meet a real daughter from cocktail party one. International travel dates still land cleanly, but the season's argument is the home-state experiment itself. A canonical slot earned on structural courage as much as on the final cut, and a template the franchise has revisited carefully ever since.
 
 ## 12. JoJo Fletcher
 tag: The modern template at full confidence. No gamble, just clean execution.

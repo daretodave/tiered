@@ -8,7 +8,7 @@ meth_how_h: How do we weigh it?
 meth_how_p: Four lenses. Cast — does this house produce confessionals you remember a year later. House dynamics — do the alliances and feuds hold the season together. Twist execution — does the conceit land, or eat the room. Argument — does this season change what Big Brother can do next. Founding seasons get format-historical credit.
 meth_when_h: When do we revisit?
 meth_when_p: After every Big Brother finale, and whenever an all-star or returnee season recasts a prior run. Returnee seasons in particular can shift how a player's original run reads — sometimes a season hardens, sometimes it softens. The top half of the canon moves rarely; the middle and bottom get revisited when public-vote casts pull from these years.
-tier_s_blurb: Format-defining or unrepeatable. The seasons the franchise's later runs are still measured against.
+tier_s_blurb: Format-defining or unrepeatable. The summers Big Brother taught itself what an alliance season could actually be.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
@@ -103,10 +103,10 @@ The most twist-stacked summer the franchise had attempted to that point. Sixteen
 ## 12. The Brigade
 
 tag: The cleanest alliance lore Big Brother ever produced.
-slot_argument: A four-man pact named on the second night that runs the season's social engine through thirty episodes. A reference point every later alliance gets measured against.
+slot_argument: A four-man pact named on the second night that runs the season's social engine through thirty episodes. The cleanest piece of alliance lore the franchise has produced.
 community_rank_hint: rank=9 delta=-1 sentiment=down
 
-The summer the Brigade walked into Big Brother and the franchise acquired its cleanest piece of alliance lore. Four houseguests form a pact within the first nights and run the season's social engine through the broadcast's full thirty episodes. The Saboteur twist seeds the room with public-vote paranoia from outside; the Brigade absorbs it from inside, which is the structural argument that earns the slot. The casting is sharper than the cliques summer that preceded it. Long-running fans cite this season when they want to argue a clean four-person alliance can carry a Big Brother run end to end. The reference point every later modern alliance gets measured against.
+The summer the Brigade walked into Big Brother and the franchise acquired its cleanest piece of alliance lore. Four houseguests form a pact within the first nights and run the season's social engine through the broadcast's full thirty episodes. The Saboteur twist seeds the room with public-vote paranoia from outside; the Brigade absorbs it from inside, which is the structural argument that earns the slot. The casting is sharper than the cliques summer that preceded it. Long-running fans cite this season when they want to argue a clean four-person alliance can carry a Big Brother run end to end. The piece of alliance text every modern returnee cast comes back into the house already having read.
 
 ## 3. The Strategy Era Begins
 

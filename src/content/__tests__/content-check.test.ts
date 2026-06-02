@@ -8,6 +8,7 @@ import { setContentRoot } from '../paths'
 // rules can be exercised in vitest without spawning a child process.
 import {
   collectCalendarFailures,
+  collectClicheRepetitionIssues,
   collectCrossShowIssues,
   collectFailures,
   collectTaglineTemplatedTailIssues,
@@ -1990,5 +1991,176 @@ entries:
     setContentRoot(null)
     __resetContentCache()
     expect(collectThemedEntrySpoilerIssues()).toEqual([])
+  })
+})
+
+describe('content-check — cliche repetition (critique pass-25, issue #280)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-cliche-repetition-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite the phrase appears once on the HvV pull)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('passes at threshold (3 occurrences)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every later season measures itself against this one.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "The franchise's later runs are still measured against.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The bar every all-star season measures itself against.",
+    )
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('flags every occurrence when count exceeds the threshold', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every later season measures itself against this one.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "The franchise's later runs are still measured against.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The bar every all-star season measures itself against.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'd-shape',
+      "The reference point every later run gets measured against.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(4)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/a-shape.md (entry #1 blurb)',
+      'content/themes/b-shape.md (entry #1 blurb)',
+      'content/themes/c-shape.md (entry #1 blurb)',
+      'content/themes/d-shape.md (entry #1 blurb)',
+    ])
+    for (const issue of issues) {
+      expect(issue.message).toMatch(/cliche-repetition drift/)
+      expect(issue.message).toMatch(/measures\/measured against/)
+      expect(issue.message).toMatch(/appears 4 times/)
+    }
+  })
+
+  it('counts multiple hits inside a single field', () => {
+    // One theme entry can carry two hits — the threshold is
+    // measured cross-corpus, not cross-file, so a single field
+    // with four hits still flips the gate.
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every later season measures itself against this one, the bar later runs measure against, the reference everything gets measured against, the season the franchise measures itself against.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(4)
+    expect(
+      issues.every(
+        (i) => i.file === 'content/themes/a-shape.md (entry #1 blurb)',
+      ),
+    ).toBe(true)
+  })
+
+  it('catches every form (measures itself against, measured against, measure against)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every later season measures itself against this one.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "The franchise's later runs are still measured against.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The bar later back-half runs measure against the template.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'd-shape',
+      "Every later season measures against this one's template.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(4)
+  })
+
+  it('is case-insensitive', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every later season MEASURES ITSELF AGAINST this one.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "The franchise's later runs are still Measured Against.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The bar later runs measure against the template.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'd-shape',
+      "Every later season measures itself against this one.",
+    )
+    expect(collectClicheRepetitionIssues().length).toBe(4)
+  })
+
+  it('does not false-positive on incidental words ("the measure of the room", "measured response")', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The cast takes the measure of the room across the first three episodes.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A measured response from the host carries every cocktail party.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "Every later season measures itself against this one and earns its slot on craft.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'd-shape',
+      "A different editorial closer that stays plain without reaching for cliche.",
+    )
+    // 1 hit < threshold 3 → zero issues.
+    expect(collectClicheRepetitionIssues()).toEqual([])
   })
 })

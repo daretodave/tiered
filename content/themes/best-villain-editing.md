@@ -18,7 +18,7 @@ entries:
     season_label: "S20 · Heroes vs. Villains"
     rank: 1
     title: "An entire tribe of villain edits, all running at the same time."
-    blurb: "Half the cast was cast as villains on purpose, reputations already loaded in. The edit lets every confrontation play at full volume because the audience walked in with the receipts. The reference any later villain stretch is measured against."
+    blurb: "Half the cast was cast as villains on purpose, reputations already loaded in. The edit lets every confrontation play at full volume because the audience walked in with the receipts. No other returnee season has tried to run ten antagonist arcs in parallel."
   - show: survivor
     season: 7
     season_label: "S07 · Pearl Islands"

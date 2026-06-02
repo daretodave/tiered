@@ -28,7 +28,7 @@ tag: "The breakout — the season the show's American reputation now rests on."
 slot_argument: "An all-reality cast replaces the civilian mix, the release model goes weekly, a companion after-show arrives, and the format tightens. The show at full strength, and the obvious top of the canon."
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
-The clear number one. Season two is where the American version stopped trailing the UK original and found its own identity. The civilian mix gives way to an all-reality-personality cast that knows how to play to a camera, the release model shifts to a three-episode drop then weekly, and a companion after-show extends the run. Protection moves out of the season-one Armory and into the challenges, and the whole format tightens around Alan Cumming and Ardross Castle. The casting energy is sharp and the hour simply runs better than it ever has. This is the season the show's reputation now rests on, and every other run is measured against it. It earns the peak.
+The clear number one. Season two is where the American version stopped trailing the UK original and found its own identity. The civilian mix gives way to an all-reality-personality cast that knows how to play to a camera, the release model shifts to a three-episode drop then weekly, and a companion after-show extends the run. Protection moves out of the season-one Armory and into the challenges, and the whole format tightens around Alan Cumming and Ardross Castle. The casting energy is sharp and the hour simply runs better than it ever has. The all-reality cast pivot plus the Armory-to-challenge protection move are the two structural choices the show's identity now turns on. It earns the peak.
 
 ## 1. Season 1 (2023)
 

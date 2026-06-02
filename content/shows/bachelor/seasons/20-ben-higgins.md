@@ -29,4 +29,4 @@ watch_list:
     body: "The Caribbean finale runs patiently and is shot with the kind of care the modern era had been quietly working toward. The franchise's reset finishes here."
 ---
 
-The modern Bachelor begins here. A Denver software salesman with a sister-franchise final-rose run behind him takes the mansion, and the producers cast the season aware of what the post-Sean Lowe register had unlocked. Twelve episodes, travel dates through Las Vegas, Mexico City, Warsaw, and Jamaica, and a casting roster pulled from the deepest applicant pool the franchise had assembled. Chris Harrison hosts a season the modern franchise is measured against.
+The modern Bachelor begins here. A Denver software salesman with a sister-franchise final-rose run behind him takes the mansion, and the producers cast the season aware of what the post-Sean Lowe register had unlocked. Twelve episodes, travel dates through Las Vegas, Mexico City, Warsaw, and Jamaica, and a casting roster pulled from the deepest applicant pool the franchise had assembled. Chris Harrison hosts a season that opens the recruitment pipeline the modern era runs on.

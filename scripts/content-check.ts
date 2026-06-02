@@ -563,6 +563,123 @@ export function collectWatchOrderClassificationIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-25 MED (issue #280): the editorial phrase
+// `measures? itself against` / `measured against` / `measure
+// against` had drifted to 32 occurrences across 22 content files
+// — a clever closer the first time, the editor's tic by the
+// third. The content rewrite drained every offender except the
+// single highest-leverage surface (the HvV pull-quote). This
+// invariant pins phrase-reuse below a small threshold so a
+// future authoring pass cannot regress the catalog back into the
+// refrain. The pattern mirrors `collectYearTenureIssues`'s
+// cross-surface scan (every editorial text field on every show,
+// season, canon entry, and theme entry) but counts cross-file
+// reuse of a closed list of high-leverage clichés rather than
+// asserting a numeric truth.
+//
+// Threshold is per-pattern. The "measures/measured against"
+// pattern uses 3: one kept high-leverage surface plus a small
+// margin. A future drain that wants to add another pattern
+// (e.g. "set the bar", "the reference point") appends here once
+// the corpus has been cleaned to fit under its threshold —
+// adding a pattern without a paired rewrite would break verify.
+
+type ClichePattern = {
+  /** Human label for the failure message. */
+  label: string
+  /** Regex — must carry the global flag so matchAll iterates. */
+  re: RegExp
+  /** Max acceptable cross-surface occurrence count. Strictly greater fails. */
+  threshold: number
+}
+
+const CLICHE_PATTERNS: ReadonlyArray<ClichePattern> = [
+  {
+    label: '"measures/measured against"',
+    re: /\bmeasure[sd]?\s+(?:itself\s+)?against\b/gi,
+    threshold: 3,
+  },
+]
+
+export function collectClicheRepetitionIssues(): Failure[] {
+  type Source = { where: string; text: string | null | undefined }
+  const sources: Source[] = []
+
+  for (const show of getAllShows()) {
+    sources.push(
+      { where: `content/shows/${show.slug}.md (tagline)`, text: show.tagline },
+      { where: `content/shows/${show.slug}.md (body)`, text: show.body_md },
+    )
+    for (const season of getAllSeasons(show.slug)) {
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      sources.push(
+        { where: `${seasonFile} (eyebrow)`, text: season.eyebrow },
+        { where: `${seasonFile} (lede)`, text: season.lede },
+        { where: `${seasonFile} (body)`, text: season.body },
+        { where: `${seasonFile} (pull)`, text: season.pull },
+        { where: `${seasonFile} (blurb_md)`, text: season.blurb_md },
+      )
+    }
+    const canon = getCanon(show.slug)
+    if (canon) {
+      const canonFile = `content/shows/${show.slug}/canon.md`
+      sources.push(
+        { where: `${canonFile} (tier_s_blurb)`, text: canon.tier_s_blurb },
+        { where: `${canonFile} (tier_a_blurb)`, text: canon.tier_a_blurb },
+        { where: `${canonFile} (tier_b_blurb)`, text: canon.tier_b_blurb },
+        { where: `${canonFile} (tier_c_blurb)`, text: canon.tier_c_blurb },
+        { where: `${canonFile} (weekly_question)`, text: canon.weekly_question },
+        { where: `${canonFile} (meth_who_p)`, text: canon.meth_who_p },
+        { where: `${canonFile} (meth_how_p)`, text: canon.meth_how_p },
+        { where: `${canonFile} (meth_when_p)`, text: canon.meth_when_p },
+      )
+      for (const entry of canon.entries) {
+        sources.push(
+          { where: `${canonFile} (#${entry.rank} rationale)`, text: entry.rationale },
+          { where: `${canonFile} (#${entry.rank} slot_argument)`, text: entry.slot_argument },
+          { where: `${canonFile} (#${entry.rank} tag)`, text: entry.tag },
+        )
+      }
+    }
+  }
+
+  for (const theme of getAllThemes()) {
+    const themeFile = `content/themes/${theme.slug}.md`
+    sources.push(
+      { where: `${themeFile} (description)`, text: theme.description },
+      { where: `${themeFile} (tagline)`, text: theme.tagline },
+      { where: `${themeFile} (body_md)`, text: theme.body_md },
+    )
+    for (const entry of theme.entries) {
+      sources.push(
+        { where: `${themeFile} (entry #${entry.rank} title)`, text: entry.title },
+        { where: `${themeFile} (entry #${entry.rank} blurb)`, text: entry.blurb },
+      )
+    }
+  }
+
+  const issues: Failure[] = []
+  for (const pattern of CLICHE_PATTERNS) {
+    type Hit = { where: string; phrase: string }
+    const hits: Hit[] = []
+    for (const { where, text } of sources) {
+      if (!text) continue
+      for (const match of text.matchAll(pattern.re)) {
+        hits.push({ where, phrase: match[0] })
+      }
+    }
+    if (hits.length > pattern.threshold) {
+      for (const hit of hits) {
+        issues.push({
+          file: hit.where,
+          message: `cliche-repetition drift — phrase ${pattern.label} ("${hit.phrase}") appears ${hits.length} times across content; threshold is ${pattern.threshold}. Pick the highest-leverage surface to keep and rewrite the rest with material specific to each entry (see plan/CRITIQUE.md pass-25 / issue #280 for the original rewrite).`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -784,6 +901,20 @@ function main(): number {
     failures.push(...watchOrderClassificationIssues)
   } else {
     for (const issue of watchOrderClassificationIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-25 MED (issue #280): ships strict at threshold 3
+  // — the content rewrite drained the "measures/measured against"
+  // refrain from 32 occurrences across 22 files down to the single
+  // kept HvV pull-quote. One-line toggle mirroring the seven above.
+  const CLICHE_REPETITION_STRICT = true
+  const clicheRepetitionIssues = collectClicheRepetitionIssues()
+  if (CLICHE_REPETITION_STRICT) {
+    failures.push(...clicheRepetitionIssues)
+  } else {
+    for (const issue of clicheRepetitionIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

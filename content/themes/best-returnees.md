@@ -17,7 +17,7 @@ entries:
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 1
-    title: "The ur-returnee season the rest get measured against."
+    title: "Reputation as casting argument — heroes and villains, drawn on the wall."
     blurb: "Twenty players the audience already knew, split into reputational tribes, and turned loose in Samoa. The framing is so clean it has anchored the entire all-stars era of the show — the season every later returnee run is in conversation with."
   - show: survivor
     season: 40

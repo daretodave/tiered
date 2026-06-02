@@ -8,7 +8,7 @@ meth_how_h: How do we weigh it?
 meth_how_p: Four lenses. Casting — does the lineup produce bakers viewers remember a year later. Technical bench — do the challenges pull craft out of the tent rather than tripping the room. Tonal control — does the series hold its register across signature, technical, showstopper. Era argument — does the run change what Bake Off is allowed to attempt next.
 meth_when_h: When do we revisit?
 meth_when_p: After every series finale, and whenever a presenter or judge change resets the tent's chemistry. Channel-era series in particular ask to be re-read against the BBC run — sometimes the original era hardens, sometimes the newer one softens. The top of the canon moves rarely; the middle gets revisited when a new class of bakers prompts an honest reread.
-tier_s_blurb: Format-defining or unrepeatable. The series the show's later runs are still being measured against.
+tier_s_blurb: Format-defining or unrepeatable. The series that fixed what a peak Bake Off lineup, tent, and bench look like together.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
@@ -38,7 +38,7 @@ tag: The elegiac final BBC series — the original four-person lineup, one last 
 slot_argument: A confident closing chapter for the BBC era with the original presenters and judges still in place. The casting and the tent both knew the move was coming, and the series carries a valedictory weight none of the later runs can replicate.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
-The final BBC series, and a piece of television that knew exactly what it was. Mary Berry, Paul Hollywood, Mel Giedroyc and Sue Perkins worked the tent at Welford Park one last time before the format moved networks, and the run carries a valedictory weight the years on either side cannot match. The casting class is strong end to end, the technical challenges land cleanly, and the showstoppers push the bench harder than they had in earlier series. Worth the watch as a study in a format's lineup at full strength, and as the series the Channel 4 run was always going to be measured against.
+The final BBC series, and a piece of television that knew exactly what it was. Mary Berry, Paul Hollywood, Mel Giedroyc and Sue Perkins worked the tent at Welford Park one last time before the format moved networks, and the run carries a valedictory weight the years on either side cannot match. The casting class is strong end to end, the technical challenges land cleanly, and the showstoppers push the bench harder than they had in earlier series. Worth the watch as a study in a format's lineup at full strength — every bake produced under the original four with the network move already announced, the room playing its last run knowing it was the last.
 
 ## 1. The Touring Pilot
 

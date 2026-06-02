@@ -30,7 +30,7 @@ tag: "The breakout — the season the franchise's reputation now rests on."
 slot_argument: "New host, new Fiji villa, earlier June launch, and the number-one reality series across US streaming during its run. This is the show at full strength, and the obvious top of the canon."
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
-The clear number one. Season six is where the American port stopped trailing the UK original and became a phenomenon on its own terms. Ariana Madix takes over hosting, a new Fiji villa raises the production ceiling, and the earlier June launch caught a cultural moment the show had been chasing for years. It was widely cited as the top reality series across US streaming during its run. The casting energy is sharp, the format is fully settled after two Peacock seasons of refinement, and the hour simply runs better than it ever has. Every other season is now measured against this one. It earns the peak.
+The clear number one. Season six is where the American port stopped trailing the UK original and became a phenomenon on its own terms. Ariana Madix takes over hosting, a new Fiji villa raises the production ceiling, and the earlier June launch caught a cultural moment the show had been chasing for years. It was widely cited as the top reality series across US streaming during its run. The casting energy is sharp, the format is fully settled after two Peacock seasons of refinement, and the hour simply runs better than it ever has. New host, new villa, new launch month — three production swings that all landed in one summer. It earns the peak.
 
 ## 1. Season 1 (2019)
 

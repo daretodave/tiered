@@ -36,8 +36,8 @@ carry a lip-sync from the first week. RuPaul Charles hosted the
 era when the show had figured out its grammar but had not yet
 started chasing scale. Logo TV's smaller production budget kept
 the focus tight on the workroom and the runway. For people who
-came to Drag Race for the actual contest, Season 5 is the
-reference point everything else gets measured against.
+came to Drag Race for the actual contest, Season 5 is what
+the format looks like running cleanly with nothing in front of it.
 
 ## 6. Season 6
 
