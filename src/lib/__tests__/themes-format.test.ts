@@ -98,10 +98,34 @@ describe('formatThemeStatus', () => {
 })
 
 describe('filterModeText', () => {
-  it('formats "all" mode with total count', () => {
+  it('formats "all" mode qualified by index scope', () => {
     expect(
       filterModeText('all', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
-    ).toBe('showing · all 12 lists')
+    ).toBe('showing · all 12 in the index')
+  })
+
+  it('"all" mode includes the `in the index` qualifier (chip != catalog total)', () => {
+    // The hero lede reads from `stats.total` (catalog total); the chip's
+    // `counts.all` is the NON-featured index-grid scope. Qualifying keeps
+    // `ALL` from silently shadowing the lede — critique pass-25.
+    expect(
+      filterModeText('all', { all: 9, tone: 3, craft: 3, era: 2, single: 1 }),
+    ).toMatch(/in the index/i)
+  })
+
+  it('never regresses to the bare-quantifier shape that shadows the lede', () => {
+    // Negative pin per critique pass-25 closure pattern: the literal must
+    // not match `showing · all N lists` (the prior shape) under ANY count.
+    for (const n of [0, 1, 9, 12, 100]) {
+      const text = filterModeText('all', {
+        all: n,
+        tone: 0,
+        craft: 0,
+        era: 0,
+        single: 0,
+      })
+      expect(text).not.toMatch(/^showing · all \d+ lists$/)
+    }
   })
 
   it('formats a single category mode', () => {

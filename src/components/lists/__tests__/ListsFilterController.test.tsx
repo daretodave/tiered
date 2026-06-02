@@ -44,15 +44,28 @@ describe('<ListsFilterController>', () => {
     )
   })
 
-  it('shows "all 12 lists" mode text by default', () => {
+  it('shows "all 12 in the index" mode text by default', () => {
     render(
       <ListsFilterController counts={counts}>
         <div>children</div>
       </ListsFilterController>,
     )
     expect(screen.getByTestId('lists-filter-mode').textContent).toContain(
-      'all 12 lists',
+      'all 12 in the index',
     )
+  })
+
+  it('never renders the bare "all N lists" shape (critique pass-25 pin)', () => {
+    // The hero lede above renders the catalog total; the chip is the
+    // index-grid scope. The qualifier `in the index` is what keeps `ALL`
+    // from silently shadowing the lede. Regression guard.
+    render(
+      <ListsFilterController counts={counts}>
+        <div>children</div>
+      </ListsFilterController>,
+    )
+    const text = screen.getByTestId('lists-filter-mode').textContent ?? ''
+    expect(text).not.toMatch(/^showing · all \d+ lists$/)
   })
 
   describe('empty-category chip suppression', () => {

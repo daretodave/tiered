@@ -85,7 +85,11 @@ export function filterModeText(
   counts: Record<FilterKey, number>,
 ): string {
   if (filter === 'all') {
-    return `showing · all ${counts.all} lists`
+    // The hero lede reads `${stats.total} lists…` (catalog total — 12 today);
+    // the chip's `counts.all` is the index-grid scope (NON-featured rows, 9
+    // today). Qualifying with `in the index` keeps `ALL` from silently
+    // shadowing the lede's catalog total — critique pass-25.
+    return `showing · all ${counts.all} in the index`
   }
   return `showing · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}`
 }
