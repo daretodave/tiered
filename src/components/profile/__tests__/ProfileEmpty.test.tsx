@@ -154,4 +154,38 @@ describe('<ProfileEmpty>', () => {
     render(<ProfileEmpty />)
     expect(screen.queryByTestId('profile-stats')).toBeNull()
   })
+
+  // CRITIQUE pass 26 LOW (#285): the self-view empty state used to
+  // render only the featured-show CTA, leaving a signed-in reader
+  // with zero activity no path to the rest of the 13-show catalog.
+  // The secondary `Browse all shows →` link points at `/shows` so
+  // the empty state offers the catalog without turning into a menu.
+  // The stranger branch stays sparse (no CTA leakage on someone
+  // else's record).
+  it('renders the secondary catalog CTA linking to /shows on self-view', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const catalogCta = screen.getByTestId('profile-empty-cta-catalog')
+    expect(catalogCta.tagName).toBe('A')
+    expect(catalogCta.getAttribute('href')).toBe('/shows')
+    expect(catalogCta.textContent).toBe('Browse all shows →')
+  })
+
+  it('renders BOTH the featured-show CTA and the catalog CTA in the self-view branch (#285)', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    expect(screen.getByTestId('profile-empty-cta').textContent).toMatch(
+      /Start with Survivor/i,
+    )
+    expect(screen.getByTestId('profile-empty-cta-catalog').textContent).toMatch(
+      /Browse all shows/i,
+    )
+  })
+
+  it('renders no catalog CTA on the stranger (non-self) empty view (#285 regression guard)', () => {
+    render(<ProfileEmpty />)
+    expect(screen.queryByTestId('profile-empty-cta-catalog')).toBeNull()
+  })
 })

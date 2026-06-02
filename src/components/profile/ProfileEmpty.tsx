@@ -47,13 +47,31 @@ export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
             : 'No votes on the public record yet.'}
         </p>
         {selfView ? (
-          <Link
-            className="text-sm font-medium text-ink-0 underline-offset-2 hover:underline"
-            data-testid="profile-empty-cta"
-            href={selfView.showHref}
-          >
-            Start with {selfView.showName} →
-          </Link>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link
+              className="text-sm font-medium text-ink-0 underline-offset-2 hover:underline"
+              data-testid="profile-empty-cta"
+              href={selfView.showHref}
+            >
+              Start with {selfView.showName} →
+            </Link>
+            {/* CRITIQUE pass 26 LOW (#285): the featured-show CTA is the
+                right first move for a brand-new reader, but a signed-in
+                reader with zero activity who signed up for a non-Survivor
+                reason needs a path to the full catalog from the empty
+                state — without it, the page reads as a stub. Two CTAs,
+                not five — the secondary link opens the catalog without
+                turning the empty state into a menu. Self-view only:
+                the stranger branch above renders neither CTA (no door
+                to open on someone else's record). */}
+            <Link
+              className="text-sm font-medium text-ink-2 underline-offset-2 hover:underline hover:text-ink-0"
+              data-testid="profile-empty-cta-catalog"
+              href="/shows"
+            >
+              Browse all shows →
+            </Link>
+          </div>
         ) : null}
       </div>
     </div>
