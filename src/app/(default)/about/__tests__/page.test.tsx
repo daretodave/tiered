@@ -77,3 +77,30 @@ describe('content/legal/about.md voting copy (#258, supersedes #257)', () => {
     expect(doc?.body_md).not.toMatch(/flip it whenever/i)
   })
 })
+
+// Iterate finding #276 (issue #276, critique pass 25 MED): the prior
+// /about frontmatter description ("A spoiler-free home for ranked TV
+// seasons. How it works.") was the home tagline with three terse words
+// tacked on — flat across search snippets, OG cards, JSON-LD. The page
+// body delivers the canon spec + weight ladder + spoilers policy, so
+// the new description leads with that substance. Bidirectional pins:
+// positive that the description names at least one of {canon, vote,
+// spoilers}; negative that it does not regress to the prior
+// "How it works." closer drift.
+describe('content/legal/about.md frontmatter description (#276)', () => {
+  it('names a substantive editorial keyword the body owns (canon / vote / spoilers)', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    expect(doc?.description).toMatch(/canon|vote|spoilers/i)
+  })
+
+  it('does not regress to the prior "How it works." flat-fallback closer', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.description).not.toMatch(/How it works\.\s*$/)
+  })
+
+  it('does not regress to the home-tagline duplicate "A spoiler-free home for ranked TV seasons" opener', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.description).not.toMatch(/A spoiler-free home for ranked TV seasons/)
+  })
+})
