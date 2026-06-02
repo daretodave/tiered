@@ -3,26 +3,30 @@ import { describe, expect, it } from 'vitest'
 import { HomeMoreShows } from '../HomeMoreShows'
 
 describe('<HomeMoreShows>', () => {
-  it('surfaces the count in the sub-row label', () => {
+  it('reads as a flat sectioning header, not a "+ N more" teaser', () => {
     render(
-      <HomeMoreShows count={6}>
+      <HomeMoreShows>
         <div data-testid="dummy-tile">tile</div>
       </HomeMoreShows>,
     )
-    expect(screen.getByTestId('home-more-shows-label').textContent).toBe(
-      '+ 6 more in the index',
-    )
+    const label = screen.getByTestId('home-more-shows-label')
+    expect(label.textContent).toBe('The rest of the index')
+    // Regression pin against the pass-25 teaser-framing finding: the
+    // label must never re-introduce the "+ N more in the index" form,
+    // which read as a click-to-expand affordance for items already
+    // rendered immediately below.
+    expect(label.textContent).not.toMatch(/\+\s+\d+\s+more\s+in\s+the\s+index/)
   })
 
   it('renders the "Browse all" link', () => {
-    render(<HomeMoreShows count={6}>tiles</HomeMoreShows>)
+    render(<HomeMoreShows>tiles</HomeMoreShows>)
     const link = screen.getByRole('link', { name: /browse all/i })
     expect(link.getAttribute('href')).toBe('/shows')
   })
 
   it('renders children inside the compact grid', () => {
     render(
-      <HomeMoreShows count={1}>
+      <HomeMoreShows>
         <span data-testid="kid">x</span>
       </HomeMoreShows>,
     )

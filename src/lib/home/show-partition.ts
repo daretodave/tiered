@@ -11,9 +11,9 @@
 // /critique pass 10 (#174) caught the dual-render: the FEATURED hero
 // at the top of the page (`getFeaturedShow()`) and the compact tail
 // both paint the same show — Survivor renders as "CURRENTLY FEATURED"
-// and again 10 tiles down in "+ 10 MORE IN THE INDEX". The fix is the
-// optional `excludeSlug` arg below: callers pass the featured slug so
-// the partition omits it from both grids and the union is unique.
+// and again 10 tiles down in the "rest of the index" grid. The fix is
+// the optional `excludeSlug` arg below: callers pass the featured slug
+// so the partition omits it from both grids and the union is unique.
 
 import type { Show } from '@/content'
 

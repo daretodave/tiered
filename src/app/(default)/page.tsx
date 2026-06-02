@@ -86,7 +86,7 @@ export default function HomePage() {
       </HomeShowGrid>
 
       {compactShows.length > 0 ? (
-        <HomeMoreShows count={compactShows.length}>
+        <HomeMoreShows>
           {compactShows.map((show) => (
             <ShowTile key={show.slug} show={show} variant="compact" />
           ))}

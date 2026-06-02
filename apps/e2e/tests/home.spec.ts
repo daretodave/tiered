@@ -144,11 +144,17 @@ test('compact tiles drop the blurb but keep bullet + name + meta', async ({
   }
 })
 
-test('sub-row label surfaces the index remainder', async ({ page }) => {
+test('sub-row label reads as a sectioning header, not a teaser', async ({
+  page,
+}) => {
   await page.goto('/')
-  await expect(page.getByTestId('home-more-shows-label')).toContainText(
-    /^\+\s\d+\smore in the index$/,
-  )
+  const label = page.getByTestId('home-more-shows-label')
+  await expect(label).toHaveText('The rest of the index')
+  // Regression pin against the pass-25 teaser-framing finding: the
+  // label must never re-introduce the "+ N more in the index" form,
+  // which read as a click-to-expand affordance for items already
+  // rendered immediately below.
+  await expect(label).not.toContainText(/\+\s+\d+\s+more\s+in\s+the\s+index/)
 })
 
 test('home surfaces every tracked show — headline reconciles with the grids', async ({
@@ -175,12 +181,6 @@ test('home surfaces every tracked show — headline reconciles with the grids', 
 
   // Every tracked show appears on the home page — none stranded.
   expect(featuredCount + compactCount + heroCount).toBe(tracked)
-
-  // The "+ N more in the index" label matches the compact tiles rendered.
-  const label =
-    (await page.getByTestId('home-more-shows-label').textContent()) ?? ''
-  const labelCount = Number(label.match(/\+\s(\d+)\smore/)?.[1])
-  expect(labelCount).toBe(compactCount)
 })
 
 // critique pass 10 #174: the FEATURED hero block at the top of the
