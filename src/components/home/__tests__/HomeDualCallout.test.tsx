@@ -74,4 +74,19 @@ describe('<HomeDualCallout>', () => {
     expect(live).not.toMatch(/Every voter has watched/i)
     expect(live).toMatch(/(weight|0\.1|signed-in|self-attest|attest)/i)
   })
+
+  // Pins the live-pane to the full three-tier ladder /about
+  // details (anon 0.1× / new-account 0.25× / long-account 1.0×).
+  // Critique pass 27 flagged the prior two-tier framing
+  // (signed-in vs anon only) as understating the system — a
+  // first-time reader following the home → about path sees a
+  // new-account tier the home never mentioned. A future
+  // authoring pass that simplifies back to two tiers trips this
+  // gate.
+  it('names all three voting weights, not just signed-in vs anon', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live').textContent ?? ''
+    expect(live).toMatch(/0\.25|new account|under 7/i)
+    expect(live).toMatch(/0\.1/)
+  })
 })
