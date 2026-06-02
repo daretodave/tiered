@@ -15,8 +15,9 @@ export function HomeDualCallout() {
         <h3 className="dual-title">Community Rank</h3>
         <p className="dual-blurb">
           One reader, one vote per season — does it belong in the community top
-          10? <b>Plain. Restless. Honest.</b> The numbers shift each week. Every
-          voter has watched the season end to end.
+          10? <b>Plain. Restless. Honest.</b> The numbers shift each week.
+          Signed-in voters self-attest they watched the season end to end;
+          anonymous votes count at 0.1×.
         </p>
       </div>
     </section>

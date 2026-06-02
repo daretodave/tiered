@@ -59,4 +59,19 @@ describe('<HomeDualCallout>', () => {
     expect(curated).not.toMatch(/quarterly/i)
     expect(curated).toMatch(/finale|after every/i)
   })
+
+  // Pins the live-pane trust line to the weighting mechanic
+  // /about details, not a flat "every voter has watched..."
+  // overpromise. Critique pass 26 flagged the prior literal as
+  // falsifiable against the 0.1x/0.25x/1.0x ladder at
+  // content/legal/about.md:37-38 (anonymous guests can vote
+  // without any watched-it gate). The fix swaps the flat claim
+  // for self-attestation + the actual weighting mechanic; a
+  // regression back to the unqualified claim trips at unit time.
+  it('names the weighting mechanic, not a flat watched-every-voter claim', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live').textContent ?? ''
+    expect(live).not.toMatch(/Every voter has watched/i)
+    expect(live).toMatch(/(weight|0\.1|signed-in|self-attest|attest)/i)
+  })
 })
