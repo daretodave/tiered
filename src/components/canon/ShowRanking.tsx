@@ -100,8 +100,11 @@ export function ShowRanking({
             number.
           </span>
           <span className="cp-community-only">
+            Each season carries a yes/no vote — does it belong in the community
+            top 10? — and the share of &ldquo;in&rdquo; votes orders every
+            season 1..N below.{' '}
             {hasLiveVotes
-              ? 'Updated every Thursday at 9pm ET. Approval is the share of voters who would keep a season in its slot or move it up.'
+              ? 'Updated every Thursday at 9pm ET.'
               : 'Updated every Thursday at 9pm ET. Until enough votes land, this mirrors the canon — be the first to move it.'}
           </span>
         </p>

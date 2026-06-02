@@ -141,6 +141,35 @@ describe('<ShowRanking>', () => {
     expect(intro).not.toHaveTextContent(/Recomputed/i)
   })
 
+  it('ranking-intro community meta bridges the binary top-10 question to the ordinal rank (pass-26 #283)', () => {
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={[season(20, 'Heroes vs. Villains')]}
+        canon={canon()}
+        initialView="community"
+        community={liveRanking(
+          [season(20, 'Heroes vs. Villains')],
+          'votes',
+        )}
+      />,
+    )
+    const intro = screen.getByTestId('ranking-intro')
+    const text = intro.textContent ?? ''
+    // Positive bridge pin per critique pass-26 #283: the community intro
+    // must name the binary top-10 question AND name how the share of "in"
+    // votes orders every season 1..N below — the bridge between the
+    // site-wide yes/no ballot framing and the ordinal-rank list below.
+    expect(text).toMatch(/top 10/i)
+    expect(text).toMatch(/(in[- ]?votes|share of|orders|1\.\.N)/i)
+    // Negative drift pin: any future authoring pass that drops the
+    // ordinal-bridge clause and leaves the bare "top 10" question
+    // without a follow-on share/orders sentence trips this guard.
+    if (/top 10/i.test(text)) {
+      expect(text).toMatch(/(share|orders|1\.\.N|in[- ]?votes)/i)
+    }
+  })
+
   it('renders the empty state when canon is null', () => {
     render(
       <ShowRanking
