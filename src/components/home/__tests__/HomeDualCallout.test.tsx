@@ -44,4 +44,19 @@ describe('<HomeDualCallout>', () => {
     expect(live).not.toMatch(/two seasons at a time/i)
     expect(live).not.toMatch(/both seasons/i)
   })
+
+  // Pins the curated-pane cadence to the per-event mechanic the
+  // show pages actually carry ("after every season finale and
+  // after any returnee season that recasts a prior run.",
+  // content/shows/*/canon.md meth_when_p). Critique pass 26
+  // flagged the home's "Revised quarterly" claim as a calendar-
+  // time cadence that contradicts the per-finale cadence every
+  // show page promises. A future authoring pass that re-introduces
+  // a wall-clock noun trips this gate at unit time.
+  it('describes the per-finale canon cadence, not a wall-clock one', () => {
+    render(<HomeDualCallout />)
+    const curated = screen.getByTestId('home-dual-curated').textContent ?? ''
+    expect(curated).not.toMatch(/quarterly/i)
+    expect(curated).toMatch(/finale|after every/i)
+  })
 })

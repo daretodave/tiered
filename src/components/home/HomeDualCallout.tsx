@@ -6,8 +6,8 @@ export function HomeDualCallout() {
         <h3 className="dual-title">Editor&apos;s Canon</h3>
         <p className="dual-blurb">
           A single, ordered list written by an editor who has watched the whole
-          show twice. <b>Stable, opinionated, signed.</b> Revised quarterly when
-          a new season changes the math.
+          show twice. <b>Stable, opinionated, signed.</b> Revised after every
+          finale, and after returnee seasons that recast a prior run.
         </p>
       </div>
       <div className="dual-cell" data-testid="home-dual-live">
