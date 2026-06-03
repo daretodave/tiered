@@ -173,6 +173,52 @@ describe('renderShowTaglineTokens', () => {
     })
     expect(out).not.toContain('{')
   })
+
+  // Critique pass-28 HIGH (issue #292): the Amazing Race tagline
+  // shipped as `across {yearsWord} of starting lines` and rendered
+  // ungrammatical "twenty-five of starting lines" — proof that the
+  // token substitutes the number ONLY. Pin the contract here so a
+  // future author can read the test and understand they must supply
+  // the surrounding noun (` years`) explicitly. The companion
+  // invariant in `scripts/content-check.ts`
+  // (`collectYearTokenPairingIssues`) enforces the same contract
+  // at the catalog level on raw frontmatter.
+  describe('{yearsWord} substitutes the number only — author supplies the noun', () => {
+    const today = new Date('2026-05-23T00:00:00Z')
+
+    it('renders a bare number when the author omits ` years` after the token', () => {
+      // Reproduces the pre-fix Amazing Race shape: token is not
+      // followed by ` years`, so the rendered string carries a
+      // bare cardinal word + the next literal word.
+      const rendered = renderShowTaglineTokens(
+        'across {yearsWord} of starting lines',
+        { estYear: 2001, slug: 'amazing-race', asOfDate: today },
+      )
+      expect(rendered).toBe('across twenty-five of starting lines')
+      expect(rendered).not.toContain('years')
+    })
+
+    it('renders the canonical grammatical form when ` years` is supplied after the token', () => {
+      // The fix: pair the token with the noun explicitly.
+      const rendered = renderShowTaglineTokens(
+        'across {yearsWord} years of starting lines',
+        { estYear: 2001, slug: 'amazing-race', asOfDate: today },
+      )
+      expect(rendered).toBe('across twenty-five years of starting lines')
+    })
+
+    it('does not inject any noun after the token — even when the next character is a hyphen', () => {
+      // A hypothetical future construction the row mentions:
+      // `{yearsWord}-year run`. The token must remain noun-free so
+      // the author retains control of the compound form.
+      const rendered = renderShowTaglineTokens('a {yearsWord}-year run', {
+        estYear: 2000,
+        slug: 'survivor',
+        asOfDate: today,
+      })
+      expect(rendered).toBe('a twenty-five-year run')
+    })
+  })
 })
 
 describe('ordinalWord', () => {

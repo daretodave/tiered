@@ -16,6 +16,7 @@ import {
   collectThemedEntrySpoilerIssues,
   collectThemeFailures,
   collectYearTenureIssues,
+  collectYearTokenPairingIssues,
 } from '../../../scripts/content-check'
 
 const sixtyWords = Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')
@@ -1283,6 +1284,104 @@ ${Array.from({ length: 60 }, (_, i) => `w${i}`).join(' ')}
     const issues = collectYearTenureIssues(asOf)
     expect(issues.some((i) => /20-heroes-vs-villains\.md \(pull\)/.test(i.file))).toBe(true)
     expect(issues[0]?.message).toMatch(/Twenty-five years/)
+  })
+})
+
+// Critique pass-28 HIGH (issue #292): the Amazing Race tagline
+// shipped as `across {yearsWord} of starting lines` and rendered
+// ungrammatical "twenty-five of starting lines" on /shows because
+// the token substitutes the number ONLY (see
+// `src/lib/__tests__/show-tenure.test.ts` for the runtime
+// counterpart). This invariant pins the raw frontmatter contract:
+// any show whose `tagline` or `card_tagline` carries `{yearsWord}`
+// must also carry the literal substring `{yearsWord} years` so the
+// rendered string reads naturally.
+describe('content-check — {yearsWord} token pairing (critique pass-28, issue #292)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-yearsword-pairing-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes when no tagline carries the token', () => {
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline: 'A franchise that has spent a quarter-century inventing itself.',
+    })
+    expect(collectYearTokenPairingIssues()).toEqual([])
+  })
+
+  it('passes when the token is paired with ` years`', () => {
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline:
+        'spent {yearsWord} years rediscovering what it is. The mother format.',
+    })
+    expect(collectYearTokenPairingIssues()).toEqual([])
+  })
+
+  it('reports the Amazing Race regression shape — token without ` years`', () => {
+    makeShowWithTagline(tmp, 'amazing-race', {
+      estYear: 2001,
+      tagline:
+        'a cross-continent route mechanic that has held its shape across {yearsWord} of starting lines.',
+    })
+    const issues = collectYearTokenPairingIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toMatch(/amazing-race\.md \(tagline\)/)
+    expect(issues[0]?.message).toMatch(/\{yearsWord\} years/)
+  })
+
+  it('passes when {yearsWord} appears once unpaired but the same field also carries the paired form', () => {
+    // Substring check — as long as the paired form occurs anywhere
+    // in the field, the field is honored. A future authoring pass
+    // that wants two clauses can keep the paired one elsewhere.
+    makeShowWithTagline(tmp, 'survivor', {
+      estYear: 2000,
+      tagline:
+        'spent {yearsWord} years rediscovering what it is — and {yearsWord} more ahead.',
+    })
+    expect(collectYearTokenPairingIssues()).toEqual([])
+  })
+
+  it('reports a card_tagline regression independently from tagline', () => {
+    const file = path.join(tmp, 'shows', 'amazing-race.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: amazing-race
+name: The Amazing Race
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: "Clean — no token here."
+card_tagline: "across {yearsWord} of starting lines"
+tier: A
+network: "CBS"
+est_year: 2001
+genre_tag: "Travel competition"
+featured: false
+---
+`,
+    )
+    const issues = collectYearTokenPairingIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toMatch(/amazing-race\.md \(card_tagline\)/)
   })
 })
 

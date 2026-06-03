@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
+import matter from 'gray-matter'
 import {
   getAllShows,
   getAllSeasons,
@@ -12,6 +13,7 @@ import {
 } from '../src/content/loaders'
 import { getCalendar } from '../src/content/calendar'
 import { ContentValidationError } from '../src/content/errors'
+import { showFile } from '../src/content/paths'
 import {
   validateEraBandCoverage,
   yearOfSeason,
@@ -765,6 +767,59 @@ export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   return issues
 }
 
+// Critique pass-28 HIGH (issue #N): the `{yearsWord}` token
+// substitutes the spelled-out number ONLY — it does not inject the
+// word `years` after itself (see `renderShowTaglineTokens` in
+// `src/lib/show-tenure.ts`). An author must supply the surrounding
+// noun explicitly: the canonical pairing is `{yearsWord} years`,
+// rendering as e.g. "twenty-five years of casting work". The
+// Amazing Race tagline shipped without the noun
+// (`across {yearsWord} of starting lines`) and rendered as the
+// ungrammatical "twenty-five of starting lines" on every visit to
+// `/shows`. This invariant pins the pairing in raw frontmatter:
+// any show whose `tagline` or `card_tagline` carries `{yearsWord}`
+// must also carry the literal substring `{yearsWord} years`. The
+// check operates on raw frontmatter (not the loader-materialized
+// `Show.tagline`) because token substitution erases the literal
+// before runtime — only the source-of-truth markdown still sees
+// the bare token. Strict floor 0 — mirrors STRICT,
+// CROSS_SHOW_STRICT, YEAR_TENURE_STRICT, TAGLINE_TAIL_STRICT,
+// THEME_COUNT_TAIL_STRICT, THEMED_ENTRY_SPOILER_STRICT,
+// WATCH_ORDER_CLASSIFICATION_STRICT, CLICHE_REPETITION_STRICT.
+// If a future tagline ever needs a different construction (the
+// row notes `{yearsWord}-year run` as a hypothetical), extend
+// this helper with a per-show allowlist alongside the rewrite.
+const YEAR_TOKEN_LITERAL = '{yearsWord}'
+const YEAR_TOKEN_PAIRED = '{yearsWord} years'
+
+type RawShowFrontmatter = {
+  tagline?: unknown
+  card_tagline?: unknown
+}
+
+export function collectYearTokenPairingIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const raw = readFileSync(showFile(show.slug), 'utf8')
+    const parsed = matter(raw)
+    const data = parsed.data as RawShowFrontmatter
+    const fields: ReadonlyArray<[string, unknown]> = [
+      ['tagline', data.tagline],
+      ['card_tagline', data.card_tagline],
+    ]
+    for (const [field, value] of fields) {
+      if (typeof value !== 'string') continue
+      if (!value.includes(YEAR_TOKEN_LITERAL)) continue
+      if (value.includes(YEAR_TOKEN_PAIRED)) continue
+      issues.push({
+        file: `content/shows/${show.slug}.md (${field})`,
+        message: `\`${YEAR_TOKEN_LITERAL}\` token pairing — the token substitutes the spelled-out number only, so an unpaired use renders ungrammatical copy (e.g. "twenty-five of starting lines"). Author the literal as "\`${YEAR_TOKEN_PAIRED}\` <noun>" so the rendered string reads "twenty-five years of …". If a future tagline genuinely needs a different construction (e.g. "\`${YEAR_TOKEN_LITERAL}\`-year run"), extend \`collectYearTokenPairingIssues\` with a per-show allowlist in the same pass.`,
+      })
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -915,6 +970,22 @@ function main(): number {
     failures.push(...clicheRepetitionIssues)
   } else {
     for (const issue of clicheRepetitionIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-28 HIGH: ships strict at floor 0 — the Amazing
+  // Race tagline rewrite drained the only offender in one tick
+  // (this commit), and the only other corpus use of `{yearsWord}`
+  // (Survivor) was already paired with ` years` from the phase-43
+  // tick-1 introduction of the token. One-line toggle mirroring
+  // the eight above.
+  const YEAR_TOKEN_PAIRING_STRICT = true
+  const yearTokenPairingIssues = collectYearTokenPairingIssues()
+  if (YEAR_TOKEN_PAIRING_STRICT) {
+    failures.push(...yearTokenPairingIssues)
+  } else {
+    for (const issue of yearTokenPairingIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
