@@ -17,8 +17,8 @@ entries:
     season: 7
     season_label: "S07"
     rank: 1
-    title: "A final leg that proves the format's closing run is built right."
-    blurb: "The Race always ends on a live sprint, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. The closing run is where this season turns a cult favorite into a network anchor."
+    title: "A final leg that proves the format's live sprint is built right."
+    blurb: "The Race always ends on a live sprint, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. That final leg is where this season turns a cult favorite into a network anchor."
   - show: survivor
     season: 20
     season_label: "S20 · Heroes vs. Villains"
@@ -30,7 +30,7 @@ entries:
     season_label: "S06 · Las Vegas"
     rank: 3
     title: "The deepest knife-skill cast carries the kitchen all the way home."
-    blurb: "Las Vegas runs the most technically loaded roster the show ever fielded, and the closing run never lets the level drop. The final service plays like a high-end tasting menu — every plate earning its place, nothing coasting on goodwill."
+    blurb: "Las Vegas runs the most technically loaded roster the show ever fielded, and the late-stage cooking never lets the level drop. The final service plays like a high-end tasting menu — every plate earning its place, nothing coasting on goodwill."
   - show: survivor
     season: 40
     season_label: "S40 · Winners at War"
@@ -41,14 +41,14 @@ entries:
     season: 2
     season_label: "S02"
     rank: 5
-    title: "The Round Table tightening into the closing run the format was built for."
-    blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment freighted, the table smaller and louder each night. The closing stretch is where the US adaptation proves it can hold the tension all the way down."
+    title: "The Round Table tightening into the final banishment the format was built for."
+    blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment freighted, the table smaller and louder each night. That last seat at the table is where the US adaptation proves it can hold the tension all the way down."
   - show: dragrace
     season: 6
     season_label: "S06"
     rank: 6
-    title: "A closing run that pays off a finale built on real artistry."
-    blurb: "Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The closing hour lands a season whose cultural footprint outgrew its Logo airing."
+    title: "A final lip-sync that pays off a finale built on real artistry."
+    blurb: "Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The crown coronation lands a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
     season_label: "S10"

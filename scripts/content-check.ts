@@ -682,6 +682,115 @@ export function collectClicheRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-28 LOW finding (issue #297): /themes/best-finales
+// body copy leaned on `closing run`/`closing stretch`/`closing
+// hour` across the tagline plus 4 of 7 entry bodies. The structural
+// class — one noun phrase load-bearing in the majority of a themed
+// list's entries — is what a reader pattern-matches as templated /
+// SEO copy. Catch-class invariant: for every themed list with >= 5
+// cross-canon entries, scan all entry titles + blurbs for the most-
+// repeated 2-word phrase (alphabetic bigrams, both words content-
+// bearing — stopwords excluded). If any phrase appears in more than
+// 50% of entries (entry counts as containing it iff its title or
+// blurb contains it), warn naming the phrase + entry count. Tagline
+// occurrences fold into the reported total but the 50% floor is
+// measured strictly against entries. `category: single`
+// (intra-canon, single-show) lists are exempt — natural show-name
+// references repeat by design.
+const PHRASE_REPETITION_STOPWORDS = new Set([
+  'a','about','above','after','against','all','almost','along','also','am','an',
+  'and','another','any','are','around','as','at','away','back','be','because',
+  'been','before','being','below','between','both','but','by','can','could',
+  'did','do','does','doing','don','done','down','during','each','either','else',
+  'enough','even','ever','every','few','for','from','further','get','gets',
+  'getting','give','given','gives','go','goes','going','gone','got','had','has',
+  'have','having','he','her','here','hers','herself','him','himself','his','how',
+  'i','if','in','into','is','it','its','itself','just','least','less','let',
+  'like','many','may','me','might','more','most','much','must','my','myself',
+  'never','no','nor','not','now','of','off','on','once','one','only','onto',
+  'or','other','others','our','ours','ourselves','out','over','own','past','per',
+  'rather','same','say','says','said','she','should','since','so','some','still',
+  'such','take','takes','taken','taking','than','that','the','their','theirs',
+  'them','themselves','then','there','these','they','this','those','though',
+  'three','through','throughout','to','too','two','under','until','up','upon',
+  'us','use','used','using','very','was','we','well','were','what','when',
+  'where','whereas','whether','which','while','who','whom','whose','why','will',
+  'with','within','without','would','yet','you','your','yours','yourself',
+  'across',
+])
+
+function extractContentBigrams(text: string): Set<string> {
+  const tokens = text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[^a-z\s'-]/g, ' ')
+    .split(/\s+/)
+    .map((t) => t.replace(/^['-]+|['-]+$/g, ''))
+    .filter((t) => /^[a-z][a-z'-]*$/.test(t))
+  const bigrams = new Set<string>()
+  for (let i = 0; i < tokens.length - 1; i++) {
+    const a = tokens[i]!
+    const b = tokens[i + 1]!
+    if (PHRASE_REPETITION_STOPWORDS.has(a)) continue
+    if (PHRASE_REPETITION_STOPWORDS.has(b)) continue
+    bigrams.add(`${a} ${b}`)
+  }
+  return bigrams
+}
+
+export function collectThemeBodyPhraseRepetitionIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    const entryCount = theme.entries.length
+    if (entryCount < 5) continue
+
+    const phraseToEntries = new Map<string, Set<number>>()
+    const phraseTotal = new Map<string, number>()
+    const recordOccurrences = (text: string, entryRank: number | null) => {
+      const bigrams = extractContentBigrams(text)
+      for (const phrase of bigrams) {
+        phraseTotal.set(phrase, (phraseTotal.get(phrase) ?? 0) + 1)
+        if (entryRank != null) {
+          if (!phraseToEntries.has(phrase)) {
+            phraseToEntries.set(phrase, new Set())
+          }
+          phraseToEntries.get(phrase)!.add(entryRank)
+        }
+      }
+    }
+    for (const entry of theme.entries) {
+      recordOccurrences(`${entry.title ?? ''} ${entry.blurb ?? ''}`, entry.rank)
+    }
+    if (theme.tagline) recordOccurrences(theme.tagline, null)
+
+    const floor = Math.floor(entryCount / 2)
+    let topPhrase: string | null = null
+    let topEntries = 0
+    for (const [phrase, entries] of phraseToEntries) {
+      if (entries.size > floor && entries.size > topEntries) {
+        topPhrase = phrase
+        topEntries = entries.size
+      }
+    }
+    if (topPhrase) {
+      const total = phraseTotal.get(topPhrase) ?? 0
+      const ranks = Array.from(phraseToEntries.get(topPhrase)!).sort(
+        (a, b) => a - b,
+      )
+      const totalNote =
+        total > topEntries
+          ? `, ${total} occurrences total across entry titles + blurbs + tagline`
+          : ''
+      issues.push({
+        file: `content/themes/${theme.slug}.md`,
+        message: `themed-list body copy templating — phrase "${topPhrase}" appears in ${topEntries} of ${entryCount} entries (#${ranks.join(', #')})${totalNote}. A single noun phrase load-bearing in more than half of a list's entries reads as templated rather than written. Rotate the metaphor in all but one entry (or keep the phrase only in the tagline) using surface-native vocabulary already in the surrounding editorial body.`,
+      })
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -1052,6 +1161,22 @@ function main(): number {
     failures.push(...aboutListTitleIssues)
   } else {
     for (const issue of aboutListTitleIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-28 LOW (issue #297): ships strict at floor 0 —
+  // the best-finales rewrite drains `closing run` to 2 of 7 entries
+  // (28.6%, below the 50% threshold). The invariant is the floor
+  // that catches a future themed list whose entry bodies converge
+  // on a single noun phrase. One-line toggle mirroring the ten
+  // above.
+  const THEME_BODY_PHRASE_STRICT = true
+  const themeBodyPhraseIssues = collectThemeBodyPhraseRepetitionIssues()
+  if (THEME_BODY_PHRASE_STRICT) {
+    failures.push(...themeBodyPhraseIssues)
+  } else {
+    for (const issue of themeBodyPhraseIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

@@ -13,6 +13,7 @@ import {
   collectCrossShowIssues,
   collectFailures,
   collectTaglineTemplatedTailIssues,
+  collectThemeBodyPhraseRepetitionIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
   collectThemeFailures,
@@ -2412,5 +2413,215 @@ describe('content-check — cliche repetition (critique pass-25, issue #280)', (
     )
     // 1 hit < threshold 3 → zero issues.
     expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+})
+
+function makeMultiEntryTheme(
+  root: string,
+  slug: string,
+  opts: {
+    category?: string
+    tagline?: string
+    entries: { title: string; blurb: string }[]
+  },
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  const entryYaml = opts.entries
+    .map(
+      (e, i) =>
+        `  - show: alpha\n    season: ${i + 1}\n    rank: ${i + 1}\n    title: ${JSON.stringify(e.title)}\n    blurb: ${JSON.stringify(e.blurb)}`,
+    )
+    .join('\n')
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: ${JSON.stringify(opts.tagline ?? 'tag')}
+category: ${opts.category ?? 'tone'}
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: "Editorial setup that closes on its own observation."
+entries:
+${entryYaml}
+---
+`,
+  )
+}
+
+describe('content-check — themed-list body-copy phrase repetition (critique pass-28, issue #297)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-themed-phrase-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite, best-finales sits at 2 of 7 entries on `closing run`)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeBodyPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('flags a 7-entry list where a noun phrase appears in 5 of 7 entries', () => {
+    makeMultiEntryTheme(tmp, 'templated', {
+      entries: [
+        {
+          title: 'A final leg that proves the closing run is built right.',
+          blurb: 'The closing run is where this season turns a cult favorite into a network anchor.',
+        },
+        {
+          title: 'Returnees playing the back half at full volume.',
+          blurb: 'The endgame plays at full volume — every conversation freighted with everything.',
+        },
+        {
+          title: 'The deepest knife-skill cast carries the kitchen all the way home.',
+          blurb: 'Las Vegas runs the most technically loaded roster and the closing run never lets the level drop.',
+        },
+        {
+          title: 'Twenty former champions taking the season to its full size.',
+          blurb: 'The milestone framing earns itself in the closing run.',
+        },
+        {
+          title: 'The Round Table tightening into the closing run the format was built for.',
+          blurb: 'The breakout season runs its endgame the way the format promised.',
+        },
+        {
+          title: 'A finale built on real artistry.',
+          blurb: 'The closing run lands a season whose cultural footprint outgrew its airing.',
+        },
+        {
+          title: 'The endgame where the modern alliance game finally takes itself seriously.',
+          blurb: 'The summer rewards the alliance play the season spent building.',
+        },
+      ],
+    })
+    const issues = collectThemeBodyPhraseRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/themes/templated.md')
+    expect(issues[0]!.message).toMatch(/"closing run"/)
+    expect(issues[0]!.message).toMatch(/5 of 7 entries/)
+  })
+
+  it('passes a 7-entry list where the load-bearing phrase sits at the threshold floor (3 of 7)', () => {
+    makeMultiEntryTheme(tmp, 'edge-case', {
+      tagline: 'The closing run is where a season either pays off its promise.',
+      entries: [
+        {
+          title: 'A final leg that proves the format is built right.',
+          blurb: 'The Race always ends on a live sprint, racing hard into the last pit stop.',
+        },
+        {
+          title: 'Returnees playing the back half at full volume.',
+          blurb: 'The endgame plays at full volume — every conversation freighted.',
+        },
+        {
+          title: 'The deepest knife-skill cast carries the kitchen all the way home.',
+          blurb: 'Las Vegas runs the most technically loaded roster and the closing run never drops.',
+        },
+        {
+          title: 'Twenty former champions taking the season to its full size.',
+          blurb: 'The milestone framing earns itself in the closing run.',
+        },
+        {
+          title: 'The Round Table tightening into the final banishment.',
+          blurb: 'The breakout season runs its endgame the way the format promised.',
+        },
+        {
+          title: 'A final lip-sync that pays off a finale built on artistry.',
+          blurb: 'The crown coronation lands a season whose cultural footprint outgrew its airing.',
+        },
+        {
+          title: 'The endgame where the modern alliance game finally takes itself seriously.',
+          blurb: 'A closing run sharp enough to hold against every era that followed it.',
+        },
+      ],
+    })
+    expect(collectThemeBodyPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('counts the phrase against an entry iff its title OR blurb contains it', () => {
+    makeMultiEntryTheme(tmp, 'split', {
+      entries: [
+        { title: 'A closing run that opens the season.', blurb: 'b' },
+        { title: 'second title', blurb: 'A closing run that does the work.' },
+        { title: 'A closing run again.', blurb: 'b' },
+        { title: 'A closing run carries the cast.', blurb: 'b' },
+        { title: 'no phrase here', blurb: 'no phrase here either' },
+      ],
+    })
+    const issues = collectThemeBodyPhraseRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"closing run"/)
+    expect(issues[0]!.message).toMatch(/4 of 5 entries/)
+  })
+
+  it('exempts `category: single` (intra-canon) lists where show-name refs naturally repeat', () => {
+    makeMultiEntryTheme(tmp, 'pillars', {
+      category: 'single',
+      entries: [
+        { title: 'A pillar season.', blurb: 'Survivor returnees define the era.' },
+        { title: 'Another pillar.', blurb: 'Survivor returnees set the bar.' },
+        { title: 'A third pillar.', blurb: 'Survivor returnees raise the stakes.' },
+        { title: 'A fourth pillar.', blurb: 'Survivor returnees prove the format.' },
+        { title: 'A fifth pillar.', blurb: 'Survivor returnees pay it forward.' },
+      ],
+    })
+    expect(collectThemeBodyPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('skips lists with fewer than 5 entries (statistical floor)', () => {
+    makeMultiEntryTheme(tmp, 'tiny', {
+      entries: [
+        { title: 'A closing run that opens.', blurb: 'b' },
+        { title: 'A closing run that drives.', blurb: 'b' },
+        { title: 'A closing run that lands.', blurb: 'b' },
+        { title: 'A closing run that ends.', blurb: 'b' },
+      ],
+    })
+    expect(collectThemeBodyPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('ignores stopword-only bigrams (the / of / and / etc.)', () => {
+    makeMultiEntryTheme(tmp, 'stopwords', {
+      entries: [
+        { title: 'and the end of the season', blurb: 'the season ends here' },
+        { title: 'in the end the season', blurb: 'the cast at the end' },
+        { title: 'at the end of season', blurb: 'and the season is the end' },
+        { title: 'on the end of season', blurb: 'and the end the cast' },
+        { title: 'by the end of season', blurb: 'the end and the cast' },
+      ],
+    })
+    // No content-bearing bigram crosses the 50% floor; "the end"
+    // is filtered as a stopword-leading bigram.
+    expect(collectThemeBodyPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('is case-insensitive', () => {
+    makeMultiEntryTheme(tmp, 'mixed-case', {
+      entries: [
+        { title: 'A CLOSING RUN that opens.', blurb: 'b' },
+        { title: 'A Closing Run that drives.', blurb: 'b' },
+        { title: 'a closing run that lands.', blurb: 'b' },
+        { title: 'A closing Run that ends.', blurb: 'b' },
+        { title: 'no phrase', blurb: 'no phrase' },
+      ],
+    })
+    const issues = collectThemeBodyPhraseRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"closing run"/)
   })
 })
