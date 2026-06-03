@@ -96,17 +96,34 @@ describe('<ProfileEmpty>', () => {
     )
   })
 
-  // CRITIQUE pass 22 MED (#262): the self-view prose flips to
-  // second-person framing ("your record") so the next-action prompt
-  // and the CTA address the actual owner of the page.
-  it('renders the second-person self-view empty-state sentence alongside the CTA', () => {
+  // CRITIQUE pass 22 MED (#262) + pass 28 MED (#293): the self-view
+  // prose stays second-person ("your record") so the next-action
+  // prompt and the CTA address the actual owner of the page; pass 28
+  // swapped the prior two-sentence admin-style framing ("Nothing on
+  // your record yet. Vote on a season and it will land here.") for a
+  // single warm editorial lede that restores the bearings voice on
+  // the only surface previously missing it.
+  it('renders the self-view editorial lede alongside the CTA (#262 + #293)', () => {
     render(
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'Nothing on your record yet. Vote on a season and it will land here.',
+      'New here. Cast one vote and your record starts writing itself.',
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
+  })
+
+  // CRITIQUE pass 28 MED (#293) negative pin: the prior admin-style
+  // two-sentence framing must not regress. A future edit that
+  // reaches back for "Nothing on your record yet" or "Vote on a
+  // season and it will land here" trips the unit gate.
+  it('does not regress to the prior two-sentence admin-style framing (#293)', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/nothing on your record yet/i)
+    expect(text).not.toMatch(/it will land here/i)
   })
 
   // CRITIQUE pass 22 MED (#262) negative pin: the self branch must
@@ -120,34 +137,23 @@ describe('<ProfileEmpty>', () => {
     expect(text).not.toMatch(/the public record/i)
   })
 
-  // CRITIQUE pass 16 LOW (#217): the owner's own empty profile gets a
-  // zeroed stat skeleton above the empty-state copy so a new authed
-  // reader sees the *shape* of what will populate — in the same
-  // treatment the populated profile uses. A stranger viewing an empty
-  // profile must stay sparse (no owner scaffold).
+  // CRITIQUE pass 28 MED (#293): the prior pass-16 #217 zeroed
+  // stat-tile skeleton on self-view was reverted — stacking
+  // `0 SEASONS VOTED / 0 COMMENTS / 0 SHOWS VOTED ON` above the
+  // empty-state copy surfaced six pieces of zero/absence before the
+  // CTAs, reading as an admin screen rather than an editorial
+  // product. The stat tile row is now reserved for accounts with at
+  // least one vote (the populated branch in
+  // `src/app/(default)/u/[handle]/page.tsx`); the empty branch
+  // leads with a single warm editorial lede + CTAs only. The
+  // stranger branch (no `selfView`) stays sparse for the same
+  // reason.
 
-  it('renders a zeroed stat skeleton on self-view', () => {
+  it('renders no stat skeleton on self-view (#293 — pass-16 #217 reverted)', () => {
     render(
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
-    const stats = screen.getByTestId('profile-stats')
-    expect(stats).toBeTruthy()
-    // All three cells read zero — the shape of what will populate.
-    expect(screen.getByTestId('profile-stat-comments').textContent).toContain('0')
-    expect(screen.getByTestId('profile-stat-seasons').textContent).toContain('0')
-    expect(screen.getByTestId('profile-stat-shows').textContent).toContain('0')
-  })
-
-  it('places the zeroed stat skeleton above the empty-state copy', () => {
-    render(
-      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
-    )
-    const stats = screen.getByTestId('profile-stats')
-    const empty = screen.getByTestId('profile-empty')
-    // DOCUMENT_POSITION_FOLLOWING (4) → stats precedes empty in the DOM.
-    expect(stats.compareDocumentPosition(empty) & Node.DOCUMENT_POSITION_FOLLOWING).toBe(
-      Node.DOCUMENT_POSITION_FOLLOWING,
-    )
+    expect(screen.queryByTestId('profile-stats')).toBeNull()
   })
 
   it('renders no stat skeleton on the stranger (non-self) empty view', () => {

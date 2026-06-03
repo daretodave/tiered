@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ProfileStats } from './ProfileStats'
 
 type ProfileEmptyProps = {
   // When the viewer is looking at their own empty profile, the
@@ -25,25 +24,24 @@ type ProfileEmptyProps = {
 // prompt + CTA so the next-action is one click; the stranger branch
 // reads a sparse third-person status with no CTA (no door to open
 // on someone else's record).
+//
+// CRITIQUE pass 28 MED (#293): the self-view used to stack a
+// zeroed stat-tile row (0 / 0 / 0) above the prose, surfacing six
+// pieces of zero/absence before the two CTA arrows — the surface
+// read as an admin screen, not an editorial product. The stat tile
+// row is now reserved for accounts with at least one vote so the
+// structure earns its space; the self branch leads with a single
+// warm editorial lede ("New here. Cast one vote and your record
+// starts writing itself."), the only surface that previously let
+// the bearings voice ("knowledgeable peer — confident, warm,
+// plain-spoken") down. Reverts the pass-16 #217 zeroed skeleton.
 export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
   return (
     <div className="flex flex-col gap-6" data-testid="profile-empty-block">
-      {/* On the owner's own empty profile, a zeroed stat row shows the
-          shape of what will populate — a scannable skeleton in the same
-          treatment the populated profile uses, so the page reads as an
-          empty record, not an unbuilt page. A stranger viewing an empty
-          profile gets the sparse copy only (no owner scaffold). */}
-      {selfView ? (
-        <ProfileStats
-          publishedCommentCount={0}
-          votedSeasonCount={0}
-          votedShowCount={0}
-        />
-      ) : null}
       <div className="flex flex-col gap-3">
         <p className="text-ink-2" data-testid="profile-empty">
           {selfView
-            ? 'Nothing on your record yet. Vote on a season and it will land here.'
+            ? 'New here. Cast one vote and your record starts writing itself.'
             : 'No votes on the public record yet.'}
         </p>
         {selfView ? (
