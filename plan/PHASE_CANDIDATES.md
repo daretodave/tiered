@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-03 at commit 735b28f
-> Pass count: 18
+> Last pass: 2026-06-03 at commit 8f6035e
+> Pass count: 19
 
 ## Considered (awaiting promotion)
 
@@ -430,6 +430,97 @@ candidate #12's lax→strict invariant precedent established in
 `scripts/content-check.ts`, with the distinct twist that the
 check aggregates across files instead of validating one file at
 a time.
+
+<!-- Pass 19 (2026-06-03, commit 8f6035e) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 18
+       cleared every row in the same iterate cycle it filed —
+       pass-27 LOW /about example list titles (6f17965 +
+       f1cac03), pass-28 LOW /themes Featured strip date receipt
+       (664f3a5 + a456a0e), pass-28 LOW /themes lede vs hero
+       stats math (daf1fc3 + b531ba4), pass-28 MED /u/[handle]
+       empty-state editorial lede (d3699ac + 677dc57), pass-28
+       HIGH amazing-race {yearsWord} pairing (3bf9c7d + ac2dafe),
+       pass-28 LOW /themes/best-finales `closing run` repetition
+       (ab56775 + 1bc71ca). Six fix/audit pairs, all single-tick
+       polish; no row carried over.
+     - CRITIQUE.md: 5 actionable Pending rows from pass 29
+       (8f6035e, just shipped this window). Cluster analysis:
+       (1) [MED, anon|authed] footer SHOWS column alphabetical-
+       first-3 vs tier-aware shortlist — single-component fix
+       (`FooterTiersCol.tsx` tier-rank helper); single-tick
+       `/iterate` shape. (2) [MED, anon] `at full volume` cliche
+       cluster across 15+ surfaces — the finding itself proposes
+       extending `CLICHE_PATTERNS` in `scripts/content-check.ts:598`,
+       which is the **second** concrete extension of the
+       pass-25-seeded CLICHE_REPETITION pattern (the **first** —
+       `closing run` — landed via the pass-28 drain at 1bc71ca
+       this window). Reinforces already-pending candidate #13
+       (CLICHE_REPETITION_STRICT, score 6.0) but does not warrant
+       a fresh candidate; it is one more registry row on the
+       existing proposal. (3) [LOW, anon] /shows/survivor/season/
+       heroes-vs-villains section 05 `Read next.` misframes a
+       bidirectional canon pair — single-page literal swap to
+       `Either direction.`; single-tick `/iterate` shape.
+       (4) [LOW, anon] /themes/best-finales entry #02 past-perfect
+       `had been` reads as closure on still-airing Survivor —
+       single-clause edit (`had been` → `had been by 2010`);
+       single-tick `/iterate` shape. (5) [LOW, anon] `back half`
+       vs `back-half` hyphenation drift across 4 content sites —
+       finding itself proposes a `BACK_HALF_HYPHEN` invariant.
+       Hyphenation-discipline class is a candidate-shape question
+       (lax→strict invariant in `scripts/content-check.ts`), but
+       (a) it is currently a single-phrase class (one compound
+       modifier), (b) the finding's proposed scope is one
+       narrow regex (not the cross-corpus extensible registry
+       candidate #13 specifies), and (c) the existing
+       `BACK_HALF_HYPHEN` proposal nests cleanly inside
+       candidate #13's extensible phrase registry as one more
+       row. Below the §3.1 multi-signal triangulation bar; let
+       `/iterate` drain the 5 content sites and add the regex as
+       a one-tick invariant per its sibling drains (precedent:
+       1bc71ca + ab56775 for `closing run`).
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring still
+       blocked on the cloud GitHub App's missing `workflows`
+       permission; awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice/contract surfaces remain stable.
+     - Commit pattern: 21 commits since pass 18 — 1 critique pass
+       (29 8f6035e), 6 critique/audit drain pairs from pass 27 +
+       pass 28 + pass 29, 1 single-tick metadata/content fix
+       (5101ab6 /themes meta description), 2 single-tick vote/
+       VotePair component drains (669115b/8db4bfd +
+       6869220/00d7750). All anticipated drains from already-
+       shipped phases or about-to-promote candidates; no rogue
+       refactor surface, no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) +
+       #13 (editorial-cliché repetition guard, score 6.0) all
+       still await /oversight promotion. Pass 29 reinforced #13
+       a second time (`at full volume` is the second concrete
+       extension of the CLICHE_PATTERNS registry pass 28 seeded;
+       `closing run` was the first). #03 (Newsletter, score 3.0)
+       still gated on S1 (domain swap). No new candidate filed
+       this pass.
+
+     Zero real structural candidates this pass. Five pending
+     critique rows from pass 29: two single-component MED fixes
+     (footer SHOWS shortlist; `at full volume` rewrite) and three
+     single-tick LOW polish edits (`Read next.` literal swap;
+     `had been` tense anchor; `back half` hyphenation drift). The
+     `at full volume` and `back half` findings both propose
+     `scripts/content-check.ts` extensions — both nest inside
+     candidate #13's extensible phrase registry rather than
+     warranting their own candidates. The §3.1 "real demand vs
+     model imagination" test still favors letting candidates
+     #11/#12/#13 promote before filing a fourth on the same
+     `scripts/content-check.ts` lax→strict shape. Next tick:
+     `/iterate` picks up the highest-scoring pending critique row
+     (likely one of the two MED state-transparency or cliche-
+     drain findings). -->
 
 <!-- Pass 18 (2026-06-03, commit 735b28f) — 0 candidates filed.
      Signals reviewed:
