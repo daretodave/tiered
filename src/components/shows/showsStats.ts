@@ -1,29 +1,37 @@
-import type { Show } from '@/content'
-import { formatCanonRevisedLabel } from '@/lib/canon/last-revised'
+import { type Show, getCanon } from '@/content'
+import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 
 export type ShowsStats = {
   showCount: number
   totalSeasons: number
-  lastRevision: string
+  // `null` when no canon in the catalog carries a `last_revised` —
+  // ShowsHero hides the stat cell rather than stamping a fake date.
+  lastRevision: string | null
 }
 
-// Reuses the canon-revised formatter so `/shows`, `/`, and per-show
-// pages all stamp the recency in the same editorial "Month YYYY" form
-// (critique pass 7 caught the MM / YY shape reading as machine output).
-export function formatRevision(today: Date): string {
-  return formatCanonRevisedLabel(today)
-}
-
+// Critique pass-27 HIGH (#288): the /shows hero `Last revision` stat
+// is sourced from the max `canon.last_revised` ISO across the catalog,
+// not from build-time `new Date()`. Mirrors the pass-24 #269 home/show
+// fix one surface up — every canon-revised label in the product
+// (home, show, /shows, themes) now derives from the same canon
+// frontmatter, so the 1st-of-the-month build clock no longer drifts
+// the catalog stat past surfaces whose canon hasn't moved. ISO 8601
+// `YYYY-MM-DD` strings sort lexicographically the same way they sort
+// chronologically, so the max-by-string is the latest revision date.
 export function computeShowsStats(
   shows: readonly Show[],
-  today: Date = new Date(),
+  canonLookup: (slug: string) => { last_revised?: string } | null = getCanon,
 ): ShowsStats {
-  const showCount = shows.length
   let totalSeasons = 0
-  for (const s of shows) totalSeasons += s.seasons
+  let latestIso: string | null = null
+  for (const s of shows) {
+    totalSeasons += s.seasons
+    const iso = canonLookup(s.slug)?.last_revised
+    if (iso && (latestIso === null || iso > latestIso)) latestIso = iso
+  }
   return {
-    showCount,
+    showCount: shows.length,
     totalSeasons,
-    lastRevision: formatRevision(today),
+    lastRevision: canonRevisedLabelFromIso(latestIso ?? undefined),
   }
 }

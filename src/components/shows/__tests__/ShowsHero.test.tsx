@@ -79,4 +79,41 @@ describe('<ShowsHero>', () => {
     expect(lede.textContent).toContain('still working through')
     expect(lede.getAttribute('data-tier-coverage')).toBe('SAB')
   })
+
+  // Critique pass-27 HIGH (#288): when no canon in the catalog carries
+  // `last_revised` (or the showsStats helper returns null for any
+  // reason), the stat cell must hide entirely — mirrors the home
+  // pass-24 #269 hide path so /shows never stamps a fabricated date.
+  it('hides the Last revision cell when stats.lastRevision is null', () => {
+    render(
+      <ShowsHero
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: null }}
+        tiers={['S', 'A']}
+      />,
+    )
+    expect(screen.queryByTestId('shows-stat-revised')).toBeNull()
+    expect(screen.queryByTestId('shows-hero-canon-revised')).toBeNull()
+    const stats = screen.getByTestId('shows-hero-stats')
+    expect(stats.textContent).not.toContain('Last revision')
+  })
+
+  it('renders the canon-revised cell verbatim from the supplied label', () => {
+    // Regression pin: the cell text comes from `stats.lastRevision`
+    // as supplied — no clock dependency, no reformatting. Lock the
+    // ShowsHero contract so a future refactor that re-introduces a
+    // build-time fallback in the component itself trips at unit time.
+    render(
+      <ShowsHero
+        stats={{
+          showCount: 13,
+          totalSeasons: 290,
+          lastRevision: 'February 2027',
+        }}
+        tiers={['S', 'A']}
+      />,
+    )
+    expect(screen.getByTestId('shows-hero-canon-revised').textContent).toBe(
+      'February 2027',
+    )
+  })
 })

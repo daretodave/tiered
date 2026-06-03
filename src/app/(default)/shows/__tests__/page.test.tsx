@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // /shows is the tier-list overview — generateMetadata's description
@@ -25,10 +26,23 @@ type FixtureShow = {
   slug: string
   tier: 'S' | 'A' | 'B'
   seasons: number
+  // Minimum fields the runtime page render needs beyond tier/seasons.
+  // Cast as `unknown` when threading into `getAllShows()` for the
+  // render path — generateMetadata only needs slug/tier/seasons.
+  name?: string
+  palette?: { primary: string; ink: string; paper: string }
+  status?: 'airing' | 'ended' | 'hiatus'
+  blurb?: string
+  tagline?: string
+  network?: string
+  est_year?: number
+  genre_tag?: string
+  featured?: boolean
 }
 
-const { getAllShowsMock } = vi.hoisted(() => ({
+const { getAllShowsMock, getCanonMock } = vi.hoisted(() => ({
   getAllShowsMock: vi.fn<() => FixtureShow[]>(),
+  getCanonMock: vi.fn<(slug: string) => { last_revised?: string } | null>(),
 }))
 
 vi.mock('@/content', async () => {
@@ -36,10 +50,29 @@ vi.mock('@/content', async () => {
   return {
     ...actual,
     getAllShows: getAllShowsMock,
+    getCanon: getCanonMock,
   }
 })
 
-import { generateMetadata } from '../page'
+import { generateMetadata, default as ShowsIndexPage } from '../page'
+
+function fullShow(overrides: Partial<FixtureShow> = {}): FixtureShow {
+  return {
+    slug: 'survivor',
+    tier: 'S',
+    seasons: 47,
+    name: 'Survivor',
+    palette: { primary: '#D55E36', ink: '#EFE2BD', paper: '#0E2A2A' },
+    status: 'airing',
+    blurb: 'b',
+    tagline: 't',
+    network: 'CBS',
+    est_year: 2000,
+    genre_tag: 'Reality competition',
+    featured: true,
+    ...overrides,
+  }
+}
 
 const survivor: FixtureShow = { slug: 'survivor', tier: 'S', seasons: 47 }
 const amazingRace: FixtureShow = { slug: 'amazing-race', tier: 'A', seasons: 36 }
@@ -47,6 +80,8 @@ const newcomer: FixtureShow = { slug: 'newcomer', tier: 'B', seasons: 3 }
 
 beforeEach(() => {
   getAllShowsMock.mockReset()
+  getCanonMock.mockReset()
+  getCanonMock.mockReturnValue(null)
 })
 
 describe('/shows generateMetadata — title + canonical', () => {
@@ -136,5 +171,53 @@ describe('/shows generateMetadata — description derived from populated tiers',
     expect(generateMetadata().description).toBe(
       'Reality-TV canons, sorted by how settled the ranking is.',
     )
+  })
+})
+
+// Critique pass-27 HIGH (#288): the /shows hero `LAST REVISION` stat
+// must source its month from the max canon `last_revised` ISO across
+// the catalog — same path the show page reads — not from build-time
+// `new Date()`. Mirrors the home pass-24 #269 closure one surface up.
+describe('/shows hero Last revision sourced from catalog canons', () => {
+  it('renders the latest canon revision month across the roster', () => {
+    getAllShowsMock.mockReturnValue([
+      fullShow({ slug: 'a' }),
+      fullShow({ slug: 'b' }),
+      fullShow({ slug: 'c' }),
+    ])
+    getCanonMock.mockImplementation((slug) => {
+      if (slug === 'a') return { last_revised: '2026-03-01' }
+      if (slug === 'b') return { last_revised: '2026-05-19' }
+      if (slug === 'c') return { last_revised: '2026-04-15' }
+      return null
+    })
+    const { getByTestId } = render(ShowsIndexPage())
+    expect(getByTestId('shows-hero-canon-revised').textContent).toBe('May 2026')
+  })
+
+  it('hides the stat cell entirely when no canon carries last_revised', () => {
+    getAllShowsMock.mockReturnValue([fullShow({ slug: 'a' })])
+    getCanonMock.mockReturnValue(null)
+    const { queryByTestId } = render(ShowsIndexPage())
+    expect(queryByTestId('shows-stat-revised')).toBeNull()
+    expect(queryByTestId('shows-hero-canon-revised')).toBeNull()
+  })
+
+  it('does not derive the hero stat from build-time `new Date()`', () => {
+    // Same drift class as home #269 — a June-built page must not stamp
+    // June when the catalog's canons claim May. Pin: `vi.useFakeTimers()`
+    // pinned to a non-canon month, assert the canon month is rendered.
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-06-01T00:00:00Z'))
+    try {
+      getAllShowsMock.mockReturnValue([fullShow({ slug: 'a' })])
+      getCanonMock.mockReturnValue({ last_revised: '2026-05-21' })
+      const { getByTestId } = render(ShowsIndexPage())
+      const stamp = getByTestId('shows-hero-canon-revised').textContent
+      expect(stamp).toBe('May 2026')
+      expect(stamp).not.toBe('June 2026')
+    } finally {
+      vi.useRealTimers()
+    }
   })
 })

@@ -34,7 +34,6 @@ const EXPECTED_RUNTIME_KEYS = [
   'buildShowsMetaDescription',
   'canonProgress',
   'computeShowsStats',
-  'formatRevision',
   'groupShowsByTier',
   'showsForTier',
   'tierMeta',
@@ -51,7 +50,6 @@ const FUNCTION_KEYS = [
   'buildShowsMetaDescription',
   'canonProgress',
   'computeShowsStats',
-  'formatRevision',
   'groupShowsByTier',
   'showsForTier',
   'tierMeta',
@@ -74,9 +72,8 @@ describe('@/components/shows barrel — runtime re-exports', () => {
       expect(barrel.TIER_ORDER).toBe(tierMetaModule.TIER_ORDER)
     })
 
-    it('forwards computeShowsStats + formatRevision verbatim from ./showsStats', () => {
+    it('forwards computeShowsStats verbatim from ./showsStats', () => {
       expect(barrel.computeShowsStats).toBe(showsStatsModule.computeShowsStats)
-      expect(barrel.formatRevision).toBe(showsStatsModule.formatRevision)
     })
 
     it('forwards groupShowsByTier + showsForTier verbatim from ./groupByTier', () => {
@@ -97,7 +94,7 @@ describe('@/components/shows barrel — runtime re-exports', () => {
   })
 
   describe('public-surface key snapshot', () => {
-    it('exposes exactly the documented 16 runtime keys, nothing more, nothing less', () => {
+    it('exposes exactly the documented 15 runtime keys, nothing more, nothing less', () => {
       const keys = Object.keys(barrel).sort()
       expect(keys).toEqual([...EXPECTED_RUNTIME_KEYS].sort())
     })
@@ -130,7 +127,7 @@ describe('@/components/shows barrel — runtime re-exports', () => {
       expect(barrel.CANON_TARGET).toBe(3)
     })
 
-    it('the barrel exports nothing besides the 16 documented symbols (no helpers, no constants, no types-promoted-to-runtime)', () => {
+    it('the barrel exports nothing besides the 15 documented symbols (no helpers, no constants, no types-promoted-to-runtime)', () => {
       const documented = new Set<string>(EXPECTED_RUNTIME_KEYS)
       const extras = Object.keys(barrel).filter((k) => !documented.has(k))
       expect(extras).toEqual([])

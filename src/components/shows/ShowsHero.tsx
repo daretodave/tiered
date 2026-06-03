@@ -36,10 +36,17 @@ export function ShowsHero({ stats, tiers }: ShowsHeroProps) {
             <div className="shows-stat-val">{stats.totalSeasons}</div>
             <div className="shows-stat-key">Seasons ranked</div>
           </div>
-          <div className="shows-stat" data-testid="shows-stat-revised">
-            <div className="shows-stat-val">{stats.lastRevision}</div>
-            <div className="shows-stat-key">Last revision</div>
-          </div>
+          {stats.lastRevision != null ? (
+            <div className="shows-stat" data-testid="shows-stat-revised">
+              <div
+                className="shows-stat-val"
+                data-testid="shows-hero-canon-revised"
+              >
+                {stats.lastRevision}
+              </div>
+              <div className="shows-stat-key">Last revision</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </header>
