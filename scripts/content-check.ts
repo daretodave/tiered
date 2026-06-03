@@ -13,7 +13,7 @@ import {
 } from '../src/content/loaders'
 import { getCalendar } from '../src/content/calendar'
 import { ContentValidationError } from '../src/content/errors'
-import { showFile } from '../src/content/paths'
+import { legalFile, showFile } from '../src/content/paths'
 import {
   validateEraBandCoverage,
   yearOfSeason,
@@ -820,6 +820,57 @@ export function collectYearTokenPairingIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-27 LOW (issue #N): the /about page's example
+// parenthetical names two illustrative themed-list titles
+// (originally `"best premieres"` and `"best post-merge runs"`) —
+// neither matched a real `content/themes/<slug>.md` `title`, so a
+// reader following the example over to /themes found nothing by
+// the quoted names. The /about page is the editorial trust-frame
+// document; example fidelity matters here more than anywhere.
+// This invariant is scoped to the paragraph(s) referencing
+// `(/themes)`: any double-quoted phrase inside such a paragraph
+// must match a real theme `title` exactly. Other quoted strings
+// in about.md (e.g. the "filmed in Fiji" / "darker than usual"
+// example reasons in the voting-rationale list, which live in a
+// different paragraph block that does NOT reference /themes) pass
+// through unaffected. Strict floor 0 — mirrors STRICT,
+// CROSS_SHOW_STRICT, YEAR_TENURE_STRICT, TAGLINE_TAIL_STRICT,
+// THEME_COUNT_TAIL_STRICT, THEMED_ENTRY_SPOILER_STRICT,
+// WATCH_ORDER_CLASSIFICATION_STRICT, CLICHE_REPETITION_STRICT,
+// YEAR_TOKEN_PAIRING_STRICT. The check operates on the raw
+// markdown body (frontmatter stripped) because it scans editorial
+// prose, not loader-materialized fields.
+const ABOUT_THEMES_LINK_NEEDLE = '(/themes)'
+const QUOTED_PHRASE_RE = /"([^"]+)"/g
+
+export function collectAboutListTitleQuoteIssues(): Failure[] {
+  const issues: Failure[] = []
+  const file = legalFile('about')
+  if (!existsSync(file)) return issues
+  const raw = readFileSync(file, 'utf8')
+  const parsed = matter(raw)
+  const body = typeof parsed.content === 'string' ? parsed.content : ''
+  if (!body.includes(ABOUT_THEMES_LINK_NEEDLE)) return issues
+  const themeTitles = new Set(getAllThemes().map((t) => t.title))
+  const paragraphs = body.split(/\n\s*\n/)
+  for (const para of paragraphs) {
+    if (!para.includes(ABOUT_THEMES_LINK_NEEDLE)) continue
+    // Collapse interior whitespace so an authored line wrap mid-quote
+    // (e.g. `"The back-half\nat full volume"`) matches the theme title
+    // the reader actually sees once markdown joins the lines.
+    const flat = para.replace(/\s+/g, ' ')
+    for (const match of flat.matchAll(QUOTED_PHRASE_RE)) {
+      const quoted = match[1]
+      if (quoted == null || themeTitles.has(quoted)) continue
+      issues.push({
+        file: 'content/legal/about.md',
+        message: `quoted example list title "${quoted}" does not match any real themed-list \`title\` in \`content/themes/\`. The paragraph linking to \`/themes\` names list titles a reader can skim — a hand-waved label reads as generic SEO copy rather than the curator's actual editorial title. Quote a real theme \`title\` verbatim (one of: ${Array.from(themeTitles).sort().map((t) => `"${t}"`).join(', ')}), or move the illustrative quote into a different paragraph that doesn't reference \`/themes\`.`,
+      })
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -986,6 +1037,21 @@ function main(): number {
     failures.push(...yearTokenPairingIssues)
   } else {
     for (const issue of yearTokenPairingIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-27 LOW: ships strict at floor 0 — the /about
+  // edit drains the two existing offenders in one tick, so the
+  // invariant is the floor that catches a future authoring pass
+  // quoting non-existent list titles in the example parenthetical.
+  // One-line toggle mirroring the nine above.
+  const ABOUT_LIST_TITLE_STRICT = true
+  const aboutListTitleIssues = collectAboutListTitleQuoteIssues()
+  if (ABOUT_LIST_TITLE_STRICT) {
+    failures.push(...aboutListTitleIssues)
+  } else {
+    for (const issue of aboutListTitleIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

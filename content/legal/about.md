@@ -20,8 +20,8 @@ For every show we cover, two rankings live side by side:
 
 Browse the [shows index](/shows), pick one, and decide which
 season to watch next. Or skim the [themed lists](/themes) for
-cross-show patterns ("best premieres", "best post-merge runs",
-etc.).
+cross-show patterns ("Premieres that earned it", "The back-half
+at full volume", etc.).
 
 ## How voting works {#voting}
 

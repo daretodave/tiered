@@ -7,6 +7,7 @@ import { setContentRoot } from '../paths'
 // scripts/content-check.ts exports its assertion logic so the same
 // rules can be exercised in vitest without spawning a child process.
 import {
+  collectAboutListTitleQuoteIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
@@ -1382,6 +1383,156 @@ featured: false
     const issues = collectYearTokenPairingIssues()
     expect(issues.length).toBe(1)
     expect(issues[0]?.file).toMatch(/amazing-race\.md \(card_tagline\)/)
+  })
+})
+
+// Critique pass-27 LOW (issue #N): the /about page's example
+// parenthetical quoted two illustrative themed-list titles
+// (originally `"best premieres"` and `"best post-merge runs"`) —
+// neither matched a real `content/themes/<slug>.md` `title`, so a
+// reader following the example over to /themes found nothing by
+// the quoted names. This invariant scopes to the paragraph(s)
+// referencing `(/themes)`: any double-quoted phrase inside such
+// a paragraph must match a real theme `title` exactly. The
+// remaining quoted strings elsewhere in about.md (the voting-
+// rationale example list: "filmed in Fiji" / "darker than usual"
+// etc.) live in a different paragraph block that does NOT
+// reference /themes, so they pass through unaffected.
+function makeAboutWithBody(root: string, body: string): void {
+  const file = path.join(root, 'legal', 'about.md')
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: about
+title: About
+description: About tiered.tv.
+---
+
+${body}
+`,
+  )
+}
+
+function makeThemeWithTitle(root: string, slug: string, title: string): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${title}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv Editors"
+last_revised: 2026-05-19
+featured: false
+description: "${slug}"
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+  )
+}
+
+describe('content-check — /about example list-title fidelity (critique pass-27)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-about-titles-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes when the /themes paragraph quotes real theme titles verbatim', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeThemeWithTitle(tmp, 'back-half', 'The back-half at full volume')
+    makeAboutWithBody(
+      tmp,
+      `Or skim the [themed lists](/themes) for cross-show patterns ("Premieres that earned it", "The back-half at full volume", etc.).`,
+    )
+    expect(collectAboutListTitleQuoteIssues()).toEqual([])
+  })
+
+  it('reports the pass-27 regression shape — quoted titles that match no real theme', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeAboutWithBody(
+      tmp,
+      `Or skim the [themed lists](/themes) for cross-show patterns ("best premieres", "best post-merge runs", etc.).`,
+    )
+    const issues = collectAboutListTitleQuoteIssues()
+    expect(issues.length).toBe(2)
+    expect(issues.every((i) => i.file === 'content/legal/about.md')).toBe(true)
+    expect(issues[0]?.message).toMatch(/"best premieres"/)
+    expect(issues[1]?.message).toMatch(/"best post-merge runs"/)
+    expect(issues[0]?.message).toMatch(/Premieres that earned it/)
+  })
+
+  it('ignores quoted strings in paragraphs that do not reference /themes (voting-rationale examples)', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeAboutWithBody(
+      tmp,
+      `Or skim the [themed lists](/themes) for cross-show patterns ("Premieres that earned it", etc.).
+
+A different paragraph entirely. Reasons people cite when voting:
+
+- Format changes ("the season was shortened")
+- Casting energy ("the cast had great chemistry")
+- Location ("filmed in Fiji")`,
+    )
+    expect(collectAboutListTitleQuoteIssues()).toEqual([])
+  })
+
+  it('passes when about.md never references /themes (the link was removed entirely)', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeAboutWithBody(
+      tmp,
+      `A page with no /themes link at all. Quoted phrases here like "anything goes" should pass through because the scoping needle is absent.`,
+    )
+    expect(collectAboutListTitleQuoteIssues()).toEqual([])
+  })
+
+  it('passes when about.md is missing (no-op rather than crash)', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    // Deliberately do NOT create about.md — the helper must
+    // tolerate absence rather than throw.
+    expect(collectAboutListTitleQuoteIssues()).toEqual([])
+  })
+
+  it('tolerates a quoted title wrapped across a markdown line break (whitespace collapse)', () => {
+    // The authored markdown wraps mid-quote — what the reader sees
+    // once markdown joins the lines is the single-spaced title.
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeThemeWithTitle(tmp, 'back-half', 'The back-half at full volume')
+    makeAboutWithBody(
+      tmp,
+      `Or skim the [themed lists](/themes) for cross-show patterns ("Premieres that earned it", "The back-half
+at full volume", etc.).`,
+    )
+    expect(collectAboutListTitleQuoteIssues()).toEqual([])
+  })
+
+  it('reports a drift even when one of several quotes is real (bidirectional partial-match guard)', () => {
+    makeThemeWithTitle(tmp, 'best-premieres', 'Premieres that earned it')
+    makeAboutWithBody(
+      tmp,
+      `Or skim the [themed lists](/themes) for cross-show patterns ("Premieres that earned it", "ghost-title that no theme carries", etc.).`,
+    )
+    const issues = collectAboutListTitleQuoteIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.message).toMatch(/"ghost-title that no theme carries"/)
   })
 })
 
