@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-02 at commit 3e5b7c7
-> Pass count: 17
+> Last pass: 2026-06-03 at commit 735b28f
+> Pass count: 18
 
 ## Considered (awaiting promotion)
 
@@ -430,6 +430,101 @@ candidate #12's lax→strict invariant precedent established in
 `scripts/content-check.ts`, with the distinct twist that the
 check aggregates across files instead of validating one file at
 a time.
+
+<!-- Pass 18 (2026-06-03, commit 735b28f) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (the only `[ ]` row is
+       the format placeholder at line 19). The drain since pass 17
+       cleared each row in the same iterate cycle it filed —
+       pass-27 was the only critique pass shipped in the window
+       (05bb4e1) and four of its findings are still Pending (see
+       CRITIQUE.md below); the two single-tick non-critique audits
+       drained in the same window were the home Community Rank
+       tier-3 mechanic (fa9dcf3) and the /shows hero Last revision
+       canon-source drift (e5dd62c), both single-shot polish.
+     - CRITIQUE.md: 4 actionable Pending rows (the fifth `[ ]` is
+       the format placeholder at line 1237), all from pass-27
+       (9d07409, 4 hours before this pass):
+       (1) [MED, anon] /shows/survivor ShiftsRow card magnitude
+       reads `One World — Slid 36 spots` against single-digit
+       siblings without volume context — single-component fix
+       (`ShiftCard.tsx` gains an optional `voteCount` field +
+       colocated bidirectional pin); single-tick `/iterate` shape.
+       (2) [MED, authed] season vote block renders
+       `YOUR VOTE / CAST VOTE / +1 / COMMUNITY · NET VOTE` to a
+       signed-in non-voter, sandwiching the +1 community net under
+       the YOUR VOTE eyebrow — single-component fix (explicit
+       "you haven't voted" affordance in the YOUR VOTE column);
+       single-tick `/iterate` shape.
+       (3) [LOW, anon] /about prose names example themed lists as
+       `"best premieres"` / `"best post-merge runs"` in scare
+       quotes; the real titles are `Premieres that earned it` /
+       `The back-half at full volume` — content edit + the finding
+       proposes a `content-check.ts` invariant asserting any
+       quoted list-title inside `content/legal/about.md` matches a
+       real theme's `title` frontmatter.
+       (4) [LOW, anon] /themes `<meta description>` overclaims
+       `every tiered.tv canon` (vs the visible `10 SHOWS COVERED`
+       against 13 shows tracked) AND names lists by generic SEO
+       labels (`best premieres`, `best finales`) that aren't the
+       actual titles — metadata rewrite + colocated negative pin.
+       Cluster analysis: (1) and (2) are both vote/community-rank
+       state-transparency findings but on different surfaces with
+       different fix shapes (volume context on the rank carousel
+       vs personal voted-or-not affordance on the season vote
+       block); they're each independent single-tick polish, not a
+       phase shape. (3) and (4) share a real thread —
+       "named-entity fidelity": editorial copy references real
+       lists/counts that have drifted from the canonical content,
+       and (3) explicitly proposes a content-check invariant for
+       its half of the class. Declined to file a structural
+       candidate here because: (a) only 2 surfaces of the class
+       today; (b) the invariant shape (a registry of real-list
+       titles validated at content-check time) conceptually nests
+       inside candidate #13's `CLICHE_REPETITION_STRICT` extensible
+       phrase registry (positive-fidelity registry vs negative-
+       repetition registry — both are content-check.ts cross-corpus
+       phrase aggregators); (c) `THEME_COUNT_TAIL_STRICT` already
+       guards count drift on related surfaces. The honest read is:
+       let candidates #11/#12/#13 promote first, see if a 3rd or
+       4th named-entity-fidelity surface lands in passes 28/29
+       before filing — the §3.1 "real demand vs model imagination"
+       test asks for multi-signal triangulation and 2 LOW findings
+       is below that bar.
+     - GitHub issues: 0 unlabeled; backlog unchanged — #150
+       (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring still
+       blocked on the cloud GitHub App's missing `workflows`
+       permission; awaiting a local /oversight push).
+     - spec.md + design/: no diffs since pass 9 (commit de1e037).
+       The brand/voice/contract surfaces are stable.
+     - Commit pattern: 21 commits since pass 17 — 1 critique pass
+       (27 05bb4e1), 10 critique/audit drain pairs from
+       passes 22/23/24/25/26, 1 single-tick non-critique fix
+       (e5dd62c /shows hero Last revision canon-source). All
+       anticipated drains from already-shipped phases or about-to-
+       promote candidates; no rogue refactor surface, no 5+
+       fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) +
+       #13 (editorial-cliché repetition guard, score 6.0) all
+       still await /oversight promotion. #03 (Newsletter, score
+       3.0) still gated on S1 (domain swap). No new candidate
+       filed this pass.
+
+     Zero real structural candidates this pass. Four pending
+     critique rows — all single-tick `/iterate` polish targets
+     (two state-transparency component fixes; two named-entity-
+     fidelity copy edits). The named-entity-fidelity pair (rows
+     3+4) is the closest thing to a class pattern but at 2 LOW
+     surfaces it sits below the multi-signal triangulation bar,
+     AND the invariant shape it would propose nests conceptually
+     inside candidate #13's extensible content-check.ts phrase-
+     registry pattern. Honest read: let the three already-pending
+     candidates promote first, watch passes 28/29 for additional
+     named-entity-fidelity surfaces. Next tick: `/iterate` picks
+     up the highest-scoring pending critique row (likely one of
+     the two MED state-transparency findings). -->
 
 <!-- Pass 17 (2026-06-02, commit 3e5b7c7) — 1 candidate filed (#13).
      Signals reviewed:
