@@ -13,17 +13,38 @@ describe('<ListsFeaturedRow>', () => {
     expect(container.firstChild).toBeNull()
   })
 
-  it('subhead reads "Editor-selected · refreshed monthly" (regression guard for #254)', () => {
+  it('subhead names the latest last_revised month + year (critique pass-28: #294 — stamp the strip with its cadence)', () => {
     render(
       <ListsFeaturedRow
-        featured={[theme({ slug: 'a', featured: true })]}
+        featured={[
+          theme({ slug: 'a', featured: true, last_revised: '2026-04-15' }),
+          theme({ slug: 'b', featured: true, last_revised: '2026-06-01' }),
+          theme({ slug: 'c', featured: true, last_revised: '2026-05-20' }),
+        ]}
+        showsByTheme={{ a: [show()], b: [show()], c: [show()] }}
+        today={today}
+      />,
+    )
+    const meta = document.querySelector('.lists-section-meta')
+    expect(meta?.textContent).toBe('Editor-selected · Featured for June 2026')
+    // No build-time `new Date()` drift — pass-24 #269 pattern.
+    expect(meta?.textContent).not.toMatch(/every 1st/i)
+  })
+
+  it('subhead falls back to the literal cadence claim when no derivable date is available', () => {
+    // Both featured themes carry malformed `last_revised` so the date
+    // helper returns null. The strip must not render a broken stamp.
+    render(
+      <ListsFeaturedRow
+        featured={[
+          theme({ slug: 'a', featured: true, last_revised: 'not-a-date' }),
+        ]}
         showsByTheme={{ a: [show()] }}
         today={today}
       />,
     )
     const meta = document.querySelector('.lists-section-meta')
     expect(meta?.textContent).toBe('Editor-selected · refreshed monthly')
-    expect(meta?.textContent).not.toMatch(/every 1st/i)
   })
 
   it('marks the first card as big', () => {
