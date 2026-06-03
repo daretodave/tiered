@@ -194,14 +194,31 @@ export function VotePair({
   const noVote = state.value === 0
   const displayLabel = noVote ? `community · ${baseLabel}` : baseLabel
 
-  // State pill copy (#160): only surfaces for signed-in members
-  // who have actually voted. The signed-in-no-vote channel is
-  // owned by <VoteRowHead>'s "cast vote" head meta
-  // — rendering "you haven't voted" here would double-nudge the
-  // same action against the same count (critique pass-12 #189).
-  // The pill survives as a pure post-action confirmation.
-  const stateCaption = votedUp ? 'you voted higher' : 'you voted lower'
-  const showStateCap = signedIn && (votedUp || votedDown)
+  // State pill copy (#160): surfaces for every signed-in member
+  // and *describes the current state* of their vote (haven't
+  // voted yet / voted higher / voted lower). Anon viewers never
+  // see the pill — the affordance is viewer-identity bearing.
+  //
+  // Pass-27 reopens pass-12 #189's earlier scope. #189 dropped
+  // the no-vote pill on the theory that <VoteRowHead>'s "cast
+  // vote" head meta already owned the channel — but pass-27
+  // observed a signed-in non-voter on the season page reading
+  // "YOUR VOTE / CAST VOTE / Does this belong in the community
+  // top 10? / +1 / COMMUNITY · NET VOTE" still couldn't tell at
+  // a glance whether the +1 was the community net or their own
+  // already-cast vote. The "cast vote" meta is an *action* nudge;
+  // the symmetry of "you voted higher / you voted lower" wants
+  // a *state* declaration on the third side — "you haven't voted
+  // yet" finishes the triad descriptively, not duplicatively.
+  // VoteRowHead's "cast vote" stays the action affordance; the
+  // cap declares state. Together they no longer leave the +1
+  // ambiguous.
+  const stateCaption = votedUp
+    ? 'you voted higher'
+    : votedDown
+      ? 'you voted lower'
+      : "you haven't voted yet"
+  const showStateCap = signedIn
 
   return (
     <div

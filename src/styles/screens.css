@@ -614,13 +614,18 @@
 .vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 12px; text-wrap: pretty; }
 .vote-help { margin-top: 10px; font: 400 11px/1.5 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
 
-/* #160 + #189: signed-in members who have voted get a state pill
-   above the buttons confirming which side ("you voted higher" /
-   "you voted lower"). The no-vote channel is owned by VoteRowHead's
-   "cast vote" head meta — rendering "you haven't voted"
-   here would double-nudge the same action against the same count.
-   Color tracks vote sentiment — warm primary for voted-up, cool hold
-   for voted-down — mirroring the community pill + shield stack. */
+/* #160 + #189 + critique pass-27: signed-in members see a state
+   pill above the buttons declaring the current state of their
+   vote in three shapes — "you haven't voted yet" / "you voted
+   higher" / "you voted lower". The pass-12 #189 revision dropped
+   the no-vote shape on the theory that VoteRowHead's "cast vote"
+   meta owned the channel; pass-27 reopened it after observing
+   the +1 community net read as the viewer's own vote even with
+   the "cast vote" meta present. The cap declares state; the
+   meta calls the action — together they finish the disambiguation.
+   Color tracks vote sentiment — warm primary for voted-up, cool
+   hold for voted-down, neutral ink for the no-vote default —
+   mirroring the community pill + shield stack. */
 .vote-pair-stack { display: flex; flex-direction: column; gap: 8px; }
 .vote-state-cap {
   align-self: flex-start;

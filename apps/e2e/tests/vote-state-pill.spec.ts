@@ -7,12 +7,20 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // "YOUR VOTE / 1 NET VOTE" with no signal that the 1 came from
 // someone else.
 //
-// #189 (critique pass-12) — the no-vote channel is owned by
-// <VoteRowHead>'s head meta (the plain imperative). VotePair no
-// longer renders "you haven't voted" in that state to avoid
-// double-nudging the same action against the same count. The
-// pill survives as a pure post-action confirmation
-// (signed-in-with-vote → "you voted higher"/"you voted lower").
+// #189 (critique pass-12) — the no-vote pill was dropped on the
+// theory that <VoteRowHead>'s head meta ("cast vote") owned the
+// channel. The pill was scoped to signed-in-with-vote only.
+//
+// Critique pass-27 — pass-12's narrower scope reopened: a signed-
+// in non-voter on the season page reading "YOUR VOTE / CAST VOTE
+// / Does this belong in the community top 10? / +1 / COMMUNITY ·
+// NET VOTE" still could not tell whether the +1 was the community
+// net or their own already-cast vote. The pill now ships in
+// three shapes — "you haven't voted yet" (state='none') / "you
+// voted higher" (state='up') / "you voted lower" (state='down')
+// — for every signed-in viewer. The "cast vote" meta is the
+// action nudge; the cap declares state. Anon viewers still see
+// no pill (the affordance is viewer-identity bearing).
 //
 // #207 (critique pass-15) — the no-vote head meta dropped its
 // "this week" qualifier: the vote is a one-time per-reader act;
@@ -54,7 +62,7 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
 
   test.use({ storageState: state ?? undefined })
 
-  test('signed-in viewer sees disambiguated VotePair state (with-vote → pill, no-vote → silent)', async ({
+  test('signed-in viewer sees disambiguated VotePair state (three-state cap triad)', async ({
     page,
   }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
@@ -79,11 +87,10 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     await expect(stack).toBeVisible()
     await expect(stack).toHaveAttribute('data-signed-in', 'true')
 
-    // The pill is silent when the viewer has not voted (the head
-    // owns the imperative). When the viewer HAS voted the pill
-    // confirms which side. Test runs share a hermetic DB across
-    // specs so the viewer's value is variable — assert both
-    // shapes against the same source of truth.
+    // The pill declares one of three states for every signed-in
+    // viewer. Test runs share a hermetic DB across specs so the
+    // viewer's value is variable — assert all three shapes against
+    // the same source of truth.
     const cap = page.getByTestId('vote-state-cap')
     if (api.value === 1) {
       await expect(cap).toHaveText('you voted higher')
@@ -92,11 +99,9 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       await expect(cap).toHaveText('you voted lower')
       await expect(cap).toHaveAttribute('data-vote-state', 'down')
     } else {
-      await expect(cap).toHaveCount(0)
+      await expect(cap).toHaveText("you haven't voted yet")
+      await expect(cap).toHaveAttribute('data-vote-state', 'none')
     }
-    // Whatever the value, the redundant "haven't voted" copy
-    // must never surface on the stack (#189).
-    await expect(stack).not.toContainText("haven't voted")
 
     // #190: the count's label disambiguates the number's source.
     // Authed-not-yet-voted gets "community · net vote(s)";
@@ -121,7 +126,7 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     }
   })
 
-  test('clicking up flips the pill (silent → "you voted higher", or retracts to silent)', async ({
+  test('clicking up flips the pill across the three-state triad', async ({
     page,
   }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
@@ -135,9 +140,9 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     // pill text immediately — no network round-trip required.
     const up = page.getByTestId('vote-up')
     // If the viewer is already "up", a second click retracts to
-    // the no-vote state and the pill must disappear. Either
-    // transition is a valid assertion as long as the pill stays
-    // in sync with the data-voted attr.
+    // the no-vote state and the pill flips to "you haven't voted
+    // yet". Either transition is a valid assertion as long as
+    // the pill stays in sync with the data-voted attr.
     await up.click()
     const pair = page.getByTestId('vote-pair')
     const voted = await pair.getAttribute('data-voted')
@@ -149,8 +154,9 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       await expect(cap).toHaveText('you voted lower')
       await expect(cap).toHaveAttribute('data-vote-state', 'down')
     } else {
-      // Retract → no pill; the head's imperative carries again.
-      await expect(cap).toHaveCount(0)
+      // Retract → the cap flips back to the no-vote declaration.
+      await expect(cap).toHaveText("you haven't voted yet")
+      await expect(cap).toHaveAttribute('data-vote-state', 'none')
     }
   })
 })

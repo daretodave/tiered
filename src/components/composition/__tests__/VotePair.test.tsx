@@ -280,16 +280,29 @@ describe('<VotePair>', () => {
   })
 
   // --- #160 (critique pass-6): YOUR VOTE block disambiguation ---
-  // --- #189 (critique pass-12): drop the no-vote cap ---
+  // --- #189 (critique pass-12): no-vote cap was dropped ---
+  // --- critique pass-27: no-vote cap restored as a state declaration ---
   //
-  // Signed-in members who HAVE voted get a state pill above the
-  // buttons confirming which side they voted; signed-in members
-  // who have NOT voted get NO pill — the head meta "cast vote"
-  // (VoteRowHead, signed-in-no-vote state) owns that
-  // imperative, so rendering "you haven't voted" here would
-  // double-nudge the same action against the same count. Anon
-  // viewers see only the pair (same as before #160).
-  describe('state pill (signed-in + has voted only)', () => {
+  // Every signed-in member sees a state pill above the buttons
+  // declaring the *current state* of their vote, in three shapes:
+  //   value 0  → "you haven't voted yet" (data-vote-state='none')
+  //   value 1  → "you voted higher"      (data-vote-state='up')
+  //   value -1 → "you voted lower"       (data-vote-state='down')
+  // Anon viewers never see the pill — the affordance is
+  // viewer-identity bearing.
+  //
+  // Pass-12 #189 had dropped the no-vote shape on the theory
+  // that VoteRowHead's "cast vote" head meta already owned the
+  // signed-in-no-vote channel. Pass-27 reopened that: a signed-in
+  // non-voter on the season page reading "YOUR VOTE / CAST VOTE
+  // / Does this belong in the community top 10? / +1 / COMMUNITY
+  // · NET VOTE" could not tell at a glance whether the +1 was
+  // the community net or their own already-cast vote. The "cast
+  // vote" meta is an *action* nudge; the cap declares *state*.
+  // Together they finish the disambiguation. So the pill triad
+  // is symmetric, with the no-vote shape descriptive (not a
+  // re-nudge of the same action).
+  describe('state pill (signed-in viewers — three-state triad)', () => {
     it('renders no state pill when /api/vote reports signedIn:false', async () => {
       getBody = { ok: true, value: 0, count: 0, signedIn: false }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
@@ -300,30 +313,32 @@ describe('<VotePair>', () => {
       ).toBe('false')
     })
 
-    it('renders no state pill for a signed-in viewer with value 0 (head owns the imperative)', async () => {
+    it('renders "you haven\'t voted yet" for a signed-in viewer with value 0', async () => {
       getBody = { ok: true, value: 0, count: 7, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
+      const cap = screen.getByTestId('vote-state-cap')
+      expect(cap.textContent).toBe("you haven't voted yet")
+      expect(cap.getAttribute('data-vote-state')).toBe('none')
       expect(
         screen.getByTestId('vote-pair-stack').getAttribute('data-signed-in'),
       ).toBe('true')
     })
 
-    it('the no-vote state never surfaces "you haven\'t voted" — pin against #189 regression', async () => {
-      // Pass-12 #189: the head ("cast vote") and the
-      // pill ("you haven't voted") used to both ship to the
-      // signed-in-no-vote viewer. The pill is now silent in that
-      // state; this assertion pins that the redundant string
-      // never reappears on the surface no matter the count value.
+    it('the no-vote cap reads the same regardless of the community count value', async () => {
+      // Pass-27 pin: the cap declares the viewer's STATE, not the
+      // count's value — so a negative net (e.g. -9) must not flip
+      // the cap copy to anything sentiment-coloured. The cap stays
+      // descriptive of the *vote*, not of the community-net sign.
       for (const count of [-9, -1, 0, 1, 9]) {
         getBody = { ok: true, value: 0, count, signedIn: true }
         const { unmount } = render(
           <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
         )
         await flushAsync()
-        const stack = screen.getByTestId('vote-pair-stack')
-        expect(stack.textContent ?? '').not.toContain("haven't voted")
+        const cap = screen.getByTestId('vote-state-cap')
+        expect(cap.textContent).toBe("you haven't voted yet")
+        expect(cap.getAttribute('data-vote-state')).toBe('none')
         unmount()
       }
     })
@@ -346,17 +361,19 @@ describe('<VotePair>', () => {
       expect(cap.getAttribute('data-vote-state')).toBe('down')
     })
 
-    it('the pill appears on click (signed-in-no-vote → signed-in-with-vote)', async () => {
+    it('the cap flips on click (signed-in-no-vote → signed-in-with-vote)', async () => {
       getBody = { ok: true, value: 0, count: 5, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      // No pill initially — head owns the imperative.
-      expect(screen.queryByTestId('vote-state-cap')).toBeNull()
-      // Click up — pill appears immediately with the optimistic state.
+      // Pre-click: the cap declares the no-vote state.
+      const beforeCap = screen.getByTestId('vote-state-cap')
+      expect(beforeCap.textContent).toBe("you haven't voted yet")
+      expect(beforeCap.getAttribute('data-vote-state')).toBe('none')
+      // Click up — cap updates to the optimistic post-vote state.
       fireEvent.click(screen.getByTestId('vote-up'))
-      const cap = screen.getByTestId('vote-state-cap')
-      expect(cap.textContent).toBe('you voted higher')
-      expect(cap.getAttribute('data-vote-state')).toBe('up')
+      const afterCap = screen.getByTestId('vote-state-cap')
+      expect(afterCap.textContent).toBe('you voted higher')
+      expect(afterCap.getAttribute('data-vote-state')).toBe('up')
     })
 
     it("never reveals the pill when /api/vote omits signedIn (defensive default)", async () => {
