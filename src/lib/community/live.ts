@@ -21,6 +21,13 @@ export type CommunityMover = {
   prevRank: number
   delta: number
   sentiment: RankSentiment
+  // The season's trailing-7d vote count. Surfaced on the shift card
+  // (critique-pass-27 MED) so a 36-spot swing on 12 votes reads
+  // distinctly from a 5-spot swing on 487 votes — the magnitude is
+  // honest if grounded in volume. Optional only to keep the older
+  // test fixtures (which predate the field) compiling; pickMovers
+  // always populates it from CommunityRankRow.voteCount.
+  voteCount?: number
 }
 
 // The biggest absolute movers since the baseline snapshot, climbers
@@ -48,6 +55,7 @@ export function pickMovers(
       prevRank: e.rank + delta,
       delta,
       sentiment: trendSentiment(delta),
+      voteCount: e.voteCount,
     }
   })
 }
@@ -62,13 +70,20 @@ export const SHIFT_TIME_LABEL = 'this week'
 // The shift-card note. Strictly data-derived from the snapshot delta
 // — no invented editorial copy (same posture as CommunityMovers).
 // pickMovers only ever yields nonzero-delta movers, so there is no
-// "held" branch here.
+// "held" branch here. When the mover carries a trailing-7d voteCount
+// (critique-pass-27 MED), append it after the cadence beat so a
+// 36-spot swing on 12 votes reads distinctly from a 5-spot swing on
+// 487 votes — the magnitude is honest if grounded in volume.
 export function moverNote(mover: CommunityMover): string {
   const n = Math.abs(mover.delta)
   const spots = n === 1 ? 'one spot' : `${n} spots`
-  return mover.delta > 0
-    ? `Climbed ${spots} since the last weekly update.`
-    : `Slid ${spots} since the last weekly update.`
+  const verb = mover.delta > 0 ? 'Climbed' : 'Slid'
+  if (mover.voteCount == null) {
+    return `${verb} ${spots} since the last weekly update.`
+  }
+  const v = mover.voteCount
+  const votes = v === 1 ? '1 vote' : `${v} votes`
+  return `${verb} ${spots} since the last weekly update · ${votes}`
 }
 
 // "2h 14m ago" relative label for the last recompute timestamp.

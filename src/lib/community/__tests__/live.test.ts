@@ -110,6 +110,18 @@ describe('pickMovers', () => {
     expect(faller!.delta).toBe(-5)
     expect(faller!.sentiment).toBe('warm-down')
   })
+
+  // critique-pass-27 MED pin (#289): pickMovers must thread the
+  // trailing-7d voteCount from the source CommunityRankRow onto the
+  // emitted CommunityMover so the shift card can render volume
+  // context. Without this passthrough the card cannot distinguish a
+  // 36-spot swing on 12 votes from a 36-spot swing on 487 votes.
+  it('threads voteCount from the source row onto the emitted mover', () => {
+    const r = row(44, 2, -36)
+    r.voteCount = 12
+    const [mover] = pickMovers([r])
+    expect(mover!.voteCount).toBe(12)
+  })
 })
 
 describe('formatLastRecompute', () => {
@@ -288,5 +300,31 @@ describe('moverNote', () => {
     for (const d of [1, 2, 5, 12, -1, -3, -9]) {
       expect(moverNote(mover(d))).not.toMatch(/recompute/i)
     }
+  })
+
+  // critique-pass-27 MED pin (#289): when the mover carries a
+  // trailing-7d voteCount, the note appends `· N votes` after the
+  // cadence beat (dropping the trailing period in favor of the
+  // mid-dot separator) so the reader can judge magnitude against
+  // volume. Singular for a one-vote count.
+  it('appends the trailing-7d vote volume after the cadence beat when supplied', () => {
+    const m: CommunityMover = { ...mover(-36), voteCount: 12 }
+    expect(moverNote(m)).toBe(
+      'Slid 36 spots since the last weekly update · 12 votes',
+    )
+  })
+
+  it('pluralizes the vote-count beat correctly (1 → "1 vote", n>1 → "n votes")', () => {
+    expect(moverNote({ ...mover(2), voteCount: 1 })).toBe(
+      'Climbed 2 spots since the last weekly update · 1 vote',
+    )
+    expect(moverNote({ ...mover(3), voteCount: 487 })).toBe(
+      'Climbed 3 spots since the last weekly update · 487 votes',
+    )
+  })
+
+  it('preserves the existing period-ended form when voteCount is absent', () => {
+    expect(moverNote(mover(3))).toMatch(/update\.$/)
+    expect(moverNote(mover(3))).not.toMatch(/vote/i)
   })
 })

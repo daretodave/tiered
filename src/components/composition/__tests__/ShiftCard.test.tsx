@@ -70,4 +70,51 @@ describe('<ShiftCard>', () => {
     render(<ShiftCard mover={mover()} />)
     expect(screen.getByText('this week')).toBeInTheDocument()
   })
+
+  // critique-pass-27 MED pin (#289): the 36-spot swing on /shows/survivor
+  // read as noise because the card had no volume context. A trailing
+  // vote count grounds the magnitude — the reader can judge a big swing
+  // on 12 votes vs. a big swing on 487 votes. Bidirectional: when no
+  // voteCount is supplied the card must NOT invent the word "vote",
+  // catching a regression to the volume-included form on stale fixtures.
+  it('renders the trailing-7d vote count when supplied (positive pin: matches /\\d+ vote/)', () => {
+    render(
+      <ShiftCard
+        mover={mover({
+          delta: -36,
+          rank: 44,
+          prevRank: 8,
+          sentiment: 'warm-down',
+          season: season(2, 'One World'),
+          voteCount: 12,
+        })}
+      />,
+    )
+    const card = screen.getByTestId('shift-card')
+    expect(card.textContent ?? '').toMatch(/\d+ vote/)
+    expect(card.textContent ?? '').toContain('· 12 votes')
+    expect(card.textContent ?? '').toContain(
+      'Slid 36 spots since the last weekly update',
+    )
+  })
+
+  it('uses the singular form for a one-vote count', () => {
+    render(
+      <ShiftCard
+        mover={mover({ delta: 1, rank: 6, prevRank: 7, voteCount: 1 })}
+      />,
+    )
+    expect(screen.getByTestId('shift-card').textContent ?? '').toContain(
+      '· 1 vote',
+    )
+  })
+
+  it('omits the vote count when not supplied (negative pin: no "vote" in card text)', () => {
+    render(<ShiftCard mover={mover()} />)
+    const card = screen.getByTestId('shift-card')
+    expect(card.textContent ?? '').not.toMatch(/vote/i)
+    expect(card.textContent ?? '').toContain(
+      'Climbed 3 spots since the last weekly update.',
+    )
+  })
 })
