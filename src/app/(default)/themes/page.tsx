@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Lists',
     description:
-      'Themed lists across every tiered.tv canon — best premieres, best finales, cross-canon and single-show tiers, organized by what they admire.',
+      'Themed lists across the tiered.tv catalog — Premieres that earned it, Finales that stuck the landing, cross-canon and single-show tiers.',
     path: '/themes',
   })
 }
@@ -74,7 +74,7 @@ export default function ThemesIndexPage() {
     ...buildJsonLd({
       type: 'CollectionPage',
       name: 'Lists — tiered',
-      description: 'Themed lists across every tiered.tv canon.',
+      description: 'Themed lists across the tiered.tv catalog.',
       path: '/themes',
     }),
     numberOfItems: themes.length,
