@@ -88,14 +88,17 @@ describe('<ListsHero>', () => {
     expect(featuredVal + indexVal).toBe(stats.total)
   })
 
-  it('lede number matches featured + index sum (critique-pass-23 #263 — pins lede ↔ stats lockstep)', () => {
-    // Critique pass-23 read "12 lists" in the lede above "3 FEATURED · 9
-    // IN THE INDEX" stats as drift. The lede IS derived from stats.total
-    // (so the math reconciles: 12 = 3 + 9), but no test pinned that the
-    // opener number tracks the split. Pin it both ways: lede === total
-    // AND lede === featured + index. A regression that hardcodes the
-    // opener literal (e.g., back to a stale "12 lists") would diverge
-    // from the stats and fail this assertion.
+  it('lede shows the math inline when featured + index split — names both component counts and the total (critique-pass-23 #263 + pass-28 split-reveal)', () => {
+    // Critique pass-23 pinned that lede === stats.total (the math
+    // reconciles: 12 = 3 + 9). Pass-28 extended the same row: the
+    // relationship between the lede total and the split tiles was
+    // implied rather than shown, so a reader had to add to reconcile.
+    // The lede now spells the math directly — `<indexCount> in the
+    // index, <featuredCount> featured this month — <total> we'd defend
+    // in a group chat.` — and this test pins (a) the total still
+    // tracks stats.total (lede ↔ stats lockstep), (b) the lede prose
+    // names BOTH component counts so a regression that drops either
+    // half of the split-reveal fails at unit time.
     const stats = {
       total: 12,
       featuredCount: 3,
@@ -116,13 +119,21 @@ describe('<ListsHero>', () => {
         .getByTestId('lists-stat-index')
         .querySelector('.lists-stat-val')?.textContent,
     )
+    expect(featuredVal + indexVal).toBe(stats.total)
     const ledeText =
       screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
-    const ledeMatch = ledeText.match(/^(\d+)\s+lists?\b/i)
-    expect(ledeMatch).not.toBeNull()
-    const ledeNumber = Number(ledeMatch?.[1])
-    expect(ledeNumber).toBe(stats.total)
-    expect(ledeNumber).toBe(featuredVal + indexVal)
+    // Total still tracks stats.total — the math is shown, not removed.
+    const totalMatch = ledeText.match(/(\d+)\s+we'd defend in a group chat/i)
+    expect(totalMatch).not.toBeNull()
+    expect(Number(totalMatch?.[1])).toBe(stats.total)
+    // Split-reveal: both component counts named in prose alongside
+    // their on-stat labels ("in the index" / "featured this month").
+    expect(ledeText).toMatch(
+      new RegExp(`\\b${indexVal}\\s+in\\s+the\\s+index\\b`, 'i'),
+    )
+    expect(ledeText).toMatch(
+      new RegExp(`\\b${featuredVal}\\s+featured\\s+this\\s+month\\b`, 'i'),
+    )
   })
 
   it('lede number tracks stats.total — never hardcoded to a stale literal (critique-pass-23 #263 negative pin)', () => {

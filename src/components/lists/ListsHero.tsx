@@ -17,7 +17,17 @@ export function ListsHero({ stats }: ListsHeroProps) {
       : coverage === 'cross-canon'
         ? 'Cross-canon.'
         : 'Inside one canon.'
-  const opener = `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat.`
+  // Critique pass-28: when the hero splits its catalog into
+  // FEATURED + IN THE INDEX tiles (featuredCount > 0), the lede
+  // names both component counts inline so the relationship to
+  // total is *shown* rather than left as silent arithmetic
+  // (`3 + 9 = 12`). When there's no split (featuredCount = 0),
+  // the single-total opener is the simplest honest form.
+  const indexCount = stats.total - stats.featuredCount
+  const opener =
+    stats.featuredCount > 0
+      ? `${indexCount} in the index, ${stats.featuredCount} featured this month — ${stats.total} we'd defend in a group chat.`
+      : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat.`
   const closer = 'None of them spoil what they rank.'
   const middle = (() => {
     if (coverage === 'single-canon') {
