@@ -18,7 +18,7 @@ premiere_caption: "MTV · fall 2023"
 filming_caption: "Pula, Croatia, Roman-amphitheatre coast"
 host_caption: "TJ Lavin, twenty-fourth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, med, hot, med, hot, hot, med, hot, hot, med, hot, hot, med, hot, hot, hot]
-episode_heat_caption: "shared stakes raise the back half"
+episode_heat_caption: "shared stakes raise the back-half"
 watch_list:
   - episode_label: "Ep 1 · cast reveal"
     body: "The opening that establishes the no-winners premise. Watch how the editing frames a cast of veterans united by a single shared gap on their records."

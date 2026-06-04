@@ -1013,6 +1013,58 @@ export function collectAboutListTitleQuoteIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-30 LOW (issue #305): the noun phrase `back half`
+// vs `back-half` drifted across adjacent themed-list surfaces — the
+// load-bearing `content/themes/best-post-merge.md` title is
+// hyphenated (`The back-half at full volume`, also rendered into
+// the /themes featured strip, /themes BY TONE band, HvV `Also
+// appears in` row), but neighbouring entry titles/blurbs and the
+// HvV season's `episode_heat_caption` rendered the same phrase
+// unhyphenated — a reader sees both forms within four lines of
+// editorial copy on /themes/best-finales + /themes/best-post-merge.
+// Pin: every occurrence of the literal `back half` in a themed-list
+// entry title / blurb / tagline / description / body_md, or in a
+// season's `episode_heat_caption`, must render as `back-half`. The
+// scoping matches the cross-reference surfaces the row spotted —
+// canon prose and season ledes/bodies sit outside this scanner's
+// source set, where the form drift is not visible on a single
+// reader scroll. A future critique that flags a wider drift can
+// extend the source set.
+const BACK_HALF_HYPHEN_RE = /\bback half\b/gi
+
+export function collectBackHalfHyphenIssues(): Failure[] {
+  const issues: Failure[] = []
+  const flag = (where: string, text: string | null | undefined) => {
+    if (!text) return
+    const matches = text.match(BACK_HALF_HYPHEN_RE)
+    if (!matches) return
+    issues.push({
+      file: where,
+      message: `back-half hyphenation drift — found "${matches[0]}". The themed-list title \`The back-half at full volume\` is the canonical site reference; the noun-phrase use across adjacent themed-list surfaces and the HvV \`episode_heat_caption\` favors the hyphenated form. Rewrite \`back half\` → \`back-half\` so cross-references render the same noun phrase on a single reader scroll. See plan/CRITIQUE.md pass-30 / issue #305.`,
+    })
+  }
+  for (const theme of getAllThemes()) {
+    const themeFile = `content/themes/${theme.slug}.md`
+    flag(`${themeFile} (description)`, theme.description)
+    flag(`${themeFile} (tagline)`, theme.tagline)
+    flag(`${themeFile} (body_md)`, theme.body_md)
+    for (const entry of theme.entries) {
+      flag(`${themeFile} (entry #${entry.rank} title)`, entry.title)
+      flag(`${themeFile} (entry #${entry.rank} blurb)`, entry.blurb)
+    }
+  }
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      flag(
+        `${seasonFile} (episode_heat_caption)`,
+        season.episode_heat_caption,
+      )
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -1210,6 +1262,22 @@ function main(): number {
     failures.push(...themeBodyPhraseIssues)
   } else {
     for (const issue of themeBodyPhraseIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-30 LOW (issue #305): ships strict at floor 0 —
+  // the content rewrite (this commit) drains the 3 themed-list
+  // blurb offenders + the HvV `episode_heat_caption` in one tick.
+  // The invariant is the floor that catches a future authoring pass
+  // re-introducing the unhyphenated form on the in-scope surfaces.
+  // One-line toggle mirroring the eleven above.
+  const BACK_HALF_HYPHEN_STRICT = true
+  const backHalfHyphenIssues = collectBackHalfHyphenIssues()
+  if (BACK_HALF_HYPHEN_STRICT) {
+    failures.push(...backHalfHyphenIssues)
+  } else {
+    for (const issue of backHalfHyphenIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

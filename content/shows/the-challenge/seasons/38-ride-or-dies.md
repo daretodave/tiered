@@ -18,7 +18,7 @@ premiere_caption: "MTV · fall 2022"
 filming_caption: "Buenos Aires, Argentina"
 host_caption: "TJ Lavin, twenty-third season at the helm"
 episode_heat: [med, med, cold, med, hot, med, hot, hot, med, hot, hot, med, hot, hot, med, hot, hot, hot, med, hot, hot]
-episode_heat_caption: "real-bond stakes raise the back half"
+episode_heat_caption: "real-bond stakes raise the back-half"
 watch_list:
   - episode_label: "Ep 1 · duo reveal"
     body: "The opening that establishes the real-life-duo premise. Watch how the editing introduces bonds the audience is expected to read as genuine from the first cut."

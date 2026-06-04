@@ -19,7 +19,7 @@ premiere_caption: "MTV · fall 2019"
 filming_caption: "Chiang Mai and Phuket, Thailand"
 host_caption: "TJ Lavin, nineteenth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, med, hot, med, hot, hot, med, hot, hot, med, hot, hot, hot]
-episode_heat_caption: "rivalry frame carries the back half"
+episode_heat_caption: "rivalry frame carries the back-half"
 watch_list:
   - episode_label: "Ep 1 · roster reveal"
     body: "The opening that sets the US-versus-UK divide. Watch how the editing uses the international frame to organize a large mixed cast quickly."

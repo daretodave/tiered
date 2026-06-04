@@ -21,7 +21,7 @@ cast_size: 20
 cast_size_caption: "10 veterans + 10 loved ones"
 host_caption: "twenty-seventh season at the helm"
 episode_heat: [hot, med, hot, hot, med, hot, hot, med, hot, hot, hot, med, hot, hot]
-episode_heat_caption: "front-loaded · strong open, dense back half"
+episode_heat_caption: "front-loaded · strong open, dense back-half"
 watch_list:
   - episode_label: "Ep 1 · paired marooning"
     body: "Ten returnees and their loved ones arrive together and are immediately split across two beaches. The premise lands with weight — the casting frame is genuinely new."

@@ -20,7 +20,7 @@ cast_size: 18
 cast_size_caption: "6 per tribe"
 host_caption: "forty-seventh season at the helm"
 episode_heat: [med, hot, hot, hot, med, hot, hot, hot, med, hot, hot, hot, hot]
-episode_heat_caption: "runs hot through the back half"
+episode_heat_caption: "runs hot through the back-half"
 watch_list:
   - episode_label: "Ep 1 · confident open"
     body: "The 26-day format opens with the show running it at the top of the new era's range. The casting bench reads strong from the marooning."

@@ -8,6 +8,7 @@ import { setContentRoot } from '../paths'
 // rules can be exercised in vitest without spawning a child process.
 import {
   collectAboutListTitleQuoteIssues,
+  collectBackHalfHyphenIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
@@ -2879,5 +2880,105 @@ describe('content-check — themed-list body-copy phrase repetition (critique pa
     const issues = collectThemeBodyPhraseRepetitionIssues()
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/"closing run"/)
+  })
+})
+
+describe('content-check — back-half hyphenation drift (critique pass-30, issue #305)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-back-half-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite — best-post-merge entries + HvV episode_heat_caption are hyphenated)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectBackHalfHyphenIssues()).toEqual([])
+  })
+
+  it('flags a themed-list entry blurb that uses the unhyphenated form', () => {
+    makeMultiEntryTheme(tmp, 'templated', {
+      entries: [
+        {
+          title: 'A premise the season earns.',
+          blurb: 'Big Brother runs on its back half as the alliances tighten.',
+        },
+        {
+          title: 'Hyphenated sibling stays clean.',
+          blurb: 'The back-half plays heavy.',
+        },
+      ],
+    })
+    const issues = collectBackHalfHyphenIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/themes/templated.md (entry #1 blurb)')
+    expect(issues[0]!.message).toMatch(/back-half hyphenation drift/)
+    expect(issues[0]!.message).toMatch(/issue #305/)
+  })
+
+  it('flags a season `episode_heat_caption` that uses the unhyphenated form', () => {
+    makeShow(tmp, 'alpha')
+    const seasonFile = path.join(
+      tmp,
+      'shows',
+      'alpha',
+      'seasons',
+      '20-twentieth.md',
+    )
+    mkdirSync(path.dirname(seasonFile), { recursive: true })
+    writeFileSync(
+      seasonFile,
+      `---
+show: alpha
+number: 20
+title: twentieth
+episode_heat: [med, hot, hot, hot]
+episode_heat_caption: "peak run · the back half"
+---
+
+${sixtyWords}
+`,
+    )
+    const issues = collectBackHalfHyphenIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/seasons/20-twentieth.md (episode_heat_caption)',
+    )
+    expect(issues[0]!.message).toMatch(/back-half hyphenation drift/)
+  })
+
+  it('case-insensitive match catches `Back Half` and possessive `season\'s back half`', () => {
+    makeMultiEntryTheme(tmp, 'mixed-case', {
+      entries: [
+        { title: 'Back Half drama.', blurb: 'b' },
+        { title: 'Season possessive form.', blurb: "The sixth season's back half is the run." },
+      ],
+    })
+    const issues = collectBackHalfHyphenIssues()
+    expect(issues.length).toBe(2)
+    expect(issues.map((i) => i.file)).toEqual([
+      'content/themes/mixed-case.md (entry #1 title)',
+      'content/themes/mixed-case.md (entry #2 blurb)',
+    ])
+  })
+
+  it('does not flag the canonical hyphenated form (`back-half`) — the form the rewrite picked', () => {
+    makeMultiEntryTheme(tmp, 'clean', {
+      tagline: 'The back-half stretches at full volume.',
+      entries: [
+        { title: 'The back-half plays heavy.', blurb: 'back-half pressure.' },
+      ],
+    })
+    expect(collectBackHalfHyphenIssues()).toEqual([])
   })
 })

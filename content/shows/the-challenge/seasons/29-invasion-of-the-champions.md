@@ -19,7 +19,7 @@ premiere_caption: "MTV · winter 2017"
 filming_caption: "Krabi, Thailand · limestone karst country"
 host_caption: "TJ Lavin, fourteenth season at the helm"
 episode_heat: [med, med, hot, med, hot, hot, hot, hot, hot, hot, hot]
-episode_heat_caption: "mid-run pivot lifts the back half"
+episode_heat_caption: "mid-run pivot lifts the back-half"
 watch_list:
   - episode_label: "Ep 1 · newcomer phase"
     body: "The opening run with a newer cast running standard team architecture. Notice how the editing frames this stretch — measured, almost patient, like setup before the format's real argument arrives."

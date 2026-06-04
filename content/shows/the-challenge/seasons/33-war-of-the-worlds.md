@@ -18,7 +18,7 @@ premiere_caption: "MTV · winter 2019"
 filming_caption: "Swakopmund, Namibia, desert coast"
 host_caption: "TJ Lavin, eighteenth season at the helm"
 episode_heat: [med, med, cold, med, hot, med, hot, hot, med, med, hot, hot, med, hot, hot, med, hot, hot]
-episode_heat_caption: "fresh-blood friction fuels back half"
+episode_heat_caption: "fresh-blood friction fuels back-half"
 watch_list:
   - episode_label: "Ep 1 · roster reveal"
     body: "The opening that introduces the outside-pool competitors alongside franchise veterans. Watch how the editing frames players the audience has no prior history with."

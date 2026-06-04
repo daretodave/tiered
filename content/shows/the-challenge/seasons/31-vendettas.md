@@ -18,7 +18,7 @@ premiere_caption: "MTV · winter 2018"
 filming_caption: "Gibraltar, Marbella, and Prague"
 host_caption: "TJ Lavin, sixteenth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, med, hot, hot, med, med, hot, hot, med, hot, hot]
-episode_heat_caption: "slow open, back half tightens"
+episode_heat_caption: "slow open, back-half tightens"
 watch_list:
   - episode_label: "Ep 1 · vendetta reveal"
     body: "The opening minute that names the season's grudge premise. Watch how the editing leans on prior-season footage to set up rivalries the audience is expected to already know cold."

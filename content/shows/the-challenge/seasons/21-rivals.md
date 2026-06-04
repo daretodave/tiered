@@ -18,7 +18,7 @@ premiere_caption: "MTV · fall 2011"
 filming_caption: "Costa Rican jungle, deep humidity"
 host_caption: "TJ Lavin, sixth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, hot, hot, med, hot, hot, hot, hot]
-episode_heat_caption: "back half builds steadily"
+episode_heat_caption: "back-half builds steadily"
 watch_list:
   - episode_label: "Ep 1 · pair reveal"
     body: "Watch how the editing introduces each pair as a unit, then immediately cuts to the prior-season friction that put them in the same hotel room. The format's whole argument is in the first ten minutes."

@@ -21,7 +21,7 @@ cast_size: 20
 cast_size_caption: "10 heroes, 10 villains"
 host_caption: "{seasonOrdinalWord} season at the helm"
 episode_heat: [med, hot, med, hot, hot, med, hot, hot, hot, med, hot, med, hot, hot]
-episode_heat_caption: "peak run · the back half"
+episode_heat_caption: "peak run · the back-half"
 watch_list:
   - episode_label: "Opener · cold open"
     body: "The opening shot — boat, water, twenty people who already know the camera is watching — does in 90 seconds what most premieres take an hour to set up."

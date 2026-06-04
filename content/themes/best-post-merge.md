@@ -30,19 +30,19 @@ entries:
     season_label: "S07 · All-Stars"
     rank: 3
     title: "A jury-phase house where every eviction felt load-bearing."
-    blurb: "Big Brother runs on its back half, and All-Stars compresses a roster of franchise veterans into a jury phase with nowhere to hide. The numbers tighten, the alliances calcify, and the gameplay sharpens — a returnee house playing its late rounds as sharp as the format gets."
+    blurb: "Big Brother runs on its back-half, and All-Stars compresses a roster of franchise veterans into a jury phase with nowhere to hide. The numbers tighten, the alliances calcify, and the gameplay sharpens — a returnee house playing its late rounds as sharp as the format gets."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"
     rank: 4
     title: "A closing run of services that never let the field coast."
-    blurb: "Top Chef's compression point is the run of challenges before the finale, and Las Vegas turns it into a gauntlet. The deepest field the show had assembled stays deep all the way down — the back half plays as chef against chef at a defining level, no padding."
+    blurb: "Top Chef's compression point is the run of challenges before the finale, and Las Vegas turns it into a gauntlet. The deepest field the show had assembled stays deep all the way down — the back-half plays as chef against chef at a defining level, no padding."
   - show: dragrace
     season: 6
     season_label: "S06"
     rank: 5
     title: "A top-five stretch that lifted the format's late-game ceiling."
-    blurb: "Drag Race's compression happens in the final handful of queens, and the sixth season's back half is the run the franchise still cites. The challenges harden, the critiques sharpen, and the cast meets every one — a top five with no weak link and real tension."
+    blurb: "Drag Race's compression happens in the final handful of queens, and the sixth season's back-half is the run the franchise still cites. The challenges harden, the critiques sharpen, and the cast meets every one — a top five with no weak link and real tension."
   - show: the-challenge
     season: 30
     season_label: "S30 · XXX: Dirty 30"
