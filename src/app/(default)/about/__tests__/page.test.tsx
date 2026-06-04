@@ -145,3 +145,37 @@ describe('cross-surface byline parity vs /about (critique pass-31, issue #306)',
     expect(body).toMatch(/one person, one position per season/)
   })
 })
+
+// Critique pass-31 LOW (issue #310): the rate-limit trust line on
+// /about previously read `Brigade rate-limits run behind the
+// scenes…` — `Brigade` is verb-as-noun community-moderation
+// jargon and the rest of the page reads in plain language. The
+// load-bearing trust promise needs to land in plain language so
+// a first-time visitor absorbs it. The bidirectional pin below
+// trips if a future edit reintroduces the bare standalone token
+// without a `coordinated|campaign|brigading` bridge in the same
+// sentence — drift guard against regression back to the cold
+// jargon form, AND against the same jargon migrating elsewhere
+// in /about prose.
+describe('content/legal/about.md rate-limit trust line voice (#310)', () => {
+  it('does not use the bare standalone `Brigade` token without an inline plain-language bridge', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    // Walk every line that contains `Brigade` (word-boundary,
+    // case-sensitive — the prior drift was title-case). Each
+    // such line must also name `coordinated`, `campaign`, or
+    // `brigading` so the term lands unpacked.
+    const offending = body
+      .split('\n')
+      .filter((line) => /\bBrigade\b/.test(line))
+      .filter((line) => !/coordinated|campaign|brigading/i.test(line))
+    expect(offending).toEqual([])
+  })
+
+  it('names the rate-limit function in plain language (coordinated campaigns)', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/coordinated\s+voting\s+campaigns/)
+  })
+})
