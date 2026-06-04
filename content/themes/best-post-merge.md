@@ -5,7 +5,7 @@ tagline: "Every competition franchise has its compression point — Survivor cal
 category: tone
 sentiment: consensus
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: false
 related:

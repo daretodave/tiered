@@ -12,6 +12,7 @@ import {
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
+  collectEditorialBylineSingularIssues,
   collectFailures,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
@@ -448,7 +449,7 @@ tagline: "tag"
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: "${slug}"
@@ -877,7 +878,7 @@ tagline: "tag"
 category: ${category}${eraRange}
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: false
 description: "${slug}"
@@ -1428,7 +1429,7 @@ tagline: "tag"
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: "${slug}"
@@ -1726,7 +1727,7 @@ tagline: "tag"
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: ${JSON.stringify(description)}
@@ -1911,7 +1912,7 @@ tagline: ${JSON.stringify(tagline)}
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-27
 featured: false
 description: "Editorial setup that closes on its own observation."
@@ -1993,7 +1994,7 @@ tagline: "Editorial setup. These are the seasons where the <b>shape held</b>, ac
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-27
 featured: false
 description: "Editorial setup, across five different franchises."
@@ -2079,7 +2080,7 @@ tagline: "tag"
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: "Editorial setup that closes on its own observation."
@@ -2212,7 +2213,7 @@ tagline: "tag"
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: "A clean editorial sentence."
@@ -2699,7 +2700,7 @@ tagline: ${JSON.stringify(opts.tagline ?? 'tag')}
 category: ${opts.category ?? 'tone'}
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-19
 featured: false
 description: "Editorial setup that closes on its own observation."
@@ -2980,5 +2981,146 @@ ${sixtyWords}
       ],
     })
     expect(collectBackHalfHyphenIssues()).toEqual([])
+  })
+})
+
+// Critique pass-31 HIGH (issue #306): cross-surface editorial-byline
+// parity. /about admits the operator is one person; the rendered
+// chrome bylines and the catalog-level `curator` / `editor`
+// frontmatter must NOT pluralize to "tiered.tv Editors". The
+// invariant goes silent when /about removes both singular anchors
+// (a future plural editorship rewrites the admission first).
+describe('content-check — editorial-byline singular parity (critique pass-31)', () => {
+  let tmp: string
+
+  function makeThemeWithCurator(
+    root: string,
+    slug: string,
+    curator: string,
+  ): void {
+    const file = path.join(root, 'themes', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "${curator}"
+last_revised: 2026-05-19
+featured: false
+description: "${slug}"
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+    )
+  }
+
+  function makeCanonWithEditor(
+    root: string,
+    show: string,
+    editor: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+editor: ${editor}
+---
+
+## 1. Title 1
+
+${ninetyWords}
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-byline-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-drain: every curator/editor reads singular)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('passes when every theme curator + canon editor reads singular and /about admits one person', () => {
+    makeThemeWithCurator(tmp, 'one-list', 'tiered.tv editor')
+    makeShow(tmp, 'alpha')
+    makeCanonWithEditor(tmp, 'alpha', 'tiered.tv editor')
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('flags a themed-list whose curator regressed to "tiered.tv Editors" while /about still admits one person', () => {
+    makeThemeWithCurator(tmp, 'regressed', 'tiered.tv Editors')
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/themes/regressed.md')
+    expect(issues[0]!.message).toMatch(/editorial-byline drift/)
+    expect(issues[0]!.message).toMatch(/tiered\.tv Editors/)
+    expect(issues[0]!.message).toMatch(/issue #306/)
+  })
+
+  it('flags a canon editor field that regressed to "tiered.tv Editors"', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithEditor(tmp, 'alpha', 'tiered.tv Editors')
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md')
+    expect(issues[0]!.message).toMatch(/editorial-byline drift/)
+    expect(issues[0]!.message).toMatch(/tiered\.tv Editors/)
+  })
+
+  it('also catches the lowercase plural form ("tiered.tv editors")', () => {
+    makeThemeWithCurator(tmp, 'lower-plural', 'tiered.tv editors')
+    makeAboutWithBody(tmp, "the editor's call — one person, one position")
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/tiered\.tv editors/)
+  })
+
+  it('goes silent (no flags) when /about removes both singular anchors — a future plural editorship is legal', () => {
+    makeThemeWithCurator(tmp, 'regressed', 'tiered.tv Editors')
+    makeShow(tmp, 'alpha')
+    makeCanonWithEditor(tmp, 'alpha', 'tiered.tv Editors')
+    makeAboutWithBody(
+      tmp,
+      'A small editorial collective. The canon is shared.',
+    )
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('tolerates the absence of /about (no-op rather than crash)', () => {
+    makeThemeWithCurator(tmp, 'regressed', 'tiered.tv Editors')
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('does not flag a named editor (e.g. "M. Reyes") — only the plural tiered.tv form is in scope', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithEditor(tmp, 'alpha', 'M. Reyes')
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
   })
 })

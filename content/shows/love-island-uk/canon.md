@@ -1,6 +1,6 @@
 ---
 show: love-island-uk
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-15
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editors, who have watched every series from the 2015 Santanyí villa through the most recent Mallorca run. We rank as fans who follow the show closely, weighing each summer and winter edition against the full arc rather than judging it in isolation or by recency."

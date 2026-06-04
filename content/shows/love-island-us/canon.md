@@ -1,6 +1,6 @@
 ---
 show: love-island-us
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editors, who have watched every American season from the Fiji inaugural through the Peacock-era breakout. We weigh production craft, format execution, and historical consequence — not whose couple lasted. The ranking is editorial judgment about the seasons as television, held to the same spoiler-free bar as every page on the site."

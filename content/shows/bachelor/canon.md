@@ -1,6 +1,6 @@
 ---
 show: bachelor
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every season of The Bachelor, calibrated against the kitchen-table consensus of long-running Bachelor fans. The read is opinionated but defensible — we treat the early canon as a coherent body of work, and the modern era as the franchise newly aware of what it is.

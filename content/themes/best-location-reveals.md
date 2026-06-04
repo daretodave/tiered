@@ -5,7 +5,7 @@ tagline: "Some seasons let the setting talk first. These are the openings where 
 category: craft
 sentiment: warm-up
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: false
 related:

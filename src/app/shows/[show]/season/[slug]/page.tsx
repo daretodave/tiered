@@ -308,7 +308,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
     headline: `${show.name} S${season.number} — ${season.title}`,
     description: (season.lede ?? season.blurb_md).slice(0, 200),
     path: `/shows/${show.slug}/season/${season.slug}`,
-    author: 'tiered.tv Editors',
+    author: 'tiered.tv editor',
     ...(season.premiere_date ? { datePublished: season.premiere_date } : {}),
   })
   const crumbsLd = buildJsonLd({
@@ -376,7 +376,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           displayTitle={season.display_title}
           lede={lede}
           byline={
-            <span>Canon entry by <span className="who">tiered.tv Editors</span></span>
+            <span>Canon entry by <span className="who">the tiered.tv editor</span></span>
           }
           infoCard={
             <SeasonInfoCard

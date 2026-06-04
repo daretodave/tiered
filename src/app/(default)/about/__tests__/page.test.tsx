@@ -104,3 +104,44 @@ describe('content/legal/about.md frontmatter description (#276)', () => {
     expect(doc?.description).not.toMatch(/A spoiler-free home for ranked TV seasons/)
   })
 })
+
+// Critique pass-31 HIGH (issue #306): cross-surface editorial-
+// byline parity. Every rendered chrome byline and every catalog-
+// level `curator` / `editor` frontmatter must agree with /about
+// about the editorship's size. When /about admits "Built and
+// operated by one person", the chrome bylines must read singular
+// (`tiered.tv editor`). The bidirectional check below trips at
+// unit time if either surface drifts in isolation — if /about
+// is rewritten to a plural editorship without also re-pluralising
+// the curator/editor fields (or vice versa), the gate fails and
+// forces an editor to align both surfaces in lockstep. The
+// content-check.ts companion invariant covers the catalog
+// frontmatter; this test covers the /about prose anchor + the
+// two source-file literal bylines.
+describe('cross-surface byline parity vs /about (critique pass-31, issue #306)', () => {
+  it('when /about admits "Built and operated by one person", source bylines stay singular', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    const singularAdmission =
+      body.includes('Built and operated by one person') ||
+      body.includes("the editor's call — one person")
+    if (!singularAdmission) return
+    // Two source-file literal bylines (the season page hero "Canon
+    // entry by …" + the FeaturedThemes "curated by …" strip + the
+    // ShowRanking canon lede). Each lives in its own colocated unit
+    // test; the cross-surface guard here re-asserts the contract at
+    // the /about boundary so a divergence between the two surfaces
+    // (e.g. /about goes plural but the chrome stays singular) trips
+    // here AND in the colocated tests, not silently in only one.
+    expect(body).not.toMatch(/tiered\.tv\s+Editors\b/)
+    expect(body).not.toMatch(/by\s+editors\b/i)
+  })
+
+  it('the singular admission still names exactly one operator (no silent rewrite to a collective)', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/Built and operated by one person/)
+    expect(body).toMatch(/one person, one position per season/)
+  })
+})

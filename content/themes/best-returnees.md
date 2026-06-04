@@ -5,7 +5,7 @@ tagline: "All-returnee casts are easy to pitch and hard to land. These are the o
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: false
 related:

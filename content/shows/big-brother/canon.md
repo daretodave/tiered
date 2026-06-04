@@ -1,6 +1,6 @@
 ---
 show: big-brother
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every season of Big Brother, calibrated against the kitchen-table consensus of long-running BB fans. The read is opinionated but defensible — we treat the first two decades as a coherent body of work. Old-era and modern-era seasons get weighed on their own terms, not directly against each other.

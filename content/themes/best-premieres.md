@@ -5,7 +5,7 @@ tagline: "Premieres get cited the wrong way. These are the first episodes that <
 category: craft
 sentiment: warm-up
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: true
 related:

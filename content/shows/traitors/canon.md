@@ -1,6 +1,6 @@
 ---
 show: traitors
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-17
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editors, who have watched every American season from the mixed-cast original through the most recent all-celebrity run at Ardross Castle. We weigh production craft, format execution, and historical consequence — never who was lying. The ranking is editorial judgment about the seasons as television, held to the same spoiler-free bar as every page here."

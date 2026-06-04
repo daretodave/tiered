@@ -1,6 +1,6 @@
 ---
 show: survivor
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-21
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We've watched Survivor since Pulau Tiga and we've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Survivor fans agree on after a kitchen-table argument runs long enough. We aren't claiming to be objective. We are trying to be honest.

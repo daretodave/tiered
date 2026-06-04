@@ -1013,6 +1013,60 @@ export function collectAboutListTitleQuoteIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-31 HIGH (issue #306): cross-surface editorial-byline
+// parity. `/about` admits the operator is one person ("Built and
+// operated by one person.") — but the rendered chrome bylines and
+// the catalog-level `curator` / `editor` frontmatter previously
+// pluralized to "tiered.tv Editors" / "tiered.tv editors", a
+// contradiction a reader hits in one click from any season or
+// themed-list page. The invariant: while `/about` carries either
+// of the two singular-admission anchors, every theme `curator` and
+// every canon `editor` field must NOT match the plural
+// `tiered.tv (E|e)ditors` form. Bidirectional — catches plural
+// drift while /about still admits solo operation, and goes silent
+// (no false positives) if a future /about edit removes both
+// anchors. The two source-file bylines (the season page hero, the
+// FeaturedThemes strip, the ShowRanking canon lede) are pinned by
+// their colocated component tests; this invariant covers the
+// catalog frontmatter the chrome surfaces consume.
+const ABOUT_SINGULAR_ANCHORS = [
+  'Built and operated by one person',
+  "the editor's call — one person",
+] as const
+const PLURAL_BYLINE_RE = /\btiered\.tv\s+(?:E|e)ditors\b/
+
+export function collectEditorialBylineSingularIssues(): Failure[] {
+  const issues: Failure[] = []
+  const aboutFile = legalFile('about')
+  if (!existsSync(aboutFile)) return issues
+  const aboutRaw = readFileSync(aboutFile, 'utf8')
+  const aboutBody = matter(aboutRaw).content
+  const hasSingularAnchor = ABOUT_SINGULAR_ANCHORS.some((anchor) =>
+    aboutBody.includes(anchor),
+  )
+  if (!hasSingularAnchor) return issues
+  for (const theme of getAllThemes()) {
+    if (PLURAL_BYLINE_RE.test(theme.curator)) {
+      issues.push({
+        file: `content/themes/${theme.slug}.md`,
+        message: `editorial-byline drift — \`curator: "${theme.curator}"\` reads plural while /about admits solo operation ("${ABOUT_SINGULAR_ANCHORS[0]}"). Rewrite to singular ("tiered.tv editor") so the themed-list hero byline matches the page that owes the truth. See plan/CRITIQUE.md pass-31 / issue #306.`,
+      })
+    }
+  }
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const editor = canon.editor
+    if (typeof editor === 'string' && PLURAL_BYLINE_RE.test(editor)) {
+      issues.push({
+        file: `content/shows/${show.slug}/canon.md`,
+        message: `editorial-byline drift — \`editor: ${editor}\` reads plural while /about admits solo operation ("${ABOUT_SINGULAR_ANCHORS[0]}"). Rewrite to singular ("tiered.tv editor") so the canon attribution matches the page that owes the truth. See plan/CRITIQUE.md pass-31 / issue #306.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-30 LOW (issue #305): the noun phrase `back half`
 // vs `back-half` drifted across adjacent themed-list surfaces — the
 // load-bearing `content/themes/best-post-merge.md` title is
@@ -1278,6 +1332,26 @@ function main(): number {
     failures.push(...backHalfHyphenIssues)
   } else {
     for (const issue of backHalfHyphenIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-31 HIGH (issue #306): ships strict at floor 0 —
+  // the byline drain (this commit) swaps every theme `curator` and
+  // every canon `editor` field from the plural "tiered.tv Editors"
+  // form to the singular "tiered.tv editor" form, matching /about's
+  // long-standing "Built and operated by one person" admission.
+  // The invariant is the bidirectional floor: while /about carries
+  // the singular anchor, no curator/editor field may regress to
+  // plural; if /about later moves to a plural editorship, the
+  // invariant goes silent (no false positives). One-line toggle
+  // mirroring the twelve above.
+  const EDITORIAL_BYLINE_SINGULAR_STRICT = true
+  const editorialBylineIssues = collectEditorialBylineSingularIssues()
+  if (EDITORIAL_BYLINE_SINGULAR_STRICT) {
+    failures.push(...editorialBylineIssues)
+  } else {
+    for (const issue of editorialBylineIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

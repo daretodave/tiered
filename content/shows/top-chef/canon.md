@@ -1,6 +1,6 @@
 ---
 show: top-chef
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We have watched Top Chef since the Tom-Colicchio-era Bravo seasons, and replay every U.S.-flagship run that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable food fans agree on after a long argument. We aren't claiming to be objective. We are trying to be honest.

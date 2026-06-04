@@ -52,4 +52,25 @@ describe('<FeaturedThemes>', () => {
     expect(links[0]?.getAttribute('href')).toBe('/themes/survivor-pillars')
     expect(links[1]?.getAttribute('href')).toBe('/themes/firsts')
   })
+
+  // Pin per pass-31 #305 fix: the cross-canon attribution must read
+  // singular ("the tiered.tv editor") to match /about's "Built and
+  // operated by one person" admission. Bidirectional — positive on
+  // the singular phrasing AND negative against the prior plural
+  // "tiered.tv editors" so a regression trips at unit time.
+  it('attributes the strip to the singular tiered.tv editor', () => {
+    mockedThemesContainingShow.mockReturnValue([
+      {
+        slug: 'survivor-pillars',
+        title: 'Survivor: the load-bearing seasons',
+        description: 'desc',
+        entries: [{ show: 'survivor', season: 1, rank: 1, blurb: 'b' }],
+        body_md: '',
+      },
+    ])
+    const { container } = render(<FeaturedThemes show="survivor" />)
+    const meta = container.querySelector('.sec-meta')
+    expect(meta?.textContent ?? '').toContain('curated by the tiered.tv editor')
+    expect(meta?.textContent ?? '').not.toMatch(/tiered\.tv editors\b/i)
+  })
 })

@@ -5,7 +5,7 @@ tagline: "A competition season's most-quoted stretches come from the personaliti
 category: tone
 sentiment: hold
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-28
 featured: false
 related:

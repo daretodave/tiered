@@ -59,7 +59,7 @@ function makeTheme(overrides: Partial<Theme> = {}): Theme {
     category: 'craft',
     sentiment: 'hold',
     status: 'stable',
-    curator: 'tiered.tv Editors',
+    curator: 'tiered.tv editor',
     last_revised: '2026-05-01',
     featured: true,
     related: [],

@@ -31,7 +31,7 @@ export function theme(overrides: Partial<Theme> = {}): Theme {
     category: 'tone',
     sentiment: 'hold',
     status: 'stable',
-    curator: 'tiered.tv Editors',
+    curator: 'tiered.tv editor',
     last_revised: '2026-05-01',
     featured: false,
     related: [],

@@ -232,7 +232,7 @@ const themeFrontmatterObject = z.object({
   category: themeCategorySchema,
   sentiment: themeSentimentEnum.default('hold'),
   status: themeStatusSchema.default('stable'),
-  curator: z.string().min(1).max(80).default('tiered.tv Editors'),
+  curator: z.string().min(1).max(80).default('tiered.tv editor'),
   last_revised: isoDate,
   featured: z.boolean().default(false),
   related: z.array(slug).max(4).default([]),

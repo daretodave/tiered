@@ -1,6 +1,6 @@
 ---
 show: the-challenge
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. We have watched The Challenge since MTV's first RV pulled out in 1998, and replayed every founding-era season that lands on this list. The ranking starts as one editor's read, then gets calibrated against what reasonable franchise fans agree on after a long argument. We aren't claiming to be objective. We are trying to be honest.

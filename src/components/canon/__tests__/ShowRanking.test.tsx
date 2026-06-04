@@ -126,6 +126,30 @@ describe('<ShowRanking>', () => {
     expect(intro).toHaveTextContent('What readers are voting on.')
   })
 
+  // Pin per pass-31 #305 fix: the canon-pane lede attribution must
+  // read singular ("an editor who has rewatched") to match /about's
+  // "Built and operated by one person" admission. Bidirectional —
+  // positive on the singular phrasing AND negative against the prior
+  // plural "editors who have rewatched" / "we argue / we ship" first-
+  // person plural so a regression trips at unit time.
+  it('ranking-intro canon meta attributes the ranking to a singular editor (pass-31 #305)', () => {
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={[season(20, 'Heroes vs. Villains')]}
+        canon={canon()}
+        initialView="canon"
+        community={liveRanking([season(20, 'Heroes vs. Villains')])}
+      />,
+    )
+    const intro = screen.getByTestId('ranking-intro')
+    const text = intro.textContent ?? ''
+    expect(text).toMatch(/written by an editor who has rewatched/)
+    expect(text).not.toMatch(/editors who have rewatched/i)
+    expect(text).not.toMatch(/we argue with the community/i)
+    expect(text).not.toMatch(/but we ship one number/i)
+  })
+
   it('ranking-intro community meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
     render(
       <ShowRanking

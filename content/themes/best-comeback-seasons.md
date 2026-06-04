@@ -5,7 +5,7 @@ tagline: "A comeback season arrives with the highest pre-air risk a franchise ca
 category: tone
 sentiment: warm-up
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: true
 related:

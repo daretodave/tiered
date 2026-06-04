@@ -31,7 +31,7 @@ export function FeaturedThemes({ show, showName }: FeaturedThemesProps) {
       <div className="section-head">
         <h2 id={headingId}>Themed lists for {title}.</h2>
         <span className="sec-meta">
-          Cross-canon &middot; curated by tiered.tv editors
+          Cross-canon &middot; curated by the tiered.tv editor
         </span>
       </div>
       <div className="lists-grid" data-testid="featured-themes">

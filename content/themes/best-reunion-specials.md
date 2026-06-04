@@ -5,7 +5,7 @@ tagline: "Every competition franchise has a closing hour to land — Survivor's 
 category: tone
 sentiment: verdict
 status: stable
-curator: "tiered.tv Editors"
+curator: "tiered.tv editor"
 last_revised: 2026-05-22
 featured: false
 related:

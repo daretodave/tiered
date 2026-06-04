@@ -1,6 +1,6 @@
 ---
 show: project-runway
-editor: tiered.tv Editors
+editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editors. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. The ranking is not an aggregate; it is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate about which seasons hold up on a second pass.
