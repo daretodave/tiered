@@ -42,7 +42,7 @@ entries:
     season_label: "S02"
     rank: 5
     title: "The Round Table tightening into the final banishment the format was built for."
-    blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment freighted, the table smaller and louder each night. That last seat at the table is where the US adaptation proves it can hold the tension all the way down."
+    blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment paid back, the table smaller and louder each night. That last seat at the table is where the US adaptation proves it can hold the tension all the way down."
   - show: dragrace
     season: 6
     season_label: "S06"

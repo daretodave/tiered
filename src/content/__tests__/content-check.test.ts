@@ -2544,6 +2544,134 @@ describe('content-check — cliche repetition: "at full volume" (critique pass-2
   })
 })
 
+describe('content-check — cliche repetition: "freighted" (critique pass-30, issue #302)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-cliche-freighted-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite the walked surfaces sit at threshold)', () => {
+    // /themes/best-finales entry #02 (Survivor S20 HvV) keeps a
+    // single occurrence; entry #05 (Traitors S02) was rewritten to
+    // drop the participial intensifier. Walked count is 1, under
+    // the threshold of 2.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('passes at threshold (2 occurrences across themed-list entry blurbs)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame compounds — every conversation freighted with everything the season had been.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "Paranoia compounding, every banishment freighted, the table smaller each night.",
+    )
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('flags every occurrence when count exceeds the threshold', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame compounds — every conversation freighted with everything the season had been.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "Paranoia compounding, every banishment freighted, the table smaller each night.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "Every cooking decision freighted with the stakes of the season.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(3)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/a-shape.md (entry #1 blurb)',
+      'content/themes/b-shape.md (entry #1 blurb)',
+      'content/themes/c-shape.md (entry #1 blurb)',
+    ])
+    for (const issue of issues) {
+      expect(issue.message).toMatch(/cliche-repetition drift/)
+      expect(issue.message).toMatch(/freighted/)
+      expect(issue.message).toMatch(/appears 3 times/)
+    }
+  })
+
+  it('counts multiple hits inside a single field', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every conversation freighted, every move freighted, every banishment freighted with the weight of the season.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(3)
+    expect(
+      issues.every(
+        (i) => i.file === 'content/themes/a-shape.md (entry #1 blurb)',
+      ),
+    ).toBe(true)
+  })
+
+  it('is case-insensitive', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Every conversation FREIGHTED with the weight of the season.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "Every banishment Freighted, the table smaller each night.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "Every cooking decision freighted with stakes.",
+    )
+    expect(collectClicheRepetitionIssues().length).toBe(3)
+  })
+
+  it('does not false-positive on incidental words ("freight", "fraught")', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The freight of an all-returnee roster carries the closing run.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A fraught endgame plays out across the merge.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "Every conversation freighted with the weight of the season.",
+    )
+    // 1 hit < threshold 2 → zero issues. "freight" + "fraught" are
+    // unrelated lexemes — the \b-anchored regex must not catch
+    // either.
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+})
+
 function makeMultiEntryTheme(
   root: string,
   slug: string,

@@ -618,6 +618,22 @@ const CLICHE_PATTERNS: ReadonlyArray<ClichePattern> = [
     re: /\bat full volume\b/gi,
     threshold: 2,
   },
+  // Critique pass-30 LOW (issue #302): the participial intensifier
+  // `freighted` appeared in two adjacent entries on the same
+  // /themes/best-finales scroll — entry #02 (Survivor S20 HvV) body
+  // opener and entry #05 (The Traitors S02) body, both in the
+  // `every <noun> freighted` shape. The content rewrite dropped the
+  // Traitors S2 occurrence; the S20 HvV instance is kept as the
+  // highest-leverage surface (the first all-returnee final tribal,
+  // the editorial point the word was reaching for). Threshold 2
+  // matches the `at full volume` margin — one walked re-use is
+  // permissible, a second simultaneous occurrence re-opens the
+  // class.
+  {
+    label: '"freighted"',
+    re: /\bfreighted\b/gi,
+    threshold: 2,
+  },
 ]
 
 export function collectClicheRepetitionIssues(): Failure[] {
