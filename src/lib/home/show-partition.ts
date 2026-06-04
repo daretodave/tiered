@@ -14,8 +14,21 @@
 // and again 10 tiles down in the "rest of the index" grid. The fix is
 // the optional `excludeSlug` arg below: callers pass the featured slug
 // so the partition omits it from both grids and the union is unique.
+//
+// /critique pass 30 (#300) caught the spotlight cut: callers pass an
+// alpha-sorted catalog (`getAllShows()` already `slug.localeCompare`s)
+// so a bare `.slice(0, 3)` led with the alphabetical-first three
+// shows — `The Amazing Race / The Bachelor / The Bachelorette` — and
+// demoted the next S-tier flagship (RuPaul's Drag Race, once Survivor
+// is excluded as the hero) to the compact tail at the exact moment a
+// first-time visitor is forming their tier hierarchy. Mirror of the
+// pass-29 footer fix at `src/components/chrome/footer/FooterTiersCol.tsx`
+// (54a4170): sort by `TIER_ORDER` rank first (S→0 / A→1 / B→2), with
+// `slug.localeCompare` as the in-tier tiebreaker, then slice. Future
+// tier graduations flow through automatically.
 
 import type { Show } from '@/content'
+import { TIER_ORDER } from '@/components/shows/tierMeta'
 
 export const HOME_FEATURED_TILES = 3
 
@@ -28,9 +41,13 @@ export function partitionHomeShows(
   shows: Show[],
   excludeSlug?: string,
 ): HomeShowPartition {
-  const pool = excludeSlug
+  const filtered = excludeSlug
     ? shows.filter((s) => s.slug !== excludeSlug)
     : shows
+  const pool = [...filtered].sort((a, b) => {
+    const tierDelta = TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier)
+    return tierDelta !== 0 ? tierDelta : a.slug.localeCompare(b.slug)
+  })
   return {
     featured: pool.slice(0, HOME_FEATURED_TILES),
     compact: pool.slice(HOME_FEATURED_TILES),
