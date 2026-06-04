@@ -945,6 +945,35 @@ describe('content-check — cross-canon coverage (phase 41)', () => {
     expect(collectCrossShowIssues()).toEqual([])
   })
 
+  it('flags a structure list that covers only two shows (critique pass-31 split)', () => {
+    // `structure` was split out of `tone` at critique pass-31 — see
+    // src/content/schemas.ts `themeCategorySchema` rationale. The
+    // cross-show floor applies symmetrically because structural cuts
+    // (reunion specials, post-merge, returnees, firsts) inherently
+    // cross shows; if they don't, the index lies the same way the
+    // `By tone` head did before the split.
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'best-reunion-specials', 'structure', [
+      'alpha',
+      'beta',
+    ])
+    const issues = collectCrossShowIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.message).toMatch(/category: structure/)
+    expect(issues[0]?.message).toMatch(/2 distinct shows/)
+  })
+
+  it('passes a structure list once it clears the >= 3-show floor', () => {
+    makeShow(tmp, 'alpha')
+    makeCategoryTheme(tmp, 'firsts', 'structure', [
+      'alpha',
+      'beta',
+      'gamma',
+      'delta',
+    ])
+    expect(collectCrossShowIssues()).toEqual([])
+  })
+
   it('reports one issue per under-covered list across the catalogue', () => {
     makeShow(tmp, 'alpha')
     makeCategoryTheme(tmp, 'list-a', 'craft', ['alpha'])

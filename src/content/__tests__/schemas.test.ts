@@ -300,6 +300,19 @@ describe('themeSchema', () => {
     ).toThrow()
   })
 
+  it('accepts category=structure (split from tone at critique pass-31)', () => {
+    // `structure` is the legal home for format/structural cuts
+    // (reunion specials, post-merge run, returnees, firsts). It
+    // does not require an era_range (only category=era does).
+    expect(() =>
+      themeFrontmatterSchema.parse({
+        ...base,
+        category: 'structure',
+        entries: [entry],
+      }),
+    ).not.toThrow()
+  })
+
   it('rejects missing last_revised', () => {
     const { last_revised: _l, ...rest } = base
     expect(() =>

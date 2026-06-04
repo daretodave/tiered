@@ -8,6 +8,7 @@ type AdjacentListsProps = {
 
 const CATEGORY_LABELS: Record<Theme['category'], string> = {
   tone: 'tone',
+  structure: 'structure',
   craft: 'craft',
   era: 'era',
   single: 'single-show',

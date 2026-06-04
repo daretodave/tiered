@@ -2,7 +2,7 @@
 slug: firsts
 title: "Firsts that hold up"
 tagline: "Reality competitions get rebooted constantly. The seasons on this list are the <b>season-zeros and resets that earned their reputation</b> — the rough drafts and the redraws that the format kept."
-category: tone
+category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"

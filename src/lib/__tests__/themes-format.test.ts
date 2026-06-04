@@ -100,7 +100,7 @@ describe('formatThemeStatus', () => {
 describe('filterModeText', () => {
   it('formats "all" mode qualified by index scope', () => {
     expect(
-      filterModeText('all', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
+      filterModeText('all', { all: 12, tone: 4, structure: 0, craft: 3, era: 2, single: 3 }),
     ).toBe('showing · all 12 in the index')
   })
 
@@ -109,7 +109,7 @@ describe('filterModeText', () => {
     // `counts.all` is the NON-featured index-grid scope. Qualifying keeps
     // `ALL` from silently shadowing the lede — critique pass-25.
     expect(
-      filterModeText('all', { all: 9, tone: 3, craft: 3, era: 2, single: 1 }),
+      filterModeText('all', { all: 9, tone: 3, structure: 0, craft: 3, era: 2, single: 1 }),
     ).toMatch(/in the index/i)
   })
 
@@ -120,6 +120,7 @@ describe('filterModeText', () => {
       const text = filterModeText('all', {
         all: n,
         tone: 0,
+        structure: 0,
         craft: 0,
         era: 0,
         single: 0,
@@ -130,10 +131,10 @@ describe('filterModeText', () => {
 
   it('formats a single category mode', () => {
     expect(
-      filterModeText('tone', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
+      filterModeText('tone', { all: 12, tone: 4, structure: 0, craft: 3, era: 2, single: 3 }),
     ).toBe('showing · 4 tone lists')
     expect(
-      filterModeText('single', { all: 12, tone: 4, craft: 3, era: 2, single: 3 }),
+      filterModeText('single', { all: 12, tone: 4, structure: 0, craft: 3, era: 2, single: 3 }),
     ).toBe('showing · 3 single-show lists')
   })
 })
@@ -141,6 +142,27 @@ describe('filterModeText', () => {
 describe('GROUP_HEAD_LABELS', () => {
   it('uses "Single-show tiers" — not "By single"', () => {
     expect(GROUP_HEAD_LABELS.single).toBe('Single-show tiers')
+  })
+
+  it('exposes "By structure" — split from "By tone" at critique pass-31', () => {
+    // The `tone` group head used to carry structural cuts (reunion
+    // specials, post-merge, returnees, firsts), which made the index
+    // toggles dishonest. The label now reads honestly; the cross-show
+    // floor still applies (see scripts/content-check.ts CROSS_SHOW_CATEGORIES).
+    expect(GROUP_HEAD_LABELS.structure).toBe('By structure')
+  })
+
+  it('orders heads tone -> structure -> craft -> era -> single', () => {
+    // Order pin: editorial reading order across the /themes overview
+    // index. Lockstep with FILTER_KEYS in themes-format.ts and
+    // ORDERED_CATEGORIES in components/lists/ListsAllSection.tsx.
+    expect(Object.keys(GROUP_HEAD_LABELS)).toEqual([
+      'tone',
+      'structure',
+      'craft',
+      'era',
+      'single',
+    ])
   })
 })
 

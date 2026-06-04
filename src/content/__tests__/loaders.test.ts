@@ -108,7 +108,7 @@ ${headings}
 }
 
 type ThemeOpts = {
-  category?: 'tone' | 'craft' | 'era' | 'single'
+  category?: 'tone' | 'structure' | 'craft' | 'era' | 'single'
   featured?: boolean
   last_revised?: string
   related?: string[]
@@ -430,16 +430,21 @@ describe('loaders', () => {
       category: 'craft',
     })
     const grouped = getThemesByCategory()
+    // `structure` was split out of `tone` at critique pass-31; every
+    // category key must be present even when empty so the page can
+    // render a chip-list without conditionals.
     expect(Object.keys(grouped).sort()).toEqual([
       'craft',
       'era',
       'single',
+      'structure',
       'tone',
     ])
     expect(grouped.tone.map((t) => t.slug)).toEqual(['t2', 't1'])
     expect(grouped.craft.map((t) => t.slug)).toEqual(['c1'])
     expect(grouped.era).toEqual([])
     expect(grouped.single).toEqual([])
+    expect(grouped.structure).toEqual([])
   })
 
   it('getShowsForTheme returns shows in first-appearance order without duplicates', () => {

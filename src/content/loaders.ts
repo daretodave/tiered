@@ -264,11 +264,18 @@ export function getFeaturedThemes(limit: number = LISTS_FEATURED_RAIL_LIMIT): Th
     .slice(0, limit)
 }
 
-const THEME_CATEGORIES: ThemeCategory[] = ['tone', 'craft', 'era', 'single']
+const THEME_CATEGORIES: ThemeCategory[] = [
+  'tone',
+  'structure',
+  'craft',
+  'era',
+  'single',
+]
 
 export function getThemesByCategory(): Record<ThemeCategory, Theme[]> {
   const out: Record<ThemeCategory, Theme[]> = {
     tone: [],
+    structure: [],
     craft: [],
     era: [],
     single: [],

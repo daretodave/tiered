@@ -47,11 +47,23 @@ export function formatThemeStatus(
   }
 }
 
-export type FilterKey = 'all' | 'tone' | 'craft' | 'era' | 'single'
+// `structure` chip was split out of `tone` at critique pass-31 — see
+// the same-named rationale on `themeCategorySchema` in
+// `src/content/schemas.ts`. Editorial group order: sentiment readings
+// (tone) → format/structural cuts (structure) → craft excellence
+// (craft) → chronological span (era) → single-show carve-out.
+export type FilterKey =
+  | 'all'
+  | 'tone'
+  | 'structure'
+  | 'craft'
+  | 'era'
+  | 'single'
 
 export const FILTER_KEYS: readonly FilterKey[] = [
   'all',
   'tone',
+  'structure',
   'craft',
   'era',
   'single',
@@ -60,6 +72,7 @@ export const FILTER_KEYS: readonly FilterKey[] = [
 export const FILTER_LABELS: Record<FilterKey, string> = {
   all: 'All',
   tone: 'By tone',
+  structure: 'By structure',
   craft: 'By craft',
   era: 'By era',
   single: 'Single-show',
@@ -67,6 +80,7 @@ export const FILTER_LABELS: Record<FilterKey, string> = {
 
 export const GROUP_HEAD_LABELS: Record<Exclude<FilterKey, 'all'>, string> = {
   tone: 'By tone',
+  structure: 'By structure',
   craft: 'By craft',
   era: 'By era',
   single: 'Single-show tiers',
@@ -75,6 +89,7 @@ export const GROUP_HEAD_LABELS: Record<Exclude<FilterKey, 'all'>, string> = {
 export const FILTER_MODE_LABELS: Record<FilterKey, string> = {
   all: 'lists',
   tone: 'tone lists',
+  structure: 'structure lists',
   craft: 'craft lists',
   era: 'era lists',
   single: 'single-show lists',

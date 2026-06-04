@@ -53,6 +53,7 @@ export default function ThemesIndexPage() {
   const featuredSlugs = new Set(featured.map((t) => t.slug))
   const byCategoryRest: Record<ThemeCategory, Theme[]> = {
     tone: byCategory.tone.filter((t) => !featuredSlugs.has(t.slug)),
+    structure: byCategory.structure.filter((t) => !featuredSlugs.has(t.slug)),
     craft: byCategory.craft.filter((t) => !featuredSlugs.has(t.slug)),
     era: byCategory.era.filter((t) => !featuredSlugs.has(t.slug)),
     single: byCategory.single.filter((t) => !featuredSlugs.has(t.slug)),
@@ -61,10 +62,12 @@ export default function ThemesIndexPage() {
   const counts: Record<FilterKey, number> = {
     all:
       byCategoryRest.tone.length +
+      byCategoryRest.structure.length +
       byCategoryRest.craft.length +
       byCategoryRest.era.length +
       byCategoryRest.single.length,
     tone: byCategoryRest.tone.length,
+    structure: byCategoryRest.structure.length,
     craft: byCategoryRest.craft.length,
     era: byCategoryRest.era.length,
     single: byCategoryRest.single.length,

@@ -242,16 +242,18 @@ export function collectThemeFailures(): Failure[] {
 }
 
 // Phase 41: cross-canon coverage. Every themed list tagged
-// `category` tone / craft / era must carry entries from >= 3
-// distinct shows — the /themes hero copy and every CROSS-CANON
-// tag promise cross-show coverage, so the data has to back the
-// claim. `category: single` is the legal carve-out for a
-// deliberately mono-show tier. Lax (warns) during the phase-41
-// drain; `CROSS_SHOW_STRICT` in main() flips on the final drain
-// tick, the same lax->strict pattern as the canon (STRICT) and
-// era-band invariants. Exported so the vitest suite can exercise
-// it directly.
-const CROSS_SHOW_CATEGORIES = new Set(['tone', 'craft', 'era'])
+// `category` tone / structure / craft / era must carry entries
+// from >= 3 distinct shows — the /themes hero copy and every
+// CROSS-CANON tag promise cross-show coverage, so the data has to
+// back the claim. `category: single` is the legal carve-out for a
+// deliberately mono-show tier. (`structure` was added at critique
+// pass-31 when the `tone` group head was split — structural cuts
+// like reunion specials / post-merge / returnees inherently cross
+// shows.) Lax (warns) during the phase-41 drain; `CROSS_SHOW_STRICT`
+// in main() flips on the final drain tick, the same lax->strict
+// pattern as the canon (STRICT) and era-band invariants. Exported
+// so the vitest suite can exercise it directly.
+const CROSS_SHOW_CATEGORIES = new Set(['tone', 'structure', 'craft', 'era'])
 
 export function collectCrossShowIssues(): Failure[] {
   const issues: Failure[] = []

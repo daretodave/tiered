@@ -171,8 +171,24 @@ export const seasonSchema = seasonFrontmatterSchema.extend({
 
 export type Season = z.infer<typeof seasonSchema>
 
+// `structure` was split out of `tone` at critique pass-31: the
+// `By tone` group head was carrying entries that are format/structural
+// cuts (reunion specials, post-merge run, returnees, chronological
+// firsts), which made the index harder to scan against its own
+// toggles. The taxonomy now reads honestly:
+//   tone — sentiment / mood readings
+//   structure — format / structural cuts (returnees, post-merge,
+//               reunion specials, firsts)
+//   craft — craft excellence (premieres, finales, location reveals,
+//           villain editing)
+//   era — chronological span (requires era_range)
+//   single — deliberately single-show tier list (CROSS_SHOW_STRICT
+//            carve-out)
+// `structure` joins the `CROSS_SHOW_CATEGORIES` cross-canon floor in
+// `scripts/content-check.ts` — structural cuts inherently cross shows.
 export const themeCategorySchema = z.enum([
   'tone',
+  'structure',
   'craft',
   'era',
   'single',

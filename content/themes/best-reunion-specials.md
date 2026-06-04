@@ -2,7 +2,7 @@
 slug: best-reunion-specials
 title: "Reunion specials that closed the loop"
 tagline: "Every competition franchise has a closing hour to land — Survivor's reunion, Drag Race's Reunited, The Challenge's reunion special, Top Chef's reunion episode. These are the ones where that hour <b>read the season back to itself</b> — the right cast on stage, the right beats, the right altitude for what just aired."
-category: tone
+category: structure
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"

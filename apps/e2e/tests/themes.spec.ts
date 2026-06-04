@@ -60,7 +60,7 @@ test.describe('/themes index (phase 19g shape)', () => {
       )
     const populated = new Set(groupCategories.filter(Boolean))
 
-    for (const filter of ['tone', 'craft', 'era', 'single']) {
+    for (const filter of ['tone', 'structure', 'craft', 'era', 'single']) {
       const chip = page.getByTestId(`lists-chip-${filter}`)
       if (populated.has(filter)) {
         await expect(chip).toBeVisible()

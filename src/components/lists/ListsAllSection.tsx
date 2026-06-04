@@ -2,7 +2,17 @@ import type { Show, Theme, ThemeCategory } from '@/content'
 import { GROUP_HEAD_LABELS } from '@/lib/themes-format'
 import { ListRow } from './ListRow'
 
-const ORDERED_CATEGORIES: ThemeCategory[] = ['tone', 'craft', 'era', 'single']
+// Editorial group order: sentiment (tone) → format/structural cuts
+// (structure) → craft excellence (craft) → chronological span (era) →
+// single-show carve-out. Matches FILTER_KEYS in themes-format.ts and
+// the cross-show invariant set in scripts/content-check.ts.
+const ORDERED_CATEGORIES: ThemeCategory[] = [
+  'tone',
+  'structure',
+  'craft',
+  'era',
+  'single',
+]
 
 type ListsAllSectionProps = {
   byCategory: Record<ThemeCategory, Theme[]>

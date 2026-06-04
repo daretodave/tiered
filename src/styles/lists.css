@@ -399,6 +399,8 @@ h1.lists-hero-title em {
 /* Filter cascade — hide off-filter groups when filter is set. */
 .lists-filter-scope[data-active-filter='tone']
   .list-group:not([data-category='tone']),
+.lists-filter-scope[data-active-filter='structure']
+  .list-group:not([data-category='structure']),
 .lists-filter-scope[data-active-filter='craft']
   .list-group:not([data-category='craft']),
 .lists-filter-scope[data-active-filter='era']

@@ -9,6 +9,7 @@ const today = new Date('2026-05-13T00:00:00Z')
 function build(byCategory: Partial<Record<ThemeCategory, Theme[]>>) {
   return {
     tone: [],
+    structure: [],
     craft: [],
     era: [],
     single: [],
@@ -35,11 +36,18 @@ describe('<ListsAllSection>', () => {
     expect(groups).toHaveLength(2)
   })
 
-  it('keeps editorial group order: tone → craft → era → single', () => {
+  it('keeps editorial group order: tone → structure → craft → era → single', () => {
+    // `structure` was split out of `tone` at critique pass-31 — see
+    // the matching rationale on `themeCategorySchema` in
+    // src/content/schemas.ts. The order pin here is lockstep with
+    // FILTER_KEYS in themes-format.ts; a future hoist or reorder
+    // must touch both files together (and this test will fail until
+    // they agree).
     render(
       <ListsAllSection
         byCategory={build({
           tone: [theme({ slug: 'a', category: 'tone' })],
+          structure: [theme({ slug: 's', category: 'structure' })],
           craft: [theme({ slug: 'b', category: 'craft' })],
           era: [
             theme({
@@ -51,6 +59,7 @@ describe('<ListsAllSection>', () => {
         })}
         showsByTheme={{
           a: [show()],
+          s: [show()],
           b: [show()],
           c: [show()],
           d: [show()],
@@ -61,7 +70,27 @@ describe('<ListsAllSection>', () => {
     const cats = screen
       .getAllByTestId('lists-group')
       .map((g) => g.getAttribute('data-category'))
-    expect(cats).toEqual(['tone', 'craft', 'era', 'single'])
+    expect(cats).toEqual(['tone', 'structure', 'craft', 'era', 'single'])
+  })
+
+  it('renders a "By structure" head when structure themes exist (critique pass-31 split from tone)', () => {
+    // Bidirectional pin: when the byCategory map carries `structure`
+    // entries, the rendered head reads `By structure` (not `By tone`).
+    // Regression guard against a future label-merge that would re-tag
+    // structural cuts as tonal — which is what pass-31 flagged in the
+    // first place.
+    render(
+      <ListsAllSection
+        byCategory={build({
+          structure: [theme({ slug: 'reunion', category: 'structure' })],
+        })}
+        showsByTheme={{ reunion: [show()] }}
+        today={today}
+      />,
+    )
+    const head = screen.getByText(/By structure/i)
+    expect(head).toBeTruthy()
+    expect(head.textContent ?? '').not.toMatch(/By tone/i)
   })
 
   it('uses "Single-show tiers" head text — not "By single"', () => {
