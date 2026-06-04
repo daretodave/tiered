@@ -36,7 +36,7 @@ entries:
     season_label: "S40 · Winners at War"
     rank: 4
     title: "Twenty former champions taking the season to its full size."
-    blurb: "The milestone framing earns itself in the closing run. Every move lands heavier than it would in another season's room, and the final tribal carries the weight of a roster that has played this game before."
+    blurb: "The all-winner premise pays back in the closing run. Every move lands heavier than it would in another season's room, and the final tribal carries the weight of a roster that has played this game before."
   - show: traitors
     season: 2
     season_label: "S02"
