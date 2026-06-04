@@ -9,13 +9,18 @@ vi.mock('@/content/loaders', () => ({
   getAllShows: vi.fn(),
 }))
 
-import type { Show } from '@/content'
+import type { Show, ShowTier } from '@/content'
 import { getAllShows } from '@/content/loaders'
 import { FooterTiersCol } from '../FooterTiersCol'
 
 const mockedGetAllShows = getAllShows as ReturnType<typeof vi.fn>
 
-function makeShow(slug: string, name: string, primary = '#d55e36'): Show {
+function makeShow(
+  slug: string,
+  name: string,
+  tier: ShowTier = 'S',
+  primary = '#d55e36',
+): Show {
   return {
     slug,
     name,
@@ -24,7 +29,7 @@ function makeShow(slug: string, name: string, primary = '#d55e36'): Show {
     status: 'airing',
     blurb: 'blurb',
     tagline: 'tagline',
-    tier: 'S',
+    tier,
     network: 'CBS',
     est_year: 2000,
     genre_tag: 'Reality competition',
@@ -94,41 +99,85 @@ describe('<FooterTiersCol> show links', () => {
     ])
   })
 
-  it('preserves getAllShows() order — does not sort the first 3', () => {
+  it('sorts by tier first (S → A → B) so the flagship leads on every page', () => {
+    // A 13-show catalog laid out the way today's looks: the flagship
+    // (Survivor) is slug-last; the B-tier shows are slug-first. An
+    // alphabetical slice would lead with the B-tier shows. A tier-aware
+    // slice leads with Survivor.
     mockedGetAllShows.mockReturnValue([
-      makeShow('zulu', 'Zulu'),
-      makeShow('alpha', 'Alpha'),
-      makeShow('mike', 'Mike'),
+      makeShow('amazing-race', 'The Amazing Race', 'S'),
+      makeShow('bachelor', 'The Bachelor', 'B'),
+      makeShow('bachelorette', 'The Bachelorette', 'B'),
+      makeShow('drag-race', "RuPaul's Drag Race", 'A'),
+      makeShow('survivor', 'Survivor', 'S'),
+    ])
+    render(<FooterTiersCol />)
+    const links = showLinks()
+    expect(links).toHaveLength(3)
+    expect(links.map((l) => l.getAttribute('href'))).toEqual([
+      '/shows/amazing-race',
+      '/shows/survivor',
+      '/shows/drag-race',
+    ])
+  })
+
+  it('does NOT render the alphabetical-first three when the highest tier sorts late', () => {
+    // Regression pin for the pre-fix behavior: an alphabetical slice
+    // would have produced ['/shows/aardvark', '/shows/badger',
+    // '/shows/cobra']. The tier-aware slice leads with the S-tier show
+    // even though its slug sorts last.
+    mockedGetAllShows.mockReturnValue([
+      makeShow('aardvark', 'Aardvark', 'B'),
+      makeShow('badger', 'Badger', 'B'),
+      makeShow('cobra', 'Cobra', 'A'),
+      makeShow('zebra', 'Zebra', 'S'),
+    ])
+    render(<FooterTiersCol />)
+    const hrefs = showLinks().map((l) => l.getAttribute('href'))
+    expect(hrefs[0]).toBe('/shows/zebra')
+    expect(hrefs).not.toEqual([
+      '/shows/aardvark',
+      '/shows/badger',
+      '/shows/cobra',
+    ])
+  })
+
+  it('falls back to slug.localeCompare within a tier for stable ordering', () => {
+    mockedGetAllShows.mockReturnValue([
+      makeShow('zulu', 'Zulu', 'S'),
+      makeShow('alpha', 'Alpha', 'S'),
+      makeShow('mike', 'Mike', 'S'),
     ])
     render(<FooterTiersCol />)
     expect(showLinks().map((l) => l.textContent)).toEqual([
-      'Zulu',
       'Alpha',
       'Mike',
+      'Zulu',
     ])
   })
 
   it('links each show to /shows/<slug> and labels it with the show name', () => {
+    // All same tier so slug.localeCompare drives the order deterministically.
     mockedGetAllShows.mockReturnValue([
-      makeShow('survivor', 'Survivor'),
-      makeShow('top-chef', 'Top Chef'),
-      makeShow('drag-race', 'Drag Race'),
+      makeShow('survivor', 'Survivor', 'S'),
+      makeShow('top-chef', 'Top Chef', 'S'),
+      makeShow('drag-race', "RuPaul's Drag Race", 'S'),
     ])
     render(<FooterTiersCol />)
     const links = showLinks()
-    expect(links[0]?.getAttribute('href')).toBe('/shows/survivor')
-    expect(links[0]).toHaveTextContent('Survivor')
-    expect(links[1]?.getAttribute('href')).toBe('/shows/top-chef')
-    expect(links[1]).toHaveTextContent('Top Chef')
-    expect(links[2]?.getAttribute('href')).toBe('/shows/drag-race')
-    expect(links[2]).toHaveTextContent('Drag Race')
+    expect(links[0]?.getAttribute('href')).toBe('/shows/drag-race')
+    expect(links[0]).toHaveTextContent("RuPaul's Drag Race")
+    expect(links[1]?.getAttribute('href')).toBe('/shows/survivor')
+    expect(links[1]).toHaveTextContent('Survivor')
+    expect(links[2]?.getAttribute('href')).toBe('/shows/top-chef')
+    expect(links[2]).toHaveTextContent('Top Chef')
   })
 
   it('renders an 8px bullet inside each show link tinted from palette.primary', () => {
     mockedGetAllShows.mockReturnValue([
-      makeShow('a', 'A', '#aa0000'),
-      makeShow('b', 'B', '#00bb00'),
-      makeShow('c', 'C', '#0000cc'),
+      makeShow('a', 'A', 'S', '#aa0000'),
+      makeShow('b', 'B', 'S', '#00bb00'),
+      makeShow('c', 'C', 'S', '#0000cc'),
     ])
     render(<FooterTiersCol />)
     const bullets = showLinks().map(

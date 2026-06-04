@@ -1,9 +1,20 @@
 import Link from 'next/link'
 import { getAllShows } from '@/content/loaders'
 import { Bullet } from '@/components/atoms/Bullet'
+import { TIER_ORDER } from '@/components/shows/tierMeta'
 
 export function FooterTiersCol() {
-  const shows = getAllShows().slice(0, 3)
+  // Sort by editorial tier first (S → A → B) so the flagship leads chrome
+  // navigation on every page; fall back to slug for stable ordering inside
+  // a tier. Without this, the alphabetical-first three shows ship as the
+  // catalog grows and the flagship can drift out of the column entirely.
+  const shows = [...getAllShows()]
+    .sort((a, b) => {
+      const tierDelta =
+        TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier)
+      return tierDelta !== 0 ? tierDelta : a.slug.localeCompare(b.slug)
+    })
+    .slice(0, 3)
   return (
     <nav
       className="site-footer-col"
