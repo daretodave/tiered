@@ -18,7 +18,7 @@ entries:
     season_label: "S07"
     rank: 1
     title: "A final leg that proves the format's live sprint is built right."
-    blurb: "The Race always ends on a live sprint, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. That final leg is where this season turns a cult favorite into a network anchor."
+    blurb: "The Race always ends on a foot race to the mat, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. That final leg is where this season turns a cult favorite into a network anchor."
   - show: survivor
     season: 20
     season_label: "S20 · Heroes vs. Villains"
