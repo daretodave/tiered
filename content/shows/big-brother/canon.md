@@ -94,7 +94,7 @@ The season Big Brother became Big Brother. Twelve houseguests move in, and for t
 
 ## 16. Battle Of The Block
 
-tag: The most twist-stacked summer of the modern era — Big Brother running its mechanics at full volume.
+tag: The most twist-stacked summer of the modern era — Big Brother running every mechanic the format had.
 slot_argument: Twin HoH, Battle of the Block, Team America and the Detonators forming inside it all. The cast played through a thicker rule book than any prior season.
 community_rank_hint: rank=8 delta=-1 sentiment=down
 
@@ -150,7 +150,7 @@ The first summer the producers reached for a high-school sorting hat. Thirteen h
 
 ## 24. Festie Besties
 
-tag: The modern era running its conceits at full volume — a fate-sharing twist.
+tag: The modern era stacking its conceits into one mechanism — a fate-sharing twist.
 slot_argument: A coherent binding-group experiment in the Duos lineage, layered with a hidden backstage game. Twist-dense by design, which is both the argument and the ceiling.
 community_rank_hint: rank=15 delta=0 sentiment=hold
 

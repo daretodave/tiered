@@ -11,7 +11,7 @@ featured: false
 related:
   - best-post-merge
   - best-comeback-seasons
-description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at full volume."
+description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest."
 entries:
   - show: survivor
     season: 20

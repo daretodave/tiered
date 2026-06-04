@@ -11,7 +11,7 @@ featured: false
 related:
   - survivor-pillars
   - best-returnees
-description: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs that play at full volume — vote density, paranoia, and tension the franchise gets quoted on."
+description: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs where every move counts — vote density, paranoia, and tension the franchise gets quoted on."
 entries:
   - show: survivor
     season: 28
@@ -30,7 +30,7 @@ entries:
     season_label: "S07 · All-Stars"
     rank: 3
     title: "A jury-phase house where every eviction felt load-bearing."
-    blurb: "Big Brother runs on its back half, and All-Stars compresses a roster of franchise veterans into a jury phase with nowhere to hide. The numbers tighten, the alliances calcify, and the gameplay sharpens — a returnee house playing its late rounds at full volume."
+    blurb: "Big Brother runs on its back half, and All-Stars compresses a roster of franchise veterans into a jury phase with nowhere to hide. The numbers tighten, the alliances calcify, and the gameplay sharpens — a returnee house playing its late rounds as sharp as the format gets."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"

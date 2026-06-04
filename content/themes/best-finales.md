@@ -23,8 +23,8 @@ entries:
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
-    title: "Returnees playing the back half at full volume."
-    blurb: "The endgame plays at full volume — every conversation freighted with everything Survivor had been. The final tribal lands like a summary statement for the entire returnee era the show was about to enter."
+    title: "The first all-returnee season closing on a final tribal that reads like a verdict."
+    blurb: "The endgame compounds — every conversation freighted with everything Survivor had been by 2010. The final tribal lands like a summary statement for the entire returnee era the show was about to enter."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"

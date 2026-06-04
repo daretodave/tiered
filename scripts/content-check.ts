@@ -601,6 +601,23 @@ const CLICHE_PATTERNS: ReadonlyArray<ClichePattern> = [
     re: /\bmeasure[sd]?\s+(?:itself\s+)?against\b/gi,
     threshold: 3,
   },
+  // Critique pass-29 MED (issue #301): the editorial phrase
+  // `at full volume` had drifted to 14 occurrences across 8 content
+  // files — themed-list description + entry blurbs + Big Brother
+  // canon entries + Big Brother season files. /themes →
+  // /themes/best-finales repeats the phrase 4+ times in three clicks.
+  // The content rewrite drained every walked offender; the
+  // remaining off-corpus instances (the load-bearing themed-list
+  // `title` field at content/themes/best-post-merge.md, and the
+  // /about page quote of that same title required by
+  // collectAboutListTitleQuoteIssues) sit outside this scanner's
+  // source set. Threshold 2 leaves a small margin for a single
+  // walked re-use without re-opening the drift class.
+  {
+    label: '"at full volume"',
+    re: /\bat full volume\b/gi,
+    threshold: 2,
+  },
 ]
 
 export function collectClicheRepetitionIssues(): Failure[] {

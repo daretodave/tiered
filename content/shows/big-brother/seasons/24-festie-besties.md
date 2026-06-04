@@ -9,7 +9,7 @@ location: Studio City, California
 host: Julie Chen Moonves
 eyebrow: "Aired summer 2022 · The Festie Besties twist"
 lede: "A twist-dense single summer under a Pinwheel theme. Festie Besties binds houseguests into small groups that share safety and nomination fate, while the BB Motel sends players backstage to a hidden Dyre Fest game."
-pull: "Festie Besties is the modern era running its conceits at full volume — a binding-group twist that decides who falls together, layered with a backstage game few houses have tried."
+pull: "Festie Besties is the modern era stacking its conceits into one mechanism — a binding-group twist that decides who falls together, layered with a backstage game few houses have tried."
 format_summary: "16 houseguests · bound groups share their fate"
 format_caption: "Festie Besties plus the BB Motel / Dyre Fest"
 filming_caption: "Studio City soundstage, Pinwheel theme"
@@ -35,5 +35,5 @@ and nomination fate, forcing alliances the social game would not
 have picked. Layered on top is the BB Motel, a backstage Dyre
 Fest game the main house cannot see. Sixteen newcomers,
 twenty-eight episodes, anchored by Julie Chen Moonves. The
-modern era running its conceits at full volume, and a sharp
+modern era stacking its conceits into one mechanism, and a sharp
 study in how a fate-sharing format reshapes a room.

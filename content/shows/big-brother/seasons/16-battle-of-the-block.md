@@ -8,7 +8,7 @@ ep_count: 37
 location: Studio City, California
 host: Julie Chen
 eyebrow: "Aired summer 2014 · The twist-stacked summer"
-lede: "The most twist-stacked summer of the modern era. Two HoHs per week, a Battle of the Block that can dethrone one of them, a Team America twist installed by public vote, and a Detonators alliance forming inside it all. Big Brother running its mechanics at full volume."
+lede: "The most twist-stacked summer of the modern era. Two HoHs per week, a Battle of the Block that can dethrone one of them, a Team America twist installed by public vote, and a Detonators alliance forming inside it all. Big Brother running every mechanic the format had."
 pull: "Battle of the Block is what happens when Big Brother stops asking which twist to use and starts running them all at once. The cast had to play through a thicker rule book than any prior summer."
 format_summary: "16 houseguests · two HoHs per week"
 format_caption: "twin HoH, Battle of the Block, Team America"
@@ -31,4 +31,4 @@ watch_list:
     body: "The twist stack thins out as the cast contracts. The texture of the final stretch is what reveals how much weight the format was carrying earlier in the run."
 ---
 
-The most twist-stacked summer of the modern era. Sixteen houseguests play through twin HoH every week, a Battle of the Block that can dethrone one of them, a Team America public-vote side mission, and a Detonators alliance forming inside the chaos. Big Brother running its mechanics at full volume. The twist stack is more than any prior season tried, and the producers signal the experiment by midseason. Julie Chen hosts a summer the franchise has been calibrating against ever since.
+The most twist-stacked summer of the modern era. Sixteen houseguests play through twin HoH every week, a Battle of the Block that can dethrone one of them, a Team America public-vote side mission, and a Detonators alliance forming inside the chaos. Big Brother running every mechanic the format had. The twist stack is more than any prior season tried, and the producers signal the experiment by midseason. Julie Chen hosts a summer the franchise has been calibrating against ever since.

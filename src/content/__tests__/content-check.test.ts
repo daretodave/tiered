@@ -2416,6 +2416,134 @@ describe('content-check — cliche repetition (critique pass-25, issue #280)', (
   })
 })
 
+describe('content-check — cliche repetition: "at full volume" (critique pass-29, issue #301)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-cliche-full-volume-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite the walked surfaces carry zero hits)', () => {
+    // The off-corpus surfaces — content/themes/best-post-merge.md
+    // `title:` field (load-bearing themed-list title) and
+    // content/legal/about.md's quote of that title (required by
+    // collectAboutListTitleQuoteIssues) — sit outside this scanner's
+    // source set, so post-rewrite the walked count is zero.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('passes at threshold (2 occurrences across themed-list entry blurbs)', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame plays at full volume — every conversation freighted with everything.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A returnee house playing its late rounds at full volume.",
+    )
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+
+  it('flags every occurrence when count exceeds the threshold', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame plays at full volume — every conversation freighted with everything.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A returnee house playing its late rounds at full volume.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The edit lets every confrontation play at full volume.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(3)
+    expect(issues.map((i) => i.file).sort()).toEqual([
+      'content/themes/a-shape.md (entry #1 blurb)',
+      'content/themes/b-shape.md (entry #1 blurb)',
+      'content/themes/c-shape.md (entry #1 blurb)',
+    ])
+    for (const issue of issues) {
+      expect(issue.message).toMatch(/cliche-repetition drift/)
+      expect(issue.message).toMatch(/at full volume/)
+      expect(issue.message).toMatch(/appears 3 times/)
+    }
+  })
+
+  it('counts multiple hits inside a single field', () => {
+    // One theme entry carrying three hits flips the gate at threshold 2.
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame plays at full volume, the post-merge runs at full volume, and the finale lands at full volume.",
+    )
+    const issues = collectClicheRepetitionIssues()
+    expect(issues.length).toBe(3)
+    expect(
+      issues.every(
+        (i) => i.file === 'content/themes/a-shape.md (entry #1 blurb)',
+      ),
+    ).toBe(true)
+  })
+
+  it('is case-insensitive', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "The endgame plays AT FULL VOLUME across every conversation.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A returnee house playing its late rounds At Full Volume.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The edit lets every confrontation play at full volume.",
+    )
+    expect(collectClicheRepetitionIssues().length).toBe(3)
+  })
+
+  it('does not false-positive on incidental words ("at full size", "loud volume")', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      "Twenty former champions taking the season to its full size.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      "A loud volume of confessional moments across the post-merge run.",
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      "The endgame plays at full volume across every conversation.",
+    )
+    // 1 hit < threshold 2 → zero issues.
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+})
+
 function makeMultiEntryTheme(
   root: string,
   slug: string,
