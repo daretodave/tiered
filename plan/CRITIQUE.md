@@ -1,5 +1,72 @@
 # CRITIQUE
 
+> Last pass: 2026-06-04 at commit 076aa8e
+> Pass count: 30
+> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
+> (Phase 36 shipped). `/march` Step 2's normal rate-limited
+> cadence is active. Pass 30 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Both anon (7 URLs:
+> `/`, `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
+> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
+> `/shows`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
+> `/themes`, `/themes/best-finales`) walks ran end-to-end across
+> desktop + mobile viewports — 28 captures total. Mechanical
+> health bar remained clean (zero console errors, zero failed
+> first-party requests, all 200s, all H1s present, all
+> `scrollWidth === innerWidth` at 375px). The authed pass
+> returned zero findings — the corpus is settled on every
+> previously-flagged authed surface (header chrome `@e2e / Sign
+> out` desktop + `@e2e` mobile account-menu trigger across every
+> route, vote-pair pre/post-click triad, comment composer `as
+> @e2e` caption, `/u/e2e` `Your record` empty-state, HvV section-
+> 05 subhead `Either direction.` post 4e4ba8a). One walker
+> artifact (`net::ERR_ABORTED` on a `/shows?_rsc=` prefetch on the
+> authed `/u/e2e` desktop capture) is the same known-false-
+> positive class dropped on passes 6, 7, 8, 9, 10, 11, 29
+> (Next.js aborts in-flight `<Link prefetch>` payloads at page
+> teardown). Four findings filed (0 HIGH, 1 MED, 3 LOW) all from
+> the anon pass: (i) [MED] [anon] / home spotlight tiles
+> (`<HomeShowGrid variant="featured">` below the Survivor hero)
+> still render the alphabetical-first-3 cut (`The Amazing Race /
+> The Bachelor / The Bachelorette`); RuPaul's Drag Race (the
+> only other S-tier show besides Survivor per `/shows`) gets
+> demoted to the compact 'rest of the index' stripe at the
+> exact moment a first-time visitor is forming a tier hierarchy
+> from the home page. Same defect class the pass-29 footer fix
+> closed at `src/components/chrome/footer/FooterTiersCol.tsx`
+> (54a4170 — TIER_ORDER first, slug.localeCompare tiebreaker,
+> slice(0,3)); `src/lib/home/show-partition.ts:31-37` was not
+> patched in the same tick, so the louder editorial surface
+> (home spotlight) still inherits the bug the quieter chrome
+> surface (footer) closed. (ii) [LOW] [anon] /themes/best-
+> finales entries #02 (Survivor S20 HvV) and #05 (The Traitors
+> S02) both use `every X freighted` within three entries — same
+> word, same syntactic shape, repeated on the same scroll. Same
+> class as the pending `at full volume` MED cluster — a single
+> voice tic spreading across adjacent themed-list entries.
+> (iii) [LOW] [anon] /themes/best-finales entry #04 (Survivor
+> S40 Winners at War) body opens `The milestone framing earns
+> itself in the closing run.` Reads grammatically but the
+> agency is wrong — a 'framing' doesn't earn itself; the
+> season earns the milestone framing. Sibling entries on the
+> same list keep plain-spoken agency (`every plate earning its
+> place`, `the final tribal carries the weight of a roster that
+> has played this game before`); this one sentence reads as the
+> editorial voice reaching for elegance and landing in a
+> tautology. (iv) [LOW] [anon] /themes/best-finales entry #06
+> (RuPaul's Drag Race S6) uses `real` twice in adjacent
+> clauses: title `A final lip-sync that pays off a finale built
+> on real artistry.` + body opener `Season 6 spends its run
+> building toward a finale of real artists`. The same body
+> sentence carries `genuine stakes` a half-clause later — the
+> author has the broader vocabulary available; the two `real`s
+> sit too close. Spoiler discipline P0 unchanged across all
+> four findings (chrome ordering + voice edits only; no per-
+> season winner / elimination / finale beat exposed).
+
 > Last pass: 2026-06-03 at commit ab56775
 > Pass count: 29
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
@@ -1454,6 +1521,14 @@
 - [ ] [LOW] [anon] /themes/best-finales entry #02 (Survivor S20 Heroes vs. Villains) body opens `The endgame plays at full volume — every conversation freighted with everything Survivor had been. The final tribal lands like a summary statement for the entire returnee era the show was about to enter.` The past-perfect `had been` locates Survivor in a closed past — but the site declares Survivor at 50 seasons still airing (`50 SEASONS RANKED` /shows/survivor hero stat, `50 SEASONS · CANON + COMMUNITY · EST. 2000` /shows S-tier card, `50 seasons. One torch at a time.` blurb). The phrasing reads as if writing about a finished work; the editorial intent is `everything Survivor had been up to that point` — locating `had been` at HvV's 2010 vantage. The second sentence in the same blurb correctly anchors 2010 (`the show was about to enter`); the first sentence's bare `had been` reads as present-tense closure on a still-airing show. Fix: single-clause edit at `content/themes/best-finales.md:27` — `had been` → `had been by 2010` (or `had been up to that point`). Anchors the past perfect to HvV's vantage rather than reading as a closure on a still-airing show. No surrounding rewrite needed. (Note: this finding closes alongside the [MED] `at full volume` cliche drain — the proposed `at full volume` rewrite of the same sentence may also resolve the `had been` framing in a single content edit; if the curator picks an alternate opener the past-perfect tense issue may dissolve. File the tense edit independently so the next ship-content tick addresses both.) Pin: no test pins the prior literal; the next critique pass re-verifies the absence per the precedent on sibling content edits (#246, #248, #260). Spoiler P0 intact (tense edit only; HvV is canon position #02 already, no winner / elimination / finale beat exposed). (URL: /themes/best-finales, source: critique-pass-29)
 
 - [ ] [LOW] [anon] /themes, /themes/best-finales, /shows/survivor/season/heroes-vs-villains, /about — `back half` vs `back-half` hyphenation drifts across adjacent content surfaces. Hyphenated occurrences (`back-half`): `content/themes/best-post-merge.md:3` themed-list title `The back-half at full volume`; same file `:4` tagline (`back-half stretches`); same file `:14` description (`back-half runs that play at full volume`); /about quoted example (`"The back-half at full volume"` shown as a sample list title); rendered cross-references on /themes featured strip + /themes BY TONE band + HvV `Also appears in` row. Unhyphenated occurrences (`back half`): `content/themes/best-finales.md:26` entry #02 title `Returnees playing the back half at full volume`; `content/themes/best-post-merge.md:33` entry #02 blurb `Big Brother runs on its back half`; same file `:39` entry blurb `the back half plays as chef against chef`; `content/themes/best-post-merge.md:45` entry blurb `the sixth season's back half`; HvV episode-heat caption `peak run · the back half`. A reader on /themes/best-finales sees entry #02 title (unhyphenated) and the same list title in sibling cross-references (hyphenated) within four lines of editorial copy — same noun phrase, two forms, on adjacent surfaces. Fix: pick one form (the themed-list title's `back-half` is the canonical site reference; the noun-phrase use as a compound modifier favors the hyphen). Rewrite the unhyphenated occurrences to hyphenated form across the 5 content sites listed above. Pin: extend `scripts/content-check.ts` with a `BACK_HALF_HYPHEN` invariant scanning every editorial field (the same `sources[]` aggregator already used by `collectClicheRepetitionIssues` at `:606`): every occurrence of `back half` (case-insensitive, word-boundary on each side, with optional `the` / `its` / `a` preceding) must render as `back-half`. Single-pattern check, lifts at content-author time, sibling to the existing `CLICHE_PATTERNS` and `collectYearTenureIssues` invariants. Spoiler discipline P0 unchanged (typography hygiene only). (URL: /themes, /themes/best-finales, /shows/survivor/season/heroes-vs-villains, /about, source: critique-pass-29)
+
+- [ ] [MED] [anon] / home spotlight `<HomeShowGrid variant="featured">` below the Survivor hero renders the three tall tiles in alphabetical order — `TRAVEL COMPETITION The Amazing Race`, `DATING The Bachelor`, `DATING The Bachelorette` — because `partitionHomeShows(getAllShows(), 'survivor')` in `src/lib/home/show-partition.ts:31-37` takes `pool.slice(0, HOME_FEATURED_TILES)` from a catalog that `getAllShows()` already sorted by `slug.localeCompare` (`src/content/loaders.ts:209`). This is the same defect class the pass-29 footer fix corrected at `src/components/chrome/footer/FooterTiersCol.tsx` (close 54a4170): the footer's `SHOWS` column was reworked to lead with `TIER_ORDER.indexOf(tier)` (S→0, A→1, B→2) before `slug.localeCompare`, so a first-page reader sees the S-tier flagships in the chrome rail. The home spotlight — a louder, taller, image-heavier surface — wasn't patched in the same tick, so RuPaul's Drag Race (the only other S-tier show besides Survivor per `/shows` rendering S/A/B sections) gets demoted to the compact `THE REST OF THE INDEX` stripe at the exact moment a first-time visitor is forming their tier hierarchy from the home page. The footer correctly leads `RuPaul's Drag Race / Survivor / The Amazing Race` (S → S-excluded-already-featured → A-first-alpha); the home spotlight still leads `The Amazing Race / The Bachelor / The Bachelorette` (all A-tier and B-tier by alpha). Source: `src/lib/home/show-partition.ts:31-37` `pool.slice(0, HOME_FEATURED_TILES)`; `src/content/loaders.ts:209` `.sort((a, b) => a.slug.localeCompare(b.slug))`. Fix: mirror the pass-29 footer fix in `src/lib/home/show-partition.ts` — sort `pool` by tier rank first (`TIER_ORDER`: S→0 / A→1 / B→2), slug.localeCompare as tiebreaker, then slice. Today's catalog with Survivor excluded would surface `RuPaul's Drag Race / The Amazing Race / The Bachelor` — the next S-tier show plus the two alphabetical-first A-tier shows — and a future tier graduation flows through automatically. Pin: extend `src/lib/home/__tests__/show-partition.test.ts` (create if absent — the function is the partition seam) with (a) a positive case asserting against today's roster the spotlight cut leads with `rupauls-drag-race` (S-tier) over `amazing-race` (A-tier alphabetical first), and (b) a synthetic-catalog negative case where the highest-tier show is alphabetically last — the spotlight must still lead with it, bidirectional drift guard so a future refactor that drops the tier ordering trips the unit gate. Spoiler discipline P0 unchanged (chrome ordering only; no per-season verdict or finale beat exposed). (URL: /, source: critique-pass-30)
+
+- [ ] [LOW] [anon] /themes/best-finales entries #02 (Survivor S20 Heroes vs. Villains) and #05 (The Traitors S02) both use the word `freighted` in the same `every X freighted` syntactic shape, three entries apart on the same 7-entry list. Entry #02 body opener: `The endgame plays at full volume — every conversation freighted with everything Survivor had been.` (`content/themes/best-finales.md:27`). Entry #05 body: `paranoia compounding, every banishment freighted, the table smaller and louder each night.` (`content/themes/best-finales.md:55`). Same word, same `every <noun> freighted` participial construction, both visible on one scroll of the same list. Same defect class as the still-pending [MED] `at full volume` cluster on this same list — a single voice tic spreading across adjacent themed-list entries. The voice elsewhere on the list carries a wider verb palette (`pays off`, `closes on`, `earns its place`, `stretches`, `pays back`); the two `freighted`s read as the same hand reaching for the same emphasis twice. Fix: curator-only edit, smallest blast radius — rewrite the Traitors S2 entry's body to drop `freighted`. Candidate: `paranoia compounding, every banishment paid back, the table smaller and louder each night.` Or shorten by dropping the participial phrase entirely: `paranoia compounding, the table smaller and louder each night.` Keeps both entries' editorial point intact and matches the plain-sentences-over-clever-ones bearing (`plan/bearings.md:370`). Pin: extend `scripts/content-check.ts` `CLICHE_PATTERNS` (`:598`) with `{ label: '"freighted"', re: /\bfreighted\b/gi, threshold: 2 }` (same closure pattern as #280's `measures itself against` invariant and the pending `at full volume` rewrite path) — catches the next instance of this class at content-author time, scoped to all editorial sources the `sources[]` aggregator already walks. Spoiler discipline P0 unchanged (voice edit only). (URL: /themes/best-finales, source: critique-pass-30)
+
+- [ ] [LOW] [anon] /themes/best-finales entry #04 (Survivor S40 Winners at War) body opens `The milestone framing earns itself in the closing run.` (`content/themes/best-finales.md:42`). Reads grammatically but the agency is wrong — a `framing` doesn't earn itself; the season earns the milestone framing by paying it off across its closing episodes. Sibling entries on the same list keep plain-spoken agency: entry #03 (Top Chef Houston) carries `every plate earning its place`; entry #07 (Bake Off Series 8) carries `the final tribal carries the weight of a roster that has played this game before` (Survivor S40, same entry, second sentence). The first sentence of #04 reads as the editorial voice reaching for elegance and landing in a tautology. Fix: curator-only edit. Candidate (a) — make the season the agent of the earning: `The milestone framing earns its weight in the closing run.` (single-word substitution, preserves rhythm). Candidate (b) — drop the framing-as-subject altogether and let the all-winner premise carry: `The all-winner premise pays back in the closing run.` Either preserves the entry's editorial point (the closing run delivers on the season's stated stakes) and matches the bearing on plain sentences over clever ones (`plan/bearings.md:370`). Pin: no new invariant — this is a one-off tautology, not a recurring class; the next critique pass re-verifies the absence per the precedent on sibling content edits (#246, #248, #260). Spoiler discipline P0 unchanged (voice edit only; the entry's canon position #04 was already published, no winner / elimination / finale beat exposed). (URL: /themes/best-finales, source: critique-pass-30)
+
+- [ ] [LOW] [anon] /themes/best-finales entry #06 (RuPaul's Drag Race S6) uses `real` twice in adjacent clauses inside the entry's title + body opener — within one card's worth of editorial copy. Title (`content/themes/best-finales.md:64`): `A final lip-sync that pays off a finale built on real artistry.` Body opener (`:65`): `Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes.` Two adjacent phrasings `real artistry` / `real artists` read as the same word doing the work of two different intensifiers; the body's own `genuine stakes` a half-clause later proves the author has the broader vocabulary available. The two instances also fall inside the entry-title vs entry-blurb seam — the same noun is intensified the same way in the louder rank label and the quieter editorial copy below it, which makes the repetition louder than the count alone suggests. Fix: curator-only edit, smallest blast radius — drop `real` from the body and keep the title. Candidate body opener: `Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes.` Or invert: keep the body verbatim, retitle to `A final lip-sync that pays off a finale built on genuine artistry.` Either preserves the entry's editorial point. Pin: no new invariant — this is a one-off adjacent-repetition, not a recurring class; if `real` recurs across future content the existing `CLICHE_PATTERNS` channel at `scripts/content-check.ts:598` is the seam to extend. Spoiler discipline P0 unchanged (voice edit only). (URL: /themes/best-finales, source: critique-pass-30)
 
 ## Done
 
