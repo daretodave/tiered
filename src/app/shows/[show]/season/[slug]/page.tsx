@@ -240,6 +240,15 @@ export function whereItSitsCopy(
   return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what we ranked it against.`
 }
 
+// Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:
+// the prior literal "Read next." framed both adjacent cards as the
+// reader's forward path, but the section can render a canon-above
+// neighbor (slot #N-1) alongside a canon-below one (slot #N+1) — for
+// a reader on slot #02, slot #01 is read-previous, not read-next.
+// "Either direction." reads honestly against any pair the section
+// renders and preserves the page's eyebrow + h2 rhythm.
+export const ADJACENT_SECTION_H2 = 'Either direction.' as const
+
 // 31a: digit-form back-compat. URLs like `/shows/survivor/season/4`
 // resolve the season by number and 308 to its canonical slug form.
 // Decided to do this in the page instead of middleware so the
@@ -447,7 +456,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             {adjacentVisible ? (
               <section id="s-related" data-testid="section-related">
                 <div className="article-eyebrow"><span className="num">05</span><span>Adjacent in the canon</span></div>
-                <h2>Read next.</h2>
+                <h2>{ADJACENT_SECTION_H2}</h2>
                 <AdjacentSeasons prev={prev} next={next} />
               </section>
             ) : null}

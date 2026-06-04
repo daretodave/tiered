@@ -55,7 +55,12 @@ vi.mock('@/content', async () => {
   }
 })
 
-import { generateMetadata, generateStaticParams, whereItSitsCopy } from '../page'
+import {
+  ADJACENT_SECTION_H2,
+  generateMetadata,
+  generateStaticParams,
+  whereItSitsCopy,
+} from '../page'
 
 function makeShow(overrides: Partial<Show> = {}): Show {
   return {
@@ -343,5 +348,25 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
     expect(whereItSitsCopy(show, 1, 1)).toBe(
       "Sole entry in the Top Chef Editor's Canon so far. Adjacent picks land as the canon grows.",
     )
+  })
+})
+
+describe('ADJACENT_SECTION_H2 — Section 05 "Adjacent in the canon" subhead', () => {
+  // critique-pass-29 LOW: the legacy "Read next." subhead framed both
+  // adjacent cards (a canon-above neighbor and a canon-below one) as
+  // the reader's forward path. For a reader on canon slot #02, slot
+  // #01 is read-previous, not read-next. "Either direction." reads
+  // honestly against either pair the section can render.
+  it('renders the bidirectional "Either direction." literal', () => {
+    expect(ADJACENT_SECTION_H2).toBe('Either direction.')
+  })
+
+  it('never re-introduces the legacy unidirectional "Read next." subhead', () => {
+    // Negative regression pin: a future authoring pass that flips
+    // back to a forward-only subhead would resurface the
+    // misframing the critique-pass-29 finding flagged on the HvV
+    // page (canon-above neighbor framed as "read next").
+    expect(ADJACENT_SECTION_H2 as string).not.toBe('Read next.')
+    expect(ADJACENT_SECTION_H2.toLowerCase()).not.toMatch(/\bnext\b/)
   })
 })
