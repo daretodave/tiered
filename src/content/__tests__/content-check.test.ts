@@ -22,6 +22,7 @@ import {
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
   collectThemeFailures,
+  collectWatchListPhraseRepetitionIssues,
   collectYearTenureIssues,
   collectYearTokenPairingIssues,
 } from '../../../scripts/content-check'
@@ -3618,5 +3619,150 @@ ${sixtyWords}
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/eyebrow names "winter"/)
     expect(issues[0]!.message).toMatch(/falls in summer/)
+  })
+})
+
+describe('content-check — watch_list cross-callout phrase repetition (critique pass-32, issue #325)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-watchlist-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeSeasonWithWatchList(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    items: Array<{ episode_label: string; body: string }>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const watchListYaml = items
+      .map(
+        (it) =>
+          `  - episode_label: "${it.episode_label}"\n    body: "${it.body}"`,
+      )
+      .join('\n')
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+number: ${n}
+title: ${slug}
+watch_list:
+${watchListYaml}
+---
+
+${sixtyWords}
+`,
+    )
+  }
+
+  it('flags the HvV-class case: a body re-uses a content-bearing word that appears in another item\'s label', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithWatchList(tmp, 'alpha', 1, 'one', [
+      { episode_label: 'Opener · cold open', body: 'A clean staging.' },
+      { episode_label: 'Early · long take', body: 'Watch the patience.' },
+      { episode_label: 'Mid · merge', body: 'The merge plays clean.' },
+      {
+        episode_label: 'Late · third act',
+        body: 'The cold-open of the late-game stretch is doing real work.',
+      },
+    ])
+    const issues = collectWatchListPhraseRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toMatch(/seasons\/01-one\.md \(watch_list\)/)
+    expect(issues[0]!.message).toMatch(/watch_list cross-callout phrase repetition/)
+    expect(issues[0]!.message).toMatch(/"cold open"/)
+    expect(issues[0]!.message).toMatch(/issue #325/)
+  })
+
+  it('flags two bodies sharing a 2-word content phrase', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithWatchList(tmp, 'alpha', 1, 'one', [
+      {
+        episode_label: 'Opener · note',
+        body: 'The first minute does real work setting the table.',
+      },
+      {
+        episode_label: 'Late · note',
+        body: 'The first minute of the back half also does real work.',
+      },
+    ])
+    const issues = collectWatchListPhraseRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"first minute"/)
+    expect(issues[0]!.message).toMatch(/"real work"/)
+  })
+
+  it('does not flag label-vs-label collisions (structural label tokens are exempt)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithWatchList(tmp, 'alpha', 1, 'one', [
+      { episode_label: 'Opener · cold open', body: 'Different beat here.' },
+      { episode_label: 'Late · cold open', body: 'Another beat entirely.' },
+    ])
+    expect(collectWatchListPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('passes a watch_list with distinct vocabulary across items', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithWatchList(tmp, 'alpha', 1, 'one', [
+      { episode_label: 'Opener · note', body: 'The opening shot does work.' },
+      { episode_label: 'Mid · note', body: 'A long confessional follows.' },
+      { episode_label: 'Late · note', body: 'The merge plays cleanly.' },
+    ])
+    expect(collectWatchListPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('skips a season without a watch_list', () => {
+    makeShow(tmp, 'alpha')
+    const file = path.join(
+      tmp,
+      'shows',
+      'alpha',
+      'seasons',
+      '01-bare.md',
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: alpha\nnumber: 1\ntitle: bare\n---\n\n${sixtyWords}\n`,
+    )
+    expect(collectWatchListPhraseRepetitionIssues()).toEqual([])
+  })
+
+  it('skips stopword-only repetitions (the bigram extractor drops stop tokens)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithWatchList(tmp, 'alpha', 1, 'one', [
+      {
+        episode_label: 'Opener · note',
+        body: 'In the moment, the show settles.',
+      },
+      {
+        episode_label: 'Late · note',
+        body: 'In the moment, the cast holds steady.',
+      },
+    ])
+    // "in the" and "the moment" all carry stopwords on at least one
+    // side; the only purely content adjacency is none — pure stopword
+    // chains do not trip the gate.
+    expect(collectWatchListPhraseRepetitionIssues()).toEqual([])
   })
 })

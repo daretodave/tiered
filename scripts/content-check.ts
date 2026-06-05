@@ -1318,6 +1318,84 @@ export function collectCanonRationaleClosingFormulaIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-32 LOW (issue #325): `/shows/survivor/season/heroes-vs-villains`
+// "What to watch for" callouts re-used `cold-open` across moment 1's label and
+// moment 4's body — two of four small callouts sharing the same content-bearing
+// vocabulary. The four-card surface is supposed to read as four distinct beats;
+// shared 2-word phrases across items blur that contract.
+//
+// Tokenizer note: this invariant splits hyphens, so `cold-open` (the body's
+// single hyphenated token) bigrams with adjacent words and ALSO matches the
+// label's two-token `cold open` form. The standard `extractContentBigrams`
+// helper above keeps hyphenated tokens whole, which would not have caught
+// the original finding. Stopwords are dropped via the same set used by
+// the themed-list invariant.
+function extractWatchListContentBigrams(text: string): Set<string> {
+  const tokens = text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[^a-z\s'-]/g, ' ')
+    .replace(/-/g, ' ')
+    .split(/\s+/)
+    .map((t) => t.replace(/^['-]+|['-]+$/g, ''))
+    .filter((t) => /^[a-z][a-z']*$/.test(t))
+  const bigrams = new Set<string>()
+  for (let i = 0; i < tokens.length - 1; i++) {
+    const a = tokens[i]!
+    const b = tokens[i + 1]!
+    if (PHRASE_REPETITION_STOPWORDS.has(a)) continue
+    if (PHRASE_REPETITION_STOPWORDS.has(b)) continue
+    bigrams.add(`${a} ${b}`)
+  }
+  return bigrams
+}
+
+export function collectWatchListPhraseRepetitionIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      const items = season.watch_list
+      if (!items || items.length < 2) continue
+      // Body-vs-body and body-vs-label cross-callout phrase repetition.
+      // Label-vs-label collisions are excluded — the structural label
+      // tokens (e.g., `OPENER · COLD OPEN`, `LATE · THIRD ACT`) are
+      // supposed to carry recurring scaffolding vocabulary.
+      const bodyBigrams = items.map((it) =>
+        extractWatchListContentBigrams(it.body),
+      )
+      const labelBigrams = items.map((it) =>
+        extractWatchListContentBigrams(it.episode_label),
+      )
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const shared = new Set<string>()
+          // body[i] ∩ body[j]
+          for (const phrase of bodyBigrams[i]!) {
+            if (bodyBigrams[j]!.has(phrase)) shared.add(phrase)
+          }
+          // body[i] ∩ label[j], body[j] ∩ label[i]
+          for (const phrase of bodyBigrams[i]!) {
+            if (labelBigrams[j]!.has(phrase)) shared.add(phrase)
+          }
+          for (const phrase of bodyBigrams[j]!) {
+            if (labelBigrams[i]!.has(phrase)) shared.add(phrase)
+          }
+          if (shared.size === 0) continue
+          const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+          const phrases = Array.from(shared)
+            .map((p) => `"${p}"`)
+            .join(', ')
+          issues.push({
+            file: `${seasonFile} (watch_list)`,
+            message: `watch_list cross-callout phrase repetition — items #${i + 1} (${items[i]!.episode_label}) and #${j + 1} (${items[j]!.episode_label}) share content-bearing 2-word phrase(s) ${phrases}. The four-card surface is supposed to read as distinct beats; rotate one of the two uses to surface-native vocabulary the other items do not already carry. See plan/CRITIQUE.md pass-32 / issue #325.`,
+          })
+        }
+      }
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -1611,6 +1689,25 @@ function main(): number {
     failures.push(...seasonEyebrowCalendarIssues)
   } else {
     for (const issue of seasonEyebrowCalendarIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-32 LOW (issue #325): ships LAX during the corpus
+  // drain — the live catalog carries ~161 seasons with `watch_list`
+  // and a strict floor would surface incidental cross-callout
+  // bigrams that don't all warrant per-tick rotation. The HvV
+  // literal that triggered this finding is fixed in this commit;
+  // subsequent /ship-content drain ticks rotate each remaining
+  // offender, and the final drain tick flips
+  // WATCHLIST_PHRASE_REPETITION_STRICT to true. One-line toggle
+  // mirroring SEASON_EYEBROW_CALENDAR_STRICT above.
+  const WATCHLIST_PHRASE_REPETITION_STRICT = false
+  const watchListPhraseIssues = collectWatchListPhraseRepetitionIssues()
+  if (WATCHLIST_PHRASE_REPETITION_STRICT) {
+    failures.push(...watchListPhraseIssues)
+  } else {
+    for (const issue of watchListPhraseIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
