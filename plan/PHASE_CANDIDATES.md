@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-05 at commit 2ded1f3
-> Pass count: 21
+> Last pass: 2026-06-05 at commit ddba223
+> Pass count: 22
 
 ## Considered (awaiting promotion)
 
