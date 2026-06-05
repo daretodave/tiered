@@ -122,6 +122,27 @@ describe('pickMovers', () => {
     const [mover] = pickMovers([r])
     expect(mover!.voteCount).toBe(12)
   })
+
+  // critique-pass-33 HIGH pin (#316): pickMovers must exclude rows
+  // with zero votes — a freshly-seeded season whose `trend` is a
+  // recompute artifact (a new entry above pushes the field down by
+  // one) is not a community-driven shift and cannot appear in the
+  // COMMUNITY RANK · UPDATED THURSDAY rail. Bidirectional: a
+  // one-ballot mover IS returned so the floor doesn't over-fire on
+  // small-ballot movers.
+  it('excludes zero-vote rows from the surface (recompute-artifact guard)', () => {
+    const zero = row(50, 50, -38)
+    zero.voteCount = 0
+    expect(pickMovers([zero])).toEqual([])
+  })
+
+  it('keeps a one-ballot mover (the floor is voteCount > 0, not a volume threshold)', () => {
+    const one = row(8, 8, -5)
+    one.voteCount = 1
+    const [mover] = pickMovers([one])
+    expect(mover).toBeDefined()
+    expect(mover!.voteCount).toBe(1)
+  })
 })
 
 describe('formatLastRecompute', () => {

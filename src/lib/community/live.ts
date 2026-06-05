@@ -33,12 +33,22 @@ export type CommunityMover = {
 // The biggest absolute movers since the baseline snapshot, climbers
 // and fallers alike, strongest move first; ties broken by current
 // (better) rank. Holds and seasons absent from the baseline are
-// excluded — they did not move.
+// excluded — they did not move. Zero-vote rows are also excluded
+// (critique-pass-33 HIGH): a freshly-seeded season's `trend` is a
+// recompute artifact (a new entry above pushes the field down by
+// one), not a community-driven shift; surfacing it on the
+// COMMUNITY RANK · UPDATED THURSDAY rail reads as the math being
+// broken (the row's own `· 0 votes` grounding suffix exposes the
+// seam). The floor is `voteCount > 0`, so a single ballot still
+// qualifies — the rule is "no community signal at all," not "below
+// some volume threshold."
 export function pickMovers(
   entries: CommunityRankRow[],
   limit = 4,
 ): CommunityMover[] {
-  const moved = entries.filter((e) => e.trend != null && e.trend !== 0)
+  const moved = entries.filter(
+    (e) => e.trend != null && e.trend !== 0 && e.voteCount > 0,
+  )
   moved.sort((a, b) => {
     const da = Math.abs(a.trend as number)
     const db = Math.abs(b.trend as number)
