@@ -1244,8 +1244,29 @@
   .dual-cell { padding: 32px 24px; }
 
   .lists-stack { margin-bottom: 56px; }
-  .list-row { grid-template-columns: auto 1fr auto; gap: 14px; padding: 18px; }
-  .list-row .list-row-meta { display: none; }
+  /* Critique pass-33: see the matching @media (max-width: 720px) block in
+     src/styles/lists.css for the rationale. Both mobile breakpoints (this
+     one at 767px and the dedicated lists.css one at 720px) need the same
+     row-2 placement so the 721-767 window — where lists.css does not
+     fire — preserves the entry-count + status meta. */
+  .list-row {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 4px 14px;
+    padding: 18px;
+  }
+  .list-row .list-row-bullets { grid-column: 1 / 2; grid-row: 1 / span 2; align-self: center; }
+  .list-row .list-row-body { grid-column: 2 / 3; grid-row: 1 / 2; }
+  .list-row .list-row-meta {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: left;
+    font-size: 11px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .list-row .list-row-arrow { grid-column: 3 / 4; grid-row: 1 / span 2; align-self: center; }
 
   .show-hero { grid-template-columns: 1fr; }
   .show-hero-cover { padding: 64px 24px 40px; min-height: 0; border-right: 0; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); }

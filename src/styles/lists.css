@@ -349,13 +349,40 @@ h1.lists-hero-title em {
   cursor: pointer;
 }
 @media (max-width: 720px) {
+  /* Critique pass-33: keep both the per-list `N ENTRIES` count and the
+     `STABLE LIST` / `REVISED <Month YYYY>` status tag readable on mobile.
+     The pre-fix shape dropped the entire `.list-row-meta` column with
+     `display: none`, leaving mobile readers with no scale or freshness
+     signal on the /themes All-lists grid. Re-place the meta into row 2
+     of column 2 so it lives below the row body, left-aligned. */
   .list-row {
     grid-template-columns: auto 1fr auto;
-    gap: 14px;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 4px 14px;
     padding: 16px 18px;
   }
+  .list-row .list-row-bullets {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+  .list-row .list-row-body {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
   .list-row .list-row-meta {
-    display: none;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: left;
+    font-size: 11px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .list-row .list-row-arrow {
+    grid-column: 3 / 4;
+    grid-row: 1 / span 2;
+    align-self: center;
   }
 }
 .list-row-bullets {

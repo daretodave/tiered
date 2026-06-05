@@ -203,6 +203,30 @@ test.describe('/themes index (phase 19g shape)', () => {
     expect(overflow).toBeLessThanOrEqual(1)
     await expect(page.locator('h1')).toBeVisible()
   })
+
+  test('mobile @ 375px: every list-row preserves the N entries + status meta (closes #320)', async ({
+    page,
+  }) => {
+    // Critique pass-33 [MED]: pre-fix, the mobile breakpoint dropped
+    // `.list-row-meta` with `display: none` in both screens.css and
+    // lists.css, leaving readers without the per-list scale or freshness
+    // signal. Bidirectional drift guard — asserts the entry-count AND
+    // status string render visibly on every row at 375px. A regression to
+    // `display: none` (or hiding either signal) trips this case.
+    await page.setViewportSize({ width: 375, height: 800 })
+    await page.goto('/themes', { waitUntil: 'domcontentloaded' })
+    const rows = page.getByTestId('lists-row')
+    const rowCount = await rows.count()
+    expect(rowCount).toBeGreaterThanOrEqual(1)
+    for (let i = 0; i < rowCount; i++) {
+      const row = rows.nth(i)
+      const meta = row.locator('.list-row-meta')
+      await expect(meta).toBeVisible()
+      const text = (await meta.textContent())?.toLowerCase() ?? ''
+      expect(text).toMatch(/\d+\s+entr(y|ies)/)
+      expect(text).toMatch(/stable list|growing|updated|started/)
+    }
+  })
 })
 
 test.describe('/themes/[theme] detail (phase 19h shape)', () => {
