@@ -1121,6 +1121,45 @@ export function collectBackHalfHyphenIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-32 MED (issue #312): the self-naming brand-stamp
+// closing-sentence frame `tiered.tv's canon places it [ordinal]
+// because no other [noun]...` appeared at two adjacent canonical
+// positions on the most-visited canon (Survivor #01 Cagayan + #02
+// Heroes vs. Villains). Two adjacent rationales running the same
+// closing formula reads as a CMS template tell rather than the
+// knowledgeable-peer voice. Pin: for every canon, scan entries in
+// rank order; if two adjacent entries both close with the literal
+// frame, fail with both positions and titles. The non-self-naming
+// `The canon places it...` form is fine — only the brand-stamp
+// version is flagged. Single-occurrence is fine; only adjacency
+// trips the gate.
+const CANON_CLOSING_FORMULA_RE =
+  /tiered\.tv's canon places it (?:[a-z-]+) because no other/i
+
+export function collectCanonRationaleClosingFormulaIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const entries = [...canon.entries].sort((a, b) => a.rank - b.rank)
+    const carries = entries.map((e) =>
+      CANON_CLOSING_FORMULA_RE.test(e.rationale.replace(/\s+/g, ' ')),
+    )
+    for (let i = 0; i < entries.length - 1; i++) {
+      if (carries[i] && carries[i + 1]) {
+        const a = entries[i]
+        const b = entries[i + 1]
+        if (!a || !b) continue
+        issues.push({
+          file: `content/shows/${show.slug}/canon.md`,
+          message: `canon-rationale closing-formula adjacency drift — entries at canonical_position ${a.rank} (${a.title}) and ${b.rank} (${b.title}) both close with the self-naming brand-stamp frame \`tiered.tv's canon places it [ordinal] because no other [noun]...\`. Two adjacent rationales running the same closing formula reads as a CMS template tell rather than the knowledgeable-peer voice. Rotate one of the two closers off the frame — drop the self-naming brand-stamp and let the rationale's own editorial verdict close the entry. See plan/CRITIQUE.md pass-32 / issue #312.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -1354,6 +1393,22 @@ function main(): number {
     failures.push(...editorialBylineIssues)
   } else {
     for (const issue of editorialBylineIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-32 MED (issue #312): ships strict at floor 0 —
+  // the Survivor canon entry #02 rotation (this commit) drops the
+  // only adjacency pair in the corpus. The invariant is the floor
+  // that catches a future canon authoring pass re-running the
+  // self-naming brand-stamp closer at adjacent ranks on any show.
+  // One-line toggle mirroring the thirteen above.
+  const CANON_CLOSING_FORMULA_STRICT = true
+  const canonClosingFormulaIssues = collectCanonRationaleClosingFormulaIssues()
+  if (CANON_CLOSING_FORMULA_STRICT) {
+    failures.push(...canonClosingFormulaIssues)
+  } else {
+    for (const issue of canonClosingFormulaIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

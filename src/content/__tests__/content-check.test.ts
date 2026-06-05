@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
+  collectCanonRationaleClosingFormulaIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
@@ -3151,5 +3152,198 @@ ${ninetyWords}
     makeCanonWithEditor(tmp, 'alpha', 'M. Reyes')
     makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
     expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+})
+
+describe('content-check — canon-rationale closing-formula adjacency (critique pass-32, issue #312)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-closing-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonWithClosers(
+    root: string,
+    show: string,
+    closers: Array<{ season: number; title: string; closer: string }>,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const headings = closers
+      .map(
+        (c) =>
+          `## ${c.season}. ${c.title}\n\n${ninetyWords} ${c.closer}\n`,
+      )
+      .join('\n')
+    writeFileSync(file, `---\nshow: ${show}\n---\n\n${headings}\n`)
+  }
+
+  it('passes at the live catalog (no adjacent self-naming-closer pair after the HvV rotation)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+
+  it('passes when only one entry carries the self-naming formula (single occurrence is fine)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          "tiered.tv's canon places it first because no other season has shaped the genre.",
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer: 'A second slot earned on the cast bench alone.',
+      },
+    ])
+    expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+
+  it('passes for non-self-naming closers (the "The canon places it..." form is fine)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          'The canon places it first because no other season has shaped the genre.',
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer:
+          'The canon places it second because no other returnee run has the same depth.',
+      },
+    ])
+    expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+
+  it('flags two adjacent entries that both close with the self-naming brand-stamp formula', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          "tiered.tv's canon places it first because no other season has shaped the genre.",
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer:
+          "tiered.tv's canon places it second because no other returnee run sustains the pressure.",
+      },
+    ])
+    const issues = collectCanonRationaleClosingFormulaIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md')
+    expect(issues[0]!.message).toMatch(/closing-formula adjacency drift/)
+    expect(issues[0]!.message).toMatch(/canonical_position 1 \(One\) and 2 \(Two\)/)
+    expect(issues[0]!.message).toMatch(/issue #312/)
+  })
+
+  it('does not flag two carriers separated by a non-carrier (only adjacency trips the gate)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeSeason(tmp, 'alpha', 3, 'three', { canonical_position: 3 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          "tiered.tv's canon places it first because no other season has shaped the genre.",
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer: 'A second slot earned on the cast bench alone.',
+      },
+      {
+        season: 3,
+        title: 'Three',
+        closer:
+          "tiered.tv's canon places it third because no other run has the same density.",
+      },
+    ])
+    expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+
+  it('flags every adjacent pair when three carriers run in a row', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeSeason(tmp, 'alpha', 3, 'three', { canonical_position: 3 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          "tiered.tv's canon places it first because no other season has shaped the genre.",
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer:
+          "tiered.tv's canon places it second because no other returnee run sustains the pressure.",
+      },
+      {
+        season: 3,
+        title: 'Three',
+        closer:
+          "tiered.tv's canon places it third because no other run has the same density.",
+      },
+    ])
+    const issues = collectCanonRationaleClosingFormulaIssues()
+    expect(issues.length).toBe(2)
+    expect(issues[0]!.message).toMatch(/canonical_position 1 .* and 2/)
+    expect(issues[1]!.message).toMatch(/canonical_position 2 .* and 3/)
+  })
+
+  it('is case-insensitive (catches a future authoring pass titlecasing the closer)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeSeason(tmp, 'alpha', 2, 'two', { canonical_position: 2 })
+    makeCanonWithClosers(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        closer:
+          "Tiered.tv's Canon Places It First Because No Other season has shaped the genre.",
+      },
+      {
+        season: 2,
+        title: 'Two',
+        closer:
+          "tiered.tv's canon places it second because no other returnee run sustains the pressure.",
+      },
+    ])
+    const issues = collectCanonRationaleClosingFormulaIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/closing-formula adjacency drift/)
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
   })
 })

@@ -61,10 +61,11 @@ of seasons of prior text. The casting team gets it right: a
 confessional read hits harder when you already have a
 relationship with the speaker, and Samoa pushes physical play
 into a place earlier returnee seasons never reached. Episodes
-run dense in a way the merge alone cannot deliver. tiered.tv's
-canon places it second because no other all-star attempt in the
-format's history operates at this much sustained pressure across
-this many recognizable faces.
+run dense in a way the merge alone cannot deliver. The second
+slot is its by default. No other all-star attempt sustains this
+much pressure across this many recognizable faces, and decades
+on, the rest of the format is still measured against this
+stretch of TV.
 
 ## 1. Borneo
 
