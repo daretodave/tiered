@@ -15,8 +15,8 @@ For every show we cover, two rankings live side by side:
   reason per position. Confident but spoiler-safe.
 - **Community Rank** — vote-driven. Each season asks one
   question: does it belong in the community top 10? Your
-  upvote or downvote answers it. Signed-in members carry the
-  most weight.
+  upvote or downvote answers it. Signed-in members carry more
+  weight than guests; long-tenured accounts carry the most.
 
 Browse the [shows index](/shows), pick one, and decide which
 season to watch next. Or skim the [themed lists](/themes) for

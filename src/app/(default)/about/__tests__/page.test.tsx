@@ -215,6 +215,51 @@ describe('content/legal/about.md within-page sentence-template + tenure honesty 
   })
 })
 
+// Critique pass-34 MED (issue #322): the prior /about lede
+// (`Community Rank` bullet) closed on `Signed-in members carry
+// the most weight.` — a flat promise that contradicted the
+// weighting ladder three paragraphs below (which names a 7-day
+// tenure cliff: brand-new signed-in accounts count at 0.25×, not
+// 1.0×). The #318 close drained the same overpromise from the
+// policy paragraph but left the upstream lede unmodified. The
+// fix rewrites the third sentence to name the same two-cliff
+// structure the policy ladder commits to (guest vs signed-in +
+// new vs long-tenured). Bidirectional pins below catch (1) the
+// lede regressing to a flat `signed-in … carry the most weight`
+// promise whenever the body still names the weighting ladder,
+// AND (2) the rewrite drifting back to the bare marketing form
+// without a tenure qualifier. Closure pattern matches pass-26
+// #282 + pass-27 #287 + pass-32 #311 + pass-33 #318 (drift
+// guard on the page that owes the truth).
+describe('content/legal/about.md lede honesty vs weighting ladder (#322)', () => {
+  // The lede region is everything before the `## How voting works`
+  // policy heading. The policy ladder lives below that boundary;
+  // pinning against the lede slice keeps the negative match clear
+  // of the ladder text itself (the ladder is allowed to name the
+  // weighting; the lede must not flat-promise it).
+  function ledeOf(body: string): string {
+    const idx = body.search(/## How voting works/)
+    return idx > 0 ? body.slice(0, idx) : body
+  }
+
+  it('lede does not flat-promise that signed-in members carry the most weight when the ladder is named', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    if (/0\.1×|0\.25×|1\.0×/.test(body)) {
+      expect(ledeOf(body)).not.toMatch(/\bsigned-in[^.]*\bcarry the most weight\b/i)
+    }
+  })
+
+  it('lede names a tenure qualifier so the rewrite does not drift back to the bare marketing form', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(ledeOf(body)).toMatch(
+      /\b(long-tenured|long-standing|tenured|a week old|7\+?\s*days?)\b/i,
+    )
+  })
+})
+
 // Critique pass-31 LOW (issue #310): the rate-limit trust line on
 // /about previously read `Brigade rate-limits run behind the
 // scenes…` — `Brigade` is verb-as-noun community-moderation
