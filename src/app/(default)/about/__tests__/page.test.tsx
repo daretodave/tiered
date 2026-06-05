@@ -177,6 +177,44 @@ describe('cross-surface attestation parity vs home Community Rank (#311)', () =>
   })
 })
 
+// Critique pass-33 MED (issue #318): intra-/about drift — two
+// adjacent sections of the same legal doc both opened with the
+// `<group> carry the most weight` sentence template, and the
+// `How voting works` lede (`Long-standing accounts carry the
+// most weight.`) overpromised against the 7-day cliff named
+// two sentences below (`Accounts 7+ days old count at 1.0×`).
+// Seven days is not `long-standing` by any reader's reading. The
+// fix replaces line 38's opener with the direct datum
+// (`Accounts a week old or older count at full weight; younger
+// accounts and guests count less.`). Bidirectional pins below
+// catch (1) re-introduction of the duplicate template across
+// two distinct sentences, AND (2) re-coupling the `long-standing`
+// claim to the weighting ladder it contradicts. Closure pattern
+// matches pass-26 #282 + pass-27 #287 + pass-32 #311 (drift
+// guard on the page that owes the truth).
+describe('content/legal/about.md within-page sentence-template + tenure honesty (#318)', () => {
+  it('does not repeat the "<group> carry the most weight" template across two distinct sentences', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    const matches =
+      body.match(
+        /\b(signed-in|long-standing|account|voter|member|guest)[^.]*\bcarry the most weight\b/gi,
+      ) ?? []
+    expect(matches.length).toBeLessThanOrEqual(1)
+  })
+
+  it('does not couple the `long-standing` claim to the 7+ day weighting ladder', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    if (/0\.1×|0\.25×|1\.0×/.test(body)) {
+      expect(body).not.toMatch(
+        /long-standing[^.]*carry the most weight|carry the most weight[^.]*long-standing/i,
+      )
+    }
+  })
+})
+
 // Critique pass-31 LOW (issue #310): the rate-limit trust line on
 // /about previously read `Brigade rate-limits run behind the
 // scenes…` — `Brigade` is verb-as-noun community-moderation
