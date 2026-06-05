@@ -217,7 +217,7 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
     await expect(page.getByTestId('list-title')).toContainText(/Survivor/i)
     await expect(page.getByTestId('list-tagline')).toBeVisible()
     await expect(page.getByTestId('list-meta-entries')).toContainText(
-      /entries|entry/,
+      /Entries\s*\d+/,
     )
     await expect(page.getByTestId('list-meta-spans')).toContainText(
       /shows|show/,

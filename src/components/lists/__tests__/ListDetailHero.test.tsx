@@ -44,9 +44,7 @@ describe('<ListDetailHero>', () => {
         shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
       />,
     )
-    expect(screen.getByTestId('list-meta-entries').textContent).toContain(
-      '2 entries',
-    )
+    expect(screen.getByTestId('list-meta-entries').textContent).toContain('2')
     expect(screen.getByTestId('list-meta-spans').textContent).toContain(
       '2 shows',
     )
@@ -56,6 +54,29 @@ describe('<ListDetailHero>', () => {
     expect(screen.getByTestId('list-meta-revised').textContent).toContain(
       'May 2026',
     )
+  })
+
+  it('entries meta value is a bare integer (no noun-doubling against the ENTRIES label)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({
+          entries: Array.from({ length: 7 }, (_, ix) => ({
+            show: 'survivor',
+            season: ix + 1,
+            rank: ix + 1,
+            title: `Entry ${ix + 1}`,
+            blurb: 'blurb.',
+          })),
+        })}
+        shows={[show()]}
+      />,
+    )
+    const valueText =
+      screen
+        .getByTestId('list-meta-entries')
+        .querySelector('.meta-val')?.textContent?.trim() ?? ''
+    expect(valueText).toMatch(/^\d+$/)
+    expect(valueText).not.toMatch(/entr(y|ies)/i)
   })
 
   it('renders LAST REVISED as calendar "Month YYYY" (no relative-time tokens that rot)', () => {
@@ -100,9 +121,7 @@ describe('<ListDetailHero>', () => {
         shows={[show()]}
       />,
     )
-    expect(screen.getByTestId('list-meta-entries').textContent).toContain(
-      '1 entry',
-    )
+    expect(screen.getByTestId('list-meta-entries').textContent).toContain('1')
     expect(screen.getByTestId('list-meta-spans').textContent).toContain('1 show')
   })
 })

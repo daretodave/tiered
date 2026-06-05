@@ -62,9 +62,7 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
       <dl className="list-meta" data-testid="list-meta">
         <div className="meta-cell" data-testid="list-meta-entries">
           <dt className="meta-key">Entries</dt>
-          <dd className="meta-val">
-            {entryCount} {plural(entryCount, 'entry', 'entries')}
-          </dd>
+          <dd className="meta-val">{entryCount}</dd>
         </div>
         <div className="meta-cell" data-testid="list-meta-spans">
           <dt className="meta-key">Spans</dt>
