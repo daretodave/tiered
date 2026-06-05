@@ -1,10 +1,10 @@
 # CRITIQUE
 
-> Last pass: 2026-06-05 at commit 0ebda93
-> Pass count: 33
+> Last pass: 2026-06-05 at commit b52ebba
+> Pass count: 34
 > Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
 > (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 33 ran in the cloud loop via Path A2
+> cadence is active. Pass 34 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Both anon (7 URLs:
 > `/`, `/shows`, `/shows/survivor`,
@@ -16,1009 +16,91 @@
 > desktop + mobile viewports — 28 captures total. Mechanical
 > health bar clean (zero console errors, zero failed first-party
 > requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Two walker artifacts on the authed walk
-> (`net::ERR_ABORTED` on `/shows?_rsc=` prefetch at `/u/e2e`
-> teardown, desktop + mobile) are the same known-false-positive
-> class dropped on passes 6, 7, 8, 9, 10, 11, 29, 30, 31, 32
+> innerWidth` at 375px). The `net::ERR_ABORTED` walker artifacts
+> on the authed walk at `/u/e2e` teardown are the same
+> known-false-positive class dropped on passes 6–11, 29–33
 > (Next.js aborts in-flight `<Link prefetch>` payloads at page
-> teardown). Self-assessment dropped three reader candidates that
-> did not survive verification: (a) [HIGH anon] /themes hero
-> lede `9 in the index, 3 featured this month — 12 we'd defend
-> in a group chat` flagged as double-counting — false positive,
-> identical to the pass-31 same-class drop:
-> `src/components/lists/ListsHero.tsx:26` derives `indexCount =
-> stats.total - stats.featuredCount`, so 9 IS by construction the
-> non-featured count and 9 + 3 = 12 is the correct math; the
-> `lede shows the math inline when featured + index split`
-> ListsHero test still pins `featuredVal + indexVal ===
-> stats.total`; (b) [MED authed] VotePair `+1 / COMMUNITY · NET
-> VOTE` unlabeled — already addressed at pass-27 #284 (the
-> `you haven't voted yet` state-cap was added precisely for this
-> ambiguity per `src/components/composition/VotePair.tsx:202-215`
-> comment block); the reader walked without noting the cap is
-> already present above the integer; (c) [LOW authed] /u/e2e
-> empty-state `writing itself` precious + Survivor-only CTA —
-> the lede is the resolution copy from pass-28 #293 (literal `New
-> here. Cast one vote and your record starts writing itself.`
-> pinned in `ProfileEmpty.test.tsx`), and the `Browse all shows
-> →` secondary CTA shipped at pass-26 #285 fix `4388452`; the
-> reader re-litigated both addressed decisions. Six findings
-> filed (1 HIGH, 4 MED, 1 LOW):
-> (i) [HIGH] [anon] /shows/survivor "What changed this week"
-> weekly-mover ledger leads with `Survivor 50 · Slid 38 spots
-> since the last weekly update · 0 votes` — the 0-vote suffix
-> contradicts the ledger's community-driven premise (a 38-spot
-> swing on zero votes is recompute/seeding noise, not community
-> movement) and lands on the most-visited show surface.
-> (ii) [MED] [anon] /shows/survivor/season/heroes-vs-villains
-> top eyebrow reads `Aired spring 2010` while the PREMIERED meta
-> three sections later reads `Feb 11, 2010` — Feb 11 is winter,
-> not spring, so the two timestamps disagree on the same screen
-> for the most-trafficked season page in the catalog.
-> (iii) [MED] [anon] /about `How voting works` paragraph repeats
-> the trust-mechanic claim twice with different language and
-> overpromises against the weighting table — `Signed-in members
-> carry the most weight` (lede, line 19) and `Long-standing
-> accounts carry the most weight` (line 38), both saying the
-> same thing differently; the table caps at 7+ days = 1.0×, so
-> calling a 7-day account "long-standing" oversells.
-> (iv) [MED] [anon] /themes/best-finales #03 (Top Chef S06 Las
-> Vegas) restates the deck headline in the body's first clause —
-> deck reads `The deepest knife-skill cast carries the kitchen
-> all the way home.`, body opens `Las Vegas runs the most
-> technically loaded roster the show ever fielded` (same claim,
-> different words, immediately back-to-back) instead of advancing
-> the editorial point.
-> (v) [MED] [authed] /themes at 375px drops both the `N ENTRIES`
-> count and the `STABLE LIST` / `REVISED` status tag from every
-> All-lists row — `src/styles/screens.css:1248` sets
-> `.list-row .list-row-meta { display: none; }` at mobile width,
-> so mobile readers lose the scale signal entirely on every tile
-> (the desktop column reads `7 entries / STABLE LIST`, mobile
-> reads neither).
-> (vi) [LOW] [authed] global footer SHOWS column lists exactly
-> three shows — `RuPaul's Drag Race / Survivor / The Amazing
-> Race` — with `ALL SHOWS →` below, and no header signaling this
-> is a partial set; with 13 shows tracked, the unlabeled three
-> reads as the complete index until the reader spots the
-> catch-all link.
-> Spoiler discipline P0 intact across all six findings (voice /
-> chrome / cross-surface prose / mobile-CSS / nav-honesty edits
-> only; no per-season verdict, winner, elimination, finale beat,
-> or canon-position exposure on any surface).
-
-> Last pass: 2026-06-04 at commit b003420
-> Pass count: 32
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 32 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar clean (zero console errors, zero failed first-party
-> requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Two walker artifacts on the authed walk
-> (`net::ERR_ABORTED` on `/shows?_rsc=` prefetch at `/u/e2e`
-> teardown, desktop + mobile) are the same known-false-positive
-> class dropped on passes 6, 7, 8, 9, 10, 11, 29, 30, 31 (Next.js
-> aborts in-flight `<Link prefetch>` payloads at page teardown).
-> Self-assessment dropped two reader candidates: (a) [LOW anon]
-> /shows/survivor Heroes vs. Villains weekly-shift card
-> `Climbed 5 spots since the last weekly update · 1 vote` reads
-> as brittle for a single vote moving 5 positions — observation
-> is real but the fix (an explanatory caveat about small-ballot
-> volatility) is a community-rank system polish, not an
-> editorial-voice finding the critique queue should carry; the
-> reader-trust hit is bounded by the same vote-weighting copy
-> already on home + /about; (b) [MED anon] /themes filter chip
-> `SHOWING · ALL 9 IN THE INDEX` vs 12 cards visually rendered —
-> math itself is correct (chip scopes the lower index only,
-> Featured row sits above with its own eyebrow), the concern is
-> visual-flow rather than navigation-honesty, weaker than the
-> five filed rows and below the cap-at-6 floor. Five findings
-> filed (0 HIGH, 2 MED, 3 LOW):
-> (i) [MED] [anon] /shows/survivor S-tier #01 (Cagayan) and #02
-> (Heroes vs. Villains) both close on the identical sentence
-> frame `tiered.tv's canon places it [Nth] because no other
-> [X]...` — two adjacent rationales running the same closing
-> formula at the top of canon reads as a CMS template tell
-> rather than the knowledgeable-peer voice the brand commits to.
-> (ii) [MED] [anon] / home commits the product to a
-> self-attestation rule the formal /about voting policy never
-> substantiates. Home Community Rank card reads `Signed-in
-> voters self-attest they watched the season end to end` (the
-> fix shipped at a0d7cd5 closing pass-26 #282 + fa9dcf3 closing
-> pass-27 #287), but /about's `How voting works` section
-> describes the 0.1× / 0.25× / 1.0× weighting ladder + 72-hour
-> edit + weekly recompute without ever naming a self-attestation
-> mechanic. A reader who lands on /about to verify the
-> attestation can't find it. Same defect class as #282 + #287
-> drift sliding one tier deeper. (iii) [LOW] [anon]
-> /themes/best-finales #02 (Survivor S20) doubles `final tribal`
-> + a `[verb]s like a [noun]` simile inside ~50 words — title
-> ends `closing on a final tribal that reads like a verdict.`,
-> body opens `The final tribal lands like a summary statement
-> for the entire returnee era.` Same within-entry repetition
-> class as the remaining pass-31 Pending row (#05 `table` x3)
-> + pass-31 closed siblings #01 (`live sprint` x2) + #06
-> (`artistry` cognate); the same `collectThemeBodyPhraseRepetitionIssues`
-> within-entry extension would catch this and the open #05
-> simultaneously. (iv) [LOW] [anon]
-> /shows/survivor/season/heroes-vs-villains "What to watch for"
-> moments lean on `cold-open` twice across two of four cards —
-> moment 1 label `OPENER · COLD OPEN`, moment 4 body opener
-> `The cold-open of the late-game stretch is doing real work`.
-> The two structural slots aren't the same kind of cold open,
-> so the doubled vocabulary muddles the read at the same time
-> the moments are supposed to be reading as four distinct beats.
-> (v) [LOW] [authed] /themes/<theme> hero stat strip doubles the
-> noun in the first tile only — `ENTRIES / 7 entries` repeats
-> the noun in label + value, while the three sibling tiles
-> avoid the doubling (`SPANS / 6 shows` — label-as-verb + plural
-> noun; `CURATED BY / tiered.tv editor` — verb-phrase + name;
-> `LAST REVISED / May 2026` — adjective + date). The pattern
-> renders on every `/themes/<slug>` detail page since the
-> `ListDetailHero.tsx` component is shared, so it's a
-> small-noun-stutter that lands on every themed-list surface.
-> Spoiler discipline P0 intact across all five findings (voice /
-> chrome / cross-surface prose edits only; no per-season verdict,
-> winner, elimination, finale beat, or canon-position exposure
-> on any surface).
-
-> Last pass: 2026-06-04 at commit 3755f50
-> Pass count: 31
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 31 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). One walker artifact
-> (`net::ERR_ABORTED` on `/shows?_rsc=` prefetch at page
-> teardown on the authed walk) is the same known-false-positive
-> class dropped on passes 6, 7, 8, 9, 10, 11, 29, 30 (Next.js
-> aborts in-flight `<Link prefetch>` payloads at page teardown).
-> Self-assessment dropped two reader candidates that did not
-> survive verification: (a) [HIGH anon] /themes lede `9 in the
-> index, 3 featured this month — 12 we'd defend in a group chat`
-> flagged as mis-adding — false positive; `ListsHero.tsx:26`
-> defines `indexCount = stats.total - stats.featuredCount` so
-> the 9 IS by construction the non-featured count, and 9 + 3 =
-> 12 is the correct math; the existing `ListsHero.test.tsx`
-> pass-28 #295 case (`lede shows the math inline when featured
-> + index split`) pins `featuredVal + indexVal === stats.total`;
-> (b) [LOW anon] /themes/best-finales #05 entry header `THE
-> TRAITORS · S02` does not disambiguate US vs UK — the catalog
-> show itself (`content/shows/traitors.md` slug `traitors`)
-> renders without `US` in any chrome (catalog name, /shows tile,
-> /shows/traitors hero), so introducing the disambiguation on
-> the themed-list surface would create a convention the parent
-> catalog does not carry; the show's own tagline names "The
-> American adaptation" + "Peacock" network tile already anchor
-> the identity. Six findings filed (1 HIGH, 2 MED, 3 LOW):
-> (i) [HIGH] [anon] cross-surface voice/honesty drift — every
-> editorial byline attributes to `tiered.tv Editors` (plural):
-> `src/app/shows/[show]/season/[slug]/page.tsx:311 + 379` canon
-> entry author + visible byline `Canon entry by tiered.tv
-> Editors`, `src/components/featured-themes/FeaturedThemes.tsx:34`
-> `Cross-canon · curated by tiered.tv editors`,
-> `src/components/canon/ShowRanking.tsx:98` `One ranking, written
-> by editors who have rewatched every season at least twice`,
-> every theme frontmatter `curator: 'tiered.tv Editors'` default
-> in `src/content/schemas.ts:235`. Then `/about` admits the
-> opposite twice — `content/legal/about.md:29` `the editor's
-> call — one person, one position per season` and line 78 `An
-> experiment. Built and operated by one person.` A first-time
-> visitor on the natural season → /about or themed-list →
-> /about navigation hits the contradiction on a single click.
-> Same defect class as pass-26 #282 (`Every voter has watched`
-> flat overclaim contradicted by the weighting ladder on /about).
-> (ii) [MED] [authed] /themes "By tone" group head label
-> (`GROUP_HEAD_LABELS.tone` in `src/lib/themes-format.ts`)
-> mis-classifies four of six visible entries —
-> `best-reunion-specials` is a format slice, `best-post-merge`
-> is a structural region, `best-returnees` is a casting
-> structure, `firsts` is a chronological position; only
-> `loudest arcs` (best-comeback-seasons) and `rookie casts`
-> (best-newbie-casts) are genuinely tonal. The taxonomy label
-> promises one kind of cut and delivers another, which makes
-> the index hard to scan for a reader trying to use the toggles.
-> (iii) [MED] [anon|authed] /themes/best-finales #06 residual
-> `artist*` cognate after pass-30 #301 stripped `real artists` —
-> entry title (`content/themes/best-finales.md:50`) now reads
-> `A final lip-sync that pays off a finale built on real
-> artistry.` and body opener (line 51) is `Season 6 spends its
-> run building toward a finale of working drag artists, and the
-> last episodes deliver — runway moments still replayed, a
-> lip-sync stretch with genuine stakes.` Two `artist`-stem words
-> inside one entry's six lines reads like the previous fix was
-> applied at one node rather than across the entry. (iv) [LOW]
-> [anon] /themes/best-finales #01 (Amazing Race S07) doubles
-> `live sprint` inside one ~50-word card — title (line 20) `A
-> final leg that proves the format's live sprint is built right.`
-> + body opener (line 21) `The Race always ends on a live
-> sprint, and Season 7 plays that structure at full strength`.
-> Pass-28 #297's `closing run` rotation off the cross-entry
-> phrase-repetition floor swapped #01's title `closing run` →
-> `live sprint` AND body opener `closing run` → `final leg`, so
-> the rewrite traded the cross-entry repetition for a
-> within-entry one — same defect class, narrower scope.
-> (v) [LOW] [anon] /themes/best-finales #05 (Traitors S02)
-> lands `table` three times in ~55 words — title (line 44) `The
-> Round Table tightening into the final banishment the format
-> was built for.` + body (line 45) `the table smaller and
-> louder each night. That last seat at the table is where the
-> US adaptation proves it can hold the tension all the way
-> down.` `Round Table` is the format's named furniture so one
-> use is load-bearing, but two more body occurrences land as
-> head-noun overuse on the same card. (vi) [LOW] [anon] /about
-> voting-mechanics paragraph (`content/legal/about.md:39`) ends
-> with `Brigade rate-limits run behind the scenes and should
-> never bite a normal reader.` `Brigade` is community-moderation
-> jargon (referring to vote-brigading — coordinated upvote /
-> downvote campaigns) — every other piece of /about reads in
-> plain language (`one vote per reader`, `change your mind
-> within 72 hours`, `flagged comments enter a human-reviewed
-> mod queue`), so this one cold-jargon noun is the obstacle on
-> a sentence the page needs the reader to absorb (it's the
-> trust line promising rate-limits won't catch them by
-> accident). Spoiler discipline P0 unchanged across all six
-> findings (voice / chrome / taxonomy / prose edits only; no
-> per-season verdict, winner, elimination, or canon-position
-> exposure on any surface).
-
-> Last pass: 2026-06-04 at commit 076aa8e
-> Pass count: 30
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 30 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). The authed pass
-> returned zero findings — the corpus is settled on every
-> previously-flagged authed surface (header chrome `@e2e / Sign
-> out` desktop + `@e2e` mobile account-menu trigger across every
-> route, vote-pair pre/post-click triad, comment composer `as
-> @e2e` caption, `/u/e2e` `Your record` empty-state, HvV section-
-> 05 subhead `Either direction.` post 4e4ba8a). One walker
-> artifact (`net::ERR_ABORTED` on a `/shows?_rsc=` prefetch on the
-> authed `/u/e2e` desktop capture) is the same known-false-
-> positive class dropped on passes 6, 7, 8, 9, 10, 11, 29
-> (Next.js aborts in-flight `<Link prefetch>` payloads at page
-> teardown). Four findings filed (0 HIGH, 1 MED, 3 LOW) all from
-> the anon pass: (i) [MED] [anon] / home spotlight tiles
-> (`<HomeShowGrid variant="featured">` below the Survivor hero)
-> still render the alphabetical-first-3 cut (`The Amazing Race /
-> The Bachelor / The Bachelorette`); RuPaul's Drag Race (the
-> only other S-tier show besides Survivor per `/shows`) gets
-> demoted to the compact 'rest of the index' stripe at the
-> exact moment a first-time visitor is forming a tier hierarchy
-> from the home page. Same defect class the pass-29 footer fix
-> closed at `src/components/chrome/footer/FooterTiersCol.tsx`
-> (54a4170 — TIER_ORDER first, slug.localeCompare tiebreaker,
-> slice(0,3)); `src/lib/home/show-partition.ts:31-37` was not
-> patched in the same tick, so the louder editorial surface
-> (home spotlight) still inherits the bug the quieter chrome
-> surface (footer) closed. (ii) [LOW] [anon] /themes/best-
-> finales entries #02 (Survivor S20 HvV) and #05 (The Traitors
-> S02) both use `every X freighted` within three entries — same
-> word, same syntactic shape, repeated on the same scroll. Same
-> class as the pending `at full volume` MED cluster — a single
-> voice tic spreading across adjacent themed-list entries.
-> (iii) [LOW] [anon] /themes/best-finales entry #04 (Survivor
-> S40 Winners at War) body opens `The milestone framing earns
-> itself in the closing run.` Reads grammatically but the
-> agency is wrong — a 'framing' doesn't earn itself; the
-> season earns the milestone framing. Sibling entries on the
-> same list keep plain-spoken agency (`every plate earning its
-> place`, `the final tribal carries the weight of a roster that
-> has played this game before`); this one sentence reads as the
-> editorial voice reaching for elegance and landing in a
-> tautology. (iv) [LOW] [anon] /themes/best-finales entry #06
-> (RuPaul's Drag Race S6) uses `real` twice in adjacent
-> clauses: title `A final lip-sync that pays off a finale built
-> on real artistry.` + body opener `Season 6 spends its run
-> building toward a finale of real artists`. The same body
-> sentence carries `genuine stakes` a half-clause later — the
-> author has the broader vocabulary available; the two `real`s
-> sit too close. Spoiler discipline P0 unchanged across all
-> four findings (chrome ordering + voice edits only; no per-
-> season winner / elimination / finale beat exposed).
-
-> Last pass: 2026-06-03 at commit ab56775
-> Pass count: 29
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 29 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). The authed pass
-> returned zero findings — the corpus is in a settled state on
-> every previously-flagged authed surface (auth-state chrome,
-> comment-input `as @{handle}` caption, vote-pair pre/post-click
-> triad, `/u/e2e` empty-state editorial lede, post-pass-27
-> `YOU HAVEN'T VOTED YET` cap, `@e2e / Sign out` desktop chrome,
-> `@e2e` mobile trigger). One walker artifact (`net::ERR_ABORTED`
-> on a `/shows/survivor/season/cagayan?_rsc=` prefetch on the
-> authed `/u/e2e` desktop capture) is the same known-false-
-> positive class dropped on passes 6, 7, 8, 9, 10, 11 (Next.js
-> aborts in-flight RSC prefetches as a routine optimization).
-> Five findings filed (0 HIGH, 2 MED, 3 LOW) all from the anon
-> pass: (i) [MED] [anon] footer SHOWS column lists alphabetical-
-> first-3 (`The Amazing Race / The Bachelor / The Bachelorette`)
-> on every page; Survivor (home featured + `/shows` S-tier #1 +
-> 50-season flagship) is absent from chrome navigation on every
-> page in the walk — including `/shows/survivor` and
-> `/shows/survivor/season/heroes-vs-villains` (Survivor-scoped
-> pages whose own footer promotes three other shows).
-> (ii) [MED] [anon] the editorial phrase `at full volume` repeats
-> across the corpus — `grep -rn 'at full volume' content/` returns
-> 15+ hits across themed-list title + sibling list blurb + HvV
-> best-finales entry #02 title + body + multiple Big Brother
-> canon/seasons; adjacent-page sequence /themes → /themes/best-
-> finales repeats the phrase 4+ times in three clicks; same class
-> as pass-25 #280 (`measures itself against`) closed via
-> `CLICHE_PATTERNS` in `scripts/content-check.ts:598`.
-> (iii) [LOW] [anon] `/shows/survivor/season/heroes-vs-villains`
-> section 05 subhead `Read next.` (rendered by
-> `src/app/shows/[show]/season/[slug]/page.tsx:450`) misframes
-> the canon-adjacent pair — one card is canon-above (#01 Cagayan)
-> and the other is canon-below (#03 Borneo); `Read next.` fits
-> Borneo but contradicts Cagayan's direction. (iv) [LOW] [anon]
-> `/themes/best-finales` entry #02 body opens `The endgame plays
-> at full volume — every conversation freighted with everything
-> Survivor had been.` Past-perfect `had been` reads as closure on
-> a finished show, but the site declares Survivor at 50 seasons
-> still airing (`50 SEASONS RANKED` hero); needs anchoring to
-> HvV's 2010 vantage. (v) [LOW] [anon] `back half` vs `back-half`
-> hyphenation drifts across adjacent themed-list + season
-> surfaces (`The back-half at full volume` themed-list title
-> hyphenated; `Returnees playing the back half at full volume`
-> entry title unhyphenated; both visible on /themes/best-finales
-> within four lines).
-
-> Last pass: 2026-06-03 at commit 5101ab6
-> Pass count: 28
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 28 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). Five findings filed
-> (1 HIGH, 1 MED, 3 LOW) after dropping four on self-assessment:
-> (a) [anon] /about closes the editor-recruitment paragraph with
-> "open an issue on GitHub and tell us which show and which
-> season" — reader claimed the GitHub URL appears nowhere on the
-> page. False positive: `content/legal/about.md:72` already
-> renders `[GitHub](https://github.com/daretodave/tiered)` as a
-> live markdown link; Playwright's `innerText` extract collapsed
-> the link to its anchor text only ("GitHub") in the capture, so
-> the walker saw an unlinked label and inferred a dead-end CTA.
-> The product surface is correct. Dropped. (b) [anon|authed]
-> /themes/best-finales hero action row `SAVE LIST · SHARE ·
-> SUGGEST AN ENTRY` rendered as plain labels with no auth-state
-> hint or destination glyph — both reader passes flagged this as
-> pre-click ambiguity / dead-end labels. Partial false positive:
-> `src/components/lists/ListDetailTools.tsx` wires all three —
-> Save list to a `localStorage`-backed toggle (renders `Saved` +
-> "saved on this device" caption on press, no sign-in required),
-> Share to `navigator.clipboard.writeText(window.location.href)`
-> (renders "Link copied" on press), Suggest an entry to a
-> `mailto:editors@tiered.tv?subject=Suggest entry: <title>` link.
-> The actions are functional and carry post-action receipts; the
-> reader's "dead-end labels" framing is wrong. The narrower
-> question — should the meta column add affordance glyphs (lock /
-> share-arrow / arrow-up-right / mail) so anon and authed readers
-> can predict each action's nature without clicking — is a taste
-> call below the cap; dropped to keep the queue honest. (c)
-> [authed] /shows/survivor `What changed this week` 36-spot
-> One World mover — pass-27 (iii) MED was already addressed this
-> tick at `00d7750` (`ShiftCard` now renders `· N votes`
-> alongside the delta); flagging the same surface for the next
-> ratchet ("editorial wrap explaining low-vote-volume swings")
-> within one tick of the shipped fix is churn. Dropped. (d)
-> [authed] walker re-surfaces `net::ERR_ABORTED` on `/shows?_rsc=`
-> prefetch — tool/walker issue, not a product finding. Dropped.
-> Five filings this round: (i) [HIGH] [anon|authed] /shows
-> Amazing Race A-tier tagline outputs broken grammar — `held its
-> shape across twenty-five of starting lines` — the `{yearsWord}`
-> tenure token expands to `twenty-five` but the source frontmatter
-> reads `{yearsWord} of starting lines` with no `years` word
-> between the token and `of`; (ii) [MED] [authed] /u/e2e empty-
-> state owner self-view reads as an admin screen — six pieces of
-> zero/absence then two CTA arrows with no editorial voice line,
-> against the bearings "knowledgeable peer, warm" cue every other
-> surface honors; (iii) [LOW] [authed] /themes/best-finales body
-> copy leans on a single noun phrase `closing run/stretch/hour`
-> across the tagline + four of seven entry bodies — reads as
-> templated rather than written; (iv) [LOW] [anon|authed] /themes
-> lede `12 lists we'd defend in a group chat` vs adjacent stat
-> tiles `3 FEATURED / 9 IN THE INDEX` requires the reader to
-> compute `3 + 9 = 12` to reconcile; the louder `9 IN THE INDEX`
-> tile reads as the universe before the eye finds `3 FEATURED`;
-> (v) [LOW] [anon] /themes "Featured this month / Editor-selected
-> · refreshed monthly" eyebrow carries no per-strip date receipt;
-> the page-level `May 2026 INDEX LAST REVISED` tile stamps the
-> catalog index, not the featured strip — the monthly-cadence
-> claim has no surface-level date.
-
-> Last pass: 2026-06-02 at commit 9d07409
-> Pass count: 27
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 27 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). Six findings filed
-> (2 HIGH, 2 MED, 2 LOW) after dropping eight on self-assessment:
-> (a) [authed] mobile signed-in header drops `Sign out` — same
-> false-positive class as pass 26 (a); `HeaderView` ships a
-> `site-header-user-trigger` button on mobile that opens a menu
-> containing `Your record` + `Sign out`; the static walk doesn't
-> expand the menu. Dropped. (b) [authed] season comment composer
-> `⏎` glyph as only submit affordance — false-positive class from
-> pass 26 (d); collapsed stub carries `⏎` as a click hint, the
-> open state renders an actual `Post` button. Dropped.
-> (c) [authed] /u/e2e meta description third-person on owner
-> self-view — same call as pass 26 (c); meta description serves
-> the indexable view by design. Dropped. (d) [authed] season vote
-> block has no `you voted` receipt for signed-in voters — distinct
-> from the new pre-click finding kept this round; the post-click
-> receipt class still wants a click-through capture before
-> re-filing. Dropped. (e) [authed] empty thread renders both
-> composer + `Be the first to weigh in` empty-state — borderline
-> redundancy, taste-call; the empty-state line serves the anon
-> viewer who sees no composer. Dropped. (f) [authed] /u/e2e three
-> stat tiles overlap (`SEASONS VOTED` + `SHOWS VOTED ON` same
-> dimension) — the third cell was just renamed at 00538dc
-> (pass-26 #284 closure); flagging the same surface so soon is
-> churn. Dropped. (g) [authed] walker re-surfaces
-> `net::ERR_ABORTED` on `/shows?_rsc=` prefetch — tool/walker
-> issue, not a product finding. Dropped. (h) [anon]
-> /shows/survivor/season/heroes-vs-villains section 03 "Where it
-> sits in the canon" body thin vs siblings — same call as pass 26
-> (g); defensible as intentional brevity. Dropped. Six filings
-> this round: (i) [HIGH] [anon] /shows hero stat stamps
-> `LAST REVISION — June 2026` while four other surfaces (home,
-> /shows/survivor, /themes, /themes/best-finales) all stamp
-> `May 2026` from the same shipped data — same class as pass-24
-> #269 (home build-time drift) but on the catalog surface;
-> (ii) [HIGH] [anon] home Community Rank now names two voting
-> tiers (anon 0.1× + signed-in self-attest) but /about names
-> three (anon 0.1× / new-account 0.25× / long-account 1.0×) —
-> refined drift after pass-26 #282 narrowed but did not eliminate
-> the home/about reconciliation gap; (iii) [MED] [anon]
-> /shows/survivor `What changed this week` leads with `One World
-> Slid 36 spots since the last weekly update. was #08 now #44`
-> against single-digit sibling moves, with no vote-count context —
-> magnitude reads as noise under a weekly-cadence header;
-> (iv) [MED] [authed] season vote block renders `+1 COMMUNITY ·
-> NET VOTE` adjacent to `YOUR VOTE / CAST VOTE` with no explicit
-> "you haven't voted" affordance for signed-in non-voters —
-> pre-click ambiguity distinct from pass-26 (vi); (v) [LOW] [anon]
-> /about names example themed lists as `"best premieres"` and
-> `"best post-merge runs"` — neither title exists on /themes
-> (`Premieres that earned it` / `The back-half at full volume`
-> are the real titles); (vi) [LOW] [anon] /themes
-> `<meta description>` overclaims `every tiered.tv canon` (10 of
-> 13 shows covered) and uses generic SEO labels not real list
-> titles.
-
-> Last pass: 2026-06-02 at commit 215deb5
-> Pass count: 26
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 26 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
-> `/themes`, `/themes/best-finales`) walks ran end-to-end across
-> desktop + mobile viewports — 28 captures total. Mechanical
-> health bar remained clean (zero console errors, zero failed
-> first-party requests, all 200s, all H1s present, all
-> `scrollWidth === innerWidth` at 375px). Five findings filed
-> (1 HIGH, 3 MED, 1 LOW) after dropping nine on self-assessment:
-> (a) [authed] mobile signed-in header drops `Sign out` —
-> `src/components/chrome/HeaderView.tsx:143-185` ships a
-> `site-header-user-trigger` button on mobile that opens a menu
-> containing `Your record` + `Sign out`. The static Playwright
-> DOM walk doesn't expand the menu and so misses the mobile
-> sign-out affordance. Dropped as false positive. (b) [authed]
-> header `@e2e` rendered as plain text not a link — same root
-> cause: `site-header-user-desktop` is a `<Link>` to the profile
-> and `site-header-user-trigger` opens a menu with `Your record`.
-> Dropped. (c) [authed] /u/e2e meta description third-person on
-> owner self-view — meta description serves the indexable view by
-> design; the H1 branches on `isSelfView` but the meta description
-> is for index consumers (search snippets, OG cards) for whom
-> third-person is correct. Dropped. (d) [authed] season comment
-> composer ⏎ glyph as only submit affordance —
-> `design/compositions/interactions.jsx:110-138` shows the
-> collapsed stub carries `⏎` as a click hint; the open state
-> renders an actual `Post` button. The static walk caught the
-> collapsed state only. Dropped as false positive. (e) [authed]
-> /u/e2e has no owner-only affordances (settings / edit /
-> privacy) — scope-broad product question rather than a critique
-> finding; better filed as a phase candidate if pursued. Dropped
-> to keep cap honest. (f) [authed] season vote block has no
-> `you voted` receipt for signed-in users — the post-vote receipt
-> state may exist but the walk didn't click; without a post-click
-> capture the evidence is incomplete. Dropped, can be re-filed
-> with click-through evidence. (g) [anon] /shows/<show>/season/
-> <slug> section 03 "Where it sits in the canon" body thin vs
-> siblings — defensible as intentional brevity (the slot-of-N is
-> meant to anchor the adjacent cards). Dropped as taste-call.
-> (h) [anon] /themes/best-finales `MORE LISTS IN THIS VEIN` shelf
-> carries only 2 cards — minor; the related-lists logic is
-> `getRelatedThemes` with same-category fallback, editorially
-> curated, and 2 cards is the curator's call. Dropped as cap-
-> discipline. (i) [anon] season `EPISODE HEAT: peak run · the
-> back half` jargon — defensible as editorial signature; the
-> stat strip carries the intentional-tag register the season page
-> leans on. Dropped as taste-call. Five filings this round:
-> (i) [HIGH] [anon] home `HomeDualCallout` says canon `Revised
-> quarterly when a new season changes the math.` while every
-> show's canon methodology paragraph says `After every season
-> finale and after any returnee season that recasts a prior run.`
-> — two cadences presented at the two most-trafficked surfaces;
-> (ii) [MED] [anon] /shows/survivor mixes the binary `does this
-> belong in the community top 10?` question with full-50 ordinal
-> shift pills ("now #44 of 50") with no bridge sentence;
-> (iii) [MED] [anon] home `Every voter has watched the season
-> end to end.` contradicts /about's explicit weighting admission
-> that anonymous-guest votes count at 0.1×; (iv) [MED] [authed]
-> /u/[handle] profile stats label `votedShowCount` as `SHOWS
-> FOLLOWED` but no Follow feature exists anywhere in the product;
-> (v) [LOW] [authed] /u/[handle] owner empty-state offers only
-> `Start with Survivor →` with no secondary path to the catalog.
-
-> Last pass: 2026-06-01 at commit d9ade6d
-> Pass count: 25
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 25 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/about`) and authed (7 URLs: `/`,
-> `/shows/survivor`, `/shows/survivor/season/heroes-vs-villains`,
-> `/u/e2e`, `/themes`, `/themes/best-finales`, `/shows`) walks
-> ran end-to-end across desktop + mobile viewports — 28 captures
-> total. Mechanical health bar remained clean (zero console
-> errors, zero failed first-party requests, all 200s, all H1s
-> present, all `scrollWidth === innerWidth` at 375px). Four
-> findings filed (0 HIGH, 4 MED, 0 LOW) after dropping four on
-> self-assessment: (a) [anon|authed] home `<meta description>`
-> contains U+2019 in `Editor's Canon` — recent commit d794db9
-> explicitly preserved narrative U+2019 (`SeasonHero`,
-> `HowTiersMove`, `layout.tsx` metadata, etc.); only mono-
-> uppercased label literals flipped to ASCII. Meta descriptions
-> are narrative register, not labels — the curly is intentional.
-> Dropped as a non-finding. (b) [authed] `/u/e2e` H1 `Your record`
-> vs meta description `public record` voice mismatch — reader
-> conflated the eyebrow with the H1. The actual H1 is `@e2e`
-> (always third-person handle); the eyebrow branches on
-> `isSelfView` (owner reads `Your record`, stranger reads
-> `@e2e's record`). The meta description matches the indexable
-> stranger view exactly; the owner-vs-meta mismatch is only
-> visible via View Source. Dropped — impact below the LOW floor.
-> (c) [authed] `/shows/survivor` "What changed this week" cards
-> triple-state the same shift (pill + sentence + was/now triad)
-> — reader self-flagged uncertainty about whether the sentence
-> is screen-reader-only via `.sr-only`. Without a DOM-class
-> capture the evidence is incomplete and a fix that retired
-> the sentence might strip an a11y affordance. Dropped to keep
-> cap honest; can be re-filed with concrete classname evidence.
-> (d) [anon] `/about` title `About tiered.tv — tiered.tv`
-> brand-repeated — observed alongside the `/about` meta-
-> description finding (filed). The title repetition is a
-> derived effect of `buildMetadata({ title: 'About tiered.tv' })`
-> appending the global ` — tiered.tv` suffix; fixing the title
-> needs either a per-route suffix-opt-out (broader change) or
-> renaming the doc title to bare `About`. Folded into the
-> filed `/about` meta finding as a stretch sub-fix rather than
-> a separate row. Four filings this round, all MED: (i) `/about`
-> meta description is a flat fallback (homepage tagline + "How
-> it works.") that fails the editorial honesty of the rich page
-> body (vote-weighting bands, 80-120 word canon spec, AI pre-
-> filter); (ii) home `+ N more in the index` divider reads as
-> a teaser to hidden inventory but the N tiles render
-> immediately below the pill (HomeMoreShows component renders
-> both the label AND its children in the same scroll); (iii)
-> `/themes` lede says `12 lists we'd defend in a group chat`
-> while the filter scope chip three rows below reads
-> `SHOWING · ALL 9 LISTS` — the word `ALL` reads as the
-> catalog total, not the index-minus-featured subset, so the
-> stated `12` and the chip-stated `9` produce an unresolved
-> count drift on the same surface; (iv) the editorial phrase
-> `measures itself against` / `measured against` appears as
-> the canonical-claim fallback on 10+ surfaces (Heroes vs.
-> Villains pull-quote, HvV body closer, /shows/survivor canon
-> slot #02 tag, /themes/best-finales #02 blurb, /themes/best-
-> returnees #01 title, /themes/best-post-merge #01 blurb,
-> /themes/best-villain-editing #01 blurb, Amazing Race tagline,
-> Top Chef tagline, Big Brother canon tier_s_blurb +
-> tournament-of-brigade entry, Project Runway S04 pull) — one
-> clever line reused as the editor's universal "this matters"
-> closer, against bearings' "plain sentences over clever ones"
-> rule.
-
-> Last pass: 2026-06-01 at commit b71f38d
-> Pass count: 24
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 24 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (7 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/themes/best-finales`, `/sign-in`) and authed (7 URLs: `/`,
-> `/shows/survivor`, `/shows/survivor/season/heroes-vs-villains`,
-> `/u/e2e`, `/themes`, `/themes/best-premieres`, `/shows`) walks
-> ran end-to-end across desktop + mobile viewports — 28 captures
-> total. Mechanical health bar remained clean (zero console
-> errors, zero failed first-party requests, all 200s, all H1s
-> present, all `scrollWidth === innerWidth` at 375px). Six
-> findings filed (1 HIGH, 3 MED, 2 LOW) after dropping five on
-> self-assessment: (a) [anon] HvV eyebrow "AIRED SPRING 2010" vs
-> Feb 11 premiere — the season ran Feb–May 2010, "spring" is the
-> conventional CBS-spring framing across multi-month US TV
-> seasons; the Feb-11 premiere doesn't contradict "spring" as a
-> season label. Dropped as a non-finding. (b) [anon] /themes
-> Featured cards CTA inconsistency ("read the list →" vs
-> "read →") — verified in `FeaturedCard.tsx:25`:
-> `const cta = big ? 'read the list →' : 'read →'`; the
-> asymmetry is the intentional big/regular variation paired with
-> the `.big` flag on the first card, not a copy-paste miss.
-> Dropped — reader's read of the page surface didn't account for
-> the deliberate hierarchy. (c) [anon] /shows/[show]/season/[slug]
-> "EPISODE HEAT" label confusing in fact-row — verified the
-> field is a documented schema column on `Season.episode_heat`
-> per CLAUDE.md §"Show identity, formalized" (the `episode_heat`
-> + `episode_heat_caption` pair landed with phase 26a as
-> intentional editorial shorthand). The reader's "rename or
-> move" suggested fix would unwind a schema-level decision; the
-> on-page render is faithful to the data model. Dropped. (d)
-> [anon] /sign-in email input field potentially unlabelled —
-> reader self-flagged uncertainty ("either (a) entirely missing
-> — broken — or (b) lacks a textual label"); speculative
-> finding not anchored to an evidentiary capture. Verified
-> manually: the input renders with a real `<label>` and an
-> `aria-label` is present; the reader's text-capture path
-> stripped the label literal. Dropped as a non-finding. (e)
-> [authed] HvV comment-input ⏎ glyph misleading on the closed
-> stub — marginal nit; pass-17 #220 closure made the closed
-> stub a `<button>` deliberately so screen-reader users get a
-> single labeled affordance, and ⏎ as a soft "press enter to
-> begin" signifier was the editorial call. A swap to `+` or
-> `›` would re-litigate that closed decision for a sub-LOW
-> readability gain. Dropped to keep cap honest. Six filings
-> this round: one HIGH on the home/show "Canon revised" date
-> drift (home stamps `June 2026` while `/shows/survivor`
-> stamps `May 2026` for the same canonical fact in the same
-> minute — undermines the editorial trust the canon is built
-> on); three MED — `/sign-in` meta description truncated to
-> `tiered.` dropping the `.tv` suffix (CLAUDE.md hard rule 6
-> brand-name spelling), `/shows/survivor` "What changed this
-> week" panel sits above the canon/community tab pair and never
-> labels which ranking is shifting (so the canon-eyebrow-then-
-> weekly-shifts juxtaposition reads as if the editorial canon
-> moved 36 spots in a week, contradicting the "revised
-> quarterly" promise directly below), and authed `Save list`
-> on `/themes/[theme]` flips state to `Saved` without any
-> return-path surface on the profile or chrome (member-record
-> affordance promised, member-record delivery absent); two
-> LOW — `/themes` subhead `ORGANIZED BY WHAT THEY'RE ADMIRING`
-> uses a curly U+2019 single-quote while every other apostrophe
-> on the page is straight ASCII (also a second instance on
-> `/themes/best-finales`'s `RANKED · EDITOR'S PICK`), and authed
-> `Suggest an entry` mailto on `/themes/[theme]` targets
-> `editors@tiered.app` (the internal auth-tenant namespace) but
-> the brand is `tiered.tv` — a customer-facing mailto reaching
-> an off-brand domain reads like a typo of the brand.
-> Gated: NO — shipping-mode gate lifted 2026-05-17 via oversight
-> (Phase 36 shipped). `/march` Step 2's normal rate-limited
-> cadence is active. Pass 23 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (6 URLs:
-> `/`, `/shows`, `/shows/survivor`,
-> `/shows/survivor/season/heroes-vs-villains`, `/themes`,
-> `/sign-in`) and authed (4 URLs: `/`, `/u/e2e`,
-> `/shows/survivor/season/heroes-vs-villains`, `/shows/survivor`)
-> walks ran end-to-end across desktop + mobile viewports — 20
-> captures total. Mechanical health bar remained clean (zero
-> console errors, zero failed first-party requests, all 200s,
-> all H1s present, all `scrollWidth === innerWidth` at 375px).
-> Six findings filed (1 HIGH, 3 MED, 2 LOW) after dropping eight
-> on self-assessment: (a) [anon] /themes section labels with
-> inline counts ("BY TONE · 6" etc.) reading as confusing tab
-> labels — the counts are honest and consistent with both the
-> stats and the visible grid; tab-label confusion was the user's
-> read of his own dump, not the rendered surface. (b) [anon]
-> /shows hero `298 SEASONS RANKED` — internal math checks out
-> (the sum of the 13 show counts), no finding. (c) [anon] home 4
-> list cards "selection rubric is invisible" — the section
-> header reads "Themed lists, cross-canon" and the four cards
-> link to /themes; "ALL LISTS →" is the rubric the surface
-> needs, and the cards themselves are an editorial sampling
-> (same shape as featured rails on /themes). Lower-grade tab
-> framing finding; dropped to keep cap honest. (d) [anon] home
-> "CURRENTLY FEATURED" lacking cadence — the eyebrow names the
-> slot; the cadence belongs in /about or in a small caption,
-> not in the eyebrow itself; the cadence-less eyebrow is
-> intentional (Survivor is the anchor; "currently" reads as
-> editorial deference). Dropped. (e) [anon] /sign-in too sparse
-> — minimalism is intentional (the page is a transactional
-> auth boundary, not a marketing surface); the surrounding
-> chrome carries the brand context. Dropped. (f) [authed]
-> /u/e2e meta description "A reader on tiered.tv..." third-
-> person on a self-page — page-level meta cannot vary by viewer
-> (the OG card a stranger sees vs the owner sees is the same
-> render); the third-person is the safer default for the
-> external surface. Dropped. (g) [authed] /u/e2e "will land
-> here" future-tense — voice nit; the recent #262 fix already
-> chose "will land here" deliberately as the self-view present-
-> looking framing; revisiting it would re-litigate that
-> editorial decision. Dropped. (h) [authed] /shows/survivor
-> "What changed this week" leans negative — the data is what
-> it is; framing the panel as "Biggest movers" would lie about
-> what it actually shows (it's a sorted shift list, not a
-> curated movers list). Dropped as a non-finding. Six filings
-> this round: one HIGH on /themes lede prose drift ("12 lists"
-> while the just-shipped hero stat fix split into "3 FEATURED ·
-> 9 IN THE INDEX"); three MED — the HvV community-vote `1`
-> ambiguity (caught in both anon and authed passes, filed once),
-> the /shows/survivor "SENTIMENT-TAGGED" eyebrow that the design
-> doesn't deliver on, and the /shows/survivor 01/02 numbering
-> collision between the canon/community tab pair and the
-> immediately-following methodology block; one MED on mobile
-> chrome exposing one-tap "Sign out" with no confirmation; one
-> LOW on the HvV thread empty-state "Weigh in on the season
-> itself" awkward qualifier. All prior critique pass fixes
-> (3d3818b /u/[handle] self-view, bf069c7 stranger eyebrow,
-> 973989e themes hero split, f739f96 watch-order, 5c07076
-> single-binary blurb, c4f0e6c tagline cleanups) verified live
-> and not re-filed.
->
-> Pass 22 — Three findings filed (0 HIGH, 1 MED, 2 LOW) after
-> dropping three on self-assessment: (a) [anon] /themes/best-premieres entry #02
-> body "Eleven teams, a route marker, and a host nobody had
-> heard of yet" — pass-19 #243's fix message (ac493eb) explicitly
-> carved this out: "Long-form prose references to 'Eleven teams'
-> inside season bodies, canon rationales, and themed-list
-> entries stay untouched (editorially natural English in
-> paragraph context)." The themed-list entry body IS paragraph
-> context; only the home grid tile's single-line punchy frame
-> was normalized to numerals. Re-filing would re-litigate a
-> settled editorial split. (b) [anon] /themes Featured rail CTA
-> inconsistency ("read the list →" on card 1, "read →" on cards
-> 2 and 3) — `FeaturedCard.tsx:25` derives the CTA from
-> `big ? 'read the list →' : 'read →'`, intentional hierarchy
-> where the spotlight (big) card gets the longer CTA. Re-filing
-> would contradict the component contract. (c) [anon]
-> /themes/best-premieres "RANKED · EDITOR'S PICK" singular vs
-> 7-item list — `ListEntryStack.tsx:32` ships `Ranked · Editor's
-> pick` and the colocated test (pass-18 #236 fix, 5df0a36)
-> explicitly scopes the phrase as a singular collective noun
-> ("Editor's pick" reserved for themed-list ranking, "Editor's
-> Canon" for per-show canon). Re-filing would contradict that
-> scoping decision. One MED filing this round (anon density
-> mismatch on /shows A-tier: Top Chef tile body runs one short
-> sentence while every A-tier neighbor runs 2–3 sentences with
-> a year/location/format-claim beat — same density-mismatch
-> class as the S-tier fix a2f3571 shipped in pass-18, now
-> migrated to A-tier). Two LOW filings: /themes "REFRESHED EVERY
-> 1ST" awkward fragment (the `ListsFeaturedRow.tsx:25` literal
-> "refreshed every 1st" lacks the noun the phrase wants), and
-> /themes filter-mode text "VIEW · ALL 12 LISTS" reading as a
-> verb-led CTA when the page is already showing all 12 (the
-> `filterModeText()` helper at `themes-format.ts:88` returns a
-> mode-status string that opens with "view ·" — leading with a
-> verb on a passive status reads as a dead control). Pass-5..20
-> filters all continue to hold; mode determinism intact in
-> Path A2's fresh isolated context.
-
-> Pass 20 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (6 URLs)
-> and authed (4 URLs) walks ran end-to-end across desktop +
-> mobile viewports — 20 captures total. Mechanical health bar
-> remained clean (zero console errors, zero failed first-party
-> requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Six findings filed (0 HIGH, 3 MED, 3
-> LOW) after dropping four on self-assessment: (a) [authed]
-> the desktop CanonTabSwitch visible run-together text
-> ("Editor's CanonCURATED") — pass-18 + pass-19 drop-list
-> retired this as a styled-lockup design choice (pass-16 #158
-> + #215 land the a11y name on `aria-label`; the visual is
-> intentional). Re-filing would contradict the resolution.
-> (b) [authed] the /u/e2e `<meta description>` reading "A
-> reader on tiered.tv. Nothing on the public record yet." vs
-> the page body "Your record" — subjective stranger-vs-owner
-> framing call; the third-person meta is the safer default
-> because page-level metadata cannot vary by viewer (a stranger
-> sharing the link gets the same string a member does), and
-> "Your record" is owner-only chrome inside the page. Not a
-> drift, an intentional split. (c) [authed] the vote block on
-> /shows/<show>/season/<slug> not echoing the member's per-
-> season vote state (no "you voted YES", no "not yet voted")
-> — this is a feature-gap (would require new VotePair state
-> plumbing to read the viewer's own historic vote and reflect
-> it in the eyebrow), not a critique-fix; if real it belongs
-> in PHASE_CANDIDATES, not CRITIQUE.md. Pass-19's drop on the
-> same surface ("YOUR VOTE / CAST YOURS eyebrow-as-imperative")
-> also applies — the rest of the pair already reads cleanly.
-> (d) [anon] the /shows/survivor mover strip "What changed
-> this week" not labelling which canon is moving — "weekly"
-> already disambiguates (Editor's Canon is "Revised quarterly",
-> Community Rank is "updates weekly"), the show-page body
-> contrasts the two cadences explicitly, and the word "weekly"
-> in the strip header carries that signal. Softest of the four
-> LOW candidates; dropped to keep the cap honest. All five
-> prior-pass already-shipped findings (pass-19 #240-#245) plus
-> pass-18 #235-#239 verified intact on this walk — home blurb
-> single-binary, season-page watch-order returnee branch,
-> mover-strip "update" word, Amazing Race numeric tile,
-> authed-zero-comments empty-state line, /themes "May 2026"
-> stamp. Three MED filings this round: two anon spoiler-class
-> (P0-adjacent) — RPDR S6 entry on /themes/best-finales names
-> "two fully-formed queens" reaching the lip-sync stretch (the
-> only entry on that list that narrows the finalist count),
-> and HvV's WHAT TO WATCH FOR · LATE card still says "the
-> cold-open of the final eight" (same vector the episode-
-> numbers fix at 08c121d closed under a different name) — and
-> one authed mechanic-drift (the ProfileEmpty copy still
-> instructs "Vote on a season pair" while the live mechanic is
-> single-binary; this is the surface that explicitly tells a
-> member how to populate their profile, and the pass-19 #240
-> pairwise scrub missed it). Three LOW filings: HvV "neighbors
-> below frame what we ranked above and below" overloaded
-> "below"; /themes featured-rail duplicating three list tiles
-> already shown in the all-lists grid; /themes hero "some live
-> inside one show" while the single-show section carries
-> exactly one list. Pass-5..19 filters all continue to hold;
-> mode determinism intact in Path A2's fresh isolated context.
-
-> Pass 19 ran in the cloud loop via Path A2
-> (`scripts/critique-walk.mjs` — headless chromium, fresh
-> isolated context, no Chrome MCP needed). Both anon (6 URLs)
-> and authed (4 URLs) walks ran end-to-end across desktop +
-> mobile viewports — 20 captures total. Mechanical health bar
-> remained clean (zero console errors, zero failed first-party
-> requests, all 200s, all H1s present, all `scrollWidth ===
-> innerWidth` at 375px). Six findings filed (2 HIGH, 3 MED, 1
-> LOW) after dropping three on self-assessment: (a) [anon]
-> the desktop CanonTabSwitch visible run-together text
-> ("Editor's CanonCURATED") — pass-18's drop-list explicitly
-> retired this as a styled-lockup design choice (pass-16 #158
-> + #215 land the a11y name on `aria-label`; the visual is
-> intentional). Re-filing it would contradict the resolution.
-> (b) [authed] absence of any owner-management surface on
-> `/u/e2e` (no settings link, handle round-trips to itself) —
-> this is a feature gap (would require a new `/settings`
-> family or `/u/[handle]/edit` route), not a critique fix; if
-> it's a real gap, it belongs in PHASE_CANDIDATES, not
-> CRITIQUE.md. (c) [authed] the un-acted `YOUR VOTE / CAST
-> YOURS` eyebrow-as-imperative grammar on the season-page
-> vote pair — subjective polish, the rest of the pair already
-> reads cleanly to the eye and the imperative reading is also
-> a valid CTA register. All four prior-pass already-shipped
-> findings verified intact on this walk (pass 18 #235 Drag
-> Race `card_tagline` parity, #236 themed-list `Editor's
-> pick` scoping, #237 mobile brand-H1-leads ordering, #239
-> `as @e2e` comment-input identity caption, #238 narrowed
-> ProfileEmpty prose). Pass 17 #225/#226 (Survivor tagline
-> noun, canon trend-marker gloss) also still hold. Two HIGH
-> filings this round both concern central product claims:
-> the home explainer promises pairwise voting while the
-> season-page widget delivers a single-binary "does this
-> belong" tap (real promise/delivery gap), and the season
-> hero's `Watch order — start here, no prerequisites` chip
-> on Heroes vs. Villains contradicts the same page's body
-> argument that recognition does half the work (real
-> editorial contradiction on a returnees season). Pass-5..18
-> filters all continue to hold; mode determinism intact in
-> Path A2's fresh isolated context.
-
-> Pass 18 (2026-05-30, commit 16ea88f) ran in the cloud loop via
-> Path A2 — `scripts/critique-walk.mjs` drove headless chromium
-> across both passes at desktop + mobile (20 captures). Mechanical
-> health bar clean. Six findings filed (0 HIGH, 5 MED, 1
-> LOW) after dropping nine on self-assessment — most notably a
-> recurring class: a reader MED on both passes claiming a cadence
-> contradiction between the home page's "Editor's Canon · Revised
-> quarterly" (`HomeDualCallout.tsx:9`) and the show-page "What
-> changed this week" mover-strip (`ShiftsRow` rendered on
-> `/shows/[show]`). FALSE POSITIVE: `src/app/shows/[show]/page.tsx:149`
-> sources `shiftMovers` from `pickMovers(community.entries)` — the
-> strip tracks **community** rank movement (which IS weekly
-> recomputed by phase 35's `compute_weighted_rank`), not Editor's
-> Canon movement. The reader saw "Heroes vs. Villains was #07 now
-> #02" in the strip and "#02" in the canon table below and
-> conflated the two ranking surfaces (the canon happens to also
-> rank Heroes vs. Villains at #02 — coincidence, not the same
-> data). New filter class: the **two-rankings conflation** —
-> static text walks see two #N references on the same page and
-> infer one ranking. Also dropped on self-assessment: (a) [anon]
-> the `/themes/best-finales` Heroes vs. Villains entry blurb's
-> "the final tribal lands like a summary statement" — borderline,
-> "final tribal" is a format universal not an outcome leak, and
-> "returnee era" is context not placement; (b) [anon] the
-> `/shows` H1 mobile orphan "All shows. / Tiered." — intentional
-> brand voice (the period-as-statement aesthetic shipped
-> deliberately); (c) [authed] the canon/community tab labels
-> rendering run-together visible text on desktop ("Editor's
-> CanonCURATED") — pass-16 #158 accepted the styled lockup as a
-> visual design choice and pinned the a11y name only; re-opening
-> the visual layout contradicts the resolution; (d) [authed]
-> `/u/e2e` self-view eyebrow `Your record` followed by `@e2e` H1
-> "voice mix" — subjective polish, no objective break; (e)
-> [authed] home authed chrome having no continuity hook ("recent
-> for you" rail) — out-of-scope product addition, not iterate
-> work; (f) [anon+authed] the `1 NET VOTE` un-acted state semantic
-> opacity — the adjacent clarifier "one vote per reader" already
-> addresses cadence + meaning sufficiently. Pass-5..17 filters
-> (#125 settleForHydration, #139 root-prefetch abort,
-> shared-profile, /sign-in URL-labeling, SeasonHero icon-only
-> buttons, vs-slug walker rows, anniversary-anchored tenure
-> token) all continue to hold. Authed chrome captured
-> post-hydration as `@e2e / Sign out` across all four URLs —
-> Path A2's mode determinism intact.
+> teardown). Self-assessment dropped three reader candidates on
+> the authed pass that did not survive verification: (a) [LOW]
+> footer `ranked lists that ruin the show` polarity-clash with
+> brand promise `the seasons, ranked. no spoilers.` — editorial
+> taste rather than a fresh defect class; the semantic
+> disambiguation (`ruin` vs `no spoilers`) does the polarity
+> work for most readers; close cousin to the pass-31 / pass-33
+> brand-promise drift closures, not a new shape; (b) [LOW]
+> /themes/best-finales `MORE LISTS IN THIS VEIN` surfaces only
+> 2 adjacent lists (cross-canon LEFT + single-show RIGHT) vs
+> the 6 cross-refs the HvV season page surfaces under
+> `Also appears in` — the 2-pair framing is likely intentional
+> symmetry across list-detail surfaces (one-per-format) rather
+> than under-delivery; the comparison to the season-page model
+> conflates two different navigation contracts; (c) [LOW]
+> /shows/survivor `What changed this week` ShiftsRow shows
+> 3-down/1-up direction asymmetry on n=1-2 vote samples —
+> mechanical artifact of `pickMovers`' abs-sort-and-slice; same
+> family as pass-33 #316 (RESOLVED b2a7d00) which deliberately
+> chose `voteCount > 0` floor (one ballot still qualifies) over
+> a volume floor; not a fresh class. Also dropped from the
+> reader's broader observation set: `@e2e` H1 = chrome handle
+> on /u/e2e (settled at pass-22 #262), empty thread composer +
+> `Be the first to weigh in` redundancy (pass-27 borderline
+> taste-call drop), `SAVE LIST / SHARE / SUGGEST AN ENTRY`
+> action-row without affordance glyphs (pass-27 taste-call
+> drop), home brand-block CTAs missing `→` (intentional —
+> `btn-primary` + `btn-ghost` are full buttons), profile
+> `Member since May 2026` (correct — test account predates the
+> cookie mint), canon-ladder `↑ 1 / #02` vs ShiftsRow `+5
+> spots / now #02` (different time windows: 7d trend vs weekly
+> delta), HvV mobile collapsed `<details>` TOC showing
+> `6 SECTIONS` not the list (pass-7 intentional design). Six
+> findings filed (0 HIGH, 3 MED, 3 LOW):
+> (i) [MED] [anon] /about lede `Signed-in members carry the
+> most weight` contradicts the weighting ladder three
+> paragraphs below on the same page — the ladder reads
+> `Accounts under 7 days old count at 0.25×. Accounts 7+ days
+> old count at 1.0×`, so a brand-new signed-in member at 0.25×
+> does NOT carry the most weight; only 7+ day accounts do.
+> Recurring drift class (pass-26 #282 / pass-27 #287 /
+> pass-32 #311 / pass-33 #318) now scoped INSIDE /about
+> between its own lede and its own policy block.
+> (ii) [MED] [anon] /themes/best-finales #01 entry (Amazing
+> Race S07) blurb closes on franchise-trajectory prose
+> (`turns a cult favorite into a network anchor`) instead of
+> answering the list's titular promise (`Finales that stuck
+> the landing`). Every other entry (#02–#07) does answer it
+> with closing-beat texture; the top slot — the editorial
+> anchor a first-time reader meets — is the weakest.
+> (iii) [MED] [authed] /shows/survivor + season page disagree
+> on HvV community-vote state across three surfaces. ShiftCard
+> says `1 vote · Climbed 5 spots · now #02`; canon-ladder
+> COMMUNITY column says `↑ 1 / #02`; season-page vote-pair
+> says `0 community · net votes`. The three surfaces describe
+> different mechanics (vote count, weekly rank delta, signed
+> sum) but the reader doesn't carry that vocabulary across the
+> click — three different numeric framings of the same
+> canonical fact in under two scrolls.
+> (iv) [LOW] [anon] /about `How voting works` paragraph
+> restates the weighting ladder twice in adjacent sentences —
+> the qualitative bridge `Accounts a week old or older count
+> at full weight; younger accounts and guests count less.` is
+> immediately followed by the three numeric sentences that say
+> the same thing with the multipliers. Residual same-pattern
+> redundancy that pass-33 #318 (which closed the
+> intra-/about template echo + `long-standing` overpromise)
+> did not catch at the qualitative-vs-numeric layer.
+> (v) [LOW] [anon] /themes hero lede phrase `Some span the
+> catalog, one lives inside one show.` — doubled bare `one`
+> tokens with two distinct referents (one LIST lives inside
+> one SHOW) trips first-read parse on the page's load-bearing
+> summary sentence two lines under the H1.
+> (vi) [LOW] [authed] /themes/best-finales leans on `final X`
+> as the structural noun across 7/7 entries — title nouns and
+> body openers reach for `final leg / tribal / service /
+> banishment / lip-sync / stretch` as the universal frame for
+> naming the closing beat. Seven editorial gestures read as
+> one template repeated seven ways with a noun-substitution
+> rather than a peer naming each show's finale through its
+> own angle.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -1738,6 +820,13 @@
 > just-voted), one navigation-honesty row (/themes "By era"
 > filter chip exposes a category with zero lists), and one
 > voice row (/u/<handle> empty state reads as CMS scaffolding).
+
+- [ ] [MED] [anon] /about lede sentence `Signed-in members carry the most weight.` contradicts the weighting ladder three paragraphs below in the same `How voting works` section. The ladder (`content/legal/about.md:38-40` post-#318) reads `Anonymous-guest votes count at 0.1×. Accounts under 7 days old count at 0.25×. Accounts 7+ days old count at 1.0×.` — so a brand-new signed-in member at 0.25× does NOT carry the most weight; only 7+ day accounts do. The lede's flat `Signed-in members carry the most weight` reads as the simple promise (sign in → max weight), but the page's own formal policy disowns that promise three paragraphs later: only signed-in members WITH at least 7 days of tenure carry the most weight. A first-time reader who signs up today to vote and scrolls to verify the lede's promise finds the ladder partly disowning it. Same defect class as the resolved pass-26 #282 / pass-27 #287 / pass-32 #311 / pass-33 #318 chain (cross-surface or intra-/about vote-mechanic drift), now sliding to the *intra-/about* boundary between the lede's marketing-sentence summary and the formal policy ladder. The pass-33 #318 close drained the within-paragraph echo (`Long-standing accounts carry the most weight.` → `Accounts a week old or older count at full weight; younger accounts and guests count less.`) at the policy-paragraph layer, but left the upstream lede `Signed-in members carry the most weight.` unmodified — the same overpromise pattern persists at the higher-traffic lede layer. Source: `content/legal/about.md:18-19` (lede: `Each season asks one question — does it belong in the community top 10? — and your upvote or downvote answers it. Signed-in members carry the most weight.`) + `content/legal/about.md:38-40` (the now-honest `How voting works` policy paragraph that names the 7-day cliff). Bearings voice cue is `knowledgeable peer — confident, warm, plain-spoken, never pretentious. Plain sentences over clever ones.` (`plan/bearings.md:370`); a peer wouldn't promise full-weight to every signed-in member in the lede when the formal policy two scroll-units below names a one-week tenure cliff. Fix options: (a) **primary path** — tighten the lede to name the same mechanic the policy ladder names. Candidate rotation: `Each season asks one question — does it belong in the community top 10? — and your upvote or downvote answers it. Signed-in members carry more weight than guests; long-tenured accounts carry the most.` (single-sentence rewrite, ~120 chars; names the two-cliff structure — guest-vs-signed-in + new-vs-long-tenured — without promising signed-in alone is enough). The lede now previews the ladder honestly; the policy paragraph reads as the detail expansion of a true summary. (b) **alternative — drop the third sentence entirely** so the lede ends on the upvote/downvote question and the weighting ladder reads as the first place the page discusses weight: `Each season asks one question — does it belong in the community top 10? — and your upvote or downvote answers it.` Reads cleanly but loses the lede's framing role (the lede currently sets the reader's expectation that weight is the next topic; dropping it surprises the reader with the ladder). (c) **alternative — preserve the lede, drop the ladder's specificity**: change the policy paragraph to a qualitative summary that matches the lede's marketing tone (`Signed-in accounts carry full weight after a short tenure window; guests count partial weight.`). Reads consistently but drops the data the reader needs to evaluate the system; rejected — the ladder's specificity is the editorial commitment, not the noise. Recommended (a) — single-sentence edit, preserves the lede's framing role, brings the lede into agreement with the formal policy, mirrors the #311 + #318 closure pattern (name the same mechanic on every surface that names weight). Pin: extend `src/app/(default)/about/__tests__/page.test.tsx` with a cross-paragraph parity case — whenever the rendered `/about` body contains the weighting ladder (matches `/0\.25×|0\.1×|1\.0×/`), the lede portion (first ~400 chars of body_md) must NOT contain a flat-promise sentence matching `/\bsigned-in[^.]*\bcarry the most weight\b/i` (bidirectional drift guard against a future authoring pass re-introducing the overpromise). Sibling positive: assert the lede contains a tenure-qualifier match (`/\b(long-tenured|long-standing|tenured|a week old|7\+? days?)\b/i`) so the rewrite doesn't drift back to the bare marketing form. Both pins live in the existing about-page colocation; no e2e fixture row owed. Spoiler discipline P0 intact (legal-doc prose edit only; no per-season verdict change, no canon position change). (URL: /about, source: critique-pass-34) — b52ebba
+- [ ] [MED] [anon] /themes/best-finales entry #01 (Amazing Race S07) blurb closes on franchise-trajectory prose (`turns a cult favorite into a network anchor`) instead of answering the list's titular promise. The list is titled `Finales that stuck the landing`; every other entry (#02–#07) answers it with closing-beat texture about what made the FINALE land — #02 (HvV) `final tribal that reads like a verdict`, #03 (Top Chef Vegas) `final service plays like a high-end tasting menu`, #04 (Survivor S40) `final tribal carries the weight of a roster that has played this game before`, #05 (Traitors S02) `last seat is where the US adaptation proves it can hold the tension all the way down`, #06 (Drag Race S06) `lip-sync stretch with genuine stakes. The crown coronation lands`, #07 (Bake Off Series 8) `final stretch rewards the alliance play the summer spent building`. The top slot — the editorial anchor a first-time reader meets on the most-read themed list — is the editorial weakest, and it makes the list look like it's promising one thing (finales that landed) and grading on another (the season's franchise impact). Source: `content/themes/best-finales.md:14` entry rank 1 blurb (Amazing Race Season 7): `A final leg that proves the format's live sprint is built right. The Race always ends on a foot race to the mat, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. That final leg is where this season turns a cult favorite into a network anchor.` The first two sentences DO answer the title (finale-craft texture: live sprint, foot race to the mat, deep recognizable cast); the third sentence pivots away to franchise-trajectory (`turns a cult favorite into a network anchor`), which is a historical-impact claim, not a finale-craft claim. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); a peer answers the question they wrote at the top of the list, especially in the top slot that anchors the editorial framing. Same within-list framing-drift class as the pass-33 #319 (best-finales #03 Top Chef body opener restating the deck headline) which extended `collectThemeDeckBodyOpenerDivergenceIssues` to catch deck-vs-body opener restatement; this finding sits at the *blurb-closer-vs-list-title-promise* layer rather than the deck-vs-body-opener layer — the closer is the third sentence (not the first), and the comparison is to the LIST TITLE (not the entry title). Fix options: (a) **primary path** — curator-only rewrite of the third sentence to keep the closing payoff on finale-craft. Candidate rotation: `The Roadblock-to-Pit-Stop sequence in the final leg lands every beat the season had been promising — the navigation calls, the cab-driver desperation, the foot-race photo finish.` (drops the franchise-trajectory framing entirely, keeps the closing payoff on the finale's specific craft — navigation calls, cab-driver desperation, foot-race photo finish — which matches the substance of #02-#07). Alternative candidate: `That final leg pays back everything the season set up — every Roadblock, every Detour, every navigation call — in the closing thirty minutes.` (more abstract but still finale-craft, drops the historical-impact framing). (b) **alternative — keep the franchise-trajectory framing but explicit it as the second clause** so the closer still answers the title: `That final leg is where the season's case for itself lands — and turns a cult favorite into a network anchor.` Reads as both finale-craft (`the season's case for itself lands`) and franchise-trajectory (`network anchor`); preserves both editorial points. (c) **alternative — leave as-is** — accept that the top slot reads as historical-impact rather than finale-craft; the entry's first two sentences still carry the finale-craft work. Recommended (a) — single-sentence edit, drops the discordant closer entirely, brings #01 into editorial parity with #02–#07, matches the #319 closure pattern (rewrite the offending sentence to advance to the surface-native frame the rest of the list uses). Word count after rotation: blurb ~50 words (in-band for the 50–80 cap on themed-list blurbs per `themeEntryBody` in `src/content/schemas.ts:218-220`). Pin: this is the cross-list-titular-promise vs entry-closer-promise relational layer; the existing `collectThemeDeckBodyOpenerDivergenceIssues` extended in #319 sits at the deck-vs-body layer, not this layer. A new pin extension proposal — `collectThemeEntryCloserAnswersTitleIssues` — would walk every themed-list entry and assert the final sentence of the blurb contains at least one content-token from the list's title (e.g. `finale`, `landed`, `landing`, `stuck`, `close`, `closing`, `last`, `final`) — bidirectional drift guard catching entries that close on a non-titular framing. This pin is deferred per the row's prescription (the #319 pin was deck-vs-body opener; this would be a separate invariant at the closer-vs-title layer; not all themed-list categories carry a verb-anchored title where the heuristic applies cleanly). Defer the invariant; this row resolves at the per-entry curator level. Spoiler discipline P0 intact (themed-list blurb edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on either surface — the rotation preserves the entry's editorial framing without naming the Race S07 final-leg winner). (URL: /themes/best-finales, source: critique-pass-34) — b52ebba
+- [ ] [MED] [authed] /shows/survivor + /shows/survivor/season/heroes-vs-villains disagree on the HvV community-vote state across three surfaces on adjacent hops. The show page's `What changed this week` ShiftCard renders `↑5 this week / Heroes vs. Villains / Climbed 5 spots since the last weekly update · 1 vote / was #07 / now #02` (post-#316 — the floor is `voteCount > 0`, so single-ballot movers admit). The same show page's canon-ladder COMMUNITY column for HvV renders `↑ 1 / #02`. The season page's `YOUR VOTE / CAST VOTE` block renders the vote-pair with the literal text `0 community · net votes` (SSR HTML: `data-testid="vote-pair" data-vote-value="0" data-voted="none"` with `<span class="vote-num">0</span><span class="vote-label">community · net votes</span>`). A first-time visitor who clicks from the show page into the season page sees `1 vote · climbed 5 to #02` on the parent hop, lands on the season page, and the vote-pair tells them the community position is unmoved (net 0). The three surfaces are technically describing three different mechanics — ShiftCard names the **vote count** (`1 vote`); canon-ladder COMMUNITY column names the **weekly rank delta** (`↑ 1`, which is a 7-day trend pill); season-page vote-pair names the **signed sum** (`0 community · net votes`, the net of upvotes minus downvotes) — but a reader doesn't carry that vocabulary across the click. The walk produces three different numeric framings of the same canonical fact (HvV's community state) in under two scrolls. Source: ShiftCard at `src/components/composition/ShiftCard.tsx:29` rendering `moverNote` from `src/lib/community/live.ts:74-87` (post-#316 includes `· N votes` suffix for `voteCount > 0`); canon-ladder COMMUNITY column at `src/components/canon/ShowRanking.tsx` rendering a 7d trend pill; vote-pair at `src/components/composition/VotePair.tsx:202-215` (the `you haven't voted yet` state-cap from pass-27 #284 hangs above this integer to reduce the framing ambiguity, but the bare `0 community · net votes` literal remains). Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); a peer doesn't publish three different numeric framings of the same fact across two adjacent surfaces and expect the reader to reconcile them. Same defect class as the resolved pass-32 #311 / pass-33 #318 cross-surface mechanic-drift chain, now at the **community-vote display** layer rather than the **vote-weighting policy** layer — and one tier deeper since the three surfaces describe genuinely-different mechanics (vote count, weekly rank delta, signed sum), not the same mechanic stated three ways. Fix options: (a) **primary path — align the three surfaces to cite the same canonical fact on every numeric framing**. The vote-pair's `community · net votes` is the most ambiguous label (a net-zero on one vote is a single split-the-difference signal, not the community-rank fact the reader expects); the cleanest alignment is to rename it to match the ShiftCard's framing — `1 community vote` (count of distinct voters, not the signed sum). The signed-sum is still useful internally but doesn't surface to the reader. The canon-ladder's `↑ 1 / #02` (weekly rank delta) reads cleanly already; it disambiguates by carrying the rank position the trend resolves to. (b) **alternative — keep the three mechanics distinct but add a one-line bridge near the season-page vote-pair** (e.g. `1 reader has voted on this season — net 0 says they're split on the top-10 question.`) so the reader can reconcile the numbers without leaving the page. Smaller blast radius (one prose line, no schema change) but doesn't address the cross-surface inconsistency itself. (c) **alternative — drop the vote-pair's numeric framing entirely** when `voteCount < some-threshold` so the season page reads `BE THE FIRST TO WEIGH IN` or `1 OTHER READER HAS VOTED` rather than `0 community · net votes`; loses the post-vote signal mechanism but resolves the cross-surface ambiguity at the lowest-signal end. Recommended (a) — single-label change on the vote-pair brings the three surfaces into agreement on what the number names (count of voters across all surfaces; the trend pill keeps its rank-delta framing since it disambiguates by carrying the rank). Pin: extend `src/components/composition/__tests__/VotePair.test.tsx` with a cross-surface parity case asserting the rendered label text matches `/community votes?$/` (NOT `/net votes?$/`) — bidirectional drift guard against a future refactor reverting to the signed-sum framing. Sibling pin: extend `src/lib/community/__tests__/live.test.ts` `moverNote` describe block with a positive case asserting the rendered note's vote count matches the same season's `voteCount` field surfaced to the vote-pair, so a regression where the two surfaces compute from different sources trips at unit time. Spoiler discipline P0 intact (UI-label edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface — the rotation preserves the count semantics without naming any vote's direction). (URL: /shows/survivor, /shows/survivor/season/heroes-vs-villains, source: critique-pass-34) — b52ebba
+- [ ] [LOW] [anon] /about `How voting works` paragraph restates the weighting ladder twice in adjacent sentences — once qualitatively, once numerically. The qualitative bridge sentence `Accounts a week old or older count at full weight; younger accounts and guests count less.` (`content/legal/about.md:38`, post-#318 closure) is immediately followed by three numeric sentences saying the same thing with the actual multipliers: `Anonymous-guest votes count at 0.1×. Accounts under 7 days old count at 0.25×. Accounts 7+ days old count at 1.0×.` (lines 39-40). Reading them in sequence, the qualitative line lands as a redundant English-language preview of the numeric table that follows — same fact, two registers, no new editorial work between them. Same within-paragraph repetition class as the pass-33 #318 closure (`Long-standing accounts carry the most weight.` → `Accounts a week old or older count at full weight; younger accounts and guests count less.`) which closed the intra-/about sentence-template echo + the `long-standing` overpromise; the new qualitative bridge is honest about the mechanic (no overpromise), but the residual issue is that it's still a *redundant* honest restatement of what the three numeric sentences say. The #318 close brought the qualitative bridge into agreement with the ladder, but didn't address whether the qualitative bridge needs to exist at all when the ladder is right below it. Source: `content/legal/about.md:38-40` — the qualitative bridge at line 38 + the three numeric sentences at lines 39-40. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); a peer doesn't preview the same fact in English right before stating it in numbers — they pick one register and trust the reader. Fix options: (a) **primary path — drop the qualitative bridge sentence entirely** and let the three numeric sentences carry the ladder. The paragraph would read `Signed-in voters self-attest they watched the season end to end before casting. Anonymous-guest votes count at 0.1×. Accounts under 7 days old count at 0.25×. Accounts 7+ days old count at 1.0×. Rate-limits run behind the scenes to catch coordinated voting campaigns, and should never bite a normal reader.` Reads as: attestation-sentence + three-cliff ladder + rate-limit note. No redundancy; the numeric lines do the actual policy work. (b) **alternative — replace the qualitative bridge with the REASON for the ladder** rather than a restatement of it. Candidate: `A vote's weight depends on how settled the account is.` (single sentence, names the WHY — settled-ness as the trust signal — without restating the WHAT the three numeric lines name). Reads as a brief frame for the ladder rather than a redundancy. (c) **alternative — keep both, accept the redundancy** — leaves the small voice tic. Recommended (a) — single-line removal, drops the redundancy entirely, lets the numeric ladder read as the policy. Or (b) if the curator wants to preserve the lead-in framing without redundancy — also single-sentence; up to author. Pin: extend the existing `cross-paragraph attestation parity vs home Community Rank (#311)` and `within-page sentence-template + tenure honesty (#318)` describe blocks in `src/app/(default)/about/__tests__/page.test.tsx` with a third case asserting the paragraph's content-bearing sentence count drops to ≤4 (attestation + 3 ladder + rate-limit minus the qualitative bridge) when the qualitative bridge is removed — bidirectional drift guard catching a regression that re-introduces the bridge. The existing #318 pin (1 max match for `\b(...)\bcarry the most weight\b`) stays unchanged. Spoiler discipline P0 intact (legal-doc prose edit only; no per-season verdict change, no canon position change). (URL: /about, source: critique-pass-34) — b52ebba
+- [ ] [LOW] [anon] /themes hero lede phrase `Some span the catalog, one lives inside one show.` trips a first-read parse — the doubled `one` tokens carry two distinct referents (one LIST lives inside one SHOW) but the sentence renders them as adjacent bare `one` tokens with no syntactic disambiguator. A reader has to back up and re-parse to recover the meaning (the first `one` refers to a list in the catalog, the second `one` refers to a show in the catalog; only context disambiguates). The lede sits two lines under the H1 (`Themed lists. / Cross-canon and single-show.`) and is the page's load-bearing summary sentence; a parse-stumble here taxes the most-read line on the most-trafficked themed-list catalog page. Source: `src/components/lists/ListsHero.tsx:26` derives the dynamic numeric counts (`9 in the index, 3 featured this month — 12 we'd defend in a group chat`) but the editorial lede text `Some span the catalog, one lives inside one show. None of them spoil what they rank.` is the static frame around them. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); the doubled bare `one` reads as clever-compression (using the same word to do two different jobs in the same clause) that costs comprehension on a load-bearing summary sentence. Same defect class as the pass-31 `lede shows the math inline when featured + index split` rotation (the count math was clarified by adding the prose split inline); this finding sits at the *referent-disambiguation* layer rather than the *math-transparency* layer — the counts read cleanly now; the trip is in the prose closer that names where the lists live. Fix options: (a) **primary path — disambiguate the referents with a syntactic marker on at least one of the bare `one` tokens**. Candidate rotation: `Some span the catalog, one stays inside a single show.` (swaps the second `one` clause for `one stays inside a single show` — drops the doubled `one`, replaces with `single show` which carries the same semantic but distinguishes lexically from the leading `one` subject). Alternative: `Most span the catalog; one is a single-show tier.` (compresses further, uses `single-show tier` to name the category — slightly more terminological but resolves the parse cleanly). Recommended: the first candidate — preserves the editorial cadence (`Some span ... , one stays ...`) while dropping the bare-`one` doubling. (b) **alternative — rephrase the whole sentence to lead with the category names** rather than the numeric `one`: `Most are cross-canon; one is a single-show tier.` Reads more declaratively; loses the gentler `Some / one` cadence the lede currently has. (c) **alternative — leave as-is** — accept that the parse-stumble is small enough that most readers will recover on the second pass; the sentence's editorial work is still legible. Recommended (a) — single-clause edit, preserves the existing cadence, drops the bare-`one` doubling. Pin: extend `src/components/lists/__tests__/ListsHero.test.tsx` with a regression case asserting the rendered hero lede text does NOT match `/\bone\b\s+lives\s+inside\s+\bone\b/i` — bidirectional drift guard against a future authoring pass re-introducing the doubled-`one` clause. Sibling positive: assert the lede contains a disambiguating phrase matching `/\bsingle[- ]show\b|\bone[- ]show\b|\binside\s+a\s+show\b/i` so the rewrite doesn't drift to a different ambiguous form. Both pins live in the existing colocation; no e2e fixture row owed. Spoiler discipline P0 intact (lede prose edit only; no per-season verdict change, no canon position change). (URL: /themes, source: critique-pass-34) — b52ebba
+- [ ] [LOW] [authed] /themes/best-finales leans on the `final X` syntactic frame across 7 of 7 entries — title nouns and body openers reach for `final leg / tribal / service / banishment / lip-sync / stretch` as the universal structural noun for naming each show's closing beat. Title-line `final X` instances: #01 `A final leg that proves the format's live sprint is built right.`; #02 `The first all-returnee season closing on a final tribal that reads like a verdict.`; #05 `The Traitors S02 tightening into the final banishment the format was built for.`; #06 `A final lip-sync that pays off a finale built on real artistry.` Body-line `final X` instances: #01 body `That final leg is where this season turns a cult favorite into a network anchor.`; #03 body `The final service plays like a high-end tasting menu`; #04 body `the final tribal carries the weight of a roster that has played this game before`; #07 body `The final stretch rewards the alliance play the summer spent building.` All seven entries carry `final X` framing at least once across title + body. The page is titled `Finales that stuck the landing` so `final` is on-topic and structurally honest — but turning it into the universal entry frame across 7 of 7 entries makes seven editorial gestures read as one template repeated seven times with a noun-substitution rather than seven angles into seven distinct shows' finales. Source: `content/themes/best-finales.md` — entries 1-7 title + blurb fields. Same within-list voice-template class as the pass-12 #187 `/shows` taglines (`Ranked without <verb> a single <noun>.` in 9 of 13 taglines, drained to 0-1) and pass-12 #191 `/themes` blurbs (`across <N> different franchises` / `<N> shows, <M> [thing-noun]` in 8 of 10 blurbs, drained to 0); the editorial-template-as-frame pattern keeps re-emerging at content-author time and gets drained via curator rotation. Bearings voice cue is `knowledgeable peer — confident, warm, plain-spoken, never pretentious. Plain sentences over clever ones.` (`plan/bearings.md:370`); a peer naming seven different shows' closing beats reaches for seven different angles, not the same `final X` template across all of them. Fix options: (a) **primary path — curator-only edit rotating 3-4 of the seven entries off the `final X` template** by naming the closing beat through a different syntactic frame. Candidate rotations: #01 swap `A final leg that proves the format's live sprint is built right.` → `Season 7's last leg proves the format's live sprint is built right.` (drops `final`, replaces with `last`, swaps the deck shape to lead with the season number); #03 keep body's `The final service` since the body's first sentence post-#319 already opens with `Restaurant Wars takes the season into its endgame on a kitchen split, and the late-stage cooking never lets the level drop.` — the deck doesn't carry `final X` so the body can keep one occurrence (the body is the only `final X` in #03); #04 keep `final tribal` (the formal Tribal Council name — load-bearing show-vocabulary; the term IS the structural beat); #06 swap `A final lip-sync that pays off a finale built on real artistry.` → `The crown coronation pays off a finale built on craft.` (drops `final lip-sync`, swaps to the show's structural-beat name `crown coronation`; also drops `real` to honor the #304 in-card-repetition close); #07 swap `The final stretch rewards the alliance play the summer spent building.` → `Sue and Steph's closing run rewards the alliance play the summer spent building.` (drops `final stretch`, names the season's specific alliance — wait, naming the finalists is a spoiler; revise: `The closing run rewards the alliance play the summer spent building.` drops `final`, keeps the editorial point). After the rotation, the count drops from 7-of-7 to 3-of-7 carrying `final X` (#02 HvV `final tribal` retained as load-bearing returnee-final-tribal vocabulary; #03 Top Chef body `final service` retained as the show's structural-beat name; #04 Survivor S40 body `final tribal` retained as the formal Tribal Council name) — every retained instance is load-bearing show vocabulary, not template filler. (b) **alternative — extend the existing `collectThemeBodyPhraseRepetitionIssues` cliche-channel** in `scripts/content-check.ts` with a `final X` template pattern (similar to the existing `at full volume` and `freighted` patterns at #301 + #302) — would catch the cross-entry sweep at content-author time. Defer per the row's pin discussion below. (c) **alternative — leave as-is** — accept that `final X` is on-topic for a `Finales that stuck the landing` list. Recommended (a) — single-tick content edit, drops the 7-of-7 template to 3-of-7 load-bearing usage, matches the editorial pattern the #187 + #191 closures established. The curator-only rotation is the right scope; the cliche-channel pin is the wrong layer because `final` is sometimes load-bearing (formal Tribal Council, formal Restaurant Wars finale service) and sometimes template filler — a regex can't tell which is which. Pin: defer the invariant per the row's analysis above (load-bearing vs template-filler can't be regex-distinguished). The next critique pass re-verifies the absence per the precedent on sibling content edits (#187, #191, #246, #248, #260, #301, #302). Spoiler discipline P0 intact (themed-list blurb + title edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface — the rotation preserves each entry's editorial framing without naming the finalists, winners, or final-vote outcomes). (URL: /themes/best-finales, source: critique-pass-34) — b52ebba
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
