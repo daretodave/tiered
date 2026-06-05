@@ -34,7 +34,8 @@ top 10? — and your upvote or downvote answers it. One vote per
 reader per season. Change your mind within 72 hours; after that
 the vote locks. The community rank updates weekly.
 
-Long-standing accounts carry the most weight. Anonymous-guest
+Signed-in voters self-attest they watched the season end to end
+before casting. Long-standing accounts carry the most weight. Anonymous-guest
 votes count at 0.1×. Accounts under 7 days old count at 0.25×.
 Accounts 7+ days old count at 1.0×. Rate-limits run behind the
 scenes to catch coordinated voting campaigns, and should never

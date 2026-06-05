@@ -146,6 +146,37 @@ describe('cross-surface byline parity vs /about (critique pass-31, issue #306)',
   })
 })
 
+// Critique pass-32 MED (issue #311): cross-surface drift — the
+// home Community Rank card (`HomeDualCallout.tsx`) commits the
+// product to a self-attestation rule (`Signed-in voters self-
+// attest they watched the season end to end`) the formal /about
+// voting policy never substantiated. /about details the
+// 0.1× / 0.25× / 1.0× weighting ladder + the 72-hour window +
+// weekly recompute, but the attestation prerequisite was missing.
+// The fix lands the attestation sentence on /about as the lead
+// sentence of the trust-mechanic paragraph (substantiates the
+// home claim from the policy side). Bidirectional pin: whenever
+// /about names the weighting ladder, the page MUST also name the
+// self-attestation. A future authoring pass that drops one but
+// keeps the other trips at unit time. Closure pattern matches
+// pass-26 #282 + pass-27 #287 (name the mechanic on the page
+// that owes the truth).
+describe('cross-surface attestation parity vs home Community Rank (#311)', () => {
+  it('names the self-attestation prerequisite the home card promises', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    expect(doc?.body_md).toMatch(/self-attest|watched the season end/i)
+  })
+
+  it('parity guard: if the weighting ladder is named, the self-attestation must be too', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    if (/0\.1×|0\.25×|1\.0×/.test(body)) {
+      expect(body).toMatch(/self-attest|watched the season end/i)
+    }
+  })
+})
+
 // Critique pass-31 LOW (issue #310): the rate-limit trust line on
 // /about previously read `Brigade rate-limits run behind the
 // scenes…` — `Brigade` is verb-as-noun community-moderation
