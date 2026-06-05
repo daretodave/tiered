@@ -40,14 +40,21 @@ export function ListsHero({ stats }: ListsHeroProps) {
     // from the live count so the lede never claims "some" when there's
     // only one (closes the same plural-drift class as #133 / critique
     // pass-20: today's 11-cross / 1-single catalog reads "Some span the
-    // catalog, one lives inside one show.").
+    // catalog, one stays inside a single show."). Critique pass-34 #324
+    // rotated the singular-branch closer from `one lives inside one
+    // show` → `one stays inside a single show` to drop the doubled
+    // bare-`one` parse-stumble (the original clause carried two
+    // referents — one list + one show — through adjacent bare `one`
+    // tokens with no syntactic disambiguator). `single show` keeps the
+    // same semantic but distinguishes lexically from the leading `one`
+    // subject; plural branch unaffected (no doubled-bare-`one` there).
     const crossPart =
       stats.crossCanonCount === 1
         ? 'One spans the catalog'
         : 'Some span the catalog'
     const singlePart =
       stats.singleShowCount === 1
-        ? 'one lives inside one show'
+        ? 'one stays inside a single show'
         : 'some live inside one show'
     return `${crossPart}, ${singlePart}.`
   })()

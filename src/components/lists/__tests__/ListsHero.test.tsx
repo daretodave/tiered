@@ -259,11 +259,15 @@ describe('<ListsHero>', () => {
     expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
   })
 
-  it('singularizes "one lives inside one show" when singleShowCount is exactly 1', () => {
+  it('singularizes "one stays inside a single show" when singleShowCount is exactly 1', () => {
     // Pin the critique-pass-20 finding: the mixed-mode lede previously
     // hardcoded "some live inside one show" regardless of count. With
     // exactly one single-show list (today's 11/1 catalog), "some" reads
     // as ≥2 and contradicts the page's own SINGLE-SHOW · 1 header.
+    // Pass-34 #324 follow-up: the singular-branch closer rotated from
+    // `one lives inside one show` → `one stays inside a single show`
+    // to drop the doubled bare-`one` parse-stumble; this case now pins
+    // the new wording.
     render(
       <ListsHero
         stats={{
@@ -278,7 +282,7 @@ describe('<ListsHero>', () => {
       />,
     )
     expect(
-      screen.getByText(/one lives inside one show/i),
+      screen.getByText(/one stays inside a single show/i),
     ).toBeTruthy()
     expect(screen.queryByText(/some live inside one show/i)).toBeNull()
   })
@@ -286,7 +290,10 @@ describe('<ListsHero>', () => {
   it('keeps "some live inside one show" plural when singleShowCount > 1', () => {
     // Pin the plural-branch so a future catalog growth (2+ single-show
     // lists) keeps the same lede shape #133 / pass-20 fixed for the
-    // count=1 case.
+    // count=1 case. The plural branch carries `some` + `one show`
+    // (different lexical roots), so the pass-34 #324 doubled-bare-`one`
+    // parse-stumble does not apply here — this branch retains its
+    // existing wording.
     render(
       <ListsHero
         stats={{
@@ -301,7 +308,39 @@ describe('<ListsHero>', () => {
       />,
     )
     expect(screen.getByText(/some live inside one show/i)).toBeTruthy()
-    expect(screen.queryByText(/one lives inside one show/i)).toBeNull()
+    expect(screen.queryByText(/one stays inside a single show/i)).toBeNull()
+  })
+
+  it('singular-branch lede drops the doubled bare-"one" parse-stumble (critique-pass-34 #324)', () => {
+    // Bidirectional drift guard for the pass-34 #324 rotation. The
+    // prior wording `one lives inside one show` rendered two adjacent
+    // bare `one` tokens with no syntactic disambiguator between the
+    // two distinct referents (one LIST lives inside one SHOW), forcing
+    // a re-parse on the lede of the most-trafficked themed-list catalog
+    // page. Negative: the doubled bare-`one` clause must never re-emerge.
+    // Positive: the lede must carry a disambiguating phrase — the
+    // recommended rotation uses `single show`, and the regex also admits
+    // `one-show` / `inside a show` so a future curator pass can land on
+    // any of the disambiguated forms without tripping the pin.
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          featuredCount: 0,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const ledeText =
+      screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
+    expect(ledeText).not.toMatch(/\bone\b\s+lives\s+inside\s+\bone\b/i)
+    expect(ledeText).toMatch(
+      /\bsingle[- ]show\b|\bone[- ]show\b|\binside\s+a\s+show\b/i,
+    )
   })
 
   it('singularizes "One spans the catalog" when crossCanonCount is exactly 1 in mixed mode', () => {
