@@ -109,12 +109,12 @@ describe('<SeasonHero>', () => {
     render(
       <SeasonHero
         {...baseProps({
-          eyebrow: 'Aired spring 2010',
+          eyebrow: 'Aired winter–spring 2010',
           byline: <span data-testid="byline-inner">Canon entry by Editors</span>,
         })}
       />,
     )
-    expect(screen.getByTestId('season-eyebrow')).toHaveTextContent('Aired spring 2010')
+    expect(screen.getByTestId('season-eyebrow')).toHaveTextContent('Aired winter–spring 2010')
     expect(screen.getByTestId('hero-byline')).toBeInTheDocument()
     expect(screen.getByTestId('byline-inner')).toBeInTheDocument()
   })

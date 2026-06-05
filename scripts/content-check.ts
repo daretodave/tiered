@@ -1136,6 +1136,69 @@ export function collectBackHalfHyphenIssues(): Failure[] {
 const CANON_CLOSING_FORMULA_RE =
   /tiered\.tv's canon places it (?:[a-z-]+) because no other/i
 
+// Critique pass-33 MED (issue #317): a season's `eyebrow` that names
+// a single calendar-season label (spring/summer/fall/autumn/winter)
+// AND has a `premiere_date` set MUST have the date fall inside that
+// calendar season under the Northern Hemisphere meteorological
+// convention (spring=Mar–May, summer=Jun–Aug, fall=Sep–Nov,
+// winter=Dec–Feb). A span eyebrow like `winter–spring 2010` carries
+// two season labels so the check is a no-op (multi-label eyebrows
+// are presumed deliberate). Triggered by /shows/survivor/season/
+// heroes-vs-villains: the eyebrow read "Aired spring 2010" while the
+// PREMIERED meta cell named Feb 11, 2010 — winter, not spring. The
+// HvV literal is fixed in this commit (eyebrow → "Aired winter–
+// spring 2010 · Filmed in Samoa"); the invariant is the
+// corpus-wide floor that catches the class on every show.
+const SEASON_LABEL_RE = /\b(spring|summer|fall|autumn|winter)\b/gi
+
+function calendarSeasonForMonth(month: number): 'spring' | 'summer' | 'fall' | 'winter' {
+  if (month >= 3 && month <= 5) return 'spring'
+  if (month >= 6 && month <= 8) return 'summer'
+  if (month >= 9 && month <= 11) return 'fall'
+  return 'winter'
+}
+
+export function collectSeasonEyebrowCalendarIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      const eyebrow = season.eyebrow
+      const premiere = season.premiere_date
+      if (!eyebrow || !premiere) continue
+      const labels = [...eyebrow.matchAll(SEASON_LABEL_RE)].map((m) =>
+        m[1]!.toLowerCase(),
+      )
+      // Multi-label eyebrows (e.g., `winter–spring 2010`) opt out —
+      // the editor has already disclosed the span.
+      if (labels.length !== 1) continue
+      const label = labels[0] === 'autumn' ? 'fall' : labels[0]
+      const month = Number.parseInt(String(premiere).slice(5, 7), 10)
+      if (!Number.isFinite(month) || month < 1 || month > 12) continue
+      const calendar = calendarSeasonForMonth(month)
+      if (calendar === label) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      // Order the span calendar-forward: the earlier-in-the-year
+      // season comes first (winter–spring, spring–summer, etc.).
+      // For winter ↔ summer (180° off), there's no clean adjacent
+      // span — leave the span suggestion empty and lean on the
+      // calendar-fact alternative.
+      const order = ['winter', 'spring', 'summer', 'fall'] as const
+      const a = order.indexOf(calendar as typeof order[number])
+      const b = order.indexOf(label as typeof order[number])
+      const adjacent = a >= 0 && b >= 0 && Math.abs(a - b) === 1
+      const year = String(premiere).slice(0, 4)
+      const spanSuggestion = adjacent
+        ? `Rewrite the eyebrow as a span (e.g., "${order[Math.min(a, b)]}–${order[Math.max(a, b)]} ${year}") to disclose both halves of the run, or `
+        : 'Rewrite the eyebrow as a span across the run, or '
+      issues.push({
+        file: `${seasonFile} (eyebrow)`,
+        message: `season-eyebrow calendar drift — eyebrow names "${label}" but premiere_date ${premiere} falls in ${calendar} (Northern Hemisphere convention: spring=Mar–May, summer=Jun–Aug, fall=Sep–Nov, winter=Dec–Feb). ${spanSuggestion}restate the eyebrow with a calendar fact (e.g., "Aired Feb–May ${year}"). See plan/CRITIQUE.md pass-33 / issue #317.`,
+      })
+    }
+  }
+  return issues
+}
+
 export function collectCanonRationaleClosingFormulaIssues(): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -1409,6 +1472,27 @@ function main(): number {
     failures.push(...canonClosingFormulaIssues)
   } else {
     for (const issue of canonClosingFormulaIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-33 MED (issue #317): ships LAX during the corpus
+  // drain — the live catalog carries ~38 Feb-premiere "spring 20XX"
+  // and ~10 May/Aug-premiere "summer/fall" eyebrows that the
+  // invariant flags but do not warrant the per-tick scope of an
+  // /iterate fix. Subsequent /ship-content drain ticks rewrite each
+  // offender's eyebrow (span form like "winter–spring 2010" or
+  // calendar form like "Feb–May 2024"); the final drain tick flips
+  // SEASON_EYEBROW_CALENDAR_STRICT to true. One-line toggle
+  // mirroring CROSS_SHOW_STRICT and the other lax→strict invariants
+  // above. The HvV literal that triggered this finding is fixed in
+  // this commit.
+  const SEASON_EYEBROW_CALENDAR_STRICT = false
+  const seasonEyebrowCalendarIssues = collectSeasonEyebrowCalendarIssues()
+  if (SEASON_EYEBROW_CALENDAR_STRICT) {
+    failures.push(...seasonEyebrowCalendarIssues)
+  } else {
+    for (const issue of seasonEyebrowCalendarIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

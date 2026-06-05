@@ -15,6 +15,7 @@ import {
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
   collectFailures,
+  collectSeasonEyebrowCalendarIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeDescriptionCountTailIssues,
@@ -3345,5 +3346,134 @@ describe('content-check — canon-rationale closing-formula adjacency (critique 
   it('tolerates a show without a canon (no-op rather than crash)', () => {
     makeShow(tmp, 'alpha')
     expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+})
+
+// Critique pass-33 MED (issue #317): season `eyebrow` carrying a
+// single calendar-season label (spring/summer/fall/autumn/winter)
+// must agree with `premiere_date` under the Northern Hemisphere
+// meteorological convention. Span eyebrows opt out (multi-label
+// disclosure). The collector ships LAX during the corpus drain, so
+// it's exercised here as a pure helper (failures are inspected
+// directly; main() routes them to console.warn).
+describe('content-check — season-eyebrow calendar-season parity (critique pass-33, issue #317)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-eyebrow-cal-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeSeasonWithEyebrow(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    opts: { eyebrow: string; premiere_date?: string },
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const pd =
+      opts.premiere_date != null ? `\npremiere_date: ${opts.premiere_date}` : ''
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+number: ${n}
+title: ${slug}
+eyebrow: "${opts.eyebrow}"${pd}
+---
+
+${sixtyWords}
+`,
+    )
+  }
+
+  it('flags a single-label eyebrow whose premiere_date falls in a different calendar season', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired spring 2010 · Filmed in Samoa',
+      premiere_date: '2010-02-11',
+    })
+    const issues = collectSeasonEyebrowCalendarIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/seasons/01-one.md (eyebrow)',
+    )
+    expect(issues[0]!.message).toMatch(/season-eyebrow calendar drift/)
+    expect(issues[0]!.message).toMatch(/eyebrow names "spring"/)
+    expect(issues[0]!.message).toMatch(/falls in winter/)
+    expect(issues[0]!.message).toMatch(/issue #317/)
+  })
+
+  it('passes a single-label eyebrow whose premiere_date falls inside that season', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired spring 2010 · Filmed in Samoa',
+      premiere_date: '2010-04-01',
+    })
+    expect(collectSeasonEyebrowCalendarIssues()).toEqual([])
+  })
+
+  it('skips a span eyebrow (multi-label disclosure opts the season out)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired winter–spring 2010 · Filmed in Samoa',
+      premiere_date: '2010-02-11',
+    })
+    expect(collectSeasonEyebrowCalendarIssues()).toEqual([])
+  })
+
+  it('skips an eyebrow without any calendar-season label', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Filmed in Samoa · CBS Thursday 8/7c',
+      premiere_date: '2010-02-11',
+    })
+    expect(collectSeasonEyebrowCalendarIssues()).toEqual([])
+  })
+
+  it('skips a season without premiere_date (the invariant needs both halves)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired spring 2010 · Filmed in Samoa',
+    })
+    expect(collectSeasonEyebrowCalendarIssues()).toEqual([])
+  })
+
+  it('treats "autumn" as a synonym for "fall"', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired autumn 2010 · UK broadcast',
+      premiere_date: '2010-10-15',
+    })
+    expect(collectSeasonEyebrowCalendarIssues()).toEqual([])
+  })
+
+  it('flags a winter eyebrow whose premiere date sits in summer', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithEyebrow(tmp, 'alpha', 1, 'one', {
+      eyebrow: 'Aired winter 2010',
+      premiere_date: '2010-07-15',
+    })
+    const issues = collectSeasonEyebrowCalendarIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/eyebrow names "winter"/)
+    expect(issues[0]!.message).toMatch(/falls in summer/)
   })
 })
