@@ -30,7 +30,7 @@ entries:
     season_label: "S06 · Las Vegas"
     rank: 3
     title: "The deepest knife-skill cast carries the kitchen all the way home."
-    blurb: "Las Vegas runs the most technically loaded roster the show ever fielded, and the late-stage cooking never lets the level drop. The final service plays like a high-end tasting menu — every plate earning its place, nothing coasting on goodwill."
+    blurb: "Restaurant Wars takes the season into its endgame on a kitchen split, and the late-stage cooking never lets the level drop. The final service plays like a high-end tasting menu — every plate earning its place, nothing coasting on goodwill."
   - show: survivor
     season: 40
     season_label: "S40 · Winners at War"

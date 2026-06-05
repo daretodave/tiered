@@ -18,6 +18,7 @@ import {
   collectSeasonEyebrowCalendarIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
+  collectThemeDeckBodyOpenerDivergenceIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
   collectThemeFailures,
@@ -2912,6 +2913,148 @@ describe('content-check — themed-list body-copy phrase repetition (critique pa
     const issues = collectThemeBodyPhraseRepetitionIssues()
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/"closing run"/)
+  })
+})
+
+describe('content-check — themed-list deck-vs-body opener divergence (critique pass-33, issue #319)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-deck-body-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite — best-finales #03 + best-post-merge #1 drained)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeDeckBodyOpenerDivergenceIssues()).toEqual([])
+  })
+
+  it('flags an entry whose blurb opener shares a 3-token content sequence with the title', () => {
+    makeMultiEntryTheme(tmp, 'trigram-match', {
+      entries: [
+        {
+          title: 'Modern Survivor post-merge grammar gets written here.',
+          blurb:
+            'Cagayan keeps modern Survivor post-merge alive through every late tribal until the back-half plays like a final exam.',
+        },
+        { title: 'fine title', blurb: 'Fine sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    const issues = collectThemeDeckBodyOpenerDivergenceIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/themes/trigram-match.md (entry #1 blurb)',
+    )
+    expect(issues[0]!.message).toMatch(/3-token content sequence/)
+    expect(issues[0]!.message).toMatch(/"modern survivor post-merge"/)
+  })
+
+  it('flags an entry whose blurb opener has >50% content-token overlap (>=2 shared) with the title', () => {
+    makeMultiEntryTheme(tmp, 'overlap-match', {
+      entries: [
+        {
+          title: 'Where modern Survivor post-merge grammar gets written.',
+          blurb:
+            'The post-merge is where the modern grammar finally consolidated for Survivor.',
+        },
+        { title: 'fine title', blurb: 'Fine sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    const issues = collectThemeDeckBodyOpenerDivergenceIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/content tokens with the title/)
+    expect(issues[0]!.message).toMatch(/\(\d+%\)/)
+  })
+
+  it('passes a deck/body pair that shares only a single content token', () => {
+    makeMultiEntryTheme(tmp, 'one-token', {
+      entries: [
+        {
+          title: 'The deepest knife-skill cast carries the kitchen all the way home.',
+          blurb:
+            'Restaurant Wars takes the season into its endgame on a kitchen split, and the late-stage cooking never lets the level drop.',
+        },
+        { title: 'fine title', blurb: 'Fine sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    expect(collectThemeDeckBodyOpenerDivergenceIssues()).toEqual([])
+  })
+
+  it('only measures the first sentence of the blurb against the title', () => {
+    // A trigram that lives in the SECOND sentence of the blurb must
+    // not trip the check — the critique class is specifically about
+    // the body OPENER restating the deck.
+    makeMultiEntryTheme(tmp, 'second-sentence-safe', {
+      entries: [
+        {
+          title: 'Modern Survivor post-merge grammar consolidates here.',
+          blurb:
+            'The endgame compounds tribal by tribal. Modern Survivor post-merge grammar consolidates across every late-round vote.',
+        },
+        { title: 'fine title', blurb: 'Fine sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    expect(collectThemeDeckBodyOpenerDivergenceIssues()).toEqual([])
+  })
+
+  it('exempts `category: single` (intra-canon) lists', () => {
+    makeMultiEntryTheme(tmp, 'pillars', {
+      category: 'single',
+      entries: [
+        {
+          title: 'A jury-phase house where every eviction felt load-bearing.',
+          blurb:
+            'The jury-phase house keeps every eviction load-bearing across a roster of franchise veterans.',
+        },
+        { title: 'A second pillar.', blurb: 'A second pillar carries the era.' },
+        { title: 'A third pillar.', blurb: 'A third pillar raises the bar.' },
+        { title: 'A fourth pillar.', blurb: 'A fourth pillar locks the format.' },
+        { title: 'A fifth pillar.', blurb: 'A fifth pillar pays it forward.' },
+      ],
+    })
+    expect(collectThemeDeckBodyOpenerDivergenceIssues()).toEqual([])
+  })
+
+  it('is case-insensitive on the trigram match', () => {
+    makeMultiEntryTheme(tmp, 'case', {
+      entries: [
+        {
+          title: 'MODERN survivor POST-MERGE grammar gets WRITTEN here.',
+          blurb:
+            'Cagayan keeps modern Survivor post-merge alive through every late tribal.',
+        },
+        { title: 'fine title', blurb: 'Fine sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    const issues = collectThemeDeckBodyOpenerDivergenceIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/3-token content sequence/)
+    expect(issues[0]!.message).toMatch(/"modern survivor post-merge"/)
   })
 })
 

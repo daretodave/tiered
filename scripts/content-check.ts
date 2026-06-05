@@ -826,6 +826,101 @@ export function collectThemeBodyPhraseRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-33 MED (issue #319): /themes/best-finales entry #03
+// (Top Chef S06 Las Vegas) opened with `Las Vegas runs the most
+// technically loaded roster the show ever fielded` against the deck
+// `The deepest knife-skill cast carries the kitchen all the way home`
+// — body restates the deck rather than advancing the editorial point.
+// Lexical pin for the class: per themed-list entry, the first sentence
+// of the blurb (the body opener) must not share a 3-token content
+// sequence with the entry title (the deck), AND must not exceed a 50%
+// content-token overlap (with at least 2 shared tokens). Stopwords are
+// filtered so the overlap counts only content-bearing tokens. This
+// catches the lexical / near-literal restatement class; the semantic
+// restatement class (synonymy pairs like "deepest knife-skill cast" ↔
+// "most technically loaded roster") would need a WordNet-style lookup
+// and sits outside this scanner's scope. `category: single`
+// (intra-canon, single-show) lists are exempt — natural deck-body
+// resonance is part of the form.
+function firstSentenceOfBlurb(text: string): string {
+  // Strip HTML tags first, then take everything up to the first
+  // sentence terminator followed by whitespace or end-of-string.
+  // Em-dash clauses and commas stay inside the first sentence — the
+  // critique class is about the deck/body relationship at the
+  // sentence boundary, not the clause boundary.
+  const stripped = text.replace(/<[^>]+>/g, ' ')
+  const match = stripped.match(/^[\s\S]*?[.!?](?=\s|$)/)
+  return (match?.[0] ?? stripped).trim()
+}
+
+function deckBodyContentTokens(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[^a-z\s'-]/g, ' ')
+    .split(/\s+/)
+    .map((t) => t.replace(/^['-]+|['-]+$/g, ''))
+    .filter((t) => /^[a-z][a-z'-]*$/.test(t))
+    .filter((t) => !PHRASE_REPETITION_STOPWORDS.has(t))
+}
+
+function sharedContentTrigram(
+  titleTokens: string[],
+  openerTokens: string[],
+): string | null {
+  if (titleTokens.length < 3 || openerTokens.length < 3) return null
+  const titleTrigrams = new Set<string>()
+  for (let i = 0; i <= titleTokens.length - 3; i++) {
+    titleTrigrams.add(
+      `${titleTokens[i]} ${titleTokens[i + 1]} ${titleTokens[i + 2]}`,
+    )
+  }
+  for (let i = 0; i <= openerTokens.length - 3; i++) {
+    const trigram = `${openerTokens[i]} ${openerTokens[i + 1]} ${openerTokens[i + 2]}`
+    if (titleTrigrams.has(trigram)) return trigram
+  }
+  return null
+}
+
+export function collectThemeDeckBodyOpenerDivergenceIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    for (const entry of theme.entries) {
+      const title = entry.title?.trim()
+      const blurb = entry.blurb?.trim()
+      if (!title || !blurb) continue
+
+      const opener = firstSentenceOfBlurb(blurb)
+      const titleTokens = deckBodyContentTokens(title)
+      const openerTokens = deckBodyContentTokens(opener)
+      if (titleTokens.length === 0 || openerTokens.length === 0) continue
+
+      const trigram = sharedContentTrigram(titleTokens, openerTokens)
+      if (trigram) {
+        issues.push({
+          file: `content/themes/${theme.slug}.md (entry #${entry.rank} blurb)`,
+          message: `themed-list deck-vs-body restatement — entry #${entry.rank} title and the blurb's first sentence share the 3-token content sequence "${trigram}". The body opener should advance to a season-specific observation the deck does not already make (see plan/CRITIQUE.md pass-33 / issue #319).`,
+        })
+        continue
+      }
+
+      const titleSet = new Set(titleTokens)
+      const openerSet = new Set(openerTokens)
+      let shared = 0
+      for (const t of titleSet) if (openerSet.has(t)) shared++
+      const ratio = shared / titleSet.size
+      if (ratio > 0.5 && shared >= 2) {
+        issues.push({
+          file: `content/themes/${theme.slug}.md (entry #${entry.rank} blurb)`,
+          message: `themed-list deck-vs-body restatement — entry #${entry.rank} blurb's first sentence shares ${shared} of ${titleSet.size} content tokens with the title (${Math.round(ratio * 100)}%). The body opener should advance to a season-specific observation the deck does not already make (see plan/CRITIQUE.md pass-33 / issue #319).`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -1420,6 +1515,29 @@ function main(): number {
     failures.push(...themeBodyPhraseIssues)
   } else {
     for (const issue of themeBodyPhraseIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-33 MED (issue #319): ships strict at floor 0 —
+  // the best-finales #03 (Top Chef S06 Las Vegas) body-opener
+  // rewrite drops the lone deck-vs-body restatement in the corpus
+  // (the synonymy "deepest knife-skill cast" ↔ "most technically
+  // loaded roster" sat outside the lexical heuristic; the candidate
+  // "Restaurant Wars takes the season into its endgame on a kitchen
+  // split" shares only "kitchen" across the title/opener pair).
+  // The invariant is the floor that catches a future authoring pass
+  // opening a themed-list entry's blurb by lexically restating the
+  // deck (shared 3-token content sequence OR >50% content-token
+  // overlap with at least 2 shared tokens). One-line toggle
+  // mirroring the eleven above.
+  const THEME_DECK_BODY_DIVERGENCE_STRICT = true
+  const themeDeckBodyDivergenceIssues =
+    collectThemeDeckBodyOpenerDivergenceIssues()
+  if (THEME_DECK_BODY_DIVERGENCE_STRICT) {
+    failures.push(...themeDeckBodyDivergenceIssues)
+  } else {
+    for (const issue of themeDeckBodyDivergenceIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

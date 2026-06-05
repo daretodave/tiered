@@ -18,7 +18,7 @@ entries:
     season_label: "S28 · Cagayan"
     rank: 1
     title: "Where modern Survivor's post-merge grammar gets written."
-    blurb: "The idol plays, the vote splits, the read-the-room paranoia that every season since 2014 leans on — Cagayan's post-merge is where the modern grammar finally consolidated. Loud, tactical, and confident in a way the show had been working toward for a decade."
+    blurb: "The idol plays, the vote splits, the read-the-room paranoia every season since 2014 leans on — Cagayan stacks them through every late-round tribal until the back-half plays like a final exam. Loud, tactical, and confident in a way the show had been working toward for a decade."
   - show: survivor
     season: 20
     season_label: "S20 · Heroes vs. Villains"
