@@ -3,7 +3,7 @@ show: love-island-us
 editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editors, who have watched every American season from the Fiji inaugural through the Peacock-era breakout. We weigh production craft, format execution, and historical consequence — not whose couple lasted. The ranking is editorial judgment about the seasons as television, held to the same spoiler-free bar as every page on the site."
+meth_who_p: "tiered.tv's editor. I've watched every American season from the Fiji inaugural through the Peacock-era breakout. The ranking is one editor's read first, calibrated against what reasonable Love Island fans agree on after a long argument — weighing the seasons as television, not whose couple lasted. I'm not claiming to be objective. I'm trying to be honest."
 meth_how_h: "How we weigh it"
 meth_how_p: "We rank seasons on format execution, casting energy, production confidence, and how much each one mattered to the franchise's American arc. A breakout that defined the show's reputation outranks a constrained transitional year. Outcomes never factor in — a season's couples and results carry no weight here, only how well the hour itself runs."
 meth_when_h: "When we revisit"
