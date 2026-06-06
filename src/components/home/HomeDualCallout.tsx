@@ -16,8 +16,9 @@ export function HomeDualCallout() {
         <p className="dual-blurb">
           One reader, one vote per season — does it belong in the community top
           10? <b>Plain. Restless. Honest.</b> The numbers shift each week.
-          Signed-in voters self-attest they watched the season end to end; new
-          accounts count at 0.25×, anonymous votes at 0.1×.
+          Signed-in voters self-attest they watched the season end to end;
+          anonymous votes count at 0.1×, accounts under 7 days at 0.25×,
+          tenured accounts at 1.0×.
         </p>
       </div>
     </section>

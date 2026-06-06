@@ -296,6 +296,27 @@ describe('content/legal/about.md voting paragraph drops qualitative bridge (#325
   })
 })
 
+// Critique pass-37 MED (issue #335): the home Community Rank
+// blurb (`HomeDualCallout.tsx`) named the three weights in a
+// different order than /about — home went highest-to-lowest and
+// dropped the 1.0× ceiling; /about lists lowest-to-highest with
+// the 7-day cliff. A reader following home → /about formed two
+// inconsistent mental models of the same ladder. The fix aligned
+// home to /about's lowest-to-highest ordering. The pin below
+// guards the /about side of that alignment — a future authoring
+// pass that re-orders or drops a cliff trips at unit time so the
+// two surfaces stay in lockstep.
+describe('content/legal/about.md weight ladder ordering vs home (#335)', () => {
+  it('lists the three cliffs lowest-to-highest (anon 0.1× → under-7 0.25× → 7+ 1.0×)', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(
+      /0\.1×[^]*under\s+7\s+days[^]*0\.25×[^]*7\+\s*days[^]*1\.0×/i,
+    )
+  })
+})
+
 // Critique pass-31 LOW (issue #310): the rate-limit trust line on
 // /about previously read `Brigade rate-limits run behind the
 // scenes…` — `Brigade` is verb-as-noun community-moderation

@@ -89,4 +89,22 @@ describe('<HomeDualCallout>', () => {
     expect(live).toMatch(/0\.25|new account|under 7/i)
     expect(live).toMatch(/0\.1/)
   })
+
+  // Critique pass-37 MED (issue #335): the prior live-pane
+  // blurb named the three weights in the wrong order (highest-to-
+  // lowest, signed-in→anon, omitting the 1.0× ceiling). /about
+  // lists them lowest-to-highest with the 7-day cliff named. A
+  // reader who lands on home and forms a tier mental model finds
+  // the front-door framing inverted from the canonical disclosure.
+  // The fix aligns home to /about's three-tier lowest-to-highest
+  // ordering. The regex below pins all three tiers in that order
+  // — a future authoring pass that inverts back to highest-to-
+  // lowest or drops the 1.0× ceiling trips at unit time.
+  it('renders the three weights lowest-to-highest, matching /about', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live').textContent ?? ''
+    expect(live).toMatch(
+      /anonymous[^]*0\.1[^]*under 7 days[^]*0\.25[^]*tenured[^]*1\.0/i,
+    )
+  })
 })
