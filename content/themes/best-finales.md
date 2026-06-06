@@ -1,7 +1,7 @@
 ---
 slug: best-finales
 title: "Finales that stuck the landing"
-tagline: "The closing run is where a season either pays off its promise or quietly admits it didn't have one. These finales <b>land the season they were always making</b> — texture intact, stakes earned, the last hour built at the size it needed."
+tagline: "Closing runs that earn the season. <b>The last hour sits at the altitude the show was building toward</b> — texture intact, stakes earned, nothing handed over for free."
 category: craft
 sentiment: verdict
 status: stable
