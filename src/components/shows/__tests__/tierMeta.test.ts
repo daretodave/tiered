@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { ShowTier } from '@/content'
 import { tierMeta, TIER_ORDER, type TierMeta } from '../tierMeta'
+import { tierLedeSentences } from '../tierLede'
 
 describe('tierMeta', () => {
   describe('record shapes (exact editorial copy)', () => {
@@ -8,7 +9,7 @@ describe('tierMeta', () => {
       expect(tierMeta('S')).toEqual({
         tier: 'S',
         tag: 'Format-defining',
-        name: 'The shows that invented or perfected their genre.',
+        name: 'The shows that invented or perfected their format.',
       })
     })
 
@@ -105,6 +106,45 @@ describe('tierMeta', () => {
         const t: ShowTier = tier
         expect(tierMeta(t).tier).toBe(tier)
       }
+    })
+  })
+
+  // critique-pass-35: the /shows hero lede + the S-group eyebrow tag
+  // (`FORMAT-DEFINING`) + the S-group name subtitle must all commit
+  // to the same word — `format` — so a reader scanning the chrome
+  // doesn't reconcile two vocabularies for the same idea in adjacent
+  // reading positions. A prior pass had the subtitle drift to `genre`
+  // while the hero + eyebrow stayed on `format`; this block guards
+  // that the three surfaces stay aligned. The A-tier sibling positive
+  // pins its own framing so a future edit can't sneak `format` /
+  // `genre` into the A-tier name either, conflating the two tiers'
+  // distinct claims.
+  describe('S/A tier vocabulary alignment', () => {
+    it('S-tier eyebrow tag commits to format, not genre', () => {
+      expect(tierMeta('S').tag).toMatch(/format/i)
+      expect(tierMeta('S').tag).not.toMatch(/genre/i)
+    })
+
+    it('S-tier name subtitle commits to format, not genre', () => {
+      expect(tierMeta('S').name).toMatch(/format/i)
+      expect(tierMeta('S').name).not.toMatch(/genre/i)
+    })
+
+    it('S-tier hero lede sentence commits to format, not genre', () => {
+      const [ledeS] = tierLedeSentences(['S'])
+      expect(ledeS).toMatch(/format/i)
+      expect(ledeS).not.toMatch(/genre/i)
+    })
+
+    it('A-tier name stays on the deep-canon framing — no format/genre conflation', () => {
+      expect(tierMeta('A').name).toMatch(/seasons|craft|defend a real ranking/i)
+      expect(tierMeta('A').name).not.toMatch(/format|genre/i)
+    })
+
+    it('A-tier hero lede sentence stays on the deep-canon framing — no format/genre conflation', () => {
+      const [ledeA] = tierLedeSentences(['A'])
+      expect(ledeA).toMatch(/deep canon|years to defend/i)
+      expect(ledeA).not.toMatch(/format|genre/i)
     })
   })
 })

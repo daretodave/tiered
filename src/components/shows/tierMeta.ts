@@ -9,7 +9,7 @@ export type TierMeta = {
 const S: TierMeta = {
   tier: 'S',
   tag: 'Format-defining',
-  name: 'The shows that invented or perfected their genre.',
+  name: 'The shows that invented or perfected their format.',
 }
 
 const A: TierMeta = {
