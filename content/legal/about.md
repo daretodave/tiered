@@ -35,12 +35,10 @@ reader per season. Change your mind within 72 hours; after that
 the vote locks. The community rank updates weekly.
 
 Signed-in voters self-attest they watched the season end to end
-before casting. Accounts a week old or older count at full
-weight; younger accounts and guests count less. Anonymous-guest
-votes count at 0.1×. Accounts under 7 days old count at 0.25×.
-Accounts 7+ days old count at 1.0×. Rate-limits run behind the
-scenes to catch coordinated voting campaigns, and should never
-bite a normal reader.
+before casting. Anonymous-guest votes count at 0.1×. Accounts
+under 7 days old count at 0.25×. Accounts 7+ days old count at
+1.0×. Rate-limits run behind the scenes to catch coordinated
+voting campaigns, and should never bite a normal reader.
 
 ## Spoilers policy {#spoilers}
 

@@ -260,6 +260,42 @@ describe('content/legal/about.md lede honesty vs weighting ladder (#322)', () =>
   })
 })
 
+// Critique pass-34 LOW (issue #325): the prior `/about` "How
+// voting works" policy paragraph carried a qualitative bridge
+// sentence (`Accounts a week old or older count at full weight;
+// younger accounts and guests count less.`) immediately followed
+// by the three numeric sentences that say the same thing with the
+// actual multipliers (`0.1×` / `0.25×` / `1.0×`). The qualitative
+// bridge previewed the numeric ladder in English right before the
+// numbers themselves — same fact, two registers, no new editorial
+// work between them. The fix drops the bridge entirely so the
+// numeric ladder carries the policy alone. Bidirectional pins
+// below catch (1) a re-introduction of the bridge phrase in any
+// form (`full weight; younger accounts and guests count less` —
+// the load-bearing two-clause structure), AND (2) the numeric
+// ladder regressing or losing one of the three weight cliffs that
+// now do all the work. Closure pattern matches pass-26 #282 +
+// pass-27 #287 + pass-32 #311 + pass-33 #318 + pass-34 #322
+// (drift guard on the page that owes the truth).
+describe('content/legal/about.md voting paragraph drops qualitative bridge (#325)', () => {
+  it('does not regress by re-introducing the qualitative bridge sentence', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    expect(body).not.toMatch(
+      /full\s+weight\s*;\s*younger\s+accounts\s+and\s+guests\s+count\s+less/i,
+    )
+  })
+
+  it('numeric ladder still carries the three weight cliffs (0.1× / 0.25× / 1.0×)', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/0\.1×/)
+    expect(body).toMatch(/0\.25×/)
+    expect(body).toMatch(/1\.0×/)
+  })
+})
+
 // Critique pass-31 LOW (issue #310): the rate-limit trust line on
 // /about previously read `Brigade rate-limits run behind the
 // scenes…` — `Brigade` is verb-as-noun community-moderation
