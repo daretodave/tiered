@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
+  collectCanonMethWhoPluralEditorIssues,
   collectCanonRationaleClosingFormulaIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
@@ -3491,6 +3492,144 @@ describe('content-check — canon-rationale closing-formula adjacency (critique 
   it('tolerates a show without a canon (no-op rather than crash)', () => {
     makeShow(tmp, 'alpha')
     expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+})
+
+describe('content-check — canon meth_who_p plural-collective editor voice (critique pass-35, issue #329)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-meth-who-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonWithMethWho(
+    root: string,
+    show: string,
+    methWho: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+editor: Test Editor
+last_revised: 2026-05-14
+meth_who_h: Who ranks
+meth_who_p: ${methWho}
+weekly_question: Question of the week?
+---
+
+## 1. Title
+
+${ninetyWords}
+`,
+    )
+    makeSeason(root, show, 1, 'title', { canonical_position: 1 })
+  }
+
+  it('passes for a singular-voice override (first-person "I")', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "tiered.tv's editor. I've watched Alpha since the original pilot and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Alpha fans agree on after a long argument runs its course. I'm not claiming to be objective. I'm trying to be honest.",
+    )
+    expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+
+  it('passes for a singular-voice override (third-person "the editor")', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "tiered.tv's editor. The editor has watched Alpha since the original pilot and replays every season that lands on this list. The ranking is the editor's read first, calibrated against what reasonable Alpha fans agree on after a long argument runs its course. The canon isn't claiming objectivity. It's an honest argument.",
+    )
+    expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+
+  it('flags the plural possessive `tiered.tv\'s editors` (independent signal)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "tiered.tv's editors. The canon is one editor's read, calibrated against what reasonable fans agree on. The ranking starts as an editor's read, then gets fine-tuned against what informed viewers agree on after a long argument runs its course. The canon stays honest about its limits.",
+    )
+    const issues = collectCanonMethWhoPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md (meth_who_p)')
+    expect(issues[0]!.message).toMatch(/plural-collective editor voice/)
+    expect(issues[0]!.message).toMatch(/plural possessive/)
+    expect(issues[0]!.message).toMatch(/issue #329/)
+  })
+
+  it('flags plural-collective pronouns (independent signal)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "The canon ranker. We've watched Alpha since the original pilot and we are trying to be honest about each season's strengths. The ranking is one editor's read first, calibrated against what reasonable Alpha fans agree on after a long argument runs its course. We aren't claiming objectivity.",
+    )
+    const issues = collectCanonMethWhoPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/first-person-plural pronouns/)
+  })
+
+  it('flags both signals together in one issue (single hit per show)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "tiered.tv's editors. We've watched Alpha since the original pilot and we've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Alpha fans agree on after a long argument. We aren't claiming objectivity. We are trying to be honest.",
+    )
+    const issues = collectCanonMethWhoPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/plural possessive/)
+    expect(issues[0]!.message).toMatch(/AND/)
+    expect(issues[0]!.message).toMatch(/first-person-plural/)
+  })
+
+  it('is case-insensitive on both signals', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "TIERED.TV's Editors. We've Watched Alpha since the original pilot and We've replayed every season that lands on this list. The Ranking is one editor's read first, calibrated against what reasonable Alpha fans agree on after a long argument. We Aren't claiming objectivity. We Are trying to be honest.",
+    )
+    const issues = collectCanonMethWhoPluralEditorIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('skips shows whose canon omits the meth_who_p field (no-op)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'title', { canonical_position: 1 })
+    makeCanon(tmp, 'alpha', [{ rank: 1, season: 1, title: 'Title' }])
+    expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+
+  it('does not false-positive on the substring "weight" (matches only word-bounded `we`)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethWho(
+      tmp,
+      'alpha',
+      "tiered.tv's editor. The editor weights each season's craft and consequence equally; objectivity is not the bar, honesty is. The ranking starts as the editor's read, then gets fine-tuned against what reasonable fans agree on after a long argument runs its course. The canon stays honest about its limits.",
+    )
+    expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
   })
 })
 

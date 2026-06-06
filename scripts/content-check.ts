@@ -1318,6 +1318,52 @@ export function collectCanonRationaleClosingFormulaIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-35 MED (issue #329): the `CanonMethodology` component's
+// own DEFAULT body for the `01 · WHO` cell reads "One editor, named.
+// ... we will tell you who, and we will not hide behind plural
+// pronouns." (`src/components/canon/CanonMethodology.tsx:13-20`). Per-
+// show `meth_who_p` overrides on 9 of 13 shows ship plural-collective
+// voice — `tiered.tv's editors` (plural possessive) + `we've watched`
+// / `we are trying` first-person-plural pronouns — that directly
+// contradict the default's singular-voice promise. /about formally
+// admits the singular form at two surfaces (`content/legal/about.md:29`
+// — "The Editor's Canon is the editor's call — one person, one position
+// per season" — and `:78` — "Built and operated by one person.").
+// Multi-tick drain (one show per tick, phase-26 / 31b / 34 / 41 / 43
+// mechanic): each tick rewrites one show's override into singular
+// voice that mirrors the default + /about; this invariant catches the
+// class at author-time and (at strict floor) catches any future
+// authoring pass slipping back to plural-collective voice on any
+// show's `meth_who_p`. The two patterns flagged are independent
+// signals — either one trips the gate.
+const PLURAL_EDITOR_PRONOUN_RE =
+  /\bwe(?:'ve|'re|'d|'ll| have| are| aren't| would)\b/i
+const PLURAL_EDITOR_POSSESSIVE_RE = /tiered\.tv's editors\b/i
+
+export function collectCanonMethWhoPluralEditorIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const body = canon.meth_who_p
+    if (!body) continue
+    const flat = body.replace(/\s+/g, ' ')
+    const hits: string[] = []
+    if (PLURAL_EDITOR_POSSESSIVE_RE.test(flat)) {
+      hits.push('plural possessive `tiered.tv\'s editors`')
+    }
+    if (PLURAL_EDITOR_PRONOUN_RE.test(flat)) {
+      hits.push('first-person-plural pronouns (`we\'ve` / `we are` / `we aren\'t` / etc.)')
+    }
+    if (hits.length === 0) continue
+    issues.push({
+      file: `content/shows/${show.slug}/canon.md (meth_who_p)`,
+      message: `canon meth_who_p plural-collective editor voice — carries ${hits.join(' AND ')}. The CanonMethodology default body (src/components/canon/CanonMethodology.tsx:13-20) reads "One editor, named. ... we will not hide behind plural pronouns."; /about (content/legal/about.md:29, :78) formally admits the singular form. Recast \`tiered.tv's editors\` → \`tiered.tv's editor\` and the plural pronouns into singular voice (first-person \`I've watched\` / \`I'm trying\`, or third-person \`the editor has watched\`). Preserve per-show editorial detail. See plan/CRITIQUE.md pass-35 / issue #329.`,
+    })
+  }
+  return issues
+}
+
 // Critique pass-32 LOW (issue #325): `/shows/survivor/season/heroes-vs-villains`
 // "What to watch for" callouts re-used `cold-open` across moment 1's label and
 // moment 4's body — two of four small callouts sharing the same content-bearing
@@ -1793,6 +1839,24 @@ function main(): number {
     failures.push(...watchListPhraseIssues)
   } else {
     for (const issue of watchListPhraseIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-35 MED (issue #329): ships LAX during the multi-
+  // tick drain — 8 of 9 carrier shows still ship plural-collective
+  // `meth_who_p` overrides (Survivor's drain is this tick). Each
+  // /iterate or /ship-content drain tick recasts one show's override
+  // into singular voice mirroring the CanonMethodology default +
+  // /about's promise; the final drain tick flips
+  // PLURAL_EDITOR_STRICT to true (one-line change, like STRICT /
+  // CROSS_SHOW_STRICT / YEAR_TENURE_STRICT above). One-line toggle.
+  const PLURAL_EDITOR_STRICT = false
+  const pluralEditorIssues = collectCanonMethWhoPluralEditorIssues()
+  if (PLURAL_EDITOR_STRICT) {
+    failures.push(...pluralEditorIssues)
+  } else {
+    for (const issue of pluralEditorIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

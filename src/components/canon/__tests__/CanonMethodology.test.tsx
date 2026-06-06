@@ -72,4 +72,29 @@ describe('<CanonMethodology>', () => {
     expect(section).toHaveAttribute('aria-label', 'How the canon works')
     expect(screen.getAllByTestId('canon-meth-cell')).toHaveLength(3)
   })
+
+  // Critique pass-35 MED / issue #329: the `01 · WHO` cell's DEFAULT
+  // body explicitly promises a singular editor and disavows plural
+  // pronouns ("One editor, named. ... we will not hide behind plural
+  // pronouns."). Per-show `meth_who_p` overrides that ship plural-
+  // collective voice contradict that promise — caught at content-
+  // check author-time by `collectCanonMethWhoPluralEditorIssues`.
+  // This sibling pin keeps the default itself from drifting off the
+  // singular shape during a future authoring pass, bidirectional
+  // (positive on the singular shape, negative against plural drift).
+  describe('default 01 · WHO body holds the singular-editor promise (#329)', () => {
+    it('lands the singular-editor lead and the plural-pronoun disavowal', () => {
+      render(<CanonMethodology canon={null} />)
+      expect(screen.getByText(/One editor, named\./)).toBeInTheDocument()
+      expect(
+        screen.getByText(/we will not hide behind plural pronouns/),
+      ).toBeInTheDocument()
+    })
+
+    it('default body never drifts to the plural possessive form', () => {
+      render(<CanonMethodology canon={null} />)
+      const body = screen.getByText(/Each show gets a single canon editor/)
+      expect(body.textContent ?? '').not.toMatch(/tiered\.tv's editors\b/i)
+    })
+  })
 })
