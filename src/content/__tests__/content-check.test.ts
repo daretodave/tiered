@@ -17,6 +17,7 @@ import {
   collectEditorialBylineSingularIssues,
   collectFailures,
   collectSeasonEyebrowCalendarIssues,
+  collectShowBlurbTaglineCountRepetitionIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeDeckBodyOpenerDivergenceIssues,
@@ -4084,5 +4085,129 @@ entries:
     // "first leg" is followed by ~70 chars before "returnee" — outside
     // the 40-char window the regex bounds. Not flagged.
     expect(collectThemeFactualFirstClaimIssues()).toEqual([])
+  })
+})
+
+describe('content-check — show blurb/tagline count restate (critique pass-37, issue #333)', () => {
+  let tmp: string
+
+  function makeShowWithBlurbTagline(
+    root: string,
+    slug: string,
+    opts: { blurb: string; tagline: string },
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: ${JSON.stringify(opts.blurb)}
+tagline: ${JSON.stringify(opts.tagline)}
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-count-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags 12 shows at the live catalog (this commit drains Survivor; the other 12 catch in subsequent drain ticks)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    const issues = collectShowBlurbTaglineCountRepetitionIssues()
+    // Survivor was the critique-named offender drained this commit.
+    // The corpus sweep names 12 others (amazing-race, bachelor,
+    // bachelorette, bake-off, big-brother, dragrace, love-island-uk,
+    // love-island-us, project-runway, the-challenge, top-chef,
+    // traitors) — same lax→strict pattern as
+    // SEASON_EYEBROW_CALENDAR_STRICT / WATCHLIST_PHRASE_REPETITION_STRICT.
+    // The invariant ships warn-only; the next drain ticks rewrite each
+    // show's tagline and the final drain tick flips strict + this
+    // expectation lands at zero.
+    expect(issues.length).toBe(12)
+    const offenders = issues.map((i) => i.file).sort()
+    expect(offenders).not.toContain('content/shows/survivor.md')
+  })
+
+  it('flags a show whose blurb AND tagline both open on `<N> seasons`', () => {
+    makeShowWithBlurbTagline(tmp, 'doubled', {
+      blurb: '50 seasons. One torch at a time.',
+      tagline:
+        '50 seasons of strangers on a beach. The format that invented itself in episode one.',
+    })
+    const issues = collectShowBlurbTaglineCountRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/doubled.md')
+    expect(issues[0]!.message).toMatch(/hero\/body count-restate/)
+    expect(issues[0]!.message).toMatch(/<N> seasons/)
+  })
+
+  it('allows a blurb-only count opener (the count belongs somewhere)', () => {
+    makeShowWithBlurbTagline(tmp, 'blurb-only', {
+      blurb: '50 seasons. One torch at a time.',
+      tagline:
+        'Strangers on a beach, voting each other off until one is left standing.',
+    })
+    expect(collectShowBlurbTaglineCountRepetitionIssues()).toEqual([])
+  })
+
+  it('allows a tagline-only count opener', () => {
+    makeShowWithBlurbTagline(tmp, 'tagline-only', {
+      blurb: 'One torch at a time.',
+      tagline:
+        '50 seasons of strangers on a beach, and the format still asks the same first question.',
+    })
+    expect(collectShowBlurbTaglineCountRepetitionIssues()).toEqual([])
+  })
+
+  it('allows a singular `season` opener (covers a one-season show)', () => {
+    makeShowWithBlurbTagline(tmp, 'singular', {
+      blurb: '1 season. The story stayed contained.',
+      tagline:
+        '1 season of stage and tarmac, and a casting bench that resolved itself in eight episodes.',
+    })
+    // Both still open on `<N> season(s)` — the regex is `\d+\s+seasons?`,
+    // so this DOES flag. The case here documents the wider definition.
+    expect(collectShowBlurbTaglineCountRepetitionIssues().length).toBe(1)
+  })
+
+  it('does not flag when the count is in the middle of the sentence', () => {
+    makeShowWithBlurbTagline(tmp, 'embedded', {
+      blurb: 'One torch at a time across 50 seasons.',
+      tagline:
+        'A franchise that has spent 50 seasons rediscovering what reality competition can do.',
+    })
+    expect(collectShowBlurbTaglineCountRepetitionIssues()).toEqual([])
+  })
+
+  it('is case-insensitive on the `seasons` token', () => {
+    makeShowWithBlurbTagline(tmp, 'mixed-case', {
+      blurb: '50 Seasons. One torch at a time.',
+      tagline:
+        '50 SEASONS of strangers on a beach, and the format keeps reinventing itself.',
+    })
+    expect(collectShowBlurbTaglineCountRepetitionIssues().length).toBe(1)
   })
 })

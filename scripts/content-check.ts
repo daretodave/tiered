@@ -826,6 +826,32 @@ export function collectThemeBodyPhraseRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-37 MED (issue #333): /shows/survivor hero subtitle
+// (`blurb`) and body opener (`tagline`) both opened on `50 seasons of
+// <X>` — the count was restated on adjacent lines of the most-visited
+// show page. Lexical pin for the class: per show, flag when BOTH
+// `blurb` AND `tagline` open with a `\d+ seasons?` clause (an opener
+// that asserts the season count). Hero+body are rendered back-to-back
+// on the show page; one count-bearing opener is load-bearing copy,
+// two is a templated tell. Allowed: blurb-only or tagline-only count
+// openers (the count needs to live somewhere). Disallowed: both at
+// once.
+const COUNT_OPENER_RE = /^\s*\d+\s+seasons?\b/i
+export function collectShowBlurbTaglineCountRepetitionIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const blurb = show.blurb ?? ''
+    const tagline = show.tagline ?? ''
+    if (COUNT_OPENER_RE.test(blurb) && COUNT_OPENER_RE.test(tagline)) {
+      issues.push({
+        file: `content/shows/${show.slug}.md`,
+        message: `hero/body count-restate — both \`blurb\` ("${blurb.trim().slice(0, 60)}…") and \`tagline\` ("${tagline.trim().slice(0, 60)}…") open on a \`<N> seasons\` clause. The hero subtitle and the editorial body opener render on adjacent lines of /shows/${show.slug}; the count belongs in one of them, not both. Recut one opener — keep the count on the hero \`blurb\` (the load-bearing count-bearing line) and rewrite the \`tagline\` to add editorial colour rather than restate the count.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-33 MED (issue #319): /themes/best-finales entry #03
 // (Top Chef S06 Las Vegas) opened with `Las Vegas runs the most
 // technically loaded roster the show ever fielded` against the deck
@@ -1707,6 +1733,29 @@ function main(): number {
     failures.push(...themeBodyPhraseIssues)
   } else {
     for (const issue of themeBodyPhraseIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-37 MED (issue #333): ships LAX during the corpus
+  // drain — this commit's Survivor tagline rewrite drops the
+  // critique-named offender, but a sweep of the catalog finds 12
+  // other shows whose `blurb` and `tagline` both open on a `<N>
+  // seasons` clause (amazing-race, bachelor, bachelorette, bake-off,
+  // big-brother, dragrace, love-island-uk, love-island-us,
+  // project-runway, the-challenge, top-chef, traitors). The wider
+  // drain is per-tick `/iterate` work; this commit ships the
+  // invariant warn-only, so the next drain ticks each rotate one
+  // show's tagline and the final drain tick flips
+  // SHOW_COUNT_RESTATE_STRICT to true. One-line toggle mirroring
+  // SEASON_EYEBROW_CALENDAR_STRICT / WATCHLIST_PHRASE_REPETITION_STRICT
+  // above (the lax→strict pattern).
+  const SHOW_COUNT_RESTATE_STRICT = false
+  const showCountRestateIssues = collectShowBlurbTaglineCountRepetitionIssues()
+  if (SHOW_COUNT_RESTATE_STRICT) {
+    failures.push(...showCountRestateIssues)
+  } else {
+    for (const issue of showCountRestateIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

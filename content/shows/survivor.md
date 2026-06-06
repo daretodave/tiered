@@ -8,7 +8,7 @@ palette:
 seasons: 50
 status: airing
 blurb: "50 seasons. One torch at a time."
-tagline: "50 seasons of strangers on a beach. The format that invented itself in episode one, and has spent {yearsWord} years rediscovering what it is. We've ranked every single one."
+tagline: "Strangers on a beach, voting each other off until one is left standing. The format that invented itself in episode one, and has spent {yearsWord} years rediscovering what it is. We've ranked every single one."
 card_tagline: "The format that invented itself in episode one, and is still finding new ways to ask who you really are."
 tier: S
 network: "CBS"
