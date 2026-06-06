@@ -3,7 +3,7 @@ show: love-island-uk
 editor: tiered.tv editor
 last_revised: 2026-05-15
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editors, who have watched every series from the 2015 Santanyí villa through the most recent Mallorca run. We rank as fans who follow the show closely, weighing each summer and winter edition against the full arc rather than judging it in isolation or by recency."
+meth_who_p: "tiered.tv's editor. I've watched every series from the 2015 Santanyí villa through the most recent Mallorca run. The ranking is one editor's read, calibrated against what reasonable Love Island fans agree on after a long argument — each summer and winter edition weighed against the arc, not by recency. I'm not claiming to be objective. I'm trying to be honest."
 meth_how_h: "How we weigh it"
 meth_how_p: "Four lenses, no outcomes. Casting energy — the chemistry and personalities a series put in the villa. Format innovation — what the structure tried that year. Tonal control — how cleanly the season balanced romance, drama and pace. Era argument — what the series proves about its host era and the franchise's wider direction."
 meth_when_h: "When we revisit"
