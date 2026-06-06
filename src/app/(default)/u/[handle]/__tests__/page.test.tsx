@@ -217,6 +217,56 @@ describe('/u/[handle] generateMetadata', () => {
     const meta = await generateMetadata({ params: { handle: 'CanonForm' } })
     expect(meta.alternates?.canonical).toBe('https://tiered.tv/u/canonform')
   })
+
+  // CRITIQUE pass-36 MED (#331): owner-vs-stranger meta description
+  // branching. The body chrome already speaks in two voices
+  // (ProfileHeader: `Your record` for owners, `@{handle}'s record`
+  // for strangers); these four cases pin the meta surface to the
+  // same axis so a future refactor that re-converges the two views
+  // onto one description trips here.
+  it('OWNER + empty → second-person description ("Your record …") so the owner reads themselves in the same voice the body uses', async () => {
+    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'e2e' }))
+    getSessionMock.mockResolvedValue({ user: { nickname: 'e2e' } })
+    const meta = await generateMetadata({ params: { handle: 'e2e' } })
+    expect(String(meta.description)).toMatch(/^your record/i)
+    expect(String(meta.description)).not.toMatch(/a reader on tiered\.tv/i)
+  })
+
+  it('OWNER + populated → second-person description ("Your public record …") naming votes + comments', async () => {
+    getProfileActivityMock.mockResolvedValue(populatedActivity({ handle: 'e2e' }))
+    getSessionMock.mockResolvedValue({ user: { nickname: 'e2e' } })
+    const meta = await generateMetadata({ params: { handle: 'e2e' } })
+    expect(String(meta.description)).toMatch(/^your public record/i)
+    expect(String(meta.description)).toMatch(/votes/i)
+    expect(String(meta.description)).toMatch(/comments/i)
+    expect(String(meta.description)).toMatch(/you've weighed in on/i)
+  })
+
+  it('STRANGER (different signed-in viewer) + empty → third-person framing preserved ("A reader …")', async () => {
+    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'e2e' }))
+    getSessionMock.mockResolvedValue({ user: { nickname: 'someone-else' } })
+    const meta = await generateMetadata({ params: { handle: 'e2e' } })
+    expect(String(meta.description)).toMatch(/a reader on tiered\.tv/i)
+    expect(String(meta.description)).not.toMatch(/your record/i)
+  })
+
+  it('STRANGER (anon) + populated → third-person framing preserved (handle echoed, "they\'ve weighed in")', async () => {
+    getProfileActivityMock.mockResolvedValue(
+      populatedActivity({ handle: 'regular' }),
+    )
+    getSessionMock.mockResolvedValue(null)
+    const meta = await generateMetadata({ params: { handle: 'regular' } })
+    expect(String(meta.description)).toMatch(/regular's public record/i)
+    expect(String(meta.description)).toMatch(/they've weighed in on/i)
+    expect(String(meta.description)).not.toMatch(/your public record/i)
+  })
+
+  it('a thrown auth0 session in generateMetadata resolves to the stranger branch (no crash)', async () => {
+    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'resilient' }))
+    getSessionMock.mockRejectedValue(new Error('auth0 down'))
+    const meta = await generateMetadata({ params: { handle: 'resilient' } })
+    expect(String(meta.description)).toMatch(/a reader on tiered\.tv/i)
+  })
 })
 
 // --------------------------------------------------------------------
