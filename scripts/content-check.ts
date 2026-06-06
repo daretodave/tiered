@@ -1843,15 +1843,13 @@ function main(): number {
     }
   }
 
-  // Critique pass-35 MED (issue #329): ships LAX during the multi-
-  // tick drain — 8 of 9 carrier shows still ship plural-collective
-  // `meth_who_p` overrides (Survivor's drain is this tick). Each
-  // /iterate or /ship-content drain tick recasts one show's override
-  // into singular voice mirroring the CanonMethodology default +
-  // /about's promise; the final drain tick flips
-  // PLURAL_EDITOR_STRICT to true (one-line change, like STRICT /
-  // CROSS_SHOW_STRICT / YEAR_TENURE_STRICT above). One-line toggle.
-  const PLURAL_EDITOR_STRICT = false
+  // Critique pass-35 MED (issue #329): the 9-tick drain is complete
+  // — every carrier show's `meth_who_p` override now reads singular
+  // voice mirroring the CanonMethodology default + /about's promise.
+  // STRICT is on so any future authoring pass slipping back to
+  // plural-collective voice fails at the verify gate (same shape as
+  // STRICT / CROSS_SHOW_STRICT / YEAR_TENURE_STRICT above).
+  const PLURAL_EDITOR_STRICT = true
   const pluralEditorIssues = collectCanonMethWhoPluralEditorIssues()
   if (PLURAL_EDITOR_STRICT) {
     failures.push(...pluralEditorIssues)
