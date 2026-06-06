@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-05 at commit ddba223
-> Pass count: 22
+> Last pass: 2026-06-06 at commit 998d1b2
+> Pass count: 23
 
 ## Considered (awaiting promotion)
 
@@ -430,6 +430,120 @@ candidate #12's lax→strict invariant precedent established in
 `scripts/content-check.ts`, with the distinct twist that the
 check aggregates across files instead of validating one file at
 a time.
+
+<!-- Pass 23 (2026-06-06, commit 998d1b2) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (only the format
+       example placeholder at line 19). The drain since pass 22
+       cleared each row in the same iterate cycle it filed —
+       pass-34 LOW /themes lede doubled-'one' (6b463d9 +
+       ddba223), pass-34 LOW /about voting bridge sentence
+       (fa82be4 + 76e5cf7), pass-34 LOW best-finales 'final X'
+       template (f657a80 + e15f553), pass-35 HIGH best-finales
+       #02 'first all-returnee' factual claim (4ae8c35 + 9cfd0a5),
+       pass-35 MED meth_who_p plural-voice ticks 1–5 of 9 (the
+       in-flight content-curator drain across canon files —
+       Survivor + Drag Race + Amazing Race + Top Chef + Project
+       Runway, each tick paired audit:/content: as the standard
+       drain shape). Six fix/audit pairs and a 5-tick in-flight
+       multi-show drain; no row carried over.
+     - CRITIQUE.md: 10 actionable Pending rows + 1 format
+       placeholder. Five from pass 35 (1 LOW final-tribal beat
+       repetition still pending after 'final X' template
+       rotation, 4 remaining ticks of the meth_who_p plural-voice
+       drain already in flight) and 5 from pass 36 (just shipped
+       this window): (1) [MED, authed] HvV community-vote-state
+       cross-surface label disagreement (ShiftCard vote-count
+       vs canon-ladder 7d-rank-delta vs VotePair net-votes on
+       adjacent hops — three mechanics, three numeric framings
+       of the same canonical fact); (2) [LOW, anon] canon-revised
+       label drift across home/`/shows`/`/shows/[show]` (`CANON
+       REVISED` vs `LAST REVISED` vs eyebrow drift); (3) [LOW,
+       authed] /shows S-tier hero-lede vs S-group-header
+       subtitle vocabulary swap; (4) [LOW, anon] /themes
+       featured-this-month CTA drift (`read the list →` vs
+       `read →` vs `read →` across three sibling cards);
+       (5) [MED, anon] /themes/best-finales hero framing vs
+       /themes index card framing diverge (two unrelated
+       editorial descriptions of the same list); (6) [MED, anon]
+       /themes/best-finales body openers reach for `endgame`
+       (3 of 7) + `closing run` (2 of 7) as fallback for
+       `finale` on a list whose subject IS finales; (7) [MED,
+       authed] /u/[handle] SSR meta-description third-person vs
+       body second-person voice mismatch; (8) [LOW, authed]
+       HvV comment-thread input prompt + empty-state affordance
+       stacking without separator; (9) [LOW, anon]
+       /themes/best-finales two consecutive Survivor entries
+       (#02 HvV, #04 WaW) end second sentence on near-identical
+       `final tribal` verb-object beat. Cluster analysis: rows
+       (5)(6)(9) are all best-finales editorial-drift surfaces
+       and reinforce candidate #13 (CLICHE_REPETITION_STRICT, score
+       6.0) — (6) is a literal new registry seed (`endgame` /
+       `closing run` cross-entry rather than cross-corpus), (9) is
+       the within-page sibling-beat repetition shape candidate #13's
+       extensible registry can absorb, (5) is a hero/index framing
+       drift the named-entity-fidelity invariant noted in pass 18
+       conceptually nests inside #13. Rows (2)(3)(4) are the
+       cross-surface label/vocabulary drift class noted in pass 18
+       (`/themes` lede ↔ hero stat; canon-revised label) — still
+       3 LOW surfaces, still below the multi-signal triangulation
+       bar, still nests inside candidate #13's positive-fidelity
+       registry shape. Rows (1)(7)(8) are heterogeneous
+       single-component fixes (vote-state label alignment,
+       SSR-vs-body voice gating, comment-thread affordance
+       separator). Each is single-tick `/iterate` shape; no
+       cluster ≥3 HIGH on the same family, no class-pattern
+       beyond what candidates #11/#12/#13 already articulate.
+     - GitHub issues: 3 open, 0 unlabeled. #329
+       (loop:opened, meth_who_p plural-voice — the in-flight
+       drain), #150 (triage:reviewed, past cloud crash) + #148
+       (triage:needs-user, march.yml coverage-gate wiring still
+       blocked on cloud GitHub App's missing `workflows` scope).
+       Backlog unchanged structurally; #329 is the current drain
+       row, not a new structural signal.
+     - spec.md + design/: no diffs since pass 9 (last spec.md
+       touch 2026-05-16 — `3ac0b42` phase 33a consolidation).
+       The brand/voice/contract surfaces stable for 21 days.
+     - Commit pattern: 20 commits since pass 22 — 2 critique
+       passes (35 8157fef, 36 998d1b2), 5 critique/audit drain
+       pairs on pass-34/35 polish (`final X` template, voting
+       bridge sentence, doubled `one`, best-finales factual
+       claim, HvV watch_list `cold-open` swap), 5 meth_who_p
+       drain ticks (Survivor → Drag Race → Amazing Race → Top
+       Chef → Project Runway, each audit:/content: pair, 4 more
+       to go). All anticipated drains from already-shipped
+       phases or open critique pickups; no rogue refactor
+       surface, no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) +
+       #13 (editorial-cliché repetition guard, score 6.0) all
+       still await /oversight promotion. Pass 36 (this window's
+       fresh critique) adds two more registry seeds to #13's
+       envelope (`endgame`/`closing run` cross-entry, `final
+       tribal` sibling-beat) — reinforces the candidate's
+       within-page extension shape but does not warrant a fresh
+       candidate. #03 (Newsletter, score 3.0) still gated on
+       S1 (domain swap). No new candidate filed this pass.
+
+     Zero real structural candidates this pass. The ten pending
+     critique rows split four ways: 4 in-flight meth_who_p
+     drain ticks (single class, lax invariant already in
+     `scripts/content-check.ts:1325-1361`, strict flip lined up
+     after tick 9 — the candidate pattern in action), 3
+     candidate-#13-class editorial drift surfaces (cross-entry +
+     within-page phrase repetition + hero/index framing
+     mismatch — all reinforce #13, all nest in its extensible
+     registry rather than warranting a sibling), 3 cross-surface
+     label drift LOWs (still below multi-signal triangulation
+     bar, still nest in #13's positive-fidelity registry shape),
+     3 heterogeneous single-component fixes (vote-state label,
+     SSR-vs-body voice, comment-thread separator). The §3.1
+     "real demand vs model imagination" test still favors
+     letting candidates #11/#12/#13 promote before filing a
+     fourth on overlapping shapes. Next tick: `/iterate` picks
+     up the highest-scoring pending critique row (likely the
+     pass-36 MED HvV community-vote cross-surface label
+     disagreement or another meth_who_p drain tick). -->
 
 <!-- Pass 19 (2026-06-03, commit 8f6035e) — 0 candidates filed.
      Signals reviewed:
