@@ -23,7 +23,7 @@ entries:
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
-    title: "The first all-returnee season closing on a final tribal that reads like a verdict."
+    title: "The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era."
     blurb: "The endgame compounds — every conversation freighted with everything Survivor had been by 2010. The jury vote reads as a summary statement for the entire returnee era the show was about to enter."
   - show: top-chef
     season: 6

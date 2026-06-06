@@ -1396,6 +1396,74 @@ export function collectWatchListPhraseRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-35 HIGH (issue #328): a themed-list entry whose
+// `title` or `blurb` claims the named show+season is the **first**
+// all-returnee / all-star / returnee outing must agree with the
+// site's known first-of-class allowlist. /themes/best-finales #02
+// (Survivor S20 Heroes vs. Villains) shipped the title `The first
+// all-returnee season closing on a final tribal that reads like a
+// verdict.` — HvV is the SECOND all-returnee Survivor season;
+// Survivor S8 All-Stars (2004) was the first, and the show's own
+// canon names that on the adjacent /shows/survivor surface (entry
+// `## 8. All-Stars` tag: "The first returnee season — historic,
+// uneven, foundational..."). One hop deep, the themed-list claim
+// contradicted the canon. The HvV literal is rewritten in this
+// commit (drops the factual error, preserves the `final tribal
+// that reads like a verdict` simile); this invariant is the floor
+// that catches a future authoring pass making the same class of
+// `first <returnee>` claim against a show/season that isn't the
+// allowlisted first-of-class.
+const FIRST_RETURNEE_CLAIM_RE =
+  /\bfirst\b[^.]{0,40}?(all-returnee|all[ -]star|returnee)\b/i
+// Allowlist of (show, season) entries whose "first <returnee|all-star|
+// all-returnee>" claim is editorially truthful — either a genuine
+// first-of-class for that show, or a qualified/scoped first (e.g.,
+// "first all-star house in fourteen years"). A new entry that makes
+// this class of claim must either match an allowlist row or rewrite
+// the claim off the "first" frame; expanding this allowlist requires
+// the entry's editorial justification to be checked against the
+// show's own canon on the adjacent /shows/<show> surface.
+const FIRST_ALL_RETURNEE_ALLOWLIST: Record<string, number[]> = {
+  // Survivor S8 All-Stars (2004) — the franchise's first all-returnee
+  // season; canon entry `## 8. All-Stars` tag names it explicitly.
+  survivor: [8],
+  // Big Brother S7 All-Stars (2006) — the franchise's first all-star
+  // season (BB22 was the second). Big Brother S22 (2020) carries the
+  // qualified-first claim "first all-star house in fourteen years",
+  // editorially truthful as a windowed first.
+  'big-brother': [7, 22],
+  // Amazing Race S11 All-Stars (2007) — the franchise's first
+  // all-returnee race.
+  'amazing-race': [11],
+}
+
+export function collectThemeFactualFirstClaimIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    const themeFile = `content/themes/${theme.slug}.md`
+    for (const entry of theme.entries) {
+      const flagged =
+        FIRST_RETURNEE_CLAIM_RE.test(entry.title) ||
+        FIRST_RETURNEE_CLAIM_RE.test(entry.blurb)
+      if (!flagged) continue
+      const allowedSeasons = FIRST_ALL_RETURNEE_ALLOWLIST[entry.show]
+      if (allowedSeasons && allowedSeasons.includes(entry.season)) continue
+      const claimSurface = FIRST_RETURNEE_CLAIM_RE.test(entry.title)
+        ? 'title'
+        : 'blurb'
+      const allowText =
+        allowedSeasons
+          ? `show "${entry.show}" is allowlisted as first-of-class at season(s) ${allowedSeasons.join(', ')}, but this entry names season ${entry.season}`
+          : `show "${entry.show}" is not allowlisted as first-of-class for the returnee/all-star class`
+      issues.push({
+        file: `${themeFile} (entry #${entry.rank} ${claimSurface})`,
+        message: `themed-list entry makes a "first <returnee|all-star|all-returnee>" claim but ${allowText}. /themes/best-finales #02 (Survivor S20 HvV) shipped this defect class — HvV is the SECOND all-returnee Survivor season; All-Stars (S8) was the first, and the show's own canon names it on the adjacent /shows/survivor surface. A factual claim one hop from the source canon that names the truth is the failure class brand promise commits the product against. Rewrite the claim off the "first" frame (preserve any load-bearing simile), or — if the show genuinely was first-of-class for the returnee/all-star format — extend FIRST_ALL_RETURNEE_ALLOWLIST in scripts/content-check.ts with the new show+season. See plan/CRITIQUE.md pass-35 / issue #328.`,
+      })
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -1689,6 +1757,23 @@ function main(): number {
     failures.push(...seasonEyebrowCalendarIssues)
   } else {
     for (const issue of seasonEyebrowCalendarIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-35 HIGH (issue #328): ships strict at floor 0 —
+  // the /themes/best-finales #02 title rewrite (this commit) drains
+  // the only offender in the corpus. The invariant is the floor that
+  // catches a future authoring pass making a "first <returnee|
+  // all-star|all-returnee>" claim against a show+season that isn't
+  // the allowlisted first-of-class. One-line toggle mirroring the
+  // strict invariants above.
+  const THEME_FIRST_CLAIM_STRICT = true
+  const themeFirstClaimIssues = collectThemeFactualFirstClaimIssues()
+  if (THEME_FIRST_CLAIM_STRICT) {
+    failures.push(...themeFirstClaimIssues)
+  } else {
+    for (const issue of themeFirstClaimIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

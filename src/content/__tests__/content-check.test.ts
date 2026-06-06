@@ -21,6 +21,7 @@ import {
   collectThemeDeckBodyOpenerDivergenceIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
+  collectThemeFactualFirstClaimIssues,
   collectThemeFailures,
   collectWatchListPhraseRepetitionIssues,
   collectYearTenureIssues,
@@ -3764,5 +3765,185 @@ ${sixtyWords}
     // side; the only purely content adjacency is none — pure stopword
     // chains do not trip the gate.
     expect(collectWatchListPhraseRepetitionIssues()).toEqual([])
+  })
+})
+
+// Critique pass-35 HIGH (issue #328): themed-list entries that claim
+// the named show+season is the "first" all-returnee / all-star /
+// returnee outing must agree with the site's known first-of-class
+// allowlist. The HvV title rewrite drains the only offender in the
+// corpus; this suite pins the floor.
+describe('content-check — themed-list factual "first" returnee/all-star claim (critique pass-35, issue #328)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-first-claim-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeThemeWithEntryText(
+    root: string,
+    slug: string,
+    entry: {
+      show: string
+      season: number
+      rank?: number
+      title: string
+      blurb: string
+    },
+  ): void {
+    const file = path.join(root, 'themes', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-06-06
+featured: false
+description: "${slug}"
+entries:
+  - show: ${entry.show}
+    season: ${entry.season}
+    rank: ${entry.rank ?? 1}
+    title: "${entry.title.replace(/"/g, '\\"')}"
+    blurb: "${entry.blurb.replace(/"/g, '\\"')}"
+---
+`,
+    )
+  }
+
+  it('passes at the live catalog (no offending "first all-returnee" claim after the HvV rotation)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeFactualFirstClaimIssues()).toEqual([])
+  })
+
+  it('flags the historical defect — the original HvV title naming HvV as the first all-returnee season', () => {
+    makeShow(tmp, 'survivor')
+    makeSeason(tmp, 'survivor', 20, 'heroes-vs-villains', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'survivor',
+      season: 20,
+      rank: 2,
+      title:
+        'The first all-returnee season closing on a final tribal that reads like a verdict.',
+      blurb:
+        'The endgame compounds — every conversation freighted with everything Survivor had been by 2010.',
+    })
+    const issues = collectThemeFactualFirstClaimIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/themes/best-finales.md (entry #2 title)',
+    )
+    expect(issues[0]!.message).toMatch(/first <returnee\|all-star\|all-returnee>/)
+    expect(issues[0]!.message).toMatch(/allowlisted as first-of-class at season\(s\) 8/)
+    expect(issues[0]!.message).toMatch(/issue #328/)
+  })
+
+  it('passes for the allowlisted first-of-class entry (Survivor S8 All-Stars)', () => {
+    makeShow(tmp, 'survivor')
+    makeSeason(tmp, 'survivor', 8, 'all-stars', {})
+    makeThemeWithEntryText(tmp, 'best-returnees', {
+      show: 'survivor',
+      season: 8,
+      rank: 1,
+      title:
+        'The first all-returnee season — historic, uneven, foundational to every returnee run after.',
+      blurb: 'The franchise reaches for the all-star format too early and writes the blueprint anyway.',
+    })
+    expect(collectThemeFactualFirstClaimIssues()).toEqual([])
+  })
+
+  it('flags a "first all-star" claim on a non-allowlisted show', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 5, 'allstars', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 5,
+      rank: 1,
+      title: "The first all-star season the format ever tried.",
+      blurb: 'Body copy unrelated to the claim.',
+    })
+    const issues = collectThemeFactualFirstClaimIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/not allowlisted as first-of-class/)
+  })
+
+  it('flags the claim when it appears in the blurb rather than the title', () => {
+    makeShow(tmp, 'survivor')
+    makeSeason(tmp, 'survivor', 20, 'heroes-vs-villains', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'survivor',
+      season: 20,
+      rank: 2,
+      title: 'A clean editorial title.',
+      blurb:
+        'Heroes vs. Villains is the first all-returnee season the franchise produced — the closing run pays it off.',
+    })
+    const issues = collectThemeFactualFirstClaimIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/themes/best-finales.md (entry #2 blurb)',
+    )
+  })
+
+  it('passes for the rewritten HvV title (no "first" anywhere near the returnee/all-star tokens)', () => {
+    makeShow(tmp, 'survivor')
+    makeSeason(tmp, 'survivor', 20, 'heroes-vs-villains', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'survivor',
+      season: 20,
+      rank: 2,
+      title:
+        'The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era.',
+      blurb: 'The endgame compounds — every conversation freighted with everything Survivor had been by 2010.',
+    })
+    expect(collectThemeFactualFirstClaimIssues()).toEqual([])
+  })
+
+  it('is case-insensitive (catches a Title Case future authoring pass)', () => {
+    makeShow(tmp, 'survivor')
+    makeSeason(tmp, 'survivor', 20, 'heroes-vs-villains', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'survivor',
+      season: 20,
+      rank: 2,
+      title:
+        'The First All-Returnee Season Closing On A Final Tribal That Reads Like A Verdict.',
+      blurb: 'Body copy.',
+    })
+    const issues = collectThemeFactualFirstClaimIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('does not flag a sentence where "first" is far from the returnee token', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 5, 'allstars', {})
+    makeThemeWithEntryText(tmp, 'best-finales', {
+      show: 'alpha',
+      season: 5,
+      rank: 1,
+      title:
+        'The first leg sets the tone, and the back half holds the line on every returnee debate.',
+      blurb: 'Body copy.',
+    })
+    // "first leg" is followed by ~70 chars before "returnee" — outside
+    // the 40-char window the regex bounds. Not flagged.
+    expect(collectThemeFactualFirstClaimIssues()).toEqual([])
   })
 })
