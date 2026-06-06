@@ -6,7 +6,7 @@ category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-06-06
 featured: true
 related:
   - best-returnees
@@ -17,7 +17,7 @@ entries:
     season: 7
     season_label: "S07"
     rank: 1
-    title: "A final leg that proves the format's live sprint is built right."
+    title: "Season 7's last leg proves the format's live sprint is built right."
     blurb: "The Race always ends on a foot race to the mat, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. The final leg lands every beat — navigation calls, cab-driver desperation, the photo finish."
   - show: survivor
     season: 20
@@ -47,12 +47,12 @@ entries:
     season: 6
     season_label: "S06"
     rank: 6
-    title: "A final lip-sync that pays off a finale built on craft."
+    title: "The crown coronation pays off a finale built on craft."
     blurb: "Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The crown coronation lands a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
     season_label: "S10"
     rank: 7
     title: "The endgame where the modern alliance game finally takes itself seriously."
-    blurb: "The season that taught Big Brother its strategic vocabulary closes on a finale built for it. The final stretch rewards the alliance play the summer spent building — a closing run sharp enough to hold against every era that followed it."
+    blurb: "The season that taught Big Brother its strategic vocabulary closes on a finale built for it. The closing run rewards the alliance play the summer spent building — sharp enough to hold against every era that followed it."
 ---
