@@ -1,10 +1,10 @@
 # CRITIQUE
 
-> Last pass: 2026-06-06 at commit e15f553
-> Pass count: 35
+> Last pass: 2026-06-06 at commit 29baa5b
+> Pass count: 36
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 35 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 36 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed). Both anon (7 URLs: `/`, `/shows`, `/shows/survivor`,
 > `/shows/survivor/season/heroes-vs-villains`, `/themes`,
@@ -17,89 +17,93 @@
 > requests, all 200s, all H1s present, all `scrollWidth ===
 > innerWidth` at 375px). The `net::ERR_ABORTED` walker artifacts
 > on the authed walk at `/u/e2e` teardown are the same
-> known-false-positive class dropped on passes 6–11, 29–34
+> known-false-positive class dropped on passes 6–11, 29–35
 > (Next.js aborts in-flight `<Link prefetch>` payloads at page
 > teardown). Self-assessment dropped four reader candidates that
 > did not survive verification: (a) [MED] /themes hero math
 > `9 in the index, 3 featured this month — 12 we'd defend in a
-> group chat` flagged as broken arithmetic by both readers — but
-> the math is correct: featured (3) and indexed (9) are
-> **disjoint** sets, summing to 12 total; the pass-22 #261 +
-> pass-23 #263 + pass-28 split-reveal sequence already addressed
-> the comprehension-stumble layer, with the
-> `ListsHero.test.tsx` `featured + index sums to the catalog
-> total (split invariant)` case pinning the current state; the
-> categorized `All lists` section labeled `ALL 9 IN THE INDEX`
-> deliberately excludes the 3 featured (which sit in their own
-> rail above) so the math `9 + 3 = 12` works as authored, with
-> the lede prose `Some span the catalog, one stays inside a
-> single show.` (post-pass-34 #324 rotation) carrying the
-> referent split. Re-filing would re-litigate three closed
-> rotations. (b) [LOW] HvV thread bait line `No plot, no winners,
-> no twists →` arrow without destination — taste call; the arrow
-> is in-card editorial-rule chrome reinforcing the spoiler
-> promise inside the thread surface, not a navigation
-> affordance; the bullet runs as one of three spoiler-promise
-> echoes (chrome shield + footer + thread) the brand uses
-> structurally; not a fresh defect class. (c) [LOW] Survivor
-> featured cover-sub on home doesn't follow the `N seasons.
-> [editorial line].` tile cadence the secondary tiles use — the
-> `card_tagline` editorial split is by design per CLAUDE.md
-> (featured surface gets the longer `card_tagline`, tile
-> surfaces get the short `blurb`); not a fresh defect class. (d)
-> [LOW] HvV `OPENER · COLD OPEN` eyebrow label survives after
-> pass-34 #325 dropped `cold-open` from `watch_list[3]` body —
-> the eyebrow is a category-label chrome surface (the watch_list
-> entry's structural kicker), not the body-copy surface
-> pass-34 addressed; the body for watch_list[0] reads `opening
-> shot`, no doubled `cold open` in the body itself. Also dropped
-> from the reader's broader observation set: `@e2e` H1 = chrome
-> handle on /u/e2e (settled at pass-22 #262), home brand-block
-> CTAs missing `→` (intentional — `btn-primary` + `btn-ghost`
-> are full buttons), profile `Member since May 2026` (correct —
-> test account predates the cookie mint), canon-ladder
-> `↑ 1 / #02` vs ShiftsRow `+5 spots / now #02` (different time
-> windows: 7d trend vs weekly delta — already filed Pending MED
-> from pass-34 #326). Five findings filed (1 HIGH, 1 MED, 3 LOW):
-> (i) [HIGH] [authed] /themes/best-finales #02 (Survivor S20
-> Heroes vs. Villains) title claims `The first all-returnee
-> season closing on a final tribal that reads like a verdict.`
-> Factually wrong — Survivor: All-Stars (S8, 2004) was the
-> first all-returnee season; HvV (S20, 2010) was the second.
-> The show's own canon at /shows/survivor explicitly tags `## 8.
-> All-Stars` as `The first returnee season — historic, uneven,
-> foundational to every returnee season after.` and frames HvV
-> as `the all-star format running at its ceiling` — the
-> contradiction sits one click away on a flagship list.
-> (ii) [MED] [anon] Per-show canon-methodology cell `01 · WHO`
-> body on 9 of 13 shows renders plural-collective editor voice
-> (`tiered.tv's editors. We've watched ... We aren't claiming
-> to be objective. We are trying to be honest.`). The
-> component's own DEFAULT meth_who_p body literally reads `we
-> will tell you who, and we will not hide behind plural
-> pronouns` — every per-show override breaks the default's
-> promise. /about admits `Built and operated by one person.`
-> Same defect class as pass-34 #322 (cross-surface byline
-> drift, HIGH, RESOLVED) but on the methodology-cell surface
-> the resolution didn't reach.
-> (iii) [LOW] [anon] /shows hero stat label `LAST REVISION`
-> drifts from home featured Survivor tile + /shows/survivor
-> hero, both of which read `CANON REVISED` for the same
-> structural slot — two label grammars (noun vs verb-past) for
-> what looks like the same metadata across the natural click
-> path.
-> (iv) [LOW] [authed] /shows S-tier framing carries a
-> cross-block vocabulary swap: hero lede `The S tier invented
-> or perfected its format.` (mechanical structure) vs S group
-> header `The shows that invented or perfected their genre.`
-> (category). The eyebrow `S · FORMAT-DEFINING` above the
-> block already pins `format`; the block subtitle drifts to
-> `genre` for the same idea.
-> (v) [LOW] [anon] /themes featured-this-month section uses
-> inconsistent CTA copy across three visually-identical
-> sibling cards: card 1 `read the list →` vs cards 2 + 3
-> `read →`. First-card-different reads as accident, and the
-> bare `read →` leaves the verb dangling without a noun.
+> group chat` flagged again as broken arithmetic by the anon
+> reader — the math IS correct (featured 3 + indexed 9 = 12
+> total, disjoint sets); pass-35's metadata already explained
+> this drop and named the pass-22 #261 + pass-23 #263 +
+> pass-28 split-reveal + pass-34 #324 closures pinning the
+> current state. Second mistaken refile in two passes — leaving
+> the calling-out at the metadata layer for the next pass's
+> reader prompt to absorb. (b) [MED] /u/e2e H1 `Your record`
+> instead of `@e2e` — already settled at pass-22 #262; the H1
+> on /u/[handle] is in fact `@<handle>`, the reader misread the
+> visual hierarchy (the `Your record` text is the eyebrow / page
+> kicker, not the H1). (c) [LOW] /u/e2e `Member since May 2026`
+> static — correct, test account predates the cookie mint;
+> pass-35 also dropped this. (d) [LOW] /shows/survivor/season/
+> heroes-vs-villains mobile `ON THIS PAGE / 6 SECTIONS` sub-label
+> vs desktop `ON THIS PAGE` — deliberate mobile-only count cue
+> for a TOC that mobile users see collapsed; not a chrome
+> inconsistency. (e) [LOW] header `Sign out` inline placement
+> without popover — subjective affordance call on a
+> minimalist-by-design chrome; the brand commits to plain-text
+> chrome over menu-driven chrome. Also dropped from the reader's
+> set: HvV community-vote-state drift across three surfaces
+> (already pending pass-34 #326), per-show meth_who_p plural-voice
+> drain in flight (pass-35 #329, currently tick 5 of 9, voice on
+> /shows/survivor `02 HOW / 03 WHEN` blocks still plural — known,
+> the drain addresses one show's full row per tick by design).
+> Five findings filed (3 MED, 2 LOW):
+> (i) [MED] [anon] /themes/best-finales detail-page hero lede
+> (`These finales land the season they were always making —
+> texture intact, stakes earned, the last hour built at the size
+> it needed.`) and the /themes index card + / home featured-strip
+> card for the same list (`Closing runs that pay off the season
+> they spent a dozen episodes building. The stakes feel earned,
+> the last hour sits at the right altitude, and nothing gets
+> handed over for free.`) describe one list with two unrelated
+> editorial framings. Same `last hour` clause anchors both but
+> lands at different metaphors. A click from /themes or the home
+> featured-strip lands on a detail hero that rewrites — not
+> expands — the card promise. Cross-surface-promise-drift class
+> at the card-vs-detail-hero seam (same axis as pass-35 #324 but
+> across page families).
+> (ii) [MED] [anon] /themes/best-finales body openers across
+> seven entries rotate `endgame` (3 of 7: #02, #03, #05) and
+> `closing run` (2 of 7: #04, #07) as templated rewrites for
+> `finale` — on a list whose subject IS finales. Hero lede also
+> opens on `closing run`. Five of seven entries plus the hero
+> dodging the title noun with two stock substitutes reads as
+> templated rather than authored. Same defect class as pass-34
+> `final X` title template (RESOLVED), now at the body-opener
+> layer the prior fix did not sweep.
+> (iii) [MED] [authed] /u/[handle] page carries a voice mismatch
+> between the SSR meta description (third-person, written about
+> a stranger: `A reader on tiered.tv. Nothing on the public
+> record yet.`) and the body copy (second-person, addressing the
+> signed-in owner: `Your record` + `Cast one vote and your record
+> starts writing itself.`). When the owner shares their own URL
+> or sees an OG preview to themselves, the description speaks
+> about them as if a third party is looking at them. Same
+> defect-class family as pass-26 #282 + pass-27 #287 + pass-32
+> #311 + pass-34 #322 + pass-35 #329 cross-surface editorial-
+> voice work — chrome-vs-body axis at the /u/[handle] surface,
+> narrower scope. Fix: branch description on owner-vs-stranger.
+> (iv) [LOW] [authed] /shows/survivor/season/heroes-vs-villains
+> comment thread in the signed-in view stacks the live input
+> (`Add a thought · no spoilers, please. / as @e2e / ⏎`) and
+> the empty-state line (`No comments yet. Be the first to weigh
+> in.`) without a connecting line. The empty-state invites
+> someone who hasn't been invited yet — but the input above
+> already invited them. Anon view legitimately needs the empty-
+> state (no input to lean on); authed view doesn't. Phase 36
+> shipped the read path + held-for-review affordance but did
+> not gate the standalone empty-state on viewer auth-state.
+> (v) [LOW] [anon] /themes/best-finales two consecutive Survivor
+> entries (#02 HvV, #04 Winners at War) both terminate their key
+> sentence on a `final tribal` verb-object beat (#02 lede `closing
+> on a final tribal that reads like a verdict`; #04 body `the
+> final tribal carries the weight of a roster that has played
+> this game before`). The other five entries each close on a
+> distinct structural beat — only the two Survivor entries share
+> the close. Pass-32 #314 rotated #02's body off a doubled `final
+> tribal`; the cross-entry repetition with #04 wasn't in scope at
+> the time.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -829,6 +833,11 @@
 - [ ] [LOW] [anon] Chrome metadata label drifts across surfaces for the canon-revision-date slot on the natural home → /shows → /shows/[show] click path. Home featured Survivor tile labels the slot `CANON REVISED` (verb-past). /shows/survivor hero stat strip also labels it `CANON REVISED`. /shows hero stat strip labels what reads visually as the same structural slot — third metadata tile under the hero, format `<number> <month-year> <label>` — as `LAST REVISION` (noun). A reader scanning the chrome across the click path reads two different label grammars in the same visual slot. The /shows referent IS technically different (the multi-show index's last revision, not a single canon's revision), but the chrome doesn't signal that semantic distinction — the two labels just disagree. The slot reads identically structurally: stat number + month-year + label, set in the same hero stat-strip pattern. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); a peer commits to one label grammar and uses it across siblings. Same chrome-label-drift class as the pass-21 stat-strip captions sweep (RESOLVED, multi-tick), now at the revision-label sub-tile. Source: home featured tile renders `50 SEASONS RANKED / May 2026 / CANON REVISED`; /shows hero renders `13 SHOWS TRACKED / 298 SEASONS RANKED / May 2026 / LAST REVISION`; /shows/survivor hero renders `50 SEASONS RANKED / May 2026 / CANON REVISED`. Fix options: (a) **primary path — standardize on the verb-past form across all three surfaces**: `CANON REVISED` on show pages, `INDEX REVISED` on /shows. Single-component edit on the /shows hero stat-strip. Preserves the verb-past punch the show-page labels already carry; names the semantic referent (the index, not a canon) on the /shows surface. (b) **alternative — standardize on the noun form `LAST REVISION` across all three surfaces.** Loses the verb-past punch and the show-page-specific semantic (`CANON REVISED` names what's revised; `LAST REVISION` is generic). (c) **alternative — leave as-is** — accept that careful readers will reconcile two grammars. Recommended (a) — single-component edit on the /shows hero, drops the noun-vs-verb-past drift, names the index referent explicitly. Pin: extend the colocated test on `/shows`'s hero stat-strip component (likely `src/components/shows/ShowsHero.tsx` or equivalent — verify path at fix-time) with a regression case asserting the third tile's label matches `/^INDEX REVISED$/` (verb-past, indexed referent), NOT `/^LAST REVISION$/`. Sibling positive: extend the /shows/survivor hero stat-strip colocated test with a positive case asserting the third tile's label matches `/^CANON REVISED$/` so the show-page surface doesn't drift back to the noun form. Spoiler discipline P0 intact (chrome label edit only; no per-season verdict change, no canon position change). (URL: /shows, source: critique-pass-35) — e15f553
 - [ ] [LOW] [authed] /shows page S-tier framing carries a cross-block vocabulary swap between hero lede and S-group header subtitle. Hero lede reads `Reality-TV canons, sorted not by personal taste but by how settled the ranking is. The S tier invented or perfected its format. The A tier has the deep canon and the years to defend it.` — uses `format` (the show's mechanical structure: rules, recurring beats, format-internal grammar). The S-group header one beat below reads `S · FORMAT-DEFINING / The shows that invented or perfected their genre.` — relabels the same tier with `genre` (the show's category: reality competition, cooking, dating). Format and genre are meaningfully distinct words; using both inside two lines of reading distance reads as drift, not craft. The eyebrow `S · FORMAT-DEFINING` above the block already pins `format` (the lede's word). The block subtitle drifts to `genre` for the same idea — the eyebrow says what kind of tier this is (format-defining), the subtitle softens to category-level claim (genre-defining), and the reader has to reconcile the two on the same scroll. The A-tier sub-header doesn't carry the same swap (`A · DEEP CANON / The shows with enough seasons and craft to defend a real ranking.` reads consistently with the hero's A-tier framing); the slip is S-tier-specific. Source: `/shows` hero lede vs S-group header subtitle. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); the same idea named two different ways in adjacent reading positions reads as drift, not craft. Fix options: (a) **primary path — replace `genre` with `format` in the S group header to mirror the hero + eyebrow**: `The shows that invented or perfected their format.` Preserves the eyebrow's `FORMAT-DEFINING` framing + the hero's precise mechanical claim. Single-word edit. (b) **alternative — replace `format` with `genre` in the hero**: `The S tier invented or perfected its genre.` Loses the precise mechanical claim the hero currently makes; the hero softens back to category-level framing. The eyebrow would still read `FORMAT-DEFINING` so the drift would surface at the eyebrow-vs-hero layer instead. (c) **alternative — leave as-is** — accept that careful readers will reconcile the two words. Recommended (a) — single-word edit, preserves the more precise word the hero already commits to, mirrors the eyebrow above the block. Pin: extend the colocated test on `/shows`'s S-tier section component (verify path at fix-time — likely `src/components/shows/ShowsTierGroup.tsx` or equivalent) with a regression case asserting both the hero lede AND the S-group header use `/format/i` rather than `/genre/i`; sibling positive on the A-tier framing asserting it stays on `/canon|years to defend/i` (no genre/format conflation either way). Spoiler discipline P0 intact (page-copy edit only; no per-show verdict change, no canon position change). (URL: /shows, source: critique-pass-35) — e15f553
 - [ ] [LOW] [anon] /themes featured-this-month section uses inconsistent CTA copy across three visually-identical sibling cards. Card 1 (Comebacks worth the swing) reads `read the list →`; cards 2 (Finales that stuck the landing) and 3 (Premieres that earned it) both read `read →`. The three cards sit in the same `src/components/lists/FeaturedCard.tsx` render via `ListsFeaturedRow.tsx`, frame identically (same bullet, same headings, same meta-strip, same border), so the first-card-different CTA reads as accident rather than editorial intent. The bare `read →` on cards 2 + 3 also leaves the verb dangling without a noun (read what? — the cards above carry a title but the CTA itself doesn't name its action target). Likely a per-card override (one of the three has a CTA-text frontmatter value the other two lack and fall back to a shorter default), or a render-side index condition. Source: /themes featured-this-month row, three card surfaces. Bearings voice cue is `knowledgeable peer — plain sentences over clever ones` (`plan/bearings.md:370`); three identical-visual cards expect identical-form CTAs; a peer commits to one form and uses it across siblings. Fix options: (a) **primary path — standardize on `read the list →` for all three featured CTAs**. Preserves the verb + noun structure; reads as a deliberate editorial choice across the three cards; the noun gives the reader's eye a target. Single render-side change (the source of the per-card variance, fixed at the FeaturedCard render or the per-list frontmatter field). (b) **alternative — standardize on `read →`** — terser, but loses the noun. Three bare-verb CTAs read as a stylistic choice; one verb + noun CTA followed by two bare-verb CTAs reads as drift. Acceptable if the verb-only form is the deliberate brand convention, but the current state isn't that. (c) **alternative — leave as-is** — accept the variance. Recommended (a) — single render-side change brings all three CTAs to the same form, matches the noun-bearing form already on card 1. Pin: extend the colocated test on `FeaturedCard.tsx` (or `ListsFeaturedRow.tsx` integration test) with a regression case asserting every rendered featured-card CTA matches the standardized form (`/^read the list →$/` after fix), bidirectional drift guard so a future authoring pass that drifts one card's CTA off the shared form fails at unit time. Spoiler discipline P0 intact (CTA-label edit only; no per-list verdict change, no canon position change). (URL: /themes, source: critique-pass-35) — e15f553
+- [ ] [MED] [anon] /themes/best-finales detail-page hero and the parent /themes index card (also surfaced on the / home card for the same list) describe the list with two unrelated editorial framings. The /themes index card + home featured-themes strip read `Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free.` The /themes/best-finales hero lede reads `These finales land the season they were always making — texture intact, stakes earned, the last hour built at the size it needed.` Same list, two different promises about why it exists: card framing is `spent a dozen episodes building` + `the last hour sits at the right altitude`; detail framing is `the season they were always making` + `the last hour built at the size it needed`. The only structural overlap is the `last hour` clause, which lands at a different metaphor in each (`sits at the right altitude` vs `built at the size it needed`). A first-time reader clicking from /themes or the home featured-strip lands on a detail hero that rewrites the promise they just read, rather than expanding it — same defect class as pass-35 #324 cross-surface lede drift on /themes (`Some span the catalog, one lives inside one show.` resolved-to-`one stays inside a single show`), now at the list-vs-list-detail seam rather than within /themes itself. Source: `content/themes/best-finales.md` `description` field (card text) vs `tagline` field (or hero lede source — verify at fix-time, likely the long-form `tagline` field that the list-detail hero quotes per phase 19f schema). Bearings voice cue (`plan/bearings.md:370`) is `knowledgeable peer — plain sentences over clever ones`; a peer commits to one framing per list and uses it across the click path, not two parallel editorials of the same idea on adjacent surfaces. Fix options: (a) **primary path — recast the detail hero as a deliberate expansion of the card description** so the click-through reads as one editor speaking once. Concrete shape: keep the card description as the establishing claim (`Closing runs that pay off the season they spent a dozen episodes building.`); rewrite the detail hero to open on the same nouns (`closing run`, `the last hour`) and extend the editorial point rather than restate it (e.g. `Closing runs that earn the season. The last hour sits at the altitude the show was building toward — texture intact, stakes earned, nothing handed over for free.`). Preserves the `last hour` clause both surfaces already share, drops the parallel-rewrite, keeps the editorial weight on the detail surface where the reader has the most time to read. Single content-file edit on `best-finales.md`. (b) alternative — recast the card description to match the detail hero. Loses the more verifiable claim the card already makes (the show spent a dozen episodes building toward this finale is a craft observation; the season `they were always making` is more abstract). (c) alternative — leave the two surfaces in parallel. Rejected — the click-path produces two different editorial promises for one list. Recommended (a) — single-source the framing on the card, expand on the detail page rather than rewrite. Pin: extend the colocated test on the themes-card / themes-hero components (likely `src/components/lists/ListTile.test.tsx` + `src/components/lists/ListHero.test.tsx`, verify paths at fix-time) with a cross-surface shared-noun assertion — for any list quoted by both the card and the detail hero, both surfaces must share at least one editorial noun-phrase (e.g. `last hour`, `closing run`); a regression where the two surfaces diverge on the load-bearing nouns fails at unit time. Sibling content-check invariant: in `scripts/content-check.ts`, scan each `content/themes/*.md` `description` + `tagline` field for a shared 2+ word noun-phrase between the two; lax-mode floor 1 initially, strict at floor 1 once the corpus drains the existing offenders. Spoiler discipline P0 intact (editorial prose edit only; no per-season verdict, no canon position, no winner / elimination / finale beat exposure on either surface). (URL: /themes, /themes/best-finales, /, source: critique-pass-36) — 29baa5b
+- [ ] [MED] [anon] /themes/best-finales body openers across the seven entries reach for `endgame` (3 of 7) and `closing run` (2 of 7) as the templated rewrite for `finale` — on a list whose subject IS finales. Verified shapes from the rendered detail page: #02 (Survivor S20 HvV) opens `The endgame compounds — every conversation freighted`; #03 (Top Chef Restaurant Wars) opens `Restaurant Wars takes the season into its endgame`; #04 (Survivor Winners at War) reads `pays back in the closing run`; #05 (Drag Race S2 Tyra-era — verify at fix-time) opens `The breakout season runs its endgame`; #07 (Big Brother Season X) reads `The closing run rewards the alliance play`. The hero lede itself also opens on `closing run` (`The closing run is where a season either pays off its promise...`). Five of seven entries (plus the hero) rotating between two synonyms for `finale` reads as the writer dodging the title noun rather than reaching for a fresh angle per entry. Same defect class as pass-34 LOW `final X` template (RESOLVED) — that finding addressed the title-noun template (`final tribal / leg / banishment / lip-sync`); this is the parallel defect at the body-opener layer the prior fix didn't sweep. The cross-entry voice elsewhere on the same list finds genuinely-different openers when the writer commits — #01 opens on Amazing Race's structural fact (`The Race always ends on a foot race...`); #06 opens on the season's pace (`Season 6 spends its run building toward a finale of working drag artists`). Those two prove the entries CAN open on something the synonym-rotation isn't covering. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer says `finale` in the body when the title is already framing the subject, then varies at the cast / staging / music / last-minute level rather than rotating between two stock substitutes. Fix options: (a) **primary path — rewrite 3 of the 5 offender openers** to vary at the sentence level (open on a structural fact, a cast beat, a staging beat, a music cue, a specific minute) instead of the noun level. Candidate rotations: #02 → `The endgame compounds` → `Eighteen returnees compress every old grudge into the last ninety minutes` (opens on cast scale + screen time, drops `endgame`); #04 → `pays back in the closing run` → `pays back in the last week of camp` (anchors to a verifiable structural beat, drops `closing run`); #05 → `runs its endgame the way the format always promised` → `runs the last four episodes the way the format always promised` (anchors to episode count, drops `endgame`). Preserves the editorial point per entry; drops the synonym-rotation tell. Each rewrite stays under the 50-80 word band per `themeEntryBody` in `src/content/schemas.ts:218-220`. Three lines touched in `content/themes/best-finales.md`. (b) alternative — let the body openers say `finale` directly when the entry warrants it. The title already framed the subject so the body can name it without redundancy. Smaller editorial change but reads as a deliberate plain-spoken choice. (c) alternative — leave as-is. Rejected — five of seven entries on a load-bearing themed list rotating between two substitutes reads as templated rather than authored. Recommended (a) — rewrites three of five offenders, leaves two intact (#03 `Restaurant Wars takes the season into its endgame` reads as deliberate `Restaurant Wars` callback + #07 `The closing run rewards the alliance play` reads as deliberate `closing run` rhythm with the alliance-play observation); drops the synonym-tic to a tolerable two-instance-per-list floor. Pin: extend `scripts/content-check.ts` `collectThemeBodyPhraseRepetitionIssues` (the within-list synonym-rotation invariant shipped at 1bc71ca for pass-28 #297) with a synonym-cluster check — for each theme, count occurrences of a known synonym-cluster (`{endgame, closing run, last act, final stretch}` for `finale`; cluster set extensible) across title + blurb + body fields; lax-mode warn at >= 4 occurrences across <= 7 entries (the current /themes/best-finales shape: 5 of 7 entries triggering); strict at floor 3. The cluster set lives next to the cross-page repetition floor the existing helper already maintains. Sibling colocated test extends `src/content/__tests__/content-check.test.ts` with three cases: clean list (no cluster hits), the current best-finales offender shape, and a multi-cluster fixture (proves the helper handles multiple clusters per pass). Spoiler discipline P0 intact (editorial prose edit only; no per-season verdict, no canon position, no winner / elimination / finale beat exposure on either surface). (URL: /themes/best-finales, source: critique-pass-36) — 29baa5b
+- [ ] [MED] [authed] /u/[handle] page carries a voice mismatch between the SSR meta description (third-person, written about a stranger) and the body copy (second-person, addressing the signed-in owner). Concrete observed shape on `/u/e2e` viewed as the signed-in owner: the `<head>` meta description reads `A reader on tiered.tv. Nothing on the public record yet.` while the body H1 + opening line read `Your record` + `New here. Cast one vote and your record starts writing itself.`. The two voices contradict on the user's own page: a viewer who shares their own profile URL (or sees a browser-tab preview / OG card preview to themselves) reads about themselves as if a third party is looking at them. The pass-22 #262 closure settled the H1 = handle question (the handle IS the chrome H1 anchor); the SSR meta description for `/u/[handle]` did not get the same self-vs-stranger branching pass. Same defect class as the pass-26 #282 + pass-27 #287 + pass-32 #311 + pass-34 #322 + pass-35 #329 cross-surface editorial-voice work — each prior closure brought one chrome surface into agreement with `/about`'s singular editorial promise; this is the chrome-vs-body axis at the same `/u/[handle]` surface, narrower scope. Source: SSR meta description for `/u/[handle]` (verify path at fix-time — likely `src/app/u/[handle]/page.tsx` `generateMetadata` returning a string-template description, no owner-vs-stranger branch). Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer doesn't speak about you to you in the same breath as speaking to you. Fix options: (a) **primary path — branch the `/u/[handle]` description on owner-vs-stranger viewer**. Owner view: mirror the body's second-person framing (`Your record on tiered.tv. Cast one vote to start writing it.`). Stranger view: keep the current third-person framing (`A reader on tiered.tv. Nothing on the public record yet.`). The branch reads off the request session's user-id vs the route's `[handle]` param — same shape as the chrome's `/api/auth/me` island already uses to render `Sign out` vs `Sign in`. (b) alternative — drop the per-state description entirely and use a single neutral form for both (`Reader profile on tiered.tv.`). Loses the editorial warmth `/about` and the body copy both commit to. (c) alternative — convert the body to third-person for self-view too. Loses the second-person warmth on the page where the reader sees themselves; reads as cold. Recommended (a) — mirrors the body voice when the viewer is the owner, preserves the current third-person framing for strangers (the path most readers will take); single `generateMetadata` branch. Pin: extend the colocated `src/app/u/[handle]/__tests__/page.test.tsx` (verify path) with two cases — (1) owner viewer: assert the rendered `<meta name="description">` content matches `/your record/i` AND the body content matches `/your record/i` (cross-surface positive parity); (2) stranger viewer: assert description matches `/a reader on tiered\.tv/i` AND body matches the third-person framing the page renders for non-owners (TBD at fix-time — `@e2e on tiered.tv` or similar). Bidirectional drift guard: a future refactor that re-converges the two views onto one description trips one of the two cases. Spoiler discipline P0 intact (chrome-meta edit only; no per-season verdict, no canon position, no winner / elimination / finale beat exposure on any surface). (URL: /u/e2e, /u/[handle] family, source: critique-pass-36) — 29baa5b
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-vs-villains comment thread stacks two affordances without a connecting line in the signed-in view. The live input prompts `Add a thought · no spoilers, please.` / `as @e2e` / `⏎`, then directly below — same column, no separator — the empty-state reads `No comments yet. Be the first to weigh in.` In the authed view the reader IS the would-be first commenter and the input is already in front of them; the empty-state instruction `Be the first to weigh in` is addressed at someone who hasn't yet been invited to comment, but the invitation just happened on the line above. Reads as two voices stacked: the input invites, the empty-state acts as if no invite was offered. The anon view (which renders `Sign in to comment` instead of a live input) needs the `No comments yet` line because there's no input to lean on — but the authed view already has the invitation built into the input affordance. Source: comment thread component at `/shows/[show]/season/[slug]` — likely `src/components/comments/Thread.tsx` or `CommentThreadEmpty.tsx` rendering an unconditional empty-state regardless of viewer auth-state. Phase 36 shipped the comment read path + the held-for-review affordance for the author's own pending comment, but the empty-state placement was not gated on viewer-can-post. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer doesn't invite you to comment in one breath then immediately tell you no one has commented in the next as if you weren't there. Fix options: (a) **primary path — gate the standalone empty-state on viewer auth-state** when the thread is empty AND the viewer can post (signed-in), suppress the standalone `No comments yet. Be the first to weigh in.` line. The input affordance already carries the invitation. When the thread is empty AND the viewer cannot post (anon), keep the empty-state — that's where it does work. Single conditional render in the thread component. (b) alternative — fold `Be the first to weigh in` into the input placeholder when the thread is empty AND signed-in (e.g. `Be the first thought · no spoilers, please.`). Carries the empty-state signal into the input but loses the cleaner default-state placeholder. (c) alternative — leave as-is. Rejected — the stacked affordances read as two voices not talking to each other. Recommended (a) — single conditional render, preserves both the input invitation in the authed view AND the empty-state nudge in the anon view, drops the doubled invitation. Pin: extend the colocated `src/components/comments/__tests__/Thread.test.tsx` (verify path) with two cases — (1) authed + empty: rendered DOM contains the input affordance and does NOT contain `/no comments yet/i`; (2) anon + empty: rendered DOM contains `/no comments yet/i` AND does NOT contain the live input. Sibling positive on non-empty case: when the thread has at least one published comment, neither empty-state nor input-invitation should render the `Be the first` framing on top of existing comments. Spoiler discipline P0 intact (empty-state gating only; no per-season verdict change, no canon position change, no spoiler-text exposure — the gate runs on comment count, not comment content). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-36) — 29baa5b
+- [ ] [LOW] [anon] /themes/best-finales two consecutive Survivor entries (#02 Heroes vs. Villains, #04 Winners at War) both end their second sentence on a `final tribal` verb-object beat with near-identical shape. Concrete observed shapes from the rendered detail page: #02 lede (post-pass-34 #322 + pass-32 #314 closure work) reads `The first all-returnee season closing on a final tribal that reads like a verdict.` — RESOLVED at pass-34 but the `final tribal` verb-phrase remains the closing beat; #02 body opener reads `The endgame compounds — every conversation freighted, every move read as both move and statement. The jury vote reads as a summary statement for the entire returnee era the show was about to enter.` (post-pass-32 #314 rotation away from `the final tribal lands like a summary statement`); #04 body second sentence reads `the final tribal carries the weight of a roster that has played this game before.` So two Survivor entries on the same list, two cards apart, both terminating their key sentence on a `final tribal` + verb-object pattern. The pass-32 #314 closure rotated #02's body OFF the second `final tribal` to a `jury vote` framing — the cross-entry repetition with #04 wasn't in scope at the time. Same defect class as the pending pass-32 #313 / pass-33 / pass-34 within-entry phrase-repetition family, now at the cross-entry-within-show-within-list axis. The other five entries on the list (#01 Amazing Race, #03 Top Chef, #05 Drag Race, #06 Drag Race, #07 Big Brother) each terminate on a different structural beat — only the two Survivor entries share the `final tribal` close. Source: `content/themes/best-finales.md` entries #02 (Survivor S20 HvV) blurb second sentence and #04 (Survivor S40 Winners at War) blurb second sentence. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer doesn't reach for the same exact two-word verb-object pattern twice in the same list at two cards' distance, especially when both entries belong to the same show. Fix options: (a) **primary path — rotate #04 off the `final tribal` close** to a beat the all-winner endgame actually produces. Candidate rotations: `the fire-making round carries the weight of a roster that has played this game before.` (anchors to a verifiable structural beat the all-winner endgame is known for); or `the jury room carries the weight of a roster that has played this game before.` (anchors to the deliberation surface, drops the close-vote framing); or `the immunity table carries the weight of a roster that has played this game before.` (anchors to the physical end-game surface). Each preserves the entry's editorial point (the roster's prior-play history loading the endgame); drops the doubled `final tribal` with #02. Single content-file edit on `best-finales.md` entry #04 blurb. (b) alternative — rotate #02 instead of #04, but #02 has already been through two rotation passes (pass-32 #314 + pass-34 #322); rotating it a third time risks editorial fatigue on a single entry. (c) alternative — leave as-is. Rejected — two Survivor entries on the same list both terminating on `final tribal` is a craft-level slip even if each in isolation reads fine. Recommended (a) — single edit on #04, preserves the more-worked #02 rotation, drops the cross-entry close-beat repetition. Pin: extend the existing `scripts/content-check.ts` `collectThemeBodyPhraseRepetitionIssues` invariant with a cross-entry-within-show check — for each theme, group entries by their referenced `show` slug and assert no two same-show entries' blurb fields share a 2+ word verb-object phrase. Catches the next instance of this class at author-time; same shape as the existing within-entry stem-pair check, narrower scope (same-show grouping). Initial floor: lax (the current best-finales offender shape would warn, not fail); strict at floor 0 once the corpus drains. Spoiler discipline P0 intact (editorial prose edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on either surface — `fire-making round` / `jury room` / `immunity table` are structural surfaces, not outcomes). (URL: /themes/best-finales, source: critique-pass-36) — 29baa5b
 
 <!-- Format:
 - [ ] [SEV] [anon|authed|jot] <one-line finding> (URL: <path>, source: <critique-pass-N|jot>) — <commit hash where filed>
