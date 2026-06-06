@@ -29,4 +29,41 @@ describe('<ShiftsRow>', () => {
     expect(eyebrow?.textContent ?? '').toMatch(/community/i)
     expect(eyebrow?.textContent ?? '').not.toMatch(/sentiment/i)
   })
+
+  // critique-pass-37 HIGH pin (#334): when the cross-target threshold
+  // is cleared but no per-season mover meets MOVER_VOTE_FLOOR, the
+  // page-level consumer passes `emptyMessage` instead of `cards` so
+  // the surface renders the heading + an editorial caption instead
+  // of arithmetic-noise cards. Preserves the surface's promise (live
+  // community signal) without publishing 5-spot swings on 1 ballot.
+  it('renders heading + editorial caption when emptyMessage is supplied without cards', () => {
+    render(
+      <ShiftsRow emptyMessage="Early signal — not enough votes yet to show a weekly mover." />,
+    )
+    expect(screen.getByTestId('shifts-row')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
+      /What changed this week/i,
+    )
+    expect(screen.getByTestId('shifts-empty')).toHaveTextContent(
+      /Early signal — not enough votes yet to show a weekly mover\./,
+    )
+    expect(screen.queryByTestId('shifts-cards')).not.toBeInTheDocument()
+  })
+
+  it('renders nothing when both cards and emptyMessage are absent (regression — bare canon-mirror mode is still dead space)', () => {
+    const { container } = render(<ShiftsRow />)
+    expect(container).toBeEmptyDOMElement()
+  })
+
+  it('prefers cards over emptyMessage when both are supplied (cards always win)', () => {
+    render(
+      <ShiftsRow
+        cards={<div data-testid="card">card</div>}
+        emptyMessage="Early signal — fallback that should NOT render."
+      />,
+    )
+    expect(screen.getByTestId('shifts-cards')).toBeInTheDocument()
+    expect(screen.getByTestId('card')).toBeInTheDocument()
+    expect(screen.queryByTestId('shifts-empty')).not.toBeInTheDocument()
+  })
 })

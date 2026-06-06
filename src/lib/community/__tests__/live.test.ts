@@ -5,6 +5,7 @@ import {
   communitySignalForSeason,
   formatLastRecompute,
   formatVersion,
+  MOVER_VOTE_FLOOR,
   moverNote,
   NEXT_RECOMPUTE_LABEL,
   pickMovers,
@@ -127,21 +128,36 @@ describe('pickMovers', () => {
   // with zero votes — a freshly-seeded season whose `trend` is a
   // recompute artifact (a new entry above pushes the field down by
   // one) is not a community-driven shift and cannot appear in the
-  // COMMUNITY RANK · UPDATED THURSDAY rail. Bidirectional: a
-  // one-ballot mover IS returned so the floor doesn't over-fire on
-  // small-ballot movers.
+  // COMMUNITY RANK · UPDATED THURSDAY rail.
   it('excludes zero-vote rows from the surface (recompute-artifact guard)', () => {
     const zero = row(50, 50, -38)
     zero.voteCount = 0
     expect(pickMovers([zero])).toEqual([])
   })
 
-  it('keeps a one-ballot mover (the floor is voteCount > 0, not a volume threshold)', () => {
-    const one = row(8, 8, -5)
-    one.voteCount = 1
-    const [mover] = pickMovers([one])
+  // critique-pass-37 HIGH pin (#334), supersedes the pass-33 one-
+  // ballot allow: the floor is now ≥ MOVER_VOTE_FLOOR distinct
+  // voters, not `voteCount > 0`. A 5- to 36-spot weekly swing on
+  // 1–2 ballots reads as arithmetic noise, not signal. Bidirectional
+  // pin — sub-floor rows are excluded; at-floor rows are admitted.
+  it('exposes MOVER_VOTE_FLOOR as the volume gate (≥ 5 ballots)', () => {
+    expect(MOVER_VOTE_FLOOR).toBe(5)
+  })
+
+  it('excludes sub-floor movers (1–4 ballots is low-N noise, not signal)', () => {
+    for (const v of [1, 2, 3, 4]) {
+      const r = row(8, 8, -5)
+      r.voteCount = v
+      expect(pickMovers([r])).toEqual([])
+    }
+  })
+
+  it('admits a mover at the floor (5 ballots is the minimum signal)', () => {
+    const r = row(8, 8, -5)
+    r.voteCount = MOVER_VOTE_FLOOR
+    const [mover] = pickMovers([r])
     expect(mover).toBeDefined()
-    expect(mover!.voteCount).toBe(1)
+    expect(mover!.voteCount).toBe(MOVER_VOTE_FLOOR)
   })
 })
 

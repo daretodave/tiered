@@ -208,6 +208,11 @@ export default async function ShowHomePage({
                 ))
               : undefined
           }
+          emptyMessage={
+            shiftMovers.length === 0 && community.source === 'votes'
+              ? 'Early signal — not enough votes yet to show a weekly mover.'
+              : undefined
+          }
         />
         <ShowRanking
           show={show}

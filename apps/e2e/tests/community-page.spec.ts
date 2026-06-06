@@ -126,12 +126,19 @@ test.describe('live community pane (votes cleared the threshold)', () => {
     // At least one row now carries a real approval percentage.
     await expect(list.locator('.cp-clr-pct').first()).toContainText('%')
 
-    // Phase 35 stage 3c: the "What changed this week." shifts row is
-    // snapshot-delta-driven. The hermetic DB seeds no >= 7d baseline
-    // snapshot, so even with live votes there is nothing to compare
-    // against — the surface stays absent (the design's intended empty
-    // behavior), it does not render an empty box.
-    await expect(page.getByTestId('shifts-row')).toHaveCount(0)
+    // Phase 35 stage 3c + critique-pass-37 HIGH (#334): with live
+    // votes in but no >= 7d baseline snapshot, pickMovers returns
+    // nothing (every trend is null). Now that the cross-target
+    // threshold IS cleared (source='votes'), the section renders
+    // the editorial empty-state caption rather than the cards —
+    // preserves the surface's promise without publishing arithmetic-
+    // noise verdicts. The `shifts-cards` slot stays absent.
+    await expect(page.getByTestId('shifts-row')).toHaveCount(1)
+    await expect(page.getByTestId('shifts-empty')).toBeVisible()
+    await expect(page.getByTestId('shifts-empty')).toContainText(
+      /Early signal — not enough votes yet to show a weekly mover\./,
+    )
+    await expect(page.getByTestId('shifts-cards')).toHaveCount(0)
 
     // Phase 35 stage 3d: the weekly-question card's meta is the
     // Supabase-derived trailing-7d tally + the honest close day. Once

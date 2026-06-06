@@ -60,11 +60,31 @@ for (const url of showHomeUrls) {
         await expect(seasonsStat.locator('.stat-key')).toHaveText(/seasons ranked/i)
       }
       await expect(page.getByTestId('bullet').first()).toBeVisible()
-      // Phase 37 nit 4: the 72-hour shift signal is unwired (phase 35),
-      // so the "What changed this week." section is absent entirely —
-      // no empty box, no stray rule.
-      expect(await page.getByTestId('shifts-row').count()).toBe(0)
-      expect(await page.getByTestId('shifts-empty').count()).toBe(0)
+      // Phase 37 nit 4 + critique-pass-37 HIGH (#334): the shifts
+      // section has two acceptable empty states in the e2e env.
+      // (1) canon-mirror mode (no votes seeded for this show): the
+      //     section is absent entirely (shifts-row absent, shifts-
+      //     empty absent).
+      // (2) live mode (a prior spec in the run seeded votes past
+      //     VOTE_THRESHOLD for this show — see community-page.spec.ts
+      //     for top-chef and ranking-api.spec.ts for the-challenge):
+      //     no baseline snapshot, so no mover qualifies, and the
+      //     section renders the editorial empty-state caption rather
+      //     than bare cards. shifts-row present, shifts-empty present,
+      //     shifts-cards absent.
+      // What is NOT acceptable on this fixture: rendering cards
+      // (which would mean MOVER_VOTE_FLOOR was bypassed). The picker
+      // floor is unit-pinned in live.test.ts; the caption is unit-
+      // pinned in ShiftsRow.test.tsx; this pin guards the end-to-end
+      // surface invariant.
+      const shiftsRowCount = await page.getByTestId('shifts-row').count()
+      if (shiftsRowCount === 0) {
+        expect(await page.getByTestId('shifts-empty').count()).toBe(0)
+      } else {
+        expect(shiftsRowCount).toBe(1)
+        await expect(page.getByTestId('shifts-empty')).toBeVisible()
+        expect(await page.getByTestId('shifts-cards').count()).toBe(0)
+      }
       await expect(page.getByTestId('shield-badge').first()).toBeVisible()
 
       // The consolidated ranking: root seeded canon (default view),

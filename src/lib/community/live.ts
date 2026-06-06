@@ -30,24 +30,37 @@ export type CommunityMover = {
   voteCount?: number
 }
 
+// Low-N noise floor for the mover ticker. Pass-37 HIGH (#334) found
+// pickMovers surfacing 5- to 36-spot swings each driven by one or
+// two ballots on /shows/survivor — arithmetic artifacts of a thin
+// pool, not signal. A peer doesn't publish a 36-spot weekly slide
+// on one accounted vote and call it "Plain. Restless. Honest." The
+// floor is volume, not direction: ≥ 5 distinct voters before a
+// season can appear in the COMMUNITY RANK · UPDATED THURSDAY rail.
+// Tunable; the initial value matches the threshold the critique
+// row named. Replaces the pass-33 `voteCount > 0` floor — that
+// floor caught the recompute-artifact case but admitted single-
+// ballot movers as confident ordinal verdicts.
+export const MOVER_VOTE_FLOOR = 5
+
 // The biggest absolute movers since the baseline snapshot, climbers
 // and fallers alike, strongest move first; ties broken by current
 // (better) rank. Holds and seasons absent from the baseline are
-// excluded — they did not move. Zero-vote rows are also excluded
-// (critique-pass-33 HIGH): a freshly-seeded season's `trend` is a
-// recompute artifact (a new entry above pushes the field down by
-// one), not a community-driven shift; surfacing it on the
-// COMMUNITY RANK · UPDATED THURSDAY rail reads as the math being
-// broken (the row's own `· 0 votes` grounding suffix exposes the
-// seam). The floor is `voteCount > 0`, so a single ballot still
-// qualifies — the rule is "no community signal at all," not "below
-// some volume threshold."
+// excluded — they did not move. Sub-floor rows are also excluded
+// (critique-pass-37 HIGH #334, supersedes pass-33 HIGH #316): a
+// 5- to 36-spot weekly swing on 1–2 ballots is an arithmetic
+// artifact of a thin vote pool, not a community-driven shift; the
+// floor lives at the picker (where the canon-vs-community decision
+// is made), not in the consumer.
 export function pickMovers(
   entries: CommunityRankRow[],
   limit = 4,
 ): CommunityMover[] {
   const moved = entries.filter(
-    (e) => e.trend != null && e.trend !== 0 && e.voteCount > 0,
+    (e) =>
+      e.trend != null &&
+      e.trend !== 0 &&
+      e.voteCount >= MOVER_VOTE_FLOOR,
   )
   moved.sort((a, b) => {
     const da = Math.abs(a.trend as number)
