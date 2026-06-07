@@ -104,13 +104,18 @@ export default function ThemesIndexPage() {
     <Wrap>
       <script {...jsonLdScriptProps({ id: 'ld-themes-index', data: ld })} />
       <ListsHero stats={stats} />
-      <ListsFilterController counts={counts}>
-        <ListsFeaturedRow featured={featured} showsByTheme={showsByTheme} />
-        <ListsAllSection
-          byCategory={byCategoryRest}
-          showsByTheme={showsByTheme}
-        />
-      </ListsFilterController>
+      <ListsFilterController
+        counts={counts}
+        featuredRail={
+          <ListsFeaturedRow featured={featured} showsByTheme={showsByTheme} />
+        }
+        allLists={
+          <ListsAllSection
+            byCategory={byCategoryRest}
+            showsByTheme={showsByTheme}
+          />
+        }
+      />
     </Wrap>
   )
 }

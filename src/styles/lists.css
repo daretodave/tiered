@@ -145,6 +145,27 @@ h1.lists-hero-title em {
   text-transform: uppercase;
   color: var(--color-ink-3);
 }
+/* Filter-state mode row — sits immediately above the All-lists section
+   so the chip-state count (`Showing · all 9 in the index`) reads as the
+   eyebrow for the block it actually describes, not for the Featured rail
+   above. Pass-38 #340: previously inside .lists-filter-bar where it
+   visually preceded the 3-tile Featured block. */
+.lists-filter-mode-row {
+  padding: 64px 40px 0;
+}
+@media (max-width: 720px) {
+  .lists-filter-mode-row {
+    padding: 48px 20px 0;
+  }
+}
+.lists-filter-mode-row + .lists-all-section .lists-section-head {
+  margin-top: 12px;
+}
+@media (max-width: 720px) {
+  .lists-filter-mode-row + .lists-all-section .lists-section-head {
+    margin-top: 10px;
+  }
+}
 
 /* SECTION HEAD (lists-specific — distinct from screens.css .section-head) */
 .lists-section-head {

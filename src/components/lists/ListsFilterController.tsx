@@ -10,12 +10,14 @@ import {
 
 type ListsFilterControllerProps = {
   counts: Record<FilterKey, number>
-  children: ReactNode
+  featuredRail?: ReactNode
+  allLists?: ReactNode
 }
 
 export function ListsFilterController({
   counts,
-  children,
+  featuredRail,
+  allLists,
 }: ListsFilterControllerProps) {
   const [filter, setFilter] = useState<FilterKey>('all')
 
@@ -43,6 +45,12 @@ export function ListsFilterController({
             ),
           )}
         </div>
+      </div>
+      {featuredRail}
+      <div
+        className="lists-filter-mode-row"
+        data-testid="lists-filter-mode-row"
+      >
         <span
           className="lists-filter-mode"
           data-testid="lists-filter-mode"
@@ -50,7 +58,7 @@ export function ListsFilterController({
           {filterModeText(filter, counts)}
         </span>
       </div>
-      {children}
+      {allLists}
     </div>
   )
 }
