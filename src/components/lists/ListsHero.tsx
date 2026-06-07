@@ -99,7 +99,7 @@ export function ListsHero({ stats }: ListsHeroProps) {
           <div className="lists-stat-val">
             {canonRevisedLabelFromIso(stats.lastIndexRevision) ?? ''}
           </div>
-          <div className="lists-stat-key">Index last revised</div>
+          <div className="lists-stat-key">Index revised</div>
         </div>
       </div>
     </header>
