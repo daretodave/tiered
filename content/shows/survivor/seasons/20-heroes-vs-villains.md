@@ -11,7 +11,7 @@ format_changes: [all-returnee-cast, hero-villain-tribes]
 canonical_position: 2
 eyebrow: "Aired winter–spring 2010 · Filmed in Samoa"
 lede: "A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep."
-pull: "Decades in, this is the season Survivor will still be measured against. We'd defend it without footnotes."
+pull: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast at the close of the format's first decade. The casting team draws from ten prior seasons of accumulated audience memory, so every confessional carries weight a fresh cast cannot generate. The post-merge stretch runs denser than the format usually permits, and the back half rarely lets the editor breathe. Years on, every all-returnee experiment the genre attempts is still measured against this stretch of television."
 filming_caption: "same beach as S19"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

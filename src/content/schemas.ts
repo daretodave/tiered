@@ -138,7 +138,7 @@ export const seasonFrontmatterSchema = z.object({
   eyebrow: z.string().min(1).max(80).optional(),
   lede: z.string().min(1).max(280).optional(),
   body: z.string().min(1).optional(),
-  pull: z.string().min(1).max(240).optional(),
+  pull: z.string().min(1).max(600).optional(),
   vote_question: z.string().min(1).max(120).optional(),
   aired_year: z.number().int().min(1900).max(2100).optional(),
   episodes: z.number().int().positive().optional(),
