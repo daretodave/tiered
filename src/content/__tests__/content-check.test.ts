@@ -22,6 +22,7 @@ import {
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeSynonymClusterIssues,
   collectThemeDeckBodyOpenerDivergenceIssues,
+  collectThemeEntryHeadlineBodyEchoIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
   collectThemeFactualFirstClaimIssues,
@@ -3212,6 +3213,155 @@ describe('content-check — themed-list deck-vs-body opener divergence (critique
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/3-token content sequence/)
     expect(issues[0]!.message).toMatch(/"modern survivor post-merge"/)
+  })
+})
+
+describe('content-check — themed-list within-entry headline/body echo (critique pass-38, issue #341)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-headline-body-echo-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags an entry whose title and blurb share a verbatim content bigram (the pre-rewrite #05 shape)', () => {
+    makeMultiEntryTheme(tmp, 'best-finales-shape', {
+      entries: [
+        {
+          title:
+            'The Round Table tightening into the final banishment the format was built for.',
+          blurb:
+            'Each Round Table tightens the math — fewer chairs, sharper paranoia, banishments paid back across nights instead of episodes.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+      ],
+    })
+    const issues = collectThemeEntryHeadlineBodyEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/themes/best-finales-shape.md (entry #1 blurb)',
+    )
+    expect(issues[0]!.message).toMatch(/headline-to-body echo/)
+    expect(issues[0]!.message).toMatch(/"round table"/)
+  })
+
+  it('flags an entry whose title and blurb share a verbatim content bigram in the blurb close (the pre-rewrite #06 shape)', () => {
+    makeMultiEntryTheme(tmp, 'crown-shape', {
+      entries: [
+        {
+          title: 'The crown coronation pays off a finale built on craft.',
+          blurb:
+            'Season 6 spends its run building toward a finale of working drag artists. The crown coronation lands a season whose cultural footprint outgrew its Logo airing.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    const issues = collectThemeEntryHeadlineBodyEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"crown coronation"/)
+  })
+
+  it('passes once the headline noun-phrase is dropped from the body (the post-rewrite #05 shape)', () => {
+    makeMultiEntryTheme(tmp, 'rewrite-05', {
+      entries: [
+        {
+          title:
+            'The Round Table tightening into the final banishment the format was built for.',
+          blurb:
+            'Each banishment round tightens the math — fewer chairs, sharper paranoia, votes paid back across nights instead of episodes.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
+  })
+
+  it('passes once the headline noun-phrase is dropped from the body (the post-rewrite #06 shape)', () => {
+    makeMultiEntryTheme(tmp, 'rewrite-06', {
+      entries: [
+        {
+          title: 'The crown coronation pays off a finale built on craft.',
+          blurb:
+            'Season 6 spends its run building toward a finale of working drag artists. The coronation seals a season whose cultural footprint outgrew its Logo airing.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
+  })
+
+  it('exempts `category: single` (intra-canon) lists', () => {
+    makeMultiEntryTheme(tmp, 'pillars-echo', {
+      category: 'single',
+      entries: [
+        {
+          title: 'A jury-phase house where every eviction felt load-bearing.',
+          blurb:
+            'The jury-phase house keeps every eviction load-bearing across a roster of franchise veterans.',
+        },
+        { title: 'A second pillar.', blurb: 'A second pillar carries the era.' },
+      ],
+    })
+    expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
+  })
+
+  it('ignores stopword-anchored bigrams (e.g. "the round" alone does not flag)', () => {
+    // Title shares only the stopword `the` with the blurb — no content
+    // bigram is verbatim across the pair, so the entry passes.
+    makeMultiEntryTheme(tmp, 'stopword-only', {
+      entries: [
+        {
+          title: 'The verdict the jury delivers on the era.',
+          blurb:
+            'A late conversation rewrites the season — the texture finally lands without softening the cruelty.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
+  })
+
+  it('flags multiple shared bigrams together on the same entry (pluralised message)', () => {
+    makeMultiEntryTheme(tmp, 'multi-echo', {
+      entries: [
+        {
+          title: 'The crown coronation pays off the round table finale.',
+          blurb:
+            'The crown coronation lands a season whose round table finale outgrew its first run.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    const issues = collectThemeEntryHeadlineBodyEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/noun-phrases/)
+    expect(issues[0]!.message).toMatch(/"crown coronation"/)
+    expect(issues[0]!.message).toMatch(/"round table"/)
+  })
+
+  it('does not flag a pair whose title and blurb share only a stopword pair (no content bigram)', () => {
+    // Title's only multi-word phrasing is `the era`/`the jury` — both
+    // anchored on stopwords. The blurb shares no content bigram. Pass.
+    makeMultiEntryTheme(tmp, 'stopword-pair', {
+      entries: [
+        {
+          title: 'A verdict from the era.',
+          blurb: 'The closing run holds the season together until the last vote.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
   })
 })
 

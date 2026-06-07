@@ -42,13 +42,13 @@ entries:
     season_label: "S02"
     rank: 5
     title: "The Round Table tightening into the final banishment the format was built for."
-    blurb: "Each Round Table tightens the math — fewer chairs, sharper paranoia, banishments paid back across nights instead of episodes. By the last seat, the US adaptation proves it can hold the format's tension all the way down without softening the cruelty."
+    blurb: "Each banishment round tightens the math — fewer chairs, sharper paranoia, votes paid back across nights instead of episodes. By the last seat, the US adaptation proves it can hold the format's tension all the way down without softening the cruelty."
   - show: dragrace
     season: 6
     season_label: "S06"
     rank: 6
     title: "The crown coronation pays off a finale built on craft."
-    blurb: "Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The crown coronation lands a season whose cultural footprint outgrew its Logo airing."
+    blurb: "Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The coronation seals a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
     season_label: "S10"

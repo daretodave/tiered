@@ -1010,6 +1010,49 @@ export function collectThemeDeckBodyOpenerDivergenceIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-38 MED (issue #341): /themes/best-finales entries
+// #05 (Traitors S02) + #06 (Drag Race S6) carried within-entry
+// verbatim echoes of the headline's load-bearing noun-phrase inside
+// the body — #05 "Round Table tighten*" appeared in title + blurb
+// opener; #06 "crown coronation" appeared in title + blurb closer.
+// Distinct defect class from `collectThemeBodyPhraseRepetitionIssues`
+// (cross-entry within-list repetition) and from
+// `collectThemeDeckBodyOpenerDivergenceIssues` (deck↔body-OPENER
+// 3-token sequence OR >50% content-token-set overlap). This invariant
+// is narrower: per-entry, any content bigram that appears verbatim in
+// BOTH `title` AND `blurb` (anywhere in the blurb, not just the
+// opener). A 50–70-word blurb has room to extend the headline's
+// argument; reusing the headline's load-bearing noun-phrase verbatim
+// turns the headline into a label the body restates. `category:
+// single` (intra-canon, single-show) lists are exempt — natural
+// repetition of show-specific surface vocabulary is part of the form.
+export function collectThemeEntryHeadlineBodyEchoIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    for (const entry of theme.entries) {
+      const title = entry.title?.trim()
+      const blurb = entry.blurb?.trim()
+      if (!title || !blurb) continue
+      const titleBigrams = extractContentBigrams(title)
+      if (titleBigrams.size === 0) continue
+      const blurbBigrams = extractContentBigrams(blurb)
+      const shared: string[] = []
+      for (const bigram of titleBigrams) {
+        if (blurbBigrams.has(bigram)) shared.push(bigram)
+      }
+      if (shared.length > 0) {
+        const phraseList = shared.map((p) => `"${p}"`).join(', ')
+        issues.push({
+          file: `content/themes/${theme.slug}.md (entry #${entry.rank} blurb)`,
+          message: `themed-list within-entry headline-to-body echo — entry #${entry.rank} title and blurb share the noun-phrase${shared.length > 1 ? 's' : ''} ${phraseList}. A 50–70-word blurb should extend the headline's argument, not restate its load-bearing noun-phrase verbatim. Rotate the blurb's phrasing so the headline pays off in a fresh structural beat (see plan/CRITIQUE.md pass-38).`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -1815,6 +1858,24 @@ function main(): number {
     failures.push(...themeSynonymClusterIssues)
   } else {
     for (const issue of themeSynonymClusterIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-38 MED (issue #341): ships LAX this commit — the
+  // best-finales rewrite drains the two named entries (#05 Traitors
+  // S02 + #06 Drag Race S6), but a corpus sweep of the other 11
+  // themed lists may surface unrelated entries with shared title↔blurb
+  // bigrams that need a follow-up content tick. Lax floor → warn only
+  // until the corpus drains; the next ship-content pass flips
+  // THEME_HEADLINE_BODY_ECHO_STRICT to true (same lax→strict pattern
+  // as SHOW_COUNT_RESTATE_STRICT directly below). One-line toggle.
+  const THEME_HEADLINE_BODY_ECHO_STRICT = false
+  const themeHeadlineBodyEchoIssues = collectThemeEntryHeadlineBodyEchoIssues()
+  if (THEME_HEADLINE_BODY_ECHO_STRICT) {
+    failures.push(...themeHeadlineBodyEchoIssues)
+  } else {
+    for (const issue of themeHeadlineBodyEchoIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
