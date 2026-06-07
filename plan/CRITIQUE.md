@@ -1,10 +1,10 @@
 # CRITIQUE
 
-> Last pass: 2026-06-07 at commit d6cf91f
-> Pass count: 38
+> Last pass: 2026-06-07 at commit 9c486a9
+> Pass count: 39
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 38 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 39 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed). Both anon (7 URLs: `/`, `/shows`, `/shows/survivor`,
 > `/shows/survivor/season/heroes-vs-villains`, `/themes`,
@@ -18,49 +18,75 @@
 > `scrollWidth === innerWidth` at 375px). The
 > `net::ERR_ABORTED` walker artifacts on the authed walk at
 > `/u/e2e` teardown are the same known-false-positive class
-> dropped on passes 6–11, 29–37 (Next.js aborts in-flight
+> dropped on passes 6–11, 29–38 (Next.js aborts in-flight
 > `<Link prefetch>` payloads at page teardown); dropped at
 > self-assessment as the documented false-positive class.
-> Self-assessment dropped one further reader candidate that did
-> not survive verification: [LOW] [authed] /u/e2e mobile own-
-> profile `@e2e` handle echoed between chrome user-menu and
-> page-title row — overlaps the in-flight Pending pass-37 own-
-> profile stat-strip scaffold finding (#nnn in flight) which
-> reshapes the same own-profile module; deferred to land
-> alongside that fix rather than as a standalone row. Five
-> findings filed (3 MED, 2 LOW):
-> (i) [MED] [anon] /themes hero stat-strip labels the freshness
-> slot `INDEX LAST REVISED` while the analogous /shows hero
-> labels it `INDEX REVISED` post-pass-35 #336. Two top-level
-> index landings drift in grammatical register on the same
-> stat-strip slot.
-> (ii) [MED] [anon] /themes/best-finales #05 (The Traitors) and
-> #06 (RuPaul's Drag Race) land within-entry headline-to-body
-> echoes — #05's headline `Round Table tightening` is restated
-> as #05's body opener `Each Round Table tightens`; #06's
-> headline `The crown coronation pays off` is restated as #06's
-> body closer `The crown coronation lands`. Distinct from the
-> pass-36 cross-entry body-opener rotation closure.
-> (iii) [MED] [authed] /themes filter-state label
-> `SHOWING · ALL 9 IN THE INDEX` sits directly above the
-> Featured-this-month block which renders 3 tiles, not 9 —
-> label-vs-content mismatch on the page-scan path.
-> (iv) [LOW] [authed] /themes featured-tile lifecycle label
-> `stable list` renders lowercase while the same string on
-> All-lists tiles renders uppercase (`STABLE LIST`) — CSS rule
-> divergence between `.feat-foot` (no text-transform) and
-> `.list-row-meta` (text-transform: uppercase in screens.css:344).
-> Two tile templates surfacing the same metadata in two
-> typographic registers on a single page.
-> (v) [MED] [authed] /shows/survivor/season/heroes-vs-villains
-> canon-slot module prints two near-identical attribution
-> eyebrows back-to-back: `CANON ENTRY BY THE TIERED.TV EDITOR`
-> immediately followed by `EDITOR'S CANON` (RankScale headLabel).
-> Two surfaces saying the same thing — editor's canon — within
-> the same module head.
+> Self-assessment dropped three reader candidates that did
+> not survive verification:
+> (a) [HIGH] [authed] mobile chrome `Sign out` absent — false
+> positive. `src/styles/chrome.css:131-206` defines the mobile
+> (≤720px) tap-to-reveal user menu pattern: desktop pair
+> `@e2e / Sign out` hides at the breakpoint and a button
+> trigger at `HeaderView.tsx:143-186` exposes the same `Sign
+> out` link inside a menu (data-testid
+> `site-header-user-menu-signout`). Reader's static text
+> snapshot can't see menu items until the trigger is clicked.
+> Pattern documented in `chrome.css:117-124` comment block and
+> pinned by four `HeaderView.test.tsx` cases at lines 153-180.
+> (b) [LOW] [authed] /u/e2e own-profile `@e2e` handle echoed
+> between chrome and page-title row — same surface overlap as
+> the pass-38 metadata's dropped same-class candidate; the
+> in-flight pass-37 own-profile stat-strip scaffold finding
+> reshapes the module that holds the page-title `@e2e` echo.
+> Deferred to land alongside that fix.
+> (c) [LOW] [authed] /themes/best-finales `MORE LISTS IN THIS
+> VEIN` rail surfaces 2 cross-link tiles when /themes index
+> counts 9, and the 2 surfaced duplicate the HvV `Also appears
+> in` rail a season-deep-link reader passes through. Soft
+> rail-density + duplicate-cross-link finding without a clear
+> forcing function; the related-by-tone/structure scoring the
+> rail would need lives behind a follow-on scoring change.
+> Deferred as too-soft for filing.
+> Six findings filed (3 MED, 3 LOW):
+> (i) [MED] [anon] /about closing line tells the reader to read
+> `Privacy` and `Terms` but the global footer has no Privacy or
+> Terms link; the legal pages exist (`content/legal/privacy.md`,
+> `content/legal/terms.md`) and are reachable only via inline
+> /about prose. The standard chrome destination where readers
+> conventionally expect these is missing them.
+> (ii) [MED] [anon] /shows/survivor canon-section lede reads
+> `One ranking, written by an editor who has rewatched every
+> season at least twice.` directly above the two-tab UI
+> `Editor's Canon CURATED` / `Community LIVE`. Prose says one
+> ranking; UI shows two at first paint.
+> (iii) [MED] [authed] /u/e2e own-profile empty-state copy reads
+> `New here.` hardcoded at `ProfileEmpty.tsx:44` — fires
+> whenever the viewer has no votes, regardless of join recency.
+> Greets a member two months in as new because the literal
+> doesn't gate on joinedAt. Distinct from the in-flight pass-37
+> own-profile scaffold finding; this is the literal greeting
+> copy.
+> (iv) [LOW] [anon] / home + footer use the eyebrow `featured`
+> for two different things on the same page load — hero
+> `CURRENTLY FEATURED` over Survivor (singular anchor) vs
+> footer `FEATURED SHOWS` over RPDR / Survivor / Amazing Race
+> (three top-billed). Cross-surface label collision within one
+> scroll.
+> (v) [LOW] [anon] /shows hero stat-strip last cell reads
+> `May 2026 INDEX REVISED` while /themes hero same-cell reads
+> `June 2026 INDEX REVISED`. Same label, two freshness claims
+> on the same walk (today is 2026-06-07). Reader reads them as
+> the same global timestamp drifting by a month.
+> (vi) [LOW] [anon] /shows/[show]/season/[slug] CommentInputStub
+> renders action span `Sign in to comment.` and brand-tagline
+> span `No plot, no winners, no twists →` inside one Link, but
+> the arrow → sits on the tagline span, not the action span.
+> Visual signal puts the destination cue on the tagline rather
+> than the verb; reader scanning the affordance reads the
+> tagline as the link target.
 >
-> Earlier pass log compaction (passes 1–37):
-> Pass 37 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Earlier pass log compaction (passes 1–38):
+> Pass 38 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed). Both anon (7 URLs: `/`, `/shows`, `/shows/survivor`,
 > `/shows/survivor/season/heroes-vs-villains`, `/themes`,
@@ -69,72 +95,37 @@
 > `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`,
 > `/themes`, `/themes/best-finales`) walks ran end-to-end across
 > desktop + mobile viewports — 28 captures total. Mechanical
-> health bar clean (zero console errors on the in-page assertion,
-> zero failed first-party requests, all 200s, all H1s present,
-> all `scrollWidth === innerWidth` at 375px). The
-> `net::ERR_ABORTED` walker artifacts on the authed walk at
-> `/u/e2e` teardown are the same known-false-positive class
-> dropped on passes 6–11, 29–36 (Next.js aborts in-flight
-> `<Link prefetch>` payloads at page teardown); the authed
-> reader flagged this as a `[MED]` performance finding this pass,
-> dropped at self-assessment as the documented false-positive
-> class. Self-assessment also dropped two further reader
-> candidates that did not survive verification:
-> (a) [MED] /themes hero math `9 in the index, 3 featured this
-> month — 12 we'd defend in a group chat` flagged AGAIN by BOTH
-> the anon and authed readers — the math IS correct (featured 3
-> + indexed 9 = 12 total, disjoint sets); the pass-35 and
-> pass-36 metadata already explained this drop and named the
-> pass-22 #261 + pass-23 #263 + pass-28 split-reveal +
-> pass-34 #324 closures pinning the current state. THIRD
-> mistaken refile in three passes — the doubled-refile across
-> both passes on the same critique loop tick is itself a
-> reader-prompt signal; the next pass's reader prompt absorbs a
-> stronger anti-refile call-out for this specific finding.
-> (b) [LOW] /themes filter chip row vs `Featured this month`
-> block undeclared semantics — subsumed by the same pass-22 #261
-> split-reveal closure (the chip semantics scope the All Lists
-> grid below the Featured block, and the page chrome already
-> renders that hierarchy visually with the section heading
-> `All lists.`). Six findings filed (1 HIGH, 4 MED, 1 LOW):
-> (i) [HIGH] [authed] /shows/survivor `What changed this week`
-> ticker surfaces 5- to 36-spot ordinal swings each driven by 1
-> or 2 votes, which contradicts the home-page framing of
-> Community Rank as `Plain. Restless. Honest.` and undermines
-> the live half of the canon/community split phase 35 shipped.
-> Fix gates `ShiftsRow` on a minimum vote-volume floor (≥ 5
-> distinct voters) so the surface stops publishing arithmetic
-> noise as confident ordinal verdicts.
-> (ii) [MED] [anon] /about (3 explicit tiers — anon 0.1× / under
-> 7 days 0.25× / 7+ days 1.0×) and `/` (2 tiers, no `1.0×`,
-> no 7-day boundary) disagree on the vote-weighting ladder.
-> A reader who lands on home and forms a two-tier model finds a
-> third tier on /about they were never told existed.
-> (iii) [MED] [authed] /shows/survivor hero subtitle `50 seasons.
-> One torch at a time.` and body opener `50 seasons of strangers
-> on a beach.` restate the count back-to-back on the most-visited
-> show page; same-page hero-vs-body-opener phrase-repetition.
-> (iv) [MED] [anon] /shows/survivor/season/heroes-vs-villains
-> section `01 THE TAKE` (~25 words, slogan close) reads thinner
-> than the same season's canon-ladder rationale on the parent
-> page (~75 words, textured argument from structural facts).
-> Editorial density inverts the click path — the deeper page
-> contracts where it should extend.
-> (v) [MED] [authed] /u/e2e own-profile `Your record` surface is
-> structurally bare (~500 chars, no stat-chip strip, no
-> joined-cohort tile) so the page reads more like a soft-404 than
-> the record-you'll-grow-into framing the copy promises. Fix
-> stubs a zeroed stat-chip strip (`0 VOTES CAST · 0 LISTS SAVED
-> · May 2026 JOINED`) matching the existing chrome pattern on
-> every other major surface.
-> (vi) [LOW] [anon] /shows/survivor/season/heroes-vs-villains
-> spec-row tile `EPISODE HEAT — peak run · the back-half` is
-> editorial-flavored mid-strip among six concrete spec tiles
-> (`FILMED · PREMIERED · EPISODES · FORMAT · CAST SIZE · HOST`);
-> spec-row vs editorial-section boundary is the chrome grammar
-> and this tile crosses it. Fix reshapes the tile as a real stat
-> (`PEAK EPISODES — eps 9–13`) or moves the framing into the
-> `02 HOW` editorial block.
+> health bar clean. Five findings filed (3 MED, 2 LOW):
+> (i) [MED] [anon] /themes hero stat-strip labels the freshness
+> slot `INDEX LAST REVISED` while the analogous /shows hero
+> labels it `INDEX REVISED` post-pass-35 #336. Two top-level
+> index landings drift in grammatical register. RESOLVED f339b1c.
+> (ii) [MED] [anon] /themes/best-finales #05 (The Traitors) and
+> #06 (RuPaul's Drag Race) land within-entry headline-to-body
+> echoes — Round Table tightening + crown coronation restated
+> verbatim across headline/body. Distinct from pass-36 cross-
+> entry rotation. RESOLVED a5c1de9.
+> (iii) [MED] [authed] /themes filter-state label
+> `SHOWING · ALL 9 IN THE INDEX` sits above the 3-tile Featured
+> block rather than the 9-tile All-lists grid — label-vs-content
+> position mismatch. RESOLVED f0f94fd.
+> (iv) [LOW] [authed] /themes featured-tile lifecycle label
+> `stable list` renders lowercase while All-lists `STABLE LIST`
+> renders uppercase — `.feat-foot` vs `.list-row-meta`
+> text-transform divergence. RESOLVED a0a0852.
+> (v) [MED] [authed] /shows/survivor/season/heroes-vs-villains
+> canon-slot module prints two near-identical attribution
+> eyebrows back-to-back: `CANON ENTRY BY THE TIERED.TV EDITOR`
+> immediately followed by `EDITOR'S CANON` (RankScale headLabel).
+> RESOLVED 74065be.
+>
+> Pass 37 compacted to a single line (previously the long
+> summary occupied this block): Pass 37 filed 6 findings (1
+> HIGH ShiftsRow vote-volume floor, 4 MED, 1 LOW) across the
+> standard 7-URL × 2-viewport cloud walk; the MED /u/e2e
+> own-profile bare-scaffold and LOW HvV spec-row episode-heat
+> mid-strip rows remain Pending; the others closed by /iterate
+> ticks that followed pass-38.
 
 > External-observer findings filed by `/critique` (reader
 > sub-agent walking the live site) and `/jot` (user's
@@ -970,6 +961,18 @@
 - [x] [LOW] [anon] /themes, /themes/best-finales, /shows/survivor/season/heroes-vs-villains, /about — `back half` vs `back-half` hyphenation drifts across adjacent content surfaces. Hyphenated occurrences (`back-half`): `content/themes/best-post-merge.md:3` themed-list title `The back-half at full volume`; same file `:4` tagline (`back-half stretches`); same file `:14` description (`back-half runs that play at full volume`); /about quoted example (`"The back-half at full volume"` shown as a sample list title); rendered cross-references on /themes featured strip + /themes BY TONE band + HvV `Also appears in` row. Unhyphenated occurrences (`back half`): `content/themes/best-finales.md:26` entry #02 title `Returnees playing the back half at full volume`; `content/themes/best-post-merge.md:33` entry #02 blurb `Big Brother runs on its back half`; same file `:39` entry blurb `the back half plays as chef against chef`; `content/themes/best-post-merge.md:45` entry blurb `the sixth season's back half`; HvV episode-heat caption `peak run · the back half`. A reader on /themes/best-finales sees entry #02 title (unhyphenated) and the same list title in sibling cross-references (hyphenated) within four lines of editorial copy — same noun phrase, two forms, on adjacent surfaces. Fix: pick one form (the themed-list title's `back-half` is the canonical site reference; the noun-phrase use as a compound modifier favors the hyphen). Rewrite the unhyphenated occurrences to hyphenated form across the 5 content sites listed above. Pin: extend `scripts/content-check.ts` with a `BACK_HALF_HYPHEN` invariant scanning every editorial field (the same `sources[]` aggregator already used by `collectClicheRepetitionIssues` at `:606`): every occurrence of `back half` (case-insensitive, word-boundary on each side, with optional `the` / `its` / `a` preceding) must render as `back-half`. Single-pattern check, lifts at content-author time, sibling to the existing `CLICHE_PATTERNS` and `collectYearTenureIssues` invariants. Spoiler discipline P0 unchanged (typography hygiene only). (URL: /themes, /themes/best-finales, /shows/survivor/season/heroes-vs-villains, /about, source: critique-pass-29) — b061d5f — issue: #305 — RESOLVED b061d5f: took the row's full path with a scoped invariant. The best-finales.md:26 entry #02 title had already been rewritten in an intermediate pass (no `back half` remains in best-finales.md), so the 5 listed sites collapsed to 4 actionable surfaces: (1) `content/themes/best-post-merge.md:33` Big Brother S07 All-Stars entry blurb `runs on its back half` → `runs on its back-half`; (2) same file `:39` Top Chef S06 entry blurb `the back half plays as chef against chef` → `the back-half plays as chef against chef`; (3) same file `:45` Drag Race S06 entry blurb `the sixth season's back half` → `the sixth season's back-half`; (4) `content/shows/survivor/seasons/20-heroes-vs-villains.md:24` episode_heat_caption `peak run · the back half` → `peak run · the back-half`. The invariant's source scope (every themed-list editorial field + season episode_heat_caption) sweeps in 9 sibling episode_heat_captions that were unhyphenated outside the row's enumeration (the row spotted HvV but not the parallel cases): challenge S21/S29/S31/S33/S34/S38/S39 + survivor S27/S47 — all rewritten to the hyphenated form for the same brand-consistent noun-phrase shorthand. Pin landed: `scripts/content-check.ts` `collectBackHalfHyphenIssues` walks all theme description/tagline/body_md/entry title/blurb + season episode_heat_caption; the regex `/\bback half\b/gi` catches case-insensitive + possessive forms; strict toggle ships at floor 0 (`BACK_HALF_HYPHEN_STRICT = true`) since the rewrite drained every offender in this commit. Scope deliberately narrower than the row's "every editorial field" prescription — canon prose and season ledes/bodies/pulls sit outside the scanner so the broader corpus (~20 `back half` occurrences in canon entries + season prose) stays untouched until a future critique flags a wider drift visible on a single reader scroll. The narrower scope matches the row's evidence (themed-list cross-references + HvV episode_heat_caption are the surfaces a reader sees together) without forcing a corpus-wide rewrite that exceeds the row's "5 content sites listed" mandate. Test pins in `src/content/__tests__/content-check.test.ts` (new describe block `content-check — back-half hyphenation drift (critique pass-30, issue #305)`): (a) live-catalog passes post-rewrite (asserts `setContentRoot(null)` reads zero issues); (b) themed-list entry blurb regression flags the unhyphenated form with the expected file path + message + issue-id reference; (c) season episode_heat_caption regression flags the unhyphenated form with the expected file path; (d) case-insensitive coverage (`Back Half` + `season's back half`); (e) negative pin that the canonical hyphenated form (`back-half`) does not trigger. Spoiler discipline P0 intact (typography hygiene only; no per-season verdict, canon position, finale beat, or winner exposed). Verify gate green: leg1 tokens + typecheck + no-raw-img + 187 unit files / 2385 tests + 127 script tests + content:check (13 shows / 298 seasons / 13 canons / 12 themes / 3 legal docs); leg2 build (374 pages); leg3 1361 e2e (8.4m).
 
 - [x] [LOW] [anon] /themes/best-finales entry #06 (RuPaul's Drag Race S6) uses `real` twice in adjacent clauses inside the entry's title + body opener — within one card's worth of editorial copy. Title (`content/themes/best-finales.md:64`): `A final lip-sync that pays off a finale built on real artistry.` Body opener (`:65`): `Season 6 spends its run building toward a finale of real artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes.` Two adjacent phrasings `real artistry` / `real artists` read as the same word doing the work of two different intensifiers; the body's own `genuine stakes` a half-clause later proves the author has the broader vocabulary available. The two instances also fall inside the entry-title vs entry-blurb seam — the same noun is intensified the same way in the louder rank label and the quieter editorial copy below it, which makes the repetition louder than the count alone suggests. Fix: curator-only edit, smallest blast radius — drop `real` from the body and keep the title. Candidate body opener: `Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes.` Or invert: keep the body verbatim, retitle to `A final lip-sync that pays off a finale built on genuine artistry.` Either preserves the entry's editorial point. Pin: no new invariant — this is a one-off adjacent-repetition, not a recurring class; if `real` recurs across future content the existing `CLICHE_PATTERNS` channel at `scripts/content-check.ts:598` is the seam to extend. Spoiler discipline P0 unchanged (voice edit only). (URL: /themes/best-finales, source: critique-pass-30) — issue: #304 — RESOLVED this commit: took the row's smaller-blast-radius candidate. `content/themes/best-finales.md:51` Drag Race S06 entry blurb's opener swapped `real artists` → `working drag artists`, keeping the title (`built on real artistry`) intact. The body's later `genuine stakes` clause was intentionally left untouched — the alternative retitle to `genuine artistry` would have created a fresh `genuine/genuine` echo inside the same card, swapping one in-card repetition for another. `working drag artists` introduces no new repetition: the title's `real artistry` survives as the one occurrence, and `working` / `drag` / `artists` do not appear adjacent on the entry's siblings (Traitors S2 #05 post-#302, Big Brother S10 #07 — checked across the immediate before/after entries on the list). No pin owed per the row — the prescription was explicit that this is a one-off adjacent repetition, not a recurring class; if `real` ever recurs across future content the existing `CLICHE_PATTERNS` channel at `scripts/content-check.ts:598` is the documented seam to extend. No URL / schema / page-family / e2e fixture row owed — content edit only; the smoke walker only pins 200 / H1 / no console errors on `/themes/best-finales` so it inherits the new copy cleanly. Spoiler discipline P0 intact (voice edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposed).
+
+- [ ] [MED] [anon] /about closing paragraph tells the reader `Read Privacy for the data details and Terms for the rules.` (`content/legal/about.md:83`) — the legal pages exist at `/privacy` (`content/legal/privacy.md`) and `/terms` (`content/legal/terms.md`) and the inline links in that prose work, but the global footer's `tiered.tv` column (`src/components/chrome/footer/FooterAboutCol.tsx:3-8` — `About the canon` / `How voting works` / `Spoilers policy` / `Become an editor`) carries no Privacy or Terms link. The FooterMeta line below (`src/components/chrome/footer/FooterMeta.tsx`) only renders `© <year> tiered.tv · est. as a quiet rebellion against ranked lists that ruin the show` + the theme toggle — no legal links surface there either. A reader who leaves /about and tries to reach Privacy or Terms from any other surface has to navigate back to /about and re-find the closing-paragraph prose links. The standard chrome destination where readers conventionally expect these (the site footer) is missing them; only an /about-prose-deep-reader path reaches them. Same defect class as the resolved pass-37 #344 / pass-29 #299 navigation-affordance-mismatch family (chrome surfaces that under-surface the destinations the editorial prose already commits to), now at the legal-footer rather than the season-page or comment-thread layer. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer who tells you `Read Privacy for the data details` from one page also makes Privacy reachable from the chrome on every page, not just the page that names it. Fix options: (a) **primary path — add Privacy + Terms links to the FooterAboutCol `LINKS` array** at `src/components/chrome/footer/FooterAboutCol.tsx:3-8`. Two new entries: `{ href: '/privacy', label: 'Privacy' }` + `{ href: '/terms', label: 'Terms' }` appended after the existing four. Single-line array additions, both targets already render (the /privacy + /terms routes are real legal pages — verified via `content/legal/privacy.md` + `content/legal/terms.md` existing in the repo). Brings the global chrome into agreement with the /about prose's commitment. (b) **alternative — add a dedicated `FooterMeta` legal-links row** between the rebellion line and the theme toggle — preserves the chrome semantics that the tiered.tv column is editorial nav while a separate row carries legal nav. Slightly more chrome real-estate but reads as the conventional footer pattern. (c) **alternative — drop the /about prose reference** to Privacy + Terms instead — rejected; the legal pages exist for a reason and silencing them on the only surface that names them would shed reader-facing accountability. (d) **alternative — leave as-is** — rejected; the destination commitment is on the page, the destination is reachable, the chrome convention is the gap. Recommended (a) — single-component edit, brings the chrome into agreement with the /about prose with the smallest blast radius, matches the existing `tiered.tv` column semantics (it already carries About, How voting works, Spoilers policy, Become an editor — all of which are quasi-policy / quasi-editorial chrome nav; Privacy + Terms slot in cleanly). Pin: extend `src/components/chrome/footer/__tests__/FooterAboutCol.test.tsx` (verify path — create if absent) with two regression cases — (1) `/privacy` link rendered with label `Privacy`; (2) `/terms` link rendered with label `Terms`. Sibling positive on `Footer.test.tsx` asserting the column count remains 3 (Brand / Tiers / About) and the About column houses both legal links. Bidirectional drift guard: a future refactor that drops either legal link trips at unit time. Spoiler discipline P0 intact (chrome nav additions only; the legal pages themselves carry no per-season verdict, canon position, or finale beat exposure). (URL: /about, source: critique-pass-39) — 9c486a9
+
+- [ ] [MED] [anon] /shows/survivor canon-section lede sentence reads `One ranking, written by an editor who has rewatched every season at least twice. The community argues back; this is one number.` (`src/components/canon/ShowRanking.tsx:98`) — the very next sibling DOM element is the two-tab UI labeled `Editor's Canon CURATED` / `Community LIVE`. Prose says `One ranking` and the UI immediately renders two clearly-labeled ranking surfaces. A cold reader hears the editor's voice committing to a single number and at first paint sees two tab triggers offering two; the prose and the UI disagree on shape at the moment of first impression. Concrete observed sequence from the rendered captures (both desktop and mobile, anon walk): `The canon, top to bottom. / One ranking, written by an editor who has rewatched every season at least twice. The community argues back; this is one number. / Editor's Canon CURATED / Community LIVE / #01 / Cagayan / ...`. The intended editorial point is plausibly that `one ranking` refers to the editor's column only (with the community column being the argued-back-against second voice) — but the sentence makes that referent implicit, and the next sentence's `this is one number` doubles down on the singular framing the tab UI immediately undermines. Same defect class as the resolved pass-32 #311 (cross-surface /home Community Rank card vs /about voting policy attestation-mechanic drift) — that closure addressed a cross-surface trust-mechanic mismatch; this row addresses a within-page prose-vs-UI shape mismatch on the most-visited show's canon module. Source: `src/components/canon/ShowRanking.tsx:97-99` lede literal `<p>One ranking, written by an editor who has rewatched every season at least twice. The community argues back; this is one number.</p>` followed by the tab-switcher render. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer doesn't say `one ranking` while presenting two ranking surfaces in the same module head without making explicit which shape the sentence is naming. Fix options: (a) **primary path — rephrase the lede so `one ranking` explicitly names the editor's column** and the community column is named as the second voice, not collapsed into `one number`. Candidate rewrite: `One editor's ranking, top to bottom — and the community argues back in the next tab.` (drops the implicit-referent `one ranking` for `One editor's ranking`, keeps the argued-back framing, drops the contradictory `this is one number` clause). Single-string edit at `src/components/canon/ShowRanking.tsx:98`. Brings the prose and the two-tab UI into agreement on shape. (b) **alternative — drop the two-tab UI's `Editor's Canon CURATED` / `Community LIVE` labels** when the lede commits to one-ranking framing — rejected; the tabs are the load-bearing affordance for the canon/community split phase 35 shipped (`Editor's Canon` + `Community` tabs are the contract), and the labels are how a reader knows what tab they're on. The prose should bend to the UI, not the UI to the prose. (c) **alternative — keep both as-is and accept that readers reconcile the shape after a beat** — rejected; the prose-vs-UI mismatch at first paint is the defect, and reconciliation-by-context is what the editorial copy is supposed to forestall. Recommended (a) — single-string edit, preserves the editorial point (an editor's curated ranking, with community as the argued-back second voice), brings prose and UI into agreement at first paint. Pin: extend the colocated test on `src/components/canon/__tests__/ShowRanking.test.tsx` with two cases — (1) positive pin asserting the rendered lede explicitly contains either `editor's ranking` OR `the editor's column` OR another single-column-naming phrase (regex `/editor'?s (ranking|column|canon)/i`); (2) bidirectional drift guard asserting the rendered lede does NOT match `/^[^.]*\bone ranking\b[^.]*\./i` standalone (i.e. a future refactor that reintroduces a bare `One ranking` framing without naming the editor's column trips at unit time). Spoiler discipline P0 intact (chrome prose edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface). (URL: /shows/survivor, source: critique-pass-39) — 9c486a9
+
+- [ ] [MED] [authed] /u/[handle] own-profile empty-state copy reads `New here. Cast one vote and your record starts writing itself.` (`src/components/profile/ProfileEmpty.tsx:44` — the post-pass-28 #293 warm-editorial-lede form that replaced the zeroed stat-tile row). The literal `New here.` fires unconditionally whenever the viewer has no votes — `selfView` is set (owner viewing own profile) AND the ternary at line 43-45 reads `selfView ? 'New here. ...' : 'No votes on the public record yet.'` with no recency gate on `joinedAt` or `createdAt`. The /u/e2e walk captured `Member since May 2026` directly above `New here.` — today is 2026-06-07, so the bot user is at minimum 7 days into membership and possibly 60+ days depending on the exact join date. A returning member two months in is greeted as new because the literal is a static string, not a function of join-recency. Distinct from the pending pass-37 #344 own-profile bare-scaffold finding (which addresses the missing stat-chip strip above the empty-state prose); this row addresses the literal greeting text below the prospective stat-chip strip — the two findings touch the same module but at different vertical layers (chips above, greeting below). Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — confident, warm, plain-spoken, never pretentious`; a peer doesn't greet a friend they've known a month as `New here.` — the warmth is meant to land when the reader actually IS new, and reads as boilerplate when the reader is not. Same defect class as the resolved pass-26 #282 / pass-27 #287 cross-surface drift family (the home claimed a mechanic /about didn't carry; the literal carried a state that the surrounding data didn't match), now at the within-page literal-vs-recency layer. Source: `src/components/profile/ProfileEmpty.tsx:38-46` (the ternary that fires `'New here. Cast one vote and your record starts writing itself.'` whenever `selfView` is set; the second branch fires the stranger-view literal which is independent of this finding). The `joinedAt` value is available — `Member since May 2026` is rendered just above this prose, so the data is on the page; only the literal doesn't read it. Fix options: (a) **primary path — gate the `New here.` framing on join-recency** in the ProfileEmpty component. Add a `joinedAt: Date | string` field to `selfView` (mirror the existing `showName` + `showHref` pattern), thread it from the page-side caller, and branch the empty-state literal on `(Date.now() - joinedAt) < 14 days`: under 14 days → keep the existing `New here. Cast one vote and your record starts writing itself.`; 14+ days → swap to a recency-honest literal like `No votes on the record yet. Cast one and it starts writing itself.` (drops the `New here.` claim, preserves the CTA framing, reads honestly against the `Member since May 2026` line directly above it). The 14-day floor matches the existing 7-day weight-tier boundary on /about's voting policy (`content/legal/about.md:35-37` accounts 7+ days carry full weight) with a small buffer to avoid greeting a barely-tenured account as already-stale. (b) **alternative — drop the recency-claim from the literal entirely and gate on action-count only** (option (b) from the row analysis): swap `New here. Cast one vote and your record starts writing itself.` → `No votes yet. Cast one and your record starts writing itself.` for all `selfView` empty-state branches regardless of join date. Simpler — no new prop, no new branch, no join-date threading. Reads honestly at every recency. Loses the `New here.` warmth for genuinely new members but preserves the CTA mechanic. (c) **alternative — leave as-is** — rejected; the greeting carries a recency-claim the surrounding chrome doesn't support, and the warmth lands as boilerplate on any tenured member who lands here without votes. Recommended (b) — smallest blast radius (single literal swap, no new prop, no caller threading), reads honestly at every recency including 0-day signups, preserves the CTA mechanic the pass-28 #293 closure landed for. The `New here.` warmth was the editorial cost the pass-28 closure paid to fix the soft-404 reading; the warmth doesn't carry its own weight on a tenured account, so dropping it is the cleaner editorial move. Pin: extend the colocated test on `src/components/profile/__tests__/ProfileEmpty.test.tsx` (which already pins the existing literal at line 111) with two cases — (1) positive pin asserting the rendered empty-state contains `No votes yet` (post-rewrite literal) AND does NOT contain `New here` (regression guard); (2) negative pin asserting no branch of the component re-introduces a recency-claim literal (regex `/new here|just (joined|signed up)|welcome aboard/i` returns no match on either selfView OR stranger branch). Sibling positive on the stranger-view branch (`'No votes on the public record yet.'`) left unchanged — that literal is independent of recency. Spoiler discipline P0 intact (chrome literal edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure — the literal names a count state, not a content state). (URL: /u/e2e, source: critique-pass-39) — 9c486a9
+
+- [ ] [LOW] [anon] / home + footer use the eyebrow `featured` for two different things on the same page load — a within-scroll cross-surface label collision. Concrete observed shapes from the rendered home capture (both desktop and mobile, anon walk): home hero opens with the eyebrow `CURRENTLY FEATURED` above a single show (`Survivor`), framing `featured` as the one anchor show the editorial team picks per month; the footer rendered on the same page carries the eyebrow `FEATURED SHOWS` above three show names (`RuPaul's Drag Race / Survivor / The Amazing Race`), framing `featured` as the three top-billed shows in the catalog. A cold reader reads the hero `CURRENTLY FEATURED` and forms the model that `featured` means the one anchor show this month; one scroll later the footer says `FEATURED SHOWS` and renders three, and the reader either reconciles by treating `currently` as the discriminator (this month's pick vs the standing top-billed three) or treats one of the two labels as imprecise. Same defect class as the resolved pass-38 #336 / pass-39 (i) cross-surface label-grammar drift family (`INDEX LAST REVISED` vs `INDEX REVISED`, same stat-strip slot, two grammatical registers across analogous surfaces), now at the home-hero vs home-footer eyebrow layer — same page, same word, two meanings. Source: home hero eyebrow at the `HomeHero` or `HomeFeaturedRow` component (verify component path — likely `src/components/home/` family) rendering `CURRENTLY FEATURED` above the single anchor-show card; footer eyebrow at the `FooterTiersCol` (`src/components/chrome/footer/FooterTiersCol.tsx`, verify path) rendering `FEATURED SHOWS` above the three top-billed names. Both occupy chrome eyebrow-level micro-labels. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer commits to one meaning for the same word across analogous surfaces on the same page, or differentiates the labels enough that the reader doesn't have to do reconciliation work mid-scroll. Fix options: (a) **primary path — rename the footer column from `FEATURED SHOWS` to a label the editor would actually say** for the three top-billed names — candidate forms: `START HERE` (names the function: these are the three the editor would point a newcomer at first), `TOP-BILLED` (names the catalog state without using the contested word), `THE BIG THREE` (names the cohort with editorial voice), or simply `SHOWS` with the three names sitting under the brand line as a flat nav row. Keeps `CURRENTLY FEATURED` in the hero as the single-anchor framing it already carries; resolves the cross-surface collision by differentiating the two labels. Single component edit on the footer column. (b) **alternative — rename the hero eyebrow from `CURRENTLY FEATURED` to a single-anchor-specific label** like `THIS MONTH` or `THIS MONTH'S PICK` — preserves the footer's `FEATURED SHOWS` framing for the standing three. Acceptable but moves the meaning shift onto the hero where the editorial weight sits; the hero is the louder surface and changing its label has a higher reader-impact than changing the footer's. (c) **alternative — leave as-is** — rejected; the cross-surface label collision within one scroll reads as drift, even if each label in isolation is defensible. Recommended (a) — smaller blast radius (footer label edit, not hero), preserves the hero's editorial framing, differentiates the two labels enough that a reader doesn't have to reconcile mid-scroll. Pin: extend the colocated test on `src/components/chrome/footer/__tests__/FooterTiersCol.test.tsx` (verify path — create if absent) with a regression case asserting the column heading literal matches the post-rewrite form (e.g. `/^SHOWS$/i` or `/^START HERE$/i` depending on the chosen rotation) AND does NOT match `/featured/i` (bidirectional drift guard against a future refactor re-introducing the contested word). Sibling positive on `HomeHero.test.tsx` (or equivalent) asserting the hero eyebrow continues to render `CURRENTLY FEATURED` (unchanged). Spoiler discipline P0 intact (chrome label edit only; no per-show verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface — the label edit runs on the eyebrow grammar, not the underlying show selection). (URL: /, source: critique-pass-39) — 9c486a9
+
+- [ ] [LOW] [anon] /shows hero stat-strip last cell reads `May 2026 INDEX REVISED` while /themes hero same-cell reads `June 2026 INDEX REVISED` — same label, two freshness claims, captured on the same anon walk (today is 2026-06-07). Concrete observed shapes from the rendered captures: /shows top-stat strip `13 SHOWS TRACKED · 298 SEASONS RANKED · May 2026 INDEX REVISED`; /themes top-stat strip `3 FEATURED · 9 IN THE INDEX · 10 SHOWS COVERED · June 2026 INDEX REVISED`. The pass-38 #338 / pass-39 (i)'s closure (`f339b1c`) aligned the /themes label from `Index last revised` to `Index revised` (matching the /shows verb-past form) — that closure addressed grammatical-register drift. The two surfaces now agree on grammar but disagree on the date the same global timestamp resolves to: /shows says May, /themes says June. A cold reader who reads both pages back-to-back on the same walk is told one global catalog is a full month staler than another, with no editorial explanation for the gap. The data flows are probably distinct (/shows freshness reads the most-recent canon-mtime across all shows; /themes freshness reads the most-recent theme-content-mtime across all lists) and the May-vs-June difference reflects actual recent content drains — but the reader doesn't carry that vocabulary across the click. Same defect class as the resolved pass-38 #338 (cross-surface label-grammar drift on the same stat-strip slot) — that closure addressed grammar; this row addresses the *value* the slot resolves to. Source: /shows freshness computed at `src/components/shows/ShowsHero.tsx` (verify path) — likely from `getAllShows()` + `canon.revised_at` field max; /themes freshness computed at `src/components/lists/ListsHero.tsx:102` (post-`f339b1c` literal `Index revised`) — likely from `getAllThemes()` + `theme.revised_at` max. Both labels read `INDEX REVISED` post-#338 but resolve to different months because they aggregate over different content corpora. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer who uses the same label for two stats either makes the labels distinguishable or makes the resolved values converge. Fix options: (a) **primary path — distinguish the two labels so the reader doesn't read them as the same global timestamp drifting**. Candidate forms: /shows says `CATALOG REVISED` (names the catalog as the referent) and /themes says `LISTS REVISED` (names the lists corpus); or /shows says `SHOWS REVISED` and /themes says `LISTS REVISED` (parallel construction, each names its own corpus). Two-component edit on `ShowsHero.tsx` + `ListsHero.tsx` (one literal each). Preserves the verb-past framing the post-#338 closure committed to; differentiates the referent so the May-vs-June values stop reading as the same drifting clock. (b) **alternative — converge the two values onto a single global timestamp** — compute a single `MAX(shows.canon.revised_at, themes.revised_at)` across both corpora and surface that on both heroes. Larger blast radius (new shared helper + caller changes on both pages) and loses the per-corpus freshness signal a reader uses to gauge how recently each index was touched. Rejected unless future readers ask for a global timestamp. (c) **alternative — rename only /shows** to a corpus-specific label, leaving /themes as-is — keeps `INDEX REVISED` on the /themes hero but renames the /shows hero to `CATALOG REVISED`; differentiates the two but asymmetric. Acceptable but parallel-construction option (a) is cleaner. (d) **alternative — leave as-is** — rejected; the cross-surface value drift on the same label reads as a single global timestamp drifting by a month, which is misleading. Recommended (a) — symmetric, single-literal-each edit on both components, preserves the verb-past framing, differentiates the two corpora at the chrome-eyebrow layer. Pin: extend the colocated tests on `src/components/shows/__tests__/ShowsHero.test.tsx` (already pins `Index revised` per the #336 close at lines 128-141) and `src/components/lists/__tests__/ListsHero.test.tsx` (pins `Index revised` per the f339b1c close) with rewritten regression cases asserting the new literals (e.g. `/^SHOWS REVISED$/` on ShowsHero and `/^LISTS REVISED$/` on ListsHero) AND bidirectional drift guards asserting neither label re-matches `/^INDEX REVISED$/` (which would re-introduce the cross-surface label collision the row addresses). Sibling positive on `Footer.test.tsx` / `HomeHero.test.tsx` asserting no other surface uses the bare `INDEX REVISED` literal. Spoiler discipline P0 intact (chrome label edits only; no per-show verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface). (URL: /shows, /themes, source: critique-pass-39) — 9c486a9
+
+- [ ] [LOW] [anon] /shows/[show]/season/[slug] `CommentInputStub` renders both the action-verb span `Sign in to comment.` and the brand-tagline span `No plot, no winners, no twists →` inside a single `Link` to `/sign-in`, but the arrow `→` sits at the end of the tagline span (not the action span). Source at `src/components/composition/CommentInputStub.tsx:7-20`: the link's body is `<span>Sign in to comment.</span><span className="comment-stub-mono">No plot, no winners, no twists →</span>` — the two spans render as adjacent siblings, with the arrow ligature trailing the second (tagline) span only. Visual signal in the rendered surface: the action verb has no arrow; the brand tagline carries the arrow. A reader scanning the affordance reads the arrow as the destination cue for the tagline (which makes `No plot, no winners, no twists →` look like a link to the spoilers policy or similar) rather than as the destination cue for the action verb (`Sign in to comment. →`). The whole block IS one link to `/sign-in`, so clicking either span goes to the same place — but the visual hierarchy puts the arrow on the wrong span. Same defect class as the pending pass-36 #335 stacked-affordance (HvV comment-thread `Sign in to comment.` + `No comments yet. Be the first to weigh in.` two-voices finding) — that row addresses two-voice stacking on the empty-state; this row addresses arrow-placement-vs-action-verb on the input-stub. Both at the comment-affordance layer. Source: `src/components/composition/CommentInputStub.tsx:16-17` — the arrow ligature is concatenated to the tagline literal, not the action literal. Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer puts the directional cue on the verb that takes the reader somewhere, not on the brand-tagline reassurance below it. Fix options: (a) **primary path — move the arrow ligature from the tagline span to the action span**. Single-component edit at `CommentInputStub.tsx:16-17` swapping `<span>Sign in to comment.</span><span className="comment-stub-mono">No plot, no winners, no twists →</span>` → `<span>Sign in to comment. →</span><span className="comment-stub-mono">No plot, no winners, no twists</span>`. The destination cue lands on the action verb; the brand tagline drops to plain prose. Preserves the two-line affordance; preserves the whole-block-is-one-link contract. (b) **alternative — drop the arrow entirely** — rejected; the arrow is the visual signal that this affordance is a link, and removing it leaves the block reading as a plain two-line text block. (c) **alternative — render the two spans as visually-separate items** (e.g. the brand tagline on its own line below the link with no link styling) — larger blast radius (new component / CSS structure) and changes the affordance pattern across every season page; the editorial intent of the brand-tagline-as-reassurance below the link is preserved by option (a) without restructuring. (d) **alternative — leave as-is** — rejected; the arrow-on-wrong-span reads as either accident or as the tagline being a separate link to an undeclared destination. Recommended (a) — smallest blast radius (one literal swap per span, no component-structure change), brings the directional cue onto the action verb where it does its work. Pin: extend the colocated test on `src/components/composition/__tests__/CommentInputStub.test.tsx` (verify path — create if absent) with two cases — (1) positive pin asserting the rendered action span (the one containing `Sign in to comment`) ends with the arrow ligature (regex `/Sign in to comment\.?\s*→\s*$/`); (2) negative pin asserting the rendered tagline span (the one containing `No plot, no winners, no twists`) does NOT end with the arrow (regex `→` does not appear inside the `.comment-stub-mono` span). Sibling positive on `Thread.test.tsx` asserting the empty-state's stacked-affordance pattern (pass-36 #335 finding above) continues to render independently of the arrow-placement edit. Bidirectional drift guard against a future refactor reverting the arrow position. Spoiler discipline P0 intact (chrome affordance edit only; no per-season verdict change, no canon position change, no winner / elimination / finale beat exposure on any surface — the edit moves a directional cue between two spans inside an existing Link, doesn't change the destination or the comment-thread content). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-39) — 9c486a9
 
 ## Done
 
