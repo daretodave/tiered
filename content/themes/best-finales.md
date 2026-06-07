@@ -6,7 +6,7 @@ category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-06-06
+last_revised: 2026-06-07
 featured: true
 related:
   - best-returnees
@@ -24,7 +24,7 @@ entries:
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
     title: "The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era."
-    blurb: "The endgame compounds — every conversation freighted with everything Survivor had been by 2010. The jury vote reads as a summary statement for the entire returnee era the show was about to enter."
+    blurb: "Twenty returnees split into heroes and villains compress everything Survivor had been by 2010 into one cast. The jury reads like a court built from the show's own history, and the vote plays as a verdict on the returnee era it was about to enter."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"
@@ -36,13 +36,13 @@ entries:
     season_label: "S40 · Winners at War"
     rank: 4
     title: "Twenty former champions taking the season to its full size."
-    blurb: "The all-winner premise pays back in the closing run. Every move lands heavier than it would in another season's room, and the final tribal carries the weight of a roster that has played this game before."
+    blurb: "Every camp conversation carries strategic weight from someone who has already held the title. The jury room is stacked with players who know exactly what they're hearing, and the vote pulls from twenty years of receipts."
   - show: traitors
     season: 2
     season_label: "S02"
     rank: 5
     title: "The Round Table tightening into the final banishment the format was built for."
-    blurb: "The breakout season runs its endgame the way the format always promised — paranoia compounding, every banishment paid back, the room smaller and louder each night. That last seat is where the US adaptation proves it can hold the tension all the way down."
+    blurb: "Each Round Table tightens the math — fewer chairs, sharper paranoia, banishments paid back across nights instead of episodes. By the last seat, the US adaptation proves it can hold the format's tension all the way down without softening the cruelty."
   - show: dragrace
     season: 6
     season_label: "S06"

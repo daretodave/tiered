@@ -826,6 +826,69 @@ export function collectThemeBodyPhraseRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-36 MED (issue #337): /themes/best-finales body
+// openers reached for `endgame` (3 of 7 entries) and `closing run`
+// (2 of 7) as the templated rewrite for `finale` — on a list whose
+// subject IS finales. Five of seven entries rotating between two
+// synonyms for the title noun reads as the writer dodging the
+// title noun rather than reaching for a fresh angle per entry.
+// Sibling defect to `collectThemeBodyPhraseRepetitionIssues` above
+// (which catches a single load-bearing bigram); this helper catches
+// the broader pattern where multiple synonyms in the same semantic
+// cluster carry the editorial load across a list. Per cluster
+// (the dictionary below; extensible), count entries whose
+// title-or-blurb contains any cluster phrase; flag when the count
+// meets the strict floor (≥ 3 entries hit). `category: single`
+// (intra-canon, single-show) lists are exempt — natural repetition
+// of show-specific surface vocabulary is part of the form.
+const THEME_SYNONYM_CLUSTERS: Record<string, readonly string[]> = {
+  finale: ['endgame', 'closing run', 'last act', 'final stretch'],
+}
+const THEME_SYNONYM_CLUSTER_STRICT_FLOOR = 3
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function textContainsClusterPhrase(text: string, phrase: string): boolean {
+  return new RegExp(`\\b${escapeRegExp(phrase)}\\b`, 'i').test(text)
+}
+
+export function collectThemeSynonymClusterIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    const entryCount = theme.entries.length
+    if (entryCount < 5) continue
+    for (const [clusterName, phrases] of Object.entries(
+      THEME_SYNONYM_CLUSTERS,
+    )) {
+      const hitRanks: number[] = []
+      for (const entry of theme.entries) {
+        const text = `${entry.title ?? ''} ${entry.blurb ?? ''}`.replace(
+          /<[^>]+>/g,
+          ' ',
+        )
+        for (const phrase of phrases) {
+          if (textContainsClusterPhrase(text, phrase)) {
+            hitRanks.push(entry.rank)
+            break
+          }
+        }
+      }
+      if (hitRanks.length >= THEME_SYNONYM_CLUSTER_STRICT_FLOOR) {
+        const ranks = hitRanks.sort((a, b) => a - b).map((r) => `#${r}`).join(', ')
+        const phraseList = phrases.map((p) => `"${p}"`).join(' / ')
+        issues.push({
+          file: `content/themes/${theme.slug}.md`,
+          message: `themed-list synonym-cluster — the "${clusterName}" cluster (${phraseList}) appears across ${hitRanks.length} of ${entryCount} entries (${ranks}). When a list rotates between synonyms for its own subject noun, the rotation reads as templated rather than authored. Rotate at the sentence level — anchor each entry's body opener to a different structural fact (cast, premise, episode rhythm, staging) instead of swapping noun phrases.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-37 MED (issue #333): /shows/survivor hero subtitle
 // (`blurb`) and body opener (`tagline`) both opened on `50 seasons of
 // <X>` — the count was restated on adjacent lines of the most-visited
@@ -1733,6 +1796,25 @@ function main(): number {
     failures.push(...themeBodyPhraseIssues)
   } else {
     for (const issue of themeBodyPhraseIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-36 MED (issue #337): ships strict at floor 3 — the
+  // best-finales body-opener rewrite drains the `finale` synonym
+  // cluster (`endgame` / `closing run` / `last act` / `final stretch`)
+  // to 2 of 7 entries (entry #03 deliberate "Restaurant Wars takes the
+  // season into its endgame" callback + entry #07 deliberate "closing
+  // run rewards the alliance play" rhythm; under the strict floor of
+  // 3). The invariant is the floor that catches a future themed list
+  // whose entries rotate between synonyms for its own subject noun.
+  // One-line toggle mirroring the twelve above.
+  const THEME_SYNONYM_CLUSTER_STRICT = true
+  const themeSynonymClusterIssues = collectThemeSynonymClusterIssues()
+  if (THEME_SYNONYM_CLUSTER_STRICT) {
+    failures.push(...themeSynonymClusterIssues)
+  } else {
+    for (const issue of themeSynonymClusterIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

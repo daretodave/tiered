@@ -20,6 +20,7 @@ import {
   collectShowBlurbTaglineCountRepetitionIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
+  collectThemeSynonymClusterIssues,
   collectThemeDeckBodyOpenerDivergenceIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
@@ -2917,6 +2918,158 @@ describe('content-check — themed-list body-copy phrase repetition (critique pa
     const issues = collectThemeBodyPhraseRepetitionIssues()
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/"closing run"/)
+  })
+})
+
+describe('content-check — themed-list synonym-cluster repetition (critique pass-36, issue #337)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-synonym-cluster-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite, best-finales sits at 2 of 7 entries on the `finale` synonym cluster)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+
+  it('flags the pre-rewrite best-finales shape (5 of 7 entries reaching for `endgame` / `closing run`)', () => {
+    makeMultiEntryTheme(tmp, 'cluster-trigger', {
+      entries: [
+        {
+          title: 'A clean opener that does not reach for the cluster.',
+          blurb: 'The Race always ends on a foot race to the mat, racing hard into the last pit stop.',
+        },
+        {
+          title: 'A title that does not name the cluster.',
+          blurb: 'The endgame compounds — every conversation freighted with everything the show had been by 2010.',
+        },
+        {
+          title: 'A title that names something else.',
+          blurb: 'Restaurant Wars takes the season into its endgame on a kitchen split, and the cooking never drops.',
+        },
+        {
+          title: 'Twenty former champions taking the season to its full size.',
+          blurb: 'The all-winner premise pays back in the closing run. Every move lands heavier than another season.',
+        },
+        {
+          title: 'The Round Table tightening into the final banishment.',
+          blurb: 'The breakout season runs its endgame the way the format always promised — paranoia compounding.',
+        },
+        {
+          title: 'A finale built on craft and real artistry.',
+          blurb: 'Season 6 spends its run building toward a finale of working drag artists.',
+        },
+        {
+          title: 'The era where the modern alliance game finally takes itself seriously.',
+          blurb: 'The closing run rewards the alliance play the summer spent building.',
+        },
+      ],
+    })
+    const issues = collectThemeSynonymClusterIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/themes/cluster-trigger.md')
+    expect(issues[0]!.message).toMatch(/"finale" cluster/)
+    expect(issues[0]!.message).toMatch(/5 of 7 entries/)
+    expect(issues[0]!.message).toMatch(/#2, #3, #4, #5, #7/)
+  })
+
+  it('passes when the cluster sits at the floor (2 of 7 hits, below the strict floor of 3)', () => {
+    makeMultiEntryTheme(tmp, 'cluster-under-floor', {
+      entries: [
+        {
+          title: 'A title that names something else.',
+          blurb: 'Restaurant Wars takes the season into its endgame on a kitchen split, and the cooking never drops.',
+        },
+        {
+          title: 'The era where the modern alliance game finally takes itself seriously.',
+          blurb: 'The closing run rewards the alliance play the summer spent building.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+        { title: 'fifth title', blurb: 'A fifth sentence on a different angle.' },
+      ],
+    })
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+
+  it('exempts `category: single` (intra-canon) lists', () => {
+    makeMultiEntryTheme(tmp, 'pillars-cluster', {
+      category: 'single',
+      entries: [
+        { title: 'A pillar that names the endgame.', blurb: 'The endgame defines the era.' },
+        { title: 'Another pillar.', blurb: 'The closing run sets the bar.' },
+        { title: 'A third pillar.', blurb: 'A last act raises the stakes.' },
+        { title: 'A fourth pillar.', blurb: 'The final stretch proves the format.' },
+        { title: 'A fifth pillar.', blurb: 'The endgame pays it forward.' },
+      ],
+    })
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+
+  it('skips lists with fewer than 5 entries', () => {
+    makeMultiEntryTheme(tmp, 'tiny-cluster', {
+      entries: [
+        { title: 'A title.', blurb: 'The endgame compounds.' },
+        { title: 'Another title.', blurb: 'A closing run lands.' },
+        { title: 'A third title.', blurb: 'The last act pays off.' },
+        { title: 'A fourth title.', blurb: 'The final stretch holds.' },
+      ],
+    })
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+
+  it('counts each entry at most once per cluster even if multiple cluster phrases appear', () => {
+    makeMultiEntryTheme(tmp, 'cluster-multi-hit', {
+      entries: [
+        {
+          title: 'A title that names two cluster phrases.',
+          blurb: 'The endgame compounds and the closing run pays back in one stretch.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+
+  it('uses word-boundary matching (`endgames` does not match `endgame`)', () => {
+    makeMultiEntryTheme(tmp, 'cluster-boundary', {
+      entries: [
+        {
+          title: 'Where endgames historically diverge.',
+          blurb: 'The body talks about endgames across the era, never naming a single one.',
+        },
+        {
+          title: 'A second look at the same idea.',
+          blurb: 'Across endgames, the same beat shows up again and again.',
+        },
+        {
+          title: 'A third take.',
+          blurb: 'Endgames have always been the proving ground for the format.',
+        },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+        { title: 'fifth title', blurb: 'A fifth sentence on a different angle.' },
+      ],
+    })
+    // `endgames` is a different word from `endgame`; \b-bounded match
+    // must not catch the plural form.
+    expect(collectThemeSynonymClusterIssues()).toEqual([])
   })
 })
 
