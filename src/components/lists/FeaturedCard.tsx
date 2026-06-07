@@ -22,7 +22,13 @@ export function FeaturedCard({
     ? shows[0]?.name ?? 'Single-show'
     : 'Cross-canon'
   const status = formatThemeStatus(theme.status, theme.last_revised, today)
-  const cta = big ? 'read the list →' : 'read →'
+  // Unified across `big` and small variants per critique pass-35 #348:
+  // the three featured-this-month sibling cards frame identically, so
+  // the CTA stays in one form across all three. The `big` flag still
+  // drives the visual emphasis (`.feat-card.big` styling) — only the
+  // CTA literal is now invariant. The noun-bearing `the list` form
+  // names the action target so the verb doesn't dangle.
+  const cta = 'read the list →'
 
   return (
     <Link

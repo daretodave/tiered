@@ -54,20 +54,49 @@ describe('<FeaturedCard>', () => {
     expect(container.querySelector('.feat-card.big')).toBeTruthy()
   })
 
-  it('renders "read the list →" CTA when big, plain "read →" otherwise', () => {
+  // Critique pass-35 #348 closure: the three featured-this-month
+  // sibling cards previously rendered with two different CTAs (`read
+  // the list →` on the first/big card, bare `read →` on the other
+  // two), which read as accident rather than editorial intent across
+  // visually-identical siblings. Unified on `read the list →` for
+  // both variants. Bidirectional drift guard mirrors the #242 closure
+  // pattern: positive assertion on the unified form + negative
+  // assertion on the prior bare-verb form, so a future edit that
+  // splits the CTA again fails at unit time.
+  it('renders "read the list →" CTA on both big and small variants (pass-35 #348)', () => {
     const big = render(
       <FeaturedCard theme={theme()} shows={[show()]} big today={today} />,
     )
-    expect(big.getByTestId('lists-featured-card').textContent).toContain(
-      'read the list',
-    )
+    const bigCta = big
+      .getByTestId('lists-featured-card')
+      .querySelector('.feat-foot b')
+    expect(bigCta?.textContent).toBe('read the list →')
     big.unmount()
     const small = render(
       <FeaturedCard theme={theme()} shows={[show()]} today={today} />,
     )
-    const card = small.getByTestId('lists-featured-card')
-    expect(card.textContent).toContain('read')
-    expect(card.textContent).not.toContain('read the list')
+    const smallCta = small
+      .getByTestId('lists-featured-card')
+      .querySelector('.feat-foot b')
+    expect(smallCta?.textContent).toBe('read the list →')
+  })
+
+  it('never renders the bare "read →" CTA on either variant (pass-35 #348 negative pin)', () => {
+    const big = render(
+      <FeaturedCard theme={theme()} shows={[show()]} big today={today} />,
+    )
+    const bigCta = big
+      .getByTestId('lists-featured-card')
+      .querySelector('.feat-foot b')
+    expect(bigCta?.textContent).not.toBe('read →')
+    big.unmount()
+    const small = render(
+      <FeaturedCard theme={theme()} shows={[show()]} today={today} />,
+    )
+    const smallCta = small
+      .getByTestId('lists-featured-card')
+      .querySelector('.feat-foot b')
+    expect(smallCta?.textContent).not.toBe('read →')
   })
 
   it('formats status from theme.status', () => {
