@@ -77,9 +77,9 @@ describe('<ShowHero>', () => {
   // Critique pass-35 (#336) sibling positive — the show-page hero
   // stat-strip third tile must label as `Canon revised` (verb-past)
   // and never drift to the noun form `Last revision`. Pairs with the
-  // /shows hero `Index revised` pin in `ShowsHero.test.tsx` so the
-  // chrome label grammar stays uniform across the home → /shows →
-  // /shows/[show] click path.
+  // /shows hero `Shows revised` pin (post-#347) in `ShowsHero.test.tsx`
+  // so the chrome label grammar stays uniform across the home → /shows
+  // → /shows/[show] click path.
   it('labels the canon-revised stat as `Canon revised` (not `Last revision`)', () => {
     render(
       <ShowHero

@@ -29,22 +29,24 @@ describe('<ListsHero>', () => {
       'May 2026',
     )
     expect(screen.getByTestId('lists-stat-revised').textContent).toContain(
-      'Index revised',
+      'Lists revised',
     )
   })
 
-  // Critique pass-38: chrome label discipline at the /themes top-level
-  // index landing — the freshness slot must label as `Index revised`
-  // (verb-past, named referent — the catalog index) to mirror the
-  // post-pass-35 #336 close on the sibling /shows hero. The two
-  // top-level index landings carry the same surface intent and must
-  // commit to one grammatical register. Bidirectional pin: assert the
-  // canonical `Index revised` form is present AND the rejected adverb-
-  // modified form `Last revised` is gone, so a future refactor that
-  // swings the label back fails at unit time, not on the next reader
-  // pass. Mirrors the pin shape at
-  // src/components/shows/__tests__/ShowsHero.test.tsx:128-143.
-  it('labels the freshness stat cell as `Index revised` (not `Last revised`) — mirrors /shows pass-35 #336', () => {
+  // Critique pass-38 → pass-39 (#347): chrome label discipline at the
+  // /themes top-level index landing — the freshness slot labels as
+  // `Lists revised` (verb-past, named referent — the lists corpus). The
+  // sibling /shows hero labels its own slot as `Shows revised`
+  // (post-#347). The two top-level index landings carry distinct
+  // corpora; naming each by its own corpus stops the readers from
+  // reading the two stat values (which can differ by a month) as the
+  // same global timestamp drifting. Pass-38 #338 first aligned the
+  // grammar (verb-past); pass-39 #347 differentiates the referent.
+  // Bidirectional pin: assert the canonical `Lists revised` form is
+  // present AND the rejected forms (`Last revised`, the ambiguous
+  // `Index revised`) are gone, so a future refactor that swings the
+  // label back fails at unit time.
+  it('labels the freshness stat cell as `Lists revised` (not `Index revised` or `Last revised`) — pairs with /shows pass-39 #347', () => {
     render(
       <ListsHero
         stats={{
@@ -60,12 +62,13 @@ describe('<ListsHero>', () => {
     )
     const cell = screen.getByTestId('lists-stat-revised')
     const label = cell.querySelector('.lists-stat-key')
-    expect(label?.textContent).toBe('Index revised')
+    expect(label?.textContent).toBe('Lists revised')
     // CSS uppercases the rendered label via `text-transform: uppercase`
     // on `.lists-stat-key`. Regex pin at the DOM source so the
     // assertion isn't fooled by case-folding.
-    expect(label?.textContent).toMatch(/^Index revised$/)
+    expect(label?.textContent).toMatch(/^Lists revised$/)
     expect(cell.textContent).not.toMatch(/last revised/i)
+    expect(cell.textContent).not.toMatch(/index revised/i)
   })
 
   it('splits the hero stat into FEATURED + IN THE INDEX when featuredCount > 0 (critique-pass-22 #261 — closes "12 LISTS vs 9 LISTS" mismatch)', () => {

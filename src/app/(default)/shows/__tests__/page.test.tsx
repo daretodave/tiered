@@ -174,14 +174,15 @@ describe('/shows generateMetadata — description derived from populated tiers',
   })
 })
 
-// Critique pass-27 HIGH (#288): the /shows hero `INDEX REVISED` stat
+// Critique pass-27 HIGH (#288): the /shows hero `SHOWS REVISED` stat
 // must source its month from the max canon `last_revised` ISO across
 // the catalog — same path the show page reads — not from build-time
 // `new Date()`. Mirrors the home pass-24 #269 closure one surface up.
-// (Label renamed from `Last revision` → `Index revised` at pass-35 #336
-// to align with the verb-past grammar of the sibling `Canon revised`
-// surfaces — the data-source contract this block pins is unchanged.)
-describe('/shows hero Index revised sourced from catalog canons', () => {
+// (Label renamed `Last revision` → `Index revised` at pass-35 #336, then
+// `Index revised` → `Shows revised` at pass-39 #347 to differentiate
+// the per-corpus freshness from the sibling /themes `Lists revised`.
+// The data-source contract this block pins is unchanged.)
+describe('/shows hero Shows revised sourced from catalog canons', () => {
   it('renders the latest canon revision month across the roster', () => {
     getAllShowsMock.mockReturnValue([
       fullShow({ slug: 'a' }),
