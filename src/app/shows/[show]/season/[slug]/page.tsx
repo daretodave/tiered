@@ -249,6 +249,23 @@ export function whereItSitsCopy(
 // renders and preserves the page's eyebrow + h2 rhythm.
 export const ADJACENT_SECTION_H2 = 'Either direction.' as const
 
+// SeasonHero byline. critique-pass-38 MED (issue #339): the byline
+// `Canon entry by the tiered.tv editor` and the RankScale headLabel
+// `Editor's Canon` stack the same attribution claim twice in the same
+// module head when the season is canon-ranked. The RankScale + slot
+// card (`#02 of 50`) carry the attribution implicitly there, so the
+// byline becomes redundant. For non-canon-ranked seasons the RankScale
+// renders the `not yet ranked` state and the byline carries the only
+// attribution surface — keep it.
+export function seasonHeroBylineFor(canonRank: number | null) {
+  if (canonRank != null) return null
+  return (
+    <span>
+      Canon entry by <span className="who">the tiered.tv editor</span>
+    </span>
+  )
+}
+
 // 31a: digit-form back-compat. URLs like `/shows/survivor/season/4`
 // resolve the season by number and 308 to its canonical slug form.
 // Decided to do this in the page instead of middleware so the
@@ -375,9 +392,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           title={season.title}
           displayTitle={season.display_title}
           lede={lede}
-          byline={
-            <span>Canon entry by <span className="who">the tiered.tv editor</span></span>
-          }
+          byline={seasonHeroBylineFor(canonRank)}
           infoCard={
             <SeasonInfoCard
               canonRank={canonRank}

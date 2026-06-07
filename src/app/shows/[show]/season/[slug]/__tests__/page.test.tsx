@@ -55,10 +55,13 @@ vi.mock('@/content', async () => {
   }
 })
 
+import { isValidElement } from 'react'
+import { render, screen } from '@testing-library/react'
 import {
   ADJACENT_SECTION_H2,
   generateMetadata,
   generateStaticParams,
+  seasonHeroBylineFor,
   whereItSitsCopy,
 } from '../page'
 
@@ -348,6 +351,47 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
     expect(whereItSitsCopy(show, 1, 1)).toBe(
       "Sole entry in the Top Chef Editor's Canon so far. Adjacent picks land as the canon grows.",
     )
+  })
+})
+
+describe('seasonHeroBylineFor — within-module double-attribution gate (issue #339)', () => {
+  // critique-pass-38 MED: the SeasonHero byline "Canon entry by the
+  // tiered.tv editor" and the RankScale headLabel "Editor's Canon"
+  // stacked the same attribution in the hero module on canon-ranked
+  // seasons. The fix drops the byline when canonRank is present
+  // (RankScale + slot card carry attribution implicitly) and keeps
+  // it when canonRank is null (RankScale renders the "not yet ranked"
+  // state, so the byline is the only attribution surface).
+  it('returns null when the season is canon-ranked — RankScale carries the attribution', () => {
+    expect(seasonHeroBylineFor(2)).toBeNull()
+    expect(seasonHeroBylineFor(50)).toBeNull()
+    expect(seasonHeroBylineFor(1)).toBeNull()
+  })
+
+  it('returns the byline ReactNode naming "the tiered.tv editor" when canonRank is null', () => {
+    const node = seasonHeroBylineFor(null)
+    expect(node).not.toBeNull()
+    expect(isValidElement(node)).toBe(true)
+    render(<div data-testid="probe">{node}</div>)
+    const probe = screen.getByTestId('probe')
+    expect(probe).toHaveTextContent('Canon entry by the tiered.tv editor')
+    expect(probe.querySelector('.who')).toHaveTextContent('the tiered.tv editor')
+  })
+
+  it('never re-introduces a verbatim "Editor\'s Canon" eyebrow in the byline output', () => {
+    // Negative pin: the defect was two adjacent eyebrows both claiming
+    // "Editor's Canon" in the module head. A future authoring pass that
+    // renamed the byline to "Editor's Canon entry by..." or similar
+    // would resurface the double-attribution. Belt-and-braces against
+    // a re-introduction that re-stacks the attribution.
+    for (const canonRank of [null, 1, 25, 50]) {
+      const node = seasonHeroBylineFor(canonRank)
+      if (node == null) continue
+      const { unmount } = render(<div data-testid="probe">{node}</div>)
+      const probe = screen.getByTestId('probe')
+      expect(probe.textContent ?? '').not.toMatch(/editor'?s canon/i)
+      unmount()
+    }
   })
 })
 
