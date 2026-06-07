@@ -39,8 +39,8 @@ export function ListRow({ theme, shows, today }: ListRowProps) {
         <br />
         {status}
       </span>
-      <span className="list-row-arrow" aria-hidden="true">
-        →
+      <span className="list-row-arrow">
+        <b>read the list →</b>
       </span>
     </Link>
   )

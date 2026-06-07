@@ -450,6 +450,18 @@ h1.lists-hero-title em {
   color: var(--color-primary-base);
   font-size: 18px;
 }
+.list-row-arrow b {
+  font: 500 11px/1 var(--font-family-mono);
+  letter-spacing: 0.06em;
+  color: var(--color-primary-base);
+  /* Keep the CTA copy ("read the list →") lowercase against the
+     adjacent `.list-row-meta` uppercase eyebrow. Mirrors the
+     featured-rail `.feat-foot b` override (critique pass-38 #342)
+     and brings the index-card affordance grammar into agreement
+     with the featured-card form per critique pass-40 #350. */
+  text-transform: none;
+  white-space: nowrap;
+}
 
 /* Filter cascade — hide off-filter groups when filter is set. */
 .lists-filter-scope[data-active-filter='tone']

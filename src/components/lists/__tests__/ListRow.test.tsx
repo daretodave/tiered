@@ -41,4 +41,27 @@ describe('<ListRow>', () => {
       .querySelectorAll('.bullet')
     expect(bullets).toHaveLength(2)
   })
+
+  // Critique pass-40 #350: /themes affordance grammar — the 9 index
+  // cards close with `read the list →` matching the 3 featured-card
+  // close (#348 unified the rail; this row closes the index half).
+  // Bidirectional drift guard: the verb-form CTA renders AND no bare
+  // arrow orphan remains. A future refactor that drops the verb or
+  // re-introduces a standalone `→` fails at unit time.
+  describe('affordance grammar (critique pass-40 #350)', () => {
+    it('renders the verb-form CTA `read the list →`', () => {
+      render(<ListRow theme={theme()} shows={[show()]} today={today} />)
+      const row = screen.getByTestId('lists-row')
+      expect(row.textContent).toContain('read the list →')
+    })
+
+    it('renders no bare `→` orphan outside the CTA', () => {
+      render(<ListRow theme={theme()} shows={[show()]} today={today} />)
+      const row = screen.getByTestId('lists-row')
+      const arrows = row.textContent?.match(/→/g) ?? []
+      expect(arrows).toHaveLength(1)
+      const arrowSpan = row.querySelector('.list-row-arrow')
+      expect(arrowSpan?.textContent?.trim()).toBe('read the list →')
+    })
+  })
 })
