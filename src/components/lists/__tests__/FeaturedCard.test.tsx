@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { FeaturedCard } from '../FeaturedCard'
@@ -88,5 +90,39 @@ describe('<FeaturedCard>', () => {
     expect(
       screen.getByTestId('lists-featured-card').getAttribute('href'),
     ).toBe('/themes/firsts')
+  })
+})
+
+// Critique pass-38 #342 closure: the lifecycle status label on a
+// featured tile previously rendered lowercase (`stable list`) because
+// `.feat-foot` had no `text-transform`, while the sibling All-lists
+// tile `.list-row-meta` rule applied uppercase. Same source string
+// (`formatThemeStatus` literal), two casings on the same /themes page.
+// The fix uppercases the status label by adding `text-transform:
+// uppercase` to `.feat-foot`, and preserves the CTA's authored
+// lowercase via `text-transform: none` on `.feat-foot b`. The CSS
+// rules are pinned at source so a future refactor that drops either
+// directive fails at unit time. Bidirectional drift guard mirrors
+// the #242 closure pattern.
+describe('lists.css `.feat-foot` casing pins (pass-38 #342)', () => {
+  const css = readFileSync(
+    path.resolve(process.cwd(), 'src/styles/lists.css'),
+    'utf-8',
+  )
+
+  function extractRule(selector: string): string {
+    const re = new RegExp(`${selector.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}\\s*\\{([^}]*)\\}`)
+    const m = css.match(re)
+    return m?.[1] ?? ''
+  }
+
+  it('`.feat-foot` declares `text-transform: uppercase` so the lifecycle status matches the All-lists `.list-row-meta` casing', () => {
+    const body = extractRule('.feat-foot')
+    expect(body).toMatch(/text-transform:\s*uppercase/)
+  })
+
+  it('`.feat-foot b` overrides with `text-transform: none` so the CTA copy ("read the list →") keeps its lowercase register', () => {
+    const body = extractRule('.feat-foot b')
+    expect(body).toMatch(/text-transform:\s*none/)
   })
 })

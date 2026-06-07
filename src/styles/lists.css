@@ -296,6 +296,7 @@ h1.lists-hero-title em {
   align-items: center;
   font: 500 11px/1 var(--font-family-mono);
   letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--color-ink-3);
   padding-top: 16px;
   border-top: 1px solid var(--color-line-base);
@@ -303,6 +304,12 @@ h1.lists-hero-title em {
 .feat-foot b {
   color: var(--color-primary-base);
   font-weight: 500;
+  /* Keep the CTA copy ("read the list →") in its authored
+     lowercase register; the `.feat-foot` uppercase applies to
+     the lifecycle status label (left child) only. Mirrors the
+     All-lists `.list-row-meta` uppercase shape per critique
+     pass-38 #342 closure. */
+  text-transform: none;
 }
 
 /* ALL LISTS */
