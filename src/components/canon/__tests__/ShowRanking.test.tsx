@@ -150,6 +150,34 @@ describe('<ShowRanking>', () => {
     expect(text).not.toMatch(/but we ship one number/i)
   })
 
+  // Pin per critique pass-39 #345 fix: the canon-pane lede must
+  // explicitly name the editor's column as the singular ranking
+  // the prose commits to, since the next sibling DOM element
+  // renders two clearly-labeled tab triggers (Editor's Canon
+  // CURATED / Community LIVE). The prior "One ranking ... this
+  // is one number." framing produced a prose-vs-UI shape
+  // mismatch at first paint. Bidirectional — positive on the
+  // editor's-column naming AND negative against the bare "One
+  // ranking" standalone sentence + the "this is one number" coda
+  // so a future authoring pass cannot regress to the
+  // contradictory shape without tripping the unit gate.
+  it("ranking-intro canon meta names the editor's column explicitly (pass-39 #345)", () => {
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={[season(20, 'Heroes vs. Villains')]}
+        canon={canon()}
+        initialView="canon"
+        community={liveRanking([season(20, 'Heroes vs. Villains')])}
+      />,
+    )
+    const intro = screen.getByTestId('ranking-intro')
+    const text = intro.textContent ?? ''
+    expect(text).toMatch(/editor'?s (ranking|column|canon)/i)
+    expect(text).not.toMatch(/^[^.]*\bone ranking\b[^.]*\./i)
+    expect(text).not.toMatch(/this is one number/i)
+  })
+
   it('ranking-intro community meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
     render(
       <ShowRanking

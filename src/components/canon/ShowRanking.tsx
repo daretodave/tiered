@@ -95,8 +95,9 @@ export function ShowRanking({
         </h2>
         <p className="meta">
           <span className="cp-canon-only">
-            One ranking, written by an editor who has rewatched every season at
-            least twice. The community argues back; this is one number.
+            One editor&apos;s ranking, written by an editor who has rewatched
+            every season at least twice. The community argues back in the next
+            tab.
           </span>
           <span className="cp-community-only">
             Each season carries a yes/no vote — does it belong in the community
