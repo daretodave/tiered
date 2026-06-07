@@ -96,19 +96,24 @@ describe('<ProfileEmpty>', () => {
     )
   })
 
-  // CRITIQUE pass 22 MED (#262) + pass 28 MED (#293): the self-view
-  // prose stays second-person ("your record") so the next-action
-  // prompt and the CTA address the actual owner of the page; pass 28
-  // swapped the prior two-sentence admin-style framing ("Nothing on
-  // your record yet. Vote on a season and it will land here.") for a
-  // single warm editorial lede that restores the bearings voice on
-  // the only surface previously missing it.
-  it('renders the self-view editorial lede alongside the CTA (#262 + #293)', () => {
+  // CRITIQUE pass 22 MED (#262) + pass 28 MED (#293) + pass 39 MED
+  // (#346): the self-view prose stays second-person ("your record")
+  // so the next-action prompt and the CTA address the actual owner
+  // of the page; pass 28 swapped the prior two-sentence admin-style
+  // framing ("Nothing on your record yet. Vote on a season and it
+  // will land here.") for a single warm editorial lede that
+  // restored the bearings voice on the only surface previously
+  // missing it; pass 39 dropped the `New here.` recency claim
+  // (which fired unconditionally with no `joinedAt` gate, so a
+  // returning member two months in was being greeted as new) and
+  // landed on a recency-honest literal that reads cleanly at every
+  // tenure.
+  it('renders the self-view editorial lede alongside the CTA (#262 + #293 + #346)', () => {
     render(
       <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
     )
     expect(screen.getByTestId('profile-empty').textContent).toBe(
-      'New here. Cast one vote and your record starts writing itself.',
+      'No votes yet. Cast one and your record starts writing itself.',
     )
     expect(screen.getByTestId('profile-empty-cta')).toBeTruthy()
   })
@@ -124,6 +129,27 @@ describe('<ProfileEmpty>', () => {
     const text = screen.getByTestId('profile-empty').textContent ?? ''
     expect(text).not.toMatch(/nothing on your record yet/i)
     expect(text).not.toMatch(/it will land here/i)
+  })
+
+  // CRITIQUE pass 39 MED (#346) negative pin: the self-view literal
+  // must not carry an unconditional recency claim ("New here.",
+  // "just joined", "welcome aboard"). The component has no
+  // `joinedAt` input — any such literal fires whenever the viewer
+  // has no votes, even for a 60-day-tenured account; the regression
+  // greets tenured members as new. A future edit reaching for any
+  // of these forms trips the unit gate on both selfView branches.
+  it('does not carry an unconditional recency-claim literal on the self view (#346)', () => {
+    render(
+      <ProfileEmpty selfView={{ showName: 'Survivor', showHref: '/shows/survivor' }} />,
+    )
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/new here|just (joined|signed up)|welcome aboard/i)
+  })
+
+  it('does not carry an unconditional recency-claim literal on the stranger view (#346)', () => {
+    render(<ProfileEmpty />)
+    const text = screen.getByTestId('profile-empty').textContent ?? ''
+    expect(text).not.toMatch(/new here|just (joined|signed up)|welcome aboard/i)
   })
 
   // CRITIQUE pass 22 MED (#262) negative pin: the self branch must

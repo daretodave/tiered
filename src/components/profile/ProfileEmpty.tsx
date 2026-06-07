@@ -31,17 +31,27 @@ type ProfileEmptyProps = {
 // read as an admin screen, not an editorial product. The stat tile
 // row is now reserved for accounts with at least one vote so the
 // structure earns its space; the self branch leads with a single
-// warm editorial lede ("New here. Cast one vote and your record
-// starts writing itself."), the only surface that previously let
+// warm editorial lede, the only surface that previously let
 // the bearings voice ("knowledgeable peer — confident, warm,
 // plain-spoken") down. Reverts the pass-16 #217 zeroed skeleton.
+//
+// CRITIQUE pass 39 MED (#346): the prior self-view lede opened with
+// `New here.` — a recency claim that fires unconditionally whenever
+// the viewer has no votes, with no gate on `joinedAt`. On the /u/e2e
+// walk the page rendered `Member since May 2026` directly above
+// `New here.`; a returning member two months in was greeted as new.
+// The new literal drops the recency claim (`No votes yet. Cast one
+// and your record starts writing itself.`) — reads honestly at every
+// recency including 0-day signups, preserves the CTA mechanic the
+// pass-28 #293 closure landed for, doesn't lean on a join-date input
+// the component doesn't have.
 export function ProfileEmpty({ selfView }: ProfileEmptyProps = {}) {
   return (
     <div className="flex flex-col gap-6" data-testid="profile-empty-block">
       <div className="flex flex-col gap-3">
         <p className="text-ink-2" data-testid="profile-empty">
           {selfView
-            ? 'New here. Cast one vote and your record starts writing itself.'
+            ? 'No votes yet. Cast one and your record starts writing itself.'
             : 'No votes on the public record yet.'}
         </p>
         {selfView ? (
