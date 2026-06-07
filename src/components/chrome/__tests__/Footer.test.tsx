@@ -26,6 +26,19 @@ describe('<Footer>', () => {
     expect(screen.getByTestId('site-footer-about-col')).toBeInTheDocument()
   })
 
+  it('surfaces Privacy + Terms inside the tiered.tv column on every page', () => {
+    // The /about closing paragraph names Privacy and Terms; the global
+    // footer carries those destinations so a reader doesn't have to
+    // deep-read /about prose to reach them.
+    render(<Footer />)
+    const col = screen.getByTestId('site-footer-about-col')
+    const hrefs = Array.from(col.querySelectorAll('a')).map((a) =>
+      a.getAttribute('href'),
+    )
+    expect(hrefs).toContain('/privacy')
+    expect(hrefs).toContain('/terms')
+  })
+
   it('does NOT contain the phrase "an experiment"', () => {
     render(<Footer />)
     const footer = screen.getByTestId('site-footer')

@@ -4,12 +4,16 @@ import { FooterAboutCol } from '../FooterAboutCol'
 
 // The component's static LINKS array, mirrored here as the expected
 // contract. The order is load-bearing — the footer renders the
-// column top-to-bottom in this sequence on every page.
+// column top-to-bottom in this sequence on every page. The trailing
+// Privacy + Terms pair are the legal-nav entries the /about closing
+// paragraph commits to surfacing globally.
 const EXPECTED: Array<{ href: string; label: string }> = [
   { href: '/about', label: 'About the canon' },
   { href: '/about#voting', label: 'How voting works' },
   { href: '/about#spoilers', label: 'Spoilers policy' },
   { href: '/about#editors', label: 'Become an editor' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
 ]
 
 describe('<FooterAboutCol> container', () => {
@@ -34,9 +38,9 @@ describe('<FooterAboutCol> links', () => {
   // DOM attribute under jsdom — the contract is noted here, the
   // tests pin what is DOM-observable (href, label, order, count).
 
-  it('renders exactly 4 links', () => {
+  it('renders exactly 6 links', () => {
     render(<FooterAboutCol />)
-    expect(screen.getAllByRole('link')).toHaveLength(4)
+    expect(screen.getAllByRole('link')).toHaveLength(6)
   })
 
   it('renders the link hrefs in order', () => {
@@ -61,27 +65,35 @@ describe('<FooterAboutCol> links', () => {
     }
   })
 
-  it('points every link into the /about page', () => {
+  it('renders /privacy with the label "Privacy"', () => {
     render(<FooterAboutCol />)
-    for (const link of screen.getAllByRole('link')) {
-      expect(link.getAttribute('href')).toMatch(/^\/about(#|$)/)
-    }
+    const link = screen.getByRole('link', { name: 'Privacy' })
+    expect(link.getAttribute('href')).toBe('/privacy')
   })
 
-  it('carries an #anchor fragment on the three deep links and none on the first', () => {
+  it('renders /terms with the label "Terms"', () => {
+    render(<FooterAboutCol />)
+    const link = screen.getByRole('link', { name: 'Terms' })
+    expect(link.getAttribute('href')).toBe('/terms')
+  })
+
+  it('keeps the about-deep links followed by the two legal links', () => {
     render(<FooterAboutCol />)
     const hrefs = screen
       .getAllByRole('link')
       .map((a) => a.getAttribute('href') ?? '')
-    // The first entry is the bare /about page; the other three are
-    // deep links — a silent drop of a fragment routes a deep link
-    // to the page top with no other test failing.
+    // The first four entries are the about-page navigation (bare
+    // + three #anchor fragments); the trailing two are the legal
+    // nav — surfaced globally so a reader doesn't have to deep-read
+    // /about prose to reach Privacy or Terms.
     expect(hrefs[0]).toBe('/about')
-    expect(hrefs.slice(1)).toEqual([
+    expect(hrefs.slice(1, 4)).toEqual([
       '/about#voting',
       '/about#spoilers',
       '/about#editors',
     ])
+    expect(hrefs.slice(4)).toEqual(['/privacy', '/terms'])
+    expect(hrefs.filter((h) => h.startsWith('/about'))).toHaveLength(4)
     expect(hrefs.filter((h) => h.includes('#'))).toHaveLength(3)
   })
 })
@@ -93,7 +105,7 @@ describe('<FooterAboutCol> list structure', () => {
       .getByTestId('site-footer-about-col')
       .querySelectorAll('ul')
     expect(lists).toHaveLength(1)
-    expect(lists[0]?.querySelectorAll('li')).toHaveLength(4)
+    expect(lists[0]?.querySelectorAll('li')).toHaveLength(6)
   })
 
   it('places exactly one anchor inside each <li>', () => {
@@ -101,7 +113,7 @@ describe('<FooterAboutCol> list structure', () => {
     const items = screen
       .getByTestId('site-footer-about-col')
       .querySelectorAll('li')
-    expect(items).toHaveLength(4)
+    expect(items).toHaveLength(6)
     for (const li of items) {
       expect(li.querySelectorAll('a')).toHaveLength(1)
     }

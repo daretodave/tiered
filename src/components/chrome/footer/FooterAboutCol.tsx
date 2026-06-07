@@ -5,6 +5,8 @@ const LINKS: Array<{ href: string; label: string }> = [
   { href: '/about#voting', label: 'How voting works' },
   { href: '/about#spoilers', label: 'Spoilers policy' },
   { href: '/about#editors', label: 'Become an editor' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
 ]
 
 export function FooterAboutCol() {
