@@ -73,4 +73,27 @@ describe('<ShowHero>', () => {
     render(<ShowHero title="t" blurb="b" crumb="x" />)
     expect(screen.queryByTestId('show-hero-tagline')).not.toBeInTheDocument()
   })
+
+  // Critique pass-35 (#336) sibling positive — the show-page hero
+  // stat-strip third tile must label as `Canon revised` (verb-past)
+  // and never drift to the noun form `Last revision`. Pairs with the
+  // /shows hero `Index revised` pin in `ShowsHero.test.tsx` so the
+  // chrome label grammar stays uniform across the home → /shows →
+  // /shows/[show] click path.
+  it('labels the canon-revised stat as `Canon revised` (not `Last revision`)', () => {
+    render(
+      <ShowHero
+        title="Survivor"
+        blurb="b"
+        crumb="x"
+        stats={[
+          { value: 47, key: 'seasons aired' },
+          { value: 'May 2026', key: 'Canon revised' },
+        ]}
+      />,
+    )
+    const stats = screen.getByTestId('show-hero-stats')
+    expect(stats.textContent).toContain('Canon revised')
+    expect(stats.textContent).not.toContain('Last revision')
+  })
 })

@@ -22,7 +22,8 @@ export function formatRevisedAgo(iso: string, today: Date = new Date()): string 
 }
 
 // List-detail meta strip: calendar "Month YYYY" matching the home
-// `CANON REVISED` block and the show-page `LAST REVISION` stat. Relative
+// `CANON REVISED` block, the show-page `CANON REVISED` stat, and the
+// /shows hero `INDEX REVISED` stat. Relative
 // stamps ("this week") rot silently on a static site — /critique pass 12
 // flagged the chrome-consistency drift; the canon helper already renders
 // the editorial form for every other revised-stamp surface.

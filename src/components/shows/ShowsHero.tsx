@@ -44,7 +44,7 @@ export function ShowsHero({ stats, tiers }: ShowsHeroProps) {
               >
                 {stats.lastRevision}
               </div>
-              <div className="shows-stat-key">Last revision</div>
+              <div className="shows-stat-key">Index revised</div>
             </div>
           ) : null}
         </div>

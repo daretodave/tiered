@@ -9,7 +9,7 @@ export type ShowsStats = {
   lastRevision: string | null
 }
 
-// Critique pass-27 HIGH (#288): the /shows hero `Last revision` stat
+// Critique pass-27 HIGH (#288): the /shows hero `Index revised` stat
 // is sourced from the max `canon.last_revised` ISO across the catalog,
 // not from build-time `new Date()`. Mirrors the pass-24 #269 home/show
 // fix one surface up — every canon-revised label in the product

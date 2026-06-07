@@ -37,7 +37,7 @@ describe('<ShowsHero>', () => {
       'May 2026',
     )
     expect(screen.getByTestId('shows-stat-revised').textContent).toContain(
-      'Last revision',
+      'Index revised',
     )
   })
 
@@ -84,7 +84,7 @@ describe('<ShowsHero>', () => {
   // `last_revised` (or the showsStats helper returns null for any
   // reason), the stat cell must hide entirely — mirrors the home
   // pass-24 #269 hide path so /shows never stamps a fabricated date.
-  it('hides the Last revision cell when stats.lastRevision is null', () => {
+  it('hides the Index revised cell when stats.lastRevision is null', () => {
     render(
       <ShowsHero
         stats={{ showCount: 13, totalSeasons: 290, lastRevision: null }}
@@ -94,7 +94,7 @@ describe('<ShowsHero>', () => {
     expect(screen.queryByTestId('shows-stat-revised')).toBeNull()
     expect(screen.queryByTestId('shows-hero-canon-revised')).toBeNull()
     const stats = screen.getByTestId('shows-hero-stats')
-    expect(stats.textContent).not.toContain('Last revision')
+    expect(stats.textContent).not.toContain('Index revised')
   })
 
   it('renders the canon-revised cell verbatim from the supplied label', () => {
@@ -115,5 +115,30 @@ describe('<ShowsHero>', () => {
     expect(screen.getByTestId('shows-hero-canon-revised').textContent).toBe(
       'February 2027',
     )
+  })
+
+  // Critique pass-35 (#336): chrome label discipline — the third stat
+  // tile must label as `Index revised` (verb-past, named referent — the
+  // catalog index, not a canon) to match the verb-past grammar the home
+  // featured tile and the show-page hero stat already use (`Canon
+  // revised`). Bidirectional pin: assert the canonical `Index revised`
+  // form is present AND the rejected noun form `Last revision` is gone,
+  // so a future refactor that swings the label back to the generic noun
+  // trips at unit time, not on the next reader pass.
+  it('labels the third stat cell as `Index revised` (not `Last revision`)', () => {
+    render(
+      <ShowsHero
+        stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
+        tiers={['S', 'A']}
+      />,
+    )
+    const cell = screen.getByTestId('shows-stat-revised')
+    const label = cell.querySelector('.shows-stat-key')
+    expect(label?.textContent).toBe('Index revised')
+    // CSS uppercases the rendered label — `text-transform: uppercase`
+    // on `.shows-stat-key`. Regex pin at the DOM source so the
+    // assertion isn't fooled by case-folding.
+    expect(label?.textContent).toMatch(/^Index revised$/)
+    expect(cell.textContent).not.toContain('Last revision')
   })
 })

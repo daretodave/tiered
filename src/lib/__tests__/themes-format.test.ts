@@ -53,8 +53,9 @@ describe('formatRevisedRelative', () => {
   })
 
   it('matches the shared canon helper output for the same ISO input', () => {
-    // Same Month YYYY shape as the home CANON REVISED / show-page LAST
-    // REVISION stat — single source of truth at @/lib/canon/last-revised.
+    // Same Month YYYY shape as the home CANON REVISED / show-page
+    // CANON REVISED / /shows INDEX REVISED stat — single source of
+    // truth at @/lib/canon/last-revised.
     expect(formatRevisedRelative('2026-05-10')).toMatch(/^[A-Z][a-z]+ \d{4}$/)
   })
 
