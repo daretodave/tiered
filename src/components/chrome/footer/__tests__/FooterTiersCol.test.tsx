@@ -59,20 +59,22 @@ describe('<FooterTiersCol> container', () => {
     expect(nav.tagName).toBe('NAV')
     expect(nav.classList.contains('site-footer-col')).toBe(true)
     // aria-label stays in lockstep with the visible h2 — both name the
-    // column as the *featured subset* (3 of N shows), matching the
-    // home hero's "Currently featured" eyebrow framing the reader has
-    // already met above the fold. Critique pass-33: an unlabeled
-    // "Shows" column with only 3 of 13 entries read as the complete
-    // index until the `All shows →` catch-all link was spotted.
-    expect(nav.getAttribute('aria-label')).toBe('Featured shows')
+    // column as an editor-pointed entry-point cohort. Critique pass-39
+    // #349 swapped the prior "Featured shows" literal off this column
+    // because the home hero already carries `Currently featured` as
+    // its eyebrow above the fold; the same word in two grammatical
+    // registers on one page read as drift. `Start here` names the
+    // function (the three the editor would point a newcomer at first)
+    // and resolves the cross-surface label collision.
+    expect(nav.getAttribute('aria-label')).toBe('Start here')
   })
 
-  it('renders the "Featured shows" column head as an <h2> with the head class', () => {
+  it('renders the "Start here" column head as an <h2> with the head class', () => {
     mockedGetAllShows.mockReturnValue([])
     render(<FooterTiersCol />)
     const head = screen.getByRole('heading', { level: 2 })
     expect(head.classList.contains('site-footer-col-head')).toBe(true)
-    expect(head.textContent).toBe('Featured shows')
+    expect(head.textContent).toBe('Start here')
   })
 
   it('does NOT render the bare "Shows" head literal — bidirectional drift guard', () => {
@@ -80,7 +82,10 @@ describe('<FooterTiersCol> container', () => {
     // head + 3-of-13 list read as the complete index. A future edit
     // that reverts the literal back to bare "Shows" (heading OR
     // aria-label) must fail at unit time, mirroring the #242 closure
-    // pattern (bidirectional regression guard).
+    // pattern (bidirectional regression guard). Pass-39 #349 widens
+    // the guard to also block a regression back to the prior
+    // `Featured shows` literal — that form collided with the home
+    // hero's `Currently featured` eyebrow on the same page load.
     mockedGetAllShows.mockReturnValue([
       makeShow('a', 'A'),
       makeShow('b', 'B'),
@@ -89,10 +94,12 @@ describe('<FooterTiersCol> container', () => {
     render(<FooterTiersCol />)
     const head = screen.getByRole('heading', { level: 2 })
     expect(head.textContent).not.toBe('Shows')
-    expect(head.textContent).toMatch(/featured/i)
+    expect(head.textContent).not.toMatch(/featured/i)
+    expect(head.textContent).toMatch(/^start here$/i)
     const nav = screen.getByTestId('site-footer-tiers-col')
     expect(nav.getAttribute('aria-label')).not.toBe('Shows')
-    expect(nav.getAttribute('aria-label')).toMatch(/featured/i)
+    expect(nav.getAttribute('aria-label')).not.toMatch(/featured/i)
+    expect(nav.getAttribute('aria-label')).toMatch(/^start here$/i)
   })
 
   it('reads the show list from getAllShows()', () => {
@@ -257,7 +264,7 @@ describe('<FooterTiersCol> graceful counts', () => {
     expect(links[0]?.getAttribute('href')).toBe('/shows')
     // The column head still renders so the footer never collapses.
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(
-      'Featured shows',
+      'Start here',
     )
   })
 })
