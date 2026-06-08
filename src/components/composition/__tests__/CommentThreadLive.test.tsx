@@ -143,12 +143,19 @@ describe('<CommentThreadLive>', () => {
     expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
   })
 
-  it('keeps the empty-state when signed in with zero comments — composer is a prompt, not a state confirmation', async () => {
-    // Closes CRITIQUE pass-19 MED: authed visitors used to see only
-    // the composer with no signal whether the thread was empty,
-    // suppressed, or failed to load. The empty-state line confirms
-    // the surface state; the composer placeholder confirms the
-    // policy. They do different jobs and should both render.
+  it('drops the empty-state line for a signed-in viewer with zero comments — input already invites (pass-36 #335 / issue #360)', async () => {
+    // Closes CRITIQUE pass-36 #335 — reverses the pass-19 MED
+    // shape kept here as a pin. Pass-19 had argued the empty-state
+    // line and the composer prompt do different jobs (state
+    // confirmation vs. policy). Pass-36 observed the stacked
+    // affordances on /shows/survivor/season/heroes-vs-villains
+    // read as two voices talking past each other — the input
+    // invites the viewer to comment, and then the empty-state
+    // immediately tells them no one has commented yet, as if the
+    // invitation hadn't just happened. The line keeps doing work
+    // for the anon viewer (the input swaps to a sign-in stub and
+    // the line is the surface signal) — gate it on
+    // viewerCanPost so the signed-in surface drops the duplicate.
     stubFetch({ ok: true, signedIn: true, count: 0, comments: [] })
     render(
       <CommentThreadLive
@@ -160,7 +167,7 @@ describe('<CommentThreadLive>', () => {
     await waitFor(() => {
       expect(screen.getByTestId('comment-stub')).toBeInTheDocument()
     })
-    expect(screen.getByTestId('comment-thread-empty')).toBeInTheDocument()
+    expect(screen.queryByTestId('comment-thread-empty')).toBeNull()
     expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.queryByTestId('comment-list')).toBeNull()
   })

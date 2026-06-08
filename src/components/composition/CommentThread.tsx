@@ -4,6 +4,18 @@ type CommentThreadProps = {
   count?: number
   input: ReactNode
   children?: ReactNode
+  // CRITIQUE pass-36 #335 (issue #360): the signed-in input
+  // already invites the viewer to comment, so the standalone
+  // empty-state line ("No comments yet. Be the first to weigh
+  // in.") reads as a second voice talking past the invitation
+  // just rendered above it. Gate the line on viewer auth-state
+  // — keep it for anon viewers (where the input swaps to a
+  // sign-in stub and the line still does work), drop it for
+  // signed-in viewers (where the input affordance carries the
+  // invitation). `CommentThreadLive` propagates this from its
+  // `/api/comments` read of `signedIn`; defaults to false so
+  // pre-hydration / SSR keeps the line until the read resolves.
+  viewerCanPost?: boolean
 }
 
 /**
@@ -13,22 +25,22 @@ type CommentThreadProps = {
  * the published `count` in the meta strip. When there are no
  * `children` (no published comments and nothing held for the
  * viewer), renders an honest empty-state line that invites the
- * first comment. `count` is the public published count, so the meta
- * strip ("42 comments" / "1 comment") only renders when the thread
- * has live published activity. The empty-state line renders for
- * both anon and authed zero-comment viewers — the composer
- * placeholder is a prompt to act, not a confirmation of surface
- * state, so the two messages do different jobs and should both
- * render.
+ * first comment IF the viewer can't post — for a signed-in viewer
+ * the input affordance above already carries the invitation, so
+ * stacking the empty-state on top would echo it (pass-36 #335).
+ * `count` is the public published count, so the meta strip ("42
+ * comments" / "1 comment") only renders when the thread has live
+ * published activity.
  */
 export function CommentThread({
   count = 0,
   input,
   children,
+  viewerCanPost = false,
 }: CommentThreadProps) {
   const hasComments = count > 0
   const hasBody = children != null
-  const showEmpty = !hasBody
+  const showEmpty = !hasBody && !viewerCanPost
   return (
     <div data-testid="comment-thread" className="comment-thread">
       <div className="aside-head">
