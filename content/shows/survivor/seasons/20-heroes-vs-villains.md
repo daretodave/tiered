@@ -33,11 +33,11 @@ watch_list:
     body: "The first minute of the late-game stretch is doing real work — staging, blocking, who's eating where. Don't blink."
 ---
 
-Twenty returnees split into two tribes by reputation, shot in
-Samoa, treated by the show as a celebration of its first decade.
-The casting is the format — recognizable players placed opposite
-each other so old grudges and old alliances do half the work.
-The pace is unrelenting, the post-merge stretch is dense with
-moves, and the season has cast a long shadow over every
-all-returnee run since. The hour the franchise built around its
-own decade-long memory.
+The episodes land in a different rhythm than the format's
+fresher casts can carry. Scenes cut tight, alliances pivot
+inside single confessionals, and immunity nights stack
+moves the editor must trust the audience to follow. Pair
+that velocity with twenty recognizable players placed
+opposite each other — prior memory doing half the
+storytelling work — and you get a decade-memory hour that
+every all-returnee run since has lived in the shadow of.
