@@ -4,9 +4,9 @@ editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every series of Bake Off, from the touring pilot through the Channel 4 years, calibrated against what long-running fans tend to agree on. The read is opinionated but defensible — we treat the BBC and Channel 4 stretches as one continuous body of work, and we weigh each series on its own terms.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses. Casting — does the lineup produce bakers viewers remember a year later. Technical bench — do the challenges pull craft out of the tent rather than tripping the room. Tonal control — does the series hold its register across signature, technical, showstopper. Era argument — does the run change what Bake Off is allowed to attempt next.
-meth_when_h: When do we revisit?
+meth_when_h: When do I revisit?
 meth_when_p: After every series finale, and whenever a presenter or judge change resets the tent's chemistry. Channel-era series in particular ask to be re-read against the BBC run — sometimes the original era hardens, sometimes the newer one softens. The top of the canon moves rarely; the middle gets revisited when a new class of bakers prompts an honest reread.
 tier_s_blurb: Format-defining or unrepeatable. The series that fixed what a peak Bake Off lineup, tent, and bench look like together.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.

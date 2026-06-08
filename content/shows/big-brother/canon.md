@@ -4,9 +4,9 @@ editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every season of Big Brother, calibrated against the kitchen-table consensus of long-running BB fans. The read is opinionated but defensible — we treat the first two decades as a coherent body of work. Old-era and modern-era seasons get weighed on their own terms, not directly against each other.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses. Cast — does this house produce confessionals you remember a year later. House dynamics — do the alliances and feuds hold the season together. Twist execution — does the conceit land, or eat the room. Argument — does this season change what Big Brother can do next. Founding seasons get format-historical credit.
-meth_when_h: When do we revisit?
+meth_when_h: When do I revisit?
 meth_when_p: After every Big Brother finale, and whenever an all-star or returnee season recasts a prior run. Returnee seasons in particular can shift how a player's original run reads — sometimes a season hardens, sometimes it softens. The top half of the canon moves rarely; the middle and bottom get revisited when public-vote casts pull from these years.
 tier_s_blurb: Format-defining or unrepeatable. The summers Big Brother taught itself what an alliance season could actually be.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.

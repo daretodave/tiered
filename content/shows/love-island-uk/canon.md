@@ -4,10 +4,10 @@ editor: tiered.tv editor
 last_revised: 2026-05-15
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched every series from the 2015 Santanyí villa through the most recent Mallorca run. The ranking is one editor's read, calibrated against what reasonable Love Island fans agree on after a long argument — each summer and winter edition weighed against the arc, not by recency. I'm not claiming to be objective. I'm trying to be honest."
-meth_how_h: "How we weigh it"
+meth_how_h: "How I weigh it"
 meth_how_p: "Four lenses, no outcomes. Casting energy — the chemistry and personalities a series put in the villa. Format innovation — what the structure tried that year. Tonal control — how cleanly the season balanced romance, drama and pace. Era argument — what the series proves about its host era and the franchise's wider direction."
-meth_when_h: "When we revisit"
-meth_when_p: "After every completed series, and whenever a winter or summer edition reframes the format. New seasons rebase the order rather than appending to the bottom; the canon is ranked top to bottom, and every position is an editorial judgement we are prepared to defend."
+meth_when_h: "When I revisit"
+meth_when_p: "After every completed series, and whenever a winter or summer edition reframes the format. New seasons rebase the order rather than appending to the bottom; the canon is ranked top to bottom, and every position is an editorial judgement I am prepared to defend."
 tier_s_blurb: "Franchise-defining. Seasons that changed the format or held the culture — the ones you point a newcomer toward first."
 tier_a_blurb: "Excellent and consequential. Peak-era casting or a confident reset; a few steps below the defining runs but unmistakably strong."
 tier_b_blurb: "Solid and watchable. Capable seasons doing the format well without reshaping it — the dependable middle of the catalogue."

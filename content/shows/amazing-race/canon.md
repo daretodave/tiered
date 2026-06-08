@@ -4,10 +4,10 @@ editor: tiered.tv editor
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editor. I've watched The Amazing Race since the original Keoghan summer in 2001 and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable race fans agree on after a long argument. I'm not claiming to be objective. I'm trying to be honest.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, in this order — cast, whether the teams produce confessionals and chemistry you remember; route, whether the geography earns its airtime; pacing, whether the leg-to-leg structure breathes; argument, whether the season changes what the format is later allowed to attempt. Travel television lives or dies on the cast it sends.
-meth_when_h: When do we revisit?
-meth_when_p: After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift our read on a team's original outing — sometimes the original hardens, sometimes it softens. We revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
+meth_when_h: When do I revisit?
+meth_when_p: After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a team's original outing — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
 tier_s_blurb: Format-defining or unrepeatable. A season we'd defend at a bar, on a flight, in front of someone who has never watched.
 tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
 tier_b_blurb: Classic-era stalwarts and competent production years — strong shapes that the surrounding seasons have used to define themselves, leg after leg.

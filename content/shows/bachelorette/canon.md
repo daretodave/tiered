@@ -4,10 +4,10 @@ editor: tiered.tv editor
 last_revised: 2026-05-17
 meth_who_h: Who ranks?
 meth_who_p: One tiered.tv editor who has watched every Bachelorette season, calibrated against the kitchen-table consensus of long-running franchise fans. The read treats the show as its own animal rather than a flipped Bachelor footnote — warmer casting, sharper leads, and a producing voice that found its own pitch quickly.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, in roughly equal measure. Lead — does the woman at the center actually drive the season. Cast — does the bench hold up across eleven cocktail parties. Format — does the season's structure stretch or buckle. Argument — does the season say something the franchise hadn't said yet. Founding seasons get format credit on top.
-meth_when_h: When do we revisit?
-meth_when_p: After every Bachelorette finale, and whenever a Paradise run reshapes how we read an early lead. The top of the canon moves rarely; the lower half gets revisited when a returnee from these seasons re-enters the franchise. We log every shift in the canon notes and never quietly re-rank an entry between revisions.
+meth_when_h: When do I revisit?
+meth_when_p: After every Bachelorette finale, and whenever a Paradise run reshapes how I read an early lead. The top of the canon moves rarely; the lower half gets revisited when a returnee from these seasons re-enters the franchise. I log every shift in the canon notes and never quietly re-rank an entry between revisions.
 tier_s_blurb: Format-defining or unrepeatable. The runs that taught the Bachelorette what its own format could carry.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates a little.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the long argument.

@@ -4,10 +4,10 @@ editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editor. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. It is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate. I'm not claiming to be objective. I'm trying to be honest.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, applied roughly in this order — cast, does the workroom produce confessionals and personalities you remember; judges, does the runway critique read aligned or fractious; location, does the city pull editorial weight on camera; format, does the season's structural choice sharpen the show or fight it. The runway shows themselves are the deliverable.
-meth_when_h: When do we revisit?
-meth_when_p: After every season finale and after a network or location shift that recasts how a prior run reads. Project Runway's history includes three such shifts — the LA detour, the Bravo-to-Lifetime move, and the Lifetime-to-Bravo reboot — and each has moved the canon's read on seasons around it. We revisit the bottom of the canon less often than the top.
+meth_when_h: When do I revisit?
+meth_when_p: After every season finale and after a network or location shift that recasts how a prior run reads. Project Runway's history includes three such shifts — the LA detour, the Bravo-to-Lifetime move, and the Lifetime-to-Bravo reboot — and each has moved the canon's read on seasons around it. I revisit the bottom of the canon less often than the top.
 tier_s_blurb: Format-defining or unrepeatable. Seasons we'd recommend to someone who has never watched a single workroom cycle.
 tier_a_blurb: Deep catalog. The seasons that hold up on a kitchen-table replay, even where the call against the next slot is close.
 tier_b_blurb: Strong middle-period runs and historical landmarks — seasons that built the cycle the show still runs on, with consistent workroom and runway delivery.

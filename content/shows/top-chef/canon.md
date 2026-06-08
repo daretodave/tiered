@@ -4,10 +4,10 @@ editor: tiered.tv editor
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
 meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. I'm not claiming to be objective. I'm trying to be honest.
-meth_how_h: How do we weigh it?
+meth_how_h: How do I weigh it?
 meth_how_p: Four lenses — cooking, whether the food on the plate could land at a real restaurant; cast, whether the chefs cohere as a competitive bench; challenges, whether the format pulls genuine cooking out of them; setting, whether the location does real editorial work. Top Chef lives or dies on the kitchen it casts.
-meth_when_h: When do we revisit?
-meth_when_p: After every Top Chef finale, and after any All-Stars or champions run that recasts a prior season. A Last Chance Kitchen winner especially can reframe a chef's original outing — sometimes the original season hardens, sometimes it softens. We revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
+meth_when_h: When do I revisit?
+meth_when_p: After every Top Chef finale, and after any All-Stars or champions run that recasts a prior season. A Last Chance Kitchen winner especially can reframe a chef's original outing — sometimes the original season hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
 tier_s_blurb: Format-defining or unrepeatable. A Top Chef season we'd defend at a bar, on a flight, in front of someone who has never opened a knife roll.
 tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
 tier_b_blurb: Solid Bravo-mature years. Strong shapes that the surrounding seasons leaned on while the franchise figured out what a regional immersive could become.

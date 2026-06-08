@@ -1496,6 +1496,52 @@ export function collectCanonMethWhoPluralEditorIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-41 MED (issue #357): sibling drain to #329 at the
+// methodology layer. The pass-35 #329 closure flipped `meth_who_p`
+// across all 13 canon files to first-person-singular voice; the
+// sibling fields `meth_how_h` / `meth_how_p` / `meth_when_h` /
+// `meth_when_p` were not in scope and still carried plural-collective
+// voice across every show. A reader scrolling the three methodology
+// cells in order read `I` (cell 01) → `we` (cell 02) → `we`
+// (cell 03) — the editorial voice swapped narrators inside one
+// module. This invariant scans the four sibling fields for the same
+// plural-we / plural-our literals the #329 invariant catches at the
+// `meth_who_p` layer; strict-at-floor-0 since all 13 canons drain in
+// the same tick that lands this invariant.
+const PLURAL_EDITOR_OUR_RE = /\bour\b/i
+const CANON_METH_SIBLING_FIELDS = [
+  'meth_how_h',
+  'meth_how_p',
+  'meth_when_h',
+  'meth_when_p',
+] as const
+
+export function collectCanonMethSiblingsPluralEditorIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    for (const field of CANON_METH_SIBLING_FIELDS) {
+      const body = canon[field]
+      if (!body) continue
+      const flat = body.replace(/\s+/g, ' ')
+      const hits: string[] = []
+      if (PLURAL_EDITOR_PRONOUN_RE.test(flat) || /\bwe\b/i.test(flat)) {
+        hits.push('first-person-plural pronoun (`we` / `we\'ve` / `we are` / etc.)')
+      }
+      if (PLURAL_EDITOR_OUR_RE.test(flat)) {
+        hits.push('plural possessive `our`')
+      }
+      if (hits.length === 0) continue
+      issues.push({
+        file: `content/shows/${show.slug}/canon.md (${field})`,
+        message: `canon ${field} plural-collective editor voice — carries ${hits.join(' AND ')}. The pass-35 #329 closure committed the canon methodology block to first-person-singular voice at the meth_who_p layer; cells 02 / 03 must match. Recast \`How do we weigh it?\` → \`How do I weigh it?\` (or \`How we weigh it\` → \`How I weigh it\`), \`we revisit\` → \`I revisit\`, \`our read\` → \`my read\`, etc. Preserve per-show editorial detail. See plan/CRITIQUE.md pass-41 / issue #357.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-41 MED (issue #356): show `tagline` field plural-collective
 // editor voice — the same defect class as pass-35 #329 at the per-show
 // tagline layer the #329 closure did not sweep. Survivor + Amazing Race
@@ -2095,6 +2141,24 @@ function main(): number {
     failures.push(...showTaglinePluralIssues)
   } else {
     for (const issue of showTaglinePluralIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-41 MED (issue #357): all 13 canons drain in the same
+  // tick that lands this invariant — every `meth_how_h` / `meth_how_p`
+  // / `meth_when_h` / `meth_when_p` field now reads first-person-
+  // singular voice mirroring the pass-35 #329 closure at the
+  // `meth_who_p` layer. STRICT ships on day one — any future authoring
+  // pass slipping plural-collective voice back into the methodology
+  // siblings trips at the verify gate.
+  const METH_SIBLINGS_PLURAL_STRICT = true
+  const methSiblingsPluralIssues =
+    collectCanonMethSiblingsPluralEditorIssues()
+  if (METH_SIBLINGS_PLURAL_STRICT) {
+    failures.push(...methSiblingsPluralIssues)
+  } else {
+    for (const issue of methSiblingsPluralIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

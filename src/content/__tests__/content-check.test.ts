@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
+  collectCanonMethSiblingsPluralEditorIssues,
   collectCanonMethWhoPluralEditorIssues,
   collectCanonRationaleClosingFormulaIssues,
   collectCalendarFailures,
@@ -4111,6 +4112,214 @@ featured: false
       'content/shows/alpha.md (tagline)',
       'content/shows/beta.md (tagline)',
     ])
+  })
+})
+
+describe('content-check — canon methodology sibling-field plural-collective editor voice (critique pass-41, issue #357)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-meth-sib-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  const fortyWordsBody = Array.from(
+    { length: 40 },
+    (_, i) => `tok${i}`,
+  ).join(' ')
+
+  function makeCanonWithMethSiblings(
+    root: string,
+    show: string,
+    siblings: {
+      meth_how_h: string
+      meth_how_p: string
+      meth_when_h: string
+      meth_when_p: string
+    },
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+editor: Test Editor
+last_revised: 2026-05-14
+meth_who_h: Who ranks
+meth_who_p: "tiered.tv's editor. I've watched this show since the original pilot and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable fans agree on after a long argument. I'm not claiming to be objective. I'm trying to be honest."
+meth_how_h: ${JSON.stringify(siblings.meth_how_h)}
+meth_how_p: ${JSON.stringify(siblings.meth_how_p)}
+meth_when_h: ${JSON.stringify(siblings.meth_when_h)}
+meth_when_p: ${JSON.stringify(siblings.meth_when_p)}
+weekly_question: Question of the week?
+---
+
+## 1. Title
+
+${ninetyWords}
+`,
+    )
+    makeSeason(root, show, 1, 'title', { canonical_position: 1 })
+  }
+
+  it('passes at the live catalog post-drain (all 13 canons rewritten to singular voice)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
+  })
+
+  it('passes for singular-voice siblings (long head form)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How do I weigh it?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. The ranking starts as one editor's read first, then gets fine-tuned against what reasonable fans agree on after a long argument. I weigh each season on its own terms and stay honest about the limits.",
+      meth_when_h: 'When do I revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a player's original season — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top.",
+    })
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
+  })
+
+  it('passes for singular-voice siblings (short head form)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How I weigh it',
+      meth_how_p:
+        "I rank seasons on format execution, casting energy, production confidence, and how much each one mattered to the franchise's arc. A breakout that defined the show's reputation outranks a constrained transitional year. Outcomes never factor in — a season's results carry no weight here, only how well the hour itself runs.",
+      meth_when_h: 'When I revisit',
+      meth_when_p:
+        'The canon moves when a new season airs and settles, or when the community vote shifts enough to argue a reorder. I revisit after each run concludes and reassess the older seasons against it. The order below reflects the show through its sixth season; later seasons slot in on merit.',
+    })
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
+  })
+
+  it('flags a plural-collective head on meth_how_h', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How do we weigh it?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. The ranking starts as one editor's read first, then gets fine-tuned against what reasonable fans agree on after a long argument. I weigh each season on its own terms and stay honest about the limits.",
+      meth_when_h: 'When do I revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a player's original season — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top.",
+    })
+    const issues = collectCanonMethSiblingsPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (meth_how_h)',
+    )
+    expect(issues[0]!.message).toMatch(/plural-collective editor voice/)
+    expect(issues[0]!.message).toMatch(/issue #357/)
+  })
+
+  it('flags a plural-collective body on meth_when_p (we / our independent signals)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How do I weigh it?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. The ranking starts as one editor's read first, then gets fine-tuned against what reasonable fans agree on after a long argument. I weigh each season on its own terms and stay honest about the limits.",
+      meth_when_h: 'When do I revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift our read on a player's original season — sometimes the original hardens, sometimes it softens. We revisit the bottom of the canon less often than the top.",
+    })
+    const issues = collectCanonMethSiblingsPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (meth_when_p)',
+    )
+    expect(issues[0]!.message).toMatch(/plural possessive `our`/)
+    expect(issues[0]!.message).toMatch(/first-person-plural pronoun/)
+  })
+
+  it('flags each offending sibling field independently when more than one drifts', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How do we weigh it?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. We weigh each season on its own terms. The ranking starts as one editor's read first, then gets fine-tuned against what reasonable fans agree on after a long argument running on for hours.",
+      meth_when_h: 'When do we revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift our read on a player's original season — sometimes the original hardens, sometimes it softens. We revisit the bottom of the canon less often than the top.",
+    })
+    const issues = collectCanonMethSiblingsPluralEditorIssues()
+    expect(issues.length).toBe(4)
+    const files = issues.map((i) => i.file).sort()
+    expect(files).toEqual([
+      'content/shows/alpha/canon.md (meth_how_h)',
+      'content/shows/alpha/canon.md (meth_how_p)',
+      'content/shows/alpha/canon.md (meth_when_h)',
+      'content/shows/alpha/canon.md (meth_when_p)',
+    ])
+  })
+
+  it('is case-insensitive on plural-we / plural-our signals', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How Do We Weigh It?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. The ranking starts as one editor's read first, then gets fine-tuned against what reasonable fans agree on after a long argument. I weigh each season on its own terms and stay honest about the limits.",
+      meth_when_h: 'When do I revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a player's original season — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top.",
+    })
+    const issues = collectCanonMethSiblingsPluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (meth_how_h)',
+    )
+  })
+
+  it('does not false-positive on the substring "were" (matches only word-bounded `we`)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithMethSiblings(tmp, 'alpha', {
+      meth_how_h: 'How do I weigh it?',
+      meth_how_p:
+        "Four lenses, applied in this order — cast, format, place, and argument. The lenses were chosen to balance craft and consequence. I weigh each season on its own terms and stay honest about the limits of the ranking after a long argument.",
+      meth_when_h: 'When do I revisit?',
+      meth_when_p:
+        "After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a player's original season — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top.",
+    })
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
+  })
+
+  it('skips shows whose canon omits the sibling fields (no-op)', () => {
+    makeShow(tmp, 'alpha')
+    const file = path.join(tmp, 'shows', 'alpha', 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+show: alpha
+editor: Test Editor
+last_revised: 2026-05-14
+meth_who_h: Who ranks
+meth_who_p: ${fortyWordsBody}
+weekly_question: Question of the week?
+---
+
+## 1. Title
+
+${ninetyWords}
+`,
+    )
+    makeSeason(tmp, 'alpha', 1, 'title', { canonical_position: 1 })
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonMethSiblingsPluralEditorIssues()).toEqual([])
   })
 })
 
