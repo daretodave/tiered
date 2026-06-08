@@ -19,6 +19,7 @@ import {
   collectFailures,
   collectSeasonEyebrowCalendarIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
+  collectShowTaglineBandTemplateEchoIssues,
   collectShowTaglinePluralEditorIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
@@ -4898,5 +4899,184 @@ featured: false
         '50 SEASONS of strangers on a beach, and the format keeps reinventing itself.',
     })
     expect(collectShowBlurbTaglineCountRepetitionIssues().length).toBe(1)
+  })
+})
+
+describe('content-check — show tagline band-template echo (critique pass-41, issue #359)', () => {
+  let tmp: string
+
+  function makeShowInBand(
+    root: string,
+    slug: string,
+    opts: {
+      tier: 'S' | 'A' | 'B'
+      tagline: string
+      card_tagline?: string
+    },
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    const cardLine = opts.card_tagline
+      ? `card_tagline: ${JSON.stringify(opts.card_tagline)}\n`
+      : ''
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: "One torch at a time."
+tagline: ${JSON.stringify(opts.tagline)}
+${cardLine}tier: ${opts.tier}
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-band-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('reads zero issues at the live catalog (post-drain — A-tier carriers below floor 7)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectShowTaglineBandTemplateEchoIssues()).toEqual([])
+  })
+
+  it('flags a band where 7 of 8 shows share the same first-two-word lemma', () => {
+    for (let i = 1; i <= 7; i++) {
+      makeShowInBand(tmp, `templated-${i}`, {
+        tier: 'A',
+        tagline: `${10 + i} seasons of fill-in-the-blank that scans as templated.`,
+      })
+    }
+    makeShowInBand(tmp, 'distinct', {
+      tier: 'A',
+      tagline: 'Strangers on a beach, voting each other off until one remains.',
+    })
+    const issues = collectShowTaglineBandTemplateEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/ (tier A)')
+    expect(issues[0]!.message).toMatch(/tier-A band tagline template echo/)
+    expect(issues[0]!.message).toMatch(/7 of 8 shows/)
+    expect(issues[0]!.message).toMatch(/"<N> seasons"/)
+  })
+
+  it('allows 6 of 7 shows sharing a lemma — the floor of 6 carriers per band', () => {
+    for (let i = 1; i <= 6; i++) {
+      makeShowInBand(tmp, `templated-${i}`, {
+        tier: 'A',
+        tagline: `${10 + i} seasons of the same templated opener as the others.`,
+      })
+    }
+    makeShowInBand(tmp, 'distinct', {
+      tier: 'A',
+      tagline: 'Strangers on a beach, voting each other off until one remains.',
+    })
+    expect(collectShowTaglineBandTemplateEchoIssues()).toEqual([])
+  })
+
+  it('reads the rendered tile field — `card_tagline` overrides `tagline` for the lemma', () => {
+    const cardOpeners = [
+      'Strangers on a beach hashing out the same vote.',
+      'Amateur bakers in a white tent under judging clocks.',
+      'Professional cooks in unfamiliar kitchens racing the fire.',
+      'One woman with the keys to the calendar all season.',
+      'Mallorca villa, fire pit, text messages read aloud at dusk.',
+      'Queens at a Los Angeles workroom sewing through challenges.',
+      'Reality veterans hurling themselves at each other for the final.',
+    ]
+    for (let i = 0; i < cardOpeners.length; i++) {
+      makeShowInBand(tmp, `carrier-${i}`, {
+        tier: 'A',
+        tagline: `${10 + i} seasons of the same templated opener.`,
+        card_tagline: cardOpeners[i]!,
+      })
+    }
+    // All 7 shows share `<N> seasons` in `tagline`, but the rendered
+    // tile reads `card_tagline` — which varies. The invariant follows
+    // the renderer (ShowsTile.tsx:63), so no echo is flagged.
+    expect(collectShowTaglineBandTemplateEchoIssues()).toEqual([])
+  })
+
+  it('normalizes leading digits — "15 seasons" and "40 seasons" collapse to one lemma', () => {
+    const taglines = [
+      '15 seasons of bakers under a tent.',
+      '40 seasons of veterans hurling themselves at each other.',
+      '22 seasons of professional cooks racing the clock.',
+      '6 seasons of singles in a villa.',
+      '11 seasons of an original people keep adapting.',
+      '20 seasons of designers at sewing machines.',
+      '28 seasons of one franchise running uninterrupted.',
+    ]
+    for (let i = 0; i < taglines.length; i++) {
+      makeShowInBand(tmp, `digit-${i}`, { tier: 'A', tagline: taglines[i]! })
+    }
+    const issues = collectShowTaglineBandTemplateEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"<N> seasons"/)
+  })
+
+  it('partitions by tier — same lemma across S and A counts independently', () => {
+    // 4 S-tier shares + 4 A-tier shares: each band is below floor 7
+    // when computed independently, so no issue fires.
+    for (let i = 1; i <= 4; i++) {
+      makeShowInBand(tmp, `s-${i}`, {
+        tier: 'S',
+        tagline: `The format that defined ${i}.`,
+      })
+      makeShowInBand(tmp, `a-${i}`, {
+        tier: 'A',
+        tagline: `The format that defined ${i}.`,
+      })
+    }
+    expect(collectShowTaglineBandTemplateEchoIssues()).toEqual([])
+  })
+
+  it('is case-insensitive on the lemma comparison', () => {
+    for (let i = 1; i <= 7; i++) {
+      makeShowInBand(tmp, `case-${i}`, {
+        tier: 'A',
+        tagline:
+          i % 2 === 0
+            ? `${10 + i} SEASONS of mixed-case templated openers.`
+            : `${10 + i} seasons of mixed-case templated openers.`,
+      })
+    }
+    const issues = collectShowTaglineBandTemplateEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/7 of 7 shows/)
+  })
+
+  it('strips em-dashes and surrounding punctuation when reading the first two words', () => {
+    // "She holds the calendar" vs "She holds the keys" — both should
+    // collapse to lemma "she holds" so the band's similarity is detected
+    // even when the first three words diverge later.
+    for (let i = 1; i <= 7; i++) {
+      makeShowInBand(tmp, `she-${i}`, {
+        tier: 'A',
+        tagline: `She holds variation ${i} of the same opener.`,
+      })
+    }
+    const issues = collectShowTaglineBandTemplateEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"she holds"/)
   })
 })

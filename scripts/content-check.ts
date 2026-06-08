@@ -915,6 +915,72 @@ export function collectShowBlurbTaglineCountRepetitionIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-41 MED (issue #359): /shows A-tier band rendered every
+// blurb through the same `{N} seasons of {plural-noun} {-ing verb}`
+// opener — a fill-in-the-blank echo across 10+ adjacent tiles. The
+// /shows tile renders `card_tagline ?? tagline` (see ShowsTile.tsx:63),
+// so the lemma is computed on the rendered field, not the underlying
+// tagline. The leading digit is normalized to `<N>` so "11 seasons"
+// and "40 seasons" collapse to the same lemma. Strict floor 7 — up to
+// 6 carriers per tier band are tolerated; a 7th tile sharing the
+// opener trips the gate. Ships strict at this commit because the
+// pass-41 drain adds `card_tagline` overrides to 5 A-tier carriers
+// (bachelor, bake-off, top-chef, bachelorette, love-island-uk),
+// taking the `<N> seasons` carrier count to 6 of 11 — below floor.
+// S-tier has only 2 shows (both opening "the format that …", lemma
+// "the format"), well below floor regardless. The invariant is the
+// bidirectional drift guard: future authoring that re-templates the
+// band trips at content-check time.
+function showTileLemma(text: string): string {
+  const cleaned = text
+    .replace(/<[^>]+>/g, ' ')
+    .toLowerCase()
+    .replace(/[—–]/g, ' ')
+    .trim()
+  const tokens = cleaned
+    .split(/\s+/)
+    .map((t) => t.replace(/^['"`(\[]+|['"`,.;:!?)\]]+$/g, ''))
+    .filter((t) => /[a-z0-9]/.test(t))
+  if (tokens.length < 2) return tokens.join(' ')
+  const norm = (t: string): string => (/^\d+$/.test(t) ? '<N>' : t)
+  return `${norm(tokens[0]!)} ${norm(tokens[1]!)}`
+}
+
+const SHOW_TAGLINE_BAND_TEMPLATE_FLOOR = 7
+
+export function collectShowTaglineBandTemplateEchoIssues(): Failure[] {
+  const issues: Failure[] = []
+  const showsByTier = new Map<string, Array<{ slug: string; tile: string }>>()
+  for (const show of getAllShows()) {
+    if (show.tier !== 'S' && show.tier !== 'A' && show.tier !== 'B') continue
+    const tile = show.card_tagline ?? show.tagline ?? ''
+    if (!tile) continue
+    const bucket = showsByTier.get(show.tier) ?? []
+    bucket.push({ slug: show.slug, tile })
+    showsByTier.set(show.tier, bucket)
+  }
+  for (const [tier, shows] of showsByTier) {
+    const lemmaToCarriers = new Map<string, string[]>()
+    for (const { slug, tile } of shows) {
+      const lemma = showTileLemma(tile)
+      if (!lemma) continue
+      const carriers = lemmaToCarriers.get(lemma) ?? []
+      carriers.push(slug)
+      lemmaToCarriers.set(lemma, carriers)
+    }
+    for (const [lemma, carriers] of lemmaToCarriers) {
+      if (carriers.length >= SHOW_TAGLINE_BAND_TEMPLATE_FLOOR) {
+        const sorted = [...carriers].sort()
+        issues.push({
+          file: `content/shows/ (tier ${tier})`,
+          message: `tier-${tier} band tagline template echo — ${carriers.length} of ${shows.length} shows render their /shows tile copy (\`card_tagline ?? tagline\`) opening on the same first-two-word lemma "${lemma}" (carriers: ${sorted.join(', ')}). The catalog band scans as a fill-in-the-blank template rather than ${shows.length} different doors. Rotate ${carriers.length - SHOW_TAGLINE_BAND_TEMPLATE_FLOOR + 1} tile openers off the shared lemma — add a \`card_tagline\` override (the tile-only field, so the show-page \`tagline\` stays intact) on the carriers you rewrite. Floor: at most ${SHOW_TAGLINE_BAND_TEMPLATE_FLOOR - 1} carriers per band may share a first-two-word lemma.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-33 MED (issue #319): /themes/best-finales entry #03
 // (Top Chef S06 Las Vegas) opened with `Las Vegas runs the most
 // technically loaded roster the show ever fielded` against the deck
@@ -1979,6 +2045,25 @@ function main(): number {
     failures.push(...showCountRestateIssues)
   } else {
     for (const issue of showCountRestateIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-41 MED (issue #359): ships strict at floor 7 — the
+  // /shows A-tier card_tagline drain (this commit) takes the `<N>
+  // seasons` carrier count from 11 of 11 to 6 of 11, one below the
+  // floor; S-tier has only 2 shows total, well below floor regardless.
+  // The invariant is the bidirectional floor that catches a future
+  // authoring pass re-templating an entire band's rendered tile copy
+  // onto a shared first-two-word lemma. One-line toggle mirroring the
+  // fifteen above.
+  const SHOW_TAGLINE_BAND_TEMPLATE_ECHO_STRICT = true
+  const showTaglineBandTemplateEchoIssues =
+    collectShowTaglineBandTemplateEchoIssues()
+  if (SHOW_TAGLINE_BAND_TEMPLATE_ECHO_STRICT) {
+    failures.push(...showTaglineBandTemplateEchoIssues)
+  } else {
+    for (const issue of showTaglineBandTemplateEchoIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
