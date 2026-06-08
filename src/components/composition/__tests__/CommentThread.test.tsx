@@ -14,7 +14,7 @@ describe('<CommentThread>', () => {
     expect(screen.queryByTestId('comment-count')).toBeNull()
     expect(screen.getByTestId('input-slot')).toBeInTheDocument()
     expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
-      'No comments yet. Be the first to weigh in.',
+      'No comments yet.',
     )
   })
 
@@ -109,7 +109,7 @@ describe('<CommentThread>', () => {
       )
       expect(screen.getByTestId('signin-stub')).toBeInTheDocument()
       expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
-        'No comments yet. Be the first to weigh in.',
+        'No comments yet.',
       )
     })
 
@@ -142,8 +142,41 @@ describe('<CommentThread>', () => {
         />,
       )
       expect(screen.getByTestId('comment-thread-empty').textContent).toBe(
-        'No comments yet. Be the first to weigh in.',
+        'No comments yet.',
       )
+    })
+  })
+
+  // CRITIQUE pass-42 #362: the anon-side `Be the first to weigh in.`
+  // CTA was dropped because anon visitors can't weigh in without
+  // first signing in via the input-stub above. The empty-state is
+  // now a pure state signal. Bidirectional drift guard against a
+  // future refactor re-introducing the second-half CTA.
+  describe('anon-side CTA drop (critique pass-42 #362)', () => {
+    it('does not render "Be the first to weigh in" in the anon empty-state', () => {
+      render(
+        <CommentThread
+          count={0}
+          input={<div data-testid="signin-stub">sign-in</div>}
+          viewerCanPost={false}
+        />,
+      )
+      const empty = screen.getByTestId('comment-thread-empty').textContent ?? ''
+      expect(empty).toContain('No comments yet')
+      expect(empty).not.toMatch(/be the first/i)
+      expect(empty).not.toMatch(/weigh in/i)
+    })
+
+    it('does not render "Be the first to weigh in" anywhere in the thread when authed and empty', () => {
+      const { container } = render(
+        <CommentThread
+          count={0}
+          input={<div data-testid="input-slot">live-input</div>}
+          viewerCanPost
+        />,
+      )
+      expect(container.textContent ?? '').not.toMatch(/be the first/i)
+      expect(container.textContent ?? '').not.toMatch(/weigh in/i)
     })
   })
 })
