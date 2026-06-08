@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-07 at commit d9e0615
-> Pass count: 25
+> Last pass: 2026-06-08 at commit 7cec039
+> Pass count: 26
 
 ## Considered (awaiting promotion)
 
@@ -430,6 +430,150 @@ candidate #12's lax→strict invariant precedent established in
 `scripts/content-check.ts`, with the distinct twist that the
 check aggregates across files instead of validating one file at
 a time.
+
+<!-- Pass 26 (2026-06-08, commit 7cec039) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (only the format
+       example placeholder at line 19). The drain since pass 25
+       cleared each row in the same iterate cycle it filed —
+       8 audit/fix pairs against pass-40 + pass-41 critique
+       surfaces (HvV vote-block reading order inverted, /shows
+       hero lede taste-free overclaim, /themes index-card CTA
+       bare-arrow vs featured `read the list →`, /themes chip
+       filter scope, cross-surface list-meta drift, CommentInputStub
+       arrow placement, /themes featured-this-month CTA unification,
+       footer column rename `Featured shows` → `Start here`,
+       /shows + /themes hero freshness slot rename `INDEX REVISED`
+       → per-corpus `SHOWS REVISED` / `LISTS REVISED`) — all
+       single-tick polish, no row carried over.
+     - CRITIQUE.md: 12 actionable Pending rows + 1 format
+       placeholder. Six from pass 41 (just shipped this window
+       at 7cec039, the 0-HIGH/4-MED/2-LOW pass): (i) [MED, anon]
+       /shows/survivor canon methodology block stacks 3 cells
+       that swap narrators mid-block — `meth_who_p` is the
+       pass-35 #329-drained singular voice but the sibling
+       fields (`meth_how_h` / `meth_how_p` / `meth_when_h` /
+       `meth_when_p`) across all 13 canons still carry plural
+       voice; (ii) [MED, authed] /shows/survivor + /shows/amazing-race
+       hero taglines close on plural `We've ranked` while the
+       same-page methodology cell reads singular `I've watched`
+       — same-page voice contradiction on the same activity,
+       two carriers only; (iii) [MED, authed] /shows A-tier band
+       runs all 10 blurbs through the `{N} seasons of {plural-
+       noun} {-ing verb}` templated opener; (iv) [MED, authed]
+       /shows/survivor/season/heroes-vs-villains section 01
+       (THE TAKE) and section 02 (THE SHAPE) open with verbatim-
+       near-identical structural sentences within ~80 words;
+       (v) [LOW, anon] cross-show closing-pair echo introduced
+       by the pass-35 #329 drain — every drained `meth_who_p`
+       across 9 carrier canons ends with the identical 12-word
+       literal `I'm not claiming to be objective. I'm trying to
+       be honest.`; (vi) [LOW, anon] /themes/best-finales #02
+       headline cross-surface echoes /shows/survivor canon-entry
+       #02 body opener on the six-word phrase frame `all-star
+       format ... at its ceiling`. Plus 6 carry-over rows from
+       passes 29/35/36/40 (best-finales #02 within-entry echo,
+       HvV community-vote cross-surface label disagreement,
+       HvV comment-thread two-affordance stacking, best-finales
+       sibling `final tribal` verb-object beat, /u/e2e own-profile
+       structurally bare `Your record`, HvV spec-row `EPISODE
+       HEAT` editorial-vs-spec misframe). Cluster analysis:
+       rows (i)/(ii)/(v) are all sibling extensions of the
+       PLURAL_EDITOR_STRICT invariant family the pass-35 #329
+       closure opened — (i) extends scope from `meth_who_p` to
+       the four sibling `meth_how_*` / `meth_when_*` methodology
+       fields across 13 canons; (ii) extends scope to the
+       `tagline` field on 2 carriers (Survivor + Amazing Race);
+       (v) addresses the unintended verbatim-corpus-echo side
+       effect the #329 drain itself authored. Each is single-
+       tick `/iterate` drain shape with a co-located invariant-
+       scope extension; the meta-pattern (a strict closure
+       scoped too narrowly to one field while the editorial
+       discipline applies to a family of fields) is honest but
+       the right response is to extend `PLURAL_EDITOR_STRICT`'s
+       scope when the drain ticks land, not file a sibling
+       phase candidate. Rows (iv) and (vi) are within-page /
+       cross-surface phrase-echo invariants — exactly the
+       extensible-registry shape candidate #13
+       (CLICHE_REPETITION_STRICT, score 6.0) articulates; nest
+       cleanly rather than warranting a sibling. Row (iii) is
+       the most distinct — per-band templated opener echo on
+       /shows A-tier (10/10 carriers on the same 5-word
+       grammar) — the finding itself proposes a band-scoped
+       `collectShowTaglineTemplateEchoIssues` invariant; could
+       nest into #13's extensible registry as a band-template-
+       counting helper, OR could be its own candidate. The §3.1
+       multi-signal triangulation test: one surface (catalog
+       A-tier band), one signal class, single fix path proposed
+       by the row itself — below the bar for a sibling phase
+       candidate filed now. Carry-overs are heterogeneous single-
+       component fixes (vote-state label alignment, comment-
+       thread separator, structural-empty-state scaffold, spec-
+       row misframe); no cluster ≥3 HIGH on the same family,
+       no class-pattern beyond what candidates #11/#12/#13
+       already articulate.
+     - GitHub issues: 2 open, 0 unlabeled. #150 (triage:reviewed,
+       past cloud crash) + #148 (triage:needs-user, march.yml
+       coverage-gate wiring still blocked on cloud GitHub App's
+       missing `workflows` permission scope). Backlog unchanged
+       structurally; no new structural signal.
+     - spec.md + design/: no diffs since pass 9 (last spec.md
+       touch 2026-05-16 — `3ac0b42` phase 33a consolidation).
+       Brand/voice/contract surfaces stable for 23 days.
+     - Commit pattern: 20 commits since pass 25 — 2 critique
+       passes (40 ac3c88c, 41 7cec039), 8 audit/fix drain pairs
+       against pass-40 + pass-41 polish (HvV vote-block reading
+       order, /shows hero lede taste-free overclaim, /themes
+       index-card CTA bare-arrow, /themes chip filter scope,
+       cross-surface list-meta drift, CommentInputStub arrow
+       placement, /themes featured-this-month CTA, footer
+       column rename, /shows + /themes hero freshness slot
+       per-corpus rename, catalogue list-meta voice unification),
+       1 expand pass 25 c788d57. All anticipated drains from
+       already-shipped phases or open critique pickups; no
+       rogue refactor surface, no 5+ fix-class cluster on one
+       file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) +
+       #13 (editorial-cliché repetition guard, score 6.0) all
+       still await /oversight promotion. Pass 41 (this window's
+       fresh critique) adds two more registry seeds to #13's
+       envelope (rows iv + vi — within-page section-opener echo
+       + cross-surface theme-headline ↔ canon-rationale echo)
+       and exposes one within-corpus closing-pair echo (row v)
+       the #329 drain itself authored. Each reinforces the
+       candidate's extensible-registry shape rather than
+       warranting a sibling phase candidate. #03 (Newsletter,
+       score 3.0) still gated on S1 (domain swap). No new
+       candidate filed this pass.
+
+     Zero real structural candidates this pass. The 12 pending
+     critique rows split four ways: 3 PLURAL_EDITOR_STRICT
+     sibling-extension drains (single-tick drain shape with
+     co-located invariant-scope extension, not phase shape;
+     the meta-pattern is honest but the right response is to
+     extend the existing strict's scope at drain time), 2
+     candidate-#13-class editorial drift surfaces (within-page
+     section-opener + cross-surface theme-headline echo — both
+     nest in #13's extensible registry rather than warranting a
+     sibling), 1 per-band templated-opener echo on the /shows
+     A-tier band (single surface, single signal class, below
+     multi-signal triangulation bar; the row's own proposed fix
+     is content-curator drain + invariant — either nests into
+     #13 or is itself one-row drain shape, not phase shape),
+     6 heterogeneous single-component fixes (vote-state label
+     alignment, comment-thread affordance separator, structural
+     empty-state scaffold on /u/e2e, HvV spec-row editorial-vs-
+     spec misframe, plus the long-pending best-finales #02
+     within-entry verdict echo and the best-finales sibling
+     `final tribal` verb-object beat already in the queue). The
+     §3.1 "real demand vs model imagination" test still favors
+     letting candidates #11/#12/#13 promote before filing a
+     fourth on overlapping shapes. Next tick: `/iterate` picks
+     up the highest-scoring pending critique row (likely one
+     of the pass-41 MED rows — the methodology-siblings drain,
+     the templated-opener band rewrite, or the TAKE/SHAPE
+     section-opener edit). -->
 
 <!-- Pass 23 (2026-06-06, commit 998d1b2) — 0 candidates filed.
      Signals reviewed:
