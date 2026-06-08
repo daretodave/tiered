@@ -9,7 +9,13 @@
 //   - `reconcile` snaps value + count to the server's truth after
 //     a POST resolves, so a refresh and the live pill agree and a
 //     re-click can never drift the net.
-// The reducer signature is otherwise unchanged.
+//
+// Critique pass-34 MED: `count` is the distinct voter count on
+// the target (matches the ShiftCard's vote_count framing), not
+// the signed net. Optimistic click logic toggles voter count by
+// presence change: entering value=0 → voterCount -= 1, leaving
+// value=0 → voterCount += 1, swapping sign (non-zero to non-zero)
+// leaves voterCount unchanged.
 
 export type VoteSentiment = 'up' | 'down' | null
 
@@ -83,7 +89,13 @@ export function reduce(s: VotePairState, action: Action): VotePairState {
 
   const delta: VoteValue = action.direction === 'up' ? 1 : -1
   const newValue: VoteValue = s.value === delta ? 0 : delta
-  const newCount = s.count + (newValue - s.value)
+  // Voter-count delta: presence change only. Entering value=0
+  // (retract) drops a voter; leaving value=0 (first vote) adds
+  // one; swapping non-zero → non-zero (up↔down) keeps the same
+  // voter on the target.
+  const wasVoter = s.value !== 0 ? 1 : 0
+  const isVoter = newValue !== 0 ? 1 : 0
+  const newCount = Math.max(0, s.count + (isVoter - wasVoter))
   return {
     phase: 'locked',
     value: newValue,

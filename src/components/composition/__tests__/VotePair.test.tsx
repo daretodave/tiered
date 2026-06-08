@@ -15,6 +15,11 @@ async function flushAsync() {
 // `fetchMock` lets each test script the JSON each call resolves
 // to (keyed by method) so the optimistic + reconcile paths are
 // both exercised deterministically.
+//
+// Critique pass-34 MED: `count` is the distinct voter count on
+// the target (not the signed net). The route handler shape ports
+// `voterCount` into the `count` field for the client so the
+// fixtures here stay shaped identically to the API response.
 type VoteBody = {
   ok: boolean
   value: number
@@ -52,17 +57,18 @@ describe('<VotePair>', () => {
     vi.useRealTimers()
   })
 
-  it('renders the initial count and renders enabled buttons', () => {
+  it('renders the initial voter count and renders enabled buttons', () => {
     render(<VotePair initialCount={10} targetType="season" targetId="survivor:20" />)
-    expect(screen.getByTestId('vote-count').textContent).toBe('+10')
+    expect(screen.getByTestId('vote-count').textContent).toBe('10')
     expect(screen.getByTestId('vote-up')).toBeEnabled()
     expect(screen.getByTestId('vote-down')).toBeEnabled()
   })
 
-  it('clicking up increments the count, locks both buttons, and POSTs to /api/vote', () => {
+  it('clicking up adds the viewer to the voter count, locks both buttons, and POSTs to /api/vote', () => {
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('+6')
+    // Voter count: 5 → 6 (the viewer was not a voter; now they are).
+    expect(screen.getByTestId('vote-count').textContent).toBe('6')
     expect(screen.getByTestId('vote-up')).toBeDisabled()
     expect(screen.getByTestId('vote-down')).toBeDisabled()
     const postCalls = fetchMock.mock.calls.filter(
@@ -71,17 +77,19 @@ describe('<VotePair>', () => {
     expect(postCalls.length).toBe(1)
   })
 
-  it('clicking down decrements the count', () => {
+  it('clicking down from no-vote also adds the viewer to the voter count', () => {
+    // Voter-count semantics: a downvote is still a vote — the
+    // voter count tracks presence, not direction.
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-down'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('+4')
+    expect(screen.getByTestId('vote-count').textContent).toBe('6')
   })
 
-  it('reads the viewer existing vote + true net on mount and reflects it', async () => {
+  it('reads the viewer existing vote + true voter count on mount and reflects it', async () => {
     getBody = { ok: true, value: 1, count: 42 }
     render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('+42')
+    expect(screen.getByTestId('vote-count').textContent).toBe('42')
     expect(screen.getByTestId('vote-pair').getAttribute('data-vote-value')).toBe('1')
   })
 
@@ -96,17 +104,18 @@ describe('<VotePair>', () => {
     )
     const sent = JSON.parse((postCall?.[1] as { body: string }).body)
     expect(sent.value).toBe(0)
-    // Optimistic net dropped by the prior +1.
-    expect(screen.getByTestId('vote-count').textContent).toBe('+9')
+    // Optimistic voter count drops by one — the viewer is no
+    // longer a voter on the target.
+    expect(screen.getByTestId('vote-count').textContent).toBe('9')
   })
 
   it('reconciles the count to the server aggregate after the POST resolves', async () => {
     postBody = { ok: true, value: 1, count: 3 }
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up'))
-    expect(screen.getByTestId('vote-count').textContent).toBe('+6') // optimistic
+    expect(screen.getByTestId('vote-count').textContent).toBe('6') // optimistic
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('+3')
+    expect(screen.getByTestId('vote-count').textContent).toBe('3')
   })
 
   it('a vote that races the mount fetch is not clobbered by the stale snapshot', async () => {
@@ -114,7 +123,7 @@ describe('<VotePair>', () => {
     render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up')) // before GET resolves
     await flushAsync()
-    // hydrate is a no-op post-click; optimistic +1 survives.
+    // hydrate is a no-op post-click; optimistic +1 voter survives.
     expect(screen.getByTestId('vote-pair').getAttribute('data-vote-value')).toBe('1')
   })
 
@@ -188,19 +197,24 @@ describe('<VotePair>', () => {
     expect(
       screen.getByTestId('vote-pair').getAttribute('data-hydrated'),
     ).toBe('true')
-    expect(screen.getByTestId('vote-count').textContent).toBe('+9')
+    expect(screen.getByTestId('vote-count').textContent).toBe('9')
   })
 
   it('rounds any stray fractional server count to a clean integer', async () => {
     getBody = { ok: true, value: 0, count: 2.6 }
     render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
     await flushAsync()
-    expect(screen.getByTestId('vote-count').textContent).toBe('+3')
+    expect(screen.getByTestId('vote-count').textContent).toBe('3')
   })
 
-  // --- pluralize-aware label (critique pass-5 LOW): the visible
-  // unit must agree with the displayed count so a net of exactly
-  // 1 doesn't render "1 NET VOTES".
+  // --- pluralize-aware label (critique pass-5 LOW / pass-34 MED):
+  // the visible unit must agree with the displayed count so a
+  // voter count of exactly 1 doesn't render "1 community votes".
+  // Pass-34 retargets the label from "net votes" → "community
+  // votes" so the count's source matches the ShiftCard's
+  // `vote_count` framing across surfaces; the prior conditional
+  // `community ·` prefix (pass-13/14) is folded into the base
+  // label.
   describe('pluralize-aware label', () => {
     function labelText() {
       return screen
@@ -209,32 +223,21 @@ describe('<VotePair>', () => {
     }
 
     it('renders the plural form when the count is 0', () => {
-      // No-vote state carries the "community · " qualifier per
-      // #199; the substring assertion lets the pluralize-aware
-      // section stay focused on its concern (unit agreement).
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(labelText()?.endsWith(' net votes')).toBe(true)
+      expect(labelText()).toBe('community votes')
     })
 
     it('renders the singular form when the count is exactly 1', async () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
-      expect(labelText()).toBe('net vote')
-    })
-
-    it('renders the singular form when the count is exactly -1', async () => {
-      getBody = { ok: true, value: -1, count: -1 }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('-1')
-      expect(labelText()).toBe('net vote')
+      expect(screen.getByTestId('vote-count').textContent).toBe('1')
+      expect(labelText()).toBe('community vote')
     })
 
     it('renders the plural form when the count is 2', () => {
       render(<VotePair initialCount={2} targetType="season" targetId="survivor:20" />)
-      expect(labelText()?.endsWith(' net votes')).toBe(true)
+      expect(labelText()).toBe('community votes')
     })
 
     it('honors custom singular + plural label props', async () => {
@@ -256,12 +259,11 @@ describe('<VotePair>', () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(labelText()).toBe('net vote')
-      // Re-click up to retract; optimistic value+count drop to 0,
-      // so the unit pluralizes AND the no-vote "community · "
-      // qualifier kicks in (#199).
+      expect(labelText()).toBe('community vote')
+      // Re-click up to retract; optimistic voter count drops to 0,
+      // so the unit pluralizes.
       fireEvent.click(screen.getByTestId('vote-up'))
-      expect(labelText()).toBe('community · net votes')
+      expect(labelText()).toBe('community votes')
     })
 
     it('keeps the action-describing aria-labels on the plural form regardless of count', async () => {
@@ -269,13 +271,97 @@ describe('<VotePair>', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       // Displayed unit pluralizes, but aria describes the action.
-      expect(labelText()).toBe('net vote')
+      expect(labelText()).toBe('community vote')
       expect(
         screen.getByTestId('vote-pair').getAttribute('aria-label'),
-      ).toBe('Vote on net votes')
+      ).toBe('Vote on community votes')
       expect(
         screen.getByTestId('vote-down').getAttribute('aria-label'),
-      ).toBe('Vote down net votes')
+      ).toBe('Vote down community votes')
+    })
+  })
+
+  // --- critique pass-34 MED (#361): cross-surface parity ---
+  //
+  // Three surfaces describe HvV's community state on adjacent
+  // hops: ShiftCard (`1 vote`), canon-ladder COMMUNITY column
+  // (`↑ 1 / #02`), and the season-page vote-pair (formerly
+  // `0 community · net votes`, the signed sum). The pass-34
+  // alignment re-points the vote-pair's integer + label from
+  // the signed net → distinct voter count so it cites the same
+  // canonical fact as the ShiftCard. Pin: the rendered label
+  // text MUST end with `community vote` or `community votes`,
+  // and MUST NOT carry the prior `net vote(s)` framing.
+  // Bidirectional drift guard against a future refactor reverting
+  // to the signed-sum framing.
+  describe('cross-surface parity (pass-34 #361)', () => {
+    function labelText() {
+      return (
+        screen
+          .getByTestId('vote-pair')
+          .querySelector('.vote-label')?.textContent ?? ''
+      )
+    }
+
+    it('the label ends with /community votes?$/ on every render state', async () => {
+      const fixtures: VoteBody[] = [
+        { ok: true, value: 0, count: 0, signedIn: false },
+        { ok: true, value: 0, count: 5, signedIn: true },
+        { ok: true, value: 1, count: 1, signedIn: true },
+        { ok: true, value: -1, count: 9, signedIn: true },
+        { ok: true, value: 0, count: 12, signedIn: false },
+      ]
+      for (const body of fixtures) {
+        getBody = body
+        const { unmount } = render(
+          <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
+        )
+        await flushAsync()
+        expect(labelText()).toMatch(/community votes?$/)
+        unmount()
+      }
+    })
+
+    it('the label never carries the prior "net votes" framing on any render state', async () => {
+      const fixtures: VoteBody[] = [
+        { ok: true, value: 0, count: 0, signedIn: false },
+        { ok: true, value: 0, count: 5, signedIn: true },
+        { ok: true, value: 1, count: 1, signedIn: true },
+        { ok: true, value: -1, count: 9, signedIn: true },
+        { ok: true, value: 0, count: 12, signedIn: false },
+      ]
+      for (const body of fixtures) {
+        getBody = body
+        const { unmount } = render(
+          <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
+        )
+        await flushAsync()
+        expect(labelText()).not.toMatch(/net votes?/)
+        unmount()
+      }
+    })
+
+    it('renders the voter count as an unsigned non-negative integer', () => {
+      // Voter count cannot be negative; the prior signed-net
+      // rendering (e.g. `-3`) is gone. Pin against a regression
+      // that re-points the integer back to the signed net.
+      render(<VotePair initialCount={7} targetType="season" targetId="survivor:20" />)
+      expect(screen.getByTestId('vote-count').textContent).toBe('7')
+      expect(screen.getByTestId('vote-count').textContent).not.toMatch(/^[+\-]/)
+    })
+
+    it('floors the voter count at zero (never displays a negative integer)', async () => {
+      // A retract from voter count = 0 (unreachable in practice
+      // — the viewer can only retract if they previously voted —
+      // but the floor is the safe guarantee) must not go negative.
+      getBody = { ok: true, value: 1, count: 0, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      // Pre-click: voter count = 0 (server snapshot).
+      expect(screen.getByTestId('vote-count').textContent).toBe('0')
+      // Optimistic retract drops the count by 1 — floored at 0.
+      fireEvent.click(screen.getByTestId('vote-up'))
+      expect(screen.getByTestId('vote-count').textContent).toBe('0')
     })
   })
 
@@ -290,18 +376,6 @@ describe('<VotePair>', () => {
   //   value -1 → "you voted lower"       (data-vote-state='down')
   // Anon viewers never see the pill — the affordance is
   // viewer-identity bearing.
-  //
-  // Pass-12 #189 had dropped the no-vote shape on the theory
-  // that VoteRowHead's "cast vote" head meta already owned the
-  // signed-in-no-vote channel. Pass-27 reopened that: a signed-in
-  // non-voter on the season page reading "YOUR VOTE / CAST VOTE
-  // / Does this belong in the community top 10? / +1 / COMMUNITY
-  // · NET VOTE" could not tell at a glance whether the +1 was
-  // the community net or their own already-cast vote. The "cast
-  // vote" meta is an *action* nudge; the cap declares *state*.
-  // Together they finish the disambiguation. So the pill triad
-  // is symmetric, with the no-vote shape descriptive (not a
-  // re-nudge of the same action).
   describe('state pill (signed-in viewers — three-state triad)', () => {
     it('renders no state pill when /api/vote reports signedIn:false', async () => {
       getBody = { ok: true, value: 0, count: 0, signedIn: false }
@@ -325,12 +399,11 @@ describe('<VotePair>', () => {
       ).toBe('true')
     })
 
-    it('the no-vote cap reads the same regardless of the community count value', async () => {
-      // Pass-27 pin: the cap declares the viewer's STATE, not the
-      // count's value — so a negative net (e.g. -9) must not flip
-      // the cap copy to anything sentiment-coloured. The cap stays
-      // descriptive of the *vote*, not of the community-net sign.
-      for (const count of [-9, -1, 0, 1, 9]) {
+    it('the no-vote cap reads the same regardless of the voter count value', async () => {
+      // The cap declares the viewer's STATE, not the count's
+      // value — so a high or low voter count must not flip the
+      // cap copy.
+      for (const count of [0, 1, 9, 99]) {
         getBody = { ok: true, value: 0, count, signedIn: true }
         const { unmount } = render(
           <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
@@ -353,7 +426,7 @@ describe('<VotePair>', () => {
     })
 
     it('renders "you voted lower" for a signed-in viewer with value -1', async () => {
-      getBody = { ok: true, value: -1, count: -3, signedIn: true }
+      getBody = { ok: true, value: -1, count: 3, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       const cap = screen.getByTestId('vote-state-cap')
@@ -383,166 +456,6 @@ describe('<VotePair>', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       expect(screen.queryByTestId('vote-state-cap')).toBeNull()
-    })
-  })
-
-  // --- #190 (critique pass-13) + #199 (critique pass-14):
-  // community-source qualifier on the count's label for the
-  // unacted reader (anon OR authed, value === 0). The head
-  // ("cast vote") owns the imperative; the label here
-  // owns the *source* of the rendered number so "1 net vote"
-  // isn't read as "you have 1 net vote" — and, for the anon
-  // first-paint reader, isn't read as the same shape as the
-  // adjacent "EDITOR'S CANON #02" rank.
-  describe('community-source qualifier (no-vote viewer, anon or authed)', () => {
-    function labelText() {
-      return screen
-        .getByTestId('vote-pair')
-        .querySelector('.vote-label')?.textContent
-    }
-
-    it('prefixes the label with "community · " when authed-not-yet-voted (plural)', async () => {
-      getBody = { ok: true, value: 0, count: 7, signedIn: true }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(labelText()).toBe('community · net votes')
-    })
-
-    it('prefixes the label with "community · " when authed-not-yet-voted (singular)', async () => {
-      getBody = { ok: true, value: 0, count: 1, signedIn: true }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
-      expect(labelText()).toBe('community · net vote')
-    })
-
-    it('prefixes the label with "community · " for anon viewers too — pass-14 #199 (plural)', async () => {
-      getBody = { ok: true, value: 0, count: 7, signedIn: false }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(labelText()).toBe('community · net votes')
-    })
-
-    it('prefixes the label with "community · " for anon viewers too — pass-14 #199 (singular)', async () => {
-      getBody = { ok: true, value: 0, count: 1, signedIn: false }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(screen.getByTestId('vote-count').textContent).toBe('+1')
-      expect(labelText()).toBe('community · net vote')
-    })
-
-    it('omits the qualifier for authed-and-voted viewers — the cap already disambiguates', async () => {
-      getBody = { ok: true, value: 1, count: 7, signedIn: true }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(labelText()).toBe('net votes')
-    })
-
-    it('drops the qualifier on click (signed-in-no-vote → signed-in-with-vote)', async () => {
-      getBody = { ok: true, value: 0, count: 5, signedIn: true }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      await flushAsync()
-      expect(labelText()).toBe('community · net votes')
-      // Optimistic state.value flips to 1; the cap takes over the
-      // disambiguation channel, so the qualifier must vanish.
-      fireEvent.click(screen.getByTestId('vote-up'))
-      expect(labelText()).toBe('net votes')
-    })
-
-    it('honors custom singular + plural labels when prefixing', async () => {
-      getBody = { ok: true, value: 0, count: 1, signedIn: true }
-      render(
-        <VotePair
-          initialCount={0}
-          targetType="season"
-          targetId="survivor:20"
-          label="approvals"
-          labelSingular="approval"
-        />,
-      )
-      await flushAsync()
-      expect(labelText()).toBe('community · approval')
-    })
-
-    it('SSR fallback (pre-hydrate) carries the qualifier — initial state.value is 0 for everyone, so anon and authed render structurally identical', () => {
-      // Before the mount fetch resolves, state.value defaults to
-      // 0 and the no-vote qualifier applies. Anon's hydrated
-      // state stays at 0 and matches; an authed-voted viewer
-      // hydrates to value 1 and drops the qualifier on the next
-      // paint. The SSR-default-to-anon-with-qualifier is the
-      // honest first paint for both viewer classes.
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(labelText()).toBe('community · net votes')
-    })
-  })
-
-  // --- critique pass-23 #264: explicit-sign count rendering ---
-  //
-  // The label promises signed math ("NET VOTE" = upvotes − downvotes),
-  // so the rendered numeral must carry an explicit sign. A bare `1`
-  // under "COMMUNITY · NET VOTE" reads as either "1 total vote cast"
-  // or the season's rank — neither is what the widget shows. Pin:
-  // positive → leading `+`, negative → leading `-`, zero → bare.
-  describe('explicit-sign count rendering', () => {
-    function countText() {
-      return screen.getByTestId('vote-count').textContent
-    }
-
-    it('prefixes positive integers with "+"', () => {
-      render(<VotePair initialCount={1} targetType="season" targetId="survivor:20" />)
-      expect(countText()).toBe('+1')
-    })
-
-    it('prefixes larger positive integers with "+"', () => {
-      render(<VotePair initialCount={42} targetType="season" targetId="survivor:20" />)
-      expect(countText()).toBe('+42')
-    })
-
-    it('prefixes negative integers with "-" (free from toLocaleString)', () => {
-      render(<VotePair initialCount={-3} targetType="season" targetId="survivor:20" />)
-      expect(countText()).toBe('-3')
-    })
-
-    it('renders zero bare — no sign earns its place for an even net', () => {
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(countText()).toBe('0')
-    })
-
-    it('signs the count after a click that flips the optimistic net positive', () => {
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(countText()).toBe('0')
-      fireEvent.click(screen.getByTestId('vote-up'))
-      expect(countText()).toBe('+1')
-    })
-
-    it('signs the count after a click that flips the optimistic net negative', () => {
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      fireEvent.click(screen.getByTestId('vote-down'))
-      expect(countText()).toBe('-1')
-    })
-
-    it('regression guard: an unsigned positive integer must never render', () => {
-      // The pre-#264 bug rendered the bare integer for positives.
-      // Pin against a regression that drops the prefix.
-      render(<VotePair initialCount={7} targetType="season" targetId="survivor:20" />)
-      expect(countText()).not.toMatch(/^\d/)
-      expect(countText()).toMatch(/^[+\-0]/)
-    })
-
-    it('signs the server-reconciled count after the POST resolves (positive)', async () => {
-      postBody = { ok: true, value: 1, count: 12 }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      fireEvent.click(screen.getByTestId('vote-up'))
-      await flushAsync()
-      expect(countText()).toBe('+12')
-    })
-
-    it('signs the server-reconciled count after the POST resolves (negative)', async () => {
-      postBody = { ok: true, value: -1, count: -5 }
-      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      fireEvent.click(screen.getByTestId('vote-down'))
-      await flushAsync()
-      expect(countText()).toBe('-5')
     })
   })
 })

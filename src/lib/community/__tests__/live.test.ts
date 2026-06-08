@@ -364,4 +364,27 @@ describe('moverNote', () => {
     expect(moverNote(mover(3))).toMatch(/update\.$/)
     expect(moverNote(mover(3))).not.toMatch(/vote/i)
   })
+
+  // critique-pass-34 MED pin (#361): cross-surface parity — the
+  // vote count in the mover note must come from the same source
+  // as the season-page VotePair's distinct voter count. Both
+  // derive from `COUNT(*) FILTER (value <> 0)` over `votes` for
+  // the target: the mover-note path threads it via
+  // CommunityRankRow.voteCount (from `compute_weighted_rank`),
+  // and the VotePair path reads it via /api/vote (from the
+  // read_vote / cast_vote RPCs which port the same SQL shape).
+  // A regression where the two surfaces compute from different
+  // sources (e.g. the vote-pair reverting to signed-net) would
+  // re-introduce the pass-34 cross-surface drift.
+  it('renders the vote count surfaced from CommunityRankRow.voteCount verbatim — same source the VotePair reads', () => {
+    // The CommunityRankRow's voteCount field is the contract;
+    // pickMovers (covered at L120) threads it onto the mover,
+    // and moverNote renders it. This test pins the verbatim
+    // pass-through: a row with voteCount=12 produces "12 votes"
+    // — not a weighted or computed alternative. The VotePair
+    // reads the same SQL shape on /api/vote, so the two
+    // surfaces cite the same canonical fact.
+    const m: CommunityMover = { ...mover(5), voteCount: 12 }
+    expect(moverNote(m)).toMatch(/· 12 votes$/)
+  })
 })

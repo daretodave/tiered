@@ -131,13 +131,18 @@ export async function POST(request: Request) {
       targetId: parsed.targetId,
       value: parsed.value,
     })
-    // Client sees the clean integer net (`raw_count`), never the
-    // weighted ranking aggregate — that leak was issue #64.
+    // Critique pass-34 MED: the client-facing number is the
+    // distinct voter count (matches the ShiftCard's framing), not
+    // the signed net. `count` carries the voter count for the
+    // pill; `rawCount` is retained on the contract for
+    // diagnostics. The weighted ranking aggregate (#64) is never
+    // exposed.
     return NextResponse.json({
       ok: true,
       value: result.value,
       weight: result.weight,
-      count: result.rawCount,
+      count: result.voterCount,
+      rawCount: result.rawCount,
       persisted: result.persisted,
     })
   } catch (err) {
@@ -183,17 +188,21 @@ export async function GET(request: Request) {
       targetType: q.data.targetType,
       targetId: q.data.targetId,
     })
-    // Client sees the clean integer net (`raw_count`), never the
-    // weighted ranking aggregate — that leak was issue #64.
-    // `signedIn` lets VotePair disambiguate "anon viewer with a
-    // cookie" from "signed-in member" so the state pill copy
-    // ("you voted higher" / "you voted lower") only surfaces to
-    // members who have actually voted (#160 + #189 — the
+    // Critique pass-34 MED: the client-facing number is the
+    // distinct voter count (matches the ShiftCard's framing), not
+    // the signed net. `count` carries the voter count for the
+    // pill; `rawCount` is retained on the contract for
+    // diagnostics. The weighted ranking aggregate (#64) is never
+    // exposed. `signedIn` lets VotePair disambiguate "anon viewer
+    // with a cookie" from "signed-in member" so the state pill
+    // copy ("you voted higher" / "you voted lower") only surfaces
+    // to members who have actually voted (#160 + #189 — the
     // no-vote channel is owned by VoteRowHead's head meta).
     return NextResponse.json({
       ok: true,
       value: result.value,
-      count: result.rawCount,
+      count: result.voterCount,
+      rawCount: result.rawCount,
       signedIn: resolved.signedIn,
     })
   } catch (err) {

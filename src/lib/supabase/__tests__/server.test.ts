@@ -236,7 +236,7 @@ describe('readVote', () => {
 
   it('calls read_vote with the resolved session + target and coerces the row', async () => {
     rpcMock.mockResolvedValueOnce({
-      data: [{ value: 1, count: 0.3, raw_count: 4 }],
+      data: [{ value: 1, count: 0.3, raw_count: 4, voter_count: 7 }],
       error: null,
     })
     const { readVote } = await import('../server')
@@ -250,14 +250,16 @@ describe('readVote', () => {
       p_target_type: 'season',
       p_target_id: 'survivor:20',
     })
-    // count is the weighted internal; rawCount is the clean
-    // integer the UI shows (#64).
-    expect(r).toEqual({ value: 1, count: 0.3, rawCount: 4 })
+    // `count` is the weighted internal; `rawCount` is the
+    // unweighted integer net (#64); `voterCount` is the
+    // distinct-voter count surfaced as the pill number
+    // (critique pass-34 #361).
+    expect(r).toEqual({ value: 1, count: 0.3, rawCount: 4, voterCount: 7 })
   })
 
   it('passes a null session through (anon visitor, aggregate still readable)', async () => {
     rpcMock.mockResolvedValueOnce({
-      data: { value: 0, count: 5, raw_count: 12 },
+      data: { value: 0, count: 5, raw_count: 12, voter_count: 18 },
       error: null,
     })
     const { readVote } = await import('../server')
@@ -271,7 +273,7 @@ describe('readVote', () => {
       p_target_type: 'season',
       p_target_id: 'survivor:1',
     })
-    expect(r).toEqual({ value: 0, count: 5, rawCount: 12 })
+    expect(r).toEqual({ value: 0, count: 5, rawCount: 12, voterCount: 18 })
   })
 
   it('defaults to value 0 / count 0 when no row comes back', async () => {
@@ -279,7 +281,7 @@ describe('readVote', () => {
     const { readVote } = await import('../server')
     expect(
       await readVote({ sessionId: 's', targetType: 'season', targetId: 't' }),
-    ).toEqual({ value: 0, count: 0, rawCount: 0 })
+    ).toEqual({ value: 0, count: 0, rawCount: 0, voterCount: 0 })
   })
 
   it('throws (carrying the pg code) on an RPC error', async () => {
@@ -307,7 +309,7 @@ describe('readVote', () => {
     expect(err.hint).toBeUndefined()
   })
 
-  it('coerces a missing raw_count to 0 (|| 0 fallback)', async () => {
+  it('coerces a missing raw_count and voter_count to 0 (|| 0 fallback)', async () => {
     rpcMock.mockResolvedValueOnce({
       data: [{ value: -1, count: -0.5 }],
       error: null,
@@ -315,7 +317,7 @@ describe('readVote', () => {
     const { readVote } = await import('../server')
     expect(
       await readVote({ sessionId: 's', targetType: 'comment', targetId: 'c1' }),
-    ).toEqual({ value: -1, count: -0.5, rawCount: 0 })
+    ).toEqual({ value: -1, count: -0.5, rawCount: 0, voterCount: 0 })
   })
 })
 
@@ -333,10 +335,17 @@ describe('castVote', () => {
     else delete process.env['SUPABASE_SERVICE_ROLE_KEY']
   })
 
-  it('maps the integer raw_count alongside the weighted count (#64)', async () => {
+  it('maps the integer raw_count + voter_count alongside the weighted count (#64 + pass-34 #361)', async () => {
     rpcMock.mockResolvedValueOnce({
       data: [
-        { value: 1, weight: 0.25, count: 0.45, raw_count: 3, persisted: true },
+        {
+          value: 1,
+          weight: 0.25,
+          count: 0.45,
+          raw_count: 3,
+          voter_count: 9,
+          persisted: true,
+        },
       ],
       error: null,
     })
@@ -352,6 +361,7 @@ describe('castVote', () => {
       weight: 0.25,
       count: 0.45,
       rawCount: 3,
+      voterCount: 9,
       persisted: true,
     })
   })
@@ -380,7 +390,14 @@ describe('castVote', () => {
 
   it('accepts a single object data shape (not just an array)', async () => {
     rpcMock.mockResolvedValueOnce({
-      data: { value: '-1', weight: '0.5', count: '-0.5', raw_count: '2', persisted: 1 },
+      data: {
+        value: '-1',
+        weight: '0.5',
+        count: '-0.5',
+        raw_count: '2',
+        voter_count: '6',
+        persisted: 1,
+      },
       error: null,
     })
     const { castVote } = await import('../server')
@@ -391,7 +408,14 @@ describe('castVote', () => {
         targetId: 't',
         value: -1,
       }),
-    ).toEqual({ value: -1, weight: 0.5, count: -0.5, rawCount: 2, persisted: true })
+    ).toEqual({
+      value: -1,
+      weight: 0.5,
+      count: -0.5,
+      rawCount: 2,
+      voterCount: 6,
+      persisted: true,
+    })
   })
 
   it('falls raw_count back to 0 when absent or non-numeric', async () => {

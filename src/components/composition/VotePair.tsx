@@ -13,18 +13,15 @@ function asVoteValue(n: unknown): VoteValue {
   return n === 1 ? 1 : n === -1 ? -1 : 0
 }
 
-// Critique pass-23: the count cell used to render the bare integer
-// (`1`, `-1`, `0`) under the label "COMMUNITY · NET VOTE", but the
-// label promises signed math while the value carried no sign — a
-// first-paint reader couldn't tell whether `1` meant "1 total vote
-// cast", "+1 net", or the season's current rank. Format positives
-// with an explicit leading `+`; negatives already render with `-`
-// from `toLocaleString()`; zero stays bare (no sign earns its place
-// for an even net).
-function signedCountText(count: number): string {
-  const n = Math.round(count)
-  const base = n.toLocaleString()
-  return n > 0 ? `+${base}` : base
+// Critique pass-34 MED: the rendered integer is the distinct
+// voter count on the target (`COUNT(*) FILTER (value <> 0)` over
+// `votes` for the target — the same source the ShiftCard's
+// `vote_count` reads from `compute_weighted_rank`). A voter
+// count is never negative; the prior `signedCountText` helper
+// that prefixed positives with `+` is gone with the rename.
+function formatVoterCount(count: number): string {
+  const n = Math.max(0, Math.round(count))
+  return n.toLocaleString()
 }
 
 type VotePairProps = {
@@ -67,8 +64,8 @@ export function VotePair({
   initialCount = 0,
   targetType,
   targetId,
-  label = 'net votes',
-  labelSingular = 'net vote',
+  label = 'community votes',
+  labelSingular = 'community vote',
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
   const reduced = useRef(false)
@@ -177,22 +174,15 @@ export function VotePair({
   // displayed count. The aria-labels describe the action (vote
   // direction), not the result, so they stay on the plural form
   // — the displayed count is already announced by the count cell.
-  const baseLabel = Math.abs(Math.round(state.count)) === 1 ? labelSingular : label
-  // Critique pass-13 #190 / pass-14 #199: with the VoteRowHead
-  // reading "Your vote / cast vote" and the count
-  // rendering "N net vote(s)", an unacted reader can't tell
-  // whether N is the community total or a (yet-uncast) personal
-  // value. The pass-13 fix scoped the qualifier to authed-only on
-  // the theory that anon has no personal vote to confuse it with
-  // — pass-14 reopened that: anon also has no canon-vs-community
-  // frame yet, and a first-paint reader meets "1 NET VOTE" next
-  // to "EDITOR'S CANON #02" with no syntactic cue distinguishing
-  // them. Widen to both branches: any unacted reader (state.value
-  // === 0) sees "community · net vote(s)"; authed-and-voted
-  // viewers already see the "you voted higher/lower" cap below,
-  // so the qualifier stays silent in that one state.
-  const noVote = state.value === 0
-  const displayLabel = noVote ? `community · ${baseLabel}` : baseLabel
+  //
+  // Critique pass-34 MED: the label is `community vote(s)` —
+  // matching the ShiftCard's `vote_count` framing — and the
+  // integer the reader sees is the distinct voter count on the
+  // target, not the signed net. The prior conditional `community ·`
+  // prefix (added pass-13 #190 / pass-14 #199 to disambiguate
+  // "N net vote(s)" from a personal value) is no longer needed —
+  // `community` is part of the base label on every render.
+  const displayLabel = Math.round(state.count) === 1 ? labelSingular : label
 
   // State pill copy (#160): surfaces for every signed-in member
   // and *describes the current state* of their vote (haven't
@@ -281,7 +271,7 @@ export function VotePair({
           data-testid="vote-count"
           style={numStyle}
         >
-          {signedCountText(state.count)}
+          {formatVoterCount(state.count)}
         </span>
         <span className="vote-label">{displayLabel}</span>
       </div>

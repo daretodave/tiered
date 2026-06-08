@@ -73,17 +73,26 @@ beforeEach(() => {
   getSessionMock.mockReset()
   getSessionMock.mockResolvedValue(null) // anon caller by default
   castVoteMock.mockReset()
-  // weight 1, weighted aggregate `count` 9.5, unweighted net `rawCount` 4 —
-  // three distinct values so the #64 leak guard test is unambiguous.
+  // weight 1, weighted aggregate `count` 9.5, unweighted net
+  // `rawCount` 4, distinct voter count `voterCount` 6 — four
+  // distinct values so the leak guards (#64 weighted aggregate
+  // never leaks; pass-34 client-facing number = voterCount) are
+  // unambiguous.
   castVoteMock.mockResolvedValue({
     value: 1,
     weight: 1,
     count: 9.5,
     rawCount: 4,
+    voterCount: 6,
     persisted: true,
   })
   readVoteMock.mockReset()
-  readVoteMock.mockResolvedValue({ value: -1, count: 8.5, rawCount: 2 })
+  readVoteMock.mockResolvedValue({
+    value: -1,
+    count: 8.5,
+    rawCount: 2,
+    voterCount: 5,
+  })
   claimAnonSessionMock.mockReset()
   claimAnonSessionMock.mockResolvedValue({ sessionId: 'claimed-session-id' })
   upsertUserMock.mockReset()
@@ -98,7 +107,12 @@ describe('POST /api/vote — body validation', () => {
       ok: true,
       value: 1,
       weight: 1,
-      count: 4,
+      // Pass-34 MED: the client-facing pill `count` is the
+      // distinct voter count (matches the ShiftCard's vote_count
+      // framing across surfaces). `rawCount` is retained on the
+      // contract for diagnostics.
+      count: 6,
+      rawCount: 4,
       persisted: true,
     })
     expect(castVoteMock).toHaveBeenCalledWith({
@@ -244,14 +258,23 @@ describe('POST /api/vote — RPC error mapping', () => {
   })
 })
 
-describe('POST /api/vote — issue #64 leak guard', () => {
-  it('reports the unweighted rawCount, never the weighted ranking aggregate', async () => {
+describe('POST /api/vote — issue #64 + pass-34 leak guards', () => {
+  it('never leaks the weighted ranking aggregate (#64)', async () => {
+    // castVote returned weighted aggregate `count` 9.5 (a
+    // fractional ranking signal). The client must never see it.
     const res = await POST(postRequest({ cookie: anonCookie }))
     const body = await res.json()
-    // castVote returned rawCount 4 (clean net) and count 9.5
-    // (weighted aggregate). The client must only ever see 4.
-    expect(body.count).toBe(4)
     expect(JSON.stringify(body)).not.toContain('9.5')
+  })
+
+  it('reports voterCount as the client-facing `count` (pass-34 cross-surface parity)', async () => {
+    // castVote returned voterCount 6 and rawCount 4. The pill's
+    // primary number (`count`) is the voter count; `rawCount` is
+    // retained on the contract for diagnostics.
+    const res = await POST(postRequest({ cookie: anonCookie }))
+    const body = await res.json()
+    expect(body.count).toBe(6)
+    expect(body.rawCount).toBe(4)
   })
 })
 
@@ -266,7 +289,11 @@ describe('GET /api/vote — query validation', () => {
     await expect(res.json()).resolves.toEqual({
       ok: true,
       value: -1,
-      count: 2,
+      // Pass-34 MED: client-facing `count` is the distinct voter
+      // count (mock returns voterCount 5). `rawCount` is retained
+      // on the contract for diagnostics.
+      count: 5,
+      rawCount: 2,
       signedIn: false,
     })
     expect(readVoteMock).toHaveBeenCalledWith({
@@ -342,14 +369,25 @@ describe('GET /api/vote — RPC error mapping + leak guard', () => {
     await expect(res.json()).resolves.toMatchObject({ error: 'rpc_failed' })
   })
 
-  it('reports the unweighted rawCount, never the weighted aggregate', async () => {
+  it('never leaks the weighted aggregate (#64)', async () => {
+    // readVote returned the weighted aggregate 8.5; the client
+    // must never see it.
     const res = await GET(
       getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),
     )
     const body = await res.json()
-    // readVote returned rawCount 2 and the weighted aggregate 8.5.
-    expect(body.count).toBe(2)
     expect(JSON.stringify(body)).not.toContain('8.5')
+  })
+
+  it('reports voterCount as the client-facing `count` (pass-34 cross-surface parity)', async () => {
+    // readVote returned voterCount 5 and rawCount 2. The pill's
+    // primary number (`count`) is the voter count.
+    const res = await GET(
+      getRequest({ targetType: 'season', targetId: 'survivor-20', cookie: anonCookie }),
+    )
+    const body = await res.json()
+    expect(body.count).toBe(5)
+    expect(body.rawCount).toBe(2)
   })
 })
 

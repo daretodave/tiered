@@ -30,16 +30,18 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // the authed walk) to the plain "cast vote".
 //
 // #190 (critique pass-13) + #199 (critique pass-14) — when the
-// head reads "Your vote / cast vote" the count's
-// label must qualify the number's source: a plain "1 NET VOTE"
-// reads ambiguously (community total vs. personal). The label
-// gains a "community · " prefix in the unacted state for BOTH
-// anon and authed viewers (pass-14 widened the prefix to anon
-// after observing the first-paint reader meets "1 NET VOTE"
-// next to "EDITOR'S CANON #02" with no syntactic cue
-// distinguishing the two ranking frames). The qualifier stays
-// silent only for authed-and-voted, where the cap pill below
-// the buttons owns the disambiguation channel.
+// head reads "Your vote / cast vote" the count's label must
+// qualify the number's source: a plain "1 NET VOTE" reads
+// ambiguously (community total vs. personal). Pass-13/14 added
+// a conditional "community · " prefix in the unacted state.
+// Pass-34 (#361) folded the prefix into the base label: the
+// rendered text is now "community vote(s)" on every state, and
+// the displayed integer is the distinct voter count (not the
+// signed net) so it agrees with the ShiftCard's `vote_count`
+// framing across surfaces. The pill above the buttons keeps
+// owning the *viewer-identity* disambiguation channel for
+// authed-and-voted viewers (the "you voted higher/lower"
+// declaration).
 //
 // The pill ships from VotePair itself (driven by /api/vote
 // returning `signedIn` alongside the read-back value). Anon
@@ -103,13 +105,21 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       await expect(cap).toHaveAttribute('data-vote-state', 'none')
     }
 
-    // #190: the count's label disambiguates the number's source.
-    // Authed-not-yet-voted gets "community · net vote(s)";
-    // authed-and-voted reverts to the plain label (the pill
-    // above the buttons owns the disambiguation in that state).
+    // Pass-34 #361: the count's label is "community vote(s)" on
+    // every state — the prior conditional `community ·` prefix
+    // (pass-13/14) is folded into the base label, and the
+    // displayed integer is the distinct voter count (not the
+    // signed net) so the vote-pair cites the same canonical
+    // fact as the ShiftCard's `vote_count`. Bidirectional drift
+    // guard: the label must end with /community votes?$/ AND
+    // must NEVER carry the prior "net vote(s)" framing on any
+    // viewer state.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
+    await expect(label).toHaveText(/community votes?$/)
+    const labelText = (await label.textContent()) ?? ''
+    expect(labelText).not.toMatch(/net votes?/)
+
     if (api.value === 0) {
-      await expect(label).toHaveText(/^community · /)
       // #207 (pass-15): the signed-in-no-vote head meta carries the
       // bare imperative with no "this week" qualifier — the vote is
       // a one-time per-reader act; only the recompute is weekly.
@@ -121,8 +131,6 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
         'signed-in-no-vote',
       )
       await expect(head.locator('.meta')).toHaveText('cast vote')
-    } else {
-      await expect(label).not.toHaveText(/^community · /)
     }
   })
 
@@ -193,15 +201,14 @@ test.describe('vote state pill — public never sees the pill', () => {
     // surface they don't have.
     await expect(page.getByTestId('vote-state-cap')).toHaveCount(0)
 
-    // #199 (pass-14): the "community · " qualifier renders for
-    // anon-no-vote too — the first-paint reader meets the big
-    // "N NET VOTE" element next to "EDITOR'S CANON #02" with no
-    // syntactic cue distinguishing the canon vs. community
-    // frames. The qualifier carries the disambiguation; the
-    // anon's lack of a personal vote is irrelevant here because
-    // the imperative head ("SIGN IN TO WEIGH IN" for anon)
-    // already telegraphs the viewer-identity boundary.
+    // Pass-34 #361: the label reads "community vote(s)" on every
+    // state — the prior conditional `community ·` prefix is
+    // folded into the base label, and the integer is the
+    // distinct voter count (matches the ShiftCard's `vote_count`
+    // framing). Bidirectional drift guard.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).toHaveText(/^community · /)
+    await expect(label).toHaveText(/community votes?$/)
+    const labelText = (await label.textContent()) ?? ''
+    expect(labelText).not.toMatch(/net votes?/)
   })
 })

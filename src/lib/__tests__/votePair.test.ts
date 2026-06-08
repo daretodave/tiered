@@ -24,8 +24,14 @@ describe('votePair.initialState', () => {
   })
 })
 
+// Critique pass-34 MED: `count` is the distinct voter count on
+// the target (not the signed net). Click semantics:
+//   - entering value=0 (retract) → voter count -= 1
+//   - leaving value=0 (first vote) → voter count += 1
+//   - swapping non-zero → non-zero (up↔down) → voter count
+//     unchanged (the viewer was already a voter)
 describe('votePair.reduce — click', () => {
-  it('clicking up from neutral increments and locks', () => {
+  it('clicking up from neutral adds the viewer to the voter count and locks', () => {
     const s = reduce(initialState({ initialCount: 10 }), { type: 'click', direction: 'up', now: 100 })
     expect(s.value).toBe(1)
     expect(s.count).toBe(11)
@@ -34,14 +40,16 @@ describe('votePair.reduce — click', () => {
     expect(s.flash).toBe('up')
   })
 
-  it('clicking down from neutral decrements and locks', () => {
+  it('clicking down from neutral also adds the viewer to the voter count and locks', () => {
+    // A downvote is still a vote — voter count tracks presence,
+    // not direction.
     const s = reduce(initialState({ initialCount: 10 }), { type: 'click', direction: 'down', now: 100 })
     expect(s.value).toBe(-1)
-    expect(s.count).toBe(9)
+    expect(s.count).toBe(11)
     expect(s.flash).toBe('down')
   })
 
-  it('clicking the same direction again retracts (value 1 → 0) and decreases count', () => {
+  it('clicking the same direction again retracts (value 1 → 0) and drops the voter count', () => {
     const after = reduce(initialState({ initialCount: 10, initialValue: 1 }), {
       type: 'click',
       direction: 'up',
@@ -51,14 +59,30 @@ describe('votePair.reduce — click', () => {
     expect(after.count).toBe(9)
   })
 
-  it('clicking the opposite direction swaps (value 1 → -1) and shifts count by 2', () => {
+  it('clicking the opposite direction swaps (value 1 → -1) and leaves the voter count unchanged', () => {
+    // The viewer was already a voter; the swap changes their
+    // direction, not their presence.
     const after = reduce(initialState({ initialCount: 10, initialValue: 1 }), {
       type: 'click',
       direction: 'down',
       now: 100,
     })
     expect(after.value).toBe(-1)
-    expect(after.count).toBe(8)
+    expect(after.count).toBe(10)
+  })
+
+  it('floors the voter count at zero on a retract from count 0', () => {
+    // Unreachable in practice (the viewer can only retract if
+    // they were a voter, in which case the count is ≥ 1), but
+    // the floor is the safe guarantee — voter count never goes
+    // negative.
+    const after = reduce(initialState({ initialCount: 0, initialValue: 1 }), {
+      type: 'click',
+      direction: 'up',
+      now: 100,
+    })
+    expect(after.value).toBe(0)
+    expect(after.count).toBe(0)
   })
 
   it('ignores clicks while locked', () => {
@@ -132,16 +156,17 @@ describe('votePair.reduce — hydrate (mount read-back)', () => {
 })
 
 describe('votePair.reduce — reconcile (post-write server truth)', () => {
-  it('snaps value + count to the server aggregate, leaving the lock intact', () => {
+  it('snaps value + count to the server voter-count aggregate, leaving the lock intact', () => {
     const clicked = reduce(initialState({ initialCount: 0 }), {
       type: 'click',
       direction: 'up',
       now: 100,
     })
-    // Optimistic count was 1; server says the weighted net is 0.3.
-    const reconciled = reduce(clicked, { type: 'reconcile', value: 1, count: 0.3 })
+    // Optimistic voter count was 1; server says the target has
+    // 4 distinct voters.
+    const reconciled = reduce(clicked, { type: 'reconcile', value: 1, count: 4 })
     expect(reconciled.value).toBe(1)
-    expect(reconciled.count).toBe(0.3)
+    expect(reconciled.count).toBe(4)
     expect(reconciled.phase).toBe('locked')
     expect(reconciled.flash).toBe('up')
   })
@@ -211,24 +236,26 @@ describe('votePair.reduce — click (down/swap lock + userActed symmetry)', () =
     expect(s.userActed).toBe(true)
   })
 
-  it('re-clicking down from -1 retracts to 0 and raises count by 1', () => {
+  it('re-clicking down from -1 retracts to 0 and drops the voter count by 1', () => {
     const after = reduce(initialState({ initialCount: 10, initialValue: -1 }), {
       type: 'click',
       direction: 'down',
       now: 100,
     })
     expect(after.value).toBe(0)
-    expect(after.count).toBe(11)
+    expect(after.count).toBe(9)
   })
 
-  it('clicking up from -1 swaps to +1 and shifts count by 2', () => {
+  it('clicking up from -1 swaps to +1 and leaves the voter count unchanged', () => {
+    // Swap stays a voter — voter count tracks presence, not
+    // direction.
     const after = reduce(initialState({ initialCount: 10, initialValue: -1 }), {
       type: 'click',
       direction: 'up',
       now: 100,
     })
     expect(after.value).toBe(1)
-    expect(after.count).toBe(12)
+    expect(after.count).toBe(10)
     expect(after.flash).toBe('up')
   })
 })
@@ -242,14 +269,16 @@ describe('votePair.reduce — hydrate (count-only / value-only deltas)', () => {
     expect(after.count).toBe(9)
   })
 
-  it('applies a negative server snapshot before the viewer acts', () => {
+  it('applies a downvote server snapshot before the viewer acts', () => {
+    // Voter count tracks presence (non-negative); a downvote
+    // contributes one voter, same as an upvote.
     const after = reduce(initialState({ initialCount: 0 }), {
       type: 'hydrate',
       value: -1,
-      count: -3,
+      count: 3,
     })
     expect(after.value).toBe(-1)
-    expect(after.count).toBe(-3)
+    expect(after.count).toBe(3)
     expect(after.userActed).toBe(false)
   })
 })
@@ -267,9 +296,9 @@ describe('votePair.reduce — reconcile (short-circuit + idle path)', () => {
 
   it('snaps an idle (no in-flight write) state to server truth without inventing a lock', () => {
     const idle = initialState({ initialCount: 2 })
-    const reconciled = reduce(idle, { type: 'reconcile', value: -1, count: -0.7 })
+    const reconciled = reduce(idle, { type: 'reconcile', value: -1, count: 7 })
     expect(reconciled.value).toBe(-1)
-    expect(reconciled.count).toBe(-0.7)
+    expect(reconciled.count).toBe(7)
     expect(reconciled.phase).toBe('idle')
     expect(reconciled.lockedUntil).toBeNull()
     expect(reconciled.flash).toBeNull()

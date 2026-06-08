@@ -407,7 +407,6 @@ export default async function SeasonPage({ params }: { params: Params }) {
                   initialCount={0}
                   targetType="season"
                   targetId={seasonTargetId}
-                  label="net votes"
                 />
               }
               shieldLines={shieldLines}

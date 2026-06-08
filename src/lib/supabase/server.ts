@@ -47,9 +47,15 @@ export type CastVoteResult = {
   // Weighted aggregate SUM(value*weight) — a fractional ranking
   // signal. Internal only; never the client-facing number.
   count: number
-  // Unweighted integer net SUM(value). This is the clean count
-  // the VotePair pill shows (issue #64).
+  // Unweighted integer net SUM(value). Retained on the contract
+  // for diagnostic use; not surfaced to the reader (cf. critique
+  // pass-34 voter-count migration).
   rawCount: number
+  // Distinct voter count — COUNT(*) FILTER (value <> 0) over the
+  // target. The client-facing pill number; agrees with the
+  // ShiftCard's vote_count and the per-season vote_count from
+  // compute_weighted_rank.
+  voterCount: number
   persisted: boolean
 }
 
@@ -74,6 +80,7 @@ export async function castVote(args: CastVoteArgs): Promise<CastVoteResult> {
     weight: Number(row.weight),
     count: Number(row.count),
     rawCount: Number(row.raw_count) || 0,
+    voterCount: Number(row.voter_count) || 0,
     persisted: Boolean(row.persisted),
   }
 }
@@ -93,8 +100,15 @@ export type ReadVoteResult = {
   value: number
   // Weighted aggregate — internal ranking signal, never shown.
   count: number
-  // Unweighted integer net — the client-facing pill number (#64).
+  // Unweighted integer net. Retained on the contract for
+  // diagnostic use; not surfaced to the reader (cf. critique
+  // pass-34 voter-count migration).
   rawCount: number
+  // Distinct voter count — COUNT(*) FILTER (value <> 0) over the
+  // target. The client-facing pill number; agrees with the
+  // ShiftCard's vote_count and the per-season vote_count from
+  // compute_weighted_rank.
+  voterCount: number
 }
 
 export async function readVote(args: ReadVoteArgs): Promise<ReadVoteResult> {
@@ -115,6 +129,7 @@ export async function readVote(args: ReadVoteArgs): Promise<ReadVoteResult> {
     value: row ? Number(row.value) : 0,
     count: row ? Number(row.count) : 0,
     rawCount: row ? Number(row.raw_count) || 0 : 0,
+    voterCount: row ? Number(row.voter_count) || 0 : 0,
   }
 }
 
