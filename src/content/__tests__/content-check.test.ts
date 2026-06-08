@@ -18,6 +18,7 @@ import {
   collectFailures,
   collectSeasonEyebrowCalendarIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
+  collectShowTaglinePluralEditorIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeSynonymClusterIssues,
@@ -3934,6 +3935,182 @@ ${ninetyWords}
       "tiered.tv's editor. The editor weights each season's craft and consequence equally; objectivity is not the bar, honesty is. The ranking starts as the editor's read, then gets fine-tuned against what reasonable fans agree on after a long argument runs its course. The canon stays honest about its limits.",
     )
     expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+})
+
+describe('content-check — show tagline plural-collective editor voice (critique pass-41, issue #356)', () => {
+  let tmp: string
+
+  function makeShowWithTagline(
+    root: string,
+    slug: string,
+    tagline: string,
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: ${JSON.stringify(tagline)}
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-tagline-plural-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog post-drain (Survivor + Amazing Race rewritten to singular)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectShowTaglinePluralEditorIssues()).toEqual([])
+  })
+
+  it('passes for a singular-voice tagline (first-person "I")', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "Strangers on a beach, voting each other off until one is left standing. I've ranked every single one.",
+    )
+    expect(collectShowTaglinePluralEditorIssues()).toEqual([])
+  })
+
+  it('passes for a third-person voice tagline (no editor-pronoun at all)', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      'A franchise built on long arcs and quiet finales. The format that taught reality how to slow down.',
+    )
+    expect(collectShowTaglinePluralEditorIssues()).toEqual([])
+  })
+
+  it('flags the historical defect — Survivor\'s pre-drain `We\'ve ranked` closer', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "Strangers on a beach, voting each other off until one is left standing. We've ranked every single one.",
+    )
+    const issues = collectShowTaglinePluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha.md (tagline)')
+    expect(issues[0]!.message).toMatch(/plural-collective editor voice/)
+    expect(issues[0]!.message).toMatch(/first-person-plural pronouns/)
+    expect(issues[0]!.message).toMatch(/issue #356/)
+  })
+
+  it('flags the plural possessive `tiered.tv\'s editors` (independent signal)', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "A long-running format. tiered.tv's editors have ranked every season since the original pilot.",
+    )
+    const issues = collectShowTaglinePluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/plural possessive/)
+  })
+
+  it('flags both signals together in one issue (single hit per show)', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "A long-running format. tiered.tv's editors have ranked every season; we are still arguing about the order.",
+    )
+    const issues = collectShowTaglinePluralEditorIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/plural possessive/)
+    expect(issues[0]!.message).toMatch(/AND/)
+    expect(issues[0]!.message).toMatch(/first-person-plural/)
+  })
+
+  it('is case-insensitive on both signals', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "A long-running format. TIERED.TV's Editors have ranked every season; We've replayed every one.",
+    )
+    const issues = collectShowTaglinePluralEditorIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('does not false-positive on the substring "weight" (matches only word-bounded `we`)', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      'A long-running format that weights craft and consequence in equal measure.',
+    )
+    expect(collectShowTaglinePluralEditorIssues()).toEqual([])
+  })
+
+  it('tolerates a show whose tagline is empty or absent (no-op)', () => {
+    const file = path.join(tmp, 'shows', 'alpha.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+slug: alpha
+name: alpha
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: "A tagline."
+tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+    expect(collectShowTaglinePluralEditorIssues()).toEqual([])
+  })
+
+  it('flags each carrier independently when more than one show drifts', () => {
+    makeShowWithTagline(
+      tmp,
+      'alpha',
+      "Strangers on a beach. We've ranked every season.",
+    )
+    makeShowWithTagline(
+      tmp,
+      'beta',
+      "Strangers in a kitchen. We've ranked every service.",
+    )
+    const issues = collectShowTaglinePluralEditorIssues()
+    expect(issues.length).toBe(2)
+    const files = issues.map((i) => i.file).sort()
+    expect(files).toEqual([
+      'content/shows/alpha.md (tagline)',
+      'content/shows/beta.md (tagline)',
+    ])
   })
 })
 

@@ -1496,6 +1496,40 @@ export function collectCanonMethWhoPluralEditorIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-41 MED (issue #356): show `tagline` field plural-collective
+// editor voice — the same defect class as pass-35 #329 at the per-show
+// tagline layer the #329 closure did not sweep. Survivor + Amazing Race
+// hero taglines closed on `We've ranked every single one.` /
+// `We've ranked every leg of every one.` while the same-page canon
+// methodology cell 01 reads first-person-singular `I've watched ... I'm
+// trying to be honest.` Same-page voice contradiction on the same
+// activity (ranking the canon). The remaining 11 show taglines do not
+// carry the plural closer — narrow 2-show drain, not whole catalog.
+// Strict at floor 0 since both carriers drain in this tick; any future
+// authoring pass that re-introduces a plural closer at the tagline
+// field layer trips at content-check time.
+export function collectShowTaglinePluralEditorIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const tagline = show.tagline
+    if (!tagline) continue
+    const flat = tagline.replace(/\s+/g, ' ')
+    const hits: string[] = []
+    if (PLURAL_EDITOR_POSSESSIVE_RE.test(flat)) {
+      hits.push('plural possessive `tiered.tv\'s editors`')
+    }
+    if (PLURAL_EDITOR_PRONOUN_RE.test(flat)) {
+      hits.push('first-person-plural pronouns (`we\'ve` / `we are` / `we aren\'t` / etc.)')
+    }
+    if (hits.length === 0) continue
+    issues.push({
+      file: `content/shows/${show.slug}.md (tagline)`,
+      message: `show tagline plural-collective editor voice — carries ${hits.join(' AND ')}. The same-page canon methodology cell 01 reads first-person-singular per the pass-35 #329 closure ("I've watched ... I'm trying to be honest."); a hero tagline closing on plural-collective \`We've ranked\` contradicts that voice on the same page. Recast \`We've\` → \`I've\` (or third-person \`The editor has\`) and \`tiered.tv's editors\` → \`tiered.tv's editor\`. See plan/CRITIQUE.md pass-41 / issue #356.`,
+    })
+  }
+  return issues
+}
+
 // Critique pass-32 LOW (issue #325): `/shows/survivor/season/heroes-vs-villains`
 // "What to watch for" callouts re-used `cold-open` across moment 1's label and
 // moment 4's body — two of four small callouts sharing the same content-bearing
@@ -2047,6 +2081,20 @@ function main(): number {
     failures.push(...pluralEditorIssues)
   } else {
     for (const issue of pluralEditorIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-41 MED (issue #356): both carriers (Survivor +
+  // Amazing Race) drain in the same tick that lands this invariant,
+  // so STRICT ships on day one — any future authoring pass slipping a
+  // plural closer back into a show tagline trips at the verify gate.
+  const SHOW_TAGLINE_PLURAL_STRICT = true
+  const showTaglinePluralIssues = collectShowTaglinePluralEditorIssues()
+  if (SHOW_TAGLINE_PLURAL_STRICT) {
+    failures.push(...showTaglinePluralIssues)
+  } else {
+    for (const issue of showTaglinePluralIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
