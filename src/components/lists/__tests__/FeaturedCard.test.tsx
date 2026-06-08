@@ -8,7 +8,17 @@ import { show, theme } from './fixtures'
 const today = new Date('2026-05-13T00:00:00Z')
 
 describe('<FeaturedCard>', () => {
-  it('uses "Cross-canon" when more than one show is present', () => {
+  // Critique pass-40 #355 closure: the tag previously rendered
+  // `Cross-canon · 7 entries` / `Single-show · N entries`, conflating
+  // *coverage scope* (cross-canon vs single-show) with the entry
+  // count. Coverage scope is already declared by the bullet-cluster
+  // above the line + the `/u/[handle]`-scoped `data-coverage`
+  // attribute on `<HomeListsStack>`; the tag now adopts the canonical
+  // `{N} shows · {M} entries` shape shared by home `<HomeListRow>`,
+  // /themes index `<ListRow>`, and /themes/[theme] `<ListDetailHero>`.
+  // The prior `Cross-canon` / `Single-show` literal is negatively
+  // pinned below.
+  it('renders `{N} shows · {M} entries` for a multi-show theme (pass-40 #355)', () => {
     render(
       <FeaturedCard
         theme={theme()}
@@ -16,21 +26,41 @@ describe('<FeaturedCard>', () => {
         today={today}
       />,
     )
-    expect(screen.getByTestId('lists-featured-card').textContent).toContain(
-      'Cross-canon',
-    )
-    expect(screen.getByTestId('lists-featured-card').textContent).toContain(
-      '2 entries',
-    )
+    const meta = screen.getByTestId('lists-featured-meta').textContent ?? ''
+    expect(meta).toMatch(/^\d+ shows? · \d+ entr(?:y|ies)$/i)
+    expect(meta).toBe('2 shows · 2 entries')
   })
 
-  it('uses the show name when only one show', () => {
+  it('renders `1 show · …` for a single-show theme (pass-40 #355)', () => {
     render(
       <FeaturedCard theme={theme()} shows={[show()]} today={today} />,
     )
-    expect(screen.getByTestId('lists-featured-card').textContent).toContain(
-      'Survivor',
+    const meta = screen.getByTestId('lists-featured-meta').textContent ?? ''
+    expect(meta).toBe('1 show · 2 entries')
+  })
+
+  it('never re-introduces the `Cross-canon · …` / `Single-show · …` conflation (pass-40 #355 negative pin)', () => {
+    const multi = render(
+      <FeaturedCard
+        theme={theme()}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+        today={today}
+      />,
     )
+    const multiMeta =
+      multi.getByTestId('lists-featured-meta').textContent ?? ''
+    expect(multiMeta).not.toMatch(/cross-canon/i)
+    expect(multiMeta).not.toMatch(/single-show/i)
+    multi.unmount()
+    const single = render(
+      <FeaturedCard theme={theme()} shows={[show()]} today={today} />,
+    )
+    const singleMeta =
+      single.getByTestId('lists-featured-meta').textContent ?? ''
+    // The single-show variant must not echo the show *name* either —
+    // the prior literal `Survivor · 2 entries` was the single-show
+    // form of the same conflation.
+    expect(singleMeta).not.toMatch(/Survivor/i)
   })
 
   it('renders one bullet per show', () => {

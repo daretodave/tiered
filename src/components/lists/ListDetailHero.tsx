@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Show, Theme } from '@/content'
 import { Bullet } from '@/components/atoms/Bullet'
-import { formatRevisedRelative, plural } from '@/lib/themes-format'
+import { formatRevisedRelative } from '@/lib/themes-format'
 import { ListDetailTools } from './ListDetailTools'
 import { parseTagline } from './parseTagline'
 
@@ -15,6 +15,14 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
   const showCount = shows.length
   const segments = parseTagline(theme.tagline)
   const revised = formatRevisedRelative(theme.last_revised)
+  // Critique pass-40 #355 closure: the cell previously read `SPANS / 6
+  // shows` — the only catalogue surface that named the show-count
+  // `SPANS` (vs. `SHOWS` everywhere else) and the only surface that
+  // doubled the noun on the value side (`6 shows` against the bare
+  // `7` value in the sibling `ENTRIES` cell). The cell is now `SHOWS /
+  // 6`, matching the canonical catalogue accounting voice across home,
+  // /themes featured-rail, and /themes index card. The testid migrated
+  // in lockstep (`list-meta-spans` → `list-meta-shows`).
 
   return (
     <header className="list-detail-hero" data-testid="list-hero">
@@ -64,11 +72,9 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
           <dt className="meta-key">Entries</dt>
           <dd className="meta-val">{entryCount}</dd>
         </div>
-        <div className="meta-cell" data-testid="list-meta-spans">
-          <dt className="meta-key">Spans</dt>
-          <dd className="meta-val">
-            {showCount} {plural(showCount, 'show', 'shows')}
-          </dd>
+        <div className="meta-cell" data-testid="list-meta-shows">
+          <dt className="meta-key">Shows</dt>
+          <dd className="meta-val">{showCount}</dd>
         </div>
         <div className="meta-cell" data-testid="list-meta-curator">
           <dt className="meta-key">Curated by</dt>

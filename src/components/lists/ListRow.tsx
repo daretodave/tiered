@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Show, Theme } from '@/content'
 import { Bullet } from '@/components/atoms/Bullet'
-import { formatThemeStatus } from '@/lib/themes-format'
+import { formatListMetaLine, formatThemeStatus } from '@/lib/themes-format'
 
 type ListRowProps = {
   theme: Theme
@@ -10,7 +10,12 @@ type ListRowProps = {
 }
 
 export function ListRow({ theme, shows, today }: ListRowProps) {
-  const entryCount = theme.entries.length
+  // Critique pass-40 #355 closure: the meta row previously rendered
+  // `{entryCount} entries` only — the index card was the lone
+  // catalogue surface that dropped the show-count. Adopt the canonical
+  // `{N} shows · {M} entries` shape shared by the home list-row, the
+  // featured-rail card, and the list-detail meta-strip.
+  const metaLine = formatListMetaLine(theme, shows)
   const status = formatThemeStatus(theme.status, theme.last_revised, today)
 
   return (
@@ -34,8 +39,8 @@ export function ListRow({ theme, shows, today }: ListRowProps) {
         <span className="list-row-title">{theme.title}</span>
         <span className="list-row-blurb">{theme.description}</span>
       </span>
-      <span className="list-row-meta">
-        {entryCount} {entryCount === 1 ? 'entry' : 'entries'}
+      <span className="list-row-meta" data-testid="lists-row-meta">
+        {metaLine}
         <br />
         {status}
       </span>

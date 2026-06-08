@@ -66,4 +66,19 @@ describe('<HomeListRow>', () => {
     const dot = screen.getByTestId('home-list-row-dot') as HTMLSpanElement
     expect(dot.style.background).toContain('--s-verdict')
   })
+
+  // Critique pass-40 #355 closure: the four catalogue list-meta
+  // surfaces (home `<HomeListRow>`, /themes featured-rail
+  // `<FeaturedCard>`, /themes index `<ListRow>`, /themes/[theme]
+  // `<ListDetailHero>`) now share a single canonical accounting
+  // shape — `{N} shows · {M} entries`. The home row is the baseline
+  // the other three surfaces aligned to; the shared invariant regex
+  // pins the shape so a future refactor that drifts back to an
+  // ad-hoc literal fails at unit time. Sibling pins exist on the
+  // other three surfaces' colocated tests.
+  it('meta line matches the canonical `{N} shows · {M} entries` shape (pass-40 #355)', () => {
+    render(<HomeListRow theme={theme()} />)
+    const meta = screen.getByTestId('home-list-row-meta').textContent ?? ''
+    expect(meta).toMatch(/^\d+ shows? · \d+ entr(?:y|ies)$/i)
+  })
 })

@@ -15,7 +15,7 @@ describe('<ListRow>', () => {
     expect(row.getAttribute('data-slug')).toBe('firsts')
   })
 
-  it('renders the entry-count + status meta', () => {
+  it('renders the show-count + entry-count + status meta', () => {
     render(
       <ListRow
         theme={theme({ status: 'growing' })}
@@ -24,8 +24,23 @@ describe('<ListRow>', () => {
       />,
     )
     const row = screen.getByTestId('lists-row')
-    expect(row.textContent).toContain('2 entries')
+    // pass-40 #355: index card adopts the canonical `{N} shows · {M}
+    // entries` shape — the show-count was missing from this surface
+    // alone before the helper extraction.
+    expect(row.textContent).toContain('1 show · 2 entries')
     expect(row.textContent).toContain('growing')
+  })
+
+  // Critique pass-40 #355 closure: shared invariant regex for the
+  // canonical catalogue list-meta shape — sibling pins exist on
+  // `<HomeListRow>`, `<FeaturedCard>`, `<ListDetailHero>`.
+  it('meta line matches the canonical `{N} shows · {M} entries` shape (pass-40 #355)', () => {
+    render(<ListRow theme={theme()} shows={[show()]} today={today} />)
+    const meta = screen.getByTestId('lists-row-meta').textContent ?? ''
+    // textContent collapses the `<br />` into adjacent strings; isolate
+    // the first line (meta) before the status (second line).
+    const firstLine = meta.split(/\s*(?:growing|stable list|updated|started)/i)[0]?.trim() ?? ''
+    expect(firstLine).toMatch(/^\d+ shows? · \d+ entr(?:y|ies)$/i)
   })
 
   it('renders one bullet per unique show', () => {

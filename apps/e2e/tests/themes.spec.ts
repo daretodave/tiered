@@ -226,9 +226,7 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
     await expect(page.getByTestId('list-meta-entries')).toContainText(
       /Entries\s*\d+/,
     )
-    await expect(page.getByTestId('list-meta-spans')).toContainText(
-      /shows|show/,
-    )
+    await expect(page.getByTestId('list-meta-shows')).toContainText(/\d+/)
     await expect(page.getByTestId('list-shield')).toBeVisible()
   })
 
@@ -298,7 +296,13 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
     await page.goto('/themes/firsts', { waitUntil: 'domcontentloaded' })
     const entries = page.getByTestId('list-entry')
     await expect(entries).toHaveCount(7)
-    await expect(page.getByTestId('list-meta-spans')).toContainText('6 shows')
+    // pass-40 #355: meta-cell now reads `SHOWS / 6` (bare integer), not
+    // `SPANS / 6 shows`. The dl renders both `dt` and `dd` text — assert
+    // on the bare `dd` value via the `.meta-val` selector so we pin the
+    // canonical accounting voice, not the historical `SPANS` label.
+    await expect(
+      page.getByTestId('list-meta-shows').locator('.meta-val'),
+    ).toHaveText('6')
   })
 
   test('adjacent-lists section either shows links or is absent', async ({

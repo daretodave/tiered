@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
+import type { Show, Theme } from '@/content'
 import {
   filterModeText,
+  formatListMeta,
+  formatListMetaLine,
   formatRevisedAgo,
   formatRevisedRelative,
   formatRevisedYear,
@@ -179,5 +182,127 @@ describe('plural', () => {
   it('returns plural at !=1', () => {
     expect(plural(0, 'entry', 'entries')).toBe('entries')
     expect(plural(2, 'entry', 'entries')).toBe('entries')
+  })
+})
+
+// Critique pass-40 #355 closure: the four catalogue list-meta surfaces
+// (home `<HomeListRow>`, /themes featured-rail `<FeaturedCard>`,
+// /themes index `<ListRow>`, /themes/[theme] `<ListDetailHero>`) now
+// share `formatListMeta` / `formatListMetaLine` as the single source
+// of truth for the accounting voice. Sibling colocated tests on each
+// component pin the rendered output; these unit tests pin the helper
+// directly across the 1-show / multi-show / 1-entry / multi-entry
+// corners. The `shows` parameter is optional — by the
+// `getShowsForTheme` invariant the resolved-Show[] length matches
+// `countShows(theme)`, so either path yields the same number.
+function themeForMeta(entries: Array<{ show: string; season: number }>): Theme {
+  return {
+    slug: 'demo',
+    title: 'Demo',
+    description: 'Demo description.',
+    tagline: 'Demo tagline.',
+    category: 'craft',
+    sentiment: 'warm-up',
+    status: 'stable',
+    curator: 'tiered.tv editor',
+    last_revised: '2026-05-01',
+    featured: false,
+    related: [],
+    entries: entries.map((e, ix) => ({
+      show: e.show,
+      season: e.season,
+      rank: ix + 1,
+      title: `t${ix + 1}`,
+      blurb: `b${ix + 1}`,
+    })),
+    body_md: '',
+  } as Theme
+}
+
+function showForMeta(slug: string): Show {
+  return {
+    slug,
+    name: slug,
+    palette: { paper: '#000', ink: '#fff', primary: '#888' },
+    seasons: 1,
+    status: 'airing',
+    blurb: 'b',
+    tagline: 't',
+    tier: 'B',
+    network: 'N',
+    est_year: 2000,
+    genre_tag: 'g',
+    featured: false,
+  } as Show
+}
+
+describe('formatListMeta (pass-40 #355)', () => {
+  it('returns shows.length when shows is provided', () => {
+    const theme = themeForMeta([
+      { show: 'a', season: 1 },
+      { show: 'b', season: 1 },
+    ])
+    expect(
+      formatListMeta(theme, [showForMeta('a'), showForMeta('b')]),
+    ).toEqual({ showCount: 2, entryCount: 2 })
+  })
+
+  it('falls back to countShows(theme) when shows is omitted (home surface)', () => {
+    const theme = themeForMeta([
+      { show: 'a', season: 1 },
+      { show: 'b', season: 1 },
+      { show: 'a', season: 2 },
+    ])
+    expect(formatListMeta(theme)).toEqual({ showCount: 2, entryCount: 3 })
+  })
+
+  it('returns showCount=0 / entryCount=0 for an empty theme', () => {
+    const theme = themeForMeta([])
+    expect(formatListMeta(theme)).toEqual({ showCount: 0, entryCount: 0 })
+    expect(formatListMeta(theme, [])).toEqual({ showCount: 0, entryCount: 0 })
+  })
+})
+
+describe('formatListMetaLine (pass-40 #355)', () => {
+  const theme = (n: number, e: number): Theme =>
+    themeForMeta(
+      Array.from({ length: e }, (_, ix) => ({
+        show: `show-${ix % n}`,
+        season: ix + 1,
+      })),
+    )
+  const shows = (n: number) =>
+    Array.from({ length: n }, (_, ix) => showForMeta(`show-${ix}`))
+
+  it('renders the canonical `{N} shows · {M} entries` shape for multi-show / multi-entry', () => {
+    expect(formatListMetaLine(theme(3, 7), shows(3))).toBe('3 shows · 7 entries')
+  })
+
+  it('renders singular noun at 1 show / 1 entry', () => {
+    expect(formatListMetaLine(theme(1, 1), shows(1))).toBe('1 show · 1 entry')
+  })
+
+  it('renders singular `1 show · 5 entries` for a single-show multi-entry theme', () => {
+    expect(formatListMetaLine(theme(1, 5), shows(1))).toBe('1 show · 5 entries')
+  })
+
+  it('renders `4 shows · 1 entry` for a single-entry multi-show theme', () => {
+    // edge corner: one entry across many shows is data-shape impossible
+    // (entries map 1:1 to seasons), but the helper handles it gracefully.
+    const t = themeForMeta([{ show: 'a', season: 1 }])
+    expect(formatListMetaLine(t, [showForMeta('a'), showForMeta('b'), showForMeta('c'), showForMeta('d')])).toBe(
+      '4 shows · 1 entry',
+    )
+  })
+
+  it('matches the shared invariant regex used by the four colocated component tests', () => {
+    const re = /^\d+ shows? · \d+ entr(?:y|ies)$/i
+    expect(formatListMetaLine(theme(1, 1), shows(1))).toMatch(re)
+    expect(formatListMetaLine(theme(3, 7), shows(3))).toMatch(re)
+    expect(formatListMetaLine(theme(1, 5), shows(1))).toMatch(re)
+  })
+
+  it('falls back to countShows when shows is omitted (home surface path)', () => {
+    expect(formatListMetaLine(theme(3, 7))).toBe('3 shows · 7 entries')
   })
 })

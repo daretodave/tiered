@@ -1,4 +1,4 @@
-import type { Theme, ThemeStatus } from '@/content'
+import type { Show, Theme, ThemeStatus } from '@/content'
 import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
 
 export function formatRevisedYear(iso: string): string {
@@ -123,4 +123,39 @@ export function countShows(theme: Theme): number {
   const seen = new Set<string>()
   for (const e of theme.entries) seen.add(e.show)
   return seen.size
+}
+
+// Single source of truth for the catalogue list-meta accounting voice
+// (critique pass-40 #355). Home `<HomeListRow>`, /themes featured-rail
+// `<FeaturedCard>`, /themes index `<ListRow>`, and /themes/[theme]
+// `<ListDetailHero>` all surfaced the same two facts — distinct shows
+// covered + entry count — in four different shapes (`CROSS-CANON · 7
+// ENTRIES`, `7 ENTRIES / STABLE LIST`, `SPANS / 6 shows`, etc.). A
+// reader hopping home → /themes → list-detail read four list-meta
+// voices for one fact. Same defect class as the resolved pass-38 #340
+// / #342 catalogue-eyebrow drifts. The `shows` parameter is optional —
+// when present (the /themes surfaces resolve `Show[]` via
+// `getShowsForTheme`), `shows.length` is authoritative; when absent
+// (home), the count falls back to `countShows(theme)`. By
+// `getShowsForTheme` invariant both yield the same integer.
+export type ListMeta = {
+  showCount: number
+  entryCount: number
+}
+
+export function formatListMeta(theme: Theme, shows?: Show[]): ListMeta {
+  return {
+    showCount: shows ? shows.length : countShows(theme),
+    entryCount: theme.entries.length,
+  }
+}
+
+// Canonical list-meta line — `{N} shows · {M} entries` — the home
+// `<HomeListRow>` shape adopted as the catalogue baseline. Renders the
+// singular noun at 1 (`1 show · 1 entry`). Use this on every chrome
+// surface that announces a list's accounting facts so the four
+// catalogue surfaces speak with one voice.
+export function formatListMetaLine(theme: Theme, shows?: Show[]): string {
+  const { showCount, entryCount } = formatListMeta(theme, shows)
+  return `${showCount} ${plural(showCount, 'show', 'shows')} · ${entryCount} ${plural(entryCount, 'entry', 'entries')}`
 }

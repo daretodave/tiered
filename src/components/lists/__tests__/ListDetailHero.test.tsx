@@ -45,15 +45,48 @@ describe('<ListDetailHero>', () => {
       />,
     )
     expect(screen.getByTestId('list-meta-entries').textContent).toContain('2')
-    expect(screen.getByTestId('list-meta-spans').textContent).toContain(
-      '2 shows',
-    )
+    // pass-40 #355: cell renamed `SPANS / 6 shows` → `SHOWS / 6` (bare
+    // integer, no noun-doubling) to match the bare `ENTRIES / N` cell
+    // next to it and the canonical catalogue accounting voice.
+    expect(screen.getByTestId('list-meta-shows').textContent).toContain('Shows')
+    const showsVal =
+      screen
+        .getByTestId('list-meta-shows')
+        .querySelector('.meta-val')?.textContent?.trim() ?? ''
+    expect(showsVal).toBe('2')
     expect(screen.getByTestId('list-meta-curator').textContent).toContain(
       'M. Reyes',
     )
     expect(screen.getByTestId('list-meta-revised').textContent).toContain(
       'May 2026',
     )
+  })
+
+  // Critique pass-40 #355 closure: shows value is bare (matches the
+  // pattern set by the existing `entries` bare-integer pin below).
+  // Bidirectional drift guard against a future refactor reintroducing
+  // the `6 shows` noun-doubling or reverting to the `SPANS` label.
+  it('shows meta value is a bare integer (no noun-doubling against the SHOWS label) (pass-40 #355)', () => {
+    render(
+      <ListDetailHero
+        theme={theme()}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+      />,
+    )
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-key')?.textContent).toBe('Shows')
+    const valueText =
+      cell.querySelector('.meta-val')?.textContent?.trim() ?? ''
+    expect(valueText).toMatch(/^\d+$/)
+    expect(valueText).not.toMatch(/shows?/i)
+  })
+
+  it('never re-introduces the `SPANS` label or the `list-meta-spans` testid (pass-40 #355 negative pin)', () => {
+    const { container } = render(
+      <ListDetailHero theme={theme()} shows={[show()]} />,
+    )
+    expect(container.querySelector('[data-testid="list-meta-spans"]')).toBeNull()
+    expect(container.textContent).not.toMatch(/\bSpans\b/)
   })
 
   it('entries meta value is a bare integer (no noun-doubling against the ENTRIES label)', () => {
@@ -122,6 +155,10 @@ describe('<ListDetailHero>', () => {
       />,
     )
     expect(screen.getByTestId('list-meta-entries').textContent).toContain('1')
-    expect(screen.getByTestId('list-meta-spans').textContent).toContain('1 show')
+    // pass-40 #355: bare value `1` (singular pluralization happens on
+    // the canonical `formatListMetaLine` accounting line, not the
+    // meta-strip cell — the cell holds a bare integer).
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-val')?.textContent?.trim()).toBe('1')
   })
 })

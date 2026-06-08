@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Show, Theme } from '@/content'
 import { Bullet } from '@/components/atoms/Bullet'
-import { formatThemeStatus } from '@/lib/themes-format'
+import { formatListMetaLine, formatThemeStatus } from '@/lib/themes-format'
 
 type FeaturedCardProps = {
   theme: Theme
@@ -16,11 +16,17 @@ export function FeaturedCard({
   big = false,
   today,
 }: FeaturedCardProps) {
-  const entryCount = theme.entries.length
-  const isSingleShow = shows.length === 1
-  const showLabel = isSingleShow
-    ? shows[0]?.name ?? 'Single-show'
-    : 'Cross-canon'
+  // Critique pass-40 #355 closure: the tag previously surfaced
+  // `{showLabel} · {entryCount} entries` where showLabel conflated
+  // `Cross-canon` / `Single-show` (coverage scope) with the entry
+  // count. Coverage scope is declared globally by `<ListsHero>` at
+  // the top of the /themes page (cross-canon / single-canon / mixed
+  // accent), and per-card the bullet-cluster immediately to the left
+  // of this line already shows one dot per distinct show. The tag
+  // now uses the canonical `{N} shows · {M} entries` shape shared
+  // by the home list-row, the index list-row, and the list-detail
+  // meta-strip — same accounting voice everywhere.
+  const metaLine = formatListMetaLine(theme, shows)
   const status = formatThemeStatus(theme.status, theme.last_revised, today)
   // Unified across `big` and small variants per critique pass-35 #348:
   // the three featured-this-month sibling cards frame identically, so
@@ -49,9 +55,7 @@ export function FeaturedCard({
             />
           ))}
         </span>
-        <span>
-          {showLabel} · {entryCount} {entryCount === 1 ? 'entry' : 'entries'}
-        </span>
+        <span data-testid="lists-featured-meta">{metaLine}</span>
       </div>
       <h3>{theme.title}</h3>
       <p className="feat-blurb">{theme.description}</p>
