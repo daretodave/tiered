@@ -1642,6 +1642,47 @@ export function collectShowTaglinePluralEditorIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-42 MED (issue #363): the /shows A-tier band tile-
+// rendered surface mixed first-person-singular (`I've ranked every
+// leg of every one.` on Amazing Race, the only A-tier carrier
+// without a third-person `card_tagline` override) with third-person
+// editorial register on the other ten tiles. The defect is the
+// inverse of pass-41 #356 (which swept plural-collective `We've`
+// from show taglines and locked first-person-singular at the hero-
+// tagline layer): on the /shows tier-tile cross-card layer, the
+// band's documented voice is third-person editorial — first-person
+// belongs on the show-page hero (the `tagline` field), not the tile
+// (the `card_tagline ?? tagline` field per ShowsTile.tsx:63).
+//
+// Tile-only scope: the invariant reads the same field the renderer
+// reads. A show whose `card_tagline` is absent gets its `tagline`
+// checked (because that's what the tile shows); a show whose
+// `card_tagline` is authored gets its `card_tagline` checked AND
+// its `tagline` field stays exempt — that's the whole point of
+// having a tile-only field (the show-page hero keeps the editor
+// voice, the tile takes the band's third-person register).
+// Case-insensitive: catches sentence-initial `My` and uppercase
+// `I` alike. False-positive risk on bare lowercase `i` (rare in
+// editorial copy) is acceptable; the alternative is missing the
+// sentence-initial `My favorite season...` shape entirely.
+const SHOW_TILE_FIRST_PERSON_RE = /\b(I'd|I'll|I'm|I've|I|myself|mine|my)\b/i
+
+export function collectShowCardTaglineVoiceConsistencyIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    if (show.tier !== 'S' && show.tier !== 'A' && show.tier !== 'B') continue
+    const tile = show.card_tagline ?? show.tagline ?? ''
+    if (!tile) continue
+    if (!SHOW_TILE_FIRST_PERSON_RE.test(tile)) continue
+    const renderedField = show.card_tagline ? 'card_tagline' : 'tagline'
+    issues.push({
+      file: `content/shows/${show.slug}.md (${renderedField})`,
+      message: `tier-${show.tier} show's /shows tile-rendered field (\`${renderedField}\`) carries first-person-singular voice (\`I\` / \`I've\` / \`my\` / etc.). The /shows tier-band's documented voice is third-person editorial register on the tile (\`card_tagline ?? tagline\` per ShowsTile.tsx:63); the first-person editor voice belongs on the show-page hero (the full \`tagline\` field). If this show needs the first-person beat on the hero, author a third-person \`card_tagline\` override so the tile reads in the band's register while the show-page \`tagline\` keeps the editor voice. See plan/CRITIQUE.md pass-42 / issue #363.`,
+    })
+  }
+  return issues
+}
+
 // Critique pass-32 LOW (issue #325): `/shows/survivor/season/heroes-vs-villains`
 // "What to watch for" callouts re-used `cold-open` across moment 1's label and
 // moment 4's body — two of four small callouts sharing the same content-bearing
@@ -2244,6 +2285,24 @@ function main(): number {
     failures.push(...methSiblingsPluralIssues)
   } else {
     for (const issue of methSiblingsPluralIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-42 MED (issue #363): the Amazing Race `card_tagline`
+  // add (this commit) takes the A-tier first-person-on-tile carrier
+  // count from 1 to 0; S-tier carries 0 (Survivor + DragRace both
+  // ship third-person `card_tagline` overrides); B-tier carries 0.
+  // STRICT ships on day one — any future authoring pass slipping
+  // first-person markers back onto a tile-rendered field
+  // (`card_tagline ?? tagline`) trips at the verify gate.
+  const SHOW_TILE_FIRST_PERSON_STRICT = true
+  const showTileFirstPersonIssues =
+    collectShowCardTaglineVoiceConsistencyIssues()
+  if (SHOW_TILE_FIRST_PERSON_STRICT) {
+    failures.push(...showTileFirstPersonIssues)
+  } else {
+    for (const issue of showTileFirstPersonIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

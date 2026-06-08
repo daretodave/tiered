@@ -19,6 +19,7 @@ import {
   collectFailures,
   collectSeasonEyebrowCalendarIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
+  collectShowCardTaglineVoiceConsistencyIssues,
   collectShowTaglineBandTemplateEchoIssues,
   collectShowTaglinePluralEditorIssues,
   collectTaglineTemplatedTailIssues,
@@ -5078,5 +5079,181 @@ featured: false
     const issues = collectShowTaglineBandTemplateEchoIssues()
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/"she holds"/)
+  })
+})
+
+describe('content-check — show tile-rendered field first-person voice (critique pass-42, issue #363)', () => {
+  let tmp: string
+
+  function makeTileShow(
+    root: string,
+    slug: string,
+    opts: {
+      tier: 'S' | 'A' | 'B'
+      tagline: string
+      card_tagline?: string
+    },
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    const cardLine = opts.card_tagline
+      ? `card_tagline: ${JSON.stringify(opts.card_tagline)}\n`
+      : ''
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: "One torch at a time."
+tagline: ${JSON.stringify(opts.tagline)}
+${cardLine}tier: ${opts.tier}
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-tile-voice-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog post-drain (Amazing Race card_tagline overrides the first-person tagline)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectShowCardTaglineVoiceConsistencyIssues()).toEqual([])
+  })
+
+  it('passes for a third-person tile-rendered field (no first-person markers)', () => {
+    makeTileShow(tmp, 'alpha', {
+      tier: 'A',
+      tagline:
+        'The longest-running travel competition on television — a route mechanic that has held its shape for years.',
+    })
+    expect(collectShowCardTaglineVoiceConsistencyIssues()).toEqual([])
+  })
+
+  it('flags the historical defect — Amazing Race-shaped first-person `I\'ve` close on a bare tagline', () => {
+    makeTileShow(tmp, 'amazing-shape', {
+      tier: 'A',
+      tagline:
+        "38 seasons of strangers running through airports. I've ranked every leg of every one.",
+    })
+    const issues = collectShowCardTaglineVoiceConsistencyIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/amazing-shape.md (tagline)',
+    )
+    expect(issues[0]!.message).toMatch(/tier-A/)
+    expect(issues[0]!.message).toMatch(/first-person-singular voice/)
+    expect(issues[0]!.message).toMatch(/issue #363/)
+  })
+
+  it('reads the rendered tile field — `card_tagline` overrides the `tagline` check (Survivor pattern)', () => {
+    // Survivor's full `tagline` carries `I've ranked every single one.`
+    // but its `card_tagline` is third-person — the tile-rendered field
+    // (and the field the invariant checks) is `card_tagline`. No issue.
+    makeTileShow(tmp, 'survivor-shape', {
+      tier: 'S',
+      tagline:
+        "Strangers on a beach, voting each other off until one is left standing. I've ranked every single one.",
+      card_tagline:
+        'The format that invented itself in episode one, and is still finding new ways to ask who you really are.',
+    })
+    expect(collectShowCardTaglineVoiceConsistencyIssues()).toEqual([])
+  })
+
+  it('flags a `card_tagline` that re-introduces a first-person marker (regression pin)', () => {
+    makeTileShow(tmp, 'regressed', {
+      tier: 'A',
+      tagline: 'A safe third-person hero tagline.',
+      card_tagline: 'My favorite season of the bunch landed in the back half.',
+    })
+    const issues = collectShowCardTaglineVoiceConsistencyIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/regressed.md (card_tagline)')
+    expect(issues[0]!.message).toMatch(/`card_tagline`/)
+  })
+
+  it('catches every first-person marker variant (`I` / `I\'ve` / `I\'m` / `my`)', () => {
+    const variants: Array<{ slug: string; line: string }> = [
+      { slug: 'bare-i', line: 'A long-running format that I keep coming back to.' },
+      { slug: 'contracted-ive', line: "A long-running format. I've watched every season." },
+      { slug: 'contracted-im', line: "A long-running format. I'm here for the long arcs." },
+      { slug: 'possessive-my', line: 'A long-running format and my pick for the genre.' },
+    ]
+    for (const v of variants) {
+      makeTileShow(tmp, v.slug, { tier: 'A', tagline: v.line })
+    }
+    const issues = collectShowCardTaglineVoiceConsistencyIssues()
+    const flagged = issues.map((i) => i.file).sort()
+    expect(flagged).toEqual([
+      'content/shows/bare-i.md (tagline)',
+      'content/shows/contracted-im.md (tagline)',
+      'content/shows/contracted-ive.md (tagline)',
+      'content/shows/possessive-my.md (tagline)',
+    ])
+  })
+
+  it('does not false-positive on substrings containing the markers (e.g., "myth", "Iliad", "mind")', () => {
+    makeTileShow(tmp, 'substrings', {
+      tier: 'A',
+      tagline:
+        'A myth of competition built on mythical underdogs, the Iliad of reality television, all about the mind games.',
+    })
+    expect(collectShowCardTaglineVoiceConsistencyIssues()).toEqual([])
+  })
+
+  it('case-insensitive on the markers — catches sentence-initial `My` and uppercase `I` alike', () => {
+    // The regex carries the `i` flag so sentence-initial possessive
+    // `My favorite season...` (uppercase M) trips the same as the
+    // mid-sentence lowercase form. Bare lowercase `i` standalone
+    // ALSO trips (rare in editorial copy; the false-positive cost
+    // is acceptable for catching the sentence-initial regression).
+    makeTileShow(tmp, 'sentence-initial-my', {
+      tier: 'A',
+      tagline: 'My favorite season of the bunch landed in the back half.',
+    })
+    const issues = collectShowCardTaglineVoiceConsistencyIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/sentence-initial-my.md (tagline)',
+    )
+  })
+
+  it('flags each carrier independently when more than one show drifts', () => {
+    makeTileShow(tmp, 'alpha', {
+      tier: 'A',
+      tagline: "A format I've watched every season of.",
+    })
+    makeTileShow(tmp, 'beta', {
+      tier: 'A',
+      tagline: 'A format and my pick of the genre.',
+    })
+    const issues = collectShowCardTaglineVoiceConsistencyIssues()
+    expect(issues.length).toBe(2)
+    const files = issues.map((i) => i.file).sort()
+    expect(files).toEqual([
+      'content/shows/alpha.md (tagline)',
+      'content/shows/beta.md (tagline)',
+    ])
   })
 })
