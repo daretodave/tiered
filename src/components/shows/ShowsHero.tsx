@@ -24,8 +24,8 @@ export function ShowsHero({ stats, tiers }: ShowsHeroProps) {
           data-testid="shows-hero-lede"
           data-tier-coverage={tiers.join('')}
         >
-          Reality-TV canons, sorted not by personal taste but by{' '}
-          <b>how settled the ranking is.</b> {ledeSentences.join(' ')}
+          Reality-TV canons, sorted by{' '}
+          <b>how settled the ranking feels</b> — by which formats have earned a defensible canon, not which shows we love most. {ledeSentences.join(' ')}
         </p>
         <div className="shows-hero-stats" data-testid="shows-hero-stats">
           <div className="shows-stat" data-testid="shows-stat-shows">

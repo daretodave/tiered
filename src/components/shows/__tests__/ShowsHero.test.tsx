@@ -147,4 +147,41 @@ describe('<ShowsHero>', () => {
     expect(cell.textContent).not.toContain('Last revision')
     expect(cell.textContent).not.toContain('Index revised')
   })
+
+  // Critique pass-40 LOW (#352): the lede previously declared the sort axis
+  // as `sorted not by personal taste but by how settled the ranking is`,
+  // overclaiming taste-free objectivity while the S/A band sentences the
+  // page then publishes (`The S tier invented or perfected its format.` /
+  // `The A tier has the deep canon and the years to defend it.`) are
+  // themselves editorial judgments. A reader hopping /shows → /shows/survivor
+  // read two contradictory voices on the same editorial honesty question —
+  // /shows said "not personal taste"; /shows/survivor says "one editor's
+  // read … not claiming objective." Same defect class as the resolved
+  // pass-22 page-lede-contradicts-its-own-follow-on closure. Bidirectional
+  // pin: positive case names the editorial judgment (the rewrite says the
+  // sort favors `defensible canon`); negative case forbids the regression
+  // to the `not by personal taste` overclaim.
+  describe('lede voice (critique pass-40)', () => {
+    it('names the editorial judgment instead of denying taste', () => {
+      render(
+        <ShowsHero
+          stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
+          tiers={['S', 'A']}
+        />,
+      )
+      const lede = screen.getByTestId('shows-hero-lede')
+      expect(lede.textContent).toMatch(/defensible canon/i)
+    })
+
+    it('never regresses to the `not by personal taste` overclaim', () => {
+      render(
+        <ShowsHero
+          stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
+          tiers={['S', 'A']}
+        />,
+      )
+      const lede = screen.getByTestId('shows-hero-lede')
+      expect(lede.textContent).not.toMatch(/not by personal taste/i)
+    })
+  })
 })
