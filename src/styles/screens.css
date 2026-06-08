@@ -970,6 +970,11 @@
 }
 .comment-stub:hover { color: var(--show-ink); }
 .comment-stub-mono { font: 500 11px/1 var(--mono); letter-spacing: 0.1em; }
+.comment-stub-mono-mobile { display: none; }
+@media (max-width: 560px) {
+  .comment-stub-mono-desktop { display: none; }
+  .comment-stub-mono-mobile { display: inline; }
+}
 .comment-stub-right { display: flex; gap: 12px; align-items: center; }
 .comment-stub-as {
   font: 500 11px/1 var(--mono); letter-spacing: 0.06em;

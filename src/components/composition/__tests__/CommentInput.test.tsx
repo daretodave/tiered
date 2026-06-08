@@ -60,6 +60,24 @@ describe('<CommentInput>', () => {
     expect(screen.queryByTestId('comment-foot-as')).toBeNull()
   })
 
+  it('renders a plain-English mobile label alongside the ⏎ glyph on the collapsed stub', () => {
+    // Closes CRITIQUE pass-42 MED: the ⏎ glyph has no first-paint
+    // affordance reference on touch viewports (no physical keyboard
+    // present), so the collapsed CTA pairs it with a plain-English
+    // mobile label. Both nodes ship in the DOM unconditionally; CSS
+    // (screens.css `.comment-stub-mono-mobile` + `@media
+    // (max-width: 560px)`) decides which one paints at the active
+    // viewport. The DOM-presence check pins the wiring; the
+    // viewport-conditional paint is css-only and validated by the
+    // e2e mobile reflow walker.
+    render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+    const mobileLabel = screen.getByTestId('comment-stub-mobile-label')
+    expect(mobileLabel).toBeInTheDocument()
+    expect(mobileLabel).toHaveTextContent(/tap|write/i)
+    const stub = screen.getByTestId('comment-stub')
+    expect(stub).toHaveTextContent('⏎')
+  })
+
   it('expands to the open state when the stub is clicked', () => {
     render(<CommentInput targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('comment-stub'))

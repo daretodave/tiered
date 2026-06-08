@@ -137,7 +137,18 @@ export function CommentInput({ targetType, targetId, handle, onPosted }: Comment
                 {`as @${handle}`}
               </span>
             ) : null}
-            <span className="comment-stub-mono">{'⏎'}</span>
+            <span
+              className="comment-stub-mono comment-stub-mono-desktop"
+              aria-hidden="true"
+            >
+              {'⏎'}
+            </span>
+            <span
+              className="comment-stub-mono comment-stub-mono-mobile"
+              data-testid="comment-stub-mobile-label"
+            >
+              Tap to write
+            </span>
           </span>
         </button>
       )}
