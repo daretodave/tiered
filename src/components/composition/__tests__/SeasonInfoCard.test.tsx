@@ -173,4 +173,90 @@ describe('<SeasonInfoCard>', () => {
     expect(row).toHaveTextContent('custom help line.')
     expect(row).not.toHaveTextContent('community rank updates weekly')
   })
+
+  // Critique pass-40 MED: the vote-block previously stacked
+  // eyebrow (`YOUR VOTE / CAST VOTE`) above the question being
+  // voted on (`Does this belong in the community top 10?`), so the
+  // signed-in reader was told to "CAST VOTE" before the prompt
+  // scoped the action. The fix reorders the row to prompt → CTA
+  // eyebrow → buttons → status, matching the comment-input
+  // pattern on the same page. Pinned here as a bidirectional drift
+  // guard against a future refactor reverting the reorder.
+  describe('vote-block reading order (critique pass-40)', () => {
+    it('renders the vote-q prompt before the VoteRowHead slot in DOM order', () => {
+      render(
+        <SeasonInfoCard
+          canonRank={1}
+          canonTotal={1}
+          voteQuestion="Does this belong in the community top 10?"
+          voteSlot={voteSlot}
+          voteRowHead={
+            <div data-testid="vote-row-head-slot">YOUR VOTE · CAST VOTE</div>
+          }
+        />,
+      )
+      const row = screen.getByTestId('info-row-vote')
+      const prompt = row.querySelector('p.vote-q')
+      const head = screen.getByTestId('vote-row-head-slot')
+      expect(prompt).not.toBeNull()
+      const relation = prompt!.compareDocumentPosition(head)
+      expect(relation & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    })
+
+    it('renders the vote-q prompt before the default head when voteRowHead is absent', () => {
+      render(
+        <SeasonInfoCard
+          canonRank={1}
+          canonTotal={1}
+          voteQuestion="Q?"
+          voteSlot={voteSlot}
+        />,
+      )
+      const row = screen.getByTestId('info-row-vote')
+      const prompt = row.querySelector('p.vote-q')
+      const head = row.querySelector('.info-row-head')
+      expect(prompt).not.toBeNull()
+      expect(head).not.toBeNull()
+      const relation = prompt!.compareDocumentPosition(head!)
+      expect(relation & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    })
+
+    it('places the vote-q prompt as the first child of the vote row', () => {
+      render(
+        <SeasonInfoCard
+          canonRank={1}
+          canonTotal={1}
+          voteQuestion="Q?"
+          voteSlot={voteSlot}
+          voteRowHead={
+            <div data-testid="vote-row-head-slot">eyebrow</div>
+          }
+        />,
+      )
+      const row = screen.getByTestId('info-row-vote')
+      expect(row.firstElementChild?.tagName.toLowerCase()).toBe('p')
+      expect(row.firstElementChild?.classList.contains('vote-q')).toBe(true)
+    })
+
+    it('places the vote buttons after the eyebrow (CTA scopes the buttons)', () => {
+      render(
+        <SeasonInfoCard
+          canonRank={1}
+          canonTotal={1}
+          voteQuestion="Q?"
+          voteSlot={voteSlot}
+          voteRowHead={
+            <div data-testid="vote-row-head-slot">eyebrow</div>
+          }
+        />,
+      )
+      const row = screen.getByTestId('info-row-vote')
+      const head = screen.getByTestId('vote-row-head-slot')
+      const buttons = screen.getByTestId('vote-slot')
+      expect(row.contains(head)).toBe(true)
+      expect(row.contains(buttons)).toBe(true)
+      const relation = head.compareDocumentPosition(buttons)
+      expect(relation & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    })
+  })
 })

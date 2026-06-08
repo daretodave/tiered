@@ -108,14 +108,26 @@ export function SeasonInfoCard({
         </div>
       ) : null}
 
+      {/* Critique pass-40 MED reading-order fix: the vote-q prompt
+          leads the row so the reader hears the question before the
+          eyebrow names the action — natural prompt → CTA → status
+          grammar, matching the comment-input pattern at the bottom
+          of the same page (`Add a thought · no spoilers, please.
+          / as @e2e / ⏎`). The prior order ran eyebrow → prompt
+          → buttons, which surfaced `YOUR VOTE / CAST VOTE` above
+          the question being voted on. Pinned by the
+          `vote-block reading order (critique pass-40)` describe
+          block in SeasonInfoCard.test.tsx — both `compareDocument
+          Position` and the first-child invariant on
+          `[data-testid=info-row-vote]`. */}
       <div className="info-row" data-testid="info-row-vote">
+        <p className="vote-q">{voteQuestion}</p>
         {voteRowHead ?? (
           <div className="info-row-head">
             <span>Your vote</span>
             <span className="meta">change within 72h</span>
           </div>
         )}
-        <p className="vote-q">{voteQuestion}</p>
         {voteSlot}
         <div className="vote-help">{voteHelp}</div>
       </div>

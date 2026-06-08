@@ -611,7 +611,13 @@
   line-height: 1.4;
 }
 
-.vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 12px; text-wrap: pretty; }
+/* Critique pass-40 MED reading-order fix: `.vote-q` now leads the
+   info-row-vote (it sits above `.info-row-head`, which carries its
+   own `margin-bottom: 14px` for spacing to the buttons). The
+   prompt + eyebrow should read as a connected pair, so the bottom
+   margin tightens from 12px → 6px — enough air to separate the
+   serif prompt from the mono eyebrow without breaking the pair. */
+.vote-q { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: color-mix(in oklab, var(--show-ink) 90%, transparent); margin: 0 0 6px; text-wrap: pretty; }
 .vote-help { margin-top: 10px; font: 400 11px/1.5 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
 
 /* #160 + #189 + critique pass-27: signed-in members see a state
