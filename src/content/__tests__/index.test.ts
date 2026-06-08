@@ -131,8 +131,8 @@ describe('@/content barrel — runtime re-exports', () => {
     it('LISTS_FEATURED_RAIL_LIMIT is a positive integer (number-shaped, not a function/object)', () => {
       // Pin the type so a future refactor that swaps the constant for a
       // helper function or a config object doesn't silently break the
-      // hero stat math (`featured + index = total` invariant in
-      // ListsHero).
+      // featured-rail cap (post pass-40 #353 the rail is the editorial
+      // spotlight; the chip-filtered grid covers the whole catalog).
       expect(typeof barrel.LISTS_FEATURED_RAIL_LIMIT).toBe('number')
       expect(Number.isInteger(barrel.LISTS_FEATURED_RAIL_LIMIT)).toBe(true)
       expect(barrel.LISTS_FEATURED_RAIL_LIMIT).toBeGreaterThan(0)

@@ -252,10 +252,12 @@ export function getTheme(slug: string): Theme | null {
 }
 
 // Cap on how many `featured: true` themes the /themes "Featured this month"
-// rail surfaces. Used by both `getFeaturedThemes` (rail rendering) and
-// `getThemeStats().featuredCount` (hero stat) so the hero's split numbers
-// (`{featuredCount} FEATURED · {total - featuredCount} IN THE INDEX`) stay
-// in lockstep with what the rail actually renders.
+// rail surfaces. Used by `getFeaturedThemes` (rail rendering) and
+// `getThemeStats().featuredCount` (lede overlay descriptor in the hero,
+// post pass-40 #353). Post-#353 the rail and the chip-filtered grid both
+// render featured tiles — the rail is the editorial spotlight, the grid is
+// the navigable index — so featuredCount stays in lockstep with what the
+// rail actually surfaces (not a strict-subset partition of the catalog).
 export const LISTS_FEATURED_RAIL_LIMIT = 3
 
 export function getFeaturedThemes(limit: number = LISTS_FEATURED_RAIL_LIMIT): Theme[] {

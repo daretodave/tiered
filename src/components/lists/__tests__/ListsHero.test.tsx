@@ -71,12 +71,14 @@ describe('<ListsHero>', () => {
     expect(cell.textContent).not.toMatch(/index revised/i)
   })
 
-  it('splits the hero stat into FEATURED + IN THE INDEX when featuredCount > 0 (critique-pass-22 #261 — closes "12 LISTS vs 9 LISTS" mismatch)', () => {
-    // The page's filter chip shows the catalog minus the featured rail
-    // (`byCategoryRest`, post-#253 dedupe), so a single "12 LISTS" hero
-    // stat reads as a contradiction when the chip below says "9 LISTS".
-    // The split makes both numbers narratively continuous with the
-    // page's structure (rail + index = catalog).
+  it('hero stat strip renders a single LISTS cell with the catalog total when featuredCount > 0 — featured is an overlay, not a partition (critique pass-40 #353)', () => {
+    // Pass-40 #353 dropped the prior FEATURED + IN THE INDEX split:
+    // it only existed as a workaround for the chip mode-row scoping
+    // the non-featured grid. With the chips now operating on the
+    // whole 12-list catalogue, "the index" === the whole catalog and
+    // featured is a spotlight subset. The hero shows the total once
+    // (named "Lists") and treats featured as an overlay descriptor
+    // surfaced only in the lede.
     render(
       <ListsHero
         stats={{
@@ -90,19 +92,19 @@ describe('<ListsHero>', () => {
         }}
       />,
     )
-    const featured = screen.getByTestId('lists-stat-featured')
-    const index = screen.getByTestId('lists-stat-index')
-    expect(featured.textContent).toContain('3')
-    expect(featured.textContent).toContain('Featured')
-    expect(index.textContent).toContain('9')
-    expect(index.textContent).toContain('In the index')
-    // The single-stat form must NOT also render — the split replaces it.
-    expect(screen.queryByTestId('lists-stat-total')).toBeNull()
+    const total = screen.getByTestId('lists-stat-total')
+    expect(total.textContent).toContain('12')
+    expect(total.textContent).toContain('Lists')
+    // Bidirectional drift guard: the disjoint-partition split must
+    // never re-emerge — those test ids belong to the prior model.
+    expect(screen.queryByTestId('lists-stat-featured')).toBeNull()
+    expect(screen.queryByTestId('lists-stat-index')).toBeNull()
   })
 
-  it('featured + index sums to the catalog total (split invariant)', () => {
-    // Pin the math: critique pass-22's finding hinges on the user being
-    // able to add the two visible numbers and recover the catalog size.
+  it('hero stat strip total matches stats.total (catalog-total invariant, no partition math)', () => {
+    // Pass-40 #353 removed the additive partition (`featured + index
+    // = total`); the new invariant is simpler — the lists-stat-total
+    // cell shows stats.total verbatim, no arithmetic on the page.
     const stats = {
       total: 12,
       featuredCount: 3,
@@ -113,30 +115,25 @@ describe('<ListsHero>', () => {
       lastIndexRevision: '2026-05-01',
     } as const
     render(<ListsHero stats={stats} />)
-    const featuredVal = Number(
+    const totalVal = Number(
       screen
-        .getByTestId('lists-stat-featured')
+        .getByTestId('lists-stat-total')
         .querySelector('.lists-stat-val')?.textContent,
     )
-    const indexVal = Number(
-      screen
-        .getByTestId('lists-stat-index')
-        .querySelector('.lists-stat-val')?.textContent,
-    )
-    expect(featuredVal + indexVal).toBe(stats.total)
+    expect(totalVal).toBe(stats.total)
   })
 
-  it('lede shows the math inline when featured + index split — names both component counts and the total (critique-pass-23 #263 + pass-28 split-reveal)', () => {
-    // Critique pass-23 pinned that lede === stats.total (the math
-    // reconciles: 12 = 3 + 9). Pass-28 extended the same row: the
-    // relationship between the lede total and the split tiles was
-    // implied rather than shown, so a reader had to add to reconcile.
-    // The lede now spells the math directly — `<indexCount> in the
-    // index, <featuredCount> featured this month — <total> we'd defend
-    // in a group chat.` — and this test pins (a) the total still
-    // tracks stats.total (lede ↔ stats lockstep), (b) the lede prose
-    // names BOTH component counts so a regression that drops either
-    // half of the split-reveal fails at unit time.
+  it('lede opener names the catalog total once and mentions featured as a spotlight overlay (critique pass-40 #353)', () => {
+    // Pass-40 #353: the prior lede opener `<index> in the index,
+    // <featured> featured this month — <total> we'd defend in a
+    // group chat` framed featured and index as disjoint partitions
+    // summing to total — but the chip grid now covers the whole
+    // catalog, so "in the index" no longer means "minus featured".
+    // The opener now names the total once and trails featured as an
+    // overlay descriptor: `<total> lists we'd defend in a group
+    // chat — <featured> featured this month.` Both component counts
+    // named in prose; total tracks stats.total; the disjoint
+    // `<n> in the index` clause is gone.
     const stats = {
       total: 12,
       featuredCount: 3,
@@ -147,31 +144,19 @@ describe('<ListsHero>', () => {
       lastIndexRevision: '2026-05-01',
     } as const
     render(<ListsHero stats={stats} />)
-    const featuredVal = Number(
-      screen
-        .getByTestId('lists-stat-featured')
-        .querySelector('.lists-stat-val')?.textContent,
-    )
-    const indexVal = Number(
-      screen
-        .getByTestId('lists-stat-index')
-        .querySelector('.lists-stat-val')?.textContent,
-    )
-    expect(featuredVal + indexVal).toBe(stats.total)
     const ledeText =
       screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
-    // Total still tracks stats.total — the math is shown, not removed.
-    const totalMatch = ledeText.match(/(\d+)\s+we'd defend in a group chat/i)
-    expect(totalMatch).not.toBeNull()
-    expect(Number(totalMatch?.[1])).toBe(stats.total)
-    // Split-reveal: both component counts named in prose alongside
-    // their on-stat labels ("in the index" / "featured this month").
+    // Total tracks stats.total at the head of the opener.
     expect(ledeText).toMatch(
-      new RegExp(`\\b${indexVal}\\s+in\\s+the\\s+index\\b`, 'i'),
+      new RegExp(`^${stats.total}\\s+lists\\s+we'd\\s+defend\\s+in\\s+a\\s+group\\s+chat\\b`, 'i'),
     )
+    // Featured count surfaced as an overlay descriptor trailing the total.
     expect(ledeText).toMatch(
-      new RegExp(`\\b${featuredVal}\\s+featured\\s+this\\s+month\\b`, 'i'),
+      new RegExp(`—\\s*${stats.featuredCount}\\s+featured\\s+this\\s+month\\b`, 'i'),
     )
+    // Bidirectional drift guard: the disjoint-partition opener form
+    // (`<n> in the index, <m> featured`) must never re-emerge.
+    expect(ledeText).not.toMatch(/\d+\s+in\s+the\s+index,\s+\d+\s+featured/i)
   })
 
   it('lede number tracks stats.total — never hardcoded to a stale literal (critique-pass-23 #263 negative pin)', () => {

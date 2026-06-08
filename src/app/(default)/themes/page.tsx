@@ -8,7 +8,7 @@ import {
   getThemesByCategory,
   LISTS_FEATURED_RAIL_LIMIT,
 } from '@/content'
-import type { Show, Theme, ThemeCategory } from '@/content'
+import type { Show, Theme } from '@/content'
 import { Wrap } from '@/components/chrome/Wrap'
 import { ListsHero } from '@/components/lists/ListsHero'
 import { ListsFilterController } from '@/components/lists/ListsFilterController'
@@ -47,30 +47,24 @@ export default function ThemesIndexPage() {
   const showsByTheme: Record<string, Show[]> = {}
   for (const t of themes) showsByTheme[t.slug] = resolveShows(t)
 
-  // The featured rail is the curator's spotlight; the grid below is the
-  // exhaustive index. Excluding featured from the grid keeps each list to
-  // a single appearance on the page (critique pass-20).
-  const featuredSlugs = new Set(featured.map((t) => t.slug))
-  const byCategoryRest: Record<ThemeCategory, Theme[]> = {
-    tone: byCategory.tone.filter((t) => !featuredSlugs.has(t.slug)),
-    structure: byCategory.structure.filter((t) => !featuredSlugs.has(t.slug)),
-    craft: byCategory.craft.filter((t) => !featuredSlugs.has(t.slug)),
-    era: byCategory.era.filter((t) => !featuredSlugs.has(t.slug)),
-    single: byCategory.single.filter((t) => !featuredSlugs.has(t.slug)),
-  }
-
+  // Featured rail is the editorial spotlight; the grid below is the
+  // navigable index. Both render every list — featured tiles appear in
+  // the rail AND in the chip-filtered grid — so a reader clicking
+  // `BY CRAFT` sees every craft list, including those currently
+  // spotlighted (critique pass-40 #353: the prior `featuredSlugs`
+  // filter silently dropped 3 lists from the chips' scope).
   const counts: Record<FilterKey, number> = {
     all:
-      byCategoryRest.tone.length +
-      byCategoryRest.structure.length +
-      byCategoryRest.craft.length +
-      byCategoryRest.era.length +
-      byCategoryRest.single.length,
-    tone: byCategoryRest.tone.length,
-    structure: byCategoryRest.structure.length,
-    craft: byCategoryRest.craft.length,
-    era: byCategoryRest.era.length,
-    single: byCategoryRest.single.length,
+      byCategory.tone.length +
+      byCategory.structure.length +
+      byCategory.craft.length +
+      byCategory.era.length +
+      byCategory.single.length,
+    tone: byCategory.tone.length,
+    structure: byCategory.structure.length,
+    craft: byCategory.craft.length,
+    era: byCategory.era.length,
+    single: byCategory.single.length,
   }
 
   const ld = {
@@ -111,7 +105,7 @@ export default function ThemesIndexPage() {
         }
         allLists={
           <ListsAllSection
-            byCategory={byCategoryRest}
+            byCategory={byCategory}
             showsByTheme={showsByTheme}
           />
         }

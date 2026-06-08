@@ -539,10 +539,10 @@ describe('loaders', () => {
 
   it('getThemeStats reports featuredCount capped at LISTS_FEATURED_RAIL_LIMIT', async () => {
     // Pin the contract: featuredCount mirrors what the page's "Featured this
-    // month" rail renders — i.e. min(featured-flag-count, 3). Critique
-    // pass-22 finding #261 (hero "12 LISTS" vs filter chip "9 LISTS") fixes
-    // by splitting the hero stat into FEATURED + IN THE INDEX, and the
-    // split number must match the page's actual rail length.
+    // month" rail renders — i.e. min(featured-flag-count, 3). Post pass-40
+    // #353 featured is an overlay descriptor (lede only) rather than a
+    // disjoint partition of the grid, so this stat only needs to match the
+    // rail length; the grid renders every theme.
     const { LISTS_FEATURED_RAIL_LIMIT } = await import('../loaders')
     makeShow(tmp, 'alpha', 'Alpha')
     makeSeason(tmp, 'alpha', 1, 'One')
@@ -558,10 +558,7 @@ describe('loaders', () => {
     const stats = getThemeStats()
     expect(stats.total).toBe(6)
     expect(stats.featuredCount).toBe(LISTS_FEATURED_RAIL_LIMIT)
-    // The split FEATURED + IN THE INDEX must always sum back to total.
-    expect(stats.featuredCount + (stats.total - stats.featuredCount)).toBe(
-      stats.total,
-    )
+    expect(stats.featuredCount).toBeLessThanOrEqual(stats.total)
   })
 
   it('getThemeStats reports featuredCount=0 when no theme carries the featured flag', () => {

@@ -102,10 +102,14 @@ export function filterModeText(
   counts: Record<FilterKey, number>,
 ): string {
   if (filter === 'all') {
-    // The hero lede reads `${stats.total} lists…` (catalog total — 12 today);
-    // the chip's `counts.all` is the index-grid scope (NON-featured rows, 9
-    // today). Qualifying with `in the index` keeps `ALL` from silently
-    // shadowing the lede's catalog total — critique pass-25.
+    // The hero lede reads `${stats.total} lists…` (catalog total); the
+    // chip's `counts.all` matches it now — post pass-40 #353 the grid
+    // covers the whole catalog (featured tiles appear in the rail AND
+    // the grid). The `in the index` qualifier names the chip-filterable
+    // grid as the navigable surface; pass-25's original concern (chip
+    // shadowing the lede when it was a strict subset) is moot here, but
+    // the qualifier still earns its keep by distinguishing the chip's
+    // grid scope from the rail's spotlight subset.
     return `showing · all ${counts.all} in the index`
   }
   return `showing · ${counts[filter]} ${FILTER_MODE_LABELS[filter]}`

@@ -17,16 +17,15 @@ export function ListsHero({ stats }: ListsHeroProps) {
       : coverage === 'cross-canon'
         ? 'Cross-canon.'
         : 'Inside one canon.'
-  // Critique pass-28: when the hero splits its catalog into
-  // FEATURED + IN THE INDEX tiles (featuredCount > 0), the lede
-  // names both component counts inline so the relationship to
-  // total is *shown* rather than left as silent arithmetic
-  // (`3 + 9 = 12`). When there's no split (featuredCount = 0),
-  // the single-total opener is the simplest honest form.
-  const indexCount = stats.total - stats.featuredCount
+  // Critique pass-40 #353: the prior FEATURED + IN THE INDEX
+  // partition only existed as a workaround for the chip mode-row
+  // (which scoped only the non-featured grid). Now that the chip
+  // grid covers the whole catalog, featured is an overlay subset
+  // — not a disjoint partition. The opener names the total once
+  // and treats featured as a spotlight descriptor when present.
   const opener =
     stats.featuredCount > 0
-      ? `${indexCount} in the index, ${stats.featuredCount} featured this month — ${stats.total} we'd defend in a group chat.`
+      ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat — ${stats.featuredCount} featured this month.`
       : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat.`
   const closer = 'None of them spoil what they rank.'
   const middle = (() => {
@@ -74,23 +73,10 @@ export function ListsHero({ stats }: ListsHeroProps) {
       </h1>
       <p className="lists-hero-lede">{lede}</p>
       <div className="lists-hero-stats" data-testid="lists-hero-stats">
-        {stats.featuredCount > 0 ? (
-          <>
-            <div className="lists-stat" data-testid="lists-stat-featured">
-              <div className="lists-stat-val">{stats.featuredCount}</div>
-              <div className="lists-stat-key">Featured</div>
-            </div>
-            <div className="lists-stat" data-testid="lists-stat-index">
-              <div className="lists-stat-val">{stats.total - stats.featuredCount}</div>
-              <div className="lists-stat-key">In the index</div>
-            </div>
-          </>
-        ) : (
-          <div className="lists-stat" data-testid="lists-stat-total">
-            <div className="lists-stat-val">{stats.total}</div>
-            <div className="lists-stat-key">{plural(stats.total, 'List', 'Lists')}</div>
-          </div>
-        )}
+        <div className="lists-stat" data-testid="lists-stat-total">
+          <div className="lists-stat-val">{stats.total}</div>
+          <div className="lists-stat-key">{plural(stats.total, 'List', 'Lists')}</div>
+        </div>
         <div className="lists-stat" data-testid="lists-stat-shows">
           <div className="lists-stat-val">{stats.showsCovered}</div>
           <div className="lists-stat-key">Shows covered</div>

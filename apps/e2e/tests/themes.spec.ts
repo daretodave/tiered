@@ -10,25 +10,15 @@ test.describe('/themes index (phase 19g shape)', () => {
     await expect(page.locator('h1')).toContainText(/Themed lists/i)
     const stats = page.getByTestId('lists-hero-stats')
     await expect(stats).toBeVisible()
-    // Critique pass-22 #261: when the page surfaces a "Featured this month"
-    // rail, the hero splits its catalog count into FEATURED + IN THE INDEX
-    // so the filter chip below (which counts the index, not the rail) is
-    // narratively continuous. When no theme carries `featured: true`, the
-    // hero falls back to a single LISTS stat.
-    const featuredCount = await page.getByTestId('lists-stat-featured').count()
-    if (featuredCount > 0) {
-      await expect(page.getByTestId('lists-stat-featured')).toContainText(/\d+/)
-      await expect(page.getByTestId('lists-stat-featured')).toContainText(
-        /featured/i,
-      )
-      await expect(page.getByTestId('lists-stat-index')).toContainText(/\d+/)
-      await expect(page.getByTestId('lists-stat-index')).toContainText(
-        /in the index/i,
-      )
-      await expect(page.getByTestId('lists-stat-total')).toHaveCount(0)
-    } else {
-      await expect(page.getByTestId('lists-stat-total')).toContainText(/\d+/)
-    }
+    // Critique pass-40 #353: the hero shows a single LISTS cell with
+    // the catalog total. The prior FEATURED + IN THE INDEX split only
+    // existed as a workaround for the chip mode-row scoping the
+    // non-featured grid; now that chips operate on the whole catalog,
+    // featured is an overlay descriptor surfaced in the lede only.
+    await expect(page.getByTestId('lists-stat-total')).toContainText(/\d+/)
+    await expect(page.getByTestId('lists-stat-total')).toContainText(/Lists/i)
+    await expect(page.getByTestId('lists-stat-featured')).toHaveCount(0)
+    await expect(page.getByTestId('lists-stat-index')).toHaveCount(0)
     await expect(page.getByTestId('lists-stat-shows')).toContainText(/\d+/)
     await expect(page.getByTestId('lists-stat-revised')).toContainText(
       /\d{4}/,
@@ -95,50 +85,42 @@ test.describe('/themes index (phase 19g shape)', () => {
     expect(count).toBeLessThanOrEqual(3)
   })
 
-  test('hero FEATURED count matches the featured rail; FEATURED + IN THE INDEX sums to the catalog (closes #261)', async ({
+  test('hero LISTS stat matches the total renderable row count = featured rail + grid (post pass-40 #353)', async ({
     page,
   }) => {
-    // Critique pass-22 #261: the hero stat "12 LISTS" disagreed with the
-    // chip "ALL 9 LISTS" below because the chip excluded the 3 featured
-    // entries. The fix splits the hero into FEATURED + IN THE INDEX so
-    // both numbers carry direct on-page referents.
+    // Critique pass-40 #353: pre-fix, the page filtered featured slugs
+    // out of the chip-filtered grid so chips silently dropped them —
+    // a reader clicking BY CRAFT lost the 3 spotlighted craft lists.
+    // The fix lets the grid render every theme; featured tiles now
+    // appear in the rail AND in the grid. The hero `LISTS` stat names
+    // the catalog total; the rail caps at the editorial limit while
+    // the grid covers everything chip-filterable.
     await page.goto('/themes', { waitUntil: 'domcontentloaded' })
-    const featuredCards = page.getByTestId('lists-featured-card')
-    const railCount = await featuredCards.count()
-    if (railCount === 0) {
-      // No featured rail → hero uses the single-stat form.
-      await expect(page.getByTestId('lists-stat-featured')).toHaveCount(0)
-      await expect(page.getByTestId('lists-stat-index')).toHaveCount(0)
-      return
-    }
-    const featuredVal = Number(
+    const totalVal = Number(
       (
         await page
-          .getByTestId('lists-stat-featured')
+          .getByTestId('lists-stat-total')
           .locator('.lists-stat-val')
           .textContent()
       )?.trim() ?? 'NaN',
     )
-    const indexVal = Number(
-      (
-        await page
-          .getByTestId('lists-stat-index')
-          .locator('.lists-stat-val')
-          .textContent()
-      )?.trim() ?? 'NaN',
-    )
-    expect(featuredVal).toBe(railCount)
     const rowCount = await page.getByTestId('lists-row').count()
-    expect(featuredVal + indexVal).toBe(railCount + rowCount)
+    // Every catalog list renders as a grid row; the hero total matches.
+    expect(rowCount).toBe(totalVal)
   })
 
-  test('no list slug appears in both the featured rail and the all-lists grid', async ({
+  test('featured rail slugs are also present in the all-lists grid (chip scope covers the whole catalog, pass-40 #353)', async ({
     page,
   }) => {
-    // Critique pass-20: three lists used to appear twice on /themes — once
-    // in "Featured this month" and again in "All lists" under their
-    // category — with identical blurbs verbatim. Featured-out filtering
-    // means each list now appears exactly once per page.
+    // Critique pass-40 #353 inverts the prior pass-20 invariant: the
+    // featured-out filter used to dedupe so each list appeared once
+    // per page, but it also dropped the 3 featured lists from the
+    // chip-filtered grid (BY CRAFT silently lost 2 craft lists). The
+    // new model accepts the duplication — the rail is the editorial
+    // spotlight, the grid is the navigable index — so a reader who
+    // filters BY CRAFT sees every craft list, including spotlighted
+    // ones. This test pins that every featured slug also appears as
+    // a grid row.
     await page.goto('/themes', { waitUntil: 'domcontentloaded' })
     const featuredSlugs = await page
       .getByTestId('lists-featured-card')
@@ -150,8 +132,9 @@ test.describe('/themes index (phase 19g shape)', () => {
       .evaluateAll((els) =>
         els.map((el) => el.getAttribute('data-slug') ?? ''),
       )
-    const overlap = featuredSlugs.filter((s) => rowSlugs.includes(s))
-    expect(overlap).toEqual([])
+    for (const slug of featuredSlugs) {
+      expect(rowSlugs).toContain(slug)
+    }
   })
 
   test('clicking a category chip flips data-active-filter and hides off-filter groups', async ({

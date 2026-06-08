@@ -106,12 +106,15 @@ describe('filterModeText', () => {
     ).toBe('showing · all 12 in the index')
   })
 
-  it('"all" mode includes the `in the index` qualifier (chip != catalog total)', () => {
-    // The hero lede reads from `stats.total` (catalog total); the chip's
-    // `counts.all` is the NON-featured index-grid scope. Qualifying keeps
-    // `ALL` from silently shadowing the lede — critique pass-25.
+  it('"all" mode includes the `in the index` qualifier — chips name the navigable grid scope', () => {
+    // Pass-25 first asked for the qualifier when the chip total was a
+    // strict subset of the lede's catalog total. Pass-40 #353 dropped
+    // the featured-out filter so chip.all === stats.total today, but
+    // the qualifier still earns its keep — it distinguishes the
+    // grid's full-catalog scope from the rail's editorial spotlight
+    // subset, and the bidirectional drift guard below pins the shape.
     expect(
-      filterModeText('all', { all: 9, tone: 3, structure: 0, craft: 3, era: 2, single: 1 }),
+      filterModeText('all', { all: 12, tone: 3, structure: 1, craft: 4, era: 2, single: 2 }),
     ).toMatch(/in the index/i)
   })
 
