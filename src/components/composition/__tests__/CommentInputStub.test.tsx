@@ -18,4 +18,25 @@ describe('<CommentInputStub>', () => {
       '/sign-in?return=/x',
     )
   })
+
+  describe('arrow placement (critique pass-39, issue #354)', () => {
+    it('puts the arrow ligature on the action span, not the tagline span', () => {
+      const { container } = render(<CommentInputStub />)
+      const actionSpan = container.querySelector(
+        '[data-testid="comment-stub-link"] > span:not(.comment-stub-mono)',
+      )
+      expect(actionSpan).not.toBeNull()
+      expect(actionSpan?.textContent ?? '').toMatch(/Sign in to comment\.\s*→\s*$/)
+    })
+
+    it('keeps the tagline span free of the arrow ligature', () => {
+      const { container } = render(<CommentInputStub />)
+      const taglineSpan = container.querySelector(
+        '[data-testid="comment-stub-link"] .comment-stub-mono',
+      )
+      expect(taglineSpan).not.toBeNull()
+      expect(taglineSpan?.textContent ?? '').not.toMatch(/→/)
+      expect(taglineSpan?.textContent ?? '').toMatch(/No plot, no winners, no twists/)
+    })
+  })
 })

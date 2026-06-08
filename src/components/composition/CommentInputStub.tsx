@@ -13,8 +13,8 @@ export function CommentInputStub({ signInHref = '/sign-in' }: CommentInputStubPr
         prefetch={false}
         data-testid="comment-stub-link"
       >
-        <span>Sign in to comment.</span>
-        <span className="comment-stub-mono">No plot, no winners, no twists →</span>
+        <span>Sign in to comment. →</span>
+        <span className="comment-stub-mono">No plot, no winners, no twists</span>
       </Link>
     </div>
   )
