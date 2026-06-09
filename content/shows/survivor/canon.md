@@ -51,7 +51,7 @@ shaped what the show is allowed to be more decisively.
 ## 20. Heroes vs. Villains
 
 tag: Casting as format — heroes and villains as the season's whole structural argument.
-slot_argument: Twenty returning players, two clean tribal premises, a decade of accumulated context. Every move carries seasons of prior text — this is what casting depth looks like.
+slot_argument: Samoa's coast gives the season a setting the franchise had not yet handed a returnee cast — open beach, hard surf, and a tribal set the editors could light differently every cycle. The place pulls its weight alongside the bench.
 community_rank_hint: rank=2 delta=1 sentiment=up
 
 Heroes vs. Villains is the all-star format running at its
