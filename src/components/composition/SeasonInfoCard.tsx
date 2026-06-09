@@ -112,7 +112,7 @@ export function SeasonInfoCard({
           leads the row so the reader hears the question before the
           eyebrow names the action — natural prompt → CTA → status
           grammar, matching the comment-input pattern at the bottom
-          of the same page (`Add a thought · no spoilers, please.
+          of the same page (`Add a thought · no spoilers.
           / as @e2e / ⏎`). The prior order ran eyebrow → prompt
           → buttons, which surfaced `YOUR VOTE / CAST VOTE` above
           the question being voted on. Pinned by the

@@ -28,6 +28,40 @@ describe('<CommentInput>', () => {
     expect(screen.queryByTestId('comment-input-textarea')).toBeNull()
   })
 
+  describe('stub literal voice register (critique pass-44)', () => {
+    // Closes CRITIQUE pass-44 MED: the authed composer stub's
+    // `Add a thought · no spoilers, please.` literal added a
+    // please-flavored softener to the spoiler clause that the
+    // anon-branch sibling (`CommentInputStub` — `No plot, no
+    // winners, no twists`) does not carry. The two stubs render
+    // in the same surface slot on the same page; only the
+    // auth-state branch picks which copy lands, so the register
+    // must agree. Bearings voice cue (`plan/bearings.md:370`):
+    // knowledgeable peer, plain sentences over clever ones. The
+    // brand promise itself reads `the seasons, ranked. no
+    // spoilers.` — no softener. Bidirectional pin: a positive
+    // exact-text assertion on the new literal AND a negative
+    // assertion that no `please` survives anywhere in the stub
+    // subtree, so a future authoring pass cannot regress to
+    // either the old literal or any other softener without
+    // tripping the unit gate. The rate-limit error literal
+    // (`Easy — please wait before posting again.`) lives on the
+    // open-state error path, not the collapsed stub subtree, so
+    // the negative regex stays scoped to the stub.
+    it('renders the trimmed "Add a thought · no spoilers." literal on the collapsed stub', () => {
+      render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+      const stubText = screen.getByTestId('comment-stub').querySelector('.comment-stub-text')
+      expect(stubText).not.toBeNull()
+      expect(stubText).toHaveTextContent(/^Add a thought · no spoilers\.$/)
+    })
+
+    it('does not include any "please" softener in the collapsed stub subtree', () => {
+      render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+      const stub = screen.getByTestId('comment-stub')
+      expect(stub.textContent ?? '').not.toMatch(/\bplease\b/i)
+    })
+  })
+
   it('omits the "as @handle" attribution when no handle prop is supplied', () => {
     // Without a handle, neither stub nor open-state foot may render
     // any "as @..." caption — the affordance is gated entirely on

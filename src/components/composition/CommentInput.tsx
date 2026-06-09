@@ -130,7 +130,7 @@ export function CommentInput({ targetType, targetId, handle, onPosted }: Comment
           onClick={() => setOpen(true)}
           data-testid="comment-stub"
         >
-          <span className="comment-stub-text">Add a thought · no spoilers, please.</span>
+          <span className="comment-stub-text">Add a thought · no spoilers.</span>
           <span className="comment-stub-right">
             {handle ? (
               <span className="comment-stub-as" data-testid="comment-stub-as">
