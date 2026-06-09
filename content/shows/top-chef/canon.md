@@ -3,7 +3,7 @@ show: top-chef
 editor: tiered.tv editor
 last_revised: 2026-05-19
 meth_who_h: Who ranks?
-meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. I'm not claiming to be objective. I'm trying to be honest.
+meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: How do I weigh it?
 meth_how_p: Four lenses — cooking, whether the food on the plate could land at a real restaurant; cast, whether the chefs cohere as a competitive bench; challenges, whether the format pulls genuine cooking out of them; setting, whether the location does real editorial work. Top Chef lives or dies on the kitchen it casts.
 meth_when_h: When do I revisit?

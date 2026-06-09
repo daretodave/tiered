@@ -1713,6 +1713,63 @@ export function collectShowTaglinePluralEditorIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-41 LOW (issue #374): cross-show closing-sentence echo
+// at the canon `meth_who_p` layer. The pass-35 #329 drain landed the
+// singular-editor admission across 9 carrier canons, but every carrier
+// closed on the identical 12-word literal "I'm not claiming to be
+// objective. I'm trying to be honest." — a shared corpus literal visible
+// to any reader scrolling more than one show's canon page. Same defect
+// shape as the resolved pass-11 closure (parallel-paradox flourish
+// recurring across rationales): a closing position authored by a single
+// curator pass landing verbatim across multiple carriers. This invariant
+// extracts each canon's `meth_who_p` last sentence (case-insensitive,
+// whitespace-normalized) and groups carriers by it; if any single
+// closing sentence appears in ≥3 carriers, every carrier sharing that
+// literal is flagged. Strict-at-floor-2 — max 2 carriers may share a
+// closer; ships strict at day one since this tick's content rotation
+// drains the corpus to 5 distinct closers across 9 carriers (max 2
+// each). Any future authoring pass slipping a third carrier onto a
+// shared closer trips at the verify gate.
+function lastSentenceOfMethWho(text: string): string {
+  const stripped = text
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (!stripped) return ''
+  const match = stripped.match(/(?:^|[.!?]\s+)([^.!?]+[.!?])\s*$/)
+  return (match?.[1] ?? stripped).trim().toLowerCase()
+}
+
+const CANON_METH_WHO_CLOSER_FLOOR = 3
+
+export function collectCanonMethWhoClosingPairEchoIssues(): Failure[] {
+  const issues: Failure[] = []
+  const slugsByCloser = new Map<string, string[]>()
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const body = canon.meth_who_p
+    if (!body) continue
+    const closer = lastSentenceOfMethWho(body)
+    if (!closer) continue
+    const existing = slugsByCloser.get(closer) ?? []
+    existing.push(show.slug)
+    slugsByCloser.set(closer, existing)
+  }
+  for (const [closer, slugs] of slugsByCloser) {
+    if (slugs.length < CANON_METH_WHO_CLOSER_FLOOR) continue
+    const sortedSlugs = [...slugs].sort()
+    const carrierList = sortedSlugs.join(', ')
+    for (const slug of sortedSlugs) {
+      issues.push({
+        file: `content/shows/${slug}/canon.md (meth_who_p)`,
+        message: `canon meth_who_p closing-sentence cross-show echo — the closing sentence "${closer}" appears verbatim across ${slugs.length} carriers (${carrierList}), exceeding the strict-at-floor-2 threshold. A reader scrolling more than one show's canon reads the same personal-creed across multiple shows. Rotate this carrier off the shared literal to a distinct in-voice variant (the singular-editor admission can be phrased in many ways — "It's a read, not a verdict.", "The point isn't to be right; it's to be honest.", "Honest about the show, calibrated against the room.", etc.). Max 2 carriers may share a closer. See plan/CRITIQUE.md pass-41 / issue #374.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-42 MED (issue #363): the /shows A-tier band tile-
 // rendered surface mixed first-person-singular (`I've ranked every
 // leg of every one.` on Amazing Race, the only A-tier carrier
@@ -2376,6 +2433,25 @@ function main(): number {
     failures.push(...methSiblingsPluralIssues)
   } else {
     for (const issue of methSiblingsPluralIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-41 LOW (issue #374): the cross-show closing-sentence
+  // echo at the `meth_who_p` layer. The pass-35 #329 drain left every
+  // carrier closing on the identical 12-word literal "I'm not claiming
+  // to be objective. I'm trying to be honest."; this tick's content
+  // rotation distributes 5 distinct closers across 9 carriers (A=2,
+  // B=2, C=2, D=2, E=1 — max 2 carriers per closer). STRICT ships on
+  // day one at floor 3 — any future authoring pass slipping a third
+  // carrier onto a shared closer trips at the verify gate.
+  const METH_WHO_CLOSING_PAIR_STRICT = true
+  const methWhoClosingPairIssues =
+    collectCanonMethWhoClosingPairEchoIssues()
+  if (METH_WHO_CLOSING_PAIR_STRICT) {
+    failures.push(...methWhoClosingPairIssues)
+  } else {
+    for (const issue of methWhoClosingPairIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

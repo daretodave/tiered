@@ -3,7 +3,7 @@ show: traitors
 editor: tiered.tv editor
 last_revised: 2026-05-17
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've watched every American season from the mixed-cast original through the most recent all-celebrity run at Ardross Castle. The ranking is one editor's read, calibrated against what reasonable Traitors fans agree on after arguing — weighing production craft, format execution, and historical consequence, never who was lying. I'm not claiming to be objective. I'm trying to be honest."
+meth_who_p: "tiered.tv's editor. I've watched every American season from the mixed-cast original through the most recent all-celebrity run at Ardross Castle. The ranking is one editor's read, calibrated against what reasonable Traitors fans agree on after arguing — weighing production craft, format execution, and historical consequence, never who was lying. It's a read, not a verdict."
 meth_how_h: "How I weigh it"
 meth_how_p: "I rank on format execution, casting energy, production confidence, and how much each season mattered to the American show's arc. A breakout that defined the reputation outranks the rougher origin; the origin outranks a clean later run on consequence. Outcomes never factor in — who survived a Round Table carries no weight, only how well the hour itself runs."
 meth_when_h: "When I revisit"

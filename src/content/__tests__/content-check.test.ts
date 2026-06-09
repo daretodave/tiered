@@ -10,6 +10,7 @@ import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
   collectCanonMethSiblingsPluralEditorIssues,
+  collectCanonMethWhoClosingPairEchoIssues,
   collectCanonMethWhoPluralEditorIssues,
   collectCanonRationaleClosingFormulaIssues,
   collectCalendarFailures,
@@ -4059,6 +4060,185 @@ ${ninetyWords}
       "tiered.tv's editor. The editor weights each season's craft and consequence equally; objectivity is not the bar, honesty is. The ranking starts as the editor's read, then gets fine-tuned against what reasonable fans agree on after a long argument runs its course. The canon stays honest about its limits.",
     )
     expect(collectCanonMethWhoPluralEditorIssues()).toEqual([])
+  })
+})
+
+describe('content-check — canon meth_who_p closing-sentence cross-show echo (critique pass-41, issue #374)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-meth-who-closer-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonWithMethWhoCloser(
+    root: string,
+    show: string,
+    methWho: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+editor: Test Editor
+last_revised: 2026-05-14
+meth_who_h: Who ranks
+meth_who_p: ${JSON.stringify(methWho)}
+weekly_question: Question of the week?
+---
+
+## 1. Title
+
+${ninetyWords}
+`,
+    )
+    makeSeason(root, show, 1, 'title', { canonical_position: 1 })
+  }
+
+  it('passes at the live catalog post-drain (5 distinct closers across 9 carriers)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCanonMethWhoClosingPairEchoIssues()).toEqual([])
+  })
+
+  const preamble =
+    "tiered.tv's editor. I've watched this show since the original pilot and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable fans agree on after a long argument runs its course."
+
+  it('passes when each carrier carries a unique closing sentence', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'alpha',
+      `${preamble} It's a read, not a verdict.`,
+    )
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'bravo',
+      `${preamble} The point isn't to be right; it's to be honest.`,
+    )
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'charlie',
+      `${preamble} Honest about the show, calibrated against the room.`,
+    )
+    expect(collectCanonMethWhoClosingPairEchoIssues()).toEqual([])
+  })
+
+  it('passes at the strict-at-floor-2 boundary (2 carriers may share a closer)', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'alpha',
+      `${preamble} It's a read, not a verdict.`,
+    )
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'bravo',
+      `${preamble} It's a read, not a verdict.`,
+    )
+    makeCanonWithMethWhoCloser(
+      tmp,
+      'charlie',
+      `${preamble} The point isn't to be right; it's to be honest.`,
+    )
+    expect(collectCanonMethWhoClosingPairEchoIssues()).toEqual([])
+  })
+
+  it('flags the historical defect — the 12-word literal shared across 3 carriers', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    const shared = `${preamble} I'm not claiming to be objective. I'm trying to be honest.`
+    makeCanonWithMethWhoCloser(tmp, 'alpha', shared)
+    makeCanonWithMethWhoCloser(tmp, 'bravo', shared)
+    makeCanonWithMethWhoCloser(tmp, 'charlie', shared)
+    const issues = collectCanonMethWhoClosingPairEchoIssues()
+    expect(issues.length).toBe(3)
+    const files = issues.map((i) => i.file).sort()
+    expect(files).toEqual([
+      'content/shows/alpha/canon.md (meth_who_p)',
+      'content/shows/bravo/canon.md (meth_who_p)',
+      'content/shows/charlie/canon.md (meth_who_p)',
+    ])
+    expect(issues[0]!.message).toMatch(/closing-sentence cross-show echo/)
+    expect(issues[0]!.message).toMatch(/i'm trying to be honest/i)
+    expect(issues[0]!.message).toMatch(/3 carriers/)
+    expect(issues[0]!.message).toMatch(/issue #374/)
+  })
+
+  it('is case-insensitive on the closer comparison', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    const a = `${preamble} IT'S A READ, NOT A VERDICT.`
+    const b = `${preamble} It's a read, not a verdict.`
+    const c = `${preamble} it's a read, not a verdict.`
+    makeCanonWithMethWhoCloser(tmp, 'alpha', a)
+    makeCanonWithMethWhoCloser(tmp, 'bravo', b)
+    makeCanonWithMethWhoCloser(tmp, 'charlie', c)
+    const issues = collectCanonMethWhoClosingPairEchoIssues()
+    expect(issues.length).toBe(3)
+  })
+
+  it('groups carriers independently — two distinct echoes both above floor each flag their own group', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    makeShow(tmp, 'delta')
+    makeShow(tmp, 'echo')
+    makeShow(tmp, 'foxtrot')
+    const closerOne = `${preamble} It's a read, not a verdict.`
+    const closerTwo = `${preamble} The point isn't to be right; it's to be honest.`
+    makeCanonWithMethWhoCloser(tmp, 'alpha', closerOne)
+    makeCanonWithMethWhoCloser(tmp, 'bravo', closerOne)
+    makeCanonWithMethWhoCloser(tmp, 'charlie', closerOne)
+    makeCanonWithMethWhoCloser(tmp, 'delta', closerTwo)
+    makeCanonWithMethWhoCloser(tmp, 'echo', closerTwo)
+    makeCanonWithMethWhoCloser(tmp, 'foxtrot', closerTwo)
+    const issues = collectCanonMethWhoClosingPairEchoIssues()
+    expect(issues.length).toBe(6)
+    const files = issues.map((i) => i.file).sort()
+    expect(files).toEqual([
+      'content/shows/alpha/canon.md (meth_who_p)',
+      'content/shows/bravo/canon.md (meth_who_p)',
+      'content/shows/charlie/canon.md (meth_who_p)',
+      'content/shows/delta/canon.md (meth_who_p)',
+      'content/shows/echo/canon.md (meth_who_p)',
+      'content/shows/foxtrot/canon.md (meth_who_p)',
+    ])
+  })
+
+  it('skips shows whose canon omits the meth_who_p field (no-op)', () => {
+    makeShow(tmp, 'alpha')
+    makeShow(tmp, 'bravo')
+    makeShow(tmp, 'charlie')
+    makeSeason(tmp, 'alpha', 1, 'title', { canonical_position: 1 })
+    makeCanon(tmp, 'alpha', [{ rank: 1, season: 1, title: 'Title' }])
+    makeSeason(tmp, 'bravo', 1, 'title', { canonical_position: 1 })
+    makeCanon(tmp, 'bravo', [{ rank: 1, season: 1, title: 'Title' }])
+    makeSeason(tmp, 'charlie', 1, 'title', { canonical_position: 1 })
+    makeCanon(tmp, 'charlie', [{ rank: 1, season: 1, title: 'Title' }])
+    expect(collectCanonMethWhoClosingPairEchoIssues()).toEqual([])
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonMethWhoClosingPairEchoIssues()).toEqual([])
   })
 })
 

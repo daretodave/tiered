@@ -3,7 +3,7 @@ show: project-runway
 editor: tiered.tv editor
 last_revised: 2026-05-16
 meth_who_h: Who ranks?
-meth_who_p: tiered.tv's editor. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. It is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate. I'm not claiming to be objective. I'm trying to be honest.
+meth_who_p: tiered.tv's editor. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. It is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate. Closer to a read than to the truth, but honest enough to argue.
 meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, applied roughly in this order — cast, does the workroom produce confessionals and personalities you remember; judges, does the runway critique read aligned or fractious; location, does the city pull editorial weight on camera; format, does the season's structural choice sharpen the show or fight it. The runway shows themselves are the deliverable.
 meth_when_h: When do I revisit?
