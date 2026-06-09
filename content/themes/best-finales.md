@@ -29,7 +29,7 @@ entries:
     season: 6
     season_label: "S06 · Las Vegas"
     rank: 3
-    title: "The deepest knife-skill cast carries the kitchen all the way home."
+    title: "The deepest knife-skills cast carries the kitchen all the way home."
     blurb: "Restaurant Wars takes the season into its endgame on a kitchen split, and the late-stage cooking never lets the level drop. The final service plays like a high-end tasting menu — every plate earning its place, nothing coasting on goodwill."
   - show: survivor
     season: 40
