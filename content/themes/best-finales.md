@@ -36,7 +36,7 @@ entries:
     season_label: "S40 · Winners at War"
     rank: 4
     title: "Twenty former champions taking the season to its full size."
-    blurb: "Every camp conversation carries strategic weight from someone who has already held the title. The jury room is stacked with players who know exactly what they're hearing, and the vote pulls from twenty years of receipts."
+    blurb: "Every camp conversation carries strategic weight from someone who has already held the title. The jury room is stacked with players who know exactly what they're hearing, and every vote carries twenty years of head-to-head history between the players in the room."
   - show: traitors
     season: 2
     season_label: "S02"
