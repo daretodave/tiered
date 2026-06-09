@@ -1119,6 +1119,77 @@ export function collectThemeEntryHeadlineBodyEchoIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-40 LOW (issue #365): /themes/best-finales entry
+// #02 (Survivor S20 Heroes vs. Villains) carried the six-word
+// phrase `verdict on the returnee era` in both the entry title
+// AND the entry body close — a reader scanning the 80-word entry
+// hit the same verdict frame twice. The pass-38 noun-phrase echo
+// invariant above (`collectThemeEntryHeadlineBodyEchoIssues`)
+// caught the `returnee era` bigram in lax mode but had no strict
+// gate. This invariant is the narrower, stricter sibling: per
+// non-`single` themed-list entry, no verbatim 5-or-more-word
+// phrase may appear in BOTH `title` AND `blurb`. A 5-gram is
+// long enough that natural prose almost never produces an
+// accidental match — every hit is a real headline-to-body
+// restatement. Strict from day one (the row's content rewrite
+// drops the lone violator; the catalog otherwise clears the
+// invariant at floor 0). `category: single` (intra-canon,
+// single-show) lists are exempt — natural repetition of
+// show-specific surface vocabulary is part of the form.
+const VERBATIM_PHRASE_ECHO_NGRAM = 5
+
+function tokenizeForVerbatimEcho(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[^a-z\s'-]/g, ' ')
+    .split(/\s+/)
+    .map((t) => t.replace(/^['-]+|['-]+$/g, ''))
+    .filter((t) => /^[a-z][a-z'-]*$/.test(t))
+}
+
+function ngramsOf(tokens: string[], n: number): Set<string> {
+  const out = new Set<string>()
+  for (let i = 0; i + n <= tokens.length; i++) {
+    out.add(tokens.slice(i, i + n).join(' '))
+  }
+  return out
+}
+
+export function collectThemedEntryVerbatimPhraseEchoIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    for (const entry of theme.entries) {
+      const title = entry.title?.trim()
+      const blurb = entry.blurb?.trim()
+      if (!title || !blurb) continue
+      const titleTokens = tokenizeForVerbatimEcho(title)
+      const blurbTokens = tokenizeForVerbatimEcho(blurb)
+      if (
+        titleTokens.length < VERBATIM_PHRASE_ECHO_NGRAM ||
+        blurbTokens.length < VERBATIM_PHRASE_ECHO_NGRAM
+      ) {
+        continue
+      }
+      const titleGrams = ngramsOf(titleTokens, VERBATIM_PHRASE_ECHO_NGRAM)
+      const blurbGrams = ngramsOf(blurbTokens, VERBATIM_PHRASE_ECHO_NGRAM)
+      const shared: string[] = []
+      for (const g of blurbGrams) {
+        if (titleGrams.has(g)) shared.push(g)
+      }
+      if (shared.length > 0) {
+        const phraseList = shared.map((p) => `"${p}"`).join(', ')
+        issues.push({
+          file: `content/themes/${theme.slug}.md (entry #${entry.rank} blurb)`,
+          message: `themed-list within-entry verbatim phrase echo — entry #${entry.rank} title and blurb share the ${VERBATIM_PHRASE_ECHO_NGRAM}-word phrase${shared.length > 1 ? 's' : ''} ${phraseList}. A reader scanning a 50–70-word blurb reads the same frame twice. Rewrite the blurb so the headline keeps the phrase uniquely; the body should expand the headline's argument, not restate it (see plan/CRITIQUE.md pass-40).`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -2063,6 +2134,26 @@ function main(): number {
     failures.push(...themeHeadlineBodyEchoIssues)
   } else {
     for (const issue of themeHeadlineBodyEchoIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-40 LOW (issue #365): ships strict at floor 0 —
+  // this commit's best-finales #02 blurb rewrite drops the lone
+  // verbatim 5-gram echo (`verdict on the returnee era`); a
+  // catalog scan finds no other entry whose title and blurb
+  // share a 5-or-more-word verbatim phrase. The 5-gram bar is
+  // long enough that natural prose almost never produces an
+  // accidental match — every future hit is a real
+  // headline-to-body restatement to rewrite, not noise to drain.
+  // One-line toggle mirroring the pattern above.
+  const THEMED_ENTRY_VERBATIM_ECHO_STRICT = true
+  const themedEntryVerbatimEchoIssues =
+    collectThemedEntryVerbatimPhraseEchoIssues()
+  if (THEMED_ENTRY_VERBATIM_ECHO_STRICT) {
+    failures.push(...themedEntryVerbatimEchoIssues)
+  } else {
+    for (const issue of themedEntryVerbatimEchoIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

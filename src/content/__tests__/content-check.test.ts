@@ -27,6 +27,7 @@ import {
   collectThemeSynonymClusterIssues,
   collectThemeDeckBodyOpenerDivergenceIssues,
   collectThemeEntryHeadlineBodyEchoIssues,
+  collectThemedEntryVerbatimPhraseEchoIssues,
   collectThemeDescriptionCountTailIssues,
   collectThemedEntrySpoilerIssues,
   collectThemeFactualFirstClaimIssues,
@@ -3366,6 +3367,126 @@ describe('content-check — themed-list within-entry headline/body echo (critiqu
       ],
     })
     expect(collectThemeEntryHeadlineBodyEchoIssues()).toEqual([])
+  })
+})
+
+describe('content-check — themed-list within-entry verbatim phrase echo (critique pass-40, issue #365)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-verbatim-echo-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags an entry whose title and blurb share a verbatim 5-or-more-word phrase (the pre-rewrite #02 shape)', () => {
+    makeMultiEntryTheme(tmp, 'verdict-shape', {
+      entries: [
+        {
+          title:
+            'The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era.',
+          blurb:
+            'Twenty returnees split into heroes and villains compress everything Survivor had been by 2010 into one cast. The jury reads like a court built from the show\'s own history, and the vote plays as a verdict on the returnee era it was about to enter.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    const issues = collectThemedEntryVerbatimPhraseEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/themes/verdict-shape.md (entry #1 blurb)',
+    )
+    expect(issues[0]!.message).toMatch(/verbatim phrase echo/)
+    expect(issues[0]!.message).toMatch(/verdict on the returnee era/)
+  })
+
+  it('passes once the verbatim phrase is dropped from the blurb (the post-rewrite #02 shape)', () => {
+    makeMultiEntryTheme(tmp, 'verdict-rewrite', {
+      entries: [
+        {
+          title:
+            'The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era.',
+          blurb:
+            'Twenty returnees split into heroes and villains compress everything Survivor had been by 2010 into one cast. The jury reads like a court built from the show\'s own history, and the closing argument carries a decade of receipts the players have on each other.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemedEntryVerbatimPhraseEchoIssues()).toEqual([])
+  })
+
+  it('does not flag a 4-word verbatim echo (below the 5-gram floor)', () => {
+    // Title and blurb share the 4-gram `a final tribal that` — four
+    // tokens, one below the floor. The next token diverges
+    // ("reads" in the title, "lands" in the blurb), so no 5-gram
+    // window matches. The bigram-level invariant above catches
+    // shorter content overlaps; this one is reserved for verbatim
+    // runs long enough that natural prose almost never produces them.
+    makeMultiEntryTheme(tmp, 'four-gram', {
+      entries: [
+        {
+          title: 'A final tribal that reads like the season.',
+          blurb:
+            'The closing run pays the season back. A final tribal that lands as the verdict it earned.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    expect(collectThemedEntryVerbatimPhraseEchoIssues()).toEqual([])
+  })
+
+  it('exempts `category: single` (intra-canon) lists', () => {
+    makeMultiEntryTheme(tmp, 'pillars-verbatim', {
+      category: 'single',
+      entries: [
+        {
+          title:
+            'A jury-phase house where every eviction felt load-bearing for the alliance.',
+          blurb:
+            'The jury-phase house where every eviction felt load-bearing for the alliance, carried across a roster of franchise veterans.',
+        },
+        { title: 'A second pillar.', blurb: 'A second pillar carries the era.' },
+      ],
+    })
+    expect(collectThemedEntryVerbatimPhraseEchoIssues()).toEqual([])
+  })
+
+  it('emits every shared 5-gram window when a longer verbatim run echoes', () => {
+    // Title and blurb share the 6-token run
+    // `closing on a final tribal that`, which slides across two
+    // 5-gram windows — `closing on a final tribal` and
+    // `on a final tribal that`. The message reports both so a
+    // future drift authoring more of the run shows up at full size.
+    makeMultiEntryTheme(tmp, 'longer-run', {
+      entries: [
+        {
+          title:
+            'The all-star format at its ceiling, closing on a final tribal that reads like a court.',
+          blurb:
+            'Twenty returnees compress the show into one cast. The breakout is closing on a final tribal that earns every prior beat.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+      ],
+    })
+    const issues = collectThemedEntryVerbatimPhraseEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/closing on a final tribal/)
+    expect(issues[0]!.message).toMatch(/on a final tribal that/)
+    expect(issues[0]!.message).toMatch(/5-word phrases/)
+  })
+
+  it('passes the live catalog (post-rewrite floor 0)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemedEntryVerbatimPhraseEchoIssues()).toEqual([])
   })
 })
 
