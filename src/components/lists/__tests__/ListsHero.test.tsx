@@ -454,6 +454,35 @@ describe('<ListsHero>', () => {
     expect(screen.getByText('tiered.tv / Lists')).toBeTruthy()
   })
 
+  // Critique pass-42 #355: the `STABLE LIST` eyebrow stamped on every
+  // featured + index card was shipping without a first-paint definition
+  // (twelve+ cards on /themes, no glossary, no tooltip, no hero-band
+  // explainer). The closure adds a one-line hero-band gloss defining the
+  // lifecycle once — the analog of the home page's `01 · CURATED
+  // Editor's Canon` band. This pin asserts the gloss is rendered near
+  // the lede AND carries one of the canonical defining phrases so a
+  // future curator rewrite that drops the definition (regressing back to
+  // an undefined `STABLE` label) fails verify, not the next reader pass.
+  it('defines the STABLE eyebrow once at the hero level (critique pass-42 #355)', () => {
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          featuredCount: 3,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const gloss = screen.getByTestId('lists-hero-stable-gloss')
+    expect(gloss.textContent ?? '').toMatch(
+      /stable.*editor|editor.*stable|editor-signed|not vote-driven/i,
+    )
+  })
+
   it('uses singular "List" key when total is 1', () => {
     render(
       <ListsHero

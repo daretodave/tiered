@@ -70,6 +70,20 @@ h1.lists-hero-title em {
     font-size: 18px;
   }
 }
+/* Critique pass-42 #355: hero-band gloss defining the `STABLE LIST`
+   eyebrow once for the whole page. Sized below the serif lede so it
+   reads as supporting chrome, not a second editorial sentence. */
+.lists-hero-meta {
+  font: 500 13px/1.5 var(--font-family-sans);
+  color: var(--color-ink-2);
+  max-width: 680px;
+  margin: -12px 0 32px;
+  text-wrap: pretty;
+}
+.lists-hero-meta b {
+  color: var(--color-ink-1);
+  font-weight: 600;
+}
 .lists-hero-stats {
   display: flex;
   gap: 48px;

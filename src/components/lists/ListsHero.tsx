@@ -72,6 +72,20 @@ export function ListsHero({ stats }: ListsHeroProps) {
         <em>{accent}</em>
       </h1>
       <p className="lists-hero-lede">{lede}</p>
+      {/* Critique pass-42 #355: the `STABLE LIST` eyebrow stamped on every
+          featured + index card was shipping without a first-paint definition
+          (twelve+ cards, no glossary, no tooltip, no hero-band explainer).
+          Defines the lifecycle once at the hero — the analog of the home
+          page's `01 · CURATED Editor's Canon` band, lifted up so a reader
+          carries the gloss through the rest of the page rather than
+          guessing per-card. */}
+      <p
+        className="lists-hero-meta"
+        data-testid="lists-hero-stable-gloss"
+      >
+        Every list here is <b>editor-signed and stable</b> — written once,
+        revised when we change our mind, not vote-driven.
+      </p>
       <div className="lists-hero-stats" data-testid="lists-hero-stats">
         <div className="lists-stat" data-testid="lists-stat-total">
           <div className="lists-stat-val">{stats.total}</div>
