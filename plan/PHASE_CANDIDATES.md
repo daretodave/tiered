@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-08 at commit 7cec039
-> Pass count: 26
+> Last pass: 2026-06-09 at commit 2adef0d
+> Pass count: 27
 
 ## Considered (awaiting promotion)
 
@@ -430,6 +430,124 @@ candidate #12's lax→strict invariant precedent established in
 `scripts/content-check.ts`, with the distinct twist that the
 check aggregates across files instead of validating one file at
 a time.
+
+<!-- Pass 27 (2026-06-09, commit 2adef0d) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 0 actionable Pending rows (only the format
+       placeholder at line 19). The drain since pass 26 cleared
+       each row in the same iterate cycle it filed — 2 pre-pass-42
+       drain pairs (pass-41 MED HvV TAKE+SHAPE opener echo, pass-41
+       MED /shows A-tier band template echo), 1 pass-34 MED
+       vote-pair cross-surface drift drain, 1 pass-36 LOW HvV
+       authed thread stacked input+empty-state drain, and 4 pass-42
+       drain pairs (MED anon empty-state arguing CTAs, MED Amazing
+       Race first-person on /shows tile, MED `⏎` glyph mobile
+       affordance, LOW `STABLE LIST` eyebrow first-paint
+       definition). 8 audit/fix pairs total; no row carried over.
+     - CRITIQUE.md: 7 actionable Pending rows + 1 format
+       placeholder. Three from pass 42 (just shipped this window
+       at e2b1618, the 0-HIGH/3-MED/3-LOW pass MED rows already
+       drained above): (i) [LOW, authed] /shows/survivor canon
+       slot #02 (HvV) within-entry echo — main body close
+       `seasons of prior text` repeats verbatim in the adjacent
+       WHY THIS SLOT pull, two paragraphs apart on one canon
+       entry; (ii) [LOW, anon] /shows/survivor/season/
+       heroes-vs-villains + /shows/survivor canon #02 cross-surface
+       legacy-stinger echo — `measured against this stretch` /
+       `lived in the shadow of` lands 3× across 2 surfaces (HvV
+       TAKE close, HvV SHAPE close, canon #02 body close) for
+       one season; (iii) [LOW, anon] /themes/best-finales #02 ↔
+       /shows/survivor canon #02 cross-surface 6-gram echo on
+       `all-star format ... at its ceiling` (carried from pass 41).
+       Plus 4 carry-over rows from passes 36/37/41 (best-finales
+       sibling `final tribal` verb-object beat, /u/e2e own-profile
+       structurally bare `Your record`, HvV spec-row `EPISODE HEAT`
+       editorial-vs-spec misframe, cross-show closing-pair echo
+       `I'm not claiming to be objective. I'm trying to be honest.`
+       across 9 canon `meth_who_p` fields). Cluster analysis:
+       rows (i), (ii), (iii), and the carry-over best-finales
+       sibling-beat + cross-show closing-pair echo are all
+       cross-surface / within-entry phrase-echo invariant shapes
+       — **exactly** what candidate #13 (CLICHE_REPETITION_STRICT,
+       score 6.0) articulates. The candidate's invariant scope
+       already explicitly proposes: (a) cross-entry 5-gram echo
+       within a themed-list grouped by show slug, (b) cross-surface
+       5-gram echo between themed-list `title` and canon-rationale
+       on slug match, (c) within-entry 5-gram echo between canon
+       `rationale` and the paired pull/why-this-slot fields, and
+       (d) cross-surface 5-gram echo between season-page section
+       closes (TAKE/SHAPE/WATCH FOR) and the matching
+       canon-rationale close. Five of the seven pending rows nest
+       in #13's extensible registry rather than warranting siblings.
+       The two heterogeneous carry-overs (`Your record` stat-chip
+       scaffold + spec-row tile reshape) are single-component
+       fixes that the row itself proposes — single-tick `/iterate`
+       shape; no cluster ≥3 HIGH on the same family, no class-
+       pattern beyond what candidates #11/#12/#13 already
+       articulate.
+     - GitHub issues: 2 open, 0 unlabeled. #150 (triage:reviewed,
+       past cloud crash) + #148 (triage:needs-user, march.yml
+       coverage-gate wiring still blocked on cloud GitHub App's
+       missing `workflows` permission scope). Backlog unchanged
+       structurally; no new structural signal.
+     - spec.md + design/: no diffs since pass 26 (verified
+       `git log --since=... -- spec.md design/`: empty). Last
+       spec.md touch 2026-05-16 (`3ac0b42` phase 33a
+       consolidation). Brand/voice/contract surfaces stable for
+       24 days.
+     - Commit pattern: 21 commits since pass 26 — 1 critique pass
+       (42 e2b1618, 0 HIGH / 3 MED / 3 LOW), 8 critique/audit
+       drain pairs against pass-41 + pass-42 + pass-36 + pass-34
+       polish (canon methodology siblings → first-person singular,
+       Survivor + Amazing Race hero taglines → singular voice,
+       HvV SHAPE opener off TAKE echo, A-tier band templated
+       opener via card_tagline override, HvV authed thread
+       viewerCanPost-gated empty-state, VotePair distinct-voter
+       net, CommentInput anon empty-state CTA drop, Amazing Race
+       first-person tile drop, CommentInput `⏎` mobile affordance,
+       STABLE LIST eyebrow once + 5-gram invariant), 1 expand
+       pass 26 c788d57. All anticipated drains from
+       already-shipped phases or open critique pickups; no rogue
+       refactor surface, no 5+ fix-class cluster on one file.
+     - PHASE_CANDIDATES.md pending: #11 (src/app colocation gate,
+       score 5.5) + #12 (brand-spelling discipline, score 6.6) +
+       #13 (editorial-cliché repetition guard, score 6.0) all
+       still await /oversight promotion. Pass 42 (this window's
+       fresh critique) adds three more registry seeds to #13's
+       envelope: rows (i)-(iii) above — within-entry canon
+       rationale↔pull echo, season-page↔canon legacy-stinger echo,
+       themed-list↔canon headline echo — each of which the #13
+       proposal explicitly anticipates in its invariant scope.
+       Reinforces #13 a third time after pass 26's reinforcement
+       (rows iv + vi) and pass 23's reinforcement (rows 5 + 6 + 9);
+       does not warrant a fresh candidate. #03 (Newsletter,
+       score 3.0) still gated on S1 (domain swap). No new
+       candidate filed this pass.
+
+     Zero real structural candidates this pass. The seven pending
+     critique rows split two ways: 5 candidate-#13-class
+     editorial-echo surfaces (cross-entry verb-object beat +
+     cross-corpus closing-pair literal + cross-surface
+     themed-list↔canon headline + within-entry canon
+     rationale↔pull + cross-surface season-page↔canon
+     legacy-stinger — all nest in #13's extensible registry
+     across the four invariant-scope clauses it already
+     articulates), 2 heterogeneous single-component fixes
+     (`/u/e2e Your record` stat-chip scaffold, HvV spec-row
+     `EPISODE HEAT` tile reshape — each the row itself proposes
+     a single-component fix or a narrow content-check helper
+     that nests cleanly inside #13's registry). The §3.1 "real
+     demand vs model imagination" test still favors letting
+     candidates #11/#12/#13 promote before filing a fourth on
+     overlapping shapes — the candidate-#13 registry has now
+     been reinforced across 5 distinct critique passes (25, 29,
+     35, 36, 41, 42) with 10+ invariant-scope clauses across the
+     proposal, and is the highest-leverage promotion at the
+     current cadence. Next tick: `/iterate` picks up the
+     highest-scoring pending critique row (likely one of the
+     pass-42 LOWs nesting in #13 — the within-entry HvV
+     `seasons of prior text` echo or the cross-surface
+     `measured against this stretch` legacy-stinger drain). -->
 
 <!-- Pass 26 (2026-06-08, commit 7cec039) — 0 candidates filed.
      Signals reviewed:
