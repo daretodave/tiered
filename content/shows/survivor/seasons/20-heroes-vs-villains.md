@@ -11,7 +11,7 @@ format_changes: [all-returnee-cast, hero-villain-tribes]
 canonical_position: 2
 eyebrow: "Aired winter–spring 2010 · Filmed in Samoa"
 lede: "A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep."
-pull: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast at the close of the format's first decade. The casting team draws from ten prior seasons of accumulated audience memory, so every confessional carries weight a fresh cast cannot generate. The post-merge stretch runs denser than the format usually permits, and the back half rarely lets the editor breathe. Years on, every all-returnee experiment the genre attempts is still measured against this stretch of television."
+pull: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast at the close of the format's first decade. The casting team draws from ten prior seasons of accumulated audience memory, so every confessional carries weight a fresh cast cannot generate. The post-merge stretch runs denser than the format usually permits, and the back half rarely lets the editor breathe. The premise holds clean from premiere to merge — no tribe swap, no twist reshuffle, just the heroes-versus-villains argument running its full arc before the lines dissolve."
 filming_caption: "same beach as S19"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"
@@ -39,5 +39,6 @@ inside single confessionals, and immunity nights stack
 moves the editor must trust the audience to follow. Pair
 that velocity with twenty recognizable players placed
 opposite each other — prior memory doing half the
-storytelling work — and you get a decade-memory hour that
-every all-returnee run since has lived in the shadow of.
+storytelling work — and you get tribal-council floors that
+read like open negotiation tables, players doing the math
+in front of each other rather than in the dark.
