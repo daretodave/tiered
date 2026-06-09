@@ -23,7 +23,7 @@ entries:
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
-    title: "The all-star format at its ceiling, closing on a final tribal that reads like a verdict on the returnee era."
+    title: "An all-star return season that closes on the final tribal the format was building toward."
     blurb: "Twenty returnees split into heroes and villains compress everything Survivor had been by 2010 into one cast. The jury reads like a court built from the show's own history, and the closing argument carries a decade of receipts the players have on each other."
   - show: top-chef
     season: 6
