@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HeaderView } from '../HeaderView'
@@ -230,6 +232,78 @@ describe('<HeaderView>', () => {
       render(<HeaderView />)
       expect(screen.queryByTestId('site-header-user-trigger')).toBeNull()
       expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
+    })
+  })
+
+  // ---- Critique pass-44 #MED: mobile-only disclosure chevron --------
+  // The trigger renders the handle (e.g. `@e2e`) as a plain mono label
+  // with no hover cue on mobile — a fresh-eyes peer reads it as a
+  // static label, not as a menu, so the pass-23 mis-tap-guard closure
+  // (sign-out behind a tap) had high discovery cost on mobile. The fix
+  // adds a `::after` pseudo-element rendering `▾` inside the
+  // `@media (max-width: 720px)` block of `src/styles/chrome.css`. The
+  // chevron is mobile-only — the desktop branch already renders an
+  // inline `Sign out` link as the interactive-surface signal, so a
+  // chevron on `@handle` would double up. CSS pseudo-elements are
+  // unreachable from jsdom's render tree, so the rule is pinned at
+  // source (matches the FeaturedCard `.feat-foot` casing pin pattern
+  // at `src/components/lists/__tests__/FeaturedCard.test.tsx:166`).
+  describe('chrome.css `.site-header-user-trigger::after` mobile chevron pin (pass-44 #MED)', () => {
+    const css = readFileSync(
+      path.resolve(process.cwd(), 'src/styles/chrome.css'),
+      'utf-8',
+    )
+
+    // chrome.css has three separate `@media (max-width: 720px)` blocks
+    // (wrap padding, header chrome, footer cols). The chevron pin only
+    // cares about the header-chrome one — the block that contains the
+    // `.site-header-user-trigger` declaration. Locate that block by
+    // finding the `@media` opener BEFORE the trigger rule's position.
+    function headerMobileMediaBounds(): { start: number; end: number } {
+      const rulePos = css.indexOf('.site-header-user-trigger::after')
+      expect(rulePos).toBeGreaterThanOrEqual(0)
+      const mediaRe = /@media \(max-width: 720px\)/g
+      let start = -1
+      for (
+        let m = mediaRe.exec(css);
+        m !== null && m.index < rulePos;
+        m = mediaRe.exec(css)
+      ) {
+        start = m.index
+      }
+      expect(start).toBeGreaterThanOrEqual(0)
+      const open = css.indexOf('{', start)
+      let depth = 1
+      let i = open + 1
+      while (i < css.length && depth > 0) {
+        const ch = css[i]
+        if (ch === '{') depth += 1
+        else if (ch === '}') depth -= 1
+        i += 1
+      }
+      expect(depth).toBe(0)
+      return { start, end: i }
+    }
+
+    it('the mobile media block declares `.site-header-user-trigger::after` with a non-`none` content property (chevron renders on mobile)', () => {
+      const { start, end } = headerMobileMediaBounds()
+      const block = css.slice(start, end)
+      const ruleMatch = block.match(
+        /\.site-header-user-trigger::after\s*\{([^}]*)\}/,
+      )
+      expect(ruleMatch).not.toBeNull()
+      const body = ruleMatch?.[1] ?? ''
+      expect(body).toMatch(/content:\s*['"]/)
+      expect(body).not.toMatch(/content:\s*none/)
+    })
+
+    it('the `.site-header-user-trigger::after` rule does NOT appear outside the header mobile media block (desktop preserves the inline `Sign out` link as its disclosure signal)', () => {
+      const { start, end } = headerMobileMediaBounds()
+      const block = css.slice(start, end)
+      const outside = css.slice(0, start) + css.slice(end)
+      expect(outside).not.toMatch(/\.site-header-user-trigger::after/)
+      // Sibling positive: the rule's one source of truth is the mobile slice.
+      expect(block).toMatch(/\.site-header-user-trigger::after/)
     })
   })
 })
