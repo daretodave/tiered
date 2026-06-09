@@ -84,7 +84,7 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
           data-saved={saved ? 'true' : 'false'}
           onClick={onSave}
         >
-          {saved ? 'Saved' : 'Save list'}
+          {saved ? 'Saved' : 'Save (this device)'}
         </button>
         {saved ? (
           <span className="tool-caption" data-testid="list-save-caption">

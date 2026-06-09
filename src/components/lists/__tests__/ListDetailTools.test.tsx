@@ -30,10 +30,11 @@ describe('<ListDetailTools>', () => {
     ).toEqual([])
   })
 
-  it('unsaved label reads "Save list" exactly and no caption is rendered', () => {
+  it('unsaved label scopes storage up-front via "Save (this device)" and renders no caption', () => {
     render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
     const btn = screen.getByTestId('list-save')
-    expect(btn.textContent).toBe('Save list')
+    expect(btn.textContent).toMatch(/Save \(this device\)/)
+    expect(btn.textContent).not.toMatch(/^Save list$/)
     expect(screen.queryByTestId('list-save-caption')).toBeNull()
   })
 
