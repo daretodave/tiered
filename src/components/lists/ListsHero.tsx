@@ -23,10 +23,17 @@ export function ListsHero({ stats }: ListsHeroProps) {
   // grid covers the whole catalog, featured is an overlay subset
   // — not a disjoint partition. The opener names the total once
   // and treats featured as a spotlight descriptor when present.
+  // Critique pass-44 #375: rotated `we'd defend` → `I'd defend` so the
+  // /themes hero matches the singular-admission discipline the rest of
+  // the catalog committed to via the pass-31 #306 cross-surface drain
+  // (`tiered.tv editor` byline singular across every themed list +
+  // canon) and the post-#306 `/about` `Built and operated by one person`
+  // anchor. The hero gloss below also rotated `when we change our
+  // mind` → `when I change my mind` in the same closure.
   const opener =
     stats.featuredCount > 0
-      ? `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat — ${stats.featuredCount} featured this month.`
-      : `${stats.total} ${plural(stats.total, 'list', 'lists')} we'd defend in a group chat.`
+      ? `${stats.total} ${plural(stats.total, 'list', 'lists')} I'd defend in a group chat — ${stats.featuredCount} featured this month.`
+      : `${stats.total} ${plural(stats.total, 'list', 'lists')} I'd defend in a group chat.`
   const closer = 'None of them spoil what they rank.'
   const middle = (() => {
     if (coverage === 'single-canon') {
@@ -84,7 +91,7 @@ export function ListsHero({ stats }: ListsHeroProps) {
         data-testid="lists-hero-stable-gloss"
       >
         Every list here is <b>editor-signed and stable</b> — written once,
-        revised when we change our mind, not vote-driven.
+        revised when I change my mind, not vote-driven.
       </p>
       <div className="lists-hero-stats" data-testid="lists-hero-stats">
         <div className="lists-stat" data-testid="lists-stat-total">

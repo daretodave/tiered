@@ -125,15 +125,19 @@ describe('<ListsHero>', () => {
 
   it('lede opener names the catalog total once and mentions featured as a spotlight overlay (critique pass-40 #353)', () => {
     // Pass-40 #353: the prior lede opener `<index> in the index,
-    // <featured> featured this month — <total> we'd defend in a
+    // <featured> featured this month — <total> I'd defend in a
     // group chat` framed featured and index as disjoint partitions
     // summing to total — but the chip grid now covers the whole
     // catalog, so "in the index" no longer means "minus featured".
     // The opener now names the total once and trails featured as an
-    // overlay descriptor: `<total> lists we'd defend in a group
+    // overlay descriptor: `<total> lists I'd defend in a group
     // chat — <featured> featured this month.` Both component counts
     // named in prose; total tracks stats.total; the disjoint
     // `<n> in the index` clause is gone.
+    // Pass-44 #375: the opener literal rotated from plural-we
+    // (`we'd defend`) → singular (`I'd defend`) to match the
+    // post-#306 singular-admission discipline across the rest of
+    // the catalog. Test text below was updated in lockstep.
     const stats = {
       total: 12,
       featuredCount: 3,
@@ -145,10 +149,10 @@ describe('<ListsHero>', () => {
     } as const
     render(<ListsHero stats={stats} />)
     const ledeText =
-      screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
+      screen.getByText(/I'd defend in a group chat/i).textContent ?? ''
     // Total tracks stats.total at the head of the opener.
     expect(ledeText).toMatch(
-      new RegExp(`^${stats.total}\\s+lists\\s+we'd\\s+defend\\s+in\\s+a\\s+group\\s+chat\\b`, 'i'),
+      new RegExp(`^${stats.total}\\s+lists\\s+I'd\\s+defend\\s+in\\s+a\\s+group\\s+chat\\b`, 'i'),
     )
     // Featured count surfaced as an overlay descriptor trailing the total.
     expect(ledeText).toMatch(
@@ -178,7 +182,7 @@ describe('<ListsHero>', () => {
       />,
     )
     const ledeText =
-      screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
+      screen.getByText(/I'd defend in a group chat/i).textContent ?? ''
     expect(ledeText).toMatch(/^7 lists\b/i)
     expect(ledeText).not.toMatch(/\b12\s+lists?\b/i)
   })
@@ -256,7 +260,7 @@ describe('<ListsHero>', () => {
     expect(screen.getByText(/Some span the catalog/)).toBeTruthy()
     expect(screen.queryByText(/span every show/i)).toBeNull()
     expect(screen.queryByText(/pieces of editorial opinion/i)).toBeNull()
-    expect(screen.getByText(/lists we'd defend in a group chat/i)).toBeTruthy()
+    expect(screen.getByText(/lists I'd defend in a group chat/i)).toBeTruthy()
   })
 
   it('reads "Cross-canon and single-show." when the catalog mixes both shapes', () => {
@@ -359,7 +363,7 @@ describe('<ListsHero>', () => {
       />,
     )
     const ledeText =
-      screen.getByText(/we'd defend in a group chat/i).textContent ?? ''
+      screen.getByText(/I'd defend in a group chat/i).textContent ?? ''
     expect(ledeText).not.toMatch(/\bone\b\s+lives\s+inside\s+\bone\b/i)
     expect(ledeText).toMatch(
       /\bsingle[- ]show\b|\bone[- ]show\b|\binside\s+a\s+show\b/i,
@@ -434,7 +438,7 @@ describe('<ListsHero>', () => {
       screen.getByText(/Every list lives inside one canon today/),
     ).toBeTruthy()
     expect(screen.queryByText(/pieces of editorial opinion/i)).toBeNull()
-    expect(screen.getByText(/lists we'd defend in a group chat/i)).toBeTruthy()
+    expect(screen.getByText(/lists I'd defend in a group chat/i)).toBeTruthy()
   })
 
   it('renders the "tiered.tv / Lists" eyebrow', () => {
@@ -481,6 +485,43 @@ describe('<ListsHero>', () => {
     expect(gloss.textContent ?? '').toMatch(
       /stable.*editor|editor.*stable|editor-signed|not vote-driven/i,
     )
+  })
+
+  // Critique pass-44 #375: the /themes hero shipped two first-person
+  // plural literals (`we'd defend in a group chat` opener + `when we
+  // change our mind` gloss) while the rest of the catalog had
+  // committed to singular admission via the pass-31 #306 cross-surface
+  // byline drain (`tiered.tv editor` singular across every theme +
+  // canon) and the `/about` `Built and operated by one person`
+  // anchor. The closure rotates both literals to singular (`I'd
+  // defend`, `when I change my mind`). Bidirectional pin: positive on
+  // both new singular forms, negative on both retired plural forms,
+  // so a future authoring pass that silently regresses either side
+  // trips at unit time. Drop the pin only if the brand voice itself
+  // pivots back to plural-we (a deliberate editorial decision, not a
+  // refactor accident).
+  it('renders /themes hero copy in singular admission voice (critique pass-44 #375)', () => {
+    render(
+      <ListsHero
+        stats={{
+          total: 12,
+          featuredCount: 3,
+          totalEntries: 50,
+          showsCovered: 6,
+          crossCanonCount: 11,
+          singleShowCount: 1,
+          lastIndexRevision: '2026-05-01',
+        }}
+      />,
+    )
+    const ledeText =
+      screen.getByText(/I'd defend in a group chat/i).textContent ?? ''
+    expect(ledeText).toMatch(/I'd defend in a group chat/i)
+    expect(ledeText).not.toMatch(/we'd defend in a group chat/i)
+    const gloss = screen.getByTestId('lists-hero-stable-gloss')
+    const glossText = gloss.textContent ?? ''
+    expect(glossText).toMatch(/when I change my mind/i)
+    expect(glossText).not.toMatch(/when we change our mind/i)
   })
 
   it('uses singular "List" key when total is 1', () => {
