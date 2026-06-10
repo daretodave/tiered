@@ -218,28 +218,35 @@ describe('/u/[handle] generateMetadata', () => {
     expect(meta.alternates?.canonical).toBe('https://tiered.tv/u/canonform')
   })
 
-  // CRITIQUE pass-36 MED (#331): owner-vs-stranger meta description
-  // branching. The body chrome already speaks in two voices
-  // (ProfileHeader: `Your record` for owners, `@{handle}'s record`
-  // for strangers); these four cases pin the meta surface to the
-  // same axis so a future refactor that re-converges the two views
-  // onto one description trips here.
-  it('OWNER + empty → second-person description ("Your record …") so the owner reads themselves in the same voice the body uses', async () => {
+  // CRITIQUE pass-45 MED (#1139, supersedes pass-36 #331): the meta
+  // surface is third-person for every viewer. `<meta name="description">`
+  // is only ever read by crawlers, social-card unfurlers, and search
+  // snippets — all anon. An owner viewing their own profile reads
+  // `<title>` in the tab, not the description; a self-shared URL is
+  // unfurled anonymously, so the recipient sees the stranger branch
+  // anyway. The body-level second-person affordance lives in
+  // `<ProfileEmpty>`'s rendered chrome. These cases pin third-person
+  // across every viewer state — owner authed, stranger authed, anon —
+  // with bidirectional drift guards against the owner branch sneaking
+  // back. Pass-45 #1139 supersedes pass-36 #331; updating either
+  // direction (re-introducing owner branching, or re-converging
+  // strangers onto a different frame) trips one of these cases.
+  it('OWNER (signed-in as profile owner) + empty → third-person ("A reader …") — meta is for crawlers, not the owner', async () => {
     getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'e2e' }))
     getSessionMock.mockResolvedValue({ user: { nickname: 'e2e' } })
     const meta = await generateMetadata({ params: { handle: 'e2e' } })
-    expect(String(meta.description)).toMatch(/^your record/i)
-    expect(String(meta.description)).not.toMatch(/a reader on tiered\.tv/i)
+    expect(String(meta.description)).toMatch(/a reader on tiered\.tv/i)
+    expect(String(meta.description)).toMatch(/nothing on the public record/i)
+    expect(String(meta.description)).not.toMatch(/^your record/i)
   })
 
-  it('OWNER + populated → second-person description ("Your public record …") naming votes + comments', async () => {
+  it('OWNER (signed-in as profile owner) + populated → third-person (handle echoed, "they\'ve weighed in")', async () => {
     getProfileActivityMock.mockResolvedValue(populatedActivity({ handle: 'e2e' }))
     getSessionMock.mockResolvedValue({ user: { nickname: 'e2e' } })
     const meta = await generateMetadata({ params: { handle: 'e2e' } })
-    expect(String(meta.description)).toMatch(/^your public record/i)
-    expect(String(meta.description)).toMatch(/votes/i)
-    expect(String(meta.description)).toMatch(/comments/i)
-    expect(String(meta.description)).toMatch(/you've weighed in on/i)
+    expect(String(meta.description)).toMatch(/e2e's public record on tiered\.tv/i)
+    expect(String(meta.description)).toMatch(/they've weighed in on/i)
+    expect(String(meta.description)).not.toMatch(/^your public record/i)
   })
 
   it('STRANGER (different signed-in viewer) + empty → third-person framing preserved ("A reader …")', async () => {
@@ -261,11 +268,15 @@ describe('/u/[handle] generateMetadata', () => {
     expect(String(meta.description)).not.toMatch(/your public record/i)
   })
 
-  it('a thrown auth0 session in generateMetadata resolves to the stranger branch (no crash)', async () => {
-    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'resilient' }))
+  it('generateMetadata never reads the auth session — meta is viewer-agnostic (no per-viewer branching, no auth0 crash surface)', async () => {
+    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'agnostic' }))
     getSessionMock.mockRejectedValue(new Error('auth0 down'))
-    const meta = await generateMetadata({ params: { handle: 'resilient' } })
+    const meta = await generateMetadata({ params: { handle: 'agnostic' } })
+    // The session mock would throw if generateMetadata read it; the
+    // call must resolve cleanly with the stranger-branch description
+    // and the session mock must be left untouched (zero calls).
     expect(String(meta.description)).toMatch(/a reader on tiered\.tv/i)
+    expect(getSessionMock).not.toHaveBeenCalled()
   })
 })
 

@@ -85,29 +85,20 @@ export async function generateMetadata({
       noIndex: true,
     })
   }
-  // CRITIQUE pass-36 MED (#331): the description used to ship a
-  // single third-person string for every viewer — an owner sharing
-  // their own URL (or seeing a browser-tab preview to themselves)
-  // read about themselves as if a stranger were looking. Branch the
-  // description on owner-vs-stranger using the same session →
-  // handle derivation the page body already runs for self-view.
-  // ProfileHeader already branches the body eyebrow on this axis;
-  // the meta surface had not yet been brought along.
-  const session = await auth0.getSession().catch(() => null)
-  const viewer = headerUserFromSession(
-    session?.user as Record<string, unknown> | undefined,
-  )
-  const isOwner = viewer?.handle === profile.handle
-  let description: string
-  if (profile.populated) {
-    description = isOwner
-      ? `Your public record on tiered.tv — votes, comments, the seasons you've weighed in on.`
-      : `${profile.handle}'s public record on tiered.tv — votes, comments, the seasons they've weighed in on.`
-  } else {
-    description = isOwner
-      ? `Your record on tiered.tv. Cast one vote to start writing it.`
-      : `A reader on tiered.tv. Nothing on the public record yet.`
-  }
+  // CRITIQUE pass-45 MED (#1139, supersedes pass-36 #331): the meta
+  // surface is third-person for every viewer. `<meta name="description">`
+  // is only ever read by crawlers, social-card unfurlers, and search
+  // snippets — all of which fetch anonymously. An owner viewing their
+  // own profile reads `<title>` (`@{handle}`) in the browser tab, not
+  // the description; an owner-shared URL is unfurled anonymously by
+  // the social platform, so the recipient sees the stranger branch
+  // anyway. The body-level second-person affordance lives in
+  // `<ProfileEmpty>`'s rendered chrome, not in `<head>`. The pass-36
+  // #331 owner branch was over-engineering against a surface no owner
+  // actually reads.
+  const description = profile.populated
+    ? `${profile.handle}'s public record on tiered.tv — votes, comments, the seasons they've weighed in on.`
+    : 'A reader on tiered.tv. Nothing on the public record yet.'
   // Empty profiles stay out of the index (no thin-content pages);
   // populated profiles are indexable.
   return buildMetadata({
