@@ -9,9 +9,9 @@ updated: 2026-05-27
 
 tiered.tv ranks TV seasons without spoiling them.
 
-For every show we cover, two rankings live side by side:
+For every show I cover, two rankings live side by side:
 
-- **Editor's Canon** — our editorial ranking, with a short
+- **Editor's Canon** — my editorial ranking, with a short
   reason per position. Confident but spoiler-safe.
 - **Community Rank** — vote-driven. Each season asks one
   question: does it belong in the community top 10? Your
@@ -61,7 +61,7 @@ The following are **not** spoilers and **are** fair game:
   format, etc.)
 
 Every comment passes through an AI pre-filter before it posts;
-flagged comments enter a human-reviewed mod queue. We err on
+flagged comments enter a human-reviewed mod queue. I err on
 the side of redacting. If a community comment crosses the
 line, it's removed.
 

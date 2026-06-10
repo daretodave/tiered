@@ -328,6 +328,49 @@ describe('content/legal/about.md weight ladder ordering vs home (#335)', () => {
 // sentence — drift guard against regression back to the cold
 // jargon form, AND against the same jargon migrating elsewhere
 // in /about prose.
+// Critique pass-45 MED (issue #381): the prior /about masthead
+// narrated the editor function in first-person plural
+// (`For every show we cover`, `Editor's Canon — our editorial
+// ranking`, `We err on the side of redacting`) while the same
+// surface admitted singular two paragraphs later
+// (`Built and operated by one person`). Same defect class as
+// the resolved pass-44 #341 /themes hero plural→singular
+// closure (84c1882) — at the legal-doc surface that closure
+// didn't reach. The fix rotates all three literals to the
+// singular-I editor narrator now established across the rest
+// of the editorial chrome (/themes hero post-#341,
+// /shows/[show] canon-methodology `I've ranked every single
+// one` / `How do I weigh it?` / `When do I revisit?`).
+// Bidirectional pins below catch (1) the rotation succeeding
+// (positive on `I cover`), AND (2) any future authoring pass
+// reverting to the three retired plural literals (negative on
+// the verbatim phrases). Closure pattern matches pass-44 #341.
+describe('editorial narrator voice on /about (critique pass-45, issue #381)', () => {
+  // Source markdown wraps at 65 cols, so positive pins use `\s+`
+  // for whitespace tolerance — the exact phrase may span a line
+  // break in the body_md (raw, pre-render) the assertions read.
+  it('rotates `For every show we cover` to the singular `I cover`', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/For\s+every\s+show\s+I\s+cover/)
+    expect(body).not.toMatch(/For\s+every\s+show\s+we\s+cover/)
+  })
+
+  it('rotates `our editorial ranking` to a singular framing', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).not.toMatch(/our\s+editorial\s+ranking/)
+  })
+
+  it('rotates `We err on the side of redacting` to the singular `I err`', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/I\s+err\s+on\s+the\s+side\s+of\s+redacting/)
+    expect(body).not.toMatch(/We\s+err\s+on\s+the\s+side\s+of\s+redacting/)
+  })
+})
+
 describe('content/legal/about.md rate-limit trust line voice (#310)', () => {
   it('does not use the bare standalone `Brigade` token without an inline plain-language bridge', () => {
     const doc = getLegalDoc('about')
