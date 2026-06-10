@@ -36,7 +36,7 @@ export function ListsAllSection({
       <div className="lists-section-head">
         <h2>All lists.</h2>
         <span className="lists-section-meta">
-          Organized by what they're admiring
+          Organized by what they look at
         </span>
       </div>
       <div className="lists-all-wrap">

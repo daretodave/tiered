@@ -134,12 +134,17 @@ describe('<ListsAllSection>', () => {
     expect(rows.map((r) => r.getAttribute('data-slug'))).toEqual(['a', 'b'])
   })
 
-  it('lists-section-meta renders the subhead with a straight ASCII apostrophe (critique pass-24 #275)', () => {
-    // Bidirectional pin: the .lists-section-meta surface uppercases
-    // via CSS `text-transform`, where a curly U+2019 reads as a
-    // typographic inconsistency against every other apostrophe in
-    // the lists family. Guard against regression back to the curly
-    // form (the prior `&rsquo;` literal).
+  it('lists-section-meta renders the editor-first subhead (critique pass-46 #391)', () => {
+    // Bidirectional pin on the subhead literal. Pass-46 rotated the
+    // prior `Organized by what they're admiring` (which personified
+    // the lists as the agent doing the admiring — ad-copy voice
+    // against the bearings cue `knowledgeable peer — plain sentences
+    // over clever ones`) to a neutral structural verb. The negative
+    // pin against `/admiring/i` is a drift guard back to the
+    // personification form. The negative pin against `/’/` is the
+    // pass-24 #275 noise-floor guard against a curly U+2019 — the
+    // current literal has no apostrophe, but a future authoring pass
+    // that reintroduces one must keep the straight ASCII form.
     const { container } = render(
       <ListsAllSection
         byCategory={build({
@@ -150,7 +155,9 @@ describe('<ListsAllSection>', () => {
       />,
     )
     const meta = container.querySelector('.lists-section-meta')
-    expect(meta?.textContent).toBe("Organized by what they're admiring")
-    expect(meta?.textContent).not.toMatch(/’/)
+    expect(meta?.textContent).toBe('Organized by what they look at')
+    expect(meta?.textContent ?? '').toMatch(/organized by what they look at/i)
+    expect(meta?.textContent ?? '').not.toMatch(/admiring/i)
+    expect(meta?.textContent ?? '').not.toMatch(/’/)
   })
 })
