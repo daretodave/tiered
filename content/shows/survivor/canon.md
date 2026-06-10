@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, applied roughly in this order — cast, does the season produce confessionals you remember a year later; format, does the season's structural shape work or fight the show; place, does the location pull editorial weight on camera; argument, does the season change what the format is allowed to do next.
 meth_when_h: When do I revisit?
 meth_when_p: After every season finale and after any returnee season that recasts a prior run. Returnee seasons in particular can shift my read on a player's original season — sometimes a season hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; you do not learn much by replaying the tail.
-tier_s_blurb: Format-defining or unrepeatable. A season we'd defend at a bar, on a flight, in front of someone who has never watched.
-tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
+tier_s_blurb: Format-defining or unrepeatable. A season I'd defend at a bar, on a flight, in front of someone who has never watched.
+tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
 tier_b_blurb: Classic-era stalwarts and format-historical landmarks — strong shapes that the surrounding seasons have used to define themselves against.
-tier_c_blurb: Mixed and uneven. We rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass.
+tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass.
 weekly_question: Where would you slot Heroes vs. Villains today — still untouchable, or has the new era closed the gap?
 era_bands:
   - key: pioneer

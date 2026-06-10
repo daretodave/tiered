@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses — cooking, whether the food on the plate could land at a real restaurant; cast, whether the chefs cohere as a competitive bench; challenges, whether the format pulls genuine cooking out of them; setting, whether the location does real editorial work. Top Chef lives or dies on the kitchen it casts.
 meth_when_h: When do I revisit?
 meth_when_p: After every Top Chef finale, and after any All-Stars or champions run that recasts a prior season. A Last Chance Kitchen winner especially can reframe a chef's original outing — sometimes the original season hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
-tier_s_blurb: Format-defining or unrepeatable. A Top Chef season we'd defend at a bar, on a flight, in front of someone who has never opened a knife roll.
-tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
+tier_s_blurb: Format-defining or unrepeatable. A Top Chef season I'd defend at a bar, on a flight, in front of someone who has never opened a knife roll.
+tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
 tier_b_blurb: Solid Bravo-mature years. Strong shapes that the surrounding seasons leaned on while the franchise figured out what a regional immersive could become.
-tier_c_blurb: Mixed and uneven. We rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
+tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
 weekly_question: All twenty-two seasons are in. Does Las Vegas's bench still top the canon, or has a returnee event finally out-cooked it?
 era_bands:
   - key: padma

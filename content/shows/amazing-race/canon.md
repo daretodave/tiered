@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, in this order — cast, whether the teams produce confessionals and chemistry you remember; route, whether the geography earns its airtime; pacing, whether the leg-to-leg structure breathes; argument, whether the season changes what the format is later allowed to attempt. Travel television lives or dies on the cast it sends.
 meth_when_h: When do I revisit?
 meth_when_p: After every season finale, and after any returnee event that recasts a prior run. Returnee seasons especially can shift my read on a team's original outing — sometimes the original hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
-tier_s_blurb: Format-defining or unrepeatable. A season we'd defend at a bar, on a flight, in front of someone who has never watched.
-tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
+tier_s_blurb: Format-defining or unrepeatable. A season I'd defend at a bar, on a flight, in front of someone who has never watched.
+tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
 tier_b_blurb: Classic-era stalwarts and competent production years — strong shapes that the surrounding seasons have used to define themselves, leg after leg.
-tier_c_blurb: Mixed and uneven. We rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass.
+tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass.
 weekly_question: Is Season 7 still the franchise peak, or has time softened the case for the Survivor crossover hour?
 era_bands:
   - key: founding

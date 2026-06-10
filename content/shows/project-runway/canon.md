@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses, applied roughly in this order — cast, does the workroom produce confessionals and personalities you remember; judges, does the runway critique read aligned or fractious; location, does the city pull editorial weight on camera; format, does the season's structural choice sharpen the show or fight it. The runway shows themselves are the deliverable.
 meth_when_h: When do I revisit?
 meth_when_p: After every season finale and after a network or location shift that recasts how a prior run reads. Project Runway's history includes three such shifts — the LA detour, the Bravo-to-Lifetime move, and the Lifetime-to-Bravo reboot — and each has moved the canon's read on seasons around it. I revisit the bottom of the canon less often than the top.
-tier_s_blurb: Format-defining or unrepeatable. Seasons we'd recommend to someone who has never watched a single workroom cycle.
+tier_s_blurb: Format-defining or unrepeatable. Seasons I'd recommend to someone who has never watched a single workroom cycle.
 tier_a_blurb: Deep catalog. The seasons that hold up on a kitchen-table replay, even where the call against the next slot is close.
 tier_b_blurb: Strong middle-period runs and historical landmarks — seasons that built the cycle the show still runs on, with consistent workroom and runway delivery.
-tier_c_blurb: Mixed and historically important. We rank them honestly — the texture matters more than the rewatch value.
+tier_c_blurb: Mixed and historically important. I rank them honestly — the texture matters more than the rewatch value.
 weekly_question: Does the LA detour deserve its bottom-of-canon read, or has time softened it?
 era_bands:
   - key: bravo

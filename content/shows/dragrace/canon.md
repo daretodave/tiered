@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses — workroom, whether the cast produces moments and chemistry that hold up; runway, whether the categories pull craft out of the lineup; competition, whether the format chases a winner the lineup actually earned; argument, whether the season changes what Drag Race is later allowed to attempt. Drag Race lives or dies on the queens it casts.
 meth_when_h: When do I revisit?
 meth_when_p: After every season finale, and after any All Stars run that recasts a prior season. Returnee crowns especially can shift my read on a queen's original outing — sometimes the original season hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
-tier_s_blurb: Format-defining or unrepeatable. A season we'd defend at a bar, on a flight, in front of someone who has never watched a single lip-sync.
-tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
+tier_s_blurb: Format-defining or unrepeatable. A season I'd defend at a bar, on a flight, in front of someone who has never watched a single lip-sync.
+tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
 tier_b_blurb: Logo-era stalwarts and competent VH1-era production years — strong shapes that the surrounding seasons leaned on while the franchise worked out its grammar.
-tier_c_blurb: Mixed and uneven. We rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
+tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
 weekly_question: Is Season 5 still the franchise's cleanest contest, or has Season 6's editorial peak quietly aged into the better hour?
 era_bands:
   - key: logo

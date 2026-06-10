@@ -8,10 +8,10 @@ meth_how_h: How do I weigh it?
 meth_how_p: Four lenses — format, whether the season's structure earns its airtime; cast, whether the returnees produce confessionals and chemistry that hold up; argument, whether the season changes what the franchise is later allowed to attempt; and finals, whether the closing run feels earned. The Challenge lives or dies on the beats it invents and the cast it trusts.
 meth_when_h: When do I revisit?
 meth_when_p: After every founding-era replay, and any time a later returnee event recasts an early run. The Gauntlet's invention especially shifts my read on the seasons that came before — sometimes the pre-elimination years harden, sometimes they soften. I revisit the bottom of the canon less often than the top; the rough drafts do not reward a third pass.
-tier_s_blurb: Format-defining or unrepeatable. A season we'd defend at a bar, on a flight, in front of someone who has never watched a Gauntlet round in their life.
-tier_a_blurb: Deep canon. The seasons we trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
+tier_s_blurb: Format-defining or unrepeatable. A season I'd defend at a bar, on a flight, in front of someone who has never watched a Gauntlet round in their life.
+tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
 tier_b_blurb: Founding-era stalwarts and competent production years — strong shapes that the surrounding seasons leaned on while the franchise was still finding its grammar.
-tier_c_blurb: Mixed and uneven. We rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
+tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
 weekly_question: Is The Gauntlet still the format-defining season, or has The Inferno II quietly aged into the better hour?
 era_bands:
   - key: founding

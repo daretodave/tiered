@@ -1400,6 +1400,23 @@ const ABOUT_SINGULAR_ANCHORS = [
   "the editor's call — one person",
 ] as const
 const PLURAL_BYLINE_RE = /\btiered\.tv\s+(?:E|e)ditors\b/
+// Critique pass-46 MED (issue #388): the tier_s/a/c_blurb fields
+// across 5 canonized shows shipped plural-narrator action forms
+// ("A season we'd defend…", "The seasons we trust to deliver…",
+// "We rank them honestly…") sitting one scroll below the
+// canon-methodology section that names the editor as singular `I`.
+// Extends the #306 conditional discipline to the per-show tier
+// chrome: while the singular-admission anchor on /about holds, the
+// three tier blurb fields must not carry plural-narrator action
+// forms. The pattern catches the literal rotation forms found in
+// the cross-show drain (we'd, we trust, we rank, we recommend) plus
+// adjacent plural-narrator verbs a future authoring pass might
+// reach for. tier_b_blurb is also scanned even though no current
+// catalog entry trips it — preventive scope so a future authoring
+// pass that lands plural-we at the middle tier flags at the same
+// gate, not in the next critique pass.
+const TIER_BLURB_PLURAL_NARRATOR_RE =
+  /\b(?:we[’']?d|we\s+(?:trust|rank|recommend|defend|believe|think|argue|favou?r))\b/i
 
 export function collectEditorialBylineSingularIssues(): Failure[] {
   const issues: Failure[] = []
@@ -1427,6 +1444,21 @@ export function collectEditorialBylineSingularIssues(): Failure[] {
       issues.push({
         file: `content/shows/${show.slug}/canon.md`,
         message: `editorial-byline drift — \`editor: ${editor}\` reads plural while /about admits solo operation ("${ABOUT_SINGULAR_ANCHORS[0]}"). Rewrite to singular ("tiered.tv editor") so the canon attribution matches the page that owes the truth. See plan/CRITIQUE.md pass-31 / issue #306.`,
+      })
+    }
+    const tierFields: ReadonlyArray<['tier_s_blurb' | 'tier_a_blurb' | 'tier_b_blurb' | 'tier_c_blurb', string | undefined]> = [
+      ['tier_s_blurb', canon.tier_s_blurb],
+      ['tier_a_blurb', canon.tier_a_blurb],
+      ['tier_b_blurb', canon.tier_b_blurb],
+      ['tier_c_blurb', canon.tier_c_blurb],
+    ]
+    for (const [field, value] of tierFields) {
+      if (typeof value !== 'string') continue
+      const match = value.match(TIER_BLURB_PLURAL_NARRATOR_RE)
+      if (!match) continue
+      issues.push({
+        file: `content/shows/${show.slug}/canon.md`,
+        message: `editorial-byline drift — \`${field}\` carries plural-narrator action form "${match[0]}" while /about admits solo operation ("${ABOUT_SINGULAR_ANCHORS[0]}"). Rotate the plural form to singular-I (e.g. "we'd defend" → "I'd defend", "we trust" → "I trust", "We rank them" → "I rank them") so the tier-band chrome matches the singular-I editor voice the catalogue established post-#306 + #341 + #381. See plan/CRITIQUE.md pass-46 / issue #388.`,
       })
     }
   }

@@ -3730,6 +3730,136 @@ ${ninetyWords}
     makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
     expect(collectEditorialBylineSingularIssues()).toEqual([])
   })
+
+  // Critique pass-46 MED (issue #388): extends the conditional
+  // singular-anchor discipline to the per-show tier_s/a/b/c_blurb
+  // fields. While /about admits one person, the tier-band chrome
+  // must not carry plural-narrator action forms (we'd defend, we
+  // trust, we rank, we recommend, etc.) sitting one scroll below
+  // the canon-methodology singular-I narrator.
+  function makeCanonWithTierBlurbs(
+    root: string,
+    show: string,
+    blurbs: {
+      tier_s_blurb?: string
+      tier_a_blurb?: string
+      tier_b_blurb?: string
+      tier_c_blurb?: string
+    },
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fields = (Object.entries(blurbs) as Array<[string, string | undefined]>)
+      .filter(([, v]) => typeof v === 'string')
+      .map(([k, v]) => `${k}: ${JSON.stringify(v)}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---
+show: ${show}
+editor: tiered.tv editor
+${fields}
+---
+
+## 1. Title 1
+
+${ninetyWords}
+`,
+    )
+  }
+
+  it("flags a canon tier_s_blurb that ships the plural-we contraction (\"we'd defend\")", () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_s_blurb:
+        "Format-defining or unrepeatable. A season we'd defend at a bar.",
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md')
+    expect(issues[0]!.message).toMatch(/tier_s_blurb/)
+    expect(issues[0]!.message).toMatch(/plural-narrator action form/)
+    expect(issues[0]!.message).toMatch(/issue #388/)
+  })
+
+  it('flags a canon tier_a_blurb carrying the plural "we trust" form', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_a_blurb:
+        'Deep canon. The seasons we trust to deliver across a kitchen-table replay.',
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/tier_a_blurb/)
+    expect(issues[0]!.message).toMatch(/we trust/)
+  })
+
+  it('flags a canon tier_c_blurb carrying the plural "We rank" form', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_c_blurb:
+        'Mixed and uneven. We rank them honestly — the texture is historical more than rewarding.',
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/tier_c_blurb/)
+    expect(issues[0]!.message).toMatch(/We rank/)
+  })
+
+  it('flags a canon tier_b_blurb carrying the plural "we recommend" form (preventive coverage at the middle tier)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_b_blurb:
+        'Strong but era-bound — seasons we recommend when the next slot up is contested.',
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    const issues = collectEditorialBylineSingularIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/tier_b_blurb/)
+    expect(issues[0]!.message).toMatch(/we recommend/)
+  })
+
+  it('passes when tier blurbs read singular-I (post-rotation form)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_s_blurb:
+        "Format-defining or unrepeatable. A season I'd defend at a bar.",
+      tier_a_blurb:
+        'Deep canon. The seasons I trust to deliver across a kitchen-table replay.',
+      tier_b_blurb:
+        'Classic-era stalwarts — strong shapes that surrounding seasons have used to define themselves.',
+      tier_c_blurb:
+        'Mixed and uneven. I rank them honestly — the texture is more historical than rewarding.',
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('does not flag tier blurbs that simply contain the word "we" without a plural-narrator action verb (e.g. "what we get is")', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_b_blurb:
+        'Strong era-bound runs. The kind of season that holds up regardless of how we got there.',
+    })
+    makeAboutWithBody(tmp, 'An experiment. Built and operated by one person.')
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
+
+  it('tier-blurb invariant goes silent when /about removes the singular anchors (a future plural editorship is legal at every chrome layer)', () => {
+    makeShow(tmp, 'alpha')
+    makeCanonWithTierBlurbs(tmp, 'alpha', {
+      tier_s_blurb: "Format-defining. A season we'd defend at a bar.",
+      tier_c_blurb: 'Mixed and uneven. We rank them honestly.',
+    })
+    makeAboutWithBody(
+      tmp,
+      'A small editorial collective. The canon is shared.',
+    )
+    expect(collectEditorialBylineSingularIssues()).toEqual([])
+  })
 })
 
 describe('content-check — canon-rationale closing-formula adjacency (critique pass-32, issue #312)', () => {
