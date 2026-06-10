@@ -62,8 +62,8 @@ confessional read hits harder when you already have a
 relationship with the speaker, and Samoa pushes physical play
 into a place earlier returnee seasons never reached. Episodes
 run dense in a way the merge alone cannot deliver. The second
-slot is its by default. No other all-star attempt sustains this
-much pressure across this many recognizable faces, and decades
+slot belongs to it by default. No other all-star attempt sustains
+this much pressure across this many recognizable faces, and decades
 on, the rest of the format is still measured against this
 stretch of TV.
 

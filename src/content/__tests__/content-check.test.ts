@@ -13,6 +13,7 @@ import {
   collectCanonMethWhoClosingPairEchoIssues,
   collectCanonMethWhoPluralEditorIssues,
   collectCanonRationaleClosingFormulaIssues,
+  collectCanonRationaleDanglingPossessiveIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
@@ -5686,5 +5687,164 @@ featured: false
       'content/shows/alpha.md (tagline)',
       'content/shows/beta.md (tagline)',
     ])
+  })
+})
+
+// Critique pass-46 MED (issue #389): dangling-possessive grammar
+// drift in canon rationale bodies. The /shows/survivor canon HvV
+// slot-2 body shipped "The second slot is its by default." — a
+// possessive `its` with no antecedent noun. The invariant scans
+// every canon entry's rationale + tag + slot_argument for the
+// literal pattern `is its` not followed by `own`; the grammatical
+// `is its own X` form passes.
+describe('content-check — canon rationale dangling-possessive (critique pass-46, issue #389)', () => {
+  let tmp: string
+
+  function makeCanonWithRationale(
+    root: string,
+    show: string,
+    entries: Array<{ season: number; title: string; rationale: string }>,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const headings = entries
+      .map((e) => `## ${e.season}. ${e.title}\n\n${e.rationale}\n`)
+      .join('\n')
+    writeFileSync(file, `---\nshow: ${show}\n---\n\n${headings}\n`)
+  }
+
+  function makeCanonWithEntryFields(
+    root: string,
+    show: string,
+    entry: { season: number; title: string; tag?: string; slot_argument?: string },
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fields: string[] = []
+    if (entry.tag) fields.push(`tag: ${entry.tag}`)
+    if (entry.slot_argument)
+      fields.push(`slot_argument: ${entry.slot_argument}`)
+    const fieldsBlock = fields.length > 0 ? `${fields.join('\n')}\n\n` : ''
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\n---\n\n## ${entry.season}. ${entry.title}\n\n${fieldsBlock}${ninetyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-dangling-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite — no canon rationale carries the bare `is its` form)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCanonRationaleDanglingPossessiveIssues()).toEqual([])
+  })
+
+  it('flags a canon rationale that carries the bare `is its` possessive (no antecedent)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithRationale(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        rationale: `${ninetyWords} The second slot is its by default.`,
+      },
+    ])
+    const issues = collectCanonRationaleDanglingPossessiveIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (entry #1 rationale)',
+    )
+    expect(issues[0]!.message).toMatch(/dangling-possessive drift/)
+    expect(issues[0]!.message).toMatch(/is its/)
+    expect(issues[0]!.message).toMatch(/issue #389/)
+  })
+
+  it('passes when the possessive resolves grammatically as `is its own X`', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithRationale(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        rationale: `${ninetyWords} The second slot is its own by default.`,
+      },
+    ])
+    expect(collectCanonRationaleDanglingPossessiveIssues()).toEqual([])
+  })
+
+  it('passes for the recommended rewrite (`belongs to it by default` drops the possessive entirely)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithRationale(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        rationale: `${ninetyWords} The second slot belongs to it by default.`,
+      },
+    ])
+    expect(collectCanonRationaleDanglingPossessiveIssues()).toEqual([])
+  })
+
+  it('is case-insensitive (catches a future authoring pass titlecasing the literal)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithRationale(tmp, 'alpha', [
+      {
+        season: 1,
+        title: 'One',
+        rationale: `${ninetyWords} The Second Slot Is Its By Default.`,
+      },
+    ])
+    const issues = collectCanonRationaleDanglingPossessiveIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/dangling-possessive drift/)
+  })
+
+  it('flags the same literal when it appears in a canon entry `tag` field', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithEntryFields(tmp, 'alpha', {
+      season: 1,
+      title: 'One',
+      tag: 'A slot that is its by default among returnee runs.',
+    })
+    const issues = collectCanonRationaleDanglingPossessiveIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md (entry #1 tag)')
+    expect(issues[0]!.message).toMatch(/dangling-possessive drift/)
+  })
+
+  it('flags the same literal when it appears in a canon entry `slot_argument` field', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithEntryFields(tmp, 'alpha', {
+      season: 1,
+      title: 'One',
+      slot_argument:
+        'The slot is its by default — no other returnee run reaches it.',
+    })
+    const issues = collectCanonRationaleDanglingPossessiveIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (entry #1 slot_argument)',
+    )
+    expect(issues[0]!.message).toMatch(/dangling-possessive drift/)
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonRationaleDanglingPossessiveIssues()).toEqual([])
   })
 })

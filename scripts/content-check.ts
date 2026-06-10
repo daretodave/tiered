@@ -1989,6 +1989,52 @@ export function collectThemeFactualFirstClaimIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-46 MED (issue #389): dangling-possessive grammar
+// drift in canon rationale bodies. The /shows/survivor canon HvV
+// slot-2 body shipped the sentence "The second slot is its by
+// default." — a possessive `its` with no antecedent noun (the
+// implied antecedent "Heroes vs. Villains" is the paragraph subject
+// several sentences back). A reader scanning the canon body stops
+// mid-paragraph to re-parse the sentence, which sits inside the
+// canonical second-most-prominent canon slot on the flagship show
+// page. Same defect class as the pass-32 #313 / pass-19 #244 canon
+// body repairs — at the within-sentence grammar layer the prior
+// closures didn't reach. Pin: every canon entry's `rationale` body
+// must NOT match the literal pattern `is its` unless followed by
+// `own` (the grammatical possessive form `is its own X`). Scope is
+// canon rationale bodies — the load-bearing editorial prose on
+// every show page; the optional `tag` + `slot_argument` fields are
+// included for completeness so a future authoring pass slipping the
+// same drift into the secondary editorial chrome also trips.
+const CANON_DANGLING_POSSESSIVE_RE = /\bis its\b(?!\s+own\b)/i
+
+export function collectCanonRationaleDanglingPossessiveIssues(): Failure[] {
+  const issues: Failure[] = []
+  const flag = (where: string, text: string | null | undefined) => {
+    if (!text) return
+    const match = text.match(CANON_DANGLING_POSSESSIVE_RE)
+    if (!match) return
+    issues.push({
+      file: where,
+      message: `canon rationale dangling-possessive drift — found literal "${match[0]}" with no resolvable antecedent noun in the same sentence. The possessive \`its\` reads as needing a noun (e.g. "is its own X") or should be recast off the possessive entirely (e.g. "belongs to it by default"). A reader scanning the canon body stops mid-paragraph to re-parse. See plan/CRITIQUE.md pass-46 / issue #389.`,
+    })
+  }
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const canonFile = `content/shows/${show.slug}/canon.md`
+    for (const entry of canon.entries) {
+      flag(`${canonFile} (entry #${entry.rank} rationale)`, entry.rationale)
+      flag(`${canonFile} (entry #${entry.rank} tag)`, entry.tag)
+      flag(
+        `${canonFile} (entry #${entry.rank} slot_argument)`,
+        entry.slot_argument,
+      )
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -2502,6 +2548,24 @@ function main(): number {
     failures.push(...showTileFirstPersonIssues)
   } else {
     for (const issue of showTileFirstPersonIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-46 MED (issue #389): ships strict at floor 0 — the
+  // /shows/survivor canon HvV slot-2 body rewrite (this commit)
+  // drains the only offender in the corpus. The invariant is the
+  // floor that catches a future authoring pass slipping a dangling
+  // possessive (`is its` not followed by `own`) back into any canon
+  // entry's rationale / tag / slot_argument. One-line toggle
+  // mirroring the strict invariants above.
+  const CANON_DANGLING_POSSESSIVE_STRICT = true
+  const canonDanglingPossessiveIssues =
+    collectCanonRationaleDanglingPossessiveIssues()
+  if (CANON_DANGLING_POSSESSIVE_STRICT) {
+    failures.push(...canonDanglingPossessiveIssues)
+  } else {
+    for (const issue of canonDanglingPossessiveIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
