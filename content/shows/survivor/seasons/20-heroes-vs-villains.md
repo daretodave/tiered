@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Mid · merge"
     body: "The first ten minutes after the merge are the cleanest piece of reality-TV staging the show has ever shot. No music, no inserts."
   - episode_label: "Late · third act"
-    body: "The first minute of the late-game stretch is doing real work — staging, blocking, who's eating where. Don't blink."
+    body: "Late-game scenes do real work — staging, blocking, who's eating where. Don't blink."
 ---
 
 The episodes land in a different rhythm than the format's
