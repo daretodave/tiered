@@ -78,10 +78,12 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
     context,
   }) => {
     // 1. Authed: produce activity + discover this user's handle.
+    //    Pass-45 #MED: the profile href is carried on the chevron
+    //    trigger via `data-profile-href`; the flat handle link is gone.
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
-    const userLink = page.getByTestId('site-header-user-link')
-    await expect(userLink).toBeVisible()
-    const href = await userLink.getAttribute('href')
+    const trigger = page.getByTestId('site-header-user-trigger')
+    await expect(trigger).toBeVisible()
+    const href = await trigger.getAttribute('data-profile-href')
     expect(href, 'header must expose /u/<handle>').toMatch(/^\/u\/.+/)
     const profilePath = href as string
 
@@ -142,8 +144,8 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
     // guarded against an a11y regression a 200/H1 smoke walk misses.
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
     const href = await page
-      .getByTestId('site-header-user-link')
-      .getAttribute('href')
+      .getByTestId('site-header-user-trigger')
+      .getAttribute('data-profile-href')
     expect(href, 'header must expose /u/<handle>').toMatch(/^\/u\/.+/)
     const profilePath = href as string
 
@@ -162,8 +164,8 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
     // clearCookies) so isSelfView resolves true.
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
     const href = await page
-      .getByTestId('site-header-user-link')
-      .getAttribute('href')
+      .getByTestId('site-header-user-trigger')
+      .getAttribute('data-profile-href')
     expect(href).toMatch(/^\/u\/.+/)
     const profilePath = href as string
 
@@ -186,8 +188,8 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
   }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
     const href = await page
-      .getByTestId('site-header-user-link')
-      .getAttribute('href')
+      .getByTestId('site-header-user-trigger')
+      .getAttribute('data-profile-href')
     expect(href).toMatch(/^\/u\/.+/)
 
     await page.setViewportSize({ width: 375, height: 800 })

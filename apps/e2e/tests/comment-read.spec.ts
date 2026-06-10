@@ -93,7 +93,10 @@ test.describe('comment read — authed author sees own held comment', () => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
     const header = page.getByTestId('site-header')
     await expect(header).toHaveAttribute('data-signed-in', 'true')
-    await expect(page.getByTestId('site-header-user-link')).toBeVisible()
+    // Pass-45 #MED: signed-in chrome is the chevron trigger (no flat
+    // handle link). The trigger carries the handle text + a
+    // `data-profile-href` attribute for downstream discovery.
+    await expect(page.getByTestId('site-header-user-trigger')).toBeVisible()
     await expect(page.getByTestId('site-header-signin-link')).toHaveCount(0)
   })
 })

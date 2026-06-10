@@ -36,12 +36,13 @@ type HeaderViewProps = {
  * `user` is still passed for best-effort SSR on dynamic routes and
  * as the pre-hydration value.
  *
- * Critique pass-23 #MED: on the authed branch the desktop chrome
- * keeps the inline `@handle / Sign out` pair (large touch targets,
- * clear hierarchy); mobile (≤720px) collapses the pair behind a
- * tap-to-reveal account menu so a mis-tap next to the handle can't
- * accidentally sign the user out. Both variants live in the DOM and
- * swap via CSS media queries (see chrome.css `.site-header-user-*`).
+ * Critique pass-45 #MED (supersedes pass-23): on the authed branch,
+ * BOTH viewports collapse `@handle` + `Sign out` behind a single
+ * tap-to-reveal account menu — desktop no longer foregrounds
+ * `Sign out` as a flat top-bar action. The chevron-disclosure
+ * pattern carries both breakpoints; future menu peers
+ * (`My profile`, settings) slot in without re-architecting the
+ * header. CSS lives in chrome.css under `.site-header-user-*`.
  */
 export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
   const [authUser, setAuthUser] = useState<HeaderUser | null>(user)
@@ -124,22 +125,6 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
         <SearchTrigger />
         {authUser ? (
           <div className="site-header-account">
-            <Link
-              className="site-header-user site-header-user-desktop"
-              href={authUser.profileHref}
-              prefetch={false}
-              data-testid="site-header-user-link"
-            >
-              {authUser.displayLabel}
-            </Link>
-            <Link
-              className="site-header-signin site-header-signout-desktop"
-              href={SIGN_OUT_HREF}
-              prefetch={false}
-              data-testid="site-header-signout-link"
-            >
-              Sign out
-            </Link>
             <button
               type="button"
               className="site-header-user site-header-user-trigger"
@@ -150,6 +135,7 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
               ref={triggerRef}
               onClick={() => setMenuOpen((v) => !v)}
               data-testid="site-header-user-trigger"
+              data-profile-href={authUser.profileHref}
             >
               {authUser.displayLabel}
             </button>

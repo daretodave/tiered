@@ -46,8 +46,6 @@ describe('<HeaderView>', () => {
     const signIn = screen.getByTestId('site-header-signin-link')
     expect(signIn).toHaveAttribute('href', '/sign-in')
     expect(signIn).toHaveTextContent(/Sign in/i)
-    expect(screen.queryByTestId('site-header-user-link')).toBeNull()
-    expect(screen.queryByTestId('site-header-signout-link')).toBeNull()
     expect(screen.queryByTestId('site-header-user-trigger')).toBeNull()
     expect(screen.getByTestId('site-header')).toHaveAttribute(
       'data-signed-in',
@@ -55,12 +53,16 @@ describe('<HeaderView>', () => {
     )
   })
 
-  it('renders the user handle + Sign out link when signed in', () => {
+  it('renders the chevron trigger + opens the menu with the Sign out item when signed in', () => {
     render(<HeaderView user={ASHA} />)
-    const handle = screen.getByTestId('site-header-user-link')
-    expect(handle).toHaveAttribute('href', '/u/asha')
-    expect(handle).toHaveTextContent('@asha')
-    const signOut = screen.getByTestId('site-header-signout-link')
+    // Critique pass-45 #MED: there is no flat `@handle / Sign out` pair
+    // anymore — both breakpoints disclose through the trigger.
+    const trigger = screen.getByTestId('site-header-user-trigger')
+    expect(trigger.tagName).toBe('BUTTON')
+    expect(trigger).toHaveTextContent('@asha')
+    expect(trigger).toHaveAttribute('data-profile-href', '/u/asha')
+    fireEvent.click(trigger)
+    const signOut = screen.getByTestId('site-header-user-menu-signout')
     expect(signOut).toHaveAttribute(
       'href',
       `/auth/logout?returnTo=${encodeURIComponent('https://tiered.tv/')}`,
@@ -96,7 +98,7 @@ describe('<HeaderView>', () => {
     render(<HeaderView user={null} />)
     expect(screen.getByTestId('site-header-signin-link')).toBeInTheDocument()
     await waitFor(() => {
-      expect(screen.getByTestId('site-header-user-link')).toHaveTextContent(
+      expect(screen.getByTestId('site-header-user-trigger')).toHaveTextContent(
         '@asha',
       )
     })
@@ -115,10 +117,14 @@ describe('<HeaderView>', () => {
         user={{ handle: 'rui', displayLabel: '@rui', profileHref: '/u/rui' }}
       />,
     )
-    expect(screen.getByTestId('site-header-user-link')).toHaveTextContent('@rui')
+    expect(screen.getByTestId('site-header-user-trigger')).toHaveTextContent(
+      '@rui',
+    )
     // Give the rejected fetch a tick; state must not regress.
     await new Promise((r) => setTimeout(r, 0))
-    expect(screen.getByTestId('site-header-user-link')).toHaveTextContent('@rui')
+    expect(screen.getByTestId('site-header-user-trigger')).toHaveTextContent(
+      '@rui',
+    )
   })
 
   it('applies tinted class + data-tinted attribute when tinted={true}', () => {
@@ -135,9 +141,9 @@ describe('<HeaderView>', () => {
     expect(header.getAttribute('data-tinted')).toBeNull()
   })
 
-  // ---- Critique pass-23 #MED: mobile account-menu disclosure ------
-  describe('mobile account menu (≤720px disclosure)', () => {
-    it('renders the trigger button alongside the desktop pair on the authed branch', () => {
+  // ---- Critique pass-45 #MED: chevron menu carries both viewports ---
+  describe('account-menu disclosure (chevron — all viewports)', () => {
+    it('renders only the trigger button on the authed branch — no flat handle/sign-out pair', () => {
       render(<HeaderView user={ASHA} />)
       const trigger = screen.getByTestId('site-header-user-trigger')
       expect(trigger.tagName).toBe('BUTTON')
@@ -145,9 +151,12 @@ describe('<HeaderView>', () => {
       expect(trigger).toHaveAttribute('aria-haspopup', 'menu')
       expect(trigger).toHaveAttribute('aria-expanded', 'false')
       expect(trigger).toHaveAttribute('aria-label', 'Account menu for @asha')
-      // Both desktop variants still in the DOM (CSS swaps them).
-      expect(screen.getByTestId('site-header-user-link')).toBeInTheDocument()
-      expect(screen.getByTestId('site-header-signout-link')).toBeInTheDocument()
+      // Profile href is carried on the trigger so e2e/runtime discovery
+      // doesn't need to open the menu first.
+      expect(trigger).toHaveAttribute('data-profile-href', '/u/asha')
+      // Pass-45 #MED: the flat desktop pair is gone from the DOM.
+      expect(screen.queryByTestId('site-header-user-link')).toBeNull()
+      expect(screen.queryByTestId('site-header-signout-link')).toBeNull()
       // Menu starts closed.
       expect(screen.queryByTestId('site-header-user-menu')).toBeNull()
     })
@@ -235,75 +244,63 @@ describe('<HeaderView>', () => {
     })
   })
 
-  // ---- Critique pass-44 #MED: mobile-only disclosure chevron --------
-  // The trigger renders the handle (e.g. `@e2e`) as a plain mono label
-  // with no hover cue on mobile — a fresh-eyes peer reads it as a
-  // static label, not as a menu, so the pass-23 mis-tap-guard closure
-  // (sign-out behind a tap) had high discovery cost on mobile. The fix
-  // adds a `::after` pseudo-element rendering `▾` inside the
-  // `@media (max-width: 720px)` block of `src/styles/chrome.css`. The
-  // chevron is mobile-only — the desktop branch already renders an
-  // inline `Sign out` link as the interactive-surface signal, so a
-  // chevron on `@handle` would double up. CSS pseudo-elements are
-  // unreachable from jsdom's render tree, so the rule is pinned at
-  // source (matches the FeaturedCard `.feat-foot` casing pin pattern
-  // at `src/components/lists/__tests__/FeaturedCard.test.tsx:166`).
-  describe('chrome.css `.site-header-user-trigger::after` mobile chevron pin (pass-44 #MED)', () => {
+  // ---- Critique pass-45 #MED: chevron carries every viewport -------
+  // Pass-44 placed `::after { content: '▾' }` inside the mobile media
+  // block because the desktop branch foregrounded a flat `Sign out`
+  // link as its interactive cue. Pass-45 removed that flat pair — the
+  // chevron now needs to render at every viewport (the trigger is the
+  // only sighted cue that the handle opens a menu). The pin moves
+  // from "lives inside the mobile @media block" to "lives at the
+  // default scope, never trapped inside a @media block." CSS
+  // pseudo-elements are unreachable from jsdom's render tree, so the
+  // rule is pinned at source.
+  describe('chrome.css `.site-header-user-trigger::after` chevron pin (pass-45 #MED — all viewports)', () => {
     const css = readFileSync(
       path.resolve(process.cwd(), 'src/styles/chrome.css'),
       'utf-8',
     )
 
     // chrome.css has three separate `@media (max-width: 720px)` blocks
-    // (wrap padding, header chrome, footer cols). The chevron pin only
-    // cares about the header-chrome one — the block that contains the
-    // `.site-header-user-trigger` declaration. Locate that block by
-    // finding the `@media` opener BEFORE the trigger rule's position.
-    function headerMobileMediaBounds(): { start: number; end: number } {
-      const rulePos = css.indexOf('.site-header-user-trigger::after')
-      expect(rulePos).toBeGreaterThanOrEqual(0)
+    // (wrap padding, header chrome, footer cols). The chevron rule must
+    // sit OUTSIDE every one of them so the disclosure cue renders at
+    // every breakpoint, including desktop. Walk every `@media` opener
+    // forward and assert the trigger-after rule's index is not inside
+    // any of their `{ ... }` spans.
+    function isInsideAnyMediaBlock(rulePos: number): boolean {
       const mediaRe = /@media \(max-width: 720px\)/g
-      let start = -1
-      for (
-        let m = mediaRe.exec(css);
-        m !== null && m.index < rulePos;
-        m = mediaRe.exec(css)
-      ) {
-        start = m.index
+      for (let m = mediaRe.exec(css); m !== null; m = mediaRe.exec(css)) {
+        const open = css.indexOf('{', m.index)
+        let depth = 1
+        let i = open + 1
+        while (i < css.length && depth > 0) {
+          const ch = css[i]
+          if (ch === '{') depth += 1
+          else if (ch === '}') depth -= 1
+          i += 1
+        }
+        const end = i
+        if (rulePos > open && rulePos < end) return true
       }
-      expect(start).toBeGreaterThanOrEqual(0)
-      const open = css.indexOf('{', start)
-      let depth = 1
-      let i = open + 1
-      while (i < css.length && depth > 0) {
-        const ch = css[i]
-        if (ch === '{') depth += 1
-        else if (ch === '}') depth -= 1
-        i += 1
-      }
-      expect(depth).toBe(0)
-      return { start, end: i }
+      return false
     }
 
-    it('the mobile media block declares `.site-header-user-trigger::after` with a non-`none` content property (chevron renders on mobile)', () => {
-      const { start, end } = headerMobileMediaBounds()
-      const block = css.slice(start, end)
-      const ruleMatch = block.match(
-        /\.site-header-user-trigger::after\s*\{([^}]*)\}/,
+    it('declares `.site-header-user-trigger::after` exactly once with a non-`none` content property', () => {
+      const ruleMatches = css.match(
+        /\.site-header-user-trigger::after\s*\{[^}]*\}/g,
       )
-      expect(ruleMatch).not.toBeNull()
-      const body = ruleMatch?.[1] ?? ''
+      expect(ruleMatches).not.toBeNull()
+      expect(ruleMatches?.length).toBe(1)
+      const [first] = ruleMatches ?? []
+      expect(first).toBeDefined()
+      const body = (first ?? '').split('{')[1]?.replace(/\}\s*$/, '') ?? ''
       expect(body).toMatch(/content:\s*['"]/)
       expect(body).not.toMatch(/content:\s*none/)
     })
 
-    it('the `.site-header-user-trigger::after` rule does NOT appear outside the header mobile media block (desktop preserves the inline `Sign out` link as its disclosure signal)', () => {
-      const { start, end } = headerMobileMediaBounds()
-      const block = css.slice(start, end)
-      const outside = css.slice(0, start) + css.slice(end)
-      expect(outside).not.toMatch(/\.site-header-user-trigger::after/)
-      // Sibling positive: the rule's one source of truth is the mobile slice.
-      expect(block).toMatch(/\.site-header-user-trigger::after/)
+    it('renders at every viewport — the rule sits OUTSIDE every `@media (max-width: 720px)` block', () => {
+      const rulePos = css.indexOf('.site-header-user-trigger::after')
+      expect(rulePos).toBeGreaterThanOrEqual(0)
+      expect(isInsideAnyMediaBlock(rulePos)).toBe(false)
     })
   })
 })

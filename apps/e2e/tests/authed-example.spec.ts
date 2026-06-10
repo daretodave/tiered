@@ -32,27 +32,35 @@ test.describe('authed-example', () => {
   // per phase 27) flips from build-time signed-out chrome to the
   // account chrome client-side. Un-fixme'd now that the island
   // ships. See issue #54.
-  test('signed-in header swaps the Sign in pill for a user handle + Sign out', async ({
+  //
+  // Critique pass-45 #MED: at every viewport the chrome resolves to
+  // the chevron trigger (no flat `@handle / Sign out` pair); the
+  // disclosed menu carries the `Sign out` action.
+  test('signed-in header surfaces the chevron trigger, menu carries Sign out', async ({
     page,
   }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' })
     const header = page.getByTestId('site-header')
     await expect(header).toHaveAttribute('data-signed-in', 'true')
-    await expect(page.getByTestId('site-header-user-link')).toBeVisible()
-    const signOut = page.getByTestId('site-header-signout-link')
-    await expect(signOut).toBeVisible()
-    await expect(signOut).toHaveAttribute('href', /\/auth\/logout/)
+    const trigger = page.getByTestId('site-header-user-trigger')
+    await expect(trigger).toBeVisible()
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false')
+    await expect(trigger).toHaveAttribute('data-profile-href', /^\/u\/.+/)
+    await trigger.click()
+    await expect(page.getByTestId('site-header-user-menu')).toBeVisible()
+    await expect(
+      page.getByTestId('site-header-user-menu-signout'),
+    ).toHaveAttribute('href', /\/auth\/logout/)
     await expect(page.getByTestId('site-header-signin-link')).toHaveCount(0)
   })
 
-  // Critique pass-23 #MED: at 375px the inline `Sign out` text link
-  // collapses behind a tap-to-reveal account menu — the handle becomes
-  // the trigger; `Your record` and `Sign out` are the menu items. The
-  // desktop pair stays in the DOM (CSS swaps display:none), so the
-  // assertion pin is "Sign out is not user-visible as a top-bar link
-  // until the trigger is tapped." Regression pin against a mis-tap
-  // signing the user out from the top bar on every authed page.
-  test('mobile chrome at 375px hides Sign out behind the account menu trigger', async ({
+  // Critique pass-45 #MED regression: at 375px the chrome resolves to
+  // the SAME chevron pattern as desktop — no breakpoint-specific
+  // disclosure. Pinned to guard the cross-breakpoint parity (the
+  // pass-44 closure shipped the mobile-only chevron; pass-45 extended
+  // it to desktop). Also confirms the menu remains the only path to
+  // `Sign out` at this viewport.
+  test('mobile chrome at 375px renders the same chevron disclosure pattern', async ({
     page,
   }) => {
     await page.setViewportSize({ width: 375, height: 800 })
@@ -64,9 +72,6 @@ test.describe('authed-example', () => {
     await expect(trigger).toBeVisible()
     await expect(trigger).toHaveAttribute('aria-expanded', 'false')
 
-    // Desktop pair exists in the DOM but is not user-visible.
-    await expect(page.getByTestId('site-header-user-link')).toBeHidden()
-    await expect(page.getByTestId('site-header-signout-link')).toBeHidden()
     // The menu itself isn't rendered until the trigger fires.
     await expect(page.getByTestId('site-header-user-menu')).toHaveCount(0)
 
