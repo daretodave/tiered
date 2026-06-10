@@ -96,4 +96,29 @@ describe('<ShowHero>', () => {
     expect(stats.textContent).toContain('Canon revised')
     expect(stats.textContent).not.toContain('Last revision')
   })
+
+  // Critique pass-45 (#380) sibling positive — the show-page hero
+  // seasons-stat label flows from `src/lib/canon/seasons-stat-label.ts`
+  // which produces `seasons in canon` on a fully-drained show. Pairs
+  // with the home featured tile's `Seasons in canon` (pass-44 #379)
+  // so the home → /shows/[show] click path carries one per-show label.
+  // Drift guard: must not regress to the legacy `seasons ranked`
+  // literal, which now belongs only to /shows hero's catalog-aggregate
+  // slot.
+  it('labels the seasons stat as `seasons in canon` (not `seasons ranked`)', () => {
+    render(
+      <ShowHero
+        title="Survivor"
+        blurb="b"
+        crumb="x"
+        stats={[
+          { value: 50, key: 'seasons in canon' },
+          { value: 'May 2026', key: 'Canon revised' },
+        ]}
+      />,
+    )
+    const stats = screen.getByTestId('show-hero-stats')
+    expect(stats.textContent).toContain('seasons in canon')
+    expect(stats.textContent).not.toContain('seasons ranked')
+  })
 })

@@ -44,23 +44,25 @@ for (const url of showHomeUrls) {
         .locator('.stat', { hasText: /canon revised/i })
         .locator('.stat-val')
       await expect(revisedValue).toHaveText(/^[A-Z][a-z]+\s\d{4}$/)
-      // Critique pass 15: the seasons stat label is derived from canon
-      // coverage (src/lib/canon/seasons-stat-label.ts). Survivor is the
-      // gold-standard fully-drained show — every aired season has a canon
-      // slot — so its hero must read "seasons ranked", staying in the
-      // catalog-aggregate `Seasons ranked` family /shows index total
-      // also carries (the home featured tile rotated to `Seasons in
-      // canon` per pass-44 #379; the show-page hero label was
-      // intentionally left out of that rotation's scope). Pins the
+      // Critique pass 15 + pass-45 #380: the seasons stat label is
+      // derived from canon coverage (src/lib/canon/seasons-stat-label.ts).
+      // Survivor is the gold-standard fully-drained show — every aired
+      // season has a canon slot — so its hero must read "seasons in
+      // canon", aligning with the home featured tile's `Seasons in
+      // canon` (pass-44 #379) so the home → /shows/[show] click path
+      // carries one per-show label, not two. The /shows catalog hero
+      // keeps the catalog-aggregate `Seasons ranked` slot. Pins the
       // page.tsx wiring end-to-end (the unit test pins the helper;
       // this pins that the page feeds it the canon entry count, not
-      // the aired count).
+      // the aired count, and adds a drift guard against regression to
+      // the legacy `seasons ranked` literal).
       if (slug === 'survivor') {
         const seasonsStat = heroStats
           .locator('.stat')
-          .filter({ hasText: /seasons (ranked|aired)/i })
+          .filter({ hasText: /seasons (in canon|aired)/i })
           .first()
-        await expect(seasonsStat.locator('.stat-key')).toHaveText(/seasons ranked/i)
+        await expect(seasonsStat.locator('.stat-key')).toHaveText(/seasons in canon/i)
+        await expect(heroStats).not.toContainText(/seasons ranked/i)
       }
       await expect(page.getByTestId('bullet').first()).toBeVisible()
       // Phase 37 nit 4 + critique-pass-37 HIGH (#334): the shifts

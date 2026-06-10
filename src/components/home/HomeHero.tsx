@@ -6,10 +6,13 @@ type HomeHeroProps = {
   featured: Show
   /**
    * "Seasons in canon" stat — defaults to `featured.seasons`.
-   * Critique pass-44 (#379) rotated the chrome label from
+   * Critique pass-44 (#379) rotated this chrome label from
    * `SEASONS RANKED` (the catalog-aggregate framing /shows
    * still carries) to `SEASONS IN CANON` (per-show scope, the
-   * editorial unit the home featured tile is sized to).
+   * editorial unit the home featured tile is sized to). Pass-45
+   * #380 extended the same rotation to the per-show hero via
+   * `src/lib/canon/seasons-stat-label.ts` so the home → /shows/
+   * [show] click path carries one per-show label.
    */
   seasonsRanked?: number
   /**
