@@ -369,6 +369,16 @@ describe('editorial narrator voice on /about (critique pass-45, issue #381)', ()
     expect(body).toMatch(/I\s+err\s+on\s+the\s+side\s+of\s+redacting/)
     expect(body).not.toMatch(/We\s+err\s+on\s+the\s+side\s+of\s+redacting/)
   })
+
+  // critique pass-46 MED — Become-an-editor `tell us` survived
+  // #381's masthead rotation. Same defect class as #381 at the
+  // section the prior closure didn't reach.
+  it('rotates Become-an-editor `tell us` to the singular `tell me`', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/tell\s+me\s+which\s+show\s+and\s+which\s+season/)
+    expect(body).not.toMatch(/tell\s+us\s+which\s+show/)
+  })
 })
 
 describe('content/legal/about.md rate-limit trust line voice (#310)', () => {

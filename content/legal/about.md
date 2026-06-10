@@ -70,7 +70,7 @@ line, it's removed.
 The canon is small and signed. If you watch a show no one here
 covers yet — or you have a take on one we do, written with
 80–120 words per ranked season, spoiler-safe — open an issue
-on [GitHub](https://github.com/daretodave/tiered) and tell us
+on [GitHub](https://github.com/daretodave/tiered) and tell me
 which show and which season. New editors come in by invitation
 after a draft round.
 
