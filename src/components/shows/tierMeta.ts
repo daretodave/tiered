@@ -9,7 +9,14 @@ export type TierMeta = {
 const S: TierMeta = {
   tier: 'S',
   tag: 'Format-defining',
-  name: 'The shows that invented or perfected their format.',
+  // critique-pass-46 #389: rotated subhead from shows-as-agent
+  // (`The shows that invented or perfected their format.`) to
+  // format-as-agent so the band subhead agrees with Survivor's
+  // card_tagline (`The format that invented itself in episode
+  // one...`) on who-invented-what. The pass-35 #332 vocabulary
+  // pin (commit to `format`, not `genre`) still holds — the
+  // rotation keeps `format` and avoids `genre`.
+  name: 'The shows where the format invented or perfected itself.',
 }
 
 const A: TierMeta = {

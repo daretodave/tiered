@@ -9,7 +9,7 @@ describe('tierMeta', () => {
       expect(tierMeta('S')).toEqual({
         tier: 'S',
         tag: 'Format-defining',
-        name: 'The shows that invented or perfected their format.',
+        name: 'The shows where the format invented or perfected itself.',
       })
     })
 
@@ -145,6 +145,39 @@ describe('tierMeta', () => {
       const [ledeA] = tierLedeSentences(['A'])
       expect(ledeA).toMatch(/deep canon|years to defend/i)
       expect(ledeA).not.toMatch(/format|genre/i)
+    })
+  })
+
+  // critique-pass-46 #389: the /shows S-tier band subhead used to
+  // read `The shows that invented or perfected their format.` —
+  // shows-as-agent. Survivor's S-tile card_tagline immediately
+  // adjacent in the band (`The format that invented itself in
+  // episode one, and is still finding new ways to ask who you
+  // really are.`) frames the format as the agent. Same band, two
+  // sentences pulling opposite directions on who-invented-what.
+  // The rotation flips the subhead to format-as-agent
+  // (`The shows where the format invented or perfected itself.`),
+  // preserving the pass-35 #332 vocabulary commit (`format`, not
+  // `genre`) while bringing the subhead's subject into agreement
+  // with the card_tagline. Bidirectional pin guards both the
+  // post-rotation literal AND the rejected pre-rotation literal.
+  describe('S-tier band subhead subject agreement (critique pass-46 #389)', () => {
+    it('S-tier name subhead frames the format as the agent', () => {
+      expect(tierMeta('S').name).toMatch(
+        /where the format invented or perfected itself/i,
+      )
+    })
+
+    it('S-tier name subhead does NOT carry the rejected shows-as-agent literal', () => {
+      // Drift guard: the pre-rotation literal framed SHOWS as the
+      // inventor (`invented or perfected their format`), pulling
+      // against Survivor's card_tagline's format-as-agent frame.
+      // A future refactor that regresses to either shows-as-agent
+      // shape (`their format` / `their genre`) trips at unit time.
+      expect(tierMeta('S').name).not.toMatch(
+        /invented or perfected their format/i,
+      )
+      expect(tierMeta('S').name).not.toMatch(/their format|their genre/i)
     })
   })
 })
