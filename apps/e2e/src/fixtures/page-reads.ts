@@ -144,11 +144,16 @@ export const pageReads: Record<string, PageReadAssertion> = {
       '[data-testid=list-tools]',
       '[data-testid=list-save]',
       '[data-testid=list-share]',
-      '[data-testid=list-suggest]',
       '[data-testid=list-shield]',
       '[data-testid=list-entries]',
       '[data-testid=list-entry-stack]',
       '[data-testid=list-entry]',
+      // pass-45 #384: Suggest moved out of the action row into an
+      // editorial-footer slot. Both wrappers asserted so the e2e
+      // walker catches a regression that drops the slot OR puts
+      // Suggest back inside the tools row.
+      '[data-testid=list-suggest-cta]',
+      '[data-testid=list-suggest]',
     ],
   },
   '/about': {

@@ -70,14 +70,20 @@ describe('<ListDetailTools>', () => {
     expect(writeText).toHaveBeenCalledWith(window.location.href)
   })
 
-  it('suggest is a mailto link with subject including the theme title', () => {
-    render(<ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />)
-    const a = screen.getByTestId('list-suggest')
-    const href = a.getAttribute('href') ?? ''
-    expect(href).toMatch(/^mailto:editors@tiered\.tv/)
-    expect(href).not.toMatch(/tiered\.app/)
-    expect(href).toContain(
-      encodeURIComponent('Suggest entry: Firsts that hold up'),
+  // Critique pass-45 #384 bidirectional drift guard half (a): the
+  // primary action row contains exactly Save + Share (no Suggest in
+  // the row). The Suggest action now lives in <SuggestEntryCTA>; its
+  // own test pins the editorial-footer slot. A regression that
+  // re-introduces the Suggest button here trips this assertion at
+  // unit time, before any e2e walks the page.
+  it('primary action row contains only reader-scope Save + Share — no Suggest in the row (pass-45 #384)', () => {
+    const { container } = render(
+      <ListDetailTools themeSlug="firsts" themeTitle="Firsts that hold up" />,
     )
+    const tools = screen.getByTestId('list-tools')
+    expect(tools.querySelector('[data-testid="list-save"]')).not.toBeNull()
+    expect(tools.querySelector('[data-testid="list-share"]')).not.toBeNull()
+    expect(tools.querySelector('[data-testid="list-suggest"]')).toBeNull()
+    expect(container.textContent ?? '').not.toMatch(/suggest an entry/i)
   })
 })

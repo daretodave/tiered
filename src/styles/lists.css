@@ -917,3 +917,29 @@ h1.list-title {
   margin-top: 6px;
   line-height: 1.45;
 }
+
+/* SUGGEST-ENTRY CTA (pass-45 #384 closure) — editorial-footer slot
+   that participation-frames "Suggest an entry →" outside the reader-
+   scope action row (Save / Share). Mirrors the .adj-tag verb-arrow
+   typography so the participation CTA reads as a sibling of the
+   adjacent-lists rail rather than as a button-bar peer of Save/Share. */
+.list-suggest-cta {
+  padding: 32px 0 64px;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .list-suggest-cta {
+    padding: 24px 0 48px;
+  }
+}
+.list-suggest-cta .suggest-link {
+  font: 500 11px/1 var(--font-family-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  text-decoration: none;
+  transition: color var(--duration-base) var(--ease-settle);
+}
+.list-suggest-cta .suggest-link:hover {
+  color: var(--color-ink-0);
+}

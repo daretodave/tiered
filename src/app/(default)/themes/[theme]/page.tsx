@@ -16,6 +16,7 @@ import { Wrap } from '@/components/chrome/Wrap'
 import { AdjacentLists } from '@/components/lists/AdjacentLists'
 import { ListDetailHero } from '@/components/lists/ListDetailHero'
 import { ListEntryStack } from '@/components/lists/ListEntryStack'
+import { SuggestEntryCTA } from '@/components/lists/SuggestEntryCTA'
 import { buildJsonLd, buildMetadata, jsonLdScriptProps } from '@/lib/seo'
 
 type Params = { theme: string }
@@ -107,6 +108,7 @@ export default function ThemePage({ params }: { params: Params }) {
         seasonSlugByKey={seasonSlugByKey}
       />
       <AdjacentLists theme={theme} related={related} />
+      <SuggestEntryCTA themeTitle={theme.title} />
     </Wrap>
   )
 }

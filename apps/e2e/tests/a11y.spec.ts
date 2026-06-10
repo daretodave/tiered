@@ -32,9 +32,11 @@ const DESKTOP_PAGES = [
   '/shows/survivor/season/borneo',
   '/themes',
   // The list-detail family (12 lists, one template) is the most
-  // interactive surface the matrix previously skipped — Save/Share/
-  // Suggest tools, a meta strip, a shield badge, a ranked entry
-  // stack. best-premieres is the design gold-standard + cross-canon.
+  // interactive surface the matrix previously skipped — Save/Share
+  // tools, a meta strip, a shield badge, a ranked entry stack, and
+  // (post pass-45 #384) the editorial-footer Suggest-an-entry CTA
+  // outside the primary action row. best-premieres is the design
+  // gold-standard + cross-canon.
   '/themes/best-premieres',
   '/about',
   // The auth-funnel entry — the only path into magic-link sign-in,
@@ -49,11 +51,13 @@ const MOBILE_PAGES = [
   '/',
   '/shows/survivor',
   '/shows/survivor/season/borneo',
-  // The list-detail family at 375px. Tools-row buttons (Save / Share /
-  // Suggest) and the shield role=status carry aria contracts the
-  // desktop scan already pins (#228); the mobile pass adds touch-target
-  // size + 375px reflow over the stats strip, tools row, and ranked
-  // entry stack. best-premieres mirrors the desktop pick for parity.
+  // The list-detail family at 375px. Tools-row buttons (Save / Share)
+  // and the shield role=status carry aria contracts the desktop scan
+  // already pins (#228); the mobile pass adds touch-target size +
+  // 375px reflow over the stats strip, tools row, ranked entry stack,
+  // and (post pass-45 #384) the editorial-footer Suggest-an-entry CTA
+  // outside the primary action row. best-premieres mirrors the desktop
+  // pick for parity.
   '/themes/best-premieres',
   // The show IA hub at 375px. Pins tier-band heading order (TierHead /
   // glyph / count per S/A/B/C), tile-variant reflow over the cols-2

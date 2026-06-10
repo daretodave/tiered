@@ -124,17 +124,21 @@ describe('<ListDetailHero>', () => {
     expect(revised).not.toMatch(/this week|this month|this year|today|yesterday/i)
   })
 
-  it('shows tools row with save/share/suggest + shield', () => {
+  // Critique pass-45 #384 closure: the hero renders the reader-scope
+  // tools row (Save + Share + shield) only. Suggest moved out of the
+  // hero into <SuggestEntryCTA>, an editorial-footer slot rendered by
+  // the /themes/[theme] page route below AdjacentLists. The hero is
+  // now Suggest-free; the page-level pin lives in SuggestEntryCTA's
+  // colocated test.
+  it('shows tools row with reader-scope Save + Share + shield, no Suggest', () => {
     render(
       <ListDetailHero theme={theme()} shows={[show()]} />,
     )
     expect(screen.getByTestId('list-save')).toBeTruthy()
     expect(screen.getByTestId('list-share')).toBeTruthy()
-    const suggestHref = screen.getByTestId('list-suggest').getAttribute('href') ?? ''
-    expect(suggestHref).toMatch(/^mailto:editors@tiered\.tv/)
-    expect(suggestHref).not.toMatch(/tiered\.app/)
     const shield = screen.getByTestId('list-shield')
     expect(shield.getAttribute('aria-label')).toContain('No spoilers')
+    expect(screen.queryByTestId('list-suggest')).toBeNull()
   })
 
   it('singular meta for a single-entry single-show theme', () => {

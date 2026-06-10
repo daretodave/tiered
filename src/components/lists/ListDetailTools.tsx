@@ -1,5 +1,13 @@
 'use client'
 
+// Critique pass-45 #384 closure: SUGGEST AN ENTRY moved out of this
+// row into the standalone <SuggestEntryCTA> (rendered as an editorial-
+// footer slot by the page route). The primary action row now carries
+// only reader-scope actions — Save (the reader's relationship to the
+// list-as-object) and Share (the reader's relationship to the URL) —
+// plus the spoiler shield. The verb-object scope of every button in
+// this row matches a peer's scope.
+
 import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'tiered_saved_lists'
@@ -68,10 +76,6 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
     }
   }
 
-  const mailto = `mailto:editors@tiered.tv?subject=${encodeURIComponent(
-    `Suggest entry: ${themeTitle}`,
-  )}`
-
   return (
     <div className="list-tools" data-testid="list-tools">
       <div className="tools-left">
@@ -101,14 +105,6 @@ export function ListDetailTools({ themeSlug, themeTitle }: ListDetailToolsProps)
         >
           {copyState === 'copied' ? 'Link copied' : 'Share'}
         </button>
-        <a
-          className="tool-btn"
-          href={mailto}
-          aria-label={`Suggest an entry for ${themeTitle}`}
-          data-testid="list-suggest"
-        >
-          Suggest an entry
-        </a>
       </div>
       <span
         className="tool-btn shield"
