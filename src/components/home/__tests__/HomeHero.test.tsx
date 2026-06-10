@@ -78,7 +78,14 @@ describe('<HomeHero>', () => {
     render(<HomeHero featured={survivor()} canonRevisedLabel={CANON_LABEL} />)
     const stats = screen.getByTestId('home-hero-stats')
     expect(stats.textContent).toContain('47')
-    expect(stats.textContent).toContain('Seasons ranked')
+    // Critique pass-44 (#379): the home featured tile labels the
+    // per-show count as `Seasons in canon` (scope: the featured
+    // show's canon length) to disambiguate from /shows hero's
+    // catalog-aggregate `Seasons ranked` slot. Bidirectional pin
+    // — positive: present; negative: the rejected `Seasons ranked`
+    // is gone (so a future refactor that reverts it trips here).
+    expect(stats.textContent).toContain('Seasons in canon')
+    expect(stats.textContent).not.toContain('Seasons ranked')
     expect(stats.textContent).toContain('Canon revised')
     expect(screen.getByTestId('home-hero-canon-revised').textContent).toBe(
       CANON_LABEL,
@@ -137,9 +144,10 @@ describe('<HomeHero>', () => {
     expect(screen.getByTestId('home-hero-stats').textContent).not.toContain(
       'Canon revised',
     )
-    // Seasons-ranked cell still renders alongside the empty slot.
+    // Seasons-in-canon cell still renders alongside the empty slot
+    // (post-pass-44 #379 rotation; see the chrome-label test above).
     expect(screen.getByTestId('home-hero-stats').textContent).toContain(
-      'Seasons ranked',
+      'Seasons in canon',
     )
   })
 

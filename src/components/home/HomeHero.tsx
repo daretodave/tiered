@@ -4,7 +4,13 @@ import type { Show } from '@/content'
 
 type HomeHeroProps = {
   featured: Show
-  /** "Seasons ranked" stat — defaults to `featured.seasons`. */
+  /**
+   * "Seasons in canon" stat — defaults to `featured.seasons`.
+   * Critique pass-44 (#379) rotated the chrome label from
+   * `SEASONS RANKED` (the catalog-aggregate framing /shows
+   * still carries) to `SEASONS IN CANON` (per-show scope, the
+   * editorial unit the home featured tile is sized to).
+   */
   seasonsRanked?: number
   /**
    * "Canon revised" stat label — pre-formatted as `Month YYYY`, or
@@ -61,7 +67,7 @@ export function HomeHero({
           <div className="cover-stats" data-testid="home-hero-stats">
             <div className="cover-stat">
               <div className="cover-stat-val">{seasons}</div>
-              <div className="cover-stat-key">Seasons ranked</div>
+              <div className="cover-stat-key">Seasons in canon</div>
             </div>
             {canonRevisedLabel != null ? (
               <div className="cover-stat">

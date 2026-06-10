@@ -47,11 +47,14 @@ for (const url of showHomeUrls) {
       // Critique pass 15: the seasons stat label is derived from canon
       // coverage (src/lib/canon/seasons-stat-label.ts). Survivor is the
       // gold-standard fully-drained show — every aired season has a canon
-      // slot — so its hero must read "seasons ranked", matching the home
-      // featured stamp + /shows index total rather than under-claiming
-      // "seasons aired". Pins the page.tsx wiring end-to-end (the unit
-      // test pins the helper; this pins that the page feeds it the canon
-      // entry count, not the aired count).
+      // slot — so its hero must read "seasons ranked", staying in the
+      // catalog-aggregate `Seasons ranked` family /shows index total
+      // also carries (the home featured tile rotated to `Seasons in
+      // canon` per pass-44 #379; the show-page hero label was
+      // intentionally left out of that rotation's scope). Pins the
+      // page.tsx wiring end-to-end (the unit test pins the helper;
+      // this pins that the page feeds it the canon entry count, not
+      // the aired count).
       if (slug === 'survivor') {
         const seasonsStat = heroStats
           .locator('.stat')

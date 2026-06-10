@@ -30,8 +30,18 @@ describe('<ShowsHero>', () => {
     expect(screen.getByTestId('shows-stat-seasons').textContent).toContain(
       '290',
     )
+    // Critique pass-44 (#379): /shows hero owns the catalog-aggregate
+    // `Seasons ranked` slot. The home featured tile rotated to
+    // `Seasons in canon` to carry the per-show scope; this surface
+    // keeps the original label so the two read as distinct facts
+    // on the home → /shows click path. Bidirectional pin — positive:
+    // the catalog claim is present; negative: the per-show rotation
+    // never leaks here.
     expect(screen.getByTestId('shows-stat-seasons').textContent).toContain(
       'Seasons ranked',
+    )
+    expect(screen.getByTestId('shows-stat-seasons').textContent).not.toContain(
+      'Seasons in canon',
     )
     expect(screen.getByTestId('shows-stat-revised').textContent).toContain(
       'May 2026',

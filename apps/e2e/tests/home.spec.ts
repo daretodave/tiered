@@ -76,12 +76,17 @@ test('hero cover names the featured show + go-pill links to /shows/<slug>', asyn
   await expect(go).toHaveAttribute('href', /^\/shows\/[a-z][a-z0-9-]*$/)
 })
 
-test('hero stat strip surfaces seasons ranked + canon revised', async ({
+test('hero stat strip surfaces seasons in canon + canon revised', async ({
   page,
 }) => {
   await page.goto('/')
   const stats = page.getByTestId('home-hero-stats')
-  await expect(stats).toContainText(/seasons ranked/i)
+  // Critique pass-44 (#379): the home featured tile labels the
+  // per-show count as `Seasons in canon` (not the catalog-aggregate
+  // `Seasons ranked` that /shows hero owns). End-to-end pin
+  // mirroring the colocated unit pin in HomeHero.test.tsx.
+  await expect(stats).toContainText(/seasons in canon/i)
+  await expect(stats).not.toContainText(/seasons ranked/i)
   await expect(stats).toContainText(/canon revised/i)
   // Canon revised label is the editorial "Month YYYY" form (critique
   // pass 7 retired the ambiguous MM / YY shape); cheap shape check.
