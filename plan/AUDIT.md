@@ -13,6 +13,8 @@
        > Bias: <category> (set 2026-MM-DD via oversight, valid for N ticks)
      Multiplies findings of <category> by 1.5x for ranking. -->
 
+> Bias: content-gaps (set 2026-06-11 via oversight, valid for 10 ticks)
+
 ## Pending
 
 <!-- Format:

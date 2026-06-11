@@ -23,414 +23,6 @@
 **Scope sketch:** <2-3 lines of what would ship>
 -->
 
-### 11. Extend the colocated-test coverage gate to `src/app/**`
-
-**Score:** 5.5 (impact: 5, ease: 5, +2 multi, +1 cheap-and-impactful)
-**Source pass:** 12
-**Filed:** 2026-05-29
-**Source signals:**
-- Commit pattern (signal G) — an **~11-commit reactive
-  `/iterate` drain** of `src/app/**` colocated tests since the
-  phase-42 gate landed: #210 (`/mod`), #211 (root `layout.tsx`),
-  #212 (`shows/[show]/layout.tsx`), #218 (`shows/[show]`), #219
-  (`season/[slug]`), #220 (`themes/[theme]`), #221
-  (`(default)/layout.tsx`), #222 (`privacy`), #223 (`terms`),
-  #224 (`not-found.tsx`) — plus the earlier #180/#193/#206 and
-  the #131–#179 route-handler/OG/sitemap/robots batch. Each is a
-  `test: colocate <X>` commit paired with an `audit:` row.
-- Audit (signal A) — **every one of those AUDIT rows names the
-  gap in the same words**: "The phase-42 colocated-coverage gate
-  (`scripts/check-test-colocation.mjs`) walks `src/components/**`,
-  `src/lib/**`, `src/content/**` but **not** `src/app/**`, so
-  app-route files are drained reactively by `/iterate`."
-- Source confirmation — `scripts/check-test-colocation.mjs:24`
-  literally reads `const ROOTS = ['src/components', 'src/lib',
-  'src/content']`; `src/app` is absent.
-- Prior art — **Phase 42 is the proof.** It was promoted
-  (`PHASE_CANDIDATES` #10, score 5.5) on the *identical*
-  argument: a 16-commit reactive drain (#105–#120) of
-  `src/components/**`/`src/lib/**` files shipping untested,
-  fixed by shifting §5a enforcement left into `pnpm verify`.
-  Phase 42 deliberately stopped at the `src/app` boundary; the
-  loop has since spent ~11 ticks reactively draining exactly
-  that boundary. As of this pass the tree is drained to **one
-  remaining file** (`src/app/internal/rank-shift-demo/page.tsx`,
-  a build-flag-gated demo) — the same "drained to completion but
-  no gate guards the regression" state `src/components/**` was in
-  when Phase 42 shipped.
-
-**Why:** §5a ("every commit ships unit tests") is a
-non-negotiable standing rule, and the highest-traffic route tree
-on the site (`src/app/**` — every page, layout, and route
-handler) is the one tree the existing verify-time gate does not
-guard. The cost of leaving it ungated is now measured: an
-~11-tick reactive drain that re-opens the moment the next
-untested page/layout/route lands. The honest fix is the Phase 42
-move applied to one more tree: add `'src/app'` to the gate's
-`ROOTS`, allowlist the genuinely-untestable shapes, and let
-verify fail the instant an app-route module ships without a
-colocated test — instead of `/iterate` catching it ticks later
-and burning a polish tick per file. The drain already authored
-precedent tests for every app-route file shape (page, dynamic
-`[segment]` page, redirect-page, `route.ts` handler,
-`opengraph-image.tsx`, `sitemap.ts`/`robots.ts`, `layout.tsx`,
-`not-found.tsx`), so the gate flip is unlikely to surface new
-stragglers beyond the one demo to allowlist.
-
-**Scope sketch:**
-- Add `'src/app'` to `ROOTS` in
-  `scripts/check-test-colocation.mjs` (+ its pure-logic library
-  in `scripts/lib/`); keep the reference-check (the colocated
-  test must import the target module, not merely share a name).
-- Allowlist `src/app/internal/rank-shift-demo/page.tsx` (the
-  build-flag-gated internal demo that never ships to prod), plus
-  any App Router file types that genuinely carry no testable
-  logic (verify against the real tree at pickup — the drain
-  suggests there are none beyond the demo).
-- Extend the gate's own colocated tests: an `src/app` page
-  passes when colocated, fails when testless, fails on
-  filename-match-but-wrong-target (the #120 false-negative
-  class).
-- Follow-up housekeeping: #148 (the still-open `needs-user` issue
-  to wire `pnpm check:test-colocation` into `march.yml` call-1)
-  becomes more load-bearing once the gate covers `src/app` —
-  flag it in the brief but it stays a separate local-`/oversight`
-  push (cloud GitHub App lacks the `workflows` scope).
-
-**Estimated phases:** 1.
-**Conflicts:** none. Hardens an existing non-negotiable standing
-rule across its last uncovered tree; no URL change, no schema
-change. Directly extends Phase 42's precedent.
-
-### 12. Brand-spelling discipline (lax→strict invariant for `tiered.tv` wordmark)
-
-**Score:** 6.6 (impact: 6, ease: 6, +2 multi, +1 cheap-and-impactful)
-**Source pass:** 16
-**Filed:** 2026-06-01
-**Source signals:**
-- Critique (signal B) — **two pass-24 findings of the same class**
-  on customer-facing surfaces, both explicitly invoking CLAUDE.md
-  hard rule 6 ("The brand name is `tiered.tv` — always lowercase,
-  including the `.tv` suffix. Never capitalize the T. The dot is
-  part of the wordmark; never stylize, color, or kern it apart").
-  (a) **MED** [anon] `/sign-in` page `<meta name="description">`
-  reads `Sign in to tiered.` — the brand has been truncated to
-  `tiered.`, dropping the `.tv` suffix while leaving the
-  wordmark's dot stranded as a sentence-ending fullstop. Source:
-  `src/app/(default)/sign-in/page.tsx:12`. The finding itself
-  proposes the invariant: "extend the existing
-  `scripts/content-check.ts` brand-spelling check (if any;
-  otherwise add one) that scans every `description` string
-  returned from a `buildMetadata` call across the route tree and
-  rejects any value matching `\btiered\.\s*(?!tv)`". (b) **LOW**
-  [authed] `/themes/[theme]` `Suggest an entry` mailto targets
-  `editors@tiered.app` — the internal auth-tenant TLD bleeding
-  into customer-facing copy. Source:
-  `src/components/lists/ListDetailTools.tsx:71`. The finding
-  proposes: "a new content-check invariant scanning all
-  user-facing mailto / href attributes for `tiered\.app` and
-  flagging any match outside the auth-tenant infrastructure
-  paths (Auth0 permissions claim, e2e test user, api audience)".
-- Source confirmation (signal A) — verified the violations exist
-  *and* a third instance the critique walks didn't surface:
-  (i) `src/app/(default)/sign-in/page.tsx:12` →
-  `'Sign in to tiered. Magic link by email.'`;
-  (ii) `src/components/lists/ListDetailTools.tsx:71` →
-  `\`mailto:editors@tiered.app?subject=...\``;
-  (iii) `src/app/(default)/mod/page.tsx:19` →
-  `'Moderation queue for tiered (mod role only).'` — same
-  truncation class as (i), this one without the stranded dot
-  (CLAUDE.md rule 6 covers both: the bare `tiered` token without
-  `.tv` is the brand truncated, period or no period); the route
-  is `noIndex: true` like `/sign-in` but the description still
-  ships in the rendered head and falls back as OG description on
-  preview crawlers per the same reasoning the critique pass-24
-  row already worked through. Three distinct customer-facing
-  surfaces, two classes (truncation + wrong-TLD bleed), zero
-  current automated enforcement.
-- Standing-rule alignment — CLAUDE.md hard rule 6 is one of five
-  "never break" rules in the project's primary entry-point
-  document ("Honor this file before improvising"). The rule is
-  enforced *reactively* today: every brand-spelling violation
-  has to be caught by a critique pass and drained by an iterate
-  tick. There is no proactive verify-time gate.
-- Prior art (signal A) — **Phases 41, 42, 43 are the proofs.**
-  Each was promoted on the identical argument: a standing rule
-  enforced reactively, drained per-tick, gated structurally only
-  after a phase shifted enforcement left into `pnpm verify`. The
-  exact pattern (lax→strict invariant in `scripts/content-check.ts`
-  with a `STRICT` flag flipped on the final drain tick) is now
-  used by 7 other invariants: `STRICT` (canon coverage),
-  `CROSS_SHOW_STRICT` (themed-list cross-show floor),
-  `YEAR_TENURE_STRICT` (year/tenure derivation, with
-  `TENURE_ANCHOR_ALLOWLIST` for milestone callouts),
-  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
-  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`
-  (`scripts/content-check.ts:682-780`). A `BRAND_SPELLING_STRICT`
-  alongside these is a clean extension of an established,
-  well-tested pattern.
-
-**Why:** CLAUDE.md hard rule 6 is one of the project's five
-non-negotiable identity rules — and the only one that ships
-*without* a verify-time gate, with three customer-facing surfaces
-currently violating it (two `tiered.` truncations and one
-`tiered.app` TLD bleed). The reactive cost is measured: the
-pass-24 critique surfaced (a) and (b), `/mod` (iii) only
-surfaced under this expand pass's targeted sweep, and there is
-no machinery to catch the *next* drift before the next critique
-window. The honest fix is the phase-43 move applied to the
-brand wordmark: a lax→strict invariant in
-`scripts/content-check.ts` that scans (1) every rendered
-`description` literal returned from `buildMetadata` callers
-across the route tree for `\btiered\b` not immediately followed
-by `\.tv\b`, (2) every customer-facing `mailto:` / `href`
-literal in `src/components/**` and `src/app/**` for
-`@tiered\.app` or `tiered\.app` outside an explicit
-infrastructure allowlist (Auth0 permissions claim `permissions.ts`,
-e2e test-user mailbox in test fixtures, api audience constants),
-(3) every editorial copy literal in `content/**/*.md` for the
-same patterns. Allowlist mechanism mirrors phase 43's
-`TENURE_ANCHOR_ALLOWLIST` precedent (`scripts/content-check.ts`)
-for legitimate uses of the bare english word `tiered` as a
-past-participle verb — e.g. `src/components/shows/ShowsHero.tsx:18`
-`<em>Tiered.</em>` ("All shows. Tiered.") is editorial wordplay
-on the english adjective; whether it stays as-is, gets
-lowercased to `<em>tiered.</em>` to honor the wordmark, or gets
-recast entirely is a curator call surfaced *by* the lax-mode
-sweep, not pre-decided in the phase brief. Ships strict on the
-final drain tick, matching the phase 41/43 cadence. Closes the
-class permanently; the verify gate then catches any future
-authoring drift the moment it lands instead of the next
-critique window.
-
-**Scope sketch:**
-- Add `collectBrandSpellingIssues` helper to
-  `scripts/content-check.ts` (or a new
-  `scripts/lib/check-brand-spelling.mjs` library + colocated test
-  per the phase-42 lib-pattern). Scans three surface families:
-  - rendered metadata `description` literals from `buildMetadata`
-    callers (mirrors phase 43's `collectYearTenureIssues` shape —
-    walks `src/app/**` for `buildMetadata({ ... description: ...
-    })` call sites and validates the string);
-  - customer-facing href / mailto literals in `src/components/**`
-    and `src/app/**` (excluding test files, the existing Auth0
-    permissions infrastructure path, and an explicit
-    `BRAND_DOMAIN_INFRA_ALLOWLIST`);
-  - editorial copy literals in `content/**/*.md` (excluding
-    intentional uses surfaced by the lax-mode drain and
-    documented in an editorial allowlist).
-- Add `BRAND_SPELLING_STRICT` constant (`= false` on the first
-  tick that lands the helper, paired with a 3-violation drain
-  across `/sign-in`, `/mod`, and the mailto on the same tick;
-  flip to `= true` on the final tick or the immediately following
-  tick once the surface is clean and the allowlist nuance for
-  `ShowsHero.tsx`'s `<em>Tiered.</em>` is editorially resolved —
-  exact lax→strict cadence as phase 43).
-- Allowlist scaffolding: `BRAND_DOMAIN_INFRA_ALLOWLIST` (paths
-  where `tiered.app` is the auth-tenant identifier and is
-  correct: `src/lib/auth0/permissions.ts`,
-  `src/lib/auth0/__tests__/permissions.test.ts`,
-  `src/app/api/mod/action/__tests__/route.test.ts`,
-  `src/app/(default)/mod/__tests__/page.test.tsx`,
-  `scripts/mint-e2e-cookie.mjs`, the bearings line that documents
-  the e2e@tiered.app user, the `audience: https://api.tiered.app`
-  Auth0 audience constant). `BRAND_ADJECTIVE_ALLOWLIST` for
-  editorial-intentional capital-T uses if any survive the curator
-  pass (default empty; populated only on explicit curator
-  decision).
-- Concrete drain order (priority queue, single-tick targets):
-  1. `/sign-in` description → `Sign in to tiered.tv. Magic link
-     by email.` (closes pass-24 MED, source-resolution in test +
-     production).
-  2. `/mod` description → `Moderation queue for tiered.tv (mod
-     role only).` (closes the third sibling violation).
-  3. `ListDetailTools.tsx` mailto → `editors@tiered.tv` (closes
-     pass-24 LOW; sister test in `ListDetailHero.test.tsx`
-     updated in lockstep; tests at
-     `ListDetailTools.test.tsx:59` + `ListDetailHero.test.tsx:80`
-     swap from `mailto:editors@tiered\.app` to
-     `mailto:editors@tiered\.tv`; operator question: whether an
-     `editors@tiered.tv` forwarder needs to be set up before the
-     code edit ships — the existing inbox lives at
-     `editors@tiered.app`; if not, the fix has a 2-tick shape
-     [code edit + operational forwarder]; if so, single tick).
-  4. `ShowsHero.tsx` `<em>Tiered.</em>` editorial decision (curator
-     call: lowercase the wordmark to `<em>tiered.</em>` for
-     identity consistency, OR recast the H1 to a non-wordmark
-     fragment that doesn't echo the brand, OR allowlist the
-     english-adjective use; document in commit body whichever
-     direction is taken).
-- Pin: colocated test of `collectBrandSpellingIssues` exercises
-  each shape — positive (clean surface), negative (each violation
-  class), allowlist match (auth-tenant infra path, editorial
-  adjective if allowed). Integration test: `pnpm content:check`
-  catches a fresh violation seeded in a fixture surface and
-  fails. e2e: no new spec owed — the verify gate is the
-  enforcement layer; no URL behavior change.
-- Follow-up housekeeping: the operational forwarder
-  (`editors@tiered.tv`) is the one external dependency outside
-  the verify gate's reach. The phase brief flags it for the
-  user's call at promotion time; the code change can land before
-  the forwarder if the editorial team is willing to redirect on
-  receipt or use a redirect rule, or after if a cleaner inbox
-  swap is preferred. Either way, the gate is the persistent
-  artifact.
-
-**Estimated phases:** 1.
-**Conflicts:** none. Hardens an existing CLAUDE.md hard rule
-across the surface families that currently bleed it; no URL
-change, no schema change; the operational forwarder setup is the
-only external dependency, flagged for the user at promotion.
-Directly extends Phase 41/42/43's lax→strict invariant precedent
-established in `scripts/content-check.ts`.
-
-### 13. Editorial-cliché repetition guard (cross-corpus phrase-frequency invariant)
-
-**Score:** 6.0 (impact: 5, ease: 6, +2 multi, +1 cheap-and-impactful)
-**Source pass:** 17
-**Filed:** 2026-06-02
-**Source signals:**
-- Critique (signal B) — **pass-25 MED finding** (`plan/CRITIQUE.md:416`)
-  catalogues `measures? itself against` / `measured against` as
-  the fallback canonical-claim closer across **10+ surfaces in
-  the content corpus**, reaching **4 in a single anon walk**
-  (home → /shows/survivor → /shows/survivor/season/heroes-vs-villains
-  → /themes/best-finales), with two of those four landing on the
-  *same page* (HvV pull-quote `content/shows/survivor/seasons/20-heroes-vs-villains.md:14`
-  AND HvV body closer `:43`). Other surfaces enumerated by the
-  finding: `content/shows/survivor/canon.md:53` slot #02 tag,
-  `content/themes/best-finales.md:26` entry #02,
-  `content/themes/best-returnees.md:20` entry #01,
-  `content/themes/best-post-merge.md:21` entry #01,
-  `content/themes/best-villain-editing.md:21` entry blurb,
-  `content/shows/amazing-race.md:11` tagline,
-  `content/shows/top-chef.md:11` tagline,
-  `content/shows/big-brother/canon.md:11` tier-S blurb + `:109`
-  entry body, `content/shows/project-runway/seasons/04-new-york-2007.md:12`
-  pull. **The finding itself proposes the invariant** verbatim:
-  "extend `scripts/content-check.ts` with a
-  `collectClicheRepetitionIssues` pass that counts cross-surface
-  occurrences of high-leverage editorial phrases (`measures?
-  itself against`, `measured against`, candidates for future
-  additions like `set the bar`, `the bar every`) and flags
-  >3-occurrence drift — the same guard pattern
-  `collectYearTenureIssues` uses for `est_year` math, but for
-  phrase-reuse."
-- Standing-rule alignment — `plan/bearings.md` voice rule
-  ("knowledgeable peer — confident, warm, plain-spoken, never
-  pretentious. Plain sentences over clever ones.") + CLAUDE.md
-  "Tone of voice" section ("knowledgeable peer. Confident, warm,
-  plain-spoken"). A clever fragment that lands the first time is
-  earned; the same fragment reused 10+ times is the editor's tic.
-  Pass-25 is the second walk to catch a cross-surface clever-tic
-  repetition (pass-19/20/22 caught **recompute** on the community
-  pane, drained reactively as the candidate-#12-class
-  BRAND_SPELLING precedent). No proactive verify-time gate
-  exists for cross-surface phrase-frequency drift today.
-- Prior art (signal A) — **Phases 41, 43 + candidate #12 are the
-  proofs.** Each carries the identical shape: an editorial
-  standing rule enforced reactively (drained per-tick by
-  critique→iterate), gated structurally only after a
-  `scripts/content-check.ts` lax→strict invariant phase lands. The
-  `STRICT`-flag pattern is now used by 7 invariants
-  (`scripts/content-check.ts:682-780`): `STRICT` (canon coverage),
-  `CROSS_SHOW_STRICT` (cross-show floor), `YEAR_TENURE_STRICT`
-  (with `TENURE_ANCHOR_ALLOWLIST` for milestone exceptions),
-  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
-  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`.
-  Candidate #12 (BRAND_SPELLING_STRICT, score 6.6) is the eighth,
-  already awaiting promotion. A `CLICHE_REPETITION_STRICT`
-  alongside these is a clean extension of an established pattern,
-  with the distinct twist that the check is *cross-surface
-  frequency* rather than per-surface shape — the existing
-  invariants validate one file at a time; this one aggregates
-  occurrences across `content/**/*.md` and rejects when a
-  registered phrase exceeds the threshold.
-- Source confirmation — `rg -n "measures? itself against|measured
-  against" content/` independently verifies the 10+ surface count
-  the critique row claims; the registry-extensibility argument
-  (`set the bar`, `the bar every`) is corroborated by a separate
-  `rg -n "sets? the bar|the bar every" content/` returning
-  additional pre-existing matches across show + theme corpora.
-
-**Why:** The editorial voice rule is one of the project's
-standing identity rules, and pass-25's finding measured the cost
-of leaving it ungated: a single clever fragment metastasised
-across 10+ surfaces and reaches a casual reader 4 times before
-they've left the survivor walk. The fix has two halves: (1)
-drain the 9+ extant uses down to one high-leverage retention
-(recommended: HvV's pull-quote at
-`content/shows/survivor/seasons/20-heroes-vs-villains.md:14`,
-where the metaphor lands cleanest and the editorial weight is
-highest), and (2) ship a `CLICHE_REPETITION_STRICT` invariant
-with an extensible phrase registry so the *next* cross-surface
-clever-tic drift fails at verify-time instead of after the next
-critique window. The drain alone is an iterate-shape job; the
-drain + invariant + extensible registry is honestly a phase
-shape and matches the cadence + structure of phases 41/43 + the
-already-pending candidate #12 exactly. Ships strict on the final
-drain tick (mirrors the phase 41/43 pattern). Closes the class
-permanently for any phrase the registry covers; subsequent
-critique passes that surface a new clever-tic cluster (e.g. the
-`set the bar` / `the bar every` candidates the finding itself
-flags) add a registry row instead of authoring a new phase.
-
-**Scope sketch:**
-- Add `collectClicheRepetitionIssues` to `scripts/content-check.ts`
-  (or a new `scripts/lib/check-cliche-repetition.mjs` library +
-  colocated test per the phase-42 lib-pattern). Walks
-  `content/**/*.md`, aggregates a per-phrase occurrence count
-  across the corpus (frontmatter + body), and flags when any
-  registered phrase exceeds a per-phrase threshold (default 3 —
-  the bearings voice rule's "the third time it's a tic"
-  threshold the pass-25 finding articulates).
-- Phrase registry seeds the proven repeat-offender from pass-25
-  (`measures? itself against` / `measured against`) at threshold
-  3, with the pass-25-flagged future candidates (`set the bar`,
-  `the bar every`) added at threshold 4 after a pre-flight `rg`
-  audit confirms the current corpus is below threshold (else
-  scope-creep risk — the drain budget owes those too).
-- Allowlist mechanism mirrors phase 43's `TENURE_ANCHOR_ALLOWLIST`
-  precedent: a per-phrase `{ phrase, threshold, allowlist:
-  [<filepath>:<line>] }` registry entry lets the curator pin
-  the one surface that retains the phrase (e.g. HvV pull-quote
-  for `measures itself against`) without tripping the gate.
-- Editorial drain (content-curator brief): rewrite the 9+ extant
-  `measures itself against` surfaces with material specific to
-  the work each entry does — HvV's body closer leans on the
-  post-merge density it already names; Survivor canon slot #02
-  tag foregrounds the casting-as-format observation;
-  best-finales #02 entry names what specifically lands in the
-  closing run; best-returnees #01 names the format-defining
-  returnee dynamic; per-show taglines (Amazing Race, Top Chef,
-  Big Brother) name the show-specific format leadership argument
-  (airport-backpack rhythm, Restaurant Wars reckoning,
-  alliance-as-format engine).
-- Lax→strict cadence (mirrors phases 41/43/candidate #12): each
-  drain tick reduces the corpus count by 1-2 phrases below
-  threshold; final tick flips `CLICHE_REPETITION_STRICT = true`
-  in `scripts/content-check.ts` and adds the strict-mode
-  invariant assertion to `pnpm content:check`.
-- Unit tests: colocated tests for the helper validate the
-  threshold-counting + allowlist exclusion + multi-phrase
-  aggregation; bonus regression-pin tests assert specific
-  current corpus counts (e.g. `measures itself against` count
-  after drain is exactly N) so a future re-introduction fails
-  at unit time.
-- No URL change. No schema change. No e2e fixture row owed (no
-  e2e pins any of the to-be-rewritten phrases). Spoiler P0
-  intact (voice/editorial edits only, no canon position or
-  verdict changes).
-
-**Estimated phases:** 1.
-**Conflicts:** none. Hardens the editorial voice rule across its
-last uncovered surface (cross-corpus phrase-frequency), no URL
-change, no schema change. Directly extends Phase 41/43 +
-candidate #12's lax→strict invariant precedent established in
-`scripts/content-check.ts`, with the distinct twist that the
-check aggregates across files instead of validating one file at
-a time.
-
 <!-- Pass 27 (2026-06-09, commit 2adef0d) — 0 candidates filed.
      Signals reviewed:
      - AUDIT.md: 0 actionable Pending rows (only the format
@@ -1805,6 +1397,420 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in 01_build_plan.md> -->
+
+### 12. Brand-spelling discipline (lax→strict invariant for `tiered.tv` wordmark)
+
+**Score:** 6.6 (impact: 6, ease: 6, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 16
+**Filed:** 2026-06-01
+**Promoted in:** oversight 2026-06-11 (build plan re-exhausted; all three pending candidates promoted at once, user-approved).
+**Build-plan row:** Phase 44 - Brand-spelling discipline (lax-to-strict BRAND_SPELLING_STRICT invariant) (`01_build_plan.md`)
+**Source signals:**
+- Critique (signal B) — **two pass-24 findings of the same class**
+  on customer-facing surfaces, both explicitly invoking CLAUDE.md
+  hard rule 6 ("The brand name is `tiered.tv` — always lowercase,
+  including the `.tv` suffix. Never capitalize the T. The dot is
+  part of the wordmark; never stylize, color, or kern it apart").
+  (a) **MED** [anon] `/sign-in` page `<meta name="description">`
+  reads `Sign in to tiered.` — the brand has been truncated to
+  `tiered.`, dropping the `.tv` suffix while leaving the
+  wordmark's dot stranded as a sentence-ending fullstop. Source:
+  `src/app/(default)/sign-in/page.tsx:12`. The finding itself
+  proposes the invariant: "extend the existing
+  `scripts/content-check.ts` brand-spelling check (if any;
+  otherwise add one) that scans every `description` string
+  returned from a `buildMetadata` call across the route tree and
+  rejects any value matching `\btiered\.\s*(?!tv)`". (b) **LOW**
+  [authed] `/themes/[theme]` `Suggest an entry` mailto targets
+  `editors@tiered.app` — the internal auth-tenant TLD bleeding
+  into customer-facing copy. Source:
+  `src/components/lists/ListDetailTools.tsx:71`. The finding
+  proposes: "a new content-check invariant scanning all
+  user-facing mailto / href attributes for `tiered\.app` and
+  flagging any match outside the auth-tenant infrastructure
+  paths (Auth0 permissions claim, e2e test user, api audience)".
+- Source confirmation (signal A) — verified the violations exist
+  *and* a third instance the critique walks didn't surface:
+  (i) `src/app/(default)/sign-in/page.tsx:12` →
+  `'Sign in to tiered. Magic link by email.'`;
+  (ii) `src/components/lists/ListDetailTools.tsx:71` →
+  `\`mailto:editors@tiered.app?subject=...\``;
+  (iii) `src/app/(default)/mod/page.tsx:19` →
+  `'Moderation queue for tiered (mod role only).'` — same
+  truncation class as (i), this one without the stranded dot
+  (CLAUDE.md rule 6 covers both: the bare `tiered` token without
+  `.tv` is the brand truncated, period or no period); the route
+  is `noIndex: true` like `/sign-in` but the description still
+  ships in the rendered head and falls back as OG description on
+  preview crawlers per the same reasoning the critique pass-24
+  row already worked through. Three distinct customer-facing
+  surfaces, two classes (truncation + wrong-TLD bleed), zero
+  current automated enforcement.
+- Standing-rule alignment — CLAUDE.md hard rule 6 is one of five
+  "never break" rules in the project's primary entry-point
+  document ("Honor this file before improvising"). The rule is
+  enforced *reactively* today: every brand-spelling violation
+  has to be caught by a critique pass and drained by an iterate
+  tick. There is no proactive verify-time gate.
+- Prior art (signal A) — **Phases 41, 42, 43 are the proofs.**
+  Each was promoted on the identical argument: a standing rule
+  enforced reactively, drained per-tick, gated structurally only
+  after a phase shifted enforcement left into `pnpm verify`. The
+  exact pattern (lax→strict invariant in `scripts/content-check.ts`
+  with a `STRICT` flag flipped on the final drain tick) is now
+  used by 7 other invariants: `STRICT` (canon coverage),
+  `CROSS_SHOW_STRICT` (themed-list cross-show floor),
+  `YEAR_TENURE_STRICT` (year/tenure derivation, with
+  `TENURE_ANCHOR_ALLOWLIST` for milestone callouts),
+  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
+  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`
+  (`scripts/content-check.ts:682-780`). A `BRAND_SPELLING_STRICT`
+  alongside these is a clean extension of an established,
+  well-tested pattern.
+
+**Why:** CLAUDE.md hard rule 6 is one of the project's five
+non-negotiable identity rules — and the only one that ships
+*without* a verify-time gate, with three customer-facing surfaces
+currently violating it (two `tiered.` truncations and one
+`tiered.app` TLD bleed). The reactive cost is measured: the
+pass-24 critique surfaced (a) and (b), `/mod` (iii) only
+surfaced under this expand pass's targeted sweep, and there is
+no machinery to catch the *next* drift before the next critique
+window. The honest fix is the phase-43 move applied to the
+brand wordmark: a lax→strict invariant in
+`scripts/content-check.ts` that scans (1) every rendered
+`description` literal returned from `buildMetadata` callers
+across the route tree for `\btiered\b` not immediately followed
+by `\.tv\b`, (2) every customer-facing `mailto:` / `href`
+literal in `src/components/**` and `src/app/**` for
+`@tiered\.app` or `tiered\.app` outside an explicit
+infrastructure allowlist (Auth0 permissions claim `permissions.ts`,
+e2e test-user mailbox in test fixtures, api audience constants),
+(3) every editorial copy literal in `content/**/*.md` for the
+same patterns. Allowlist mechanism mirrors phase 43's
+`TENURE_ANCHOR_ALLOWLIST` precedent (`scripts/content-check.ts`)
+for legitimate uses of the bare english word `tiered` as a
+past-participle verb — e.g. `src/components/shows/ShowsHero.tsx:18`
+`<em>Tiered.</em>` ("All shows. Tiered.") is editorial wordplay
+on the english adjective; whether it stays as-is, gets
+lowercased to `<em>tiered.</em>` to honor the wordmark, or gets
+recast entirely is a curator call surfaced *by* the lax-mode
+sweep, not pre-decided in the phase brief. Ships strict on the
+final drain tick, matching the phase 41/43 cadence. Closes the
+class permanently; the verify gate then catches any future
+authoring drift the moment it lands instead of the next
+critique window.
+
+**Scope sketch:**
+- Add `collectBrandSpellingIssues` helper to
+  `scripts/content-check.ts` (or a new
+  `scripts/lib/check-brand-spelling.mjs` library + colocated test
+  per the phase-42 lib-pattern). Scans three surface families:
+  - rendered metadata `description` literals from `buildMetadata`
+    callers (mirrors phase 43's `collectYearTenureIssues` shape —
+    walks `src/app/**` for `buildMetadata({ ... description: ...
+    })` call sites and validates the string);
+  - customer-facing href / mailto literals in `src/components/**`
+    and `src/app/**` (excluding test files, the existing Auth0
+    permissions infrastructure path, and an explicit
+    `BRAND_DOMAIN_INFRA_ALLOWLIST`);
+  - editorial copy literals in `content/**/*.md` (excluding
+    intentional uses surfaced by the lax-mode drain and
+    documented in an editorial allowlist).
+- Add `BRAND_SPELLING_STRICT` constant (`= false` on the first
+  tick that lands the helper, paired with a 3-violation drain
+  across `/sign-in`, `/mod`, and the mailto on the same tick;
+  flip to `= true` on the final tick or the immediately following
+  tick once the surface is clean and the allowlist nuance for
+  `ShowsHero.tsx`'s `<em>Tiered.</em>` is editorially resolved —
+  exact lax→strict cadence as phase 43).
+- Allowlist scaffolding: `BRAND_DOMAIN_INFRA_ALLOWLIST` (paths
+  where `tiered.app` is the auth-tenant identifier and is
+  correct: `src/lib/auth0/permissions.ts`,
+  `src/lib/auth0/__tests__/permissions.test.ts`,
+  `src/app/api/mod/action/__tests__/route.test.ts`,
+  `src/app/(default)/mod/__tests__/page.test.tsx`,
+  `scripts/mint-e2e-cookie.mjs`, the bearings line that documents
+  the e2e@tiered.app user, the `audience: https://api.tiered.app`
+  Auth0 audience constant). `BRAND_ADJECTIVE_ALLOWLIST` for
+  editorial-intentional capital-T uses if any survive the curator
+  pass (default empty; populated only on explicit curator
+  decision).
+- Concrete drain order (priority queue, single-tick targets):
+  1. `/sign-in` description → `Sign in to tiered.tv. Magic link
+     by email.` (closes pass-24 MED, source-resolution in test +
+     production).
+  2. `/mod` description → `Moderation queue for tiered.tv (mod
+     role only).` (closes the third sibling violation).
+  3. `ListDetailTools.tsx` mailto → `editors@tiered.tv` (closes
+     pass-24 LOW; sister test in `ListDetailHero.test.tsx`
+     updated in lockstep; tests at
+     `ListDetailTools.test.tsx:59` + `ListDetailHero.test.tsx:80`
+     swap from `mailto:editors@tiered\.app` to
+     `mailto:editors@tiered\.tv`; operator question: whether an
+     `editors@tiered.tv` forwarder needs to be set up before the
+     code edit ships — the existing inbox lives at
+     `editors@tiered.app`; if not, the fix has a 2-tick shape
+     [code edit + operational forwarder]; if so, single tick).
+  4. `ShowsHero.tsx` `<em>Tiered.</em>` editorial decision (curator
+     call: lowercase the wordmark to `<em>tiered.</em>` for
+     identity consistency, OR recast the H1 to a non-wordmark
+     fragment that doesn't echo the brand, OR allowlist the
+     english-adjective use; document in commit body whichever
+     direction is taken).
+- Pin: colocated test of `collectBrandSpellingIssues` exercises
+  each shape — positive (clean surface), negative (each violation
+  class), allowlist match (auth-tenant infra path, editorial
+  adjective if allowed). Integration test: `pnpm content:check`
+  catches a fresh violation seeded in a fixture surface and
+  fails. e2e: no new spec owed — the verify gate is the
+  enforcement layer; no URL behavior change.
+- Follow-up housekeeping: the operational forwarder
+  (`editors@tiered.tv`) is the one external dependency outside
+  the verify gate's reach. The phase brief flags it for the
+  user's call at promotion time; the code change can land before
+  the forwarder if the editorial team is willing to redirect on
+  receipt or use a redirect rule, or after if a cleaner inbox
+  swap is preferred. Either way, the gate is the persistent
+  artifact.
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens an existing CLAUDE.md hard rule
+across the surface families that currently bleed it; no URL
+change, no schema change; the operational forwarder setup is the
+only external dependency, flagged for the user at promotion.
+Directly extends Phase 41/42/43's lax→strict invariant precedent
+established in `scripts/content-check.ts`.
+
+### 13. Editorial-cliché repetition guard (cross-corpus phrase-frequency invariant)
+
+**Score:** 6.0 (impact: 5, ease: 6, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 17
+**Filed:** 2026-06-02
+**Promoted in:** oversight 2026-06-11 (build plan re-exhausted; all three pending candidates promoted at once, user-approved).
+**Build-plan row:** Phase 45 - Editorial-cliche repetition guard (CLICHE_REPETITION_STRICT invariant) (`01_build_plan.md`)
+**Source signals:**
+- Critique (signal B) — **pass-25 MED finding** (`plan/CRITIQUE.md:416`)
+  catalogues `measures? itself against` / `measured against` as
+  the fallback canonical-claim closer across **10+ surfaces in
+  the content corpus**, reaching **4 in a single anon walk**
+  (home → /shows/survivor → /shows/survivor/season/heroes-vs-villains
+  → /themes/best-finales), with two of those four landing on the
+  *same page* (HvV pull-quote `content/shows/survivor/seasons/20-heroes-vs-villains.md:14`
+  AND HvV body closer `:43`). Other surfaces enumerated by the
+  finding: `content/shows/survivor/canon.md:53` slot #02 tag,
+  `content/themes/best-finales.md:26` entry #02,
+  `content/themes/best-returnees.md:20` entry #01,
+  `content/themes/best-post-merge.md:21` entry #01,
+  `content/themes/best-villain-editing.md:21` entry blurb,
+  `content/shows/amazing-race.md:11` tagline,
+  `content/shows/top-chef.md:11` tagline,
+  `content/shows/big-brother/canon.md:11` tier-S blurb + `:109`
+  entry body, `content/shows/project-runway/seasons/04-new-york-2007.md:12`
+  pull. **The finding itself proposes the invariant** verbatim:
+  "extend `scripts/content-check.ts` with a
+  `collectClicheRepetitionIssues` pass that counts cross-surface
+  occurrences of high-leverage editorial phrases (`measures?
+  itself against`, `measured against`, candidates for future
+  additions like `set the bar`, `the bar every`) and flags
+  >3-occurrence drift — the same guard pattern
+  `collectYearTenureIssues` uses for `est_year` math, but for
+  phrase-reuse."
+- Standing-rule alignment — `plan/bearings.md` voice rule
+  ("knowledgeable peer — confident, warm, plain-spoken, never
+  pretentious. Plain sentences over clever ones.") + CLAUDE.md
+  "Tone of voice" section ("knowledgeable peer. Confident, warm,
+  plain-spoken"). A clever fragment that lands the first time is
+  earned; the same fragment reused 10+ times is the editor's tic.
+  Pass-25 is the second walk to catch a cross-surface clever-tic
+  repetition (pass-19/20/22 caught **recompute** on the community
+  pane, drained reactively as the candidate-#12-class
+  BRAND_SPELLING precedent). No proactive verify-time gate
+  exists for cross-surface phrase-frequency drift today.
+- Prior art (signal A) — **Phases 41, 43 + candidate #12 are the
+  proofs.** Each carries the identical shape: an editorial
+  standing rule enforced reactively (drained per-tick by
+  critique→iterate), gated structurally only after a
+  `scripts/content-check.ts` lax→strict invariant phase lands. The
+  `STRICT`-flag pattern is now used by 7 invariants
+  (`scripts/content-check.ts:682-780`): `STRICT` (canon coverage),
+  `CROSS_SHOW_STRICT` (cross-show floor), `YEAR_TENURE_STRICT`
+  (with `TENURE_ANCHOR_ALLOWLIST` for milestone exceptions),
+  `TAGLINE_TAIL_STRICT`, `THEME_COUNT_TAIL_STRICT`,
+  `THEMED_ENTRY_SPOILER_STRICT`, `WATCH_ORDER_CLASSIFICATION_STRICT`.
+  Candidate #12 (BRAND_SPELLING_STRICT, score 6.6) is the eighth,
+  already awaiting promotion. A `CLICHE_REPETITION_STRICT`
+  alongside these is a clean extension of an established pattern,
+  with the distinct twist that the check is *cross-surface
+  frequency* rather than per-surface shape — the existing
+  invariants validate one file at a time; this one aggregates
+  occurrences across `content/**/*.md` and rejects when a
+  registered phrase exceeds the threshold.
+- Source confirmation — `rg -n "measures? itself against|measured
+  against" content/` independently verifies the 10+ surface count
+  the critique row claims; the registry-extensibility argument
+  (`set the bar`, `the bar every`) is corroborated by a separate
+  `rg -n "sets? the bar|the bar every" content/` returning
+  additional pre-existing matches across show + theme corpora.
+
+**Why:** The editorial voice rule is one of the project's
+standing identity rules, and pass-25's finding measured the cost
+of leaving it ungated: a single clever fragment metastasised
+across 10+ surfaces and reaches a casual reader 4 times before
+they've left the survivor walk. The fix has two halves: (1)
+drain the 9+ extant uses down to one high-leverage retention
+(recommended: HvV's pull-quote at
+`content/shows/survivor/seasons/20-heroes-vs-villains.md:14`,
+where the metaphor lands cleanest and the editorial weight is
+highest), and (2) ship a `CLICHE_REPETITION_STRICT` invariant
+with an extensible phrase registry so the *next* cross-surface
+clever-tic drift fails at verify-time instead of after the next
+critique window. The drain alone is an iterate-shape job; the
+drain + invariant + extensible registry is honestly a phase
+shape and matches the cadence + structure of phases 41/43 + the
+already-pending candidate #12 exactly. Ships strict on the final
+drain tick (mirrors the phase 41/43 pattern). Closes the class
+permanently for any phrase the registry covers; subsequent
+critique passes that surface a new clever-tic cluster (e.g. the
+`set the bar` / `the bar every` candidates the finding itself
+flags) add a registry row instead of authoring a new phase.
+
+**Scope sketch:**
+- Add `collectClicheRepetitionIssues` to `scripts/content-check.ts`
+  (or a new `scripts/lib/check-cliche-repetition.mjs` library +
+  colocated test per the phase-42 lib-pattern). Walks
+  `content/**/*.md`, aggregates a per-phrase occurrence count
+  across the corpus (frontmatter + body), and flags when any
+  registered phrase exceeds a per-phrase threshold (default 3 —
+  the bearings voice rule's "the third time it's a tic"
+  threshold the pass-25 finding articulates).
+- Phrase registry seeds the proven repeat-offender from pass-25
+  (`measures? itself against` / `measured against`) at threshold
+  3, with the pass-25-flagged future candidates (`set the bar`,
+  `the bar every`) added at threshold 4 after a pre-flight `rg`
+  audit confirms the current corpus is below threshold (else
+  scope-creep risk — the drain budget owes those too).
+- Allowlist mechanism mirrors phase 43's `TENURE_ANCHOR_ALLOWLIST`
+  precedent: a per-phrase `{ phrase, threshold, allowlist:
+  [<filepath>:<line>] }` registry entry lets the curator pin
+  the one surface that retains the phrase (e.g. HvV pull-quote
+  for `measures itself against`) without tripping the gate.
+- Editorial drain (content-curator brief): rewrite the 9+ extant
+  `measures itself against` surfaces with material specific to
+  the work each entry does — HvV's body closer leans on the
+  post-merge density it already names; Survivor canon slot #02
+  tag foregrounds the casting-as-format observation;
+  best-finales #02 entry names what specifically lands in the
+  closing run; best-returnees #01 names the format-defining
+  returnee dynamic; per-show taglines (Amazing Race, Top Chef,
+  Big Brother) name the show-specific format leadership argument
+  (airport-backpack rhythm, Restaurant Wars reckoning,
+  alliance-as-format engine).
+- Lax→strict cadence (mirrors phases 41/43/candidate #12): each
+  drain tick reduces the corpus count by 1-2 phrases below
+  threshold; final tick flips `CLICHE_REPETITION_STRICT = true`
+  in `scripts/content-check.ts` and adds the strict-mode
+  invariant assertion to `pnpm content:check`.
+- Unit tests: colocated tests for the helper validate the
+  threshold-counting + allowlist exclusion + multi-phrase
+  aggregation; bonus regression-pin tests assert specific
+  current corpus counts (e.g. `measures itself against` count
+  after drain is exactly N) so a future re-introduction fails
+  at unit time.
+- No URL change. No schema change. No e2e fixture row owed (no
+  e2e pins any of the to-be-rewritten phrases). Spoiler P0
+  intact (voice/editorial edits only, no canon position or
+  verdict changes).
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens the editorial voice rule across its
+last uncovered surface (cross-corpus phrase-frequency), no URL
+change, no schema change. Directly extends Phase 41/43 +
+candidate #12's lax→strict invariant precedent established in
+`scripts/content-check.ts`, with the distinct twist that the
+check aggregates across files instead of validating one file at
+a time.
+
+### 11. Extend the colocated-test coverage gate to `src/app/**`
+
+**Score:** 5.5 (impact: 5, ease: 5, +2 multi, +1 cheap-and-impactful)
+**Source pass:** 12
+**Filed:** 2026-05-29
+**Promoted in:** oversight 2026-06-11 (build plan re-exhausted; all three pending candidates promoted at once, user-approved).
+**Build-plan row:** Phase 46 - Colocated-test coverage gate extended to src/app/** (`01_build_plan.md`)
+**Source signals:**
+- Commit pattern (signal G) — an **~11-commit reactive
+  `/iterate` drain** of `src/app/**` colocated tests since the
+  phase-42 gate landed: #210 (`/mod`), #211 (root `layout.tsx`),
+  #212 (`shows/[show]/layout.tsx`), #218 (`shows/[show]`), #219
+  (`season/[slug]`), #220 (`themes/[theme]`), #221
+  (`(default)/layout.tsx`), #222 (`privacy`), #223 (`terms`),
+  #224 (`not-found.tsx`) — plus the earlier #180/#193/#206 and
+  the #131–#179 route-handler/OG/sitemap/robots batch. Each is a
+  `test: colocate <X>` commit paired with an `audit:` row.
+- Audit (signal A) — **every one of those AUDIT rows names the
+  gap in the same words**: "The phase-42 colocated-coverage gate
+  (`scripts/check-test-colocation.mjs`) walks `src/components/**`,
+  `src/lib/**`, `src/content/**` but **not** `src/app/**`, so
+  app-route files are drained reactively by `/iterate`."
+- Source confirmation — `scripts/check-test-colocation.mjs:24`
+  literally reads `const ROOTS = ['src/components', 'src/lib',
+  'src/content']`; `src/app` is absent.
+- Prior art — **Phase 42 is the proof.** It was promoted
+  (`PHASE_CANDIDATES` #10, score 5.5) on the *identical*
+  argument: a 16-commit reactive drain (#105–#120) of
+  `src/components/**`/`src/lib/**` files shipping untested,
+  fixed by shifting §5a enforcement left into `pnpm verify`.
+  Phase 42 deliberately stopped at the `src/app` boundary; the
+  loop has since spent ~11 ticks reactively draining exactly
+  that boundary. As of this pass the tree is drained to **one
+  remaining file** (`src/app/internal/rank-shift-demo/page.tsx`,
+  a build-flag-gated demo) — the same "drained to completion but
+  no gate guards the regression" state `src/components/**` was in
+  when Phase 42 shipped.
+
+**Why:** §5a ("every commit ships unit tests") is a
+non-negotiable standing rule, and the highest-traffic route tree
+on the site (`src/app/**` — every page, layout, and route
+handler) is the one tree the existing verify-time gate does not
+guard. The cost of leaving it ungated is now measured: an
+~11-tick reactive drain that re-opens the moment the next
+untested page/layout/route lands. The honest fix is the Phase 42
+move applied to one more tree: add `'src/app'` to the gate's
+`ROOTS`, allowlist the genuinely-untestable shapes, and let
+verify fail the instant an app-route module ships without a
+colocated test — instead of `/iterate` catching it ticks later
+and burning a polish tick per file. The drain already authored
+precedent tests for every app-route file shape (page, dynamic
+`[segment]` page, redirect-page, `route.ts` handler,
+`opengraph-image.tsx`, `sitemap.ts`/`robots.ts`, `layout.tsx`,
+`not-found.tsx`), so the gate flip is unlikely to surface new
+stragglers beyond the one demo to allowlist.
+
+**Scope sketch:**
+- Add `'src/app'` to `ROOTS` in
+  `scripts/check-test-colocation.mjs` (+ its pure-logic library
+  in `scripts/lib/`); keep the reference-check (the colocated
+  test must import the target module, not merely share a name).
+- Allowlist `src/app/internal/rank-shift-demo/page.tsx` (the
+  build-flag-gated internal demo that never ships to prod), plus
+  any App Router file types that genuinely carry no testable
+  logic (verify against the real tree at pickup — the drain
+  suggests there are none beyond the demo).
+- Extend the gate's own colocated tests: an `src/app` page
+  passes when colocated, fails when testless, fails on
+  filename-match-but-wrong-target (the #120 false-negative
+  class).
+- Follow-up housekeeping: #148 (the still-open `needs-user` issue
+  to wire `pnpm check:test-colocation` into `march.yml` call-1)
+  becomes more load-bearing once the gate covers `src/app` —
+  flag it in the brief but it stays a separate local-`/oversight`
+  push (cloud GitHub App lacks the `workflows` scope).
+
+**Estimated phases:** 1.
+**Conflicts:** none. Hardens an existing non-negotiable standing
+rule across its last uncovered tree; no URL change, no schema
+change. Directly extends Phase 42's precedent.
 
 ### 08. Cross-canon themed-list drain (deliver the "cross-canon" promise)
 
