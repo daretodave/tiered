@@ -261,6 +261,13 @@ const themeFrontmatterObject = z.object({
   curator: z.string().min(1).max(80).default('tiered.tv editor'),
   last_revised: isoDate,
   featured: z.boolean().default(false),
+  // Optional shorter pull rendered by the featured-rail tile on
+  // /themes so the rail and the all-lists index don't echo the
+  // same ~35-word `description` paragraph on one scroll. When
+  // absent, the rail falls back to the first sentence of
+  // `description` (see `firstSentence` in `lib/themes-format`).
+  // Critique pass-46 #397.
+  featured_pull: z.string().min(1).max(180).optional(),
   related: z.array(slug).max(4).default([]),
   era_range: z
     .tuple([

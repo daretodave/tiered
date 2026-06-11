@@ -150,6 +150,52 @@ describe('<FeaturedCard>', () => {
       screen.getByTestId('lists-featured-card').getAttribute('href'),
     ).toBe('/themes/firsts')
   })
+
+  // Critique pass-46 #397 closure: the featured rail previously rendered
+  // `theme.description` verbatim, the same ~35-word paragraph the index
+  // `<ListRow>` renders below — a reader scanning /themes top-to-bottom
+  // read three duplicate paragraphs in one viewport. The rail now
+  // renders a short pull — the curator-authored `featured_pull` when
+  // present, else `firstSentence(theme.description)` — so the long form
+  // stays canonical at the index card (pinned at `ListRow.test.tsx`).
+  // Bidirectional drift guard mirrors the #242 closure pattern.
+  describe('blurb pull (critique pass-46 #397)', () => {
+    const twoSentence =
+      'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude.'
+    const firstOnly =
+      'Closing runs that pay off the season they spent a dozen episodes building.'
+
+    it('renders `featured_pull` when present and does NOT render the full `description`', () => {
+      render(
+        <FeaturedCard
+          theme={theme({
+            featured_pull: 'Curator-authored short pull.',
+            description: twoSentence,
+          })}
+          shows={[show()]}
+          today={today}
+        />,
+      )
+      const card = screen.getByTestId('lists-featured-card')
+      const blurb = card.querySelector('.feat-blurb')
+      expect(blurb?.textContent).toBe('Curator-authored short pull.')
+      expect(card.textContent).not.toContain('the last hour sits at the right altitude')
+    })
+
+    it('falls back to the first sentence of `description` when `featured_pull` is absent and does NOT render the full body', () => {
+      render(
+        <FeaturedCard
+          theme={theme({ description: twoSentence })}
+          shows={[show()]}
+          today={today}
+        />,
+      )
+      const card = screen.getByTestId('lists-featured-card')
+      const blurb = card.querySelector('.feat-blurb')
+      expect(blurb?.textContent).toBe(firstOnly)
+      expect(card.textContent).not.toContain('The stakes feel earned')
+    })
+  })
 })
 
 // Critique pass-38 #342 closure: the lifecycle status label on a

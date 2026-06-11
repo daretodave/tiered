@@ -150,6 +150,30 @@ export function formatListMeta(theme: Theme, shows?: Show[]): ListMeta {
   }
 }
 
+// First-sentence pull from a theme `description`. Used by
+// `<FeaturedCard>` to fall back when `theme.featured_pull` is absent
+// (critique pass-46 #397). The featured-rail tile and the
+// all-lists index `<ListRow>` previously rendered the same ~35-word
+// `description` paragraph; the index keeps the long form, the rail
+// renders a short pull. Sentence boundary is the first `. ` (period
+// + whitespace) — descriptions whose first sentence ends without
+// trailing whitespace (single-sentence forms) fall through and the
+// whole string is returned. Trailing punctuation is preserved.
+export function firstSentence(text: string): string {
+  const trimmed = text.trim()
+  const match = trimmed.match(/^([^.!?]*[.!?])(?:\s|$)/)
+  return match?.[1] ? match[1].trim() : trimmed
+}
+
+// Featured-rail pull for a theme: prefers the curator-authored
+// `featured_pull` field, falls back to the first sentence of
+// `description`. Single source of truth so the featured-vs-index
+// no-paragraph-echo discipline is enforced everywhere a featured
+// tile renders (critique pass-46 #397).
+export function featuredPullText(theme: Theme): string {
+  return theme.featured_pull ?? firstSentence(theme.description)
+}
+
 // Canonical list-meta line — `{N} shows · {M} entries` — the home
 // `<HomeListRow>` shape adopted as the catalogue baseline. Renders the
 // singular noun at 1 (`1 show · 1 entry`). Use this on every chrome

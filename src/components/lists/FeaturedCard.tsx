@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Show, Theme } from '@/content'
 import { Bullet } from '@/components/atoms/Bullet'
-import { formatListMetaLine, formatThemeStatus } from '@/lib/themes-format'
+import {
+  featuredPullText,
+  formatListMetaLine,
+  formatThemeStatus,
+} from '@/lib/themes-format'
 
 type FeaturedCardProps = {
   theme: Theme
@@ -58,7 +62,15 @@ export function FeaturedCard({
         <span data-testid="lists-featured-meta">{metaLine}</span>
       </div>
       <h3>{theme.title}</h3>
-      <p className="feat-blurb">{theme.description}</p>
+      {/* Critique pass-46 #397 closure: the featured rail previously
+          rendered `theme.description` verbatim, the same ~35-word
+          paragraph the index `<ListRow>` renders below. A reader
+          scanning /themes top-to-bottom read three duplicate
+          paragraphs in one viewport. The rail now renders a short
+          pull — the curator-authored `featured_pull` when present,
+          else the first sentence of `description` — so the long form
+          stays canonical at the index card. */}
+      <p className="feat-blurb">{featuredPullText(theme)}</p>
       <div className="feat-foot">
         <span data-testid="lists-featured-status">{status}</span>
         <b>{cta}</b>

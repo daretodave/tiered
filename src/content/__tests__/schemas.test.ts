@@ -427,6 +427,51 @@ describe('themeSchema', () => {
       }),
     ).toThrow()
   })
+
+  // Critique pass-46 #397: optional `featured_pull` for the
+  // featured-rail tile so /themes featured + index don't echo the
+  // same ~35-word description on one scroll. Renderer fallback is
+  // `firstSentence(description)`; see `lib/themes-format.ts`.
+  describe('featured_pull (pass-46 #397)', () => {
+    it('accepts a short pull string', () => {
+      const parsed = themeFrontmatterSchema.parse({
+        ...base,
+        featured_pull: 'Closing runs that pay off the season.',
+        entries: [entry],
+      })
+      expect(parsed.featured_pull).toBe(
+        'Closing runs that pay off the season.',
+      )
+    })
+
+    it('treats featured_pull as optional', () => {
+      const parsed = themeFrontmatterSchema.parse({
+        ...base,
+        entries: [entry],
+      })
+      expect(parsed.featured_pull).toBeUndefined()
+    })
+
+    it('rejects an empty featured_pull string', () => {
+      expect(() =>
+        themeFrontmatterSchema.parse({
+          ...base,
+          featured_pull: '',
+          entries: [entry],
+        }),
+      ).toThrow()
+    })
+
+    it('rejects a featured_pull over 180 chars', () => {
+      expect(() =>
+        themeFrontmatterSchema.parse({
+          ...base,
+          featured_pull: 'x'.repeat(181),
+          entries: [entry],
+        }),
+      ).toThrow()
+    })
+  })
 })
 
 describe('canonEntrySchema', () => {

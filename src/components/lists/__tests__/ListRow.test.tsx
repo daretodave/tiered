@@ -79,4 +79,30 @@ describe('<ListRow>', () => {
       expect(arrowSpan?.textContent?.trim()).toBe('read the list →')
     })
   })
+
+  // Critique pass-46 #397 sibling pin: the featured rail dropped the
+  // duplicate paragraph by rendering a short pull; the index card
+  // remains the canonical home for the long `theme.description`. A
+  // future refactor that flips the index to also render the pull would
+  // collapse the editorial split this closure introduced. The full body
+  // is asserted here; the short-pull behaviour is pinned at
+  // `FeaturedCard.test.tsx` → "blurb pull (critique pass-46 #397)".
+  it('renders the full `theme.description` regardless of `featured_pull` (pass-46 #397)', () => {
+    const fullDescription =
+      'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude.'
+    render(
+      <ListRow
+        theme={theme({
+          description: fullDescription,
+          featured_pull: 'A short pull that must not surface on the index.',
+        })}
+        shows={[show()]}
+        today={today}
+      />,
+    )
+    const row = screen.getByTestId('lists-row')
+    const blurb = row.querySelector('.list-row-blurb')
+    expect(blurb?.textContent).toBe(fullDescription)
+    expect(row.textContent).not.toContain('A short pull that must not surface on the index.')
+  })
 })

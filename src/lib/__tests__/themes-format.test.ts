@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import type { Show, Theme } from '@/content'
 import {
+  featuredPullText,
   filterModeText,
+  firstSentence,
   formatListMeta,
   formatListMetaLine,
   formatRevisedAgo,
@@ -304,5 +306,74 @@ describe('formatListMetaLine (pass-40 #355)', () => {
 
   it('falls back to countShows when shows is omitted (home surface path)', () => {
     expect(formatListMetaLine(theme(3, 7))).toBe('3 shows · 7 entries')
+  })
+})
+
+// Critique pass-46 #397: the featured-rail tile and the all-lists
+// index `<ListRow>` previously rendered the same ~35-word
+// `description` paragraph; the rail now renders a short pull and
+// the index keeps the long form.
+describe('firstSentence (pass-46 #397)', () => {
+  it('returns the first sentence ending in `. ` from a two-sentence description', () => {
+    expect(
+      firstSentence(
+        'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude.',
+      ),
+    ).toBe(
+      'Closing runs that pay off the season they spent a dozen episodes building.',
+    )
+  })
+
+  it('returns the whole string for a single-sentence description with no trailing whitespace', () => {
+    expect(firstSentence('Just one sentence.')).toBe('Just one sentence.')
+  })
+
+  it('handles `?` and `!` sentence boundaries', () => {
+    expect(firstSentence('Why this list? The lede follows.')).toBe(
+      'Why this list?',
+    )
+    expect(firstSentence('Stop here! The rest of the body keeps going.')).toBe(
+      'Stop here!',
+    )
+  })
+
+  it('trims leading/trailing whitespace', () => {
+    expect(firstSentence('  Lead trims. Second sentence.  ')).toBe(
+      'Lead trims.',
+    )
+  })
+
+  it('returns the trimmed input when no terminator is present', () => {
+    expect(firstSentence('No terminator here')).toBe('No terminator here')
+  })
+})
+
+describe('featuredPullText (pass-46 #397)', () => {
+  const base = themeForMeta([{ show: 'a', season: 1 }])
+
+  it('returns theme.featured_pull when present', () => {
+    const theme = { ...base, featured_pull: 'Short curator pull.' }
+    expect(featuredPullText(theme)).toBe('Short curator pull.')
+  })
+
+  it('falls back to firstSentence(theme.description) when featured_pull is absent', () => {
+    const theme = {
+      ...base,
+      description:
+        'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned.',
+    }
+    expect(featuredPullText(theme)).toBe(
+      'Closing runs that pay off the season they spent a dozen episodes building.',
+    )
+  })
+
+  it('never returns the full `description` when featured_pull is present (pass-46 #397 negative pin)', () => {
+    const theme = {
+      ...base,
+      featured_pull: 'Curator pull only.',
+      description: 'A. B. C.',
+    }
+    expect(featuredPullText(theme)).not.toBe('A. B. C.')
+    expect(featuredPullText(theme)).toBe('Curator pull only.')
   })
 })
