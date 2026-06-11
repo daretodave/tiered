@@ -22,6 +22,7 @@ import {
   collectSeasonEyebrowCalendarIssues,
   collectSeasonSectionSubheadIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
+  collectShowCardTaglineOpenerOverlapIssues,
   collectShowCardTaglineVoiceConsistencyIssues,
   collectShowTaglineBandTemplateEchoIssues,
   collectShowTaglinePluralEditorIssues,
@@ -5954,5 +5955,136 @@ describe('content-check — season-page Section 01 H2 verbatim restate (critique
       take_h2: '"The villains hold the floor."',
     })
     expect(collectSeasonSectionSubheadIssues()).toEqual([])
+  })
+})
+
+describe('content-check — show card_tagline/tagline opener overlap (critique pass-47, issue #394)', () => {
+  let tmp: string
+
+  function makeShowWithTaglineFields(
+    root: string,
+    slug: string,
+    opts: { tagline: string; card_tagline?: string },
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    const cardLine = opts.card_tagline
+      ? `card_tagline: ${JSON.stringify(opts.card_tagline)}\n`
+      : ''
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: "One torch at a time."
+tagline: ${JSON.stringify(opts.tagline)}
+${cardLine}tier: A
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-card-tagline-opener-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('does not flag the live Survivor `card_tagline` post-drain (the named offender at /shows/survivor)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    const offenders = collectShowCardTaglineOpenerOverlapIssues().filter((f) =>
+      f.file.startsWith('content/shows/survivor.md'),
+    )
+    expect(offenders).toEqual([])
+  })
+
+  it('flags the historical defect — `card_tagline` and `tagline` share a 5+-word verbatim phrase', () => {
+    makeShowWithTaglineFields(tmp, 'survivor-shape', {
+      tagline:
+        'Strangers on a beach, voting each other off until one is left standing. The format that invented itself in episode one, and has spent twenty-six years rediscovering what it is.',
+      card_tagline:
+        'The format that invented itself in episode one, and is still finding new ways to ask who you really are.',
+    })
+    const issues = collectShowCardTaglineOpenerOverlapIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/survivor-shape.md (card_tagline)',
+    )
+    expect(issues[0]!.message).toMatch(/5-word phrase/)
+    expect(issues[0]!.message).toMatch(/"the format that invented itself"/)
+    expect(issues[0]!.message).toMatch(/issue #394/)
+  })
+
+  it('does NOT flag shows whose `card_tagline` and `tagline` diverge at the 5-word floor', () => {
+    makeShowWithTaglineFields(tmp, 'clean-shape', {
+      tagline:
+        'Strangers on a beach, voting each other off until one is left standing. The format that invented itself in episode one.',
+      card_tagline:
+        'Still finding new ways to ask who you really are, twenty-six years in.',
+    })
+    expect(collectShowCardTaglineOpenerOverlapIssues()).toEqual([])
+  })
+
+  it('does NOT flag a show without a `card_tagline` (the field is optional)', () => {
+    makeShowWithTaglineFields(tmp, 'no-card', {
+      tagline:
+        'A long-running format that has held its shape for years, by any honest accounting.',
+    })
+    expect(collectShowCardTaglineOpenerOverlapIssues()).toEqual([])
+  })
+
+  it('flags case-insensitively (catches a future titlecase drift on either field)', () => {
+    makeShowWithTaglineFields(tmp, 'titlecase-drift', {
+      tagline:
+        'A long-running format that built a global drag economy and reshaped the genre.',
+      card_tagline:
+        'BUILT A GLOBAL DRAG ECONOMY and still sets the bar every other franchise spends a season chasing.',
+    })
+    const issues = collectShowCardTaglineOpenerOverlapIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"built a global drag economy"/)
+  })
+
+  it('passes a 4-gram overlap (threshold is 5; 4 verbatim words is tolerated)', () => {
+    makeShowWithTaglineFields(tmp, 'four-gram', {
+      tagline:
+        'Strangers on a beach, voting each other off until one is left standing.',
+      card_tagline:
+        'Strangers on a beach who answer the question reality competition still keeps asking.',
+    })
+    // "strangers on a beach" is 4 tokens — under the 5-gram floor.
+    expect(collectShowCardTaglineOpenerOverlapIssues()).toEqual([])
+  })
+
+  it('flags multiple shared phrases at once (lists every collision in the message)', () => {
+    makeShowWithTaglineFields(tmp, 'multi', {
+      tagline:
+        'Amateur bakers in a white tent, three rounds a week, the gentlest competition on television.',
+      card_tagline:
+        'Amateur bakers in a white tent and somehow the gentlest competition on television, week after week.',
+    })
+    const issues = collectShowCardTaglineOpenerOverlapIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/"amateur bakers in a white"/)
+    expect(issues[0]!.message).toMatch(/"the gentlest competition on television"/)
   })
 })

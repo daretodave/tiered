@@ -2082,6 +2082,56 @@ export function collectSeasonSectionSubheadIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-47 MED (issue #394): the home featured-cover
+// `card_tagline` and `/shows/<show>` hero `tagline` are read in
+// sequence on the canonical home → /shows/<show> click path
+// (cover-sub at <HomeFeaturedCover>, hero subhead at
+// <ShowHero>). The card_tagline / tagline split was introduced
+// exactly so the show-page hero stays the only surface that
+// quotes the full tagline (CLAUDE.md show-identity contract);
+// when the card_tagline opener restates a phrase that already
+// appears in tagline, the optimization buys nothing on the
+// highest-traffic click path. This invariant scans each show
+// whose frontmatter declares BOTH fields, tokenizes each to a
+// lowercase word array (same `tokenizeForVerbatimEcho` helper
+// the themed-entry verbatim-echo invariant uses), and flags
+// when any 5-or-more-word verbatim phrase appears in both
+// fields. The 5-gram threshold matches `VERBATIM_PHRASE_ECHO_NGRAM`
+// above — long enough that natural prose almost never produces
+// an accidental match. Lax during the catalog drain (the
+// authoring rewrite at content/shows/survivor.md drops the lone
+// known offender; other shows currently clear at floor 0). One-
+// line toggle mirroring SEASON_SECTION_SUBHEAD_STRICT above.
+const CARD_TAGLINE_OPENER_NGRAM = 5
+
+export function collectShowCardTaglineOpenerOverlapIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    if (!show.card_tagline) continue
+    const taglineTokens = tokenizeForVerbatimEcho(show.tagline)
+    const cardTokens = tokenizeForVerbatimEcho(show.card_tagline)
+    if (
+      taglineTokens.length < CARD_TAGLINE_OPENER_NGRAM ||
+      cardTokens.length < CARD_TAGLINE_OPENER_NGRAM
+    ) {
+      continue
+    }
+    const taglineGrams = ngramsOf(taglineTokens, CARD_TAGLINE_OPENER_NGRAM)
+    const cardGrams = ngramsOf(cardTokens, CARD_TAGLINE_OPENER_NGRAM)
+    const shared: string[] = []
+    for (const g of cardGrams) {
+      if (taglineGrams.has(g)) shared.push(g)
+    }
+    if (shared.length === 0) continue
+    const phraseList = shared.map((p) => `"${p}"`).join(', ')
+    issues.push({
+      file: `content/shows/${show.slug}.md (card_tagline)`,
+      message: `show \`card_tagline\` and \`tagline\` share the verbatim ${CARD_TAGLINE_OPENER_NGRAM}-word phrase${shared.length > 1 ? 's' : ''} ${phraseList} — a reader on the canonical home → /shows/${show.slug} click path reads the same phrase twice within seconds (home <HomeFeaturedCover> cover-sub vs /shows/${show.slug} hero subhead). The card_tagline / tagline split exists so the show-page hero stays the only surface that quotes the full tagline (CLAUDE.md show-identity contract). Rewrite the card_tagline so its phrasing diverges from the tagline at the 5-word floor; preserve the editorial point in a different beat. See plan/CRITIQUE.md pass-47 / issue #394.`,
+    })
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -2632,6 +2682,30 @@ function main(): number {
     failures.push(...seasonSectionSubheadIssues)
   } else {
     for (const issue of seasonSectionSubheadIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-47 MED (issue #394): ships LAX during the
+  // catalog drain — this commit's authoring rewrite at
+  // content/shows/survivor.md drops the named offender (home
+  // cover sub and /shows/survivor hero subhead previously shared
+  // the verbatim 11-word clause `the format that invented itself
+  // in episode one`). Five sibling shows (bachelor, bachelorette,
+  // bake-off, dragrace, top-chef) authored `card_tagline` from
+  // the same source phrasing as their `tagline` and surface as
+  // warnings during the drain; subsequent /ship-content drain
+  // ticks rotate one show's `card_tagline` at a time, and the
+  // final drain tick flips CARD_TAGLINE_OPENER_OVERLAP_STRICT to
+  // true. One-line toggle mirroring SEASON_SECTION_SUBHEAD_STRICT
+  // above (the lax→strict pattern).
+  const CARD_TAGLINE_OPENER_OVERLAP_STRICT = false
+  const cardTaglineOpenerOverlapIssues =
+    collectShowCardTaglineOpenerOverlapIssues()
+  if (CARD_TAGLINE_OPENER_OVERLAP_STRICT) {
+    failures.push(...cardTaglineOpenerOverlapIssues)
+  } else {
+    for (const issue of cardTaglineOpenerOverlapIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

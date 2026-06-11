@@ -151,16 +151,19 @@ describe('tierMeta', () => {
   // critique-pass-46 #389: the /shows S-tier band subhead used to
   // read `The shows that invented or perfected their format.` —
   // shows-as-agent. Survivor's S-tile card_tagline immediately
-  // adjacent in the band (`The format that invented itself in
-  // episode one, and is still finding new ways to ask who you
-  // really are.`) frames the format as the agent. Same band, two
-  // sentences pulling opposite directions on who-invented-what.
-  // The rotation flips the subhead to format-as-agent
-  // (`The shows where the format invented or perfected itself.`),
-  // preserving the pass-35 #332 vocabulary commit (`format`, not
-  // `genre`) while bringing the subhead's subject into agreement
-  // with the card_tagline. Bidirectional pin guards both the
+  // adjacent in the band at the time (`The format that invented
+  // itself in episode one, and is still finding new ways to ask
+  // who you really are.`) framed the format as the agent. Same
+  // band, two sentences pulling opposite directions on who-
+  // invented-what. The rotation flipped the subhead to format-
+  // as-agent (`The shows where the format invented or perfected
+  // itself.`), preserving the pass-35 #332 vocabulary commit
+  // (`format`, not `genre`). Bidirectional pin guards both the
   // post-rotation literal AND the rejected pre-rotation literal.
+  // (Pass-47 #394 later rewrote Survivor's card_tagline so the
+  // home cover sub and the show-page hero diverge at the 5-word
+  // floor; the pin stays load-bearing as a /shows tier-band voice
+  // regression guard independent of any one show's tile copy.)
   describe('S-tier band subhead subject agreement (critique pass-46 #389)', () => {
     it('S-tier name subhead frames the format as the agent', () => {
       expect(tierMeta('S').name).toMatch(

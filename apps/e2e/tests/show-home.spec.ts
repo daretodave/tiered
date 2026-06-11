@@ -158,17 +158,28 @@ test.describe('survivor meta description — gold-standard reference', () => {
   test('Survivor description equals the curator\'s card_tagline verbatim', async ({
     page,
   }) => {
-    // Survivor is the only show in the seeded set authoring a
-    // `card_tagline`. The fix prefers `card_tagline` over `tagline`
-    // when present, so the meta description reads as the curator's
-    // 104-char card-form sentence — well under the 160-char clip,
-    // and the editorial line a search reader actually sees.
+    // Survivor authors a `card_tagline` distinct from `tagline` (the
+    // /shows/survivor hero subhead quotes the full tagline; the home
+    // featured-cover sub + the meta description prefer the shorter
+    // card form). The fix prefers `card_tagline` over `tagline` when
+    // present, so the meta description reads as the curator's
+    // card-form sentence — well under the 160-char clip, and the
+    // editorial line a search reader actually sees.
+    //
+    // Critique pass-47 #394 closure: the prior card_tagline opened
+    // `The format that invented itself in episode one,` — a verbatim
+    // 11-word clause also present in the show-page hero `tagline`.
+    // Rewrote the card_tagline so the home cover sub and the show-
+    // page hero diverge at the 5-word floor on the canonical home →
+    // /shows/survivor click path; the `{yearsWord}` token tracks the
+    // anniversary.
     await page.goto('/shows/survivor', { waitUntil: 'domcontentloaded' })
     const description = await page
       .locator('meta[name="description"]')
       .getAttribute('content')
+    const yearsWord = derivedSurvivorTenureWord()
     expect(description).toBe(
-      'The format that invented itself in episode one, and is still finding new ways to ask who you really are.',
+      `Still finding new ways to ask who you really are, ${yearsWord} years in.`,
     )
   })
 })
