@@ -139,6 +139,16 @@ export const seasonFrontmatterSchema = z.object({
   lede: z.string().min(1).max(280).optional(),
   body: z.string().min(1).optional(),
   pull: z.string().min(1).max(600).optional(),
+  // Section 01 ("The take") H2 override. Critique pass-47 MED (issue
+  // #393): the default H2 renders the season title with a trailing
+  // period (`{season.title}.`), which on HvV reads as a literal
+  // restate of the page H1 above. Authoring `take_h2` swaps in a
+  // 2-to-5-word editorial fragment that previews the take's
+  // argument (matching the register of sections 02–06). Optional —
+  // absent value preserves the legacy title-as-H2 default during
+  // the lax→strict catalog drain (see
+  // `scripts/content-check.ts` § collectSeasonSectionSubheadIssues).
+  take_h2: z.string().min(1).max(80).optional(),
   vote_question: z.string().min(1).max(120).optional(),
   aired_year: z.number().int().min(1900).max(2100).optional(),
   episodes: z.number().int().positive().optional(),

@@ -62,6 +62,7 @@ import {
   generateMetadata,
   generateStaticParams,
   seasonHeroBylineFor,
+  takeH2For,
   whereItSitsCopy,
 } from '../page'
 
@@ -392,6 +393,38 @@ describe('seasonHeroBylineFor — within-module double-attribution gate (issue #
       expect(probe.textContent ?? '').not.toMatch(/editor'?s canon/i)
       unmount()
     }
+  })
+})
+
+describe('takeH2For — Section 01 ("The take") H2 (issue #393)', () => {
+  // critique-pass-47 MED: the default H2 rendered the season title
+  // verbatim with a trailing period (`{season.title}.`), which on HvV
+  // read as a literal restate of the page H1 above. Sections 02–06
+  // carry editorial fragments; Section 01 was the only one that
+  // degenerated into a title-restate. `take_h2` is the optional
+  // frontmatter override; absent value preserves the legacy default
+  // during the lax→strict catalog drain (see
+  // `scripts/content-check.ts` § collectSeasonSectionSubheadIssues).
+  it('returns the `take_h2` override verbatim when authored', () => {
+    const season = makeSeason({ take_h2: 'The all-star ceiling.' })
+    expect(takeH2For(season)).toBe('The all-star ceiling.')
+  })
+
+  it('falls back to `${season.title}.` when no override is authored (catalog drain default)', () => {
+    const season = makeSeason({ title: 'Borneo', take_h2: undefined })
+    expect(takeH2For(season)).toBe('Borneo.')
+  })
+
+  it('the fallback IS the defect class the invariant catches (title verbatim restate)', () => {
+    // Bidirectional pin: the default branch returns the exact
+    // verbatim restate that the content-check
+    // `collectSeasonSectionSubheadIssues` invariant flags. A future
+    // edit that changed the fallback to something distinct would
+    // need to update the invariant in lockstep (or it would still
+    // flag every drained season as a regression). This case
+    // documents the coupling.
+    const season = makeSeason({ title: 'Heroes vs. Villains', take_h2: undefined })
+    expect(takeH2For(season)).toBe('Heroes vs. Villains.')
   })
 })
 

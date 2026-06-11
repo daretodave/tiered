@@ -20,6 +20,7 @@ import {
   collectEditorialBylineSingularIssues,
   collectFailures,
   collectSeasonEyebrowCalendarIssues,
+  collectSeasonSectionSubheadIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
   collectShowCardTaglineVoiceConsistencyIssues,
   collectShowTaglineBandTemplateEchoIssues,
@@ -5846,5 +5847,112 @@ describe('content-check — canon rationale dangling-possessive (critique pass-4
   it('tolerates a show without a canon (no-op rather than crash)', () => {
     makeShow(tmp, 'alpha')
     expect(collectCanonRationaleDanglingPossessiveIssues()).toEqual([])
+  })
+})
+
+describe('content-check — season-page Section 01 H2 verbatim restate (critique pass-47, issue #393)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-section-subhead-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('does not flag the live HvV season at the corpus floor — `take_h2` override drained the named offender', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    const offenders = collectSeasonSectionSubheadIssues().filter((f) =>
+      f.file.endsWith('20-heroes-vs-villains.md'),
+    )
+    expect(offenders).toEqual([])
+  })
+
+  it('flags a season that renders the title verbatim as the Section 01 H2 (no `take_h2` authored)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'heroes-vs-villains', {
+      title: 'Heroes vs. Villains',
+    })
+    const issues = collectSeasonSectionSubheadIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/seasons/01-heroes-vs-villains.md',
+    )
+    expect(issues[0]!.message).toMatch(/verbatim restates the page H1/)
+    expect(issues[0]!.message).toMatch(/take_h2/)
+    expect(issues[0]!.message).toMatch(/issue #393/)
+  })
+
+  it('does NOT flag a season whose `take_h2` is a distinct editorial fragment', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'heroes-vs-villains', {
+      title: 'Heroes vs. Villains',
+      take_h2: '"The all-star ceiling."',
+    })
+    expect(collectSeasonSectionSubheadIssues()).toEqual([])
+  })
+
+  it('flags a `take_h2` that case-insensitively restates the title (defeats a future titlecasing drift)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'heroes-vs-villains', {
+      title: 'Heroes vs. Villains',
+      take_h2: '"HEROES VS. VILLAINS."',
+    })
+    const issues = collectSeasonSectionSubheadIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/verbatim restates the page H1/)
+  })
+
+  it('flags a `take_h2` that matches the HTML-stripped `display_title` (catches the rich-display layer)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'cagayan', {
+      title: 'Cagayan',
+      display_title: '"Brains <em>vs.</em><br/>Brawn & Beauty"',
+      take_h2: '"Brains vs. Brawn & Beauty."',
+    })
+    const issues = collectSeasonSectionSubheadIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/verbatim restates the page H1/)
+  })
+
+  it('passes a season whose title contains its `take_h2` as a substring but is not a verbatim match', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'heroes-vs-villains', {
+      title: 'Heroes vs. Villains',
+      take_h2: '"The villains hold the floor."',
+    })
+    expect(collectSeasonSectionSubheadIssues()).toEqual([])
   })
 })

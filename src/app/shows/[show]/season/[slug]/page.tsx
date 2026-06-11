@@ -249,6 +249,22 @@ export function whereItSitsCopy(
 // renders and preserves the page's eyebrow + h2 rhythm.
 export const ADJACENT_SECTION_H2 = 'Either direction.' as const
 
+// Section 01 ("The take") H2. critique-pass-47 MED (issue #393): the
+// default H2 rendered the season title with a trailing period
+// (`{season.title}.`), which on HvV reads as a literal restate of
+// the page H1 above. Sections 02–06 carry editorial fragments that
+// preview each section's argument; Section 01 was the only one that
+// degenerated into a page-title restate. `take_h2` is the optional
+// frontmatter override — a 2-to-5-word editorial fragment in the
+// same register as 02–06. When absent the legacy title-as-H2
+// default holds (the lax→strict catalog drain proceeds tick by
+// tick; see `scripts/content-check.ts` §
+// collectSeasonSectionSubheadIssues). Exported so the colocated
+// page test can pin both branches.
+export function takeH2For(season: Season): string {
+  return season.take_h2 ?? `${season.title}.`
+}
+
 // SeasonHero byline. critique-pass-38 MED (issue #339): the byline
 // `Canon entry by the tiered.tv editor` and the RankScale headLabel
 // `Editor's Canon` stack the same attribution claim twice in the same
@@ -430,7 +446,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             <SeasonTOCMobile sections={sections} />
             <section id="s-take" data-testid="section-take">
               <div className="article-eyebrow"><span className="num">01</span><span>The take</span></div>
-              <h2>{season.title}.</h2>
+              <h2>{takeH2For(season)}</h2>
               {season.pull ? (
                 <blockquote className="season-pull" data-testid="season-pull">
                   {season.pull}

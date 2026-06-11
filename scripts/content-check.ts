@@ -2035,6 +2035,53 @@ export function collectCanonRationaleDanglingPossessiveIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-47 MED (issue #393): the season page's Section 01
+// ("The take") H2 defaults to a literal restate of the page H1 when
+// no `take_h2` override is authored — the rendered shape on HvV is
+// `<h2>Heroes vs. Villains.</h2>` directly below the hero's `Heroes
+// vs. / Villains` H1, breaking the rhythm sections 02–06 set with
+// their editorial fragments. The invariant scans every season; flags
+// when the rendered Section 01 H2 (`take_h2 ?? `${season.title}.`)
+// stripped of trailing punctuation and whitespace verbatim
+// case-insensitively matches the season's `title` or its HTML-stripped
+// `display_title`. Ships LAX initially — every season that has not
+// yet authored `take_h2` would trip; subsequent ship-content drain
+// ticks rotate one season at a time, and the final drain tick flips
+// SEASON_SECTION_SUBHEAD_STRICT to true.
+function normalizeForSubheadMatch(text: string): string {
+  return text
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[.!?…]+\s*$/u, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+}
+
+export function collectSeasonSectionSubheadIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const seasons = getAllSeasons(show.slug)
+    for (const season of seasons) {
+      const renderedH2 = season.take_h2 ?? `${season.title}.`
+      const renderedKey = normalizeForSubheadMatch(renderedH2)
+      const titleKey = normalizeForSubheadMatch(season.title)
+      const displayKey = season.display_title
+        ? normalizeForSubheadMatch(season.display_title)
+        : ''
+      const matchesTitle = renderedKey.length > 0 && renderedKey === titleKey
+      const matchesDisplay =
+        renderedKey.length > 0 && displayKey.length > 0 && renderedKey === displayKey
+      if (!matchesTitle && !matchesDisplay) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `season-page Section 01 ("The take") H2 verbatim restates the page H1 — rendered \`<h2>${renderedH2}</h2>\` reads as the same text the reader just saw above the fold (page H1 is the season's \`display_title\` or \`title\`). Sections 02–06 carry editorial fragments (2-to-5-word, period); Section 01 should match the same register. Author a \`take_h2\` frontmatter field with an editorial fragment that previews the take's argument (e.g. \`take_h2: "A returnees season at full height."\`). See plan/CRITIQUE.md pass-47 / issue #393.`,
+      })
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -2566,6 +2613,25 @@ function main(): number {
     failures.push(...canonDanglingPossessiveIssues)
   } else {
     for (const issue of canonDanglingPossessiveIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-47 MED (issue #393): ships LAX during the corpus
+  // drain — this commit authors `take_h2` on the named HvV offender,
+  // but every other season in the catalog still renders the legacy
+  // title-as-H2 default and would trip the invariant. Subsequent
+  // /ship-content drain ticks rotate each remaining season's Section
+  // 01 H2 to an editorial fragment, and the final drain tick flips
+  // SEASON_SECTION_SUBHEAD_STRICT to true. One-line toggle mirroring
+  // SEASON_EYEBROW_CALENDAR_STRICT / WATCHLIST_PHRASE_REPETITION_STRICT
+  // above (the lax→strict pattern).
+  const SEASON_SECTION_SUBHEAD_STRICT = false
+  const seasonSectionSubheadIssues = collectSeasonSectionSubheadIssues()
+  if (SEASON_SECTION_SUBHEAD_STRICT) {
+    failures.push(...seasonSectionSubheadIssues)
+  } else {
+    for (const issue of seasonSectionSubheadIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

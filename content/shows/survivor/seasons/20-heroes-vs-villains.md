@@ -11,6 +11,7 @@ format_changes: [all-returnee-cast, hero-villain-tribes]
 canonical_position: 2
 eyebrow: "Aired winter–spring 2010 · Filmed in Samoa"
 lede: "A returnees season that finally let the format show what it could really do, when nobody had to be introduced. The pace doesn't slow, even for sleep."
+take_h2: "The all-star ceiling."
 pull: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast at the close of the format's first decade. The casting team draws from ten prior seasons of accumulated audience memory, so every confessional carries weight a fresh cast cannot generate. The post-merge stretch runs denser than the format usually permits, and the back half rarely lets the editor breathe. The premise holds clean from premiere to merge — no tribe swap, no twist reshuffle, just the heroes-versus-villains argument running its full arc before the lines dissolve."
 filming_caption: "same beach as S19"
 premiere_caption: "CBS · Thursday 8/7c"
