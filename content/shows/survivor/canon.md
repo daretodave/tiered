@@ -34,7 +34,7 @@ era_bands:
 ## 28. Cagayan
 
 tag: The modern Survivor template.
-slot_argument: Every season since 2014 borrows from Cagayan — the casting archetypes, the strategic openness, the willingness to let players run the room at tribal council.
+slot_argument: The cast treats jury management as part of the game here, not as a final-night confession. Every winner since has been expected to do the same — own the moves to the room they came from.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Cagayan sits at the top because every modern Survivor season is,
@@ -51,7 +51,7 @@ shaped what the show is allowed to be more decisively.
 ## 20. Heroes vs. Villains
 
 tag: Casting as format — heroes and villains as the season's whole structural argument.
-slot_argument: Samoa's coast gives the season a setting the franchise had not yet handed a returnee cast — open beach, hard surf, and a tribal set the editors could light differently every cycle. The place pulls its weight alongside the bench.
+slot_argument: The hero/villain split is the format. Drawing the line down the middle of a returnee bench tells the audience how to read every confessional before episode one airs, and the show has to honor that contract for the full run.
 community_rank_hint: rank=2 delta=1 sentiment=up
 
 Heroes vs. Villains is the all-star format running at its
