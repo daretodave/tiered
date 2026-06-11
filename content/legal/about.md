@@ -23,6 +23,15 @@ season to watch next. Or skim the [themed lists](/themes) for
 cross-show patterns ("Premieres that earned it", "The back-half
 at full volume", etc.).
 
+## What this is {#what}
+
+An experiment. Built and operated by one person. Free to use.
+No ads, no third-party tracking, no email collection beyond
+sign-in.
+
+Read [Privacy](/privacy) for the data details and [Terms](/terms)
+for the rules.
+
 ## How voting works {#voting}
 
 Two rankings live on every show page. The **Editor's Canon** is
@@ -73,12 +82,3 @@ covers yet — or you have a take on one we do, written with
 on [GitHub](https://github.com/daretodave/tiered) and tell me
 which show and which season. New editors come in by invitation
 after a draft round.
-
-## What this is
-
-An experiment. Built and operated by one person. Free to use.
-No ads, no third-party tracking, no email collection beyond
-sign-in.
-
-Read [Privacy](/privacy) for the data details and [Terms](/terms)
-for the rules.

@@ -381,6 +381,56 @@ describe('editorial narrator voice on /about (critique pass-45, issue #381)', ()
   })
 })
 
+// Critique pass-47 MED (issue #393): the prior /about section
+// order rendered (1) `How voting works`, (2) `Spoilers policy`,
+// (3) `Become an editor`, (4) `What this is` — the project's
+// identity statement (`An experiment. Built and operated by one
+// person…`) was the page's last major section, so a first-time
+// visitor read the weighting-ladder math before they read what
+// the project *is*. Identity-before-mechanics is the standard
+// editorial order for an /about page. The fix promotes
+// `What this is` to the first H2 section (between the hero lede
+// and `How voting works`). Bidirectional pins below catch (1) a
+// future content rewrite that defaults the order back to
+// mechanics-first, AND (2) silent renames of the load-bearing
+// section heading. Closure pattern matches pass-45 #381 (drift
+// guard on the page that owes the truth).
+describe('content/legal/about.md section order — identity before mechanics (#393)', () => {
+  it('renders `What this is` as the first H2 after the hero lede', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    const headings = [...body.matchAll(/^##\s+(.+?)(?:\s+\{#[^}]+\})?\s*$/gm)].map((m) =>
+      (m[1] ?? '').trim(),
+    )
+    expect(headings[0]).toBe('What this is')
+  })
+
+  it('keeps the four-section roster intact (no silent rename or drop)', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    const headings = [...body.matchAll(/^##\s+(.+?)(?:\s+\{#[^}]+\})?\s*$/gm)].map((m) =>
+      (m[1] ?? '').trim(),
+    )
+    expect(headings).toEqual([
+      'What this is',
+      'How voting works',
+      'Spoilers policy',
+      'Become an editor',
+    ])
+  })
+
+  it('does not regress by putting `How voting works` ahead of `What this is`', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    const whatIdx = body.search(/^##\s+What this is\b/m)
+    const votingIdx = body.search(/^##\s+How voting works\b/m)
+    expect(whatIdx).toBeGreaterThan(-1)
+    expect(votingIdx).toBeGreaterThan(-1)
+    expect(whatIdx).toBeLessThan(votingIdx)
+  })
+})
+
 describe('content/legal/about.md rate-limit trust line voice (#310)', () => {
   it('does not use the bare standalone `Brigade` token without an inline plain-language bridge', () => {
     const doc = getLegalDoc('about')
