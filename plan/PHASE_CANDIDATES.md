@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-12 at commit 8f93e95
-> Pass count: 31
+> Last pass: 2026-06-12 at commit 14cd563
+> Pass count: 32
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,83 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 32 (2026-06-12, commit 14cd563) — 0 candidates filed.
+     Re-pass at the exact 20-commit threshold from pass 31
+     (8f93e95). Window deltas: pass-50 /critique ran at 947843c
+     (5 anon findings: plural-`we` cross-surface drift, /shows
+     B-tier empty band, /about title double-stamp, HvV anon
+     thread footer 3-line stack, /shows meta-vs-hero
+     `is/feels` drift); /iterate drained 3 of the 5 (#413
+     /shows B-tier empty band at f302fab, #414 HvV anon-thread
+     posting-rule prefix at ce8ab81, #415 /about title fix at
+     8c39919). Two pass-50 rows remain Pending (plural-`we`
+     cluster MED — extends PLURAL_EDITOR_STRICT scope; meta/hero
+     `is/feels` LOW — single-line copy edit). Total Pending
+     CRITIQUE = 14 actionable rows (was 17 at pass 31; minus
+     3 pass-50 drains = 14; pass-50 added 5, 3 already drained,
+     2 net new; remaining net delta from pass-31 baseline: -3
+     rows after subtracting pass-50 contribution).
+     Signals reviewed (delta from pass 31):
+     - AUDIT.md: still 0 actionable Pending rows (the HIGH
+       Windows verify row drained at 8f93e95 / pass 31, no new
+       rows filed in the window). Unchanged from pass 31.
+     - CRITIQUE.md: 14 actionable Pending rows. Cluster shape
+       identical to pass 31's analysis — editor-voice register
+       drift (3 MED extending PLURAL_EDITOR_STRICT scope) /
+       authed-chrome affordance gaps (5 MED) / cross-surface
+       display drift (3 MED) / single-tick polish (3 LOW). The
+       2 pass-50 rows that remain (plural-`we` cluster MED;
+       meta-vs-hero `is/feels` LOW) each extend an existing
+       shipped invariant or fold into an existing cluster pass
+       31 already examined — neither seeds a new candidate
+       shape. The pass-31 §3 "is this a phase shape?"
+       conclusion stands: /iterate drains each row in 1-2
+       ticks; no lax→strict invariant shape present that isn't
+       already covered by phases 41/42/43/44/45/46.
+     - GitHub issues: 5 open (was 2 at pass 31), but the delta
+       is mechanical: 3 new `loop:opened` mirror rows (#400
+       phase-44 mirror, #405 phase-46 mirror, #373 mobile
+       reader finding mirror — auto-filed by the loop, not
+       human-routed). 0 unlabeled. #398/#399 (cloud march
+       crash + Windows verify, both `triage:needs-user`) and
+       #150/#148 still routed past triage with no new
+       human-routed signals. No candidate-shaped accumulation
+       on any backlog axis.
+     - spec.md + design/: still no diffs since pass 27
+       (verified `git log 8f93e95..HEAD -- spec.md design/`:
+       empty; cumulative `git log 9578141..HEAD -- spec.md
+       design/`: empty). Brand / voice / URL contract stable
+       for 27 days unchanged.
+     - Commit pattern: 20 commits since pass 31 — 0 phases
+       shipped (build plan exhausted at the same row as pass
+       31), 1 critique pass (50 — 0 HIGH / 4 MED / 2 LOW / 5
+       filed under cap-of-6), 1 oversight pass (947843c +
+       precursor — pass-50 dispatch + self-assessment), 3
+       pass-50 audit drains (#413, #414, #415), 1 verify-time
+       fix pair (/about title double-stamp at 8c39919), 1
+       content edit (HvV posting-rule prefix at ce8ab81). All
+       drain shape, no rogue refactor surface, no 5+ fix-class
+       cluster on one file. The 14-pass zero-candidate streak
+       extends to 15.
+     - PHASE_CANDIDATES.md pending: #03 (Newsletter, score
+       3.0) still the lone awaiting-promotion candidate (no
+       change since pass 26). Zero Considered (below
+       threshold) entries; no new structural signal.
+
+     Zero real structural candidates this pass. Honest read:
+     the threshold-edge re-pass at exactly 20 commits within
+     8h of pass 31 confirms what pass 31 concluded — the
+     project's structural envelope is stable and the loop is
+     in the iterate-drains-the-queue steady state. The 2 new
+     pass-50 critique rows that remain Pending after the
+     drain-pair window each extend an existing shipped guard
+     or fold into the pass-31 cluster analysis. Reinforces
+     the 15-pass streak (18-32) of zero-candidate passes.
+     Next tick: /iterate picks up either the plural-`we`
+     cluster MED (extends PLURAL_EDITOR_STRICT scope) or one
+     of the 3 cross-surface display drift MED rows depending
+     on standard impact × ease ordering. -->
 
 <!-- Pass 31 (2026-06-12, commit 8f93e95) — 0 candidates filed.
      Signals reviewed:
