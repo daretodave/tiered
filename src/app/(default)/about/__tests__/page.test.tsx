@@ -431,6 +431,37 @@ describe('content/legal/about.md section order — identity before mechanics (#3
   })
 })
 
+// Critique pass-47 LOW (issue #406): the prior /about
+// `Become an editor` section closed on "New editors come in by
+// invitation after a draft round." — `draft round` is a
+// term-of-art undefined in-page and nowhere else on the site.
+// A reader who pitches by opening a GitHub issue has no
+// reliable read on what `draft round` means as a process. The
+// fix rewrites the close to a plain one-clause description
+// ("a sample season write-up we agree on") that names the
+// artifact + the agreement, preserves the editor's gatekeeping
+// discretion + the invitation-rather-than-application model,
+// and drops the undefined term-of-art. Bidirectional pins
+// below catch (1) the rewrite succeeding (positive on the new
+// clause), AND (2) any future authoring pass reintroducing
+// `draft round` in the same section. Closure pattern matches
+// pass-45 #381 + pass-46 #393 (drift guard on the page that
+// owes the truth).
+describe('Become-an-editor close drops undefined `draft round` (#406)', () => {
+  it('rewrites to a plain one-clause description naming the artifact', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    const body = doc?.body_md ?? ''
+    expect(body).toMatch(/sample\s+season\s+write-up\s+we\s+agree\s+on/)
+  })
+
+  it('does not regress to the undefined `draft round` term-of-art', () => {
+    const doc = getLegalDoc('about')
+    const body = doc?.body_md ?? ''
+    expect(body).not.toMatch(/\bdraft\s+round\b/i)
+  })
+})
+
 describe('content/legal/about.md rate-limit trust line voice (#310)', () => {
   it('does not use the bare standalone `Brigade` token without an inline plain-language bridge', () => {
     const doc = getLegalDoc('about')
