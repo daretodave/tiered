@@ -87,6 +87,29 @@ describe('content/legal/about.md voting copy (#258, supersedes #257)', () => {
 // positive that the description names at least one of {canon, vote,
 // spoilers}; negative that it does not regress to the prior
 // "How it works." closer drift.
+// Critique pass-50 LOW: the prior /about frontmatter `title` read
+// `About tiered.tv`, which the root layout's `%s — tiered.tv`
+// template double-stamped into `<title>About tiered.tv — tiered.tv</title>`
+// on every SERP snippet, browser tab, share-card fallback, and Slack
+// preview. Every other page on the site passes a clean noun
+// (`title: 'All shows'` → `All shows — tiered.tv`) and lets the
+// template carry the brand stamp once. The fix rotates the
+// frontmatter to the clean noun `About`. The pin below catches any
+// future authoring pass re-introducing the brand stamp in the title
+// itself (which would re-double-stamp at render time).
+describe('content/legal/about.md frontmatter title — brand-stamp hygiene (critique pass-50)', () => {
+  it('uses the clean noun `About` so the root template stamps the brand exactly once', () => {
+    const doc = getLegalDoc('about')
+    expect(doc).not.toBeNull()
+    expect(doc?.title).toBe('About')
+  })
+
+  it('does not regress to the double-stamped `About tiered.tv` form', () => {
+    const doc = getLegalDoc('about')
+    expect(doc?.title).not.toMatch(/tiered\.tv/i)
+  })
+})
+
 describe('content/legal/about.md frontmatter description (#276)', () => {
   it('names a substantive editorial keyword the body owns (canon / vote / spoilers)', () => {
     const doc = getLegalDoc('about')

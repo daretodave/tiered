@@ -1,6 +1,6 @@
 ---
 slug: about
-title: About tiered.tv
+title: About
 description: Two rankings side by side — an editor's canon and a weekly community vote — with a spoilers policy that defines what's fair game and what isn't.
 updated: 2026-05-27
 ---
