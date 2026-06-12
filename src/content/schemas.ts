@@ -45,9 +45,9 @@ export const showFrontmatterSchema = z
     card_tagline: z.string().min(1).max(160).optional(),
     // Editorial fields added with the /shows tier-list redesign.
     // tier is the editor's confidence in the canon for this show:
-    //   S — format-defining, we'd defend the order at a bar
-    //   A — deep canon, we'd defend it at a kitchen table
-    //   B — recent / under review, we haven't watched twice yet
+    //   S — format-defining, I'd defend the order at a bar
+    //   A — deep canon, I'd defend it at a kitchen table
+    //   B — recent / under review, I haven't watched twice yet
     // network, est_year, genre_tag are surfaced on the show tile.
     // featured flags the single show that anchors the home hero.
     tier: showTierEnum,

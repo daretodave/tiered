@@ -2413,6 +2413,88 @@ export function collectHomeNarratorVoiceIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-50 MED (#413): cross-surface singular-editor voice.
+// Three sibling surfaces the pass-48 #411 home-rotation closure didn't
+// reach — the `/shows` tier-explainer paragraph (HowTiersMove), the
+// `/about` Become-an-editor section body (markdown), and the
+// `whereItSitsCopy` Section-03 fallback for season pages — each carried
+// plural-`we` narrator forms on a site whose hero / canon / themed-list
+// / about-lede surfaces all settled on first-person singular post pass-31
+// / pass-45 / pass-47 / pass-48 / pass-49. The component + content
+// rewrites in this commit drain the offenders; this invariant is the
+// bidirectional verify-gate pin against a future authoring pass
+// regressing any of the three surfaces back to plural-we.
+//
+// Each scope names the exact editorial-voice region — the JSX
+// paragraph for HowTiersMove (not arbitrary `we` in a code comment),
+// the markdown body for /about (Terms + Privacy keep institutional
+// plural-we voice and live in separate legal docs), and the
+// `whereItSitsCopy` function literal for the season page (not other
+// `we` tokens that appear in code comments elsewhere in the file).
+const EDITORIAL_FIRST_PERSON_PATTERN =
+  /\bwe(?:['’](?:ve|d|re|ll))?\b/i
+
+type EditorialFirstPersonScope = {
+  file: string
+  surface: string
+  extract: (text: string) => string | null
+}
+
+const EDITORIAL_FIRST_PERSON_SCOPES: EditorialFirstPersonScope[] = [
+  {
+    file: 'src/components/shows/HowTiersMove.tsx',
+    surface: '`How the tiers move` tier-explainer paragraph (/shows)',
+    extract: (text) => {
+      // Match the JSX <p>…</p> block inside the .footnote-inner div.
+      // Restrict to the rendered editorial paragraph, not the source's
+      // surrounding comments/imports.
+      const match = text.match(/<p>([\s\S]*?)<\/p>/)
+      return match?.[1] ?? null
+    },
+  },
+  {
+    file: 'content/legal/about.md',
+    surface: '`Become an editor` section body (/about)',
+    extract: (text) => {
+      // Match the `## Become an editor` section body up to the next
+      // `##` heading (end of file is fine). Other /about sections
+      // (Spoilers policy, voting mechanics) live on their own pins.
+      const match = text.match(/##\s+Become an editor[\s\S]*?(?=\n## |\n*$)/)
+      return match?.[0] ?? null
+    },
+  },
+  {
+    file: 'src/app/shows/[show]/season/[slug]/page.tsx',
+    surface: '`whereItSitsCopy` Section-03 body literal (HvV + every season page)',
+    extract: (text) => {
+      // Match the `whereItSitsCopy` function body — every string
+      // literal it returns is editorial voice. Other `we` tokens in
+      // the file (code comments, other functions) are out of scope.
+      const match = text.match(
+        /export function whereItSitsCopy[\s\S]*?\n\}\s*\n/,
+      )
+      return match?.[0] ?? null
+    },
+  },
+]
+
+export function collectEditorialFirstPersonIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const scope of EDITORIAL_FIRST_PERSON_SCOPES) {
+    if (!existsSync(scope.file)) continue
+    const text = readFileSync(scope.file, 'utf8')
+    const region = scope.extract(text)
+    if (region == null) continue
+    const match = region.match(EDITORIAL_FIRST_PERSON_PATTERN)
+    if (!match) continue
+    issues.push({
+      file: scope.file,
+      message: `editorial first-person drift — ${scope.surface} carries plural-narrator form "${match[0]}". The site settled on singular-I editor voice across hero / canon / themed-list / about-lede / home surfaces (pass-31 #306, pass-45 #381, pass-47 #406, pass-48 #411, pass-49 #408). Rotate the plural-we form to singular-I (e.g. "we'd defend" → "I'd defend", "we ranked" → "I ranked", "one we cover" → "one I cover"). See plan/CRITIQUE.md pass-50 / issue #413.`,
+    })
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -3040,6 +3122,23 @@ function main(): number {
     failures.push(...homeNarratorVoiceIssues)
   } else {
     for (const issue of homeNarratorVoiceIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-50 MED (#413): ships strict at floor 0 — the
+  // HowTiersMove + about.md + whereItSitsCopy rotation (this commit)
+  // drains the three plural-`we` offenders from the editorial-voice
+  // scopes the home-rotation closure (pass-48 #411) didn't reach.
+  // Bidirectional floor against a future authoring pass that lands
+  // plural-we on any of the three surfaces. One-line toggle mirroring
+  // the strict invariants above.
+  const EDITORIAL_FIRST_PERSON_STRICT = true
+  const editorialFirstPersonIssues = collectEditorialFirstPersonIssues()
+  if (EDITORIAL_FIRST_PERSON_STRICT) {
+    failures.push(...editorialFirstPersonIssues)
+  } else {
+    for (const issue of editorialFirstPersonIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

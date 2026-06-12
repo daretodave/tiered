@@ -5,10 +5,10 @@ export function HowTiersMove() {
         <div>
           <h3>How the tiers move.</h3>
           <p>
-            S tier means we&rsquo;d defend the canon&rsquo;s order at a bar.
-            A tier means we&rsquo;d defend it at a kitchen table. B tier
-            means we haven&rsquo;t watched everything twice yet &mdash; when
-            we have, the show moves up.
+            S tier means I&rsquo;d defend the canon&rsquo;s order at a bar.
+            A tier means I&rsquo;d defend it at a kitchen table. B tier
+            means I haven&rsquo;t watched everything twice yet &mdash; when
+            I have, the show moves up.
           </p>
           <p>
             Tiers are not about quality. They&rsquo;re about the editorial
@@ -16,7 +16,7 @@ export function HowTiersMove() {
           </p>
         </div>
         <a className="footnote-link" href="/about">
-          How we rank →
+          How I rank →
         </a>
       </div>
     </aside>

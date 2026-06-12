@@ -19,6 +19,7 @@ import {
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
+  collectEditorialFirstPersonIssues,
   collectFailures,
   collectHomeNarratorVoiceIssues,
   findBrandSpellingMatches,
@@ -6463,6 +6464,57 @@ describe('content-check — home editorial-surface narrator voice (critique pass
       expect(/\ban editor\b|\bthe readers\b|\bone reader\b/i.test(offender)).toBe(
         true,
       )
+    }
+  })
+})
+
+describe('content-check — cross-surface singular-editor voice (critique pass-50, issue #413)', () => {
+  // The HowTiersMove tier-explainer paragraph, the /about
+  // "Become an editor" section, and the whereItSitsCopy
+  // Section-03 fallback literal all carried plural-`we`
+  // narrator forms while the rest of the catalog (hero, canon,
+  // themed-list, about-lede, home post-#411) speaks singular-I.
+  // The rotation in this commit drains the three; the
+  // invariant is the bidirectional floor against a future
+  // authoring pass that reintroduces `we` to any of the three
+  // scopes.
+  it('passes against the real source files (post-drain)', () => {
+    expect(collectEditorialFirstPersonIssues()).toEqual([])
+  })
+
+  it('flags the historical defect on each surface — literal regex over the named rejected forms', () => {
+    // Acceptance pin: the helper's pattern catches every
+    // contraction form a plural-we authoring pass would reach
+    // for. Mirrors the pass-49 #411 acceptance test shape.
+    const pattern = /\bwe(?:['’](?:ve|d|re|ll))?\b/i
+    const offenders = [
+      // /shows tier-explainer historical literal
+      "S tier means we'd defend the canon's order at a bar.",
+      // /about Become-an-editor historical literals
+      'or you have a take on one we do, written with 80-120 words',
+      'a sample season write-up we agree on',
+      // whereItSitsCopy historical literal
+      'The seasons on either side show what we ranked it against.',
+      // additional contractions the pattern's invariant must catch
+      "we've covered the canon",
+      "we're going to settle this",
+      "we'll defend it",
+    ]
+    for (const offender of offenders) {
+      expect(pattern.test(offender)).toBe(true)
+    }
+  })
+
+  it("does not match unrelated tokens (\\bwe\\b is word-bounded — \"editors\", \"sweet\", \"between\" stay clean)", () => {
+    const pattern = /\bwe(?:['’](?:ve|d|re|ll))?\b/i
+    const safeTokens = [
+      "the editors' draft is still in progress",
+      'a sweet ending',
+      'between two tribes',
+      'tweed jacket',
+    ]
+    for (const safe of safeTokens) {
+      expect(pattern.test(safe)).toBe(false)
     }
   })
 })

@@ -438,7 +438,7 @@ describe('content/legal/about.md section order — identity before mechanics (#3
 // A reader who pitches by opening a GitHub issue has no
 // reliable read on what `draft round` means as a process. The
 // fix rewrites the close to a plain one-clause description
-// ("a sample season write-up we agree on") that names the
+// ("a sample season write-up I agree to") that names the
 // artifact + the agreement, preserves the editor's gatekeeping
 // discretion + the invitation-rather-than-application model,
 // and drops the undefined term-of-art. Bidirectional pins
@@ -452,7 +452,7 @@ describe('Become-an-editor close drops undefined `draft round` (#406)', () => {
     const doc = getLegalDoc('about')
     expect(doc).not.toBeNull()
     const body = doc?.body_md ?? ''
-    expect(body).toMatch(/sample\s+season\s+write-up\s+we\s+agree\s+on/)
+    expect(body).toMatch(/sample\s+season\s+write-up\s+I\s+agree\s+to/)
   })
 
   it('does not regress to the undefined `draft round` term-of-art', () => {

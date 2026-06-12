@@ -237,7 +237,7 @@ export function whereItSitsCopy(
   if (canonTotal === 1) {
     return `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
   }
-  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what we ranked it against.`
+  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what I ranked it against.`
 }
 
 // Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:

@@ -313,7 +313,7 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
   it('renders the ranked-slot framing without the "neighbors below" overload', () => {
     const show = makeShow({ name: 'Survivor', slug: 'survivor' })
     expect(whereItSitsCopy(show, 2, 50)).toBe(
-      "Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what we ranked it against.",
+      "Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what I ranked it against.",
     )
   })
 
