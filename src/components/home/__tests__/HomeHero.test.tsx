@@ -162,4 +162,22 @@ describe('<HomeHero>', () => {
       'May 2026',
     )
   })
+
+  // Critique pass-49 MED (#411): the home lede must speak in the same
+  // first-person editor voice the interior pages (show-page body,
+  // themed-list lede, /about lede) already use. A stranger clicking
+  // home → any interior surface in one click should meet one
+  // narrator, not two. Bidirectional pin — positive: the lede reads
+  // first-person ("I cover" / "I write") + second-person community
+  // ("you vote"); negative: the prior third-person institutional
+  // markers ("an editor", "the readers") are gone.
+  it('renders the home lede in first-person editor voice (no institutional 3rd-person)', () => {
+    render(<HomeHero featured={survivor()} canonRevisedLabel={CANON_LABEL} />)
+    const blurb = screen.getByTestId('home-hero').textContent ?? ''
+    expect(blurb).toMatch(/I cover/)
+    expect(blurb).toMatch(/I write/)
+    expect(blurb).toMatch(/you vote/i)
+    expect(blurb).not.toMatch(/\ban editor\b/i)
+    expect(blurb).not.toMatch(/\bthe readers\b/i)
+  })
 })

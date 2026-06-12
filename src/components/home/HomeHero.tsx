@@ -106,11 +106,11 @@ export function HomeHero({
           ranked. <em>no spoilers.</em>
         </h1>
         <p className="home-hero-blurb">
-          Two rankings for every show. <b>One written by an editor</b> with the
-          whole series in their head; <b>one voted by the readers</b> who lived
-          through it. Every page is reviewed for spoilers before it goes live —
-          so you can scroll without losing the season you&apos;re three episodes
-          into.
+          Two rankings for every show I cover. <b>One I write</b> — the canon,
+          ordered, with reasons. <b>One you vote</b> — live, restless, real
+          numbers per season. Every page is reviewed for spoilers before it
+          goes live — so you can scroll without losing the season you&apos;re
+          three episodes into.
         </p>
         <div className="home-hero-actions">
           <Link

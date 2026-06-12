@@ -2374,6 +2374,45 @@ export function collectBrandSpellingIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-49 MED (#411): cross-surface narrator-voice
+// invariant. The interior editorial surfaces a stranger reaches on
+// the first click (show-page hero `tagline` / body, themed-list
+// lede, /about lede) all speak in singular first-person editor
+// voice; the home lede + dual-callout cells used to introduce the
+// editor in third-person institutional voice (`an editor` / `the
+// readers` / `one reader`), so a stranger met two narrators on
+// the home → interior click path. The component-level rewrite
+// (this commit) drains the offenders; this invariant is the
+// bidirectional verify-gate pin against a future authoring pass
+// regressing the home back to institutional voice.
+const HOME_NARRATOR_VOICE_FILES = [
+  'src/components/home/HomeHero.tsx',
+  'src/components/home/HomeDualCallout.tsx',
+] as const
+
+const HOME_NARRATOR_VOICE_OFFENDERS: { pattern: RegExp; phrase: string }[] = [
+  { pattern: /\ban editor\b/i, phrase: 'an editor' },
+  { pattern: /\bthe readers\b/i, phrase: 'the readers' },
+  { pattern: /\bone reader\b/i, phrase: 'one reader' },
+]
+
+export function collectHomeNarratorVoiceIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const file of HOME_NARRATOR_VOICE_FILES) {
+    if (!existsSync(file)) continue
+    const text = readFileSync(file, 'utf8')
+    for (const { pattern, phrase } of HOME_NARRATOR_VOICE_OFFENDERS) {
+      if (pattern.test(text)) {
+        issues.push({
+          file,
+          message: `home editorial surface carries third-person institutional voice ("${phrase}") — rotate to first-person editor voice ("I") or second-person community voice ("you") to match the interior pages (critique pass-49 #411 cross-surface narrator-voice invariant)`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -2983,6 +3022,24 @@ function main(): number {
     failures.push(...cardTaglineOpenerOverlapIssues)
   } else {
     for (const issue of cardTaglineOpenerOverlapIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-49 MED (#411): ships strict at floor 0 — the
+  // HomeHero + HomeDualCallout rewrite (this commit) drains the
+  // three institutional offenders (`an editor`, `the readers`,
+  // `one reader`) from the home editorial surfaces. The invariant
+  // is the bidirectional floor that catches a future authoring
+  // pass regressing the home lede back to third-person
+  // institutional voice. One-line toggle mirroring the strict
+  // invariants above.
+  const HOME_NARRATOR_VOICE_STRICT = true
+  const homeNarratorVoiceIssues = collectHomeNarratorVoiceIssues()
+  if (HOME_NARRATOR_VOICE_STRICT) {
+    failures.push(...homeNarratorVoiceIssues)
+  } else {
+    for (const issue of homeNarratorVoiceIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

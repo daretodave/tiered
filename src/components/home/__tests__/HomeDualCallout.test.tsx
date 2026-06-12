@@ -107,4 +107,26 @@ describe('<HomeDualCallout>', () => {
       /anonymous[^]*0\.1[^]*under 7 days[^]*0\.25[^]*tenured[^]*1\.0/i,
     )
   })
+
+  // Critique pass-49 MED (#411): the curated cell speaks in the same
+  // first-person editor voice the interior pages (show-page body,
+  // themed-list lede, /about lede) already use. The live cell speaks
+  // in second-person ("you", "your") to match the lede's "you vote"
+  // framing. Bidirectional pin — positive: the curated cell contains
+  // "I write" (or comparable first-person marker); negative: the
+  // prior third-person institutional markers ("an editor", "one
+  // reader") are gone.
+  it('curated cell renders in first-person editor voice (no "an editor")', () => {
+    render(<HomeDualCallout />)
+    const curated = screen.getByTestId('home-dual-curated').textContent ?? ''
+    expect(curated).toMatch(/\bI write\b/)
+    expect(curated).not.toMatch(/\ban editor\b/i)
+  })
+
+  it('live cell speaks to the reader in second-person (no "one reader")', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live').textContent ?? ''
+    expect(live).toMatch(/\byour\b/i)
+    expect(live).not.toMatch(/\bone reader\b/i)
+  })
 })

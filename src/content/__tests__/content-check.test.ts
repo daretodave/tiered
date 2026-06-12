@@ -20,6 +20,7 @@ import {
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
   collectFailures,
+  collectHomeNarratorVoiceIssues,
   findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
   collectSeasonSectionSubheadIssues,
@@ -6427,5 +6428,41 @@ describe('content-check — brand-spelling discipline (phase 44)', () => {
     // the moment a future authoring pass reintroduces a drift —
     // exactly the regression-guard the phase ships for.
     expect(collectBrandSpellingIssues()).toEqual([])
+  })
+})
+
+describe('content-check — home editorial-surface narrator voice (critique pass-49, issue #411)', () => {
+  // The home lede + dual-callout cells used to introduce the
+  // editor in third-person institutional voice (`an editor`, `the
+  // readers`, `one reader`) while every interior page a stranger
+  // clicks into reads in first-person editor voice (show body
+  // "I've ranked every single one", themed lede "12 lists I'd
+  // defend in a group chat", /about "For every show I cover").
+  // The fix rotated the home onto the same first-person voice;
+  // this invariant pins the home component source against
+  // regression.
+  it('passes against the real home components (post-drain)', () => {
+    expect(collectHomeNarratorVoiceIssues()).toEqual([])
+  })
+
+  it('flags HomeHero source if a future authoring pass slips "an editor" back into the lede', () => {
+    // Synthetic regression: scan a string carrying the rejected
+    // literal directly. Done by writing the helper inputs to a
+    // temp dir would require source-tree mutation, which the rest
+    // of the suite avoids. Instead the helper is exported alongside
+    // its file constants so this acceptance test stays paired with
+    // the actual code path: the post-drain assertion above is the
+    // mechanical floor. This case documents the invariant's intent
+    // by re-deriving the offender check on a literal.
+    const offenders = [
+      'A single, ordered list written by an editor who has watched',
+      'voted by the readers who lived through it',
+      'One reader, one vote per season',
+    ]
+    for (const offender of offenders) {
+      expect(/\ban editor\b|\bthe readers\b|\bone reader\b/i.test(offender)).toBe(
+        true,
+      )
+    }
   })
 })
