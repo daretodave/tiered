@@ -8,7 +8,7 @@ describe('<CommentInputStub>', () => {
     const link = screen.getByTestId('comment-stub-link')
     expect(link).toHaveAttribute('href', '/sign-in')
     expect(link.textContent).toContain('Sign in to comment')
-    expect(link.textContent).toContain('No plot')
+    expect(link.textContent).toContain('Posting rule:')
   })
 
   it('honors a custom signInHref', () => {
@@ -36,7 +36,47 @@ describe('<CommentInputStub>', () => {
       )
       expect(taglineSpan).not.toBeNull()
       expect(taglineSpan?.textContent ?? '').not.toMatch(/→/)
-      expect(taglineSpan?.textContent ?? '').toMatch(/No plot, no winners, no twists/)
+      expect(taglineSpan?.textContent ?? '').toMatch(
+        /Posting rule: no plot, no winners, no twists\./,
+      )
+    })
+  })
+
+  describe('rule-label prefix (critique pass-50, issue #415)', () => {
+    // The bare `No plot, no winners, no twists` literal parsed
+    // ambiguously next to the empty-state `No comments yet.`
+    // line below it on the same anon-state thread footer — a
+    // first-time reader drifted to "there are no comments
+    // because no plot, no winners, no twists are being
+    // discussed yet." Prefix the rule with `Posting rule:` so
+    // it parses as a labeled rule, not a paraphrase of the
+    // empty-state. Bidirectional pin: positive on the new
+    // prefix + end punctuation; negative against any regression
+    // to the bare-rule shape.
+    it('opens the rule line with a `Posting rule:` label', () => {
+      const { container } = render(<CommentInputStub />)
+      const taglineSpan = container.querySelector(
+        '[data-testid="comment-stub-link"] .comment-stub-mono',
+      )
+      expect(taglineSpan?.textContent ?? '').toMatch(/^Posting rule:\s/)
+    })
+
+    it('ends the rule line with a period so it reads as a complete sentence', () => {
+      const { container } = render(<CommentInputStub />)
+      const taglineSpan = container.querySelector(
+        '[data-testid="comment-stub-link"] .comment-stub-mono',
+      )
+      expect(taglineSpan?.textContent ?? '').toMatch(/no twists\.$/)
+    })
+
+    it('does not regress to the bare `No plot, no winners, no twists` literal', () => {
+      const { container } = render(<CommentInputStub />)
+      const taglineSpan = container.querySelector(
+        '[data-testid="comment-stub-link"] .comment-stub-mono',
+      )
+      expect(taglineSpan?.textContent ?? '').not.toMatch(
+        /^No plot, no winners, no twists\s*$/,
+      )
     })
   })
 })

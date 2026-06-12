@@ -14,7 +14,7 @@ export function CommentInputStub({ signInHref = '/sign-in' }: CommentInputStubPr
         data-testid="comment-stub-link"
       >
         <span>Sign in to comment. →</span>
-        <span className="comment-stub-mono">No plot, no winners, no twists</span>
+        <span className="comment-stub-mono">Posting rule: no plot, no winners, no twists.</span>
       </Link>
     </div>
   )
