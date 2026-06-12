@@ -1,12 +1,12 @@
 ---
 slug: best-finales
 title: "Finales that stuck the landing"
-tagline: "Closing runs that earn the season. <b>The last hour sits at the altitude the show was building toward</b> — texture intact, stakes earned, nothing handed over for free."
+tagline: "Closing runs that earn the season. <b>The last hour reaches the altitude the show had been chasing</b> — texture intact, stakes earned, nothing handed over for free."
 category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-06-07
+last_revised: 2026-06-12
 featured: true
 related:
   - best-returnees
@@ -17,14 +17,14 @@ entries:
     season: 7
     season_label: "S07"
     rank: 1
-    title: "Season 7's last leg proves the format's live sprint is built right."
+    title: "Season 7's last leg proves the format's live sprint runs flat-out."
     blurb: "The Race always ends on a foot race to the mat, and Season 7 plays that structure at full strength — a deep, recognizable cast still racing hard into the last pit stop. The final leg lands every beat — navigation calls, cab-driver desperation, the photo finish."
   - show: survivor
     season: 20
     season_label: "S20 · Heroes vs. Villains"
     rank: 2
-    title: "An all-star return season that closes on the final tribal the format was building toward."
-    blurb: "The jury reads like a court built from the show's own history, sitting in judgment on players they have a decade of receipts on. The closing argument plays as a verdict on everything Survivor had been by 2010, with the all-star format hitting the ceiling it was built toward."
+    title: "An all-star return season that closes on a final tribal that reads as the format's verdict."
+    blurb: "The jury reads like a court stacked from the show's own history, sitting in judgment on players with a decade of receipts. The closing argument plays as a verdict on Survivor by 2010, the all-star format hitting the ceiling its returnee era had been chasing."
   - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"
@@ -41,18 +41,18 @@ entries:
     season: 2
     season_label: "S02"
     rank: 5
-    title: "The Round Table tightening into the final banishment the format was built for."
+    title: "The Round Table tightening to a final banishment that proves the format travels."
     blurb: "Each banishment round tightens the math — fewer chairs, sharper paranoia, votes paid back across nights instead of episodes. By the last seat, the US adaptation proves it can hold the format's tension all the way down without softening the cruelty."
   - show: dragrace
     season: 6
     season_label: "S06"
     rank: 6
     title: "The crown coronation pays off a finale built on craft."
-    blurb: "Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver — runway moments still replayed, a lip-sync stretch with genuine stakes. The coronation seals a season whose cultural footprint outgrew its Logo airing."
+    blurb: "Season 6 climbs toward a finale of working drag artists, and the last episodes hold the level — runway moments still replayed, a lip-sync stretch with genuine stakes. The coronation seals a season whose cultural footprint outgrew its Logo airing."
   - show: big-brother
     season: 10
     season_label: "S10"
     rank: 7
     title: "The endgame where the modern alliance game finally takes itself seriously."
-    blurb: "The season that taught Big Brother its strategic vocabulary closes on a finale built for it. The closing run rewards the alliance play the summer spent building — sharp enough to hold against every era that followed it."
+    blurb: "The season that taught Big Brother its strategic vocabulary lands a finale that earns it. The closing run rewards the alliance play the summer spent assembling — sharp enough to hold against every era that followed it."
 ---

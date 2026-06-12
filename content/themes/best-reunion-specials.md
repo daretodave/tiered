@@ -30,7 +30,7 @@ entries:
     season_label: "S30 · XXX: Dirty 30"
     rank: 3
     title: "A milestone cast finally sitting down off the course to talk it through."
-    blurb: "The Challenge runs its reunion as a staple, and the Dirty 30 edition gets a marquee, thirtieth-season cast in chairs. After a season built on returning faces and long histories, the reunion lets all of it surface in conversation — the show's own anniversary, properly marked."
+    blurb: "The Challenge runs its reunion as a staple, and the Dirty 30 edition gets a marquee, thirtieth-season cast in chairs. After a season anchored on returning faces and long histories, the reunion lets all of it surface in conversation — the show's own anniversary, properly marked."
   - show: survivor
     season: 1
     season_label: "S01 · Borneo"
@@ -42,13 +42,13 @@ entries:
     season_label: "S08 · All-Stars"
     rank: 5
     title: "An all-returnee cast giving the reunion real history to work with."
-    blurb: "Top Chef's reunion is usually a tidy debrief; All-Stars hands it a room full of chefs who already knew each other. The season was built on that familiarity, and the reunion pays it back — old rivalries and friendships revisited by people with shared seasons behind them."
+    blurb: "Top Chef's reunion is usually a tidy debrief; All-Stars hands it a room full of chefs who already knew each other. The season leaned on that familiarity, and the reunion pays it back — old rivalries and friendships revisited by people with shared seasons behind them."
   - show: survivor
     season: 40
     season_label: "S40 · Winners at War"
     rank: 6
     title: "A milestone reunion that doubled as a season-forty retrospective."
-    blurb: "Twenty former champions, the milestone framing the show had been building toward, and a reunion that played it with appropriate weight. Aired right as the pandemic hit, the hour reads now as the last of a particular era of Survivor television."
+    blurb: "Twenty former champions, the milestone framing the show had spent two decades climbing toward, and a reunion that played it with appropriate weight. Aired right as the pandemic hit, the hour reads now as the last of a particular era of Survivor television."
   - show: traitors
     season: 2
     season_label: "S02"

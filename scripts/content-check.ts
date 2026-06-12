@@ -912,6 +912,61 @@ export function collectThemeSynonymClusterIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-49 HIGH (issue #409): /themes/best-finales used the
+// verb-stem "build" (built / building / builds) to anchor the central
+// editorial claim across 5 of 7 entries — at list-cards distance the
+// architectural metaphor `[the finale] was built [toward / for / right]`
+// read as the visible verbal tic of the list rather than a deliberate
+// editorial parallel. Sibling defect to `collectThemeSynonymClusterIssues`
+// above (noun-cluster dodging); this helper catches the broader pattern
+// where a single verb-stem anchors the central claim across most entries.
+// Per cluster (the dictionary below; extensible), count entries whose
+// title-or-blurb contains any form; flag when the count meets the strict
+// floor (≥ 3 entries hit). `category: single` (intra-canon, single-show)
+// lists are exempt — natural repetition of show-specific verb vocabulary
+// is part of the form. Floor 3 mirrors the synonym-cluster floor: the
+// editor can anchor on a verb-stem twice on a 7-entry list (deliberate
+// parallel), but a third hit is when the stem reads as a tic.
+const THEME_VERB_STEM_CLUSTERS: Record<string, readonly string[]> = {
+  build: ['build', 'builds', 'built', 'building'],
+}
+const THEME_VERB_STEM_STRICT_FLOOR = 3
+
+export function collectThemeVerbStemRepetitionIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.category === 'single') continue
+    const entryCount = theme.entries.length
+    if (entryCount < 5) continue
+    for (const [clusterName, forms] of Object.entries(
+      THEME_VERB_STEM_CLUSTERS,
+    )) {
+      const hitRanks: number[] = []
+      for (const entry of theme.entries) {
+        const text = `${entry.title ?? ''} ${entry.blurb ?? ''}`.replace(
+          /<[^>]+>/g,
+          ' ',
+        )
+        for (const form of forms) {
+          if (textContainsClusterPhrase(text, form)) {
+            hitRanks.push(entry.rank)
+            break
+          }
+        }
+      }
+      if (hitRanks.length >= THEME_VERB_STEM_STRICT_FLOOR) {
+        const ranks = hitRanks.sort((a, b) => a - b).map((r) => `#${r}`).join(', ')
+        const formList = forms.map((f) => `"${f}"`).join(' / ')
+        issues.push({
+          file: `content/themes/${theme.slug}.md`,
+          message: `themed-list verb-stem anchor — the "${clusterName}" verb-stem (${formList}) anchors the central claim across ${hitRanks.length} of ${entryCount} entries (${ranks}). At list-cards distance a single verb-stem becomes the visible tic of the list rather than a deliberate editorial parallel. Rotate ${hitRanks.length - (THEME_VERB_STEM_STRICT_FLOOR - 1)} entries onto verb-stems that name what each entry specifically does (e.g. "lands", "earns", "pays off", "tightens", "carries", "holds"). Max ${THEME_VERB_STEM_STRICT_FLOOR - 1} entries may share a verb-stem. See plan/CRITIQUE.md pass-49 / issue #409.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-37 MED (issue #333): /shows/survivor hero subtitle
 // (`blurb`) and body opener (`tagline`) both opened on `50 seasons of
 // <X>` — the count was restated on adjacent lines of the most-visited
@@ -2553,6 +2608,23 @@ function main(): number {
     failures.push(...themeSynonymClusterIssues)
   } else {
     for (const issue of themeSynonymClusterIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-49 HIGH (issue #409): ships strict at floor 3 — the
+  // best-finales rewrite this commit drains the `build` verb-stem from
+  // 5 of 7 entries to 1 of 7 (entry #06 keeps a single "finale built on
+  // craft" beat, well below the floor of 3). The invariant is the
+  // bidirectional floor that catches a future themed-list authoring pass
+  // re-anchoring most of a list's entries on the same verb-stem. One-line
+  // toggle mirroring the eighteen above.
+  const THEME_VERB_STEM_STRICT = true
+  const themeVerbStemIssues = collectThemeVerbStemRepetitionIssues()
+  if (THEME_VERB_STEM_STRICT) {
+    failures.push(...themeVerbStemIssues)
+  } else {
+    for (const issue of themeVerbStemIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

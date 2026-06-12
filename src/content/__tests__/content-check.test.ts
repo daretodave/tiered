@@ -31,6 +31,7 @@ import {
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeSynonymClusterIssues,
+  collectThemeVerbStemRepetitionIssues,
   collectThemeDeckBodyOpenerDivergenceIssues,
   collectThemeEntryHeadlineBodyEchoIssues,
   collectThemedEntryVerbatimPhraseEchoIssues,
@@ -3184,6 +3185,158 @@ describe('content-check — themed-list synonym-cluster repetition (critique pas
     // `endgames` is a different word from `endgame`; \b-bounded match
     // must not catch the plural form.
     expect(collectThemeSynonymClusterIssues()).toEqual([])
+  })
+})
+
+describe('content-check — themed-list verb-stem repetition (critique pass-49, issue #409)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-verb-stem-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes at the live catalog (post-rewrite, best-finales sits at 1 of 7 entries on the `build` verb-stem)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
+  })
+
+  it('flags the pre-rewrite best-finales shape (5 of 7 entries reaching for `built` / `building`)', () => {
+    makeMultiEntryTheme(tmp, 'verb-stem-trigger', {
+      entries: [
+        {
+          title: "Season 7's last leg proves the format's live sprint is built right.",
+          blurb: 'The Race always ends on a foot race to the mat, and Season 7 plays that structure at full strength.',
+        },
+        {
+          title: 'An all-star return season that closes on the final tribal the format was building toward.',
+          blurb: 'The jury reads like a court, and the all-star format hits the ceiling it was built toward.',
+        },
+        {
+          title: 'A title that does not name the stem.',
+          blurb: 'Restaurant Wars takes the season into its endgame on a kitchen split, and the cooking never drops.',
+        },
+        {
+          title: 'A title with no stem at all.',
+          blurb: 'Every camp conversation carries strategic weight from someone who has already held the title.',
+        },
+        {
+          title: 'The Round Table tightening into the final banishment the format was built for.',
+          blurb: 'Each banishment round tightens the math — fewer chairs, sharper paranoia, votes paid back across nights.',
+        },
+        {
+          title: 'A finale of working drag artists.',
+          blurb: 'Season 6 spends its run building toward a finale of working drag artists, and the last episodes deliver.',
+        },
+        {
+          title: 'The endgame where the modern alliance game finally takes itself seriously.',
+          blurb: 'The season that taught Big Brother its strategic vocabulary closes on a finale built for it.',
+        },
+      ],
+    })
+    const issues = collectThemeVerbStemRepetitionIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/themes/verb-stem-trigger.md')
+    expect(issues[0]!.message).toMatch(/"build" verb-stem/)
+    expect(issues[0]!.message).toMatch(/5 of 7 entries/)
+    expect(issues[0]!.message).toMatch(/#1, #2, #5, #6, #7/)
+  })
+
+  it('passes when the stem sits at the floor (2 of 7 hits, below the strict floor of 3)', () => {
+    makeMultiEntryTheme(tmp, 'stem-under-floor', {
+      entries: [
+        {
+          title: 'A finale built on craft and real artistry.',
+          blurb: 'Season 6 closes on a finale of working drag artists.',
+        },
+        {
+          title: 'A second entry sharing the verb.',
+          blurb: 'The summer alliance play that the season spent building.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+        { title: 'fifth title', blurb: 'A fifth sentence on a different angle.' },
+      ],
+    })
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
+  })
+
+  it('exempts `category: single` (intra-canon) lists', () => {
+    makeMultiEntryTheme(tmp, 'pillars-verb-stem', {
+      category: 'single',
+      entries: [
+        { title: 'A pillar that builds the era.', blurb: 'The era builds on the format.' },
+        { title: 'Another pillar built right.', blurb: 'The season was built toward this moment.' },
+        { title: 'A third pillar building toward.', blurb: 'A run building toward the format.' },
+        { title: 'A fourth pillar that builds.', blurb: 'The arc builds the modern era.' },
+        { title: 'A fifth pillar built for it.', blurb: 'The format was built for this kind of run.' },
+      ],
+    })
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
+  })
+
+  it('skips lists with fewer than 5 entries', () => {
+    makeMultiEntryTheme(tmp, 'tiny-verb-stem', {
+      entries: [
+        { title: 'A title built right.', blurb: 'The season was built toward this.' },
+        { title: 'Another title building toward.', blurb: 'A run building the format.' },
+        { title: 'A third title that builds.', blurb: 'The arc builds the era.' },
+        { title: 'A fourth title built for it.', blurb: 'The format was built for this.' },
+      ],
+    })
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
+  })
+
+  it('counts each entry at most once per cluster even if multiple stem forms appear', () => {
+    makeMultiEntryTheme(tmp, 'verb-stem-multi-hit', {
+      entries: [
+        {
+          title: 'A title that names two stem forms.',
+          blurb: 'The arc built toward a finale and the season spent building from episode one.',
+        },
+        { title: 'fine title', blurb: 'A sentence advances the editorial point.' },
+        { title: 'another fine title', blurb: 'Another sentence with its own beat.' },
+        { title: 'third title', blurb: 'A third sentence with no overlap whatsoever.' },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+      ],
+    })
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
+  })
+
+  it('uses word-boundary matching (`builders` does not match `build`, `rebuild` does not match `build`)', () => {
+    makeMultiEntryTheme(tmp, 'verb-stem-boundary', {
+      entries: [
+        {
+          title: 'The builders of the format.',
+          blurb: 'The body names builders and rebuilds without the bare verb.',
+        },
+        {
+          title: 'A second look at format builders.',
+          blurb: 'The rebuild ran across the era — builders working the same problem.',
+        },
+        {
+          title: 'A third take on the builders.',
+          blurb: 'Across the rebuild, the same beat shows up again.',
+        },
+        { title: 'fourth title', blurb: 'A fourth sentence about a different point.' },
+        { title: 'fifth title', blurb: 'A fifth sentence on a different angle.' },
+      ],
+    })
+    // `builders` and `rebuild` are different words from `build` / `built` /
+    // `building` / `builds`; \b-bounded match must not catch them.
+    expect(collectThemeVerbStemRepetitionIssues()).toEqual([])
   })
 })
 
