@@ -207,14 +207,16 @@ describe('<VotePair>', () => {
     expect(screen.getByTestId('vote-count').textContent).toBe('3')
   })
 
-  // --- pluralize-aware label (critique pass-5 LOW / pass-34 MED):
-  // the visible unit must agree with the displayed count so a
-  // voter count of exactly 1 doesn't render "1 community votes".
-  // Pass-34 retargets the label from "net votes" → "community
-  // votes" so the count's source matches the ShiftCard's
-  // `vote_count` framing across surfaces; the prior conditional
-  // `community ·` prefix (pass-13/14) is folded into the base
-  // label.
+  // --- pluralize-aware label (critique pass-5 LOW / pass-34 MED /
+  // pass-49 MED): the visible unit must agree with the displayed
+  // count so a voter count of exactly 1 doesn't render
+  // "1 votes so far". Pass-49 retargets the label from
+  // "community vote(s)" → "vote(s) so far" — the bare-integer +
+  // singular-noun pair `1 / COMMUNITY VOTE` was ambiguous between
+  // the tally read and a counter widget value; the "so far"
+  // suffix names the count as a tally with implicit time-context,
+  // dropping the redundant `community` prefix (the surrounding
+  // voteHelp + voteQuestion already carry the community framing).
   describe('pluralize-aware label', () => {
     function labelText() {
       return screen
@@ -224,7 +226,7 @@ describe('<VotePair>', () => {
 
     it('renders the plural form when the count is 0', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(labelText()).toBe('community votes')
+      expect(labelText()).toBe('votes so far')
     })
 
     it('renders the singular form when the count is exactly 1', async () => {
@@ -232,12 +234,12 @@ describe('<VotePair>', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       expect(screen.getByTestId('vote-count').textContent).toBe('1')
-      expect(labelText()).toBe('community vote')
+      expect(labelText()).toBe('vote so far')
     })
 
     it('renders the plural form when the count is 2', () => {
       render(<VotePair initialCount={2} targetType="season" targetId="survivor:20" />)
-      expect(labelText()).toBe('community votes')
+      expect(labelText()).toBe('votes so far')
     })
 
     it('honors custom singular + plural label props', async () => {
@@ -259,11 +261,11 @@ describe('<VotePair>', () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
-      expect(labelText()).toBe('community vote')
+      expect(labelText()).toBe('vote so far')
       // Re-click up to retract; optimistic voter count drops to 0,
       // so the unit pluralizes.
       fireEvent.click(screen.getByTestId('vote-up'))
-      expect(labelText()).toBe('community votes')
+      expect(labelText()).toBe('votes so far')
     })
 
     it('keeps the action-describing aria-labels on the plural form regardless of count', async () => {
@@ -271,30 +273,35 @@ describe('<VotePair>', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       // Displayed unit pluralizes, but aria describes the action.
-      expect(labelText()).toBe('community vote')
+      expect(labelText()).toBe('vote so far')
       expect(
         screen.getByTestId('vote-pair').getAttribute('aria-label'),
-      ).toBe('Vote on community votes')
+      ).toBe('Vote on votes so far')
       expect(
         screen.getByTestId('vote-down').getAttribute('aria-label'),
-      ).toBe('Vote down community votes')
+      ).toBe('Vote down votes so far')
     })
   })
 
-  // --- critique pass-34 MED (#361): cross-surface parity ---
+  // --- critique pass-34 MED (#361) / pass-49 MED (#410):
+  // cross-surface parity ---
   //
   // Three surfaces describe HvV's community state on adjacent
   // hops: ShiftCard (`1 vote`), canon-ladder COMMUNITY column
   // (`↑ 1 / #02`), and the season-page vote-pair (formerly
   // `0 community · net votes`, the signed sum). The pass-34
-  // alignment re-points the vote-pair's integer + label from
+  // alignment re-pointed the vote-pair's integer + label from
   // the signed net → distinct voter count so it cites the same
-  // canonical fact as the ShiftCard. Pin: the rendered label
-  // text MUST end with `community vote` or `community votes`,
-  // and MUST NOT carry the prior `net vote(s)` framing.
-  // Bidirectional drift guard against a future refactor reverting
-  // to the signed-sum framing.
-  describe('cross-surface parity (pass-34 #361)', () => {
+  // canonical fact as the ShiftCard. Pass-49 re-words the label
+  // from `community vote(s)` → `vote(s) so far` to drop the
+  // bare-integer + singular-noun staccato; the integer is still
+  // the distinct voter count, only the wording around it moves.
+  // Pin: the rendered label text MUST end with `vote so far` or
+  // `votes so far`, MUST NOT carry the pre-pass-34 `net vote(s)`
+  // framing, and MUST NOT regress to the pass-34 bare
+  // `community vote(s)` framing (the ambiguous form pass-49
+  // closed). Tridirectional drift guard.
+  describe('cross-surface parity (pass-34 #361 / pass-49 #410)', () => {
     function labelText() {
       return (
         screen
@@ -303,7 +310,7 @@ describe('<VotePair>', () => {
       )
     }
 
-    it('the label ends with /community votes?$/ on every render state', async () => {
+    it('the label ends with /votes? so far$/ on every render state', async () => {
       const fixtures: VoteBody[] = [
         { ok: true, value: 0, count: 0, signedIn: false },
         { ok: true, value: 0, count: 5, signedIn: true },
@@ -317,7 +324,7 @@ describe('<VotePair>', () => {
           <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
         )
         await flushAsync()
-        expect(labelText()).toMatch(/community votes?$/)
+        expect(labelText()).toMatch(/votes? so far$/)
         unmount()
       }
     })
@@ -337,6 +344,29 @@ describe('<VotePair>', () => {
         )
         await flushAsync()
         expect(labelText()).not.toMatch(/net votes?/)
+        unmount()
+      }
+    })
+
+    it('the label never regresses to the bare "community vote(s)" framing (pass-49 #410)', async () => {
+      // The pass-49 finding closed `1 / COMMUNITY VOTE` as the
+      // ambiguous staccato. A future refactor that drops the
+      // "so far" suffix and reverts to the bare `community
+      // vote(s)` form must trip this gate at unit time.
+      const fixtures: VoteBody[] = [
+        { ok: true, value: 0, count: 0, signedIn: false },
+        { ok: true, value: 0, count: 5, signedIn: true },
+        { ok: true, value: 1, count: 1, signedIn: true },
+        { ok: true, value: -1, count: 9, signedIn: true },
+        { ok: true, value: 0, count: 12, signedIn: false },
+      ]
+      for (const body of fixtures) {
+        getBody = body
+        const { unmount } = render(
+          <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
+        )
+        await flushAsync()
+        expect(labelText()).not.toMatch(/^community votes?$/)
         unmount()
       }
     })

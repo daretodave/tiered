@@ -34,11 +34,17 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // qualify the number's source: a plain "1 NET VOTE" reads
 // ambiguously (community total vs. personal). Pass-13/14 added
 // a conditional "community · " prefix in the unacted state.
-// Pass-34 (#361) folded the prefix into the base label: the
-// rendered text is now "community vote(s)" on every state, and
-// the displayed integer is the distinct voter count (not the
-// signed net) so it agrees with the ShiftCard's `vote_count`
-// framing across surfaces. The pill above the buttons keeps
+// Pass-34 (#361) folded the prefix into the base label so the
+// rendered text was "community vote(s)" on every state.
+// Pass-49 (#410) re-words again: the bare-integer + singular-
+// noun pair "1 / COMMUNITY VOTE" still read ambiguously
+// between the tally read and a counter widget value. The
+// label is now "vote(s) so far" — the "so far" suffix names
+// the count as a tally with implicit time-context, dropping
+// the redundant `community` prefix (the voteHelp + voteQuestion
+// already carry the community framing). The integer is still
+// the distinct voter count (matches the ShiftCard's `vote_count`
+// framing across surfaces). The pill above the buttons keeps
 // owning the *viewer-identity* disambiguation channel for
 // authed-and-voted viewers (the "you voted higher/lower"
 // declaration).
@@ -105,19 +111,23 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       await expect(cap).toHaveAttribute('data-vote-state', 'none')
     }
 
-    // Pass-34 #361: the count's label is "community vote(s)" on
-    // every state — the prior conditional `community ·` prefix
-    // (pass-13/14) is folded into the base label, and the
-    // displayed integer is the distinct voter count (not the
-    // signed net) so the vote-pair cites the same canonical
-    // fact as the ShiftCard's `vote_count`. Bidirectional drift
-    // guard: the label must end with /community votes?$/ AND
-    // must NEVER carry the prior "net vote(s)" framing on any
-    // viewer state.
+    // Pass-49 #410: the count's label is "vote(s) so far" on
+    // every state — the prior pass-34 "community vote(s)"
+    // framing surfaced as a staccato "1 / COMMUNITY VOTE" on
+    // the bare-integer + singular-noun pair (the staccato
+    // pass-49 closed). The "so far" suffix names the count as
+    // a tally with implicit time-context; the displayed integer
+    // is still the distinct voter count so the vote-pair cites
+    // the same canonical fact as the ShiftCard's `vote_count`.
+    // Tridirectional drift guard: the label must end with
+    // /votes? so far$/, must NEVER carry the pre-pass-34
+    // "net vote(s)" framing, AND must NEVER regress to the
+    // bare pass-34 "community vote(s)" framing.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).toHaveText(/community votes?$/)
+    await expect(label).toHaveText(/votes? so far$/)
     const labelText = (await label.textContent()) ?? ''
     expect(labelText).not.toMatch(/net votes?/)
+    expect(labelText).not.toMatch(/^community votes?$/)
 
     if (api.value === 0) {
       // #207 (pass-15): the signed-in-no-vote head meta carries the
@@ -201,14 +211,16 @@ test.describe('vote state pill — public never sees the pill', () => {
     // surface they don't have.
     await expect(page.getByTestId('vote-state-cap')).toHaveCount(0)
 
-    // Pass-34 #361: the label reads "community vote(s)" on every
-    // state — the prior conditional `community ·` prefix is
-    // folded into the base label, and the integer is the
-    // distinct voter count (matches the ShiftCard's `vote_count`
-    // framing). Bidirectional drift guard.
+    // Pass-49 #410: the label reads "vote(s) so far" on every
+    // state — the pass-34 "community vote(s)" form surfaced as
+    // an ambiguous "1 / COMMUNITY VOTE" staccato; the "so far"
+    // suffix names the count as a tally, and the integer is
+    // still the distinct voter count (matches the ShiftCard's
+    // `vote_count` framing). Tridirectional drift guard.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).toHaveText(/community votes?$/)
+    await expect(label).toHaveText(/votes? so far$/)
     const labelText = (await label.textContent()) ?? ''
     expect(labelText).not.toMatch(/net votes?/)
+    expect(labelText).not.toMatch(/^community votes?$/)
   })
 })

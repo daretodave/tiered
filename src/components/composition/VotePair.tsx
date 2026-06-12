@@ -64,8 +64,8 @@ export function VotePair({
   initialCount = 0,
   targetType,
   targetId,
-  label = 'community votes',
-  labelSingular = 'community vote',
+  label = 'votes so far',
+  labelSingular = 'vote so far',
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
   const reduced = useRef(false)
@@ -175,13 +175,17 @@ export function VotePair({
   // direction), not the result, so they stay on the plural form
   // — the displayed count is already announced by the count cell.
   //
-  // Critique pass-34 MED: the label is `community vote(s)` —
-  // matching the ShiftCard's `vote_count` framing — and the
-  // integer the reader sees is the distinct voter count on the
-  // target, not the signed net. The prior conditional `community ·`
-  // prefix (added pass-13 #190 / pass-14 #199 to disambiguate
-  // "N net vote(s)" from a personal value) is no longer needed —
-  // `community` is part of the base label on every render.
+  // Critique pass-49 MED: the label is `vote(s) so far` — the
+  // prior pass-34 `community vote(s)` framing surfaced as a
+  // staccato `1 / COMMUNITY VOTE` on the bare-integer + singular-
+  // noun pair, ambiguous between the tally read (one reader
+  // voted) and a counter widget value. The "so far" suffix names
+  // the count as a tally with implicit time-context, dropping
+  // the redundant `community` prefix (the surrounding voteHelp +
+  // voteQuestion already carry the community framing). The
+  // integer the reader sees is still the distinct voter count
+  // on the target, not the signed net — the pass-34 retarget
+  // from "net votes" stays; only the wording around it moves.
   const displayLabel = Math.round(state.count) === 1 ? labelSingular : label
 
   // State pill copy (#160): surfaces for every signed-in member
