@@ -4,7 +4,7 @@ import { expect, test } from '@playwright/test'
 // Hero strip + S/A/B sections + tile variants + footnote.
 
 test.describe('/shows tier-list', () => {
-  test('renders hero, three tier sections in S/A/B order, and footnote', async ({ page }) => {
+  test('renders hero, populated tier sections in canonical order, and footnote', async ({ page }) => {
     const response = await page.goto('/shows', { waitUntil: 'domcontentloaded' })
     expect(response?.status()).toBe(200)
 
@@ -14,16 +14,34 @@ test.describe('/shows tier-list', () => {
     await expect(page.getByTestId('shows-stat-seasons')).toBeVisible()
     await expect(page.getByTestId('shows-stat-revised')).toBeVisible()
 
-    // Every tier in TIER_ORDER renders a section — populated bands
-    // carry a shows-grid, empty bands carry a tier-empty placeholder
-    // ("Nothing here yet.") so the legend in <HowTiersMove> always
-    // has a band to refer to (critique-pass-14 #202). Order is the
-    // canonical S → A → B.
+    // Only tiers that carry shows render a section (critique-pass-50
+    // #412 — empty bands are hidden so the hero, meta description,
+    // and page body all enumerate the same set; the <HowTiersMove>
+    // legend explains the tier system on its own and does not need a
+    // band to refer to). This reverses critique-pass-14 #202's
+    // empty-placeholder behavior. Order is the canonical S → A → B
+    // subset of populated tiers.
     const tierSections = page.getByTestId('tier-section')
     const tierOrder = await tierSections.evaluateAll((els) =>
       els.map((el) => (el as HTMLElement).dataset['tier']),
     )
-    expect(tierOrder).toEqual(['S', 'A', 'B'])
+    expect(tierOrder.length).toBeGreaterThan(0)
+    // Order is monotonically increasing within ['S','A','B'].
+    const rank: Record<string, number> = { S: 0, A: 1, B: 2 }
+    for (let i = 1; i < tierOrder.length; i++) {
+      const prev = rank[tierOrder[i - 1] as string] ?? -1
+      const curr = rank[tierOrder[i] as string] ?? -1
+      expect(curr).toBeGreaterThan(prev)
+    }
+    // Every rendered band carries a shows-grid; no tier-empty band is
+    // surfaced after the pass-50 closure.
+    for (const tier of tierOrder) {
+      const section = page.getByTestId('tier-section').filter({
+        has: page.locator(`[data-tier="${tier}"]`),
+      })
+      await expect(section.getByTestId('shows-grid')).toBeVisible()
+      expect(await section.getByTestId('tier-empty').count()).toBe(0)
+    }
 
     await expect(page.getByTestId('how-tiers-move')).toBeVisible()
   })
@@ -36,16 +54,14 @@ test.describe('/shows tier-list', () => {
     const lede = page.getByTestId('shows-hero-lede')
     await expect(lede).toBeVisible()
 
-    // Every tier renders a section (empty bands carry a tier-empty
-    // placeholder), so coverage must match the populated subset —
-    // sections whose body is a shows-grid, not a tier-empty. A
-    // regression to a hardcoded sentence about a tier with zero
+    // Only populated tiers render a section (critique-pass-50 #412 —
+    // empty bands are hidden so hero, meta, and body enumerate the
+    // same set), so coverage must match every rendered tier-section.
+    // A regression to a hardcoded sentence about a tier with zero
     // shows fails here.
     const coverage = (await lede.getAttribute('data-tier-coverage')) ?? ''
     const populatedTiers = await page
-      .locator(
-        '[data-testid="tier-section"]:has([data-testid="shows-grid"])',
-      )
+      .getByTestId('tier-section')
       .evaluateAll((els) =>
         els.map((el) => (el as HTMLElement).dataset['tier']),
       )
@@ -75,16 +91,15 @@ test.describe('/shows tier-list', () => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
 
     // B may have fully drained (phase 26 promotes shows out of B as
-    // their canon matures). The B section always renders now — when
-    // empty it carries a tier-empty placeholder (critique-pass-14
-    // #202). Only when its body is a shows-grid (i.e. it actually
-    // holds tiles) must every tile carry the in-progress status pill.
-    // The S-tier no-pill invariant below always holds.
+    // their canon matures). After critique-pass-50 #412 the empty
+    // B-band is hidden entirely — when no show carries `tier === 'B'`
+    // the section is absent from the DOM. When present, every tile
+    // must carry the in-progress status pill. The S-tier no-pill
+    // invariant below always holds.
     const bSection = page.getByTestId('tier-section').filter({
       has: page.locator('[data-tier="B"]'),
     })
-    const bGrid = bSection.getByTestId('shows-grid')
-    if ((await bGrid.count()) > 0) {
+    if ((await bSection.count()) > 0) {
       const bPills = bSection.getByTestId('show-tile-status')
       expect(await bPills.count()).toBeGreaterThan(0)
       await expect(bPills.first()).toBeVisible()

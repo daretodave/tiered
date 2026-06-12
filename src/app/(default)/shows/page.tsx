@@ -54,7 +54,7 @@ export default function ShowsIndexPage() {
       ) : (
         <>
           <ShowsHero stats={stats} tiers={populatedTiers} />
-          {TIER_ORDER.map((tier) => (
+          {populatedTiers.map((tier) => (
             <TierSection
               key={tier}
               tier={tier}

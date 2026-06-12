@@ -225,3 +225,80 @@ describe('/shows hero Shows revised sourced from catalog canons', () => {
     }
   })
 })
+
+// Critique pass-50 MED (#412): the /shows page body must enumerate
+// only populated tiers — empty tier bands are hidden so the hero,
+// meta description, and body all enumerate the same set. Reverses
+// critique-pass-14 #202 (which kept empty bands as legend referents);
+// the <HowTiersMove> legend explains the tier system on its own.
+describe('/shows page body enumerates only populated tiers', () => {
+  it('hides the B-tier band when no show carries tier === "B"', () => {
+    getAllShowsMock.mockReturnValue([
+      fullShow({ slug: 'survivor', tier: 'S' }),
+      fullShow({ slug: 'amazing-race', tier: 'A' }),
+    ])
+    getCanonMock.mockReturnValue(null)
+    const { container } = render(ShowsIndexPage())
+    expect(container.querySelectorAll('[data-tier="B"]').length).toBe(0)
+    expect(container.querySelectorAll('[data-tier="S"]').length).toBeGreaterThan(0)
+    expect(container.querySelectorAll('[data-tier="A"]').length).toBeGreaterThan(0)
+  })
+
+  it('renders the B-tier band when at least one show carries tier === "B"', () => {
+    getAllShowsMock.mockReturnValue([
+      fullShow({ slug: 'survivor', tier: 'S' }),
+      fullShow({ slug: 'amazing-race', tier: 'A' }),
+      fullShow({ slug: 'newcomer', tier: 'B' }),
+    ])
+    getCanonMock.mockReturnValue(null)
+    const { container } = render(ShowsIndexPage())
+    expect(container.querySelectorAll('[data-tier="B"]').length).toBeGreaterThan(0)
+  })
+
+  it('hero copy enumerates exactly the tiers whose section renders', () => {
+    // Bidirectional drift guard: a future render that hides a band
+    // without dropping it from the hero, or that names a tier in the
+    // hero without rendering a band, trips here.
+    getAllShowsMock.mockReturnValue([
+      fullShow({ slug: 'survivor', tier: 'S' }),
+      fullShow({ slug: 'amazing-race', tier: 'A' }),
+    ])
+    getCanonMock.mockReturnValue(null)
+    const { container, getByTestId } = render(ShowsIndexPage())
+    const renderedTiers = Array.from(
+      container.querySelectorAll('[data-testid="tier-section"]'),
+    ).map((el) => (el as HTMLElement).dataset['tier'] ?? '')
+    const ledeText = getByTestId('shows-hero-lede').textContent ?? ''
+    for (const tier of ['S', 'A', 'B'] as const) {
+      const present = renderedTiers.includes(tier)
+      expect(ledeText.includes(`${tier} tier`)).toBe(present)
+    }
+  })
+
+  it('every rendered tier band carries a shows-grid (no tier-empty)', () => {
+    getAllShowsMock.mockReturnValue([
+      fullShow({ slug: 'survivor', tier: 'S' }),
+      fullShow({ slug: 'amazing-race', tier: 'A' }),
+      fullShow({ slug: 'newcomer', tier: 'B' }),
+    ])
+    getCanonMock.mockReturnValue(null)
+    const { container } = render(ShowsIndexPage())
+    expect(
+      container.querySelectorAll('[data-testid="tier-empty"]').length,
+    ).toBe(0)
+    const sections = container.querySelectorAll(
+      '[data-testid="tier-section"]',
+    )
+    for (const section of Array.from(sections)) {
+      expect(section.querySelector('[data-testid="shows-grid"]')).not.toBeNull()
+    }
+  })
+
+  it('renders no tier sections when the catalog is empty', () => {
+    getAllShowsMock.mockReturnValue([])
+    const { container } = render(ShowsIndexPage())
+    expect(
+      container.querySelectorAll('[data-testid="tier-section"]').length,
+    ).toBe(0)
+  })
+})
