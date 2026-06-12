@@ -194,4 +194,39 @@ describe('<ShowsHero>', () => {
       expect(lede.textContent).not.toMatch(/not by personal taste/i)
     })
   })
+
+  // Critique pass-49 MED (#408): cross-surface editor-voice drift on the
+  // natural anon nav path /shows → /themes → /about. /shows hero used the
+  // institutional plural `we love most`; /themes + /about + the rest of the
+  // editorial chrome speak in the first-person singular `I`. The /about
+  // editorial constitution is explicitly singular (`one person, one position
+  // per season` — content/legal/about.md), so the plural `we` on /shows
+  // contradicted the same line that anchors editor-canon legitimacy. Same
+  // defect class as the resolved pass-47 #406 (plural-byline axis). Fix
+  // flipped the hero to `not which shows I love most.` Bidirectional pin:
+  // positive case names the first-person singular form; negative case
+  // forbids the editorial-`we` regression.
+  describe('editor narrator pronoun (critique pass-49)', () => {
+    it('uses the first-person singular `I love most` form', () => {
+      render(
+        <ShowsHero
+          stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
+          tiers={['S', 'A']}
+        />,
+      )
+      const lede = screen.getByTestId('shows-hero-lede')
+      expect(lede.textContent).toMatch(/which shows I love most/)
+    })
+
+    it('never regresses to the editorial `we love most` plural', () => {
+      render(
+        <ShowsHero
+          stats={{ showCount: 13, totalSeasons: 290, lastRevision: 'May 2026' }}
+          tiers={['S', 'A']}
+        />,
+      )
+      const lede = screen.getByTestId('shows-hero-lede')
+      expect(lede.textContent).not.toMatch(/which shows we love most/)
+    })
+  })
 })
