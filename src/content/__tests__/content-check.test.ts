@@ -2723,6 +2723,108 @@ describe('content-check — cliche repetition: "freighted" (critique pass-30, is
   })
 })
 
+describe('content-check — cliche repetition: per-phrase allowlist (phase 45)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-cliche-allowlist-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes when allowlisted surfaces are not counted toward threshold', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      'The closing run lands at full intensity for the cast.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      'The cast plays at full intensity for the merge stretch.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      'A finale at full intensity from open to vote read.',
+    )
+    // Threshold 1 with two allowlisted surfaces → 3 hits become 1
+    // counted → passes.
+    const issues = collectClicheRepetitionIssues([
+      {
+        label: '"at full intensity"',
+        re: /\bat full intensity\b/gi,
+        threshold: 1,
+        allowlist: [
+          'content/themes/a-shape.md (entry #1 blurb)',
+          'content/themes/b-shape.md (entry #1 blurb)',
+        ],
+      },
+    ])
+    expect(issues).toEqual([])
+  })
+
+  it('still flags non-allowlisted surfaces above threshold', () => {
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'a-shape',
+      'The closing run lands at full intensity for the cast.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'b-shape',
+      'The cast plays at full intensity for the merge stretch.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'c-shape',
+      'A finale at full intensity from open to vote read.',
+    )
+    makeThemeWithRawEntryBlurb(
+      tmp,
+      'd-shape',
+      'Another season closing at full intensity from the first hour on.',
+    )
+    // Threshold 1 with one allowlisted surface → 4 hits become 3
+    // counted, all of which still fire.
+    const issues = collectClicheRepetitionIssues([
+      {
+        label: '"at full intensity"',
+        re: /\bat full intensity\b/gi,
+        threshold: 1,
+        allowlist: ['content/themes/a-shape.md (entry #1 blurb)'],
+      },
+    ])
+    expect(issues.length).toBe(3)
+    const flaggedFiles = issues.map((i) => i.file).sort()
+    expect(flaggedFiles).toEqual([
+      'content/themes/b-shape.md (entry #1 blurb)',
+      'content/themes/c-shape.md (entry #1 blurb)',
+      'content/themes/d-shape.md (entry #1 blurb)',
+    ])
+    expect(flaggedFiles).not.toContain(
+      'content/themes/a-shape.md (entry #1 blurb)',
+    )
+  })
+
+  it('absent allowlist behaves exactly as before (live patterns still pass)', () => {
+    // Sanity guard: the three live patterns ship with no
+    // allowlist; toggling the new field's optionality must not
+    // perturb their behavior against today's catalog.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectClicheRepetitionIssues()).toEqual([])
+  })
+})
+
 function makeMultiEntryTheme(
   root: string,
   slug: string,

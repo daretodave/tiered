@@ -587,14 +587,31 @@ export function collectWatchOrderClassificationIssues(): Failure[] {
 // (e.g. "set the bar", "the reference point") appends here once
 // the corpus has been cleaned to fit under its threshold —
 // adding a pattern without a paired rewrite would break verify.
+//
+// Phase 45 ships the per-phrase `allowlist` field — the
+// `TENURE_ANCHOR_ALLOWLIST` analogue for cliche patterns.
+// Allowlisted `where`s are excluded before the threshold check,
+// so the curator can pin one high-leverage retention surface
+// while keeping the cross-corpus threshold tight for the rest.
+// Today's three patterns ship with empty allowlists — the
+// corpus currently passes without any pins — but the affordance
+// is in place for future tighter-threshold patterns or one-off
+// editorial retentions.
 
-type ClichePattern = {
+export type ClichePattern = {
   /** Human label for the failure message. */
   label: string
   /** Regex — must carry the global flag so matchAll iterates. */
   re: RegExp
   /** Max acceptable cross-surface occurrence count. Strictly greater fails. */
   threshold: number
+  /** Per-phrase allowlist: hit `where` strings that don't count
+   *  toward the corpus threshold. Exact match against the
+   *  scanner's `where` (e.g.
+   *  `content/shows/survivor/canon.md (#2 rationale)`). Use
+   *  when one editorial retention is intentional but the rest
+   *  of the corpus must stay clean. */
+  allowlist?: ReadonlyArray<string>
 }
 
 const CLICHE_PATTERNS: ReadonlyArray<ClichePattern> = [
@@ -638,7 +655,9 @@ const CLICHE_PATTERNS: ReadonlyArray<ClichePattern> = [
   },
 ]
 
-export function collectClicheRepetitionIssues(): Failure[] {
+export function collectClicheRepetitionIssues(
+  patterns: ReadonlyArray<ClichePattern> = CLICHE_PATTERNS,
+): Failure[] {
   type Source = { where: string; text: string | null | undefined }
   const sources: Source[] = []
 
@@ -696,11 +715,15 @@ export function collectClicheRepetitionIssues(): Failure[] {
   }
 
   const issues: Failure[] = []
-  for (const pattern of CLICHE_PATTERNS) {
+  for (const pattern of patterns) {
     type Hit = { where: string; phrase: string }
     const hits: Hit[] = []
+    const allowed = pattern.allowlist
+      ? new Set(pattern.allowlist)
+      : null
     for (const { where, text } of sources) {
       if (!text) continue
+      if (allowed && allowed.has(where)) continue
       for (const match of text.matchAll(pattern.re)) {
         hits.push({ where, phrase: match[0] })
       }
