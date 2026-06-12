@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-11 at commit 9578141
-> Pass count: 30
+> Last pass: 2026-06-12 at commit 8f93e95
+> Pass count: 31
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,133 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 31 (2026-06-12, commit 8f93e95) — 0 candidates filed.
+     Signals reviewed:
+     - AUDIT.md: 1 actionable Pending row — the 2026-06-11
+       /oversight HIGH bug (`pnpm verify` structurally broken on
+       Windows: phase-42 colocation gate's `node:path` join +
+       POSIX `'/__tests__/'` filter mismatch, plus a CRLF-checkout
+       regex in `hvv-take-shape-opener-echo.test.ts`). Pure /iterate
+       drain shape: two narrow string/regex fixes in two files
+       with colocated regression tests feeding backslash paths +
+       CRLF samples; no phase-shaped surface here. Cloud Linux
+       runner can ship the path-normalization + CRLF-normalization
+       fixes with synthetic tests; physical Windows verification
+       lives with /oversight. Not a candidate.
+     - CRITIQUE.md: 17 actionable Pending rows after pass 49
+       (today, 8f93e95). One HIGH (#476 /themes/best-finales
+       `built` verb in 5/7 entries) + 12 MED + 4 LOW. The HIGH
+       row nests cleanly into the phase-45 CLICHE_PATTERNS
+       registry — `built|builds?|building` as a fourth entry at
+       threshold 3 is a one-line /iterate drain mirroring the
+       three already-shipped patterns (`measures/measured against`,
+       `at full volume`, `freighted`). Not a candidate.
+     - Cluster pass on the 12 MED rows. Three clusters surface
+       on inspection: (A) editor-voice cross-surface register
+       drift — row 477 (anon: /shows `we` vs /themes + /about
+       `I` within session), row 1397 (anon: home institutional
+       third-person vs interior first-person editor-voice),
+       row 1395 (anon: /themes/best-finales 3 different
+       self-descriptions across home → /themes → detail) — 3
+       MED signals on the same axis as pass-35 #329's
+       PLURAL_EDITOR_STRICT closure. (B) authed-chrome
+       affordance gaps — rows 478 (VotePair confusing literal
+       for signed-in no-vote), 479 (CommentInput no "post goes
+       to review" hint), 1228 (/u/@self bare `Your record`),
+       1401 (signed-in handle no account dropdown), 1403
+       (empty-thread composer bare `⏎`) — 5 MED signals on the
+       authed-state-polish axis. (C) cross-surface display
+       drift — rows 1393 (themed-list featured-tile + index
+       sub-band card body tagline echo), 1395 (above), 1399
+       (authed: home/shows/themes revised-date drift). Cluster
+       analysis per §3 self-assess: each row is a single-tick
+       /iterate fix on a distinct surface (a copy edit, an
+       added scaffold component, a derived prop). The "is this
+       a phase shape?" test fails for all three clusters —
+       cluster (B) is 5 MED on different surfaces with different
+       fix paths (a header dropdown component, a profile stat
+       grid scaffold, two composer copy-edit hints, a VotePair
+       eyebrow copy edit), not a single-shape refactor; clusters
+       (A) and (C) are pronoun/register copy edits where the
+       fix lives in the rendered string, not in an invariant
+       (the rows themselves don't propose lax→strict guards —
+       they propose pick-one-and-be-consistent). Honest call:
+       /iterate drains each row in 1-2 ticks each across the
+       next 17 ticks (the proven cadence — passes 25-30 drained
+       18 critique rows similarly). The lax→strict invariant
+       shape that produced phases 41 / 42 / 43 / 44 / 45 / 46
+       is not present in this signal envelope — none of the
+       17 pending rows propose a new corpus-wide guard, and the
+       three that look candidate-shaped (476, 477, 1397) each
+       extend an existing shipped invariant (phase-45
+       CLICHE_PATTERNS for 476; PLURAL_EDITOR_STRICT scope for
+       477/1397) rather than seeding a new one. Reinforces the
+       passes-18-through-30 pattern: project has reached the
+       "iterate-drains-the-queue" steady state.
+     - GitHub issues: 2 open, 0 unlabeled. #150 + #148 unchanged
+       (triage:reviewed past cloud crash; triage:needs-user
+       `march.yml` coverage-gate wiring still blocked on cloud
+       GitHub App's missing `workflows` permission scope —
+       phase-42 oversight push already chained `pnpm
+       check:test-colocation` into the cloud call-1 string, the
+       remaining flip is the row's own naming). Backlog
+       structurally unchanged; no new candidate-shaped signal.
+     - spec.md + design/: no diffs since pass 27 (verified
+       `git log 9578141..HEAD -- spec.md design/`: empty). Last
+       spec.md touch 2026-05-16 (3ac0b42 phase 33a). Brand /
+       voice / URL contract stable for 27 days.
+     - Commit pattern: 20 commits since pass 30 — 3 phases shipped
+       (44 BRAND_SPELLING_STRICT, 45 CLICHE_PATTERNS allowlist
+       field, 46 colocation gate extended to src/app), 2 critique
+       passes (48 + 49 — both 0 HIGH / 6 MED / 0 LOW shape on
+       pass 48 and 1 HIGH / 5 MED / 0 LOW on pass 49), 1 data
+       migration (064ed57 supabase API-role GRANTs — resolved
+       the HIGH AUDIT row from earlier in the window), 1
+       oversight pass promoting 44/45/46 + setting content-gaps
+       bias on AUDIT, 4 audit-drain pairs (critique-pass-46
+       #397 themed-list featured-tile body echo, critique
+       pass-47 #406 /about Become-an-editor copy drop, vitest
+       3.2.4 → 3.2.6 deps bump, oversight HIGH-row filing for
+       Windows verify breakage). All anticipated drains from
+       already-shipped phases or open critique pickups; no
+       rogue refactor surface, no 5+ fix-class cluster on one
+       file. Phase 45's per-phrase allowlist field landed
+       cleanly without any extant patterns needing allowlist
+       entries — corpus already passed; the field shape is
+       ready for the inevitable future where `sets? the bar` /
+       `the bar every` cross the threshold and warrant
+       phase-45-shape promotion (the brief itself noted 6
+       occurrences pre-flight, awaiting a paired drain tick).
+     - PHASE_CANDIDATES.md pending: #03 (Newsletter, score 3.0)
+       still the lone awaiting-promotion candidate, still gated
+       on S1 (custom domain swap). No structural change to the
+       PROMOTED column (phases 38/39/40/41/42/43/44/45/46 all
+       shipped; the queue is empty for the first time in 20+
+       passes — every promoted candidate has landed). Zero
+       Considered (below threshold) entries; the per-pass
+       drain has been clean.
+
+     Zero real structural candidates this pass. The signal
+     envelope across AUDIT (1 row, /iterate-shape) + CRITIQUE
+     (17 rows, all /iterate-shape — verified by per-row
+     cluster analysis above against §3.1 "is this a phase or
+     a fix" test) + GH (0 unlabeled, 2 routed) + spec/design
+     (no diffs) + commit pattern (3 phases shipped this window,
+     all of the proven lax→strict shape, plus 4 audit-drain
+     pairs and a data migration — no surface accumulated 5+
+     fix-class commits) all point to the same steady-state
+     conclusion: the project's structural envelope is stable,
+     /iterate is the right tool for the current queue.
+     Reinforces the 14-pass streak (18-31) of zero-candidate
+     passes — the loop has converged on iterating the
+     polish layer rather than expanding the structural layer,
+     which is the correct posture once phases have caught up
+     with spec. Next tick: /iterate picks up either the HIGH
+     AUDIT row (Windows verify — score 6.3) or the HIGH
+     CRITIQUE row (best-finales `built` 5/7 — extends
+     CLICHE_PATTERNS registry, one-line addition mirroring
+     phase 45) depending on the standard impact × ease ordering. -->
 
 <!-- Pass 27 (2026-06-09, commit 2adef0d) — 0 candidates filed.
      Signals reviewed:
