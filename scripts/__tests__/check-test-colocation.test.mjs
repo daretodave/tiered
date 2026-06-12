@@ -10,6 +10,7 @@ import {
   isAllowed,
   resolveCandidates,
 } from '../lib/check-test-colocation.mjs'
+import { ALLOWLIST, ROOTS } from '../check-test-colocation.mjs'
 
 function resetRe() {
   IMPORT_RE.lastIndex = 0
@@ -281,5 +282,42 @@ test('formatViolations handles a single violation cleanly', () => {
   assert.match(
     out,
     /^check-test-colocation: found 1 testless source module\(s\):/,
+  )
+})
+
+// --------------------------------------------------------------------
+// CLI configuration — phase 46
+// --------------------------------------------------------------------
+//
+// Phase 42 shipped the gate with three roots; phase 46 finished the
+// move by adding `src/app`. A regression dropping any of these would
+// silently re-open the §5a hole (an untested route handler / page /
+// component slipping through verify), so the configured root set is a
+// load-bearing contract — pin it from outside the CLI.
+
+test('ROOTS covers every source tree the §5a verify gate must guard', () => {
+  // Order doesn't matter — the walker iterates and aggregates.
+  assert.deepEqual(new Set(ROOTS), new Set([
+    'src/components',
+    'src/lib',
+    'src/content',
+    'src/app',
+  ]))
+})
+
+test('ROOTS includes src/app — pins phase 46', () => {
+  assert.ok(
+    ROOTS.includes('src/app'),
+    'src/app must remain in ROOTS — dropping it re-opens the §5a hole phase 46 closed',
+  )
+})
+
+test('ALLOWLIST is the documented profile/types.ts exception only', () => {
+  // The allowlist is intentionally tiny — every other source module
+  // ships a colocated test. Growing it silently is a smell; pin the
+  // exact shape so any addition is reviewable here.
+  assert.deepEqual(
+    [...ALLOWLIST].sort(),
+    ['src/components/profile/types.ts'],
   )
 })

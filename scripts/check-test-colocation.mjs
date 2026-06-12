@@ -14,6 +14,7 @@
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import {
   collectViolations,
@@ -21,9 +22,19 @@ import {
 } from './lib/check-test-colocation.mjs'
 
 const ROOT = process.cwd()
-const ROOTS = ['src/components', 'src/lib', 'src/content']
+// Exported so the colocated test can pin the configured roots — a
+// regression dropping a root (e.g. `src/app` reverted out) would
+// silently re-open the §5a hole that phases 42/46 closed.
+export const ROOTS = [
+  'src/components',
+  'src/lib',
+  'src/content',
+  'src/app',
+]
 
-const ALLOWLIST = new Set([
+// Exported for the same reason — the test pins it as a contract,
+// not just an implementation detail.
+export const ALLOWLIST = new Set([
   // Pure type-only module; no runtime exports. View-model contract
   // shared by /u/[handle] profile page and the profile components.
   'src/components/profile/types.ts',
@@ -48,25 +59,33 @@ function relative(p) {
   return p.replace(`${ROOT}\\`, '').replace(`${ROOT}/`, '').replaceAll('\\', '/')
 }
 
-const allFiles = []
-for (const root of ROOTS) {
-  const abs = join(ROOT, root)
-  if (existsSync(abs)) walk(abs, allFiles)
+// Run the gate only when invoked as a script — guards against the
+// CLI's `process.exit()` firing during test imports of `ROOTS` /
+// `ALLOWLIST`.
+const invokedDirectly =
+  process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
+
+if (invokedDirectly) {
+  const allFiles = []
+  for (const root of ROOTS) {
+    const abs = join(ROOT, root)
+    if (existsSync(abs)) walk(abs, allFiles)
+  }
+
+  const sourceFiles = allFiles.filter((f) => !f.includes('/__tests__/'))
+
+  const violations = collectViolations({
+    sourceFiles,
+    toRelative: relative,
+    fileExists: (p) => existsSync(p),
+    readFile: (p) => readFileSync(p, 'utf8'),
+    allowlist: ALLOWLIST,
+  })
+
+  if (violations.length === 0) {
+    process.exit(0)
+  }
+
+  console.error(formatViolations(violations))
+  process.exit(1)
 }
-
-const sourceFiles = allFiles.filter((f) => !f.includes('/__tests__/'))
-
-const violations = collectViolations({
-  sourceFiles,
-  toRelative: relative,
-  fileExists: (p) => existsSync(p),
-  readFile: (p) => readFileSync(p, 'utf8'),
-  allowlist: ALLOWLIST,
-})
-
-if (violations.length === 0) {
-  process.exit(0)
-}
-
-console.error(formatViolations(violations))
-process.exit(1)
