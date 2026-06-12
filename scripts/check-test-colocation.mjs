@@ -19,9 +19,12 @@ import { fileURLToPath } from 'node:url'
 import {
   collectViolations,
   formatViolations,
+  toPosix,
 } from './lib/check-test-colocation.mjs'
 
-const ROOT = process.cwd()
+// process.cwd() returns backslash-separated paths on Windows; the lib
+// reasons in POSIX form, so normalize the root once at the CLI boundary.
+const ROOT = toPosix(process.cwd())
 // Exported so the colocated test can pin the configured roots — a
 // regression dropping a root (e.g. `src/app` reverted out) would
 // silently re-open the §5a hole that phases 42/46 closed.
@@ -44,7 +47,7 @@ const FILE_EXTS = new Set(['.tsx', '.ts'])
 
 function walk(dir, acc) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const full = join(dir, entry.name)
+    const full = toPosix(join(dir, entry.name))
     if (entry.isDirectory()) {
       if (entry.name === 'node_modules' || entry.name === '.next') continue
       walk(full, acc)
@@ -56,7 +59,9 @@ function walk(dir, acc) {
 }
 
 function relative(p) {
-  return p.replace(`${ROOT}\\`, '').replace(`${ROOT}/`, '').replaceAll('\\', '/')
+  const posix = toPosix(p)
+  if (posix.startsWith(`${ROOT}/`)) return posix.slice(ROOT.length + 1)
+  return posix
 }
 
 // Run the gate only when invoked as a script — guards against the
@@ -68,7 +73,7 @@ const invokedDirectly =
 if (invokedDirectly) {
   const allFiles = []
   for (const root of ROOTS) {
-    const abs = join(ROOT, root)
+    const abs = toPosix(join(ROOT, root))
     if (existsSync(abs)) walk(abs, allFiles)
   }
 

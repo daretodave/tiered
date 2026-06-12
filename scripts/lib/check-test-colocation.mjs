@@ -4,6 +4,17 @@
 // walks src/ and exits. Every function here is a deterministic
 // transform exercised from scripts/__tests__/check-test-colocation.test.mjs.
 
+// Normalize a path to POSIX form (forward slashes). The lib's path
+// math (expectedTestPaths, resolveCandidates) joins/splits on '/'
+// and the source-file filter looks for the literal '/__tests__/' —
+// both are broken on Windows where node:path's `join` returns
+// backslash separators. The CLI wrapper calls this at every FS
+// boundary (cwd, walked paths, joined roots) so paths reach the
+// lib already in POSIX form.
+export function toPosix(p) {
+  return p.replaceAll('\\', '/')
+}
+
 // Captures every quoted module specifier referenced from a test file:
 // static `from '<spec>'`, dynamic `import('<spec>')`, type-only
 // `import type ... from '<spec>'`, and side-effect `import '<spec>'`.

@@ -45,15 +45,22 @@ const FILE = path.resolve(
   'content/shows/survivor/seasons/20-heroes-vs-villains.md',
 )
 
+// `\r\n` → `\n` normalization defends against Windows checkouts under
+// the default `core.autocrlf` — the extraction regexes anchor on `\n`
+// and silently return empty against CRLF line endings. The sibling
+// `best-finales-hvv-title-canon-echo.test.ts` already uses `\r?\n` for
+// the same reason; this file mirrors its tolerance.
+function readRaw(): string {
+  return readFileSync(FILE, 'utf-8').replaceAll('\r\n', '\n')
+}
+
 function readBody(): string {
-  const raw = readFileSync(FILE, 'utf-8')
-  const m = raw.match(/^---\n[\s\S]+?\n---\n([\s\S]*)$/)
+  const m = readRaw().match(/^---\n[\s\S]+?\n---\n([\s\S]*)$/)
   return (m?.[1] ?? '').trim()
 }
 
 function readPull(): string {
-  const raw = readFileSync(FILE, 'utf-8')
-  const m = raw.match(/^pull:\s*"([\s\S]+?)"\s*$/m)
+  const m = readRaw().match(/^pull:\s*"([\s\S]+?)"\s*$/m)
   return m?.[1] ?? ''
 }
 

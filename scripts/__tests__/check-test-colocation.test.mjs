@@ -9,6 +9,7 @@ import {
   formatViolations,
   isAllowed,
   resolveCandidates,
+  toPosix,
 } from '../lib/check-test-colocation.mjs'
 import { ALLOWLIST, ROOTS } from '../check-test-colocation.mjs'
 
@@ -310,6 +311,48 @@ test('ROOTS includes src/app — pins phase 46', () => {
     ROOTS.includes('src/app'),
     'src/app must remain in ROOTS — dropping it re-opens the §5a hole phase 46 closed',
   )
+})
+
+// --------------------------------------------------------------------
+// Windows-checkout path normalization (audit row "Windows verify gate
+// broken" — issue #407)
+// --------------------------------------------------------------------
+//
+// node:path's `join` returns backslash-separated paths on win32, but
+// the lib reasons in POSIX form throughout: the CLI's source-file
+// filter looks for the literal '/__tests__/', and the lib path math
+// (expectedTestPaths, resolveCandidates) joins/splits on '/'. Without
+// normalization at the CLI boundary the gate reports every source
+// file as a violation on Windows. `toPosix` is the boundary helper.
+
+test('toPosix converts backslash separators to forward slashes', () => {
+  assert.equal(
+    toPosix('C:\\foo\\bar\\src\\components\\X.tsx'),
+    'C:/foo/bar/src/components/X.tsx',
+  )
+})
+
+test('toPosix is a no-op on already-POSIX paths', () => {
+  assert.equal(toPosix('/abs/src/components/X.tsx'), '/abs/src/components/X.tsx')
+  assert.equal(toPosix('relative/path.ts'), 'relative/path.ts')
+})
+
+test('toPosix normalizes mixed-separator paths (rare but defended)', () => {
+  assert.equal(
+    toPosix('C:\\foo/bar\\baz/qux.ts'),
+    'C:/foo/bar/baz/qux.ts',
+  )
+})
+
+test('after toPosix, the CLI source-file filter `/__tests__/` matches Windows test paths', () => {
+  // Regression pin: pre-fix the filter ran against backslash-form
+  // paths from `path.join` on win32, so `path.includes('/__tests__/')`
+  // was always false — every test file was treated as a source file
+  // and reported as a violation.
+  const winTestPath = 'C:\\foo\\src\\components\\__tests__\\X.test.tsx'
+  const winSourcePath = 'C:\\foo\\src\\components\\X.tsx'
+  assert.equal(toPosix(winTestPath).includes('/__tests__/'), true)
+  assert.equal(toPosix(winSourcePath).includes('/__tests__/'), false)
 })
 
 test('ALLOWLIST is the documented profile/types.ts exception only', () => {
