@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
@@ -2132,6 +2132,170 @@ export function collectShowCardTaglineOpenerOverlapIssues(): Failure[] {
   return issues
 }
 
+// Phase 44 — Brand-spelling discipline. CLAUDE.md hard rule 6: the
+// brand wordmark `tiered.tv` is always lowercase, never truncated;
+// the tld `tiered.app` is the auth-tenant identifier and must not
+// bleed into customer-facing copy. The class is enforced reactively
+// today (every drift drained by `/iterate` after the next critique
+// pass catches it); this invariant catches future drift at the
+// verify gate the moment it lands.
+//
+// Two surfaces under scan:
+//
+//   1) `content/**/*.md` — frontmatter + body, raw read (loader-
+//      derived strings hide intentional non-prose values like slugs;
+//      the raw file is the editorial surface a future authoring pass
+//      writes against).
+//   2) `src/{app,components,lib}/**/*.{ts,tsx}` — every source file
+//      whose strings can render as customer-facing copy
+//      (`buildMetadata` description literals, JSON-LD `name` fields,
+//      JSX text children, mailto/href literals). `__tests__/`
+//      directories are skipped — test fixtures legitimately reference
+//      the wordmark in odd shapes (regex literals, tenant URLs,
+//      tmpdir prefixes).
+//
+// The truncation regex requires `tiered` NOT preceded by `-` or `/`
+// (CSS class identifiers, URL path segments — `daretodave/tiered`
+// is the project's own github slug, intentionally bare) AND NOT
+// followed by `.tv` / `\.tv` / `\\.tv` (the wordmark in code, plus
+// the escaped form a regex literal uses), `:` (internal event names
+// like `tiered:search-open`), or `-` (CSS class continuations like
+// `prose-tiered`).
+//
+// Allowlists carry the two known intentional uses:
+//   - `BRAND_DOMAIN_INFRA_ALLOWLIST` — files where `tiered.app` is
+//     the Auth0 permissions claim / tenant URL.
+//   - `BRAND_TRUNCATION_ALLOWLIST` — files where bare `Tiered` /
+//     `tiered` is intentional english-adjective wordplay, not a
+//     truncated wordmark. Today: the `/shows` hero H1
+//     `<em>Tiered.</em>` ("All shows. Tiered.") — a deliberate pun
+//     on the past-participle that lands AFTER a sentence-end period;
+//     the brand wordmark appears separately + lowercase in the same
+//     hero's eyebrow (`tiered.tv / Shows`), so the wordplay reads as
+//     english typography, not as a stylized brand reference.
+const BRAND_TRUNCATION_RE = /(?<![-\/])\btiered\b(?!\\*\.tv|:|-)/gi
+const BRAND_TLD_BLEED_RE = /\btiered\.app\b/g
+
+const BRAND_DOMAIN_INFRA_ALLOWLIST: ReadonlySet<string> = new Set([
+  'src/lib/auth0/permissions.ts',
+])
+
+const BRAND_TRUNCATION_ALLOWLIST: ReadonlySet<string> = new Set([
+  'src/components/shows/ShowsHero.tsx',
+])
+
+const BRAND_SCAN_ROOTS = [
+  'src/app',
+  'src/components',
+  'src/lib',
+] as const
+
+const BRAND_SCAN_SOURCE_EXTS = new Set(['.ts', '.tsx'])
+
+type BrandMatch = {
+  kind: 'truncation' | 'tld-bleed'
+  index: number
+  match: string
+}
+
+// Exported so the vitest suite can exercise the regex set against
+// synthetic strings without spinning up a filesystem fixture.
+export function findBrandSpellingMatches(text: string): BrandMatch[] {
+  const out: BrandMatch[] = []
+  for (const m of text.matchAll(BRAND_TLD_BLEED_RE)) {
+    if (m.index == null) continue
+    out.push({ kind: 'tld-bleed', index: m.index, match: m[0] })
+  }
+  for (const m of text.matchAll(BRAND_TRUNCATION_RE)) {
+    if (m.index == null) continue
+    // A truncation hit at `tiered.app` is double-counted by the
+    // truncation regex (it sees `tiered` not followed by `.tv`);
+    // the tld-bleed regex already filed it under the more specific
+    // class, so suppress the duplicate.
+    if (text.slice(m.index, m.index + 10).toLowerCase() === 'tiered.app') {
+      continue
+    }
+    out.push({ kind: 'truncation', index: m.index, match: m[0] })
+  }
+  return out.sort((a, b) => a.index - b.index)
+}
+
+function lineOf(text: string, index: number): number {
+  let line = 1
+  for (let i = 0; i < index && i < text.length; i++) {
+    if (text.charCodeAt(i) === 10) line++
+  }
+  return line
+}
+
+function walkSourceFiles(dir: string, acc: string[]): void {
+  if (!existsSync(dir)) return
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = `${dir}/${entry.name}`
+    if (entry.isDirectory()) {
+      if (entry.name === 'node_modules' || entry.name === '.next') continue
+      if (entry.name === '__tests__') continue
+      walkSourceFiles(full, acc)
+    } else if (entry.isFile()) {
+      const dot = entry.name.lastIndexOf('.')
+      if (dot < 0) continue
+      const ext = entry.name.slice(dot)
+      if (!BRAND_SCAN_SOURCE_EXTS.has(ext)) continue
+      if (entry.name.endsWith('.test.ts') || entry.name.endsWith('.test.tsx')) continue
+      if (entry.name.endsWith('.spec.ts') || entry.name.endsWith('.spec.tsx')) continue
+      acc.push(full)
+    }
+  }
+}
+
+function walkContentMarkdown(dir: string, acc: string[]): void {
+  if (!existsSync(dir)) return
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = `${dir}/${entry.name}`
+    if (entry.isDirectory()) {
+      if (entry.name === 'node_modules' || entry.name === '.next') continue
+      walkContentMarkdown(full, acc)
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      acc.push(full)
+    }
+  }
+}
+
+export function collectBrandSpellingIssues(): Failure[] {
+  const issues: Failure[] = []
+
+  const sourceFiles: string[] = []
+  for (const root of BRAND_SCAN_ROOTS) walkSourceFiles(root, sourceFiles)
+  const markdownFiles: string[] = []
+  walkContentMarkdown('content', markdownFiles)
+
+  for (const file of [...sourceFiles, ...markdownFiles]) {
+    const text = readFileSync(file, 'utf8')
+    const matches = findBrandSpellingMatches(text)
+    if (matches.length === 0) continue
+    const onTruncationAllowlist = BRAND_TRUNCATION_ALLOWLIST.has(file)
+    const onInfraAllowlist = BRAND_DOMAIN_INFRA_ALLOWLIST.has(file)
+    for (const m of matches) {
+      if (m.kind === 'tld-bleed' && onInfraAllowlist) continue
+      if (m.kind === 'truncation' && onTruncationAllowlist) continue
+      const line = lineOf(text, m.index)
+      if (m.kind === 'tld-bleed') {
+        issues.push({
+          file: `${file}:${line}`,
+          message: `\`tiered.app\` TLD bleed — \`tiered.app\` is the Auth0 tenant identifier and must not appear in customer-facing copy. Either swap to \`tiered.tv\` (the brand wordmark) or, if this surface is genuine auth-tenant infrastructure, add the file to \`BRAND_DOMAIN_INFRA_ALLOWLIST\` in scripts/content-check.ts with a one-line comment naming the reason. CLAUDE.md hard rule 6.`,
+        })
+      } else {
+        issues.push({
+          file: `${file}:${line}`,
+          message: `brand-wordmark truncation — \`${m.match}\` appears without the \`.tv\` suffix that completes the wordmark. CLAUDE.md hard rule 6: the brand name is \`tiered.tv\` — always lowercase, including the \`.tv\` suffix; never truncated. Spell the wordmark in full. If this surface is intentional english-adjective wordplay (the past-participle "tiered" as in "sorted into tiers", not the brand), add the file to \`BRAND_TRUNCATION_ALLOWLIST\` in scripts/content-check.ts with a one-line comment naming the editorial reason.`,
+        })
+      }
+    }
+  }
+
+  return issues
+}
+
 function main(): number {
   const failures: Failure[] = []
 
@@ -2282,6 +2446,24 @@ function main(): number {
     failures.push(...clicheRepetitionIssues)
   } else {
     for (const issue of clicheRepetitionIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Phase 44 — Brand-spelling discipline. Ships strict at floor 0 —
+  // the four extant truncations (/mod description, /shows JSON-LD,
+  // /themes JSON-LD, /not-found link text) drain in the same tick
+  // that lands this invariant; the `<em>Tiered.</em>` editorial
+  // wordplay on `/shows` is documented in
+  // `BRAND_TRUNCATION_ALLOWLIST`. CLAUDE.md hard rule 6 is now a
+  // verify-time gate, not a reactive critique drain. One-line
+  // toggle mirroring the strict invariants above.
+  const BRAND_SPELLING_STRICT = true
+  const brandSpellingIssues = collectBrandSpellingIssues()
+  if (BRAND_SPELLING_STRICT) {
+    failures.push(...brandSpellingIssues)
+  } else {
+    for (const issue of brandSpellingIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

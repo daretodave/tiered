@@ -16,7 +16,7 @@ export const dynamic = 'force-dynamic'
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Moderation',
-    description: 'Moderation queue for tiered (mod role only).',
+    description: 'Moderation queue for tiered.tv (mod role only).',
     path: '/mod',
     noIndex: true,
   })

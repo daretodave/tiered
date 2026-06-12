@@ -110,7 +110,7 @@ export default async function ShowHomePage({
 
   const collectionLd = buildJsonLd({
     type: 'CollectionPage',
-    name: `${show.name} — tiered`,
+    name: `${show.name} — tiered.tv`,
     description: show.tagline,
     path: `/shows/${show.slug}`,
   })

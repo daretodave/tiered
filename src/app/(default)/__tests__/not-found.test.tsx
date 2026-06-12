@@ -46,6 +46,6 @@ describe('<NotFound> recovery link', () => {
   it('labels the home link so the recovery path is discoverable', () => {
     render(<NotFound />)
     const link = screen.getByRole('link')
-    expect(norm(link.textContent)).toBe('Back to tiered')
+    expect(norm(link.textContent)).toBe('Back to tiered.tv')
   })
 })

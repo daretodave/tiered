@@ -13,12 +13,14 @@ import {
   collectCanonMethWhoClosingPairEchoIssues,
   collectCanonMethWhoPluralEditorIssues,
   collectCanonRationaleClosingFormulaIssues,
+  collectBrandSpellingIssues,
   collectCanonRationaleDanglingPossessiveIssues,
   collectCalendarFailures,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
   collectFailures,
+  findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
   collectSeasonSectionSubheadIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
@@ -6086,5 +6088,89 @@ featured: false
     expect(issues.length).toBe(1)
     expect(issues[0]!.message).toMatch(/"amateur bakers in a white"/)
     expect(issues[0]!.message).toMatch(/"the gentlest competition on television"/)
+  })
+})
+
+describe('content-check — brand-spelling discipline (phase 44)', () => {
+  it('matches the four extant violation shapes a critique pass would catch', () => {
+    const corpus = [
+      // /mod description-style truncation: `tiered` followed by space.
+      "    description: 'Moderation queue for tiered (mod role only).',",
+      // JSON-LD `name` template-literal closer: `tiered` at backtick end.
+      '    name: `${show.name} — tiered`,',
+      // JSON-LD `name` single-quoted closer: `tiered` at apostrophe end.
+      "      name: 'Lists — tiered',",
+      // /not-found link text: `tiered` at end of JSX text node.
+      '        Back to tiered',
+    ].join('\n')
+    const matches = findBrandSpellingMatches(corpus)
+    expect(matches.length).toBe(4)
+    expect(matches.every((m) => m.kind === 'truncation')).toBe(true)
+  })
+
+  it('skips the wordmark in full and its regex-escaped form', () => {
+    const text = [
+      "const desc = 'Moderation queue for tiered.tv (mod role only).'",
+      '// `canon|tiered.tv places|ranks` is the marker for placement-ordinal',
+      '`(?:tiered\\\\.tv|canon) (?:places|ranks) `',
+    ].join('\n')
+    expect(findBrandSpellingMatches(text)).toEqual([])
+  })
+
+  it('skips CSS classes and event names that share the bare token', () => {
+    const text = [
+      '<div className="shows-tiered" data-testid="shows-tiered">',
+      '<div className="prose-tiered flex flex-col gap-6">',
+      "export const SEARCH_OPEN_EVENT = 'tiered:search-open'",
+    ].join('\n')
+    expect(findBrandSpellingMatches(text)).toEqual([])
+  })
+
+  it("skips the github repo url where 'tiered' is the project's bare slug", () => {
+    const text =
+      'on [GitHub](https://github.com/daretodave/tiered) and tell me what is missing.'
+    expect(findBrandSpellingMatches(text)).toEqual([])
+  })
+
+  it('catches the tld-bleed class separately so each violation reads as its own shape', () => {
+    const text = [
+      "const mailto = `mailto:editors@tiered.app?subject=...`",
+      "const cta = `For corrections email editors@tiered.app`",
+    ].join('\n')
+    const matches = findBrandSpellingMatches(text)
+    expect(matches.length).toBe(2)
+    expect(matches.every((m) => m.kind === 'tld-bleed')).toBe(true)
+  })
+
+  it('does not double-count a `tiered.app` hit under the truncation regex', () => {
+    // The truncation regex sees `tiered` not followed by `.tv` (it
+    // is followed by `.app`), but the tld-bleed regex already filed
+    // the more specific class — suppress the duplicate.
+    const text = "const cta = `email editors@tiered.app for corrections`"
+    const matches = findBrandSpellingMatches(text)
+    expect(matches.length).toBe(1)
+    expect(matches[0]!.kind).toBe('tld-bleed')
+  })
+
+  it('flags the `<em>Tiered.</em>` editorial wordplay case-insensitively (then the file-level allowlist gates it)', () => {
+    // `findBrandSpellingMatches` is the regex layer — case-insensitive
+    // by design so it catches a future titlecase drift on the wordmark.
+    // The `BRAND_TRUNCATION_ALLOWLIST` is the editorial-allowlist
+    // layer, applied at file granularity in collectBrandSpellingIssues.
+    const text = '<em>Tiered.</em>'
+    const matches = findBrandSpellingMatches(text)
+    expect(matches.length).toBe(1)
+    expect(matches[0]!.kind).toBe('truncation')
+    expect(matches[0]!.match).toBe('Tiered')
+  })
+
+  it('runs against the real corpus with zero violations under the strict floor', () => {
+    // The drain (this commit) takes the four extant truncations to
+    // zero; `editors@tiered.app` was already drained in a prior
+    // /iterate tick. The `<em>Tiered.</em>` wordplay sits on the
+    // file-level allowlist. This pin would fail at the verify gate
+    // the moment a future authoring pass reintroduces a drift —
+    // exactly the regression-guard the phase ships for.
+    expect(collectBrandSpellingIssues()).toEqual([])
   })
 })

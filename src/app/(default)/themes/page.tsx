@@ -70,7 +70,7 @@ export default function ThemesIndexPage() {
   const ld = {
     ...buildJsonLd({
       type: 'CollectionPage',
-      name: 'Lists — tiered',
+      name: 'Lists — tiered.tv',
       description: 'Themed lists across the tiered.tv catalog.',
       path: '/themes',
     }),

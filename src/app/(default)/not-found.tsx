@@ -11,7 +11,7 @@ export default function NotFound() {
         href="/"
         className="text-primary-base underline-offset-4 hover:underline"
       >
-        Back to tiered
+        Back to tiered.tv
       </Link>
     </section>
   )
