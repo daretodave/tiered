@@ -184,11 +184,17 @@ If any row scores ≥ 3.0:
 
 (tiered.tv has 3 live content-velocity rules in
 `plan/bearings.md` "Content velocity & editorial cadence"
-that consistently surface content-gap rows: show coverage
-quota, canon completeness, themed list quota. Rule 4
+that consistently surface content-gap rows: show coverage,
+canon completeness, themed list quota. Rule 4
 (facade completeness) is retired — per-show illustration is
-prohibited per `design/CLAUDE.md`. After phase 18 ships, this
-dispatch fires most ticks until the launch quota is reached.)
+prohibited per `design/CLAUDE.md`. Per the 2026-06-14 oversight,
+Rule 1 (show coverage) is now a **standing perpetual mandate** —
+the build plan is 59/59 complete and adding new shows is the
+loop's primary mission, so this dispatch is expected to fire on
+most content-eligible ticks indefinitely. It drains, never
+one-shots: one show flavor scaffolded per tick, seasons drained
+~5/tick by Rule 2. The show queue lives as Pending content-gap
+rows in `plan/AUDIT.md`; when it runs low /expand refills it.)
 
 #### 3c. Expand due (rate-limited, posture-gated)?
 

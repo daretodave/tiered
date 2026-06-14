@@ -13,13 +13,51 @@
        > Bias: <category> (set 2026-MM-DD via oversight, valid for N ticks)
      Multiplies findings of <category> by 1.5x for ranking. -->
 
-> Bias: content-gaps (set 2026-06-11 via oversight, valid for 10 ticks)
+<!-- No active bias. The content-gaps bias (set 2026-06-11) was
+     cleared via oversight 2026-06-14 — /iterate now ranks purely
+     by impact × ease. Show-expansion content rows carry their own
+     score and dispatch through /ship-content (march Step 3b.5),
+     so they do not need a bias thumb on the scale. -->
 
 ## Pending
 
 <!-- Format:
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
+
+<!-- SHOW-EXPANSION SEED (filed via oversight 2026-06-14). The build
+     plan is 59/59 complete; per the 2026-06-14 oversight the loop's
+     primary mission is now CONTINUOUS show expansion (bearings Rule
+     1, rewritten this same oversight to a standing perpetual
+     mandate). These rows seed the Alone and Below Deck franchises.
+     DRAIN, do not one-shot: /ship-content scaffolds ONE flavor per
+     tick (frontmatter + canon.md + first season batch), then Rule 2
+     (canon completeness) auto-files per-show season rows that drain
+     ~5 seasons/tick with the canon ranking recomputed on each
+     insert. Author with care: verify each flavor's exact aired-
+     season COUNT and exact season TITLES at author time (do not
+     trust any count written here — counts rot); set `seasons` to the
+     verified aired count; follow every content rule in bearings
+     "Content velocity & editorial cadence". Cross-flavor list
+     capture is REQUIRED: as each franchise lands, its seasons must
+     become eligible entries in the relevant themed lists so the
+     cross-canon lists span flavors (e.g. an Alone "best seasons"
+     tier draws from Alone US + Alone Australia; a Below Deck list
+     spans the original + Mediterranean + Sailing Yacht + Down Under
+     + Adventure). Flavors below are scored so the flagships drain
+     first. Curator confirms whether Alone: Frozen / Alone: The
+     Skills Challenge warrant a standalone show page or fold as
+     specials — if folded, mark the row [x] with that note. -->
+
+- [ ] [MED] Add show: **Alone** (History, US original — the survival-isolation flagship). Scaffold `content/shows/alone.md` frontmatter (palette + verified aired `seasons` count + tier/network/est_year/genre_tag) + `content/shows/alone/canon.md` + first season batch; then drain remaining seasons 5/tick per Rule 2 with canon ranking on each insert. Careful season naming (Alone seasons are numbered, often with a location subtitle — verify exact titles at author time). (category: content-gaps, source: oversight, score: 4.0 — impact 8 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Below Deck** (Bravo original — the yacht-crew flagship). Scaffold `content/shows/below-deck.md` + `canon.md` + first season batch; drain remaining seasons 5/tick per Rule 2 with ranking on each insert. Verify exact aired-season count + season titles at author time. Anchor of the Below Deck franchise — its themed-list entries must be cross-flavor-eligible. (category: content-gaps, source: oversight, score: 4.0 — impact 8 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Below Deck Mediterranean** (Bravo — the Med charter spinoff). Scaffold `content/shows/below-deck-mediterranean.md` + `canon.md` + first season batch; drain seasons 5/tick. Verify count + season titles. Feeds the cross-flavor Below Deck lists. (category: content-gaps, source: oversight, score: 3.5 — impact 7 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Alone Australia** (SBS — the Australian edition). Scaffold `content/shows/alone-australia.md` + `canon.md` + first season batch; drain seasons 5/tick. Verify count + season titles. Feeds the cross-flavor Alone lists. (category: content-gaps, source: oversight, score: 3.5 — impact 7 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Below Deck Sailing Yacht** (Bravo — the sailing-vessel spinoff). Scaffold `content/shows/below-deck-sailing-yacht.md` + `canon.md` + first season batch; drain seasons 5/tick. Verify count + season titles. (category: content-gaps, source: oversight, score: 3.0 — impact 6 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Below Deck Down Under** (Bravo/Peacock — the Australian-waters spinoff). Scaffold `content/shows/below-deck-down-under.md` + `canon.md` + first season batch; drain seasons 5/tick. Verify count + season titles. (category: content-gaps, source: oversight, score: 3.0 — impact 6 × ease 5) — filed via oversight 2026-06-14
+- [ ] [MED] Add show: **Below Deck Adventure** (Bravo — the adventure-charter spinoff). Scaffold `content/shows/below-deck-adventure.md` + `canon.md` + first season batch; drain seasons (small run) per Rule 2. Verify count + season titles. (category: content-gaps, source: oversight, score: 3.0 — impact 6 × ease 5) — filed via oversight 2026-06-14
+- [ ] [LOW] Add show: **Alone: Frozen** (History — the cold-weather Alone special). Curator confirms standalone-show vs folded-special first; if standalone, scaffold `content/shows/alone-frozen.md` + `canon.md` + season batch; if folded, mark [x] with the note. Verify count + season titles. (category: content-gaps, source: oversight, score: 3.0 — impact 6 × ease 5) — filed via oversight 2026-06-14
+- [ ] [LOW] Add show: **Alone: The Skills Challenge** (History — the skills-demo Alone spinoff). Curator confirms standalone-show vs folded-special first; if standalone, scaffold + canon + season batch; if folded, mark [x] with the note. Verify count + season titles. (category: content-gaps, source: oversight, score: 3.0 — impact 6 × ease 5) — filed via oversight 2026-06-14
 
 - [x] [HIGH] [user-issue #402] Cloud verify-gate e2e leg is structurally red because the Supabase `service_role` has only `TRUNCATE / REFERENCES / TRIGGER` on every phase-11/12/13 `public.*` table (`users`, `sessions`, `votes`, `comments`, `flags`, `mod_actions`, `ai_decisions`, `rank_snapshots`) — no `SELECT / INSERT / UPDATE / DELETE`. Every authed-write spec (`comment-backend`, `comment-read`, `community-page`, `ranking-api`, `user-profile`, `vote-state-pill`) trips on `POST /api/vote` or `POST /api/comment` returning 500 with `{"ok":false,"error":"auth_resolve_failed","detail":"upsertUser: permission denied for table users"}`. RLS bypass on `service_role` doesn't override missing GRANTs at the postgres layer. Root cause: migrations run as the `postgres` role, whose `pg_default_acl` in schema `public` does NOT include grants to `anon / authenticated / service_role` — only objects created by `supabase_admin` get the auto-grants the Supabase API roles need. Cloud loop has been hitting this since ~2026-06-11 10:06Z; supabase CLI 2.106.0 in this run. (category: data, source: triage, score: 7.2 — impact 9 × ease 8) — e772dfc — issue: #402 — RESOLVED this commit: took fix shape (a) — added `supabase/migrations/20260611000001_grant_api_roles.sql` that explicitly grants `SELECT, INSERT, UPDATE, DELETE` on the eight in-scope tables (`users`, `sessions`, `votes`, `comments`, `flags`, `ai_decisions`, `mod_actions`, `rank_snapshots`) to `anon, authenticated, service_role`. The migration matches the standard Supabase pattern for tables created by `supabase_admin`; the existing RLS policies in migrations 000001/000003/000004/000007/000008/000009/000013/000015 continue to gate row-level access for anon and authenticated, and service_role bypasses RLS as before — GRANTs are the postgres ACL layer, RLS is the row filter, both must permit. Belt-and-braces: also (b) `grant usage, select on all sequences in schema public` (no current bigserial columns; defends future ones), and (c) `alter default privileges for role postgres in schema public grant ... on tables` + `... on sequences` so any future `create table` migration applied by `postgres` inherits the GRANTs automatically and a regression cannot silently re-ship locked tables. Migration is idempotent on `db reset`. Proof of fix: the same red e2e specs went green — leg 3 ran 1362 passed (was 13 failed before the migration on this very tick). Verify gate green all three legs: leg1 tokens + typecheck + no-raw-img + colocation + 193 unit files / 2684 tests + script + content:check (13 shows / 298 seasons / 13 canons / 12 themes / 3 legal docs); leg2 build; leg3 1362 e2e (incl. the 13 previously-failing authed-write specs). Closes #402.
 

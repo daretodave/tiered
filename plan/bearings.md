@@ -482,16 +482,73 @@ tiered.tv's `/iterate` and `/ship-content` skills enforce four
 content rules. The loop dispatches to `/ship-content` when any
 of these surface in `plan/AUDIT.md` with score ≥ 3.0:
 
-### Rule 1 — show coverage quota
-Launch covers 12 shows: Survivor, The Amazing Race, Big Brother
-(US), The Bachelor, The Bachelorette, Top Chef, RuPaul's Drag
-Race, The Traitors (US), Love Island (US), Love Island (UK),
-The Great British Bake Off, Project Runway, The Challenge.
+### Rule 1 — show coverage (standing perpetual mandate)
 
-If `count(content/shows/*.md) < 12`, file a Pending audit row
-per missing show. `/ship-content` ships one full show per tick
-(metadata + canon + 3 initial season blurbs + facade
-commissioned via brander).
+**The launch-12 quota is satisfied and superseded.** As of the
+2026-06-14 oversight, the build plan is complete (59/59 phases)
+and adding new shows is the loop's **primary, never-ending
+mission** — community refinement, critique drains, and audits
+remain the natural background, but the main fountain is new
+show coverage. There is **no upper cap**. The loop should
+*always* be extending coverage; this rule never goes dry.
+
+The original launch set (now shipped): Survivor, The Amazing
+Race, Big Brother (US), The Bachelor, The Bachelorette, Top
+Chef, RuPaul's Drag Race, The Traitors (US), Love Island (US),
+Love Island (UK), The Great British Bake Off, Project Runway,
+The Challenge.
+
+**The show queue.** Keep a running queue of shows to add as
+Pending `category: content-gaps` rows in `plan/AUDIT.md` — one
+row per show (a franchise spans multiple rows, one per flavor /
+edition, since each edition is its own `content/shows/<slug>.md`
+like `love-island-uk` vs `love-island-us`). Current seed
+(filed 2026-06-14): the **Alone** family (Alone US, Alone
+Australia, and — curator to confirm standalone vs special —
+Alone: Frozen, Alone: The Skills Challenge) and the **Below
+Deck** family (Below Deck, Below Deck Mediterranean, Below Deck
+Sailing Yacht, Below Deck Down Under, Below Deck Adventure).
+
+**Drain, never one-shot.** Just like the original content seed,
+this fountain *drains*. `/ship-content` ships **one show flavor
+per content tick**: scaffold `content/shows/<slug>.md`
+frontmatter (palette + the verified aired `seasons` count +
+tier / network / est_year / genre_tag) + `content/shows/<slug>/
+canon.md` + the first season batch. It does **not** try to
+author an entire multi-season franchise in a single tick. Rule
+2 (canon completeness) then auto-files per-show season rows that
+drain the remaining seasons at **~5 seasons per tick**, with the
+canon ranking recomputed on each insert (a season's
+`canonical_position` is assigned as it lands, against the
+seasons already ranked — never back-filled in one pass).
+
+**Author with care.** Verify each show's exact aired-season
+count and each season's exact title at author time — counts and
+titles rot, so never trust a number written in a queue row.
+Follow every rule in this section (canon completeness,
+editorial-tenure honesty, themed-list cross-canon coverage) and
+the voice rules above. No per-show illustration (Rule 4,
+retired) — color + type only.
+
+**Cross-flavor list capture.** When a franchise lands, its
+seasons must become eligible entries in the relevant themed
+lists so cross-canon lists genuinely span the flavors — an
+Alone "best seasons" tier should draw from Alone US *and* Alone
+Australia; a Below Deck list should span the original *and* its
+spinoffs. The cross-canon-coverage invariant (Rule 3, ≥3
+distinct shows for tone/craft/era lists) already enforces
+breadth; the franchise editions count as distinct shows for
+that purpose.
+
+**Keep the queue fed (the always-on nudge).** This rule must
+never run dry. When the AUDIT show-queue rows are nearly drained
+(≤2 Pending show rows left), the next `/expand` pass proposes
+the next wave of shows to cover (well-known reality franchises
+not yet in `content/shows/`) and files them as a fresh batch of
+Pending `category: content-gaps` rows — so there is always a
+next show to add. `/oversight` can reprioritise or prune the
+queue, but the steady state is: queue stays non-empty, the loop
+keeps shipping shows.
 
 ### Rule 2 — canon completeness
 Every aired season of every covered show must have a 50–80

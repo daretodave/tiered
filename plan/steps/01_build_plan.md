@@ -19,6 +19,20 @@ block to find the next phase. Format: `[ ]` pending → `[WIP]`
 in flight → `[x]` shipped (with commit hash). Tick in this file
 in the same commit that ships the phase.
 
+> **Standing directive (set via oversight 2026-06-14).** All 59
+> phases are shipped — the *engineering* build plan is complete.
+> The loop's primary mission is now **continuous show
+> expansion**: always be adding new shows (drain-style, never
+> one-shot), with community refinement and audit drains as the
+> natural background. This is content work — it flows through
+> `/ship-content` via `category: content-gaps` rows in
+> `plan/AUDIT.md` (march Step 3b.5), governed by the standing
+> perpetual Rule 1 in `plan/bearings.md` "Content velocity &
+> editorial cadence". It is **not** a code phase: do not add an
+> unchecked `[ ]` Phase row here for show additions — that would
+> misroute to `/ship-a-phase`. New *engineering* phases still get
+> rows here as normal when promoted from `/expand`.
+
 **Substrate (phases 1–4):**
 <!-- Phase 4a slots between facade primitives (phase 4) and the first show
      family (phase 5). It ports the composition system the user already
