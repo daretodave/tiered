@@ -157,12 +157,13 @@ jobs:
           # sessions. (Alternative: ANTHROPIC_API_KEY for
           # pay-per-token — not used.)
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # Opus — the cloud loop is doing real design + content
-          # work (phases 19a–19e and the content-velocity endgame)
-          # where Sonnet undersells. Headroom on the weekly cap is
-          # the gate; if we hit it, drop back to claude-sonnet-4-6.
+          # Sonnet — cheapest model that runs the loop. The cloud
+          # loop bills against the subscription weekly cap; Sonnet
+          # keeps each tick cheap and leaves the most headroom. If a
+          # tick genuinely needs Opus-grade design/content judgment,
+          # bump back to claude-opus-4-7 for that work.
           claude_args: |
-            --model claude-opus-4-7
+            --model claude-sonnet-4-6
             --dangerously-skip-permissions
           prompt: |
             You are running tiered.tv's autonomous loop in CI (GitHub Actions).
