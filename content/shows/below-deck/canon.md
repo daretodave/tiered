@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Cast dynamics come first, but location and charter-guest variety shape the season's texture. A season that produces friction across multiple departments — deck, interior, galley — earns more than one that confines it to a single storyline. Format consolidation matters too: the seasons that taught the show what it was receive credit for the groundwork."
 meth_when_h: "When I revisit"
 meth_when_p: "The canon expands as later seasons land. Five slots reflect the first five seasons; the Tahiti, Thailand, and Caribbean return runs slot in on merit as the ranking grows. The Lee-to-Kerry transition will reshape the ranking's upper range once both eras are fully seeded. I'm not claiming to be objective. I'm trying to be honest."
+tier_s_blurb: "Five seasons building the format's identity — from a rough origin run to a Bahamas peak, with a return visit proving the cast-churn design."
 tier_b_blurb: "Five seasons building the format's identity — from a rough origin run to a Bahamas peak, with a return visit proving the cast-churn design."
 weekly_question: "Does the Bahamas season belong at the top, or does the origin run in Sint Maarten hold a claim that later seasons can't displace?"
 era_bands:
