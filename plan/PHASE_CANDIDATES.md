@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-12 at commit 14cd563
-> Pass count: 32
+> Last pass: 2026-06-15 at commit 6bfb784
+> Pass count: 33
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,183 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 33 (2026-06-15, commit 6bfb784) — 3 candidates filed.
+     Window since pass 32 (14cd563, 2026-06-12): 3 days / 27 commits.
+     Signals reviewed:
+     - AUDIT.md: 1 pending bug row (Supabase CLI pin #416, score 4.8,
+       category: bug — single item, /iterate handles, not a phase shape).
+     - CRITIQUE.md: 26 pending rows (up from 14 at pass 32 — 12 net new
+       from passes 51+52). Three clusters rose to phase-candidate level:
+       (1) era filter tab UX — 3 rows on the same CanonEraToolbar
+       mechanism (TITHERADGE ERA zero entries MED, KISH ERA opaque LOW,
+       COLBY ERA same-class drop from pass-52 cap); (2) show canon
+       completeness — 3 rows clustering around new B-tier shows with
+       partial canons (S-tier blurb dup MED, era coverage LOW, home stat
+       LOW); (3) user profile record zone — 1 MED standalone finding
+       (/u/[handle] stat-chip scaffold absent after phase-38 ship).
+       Remaining 20 rows are MED/LOW findings individually addressable
+       by /iterate in 1–2 ticks each; none cluster into new phase shapes.
+     - Triage: 1 loop-queued issue (#416, Nightly e2e-full gateway
+       timeout) — same as AUDIT bug row above; not a phase shape.
+     - spec.md + design/: no changes since pass 32.
+     - Data growth: 22 shows now (vs 13 at pass 31 / 13 at pass 32) — 9
+       shows added in the pass-32→33 window; this growth is what seeded
+       the B-tier/new-show completeness signal.
+     - Commit pattern: 27 commits — content ticks (10 show additions) +
+       2 critique passes + 6 audit drains. No multi-tick fix patterns on
+       any single surface.
+     Below-threshold candidates noted: (a) Survivor hero breadcrumb
+     placement (1 MED, single DOM reorder, /iterate); (b) HvV Section 03
+     stub (1 MED, content gap, /ship-content); (c) HvV comment composer
+     affordance (1 MED, /iterate); (d) /about 80-120 word promise
+     (1 MED, single copy edit extending phase-43 pattern, /iterate). -->
+
+### 14. Era filter tab polish — empty state + contextual label
+
+**Score:** 5.5 (impact: 7, ease: 7 → 4.9 base + 1 signal multiplicity)
+**Source pass:** 33
+**Filed:** 2026-06-15
+**Source signals:**
+- Critique pass-52 [MED] TITHERADGE ERA tab renders with zero
+  matching entries (below-deck canon covers S1–S5 [2013–2022];
+  the Titheradge era band spans [2024, 2026] with no ranked
+  seasons yet) — confirmed at `src/components/canon/CanonEraToolbar.tsx`.
+- Critique pass-51 [LOW] KISH ERA filter tab is opaque; a first-time
+  visitor does not know who "Kish" is or when the era starts.
+- Critique pass-52 drop (same defect class, cap): COLBY ERA on Alone
+  carries the same opacity as KISH ERA.
+- Signal multiplicity: two distinct fix types (empty-state rendering,
+  label context) on the same component across 3+ shows.
+
+**Why:** The era-filter toolbar ships without a degraded-empty state
+and without reader-friendly label context. Both gaps compound as new
+shows are added — 22 shows now, every one with era bands is a
+potential empty-state or opacity recurrence. The TITHERADGE ERA
+finding is currently a live display bug: a tab exists for an era with
+no ranked content, yet there is no "no seasons yet" affordance —
+the filter silently yields an empty grid. The KISH ERA and COLBY ERA
+findings are reader-trust issues: internal shorthand labels without
+the season-range context that makes a first-time visitor's click pay
+off. Both are the same `CanonEraToolbar.tsx` component; a single
+phase addresses both fix types plus drains the known instances.
+
+**Scope sketch:**
+- `CanonEraToolbar.tsx` — when the active era filter yields 0 canon
+  entries, render a clear empty state ("No ranked seasons in this era
+  yet") instead of a blank grid.
+- Era tab label format: auto-derive a compact parenthetical season
+  range from `era_bands[i].range` (e.g., `[2024, 2026]` → `· S11–`)
+  and append to host/era-name tabs that carry a non-obvious label.
+  Derivation uses existing `premiere_date` on season files — no new
+  content fields.
+- Drain the three known opaque tabs (TITHERADGE ERA, KISH ERA, COLBY
+  ERA) and confirm the auto-range label renders correctly.
+- Unit tests for the empty-state render path + the label-derivation
+  helper; e2e asserts the KISH ERA tab now carries a season range.
+
+**Estimated phases:** 1.
+**Conflicts:** Overlaps conceptually with candidate #15 (which adds a
+content-check gate for era band coverage). Independent fix paths:
+#14 is the product-visible render fix; #15 is the invariant gate.
+Ship in any order; both should eventually land.
+
+### 15. Show canon completeness lax→strict gate
+
+**Score:** 5.8 (impact: 7, ease: 7 → 4.9 base + 2 signal multiplicity)
+**Source pass:** 33
+**Filed:** 2026-06-15
+**Source signals:**
+- Critique pass-52 [MED] /shows/below-deck S-tier heading and blurb
+  are identical — `tier_s_blurb` absent; fallback equals the heading;
+  any show with all canon entries in S tier exhibits this visual dup.
+- Critique pass-52 [MED] TITHERADGE ERA filter has zero matches —
+  era band range [2024,2026] but no seasonally-ranked entries in that
+  span; content-check could flag this at authoring time.
+- Critique pass-52 [LOW] `/` home stat "Every season reviewed"
+  inaccurate for B-tier shows with partial canons.
+- Commit pattern: 9 new shows shipped since pass 32 (70% catalog
+  growth); each new B-tier show is a potential recurrence vector for
+  the S-tier blurb and era-band coverage gaps.
+
+**Why:** Three critique findings from the same pass (52) cluster
+around a single root: new shows added with partially-complete canons
+expose gaps across multiple surfaces. The S-tier blurb/heading
+duplication is architecturally guaranteed to recur — the `CanonTierBand`
+fallback string is identical to the tier headline string, so any
+future show where `tier_s_blurb` is absent AND all ranked entries
+land in S tier will exhibit the visual double. The era-band coverage
+gap (a band with a date range that outpaces the current canon) is a
+content authoring oversight that a verify-time check catches before
+it reaches the page. The home stat inaccuracy is the same lax→strict
+pattern as phase-43 editorial-copy honesty but scoped to a boolean
+("reviewed" vs. "in progress"). This is the established `lax→strict`
+invariant mechanic (phases 41/42/43/44/45/46): add the check in lax
+mode, drain known violators, flip strict in the same or next tick.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `CANON_COMPLETENESS_STRICT` flag:
+  (a) `collectTierBlurbIssues()`: emit issue when `tier_s_blurb` is
+  absent AND all canon entries have S-tier rank (fallback = heading,
+  visual duplication guaranteed); lax mode logs warning; strict fails.
+  (b) `collectEraBandGapIssues()`: emit issue when any era band's
+  `[start, end]` range contains no canon entry whose `premiere_date`
+  falls within it (empty era band guaranteed to produce an empty tab).
+- Drain the single known violator (`below-deck`): add `tier_s_blurb`;
+  adjust TITHERADGE ERA range or add the missing S11+ seasons.
+- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit (surface
+  is small — one show; same day-one-strict pattern as phase 44).
+- Update `content-curator` brief so new shows are authored to pass
+  both checks from the first tick.
+- Unit tests for both `collect*` helpers (pass / fail / empty cases).
+
+**Estimated phases:** 1.
+**Conflicts:** Candidate #14 addresses the render-side empty state for
+era tabs; #15 addresses the content-check gate that prevents the
+content authoring gap from shipping. Independent and complementary.
+
+### 16. /u/[handle] record stat-chip scaffold
+
+**Score:** 5.0 (impact: 6, ease: 7 → 4.2 base + 1 cheap-and-impactful)
+**Source pass:** 33
+**Filed:** 2026-06-15
+**Source signals:**
+- Critique pass-52 [MED] /u/e2e own-profile "Your record" surface
+  is structurally bare — no stat chips, no record scaffold, no
+  "0 VOTES CAST · 0 COMMENTS · JOINED" chip row.
+- Phase 38 scope note: the profile ship deliberately bounded scope to
+  the activity surface (published comments + vote participation counts)
+  and did not ship the stat-chip record zone. The brief named this as
+  a follow-on.
+
+**Why:** The `/u/[handle]` page is the only place a returning member
+sees their own record reflected back. Phase 38 wired the activity
+surface (recent comments, show participation) but the stat-chip row
+that makes the record system legible — what counts, what's stored, how
+long you've been here — is absent. The critique pass-52 MED finding
+confirms this is reader-visible: the "Your record" section is blank on
+first party view. The data substrate is complete (phase-11 `users.created_at`,
+phase-11/35 vote counts, phase-12/36 published comment counts); the
+chip is a read-only aggregate surface with no write path or schema
+change needed. One phase closes the phase-38 partial ship.
+
+**Scope sketch:**
+- `src/app/(default)/u/[handle]/page.tsx` (or its child components) —
+  add a `ProfileStatChips` component: `N VOTES CAST · N COMMENTS · [Mon YYYY] JOINED`.
+  Counts derived from live Supabase queries: `votes` count for the
+  profile user, `comments` count where `status = 'published'` (spoiler
+  P0 — never expose pending/hidden), `users.created_at` formatted.
+- Own-profile (viewer === handle): chips reflect your own record.
+- Third-party (viewer !== handle): same chip pattern, same queries,
+  scoped to the profile user (counts only, no PII).
+- Colocated unit test for `ProfileStatChips` with realistic counts;
+  e2e assertion that `/u/e2e` profile page renders a stat chip
+  matching the joined-date pattern and a non-negative vote count.
+- Spoiler discipline P0 intact: published-comment count only.
+
+**Estimated phases:** 1.
+**Conflicts:** None. Phase 38 shipped the page shell; this fills the
+record zone. No URL change.
 
 <!-- Pass 32 (2026-06-12, commit 14cd563) — 0 candidates filed.
      Re-pass at the exact 20-commit threshold from pass 31
