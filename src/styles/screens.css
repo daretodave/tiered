@@ -1281,7 +1281,7 @@
 
   .show-hero { grid-template-columns: 1fr; }
   .show-hero-cover { padding: 64px 24px 40px; min-height: 0; border-right: 0; border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent); }
-  .wordmark { font-size: 64px; }
+  .wordmark { font-size: 64px; overflow-wrap: anywhere; }
   .show-hero-sub { font-size: 18px; }
   .show-hero-meta { padding: 40px 24px; border-left: 0; }
   .show-hero-line { font-size: 16px; }
