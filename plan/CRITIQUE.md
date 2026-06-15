@@ -1,5 +1,67 @@
 # CRITIQUE
 
+> Last pass: 2026-06-15 at commit 59a474c
+> Pass count: 52
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 52 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Both anon (7 URLs:
+> `/`, `/shows`, `/shows/below-deck`, `/shows/alone`,
+> `/themes/best-comeback-seasons`, `/themes`, `/about`) and
+> authed (7 URLs: `/`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`,
+> `/shows/below-deck`, `/themes/best-villain-editing`, `/u/e2e`,
+> `/themes`) walks ran end-to-end across desktop + mobile
+> viewports — 28 captures total. Both walks emitted zero
+> mechanical findings (all pages: 200 status, H1 present, no
+> horizontal overflow at 375px, zero console errors on all pages
+> except the known `/u/e2e` `_rsc` `net::ERR_ABORTED` Next.js
+> Link prefetch teardown — dropped per passes 6-11, 29-51
+> precedent). Pass focused on the newly-added B-tier shows
+> (Below Deck, Alone) and their interaction with the status pill
+> and canon display. Reader returned 15 raw qualitative
+> observations (anon 7 / authed 8); self-assessment dropped 9 at
+> filing per cap-of-6 rule + duplication-with-Pending checks:
+> (a) [LOW] /shows/alone "COLBY ERA" filter opaque — same
+> defect class as already-Pending KISH ERA finding at
+> /shows/top-chef; will be addressed together; (b) [LOW]
+> /shows/below-deck "WHEN I revisit" copy names specific future
+> season locations — dropped as below-threshold; the named
+> locations are public knowledge (repeat-location seasons aired);
+> (c) [LOW] /themes/best-comeback-seasons lede double-register
+> (swing + risk framing) — soft redundancy, below threshold;
+> (d) [LOW] /u/e2e H1 "Your record" generic vs. handle —
+> folded into already-Pending /u/e2e bare-scaffold finding;
+> (e) [LOW] HvV desktop TOC missing section count — dropped as
+> cosmetic asymmetry; mobile intentionally more dense; (f) [MED]
+> [authed] /shows/below-deck "12 SEASONS AIRED" but only 5 in
+> grid — same defect as filed [MED] below (status pill overflow
+> is the canonical description); (g) [LOW] /shows/below-deck no
+> secondary "in canon" stat — merged into status pill finding;
+> (h) [MED] below-deck S-tier blurb duplicate — confirmed filed;
+> (i) [MED] TITHERADGE ERA empty filter — confirmed filed.
+> Findings filed (6): (i) [MED] [anon] /shows status pill
+> renders "in progress · 5 / 3" for B-tier shows that exceeded
+> the canon target — impossible ratio, no legend; (ii) [MED]
+> [anon+authed] /shows/below-deck S-tier band heading and blurb
+> are identical ("The seasons that defend the show.") because
+> tier_s_blurb is absent and the fallback equals the headline;
+> (iii) [MED] [authed] /shows/below-deck TITHERADGE ERA filter
+> tab has zero matching entries but no empty-state message;
+> (iv) [LOW] [authed] /shows/below-deck canon tags and
+> slot_arguments render with literal double-quote characters
+> from content authoring inconsistency; (v) [LOW] [anon]
+> `/` "Every season reviewed." home stat inaccurate — B-tier
+> shows have partial canons; (vi) [LOW] [anon] /shows/below-deck
+> meta description truncates mid-clause (tagline is 195 chars,
+> no card_tagline). Cap respected (≤6 filed). Spoiler discipline
+> P0 intact — every row is a chrome / voice / editorial
+> observation; zero winner / elimination / finale beat exposure
+> across the 28 captures.
+>
+> ───── Pass 51 metadata kept below for history ─────
+>
 > Last pass: 2026-06-15 at commit 1354924
 > Pass count: 51
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -587,6 +649,12 @@
 
 ## Pending
 
+- [ ] [MED] [anon] /shows — B-tier show status pill renders "in progress · 5 / 3" for shows that have shipped more canon entries than the CANON_TARGET of 3. Multiple recently-added shows (Below Deck, Alone, Below Deck Mediterranean, Below Deck Sailing Yacht) each have 5 canon entries; the `ShowsStatusPill` component renders `in progress · {shipped} / {target}` unconditionally, producing a ratio where the numerator exceeds the denominator. A first-time visitor reading "in progress · 5 / 3" has no way to interpret the ratio — it reads as an error state, not an editorial status. `canonProgress()` in `src/components/shows/canonProgress.ts` returns `{shipped, target}` without capping shipped at target; `ShowsStatusPill` renders the ratio without a guard. Fix: when `shipped >= target`, either hide the pill entirely or change the label to "review in progress" without the ratio (the ratio is meaningful only before completion). Spoiler discipline P0 intact (display-state only). (URL: /shows, source: critique-pass-52) — 59a474c
+- [ ] [MED] [anon+authed] /shows/below-deck — the S-tier band heading (`<h2>`) and blurb (`<p>`) both render the identical string "The seasons that defend the show." because `tier_s_blurb` is absent in `content/shows/below-deck/canon.md` and the blurb falls back to `DEFAULT_TIER_HEADINGS.S` which equals `TIER_HEADLINES.S` — the same constant. A reader sees the same sentence twice in immediate succession: the heading, then a paragraph that repeats it word-for-word. Confirmed via source: `CanonTierBand.tsx:82` sets `blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]`; `DEFAULT_BLURBS.S = 'The seasons that defend the show.'`; `TIER_HEADLINES.S = 'The seasons that defend the show.'`. The canon does define `tier_b_blurb` but all five ranked entries land in the S tier (ranks 1–5). Fix: add `tier_s_blurb` to `content/shows/below-deck/canon.md` — the existing `tier_b_blurb` value ("Five seasons building the format's identity — from a rough origin run to a Bahamas peak, with a return visit proving the cast-churn design.") would serve as the blurb since it accurately describes the ranked set. Content-only fix; one field addition. Spoiler discipline P0 intact. (URL: /shows/below-deck, source: critique-pass-52) — 59a474c
+- [ ] [MED] [authed] /shows/below-deck — the "TITHERADGE ERA" era-filter tab renders in the canon toolbar but has zero matching entries (the era_band spans 2024–2026; all five ranked seasons aired 2013–2016). Selecting the tab produces a blank grid with no empty-state message, no explanation of why no results appear. Confirmed via source: `content/shows/below-deck/canon.md` defines `era_bands: [{key: titheradge-era, range: [2024, 2026]}]`; all five `canonical_position` entries are seasons 1–5 (2013–2016). The era toolbar at `CanonEraToolbar.tsx` renders all defined era bands regardless of match count. Fix: suppress era-band filter tabs when no canon entries fall within the era's date range, or render an inline empty-state ("No Titheradge-era seasons ranked yet — the canon grows after each reviewed season.") when a tab returns zero results. Spoiler discipline P0 intact. (URL: /shows/below-deck, source: critique-pass-52) — 59a474c
+- [ ] [LOW] [authed] /shows/below-deck — canon entry `tag` and `slot_argument` values render on-page with literal double-quote characters. The markdown body in `content/shows/below-deck/canon.md` uses `tag: "value"` syntax; the body-parser regex `ENTRY_META_RE = /^(tag|slot_argument|community_rank_hint):\s*(.+)$/` captures the full trailing text including the outer double-quotes as part of the string value. The quotes are literal content, not YAML delimiters. All other canonized shows (Survivor, Top Chef, etc.) author tags and slot_arguments without surrounding quotes and render as plain prose. Fix: remove the outer double-quote characters from all `tag` and `slot_argument` lines in `content/shows/below-deck/canon.md` (and audit sibling new-show canon files for the same pattern). Content-only fix. Spoiler discipline P0 intact. (URL: /shows/below-deck, source: critique-pass-52) — 59a474c
+- [ ] [LOW] [anon] `/` — the home show grid renders `{totalShows} shows tracked. Every season reviewed.` (`src/components/home/HomeShowGrid.tsx:15`). The "Every season reviewed" claim is false for B-tier shows that carry partial canons: Below Deck has 5 of 12 seasons ranked; Alone has 5 of its aired seasons ranked. The /shows page itself qualifies this with an "in progress" pill and a tier-explainer; the home stat makes no such qualification. Same defect class as phase-43 editorial-copy honesty sweep (copy that overstates the product's current state). Fix: update the home grid subtitle to reflect the honest scope — e.g. "every S and A-tier season reviewed" or "every ranked season covered, B-tier in progress" — or make the count data-driven (only count shows where coverage is complete). Spoiler discipline P0 intact (copy only). (URL: /, source: critique-pass-52) — 59a474c
+- [ ] [LOW] [anon] /shows/below-deck — meta description truncates mid-clause: "No votes, no eliminations. Below Deck follows a working superyacht crew through the charter season — twelve seasons of captain authority, service pressure…". The show's `tagline` field is 195 characters; `descriptionFor()` slices to 159 chars + '…' when no `card_tagline` is present, producing an unfinished thought in search results. Confirmed via source: `content/shows/below-deck.md` has no `card_tagline`; tagline is 195 chars; `card_tagline` schema allows ≤160 chars. Fix: add a `card_tagline` to `content/shows/below-deck.md` of ≤155 characters that lands at a complete clause — e.g. "Twelve seasons of captain authority, service pressure, and friction aboard a working superyacht. No votes. No eliminations." Audit sibling new-show files for the same gap. Spoiler discipline P0 intact (SEO copy only). (URL: /shows/below-deck, source: critique-pass-52) — 59a474c
 - [ ] [MED] [anon] /about promises "an 80–120 word reason" per Editor's Canon season slot, but the actual season write-ups on show pages span a main take paragraph plus a separate "WHY THIS SLOT" block — the combined text is materially longer than 120 words on every examined entry. A reader who absorbs the About page's format promise and then clicks through to a season canon finds a longer, richer format that the About description does not describe. Verified on the pass-51 anon walker capture: /about body reads "The Editor's Canon is the editor's call — one person, one position per season, an 80–120 word reason."; /shows/top-chef/season/all-stars canon entry renders a ~130-word take body plus a separate ~40-word "WHY THIS SLOT" block = ~170 combined, well past the 120-word ceiling. Same defect class as phase-43 editorial-copy honesty sweep (descriptions of the product that drift from what the product actually delivers). Source: the About page content (likely `content/legal/about.md`). Bearings voice cue — knowledgeable peer; a peer's description of how the canon works should match what the canon delivers. Fix options: (a) **primary path — update the About page description** to reflect the actual two-part format: a main take paragraph plus a concise "why this slot" rationale, removing the "80–120 word" word count in favor of a structural description. (b) alternative — reduce all canon entries to a single 80–120 word block. Rejected — the two-part format is richer and About is the easier edit. Recommended (a) — one content edit. Spoiler discipline P0 intact (About page copy only). (URL: /about, source: critique-pass-51) — 1354924
 - [ ] [LOW] [anon] /shows/top-chef/season/all-stars — the compound "seventeen-episode" renders as "seventeen- episode" (hyphen followed by a space before "episode") in two separate passages on the All-Stars season page body, producing a mid-word break artifact. The clean form "seventeen-episode" appears elsewhere on the same page, confirming the hyphenated-no-space version is the intended rendering. Verified on the pass-51 anon walker capture: shape-of-season section renders "the season earns its seventeen- episode runway"; a second adjacent passage repeats the same artifact. Source: the All-Stars season content file (`content/shows/top-chef/seasons/08-all-stars.md`). Fix: remove the stray space from both occurrences so the compound renders "seventeen-episode" without a break. Spoiler discipline P0 intact (typography only). (URL: /shows/top-chef/season/all-stars, source: critique-pass-51) — 1354924
 - [ ] [LOW] [anon] /shows B-tier tier-explainer footer retains the definition "B tier means I haven't watched everything twice yet — when I have, the show moves up" but the B-tier band is now hidden from the index (commit 16a2247). A first-time visitor reads a definition for a category that appears nowhere else on the page — the definition dangles without a referent. Verified on the pass-51 anon walker capture: the tier-explainer footer includes the B-tier definition; the rendered show index contains only S-tier (2 shows) and A-tier (11 shows) with no B-tier band. Same defect class as the resolved pass-50 (ii) empty-B-tier-band finding — that fix hid the visual band but left the textual explainer unreconciled. Source: likely the /shows page component (`src/app/shows/page.tsx` or the tier-explainer section). Fix options: (a) **primary path — conditionally suppress the B-tier sentence** when no B-tier shows exist in the index. (b) alternative — append "(none currently)" to the B-tier sentence. Recommended (a) — suppress when without referent. Spoiler discipline P0 intact (copy only). (URL: /shows, source: critique-pass-51) — 1354924
