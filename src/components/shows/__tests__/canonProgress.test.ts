@@ -66,10 +66,11 @@ describe('canonProgress(slug)', () => {
   })
 
   it('reports shipped above the target (canon-mode shows past the floor) without clamping', () => {
-    // Once a show clears the floor it stays in canon-mode and
-    // continues to grow. The pill should keep reporting the true
-    // count — not clamp to the target — so the editorial state is
-    // legible to readers and to any later UI that consumes shipped.
+    // canonProgress() returns the raw count unclamped so any caller
+    // (ShowsStatusPill, analytics, future UI) receives the true
+    // editorial state. ShowsStatusPill guards the display separately:
+    // when shipped >= target it renders "review in progress" (no ratio)
+    // rather than the confusing "49 / 3" fraction.
     mockedGetCanon.mockReturnValue(canon(49))
     expect(canonProgress('survivor')).toEqual({ shipped: 49, target: 3 })
   })
