@@ -8,6 +8,7 @@ status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: true
+featured_pull: "Six premiere episodes that laid down the format statement in hour one and never had to restate it."
 related:
   - firsts
   - best-newbie-casts

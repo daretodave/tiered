@@ -476,6 +476,31 @@ export function collectThemeDescriptionCountTailIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-48 MED: featured themes must author a dedicated
+// `featured_pull` so the rail tile on /themes differentiates from
+// the all-lists index card's description first sentence. The
+// `featuredPullText` helper (`src/lib/themes-format.ts`) falls back
+// to `firstSentence(theme.description)` when `featured_pull` is
+// absent — both the featured rail and the index card then open on
+// the identical first sentence, which a visitor scanning
+// top-to-bottom reads twice within one viewport scroll. Strict from
+// day one — this commit authors `featured_pull` on all four
+// currently-featured themes, so the invariant ships green at
+// floor 0. Any future featured promotion must author the field or
+// the gate fails. One-line toggle mirroring the STRICT family.
+export function collectFeaturedThemeMissingPullIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    if (theme.featured && theme.featured_pull == null) {
+      issues.push({
+        file: `content/themes/${theme.slug}.md`,
+        message: `featured theme "${theme.slug}" has no featured_pull — add a 15–20 word rail-pull sentence so the featured tile differentiates from the index card's opening sentence (critique pass-48, FEATURED_THEME_PULL_STRICT)`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-13 MED finding: themed-list entry blurbs are public
 // list surfaces (`/themes/<theme>`), not detail pages — they must
 // land without naming season-specific twist mechanics a viewer who
@@ -3139,6 +3164,22 @@ function main(): number {
     failures.push(...editorialFirstPersonIssues)
   } else {
     for (const issue of editorialFirstPersonIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-48 MED: featured themes must author a
+  // `featured_pull` so the rail tile differentiates from the
+  // index card's description first sentence (see
+  // collectFeaturedThemeMissingPullIssues). Strict from day one —
+  // all four currently-featured themes authored featured_pull in
+  // this commit, so the invariant ships green at floor 0.
+  const FEATURED_THEME_PULL_STRICT = true
+  const featuredThemePullIssues = collectFeaturedThemeMissingPullIssues()
+  if (FEATURED_THEME_PULL_STRICT) {
+    failures.push(...featuredThemePullIssues)
+  } else {
+    for (const issue of featuredThemePullIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

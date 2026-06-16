@@ -8,6 +8,7 @@ status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: true
+featured_pull: "Five comeback seasons that had everything to lose — hiatus, milestone, all-star reunion — and came back earning it."
 related:
   - best-returnees
   - best-finales

@@ -8,6 +8,7 @@ status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-05-21
 featured: true
+featured_pull: "Five seasons where the antagonist arc ran the room — not a subplot, the whole narrative spine the rest of the cast played inside."
 related:
   - best-returnees
   - survivor-pillars

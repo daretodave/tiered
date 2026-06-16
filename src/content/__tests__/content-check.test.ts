@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
+  collectFeaturedThemeMissingPullIssues,
   collectCanonMethSiblingsPluralEditorIssues,
   collectCanonMethWhoClosingPairEchoIssues,
   collectCanonMethWhoPluralEditorIssues,
@@ -710,7 +711,7 @@ describe('content-check — era-band coverage (phase 34)', () => {
     expect(eraMsg(collectFailures(false))).toEqual([])
   })
 
-  it('strict requires era_bands on a canon’d show with >= 8 seasons', () => {
+  it("strict requires era_bands on a canon'd show with >= 8 seasons", () => {
     makeShow(tmp, 'alpha')
     eightSeasons('alpha')
     makeCanon(
@@ -726,7 +727,7 @@ describe('content-check — era-band coverage (phase 34)', () => {
     expect(problems.some((f) => /era_bands required/.test(f.message))).toBe(true)
   })
 
-  it('strict does not require era_bands on a small canon’d show', () => {
+  it("strict does not require era_bands on a small canon'd show", () => {
     makeShow(tmp, 'alpha')
     makeSeason(tmp, 'alpha', 1, 's1', {
       canonical_position: 1,
@@ -6486,7 +6487,7 @@ describe('content-check — cross-surface singular-editor voice (critique pass-5
     // Acceptance pin: the helper's pattern catches every
     // contraction form a plural-we authoring pass would reach
     // for. Mirrors the pass-49 #411 acceptance test shape.
-    const pattern = /\bwe(?:['’](?:ve|d|re|ll))?\b/i
+    const pattern = /\bwe(?:[''](?:ve|d|re|ll))?\b/i
     const offenders = [
       // /shows tier-explainer historical literal
       "S tier means we'd defend the canon's order at a bar.",
@@ -6506,7 +6507,7 @@ describe('content-check — cross-surface singular-editor voice (critique pass-5
   })
 
   it("does not match unrelated tokens (\\bwe\\b is word-bounded — \"editors\", \"sweet\", \"between\" stay clean)", () => {
-    const pattern = /\bwe(?:['’](?:ve|d|re|ll))?\b/i
+    const pattern = /\bwe(?:[''](?:ve|d|re|ll))?\b/i
     const safeTokens = [
       "the editors' draft is still in progress",
       'a sweet ending',
@@ -6516,5 +6517,156 @@ describe('content-check — cross-surface singular-editor voice (critique pass-5
     for (const safe of safeTokens) {
       expect(pattern.test(safe)).toBe(false)
     }
+  })
+})
+
+describe('content-check — featured-theme pull authoring (critique pass-48, FEATURED_THEME_PULL_STRICT)', () => {
+  // Critique pass-48 MED: featured themes on /themes must author a
+  // dedicated `featured_pull` so the rail tile differentiates from
+  // the all-lists index card's description first sentence. Without
+  // it, `featuredPullText` falls back to `firstSentence(description)`
+  // and the visitor reads the same opening sentence twice within one
+  // viewport scroll (once in the featured rail tile, once in the
+  // category-grouped index card).
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-featured-pull-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 's1', { canonical_position: 1 })
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('passes against the real source files (all four currently-featured themes have featured_pull)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectFeaturedThemeMissingPullIssues()).toEqual([])
+  })
+
+  it('flags a featured theme that has no featured_pull', () => {
+    mkdirSync(path.join(tmp, 'themes'), { recursive: true })
+    writeFileSync(
+      path.join(tmp, 'themes', 'ft-no-pull.md'),
+      `---
+slug: ft-no-pull
+title: "No pull"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-05-19
+featured: true
+description: "A description without a dedicated rail pull."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+    )
+    const issues = collectFeaturedThemeMissingPullIssues()
+    expect(issues).toHaveLength(1)
+    expect(issues[0]!.file).toBe('content/themes/ft-no-pull.md')
+    expect(issues[0]!.message).toMatch(/featured_pull/)
+  })
+
+  it('passes when a featured theme has featured_pull authored', () => {
+    mkdirSync(path.join(tmp, 'themes'), { recursive: true })
+    writeFileSync(
+      path.join(tmp, 'themes', 'ft-with-pull.md'),
+      `---
+slug: ft-with-pull
+title: "With pull"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-05-19
+featured: true
+featured_pull: "A distinct 15-word rail sentence that differs from the description opener."
+description: "A description whose first sentence is not the rail pull."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+    )
+    expect(collectFeaturedThemeMissingPullIssues()).toEqual([])
+  })
+
+  it('passes for a non-featured theme with no featured_pull (field is only required for featured: true)', () => {
+    mkdirSync(path.join(tmp, 'themes'), { recursive: true })
+    writeFileSync(
+      path.join(tmp, 'themes', 'not-featured.md'),
+      `---
+slug: not-featured
+title: "Not featured"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-05-19
+featured: false
+description: "This theme is not in the featured rail."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+    )
+    expect(collectFeaturedThemeMissingPullIssues()).toEqual([])
+  })
+
+  it('negative drift guard — flags persist when two featured themes lack featured_pull', () => {
+    mkdirSync(path.join(tmp, 'themes'), { recursive: true })
+    for (const slug of ['ft-a', 'ft-b']) {
+      writeFileSync(
+        path.join(tmp, 'themes', `${slug}.md`),
+        `---
+slug: ${slug}
+title: "${slug}"
+tagline: "tag"
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-05-19
+featured: true
+description: "A featured theme without a rail pull."
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+      )
+    }
+    const issues = collectFeaturedThemeMissingPullIssues()
+    expect(issues).toHaveLength(2)
+    const slugs = issues.map((i) => i.file)
+    expect(slugs).toContain('content/themes/ft-a.md')
+    expect(slugs).toContain('content/themes/ft-b.md')
   })
 })
