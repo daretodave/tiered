@@ -25,7 +25,7 @@ describe('<HomeShowGrid>', () => {
     )
   })
 
-  it('renders the italic "Every season reviewed." brand-promise clause', () => {
+  it('renders the italic brand-promise clause with accurate tier scope', () => {
     render(
       <HomeShowGrid totalShows={1}>
         <span>x</span>
@@ -34,7 +34,9 @@ describe('<HomeShowGrid>', () => {
     const heading = screen.getByTestId('home-shows-heading')
     const em = heading.querySelector('em')
     expect(em).not.toBeNull()
-    expect(em?.textContent).toBe('Every season reviewed.')
+    expect(em?.textContent).toBe('Every S and A-tier season reviewed.')
+    // Negative pin: old overclaim must not regress (B-tier shows carry partial canons)
+    expect(em?.textContent).not.toMatch(/^Every season reviewed\.$/i)
   })
 
   it('renders an "All shows" link to /shows with prefetch disabled', () => {

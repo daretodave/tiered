@@ -12,7 +12,7 @@ export function HomeShowGrid({ children, totalShows }: HomeShowGridProps) {
     <section className="home-shows" data-testid="home-show-section">
       <div className="section-head">
         <h2 data-testid="home-shows-heading">
-          {totalShows} shows tracked. <em>Every season reviewed.</em>
+          {totalShows} shows tracked. <em>Every S and A-tier season reviewed.</em>
         </h2>
         <Link href="/shows" prefetch={false} className="section-link">
           All shows →
