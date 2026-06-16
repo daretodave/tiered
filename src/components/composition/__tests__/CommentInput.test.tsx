@@ -40,25 +40,42 @@ describe('<CommentInput>', () => {
     // knowledgeable peer, plain sentences over clever ones. The
     // brand promise itself reads `the seasons, ranked. no
     // spoilers.` — no softener. Bidirectional pin: a positive
-    // exact-text assertion on the new literal AND a negative
-    // assertion that no `please` survives anywhere in the stub
-    // subtree, so a future authoring pass cannot regress to
-    // either the old literal or any other softener without
-    // tripping the unit gate. The rate-limit error literal
-    // (`Easy — please wait before posting again.`) lives on the
-    // open-state error path, not the collapsed stub subtree, so
-    // the negative regex stays scoped to the stub.
-    it('renders the trimmed "Add a thought · no spoilers." literal on the collapsed stub', () => {
+    // assertion that the stub opens with the canonical prefix AND
+    // a negative assertion that no `please` survives anywhere in
+    // the stub subtree.
+    it('renders the "Add a thought · no spoilers." prefix on the collapsed stub', () => {
       render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
       const stubText = screen.getByTestId('comment-stub').querySelector('.comment-stub-text')
       expect(stubText).not.toBeNull()
-      expect(stubText).toHaveTextContent(/^Add a thought · no spoilers\.$/)
+      expect(stubText).toHaveTextContent(/^Add a thought · no spoilers\./)
     })
 
     it('does not include any "please" softener in the collapsed stub subtree', () => {
       render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
       const stub = screen.getByTestId('comment-stub')
       expect(stub.textContent ?? '').not.toMatch(/\bplease\b/i)
+    })
+  })
+
+  describe('stub review-delay disclosure (critique pass-49, issue #423)', () => {
+    // The composer stub never told the author that posts are held
+    // for review before going public. The read-side "held for
+    // review" affordance (phase-36) only renders after submission;
+    // the composer should disclose this BEFORE the author commits.
+    // Bidirectional pin: positive assertion on the new disclosure
+    // phrase AND negative assertion that the stub does not end at
+    // the bare "no spoilers." without any follow-on.
+    it('includes the review-delay disclosure in the collapsed stub', () => {
+      render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+      const stubText = screen.getByTestId('comment-stub').querySelector('.comment-stub-text')
+      expect(stubText).not.toBeNull()
+      expect(stubText).toHaveTextContent(/held briefly for review/)
+    })
+
+    it('stub text does not end at bare "no spoilers." without review disclosure', () => {
+      render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
+      const stubText = screen.getByTestId('comment-stub').querySelector('.comment-stub-text')
+      expect(stubText?.textContent ?? '').not.toMatch(/^Add a thought · no spoilers\.$/)
     })
   })
 
