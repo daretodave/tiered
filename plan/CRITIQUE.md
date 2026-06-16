@@ -1,5 +1,59 @@
 # CRITIQUE
 
+> Last pass: 2026-06-16 at commit a124b6b
+> Pass count: 53
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 53 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Both anon (7 URLs:
+> `/`, `/shows`, `/shows/below-deck-mediterranean`,
+> `/shows/alone-australia`, `/themes/best-premieres`, `/themes`,
+> `/about`) and authed (7 URLs: `/`,
+> `/shows/below-deck-sailing-yacht`,
+> `/shows/below-deck-adventure`,
+> `/shows/survivor/season/winners-at-war`, `/shows/alone`,
+> `/u/e2e`, `/themes/best-premieres`) walks ran end-to-end
+> across desktop + mobile viewports — 28 captures total. Both
+> walks emitted zero mechanical findings (all pages: 200 status,
+> H1 present, no horizontal overflow at 375px, zero console
+> errors except the known `/u/e2e` `_rsc` `net::ERR_ABORTED`
+> Next.js Link prefetch teardown — dropped per passes 6-11,
+> 29-52 precedent). Pass focused on the recently-added Below Deck
+> franchise flavors (Mediterranean, Sailing Yacht, Adventure),
+> the Alone franchise (Alone, Alone Australia), and cross-canon
+> themed lists. Reader returned 10 raw qualitative observations
+> (anon 4 / authed 6); self-assessment dropped 4 at filing:
+> (a) [LOW] BDM era toolbar empty-state (SANDY RETURN / SNEDDON
+> ERA tabs) — same defect class as the TITHERADGE ERA fix at
+> 8f0f69e which shipped a general empty-state mechanism; dropped
+> as likely-already-fixed pending live-site confirmation;
+> (b) [LOW] /themes/best-premieres LAST REVISED date vs /themes
+> index date — minor; index date reflects the most-recently-
+> revised list across all 12 entries, a different list's date;
+> (c) [LOW] /themes/best-premieres slug vs H1 title mismatch —
+> intentional editorial choice (evocative title vs descriptive
+> slug; changing slug would break existing links);
+> (d) [LOW] /shows/below-deck-adventure "community argues back"
+> boilerplate misleading for 1-season ended show — valid voice
+> observation but an edge-case code change with wide blast
+> radius; parked for future posture review.
+> Findings filed (6): (i) [MED] /shows/alone-australia blurb
+> "Tasmanian wilderness" misleads — top-ranked season is NZ;
+> (ii) [MED] /shows/survivor/season/winners-at-war generic
+> meta-description fallback despite editorial content on page;
+> (iii) [LOW] /shows/below-deck-mediterranean lowercase "ten"
+> after period; (iv) [LOW] /shows/below-deck-sailing-yacht
+> lowercase "six" after period; (v) [LOW]
+> /shows/below-deck-adventure "1 SEASONS IN CANON" plural;
+> (vi) [LOW] /shows/alone era tab labels lack season ranges,
+> partial-coverage boundary unexplained to first-time visitors.
+> Cap respected (≤6 filed). Spoiler discipline P0 intact —
+> every row is a chrome / voice / editorial observation; zero
+> winner / elimination / finale beat exposure.
+>
+> ───── Pass 52 metadata kept below for history ─────
+>
 > Last pass: 2026-06-15 at commit 59a474c
 > Pass count: 52
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1587,6 +1641,18 @@
 - [ ] [LOW] [anon] /shows `<meta name="description">` and the on-page hero lede contradict each other on the load-bearing verb that anchors the page's editorial stance. The meta description reads `Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon.` (`is` — settled-fact stance). The on-page hero reads `Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most. The S tier invented or perfected its format. The A tier has the deep canon and the years to defend it.` (`feels` — editorial-hedge stance, which the rest of the page is built around — `not which shows I love most` is an editorial hedge by construction). The same sentence, two epistemic stances depending on the channel: a search-result reader sees a settled-fact claim; a clicked-through reader sees an editorial-hedge claim. Verified rendered shapes on pass-50 anon walker capture at 947843c. Same defect class as the pass-1 #103 `/themes` document-title-vs-user-surface drift (chrome-title hygiene at the SEO surface) and pass-2 #123 home-emits-no-canonical-link closure (SEO honesty layer), now at the meta-description-vs-hero-copy parity axis. Source: `/shows` route `generateMetadata` (likely `src/app/(default)/shows/page.tsx`); the on-page hero literal lives in the hero component (probably `src/components/shows/ShowsHero.tsx` or `src/components/shows/HeroSection.tsx`). Bearings voice cue (`plan/bearings.md:370`) — `plain sentences over clever ones`; the same sentence in two channels should be the same sentence. Fix options: (a) **primary path — rewrite the `/shows` meta description's first sentence to use `feels`** (matching the on-page hero's editorial-hedge stance). Suggested literal: `Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon.` Single string edit at the route's `generateMetadata`. (b) **alternative — derive the meta description from the on-page hero literal**, so any future edit to the hero automatically propagates to the meta. Larger change (introduce a hero-copy constant the route metadata imports) but eliminates the entire drift class. Acceptable; (a) is the smaller landing. (c) alternative — leave as-is. Rejected — the channel-dependent epistemic-stance drift is the defect. Recommended (a) — single-word fix at the meta description; the `feels` voice is the editorial stance the rest of the page is built around and the SERP snippet should match. Pin: extend the colocated test for the `/shows` page metadata (or a global SEO-parity invariant in `scripts/content-check.ts`) asserting that any verb shared between meta description and hero literal matches on both surfaces — a cross-surface verb-parity check tokenized to lowercase. Initial floor: lax (warn only on the one current violator); strict at floor 0 once the fix ships. Bidirectional drift guard: a future authoring pass changing the hero verb without updating the meta description trips at verify time. Spoiler discipline P0 intact (chrome meta-description edit only; no per-show verdict change, no canon-position change, no winner / elimination / finale beat exposure on any surface). (URL: /shows, source: critique-pass-50) — 947843c
 
 - [ ] [MED] [authed] /shows/survivor/season/heroes-vs-villains empty-thread comment composer desktop renders only `as @e2e` + a bare `⏎` return-key glyph with no placeholder copy and no labeled submit affordance, while mobile clarifies with `as @e2e / Tap to write`. A returning member on desktop has no hint that the `⏎` glyph is the submit control — the composer reads as an attribution line rather than an input. Verified rendered shapes on pass-48 authed walker captures at f303ca3: desktop /shows/survivor/season/heroes-vs-villains thread chrome reads `The thread / Add a thought · no spoilers. / as @e2e / ⏎` with the composer textarea rendered between `as @e2e` and `⏎` but carrying no placeholder text — the empty box gives no instruction. Mobile reads `as @e2e / Tap to write` with `Tap to write` as a visible touch-affordance hint. The pass-46 self-assessment dropped a related observation as `intentional input-modality affordance (deliberately designed per SeasonInfoCard.tsx:115 source-of-record comment)`, but the pass-46 row's specific drop rationale was about the desktop `⏎` keyboard-hint vs mobile `Tap to write` touch-hint axis. This row names a different defect: the desktop composer carries NO placeholder copy *inside the textarea itself* — the keyboard hint at the bottom only fires after the user has already understood the box is an input. A first-time returning member who has never posted before stares at an empty box with `as @e2e` above and `⏎` below; the modality cue assumes the box has been identified as the thing to type in. Same defect class as the pending pass-36 #335 [authed] HvV stacked-empty-state-with-input finding (signed-in empty state reads as a voice not talking to the affordance), now at the composer-placeholder-copy axis the prior queued row didn't address. Source: comment composer component — likely `src/components/comments/CommentComposer.tsx` or the equivalent in `SeasonInfoCard.tsx` (verify at fix-time). Bearings voice cue (`plan/bearings.md:370`) — `knowledgeable peer — plain sentences over clever ones`; a peer's empty input box says what it's for inside the box, not as a modality hint outside it. Fix options: (a) **primary path — add a placeholder copy inside the desktop composer textarea** that names the input affordance. Suggested literal: `Add a thought…` (mirrors the section header `Add a thought · no spoilers.` so the composer reads as the input form of the header, not as a separate affordance). The mobile `Tap to write` modality hint stays unchanged — it's the touch-affordance cue and remains correct on mobile. The desktop `⏎` keyboard hint also stays unchanged as the post-action cue. Single component edit at the composer. (b) **alternative — replace the `⏎` glyph with a labeled `Post` button** (or `Post · Enter` if you want to keep the keyboard hint). Larger affordance change (the button takes vertical chrome) but unambiguous. Acceptable but (a) is the smaller, more invariant-aligned path (composer placeholders are the standard pattern for input affordance copy). (c) **alternative — leave as-is**. Rejected — the empty textarea with no placeholder copy on the desktop affordance is the defect. Recommended (a) — small composer-placeholder addition, mirrors the section header, preserves the existing keyboard + touch modality cues. Pin: extend the colocated test on the composer component (verify path) with bidirectional cases — (1) authed empty-state: rendered DOM contains the placeholder text `Add a thought…` on the textarea element (`placeholder` attribute); (2) authed populated state: the placeholder is absent (textarea has user-typed content); (3) anon state: the composer renders the prior `Sign in to comment` affordance instead of the placeholder (drift guard against composer chrome leaking to anon). Sibling positive: the existing mobile `Tap to write` cue is preserved by passing through the same prop path. Spoiler discipline P0 intact (chrome composer placeholder addition only; no per-season verdict change, no canon-position change, no winner / elimination / finale beat exposure on any surface — the placeholder names the input affordance, not any content). (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-48) — f303ca3
+
+- [ ] [MED] [anon] /shows/alone-australia — The show blurb reads '3 seasons. Tasmanian wilderness. No crew, no contact.' but the top-ranked season (S2, canon rank #1) is set in Fiordland, New Zealand — not Tasmania or Australia. A first-time visitor reading 'Tasmanian wilderness' as the show's core identity would be surprised to find the highest-ranked entry filmed outside Australia entirely. The blurb reflects only the Season 1 founding location, not the franchise's full geographic scope. Fix: revise the blurb in `content/shows/alone-australia.md` to cover the franchise range, e.g. '3 seasons. Australian wilderness and New Zealand's Fiordland. No crew, no contact.' Content-only fix. Spoiler P0 intact (location only, no outcome). (URL: /shows/alone-australia, source: critique-pass-53) — a124b6b
+
+- [ ] [MED] [authed] /shows/survivor/season/winners-at-war — The page meta description falls back to the generic template 'Vote and discuss Survivor season 40: Winners at War.' despite the season having a substantial editorial body on-page ('Twenty former champions on one beach in Fiji, framed by the show as its season-forty milestone...'). The `lede` field is absent from `content/shows/survivor/seasons/40-winners-at-war.md`, causing `descriptionFor()` in the season route to use the fallback template rather than the editorial opening. Winners at War is the 40th-season milestone all-winners cast and the highest-profile modern season in the franchise; SERP snippets should reflect the editorial stake, not a boilerplate template. Fix: populate the `lede` field in the season markdown file with the first 1–2 sentences of the editorial take, ≤160 chars. No code change; content-only. Spoiler P0 intact (format/milestone framing only, no winner named). (URL: /shows/survivor/season/winners-at-war, source: critique-pass-53) — a124b6b
+
+- [ ] [LOW] [anon] /shows/below-deck-mediterranean — The meta description and page blurb contain a lowercase sentence start after a period: '...Captain Sandy Yawn holding the helm. ten years of superyacht drama with the sun at full strength.' The word 'ten' begins a new sentence but is lowercase — a copy error that appears verbatim in search-engine snippets and social card previews. Fix: capitalize 'Ten' in the `blurb` field of `content/shows/below-deck-mediterranean.md`. Content-only fix. (URL: /shows/below-deck-mediterranean, source: critique-pass-53) — a124b6b
+
+- [ ] [LOW] [authed] /shows/below-deck-sailing-yacht — The meta description and page blurb have a lowercase sentence start after a period: '...the Mediterranean underfoot. six years of Glenn Shephard holding the wheel through Greece, Croatia, Menorca, Sardinia, and Ibiza.' The word 'six' begins a new sentence but is lowercase — same copy-error class as the BDM finding above. Fix: capitalize 'Six' in the `blurb` field of `content/shows/below-deck-sailing-yacht.md`. Content-only fix. (URL: /shows/below-deck-sailing-yacht, source: critique-pass-53) — a124b6b
+
+- [ ] [LOW] [authed] /shows/below-deck-adventure — The canon stat strip reads '1 SEASONS IN CANON' — the label does not singularize when the count is one. For a single-season show the correct reading is '1 SEASON IN CANON'. The stat label helper returns the plural form unconditionally. Fix: add a count guard so the label singularizes when `seasonsAired === 1` — update the seasons-stat label helper (likely `src/lib/canon/`) to return 'season in canon' (singular) when count is 1. Add a unit test pinning the singular branch to prevent future regression. Spoiler P0 intact (display label only). (URL: /shows/below-deck-adventure, source: critique-pass-53) — a124b6b
+
+- [ ] [LOW] [authed] /shows/alone — The canon rationale and era toolbar reference 'the no-host era' without naming which seasons it covers, while 12 seasons are aired and only 5 are currently in canon. Era tab labels read 'NO-HOST ERA' and 'COLBY ERA' with no parenthetical season ranges. A first-time visitor cannot map the era labels to a season range and the gap between 12 aired seasons and 5 canon entries is visible but unexplained. Fix: add season-number ranges to the era tab labels in `content/shows/alone/canon.md` (e.g. 'NO-HOST ERA (S1–5)' and 'COLBY ERA (S6–12)') or to the 'Who ranks it' prose in the canon header, making the partial-coverage boundary explicit for first-time visitors. Content fix. Spoiler P0 intact. (URL: /shows/alone, source: critique-pass-53) — a124b6b
 
 ## Done
 
