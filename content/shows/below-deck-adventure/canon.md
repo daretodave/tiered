@@ -20,8 +20,8 @@ era_bands:
 
 ## 1. Season 1 — Svalbard
 
-tag: "The Arctic debut — expedition vessel, Norwegian fjords, the franchise's coldest and most remote charter season."
-slot_argument: "The season on record. Svalbard gave the format something genuinely distinct: expedition charters, arctic terrain, a crew reoriented for adventure. Titheradge held the operation together under conditions no Below Deck season had tested."
+tag: The Arctic debut — expedition vessel, Norwegian fjords, the franchise's coldest and most remote charter season.
+slot_argument: The season on record. Svalbard gave the format something genuinely distinct: expedition charters, arctic terrain, a crew reoriented for adventure. Titheradge held the operation together under conditions no Below Deck season had tested.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Below Deck Adventure ran one season and it was a real departure — not just a location shift but a format rethink. The Svalbard archipelago gave the production extreme visual material: glacier calving, fjord passages, polar bear country on the horizon. The charter guests came not for a dinner service but for polar plunges, kayaking expeditions, and hikes across arctic terrain, which put a different kind of pressure on a crew trained in superyacht hospitality. Captain Kerry Titheradge's command had to flex to the expedition context in ways the franchise had never tested. A one-season record that stands as the franchise's most ambitious lateral move.

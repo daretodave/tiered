@@ -20,8 +20,8 @@ era_bands:
 
 ## 1. Season 1 (2022)
 
-tag: "The founding season — a skills-based format departure that built something genuinely different from the parent show."
-slot_argument: "Each episode: one judge, three competitors, a three-day construction brief. The alumni-judge dynamic and episodic format replace Alone's endurance model with something closer to a craft competition."
+tag: The founding season — a skills-based format departure that built something genuinely different from the parent show.
+slot_argument: Each episode: one judge, three competitors, a three-day construction brief. The alumni-judge dynamic and episodic format replace Alone's endurance model with something closer to a craft competition.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 The only entry in the canon, and it earns its placement by doing something the parent show never attempted. Each episode issues a single construction brief — shelter, watercraft, bridge, trap, oven — to three Alone veterans building simultaneously from their own terrain with a shared limited tool kit. The rotating judge, also a former contestant, evaluates against three pre-set criteria on day four. The format is episodic and self-contained in a way Alone never is. What carries it is the challenge variety and the credibility of the alumni roster: these are people who have already proved themselves in the field, and the judging reflects that.

@@ -20,16 +20,16 @@ era_bands:
 
 ## 1. Season 1 — Whitsundays
 
-tag: "The Whitsundays debut — tropical Queensland waters, the franchise's Australian launch, a cast with real friction."
-slot_argument: "The Whitsundays gave the franchise its most visually distinctive Australian debut — turquoise reef water, tropical heat, a cast that pushed the format hard from the first charter. The origin season earned its position."
+tag: The Whitsundays debut — tropical Queensland waters, the franchise's Australian launch, a cast with real friction.
+slot_argument: The Whitsundays gave the franchise its most visually distinctive Australian debut — turquoise reef water, tropical heat, a cast that pushed the format hard from the first charter. The origin season earned its position.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Below Deck Down Under launched in the Whitsundays, and the Queensland location did more than provide a backdrop — the Great Barrier Reef waters, the tropical heat, and the island chain's particular geography put a different kind of pressure on the crew than any prior Below Deck location had. Captain Jason Chambers commanded his first Australian charter season with an authority the format had space to test properly. The cast brought cross-department friction without a single storyline swallowing the rest of the run. The franchise's Australian identity took its clearest shape here. The stronger of the two opening seasons, and the more fully realized piece of television.
 
 ## 2. Season 2 — Western Australia
 
-tag: "Western Australia — remote waters, a harder charter context, the format pushing into rawer geography."
-slot_argument: "The Coral Bay and Ningaloo Reef waters gave Season 2 an isolation the Whitsundays never had. The format worked well with a more remote context, even if the crew dynamic didn't match the Season 1 peak."
+tag: Western Australia — remote waters, a harder charter context, the format pushing into rawer geography.
+slot_argument: The Coral Bay and Ningaloo Reef waters gave Season 2 an isolation the Whitsundays never had. The format worked well with a more remote context, even if the crew dynamic didn't match the Season 1 peak.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Western Australia moved the franchise into genuinely remote territory — the Ningaloo Reef and Coral Bay coastline, far from the resort infrastructure of the Whitsundays, with fewer port calls and more open water. That isolation shaped the crew dynamic in ways the format absorbed reasonably well. Captain Jason's command had a different texture in the stripped-back context. The charter guests arrived with high expectations against a more demanding logistical backdrop, which the production used effectively. A solid second season, and one that expanded the show's geographic range in a way the franchise can build from. The less fully realized entry, but a legitimate step forward for the run.

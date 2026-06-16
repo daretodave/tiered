@@ -20,8 +20,8 @@ era_bands:
 
 ## 1. Season 1 — Labrador (2022)
 
-tag: "The founding season — a three-part format departure that rewired the Alone premise."
-slot_argument: "Winter setting, returnee cast, and a shared prize pool replace the original's solo-winner model. The Labrador cold and the collective endurance goal make this a structurally distinct run from anything the parent show attempted."
+tag: The founding season — a three-part format departure that rewired the Alone premise.
+slot_argument: Winter setting, returnee cast, and a shared prize pool replace the original's solo-winner model. The Labrador cold and the collective endurance goal make this a structurally distinct run from anything the parent show attempted.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 The only entry in the canon, and it earns its placement by doing something structurally distinct from the parent show. Six returning players, Labrador in winter, and a shared prize pool replace the solo-competitor-wins model with a collective endurance question: how many people can outlast the cold together? The Labrador setting is genuinely harsh — deeper cold, earlier darkness, and a landscape that demands different gear thinking than a coastal forest. The returnee structure also shifts the viewing experience: you arrive with prior knowledge of each survivalist's limits. As the founding season, it holds every rank by default — but it would hold this one on merit regardless.
