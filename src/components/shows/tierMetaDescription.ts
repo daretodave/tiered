@@ -13,7 +13,7 @@ const TIER_DESCRIPTION_FRAGMENT: Record<ShowTier, string> = {
   B: 'B tier is in review',
 }
 
-const OPENER = 'Reality-TV canons, sorted by how settled the ranking is.'
+const OPENER = 'Reality-TV canons, sorted by how settled the ranking feels.'
 
 export function buildShowsMetaDescription(
   populatedTiers: Iterable<ShowTier>,

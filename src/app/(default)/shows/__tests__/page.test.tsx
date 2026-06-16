@@ -107,7 +107,7 @@ describe('/shows generateMetadata — description derived from populated tiers',
       getAllShowsMock.mockReturnValue(shape)
       const meta = generateMetadata()
       expect(meta.description).toMatch(
-        /^Reality-TV canons, sorted by how settled the ranking is\./,
+        /^Reality-TV canons, sorted by how settled the ranking feels\./,
       )
     }
   })
@@ -123,14 +123,14 @@ describe('/shows generateMetadata — description derived from populated tiers',
   it('names S + A when the catalog matches today (zero B tier) — no overclaim', () => {
     getAllShowsMock.mockReturnValue([survivor, amazingRace])
     expect(generateMetadata().description).toBe(
-      'Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon.',
+      'Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon.',
     )
   })
 
   it('names every tier when every tier has members', () => {
     getAllShowsMock.mockReturnValue([survivor, amazingRace, newcomer])
     expect(generateMetadata().description).toBe(
-      'Reality-TV canons, sorted by how settled the ranking is. S tier is format-defining, A tier has the deep canon, B tier is in review.',
+      'Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review.',
     )
   })
 
@@ -169,7 +169,7 @@ describe('/shows generateMetadata — description derived from populated tiers',
   it('emits only the opener when the catalog is empty — no tier overclaim, no crash', () => {
     getAllShowsMock.mockReturnValue([])
     expect(generateMetadata().description).toBe(
-      'Reality-TV canons, sorted by how settled the ranking is.',
+      'Reality-TV canons, sorted by how settled the ranking feels.',
     )
   })
 })
