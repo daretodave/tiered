@@ -1,5 +1,62 @@
 # CRITIQUE
 
+> Last pass: 2026-06-16 at commit 4350e0d
+> Pass count: 54
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 54 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (7 URLs: `/`,
+> `/shows`, `/shows/the-challenge`,
+> `/shows/the-challenge/season/01-road-rules-all-stars`,
+> `/themes/best-non-winning-runs`, `/about`, `/shows/traitors`)
+> and authed (7 URLs: `/`, `/shows/survivor`,
+> `/shows/survivor/season/heroes-vs-villains`,
+> `/shows/project-runway`, `/themes/best-villain-editing`,
+> `/u/e2e`, `/shows/big-brother`) walks ran end-to-end across
+> desktop + mobile viewports — 28 captures total. Both walks
+> emitted zero mechanical findings (all pages: 200 status, H1
+> present, no horizontal overflow at 375px, zero console errors
+> except the known `/u/e2e` `_rsc` `net::ERR_ABORTED` Next.js
+> Link prefetch teardown — dropped per passes 6-11, 29-53
+> precedent; the anon walk's 404 on
+> `/shows/the-challenge/season/01-road-rules-all-stars` was a
+> false positive — the season slug strips the leading `01-`
+> prefix so the live URL is `/shows/the-challenge/season/
+> road-rules-all-stars`, which resolves correctly). Reader
+> returned 13 raw qualitative observations (anon 8 / authed 5);
+> self-assessment dropped 9 at filing: (a) Challenge season 404
+> — false positive as above; (b) /themes/best-non-winning-runs
+> slug vs H1 mismatch — same precedent as pass-53's
+> /themes/best-premieres drop: intentional editorial naming,
+> slug change would break existing links; (c) Traitors S-tier on
+> all 4 seasons confuses cross-show vs per-show tier scopes —
+> reader misread the tier system; (d) Challenge era filter tabs
+> lack counts — same class as already-pending Alone era-labels
+> finding; (e) /shows "Seasons ranked" stat defensible since
+> every season has a canonical_position; (f) home vs /shows
+> revision dates differ — different fields measured (CANON
+> REVISED vs SHOWS REVISED); (g) Big Brother tagline
+> "The American version of the format" attribution — too minor;
+> (h) same global OG image for all pages — per-show
+> `opengraph-image.tsx` route already exists; wiring unclear
+> from text capture; (i) Challenge era filter counts — dropped
+> as duplicate class. Findings filed (4): (i) [LOW]
+> /shows/traitors S-tier section heading duplicated because
+> `tier_s_blurb` is absent from canon; (ii) [LOW]
+> /shows/big-brother `seasons: 26` stale if BB27 aired summer
+> 2025 (frontmatter + blurb + tagline all hardcode 26);
+> (iii) [LOW] /shows/project-runway and /shows/big-brother lack
+> `card_tagline`, taglines >160 chars truncate mid-clause in
+> SERP; (iv) [LOW] /shows/survivor/season/heroes-vs-villains
+> mobile TOC section count span is `aria-hidden`, hidden from
+> screen readers. Cap respected (≤6 filed). Spoiler discipline
+> P0 intact — every row is a chrome / voice / a11y /
+> editorial observation; zero winner / elimination / finale beat
+> exposure.
+>
+> ───── Pass 53 metadata kept below for history ─────
+>
 > Last pass: 2026-06-16 at commit a124b6b
 > Pass count: 53
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -702,6 +759,11 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [LOW] [anon] /shows/traitors — the S-tier section heading and section blurb both render the identical string "The seasons that defend the show." because `tier_s_blurb` is absent from `content/shows/traitors/canon.md`. All four Traitors seasons rank in the S tier; with no `tier_s_blurb` defined, `CanonTierBand.tsx` falls back to `DEFAULT_TIER_HEADINGS.S` — the same constant as the section `<h2>`, so a visitor reads the same sentence twice in immediate succession. The below-deck/canon.md fix at 847657d (issue #418) is the direct precedent. Fix: add `tier_s_blurb` to `content/shows/traitors/canon.md` describing what makes the S-tier Traitors seasons the show's best without naming outcomes. Content-only fix; one field addition. Spoiler discipline P0 intact. (URL: /shows/traitors, source: critique-pass-54) — 4350e0d
+- [ ] [LOW] [authed] /shows/big-brother — `seasons: 26` in `content/shows/big-brother.md` may be stale: Big Brother Season 27 is believed to have aired Summer 2025, but the seasons count, blurb ("26 seasons. The house is always watching."), and tagline ("26 seasons of houseguests…") all hardcode 26 and no season file exists under `content/shows/big-brother/seasons/` for S27. The show carries `status: airing`. Verify the current aired-season count at author time; if S27 has aired, update `seasons: 27`, the blurb, the tagline, and scaffold the S27 season file per bearings Rule 2. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-54) — 4350e0d
+- [ ] [LOW] [authed] /shows/project-runway, /shows/big-brother — both shows lack `card_tagline` while their `tagline` fields exceed the 160-char SERP budget: Project Runway tagline is ~200 chars; Big Brother tagline is ~230 chars. `descriptionFor()` truncates both at 159 chars + '…', producing an unfinished mid-clause in search-result snippets. Confirmed: neither `content/shows/project-runway.md` nor `content/shows/big-brother.md` has a `card_tagline` field. Fix: add `card_tagline` (≤155 chars, ending at a clause boundary) to both files. Audit the remaining catalog for the same gap — `content/shows/below-deck.md` is already filed (pass-52 pending). Spoiler discipline P0 intact (SEO copy only). (URL: /shows/project-runway and /shows/big-brother, source: critique-pass-54) — 4350e0d
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-vs-villains (mobile) — the season table-of-contents `<details>` element renders a section count ("6 SECTIONS") inside a `<span aria-hidden="true">`, hiding the count from screen readers. The `<summary>` element's accessible name resolves to "On this page" only; screen reader users cannot hear the count before deciding whether to expand the TOC. Source: `src/components/composition/SeasonTOCMobile.tsx` renders `<span className="toc-mobile-meta" aria-hidden="true">{sections.length} {sections.length === 1 ? 'section' : 'sections'}</span>`. Fix: remove `aria-hidden` from the count span, or incorporate the count into the accessible label: `<summary aria-label={\`On this page — ${sections.length} sections\`}>`. No visual change; one attribute edit. Spoiler discipline P0 intact. (URL: /shows/survivor/season/heroes-vs-villains, source: critique-pass-54) — 4350e0d
 
 - [x] [MED] [anon] /shows — B-tier show status pill renders "in progress · 5 / 3" for shows that have shipped more canon entries than the CANON_TARGET of 3. Multiple recently-added shows (Below Deck, Alone, Below Deck Mediterranean, Below Deck Sailing Yacht) each have 5 canon entries; the `ShowsStatusPill` component renders `in progress · {shipped} / {target}` unconditionally, producing a ratio where the numerator exceeds the denominator. A first-time visitor reading "in progress · 5 / 3" has no way to interpret the ratio — it reads as an error state, not an editorial status. `canonProgress()` in `src/components/shows/canonProgress.ts` returns `{shipped, target}` without capping shipped at target; `ShowsStatusPill` renders the ratio without a guard. Fix: when `shipped >= target`, either hide the pill entirely or change the label to "review in progress" without the ratio (the ratio is meaningful only before completion). Spoiler discipline P0 intact (display-state only). (URL: /shows, source: critique-pass-52) — 59a474c — RESOLVED c569fc1: issue #417. ShowsStatusPill now guards: `shipped >= target` → "review in progress" (no ratio); `shipped < target` → original "in progress · N / T" form. canonProgress() stays unclamped. Three new unit tests pin the `>= target` branch. e2e shows-index.spec.ts passes (pill presence check unchanged; text not pinned).
 - [x] [MED] [anon+authed] /shows/below-deck — the S-tier band heading (`<h2>`) and blurb (`<p>`) both render the identical string "The seasons that defend the show." because `tier_s_blurb` is absent in `content/shows/below-deck/canon.md` and the blurb falls back to `DEFAULT_TIER_HEADINGS.S` which equals `TIER_HEADLINES.S` — the same constant. A reader sees the same sentence twice in immediate succession: the heading, then a paragraph that repeats it word-for-word. Confirmed via source: `CanonTierBand.tsx:82` sets `blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]`; `DEFAULT_BLURBS.S = 'The seasons that defend the show.'`; `TIER_HEADLINES.S = 'The seasons that defend the show.'`. The canon does define `tier_b_blurb` but all five ranked entries land in the S tier (ranks 1–5). Fix: add `tier_s_blurb` to `content/shows/below-deck/canon.md` — the existing `tier_b_blurb` value ("Five seasons building the format's identity — from a rough origin run to a Bahamas peak, with a return visit proving the cast-churn design.") would serve as the blurb since it accurately describes the ranked set. Content-only fix; one field addition. Spoiler discipline P0 intact. (URL: /shows/below-deck, source: critique-pass-52) — 59a474c — RESOLVED 847657d: issue #418. Added tier_s_blurb to below-deck/canon.md. Regression pin in content echo test.
