@@ -139,9 +139,9 @@ export function CommentInput({ targetType, targetId, handle, onPosted }: Comment
             ) : null}
             <span
               className="comment-stub-mono comment-stub-mono-desktop"
-              aria-hidden="true"
+              data-testid="comment-stub-desktop-label"
             >
-              {'⏎'}
+              Write
             </span>
             <span
               className="comment-stub-mono comment-stub-mono-mobile"

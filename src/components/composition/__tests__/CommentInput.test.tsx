@@ -94,22 +94,22 @@ describe('<CommentInput>', () => {
     expect(screen.queryByTestId('comment-foot-as')).toBeNull()
   })
 
-  it('renders a plain-English mobile label alongside the ⏎ glyph on the collapsed stub', () => {
-    // Closes CRITIQUE pass-42 MED: the ⏎ glyph has no first-paint
-    // affordance reference on touch viewports (no physical keyboard
-    // present), so the collapsed CTA pairs it with a plain-English
-    // mobile label. Both nodes ship in the DOM unconditionally; CSS
-    // (screens.css `.comment-stub-mono-mobile` + `@media
-    // (max-width: 560px)`) decides which one paints at the active
-    // viewport. The DOM-presence check pins the wiring; the
-    // viewport-conditional paint is css-only and validated by the
-    // e2e mobile reflow walker.
+  it('renders plain-English labels on both desktop and mobile stubs', () => {
+    // Desktop previously showed `⏎` (critique pass-42 MED fix); critique
+    // pass-53 MED found `⏎` reads as a keyboard-submit glyph rather than
+    // a click-to-open affordance. Replaced with `Write` to parallel mobile's
+    // `Tap to write`. Both nodes ship in the DOM unconditionally; CSS
+    // (screens.css `.comment-stub-mono-mobile` + `@media (max-width: 560px)`)
+    // decides which one paints at the active viewport. DOM-presence pins
+    // the wiring; viewport-conditional paint is css-only and validated by
+    // the e2e mobile reflow walker.
     render(<CommentInput targetType="season" targetId="survivor:20" handle="e2e" />)
     const mobileLabel = screen.getByTestId('comment-stub-mobile-label')
     expect(mobileLabel).toBeInTheDocument()
-    expect(mobileLabel).toHaveTextContent(/tap|write/i)
-    const stub = screen.getByTestId('comment-stub')
-    expect(stub).toHaveTextContent('⏎')
+    expect(mobileLabel).toHaveTextContent(/tap to write/i)
+    const desktopLabel = screen.getByTestId('comment-stub-desktop-label')
+    expect(desktopLabel).toBeInTheDocument()
+    expect(desktopLabel).toHaveTextContent('Write')
   })
 
   it('expands to the open state when the stub is clicked', () => {
