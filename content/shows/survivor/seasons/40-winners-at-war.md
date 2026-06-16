@@ -8,6 +8,7 @@ location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [all-winners-cast, edge-of-extinction, fire-tokens]
 canonical_position: 9
+lede: "Twenty former champions on one beach in Fiji, framed by the show as its season-forty milestone and shot to feel like one."
 display_title: "Winners <em>at</em><br/>War"
 premiere_caption: "CBS · Wednesday 8/7c"
 format_summary: "Winners only · returnees"
