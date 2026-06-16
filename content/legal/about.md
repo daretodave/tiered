@@ -35,8 +35,8 @@ for the rules.
 ## How voting works {#voting}
 
 Two rankings live on every show page. The **Editor's Canon** is
-the editor's call — one person, one position per season, an
-80–120 word reason. The **Community Rank** is yours.
+the editor's call — one person, one position per season, a main
+take and a slot argument. The **Community Rank** is yours.
 
 Every season asks one question — does it belong in the community
 top 10? — and your upvote or downvote answers it. One vote per
@@ -78,7 +78,7 @@ line, it's removed.
 
 The canon is small and signed. If you watch a show no one here
 covers yet — or you have a take on one I cover, written with
-80–120 words per ranked season, spoiler-safe — open an issue
+a main take and a slot argument per ranked season, spoiler-safe — open an issue
 on [GitHub](https://github.com/daretodave/tiered) and tell me
 which show and which season. New editors come in by invitation
 after a sample season write-up I agree to.
