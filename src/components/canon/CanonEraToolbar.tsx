@@ -25,6 +25,7 @@ const ALL = 'all'
 
 export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
   const [active, setActive] = useState<string>(ALL)
+  const [emptyEra, setEmptyEra] = useState(false)
   const mountedRef = useRef(false)
 
   function apply(key: string) {
@@ -35,11 +36,20 @@ export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
       '[data-view-pane="canon"]',
     )
     if (!pane) return
-    pane.querySelectorAll<HTMLElement>('[data-era]').forEach((el) => {
+    const entries = pane.querySelectorAll<HTMLElement>('[data-era]')
+    entries.forEach((el) => {
       const off = key !== ALL && el.dataset['era'] !== key
       if (off) el.dataset['eraOff'] = 'true'
       else delete el.dataset['eraOff']
     })
+    if (key !== ALL) {
+      const visible = Array.from(entries).filter(
+        (el) => !el.dataset['eraOff'],
+      ).length
+      setEmptyEra(visible === 0)
+    } else {
+      setEmptyEra(false)
+    }
   }
 
   useEffect(() => {
@@ -60,46 +70,53 @@ export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
     : 'canon order'
 
   return (
-    <div className="cp-toolbar" data-testid="canon-era-toolbar">
-      <div
-        className="cp-toolbar-left"
-        role="tablist"
-        aria-label="Filter the canon by era"
-      >
-        <button
-          type="button"
-          role="tab"
-          aria-selected={active === ALL}
-          className={active === ALL ? 'cp-chip on' : 'cp-chip'}
-          data-filter={ALL}
-          data-testid="era-chip-all"
-          tabIndex={active === ALL ? 0 : -1}
-          onClick={() => onChip(ALL)}
+    <>
+      <div className="cp-toolbar" data-testid="canon-era-toolbar">
+        <div
+          className="cp-toolbar-left"
+          role="tablist"
+          aria-label="Filter the canon by era"
         >
-          All {total}
-        </button>
-        {bands.map((band) => {
-          const on = band.key === active
-          return (
-            <button
-              key={band.key}
-              type="button"
-              role="tab"
-              aria-selected={on}
-              className={on ? 'cp-chip on' : 'cp-chip'}
-              data-filter={band.key}
-              data-testid={`era-chip-${band.key}`}
-              tabIndex={on ? 0 : -1}
-              onClick={() => onChip(band.key)}
-            >
-              {band.label}
-            </button>
-          )
-        })}
+          <button
+            type="button"
+            role="tab"
+            aria-selected={active === ALL}
+            className={active === ALL ? 'cp-chip on' : 'cp-chip'}
+            data-filter={ALL}
+            data-testid="era-chip-all"
+            tabIndex={active === ALL ? 0 : -1}
+            onClick={() => onChip(ALL)}
+          >
+            All {total}
+          </button>
+          {bands.map((band) => {
+            const on = band.key === active
+            return (
+              <button
+                key={band.key}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                className={on ? 'cp-chip on' : 'cp-chip'}
+                data-filter={band.key}
+                data-testid={`era-chip-${band.key}`}
+                tabIndex={on ? 0 : -1}
+                onClick={() => onChip(band.key)}
+              >
+                {band.label}
+              </button>
+            )
+          })}
+        </div>
+        <div className="cp-toolbar-mode">
+          view · <em data-testid="era-mode">{modeLabel}</em>
+        </div>
       </div>
-      <div className="cp-toolbar-mode">
-        view · <em data-testid="era-mode">{modeLabel}</em>
-      </div>
-    </div>
+      {emptyEra && (
+        <div className="cp-canon-empty" data-testid="era-empty-state">
+          No ranked seasons in this era yet.
+        </div>
+      )}
+    </>
   )
 }
