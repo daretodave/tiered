@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-15 at commit 6bfb784
-> Pass count: 33
+> Last pass: 2026-06-16 at commit 20b6b78
+> Pass count: 34
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,92 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 34 (2026-06-16, commit 20b6b78) — 1 candidate filed.
+     Window since pass 33 (6bfb784, 2026-06-15): 1 day / 21 commits.
+     Signals reviewed:
+     - AUDIT.md: 1 pending bug row (Supabase CLI pin #416, score 4.8,
+       category: bug — single-item workflow change requiring local
+       /oversight push; cloud workflow permission-blocked; not a phase
+       shape; /iterate handles when available locally).
+     - CRITIQUE.md: 10 pending rows (4 new from pass-54 + 6 carried).
+       Pass-54 added: (i) /shows/traitors tier_s_blurb absent (LOW) —
+       strengthens existing candidate #15, not a new candidate;
+       (ii) /shows/big-brother seasons potentially stale (LOW) — single
+       content update, /iterate handles; (iii) /shows/project-runway +
+       /shows/big-brother card_tagline missing (LOW) — 3rd instance of
+       same gap (below-deck pass-52, PR/BB pass-54), rises to phase
+       shape; (iv) HvV mobile TOC aria-hidden (LOW) — single a11y fix,
+       /iterate handles. Carried: 6 LOWs from passes 51–53, each single-
+       surface, /iterate-shaped (B-tier tier-explainer copy, /themes lede
+       copy, top-chef/all-stars typo, KISH ERA label, comeback-seasons
+       arrow direction).
+     - GitHub issues: 0 unlabeled. #416 (Supabase CLI pin) still
+       triage:loop-queued; workflow-permission-blocked for cloud tick.
+     - spec.md + design/: no changes (stable 32 days since last diff).
+     - Commit pattern: 21 commits — 8 critique-drain audit closures, 3
+       critique-pass commits, several fix/seo/content commits. All drain
+       pattern; no 5+ fix-class cluster on any single surface.
+     Existing candidates status: #14 (era toolbar polish) — primary MED
+     driver (TITHERADGE ERA empty state) resolved at 8f0f69e; remaining
+     signal is 2 LOWs (KISH ERA, COLBY ERA opacity); still valid but
+     reduced urgency. #15 (CANON_COMPLETENESS_STRICT gate) — Traitors
+     now shows same tier_s_blurb recurrence as below-deck (pass-54
+     LOW); strengthens the candidate, still awaiting promotion. #16
+     (/u/[handle] stat chips) — no new signals; still awaiting promotion.
+     Below-threshold candidates: (a) a11y polish (HvV TOC aria-hidden,
+     1 LOW, /iterate); (b) stale-copy sweep (B-tier tier-explainer +
+     /themes lede, both 30+ days pending, both single-surface /iterate). -->
+
+### 17. SEO description gate — card_tagline completeness invariant
+
+**Score:** 5.0 (impact: 5, ease: 8 → 4.0 base + 1 signal multiplicity)
+**Source pass:** 34
+**Filed:** 2026-06-16
+**Source signals:**
+- Critique pass-52 [LOW] /shows/below-deck meta description truncates
+  mid-clause: tagline is 195 chars, no `card_tagline`; `descriptionFor()`
+  slices at 159 chars producing an unfinished thought in SERP.
+- Critique pass-54 [LOW] /shows/project-runway + /shows/big-brother
+  both lack `card_tagline`; taglines exceed 160 chars; SERP snippets
+  truncate mid-clause on both.
+- Pattern: 3 distinct shows across 2 critique passes, same structural
+  gap (tagline > 160 chars, absent card_tagline).
+- The `card_tagline` field is optional per schema; the loader falls back
+  to the full tagline, silently producing overlong SERP descriptions.
+
+**Why:** Three shows exhibit the same gap: a `tagline` exceeding the
+160-char SERP budget with no `card_tagline` fallback, causing
+`descriptionFor()` to slice mid-clause in every case. A visitor
+reading the search result sees an incomplete thought. This is the
+same lax→strict verify-gate mechanic established by phases 41–46:
+add a `collectCardTaglineGapIssues()` invariant in
+`scripts/content-check.ts` that warns when `tagline.length > 160`
+AND `card_tagline` is absent, drain the three known violators, flip
+strict. The invariant prevents any future show addition from landing
+with truncated SERP copy. The 3-show cross-pass recurrence (2 critique
+passes, 3 distinct shows) confirms this is structural recurrence, not
+a one-off authoring mistake. The `card_tagline` field already exists in
+the schema and CLAUDE.md spec; making it required-when-long closes the
+gap without a schema change.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `CARD_TAGLINE_STRICT` flag +
+  `collectCardTaglineGapIssues()`: iterate show frontmatter; emit issue
+  when `tagline.length > 160` AND `card_tagline` is absent. Lax mode
+  logs; strict fails. Colocated unit tests (pass / fail / absent cases).
+- Author `card_tagline` (≤155 chars, complete clause) for the three
+  known violators: `content/shows/below-deck.md`,
+  `content/shows/project-runway.md`, `content/shows/big-brother.md`.
+- Flip `CARD_TAGLINE_STRICT = true` in the same commit (all violators
+  drained before flip; same day-one-strict pattern as phase 44).
+- Update `content-curator` brief: `card_tagline` is required when
+  `tagline > 160 chars`.
+
+**Estimated phases:** 1.
+**Conflicts:** None. No URL change. No UI change. SEO-only impact.
+Complements pass-54 pending critique finding which individually patches
+one show at a time — this phase patches all three and closes the vector.
 
 <!-- Pass 33 (2026-06-15, commit 6bfb784) — 3 candidates filed.
      Window since pass 32 (14cd563, 2026-06-12): 3 days / 27 commits.
