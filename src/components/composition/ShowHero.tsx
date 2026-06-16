@@ -17,10 +17,11 @@ type ShowHeroProps = {
 }
 
 // Phase 19c: two-column hero ported from
-// design/tiered.tv · Survivor.html §HERO. Left cover holds the big
-// wordmark + serif italic sub; right meta column holds the crumb,
-// the stats strip, the tagline, and the shield. The chrome is
-// already tinted via the segment layout's <ShowPaletteScope>.
+// design/tiered.tv · Survivor.html §HERO. Left cover holds the
+// breadcrumb + big wordmark + serif italic sub; right meta column
+// holds the stats strip, the tagline, and the shield. Crumb moved
+// to the cover (above H1) by critique pass-49 fix (issue #426) so
+// reading order is crumb → H1 → blurb → stats — uninterrupted hero.
 
 export function ShowHero({
   title,
@@ -33,11 +34,11 @@ export function ShowHero({
   return (
     <section className="show-hero" data-testid="show-hero" aria-label="show hero">
       <div className="show-hero-cover" data-testid="show-hero-cover">
+        <div className="show-hero-crumb">{crumb}</div>
         <h1 className="wordmark">{title}</h1>
         <p className="show-hero-sub">{blurb}</p>
       </div>
       <div className="show-hero-meta">
-        <div className="show-hero-crumb">{crumb}</div>
         {stats && stats.length > 0 ? (
           <div className="show-hero-stats" data-testid="show-hero-stats">
             {stats.map((s) => (

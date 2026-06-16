@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { ShowHero } from '../ShowHero'
 
 describe('<ShowHero>', () => {
-  it('renders left cover (wordmark + blurb) and right meta (crumb + tagline)', () => {
+  it('renders left cover (crumb + wordmark + blurb) and right meta (stats + tagline)', () => {
     render(
       <ShowHero
         title="Survivor"
@@ -18,6 +18,16 @@ describe('<ShowHero>', () => {
     expect(screen.getByTestId('crumb-content')).toBeInTheDocument()
     expect(screen.getByTestId('show-hero').textContent).toMatch(/One torch/)
     expect(screen.getByTestId('show-hero').textContent).toMatch(/strangers on a beach/)
+
+    // Critique pass-49, issue #426: breadcrumb must appear in DOM before
+    // the H1 so the reading order is crumb → H1 → blurb → stats (not
+    // H1 → blurb → crumb as the interleaved right-column design produced).
+    const cover = screen.getByTestId('show-hero-cover')
+    const crumb = screen.getByTestId('crumb-content')
+    const h1 = screen.getByRole('heading', { level: 1 })
+    expect(cover.contains(crumb)).toBe(true)
+    // compareDocumentPosition: 4 = DOCUMENT_POSITION_FOLLOWING (crumb precedes h1)
+    expect(crumb.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   })
 
   it('renders the stats strip when stats are provided', () => {
