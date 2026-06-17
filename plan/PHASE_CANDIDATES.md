@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-16 at commit 20b6b78
-> Pass count: 34
+> Last pass: 2026-06-17 at commit 0117ac6
+> Pass count: 35
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,132 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 35 (2026-06-17, commit 0117ac6) — 2 candidates filed.
+     Window since pass 34 (20b6b78, 2026-06-16): 1 day / 20 commits.
+     Signals reviewed:
+     - AUDIT.md: 1 pending bug row (Supabase CLI pin #416, score 4.8,
+       category: bug — workflow-permission-blocked for cloud, /iterate handles
+       when local; not a phase shape). AUDIT show-queue EMPTY (all 9 oversight
+       2026-06-14 franchise rows [x]) → bearings Rule 1 always-on mandate
+       fired: new Wave 3 show rows + season-drain rows filed in AUDIT.md
+       this same commit (Alone S6–S12, Below Deck S6–S12, Below Deck Med
+       S6–S9; new shows: RHONY, DWTS, Love Is Blind, Hell's Kitchen,
+       Australian Survivor).
+     - CRITIQUE.md: 4 pending MED rows (HvV Section 03 stub pass-49;
+       /u/e2e stat chips pass-37 [needs-user-call]; revised-date drift
+       pass-48; header handle no affordance pass-48). Two rise to phase
+       shape (#18, #19 below). Section 03 stub below threshold (expensive
+       multi-tick drain, single MED signal, -2 penalty). /u/e2e stat chips
+       flagged [needs-user-call] (prior pass-28 closure conflicts); candidate
+       #16 already covers this surface; skipped.
+     - GitHub issues: 1 loop-queued (#416, same as AUDIT bug row).
+     - spec.md + design/: no changes (stable since before pass 34).
+     - Commit pattern: 20 commits — 8 critique-drain audit closures
+       (fix/content/seo), 2 critique passes (54/55), 1 expand pass (34).
+       Drain pattern; no 5+ fix-cluster on any single surface.
+     Candidate #17 (card_tagline completeness invariant): already resolved
+     this window — `seo: add card_tagline to 12 shows — CARD_TAGLINE_STRICT
+     invariant` shipped in the 11-commit window since pass 34. Candidate #17
+     is now moot; marked superseded in the candidate block below.
+     Existing candidates status: #14 (era toolbar polish) — still awaiting
+     promotion (primary TITHERADGE MED was the driver; KISH/COLBY LOWs remain
+     Pending). #15 (canon completeness gate) — still awaiting promotion.
+     #16 (/u/[handle] stat chips) — [needs-user-call]; skipped this pass.
+     #17 (card_tagline invariant) — superseded (shipped pre-promotion). -->
+
+### 18. Signed-in header handle affordance — profile link + sign-out popover
+
+**Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
+**Source pass:** 35
+**Filed:** 2026-06-17
+**Source signals:**
+- Critique pass-48 [MED] [authed] — the `@e2e` handle renders as a bare
+  text token in the header on every authed page (desktop + mobile); no
+  `href`, no caret, no pointer cursor. A returning member has no in-header
+  path to `/u/<handle>` and no way to sign out; the handle reads as a
+  status label rather than a control.
+- Signal multiplicity: complements candidate #16 (/u/[handle] record zone)
+  — both findings confirm Phase 36 shipped the auth-read reflection but
+  not the auth-affordance layer.
+
+**Why:** Phase 36 (`[x]`) wired the auth-aware chrome (header reads
+`/api/auth/me` and renders `@handle` when signed in). What it did not
+ship is the affordance: the handle is a bare `<span>`-equivalent with
+no link, no popover, no sign-out route. A returning member landing on any
+page has to type `/u/<handle>` manually to reach their record, and has no
+in-page sign-out. The fix is scoped to a single component (the `<AuthState>`
+header island, likely `src/components/chrome/Header.tsx` or
+`src/components/chrome/AuthState.tsx` — verify at fix-time): wrap the
+handle in `<a href="/u/<handle>">`, add a minimal two-entry dropdown
+(`Your record →` + `Sign out →` via `/api/auth/logout`). The popover
+anchors a small caret next to the handle so the affordance reads as a
+control. No URL contract change; no schema change; no new route (the logout
+endpoint and `/u/[handle]` already exist per the locked URL contract).
+
+**Scope sketch:**
+- `src/components/chrome/AuthState.tsx` (or equivalent — verify at fix-time):
+  wrap rendered handle in `<a href="/u/${handle}">`. Add a popover/dropdown
+  anchor (small caret) with two items: `Your record` (`href="/u/${handle}"`)
+  and `Sign out` (`href="/api/auth/logout"`). Keep the popover intentionally
+  minimal — no settings link (not a shipped route), no avatar/icon.
+- Colocated test: authed state renders an anchor with correct `href` + a
+  popover trigger with `Sign out` item; anon state renders neither (prevents
+  authed chrome leaking to anon, per pass-1 #5 closure class).
+- e2e: the authed pass for any captured URL asserts the header handle is
+  a link element, not a bare text token.
+- Spoiler P0 intact — chrome affordance only; no verdict change.
+
+**Estimated phases:** 1.
+**Conflicts:** None. Complementary to #16 (profile record zone). No URL
+change, no schema change, no new page family.
+
+### 19. Chrome revised-date source-of-record: `lastRevised(scope)` helper
+
+**Score:** 5.5 (impact: 5, ease: 8 → 4.0 base + 1.5 cheap-and-impactful)
+**Source pass:** 35
+**Filed:** 2026-06-17
+**Source signals:**
+- Critique pass-48 [MED] [authed] — three index surfaces disagree on
+  "last revision" by a full month: home `/` shows `CANON REVISED · May 2026`,
+  `/shows` shows `LAST REVISION · May 2026`, `/themes` shows
+  `LISTS REVISED · June 2026`. A returning member scanning the chrome cannot
+  tell which surface is canonical-fresh.
+- Cross-surface defect class: 3 pages, 2 independently-computed timestamp
+  sources, 2-month divergence — confirmed on pass-48 authed walker captures.
+
+**Why:** Each of the three index surfaces computes its own "last revision"
+date from a different source: home from the most-recent canon mtime,
+`/shows` from the most-recent show-frontmatter mtime, `/themes` from the
+most-recent theme-frontmatter mtime. The computations produce a different
+month because themes saw a content touch in June while canons/shows were
+last touched in May. Neither is wrong for its scope — but the chrome label
+on all three says the same fact ("last revised") with different values, so
+a returning member cannot tell what "revised" means. The fix is a single
+`lastRevised(scope)` helper at `src/lib/content-revisions.ts` (or similar)
+that each surface calls with an explicit scope argument (`'canon'` /
+`'shows'` / `'themes'`), ensuring each chrome timestamp is honest about
+what it's measuring AND computed consistently. The lax→strict verify-gate
+pattern then locks it: `collectCrossSurfaceRevisedDateIssues` in
+`scripts/content-check.ts` asserts each timestamp matches its
+`lastRevised(scope)` value; strict mode flags drift. Same mechanic as
+phases 43/44/45/46.
+
+**Scope sketch:**
+- `src/lib/content-revisions.ts` (new file) — `lastRevised(scope:
+  'canon' | 'shows' | 'themes'): string` — returns max mtime of the
+  relevant content files formatted as `Mon YYYY`. Colocated unit test:
+  3 cases (one per scope), mtime-stub pattern.
+- Wire the helper into the three surfaces: home `CANON REVISED` consumes
+  `lastRevised('canon')`; `/shows` `LAST REVISION` consumes
+  `lastRevised('shows')`; `/themes` `LISTS REVISED` consumes
+  `lastRevised('themes')`.
+- `scripts/content-check.ts` — add `collectCrossSurfaceRevisedDateIssues`
+  invariant (lax on ship, flip strict once wired and verified green).
+- Spoiler P0 intact — chrome timestamp refactor only.
+
+**Estimated phases:** 1.
+**Conflicts:** None. No URL change. No schema change.
 
 <!-- Pass 34 (2026-06-16, commit 20b6b78) — 1 candidate filed.
      Window since pass 33 (6bfb784, 2026-06-15): 1 day / 21 commits.
@@ -59,11 +185,12 @@
      1 LOW, /iterate); (b) stale-copy sweep (B-tier tier-explainer +
      /themes lede, both 30+ days pending, both single-surface /iterate). -->
 
-### 17. SEO description gate — card_tagline completeness invariant
+### 17. SEO description gate — card_tagline completeness invariant ~~(superseded — shipped pre-promotion)~~
 
 **Score:** 5.0 (impact: 5, ease: 8 → 4.0 base + 1 signal multiplicity)
 **Source pass:** 34
 **Filed:** 2026-06-16
+**Status:** Superseded. Shipped at `seo: add card_tagline to 12 shows — CARD_TAGLINE_STRICT invariant` (in the 11-commit window since pass 34 filed this candidate). The `CARD_TAGLINE_STRICT` flag is now live in `scripts/content-check.ts` and all violators were drained in the same commit. No promotion needed.
 **Source signals:**
 - Critique pass-52 [LOW] /shows/below-deck meta description truncates
   mid-clause: tagline is 195 chars, no `card_tagline`; `descriptionFor()`
