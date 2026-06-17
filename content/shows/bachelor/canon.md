@@ -2,11 +2,11 @@
 show: bachelor
 editor: tiered.tv editor
 last_revised: 2026-05-16
-meth_who_h: Who ranks?
+meth_who_h: "Who ranks it"
 meth_who_p: One tiered.tv editor who has watched every season of The Bachelor, calibrated against the kitchen-table consensus of long-running Bachelor fans. The read is opinionated but defensible — we treat the early canon as a coherent body of work, and the modern era as the franchise newly aware of what it is.
-meth_how_h: How do I weigh it?
+meth_how_h: "How I weigh it"
 meth_how_p: Four lenses, in roughly equal measure. Cast — does this group of women actually fill a room. Location — does the setting do editorial work, or is it backdrop. Format — does the season's structure hold or buckle. Argument — does this season say something the franchise hadn't said yet. Founding seasons get format credit; modern seasons get casting credit.
-meth_when_h: When do I revisit?
+meth_when_h: "When I revisit"
 meth_when_p: After every Bachelor finale, and whenever a Paradise run reshapes how I read an earlier lead. The top half of the canon moves rarely; the bottom half gets revisited when a returnee re-enters the franchise. I log every shift on this page and never quietly re-rank.
 tier_s_blurb: Format-defining or unrepeatable. The runs the franchise built its recruitment, its travel grammar, and its casting precedents around.
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates badly.

@@ -2,11 +2,11 @@
 show: survivor
 editor: tiered.tv editor
 last_revised: 2026-05-21
-meth_who_h: Who ranks?
+meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Survivor since Pulau Tiga and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Survivor fans agree on after a kitchen-table argument runs long enough. Honest about the show, calibrated against the room.
-meth_how_h: How do I weigh it?
+meth_how_h: "How I weigh it"
 meth_how_p: Four lenses, applied roughly in this order — cast, does the season produce confessionals you remember a year later; format, does the season's structural shape work or fight the show; place, does the location pull editorial weight on camera; argument, does the season change what the format is allowed to do next.
-meth_when_h: When do I revisit?
+meth_when_h: "When I revisit"
 meth_when_p: After every season finale and after any returnee season that recasts a prior run. Returnee seasons in particular can shift my read on a player's original season — sometimes a season hardens, sometimes it softens. I revisit the bottom of the canon less often than the top; you do not learn much by replaying the tail.
 tier_s_blurb: Format-defining or unrepeatable. A season I'd defend at a bar, on a flight, in front of someone who has never watched.
 tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is close.
