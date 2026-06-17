@@ -2,7 +2,7 @@
 show: below-deck
 number: 2
 title: "British Virgin Islands"
-canonical_position: 4
+canonical_position: 7
 premiere_date: "2014-09-01"
 location: "British Virgin Islands, Caribbean"
 host: "Lee Rosbach"

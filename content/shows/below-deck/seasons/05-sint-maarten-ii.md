@@ -2,7 +2,7 @@
 show: below-deck
 number: 5
 title: "Sint Maarten II"
-canonical_position: 3
+canonical_position: 6
 premiere_date: "2017-09-01"
 location: "Sint Maarten, Caribbean"
 host: "Lee Rosbach"

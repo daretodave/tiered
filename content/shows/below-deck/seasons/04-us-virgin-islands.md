@@ -2,7 +2,7 @@
 show: below-deck
 number: 4
 title: "U.S. Virgin Islands"
-canonical_position: 5
+canonical_position: 10
 premiere_date: "2016-09-01"
 location: "U.S. Virgin Islands, Caribbean"
 host: "Lee Rosbach"

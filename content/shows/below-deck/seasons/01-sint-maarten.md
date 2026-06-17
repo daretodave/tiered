@@ -2,7 +2,7 @@
 show: below-deck
 number: 1
 title: "Sint Maarten"
-canonical_position: 2
+canonical_position: 3
 premiere_date: "2013-07-01"
 location: "Sint Maarten, Caribbean"
 host: "Lee Rosbach"
