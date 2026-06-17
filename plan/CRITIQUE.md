@@ -1,5 +1,35 @@
 # CRITIQUE
 
+> Last pass: 2026-06-17 at commit 0a2460a
+> Pass count: 55
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 55 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/love-island-uk`, `/shows/love-island-us`,
+> `/shows/dragrace`, `/themes/best-comeback-seasons`, `/about`)
+> and authed (6 URLs: `/`, `/shows/love-island-uk/season/01-summer-2015`,
+> `/shows/love-island-us/season/01-fiji-2019`, `/u/e2e`,
+> `/shows/top-chef`, `/themes/best-finales`) walks ran across
+> desktop + mobile viewports. Anon pass returned 8 raw
+> qualitative observations; authed pass returned 8 raw
+> observations (2 season 404s dropped as false positives — the
+> page set used filename-derived slugs; the correct frontmatter
+> slugs are `summer-2015` and `fiji-2019`, not `01-summer-2015` /
+> `01-fiji-2019`; 2 /u/e2e findings dropped as duplicates of
+> pending pass-52/53 findings; 1 top-chef hyphenation finding
+> dropped as a browser text-wrap artifact not present in the
+> content file; 1 /themes/best-finales meta drift dropped as
+> duplicate class of pending finding #17; 1 top-chef HOLD-state
+> ambiguity finding dropped pending source verification).
+> Self-assessment filed 4 findings (0 high, 1 medium, 3 low).
+> Spoiler discipline P0 intact — every row is a chrome / voice /
+> seo / editorial observation; zero winner / elimination /
+> finale beat exposure.
+>
+> ───── Pass 54 metadata kept below for history ─────
+>
 > Last pass: 2026-06-16 at commit 4350e0d
 > Pass count: 54
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -760,6 +790,10 @@
 
 ## Pending
 
+- [ ] [MED] [anon] cross-catalog — `meth_who_h` / `meth_how_h` / `meth_when_h` section headers are split between a second-person question form ("Who ranks?", "How do I weigh it?", "When do I revisit?") and a first-person statement form ("Who ranks it", "How I weigh it", "When I revisit") across 21 show canon files with no house standard. Older shows (survivor, dragrace, top-chef, amazing-race, bachelor, bachelorette, bake-off, big-brother, project-runway, the-challenge) use the question form; newer shows (all alone/* flavors, all below-deck/* flavors, traitors, love-island-uk, love-island-us) use the statement form. A reader comparing two show pages sees different editorial voices in the same structural slot. The statement form is more consistent with the "knowledgeable peer" voice (assertive rather than self-interrogating) and should be the house standard. Fix: normalize the 10 older-form shows' canon files to first-person statement form ("Who ranks it", "How I weigh it", "When I revisit") — content-only edit, no page code change. Spoiler discipline P0 intact. (URL: /shows/dragrace representative, spans catalog, source: critique-pass-55) — 0a2460a
+- [ ] [LOW] [anon] /shows/love-island-us — no `card_tagline` field while `tagline` runs approximately 186 characters, exceeding the ~155-char SERP budget. `descriptionFor()` truncates the tagline mid-clause producing "...The American port that finally…" in search-result snippets and social share cards. Same class as the pending pass-54 finding for `/shows/project-runway` and `/shows/big-brother` — add `/shows/love-island-us` to the repair batch. Fix: add `card_tagline` (≤155 chars, ending at a natural clause boundary) to `content/shows/love-island-us.md`. Spoiler discipline P0 intact (SEO copy only). (URL: /shows/love-island-us, source: critique-pass-55) — 0a2460a
+- [ ] [LOW] [anon] /shows/love-island-uk — hero blurb's third fragment echoes "fire pit" verbatim in the immediately following lede sentence. Blurb reads "11 seasons. Mallorca, golden hour, fire pit." and the tagline/lede opens "11 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud." The same two-word phrase appears within two lines, diluting both. Fix: revise the blurb's third fragment to a distinct Love Island UK detail that does not restate the lede — e.g. "Casa Amor" (the mid-series twist that became the format's signature tension) or "the final coupling" (the finale mechanic). Content-only; one field in `content/shows/love-island-uk.md`. Spoiler discipline P0 intact. (URL: /shows/love-island-uk, source: critique-pass-55) — 0a2460a
+- [ ] [LOW] [anon] / — `HomeDualCallout` community cell explains vote-weight tiers ("anonymous votes count at 0.1×, accounts under 7 days at 0.25×, tenured accounts at 1.0×") but provides no adjacent sign-in affordance. An anonymous visitor who reads this and decides to create an account must backtrack to the header nav to act. The information creates intent but the action path is disconnected. Fix: add an inline `Sign in` link (or small secondary CTA) immediately after the vote-weight sentence in the Community Rank cell of `HomeDualCallout.tsx`, pointing to the Auth0 login route. Spoiler discipline P0 intact. (URL: /, source: critique-pass-55) — 0a2460a
 - [x] [LOW] [anon] /shows/traitors — the S-tier section heading and section blurb both render the identical string "The seasons that defend the show." because `tier_s_blurb` is absent from `content/shows/traitors/canon.md`. All four Traitors seasons rank in the S tier; with no `tier_s_blurb` defined, `CanonTierBand.tsx` falls back to `DEFAULT_TIER_HEADINGS.S` — the same constant as the section `<h2>`, so a visitor reads the same sentence twice in immediate succession. The below-deck/canon.md fix at 847657d (issue #418) is the direct precedent. Fix: add `tier_s_blurb` to `content/shows/traitors/canon.md` describing what makes the S-tier Traitors seasons the show's best without naming outcomes. Content-only fix; one field addition. Spoiler discipline P0 intact. (URL: /shows/traitors, source: critique-pass-54) — 4350e0d — RESOLVED b954a7b: added `tier_s_blurb: "The full American run: the civilian-mix origin, the all-celebrity breakout, and two confident follow-throughs that proved the Round Table format does not need reinventing."` — issue: #427
 - [ ] [LOW] [authed] /shows/big-brother — `seasons: 26` in `content/shows/big-brother.md` may be stale: Big Brother Season 27 is believed to have aired Summer 2025, but the seasons count, blurb ("26 seasons. The house is always watching."), and tagline ("26 seasons of houseguests…") all hardcode 26 and no season file exists under `content/shows/big-brother/seasons/` for S27. The show carries `status: airing`. Verify the current aired-season count at author time; if S27 has aired, update `seasons: 27`, the blurb, the tagline, and scaffold the S27 season file per bearings Rule 2. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-54) — 4350e0d
 - [ ] [LOW] [authed] /shows/project-runway, /shows/big-brother — both shows lack `card_tagline` while their `tagline` fields exceed the 160-char SERP budget: Project Runway tagline is ~200 chars; Big Brother tagline is ~230 chars. `descriptionFor()` truncates both at 159 chars + '…', producing an unfinished mid-clause in search-result snippets. Confirmed: neither `content/shows/project-runway.md` nor `content/shows/big-brother.md` has a `card_tagline` field. Fix: add `card_tagline` (≤155 chars, ending at a clause boundary) to both files. Audit the remaining catalog for the same gap — `content/shows/below-deck.md` is already filed (pass-52 pending). Spoiler discipline P0 intact (SEO copy only). (URL: /shows/project-runway and /shows/big-brother, source: critique-pass-54) — 4350e0d
