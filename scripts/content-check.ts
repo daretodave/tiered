@@ -2260,6 +2260,63 @@ export function collectCardTaglineGapIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-48 MED (issue #430): the `tagline` field (on-page
+// serif lede on `/themes/[theme]`) and the `description` field
+// (catalog card copy on `/themes` + home featured rail + meta
+// description) are authored independently and can drift into parallel-
+// rewrite shapes — two editorial takes on the same opening argument
+// within two clicks. The defect class: the tagline and description
+// share 2–4 opening words then each branch to a different completion,
+// producing parallel rewrites instead of an extension. The correct
+// relationship is either (a) the tagline opens with the description's
+// first sentence verbatim and extends it (≥5 shared opening words) or
+// (b) the tagline takes a genuinely different angle (0–1 shared opening
+// words). `firsts.md` is the canonical (a) example — its tagline opens
+// on the description's first sentence verbatim then adds the editorial
+// layer that earns the click. Ships strict at floor 0: the best-finales
+// tagline rewrite in the same commit drains the only parallel-rewrite
+// offender in the catalog (3 shared opening words before divergence),
+// leaving zero violations at the gate.
+export function collectThemeTaglineDescriptionAlignmentIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const theme of getAllThemes()) {
+    const tagline = theme.tagline?.trim()
+    const description = theme.description?.trim()
+    if (!tagline || !description) continue
+
+    const taglineFirst = firstSentenceOfBlurb(tagline)
+      .toLowerCase()
+      .replace(/[^a-z\s]+/g, ' ')
+      .trim()
+    const descFirst = firstSentenceOfBlurb(description)
+      .toLowerCase()
+      .replace(/[^a-z\s]+/g, ' ')
+      .trim()
+
+    const taglineWords = taglineFirst.split(/\s+/).filter(Boolean)
+    const descWords = descFirst.split(/\s+/).filter(Boolean)
+
+    let prefixLen = 0
+    for (let i = 0; i < Math.min(taglineWords.length, descWords.length); i++) {
+      if (taglineWords[i] === descWords[i]) prefixLen++
+      else break
+    }
+
+    // Parallel-rewrite zone: first 2–4 words match then sentences diverge.
+    // 0–1 shared prefix words → fully distinct angles (OK).
+    // ≥5 shared prefix words → tagline extends the description (OK).
+    if (prefixLen >= 2 && prefixLen < 5) {
+      const taglineClip = taglineWords.slice(0, Math.min(prefixLen + 1, taglineWords.length)).join(' ')
+      const descClip = descWords.slice(0, Math.min(prefixLen + 1, descWords.length)).join(' ')
+      issues.push({
+        file: `content/themes/${theme.slug}.md`,
+        message: `tagline/description parallel-rewrite — the on-page lede and the catalog description share ${prefixLen} opening word${prefixLen === 1 ? '' : 's'} then diverge ("${taglineClip}…" vs "${descClip}…"). The tagline should either take a fully distinct angle (≤1 shared opening words) or extend the description's first sentence verbatim before branching (≥5 shared opening words). See critique pass-48 issue #430.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Phase 44 — Brand-spelling discipline. CLAUDE.md hard rule 6: the
 // brand wordmark `tiered.tv` is always lowercase, never truncated;
 // the tld `tiered.app` is the auth-tenant identifier and must not
@@ -3218,6 +3275,22 @@ function main(): number {
     failures.push(...cardTaglineGapIssues)
   } else {
     for (const issue of cardTaglineGapIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-48 MED (issue #430): ships strict at floor 0 — the
+  // best-finales tagline rewrite in the same commit drains the only
+  // parallel-rewrite offender (tagline first sentence shared 3 opening
+  // words with description then diverged). One-line toggle mirroring
+  // the STRICT family above.
+  const THEME_TAGLINE_DESC_ALIGNMENT_STRICT = true
+  const themeTaglineDescAlignmentIssues =
+    collectThemeTaglineDescriptionAlignmentIssues()
+  if (THEME_TAGLINE_DESC_ALIGNMENT_STRICT) {
+    failures.push(...themeTaglineDescAlignmentIssues)
+  } else {
+    for (const issue of themeTaglineDescAlignmentIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

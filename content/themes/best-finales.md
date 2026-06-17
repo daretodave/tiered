@@ -1,7 +1,7 @@
 ---
 slug: best-finales
 title: "Finales that stuck the landing"
-tagline: "Closing runs that earn the season. <b>The last hour reaches the altitude the show had been chasing</b> — texture intact, stakes earned, nothing handed over for free."
+tagline: "Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free. <b>The seven entries below all clear that bar</b> — some by tightening the format's existing template, some by changing what 'finale' means."
 category: craft
 sentiment: verdict
 status: stable

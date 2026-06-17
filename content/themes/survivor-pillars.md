@@ -1,7 +1,7 @@
 ---
 slug: survivor-pillars
 title: "Survivor: the load-bearing seasons"
-tagline: "Four seasons that hold the show up: the original experiment, the tactical era's apex, the post-pandemic reset, and the steady-state new normal. <b>Pull any one of them out and the canon falls over.</b>"
+tagline: "Four seasons that define the show's eras — the original experiment, the tactical era's apex, the post-pandemic reset, and the steady-state new normal. <b>Pull any one of them out and the canon falls over.</b>"
 category: single
 sentiment: hold
 status: stable

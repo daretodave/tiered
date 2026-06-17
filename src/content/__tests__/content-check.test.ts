@@ -43,6 +43,7 @@ import {
   collectThemedEntrySpoilerIssues,
   collectThemeFactualFirstClaimIssues,
   collectThemeFailures,
+  collectThemeTaglineDescriptionAlignmentIssues,
   collectWatchListPhraseRepetitionIssues,
   collectYearTenureIssues,
   collectYearTokenPairingIssues,
@@ -6760,5 +6761,97 @@ featured: false
     setContentRoot(null)
     __resetContentCache()
     expect(collectCardTaglineGapIssues()).toEqual([])
+  })
+})
+
+// Helper for tagline/description alignment tests: writes a theme with a
+// controlled tagline and description to exercise the parallel-rewrite gate.
+function makeThemeWithTaglineAndDescription(
+  root: string,
+  slug: string,
+  tagline: string,
+  description: string,
+): void {
+  const file = path.join(root, 'themes', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+title: "${slug}"
+tagline: ${JSON.stringify(tagline)}
+category: tone
+sentiment: hold
+status: stable
+curator: "tiered.tv editor"
+last_revised: 2026-06-17
+featured: false
+description: ${JSON.stringify(description)}
+entries:
+  - show: alpha
+    season: 1
+    rank: 1
+    title: "t"
+    blurb: "b"
+---
+`,
+  )
+}
+
+describe('content-check — theme tagline/description alignment (critique pass-48, issue #430)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-tagline-desc-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a tagline whose first sentence shares 2–4 opening words with description then diverges', () => {
+    makeThemeWithTaglineAndDescription(
+      tmp,
+      'best-finales',
+      'Closing runs that earn the season. The last hour reaches the altitude the show had been chasing.',
+      'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude.',
+    )
+    const issues = collectThemeTaglineDescriptionAlignmentIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/themes/best-finales.md')
+    expect(issues[0]?.message).toMatch(/parallel-rewrite/)
+    expect(issues[0]?.message).toMatch(/3 opening words/)
+  })
+
+  it('passes a tagline whose first sentence extends the description verbatim (>=5 shared prefix words)', () => {
+    makeThemeWithTaglineAndDescription(
+      tmp,
+      'best-finales',
+      'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free. The seven entries below all clear that bar.',
+      'Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free.',
+    )
+    expect(collectThemeTaglineDescriptionAlignmentIssues()).toEqual([])
+  })
+
+  it('passes a tagline whose first sentence takes a fully distinct angle (0–1 shared prefix words)', () => {
+    makeThemeWithTaglineAndDescription(
+      tmp,
+      'best-comebacks',
+      'A comeback season arrives with the highest pre-air risk a franchise can take.',
+      'Seasons that arrived with everything to prove — a hiatus, a network jump, a milestone.',
+    )
+    expect(collectThemeTaglineDescriptionAlignmentIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders after the best-finales tagline fix', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectThemeTaglineDescriptionAlignmentIssues()).toEqual([])
   })
 })
