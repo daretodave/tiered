@@ -9,6 +9,7 @@ seasons: 1
 status: ended
 blurb: "1 season. One expedition vessel in the Norwegian Arctic, where the charter guests come for cold."
 tagline: "Below Deck traded superyacht luxury for an expedition vessel in the Norwegian Arctic — Svalbard fjords, polar plunges, glacier hikes, Captain Kerry Titheradge at the helm."
+card_tagline: "Below Deck traded superyacht luxury for an expedition vessel in the Norwegian Arctic — Svalbard fjords and polar plunges."
 tier: B
 network: "Bravo/Peacock"
 est_year: 2022

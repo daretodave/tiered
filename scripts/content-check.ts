@@ -2235,6 +2235,31 @@ export function collectShowCardTaglineOpenerOverlapIssues(): Failure[] {
   return issues
 }
 
+// Critique passes 52 / 54 / 55 (phase 17 candidate): when a show's
+// `tagline` exceeds 160 characters and no `card_tagline` override is
+// present, `descriptionFor()` in `src/app/shows/[show]/page.tsx`
+// slices at 159 chars + '…', producing an unfinished mid-clause in
+// SERP snippets and social share cards. `card_tagline` (schema-capped
+// at 160) is the correct fix; this invariant enforces its presence
+// when the tagline runs long. The 160-char threshold matches the
+// `descriptionFor()` passthrough guard (`tagline.length <= 160`).
+// Ships strict from day one — all 12 known violators are drained in
+// the same commit that flips the flag. One-line toggle mirroring the
+// STRICT family. Exported so the vitest suite can exercise it
+// directly against a temp content tree.
+export function collectCardTaglineGapIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    if (show.tagline.length <= 160) continue
+    if (show.card_tagline) continue
+    issues.push({
+      file: `content/shows/${show.slug}.md (tagline)`,
+      message: `tagline is ${show.tagline.length} chars (> 160) and no \`card_tagline\` override is present — \`descriptionFor()\` truncates mid-clause at 159 chars + ellipsis, producing an unfinished thought in SERP snippets and social share cards. Author a \`card_tagline\` (≤ 155 chars, ending at a natural clause boundary, third-person editorial register) so the SERP description reads as a complete sentence. See plan/CRITIQUE.md passes 52 / 54 / 55 (phase 17).`,
+    })
+  }
+  return issues
+}
+
 // Phase 44 — Brand-spelling discipline. CLAUDE.md hard rule 6: the
 // brand wordmark `tiered.tv` is always lowercase, never truncated;
 // the tld `tiered.app` is the auth-tenant identifier and must not
@@ -3180,6 +3205,19 @@ function main(): number {
     failures.push(...featuredThemePullIssues)
   } else {
     for (const issue of featuredThemePullIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique passes 52 / 54 / 55 (phase 17 candidate): all 12 known
+  // violators are drained in the same commit — strict ships day one.
+  // One-line toggle mirroring the STRICT family above.
+  const CARD_TAGLINE_STRICT = true
+  const cardTaglineGapIssues = collectCardTaglineGapIssues()
+  if (CARD_TAGLINE_STRICT) {
+    failures.push(...cardTaglineGapIssues)
+  } else {
+    for (const issue of cardTaglineGapIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

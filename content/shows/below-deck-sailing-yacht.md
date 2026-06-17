@@ -9,6 +9,7 @@ seasons: 5
 status: hiatus
 blurb: "5 seasons. One sailing yacht, one captain, the Mediterranean from Greece to Ibiza."
 tagline: "Below Deck put its cameras on a sailing yacht — narrower hull, canvas overhead, the Mediterranean underfoot. {yearsWord} years of Glenn Shephard holding the wheel through Greece, Croatia, Menorca, Sardinia, and Ibiza. A register the motor version never found."
+card_tagline: "Below Deck on a sailing yacht — narrower hull, canvas overhead, Glenn Shephard at the wheel through Greece, Croatia, and Ibiza."
 tier: B
 network: Bravo
 est_year: 2020

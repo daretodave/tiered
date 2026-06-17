@@ -9,6 +9,7 @@ seasons: 1
 status: ended
 blurb: "1 season. Alone alumni. Three days to build anything."
 tagline: "The spinoff that traded wilderness endurance for bushcraft construction — former Alone contestants judging each other's builds, episode by episode, from their own backyards."
+card_tagline: "A one-season Alone spinoff that swapped wilderness endurance for episodic bushcraft construction — alumni judging each other's builds."
 tier: B
 network: History
 est_year: 2022

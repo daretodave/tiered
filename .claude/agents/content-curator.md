@@ -123,6 +123,14 @@ seasons: <int>         # count of aired/airing seasons
 status: airing | ended | hiatus
 blurb:   "<one sentence, two short lines as printed (≤80 chars)>"
 tagline: "<longer editorial sentence readers would quote (≤200 chars)>"
+  # Phase 17 (critique passes 52/54/55) — when tagline.length > 160,
+  # `card_tagline` is REQUIRED (the verify gate fails without it).
+  # Author a card_tagline (≤ 155 chars, ending at a natural clause
+  # boundary, third-person editorial register — no "I", "my", etc.)
+  # that clips the tagline at its first complete sentence or clause.
+  # The loader renders `{yearsWord}` tokens in card_tagline too, but
+  # prefer static phrasing for card_tagline to keep the SERP snippet
+  # stable across anniversary rollovers.
   # Phase 43 — tagline copy may reference the show's tenure via
   # `{yearsWord}` (spelled-out) or `{years}` (numeric) tokens; the
   # loader substitutes against `est_year` on every read so the count

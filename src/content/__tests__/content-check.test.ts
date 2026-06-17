@@ -9,6 +9,7 @@ import { setContentRoot } from '../paths'
 import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
+  collectCardTaglineGapIssues,
   collectFeaturedThemeMissingPullIssues,
   collectCanonMethSiblingsPluralEditorIssues,
   collectCanonMethWhoClosingPairEchoIssues,
@@ -6668,5 +6669,96 @@ entries:
     const slugs = issues.map((i) => i.file)
     expect(slugs).toContain('content/themes/ft-a.md')
     expect(slugs).toContain('content/themes/ft-b.md')
+  })
+})
+
+describe('content-check — card_tagline gap invariant (critique passes 52/54/55, phase 17)', () => {
+  let tmp: string
+
+  function makeShowWithTaglineAndOptionalCard(
+    root: string,
+    slug: string,
+    tagline: string,
+    cardTagline?: string,
+  ): void {
+    const file = path.join(root, 'shows', `${slug}.md`)
+    mkdirSync(path.dirname(file), { recursive: true })
+    const cardLine = cardTagline
+      ? `card_tagline: ${JSON.stringify(cardTagline)}\n`
+      : ''
+    writeFileSync(
+      file,
+      `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: A blurb.
+tagline: ${JSON.stringify(tagline)}
+${cardLine}tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-card-tagline-gap-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a show whose tagline exceeds 160 chars and has no card_tagline', () => {
+    const longTagline =
+      'No votes, no eliminations. Below Deck follows a working superyacht crew through the charter season — twelve seasons of captain authority, service pressure, and the friction of living where you work.'
+    expect(longTagline.length).toBeGreaterThan(160)
+    makeShowWithTaglineAndOptionalCard(tmp, 'below-deck', longTagline)
+    const issues = collectCardTaglineGapIssues()
+    expect(issues).toHaveLength(1)
+    expect(issues[0]!.file).toBe('content/shows/below-deck.md (tagline)')
+    expect(issues[0]!.message).toMatch(/card_tagline/)
+    expect(issues[0]!.message).toMatch(/160/)
+  })
+
+  it('passes a show whose tagline is exactly 160 chars with no card_tagline', () => {
+    const tagline = 'A' + ' '.repeat(0) + 'x'.repeat(159)
+    const exactly160 = tagline.slice(0, 160)
+    expect(exactly160.length).toBe(160)
+    makeShowWithTaglineAndOptionalCard(tmp, 'short', exactly160)
+    expect(collectCardTaglineGapIssues()).toEqual([])
+  })
+
+  it('passes a show whose tagline exceeds 160 chars when card_tagline is present', () => {
+    const longTagline =
+      'No votes, no eliminations. Below Deck follows a working superyacht crew through the charter season — twelve seasons of captain authority, service pressure, and the friction of living where you work.'
+    expect(longTagline.length).toBeGreaterThan(160)
+    makeShowWithTaglineAndOptionalCard(
+      tmp,
+      'below-deck',
+      longTagline,
+      'No votes, no eliminations. Twelve seasons of captain authority, service pressure, and the friction of living where you work.',
+    )
+    expect(collectCardTaglineGapIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders after the drain', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCardTaglineGapIssues()).toEqual([])
   })
 })

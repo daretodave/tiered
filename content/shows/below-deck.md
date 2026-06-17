@@ -9,6 +9,7 @@ seasons: 12
 status: airing
 blurb: "12 seasons. One superyacht, a rotating crew, and nowhere to hide below deck."
 tagline: "No votes, no eliminations. Below Deck follows a working superyacht crew through the charter season — twelve seasons of captain authority, service pressure, and the friction of living where you work."
+card_tagline: "No votes, no eliminations. Twelve seasons of captain authority, service pressure, and the friction of living where you work."
 tier: B
 network: Bravo
 est_year: 2013
