@@ -3,7 +3,7 @@ show: alone
 number: 2
 slug: vancouver-island-ii
 title: "Vancouver Island II"
-canonical_position: 4
+canonical_position: 10
 premiere_date: 2016-06-09
 location: "Vancouver Island, BC, Canada"
 eyebrow: "Aired summer 2016 · The format holding up on familiar ground"

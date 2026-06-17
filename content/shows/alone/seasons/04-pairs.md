@@ -3,7 +3,7 @@ show: alone
 number: 4
 slug: pairs
 title: "Pairs"
-canonical_position: 5
+canonical_position: 12
 premiere_date: 2017-06-08
 location: "Quatsino, BC, Canada"
 eyebrow: "Aired summer 2017 · The only paired-teams season"

@@ -3,7 +3,7 @@ show: alone
 number: 5
 slug: redemption
 title: "Redemption"
-canonical_position: 3
+canonical_position: 4
 premiere_date: 2018-06-14
 location: "Züünkharaa, Mongolia"
 eyebrow: "Aired summer 2018 · The first returning-contestant season, in Mongolia"
