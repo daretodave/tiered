@@ -129,4 +129,27 @@ describe('<HomeDualCallout>', () => {
     expect(live).toMatch(/\byour\b/i)
     expect(live).not.toMatch(/\bone reader\b/i)
   })
+
+  // Critique pass-55 LOW (#431): the live cell explains vote-weight
+  // tiers but provided no adjacent sign-in affordance — an anonymous
+  // visitor who wanted to create an account had to backtrack to the
+  // header nav. Fix: inline "Sign in" link pointing to /sign-in,
+  // appended after the vote-weight sentence. Bidirectional pin:
+  // positive asserts the link is present and points to /sign-in;
+  // negative asserts the legacy no-link form (period at end of 1.0×)
+  // is replaced, catching a regression back to the unlinked form.
+  it('live cell contains a Sign in link pointing to /sign-in', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live')
+    const link = live.querySelector('a[href="/sign-in"]')
+    expect(link).not.toBeNull()
+    expect(link?.textContent).toMatch(/sign in/i)
+  })
+
+  it('live cell sign-in link has the dual-signin-link class', () => {
+    render(<HomeDualCallout />)
+    const live = screen.getByTestId('home-dual-live')
+    const link = live.querySelector('a.dual-signin-link')
+    expect(link).not.toBeNull()
+  })
 })
