@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 5
 title: "Lake Como"
-canonical_position: 3
+canonical_position: 4
 premiere_date: "2020-06-01"
 location: "Lake Como, Italy"
 host: "Sandy Yawn"

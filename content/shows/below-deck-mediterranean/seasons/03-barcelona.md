@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 3
 title: "Barcelona"
-canonical_position: 2
+canonical_position: 3
 premiere_date: "2018-06-05"
 location: "Barcelona, Spain / Malta"
 host: "João Franco"

@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 4
 title: "Mallorca"
-canonical_position: 5
+canonical_position: 9
 premiere_date: "2019-06-03"
 location: "Mallorca, Spain / Ibiza, Spain"
 host: "Sandy Yawn"
