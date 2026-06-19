@@ -34,9 +34,10 @@ describe('<HomeShowGrid>', () => {
     const heading = screen.getByTestId('home-shows-heading')
     const em = heading.querySelector('em')
     expect(em).not.toBeNull()
-    expect(em?.textContent).toBe('Every S and A-tier season reviewed.')
-    // Negative pin: old overclaim must not regress (B-tier shows carry partial canons)
+    expect(em?.textContent).toBe('Every S-tier season reviewed.')
+    // Negative pins: broader overclaims must not regress (A-tier shows have partial canons; B-tier shows carry partial canons)
     expect(em?.textContent).not.toMatch(/^Every season reviewed\.$/i)
+    expect(em?.textContent).not.toMatch(/A-tier/i)
   })
 
   it('renders an "All shows" link to /shows with prefetch disabled', () => {
