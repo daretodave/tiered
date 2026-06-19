@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-17 at commit 0117ac6
-> Pass count: 35
+> Last pass: 2026-06-19 at commit bf9dffb
+> Pass count: 36
 
 ## Considered (awaiting promotion)
 
@@ -55,6 +55,32 @@
      Pending). #15 (canon completeness gate) — still awaiting promotion.
      #16 (/u/[handle] stat chips) — [needs-user-call]; skipped this pass.
      #17 (card_tagline invariant) — superseded (shipped pre-promotion). -->
+
+<!-- Pass 36 (2026-06-19, commit bf9dffb) — 0 new candidates filed; AUDIT content-gap rows
+     filed in plan/AUDIT.md (season drains + wave-4 shows).
+     Window since pass 35 (0117ac6, 2026-06-17): 2 days (61h) / 21 commits.
+     Signals reviewed:
+     - AUDIT.md: 0 pending rows — critical: season drain rows for wave-3 shows
+       (RHONY S6–S15, DWTS S2–S34, Love Is Blind S6–S10, Hell's Kitchen S6–S24,
+       Australian Survivor S6–S12) never filed after their scaffolding ticks.
+       Wave-4 new show rows also absent (show queue at 0). Both sets filed to
+       AUDIT.md in this same commit (category: content-gaps, source: expand).
+     - CRITIQUE.md pending (2 LOWs from pass-57): DWTS tier_s_blurb absent (all
+       entries in S tier, heading = blurb dup); BDM tier_s_blurb absent (same
+       class). These are the 4th and 5th distinct show violations of the same
+       class (after below-deck pass-52, Traitors pass-54, DWTS pass-57, BDM
+       pass-57). Strengthen existing candidate #15 (CANON_COMPLETENESS_STRICT).
+       Not a new candidate — #15 already names this fix exactly.
+     - GitHub issues: 0 unlabeled.
+     - spec.md + design/: no changes.
+     - Commit pattern: 21 commits — content velocity (5 new shows/drains), 1
+       critique pass (57), 1 critique-find fix (HomeShowGrid A-tier stat strip).
+       No 5+ fix-cluster on any code surface.
+     Existing candidates status: #15 (CANON_COMPLETENESS_STRICT) — reinforced
+     by pass-57 (4th + 5th violation of same class); promotion justified by
+     signal multiplicity now. #16 (/u/[handle] stat chips) — awaiting user call.
+     #18 (signed-in header affordance) — awaiting promotion. #19 (last-revised
+     source-of-record) — awaiting promotion. -->
 
 ### 18. Signed-in header handle affordance — profile link + sign-out popover
 

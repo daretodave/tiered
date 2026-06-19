@@ -25,6 +25,27 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
+<!-- SEASON-DRAIN QUEUE — WAVE 3 (filed via expand pass 36, 2026-06-19). All five shows from the
+     wave-3 queue were scaffolded with S1–S5 (RHONY/LIB/HK/AU Survivor) or S1 (DWTS) only; their
+     remaining seasons need Rule 2 drain (~5/tick). Each row below is one /ship-content dispatch:
+     author 50–80-word blurbs + canonical_position for each batch; update canon.md rankings on each
+     insert per Rule 2. VERIFY exact season titles and premiere dates at author time — never trust
+     titles written in a queue row (they rot). -->
+- [ ] [MED] Season drain: **RHONY** S6–S15 (10 seasons remaining of 15 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+- [ ] [MED] Season drain: **Dancing with the Stars** S2–S34 (33 seasons remaining of 34 total) — author 50–80-word blurbs + canonical_position for each batch; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time (S17+ carry thematic subtitles). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+- [ ] [MED] Season drain: **Love Is Blind** S6–S10 (5 seasons remaining of 10 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+- [ ] [MED] Season drain: **Hell's Kitchen** S6–S24 (19 seasons remaining of 24 total) — author 50–80-word blurbs + canonical_position for each batch; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time (S17+ carry thematic subtitles). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+- [ ] [MED] Season drain: **Australian Survivor** S6–S12 (7 seasons remaining of 12 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+
+<!-- NEW SHOW QUEUE — WAVE 4 (filed via expand pass 36, 2026-06-19). All wave-3 show rows resolved ([x]).
+     Per bearings Rule 1 "keep the queue fed", expand proposes the next wave of well-known reality
+     franchises. Drain, never one-shot: /ship-content scaffolds ONE flavor per tick (frontmatter +
+     canon.md + first season batch), then Rule 2 drains remaining seasons ~5/tick. VERIFY each
+     show's exact aired-season count and season titles at author time. -->
+- [ ] [MED] Add show: **Real Housewives of Atlanta** (Bravo — the flagship Housewives franchise and longest-running RHOA edition). Scaffold `content/shows/rhoa.md` frontmatter (palette + verified aired season count + tier/network/est_year/genre_tag) + `content/shows/rhoa/canon.md` + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles at author time (16+ seasons as of 2026). (category: content-gaps, source: expand, score: 4.0 — impact 8 × ease 5)
+- [ ] [MED] Add show: **The Voice** (US) (NBC/Disney+ — the long-running blind-audition singing competition, est 2011). Scaffold `content/shows/the-voice.md` frontmatter (palette + verified aired season count + tier/network/est_year/genre_tag) + `content/shows/the-voice/canon.md` + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact aired season count and titles at author time (25+ seasons). (category: content-gaps, source: expand, score: 4.0 — impact 8 × ease 5)
+- [ ] [MED] Add show: **MasterChef** (US) (Fox — Gordon Ramsay's home-cook elimination competition, est 2010). Scaffold `content/shows/masterchef.md` frontmatter (palette + verified aired season count + tier/network/est_year/genre_tag) + `content/shows/masterchef/canon.md` + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles at author time (14+ seasons; verify exact count). Natural pairing with Hell's Kitchen already in catalog. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5)
+
 <!-- SHOW-EXPANSION SEED (filed via oversight 2026-06-14). The build
      plan is 59/59 complete; per the 2026-06-14 oversight the loop's
      primary mission is now CONTINUOUS show expansion (bearings Rule
