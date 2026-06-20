@@ -74,3 +74,43 @@ slot_argument: Season six takes sixth place for a fresh casting angle — Olympi
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
 Season six leaned into Olympic casting and got a real payoff from it. Athletes who had spent careers developing body awareness and physical discipline arrived in the ballroom ahead of where entertainment-world celebrities typically start, and the choreography in the opening episodes reflected that. The contrast between trained athletes and conventional celebrity cast members gave the season a clear competitive through-line. As a format experiment, it was subtle — the structure did not change, but the casting input changed what the structure could produce. It sits at the base of the early canon as a season that used the format well.
+
+## 9. Fall 2009
+
+tag: The celebrity arc the format promised — delivered cleanly across ten episodes.
+slot_argument: Season nine earns seventh for the cleanest celebrity-arc narrative the double-cycle era produced. The cast mix created genuine competition without relying on controversy or format intervention.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season nine delivered what the format promises most weeks but rarely achieves this cleanly. The cast mixed entertainment veterans, athletes, and a pop star into a competitive field where the learning-curve gaps played out as genuine dramatic material rather than background texture. Ten episodes kept the elimination stakes high from mid-season onward, and the week-to-week tension between judges' scores and public votes was productive throughout. The back-half choreography reflected a cast that had committed to real improvement. Among the fall double-cycle seasons, it holds a clear claim to seventh.
+
+## 8. Spring 2009
+
+tag: One of the deeper spring casts — athletic representation that paid off in the back half.
+slot_argument: Season eight earns eighth for a spring roster that matched the competitive quality of the better fall seasons. Athletic casting was already proven; what distinguished the run was how well the field held through eleven episodes.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season eight opened with one of the deeper celebrity rosters the spring slot had produced — varied in background, strong in athletic representation, and competitive from the early weeks. The format's usual learning-curve arc played out across a cast where several competitors brought genuine physical credentials rather than relying on charm alone. Eleven episodes let the field narrow at a pace the format could sustain, and the back-half competition reflected the casting investment. It sits comfortably above the seasons that delivered the format without a strong cast angle.
+
+## 11. Dirty Dancing Redux
+
+tag: Live-vote drama that exposed the format's core tension more clearly than most seasons manage.
+slot_argument: Season eleven earns ninth for the productive tension between judges and public vote. The cast was uneven early, but the format's conflict between artistic merit and popular appeal played out more visibly here than in neighboring seasons.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season eleven stands out in the early canon for how sharply the live-vote dynamic diverged from the judges' scores at key moments. The cast ranged widely across celebrity types — entertainment veterans, athletes, reality-television figures — producing uneven early choreography and a competitive field that reshuffled unexpectedly. Jennifer Grey's participation, drawing directly on her Dirty Dancing biography, gave the season a cultural through-line that held viewer attention at the back half. The gap between scorecards and phone votes was the story, and it was a genuine one.
+
+## 7. Cloris and Company
+
+tag: The oldest cast the show had assembled — a casting expansion that the format absorbed cleanly.
+slot_argument: Season seven earns tenth for Cloris Leachman's participation at 82, which expanded the format's reach without destabilizing competition. The thirteen-episode run gave the elimination arc room that shorter fall seasons couldn't provide.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Season seven ran thirteen episodes with a cast wider in age and profile than the show had previously assembled. Cloris Leachman's participation at 82 was the defining casting note — not a novelty booking but a genuine test of what the format was willing to ask of its cast. The rest of the lineup brought strong entertainment and athletic credentials. The thirteen-episode run, the longest the fall slot had attempted, gave the back-half elimination arc genuine room to develop as the stronger partnerships separated from the field.
+
+## 10. Spring 2010
+
+tag: A technically accomplished cast that delivered the format without generating a defining moment.
+slot_argument: Season ten sits eleventh for reliable execution without a defining contribution. A credential-heavy cast reduced the format's core tension — watching someone learn — and the season never generated its own narrative.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Season ten assembled a cast heavy in performance credentials — musicians, Olympic athletes, and entertainers whose physical backgrounds compressed the learning curve from episode one. The early choreography was technically accomplished for the stage of the competition. But a cast that arrives nearly ready sacrifices one of the format's core pleasures: the visible arc of someone figuring out how to dance. Eleven episodes gave the competition clean shape. The season delivered the format reliably and earns its place at the base of this portion of the canon for exactly that.
