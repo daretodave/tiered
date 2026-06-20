@@ -3,7 +3,7 @@ show: survivor-australia
 number: 3
 title: "Champions V Contenders"
 display_title: "Champions <em>V</em><br/>Contenders"
-canonical_position: 1
+canonical_position: 2
 premiere_date: 2018-07-23
 ep_count: 25
 location: "Savusavu, Fiji"

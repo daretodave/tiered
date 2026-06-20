@@ -2,7 +2,7 @@
 show: survivor-australia
 number: 5
 title: "All Stars"
-canonical_position: 5
+canonical_position: 10
 premiere_date: 2020-07-13
 ep_count: 25
 location: "Savusavu, Fiji"

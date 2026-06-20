@@ -3,7 +3,7 @@ show: survivor-australia
 number: 4
 title: "Champions V Contenders II"
 display_title: "Champions <em>V</em><br/>Contenders II"
-canonical_position: 4
+canonical_position: 9
 premiere_date: 2019-07-29
 ep_count: 25
 location: "Savusavu, Fiji"

@@ -2,7 +2,7 @@
 show: survivor-australia
 number: 2
 title: "The Return"
-canonical_position: 3
+canonical_position: 6
 premiere_date: 2017-07-31
 ep_count: 26
 location: "Upolu, Samoa"

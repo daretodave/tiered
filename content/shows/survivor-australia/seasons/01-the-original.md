@@ -2,7 +2,7 @@
 show: survivor-australia
 number: 1
 title: "The Original"
-canonical_position: 2
+canonical_position: 4
 premiere_date: 2016-05-08
 ep_count: 26
 location: "Upolu, Samoa"
