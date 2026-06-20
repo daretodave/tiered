@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-f
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — cast, whether the bench had enough talent and personality to carry a dinner service; drama, whether the kitchen conflict felt earned rather than manufactured; and format integrity, whether the season's structure respected both the cooking and the competition. Ramsay is the constant; everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon grows as more seasons land. Fifteen slots here now cover the founding era and the numbered run of the evolution era. Themed seasons — Rookies vs. Veterans, Battle of the Ages — slot in on merit as the ranking matures. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon grows as more seasons land. Twenty slots now cover all three eras — the founding run, the evolution-era numbered seasons, and the first themed editions through season twenty. Each new entry slots on merit against what is already here. I'm not claiming to be objective. I'm trying to be honest."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
 weekly_question: "Which early Hell's Kitchen season holds up best on a second pass — and does it still belong at the top?"
 era_bands:
@@ -143,3 +143,43 @@ slot_argument: Season fourteen's most distinctive feature sits on the calendar p
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season fourteen's most notable trait is on the scheduling page: a January premiere was the format's first winter slot since the early years, and it signals a scheduling flexibility the evolution era kept through its run. The eighteen-chef cast and eighteen-episode run hold to the evolution era's established template. The kitchen runs correctly, the dinner services land when they need to, and the format is in good shape throughout. What keeps it at the bottom of the evolution-era numbered run is cast energy — the bench is capable but doesn't push the tension into its upper register the way the seasons above it do.
+
+## 17. Season 17
+
+tag: The first all-star edition — every chef arrived having already earned a black jacket.
+slot_argument: Season seventeen set a competitive floor no prior cast had matched. Sixteen alumni who had each earned a black jacket in their original run meant the cooking was sharper and the drama more earned from the first service forward.
+community_rank_hint: rank=16 delta=0 sentiment=hold
+
+Season seventeen opened a new era for the show and did it convincingly. Every chef on the cast had already survived to the black-jacket stage in a previous season, which raised the competitive baseline higher than any standard cast could. The dinner services ran with fewer fundamental breakdowns and more genuinely close competition. Ramsay's critiques landed at a different register — corrections were fine-tuning rather than fundamentals. The first three-person finale in the show's history was a structural signal of how tightly the field ran at the end. The strongest case the themed era has made so far.
+
+## 18. Season 18
+
+tag: The most structurally inventive cast split the show had attempted.
+slot_argument: Season eighteen's rookies-vs-veterans premise and mid-season restructure gave the format more moving parts than any other themed edition. The veteran half raised the floor; the structural wrinkle kept the back half from coasting.
+community_rank_hint: rank=17 delta=0 sentiment=hold
+
+Season eighteen built its season around a genuine structural idea: eight first-time chefs against eight veterans returning from earlier seasons. The gap in experience was real and the format let it show in the kitchen, where the veteran half of the cast set a ceiling the rookies had to climb toward. The mid-season restructure — six simultaneous swaps, the most the show had executed in a single episode — reset the dynamics for the back half rather than letting them coast. The ambition of the design earns it the second slot of the themed era, ahead of seasons that changed the address without changing the structure.
+
+## 16. Season 16
+
+tag: The last standard-format run — reliable, clean, and without a gimmick to lean on.
+slot_argument: Season sixteen is the evolution era's final unmarked run. Custom episode titles replaced the standard formula; the kitchen ran as it always had. It ranks here because each themed season above brought a structural novelty this one lacks.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Season sixteen is the last season the show ran without a subtitle or a defined cast concept, and that plainness is both its identity and its ceiling. The eighteen-chef cast and sixteen-episode run hold to the evolution-era template without modification. Custom episode titles replaced the long-running "N Chefs Compete" formula — the one production signal that the format was ready to evolve — but the kitchen structure underneath ran exactly as it had. The dinner services are solid. The cast has range. The season does what it sets out to do. It ranks below the themed editions that opened above it because those seasons brought something genuinely new.
+
+## 19. Season 19
+
+tag: The first Nevada production — a new address, the same format.
+slot_argument: Season nineteen's primary contribution is geographical. A purpose-built Las Vegas set and a new Spells Kitchen Challenge are real firsts; the format runs at a familiar level. A season defined by its address more than its structure.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Season nineteen is the show's first Nevada production, staged on a purpose-built kitchen at Caesars Palace adjacent to the real Hell's Kitchen restaurant — a location shift that gives the season its clearest identity. The Spells Kitchen Challenge introduced a new ingredient-identification format into the weekly rotation, a modest structural addition. The cast of eighteen runs the familiar red-and-blue structure across sixteen episodes. The geography is the season's most distinctive quality, and the format delivers at a consistent level throughout. It ranks below the themed editions that changed the cast structure because the kitchen underneath is unchanged.
+
+## 20. Season 20
+
+tag: The age ceiling defines the cast and sets the season's ceiling with it.
+slot_argument: Season twenty's all-under-25 cast is a genuine first, and the experiment lands credibly. What an age ceiling cannot manufacture is the competitive depth that comes with kitchen experience — which is where the season ranks.
+community_rank_hint: rank=20 delta=0 sentiment=hold
+
+Season twenty built its entire identity on a single casting rule: every chef was 24 or younger. It's the first time the show had used an age ceiling as the primary organizing principle, and the experiment is worth watching — the cast brings ambition and energy in quantities that older, more settled casts sometimes lack. The gender-divided red-and-blue structure runs the familiar format across sixteen Las Vegas episodes. The youth angle drives the first half with real momentum. What it cannot fully deliver is the competitive depth that career experience supplies, and the season settles honestly into that limit by the end.
