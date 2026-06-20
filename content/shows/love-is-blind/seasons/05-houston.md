@@ -3,7 +3,7 @@ show: love-is-blind
 number: 5
 slug: houston
 title: "Houston"
-canonical_position: 4
+canonical_position: 6
 premiere_date: 2023-09-22
 ep_count: 10
 location: "Houston, Texas"

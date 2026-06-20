@@ -3,7 +3,7 @@ show: love-is-blind
 number: 1
 slug: atlanta
 title: "Atlanta"
-canonical_position: 3
+canonical_position: 4
 premiere_date: 2020-02-13
 ep_count: 10
 location: "Atlanta, Georgia"

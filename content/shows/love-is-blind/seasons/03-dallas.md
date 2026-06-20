@@ -3,7 +3,7 @@ show: love-is-blind
 number: 3
 slug: dallas
 title: "Dallas"
-canonical_position: 5
+canonical_position: 9
 premiere_date: 2022-10-19
 ep_count: 10
 location: "Dallas, Texas"
