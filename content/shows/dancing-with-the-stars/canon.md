@@ -211,26 +211,90 @@ community_rank_hint: rank=23 delta=0 sentiment=hold
 
 Season twenty-two assembled a spring cast with more entry points than the slot typically generates. Nyle DiMarco's participation as a deaf competitor gave the season an accessibility thread that extended the format's reach into viewer communities it had rarely addressed directly — and the competitive arc supported it rather than overshadowing it. Ginger Zee, Wanya Morris, and Von Miller each brought distinct public profiles that fed the weekly vote in different ways. Among the single-abc-era spring seasons, it stands apart for the cast diversity that made its live-vote dynamic more active than most spring runs manage.
 
+## 27. Fall 2018
+
+tag: Live-vote and judges'-score tension ran at its highest in years — the format's core conflict made visible.
+slot_argument: Season twenty-seven earns twenty-fourth for the unusually sharp gap between judges' scores and live-vote outcomes — the format's core tension running more visibly here than neighboring fall runs.
+community_rank_hint: rank=24 delta=0 sentiment=hold
+
+Season twenty-seven put the format's core tension on public display. The gap between the judges' scorecards and the live audience votes was more pronounced than it had been in years — competitors with high marks were displaced by audience favorites in patterns the scoring alone could not predict. That divergence is the format's most interesting feature, and this is the season it ran most visibly. The competitive cast covered a solid range of backgrounds, and the back-half choreography held up well. It earns its place above Fall 2016 for the format drama that made the run genuinely unpredictable.
+
 ## 23. Fall 2016
 
 tag: Post-Rio Olympic casting gave the fall run a built-in competitive credential from the opening episode.
-slot_argument: Season twenty-three earns twenty-fourth for a post-Olympics timing advantage no other single-abc-era fall season shared. Thirteen episodes gave the arc room — a clear step above fall entries without a comparably sharp casting angle.
-community_rank_hint: rank=24 delta=0 sentiment=hold
+slot_argument: Season twenty-three earns twenty-fifth for a post-Olympics timing advantage no other single-abc-era fall season shared. Thirteen episodes gave the arc room — a clear step above fall entries without a comparably sharp casting angle.
+community_rank_hint: rank=25 delta=0 sentiment=hold
 
 Season twenty-three opened immediately after the Rio Olympics, drawing competitors whose athletic achievements were still widely discussed and whose physical credentials gave early episodes a competitive floor above what a standard fall cast provides. Thirteen episodes gave the elimination arc full room to develop back-half tension. The post-Games timing was a casting advantage the show does not always have — audiences arrived with existing investment in the athletes before the ballroom competition began. It sits above Fall 2017 for that casting-timing advantage, which paid off in early competitive texture.
 
 ## 25. Fall 2017
 
 tag: Two personal narratives — cognitive health and a Paralympic arc — gave the season emotional texture.
-slot_argument: Season twenty-five earns twenty-fifth for two cast narratives that pushed the season's emotional register past what most fall editions reach. Both threads were non-competitive with real viewer weight — not common in the format.
-community_rank_hint: rank=25 delta=0 sentiment=hold
+slot_argument: Season twenty-five earns twenty-sixth for two cast narratives that pushed the season's emotional register past what most fall editions reach. Both threads were non-competitive with real viewer weight — not common in the format.
+community_rank_hint: rank=26 delta=0 sentiment=hold
 
 Season twenty-five ran eleven fall episodes with a competitive field that included two cast members whose personal narratives drew viewer attention well beyond their dance arcs. Victoria Arlen's background as a Paralympic medalist gave her participation a dimension the choreographic competition alone could not produce. Frankie Muniz's candid on-air disclosures about his cognitive health history opened a public conversation the format rarely hosts. Jordan Fisher and Drew Scott gave the competitive field additional range. The season delivered consistent choreographic quality and earned a claim to this position through the emotional weight its personal stories carried.
 
 ## 24. Spring 2017
 
 tag: A reliable spring-format delivery without a distinguishing cast angle or structural contribution.
-slot_argument: Season twenty-four sits last for doing the format's job without adding to it. A competent cast, a clean competitive arc — but no casting thread or format adjustment that separates it from the median spring entry.
-community_rank_hint: rank=26 delta=0 sentiment=hold
+slot_argument: Season twenty-four sits twenty-seventh for doing the format's job without adding to it. A competent cast, a clean competitive arc — but no casting thread or format adjustment that separates it from the median spring entry.
+community_rank_hint: rank=27 delta=0 sentiment=hold
 
-Season twenty-four ran the spring format across ten episodes with a celebrity cast that brought solid credentials from sports, entertainment, and music. The competitive arc played out in the expected shape: early adjustment, mid-season reshuffling, a narrowing back half as stronger partnerships separated from the field. Rashad Jennings, David Ross, and Heather Morris each contributed clean competitive arcs. Nothing about the casting or format departed from what the spring slot had already established. It sits at the base of the current canon for delivering the format honestly without a distinguishing thread to lift it above its neighbors.
+Season twenty-four ran the spring format across ten episodes with a celebrity cast that brought solid credentials from sports, entertainment, and music. The competitive arc played out in the expected shape: early adjustment, mid-season reshuffling, a narrowing back half as stronger partnerships separated from the field. Rashad Jennings, David Ross, and Heather Morris each contributed clean competitive arcs. Nothing about the casting or format departed from what the spring slot had already established. It sits below Fall 2017 for delivering the format honestly without a distinguishing thread to lift it above its neighbors.
+
+## 32. Fall 2023
+
+tag: A former pro behind the hosting desk and a return to broadcast — the simulcast era's most distinct opening.
+slot_argument: Season thirty-two earns twenty-eighth for a hosting shift with genuine editorial weight: Julianne Hough, a former DWTS pro, replaced Tyra Banks, while a simulcast return to ABC brought the show back to broadcast.
+community_rank_hint: rank=28 delta=0 sentiment=hold
+
+Season thirty-two introduced Julianne Hough as co-host — a former professional dancer and two-time champion who arrived with direct competitive experience that celebrity hosts cannot replicate. That appointment changed the hosting dynamic in a concrete way. The season also simulcast on Disney+ and ABC, returning the show to broadcast after a year as a streaming exclusive. Alfonso Ribeiro continued at the desk. Twelve competitive episodes gave the new team a full run to establish their rhythm. The hosting appointment and the broadcast return together make this the simulcast era's most editorially distinct entry.
+
+## 28. Fall 2019
+
+tag: The final Bergeron and Andrews season — a clean closing chapter the era didn't announce.
+slot_argument: Season twenty-eight earns twenty-ninth as the last run under Bergeron and Andrews. No structural contribution, but the historical weight of the era's closing chapter places it above the host-transition seasons below.
+community_rank_hint: rank=29 delta=0 sentiment=hold
+
+Season twenty-eight ran eleven competitive episodes and closed the Bergeron-Andrews era without announcement. The hosting partnership had defined the show's broadcast identity since season two, and this was its last outing — a fact that only became clear when the following year brought a complete hosting replacement. The competitive cast delivered the format's established arc, the live-vote dynamic played out in the expected shape, and the back-half choreography reflected a cast that had committed to improvement. A good fall run that reads differently once you know what followed.
+
+## 31. The Streaming Move
+
+tag: The platform shift that changed where fifteen million viewers went to find the show.
+slot_argument: Season thirty-one earns thirtieth for historical significance: moving off ABC broadcast for regular episodes was the format's largest distribution change since it launched. The season itself was competent; the context was structural.
+community_rank_hint: rank=30 delta=0 sentiment=hold
+
+Season thirty-one moved the show's regular episodes from ABC to Disney+ — ending a broadcast run that had lasted since 2005. The format itself stayed intact: celebrity-professional pairings, panel of judges, live vote, weekly elimination. What changed was the distribution model, and the change was total. Tyra Banks and Alfonso Ribeiro returned as co-hosts for a second year. Twelve competitive episodes played out in the familiar structure. As a competitive season it delivered the format reliably; as a chapter in the show's history it marks the clearest break the format has undergone since its American debut.
+
+## 30. Fall 2021
+
+tag: Studio audience returns; Alfonso Ribeiro joins as co-host — the Tyra era finding its footing.
+slot_argument: Season thirty earns thirty-first for a measured recovery after the COVID-disrupted debut year. The audience return and a co-host with genuine competitive credentials gave the format a more stable base than the prior season had.
+community_rank_hint: rank=31 delta=0 sentiment=hold
+
+Season thirty brought back the studio audience after the COVID-altered run of the prior year and added Alfonso Ribeiro as co-host — a former DWTS champion who brought ballroom fluency to the hosting desk. Both changes stabilized the format's atmosphere. Thirteen episodes gave the competitive arc full room to develop, and the season ran at a reliable level without the production constraints or debut uncertainty that defined the prior year. It reads as the Tyra-era season that came closest to the show's pre-pandemic competitive texture.
+
+## 29. The Tyra Debut
+
+tag: A host transition and a pandemic-altered format in the same run — two disruptions, one season.
+slot_argument: Season twenty-nine earns thirty-second for two simultaneous disruptions: no live audience and a host replacement after 28 seasons. Historical weight is real; the competitive season was constrained by forces outside the format.
+community_rank_hint: rank=32 delta=0 sentiment=hold
+
+Season twenty-nine carried more off-floor context than any season in the run's history. The COVID-19 pandemic removed the studio audience that the format's live-vote energy depends on, and a complete host replacement — Tyra Banks stepping in after 28 seasons of Tom Bergeron — arrived in the same run. Both disruptions shaped every episode. The competitive cast delivered a workable season under real production constraints, and Banks's debut generated viewer discussion about the transition. As a piece of format history it carries significant weight; as a competitive television season it was hemmed in on both sides.
+
+## 33. Fall 2024
+
+tag: The Hough/Ribeiro partnership in its second year — reliable but without a defining contribution.
+slot_argument: Season thirty-three sits thirty-third as the simulcast era's most standard entry. The hosting team settled in, the competitive format ran cleanly, and no casting angle or structural decision changed the texture of the run.
+community_rank_hint: rank=33 delta=0 sentiment=hold
+
+Season thirty-three gave the Julianne Hough and Alfonso Ribeiro partnership a second run together. The hosting dynamic was more settled than the debut year, the simulcast on Disney+ and ABC continued, and twelve competitive episodes delivered the format's established arc without notable deviation. The competitive cast brought a workable range of celebrity backgrounds, and the elimination structure stayed coherent through the back half. No casting thread or format adjustment made the season distinct from its immediate neighbors. It runs competently and earns its place at the base of the simulcast-era entries.
+
+## 34. Fall 2025
+
+tag: The simulcast era's closing entry — the format running at steady state before the hiatus.
+slot_argument: Season thirty-four sits last as the show's most recent entry before hiatus. Reliable delivery, no distinguishing cast angle or structural contribution — the format running cleanly at the base of a long catalog.
+community_rank_hint: rank=34 delta=0 sentiment=hold
+
+Season thirty-four ran as the final competitive edition before Dancing with the Stars entered hiatus. Julianne Hough and Alfonso Ribeiro returned for a third year at the hosting desk, the simulcast on Disney+ and ABC continued, and the format ran across a standard celebrity cast without a structural departure. The elimination arc played out in the expected shape, the competitive field narrowed as the season progressed, and the back-half choreography reflected the usual improvement arc. It delivered the format competently — the last full run of a show that had been remaking its own delivery infrastructure for several years.
