@@ -3,7 +3,7 @@ show: dancing-with-the-stars
 number: 7
 slug: cloris-and-company
 title: "Cloris and Company"
-canonical_position: 10
+canonical_position: 11
 premiere_date: "2008-09-22"
 location: "Los Angeles, California"
 host: "Tom Bergeron"

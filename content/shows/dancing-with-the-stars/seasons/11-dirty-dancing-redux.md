@@ -3,7 +3,7 @@ show: dancing-with-the-stars
 number: 11
 slug: dirty-dancing-redux
 title: "Dirty Dancing Redux"
-canonical_position: 9
+canonical_position: 10
 premiere_date: "2010-09-20"
 location: "Los Angeles, California"
 host: "Tom Bergeron"
