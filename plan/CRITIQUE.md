@@ -1,5 +1,36 @@
 # CRITIQUE
 
+> Last pass: 2026-06-20 at commit 169ae72
+> Pass count: 60
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 60 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/hells-kitchen`,
+> `/shows/hells-kitchen/season/young-guns`,
+> `/shows/big-brother`, `/shows/survivor-australia`,
+> `/themes/best-returnees`) and authed (6 URLs: `/`,
+> `/shows/hells-kitchen/season/all-stars`,
+> `/shows/hells-kitchen/season/standard-run`, `/u/e2e`,
+> `/shows/big-brother`, `/themes/best-newbie-casts`) walks ran
+> across desktop + mobile viewports. Pass focused on recently
+> drained Hell's Kitchen content (S16–S20) and under-critiqued
+> shows (Big Brother, Australian Survivor). Findings filtered
+> against 33-item pending list: survivor-australia WHO section
+> duplicate dropped (already pending pass-58); HK S-tier heading
+> duplicate dropped (same class as pending RHONY/Voice/RHOA
+> findings); best-returnees blurb-echo dropped (blurbs materially
+> differ on close reading); best-newbie-casts adjacent-entry
+> formula dropped (closing beats structurally distinct); big-brother
+> stat strip label dropped (by-design variation for full vs
+> partial-coverage shows). Self-assessment filed 4 findings (0
+> high, 1 medium, 3 low). Spoiler discipline P0 intact — every
+> row is a comprehension / voice / punctuation observation; zero
+> winner / elimination / finale beat exposure.
+>
+> ───── Pass 59 metadata kept below for history ─────
+>
 > Last pass: 2026-06-20 at commit cd46f7e
 > Pass count: 59
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1847,6 +1878,10 @@
 - [ ] [LOW] [authed] /shows/below-deck-adventure — The canon stat strip reads '1 SEASONS IN CANON' — the label does not singularize when the count is one. For a single-season show the correct reading is '1 SEASON IN CANON'. The stat label helper returns the plural form unconditionally. Fix: add a count guard so the label singularizes when `seasonsAired === 1` — update the seasons-stat label helper (likely `src/lib/canon/`) to return 'season in canon' (singular) when count is 1. Add a unit test pinning the singular branch to prevent future regression. Spoiler P0 intact (display label only). (URL: /shows/below-deck-adventure, source: critique-pass-53) — a124b6b
 
 - [ ] [LOW] [authed] /shows/alone — The canon rationale and era toolbar reference 'the no-host era' without naming which seasons it covers, while 12 seasons are aired and only 5 are currently in canon. Era tab labels read 'NO-HOST ERA' and 'COLBY ERA' with no parenthetical season ranges. A first-time visitor cannot map the era labels to a season range and the gap between 12 aired seasons and 5 canon entries is visible but unexplained. Fix: add season-number ranges to the era tab labels in `content/shows/alone/canon.md` (e.g. 'NO-HOST ERA (S1–5)' and 'COLBY ERA (S6–12)') or to the 'Who ranks it' prose in the canon header, making the partial-coverage boundary explicit for first-time visitors. Content fix. Spoiler P0 intact. (URL: /shows/alone, source: critique-pass-53) — a124b6b
+- [ ] [MED] [anon] /shows/hells-kitchen — the methodology "When I revisit" section (`meth_when_p`) reads "Twenty slots now cover all three eras — the founding run, the evolution-era numbered seasons, and the first themed editions through season twenty." while the hero stat strip reads "24 SEASONS AIRED" and the H1 blurb opens "24 seasons." A first-time visitor sees twenty-four seasons on the stat strip and blurb, then reads copy that says only twenty slots exist — the four unranked seasons (S21–S24) are never acknowledged or bridged. The gap is visible from the hero section before the methodology is reached. Fix: rephrase `meth_when_p` in `content/shows/hells-kitchen/canon.md` to acknowledge the partial coverage, e.g. "Twenty of twenty-four seasons are now ranked, covering all three eras — the founding run, the evolution-era numbered seasons, and the first themed editions through season twenty. S21–S24 are next in queue." Content-only fix; one field in canon.md. Spoiler discipline P0 intact (season count only, no outcomes). (URL: /shows/hells-kitchen, source: critique-pass-60) — 169ae72
+- [ ] [LOW] [anon] /shows/big-brother — the methodology "How I weigh it" section (`meth_how_p`) lists four criteria phrased as questions but each ends with a period instead of a question mark: "Cast — does this house produce confessionals you remember a year later. House dynamics — do the alliances and feuds hold the season together. Twist execution — does the conceit land, or eat the room. Argument — does this season change what Big Brother can do next." All four clauses open with an interrogative "does" or "do" but close on a full stop — a punctuation inconsistency that creates a halting read. Fix: replace the four closing periods with question marks in `meth_how_p` in `content/shows/big-brother/canon.md`. One-field content fix; no code change. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-60) — 169ae72
+- [ ] [LOW] [anon] /themes/best-newbie-casts — the tagline's second sentence "These are the rookie rosters that walked in fluent" echoes the H1 title "Rookie casts walking in fluent" verbatim. A visitor reads the phrase twice in immediate succession (H1 → opening paragraph) without new information added in between. The first tagline sentence ("Some first-time casts step off the boat playing like they've already done this") introduces the idea; the second restates the title rather than advancing it. Fix: revise the tagline's second sentence in `content/themes/best-newbie-casts.md` to close on a distinct idea — e.g. drop the echo phrase and extend the first sentence's thought, or replace the second sentence with a distinguishing observation about what these casts share. Content-only fix; one field. Spoiler discipline P0 intact. (URL: /themes/best-newbie-casts, source: critique-pass-60) — 169ae72
+- [ ] [LOW] [authed] /shows/big-brother — the `card_tagline` field (which drives the page meta description) is a trimmed version of the full `tagline` rather than a distinct pull. `tagline`: "26 seasons of houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre, and still the loudest room on summer television." `card_tagline`: "26 seasons of houseguests locked in a soundstage, voting each other out one Thursday at a time. Still the loudest room on summer television." The two are effectively the same sentence with detail stripped — a reader arriving from search sees the meta description and then reads the near-identical opening on-page. A distinct card_tagline should lead with a different angle (e.g. the alliance game, the summer franchise, the studio-audience format) rather than abbreviating the lede. Fix: rewrite `card_tagline` in `content/shows/big-brother.md` to lead with a different editorial angle that teases rather than abbreviates the on-page lede. Content-only fix; one field. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-60) — 169ae72
 
 ## Done
 
