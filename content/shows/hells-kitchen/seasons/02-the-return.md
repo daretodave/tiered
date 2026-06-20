@@ -6,7 +6,7 @@ premiere_date: 2006-06-12
 ep_count: 15
 location: Los Angeles, California
 host: Gordon Ramsay
-canonical_position: 4
+canonical_position: 6
 eyebrow: "Aired summer 2006 · First refinement"
 lede: "Hell's Kitchen returns with a stronger cast and tighter production. The dinner service format has found its editorial rhythm, and Ramsay has settled into his television register."
 pull: "The format's first confident step — the show knows what it is now, and acts like it."

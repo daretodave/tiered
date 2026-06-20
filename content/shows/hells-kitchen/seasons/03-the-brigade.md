@@ -6,7 +6,7 @@ premiere_date: 2007-06-11
 ep_count: 14
 location: Los Angeles, California
 host: Gordon Ramsay
-canonical_position: 5
+canonical_position: 8
 eyebrow: "Aired summer 2007 · Third outing"
 lede: "Hell's Kitchen's third run brings a cast with enough personality spread to carry the dinner service format across a full season — but the production is still working out how much pressure the format can hold."
 pull: "A transitional season. More voices than the first two, not quite the shape to use them all."
