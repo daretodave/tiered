@@ -99,58 +99,98 @@ community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Season fifteen ran the format's first and, for many years, only returning-cast edition. Former competitors arrived with choreographic technique already in place, and the early episodes reflected that immediately — the usual week-one adjustment period collapsed because the cast had been there before. Thirteen episodes gave the competitive arc full room. The nostalgia energy gave the season a distinct emotional register no standard cast can replicate. As the only structural departure from the standard casting frame in the double-cycle era, it earns ninth place above seasons that executed the established formula without varying it.
 
+## 18. Winter Athletes
+
+tag: Olympic and Paralympic casting that raised the single-abc-era spring format to a new level.
+slot_argument: Season eighteen earns tenth for a casting angle that paid off immediately — elite winter athletes arrived with the physical foundation spring casts rarely have, producing stronger early choreography than the slot typically generates.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Season eighteen drew on the 2014 Winter Olympics and Paralympic Games to assemble a cast with genuine physical discipline — the same athletic-casting logic that worked in season six, applied to a spring run where the effect was more pronounced. Olympic and Paralympic competitors compressed the usual week-one adjustment curve, and the early choreography reflected that. The competitive field stayed more open for longer than a standard spring cast allows. Among the single-abc-era seasons, it stands as the one that used the athletic-casting approach with the most deliberate effect.
+
 ## 11. Dirty Dancing Redux
 
 tag: Live-vote drama that exposed the format's core tension more clearly than most seasons manage.
-slot_argument: Season eleven earns tenth for the productive tension between judges and public vote. The cast was uneven early, but the format's conflict between artistic merit and popular appeal played out more visibly here than in neighboring seasons.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+slot_argument: Season eleven earns eleventh for the productive tension between judges and public vote. The cast was uneven early, but the format's conflict between artistic merit and popular appeal played out more visibly here than in neighboring seasons.
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Season eleven stands out in the early canon for how sharply the live-vote dynamic diverged from the judges' scores at key moments. The cast ranged widely across celebrity types — entertainment veterans, athletes, reality-television figures — producing uneven early choreography and a competitive field that reshuffled unexpectedly. Jennifer Grey's participation, drawing directly on her Dirty Dancing biography, gave the season a cultural through-line that held viewer attention at the back half. The gap between scorecards and phone votes was the story, and it was a genuine one.
 
 ## 7. Cloris and Company
 
 tag: The oldest cast the show had assembled — a casting expansion that the format absorbed cleanly.
-slot_argument: Season seven earns eleventh for Cloris Leachman's participation at 82, which expanded the format's reach without destabilizing competition. The thirteen-episode run gave the elimination arc room that shorter fall seasons couldn't provide.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+slot_argument: Season seven earns twelfth for Cloris Leachman's participation at 82, which expanded the format's reach without destabilizing competition. The thirteen-episode run gave the elimination arc room that shorter fall seasons couldn't provide.
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Season seven ran thirteen episodes with a cast wider in age and profile than the show had previously assembled. Cloris Leachman's participation at 82 was the defining casting note — not a novelty booking but a genuine test of what the format was willing to ask of its cast. The rest of the lineup brought strong entertainment and athletic credentials. The thirteen-episode run, the longest the fall slot had attempted, gave the back-half elimination arc genuine room to develop as the stronger partnerships separated from the field.
 
 ## 10. Spring 2010
 
 tag: A technically accomplished cast that delivered the format without generating a defining moment.
-slot_argument: Season ten sits twelfth for reliable execution without a defining contribution. A credential-heavy cast reduced the format's core tension — watching someone learn — and the season never generated its own narrative.
-community_rank_hint: rank=12 delta=0 sentiment=hold
+slot_argument: Season ten sits thirteenth for reliable execution without a defining contribution. A credential-heavy cast reduced the format's core tension — watching someone learn — and the season never generated its own narrative.
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
 Season ten assembled a cast heavy in performance credentials — musicians, Olympic athletes, and entertainers whose physical backgrounds compressed the learning curve from episode one. The early choreography was technically accomplished for the stage of the competition. But a cast that arrives nearly ready sacrifices one of the format's core pleasures: the visible arc of someone figuring out how to dance. Eleven episodes gave the competition clean shape. The season delivered the format reliably and earns its place at this point in the canon for exactly that.
+
+## 21. Fall 2015
+
+tag: Wide-ranging personality cast — one of the stronger fall editions of the single-abc era.
+slot_argument: Season twenty-one earns fourteenth for a celebrity cast that covered more ground in age and background than most fall editions, translating into a competitive frame where the live-vote dynamic stayed genuinely active through the back half.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season twenty-one built a celebrity cast that covered a wider range of ages, backgrounds, and public profiles than most fall editions in the single-abc era. That diversity translated into a competitive field with genuine unpredictability in the middle episodes — the live-vote dynamic shifted week to week in ways that kept the elimination stakes alive. Twelve episodes gave each partnership room to develop, and the back-half choreography reflected a cast that had committed to the process. Among the single-abc-era fall seasons, it holds the clearest claim to this position.
 
 ## 12. Spring 2011
 
 tag: Athletic casting that kept the competitive floor higher than the spring slot typically managed.
-slot_argument: Season twelve earns thirteenth through its athletic casting, which gave early episodes more competitive texture than neighboring spring seasons. The floor held through eleven episodes in a way Spring 2012 and Fall 2011 didn't match.
-community_rank_hint: rank=13 delta=0 sentiment=hold
+slot_argument: Season twelve earns fifteenth through its athletic casting, which gave early episodes more competitive texture than neighboring spring seasons. The floor held through eleven episodes in a way Spring 2012 and Fall 2011 didn't match.
+community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season twelve assembled a spring cast with stronger athletic representation than the slot typically produced. That casting choice paid off in the early episodes, where the competitive gap between partners was narrower than usual and the choreographic baseline held higher than a mixed celebrity cast would have delivered. Eleven episodes gave the elimination arc room to develop. The back-half choreography reflected genuine improvement. Among the later double-cycle spring seasons, it ranks above its neighbors for the cast quality that kept the competitive frame honest throughout the run.
 
 ## 14. Spring 2012
 
 tag: The double-cycle format running at a reliable late-era level without any distinguishing angle.
-slot_argument: Season fourteen sits fourteenth as a clean late-era double-cycle entry. It edges Fall 2011 for slightly more competitive coherence — the cast held together better through the back half — but neither season generated a defining narrative.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+slot_argument: Season fourteen sits sixteenth as a clean late-era double-cycle entry. It edges Fall 2011 for slightly more competitive coherence — the cast held together better through the back half — but neither season generated a defining narrative.
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
 Season fourteen ran the double-cycle spring format at a steady late-era level. The celebrity cast was competent across entertainment and athletic backgrounds, the choreography improved week to week in the expected arc, and the elimination structure gave the back half genuine competitive weight. No single casting choice or format adjustment made the season stand apart from its neighbors. It delivered what the spring slot promised. In the canon's lower tier, it earns this rank for consistent competitive shape without the mixed early field that pulls Fall 2011 a step behind it.
+
+## 19. Fall 2014
+
+tag: Fan-engagement energy that drove the live-vote dynamic through twelve episodes.
+slot_argument: Season nineteen earns seventeenth for a personality-driven cast that activated the live-vote format more visibly than neighboring seasons. The phone-vote gap drove the competitive narrative in a way choreographic quality alone wouldn't.
+community_rank_hint: rank=17 delta=0 sentiment=hold
+
+Season nineteen assembled a personality-driven celebrity cast that the live-vote format rewarded directly. The weekly phone-vote dynamic was more active than in neighboring single-abc-era seasons — the divergence between judges' scores and audience support drove the competitive narrative through the middle episodes. Twelve episodes gave the elimination arc adequate room, and the cast delivered the format's core pleasures reliably throughout. The fan-engagement texture it generated distinguishes it clearly from seasons that leaned on choreographic quality alone to carry competitive weight.
 
 ## 13. Fall 2011
 
 tag: A mixed celebrity roster that produced a predictable competitive frame and no defining narrative.
-slot_argument: Season thirteen sits fifteenth — below Spring 2012 for a less coherent competitive field and above The Last Double because it didn't carry the added context of closing an era. No casting angle paid off in the back half.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+slot_argument: Season thirteen sits eighteenth — below Spring 2012 for a less coherent competitive field and above The Last Double because it didn't carry the added context of closing an era. No casting angle paid off in the back half.
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season thirteen ran the established double-cycle format across a varied celebrity cast without generating a clear competitive through-line. The roster covered the usual range of entertainment and athletic backgrounds, but the competitive field settled into a predictable shape early and held there. Eleven episodes were enough for the elimination arc to do its job — choreography improved across the run, weekly results carried weight — but no moment or casting decision changed how the season was watched. It sits at the base of the double-cycle catalog as the least differentiated of the fall entries.
+
+## 17. Fall 2013
+
+tag: The first single-season format year — a new scheduling rhythm that gave the fall run more room.
+slot_argument: Season seventeen earns nineteenth as the opening entry of the single-abc era. It ran a solid thirteen-episode format in the new once-per-year slot without generating a defining cast angle — notable for what it started more than what it did.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Season seventeen was the first edition under the single-season-per-year format that replaced the double cycle. Thirteen episodes gave the elimination arc more room than the eleven-episode spring runs had allowed, and the celebrity cast brought a workable mix of entertainment and athletic backgrounds. The competitive field stayed reasonably open through the middle episodes without producing a defining narrative. The season's primary significance is structural — it marked the rhythm change — and the canon places it here for a solid run that registered the new format without transcending it.
 
 ## 16. The Last Double
 
 tag: The close of the two-seasons-per-year era — the format running its final spring cycle on established rhythms.
-slot_argument: Season sixteen sits last — the double-cycle era's final spring entry ran the established rhythms without a new casting angle or structural contribution. Historical significance, not competitive merit: it marks the end of a model.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+slot_argument: Season sixteen sits twentieth — the double-cycle era's final spring entry ran the established rhythms without a new casting angle or structural contribution. Historical significance, not competitive merit: it marks the end of a model.
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
-Season sixteen was the last spring season before the show moved to a single-season-per-year format. The double-cycle era ran its final edition without announcement: eleven episodes, a standard celebrity cast, weekly eliminations in the familiar competitive shape. The format delivered its core pleasures reliably. What the season marks is the close of an eight-year, two-seasons-per-year model that defined the show's early identity. As television, it was competent. As a closing chapter, it was quiet — and that quietness is what places it at the base of the canon.
+Season sixteen was the last spring season before the show moved to a single-season-per-year format. The double-cycle era ran its final edition without announcement: eleven episodes, a standard celebrity cast, weekly eliminations in the familiar competitive shape. The format delivered its core pleasures reliably. What the season marks is the close of an eight-year, two-seasons-per-year model that defined the show's early identity. As television, it was competent. As a closing chapter, it was quiet — and that quietness is what places it near the base of the canon.
+
+## 20. The Milestone
+
+tag: The 20th-season anniversary edition — milestone framing around a standard competitive format.
+slot_argument: Season twenty sits last among the current entries. The milestone framing was real, but no structural change accompanied it, and the ten-episode spring run delivered the format without distinction.
+community_rank_hint: rank=21 delta=0 sentiment=hold
+
+Season twenty arrived carrying the promotional weight of a milestone anniversary. ABC leaned into the occasion, but no structural change accompanied the twenty-season mark — ten episodes, the standard celebrity-professional pairing structure, weekly eliminations in the familiar competitive shape. The cast covered a reasonable range of backgrounds, and the choreographic arc played out as the format typically delivers it. The milestone was real; what it changed about the format was not. That gap between occasion and execution is what places it at the base of the current canon.

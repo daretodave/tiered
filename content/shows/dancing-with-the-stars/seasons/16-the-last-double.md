@@ -3,7 +3,7 @@ show: dancing-with-the-stars
 number: 16
 slug: the-last-double
 title: "The Last Double"
-canonical_position: 16
+canonical_position: 20
 premiere_date: "2013-03-18"
 location: "Los Angeles, California"
 host: "Tom Bergeron"
