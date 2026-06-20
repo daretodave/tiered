@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-f
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — cast, whether the bench had enough talent and personality to carry a dinner service; drama, whether the kitchen conflict felt earned rather than manufactured; and format integrity, whether the season's structure respected both the cooking and the competition. Ramsay is the constant; everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon grows as more seasons land. Ten slots here now cover the founding era in full — from the debut season through the format's first decade. Themed seasons — Rookies vs. Veterans, Battle of the Ages — slot in on merit as the ranking matures. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon grows as more seasons land. Fifteen slots here now cover the founding era and the numbered run of the evolution era. Themed seasons — Rookies vs. Veterans, Battle of the Ages — slot in on merit as the ranking matures. I'm not claiming to be objective. I'm trying to be honest."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
 weekly_question: "Which early Hell's Kitchen season holds up best on a second pass — and does it still belong at the top?"
 era_bands:
@@ -99,7 +99,47 @@ Season eight is the price of running a show three times in eighteen months. Jean
 ## 10. Season 10
 
 tag: A milestone season that stretched the format further than it could hold.
-slot_argument: Twenty episodes is the longest founding-era run. The extra length exposed the format's limits at scale; celebrity guests pulled focus from the culinary core. A milestone that earns its place at the bottom.
+slot_argument: Twenty episodes is the longest founding-era run. The extra length exposed the format's limits at scale; celebrity guests pulled focus from the culinary core. A milestone that earns its place at the bottom of the founding era.
 community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season ten reaches for scale and earns its place at the bottom of the founding era for the attempt. Twenty episodes gave the cast room to develop but diluted the pressure that makes Hell's Kitchen's dinner service work — the format is built for sustained intensity, and four extra episodes spread that intensity thin. Celebrity guest appearances at service brought visible energy to individual evenings but nudged the season away from its culinary-competition core. The tenth-anniversary ambition was real. The execution overextended what the format does well.
+
+## 11. Season 11
+
+tag: The founding era's controlled exit — compact, settled, and structurally tidy.
+slot_argument: Season eleven closes the founding era with more control than the sprawl of season ten. The fourteen-episode run and mid-season punishment twist give it a cleaner shape than the two seasons immediately behind it.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Season eleven arrives as the founding era's closing chapter, and it plays like one. The format is fully settled, the kitchen mechanics are clean, and the production uses the tighter fourteen-episode run well — the pacing issue that dogged season ten is absent here. A mid-season adjustment to the punishment challenge structure adds a small wrinkle without upending the dinner service core. The sixteen-chef cast works at a solid level throughout. Not a standout, but the founding era ends on a note of competence rather than overreach.
+
+## 12. Season 12
+
+tag: The Power Apron changes the elimination math — and the social dynamics with it.
+slot_argument: Season twelve opens the evolution era with a genuine structural addition. The Power Apron immunity mechanic shifts how chefs calculate risk, and the larger cast gives the mechanic room to pay off across multiple eliminations.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Season twelve earns the twelfth slot by opening the evolution era with something new. The Power Apron — a one-time immunity device the weekly challenge winner can hold or play — introduces a strategic dimension the founding-era format never asked for. Eighteen chefs and seventeen episodes give the mechanic room to surface meaningfully rather than once and never again. The dinner service core stays intact, but the social dynamics in the kitchen shift when chefs know one of their number is carrying a safety net. A modest innovation that the evolution era built from.
+
+## 13. Season 13
+
+tag: The strongest technical cast of the evolution era's early numbered run.
+slot_argument: Season thirteen makes the case through casting alone. The bench runs skilled enough that dinner service failures carry more editorial weight — you can see what these chefs are capable of, which makes the mistakes land harder.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Season thirteen's argument rests on the quality of its cast. The evolution era shifted the talent baseline upward compared to the founding years, and this season sits at the high-water mark of that trend in the early numbered run. The bench is technically strong enough that Ramsay's corrections carry more weight — the gap between what the chefs can do and what they actually deliver in service is narrower, which makes the breakdowns more striking. Eighteen episodes give that dynamic room to accumulate. The format doesn't change; the cast does the work.
+
+## 15. Season 15
+
+tag: A purposeful close to the numbered-season run — polished cast, tighter tension than season fourteen.
+slot_argument: Season fifteen ranks above season fourteen because the cast sustains pressure across the back half in a way season fourteen's doesn't. Both run eighteen episodes at the same structural template; the cast makes the difference.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season fifteen carries the weight of a closing chapter without being asked to. It's the last numbered-only run before the format pivots to themed editions, and that context gives the season a quiet finality the production couldn't have built in deliberately. The eighteen-episode run is tightly executed, the cast has good range by evolution-era standards, and the dinner service tension holds across the back half in a way the neighboring seasons don't always manage. It ranks above season fourteen because the cast pushes harder. Both seasons share the same structural template; the bench separates them.
+
+## 14. Season 14
+
+tag: The winter premiere slot is the season's structural note — the format underneath runs dependably.
+slot_argument: Season fourteen's most distinctive feature sits on the calendar page. A January premiere was the format's first winter slot since the early years. The kitchen runs solidly; the cast doesn't sustain tension the way fifteen's does.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season fourteen's most notable trait is on the scheduling page: a January premiere was the format's first winter slot since the early years, and it signals a scheduling flexibility the evolution era kept through its run. The eighteen-chef cast and eighteen-episode run hold to the evolution era's established template. The kitchen runs correctly, the dinner services land when they need to, and the format is in good shape throughout. What keeps it at the bottom of the evolution-era numbered run is cast energy — the bench is capable but doesn't push the tension into its upper register the way the seasons above it do.
