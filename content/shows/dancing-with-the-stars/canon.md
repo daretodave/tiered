@@ -194,3 +194,43 @@ slot_argument: Season twenty sits last among the current entries. The milestone 
 community_rank_hint: rank=21 delta=0 sentiment=hold
 
 Season twenty arrived carrying the promotional weight of a milestone anniversary. ABC leaned into the occasion, but no structural change accompanied the twenty-season mark — ten episodes, the standard celebrity-professional pairing structure, weekly eliminations in the familiar competitive shape. The cast covered a reasonable range of backgrounds, and the choreographic arc played out as the format typically delivers it. The milestone was real; what it changed about the format was not. That gap between occasion and execution is what places it at the base of the current canon.
+
+## 26. Athletes
+
+tag: The format's only all-athlete edition — six condensed episodes, no standard celebrity casting.
+slot_argument: Season twenty-six earns twenty-second as the only all-Olympic and Paralympic cast edition the show has produced. Six episodes, no celebrities, no adjustment arc — a structural departure no other season attempted.
+community_rank_hint: rank=22 delta=0 sentiment=hold
+
+Season twenty-six ran an all-Olympic and Paralympic cast through six condensed episodes — the only edition in the show's history where the entire competitive field arrived with elite athletic credentials and no adjustment period to absorb. Adam Rippon, Mirai Nagasu, Tonya Harding, and their fellow competitors brought physical discipline that the standard celebrity-professional pairing format rarely sees from more than one or two cast members per season. The condensed format changed the competitive rhythm in ways the standard run cannot replicate. As a structural experiment, it earns its place clearly above the more conventional entries that follow.
+
+## 22. Spring 2016
+
+tag: The strongest spring cast of the single-abc era — an accessibility narrative with real dramatic weight.
+slot_argument: Season twenty-two earns twenty-third for a spring cast with more narrative range than any of its immediate spring-slot neighbors. The accessibility thread was real, not promotional, and gave the live-vote dynamic genuine texture.
+community_rank_hint: rank=23 delta=0 sentiment=hold
+
+Season twenty-two assembled a spring cast with more entry points than the slot typically generates. Nyle DiMarco's participation as a deaf competitor gave the season an accessibility thread that extended the format's reach into viewer communities it had rarely addressed directly — and the competitive arc supported it rather than overshadowing it. Ginger Zee, Wanya Morris, and Von Miller each brought distinct public profiles that fed the weekly vote in different ways. Among the single-abc-era spring seasons, it stands apart for the cast diversity that made its live-vote dynamic more active than most spring runs manage.
+
+## 23. Fall 2016
+
+tag: Post-Rio Olympic casting gave the fall run a built-in competitive credential from the opening episode.
+slot_argument: Season twenty-three earns twenty-fourth for a post-Olympics timing advantage no other single-abc-era fall season shared. Thirteen episodes gave the arc room — a clear step above fall entries without a comparably sharp casting angle.
+community_rank_hint: rank=24 delta=0 sentiment=hold
+
+Season twenty-three opened immediately after the Rio Olympics, drawing competitors whose athletic achievements were still widely discussed and whose physical credentials gave early episodes a competitive floor above what a standard fall cast provides. Thirteen episodes gave the elimination arc full room to develop back-half tension. The post-Games timing was a casting advantage the show does not always have — audiences arrived with existing investment in the athletes before the ballroom competition began. It sits above Fall 2017 for that casting-timing advantage, which paid off in early competitive texture.
+
+## 25. Fall 2017
+
+tag: Two personal narratives — cognitive health and a Paralympic arc — gave the season emotional texture.
+slot_argument: Season twenty-five earns twenty-fifth for two cast narratives that pushed the season's emotional register past what most fall editions reach. Both threads were non-competitive with real viewer weight — not common in the format.
+community_rank_hint: rank=25 delta=0 sentiment=hold
+
+Season twenty-five ran eleven fall episodes with a competitive field that included two cast members whose personal narratives drew viewer attention well beyond their dance arcs. Victoria Arlen's background as a Paralympic medalist gave her participation a dimension the choreographic competition alone could not produce. Frankie Muniz's candid on-air disclosures about his cognitive health history opened a public conversation the format rarely hosts. Jordan Fisher and Drew Scott gave the competitive field additional range. The season delivered consistent choreographic quality and earned a claim to this position through the emotional weight its personal stories carried.
+
+## 24. Spring 2017
+
+tag: A reliable spring-format delivery without a distinguishing cast angle or structural contribution.
+slot_argument: Season twenty-four sits last for doing the format's job without adding to it. A competent cast, a clean competitive arc — but no casting thread or format adjustment that separates it from the median spring entry.
+community_rank_hint: rank=26 delta=0 sentiment=hold
+
+Season twenty-four ran the spring format across ten episodes with a celebrity cast that brought solid credentials from sports, entertainment, and music. The competitive arc played out in the expected shape: early adjustment, mid-season reshuffling, a narrowing back half as stronger partnerships separated from the field. Rashad Jennings, David Ross, and Heather Morris each contributed clean competitive arcs. Nothing about the casting or format departed from what the spring slot had already established. It sits at the base of the current canon for delivering the format honestly without a distinguishing thread to lift it above its neighbors.
