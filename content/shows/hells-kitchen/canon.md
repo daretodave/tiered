@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-f
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — cast, whether the bench had enough talent and personality to carry a dinner service; drama, whether the kitchen conflict felt earned rather than manufactured; and format integrity, whether the season's structure respected both the cooking and the competition. Ramsay is the constant; everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon grows as more seasons land. Twenty slots now cover all three eras — the founding run, the evolution-era numbered seasons, and the first themed editions through season twenty. Each new entry slots on merit against what is already here. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon grows as more seasons land. Twenty-four slots now cover all three eras — the founding run, the evolution-era numbered seasons, and the themed editions through season twenty-four. Each new entry slots on merit against what is already here. I'm not claiming to be objective. I'm trying to be honest."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
 weekly_question: "Which early Hell's Kitchen season holds up best on a second pass — and does it still belong at the top?"
 era_bands:
@@ -183,3 +183,35 @@ slot_argument: Season twenty's all-under-25 cast is a genuine first, and the exp
 community_rank_hint: rank=20 delta=0 sentiment=hold
 
 Season twenty built its entire identity on a single casting rule: every chef was 24 or younger. It's the first time the show had used an age ceiling as the primary organizing principle, and the experiment is worth watching — the cast brings ambition and energy in quantities that older, more settled casts sometimes lack. The gender-divided red-and-blue structure runs the familiar format across sixteen Las Vegas episodes. The youth angle drives the first half with real momentum. What it cannot fully deliver is the competitive depth that career experience supplies, and the season settles honestly into that limit by the end.
+
+## 23. Season 23
+
+tag: The strongest new-location premiere the show has managed — all-EC cast, first East Coast production.
+slot_argument: Season twenty-three's all-EC cast is the closest the themed era has come to the All-Stars competitive floor without drawing on returning players. The Foxwoods move and new sous-chef lineup add structural novelty.
+community_rank_hint: rank=21 delta=0 sentiment=hold
+
+Season twenty-three makes the most persuasive casting argument of the themed era's later run. Every contestant was already running a kitchen in a head chef or executive chef role — no line cooks, no students building toward their first leadership position. That floor change registers immediately: the dinner services run with fewer fundamental breakdowns and more competition between cooks who already know what the job demands. The move to Foxwoods Resort Casino in Connecticut marked the franchise's first East Coast production, and the new sous-chef pairing of Michelle Tribble and James Avery gave the pass a fresh authority.
+
+## 24. Season 24
+
+tag: Geographic diversity as casting principle — twenty states, one kitchen.
+slot_argument: Season twenty-four's one-per-state structure is the most geographically varied cast construction the franchise has used. The twenty-chef field gives the format more room than any other Foxwoods season.
+community_rank_hint: rank=22 delta=0 sentiment=hold
+
+Season twenty-four is the show's most geographically deliberate cast yet — twenty chefs, each representing a different U.S. state, competing at Foxwoods Resort Casino for a head chef role and $250,000. The one-per-state framing is more than a graphic on the application form: it produces a cast with a broader range of regional kitchen cultures than a standard open call generates. Michelle Tribble and James Avery return as sous-chefs for the second consecutive Foxwoods season. The expanded twenty-chef field gives the format more to work with across its sixteen episodes.
+
+## 22. Season 22
+
+tag: The American Dream theme with an international cast that earns the framing.
+slot_argument: Season twenty-two's international cast makes the American Dream theme substantive. Its status as the last California-based production gives it context a standard mid-run edition lacks.
+community_rank_hint: rank=23 delta=0 sentiment=hold
+
+Season twenty-two runs the sixteen-episode structure with an international cast that gives the American Dream theme genuine weight. The format is familiar — eighteen chefs, gender-divided teams, the standard elimination sequence — but the international field produces a competitive dynamic that plays differently from a domestic-only roster. This was also the last season produced on the California stage the show had used for most of its run, which gives the season an accidental retrospective quality. It ranks above season twenty-one because its casting concept holds for the full run; the seasons around it are all doing something new at the address level.
+
+## 21. Season 21
+
+tag: An age-split premise that reorganized itself out of existence by episode four.
+slot_argument: The twentysomethings-versus-fortysomethings premise dissolved after three episodes into a standard gender-divided lineup. What remained was competent Hell's Kitchen without a season-defining idea underneath it.
+community_rank_hint: rank=24 delta=0 sentiment=hold
+
+Season twenty-one arrives with a specific premise — twentysomethings against fortysomethings — and commits to it for three episodes before reorganizing by gender into the show's standard red-and-blue alignment. What remains after that reorganization is a competent Hell's Kitchen run with Christina Wilson and Jason Santos on opposite sides of the pass. The cast is capable, the dinner services function, and the format delivers at its reliable level throughout. The season's ceiling is set by its opening act: a concept that promised something structurally new and then stepped back from it. The format underneath is fine. The promise wasn't kept.
