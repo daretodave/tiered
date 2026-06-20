@@ -3,7 +3,7 @@ show: rhony
 number: 1
 slug: the-origin
 title: "The Origin"
-canonical_position: 2
+canonical_position: 4
 premiere_date: "2008-03-04"
 location: "New York City"
 ep_count: 16

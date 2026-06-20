@@ -3,7 +3,7 @@ show: rhony
 number: 5
 slug: the-new-guard
 title: "The New Guard"
-canonical_position: 3
+canonical_position: 5
 premiere_date: "2012-07-17"
 location: "New York City"
 ep_count: 22

@@ -3,7 +3,7 @@ show: rhony
 number: 2
 slug: the-expanded-circle
 title: "The Expanded Circle"
-canonical_position: 5
+canonical_position: 11
 premiere_date: "2009-03-03"
 location: "New York City"
 ep_count: 18

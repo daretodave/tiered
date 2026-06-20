@@ -3,7 +3,7 @@ show: rhony
 number: 4
 slug: the-moroccan-arc
 title: "The Moroccan Arc"
-canonical_position: 4
+canonical_position: 6
 premiere_date: "2011-04-07"
 location: "New York City · Marrakesh, Morocco"
 ep_count: 22
