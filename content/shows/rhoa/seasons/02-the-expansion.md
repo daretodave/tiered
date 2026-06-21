@@ -3,7 +3,7 @@ show: rhoa
 number: 2
 slug: the-expansion
 title: "The Expansion"
-canonical_position: 4
+canonical_position: 8
 premiere_date: "2009-10-04"
 location: "Atlanta, Georgia"
 ep_count: 18

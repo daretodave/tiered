@@ -3,7 +3,7 @@ show: rhoa
 number: 4
 slug: the-dynasty
 title: "The Dynasty"
-canonical_position: 3
+canonical_position: 4
 premiere_date: "2011-11-06"
 location: "Atlanta, Georgia"
 ep_count: 22

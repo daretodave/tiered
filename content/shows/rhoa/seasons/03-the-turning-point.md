@@ -3,7 +3,7 @@ show: rhoa
 number: 3
 slug: the-turning-point
 title: "The Turning Point"
-canonical_position: 2
+canonical_position: 3
 premiere_date: "2010-11-07"
 location: "Atlanta, Georgia"
 ep_count: 20

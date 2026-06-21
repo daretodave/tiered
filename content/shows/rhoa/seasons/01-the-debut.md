@@ -3,7 +3,7 @@ show: rhoa
 number: 1
 slug: the-debut
 title: "The Debut"
-canonical_position: 5
+canonical_position: 10
 premiere_date: "2008-10-07"
 location: "Atlanta, Georgia"
 ep_count: 10
