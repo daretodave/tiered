@@ -63,3 +63,83 @@ slot_argument: Season four pushed the audition circuit wider and the studio run 
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Season four extended the format in nearly every direction — more audition cities, a longer competition, higher production stakes. The ambition was real and often visible in how the studio rounds were framed. The original panel brought the same dynamic that had made season three work, and there were stretches where the competition felt like the format operating at a high level. What keeps it at the bottom of the founding canon is a field that didn't have the consistent depth of season five or the first-document energy of the debut. The expansion showed what Idol could scale to; the seasons above it showed it at its sharpest.
+
+## 8. The Strong Field
+
+tag: The original panel's final intact season and arguably its strongest audition class.
+slot_argument: Season eight closed out the unbroken original-panel run with what many consider the deepest audition class the trio ever worked with — a top twelve with range spanning gospel-rooted performers to theatrical pop.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Season eight sits just outside the founding five because the audition class stands alongside the best of the original-panel era. The Hollywood round distilled a genuinely wide field into a top twelve with real competitive range — gospel-rooted singers, theatrical pop performers, and voices that didn't fit a single commercial lane. Simon Cowell, Randy Jackson, and Paula Abdul were running the format for the last time as a complete unit, though none of them knew it during the season. That retrospective weight adds something. The competition itself earns the rank; the farewell adds texture.
+
+## 10. The New Panel
+
+tag: Jennifer Lopez, Steven Tyler — the format's biggest judging reset since the debut.
+slot_argument: Season ten rebuilt the panel entirely, and the cultural moment around Jennifer Lopez returning to prime time and Steven Tyler joining from rock made the reset itself a television event before the first contestant auditioned.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season ten earns its slot as one of the most significant format pivots in the show's Fox run. Jennifer Lopez returning to weekly television was a cultural event the network understood and built around. Steven Tyler brought a rock aesthetic no previous Idol judge had carried, and his presence changed what the critique listened for. Randy Jackson remained as the sole point of continuity. The pivot away from Cowell-era precision toward encouragement was real and deliberate. As a format document — a show resetting its judging identity — season ten is more interesting than most of the rotation era that followed it.
+
+## 15. The Farewell
+
+tag: Fox's closing season — the competition wrapped in deliberate retrospective framing.
+slot_argument: Season fifteen ran as an explicit farewell — Fox announced the end before the season began, and the production honored that framing with returning alumni, earlier judges, and a run shaped like a closing ceremony.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season fifteen places here because the farewell framing, handled honestly, makes for better television than the quiet rotation seasons surrounding it. Fox announced the end before the first episode, and the production leaned into the occasion — returning contestants from earlier eras, appearances from judges who had long since left, live rounds that carried the weight of a closing ceremony. The competition was shorter than most Fox seasons. The elegiac register is not always the most effective mode for a competition show, but when the occasion is real and the production commits to it, the sentiment earns its place.
+
+## 7. The Maturity
+
+tag: The original panel in full stride — no pivots, just the format at working confidence.
+slot_argument: Season seven ran the original panel through a format that had nothing left to prove and a genuinely competitive top twelve to show for it.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season seven doesn't have a structural story to tell — no new judges, no format changes, no philanthropic broadcast. What it has is the original panel working at full working confidence through a strong audition field. Simon Cowell, Randy Jackson, and Paula Abdul had been running this format long enough to trust their instincts without leaning on them, and the Hollywood round produced a top twelve with genuine competitive range. The competition ran cleanly. The judging felt honest. That is the whole case, and it is enough to land season seven above the more turbulent rotation seasons that followed.
+
+## 13. The Reset
+
+tag: Harry Connick Jr. and a panel with real musical authority — the rotation era's high point.
+slot_argument: Season thirteen assembled the rotation era's most credible judging panel, with Harry Connick Jr.'s musician background bringing technical depth that the competition had been missing since Simon Cowell's exit.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Season thirteen earns the rotation era's top slot because it solved the judging problem season twelve created. Jennifer Lopez returning brought star presence; Harry Connick Jr.'s working musician credentials brought something the post-Cowell panels had been missing — critique that came from genuine technical knowledge rather than taste alone. Keith Urban held his role with the same quiet effectiveness he'd shown in season twelve. The panel had stable, warm chemistry. Ratings stayed below the original-panel era, but the judging table gave contestants something real to work against. The reset worked.
+
+## 6. The Format Test
+
+tag: The expanded finalist pool and the Idol Gives Back charity event — a bigger format.
+slot_argument: Season six tested how wide the format could run by expanding live voting rounds to twenty-four finalists and introducing Idol Gives Back, a mid-season philanthropic broadcast that proved the show could hold more than a straight competition.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Season six sits in the lower half of the original-panel era because the format expansion is more interesting as a structural document than as a viewing experience. Doubling the finalist pool for live rounds changed the pacing of the early competition — more contestants, more weeks before the field narrowed to manageable stakes. Idol Gives Back was a genuine production innovation: a charity broadcast event inserted mid-season that demonstrated the format could carry social weight alongside the competition. The original panel managed both without losing the thread. Ambitious more than excellent.
+
+## 9. The Transition
+
+tag: Panel flux and a departing anchor — the season where the original era ended.
+slot_argument: Season nine ran with a new judge in Ellen DeGeneres and a mid-season announcement that Simon Cowell would depart, making the competition a backdrop to the format's most significant personnel shift since the debut.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Season nine belongs near the bottom of the original-panel era because the panel itself was no longer the original panel. Ellen DeGeneres brought warmth and comedy instincts to a judging seat that had functioned as emotional counterweight; the result shifted the critique register in ways the competition absorbed imperfectly. Simon Cowell's mid-season announcement that he was leaving for The X Factor US turned the remaining episodes into something between a competition and a farewell. Ratings held. The format kept moving. But the engine that had driven the first eight seasons was winding down in real time.
+
+## 11. The Rock Era
+
+tag: Lopez and Tyler's final season — the panel's rhythm found too late to matter.
+slot_argument: Season eleven ran the Lopez–Tyler–Jackson panel through its second and final year. The chemistry had settled, but the departures that followed meant the stability was temporary and the improvement it represented landed without consequence.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Season eleven belongs in the lower canon because what it improved on season ten — a panel that had found its working rhythm — was immediately dismantled when Jennifer Lopez and Steven Tyler both departed after the run. The audition circuit covered strong ground and the panel's encouragement-forward dynamic was more consistent than in its debut year. But a panel hitting its stride in its farewell season is hard to rank above the seasons where the rhythm actually had somewhere to go. The rock era closed before it could build anything lasting.
+
+## 14. The Quiet Year
+
+tag: The stable panel with nothing new to offer — the rotation era at its most uneventful.
+slot_argument: Season fourteen returned the Lopez–Connick–Urban panel without change and ran a standard competition cycle. No structural innovations, no panel drama, nothing that distinguished it from what came before or after.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season fourteen sits near the bottom because there is nothing to hold onto. The Lopez–Connick–Urban panel returned intact, which was the right call after season twelve's turbulence — but the second year of a stable panel that had already settled its identity doesn't generate new material. The audition circuit ran familiar ground. Harry Connick Jr.'s technical critique kept the judging honest. The competition ran a clean standard cycle. None of this is wrong; none of it is memorable. Season fourteen is the clearest example of a rotation-era season that existed without leaving a mark.
+
+## 12. The Friction
+
+tag: Nicki Minaj, Mariah Carey, and a judging table that outran the competition.
+slot_argument: Season twelve assembled the most volatile judging panel in Idol history. The on-camera friction between Nicki Minaj and Mariah Carey overwhelmed the competition, drove ratings down, and is what the season is remembered for.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season twelve sits at the bottom of the canon because the panel became the show in a way that damaged it. The on-camera friction between Nicki Minaj and Mariah Carey was not manufactured drama that made for good television — it was genuine conflict that made the judging table feel unstable and the critique unreliable. Keith Urban was present and professional. Randy Jackson shifted to a mentor role mid-season. Ratings dropped significantly. The contestants competed, but competing for attention against panel drama is not the environment the format was built to reward. The lowest point in the Fox run.
