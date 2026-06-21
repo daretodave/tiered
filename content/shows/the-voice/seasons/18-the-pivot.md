@@ -3,7 +3,7 @@ show: the-voice
 number: 18
 slug: the-pivot
 title: "The Pivot"
-canonical_position: 18
+canonical_position: 21
 premiere_date: "2020-02-24"
 location: "Los Angeles"
 host: "Carson Daly"

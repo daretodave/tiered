@@ -3,7 +3,7 @@ show: the-voice
 number: 16
 slug: the-standard
 title: "The Standard"
-canonical_position: 12
+canonical_position: 13
 premiere_date: "2019-02-25"
 location: "Los Angeles"
 host: "Carson Daly"

@@ -3,7 +3,7 @@ show: the-voice
 number: 15
 slug: the-fellowship
 title: "The Fellowship"
-canonical_position: 16
+canonical_position: 18
 premiere_date: "2018-09-24"
 location: "Los Angeles"
 host: "Carson Daly"

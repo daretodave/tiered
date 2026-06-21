@@ -3,7 +3,7 @@ show: the-voice
 number: 11
 slug: the-reinvention
 title: "The Reinvention"
-canonical_position: 14
+canonical_position: 15
 premiere_date: "2016-09-19"
 location: "Los Angeles"
 host: "Carson Daly"

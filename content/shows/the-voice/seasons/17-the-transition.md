@@ -3,7 +3,7 @@ show: the-voice
 number: 17
 slug: the-transition
 title: "The Transition"
-canonical_position: 15
+canonical_position: 17
 premiere_date: "2019-09-23"
 location: "Los Angeles"
 host: "Carson Daly"

@@ -3,7 +3,7 @@ show: the-voice
 number: 14
 slug: the-new-bench
 title: "The New Bench"
-canonical_position: 11
+canonical_position: 12
 premiere_date: "2018-02-26"
 location: "Los Angeles"
 host: "Carson Daly"

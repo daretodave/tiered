@@ -3,7 +3,7 @@ show: the-voice
 number: 19
 slug: the-bubble
 title: "The Bubble"
-canonical_position: 20
+canonical_position: 29
 premiere_date: "2020-10-19"
 location: "Los Angeles"
 host: "Carson Daly"

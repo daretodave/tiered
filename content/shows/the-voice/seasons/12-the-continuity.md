@@ -3,7 +3,7 @@ show: the-voice
 number: 12
 slug: the-continuity
 title: "The Continuity"
-canonical_position: 17
+canonical_position: 19
 premiere_date: "2017-02-27"
 location: "Los Angeles"
 host: "Carson Daly"

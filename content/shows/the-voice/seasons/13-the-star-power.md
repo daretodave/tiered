@@ -3,7 +3,7 @@ show: the-voice
 number: 13
 slug: the-star-power
 title: "The Star Power"
-canonical_position: 13
+canonical_position: 14
 premiere_date: "2017-09-25"
 location: "Los Angeles"
 host: "Carson Daly"

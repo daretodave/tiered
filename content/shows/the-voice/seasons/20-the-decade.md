@@ -3,7 +3,7 @@ show: the-voice
 number: 20
 slug: the-decade
 title: "The Decade"
-canonical_position: 19
+canonical_position: 24
 premiere_date: "2021-03-01"
 location: "Los Angeles"
 host: "Carson Daly"
