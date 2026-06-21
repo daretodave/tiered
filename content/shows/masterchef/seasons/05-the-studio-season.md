@@ -6,7 +6,7 @@ premiere_date: 2014-05-26
 ep_count: 19
 location: Los Angeles, California
 host: Gordon Ramsay
-canonical_position: 5
+canonical_position: 10
 eyebrow: "Aired summer 2014 · Final founding trio"
 lede: "Season five runs the founding-era format at a reliable level across nineteen episodes. Ramsay, Elliot, and Bastianich appear together for the last time, and the competition delivers the format's familiar satisfactions without pushing beyond them."
 pull: "The founding trio's final season — consistent, clean, and honest about its ceiling."

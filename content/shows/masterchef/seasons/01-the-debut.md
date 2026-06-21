@@ -6,7 +6,7 @@ premiere_date: 2010-07-27
 ep_count: 13
 location: Los Angeles, California
 host: Gordon Ramsay
-canonical_position: 3
+canonical_position: 5
 eyebrow: "Aired summer 2010 · The debut season"
 lede: "MasterChef arrives on Fox with Gordon Ramsay, Graham Elliot, and Joe Bastianich sorting home cooks through a white-apron audition and building a new elimination format from scratch. Thirteen episodes, a small cast, and a competition that didn't quite know what it was yet."
 pull: "The format finding its feet — the white apron, the mystery box, and a judging panel learning to work together."

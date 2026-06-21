@@ -6,7 +6,7 @@ premiere_date: 2011-06-06
 ep_count: 20
 location: Los Angeles, California
 host: Gordon Ramsay
-canonical_position: 4
+canonical_position: 7
 eyebrow: "Aired summer 2011 · First refinement"
 lede: "MasterChef returns with more episodes, a stronger cast, and a judging panel that has stopped improvising. Season two is the format's first confident step — the cooking is better, the critique is sharper, and the structure runs with more editorial purpose."
 pull: "The debut format, tightened. The show knows what it is now and starts acting like it."
