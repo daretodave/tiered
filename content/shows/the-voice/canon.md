@@ -1,13 +1,13 @@
 ---
 show: the-voice
 editor: tiered.tv editor
-last_revised: 2026-06-20
+last_revised: 2026-06-21
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've tracked The Voice from its debut through its current run. The ranking weighs coaching chemistry, the quality of the blind auditions, and whether the live shows delivered on the format's central promise: that a voice is enough. The ranking is mine. I'd make it again."
 meth_how_h: "How I weigh it"
 meth_how_p: "The blind audition is the load-bearing device. Seasons where the chair turning felt earned — where coaching decisions carried real competitive stakes — earn more than seasons where the mechanics ran smoothly but without urgency. Coaching chemistry is the second variable: when the competition among coaches was real, the recruiting was sharper and the season more interesting."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon starts with five seasons here. As the drain adds seasons six onward, the rankings will shift — later cycles introduce new coaches and a streaming-era dynamic. The current order reflects the founding chapter. I'm not claiming to be definitive. I'm trying to be honest."
+meth_when_p: "The canon now covers the first ten seasons. As the drain adds later cycles, the rankings will shift — the streaming era introduces new coaches and a different competitive dynamic. The current order reflects the founding and early ascendant chapters. I'm not claiming to be definitive. I'm trying to be honest."
 tier_a_blurb: "The seasons where the format reached its ceiling — sharp coaching chemistry, standout blind auditions, and live shows that justified the hype."
 tier_b_blurb: "Solid, consistent Voice seasons — the format working as designed, with moments that held up across the full run."
 weekly_question: "Does Season 4 still hold the top slot, or has a later season closed the gap?"
@@ -64,3 +64,43 @@ slot_argument: The second season ran the format without debut-season novelty as 
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
 The second season of The Voice is the season the format stopped being a novelty act. The coaches had a working relationship; the blind auditions ran more smoothly; the battle rounds produced the head-to-head coaching competition the format had promised. Season two doesn't get the credit it deserves because it sits between the historic debut and the sharper seasons that followed — but it is the season the show proved its format had legs. The fifth slot reflects honest standing: necessary, well-executed, a proof-of-concept for everything the show would do later.
+
+## 7. Season 7 — The New Voice
+
+tag: Gwen Stefani's debut — the sharpest new-coach arrival since season one.
+slot_argument: Gwen Stefani's debut brought the most musically diverse coaching panel the show had assembled. Different instincts, different sound — the blind auditions ran unpredictably. Sixth slot, the strongest of the new batch.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Season seven brought Gwen Stefani into the coaching chairs for the first time, and her arrival — alongside Pharrell Williams and the anchoring Blake Shelton and Adam Levine — produced the most musically varied four-coach panel the show had yet assembled. Pop, hip-hop, country, and rock pulling in genuinely different directions gave the blind auditions an energy that the previous two coach-rotation cycles hadn't managed. Coaches with different instincts recruit differently, and that showed in what they built. The season didn't match the founding peak, but it is clearly the best work the ascendant era produced through its first three seasons. Sixth slot.
+
+## 6. Season 6 — The Experiment
+
+tag: The founding era's final rotation — a fresh coaching combination closes the chapter.
+slot_argument: Pharrell and Shakira's first season together alongside Blake and Adam gave the founding era its most varied coaching panel. The combination was genuinely fresh. Seventh slot — a capable closing chapter for the founding run.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season six closed the founding era with a coaching combination that hadn't appeared on the show before. Pharrell Williams brought a producer's precision to the chairs; Shakira, returning for her second cycle, arrived more confident in the role. Together with Blake Shelton and Adam Levine, they gave the blind auditions a different competitive texture — four coaches with distinct musical sensibilities pulling in different directions. The season doesn't reach season four's ceiling, but it is a genuine late-founding-era entry: interesting coaching chemistry, competitive blind auditions, and a format running near its best. Seventh slot.
+
+## 9. Season 9 — The Rhythm
+
+tag: Gwen Stefani returns — settled confidence in the ascendant era.
+slot_argument: Gwen's second run was sharper than her debut — she knew how to compete, and that translated into more assured recruiting. Looser chemistry with Pharrell, Blake, and Adam. A well-paced season at cruising altitude. Eighth slot.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Gwen Stefani's return in season nine arrived with the kind of confidence a coach only develops in a second run. The novelty of her debut had become familiarity — she knew how the competition worked, what singers to chase, how to compete with Blake Shelton across the table. That translated into sharper recruiting in the blind auditions and a more assured coaching presence throughout. The combination with Pharrell Williams, Shelton, and Adam Levine had a relaxed competitive quality that made the coaching interactions more watchable than the season prior. Eighth slot, a comfortable step ahead of the two that follow.
+
+## 8. Season 8 — The Return
+
+tag: Christina Aguilera back — the format steady in its new era.
+slot_argument: Christina's return grounded the lineup with familiar chemistry alongside Pharrell, Blake, and Adam. The blind auditions ran well; the format working reliably, without the friction the top slots have. Ninth slot.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season eight brought Christina Aguilera back to the coaching chairs after two cycles away, and the reunion with Blake Shelton and Adam Levine gave the blind auditions a familiar competitive rhythm. The addition of Pharrell Williams kept the lineup from feeling too settled — his musical instincts pushed the other coaches in the recruiting phase. The season is solid without being remarkable: the format worked as designed, the live shows held their pace, the coaching interactions were professional and competitive. The Voice at a reliable mid-register in the ascendant era. Ninth slot.
+
+## 10. Season 10 — The Milestone
+
+tag: Five years in — the format confident, the chairs rotating smoothly.
+slot_argument: The fifth anniversary season introduced a fresh coaching combination; the blind auditions had the energy of coaches finding their footing together. A solid mid-run cycle. Tenth slot in the current ten-season canon.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Season ten arrived at a natural waypoint: five years of spinning chairs, enough run time to feel established, enough rotation to stay fresh. The coaching combination was new enough that the blind auditions carried real recruiting unpredictability — coaches still calibrating their instincts against each other. The format ran at its reliable mid-run altitude. The milestone framing gave the season a sense of occasion the live shows didn't entirely sustain, but the blind auditions held. A competent, watchable Voice season from a show that had fully learned how to do this. Tenth slot, honest standing.
