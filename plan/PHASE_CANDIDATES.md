@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-20 at commit 14a50a1
-> Pass count: 37
+> Last pass: 2026-06-21 at commit 0721747
+> Pass count: 38
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,194 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 38 (2026-06-21, commit 0721747) — 3 candidates filed.
+     Window since pass 37 (14a50a1, 2026-06-20): 1 day / 20 commits. Exact threshold met.
+     Signals reviewed:
+     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained. bearings Rule 1 "keep
+       the queue fed" mandate fired: wave-5 season-drain rows (American Idol S6–S23,
+       MasterChef Australia S6–S16, RHOBH S6–S15, RHOA S16) + wave-5 new show rows
+       (RHONJ, RHOC, AGT, Naked and Afraid, The Masked Singer) filed to AUDIT.md in this
+       same commit. Not a phase shape — content-velocity rows go to AUDIT.
+     - CRITIQUE.md: 20 pending rows across passes 51–62. Three clusters rise to phase shape:
+       (1) Partial-canon inline disclosure absent — 5 shows (Survivor AU pass-58, Love Is
+       Blind pass-58, DWTS pass-59, RHOBH pass-62, MCA pass-62), all MED severity, all
+       missing the same UI signal near the ranking list (new candidate #20). (2) meth_who_p
+       misleading completeness language — 3 shows (Love Is Blind "all five seeded" pass-58,
+       DWTS "covers the full run" pass-59, MCA tagline years-vs-seasons pass-62), 3 distinct
+       critique passes, same reader-trust root cause (new candidate #21). (3) Tagline
+       years-vs-seasons conflict — 2 shows (MCA, RHOBH), 1 critique pass — below 3-show
+       threshold but structural risk grows with catalog (new candidate #22, lower score).
+       Remaining rows (tier_s_blurb absent × 5 shows — RHONY/Voice/RHOA/DWTS/BDM) reinforce
+       existing candidate #15 (CANON_COMPLETENESS_STRICT gate) — not a new candidate.
+     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — single-item, workflow-
+       permission-blocked for cloud; /iterate handles locally. Not a phase shape.
+     - spec.md + design/: no changes since pass 37.
+     - Commit pattern: 20 commits — 4 content ticks (new shows + season drains), 2 critique
+       passes (61/62), 4 audit-closure pairs, 1 critique-find closure. No 5+ fix-cluster
+       on any code surface. Two new shows (RHOBH, MCA) generated 5 critique findings on
+       the same tick — the partial-canon class is now structurally recurrent.
+     Existing candidates status:
+       #14 (era filter empty state) — awaiting promotion; primary MED driver (TITHERADGE ERA)
+       still Pending. #15 (CANON_COMPLETENESS_STRICT gate) — reinforced by 5 tier_s_blurb
+       violations across 5 shows + 4 critique passes; strengthened for promotion. #16
+       (/u/[handle] stat chips) — [needs-user-call]; skip. #18 (header handle affordance) —
+       awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
+       awaiting promotion; still valid, single finding. -->
+
+### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
+
+**Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
+**Source pass:** 38
+**Filed:** 2026-06-21
+**Source signals:**
+- Critique pass-58 [MED] /shows/survivor-australia — "Five seasons in" methodology copy
+  vs "12 SEASONS AIRED" stat strip; a scan-reader sees 12 in the hero and then counts
+  5 entries in the ranking list with no inline explanation.
+- Critique pass-58 [MED] /shows/love-is-blind — "all five seeded seasons" methodology
+  copy vs "10 SEASONS AIRED"; the word "all" implies no remaining seasons.
+- Critique pass-59 [MED] /shows/dancing-with-the-stars — "covers the full run" methodology
+  copy vs "ALL 16" era counter and "34 SEASONS AIRED"; the strongest case of the class.
+- Critique pass-62 [MED] /shows/rhobh — partial canon (5 of 15 seasons); no inline signal
+  near the ranking list; methodology disclosure is buried below the fold.
+- Critique pass-62 [MED] /shows/masterchef-australia — partial canon (5 of 16 seasons);
+  same structural absence as RHOBH.
+- Signal multiplicity: 5 shows, 4 critique passes, same structural gap. Class grows as
+  new shows are added with partial canons — the catalog will not stop at 5 cases.
+
+**Why:** Every show whose canon covers fewer seasons than the total aired count has the
+same gap: a scan-reader who sees "12 SEASONS AIRED" (or 15, or 16, or 34) in the hero
+stat strip and then counts 5 entries in the ranking list has no inline explanation. The
+methodology section clarifies — but it requires scrolling past the stat strip and the
+partial ranking list itself. The partial-canon state is permanent for every new show
+until its drain completes; the class will keep growing. The fix is a small conditional
+render in the `ShowRanking` component: when `canon.entries.length < show.seasons`,
+display a one-line note above the ranking list — e.g. "Seasons 1–5 reviewed so far.
+More being added." — so the disclosure is in context, visible to any scan-reader who
+sees the list. This is distinct from the content fixes to individual `meth_who_p` fields
+(candidate #21 handles those); the inline note is a UI component change that covers all
+partial-canon shows automatically without per-show content authoring.
+
+**Scope sketch:**
+- `src/components/canon/ShowRanking.tsx` (or equivalent show-page ranking component):
+  add a conditional `<p className="coverage-note">` that renders when
+  `canon.entries.length < show.seasons` — something like "Reviewing seasons 1–N of M.
+  More coming." Exact copy matches the site's plain-spoken register; no exclamation
+  point; exact wording at fix-time.
+- Colocated test: renders the note when partial; renders nothing when canon is complete
+  (`entries.length === show.seasons`); correct N and M substitution.
+- e2e: one of the partial-canon show pages (e.g. `/shows/survivor-australia`) asserts
+  the coverage note is present; one complete-canon show page asserts it is absent.
+- Spoiler P0 intact — coverage note is structural; references only season counts, never
+  outcomes or rankings.
+- `content-curator` brief update: document the note so curators don't duplicate it in
+  `meth_who_p` text (the UI handles the disclosure, so methodology prose can drop the
+  coverage-count sentence).
+
+**Estimated phases:** 1.
+**Conflicts:** Complementary to candidate #21 (meth_who_p content gate). Independent fix
+paths: #20 is the product-visible component addition; #21 is the authoring-discipline gate.
+Both should land; #20 is higher urgency (reader-visible today on 5+ shows).
+
+### 21. meth_who_p misleading-completeness guard + content-check gate
+
+**Score:** 5.5 (impact: 6, ease: 8 → 4.8 base + 0.7 signal multiplicity)
+**Source pass:** 38
+**Filed:** 2026-06-21
+**Source signals:**
+- Critique pass-58 [MED] /shows/love-is-blind — `meth_who_p` opens "I've watched all
+  five seeded seasons from the Atlanta original through Houston." The word "all" implies
+  completeness when 10 seasons have aired; the WHEN section clarifies, but a scan-reader
+  of the WHO section does not reach it.
+- Critique pass-59 [MED] /shows/dancing-with-the-stars — `meth_who_p` opens "The ranking
+  covers the full run — from the double-cycle Tom Bergeron era through the simulcast
+  seasons." The phrase "covers the full run" is an unconditional completeness claim;
+  the era toolbar's "ALL 16" counter contradicts "34 SEASONS AIRED" without an inline bridge.
+- Critique pass-62 [MED] /shows/masterchef-australia — tagline resolves to "In seventeen
+  years on Network Ten" while stat strip shows "16 SEASONS AIRED"; adjacent on the page,
+  the two numbers read as a contradiction to a first-time visitor.
+- Signal multiplicity: 3 shows, 3 distinct critique passes, same reader-trust root cause
+  (misleading language implying full coverage when canon is partial). Pattern will recur as
+  the catalog grows — `content-curator` has been briefed but the authoring gap persists.
+
+**Why:** Three shows carry `meth_who_p` text (or taglines) that imply full-catalog coverage
+when the canon is partial. The individual content fixes are /iterate-shaped (one per tick),
+but the structural recurrence — 3 cases across 3 critique passes — confirms the `content-
+curator` brief alone is not sufficient. The established lax→strict verify-gate pattern
+(phases 41–46) resolves this class: add a `collectMethWhoCompletionIssues()` scanner in
+`scripts/content-check.ts` that flags `meth_who_p` text containing completeness phrases
+("all \w+ seasons", "covers the full run", "complete run") when `canon.entries.length <
+show.seasons`, then drain the 3 known violators before flipping strict. Once strict, a new
+show's canon draft cannot ship with misleading language — the verify gate blocks it.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `METH_WHO_COMPLETION_STRICT` flag +
+  `collectMethWhoCompletionIssues()`: for each show's `canon.md`, when
+  `entries.length < show.seasons`, check `meth_who_p` for any of the flagged phrases
+  (case-insensitive). Lax mode emits a warning; strict mode fails. Colocated unit tests
+  (phrase match / no phrase / complete canon cases).
+- Author replacement `meth_who_p` text for 3 known violators: Love Is Blind (remove "all"
+  from "all five seeded seasons"); DWTS (replace "covers the full run" with explicit partial
+  coverage sentence); MCA (no `meth_who_p` change needed — the tagline years-vs-seasons
+  conflict is content-check candidate #22; the methodology section itself may be fine).
+- Flip `METH_WHO_COMPLETION_STRICT = true` in the same commit (drain before flip, same
+  day-one-strict pattern as phases 44/45/46).
+- Update `content-curator` brief: when authoring `meth_who_p` for a partial-canon show,
+  never use "all seasons" / "full run" / "complete" — use an explicit count instead.
+
+**Estimated phases:** 1.
+**Conflicts:** Complementary to candidate #20 (inline UI note). #20 fixes the reader-visible
+gap; #21 fixes the authoring source. No URL change. No schema change. SEO-neutral.
+
+### 22. Tagline years-vs-seasons clarification gate
+
+**Score:** 5.5 (impact: 6, ease: 9 → 5.4 base + 0.1 weak multiplicity)
+**Source pass:** 38
+**Filed:** 2026-06-21
+**Source signals:**
+- Critique pass-62 [MED] /shows/masterchef-australia — tagline `{yearsWord}` token
+  expands to "seventeen years" while hero stat strip shows "16 SEASONS AIRED"; adjacent
+  on the same page, the two numbers read as a discrepancy to a first-time visitor who
+  does not know MCA skipped a production year.
+- Critique pass-62 [MED] /shows/rhobh — tagline `{yearsWord}` expands to "sixteen years"
+  while stat strip shows "15 SEASONS AIRED"; same class, same page-proximity trigger.
+- Structural risk: the `{yearsWord}`/`{years}` tokens are correct (they expand to calendar
+  years since `est_year`), but any show with even one production gap will have
+  `yearsSinceEst() > seasons`, making the tagline's year count ≠ the stat strip's season
+  count. As the catalog grows, more shows with production gaps will hit this.
+
+**Why:** The `{yearsWord}` token system (phase 43) correctly replaces hardcoded year counts
+with a derived value, preventing rot. But derived-correct ≠ scan-reader-safe: when a show
+has production gaps, the number of calendar years since premiere is larger than the number
+of seasons aired. On the show page these two counts appear close together — `{yearsWord}`
+in the tagline directly below the hero stat strip — so a scan-reader sees "sixteen years"
+and "15 SEASONS" in the same viewport and reads them as contradictory. The fix has two
+components: (1) rewrite the 2 known violators to use seasons rather than years in the
+tagline (`card_tagline` is already seasons-based for both — fix only the `tagline` field);
+(2) add a content-check gate — when `tagline` or `card_tagline` contains `{yearsWord}` or
+`{years}` token AND `yearsSinceEst(estYear) !== seasons`, emit a lax warning, flip strict
+after drain. This is the same lax→strict pattern as phases 43–46; the `yearsSinceEst`
+helper already exists in `src/lib/show-tenure.ts` (or equivalent) from phase 43.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `TAGLINE_YEARS_SEASONS_STRICT` flag +
+  `collectTaglineYearsVsSeasonsIssues()`: for each show, if `tagline` or `card_tagline`
+  contains `{yearsWord}` or `{years}` AND `yearsSinceEst(estYear) !== seasons`, emit an
+  issue with the divergence count. Lax logs warning; strict fails. Colocated unit tests
+  (diverges / matches / token absent cases).
+- Rewrite `tagline` in `content/shows/masterchef-australia.md`: change "In {yearsWord}
+  years on Network Ten, the Australian version…" to "Across sixteen seasons on Network
+  Ten, the Australian version…" (seasons-anchored, non-rotting, since MCA's exact count
+  at author time is already verified in frontmatter). Do the same for `rhobh.md`.
+- Flip `TAGLINE_YEARS_SEASONS_STRICT = true` in the same commit (2 violators drained).
+- Update `content-curator` brief: prefer `seasons` over `{yearsWord}` in taglines for
+  shows with declared production gaps; reserve `{yearsWord}` for taglines where the year
+  count IS the editorial point (e.g., "A quarter-century of…").
+
+**Estimated phases:** 1.
+**Conflicts:** Extends phase-43 (editorial-copy honesty sweep) into a new vector. No URL
+change. No schema change. Complements candidates #20 and #21 — together the three
+candidates make partial-canon honesty structural rather than one-off.
 
 <!-- Pass 35 (2026-06-17, commit 0117ac6) — 2 candidates filed.
      Window since pass 34 (20b6b78, 2026-06-16): 1 day / 20 commits.

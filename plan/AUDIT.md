@@ -25,6 +25,29 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
+<!-- SEASON-DRAIN QUEUE — WAVE 5 (filed via expand pass 38, 2026-06-21). Three wave-5 new shows
+     were scaffolded with S1–S5 only; their remaining seasons need Rule 2 drain (~5/tick). Also
+     includes RHOA S16 — frontmatter declares 16 aired seasons but only 15 season files exist;
+     verify S16 aired status at author time. Each row is one /ship-content dispatch: author
+     50–80-word blurbs + update canon.md rankings per Rule 2. VERIFY exact season titles and
+     premiere dates at author time — never trust titles written in a queue row (they rot). -->
+- [ ] [MED] Season drain: **American Idol** S6–S23 (18 seasons remaining of 23 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles and network (Fox S1–S7, hiatus, ABC S16+) at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+- [ ] [MED] Season drain: **MasterChef Australia** S6–S16 (11 seasons remaining of 16 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles and premiere dates at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+- [ ] [MED] Season drain: **Real Housewives of Beverly Hills** S6–S15 (10 seasons remaining of 15 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles and premiere dates at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+- [ ] [LOW] Season drain: **Real Housewives of Atlanta** S16 (1 season; frontmatter declares 16 seasons, 15 files exist) — verify S16 has aired before authoring; if so, author blurb + canonical_position + update canon.md rankings. (category: content-gaps, source: expand, score: 3.0 — impact 6 × ease 5) — 0721747
+
+<!-- NEW SHOW QUEUE — WAVE 5 (filed via expand pass 38, 2026-06-21). AUDIT show-queue drained to
+     0 pending rows; bearings Rule 1 "keep the queue fed" mandate fires. Five well-known reality
+     franchises not yet in content/shows/. DRAIN, do not one-shot: /ship-content scaffolds ONE
+     flavor per tick (frontmatter + canon.md + first season batch), then Rule 2 drains remaining
+     seasons ~5/tick. VERIFY each show's exact aired-season count and season titles at author time
+     — never trust counts or titles written here (they rot). Flagships first by score. -->
+- [ ] [MED] Add show: **Real Housewives of New Jersey** (RHONJ — Bravo, est 2009, Teresa-anchored NJ flagship). Scaffold `content/shows/rhonj.md` frontmatter (palette + verified aired season count + tier/network/est_year/genre_tag) + `content/shows/rhonj/canon.md` + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles at author time. (category: content-gaps, source: expand, score: 4.0 — impact 8 × ease 5) — 0721747
+- [ ] [MED] Add show: **Real Housewives of Orange County** (RHOC — Bravo, est 2006, the franchise originator). Scaffold `content/shows/rhoc.md` + canon.md + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles (17+ seasons as of 2026). (category: content-gaps, source: expand, score: 4.0 — impact 8 × ease 5) — 0721747
+- [ ] [MED] Add show: **America's Got Talent** (NBC/Peacock, est 2006, open-audition variety competition). Scaffold `content/shows/americas-got-talent.md` + canon.md + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles (18+ seasons as of 2026). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+- [ ] [MED] Add show: **Naked and Afraid** (Discovery/Max, est 2013, survival-isolation format — pairs dropped with no clothes or gear for 21 days in the wild). Scaffold `content/shows/naked-and-afraid.md` + canon.md + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles. Natural complement to the Alone catalog cluster. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+- [ ] [MED] Add show: **The Masked Singer** (Fox, est 2019, celebrity costume competition). Scaffold `content/shows/masked-singer.md` + canon.md + first season batch; drain remaining seasons 5/tick per Rule 2. Verify exact season count and titles (12+ seasons as of 2026). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 0721747
+
 <!-- SEASON-DRAIN QUEUE — WAVE 3 (filed via expand pass 36, 2026-06-19). All five shows from the
      wave-3 queue were scaffolded with S1–S5 (RHONY/LIB/HK/AU Survivor) or S1 (DWTS) only; their
      remaining seasons need Rule 2 drain (~5/tick). Each row below is one /ship-content dispatch:
