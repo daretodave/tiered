@@ -1,5 +1,33 @@
 # CRITIQUE
 
+> Last pass: 2026-06-21 at commit 46bace8
+> Pass count: 62
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 62 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/rhobh`, `/shows/masterchef-australia`,
+> `/shows/rhobh/season/the-debut`,
+> `/shows/masterchef-australia/season/the-benchmark`, `/shows`)
+> and authed (6 URLs: `/`, `/shows/rhobh`,
+> `/shows/masterchef-australia`,
+> `/shows/masterchef-australia/season/the-debut`, `/u/e2e`,
+> `/shows/rhobh/season/the-expansion`) walks ran across desktop +
+> mobile viewports. Pass focused on newly added RHOBH and
+> MasterChef Australia (both never critiqued previously). Findings
+> filtered against 38-item pending list: empty era filter tabs for
+> RHOBH and MCA dropped (same class as DWTS/BDM pass-57 drop —
+> by-design via CanonEraToolbar guard for unseeded eras); section-04
+> missing from new-show season TOC dropped (duplicate of pending
+> /shows/alone class); filmed location sub-line redundancy dropped
+> (minor); B-tier subhead wording dropped (defensible). Self-assessment
+> filed 5 findings (0 high, 3 medium, 2 low). Spoiler discipline
+> P0 intact — every row is a comprehension / voice observation;
+> zero winner / elimination / finale beat exposure.
+>
+> ───── Pass 61 metadata kept below for history ─────
+>
 > Last pass: 2026-06-21 at commit 0975b35
 > Pass count: 61
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -936,6 +964,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon+authed] /shows/masterchef-australia — tagline lede "In {yearsWord} years on Network Ten" resolves to "In seventeen years on Network Ten" at render time while the hero stat strip shows "16 SEASONS AIRED". A scan-reader sees 16 on the stat strip and 17 in the immediately following copy — the two numbers look like a discrepancy rather than a distinction between season count and calendar years on air. The same class affects `/shows/rhobh` (see next finding). Fix: rewrite the `tagline` in `content/shows/masterchef-australia.md` to reference seasons rather than years — e.g. "Across sixteen seasons on Network Ten, the Australian version built its own culinary register…". Content-only; one field. Spoiler discipline P0 intact. (URL: /shows/masterchef-australia, source: critique-pass-62) — 46bace8
+- [ ] [MED] [anon+authed] /shows/rhobh — tagline "Bravo's flagship Housewives address — {yearsWord} years of Beverly Hills opulence" resolves to "sixteen years" while the hero stat strip shows "15 SEASONS AIRED". Adjacent on the same page, 16 (years) and 15 (seasons) read as a contradiction to a first-time visitor who does not know the show skipped a production year. Same class as the MCA finding above. Fix: rewrite the `tagline` in `content/shows/rhobh.md` to use seasons rather than years — e.g. "Bravo's flagship Housewives address — fifteen seasons of Beverly Hills opulence…". Content-only; one field. Spoiler discipline P0 intact. (URL: /shows/rhobh, source: critique-pass-62) — 46bace8
+- [ ] [MED] [anon+authed] /shows/rhobh (and /shows/masterchef-australia) — partial canon coverage (5 of 15 seasons for RHOBH; 5 of 16 for MCA) has no inline signal near the season ranking list itself. The only disclosure is buried in the "WHEN I revisit" methodology section, which requires scrolling past the stat strip and season list. A scan-reader who sees "15 SEASONS AIRED" or "16 SEASONS AIRED" in the hero and then counts only 5 entries in the ranking list has no inline explanation. Same structural class as pending survivor-australia and love-is-blind findings, but different surface: those have misleading `meth_who_p` text; this is an absence of an inline coverage note near the list. Fix: add a short inline note above each show's season ranking list when `entries.length < seasons` — e.g. "Seasons 1–5 reviewed. More being added." — mirroring the pattern that should apply once the survivor-australia/love-is-blind meth_who_p fixes land. Content-only (or a small conditional render). Spoiler discipline P0 intact. (URL: /shows/rhobh, source: critique-pass-62) — 46bace8
+- [ ] [LOW] [authed] /shows/masterchef-australia — the `meth_when_p` field ends with "The remaining seasons are added as the drain continues." The word "drain" is internal loop/process jargon (the content-drain mechanic); a public reader sees it as an editing error or awkward phrasing. Fix: replace "as the drain continues" with "as each is reviewed" or "as the run continues" in `content/shows/masterchef-australia/canon.md`. Content-only; one phrase. Spoiler discipline P0 intact. (URL: /shows/masterchef-australia, source: critique-pass-62) — 46bace8
+- [ ] [LOW] [anon] /shows/masterchef-australia/season/the-benchmark — meta description is truncated mid-sentence in search snippets. The rendered description reads "Season four is the founding era at its highest point. The home cook bench is the deepest the format has assembled — and Heston Blumenthal appears as a…" — the ellipsis truncation breaks at a conspicuous mid-clause point. Fix: shorten the season's `pull` (or equivalent description-source field) in `content/shows/masterchef-australia/seasons/04-the-benchmark.md` to end at a natural clause boundary within 155 characters — e.g. "Season four is the founding era at its highest point — the deepest home-cook bench the format assembled." Spoiler discipline P0 intact. (URL: /shows/masterchef-australia/season/the-benchmark, source: critique-pass-62) — 46bace8
 
 - [x] [LOW] [anon] /shows/love-island-us — no `card_tagline` field while `tagline` runs approximately 186 characters, exceeding the ~155-char SERP budget. `descriptionFor()` truncates the tagline mid-clause producing "...The American port that finally…" in search-result snippets and social share cards. Same class as the pending pass-54 finding for `/shows/project-runway` and `/shows/big-brother` — add `/shows/love-island-us` to the repair batch. Fix: add `card_tagline` (≤155 chars, ending at a natural clause boundary) to `content/shows/love-island-us.md`. Spoiler discipline P0 intact (SEO copy only). (URL: /shows/love-island-us, source: critique-pass-55) — 0a2460a — RESOLVED f609f37: added card_tagline to love-island-us.md and 11 other long-tagline shows; CARD_TAGLINE_STRICT invariant added to scripts/content-check.ts, verify gate now enforces at zero violations.
 - [x] [LOW] [anon] /shows/love-island-uk — hero blurb's third fragment echoes "fire pit" verbatim in the immediately following lede sentence. Blurb reads "11 seasons. Mallorca, golden hour, fire pit." and the tagline/lede opens "11 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud." The same two-word phrase appears within two lines, diluting both. Fix: revise the blurb's third fragment to a distinct Love Island UK detail that does not restate the lede — e.g. "Casa Amor" (the mid-series twist that became the format's signature tension) or "the final coupling" (the finale mechanic). Content-only; one field in `content/shows/love-island-uk.md`. Spoiler discipline P0 intact. (URL: /shows/love-island-uk, source: critique-pass-55) — 0a2460a — RESOLVED c506c3e: blurb third fragment changed to "Casa Amor" — the mid-series twist the format is built around; no longer restates the tagline's "fire pit" beat.
