@@ -1,5 +1,39 @@
 # CRITIQUE
 
+> Last pass: 2026-06-21 at commit 0975b35
+> Pass count: 61
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 61 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/american-idol`, `/shows/american-idol/season/the-debut`,
+> `/shows/masterchef`, `/shows/the-voice`, `/shows/rhoa`) and
+> authed (6 URLs: `/`, `/shows/american-idol`,
+> `/shows/masterchef/season/the-deep-bench`, `/u/e2e`,
+> `/shows/the-voice`, `/shows/rhoa`) walks ran across desktop +
+> mobile viewports. Pass focused on newly added American Idol
+> (seeded this tick), fully drained MasterChef (US), and
+> recently drained The Voice S6–S10 + RHOA. Findings filtered
+> against 37-item pending list: The Voice tier_s_blurb duplicate
+> dropped (already pending pass-59); RHOA tier_s_blurb duplicate
+> dropped (already pending pass-59); MasterChef Section 03 stub
+> dropped (duplicate of existing HvV pass-49 class); /u/e2e
+> mobile _rsc ERR_ABORTED dropped (known artifact, dropped
+> passes 6–11, 29–53); RHOA era-chip empty state (GOLDEN/
+> TRANSITION/NEW CAST ERA) dropped (same class as DWTS/BDM
+> era-chip empty state drop in pass-57 — expected in-progress
+> drain state). Side-observation: pending [MED] HK finding from
+> pass-60 ("Twenty slots now cover all three eras") appears
+> pre-resolved by drain commit 2a01289 — current meth_when_p
+> reads "Twenty-four slots now cover all three eras"; /iterate
+> can close without additional content work. Self-assessment
+> filed 2 findings (0 high, 0 medium, 2 low). Spoiler discipline
+> P0 intact — every row is a comprehension / voice observation;
+> zero winner / elimination / finale beat exposure.
+>
+> ───── Pass 60 metadata kept below for history ─────
+>
 > Last pass: 2026-06-20 at commit 169ae72
 > Pass count: 60
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1882,6 +1916,8 @@
 - [ ] [LOW] [anon] /shows/big-brother — the methodology "How I weigh it" section (`meth_how_p`) lists four criteria phrased as questions but each ends with a period instead of a question mark: "Cast — does this house produce confessionals you remember a year later. House dynamics — do the alliances and feuds hold the season together. Twist execution — does the conceit land, or eat the room. Argument — does this season change what Big Brother can do next." All four clauses open with an interrogative "does" or "do" but close on a full stop — a punctuation inconsistency that creates a halting read. Fix: replace the four closing periods with question marks in `meth_how_p` in `content/shows/big-brother/canon.md`. One-field content fix; no code change. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-60) — 169ae72
 - [ ] [LOW] [anon] /themes/best-newbie-casts — the tagline's second sentence "These are the rookie rosters that walked in fluent" echoes the H1 title "Rookie casts walking in fluent" verbatim. A visitor reads the phrase twice in immediate succession (H1 → opening paragraph) without new information added in between. The first tagline sentence ("Some first-time casts step off the boat playing like they've already done this") introduces the idea; the second restates the title rather than advancing it. Fix: revise the tagline's second sentence in `content/themes/best-newbie-casts.md` to close on a distinct idea — e.g. drop the echo phrase and extend the first sentence's thought, or replace the second sentence with a distinguishing observation about what these casts share. Content-only fix; one field. Spoiler discipline P0 intact. (URL: /themes/best-newbie-casts, source: critique-pass-60) — 169ae72
 - [ ] [LOW] [authed] /shows/big-brother — the `card_tagline` field (which drives the page meta description) is a trimmed version of the full `tagline` rather than a distinct pull. `tagline`: "26 seasons of houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre, and still the loudest room on summer television." `card_tagline`: "26 seasons of houseguests locked in a soundstage, voting each other out one Thursday at a time. Still the loudest room on summer television." The two are effectively the same sentence with detail stripped — a reader arriving from search sees the meta description and then reads the near-identical opening on-page. A distinct card_tagline should lead with a different angle (e.g. the alliance game, the summer franchise, the studio-audience format) rather than abbreviating the lede. Fix: rewrite `card_tagline` in `content/shows/big-brother.md` to lead with a different editorial angle that teases rather than abbreviates the on-page lede. Content-only fix; one field. Spoiler discipline P0 intact. (URL: /shows/big-brother, source: critique-pass-60) — 169ae72
+- [ ] [LOW] [anon+authed] /shows/american-idol (and 8 other newly seeded shows) — S-tier section heading and blurb both render the identical string "The seasons that defend the show." because `tier_s_blurb` is absent from the show's `canon.md`. `CanonTierBand.tsx:82` sets `blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]`; when `tier_s_blurb` is absent the blurb falls back to `DEFAULT_TIER_HEADINGS.S = "The seasons that defend the show."` — the same constant as `TIER_HEADLINES.S` rendered in the `<h2>` immediately above, so a visitor reads the same sentence twice in immediate succession. Observed on `/shows/american-idol` (newly seeded this tick); 8 other canon files also lack `tier_s_blurb` and not yet individually filed: `content/shows/alone-australia/canon.md`, `content/shows/alone-frozen/canon.md`, `content/shows/alone-the-skills-challenge/canon.md`, `content/shows/below-deck-adventure/canon.md`, `content/shows/below-deck-down-under/canon.md`, `content/shows/below-deck-sailing-yacht/canon.md`, `content/shows/hells-kitchen/canon.md`, `content/shows/love-is-blind/canon.md`. (DWTS, BDM, The Voice, RHOA already have pending findings for the same class.) Direct precedent: resolved Traitors (#427, b954a7b) and Below Deck (#418, 847657d). Fix: author `tier_s_blurb` for each of the 9 affected canon.md files describing what the S-tier seasons of that show share without naming outcomes. Batch content fix; nine field additions. Spoiler discipline P0 intact. (URL: /shows/american-idol, source: critique-pass-61) — 0975b35
+- [ ] [LOW] [anon] Multiple shows — `meth_when_p` WHEN-section closing phrase "I'm trying to be honest" repeated verbatim across 8 canon files. Eight of 31 shows end their "When I revisit" methodology section with nearly identical language: "I'm not claiming to be [objective / definitive]. I'm trying to be honest." — specifically `content/shows/alone-australia/canon.md`, `content/shows/american-idol/canon.md`, `content/shows/below-deck-adventure/canon.md`, `content/shows/below-deck/canon.md`, `content/shows/hells-kitchen/canon.md`, `content/shows/the-voice/canon.md`, `content/shows/rhoa/canon.md` (seven with the exact two-sentence pattern; `content/shows/below-deck-mediterranean/canon.md` carries a close variant: "it is trying to be honest about where each season sits in the run right now"). A reader browsing multiple show pages encounters the same editorial closer repeatedly; the bearings voice is "knowledgeable peer — plain-spoken" and a repeated generic candor disclaimer deflates rather than reinforces. Fix: rephrase the WHEN-section closing for each affected show to something specific to that show's editorial posture and drain history rather than a cross-show boilerplate closer — e.g. for Below Deck, close on the captain-era framing; for American Idol, close on the network-era framing; for RHOA, close on the Atlanta-specificity argument. Content-only; 7–8 one-sentence edits across `meth_when_p` fields. Spoiler discipline P0 intact. (URL: /shows/american-idol et al., source: critique-pass-61) — 0975b35
 
 ## Done
 
