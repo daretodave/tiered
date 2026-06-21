@@ -371,7 +371,7 @@
      update canon.md rankings on each insert per Rule 2. VERIFY exact season titles and premiere
      dates at author time — never trust titles written in a queue row (they rot). -->
 - [x] [MED] Season drain: **MasterChef (US)** S6–S16 (11 seasons remaining of 16 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time (S9+ carry thematic subtitles — verify against Fox/IMDb). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 14a50a1 → 4574b6d
-- [ ] [MED] Season drain: **The Voice (US)** S6–S29 (24 seasons remaining of 29 total) — author 50–80-word blurbs + canonical_position for each batch; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time (seasons carry thematic subtitles from S2+). (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 14a50a1
+- [ ] [MED] Season drain: **The Voice (US)** S11–S29 (19 seasons remaining of 29 total) — author 50–80-word blurbs + canonical_position for each batch; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time. S6–S10 shipped 3f070ba. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 14a50a1
 - [ ] [MED] Season drain: **Real Housewives of Atlanta** S6–S16 (11 seasons remaining of 16 total) — author 50–80-word blurbs + canonical_position for each; update canon.md rankings on each insert per Rule 2. Verify exact season titles at author time. (category: content-gaps, source: expand, score: 3.5 — impact 7 × ease 5) — 14a50a1
 
 <!-- NEW SHOW QUEUE — WAVE 5 (filed via expand pass 37, 2026-06-20). All wave-4 show rows resolved ([x]).
