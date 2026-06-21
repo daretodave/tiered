@@ -1,5 +1,32 @@
 # CRITIQUE
 
+> Last pass: 2026-06-21 at commit 921cbf5
+> Pass count: 63
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 63 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/american-idol`, `/shows/american-idol/season/the-abc-footing`,
+> `/shows/masterchef-australia`,
+> `/shows/masterchef-australia/season/back-to-win`, `/shows`)
+> and authed (6 URLs: `/`, `/shows/american-idol`,
+> `/shows/american-idol/season/the-abc-footing`,
+> `/shows/masterchef-australia`, `/u/e2e`,
+> `/shows/masterchef-australia/season/back-to-win`) walks ran
+> across desktop + mobile viewports. Pass focused on American
+> Idol (just fully drained to 23 seasons) and MasterChef Australia
+> (just fully drained to 16 seasons). No console or network errors.
+> Findings filtered against 40-item pending list: MCA tagline
+> year-vs-season discrepancy confirmed still open (existing pass-62
+> row, not re-filed); MCA meth_when_p "drain" jargon confirmed
+> still open (existing pass-62 row, not re-filed). Self-assessment
+> filed 3 findings (0 high, 1 medium, 2 low). Spoiler discipline
+> P0 intact — every row is a comprehension / voice observation;
+> zero winner / elimination / finale beat exposure.
+>
+> ───── Pass 62 metadata kept below for history ─────
+>
 > Last pass: 2026-06-21 at commit 46bace8
 > Pass count: 62
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -965,6 +992,9 @@
 
 ## Pending
 
+- [ ] [MED] [anon+authed] /shows/american-idol — `meth_when_p` says the rotation era and ABC revival are "still being added as the scrutiny catches up" while the hero stat strip shows "23 SEASONS IN CANON" (all 23 seasons ranked). The methodology's future-tense coverage language contradicts the complete-canon state shown in the hero. A first-time visitor reads "23 SEASONS IN CANON" at the top, then scrolls to the "When I revisit" section and reads that the ABC revival is still being populated — the two signals pull in opposite directions. Same class as the pending DWTS `meth_who_p` finding (pass-59): a methodology coverage claim that doesn't match the actual canon state. Fix: update `meth_when_p` in `content/shows/american-idol/canon.md` to reflect the complete state — e.g. "All twenty-three seasons are now in the canon — the founding-panel era, the Fox rotation era, and the ABC revival complete. The founding-panel rankings are the most stable; the revival seasons will sharpen as they accumulate more rewatch distance." Content-only; one field. Spoiler discipline P0 intact. (URL: /shows/american-idol, source: critique-pass-63) — 921cbf5
+- [ ] [LOW] [anon+authed] /shows/american-idol — `tier_s_blurb` and `tier_a_blurb` absent from `content/shows/american-idol/canon.md` (only `tier_b_blurb` is defined). The S-tier section renders the heading ("The seasons that defend the show.") and editorial blurb as the same string — the visitor reads the same sentence twice in immediate succession. Same class as the pending RHOA (#986), RHONY (#983), DWTS (#987), The Voice (#985), and BDM (#988) findings. Fix: add `tier_s_blurb` describing the S-tier (ranks 1–5, the Fox founding run) — e.g. "The original panel at full power — the seasons that proved Idol was bigger than television and set the standard every subsequent run was measured against." Add `tier_a_blurb` describing the A-tier (the rotation era and ABC revival entries) — e.g. "American Idol working at a reliable level — audition circuits that surfaced genuine talent, judging panels with real chemistry, competitions that earned their finales." Content-only; two field additions. Spoiler discipline P0 intact. (URL: /shows/american-idol, source: critique-pass-63) — 921cbf5
+- [ ] [LOW] [anon] /shows — the "586 SEASONS RANKED" stat hero derives from summing each show's `seasons` frontmatter field (total aired seasons per show), not from the count of actually-reviewed seasons. `src/components/shows/showsStats.ts:29` does `totalSeasons += s.seasons`; the content-check reports 551 actual season markdown files. The gap of 35 comes from shows with partial coverage still in the drain queue (e.g., RHOBH contributes 15 to the total though only 5 seasons are reviewed). A first-time visitor reads "586 SEASONS RANKED" as a completion claim — "we've ranked 586 seasons" — when 35 of those have no review, no blurb, and no canonical position. Same class as phase-43 editorial-copy honesty. Fix options: (a) relabel "SEASONS RANKED" → "SEASONS TRACKED" (or "SEASONS AIRED") to match what the stat actually measures; (b) derive the stat from `getSeasons(show)` aggregate count (actual season files) instead of summing `seasons` frontmatter. Option (a) is a one-word label change; option (b) requires a loader call in `showsStats.ts`. Recommended (a) — the label change is the minimum accurate description; the drain queue will close the 35-season gap over subsequent ticks regardless. Spoiler discipline P0 intact (stat label only). (URL: /shows, source: critique-pass-63) — 921cbf5
 - [ ] [MED] [anon+authed] /shows/masterchef-australia — tagline lede "In {yearsWord} years on Network Ten" resolves to "In seventeen years on Network Ten" at render time while the hero stat strip shows "16 SEASONS AIRED". A scan-reader sees 16 on the stat strip and 17 in the immediately following copy — the two numbers look like a discrepancy rather than a distinction between season count and calendar years on air. The same class affects `/shows/rhobh` (see next finding). Fix: rewrite the `tagline` in `content/shows/masterchef-australia.md` to reference seasons rather than years — e.g. "Across sixteen seasons on Network Ten, the Australian version built its own culinary register…". Content-only; one field. Spoiler discipline P0 intact. (URL: /shows/masterchef-australia, source: critique-pass-62) — 46bace8
 - [ ] [MED] [anon+authed] /shows/rhobh — tagline "Bravo's flagship Housewives address — {yearsWord} years of Beverly Hills opulence" resolves to "sixteen years" while the hero stat strip shows "15 SEASONS AIRED". Adjacent on the same page, 16 (years) and 15 (seasons) read as a contradiction to a first-time visitor who does not know the show skipped a production year. Same class as the MCA finding above. Fix: rewrite the `tagline` in `content/shows/rhobh.md` to use seasons rather than years — e.g. "Bravo's flagship Housewives address — fifteen seasons of Beverly Hills opulence…". Content-only; one field. Spoiler discipline P0 intact. (URL: /shows/rhobh, source: critique-pass-62) — 46bace8
 - [ ] [MED] [anon+authed] /shows/rhobh (and /shows/masterchef-australia) — partial canon coverage (5 of 15 seasons for RHOBH; 5 of 16 for MCA) has no inline signal near the season ranking list itself. The only disclosure is buried in the "WHEN I revisit" methodology section, which requires scrolling past the stat strip and season list. A scan-reader who sees "15 SEASONS AIRED" or "16 SEASONS AIRED" in the hero and then counts only 5 entries in the ranking list has no inline explanation. Same structural class as pending survivor-australia and love-is-blind findings, but different surface: those have misleading `meth_who_p` text; this is an absence of an inline coverage note near the list. Fix: add a short inline note above each show's season ranking list when `entries.length < seasons` — e.g. "Seasons 1–5 reviewed. More being added." — mirroring the pattern that should apply once the survivor-australia/love-is-blind meth_who_p fixes land. Content-only (or a small conditional render). Spoiler discipline P0 intact. (URL: /shows/rhobh, source: critique-pass-62) — 46bace8
