@@ -6,7 +6,7 @@ premiere_date: 2013-01-16
 ep_count: 42
 location: Hollywood, California
 host: Ryan Seacrest
-canonical_position: 15
+canonical_position: 16
 eyebrow: "Aired winter–spring 2013 · The Minaj–Carey panel and documented on-air tension"
 lede: "Season twelve assembled Nicki Minaj, Mariah Carey, Keith Urban, and Randy Jackson — and tensions between Minaj and Carey dominated coverage before the competition began. The friction ran through the season. Ratings fell. Randy Jackson moved to a mentor role mid-run."
 pull: "The panel friction outran the competition — a season remembered more for the judging table than the stage."
