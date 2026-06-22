@@ -1,13 +1,13 @@
 ---
 show: rhoa
 editor: tiered.tv editor
-last_revised: 2026-06-21
+last_revised: 2026-06-22
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched RHOA from the debut season through the current cast. The ranking weighs cast chemistry, how well Atlanta itself functions as a social setting, and whether the season produces television that holds up beyond the initial headlines. One read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "Atlanta's social world is specific — it has its own rules around wealth, ambition, and public persona. Seasons that use those specifics earn more than seasons that simply stage conflict. The cast's internal relationships matter: how they push and pull against each other, not just whether they argue."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now covers all fifteen seasons aired through 2023. Slots are held with confidence — each position reflects a judgment about what the season does with its cast, its setting, and its format. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon now covers all sixteen aired seasons through 2024. Season sixteen is the new-cast premiere — the first full run of the post-S15 configuration. Slots are held with confidence — each position reflects a judgment about what the season does with its cast, its setting, and its format. I'm not claiming to be objective. I'm trying to be honest."
 tier_a_blurb: "The seasons that defined what RHOA is — cast-driven, Atlanta-specific, and genuinely difficult to look away from."
 tier_b_blurb: "Strong seasons with real moments, showing the format at full operational pressure even when not quite at its ceiling."
 tier_c_blurb: "Seasons worth watching for franchise context, but running below the intensity and configuration the show is capable of."
@@ -131,13 +131,21 @@ tag: A stable cast on its last run together before a wholesale reset.
 slot_argument: The first unchanged main cast since season six, Portugal, and real cast material add up to a functional season that runs short and lighter than the franchise at its best. What follows recontextualizes it as a chapter's close.
 community_rank_hint: rank=13 delta=0 sentiment=hold
 
-Season fifteen is a quiet ending dressed as a continuation. The same six full-time cast members who shot season fourteen returned unchanged — a continuity the franchise hadn't managed since the golden era — and the season gave them enough material to justify the run. The Portugal trip was its best stretch. The Atlanta material carried a central marriage deteriorating on camera. At eighteen episodes it is the shortest in this window, and its energy reflects that compression. What came after season fifteen — a near-total cast overhaul — makes the season read in retrospect as a chapter closing gracefully.
+Season fifteen is a quiet ending dressed as a continuation. The same six full-time cast members who shot season fourteen returned unchanged — a continuity the franchise hadn't managed since the golden era — and the season gave them real material to justify the run. The Portugal trip was its best stretch. The Atlanta material carried a central marriage deteriorating on camera. At eighteen episodes it is the shortest in this window, and its energy reflects that compression. What came after season fifteen — a near-total cast overhaul — makes the season read in retrospect as a chapter closing gracefully.
+
+## 16. Season 16 — The New Guard
+
+tag: The new cast configuration finding its footing with two franchise anchors steady.
+slot_argument: The post-S15 overhaul completed here: Kandi Burruss and Kenya Moore returned to anchor a new roster from Atlanta's broader social world. A debut season for a reconstituted cast, with Jamaica as the first pressure test for the group.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season sixteen is the franchise's first full run after a near-wholesale cast change. Kandi Burruss and Kenya Moore anchored a new roster drawn from Atlanta's social and entertainment world — figures with genuine Atlanta roots who arrived with enough existing relationships to give the season texture from the start. The new cast members brought different professional registers than previous configurations, which gave the Atlanta material a different energy without abandoning what the format runs on. Jamaica was the season's best stretch. An uneven debut that carries more structural promise than most franchise resets manage. The fourteenth slot reflects an honest reading of a season still finding its ceiling.
 
 ## 13. Season 13 — The Pause
 
 tag: A COVID-era season that ran carefully in a year that required it.
-slot_argument: A December premiere, two significant departures, and a more socially conscious register than RHOA typically carries. The season ran well below the intensity that defines the show at its best. The second-to-last slot reflects that honestly.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+slot_argument: A December premiere, two significant departures, and a more socially conscious register than RHOA typically carries. The season ran well below the intensity that defines the show at its best. The fifteenth slot reflects that honestly.
+community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season thirteen is shaped entirely by its context. The COVID-19 production disruption pushed the premiere to December — the first time in franchise history — and reduced the full-time cast by two significant players. What remained was a smaller, more domestically oriented group operating in a more socially conscious register. Cynthia Bailey's wedding under pandemic restrictions was a central arc. Porsha Williams' social-justice work was featured prominently and in good faith. New Orleans was the travel sequence. A season without bad faith, but also without the pressure and configuration that make RHOA worth watching at its best.
 
@@ -145,6 +153,6 @@ Season thirteen is shaped entirely by its context. The COVID-19 production disru
 
 tag: The show in an identity gap — a transitional season between eras.
 slot_argument: The first season without a defining anchor, a new addition whose register sat at an angle to the show's mode, no international travel. Season eight sits at the bottom: the version of RHOA that least resembles what RHOA does best.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
-Season eight is the franchise's weakest entry across these fifteen seasons. The departure of the cast member who had functioned as the show's social and comedic anchor left a gap the season never filled — the new full-time addition was a known actress whose demeanor, while not hostile to the format, sat at a fundamental angle to the high-pressure social register RHOA runs on. Twenty-one episodes with no international travel and a cast still finding its replacement configuration. The season has genuine moments, but it is primarily a bridge between what the show had been and what it was still working out how to become.
+Season eight is the franchise's weakest entry across these sixteen seasons. The departure of the cast member who had functioned as the show's social and comedic anchor left a gap the season never filled — the new full-time addition was a known actress whose demeanor, while not hostile to the format, sat at a fundamental angle to the high-pressure social register RHOA runs on. Twenty-one episodes with no international travel and a cast still finding its replacement configuration. The season has genuine moments, but it is primarily a bridge between what the show had been and what it was still working out how to become.

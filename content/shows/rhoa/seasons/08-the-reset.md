@@ -3,7 +3,7 @@ show: rhoa
 number: 8
 slug: the-reset
 title: "The Reset"
-canonical_position: 15
+canonical_position: 16
 premiere_date: "2015-11-08"
 location: "Atlanta, Georgia"
 ep_count: 21

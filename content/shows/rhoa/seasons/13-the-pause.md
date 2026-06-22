@@ -3,7 +3,7 @@ show: rhoa
 number: 13
 slug: the-pause
 title: "The Pause"
-canonical_position: 14
+canonical_position: 15
 premiere_date: "2020-12-06"
 location: "Atlanta, Georgia · New Orleans, Louisiana"
 ep_count: 21
