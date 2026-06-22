@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-21 at commit 0721747
-> Pass count: 38
+> Last pass: 2026-06-22 at commit 295b6cc
+> Pass count: 39
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,32 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 39 (2026-06-22, commit 295b6cc) — 0 new candidates filed; AUDIT content-gap rows filed.
+     Window since pass 38 (0721747, 2026-06-21): 1 day (21h) / 22 commits. Commit threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained again. bearings Rule 1 "keep
+       the queue fed" mandate fired: wave-5 season-drain rows (RHONJ S6–S14, RHOC S4–S18,
+       AGT S6–S20, Naked and Afraid S6–S19, Masked Singer S6–S13) + wave-6 new show rows
+       (America's Next Top Model, The Apprentice US, Queer Eye, Selling Sunset, Jersey Shore)
+       filed to AUDIT.md in this same commit. Not phase shape — content-velocity rows.
+     - CRITIQUE.md: 20+ pending rows across passes 54–63. No new clusters emerge above the
+       candidates already filed (#20 inline coverage note, #21 meth_who_p guard, #22 tagline
+       years-vs-seasons). Pass 63 filed 3 new findings: American Idol meth_when_p stale (MED,
+       content fix → iterate); American Idol tier_s_blurb/tier_a_blurb absent (LOW, covered by
+       #15); /shows "SEASONS RANKED" stat inaccuracy (LOW, iterate-shaped UI fix — rename
+       label or change data source). None rise above existing candidates in score.
+     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — unchanged, workflow-blocked.
+     - spec.md + design/: no changes.
+     - Commit pattern: 22 commits — 5 content ticks (American Idol S16–23, RHOBH S6–15,
+       AGT/Naked/Masked new shows, RHOA S16 fix), 1 critique pass (63). Pure content velocity;
+       no code-surface clustering.
+     Existing candidates status:
+       #15 (CANON_COMPLETENESS_STRICT) — now 6 tier_s_blurb violators (added American Idol
+       to RHONY/Voice/RHOA/DWTS/BDM); strengthened for promotion. #18 (header affordance) —
+       awaiting promotion. #20 (inline coverage note) — awaiting promotion; 1 new signal
+       (pass-63 confirms MCA partial coverage still undisclosed inline). #21 (meth_who_p guard)
+       — awaiting promotion. #22 (tagline years-vs-seasons) — awaiting promotion; 0 new cases. -->
 
 <!-- Pass 38 (2026-06-21, commit 0721747) — 3 candidates filed.
      Window since pass 37 (14a50a1, 2026-06-20): 1 day / 20 commits. Exact threshold met.
