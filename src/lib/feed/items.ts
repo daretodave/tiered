@@ -5,8 +5,11 @@ import type { FeedItem } from './rss'
 import { parseIsoDate, seasonDate } from './dates'
 
 // RSS convention — keep feeds bounded. Per-show feeds are well
-// under this; the global feed gets the newest 50 items.
-export const FEED_LIMIT = 50
+// under this; the global feed gets the newest 100 items. 100
+// ensures the feed covers the full canon + theme catalog as
+// show count grows (39+ shows × 1 canon each + 12 themes + recent
+// season items all fit comfortably under the cap).
+export const FEED_LIMIT = 100
 
 // First sentence of a content blurb, whitespace-collapsed, bounded.
 // The source is already P0 spoiler-clean (season blurb / theme
