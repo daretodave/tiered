@@ -3,7 +3,7 @@ show: rhoc
 number: 12
 slug: the-revision
 title: "The Revision"
-canonical_position: 12
+canonical_position: 15
 premiere_date: "2017-07-10"
 location: "Orange County, California"
 ep_count: 20

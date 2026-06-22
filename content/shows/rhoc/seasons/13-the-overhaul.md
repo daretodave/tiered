@@ -3,7 +3,7 @@ show: rhoc
 number: 13
 slug: the-overhaul
 title: "The Overhaul"
-canonical_position: 13
+canonical_position: 16
 premiere_date: "2018-07-16"
 location: "Orange County, California"
 ep_count: 22

@@ -3,7 +3,7 @@ show: rhoc
 number: 4
 slug: the-departure
 title: "The Departure"
-canonical_position: 7
+canonical_position: 8
 premiere_date: "2009-02-17"
 location: "Orange County, California"
 ep_count: 12

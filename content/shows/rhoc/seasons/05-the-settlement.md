@@ -3,7 +3,7 @@ show: rhoc
 number: 5
 slug: the-settlement
 title: "The Settlement"
-canonical_position: 6
+canonical_position: 7
 premiere_date: "2010-03-02"
 location: "Orange County, California"
 ep_count: 18

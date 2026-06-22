@@ -3,7 +3,7 @@ show: rhoc
 number: 10
 slug: the-reckoning
 title: "The Reckoning"
-canonical_position: 10
+canonical_position: 12
 premiere_date: "2015-06-08"
 location: "Orange County, California"
 ep_count: 22

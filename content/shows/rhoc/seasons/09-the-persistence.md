@@ -3,7 +3,7 @@ show: rhoc
 number: 9
 slug: the-persistence
 title: "The Persistence"
-canonical_position: 9
+canonical_position: 11
 premiere_date: "2014-03-03"
 location: "Orange County, California"
 ep_count: 20

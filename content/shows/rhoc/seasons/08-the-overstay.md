@@ -3,7 +3,7 @@ show: rhoc
 number: 8
 slug: the-overstay
 title: "The Overstay"
-canonical_position: 8
+canonical_position: 10
 premiere_date: "2013-06-03"
 location: "Orange County, California"
 ep_count: 21

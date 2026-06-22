@@ -3,7 +3,7 @@ show: rhoc
 number: 11
 slug: the-combustion
 title: "The Combustion"
-canonical_position: 11
+canonical_position: 13
 premiere_date: "2016-11-07"
 location: "Orange County, California"
 ep_count: 21
