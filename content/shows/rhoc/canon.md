@@ -3,11 +3,11 @@ show: rhoc
 editor: tiered.tv editor
 last_revised: 2026-06-22
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Eight seasons of RHOC ranked here — the founding Coto de Caza era through the peak-era run. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
+meth_who_p: "tiered.tv's editor. Thirteen seasons of RHOC ranked here — the founding Coto de Caza era through the early transition era. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
 meth_how_h: "How I weigh it"
 meth_how_p: "Originator status doesn't automatically confer quality. Seasons are weighed on what they did with the format — whether the social world generated genuine pressure or coasted on novelty, whether the casting carried the episodes or the production filled around it. The OC setting is a constant; the question is always whether it earns its keep."
 meth_when_h: "When I revisit"
-meth_when_p: "Eight seasons seeded here — the founding era through the peak-era run. The ranking covers this window only; later seasons join the canon as the editorial work continues. The order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "Thirteen seasons seeded here — the founding era through the early transition era. The ranking covers this window only; later seasons join the canon as the editorial work continues. The order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
 tier_s_blurb: "Seasons where the OC social world functions as genuine pressure system — casting confident, format fluent, the setting doing real narrative work."
 tier_a_blurb: "Seasons where the Orange County architecture works — cast chemistry with stakes, the gated-community premise running with purpose and clarity."
 tier_b_blurb: "Solid seasons running the format competently — watchable, with enough genuine social texture to earn their place, even when the casting or situation wasn't at peak pressure."
@@ -91,4 +91,44 @@ tag: The peak era past its operational peak — familiar cast, diluted social pr
 slot_argument: Peak-era cast run past its productive limits. Social pressure real but increasingly unfocused, pulled toward storylines outside the OC architecture. Ranks last because the gap between capability and execution is the widest in the canon.
 community_rank_hint: rank=8 delta=0 sentiment=hold
 
-Season eight keeps the peak-era cast in place across a long episode order and shows the configuration's wear. The core social dynamics are still capable of generating pressure, and the cast chemistry remains genuine, but the season's energy is increasingly pulled toward storylines that sit outside the OC social architecture the show runs best on. The reunion is notable; the broader run is uneven. A peak-era season running past its operational peak — the cast earned more than the season delivers. Last in this eight-season canon because the gap between capability and execution is the widest here.
+Season eight keeps the peak-era cast in place across a long episode order and shows the configuration's wear. The core social dynamics are still capable of generating pressure, and the cast chemistry remains genuine, but the season's energy is increasingly pulled toward storylines that sit outside the OC social architecture the show runs best on. The reunion is notable; the broader run is uneven. A peak-era season running past its operational peak — the cast earned more than the season delivers. Eighth in the canon: the peak era at its most diluted, below every season that found a working configuration and above the transition-era entries that followed.
+
+## 9. The Persistence
+
+tag: The peak-era ensemble in year three — competent, familiar, running on its own patterns.
+slot_argument: Peak-era continuation, competent rather than ambitious. The cast is real and the format is fluent; the season confirms its own repetitions. Below S8 because it extends the overstay; above the transition-era entries that follow.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season nine runs the peak-era ensemble in its third year together with Shannon Beador now integrated into the social architecture. The cast knows its own patterns and so does the production — the format is fluent, the chemistry is real, and the social pressure is genuine in places. But the season's strength is also its limitation: it extends rather than expands the peak-era configuration. The confrontations that land are earned; the ones that don't expose how familiar the template has become. Competent television, honest about what it is. Slots ninth — below S8 because it extends the overstay pattern without the reunion's notable energy, above the transition-era entries that follow.
+
+## 10. The Reckoning
+
+tag: A new cast axis sharpens some scenes, exposes the unevenness of the rest.
+slot_argument: Meghan King Edmonds' arrival adds genuine tension and the Meghan-driven confrontations are sharp. But the season's energies are unevenly distributed. Ranks tenth — below S9's more consistent run, above S11's volatility-without-focus.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Meghan King Edmonds arrives in season ten as a cast member with a different social register — younger, more confrontational, operating outside the established loyalty structures — and the season is most alive in those scenes. Shannon Beador's domestic pressure provides structural weight across the run, and the Meghan-driven storylines generate genuine conflict. But the season's energies are unevenly distributed: some cast combinations produce real friction, others generate heat without focus. A mid-tier peak-era entry that earns its canon slot through honest craft rather than peak execution. Below S9 because the uneven energy distribution is more pronounced; above S11's volatility-without-focus.
+
+## 11. The Combustion
+
+tag: Kelly Dodd debuts — new volatility, genuine scenes, inconsistent across the run.
+slot_argument: Kelly Dodd's debut adds genuine energy and some of the sharpest scenes in this stretch. But the season doesn't fully harness the new dynamic. Eleventh — above the transition-era entries; below S10's more consistent run.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Kelly Dodd's debut is the season's defining variable, and it registers immediately — her collision-seeking energy adds volatility the peak-era cast hadn't carried since the mid-era high points. Some of the scenes she generates are among the sharpest the show produced in this stretch. But the season's energy is unevenly distributed: Kelly's presence heightens some episodes and destabilizes others, and the production doesn't fully harness the new dynamic. Heather Dubrow's departure doesn't land as a closing chapter until the season is behind you. Ranks eleventh — enough genuine energy to hold above the transition-era entries, not enough coherence to clear the S10 bar.
+
+## 12. The Revision
+
+tag: The transition era opens — the show searching for its next cast configuration.
+slot_argument: Without Heather Dubrow, the peak-era social register doesn't carry. New additions don't fully replace what's lost. Genuine texture in places but never a working ensemble. Twelfth, ahead of S13.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Season twelve opens the transition era in earnest. Without Heather Dubrow, the show's peak-era social register doesn't carry, and the season spends most of its run searching for its next configuration rather than running one confidently. Lydia McLaughlin's return generates some cast chemistry but reads differently outside the ensemble that originally framed her; Peggy Sulahian's addition doesn't catalyze the group. There are genuine social textures across the season — the chemistry isn't absent — but the cast hasn't landed yet as a working unit. The transition era's first confirmed step: honest about the search, unresolved about where it leads. Ranks twelfth ahead of the more fractured S13.
+
+## 13. The Overhaul
+
+tag: The transition era fully underway — two new members, a founding figure reduced, the rebuild in progress.
+slot_argument: Two new members, one founder reduced — the most transitional RHOC season. Integration is uneven, the working ensemble not assembled. Last in the canon; the gap between potential and execution is widest here.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Season thirteen is the transition era fully underway — two new cast members, Vicki Gunvalson in a reduced role, and a show in genuine reconstruction mode. Gina Kirschenheiter and Emily Simpson arrive with chemistry between themselves that is credible and, in some scenes, the season's strongest material. But their integration with the existing cast runs uneven across twenty-two episodes, and the show never quite resolves the tension between the cast it has and the cast it's building. Last in this thirteen-season canon — not without merit, but the construction work is visible, and the gap between potential and execution is real.
