@@ -103,3 +103,43 @@ slot_argument: Three years together produces a competent but routine season. The
 community_rank_hint: { rank: 10, delta: 0, sentiment: hold }
 
 Season eight sits at the bottom of this canon block because it is the Stern-era panel at its most predictable. Howard Stern, Sharon Osbourne, and Howie Mandel are still a strong judging table — the critique is honest, the disagreements are real — but three seasons together has filed down the friction that made the first year feel like a genuine reset. The audition pool runs familiar categories, the live rounds follow the established format, and nothing arrives to disrupt either. A solid, workmanlike run from a panel that delivered its defining work in the two seasons before it.
+
+## 11. The Cowell Era Begins
+
+tag: Simon Cowell resets the judging table's center of gravity.
+slot_argument: Cowell's arrival brings industry-executive calibration to a panel shaped by Stern's instincts. The overhaul produces friction the format needed, and the four-way dynamic with Mel B, Mandel, and Klum earns the top slot in this block.
+community_rank_hint: { rank: 11, delta: 0, sentiment: hold }
+
+Season eleven opens the Simon Cowell era, and the panel reset is the season's defining story. Cowell replaces Howard Stern — two very different critical voices — and brings an industry executive's calibration to a table shaped by Stern's broadcaster instincts. Mel B, Howie Mandel, and Heidi Klum provide a full four-way dynamic with genuine contrast across disciplines and instincts. The Stern era produced the format's golden-buzzer standard; the Cowell era recalibrates what the judging table values. A strong first argument from a new voice at the table.
+
+## 13. The Cowell Panel in Stride
+
+tag: Three seasons in, the Cowell-era panel delivers its most assured run.
+slot_argument: The season where the Cowell panel stops finding its footing and starts operating on instinct. Tyra Banks is settled as host, the table has real shorthand, and the audition rounds are the most confident of this block.
+community_rank_hint: { rank: 12, delta: 0, sentiment: hold }
+
+Season thirteen is the Cowell-era panel's most assured run. Three seasons have built a real working dynamic — Simon Cowell's commercial precision, Mel B's directness, Howie Mandel's instinct for novelty, Heidi Klum's enthusiasm — all pulling in different directions without collapsing into formula. Tyra Banks runs the stage with the ease of a second-year host. The audition rounds are broad, the live competition moves with practiced efficiency, and the judging disagreements have enough texture to stay interesting. Not the freshest season in this block, but the most consistently well-executed.
+
+## 12. The Host Transition
+
+tag: A new host, an established panel — the format holds while the stage finds its footing.
+slot_argument: The intact judging panel carries the season through a host transition. The panel's second year together is more assured than the prior reset; enough developed shorthand keeps the competition credible through the change.
+community_rank_hint: { rank: 13, delta: 0, sentiment: hold }
+
+Season twelve's central editorial story is Tyra Banks arriving on a stage Nick Cannon had defined for eight seasons. The judging panel — Cowell, Mel B, Mandel, Klum — returns intact for a second year together, which provides the stability the season needs while a new host finds the stage's rhythms. The panel chemistry is more assured than the prior year's reset; the competition rounds run with enough developed shorthand to carry the weight. A functional season held together more by the judging table than by anything happening at the hosting position.
+
+## 14. The Modern Era Opens
+
+tag: A new host and two new judges — the most structurally unsettled season since the format's early years.
+slot_argument: The dual overhaul at host and panel makes this the most volatile season in this block. Fresh energy is real, but new voices at every key position keep the competition in negotiation with itself throughout.
+community_rank_hint: { rank: 14, delta: 0, sentiment: hold }
+
+Season fourteen carries the heaviest structural weight in this block — a new host and two new judges arriving at the same time. Terry Crews brings energy to the hosting position, and Julianne Hough and Gabrielle Union at the judging table offer different calibration alongside Cowell and Mandel. The dual overhaul is the season's editorial identity and its biggest liability: new voices at every key position make the competition feel unsteady even when the audition pool delivers range. The moments when the disagreements feel unscripted are the season's best.
+
+## 15. The Pandemic Season
+
+tag: COVID production limits what the live-variety format can be.
+slot_argument: The pandemic redraws the format's structural possibilities in ways no panel chemistry can overcome. Limited live audience, adjusted production, and a stage that cannot deliver its own promise places this season last.
+community_rank_hint: { rank: 15, delta: 0, sentiment: hold }
+
+Season fifteen is the hardest season to rank on its own terms because the pandemic redraws the format's possibilities. The live-audience energy the open-call spectacle depends on is limited throughout, and no casting decision compensates for a stage that cannot fully deliver the show's central promise. Sofia Vergara and Heidi Klum join a panel that had real chemistry, and the format runs — it just runs diminished. The season belongs at the bottom of this canon block because the structural limitations are external and real, not editorial.
