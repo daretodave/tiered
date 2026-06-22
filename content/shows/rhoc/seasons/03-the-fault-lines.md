@@ -3,7 +3,7 @@ show: rhoc
 number: 3
 slug: the-fault-lines
 title: "The Fault Lines"
-canonical_position: 3
+canonical_position: 5
 premiere_date: "2008-02-05"
 location: "Orange County, California"
 ep_count: 14
