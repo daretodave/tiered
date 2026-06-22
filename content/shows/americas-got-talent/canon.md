@@ -63,3 +63,43 @@ slot_argument: Season five runs the panel that would define the show through the
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
 Season five closes the founding era with the panel that would set the show's judging identity going forward. Howie Mandel, Sharon Osbourne, and Piers Morgan's first full season together produced a three-way dynamic built on competing instincts — Mandel's quirky enthusiasm, Osbourne's directness, Morgan's precision — that gave the critique texture the format had been building toward. Nick Cannon was now fully settled as host. The audition pool remained wide across disciplines, and the live-round competition had the shape of a format confident in what it was doing. A stable, functional close to the founding era rather than a peak inside it.
+
+## 6. The Stern Era Begins
+
+tag: Howard Stern arrives and the judging table gets its sharpest voice.
+slot_argument: Stern's first season as judge resets the panel's standard. The three-way with Osbourne and Mandel is more interesting than anything the founding era produced, and the audition pool benefits from a sharper critical eye.
+community_rank_hint: { rank: 6, delta: 0, sentiment: hold }
+
+Season six is the golden-buzzer era's opening argument, and its strongest asset is what changes at the judging table. Howard Stern replaces Piers Morgan and immediately raises the standard of critique — more informed, more direct, less interested in theatrical reaction. Sharon Osbourne and Howie Mandel provide counterweight and warmth, but Stern sets the tone. Acts that clear his bar feel genuinely earned rather than audience-managed. The audition pool is wide enough to reward a panel this engaged, and the live rounds run with a credibility the show hadn't quite had before. The era's best first impression.
+
+## 9. The Panel Reshapes
+
+tag: Two new judges, a genuinely different panel dynamic.
+slot_argument: Mel B and Heidi Klum join Stern and Mandel, producing four-way chemistry with real contrast. The reset reads in the audition rounds — the competition has more texture than the third-year iteration that preceded it.
+community_rank_hint: { rank: 7, delta: 0, sentiment: hold }
+
+Season nine earns its slot above the other mid-era seasons because a panel overhaul gives it energy the surrounding years lack. Mel B and Heidi Klum arrive alongside Howard Stern and Howie Mandel, and the four-person dynamic generates genuine contrast — Mel B's bluntness, Klum's enthusiasm, Stern's exacting eye, Mandel's instinct for novelty. The audition circuit is broad, and new judges bring fresh reactions to familiar categories. The competition rounds are more interesting when disagreements at the table feel unscripted. A reset season that earns its elevated position.
+
+## 7. The Panel in Stride
+
+tag: The Stern-era panel's strongest full run — chemistry developed, critique sharper.
+slot_argument: The second season together is the Stern–Osbourne–Mandel dynamic at its most assured. Familiar shorthand makes the judging faster and more interesting to watch, and the audition rounds benefit from a panel that trusts its own instincts.
+community_rank_hint: { rank: 8, delta: 0, sentiment: hold }
+
+Season seven is the Stern-era panel at its most confident and cohesive. A second year together has built real shorthand between Howard Stern, Sharon Osbourne, and Howie Mandel — Stern's precision, Osbourne's directness, Mandel's comic instincts all pulling in different directions without tipping into performed conflict. The auditions run wide, and a judging table that has found its groove makes the evaluations faster and more credible. Not as electrically new as the first year, but more assured — the panel delivers its best sustained work across this run.
+
+## 10. The Anniversary Run
+
+tag: Ten seasons in, a settled format delivers its own promise.
+slot_argument: The tenth anniversary season runs a four-person panel with a year of chemistry together and a production that knows what it is doing. Functional and confident, without the voltage of a reset year.
+community_rank_hint: { rank: 9, delta: 0, sentiment: hold }
+
+Season ten carries anniversary framing into a run that mostly earns it. Howard Stern, Howie Mandel, Mel B, and Heidi Klum have a full season of chemistry, and the four-way dynamic is more settled than the prior year's overhaul. The format does not need to prove itself at ten seasons — it just needs to deliver the open-call variety promise, and it does. The audition rounds are broad, the live competition moves with practiced efficiency, and the judging table holds its shape. A confident mid-era season that marks the milestone without overstating it.
+
+## 8. The Long Third Year
+
+tag: The Stern panel's third run — functional, familiar, without fresh friction.
+slot_argument: Three years together produces a competent but routine season. The judging chemistry is intact, the audition pool runs wide, but nothing pushes the format forward the way the first two Stern-era seasons did.
+community_rank_hint: { rank: 10, delta: 0, sentiment: hold }
+
+Season eight sits at the bottom of this canon block because it is the Stern-era panel at its most predictable. Howard Stern, Sharon Osbourne, and Howie Mandel are still a strong judging table — the critique is honest, the disagreements are real — but three seasons together has filed down the friction that made the first year feel like a genuine reset. The audition pool runs familiar categories, the live rounds follow the established format, and nothing arrives to disrupt either. A solid, workmanlike run from a panel that delivered its defining work in the two seasons before it.
