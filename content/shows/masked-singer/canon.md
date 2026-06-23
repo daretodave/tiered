@@ -1,13 +1,13 @@
 ---
 show: masked-singer
 editor: "tiered.tv editor"
-last_revised: 2026-06-22
+last_revised: 2026-06-23
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've tracked The Masked Singer from its Fox debut through its current run. The ranking weighs panel energy, costume spectacle, the caliber of celebrity talent assembled, and whether the guessing conceit stayed genuinely engaging across the full season. I'm not claiming to be objective. I'm trying to be honest."
 meth_how_h: "How I weigh it"
 meth_how_p: "The central device is the disguise — and the ranking reflects how well each season made the disguise matter. Seasons where the celebrity roster carried real surprise value and the panel's guessing felt earned outscore seasons where the format ran on spectacle alone. Costume design ambition and the clarity of the show's tonal identity are secondary variables."
 meth_when_h: "When I revisit"
-meth_when_p: "I'm working from five seeded seasons. The full run extends to thirteen seasons, and the later cycles will settle into the ranking as they're added. The five entries here reflect honest standing against each other. The canon will rebase as coverage expands."
+meth_when_p: "I'm working from ten seeded seasons. The full run extends to thirteen seasons, and the remaining cycles will settle into the ranking as they're added. The ten entries here reflect honest standing against each other. The canon will rebase as coverage expands."
 tier_a_blurb: "Seasons where the disguise conceit found its fullest expression — celebrity caliber, panel chemistry, and production ambition all pulling together."
 tier_b_blurb: "Solid Masked Singer seasons — the format working with energy and spectacle, the celebrity roster delivering genuine surprise value."
 weekly_question: "Does Season 2 belong above Season 1 in the canon, or does the original hold?"
@@ -64,3 +64,43 @@ slot_argument: Season five ran the format exactly as designed, without the novel
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Season five settled into the register The Masked Singer would occupy for its middle run: polished, confident, and reliable in the way a format gets after it's proven itself across four prior cycles. The costume design held at the level season three had established. The celebrity roster sustained the panel's genuine engagement — not every guess was a stretch, but enough were to keep the format honest. Nick Cannon ran the hosting duties with ease. A competent, watchable season that demonstrates the format's resilience as a repeatable entertainment product. Fifth slot, the clear floor of the founding run.
+
+## 6. Season 6 — The Expansion
+
+tag: The format committing to theatrical spectacle — and the spectacle holding.
+slot_argument: The show's most elaborate costumes to that point, a celebrity roster that gave the panel genuine guessing work across thirteen episodes, and the format scaling without losing the conceit. The expansion era's high mark.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Season six made a clear statement about what The Masked Singer was becoming: a theatrical event with the guessing conceit as its spine. The costume design reached a level of craftsmanship that pushed beyond prior cycles — constructed characters rather than elaborate props — and the celebrity roster rewarded the panel's effort with enough genuine uncertainty to carry thirteen episodes without friction. The panel's ensemble dynamic was fully functional. This is the expansion era's strongest entry, placing just below the founding-run seasons that still carry the advantage of novelty and stronger celebrity caliber. Sixth slot.
+
+## 7. Season 7 — The Midpoint
+
+tag: A winter premiere that proved the format's year-round durability.
+slot_argument: A February launch that tested the format outside its fall home — the conceit held without seasonal urgency. A durability marker, sitting just below season six for the lower-stakes scheduling context.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season seven arrived in February and answered the format's first real scheduling test: could The Masked Singer hold attention without the urgency of the fall television calendar? It could. The panel's chemistry carried the season, the celebrity roster delivered adequate surprise value across twelve episodes, and the guessing conceit ran with the ease of a format that had proved itself across six prior cycles. The winter premiere context distinguishes this from the surrounding expansion-era seasons — it's a durability marker as much as a quality statement. Seventh slot.
+
+## 8. Season 8 — The Continuation
+
+tag: The expansion era's close — confident, calibrated, and exactly what it promised.
+slot_argument: The expansion era closes with the format running cleanly on established machinery — costume ambition held, celebrity roster calibrated. A reliable season without a distinguishing argument for a higher slot; the expansion era's clear floor.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season eight ran the format in its most settled expansion-era form: costume design ambitious, celebrity roster calibrated, panel dynamic fully established. The show understood its own machinery well enough by this point to run cleanly without requiring novelty to justify the cycle. What separates it from the seasons above is the absence of a distinguishing argument — no scheduling test to pass, no production peak to mark. The format working exactly as designed, which is its own merit, placed at eighth for the expansion era's clear floor.
+
+## 9. Season 9 — The Long Run
+
+tag: The established era opens — a fixture rather than an event, and comfortable with that.
+slot_argument: The established era opens in schedule-fixture mode — panel settled, format self-evident, conceit running without early-cycle urgency. Below season eight for the register shift that established-era seasons inherit.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season nine marked the shift from expansion-era event to schedule fixture, and the season wears that transition openly. The panel dynamic was fully settled, the guessing conceit still functional, the celebrity roster adequate to sustain twelve episodes. What the season lacks relative to the cycles above it is the compression that novelty or a scheduling test provides — it ran as a reliable Fox product without the distinguishing circumstance that gives a mid-run entry its editorial argument. A solid Masked Singer season in the established-era register. Ninth slot.
+
+## 10. Season 10 — The Milestone
+
+tag: Ten seasons without an identity shift — the format's durability as its own argument.
+slot_argument: Ten seasons intact — same panel, same structure, same conceit. The argument is longevity: a format durable enough to run a decade without reinvention. Tenth for the established-era register, no quality peak to push it higher.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Season ten is The Masked Singer at its clearest long-run statement: ten cycles of the same format, the same panel, the same disguise conceit, and the show still drawing an audience for it. The costume design stayed ambitious. The celebrity roster held the calibration the guessing conceit requires. The milestone itself is the editorial marker — reaching ten seasons without a format overhaul is an argument for the original design's durability, not a coincidence. The season doesn't surpass the cycles above it in quality, but it earns its position as the established era's second entry. Tenth slot.
