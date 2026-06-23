@@ -1,10 +1,42 @@
 # CRITIQUE
 
+> Last pass: 2026-06-23 at commit 015d394
+> Pass count: 65
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 65 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows`, `/shows/americas-got-talent`,
+> `/shows/americas-got-talent/season/11-the-cowell-era-begins`,
+> `/shows/rhoc`, `/shows/rhoc/season/18-the-continuation`) and
+> authed (6 URLs: `/`, `/shows/americas-got-talent`,
+> `/shows/americas-got-talent/season/15-the-pandemic-season`,
+> `/shows/rhoc`, `/shows/rhoc/season/14-the-reconfiguration`,
+> `/u/e2e`) walks ran across desktop + mobile viewports. Pass
+> focused on America's Got Talent (S6–S15 just drained, 15/20
+> seasons now in canon) and RHOC (S14–S18 just drained, all 18
+> now in canon). Season URLs with numeric slug prefix returned
+> 404 — confirmed false positive (slugs strip the leading XX-
+> prefix; same class as pass-54 Challenge drop). No console
+> errors on successfully loaded pages. Auth chrome confirmed:
+> @e2e shown in header on all loaded pages. Findings filtered:
+> 404 season pages dropped (wrong URL format, not product bug);
+> AGT partial canon (15/20) dropped (by-design partial-coverage
+> per pass-57 precedent); RHOC 'seeded here' below threshold
+> (context clarifies meaning); /u/e2e _rsc ERR_ABORTED dropped
+> (known artifact, passes 6-11/29-53). Self-assessment filed 1
+> finding (0 high, 0 medium, 1 low). Spoiler discipline P0
+> intact — every row is a comprehension observation; zero
+> winner / elimination / finale beat exposure.
+>
+> ───── Pass 64 metadata kept below for history ─────
+>
 > Last pass: 2026-06-22 at commit 0d476ae
 > Pass count: 64
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 63 ran in the cloud loop via Path A2
+> 64 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
 > `/shows/american-idol`, `/shows/american-idol/season/the-abc-footing`,
@@ -992,6 +1024,7 @@
 
 ## Pending
 
+- [ ] [LOW] [anon+authed] /shows/americas-got-talent — the `tier_s_blurb` field is absent from `content/shows/americas-got-talent/canon.md`. The S-tier band renders its heading ("The seasons that defend the show.") and its editorial description as the identical string — a visitor reads the same sentence twice in immediate succession. Same class as the pending ANTM, American Idol, RHOA, RHONY, DWTS, The Voice, and BDM findings. Fix: add `tier_s_blurb` to AGT's canon.md describing what the S-tier seasons share — e.g. "The founding era at full confidence — the seasons where the open-call promise delivered its most varied audition pools and the judging chemistry held." Content-only; one field addition. Spoiler discipline P0 intact. (URL: /shows/americas-got-talent, source: critique-pass-65) — 015d394
 - [ ] [MED] [anon+authed] /shows/americas-next-top-model — the blurb and H1 use the show's production term "cycles" ("24 cycles. One photo at a time.") while the stat strip uses "24 SEASONS AIRED". A first-time visitor who reads the hero sees two different terms for the same count within one scroll — "cycles" and "seasons" are not interchangeable in everyday usage and no inline gloss bridges them. The stat strip uses "SEASONS AIRED" because it is a generic component shared across all shows; ANTM is the only show in the catalog that uses a non-standard unit name. Fix: add `seasons_unit: cycles` (or an equivalent mechanism) to the show's frontmatter and wire the stat strip to prefer it when present, so the label reads "24 CYCLES AIRED" for ANTM and falls back to "SEASONS AIRED" for every other show. Alternatively, update the blurb/tagline to "24 seasons" to match the stat strip's vocabulary and note the show's own "cycle" terminology parenthetically in the editorial copy. Content-only fix (tagline) or small component lift (stat strip). Spoiler discipline P0 intact. (URL: /shows/americas-next-top-model, source: critique-pass-64) — 0d476ae
 - [ ] [LOW] [anon+authed] /shows/americas-next-top-model — the `tier_s_blurb` field is absent from `content/shows/americas-next-top-model/canon.md`. The S-tier band renders its heading ("The seasons that defend the show.") and its editorial description as the identical string — a visitor reads the same sentence twice in immediate succession. Same class as the pending American Idol, RHOA, RHONY, DWTS, The Voice, and BDM findings. Fix: add `tier_s_blurb` to ANTM's canon.md describing what the S-tier cycles share — e.g. "The UPN founding run at full voltage — the cycles where the triple-panel dynamic and the photo-shoot format were both new enough to crackle." Content-only; one field addition. Spoiler discipline P0 intact. (URL: /shows/americas-next-top-model, source: critique-pass-64) — 0d476ae
 - [ ] [LOW] [anon+authed] /shows/americas-next-top-model — the `meth_when_p` editorial copy reads "The CW years and the VH1 relaunch get added as the drain completes." The word "drain" is internal loop/process jargon — a public reader encounters it as an editing error or awkward phrasing (a drain is a plumbing fixture, not an editorial workflow). Same class as the masterchef-australia "as the drain continues" pending finding (pass-62). Fix: replace "as the drain completes" with reader-facing language — e.g. "The CW years and the VH1 relaunch are in review and will be added as each is assessed." Content-only; one phrase in `content/shows/americas-next-top-model/canon.md` `meth_when_p`. Spoiler discipline P0 intact. (URL: /shows/americas-next-top-model, source: critique-pass-64) — 0d476ae
