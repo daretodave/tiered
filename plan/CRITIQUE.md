@@ -1,5 +1,36 @@
 # CRITIQUE
 
+> Last pass: 2026-06-23 at commit b88e76e
+> Pass count: 66
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 66 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (6 URLs: `/`,
+> `/shows/masked-singer`,
+> `/shows/masked-singer/season/the-tenure`,
+> `/shows/naked-and-afraid`,
+> `/shows/naked-and-afraid/season/the-active-season`, `/shows`) and
+> authed (6 URLs: `/`, `/shows/masked-singer`,
+> `/shows/masked-singer/season/the-pattern`,
+> `/shows/naked-and-afraid`,
+> `/shows/naked-and-afraid/season/the-long-haul`,
+> `/u/e2e`) walks ran across desktop + mobile viewports. Pass
+> focused on The Masked Singer (just fully drained to 13 seasons)
+> and Naked and Afraid (just fully drained to 19 seasons). No
+> console errors on successfully loaded pages. Auth chrome
+> confirmed: @e2e shown in header on all loaded pages. Findings
+> filtered: TOC section-04 skip dropped (existing pending class);
+> NaA meth_who_p overstatement dropped (minor, "core series"
+> qualifier already hedges it); FORMAT gendered framing dropped
+> (uncertain scope); /u/e2e _rsc ERR_ABORTED dropped (known
+> artifact, passes 6-11/29-53). Self-assessment filed 6 findings
+> (0 high, 1 medium, 5 low). Spoiler discipline P0 intact —
+> every row is a comprehension / voice / seo observation; zero
+> winner / elimination / finale beat exposure.
+>
+> ───── Pass 65 metadata kept below for history ─────
+>
 > Last pass: 2026-06-23 at commit 015d394
 > Pass count: 65
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1024,6 +1055,12 @@
 
 ## Pending
 
+- [ ] [MED] [anon+authed] /shows/naked-and-afraid — multiple season files carry `Jan 1` as the premiere date (S18 `the-long-haul` shows "Jan 1, 2025"; S19 `the-active-season` shows "Jan 1, 2026"). January 1 is not a plausible premiere date for a Discovery Channel survival show and reads as a placeholder date entered during content authoring. A first-time visitor who checks the stat strip or season detail sees a fabricated date presented as fact. Fix: look up and set the actual premiere dates for S18 and S19 in their respective season frontmatter files (`content/shows/naked-and-afraid/seasons/18-the-long-haul.md` and `19-the-active-season.md`); if the exact date is uncertain, use the year only rather than a round January 1 placeholder. Content-only. Spoiler discipline P0 intact (premiere dates are public record). (URL: /shows/naked-and-afraid/season/the-long-haul, source: critique-pass-66) — b88e76e
+- [ ] [LOW] [anon+authed] /shows/masked-singer — the `tier_s_blurb` field is absent from `content/shows/masked-singer/canon.md`. The S-tier band renders its heading ("The seasons that defend the show.") and its editorial description as the identical string — a visitor reads the same sentence twice in immediate succession. Same class as the pending AGT, ANTM, American Idol, RHOA, RHONY, DWTS, The Voice, and BDM findings. Fix: add `tier_s_blurb` to masked-singer's canon.md describing what the S-tier seasons share — e.g. "The early seasons where the celebrity-guessing format was fresh and the spectacle felt genuinely surprising — before the playbook became familiar." Content-only; one field addition. Spoiler discipline P0 intact. (URL: /shows/masked-singer, source: critique-pass-66) — b88e76e
+- [ ] [LOW] [anon+authed] /shows/masked-singer — the meta description ends with a lowercase sentence fragment after a period: "...viewers guess along. seven years on the air." The lowercase "seven" following a full stop reads as a capitalization artifact — either the period should be dropped in favor of a dash or "Seven" should be capitalized to open a proper sentence. A search-results snippet that begins a clause with a lowercase letter looks unpolished. Fix: update the show's `tagline` or description source in `content/shows/masked-singer.md` to either capitalize "Seven years on the air." or restructure the phrase as "...viewers guess along — seven years on the air." Content-only. Spoiler discipline P0 intact. (URL: /shows/masked-singer, source: critique-pass-66) — b88e76e
+- [ ] [LOW] [anon] /shows/masked-singer — the "03 · WHEN / When I revisit" editorial section contains the hedge "I'm not claiming to be objective. I'm trying to be honest." — the same defensive language flagged and filed for ANTM (pass-64 pending) and Naked and Afraid (pass-66 below). The phrase is present across multiple shows, indicating a shared boilerplate source. The bearings voice spec ("knowledgeable peer — confident, warm, plain-spoken") calls for editorial assertion rather than defensive qualification. Fix: remove or rephrase the hedge in `content/shows/masked-singer/canon.md` `meth_when_p` — e.g. "These rankings are honest readings of what the format delivered; the early seasons set the ceiling." Content-only. Spoiler discipline P0 intact. (URL: /shows/masked-singer, source: critique-pass-66) — b88e76e
+- [ ] [LOW] [anon] /shows/naked-and-afraid — the "03 · WHEN / When I revisit" editorial section contains the hedge "I'm not claiming to be objective. I'm trying to be fair." — same defensive pattern as flagged for ANTM (pass-64) and The Masked Singer (pass-66 above). The phrase undercuts the confident editorial voice the site targets. Fix: remove or rephrase in `content/shows/naked-and-afraid/canon.md` `meth_when_p` — e.g. "These are honest working positions: the slots reflect the current read of the full nineteen-season run." Content-only. Spoiler discipline P0 intact. (URL: /shows/naked-and-afraid, source: critique-pass-66) — b88e76e
+- [ ] [LOW] [anon] /shows/masked-singer/season/the-tenure — the canon slot sentence reads "Slot #11 of 13 in the The Masked Singer Editor's Canon." The phrase "in the The" is a double article — the definite article "the" appears twice in sequence before the show name. This is an artifact of combining a preposition phrase ("in the") with a show name that starts with "The". Fix: update the template or content to read "in the Masked Singer Editor's Canon" (dropping the possessive "The" from the show name in this context) or restructure as "Editor's Canon slot #11 of 13." Source likely in the season page component or content frontmatter. Spoiler discipline P0 intact. (URL: /shows/masked-singer/season/the-tenure, source: critique-pass-66) — b88e76e
 - [ ] [LOW] [anon+authed] /shows/americas-got-talent — the `tier_s_blurb` field is absent from `content/shows/americas-got-talent/canon.md`. The S-tier band renders its heading ("The seasons that defend the show.") and its editorial description as the identical string — a visitor reads the same sentence twice in immediate succession. Same class as the pending ANTM, American Idol, RHOA, RHONY, DWTS, The Voice, and BDM findings. Fix: add `tier_s_blurb` to AGT's canon.md describing what the S-tier seasons share — e.g. "The founding era at full confidence — the seasons where the open-call promise delivered its most varied audition pools and the judging chemistry held." Content-only; one field addition. Spoiler discipline P0 intact. (URL: /shows/americas-got-talent, source: critique-pass-65) — 015d394
 - [ ] [MED] [anon+authed] /shows/americas-next-top-model — the blurb and H1 use the show's production term "cycles" ("24 cycles. One photo at a time.") while the stat strip uses "24 SEASONS AIRED". A first-time visitor who reads the hero sees two different terms for the same count within one scroll — "cycles" and "seasons" are not interchangeable in everyday usage and no inline gloss bridges them. The stat strip uses "SEASONS AIRED" because it is a generic component shared across all shows; ANTM is the only show in the catalog that uses a non-standard unit name. Fix: add `seasons_unit: cycles` (or an equivalent mechanism) to the show's frontmatter and wire the stat strip to prefer it when present, so the label reads "24 CYCLES AIRED" for ANTM and falls back to "SEASONS AIRED" for every other show. Alternatively, update the blurb/tagline to "24 seasons" to match the stat strip's vocabulary and note the show's own "cycle" terminology parenthetically in the editorial copy. Content-only fix (tagline) or small component lift (stat strip). Spoiler discipline P0 intact. (URL: /shows/americas-next-top-model, source: critique-pass-64) — 0d476ae
 - [ ] [LOW] [anon+authed] /shows/americas-next-top-model — the `tier_s_blurb` field is absent from `content/shows/americas-next-top-model/canon.md`. The S-tier band renders its heading ("The seasons that defend the show.") and its editorial description as the identical string — a visitor reads the same sentence twice in immediate succession. Same class as the pending American Idol, RHOA, RHONY, DWTS, The Voice, and BDM findings. Fix: add `tier_s_blurb` to ANTM's canon.md describing what the S-tier cycles share — e.g. "The UPN founding run at full voltage — the cycles where the triple-panel dynamic and the photo-shoot format were both new enough to crackle." Content-only; one field addition. Spoiler discipline P0 intact. (URL: /shows/americas-next-top-model, source: critique-pass-64) — 0d476ae
