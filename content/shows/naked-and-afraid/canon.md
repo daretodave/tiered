@@ -1,7 +1,7 @@
 ---
 show: naked-and-afraid
 editor: tiered.tv editor
-last_revised: 2026-06-22
+last_revised: 2026-06-23
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've tracked the format from the 2013 premiere through nineteen seasons, across every major location and format variation in the core series. The ranking weighs what each season contributed to the show's identity — the quality of the survival challenge, the cast energy, and how well the location served the format. This is one read, not a committee."
 meth_how_h: "How I weigh it"
@@ -66,3 +66,43 @@ slot_argument: Fifth for a season that delivered the core survival challenge wit
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Fifth for the season that closed the founding era at full stride. By season five, the 21-day paired survival format had found its production rhythm: the casting process was more refined, the location selection more deliberate, and the format's editing language — how it calibrated drama against endurance against quiet hardship — more assured. The season introduced no major structural change, which at this point in the run is a reasonable choice: the format had earned the right to execute confidently without overhauling itself. A season that ranks at the foundation's edge because it did what the show does, at the level the show aspired to.
+
+## 6. Season 6 — The Long Middle (2016)
+
+tag: The founding era at settled confidence — the format executing without proving itself.
+slot_argument: Season six arrived after the PSR overhaul had settled in. The pairings more intentional, the production rhythm more assured — the format operating from a stable base rather than establishing one.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Sixth for the season that found the founding era in its most settled state. The PSR scoring language had been absorbed, the production rhythm had stabilized, and the format was no longer under pressure to prove its premise. Season six could focus on execution: more deliberate pairings, cleaner editing, locations chosen for how well they shaped the survival challenge rather than how exotic they photographed. The result was a season that delivered everything the format promised without the rawness of the early runs or the structural experimentation that would come later. Reliable is a quieter virtue, but it is a real one.
+
+## 7. Season 7 — The Range Season (2016)
+
+tag: The founding era extending its geographic argument — more biomes, same 21-day clock.
+slot_argument: Season seven pushed location variety further than any founding-era season before it. A broader environmental range made the case that the 21-day premise held across terrain the show hadn't tested.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Seventh for the season that made the founding era's broadest geographic argument. Moving through meaningfully different biomes — different protein sources, different shelter demands, different environmental pressures — kept the format from settling into the repetitive rhythm that a structurally simple premise invites. The 21-day clock and the paired-survival rules stayed identical across every episode; the location did the work of making each pairing feel like a distinct challenge. Season seven demonstrated that the format's versatility was a design feature, not an accident, and it did it a season before the founding era closed.
+
+## 8. Season 8 — The Founding Close (2017)
+
+tag: The founding era's final run — the format's vocabulary set, its argument confirmed.
+slot_argument: Season eight closed eight seasons of format-building with its premise intact and its production language fully stable. A clean close to the run that established what Naked and Afraid was.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Eighth for the season that closed the founding era. After eight runs the PSR scoring system was established language, the production rhythm was assured, and the paired-survival premise had been tested across enough varied environments to confirm it wasn't a novelty act. Season eight didn't need to break new ground — closing a long opening chapter cleanly was the job. The locations were demanding, the pairings were credibly matched, and the 21-day structure delivered without needing novelty to carry it. The founding era's case, completed.
+
+## 9. Season 9 — The Recalibration (2018)
+
+tag: The evolution era opening — the format reconsidering what the premise could hold.
+slot_argument: Season nine opened a new phase by shifting the casting approach and pushing into untested environments. The rules stayed unchanged; the argument underneath them started moving.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Ninth for the season that opened the evolution era by asking a harder question: what else could the paired-survival format hold after eight founding seasons had confirmed the premise? The casting approach shifted — the survivalist profiles the show recruited changed meaningfully — and the locations pushed into terrain the founding era hadn't covered. The 21-day structure stayed intact throughout, but the season's argument about endurance felt different from what came before. A transitional run that moved the format forward without discarding the founding era's discoveries. It earns its slot for doing that transition honestly.
+
+## 10. Season 10 — The Decade Mark (2019)
+
+tag: The evolution era in progress — the format working out what it was becoming.
+slot_argument: Season ten arrived with the shifts season nine introduced still finding their form. A transitional season that earns its place for letting the evolution play out without forcing a resolution.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Tenth for the season that arrived in the middle of the evolution era's unsettled stretch. The casting and environmental adjustments season nine introduced hadn't yet resolved into a new stable pattern, and season ten made no pretense of having figured it out. A format this structurally spare — two people, 21 days, nothing — exposes transition clearly. There is no production scaffolding to hide behind when the premise is that direct. Season ten earns its place for not papering over the uncertainty and letting the evolution-era argument develop at the pace it needed.
