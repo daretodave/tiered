@@ -143,3 +143,43 @@ slot_argument: The pandemic redraws the format's structural possibilities in way
 community_rank_hint: { rank: 15, delta: 0, sentiment: hold }
 
 Season fifteen is the hardest season to rank on its own terms because the pandemic redraws the format's possibilities. The live-audience energy the open-call spectacle depends on is limited throughout, and no casting decision compensates for a stage that cannot fully deliver the show's central promise. Sofia Vergara and Heidi Klum join a panel that had real chemistry, and the format runs — it just runs diminished. The season belongs at the bottom of this canon block because the structural limitations are external and real, not editorial.
+
+## 16. The Full Return
+
+tag: The post-pandemic format restored — a full live room and a fully settled panel.
+slot_argument: A full live audience returns for the first time since the pandemic; Sofia Vergara completes her first full season at the table. The four-person panel operates with a working chemistry that S15's restrictions never allowed.
+community_rank_hint: { rank: 16, delta: 0, sentiment: hold }
+
+Season sixteen earns the top slot in this block because it resolves what the previous season could not. The full live audience is back, and the audition energy the open-call format depends on returns with it. Sofia Vergara's first complete run at the judging table alongside Cowell, Klum, and Mandel gives the four-person panel a chemistry the prior year's restricted production never fully established. The format does not do anything novel here — it does what it was designed to do, with all the structural elements in place and working. After one season of compromise, that counts as a genuine argument.
+
+## 17. The Panel in Form
+
+tag: The Cowell-era panel's best sustained chemistry — second year running.
+slot_argument: A second full year together produces the panel's best sustained chemistry. Sharper judging and more assured critiques than the prior year's debut run or the seasons that follow it.
+community_rank_hint: { rank: 17, delta: 0, sentiment: hold }
+
+Season seventeen sits above the other middle-era seasons because a second year together produces the best sustained judging of this block. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have built the kind of shorthand that makes critique feel natural rather than performed — disagreements land faster, compliments carry more weight, and the table is interesting to watch independently of whatever is on the stage. The audition pool runs wide across disciplines. Not a reset season, not a milestone season, but the four-person panel at its most assured and the format running at a quiet peak inside this era.
+
+## 20. The Anniversary Season
+
+tag: A milestone and a new panel configuration — the format arrives with more interest than it has carried in years.
+slot_argument: The 20th anniversary season reshapes the judging table after four seasons of the same configuration. New faces bring structural unpredictability back to the audition rounds. The milestone framing helps; the panel change matters more.
+community_rank_hint: { rank: 18, delta: 0, sentiment: hold }
+
+Season twenty earns a slot above the middle two seasons of this block because something actually changes. After four consecutive runs of the Cowell-Klum-Vergara-Mandel configuration, new judges arrive and the judging table has to find a working dynamic again. That structural disruption — even if it takes most of the season to resolve — produces more interesting audition rounds than the fully settled years surrounding it. The 20th anniversary framing gives the production an occasion to lean into; whether the new panel configuration justifies the attention is what the season is really arguing.
+
+## 18. The Settled Run
+
+tag: The Cowell-era panel's most competent and least surprising run.
+slot_argument: Three years of the same four-person configuration produces a season that functions well and offers little friction. The format runs at its most practiced and least dynamic here — everything works, nothing pushes forward.
+community_rank_hint: { rank: 19, delta: 0, sentiment: hold }
+
+Season eighteen is the format in its most settled state — the same four-person panel, the same open-call structure, the same production shape the show has run since S16. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have now run together long enough that the judging table has traded dynamic friction for smooth efficiency. The audition pool delivers expected range across variety disciplines; the live rounds follow the established format without deviation. Competent in every dimension, unremarkable in most of them. A season that keeps the open-call promise without expanding what it means.
+
+## 19. The Vergara Finale
+
+tag: Four years of the same configuration — the panel at its smoothest and least surprising.
+slot_argument: Four consecutive seasons of the same panel with no structural disruption — the most predictable run of the era. The closing of the Vergara era is the season's most notable editorial fact.
+community_rank_hint: { rank: 20, delta: 0, sentiment: hold }
+
+Season nineteen sits at the bottom of this canon block because it is the fourth consecutive run of an identical judging configuration, and the accumulated familiarity has replaced friction with efficiency. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel know exactly where each other stands — the critiques are smooth, the disagreements are rare, and the audition rounds run with a practiced ease that rarely tips into genuine surprise. The format is not broken; it is just running in a groove it has worn deep. Sofia Vergara's departure after this season becomes the run's editorial marker by default.
