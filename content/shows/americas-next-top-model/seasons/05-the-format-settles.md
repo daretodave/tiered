@@ -7,18 +7,19 @@ ep_count: 13
 location: "Los Angeles, California"
 host: Tyra Banks
 canonical_position: 5
-eyebrow: "Aired fall 2005 · UPN · last cycle before The CW move"
-lede: "The UPN era's closing statement — the format at full confidence, a broadened casting pool, and an international component in the finale stretch. Cycle five knows what it is and runs cleanly to the end."
-pull: "The close of one chapter rather than the peak of another — a confident final run before the network move."
+eyebrow: "Aired fall 2005 · UPN · format at full confidence"
+lede: "The UPN era at full mature confidence — broad casting, ambitious photoshoots, and an international component in the finale stretch. Cycle five knows what it is and runs cleanly to the end."
+pull: "The format fully settled — a UPN cycle running at its own peak, confident in every dimension."
 format_summary: "Modeling competition · international finale"
-format_caption: "last UPN cycle"
+format_caption: "UPN era, format at peak confidence"
 cast_size: 14
-cast_size_caption: "14 contestants, final UPN casting"
+cast_size_caption: "14 contestants, UPN mature era"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 
-The UPN era's closing statement. The format runs at full confidence — casting is broad,
-photoshoot creative is ambitious, and an international component in the finale stretch
-adds a dimension the earlier cycles had only gestured at. Tyra Banks hosts and mentors
-with the authority of a format she has run for three years. The canon places it fifth
-because it is the close of one chapter rather than the peak of another.
+Cycle five runs at the UPN era's full mature confidence. Casting is broad, photoshoot
+creative is ambitious, and an international component in the finale stretch adds a
+dimension the earlier cycles had only gestured at. Tyra Banks hosts and mentors with
+the authority of a format she has been running for three years. The format is settled
+and functional — the canon places it fifth as one of several strong UPN seasons, the
+format fully knowing what it is.
