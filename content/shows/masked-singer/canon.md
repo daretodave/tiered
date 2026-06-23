@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've tracked The Masked Singer from its Fox deb
 meth_how_h: "How I weigh it"
 meth_how_p: "The central device is the disguise — and the ranking reflects how well each season made the disguise matter. Seasons where the celebrity roster carried real surprise value and the panel's guessing felt earned outscore seasons where the format ran on spectacle alone. Costume design ambition and the clarity of the show's tonal identity are secondary variables."
 meth_when_h: "When I revisit"
-meth_when_p: "I'm working from ten seeded seasons. The full run extends to thirteen seasons, and the remaining cycles will settle into the ranking as they're added. The ten entries here reflect honest standing against each other. The canon will rebase as coverage expands."
+meth_when_p: "The full thirteen-season run is now seeded. Each entry reflects honest standing against the others across the show's founding, expansion, and established eras. The canon will rebase if a future cycle makes a strong enough case to shift the ranking."
 tier_a_blurb: "Seasons where the disguise conceit found its fullest expression — celebrity caliber, panel chemistry, and production ambition all pulling together."
 tier_b_blurb: "Solid Masked Singer seasons — the format working with energy and spectacle, the celebrity roster delivering genuine surprise value."
 weekly_question: "Does Season 2 belong above Season 1 in the canon, or does the original hold?"
@@ -104,3 +104,27 @@ slot_argument: Ten seasons intact — same panel, same structure, same conceit. 
 community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season ten is The Masked Singer at its clearest long-run statement: ten cycles of the same format, the same panel, the same disguise conceit, and the show still drawing an audience for it. The costume design stayed ambitious. The celebrity roster held the calibration the guessing conceit requires. The milestone itself is the editorial marker — reaching ten seasons without a format overhaul is an argument for the original design's durability, not a coincidence. The season doesn't surpass the cycles above it in quality, but it earns its position as the established era's second entry. Tenth slot.
+
+## 11. Season 11 — The Tenure
+
+tag: Six years in — the format running on accumulated credibility.
+slot_argument: Sixth year in — the show running with long-tenured assurance, no new arguments needed. The tenure is the credential. Sits below season ten for the same established-era register with slightly less editorial weight.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Season eleven is The Masked Singer in its sixth year: a spring 2024 premiere that ran the format with full confidence and no need to announce itself. The panel ensemble carried the same chemistry across eleven prior cycles of shared stage. The celebrity roster held the calibration the guessing conceit requires. The costume design stayed at the level the show had established across the expansion era and held through the established era's opening cycles. The season's argument is the tenure — the show running in its sixth year without friction or compromise, the original design still doing the same job it was built to do. Eleventh slot.
+
+## 12. Season 12 — The Cadence
+
+tag: The fall return completing a spring-fall rhythm — the schedule as structure.
+slot_argument: Fall 2024 — the spring-fall cadence of the established era locked in. The show as fixture rather than singular event. Sits below season eleven for the same register, the additional distance from novelty the distinguishing factor.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Season twelve arrived in fall 2024 completing a spring-fall rhythm that marks the established era's deepest stretch. The format ran exactly as built across eleven prior cycles — ambitious costumes, a celebrity roster calibrated to the guessing conceit, a panel ensemble with years of shared chemistry. The fall premiere context that once anchored the show's largest audiences is now a routine slot rather than an event. That shift in register isn't a quality failure; it's the honest description of a long-running format in its most settled phase. The cadence holds. Twelfth slot.
+
+## 13. Season 13 — The Pattern
+
+tag: Thirteen cycles of the same format — the pattern as the product's identity.
+slot_argument: Thirteen cycles, same format — the pattern fully transparent to its audience. The show's most self-knowing cycle. Sits last for the established era's furthest reach and cumulative distance from its novelty origins.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Season thirteen is the show's most pattern-settled cycle: thirteen iterations of the same disguise format, the same panel, the same Fox production machinery, and an audience that arrives knowing exactly how to watch. The costume design held. The celebrity roster delivered enough genuine guessing work to justify the format's run. What separates this cycle from the seasons above it is accumulated distance from the debut's urgency — the format is fully transparent to a viewer who has watched it across six years, and the ritual of it is the draw. The pattern is the product now. Thirteenth slot.
