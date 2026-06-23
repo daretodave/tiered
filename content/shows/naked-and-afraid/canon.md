@@ -106,3 +106,43 @@ slot_argument: Season ten arrived with the shifts season nine introduced still f
 community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Tenth for the season that arrived in the middle of the evolution era's unsettled stretch. The casting and environmental adjustments season nine introduced hadn't yet resolved into a new stable pattern, and season ten made no pretense of having figured it out. A format this structurally spare — two people, 21 days, nothing — exposes transition clearly. There is no production scaffolding to hide behind when the premise is that direct. Season ten earns its place for not papering over the uncertainty and letting the evolution-era argument develop at the pace it needed.
+
+## 11. Season 11 — The Evolution Crest (2019)
+
+tag: The evolution era at full stride — the format confident in what it became.
+slot_argument: Season eleven arrived after the evolution era's opening experiments had settled. A season working from a stable casting philosophy and a proven environmental approach — less searching than season nine, less transitional than ten.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Eleventh for the season that showed what the evolution era looked like once the searching stopped. Season nine had asked whether the format could evolve; season ten had held the uncertainty honestly. Season eleven arrived after those questions had been answered and production had settled into a new stable identity. The casting approach was more refined, the environmental pairings more deliberate, and a format this structurally spare shows clearly when the production knows exactly what it is doing. The evolution era's clearest self-portrait earns its place for delivering exactly that.
+
+## 13. Season 13 — The Return (2021/2022)
+
+tag: The post-pandemic return — full-scale production back, the format resuming its argument.
+slot_argument: The first season back at full production scope after COVID — international locations, standard casting, the 21-day premise without constraint. Earns its slot for delivering the format at the reach it was built to operate at.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Twelfth for the season that restored what season twelve couldn't access: the full environmental pressure the format depends on. The 21-day paired-survival premise needs remote wilderness, genuine exposure, and a production footprint large enough to place survivalists in conditions the show can't manufacture at reduced scale. Season thirteen delivered all of it. The evolution era closes with this run, and it closes at full scope — a genuine recovery that earns its placement above the constrained season by doing what the format is actually built to do.
+
+## 14. Season 14 — The Modern Opening (2022/2023)
+
+tag: The modern era's first argument — a decade-plus format asking what comes next.
+slot_argument: Season fourteen opened the modern era with updated casting priorities and an evolved production approach. A transitional season at the start of a new phase, earning its rank for setting the modern era's terms.
+community_rank_hint: rank=13 delta=0 sentiment=hold
+
+Thirteenth for the season that opened the modern era with a recalibration the format hadn't attempted since the evolution era began. A decade-plus run forces the question: what does paired survival look like when the audience already knows the premise thoroughly? Season fourteen answered by shifting casting priorities — the survivalist profiles recruited into the modern era emphasized different skill sets and backgrounds than the evolution era had favored. A transitional season, as all era-opening seasons are. It earns its rank for setting the modern era's terms rather than defaulting to what the evolution era had already established.
+
+## 15. Season 15 — The Standard Run (2023/2024)
+
+tag: The modern era finding its rhythm — the format reliable in a new key.
+slot_argument: Season fifteen arrived with the modern era's recalibration settled. Operating from current production assumptions without transition weight — the modern era's first confident second execution.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Fourteenth for the season that proved the modern era's approach was repeatable. Season fourteen had to open a new phase and establish new terms; fifteen had to demonstrate that those terms held under a second season's weight. The 21-day structure, the remote locations, the pairing dynamic — all running from the format's current production assumptions without transitional uncertainty pulling against them. A settled season earns a different kind of credit than an opening one. Season fifteen earns it by delivering the modern era without leaning on the novelty of being first.
+
+## 12. Season 12 — The Disruption (2021)
+
+tag: The COVID season — the format under constraint it didn't choose.
+slot_argument: Season twelve aired under COVID-era constraints that limited wilderness access. The 21-day premise was squeezed by forces outside the format's control. Worth watching for what it reveals about production scope's role in the format.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Fifteenth and last in this batch for the season that aired under conditions the format wasn't built for. The 21-day paired-survival premise lives on environmental pressure — remote locations, genuine physical exposure, terrain that creates stakes the production can't substitute. COVID-era filming constraints reduced what was available, and the season reflects that reduction honestly rather than papering over it. A season shaped by external forces rather than creative choices tells you something real about the format: how much it depends on the production logistics no other element can replace.
