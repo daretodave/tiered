@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched every cycle of America's Next Top 
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — casting, whether the contestant pool had real range and competitive tension; photoshoots, whether the creative direction produced genuinely striking work rather than gimmick; and format, whether the season's structural choices sharpened the competition or cluttered it. Tyra Banks' hosting and mentorship presence weaves through all three."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon opens with the founding UPN cycles — the era that established the format and the show's editorial voice. The CW years and the VH1 relaunch get added as the drain completes. The UPN cycles establish what a strong ANTM season looks like. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon opens with the founding UPN cycles — the era that established the format and the show's editorial voice. The CW years and the VH1 relaunch complete the picture across all 24 cycles. The UPN cycles establish what a strong ANTM season looks like. I'm not claiming to be objective. I'm trying to be honest."
 tier_b_blurb: "Strong ANTM. The casting pool has genuine range, the photoshoots produce real editorial work, and the season's structural choices give the competition room to breathe."
 weekly_question: "Which of the founding UPN cycles made the strongest case for ANTM as genuine competition television?"
 era_bands:
@@ -143,3 +143,75 @@ slot_argument: Cycle 13's explicit height cap narrows the pool in ways that limi
 community_rank_hint: { rank: 15, delta: 0, sentiment: hold }
 
 Cycle 13 is the show's clearest format miscalculation of the CW era. The explicit height cap produces novelty but not a stronger competition — restricting the contestant pool by a single physical criterion narrows rather than deepens the competitive field. Filming entirely within the United States removes the international location that had been the format's most consistent creative asset since cycle three. The reduction to a three-judge panel strips the critique sessions of the multiple editorial perspectives that had made the panel work. The domestic locations are attractive; the cycle around them is the weakest CW execution in the canon.
+
+## 20. The Guys and Girls
+
+tag: The co-ed breakthrough — first male contestants in show history, Brazil, the boldest late-CW format move.
+slot_argument: Opening the competition to male contestants for the first time changes the photoshoot dynamics, the panel criteria, and the structural logic of every episode. Brazil's two-city coverage gives the international leg real range.
+community_rank_hint: { rank: 16, delta: 0, sentiment: hold }
+
+Cycle 20 earns the top slot among the late CW cycles on the strength of what it changed. Introducing male contestants for the first time is not a stunt — it restructures the competition from the casting stage through the panel critique, demanding photoshoot concepts and mixed-gender editorial contexts the prior nineteen cycles never had to consider. Rio de Janeiro and São Paulo give the international leg a location pair with distinct visual registers. Among the cycles that rank below cycle 15's pivot, this one changed the most.
+
+## 18. The British Invasion
+
+tag: Nine British versus nine Americans — the transatlantic split cast that gave the late CW era real competitive tension.
+slot_argument: Dividing the cast by national origin gives the competition a structural friction the standard format rarely produced. London's fashion context and a Hawaii finale give the season genuine location range.
+community_rank_hint: { rank: 17, delta: 0, sentiment: hold }
+
+Cycle 18 is the most structurally effective format experiment of the late CW era after cycle 20's co-ed expansion. Pitting nine British contestants against nine Americans is not just a casting novelty — it builds a competitive dynamic the show's standard open-casting format had not generated, with national identity as a visible axis of tension across the elimination sequence. London's established fashion industry context gives the early episodes editorial grounding, and the Hawaii finale stretch closes the season with a strong visual contrast. The format works.
+
+## 16. The Morocco Cycle
+
+tag: Marrakech opens North Africa — competent CW-era competition with the show's first sub-Saharan-adjacent location.
+slot_argument: Cycle 16 delivers the standard CW format with a genuinely distinct international location. The medina's architecture and desert-edge landscape give the photoshoots a visual register the prior European and Oceanic trips couldn't offer.
+community_rank_hint: { rank: 18, delta: 0, sentiment: hold }
+
+Cycle 16 ranks here on location advantage alone — Marrakech is the show's first North African stop, and the photoshoot creative uses the medina's architecture, textiles, and desert-edge light with more editorial ambition than the cycle's competition layer generates. The elimination sequence back in Los Angeles runs competently and without distinction. A reliable mid-table CW entry that earns its placement above the later domestic and gimmick-heavy cycles by delivering an international leg with real visual returns. Marrakech alone makes it worth the slot.
+
+## 22. The Casting Revival
+
+tag: The strongest casting of the late CW run — competitive range the format had lost since cycle 15.
+slot_argument: Cycle 22's contestant pool carries the most genuine competitive range of any late CW entry — wide looks, varied approaches, and panel sessions that have real material to engage. The tighter 12-episode format keeps it from drifting.
+community_rank_hint: { rank: 19, delta: 0, sentiment: hold }
+
+Cycle 22 is the final CW season and, after several years of structural experiments and domestic-only productions, it returns to what the format was built on: a genuinely varied casting pool that gives the competition something to measure. The 12-episode run after a year's hiatus keeps the elimination sequence tight. The production stays in Los Angeles and foregoes the international leg, but the contestant range compensates in a way the intervening late-CW cycles rarely managed. The best casting the show put together between cycle 15 and the end of the CW run.
+
+## 19. The College Edition
+
+tag: College-only casting and a Greece finale — a restricted pool in a strong international location.
+slot_argument: Restricting the cast to current college students gives the cycle a distinct flavor while narrowing the competitive range the standard format relied on. Oxford and Crete provide strong international material.
+community_rank_hint: { rank: 20, delta: 0, sentiment: hold }
+
+Cycle 19 occupies the middle of the late CW pack because its defining structural choice cuts in two directions. The college-only casting brings contestants with less industry conditioning — occasionally producing more candid competitive moments — while also restricting the range of looks and experience the panel has to work with. Oxford and Crete give the international legs real editorial texture, and the Greek coastal settings produce some of the stronger late-CW location photography. The format is neither the cycle's strength nor a serious liability; the casting restriction is.
+
+## 17. The All Stars
+
+tag: All returnees, no new talent — a novelty cycle that functions more as reunion than competition.
+slot_argument: Drawing the entire cast from returning contestants trades the competition's foundational premise — discovering new talent — for a different format logic. Greece provides strong material; the stakes read differently throughout.
+community_rank_hint: { rank: 21, delta: 0, sentiment: hold }
+
+Cycle 17 is the show's most significant structural departure, and the departure is the source of both its appeal and its limitations. Every contestant is a returning alumna, removing the discovery premise at the core of the format and replacing it with a dynamic closer to a celebrity reunion. Greece's coastal locations give the photoshoot legs genuine visual texture, and the returnee cast brings a range of recognizable personalities for committed fans. The format change is interesting as a one-cycle experiment; as a competition, the stakes feel fundamentally different.
+
+## 21. The Late CW
+
+tag: Standard format, entirely domestic — the most unremarkable season of the CW run.
+slot_argument: Cycle 21 returns to open casting after two cycles of structural experimentation but stays entirely in Los Angeles, removing the international location engine without offering a compensating format change.
+community_rank_hint: { rank: 22, delta: 0, sentiment: hold }
+
+Cycle 21 is the late CW era at its thinnest. After the co-ed expansion of cycle 20 and the British Invasion split cast of cycle 18, returning to a standard open competition without an international leg is a visible retreat. The production stays entirely in Los Angeles — reasonable in isolation, but following cycles with Brazil and London, it reads as a reduction. The casting is solid; the photoshoots are functional; nothing distinguishes the cycle from a dozen prior domestic stretches. Reliable and forgettable in equal measure.
+
+## 24. The Finale
+
+tag: Tyra Banks returns, the show closes — a warmer final season than the relaunch it followed.
+slot_argument: Cycle 24 restores Tyra Banks as host and runs a 10-episode competition that closes the show's run with more coherence than the VH1 relaunch managed. The production stays domestic; the format is compact.
+community_rank_hint: { rank: 23, delta: 0, sentiment: hold }
+
+Cycle 24 earns its placement above the VH1 relaunch on what it restores rather than what it adds. Tyra Banks returning as host brings back the mentorship register the show was built around — the dual role of guide and judge that defined the format across its UPN and CW run. The 10-episode production is compact and stays in Los Angeles without the social-media scoring apparatus cycle 23 introduced. The season does not reach the creative or competitive levels of the founding era. It closes the run with dignity, which matters more than the competition it delivers.
+
+## 23. The VH1 Relaunch
+
+tag: Rita Ora hosts, social-media metrics replace editorial criteria — the show at its lowest point.
+slot_argument: Cycle 23 trades the show's editorial identity for a social-media-integrated format on a new network without Tyra Banks at the helm. The 10-episode run gives the competition little room to develop.
+community_rank_hint: { rank: 24, delta: 0, sentiment: hold }
+
+Cycle 23 sits at the bottom of the canon because it dismantles more of what the format was built on than any other cycle. The departure of Tyra Banks removes the show's defining authority figure; the shift to VH1 brings a new host in Rita Ora; and the addition of social-media following as a competitive criterion dilutes what the photoshoot had always been measuring. The 10-episode run leaves little space for the competition to establish itself, and the entirely Los Angeles production removes the location work the format relied on. The relaunch answers every question about what ANTM needed by removing it.
