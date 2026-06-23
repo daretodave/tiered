@@ -146,3 +146,35 @@ slot_argument: Season twelve aired under COVID-era constraints that limited wild
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Fifteenth and last in this batch for the season that aired under conditions the format wasn't built for. The 21-day paired-survival premise lives on environmental pressure — remote locations, genuine physical exposure, terrain that creates stakes the production can't substitute. COVID-era filming constraints reduced what was available, and the season reflects that reduction honestly rather than papering over it. A season shaped by external forces rather than creative choices tells you something real about the format: how much it depends on the production logistics no other element can replace.
+
+## 16. Season 16 — The Extended Modern (2024)
+
+tag: The modern era at comfortable stride — past proving itself, not yet fully placed.
+slot_argument: Season sixteen sits in the modern era's settled middle stretch, operating from stable assumptions the opening and confirmation seasons established. The rank is a working position while the modern era's reputations are still accumulating.
+community_rank_hint: rank=16 delta=0 sentiment=hold
+
+Sixteenth for the season that arrived after the modern era had done its opening work. Season fourteen set the era's terms; fifteen confirmed the approach held under a second run. Season sixteen didn't need to do either of those things — it could operate from a stable production base without transitional weight. The 21-day structure, the remote locations, the paired casting dynamic all running from current assumptions. It sits here because the canon places modern-era seasons at the lower end while their reputations settle, not because the execution fell short of what the format is doing right now.
+
+## 17. Season 17 — The Seventh Year (2024)
+
+tag: The modern era in close succession — two seasons in a single calendar year.
+slot_argument: A second 2024 season tested whether the format holds when the audience returns within months. Durable enough to make that case. Ranks here as a recent entry whose standing is still accumulating over time.
+community_rank_hint: rank=17 delta=0 sentiment=hold
+
+Seventeenth for the season that demonstrated the modern era's willingness to run close. Naked and Afraid has always been a procedural in the best sense — a format with fixed rules that generates variable drama through the specific people and locations it combines. A second 2024 season tests whether the premise can sustain that pace without diluting itself. The 21-day paired-survival structure is spare enough that it either delivers or it doesn't; there is no production scaffolding to hide behind when it falls short. Season seventeen held. Its position here reflects how recently it aired, not a judgment on what it delivered.
+
+## 18. Season 18 — The Long Haul (2025)
+
+tag: Eighteen seasons in — a survival format with no peer for long-form endurance.
+slot_argument: At eighteen seasons, the format has outlasted every comparable survival show. Season eighteen runs from a premise more familiar to its audience than any competitor. Ranks here on working-position logic — recent seasons settle over time.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Eighteenth for a season that arrives at a number no comparable survival format has reached. The 21-day paired-survival premise has been running since 2013, and by season eighteen the audience understands it as thoroughly as any format on television. That familiarity is the show's challenge at this point in the run: delivering the premise's genuine stakes to an audience that has watched it dozens of times. Season eighteen makes that case. Its position near the bottom of the canon is a function of time, not execution — recent seasons haven't yet accumulated the reputation that moves a slot up the order.
+
+## 19. Season 19 — The Active Season (2026)
+
+tag: The current season — ranked last because the canon doesn't place what it can't yet see whole.
+slot_argument: Season nineteen is still airing. Last slot is the only honest position for a season without a complete record. When the run finishes and the reputation settles, this slot gets revisited.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Nineteenth and last because the season is still in progress. The 21-day paired-survival format runs here as it has across nineteen seasons — two strangers, remote wilderness, nothing provided — and placing it definitively before the run concludes would be dishonest. The canon's methodology is clear about this: modern-era seasons and currently-airing seasons hold working positions at the lower end of the order until time lets the reputation settle into something stable. Season nineteen will be re-ranked when that work is done. For now, it holds this slot honestly.
