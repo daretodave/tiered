@@ -197,10 +197,34 @@ git log --invert-grep --grep='Cloud-Run:' --oneline
 
 `git log --grep='Cloud-Run:'` is the canonical filter.
 
+## The other loops — night + heartbeat
+
+Two more workflows ride alongside march (added 2026-07-03,
+readopt):
+
+- **`night.yml` — the night shift.** Daily at 10:30 UTC
+  (~06:30 ET), one `/digest` tick writes `plan/DIGEST.md` —
+  the morning briefing, with the content saga's progress
+  (shows scaffolded, seasons drained, queue depth per wave)
+  front and center. Notes-only commit: no verify gate (the
+  `/jot` carve-out), and the breadth verdict is READ from the
+  latest `e2e-full` run, never re-run. Shares the `march`
+  concurrency group. Read it with coffee instead of reading
+  run logs.
+- **`heartbeat.yml` — the immune system.** Every 6h, no model:
+  cancels runs wedged past 2h (unblocking the shared
+  concurrency group) and opens a deduped issue if march hasn't
+  completed a tick in 14h — so "disabled and forgotten" pages
+  the issue tracker instead of dying silently. Deliberately
+  runs on the bot `GITHUB_TOKEN`: the watchdog speaks as the
+  system, not as the human.
+
 ## Upgrading the model
 
-Default is Sonnet 4.6 because it's cheap-on-quota and fast
-enough for `/march`'s decision logic. To upgrade to Opus 4.7:
+Default is Sonnet 5 (bumped 2026-07-03 from Sonnet 4.6)
+because it's cheap-on-quota and fast enough for `/march`'s
+decision logic. To upgrade to Opus (currently
+`claude-opus-4-8`; ids age — verify before changing):
 
 1. Watch your local `/cost` indicator for a week. Opus is
    roughly 2x Sonnet's weight against the Max weekly cap.

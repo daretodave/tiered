@@ -25,6 +25,8 @@
 - [ ] [SEV] <one-line description> (category: <c>, source: <jot|critique|triage|expand|self>, score: N.N) — <commit hash where filed>
 -->
 
+- [ ] [LOW] check-test-colocation fails wholesale on Windows (Z: drive): all 185 modules report "test exists but does not import this module (filename match only)" under node 22.22.3 — an import-path normalization seam in scripts/check-test-colocation.mjs (the leg is green on ubuntu CI, where every cloud tick runs it). Fix the matcher's path handling so local Windows sessions can run the full gate. (category: engineering, source: self, score: 3.5 — impact 5 × ease 7) — filed 2026-07-03 during the nexus readopt
+
 <!-- SEASON-DRAIN QUEUE — WAVE 5 (filed via expand pass 38, 2026-06-21). Three wave-5 new shows
      were scaffolded with S1–S5 only; their remaining seasons need Rule 2 drain (~5/tick). Also
      includes RHOA S16 — frontmatter declares 16 aired seasons but only 15 season files exist;

@@ -159,11 +159,13 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # Sonnet — cheapest model that runs the loop. The cloud
           # loop bills against the subscription weekly cap; Sonnet
-          # keeps each tick cheap and leaves the most headroom. If a
-          # tick genuinely needs Opus-grade design/content judgment,
-          # bump back to claude-opus-4-7 for that work.
+          # keeps each tick cheap and leaves the most headroom.
+          # Bumped 2026-07-03 (readopt): claude-sonnet-4-6 →
+          # claude-sonnet-5. If a tick genuinely needs Opus-grade
+          # design/content judgment, bump to claude-opus-4-8 for
+          # that work (ids age — verify before changing).
           claude_args: |
-            --model claude-sonnet-4-6
+            --model claude-sonnet-5
             --dangerously-skip-permissions
           prompt: |
             You are running tiered.tv's autonomous loop in CI (GitHub Actions).
