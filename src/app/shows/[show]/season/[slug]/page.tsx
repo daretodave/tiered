@@ -420,6 +420,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
                   initialCount={0}
                   targetType="season"
                   targetId={seasonTargetId}
+                  subject={`${show.name} ${season.title}`}
                 />
               }
               shieldLines={shieldLines}

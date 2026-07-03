@@ -30,6 +30,13 @@ type VotePairProps = {
   targetId: string
   label?: string
   labelSingular?: string
+  // Critique pass-68 HIGH: `label`/`labelSingular` double as the
+  // visible pluralized caption under the count ("votes so far"),
+  // so they can't also carry the show/season name into the
+  // aria-labels without breaking the visible text. `subject`
+  // is aria-only — it names what's being voted on (e.g. "Jersey
+  // Shore Season 1") without touching the rendered caption.
+  subject?: string
 }
 
 type Action =
@@ -66,6 +73,7 @@ export function VotePair({
   targetId,
   label = 'votes so far',
   labelSingular = 'vote so far',
+  subject,
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
   const reduced = useRef(false)
@@ -187,6 +195,7 @@ export function VotePair({
   // on the target, not the signed net — the pass-34 retarget
   // from "net votes" stays; only the wording around it moves.
   const displayLabel = Math.round(state.count) === 1 ? labelSingular : label
+  const ariaSubject = subject ?? label
 
   // State pill copy (#160): surfaces for every signed-in member
   // and *describes the current state* of their vote (haven't
@@ -235,7 +244,7 @@ export function VotePair({
       data-vote-value={state.value}
       data-voted={votedDir}
       data-hydrated={hydrated ? 'true' : 'false'}
-      aria-label={`Vote on ${label}`}
+      aria-label={`Vote on ${ariaSubject}`}
     >
       <button
         type="button"
@@ -244,7 +253,9 @@ export function VotePair({
         disabled={disabled}
         aria-pressed={votedDown}
         aria-label={
-          votedDown ? `Remove your down vote on ${label}` : `Vote down ${label}`
+          votedDown
+            ? `Remove your down vote on ${ariaSubject}`
+            : `Vote down ${ariaSubject}`
         }
         title={votedDown ? 'You voted this down — click to undo' : undefined}
         data-testid="vote-down"
@@ -286,7 +297,9 @@ export function VotePair({
         disabled={disabled}
         aria-pressed={votedUp}
         aria-label={
-          votedUp ? `Remove your up vote on ${label}` : `Vote up ${label}`
+          votedUp
+            ? `Remove your up vote on ${ariaSubject}`
+            : `Vote up ${ariaSubject}`
         }
         title={votedUp ? 'You voted this up — click to undo' : undefined}
         data-testid="vote-up"

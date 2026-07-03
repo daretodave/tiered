@@ -488,4 +488,74 @@ describe('<VotePair>', () => {
       expect(screen.queryByTestId('vote-state-cap')).toBeNull()
     })
   })
+
+  // --- critique pass-68 HIGH: `subject` names the aria-labels
+  // without touching the visible pluralized caption ---
+  describe('aria subject (critique pass-68 HIGH)', () => {
+    it('falls back to the default generic label when no subject is given', () => {
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      expect(screen.getByTestId('vote-pair').getAttribute('aria-label')).toBe(
+        'Vote on votes so far',
+      )
+      expect(screen.getByTestId('vote-up').getAttribute('aria-label')).toBe(
+        'Vote up votes so far',
+      )
+      expect(screen.getByTestId('vote-down').getAttribute('aria-label')).toBe(
+        'Vote down votes so far',
+      )
+    })
+
+    it('names the show + season in every aria-label when subject is given', () => {
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          subject="Jersey Shore Season 1"
+        />,
+      )
+      expect(screen.getByTestId('vote-pair').getAttribute('aria-label')).toBe(
+        'Vote on Jersey Shore Season 1',
+      )
+      expect(screen.getByTestId('vote-up').getAttribute('aria-label')).toBe(
+        'Vote up Jersey Shore Season 1',
+      )
+      expect(screen.getByTestId('vote-down').getAttribute('aria-label')).toBe(
+        'Vote down Jersey Shore Season 1',
+      )
+    })
+
+    it('does not leak subject into the visible pluralized caption', async () => {
+      getBody = { ok: true, value: 0, count: 7 }
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          subject="Jersey Shore Season 1"
+        />,
+      )
+      await flushAsync()
+      const label = screen
+        .getByTestId('vote-count')
+        .parentElement?.querySelector('.vote-label')?.textContent
+      expect(label).toBe('votes so far')
+    })
+
+    it('reflects subject in the remove-vote aria-labels post-vote', async () => {
+      getBody = { ok: true, value: 1, count: 7 }
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          subject="Jersey Shore Season 1"
+        />,
+      )
+      await flushAsync()
+      expect(screen.getByTestId('vote-up').getAttribute('aria-label')).toBe(
+        'Remove your up vote on Jersey Shore Season 1',
+      )
+    })
+  })
 })
