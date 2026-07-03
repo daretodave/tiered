@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — task design, whether the week's challenge produced genuine strategy and observable craft; cast chemistry, whether the pool generated real competitive friction; and boardroom stakes, whether the elimination decisions felt grounded in what happened. Seasons delivering on all three sit at the top. Seasons leaning on spectacle instead of substance sit at the bottom."
 meth_when_h: "When I revisit"
 meth_when_p: "The canon opens with the founding era — S1 through S6, before the celebrity pivot. Those seasons set the standard. The celebrity era is weighed honestly against it. I revisit the top more than the tail; the tail does not teach much on replay. I am not claiming to be objective. I am trying to be honest."
+tier_s_blurb: "The five founding-era seasons in the canon so far — the sharpest task design, a boardroom with real stakes, and a cast that treated the competition as genuine business rather than television."
 tier_b_blurb: "Strong Apprentice. Well-designed tasks, a contestant pool with real competitive range, and a boardroom that feels like it has weight."
 weekly_question: "Which founding-era season made the strongest case for The Apprentice as a genuine business competition?"
 era_bands:

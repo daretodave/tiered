@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Two things matter most — whether the cast's ensemble chemistry holds up across a full run rather than a strong pilot alone, and whether the shore-house format itself generates real stakes instead of just a scenic backdrop. Seasons doing both sit higher in the canon."
 meth_when_h: "When I revisit"
 meth_when_p: "With one season seeded, the ranking is necessarily provisional — it will move as the Miami and Italy relocations, and the cast's later seasons, earn their own entries. The founding season set the format's baseline; how the show evolves past it will decide what comes next."
+tier_s_blurb: "The one season on the board earns S tier by default and by merit — eight roommates, one house, and a shore-house format that arrived fully formed from episode one."
 tier_b_blurb: "The show's default tier while the catalog fills in — a format proving it can sustain ensemble chemistry and shore-house stakes past a strong debut."
 weekly_question: "Does the original shore house debut still hold up as Jersey Shore's strongest season?"
 era_bands:

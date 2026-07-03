@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Australian waters have a different register — the scale, the isolation, the light. Location quality counts first. Crew chemistry across the deck and interior comes next, then how sharply Captain Jason's command had to work. Seasons that used their geography to create genuine pressure earn the credit."
 meth_when_h: "When I revisit"
 meth_when_p: "Only two seasons are on record, which makes every position provisional. A third season would force a proper reread of the full run. Either existing entry can move if the second watch reads differently from the first. The ranking stays honest to the evidence in hand."
+tier_s_blurb: "Two seasons finding the franchise's Australian identity fast — the Whitsundays' tropical friction and Western Australia's raw isolation, both built around Captain Jason Chambers's steady command."
 tier_b_blurb: "Two seasons finding the franchise's Australian identity — tropical Whitsundays energy and the wilder Western Australian coastline."
 weekly_question: "Does the Whitsundays energy of Season 1 hold up against the raw isolation of Season 2's Western Australia?"
 era_bands:

@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "The central question is whether the construction challenge format holds up across a full season. Each episode asks something different — shelter, bridge, watercraft, oven, trap — and the three-day build window plus the four-criterion judging structure give the episodes a distinct rhythm from the parent show's open-ended endurance model. Depth of challenge variety matters here more than character arcs."
 meth_when_h: "When I revisit"
 meth_when_p: "With one season in the canon and no second season on the horizon, the ranking is static. If a future season were to air, the relative position would shift based on how the new run handles challenge variety and the alumni-judge dynamic. Until then, the single-season ranking stands as filed."
+tier_s_blurb: "The lone season earns its S-tier slot for building something genuinely different from the parent show — a three-day construction brief judged by Alone alumni instead of an endurance survival arc."
 tier_b_blurb: "One founding season — a format experiment that traded wilderness endurance for episodic bushcraft construction."
 weekly_question: "Does the construction challenge format work better as a spinoff than it would as a Alone regular season?"
 era_bands:

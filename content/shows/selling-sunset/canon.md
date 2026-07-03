@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether an agent's office friction actually shapes the season's arc rather than sitting beside it, whether the listings themselves carry real stakes instead of decor, and whether the ensemble reads as a workplace rather than a cast assembled for cameras. Seasons doing all three sit higher."
 meth_when_h: "When I revisit"
 meth_when_p: "With one season in the canon, the ranking is necessarily provisional — it will move as later seasons, cast shifts, and the brokerage's own evolution earn their own entries. Season one set the format's baseline; how far the show pushes past a real estate premise will decide where everything after it lands."
+tier_s_blurb: "The one season seeded so far earns S tier outright — seven agents, one brokerage, and a format that made listings and office friction feel equally consequential from the first episode."
 tier_b_blurb: "The show's default tier while the catalog fills in — a format proving it can sustain office dynamics and high-stakes listings past a strong debut."
 weekly_question: "Does Season 1 hold up as Selling Sunset's strongest season yet?"
 era_bands:

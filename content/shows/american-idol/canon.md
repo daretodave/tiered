@@ -8,6 +8,8 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — audition depth, whether the touring circuit surfaced genuinely competitive talent; judge chemistry, whether the panel's friction and warmth made the critique feel real; and cultural weight, whether the season landed as a genuine television event. The viewer vote is the constant. The quality of what it's voting on is the variable."
 meth_when_h: "When I revisit"
 meth_when_p: "The canon opens with the first five Fox seasons — the original-panel era that put the show on the map. The rotation era and ABC revival get added as the scrutiny catches up. The founding five establish what a top-shelf Idol season looks like. I am not claiming to be objective. I am trying to be honest."
+tier_s_blurb: "The founding five Fox seasons — the deepest audition classes, the original Cowell-Jackson-Abdul panel at its sharpest, and the viewer vote landing on stakes that felt genuinely unpredictable."
+tier_a_blurb: "The panel's later original-era seasons and the rotation-era resets that followed — Lopez and Tyler's arrival, Harry Connick Jr.'s technical ear, the ABC network debut — strong when the judging chemistry clicked, uneven when it didn't."
 tier_b_blurb: "Solid American Idol. The audition tour finds real singers, the judging panel gives them something to push against, and the viewer vote lands on a finale that feels earned."
 weekly_question: "Which of the founding five Fox seasons made the strongest case for Idol as genuine competition television?"
 era_bands:

@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Adventure charters create a different service dynamic than luxury superyacht work — guests come for polar plunges and glacier hikes, not for tablescapes. Location does heavy work, and Svalbard is an extreme setting with real visual stakes. Cast chemistry across the crew counts, as does how sharply the captain's command had to work against the expedition backdrop."
 meth_when_h: "When I revisit"
 meth_when_p: "One season is the full record. With the show ended, this canon reflects the complete run. The single entry can't move — there is nowhere to move it — but it can sharpen in how it's described. If additional seasons surface, the ranking rebuilds from scratch. I'm not claiming to be objective. I'm trying to be honest."
+tier_s_blurb: "The one season on record earns S tier for the leap it took — expedition charters, Arctic waters, and a crew and captain rebuilt around a format the franchise had never tested."
 tier_b_blurb: "One season testing whether the Below Deck format could survive a full swap — expedition vessel, arctic waters, adventure charters."
 weekly_question: "Does the Svalbard season hold up as a genuinely distinct Below Deck chapter, or does it read as a one-off experiment?"
 era_bands:

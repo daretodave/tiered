@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "I rank on how cleanly the pod experiment runs, how engaged the cast is with the format, and how much each season advances or tests the show's premise. A season where the connection-building phase feels earned outranks one where the pods feel like a formality. Altar results carry zero weight here — only how well the hour runs getting there."
 meth_when_h: "When I revisit"
 meth_when_p: "This is the full ten-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S6–S10 are newly slotted and the established-era rankings are the most provisional."
+tier_s_blurb: "Seattle's cleanest pod run, Chicago's polish, D.C.'s established-era peak, the Atlanta original that built the format, and Columbus's late-run bounce-back — five seasons where the experiment felt genuinely earned."
 tier_b_blurb: "Ten seasons that prove the pod experiment is a durable format — from the Atlanta original that built the blueprint through the Columbus season that reminded the established era what the show is capable of."
 weekly_question: "Does the founding batch still set the bar, or has a later city done the pod experiment better?"
 era_bands:

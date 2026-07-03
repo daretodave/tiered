@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Location is the variable that matters most in a self-filmed survival format. The wilderness sets the difficulty, the aesthetic, and the emotional register of the whole season. A season that takes a genuine risk with terrain earns credit for that. A return run earns credit for showing the format can sustain, not just launch."
 meth_when_h: "When I revisit"
 meth_when_p: "Three seasons is a short run. The canon will shift as Season 4 and beyond add context. These positions reflect the format at the end of its founding arc — the original Tasmania run, the Fiordland leap, and the return home. I'm not claiming to be objective. I'm trying to be honest."
+tier_s_blurb: "Three seasons and each one moved the format somewhere new — an international leap to Fiordland, the founding Tasmania run, and a more assured return to home terrain."
 tier_b_blurb: "Three seasons establishing the Australian format's range — origin run, first international location, return to familiar terrain."
 weekly_question: "Does the Fiordland international leap belong above the South West Tasmania origin, or does the founding season always hold the top?"
 era_bands:

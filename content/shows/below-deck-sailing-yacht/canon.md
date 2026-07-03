@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Location does more work on a sailing yacht than a motor yacht — the sea state, the anchorage, the port calls shape the texture of every charter. Cast chemistry across deck and interior counts next, then how sharply Glenn's command had to work. Seasons that used their coastline fully earn credit for the setting they chose."
 meth_when_h: "When I revisit"
 meth_when_p: "The show is on indefinite hiatus after five seasons, so this ranking reflects the complete run. The canon can tighten as the full arc reads more clearly with distance. A season that improves on second watch moves; one that deflates stays put. The ranking stays honest."
+tier_s_blurb: "All five seasons the show ever produced — the Dalmatian peak, Sardinia's mature confidence, Menorca and Ionian's steadier registers, and Ibiza's island-charged close, each built on Glenn Shephard's command."
 tier_b_blurb: "Five seasons building the sailing format's identity — from a rough Ionian start to a Dalmatian peak and a composed Sardinian close."
 weekly_question: "Does the Croatian Dalmatian season deserve the top spot, or does the Sardinian maturity of Season 4 make a stronger argument?"
 era_bands:

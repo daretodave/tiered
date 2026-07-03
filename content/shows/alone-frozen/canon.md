@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "The core question: does the experiment justify itself? Frozen changed three things at once — the cast, the climate, and the prize structure. A shared prize pool is a real departure for a show built on individual endurance. The Labrador winter raises the bar. The returnee cast adds something the original never tried. All three changes deepen rather than dilute."
 meth_when_h: "When I revisit"
 meth_when_p: "With one season in the canon, there's nothing to rerank right now. If a second season were to air, the relative positions would shift based on how the new run handles the same format choices — winter setting, returnee cast, shared prize. Until then, the single-season ranking stands."
+tier_s_blurb: "The only season in the canon, and it holds S tier outright — a winter setting, a returnee cast, and a shared prize pool that rewired what Alone could be."
 tier_b_blurb: "One season establishing the winter variant — returnee cast, shared prize, Labrador cold."
 weekly_question: "Did the winter format push the show to a new peak, or did the returning cast carry all the weight?"
 era_bands:

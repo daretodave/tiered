@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether the week's makeover finds something true about the nominee rather than a stock arc, whether the Fab Five's five distinct specialties actually combine into one coherent hour, and whether the location itself shapes the season's texture. Seasons doing all three well sit higher."
 meth_when_h: "When I revisit"
 meth_when_p: "With one season in the canon, the ranking is necessarily provisional — it will move as Kansas City, Philadelphia, Austin, and every stop after get their own entries. Georgia set the format's baseline; how far each later stop pushes past it will decide where it lands."
+tier_s_blurb: "The one season in the canon earns its S-tier slot outright — the Fab Five's chemistry instant, Georgia's specificity grounding the show, and the format never once explaining itself."
 tier_b_blurb: "The reboot's default tier while the catalog fills in — a format still proving it can sustain itself past a genuinely strong debut season."
 weekly_question: "Does Season 1's Georgia run hold up as the show's strongest season yet?"
 era_bands:
