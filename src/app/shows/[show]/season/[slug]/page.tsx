@@ -35,6 +35,7 @@ import {
   buildJsonLd,
   buildMetadata,
   canonicalUrl,
+  clipToSeoBudget,
   jsonLdScriptProps,
 } from '@/lib/seo'
 import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
@@ -86,20 +87,16 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 
 // CRITIQUE pass 10 MED: prefer the curator's lede (the line a reader
 // would quote to a friend) over the flat "Vote and discuss…" template.
-// Google snippets clip around 155–160 chars, so on the rare lede that
-// runs long we cut at the last word boundary inside 159 and append an
-// ellipsis. The template fallback survives for seasons authored without
-// a lede.
+// The template fallback survives for seasons authored without a lede;
+// the rare lede that overruns the SEO budget goes through
+// `clipToSeoBudget` (critique pass 62/67 — clause-boundary aware, not
+// a raw word-boundary cut).
 function descriptionFor(showName: string, season: Season): string {
   const lede = season.lede?.trim()
   if (!lede) {
     return `Vote and discuss ${showName} season ${season.number}: ${season.title}.`
   }
-  if (lede.length <= 160) return lede
-  const slice = lede.slice(0, 159)
-  const lastSpace = slice.lastIndexOf(' ')
-  const cut = lastSpace > 0 ? lastSpace : 159
-  return `${lede.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
+  return clipToSeoBudget(lede)
 }
 
 function pad2(n: number): string {

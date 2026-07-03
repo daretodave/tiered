@@ -15,6 +15,7 @@ import {
   buildJsonLd,
   buildMetadata,
   canonicalUrl,
+  clipToSeoBudget,
   jsonLdScriptProps,
 } from '@/lib/seo'
 import { canonRevisedLabelFromIso } from '@/lib/canon/last-revised'
@@ -70,19 +71,14 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 // that overshot Google's ~155-char clip on every show. Use the
 // curator's `card_tagline` when authored (the schema caps it at
 // 160 so it always fits the meta description budget), fall back to
-// `tagline`, and on the rare tagline that runs long, cut at the
-// last word boundary inside 159 + ellipsis. Mirrors the season
-// page's `descriptionFor` (cc58f17) — same shape so a future
-// reader recognizes the pattern.
+// `tagline` through `clipToSeoBudget` on the rare overrun (critique
+// pass 62/67 — clause-boundary aware, not a raw word-boundary cut).
+// Mirrors the season page's `descriptionFor` — same shared helper so
+// a future reader recognizes the pattern.
 function descriptionFor(show: Show): string {
   const card = show.card_tagline?.trim()
   if (card) return card
-  const tagline = show.tagline.trim()
-  if (tagline.length <= 160) return tagline
-  const slice = tagline.slice(0, 159)
-  const lastSpace = slice.lastIndexOf(' ')
-  const cut = lastSpace > 0 ? lastSpace : 159
-  return `${tagline.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
+  return clipToSeoBudget(show.tagline.trim())
 }
 
 export default async function ShowHomePage({

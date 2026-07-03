@@ -9,6 +9,41 @@ export const siteConfig = {
   twitterHandle: undefined as string | undefined,
 } as const
 
+// Google's SERP snippet clips around 155–160 chars. When source copy
+// runs long, prefer cutting at a full sentence end, then a clause
+// boundary (comma/semicolon/colon/em dash), before falling back to
+// the last word boundary — so a truncated snippet reads as a
+// complete thought instead of stopping mid-clause (critique pass 62/67:
+// "…and Heston Blumenthal appears as a…" read as an arbitrary word-cut).
+// A candidate cut only qualifies if it retains at least 60% of the
+// budget — otherwise an early period/comma would produce a snippet
+// too short to be useful, and the word-boundary fallback (whole words,
+// no premature stop) takes over instead.
+export function clipToSeoBudget(text: string, budget = 159): string {
+  if (text.length <= budget + 1) return text
+  const window = text.slice(0, budget)
+  const minCut = Math.floor(budget * 0.6)
+
+  const sentenceEnd = Math.max(
+    window.lastIndexOf('. '),
+    window.lastIndexOf('! '),
+    window.lastIndexOf('? '),
+  )
+  if (sentenceEnd >= minCut) return text.slice(0, sentenceEnd + 1)
+
+  let clauseEnd = -1
+  for (const mark of [',', ';', ':', '—']) {
+    clauseEnd = Math.max(clauseEnd, window.lastIndexOf(mark))
+  }
+  if (clauseEnd >= minCut) {
+    return `${window.slice(0, clauseEnd).replace(/[\s,;:—-]+$/, '')}…`
+  }
+
+  const lastSpace = window.lastIndexOf(' ')
+  const cut = lastSpace > 0 ? lastSpace : budget
+  return `${window.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
+}
+
 export function canonicalUrl(path: string): string {
   const base = siteConfig.baseUrl.replace(/\/+$/, '')
   if (!path || path === '/') return `${base}/`

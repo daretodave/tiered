@@ -3,11 +3,58 @@ import {
   buildJsonLd,
   buildMetadata,
   canonicalUrl,
+  clipToSeoBudget,
   jsonLdScriptProps,
   siteConfig,
 } from '../seo'
 
 const BASE = 'https://tiered.tv'
+
+describe('clipToSeoBudget', () => {
+  it('returns short text verbatim', () => {
+    expect(clipToSeoBudget('A short line.')).toBe('A short line.')
+  })
+
+  it('cuts at a full sentence boundary when one falls late enough in the budget', () => {
+    // critique pass 62/67: masterchef-australia's real lede — the raw
+    // word-boundary cut used to land mid-clause ("…appears as a…").
+    // An em dash sits closer to the budget edge than the first
+    // sentence's period, so the clause-boundary path wins here.
+    const lede =
+      'Season four is the founding era at its highest point. The home cook bench is the deepest the format has assembled — and Heston Blumenthal appears as a judge for the finale.'
+    expect(clipToSeoBudget(lede)).toBe(
+      'Season four is the founding era at its highest point. The home cook bench is the deepest the format has assembled…',
+    )
+  })
+
+  it('cuts at the nearest clause boundary (comma/semicolon/colon/em dash) over a raw word cut', () => {
+    // critique pass 67: the-apprentice's real lede — old algorithm
+    // produced "…and a cast still competing…"; the comma before that
+    // clause reads as a complete thought instead.
+    const lede =
+      "The show moved production to Los Angeles and kept its business-task format intact. A different coast, a different visual register, and a cast still competing on the merits — the founding era's closing chapter."
+    const result = clipToSeoBudget(lede)
+    expect(result.endsWith('…')).toBe(true)
+    expect(result).not.toMatch(/still competing…$/)
+    expect(lede.startsWith(result.slice(0, -1))).toBe(true)
+  })
+
+  it('falls back to the last word boundary when no sentence/clause mark falls late enough', () => {
+    const lede =
+      'The all-star return the whole format had been building toward, twenty veterans split into two tribes purely by the way the audience already saw them coming into this particular beach season'
+    const result = clipToSeoBudget(lede)
+    expect(result.endsWith('…')).toBe(true)
+    expect(result.length).toBeLessThanOrEqual(160)
+    expect(lede.startsWith(result.slice(0, -1))).toBe(true)
+  })
+
+  it('strips trailing punctuation before the ellipsis', () => {
+    const head = 'a'.repeat(140)
+    const lede = `${head}, ${'b'.repeat(60)}`
+    expect(clipToSeoBudget(lede)).toBe(`${head}…`)
+    expect(clipToSeoBudget(lede)).not.toContain(',…')
+  })
+})
 
 describe('canonicalUrl', () => {
   it('maps empty and root to base + trailing slash', () => {
