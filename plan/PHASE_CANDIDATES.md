@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-06-22 at commit 295b6cc
-> Pass count: 39
+> Last pass: 2026-07-03 at commit 81e56e8
+> Pass count: 40
 
 ## Considered (awaiting promotion)
 
@@ -100,8 +100,10 @@
   near the ranking list; methodology disclosure is buried below the fold.
 - Critique pass-62 [MED] /shows/masterchef-australia — partial canon (5 of 16 seasons);
   same structural absence as RHOBH.
-- Signal multiplicity: 5 shows, 4 critique passes, same structural gap. Class grows as
-  new shows are added with partial canons — the catalog will not stop at 5 cases.
+- Pass-40 reinforcement (this pass): /shows/survivor-australia — methodology "Five
+  seasons in..." vs "12 SEASONS AIRED" stat strip; same class, 6th distinct show.
+- Signal multiplicity: 6 shows, 5 critique passes, same structural gap. Class grows as
+  new shows are added with partial canons — the catalog will not stop at 6 cases.
 
 **Why:** Every show whose canon covers fewer seasons than the total aired count has the
 same gap: a scan-reader who sees "12 SEASONS AIRED" (or 15, or 16, or 34) in the hero
@@ -236,6 +238,114 @@ helper already exists in `src/lib/show-tenure.ts` (or equivalent) from phase 43.
 **Conflicts:** Extends phase-43 (editorial-copy honesty sweep) into a new vector. No URL
 change. No schema change. Complements candidates #20 and #21 — together the three
 candidates make partial-canon honesty structural rather than one-off.
+
+### 23. Prose sentence-capitalization invariant (post-period lowercase-start guard)
+
+**Score:** 6.4 (impact: 6, ease: 9 → 5.4 base + 1.0 signal multiplicity)
+**Source pass:** 40
+**Filed:** 2026-07-03
+**Source signals:**
+- Critique pass-53 [LOW] /shows/below-deck-mediterranean — `blurb` reads "...Captain
+  Sandy Yawn holding the helm. ten years of superyacht drama..." — lowercase "ten" opens
+  a new sentence after a full stop.
+- Critique pass-53 [LOW] /shows/below-deck-sailing-yacht — same pass, same class:
+  "...the Mediterranean underfoot. six years of Glenn Shephard..." — lowercase "six".
+- Critique pass-58 [LOW] /shows — Dancing with the Stars B-tier tile `card_tagline`:
+  "one mirror ball at the end. twenty-one years, 34 seasons." — lowercase "twenty-one"
+  after a full stop; root cause is the `{yearsWord}` token expanding to a lowercase
+  number-word at a sentence-initial position.
+- Critique pass-66 [LOW] /shows/masked-singer — meta description: "...viewers guess
+  along. seven years on the air." — same class, third distinct critique pass.
+- Signal multiplicity: 4 shows, 3 distinct critique passes (53, 58, 66), all in
+  free-text frontmatter fields (`blurb` / `tagline` / `card_tagline`). Every instance
+  is independently filed as "content-only fix" — confirming this is a recurring
+  authoring habit (writing a lowercase number-word or clause fragment, then reusing
+  it at a sentence-initial position elsewhere), not a single shared code bug. It
+  reaches search-engine snippets and social-card previews directly (`descriptionFor()`
+  passes these fields through verbatim), so the defect is reader-visible off-site too.
+
+**Why:** Four independent shows across three separate critique passes exhibit the
+identical copy-error shape: a period is immediately followed by a lowercase word,
+almost always because a `{yearsWord}`-style token or a hand-written clause fragment
+lands at a sentence-initial position without capitalization. This is mechanically
+detectable — a regex over each show's `blurb` / `tagline` / `card_tagline` for
+`/\.\s+[a-z]/` catches every instance in this class before it ships — and matches the
+project's proven `lax→strict` content-check pattern exactly (phases 41/42/43/44/45/46,
+candidates #12/#13/#17 already shipped or awaiting promotion using the identical
+mechanic). `scripts/content-check.ts` already carries 20+ STRICT invariants of this
+exact shape; this is a clean, low-risk extension, not a new pattern.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `PROSE_CAPITALIZATION_STRICT` flag +
+  `collectSentenceCapitalizationIssues()`: for each show's `blurb`, `tagline`, and
+  `card_tagline` (and equivalent theme/canon prose fields if present), regex-scan for
+  a period followed by whitespace and a lowercase letter; emit an issue with the
+  offending fragment. Lax mode logs warning; strict mode fails. Exempt known
+  intentional lowercase-continuation styles (e.g. em-dash constructions) by scoping
+  the regex specifically to `. ` + lowercase, not `— ` + lowercase.
+- Drain the 4 known violators: capitalize the lowercase word, or (preferred, per the
+  individual critique findings' own suggested fixes) restructure the clause to use an
+  em dash or comma instead of a period where a `{yearsWord}`-style token would
+  otherwise open a new sentence in lowercase.
+- Flip `PROSE_CAPITALIZATION_STRICT = true` in the same commit (4 violators, small
+  surface, day-one-strict pattern).
+- Update `content-curator` brief: never let a derived token (`{yearsWord}`, `{years}`,
+  etc.) expand at a sentence-initial position — prefer em dash/comma constructions
+  when a clause built from a lowercase-word token needs to follow a completed sentence.
+- Colocated unit tests for `collectSentenceCapitalizationIssues` (violation / clean /
+  em-dash-exempted cases).
+
+**Estimated phases:** 1.
+**Conflicts:** None. No URL change, no schema change, no UI change — content-only +
+one content-check invariant, same shape as candidates #12/#17/#22.
+
+<!-- Pass 40 (2026-07-03, commit 81e56e8) — 1 new candidate filed (#23); candidates
+     #15 and #20 substantially strengthened with new signals (not re-filed as new
+     numbers — same established pattern as passes 36/38/39).
+     Window since pass 39 (295b6cc, 2026-06-22): 11 days / 45 commits. Both
+     thresholds (20 commits, 48h) exceeded by a wide margin.
+     Signals reviewed:
+     - AUDIT.md: 1 pending row, category: engineering (check-test-colocation Windows
+       path-matching bug, score 3.5, filed during the nexus readopt) — single item,
+       /iterate-shaped, not a phase cluster.
+     - CRITIQUE.md: 63 pending rows (up substantially since pass 39). Direct corpus
+       verification (`rg -L tier_s_blurb content/shows/*/canon.md`) found **20 of 43
+       shows (46%)** currently missing `tier_s_blurb` — far beyond what any single
+       critique row states individually; this single class now dwarfs every other
+       pending finding in volume and is the clearest phase-shape signal in the file.
+       Candidate #15 rewritten to reflect this (score 5.8 → 9.2). Candidate #20/#21's
+       partial-canon-disclosure class gained a 6th instance (survivor-australia,
+       pass-58) — #20 signal list updated. A new cluster emerged: 4 shows / 3 passes
+       (53, 58, 66) share a lowercase-sentence-after-period copy defect in
+       `blurb`/`tagline`/`card_tagline` fields — filed as new candidate #23. Two
+       weaker, non-clustering signals noted but not promoted to candidate status:
+       (a) /shows/americas-next-top-model "cycles" vs "seasons" terminology mismatch
+       (pass-61, single instance); (b) /shows/american-idol stale future-tense
+       methodology copy ("still being added as the scrutiny catches up") contradicting
+       a now-complete 23/23 canon (pass-63, single instance, also flagged separately
+       as internal-jargon leakage — 2 total jargon instances across the corpus,
+       below the 3-instance clustering bar).
+     - GitHub issues: 0 unlabeled (gh authenticated via CI env token, no `.env` file
+       present in this cloud run — not a failure, `GH_TOKEN`/`GH_REPO` resolved from
+       the ambient `gh auth` session instead).
+     - spec.md + design/: no changes since pass 39.
+     - Data growth: 43 shows now (vs ~30s at pass 39) — continued show-coverage
+       mandate velocity (Selling Sunset, Jersey Shore, Queer Eye landed most
+       recently per commit log) is the direct driver of the tier_s_blurb class
+       reinforcement above — every new show is a fresh chance to omit the field.
+     - Commit pattern: 45 commits since pass 39 — dominated by content-gap show/season
+       drains and per-show critique-fix commits; no 5+ commit fix-cluster on any
+       single code surface beyond the tier_s_blurb / capitalization classes already
+       captured above.
+     Existing candidates status: #12 (BRAND_SPELLING_STRICT) — still awaiting
+     promotion. #14 (era toolbar polish) — still awaiting promotion. #15
+     (CANON_COMPLETENESS_STRICT) — substantially reinforced this pass (see above);
+     this is now the single strongest unpromoted candidate in the file. #16
+     (/u/[handle] stat chips) — still [needs-user-call]. #18 (header affordance) —
+     still awaiting promotion. #19 (last-revised source-of-record) — still awaiting
+     promotion. #20/#21 (partial-canon disclosure pair) — #20 reinforced with a 6th
+     violator. #22 (tagline years-vs-seasons) — no new instances this pass. #23
+     (prose capitalization invariant) — new this pass. -->
 
 <!-- Pass 35 (2026-06-17, commit 0117ac6) — 2 candidates filed.
      Window since pass 34 (20b6b78, 2026-06-16): 1 day / 20 commits.
@@ -558,54 +668,86 @@ Ship in any order; both should eventually land.
 
 ### 15. Show canon completeness lax→strict gate
 
-**Score:** 5.8 (impact: 7, ease: 7 → 4.9 base + 2 signal multiplicity)
-**Source pass:** 33
-**Filed:** 2026-06-15
+**Score:** 9.2 (impact: 9, ease: 8 → 7.2 base + 2.0 signal multiplicity — MASSIVELY
+reinforced since filing; strongest recurring pattern in the entire critique backlog)
+**Source pass:** 33 (filed) → reinforced passes 35/36/38/39/40 (this pass)
+**Filed:** 2026-06-15 · **Reinforced:** 2026-07-03 (pass 40)
 **Source signals:**
-- Critique pass-52 [MED] /shows/below-deck S-tier heading and blurb
-  are identical — `tier_s_blurb` absent; fallback equals the heading;
-  any show with all canon entries in S tier exhibits this visual dup.
-- Critique pass-52 [MED] TITHERADGE ERA filter has zero matches —
-  era band range [2024,2026] but no seasonally-ranked entries in that
-  span; content-check could flag this at authoring time.
-- Critique pass-52 [LOW] `/` home stat "Every season reviewed"
-  inaccurate for B-tier shows with partial canons.
-- Commit pattern: 9 new shows shipped since pass 32 (70% catalog
-  growth); each new B-tier show is a potential recurrence vector for
-  the S-tier blurb and era-band coverage gaps.
+- Critique pass-52 [MED] /shows/below-deck — original finding: S-tier heading
+  and blurb identical, `tier_s_blurb` absent, fallback equals the heading.
+  (Resolved individually — see below.)
+- Passes 53–66 (16 additional critique rows, still Pending as of pass 40):
+  the-apprentice, masked-singer, americas-got-talent, americas-next-top-model,
+  american-idol (also missing `tier_a_blurb`), the-voice, rhoa,
+  dancing-with-the-stars — each an independent critique-filed instance of the
+  identical `tier_s_blurb`-absent visual duplication.
+- Pass-61 finding (`plan/CRITIQUE.md:2108`) explicitly names 8 more unfiled
+  violators found by direct corpus inspection: alone-australia, alone-frozen,
+  alone-the-skills-challenge, below-deck-adventure, below-deck-down-under,
+  below-deck-sailing-yacht, hells-kitchen, love-is-blind.
+- **Pass-40 direct verification** (this pass, `rg -L tier_s_blurb
+  content/shows/*/canon.md`): **20 of 43 shows in the live catalog (46% of
+  the entire show catalog) currently lack `tier_s_blurb`** — alone-australia,
+  alone-frozen, alone-the-skills-challenge, american-idol,
+  americas-got-talent, americas-next-top-model, below-deck-adventure,
+  below-deck-down-under, below-deck-sailing-yacht, dancing-with-the-stars,
+  hells-kitchen, jersey-shore, love-is-blind, masked-singer, queer-eye, rhoa,
+  rhobh, selling-sunset, the-apprentice, the-voice. (rhony, below-deck,
+  below-deck-mediterranean — cited in older critique rows — have since been
+  drained individually and are no longer violators; confirms the fix pattern
+  works but is not keeping pace with new-show velocity.)
+- Root cause confirmed in code: `src/components/canon/CanonTierBand.tsx:82`
+  — `const blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]` —
+  `DEFAULT_TIER_HEADINGS` (`src/lib/canon/tier-bands.ts:18`) is keyed by all
+  three tiers (S/A/B), so the same fallback-duplication bug can occur for
+  any tier, not only S — the invariant should check all three.
+- Signal multiplicity: now the single most cited recurring defect class in
+  `plan/CRITIQUE.md` (17+ Pending rows across 8+ distinct critique passes),
+  and independently reproducible via a one-line corpus grep. No candidate in
+  this file has anywhere near this volume of reinforcement.
 
-**Why:** Three critique findings from the same pass (52) cluster
-around a single root: new shows added with partially-complete canons
-expose gaps across multiple surfaces. The S-tier blurb/heading
-duplication is architecturally guaranteed to recur — the `CanonTierBand`
-fallback string is identical to the tier headline string, so any
-future show where `tier_s_blurb` is absent AND all ranked entries
-land in S tier will exhibit the visual double. The era-band coverage
-gap (a band with a date range that outpaces the current canon) is a
-content authoring oversight that a verify-time check catches before
-it reaches the page. The home stat inaccuracy is the same lax→strict
-pattern as phase-43 editorial-copy honesty but scoped to a boolean
-("reviewed" vs. "in progress"). This is the established `lax→strict`
-invariant mechanic (phases 41/42/43/44/45/46): add the check in lax
-mode, drain known violators, flip strict in the same or next tick.
+**Why:** This was already correctly diagnosed at filing (pass 33) as an
+architecturally-guaranteed recurrence — `CanonTierBand`'s fallback string
+equals its own headline string, so any show shipped without an explicit
+`tier_s_blurb` (or `tier_a_blurb`/`tier_b_blurb`) duplicates a sentence on
+its own page. What's changed by pass 40 is scale: the standing "always be
+adding new shows" mandate (`bearings.md` Rule 1) has driven the catalog from
+13 shows (pass 33) to 43 shows (pass 40), and this content-check gate was
+never promoted — so **every** new show authored since pass 33 without an
+explicit tier blurb has silently reproduced the bug. Nearly half the live
+catalog exhibits a reader-visible duplicated sentence today. This is no
+longer "one fix" scope, it's "backfill 20 files + ship the gate that stops
+the 21st." The fix mechanic is unchanged and proven (2 of the original
+violators — below-deck, rhony — were already drained by hand, confirming
+the remediation is mechanical and low-risk); what's missing is the
+verify-time gate that would have prevented the other 20.
 
 **Scope sketch:**
 - `scripts/content-check.ts` — add `CANON_COMPLETENESS_STRICT` flag:
-  (a) `collectTierBlurbIssues()`: emit issue when `tier_s_blurb` is
-  absent AND all canon entries have S-tier rank (fallback = heading,
-  visual duplication guaranteed); lax mode logs warning; strict fails.
-  (b) `collectEraBandGapIssues()`: emit issue when any era band's
-  `[start, end]` range contains no canon entry whose `premiere_date`
-  falls within it (empty era band guaranteed to produce an empty tab).
-- Drain the single known violator (`below-deck`): add `tier_s_blurb`;
-  adjust TITHERADGE ERA range or add the missing S11+ seasons.
-- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit (surface
-  is small — one show; same day-one-strict pattern as phase 44).
-- Update `content-curator` brief so new shows are authored to pass
-  both checks from the first tick.
-- Unit tests for both `collect*` helpers (pass / fail / empty cases).
+  (a) `collectTierBlurbIssues()`: emit issue when any of `tier_s_blurb` /
+  `tier_a_blurb` / `tier_b_blurb` is absent AND that tier's `DEFAULT_TIER_HEADINGS`
+  fallback would visually duplicate the tier's own headline (i.e. always,
+  since the fallback *is* the headline) — lax mode logs warning per missing
+  field; strict mode fails.
+  (b) `collectEraBandGapIssues()` (unchanged from original filing): emit
+  issue when any era band's `[start, end]` range contains no canon entry
+  whose `premiere_date` falls within it.
+- Batch-author the missing field for all 20 currently-verified violators
+  (per-show one-sentence `tier_s_blurb` describing what that show's S-tier
+  seasons share, no outcomes named — spoiler P0 intact); american-idol
+  additionally needs `tier_a_blurb`. This is a `content-curator` batch pass,
+  not 20 separate ship-content ticks.
+- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit once all 20
+  are drained (day-one-strict pattern, phases 44/45/46).
+- Update `content-curator` brief (and `skills/ship-content.md`'s new-show
+  checklist) so every new show is authored with all three tier blurbs from
+  the first tick — this is the actual recurrence-stopper; the batch drain
+  alone would just reset the clock.
+- Unit tests for `collectTierBlurbIssues` (pass / fail / all-three-tiers
+  cases) and a corpus regression-pin test asserting 0 violators post-drain.
 
-**Estimated phases:** 1.
+**Estimated phases:** 1 (large single phase — 20-file content batch +
+one content-check invariant; no schema change, no URL change).
 **Conflicts:** Candidate #14 addresses the render-side empty state for
 era tabs; #15 addresses the content-check gate that prevents the
 content authoring gap from shipping. Independent and complementary.
