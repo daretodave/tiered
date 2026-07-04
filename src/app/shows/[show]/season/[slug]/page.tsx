@@ -240,14 +240,28 @@ export function whereItSitsCopy(
   show: Show,
   canonRank: number | null,
   canonTotal: number,
+  rationale?: string,
 ): string {
   if (canonRank == null || canonTotal === 0) {
     return `Canon position not assigned yet — the editors' draft is still in progress for ${show.name}. Check back as the canon fills in.`
   }
   if (canonTotal === 1) {
-    return `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
+    return rationale
+      ? `Sole entry in the ${show.name} Editor's Canon so far. ${rationale}`
+      : `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
   }
-  return `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what I ranked it against.`
+  // critique-pass-49 MED (Section 03 body was a two-sentence stub
+  // that only restated facts already shown in the hero pill above +
+  // the "Adjacent in the canon" section below). Every canon entry
+  // already carries an 80-120 word editorial `rationale` — the
+  // actual argument for why the season sits at this slot — so this
+  // section now quotes it instead of pointing at section 05 with no
+  // content of its own. `rationale` is undefined only when the
+  // season carries a legacy `canonical_position` with no matching
+  // canon.md entry (no rationale exists to quote yet).
+  return rationale
+    ? `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. ${rationale}`
+    : `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what I ranked it against.`
 }
 
 // Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:
@@ -400,7 +414,12 @@ export default async function SeasonPage({ params }: { params: Params }) {
   const lede = ledeOf(season)
   const body = bodyOf(season)
   const bodyParagraphs = body ? paragraphsOf(body) : []
-  const whereItSits = whereItSitsCopy(show, canonRank, canonTotal)
+  const whereItSits = whereItSitsCopy(
+    show,
+    canonRank,
+    canonTotal,
+    canonHit?.rationale,
+  )
 
   const stats = statsFor(season)
   const populatedStats = stats.filter(

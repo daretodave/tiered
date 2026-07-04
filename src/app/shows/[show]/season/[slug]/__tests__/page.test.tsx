@@ -413,6 +413,32 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
       "Sole entry in the Top Chef Editor's Canon so far. Adjacent picks land as the canon grows.",
     )
   })
+
+  // critique-pass-49 MED: Section 03 previously rendered a two-sentence
+  // stub that restated the hero pill + section 05 with no content of
+  // its own. When the canon entry's `rationale` is available, it now
+  // carries the real editorial argument instead of the filler
+  // "neighbors" sentence.
+  it('quotes the canon entry rationale instead of the filler sentence when one is supplied', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    expect(whereItSitsCopy(show, 2, 50, 'The hero/villain split is the format.')).toBe(
+      "Slot #02 of 50 in the Survivor Editor's Canon. The hero/villain split is the format.",
+    )
+  })
+
+  it('quotes the rationale in the sole-entry branch too', () => {
+    const show = makeShow({ name: 'Top Chef', slug: 'top-chef' })
+    expect(whereItSitsCopy(show, 1, 1, 'The only season on record, and a strong one.')).toBe(
+      "Sole entry in the Top Chef Editor's Canon so far. The only season on record, and a strong one.",
+    )
+  })
+
+  it('falls back to the legacy filler sentence when rationale is undefined (season lacks a canon.md entry)', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    expect(whereItSitsCopy(show, 2, 50, undefined)).toBe(
+      "Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what I ranked it against.",
+    )
+  })
 })
 
 describe('seasonHeroBylineFor — within-module double-attribution gate (issue #339)', () => {
