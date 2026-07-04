@@ -62,6 +62,7 @@ import {
   buildSections,
   generateMetadata,
   generateStaticParams,
+  seasonDisplayTitle,
   seasonHeroBylineFor,
   takeH2For,
   whereItSitsCopy,
@@ -171,6 +172,20 @@ describe('generateMetadata — known show + season', () => {
       generateMetadata({ params: { show: 'survivor', slug: 'heroes-vs-villains' } })
         .title,
     ).toBe('Survivor S20 — Heroes vs. Villains')
+  })
+
+  it('drops the redundant "S<N>" prefix when the season carries the generic "Season N" title (critique-pass-68)', () => {
+    // Jersey Shore / Selling Sunset season-1 shape: "S1" and "Season 1"
+    // carry the same information, so the title-building framing above
+    // stutters — "Jersey Shore S1 — Season 1". Drop the prefix in this
+    // case only; a real season title keeps it (case above).
+    getShowMock.mockReturnValue(makeShow({ name: 'Jersey Shore', slug: 'jersey-shore' }))
+    getSeasonBySlugMock.mockReturnValue(
+      makeSeason({ number: 1, slug: 'season-1', title: 'Season 1' }),
+    )
+    expect(
+      generateMetadata({ params: { show: 'jersey-shore', slug: 'season-1' } }).title,
+    ).toBe('Jersey Shore — Season 1')
   })
 
   it('canonicalizes against the RESOLVED season.slug, not the requested params.slug', () => {
@@ -302,6 +317,31 @@ describe('generateMetadata — description (SEO budget via descriptionFor)', () 
     )
     expect(description).toBe(`${head}…`)
     expect(description).not.toContain(',…')
+  })
+})
+
+describe('seasonDisplayTitle — shared title framing (critique-pass-68 MED)', () => {
+  it('drops the "S<N>" prefix when the title is the generic "Season N" label', () => {
+    const show = makeShow({ name: 'Selling Sunset', slug: 'selling-sunset' })
+    const season = makeSeason({ number: 1, title: 'Season 1' })
+    expect(seasonDisplayTitle(show, season)).toBe('Selling Sunset — Season 1')
+  })
+
+  it('keeps the "S<N>" prefix when the title carries distinct information', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    const season = makeSeason({ number: 20, title: 'Heroes vs. Villains' })
+    expect(seasonDisplayTitle(show, season)).toBe('Survivor S20 — Heroes vs. Villains')
+  })
+
+  it('keeps the prefix when the generic label carries extra info (e.g. a year suffix)', () => {
+    // "Season 1 (2019)" is not an exact match for "Season 1" — the year
+    // suffix is information the "S1" prefix doesn't carry, so this case
+    // stays out of scope for this fix (unlike the bare-label case above).
+    const show = makeShow({ name: 'Love Island (US)', slug: 'love-island-us' })
+    const season = makeSeason({ number: 1, title: 'Season 1 (2019)' })
+    expect(seasonDisplayTitle(show, season)).toBe(
+      'Love Island (US) S1 — Season 1 (2019)',
+    )
   })
 })
 

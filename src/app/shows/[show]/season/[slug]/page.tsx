@@ -73,7 +73,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     })
   }
   return buildMetadata({
-    title: `${show.name} S${season.number} — ${season.title}`,
+    title: seasonDisplayTitle(show, season),
     description: descriptionFor(show.name, season),
     path: `/shows/${show.slug}/season/${season.slug}`,
     feeds: [
@@ -83,6 +83,18 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       },
     ],
   })
+}
+
+// CRITIQUE pass 68 MED: a season titled with the generic "Season N"
+// label stutters against the "S<N>" prefix ("Jersey Shore S1 —
+// Season 1"), since both segments carry the same information. Drop
+// the redundant "S<N>" prefix in that case only — a real season
+// title ("Heroes vs. Villains") still pairs with it for contrast.
+export function seasonDisplayTitle(show: Show, season: Season): string {
+  if (season.title === `Season ${season.number}`) {
+    return `${show.name} — ${season.title}`
+  }
+  return `${show.name} S${season.number} — ${season.title}`
 }
 
 // CRITIQUE pass 10 MED: prefer the curator's lede (the line a reader
@@ -363,7 +375,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
   const articleLd = buildJsonLd({
     type: 'Article',
-    headline: `${show.name} S${season.number} — ${season.title}`,
+    headline: seasonDisplayTitle(show, season),
     description: (season.lede ?? season.blurb_md).slice(0, 200),
     path: `/shows/${show.slug}/season/${season.slug}`,
     author: 'tiered.tv editor',
