@@ -330,7 +330,8 @@ describe('loaders', () => {
       })
       const show = getShow('survivor')
       expect(show?.card_tagline).not.toContain('{yearsWord}')
-      expect(show?.card_tagline).toMatch(/^(twenty-five|twenty-six) in$/)
+      // A token opening the field is a sentence start — capitalized.
+      expect(show?.card_tagline).toMatch(/^(Twenty-five|Twenty-six) in$/)
     })
 
     it('leaves card_tagline undefined when the frontmatter omits it', () => {

@@ -114,6 +114,21 @@ export type ShowTaglineContext = {
   asOfDate?: Date
 }
 
+// `numberToWords` always returns a lowercase form ("ten",
+// "twenty-one"). Several taglines place `{yearsWord}` at the
+// start of a sentence (e.g. "...at full strength. {yearsWord}
+// years of superyacht drama"), which rendered a lowercase word
+// opening a sentence — a recurring copy-error class caught
+// across at least 4 shows by CRITIQUE passes 53/58/66 (below-deck-
+// mediterranean, below-deck-sailing-yacht, dancing-with-the-stars,
+// masked-singer) and present-but-unflagged on 2 more (below-deck-
+// down-under, americas-got-talent). Capitalize the substituted
+// word only when it opens the string or follows sentence-ending
+// punctuation, so mid-sentence uses (the common case) are untouched.
+function capitalizeFirst(word: string): string {
+  return word.length === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+}
+
 // Substitutes `{years}` (decimal) and `{yearsWord}` (spelled-out)
 // in a tagline template. Token-free templates pass through
 // unchanged, so calling this on every read is safe for shows
@@ -125,8 +140,11 @@ export function renderShowTaglineTokens(
   if (!template.includes('{years')) return template
   const anniversary = SHOW_ANNIVERSARIES[ctx.slug] ?? DEFAULT_ANNIVERSARY
   const years = yearsSinceEst(ctx.estYear, ctx.asOfDate, anniversary)
+  const word = numberToWords(years)
+  const sentenceStart = /(^|[.!?]\s+)\{yearsWord\}/g
   return template
-    .replaceAll('{yearsWord}', numberToWords(years))
+    .replace(sentenceStart, (_match, prefix: string) => `${prefix}${capitalizeFirst(word)}`)
+    .replaceAll('{yearsWord}', word)
     .replaceAll('{years}', String(years))
 }
 

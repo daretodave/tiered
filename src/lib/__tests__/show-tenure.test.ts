@@ -145,12 +145,12 @@ describe('renderShowTaglineTokens', () => {
 
   it('substitutes both tokens in one pass', () => {
     expect(
-      renderShowTaglineTokens('{yearsWord} ({years})', {
+      renderShowTaglineTokens('in {yearsWord} ({years})', {
         estYear: 2000,
         slug: 'survivor',
         asOfDate: today,
       }),
-    ).toBe('twenty-five (25)')
+    ).toBe('in twenty-five (25)')
   })
 
   it('falls back to the Jan 1 default for unknown shows', () => {
@@ -162,6 +162,68 @@ describe('renderShowTaglineTokens', () => {
         asOfDate: today,
       }),
     ).toBe('16')
+  })
+
+  // CRITIQUE passes 53/58/66 (below-deck-mediterranean, below-deck-
+  // sailing-yacht, dancing-with-the-stars, masked-singer): several
+  // taglines place `{yearsWord}` right after a period, and
+  // `numberToWords` always returns a lowercase form, so the
+  // rendered string opened a new sentence with a lowercase word.
+  describe('capitalizes {yearsWord} when it opens a sentence', () => {
+    it('capitalizes at the very start of the template', () => {
+      expect(
+        renderShowTaglineTokens('{yearsWord} years on the air.', {
+          estYear: 2000,
+          slug: 'survivor',
+          asOfDate: today,
+        }),
+      ).toBe('Twenty-five years on the air.')
+    })
+
+    it('capitalizes after a period + space', () => {
+      expect(
+        renderShowTaglineTokens(
+          'one mirror ball at the end. {yearsWord} years, 34 seasons.',
+          { estYear: 2000, slug: 'survivor', asOfDate: today },
+        ),
+      ).toBe('one mirror ball at the end. Twenty-five years, 34 seasons.')
+    })
+
+    it('capitalizes after ! and ? too', () => {
+      expect(
+        renderShowTaglineTokens('Wow! {yearsWord} years in.', {
+          estYear: 2000,
+          slug: 'survivor',
+          asOfDate: today,
+        }),
+      ).toBe('Wow! Twenty-five years in.')
+      expect(
+        renderShowTaglineTokens('Still going? {yearsWord} years so far.', {
+          estYear: 2000,
+          slug: 'survivor',
+          asOfDate: today,
+        }),
+      ).toBe('Still going? Twenty-five years so far.')
+    })
+
+    it('leaves mid-sentence uses lowercase — the common case', () => {
+      expect(
+        renderShowTaglineTokens(
+          'spent {yearsWord} years rediscovering what it is',
+          { estYear: 2000, slug: 'survivor', asOfDate: today },
+        ),
+      ).toBe('spent twenty-five years rediscovering what it is')
+    })
+
+    it('does not affect {years} (digits have no case)', () => {
+      expect(
+        renderShowTaglineTokens('{years} years on the air.', {
+          estYear: 2000,
+          slug: 'survivor',
+          asOfDate: today,
+        }),
+      ).toBe('25 years on the air.')
+    })
   })
 
   it('asOfDate defaults to new Date()', () => {
