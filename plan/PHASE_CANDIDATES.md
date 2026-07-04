@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-03 at commit 81e56e8
-> Pass count: 40
+> Last pass: 2026-07-04 at commit 61432a0
+> Pass count: 41
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,74 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 41 (2026-07-04, commit 61432a0) — 0 new candidates filed; #14 and #15
+     reinforced with new signals.
+     Window since pass 40 (81e56e8, 2026-07-03): ~17 hours / 21 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 2 pending rows. (a) category: engineering — check-test-colocation
+       Windows path-matching bug (score 3.5, single instance, /iterate-shaped).
+       (b) category: content-gaps — Naked and Afraid S12/13/15/16 premiere-date
+       numbering discrepancy, explicitly filed `[needs-user-call]` (score 3.15,
+       capped) — a genuine editorial-call blocker, not a phase shape; oversight
+       resolves. Neither clusters into new phase-shape work.
+     - CRITIQUE.md: 43 `- [ ]` rows physically present under `## Pending`
+       (previous passes' shorthand "0/N pending" summaries undercounted — the
+       section mixes resolved `[x]` rows in with live `[ ]` ones and a naive
+       section-boundary scan misses this; corrected here for future passes).
+       Direct verification found several of these rows are stale — already
+       fixed by commits in this window without the CRITIQUE.md row being
+       flipped to `[x]` (e.g. the ANTM/MasterChef Australia `meth_when_p`
+       "drain completes"/"drain continues" jargon rows no longer match current
+       content; the masked-singer/below-deck-mediterranean/below-deck-sailing-
+       yacht/DWTS lowercase-after-period quotes no longer match current
+       content). This is a CRITIQUE.md bookkeeping gap for `/iterate` to close
+       on pickup, not an expand-shaped signal.
+     - New/reinforcing clusters checked against existing candidates:
+       (a) The verbatim hedge "I'm not claiming to be objective. I'm trying to
+       be honest/fair." now appears in 12 canon files
+       (`rg -l "I'm not claiming to be objective" content/shows/*/canon.md`).
+       This is NOT a new candidate — Phase 45 (candidate #13,
+       CLICHE_REPETITION_STRICT) already shipped the extensible cross-corpus
+       phrase-frequency registry this exact pattern is built for; adding this
+       phrase as a fourth registered pattern + draining it is `/iterate`-shaped
+       registry-extension work, not a new phase.
+       (b) `tier_s_blurb` completeness (candidate #15): direct verification
+       (`rg --files-without-match tier_s_blurb content/shows/*/canon.md`)
+       confirms **0 of 43 shows** now lack the field — the 20-file content
+       batch candidate #15 scoped was fully drained this window (commit
+       51dd0fd + 2952ae1, prior to this pass). Candidate #15 updated below:
+       remaining scope is now the `content-check.ts` gate alone (smaller,
+       cheaper, stronger case for promotion — the recurrence-risk the gate
+       exists to close is now proven real at 46% of the pass-40 catalog).
+       (c) Era-band label opacity (candidate #14): 2 more live instances
+       confirmed — `/shows/below-deck` "LEE ERA"/"TITHERADGE ERA" chips
+       (pass-56, CRITIQUE.md:2008) and `/shows/alone` "no-host era" reference
+       (pass-?, CRITIQUE.md:2195) both lack season-range context, exactly the
+       defect class #14 already scopes. Reinforcement noted below; no new
+       candidate.
+     - GitHub issues: 1 `triage:loop-queued` (#416, nightly e2e-full red from
+       2026-06-14) — single stale item (3 weeks old, deploy is green today),
+       no clustering signal.
+     - spec.md + design/: no changes since pass 40.
+     - Commit pattern: 21 commits — dominated by critique passes 68/69 +
+       their per-finding drain commits (OG-image wiring, season-page title/
+       ordinal fixes, VotePair accessible name, ANTM host_caption, American
+       Idol methodology, Naked and Afraid premiere dates, tier_s_blurb batch).
+       Pure drain velocity; no 5+ commit fix-cluster on a single code surface
+       beyond what candidates #13/#14/#15 already cover.
+     Existing candidates status: #11/#12 — still awaiting promotion, no new
+     signal. #13 — shipped as Phase 45; its registry is the live mechanism
+     that should absorb the new hedge-phrase signal above via `/iterate`, not
+     a fresh candidate. #14 — reinforced (2 new era-label instances, both
+     within existing scope). #15 — reinforced + scope narrowed (content batch
+     complete; only the code gate remains). #16 — still `[needs-user-call]`.
+     #18/#19 — still awaiting promotion, no new signal this pass. #20/#21/#22
+     — no new instances this pass. #23 — spot-checked against current content;
+     the CRITIQUE.md-cited instances no longer reproduce (already drained),
+     no live instances found via corpus scan; leaving as-is pending a fresh
+     critique pass rather than downgrading on a spot-check alone. -->
 
 <!-- Pass 39 (2026-06-22, commit 295b6cc) — 0 new candidates filed; AUDIT content-gap rows filed.
      Window since pass 38 (0721747, 2026-06-21): 1 day (21h) / 22 commits. Commit threshold met (≥20).
@@ -619,9 +687,10 @@ one show at a time — this phase patches all three and closes the vector.
 
 ### 14. Era filter tab polish — empty state + contextual label
 
-**Score:** 5.5 (impact: 7, ease: 7 → 4.9 base + 1 signal multiplicity)
-**Source pass:** 33
-**Filed:** 2026-06-15
+**Score:** 5.8 (impact: 7, ease: 7 → 4.9 base + 1.3 signal multiplicity —
+reinforced pass 41)
+**Source pass:** 33 → reinforced pass 41
+**Filed:** 2026-06-15 · **Reinforced:** 2026-07-04 (pass 41)
 **Source signals:**
 - Critique pass-52 [MED] TITHERADGE ERA tab renders with zero
   matching entries (below-deck canon covers S1–S5 [2013–2022];
@@ -631,8 +700,16 @@ one show at a time — this phase patches all three and closes the vector.
   visitor does not know who "Kish" is or when the era starts.
 - Critique pass-52 drop (same defect class, cap): COLBY ERA on Alone
   carries the same opacity as KISH ERA.
+- **Pass-41 reinforcement:** 2 more live instances confirmed. (a)
+  pass-56 (`plan/CRITIQUE.md:2008`) — `/shows/below-deck` "LEE ERA" and
+  "TITHERADGE ERA" chips carry no parenthetical season range, same
+  no-range-context defect as KISH/COLBY. (b) `/shows/alone` "no-host era"
+  reference (`plan/CRITIQUE.md:2195`) names an era without stating which
+  seasons it covers, despite 12 seasons aired and only 5 currently in
+  canon. Both nest exactly in this candidate's existing scope (auto-derive
+  a parenthetical range from `era_bands[i].range`); no new candidate.
 - Signal multiplicity: two distinct fix types (empty-state rendering,
-  label context) on the same component across 3+ shows.
+  label context) on the same component, now across 5+ shows.
 
 **Why:** The era-filter toolbar ships without a degraded-empty state
 and without reader-friendly label context. Both gaps compound as new
@@ -668,10 +745,22 @@ Ship in any order; both should eventually land.
 
 ### 15. Show canon completeness lax→strict gate
 
-**Score:** 9.2 (impact: 9, ease: 8 → 7.2 base + 2.0 signal multiplicity — MASSIVELY
-reinforced since filing; strongest recurring pattern in the entire critique backlog)
-**Source pass:** 33 (filed) → reinforced passes 35/36/38/39/40 (this pass)
-**Filed:** 2026-06-15 · **Reinforced:** 2026-07-03 (pass 40)
+**Score:** 9.4 (impact: 9, ease: 9 → 8.1 base + 1.3 signal multiplicity — content
+batch now fully drained, narrowing remaining scope to the gate alone; cheaper
+and lower-risk than at any prior filing)
+**Source pass:** 33 (filed) → reinforced passes 35/36/38/39/40/41 (this pass)
+**Filed:** 2026-06-15 · **Reinforced:** 2026-07-04 (pass 41)
+**Pass-41 update:** the 20-file `tier_s_blurb` content batch this candidate
+scoped is now **fully drained** — direct verification this pass
+(`rg --files-without-match tier_s_blurb content/shows/*/canon.md`) returns
+zero files; all 43 shows in the current catalog carry the field. The batch
+landed via ordinary `/iterate` audit ticks (commits 51dd0fd + 2952ae1) ahead
+of promotion, not via this candidate. **This changes the remaining scope**:
+what's left to promote is the `content-check.ts` invariant alone (no content
+batch owed) — smaller, cheaper, and the recurrence risk it exists to close
+is now empirically proven (46% of the pass-40 catalog drifted before the
+gate existed). The scope sketch below is retained for the historical batch
+record but the batch itself no longer needs to ship with the promotion.
 **Source signals:**
 - Critique pass-52 [MED] /shows/below-deck — original finding: S-tier heading
   and blurb identical, `tier_s_blurb` absent, fallback equals the heading.
@@ -732,22 +821,26 @@ verify-time gate that would have prevented the other 20.
   (b) `collectEraBandGapIssues()` (unchanged from original filing): emit
   issue when any era band's `[start, end]` range contains no canon entry
   whose `premiere_date` falls within it.
-- Batch-author the missing field for all 20 currently-verified violators
-  (per-show one-sentence `tier_s_blurb` describing what that show's S-tier
-  seasons share, no outcomes named — spoiler P0 intact); american-idol
-  additionally needs `tier_a_blurb`. This is a `content-curator` batch pass,
-  not 20 separate ship-content ticks.
-- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit once all 20
-  are drained (day-one-strict pattern, phases 44/45/46).
+- ~~Batch-author the missing field for all 20 currently-verified violators~~
+  — **done as of pass 41**, drained via ordinary iterate ticks ahead of
+  promotion (commits 51dd0fd + 2952ae1). No content batch owed at
+  promotion time; verify with a fresh `rg --files-without-match` pass at
+  ship-time in case new shows landed since.
+- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit — the corpus
+  is already at 0 violators, so this can ship strict from tick one
+  (mirrors the day-one-strict pattern of phases 44/45/46) with no drain
+  window required.
 - Update `content-curator` brief (and `skills/ship-content.md`'s new-show
   checklist) so every new show is authored with all three tier blurbs from
-  the first tick — this is the actual recurrence-stopper; the batch drain
-  alone would just reset the clock.
+  the first tick — this is the actual recurrence-stopper; without it the
+  next 30 shows reset the clock exactly as the last 30 did.
 - Unit tests for `collectTierBlurbIssues` (pass / fail / all-three-tiers
-  cases) and a corpus regression-pin test asserting 0 violators post-drain.
+  cases) and a corpus regression-pin test asserting 0 violators — now a
+  same-tick assertion rather than a post-drain one.
 
-**Estimated phases:** 1 (large single phase — 20-file content batch +
-one content-check invariant; no schema change, no URL change).
+**Estimated phases:** 1 (now content-check invariant only, day-one-strict;
+no schema change, no URL change, no content batch — the batch already
+shipped ahead of promotion).
 **Conflicts:** Candidate #14 addresses the render-side empty state for
 era tabs; #15 addresses the content-check gate that prevents the
 content authoring gap from shipping. Independent and complementary.
