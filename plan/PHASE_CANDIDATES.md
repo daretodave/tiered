@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-04 at commit 61432a0
-> Pass count: 41
+> Last pass: 2026-07-04 at commit 5e3f57f
+> Pass count: 42
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,34 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 42 (2026-07-04, commit 5e3f57f) — 0 new candidates filed; no new signal.
+     Window since pass 41 (61432a0, 2026-07-04): ~11 hours / 20 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 2 pending rows, both unchanged from pass 41 — Naked and Afraid
+       S12/13/15/16 premiere-numbering discrepancy and The Apprentice S5
+       LA-framing question, both explicitly `[needs-user-call]` (scores 3.15,
+       2.8, capped). Editorial-call blockers, not phase shapes; oversight
+       resolves.
+     - CRITIQUE.md: pass 70 ran this window and filed 0 new findings (commit
+       ba0f29e) — first clean pass since the loop reopened the shipping-mode
+       gate. No new clusters to evaluate; existing pending rows unchanged from
+       pass 41's review, all already absorbed by #13 (shipped, registry-based
+       drain in progress via /iterate), #14 (era-label opacity), or #15
+       (canon-completeness gate).
+     - GitHub issues: 1 `triage:loop-queued` (#416, unchanged, 3+ weeks stale) —
+       same single item pass 41 noted; no clustering signal.
+     - spec.md + design/: no changes since pass 41.
+     - Commit pattern: 20 commits, all content-drain / audit-finding-fix pairs
+       (Selling Sunset S2-6, Apprentice S6-10, hedge-phrase batch drain, yearsWord
+       capitalization fix, Section 03 quote fix, ANTM terminology, jersey-shore
+       caption, /shows hero relabel, Windows path-matching fix) plus pass 41's
+       own expand commit and a digest. Pure drain velocity; no new fix-cluster.
+     Existing candidates status: #11/#12/#14/#15/#16/#18/#19/#20/#21/#22/#23 —
+     all unchanged, no new reinforcing signal this pass. #13 — shipped; its
+     registry continues absorbing hedge-phrase instances via /iterate (3 more
+     drained this window, commit ac081a7). -->
 
 <!-- Pass 41 (2026-07-04, commit 61432a0) — 0 new candidates filed; #14 and #15
      reinforced with new signals.
