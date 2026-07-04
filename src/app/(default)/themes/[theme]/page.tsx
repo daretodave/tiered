@@ -38,6 +38,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     title: theme.title,
     description: theme.description,
     path: `/themes/${theme.slug}`,
+    image: `/themes/${theme.slug}/opengraph-image`,
   })
 }
 

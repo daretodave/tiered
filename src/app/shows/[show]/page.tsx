@@ -57,6 +57,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     title: `${show.name} — the canon + the community vote, no spoilers`,
     description: descriptionFor(show),
     path: `/shows/${show.slug}`,
+    image: `/shows/${show.slug}/opengraph-image`,
     feeds: [
       {
         url: canonicalUrl(`/feed/${show.slug}.xml`),

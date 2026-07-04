@@ -76,6 +76,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     title: seasonDisplayTitle(show, season),
     description: descriptionFor(show.name, season),
     path: `/shows/${show.slug}/season/${season.slug}`,
+    image: `/shows/${show.slug}/season/${season.slug}/opengraph-image`,
     feeds: [
       {
         url: canonicalUrl(`/feed/${show.slug}.xml`),

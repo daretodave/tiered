@@ -225,6 +225,25 @@ describe('generateMetadata — known show + season', () => {
       { url: 'https://tiered.tv/feed/top-chef.xml', title: 'Top Chef — tiered.tv' },
     ])
   })
+
+  // CRITIQUE pass 69 MED: buildMetadata falls back to the site-wide
+  // default OG image whenever `image` is omitted, permanently shadowing
+  // this route's own opengraph-image.tsx. Pin the explicit per-season image.
+  it('points OpenGraph + Twitter images at the season opengraph-image route, not the site default', () => {
+    getShowMock.mockReturnValue(makeShow({ slug: 'top-chef' }))
+    getSeasonBySlugMock.mockReturnValue(
+      makeSeason({ show: 'top-chef', number: 1, slug: 'san-francisco' }),
+    )
+    const meta = generateMetadata({
+      params: { show: 'top-chef', slug: 'san-francisco' },
+    })
+    expect(meta.openGraph?.images).toEqual([
+      { url: 'https://tiered.tv/shows/top-chef/season/san-francisco/opengraph-image' },
+    ])
+    expect(meta.twitter?.images).toEqual([
+      'https://tiered.tv/shows/top-chef/season/san-francisco/opengraph-image',
+    ])
+  })
 })
 
 describe('generateMetadata — unknown show', () => {

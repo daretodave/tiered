@@ -166,6 +166,20 @@ describe('generateMetadata — known theme', () => {
       { url: '/feed.xml', title: 'tiered.tv — all updates' },
     ])
   })
+
+  // CRITIQUE pass 69 MED: buildMetadata falls back to the site-wide
+  // default OG image whenever `image` is omitted, permanently shadowing
+  // this route's own opengraph-image.tsx. Pin the explicit per-theme image.
+  it('points OpenGraph + Twitter images at the theme opengraph-image route, not the site default', () => {
+    getThemeMock.mockReturnValue(makeTheme({ slug: 'best-finales' }))
+    const meta = generateMetadata({ params: { theme: 'best-finales' } })
+    expect(meta.openGraph?.images).toEqual([
+      { url: 'https://tiered.tv/themes/best-finales/opengraph-image' },
+    ])
+    expect(meta.twitter?.images).toEqual([
+      'https://tiered.tv/themes/best-finales/opengraph-image',
+    ])
+  })
 })
 
 describe('generateMetadata — unknown theme', () => {
