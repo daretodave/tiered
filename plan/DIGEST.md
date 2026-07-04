@@ -6,51 +6,50 @@
 
 ## Headline
 
-**The dispatcher went dark for ~10 days and nobody noticed until this morning.** `march` last completed a tick at 2026-06-23 16:56:56 UTC — then zero runs, zero commits, zero loop activity of any kind until a manual local commit (`e146071`, 2026-07-03 08:01 ET) re-lit it. That single commit also added the fix: `night.yml` (this briefing) and `heartbeat.yml`, a model-free watchdog that opens an issue if `march` goes 14h without a completed tick. Deploy is green at HEAD and the breadth suite (`e2e-full`) has a clean 3-run streak (06-30, 07-01, 07-02), so nothing broke *because* of the gap — the product just stood still for a week and a half.
+**A clean, unremarkable 26 hours — the loop is back to steady cadence.** 22 `march` ticks ran since yesterday's digest, 21 green, 1 transient infra failure (GitHub's Supabase-CLI-release lookup hit a rate limit at 05:23 UTC — nothing to do with tiered.tv code, and the fix is already a known pending row). Content work this window was all quality fixes, not new drains: two fabricated `Jan 1` premiere-date placeholders on Naked and Afraid, an ANTM host-caption contradiction, and — the highlight — the dead-code OpenGraph wiring finding from critique pass 69 got fixed same-day (`218622f`), so every show/season/theme page now serves its own tinted social card instead of the site-wide default. Deploy is green at HEAD, breadth (`e2e-full`) is green two nights running.
 
 ## While you were out
 
 | When | Verb | Outcome |
 |---|---|---|
-| 2026-06-23 12:04–16:56 UTC | march (7 ticks) | 6 success, content saga: Masked Singer + Naked and Afraid + ANTM drains, ANTM new show, Apprentice (US) new show, critique pass 66 |
-| 2026-06-23 13:36, 14:37 UTC | march | 2 failures (same window, resolved by later ticks same day) |
-| 2026-06-23 17:00 — 2026-07-03 07:59 | *(nothing — dispatcher silent, ~9d 15h)* | — |
-| 2026-07-03 08:01 ET | manual commit `e146071` | readopt: night shift + heartbeat + sonnet-5 march bump |
+| 2026-07-03 13:19 – 2026-07-04 05:23 UTC | march (5 ticks) | all success — expand pass 40 (Jersey Shore filed), 3 new-show scaffolds (Queer Eye, Selling Sunset, Jersey Shore), audit closeout on each |
+| 2026-07-04 05:23 UTC | march | **failure** — `supabase/setup-cli@v1` hit "rate limit exceeded" resolving the latest CLI release before any content/code step ran; pure GitHub Actions infra hiccup, self-resolved next tick |
+| 2026-07-04 06:37 – 10:43 UTC | march (5 ticks) | all success — `tier_s_blurb` gap closed across 20 shows, critique pass 67/68 fixes (methodology contradiction, ANTM host_caption, season-title stutter, ordinal-skip TOC fix, VotePair accessible name), critique pass 68→69, the OG-image wiring fix, expand pass 41 (0 new candidates, #14/#15 reinforced) |
 
-No `march` runs at all in the trailing 26h window this digest normally reports on — the loop only came back a few hours before this tick.
+No content-gap drains shipped this window (season-drain and new-show queues are both empty right now — see "The saga"); every commit was a bug/content-correctness fix surfaced by critique or audit.
 
 ## The saga
 
-Catalog stands at **40 shows**. Last content shipped 2026-06-23: The Apprentice (US) scaffolded (40th show) and America's Next Top Model drained C16–C24 (fully drained). Zero seasons or shows shipped in the last 10 days — purely a function of the outage, not a starved queue.
+Catalog stands at **43 shows / 670 seasons / 43 canons / 12 themes** (per the last verify run's `content:check`), up from 40 shows on 2026-07-03 morning's brief — Queer Eye, Selling Sunset, and Jersey Shore all scaffolded and their audit rows closed out.
 
-**Queue depth right now** (`plan/AUDIT.md`, wave-6 new-show queue, filed via expand pass 39):
-- [ ] Queer Eye (MED, score 3.5)
-- [ ] Selling Sunset (MED, score 3.5)
-- [ ] Jersey Shore (LOW, score 3.0)
+**Queue depth right now:** empty. `plan/AUDIT.md`'s Pending section carries only two rows, neither a content-gap drain:
+- `[LOW]` engineering: `check-test-colocation` fails wholesale on Windows/node 22.22.3 (green on ubuntu CI, doesn't gate anything)
+- `[needs-user-call]` `[LOW]` Naked and Afraid S12/13/15/16 still carry the Jan-1 placeholder pattern, but fixing them needs an editorial call first — external sources put the real-world season numbering one off from ours for S13/S16, and blindly applying dates risks silently reassigning canonical_position slots. Flagged for `/oversight`, not something the loop should guess at.
 
-No season-drain rows are currently open — wave-6 drains get filed once these three shows are scaffolded. Velocity note: at the ~5-7 content commits/day pace seen through 06-23, this queue clears in well under a day once `march` resumes normal cadence. The queue is fed; the dispatcher just wasn't running.
+This is the first time in recent memory both the new-show and season-drain queues have hit zero at once — bearings Rule 1 ("keep the queue fed") should have `/expand` propose a new wave soon; pass 41 filed 0 new candidates, which is worth watching if it repeats next pass.
 
 ## Queues now
 
-- **`plan/AUDIT.md`**: 4 pending rows — 3 content-gaps (above) + 1 LOW engineering row (`check-test-colocation` fails wholesale on Windows/node 22.22.3, filed today during the readopt; green on ubuntu CI so it's not gating anything).
-- **`plan/CRITIQUE.md`**: 58 pending rows spanning passes 60–66, all MED/LOW. Recent clusters: missing `tier_s_blurb` fields (Masked Singer + 8 others), repeated boilerplate closer phrasing across 7-8 canon files ("I'm trying to be honest"), a couple of fabricated-looking `Jan 1` premiere dates on Naked and Afraid S18/S19. No HIGH rows. Last pass (66) is 10 days old — due for a fresh `/critique` pass now that the loop is back.
-- **`plan/PHASE_CANDIDATES.md`**: all 46 build-plan phases shipped; candidates file has historical entries only, nothing awaiting promotion right now.
-- **Deploy**: ready at HEAD (`e146071`).
-- **Breadth (`e2e-full`)**: green, 3-run streak (06-30, 07-01, 07-02 UTC).
+- **`plan/AUDIT.md`**: 2 pending rows (both above), no content-gaps open.
+- **`plan/CRITIQUE.md`**: 43 pending rows (37 LOW, 5 MED, 1 mixed-severity multi-row), spanning passes back through the low-60s — last pass is **69** (2026-07-04, 1 finding, already resolved same-tick). Recent clean sweep: passes 67 and 68 fully closed out this window (methodology contradiction, host_caption fix, season-title stutter, ordinal-skip, VotePair a11y, OG wiring). Remaining open rows are mostly small content-polish items (missing `episodes_caption` on Jersey Shore S1, a meta-description clipper edge case, cosmetic "Also appears in" circularity, cast-size caption phrasing, an apprentice tagline euphemism).
+- **`plan/PHASE_CANDIDATES.md`**: 14 candidates awaiting promotion (unchanged this pulse — expand pass 41 filed 0 new, reinforced #14 Era filter tab polish and #15 Show canon completeness lax→strict gate), 1 below threshold. Nothing promoted this window; `/oversight` is the only path to promotion.
+- **Deploy**: ready at HEAD (`d3d3733`).
+- **Breadth (`e2e-full`)**: green, 2-run streak (07-02, 07-03 UTC).
+- **Night workflow**: last run 2026-07-03 succeeded; this tick in progress.
 
 ## Needs you
 
-- **Three stale GitHub issues predate the outage and were never closed out**, worth a look now that the loop is live again:
-  - #398 "Cloud march tick crashed" (`triage:needs-user`, opened 2026-06-11 — 22 days old)
-  - #399 "13 authed e2e specs red on main" (`triage:needs-user`, opened 2026-06-11 — 22 days old)
-  - #416 "Nightly e2e-full failed" (`triage:loop-queued`, opened 2026-06-14 — 19 days old; e2e-full has been green for at least 3 consecutive nights, so this one may just need closing)
-- Two `loop:phase` mirror issues (#400 Phase 44, #405 Phase 46) are still open on GitHub even though both phases show `[x]` shipped in `plan/steps/01_build_plan.md` — looks like the close-on-ship step didn't fire for these two.
-- The 10-day dispatcher gap itself needs no action (heartbeat now covers it) but is worth confirming: watch for a heartbeat-filed issue if `march` ever again goes >14h quiet.
+- **Three stale GitHub issues, now 23 (#398, #399) and 20 (#416) days old, still open** — carried over unchanged from yesterday's brief, still nobody's picked them up:
+  - #398 "Cloud march tick crashed" (`triage:needs-user`, opened 2026-06-11)
+  - #399 "13 authed e2e specs red on main" (`triage:needs-user`, opened 2026-06-11)
+  - #416 "Nightly e2e-full failed" (`triage:loop-queued`, opened 2026-06-14) — this is the same root cause as this morning's 05:23 transient failure (Supabase CLI resolution); `plan/AUDIT.md` already carries a corresponding LOW row to pin the CLI version, still unshipped
+- **Two `loop:phase` mirror issues remain open despite their phases shipping**: #400 (Phase 44, shipped) and #405 (Phase 46, shipped) — the close-on-ship step still hasn't fired for either, unchanged from yesterday's note.
+- Nothing new blocked this window; deploy and breadth are both clean.
 
 ## Today's intent
 
-Saga: `/ship-content` the three queued wave-6 shows (Queer Eye → Selling Sunset → Jersey Shore, in score order), then let `/expand` file their season-drain rows. Non-content: run a fresh `/critique` pass (58-row backlog, last pass 10 days stale) and clear the three stale needs-user/loop-queued issues via `/triage`.
+Saga: both content queues are empty — the next `/expand` pass should propose a new show-expansion wave (new-show + season-drain rows) rather than filing 0 candidates again, per bearings Rule 1's "keep the queue fed" mandate. Non-content: clear the three aging stale issues (#398, #399, #416) via `/triage`, close the two stranded `loop:phase` mirror issues (#400, #405), and consider promoting the Supabase-CLI-pin fix (issue #416 / AUDIT row) since it would have prevented this morning's transient failure.
 
 ## Tuning proposals
 
-None. The one candidate this pulse would suggest — harden the march schedule against silent multi-day gaps — was already shipped this morning (`heartbeat.yml`, 14h threshold) via the local readopt commit, not through this digest. Watching whether 14h is the right threshold is worth a look after the watchdog has fired for real at least once; no change proposed pre-emptively.
+None this pulse. The 05:23 failure was pure GitHub Actions infra (a transient rate limit on the Supabase CLI release lookup), not a gate or cadence problem — it self-resolved on the very next tick 74 minutes later, so no watchdog or threshold change is warranted. The recurring theme worth flagging to `/oversight` rather than proposing outright: `/expand` filing 0 new candidates in the same pass both queues (content and phase) hit empty/steady state feels coincidental rather than causal, but is worth a second data point before treating it as a tuning signal.
