@@ -14,7 +14,7 @@ format_summary: "Modeling competition · series finale season"
 format_caption: "Tyra Banks returns; series conclusion"
 cast_size: 14
 cast_size_caption: "14 contestants, final season casting"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Tyra Banks returns after Rita Ora's one-cycle run"
 ---
 
 Cycle 24 earns its place above the VH1 relaunch on what it restores. Tyra Banks
