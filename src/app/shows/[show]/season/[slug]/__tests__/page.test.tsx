@@ -59,6 +59,7 @@ import { isValidElement } from 'react'
 import { render, screen } from '@testing-library/react'
 import {
   ADJACENT_SECTION_H2,
+  buildSections,
   generateMetadata,
   generateStaticParams,
   seasonHeroBylineFor,
@@ -425,6 +426,77 @@ describe('takeH2For — Section 01 ("The take") H2 (issue #393)', () => {
     // documents the coupling.
     const season = makeSeason({ title: 'Heroes vs. Villains', take_h2: undefined })
     expect(takeH2For(season)).toBe('Heroes vs. Villains.')
+  })
+})
+
+describe('buildSections — TOC + inline eyebrow ordinal derivation (critique-pass-56/68)', () => {
+  // Every single-season show in the catalog (Jersey Shore, Selling
+  // Sunset, and the original Alone finding) hit the same defect: the
+  // TOC array and the inline article eyebrows each hardcoded '01'..
+  // '06', so an absent optional section left a gap in the visible
+  // ordinal sequence ("01 / 02 / 03 / 05 / 06", no 04) instead of the
+  // remaining sections renumbering to stay consecutive.
+  it('numbers all six sections 01-06 consecutively when every optional section is present', () => {
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: true,
+      adjacentVisible: true,
+      appearsInCount: 3,
+    })
+    expect(sections.map((s) => s.num)).toEqual(['01', '02', '03', '04', '05', '06'])
+  })
+
+  it('renumbers with no gap when the optional "What to watch for" section is absent', () => {
+    // Reproduces the exact reported defect shape: watch_list absent
+    // should NOT leave a "01 / 02 / 03 / 05 / 06" gap at 04.
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: false,
+      adjacentVisible: true,
+      appearsInCount: 3,
+    })
+    expect(sections.map((s) => s.id)).toEqual([
+      's-take',
+      's-shape',
+      's-where',
+      's-related',
+      's-appears',
+    ])
+    expect(sections.map((s) => s.num)).toEqual(['01', '02', '03', '04', '05'])
+  })
+
+  it('renumbers consecutively for a freshly-scaffolded single-season show (only 4 of 6 sections present)', () => {
+    // Matches the Jersey Shore / Selling Sunset season-1 shape: no
+    // watch_list, no adjacent season yet, but a themed-list cross-ref
+    // already exists.
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: false,
+      adjacentVisible: false,
+      appearsInCount: 1,
+    })
+    expect(sections.map((s) => s.num)).toEqual(['01', '02', '03', '04'])
+  })
+
+  it('never emits a duplicate or skipped ordinal across any visibility combination', () => {
+    const bools = [true, false]
+    for (const shapeHasCopy of bools) {
+      for (const watchVisible of bools) {
+        for (const adjacentVisible of bools) {
+          for (const appearsInCount of [0, 2]) {
+            const sections = buildSections({
+              shapeHasCopy,
+              watchVisible,
+              adjacentVisible,
+              appearsInCount,
+            })
+            const nums = sections.map((s) => s.num)
+            const expected = nums.map((_, i) => String(i + 1).padStart(2, '0'))
+            expect(nums).toEqual(expected)
+          }
+        }
+      }
+    }
   })
 })
 

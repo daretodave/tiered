@@ -246,6 +246,34 @@ export function whereItSitsCopy(
 // renders and preserves the page's eyebrow + h2 rhythm.
 export const ADJACENT_SECTION_H2 = 'Either direction.' as const
 
+// critique-pass-56/68 MED (systemic across every single-season show):
+// the TOC array and the inline article-eyebrow numbers were each
+// hardcoded ('01'..'06'), so an absent optional section (no
+// watch_list, no adjacent season, no themed-list cross-refs) left a
+// gap in the visible ordinal sequence instead of the sections
+// renumbering to stay consecutive. Both the TOC and the inline
+// eyebrows now derive their number from the same filtered array
+// index, so the two never drift from each other and never skip.
+// Exported so the colocated page test can pin the renumbering.
+export function buildSections(opts: {
+  shapeHasCopy: boolean
+  watchVisible: boolean
+  adjacentVisible: boolean
+  appearsInCount: number
+}): TOCSection[] {
+  const defs = [
+    { id: 's-take', label: 'The take', visible: true },
+    { id: 's-shape', label: 'The shape of the season', visible: opts.shapeHasCopy },
+    { id: 's-where', label: 'Where it sits in the canon', visible: true },
+    { id: 's-watch', label: 'What to watch for', visible: opts.watchVisible },
+    { id: 's-related', label: 'Adjacent in the canon', visible: opts.adjacentVisible },
+    { id: 's-appears', label: 'Also appears in', visible: opts.appearsInCount > 0 },
+  ] as const
+  return defs
+    .filter((d) => d.visible)
+    .map((d, i) => ({ id: d.id, num: String(i + 1).padStart(2, '0'), label: d.label }))
+}
+
 // Section 01 ("The take") H2. critique-pass-47 MED (issue #393): the
 // default H2 rendered the season title with a trailing period
 // (`{season.title}.`), which on HvV reads as a literal restate of
@@ -376,14 +404,13 @@ export default async function SeasonPage({ params }: { params: Params }) {
     seasonWatchOrderLine(season),
   ]
 
-  const sections: TOCSection[] = [
-    { id: 's-take', num: '01', label: 'The take' },
-    ...(shapeHasCopy ? [{ id: 's-shape', num: '02', label: 'The shape of the season' }] : []),
-    { id: 's-where', num: '03', label: 'Where it sits in the canon' },
-    ...(watchVisible ? [{ id: 's-watch', num: '04', label: 'What to watch for' }] : []),
-    ...(adjacentVisible ? [{ id: 's-related', num: '05', label: 'Adjacent in the canon' }] : []),
-    ...(appearsIn.length > 0 ? [{ id: 's-appears', num: '06', label: 'Also appears in' }] : []),
-  ]
+  const sections: TOCSection[] = buildSections({
+    shapeHasCopy,
+    watchVisible,
+    adjacentVisible,
+    appearsInCount: appearsIn.length,
+  })
+  const numFor = (id: string) => sections.find((s) => s.id === id)?.num ?? ''
 
   return (
     <ShowPaletteScope show={show.slug}>
@@ -443,7 +470,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
           <article className="article" data-testid="season-article">
             <SeasonTOCMobile sections={sections} />
             <section id="s-take" data-testid="section-take">
-              <div className="article-eyebrow"><span className="num">01</span><span>The take</span></div>
+              <div className="article-eyebrow"><span className="num">{numFor('s-take')}</span><span>The take</span></div>
               <h2>{takeH2For(season)}</h2>
               {season.pull ? (
                 <blockquote className="season-pull" data-testid="season-pull">
@@ -454,7 +481,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
             {shapeHasCopy ? (
               <section id="s-shape" data-testid="section-shape">
-                <div className="article-eyebrow"><span className="num">02</span><span>The shape of the season</span></div>
+                <div className="article-eyebrow"><span className="num">{numFor('s-shape')}</span><span>The shape of the season</span></div>
                 <h2>A rhythm worth tracking.</h2>
                 {bodyParagraphs.map((p, i) => (
                   <p key={i}>{p}</p>
@@ -463,7 +490,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             ) : null}
 
             <section id="s-where" data-testid="section-where">
-              <div className="article-eyebrow"><span className="num">03</span><span>Where it sits in the canon</span></div>
+              <div className="article-eyebrow"><span className="num">{numFor('s-where')}</span><span>Where it sits in the canon</span></div>
               <h2>
                 {canonRank != null
                   ? `The #${pad2(canonRank)} slot.`
@@ -475,7 +502,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
             {watchVisible ? (
               <section id="s-watch" data-testid="section-watch">
-                <div className="article-eyebrow"><span className="num">04</span><span>What to watch for</span></div>
+                <div className="article-eyebrow"><span className="num">{numFor('s-watch')}</span><span>What to watch for</span></div>
                 <h2>{`${season.watch_list?.length ?? 0} moments, no spoilers.`}</h2>
                 <WatchList items={season.watch_list} />
               </section>
@@ -483,7 +510,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
             {adjacentVisible ? (
               <section id="s-related" data-testid="section-related">
-                <div className="article-eyebrow"><span className="num">05</span><span>Adjacent in the canon</span></div>
+                <div className="article-eyebrow"><span className="num">{numFor('s-related')}</span><span>Adjacent in the canon</span></div>
                 <h2>{ADJACENT_SECTION_H2}</h2>
                 <AdjacentSeasons prev={prev} next={next} />
               </section>
@@ -491,7 +518,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
             {appearsIn.length > 0 ? (
               <section id="s-appears" data-testid="section-appears">
-                <div className="article-eyebrow"><span className="num">06</span><span>Also appears in</span></div>
+                <div className="article-eyebrow"><span className="num">{numFor('s-appears')}</span><span>Also appears in</span></div>
                 <h2 id="appears-in-heading">Cross-references.</h2>
                 <AppearsInList rows={appearsIn} />
               </section>
