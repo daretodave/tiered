@@ -355,6 +355,38 @@ test('after toPosix, the CLI source-file filter `/__tests__/` matches Windows te
   assert.equal(toPosix(winSourcePath).includes('/__tests__/'), false)
 })
 
+// --------------------------------------------------------------------
+// Windows drive-letter root reconstruction (audit row filed
+// 2026-07-03 — "check-test-colocation fails wholesale on Windows").
+// --------------------------------------------------------------------
+//
+// Every module reported "wrong-target" on a Windows (Z:) checkout even
+// though its colocated test correctly imported it. Root cause:
+// resolveCandidates always prepended a leading '/' when rebuilding the
+// path from segments — correct for POSIX-rooted dirs (`/abs/...`) but
+// wrong for Windows drive-rooted dirs (`Z:/...`), which produced
+// `/Z:/...` and never matched the real absolute source path.
+
+test('resolveCandidates reconstructs Windows drive-letter-rooted paths without an extra leading slash', () => {
+  const got = resolveCandidates('../X', 'Z:/repo/src/components/__tests__')
+  assert.ok(got.includes('Z:/repo/src/components/X.ts'))
+  assert.ok(got.includes('Z:/repo/src/components/X.tsx'))
+  assert.ok(!got.some((p) => p.startsWith('/Z:')))
+})
+
+test('checkSourceCoverage — covered on a Windows drive-letter absolute path', () => {
+  const FS = {
+    'Z:/repo/src/components/X.tsx': 'export const x = 1',
+    'Z:/repo/src/components/__tests__/X.test.tsx': "import { x } from '../X'",
+  }
+  const result = checkSourceCoverage({
+    sourcePath: 'Z:/repo/src/components/X.tsx',
+    fileExists: (p) => p in FS,
+    readFile: (p) => FS[p],
+  })
+  assert.deepEqual(result, { ok: true })
+})
+
 test('ALLOWLIST is the documented profile/types.ts exception only', () => {
   // The allowlist is intentionally tiny — every other source module
   // ships a colocated test. Growing it silently is a smell; pin the

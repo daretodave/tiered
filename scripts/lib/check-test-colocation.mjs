@@ -39,15 +39,26 @@ export function extractImportSpecs(src) {
 // §5a convention is that a colocated test imports its target with
 // `../<name>`, so only relative specs are considered as evidence of
 // coverage.
+//
+// `testDir` is either POSIX-rooted (`/abs/...`) or Windows
+// drive-rooted (`Z:/abs/...`, already run through `toPosix`). Only the
+// former needs a leading `/` re-added after the segment join — a
+// drive letter is already a root token, so prepending `/` there
+// produced `/Z:/...`, which never matches the real `Z:/...` source
+// path and made every module report a false wrong-target violation on
+// Windows checkouts (audit row filed 2026-07-03).
 export function resolveCandidates(spec, testDir) {
   if (!spec.startsWith('.')) return []
+  const isWindowsDriveRoot = /^[A-Za-z]:/.test(testDir)
   const segments = testDir.split('/').filter((s) => s !== '')
   for (const part of spec.split('/')) {
     if (part === '' || part === '.') continue
     if (part === '..') segments.pop()
     else segments.push(part)
   }
-  const base = `/${segments.join('/')}`
+  const base = isWindowsDriveRoot
+    ? segments.join('/')
+    : `/${segments.join('/')}`
   // The order matters only insofar as duplicates are harmless — the
   // caller does set membership. Both extension-bearing and
   // extension-omitting forms are valid TS module references.
