@@ -4,7 +4,7 @@ number: 19
 slug: the-active-season
 title: "The Active Season"
 canonical_position: 19
-premiere_date: 2026-01-01
+premiere_date: 2026-02-15
 location: "Multiple wilderness locations"
 eyebrow: "Airing 2026 · Currently in progress"
 lede: "Season nineteen is the current season — still airing, still accumulating, not yet a finished object to rank. The 21-day paired-survival format enters its nineteenth run with more history behind it than any survival format on television."
@@ -13,7 +13,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · 2026"
+premiere_caption: "Discovery Channel · February 2026"
 filming_caption: "Multiple remote wilderness locations"
 ---
 
