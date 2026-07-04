@@ -1,7 +1,7 @@
 ---
 show: the-apprentice
 editor: tiered.tv editor
-last_revised: 2026-06-23
+last_revised: 2026-07-04
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched The Apprentice from season one through the celebrity pivot and the NBC finale. The ranking weights what the format was capable of at its best — smart task design, real competitive tension, a boardroom with stakes. Celebrity seasons and the late NBC years are ranked against the founding-era standard, not their own lower ceiling."
 meth_how_h: "How I weigh it"
@@ -64,3 +64,43 @@ slot_argument: Los Angeles gives the tasks a different backdrop while the busine
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
 Season five is the last founding-era season before the format began its shift toward celebrity casting, and it holds up as a genuine business competition. Los Angeles as a production base gave the tasks a different backdrop — entertainment-industry flavored challenges alongside the standard marketing and sales briefs — and the cast of eighteen had the competitive range the founding seasons depended on. The boardroom still weighed real business performance rather than TV presence. The canon places it fifth because the relocation adds texture without changing the format's core argument, and the season closes the founding era on solid ground.
+
+## 10. Season Ten
+
+tag: The civilian format's last stand — a recession-era cast, real disqualification stakes, substance over prizes.
+slot_argument: Season ten returns to civilian casting with a real premise — recession-hit hopefuls — and swaps lavish rewards for meetings with business leaders. A mid-run disqualification gives the boardroom real accountability again.
+community_rank_hint: { rank: 6, delta: 0, sentiment: hold }
+
+Season ten is the founding format's final word, and it makes a real case. Casting hopefuls specifically because the recession had disrupted their careers gives the season a premise with actual stakes, and swapping glossy prize rewards for meetings with working business leaders signals a return to substance the celebrity seasons had mostly abandoned. A contestant's disqualification for manipulating a task result mid-run adds a layer of real accountability the boardroom hadn't needed to reach for since the founding era. It doesn't crack the top tier of the founding seasons, but it beats every celebrity-era entry that came before it, and it closes the civilian format on solid ground.
+
+## 6. Season Six
+
+tag: The founding era's closing stunt — a draft, a mansion, a campsite, and Olympic-athlete casting.
+slot_argument: Season six still runs real business tasks, but leans harder on spectacle than any founding season before it — a draft-picked roster, a mansion versus a powerless campsite, and Olympic-athlete casting.
+community_rank_hint: { rank: 7, delta: 0, sentiment: hold }
+
+Season six is the founding era's last civilian season, and it shows the format starting to reach for spectacle instead of trusting the tasks alone. The mansion-versus-Tent-City housing split gave the show a built-in visual hook, and the alternating draft let viewers watch team-building happen on camera — a genuine structural wrinkle. But the casting pull toward recent Winter Olympians signals the show was starting to value name recognition over pure competitive range, the same instinct that would define the celebrity pivot one season later. The tasks still worked. The framing around them had started to slip.
+
+## 7. Season Seven
+
+tag: The season that changes what the show is — celebrities, charity stakes, no job on the line.
+slot_argument: Season seven swaps the entire premise — celebrities instead of hopefuls, charity instead of a career, gendered teams instead of a draft. The tasks read thinner, but the pivot reshapes the whole show.
+community_rank_hint: { rank: 8, delta: 0, sentiment: hold }
+
+Season seven is the hinge the whole show turns on. Swapping civilian hopefuls for fourteen celebrities changes what a firing means — nobody here is losing a job, and the boardroom has to find new stakes to replace the one the founding era built its tension around. Charity proceeds give the format a new argument for caring about the outcome, and the gendered team split (all women against all men) is a clean structural hook. Weighed against the founding-era standard, the tasks read thinner and the competitive stakes softer. But no other season changes the show's fundamental premise this much, for better and worse.
+
+## 8. Season Eight
+
+tag: Celebrity era, round two — a roster reshuffle and a double firing the founding format never needed.
+slot_argument: Season eight's gender-split teams collapse mid-run when the men's roster thins, forcing a reshuffle the founding format never needed. A double elimination and a five-criteria final task feel engineered rather than earned.
+community_rank_hint: { rank: 9, delta: 0, sentiment: hold }
+
+Season eight is the celebrity era working through its growing pains. The gender-based Athena-versus-KOTU split looked clean on paper, but attrition on the men's side forced a mid-season reshuffle the founding format never had to reach for — a sign the celebrity casting pool doesn't always sustain a full run. The double-elimination episode and the five-criteria final task both read as the show engineering drama rather than letting it emerge from the tasks, the exact inversion of what made the founding seasons work. Judged against that standard, this is a season patched together in real time rather than one that runs clean.
+
+## 9. Season Nine
+
+tag: Celebrity era, third try — a boardroom whose own rhythm swings from brutal to bloodless week to week.
+slot_argument: Season nine repeats the reshuffle pattern from the season before it, but its real mark is boardroom volatility — one episode cuts three people before a task starts, another fires nobody.
+community_rank_hint: { rank: 10, delta: 0, sentiment: hold }
+
+Season nine is the celebrity era's least settled entry. The Rocksolid-versus-Tenacity split reshuffles partway through, echoing a pattern the format had already leaned on the season before — a sign the celebrity casting well produces less durable team chemistry than the founding-era draft did. The real tell is the boardroom's own inconsistency: one week removes three people before a single task has even started, and another week removes nobody at all. That kind of swing reads as a format without a stable internal logic, the opposite of the founding era's consistent week-to-week criteria. It's the weakest case the celebrity pivot has made yet.
