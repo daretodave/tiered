@@ -1,5 +1,50 @@
 # CRITIQUE
 
+> Last pass: 2026-07-04 at commit 2eccb09
+> Pass count: 69
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 69 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/naked-and-afraid/season/the-active-season`,
+> `/shows/american-idol`,
+> `/shows/americas-next-top-model/season/the-finale`, `/shows`)
+> and authed (same 5 URLs plus `/u/e2e`, `/shows` swapped for
+> the naked-and-afraid season page) walks ran, desktop + mobile.
+> Pass re-verified the 3 content fixes shipped this loop (Naked
+> and Afraid S18/S19 premiere dates, American Idol canon
+> methodology, ANTM S24 host_caption) — all three read correctly
+> from both anon and authed perspectives, no regressions, no
+> contradictions. No console errors, no failed requests (the one
+> `/u/e2e` prefetch-teardown abort is the long-documented benign
+> Next.js Link-prefetch artifact from passes 6-11/29-53+), no
+> mobile overflow, no spoilers leaked. Auth chrome confirmed:
+> `@e2e` in header on all authed URLs; comment composer live
+> (not gated); vote-pair pre-interaction state correct (not
+> clicked — reader instructed read-only this pass, per the
+> pass-68 process-note correction). One new finding filed (1
+> MED, anon, SEO): every route on the site serves the identical
+> static Open Graph image because `buildMetadata()`
+> (`src/lib/seo.ts:86-128`) never receives a per-route `image`
+> argument at the show/season/theme call sites, so its
+> `openGraph.images` fallback to `siteConfig.defaultOgImage`
+> always wins over the dynamic per-route `opengraph-image.tsx`
+> files that already exist and already render (dead code) —
+> this resolves the "wiring unclear" ambiguity a pass-53 finding
+> left open (dropped there; confirmed broken here via direct
+> source read + live curl on 5 URLs). A second raw observation
+> (naked-and-afraid S19's FILMED caption nearly restates its own
+> location value) was dropped at self-assessment: verified
+> against the wider corpus, near-identical location/filming_caption
+> pairs are the norm across dozens of season files (not a
+> deviation), so it doesn't clear the bar as a genuine defect.
+> Spoiler discipline P0 intact — zero winner/elimination/finale
+> exposure on any of the 5 URLs walked, including the two
+> finale-labeled season pages.
+>
+> ───── Pass 68 metadata kept below for history ─────
+>
 > Last pass: 2026-07-03 at commit 7173f3a
 > Pass count: 68
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1152,6 +1197,7 @@
 
 ## Pending
 
+- [ ] [MED] [anon] /, /shows, /shows/american-idol, /shows/naked-and-afraid/season/the-active-season, /shows/americas-next-top-model/season/the-finale (and every route on the site — systemic) — every page serves the identical static Open Graph image with no per-route differentiation, despite dedicated dynamic `opengraph-image.tsx` route files already existing and already rendering for shows, seasons, and themes. Confirmed via live header inspection on all 5 URLs walked this pass — home, the `/shows` index, a show page, and two season pages all emit `<meta property="og:image" content="https://tiered.tv/opengraph-image"/>`, byte-identical, the site-wide default. Root cause confirmed by source read: `buildMetadata()` at `src/lib/seo.ts:86-128` accepts an optional `image` argument and falls back to `siteConfig.defaultOgImage` when absent (`seo.ts:95-97`), then unconditionally sets `openGraph.images: [{ url: ogImage }]` (`seo.ts:118`) and `twitter.images: [ogImage]` (`seo.ts:124`) — but neither `generateMetadata` in `src/app/shows/[show]/page.tsx` nor in `src/app/shows/[show]/season/[slug]/page.tsx` ever passes `image` to `buildMetadata`. Because Next.js only falls back to file-convention auto-image-detection when a route's metadata carries no explicit `openGraph.images`, the always-present explicit fallback permanently shadows the per-route `opengraph-image.tsx` files at `src/app/shows/[show]/opengraph-image.tsx` and `src/app/shows/[show]/season/[slug]/opengraph-image.tsx` (and likely `src/app/themes/[theme]/opengraph-image.tsx`, which sits in a route-group mismatch against `src/app/(default)/themes/[theme]/page.tsx` — a second, independent wiring problem worth checking in the same fix) — those files render correctly when hit directly but are otherwise dead code. This exact gap was observed and left ambiguous at pass-53 ("per-show opengraph-image.tsx route already exists; wiring unclear from text capture" — dropped, not filed); this pass resolves the ambiguity with a definitive source-level answer: it's dead code, never wired. Every social share of a show or season page — Survivor Heroes vs. Villains, American Idol, a Naked and Afraid season — renders the same generic card as the homepage, losing the show's own palette and title in the preview a reader's friend sees before clicking through. Fix: thread an `image` argument through the show-page and season-page (and theme-page) `generateMetadata` calls pointing at their own segment's dynamic route (e.g. `/shows/${slug}/opengraph-image`, `/shows/${slug}/season/${seasonSlug}/opengraph-image`) so `buildMetadata` resolves the per-route image instead of the default; separately confirm the themes route-group placement so its `opengraph-image.tsx` is discoverable by the page it's meant to decorate. Spoiler discipline P0 intact (chrome/SEO metadata only, no outcome exposure). (URL: /, /shows, /shows/american-idol, /shows/naked-and-afraid/season/the-active-season, /shows/americas-next-top-model/season/the-finale, source: critique-pass-69) — 2eccb09
 - [x] [HIGH] [authed] /shows/jersey-shore/season/season-1, /shows/selling-sunset/season/season-1 (and every other season page — systemic) — VotePair's up/down buttons have a broken accessible name on every season page in the catalog: aria-label reads the literal fallback string "Vote up votes so far" / "Vote down votes so far" (and post-vote, "Remove your up vote on votes so far"), with no season or show name anywhere in the label. A screen-reader user gets zero context for what they're voting on — every season's vote control announces the identical meaningless phrase. Root cause: `src/components/composition/VotePair.tsx:67` defaults `label = 'votes so far'`; the season-page call site at `src/app/shows/[show]/season/[slug]/page.tsx:419-424` renders `<VotePair initialCount={0} targetType="season" targetId={seasonTargetId} />` with no `label` prop, so the default string leaks straight into the aria-label templates at `VotePair.tsx:246-248` and `:288-290`. Confirmed live via click-through on both jersey-shore/season-1 and selling-sunset/season-1: identical broken label before and after voting on both. (URL: /shows/jersey-shore/season/season-1, /shows/selling-sunset/season/season-1, source: critique-pass-68) — 7173f3a — issue: #442 — RESOLVED this commit: the naive fix (passing `label` directly) would have also broken the *visible* pluralized caption under the count, since `label`/`labelSingular` double as `displayLabel` text ("votes so far"). Shipped instead a new aria-only `subject` prop on `VotePair` (`src/components/composition/VotePair.tsx`), read only inside the four aria-label templates via an `ariaSubject = subject ?? label` fallback — `label`/`labelSingular` are untouched, so the visible caption is unchanged. Season-page call site now passes `subject={`${show.name} ${season.title}`}`, so aria-labels read "Vote up Jersey Shore Season 1" / "Remove your up vote on Jersey Shore Season 1" etc. 4 new unit tests cover the default fallback, the subject override on all three aria-labels, the no-leak-into-visible-caption guarantee, and the post-vote remove-vote label. Closes #442.
 - [x] [MED] [anon] /shows/jersey-shore/season/season-1 (and every single-season show — systemic) — season-page `<title>` stutters when a season's title is the generic "Season N" label: renders "Jersey Shore S1 — Season 1 — tiered.tv", repeating the season identifier twice ("S1" and "Season 1" carry the same information). Same collision confirmed on `/shows/selling-sunset/season/season-1`: "Selling Sunset S1 — Season 1 — tiered.tv". Contrast the working case where the two segments carry different information: `/shows/survivor/season/heroes-vs-villains` renders "Survivor S20 — Heroes vs. Villains — tiered.tv". Root cause: `src/app/shows/[show]/season/[slug]/page.tsx:76` builds the title as `` `${show.name} S${season.number} — ${season.title}` `` unconditionally. Fix: when `season.title` matches the generic `Season ${season.number}` pattern, drop the redundant `S${season.number}` segment and render just `` `${show.name} — ${season.title} — tiered.tv` ``. Single conditional in the title-building logic. Spoiler discipline P0 intact (SEO metadata only). (URL: /shows/jersey-shore/season/season-1, /shows/selling-sunset/season/season-1, source: critique-pass-68) — 7173f3a — issue: #444 — RESOLVED bd07fbf: added a shared `seasonDisplayTitle(show, season)` helper used by both the `<title>` metadata and the JSON-LD Article headline (they carried the identical unconditional template independently — fixing only one would have left the other to drift). Drops the redundant `S<N>` prefix only on an exact `Season ${number}` match; titles carrying extra info (e.g. "Season 1 (2019)") are out of scope and keep the prefix. Closes #444.
 - [ ] [MED] [anon] /shows/jersey-shore/season/season-1 — the frontmatter is missing the `episodes_caption` field that every other season page's spec-row EPISODES tile reads from, so the tile drops out of the grid entirely: the meta grid jumps straight from PREMIERED to FORMAT with no EPISODES row at all. Every comparable season checked has the field — `/shows/selling-sunset/seasons/01-season-1.md:18` carries `episodes_caption: "8 episodes, hour-long format"` and its rendered grid includes "EPISODES / 8 / 8 episodes, hour-long format" between PREMIERED and FORMAT. Jersey Shore Season 1 is the outlier: `content/shows/jersey-shore/seasons/01-season-1.md` has no `episodes_caption` key at all. This is a straightforward missing-field content gap, same class as the `tier_s_blurb` gap the loop drained across 20 shows a few commits ago (see Done section). Fix: add `episodes_caption: "N episodes, <format note>"` to `content/shows/jersey-shore/seasons/01-season-1.md` frontmatter with the real MTV-aired episode count for the season. Content-only, one field. Spoiler discipline P0 intact (episode count is public record). (URL: /shows/jersey-shore/season/season-1, source: critique-pass-68) — 7173f3a
