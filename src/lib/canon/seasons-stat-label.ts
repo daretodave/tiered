@@ -14,8 +14,10 @@
 // home → /shows. Pass-45 #380 extended the rotation to this helper
 // so per-show hero surfaces align with the home featured tile — same
 // fact, same scope, same label across the home → /shows/[show] click
-// path. The /shows catalog hero is unchanged and keeps its catalog-
-// aggregate `Seasons ranked` slot.
+// path. Pass-63 rotated the /shows catalog hero too, from the
+// overclaiming `Seasons ranked` (a drain-in-progress catalog always
+// has aired > reviewed) to `Seasons aired`, which names exactly what
+// the catalog-aggregate sum measures.
 
 export function seasonsStatLabel(
   seasonsAired: number,

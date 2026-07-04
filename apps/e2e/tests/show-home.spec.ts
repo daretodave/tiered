@@ -51,8 +51,10 @@ for (const url of showHomeUrls) {
       // canon", aligning with the home featured tile's `Seasons in
       // canon` (pass-44 #379) so the home → /shows/[show] click path
       // carries one per-show label, not two. The /shows catalog hero
-      // keeps the catalog-aggregate `Seasons ranked` slot. Pins the
-      // page.tsx wiring end-to-end (the unit test pins the helper;
+      // carries its own catalog-aggregate `Seasons aired` slot
+      // (critique pass-63 rotated it off the overclaiming `Seasons
+      // ranked` label). Pins the page.tsx wiring end-to-end (the unit
+      // test pins the helper;
       // this pins that the page feeds it the canon entry count, not
       // the aired count, and adds a drift guard against regression to
       // the legacy `seasons ranked` literal).

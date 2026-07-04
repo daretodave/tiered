@@ -83,8 +83,9 @@ test('hero stat strip surfaces seasons in canon + canon revised', async ({
   const stats = page.getByTestId('home-hero-stats')
   // Critique pass-44 (#379): the home featured tile labels the
   // per-show count as `Seasons in canon` (not the catalog-aggregate
-  // `Seasons ranked` that /shows hero owns). End-to-end pin
-  // mirroring the colocated unit pin in HomeHero.test.tsx.
+  // `Seasons aired` that /shows hero owns — critique pass-63 rotated
+  // that label off the overclaiming `Seasons ranked` form). End-to-end
+  // pin mirroring the colocated unit pin in HomeHero.test.tsx.
   await expect(stats).toContainText(/seasons in canon/i)
   await expect(stats).not.toContainText(/seasons ranked/i)
   await expect(stats).toContainText(/canon revised/i)

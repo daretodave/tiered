@@ -30,14 +30,21 @@ describe('<ShowsHero>', () => {
     expect(screen.getByTestId('shows-stat-seasons').textContent).toContain(
       '290',
     )
-    // Critique pass-44 (#379): /shows hero owns the catalog-aggregate
-    // `Seasons ranked` slot. The home featured tile rotated to
-    // `Seasons in canon` to carry the per-show scope; this surface
-    // keeps the original label so the two read as distinct facts
-    // on the home → /shows click path. Bidirectional pin — positive:
-    // the catalog claim is present; negative: the per-show rotation
-    // never leaks here.
+    // Critique pass-63 (#921cbf5): the catalog-aggregate stat sums
+    // each show's total *aired* seasons (`show.seasons`), not the
+    // count of seasons actually reviewed/canon-included — a drain-
+    // in-progress catalog always has aired > reviewed. `Seasons
+    // ranked` overclaimed completion; `Seasons aired` names exactly
+    // what the sum measures, matching the same aired-vs-canon
+    // honesty the per-show hero already carries via
+    // `seasons-stat-label.ts`. Bidirectional pin — positive: the
+    // honest aired-count label is present; negative: neither the
+    // old overclaiming label nor the per-show `in canon` rotation
+    // leaks here.
     expect(screen.getByTestId('shows-stat-seasons').textContent).toContain(
+      'Seasons aired',
+    )
+    expect(screen.getByTestId('shows-stat-seasons').textContent).not.toContain(
       'Seasons ranked',
     )
     expect(screen.getByTestId('shows-stat-seasons').textContent).not.toContain(

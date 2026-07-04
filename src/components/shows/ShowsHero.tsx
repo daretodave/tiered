@@ -34,7 +34,7 @@ export function ShowsHero({ stats, tiers }: ShowsHeroProps) {
           </div>
           <div className="shows-stat" data-testid="shows-stat-seasons">
             <div className="shows-stat-val">{stats.totalSeasons}</div>
-            <div className="shows-stat-key">Seasons ranked</div>
+            <div className="shows-stat-key">Seasons aired</div>
           </div>
           {stats.lastRevision != null ? (
             <div className="shows-stat" data-testid="shows-stat-revised">
