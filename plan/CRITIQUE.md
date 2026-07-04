@@ -1,5 +1,48 @@
 # CRITIQUE
 
+> Last pass: 2026-07-04 at commit 66f5229
+> Pass count: 70
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 70 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/big-brother/season/the-strategy-era-begins`, `/shows`,
+> `/themes/best-villain-editing`, `/shows/traitors`) and authed
+> (same URL set with `/shows/traitors` swapped for `/u/e2e`)
+> walks ran, desktop + mobile. Zero findings this pass — two
+> candidate observations were raised and both were dropped at
+> self-assessment as not genuine defects: (1) the anon reader
+> flagged the Big Brother S3 FORMAT tile's caption ("the season
+> the game stopped being a vibe") as an unlabeled orphan
+> fragment between the FORMAT value and the HOST label; source
+> read of `src/components/composition/SeasonStatsStrip.tsx`
+> confirms every stat tile renders `key` → `value` → `caption`
+> in sequence with no repeated label before the caption — this
+> is the same structural pattern used by every stat tile across
+> hundreds of season pages (FILMED, PREMIERED, etc. all render
+> identically), not a defect unique to this page; (2) the anon
+> reader flagged the Traitors show-level tagline ("4 seasons of
+> reality alumni in cloaks...") as contradicting season 1's
+> 50/50 civilian/celebrity cast note; checking all 4 season
+> files shows seasons 2-4 are in fact all-celebrity/all-reality-
+> alumni casts (`format_caption` on S2-S4: "no civilians") and
+> season 1's own copy already flags itself as "the only
+> mixed-cast season" — the tagline's generalization holds for 3
+> of 4 seasons and isn't a hard contradiction, just an evocative
+> hero-level hook rather than a literal per-season inventory.
+> No console errors, no failed requests, no mobile overflow (all
+> `scrollWidth === innerWidth` at 375px) on any of the 10
+> captures. Auth chrome confirmed correct on every authed URL
+> (`@e2e` header, live comment composer, clean `/u/e2e` empty
+> state — no email leak). Cross-checked `/shows` stat strip (43
+> shows / 700 seasons) against per-show season counts summed
+> from the home page — reconciles exactly. Spoiler discipline P0
+> intact — no winner/elimination/finale exposure on any URL
+> walked.
+>
+> ───── Pass 69 metadata kept below for history ─────
+>
 > Last pass: 2026-07-04 at commit 2eccb09
 > Pass count: 69
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
