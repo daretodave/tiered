@@ -165,6 +165,7 @@ export function CommentInput({ targetType, targetId, handle, onPosted }: Comment
           <textarea
             ref={taRef}
             className="comment-ta"
+            aria-label="Add a comment"
             placeholder="Say what you actually think."
             value={value}
             onChange={(e) => {

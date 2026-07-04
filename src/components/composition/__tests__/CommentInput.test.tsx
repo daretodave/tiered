@@ -137,6 +137,12 @@ describe('<CommentInput>', () => {
     expect(screen.getByTestId('comment-input')).toHaveClass('open')
   })
 
+  it('gives the textarea an accessible name independent of the placeholder', () => {
+    render(<CommentInput targetType="season" targetId="survivor:20" />)
+    fireEvent.click(screen.getByTestId('comment-stub'))
+    expect(screen.getByTestId('comment-input-textarea')).toHaveAccessibleName('Add a comment')
+  })
+
   it('disables Post when the textarea is empty', () => {
     render(<CommentInput targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('comment-stub'))
