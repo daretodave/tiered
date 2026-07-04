@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've tracked the format from the 2013 premiere 
 meth_how_h: "How I weigh it"
 meth_how_p: "Location pressure comes first. The format lives or dies on whether the environment creates genuine stakes. From there: cast chemistry, format clarity, and what each season contributed to the show's argument about endurance. Seasons that introduced a structural change earn credit for the risk they took."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon moves as new seasons air and the field of nineteen settles into a stable reputation order. Early rankings are working positions, not final verdicts. The catalog is still accumulating; the slots here reflect the honest current read. I'm not claiming to be objective. I'm trying to be fair."
+meth_when_p: "The canon moves as new seasons air and the field of nineteen settles into a stable reputation order. Early rankings are working positions, not final verdicts. The catalog is still accumulating; the slots here reflect the honest current read. That read stands until a season earns a different slot."
 tier_s_blurb: "Seasons where the format and the location worked in full concert — the show at its most uncompromising."
 tier_a_blurb: "Seasons that proved a major point about the format's range or brought an unusually strong cast to an unusually demanding location."
 tier_b_blurb: "Reliable entries that delivered the survival challenge and added something — a new biome, a format adjustment — without resetting expectations."

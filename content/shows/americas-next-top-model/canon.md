@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched every cycle of America's Next Top 
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — casting, whether the contestant pool had real range and competitive tension; photoshoots, whether the creative direction produced genuinely striking work rather than gimmick; and format, whether the season's structural choices sharpened the competition or cluttered it. Tyra Banks' hosting and mentorship presence weaves through all three."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon opens with the founding UPN cycles — the era that established the format and the show's editorial voice. The CW years and the VH1 relaunch complete the picture across all 24 cycles. The UPN cycles establish what a strong ANTM season looks like. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon opens with the founding UPN cycles — the era that established the format and the show's editorial voice. The CW years and the VH1 relaunch complete the picture across all 24 cycles. The UPN cycles establish what a strong ANTM season looks like. That bar carries through every cycle that followed."
 tier_s_blurb: "The founding UPN cycles — Tyra Banks inventing the format live, the casting pool widening fast, and the photoshoots pushing from studio sets into genuine location work."
 tier_b_blurb: "Strong ANTM. The casting pool has genuine range, the photoshoots produce real editorial work, and the season's structural choices give the competition room to breathe."
 weekly_question: "Which of the founding UPN cycles made the strongest case for ANTM as genuine competition television?"

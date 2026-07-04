@@ -3,7 +3,7 @@ show: masked-singer
 editor: "tiered.tv editor"
 last_revised: 2026-06-23
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've tracked The Masked Singer from its Fox debut through its current run. The ranking weighs panel energy, costume spectacle, the caliber of celebrity talent assembled, and whether the guessing conceit stayed genuinely engaging across the full season. I'm not claiming to be objective. I'm trying to be honest."
+meth_who_p: "tiered.tv's editor. I've tracked The Masked Singer from its Fox debut through its current run. The ranking weighs panel energy, costume spectacle, the caliber of celebrity talent assembled, and whether the guessing conceit stayed genuinely engaging across the full season. These rankings are honest readings of what the format delivered; the early seasons set the ceiling."
 meth_how_h: "How I weigh it"
 meth_how_p: "The central device is the disguise — and the ranking reflects how well each season made the disguise matter. Seasons where the celebrity roster carried real surprise value and the panel's guessing felt earned outscore seasons where the format ran on spectacle alone. Costume design ambition and the clarity of the show's tonal identity are secondary variables."
 meth_when_h: "When I revisit"
