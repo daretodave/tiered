@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-04 at commit 5e3f57f
-> Pass count: 42
+> Last pass: 2026-07-05 at commit 3d38fc8
+> Pass count: 43
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,65 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 43 (2026-07-05, commit 3d38fc8) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1.
+     Window since pass 42 (48ec163, 2026-07-04): ~17 hours / 23 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — the queue had run
+       completely dry across the last two expand passes (41, 42), tripping
+       bearings.md's "must never run dry, propose the next wave once Pending
+       show rows drop to ≤2" mandate (Rule 1). This is exactly the gap
+       candidate #24 (filed by /digest 2026-07-05, still awaiting promotion)
+       describes — two passes silently skipped the trigger. Rather than only
+       filing #24's meta-fix (amend skills/expand.md), this pass took the
+       direct action Rule 1 actually mandates: filed a "NEW SHOW QUEUE — WAVE
+       6" batch of 5 Pending category: content-gaps rows straight into
+       plan/AUDIT.md (90 Day Fiancé, Vanderpump Rules, Real Housewives of Salt
+       Lake City, Married at First Sight, American Ninja Warrior — none
+       previously in content/shows/), all scoring ≥3.0 so the next march tick's
+       Step 3b.5 has real work to dispatch to /ship-content. Candidate #24
+       remains pending — the process-hardening fix (making the checklist
+       un-skippable in skills/expand.md) is still worth oversight's review so a
+       third pass doesn't repeat the miss, but the immediate content gap is
+       now closed for this cycle.
+     - AUDIT.md Rule 2 gap (separate from the show queue): diffing show
+       frontmatter `seasons:` against actual season files found two more
+       broken promises — Queer Eye (1/8 files) and Jersey Shore (1/6 files)
+       were explicitly promised as "sibling rows, later tick" on 2026-07-04
+       (twice, in the Apprentice and Selling Sunset drain-row bodies) but
+       never actually filed. Filed both now as Pending season-drain rows
+       (scores 3.5 / 3.0); Jersey Shore's row carries forward the original
+       Miami/Italy season-numbering research flag from its show-scaffold row
+       so /ship-content doesn't skip the verification step.
+     - AUDIT.md needs-user-call rows: 2, both unchanged from pass 41/42
+       (Naked and Afraid S12/13/15/16 numbering, Apprentice S5 LA-framing) —
+       editorial-call blockers, oversight resolves, not phase shapes.
+     - CRITIQUE.md: pass 73 ran this window (commit 60aaca6, 5 findings: 2
+       HIGH + 3 MED, all on /shows/survivor/season/survivor-50 — thin content
+       record, a vote-shift-pill vote-floor bug, a stale "no votes yet" banner
+       against a nonzero votes column, a duplicated canon/body rationale, and
+       a title stutter). Five findings clustered on one URL looks like
+       candidate #24-style signal multiplicity at first glance, but only 2 of
+       the 5 are HIGH (shape B's threshold is "3+ HIGH on the same URL") and
+       each has an independent, cheap, single-surface fix — no shared root
+       cause ties them together (content thinness, a missing vote-floor
+       guard, stale banner copy, prose duplication, and a title-builder edge
+       case are five unrelated defect classes that happen to land on the same
+       freshly-scaffolded page). Correctly /iterate-shaped, not phase-shaped;
+       left pending for the next iterate tick to drain one at a time.
+     - GitHub issues: 0 unlabeled (triage gate was clean this tick); #416
+       (Supabase CLI pin, category: bug, score 4.8) remains the sole
+       long-open row, unchanged from prior passes, not a clustering signal.
+     - spec.md + design/: no changes since pass 42 (`git log 5e3f57f..HEAD --
+       spec.md design/` returns empty).
+     - Commit pattern: 23 commits, all content-drain / audit-finding-fix
+       pairs (Bachelor format_summary batch across two ticks, a critique pass,
+       a digest) — pure drain velocity, no new fix-cluster signal.
+     Existing candidates status: #11/#12/#14/#15/#16/#17/#18/#19/#20/#21/#22/
+     #23/#24 — all unchanged, no new reinforcing or disqualifying signal this
+     pass beyond #24's practical resolution-in-part noted above. -->
 
 <!-- Pass 42 (2026-07-04, commit 5e3f57f) — 0 new candidates filed; no new signal.
      Window since pass 41 (61432a0, 2026-07-04): ~11 hours / 20 commits. Commit
