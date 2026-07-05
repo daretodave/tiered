@@ -1,42 +1,61 @@
 # CRITIQUE
 
-> Last pass: 2026-07-05 at commit 29b0ccb
-> Pass count: 72
+> Last pass: 2026-07-05 at commit f5ede26
+> Pass count: 73
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 72 ran in the cloud loop via Path A2
+> 73 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
-> `/shows/bachelor/season/joey-graziadei`, `/shows`,
-> `/themes/best-villain-editing`, `/shows/bachelor`) and authed
-> (`/`, `/shows/bachelor/season/joey-graziadei`, `/u/e2e`,
-> `/themes/best-villain-editing`, `/shows/bachelor?view=community`)
-> walks ran, desktop + mobile. 5 findings filed (0 high, 5
-> medium, 0 low). Anon pass: mechanical walker found zero console
-> errors, zero failed requests, zero mobile overflow, all
-> meta/OG/canonical tags present. Qualitative read surfaced a
-> repeated closing clause ("the edit leans all the way in") two
-> entries apart on `/themes/best-villain-editing`; a site-wide
-> voice inconsistency in `CanonTierBand` where S/B tier headlines
-> are voice-neutral but A/C hardcode plural "we" against the
-> page's established singular-editor voice; and Bachelor season
-> pages redundantly restating the cast headcount across FORMAT
-> and CAST SIZE stat tiles. Authed pass: auth handshake confirmed
-> genuine (`@e2e` header chrome, live comment composer with
-> stable accessible name — the prior accessible-name fix held),
-> no vote-pair post-click delta observable (walker captures static
-> state only). Two new content findings: the Bachelor
-> Joey Graziadei season page copies its hero lede's opening two
-> sentences verbatim into Section 02, then Section 03 restates
-> the same facts with only cosmetic rewording (near-identical
-> closing sentence, one word swapped) — same duplication class as
-> the resolved Love Island UK finding, now confirmed on a second
-> show/component pairing; and the FORMAT stat tile mixes editorial
-> framing ("the modern peak") that duplicates the page eyebrow
-> rather than describing structural format. Spoiler discipline P0
-> intact — no winner/elimination/finale exposure on any capture.
+> `/shows/survivor/season/survivor-50`, `/shows/survivor`,
+> `/themes/best-finales`, `/shows`) and authed (`/`,
+> `/shows/survivor/season/survivor-50`, `/u/e2e`,
+> `/themes/best-finales`, `/shows/survivor?view=community`) walks
+> ran, desktop + mobile. 5 findings filed (2 high, 3 medium, 0
+> low). Anon pass: zero console errors, zero failed requests, zero
+> mobile overflow. One a11y finding from the reader (unlabeled
+> footer theme-toggle glyph) was verified false and dropped —
+> `ThemeToggle.tsx` already carries a proper `aria-label`. Both
+> passes converged on the same root cause: `/shows/survivor`'s
+> newest season, Survivor 50, ships a near-empty content record
+> (`content/shows/survivor/seasons/50-survivor-50.md` has only
+> title/host/aired_year/eyebrow + a one-paragraph body — missing
+> premiere_date, ep_count, location, lede, pull, all stat-row
+> captions, and watch_list, the full field set every other season
+> file carries). That single gap cascades into three symptoms:
+> the hero "THE TAKE" section renders as a two-word stub, the
+> full stat grid and "shape of the season"/"what to watch for"
+> sections disappear entirely, and the community-ranking table's
+> season tag falls back to "Season 50 · Survivor" instead of a
+> premiere year. Filed as one HIGH content-gap row. Separately,
+> the canon.md rationale for Survivor 50 and the season body
+> restate the same ceremony/settled-grammar/provisional argument
+> near-verbatim — same duplication class as the resolved Bachelor
+> S28 finding, now on a third show. Authed pass confirmed the auth
+> handshake works cleanly (`@e2e` chrome, live vote-pair and
+> comment-composer state) and surfaced two component-level
+> findings on `/shows/survivor?view=community`: `RankShiftPill`
+> deltas render in `CommunityRankList` with no vote-count floor
+> guard (same arithmetic-artifact class as the resolved #334
+> mover-ticker fix — `MOVER_VOTE_FLOOR` was never applied to the
+> full-list rows, so Survivor 50 shows a "↓38" pill against zero
+> votes), filed HIGH; and the "No community votes yet" banner
+> copy is misleading when the same table shows nonzero per-season
+> vote counts (the source flag tracks the reorder threshold, not
+> whether any votes exist), filed MEDIUM. A fifth finding: the
+> pass-68 SEO title-stutter fix (`seasonDisplayTitle` in
+> `src/app/shows/[show]/season/[slug]/page.tsx`) only guards
+> against the generic "Season N" title pattern, so a milestone
+> season titled with the show name baked in ("Survivor 50")
+> still renders "Survivor S50 — Survivor 50." Spoiler discipline
+> P0 intact — no winner/elimination/finale exposure on any
+> capture; `/themes/best-finales`'s 7 entries all describe finale
+> quality without naming outcomes.
 >
-> ───── Pass 71 metadata kept below for history ─────
+> ───── Pass 72 metadata kept below for history ─────
+>
+> Last pass: 2026-07-05 at commit 29b0ccb
+> Pass count: 72
 >
 > Last pass: 2026-07-04 at commit 48ec163
 > Pass count: 71
@@ -1310,6 +1329,11 @@
 
 ## Pending
 
+- [ ] [HIGH] [anon+authed] /shows/survivor/season/survivor-50 — the newest, almost certainly highest-traffic season page on the site ships a near-empty content record: `content/shows/survivor/seasons/50-survivor-50.md` frontmatter has only `show`/`number`/`canonical_position`/`title`/`host`/`aired_year`/`eyebrow` plus a single-paragraph body, while every comparable season file (e.g. `content/shows/survivor/seasons/49-survivor-49.md`) also carries `premiere_date`, `ep_count`, `location`, `format_changes`, `lede`, `pull`, `filming_caption`, `premiere_caption`, `episodes_caption`, `format_summary`, `format_caption`, `cast_size`, `cast_size_caption`, `host_caption`, and a `watch_list` array. Confirmed rendered impact: Section "01 THE TAKE" is just the two-word fragment "Survivor 50." with no follow-up paragraph; the "shape of the season" and "what to watch for" sections are absent entirely; the FILMED/PREMIERED/EPISODES/FORMAT/CAST SIZE/HOST stat grid does not render at all (compare survivor-49's full 6-tile grid); and because `premiere_date` is absent, the community-ranking table's season tag falls back to "Season 50 · Survivor" instead of a year, the only row in the table that doesn't show a year. Reproduces identically on mobile. Fix: backfill `content/shows/survivor/seasons/50-survivor-50.md` with the same field set survivor-49 carries (real Survivor 50 facts: premiere date, episode count, filming location, cast size, host caption, watch-list beats), giving the page a real take/shape/what-to-watch-for read instead of a one-line stub. Content-only. Spoiler discipline P0 intact — no outcome/elimination/winner facts needed for any of the missing fields. (URL: /shows/survivor/season/survivor-50, source: critique-pass-73)
+- [ ] [HIGH] [authed] /shows/survivor?view=community — `RankShiftPill` trend deltas render in the full ranking table with no vote-count floor guard, reproducing the same arithmetic-artifact defect class already fixed for the movers ticker (issue #334, pass-37: "a 5- to 36-spot weekly swing on 1-2 ballots is an arithmetic artifact of a thin vote pool, not a community-driven shift"). `src/lib/community/live.ts`'s `pickMovers` enforces `MOVER_VOTE_FLOOR = 5` distinct voters before a season can show a delta on the movers ticker, but `src/components/canon/CommunityRankList.tsx` (the full-list row renderer, ~line 90) renders `RankShiftPill` whenever `entry.trend != null && entry.trend !== 0` with no equivalent floor check. Confirmed on `/shows/survivor?view=community`: the Survivor 50 row shows a "↓38" shift pill while its Votes column reads "—" (zero votes) — a confident-looking 38-spot slide with no vote data backing it, in the exact same table that (correctly) suppresses the pill for other zero-vote rows via the `entry.trend != null` check being false there. Fix: in `CommunityRankList.tsx`, gate the `RankShiftPill` render on `entry.voteCount >= MOVER_VOTE_FLOOR` (import the constant from `src/lib/community/live.ts`) the same way `pickMovers` does, falling back to the existing em-dash placeholder below the floor. Single component, no visual change to rows that already clear the floor. Spoiler discipline P0 intact (ranking mechanics only). (URL: /shows/survivor?view=community, source: critique-pass-73)
+- [ ] [MED] [authed] /shows/survivor?view=community — the ranking-table header banner reads "No community votes yet — list mirrors the editor canon" (`src/components/canon/CommunityRankList.tsx:41`, fired whenever `source !== 'votes'`), but the same table's Votes column shows real nonzero per-season counts directly beneath it (e.g. Cagayan 3, Heroes vs. Villains 5, Borneo 3) — a reader sees "no votes yet" and "3 votes" in the same screen. Root cause: `source` reflects whether `votersThisWeek` clears the 5-distinct-voter reorder threshold (`VOTE_THRESHOLD` in `src/lib/community/ranking.ts`), not whether any votes exist at all — per-season counters are populated independently of that threshold (by design, per the code comment at `ranking.ts:124-134`). The banner copy just describes the wrong condition. Fix: reword the `source === 'canon'`/`'seasons'` banner text in `CommunityRankList.tsx` (and `sourceBannerCopy()` in `src/lib/community/rank.ts` if it feeds the same copy) to something like "Not enough votes yet to override the editor's order" rather than implying zero votes exist. Content/copy-only, one string. Spoiler discipline P0 intact. (URL: /shows/survivor?view=community, source: critique-pass-73)
+- [ ] [MED] [anon] /shows/survivor/season/survivor-50 — the canon.md rationale and the season-file body restate the same argument near-verbatim, same duplication class as the resolved Bachelor S28 finding (issue #464), now confirmed on a third show. `content/shows/survivor/canon.md` "## 50. Survivor 50" rationale: "Survivor 50 is the franchise's milestone, and the canon weighs it the way the show itself frames the run — as the fiftieth season's own ceremony, hung on a quarter-century of casting work rather than on a new structural argument... the format around it stayed settled grammar at this point... treats the slot as provisional." Season body (`content/shows/survivor/seasons/50-survivor-50.md`): "Survivor 50 closes the show's first quarter-century... the franchise's own ceremony — hung on the format's twenty-fifth anniversary rather than on a structural question. By spring 2026 the format is settled grammar... the canon takes its slot provisionally for now." Same "ceremony"/"quarter-century of casting work"/"settled grammar"/"provisional" phrasing appears in both. Fix: rewrite one of the two — likely the canon.md rationale, per the Love Island UK precedent (issue #459) — to argue comparative placement (why 50th vs. its neighbors, e.g. Survivor 49) instead of re-deriving the same ceremony/settled-grammar argument the season body already makes. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/survivor/season/survivor-50, source: critique-pass-73)
+- [ ] [MED] [anon+authed] /shows/survivor/season/survivor-50 — document title and meta description stutter on the show's own milestone naming: title renders "Survivor S50 — Survivor 50 — tiered.tv" and description falls to the template "Vote and discuss Survivor season 50: Survivor 50." (no `lede` field to draw from — see the companion content-gap finding this pass). Root cause: `seasonDisplayTitle()` in `src/app/shows/[show]/season/[slug]/page.tsx:94-99` already has a pass-68 guard that drops the redundant "S<N>" prefix when `season.title === "Season ${season.number}"`, but that guard doesn't fire here because `season.title` is "Survivor 50" (the show's own milestone naming), not the generic "Season 50" — so the `else` branch still produces "Survivor S50 — Survivor 50". Fix: broaden the `seasonDisplayTitle()` guard to also drop the "S<N>" prefix when `season.title` already contains the show name and/or the season number (e.g. check if `season.title.includes(String(season.number))` in addition to the existing exact-match check), so milestone-named seasons like "Survivor 50" render as "Survivor — Survivor 50" or similar without the doubled "50". Single function, no visual change for normally-titled seasons. Spoiler discipline P0 intact (title/meta only). (URL: /shows/survivor/season/survivor-50, source: critique-pass-73)
 - [x] [MED] [anon] /shows/love-island-uk/season/summer-2015 (and likely other seasons in the show's canon — pattern repro'd on Series 3 too) — Section 02 "The Shape of the Season" and Section 03 "Where It Sits in the Canon" read as near-verbatim restatements of each other rather than two distinct editorial arguments, directly undercutting the site's own numbered-section design (each section is meant to carry its own argument — Section 02 the shape, Section 03 the ranking rationale). Section 02 (`content/shows/love-island-uk/seasons/01-summer-2015.md` body): "Series 1 is the rough draft that turned out to be the blueprint. Smaller cast, slower pace, a villa that feels almost private compared to the spectacle to come... Caroline Flack and Iain Stirling set the host-narrator tone immediately." Section 03 (`content/shows/love-island-uk/canon.md` Series 1 rationale, quoted verbatim into the page via `whereItSitsCopy()` at `src/app/shows/[show]/season/[slug]/page.tsx:262-264`): "It is the rough draft that turned out to be the blueprint: a smaller cast, a slower pace, and a villa that feels almost private next to the spectacle to come... Caroline Flack and Iain Stirling establish the host-narrator tone immediately." Same duplication pattern confirmed on Series 3 (canon.md rationale vs. `content/shows/love-island-uk/seasons/03-summer-2017.md` body — both share "electric"/"chemistry", "Casa Amor", and near-identical "Caroline Flack and Iain Stirling at full strength/height of their partnership" phrasing). Root cause: Section 03 is designed to quote the canon.md rationale directly (likely the fix for a prior "Section 03 reads as an empty stub" finding — see Done section), but the rationale prose itself was written to closely mirror the season body rather than argue the season's placement relative to its neighbors. Fix: rewrite `content/shows/love-island-uk/canon.md` rationale fields (Series 1 and Series 3 confirmed, worth auditing all 11) to focus on comparative placement — why this slot vs. the seasons immediately above/below it in the canon — rather than re-describing atmosphere and cast facts the season body already owns. Content-only. Spoiler discipline P0 intact (atmosphere/format commentary, no outcome exposure). (URL: /shows/love-island-uk/season/summer-2015, source: critique-pass-71) — 48ec163 — issue: #459 — RESOLVED 0b984a8: audited all 11 series (not just the two the pass flagged) and found the same restatement pattern on every entry — delegated to content-curator to rewrite all 11 `content/shows/love-island-uk/canon.md` rationale paragraphs to argue comparative placement (why this slot vs. the immediate neighbors above/below in canon rank), rather than re-describing atmosphere/cast/twist facts the season body already owns. `tag`/`slot_argument`/`community_rank_hint` lines, ranks, and tiers untouched — only the free-text rationale paragraph per entry changed. Spoiler discipline P0 intact. Verify gate green: leg1 194 unit test files, content:check ok (43 shows/680 seasons/43 canons/12 themes/3 legal docs); leg2 build (876 pages); leg3 2918 e2e. Closes #459.
 - [x] [MED] [authed] /shows/love-island-uk/season/summer-2015 (and every season/show page with a comment composer — systemic, shared component) — the comment composer `<textarea>` has no accessible name at all: no `aria-label`, no `aria-labelledby`, no `id`/`<label>` pairing. It relies solely on the placeholder string "Say what you actually think.", which disappears once the user starts typing and is not a substitute for a real accessible name — a screen-reader user tabbing into the field after typing has begun gets no context for what the control is. Confirmed via live DOM probe on the deployed page: `ariaLabel: null, ariaLabelledby: null, id: ""`. Source: `src/components/composition/CommentInput.tsx:165-176` — the `<textarea>` carries `className`, `placeholder`, `value`, `onChange`, `rows`, `data-testid`, and `disabled` props but nothing that supplies an accessible name. Different residual than the already-resolved composer findings on record (review-disclosure microcopy, VotePair label pluralization) — this one is markup-level, not copy-level. Fix: add `aria-label="Add a comment"` to the textarea in `CommentInput.tsx` (or `aria-labelledby` pointing at the adjacent `comment-reminder` "No spoilers" text, which already exists as a sibling element) so screen-reader users get a stable accessible name independent of placeholder or typed content. Single component, no visual change. Spoiler discipline P0 intact (a11y markup only). (URL: /shows/love-island-uk/season/summer-2015, source: critique-pass-71) — 48ec163 — issue: #458 — RESOLVED b78261b: added `aria-label="Add a comment"` to the textarea in `CommentInput.tsx`. No visual change. Pinned with a colocated test asserting `toHaveAccessibleName('Add a comment')`. Verify gate green: 194 test files / 2782 tests, build clean, 2918 e2e passed.
 - [ ] [LOW] [anon] /shows/masterchef — the tier-A and tier-B blurbs share templated sentence structure and a repeated clause back-to-back, reading as fill-in-the-blank rather than two distinct editorial calls. `content/shows/masterchef/canon.md` `tier_a_blurb`: "Strong MasterChef. The format working at a high level — a deep bench, clear judging, and genuine culinary stakes across the run." `tier_b_blurb`: "Solid MasterChef. The format working at a consistent level — strong amateur talent, clear judging, a competition that respects what home cooks can do." Both open with the identical "[Adjective] MasterChef. The format working at a ... level" clause and both repeat "clear judging" verbatim. Fix: vary the opening clause on one tier and drop the repeated "clear judging" phrase from the other tier's blurb in `content/shows/masterchef/canon.md`. Content-only, two fields. Spoiler discipline P0 intact (editorial tone only). (URL: /shows/masterchef, source: critique-pass-71) — 48ec163
