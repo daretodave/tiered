@@ -34,9 +34,9 @@ describe('<CanonTierBand>', () => {
   it('renders the fixed headline for each tier key', () => {
     const cases: Array<[TierBand['key'], string]> = [
       ['S', 'The seasons that defend the show.'],
-      ['A', 'The seasons we would watch again next week.'],
+      ['A', 'The seasons worth watching again next week.'],
       ['B', 'The seasons that count.'],
-      ['C', 'The seasons we have made peace with.'],
+      ['C', 'The seasons that earned their peace.'],
     ]
     for (const [key, headline] of cases) {
       const { unmount } = render(

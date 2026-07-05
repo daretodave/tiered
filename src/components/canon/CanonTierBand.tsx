@@ -20,9 +20,9 @@ type CanonTierBandProps = {
 
 const TIER_HEADLINES: Record<TierBand['key'], string> = {
   S: 'The seasons that defend the show.',
-  A: 'The seasons we would watch again next week.',
+  A: 'The seasons worth watching again next week.',
   B: 'The seasons that count.',
-  C: 'The seasons we have made peace with.',
+  C: 'The seasons that earned their peace.',
 }
 
 function bodyForBand(
