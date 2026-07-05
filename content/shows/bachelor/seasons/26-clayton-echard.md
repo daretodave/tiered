@@ -10,7 +10,7 @@ host: Jesse Palmer
 eyebrow: "Aired winter 2022 · New permanent host"
 lede: "The first Bachelor season under a new permanent host — a former NFL practice-squad player turned medical-device salesman takes the mansion, and the show returns to the travel circuit. The host change is the franchise's biggest structural shift in two decades."
 pull: "Echard is the season the franchise changed the voice in the room. After twenty-five seasons under one voice, a new permanent host steps in — the biggest off-camera shift the format has staged in two decades."
-format_summary: "31 women · new permanent host"
+format_summary: "Travel circuit resumes after bubble season"
 format_caption: "first season under a new host"
 filming_caption: "Agoura Hills · Houston, Croatia, Iceland"
 premiere_caption: "ABC · Monday 8/7c"

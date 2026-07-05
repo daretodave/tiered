@@ -10,7 +10,7 @@ host: Jesse Palmer
 eyebrow: "Aired winter 2023 · Settled-host run"
 lede: "A tech-executive lead takes the mansion in the first season where the new permanent host had settled into the role. The producers stage a back-to-basics run after several seasons of structural experiments, and the casting reads as a return to the franchise's earnest register."
 pull: "Shallcross is the season the franchise stopped experimenting for a year. After resort bubbles and host changes, the show plays its own format straight."
-format_summary: "30 women · back-to-basics run"
+format_summary: "Traditional rose ceremonies, full travel circuit"
 format_caption: "the format played straight again"
 filming_caption: "Agoura Hills · the Bahamas, Hungary, Thailand"
 premiere_caption: "ABC · Monday 8/7c"

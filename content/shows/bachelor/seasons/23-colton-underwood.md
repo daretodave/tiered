@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2019 · Former-NFL lead"
 lede: "A former NFL practice-squad player takes the mansion after two prior runs across the sister franchises. The producers cast the season around a single biographical hook the franchise leaned into harder than any prior winter, and the marketing made it the whole pitch."
 pull: "Underwood is the season the franchise built its entire promotional argument around one fact about the lead. The single-image pitch is the loudest the show had tried."
-format_summary: "30 women · single-hook NFL lead"
+format_summary: "Traditional rose ceremonies, atypical finale format"
 format_caption: "the franchise's loudest single-image pitch"
 filming_caption: "Agoura Hills · Singapore, Thailand, Portugal"
 premiere_caption: "ABC · Monday 8/7c"

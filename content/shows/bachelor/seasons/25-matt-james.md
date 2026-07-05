@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2021 · First Black Bachelor"
 lede: "The franchise's first Black Bachelor — a North Carolina real-estate broker and community-organization founder cast as the lead before he had appeared on any prior run. The season is also the first to relocate from the Agoura Hills mansion to a single resort bubble."
 pull: "James is the season the franchise made because it had to make it. The first Black Bachelor — a casting precedent the show had not put on the table in twenty-four prior winters."
-format_summary: "32 women · first Black Bachelor"
+format_summary: "Single-resort format, no travel legs"
 format_caption: "first lead cast before any prior run"
 filming_caption: "Nemacolin resort bubble · single-location season"
 premiere_caption: "ABC · Monday 8/7c"
