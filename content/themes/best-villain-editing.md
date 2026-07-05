@@ -37,7 +37,7 @@ entries:
     season_label: "S19 · Den Of Temptation"
     rank: 4
     title: "A summer of dominant-player editing, mythologized as it happened."
-    blurb: "Den Of Temptation builds its broadcast around a single house power center, and the edit leans all the way in. The temptation twist hands the season its loud antagonist frame, and the narrative bends around the loudest player in the room."
+    blurb: "Den Of Temptation builds its broadcast around a single house power center, and the framing never wavers from it. The temptation twist hands the season its loud antagonist frame, and the narrative bends around the loudest player in the room."
   - show: dragrace
     season: 11
     season_label: "S11"
