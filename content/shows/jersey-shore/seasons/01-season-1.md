@@ -2,7 +2,7 @@
 show: jersey-shore
 number: 1
 title: "Season 1"
-canonical_position: 1
+canonical_position: 2
 premiere_date: "2009-12-03"
 ep_count: 9
 location: "Seaside Heights, New Jersey"
