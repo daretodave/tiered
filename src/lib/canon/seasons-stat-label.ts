@@ -25,5 +25,6 @@ export function seasonsStatLabel(
 ): string {
   const everyAiredSeasonRanked =
     canonEntryCount > 0 && canonEntryCount >= seasonsAired
-  return everyAiredSeasonRanked ? 'seasons in canon' : 'seasons aired'
+  const noun = seasonsAired === 1 ? 'season' : 'seasons'
+  return everyAiredSeasonRanked ? `${noun} in canon` : `${noun} aired`
 }

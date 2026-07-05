@@ -44,4 +44,17 @@ describe('seasonsStatLabel', () => {
     // nonsensical "0 seasons in canon".
     expect(seasonsStatLabel(0, 0)).toBe('seasons aired')
   })
+
+  it('singularizes "season aired" for a one-season show', () => {
+    // /critique pass-53: below-deck-adventure (and any other
+    // single-season show — alone-frozen, alone-the-skills-challenge)
+    // rendered the ungrammatical "1 SEASONS IN CANON" / "1 SEASONS
+    // AIRED". The stat value is always show.seasons, so the label
+    // itself must singularize when that count is exactly 1.
+    expect(seasonsStatLabel(1, 0)).toBe('season aired')
+  })
+
+  it('singularizes "season in canon" for a fully-drained one-season show', () => {
+    expect(seasonsStatLabel(1, 1)).toBe('season in canon')
+  })
 })
