@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-f
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — cast, whether the bench had enough talent and personality to carry a dinner service; drama, whether the kitchen conflict felt earned rather than manufactured; and format integrity, whether the season's structure respected both the cooking and the competition. Ramsay is the constant; everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon grows as more seasons land. Twenty-four slots now cover all three eras — the founding run, the evolution-era numbered seasons, and the themed editions through season twenty-four. Each new entry slots on merit against what is already here. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon grows as more seasons land. Twenty-four slots cover all three eras — the founding run, the evolution seasons, and the themed editions. Each new entry earns its place against what's already here, judged by the same three lenses: cast, drama, format integrity."
 tier_s_blurb: "Five seasons where the cast could actually cook — the deepest technical benches of the founding run (S5, S4, S6), the original S1 debut, and S9's structurally distinct full-season team format."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
 weekly_question: "Which early Hell's Kitchen season holds up best on a second pass — and does it still belong at the top?"

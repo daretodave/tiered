@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. The ranking covers the full run — Lee Rosbach
 meth_how_h: "How I weigh it"
 meth_how_p: "Cast dynamics come first, but location and charter-guest variety shape the season's texture. A season that generates friction across multiple departments — deck, interior, galley — earns more than one that confines it to a single storyline. The seasons that taught the show what it was receive credit for laying the groundwork."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now spans twelve seasons and both captain eras. The Lee-to-Kerry transition is fully seeded and ranked on merit. The ranking will shift as the Kerry era extends. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon now spans twelve seasons and both captain eras. The Lee-to-Kerry transition is fully seeded and ranked on merit. The ranking will shift as the Kerry era extends. Both eras get judged by the same standard — location, cast, captain authority — so the ranking earns its order rather than assumes it."
 tier_s_blurb: "The Bahamas peak and the Tahiti high-water mark — the two seasons where location, cast, and production ran at full capacity."
 tier_a_blurb: "The origin run and format-consolidation seasons that built the show's identity, plus the best of the newer locations."
 tier_b_blurb: "Reliable Below Deck — functional seasons that deliver the format without a defining moment."

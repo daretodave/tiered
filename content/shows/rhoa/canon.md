@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. I've watched RHOA from the debut season through
 meth_how_h: "How I weigh it"
 meth_how_p: "Atlanta's social world is specific — it has its own rules around wealth, ambition, and public persona. Seasons that use those specifics earn more than seasons that simply stage conflict. The cast's internal relationships matter: how they push and pull against each other, not just whether they argue."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now covers all sixteen aired seasons through 2024. Season sixteen is the new-cast premiere — the first full run of the post-S15 configuration. Slots are held with confidence — each position reflects a judgment about what the season does with its cast, its setting, and its format. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "The canon now covers all sixteen aired seasons through 2024. Season sixteen is the new-cast premiere — the first full run of the post-S15 configuration. Slots are held with confidence — each position reflects a judgment about what the season does with its cast, setting, and format. Sixteen seasons in, that judgment gets sharper with every rewatch, not softer."
 tier_s_blurb: "Seasons 3 through 7 at their configuration peak — the cast dynamics that made Atlanta's social world specific, sustained across a run long enough for real relational history to build."
 tier_a_blurb: "The seasons that defined what RHOA is — cast-driven, Atlanta-specific, and genuinely difficult to look away from."
 tier_b_blurb: "Strong seasons with real moments, showing the format at full operational pressure even when not quite at its ceiling."

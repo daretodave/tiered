@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor. Every aired season of Below Deck Mediterranean,
 meth_how_h: "How I weigh it"
 meth_how_p: "Location does more work here than in the original series — the difference between a strong Adriatic anchorage and a forgettable stretch of coast shapes a season's entire texture. Cast chemistry across deck, interior, and galley counts next, then how clearly the captain's authority organizes the drama. Seasons that pushed into new geography earn credit for the risk."
 meth_when_h: "When I revisit"
-meth_when_p: "Nine slots covering the full run, from the Montenegro foundation through the Athens expansion. A season that improves on second watch moves up. One that deflates stays put. The ranking is not trying to be final — it is trying to be honest about where each season sits in the run right now."
+meth_when_p: "Nine slots covering the full run, from the Montenegro foundation through the Athens expansion. A season that improves on second watch moves up. One that deflates stays put. The ranking is not trying to be final — it's staking a clear claim about where Dubrovnik and Malta sit above the rest, revised only when a season earns it."
 tier_s_blurb: "The franchise peak — Dubrovnik and Malta represent what Below Deck Mediterranean looks like when cast chemistry, location, and command authority all operate above the format's ceiling."
 tier_a_blurb: "Distinctive seasons that took a creative risk and paid it back — a different captain, a freshwater lake, the island geometry of Malta's neighboring islands. Strong enough to sit close to the top."
 tier_b_blurb: "Solid franchise entries that work through their run cleanly. The Adriatic coast, the Dalmatian return, Athens on first pass — each adds something without defining the format."
