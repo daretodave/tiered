@@ -1,6 +1,6 @@
 import type { CommunityRankSource } from '@/lib/community/rank'
 import type { CommunityRankRow } from '@/lib/community/ranking'
-import { trendSentiment } from '@/lib/community/live'
+import { MOVER_VOTE_FLOOR, trendSentiment } from '@/lib/community/live'
 import { RankShiftPill } from '@/components/composition/RankShiftPill'
 
 type CommunityRankListProps = {
@@ -87,7 +87,9 @@ export function CommunityRankList({
                   —
                 </div>
               )}
-              {entry.trend != null && entry.trend !== 0 ? (
+              {entry.trend != null &&
+              entry.trend !== 0 &&
+              entry.voteCount >= MOVER_VOTE_FLOOR ? (
                 <RankShiftPill
                   className="cp-clr-trend-pill"
                   delta={entry.trend}

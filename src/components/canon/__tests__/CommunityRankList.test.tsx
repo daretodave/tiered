@@ -100,6 +100,23 @@ describe('<CommunityRankList>', () => {
     expect(container.querySelector('.cp-clr-trend.cp-cl-cell--empty')).not.toBeNull()
   })
 
+  it('suppresses the trend pill below the vote floor even when trend is non-zero (regression guard for pass-73 HIGH)', () => {
+    const entries = [
+      row(1, 20, 'Heroes vs. Villains', {
+        approval: null,
+        voteCount: 0,
+        trend: -38,
+      }),
+    ]
+    const { container } = render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
+    )
+    expect(screen.queryByTestId('rank-shift-pill')).toBeNull()
+    expect(
+      container.querySelector('.cp-clr-trend.cp-cl-cell--empty'),
+    ).not.toBeNull()
+  })
+
   it('live-source meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
     const entries = [
       row(1, 20, 'Heroes vs. Villains', {
