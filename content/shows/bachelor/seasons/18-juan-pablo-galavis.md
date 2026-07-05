@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2014 · First Latino lead"
 lede: "The franchise's first Latino lead — a former professional soccer player from Venezuela, single father, bilingual cast handling. The producers built the season around the casting precedent, with travel dates into South Korea, Vietnam, and the Dominican Republic."
 pull: "The first Latino Bachelor is a season the franchise made because it had to, and one viewers and the show itself spent the following year debating in the open."
-format_summary: "25 women · first Latino Bachelor"
+format_summary: "Extended Women Tell All special, longer than usual"
 format_caption: "soccer-player single dad takes the mansion"
 filming_caption: "Agoura Hills · South Korea, Vietnam, Dominican Republic"
 premiere_caption: "ABC · Monday 8/7c"

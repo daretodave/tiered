@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2017 · Most-recycled lead"
 lede: "The franchise's most-recycled lead takes the mansion — a Wisconsin software salesman with multiple prior runs across the sister franchises behind him. The producers cast the season aware that the audience already knew the lead intimately, and the limo line plays accordingly."
 pull: "Viall is the season the franchise bet that familiarity itself could be the hook. No prior lead arrived with this much screen history, and the casting leans into it."
-format_summary: "30 women · most-recycled lead"
+format_summary: "Hometown episode runs as an extended set piece"
 format_caption: "a lead the audience already knew well"
 filming_caption: "Agoura Hills · Wisconsin, Bahamas, Finland"
 premiere_caption: "ABC · Monday 8/7c"

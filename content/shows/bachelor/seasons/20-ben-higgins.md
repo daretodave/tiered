@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2016 · Denver software lead"
 lede: "The franchise's modern era proper begins here. A Denver software salesman with a sister-franchise final-rose run behind him takes the mansion, and the producers cast aware of what the post-Sean Lowe register had unlocked. Travel runs through Mexico, Warsaw, and Jamaica."
 pull: "Higgins is the season the modern Bachelor begins. Every casting choice and every travel beat reads as a franchise newly aware of what it is."
-format_summary: "25 women · Denver tech-sales lead"
+format_summary: "Franchise's first full Las Vegas dates leg"
 format_caption: "the modern Bachelor begins here"
 filming_caption: "Agoura Hills · Mexico City, Warsaw, Jamaica"
 premiere_caption: "ABC · Monday 8/7c"

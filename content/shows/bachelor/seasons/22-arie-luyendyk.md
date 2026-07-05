@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2018 · Racing-driver returnee"
 lede: "A professional racing driver returns to the franchise more than a decade after his original sister-franchise run — the longest gap between a contestant's first appearance and his Bachelor season the show had ever staged. The producers built the casting around that distance."
 pull: "Luyendyk is the season the franchise reached the furthest back into its own archive. No returnee lead had been off the air this long before being brought back to the mansion."
-format_summary: "29 women · long-gap returnee lead"
+format_summary: "Unusually extended finale runway and close"
 format_caption: "a returnee pulled from the deep archive"
 filming_caption: "Agoura Hills · Lake Tahoe, Paris, Tuscany"
 premiere_caption: "ABC · Monday 8/7c"

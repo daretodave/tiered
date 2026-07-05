@@ -11,7 +11,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2011 · Returnee lead"
 lede: "The franchise's first returnee Bachelor — the Austin bar owner from season eleven, brought back after three years to take a second pass. Twelve episodes, the longest runway the show had used, and a casting roster arriving on a season with an asterisk."
 pull: "The return-run is the franchise admitting, on camera, that its format had unfinished business. Few seasons before or since wear that kind of self-examination so openly."
-format_summary: "25 women · first returnee Bachelor"
+format_summary: "Longest runway to date, plus on-camera therapy beats"
 format_caption: "the same lead, three years later"
 filming_caption: "Agoura Hills · Costa Rica, Anguilla, Cape Town"
 premiere_caption: "ABC · Monday 8/7c"

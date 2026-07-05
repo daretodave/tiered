@@ -10,7 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2013 · Texan lead"
 lede: "The franchise's clean-slate season — a Dallas insurance agent and former college football player takes the mansion after his own run as a final-rose contender the prior year. The producers stage the season as a reset after a friction-heavy run, and the casting reads accordingly."
 pull: "Lowe is the season the franchise decided to behave for a year. The result is one of the most-watched runs of the decade, and a quiet argument that the format still works at its most earnest."
-format_summary: "25 women · Texas returnee lead"
+format_summary: "Franchise's first deliberately drama-light edit style"
 format_caption: "casting reset after a friction-heavy run"
 filming_caption: "Agoura Hills · St. Croix, Canada, Thailand"
 premiere_caption: "ABC · Monday 8/7c"
