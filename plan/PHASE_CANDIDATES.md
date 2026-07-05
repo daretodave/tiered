@@ -179,6 +179,28 @@
        awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
        awaiting promotion; still valid, single finding. -->
 
+### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit
+
+**Score:** 4.5 (impact: 6, ease: 7.5 — process/gate tuning, not user-facing)
+**Source pass:** filed by `/digest` 2026-07-05, not an expand pass (meta-loop rail — proposal only)
+**Filed:** 2026-07-05
+**Why:** `plan/bearings.md` lines 543–551 (Rule 1 "keep the queue fed") states the new-show
+`plan/AUDIT.md` Pending-row queue "must never run dry" and that `/expand` should propose a
+fresh wave once Pending show rows drop to ≤2. The queue has sat at exactly 0 rows since
+before the 2026-07-04 digest, and two consecutive expand passes since then (pass 41,
+2026-07-04, and pass 42, 2026-07-04 later the same day) each filed 0 new candidates — neither
+pass's "Signals reviewed" note mentions the show queue at all, only AUDIT's needs-user-call
+rows and CRITIQUE clusters. This suggests the ≤2-row trigger is not part of `/expand`'s
+actual signal checklist (it may only be evaluated implicitly, or was folded into the general
+AUDIT.md scan and silently passed over because the two remaining rows there are
+needs-user-call and easy to skip past). Two passes running the queue empty without
+proposing a refill is itself the evidence — the mandate isn't self-enforcing.
+**Scope sketch:** Add an explicit, un-skippable checklist line to `skills/expand.md`'s
+procedure: "read `plan/AUDIT.md`'s content-gaps rows tagged as show-queue entries; if
+Pending count ≤2, propose the next wave (3-5 shows) before scoring anything else." Cheap
+process fix — no code, just a skill-file amendment plus, once promoted, one expand pass
+that actually files wave 7.
+
 ### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
 
 **Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
