@@ -10,8 +10,8 @@ host: Jesse Palmer
 eyebrow: "Aired winter 2024 · The modern peak"
 lede: "A tennis professional takes the mansion in the season widely read as the modern era's high-water mark. The producers cast the deepest, most chemistry-forward field of the post-2016 run, and the production confidence shows from the limo line forward."
 pull: "Graziadei is the season the modern Bachelor finally clicked. Every casting choice and travel beat reads as a franchise operating at full confidence."
-format_summary: "32 women · the modern peak"
-format_caption: "the post-2016 era at full strength"
+format_summary: "Traditional rose ceremonies, no twist"
+format_caption: "standard cadence, full travel circuit"
 filming_caption: "Agoura Hills · Malta, Montreal, Tulum"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "11 episodes including specials"
@@ -29,4 +29,4 @@ watch_list:
     body: "Final dates move through Tulum. The franchise stages a finale runway shot with the care the modern era had been building toward."
 ---
 
-A tennis professional takes the mansion in the season widely read as the modern era's high-water mark. Eleven episodes, thirty-two women, travel through Malta, Montreal, and Tulum. The producers cast the deepest, most chemistry-forward field of the post-2016 run, and the production confidence shows from the limo line forward. Jesse Palmer hosts a season the franchise points to when it argues the modern Bachelor finally works at full strength. The post-2016 era's clearest case for itself.
+Eleven episodes move at a traditional clip: weekly rose ceremonies without a structural twist, so the drama sits entirely in the room, not the format. The deep opening field thins quickly before the season shifts into its travel run — Malta, then Montreal, then Tulum, each stop narrowing the frame as episodes close in on the finale. Jesse Palmer, three seasons into hosting, keeps the pacing brisk and the cocktail-party rhythm steady throughout.
