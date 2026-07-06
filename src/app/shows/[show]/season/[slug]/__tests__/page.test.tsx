@@ -62,8 +62,10 @@ import {
   buildSections,
   generateMetadata,
   generateStaticParams,
+  isCompetitionGenre,
   seasonDisplayTitle,
   seasonHeroBylineFor,
+  statsFor,
   takeH2For,
   whereItSitsCopy,
 } from '../page'
@@ -608,5 +610,63 @@ describe('ADJACENT_SECTION_H2 — Section 05 "Adjacent in the canon" subhead', (
     // page (canon-above neighbor framed as "read next").
     expect(ADJACENT_SECTION_H2 as string).not.toBe('Read next.')
     expect(ADJACENT_SECTION_H2.toLowerCase()).not.toMatch(/\bnext\b/)
+  })
+})
+
+describe('isCompetitionGenre — genre-neutral cast noun gate (critique pass-75)', () => {
+  it('treats every "<word> competition" genre_tag as a competition', () => {
+    expect(isCompetitionGenre('Reality competition')).toBe(true)
+    expect(isCompetitionGenre('Social competition')).toBe(true)
+    expect(isCompetitionGenre('Culinary competition')).toBe(true)
+  })
+
+  it('treats "Survival reality" and "Social deduction" as competitions', () => {
+    // Alone, Naked and Afraid, The Traitors — elimination/scored
+    // games that don't literally spell "competition" in the tag.
+    expect(isCompetitionGenre('Survival reality')).toBe(true)
+    expect(isCompetitionGenre('Social deduction')).toBe(true)
+  })
+
+  it('treats docusoap/dating/lifestyle genre_tags as non-competitions', () => {
+    expect(isCompetitionGenre('Docusoap')).toBe(false)
+    expect(isCompetitionGenre('Dating')).toBe(false)
+    expect(isCompetitionGenre('Relationship docuseries')).toBe(false)
+    expect(isCompetitionGenre('Yachting docuseries')).toBe(false)
+    expect(isCompetitionGenre('Lifestyle makeover')).toBe(false)
+  })
+})
+
+describe('statsFor — Cast size noun (critique pass-75)', () => {
+  it('uses "cast members" for a docusoap/social-reality show', () => {
+    const stats = statsFor(makeSeason({ cast_size: 6 }), 'Docusoap')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value).toBe('6 cast members')
+  })
+
+  it('singularizes "cast member" for a docusoap with a single cast entry', () => {
+    const stats = statsFor(makeSeason({ cast_size: 1 }), 'Docusoap')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value).toBe('1 cast member')
+  })
+
+  it('keeps "player(s)" for a competition-genre show', () => {
+    const stats = statsFor(makeSeason({ cast_size: 20 }), 'Reality competition')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value).toBe('20 players')
+  })
+
+  it('singularizes "player" for a competition show with one remaining cast slot', () => {
+    const stats = statsFor(makeSeason({ cast_size: 1 }), 'Reality competition')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value).toBe('1 player')
+  })
+
+  it('never renders "players" for a non-competition genre_tag', () => {
+    // Negative regression pin: the exact RHOSLC/MAFS repro from
+    // critique pass-75 — a docusoap/social-reality cast is not a
+    // competition roster.
+    const stats = statsFor(makeSeason({ cast_size: 6 }), 'Social reality')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value ?? '').not.toMatch(/\bplayers?\b/)
   })
 })

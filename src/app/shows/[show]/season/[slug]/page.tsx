@@ -143,7 +143,18 @@ function bodyOf(season: Season): string | undefined {
   return undefined
 }
 
-function statsFor(season: Season): SeasonStat[] {
+// Genre tags that describe an elimination/scored game, where the
+// cast competes against each other for a prize or survival. Every
+// other genre_tag (docusoap, dating, lifestyle, docuseries, etc.)
+// gets the genre-neutral "cast member(s)" noun instead — a Housewife
+// or a matched couple isn't a "player" by any reading a viewer would
+// recognize (critique pass-75).
+export function isCompetitionGenre(genreTag: string): boolean {
+  const t = genreTag.toLowerCase()
+  return t.includes('competition') || t === 'survival reality' || t === 'social deduction'
+}
+
+export function statsFor(season: Season, genreTag: string): SeasonStat[] {
   const premieredVal = season.premiere_date
     ? new Date(season.premiere_date).toLocaleDateString('en-US', {
         month: 'short',
@@ -155,6 +166,13 @@ function statsFor(season: Season): SeasonStat[] {
       ? String(season.aired_year)
       : undefined
   const epsVal = season.ep_count ?? season.episodes
+  const castNoun = isCompetitionGenre(genreTag)
+    ? season.cast_size === 1
+      ? 'player'
+      : 'players'
+    : season.cast_size === 1
+      ? 'cast member'
+      : 'cast members'
   return [
     { key: 'Filmed', value: season.location, caption: season.filming_caption },
     { key: 'Premiered', value: premieredVal, caption: season.premiere_caption },
@@ -170,10 +188,7 @@ function statsFor(season: Season): SeasonStat[] {
     },
     {
       key: 'Cast size',
-      value:
-        season.cast_size != null
-          ? `${season.cast_size} ${season.cast_size === 1 ? 'player' : 'players'}`
-          : season.cast_note,
+      value: season.cast_size != null ? `${season.cast_size} ${castNoun}` : season.cast_note,
       caption: season.cast_size_caption,
     },
     { key: 'Host', value: season.host, caption: season.host_caption },
@@ -434,7 +449,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
     canonHit?.rationale,
   )
 
-  const stats = statsFor(season)
+  const stats = statsFor(season, show.genre_tag)
   const populatedStats = stats.filter(
     (s) => (s.value && s.value.length > 0) || (s.caption && s.caption.length > 0),
   )
