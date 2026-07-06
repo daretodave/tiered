@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-05 at commit 3d38fc8
-> Pass count: 43
+> Last pass: 2026-07-06 at commit 1067802
+> Pass count: 44
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,49 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 44 (2026-07-06, commit 1067802) — 1 new candidate filed (#25).
+     Window since pass 43 (3d38fc8, 2026-07-05): ~13 hours / 21 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 0 Pending rows of the `- [ ] [SEV] ... (category: ...)` bullet
+       shape. One heading-style row remains (`### [user-issue #416] [LOW] Pin
+       Supabase CLI version...`, score 4.8) — unchanged since pass 41/42/43,
+       single item, /iterate-shaped, not a clustering signal.
+     - CRITIQUE.md: ~20 Pending rows across passes 51-74. Re-scanned specifically
+       for new clusters not previously assessed. Found one: the canon-rationale /
+       season-body verbatim-argument duplication defect (pass-73 Survivor 50
+       finding) explicitly names itself "the same duplication class as the
+       resolved Bachelor S28 finding (issue #464)... now confirmed on a third
+       show" — cross-referencing GitHub confirms #464 and #459 (Love Island UK)
+       are both CLOSED, each fixed as an isolated content edit. Three independent
+       shows, three separate fix events, same root cause, never caught before
+       ship. This is a real, previously-unassessed cluster (not mentioned in any
+       prior pass's "existing candidates status" — checked via grep). Filed as
+       new candidate #25: extend the existing verbatim-phrase-echo n-gram
+       technique (`collectThemedEntryVerbatimPhraseEchoIssues` in
+       `scripts/content-check.ts:1262`, already proven for themed-list title↔blurb
+       pairs) to canon rationale ↔ season body pairs.
+     - The other clustering candidate considered — "drain"-word jargon leakage
+       (ANTM pass-64, MasterChef Australia pass-62) — remains at 2 instances,
+       still below the 3-instance clustering bar per pass-40's explicit
+       assessment (unchanged; no new "drain"-word instance found this pass). The
+       CAST SIZE templated-caption finding (pass-67) flags a *possibly* related
+       drain-script-default pattern but is a single instance with a suggestion to
+       audit further, not itself a cluster — noted but not promoted; a future
+       pass should re-check if a third instance of either sub-class appears.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean); #416 unchanged,
+       single stale item, no clustering signal.
+     - spec.md + design/: no changes since pass 43 (`git log 3d38fc8..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 43 — dominated by content-drain
+       pairs (90 Day Fiancé, Vanderpump Rules, RHOSLC shows; Queer Eye and Jersey
+       Shore season drains; American Ninja Warrior, Married at First Sight shows),
+       plus a vote-floor bug fix, a critique pass (74), a Survivor 50 content
+       backfill, and an SEO title-template fix. Pure drain/critique-response
+       velocity, no fix-cluster signal beyond what's captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. -->
 
 <!-- Pass 43 (2026-07-05, commit 3d38fc8) — 0 new phase-shape candidates filed;
      dispatched directly into plan/AUDIT.md instead per bearings Rule 1.
@@ -237,6 +280,65 @@
        (/u/[handle] stat chips) — [needs-user-call]; skip. #18 (header handle affordance) —
        awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
        awaiting promotion; still valid, single finding. -->
+
+### 25. Canon-rationale/season-body verbatim-argument echo gate
+
+**Score:** 6.9 (impact: 7, ease: 8 → 5.6 base + 1.3 signal multiplicity)
+**Source pass:** 44
+**Filed:** 2026-07-06
+**Source signals:**
+- Issue #459 (CLOSED) — Love Island UK S1/S3 canon rationale duplicated the season
+  body's own argument, fixed as a one-off content edit.
+- Issue #464 (CLOSED) — Bachelor Joey Graziadei season page: triple-duplicated copy
+  across lede/sections/tiles, fixed as a one-off content edit.
+- Critique pass-73 [MED] `/shows/survivor/season/survivor-50` — canon.md's "## 50.
+  Survivor 50" rationale and the season-file body restate the same "ceremony /
+  quarter-century of casting work / settled grammar / provisional" argument
+  near-verbatim. The finding explicitly names this "the same duplication class as
+  the resolved Bachelor S28 finding (issue #464), now confirmed on a third show."
+- Signal multiplicity: 3 independent shows across 3 separate fix events (2 already
+  closed as one-off GitHub issues, 1 currently pending in CRITIQUE.md), each time
+  caught reactively by a human/critique pass weeks after the content shipped, never
+  once caught before ship. Same defect class, same root cause (a canon rationale
+  authored without checking what the season body already says), recurring at a
+  steady cadence as the show-coverage mandate (bearings Rule 1) keeps producing new
+  canon entries.
+
+**Why:** The codebase already has the exact technique this defect class needs —
+`collectThemedEntryVerbatimPhraseEchoIssues()` in `scripts/content-check.ts:1262`
+tokenizes two text fields, builds n-gram sets, and flags shared phrases above a
+configured length, applied today to themed-list entry title↔blurb pairs. The same
+technique applied to canon.md rationale text ↔ the corresponding season file's body
+would have caught all three known instances (#459, #464, and the pending Survivor 50
+finding) before they shipped, rather than requiring a critique pass or a filed GitHub
+issue to notice weeks later. This is "reality outpacing the plan" in the specific
+sense expand exists to catch: the show-coverage mandate is a standing perpetual rule
+(bearings Rule 1) that keeps generating fresh canon+season pairs every tick, and this
+exact defect keeps recurring at the same steady rate the content velocity itself
+produces — a per-instance content fix never closes the class, only a gate does.
+**Scope sketch:**
+- New `collectCanonRationaleSeasonBodyEchoIssues()` in `scripts/content-check.ts`,
+  mirroring the existing verbatim-echo helper: for each canon entry, tokenize its
+  `rationale` and the matching season file's body/lede text, build n-gram sets (start
+  at the same n as the themed-list check, tune if too noisy), and flag shared
+  n-grams above a length/count threshold.
+- Wire into `collectFailures()` so `pnpm content:check` fails on new instances; run
+  once in report-only/strict-flag mode first against the full corpus to confirm it
+  doesn't false-positive on legitimate shared vocabulary (season names, host names,
+  format terms) before making it a hard gate.
+- Colocated unit tests: a synthetic canon/season pair with a real duplicated
+  argument (should flag), a pair that legitimately shares only proper nouns (should
+  not flag), and a pair with no overlap (should not flag).
+- `content-curator` brief update: document the gate so future canon authoring checks
+  the season body first, mirroring the existing candidate #20 pattern of updating
+  curator guidance alongside a new structural check.
+
+**Estimated phases:** 1.
+**Conflicts:** none. Complements (not overlaps with) candidate #23's prose
+capitalization invariant and #13's cross-corpus cliché registry — those catch
+different defect shapes (style/formatting drift vs. cross-corpus phrase reuse) in
+the same file; this candidate catches cross-field argument duplication *within one
+show's canon+season pair*, a shape none of the existing gates cover.
 
 ### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit
 
