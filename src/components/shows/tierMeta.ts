@@ -27,7 +27,14 @@ const A: TierMeta = {
 
 const B: TierMeta = {
   tier: 'B',
-  tag: 'Recent additions · under review',
+  // critique-pass-75 #484: the old tag ("Recent additions · under
+  // review") framed tier as a function of when a show was added,
+  // but `tier` is editorial confidence in the canon order, not
+  // recency — and the band renders long-running shows (e.g.
+  // Dancing with the Stars, 21 years / 34 seasons) directly under
+  // it. "Canon still forming" matches the recency-agnostic `name`
+  // framing below instead.
+  tag: 'Canon still forming',
   name: 'The canon is in progress. Every season reviewed before it lands.',
 }
 

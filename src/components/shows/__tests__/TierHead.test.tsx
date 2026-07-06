@@ -28,7 +28,7 @@ describe('<TierHead>', () => {
   it('uses the under-review copy for B tier', () => {
     render(<TierHead tier="B" count={3} />)
     expect(screen.getByTestId('tier-head').textContent).toContain(
-      'Recent additions',
+      'Canon still forming',
     )
   })
 })

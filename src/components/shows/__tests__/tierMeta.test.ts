@@ -24,9 +24,18 @@ describe('tierMeta', () => {
     it('B tier carries the under-review record', () => {
       expect(tierMeta('B')).toEqual({
         tier: 'B',
-        tag: 'Recent additions · under review',
+        tag: 'Canon still forming',
         name: 'The canon is in progress. Every season reviewed before it lands.',
       })
+    })
+
+    // critique-pass-75 #484: the tag used to read "Recent additions
+    // · under review," misdescribing tier as recency rather than
+    // editorial canon-confidence — a long-running B-tier show (e.g.
+    // Dancing with the Stars, 21 years / 34 seasons) directly
+    // contradicted the word "recent" in the same band. Drift guard.
+    it('B tier tag does not claim recency', () => {
+      expect(tierMeta('B').tag).not.toMatch(/recent/i)
     })
 
     it('every record echoes the tier letter it was looked up by', () => {

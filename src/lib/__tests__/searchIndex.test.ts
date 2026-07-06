@@ -407,7 +407,7 @@ entries:
   it('pluralizes the B tier meta to "2 shows" with the lowercased tag', async () => {
     const { getSearchIndex } = await import('../searchIndex')
     const b = getSearchIndex().find((i) => i.type === 'tier' && i.name === 'B tier')
-    expect(b?.meta).toBe('2 shows · recent additions · under review')
+    expect(b?.meta).toBe('2 shows · canon still forming')
   })
 
   it('pluralizes list meta across shows + entries', async () => {
