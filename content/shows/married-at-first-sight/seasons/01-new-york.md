@@ -12,7 +12,7 @@ lede: "Three couples agree to marry strangers picked by a panel of relationship 
 pull: "The premise had never been tried on American television. Season 1 plays it straight, and the strangeness of the format is the whole appeal."
 premiere_caption: "FYI · July 2014"
 format_summary: "Blind matching · legal marriage"
-format_caption: "the season that invented the experiment"
+format_caption: "Matched by experts, married before meeting"
 cast_size: 6
 cast_size_caption: "Three couples, matched sight unseen"
 ---
