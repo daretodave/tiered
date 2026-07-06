@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-06 at commit 1067802
-> Pass count: 44
+> Last pass: 2026-07-06 at commit d6f2372
+> Pass count: 45
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,59 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 45 (2026-07-06, commit d6f2372) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same
+     move pass 43 made for wave 6).
+     Window since pass 44 (1067802, 2026-07-06): ~14 hours / 11 commits. Commit
+     threshold (≥20) not met on its own, but the last-digest note explicitly
+     flagged this exact stall risk and the show-queue trigger (≤2 Pending rows)
+     independently qualifies this pass regardless of the commit-count clock.
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 6 (5 shows, filed
+       pass 43) fully drained same-day per the 2026-07-05 digest, so the queue
+       is empty again. This is precisely the stall pattern candidate #24 (still
+       awaiting oversight promotion) describes, and the digest's own "watch
+       whether pass 45 refills promptly" note names this pass by number. Took
+       the direct action Rule 1 mandates (as pass 43 did) rather than only
+       re-filing #24's meta-fix: filed a "NEW SHOW QUEUE — WAVE 7" batch of 5
+       Pending category: content-gaps rows straight into plan/AUDIT.md (Real
+       Housewives of Potomac, The Circle, Real Housewives of Miami, Too Hot to
+       Handle, Southern Charm — none previously in content/shows/), all
+       scoring ≥3.0 so the next march tick's Step 3b.5 has real work to
+       dispatch to /ship-content. Two of the five extend the existing 6-show
+       Housewives cluster (RHOP, RHOM) per bearings' "Cross-flavor list
+       capture" guidance; the other three (The Circle, Too Hot to Handle,
+       Southern Charm) are fresh Netflix/Bravo formats not yet represented.
+       Candidate #24 remains pending — the process-hardening fix (an explicit,
+       un-skippable checklist line in skills/expand.md) is still worth
+       oversight's review so a third stall doesn't require a digest nudge to
+       catch, but the immediate content gap is closed for this cycle.
+     - AUDIT.md other Pending rows: only the one non-content-gaps row (Supabase
+       CLI version pin, category: bug) — explicitly marked BLOCKED FROM CLOUD
+       2026-07-06 (needs a `workflows`-scoped token only available to a local
+       `/oversight` session). Unchanged, no new signal.
+     - CRITIQUE.md: 31 Pending rows (29 LOW, 1 MED, 1 SEV). Re-scanned for new
+       clusters. The heaviest URL cluster (4 findings on
+       /shows/survivor/season/heroes-vs-villains) is expected — it's the
+       gold-standard reference page every critique pass walks most carefully —
+       and each of the 4 is a distinct, already-scoped one-off fix (a11y
+       aria-hidden count, spec-row grammar tile, duplicate-rank-token mobile
+       stack, within-page hyphenation drift), not a shared root cause; none
+       promotes to a phase-shape candidate. big-brother (3), the-apprentice
+       (2), jersey-shore (2), below-deck (2) clusters checked individually —
+       same shape, no shared root cause found. Existing candidate #25
+       (canon-rationale echo gate) unchanged, still awaiting promotion.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416 unchanged
+       (same Supabase CLI pin, single stale item, no clustering signal).
+     - spec.md + design/: no changes since pass 44 (`git log 1067802..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 11 commits since pass 44 — dominated by critique-pass-75
+       finding closures (4 content/copy fixes) plus one canon-rationale
+       rewrite and one B-tier tag reword. Pure critique-response velocity, no
+       fix-cluster signal beyond what's captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25 —
+     all unchanged, no new reinforcing or disqualifying signal this pass. -->
 
 <!-- Pass 44 (2026-07-06, commit 1067802) — 1 new candidate filed (#25).
      Window since pass 43 (3d38fc8, 2026-07-05): ~13 hours / 21 commits. Commit
