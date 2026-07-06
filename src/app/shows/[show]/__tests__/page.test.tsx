@@ -104,10 +104,10 @@ describe('generateStaticParams — SSG coverage of the show URL family', () => {
 })
 
 describe('generateMetadata — known show', () => {
-  it('titles the page with the canon + community framing', () => {
+  it('titles the page with the canon, no-spoilers framing', () => {
     getShowMock.mockReturnValue(makeShow({ name: 'Survivor', slug: 'survivor' }))
     expect(generateMetadata({ params: { show: 'survivor' } }).title).toBe(
-      'Survivor — the canon + the community vote, no spoilers',
+      'Survivor — the canon, no spoilers',
     )
   })
 

@@ -54,7 +54,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     })
   }
   return buildMetadata({
-    title: `${show.name} — the canon + the community vote, no spoilers`,
+    title: `${show.name} — the canon, no spoilers`,
     description: descriptionFor(show),
     path: `/shows/${show.slug}`,
     image: `/shows/${show.slug}/opengraph-image`,
