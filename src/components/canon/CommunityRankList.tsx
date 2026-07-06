@@ -1,4 +1,4 @@
-import type { CommunityRankSource } from '@/lib/community/rank'
+import { sourceBannerCopy, type CommunityRankSource } from '@/lib/community/rank'
 import type { CommunityRankRow } from '@/lib/community/ranking'
 import { MOVER_VOTE_FLOOR, trendSentiment } from '@/lib/community/live'
 import { RankShiftPill } from '@/components/composition/RankShiftPill'
@@ -36,9 +36,7 @@ export function CommunityRankList({
       <div className="cp-community-list-head">
         <h2>The full ranking.</h2>
         <span className="meta">
-          {live
-            ? 'Updated Thursdays · approval %'
-            : 'No community votes yet — list mirrors the editor canon.'}
+          {live ? 'Updated Thursdays · approval %' : sourceBannerCopy(source)}
         </span>
       </div>
       <div className="cp-cl-cols" data-testid="community-rank-cols">

@@ -132,4 +132,25 @@ describe('<CommunityRankList>', () => {
     expect(list).toHaveTextContent(/Updated Thursdays · approval %/)
     expect(list).not.toHaveTextContent(/recompute/i)
   })
+
+  it('canon-source meta does not claim zero votes exist when per-row vote counts are nonzero (regression guard for critique pass-73 MED)', () => {
+    const entries = [
+      row(1, 20, 'Heroes vs. Villains', { approval: 0.7, voteCount: 5 }),
+    ]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
+    )
+    const list = screen.getByTestId('community-rank-list')
+    expect(list).not.toHaveTextContent(/No community votes yet/i)
+    expect(list).toHaveTextContent(/Mirrors the Editor's Canon/i)
+  })
+
+  it('seasons-source meta names the air-order fallback distinctly from the canon-mirror fallback', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="seasons" />,
+    )
+    const list = screen.getByTestId('community-rank-list')
+    expect(list).toHaveTextContent(/air order/i)
+  })
 })
