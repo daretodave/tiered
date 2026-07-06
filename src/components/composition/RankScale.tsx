@@ -54,10 +54,12 @@ export function RankScale({
           </span>
         </div>
       </div>
-      <div className="scale-marks">
-        <span>#01 · canon peak</span>
-        <span className="end-r">#{pad2(total)} · the tail</span>
-      </div>
+      {total > 1 && (
+        <div className="scale-marks">
+          <span>#01 · canon peak</span>
+          <span className="end-r">#{pad2(total)} · the tail</span>
+        </div>
+      )}
     </div>
   )
 }

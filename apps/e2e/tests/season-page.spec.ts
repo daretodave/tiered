@@ -27,10 +27,16 @@ for (const url of seasonUrls) {
       // Phase 37 nit 5: ranked seasons render the canon scale dot +
       // #NN label on the track (unranked seasons show the "not yet
       // ranked" fallback instead — scope the assertion accordingly).
+      // Pass-74: single-season shows (total === 1) suppress the
+      // peak/tail endpoint marks — there's no range to describe with
+      // one entry, so that assertion only applies when the marks exist.
       const rankScale = page.getByTestId('rank-scale')
       if ((await rankScale.count()) > 0) {
         await expect(page.getByTestId('rank-scale-here')).toBeVisible()
-        await expect(page.getByText('#01 · canon peak')).toBeVisible()
+        const peakMark = page.getByText('#01 · canon peak')
+        if ((await peakMark.count()) > 0) {
+          await expect(peakMark).toBeVisible()
+        }
       }
       await expect(page.getByTestId('vote-pair')).toBeVisible()
       await expect(page.getByTestId('season-thread')).toBeVisible()

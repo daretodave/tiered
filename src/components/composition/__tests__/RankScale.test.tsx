@@ -69,4 +69,16 @@ describe('<RankScale>', () => {
     render(<RankScale rank={1} total={1} meta="1 season" />)
     expect(screen.getByText('1 season')).toBeInTheDocument()
   })
+
+  it('suppresses the peak/tail endpoint marks when total is 1', () => {
+    render(<RankScale rank={1} total={1} />)
+    expect(screen.queryByText('#01 · canon peak')).not.toBeInTheDocument()
+    expect(screen.queryByText('#01 · the tail')).not.toBeInTheDocument()
+  })
+
+  it('still renders the endpoint marks for multi-season totals', () => {
+    render(<RankScale rank={7} total={47} />)
+    expect(screen.getByText('#01 · canon peak')).toBeInTheDocument()
+    expect(screen.getByText('#47 · the tail')).toBeInTheDocument()
+  })
 })
