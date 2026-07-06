@@ -91,8 +91,21 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 // Season 1"), since both segments carry the same information. Drop
 // the redundant "S<N>" prefix in that case only — a real season
 // title ("Heroes vs. Villains") still pairs with it for contrast.
+//
+// CRITIQUE pass 73 MED: a milestone-named season ("Survivor 50")
+// hits the same stutter — the title already carries both the show
+// name and the season number, so the "S50" prefix repeats
+// information a second time ("Survivor S50 — Survivor 50"). Extend
+// the guard to drop the prefix whenever the title already contains
+// both the show name and the season number.
 export function seasonDisplayTitle(show: Show, season: Season): string {
   if (season.title === `Season ${season.number}`) {
+    return `${show.name} — ${season.title}`
+  }
+  if (
+    season.title.includes(show.name) &&
+    season.title.includes(String(season.number))
+  ) {
     return `${show.name} — ${season.title}`
   }
   return `${show.name} S${season.number} — ${season.title}`

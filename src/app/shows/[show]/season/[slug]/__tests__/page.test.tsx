@@ -362,6 +362,12 @@ describe('seasonDisplayTitle — shared title framing (critique-pass-68 MED)', (
       'Love Island (US) S1 — Season 1 (2019)',
     )
   })
+
+  it('drops the "S<N>" prefix when a milestone title already carries the show name and season number (critique-pass-73 MED)', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    const season = makeSeason({ number: 50, title: 'Survivor 50' })
+    expect(seasonDisplayTitle(show, season)).toBe('Survivor — Survivor 50')
+  })
 })
 
 describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () => {
