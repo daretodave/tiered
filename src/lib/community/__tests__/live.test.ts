@@ -4,7 +4,6 @@ import type { CommunityRankRow } from '../ranking'
 import {
   communitySignalForSeason,
   formatLastRecompute,
-  formatVersion,
   MOVER_VOTE_FLOOR,
   moverNote,
   NEXT_RECOMPUTE_LABEL,
@@ -184,17 +183,6 @@ describe('formatLastRecompute', () => {
 
   it('renders the last whole minute before the hour rolls over', () => {
     expect(formatLastRecompute('2026-05-17T11:01:00Z', now)).toBe('59m ago')
-  })
-})
-
-describe('formatVersion', () => {
-  it('formats or marks pending', () => {
-    expect(formatVersion(null)).toBe('pending')
-    expect(formatVersion(42)).toBe('v42')
-  })
-
-  it('renders v0 — zero is a real version, not pending', () => {
-    expect(formatVersion(0)).toBe('v0')
   })
 })
 

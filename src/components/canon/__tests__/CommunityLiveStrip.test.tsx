@@ -14,10 +14,11 @@ describe('<CommunityLiveStrip>', () => {
     )
     const strip = screen.getByTestId('community-live-strip')
     expect(strip).toHaveAttribute('data-source', 'canon')
+    expect(strip).not.toHaveAttribute('data-version')
     expect(strip).toHaveTextContent('votes pending')
     expect(strip).toHaveTextContent('Thursday 9pm ET')
     expect(strip).toHaveTextContent('mirroring the canon')
-    expect(strip).toHaveTextContent('pending')
+    expect(strip).toHaveTextContent('open to anyone')
   })
 
   it('renders Supabase-derived recompute, voters and version when live', () => {
@@ -31,9 +32,10 @@ describe('<CommunityLiveStrip>', () => {
     )
     const strip = screen.getByTestId('community-live-strip')
     expect(strip).toHaveAttribute('data-source', 'votes')
+    expect(strip).toHaveAttribute('data-version', '1421')
     expect(strip).toHaveTextContent('1h ago')
     expect(strip).toHaveTextContent('17,402')
-    expect(strip).toHaveTextContent('v1421')
+    expect(strip).not.toHaveTextContent('v1421')
     expect(strip).toHaveTextContent('live votes')
   })
 

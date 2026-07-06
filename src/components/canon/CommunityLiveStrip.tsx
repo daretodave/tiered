@@ -1,9 +1,5 @@
 import type { CommunityRankSource } from '@/lib/community/rank'
-import {
-  NEXT_RECOMPUTE_LABEL,
-  formatLastRecompute,
-  formatVersion,
-} from '@/lib/community/live'
+import { NEXT_RECOMPUTE_LABEL, formatLastRecompute } from '@/lib/community/live'
 
 type CommunityLiveStripProps = {
   source: CommunityRankSource
@@ -14,8 +10,10 @@ type CommunityLiveStripProps = {
 
 // Phase 35: every value here is Supabase-derived (the snapshot
 // timestamp + id, the trailing-7d distinct voter count). Below the
-// vote threshold the strip stays honest — "votes pending" / "pending"
-// rather than an invented number.
+// vote threshold the strip stays honest — "votes pending" rather
+// than an invented number. The raw snapshot-row id (`version`) is
+// carried as `data-version` for tests only, never shown as copy —
+// it's a DB row id, not a meaningful week/vote-cycle count.
 export function CommunityLiveStrip({
   source,
   lastRecomputeAt,
@@ -33,6 +31,7 @@ export function CommunityLiveStrip({
       className="cp-live-strip"
       data-testid="community-live-strip"
       data-source={source}
+      data-version={version ?? undefined}
     >
       <div className="cp-live-left">
         <span>
@@ -53,7 +52,7 @@ export function CommunityLiveStrip({
         </span>
       </div>
       <div className="cp-live-right">
-        <b>{formatVersion(version)}</b> · <b>open</b> to anyone
+        <b>open</b> to anyone
       </div>
     </div>
   )

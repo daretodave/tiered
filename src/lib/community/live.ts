@@ -183,7 +183,3 @@ export function communitySignalForSeason(
   }
   return fallback ?? null
 }
-
-export function formatVersion(version: number | null): string {
-  return version == null ? 'pending' : `v${version}`
-}
