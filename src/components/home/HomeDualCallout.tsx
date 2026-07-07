@@ -1,6 +1,28 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export function HomeDualCallout() {
+  const [signedIn, setSignedIn] = useState(false)
+
+  useEffect(() => {
+    if (typeof fetch !== 'function') return
+    let cancelled = false
+    fetch('/api/auth/me', { headers: { accept: 'application/json' } })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: { ok?: boolean; signedIn?: boolean } | null) => {
+        if (cancelled || !json || json.ok !== true) return
+        setSignedIn(Boolean(json.signedIn))
+      })
+      .catch(() => {
+        /* Keep the SSR value — best effort, no error affordance. */
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   return (
     <section className="dual" data-testid="home-dual-callout">
       <div className="dual-cell" data-testid="home-dual-curated">
@@ -20,11 +42,16 @@ export function HomeDualCallout() {
           <b>Plain. Restless. Honest.</b> The numbers shift each week. When
           signed-in, you self-attest you watched the season end to end;
           anonymous votes count at 0.1×, accounts under 7 days at 0.25×,
-          tenured accounts at 1.0×.{' '}
-          <Link href="/sign-in" className="dual-signin-link">
-            Sign in
-          </Link>{' '}
-          to count at full weight.
+          tenured accounts at 1.0×.
+          {signedIn ? null : (
+            <>
+              {' '}
+              <Link href="/sign-in" className="dual-signin-link">
+                Sign in
+              </Link>{' '}
+              to count at full weight.
+            </>
+          )}
         </p>
       </div>
     </section>

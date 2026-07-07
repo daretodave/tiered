@@ -1,6 +1,10 @@
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HomeDualCallout } from '../HomeDualCallout'
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
 
 describe('<HomeDualCallout>', () => {
   it('renders both cells with the canon + community framing', () => {
@@ -151,5 +155,42 @@ describe('<HomeDualCallout>', () => {
     const live = screen.getByTestId('home-dual-live')
     const link = live.querySelector('a.dual-signin-link')
     expect(link).not.toBeNull()
+  })
+
+  // Critique pass-64 MED, bumped from LOW at pass-76 (issue #490): the
+  // sign-in CTA rendered unconditionally, so a signed-in reader still
+  // saw "Sign in to count at full weight." on the home hero. Fix
+  // mirrors HeaderView's client-side auth-island pattern — fetch
+  // /api/auth/me on mount, suppress the sentence once signedIn:true.
+  it('suppresses the sign-in sentence once /api/auth/me reports signedIn:true', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ ok: true, signedIn: true }),
+      }),
+    )
+    render(<HomeDualCallout />)
+    // Pre-hydration default assumes signed-out — link starts present.
+    expect(
+      screen.getByTestId('home-dual-live').querySelector('a[href="/sign-in"]'),
+    ).not.toBeNull()
+    await waitFor(() => {
+      expect(
+        screen
+          .getByTestId('home-dual-live')
+          .querySelector('a[href="/sign-in"]'),
+      ).toBeNull()
+    })
+    expect(fetch).toHaveBeenCalledWith('/api/auth/me', expect.anything())
+  })
+
+  it('keeps the sign-in sentence when /api/auth/me fails', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('offline')))
+    render(<HomeDualCallout />)
+    await new Promise((r) => setTimeout(r, 0))
+    expect(
+      screen.getByTestId('home-dual-live').querySelector('a[href="/sign-in"]'),
+    ).not.toBeNull()
   })
 })
