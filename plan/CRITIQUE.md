@@ -1,5 +1,54 @@
 # CRITIQUE
 
+> Last pass: 2026-07-07 at commit 258d059
+> Pass count: 77
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 77 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows`, `/shows/southern-charm`, `/shows/southern-charm/season/charleston`,
+> `/themes`) and authed (`/`,
+> `/shows/southern-charm/season/charleston?view=community`, `/u/e2e`,
+> `/themes/best-comeback-seasons`) walks ran, desktop + mobile,
+> deliberately targeting Southern Charm — a show added to the
+> catalog in the last few commits and never critiqued before
+> (same strategy as pass 76 targeting Big Brother). 2 findings
+> filed (1 medium, 1 low). Zero console errors, zero failed
+> requests, zero mobile overflow on any capture; auth handshake
+> confirmed genuine (`authState: authenticated:cloud`, `@e2e`
+> chrome across header/profile/comment-composer attribution, real
+> member-since date on `/u/e2e`) — not anonymous fallback
+> mislabeled. No spoiler leakage found on any capture (scanned
+> Southern Charm's show blurb, canon rationale, and season-1 body
+> plus the best-comeback-seasons theme entries for outcome/
+> elimination/reveal language — none present). Strongest finding:
+> the FORMAT stat tile on Southern Charm's season-1 page restates
+> cast headcount instead of a format detail, duplicating the
+> adjacent CAST SIZE tile — the same defect class already fixed on
+> MAFS's New York season (issue #482), never applied here since
+> Southern Charm shipped after that fix landed. Filed MED,
+> content-only, single-field fix. One LOW: the /shows B tier has
+> grown to 39 shows with no in-page filter or sort beyond global
+> search, making it hard to browse by network or genre at the
+> catalog's current scale. One raw observation dropped at
+> self-assessment: the reader flagged the canon "COMMUNITY ◆ HOLD"
+> badge as contradicting a season's 0 real votes, but
+> `community_rank_hint` is an established, intentional editorial
+> device authored across 51 canon files precisely to distinguish
+> an editorial projection from the live vote tally — 76 prior
+> passes have engaged with this feature (rank uniqueness, gloss
+> tooltips) without ever flagging the projection-vs-vote-count gap
+> as a defect, so filing it now would contradict established
+> precedent. A second raw observation (season page's "Also appears
+> in" section listing only the season's own show canon, a circular
+> cross-reference) was dropped as a duplicate — the pending
+> pass-68 finding (`CRITIQUE.md:1513`) already tracks this exact
+> pattern generically ("and other single-season, single-list
+> shows"), which Southern Charm simply reproduces.
+>
+> ───── Pass 76 metadata kept below for history ─────
+>
 > Last pass: 2026-07-06 at commit 4c9f983
 > Pass count: 76
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1492,6 +1541,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon+authed] /shows/southern-charm/season/charleston — the FORMAT stat tile's caption restates cast headcount instead of describing a format detail, duplicating the adjacent CAST SIZE tile. `content/shows/southern-charm/seasons/01-charleston.md` frontmatter: `format_summary: "Social reality"` / `format_caption: "Seven-person founding cast"` alongside `cast_size: 7` / `cast_size_caption: "Sudler-Smith, Ravenel, Rose, Conover, Eubanks, Dennis, King"` — both tiles report the same headcount fact instead of FORMAT carrying a structural note the way every sibling season's `format_caption` does (e.g. Survivor 47's `format_caption: "26-day clock, top-of-era cast"`; Big Brother's `format_caption: "the format before the format found itself"`). Same defect class already fixed on MAFS's New York season (issue #482, resolved 7ac2c42 — "the caption is a canon-narrative/count claim, not a format detail"), never applied here since Southern Charm is a brand-new show that shipped after that fix landed. Confirmed independently on both the anonymous and authenticated walks. Fix: rewrite `format_caption` in `content/shows/southern-charm/seasons/01-charleston.md` to describe a Social-reality format detail specific to this season (e.g. the docusoap ensemble structure, the dinner-party framing device) rather than restating the cast count, leaving headcount exclusively to CAST SIZE. Content-only, one field. Spoiler discipline P0 intact (format/structure commentary only). (URL: /shows/southern-charm/season/charleston, source: critique-pass-77)
+
+- [ ] [LOW] [anon] /shows — the B tier ("Canon still forming") now holds 39 shows in one flat scroll with no in-page filter or sort beyond the global Cmd+K search, making it hard to browse for a specific network or genre without already knowing a show's name to search for. Every show page in the catalog now has an era-filter affordance (phase 33/34's `era_bands` toolbar) for browsing within a show's own seasons, but the top-level `/shows` index has no equivalent for browsing within a tier now that the catalog has grown past 50 shows. Every show already carries `network` and `genre_tag` frontmatter fields (per `CLAUDE.md`'s show-identity table), so the data needed for filter chips already exists. Fix: add lightweight genre or network filter chips above the B-tier grid (or across all tiers), mirroring the existing era-filter chip pattern already shipped elsewhere in the product. Chrome/UI change, no content edit. Spoiler discipline P0 intact (browse chrome only). (URL: /shows, source: critique-pass-77)
 
 - [x] [HIGH] [anon] /shows/big-brother/season/the-pilot (and, on spot-check, every Big Brother season — systemic across the whole show) — the season-file body and the `canon.md` rationale for the same slot restate the same argument near-verbatim, the same duplication class already fixed on Bachelor S28, Love Island UK (all 11 series), Survivor 50, RHOSLC, and Married at First Sight, but never applied to Big Brother. Confirmed on three separate seasons, not just the one walked: `content/shows/big-brother/seasons/01-the-pilot.md` body — "The pilot, and a strange piece of television to revisit. Ten strangers in a Studio City soundstage, cameras everywhere, and an eviction model lifted from the European original — the public voted, not the houseguests. CBS aired it nearly every weeknight, a pace the show would never try again." — versus `canon.md` "## 1. The Pilot" rationale — "The original, and a strange piece of television to revisit. Ten strangers in a Studio City soundstage, cameras everywhere, and an eviction model lifted straight from the European original — the public voted, not the houseguests. CBS aired it nearly every weeknight across a long summer, a pace the show would never attempt again." Same pattern reproduces on `content/shows/big-brother/seasons/06-summer-of-secrets.md` body ("Fourteen houseguests enter the Studio City compound, every one of them carrying a pre-show connection to someone else inside... The alliance math gets dense fast. The confessionals stay quotable.") versus `canon.md` "## 6. Summer Of Secrets" rationale ("Fourteen houseguests walk into the Studio City compound, every one of them carrying a pre-show connection to someone else inside... The alliance math gets dense almost immediately. The confessionals stay quotable across the full thirty-episode run."). Because the pattern reproduces on two unrelated seasons at opposite ends of the canon (bottom-ranked pilot, top-ranked fan-favorite), this reads as a show-wide authoring gap rather than a one-off — Big Brother is the one show in the catalog whose full 26-season canon predates the de-duplication convention now applied to every newer show. Fix: audit and rewrite `content/shows/big-brother/canon.md`'s rationale paragraphs (all entries with a matching season file) to argue comparative canon placement — why this slot vs. its neighbors — rather than re-describing the same premise/atmosphere facts the season body already owns, following the Love Island UK precedent (issue #459, all 11 series rewritten in one content-curator pass). Content-only; likely a multi-tick drain given the show's size (26 seasons), same shape as the Love Island UK full-show audit. Spoiler discipline P0 intact (no outcome/elimination/winner facts touched — rationale rewrites stay in premise/format/comparative-placement territory). (URL: /shows/big-brother/season/the-pilot, /shows/big-brother/season/summer-of-secrets, source: critique-pass-76) — issue: #488 — RESOLVED 4af4dd0: rewrote all 26 `canon.md` rationale paragraphs (via content-curator sub-agent) to argue comparative canon placement — why each slot sits where it does relative to its neighbors — instead of re-describing premise/atmosphere facts the season body already owns, following the Love Island UK precedent. One sentence in the "Veterans vs. Newbies" entry was hand-edited afterward to drop the phrase "measured against," which tripped the cliché-repetition content-check guard (4th corpus-wide occurrence against a threshold of 3). No outcome/elimination/winner facts touched anywhere; spoiler discipline P0 intact. Verify gate green: 194 test files / 2796 unit tests, content:check ok (53 shows/700 seasons/53 canons/12 themes/3 legal docs); build (936 pages); e2e 3098 passed (18.4m). Closes #488.
 
