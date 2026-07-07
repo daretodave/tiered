@@ -4,63 +4,152 @@
 > `.github/workflows/night.yml`). Overwritten whole each tick;
 > history lives in git.
 
+# DIGEST — 2026-07-07
+
 ## Headline
 
-**A clean, high-output 24 hours.** Every `march` tick since yesterday's digest (`f5ede26`, 2026-07-05 11:16 UTC) came back green — 40 for 40 in the visible run window. 29 commits shipped: **wave 6's entire new-show queue drained in one day** (90 Day Fiancé, Vanderpump Rules, Real Housewives of Salt Lake City, Married at First Sight, American Ninja Warrior — 5 shows scaffolded), two Rule 2 season-drain batches (Queer Eye +5, Jersey Shore +5, both fully clearing gaps flagged in yesterday's digest), the Bachelor `format_summary` batch fix finished (all 11 files), one HIGH bug fix (`RankShiftPill` vote-floor gate), a Survivor 50 season-file backfill, three critique passes (73/74/75 — 5/2/5 findings), and two expand passes (43/44 — the new-show refill plus 1 fresh candidate). Catalog grew **43 → 48 shows, 680 → 695 seasons**. Deploy is green at HEAD (`2d6565c`); breadth (`e2e-full`) is green two nights running.
+A clean 26 hours (17 of 18 march ticks green, one self-healed infra
+blip) that fully drained wave 7's five new shows and closed out
+critique pass 77's medium finding — but the nightly breadth crawl
+went red on a **timeout**, not a regression: the exhaustive e2e
+walk is now large enough (6,573 tests, single worker) to graze the
+50-minute CI ceiling, and it will keep tipping over as content
+keeps growing unless the gate itself changes. Deploy is green at
+HEAD.
 
 ## While you were out
 
-| When (UTC) | Verb | Outcome |
+| Time (UTC) | Tick | Outcome |
 |---|---|---|
-| 07-05 11:30–13:38 | march (3 ticks) | critique pass 73 (5 findings — 2 high, 3 medium); Bachelor `format_summary` batch finished (S23–S27, 11/11 files done); expand pass 43 (2 season-drain rows + **wave-6 show-queue refill filed**) |
-| 07-05 14:51–17:36 | march (4 ticks) | **90 Day Fiancé** shipped; **Vanderpump Rules** shipped; **Queer Eye season drain S2–S6**; **Real Housewives of Salt Lake City** shipped |
-| 07-05 18:36–20:38 | march (3 ticks) | **Jersey Shore season drain S2–S6** (fully drained); **Married at First Sight** shipped; **American Ninja Warrior** shipped |
-| 07-05 21:31–23:15 | march (3 ticks) | RankShiftPill vote-count-floor HIGH fix; Survivor 50 near-empty season-file backfill; critique pass 74 (2 findings + 1 severity bump) |
-| 07-06 00:31–01:47 | march (2 ticks) | show-page title template shortened below the SEO snippet window; expand pass 44 (1 candidate — canon-rationale/season-body echo gate) |
-| 07-06 03:04–04:48 | march (2 ticks) | community-rank banner copy fix; milestone-named season title stutter fix; duplicate canon-peak/tail marks suppressed on single-season shows |
-| 07-06 06:38–10:19 | march (2 ticks) | raw internal version token dropped from community live strip; critique pass 75 (5 findings — 1 high, 3 medium, 1 low) |
+| 09:09–18:22 (7 ticks) | march → content drain | success — Big Brother canon rewrite, MAFS/Southern Charm FORMAT caption fixes, critique pass 76 fixes |
+| 19:18 | march | **failure** — transient `claude-code-action` infra bug ("directory mismatch... indicates a bug"), not a code regression; self-healed next tick |
+| 20:20–23:04 (4 ticks) | march → content-gaps | success — wave 7 new shows shipped: RHOP, The Circle, RHOM |
+| 23:27 | e2e-full (nightly breadth) | **failure** — 50-minute timeout at 6,409/6,573 tests (97.5% through, zero actual test failures) |
+| 00:04–09:16 (8 ticks) | march → content drain + critique | success — Too Hot to Handle, Southern Charm shipped (wave 7 complete); critique pass 77 filed (2 findings) and finding #489 addressed same-day |
+| 10:40 | march | success |
+
+Net: 28 commits since yesterday's digest (11:57 UTC). 18 march
+ticks in the last 26h, 17 green.
 
 ## The saga
 
-Catalog stands at **48 shows / 695 seasons / 48 canons / 12 themes / 3 legal docs**, up from 43/680 yesterday. The whole day was a Rule-1-then-Rule-2 story: expand pass 43 refilled the new-show queue (the exact gap flagged as a tuning problem in the last two digests), and every one of the 5 wave-6 shows got scaffolded same-day — the queue went from filed to fully drained within ~10 hours. Both season-drain gaps yesterday's digest called out by name (Queer Eye, Jersey Shore) also cleared; Jersey Shore is now fully drained end-to-end.
+**Shows scaffolded (5, wave 7 fully drained):** The Real
+Housewives of Potomac, The Circle, The Real Housewives of Miami,
+Too Hot to Handle, Southern Charm. Catalog now stands at **53
+shows**. Each wave-7 show shipped frontmatter + canon.md + a
+first-season batch per Rule 1, exactly on the standing cadence.
 
-**Season-drain queue (Rule 2), current known gaps** (frontmatter `seasons:` vs. files on disk — recomputed fresh this tick, not carried from any filed row):
-- The Apprentice: 10/15 → 5 remaining (carried over, untouched this window)
-- Selling Sunset: 6/9 → 3 remaining (carried over, untouched this window)
-- Queer Eye: 6/10 → 4 remaining (S7–S10; the show's real total corrected from 8 to 10 mid-drain, so the gap grew even as 5 seasons shipped)
-- 90 Day Fiancé: 1/12 → 11 remaining (fresh, from today's scaffold)
-- Vanderpump Rules: 1/12 → 11 remaining (fresh)
-- Real Housewives of Salt Lake City: 1/6 → 5 remaining (fresh)
-- Married at First Sight: 1/19 → 18 remaining (fresh)
-- American Ninja Warrior: 1/18 → 17 remaining (fresh)
+**Seasons drained:** wave 7's first-season batches only so far
+(5 seasons, one per new show) — none of the ~36-season remaining
+gap those five shows now carry has started draining yet:
 
-74 seasons remaining across 8 shows. None currently carry a fresh Pending row in `plan/AUDIT.md` — that's expected, not a gap: this catalog's pattern all day has been file-and-resolve within the same tick (`/iterate` files the content-gap, `/ship-content` closes it, the audit commit lands right after), so the queue depth above is the real signal, not the AUDIT.md Pending count.
+| Show | Remaining for Rule 2 drain |
+|---|---|
+| Southern Charm | 10 |
+| The Real Housewives of Potomac | 9 |
+| The Circle | 6 |
+| The Real Housewives of Miami | 6 |
+| Too Hot to Handle | 5 |
 
-**New-show queue (Rule 1 "keep the queue fed"): back to 0 Pending rows** after wave 6 fully drained today. This is the same steady state that triggered two consecutive empty expand passes before pass 43's refill — worth watching whether pass 45 refills promptly or repeats the stall pattern from two digests ago.
+**Velocity vs. bearings:** Rule 1 (show coverage) — on pace; wave
+7 drained same-day it was filed, same shape as wave 6. Rule 2
+(canon completeness, ~5 seasons/tick) — **queue just got heavier,
+not lighter**; the wave-7 season backlog above (36 seasons) is now
+the largest standing Rule 2 debt since wave 6. Rule 3 (themed
+list/tick) — no themed list shipped in this window; worth a check
+next content-gap pass.
+
+**New-show queue is empty again** — wave 7 fully shipped, Pending
+rows back to 0. This is the exact stall pattern candidate #24
+(still awaiting `/oversight` promotion) warns about. The next
+`/expand` pass needs to refill wave 8, or Rule 1's mandate stalls
+until it does.
 
 ## Queues now
 
-- **`plan/AUDIT.md`**: Pending section is otherwise clear of actionable rows. One `[LOW]` row reformatted this tick (see "Needs you" — the Supabase CLI pin, issue #416, was sitting as a non-standard `### heading` `/iterate` couldn't see; now a proper `- [ ]` bullet). 2 `[needs-user-call]` rows unchanged: Naked and Afraid S12/13/15/16 premiere-date numbering convention, and The Apprentice S5 LA-framing question.
-- **`plan/CRITIQUE.md`**: last pass **75** (2026-07-06, commit `2d6565c`, 5 findings — 1 high, 3 medium, 1 low). 37 pending rows (up from 31 two digests ago) — passes 73/74/75 fired reliably and fixed most same-tick, but findings on the two freshest single-season scaffolds (RHOSLC, Married at First Sight) outpaced the fix rate this window.
-- **`plan/PHASE_CANDIDATES.md`**: last pass **44** (2026-07-06, commit `1067802`). 12 candidates genuinely awaiting promotion (of 17 listed — 5 are already-promoted/superseded/absorbed markers kept for the audit trail). Newest, **#25 canon-rationale/season-body verbatim-argument echo gate**, is a direct answer to pass-75's HIGH finding below — it proposes a `content:check` gate for the exact defect class that finding names on two shows at once.
-- **Deploy**: ready at HEAD (`2d6565c`).
-- **Breadth (`e2e-full`)**: green, 2-run streak (2026-07-04, 2026-07-05 both success).
-- **Night workflow**: last completed run (2026-07-05) succeeded; this tick in progress.
+- **AUDIT.md Pending:** 1 open row — `[LOW]` pin Supabase CLI
+  version in `e2e-full.yml`/`march.yml`/`migrate.yml` (issue
+  #416/#480), blocked from cloud (see Needs You).
+- **AUDIT.md needs-user-call:** 2 — Naked and Afraid S12/13/15/16
+  premiere-date numbering ambiguity; The Apprentice S5 "LA Season"
+  framing accuracy check. Both LOW, both editorial calls.
+- **CRITIQUE.md:** last pass **77** (2026-07-06), 2 findings — 1
+  MED resolved same-day (#489, Southern Charm FORMAT caption), 1
+  LOW still open (`/shows` B-tier has no genre/network filter
+  chips at 39 shows in one flat scroll — data already exists in
+  frontmatter, chrome-only fix).
+- **PHASE_CANDIDATES.md:** 10 pending, awaiting promotion (#14,
+  15, 16, 18, 19, 20, 21, 22, 23, 24, 25 minus #17 superseded).
+  Last promotion was **2026-06-11** — 26 days and 10 candidates
+  ago. Backlog is aging.
+- **Triage:** 0 unlabeled open issues (clean). `triage:needs-user`:
+  3 open — #480 (this week's workflows-permission blocker, see
+  Needs You), #398/#399 (both **2026-06-11**, nearly a month
+  stale — worth an `/oversight` look to close or reconfirm).
+  `triage:loop-queued`: 1 — #416 (see Needs You).
 
 ## Needs you
 
-- **The Supabase-CLI-pin row (issue #416) was likely invisible to `/iterate` for 3+ weeks, not just deprioritized.** Found and reformatted this tick: `plan/AUDIT.md` filed it 2026-06-14 as a `### [user-issue #416]` heading instead of the section's own documented `- [ ] [SEV] ...` bullet shape. Expand passes 41 through 44 each independently noted it "unchanged" — pass 44 called it out explicitly as "not a clustering signal" — but none reformatted it, and it never shipped despite scoring 4.8 while plenty of lower-scored bullet rows shipped same-tick around it. Reformatted in place this tick (no score/content change) so the next `/iterate` pass can actually pick it up — worth confirming it ships within the next few ticks to validate the hypothesis.
-- **Three stale GitHub issues, flagged in the last two digests running, still with zero forward motion:**
-  - #398 "Cloud march tick crashed" (`triage:needs-user`, opened 2026-06-11, now 25 days)
-  - #399 "13 authed e2e specs red on main" (`triage:needs-user`, opened 2026-06-11, now 25 days)
-  - #416 itself is still open even after the reformat above — closing it is a `/ship-a-phase` or `/iterate` action, not this tick's
-  - #400 "Phase 44 — Brand-spelling discipline" and #405 "Phase 46 — Colocated-test coverage gate" — both phases shipped weeks ago; the close-on-ship step never fired, unchanged for the third digest running
-- Nothing new blocked this window; deploy and breadth are both clean.
+1. **Workflow-file edits are structurally blocked from cloud.**
+   Two independent tickets now hit the same wall: the Supabase
+   CLI version pin (issue #416/#480, a verified-ready fix sitting
+   idle since 2026-06-14) and — new this tick — the e2e-full
+   timeout tuning below. The cloud loop's `ACTIONS_PAT` lacks the
+   `workflows` OAuth scope, so any edit to `.github/workflows/*`
+   gets push-rejected. Both fixes are cheap and ready; both need
+   a local/`/oversight` session (or a token scope grant) to land.
+2. **Two `triage:needs-user` issues (#398, #399) are 26 days
+   stale.** Both are one-off cloud-tick crash reports from
+   2026-06-11; the loop has run cleanly hundreds of times since.
+   Worth a quick `/oversight` pass to close them out or confirm
+   they're still relevant.
+3. **Phase-candidate backlog (10 pending) hasn't been touched in
+   26 days.** Not urgent, but it's the largest it's been all
+   cycle — a build-plan-exhaustion check is due.
 
 ## Today's intent
 
-Saga: keep draining the 8-show, 74-season Rule 2 backlog — Apprentice (5) and Selling Sunset (3) are the oldest carryovers and cheapest next batches; the 5 freshly-scaffolded wave-6 shows (54 seasons combined) are the bulk of the remaining work. Watch whether expand pass 45 refills the new-show queue promptly now that it's back to 0, or repeats the two-pass stall from before pass 43. Non-content: promote candidate #25 (canon-rationale echo gate) via `/oversight` — it's now evidenced on 3 independent shows (Bachelor S28, Love Island UK, and pass-75's MAFS+RHOSLC pair) and the fix (a `content:check` extension) is small. Ship the now-visible Supabase-CLI-pin fix (#416) and confirm it closes the issue. Clear or re-triage the three aging stale issues (#398, #399, #400/#405 mirrors).
+**Saga:** `/expand` should refill the new-show queue (wave 8) —
+it's empty. Once refilled, `/ship-content` drains it same-day per
+the wave-6/wave-7 pattern; meanwhile the 36-season wave-7 Rule 2
+backlog (Southern Charm 10, RHOP 9, Circle 6, RHOM 6, TH2H 5) is
+the natural next few ticks' content-gap work even without a fresh
+expand pass.
+
+**Top non-content finding:** the e2e-full timeout (below) — not
+ship-ready from cloud, but the highest-leverage thing an
+`/oversight` session could unblock this week alongside the
+Supabase CLI pin, since both are one PR away and both are stuck
+on the same permission wall.
 
 ## Tuning proposals
 
-None filed as new `plan/PHASE_CANDIDATES.md` rows this tick — the one concrete mistuning found (the malformed #416 AUDIT row) was a direct plan-prose fix within this tick's own carve-out, not a gate that needs `/oversight` to retune, so it was corrected in place rather than proposed (see "Needs you" and the `plan/AUDIT.md` diff this commit). The new-show-queue stall pattern flagged in the prior two digests self-corrected today (expand pass 43 refilled it without an oversight nudge) — no action needed there, just worth re-flagging if pass 45 stalls again.
+1. **e2e-full step timeout is now undersized for the catalog's
+   growth.** The 2026-07-06 23:27 nightly run (run 28830277979)
+   was NOT a test regression — all 6,409 checks that ran passed;
+   it hit the workflow's hard `timeout-minutes: 50` cap on the
+   "Exhaustive e2e crawl" step with only 164 of 6,573 tests left
+   (97.5% complete). The crawl runs Playwright with **1 worker**
+   (`Running 6573 tests using 1 worker`, ~460ms/test average), so
+   its wall-clock time scales linearly with total page count —
+   and total page count scales directly with the content saga's
+   own mandate (53 shows, 700 seasons and climbing per Rule 1/2).
+   This is the second time this exact class of failure has hit
+   (2026-06-14 original, now 2026-07-06 recurrence with a
+   different proximate cause — that one was a Supabase API
+   flake, this one is a genuine duration ceiling), and the
+   underlying content growth that causes it is not going to
+   reverse. Filing as a `PHASE_CANDIDATES.md` candidate rather
+   than editing the workflow directly (meta-loop rail): raise
+   `timeout-minutes` on the "Exhaustive e2e crawl" step from 50
+   to ~75 (job-level `timeout-minutes: 90` has headroom — build +
+   setup steps observed to consume roughly 20 minutes before the
+   crawl starts) as the cheap near-term fix, with a follow-up
+   scope note that a **sharded/parallel-worker crawl** is the
+   real structural fix once even 75 minutes stops being enough.
+   Same `workflows`-scope cloud blocker as the Supabase CLI pin
+   applies — this can only ship via local/`/oversight`, so bundle
+   it with that fix in the same session.
+2. No other tuning signal this window — bias mechanism is
+   currently inactive (cleared 2026-06-14) and no gate looked
+   mistuned in the pulse besides the above.

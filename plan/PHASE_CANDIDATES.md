@@ -393,6 +393,52 @@ different defect shapes (style/formatting drift vs. cross-corpus phrase reuse) i
 the same file; this candidate catches cross-field argument duplication *within one
 show's canon+season pair*, a shape none of the existing gates cover.
 
+### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
+
+**Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
+change, but capped by the same `workflows`-scope cloud blocker as candidate-adjacent
+issue #416/#480)
+**Source pass:** digest 2026-07-07
+**Filed:** 2026-07-07
+**Why:** The nightly `e2e-full` run at 2026-07-06T23:27Z (run 28830277979) went red
+— but not from a test regression. All 6,409 checks that completed passed; the run
+hit `.github/workflows/e2e-full.yml`'s hard `timeout-minutes: 50` cap on the
+"Exhaustive e2e crawl" step with only 164 of 6,573 total tests left (97.5%
+complete, ~460ms/test average). The crawl runs Playwright with a single worker
+(`Running 6573 tests using 1 worker`), so its wall-clock duration scales linearly
+with total page count — and total page count scales directly with the content
+saga's own perpetual mandate (bearings Rule 1/Rule 2: 53 shows, 700 seasons and
+climbing as of this digest). This is the second distinct failure class to hit this
+exact step (2026-06-14 original was a Supabase release-API flake during CLI setup,
+now tracked as issue #416/#480 with its own pending AUDIT.md fix; 2026-07-06 is a
+genuine duration-ceiling breach with zero flakiness involved) — and unlike the
+Supabase flake, this one will recur on a predictable schedule as the catalog keeps
+growing, not an occasional one-off. Filed as a candidate rather than edited
+directly per the meta-loop rail (`skills/digest.md` §5 "never edit gates, cadences,
+ceilings, or rules directly").
+**Scope sketch:**
+- Raise `timeout-minutes` on the "Exhaustive e2e crawl (E2E_FULL=1)" step in
+  `.github/workflows/e2e-full.yml` from 50 to ~75. The job-level `timeout-minutes:
+  90` has headroom for this — the preceding "Pre-start Supabase containers" (5 min)
+  and "Production build" (20 min) steps observed to consume roughly 20-25 minutes
+  before the crawl starts, leaving ~65-70 minutes of job budget available to the
+  crawl step today.
+- Treat the timeout bump as a near-term patch, not a permanent fix: file a follow-up
+  scope note (or a fresh candidate when the signal recurs) for a sharded/
+  parallel-worker exhaustive crawl once even 75 minutes stops being enough — the
+  single-worker constraint is the actual structural bottleneck, the timeout number
+  is just the symptom.
+- Same blocker as issue #416/#480: this touches `.github/workflows/e2e-full.yml`,
+  which the cloud loop's `ACTIONS_PAT` cannot push (lacks `workflows` OAuth scope).
+  Bundle this fix with the Supabase CLI pin in the same local/`/oversight` session —
+  both are one-line workflow-file diffs blocked by the identical permission gap.
+
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase — ships via
+`/oversight` directly the same way the Supabase CLI pin was scoped to, not through
+`01_build_plan.md`).
+**Conflicts:** none. Complements issue #416/#480 (same file family, same cloud
+blocker, different root cause) — recommend landing both in the same local session.
+
 ### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit
 
 **Score:** 4.5 (impact: 6, ease: 7.5 — process/gate tuning, not user-facing)
