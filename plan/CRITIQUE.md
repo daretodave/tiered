@@ -1,5 +1,67 @@
 # CRITIQUE
 
+> Last pass: 2026-07-07 at commit ecc381d
+> Pass count: 78
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 78 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/shark-tank/season/season-1`, `/shows`,
+> `/shows/shark-tank`, `/themes/best-comeback-seasons`) and authed
+> (`/`, `/shows/shark-tank/season/season-1?view=community`,
+> `/u/e2e`, `/themes/best-comeback-seasons`) walks ran, desktop +
+> mobile, deliberately targeting Shark Tank — the newest show
+> added to the catalog, never critiqued before (same strategy as
+> pass 77 targeting Southern Charm). 5 findings filed (2 medium,
+> 3 low). Zero console errors, zero failed requests, zero mobile
+> overflow on any capture; auth handshake confirmed genuine
+> (`authState: authenticated:cloud`, `@e2e` chrome across
+> header/profile/comment-composer attribution, real member-since
+> date on `/u/e2e`). No spoiler leakage found on any capture
+> (scanned Shark Tank's blurb, canon rationale, season-1 body,
+> plus the best-comeback-seasons theme entries — none present).
+> Strongest finding: the FILMED stat tile's value and gloss line
+> are the same string twice on Shark Tank's season 1 page
+> (`filming_caption` duplicates `location` verbatim) — and this
+> reproduces on 133 season files across 22 shows catalog-wide, not
+> just Shark Tank, making it a systemic content-authoring gap on
+> the scale of the Big Brother/Love Island UK duplication classes
+> already fixed. Filed MED, content-only, likely a multi-tick
+> drain. Second finding: Shark Tank's CAST SIZE stat renders "5
+> players" — `isCompetitionGenre()` in the season-page's
+> `statsFor()` matches "Business competition" on the substring
+> "competition" and defaults to the generic competition-show noun,
+> which is wrong for a panel/judge-format show whose "cast" are
+> investors, not competing players. Filed MED, single-function
+> code fix. Three LOW findings: the best-comeback-seasons theme's
+> "ENTRIES 6 / SHOWS 5" stat pair goes unexplained (mismatch is
+> because Survivor appears twice, not a counting error); the
+> `/shows` tier-filter control renders "ALL 1" with no separator
+> between the tab label and its count; and Shark Tank's CAST SIZE
+> stat tile lists the sharks in a different name order/format
+> (surname-only, rotated) than the season body two sections down
+> (full names, canonical order). One raw observation from the
+> authenticated reader agent — a HIGH claim that the mobile
+> comment thread showed the anonymous "Sign in to comment" stub
+> despite a genuine authenticated session — was independently
+> re-verified via a direct `scripts/critique-walk.mjs` re-run and a
+> raw `curl` against `/api/comments` with the minted cookie: both
+> confirmed `signedIn: true` and the real composer ("as @e2e / Tap
+> to write") render correctly on mobile. Dropped as a false
+> positive (likely a stale/incomplete capture in that specific
+> agent run, not reproducible). A second raw observation — the
+> season page's "Where it sits in the canon" paragraph matching
+> the show page's canon-tab entry verbatim — was checked against
+> source (`whereItSitsCopy()` in
+> `src/app/shows/[show]/season/[slug]/page.tsx`) and confirmed to
+> be intentional, established architecture (the season page always
+> quotes the show's own `canon.md` rationale by design, same
+> pattern already engaged with favorably across many prior passes)
+> — not filed.
+>
+> ───── Pass 77 metadata kept below for history ─────
+>
 > Last pass: 2026-07-07 at commit 258d059
 > Pass count: 77
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1541,6 +1603,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon+authed] /shows/shark-tank/season/season-1 (and 132 other season files across 22 shows catalog-wide — systemic) — the FILMED stat tile's value and gloss line are the identical string twice instead of a value/elaboration pair. `content/shows/shark-tank/seasons/01-season-1.md` frontmatter: `location: "Culver City, California"` / `filming_caption: "Culver City, California"` — every other stat tile on the same page pairs a value with a distinct one-line editorial gloss (e.g. EPISODES: "7" / "Seven-episode freshman run"; FORMAT: "Pitch competition" / "Five-shark founding panel"), but FILMED just repeats its own value verbatim as the caption. Not unique to Shark Tank: a catalog-wide scan (`grep` across `content/shows/*/seasons/*.md` comparing `location` to `filming_caption`) found 133 season files across 22 shows with this exact pattern (e.g. Southern Charm season 1 has the identical duplicate), versus shows that do it right (Survivor 49's `filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"` is a real gloss, not a repeat of `location: "Mamanuca Islands, Fiji"`). This is the same shape of systemic content-authoring gap as the Big Brother canon.md duplication (issue #488) and Love Island UK rationale duplication (issue #459) — a de-duplication convention applied inconsistently across the catalog's growth. Fix: audit season files where `filming_caption === location` verbatim and write a real one-line gloss for each (studio/location detail, shoot-order note, or similar), following the Survivor-49 pattern. Content-only; likely a multi-tick drain given the scope (133 files), same shape as the prior systemic-duplication fixes. Spoiler discipline P0 intact (location/production commentary only). (URL: /shows/shark-tank/season/season-1, source: critique-pass-78)
+
+- [ ] [MED] [anon+authed] /shows/shark-tank/season/season-1 — the CAST SIZE stat tile renders "5 players" for a show whose cast are investors ("sharks"), not competing players. Root cause: `isCompetitionGenre()` in `src/app/shows/[show]/season/[slug]/page.tsx:152-154` matches any `genre_tag` containing the substring "competition" (plus two exact-match exceptions) and picks between "player(s)" and "cast member(s)" on that basis; Shark Tank's `genre_tag: "Business competition"` (`content/shows/shark-tank.md`) matches the substring even though the show has no competing contestants in the traditional sense — the panel investors are the counted `cast_size`. The mismatch is visible on the page itself: the CAST SIZE value says "5 players" while its own caption and the body copy both call them "sharks." Fix: either exempt "business competition" specifically from `isCompetitionGenre()` (falling through to "cast members"), or add a per-show/per-season override field for the cast noun so panel-format shows tagged with a competition-flavored genre don't inherit the wrong vocabulary. Single function or one new optional field. Spoiler discipline P0 intact (stat-tile chrome only). (URL: /shows/shark-tank/season/season-1, source: critique-pass-78)
+
+- [ ] [LOW] [anon] /themes/best-comeback-seasons — the stat row shows "ENTRIES 6" next to "SHOWS 5" with no explanation; a first-time reader has no way to know the mismatch is because Survivor appears twice (#01 Survivor S41 and #03 Survivor S40) rather than being a counting error. Fix: either relabel the second stat "UNIQUE SHOWS" or add a one-word note (e.g. "Survivor appears twice") so the discrepancy reads as intentional rather than a bug. Content/chrome-only, one label. Spoiler discipline P0 intact. (URL: /themes/best-comeback-seasons, source: critique-pass-78)
+
+- [ ] [LOW] [anon] /shows/shark-tank — the tier-filter control renders as the run-together string "ALL 1" directly above "VIEW · CANON ORDER" with no separator, reading as one odd two-word label rather than a tab ("ALL") plus a count badge ("1"). Fix: add visible separation (parens, pipe, or distinct styling) between the ALL tab label and its count so it doesn't concatenate in the reflowed/accessibility-tree text. Chrome-only. Spoiler discipline P0 intact. (URL: /shows/shark-tank, source: critique-pass-78)
+
+- [ ] [LOW] [anon+authed] /shows/shark-tank/season/season-1 — the CAST SIZE stat tile lists the sharks as "Corcoran, O'Leary, John, Herjavec, Harrington" (surname-only, one order) while the body copy two sections down lists the identical five as "Kevin Harrington, Barbara Corcoran, Kevin O'Leary, Daymond John, and Robert Herjavec" (full names, different order) — a reader scanning both in one sitting notices the mismatch. Fix: use one canonical name order (e.g. alphabetical or panel seating order) and a consistent name format (full or surname-only) for the shark list everywhere it appears in `content/shows/shark-tank/seasons/01-season-1.md`. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/shark-tank/season/season-1, source: critique-pass-78)
 
 - [x] [MED] [anon+authed] /shows/southern-charm/season/charleston — the FORMAT stat tile's caption restates cast headcount instead of describing a format detail, duplicating the adjacent CAST SIZE tile. `content/shows/southern-charm/seasons/01-charleston.md` frontmatter: `format_summary: "Social reality"` / `format_caption: "Seven-person founding cast"` alongside `cast_size: 7` / `cast_size_caption: "Sudler-Smith, Ravenel, Rose, Conover, Eubanks, Dennis, King"` — both tiles report the same headcount fact instead of FORMAT carrying a structural note the way every sibling season's `format_caption` does (e.g. Survivor 47's `format_caption: "26-day clock, top-of-era cast"`; Big Brother's `format_caption: "the format before the format found itself"`). Same defect class already fixed on MAFS's New York season (issue #482, resolved 7ac2c42 — "the caption is a canon-narrative/count claim, not a format detail"), never applied here since Southern Charm is a brand-new show that shipped after that fix landed. Confirmed independently on both the anonymous and authenticated walks. Fix: rewrite `format_caption` in `content/shows/southern-charm/seasons/01-charleston.md` to describe a Social-reality format detail specific to this season (e.g. the docusoap ensemble structure, the dinner-party framing device) rather than restating the cast count, leaving headcount exclusively to CAST SIZE. Content-only, one field. Spoiler discipline P0 intact (format/structure commentary only). (URL: /shows/southern-charm/season/charleston, source: critique-pass-77) — issue: #489 — RESOLVED 67493b7: rewrote `format_caption` to "Old-money manners, dinner parties as the pressure test" (55 chars, within the 80-char schema max). Describes the season's actual docusoap structural mechanic instead of restating the cast headcount; `cast_size`/`cast_size_caption` untouched. Verify gate green: 194 test files / 2796 unit tests, content:check ok (53 shows/700 seasons/53 canons); build (936 pages); e2e 3098 passed (17.5m). Closes #489.
 
