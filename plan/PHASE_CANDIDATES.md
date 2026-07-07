@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-06 at commit d6f2372
-> Pass count: 45
+> Last pass: 2026-07-07 at commit 51e09a9
+> Pass count: 46
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,61 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 46 (2026-07-07, commit 51e09a9) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45 made), plus reinforced existing candidate #25.
+     Window since pass 45 (d6f2372, 2026-07-06): ~14 hours / 20 commits. Commit
+     threshold met (exactly 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 7 (5 shows, filed pass
+       45) fully drained same-day, so the queue is empty again, the same recurring
+       stall the pass 43/45 log entries and still-pending candidate #24 both name.
+       Took the direct action Rule 1 mandates: filed a "NEW SHOW QUEUE — WAVE 8"
+       batch of 5 Pending category: content-gaps rows straight into plan/AUDIT.md
+       (RuPaul's Drag Race UK, The Real Housewives of Dallas, Shark Tank, The
+       Ultimatum, Perfect Match — none previously in content/shows/), all scoring
+       ≥3.0 so the next march tick's Step 3b.5 has real work to dispatch to
+       /ship-content. One extends the dragrace flavor family (Drag Race UK), one
+       extends the Housewives cluster (Dallas, 8th core edition) per bearings'
+       "Cross-flavor list capture" guidance, three are fresh unscripted formats
+       (Shark Tank, The Ultimatum, Perfect Match) not yet represented in any
+       existing cluster. Candidate #24 remains pending — the process-hardening fix
+       is still worth oversight's review, but the immediate content gap is closed.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout, filed as digest signal 2026-07-07 and mirrored as candidate #26;
+       Supabase CLI version pin) both remain explicitly BLOCKED FROM CLOUD — need
+       a `workflows`-scoped token only available to a local `/oversight` session.
+       Unchanged, no new signal.
+     - CRITIQUE.md: 30 live Pending findings (29 LOW, 1 MED) plus 3 findings closed
+       this window (#488/#489/#490). #488 (Big Brother canon-rationale/season-body
+       duplication, systemic across all 26 seasons) is the single most important
+       signal this pass — it is the exact defect class candidate #25 already
+       scopes, and it's the 4th-through-6th confirmed instance depending on how
+       RHOSLC/MAFS (both cited inline by the #488 finding as prior fixes of the
+       same class) are counted. Reinforced candidate #25 below: signal count now 6
+       shows, impact bumped 7→8 because this instance proved the cost scales with
+       show size (a 26-season rewrite, not a one-scene edit) rather than staying a
+       flat per-instance cost — a materially stronger case for promotion than pass
+       44's original 3-instance filing had. "drain"-word jargon cluster still at 2
+       instances (ANTM, MasterChef Australia), unchanged, still below the
+       3-instance clustering bar. Era-label-opacity cluster (candidate #14)
+       unchanged. No other new clusters found scanning the remaining 29 rows.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #480 (workflows-
+       permission blocker, needs-user) and #416 (Supabase CLI pin) both unchanged,
+       no clustering signal beyond what candidate #26 and the AUDIT row already
+       capture.
+     - spec.md + design/: no changes since pass 45 (`git log d6f2372..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 45 — dominated by wave-7 content-drain
+       pairs (RHOP, The Circle, RHOM, Too Hot to Handle, Southern Charm — 5 new
+       shows, 10 commits), 1 critique pass (77, 2 findings), 3 critique-finding
+       closures (#488/#489/#490), 1 auth-chrome bug fix (home hero sign-in CTA),
+       1 digest. Pure drain/critique-response velocity, no fix-cluster signal
+       beyond the #488 reinforcement captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (see above): score 6.9 → 7.7, signal count 3 → 6 shows. -->
 
 <!-- Pass 45 (2026-07-06, commit d6f2372) — 0 new phase-shape candidates filed;
      dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same
@@ -336,12 +391,13 @@
 
 ### 25. Canon-rationale/season-body verbatim-argument echo gate
 
-**Score:** 6.9 (impact: 7, ease: 8 → 5.6 base + 1.3 signal multiplicity)
-**Source pass:** 44
-**Filed:** 2026-07-06
+**Score:** 7.7 (impact: 8, ease: 8 → 6.4 base + 1.3 signal multiplicity, impact bumped
+7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit)
+**Source pass:** 44 (reinforced pass 46)
+**Filed:** 2026-07-06 (reinforced 2026-07-07)
 **Source signals:**
-- Issue #459 (CLOSED) — Love Island UK S1/S3 canon rationale duplicated the season
-  body's own argument, fixed as a one-off content edit.
+- Issue #459 (CLOSED) — Love Island UK, all 11 series, canon rationale duplicated the
+  season body's own argument, fixed as a one-off content-curator pass.
 - Issue #464 (CLOSED) — Bachelor Joey Graziadei season page: triple-duplicated copy
   across lede/sections/tiles, fixed as a one-off content edit.
 - Critique pass-73 [MED] `/shows/survivor/season/survivor-50` — canon.md's "## 50.
@@ -349,13 +405,27 @@
   quarter-century of casting work / settled grammar / provisional" argument
   near-verbatim. The finding explicitly names this "the same duplication class as
   the resolved Bachelor S28 finding (issue #464), now confirmed on a third show."
-- Signal multiplicity: 3 independent shows across 3 separate fix events (2 already
-  closed as one-off GitHub issues, 1 currently pending in CRITIQUE.md), each time
-  caught reactively by a human/critique pass weeks after the content shipped, never
-  once caught before ship. Same defect class, same root cause (a canon rationale
-  authored without checking what the season body already says), recurring at a
-  steady cadence as the show-coverage mandate (bearings Rule 1) keeps producing new
-  canon entries.
+- RHOSLC and Married at First Sight — both cited by the pass-76 Big Brother finding
+  below as prior instances of the identical class, each already fixed as a one-off
+  content edit (MAFS: commit 7ac2c42).
+- Issue #488 (CLOSED, pass 46) — Big Brother, **systemic across the full 26-season
+  canon**: critique pass-76 confirmed the pattern on two unrelated seasons at
+  opposite ends of the ranking (bottom-ranked pilot, top-ranked fan-favorite),
+  concluding it wasn't a one-off but a show-wide authoring gap — Big Brother's canon
+  predates the de-duplication convention every newer show now follows. Fix required
+  a content-curator sub-agent rewriting all 26 rationale paragraphs in one pass
+  (commit 4af4dd0), an order of magnitude more expensive than every prior instance's
+  single-scene edit.
+- Signal multiplicity: **6 independent shows** across 6 separate fix events (3 closed
+  as one-off GitHub issues, 1 closed as a systemic 26-season rewrite, 2 more content
+  edits cited inline by the Big Brother finding), each time caught reactively by a
+  critique pass or a filed issue weeks after the content shipped, never once caught
+  before ship. Same defect class, same root cause (a canon rationale authored without
+  checking what the season body already says), recurring at a steady cadence as the
+  show-coverage mandate (bearings Rule 1) keeps producing new canon entries — and the
+  cost-per-instance is now proven to scale with show size (a 26-season show costs 26x
+  a 1-season fix), which is a stronger promotion case than pass 44's 3-instance filing
+  had.
 
 **Why:** The codebase already has the exact technique this defect class needs —
 `collectThemedEntryVerbatimPhraseEchoIssues()` in `scripts/content-check.ts:1262`
