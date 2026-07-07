@@ -13,7 +13,7 @@ pull: "The origin season — rough in the way that first seasons are, and essent
 format_summary: "Charter yacht · Adriatic"
 format_caption: "Superyacht charter, Montenegrin waters"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Kotor Bay, Montenegro"
+filming_caption: "Kotor Bay · where the spinoff found its footing"
 premiere_caption: "Bravo · May 2016"
 ---
 

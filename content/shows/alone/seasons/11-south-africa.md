@@ -14,7 +14,7 @@ format_caption: "First African location; arid Karoo semi-desert environment"
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2024"
-filming_caption: "Northern Cape, South Africa"
+filming_caption: "Northern Cape · franchise's first African shoot"
 host: "Colby Donaldson"
 host_caption: "{seasonOrdinalWord} season at the helm"
 format_changes:

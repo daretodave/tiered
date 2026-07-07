@@ -13,7 +13,7 @@ pull: "Further from anything, which turned out to be exactly the right pressure 
 format_summary: "Superyacht · Western Australia"
 format_caption: "Charter superyacht, Ningaloo Reef waters"
 host_caption: "{seasonOrdinalWord} season with Captain Jason Chambers at the helm"
-filming_caption: "Ningaloo Reef, Western Australia, Australia"
+filming_caption: "Ningaloo Reef · the franchise's most remote charter yet"
 premiere_caption: "Bravo/Peacock · July 2023"
 ---
 

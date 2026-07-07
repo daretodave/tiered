@@ -13,7 +13,7 @@ pull: "The season that proved the format could work on fresh water — and that 
 format_summary: "Charter yacht · Freshwater lake"
 format_caption: "Superyacht charter, Lake Como, northern Italy"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Lake Como, Italy"
+filming_caption: "Lake Como · the franchise's first freshwater season"
 premiere_caption: "Bravo · June 2020"
 ---
 

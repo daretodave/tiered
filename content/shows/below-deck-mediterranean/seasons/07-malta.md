@@ -13,7 +13,7 @@ pull: "The best Sandy-led season since Dubrovnik — the cast, the island settin
 format_summary: "Charter yacht · Central Mediterranean"
 format_caption: "Superyacht charter, Maltese island waters"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Malta, Gozo, and Comino"
+filming_caption: "Malta · the franchise's longest season at twenty episodes"
 premiere_caption: "Bravo · July 2022"
 ---
 

@@ -13,7 +13,7 @@ pull: "The season that planted the franchise's flag in the Southern Hemisphere a
 format_summary: "Superyacht · Whitsundays"
 format_caption: "Charter superyacht, Queensland reef waters"
 host_caption: "{seasonOrdinalWord} season with Captain Jason Chambers at the helm"
-filming_caption: "Whitsundays, Queensland, Australia"
+filming_caption: "Whitsundays · franchise's first Australian charter season"
 premiere_caption: "Peacock · March 2022"
 ---
 

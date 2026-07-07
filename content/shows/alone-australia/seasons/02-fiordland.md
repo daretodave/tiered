@@ -15,7 +15,7 @@ format_caption: "10 solo survivalists, first international location"
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2024"
-filming_caption: "Fiordland, New Zealand"
+filming_caption: "Fiordland · first shoot outside Australia"
 episodes_caption: "10 competition episodes"
 watch_list:
   - episode_label: "Ep 1 · location reveal"

@@ -13,7 +13,7 @@ pull: "A solid Croatia return that works the format without matching the Dubrovn
 format_summary: "Charter yacht · Adriatic"
 format_caption: "Superyacht charter, Dalmatian coast, Croatia"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Sibenik, Dalmatian Coast, Croatia"
+filming_caption: "Sibenik · Croatia return aboard the Lady Michelle"
 premiere_caption: "Bravo · June 2021"
 ---
 

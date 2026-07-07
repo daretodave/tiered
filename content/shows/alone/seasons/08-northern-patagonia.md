@@ -14,7 +14,7 @@ format_caption: "Northern Patagonia; distinct terrain from the season-three Arge
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2021"
-filming_caption: "Northern Patagonia, Argentina"
+filming_caption: "Northern Patagonia · a cooler, denser face of the biome"
 host: "Colby Donaldson"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---

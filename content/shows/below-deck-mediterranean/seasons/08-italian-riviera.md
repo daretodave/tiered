@@ -13,7 +13,7 @@ pull: "The Italian Riviera is beautiful; the season took longer to find its cast
 format_summary: "Charter yacht · Ligurian Sea"
 format_caption: "Superyacht charter, Italian Riviera and Genoa"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Italian Riviera and Genoa, Italy"
+filming_caption: "Italian Riviera · the franchise's westward move to Genoa"
 premiere_caption: "Bravo · September 2023"
 ---
 

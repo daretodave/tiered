@@ -14,7 +14,7 @@ format_caption: "First hosted season; Colby Donaldson joins as series host"
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2020"
-filming_caption: "Great Slave Lake, Northwest Territories, Canada"
+filming_caption: "Great Slave Lake · the show's most demanding environment yet"
 host: "Colby Donaldson"
 host_caption: "{seasonOrdinalWord} season at the helm"
 format_changes:

@@ -14,7 +14,7 @@ format_caption: "First run outside North America; southern hemisphere winter con
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · November 2016"
-filming_caption: "Patagonia, Argentina"
+filming_caption: "Patagonia · first shoot outside North America"
 ---
 
 The first international season took the format somewhere it had never been, and the show was better for the risk. Argentine Patagonia in the southern hemisphere winter is a genuinely hostile environment — colder and more demanding than Vancouver Island, with different terrain and gear priorities. Ten survivalists went in without the advantage of having watched a Patagonian predecessor. The biome was new to everyone. The format proved it could travel, and that the wilderness itself was the engine.

@@ -15,7 +15,7 @@ format_caption: "10 solo survivalists, each self-documenting with provided camer
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2023"
-filming_caption: "South West Tasmania, Australia"
+filming_caption: "South West Tasmania · founding shoot for the Australian format"
 episodes_caption: "12 competition episodes"
 watch_list:
   - episode_label: "Ep 1 · first camp"

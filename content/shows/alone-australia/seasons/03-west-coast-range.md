@@ -15,7 +15,7 @@ format_caption: "10 solo survivalists, return to Australian wilderness"
 cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2025"
-filming_caption: "West Coast Range, Tasmania, Australia"
+filming_caption: "West Coast Range · Tasmania return with a deeper cast pool"
 episodes_caption: "13 competition episodes"
 watch_list:
   - episode_label: "Ep 1 · new terrain"
