@@ -149,8 +149,15 @@ function bodyOf(season: Season): string | undefined {
 // gets the genre-neutral "cast member(s)" noun instead — a Housewife
 // or a matched couple isn't a "player" by any reading a viewer would
 // recognize (critique pass-75).
+//
+// "Business competition" (Shark Tank) is an exact-match exemption
+// from the substring rule below: the "cast" counted for that genre
+// is the panel of investors, who aren't competing contestants and
+// are never called "players" on the page itself — they're "sharks"
+// (critique pass-78).
 export function isCompetitionGenre(genreTag: string): boolean {
   const t = genreTag.toLowerCase()
+  if (t === 'business competition') return false
   return t.includes('competition') || t === 'survival reality' || t === 'social deduction'
 }
 

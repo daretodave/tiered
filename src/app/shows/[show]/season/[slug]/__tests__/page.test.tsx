@@ -634,6 +634,13 @@ describe('isCompetitionGenre — genre-neutral cast noun gate (critique pass-75)
     expect(isCompetitionGenre('Yachting docuseries')).toBe(false)
     expect(isCompetitionGenre('Lifestyle makeover')).toBe(false)
   })
+
+  it('exempts "Business competition" (Shark Tank) despite the substring match', () => {
+    // The sharks are a panel of investors, not competing contestants —
+    // the page itself calls them "sharks," never "players" (critique pass-78).
+    expect(isCompetitionGenre('Business competition')).toBe(false)
+    expect(isCompetitionGenre('business competition')).toBe(false)
+  })
 })
 
 describe('statsFor — Cast size noun (critique pass-75)', () => {
@@ -668,5 +675,13 @@ describe('statsFor — Cast size noun (critique pass-75)', () => {
     const stats = statsFor(makeSeason({ cast_size: 6 }), 'Social reality')
     const castStat = stats.find((s) => s.key === 'Cast size')
     expect(castStat?.value ?? '').not.toMatch(/\bplayers?\b/)
+  })
+
+  it('uses "cast members" for Shark Tank despite "Business competition" containing the substring "competition"', () => {
+    // Regression pin for the exact Shark Tank repro from critique
+    // pass-78 — the sharks are investors, never "players" on the page.
+    const stats = statsFor(makeSeason({ cast_size: 5 }), 'Business competition')
+    const castStat = stats.find((s) => s.key === 'Cast size')
+    expect(castStat?.value).toBe('5 cast members')
   })
 })
