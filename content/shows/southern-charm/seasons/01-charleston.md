@@ -12,7 +12,7 @@ pull: "Manners as armor — a Charleston social world where every dinner party c
 premiere_caption: "Bravo · March 2014"
 filming_caption: "Charleston, South Carolina"
 format_summary: "Social reality"
-format_caption: "Seven-person founding cast"
+format_caption: "Old-money manners, dinner parties as the pressure test"
 cast_size: 7
 cast_size_caption: "Sudler-Smith, Ravenel, Rose, Conover, Eubanks, Dennis, King"
 take_h2: "The founding cast, before the reputation existed."
