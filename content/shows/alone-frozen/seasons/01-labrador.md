@@ -18,7 +18,7 @@ format_changes:
 cast_size: 6
 cast_size_caption: "6 returning Alone veterans"
 premiere_caption: "History Channel · August 2022"
-filming_caption: "Labrador, Canada"
+filming_caption: "Labrador · colder than any mainline Alone location"
 ---
 
 Six veterans of previous Alone seasons dropped individually into Labrador's winter landscape — no host, no crew, no contact. The twist here isn't just the cold: every survivor who reaches the 50-day mark shares the $500,000 prize pool equally, replacing the franchise's solo-winner model with a collective goal. The Labrador winter sets the stakes immediately. Eight episodes across six weeks, and the format answers a question the original never asked.

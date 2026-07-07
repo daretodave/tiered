@@ -14,7 +14,7 @@ format_summary: "Expedition vessel · Svalbard"
 format_caption: "Adventure charter, Norwegian Arctic waters"
 cast_size: 7
 host_caption: "{seasonOrdinalWord} season with Captain Kerry Titheradge at the helm"
-filming_caption: "Svalbard Archipelago, Norway"
+filming_caption: "Svalbard · Below Deck's first Arctic shoot"
 premiere_caption: "Bravo/Peacock · November 2022"
 watch_list:
   - episode_label: "Ep 1 · First charter"

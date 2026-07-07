@@ -10,7 +10,7 @@ eyebrow: "Premiered March 2014 · Bravo"
 lede: "Seven Charleston natives and transplants navigate old-money manners, family businesses, and a social hierarchy Bravo hadn't captured before, introducing a genteel Southern ensemble whose polish makes the friction underneath it land even harder."
 pull: "Manners as armor — a Charleston social world where every dinner party carries real stakes."
 premiere_caption: "Bravo · March 2014"
-filming_caption: "Charleston, South Carolina"
+filming_caption: "Charleston · Bravo's first shoot in this social world"
 format_summary: "Social reality"
 format_caption: "Old-money manners, dinner parties as the pressure test"
 cast_size: 7

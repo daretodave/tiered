@@ -11,7 +11,7 @@ eyebrow: "Premiered November 2020 · Bravo"
 lede: "Six women in Salt Lake City's social circle, most of them ex-Mormon or LDS-adjacent, one still an active member of the church. RHOSLC arrives with a founding cast larger than most Housewives debuts and a social backdrop no sibling franchise shares."
 pull: "A social world organized by faith, and distance from faith — the structural difference that sets this Housewives chapter apart from the start."
 premiere_caption: "Bravo · November 2020"
-filming_caption: "Salt Lake City, Utah"
+filming_caption: "Salt Lake City · first shoot in an LDS-adjacent world"
 format_summary: "Social reality"
 format_caption: "Six-woman founding cast"
 cast_size: 6

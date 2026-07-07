@@ -11,7 +11,7 @@ eyebrow: "Premiered April 2016 · Bravo"
 lede: "Five women enter Dallas's tight social scene — church committees, charity galas, old-fashioned Southern manners — and the personalities big enough to test them. RHOD arrives with a compact founding cast and a social register the Housewives franchise hadn't filmed before."
 pull: "Church, charity, and old-fashioned Southern manners — the social architecture that makes this Housewives chapter feel like nowhere else in the franchise."
 premiere_caption: "Bravo · April 2016"
-filming_caption: "Dallas, Texas"
+filming_caption: "Dallas · first Housewives shoot set in Texas"
 format_summary: "Social reality"
 format_caption: "Five-woman founding cast"
 cast_size: 5

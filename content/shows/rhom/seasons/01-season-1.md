@@ -10,7 +10,7 @@ eyebrow: "Premiered February 2011 · Bravo"
 lede: "Six women in Miami's social scene — old family names, new money, and a lot of sun — introduce Bravo's newest Housewives chapter. The founding cast leans into glamour and old friendships tested by ambition, in a setting the franchise hadn't filmed before."
 pull: "A Miami social world built on glamour and old friendships under new pressure — the tone this Housewives chapter has kept circling back to."
 premiere_caption: "Bravo · February 2011"
-filming_caption: "Miami, Florida"
+filming_caption: "Miami · first Housewives shoot in South Florida"
 format_summary: "Social reality"
 format_caption: "Six-woman founding cast"
 cast_size: 6
