@@ -23,13 +23,14 @@ slot_argument: Contestants who already know how to perform for cameras get paire
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season one earns the top slot by default — it's the only season
-ranked so far — but the premise alone makes a strong case.
-Pulling contestants from Love Is Blind, Too Hot to Handle, and
-other Netflix dating shows into one house and rematching them
-from scratch could have played as a cheap reunion special.
-Instead the debut treats the crossover seriously: everyone here
-already knows how television dating works, and the season leans
-into that self-awareness rather than hiding it. Nick Lachey's
-hosting keeps the format's mechanics legible even as the cast
-list grows. It's a genuinely strange idea that shouldn't work,
-and mostly does.
+ranked so far — but the premise alone makes a strong case. A
+typical debut season introduces its cast cold; this one skips
+that grace period, pulling contestants from Love Is Blind, Too
+Hot to Handle, and other Netflix dating shows into one house and
+rematching them from scratch while viewers already think they
+know the pattern. That's a harder bet than a normal freshman
+season: the show has to manufacture new chemistry when viewers
+think they already know everyone's type. Nick Lachey's hosting
+keeps the format's mechanics legible even as the cast list
+grows. It's a genuinely strange idea that shouldn't work, and
+mostly does.
