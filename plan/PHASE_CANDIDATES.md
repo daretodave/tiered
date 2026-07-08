@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-08 at commit 566fc6f
-> Pass count: 47
+> Last pass: 2026-07-08 at commit a9bb688
+> Pass count: 48
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,67 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 48 (2026-07-08, commit a9bb688) — 1 new phase-shape candidate filed (#28),
+     plus reinforced existing candidate #25 and updated existing candidate #27.
+     Window since pass 47 (566fc6f, 2026-07-08): ~4 hours / 20 commits. Commit
+     threshold met (exactly 20 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — same recurring empty-queue
+       pattern candidate #24 already names. Left for the next march tick's Step
+       3b.5 to refill per Rule 1, consistent with pass 47's own note that the
+       direct-action move is reserved for dispatch time, not expand time.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
+       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
+     - CRITIQUE.md: 38 live Pending findings (mostly LOW, 1 MED — The Voice
+       tenure/status contradiction, pass-80, unresolved as of this filing). Pass 80
+       ran since pass 47 (4 findings: 0 high, 2 medium, 2 low) and its own drain
+       closed 2 more instances of candidate #25's exact defect class this window
+       (Perfect Match #501, The Voice #502 — both "canon.md rationale restates the
+       season body's own closing argument near-verbatim," fixed as one-off content
+       edits rather than through a gate). That's the third and fourth reinforcing
+       instance since pass 47 alone (signal count 7 → 9 shows) — reinforced below.
+       Separately, the FILMED-caption drain (issue #498, first batch shipped pass
+       47-adjacent, this window shipped its 3rd through 6th and FINAL batches —
+       139 total files across 22 shows, drain now complete, 0 remaining) is the
+       same root-cause shape as candidate #25 (content authored without checking
+       a sibling field, producing literal duplication) but on a different field
+       pair (`location`/`filming_caption` vs canon-rationale/season-body) and
+       shipped with **no accompanying content-check gate**, unlike the sibling
+       `meth_who_p` plural-voice defect (#329/#357) which got one after its drain.
+       Filed as new candidate #28 — confirmed via direct grep across the catalog
+       that the other 5 stat-tile value/caption pairs (`format_summary`/
+       `format_caption`, `cast_size`/`cast_size_caption`, `premiere_date`/
+       `premiere_caption`, `ep_count`/`episodes_caption`, `host`/`host_caption`)
+       currently carry zero literal duplicates, so a gate can ship at strict
+       floor-0 immediately across all six pairs rather than needing a lax/warn
+       period. clipToSeoBudget cluster (candidate #27): one of its two open
+       findings (pass-79 stop-word, issue #503) was fixed directly this window
+       via `trimTrailingStopWords()` (commit dd43d38) — a targeted one-line-deny-
+       list fix, not the candidate's full "rank marks by boundary strength"
+       rewrite. The other open finding (pass-68 em-dash-vs-comma preference,
+       still Pending in CRITIQUE.md) is unresolved. Updated below — scope narrowed
+       to the remaining em-dash-preference fix only, score adjusted down since
+       half its evidence resolved via a direct `/iterate` patch rather than
+       needing phase promotion, matching the candidate's own original hedge
+       ("may ship as a same-tick fix rather than needing a numbered phase").
+       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
+       Australia), unchanged, still below the 3-instance clustering bar.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
+       unchanged, no new clustering signal.
+     - spec.md + design/: no changes since pass 47 (`git log 566fc6f..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 8 commits since pass 47 — 2 FILMED-caption drain batches
+       (closing the 139-file drain), 1 B-tier lede voice fix, 1 villa/house
+       self-contradiction fix, 1 canon-duplication fix (Perfect Match), 1
+       canon-duplication fix (The Voice), 1 SEO stop-word fix, 1 critique pass
+       (80), 1 digest. Pure content-drain + critique-response velocity, matching
+       the standing perpetual-mandate cadence.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (signal count 7 → 9 shows). #27 — updated (narrowed scope, score
+     down). #28 — new this pass. -->
 
 <!-- Pass 47 (2026-07-08, commit 566fc6f) — 1 new phase-shape candidate filed (#27),
      plus reinforced existing candidate #25.
@@ -443,8 +504,25 @@
 
 **Score:** 7.7 (impact: 8, ease: 8 → 6.4 base + 1.3 signal multiplicity, impact bumped
 7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit)
-**Source pass:** 44 (reinforced pass 46, reinforced again pass 47)
-**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08)
+**Source pass:** 44 (reinforced pass 46, 47, reinforced again pass 48)
+**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08)
+**Pass-48 reinforcement:** two more independent instances closed this window, both
+as one-off content edits rather than through a gate — Perfect Match (issue #501,
+canon.md rationale echoed the season body's "cheap reunion special" closing clause
+verbatim, commit 16ef80f) and The Voice's finale season (issue #502, canon.md
+rationale echoed the season body's finale-framing paragraph near-verbatim aside from
+one inserted clause, commit 9903b49). Signal count now **9 independent shows**
+(Love Island UK, Bachelor S28, Survivor 50, RHOSLC, MAFS New York, Big Brother
+26-season, Perfect Match, The Voice, plus the originally-cited MAFS instance) across
+9 separate fix events, still zero of them caught pre-ship by a gate. Also notable:
+this window's FILMED-caption drain (candidate #28, filed this pass) confirms the
+identical root-cause pattern — "content authored without checking a sibling field"
+— recurring on a *different* field pair (`location`/`filming_caption`) at far
+higher volume (139 files). The two candidates share a philosophy (de-duplication
+discipline at content-authoring time) even though their detection mechanics differ
+(fuzzy n-gram echo across two files vs. exact-string equality within one file);
+`/oversight` may want to consider promoting both in the same phase for that reason,
+though each ships independently if preferred.
 **Source signals:**
 - Critique pass-79 [MED] `/shows/perfect-match` (and its season-1 page) — the season
   body and the canon.md rationale both close on the identical clause "could have
@@ -520,6 +598,91 @@ different defect shapes (style/formatting drift vs. cross-corpus phrase reuse) i
 the same file; this candidate catches cross-field argument duplication *within one
 show's canon+season pair*, a shape none of the existing gates cover.
 
+### 28. Stat-tile value/caption literal-duplicate invariant
+
+**Score:** 8.0 (impact: 8, ease: 9 → 7.2 base + 0.8 signal multiplicity — a single
+critique finding that was itself already systemic across 139 files/22 shows, same
+root-cause family as candidate #25)
+**Source pass:** 48
+**Filed:** 2026-07-08
+**Source signals:**
+- Critique pass-78 [MED] `/shows/shark-tank/season/season-1` (and 132 other files
+  catalog-wide) — the FILMED stat tile's value (`location`) and caption
+  (`filming_caption`) rendered as the identical string twice instead of a
+  value/gloss pair, e.g. `location: "Culver City, California"` /
+  `filming_caption: "Culver City, California"`. A catalog-wide grep at filing time
+  found 133 season files across 22 shows with this exact defect; a fresh grep at
+  fix-time (this window) found 139 (6 more from catalog growth in the interim).
+  Filed as issue #498. **Just fully drained this window** — 6 batches across 6
+  ticks (the first batches shipped before pass 47, this window shipped batches
+  3 through 6, closing the final 89 files across every remaining show). A fresh
+  catalog-wide grep at drain-completion confirms zero remaining
+  `location === filming_caption` duplicates (commit b616754).
+- The finding explicitly names its own root cause as identical to two defects
+  candidate #25 already targets: "the same shape of systemic content-authoring gap
+  as the Big Brother canon.md duplication (issue #488) and Love Island UK
+  rationale duplication (issue #459)" — content authored without checking a
+  sibling field for restated argument/fact, producing literal or near-verbatim
+  duplication. Candidate #25 covers the canon-rationale/season-body pair (fuzzy
+  n-gram echo, cross-file); this defect is the exact-string-equality case
+  (`location`/`filming_caption`, same file) — narrower to detect, but the same
+  underlying discipline gap.
+- The drain shipped with **no accompanying content-check invariant**, unlike the
+  sibling `meth_who_p` / `meth_how_*` / `meth_when_*` plural-editor-voice defect
+  (issues #329/#357), which got a `collectCanonMethWhoPluralEditorIssues` /
+  `collectCanonMethSiblingsPluralEditorIssues` gate wired to `pnpm content:check`
+  immediately after its own drain, at strict floor-0. This drain has no equivalent
+  — the very next new show a content-curator authors (guaranteed under bearings
+  Rule 1's perpetual show-coverage mandate) can silently reintroduce the identical
+  139-file-scale defect, unnoticed until a future critique pass happens to look.
+- Verified directly (this expand pass) that the risk isn't hypothetical for the
+  other five schema-sibling value/caption pairs sharing the exact same shape
+  (`format_summary`/`format_caption`, `cast_size`/`cast_size_caption`,
+  `premiere_date`/`premiere_caption`, `ep_count`/`episodes_caption`,
+  `host`/`host_caption`, all defined in `src/content/schemas.ts:129-171`): a
+  catalog-wide scan across all `content/shows/*/seasons/*.md` files found **zero**
+  current literal duplicates on any of the other five pairs, meaning a gate could
+  ship at strict floor-0 across all six pairs immediately, with no lax/warn period
+  needed and no false positives to tune out first.
+**Why:** This is exactly the pattern `/expand` exists to catch: a defect class just
+proved expensive to fix reactively (6 ticks, 139 files, one field pair) with a
+root cause the codebase already has *two* precedents for gating
+(`collectCanonMethWhoPluralEditorIssues` for the analogous voice-drift class;
+candidate #25 for the analogous cross-file echo class) — yet this specific
+drain shipped without the same treatment. Adding the gate now, while the pair is
+freshly at zero across the whole catalog, is far cheaper than waiting for a
+second 139-file drain to accumulate before someone notices the gap again.
+Generalizing to all six value/caption pairs (rather than just `filming_caption`)
+costs almost nothing extra — the check is a single reusable helper parameterized
+by field-pair name — and pre-empts the other five pairs from ever accumulating
+the same debt as new shows are scaffolded going forward.
+**Scope sketch:**
+- New `collectStatTileCaptionLiteralDuplicateIssues()` in `scripts/content-check.ts`
+  (sibling to the existing `collectCanonMethWhoPluralEditorIssues` /
+  `collectThemedEntryVerbatimPhraseEchoIssues` helpers): for each season file,
+  iterate the six value/caption field pairs and flag any pair where the caption
+  is identical (case-insensitive, trimmed) to the raw value's string form.
+- Wire into `collectFailures()` at **strict floor-0** immediately (no lax/warn
+  period needed — confirmed zero current violations across all six pairs via this
+  pass's catalog scan).
+- Colocated unit tests in `src/content/__tests__/content-check.test.ts`: a
+  synthetic season file with `location === filming_caption` (should flag), one
+  with each of the other five pairs duplicated (should flag, one case per pair),
+  one with legitimately distinct value/caption pairs (should not flag), and one
+  passing at the live catalog post-check (asserts zero issues, mirroring the
+  #357 test pattern).
+- `content-curator` brief update: document the six value/caption pairs and the
+  "caption must add information the raw value doesn't carry" convention, mirroring
+  the existing candidate #20/#25 pattern of pairing a structural check with
+  curator-guidance documentation.
+**Estimated phases:** 1 (small, self-contained — one new content-check helper
++ colocated tests + a curator-brief note; no schema or component change, no e2e
+fixture row owed since content-check runs at build/verify time, not per-route).
+**Conflicts:** none. Complements candidate #25 (same root-cause family, different
+detection mechanic and field scope — see pass-48 reinforcement note on #25 above).
+`/oversight` may bundle both into one "content de-duplication invariants" phase or
+promote independently; this candidate has no dependency on #25 shipping first.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
@@ -568,11 +731,25 @@ blocker, different root cause) — recommend landing both in the same local sess
 
 ### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches
 
-**Score:** 6.3 (impact: 6, ease: 8 → 4.8 base + 1.5 signal multiplicity — two
-distinct unresolved bugs on the exact same function, after an earlier fix already
-landed on it)
-**Source pass:** 47
-**Filed:** 2026-07-08
+**Score:** 4.8 (impact: 6, ease: 8 → 4.8 base, signal-multiplicity bonus dropped —
+see pass-48 update)
+**Source pass:** 47 (updated pass 48)
+**Filed:** 2026-07-08 (updated 2026-07-08)
+**Pass-48 update:** the pass-79 stop-word finding (issue #503) this candidate cited
+as its second open signal was **resolved this window** — directly, via a targeted
+`trimTrailingStopWords()` deny-list helper (commit dd43d38), not via this
+candidate's broader "rank marks by boundary strength" rewrite. That's the candidate's
+own original hedge playing out exactly as anticipated ("may ship as a same-tick
+`/iterate` fix rather than needing a numbered phase"). Only **one** open signal
+remains: the pass-68 em-dash-vs-comma mark-preference bug (`src/lib/seo.ts:34-37`,
+still Pending in CRITIQUE.md as of this filing). With one of two signals resolved
+outside the phase-candidate pipeline, the "3 distinct fix events" multiplicity
+argument no longer holds at its original strength — score recalculated without the
++1.5 bonus. Recommend `/iterate` pick up the remaining em-dash-preference fix
+directly (same shape, same file, same low cost as the stop-word fix that just
+shipped) rather than waiting for phase promotion; leaving this row filed mainly so
+the pattern (a function that's absorbed 3 edge-case patches across 3 critique
+passes) stays visible if a 4th instance surfaces.
 **Source signals:**
 - The function's own code comment (`src/lib/seo.ts:12-21`) documents a prior fix:
   critique pass 62/67 found the original implementation cut mid-clause ("…and Heston
@@ -587,14 +764,14 @@ landed on it)
 - Critique pass-79 [MED] `/shows/perfect-match/season/season-1` — the word-boundary
   fallback (`src/lib/seo.ts:42-44`, fires when no clause mark falls within the last
   40% of the budget) has no stop-word guard, so it can land the cut on "the…" instead
-  of a real word, reproduced directly against Perfect Match S1's lede. **Still
-  unresolved** (CRITIQUE.md pending row).
-- Signal multiplicity: **3 distinct fix events on one function** — an original
-  clause-unaware bug (fixed), then two more edge cases in the clause-aware
-  replacement (both still open), each caught by a separate critique pass weeks
-  apart rather than anticipated when the function was last touched. The pattern
-  matches expand §G ("a phase that took 3+ retries to ship may have been
-  underspec'd") more than it matches "three cheap one-line fixes."
+  of a real word, reproduced directly against Perfect Match S1's lede.
+  **RESOLVED pass-48 window** — `trimTrailingStopWords()` helper added (commit
+  dd43d38), CRITIQUE.md row closed (issue #503, commit a9bb688).
+- Signal multiplicity: now **2 distinct fix events on one function** (was 3) — an
+  original clause-unaware bug (fixed pre-pass-47) and one remaining open edge case
+  (em-dash preference). The 3rd event (stop-word) resolved outside this candidate's
+  scope this window, so the "underspec'd, needs a coordinated rewrite" case is
+  weaker than originally filed — see pass-48 update above.
 **Why:** Two independent, unrelated-looking LOW/MED findings (jersey-shore em-dash
 list, perfect-match stop-word) both trace to the same 20-line function and the same
 underlying gap — the heuristic optimizes for "find *a* punctuation mark in range"
