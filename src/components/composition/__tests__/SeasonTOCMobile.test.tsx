@@ -36,6 +36,14 @@ describe('<SeasonTOCMobile>', () => {
     expect(screen.getByText(/6\s+sections/)).toBeInTheDocument()
   })
 
+  it('exposes the section count to the summary accessible name, not just sighted readers', () => {
+    render(<SeasonTOCMobile sections={sections} />)
+    const summary = screen.getByText('On this page').closest('summary')
+    if (!summary) throw new Error('expected summary element')
+    expect(summary.querySelector('[aria-hidden="true"]')).toBeNull()
+    expect(summary.textContent).toMatch(/On this page.*6\s+sections/)
+  })
+
   it('renders one anchor link per section', () => {
     render(<SeasonTOCMobile sections={sections} />)
     expect(screen.getAllByTestId('toc-mobile-link')).toHaveLength(6)

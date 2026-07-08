@@ -11,7 +11,7 @@ export function SeasonTOCMobile({ sections }: SeasonTOCMobileProps) {
     <details className="toc-mobile" data-testid="season-toc-mobile">
       <summary>
         <span className="toc-mobile-head">On this page</span>
-        <span className="toc-mobile-meta" aria-hidden="true">
+        <span className="toc-mobile-meta">
           {sections.length} {sections.length === 1 ? 'section' : 'sections'}
         </span>
       </summary>
