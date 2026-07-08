@@ -1,5 +1,55 @@
 # CRITIQUE
 
+> Last pass: 2026-07-08 at commit a484ee4
+> Pass count: 79
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 79 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/perfect-match`, `/shows/perfect-match/season/season-1`,
+> `/shows`, `/themes/best-comeback-seasons`) and authed (`/`,
+> `/shows/perfect-match/season/season-1?view=community`, `/u/e2e`,
+> `/themes/best-comeback-seasons`) walks ran, desktop + mobile,
+> deliberately targeting Perfect Match — the newest show added to
+> the catalog (2026-07-07), never critiqued before (same strategy
+> as pass 78 targeting Shark Tank). 5 findings filed (0 high, 4
+> medium, 1 low). Zero console errors, zero failed requests, zero
+> mobile overflow on any capture; auth handshake confirmed genuine
+> (`authState: authenticated:cloud`, `@e2e` chrome across
+> header/profile/comment-composer attribution, real member-since
+> date on `/u/e2e`). No spoiler leakage found on any capture. No
+> per-show SVG iconography violations found. One reader-proposed
+> finding (`?view=community` producing no visible UI change on the
+> season-page URL) was verified false and dropped at self-assess:
+> that query param only drives `CanonTabSwitch`/`ShowRanking` on
+> the show page (`src/app/shows/[show]/page.tsx`), not the season
+> page — the reader tested the wrong route. Strongest finding:
+> `src/components/shows/tierLede.ts:15`'s B-tier lede still reads
+> "The B tier we're still working through" — a plural-`we` voice
+> violation the site-wide singular-editor rotation (issues #306 /
+> #381 / #406 / #408 / #411 / #413) never reached because this
+> constant lives in a component none of those closures touched.
+> Filed MED, single-string content fix. Second/third findings are
+> both fresh Perfect Match content gaps: the season body and canon
+> rationale both close on the identical clause "could have played
+> as a cheap reunion special" (the recurring Section-02-vs-03
+> duplication class on freshly-scaffolded single-season shows);
+> and the show's own copy can't agree on "villa" (blurb +
+> filming_caption) vs. "house" (tagline, canon.md, season body,
+> season lede) for where the season is filmed. Fourth finding is a
+> reproducible code bug: `clipToSeoBudget()` in `src/lib/seo.ts`
+> falls back to a raw word-boundary cut when no sentence/clause
+> punctuation falls within its 60%-of-budget window, so Perfect
+> Match S1's meta description truncates mid-clause on "the…" —
+> confirmed by running the function directly against the season's
+> `lede`. Fifth (LOW) is a content-coverage gap: the show's hero
+> stat reads "4 SEASONS AIRED" but only season 1 has been
+> scaffolded/ranked, and there's no in-page "not yet ranked"
+> affordance explaining the gap.
+>
+> ───── Pass 78 metadata kept below for history ─────
+>
 > Last pass: 2026-07-07 at commit ecc381d
 > Pass count: 78
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1603,6 +1653,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows — the B-tier lede constant still speaks in plural "we" while every other tier lede and the rest of the site's editorial voice has been rotated to first-person singular "I" (issues #306 / #381 / #406 / #408 / #411 / #413). `src/components/shows/tierLede.ts:15`: `B: 'The B tier we're still working through — every season reviewed before it lands.'` — none of the prior singular-editor closures touched this constant (they hit `HowTiersMove.tsx`, `content/legal/about.md`, and the season page's `whereItSitsCopy()`), so it survived every rotation pass as a residual "we". Fix: rewrite to first-person singular, e.g. "The B tier I'm still working through — every season reviewed before it lands." Single string edit in `tierLede.ts`; two colocated tests (`ShowsHero.test.tsx`, `tierLede.test.ts`) assert on the literal `'still working through'` substring and should keep passing, but grep for any assertion pinning the `we're` contraction specifically and update it. Content/component-only. Spoiler discipline P0 intact (tier-lede copy only). (URL: /shows, source: critique-pass-79)
+
+- [ ] [MED] [anon+authed] /shows/perfect-match/season/season-1 (and /shows/perfect-match) — the season body and the canon rationale both close on the identical clause "could have played as a cheap reunion special," the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (issue #464) and MAFS New York (issue #478) but not yet applied to this freshly-scaffolded show. `content/shows/perfect-match/seasons/01-season-1.md` body: "...could have played as a cheap reunion special. Instead it treats a cast..."; `content/shows/perfect-match/canon.md`: "...into one house and rematching them from scratch could have played as a cheap reunion special." Same root cause as the prior closures: every freshly-scaffolded show enters the catalog with one canon.md entry, so the season body and canon rationale — written in the same drafting pass — tend to converge on the same framing sentence unless deliberately varied. Fix: rewrite one of the two closing clauses (recommend the canon.md rationale, since the season body's version reads more naturally as the recap-closer) to argue a different angle — e.g. why the crossover premise earns its canon slot rather than restating that it could have flopped. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/perfect-match/season/season-1, /shows/perfect-match, source: critique-pass-79)
+
+- [ ] [MED] [anon] /shows/perfect-match (and /shows/perfect-match/season/season-1) — the show's own copy can't agree on where the season was filmed: the hero blurb and the season's FILMED stat caption both say "villa" while the tagline, canon.md, and the season's own lede/body (appearing on both the show page and the season page) all say "house." `content/shows/perfect-match.md`: `blurb: "...dropped in one villa and rematched."` vs. `tagline: "...get pulled into one house and rematched from scratch..."`; `content/shows/perfect-match/seasons/01-season-1.md`: `filming_caption: "Filmed at a villa outside Panama City"` vs. `lede`/body: "...get pulled into one house and rematched from the ground up." A reader scanning the hero blurb against the body two sections down hits a contradiction on a basic factual detail of a brand-new show's very first page. Fix: pick one noun (recommend "house," since it appears in 4 of the 5 instances including both canon.md and the season body) and align the blurb + filming_caption to match. Content-only, two field edits. Spoiler discipline P0 intact (setting detail only). (URL: /shows/perfect-match, /shows/perfect-match/season/season-1, source: critique-pass-79)
+
+- [ ] [MED] [authed] /shows/perfect-match/season/season-1 — the meta description truncates mid-clause, ending on the stop word "the…" instead of a clean clause boundary, because `clipToSeoBudget()` (`src/lib/seo.ts:22`) falls back to a raw word-boundary cut whenever no sentence-ending or clause-marking punctuation (`. ! ? , ; : —`) falls within the last 40% of its 159-char budget. Reproduced directly: running `clipToSeoBudget()` against Perfect Match S1's `lede` field (`content/shows/perfect-match/seasons/01-season-1.md`) produces `"Contestants who fell in and out of love on Love Is Blind, Too Hot to Handle, and other Netflix dating shows get pulled into one house and rematched from the…"` — the only comma in the lede falls well before `minCut` (the 60%-of-budget threshold), so the clause-boundary branch never fires and the function falls through to `lastIndexOf(' ')`, landing on "the". This is an edge case the pass-62/67 fix (the `clipToSeoBudget` clause-aware rewrite, noted in the function's own code comment) didn't fully close — it only guards against a *raw* word-boundary cut when punctuation exists in range, not against landing on a stop word when it doesn't. Fix: after the word-boundary fallback, trim any trailing stop word (a short deny-list: "the", "a", "an", "and", "or", "of", "to") before appending the ellipsis, or shrink the budget slightly when the fallback path fires so the cut lands one word earlier. Single function edit in `src/lib/seo.ts`; add a colocated test pinning this exact lede as a regression case. Spoiler discipline P0 intact (SEO/meta copy only). (URL: /shows/perfect-match/season/season-1, source: critique-pass-79)
+
+- [ ] [LOW] [anon] /shows/perfect-match — the hero stat reads "4 SEASONS AIRED" but only season 1 has been scaffolded and ranked (`content/shows/perfect-match/seasons/` contains only `01-season-1.md`; `/shows/perfect-match/season/season-2` 404s), and there's no in-page affordance explaining that the other three aired seasons simply haven't been ranked yet. A first-time visitor drawn in by "4 seasons" has no season-2/3/4 to reach and no signal that this is a content-coverage gap rather than a broken link. This is the expected shape for a freshly-added show under the site's standing content-velocity mandate (one show scaffolded per tick, seasons drained incrementally) — not a bug, but worth a small UX affordance. Fix: add a lightweight "seasons not yet ranked" note near the ALL/season selector (e.g. "3 more seasons aired — ranking in progress") so the gap reads as roadmap rather than missing content. Content/chrome, small addition. Spoiler discipline P0 intact. (URL: /shows/perfect-match, source: critique-pass-79)
 
 - [ ] [MED] [anon+authed] /shows/shark-tank/season/season-1 (and 132 other season files across 22 shows catalog-wide — systemic) — the FILMED stat tile's value and gloss line are the identical string twice instead of a value/elaboration pair. `content/shows/shark-tank/seasons/01-season-1.md` frontmatter: `location: "Culver City, California"` / `filming_caption: "Culver City, California"` — every other stat tile on the same page pairs a value with a distinct one-line editorial gloss (e.g. EPISODES: "7" / "Seven-episode freshman run"; FORMAT: "Pitch competition" / "Five-shark founding panel"), but FILMED just repeats its own value verbatim as the caption. Not unique to Shark Tank: a catalog-wide scan (`grep` across `content/shows/*/seasons/*.md` comparing `location` to `filming_caption`) found 133 season files across 22 shows with this exact pattern (e.g. Southern Charm season 1 has the identical duplicate), versus shows that do it right (Survivor 49's `filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"` is a real gloss, not a repeat of `location: "Mamanuca Islands, Fiji"`). This is the same shape of systemic content-authoring gap as the Big Brother canon.md duplication (issue #488) and Love Island UK rationale duplication (issue #459) — a de-duplication convention applied inconsistently across the catalog's growth. Fix: audit season files where `filming_caption === location` verbatim and write a real one-line gloss for each (studio/location detail, shoot-order note, or similar), following the Survivor-49 pattern. Content-only; likely a multi-tick drain given the scope (133 files), same shape as the prior systemic-duplication fixes. Spoiler discipline P0 intact (location/production commentary only). (URL: /shows/shark-tank/season/season-1, source: critique-pass-78) — issue: #498 — a fresh grep at fix-time found 139 matching files (6 more than the original 133 count, from catalog growth since filing). This tick's iterate pass shipped the first drain batch (14 files): shark-tank S1–S6 (the show named in the finding), southern-charm S1, rhod/rhom/rhop/rhoslc S1 (the newer Housewives editions), the-ultimatum S1, below-deck-adventure S1, alone-frozen S1 — all following the Survivor-49 "Place · specific fact" gloss pattern. 125 files remain queued for later drain ticks. This tick's iterate pass shipped the second drain batch (15 files): the Alone family (alone-australia S1–S3, alone US S3/S7/S8/S11/S12) and the Below Deck family (below-deck-down-under S1–S2, below-deck-mediterranean S1/S5/S6/S7/S8) — same gloss pattern, each drawn from the season's own `lede`/`pull` field. 110 files remain queued for later drain ticks. — d93d5c7
 
