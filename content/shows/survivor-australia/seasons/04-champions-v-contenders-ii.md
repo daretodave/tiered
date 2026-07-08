@@ -17,7 +17,7 @@ format_caption: "Return to the cross-tribe cast split"
 cast_size: 24
 cast_size_caption: "12 champions, 12 contenders"
 premiere_caption: "Network 10 · 2019"
-filming_caption: "Savusavu, Fiji"
+filming_caption: "Third Fiji visit, a capable repeat pass on the CvC premise"
 episodes_caption: "25 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

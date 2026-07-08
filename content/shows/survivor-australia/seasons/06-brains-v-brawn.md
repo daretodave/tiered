@@ -17,7 +17,7 @@ format_caption: "Two tribes split by archetype"
 cast_size: 24
 cast_size_caption: "12 Brains, 12 Brawn"
 premiere_caption: "Network 10 · 2021"
-filming_caption: "Cloncurry, Queensland, Australia"
+filming_caption: "Outback Queensland, the first domestic season after border closures"
 episodes_caption: "24 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

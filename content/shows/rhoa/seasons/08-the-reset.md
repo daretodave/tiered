@@ -15,7 +15,7 @@ format_caption: "Without a franchise anchor for the first time"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · November 2015"
-filming_caption: "Atlanta, Georgia"
+filming_caption: "Atlanta · no international trip, the first season without a defining anchor"
 ---
 
 Season eight is the show in an unfamiliar register. A major departure removed the anchor the franchise had built around, and the new addition — a celebrated actress whose demeanor sat at an angle to the show's register — never quite clicked. Twenty-one episodes, no international trip. Real moments exist, but the season functions mainly as a bridge between what RHOA had been and what it hadn't yet figured out how to become.

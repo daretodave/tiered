@@ -15,7 +15,7 @@ format_caption: "Franchise anchor returns after two seasons"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · November 2017"
-filming_caption: "Atlanta, Georgia · Barcelona, Spain"
+filming_caption: "Barcelona leg built around the tenth-anniversary reunion arc"
 ---
 
 Season ten carries its milestone self-consciously — the tenth-anniversary season and it knows it. A returning cast member whose presence defined the show's first run gives the season its central organizing energy, and the Barcelona trip is among the franchise's better international sequences. The cast at season's end looks substantially different from the one that started it, which gives the season a transitional quality underneath its celebratory frame. A solid entry that earns from its context.

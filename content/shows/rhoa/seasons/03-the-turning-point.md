@@ -15,7 +15,7 @@ format_caption: "Major new cast addition"
 cast_size: 6
 cast_size_caption: "Season 3 Housewives"
 premiere_caption: "Bravo · November 2010"
-filming_caption: "Atlanta, Georgia"
+filming_caption: "Atlanta · the season that committed the show to flagship ambitions"
 ---
 
 Season three is where RHOA committed to its own ambitions. A major new addition brought a distinct Atlanta social register the show hadn't yet accessed, and the production was confident enough to let that register breathe — to trust the setting rather than engineer drama from scratch. The season is sharper and more assured than what came before, and it introduced dynamics that would shape the franchise for years after it aired. The turning point the title names.

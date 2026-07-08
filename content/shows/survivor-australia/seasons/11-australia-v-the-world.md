@@ -17,7 +17,7 @@ format_caption: "7 Australians vs 7 international Survivor returnees · 16-day g
 cast_size: 14
 cast_size_caption: "14 players: 7 Australian veterans, 7 international castaways"
 premiere_caption: "Network 10 · 2025"
-filming_caption: "Upolu, Samoa"
+filming_caption: "Samoa, the tenth-anniversary crossover's compressed 16-day game"
 episodes_caption: "10 episodes · 16-day game"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

@@ -15,7 +15,7 @@ format_caption: "Two departures; first December premiere"
 cast_size: 5
 cast_size_caption: "Five full-time Housewives"
 premiere_caption: "Bravo · December 2020"
-filming_caption: "Atlanta, Georgia · New Orleans, Louisiana"
+filming_caption: "New Orleans leg during the franchise's first COVID-delayed premiere"
 ---
 
 Season thirteen is a COVID-era season and carries that context's shape. Two significant cast departures left the group smaller, and the season's register — more socially conscious, more domestic, more deliberate — reflected both the cultural moment and the adjusted configuration. A December premiere, first in franchise history, signaled the disruption. New Orleans was the travel highlight. The season has real sequences and is never cynical, but runs well below the intensity that defines the show at its best.

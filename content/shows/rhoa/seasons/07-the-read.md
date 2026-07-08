@@ -15,7 +15,7 @@ format_caption: "One-season franchise addition"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · November 2014"
-filming_caption: "Atlanta, Georgia · San Juan, Puerto Rico"
+filming_caption: "Puerto Rico leg showcasing the franchise's sharpest verbal season"
 ---
 
 Season seven is defined by a single new addition whose verbal facility matched — and frequently exceeded — the cast she joined. The season has a sharper, more articulate register than what surrounded it, and the friction that produced was television the franchise hadn't quite aired before. Puerto Rico gives the season its most concentrated sequence. This is also the final full-time season for one of the show's foundational cast members, which gives it a natural chapter-closing energy.

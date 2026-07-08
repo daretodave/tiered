@@ -15,7 +15,7 @@ format_caption: "Two new cast members join"
 cast_size: 7
 cast_size_caption: "Season 5 Housewives"
 premiere_caption: "Bravo · November 2012"
-filming_caption: "Atlanta, Georgia"
+filming_caption: "Atlanta · the season the franchise cites as its ceiling"
 ---
 
 Season five is the season the franchise tends to cite as its ceiling. The cast was at its most configured — an established core supplemented by two additions who each arrived with a genuine social presence and a clear point of view. Atlanta's specific rules around ambition, appearance, and standing gave every dynamic a grounding that the show at its most generic lacks. The season sustains across its full run in a way the format rarely manages.

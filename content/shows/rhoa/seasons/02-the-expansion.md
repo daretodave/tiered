@@ -15,7 +15,7 @@ format_caption: "Expanded cast, new addition"
 cast_size: 6
 cast_size_caption: "Season 2 Housewives"
 premiere_caption: "Bravo · October 2009"
-filming_caption: "Atlanta, Georgia"
+filming_caption: "Atlanta · the show's first genuine cast-chemistry shift"
 ---
 
 Season two arrives with something most sophomore seasons struggle to produce: a new cast member who genuinely changes the dynamic rather than simply adding headcount. The addition brings a different professional and social register to the Atlanta world, and the show is smart enough to let that distinction do real editorial work. The original cast has grown into themselves, which gives the relationships enough texture to carry scenes beyond introductory beats. Uneven in places, essential in others.

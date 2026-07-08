@@ -15,7 +15,7 @@ format_caption: "Peak golden-era configuration"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · November 2013"
-filming_caption: "Atlanta, Georgia · Athens, Greece"
+filming_caption: "Athens group trip anchoring the golden-era cast's longest run"
 ---
 
 Twenty-seven episodes is a long season to sustain, and season six sustains it. The golden-era cast — with established dynamics now running deep enough to carry nearly every scene — brought enough productive friction to fill the format without manufactured drama. The Athens group trip is the season's visual centerpiece, but the Atlanta material holds up alongside it. Often cited alongside season five when the franchise's ceiling comes up. The Ascent earns its slot directly below The Peak.

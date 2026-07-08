@@ -17,7 +17,7 @@ format_caption: "Second Brains V Brawn installment with mid-game twist"
 cast_size: 24
 cast_size_caption: "24 new players across two tribes"
 premiere_caption: "Network 10 · 2025"
-filming_caption: "Upolu, Samoa"
+filming_caption: "Samoa, LaPaglia's final full-length season at the helm"
 episodes_caption: "24 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

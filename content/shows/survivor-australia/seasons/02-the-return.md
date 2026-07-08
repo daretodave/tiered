@@ -16,7 +16,7 @@ format_caption: "24-player cast, returning location"
 cast_size: 24
 cast_size_caption: "24 players across two tribes"
 premiere_caption: "Network 10 · 2017"
-filming_caption: "Upolu, Samoa"
+filming_caption: "Second Samoa run with a steadier production hand"
 episodes_caption: "26 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

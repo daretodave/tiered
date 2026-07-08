@@ -16,7 +16,7 @@ format_caption: "24-player cast, longer episode format"
 cast_size: 24
 cast_size_caption: "24 players across two tribes"
 premiere_caption: "Network 10 · 2016"
-filming_caption: "Upolu, Samoa"
+filming_caption: "Samoa · the format's Australian identity assembled from scratch"
 episodes_caption: "26 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:

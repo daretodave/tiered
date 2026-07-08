@@ -15,7 +15,7 @@ format_caption: "Near-wholesale cast overhaul from S15"
 cast_size: 7
 cast_size_caption: "Two returning anchors, five new additions"
 premiere_caption: "Bravo · May 2024"
-filming_caption: "Atlanta, Georgia · Jamaica"
+filming_caption: "Jamaica trip testing the post-S15 cast overhaul under pressure"
 ---
 
 Season sixteen is the first full run of the post-S15 cast overhaul. Kandi Burruss and Kenya Moore anchored a new roster drawn from Atlanta's broader social and entertainment world, giving the season a footing most franchise resets lack. Jamaica was the season's best stretch. The new cast members arrived with genuine Atlanta ties rather than borrowed fame, and the season benefits from that grounding even as the relational texture is still forming.

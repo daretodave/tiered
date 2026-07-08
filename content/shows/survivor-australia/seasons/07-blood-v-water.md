@@ -17,7 +17,7 @@ format_caption: "Twelve pairs of loved ones, split into two tribes"
 cast_size: 24
 cast_size_caption: "12 pairs, 24 players total"
 premiere_caption: "Network 10 · 2022"
-filming_caption: "Charters Towers, Queensland, Australia"
+filming_caption: "Second Queensland run, home to the pairs-format debut"
 episodes_caption: "24 competition episodes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
