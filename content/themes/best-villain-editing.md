@@ -43,7 +43,7 @@ entries:
     season_label: "S11"
     rank: 5
     title: "The combustible workroom the edit refused to cool off."
-    blurb: "Season 11 stacks the workroom with large, confrontational personalities and spends its budget on the friction rather than the sewing machine. The antagonist reads run loud and sustained, and the season's whole shape is the argument the rest of the cast had to play inside."
+    blurb: "Season 11 stacks the workroom with large, confrontational personalities and spends its budget on the friction rather than the sewing machine. The edit keeps returning to the same flashpoints between challenges, never letting a clash cool before the stage reignites it."
   - show: amazing-race
     season: 11
     season_label: "S11 · All-Stars"
