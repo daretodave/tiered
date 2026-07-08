@@ -15,7 +15,7 @@ filming_caption: "New Jersey and surrounding areas"
 format_summary: "Revival-era continuation"
 format_caption: "S13 cast persists into the newest era"
 cast_size: 8
-cast_size_caption: "Eight-person revival-era cast"
+cast_size_caption: "Same eight Housewives held over from S13"
 ---
 
 Season fourteen continues the revival-era cast from season thirteen without a significant roster addition. The dynamics carry forward, and the show is still working through what the post-pivot RHONJ looks like in its fullest form. The cast has real personalities in place; the season hasn't yet delivered the concentrated argument that would separate it from the continuation category. Near the bottom of the canon — not a dismissal, but an honest reflection of where the editorial work stands.

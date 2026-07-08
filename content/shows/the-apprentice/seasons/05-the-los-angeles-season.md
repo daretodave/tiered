@@ -13,7 +13,7 @@ pull: "The founding era's last stand before the celebrity pivot changed what the
 format_summary: "Business competition · LA production"
 format_caption: "founding era, westward relocation"
 cast_size: 18
-cast_size_caption: "18 contestants, founding era"
+cast_size_caption: "18 competitors split into two boardroom teams"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 
