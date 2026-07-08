@@ -23,7 +23,7 @@ describe('tierLedeSentences', () => {
   it('orders sentences by S → A → B regardless of input order', () => {
     expect(tierLedeSentences(['B', 'S'])).toEqual([
       'The S tier invented or perfected its format.',
-      'The B tier we’re still working through — every season reviewed before it lands.',
+      'The B tier I’m still working through — every season reviewed before it lands.',
     ])
   })
 

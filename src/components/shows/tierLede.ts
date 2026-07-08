@@ -12,7 +12,7 @@ import { TIER_ORDER } from './tierMeta'
 const TIER_LEDE_SENTENCE: Record<ShowTier, string> = {
   S: 'The S tier invented or perfected its format.',
   A: 'The A tier has the deep canon and the years to defend it.',
-  B: 'The B tier we’re still working through — every season reviewed before it lands.',
+  B: 'The B tier I’m still working through — every season reviewed before it lands.',
 }
 
 export function tierLedeSentences(
