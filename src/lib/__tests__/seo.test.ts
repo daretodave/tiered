@@ -54,6 +54,19 @@ describe('clipToSeoBudget', () => {
     expect(clipToSeoBudget(lede)).toBe(`${head}…`)
     expect(clipToSeoBudget(lede)).not.toContain(',…')
   })
+
+  it('trims a trailing stop word off the word-boundary fallback cut', () => {
+    // critique pass 79: Perfect Match S1's real lede — the only comma
+    // falls before minCut, so the clause-boundary branch never fires
+    // and the raw word-boundary fallback used to land on "…from the…".
+    const lede =
+      'Contestants who fell in and out of love on Love Is Blind, Too Hot to Handle, and other Netflix dating shows get pulled into one house and rematched from the ground up. Nick Lachey hosts a format that treats a cast of reality-TV veterans like the experiment they actually are.'
+    const result = clipToSeoBudget(lede)
+    expect(result).toBe(
+      'Contestants who fell in and out of love on Love Is Blind, Too Hot to Handle, and other Netflix dating shows get pulled into one house and rematched from…',
+    )
+    expect(result).not.toMatch(/\bthe…$/)
+  })
 })
 
 describe('canonicalUrl', () => {

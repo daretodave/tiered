@@ -19,6 +19,26 @@ export const siteConfig = {
 // budget — otherwise an early period/comma would produce a snippet
 // too short to be useful, and the word-boundary fallback (whole words,
 // no premature stop) takes over instead.
+//
+// The word-boundary fallback can still land the cut right after a
+// stop word (critique pass 79: Perfect Match S1's lede has no comma
+// within the last 40% of the budget, so it falls through to a raw
+// word cut and lands on "…from the…"). Trim any trailing stop words
+// off that fallback cut before appending the ellipsis, walking back
+// word-by-word in case more than one stop word chains together.
+const TRAILING_STOP_WORDS = new Set(['the', 'a', 'an', 'and', 'or', 'of', 'to'])
+
+function trimTrailingStopWords(text: string): string {
+  let result = text.replace(/[\s,;:—-]+$/, '')
+  for (;;) {
+    const lastSpace = result.lastIndexOf(' ')
+    const lastWord = (lastSpace >= 0 ? result.slice(lastSpace + 1) : result).toLowerCase()
+    if (!TRAILING_STOP_WORDS.has(lastWord)) return result
+    if (lastSpace < 0) return ''
+    result = result.slice(0, lastSpace).replace(/[\s,;:—-]+$/, '')
+  }
+}
+
 export function clipToSeoBudget(text: string, budget = 159): string {
   if (text.length <= budget + 1) return text
   const window = text.slice(0, budget)
@@ -41,7 +61,7 @@ export function clipToSeoBudget(text: string, budget = 159): string {
 
   const lastSpace = window.lastIndexOf(' ')
   const cut = lastSpace > 0 ? lastSpace : budget
-  return `${window.slice(0, cut).replace(/[\s,;:—-]+$/, '')}…`
+  return `${trimTrailingStopWords(window.slice(0, cut))}…`
 }
 
 export function canonicalUrl(path: string): string {
