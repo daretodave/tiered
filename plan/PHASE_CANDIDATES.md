@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-07 at commit 51e09a9
-> Pass count: 46
+> Last pass: 2026-07-08 at commit 566fc6f
+> Pass count: 47
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,56 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 47 (2026-07-08, commit 566fc6f) — 1 new phase-shape candidate filed (#27),
+     plus reinforced existing candidate #25.
+     Window since pass 46 (51e09a9, 2026-07-07): ~13 hours / 21 commits. Commit
+     threshold met (21 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 8 (5 shows, filed pass
+       46) fully drained same-day (dragrace-uk, rhod, shark-tank, the-ultimatum,
+       perfect-match all resolved [x]), the same recurring empty-queue pattern
+       candidate #24 already names. Not re-filing a wave 9 this pass — Rule 1's
+       direct-action move is reserved for when the queue is actually empty at
+       dispatch time; this expand pass ran ahead of the next march tick, so the
+       queue-refill decision is left to whichever tick's Step 3b.5 finds it empty.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
+       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
+     - CRITIQUE.md: 40 live Pending findings (mostly LOW, a handful MED), up from
+       30 last pass — pass-78 (5 findings) and pass-79 (5 findings) both landed
+       since. Two signals worth acting on:
+       (1) Perfect Match's canon-rationale/season-body echo (pass-79) is the exact
+       defect class candidate #25 already scopes — reinforced below, signal count
+       6 → 7 shows, notable because this is the first instance caught on a show
+       still in its first week of life, strengthening the "gate would pay for
+       itself immediately" case.
+       (2) Two separate LOW/MED findings on `clipToSeoBudget()` (pass-68 em-dash-
+       vs-comma preference, pass-79 stop-word trailing) sit unresolved on the exact
+       same 20-line function that already absorbed one earlier fix (pass 62/67).
+       Filed as new candidate #27 — 3 total fix events on one function is signal
+       multiplicity the same shape as #25's pattern, just on a code path instead
+       of a content-authoring one.
+       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
+       Australia), unchanged. Voice-rotation "we" leftover (tierLede.ts B-tier,
+       pass-79) is a single remaining instance — below the 3-instance clustering
+       bar, left for `/iterate` as a one-line content fix rather than filed as an
+       expand candidate.
+     - GitHub issues: 1 unlabeled-adjacent (#416, already tracked, cloud-blocked).
+       No new clustering signal.
+     - spec.md + design/: no changes since pass 46 (`git log 51e09a9..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 46 — dominated by 4 new-show scaffolds
+       (dragrace-uk, rhod, shark-tank, the-ultimatum, perfect-match; the 5th,
+       drag-race-uk, counted with the batch), 1 Shark Tank CAST SIZE fix, 1 Shark
+       Tank season drain (S2-S6), 2 critique passes (78, 79) each with a paired
+       drain-batch fix commit (FILMED-caption self-duplication, 29 files across
+       2 batches). Pure content-drain + critique-response velocity, matching the
+       standing perpetual-mandate cadence; no fix-cluster signal beyond the two
+       captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (see above): signal count 6 → 7 shows. #27 — new this pass. -->
 
 <!-- Pass 46 (2026-07-07, commit 51e09a9) — 0 new phase-shape candidates filed;
      dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
@@ -393,9 +443,16 @@
 
 **Score:** 7.7 (impact: 8, ease: 8 → 6.4 base + 1.3 signal multiplicity, impact bumped
 7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit)
-**Source pass:** 44 (reinforced pass 46)
-**Filed:** 2026-07-06 (reinforced 2026-07-07)
+**Source pass:** 44 (reinforced pass 46, reinforced again pass 47)
+**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08)
 **Source signals:**
+- Critique pass-79 [MED] `/shows/perfect-match` (and its season-1 page) — the season
+  body and the canon.md rationale both close on the identical clause "could have
+  played as a cheap reunion special," on a show scaffolded this same week
+  (2026-07-07). **Seventh independent instance** of the exact defect class, and the
+  first to hit a show still inside its first week of existence — proof the gate
+  would pay for itself immediately rather than waiting weeks for a critique pass to
+  notice. Still unresolved (CRITIQUE.md pending row, pass-79) as of this filing.
 - Issue #459 (CLOSED) — Love Island UK, all 11 series, canon rationale duplicated the
   season body's own argument, fixed as a one-off content-curator pass.
 - Issue #464 (CLOSED) — Bachelor Joey Graziadei season page: triple-duplicated copy
@@ -416,16 +473,16 @@
   a content-curator sub-agent rewriting all 26 rationale paragraphs in one pass
   (commit 4af4dd0), an order of magnitude more expensive than every prior instance's
   single-scene edit.
-- Signal multiplicity: **6 independent shows** across 6 separate fix events (3 closed
+- Signal multiplicity: **7 independent shows** across 7 separate fix events (3 closed
   as one-off GitHub issues, 1 closed as a systemic 26-season rewrite, 2 more content
-  edits cited inline by the Big Brother finding), each time caught reactively by a
-  critique pass or a filed issue weeks after the content shipped, never once caught
-  before ship. Same defect class, same root cause (a canon rationale authored without
-  checking what the season body already says), recurring at a steady cadence as the
-  show-coverage mandate (bearings Rule 1) keeps producing new canon entries — and the
-  cost-per-instance is now proven to scale with show size (a 26-season show costs 26x
-  a 1-season fix), which is a stronger promotion case than pass 44's 3-instance filing
-  had.
+  edits cited inline by the Big Brother finding, 1 still pending as of pass 47), each
+  time caught reactively by a critique pass or a filed issue weeks after the content
+  shipped, never once caught before ship. Same defect class, same root cause (a canon
+  rationale authored without checking what the season body already says), recurring
+  at a steady cadence as the show-coverage mandate (bearings Rule 1) keeps producing
+  new canon entries — and the cost-per-instance is now proven to scale with show size
+  (a 26-season show costs 26x a 1-season fix), which is a stronger promotion case than
+  pass 44's 3-instance filing had.
 
 **Why:** The codebase already has the exact technique this defect class needs —
 `collectThemedEntryVerbatimPhraseEchoIssues()` in `scripts/content-check.ts:1262`
@@ -508,6 +565,64 @@ ceilings, or rules directly").
 `01_build_plan.md`).
 **Conflicts:** none. Complements issue #416/#480 (same file family, same cloud
 blocker, different root cause) — recommend landing both in the same local session.
+
+### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches
+
+**Score:** 6.3 (impact: 6, ease: 8 → 4.8 base + 1.5 signal multiplicity — two
+distinct unresolved bugs on the exact same function, after an earlier fix already
+landed on it)
+**Source pass:** 47
+**Filed:** 2026-07-08
+**Source signals:**
+- The function's own code comment (`src/lib/seo.ts:12-21`) documents a prior fix:
+  critique pass 62/67 found the original implementation cut mid-clause ("…and Heston
+  Blumenthal appears as a…"), which the current clause-boundary-aware version was
+  written to fix.
+- Critique pass-68 [LOW] `/shows/jersey-shore/season/season-1` (commit 7173f3a) — the
+  clause-boundary scan (`src/lib/seo.ts:34-37`) takes `Math.max` across four mark
+  types (`,`, `;`, `:`, `—`) with no preference order, so a mid-list comma occurring
+  after an em-dash wins the cut even though the em-dash is the stronger boundary,
+  producing a dangling single list item ("…MTV builds its format around the group's
+  own energy — gym…"). **Still unresolved** (CRITIQUE.md pending row).
+- Critique pass-79 [MED] `/shows/perfect-match/season/season-1` — the word-boundary
+  fallback (`src/lib/seo.ts:42-44`, fires when no clause mark falls within the last
+  40% of the budget) has no stop-word guard, so it can land the cut on "the…" instead
+  of a real word, reproduced directly against Perfect Match S1's lede. **Still
+  unresolved** (CRITIQUE.md pending row).
+- Signal multiplicity: **3 distinct fix events on one function** — an original
+  clause-unaware bug (fixed), then two more edge cases in the clause-aware
+  replacement (both still open), each caught by a separate critique pass weeks
+  apart rather than anticipated when the function was last touched. The pattern
+  matches expand §G ("a phase that took 3+ retries to ship may have been
+  underspec'd") more than it matches "three cheap one-line fixes."
+**Why:** Two independent, unrelated-looking LOW/MED findings (jersey-shore em-dash
+list, perfect-match stop-word) both trace to the same 20-line function and the same
+underlying gap — the heuristic optimizes for "find *a* punctuation mark in range"
+rather than "find the *strongest* clause boundary and never land on a function
+word." Patching each instance individually (as the two pending rows currently
+propose) fixes today's two reproductions but not the next one a future long-lede
+show will surface; a small rewrite that (a) ranks mark types by boundary strength
+instead of taking a flat `Math.max`, and (b) trims trailing stop words after any
+fallback cut, closes the whole edge-case class in the one function rather than
+leaving a third patch for a future pass to find.
+**Scope sketch:**
+- Rewrite the clause-boundary scan to prefer stronger marks (em-dash > colon/
+  semicolon > comma) rather than whichever occurs latest in the window, fixing the
+  pass-68 case.
+- Add a short stop-word deny-list (`the`, `a`, `an`, `and`, `or`, `of`, `to`) applied
+  after the word-boundary fallback cut, trimming one more word back if the cut lands
+  on one, fixing the pass-79 case.
+- Expand `src/lib/__tests__/seo.test.ts` with both pending findings' exact ledes
+  pinned as regression cases, plus the existing Heston Blumenthal case already
+  covered, so all three known edge cases live in one test file going forward.
+- Content-only cleanup: once the function is fixed, the two CRITIQUE.md pending rows
+  (pass-68, pass-79) close as a side effect of the code fix rather than needing
+  separate content edits.
+**Estimated phases:** 1 (small — one function, one test file; may ship as a
+same-tick `/iterate` fix rather than needing a numbered build-plan phase, but filed
+here since it's a code change, not content, and the recurring-patch pattern is worth
+recording even if it ships quickly).
+**Conflicts:** none.
 
 ### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit
 
