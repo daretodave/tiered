@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy Wahlberg, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · March 2025"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · thirteen cycles deep, running on established pattern"
 take_h2: "Thirteen cycles deep — the format running as pure pattern."
 ---
 

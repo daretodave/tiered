@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Kelly Clarkson, John Legend, Ariana Grande"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2021"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Ariana Grande's high-anticipation coaching debut"
 ---
 
 Season twenty-one carried the energy that only an unexpected coaching debut generates. Ariana Grande's arrival brought a pop audience the show hadn't seen engage at that level in years — her instincts in the blind auditions were sharp, her arguments specific, and her competitive dynamic with Blake Shelton and Kelly Clarkson gave the recruiting phase real tension. The format ran with the urgency the streaming era had largely been chasing. A strong season elevated by one debut that actually delivered.

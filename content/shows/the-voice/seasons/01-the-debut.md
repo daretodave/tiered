@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, CeeLo Green, Christina Aguilera"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · April 2011"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · where the blind audition and chair turn debuted"
 ---
 
 Four coaches in spinning chairs. The blind audition arrived fully formed in season one, and what The Voice established here — the chair turn, the battle round, the four-coach competitive structure — is the grammar every subsequent season would use. The mechanics were still finding their pacing, the debut rougher than what followed. But the central device clicked from the first episode, and the format it set held.

@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, CeeLo Green, Christina Aguilera"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2011"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · the sophomore cycle that proved the format wasn't a fluke"
 ---
 
 The second season ran the format through its paces without the debut's novelty, and what emerged was more confident. The coaching chemistry had deepened — Blake Shelton and Adam Levine found their rivalry groove, CeeLo and Christina their counterweight. The blind auditions ran smoothly; the battles were sharper than season one's. The Voice was not experimenting anymore. It was executing, and the show that emerged was ready for the run ahead.

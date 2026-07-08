@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, Michael Bublé, Adam Levine, Kelsea Ballerini"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2025"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Kelsea Ballerini's debut in the show's closing season"
 ---
 
 Season twenty-nine carried the gravity of a final chapter. Kelsea Ballerini's coaching debut gave the blind auditions a new angle while Reba McEntire, Michael Bublé, and Adam Levine provided the continuity a closing season earns. The format ran with the focused energy a series finale generates — coaches and contestants both aware of the occasion. The show closed with the same format integrity it brought to its debut, which is a cleaner exit than most long-running competition series manage.

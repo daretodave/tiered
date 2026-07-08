@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · September 2022"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · nearly four years in, needing no introduction"
 take_h2: "Confidence without coasting."
 ---
 

@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Gwen Stefani, Niall Horan, Camila Cabello"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2022"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Blake Shelton's farewell cycle after twelve seasons"
 ---
 
 Season twenty-three had a built-in narrative the show couldn't ignore: Blake Shelton, the most successful coach in the format's history, coaching his final season. The farewell framing gave every coaching interaction extra weight, and Niall Horan's debut added a fresh angle in the blind auditions. The format ran with the kind of transitional energy a significant departure always generates — watchable, a little elegiac, and conscious of what it was closing.

@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · September 2023"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · double digits reached without a format overhaul"
 take_h2: "A decade, the same format, and the format still working."
 ---
 

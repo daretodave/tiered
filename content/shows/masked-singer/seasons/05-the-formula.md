@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · March 2021"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · the founding run's steadiest, most proven cycle"
 take_h2: "The format at cruising altitude."
 ---
 

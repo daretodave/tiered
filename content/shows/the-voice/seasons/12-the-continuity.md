@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Alicia Keys, Gwen Stefani"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2017"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · a panel where all four coaches had sat before"
 ---
 
 Season twelve ran on familiarity. All four coaches had occupied the chairs before, and that settled dynamic produced a consistent, predictable competitive season — the blind auditions competent without the edge that comes when a new coach is still learning how to recruit. The format worked exactly as designed. Nothing broke, nothing surprised. A dependable Voice cycle that represents the mid-run plateau the show occupied through much of this stretch. Solid viewing; the format coasting on experience rather than friction.

@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Christina Aguilera, Pharrell Williams"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2015"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Christina Aguilera's return to a new coaching era"
 ---
 
 Christina Aguilera's return in season eight grounded the lineup after two straight cycles of new faces. The combination with Pharrell Williams and the anchoring pair of Blake Shelton and Adam Levine gave the blind auditions a steady competitive rhythm. This is a season where the format ran well without running hot — the coaching chemistry was familiar and functional rather than friction-driven. The live shows were consistent. Solid mid-range Voice, the kind the ascendant era produced reliably.

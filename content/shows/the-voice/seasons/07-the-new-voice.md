@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Gwen Stefani, Pharrell Williams"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2014"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Gwen Stefani's first cycle in the coaching chairs"
 ---
 
 Gwen Stefani's arrival in season seven was the most culturally interesting coaching debut the show had seen since its first season. She and Pharrell Williams brought a different musical register to the chairs — pop and hip-hop alongside the country-rock axis Blake Shelton and Adam Levine had anchored for six cycles. The blind auditions carried genuine unpredictability about who would turn for which singer. That coaching friction made the recruiting sharper and the season more watchable than most peers.

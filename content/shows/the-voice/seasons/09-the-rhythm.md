@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Gwen Stefani, Pharrell Williams"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2015"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Gwen Stefani's more settled second coaching run"
 ---
 
 Gwen Stefani's second run in season nine hit differently than her debut. The novelty had settled into confidence — she knew how the competition worked, and that translated into sharper recruiting in the blind auditions. The four-coach chemistry with Pharrell Williams, Blake Shelton, and Adam Levine had a looser, more comfortable quality that made the coaching interactions more watchable than the previous cycle. A well-paced season from a format running at its cruising altitude in the ascendant era.

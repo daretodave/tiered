@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Christina Aguilera, CeeLo Green"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2013"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Christina Aguilera and CeeLo Green's return cycle"
 ---
 
 Christina Aguilera and CeeLo Green returned after their guest replacements in season four, and the show demonstrated something important: the format survived coach rotation without losing momentum. The blind auditions were competitive, the coaching rivalries were real, and the live shows had genuine stakes. Not the ceiling — that's season four — but the most reliably consistent cycle the early run produced.

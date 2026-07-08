@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Miley Cyrus, Jennifer Hudson"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2017"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Jennifer Hudson's Grammy-and-Oscar coaching debut"
 ---
 
 Jennifer Hudson's arrival in season thirteen raised the coaching panel's musical credibility to a level the show hadn't reached in several cycles. Her instincts in the blind auditions — what to pursue, when to turn, how to make the case for her team — reflected industry experience that shaped the recruiting dynamic. Alongside Miley Cyrus, Blake Shelton, and Adam Levine, the season had an eclectic coaching table that ran genuinely competitive blind auditions. A well-above-average ascendant-era season.

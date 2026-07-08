@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Kelly Clarkson, Niall Horan, Chance the Rapper, Reba McEntire"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · March 2023"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · the first panel without any founding-era coach"
 ---
 
 Season twenty-four was the cleanest break the format had made since its debut: no original-era coach, no founding anchor, just four coaches — two of them new — competing from scratch. Reba McEntire brought a country credibility distinct from Shelton's; Chance the Rapper brought a hip-hop perspective the show hadn't seated before. The combination gave the blind auditions genuine variety. A transitional season that earned more attention than it received, carrying the charge a genuine reset produces.

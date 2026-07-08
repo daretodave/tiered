@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy Wahlberg, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · September 2024"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · locking in the spring-fall, two-cycle-a-year rhythm"
 take_h2: "The spring-fall rhythm as its own editorial frame."
 ---
 

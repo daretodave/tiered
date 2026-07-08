@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Pharrell Williams, Shakira"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2014"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Pharrell Williams and Shakira's founding-era finale"
 ---
 
 Season six marked the end of the founding era with a coaching lineup that hadn't existed before. Pharrell Williams brought a producer's precision to the chair; Shakira, returning for her second run, was more confident in the role. The combination with Blake Shelton and Adam Levine gave the blind auditions a different texture — four coaches with genuinely distinct musical perspectives competing for the same singers. The format worked; the chemistry was interesting if not quite electric.

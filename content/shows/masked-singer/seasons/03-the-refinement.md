@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · February 2020"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · costumes crossed from disguise into production design"
 take_h2: "Production ambition at its peak."
 ---
 

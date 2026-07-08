@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, Niall Horan, John Legend, Gwen Stefani"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2023"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Reba McEntire's second cycle anchoring the panel"
 ---
 
 Season twenty-five ran on experience. Reba McEntire, Niall Horan, and John Legend brought enough combined cycles that the blind auditions moved with practiced efficiency, and Gwen Stefani's return added a familiar competitive edge. The format worked reliably in the mid-run register it had mastered — no debut urgency, no structural novelty, just a well-assembled coaching panel doing the job the show asks of it. A competent, watchable cycle without a reason to rank higher than the reset that preceded it.

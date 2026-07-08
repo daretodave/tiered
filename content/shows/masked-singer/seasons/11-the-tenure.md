@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Panelists: Ken Jeong, Jenny McCarthy Wahlberg, Nicole Scherzinger, Robin Thicke"
 host_caption: "Nick Cannon — {seasonOrdinalWord} season at the helm"
 premiere_caption: "Fox · March 2024"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · six years in, tenure itself the credential"
 take_h2: "The format at six years — running on earned credibility."
 ---
 

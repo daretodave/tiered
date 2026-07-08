@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Four coaches, updated lineup"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2016"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · the format's fifth-anniversary coaching rotation"
 ---
 
 Season ten arrived at a natural waypoint: five years of spinning chairs, enough history to look back on. The coaching rotation brought a fresh combination that hadn't appeared together before, and the blind auditions benefited from coaches still feeling the competitive edge of a new pairing. A solid mid-run Voice season — not the format at its peak, but a confident cycle from a show that had learned how to do this reliably.

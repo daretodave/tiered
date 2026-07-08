@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, John Legend, Dan + Shay, Chance the Rapper"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2024"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Dan + Shay's shared-chair coaching experiment"
 ---
 
 Season twenty-six tried something the format hadn't attempted: two coaches sharing a chair. Dan + Shay's joint presence gave the blind auditions an unusual dynamic — two voices making recruiting decisions together, their arguments a collaboration rather than a singular pitch. The novelty was real even if the season didn't produce the competitive heat the idea suggested. Reba McEntire, John Legend, and Chance the Rapper provided the familiar competitive frame. A cycle remembered for the experiment rather than the execution.

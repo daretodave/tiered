@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, John Legend, Camila Cabello, Gwen Stefani"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2022"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Blake Shelton and Gwen Stefani's reunion on the panel"
 ---
 
 Season twenty-two offered the mild novelty of a new coaching debut — Camila Cabello's pop instincts gave the blind auditions a different angle — alongside the reunion of Blake Shelton and Gwen Stefani, which generated its own warmth. John Legend's return steadied the panel. The season didn't find the urgency of a full coaching reset, but it ran with competent mid-run energy and enough personal chemistry between the coaches to stay watchable throughout.

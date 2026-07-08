@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Shakira, Usher"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · March 2013"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Shakira and Usher's guest-coach cycle, the format's ceiling"
 ---
 
 Two guest coaches — Shakira and Usher — replaced CeeLo and Christina, and the season ran hotter than anything before it. The competitive temperature inside the chairs rose; their investment in their teams was tangible and pushed every coaching interaction into something more watchable. The blind auditions produced the cycle's most cited performances. The battles had genuine stakes. This is The Voice at its ceiling.

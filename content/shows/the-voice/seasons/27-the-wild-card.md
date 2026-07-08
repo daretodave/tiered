@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, Michael Bublé, Snoop Dogg, Gwen Stefani"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2024"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Snoop Dogg and Michael Bublé's eclectic coaching debut"
 ---
 
 Season twenty-seven went for broke on coaching variety. Snoop Dogg and Michael Bublé arriving together gave the blind auditions a genuinely unpredictable quality — their musical instincts diverge more sharply than any prior two-debut season — and the entertainment value of watching them recruit was high. But variety and competitive intensity are different things, and the season generated more spectacle than urgency. Reba McEntire and Gwen Stefani anchored the panel while the two newcomers brought the noise.

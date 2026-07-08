@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Alicia Keys, Kelly Clarkson"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2018"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Kelly Clarkson's debut as a former winner turned coach"
 ---
 
 Kelly Clarkson's coaching debut in season fourteen was the most compelling new-coach arrival the ascendant era produced. A competition winner stepping to the other side of the format gave her blind audition pitch a register unlike any coach before her — she knew what it felt like to stand on that stage. The dynamic with Blake Shelton and Adam Levine had genuine competitive heat. A strong mid-run season, elevated by one debut.

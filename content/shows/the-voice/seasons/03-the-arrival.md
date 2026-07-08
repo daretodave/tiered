@@ -17,7 +17,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, CeeLo Green, Christina Aguilera"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2012"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · where live shows first raised the format's bar"
 ---
 
 Season three is where the format earned its cultural footprint. The coaches — Blake Shelton, Adam Levine, CeeLo Green, and Christina Aguilera — were competing rather than learning, and that shift showed. The blind auditions were sharp, the coaching dynamic was genuinely contentious, and the live shows reached a register the format had only hinted at. This is The Voice becoming what the concept promised: a talent competition organized around actual coaching.

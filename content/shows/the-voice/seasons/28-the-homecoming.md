@@ -16,7 +16,7 @@ cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, Michael Bublé, Adam Levine, Snoop Dogg"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2025"
-filming_caption: "Los Angeles"
+filming_caption: "Los Angeles · Adam Levine's return to the chair after six seasons away"
 ---
 
 Season twenty-eight had a competitive advantage over most of the streaming era: Adam Levine back in the coaching chair after six seasons away. The reunion with a format he helped build gave the blind auditions a narrative the recent cycles had lacked. His dynamic with Reba McEntire and Michael Bublé — coaches he'd never worked alongside — produced competitive chemistry. A return-story season that delivered more than the concept suggested.
