@@ -447,6 +447,34 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
       "Slot #02 of 50 in the Survivor Editor's Canon. The seasons on either side show what I ranked it against.",
     )
   })
+
+  // critique-pass-66 LOW: "in the ${show.name} Editor's Canon" doubled
+  // the definite article for any show whose own name opens with "The"
+  // (masked-singer, the-apprentice, the-circle, the-voice, the-ultimatum,
+  // rhod/rhom/rhop — all named "The Real Housewives of ___"), rendering
+  // "in the The Masked Singer Editor's Canon". Fix strips the leading
+  // "The " only inside this "in the ___ Editor's Canon" phrase.
+  it('drops the doubled article when the show name itself opens with "The"', () => {
+    const show = makeShow({ name: 'The Masked Singer', slug: 'masked-singer' })
+    expect(whereItSitsCopy(show, 11, 13)).toBe(
+      "Slot #11 of 13 in the Masked Singer Editor's Canon. The seasons on either side show what I ranked it against.",
+    )
+    expect(whereItSitsCopy(show, 11, 13)).not.toContain('the The')
+  })
+
+  it('drops the doubled article in the sole-entry branch too', () => {
+    const show = makeShow({ name: 'The Circle', slug: 'the-circle' })
+    expect(whereItSitsCopy(show, 1, 1)).toBe(
+      "Sole entry in the Circle Editor's Canon so far. Adjacent picks land as the canon grows.",
+    )
+  })
+
+  it('leaves the draft-in-progress sentence untouched (uses show.name directly, not the "in the" phrase)', () => {
+    const show = makeShow({ name: 'The Apprentice', slug: 'the-apprentice' })
+    expect(whereItSitsCopy(show, null, 0)).toBe(
+      "Canon position not assigned yet — the editors' draft is still in progress for The Apprentice. Check back as the canon fills in.",
+    )
+  })
 })
 
 describe('seasonHeroBylineFor — within-module double-attribution gate (issue #339)', () => {

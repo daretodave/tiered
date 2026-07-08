@@ -271,6 +271,17 @@ function paragraphsOf(body: string): string[] {
     .filter((p) => p.length > 0)
 }
 
+// critique-pass-66 LOW: "in the ${show.name} Editor's Canon" doubles
+// the definite article when a show's own name already opens with
+// "The" (e.g. "in the The Masked Singer Editor's Canon"). Strip a
+// leading "The " before interpolating a show name into an "in the
+// ___" phrase; names without a leading article pass through
+// unchanged. Scoped to this one phrasing — `show.name` alone (e.g.
+// page titles, OG text) keeps its full "The X" form everywhere else.
+function nameAfterDefiniteArticle(name: string): string {
+  return name.startsWith('The ') ? name.slice(4) : name
+}
+
 export function whereItSitsCopy(
   show: Show,
   canonRank: number | null,
@@ -280,10 +291,11 @@ export function whereItSitsCopy(
   if (canonRank == null || canonTotal === 0) {
     return `Canon position not assigned yet — the editors' draft is still in progress for ${show.name}. Check back as the canon fills in.`
   }
+  const canonName = nameAfterDefiniteArticle(show.name)
   if (canonTotal === 1) {
     return rationale
-      ? `Sole entry in the ${show.name} Editor's Canon so far. ${rationale}`
-      : `Sole entry in the ${show.name} Editor's Canon so far. Adjacent picks land as the canon grows.`
+      ? `Sole entry in the ${canonName} Editor's Canon so far. ${rationale}`
+      : `Sole entry in the ${canonName} Editor's Canon so far. Adjacent picks land as the canon grows.`
   }
   // critique-pass-49 MED (Section 03 body was a two-sentence stub
   // that only restated facts already shown in the hero pill above +
@@ -295,8 +307,8 @@ export function whereItSitsCopy(
   // season carries a legacy `canonical_position` with no matching
   // canon.md entry (no rationale exists to quote yet).
   return rationale
-    ? `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. ${rationale}`
-    : `Slot #${pad2(canonRank)} of ${canonTotal} in the ${show.name} Editor's Canon. The seasons on either side show what I ranked it against.`
+    ? `Slot #${pad2(canonRank)} of ${canonTotal} in the ${canonName} Editor's Canon. ${rationale}`
+    : `Slot #${pad2(canonRank)} of ${canonTotal} in the ${canonName} Editor's Canon. The seasons on either side show what I ranked it against.`
 }
 
 // Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:
