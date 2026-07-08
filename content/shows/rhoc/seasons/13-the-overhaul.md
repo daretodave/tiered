@@ -11,7 +11,7 @@ eyebrow: "Aired summer 2018 · Two new cast members, one founding figure in a re
 lede: "Two new cast members, a franchise original in a reduced role, and a show in reconstruction mode. Gina Kirschenheiter and Emily Simpson bring genuine chemistry to each other; their integration with the existing group is a work in progress."
 pull: "The transition era fully underway — the show building a new cast while still running the old one."
 premiere_caption: "Bravo · July 2018"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · transition era deepens, cast rebuilds"
 format_summary: "Social reality"
 format_caption: "Transition-era cast, two new additions, one reduced role"
 cast_size: 6

@@ -16,7 +16,7 @@ format_caption: "The format running with two seasons of confidence"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Chicago, Illinois"
+filming_caption: "Chicago · second city, format turns confident"
 premiere_caption: "Netflix · February 2022"
 ---
 

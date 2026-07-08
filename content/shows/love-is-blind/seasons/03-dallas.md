@@ -16,7 +16,7 @@ format_caption: "The format running without the chemistry it needs"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Dallas, Texas"
+filming_caption: "Dallas · third city, pod chemistry at its weakest"
 premiere_caption: "Netflix · October 2022"
 ---
 

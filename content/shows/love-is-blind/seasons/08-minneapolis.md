@@ -16,7 +16,7 @@ format_caption: "Fourteen episodes including wedding episode and reunion"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Minneapolis, Minnesota"
+filming_caption: "Minneapolis · eighth city, first season to run 14 eps"
 premiere_caption: "Netflix · February 2025"
 ---
 

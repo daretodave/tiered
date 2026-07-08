@@ -16,7 +16,7 @@ format_caption: "The format at its most fully realized in the founding run"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Seattle, Washington"
+filming_caption: "Seattle · fourth city, format's most convincing run"
 premiere_caption: "Netflix · March 2023"
 ---
 

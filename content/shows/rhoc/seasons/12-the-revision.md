@@ -11,7 +11,7 @@ eyebrow: "Aired summer 2017 · Transition era begins, cast searches for its next
 lede: "Without Heather Dubrow, the peak-era social register drops. Lydia McLaughlin returns, Peggy Sulahian joins, and the show begins searching for its next configuration. Genuine chemistry appears in places; the working unit isn't assembled yet."
 pull: "The peak era gives way — the show searching for the cast it's becoming."
 premiere_caption: "Bravo · July 2017"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · transition era begins, cast in flux"
 format_summary: "Social reality"
 format_caption: "Transition-era cast, one return, one new addition"
 cast_size: 6

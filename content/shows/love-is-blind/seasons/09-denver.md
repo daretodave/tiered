@@ -16,7 +16,7 @@ format_caption: "First season with no couple reaching the altar"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Denver, Colorado"
+filming_caption: "Denver · ninth city, the franchise's quietest run"
 premiere_caption: "Netflix · October 2025"
 ---
 

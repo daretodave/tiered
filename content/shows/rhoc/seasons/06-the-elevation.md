@@ -11,7 +11,7 @@ eyebrow: "Aired spring 2011 · Peak era begins, new cast shifts the show's socia
 lede: "Season six is where RHOC changes registers. Heather Dubrow and Peggy Tanous join a cast running in a more aspirational Orange County, and the show's social architecture shifts upward to match. The peak era opens with a cast that has genuine chemistry and competing ambitions."
 pull: "The OC social world steps up in class and ambition — and the show is sharp enough to use both."
 premiere_caption: "Bravo · April 2011"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · peak era begins, register shifts up"
 format_summary: "Social reality"
 format_caption: "Peak-era cast configuration, two new additions"
 cast_size: 8

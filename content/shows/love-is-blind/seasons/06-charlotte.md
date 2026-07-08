@@ -16,7 +16,7 @@ format_caption: "Thirteen episodes including reunion"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Charlotte, North Carolina"
+filming_caption: "Charlotte · sixth city, most uneven pod run yet"
 premiere_caption: "Netflix · February 2024"
 ---
 

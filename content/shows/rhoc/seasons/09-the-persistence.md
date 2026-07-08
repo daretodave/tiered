@@ -11,7 +11,7 @@ eyebrow: "Aired spring 2014 · Peak-era ensemble in its third year together"
 lede: "Season nine runs the peak-era cast with Shannon Beador now integrated into the social architecture. The format is fluent, the chemistry is real, and the cast's accumulated history generates genuine pressure in places. The season leans on patterns it knows well."
 pull: "The peak era running its established dynamics with competence — familiar architecture, honest execution."
 premiere_caption: "Bravo · March 2014"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · peak ensemble's third year together"
 format_summary: "Social reality"
 format_caption: "Peak-era cast, established configuration"
 cast_size: 6

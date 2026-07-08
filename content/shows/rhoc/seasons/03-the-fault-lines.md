@@ -11,7 +11,7 @@ eyebrow: "The cast widens — competing loyalties and a more complex OC social m
 lede: "Season three expands past the Coto de Caza gates and adds cast members who bring competing loyalties and a wider slice of the OC social world. The format is now fluent; the question is whether the expanded cast configuration generates the pressure the founding pair did."
 pull: "The OC social world grows more complicated — more loyalties, more geography, more room for fault lines to form."
 premiere_caption: "Bravo · February 2008"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · cast widens past the founding gates"
 format_summary: "Social reality"
 format_caption: "Further cast expansion, wider social geography"
 cast_size: 7

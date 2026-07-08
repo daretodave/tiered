@@ -11,7 +11,7 @@ eyebrow: "Aired spring 2010 · The founding era closes, cast consolidates"
 lede: "Season five closes the founding era with its longest episode run and a cast settled into its social configuration. Competing loyalties run in parallel across more episodes than the early seasons managed. The Coto de Caza world at its most familiar and sustained."
 pull: "The founding era's final chapter — more episodes, more cast configuration, and a social world about to shift registers entirely."
 premiere_caption: "Bravo · March 2010"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · founding era's longest run, 18 episodes"
 format_summary: "Social reality"
 format_caption: "Consolidated founding-era cast, expanded episode run"
 cast_size: 7

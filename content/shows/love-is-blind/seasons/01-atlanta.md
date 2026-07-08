@@ -16,7 +16,7 @@ format_caption: "The inaugural run — the format finding its shape"
 cast_size: 30
 cast_size_caption: "15 men and 15 women entering the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Atlanta, Georgia"
+filming_caption: "Atlanta · the format invented in real time"
 premiere_caption: "Netflix · February 2020"
 ---
 

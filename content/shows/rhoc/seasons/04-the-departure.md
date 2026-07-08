@@ -11,7 +11,7 @@ eyebrow: "Aired spring 2009 · New cast, Coto de Caza's founding circle fracture
 lede: "Season four marks the moment RHOC steps beyond its founding geography. Alexis Bellino joins a cast in transition as the show trades the tight Coto de Caza world for a wider OC. The format is fluent; the casting is finding its next footing."
 pull: "The founding circle opens up — and the show discovers what it gains and loses when the gates stop being the whole world."
 premiere_caption: "Bravo · February 2009"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · show steps beyond founding geography"
 format_summary: "Social reality"
 format_caption: "Transitional cast, new additions joining founding members"
 cast_size: 7

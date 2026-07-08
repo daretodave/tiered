@@ -16,7 +16,7 @@ format_caption: "A confident, steady run on a settled format"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
-filming_caption: "Houston, Texas"
+filming_caption: "Houston · fifth city, the format in cruise mode"
 premiere_caption: "Netflix · September 2023"
 ---
 

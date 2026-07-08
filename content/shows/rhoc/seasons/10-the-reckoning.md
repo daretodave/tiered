@@ -11,7 +11,7 @@ eyebrow: "Aired summer 2015 · New cast member, sharper confrontations, uneven e
 lede: "Season ten brings a new cast member into a settled group. Shannon Beador's domestic pressure runs as a structural thread. The Meghan-driven confrontations are among the sharper scenes the peak era produced, though not all threads carry equal weight."
 pull: "A new cast axis sharpens some scenes and exposes the unevenness of the rest."
 premiere_caption: "Bravo · June 2015"
-filming_caption: "Orange County, California"
+filming_caption: "Orange County · new cast axis sharpens the season"
 format_summary: "Social reality"
 format_caption: "Peak-era cast, one new addition"
 cast_size: 6
