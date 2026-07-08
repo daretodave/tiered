@@ -248,7 +248,7 @@ tag: The Voice closes — fourteen years of spinning chairs, one final season.
 slot_argument: The series finale framing gave the season weight a standard late-run cycle can't access. Kelsea Ballerini's debut added a new angle in the final chapter. Twenty-eighth slot — ahead of the full-COVID floor.
 community_rank_hint: rank=28 delta=0 sentiment=hold
 
-Season twenty-nine carried the gravity of a final chapter. Kelsea Ballerini's coaching debut gave the blind auditions a new angle while the returning panel of Reba McEntire, Michael Bublé, and Adam Levine provided the continuity a closing season earns. The format ran with the focused energy a series finale generates — coaches and contestants both aware of the occasion. The show closed with the same format integrity it brought to its debut, which is a cleaner exit than most long-running competition series manage. Twenty-eighth slot, just above the format's most constrained cycle.
+A series finale earns its slot on a different test than a mid-run cycle: not what happened, but whether the format still had something to prove when it stopped. Season twenty-nine didn't coast — it kept the coaching chemistry moving and the competitive stakes full right up to the closing episode, resisting the soft fade a show in its last stretch usually settles for once cancellation is certain. That's the rarer outcome; most departing formats spend their final cycle running out the clock. The editorial credit here is for sustained effort at the finish line, not sentiment about the occasion. Twenty-eighth slot — a finale that earned its ending instead of just reaching it.
 
 ## 19. Season 19 — The Bubble
 
