@@ -3,7 +3,7 @@ show: shark-tank
 number: 3
 slug: season-3
 title: "Season 3"
-canonical_position: 5
+canonical_position: 9
 premiere_date: "2012-01-20"
 ep_count: 15
 location: "Culver City, California"

@@ -3,7 +3,7 @@ show: shark-tank
 number: 4
 slug: season-4
 title: "Season 4"
-canonical_position: 4
+canonical_position: 5
 premiere_date: "2012-09-14"
 ep_count: 26
 location: "Culver City, California"
