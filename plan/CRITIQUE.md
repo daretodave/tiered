@@ -1,57 +1,61 @@
 # CRITIQUE
 
-> Last pass: 2026-07-08 at commit a484ee4
-> Pass count: 79
+> Last pass: 2026-07-08 at commit c285e37
+> Pass count: 80
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 79 ran in the cloud loop via Path A2
+> 80 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
-> `/shows/perfect-match`, `/shows/perfect-match/season/season-1`,
-> `/shows`, `/themes/best-comeback-seasons`) and authed (`/`,
-> `/shows/perfect-match/season/season-1?view=community`, `/u/e2e`,
-> `/themes/best-comeback-seasons`) walks ran, desktop + mobile,
-> deliberately targeting Perfect Match — the newest show added to
-> the catalog (2026-07-07), never critiqued before (same strategy
-> as pass 78 targeting Shark Tank). 5 findings filed (0 high, 4
-> medium, 1 low). Zero console errors, zero failed requests, zero
-> mobile overflow on any capture; auth handshake confirmed genuine
+> `/shows/the-voice/season/the-finale`, `/shows/the-voice`,
+> `/shows`, `/themes/best-villain-editing`) and authed (`/`,
+> `/shows/the-voice/season/the-finale?view=community`, `/u/e2e`,
+> `/themes/best-villain-editing`) walks ran, desktop + mobile,
+> deliberately targeting The Voice — the most recently fully
+> drained show (29 seasons through its NBC finale), never
+> critiqued before (same strategy as pass 78 → Shark Tank, pass
+> 79 → Perfect Match). 4 findings filed (0 high, 2 medium, 2
+> low) after re-rating the reader's one HIGH proposal down to
+> MED at self-assess (a factual self-contradiction, not a hard-
+> rule break — same severity class as the pass-79 villa/house
+> row). Zero console errors, zero failed requests, zero mobile
+> overflow on any capture; auth handshake confirmed genuine
 > (`authState: authenticated:cloud`, `@e2e` chrome across
 > header/profile/comment-composer attribution, real member-since
-> date on `/u/e2e`). No spoiler leakage found on any capture. No
-> per-show SVG iconography violations found. One reader-proposed
-> finding (`?view=community` producing no visible UI change on the
-> season-page URL) was verified false and dropped at self-assess:
-> that query param only drives `CanonTabSwitch`/`ShowRanking` on
-> the show page (`src/app/shows/[show]/page.tsx`), not the season
-> page — the reader tested the wrong route. Strongest finding:
-> `src/components/shows/tierLede.ts:15`'s B-tier lede still reads
-> "The B tier we're still working through" — a plural-`we` voice
-> violation the site-wide singular-editor rotation (issues #306 /
-> #381 / #406 / #408 / #411 / #413) never reached because this
-> constant lives in a component none of those closures touched.
-> Filed MED, single-string content fix. Second/third findings are
-> both fresh Perfect Match content gaps: the season body and canon
-> rationale both close on the identical clause "could have played
-> as a cheap reunion special" (the recurring Section-02-vs-03
-> duplication class on freshly-scaffolded single-season shows);
-> and the show's own copy can't agree on "villa" (blurb +
-> filming_caption) vs. "house" (tagline, canon.md, season body,
-> season lede) for where the season is filmed. Fourth finding is a
-> reproducible code bug: `clipToSeoBudget()` in `src/lib/seo.ts`
-> falls back to a raw word-boundary cut when no sentence/clause
-> punctuation falls within its 60%-of-budget window, so Perfect
-> Match S1's meta description truncates mid-clause on "the…" —
-> confirmed by running the function directly against the season's
-> `lede`. Fifth (LOW) is a content-coverage gap: the show's hero
-> stat reads "4 SEASONS AIRED" but only season 1 has been
-> scaffolded/ranked, and there's no in-page "not yet ranked"
-> affordance explaining the gap.
+> date on `/u/e2e`). No spoiler leakage found on any capture (no
+> winner/eliminated/crowned/runner-up keywords surfaced). No
+> per-show SVG iconography violations found — only the shared
+> brand mark + generic vote chevrons appear in page markup. The
+> long-documented `/shows?_rsc=...` Next.js Link-prefetch-abort
+> artifact resurfaced on the authed `/u/e2e` capture and was
+> dropped again per the ~15-pass precedent (passes 6-11, 29-47+).
+> Strongest finding: The Voice's own pages disagree on the show's
+> tenure — the show page's live `{yearsWord}` token renders
+> "fifteen years" while the finale season's static copy says
+> "fourteen-year run" / "fourteenth year," and the show's
+> `status: hiatus` sits alongside a finale season whose own lede
+> narrates a permanent close ("marked the end of The Voice's
+> run," "brought the show to a close") — compare
+> `americas-next-top-model.md`, which pairs its finale season
+> with `status: ended`. Root cause traced: `content-check.ts`'s
+> `YEAR_TENURE_RE` only matches spelled-out tens (twenty through
+> ninety), so teen-number tenure phrases like "fourteen-year" are
+> structurally invisible to the drift gate. Second/third findings
+> are both fresh content-voice gaps: `/themes/best-villain-editing`
+> entry #01 opens with an unintentional "cast was cast" word-tic,
+> and entry #05 closes by echoing the list's own hero-lede thesis
+> almost verbatim (distinct from the already-closed #02/#04 "leans
+> all the way in" echo, issue #462). Fourth is the recurring
+> Section-02-vs-Section-03 duplication class (previously fixed on
+> Bachelor S28 issue #464 and MAFS New York issue #478, currently
+> also Pending unresolved for Perfect Match) now reproduced on The
+> Voice's finale season: the season body and the canon.md
+> rationale render two near-verbatim paragraphs back to back.
 >
-> ───── Pass 78 metadata kept below for history ─────
+> ───── Pass 79 metadata kept below for history ─────
 >
-> Last pass: 2026-07-07 at commit ecc381d
-> Pass count: 78
+> Last pass: 2026-07-08 at commit a484ee4
+> Pass count: 79
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
 > 78 ran in the cloud loop via Path A2
@@ -1653,6 +1657,14 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/the-voice and /shows/the-voice/season/the-finale — the show's own pages disagree on how long it ran, and its `status` field contradicts its own finale season's copy. The show page (`content/shows/the-voice.md`) uses a live `{yearsWord}` token in its `tagline`/`card_tagline` ("The Voice ran the format for {yearsWord} years..."), which currently renders "fifteen years" — but the finale season (`content/shows/the-voice/seasons/29-the-finale.md`) uses static, frozen copy: eyebrow "The Voice closes — the final season of a fourteen-year run" and lede "...the format's fourteenth year on air." A reader visiting both pages in one session gets two different tenure counts for the same show. Compounding it: `content/shows/the-voice.md` sets `status: hiatus` even though the finale season's own lede unambiguously narrates a permanent ending ("marked the end of The Voice's run on NBC," "brought the show to a close") — compare `content/shows/americas-next-top-model.md`, whose analogous series-finale season pairs with `status: ended`. Root cause of why the automated safety net missed the tenure drift: `scripts/content-check.ts`'s `YEAR_TENURE_RE` (`/\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:-\w+)? years\b/gi`) only matches spelled-out tens (twenty through ninety) — teen numbers like "fourteen-year" aren't in the alternation at all, so this drift class is structurally invisible to the gate, and will keep widening every year the live token stays on a show whose own season copy says it already ended. Fix: set `content/shows/the-voice.md` `status` to `ended` (matching the ANTM precedent) and replace the live `{yearsWord}` tagline/card_tagline with literal, frozen tenure copy anchored to the finale's air date ("fourteen years," matching the finale's own copy); separately widen `YEAR_TENURE_RE` to also match teen numbers (ten through nineteen) so this class is caught automatically going forward. Content + one script-regex edit. Spoiler discipline P0 intact (the fix only touches tenure-count and status framing, not outcome). (URL: /shows/the-voice, /shows/the-voice/season/the-finale, source: critique-pass-80)
+
+- [ ] [MED] [authed] /shows/the-voice/season/the-finale — the season body (Section 02, "The shape of the season") and the canon.md rationale (Section 03, "Where it sits in the canon") render two near-verbatim paragraphs back to back, the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (issue #464) and MAFS New York (issue #478) and currently also Pending unresolved for Perfect Match (row above/below), now reproduced on The Voice's freshly-drained finale season. Section 02 body (`content/shows/the-voice/seasons/29-the-finale.md`): "Season twenty-nine carried the gravity of a final chapter. Kelsea Ballerini's coaching debut gave the blind auditions a new angle while Reba McEntire, Michael Bublé, and Adam Levine provided the continuity a closing season earns. The format ran with the focused energy a series finale generates — coaches and contestants both aware of the occasion. The show closed with the same format integrity it brought to its debut, which is a cleaner exit than most long-running competition series manage." Section 03 (`content/shows/the-voice/canon.md`, the-finale entry, ~line 251) is identical except it inserts "the returning panel of" before the coach names and appends "Twenty-eighth slot, just above the format's most constrained cycle." A reader scrolling from Section 02 to Section 03 hits the same paragraph twice. Fix: rewrite the canon.md rationale body to argue why the series-finale framing itself earns slot #28, rather than restating the season body's recap paragraph verbatim. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/the-voice/season/the-finale, source: critique-pass-80)
+
+- [ ] [LOW] [anon] /themes/best-villain-editing — entry #01's (Survivor S20, Heroes vs. Villains) opening sentence reads "Half the cast was cast as villains on purpose, reputations already loaded in." The repeated "cast...cast" in one clause reads as an unintentional word-tic rather than the plain-spoken, edited voice the rest of the list carries. Fix: rephrase to avoid the repetition, e.g. "Half the tribe walked in already labeled villains, reputations loaded in before the first vote." Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-villain-editing, source: critique-pass-80)
+
+- [ ] [LOW] [authed] /themes/best-villain-editing — entry #05 (RuPaul's Drag Race S11) closes its editorial body by echoing the page's own hero lede thesis almost verbatim instead of making an independent per-season argument, a variant of the cross-entry verbatim-echo defect class already drained twice on this exact list (issue #462, entries #02/#04). Hero lede: "...they're the seasons where the antagonist read is loud, sustained, and shaped the narrative everyone else had to play inside." Entry #05 body: "The antagonist reads run loud and sustained, and the season's whole shape is the argument the rest of the cast had to play inside." Shared construction: "loud [and/,] sustained" + "[everyone else / the rest of the cast] had to play inside." Fix: rewrite entry #05's closing clause to anchor on something specific to RPDR S11 (e.g. the workroom-vs-sewing-machine framing already in the entry) rather than restating the list's own opening thesis sentence. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-villain-editing, source: critique-pass-80)
 
 - [ ] [MED] [anon+authed] /shows/perfect-match/season/season-1 (and /shows/perfect-match) — the season body and the canon rationale both close on the identical clause "could have played as a cheap reunion special," the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (issue #464) and MAFS New York (issue #478) but not yet applied to this freshly-scaffolded show. `content/shows/perfect-match/seasons/01-season-1.md` body: "...could have played as a cheap reunion special. Instead it treats a cast..."; `content/shows/perfect-match/canon.md`: "...into one house and rematching them from scratch could have played as a cheap reunion special." Same root cause as the prior closures: every freshly-scaffolded show enters the catalog with one canon.md entry, so the season body and canon rationale — written in the same drafting pass — tend to converge on the same framing sentence unless deliberately varied. Fix: rewrite one of the two closing clauses (recommend the canon.md rationale, since the season body's version reads more naturally as the recap-closer) to argue a different angle — e.g. why the crossover premise earns its canon slot rather than restating that it could have flopped. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/perfect-match/season/season-1, /shows/perfect-match, source: critique-pass-79)
 
