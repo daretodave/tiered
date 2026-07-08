@@ -13,7 +13,7 @@ pull: "The western Mediterranean gave the show a new register; the crew had the 
 format_summary: "Sailing yacht · Balearic Islands"
 format_caption: "Charter sailing yacht, Menorca waters"
 host_caption: "{seasonOrdinalWord} season with Captain Glenn Shephard at the helm"
-filming_caption: "Menorca, Spain"
+filming_caption: "Menorca, Spain · first Balearic Islands shoot"
 premiere_caption: "Bravo · March 2022"
 ---
 

@@ -13,7 +13,7 @@ pull: "The format learning what it was — sharper, more assured, and better at 
 format_summary: "Charter yacht · BVI"
 format_caption: "Superyacht charter, British Virgin Islands waters"
 host_caption: "{seasonOrdinalWord} season with Captain Lee Rosbach at the helm"
-filming_caption: "British Virgin Islands, Caribbean"
+filming_caption: "British Virgin Islands, Caribbean · format's second-season consolidation"
 premiere_caption: "Bravo · 2014"
 ---
 

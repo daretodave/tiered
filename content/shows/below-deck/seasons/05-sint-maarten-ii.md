@@ -13,7 +13,7 @@ pull: "The second Sint Maarten run showed the format had found its identity and 
 format_summary: "Charter yacht · Caribbean return"
 format_caption: "Superyacht charter, Sint Maarten — second visit"
 host_caption: "{seasonOrdinalWord} season with Captain Lee Rosbach at the helm"
-filming_caption: "Sint Maarten, Caribbean"
+filming_caption: "Sint Maarten, Caribbean · second visit, all-new crew"
 premiere_caption: "Bravo · 2017"
 ---
 

@@ -13,7 +13,7 @@ pull: "Rough at the edges, essential to everything that followed — the season 
 format_summary: "Charter yacht · Caribbean"
 format_caption: "Superyacht charter, Sint Maarten waters"
 host_caption: "{seasonOrdinalWord} season with Captain Lee Rosbach at the helm"
-filming_caption: "Sint Maarten, Caribbean"
+filming_caption: "Sint Maarten, Caribbean · the franchise's origin shoot"
 premiere_caption: "Bravo · July 2013"
 ---
 

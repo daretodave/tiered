@@ -14,7 +14,7 @@ pull: "Island-hopping across three Caribbean destinations opened up the format i
 format_summary: "Superyacht charter · multi-island"
 format_caption: "Superyacht charter, Sint Maarten · Anguilla · St. Barths"
 host_caption: "Captain Kerry Titheradge's second season at the helm."
-filming_caption: "Sint Maarten, Anguilla, St. Barths"
+filming_caption: "Sint Maarten, Anguilla, St. Barths · first multi-island charter route"
 premiere_caption: "Bravo · 2025"
 ---
 

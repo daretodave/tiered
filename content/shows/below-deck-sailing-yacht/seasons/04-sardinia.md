@@ -13,7 +13,7 @@ pull: "The most polished season of five, and the clearest case for what the sail
 format_summary: "Sailing yacht · Sardinia"
 format_caption: "Charter sailing yacht, Sardinian waters"
 host_caption: "{seasonOrdinalWord} season with Captain Glenn Shephard at the helm"
-filming_caption: "Sardinia, Italy"
+filming_caption: "Sardinia, Italy · most technically demanding coastline yet"
 premiere_caption: "Bravo · February 2023"
 ---
 

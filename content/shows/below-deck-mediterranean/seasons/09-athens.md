@@ -13,7 +13,7 @@ pull: "A genuine franchise first in Athens — the location earns its place; the
 format_summary: "Charter yacht · Aegean Sea"
 format_caption: "Superyacht charter, Athens and Greek coastal waters"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Athens, Greece"
+filming_caption: "Athens, Greece · franchise-first Greek capital shoot"
 premiere_caption: "Bravo · June 2024"
 ---
 

@@ -13,7 +13,7 @@ pull: "A complete season in a new register — the busiest setting of the run, a
 format_summary: "Sailing yacht · Ibiza"
 format_caption: "Charter sailing yacht, Ibiza waters"
 host_caption: "{seasonOrdinalWord} season with Captain Glenn Shephard at the helm"
-filming_caption: "Ibiza, Spain"
+filming_caption: "Ibiza, Spain · final charter before the hiatus"
 premiere_caption: "Bravo · September 2024"
 ---
 

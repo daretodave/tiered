@@ -14,7 +14,7 @@ format_caption: "the series' only season filmed overseas"
 cast_size: 7
 cast_size_caption: "The same seven roommates from Season 3, no additions or departures"
 premiere_caption: "MTV · the show's only international season"
-filming_caption: "Florence, Italy"
+filming_caption: "Florence, Italy · the series' only overseas shoot"
 episodes_caption: "12 episodes, shot entirely overseas"
 ---
 

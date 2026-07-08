@@ -13,7 +13,7 @@ pull: "The season where the format stopped proving itself and started delivering
 format_summary: "Charter yacht · Bahamas"
 format_caption: "Superyacht charter, Bahamian waters"
 host_caption: "{seasonOrdinalWord} season with Captain Lee Rosbach at the helm"
-filming_caption: "The Bahamas"
+filming_caption: "The Bahamas · the format at full capacity"
 premiere_caption: "Bravo · 2015"
 ---
 

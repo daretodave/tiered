@@ -13,7 +13,7 @@ pull: "The season that built the architecture — rough at the edges, essential 
 format_summary: "Sailing yacht · Ionian Islands"
 format_caption: "Charter sailing yacht, Greek Ionian waters"
 host_caption: "{seasonOrdinalWord} season with Captain Glenn Shephard at the helm"
-filming_caption: "Ionian Islands, Greece"
+filming_caption: "Ionian Islands, Greece · sailing-yacht format's origin shoot"
 premiere_caption: "Bravo · February 2020"
 ---
 

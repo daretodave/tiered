@@ -15,7 +15,7 @@ format_caption: "Original five-woman cast"
 cast_size: 5
 cast_size_caption: "Original Housewives cast"
 premiere_caption: "Bravo · March 2008"
-filming_caption: "New York City"
+filming_caption: "New York City · the original Housewives shoot"
 ---
 
 Five women, one city, no handbook. The original cast — Bethenny Frankel, Ramona Singer, Luann de Lesseps, Jill Zarin, and Alex McCord — established what a Housewives cast looks like when it actually has something to say. Manhattan is the sixth character: the social circuit, the dinners, the obligations. The show invents its own format here, season by season, scene by scene. The origin document.

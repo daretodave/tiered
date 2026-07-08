@@ -14,7 +14,7 @@ format_caption: "the ensemble relocated to South Beach"
 cast_size: 7
 cast_size_caption: "Seven roommates carry most of the season after a mid-summer departure"
 premiere_caption: "MTV · full-cast relocation season"
-filming_caption: "South Beach, Miami Beach, Florida"
+filming_caption: "South Beach, Miami Beach, Florida · first shore-house relocation shoot"
 episodes_caption: "13 episodes, the show's longest run yet"
 ---
 

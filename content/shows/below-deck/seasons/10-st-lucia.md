@@ -14,7 +14,7 @@ pull: "The captain transition mid-season changed the format's usual rhythm in wa
 format_summary: "Superyacht charter · dual captains"
 format_caption: "Superyacht charter, St. Lucia — mid-season captain change"
 host_caption: "Lee Rosbach opens and closes; Sandy Yawn commands the bulk of the season."
-filming_caption: "St. Lucia, Caribbean"
+filming_caption: "St. Lucia, Caribbean · mid-season captain-change shoot"
 premiere_caption: "Bravo · 2022"
 ---
 

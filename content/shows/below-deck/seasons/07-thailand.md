@@ -14,7 +14,7 @@ pull: "Thailand pushed the franchise beyond its Caribbean frame and proved the f
 format_summary: "Superyacht charter · Southeast Asia"
 format_caption: "Superyacht charter, Phuket waters"
 host_caption: "Captain Lee Rosbach's {seasonOrdinal} season at the helm"
-filming_caption: "Phuket, Thailand"
+filming_caption: "Phuket, Thailand · franchise's first Southeast Asia shoot"
 premiere_caption: "Bravo · 2019"
 ---
 

@@ -13,7 +13,7 @@ pull: "The season where the sailing-yacht format proved what it could do with th
 format_summary: "Sailing yacht · Dalmatian Coast"
 format_caption: "Charter sailing yacht, Croatian Adriatic"
 host_caption: "{seasonOrdinalWord} season with Captain Glenn Shephard at the helm"
-filming_caption: "Dalmatian Coast, Croatia"
+filming_caption: "Dalmatian Coast, Croatia · the format's creative peak"
 premiere_caption: "Bravo · February 2021"
 ---
 

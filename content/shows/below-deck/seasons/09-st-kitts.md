@@ -14,7 +14,7 @@ pull: "The shortest Lee-era season — focused, but without the room to fully st
 format_summary: "Superyacht charter · Caribbean"
 format_caption: "Superyacht charter, St. Kitts waters"
 host_caption: "Captain Lee Rosbach's {seasonOrdinal} season at the helm"
-filming_caption: "St. Kitts, Caribbean"
+filming_caption: "St. Kitts, Caribbean · shortest Lee-era episode order"
 premiere_caption: "Bravo · 2021"
 ---
 

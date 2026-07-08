@@ -14,7 +14,7 @@ pull: "A format reset with a new captain, a new voice, and a Caribbean island th
 format_summary: "Superyacht charter · new captain era"
 format_caption: "Superyacht charter, Grenada — first Titheradge season"
 host_caption: "Captain Kerry Titheradge's first season at the helm."
-filming_caption: "Grenada, Caribbean"
+filming_caption: "Grenada, Caribbean · Titheradge's first season at the helm"
 premiere_caption: "Bravo · 2024"
 ---
 

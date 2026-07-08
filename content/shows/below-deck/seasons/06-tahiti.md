@@ -14,7 +14,7 @@ pull: "The Polynesian setting stretched the show's visual register in a way no C
 format_summary: "Superyacht charter · French Polynesia"
 format_caption: "Superyacht charter, Tahitian waters"
 host_caption: "Captain Lee Rosbach's {seasonOrdinal} season at the helm"
-filming_caption: "French Polynesia"
+filming_caption: "French Polynesia · franchise's most striking backdrop yet"
 premiere_caption: "Bravo · 2018"
 ---
 
