@@ -55,6 +55,20 @@ describe('clipToSeoBudget', () => {
     expect(clipToSeoBudget(lede)).not.toContain(',…')
   })
 
+  it('prefers an em dash cut over a later comma inside the list it introduces', () => {
+    // critique pass 68: jersey-shore S1's real lede — the last comma in
+    // the window falls inside the em-dash-introduced list ("gym,
+    // tanning, and laundry…"), which used to win over the em dash
+    // itself and cut the snippet mid-list ("…own energy — gym…").
+    const lede =
+      "Eight roommates share one shore house near the Seaside Heights boardwalk for a single summer, and MTV builds its format around the group's own energy — gym, tanning, and laundry become the season's unofficial refrain almost immediately."
+    const result = clipToSeoBudget(lede)
+    expect(result).toBe(
+      "Eight roommates share one shore house near the Seaside Heights boardwalk for a single summer, and MTV builds its format around the group's own energy…",
+    )
+    expect(result).not.toMatch(/gym…$/)
+  })
+
   it('trims a trailing stop word off the word-boundary fallback cut', () => {
     // critique pass 79: Perfect Match S1's real lede — the only comma
     // falls before minCut, so the clause-boundary branch never fires

@@ -55,6 +55,15 @@ export function clipToSeoBudget(text: string, budget = 159): string {
   for (const mark of [',', ';', ':', '—']) {
     clauseEnd = Math.max(clauseEnd, window.lastIndexOf(mark))
   }
+  // critique pass 68: an em dash reads as a stronger clause boundary
+  // than a comma/semicolon/colon that only appears because it happens
+  // to sit later in the window (e.g. the first comma inside a list the
+  // em dash introduces) — prefer the em dash cut in that case instead
+  // of stopping mid-list.
+  const emDashEnd = window.lastIndexOf('—')
+  if (emDashEnd >= minCut && clauseEnd > emDashEnd) {
+    clauseEnd = emDashEnd
+  }
   if (clauseEnd >= minCut) {
     return `${window.slice(0, clauseEnd).replace(/[\s,;:—-]+$/, '')}…`
   }
