@@ -138,15 +138,17 @@ tag: The guest lineup gets louder — the classic six hold steady while the extr
 slot_argument: Nothing about the format itself moves in season eleven, but the guest-shark rotation reaches its highest-profile run yet, mixing familiar recurring guests with one-off names from well outside the usual entrepreneur circuit.
 community_rank_hint: rank=7 delta=0 sentiment=hold
 
-Season eleven keeps the classic six exactly as they've been for
-years, but the guest-shark rotation reaches its highest-profile
-run yet — familiar recurring guests alongside one-off names from
-well outside the usual entrepreneur-and-investor circuit.
-Twenty-four episodes lean on that contrast: a steady, unbothered
-core panel and a guest chair pulling louder names than any season
-before it. Nothing about the format itself changes, which is
-exactly why it slots into the canon's middle — a fun wrinkle,
-not a real swing.
+By season eleven, the guest-chair experiment has already answered
+its own question — season eight settled whether the extra seat
+was a fixture worth keeping, not this one. What season eleven
+adds instead is star wattage: the rotation reaches its
+highest-profile run yet, pulling names from well outside the
+usual entrepreneur-and-investor circuit alongside its
+now-familiar recurring guests. That's a real accomplishment, but
+a different and smaller one than proving the mechanism itself
+works, which is why season eleven sits just below season eight's
+structural maturity while still clearing season seven's tentative
+debut.
 
 ## 7. Season 7
 
