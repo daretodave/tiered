@@ -11,7 +11,7 @@ featured: false
 related:
   - best-premieres
   - best-newbie-casts
-description: "Reality competitions get rebooted constantly. These are the season-zeros and deliberate resets that earned their reputation — the rough drafts and redraws the format kept."
+description: "Reality competitions get rebooted constantly. These are the season-zeros and resets that earned their reputation — the rough drafts the format kept."
 entries:
   - show: survivor
     season: 1
