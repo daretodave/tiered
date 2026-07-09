@@ -34,8 +34,8 @@ watch_list:
 All-Stars. The franchise's first returnees event brings
 eighteen chefs back from the first seven seasons to cook in
 New York. Padma Lakshmi hosts, Tom Colicchio runs the judge's
-table, Gail Simmons is in the critic seat. The cast plays
-with the room's awareness that the audience knows them, the
-challenges run harder, and the season earns its seventeen-
-episode runway. The returnee event that proved Top Chef had
-a deep enough bench to argue with itself.
+table, Gail Simmons is in the critic seat. The cast plays with
+the room's awareness that the audience knows them, the
+challenges run harder, and the season earns its
+seventeen-episode runway. The returnee event that proved Top
+Chef had a deep enough bench to argue with itself.
