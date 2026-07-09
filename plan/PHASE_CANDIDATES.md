@@ -751,6 +751,51 @@ detection mechanic and field scope — see pass-48 reinforcement note on #25 abo
 `/oversight` may bundle both into one "content de-duplication invariants" phase or
 promote independently; this candidate has no dependency on #25 shipping first.
 
+### 29. Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
+
+**Score:** 5.0 (impact: 6 — a live stability risk for every future march tick that
+reads these files, not just a nice-to-have; ease: 8 — mechanical move of already-
+`[x]`-closed rows to a new archive file, git history keeps everything regardless,
+no schema or gate-logic change)
+**Source pass:** digest 2026-07-09
+**Filed:** 2026-07-09
+**Why:** A cloud march tick failed 2026-07-08T22:04Z (run 28978947705) with `SDK
+execution error: Prompt is too long` — not a code regression, self-healed on the
+next tick, but the timing lines up with `plan/CRITIQUE.md` having grown to **2,967
+lines / 1.5MB / ~98K tokens on disk** (`plan/AUDIT.md` is 388KB on top of that).
+Confirmed directly this digest pass: a plain `Read` of `plan/CRITIQUE.md` fails
+outright with "File content (98153 tokens) exceeds maximum allowed tokens (25000)"
+— any skill step that needs the whole file in context (not just a targeted grep)
+is already past the single-call read ceiling, and the overall prompt-length ceiling
+is the next wall behind it as the file keeps growing. 360 of the file's 385
+findings are already `[x]` closed — dead weight kept only because nothing in
+`skills/critique.md` or the file's own header says closed rows should ever be
+pruned or archived, so the ledger has grown strictly append-only since pass 1
+(now at pass 82). This is a structural risk that scales with the loop's own
+success: every finding-closing tick adds to the file, never removes from it, and
+the content saga (bearings Rule 1/2) guarantees critique passes keep finding new
+things to file. Filed as a candidate rather than edited directly per the meta-loop
+rail (`skills/digest.md` §5 "never edit gates, cadences, ceilings, or rules
+directly").
+**Scope sketch:**
+- Add `plan/CRITIQUE_ARCHIVE.md` (and optionally `plan/AUDIT_ARCHIVE.md`) as
+  append-only destinations.
+- Define an age or pass-count threshold (e.g. closed rows more than ~20 passes or
+  ~30 days old) past which a maintenance step — either a dedicated `/archive`
+  skill tick or a step folded into `/critique`'s own close-out — moves `[x]` rows
+  verbatim from the live file to the archive file, preserving exact text (git
+  history + the archive file both retain full audit trail).
+- Update `skills/critique.md` and `skills/iterate.md` (wherever they scan
+  CRITIQUE.md for open findings) to note the archive file exists but is out of
+  scope for normal reads — only the live file's open + recently-closed rows need
+  to be in context for day-to-day ticks.
+- No change to scoring, gating, or cadence — this is pure file-size hygiene, not
+  a behavior change to what gets filed or how findings are triaged.
+**Estimated phases:** 1 (small — one archive-move script or manual pass, plus a
+two-line doc update in the skill files that reference these ledgers).
+**Conflicts:** none. Independent of candidates #26/#28; can ship in isolation or
+bundled with either.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
