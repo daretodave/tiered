@@ -116,6 +116,34 @@ describe('<VoteRowHead>', () => {
     expect(head.getAttribute('data-vote-head-state')).toBe('anon')
   })
 
+  it('seeds signed-in-no-vote (not anon) when initialSignedIn is true, before the fetch resolves', () => {
+    getBody = { ok: true, value: 0, count: 0, signedIn: true }
+    render(
+      <VoteRowHead targetType="season" targetId="survivor:20" initialSignedIn />,
+    )
+    const head = screen.getByTestId('vote-row-head')
+    expect(head.getAttribute('data-vote-head-state')).toBe('signed-in-no-vote')
+    expect(head).toHaveTextContent('Your vote')
+    expect(head).toHaveTextContent('cast vote')
+  })
+
+  it('reconciles the initialSignedIn seed to signed-in-with-vote once the fetch resolves a cast vote', async () => {
+    getBody = { ok: true, value: 1, count: 7, signedIn: true }
+    render(
+      <VoteRowHead targetType="season" targetId="survivor:20" initialSignedIn />,
+    )
+    await flushAsync()
+    const head = screen.getByTestId('vote-row-head')
+    expect(head.getAttribute('data-vote-head-state')).toBe('signed-in-with-vote')
+    expect(head).toHaveTextContent('change within 72h')
+  })
+
+  it('still renders the anon default when initialSignedIn is omitted (unauthed / cached routes unaffected)', () => {
+    render(<VoteRowHead targetType="season" targetId="survivor:20" />)
+    const head = screen.getByTestId('vote-row-head')
+    expect(head.getAttribute('data-vote-head-state')).toBe('anon')
+  })
+
   it('passes the correct query params to /api/vote', () => {
     render(<VoteRowHead targetType="comment" targetId="survivor:20:abc" />)
     expect(fetchMock).toHaveBeenCalledTimes(1)

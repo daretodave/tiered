@@ -37,6 +37,13 @@ type VotePairProps = {
   // is aria-only — it names what's being voted on (e.g. "Jersey
   // Shore Season 1") without touching the rendered caption.
   subject?: string
+  // Critique pass-84 HIGH: on non-cached routes the page already
+  // has the server-resolved auth state (the sibling Header read
+  // it first in the same response) — seed `signedIn` from it so a
+  // signed-in viewer never sees the anon shell for the state pill,
+  // instead of defaulting false and waiting on the /api/vote
+  // round-trip to flip it.
+  initialSignedIn?: boolean
 }
 
 type Action =
@@ -74,6 +81,7 @@ export function VotePair({
   label = 'votes so far',
   labelSingular = 'vote so far',
   subject,
+  initialSignedIn,
 }: VotePairProps) {
   const [state, dispatch] = useReducer(reducer, { initialCount }, initialState)
   const reduced = useRef(false)
@@ -87,7 +95,7 @@ export function VotePair({
   // pattern. `signedIn` is sourced from /api/vote so a single
   // round-trip seeds both the vote read-back and the pill — no
   // /api/auth/me piggyback needed.
-  const [signedIn, setSignedIn] = useState(false)
+  const [signedIn, setSignedIn] = useState(initialSignedIn ?? false)
 
   useEffect(() => {
     reduced.current =

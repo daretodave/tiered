@@ -99,6 +99,28 @@ test.describe('comment read — authed author sees own held comment', () => {
     await expect(page.getByTestId('site-header-user-trigger')).toBeVisible()
     await expect(page.getByTestId('site-header-signin-link')).toHaveCount(0)
   })
+
+  test('raw SSR HTML already seeds the real composer — no sign-in-stub flash for an authed viewer (critique pass-84 HIGH)', async ({
+    context,
+  }) => {
+    // Same class of bug as vote-state-pill's raw-HTML test: Playwright's
+    // `getByTestId` assertions auto-wait past hydration, so they never
+    // caught the anon-shell flash critique pass-84 found on the raw
+    // per-request response body. `context.request` shares this
+    // context's authed cookie jar.
+    const res = await context.request.get(SEASON_URL)
+    expect(res.ok()).toBe(true)
+    const html = await res.text()
+
+    expect(html).toContain('data-testid="site-header"')
+    expect(html).toMatch(/data-signed-in="true"/)
+
+    // The sign-in stub anchor must never appear for an authed viewer's
+    // raw SSR payload; the real composer's closed-state affordance
+    // (with the "as @handle" attribution) must.
+    expect(html).not.toContain('data-testid="comment-stub-link"')
+    expect(html).toContain('data-testid="comment-stub-as"')
+  })
 })
 
 test.describe('comment read — public never sees pending', () => {

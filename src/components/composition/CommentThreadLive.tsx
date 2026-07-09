@@ -11,6 +11,13 @@ type CommentThreadLiveProps = {
   targetType: 'season' | 'comment'
   targetId: string
   signInHref: string
+  // Critique pass-84 HIGH: on non-cached routes the page already
+  // has the server-resolved auth state (the sibling Header read it
+  // first in the same response) — seed the composer swap from it so
+  // a signed-in viewer never sees the sign-in stub, instead of
+  // defaulting to anon and waiting on the /api/comments round-trip.
+  initialSignedIn?: boolean
+  initialHandle?: string | null
 }
 
 type FetchState = {
@@ -23,9 +30,15 @@ type FetchState = {
 
 /**
  * CommentThreadLive — the client read path for the season thread
- * (phase 36). Mirrors the VotePair read-back pattern: the season
- * page is SSG/ISR, so the thread + the signed-in/out input choice
- * are resolved client-side from `GET /api/comments`.
+ * (phase 36). Mirrors the VotePair read-back pattern: the thread
+ * body always needs a client fetch (it's not in the initial page
+ * payload), so it's resolved client-side from `GET /api/comments`.
+ * The season route is actually dynamically rendered per-request
+ * (the shared Header's session read forces it), so `initialSignedIn`
+ * / `initialHandle` let the page seed the composer swap from the
+ * auth state it already resolved server-side — critique pass-84
+ * HIGH found the anon-default here otherwise flashed the sign-in
+ * stub at a signed-in viewer for the SSR paint.
  *
  * On mount it fetches the thread; the response also tells us
  * whether the viewer is signed in, so the input swaps to the real
@@ -38,11 +51,13 @@ export function CommentThreadLive({
   targetType,
   targetId,
   signInHref,
+  initialSignedIn,
+  initialHandle,
 }: CommentThreadLiveProps) {
   const [state, setState] = useState<FetchState>({
     loaded: false,
-    signedIn: false,
-    handle: null,
+    signedIn: initialSignedIn ?? false,
+    handle: initialHandle ?? null,
     count: 0,
     comments: [],
   })

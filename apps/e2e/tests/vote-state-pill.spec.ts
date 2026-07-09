@@ -144,6 +144,35 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
     }
   })
 
+  test('raw SSR HTML already reflects signed-in state — no anon-shell flash for an authed viewer (critique pass-84 HIGH)', async ({
+    context,
+  }) => {
+    // `getByTestId(...)` assertions elsewhere in this spec auto-wait
+    // and so only ever observe the post-hydration DOM — they would
+    // never catch the bug critique pass-84 found: the server-
+    // rendered HTML resolving the header's signed-in state
+    // correctly while VoteRowHead/VotePair rendered the anon shell
+    // in the very same response, repaired only after client JS
+    // mounted. `context.request` shares this context's authed
+    // cookie jar, so this reads the raw response body with no
+    // browser JS involved.
+    const res = await context.request.get(SEASON_URL)
+    expect(res.ok()).toBe(true)
+    const html = await res.text()
+
+    expect(html).toContain('data-testid="site-header"')
+    expect(html).toMatch(/data-signed-in="true"/)
+
+    // The page can't know the viewer's vote value without a DB read,
+    // but it does know signedIn — so the SSR payload always seeds
+    // "signed-in-no-vote", never "anon", for an authed viewer. The
+    // /api/vote client read-back may still upgrade it to
+    // "signed-in-with-vote" post-hydration if they'd already voted.
+    expect(html).not.toContain('data-vote-head-state="anon"')
+    expect(html).toContain('data-vote-head-state="signed-in-no-vote"')
+    expect(html).toContain('data-testid="vote-pair-stack" data-signed-in="true"')
+  })
+
   test('clicking up flips the pill across the three-state triad', async ({
     page,
   }) => {

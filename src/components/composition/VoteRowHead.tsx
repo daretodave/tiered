@@ -27,10 +27,22 @@ import { useEffect, useState } from 'react'
 // season page are unauthenticated, and the same useState default
 // keeps the initial client render structurally identical to SSR
 // (no hydration mismatch).
+//
+// Critique pass-84 HIGH: on non-cached routes the server already
+// knows signed-in state (the sibling `Header` resolved it two
+// hundred lines earlier in the same response) — seed the initial
+// state from that instead of throwing it away for a client
+// round-trip. `initialSignedIn` is the only thing the page can
+// know synchronously (not the vote value, which still needs the
+// `/api/vote` read-back), so a signed-in viewer starts on
+// "cast vote" and reconciles to "change within 72h" on mount if
+// they'd already voted — both are signed-in copy, so there's no
+// wrong-state flash, just a same-state refinement.
 
 type VoteRowHeadProps = {
   targetType: 'season' | 'comment'
   targetId: string
+  initialSignedIn?: boolean
 }
 
 type VoteHeadState = 'anon' | 'signed-in-no-vote' | 'signed-in-with-vote'
@@ -41,8 +53,10 @@ const COPY: Record<VoteHeadState, { title: string; meta: string }> = {
   'signed-in-with-vote': { title: 'Your vote', meta: 'change within 72h' },
 }
 
-export function VoteRowHead({ targetType, targetId }: VoteRowHeadProps) {
-  const [state, setState] = useState<VoteHeadState>('anon')
+export function VoteRowHead({ targetType, targetId, initialSignedIn }: VoteRowHeadProps) {
+  const [state, setState] = useState<VoteHeadState>(
+    initialSignedIn ? 'signed-in-no-vote' : 'anon',
+  )
 
   useEffect(() => {
     let cancelled = false

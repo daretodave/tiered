@@ -14,6 +14,39 @@ function stubFetch(payload: unknown) {
 }
 
 describe('<CommentThreadLive>', () => {
+  it('seeds the real input from initialSignedIn/initialHandle before the /api/comments fetch resolves (critique pass-84 HIGH)', () => {
+    stubFetch({ ok: true, signedIn: true, handle: 'e2e', count: 0, comments: [] })
+    render(
+      <CommentThreadLive
+        targetType="season"
+        targetId="survivor:20"
+        signInHref="/sign-in"
+        initialSignedIn
+        initialHandle="e2e"
+      />,
+    )
+    // Synchronous — before the mocked fetch's promise resolves, the
+    // composer must already read from the seeded props, not flash
+    // the sign-in stub first.
+    expect(screen.getByTestId('comment-stub-as')).toHaveTextContent('as @e2e')
+    expect(screen.queryByTestId('comment-stub-link')).toBeNull()
+  })
+
+  it('still renders the sign-in stub synchronously when initialSignedIn is omitted (unauthed / cached routes unaffected)', () => {
+    stubFetch({ ok: true, signedIn: false, count: 0, comments: [] })
+    render(
+      <CommentThreadLive
+        targetType="season"
+        targetId="survivor:20"
+        signInHref="/sign-in?return=/x"
+      />,
+    )
+    expect(screen.getByTestId('comment-stub-link')).toHaveAttribute(
+      'href',
+      '/sign-in?return=/x',
+    )
+  })
+
   it('renders published comments and the real input when signed in', async () => {
     stubFetch({
       ok: true,

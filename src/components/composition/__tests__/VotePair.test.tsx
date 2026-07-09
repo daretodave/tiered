@@ -417,6 +417,24 @@ describe('<VotePair>', () => {
       ).toBe('false')
     })
 
+    it('seeds the state pill from initialSignedIn before the /api/vote fetch resolves (critique pass-84 HIGH)', () => {
+      getBody = { ok: true, value: 0, count: 0, signedIn: true }
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          initialSignedIn
+        />,
+      )
+      expect(
+        screen.getByTestId('vote-pair-stack').getAttribute('data-signed-in'),
+      ).toBe('true')
+      expect(screen.getByTestId('vote-state-cap').textContent).toBe(
+        "you haven't voted yet",
+      )
+    })
+
     it('renders "you haven\'t voted yet" for a signed-in viewer with value 0', async () => {
       getBody = { ok: true, value: 0, count: 7, signedIn: true }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
