@@ -1,5 +1,31 @@
 # CRITIQUE
 
+> Last pass: 2026-07-09 at commit 6f7f385
+> Pass count: 83
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 83 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/married-at-first-sight/season/boston`, `/shows`,
+> `/themes/firsts`, `/themes`) and authed (`/`,
+> `/shows/married-at-first-sight/season/boston`, `/sign-in`,
+> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`) walks
+> ran, desktop + mobile, deliberately targeting Married at First
+> Sight's freshly-drained S2-S6 tail. The anon pass surfaced one
+> genuine finding — Boston (S6)'s FORMAT stat tile calls its
+> expert swap the "second consecutive panel change," but the
+> season's own lede/body and the intervening Chicago (S5) season
+> (stable panel) contradict "consecutive." The authed pass found
+> zero new defects — auth handshake genuine (`@e2e` chrome,
+> `/sign-in` redirects a signed-in user to `/`, `/u/e2e` renders
+> matching identity, no spoiler leakage, no held-comment leakage).
+> Zero console errors, zero failed requests, zero mobile overflow
+> on any capture across both passes. No per-show SVG iconography
+> violations found.
+>
+> ───── Pass 82 metadata kept below for history ─────
+>
 > Last pass: 2026-07-09 at commit 613fc9b
 > Pass count: 82
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1733,6 +1759,8 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/married-at-first-sight/season/boston — the FORMAT stat tile caption calls Boston's expert swap the "Second consecutive panel change," but the season's own lede and body, plus the neighboring Chicago season's copy, contradict "consecutive." `content/shows/married-at-first-sight/seasons/06-boston.md` lede: "...for Rachel DeAlto — the second panel change in three seasons." Body: "...the panel's second shakeup in as many years." Neither says consecutive, and for good reason: aired order is New York, New York II, Atlanta, Miami (panel change #1: DeAlto/Roberson join), Chicago (no change — `05-chicago.md` lede: "...with a settled panel for three new Chicago couples"), Boston (panel change #2: Griffin replaces DeAlto). Chicago sits between the two panel-change seasons with a stable panel, so Boston's change is not consecutive to Miami's — a full season intervened. A reader who reads the stat tile alongside the body paragraph two inches below it, or who clicks back to the adjacent Chicago season, hits a factual disagreement on this page's own numbers. Fix: drop "consecutive" from `format_caption` — it's the only one of the three phrasings that claims back-to-back seasons, and it's the one that's wrong. Something like "Second panel change in three seasons" (matching the lede) keeps the stat tile terse and true. Content-only, one field. Spoiler discipline P0 intact (format-mechanics detail only, no outcome exposure). (URL: /shows/married-at-first-sight/season/boston, source: critique-pass-83)
 
 - [x] [MED] [anon+authed] /shows/shark-tank/season/season-11 — the season body (Section 02, "The shape of the season") and the canon.md rationale (Section 03, "Where it sits in the canon") render the same paragraph verbatim, differing only in their closing sentence — the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (#464), Love Island UK (#459), MAFS New York (#478), The Voice finale (#502), and Perfect Match (#501), now reproduced on Shark Tank's freshly-drained Season 11. Section 02 body (`content/shows/shark-tank/seasons/11-season-11.md`): "Season eleven keeps the classic six exactly as they've been for years, but the guest-shark rotation reaches its highest-profile run yet — familiar recurring guests alongside one-off names from well outside the usual entrepreneur-and-investor circuit. Twenty-four episodes lean on that contrast: a steady, unbothered core panel and a guest chair pulling louder names than any season before it. Nothing about the format itself moves; the marquee lineup is the story this year." Section 03 (`content/shows/shark-tank/canon.md`, "## 11. Season 11" entry) is identical through "Nothing about the format itself" and then diverges only for the last clause: "...changes, which is exactly why it slots into the canon's middle — a fun wrinkle, not a real swing." A reader scrolling from Section 02 to Section 03 hits the same paragraph twice. Fix: rewrite the canon.md rationale body to argue why the guest-lineup framing earns slot #7 of 11 specifically (e.g. contrast against neighboring slots #6/#8), rather than restating the season body's recap paragraph verbatim. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/shark-tank/season/season-11, source: critique-pass-82) — issue: #512 — RESOLVED 095b3f3: rewrote the canon.md Season 11 rationale to argue the rank logic directly — Season 8 (rank 6) already proved the guest-chair mechanism works as a fixture, Season 7 (rank 8) was the tentative debut, and Season 11 sits between them because its highest-profile guest lineup is real but a smaller achievement than Season 8's structural proof. Season body left untouched. Content-only, one field, 92 words. Verify gate green: 194 test files / 2811 unit tests, content:check ok (58 shows/717 seasons), build (973 pages), 3231 e2e.
 
