@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-08 at commit a9bb688
-> Pass count: 48
+> Last pass: 2026-07-09 at commit 45e75fa
+> Pass count: 49
 
 ## Considered (awaiting promotion)
 
@@ -502,10 +502,24 @@
 
 ### 25. Canon-rationale/season-body verbatim-argument echo gate
 
-**Score:** 7.7 (impact: 8, ease: 8 → 6.4 base + 1.3 signal multiplicity, impact bumped
-7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit)
-**Source pass:** 44 (reinforced pass 46, 47, reinforced again pass 48)
-**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08)
+**Score:** 8.0 (impact: 8, ease: 8 → 6.4 base + 1.6 signal multiplicity, impact bumped
+7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit;
+multiplicity bonus raised again at pass 49 — a 10th independent instance closed in
+the very next commit window after pass 48's filing, the shortest gap yet between
+reinforcements)
+**Source pass:** 44 (reinforced pass 46, 47, 48, reinforced again pass 49)
+**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09)
+**Pass-49 reinforcement:** a tenth independent instance closed within the same
+20-commit window this pass is scoring — Shark Tank Season 11 (issue #512, closed
+commit 45e75fa/095b3f3), filed by critique pass-82 and fixed the same tick as a
+one-off content edit, identical shape to every prior instance: the season body and
+the canon.md rationale both restated the same closing argument, differing only in
+their final sentence. This is now the **third consecutive expand pass** (47, 48, 49)
+to find a fresh recurrence sitting in the commit log at filing time — the defect is
+not slowing down as the catalog grows, it is keeping pace with it one show at a time,
+exactly as pass-48's projection predicted. Zero of the ten instances have been caught
+pre-ship by a gate; all ten were caught reactively by a critique pass, days to weeks
+after the content shipped.
 **Pass-48 reinforcement:** two more independent instances closed this window, both
 as one-off content edits rather than through a gate — Perfect Match (issue #501,
 canon.md rationale echoed the season body's "cheap reunion special" closing clause
@@ -551,7 +565,16 @@ though each ships independently if preferred.
   a content-curator sub-agent rewriting all 26 rationale paragraphs in one pass
   (commit 4af4dd0), an order of magnitude more expensive than every prior instance's
   single-scene edit.
-- Signal multiplicity: **7 independent shows** across 7 separate fix events (3 closed
+- Issue #512 (CLOSED, pass 49) — Shark Tank Season 11, fixed the same tick it was
+  filed (critique pass-82): the canon.md rationale and the season body were verbatim
+  duplicates of each other except their closing sentence, discovered immediately
+  after the season was freshly drained (Shark Tank S7–S11 drain, closes #509, two
+  commits earlier in the same window) — the tenth show to hit this exact defect and,
+  like Perfect Match at pass-48, another freshly-authored show catching it within
+  days rather than months.
+- Signal multiplicity (pass-47 count; see the pass-48 and pass-49 reinforcement
+  paragraphs above for the current running total of **10 independent shows**):
+  **7 independent shows** across 7 separate fix events (3 closed
   as one-off GitHub issues, 1 closed as a systemic 26-season rewrite, 2 more content
   edits cited inline by the Big Brother finding, 1 still pending as of pass 47), each
   time caught reactively by a critique pass or a filed issue weeks after the content
@@ -600,11 +623,34 @@ show's canon+season pair*, a shape none of the existing gates cover.
 
 ### 28. Stat-tile value/caption literal-duplicate invariant
 
-**Score:** 8.0 (impact: 8, ease: 9 → 7.2 base + 0.8 signal multiplicity — a single
+**Score:** 8.3 (impact: 8, ease: 9 → 7.2 base + 1.1 signal multiplicity — a single
 critique finding that was itself already systemic across 139 files/22 shows, same
-root-cause family as candidate #25)
-**Source pass:** 48
-**Filed:** 2026-07-08
+root-cause family as candidate #25; multiplicity bonus raised at pass 49 by a second,
+independently-discovered defect shape on one of the six pairs this candidate already
+proposes to gate)
+**Source pass:** 48 (reinforced pass 49)
+**Filed:** 2026-07-08 (reinforced 2026-07-09)
+**Pass-49 reinforcement:** the `cast_size`/`cast_size_caption` pair — one of the six
+value/caption pairs this candidate's scope sketch already lists for gating — proved
+the risk live this window: issue #508 (CLOSED, commit fdc59fa) found the CAST SIZE
+caption on three separate freshly-drained pages (The Apprentice, America's Next Top
+Model finale, RHONJ S14) restating the raw headcount as a re-spelled word plus a
+generic era adjective ("18 players" / "18 contestants, founding era") rather than
+describing composition — the *third* confirmed instance of this specific sub-pattern
+(critique pass-67 first flagged it, pass-81 reinforced it, this window closed all
+three outstanding files). The fix commit's own message noted explicitly: "the
+content:check invariant proposal remains unshipped (deferred, not required for this
+fix)" — the gap this candidate exists to close is still open and just cost a third
+reactive fix. **Important scope note:** this sub-pattern is *not* caught by the
+scope sketch's current exact-string-equality check — "18 players" and "18
+contestants, founding era" are not identical strings, only a re-spelled digit
+padded with a generic adjective. The gate as scoped would still miss this shape;
+either add a second, looser check specifically for the `cast_size`/`cast_size_caption`
+pair (caption reduces to the value's digit spelled as a word plus ≤1 generic modifier
+word, with no other substantive composition detail) alongside the exact-equality
+check for the other five pairs, or note the gap explicitly so `/oversight` scopes
+the phase to cover both shapes rather than shipping a gate that would have missed
+this window's own instance.
 **Source signals:**
 - Critique pass-78 [MED] `/shows/shark-tank/season/season-1` (and 132 other files
   catalog-wide) — the FILMED stat tile's value (`location`) and caption
@@ -644,6 +690,17 @@ root-cause family as candidate #25)
   current literal duplicates on any of the other five pairs, meaning a gate could
   ship at strict floor-0 across all six pairs immediately, with no lax/warn period
   needed and no false positives to tune out first.
+- Issue #508 (CLOSED, pass 49) — the `cast_size`/`cast_size_caption` pair, three
+  files (The Apprentice S5, ANTM S24 "the finale", RHONJ S14 "the new chapter"), a
+  paraphrase-restate rather than exact-string duplicate ("18 players" /
+  "18 contestants, founding era" — the caption re-spells the digit and tacks on a
+  generic era adjective instead of describing composition). Third confirmed instance
+  of this specific sub-pattern (pass-67, reinforced pass-81, closed this window,
+  commit fdc59fa). Confirms the risk this candidate flags is not confined to the
+  `location`/`filming_caption` pair alone — it recurs on other pairs in the same
+  six-field family, in a shape (paraphrase, not literal duplicate) the current scope
+  sketch's exact-equality check would not catch. See the pass-49 reinforcement note
+  above for the scope implication.
 **Why:** This is exactly the pattern `/expand` exists to catch: a defect class just
 proved expensive to fix reactively (6 ticks, 139 files, one field pair) with a
 root cause the codebase already has *two* precedents for gating
@@ -662,15 +719,26 @@ the same debt as new shows are scaffolded going forward.
   `collectThemedEntryVerbatimPhraseEchoIssues` helpers): for each season file,
   iterate the six value/caption field pairs and flag any pair where the caption
   is identical (case-insensitive, trimmed) to the raw value's string form.
-- Wire into `collectFailures()` at **strict floor-0** immediately (no lax/warn
-  period needed — confirmed zero current violations across all six pairs via this
-  pass's catalog scan).
+- **Added pass-49:** a second, narrower helper (or a second mode on the same
+  helper) for the `cast_size`/`cast_size_caption` pair specifically — flag when the
+  caption reduces to the value's digit spelled out as a word (e.g. `18` →
+  `"eighteen"`/`"18"`) followed by at most one short generic modifier phrase (an
+  era/founding/final-season adjective) with no other composition detail. This
+  covers the paraphrase-restate shape issue #508 proved recurs on this pair; the
+  exact-equality check alone would not have caught any of its three instances.
+  Scope this as a targeted addition to `cast_size` only unless a catalog scan (at
+  phase-ship time) finds the same paraphrase shape on the other five pairs too.
+- Wire both checks into `collectFailures()` at **strict floor-0** immediately (no
+  lax/warn period needed — confirmed zero current violations across all six pairs
+  via this pass's catalog scan; #508's three instances were fixed this same window,
+  so a fresh scan at ship time should also read zero for the paraphrase check).
 - Colocated unit tests in `src/content/__tests__/content-check.test.ts`: a
   synthetic season file with `location === filming_caption` (should flag), one
   with each of the other five pairs duplicated (should flag, one case per pair),
-  one with legitimately distinct value/caption pairs (should not flag), and one
-  passing at the live catalog post-check (asserts zero issues, mirroring the
-  #357 test pattern).
+  one with a `cast_size_caption` that paraphrase-restates the digit (should flag,
+  mirroring the #508 real-corpus shape), one with legitimately distinct
+  value/caption pairs (should not flag), and one passing at the live catalog
+  post-check (asserts zero issues, mirroring the #357 test pattern).
 - `content-curator` brief update: document the six value/caption pairs and the
   "caption must add information the raw value doesn't carry" convention, mirroring
   the existing candidate #20/#25 pattern of pairing a structural check with
