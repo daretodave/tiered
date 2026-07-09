@@ -12,7 +12,7 @@ lede: "Season 6 swaps in Dr. Jessica Griffin, a Boston-based psychologist, for R
 pull: "A new expert, a new city, the same premise running smoother than ever. Boston is the format settled into its rhythm."
 premiere_caption: "Lifetime · January 2018"
 format_summary: "Blind matching · legal marriage"
-format_caption: "Second consecutive panel change"
+format_caption: "Second panel change in three seasons"
 cast_size: 6
 cast_size_caption: "Three couples, matched sight unseen"
 ---
