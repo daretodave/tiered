@@ -46,6 +46,15 @@ describe('<CanonEraToolbar>', () => {
     expect(screen.queryByTestId('era-chip-pioneer')).toBeNull()
   })
 
+  it('wraps the All chip count in a separate span so it reads as a badge, not a run-together label', () => {
+    render(<Harness bands={[]} total={1} />)
+    const all = screen.getByTestId('era-chip-all')
+    const count = all.querySelector('.cp-chip-count')
+    expect(count).not.toBeNull()
+    expect(count).toHaveTextContent('1')
+    expect(all).toHaveTextContent('All 1')
+  })
+
   it('filters non-matching entries via data-era-off and updates the mode label', () => {
     render(<Harness bands={BANDS} total={47} />)
     const pioneerEntry = screen.getByTestId('e-pioneer')

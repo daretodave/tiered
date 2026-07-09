@@ -87,7 +87,7 @@ export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
             tabIndex={active === ALL ? 0 : -1}
             onClick={() => onChip(ALL)}
           >
-            All {total}
+            All <span className="cp-chip-count">{total}</span>
           </button>
           {bands.map((band) => {
             const on = band.key === active
