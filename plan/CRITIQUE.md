@@ -1,5 +1,45 @@
 # CRITIQUE
 
+> Last pass: 2026-07-09 at commit 613fc9b
+> Pass count: 82
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 82 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed). Anon (5 URLs: `/`,
+> `/shows/shark-tank/season/season-11`, `/shows`,
+> `/themes/best-finales`, `/themes`) and authed (`/`,
+> `/shows/shark-tank/season/season-11`, `/sign-in`,
+> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`) walks
+> ran, desktop + mobile, deliberately targeting Shark Tank's
+> freshly-drained S7-S11 tail (pass-78 covered S1-S6). Both
+> passes independently surfaced the same defect — Shark Tank
+> Season 11's season body and canon.md rationale are verbatim
+> duplicates of each other except their closing sentence, the
+> recurring Section-02-vs-Section-03 duplication class (fixed
+> previously on Bachelor S28 #464, Love Island UK #459, MAFS NY
+> #478, The Voice finale #502, Perfect Match #501) — filed once
+> per critique hard rule 5. The authed pass additionally flagged
+> S9/S10 as a "worsening trend" by word-overlap ratio, but a
+> direct read of both files at self-assess found S9 and S10's
+> canon rationales diverge meaningfully in their closing argument
+> (distinct framing, not verbatim) — only S11 met the bar, so the
+> filed row is scoped to S11 alone; the S9/S10 observation is
+> noted here, not filed, since it isn't a confirmed instance of
+> the defect. Two other authed-pass observations (no prior votes
+> on the e2e test account; both visited season pages showing "No
+> comments yet") were process/test-coverage notes about the critique
+> account's data shape, not product defects — not filed. Zero
+> console errors, zero failed requests, zero mobile overflow on
+> any capture; auth handshake confirmed genuine (`@e2e` chrome,
+> `/sign-in` 307-redirects a signed-in user to `/`, `/u/e2e`
+> renders matching identity). No spoiler leakage found on any
+> capture. No per-show SVG iconography violations found — only
+> the shared brand mark + generic vote chevrons appear in page
+> markup.
+>
+> ───── Pass 81 metadata kept below for history ─────
+>
 > Last pass: 2026-07-08 at commit 23ab156
 > Pass count: 81
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1694,6 +1734,7 @@
 
 ## Pending
 
+- [ ] [MED] [anon+authed] /shows/shark-tank/season/season-11 — the season body (Section 02, "The shape of the season") and the canon.md rationale (Section 03, "Where it sits in the canon") render the same paragraph verbatim, differing only in their closing sentence — the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (#464), Love Island UK (#459), MAFS New York (#478), The Voice finale (#502), and Perfect Match (#501), now reproduced on Shark Tank's freshly-drained Season 11. Section 02 body (`content/shows/shark-tank/seasons/11-season-11.md`): "Season eleven keeps the classic six exactly as they've been for years, but the guest-shark rotation reaches its highest-profile run yet — familiar recurring guests alongside one-off names from well outside the usual entrepreneur-and-investor circuit. Twenty-four episodes lean on that contrast: a steady, unbothered core panel and a guest chair pulling louder names than any season before it. Nothing about the format itself moves; the marquee lineup is the story this year." Section 03 (`content/shows/shark-tank/canon.md`, "## 11. Season 11" entry) is identical through "Nothing about the format itself" and then diverges only for the last clause: "...changes, which is exactly why it slots into the canon's middle — a fun wrinkle, not a real swing." A reader scrolling from Section 02 to Section 03 hits the same paragraph twice. Fix: rewrite the canon.md rationale body to argue why the guest-lineup framing earns slot #7 of 11 specifically (e.g. contrast against neighboring slots #6/#8), rather than restating the season body's recap paragraph verbatim. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/shark-tank/season/season-11, source: critique-pass-82)
 
 - [x] [MED] [authed] /shows/the-voice/season/the-finale — the season body (Section 02, "The shape of the season") and the canon.md rationale (Section 03, "Where it sits in the canon") render two near-verbatim paragraphs back to back, the recurring Section-02-vs-Section-03 duplication class already fixed on Bachelor S28 (issue #464) and MAFS New York (issue #478) and currently also Pending unresolved for Perfect Match (row above/below), now reproduced on The Voice's freshly-drained finale season. Section 02 body (`content/shows/the-voice/seasons/29-the-finale.md`): "Season twenty-nine carried the gravity of a final chapter. Kelsea Ballerini's coaching debut gave the blind auditions a new angle while Reba McEntire, Michael Bublé, and Adam Levine provided the continuity a closing season earns. The format ran with the focused energy a series finale generates — coaches and contestants both aware of the occasion. The show closed with the same format integrity it brought to its debut, which is a cleaner exit than most long-running competition series manage." Section 03 (`content/shows/the-voice/canon.md`, the-finale entry, ~line 251) is identical except it inserts "the returning panel of" before the coach names and appends "Twenty-eighth slot, just above the format's most constrained cycle." A reader scrolling from Section 02 to Section 03 hits the same paragraph twice. Fix: rewrite the canon.md rationale body to argue why the series-finale framing itself earns slot #28, rather than restating the season body's recap paragraph verbatim. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/the-voice/season/the-finale, source: critique-pass-80)
 - issue: #502 — RESOLVED: rewrote the canon.md Season 29 rationale to argue the series-finale framing earns slot #28 because the season sustained execution to the finish line rather than coasting into cancellation, instead of restating the season body's recap paragraph. Season body left untouched. Content-only, one field, 114 words. Verify gate green: 194 test files / 2800 unit tests, content:check ok (58 shows/712 seasons), build (968 pages), 3215 e2e. Closes #502. — 9903b49
