@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-09 at commit 45e75fa
-> Pass count: 49
+> Last pass: 2026-07-09 at commit da99b95
+> Pass count: 50
 
 ## Considered (awaiting promotion)
 
@@ -842,12 +842,26 @@ ceilings, or rules directly").
 **Conflicts:** none. Complements issue #416/#480 (same file family, same cloud
 blocker, different root cause) — recommend landing both in the same local session.
 
-### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches
+### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches ~~(superseded — both open signals shipped pre-promotion)~~
 
 **Score:** 4.8 (impact: 6, ease: 8 → 4.8 base, signal-multiplicity bonus dropped —
 see pass-48 update)
-**Source pass:** 47 (updated pass 48)
-**Filed:** 2026-07-08 (updated 2026-07-08)
+**Source pass:** 47 (updated pass 48, closed out pass 50)
+**Filed:** 2026-07-08 (updated 2026-07-08, both signals resolved by 2026-07-09)
+**Pass-50 update:** the last remaining open signal — the pass-68 em-dash-vs-comma
+mark-preference bug (`src/lib/seo.ts:34-37`) — **resolved this window**, directly
+via `/iterate` (commit 0d0527d, issue #518): the clause-boundary scan now backs the
+cut off to the em dash whenever a comma/semicolon/colon it would otherwise prefer
+falls after it in the same window, matching this candidate's own scope-sketch intent
+without a full mark-strength-ranking rewrite. Pinned with the exact jersey-shore lede
+as a regression case in `seo.test.ts`. Both of this candidate's two open signals
+(pass-79 stop-word, resolved pass-48; pass-68 em-dash preference, resolved pass-50)
+have now shipped as targeted `/iterate` fixes rather than a coordinated rewrite —
+exactly the hedge the pass-48 update called out as the likely outcome. **Zero open
+signals remain** and a fresh grep of `src/lib/seo.ts` + CRITIQUE.md finds no third
+instance pending. Recommend `/oversight` treat this candidate as closed; leaving it
+filed (struck through in the title, mirroring candidate #17's precedent) as the
+historical record if a fourth edge case surfaces on the same function later.
 **Pass-48 update:** the pass-79 stop-word finding (issue #503) this candidate cited
 as its second open signal was **resolved this window** — directly, via a targeted
 `trimTrailingStopWords()` deny-list helper (commit dd43d38), not via this
