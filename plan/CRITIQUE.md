@@ -1,5 +1,45 @@
 # CRITIQUE
 
+> Last pass: 2026-07-09 at commit 6706b01
+> Pass count: 84
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 84 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), with independent
+> `curl` re-verification (raw SSR HTML, cookie attached) for the
+> two auth-state findings before filing. Anon (6 URLs: `/`,
+> `/shows/american-ninja-warrior`, `/shows`, `/themes`,
+> `/shows/shark-tank`, `/shows/married-at-first-sight/season/boston`)
+> and authed (`/`, `/shows/american-ninja-warrior`,
+> `/shows/married-at-first-sight/season/boston`, `/u/e2e`,
+> `/themes/best-villain-editing`) walks ran, desktop + mobile,
+> targeting the three most recently shipped content fixes (ANW
+> S2-S6 drain, Shark Tank canon toolbar, MAFS Boston format_caption)
+> plus a fresh look at Phase 36's auth-state chrome. All three
+> recent content fixes verified shipped correctly. The authed
+> pass found a real gap in Phase 36: the header resolves signed-in
+> state server-side on non-cached season pages, but the vote-pair
+> and comment-input on those same pages still SSR the anon shell
+> regardless — client hydration papers over it, but the raw
+> per-request HTML is wrong even though the header two hundred
+> lines earlier in the identical response got it right. Filed
+> HIGH. A second, milder instance (home page, ISR-cached, `Sign
+> in` flashes before the auth-island hydrates) filed MED — that
+> one matches Phase 36's documented cached-page trade-off rather
+> than a new gap, so it's a polish item, not a break. Rounding
+> out the pass: a mobile-only regression on the MAFS Boston "ON
+> THIS PAGE" jump nav (collapses to a bare section count, losing
+> the named jump links desktop keeps) filed MED, plus two LOW
+> voice/staleness notes (home hero's revision stamp reads a
+> month behind every other page visited; a repeated "run...run"
+> on Shark Tank S5 canon copy). Zero console errors, zero failed
+> requests, zero mobile overflow on any capture across both
+> passes. No spoiler leakage. No per-show SVG iconography
+> violations found.
+>
+> ───── Pass 83 metadata kept below for history ─────
+>
 > Last pass: 2026-07-09 at commit 6f7f385
 > Pass count: 83
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1759,6 +1799,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [authed] /shows/married-at-first-sight/season/boston (and /shows/american-ninja-warrior/season/standard-course — reproduced) — on season pages that are NOT edge-cached (`cache-control: private, no-store`, `x-vercel-cache: MISS` — confirmed via a direct `curl` with the authed session cookie attached), the server correctly resolves the signed-in state for the header in this exact response (`data-testid="site-header" data-signed-in="true"`) but the vote-pair and comment-input on the same raw HTML still render the anonymous shell: `data-vote-head-state="anon"` with copy "sign in to weigh in," and a `<a class="comment-stub" href="/sign-in?return=...">Sign in to comment. →</a>` instead of the compose box. This is not the cached-page hydration trade-off Phase 36 documented (see the home-page row below) — this page is rendered per-request, and the header two hundred lines earlier in the identical response already proves the server has the session. The vote-pair and comment-input components simply aren't reading the auth context the header already resolved; client JS repairs it after mount (confirmed via the Playwright post-hydration capture showing "YOUR VOTE" / "as @e2e / Write"), so a signed-in member briefly sees the wrong CTA on the exact surface — voting and commenting — that Phase 36 ("auth-state chrome + comment read/display," commit e95b019) shipped to fix. Fix: have `VotePair` and the comment composer read the same per-request auth context `HeaderView` already resolves on non-cached routes (mirroring the client-fetch-and-suppress pattern already used for `HomeDualCallout`, #490), rather than defaulting to the anon shell and relying on hydration. A prior instance of exactly this "stale signed-out state exposed for the request's full server-render lifetime" class (`HomeDualCallout`, #490) sat unaddressed for 12 passes before its severity was bumped from LOW to MED for aging past what a top-fold surface should tolerate — filing this one HIGH from the start rather than repeating that arc, since it directly undermines the vote/comment CTAs Phase 36 was scoped to fix. Spoiler discipline P0 intact (auth-state chrome only, no outcome exposure). (URL: /shows/married-at-first-sight/season/boston, /shows/american-ninja-warrior/season/standard-course, source: critique-pass-84)
+
+- [ ] [MED] [authed] / — the home page is served from Vercel's edge cache (`x-vercel-cache: HIT`, `cache-control: private, no-cache, no-store, must-revalidate, max-age=0` — confirmed via direct `curl` with the authed session cookie attached) and its server-rendered/cached header always paints the signed-out shell (`data-signed-in="false"`, a "Sign in" link) even when the request carries a valid `__session` cookie for a real member. This matches Phase 36's documented design for cached/ISR routes — the auth-state island is meant to hydrate client-side via `GET /api/auth/me` precisely because a shared cached page can't know who's asking — so this is a polish item (visible flash duration on the highest-traffic surface), not a new gap, unlike the vote-pair/comment row above. Fix (optional, lower priority): shrink the visible flash — e.g. a skeleton/neutral chrome state instead of a confident "Sign in" link — so returning members don't get a flicker of the wrong CTA on first paint of the site's most-visited page. Spoiler discipline P0 intact. (URL: /, source: critique-pass-84)
+
+- [ ] [MED] [anon] /shows/married-at-first-sight/season/boston — on mobile (375px) the "ON THIS PAGE" in-page jump nav collapses to a bare "5 SECTIONS" count with no section names or links, while the desktop version at the same position lists all five named jump targets (The take / The shape of the season / Where it sits in the canon / Adjacent in the canon / In this canon) as tappable links. Mobile readers lose the named jump-to-section affordance entirely on the viewport where long-page navigation matters most for reaching, say, the vote block or the canon-position explainer without a long scroll. Fix: keep the five section names as tappable jump links on mobile too — an accordion-disclosed list is fine if space is tight — rather than reducing the block to a count with no way to jump ahead. Chrome-only, applies to every season page (shared component). Spoiler discipline P0 intact. (URL: /shows/married-at-first-sight/season/boston, source: critique-pass-84)
+
+- [ ] [LOW] [anon] / — the home hero's featured show (Survivor) is stamped "May 2026 CANON REVISED" while every other page visited this pass carries a July stamp (`/shows`: "July 2026 SHOWS REVISED"; `/shows/american-ninja-warrior`: "July 2026 CANON REVISED"). As a first-time visitor the flagship hero — the single most prominent module on the site — reads as the stalest page of the set, even though the underlying canon is presumably fine and simply hasn't needed a revision since May. Fix: either refresh the featured-show revision stamp whenever the hero rotates onto a show that hasn't been touched recently, or drop the explicit month from the hero card so staleness isn't visible on the highest-traffic module. Chrome/content, small. Spoiler discipline P0 intact. (URL: /, source: critique-pass-84)
+
+- [ ] [LOW] [anon] /shows/shark-tank — Season 5's canon-entry copy repeats "run" twice in close proximity ("...the format the show would run largely unchanged for the rest of its run."), reading slightly clumsy against the "plain sentences over clever ones" voice bar. Fix: rephrase to avoid the repeated "run," e.g. "...the format the show would keep largely unchanged for the rest of its life." Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/shark-tank, source: critique-pass-84)
 
 - [x] [MED] [anon] /shows/married-at-first-sight/season/boston — the FORMAT stat tile caption calls Boston's expert swap the "Second consecutive panel change," but the season's own lede and body, plus the neighboring Chicago season's copy, contradict "consecutive." `content/shows/married-at-first-sight/seasons/06-boston.md` lede: "...for Rachel DeAlto — the second panel change in three seasons." Body: "...the panel's second shakeup in as many years." Neither says consecutive, and for good reason: aired order is New York, New York II, Atlanta, Miami (panel change #1: DeAlto/Roberson join), Chicago (no change — `05-chicago.md` lede: "...with a settled panel for three new Chicago couples"), Boston (panel change #2: Griffin replaces DeAlto). Chicago sits between the two panel-change seasons with a stable panel, so Boston's change is not consecutive to Miami's — a full season intervened. A reader who reads the stat tile alongside the body paragraph two inches below it, or who clicks back to the adjacent Chicago season, hits a factual disagreement on this page's own numbers. Fix: drop "consecutive" from `format_caption` — it's the only one of the three phrasings that claims back-to-back seasons, and it's the one that's wrong. Something like "Second panel change in three seasons" (matching the lede) keeps the stat tile terse and true. Content-only, one field. Spoiler discipline P0 intact (format-mechanics detail only, no outcome exposure). (URL: /shows/married-at-first-sight/season/boston, source: critique-pass-83) — issue: #516 — RESOLVED 896b366: reworded `format_caption` to "Second panel change in three seasons," matching the lede's framing and removing the false "consecutive" claim. Verify gate green: 194 test files / 2811 unit tests, content:check ok (58 shows/722 seasons), build (978 pages), e2e 3246 passed. Closes #516.
 
