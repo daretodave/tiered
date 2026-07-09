@@ -234,12 +234,22 @@ function adjacentByCanon(
   }
 }
 
-function appearsInRowsFor(
+// critique-pass-68 LOW (issue #339-adjacent): a season with zero
+// themed-list cross-references still got a single-row "Also appears
+// in" / "Cross-references." section pointing back at its own show's
+// canon — self-referential chrome masquerading as a cross-reference
+// list. `hasCrossRef` lets the render pick an honest header
+// ("In this canon" / its canon entry) instead of "Cross-references."
+// when the canon row is the section's only entry. The canon row
+// itself stays (it's the one place "also appears in" a link this
+// season's own canon is genuinely useful navigation) — only the
+// framing changes.
+export function appearsInRowsFor(
   show: Show,
   season: Season,
   themes: Theme[],
   canonRank: number | null,
-): AppearsInRow[] {
+): { rows: AppearsInRow[]; hasCrossRef: boolean } {
   const rows: AppearsInRow[] = []
   for (const t of themes) {
     const hit = t.entries.find(
@@ -252,6 +262,7 @@ function appearsInRowsFor(
       meta: `list · ${t.entries.length} ${t.entries.length === 1 ? 'entry' : 'entries'}`,
     })
   }
+  const hasCrossRef = rows.length > 0
   if (canonRank != null) {
     // Phase 33: canon consolidated into the show page; canon is the
     // default ranking view there.
@@ -261,7 +272,7 @@ function appearsInRowsFor(
       meta: `Editor's Canon · #${pad2(canonRank)}`,
     })
   }
-  return rows
+  return { rows, hasCrossRef }
 }
 
 function paragraphsOf(body: string): string[] {
@@ -334,6 +345,7 @@ export function buildSections(opts: {
   watchVisible: boolean
   adjacentVisible: boolean
   appearsInCount: number
+  appearsInHasCrossRef?: boolean
 }): TOCSection[] {
   const defs = [
     { id: 's-take', label: 'The take', visible: true },
@@ -341,7 +353,11 @@ export function buildSections(opts: {
     { id: 's-where', label: 'Where it sits in the canon', visible: true },
     { id: 's-watch', label: 'What to watch for', visible: opts.watchVisible },
     { id: 's-related', label: 'Adjacent in the canon', visible: opts.adjacentVisible },
-    { id: 's-appears', label: 'Also appears in', visible: opts.appearsInCount > 0 },
+    {
+      id: 's-appears',
+      label: opts.appearsInHasCrossRef === false ? 'In this canon' : 'Also appears in',
+      visible: opts.appearsInCount > 0,
+    },
   ] as const
   return defs
     .filter((d) => d.visible)
@@ -454,7 +470,12 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
   const seasonTargetId = `${show.slug}:${season.number}`
   const { prev, next } = adjacentByCanon(show, seasons, season)
-  const appearsIn = appearsInRowsFor(show, season, themes, canonRank)
+  const { rows: appearsIn, hasCrossRef: appearsInHasCrossRef } = appearsInRowsFor(
+    show,
+    season,
+    themes,
+    canonRank,
+  )
   const voteQuestion =
     season.vote_question ?? 'Does this belong in the community top 10?'
 
@@ -488,6 +509,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
     watchVisible,
     adjacentVisible,
     appearsInCount: appearsIn.length,
+    appearsInHasCrossRef,
   })
   const numFor = (id: string) => sections.find((s) => s.id === id)?.num ?? ''
 
@@ -597,8 +619,13 @@ export default async function SeasonPage({ params }: { params: Params }) {
 
             {appearsIn.length > 0 ? (
               <section id="s-appears" data-testid="section-appears">
-                <div className="article-eyebrow"><span className="num">{numFor('s-appears')}</span><span>Also appears in</span></div>
-                <h2 id="appears-in-heading">Cross-references.</h2>
+                <div className="article-eyebrow">
+                  <span className="num">{numFor('s-appears')}</span>
+                  <span>{appearsInHasCrossRef ? 'Also appears in' : 'In this canon'}</span>
+                </div>
+                <h2 id="appears-in-heading">
+                  {appearsInHasCrossRef ? 'Cross-references.' : "Its Editor's Canon entry."}
+                </h2>
                 <AppearsInList rows={appearsIn} />
               </section>
             ) : null}

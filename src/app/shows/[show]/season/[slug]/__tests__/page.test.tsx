@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import type { Season, Show } from '@/content'
+import type { Season, Show, Theme } from '@/content'
 
 // /shows/[show]/season/[slug] is the most editorially dense page
 // family in the product (design law's canonical "Heroes vs.
@@ -59,6 +59,7 @@ import { isValidElement } from 'react'
 import { render, screen } from '@testing-library/react'
 import {
   ADJACENT_SECTION_H2,
+  appearsInRowsFor,
   buildSections,
   generateMetadata,
   generateStaticParams,
@@ -97,6 +98,33 @@ function makeSeason(overrides: Partial<Season> = {}): Season {
     blurb_md:
       'The all-star return that the whole format had been building toward, twenty veterans split into two tribes by the way the audience already saw them.',
     format_changes: [],
+    ...overrides,
+  }
+}
+
+function makeTheme(overrides: Partial<Theme> = {}): Theme {
+  return {
+    slug: 'best-finales',
+    title: 'Best finales',
+    description: 'The seasons that stuck the landing.',
+    tagline: 'The seasons that stuck the landing.',
+    category: 'structure',
+    sentiment: 'hold',
+    status: 'stable',
+    curator: 'tiered.tv editor',
+    last_revised: '2026-01-01',
+    featured: false,
+    related: [],
+    body_md: '',
+    entries: [
+      {
+        show: 'survivor',
+        season: 20,
+        rank: 1,
+        title: 'Heroes vs. Villains',
+        blurb: 'The all-star return the format kept building toward.',
+      },
+    ],
     ...overrides,
   }
 }
@@ -618,6 +646,85 @@ describe('buildSections — TOC + inline eyebrow ordinal derivation (critique-pa
         }
       }
     }
+  })
+
+  it('labels the TOC entry "In this canon" when the section holds only the self-referential canon row', () => {
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: false,
+      adjacentVisible: false,
+      appearsInCount: 1,
+      appearsInHasCrossRef: false,
+    })
+    const appears = sections.find((s) => s.id === 's-appears')
+    expect(appears?.label).toBe('In this canon')
+  })
+
+  it('keeps the TOC entry "Also appears in" when a real themed-list cross-reference is present', () => {
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: false,
+      adjacentVisible: false,
+      appearsInCount: 2,
+      appearsInHasCrossRef: true,
+    })
+    const appears = sections.find((s) => s.id === 's-appears')
+    expect(appears?.label).toBe('Also appears in')
+  })
+
+  it('defaults the TOC entry to "Also appears in" when `appearsInHasCrossRef` is omitted (legacy call shape)', () => {
+    const sections = buildSections({
+      shapeHasCopy: true,
+      watchVisible: false,
+      adjacentVisible: false,
+      appearsInCount: 1,
+    })
+    const appears = sections.find((s) => s.id === 's-appears')
+    expect(appears?.label).toBe('Also appears in')
+  })
+})
+
+describe('appearsInRowsFor — self-referential canon row vs. real cross-references (critique-pass-68)', () => {
+  // A season with zero themed-list cross-references still rendered a
+  // single-row "Also appears in" / "Cross-references." section
+  // pointing back at its own show's canon — self-referential chrome
+  // masquerading as a cross-reference list. The canon row itself
+  // stays (linking back to the show's Editor's Canon is genuinely
+  // useful navigation and existing e2e pins its href) — only
+  // `hasCrossRef` changes, so the render can pick an honest header.
+  it('reports hasCrossRef=false when the only row is the self-referential canon entry', () => {
+    const show = makeShow({ slug: 'jersey-shore', name: 'Jersey Shore' })
+    const season = makeSeason({ show: 'jersey-shore', number: 1, slug: 'season-1' })
+    const { rows, hasCrossRef } = appearsInRowsFor(show, season, [], 1)
+    expect(hasCrossRef).toBe(false)
+    expect(rows).toHaveLength(1)
+    expect(rows[0]?.href).toBe('/shows/jersey-shore')
+    expect(rows[0]?.name).toBe("Jersey Shore — Editor's Canon")
+  })
+
+  it('reports hasCrossRef=true and still includes the canon row when a themed list also references the season', () => {
+    const show = makeShow({ slug: 'survivor', name: 'Survivor' })
+    const season = makeSeason({ show: 'survivor', number: 20, slug: 'heroes-vs-villains' })
+    const theme = makeTheme({
+      slug: 'best-finales',
+      title: 'Best finales',
+      entries: [
+        { show: 'survivor', season: 20, rank: 1, title: 'HvV', blurb: 'blurb' },
+      ],
+    })
+    const { rows, hasCrossRef } = appearsInRowsFor(show, season, [theme], 2)
+    expect(hasCrossRef).toBe(true)
+    expect(rows).toHaveLength(2)
+    expect(rows[0]?.href).toBe('/themes/best-finales')
+    expect(rows[1]?.href).toBe('/shows/survivor')
+  })
+
+  it('returns an empty row set with hasCrossRef=false when the season has no canon slot and no cross-references', () => {
+    const show = makeShow({ slug: 'perfect-match', name: 'Perfect Match' })
+    const season = makeSeason({ show: 'perfect-match', number: 2, slug: 'season-2' })
+    const { rows, hasCrossRef } = appearsInRowsFor(show, season, [], null)
+    expect(rows).toHaveLength(0)
+    expect(hasCrossRef).toBe(false)
   })
 })
 
