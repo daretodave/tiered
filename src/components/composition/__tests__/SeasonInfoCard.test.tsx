@@ -19,9 +19,11 @@ describe('<SeasonInfoCard>', () => {
     expect(screen.getByTestId('info-row-vote')).toBeInTheDocument()
     expect(screen.getByTestId('info-row-shield')).toBeInTheDocument()
     expect(screen.getByTestId('vote-slot')).toBeInTheDocument()
-    // Phase 37 nit 5: the canon scale renders a dot marker + #NN label
-    // on the track and two descriptive endpoint marks.
-    expect(screen.getByTestId('rank-scale-here')).toHaveTextContent('#07')
+    // Phase 37 nit 5: the canon scale renders a dot marker + "here"
+    // label on the track and two descriptive endpoint marks. Critique
+    // pass-43/74: the label reads "here", not the rank digit again —
+    // the slot indicator above already states the rank once.
+    expect(screen.getByTestId('rank-scale-here')).toHaveTextContent('here')
     expect(screen.getByText('#01 · canon peak')).toBeInTheDocument()
     expect(screen.getByText('#47 · the tail')).toBeInTheDocument()
   })

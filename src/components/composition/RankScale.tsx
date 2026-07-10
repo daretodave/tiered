@@ -1,8 +1,10 @@
 // Phase 30 / 37: pure renderer for the canon scale-track inside
 // SeasonInfoCard. Mirrors design/tiered.tv · Heroes vs. Villains.html
 // § .scale-* — a thin rule with a primary-colored fill, the rank as a
-// 38px mono number, a dot marker on the track with a #NN label, and
-// two descriptive endpoint marks (#01 · canon peak / #NN · the tail).
+// 38px mono number, a dot marker on the track labeled "here" (critique
+// pass-43/74: labeling the dot with the rank again duplicated the
+// #NN token the slot indicator above already states), and two
+// descriptive endpoint marks (#01 · canon peak / #NN · the tail).
 // Fill + dot offset = rank / total (design's width:14.9% for 7/47).
 
 type RankScaleProps = {
@@ -49,8 +51,15 @@ export function RankScale({
           style={{ width: `${pct.toFixed(2)}%` }}
         />
         <div className="scale-here" style={{ left: `${pct.toFixed(2)}%` }}>
+          {/* critique pass-43/74 (#02-appears-twice-on-mobile): the
+              dot is already the design/CLAUDE.md-compliant filled-
+              circle "you are here" marker — labeling it with the same
+              #NN the slot indicator above already states reads as a
+              duplicate rank token once the two rows stack on mobile.
+              "here" confirms the marker's meaning without repeating
+              the number. */}
           <span className="scale-here-label" data-testid="rank-scale-here">
-            #{pad2(rank)}
+            here
           </span>
         </div>
       </div>

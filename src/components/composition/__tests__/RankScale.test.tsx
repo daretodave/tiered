@@ -36,10 +36,19 @@ describe('<RankScale>', () => {
   it('places the dot marker + label at the rank percentage', () => {
     render(<RankScale rank={7} total={47} />)
     const label = screen.getByTestId('rank-scale-here')
-    expect(label).toHaveTextContent('#07')
+    expect(label).toHaveTextContent('here')
     const dot = label.closest('.scale-here') as HTMLElement
     expect(dot).not.toBeNull()
     expect(dot.style.left).toMatch(/^14\.\d+%$/)
+  })
+
+  it('never repeats the rank number in the dot marker label (critique pass-43/74)', () => {
+    render(<RankScale rank={2} total={50} />)
+    expect(screen.getByTestId('rank-scale-rank')).toHaveTextContent('#02')
+    // The slot indicator states the rank once; the dot marker below
+    // states position ("here"), never the digit again — the mobile
+    // stacked layout was reading the duplicate #02 as a render glitch.
+    expect(screen.getByTestId('rank-scale-here')).not.toHaveTextContent('#02')
   })
 
   it('puts the dot at 100% when rank=total', () => {
