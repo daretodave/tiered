@@ -1,7 +1,7 @@
 ---
 show: top-chef
 editor: tiered.tv editor
-last_revised: 2026-05-19
+last_revised: 2026-07-10
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: "How I weigh it"
@@ -362,22 +362,20 @@ seriously and holds its shape. A solid road-show year.
 
 ## 22. Destination Canada
 
-tag: The first Canada-set flagship season — the run where the U.S. show left the country, road-show grammar across a border.
-slot_argument: A Toronto-and-Alberta immersive, the first time the U.S. flagship left the country. Supersized episodes, Kristen Kish's second season, and the road-show grammar carried across an international border.
+tag: A genuine format-first — the road-show grammar carried across a border for the first time.
+slot_argument: The ranking case is structural: a real format-first outranks a clean transition. The season's border-crossing open, city brief, and finals runway are what earn the slot.
 community_rank_hint: rank=19 delta=0 sentiment=hold
 
-Destination Canada earns the nineteenth slot because it is a
-genuine format-history first, and with the full run behind it
-that case has hardened. The season ran across Toronto and the
-Calgary–Canmore corridor — the first time the U.S. flagship
-left the country — with Kristen Kish hosting her second
-season, Tom Colicchio at a supersized judge's table, and Gail
-Simmons in the critic seat. The cross-border premise gave the
-road-show grammar an international register the U.S. run had
-never used, and the cast adapted across cities the flagship
-had never cooked in. A clean transition is worth crediting,
-but a real format-first outranks one. It has settled into the
-canon's deep middle on the strength of the swing.
+Destination Canada earns the nineteenth slot on a structural
+argument, not a scenery one. Its format is a genuine first —
+the road-show grammar crossing an international border for the
+only time on the U.S. run — and the case has only hardened
+with the full season in hand. Toronto and the Calgary–Canmore
+corridor carried that structure, Kish and Colicchio steering it
+throughout. A season that simply transitions well to a new
+host is worth crediting, the way Wisconsin sits just below it,
+but a genuine format-first outranks a clean handoff. That's the
+swing this rank protects.
 
 ## 21. Wisconsin
 

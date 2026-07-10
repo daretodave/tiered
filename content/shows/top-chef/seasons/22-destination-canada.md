@@ -9,7 +9,7 @@ ep_count: 14
 location: Toronto, Ontario & Calgary/Canmore, Alberta
 eyebrow: "Aired spring 2025 · The first Canada-set U.S. season"
 lede: "The first time the U.S. Top Chef flagship left the country, staged across Toronto and the Calgary–Canmore corridor. Kristen Kish's second season as host, Tom Colicchio at a supersized judge's table. With the run complete, the first-Canada-set argument is what holds."
-pull: "The first Canada-set flagship season — the run where the U.S. show left the country and the road-show grammar crossed a border."
+pull: "A season that measures itself in movement — a border crossing, a city brief, a mountain corridor, and a finals runway that carries all of it forward."
 format_summary: "International road show"
 format_caption: "Toronto and Alberta, supersized eps"
 cast_size: 15
@@ -28,12 +28,11 @@ watch_list:
     body: "The closing stretch across Canada. The cast has spent the runway adapting across borders and regions, and the finals approach reads off the season's international structure."
 ---
 
-Destination Canada. The first time the U.S. Top Chef flagship
-left the country, staged across Toronto and the
-Calgary–Canmore corridor. Kristen Kish hosts her second
-season, Tom Colicchio runs a supersized judge's table. With
-the full run behind it, the season's case is the
-format-history first: the road-show grammar carried across an
-international border for the first time on the U.S. run. It
-has settled into the canon's deep middle at a confident
-rank-nineteen standing.
+Destination Canada opens with a cross-border episode that sets
+the season's rhythm before it settles into a Toronto stretch,
+then pivots roughly midway to the Calgary–Canmore corridor. The
+structure rewards chefs who adapt fast: an early city-reading
+brief, a mountain-and-prairie turn, then a runway into the
+finals that plays off everything the international format
+demanded along the way. Kish and Colicchio anchor a season
+built on structure, not just scenery.
