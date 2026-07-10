@@ -1,9 +1,9 @@
 ---
 show: alone
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-07-10
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've watched every season across the no-host and Colby eras and tracked the format through twelve runs. The ranking weighs format consequence, structural novelty, and what each season contributed to the show's identity — never outcomes, never who lasted longest. It is one read, held with confidence."
+meth_who_p: "tiered.tv's editor. I've watched every season across the no-host era (seasons 1–6) and the Colby era (seasons 7–12) and tracked the format through twelve runs. The ranking weighs format consequence, structural novelty, and what each season contributed to the show's identity — never outcomes, never who lasted longest. It is one read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "Format consequence comes first. Origin run, first international location, the pairs experiment, first all-returnees season, first hosted season, winter format, first African location — each earns its slot by what it added or proved. A structurally novel season earns credit for the risk. A repeat-location run earns credit for proving the format holds."
 meth_when_h: "When I revisit"
