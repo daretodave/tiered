@@ -114,6 +114,16 @@
 }
 .site-header.tinted .site-header-signin:hover { color: var(--show-paper); }
 
+/* Critique pass-84 #MED: neutral placeholder shown while the client
+   is still confirming real auth state (static/ISR routes render a
+   null user pre-hydration). Same footprint as the real pill so there
+   is no layout shift, but dimmed and non-interactive so it never
+   reads as a confident (and possibly wrong) "Sign in" CTA. */
+.site-header-signin-pending {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 /* ---- AUTHED ACCOUNT CLUSTER (chevron disclosure, all viewports) ----
    Critique pass-45 #MED (supersedes pass-23 + pass-44): the chevron
    menu carries BOTH breakpoints — `@handle` is the trigger, `Your

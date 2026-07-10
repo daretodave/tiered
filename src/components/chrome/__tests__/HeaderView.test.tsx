@@ -41,9 +41,16 @@ describe('<HeaderView>', () => {
     expect(screen.queryByTestId('site-header-search-link')).toBeNull()
   })
 
-  it('renders the Sign in pill pointing to /sign-in when signed out', () => {
+  it('renders the Sign in pill pointing to /sign-in once auth resolves to signed-out', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ ok: true, signedIn: false, user: null }),
+      }),
+    )
     render(<HeaderView />)
-    const signIn = screen.getByTestId('site-header-signin-link')
+    const signIn = await screen.findByTestId('site-header-signin-link')
     expect(signIn).toHaveAttribute('href', '/sign-in')
     expect(signIn).toHaveTextContent(/Sign in/i)
     expect(screen.queryByTestId('site-header-user-trigger')).toBeNull()
@@ -51,6 +58,20 @@ describe('<HeaderView>', () => {
       'data-signed-in',
       'false',
     )
+  })
+
+  it('renders a neutral pending skeleton (not a confident Sign in CTA) before /api/auth/me settles', () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ ok: true, signedIn: false, user: null }),
+      }),
+    )
+    render(<HeaderView />)
+    const pending = screen.getByTestId('site-header-signin-pending')
+    expect(pending).toHaveAttribute('aria-hidden', 'true')
+    expect(screen.queryByTestId('site-header-signin-link')).toBeNull()
   })
 
   it('renders the chevron trigger + opens the menu with the Sign out item when signed in', () => {
@@ -94,15 +115,19 @@ describe('<HeaderView>', () => {
         }),
       }),
     )
-    // SSR value is signed-out (the SSG/ISR bug condition).
+    // SSR value is signed-out (the SSG/ISR bug condition) — renders
+    // the neutral pending skeleton, not a confident "Sign in" CTA,
+    // until the client confirms the real auth state.
     render(<HeaderView user={null} />)
-    expect(screen.getByTestId('site-header-signin-link')).toBeInTheDocument()
+    expect(screen.getByTestId('site-header-signin-pending')).toBeInTheDocument()
+    expect(screen.queryByTestId('site-header-signin-link')).toBeNull()
     await waitFor(() => {
       expect(screen.getByTestId('site-header-user-trigger')).toHaveTextContent(
         '@asha',
       )
     })
     expect(screen.queryByTestId('site-header-signin-link')).toBeNull()
+    expect(screen.queryByTestId('site-header-signin-pending')).toBeNull()
     expect(screen.getByTestId('site-header')).toHaveAttribute(
       'data-signed-in',
       'true',

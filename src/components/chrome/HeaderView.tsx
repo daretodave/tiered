@@ -43,25 +43,41 @@ type HeaderViewProps = {
  * pattern carries both breakpoints; future menu peers
  * (`My profile`, settings) slot in without re-architecting the
  * header. CSS lives in chrome.css under `.site-header-user-*`.
+ *
+ * Critique pass-84 #MED: a null `user` prop is ambiguous — it means
+ * either "genuinely signed out" or "static/ISR route, real answer
+ * not known yet." Painting the confident "Sign in" CTA immediately
+ * for both cases flickers the wrong affordance for returning members
+ * on the site's highest-traffic page. `hydrated` tracks whether the
+ * client has actually confirmed the answer (true from the start when
+ * `user` arrives truthy, since that can only come from a real
+ * session); while it's false, render a neutral, non-interactive
+ * skeleton instead of either CTA.
  */
 export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
   const [authUser, setAuthUser] = useState<HeaderUser | null>(user)
+  const [hydrated, setHydrated] = useState(Boolean(user))
   const [menuOpen, setMenuOpen] = useState(false)
   const menuId = useId()
   const menuRef = useRef<HTMLDivElement | null>(null)
   const triggerRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    if (typeof fetch !== 'function') return
+    if (typeof fetch !== 'function') {
+      setHydrated(true)
+      return
+    }
     let cancelled = false
     fetch('/api/auth/me', { headers: { accept: 'application/json' } })
       .then((res) => (res.ok ? res.json() : null))
       .then((json: { ok?: boolean; user?: HeaderUser | null } | null) => {
-        if (cancelled || !json || json.ok !== true) return
-        setAuthUser(json.user ?? null)
+        if (cancelled) return
+        if (json && json.ok === true) setAuthUser(json.user ?? null)
+        setHydrated(true)
       })
       .catch(() => {
         /* Keep the SSR value — best effort, no error affordance. */
+        if (!cancelled) setHydrated(true)
       })
     return () => {
       cancelled = true
@@ -170,7 +186,7 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
               </div>
             ) : null}
           </div>
-        ) : (
+        ) : hydrated ? (
           <Link
             className="site-header-signin"
             href="/sign-in"
@@ -179,6 +195,14 @@ export function HeaderView({ tinted = false, user = null }: HeaderViewProps) {
           >
             Sign in
           </Link>
+        ) : (
+          <span
+            className="site-header-signin site-header-signin-pending"
+            aria-hidden="true"
+            data-testid="site-header-signin-pending"
+          >
+            Sign in
+          </span>
         )}
       </div>
     </header>
