@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-09 at commit da99b95
-> Pass count: 50
+> Last pass: 2026-07-10 at commit fbd7806
+> Pass count: 51
 
 ## Considered (awaiting promotion)
 
@@ -957,6 +957,15 @@ procedure: "read `plan/AUDIT.md`'s content-gaps rows tagged as show-queue entrie
 Pending count ≤2, propose the next wave (3-5 shows) before scoring anything else." Cheap
 process fix — no code, just a skill-file amendment plus, once promoted, one expand pass
 that actually files wave 7.
+**Update (expand pass 51, 2026-07-10):** the queue ran dry again (0 Pending show rows,
+same failure this candidate describes) and this pass caught it manually by reading the
+AUDIT.md Pending section directly rather than via an enforced checklist — filed WAVE 9
+(5 shows: RHODubai, Summer House, Bachelor in Paradise, RuPaul's Drag Race All Stars,
+Chopped). This is now the third time the queue has been caught empty by manual review
+rather than a structural gate (waves 7, 8, 9 each followed a stall). The scope sketch
+above remains unpromoted and is the actual fix — `/oversight` should promote this to a
+skill-file amendment so the check stops depending on the expand pass author remembering
+to look.
 
 ### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
 
