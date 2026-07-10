@@ -796,6 +796,14 @@ two-line doc update in the skill files that reference these ledgers).
 **Conflicts:** none. Independent of candidates #26/#28; can ship in isolation or
 bundled with either.
 
+**Reinforced (digest 2026-07-10):** the exact failure mode this candidate
+predicted recurred — a second cloud march tick failed 2026-07-09T21:07:57Z
+(run 29050334437) with the identical `SDK execution error: Prompt is too
+long`, self-healed on the next tick same as before. `plan/CRITIQUE.md` has
+grown from 2,967 to 3,096 lines (still ~1.5MB) since yesterday's filing. Two
+occurrences in 2 days is no longer "plausible root cause" — it's a recurring
+pattern. Still unpromoted, now 1 day stale.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
