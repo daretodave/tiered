@@ -1,5 +1,47 @@
 # CRITIQUE
 
+> Last pass: 2026-07-10 at commit ec30423
+> Pass count: 85
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 85 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), with independent
+> authenticated `curl` re-verification of the raw SSR HTML for
+> the vote-pair/comment-composer auth-state class before ruling
+> it clear. Anon (5 URLs: `/`,
+> `/shows/love-is-blind/season/columbus`, `/shows`, `/themes`,
+> `/shows/below-deck-down-under/season/western-australia`) and
+> authed (`/`, `/shows/top-chef/season/destination-canada`,
+> `/u/e2e`, `/themes/best-post-merge`) walks ran, desktop +
+> mobile, deliberately targeting pages outside the last several
+> passes' rotation. The Phase-36/pass-84 vote-pair/comment SSR
+> auth-state bug was checked again on a fresh season page
+> (Top Chef S22) and did **not** reproduce — `data-vote-head-state`
+> and the comment composer both carried the signed-in state in
+> the raw authenticated response, confirming the #522 fix
+> generalizes. Filed 4 findings, all MED/LOW: a themed-list
+> title/description mismatch on `best-non-winning-runs` (title
+> implies one loud arc, description describes an ensemble-wide
+> diffuse dynamic); a subject-less sentence fragment closing the
+> Below Deck Down Under S2 canon rationale; a document
+> heading-order violation on the home hero (`<h2>` "cover-name"
+> renders before the page's only `<h1>` in raw SSR — an a11y
+> best-practice miss the critical-only axe gate doesn't catch);
+> and near-verbatim restatement of the same facts (host, judges,
+> location, "first Canada-set" framing) across the Top Chef
+> Destination Canada lede, body, and canon rationale, reading as
+> templated rather than the plain-spoken voice bar. Dropped one
+> observation (a benign RSC-prefetch-abort network log on
+> `/u/e2e`, an artifact of the walker's `context.close()`, not a
+> product-facing defect). Zero console errors, zero failed
+> first-party requests (excluding the dropped prefetch-abort
+> noise), zero mobile overflow on any capture across both
+> passes. No spoiler leakage. No per-show SVG iconography
+> violations found.
+>
+> ───── Pass 84 metadata kept below for history ─────
+>
 > Last pass: 2026-07-09 at commit 6706b01
 > Pass count: 84
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1800,6 +1842,13 @@
 
 ## Pending
 
+- [ ] [MED] [anon] /themes/best-non-winning-runs — the list's title and description contradict each other on the same card/hero. Title: "Seasons that live in their loudest arcs" (implies one dominant, singular loud arc). Description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest." (describes a diffuse, whole-cast ensemble dynamic — the opposite framing of a single loud arc). A first-time reader hits the title expecting one thing and the description immediately reframes it as another, on the /themes index card and again on the list's own hero. Source: `content/themes/best-non-winning-runs.md` frontmatter `title` (line 3) vs `description` (line 12) — the `tagline` field (line 4, "lasting shape lives in their ensemble texture") already agrees with the description, so `title` is the outlier. Fix: curator-only edit — retitle to match the ensemble framing (e.g. "Seasons that spread the arc around" or "Seasons the whole cast carries") so title/tagline/description all agree on the diffuse-ensemble concept; rewriting the description instead would fight the (also-agreeing) tagline. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-non-winning-runs, source: critique-pass-85)
+
+- [ ] [LOW] [anon] /shows/below-deck-down-under/season/western-australia — the "Where it sits in the canon" rationale ends on a subject-less sentence fragment that reads as an orphaned clause rather than a complete sentence, and the two sentences it sits between read as mildly contradictory without a connective. Source: `content/shows/below-deck-down-under/canon.md:36` — "...A solid second season, and one that expanded the show's geographic range in a way the franchise can build from. The less fully realized entry, but a legitimate step forward for the run." The second sentence has no subject ("[It is] the less fully realized entry...") and directly follows a sentence calling the same season "solid," so the pairing reads as an editing leftover rather than a deliberate qualifying beat. Fix: curator-only edit — merge into one complete sentence, e.g. "A solid second season — the less fully realized of the two Down Under entries so far, but a legitimate step forward for the run, and one that expanded the show's geographic range in a way the franchise can build from." Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/below-deck-down-under/season/western-australia, source: critique-pass-85)
+
+- [ ] [MED] [authed] / — the home hero's document heading order is broken: `<h2 class="cover-name">Survivor</h2>` (inside the "Currently featured" promotional cover card, `src/components/home/HomeHero.tsx:61`) renders earlier in the raw SSR DOM than the page's only `<h1 class="home-hero-title">` ("The seasons, ranked. no spoilers.", `HomeHero.tsx:103`). Confirmed via direct authenticated `curl` of the raw SSR HTML — not a hydration artifact; the server-rendered order genuinely has the h2 first. Screen-reader users navigating by heading level land on an h2 before any h1 exists on the page, which breaks the expected document outline on the site's highest-traffic surface. This is a best-practice a11y rule (axe `heading-order`), not one of the WCAG 2.1 AA critical-only checks the phase-18 e2e gate hard-blocks on, which is how it shipped unnoticed. Fix: swap which element gets which level — either wrap the primary hero title (`.home-hero-title`) as the true first heading in DOM order, or demote `.cover-name` to a non-heading element (e.g. a styled `<p>` or `<span>`) since it's a secondary promotional card label, not part of the page's core content outline. Recommend the latter (smaller blast radius, the cover card is decorative/promotional, not a content section). Pin: extend or add a colocated `HomeHero.test.tsx` case asserting the rendered heading roles are `['heading-level-1: home-hero-title']` with no `h2` (or, if `cover-name` stays an `h2`, asserting it appears after the `h1` in DOM order — bidirectional drift guard). Spoiler discipline P0 intact (chrome-only change). (URL: /, source: critique-pass-85)
+
+- [ ] [MED] [authed] /shows/top-chef/season/destination-canada — the season's frontmatter `lede`, its markdown body paragraph, and its canon rationale entry (`content/shows/top-chef/canon.md` `## 22. Destination Canada`) all restate the same handful of facts — Toronto/Calgary–Canmore corridor, Kristen Kish's second season as host, Tom Colicchio's supersized judge's table, "first time the U.S. flagship left the country" — in near-identical clause order across all three surfaces, so a reader who reads the hero lede learns nothing new from either the body section or the canon rationale below it. Source: `content/shows/top-chef/seasons/22-destination-canada.md` `lede` (frontmatter, line 11) vs the markdown body (lines 31-39) vs `content/shows/top-chef/canon.md:365-379` (`tag`, `slot_argument`, and the rationale paragraph) — three surfaces, same sentence shape, same fact order, minor verb-tense swaps only. Reads as templated rather than the "knowledgeable peer, plain sentences over clever ones" voice bearings calls for (`plan/bearings.md:370`). Fix: curator-only edit — keep the lede as the premise-carrying surface (host/location/first-in-country framing), and vary what the body paragraph and canon rationale each emphasize instead of re-listing the same facts — e.g. let the body focus on the season's episode rhythm/structure (the `watch_list` beats already do this well) and let the canon rationale focus on why rank-19 specifically (the format-history-first argument vs. a "clean transition" competitor), trimming the repeated host/judge/location clauses down to a single passing mention rather than a full restatement in each. Content-only, no schema change. Spoiler discipline P0 intact — no outcome, winner, or elimination exposed in any of the three surfaces checked. (URL: /shows/top-chef/season/destination-canada, source: critique-pass-85)
 
 - [x] [MED] [authed] / — the home page is served from Vercel's edge cache (`x-vercel-cache: HIT`, `cache-control: private, no-cache, no-store, must-revalidate, max-age=0` — confirmed via direct `curl` with the authed session cookie attached) and its server-rendered/cached header always paints the signed-out shell (`data-signed-in="false"`, a "Sign in" link) even when the request carries a valid `__session` cookie for a real member. This matches Phase 36's documented design for cached/ISR routes — the auth-state island is meant to hydrate client-side via `GET /api/auth/me` precisely because a shared cached page can't know who's asking — so this is a polish item (visible flash duration on the highest-traffic surface), not a new gap, unlike the vote-pair/comment row above. Fix (optional, lower priority): shrink the visible flash — e.g. a skeleton/neutral chrome state instead of a confident "Sign in" link — so returning members don't get a flicker of the wrong CTA on first paint of the site's most-visited page. Spoiler discipline P0 intact. (URL: /, source: critique-pass-84) — issue: #525 — RESOLVED 468bad2: `HeaderView` now tracks a `hydrated` flag (true immediately when the SSR `user` prop arrives truthy, false while a null prop is still ambiguous) and renders a dimmed, non-interactive, same-footprint skeleton (`.site-header-signin-pending`) instead of the confident "Sign in" CTA until `GET /api/auth/me` settles. Verify gate green: 2821 unit tests, build clean, 3263/3263 e2e.
 
