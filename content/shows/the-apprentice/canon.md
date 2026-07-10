@@ -31,7 +31,7 @@ tag: The original — a business competition inventing its own format in real ti
 slot_argument: Season one builds the grammar from scratch: the team task, the boardroom, the firing. The cast plays it straight and the format rewards them. No celebrity veneer, no self-referential leverage — just a new show figuring out what it is.
 community_rank_hint: { rank: 1, delta: 0, sentiment: hold }
 
-Season one earns the top slot because it invented the format and played it with full conviction. Sixteen business hopefuls in New York City, two teams, weekly tasks that tested real skills — selling, managing, pitching, delivering under pressure. Trump's boardroom worked here because the stakes read as genuine: a job, not a brand deal. The casting brought people who actually wanted the thing the show was offering. The tasks were varied enough that different competitors could distinguish themselves in different weeks. The firing landed with weight. No later season combined these elements as cleanly.
+Season one earns the top slot because it invented the format and played it with full conviction. Sixteen business hopefuls in New York City, two teams, weekly tasks that tested real skills — selling, managing, pitching, delivering under pressure. Donald Trump's boardroom worked here because the stakes read as genuine: a job, not a brand deal. The casting brought people who actually wanted the thing the show was offering. The tasks were varied enough that different competitors could distinguish themselves in different weeks. The firing landed with weight. No later season combined these elements as cleanly.
 
 ## 3. Season Three
 
