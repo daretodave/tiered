@@ -58,9 +58,9 @@ export function HomeHero({
         <div className="cover-tag" data-testid="home-hero-eyebrow">
           Currently featured
         </div>
-        <h2 className="cover-name" style={{ color: featured.palette.ink }}>
+        <p className="cover-name" style={{ color: featured.palette.ink }}>
           {featured.name}
-        </h2>
+        </p>
         <p className="cover-sub" style={{ color: featured.palette.ink }}>
           {renderBlurbWithBreaks(
             featured.card_tagline ?? featured.tagline ?? featured.blurb,

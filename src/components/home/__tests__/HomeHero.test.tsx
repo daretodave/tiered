@@ -127,6 +127,18 @@ describe('<HomeHero>', () => {
     expect(screen.getByTestId('home-cta-about').getAttribute('href')).toBe('/about')
   })
 
+  // Critique pass-85 MED: the promotional cover card's show name is
+  // a secondary label, not part of the page's content outline — the
+  // hero title is the page's only heading. Bidirectional pin against
+  // the h2-before-h1 heading-order break: positive — the h1 exists;
+  // negative — the cover card contributes no heading role at all.
+  it('renders a single h1 with no other heading roles (cover-name is not a heading)', () => {
+    render(<HomeHero featured={survivor()} canonRevisedLabel={CANON_LABEL} />)
+    const headings = screen.getAllByRole('heading')
+    expect(headings).toHaveLength(1)
+    expect(headings[0]?.tagName).toBe('H1')
+  })
+
   it('renders the est-2026 eyebrow on the copy column', () => {
     render(<HomeHero featured={survivor()} canonRevisedLabel={CANON_LABEL} />)
     const hero = screen.getByTestId('home-hero')
