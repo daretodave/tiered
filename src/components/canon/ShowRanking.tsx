@@ -125,7 +125,11 @@ export function ShowRanking({
         ) : (
           <>
             <CanonMethodology canon={canon} />
-            <CanonEraToolbar bands={eraBands} total={entries.length} />
+            <CanonEraToolbar
+              bands={eraBands}
+              total={entries.length}
+              airedSeasons={show.seasons}
+            />
             {tierBands.map((band) => (
               <CanonTierBand
                 key={band.key}

@@ -240,6 +240,12 @@
   font-style: normal;
   letter-spacing: 0.06em;
 }
+.cp-coverage-note {
+  padding: 12px var(--gutter) 0;
+  font: 500 11px/1.5 var(--mono);
+  color: var(--ink-55);
+  letter-spacing: 0.04em;
+}
 /* Era filter (33b): SEO-safe CSS toggle. Server renders every entry
    visible (no data-era-off); CanonEraToolbar sets data-era-off on
    non-matching entries after a chip click. No DOM removal. Era keys

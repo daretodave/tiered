@@ -19,11 +19,23 @@ import type { EraBand } from '@/content'
 type CanonEraToolbarProps = {
   bands: EraBand[]
   total: number
+  /**
+   * Total seasons aired per the show's frontmatter — may exceed
+   * `total` (the ranked-entry count) while a show is mid-drain
+   * (content velocity Rule 2 ships ~5 seasons/tick). When it does,
+   * a coverage note renders below the toolbar so the gap reads as
+   * roadmap rather than a dead end (critique pass-79, perfect-match).
+   */
+  airedSeasons?: number
 }
 
 const ALL = 'all'
 
-export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
+export function CanonEraToolbar({
+  bands,
+  total,
+  airedSeasons,
+}: CanonEraToolbarProps) {
   const [active, setActive] = useState<string>(ALL)
   const [emptyEra, setEmptyEra] = useState(false)
   const mountedRef = useRef(false)
@@ -68,6 +80,9 @@ export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
   const modeLabel = activeBand
     ? `${activeBand.label.toLowerCase()} only`
     : 'canon order'
+
+  const seasonsRemaining =
+    airedSeasons != null ? Math.max(0, airedSeasons - total) : 0
 
   return (
     <>
@@ -115,6 +130,12 @@ export function CanonEraToolbar({ bands, total }: CanonEraToolbarProps) {
       {emptyEra && (
         <div className="cp-canon-empty" data-testid="era-empty-state">
           No ranked seasons in this era yet.
+        </div>
+      )}
+      {seasonsRemaining > 0 && (
+        <div className="cp-coverage-note" data-testid="canon-coverage-note">
+          {seasonsRemaining} more season{seasonsRemaining === 1 ? '' : 's'}{' '}
+          aired — ranking in progress.
         </div>
       )}
     </>

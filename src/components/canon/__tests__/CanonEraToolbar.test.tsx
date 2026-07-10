@@ -14,11 +14,23 @@ const BANDS_WITH_EMPTY: EraBand[] = [
   { key: 'future-era', label: 'Future era', range: [2027, 2030] },
 ]
 
-function Harness({ bands, total }: { bands: EraBand[]; total: number }) {
+function Harness({
+  bands,
+  total,
+  airedSeasons,
+}: {
+  bands: EraBand[]
+  total: number
+  airedSeasons?: number
+}) {
   return (
     <div data-canon-page-root data-testid="root">
       <div data-view-pane="canon">
-        <CanonEraToolbar bands={bands} total={total} />
+        <CanonEraToolbar
+          bands={bands}
+          total={total}
+          airedSeasons={airedSeasons}
+        />
         <a className="cp-hero-entry" data-testid="e-pioneer" data-era="pioneer">
           a
         </a>
@@ -98,5 +110,29 @@ describe('<CanonEraToolbar>', () => {
     render(<Harness bands={BANDS_WITH_EMPTY} total={2} />)
     fireEvent.click(screen.getByTestId('era-chip-pioneer'))
     expect(screen.queryByTestId('era-empty-state')).toBeNull()
+  })
+
+  it('shows a coverage note when aired seasons exceed ranked entries', () => {
+    render(<Harness bands={[]} total={1} airedSeasons={4} />)
+    expect(screen.getByTestId('canon-coverage-note')).toHaveTextContent(
+      '3 more seasons aired — ranking in progress.',
+    )
+  })
+
+  it('uses singular "season" when exactly one season remains unranked', () => {
+    render(<Harness bands={[]} total={3} airedSeasons={4} />)
+    expect(screen.getByTestId('canon-coverage-note')).toHaveTextContent(
+      '1 more season aired — ranking in progress.',
+    )
+  })
+
+  it('omits the coverage note when the canon is fully ranked', () => {
+    render(<Harness bands={[]} total={4} airedSeasons={4} />)
+    expect(screen.queryByTestId('canon-coverage-note')).toBeNull()
+  })
+
+  it('omits the coverage note when airedSeasons is not provided', () => {
+    render(<Harness bands={[]} total={1} />)
+    expect(screen.queryByTestId('canon-coverage-note')).toBeNull()
   })
 })
