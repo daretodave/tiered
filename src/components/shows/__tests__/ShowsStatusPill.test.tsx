@@ -37,4 +37,20 @@ describe('<ShowsStatusPill>', () => {
     const pill = screen.getByTestId('show-tile-status')
     expect(pill.textContent).not.toMatch(/5\s*\/\s*3/)
   })
+
+  it('carries a title explaining what the ratio counts when shipped < target', () => {
+    render(<ShowsStatusPill shipped={1} target={3} />)
+    const pill = screen.getByTestId('show-tile-status')
+    expect(pill.getAttribute('title')).toBe(
+      '1 of 3 canon entries published toward the review floor',
+    )
+  })
+
+  it('carries a title describing the review state once shipped meets target', () => {
+    render(<ShowsStatusPill shipped={3} target={3} />)
+    const pill = screen.getByTestId('show-tile-status')
+    expect(pill.getAttribute('title')).toBe(
+      'Canon entries published, under editorial review',
+    )
+  })
 })
