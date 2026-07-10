@@ -1,5 +1,61 @@
 # CRITIQUE
 
+> Last pass: 2026-07-10 at commit 1dd2bd1
+> Pass count: 87
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 87 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/chopped/season/season-1`, `/shows`, `/themes/firsts`,
+> `/shows/the-apprentice`) and authed (`/`,
+> `/shows/chopped/season/season-1`, `/u/e2e`, `/themes/firsts`)
+> walks ran, desktop + mobile, deliberately targeting the
+> just-shipped Chopped show/season plus the just-edited
+> The Apprentice canon page (verifying the pass-67 #538
+> bare-surname-first-mention fix reads correctly). Confirmed:
+> "Donald Trump's boardroom" is the only full-name mention and
+> precedes the sole remaining bare "Trump's boardroom" reference
+> (Season Four, later in canon order) — the fix holds, no other
+> bare-surname-before-first-mention issue on that page. Reader
+> raised 7 raw observations across both passes; self-assessment
+> (Step 3) dropped 4 as invalid: the Chopped meta-description
+> ellipsis is intentional, documented `clipToSeoBudget`
+> clause-boundary-truncation behavior (pass 62/67/68), not a
+> bug; the apparent "inconsistency" between the Apprentice and
+> Chopped `/shows` tile badges is the pass-52 #417 `shipped >=
+> target` guard working exactly as designed (Apprentice's 10
+> canon entries exceed the target-3 floor so it correctly shows
+> the no-ratio "review in progress" label, while Chopped's 1
+> entry is still below the floor and correctly shows the
+> ratio); the `/themes/firsts` "SAVE (THIS DEVICE)" label
+> reading the same authed or not is the same established
+> non-bug precedent dropped at passes 74/75/85 (deliberate
+> device-scope qualifier, pending future save-to-account data
+> work); and the `/u/e2e` mobile RSC-prefetch-abort matches the
+> same benign artifact class passes 85/86 already dropped.
+> Filed 3 findings (all MED): a Chopped S1 `premiere_caption`
+> that repeats the month/year already shown one line above and
+> drops the day-of-month instead of adding a real timeslot
+> fact; the `/shows` B-tier canon-progress pill's bare "N / T"
+> fraction has no label naming what it counts (canon entries
+> toward the review floor, not seasons ranked), distinct from
+> the already-fixed #417 out-of-range bug; and a TTFB
+> regression on the site's two largest-canon show pages
+> (`/shows/the-apprentice`, `/shows/survivor`, both 3-6x slower
+> than every other page walked) that correlates with canon
+> size under the intentional `force-dynamic` per-request render
+> (phase 35) — flagged for profiling, not for reverting the
+> freshness guarantee that render mode protects. Zero console
+> errors, zero non-benign failed first-party requests, zero
+> mobile overflow across both passes. No spoiler leakage. No
+> per-show SVG iconography violations found (only the shared
+> brand mark + generic vote-arrow SVGs present, zero `<img>`
+> tags site-wide).
+>
+> ───── Pass 86 metadata kept below for history ─────
+>
 > Last pass: 2026-07-10 at commit e33fc69
 > Pass count: 86
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1881,6 +1937,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon+authed] /shows/chopped/season/season-1 — the PREMIERED stat tile's caption repeats the month/year already shown one line above it and drops the day-of-month, instead of adding a genuine new fact the way the site's established convention does. `content/shows/chopped/seasons/01-season-1.md`: `premiere_date: "2009-01-13"` renders as "Jan 13, 2009" in the stat value, and `premiere_caption: "Food Network · Tuesday, January 2009"` renders directly below it — restating "January 2009" (already visible one line up) while dropping the day number, so the two lines read as a truncated typo pair rather than value+detail. Compare the established convention on other freshly-scaffolded shows: Survivor S1 (Borneo) pairs its date with `"CBS · Wednesday 8/7c"` (a real timeslot fact, not a date restatement); RHOSLC/Southern Charm S1 pair theirs with network+month only in a form that doesn't duplicate the exact stat-value string. Fix: rewrite `premiere_caption` in `content/shows/chopped/seasons/01-season-1.md` to add a real production fact (a confirmed network timeslot, e.g. "Food Network · Tuesdays at 10pm ET" if verifiable) instead of restating the date; if no timeslot can be confirmed, drop to weekday-only ("Food Network · Tuesday") so it doesn't duplicate the month/year already shown above it. Content-only, one field. Spoiler discipline P0 intact (premiere scheduling only). (URL: /shows/chopped/season/season-1, source: critique-pass-87)
+
+- [ ] [MED] [anon] /shows — the B-tier canon-progress pill renders a bare `N / T` fraction (e.g. "in progress · 1 / 3" on the Chopped tile) with no label, title attribute, or aria-text naming what the numbers count. `src/components/shows/ShowsStatusPill.tsx:10` renders `` `in progress · ${shipped} / ${target}` `` where `shipped` is the count of canon entries currently shipped for the show and `target` is `CANON_TARGET` (3, the canon-mode promotion season floor per phase 26 — see `src/components/shows/canonProgress.ts`), but nothing in the markup states this. On the Chopped tile the "1 / 3" ratio sits directly above the tile's own footer stat "62 seasons · canon in review" — two different numbers on one card with no way for a first-time reader to tell that 1/3 counts canon entries toward a review floor, not seasons ranked against the show's 62-season total. Distinct from the already-fixed pass-52 #417 bug (which guarded against `shipped >= target` producing an out-of-range ratio like "5 / 3" — that guard works correctly and is why The Apprentice's tile correctly shows the no-ratio "review in progress" label instead of a ratio, since its 10 shipped canon entries exceed the target-3 floor); this finding is about the ratio's own legibility on the tiles where it's still shown (shipped < target). Fix: add a `title` attribute to the pill (e.g. `title="Canon entries published toward the review floor"`) or change the visible literal to something self-explanatory (e.g. "1 of 3 canon entries reviewed") so the fraction can't be misread against the adjacent season-count stat. Spoiler discipline P0 intact (display-state only). (URL: /shows, source: critique-pass-87)
+
+- [ ] [MED] [anon] /shows/the-apprentice — time-to-first-byte on this page (and on `/shows/survivor`, the site's other largest-canon show) runs 3-6x slower than every other page walked this pass, correlating specifically with canon size rather than being apprentice-specific. Repeated `curl -w` samples: `/shows/the-apprentice` → 1.68s / 1.11s / 1.15s / 0.90s; `/shows/survivor` → 1.13s / 0.90s / 0.86s; versus `/` → 0.23s, `/shows` → 0.16s, `/themes/firsts` → 0.30s, `/shows/chopped/season/season-1` → 0.34s (Chopped has only 1 canon entry vs. Apprentice's 10 and Survivor's full run). `src/app/shows/[show]/page.tsx:37` sets `export const dynamic = 'force-dynamic'` deliberately — the phase-35 comment explains this renders the page per request so the live community-ranking aggregate never goes stale (the fix for a prior "refresh always shows 0" bug) — that freshness guarantee is correct and should not be reverted. But the TTFB gap scaling specifically with canon/season count, not shared by the small-canon Chopped page, suggests the per-request cost of assembling the page (`getAllSeasons` / `getCanon` / `getCommunityRanking`) grows with season count in a way that hasn't been profiled. Fix: profile where the per-request time goes on large-canon show pages — likely candidates are the community-ranking aggregate query's scaling with row count, or redundant content-file reads across the season list — and optimize the hot path (indexing, memoizing within the request, or narrowing the query) without reintroducing page-level caching that would resurrect the staleness bug the `force-dynamic` render was added to fix. (URL: /shows/the-apprentice, source: critique-pass-87)
 
 - [x] [MED] [anon] /themes/best-non-winning-runs — the list's title and description contradict each other on the same card/hero. Title: "Seasons that live in their loudest arcs" (implies one dominant, singular loud arc). Description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest." (describes a diffuse, whole-cast ensemble dynamic — the opposite framing of a single loud arc). A first-time reader hits the title expecting one thing and the description immediately reframes it as another, on the /themes index card and again on the list's own hero. Source: `content/themes/best-non-winning-runs.md` frontmatter `title` (line 3) vs `description` (line 12) — the `tagline` field (line 4, "lasting shape lives in their ensemble texture") already agrees with the description, so `title` is the outlier. Fix: curator-only edit — retitle to match the ensemble framing (e.g. "Seasons that spread the arc around" or "Seasons the whole cast carries") so title/tagline/description all agree on the diffuse-ensemble concept; rewriting the description instead would fight the (also-agreeing) tagline. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-non-winning-runs, source: critique-pass-85) — issue: #529 — RESOLVED f481fb2: retitled to "Seasons the whole cast carries" — agrees with tagline ("ensemble texture") and description ("spread across the whole cast"); no placement/outcome language, preserving the pass-16 spoiler-safety fix on this same title field (it also renders verbatim on season-page "Also appears in" cross-refs). `last_revised` bumped to 2026-07-10. content:check green (58 shows, 727 seasons, 12 themes).
 
