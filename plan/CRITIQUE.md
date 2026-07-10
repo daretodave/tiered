@@ -1,5 +1,45 @@
 # CRITIQUE
 
+> Last pass: 2026-07-10 at commit e33fc69
+> Pass count: 86
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 86 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/summer-house/season/amagansett`, `/shows`,
+> `/themes/best-villain-editing`, `/shows/vanderpump-rules`) and
+> authed (`/`, `/shows/hells-kitchen/season/battle-of-the-states`,
+> `/u/e2e`, `/themes/best-comeback-seasons`) walks ran, desktop +
+> mobile, deliberately targeting the just-shipped Summer House
+> show/season (freshness check on the newest content) plus pages
+> outside the last several passes' rotation. The Phase-36
+> vote-pair/comment SSR auth-state class was re-checked on Hells
+> Kitchen S24 via independent authenticated `curl` re-verification
+> of the raw SSR HTML — did **not** reproduce
+> (`data-vote-head-state="signed-in-no-vote"`, `data-signed-in="true"`,
+> comment composer showed live `as @e2e` input), confirming the
+> fix continues to hold. Reader raised 3 raw observations; self-
+> assessment (Step 3) dropped 2 as invalid — the meta-description
+> ellipsis on the Summer House season page is intentional,
+> documented `clipToSeoBudget` clause-boundary-truncation behavior
+> (pass 62/67/68), not a bug, and the `/u/e2e` RSC-prefetch-abort
+> network note matches the exact benign `context.close()` artifact
+> class pass 85 already explicitly dropped. Filed 1 finding (MED):
+> the Summer House S1 `filming_caption` restates its own `location`
+> value instead of adding a founding-season editorial note, unlike
+> the RHOSLC/Southern Charm S1 sibling pattern (`premiere_caption`
+> on the same file was checked and found to already match the
+> established site-wide convention, so excluded). Zero console
+> errors, zero non-benign failed first-party requests, zero mobile
+> overflow across both passes. No spoiler leakage. No per-show SVG
+> iconography violations found (verified via raw-HTML `<svg>` audit
+> on the anon pass — only the shared brand mark + generic vote
+> chevrons present).
+>
+> ───── Pass 85 metadata kept below for history ─────
+>
 > Last pass: 2026-07-10 at commit ec30423
 > Pass count: 85
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1841,6 +1881,8 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/summer-house/season/amagansett — the FILMED stat tile's caption restates the location value instead of adding a founding-season editorial note, unlike the two other freshly-scaffolded Bravo founding seasons that already establish the pattern. `content/shows/summer-house/seasons/01-amagansett.md` frontmatter: `location: "Amagansett, New York"` / `filming_caption: "Amagansett, New York · the Hamptons"` — restates the exact location string and tacks on the broader region name, adding no distinct editorial fact. Compare the sibling founding-season convention already shipped on comparable freshly-added Bravo shows: RHOSLC S1's `filming_caption: "Salt Lake City · first shoot in an LDS-adjacent world"` and Southern Charm S1's `filming_caption: "Charleston · Bravo's first shoot in this social world"` — both add a real founding-season note ("first shoot in [X] world") rather than repeating the location. (`premiere_caption: "Bravo · January 2017"` was also checked against `eyebrow: "Premiered January 2017 · Bravo"` but matches the established site-wide convention already seen unmodified on RHOSLC/Southern Charm S1 — reordered, not a defect — so it's excluded from this finding.) Fix: rewrite `filming_caption` in `content/shows/summer-house/seasons/01-amagansett.md` to add a founding-season note in the same shape (e.g. "Amagansett · the format's first Hamptons shoot" or a real production detail), following the RHOSLC/Southern Charm convention instead of restating the location. Content-only, one field. Spoiler discipline P0 intact (location/production commentary only). (URL: /shows/summer-house/season/amagansett, source: critique-pass-86)
 
 - [x] [MED] [anon] /themes/best-non-winning-runs — the list's title and description contradict each other on the same card/hero. Title: "Seasons that live in their loudest arcs" (implies one dominant, singular loud arc). Description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest." (describes a diffuse, whole-cast ensemble dynamic — the opposite framing of a single loud arc). A first-time reader hits the title expecting one thing and the description immediately reframes it as another, on the /themes index card and again on the list's own hero. Source: `content/themes/best-non-winning-runs.md` frontmatter `title` (line 3) vs `description` (line 12) — the `tagline` field (line 4, "lasting shape lives in their ensemble texture") already agrees with the description, so `title` is the outlier. Fix: curator-only edit — retitle to match the ensemble framing (e.g. "Seasons that spread the arc around" or "Seasons the whole cast carries") so title/tagline/description all agree on the diffuse-ensemble concept; rewriting the description instead would fight the (also-agreeing) tagline. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-non-winning-runs, source: critique-pass-85) — issue: #529 — RESOLVED f481fb2: retitled to "Seasons the whole cast carries" — agrees with tagline ("ensemble texture") and description ("spread across the whole cast"); no placement/outcome language, preserving the pass-16 spoiler-safety fix on this same title field (it also renders verbatim on season-page "Also appears in" cross-refs). `last_revised` bumped to 2026-07-10. content:check green (58 shows, 727 seasons, 12 themes).
 
