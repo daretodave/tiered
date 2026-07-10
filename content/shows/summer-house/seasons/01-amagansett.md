@@ -11,7 +11,7 @@ lede: "A fixed group of New York City friends trade weekday city life for a shar
 pull: "A fixed friend group, one shared Hamptons rental, and the weekend commute — the simple format that built a Bravo mainstay."
 format_summary: "Docusoap · share-house format"
 format_caption: "the founding cast, house, and commute structure"
-filming_caption: "Amagansett, New York · the Hamptons"
+filming_caption: "Amagansett · Bravo's first shared-rental shoot"
 premiere_caption: "Bravo · January 2017"
 take_h2: "A shared roof, no host required."
 ---
