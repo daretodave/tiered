@@ -1,12 +1,12 @@
 ---
 slug: best-non-winning-runs
-title: "Seasons that live in their loudest arcs"
+title: "Seasons the whole cast carries"
 tagline: "A competition season's most-quoted stretches come from the personalities who fill the room, not from any one player. These are the seasons whose <b>lasting shape lives in their ensemble texture</b> — and each one is what it is because of those runs."
 category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-28
+last_revised: 2026-07-10
 featured: false
 related:
   - best-post-merge
