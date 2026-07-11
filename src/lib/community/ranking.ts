@@ -173,10 +173,42 @@ export async function getCommunityRanking(
   try {
     const client = serviceRoleClient()
 
-    const { data: rankData, error: rankErr } = await client.rpc(
-      'compute_weighted_rank',
-      { p_show: show.slug },
-    )
+    // Four independent reads — none depends on another's result — so
+    // fire them concurrently rather than one-at-a-time. Sequential
+    // awaits here were the root cause of CRITIQUE pass-87's TTFB
+    // finding: large-canon shows (more seasons -> more historical
+    // votes/snapshots to filter) paid the full round-trip cost of
+    // each query stacked back-to-back instead of in parallel.
+    const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+    const sevenDaysAgo = weekAgo
+
+    const [rankResult, voterResult, snapResult, latestSnapResult] =
+      await Promise.all([
+        client.rpc('compute_weighted_rank', { p_show: show.slug }),
+        client
+          .from('votes')
+          .select('session_id, target_id, value, created_at')
+          .eq('target_type', 'season')
+          .like('target_id', `${show.slug}:%`)
+          .gt('created_at', weekAgo)
+          .neq('value', 0),
+        client
+          .from('rank_snapshots')
+          .select('id, season_number, rank, snapshot_at')
+          .eq('show', show.slug)
+          .lte('snapshot_at', sevenDaysAgo)
+          .order('snapshot_at', { ascending: false })
+          .limit(200),
+        client
+          .from('rank_snapshots')
+          .select('snapshot_at')
+          .eq('show', show.slug)
+          .order('snapshot_at', { ascending: false })
+          .limit(1)
+          .maybeSingle(),
+      ])
+
+    const { data: rankData, error: rankErr } = rankResult
     if (rankErr) throw new Error(rankErr.message)
 
     const rows: VoteAggregateRow[] = (rankData ?? []).map(
@@ -189,14 +221,7 @@ export async function getCommunityRanking(
       }),
     )
 
-    const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
-    const { data: voterData } = await client
-      .from('votes')
-      .select('session_id, target_id, value, created_at')
-      .eq('target_type', 'season')
-      .like('target_id', `${show.slug}:%`)
-      .gt('created_at', weekAgo)
-      .neq('value', 0)
+    const { data: voterData } = voterResult
     const voters = new Set<string>()
     for (const v of voterData ?? []) {
       const tid = String((v as Record<string, unknown>)['target_id'] ?? '')
@@ -207,17 +232,7 @@ export async function getCommunityRanking(
       }
     }
 
-    const sevenDaysAgo = new Date(
-      Date.now() - 7 * 24 * 60 * 60 * 1000,
-    ).toISOString()
-    const { data: snapData } = await client
-      .from('rank_snapshots')
-      .select('id, season_number, rank, snapshot_at')
-      .eq('show', show.slug)
-      .lte('snapshot_at', sevenDaysAgo)
-      .order('snapshot_at', { ascending: false })
-      .limit(200)
-
+    const { data: snapData } = snapResult
     let baseline: SnapshotRow[] = []
     let version: number | null = null
     if (snapData && snapData.length > 0) {
@@ -236,13 +251,7 @@ export async function getCommunityRanking(
       version = Number((snapData[0] as Record<string, unknown>)['id'])
     }
 
-    const { data: latestSnap } = await client
-      .from('rank_snapshots')
-      .select('snapshot_at')
-      .eq('show', show.slug)
-      .order('snapshot_at', { ascending: false })
-      .limit(1)
-      .maybeSingle()
+    const { data: latestSnap } = latestSnapResult
     const lastRecomputeAt = latestSnap
       ? String((latestSnap as Record<string, unknown>)['snapshot_at'])
       : null
