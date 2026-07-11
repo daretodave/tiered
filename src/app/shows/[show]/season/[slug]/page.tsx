@@ -324,6 +324,26 @@ export function whereItSitsCopy(
     : `Slot #${pad2(canonRank)} of ${canonTotal} in the ${canonName} Editor's Canon. The seasons on either side show what I ranked it against.`
 }
 
+// critique-pass-88 MED: the site-wide default vote question
+// ("...community top 10?") rendered verbatim on shows whose total
+// season count can never reach 10 (The Circle at 7, several others
+// at 1-6), making the question logically empty — every season
+// trivially clears a bar the catalog can't exceed. Scale the
+// fallback to the show's real size: shows with ≥10 seasons keep the
+// original phrasing (no regression), shows with 2-9 seasons get a
+// threshold matching their own ceiling, and 1-season shows drop the
+// numeric framing entirely since "top 1" is meaningless. Only fires
+// when a season has no explicit `vote_question` override.
+export function voteQuestionFor(show: Show): string {
+  if (show.seasons >= 10) {
+    return 'Does this belong in the community top 10?'
+  }
+  if (show.seasons === 1) {
+    return 'Does this season hold up?'
+  }
+  return `Does this belong in the community top ${show.seasons}?`
+}
+
 // Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:
 // the prior literal "Read next." framed both adjacent cards as the
 // reader's forward path, but the section can render a canon-above
@@ -490,8 +510,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
     themes,
     canonRank,
   )
-  const voteQuestion =
-    season.vote_question ?? 'Does this belong in the community top 10?'
+  const voteQuestion = season.vote_question ?? voteQuestionFor(show)
 
   const lede = ledeOf(season)
   const body = bodyOf(season)

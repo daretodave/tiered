@@ -68,6 +68,7 @@ import {
   seasonHeroBylineFor,
   statsFor,
   takeH2For,
+  voteQuestionFor,
   whereItSitsCopy,
 } from '../page'
 
@@ -502,6 +503,33 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
     expect(whereItSitsCopy(show, null, 0)).toBe(
       "Canon position not assigned yet — the editors' draft is still in progress for The Apprentice. Check back as the canon fills in.",
     )
+  })
+})
+
+describe('voteQuestionFor — scales the default vote question to catalog size (critique-pass-88)', () => {
+  it('keeps the original "top 10" phrasing for shows with 10+ seasons (no regression)', () => {
+    const show = makeShow({ seasons: 47 })
+    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 10?')
+  })
+
+  it('keeps the original phrasing exactly at the 10-season boundary', () => {
+    const show = makeShow({ seasons: 10 })
+    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 10?')
+  })
+
+  it('scales the threshold down for a mid-size catalog (7 seasons)', () => {
+    const show = makeShow({ name: 'The Circle', slug: 'the-circle', seasons: 7 })
+    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 7?')
+  })
+
+  it('scales the threshold down for a small catalog (2 seasons)', () => {
+    const show = makeShow({ seasons: 2 })
+    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 2?')
+  })
+
+  it('drops the numeric threshold entirely for a 1-season show', () => {
+    const show = makeShow({ seasons: 1 })
+    expect(voteQuestionFor(show)).toBe('Does this season hold up?')
   })
 })
 
