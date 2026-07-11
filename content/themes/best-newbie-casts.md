@@ -1,12 +1,12 @@
 ---
 slug: best-newbie-casts
 title: "Rookie casts walking in fluent"
-tagline: "Some first-time casts step off the boat playing like they've already done this. These are the rookie rosters that <b>walked in fluent</b> — confident, loud, prepared to make the season the show needed them to make."
+tagline: "Some first-time casts step off the boat playing like they've already done this. What unites them isn't luck — it's casts <b>fully formed before the format found its footing</b>, ready with chemistry and opinions on day one."
 category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-11
 featured: false
 related:
   - firsts
