@@ -92,6 +92,70 @@
      this pass. #29 — reinforced (continued CRITIQUE.md growth + new
      PHASE_CANDIDATES.md self-growth signal). #30/#31 — new this pass. -->
 
+<!-- Digest 2026-07-11 (commit 3b8709b) — 1 new tuning proposal filed (#32) per
+     skills/digest.md §5, reading the pulse since digest 2026-07-10 (fbd7806).
+     e2e-full's HIGH AUDIT row (candidate #26's evidence base) recurred a third
+     consecutive night (2026-07-06, 2026-07-09, 2026-07-10 — run 29130142942),
+     and the same tick window's 2026-07-10T18:13Z cloud march crash (run
+     29113747919) was silently absorbed by its own workflow's title-dedupe
+     search into a month-old stale issue (#398, open since 2026-06-11,
+     untouched). That confirms the title-dedupe blind spot the pass-51 digest
+     first flagged on #416 is not e2e-full-specific — it recurs on any
+     workflow whose failure-issue dedupe search lacks a staleness bound. Filed
+     as its own candidate rather than folded into #26 since the fix (bound the
+     dedupe search's `state:open` to a recency window) is orthogonal to #26's
+     timeout-bump fix, even though both land in workflow YAML blocked by the
+     same `workflows`-OAuth-scope cloud gap. -->
+
+### 32. Failure-issue title-dedupe search needs a staleness bound
+
+**Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
+independent workflows, three total incidents, but capped by the same
+`workflows`-scope cloud blocker as candidates #26 and issue #416/#480)
+**Source pass:** digest 2026-07-11
+**Filed:** 2026-07-11
+**Why:** Both `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
+dedupe their auto-filed failure issues with a bare `gh issue list --search
+'in:title "<prefix>" state:open'` check — if any open issue matches the title
+prefix, the workflow skips filing a new one, regardless of how old that issue
+is or whether it describes the same incident. This has now silently swallowed
+signal three times: the 2026-07-09 e2e-full recurrence and the 2026-07-10
+e2e-full recurrence (run 29130142942) both got absorbed into stale issue #416
+(filed 2026-06-14 for an unrelated Supabase-CLI transient, still open a month
+later), and the 2026-07-10T18:13Z march crash (run 29113747919) got absorbed
+into stale issue #398 (filed 2026-06-11, untouched since one triage comment
+the same day). In all three cases the fresh incident's own run link never
+reached any visible tracker — the only record is the raw workflow log, which
+nobody reads unless a digest happens to go looking. The march crash self-
+healed on retry this time (content kept shipping within the hour), but the
+e2e-full recurrence is a real, worsening breadth-ceiling problem (candidate
+#26) that has now gone three nights without its own issue thread, relying
+entirely on the digest manually re-reading the AUDIT.md row to notice the
+pattern.
+**Scope sketch:**
+- Add a recency bound to both dedupe searches — e.g. `state:open
+  updated:>=<N-days-ago>` (7-14 days is a reasonable default) — so an issue
+  that hasn't been touched in weeks no longer suppresses a fresh incident's
+  filing.
+- Alternative/complementary: instead of skipping filing entirely, post a
+  comment with the new run's link onto the existing open issue when the
+  dedupe search does match — preserves the "don't spam duplicate issues"
+  intent while keeping every incident's evidence visible on the thread.
+- Touches `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
+  (and possibly `night.yml` if it carries the same pattern — verify at
+  fix-time). Same cloud-permission blocker as candidate #26 and issue
+  #416/#480: the cloud loop's `ACTIONS_PAT` lacks the `workflows` OAuth scope
+  to push workflow-file edits. Bundle with those two in the same local/
+  `/oversight` session — three one-line-to-few-line diffs in the same file
+  family, same blocker.
+
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same path as candidate #26 and the Supabase
+CLI pin).
+**Conflicts:** none. Complements candidate #26 (same file family, same cloud
+blocker, orthogonal fix — recommend landing all three permission-blocked
+workflow diffs in one local session).
+
 <!-- Pass 48 (2026-07-08, commit a9bb688) — 1 new phase-shape candidate filed (#28),
      plus reinforced existing candidate #25 and updated existing candidate #27.
      Window since pass 47 (566fc6f, 2026-07-08): ~4 hours / 20 commits. Commit
