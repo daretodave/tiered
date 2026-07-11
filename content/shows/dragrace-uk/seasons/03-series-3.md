@@ -15,7 +15,7 @@ format_summary: "Standard format · 10 episodes"
 format_caption: "first series to relocate production outside London"
 premiere_caption: "BBC Three · iPlayer, September 2021"
 episodes_caption: "10 episodes, matching the prior series' run"
-filming_caption: "Filmed in Manchester, England"
+filming_caption: "Manchester · Northern England's broadcast hub"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:
   - episode_label: "Ep 1 · the show leaves London"
