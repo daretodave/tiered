@@ -11,7 +11,7 @@ cast_size: 4
 eyebrow: "Aired winter–spring 2009 · Food Network · the debut season"
 lede: "Thirteen self-contained episodes, four new chefs every hour, one mystery basket per round. Ted Allen hosts from the very first episode, running the appetizer-entrée-dessert elimination structure Food Network barely touches for the rest of the show's run."
 pull: "No season-long cast, no returning contestants — just a mystery basket, three rounds, and a format so complete on day one that Food Network has barely had to touch it since."
-premiere_caption: "Food Network · Tuesday, January 2009"
+premiere_caption: "Food Network · Tuesday"
 episodes_caption: "13 self-contained episodes, no season-long cast"
 format_summary: "4 chefs · 3 rounds · mystery basket"
 format_caption: "appetizer, entrée, dessert — one elimination each round"
