@@ -1,5 +1,43 @@
 # CRITIQUE
 
+> Last pass: 2026-07-11 at commit b6bc64b
+> Pass count: 88
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 88 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/the-circle/season/inaugural-season`, `/shows`,
+> `/shows/big-brother/canon`, `/themes/best-returnees`) and
+> authed (`/`, `/u/e2e`,
+> `/shows/the-circle/season/inaugural-season`,
+> `/shows/big-brother/canon`) walks ran, desktop + mobile,
+> targeting The Circle's lone-season canon page (a fresh,
+> low-season-count show not previously critiqued) plus a
+> re-check of signed-in vote/comment fidelity. Zero mechanical
+> findings (no console errors, no failed first-party requests,
+> no mobile overflow, complete SEO/meta tags). Confirmed prior
+> fixes still hold: the pass-84 #522 auth-state SSR seeding on
+> vote-pair/comment-input (full signed-in triad renders
+> server-side, no anon-shell flash), the pass-85 #528 home hero
+> heading order. Ruled out three near-misses as already-covered
+> non-bugs: the `/u/e2e` mobile RSC-prefetch-abort (benign
+> artifact class dropped at passes 85/86/87), the Circle S1
+> eyebrow/premiere_caption reordering (established convention
+> per pass-86 #536), and `/shows/big-brother/canon`'s 308
+> redirect (by design). Filed 2 findings (both MED): The
+> Circle's lone-season canon rationale restates the "only entry
+> ranked so far" fact the page template already states, with a
+> confidence-undermining "by default" hedge; and the site-wide
+> default vote question ("Does this belong in the community top
+> 10?") is logically empty on shows whose total catalog is under
+> 10 seasons (at least 10 of 63 shows affected) since every
+> season trivially clears that bar. No spoiler leakage. No
+> per-show SVG iconography violations found.
+>
+> ───── Pass 87 metadata kept below for history ─────
+>
 > Last pass: 2026-07-10 at commit 1dd2bd1
 > Pass count: 87
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1938,7 +1976,23 @@
 
 ## Pending
 
+### [MED] /shows/the-circle/season/inaugural-season — canon rationale restates the page template's own "only entry" fact, hedged with "by default"
+- pass: 88 (commit b6bc64b)
+- viewport: desktop
+- category: voice
+- observation: the "Where it sits in the canon" section states that Season 1 is the only ranked entry twice, back to back — once in the page template's own prefix sentence, once again as the opening clause of the canon.md rationale — and the second instance hedges with "by default," undercutting the confident, plain-spoken voice the rest of the site holds.
+- evidence: rendered copy — "Sole entry in the Circle Editor's Canon so far. Season one is the only entry ranked so far, and it takes the top slot by default — it's the blueprint every later season builds on." (template prefix from `src/app/shows/[show]/season/[slug]/page.tsx:310` concatenated with `content/shows/the-circle/canon.md`'s season-1 rationale, which opens with the same "only entry ranked so far" claim the template already made).
+- suggested fix: trim the opening clause of the canon.md rationale for The Circle season 1 so it starts at "it's the blueprint every later season builds on" (or similar) — the template's "Sole entry ... so far" sentence already establishes the fact. Same fix pattern already applied to other shows' restatement instances.
+- source: browser (auth_state: anonymous)
 
+### [MED] /shows/the-circle/season/inaugural-season (and ≥10 other sub-10-season shows) — default vote question asks about a "top 10" on catalogs that can never reach 10
+- pass: 88 (commit b6bc64b)
+- viewport: desktop
+- category: comprehension
+- observation: the site-wide default vote question ("Does this belong in the community top 10?") renders verbatim on The Circle S1, but The Circle has only 7 total seasons (`content/shows/the-circle.md`: `seasons: 7`) and only 1 currently ranked. Asking whether a season belongs in a "top 10" is logically empty when the entire catalog can never exceed 7 — every season trivially clears that bar. The same generic fallback fires on at least 10 of 63 shows with sub-10 season counts: Alone: Frozen (1), Alone: The Skills Challenge (1), Below Deck Adventure (1), Perfect Match (4), The Traitors (4), The Ultimatum (2), Below Deck Down Under (2), Too Hot to Handle (6), Love Island US (6), Jersey Shore (6).
+- evidence: captured text — "Does this belong in the community top 10?\n\nYOUR VOTE\nCAST VOTE\nYOU HAVEN'T VOTED YET\n0\nVOTES SO FAR". Fallback source: `src/app/shows/[show]/season/[slug]/page.tsx:494` — `season.vote_question ?? 'Does this belong in the community top 10?'`; confirmed via grep that zero of 737 season files set a custom `vote_question`, so the per-season override mechanism exists but is unused for small-catalog shows.
+- suggested fix: for shows whose total season count is below 10, set a per-season `vote_question` that scales to the real catalog size (e.g. "Does this belong in the top 5?" for a 7-season show, or a binary framing that drops the numeric threshold entirely, like "Does this season hold up?"). The `vote_question` field already supports this override (used elsewhere, e.g. `CommunityWeeklyQuestionCard`'s "top 5" test fixture) — just needs to be populated for the affected shows.
+- source: browser (auth_state: authenticated:cloud)
 
 - [x] [MED] [anon] /themes/best-non-winning-runs — the list's title and description contradict each other on the same card/hero. Title: "Seasons that live in their loudest arcs" (implies one dominant, singular loud arc). Description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest." (describes a diffuse, whole-cast ensemble dynamic — the opposite framing of a single loud arc). A first-time reader hits the title expecting one thing and the description immediately reframes it as another, on the /themes index card and again on the list's own hero. Source: `content/themes/best-non-winning-runs.md` frontmatter `title` (line 3) vs `description` (line 12) — the `tagline` field (line 4, "lasting shape lives in their ensemble texture") already agrees with the description, so `title` is the outlier. Fix: curator-only edit — retitle to match the ensemble framing (e.g. "Seasons that spread the arc around" or "Seasons the whole cast carries") so title/tagline/description all agree on the diffuse-ensemble concept; rewriting the description instead would fight the (also-agreeing) tagline. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-non-winning-runs, source: critique-pass-85) — issue: #529 — RESOLVED f481fb2: retitled to "Seasons the whole cast carries" — agrees with tagline ("ensemble texture") and description ("spread across the whole cast"); no placement/outcome language, preserving the pass-16 spoiler-safety fix on this same title field (it also renders verbatim on season-page "Also appears in" cross-refs). `last_revised` bumped to 2026-07-10. content:check green (58 shows, 727 seasons, 12 themes).
 
