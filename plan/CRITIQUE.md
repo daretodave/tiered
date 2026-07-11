@@ -1,5 +1,45 @@
 # CRITIQUE
 
+> Last pass: 2026-07-11 at commit 83ec636
+> Pass count: 89
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 89 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/bachelor-in-paradise/season/tulum`, `/shows`,
+> `/shows/bachelor-in-paradise/canon`,
+> `/themes/best-reunion-specials`) and authed (`/`, `/u/e2e`,
+> `/shows/bachelor-in-paradise/season/tulum`,
+> `/shows/bachelor-in-paradise/canon`) walks ran, desktop +
+> mobile, targeting Bachelor in Paradise's freshly-seeded
+> lone-season canon page (zero prior critique coverage) plus a
+> re-check of authed vote/comment fidelity. Zero mechanical
+> findings (no console errors, no failed first-party requests,
+> no mobile overflow, complete SEO/meta tags, no per-show SVG
+> iconography violations, no spoiler leakage). Confirmed prior
+> fixes still hold: pass-88's #545/#544 Circle canon closures,
+> the `/canon` 308 redirect (by design), the pass-87 #539
+> ShowsStatusPill tooltip. Filed 6 findings (all MED except one
+> LOW): the anon vote-row eyebrow ("sign in to weigh in")
+> contradicts both `/about`'s stated 0.1x anon-vote-weight
+> policy and `VotePair`'s actual unconditional-post behavior —
+> sitewide, every season page; the new season page's auto meta
+> description truncates mid-clause; `RankScale` renders a
+> lone #1-of-1 canon entry at 100% fill (visually "the tail")
+> instead of the peak-end 0% the fill formula intends for a
+> top-ranked season — recurs on every freshly-seeded show;
+> Bachelor in Paradise's canon page S-tier band duplicates its
+> heading text as its own blurb (missing `tier_s_blurb`, same
+> class as the resolved below-deck #418); its season page's
+> FILMED caption bare-restates the location field; and `/u/e2e`
+> lacks a dynamic per-profile opengraph-image (falls back to the
+> generic sitewide OG image, unlike shows/seasons/themes which
+> all have bespoke per-route OG images).
+>
+> ───── Pass 88 metadata kept below for history ─────
+>
 > Last pass: 2026-07-11 at commit b6bc64b
 > Pass count: 88
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -1975,6 +2015,18 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/bachelor-in-paradise/season/tulum (sitewide — every season page) — the anon vote-row eyebrow reads "Cast a vote / sign in to weigh in," implying an anonymous visitor's vote won't count unless they sign in, but this contradicts both the site's own stated policy and the live component's actual behavior. `content/legal/about.md:47` states "Anonymous-guest votes count at 0.1×" — anon votes ARE accepted, just at reduced weight — and `VotePair.tsx`'s `onClick` handler (line 146) POSTs to `/api/vote` unconditionally; `disabled` (line 175) gates only on `state.phase === 'locked'`, never on `signedIn`. So a first-time reader who takes the "sign in to weigh in" copy literally and skips voting is being talked out of a vote that would actually count. Source: `src/components/composition/VoteRowHead.tsx:51` (`COPY.anon.meta = 'sign in to weigh in'`) vs `content/legal/about.md:47` vs `src/components/composition/VotePair.tsx:146-175`. This is the shared `VoteRowHead` component — the copy renders on every season page in the catalog, not just this one. Fix: rewrite the anon meta copy to reflect the actual policy, e.g. "cast a vote · counts more once you sign in" or "sign in for full weight," so the CTA doesn't discourage a vote the backend already accepts. Content/component copy-only, one string. Spoiler discipline P0 intact. (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
+
+- [ ] [MED] [anon] /shows/bachelor-in-paradise/season/tulum — the auto-generated `<meta name="description">` and `og:description` for this newly-added season page truncate mid-clause with a dangling cutoff, reading as broken rather than a deliberate teaser. Rendered: "The franchise's first shared beach house, pulling contestants from recent Bachelor and Bachelorette seasons into one Tulum resort for a faster…" — cuts off before the sentence's second half ("more compressed rose ceremony format"), visible in both the meta description and the reused `og:description`. This is the first page this newly-seeded show has ever been critiqued on, so the truncation-boundary bug is fresh, not a regression. Fix: truncate the generated description at the nearest sentence/clause boundary (or raise the character threshold slightly) rather than a fixed character count that lands mid-clause. Likely in the season page's metadata-generation helper (verify exact path at fix-time — probably `src/app/shows/[show]/season/[slug]/page.tsx`'s `generateMetadata`). Spoiler discipline P0 intact (SEO chrome only). (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
+
+- [ ] [MED] [anon] /shows/bachelor-in-paradise/season/tulum (recurs on every freshly-seeded show) — the canon-position `RankScale` bar renders 100%-filled for this show's sole, #1-ranked canon entry, visually reading as "the tail" (worst position) when the component's own design intent is the opposite: `rankFillPercent(rank, total) = (clamped/total) * 100` (`src/components/composition/RankScale.tsx:21-25`) is meant to place a top rank near the empty/peak end of the bar (the file's own comment cites "design's width:14.9% for 7/47" as the reference case), but for `total === 1`, `rank === 1` always evaluates to 100% — full bar, "the tail" end — which is the opposite visual signal from "canon peak." Because every brand-new show enters the catalog with exactly one canon entry (per bearings' content-velocity model, and per the standing show-coverage mandate that's the loop's primary ongoing work), this fires on every freshly-seeded show's season page until a second season lands. Fix: special-case `total === 1` (or `rank === 1` generally) to render the fill/pip at 0% (the peak end) rather than `(rank/total)*100`, so a sole #1 entry always reads as "peak" regardless of catalog size. Small, pure-function change with unit coverage. Spoiler discipline P0 intact (chrome-only). (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
+
+- [ ] [MED] [authed] /shows/bachelor-in-paradise/canon — the S-tier band renders its heading and its own blurb as the identical sentence back to back: "The seasons that defend the show. / The seasons that defend the show." Same defect class as the already-resolved below-deck #418 (`src/content/__tests__/below-deck-tier-s-blurb-distinct.test.ts`). Root cause: `content/shows/bachelor-in-paradise/canon.md` defines `tier_b_blurb` but never `tier_s_blurb`, so `CanonTierBand.tsx:82` (`band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]`) falls back to `DEFAULT_TIER_HEADINGS.S`, which `src/lib/canon/tier-bands.ts:18` defines as verbatim-identical to the S-tier heading string. Reproduces on both desktop and mobile. Fix: add a distinct `tier_s_blurb` to `content/shows/bachelor-in-paradise/canon.md`, mirroring the below-deck fix, and extend the existing `below-deck-tier-s-blurb-distinct.test.ts` pattern to cover bachelor-in-paradise (or generalize the test to scan every show's canon.md for the missing-field/fallback-collision class, catching future new-show seeds automatically). Content-only + a colocated test. Spoiler discipline P0 intact (tier-band prose only). (URL: /shows/bachelor-in-paradise/canon, source: critique-pass-89)
+
+- [ ] [MED] [authed] /shows/bachelor-in-paradise/season/tulum — the FILMED stat tile's caption bare-restates the location field with zero added texture, breaking the established site-wide convention where `filming_caption` always adds a real detail beyond `location` (compare `content/shows/survivor/seasons/05-thailand.md`: "Ko Tarutao · uninhabited Andaman island"; `content/shows/survivor/seasons/03-africa.md`: "Shaba Reserve · electric perimeter at night"). Here: `location: "Tulum, Mexico"` / `filming_caption: "Filmed in Tulum, Mexico"` — the caption just prepends "Filmed in" to the same string. The sibling PREMIERED and HOST captions on this same page do add real texture ("ABC · August 2014"; "Chris Harrison, host of the show's first six seasons") — only FILMED is thin. Same class as the corpus-wide drain closed under issue #498 (133 files fixed catalog-wide), but this show was added after that drain completed, so it's a fresh recurrence rather than a leftover. Fix: rewrite `filming_caption` in `content/shows/bachelor-in-paradise/seasons/01-tulum.md` to add real production/location texture instead of restating `location` verbatim. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
+
+- [ ] [LOW] [authed] /u/e2e — the signed-in own-profile page uses the generic sitewide `opengraph-image` rather than a per-profile dynamic image, unlike every other page family walked this pass: `/shows/bachelor-in-paradise/canon` and `/shows/bachelor-in-paradise/season/tulum` both resolve bespoke per-route OG images (`.../opengraph-image` scoped to the show/season), matching the existing dynamic-OG pattern already shipped for `src/app/shows/[show]/opengraph-image.tsx`, `src/app/themes/[theme]/opengraph-image.tsx`, and `src/app/shows/[show]/season/[slug]/opengraph-image.tsx` — but there is no equivalent under `src/app/(default)/u/[handle]/`. Sharing a link to any member's profile produces a social-card preview indistinguishable from the homepage's. Fix: add a dynamic `opengraph-image.tsx` under the `u/[handle]` route (handle + a light record-stat treatment), following the same pattern as the three existing per-route OG image routes. Small, additive, chrome-only. Spoiler discipline P0 intact (no per-season content exposed on a profile OG image). (URL: /u/e2e, source: critique-pass-89)
 
 - [x] [MED] [anon] /themes/best-non-winning-runs — the list's title and description contradict each other on the same card/hero. Title: "Seasons that live in their loudest arcs" (implies one dominant, singular loud arc). Description: "Seasons whose most-discussed arcs are spread across the whole cast. The runs that gave a season its shape, its quote-density, its texture — ensemble television at its widest." (describes a diffuse, whole-cast ensemble dynamic — the opposite framing of a single loud arc). A first-time reader hits the title expecting one thing and the description immediately reframes it as another, on the /themes index card and again on the list's own hero. Source: `content/themes/best-non-winning-runs.md` frontmatter `title` (line 3) vs `description` (line 12) — the `tagline` field (line 4, "lasting shape lives in their ensemble texture") already agrees with the description, so `title` is the outlier. Fix: curator-only edit — retitle to match the ensemble framing (e.g. "Seasons that spread the arc around" or "Seasons the whole cast carries") so title/tagline/description all agree on the diffuse-ensemble concept; rewriting the description instead would fight the (also-agreeing) tagline. Content-only, one field. Spoiler discipline P0 intact. (URL: /themes/best-non-winning-runs, source: critique-pass-85) — issue: #529 — RESOLVED f481fb2: retitled to "Seasons the whole cast carries" — agrees with tagline ("ensemble texture") and description ("spread across the whole cast"); no placement/outcome language, preserving the pass-16 spoiler-safety fix on this same title field (it also renders verbatim on season-page "Also appears in" cross-refs). `last_revised` bumped to 2026-07-10. content:check green (58 shows, 727 seasons, 12 themes).
 
