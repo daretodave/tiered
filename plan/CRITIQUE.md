@@ -1,5 +1,37 @@
 # CRITIQUE
 
+> Last pass: 2026-07-11 at commit 07a958d
+> Pass count: 90
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 90 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/chopped/season/the-four-ingredient-standard`,
+> `/shows/chopped/canon`, `/shows`, `/themes/best-post-merge`)
+> and authed (`/`, `/u/e2e`,
+> `/shows/chopped/season/the-four-ingredient-standard`,
+> `/shows/chopped/canon`) walks ran, desktop + mobile, targeting
+> Chopped's freshly-drained Season 4 (rank #2 of 6, just
+> promoted into the canon) plus a re-check of authed chrome
+> fidelity on the show's now-6-entry canon page. Zero mechanical
+> findings (no console errors, no failed first-party requests,
+> no mobile overflow, complete SEO/meta tags, no per-show SVG
+> iconography violations, no spoiler leakage). Confirmed prior
+> fixes still hold: the pass-87 #540 Chopped S1 `premiere_caption`
+> weekday-only fix, the pass-87 #539 `ShowsStatusPill` tooltip.
+> Confirmed still-open (not re-filed, already tracked): the
+> pass-89 `/u/e2e` generic-OG-image LOW finding. Filed 1 finding
+> (LOW): Chopped Season 4's `premiere_caption` ("Food Network ·
+> spring into summer 2010") restates both the network and the
+> air-window already stated in the page eyebrow one line above
+> — the same defect class as the resolved pass-87 #540 (Chopped
+> S1), but a fresh instance in a different file that the S1 fix
+> didn't propagate to.
+>
+> ───── Pass 89 metadata kept below for history ─────
+>
 > Last pass: 2026-07-11 at commit 83ec636
 > Pass count: 89
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2016,6 +2048,7 @@
 
 ## Pending
 
+- [ ] [LOW] [anon] /shows/chopped/season/the-four-ingredient-standard — the PREMIERED stat tile's caption restates the network and air-window already stated in the page eyebrow one line above, instead of adding a genuine new fact the way the site's established convention does. `content/shows/chopped/seasons/04-the-four-ingredient-standard.md`: `eyebrow: "Aired spring–summer 2010 · Food Network · the four-ingredient basket locks in"` and, one stat-tile down, `premiere_caption: "Food Network · spring into summer 2010"` — both name "Food Network" and both restate the spring/summer 2010 window (in slightly different phrasing), so the two lines read as near-duplicates rather than value+detail. This is the same defect class the pass-87 #540 finding fixed for Chopped Season 1 (`premiere_caption` dropped to weekday-only, "Food Network · Tuesday", once scout research confirmed no sourced clock-time existed) — but that fix landed only on S1's file; S4 was promoted into the canon afterward and carries the same pattern unfixed. Fix: rewrite `premiere_caption` in `content/shows/chopped/seasons/04-the-four-ingredient-standard.md` to add a real new fact (day-of-week if verifiable — April 6, 2010 was a Tuesday, matching the show's established Tuesday timeslot per S1's caption) instead of restating the network + air-window already shown in the eyebrow above it. Content-only, one field. Spoiler discipline P0 intact (premiere scheduling only). (URL: /shows/chopped/season/the-four-ingredient-standard, source: critique-pass-90)
 - [x] [MED] [anon] /shows/bachelor-in-paradise/season/tulum — the auto-generated `<meta name="description">` and `og:description` for this newly-added season page truncate mid-clause with a dangling cutoff, reading as broken rather than a deliberate teaser. Rendered: "The franchise's first shared beach house, pulling contestants from recent Bachelor and Bachelorette seasons into one Tulum resort for a faster…" — cuts off before the sentence's second half ("more compressed rose ceremony format"), visible in both the meta description and the reused `og:description`. This is the first page this newly-seeded show has ever been critiqued on, so the truncation-boundary bug is fresh, not a regression. Fix: truncate the generated description at the nearest sentence/clause boundary (or raise the character threshold slightly) rather than a fixed character count that lands mid-clause. Likely in the season page's metadata-generation helper (verify exact path at fix-time — probably `src/app/shows/[show]/season/[slug]/page.tsx`'s `generateMetadata`). Spoiler discipline P0 intact (SEO chrome only). (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
 - issue: #553 — RESOLVED (this commit): the truncation heuristic itself was working as designed (clause-boundary-aware, not a raw word cut) — the real defect was upstream: the season's `lede` (`content/shows/bachelor-in-paradise/seasons/01-tulum.md`) ran 181 chars before its first sentence boundary, past the 159-char SEO budget, forcing a fallback cut that landed on a comma splitting a coordinate adjective pair ("faster, more compressed") rather than a real clause boundary. Rewrote the lede's first sentence to 154 chars ("...pulling recent Bachelor and Bachelorette casts into one Tulum resort for a faster, tighter rose-ceremony format.") so it now fits whole within the SEO budget — `clipToSeoBudget()` returns the complete first sentence, no truncation at all. Preserves the on-page hero lede (the field renders verbatim as page copy too, not just meta description) and the editorial point (shared beach house, recent-cast pool, compressed rose-ceremony format). Content-only, one field. Spoiler discipline P0 intact. Verify gate green: 195 test files / 3358 unit tests, content:check ok (63 shows/737 seasons/63 canons), build (1013 pages), e2e 3358/3358 passed. Closes #553.
 
