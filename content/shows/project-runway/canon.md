@@ -1,7 +1,7 @@
 ---
 show: project-runway
 editor: tiered.tv editor
-last_revised: 2026-05-16
+last_revised: 2026-06-17
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. It is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate. Closer to a read than to the truth, but honest enough to argue.
 meth_how_h: "How I weigh it"

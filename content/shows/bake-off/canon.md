@@ -1,7 +1,7 @@
 ---
 show: bake-off
 editor: tiered.tv editor
-last_revised: 2026-05-16
+last_revised: 2026-06-17
 meth_who_h: "Who ranks it"
 meth_who_p: One tiered.tv editor who has watched every series of Bake Off, from the touring pilot through the Channel 4 years, calibrated against what long-running fans tend to agree on. The read is opinionated but defensible — we treat the BBC and Channel 4 stretches as one continuous body of work, and we weigh each series on its own terms.
 meth_how_h: "How I weigh it"

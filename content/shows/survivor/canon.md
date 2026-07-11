@@ -1,7 +1,7 @@
 ---
 show: survivor
 editor: tiered.tv editor
-last_revised: 2026-05-21
+last_revised: 2026-06-17
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Survivor since Pulau Tiga and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable Survivor fans agree on after a kitchen-table argument runs long enough. Honest about the show, calibrated against the room.
 meth_how_h: "How I weigh it"

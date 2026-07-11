@@ -1,7 +1,7 @@
 ---
 show: bachelorette
 editor: tiered.tv editor
-last_revised: 2026-05-17
+last_revised: 2026-06-17
 meth_who_h: "Who ranks it"
 meth_who_p: One tiered.tv editor who has watched every Bachelorette season, calibrated against the kitchen-table consensus of long-running franchise fans. The read treats the show as its own animal rather than a flipped Bachelor footnote — warmer casting, sharper leads, and a producing voice that found its own pitch quickly.
 meth_how_h: "How I weigh it"

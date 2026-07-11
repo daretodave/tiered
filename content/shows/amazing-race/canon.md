@@ -1,7 +1,7 @@
 ---
 show: amazing-race
 editor: tiered.tv editor
-last_revised: 2026-05-19
+last_revised: 2026-06-17
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched The Amazing Race since the original Keoghan summer in 2001 and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable race fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: "How I weigh it"
