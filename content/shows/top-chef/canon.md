@@ -1,7 +1,7 @@
 ---
 show: top-chef
 editor: tiered.tv editor
-last_revised: 2026-07-10
+last_revised: 2026-07-11
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: "How I weigh it"
@@ -18,7 +18,7 @@ era_bands:
     label: Padma era
     range: [2006, 2023]
   - key: kish
-    label: Kish era
+    label: Kish era (S21–S22)
     range: [2024, 2026]
 ---
 
