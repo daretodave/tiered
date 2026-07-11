@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-11 at commit 15f80fb
-> Pass count: 52
+> Last pass: 2026-07-11 at commit c50bf0a
+> Pass count: 53
 
 ## Considered (awaiting promotion)
 
@@ -106,6 +106,63 @@
      dedupe search's `state:open` to a recency window) is orthogonal to #26's
      timeout-bump fix, even though both land in workflow YAML blocked by the
      same `workflows`-OAuth-scope cloud gap. -->
+
+<!-- Pass 53 (2026-07-11, commit c50bf0a) — 0 new candidates filed; 2 existing
+     candidates materially updated instead.
+     Window since pass 52 (03625c7, same day): ~4 hours / 20 commits. Commit
+     threshold met (20 >= 20) — cadence gate holds even within one calendar
+     day since pass 52 already burned its 48h alternative path.
+     Signals reviewed:
+     - Candidate #31 (large-canon TTFB) — RESOLVED this window, directly, not
+       via phase promotion. Commit 75108d4 ("perf: parallelize community-
+       ranking Supabase reads", closes #541, audit finding
+       `the-apprentice-ttfb`) confirmed the candidate's own working theory
+       (four sequential Supabase awaits in `getCommunityRanking`) and fixed
+       it with `Promise.all`, `force-dynamic` freshness intact. Struck
+       through per #17/#27 precedent; zero open signal remains.
+     - Candidate #16 (/u/[handle] stat-chip scaffold) — conflict correction,
+       not new filing. Re-reading its scope sketch against a still-Pending
+       CRITIQUE pass-37 `[needs-user-call]` row on the same URL (`/u/e2e`)
+       surfaced that the candidate's zeroed-chip framing directly reopens
+       CRITIQUE pass-28 #293's deliberate removal of that exact pattern
+       (`ProfileEmpty.tsx:28-36` + a pinned regression test at
+       `ProfileEmpty.test.tsx:178`). Was filed with "Conflicts: None" — now
+       corrected with the citation and a scope narrowing (non-empty case
+       only) so `/oversight` doesn't promote a candidate that silently
+       relitigates an already-closed editorial call.
+     - AUDIT.md: still 2 real Pending rows (e2e-full timeout, Supabase CLI
+       pin), both unchanged and explicitly BLOCKED FROM CLOUD — same as pass
+       52. The `YEAR_TENURE_RE` engineering row (score 2.7) also unchanged,
+       still single-source and below the phase-candidate filing bar. Four
+       AUDIT rows closed this window (americas-next-top-model overlap,
+       below-deck-down-under fragment, the-circle canon-rationale
+       restatement, the-circle vote-question) — all one-tick content/code
+       fixes, not phase-shape gaps.
+     - CRITIQUE.md: pass 88 landed this window (2 MED findings, both closed
+       same-tick via direct fixes — see AUDIT rows above). Pending count
+       dropped 21 → 17 (mostly LOW, 1 MED). No new HIGH findings, no new
+       3+ clustering on one URL/family; the one [MED][needs-user-call] row
+       (pass-37, `/u/e2e`) is pre-existing and already folded into the
+       candidate #16 correction above rather than filed as its own row.
+     - GitHub issues: 0 unlabeled (triage gate clean). Noted but not filed:
+       issue #521 ("Signed-in vote/comment CTAs flash anon...") sits open
+       and unclosed even though its near-duplicate #522 (same underlying
+       auth-state-flash bug, same critique pass-84 origin) closed via the
+       fix pass 88 re-verified. Single stale-duplicate instance — doesn't
+       clear the "2+ independent signals" filing bar on its own, and closing
+       a duplicate issue is a mechanical `/iterate`-scale action, not a
+       phase-shape gap. Left as a note for a future tick to close #521
+       directly with a reference to #522's fix commit.
+     - spec.md + design/: no changes since pass 52 (`git log 15f80fb..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 52 — mostly content-fix pairs
+       (audit finding + its content/code close), 1 perf fix, 1 critique
+       pass, 1 digest. No refactor-smell cluster; matches the standing
+       content-drain + critique-response cadence.
+     Existing candidates status: #14/#15/#18/#19/#20/#21/#22/#23/#24/#25/
+     #26/#28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
+     signal this pass. #16 — conflict correction (see above). #31 —
+     resolved, struck through (see above). -->
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound
 
@@ -675,12 +732,28 @@ across-show) though both extend the same toolbar interaction pattern —
 worth a shared-component pass if both ship close together, not a blocker
 to either shipping alone.
 
-### 31. Large-canon show-page TTFB regression — profile + optimize per-request render cost
+### 31. Large-canon show-page TTFB regression — profile + optimize per-request render cost ~~(resolved — shipped pre-promotion, pass 53)~~
 
 **Score:** 4.5 (impact: 7, ease: 5 → 3.5 base + 1.0 signal multiplicity —
 correlates with #26's catalog-scale stressor)
 **Source pass:** 52
 **Filed:** 2026-07-11
+**Pass-53 update:** resolved directly via `/iterate`, no phase promotion
+needed. Commit 75108d4 (audit finding `the-apprentice-ttfb`, closes #541)
+confirmed the working theory this candidate's scope sketch predicted:
+`getCommunityRanking` was awaiting four independent Supabase queries
+(`compute_weighted_rank` RPC, trailing-7d voters, baseline snapshot, latest
+snapshot) sequentially, so per-request time was their sum rather than their
+max. Firing them concurrently with `Promise.all` — `force-dynamic` rendering
+(phase 35's freshness fix) left untouched — closes the confirmed bottleneck
+without the caching workaround this candidate's scope sketch explicitly
+warned against. Verify gate green (2828 unit / 3343 e2e) at fix-time. This
+mirrors the exact "may ship as a same-tick `/iterate` fix rather than
+needing a numbered phase" hedge candidates #24/#27 also called out and had
+play out the same way. Zero open signal remains on this candidate; leaving
+it filed (struck through, mirroring #17/#27 precedent) as the historical
+record if a fresh large-canon page reintroduces the sequential-await
+pattern. `/oversight` can treat this as closed.
 **Source signals:**
 - Critique pass-87 [MED] `/shows/the-apprentice` and `/shows/survivor` (the
   site's two largest-canon shows) render 3-6x slower than every other page
@@ -1943,8 +2016,28 @@ change needed. One phase closes the phase-38 partial ship.
 - Spoiler discipline P0 intact: published-comment count only.
 
 **Estimated phases:** 1.
-**Conflicts:** None. Phase 38 shipped the page shell; this fills the
-record zone. No URL change.
+**Conflicts:** **Pass-53 correction — real conflict found, was "None."**
+The scope sketch's zeroed empty-state framing (`0 VOTES CAST · 0 COMMENTS ·
+JOINED`) directly reopens a deliberately-closed editorial decision: CRITIQUE
+pass-28 #293 explicitly removed a near-identical zeroed stat-tile row from
+`/u/[handle]`'s self-view (the pass-16 #217 original), on the grounds that
+stacking zero/absence tiles above the prose read as "an admin screen, not
+an editorial product" (bearings voice bar — "knowledgeable peer, confident,
+warm, plain-spoken"). The reversal is pinned as a regression test —
+`src/components/profile/__tests__/ProfileEmpty.test.tsx:178` ("renders no
+stat skeleton on self-view (#293 — pass-16 #217 reverted)") — and documented
+inline at `src/components/profile/ProfileEmpty.tsx:28-36`. A still-Pending
+CRITIQUE row (pass-37, `[needs-user-call]`, URL `/u/e2e`) re-raised this
+exact zeroed-chip idea in a later `/iterate` tick and was correctly flagged
+`[needs-user-call]` rather than auto-resolved, precisely because it
+contradicts #293 — see `plan/CRITIQUE.md` search `pass-37` under `/u/e2e`.
+Phase 38 shipped the page shell; this candidate fills the record zone, but
+**only for the non-empty case** (real vote/comment counts on an account
+with at least one of each) — `/oversight` should scope the promoted phase
+to render `ProfileStatChips` exclusively once a member has ≥1 recorded
+action, leaving `ProfileEmpty`'s zero-state prose-only framing untouched,
+rather than the original scope sketch's implied always-visible chip row.
+No URL change either way.
 
 <!-- Pass 32 (2026-06-12, commit 14cd563) — 0 candidates filed.
      Re-pass at the exact 20-commit threshold from pass 31
