@@ -93,13 +93,13 @@ describe('<SeasonInfoCard>', () => {
         canonTotal={1}
         voteQuestion="Q?"
         voteSlot={voteSlot}
-        voteRowHead={<div data-testid="vote-row-head-slot">Cast a vote · sign in to weigh in</div>}
+        voteRowHead={<div data-testid="vote-row-head-slot">Cast a vote · counts more once you sign in</div>}
       />,
     )
     const row = screen.getByTestId('info-row-vote')
     expect(screen.getByTestId('vote-row-head-slot')).toBeInTheDocument()
     expect(row).not.toHaveTextContent('change within 72h')
-    expect(row).toHaveTextContent('Cast a vote · sign in to weigh in')
+    expect(row).toHaveTextContent('Cast a vote · counts more once you sign in')
   })
 
   it('renders two shield lines by default', () => {

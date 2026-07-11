@@ -9,9 +9,16 @@ import { useEffect, useState } from 'react'
 //
 // Mirrors VotePair's `/api/vote` GET on mount to read the same
 // `{ signedIn, value }` the buttons use, then renders one of:
-//   anon                 → "Cast a vote · sign in to weigh in"
+//   anon                 → "Cast a vote · counts more once you sign in"
 //   signed-in-no-vote    → "Your vote · cast vote"
 //   signed-in-with-vote  → "Your vote · change within 72h"
+//
+// Critique pass-89 MED: the prior anon meta ("sign in to weigh
+// in") implied an anonymous vote wouldn't count at all unless the
+// reader signed in first. That's wrong on both sides — `about.md`
+// states anon votes count at 0.1x (not zero), and VotePair's POST
+// handler is unconditional on `signedIn`. The rewritten copy keeps
+// the sign-in nudge without the false "doesn't count yet" claim.
 //
 // The no-vote meta is "cast vote" (not "cast yours" or "cast yours
 // this week"): the prior "cast yours" possessive-elision fragment
@@ -48,7 +55,7 @@ type VoteRowHeadProps = {
 type VoteHeadState = 'anon' | 'signed-in-no-vote' | 'signed-in-with-vote'
 
 const COPY: Record<VoteHeadState, { title: string; meta: string }> = {
-  anon: { title: 'Cast a vote', meta: 'sign in to weigh in' },
+  anon: { title: 'Cast a vote', meta: 'counts more once you sign in' },
   'signed-in-no-vote': { title: 'Your vote', meta: 'cast vote' },
   'signed-in-with-vote': { title: 'Your vote', meta: 'change within 72h' },
 }

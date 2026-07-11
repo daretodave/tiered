@@ -45,7 +45,7 @@ describe('<VoteRowHead>', () => {
     const head = screen.getByTestId('vote-row-head')
     expect(head.getAttribute('data-vote-head-state')).toBe('anon')
     expect(head).toHaveTextContent('Cast a vote')
-    expect(head).toHaveTextContent('sign in to weigh in')
+    expect(head).toHaveTextContent('counts more once you sign in')
   })
 
   it('keeps the anon copy after the fetch resolves with signedIn=false', async () => {
@@ -55,7 +55,7 @@ describe('<VoteRowHead>', () => {
     const head = screen.getByTestId('vote-row-head')
     expect(head.getAttribute('data-vote-head-state')).toBe('anon')
     expect(head).toHaveTextContent('Cast a vote')
-    expect(head).toHaveTextContent('sign in to weigh in')
+    expect(head).toHaveTextContent('counts more once you sign in')
   })
 
   it('swaps to the signed-in-no-vote copy when signedIn=true and value=0', async () => {
