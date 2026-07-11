@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "I weigh seasons on how well the shared-house format runs — whether the returning cast generates real chemistry beyond their original seasons, whether the rose ceremony structure holds tension at a faster pace than the flagship shows, and whether the location and production choices add real texture. Outcomes never factor in."
 meth_when_h: "When I revisit"
 meth_when_p: "With only the founding season ranked so far, this canon is early. Nine more seasons have already aired and each will earn its own slot as it's fully weighed against this debut entry — Tulum, Sayulita, and the recent move to Costa Rica all sit ahead, waiting to be ranked."
+tier_s_blurb: "The founding Tulum season carries S tier alone so far — proof the pull-from-the-franchise format could sustain its own show before any sequel season existed to test it against."
 tier_b_blurb: "The show's default tier — a season that runs the pull-from-the-franchise format on a strong founding cast, without yet setting the standard the rest of the run gets checked against."
 weekly_question: "Does Bachelor in Paradise's founding Tulum season still hold up against everything the format built after it?"
 ---

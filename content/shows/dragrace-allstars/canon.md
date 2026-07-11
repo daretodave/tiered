@@ -8,6 +8,7 @@ meth_how_h: "How I weigh it"
 meth_how_p: "Three things carry the most weight — whether a season's elimination mechanic is a genuine structural swing rather than a cosmetic tweak, whether the returning cast's history with each other and the format produces real chemistry, and whether the legacy stakes on offer feel earned rather than just bigger."
 meth_when_h: "When I revisit"
 meth_when_p: "With only Season 1 seeded, this canon is just getting started. Ten more seasons — spanning Logo, VH1, and the current Paramount+ era, plus the show's own run of shifting elimination formats — are waiting to be weighed and slotted in against this founding entry."
+tier_s_blurb: "The founding season carries S tier by itself — its team-and-elimination twist was a genuine structural swing, the format experiment every later All Stars run has since had to answer to."
 tier_b_blurb: "The show's default tier so far — a debut season that runs a genuine format experiment on a strong cast of returning queens, without yet a full run of seasons to check it against."
 weekly_question: "Does All Stars Season 1's team twist still hold up as the format's boldest swing?"
 ---
