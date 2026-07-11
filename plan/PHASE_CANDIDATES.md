@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-11 at commit c50bf0a
-> Pass count: 53
+> Last pass: 2026-07-11 at commit e40486c
+> Pass count: 54
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,69 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 54 (2026-07-11, commit e40486c) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45/46/51 made), plus reinforced existing candidate #24.
+     Window since pass 53 (c50bf0a, same day): ~4.5 hours / 7 commits. Commit
+     threshold (≥20) not met, and last-pass timestamp is under 24h — this pass
+     ran because march's own dispatch chain (Step 1 triage clean, Step 2 critique
+     gate not due, Step 3a/3b/3b.5 all empty) fell through to Step 3c, whose own
+     conditions independently qualify: posture bold, ≥20-commits-OR-signal-present
+     is satisfied via the "signal worth examining" clause (AUDIT.md has 2 Pending
+     rows) plus this being a genuinely idle dispatch slot with no phase/data/
+     content-gap work queued.
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 9 (5 shows, filed
+       pass 51) fully drained this week (rhodubai, summer-house,
+       bachelor-in-paradise, dragrace-allstars, chopped all resolved [x]), the
+       exact recurring stall candidate #24 names, now caught structurally by
+       march's own Step 3b.5 finding the queue empty and falling through to
+       this expand dispatch — see candidate #24's reinforcement below. Filed
+       WAVE 10 (5 shows: The Traitors UK — original edition of the catalogued
+       US `traitors` flavor; Married at First Sight Australia — higher-profile
+       international edition of the catalogued `married-at-first-sight` US
+       flavor; The Real World — genre-founding MTV docusoap, no founding-era
+       title currently represented; Ink Master — tattoo-competition format, no
+       body-art competition cluster yet; So You Think You Can Dance —
+       contestant-pro dance competition, no dance-competition format alongside
+       the catalogued Dancing with the Stars). All scored ≥3.0 so the next
+       march tick's Step 3b.5 has real work.
+     - AUDIT.md other Pending rows: still exactly 2 — e2e-full crawl timeout
+       (candidate #26) and Supabase CLI version pin (issue #416), both
+       unchanged and explicitly BLOCKED FROM CLOUD. The `YEAR_TENURE_RE`
+       engineering row (score 2.7) also unchanged, still single-source and
+       below the phase-candidate filing bar.
+     - CRITIQUE.md: 16 live Pending findings (14 LOW, 1 MED, down from pass
+       53's 17), pass-90 (1 finding, already closed same-tick) landed since
+       pass 53's pass-89. No new HIGH findings, no new 3+ clustering on one
+       URL/family beyond what existing candidates already cover: the
+       below-deck era-band-range finding (pass-56) reinforces the same class
+       as the pending pass-53 Alone finding, both already fully inside
+       candidate #14's scope per prior-pass notes — no new filing. The
+       /shows B-tier filter finding (pass-77) is already candidate #30's
+       exact scope — no new filing. The best-finales cross-entry `final
+       tribal` echo (pass-36) and the masterchef tier-blurb template overlap
+       (pass-71) are each single-instance content nits below the 3-instance
+       clustering bar — left for `/iterate`/`/ship-content` drains.
+     - GitHub issues: 0 unlabeled (triage gate clean). #521 (signed-in CTA
+       flash, HIGH, still open) and #480/#416 (cloud-permission-blocked,
+       unchanged) carry no new clustering signal. #398/#399/#405/#400 are
+       stale loop-opened issues from mid-June with no new activity — not a
+       fresh signal, already the exact pattern candidate #32 names.
+     - spec.md + design/: no changes since pass 53 (`git log c50bf0a..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 7 commits since pass 53 — 3 audit-finding-close content
+       fixes (tagline echo, cast-cast word-tic repetition, timestamp refresh
+       across 9 canon files) each paired with its audit-closure commit, plus
+       critique pass 90 itself. Pure content-drain + critique-response
+       velocity, matching the standing perpetual-mandate cadence — no
+       refactor-smell cluster, no new signal warranting a fresh numbered
+       candidate this pass.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
+     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
+     signal this pass. #24 — reinforced (fourth consecutive empty-queue
+     occurrence, see update above). -->
 
 <!-- Pass 52 (2026-07-11, commit 15f80fb) — 2 new phase-shape candidates filed
      (#30, #31), plus reinforced existing candidate #29.
@@ -1281,6 +1344,20 @@ rather than a structural gate (waves 7, 8, 9 each followed a stall). The scope s
 above remains unpromoted and is the actual fix — `/oversight` should promote this to a
 skill-file amendment so the check stops depending on the expand pass author remembering
 to look.
+**Update (expand pass 54, 2026-07-11):** the queue ran dry a fourth time — wave 9's five
+rows all resolved [x] this week (RHODubai, Summer House, Bachelor in Paradise, RuPaul's
+Drag Race All Stars, Chopped all shipped by content-drain ticks in the days after filing),
+running Pending show rows back to exactly 0. This time the empty queue was caught by
+`/march`'s own Step 3b.5 (not a manual expand-pass review) — the content-gap dispatch
+found zero Pending `category: content-gaps` rows and fell through to the expand gate,
+which is precisely how this march tick ended up here. That's a *structural* catch, not
+authorial vigilance, which is mild evidence the failure mode is self-correcting at the
+march level even without this candidate's proposed skill-file amendment — but it only
+caught the empty queue one dispatch cycle after it went dry (this tick), not before, so
+the underlying "±0 for a stretch" gap the candidate describes still happened. Filed WAVE
+10 (5 shows: The Traitors UK, Married at First Sight Australia, The Real World, Ink
+Master, So You Think You Can Dance). Fourth consecutive empty-queue occurrence across
+waves 7/8/9/10 reinforces the same underlying point — score unchanged, still unpromoted.
 
 ### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
 
