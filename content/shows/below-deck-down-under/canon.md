@@ -1,7 +1,7 @@
 ---
 show: below-deck-down-under
 editor: tiered.tv editor
-last_revised: 2026-06-15
+last_revised: 2026-07-11
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. Both seasons of Below Deck Down Under watched — Whitsundays through Western Australia, Captain Jason Chambers across both. The ranking weighs location quality, how well the Australian charter context shaped the season's pressure, and the crew register relative to what the franchise's other branches do. Never outcomes, never who left or why. One read, held with conviction."
 meth_how_h: "How I weigh it"
@@ -33,4 +33,4 @@ tag: Western Australia — remote waters, a harder charter context, the format p
 slot_argument: The Coral Bay and Ningaloo Reef waters gave Season 2 an isolation the Whitsundays never had. The format worked well with a more remote context, even if the crew dynamic didn't match the Season 1 peak.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
-Western Australia moved the franchise into genuinely remote territory — the Ningaloo Reef and Coral Bay coastline, far from the resort infrastructure of the Whitsundays, with fewer port calls and more open water. That isolation shaped the crew dynamic in ways the format absorbed reasonably well. Captain Jason's command had a different texture in the stripped-back context. The charter guests arrived with high expectations against a more demanding logistical backdrop, which the production used effectively. A solid second season, and one that expanded the show's geographic range in a way the franchise can build from. The less fully realized entry, but a legitimate step forward for the run.
+Western Australia moved the franchise into genuinely remote territory — the Ningaloo Reef and Coral Bay coastline, far from the resort infrastructure of the Whitsundays, with fewer port calls and more open water. That isolation shaped the crew dynamic in ways the format absorbed reasonably well. Captain Jason's command had a different texture in the stripped-back context. The charter guests arrived with high expectations against a more demanding logistical backdrop, which the production used effectively. A solid second season — the less fully realized of the two entries so far, but a legitimate step forward for the run, and one that expanded the show's geographic range in a way the franchise can build from.
