@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-10 at commit fbd7806
-> Pass count: 51
+> Last pass: 2026-07-11 at commit 15f80fb
+> Pass count: 52
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,75 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 52 (2026-07-11, commit 15f80fb) — 2 new phase-shape candidates filed
+     (#30, #31), plus reinforced existing candidate #29.
+     Window since pass 51 (f0b101e, 2026-07-10): ~12 hours / 21 commits. Commit
+     threshold met (21 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — WAVE 9 (5 shows, filed
+       pass 51) fully drained same-window (chopped, rupauls-drag-race-all-stars,
+       bachelor-in-paradise, summer-house, real-housewives-of-dubai all resolved
+       [x]). Same recurring empty-queue pattern candidate #24 already names; left
+       for the next march tick's Step 3b.5 to refill per Rule 1.
+     - AUDIT.md other Pending rows: e2e-full crawl timeout (candidate #26) and
+       Supabase CLI version pin (issue #416) both remain explicitly BLOCKED FROM
+       CLOUD, unchanged. New row this window: `YEAR_TENURE_RE` teen-number gap
+       (engineering, score 2.7, filed 2026-07-08) — single-source, below the
+       3.0 iterate threshold, scope already self-described as a contained
+       one-tick fix rather than a phase-shape gap. Not filed as a candidate;
+       left for a future `/iterate` tick with headroom, or a direct oversight
+       pick.
+     - CRITIQUE.md: 21 live Pending findings (mostly LOW, 2 MED), pass-87 (3
+       findings) landed since pass 51's pass-86. Two fresh signals cleared the
+       filing bar:
+       (1) pass-87 [MED] `/shows/the-apprentice` (and `/shows/survivor`) TTFB
+       runs 3-6x slower than every other page walked, correlating with canon
+       size, not show identity — `dynamic = 'force-dynamic'` (phase-35, kept
+       intentionally for ranking freshness) means the per-request assembly cost
+       scales with season count. Filed as new candidate #31. Cross-references
+       candidate #26 (e2e-full crawl timeout) — different subsystems (render
+       latency vs. CI wall-clock) but the same underlying stressor: catalog
+       growth (58 shows / 717 seasons and climbing per Rule 1's perpetual
+       mandate) outpacing infrastructure sized for an earlier catalog size.
+       (2) pass-77 [LOW] `/shows` B-tier holds 39 shows in one flat scroll with
+       no filter/sort beyond global search — still Pending, unaddressed across
+       10 passes since filing. The catalog has grown past 39 in the B tier
+       alone since pass-77 filed this (58 shows total now). Every show page
+       already has an era-filter affordance (phase 33/34) for browsing within
+       a show; the top-level index has no equivalent for browsing across shows.
+       `network`/`genre_tag` frontmatter already exists per CLAUDE.md's show-
+       identity table — no new content fields needed. Filed as new candidate
+       #30.
+       Era-range chip findings (below-deck LEE/TITHERADGE ERA, row 2798) remain
+       fully inside candidate #14's existing scope — no new filing, cited as
+       reinforcement in #14 by a prior pass already.
+       Remaining LOW findings (stat-tile caption phrasing, sentence fragments,
+       hyphenation drift, era-band explanatory text) are one-off content
+       nitpicks below the phase-shape bar — left for `/iterate`/`/ship-content`
+       drains.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
+       unchanged, no new clustering signal.
+     - spec.md + design/: no changes since pass 51 (`git log f0b101e..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 51 — 5 new-show scaffolds (chopped,
+       rupauls-drag-race-all-stars, bachelor-in-paradise, summer-house,
+       real-housewives-of-dubai) each paired with an audit content-gap close,
+       2 critique passes (86, 87), 4 audit-finding content fixes (host bare-
+       surname, era-range clarity, filming_caption, B-tier pill a11y label),
+       1 digest. Pure content-drain + critique-response velocity, matching the
+       standing perpetual-mandate cadence — no refactor-smell cluster.
+     - File-size check (candidate #29's own signal): `plan/CRITIQUE.md` now
+       3,201 lines / 1.5MB (was 3,096 at pass-51's digest reading, +105 lines
+       in ~1 day — growth continues unabated). `plan/PHASE_CANDIDATES.md`
+       itself has now grown to 4,106 lines / 248KB — larger than `AUDIT.md`
+       (523 lines / 392KB) and approaching the same class of problem #29
+       already names for CRITIQUE.md. Reinforced below with a scope-widening
+       note.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25/
+     #26/#27/#28 — all unchanged, no new reinforcing or disqualifying signal
+     this pass. #29 — reinforced (continued CRITIQUE.md growth + new
+     PHASE_CANDIDATES.md self-growth signal). #30/#31 — new this pass. -->
 
 <!-- Pass 48 (2026-07-08, commit a9bb688) — 1 new phase-shape candidate filed (#28),
      plus reinforced existing candidate #25 and updated existing candidate #27.
@@ -500,6 +569,98 @@
        awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
        awaiting promotion; still valid, single finding. -->
 
+### 30. `/shows` B-tier browse filter — network/genre chips
+
+**Score:** 5.2 (impact: 6, ease: 7 → 4.2 base + 1.0 signal multiplicity —
+catalog growth reinforces)
+**Source pass:** 52
+**Filed:** 2026-07-11
+**Source signals:**
+- Critique pass-77 [LOW] `/shows` B-tier ("Canon still forming") holds 39
+  shows in one flat scroll with no in-page filter or sort beyond global
+  Cmd+K search — a first-time visitor can't browse by network or genre
+  without already knowing a show's name.
+- Data growth: the catalog has grown to 58 shows total (up from ~50 when
+  pass-77 filed this finding, per this pass's commit-pattern review) — the
+  B tier specifically only grows under Rule 1's standing perpetual mandate
+  (new shows enter at B before earning an A/S promotion), so this gap
+  compounds every single tick the loop ships a new show.
+- Precedent: every show page already ships an era-filter affordance (phase
+  33/34's `CanonEraToolbar`) for browsing within a show's own seasons — the
+  top-level `/shows` index has no equivalent for browsing across shows.
+
+**Why:** This is signal F (data growth) in its textbook form — an entity
+(shows) crossed from a handful to 50+ records and the index page built for
+the earlier scale hasn't grown with it. The fix isn't speculative: the
+`network` and `genre_tag` frontmatter fields already exist on every show
+(per `CLAUDE.md`'s show-identity table), so no new content authoring is
+required, and the era-filter chip component already shipped elsewhere in
+the product as a pattern to mirror. Low risk, high leverage as the catalog
+keeps growing — this gets more valuable every tick, not less.
+**Scope sketch:**
+- Add lightweight filter chips above the B-tier grid (network and/or
+  genre_tag), derived from existing frontmatter — no schema change.
+- Mirror `CanonEraToolbar`'s interaction pattern (chip row, active-state
+  styling, clear-filter affordance) rather than inventing a new component.
+- Chrome-only change; content-only fields already carry the values needed.
+- Unit tests for the filter-derivation helper; e2e asserts filtering by a
+  known network/genre narrows the visible B-tier set correctly.
+**Estimated phases:** 1.
+**Conflicts:** none. Independent of #14 (era filter is within-show, this is
+across-show) though both extend the same toolbar interaction pattern —
+worth a shared-component pass if both ship close together, not a blocker
+to either shipping alone.
+
+### 31. Large-canon show-page TTFB regression — profile + optimize per-request render cost
+
+**Score:** 4.5 (impact: 7, ease: 5 → 3.5 base + 1.0 signal multiplicity —
+correlates with #26's catalog-scale stressor)
+**Source pass:** 52
+**Filed:** 2026-07-11
+**Source signals:**
+- Critique pass-87 [MED] `/shows/the-apprentice` and `/shows/survivor` (the
+  site's two largest-canon shows) render 3-6x slower than every other page
+  walked that pass. Repeated `curl -w` samples: apprentice 1.68s/1.11s/
+  1.15s/0.90s, survivor 1.13s/0.90s/0.86s, vs. `/` at 0.23s and a 1-entry
+  canon page (`/shows/chopped/season/season-1`) at 0.34s — the gap tracks
+  canon/season count, not show identity.
+- Cross-reference: candidate #26 (e2e-full crawl timeout undersized for
+  catalog growth) is a different subsystem (CI wall-clock vs. render
+  latency) hitting the identical root stressor — the catalog has grown
+  past what the surrounding infrastructure was sized for, and both
+  symptoms will keep recurring as Rule 1's perpetual show-growth mandate
+  continues.
+
+**Why:** `src/app/shows/[show]/page.tsx:37` sets `dynamic = 'force-dynamic'`
+deliberately (phase-35 fix for a "community ranking shows stale 0" bug) —
+that freshness guarantee is correct and must not be reverted. But nobody
+has profiled where the per-request time actually goes on large-canon pages;
+the AUDIT finding's own working theory (community-ranking aggregate query
+scaling with row count, or redundant content-file reads across the season
+list) is plausible but unconfirmed. This is exactly the kind of
+"reality has outgrown the plan" gap `/expand` exists to catch: phase 18
+("Performance + a11y polish") shipped when the catalog was much smaller,
+and nothing since has re-profiled the hot path against today's scale.
+Left unaddressed, this gets worse on every tick that adds a season to
+Survivor or the Apprentice, and will eventually surface as a Core Web
+Vitals regression on the site's two flagship show pages.
+**Scope sketch:**
+- Profile `getAllSeasons` / `getCanon` / `getCommunityRanking` on
+  `/shows/[show]/page.tsx` for a large-canon show under realistic load —
+  identify the actual hot path (not just the working theory).
+- Optimize the confirmed bottleneck: likely indexing, per-request
+  memoization, or narrowing the community-ranking query — without adding
+  page-level caching that would resurrect the phase-35 staleness bug.
+- Unit/perf test that pins the fix (e.g. assert a bounded query count or
+  render time budget for a large-canon fixture) so a future regression is
+  caught before it needs another critique pass to surface.
+**Estimated phases:** 1 (profiling + targeted optimization; scope may
+narrow once the actual bottleneck is confirmed).
+**Conflicts:** none. Independent of #26 — different code paths, same root
+stressor (catalog scale); may be worth bundling into one "catalog-scale
+infrastructure" oversight session alongside #26 and #29 if the user wants
+to address the pattern class in one sitting rather than three.
+
 ### 25. Canon-rationale/season-body verbatim-argument echo gate
 
 **Score:** 8.0 (impact: 8, ease: 8 → 6.4 base + 1.6 signal multiplicity, impact bumped
@@ -803,6 +964,23 @@ long`, self-healed on the next tick same as before. `plan/CRITIQUE.md` has
 grown from 2,967 to 3,096 lines (still ~1.5MB) since yesterday's filing. Two
 occurrences in 2 days is no longer "plausible root cause" — it's a recurring
 pattern. Still unpromoted, now 1 day stale.
+
+**Reinforced (expand pass 52, 2026-07-11):** growth continues unabated —
+`plan/CRITIQUE.md` is now 3,201 lines / 1.5MB (+105 lines in ~1 day). New
+signal: `plan/PHASE_CANDIDATES.md` (this file) has independently grown to
+4,106 lines / 248KB — larger than `plan/AUDIT.md` (523 lines / 392KB) and
+now in the same size class this candidate was filed to address for
+CRITIQUE.md. This file has no `[x]`-closed-row equivalent (candidates move
+to `## Promoted` / `## Rejected` on resolution, which already functions as
+a form of archival), but its "Considered" section has grown to 29+
+candidates across 52 passes with no pruning of superseded/stale entries
+(e.g. #17 and #27 are already marked superseded inline but still occupy
+full-length space in the live section). Scope-widening suggestion: when
+this candidate ships, extend the archive pattern to move `~~(superseded)~~`
+-tagged and `PROMOTED as Phase NN` candidate blocks out of "Considered"
+into a lighter-weight one-line index, not just CRITIQUE.md/AUDIT.md rows.
+Still unpromoted, now 2 days stale, two independent files now exhibiting
+the same growth-without-pruning defect this candidate names.
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
 
