@@ -22,6 +22,10 @@ describe('rankFillPercent', () => {
   it('returns 0 for invalid totals', () => {
     expect(rankFillPercent(5, 0)).toBe(0)
   })
+
+  it('returns 0 (the peak end) for a sole #1-of-1 entry, not 100 (the tail)', () => {
+    expect(rankFillPercent(1, 1)).toBe(0)
+  })
 })
 
 describe('<RankScale>', () => {
@@ -89,5 +93,15 @@ describe('<RankScale>', () => {
     render(<RankScale rank={7} total={47} />)
     expect(screen.getByText('#01 · canon peak')).toBeInTheDocument()
     expect(screen.getByText('#47 · the tail')).toBeInTheDocument()
+  })
+
+  it('renders a sole #1-of-1 entry at the peak (0%), not the tail (100%)', () => {
+    render(<RankScale rank={1} total={1} />)
+    const fill = screen.getByTestId('rank-scale-fill') as HTMLElement
+    expect(fill.style.width).toMatch(/^0(\.00)?%$/)
+    const dot = screen
+      .getByTestId('rank-scale-here')
+      .closest('.scale-here') as HTMLElement
+    expect(dot.style.left).toMatch(/^0(\.00)?%$/)
   })
 })

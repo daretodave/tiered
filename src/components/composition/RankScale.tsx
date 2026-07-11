@@ -20,6 +20,12 @@ function pad2(n: number): string {
 
 export function rankFillPercent(rank: number, total: number): number {
   if (!Number.isFinite(rank) || !Number.isFinite(total) || total <= 0) return 0
+  // A sole #1-of-1 canon entry has no tail to slide toward — rank/total
+  // would evaluate to 100% (the tail end) for the same slot the design
+  // otherwise treats as the peak. Every freshly-seeded show enters the
+  // catalog this way, so this isn't an edge case — it's the common case
+  // for any show with exactly one canon entry (critique pass-89).
+  if (total === 1) return 0
   const clamped = Math.max(1, Math.min(rank, total))
   return (clamped / total) * 100
 }
