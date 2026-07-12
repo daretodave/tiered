@@ -30,10 +30,10 @@ one of the 68 catalogued shows, cross-checked against the
 filesystem. **59 new/renewed/announced seasons found** across 28
 previously-gap-free shows; the pre-existing 28-show gap carries
 forward unchanged (no scout finding touched those declared
-counts beyond what's noted below). **68 shows · 744/1083 seasons
-filed · gap 339 across 55 shows** (rhodubai drained to zero this
-sweep tick; the-challenge progressed 40→41 this drain tick — see
-Sweep notes below).
+counts beyond what's noted below). **68 shows · 745/1083 seasons
+filed · gap 338 across 55 shows** (rhodubai drained to zero this
+sweep tick; the-challenge progressed 40→41 and big-brother
+progressed 26→27 this drain tick — see Sweep notes below).
 
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
@@ -64,7 +64,7 @@ pass).
 | love-is-blind | 10/11 | 1* |
 | alone-australia | 3/4 | 1* |
 | the-challenge | 41/42 | 1* |
-| big-brother | 26/28 | 2 |
+| big-brother | 27/28 | 1* |
 | bachelor | 28/30 | 2 |
 | project-runway | 20/22 | 2 |
 | love-island-us | 6/8 | 2 |
@@ -195,6 +195,17 @@ blind count bump:
   sources, actively conflicting on whether it has premiered.
   Same confirmed-but-unaired precedent as the other `1*` rows
   above; deferred until an official announcement lands and the
+  season concludes.
+- **big-brother** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 27 ("A Summer of Mystery") aired and
+  concluded July–September 2025; filed this tick as
+  `content/shows/big-brother/seasons/27-a-summer-of-mystery.md`,
+  `canon.md` rebased (inserted at rank 18), `era_bands`
+  streaming-era widened to `[2019, 2025]`. Season 28 ("Time
+  Trip") premiered 2026-07-09 and is currently airing (only the
+  premiere had aired as of this tick's 2026-07-12 reference
+  date) — no finale date announced. Same confirmed-but-unaired
+  precedent as the other `1*` rows above; deferred until the
   season concludes.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
