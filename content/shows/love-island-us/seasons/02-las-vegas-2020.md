@@ -3,7 +3,7 @@ show: love-island-us
 number: 2
 slug: las-vegas-2020
 title: "Season 2 (2020)"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2020-08-24
 ep_count: 34
 location: A Las Vegas hotel rooftop (The Cromwell), Nevada, USA

@@ -5,11 +5,11 @@ palette:
   paper: "#FFF4DC"
   ink: "#3A1A0B"
   primary: "#FF6A3D"
-seasons: 6
+seasons: 7
 status: airing
-blurb: "6 seasons. Sunscreen, recoupling, repeat."
-tagline: "6 seasons of singles in a Fiji villa voting each other into and out of couples while a narrator quietly judges every move. The American port that finally found its footing on Peacock."
-card_tagline: "6 seasons of singles in a Fiji villa voting each other into and out of couples. The American port that finally found its footing on Peacock."
+blurb: "7 seasons. Sunscreen, recoupling, repeat."
+tagline: "7 seasons of singles in a Fiji villa voting each other into and out of couples while a narrator quietly judges every move. The American port that finally found its footing on Peacock."
+card_tagline: "7 seasons of singles in a Fiji villa voting each other into and out of couples. The American port that finally found its footing on Peacock."
 tier: A
 network: "Peacock"
 est_year: 2019
