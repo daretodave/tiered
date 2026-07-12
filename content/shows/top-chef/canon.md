@@ -1,7 +1,7 @@
 ---
 show: top-chef
 editor: tiered.tv editor
-last_revised: 2026-07-11
+last_revised: 2026-07-12
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Top Chef since the Tom-Colicchio-era Bravo seasons, and I've replayed every U.S.-flagship run that lands on this list. The ranking is one editor's read first, calibrated against what reasonable food fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: "How I weigh it"
@@ -12,13 +12,13 @@ tier_s_blurb: Format-defining or unrepeatable. A Top Chef season I'd defend at a
 tier_a_blurb: Deep canon. The seasons I trust to deliver across a kitchen-table replay, even when the call against the next slot up is genuinely close.
 tier_b_blurb: Solid Bravo-mature years. Strong shapes that the surrounding seasons leaned on while the franchise figured out what a regional immersive could become.
 tier_c_blurb: Mixed and uneven. I rank them honestly — these are the seasons whose texture is more historical than rewarding on a second pass through the catalogue.
-weekly_question: All twenty-two seasons are in. Does Las Vegas's bench still top the canon, or has a returnee event finally out-cooked it?
+weekly_question: All twenty-three seasons are in. Does Las Vegas's bench still top the canon, or has a returnee event finally out-cooked it?
 era_bands:
   - key: padma
     label: Padma era
     range: [2006, 2023]
   - key: kish
-    label: Kish era (S21–S22)
+    label: Kish era (S21–S23)
     range: [2024, 2026]
 ---
 
@@ -37,7 +37,7 @@ The Strip gave the season a distinct visual register — neon,
 hotel kitchens, the buffet of stunts that Vegas invites —
 without ever letting the spectacle override the food. Padma
 Lakshmi anchored a judge's table that felt like it was actually
-arguing. Twenty-one other seasons have aired around it and not
+arguing. Twenty-two other seasons have aired around it and not
 one has matched its standard.
 
 ## 8. All-Stars
@@ -72,11 +72,11 @@ Kitchen mechanic into the wild for the first time, and opened
 with a qualifying round that doubled the usual cast. The
 regional immersive idea — a season that travels, that lets the
 locale change the cooking — has been borrowed back every era
-since, including the Canada-set run that closes this catalogue.
-The cast had range across the lineup, the challenges leaned
-into Texas without caricature, and the judge's table held its
-weight under a much longer runway. Ambitious in a way the show
-rarely permits itself.
+since, including the Canada-set run and the Carolinas that
+followed it. The cast had range across the lineup, the
+challenges leaned into Texas without caricature, and the
+judge's table held its weight under a much longer runway.
+Ambitious in a way the show rarely permits itself.
 
 ## 17. All-Stars L.A.
 
@@ -373,17 +373,37 @@ only time on the U.S. run — and the case has only hardened
 with the full season in hand. Toronto and the Calgary–Canmore
 corridor carried that structure, Kish and Colicchio steering it
 throughout. A season that simply transitions well to a new
-host is worth crediting, the way Wisconsin sits just below it,
-but a genuine format-first outranks a clean handoff. That's the
-swing this rank protects.
+host is worth crediting, the way Wisconsin sits further down
+the canon, but a genuine format-first outranks a clean handoff.
+That's the swing this rank protects.
+
+## 23. Carolinas
+
+tag: A modest structural wrinkle — Last Chance Kitchen's entry rule delayed — inside a competent regional immersive.
+slot_argument: A Charlotte-and-Greenville immersive where Last Chance Kitchen now opens later, so the first two eliminated chefs get no second chance. Below Destination Canada's border-crossing swing, above a season with no structural argument.
+community_rank_hint: rank=20 delta=0 sentiment=hold
+
+Carolinas earns the twentieth slot on a genuine, if modest,
+structural argument. Last Chance Kitchen changed its entry rule
+this season, delaying the companion series until after the third
+or fourth elimination — a real wrinkle in how the show routes
+chefs back into contention, even if it doesn't match Destination
+Canada's border-crossing swing or Texas's format overhaul. The
+Charlotte, Greenville and Asheville staging is a competent
+regional immersive in the Wisconsin-Houston-Kentucky mold,
+Kristen Kish's third season at the host chair with no
+judging-panel change, and the roster's life-partners-and-twin-
+brothers wrinkle gives the cast real texture without reshaping
+the format. A season that argues on structure, narrowly, and
+wins the case.
 
 ## 21. Wisconsin
 
 tag: The Kish-era opener — a new host, a familiar table, and a regional immersive across Wisconsin.
 slot_argument: A Milwaukee-and-Madison immersive that handed the host chair to Kristen Kish for the first time, with Tom Colicchio still at the table. A confident handoff that kept the format's shape intact.
-community_rank_hint: rank=20 delta=0 sentiment=hold
+community_rank_hint: rank=21 delta=0 sentiment=hold
 
-Wisconsin earns the twentieth slot because it is a solid
+Wisconsin earns the twenty-first slot because it is a solid
 opening to a new era. Kristen Kish took the host chair for the
 first time, replacing Padma Lakshmi, with Tom Colicchio still
 at the judge's table and Gail Simmons in the critic seat. The
@@ -400,9 +420,9 @@ achievement.
 
 tag: The season Top Chef found its host — Padma Lakshmi's debut and the chair configuration that ran for almost two decades.
 slot_argument: A Los Angeles staging with Padma Lakshmi taking the host chair for the first time. Gail Simmons settles into a permanent critic seat. The format the franchise would run for almost two decades clicks into place.
-community_rank_hint: rank=21 delta=-9 sentiment=hold
+community_rank_hint: rank=22 delta=-9 sentiment=hold
 
-Los Angeles takes the twenty-first slot because it is
+Los Angeles takes the twenty-second slot because it is
 structurally the most important early season — the run where
 the host chair settled, the critic seat stabilized, and the
 format the franchise would carry for almost two decades clicked
@@ -419,7 +439,7 @@ is genuine. A historically essential second draft.
 
 tag: The pilot — Top Chef finding its feet in a city that knew what it wanted to be eaten.
 slot_argument: The first Top Chef. Katie Lee hosts, Tom Colicchio is already at the judge's table, and the format is recognizable but unfinished. Pre-Padma, pre-Last Chance Kitchen, pre-road-show — the franchise figuring out what it is on screen.
-community_rank_hint: rank=22 delta=-9 sentiment=hold
+community_rank_hint: rank=23 delta=-9 sentiment=hold
 
 San Francisco closes the canon because it is the rough draft
 the rest of the franchise grew out of, and the rough draft

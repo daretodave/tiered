@@ -1,7 +1,7 @@
 ---
 show: top-chef
 number: 1
-canonical_position: 22
+canonical_position: 23
 title: San Francisco
 host: Katie Lee
 premiere_date: 2006-03-08
