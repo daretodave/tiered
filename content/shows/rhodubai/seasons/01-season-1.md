@@ -3,7 +3,7 @@ show: rhodubai
 number: 1
 slug: season-1
 title: "Season 1"
-canonical_position: 1
+canonical_position: 2
 premiere_date: "2022-06-01"
 ep_count: 14
 location: "Dubai, United Arab Emirates"
