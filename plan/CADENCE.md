@@ -68,7 +68,7 @@ pass).
 | big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
 | project-runway | 21/22 | 1* |
-| love-island-us | 6/8 | 2 |
+| love-island-us | 7/8 | 1* |
 | american-idol | 23/25 | 2 |
 | hells-kitchen | 24/26 | 2 |
 | rhoc | 18/20 | 2 |
@@ -239,6 +239,20 @@ blind count bump:
   only the premiere had aired as of this tick's 2026-07-12
   reference date. Same confirmed-but-unaired precedent as the
   other `1*` rows above; deferred until the season concludes.
+- **love-island-us** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 7 (2025, Fiji) aired and concluded June–July
+  2025 (reunion streamed separately in August, outside the main
+  broadcast run); filed this tick as
+  `content/shows/love-island-us/seasons/07-fiji-2025.md`,
+  `canon.md` rebased (inserted at rank 2, ranks 2–6 shifted to
+  3–7), `era_bands` peacock-era widened to `[2022, 2025]`. Show
+  frontmatter `seasons` bumped 6→7 and blurb/tagline/card_tagline
+  count references updated to match. Season 8's finale is dated
+  2026-07-12 — same-day as this tick's reference date and
+  unconfirmed-concluded at authoring time. Same
+  confirmed-but-unaired precedent as the other `1*` rows above;
+  deferred until the season's conclusion is confirmed on a later
+  tick.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
