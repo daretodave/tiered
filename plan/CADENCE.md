@@ -30,8 +30,9 @@ one of the 68 catalogued shows, cross-checked against the
 filesystem. **59 new/renewed/announced seasons found** across 28
 previously-gap-free shows; the pre-existing 28-show gap carries
 forward unchanged (no scout finding touched those declared
-counts beyond what's noted below). **68 shows · 742/1083 seasons
-filed · gap 341 across 56 shows.**
+counts beyond what's noted below). **68 shows · 743/1083 seasons
+filed · gap 340 across 55 shows** (rhodubai drained to zero this
+tick — see Sweep notes below).
 
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
@@ -51,17 +52,16 @@ pass).
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
-| love-island-uk | 11/12 | 1 |
-| dancing-with-the-stars | 34/35 | 1 |
-| americas-got-talent | 20/21 | 1 |
-| rhoa | 16/17 | 1 |
-| rhonj | 14/15 | 1 |
-| the-voice | 29/30 | 1 |
-| below-deck | 12/13 | 1 |
-| alone | 12/13 | 1 |
-| love-is-blind | 10/11 | 1 |
-| rhodubai | 1/2 | 1 |
-| alone-australia | 3/4 | 1 |
+| love-island-uk | 11/12 | 1* |
+| dancing-with-the-stars | 34/35 | 1* |
+| americas-got-talent | 20/21 | 1* |
+| rhoa | 16/17 | 1* |
+| rhonj | 14/15 | 1* |
+| the-voice | 29/30 | 1* |
+| below-deck | 12/13 | 1* |
+| alone | 12/13 | 1* |
+| love-is-blind | 10/11 | 1* |
+| alone-australia | 3/4 | 1* |
 | the-challenge | 40/42 | 2 |
 | big-brother | 26/28 | 2 |
 | bachelor | 28/30 | 2 |
@@ -135,6 +135,59 @@ blind count bump:
   picked up again once a premiere date lands in the past.
   Skipped to `bake-off` for this tick's Rule 2 pick (Series 16,
   aired and concluded September–November 2025).
+- **love-island-uk** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 12's finale is dated 2026-07-27 in
+  `content/calendar.yml` — still airing as of this tick, not yet
+  concluded. Same confirmed-but-unaired precedent; deferred,
+  picked up once the finale date lands in the past.
+- **dancing-with-the-stars** (gap row marked `1*`, cloud drain
+  tick 2026-07-12) — verified at author time: the declared-35
+  count reflects Season 35 being confirmed for fall 2026, but no
+  premiere date has been set — unaired as of this tick (frontmatter
+  still correctly reads `seasons: 34`, matching the 34 filed).
+  Deferred; picked up once a premiere date lands in the past.
+- **americas-got-talent** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 21 premiered 2026-06-02 and is still
+  airing (live shows begin Aug 18, finale expected late Sept
+  2026) — not yet concluded. Deferred; picked up once the finale
+  airs.
+- **rhoa** (gap row marked `1*`, cloud drain tick 2026-07-12) —
+  Season 17's regular run finale aired 2026-06-28, but reunion
+  episodes (same season) run through 2026-08-02 — the season
+  isn't fully concluded as of this tick. Deferred; picked up once
+  the reunion run completes.
+- **rhonj** (gap row marked `1*`, cloud drain tick 2026-07-12) —
+  Season 15 is currently filming with no premiere date announced
+  (may slip to 2027) — unaired. Deferred.
+- **the-voice** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 30 has a confirmed 2026-09-21 premiere —
+  unaired as of this tick. Deferred; see also the pre-existing
+  `status: ended` frontmatter correction noted below (unrelated
+  to this gap-row deferral, still outstanding).
+- **below-deck** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 13 (Thailand) is renewed for 2026 with no
+  confirmed premiere date yet — unaired. Deferred.
+- **alone** (gap row marked `1*`, cloud drain tick 2026-07-12) —
+  Season 13 ("World Championship") premiered 2026-06-17 and is
+  still airing weekly (ep. 7 airs 2026-07-29), no finale date set
+  — not yet concluded. Deferred.
+- **love-is-blind** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 11 (Boston) is expected fall 2026 (likely
+  late Sept/early Oct) with no exact date announced — unaired.
+  Deferred.
+- **alone-australia** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 4 premieres 2026-07-15, three days after
+  this tick's cutoff — unaired as of this tick. Deferred; likely
+  drainable next tick once the premiere date has passed (though
+  the "confirmed-but-unaired" precedent requires the season to
+  have concluded, not merely premiered, so re-verify at next
+  pick).
+- **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
+  Season 2 ("The New Addition") aired June 2 – September 17,
+  2024, fully concluded. Filed as
+  `content/shows/rhodubai/seasons/02-the-new-addition.md`,
+  `canon.md` rebased (season 2 ranked #1 ahead of the founding
+  season 1, now #2). Gap table row removed — show fully drained.
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
