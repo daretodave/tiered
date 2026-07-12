@@ -48,8 +48,7 @@ pass).
 
 | show | filed/declared | gap |
 |---|---|---|
-| survivor | 50/51 | 1 |
-| dragrace | 17/18 | 1 |
+| survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1 |
 | top-chef | 22/23 | 1 |
 | rhony | 15/16 | 1 |
@@ -111,6 +110,15 @@ Flagged findings that did **not** move the gap table this pass —
 require editorial judgment at drain/scaffold time rather than a
 blind count bump:
 
+- **survivor** (gap row marked `1*`) — verified at drain-tick
+  author time (2026-07-12): Survivor 51 is confirmed (filmed,
+  wrapped mid-May 2026) but does not premiere until fall 2026 —
+  unaired as of this tick. Per the traitors-uk Series 5
+  precedent (confirmed-but-unaired seasons are not authored),
+  this row is deferred rather than drained; picked up again once
+  a premiere date lands in the past. Skipped to `dragrace` for
+  this tick's Rule 2 pick (season 18, aired and concluded
+  January–April 2026).
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
