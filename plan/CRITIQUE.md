@@ -1,60 +1,53 @@
 # CRITIQUE
 
-> Last pass: 2026-07-12 at commit bfabe37
-> Pass count: 92
+> Last pass: 2026-07-12 at commit 1d6b8d4
+> Pass count: 93
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 92 ran in the cloud loop via Path A2
+> 93 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), authed pass with a
 > freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
-> `/shows`, `/shows/the-real-world/season/new-york`,
-> `/shows/ink-master/season/season-one`,
-> `/shows/so-you-think-you-can-dance/season/the-open-call`) and
-> authed (`/u/e2e`, `/shows/the-real-world`, `/shows/ink-master`,
-> `/shows/so-you-think-you-can-dance`, `/themes`) walks ran,
+> `/shows/top-chef/season/carolinas`,
+> `/shows/bake-off/season/the-hammond-continues`,
+> `/shows/dragrace/season/season-18`, `/shows`) and authed
+> (`/u/e2e`, `/shows/top-chef/season/carolinas`,
+> `/shows/bake-off/season/the-hammond-continues`,
+> `/shows/dragrace/season/season-18`, `/themes`) walks ran,
 > desktop + mobile, targeting the three most-recently-shipped
-> shows (The Real World, Ink Master, So You Think You Can Dance —
-> all freshly-seeded single-season scaffolds), never critiqued
-> before. Zero mechanical findings (no console errors, no mobile
+> season backfills (Top Chef Carolinas, Bake Off Series 16,
+> Drag Race Season 18 — all landed this tick's preceding 6
+> commits via the content-gap drain), never critiqued before.
+> Zero mechanical findings (no console errors, no mobile
 > overflow, complete SEO/meta tags, no per-show SVG iconography
 > violations, no spoiler leakage). Auth handshake confirmed
 > working (`@e2e` chrome on every capture, no signed-out flash).
-> Ruled out three near-misses as already-covered non-bugs: the
-> `/u/e2e` RSC-prefetch-abort on both `survivor/season/cagayan`
-> and `/shows` (benign Next.js Link-teardown artifact, dropped
-> since passes 6-11/29-53+); the mobile "ON THIS PAGE" collapse
-> to a bare section count (established as likely-intentional
-> mobile density compression, pass-56-adjacent precedent); and
-> the "top 10" vote-question framing on all three shows, which
-> reads as logically-empty at first glance but is actually
-> correct per the pass-88 #544 `voteQuestionFor()` fix — all
-> three shows carry ≥10 *total* seasons in their catalog
-> (Real World 33, Ink Master 16, SYTYCD 18), the helper scales on
-> total season count, not on how many are currently drained, so
-> "top 10" is the intended copy at this life stage. Filed 5
-> findings (0 high, 3 med, 2 low): (1) Ink Master's season-1 page
-> title stutters "Ink Master S1 — Season One" — the
-> `seasonDisplayTitle()` dedup guard only matches the numeral
-> form `Season ${n}`, not spelled-out ordinals like "Season One,"
-> so the same pass-73-fixed stutter class reappears in word form;
-> (2) So You Think You Can Dance's tagline states "Fox ran the
-> series for twenty-one years, 2005 to 2024" — the `{yearsWord}`
-> token computes tenure from `est_year` to *today* (2026), which
-> is correct for an airing show but wrong for this one, since
-> `status: ended` in 2024 — the token overshoots by two years and
-> will keep drifting further every year the copy goes unfixed;
-> (3) Real World, Ink Master, and SYTYCD's canon.md single-entry
-> rationales open and close on near-identical templated phrasing
-> ("is the only entry so far, and it's the [only possible/clear]
-> call at #1") when browsed back to back — a cross-show
-> templating tell distinct from the within-page duplication class
-> already fixed elsewhere; (4) Ink Master's "what to watch for"
-> list breaks its own "marker · description" pattern on one of
-> five entries ("Judging table deliberations" carries no timing
-> marker); (5) SYTYCD's hero eyebrow reads as thinner than its two
-> freshly-shipped siblings — bare network name only, no
-> descriptive second clause naming what made the debut notable.
+> No spoiler leaks detected on any of the three fresh season
+> pages — winner/elimination outcomes consistently avoided in
+> favor of structural/format framing on both passes. Filed 6
+> findings (1 high, 2 med, 3 low): (1) Drag Race Season 18's
+> "THE TAKE" section renders empty — no `pull` frontmatter field
+> on the season file, a show-wide gap (zero of 18 dragrace season
+> files carry `pull:`) newly visible now that S18 is live; (2)
+> Top Chef Carolinas' FILMED and FORMAT stat captions both
+> restate the same three city names instead of each carrying a
+> distinct fact; (3) `/themes`' third header stat chip pairs
+> "July 2026" with the count-shaped label "LISTS REVISED,"
+> reading as a count when placed beside two genuine count chips;
+> (4) Top Chef's canon.md has a stray-space hyphenation break —
+> "twin- brothers" — from a markdown hard-wrap, the same bug
+> class the pass-51 #517 fix addressed at a different location;
+> (5) Drag Race S18's "what to watch for" list carries only 2
+> entries versus 4-6 on its freshly-shipped sibling pages; (6)
+> Drag Race S18's FORMAT sub-caption reads as an unedited
+> fragment ("eliminated-cast tournament ahead of the top three")
+> versus sibling pages' complete-clause captions. Dropped one
+> reader observation at self-assessment: a note that
+> `scripts/critique-walk.mjs` only captures first-paint and
+> cannot exercise click interactions (vote-pair post-click state,
+> comment-submit flow) — a real tooling gap but not a product
+> defect, logged here rather than filed as a Pending row so a
+> future tooling pass can pick it up.
 >
 > ───── Pass 91 metadata kept below for history ─────
 >
@@ -2150,6 +2143,18 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/dragrace/season/season-18 — the "THE TAKE" section, the first editorial content block on every season page immediately below the hero, renders empty of any supporting sentence: just the section heading followed by the bare season title, then straight into "02 THE SHAPE OF THE SEASON." Every sibling season page shipped this same batch (Top Chef Carolinas, Bake Off Hammond) carries a one-to-two sentence pull quote in this slot. Root cause: `content/shows/dragrace/seasons/18-season-18.md` has no `pull` frontmatter field — confirmed this is a show-wide gap (zero of the eighteen dragrace season files carry a `pull:` field), but Season 18 is the only one currently live and critiqued, so it's the first to visibly break. Verified on both desktop and mobile captures — not a viewport-specific render quirk. Fix: add a one-sentence `pull` field to `content/shows/dragrace/seasons/18-season-18.md` matching the pattern used by `content/shows/top-chef/seasons/23-carolinas.md` and `content/shows/bake-off/seasons/16-the-hammond-continues.md` (a spoiler-safe framing sentence, not a recap). Content-only, one field; the show-wide `pull` backfill across the other 17 dragrace seasons is a larger follow-on but not blocking this row. Spoiler discipline P0 intact. (URL: /shows/dragrace/season/season-18, source: critique-pass-93)
+
+- [ ] [MED] [anon] /shows/top-chef/season/carolinas — the FILMED and FORMAT stat-tile captions both restate the same three city names instead of each carrying a distinct fact. FILMED value/caption: "Charlotte, NC & Greenville, SC" / "Charlotte, NC and Greenville, SC · with stops in Asheville". FORMAT value/caption: "Regional immersive · 14 eps" / "Charlotte, Greenville and Asheville". `content/shows/top-chef/seasons/23-carolinas.md` lines 9 and 14/18 — `filming_caption` and `format_caption` both list the same three-city set in slightly different order, so the two tiles read as near-duplicates instead of value+detail, the same defect class as the already-resolved pass-90 Chopped S4 PREMIERED-caption finding. Fix: rewrite `format_caption` to elaborate on the actual format tweak already covered in the season's lede/take (the delayed Last Chance Kitchen re-entry rule) rather than restating the city list the FILMED tile already owns. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/top-chef/season/carolinas, source: critique-pass-93)
+
+- [ ] [MED] [authed] /themes — the third header stat chip pairs the value "July 2026" with the label "LISTS REVISED," which reads as a count when placed beside the other two count-style chips ("12 LISTS", "10 SHOWS COVERED"): "12 LISTS · 10 SHOWS COVERED · July 2026 LISTS REVISED" scans as if 12/10/July-2026-worth of lists were each being counted, when the actual intent is a last-revision date. The other two chips are counts; the third mixes in a date value under a count-shaped label, breaking the pattern a reader has just been trained to expect by the first two tiles. Fix: relabel the third stat "LAST REVISED" (or similar) so it reads unambiguously as a date rather than a count, consistent with the `/shows` hero strip's own "May 2026 LAST REVISION" phrasing precedent. Chrome-only, one label string. Spoiler discipline P0 intact. (URL: /themes, source: critique-pass-93)
+
+- [ ] [LOW] [authed] /shows/top-chef/season/carolinas — the canon-slot rationale paragraph contains a broken hyphenated compound with a stray space inside it: "the roster's life-partners-and-twin- brothers wrinkle" splits "twin-brothers" into "twin-" and "brothers." Root cause: `content/shows/top-chef/canon.md` hard-wraps the compound across a markdown line break ("life-partners-and-twin-\nbrothers"), and the rendering pipeline joins the wrapped hyphen with a space instead of nothing — the same bug class the pass-51 #517 "seventeen- episode" finding fixed at its own source location, recurring here at a different file/line since that fix reflowed only the one paragraph rather than the underlying pipeline. Confirmed identical on both desktop and mobile captures. Fix: join the hyphenated compound onto a single unbroken line in `content/shows/top-chef/canon.md` (same fix pattern as #517); if this recurs a third time, the pin from #517 (a markdown-pipeline-level guard against space-joined wrapped hyphens) should finally ship instead of another one-off content edit. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/top-chef/season/carolinas, source: critique-pass-93)
+
+- [ ] [LOW] [anon] /shows/dragrace/season/season-18 — the "What to watch for" list carries only 2 entries ("2 moments, no spoilers"), noticeably thinner than the two sibling season pages shipped the same week (Top Chef Carolinas: 6 moments, Bake Off Hammond: 4 moments), compounding the same page's missing-`pull` finding above as a second signal that this season's content-authoring pass ran shallower than its batch-mates. `content/shows/dragrace/seasons/18-season-18.md` `watch_list` has only the EP 1 and EP 16 entries. Fix: add 2-3 more `watch_list` entries to bring editorial depth in line with the sibling freshly-shipped pages. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/dragrace/season/season-18, source: critique-pass-93)
+
+- [ ] [LOW] [authed] /shows/dragrace/season/season-18 — the FORMAT stat-tile sub-caption reads as a dropped-in database fragment rather than edited prose: "eliminated-cast tournament ahead of the top three" has no capital first letter and no leading article, noticeably terser than the equivalent sub-captions on the same week's sibling season pages ("Kristen Kish's third season as host," "Hammond's third run, no format changes reported"), which both read as complete clauses. `content/shows/dragrace/seasons/18-season-18.md` `format_caption`. Fix: rewrite as a complete clause matching sibling voice, e.g. "The finale swaps the usual lip-sync for a full eliminated-cast tournament ahead of the top three." Content-only, one field. Spoiler discipline P0 intact (no outcome named — "top three" is a structural fact, not a result). (URL: /shows/dragrace/season/season-18, source: critique-pass-93)
 
 - [ ] [MED] [anon] /shows/ink-master/season/season-one — the document title stutters the season number twice, once as digit and once spelled out: "Ink Master S1 — Season One — tiered.tv". The `seasonDisplayTitle()` guard (`src/app/shows/[show]/season/[slug]/page.tsx:103-114`) only suppresses the "S{n}" prefix when `season.title` is exactly the numeral form `Season ${n}` (line 104) or contains both the show name and the raw digit (lines 107-112). Ink Master's frontmatter title is the spelled-out "Season One" (`content/shows/ink-master/seasons/01-season-one.md`), so neither branch fires and the pass-73-fixed stutter class reappears in word form. Fix: broaden the guard to also match spelled-out ordinal season titles ("Season One", "Season Two", …) — e.g. compare against `numberToWords(season.number)` from `src/lib/show-tenure.ts` in addition to the numeral form. Chrome/code-only, one function. Spoiler discipline P0 intact. (URL: /shows/ink-master/season/season-one, source: critique-pass-92)
 
