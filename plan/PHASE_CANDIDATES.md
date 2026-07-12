@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-11 at commit e40486c
-> Pass count: 54
+> Last pass: 2026-07-12 at commit 426ec40
+> Pass count: 55
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,59 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 55 (2026-07-12, commit 426ec40) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45/46/51/54 made — filed WAVE 11, see candidate #24's update below),
+     no new numbered candidate this pass.
+     Window since pass 54 (e40486c, 2026-07-11): ~12.5 hours / 20 commits. Commit
+     threshold met (20 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 10 (5 shows, filed
+       pass 54) fully drained within a day of filing (Traitors UK, MAFS Australia,
+       Real World, Ink Master, So You Think You Can Dance all resolved [x]), the
+       exact recurring stall candidate #24 names, again caught structurally by
+       march's own Step 3b.5 finding the queue empty and falling through to this
+       expand dispatch. Filed WAVE 11 (5 shows: Big Brother UK, RuPaul's Drag Race
+       Down Under, Love Island Australia, The Real Housewives: Ultimate Girls Trip,
+       Selling the OC — all international-edition/spinoff extensions of existing
+       clusters, since WAVE 10 closed the catalog's remaining format-diversity gaps).
+       All scored ≥3.0 so the next march tick's Step 3b.5 has real work. Candidate
+       #24 reinforced (fifth consecutive empty-queue occurrence, see update above).
+     - AUDIT.md other Pending rows: still exactly 2 real rows plus the recurring
+       HIGH — the e2e-full crawl timeout row (candidate #26) recurred a fourth time
+       this window (2026-07-11T23:19:19Z, run 29171935246, per the 2026-07-12
+       digest), now 5 days unpromoted across four red nights; the dedupe
+       staleness-bound row (candidate #32, filed 2026-07-11) remains unchanged,
+       1 day unpromoted. The Supabase CLI pin (issue #416) and the
+       `YEAR_TENURE_RE` engineering row (score 2.7) are both unchanged, no new
+       signal. Neither #26 nor #32 gets a body edit this pass — both are already
+       fully described with their latest evidence directly in the AUDIT.md HIGH
+       row and the digest's 2026-07-12 recommendation to promote both (plus the
+       Supabase pin) at the next local/oversight session stands unchanged; nothing
+       for `/expand` itself to add beyond what's already on record.
+     - CRITIQUE.md: 23 live Pending findings, pass-92 (5 findings: 3 MED, 2 LOW)
+       landed since pass 54's pass-91. No new HIGH findings, no new 3+ clustering
+       on one URL/family beyond what existing candidates already cover: pass-92's
+       Ink Master season-title stutter finding is the same defect class as the
+       pass-73-fixed numeral-form stutter (spelled-out-ordinal variant, single
+       instance) — below the 3-instance clustering bar, left for `/iterate`/
+       `/ship-content` drains. The SYTYCD tenure-overshoot finding and the
+       cross-show canon-rationale templated-phrasing finding are similarly
+       single-cluster, contained fixes — no new candidate warranted.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). No new issue
+       activity beyond what candidates #26/#32/#416 already track.
+     - spec.md + design/: no changes since pass 54 (`git log e40486c..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 54 — content-drain velocity (5 new
+       shows scaffolded, several audit-finding-close content fixes), one critique
+       pass (92), one digest. Matches the standing perpetual-mandate cadence — no
+       refactor-smell cluster, no new signal warranting a fresh numbered candidate
+       this pass.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
+     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying signal
+     this pass beyond the AUDIT.md-recorded #26 recurrence noted above. #24 —
+     reinforced (fifth consecutive empty-queue occurrence, see update above). -->
 
 <!-- Pass 54 (2026-07-11, commit e40486c) — 0 new phase-shape candidates filed;
      dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
@@ -1358,6 +1411,23 @@ the underlying "±0 for a stretch" gap the candidate describes still happened. F
 10 (5 shows: The Traitors UK, Married at First Sight Australia, The Real World, Ink
 Master, So You Think You Can Dance). Fourth consecutive empty-queue occurrence across
 waves 7/8/9/10 reinforces the same underlying point — score unchanged, still unpromoted.
+**Update (expand pass 55, 2026-07-12):** the queue ran dry a fifth time — wave 10's five
+rows all resolved [x] within a day of filing (Traitors UK, MAFS Australia, Real World,
+Ink Master, So You Think You Can Dance all shipped by content-drain ticks in the same
+window), running Pending show rows back to exactly 0 again. Caught the same structural
+way as pass 54 — `/march`'s own Step 3b.5 found zero Pending `category: content-gaps`
+rows and fell through to the expand gate. Filed WAVE 11 (5 shows: Big Brother UK,
+RuPaul's Drag Race Down Under, Love Island Australia, The Real Housewives: Ultimate
+Girls Trip, Selling the OC) — this wave leans entirely on international-edition/spinoff
+depth rather than new format clusters, since WAVE 10 closed the catalog's remaining
+format-diversity gaps (body-art, dance). Fifth consecutive empty-queue occurrence across
+waves 7/8/9/10/11 — the underlying cadence question this candidate raises (should the
+queue be refilled proactively at ≤2 rather than caught reactively at 0 by march's
+fallthrough) remains open and unpromoted. The march-level fallthrough catch continues to
+work every time it's been tested (passes 54, 55), which is real evidence the reactive
+path is reliable enough in practice that the proactive skill-file amendment may be
+lower-priority than this candidate's score implies — noting that for `/oversight`'s
+next review rather than pre-judging it here.
 
 ### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
 
