@@ -67,7 +67,7 @@ pass).
 | the-challenge | 41/42 | 1* |
 | big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
-| project-runway | 20/22 | 2 |
+| project-runway | 21/22 | 1* |
 | love-island-us | 6/8 | 2 |
 | american-idol | 23/25 | 2 |
 | hells-kitchen | 24/26 | 2 |
@@ -220,6 +220,25 @@ blind count bump:
   found only speculative casting rumors — same
   confirmed-but-unaired precedent as the other `1*` rows above;
   deferred until an official lead and premiere date land.
+- **project-runway** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 21 ("New York," the Freeform relaunch)
+  aired and concluded July–September 2025; filed this tick as
+  `content/shows/project-runway/seasons/21-new-york-2025.md`,
+  `canon.md` rebased (inserted at rank 16, ranks 16–20 shifted to
+  17–21), `era_bands` split the mislabeled `[2018, 2026]`
+  "Lifetime modern" band into `bravo-modern` `[2018, 2024]` and
+  `freeform-era` `[2025, 2026]`. Show frontmatter `seasons`
+  bumped 20→21, and blurb/tagline/card_tagline count references
+  updated to match. In-scope
+  correction: `20-new-york-2023.md` and its canon.md entry
+  falsely credited Heidi Klum as S20's host (she didn't return
+  until S21) — fixed to reflect no single host on camera, with
+  mentor Christian Siriano and the judges panel carrying the
+  season. Season 22 premiered 2026-07-09 and is currently airing
+  (finale dated 2026-09-10, already logged to `calendar.yml`) —
+  only the premiere had aired as of this tick's 2026-07-12
+  reference date. Same confirmed-but-unaired precedent as the
+  other `1*` rows above; deferred until the season concludes.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
