@@ -51,7 +51,8 @@ jobs:
       - name: Set up Supabase CLI
         uses: supabase/setup-cli@v1
         with:
-          version: latest
+          # Pinned (issue #416/#480) — see e2e-full.yml for rationale.
+          version: 2.106.0
 
       - name: Build production DB URL
         id: dburl

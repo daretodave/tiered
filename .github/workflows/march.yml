@@ -83,7 +83,8 @@ jobs:
         if: hashFiles('supabase/config.toml') != ''
         uses: supabase/setup-cli@v1
         with:
-          version: latest
+          # Pinned (issue #416/#480) — see e2e-full.yml for rationale.
+          version: 2.106.0
 
       - name: Pre-start Supabase containers
         if: hashFiles('supabase/config.toml') != ''
@@ -265,11 +266,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
         run: |
-          existing=$(gh issue list --search 'in:title "Cloud march tick crashed" state:open' --json number --jq 'length')
-          if [ "$existing" -eq 0 ]; then
+          # Staleness bound (candidate #32): a stale open issue (#398, a
+          # month old) silently absorbed the 2026-07-10 crash. Recent
+          # match -> comment the run link; no recent match -> file fresh.
+          cutoff=$(date -u -d '14 days ago' +%Y-%m-%d)
+          existing=$(gh issue list --search "in:title \"Cloud march tick crashed\" state:open updated:>=$cutoff" --json number --jq '.[0].number // empty')
+          if [ -z "$existing" ]; then
             gh issue create \
               --title "Cloud march tick crashed: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
               --body "Action exited non-zero before the agent could file its own issue. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           else
-            echo "An open 'Cloud march tick crashed' issue already exists — skipping dedupe."
+            echo "Recently-updated open issue #$existing matches — appending this run's link instead of filing a duplicate."
+            gh issue comment "$existing" --body "Recurred $(date -u +%Y-%m-%dT%H:%M:%SZ). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           fi

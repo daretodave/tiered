@@ -66,7 +66,12 @@ jobs:
         if: hashFiles('supabase/config.toml') != ''
         uses: supabase/setup-cli@v1
         with:
-          version: latest
+          # Pinned (issue #416/#480): `latest` resolves via the Supabase
+          # release API at runtime, which transiently 504s and kills the
+          # run before any test executes. 2.106.0 is proven green in this
+          # pipeline (AUDIT row #402 resolution, 2026-06-11). Bump
+          # deliberately, in a commit, not implicitly at runtime.
+          version: 2.106.0
 
       - name: Pre-start Supabase containers
         if: hashFiles('supabase/config.toml') != ''
@@ -79,7 +84,13 @@ jobs:
 
       - name: Exhaustive e2e crawl (E2E_FULL=1)
         run: pnpm e2e:full
-        timeout-minutes: 50
+        # 50 was breached three nights running (2026-07-06/09/10) at
+        # 92-97% complete — single-worker wall-clock scales linearly
+        # with the catalog (7,098 tests as of 2026-07-11). 75 leaves
+        # headroom inside the 90-minute job budget (~20-25 min of
+        # setup+build precede this step). If 75 stops being enough,
+        # the real fix is sharding the crawl, not another bump.
+        timeout-minutes: 75
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
@@ -114,11 +125,17 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
         run: |
-          existing=$(gh issue list --search 'in:title "Nightly e2e-full failed" state:open' --json number --jq 'length')
-          if [ "$existing" -eq 0 ]; then
+          # Staleness bound (candidate #32): only a RECENTLY-updated open
+          # issue suppresses a fresh filing — a stale thread absorbed the
+          # 2026-07-09/10 recurrences invisibly. On a recent match, comment
+          # the new run's link so every incident stays visible somewhere.
+          cutoff=$(date -u -d '14 days ago' +%Y-%m-%d)
+          existing=$(gh issue list --search "in:title \"Nightly e2e-full failed\" state:open updated:>=$cutoff" --json number --jq '.[0].number // empty')
+          if [ -z "$existing" ]; then
             gh issue create \
               --title "Nightly e2e-full failed: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
               --body "The exhaustive every-URL crawl (E2E_FULL=1) went red — a non-sampled URL regressed where the per-commit archetype sample does not look. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Filed unlabeled; next /triage classifies and routes."
           else
-            echo "An open 'Nightly e2e-full failed' issue already exists — skipping dedupe."
+            echo "Recently-updated open issue #$existing matches — appending this run's link instead of filing a duplicate."
+            gh issue comment "$existing" --body "Recurred $(date -u +%Y-%m-%dT%H:%M:%SZ). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           fi

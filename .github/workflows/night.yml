@@ -110,11 +110,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
         run: |
-          existing=$(gh issue list --search 'in:title "Night digest crashed" state:open' --json number --jq 'length')
-          if [ "$existing" -eq 0 ]; then
+          # Staleness bound (candidate #32) — same pattern as e2e-full/march.
+          cutoff=$(date -u -d '14 days ago' +%Y-%m-%d)
+          existing=$(gh issue list --search "in:title \"Night digest crashed\" state:open updated:>=$cutoff" --json number --jq '.[0].number // empty')
+          if [ -z "$existing" ]; then
             gh issue create \
               --title "Night digest crashed: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
               --body "The night shift exited non-zero. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           else
-            echo "An open 'Night digest crashed' issue already exists — skipping."
+            echo "Recently-updated open issue #$existing matches — appending this run's link instead of filing a duplicate."
+            gh issue comment "$existing" --body "Recurred $(date -u +%Y-%m-%dT%H:%M:%SZ). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           fi
