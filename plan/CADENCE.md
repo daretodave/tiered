@@ -50,8 +50,7 @@ pass).
 |---|---|---|
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
-| rhony | 15/16 | 1 |
-| bake-off | 15/16 | 1 |
+| rhony | 15/16 | 1* |
 | love-island-uk | 11/12 | 1 |
 | dancing-with-the-stars | 34/35 | 1 |
 | americas-got-talent | 20/21 | 1 |
@@ -127,6 +126,15 @@ blind count bump:
   again once a premiere date lands in the past. Skipped to
   `top-chef` for this tick's Rule 2 pick (season 23 "Carolinas",
   aired and concluded March–June 2026).
+- **rhony** (gap row marked `1*`) — verified at drain-tick author
+  time (2026-07-12): Season 16 was announced by Bravo in March
+  2026 with filming underway, but no premiere date has been set
+  as of this tick (reporting places a possible window "later in
+  2026 or early 2027"). Same confirmed-but-unaired precedent as
+  survivor/amazing-race above; deferred rather than drained,
+  picked up again once a premiere date lands in the past.
+  Skipped to `bake-off` for this tick's Rule 2 pick (Series 16,
+  aired and concluded September–November 2025).
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
