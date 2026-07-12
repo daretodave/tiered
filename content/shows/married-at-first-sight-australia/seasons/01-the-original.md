@@ -14,7 +14,7 @@ pull: "Three couples, matched sight unseen, married before they'd said more than
 format_summary: "Expert-matched marriage · Decision Day"
 format_caption: "Three couples, matched by experts, married before they'd spoken"
 cast_size: 6
-cast_size_caption: "Three couples, six strangers matched sight unseen"
+cast_size_caption: "Six strangers with weeks to reach Decision Day"
 premiere_caption: "Nine Network · July 2015"
 filming_caption: "Sydney · the format's Australian debut"
 episodes_caption: "8 episodes across the first experiment"
