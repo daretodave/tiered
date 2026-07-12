@@ -1,5 +1,63 @@
 # CRITIQUE
 
+> Last pass: 2026-07-12 at commit bfabe37
+> Pass count: 92
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 92 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows`, `/shows/the-real-world/season/new-york`,
+> `/shows/ink-master/season/season-one`,
+> `/shows/so-you-think-you-can-dance/season/the-open-call`) and
+> authed (`/u/e2e`, `/shows/the-real-world`, `/shows/ink-master`,
+> `/shows/so-you-think-you-can-dance`, `/themes`) walks ran,
+> desktop + mobile, targeting the three most-recently-shipped
+> shows (The Real World, Ink Master, So You Think You Can Dance —
+> all freshly-seeded single-season scaffolds), never critiqued
+> before. Zero mechanical findings (no console errors, no mobile
+> overflow, complete SEO/meta tags, no per-show SVG iconography
+> violations, no spoiler leakage). Auth handshake confirmed
+> working (`@e2e` chrome on every capture, no signed-out flash).
+> Ruled out three near-misses as already-covered non-bugs: the
+> `/u/e2e` RSC-prefetch-abort on both `survivor/season/cagayan`
+> and `/shows` (benign Next.js Link-teardown artifact, dropped
+> since passes 6-11/29-53+); the mobile "ON THIS PAGE" collapse
+> to a bare section count (established as likely-intentional
+> mobile density compression, pass-56-adjacent precedent); and
+> the "top 10" vote-question framing on all three shows, which
+> reads as logically-empty at first glance but is actually
+> correct per the pass-88 #544 `voteQuestionFor()` fix — all
+> three shows carry ≥10 *total* seasons in their catalog
+> (Real World 33, Ink Master 16, SYTYCD 18), the helper scales on
+> total season count, not on how many are currently drained, so
+> "top 10" is the intended copy at this life stage. Filed 5
+> findings (0 high, 3 med, 2 low): (1) Ink Master's season-1 page
+> title stutters "Ink Master S1 — Season One" — the
+> `seasonDisplayTitle()` dedup guard only matches the numeral
+> form `Season ${n}`, not spelled-out ordinals like "Season One,"
+> so the same pass-73-fixed stutter class reappears in word form;
+> (2) So You Think You Can Dance's tagline states "Fox ran the
+> series for twenty-one years, 2005 to 2024" — the `{yearsWord}`
+> token computes tenure from `est_year` to *today* (2026), which
+> is correct for an airing show but wrong for this one, since
+> `status: ended` in 2024 — the token overshoots by two years and
+> will keep drifting further every year the copy goes unfixed;
+> (3) Real World, Ink Master, and SYTYCD's canon.md single-entry
+> rationales open and close on near-identical templated phrasing
+> ("is the only entry so far, and it's the [only possible/clear]
+> call at #1") when browsed back to back — a cross-show
+> templating tell distinct from the within-page duplication class
+> already fixed elsewhere; (4) Ink Master's "what to watch for"
+> list breaks its own "marker · description" pattern on one of
+> five entries ("Judging table deliberations" carries no timing
+> marker); (5) SYTYCD's hero eyebrow reads as thinner than its two
+> freshly-shipped siblings — bare network name only, no
+> descriptive second clause naming what made the debut notable.
+>
+> ───── Pass 91 metadata kept below for history ─────
+>
 > Last pass: 2026-07-12 at commit e60ceca
 > Pass count: 91
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2092,6 +2150,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/ink-master/season/season-one — the document title stutters the season number twice, once as digit and once spelled out: "Ink Master S1 — Season One — tiered.tv". The `seasonDisplayTitle()` guard (`src/app/shows/[show]/season/[slug]/page.tsx:103-114`) only suppresses the "S{n}" prefix when `season.title` is exactly the numeral form `Season ${n}` (line 104) or contains both the show name and the raw digit (lines 107-112). Ink Master's frontmatter title is the spelled-out "Season One" (`content/shows/ink-master/seasons/01-season-one.md`), so neither branch fires and the pass-73-fixed stutter class reappears in word form. Fix: broaden the guard to also match spelled-out ordinal season titles ("Season One", "Season Two", …) — e.g. compare against `numberToWords(season.number)` from `src/lib/show-tenure.ts` in addition to the numeral form. Chrome/code-only, one function. Spoiler discipline P0 intact. (URL: /shows/ink-master/season/season-one, source: critique-pass-92)
+
+- [ ] [MED] [authed] /shows/so-you-think-you-can-dance — the show's `tagline` reads "Fox ran the series for twenty-one years, 2005 to 2024, before ending it for good," but twenty-one is wrong against the show's own literal dates: 2005 to 2024 is nineteen years (twenty if counting inclusively). Root cause: `content/shows/so-you-think-you-can-dance.md:11` uses the `{yearsWord}` token, and `renderShowTaglineTokens()`/`yearsSinceEst()` (`src/lib/show-tenure.ts:43-56`) always compute elapsed years against `asOfDate = new Date()` (today) from `est_year` (2005) — with no end-year field in the locked twelve-field show schema, the token has no way to know this show is `status: ended` (`content/shows/so-you-think-you-can-dance.md:9`) and stopped counting in 2024. The token is designed for *ongoing*-tenure copy on airing shows (see `src/lib/show-tenure.ts`'s Survivor anniversary-anchor precedent); this tagline pairs it with an explicit two-date historical span, and the mismatch will keep growing by one year every year the copy goes unfixed. Fix: for this ended show, replace `{yearsWord}` in the tagline with the literal spelled-out count ("nineteen") rather than the live-computing token — the token isn't the right tool for a fixed historical span. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/so-you-think-you-can-dance, source: critique-pass-92)
+
+- [ ] [MED] [authed] /shows/the-real-world, /shows/ink-master, /shows/so-you-think-you-can-dance — all three freshly-shipped, single-canon-entry shows open and close their canon.md rationale on near-identical templated phrasing: each opens with "The founding season — the format's first real test of..." and each closes with a close variant of "is the only entry so far, and it's the [only possible/clear] call at #1." Distinct from the already-fixed within-page body-vs-canon duplication class (`whereItSitsCopy()` verbatim-quote collision) — this is a cross-show templating tell, visible only when the three same-batch launches are browsed back to back, not a single-page defect. Fix: vary the season-entry opener and the "only entry so far" closing line per show at content-authoring time so debut-season canon rationales in the same content-velocity batch don't read as copy-paste scaffolding. Content-only, three files. Spoiler discipline P0 intact. (URL: /shows/ink-master, source: critique-pass-92)
+
+- [ ] [LOW] [anon] /shows/ink-master/season/season-one — the "What to watch for" list follows a consistent "marker · description" pattern on 4 of 5 entries (`Ep 1 · …`, `Early eps · …`, `Mid-season · …`, `Final stretch · …`), but the 4th entry breaks the pattern with no timing marker at all: "Judging table deliberations". `content/shows/ink-master/seasons/01-season-one.md` `watch_list`. Fix: give that entry a timing marker consistent with its siblings, e.g. "Late-season · judging table deliberations". Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/ink-master/season/season-one, source: critique-pass-92)
+
+- [ ] [LOW] [anon] /shows/so-you-think-you-can-dance/season/the-open-call — the page-top eyebrow reads noticeably thinner than its two freshly-shipped siblings from the same batch: it stops at the bare network name while Real World and Ink Master both earn a descriptive second clause naming what made the debut historically notable. SYTYCD eyebrow: "Premiered July 2005 · Fox" vs. Real World: "Aired spring 1992 · MTV's original SoHo loft season" vs. Ink Master: "Aired January 2012 · Spike TV's original tattoo competition". `content/shows/so-you-think-you-can-dance/seasons/01-the-open-call.md`. Fix: add a descriptive second clause matching the sibling pattern, e.g. "Premiered July 2005 · Fox's original open-audition dance competition". Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/so-you-think-you-can-dance/season/the-open-call, source: critique-pass-92)
 
 - [ ] [LOW] [anon] /shows/traitors-uk/season/series-1 — the exact six-word phrase "Ardross Castle in the Scottish Highlands" repeats verbatim between the hero lede and the "Shape of the season" body paragraph a few lines below it, an avoidable echo against the "plain sentences over clever ones" voice bar. `content/shows/traitors-uk/seasons/01-series-1.md` lede: "...built inside Ardross Castle in the Scottish Highlands, hosted by Claudia Winkleman." / body: "...Claudia Winkleman hosts a group of strangers at Ardross Castle in the Scottish Highlands, working out a cloak-and-Round-Table game as they go." Fix: vary the second reference (e.g. "the castle" or "the Highlands fortress") rather than repeating the full six-word phrase. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/traitors-uk/season/series-1, source: critique-pass-91)
 
