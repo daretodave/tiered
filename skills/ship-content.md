@@ -9,14 +9,19 @@
 
 ## 1. Purpose
 
-The three live content-velocity rules in `plan/bearings.md`
-"Content velocity & editorial cadence" generate a continuous
-stream of content-gap findings until tiered.tv's corpus reaches
-its launch quota (12 shows, every aired season blurbed, ≥10
-themed lists). Rule 4 (facade completeness) is **retired** —
-per-show illustration is prohibited per `design/CLAUDE.md`. The
-visual identity is color + typography + the shared brand mark,
-not per-show art.
+The live content-velocity rules in `plan/bearings.md` "Content
+velocity & editorial cadence" generate a continuous stream of
+content-gap findings. Per the 2026-07-12 oversight pivot the
+mission is, in priority order: **(1) season fill + ranking —
+ASAP** (Rule 2 owns every content tick until the
+`plan/CADENCE.md` gap table reads zero); **(2) themed lists —
+the main perpetual objective** (Rule 3, hundreds over
+months/years, one excellent list per tick); **(3) new shows —
+LOCKED** (Rule 1 fires only via the biweekly show-add clock,
+armed at gap-zero, drain-fully-before-next). Rule 4 (facade
+completeness) is **retired** — per-show illustration is
+prohibited per `design/CLAUDE.md`. The visual identity is color
++ typography + the shared brand mark, not per-show art.
 
 This skill codifies the proven shape — gap → classify → spawn
 `content-curator` → verify → commit → push — as a single
@@ -103,8 +108,16 @@ Pre-flight checklist before committing a content tick:
   return. The caller falls through to the next target.
 - **Ambiguous gap → pick the top row.** If two rows tie on
   score, prefer the one with the older filing date.
-- **Show coverage gap (Rule 1) → ship one full show per tick.**
-  Show metadata (twelve fields per `CLAUDE.md` — seven core +
+- **Show coverage (Rule 1) — LOCKED 2026-07-12.** A new-show
+  unit ships ONLY from a row filed by the `/march` Step 1.5
+  show-add clock (biweekly, armed at gap-zero per
+  `plan/CADENCE.md`). Never pick up, and never file, a
+  free-form "Add show" row — retract any that appear (the
+  expand wave mechanic is retired). When a clock-filed add DOES
+  ship, the mechanics below apply unchanged, and the show then
+  drains fully via Rule 2 ticks before any list work resumes.
+  Ship one full show scaffold per tick:
+  show metadata (twelve fields per `CLAUDE.md` — seven core +
   the editorial block `tier` / `network` / `est_year` /
   `genre_tag` / `featured`) + a populated `canon.md` ranking
   every seeded season + the seeded season blurbs themselves.
@@ -116,17 +129,32 @@ Pre-flight checklist before committing a content tick:
   26 when canon + season coverage clears the floor. **No
   facade work** — the visual identity is color + typography +
   the shared brand mark; per-show illustration is prohibited.
-- **Canon completeness (Rule 2) → ship a batch of 3-5 season
-  blurbs.** Amortize the show context lookup across multiple
-  blurbs in one tick. **Per 31a's canon discipline:** every
+- **Canon completeness (Rule 2) → THE ASAP SPRINT — ship a
+  batch of up to 10 seasons, one show per tick.** This rule
+  owns every content tick until the `plan/CADENCE.md` gap table
+  reads zero. Pick the show **smallest-gap-first** from the gap
+  table (finish shows; tie-break higher tier, then older
+  `est_year`) and update the table row in the same commit. The
+  golden pattern is Survivor (`content/shows/survivor/`).
+  Amortize the show context lookup across the batch. **Per 31a's canon discipline:** every
   blurbed season gets `canonical_position` filled at the rank
   it deserves, and the show's `canon.md` is opened in the
   same commit to insert each new season at the
   editorially-correct slot — surrounding ranks shift, every
   shifted season's `canonical_position` is rewritten to
   match. The pre-flight check (§2.5) gates the commit.
-- **Themed list (Rule 3) → ship one themed list per tick** at
-  the 19f schema — `title`, `description`, `tagline`,
+- **Themed list (Rule 3) → THE MAIN OBJECTIVE — ship one
+  excellent themed list per tick** (or a review batch of 3–5
+  due lists; reviews outrank new lists when ≥ 5 are due per the
+  `plan/LISTS.md` ledger). Rule 3 fires only once the Rule 2
+  gap table reads zero — seasons never wait on lists. Before
+  authoring: run the bearings Rule 3 **excellence gate**
+  (distinct angle vs. every ledger row — >~40% entry overlap
+  means extend the existing list instead; a title a reader
+  would click; every entry earning its slot). Add the ledger
+  row in the same commit. A review bumps ledger
+  `last_reviewed` always, frontmatter `last_revised` only on
+  real change. Ship at the 19f schema — `title`, `description`, `tagline`,
   `category` (one of `tone` / `craft` / `era` / `single`),
   `sentiment`, `status`, `curator` byline, `last_revised` ISO,
   `featured` boolean (default false), `related` (0–2 slugs in
@@ -227,27 +255,32 @@ multiplier if the AUDIT.md header reads:
 
 (Multiply each content-gap score by 1.5 before ranking.)
 
-Confirm the top row maps to one of the 4 bearings rules:
+Confirm the top row maps to one of the 4 bearings rules
+(2026-07-12 pivot ordering — Rule 2 while the gap table is
+non-zero, then Rule 3; Rule 1 only via the cadence clock):
 
-- **Rule 1 — show coverage:** `count(content/shows/*.md) < 12`
-  AND missing show is in the launch list (per bearings).
-  Pick the highest-priority missing show (ordered by US
-  cultural footprint: Survivor → Amazing Race → Big Brother →
-  Bachelor → Bachelorette → Top Chef → Drag Race → Traitors
-  → Love Island US → Love Island UK → Bake Off → Project
-  Runway → The Challenge).
-- **Rule 2 — canon completeness:** Some `content/shows/<slug>/seasons/`
-  has fewer entries than `show.aired_season_count` OR
-  `content/shows/<slug>/canon.md` doesn't include every season
-  in `canonical_position`. Pick the show with the largest gap.
-- **Rule 3 — themed lists:** `count(content/themes/*.md) < 10`.
-  Pick the next theme from `plan/PHASE_CANDIDATES.md` "Seed
-  candidates" or invent one (cross-show pattern: best
-  premieres, best finales, best returnee seasons, best
-  villain editing, best post-merge runs, best location
-  reveals, etc.). A `tone`/`craft`/`era` list already shipped
-  but covering < 3 distinct shows is also a valid Rule 3 target
-  (phase 41) — author cross-show entries into it.
+- **Rule 1 — show coverage (LOCKED):** valid ONLY when the row
+  was filed by the `/march` Step 1.5 show-add clock (biweekly,
+  armed at gap-zero per `plan/CADENCE.md`). Any other "Add
+  show" row is retracted, not shipped.
+- **Rule 2 — canon completeness (THE ASAP SPRINT):** the
+  `plan/CADENCE.md` gap table is non-zero — some
+  `content/shows/<slug>/seasons/` has fewer entries than the
+  show's declared `seasons:` count, or `canon.md` doesn't rank
+  every filed season. Pick the show **smallest-gap-first** from
+  the gap table (tie-break higher tier, then older `est_year`);
+  batch up to 10 seasons; update the gap table row in the same
+  commit.
+- **Rule 3 — themed lists (THE MAIN OBJECTIVE):** fires once
+  the gap table reads zero. Check `plan/LISTS.md` first: ≥ 5
+  lists review-due → run a review batch (3–5 lists) instead of
+  a new list. Otherwise pick a concept from `plan/LISTS.md`
+  `## Ideas` or invent one, pass the bearings Rule 3 excellence
+  gate (distinct angle vs. the ledger, click-worthy title,
+  every entry earning its slot), and add the ledger row in the
+  same commit. A `tone`/`craft`/`era` list below the ≥ 3
+  distinct-show floor is also a valid Rule 3 target (phase 41)
+  — author cross-show entries into it.
 - **Rule 4 — retired.** Skip any row tagged
   `category: facade-gap` (auto-mark `[x] superseded by 19a`).
   Per-show illustration is prohibited per `design/CLAUDE.md`.
@@ -559,6 +592,8 @@ content-gap row (or another verb if the queue is drained).
 # Read state
 plan/AUDIT.md                                 # content-gap queue
 plan/bearings.md                              # voice + spoiler discipline + content velocity rules
+plan/CADENCE.md                               # gap table (Rule 2 pick order) + show-add clock
+plan/LISTS.md                                 # list ledger + review-due flags (Rule 3)
 content/shows/                                # existing shows
 content/themes/                               # existing themes
 

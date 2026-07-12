@@ -284,6 +284,13 @@ oversight will review and promote.
 7. **No emojis. No `Co-Authored-By:`.**
 8. **Strict posture is real.** If posture is `strict`, exit 0
    with no-op. Don't sneak candidates in.
+9. **The show pipeline is locked (oversight 2026-07-12).**
+   Never file new-show waves or "Add show" rows — the Rule 1
+   show-add clock in `plan/CADENCE.md` owns show additions; the
+   "keep the queue fed" nudge is retired. Themed-list CONCEPTS
+   are not phase candidates either — append them to
+   `plan/LISTS.md` `## Ideas`. `/expand` remains for
+   engineering / phase-shape candidates only.
 
 ## 8. Failure modes
 

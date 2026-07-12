@@ -280,7 +280,7 @@
      signal this pass. #16 — conflict correction (see above). #31 —
      resolved, struck through (see above). -->
 
-### 32. Failure-issue title-dedupe search needs a staleness bound
+### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
 independent workflows, three total incidents, but capped by the same
@@ -1235,7 +1235,7 @@ into a lighter-weight one-line index, not just CRITIQUE.md/AUDIT.md rows.
 Still unpromoted, now 2 days stale, two independent files now exhibiting
 the same growth-without-pruning defect this candidate names.
 
-### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth
+### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
 change, but capped by the same `workflows`-scope cloud blocker as candidate-adjacent
@@ -1367,7 +1367,7 @@ here since it's a code change, not content, and the recurring-patch pattern is w
 recording even if it ships quickly).
 **Conflicts:** none.
 
-### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit
+### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit ~~(retired — 2026-07-12 oversight pivot: new-show creation is LOCKED and the queue-refill nudge no longer exists; the biweekly show-add clock in `plan/CADENCE.md` owns future additions)~~
 
 **Score:** 4.5 (impact: 6, ease: 7.5 — process/gate tuning, not user-facing)
 **Source pass:** filed by `/digest` 2026-07-05, not an expand pass (meta-loop rail — proposal only)

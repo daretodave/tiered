@@ -19,19 +19,28 @@ block to find the next phase. Format: `[ ]` pending → `[WIP]`
 in flight → `[x]` shipped (with commit hash). Tick in this file
 in the same commit that ships the phase.
 
-> **Standing directive (set via oversight 2026-06-14).** All 59
-> phases are shipped — the *engineering* build plan is complete.
-> The loop's primary mission is now **continuous show
-> expansion**: always be adding new shows (drain-style, never
-> one-shot), with community refinement and audit drains as the
-> natural background. This is content work — it flows through
-> `/ship-content` via `category: content-gaps` rows in
-> `plan/AUDIT.md` (march Step 3b.5), governed by the standing
-> perpetual Rule 1 in `plan/bearings.md` "Content velocity &
-> editorial cadence". It is **not** a code phase: do not add an
-> unchecked `[ ]` Phase row here for show additions — that would
-> misroute to `/ship-a-phase`. New *engineering* phases still get
-> rows here as normal when promoted from `/expand`.
+> **Standing directive (reset via oversight 2026-07-12;
+> supersedes 2026-06-14).** All engineering phases are shipped.
+> The loop's content mission, in priority order: **(1) season
+> fill + ranking — ASAP**: drain the `plan/CADENCE.md` gap
+> table to zero (282 seasons across 28 shows at reset),
+> smallest-gap-first, up to 10 seasons/tick, canon reranked in
+> the same commit — Survivor is the golden pattern. **(2)
+> Themed lists — the main perpetual objective** once the gap is
+> zero: hundreds of excellent lists over months/years, one per
+> tick, review nags per `plan/LISTS.md`. **(3) New shows —
+> LOCKED**, replaced by the biweekly add-and-drain-fully clock
+> (arms at gap-zero; `/expand` no longer refills any show
+> queue). A weekly season sweep (bearings Rule 1a) guarantees
+> no season is ever missed. This is content work — it flows
+> through `/ship-content` via `category: content-gaps` rows in
+> `plan/AUDIT.md` (march Step 3b.5) and the march Step 1.5
+> cadence gates, governed by `plan/bearings.md` "Content
+> velocity & editorial cadence". It is **not** a code phase: do
+> not add an unchecked `[ ]` Phase row here for content work —
+> that would misroute to `/ship-a-phase`. New *engineering*
+> phases still get rows here as normal when promoted from
+> `/expand`.
 
 **Substrate (phases 1–4):**
 <!-- Phase 4a slots between facade primitives (phase 4) and the first show

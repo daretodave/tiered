@@ -478,49 +478,55 @@ keeps a pass honest.
 
 ## Content velocity & editorial cadence
 
-tiered.tv's `/iterate` and `/ship-content` skills enforce four
-content rules. The loop dispatches to `/ship-content` when any
-of these surface in `plan/AUDIT.md` with score ≥ 3.0:
+> **Mission (reset 2026-07-12 via oversight; supersedes the
+> 2026-06-14 perpetual-expansion directive).** In priority
+> order: **(1) Season fill + ranking — ASAP.** Every declared
+> season of every catalogued show filed AND ranked (Rule 2 is
+> the sprint; 282 missing seasons across 28 shows at reset).
+> **(2) Themed lists — the main perpetual objective.** Hundreds
+> of excellent lists over months and years (Rule 3 is the
+> marathon; it owns every content tick once the gap hits zero).
+> **(3) New shows — LOCKED.** Free-form show creation is
+> retired, replaced by a biweekly add-and-drain-fully cadence
+> that arms only at gap-zero (Rule 1). A weekly season sweep
+> (Rule 1a) guarantees no season is ever missed. Clocks + gap
+> table: `plan/CADENCE.md`. List ledger + review nags:
+> `plan/LISTS.md`. Critique, triage, iterate, and digest
+> cadences are unchanged.
 
-### Rule 1 — show coverage (standing perpetual mandate)
+tiered.tv's `/iterate` and `/ship-content` skills enforce the
+content rules below. The loop dispatches to `/ship-content`
+when any of these surface in `plan/AUDIT.md` with score ≥ 3.0:
 
-**The launch-12 quota is satisfied and superseded.** As of the
-2026-06-14 oversight, the build plan is complete (59/59 phases)
-and adding new shows is the loop's **primary, never-ending
-mission** — community refinement, critique drains, and audits
-remain the natural background, but the main fountain is new
-show coverage. There is **no upper cap**. The loop should
-*always* be extending coverage; this rule never goes dry.
+### Rule 1 — show coverage (LOCKED 2026-07-12; biweekly cadence at gap-zero)
 
-The original launch set (now shipped): Survivor, The Amazing
-Race, Big Brother (US), The Bachelor, The Bachelorette, Top
-Chef, RuPaul's Drag Race, The Traitors (US), Love Island (US),
-Love Island (UK), The Great British Bake Off, Project Runway,
-The Challenge.
+**New-show creation is locked.** The 2026-06-14 "standing
+perpetual mandate" (always be adding shows) is retired, along
+with its "keep the queue fed" nudge — `/expand` must not file
+new-show waves or add-show rows, ever. Do not scaffold a new
+`content/shows/<slug>.md` except through the show-add clock
+below.
 
-**The show queue.** Keep a running queue of shows to add as
-Pending `category: content-gaps` rows in `plan/AUDIT.md` — one
-row per show (a franchise spans multiple rows, one per flavor /
-edition, since each edition is its own `content/shows/<slug>.md`
-like `love-island-uk` vs `love-island-us`). Current seed
-(filed 2026-06-14): the **Alone** family (Alone US, Alone
-Australia, and — curator to confirm standalone vs special —
-Alone: Frozen, Alone: The Skills Challenge) and the **Below
-Deck** family (Below Deck, Below Deck Mediterranean, Below Deck
-Sailing Yacht, Below Deck Down Under, Below Deck Adventure).
+**The show-add clock (the standing cadence).** A new show may
+be added only when BOTH hold, per `plan/CADENCE.md`:
 
-**Drain, never one-shot.** Just like the original content seed,
-this fountain *drains*. `/ship-content` ships **one show flavor
-per content tick**: scaffold `content/shows/<slug>.md`
-frontmatter (palette + the verified aired `seasons` count +
-tier / network / est_year / genre_tag) + `content/shows/<slug>/
-canon.md` + the first season batch. It does **not** try to
-author an entire multi-season franchise in a single tick. Rule
-2 (canon completeness) then auto-files per-show season rows that
-drain the remaining seasons at **~5 seasons per tick**, with the
-canon ranking recomputed on each insert (a season's
-`canonical_position` is assigned as it lands, against the
-seasons already ranked — never back-filled in one pass).
+1. **≥ 14 days** have passed since the last show add completed
+   its drain, AND
+2. **the catalog season gap is zero** — every already-catalogued
+   show fully drained per the CADENCE gap table. A sweep-found
+   gap re-locks adds until it clears: existing seasons always
+   outrank new shows.
+
+When both hold, the `/march` Step 1.5 cadence gate files ONE
+add-show `category: content-gaps` row (pick a well-known
+reality franchise that strengthens the catalog — flavor
+clusters and genre gaps first) and stamps the clock. The add is
+**not complete until the show is fully drained**: a scaffold
+tick (frontmatter + `canon.md` + first season batch per the
+always-working rule), then consecutive Rule 2 ticks until every
+aired season is filed and ranked. Record the drain-completed
+date in the CADENCE show-add log — the next 14-day window
+measures from completion.
 
 **Author with care.** Verify each show's exact aired-season
 count and each season's exact title at author time — counts and
@@ -530,34 +536,67 @@ editorial-tenure honesty, themed-list cross-canon coverage) and
 the voice rules above. No per-show illustration (Rule 4,
 retired) — color + type only.
 
-**Cross-flavor list capture.** When a franchise lands, its
-seasons must become eligible entries in the relevant themed
-lists so cross-canon lists genuinely span the flavors — an
-Alone "best seasons" tier should draw from Alone US *and* Alone
-Australia; a Below Deck list should span the original *and* its
-spinoffs. The cross-canon-coverage invariant (Rule 3, ≥3
-distinct shows for tone/craft/era lists) already enforces
-breadth; the franchise editions count as distinct shows for
-that purpose.
+**Cross-flavor list capture.** When a franchise edition lands,
+its seasons must become eligible entries in the relevant themed
+lists so cross-canon lists genuinely span the flavors. The
+cross-canon-coverage invariant (Rule 3, ≥3 distinct shows for
+tone/craft/era lists) already enforces breadth; franchise
+editions count as distinct shows for that purpose. A completed
+show add also event-flags plausible lists `review-due` in
+`plan/LISTS.md` (see Rule 3).
 
-**Keep the queue fed (the always-on nudge).** This rule must
-never run dry. When the AUDIT show-queue rows are nearly drained
-(≤2 Pending show rows left), the next `/expand` pass proposes
-the next wave of shows to cover (well-known reality franchises
-not yet in `content/shows/`) and files them as a fresh batch of
-Pending `category: content-gaps` rows — so there is always a
-next show to add. `/oversight` can reprioritise or prune the
-queue, but the steady state is: queue stays non-empty, the loop
-keeps shipping shows.
+### Rule 1a — weekly season sweep (standing; never miss a season)
 
-### Rule 2 — canon completeness
-Every aired season of every covered show must have a 50–80
-word blurb in `content/shows/<slug>/seasons/NN-<title>.md`,
-**and** a `canonical_position` entry in
-`content/shows/<slug>/canon.md`.
+Every **7 days** (clock in `plan/CADENCE.md`), a `/march` tick
+IS the sweep — this is the standing guarantee behind "we never
+miss a season on ANY show in the catalog":
 
-If either is missing, file a row. `/ship-content` ships a
-batch (3-5 season blurbs per tick to amortize show context).
+1. **Web-search the whole catalog.** Spawn `scout` agents
+   (batch ≤ 12 shows per agent) covering EVERY show in
+   `content/shows/*.md` — all statuses; `ended` shows get a
+   cheap revival check. Question per show: any newly aired or
+   newly announced season not reflected in the show's
+   `seasons:` count or season files?
+2. **Cross-grep the filesystem.** Every show's frontmatter
+   `seasons:` vs. files in `content/shows/<slug>/seasons/` —
+   the authoritative gap scan. (This is the scan `/iterate` used
+   to run ad hoc; scheduling it is what makes drain rows unable
+   to silently go unfiled again.)
+3. **Update `plan/CADENCE.md`.** Regenerate the gap table,
+   stamp the sweep clock, append the sweep log line.
+4. **File findings.** Newly found seasons join the gap table
+   (the frontmatter `seasons:` bump happens at drain time,
+   verified against sources); flag plausibly-affected themed
+   lists `review-due` in `plan/LISTS.md`; a publicly-dated
+   upcoming finale lands in `content/calendar.yml` so the
+   phase-39 finale gate picks it up later.
+
+Commit as `sweep: weekly season sweep — <N> new seasons found,
+gap <M>`. A sweep that finds nothing still stamps the clock.
+
+### Rule 2 — canon completeness (THE ASAP SPRINT)
+
+**Elevated 2026-07-12: this rule owns every content tick until
+the `plan/CADENCE.md` gap table reads zero.** Every declared
+season of every covered show must have a 50–80 word blurb in
+`content/shows/<slug>/seasons/NN-<title>.md`, **and** a
+`canonical_position` + ranked `canon.md` entry landed in the
+same commit — as seasons are added, our ranking is added with
+them, never back-filled later. **The golden pattern is
+Survivor** (`content/shows/survivor/` — season files at the
+Heroes vs. Villains standard, a full ranked canon with
+rationales and era bands).
+
+Drain mechanics: one show per tick, **up to 10 seasons per
+batch**, **smallest-gap-first** from the gap table (finish
+shows — a completed show is worth more than two half-filled
+ones); tie-break by higher tier, then older `est_year`. Stats
+from public record, editorial block where confident, spoiler
+discipline P0, and the 31a canon discipline (canon rebase +
+`canonical_position` sync + era-band widening) binding on every
+batch. After the catalog reaches zero, Rule 2 work arises only
+from sweep findings (new seasons) — and it outranks list work
+whenever present: seasons never wait.
 
 **Editorial-tenure honesty (phase 43).** Any spelled-out year
 count that cites a show's tenure — "twenty-five years of
@@ -579,11 +618,48 @@ entries like Survivor S40 "Winners at War"). The `/shows/survivor`
 e2e additionally asserts the rendered tagline word equals
 exactly what the helper reads today.
 
-### Rule 3 — themed list quota
-Launch ships ≥ 10 themed lists (best premieres, best finales,
-best post-merge, etc. — see `plan/PHASE_CANDIDATES.md` for
-seed themes). If `count(content/themes/*.md) < 10`, file a row;
-`/ship-content` ships one themed list per tick.
+### Rule 3 — themed lists (THE MAIN OBJECTIVE)
+
+**Reset 2026-07-12: themed lists are the loop's main perpetual
+objective** — the marathon that runs for months, maybe years.
+Target: **hundreds of lists, each excellent**. There is no
+total cap and this rule never goes dry. It owns every content
+tick once — and only once — the Rule 2 gap table reads zero
+(the launch-10 quota is long satisfied and retired).
+
+**Cadence cap: ONE list per content tick.** Quality over
+volume — a tick may ship zero lists if no concept clears the
+bar (pick a different concept, or run a review batch instead).
+Every new list adds a ledger row to `plan/LISTS.md` in the same
+commit.
+
+**The excellence gate (every new list, before commit):**
+
+1. **Distinct angle.** Dedup against every existing list in the
+   `plan/LISTS.md` ledger. If more than ~40% of the natural
+   entries would coincide with an existing list, that is not a
+   new list — extend the existing one as a review instead.
+2. **A reader would click it.** The title names a real
+   editorial idea, not a "best X" boilerplate permutation; the
+   tagline carries an actual observation.
+3. **Every entry earns its slot.** Specific blurbs, no
+   templated phrasing repeated across entries,
+   `title`/`season_label` matching season frontmatter exactly,
+   spoiler-safe framing throughout.
+4. **Schema + cross-canon floor pass strict** (below).
+
+**The review nag (lists stay alive as the catalog grows).**
+Every list is re-reviewed at least every **90 days**: a review
+tick batches **3–5 due lists** (due = ledger `last_reviewed`
+older than 90 days, or event-flagged `review-due` by a sweep or
+completed show add whose seasons plausibly feed it). A review
+checks new seasons/shows since the last look for candidate
+entries, verifies facts still hold, extends or trims.
+`last_revised` (reader-facing) bumps ONLY on real content
+change; ledger `last_reviewed` bumps on every review. **When
+≥ 5 lists are due, review work outranks new-list creation.**
+Concept ideas accumulate in `plan/LISTS.md` `## Ideas` — any
+skill may append; Rule 3 ticks draw from it or invent.
 
 After phase 19f lands the schema refresh, every new themed list
 **must carry**: `category` (one of tone / craft / era / single),
@@ -647,7 +723,8 @@ direct the loop into content velocity.
 - **Season blurb word count:** 50–80 words. Strict.
 - **Canon rationale word count:** 80–120 words per ranked
   position.
-- **Themed list size:** 10 entries default; 15 max.
+- **Themed list size:** 10–24 entries typical; schema cap 30
+  (the 19f refresh superseded the original 10-default/15-max).
 - **Mobile breakpoint:** 768px (Tailwind `md`).
 - **Theme toggle:** lives in the footer. Reads/writes
   `localStorage.tiered_theme` (`'dark' | 'light'`). On

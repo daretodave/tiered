@@ -11,6 +11,7 @@ right-thing-to-do every tick:
 
 ```
 unlabeled issues exist          →  /triage
+ELSE season sweep due (7d)      →  sweep tick (bearings Rule 1a)
 ELSE critique due (rate-lim)    →  /critique
 ELSE pending phase              →  /ship-a-phase
 ELSE pending data (category:data)  →  /ship-data
@@ -18,6 +19,10 @@ ELSE content-gap row scoring ≥3 →  /ship-content
 ELSE expand due + bold posture  →  /expand
 ELSE                            →  /iterate
 ```
+
+(The show-add clock — biweekly, armed only at gap-zero — is
+checked alongside the sweep in Step 1.5; when due it files one
+add-show row and falls through to normal dispatch.)
 
 Deliveries first: pending phases / data ship before `/expand`
 ever fires. `/expand` only runs when there's no immediate
@@ -104,7 +109,26 @@ If `unlabeled == 0`, fall through to Step 2.
 If `gh` isn't installed or `GH_TOKEN` missing, **don't fail
 the march** — log warning and fall through.
 
-### Step 2 — Critique gate (rate-limited)
+### Step 1.5 — Cadence gates (oversight 2026-07-12)
+
+Read `plan/CADENCE.md`.
+
+**Season sweep due?** (last run ≥ 7 days ago, or never): this
+tick IS the sweep. Execute bearings Rule 1a end-to-end — scout
+the whole catalog (batch ≤ 12 shows per agent, every status),
+cross-grep frontmatter `seasons:` vs. season files, regenerate
+the gap table, stamp the clock, file findings + `review-due`
+flags in `plan/LISTS.md`. Commit as `sweep: weekly season sweep
+— <N> new seasons found, gap <M>`, push, `pnpm deploy:check`,
+and **return**.
+
+**Show-add due?** (LOCKED until the gap table reads zero; then
+≥ 14 days since the last add completed its drain): file ONE
+add-show `category: content-gaps` row into `plan/AUDIT.md` per
+bearings Rule 1, stamp the CADENCE show-add log, and **fall
+through** — Step 3b.5 dispatches it this tick or the next.
+
+Neither due → fall through.
 
 **Step 2.0 — Shipping-mode gate (hard precondition, checked
 first).** Open `plan/steps/01_build_plan.md` "Status
@@ -182,19 +206,22 @@ If any row scores ≥ 3.0:
 - Execute its procedure end-to-end.
 - Return.
 
-(tiered.tv has 3 live content-velocity rules in
-`plan/bearings.md` "Content velocity & editorial cadence"
-that consistently surface content-gap rows: show coverage,
-canon completeness, themed list quota. Rule 4
-(facade completeness) is retired — per-show illustration is
-prohibited per `design/CLAUDE.md`. Per the 2026-06-14 oversight,
-Rule 1 (show coverage) is now a **standing perpetual mandate** —
-the build plan is 59/59 complete and adding new shows is the
-loop's primary mission, so this dispatch is expected to fire on
-most content-eligible ticks indefinitely. It drains, never
-one-shots: one show flavor scaffolded per tick, seasons drained
-~5/tick by Rule 2. The show queue lives as Pending content-gap
-rows in `plan/AUDIT.md`; when it runs low /expand refills it.)
+(tiered.tv's live content-velocity rules live in
+`plan/bearings.md` "Content velocity & editorial cadence".
+Per the 2026-07-12 oversight pivot: **new-show creation is
+LOCKED** — Rule 1 fires only via the Step 1.5 show-add clock
+(biweekly, armed at gap-zero, and the added show drains fully
+before the next add). **Season fill + ranking (Rule 2) owns
+every content tick until the `plan/CADENCE.md` gap table reads
+zero** — smallest-gap-first, up to 10 seasons/tick, canon
+reranked in the same commit, standing drain row in
+`plan/AUDIT.md`. **Themed lists (Rule 3) are the main perpetual
+objective afterward** — one excellent list per tick, review
+nags per `plan/LISTS.md`, reviews outrank new lists when ≥ 5
+are due. Rule 4 (facade) stays retired. `/expand` no longer
+refills any show queue. This dispatch still fires on most
+content-eligible ticks indefinitely — the fountain changed from
+new shows to seasons-then-lists.)
 
 #### 3c. Expand due (rate-limited, posture-gated)?
 
@@ -269,6 +296,8 @@ Otherwise inherited from the dispatched skill.
 ```bash
 # State files
 plan/steps/01_build_plan.md          # pending phases
+plan/CADENCE.md                      # season-sweep + show-add clocks, gap table (Step 1.5)
+plan/LISTS.md                        # themed-list ledger + review flags
 data/BACKLOG.md                      # pending data work
 plan/CRITIQUE.md                     # critique queue + last-pass metadata
 
