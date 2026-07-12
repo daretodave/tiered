@@ -2,7 +2,7 @@
 show: project-runway
 number: 12
 title: New York
-canonical_position: 16
+canonical_position: 17
 premiere_date: 2013-07-18
 location: New York City
 host: Heidi Klum

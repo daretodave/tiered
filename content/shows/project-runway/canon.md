@@ -1,13 +1,13 @@
 ---
 show: project-runway
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-07-12
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. The Project Runway canon is one editor's read, replayed against the agreed-upon shape of the show among fans who have watched every workroom cycle. It is an honest argument calibrated against what reasonable Project Runway viewers concede after a long debate. Closer to a read than to the truth, but honest enough to argue.
 meth_how_h: "How I weigh it"
 meth_how_p: Four lenses, applied roughly in this order — cast, does the workroom produce confessionals and personalities you remember; judges, does the runway critique read aligned or fractious; location, does the city pull editorial weight on camera; format, does the season's structural choice sharpen the show or fight it. The runway shows themselves are the deliverable.
 meth_when_h: "When I revisit"
-meth_when_p: After every season finale and after a network or location shift that recasts how a prior run reads. Project Runway's history includes three such shifts — the LA detour, the Bravo-to-Lifetime move, and the Lifetime-to-Bravo reboot — and each has moved the canon's read on seasons around it. I revisit the bottom of the canon less often than the top.
+meth_when_p: After every season finale and after a network or location shift that recasts how a prior run reads. Project Runway's history includes four such shifts — LA, Bravo-to-Lifetime, Lifetime-to-Bravo, and Bravo-to-Freeform — and each has moved the canon's read on seasons around it. I revisit the bottom less often than the top.
 tier_s_blurb: Format-defining or unrepeatable. Seasons I'd recommend to someone who has never watched a single workroom cycle.
 tier_a_blurb: Deep catalog. The seasons that hold up on a kitchen-table replay, even where the call against the next slot is close.
 tier_b_blurb: Strong middle-period runs and historical landmarks — seasons that built the cycle the show still runs on, with consistent workroom and runway delivery.
@@ -20,9 +20,12 @@ era_bands:
   - key: lifetime-classic
     label: Lifetime classic
     range: [2009, 2017]
-  - key: lifetime-new
-    label: Lifetime modern
-    range: [2018, 2026]
+  - key: bravo-modern
+    label: Bravo modern
+    range: [2018, 2024]
+  - key: freeform-era
+    label: Freeform era
+    range: [2025, 2026]
 ---
 
 ## 4. New York
@@ -275,15 +278,16 @@ historically, but the run itself stays quiet.
 
 ## 20. New York
 
-tag: The veterans edition — the milestone all-stars cycle, with the classic-era host back.
-slot_argument: Designers from across the show's history return to the Manhattan workroom, and the editing leans on the chemistry returnees bring to a room they already know. A celebratory premise that delivers experienced benches.
+tag: The veterans edition — a milestone all-stars cycle with no single host on camera.
+slot_argument: Fourteen designers return to the workroom, mentor and judges carrying the season instead of a host, and the editing leans on the chemistry returnees bring to a room they already know. A celebratory premise with experienced benches.
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season twenty is the milestone reunion, and the canon rewards
 the premise without overselling it. Project Runway recasts
-itself with designers from across its run and brings the
-classic-era host back to the chair for an all-stars cycle. The
-returning cast carries prior history into the Manhattan
+itself with fourteen designers from across its run for an
+all-stars cycle, with no single host on camera — mentor
+Christian Siriano and the judges panel carry the season instead.
+The returning cast carries prior history into the Manhattan
 workroom, and the editing leans on the chemistry returnees bring
 to a room they already know. The experienced benches deliver,
 and the nostalgia is earned. tiered.tv places it fifteenth
@@ -291,11 +295,30 @@ because the all-stars frame leans on familiarity more than the
 strongest original cycles needed to — a strong celebratory run
 rather than a redefining one.
 
+## 21. New York
+
+tag: The Freeform relaunch — Klum's return lands with more energy than polish.
+slot_argument: A rebuilt panel and a new network give the season real momentum, but a compressed runtime and a drama-forward premiere trade away some of the workroom craft focus the format built its reputation on.
+community_rank_hint: rank=16 delta=0 sentiment=hold
+
+Season twenty-one is the show's biggest reset since the
+Bravo-to-Lifetime years, and the canon reads it as a genuine jolt
+rather than a retread. Heidi Klum's return energizes the format
+immediately, and first-time judge Law Roach brings a blunt,
+single-question critique style that sharpens the table's voice.
+But the compressed runtime pulls focus away from the workroom
+process toward interpersonal conflict, and the panel itself
+reads less settled than the show's steadiest cycles — Nina
+Garcia's reduced presence across the early run undercuts the
+continuity the table usually provides. tiered.tv places it
+sixteenth because the relaunch's ambition is real, even where
+the execution still has real seams to smooth out.
+
 ## 12. New York
 
 tag: The reset cycle — the show steps back from the team experiment.
 slot_argument: A return to solo competition after a structurally heavy prior run. The catalog-era playbook, executed without apology and without surprise.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+community_rank_hint: rank=17 delta=0 sentiment=hold
 
 Season twelve is the course-correct after the team-format swing,
 and the canon places it on competence. Project Runway returns to
@@ -304,7 +327,7 @@ apology — the Manhattan workroom unchanged, the judges' table
 reading from muscle memory, the season's whole argument being
 that the standard format still works when the show stops
 fighting it. The casting energy is steady rather than loud.
-tiered.tv places it sixteenth because the reset is sensible and
+tiered.tv places it seventeenth because the reset is sensible and
 clean but produces no standout room: a recognizable run whose
 main value is restoring the format's footing after a swing,
 which is worth a slot but not a high one.
@@ -313,7 +336,7 @@ which is worth a slot but not a high one.
 
 tag: The catalog late-period — the format at its most standardized.
 slot_argument: The standard format with no structural changes and a judges' table on autopilot in the best sense. Even casting, competent runway shows, no friction.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season fifteen is the Lifetime catalog at its most standardized,
 and the canon ranks it accordingly. The standard format runs in
@@ -321,7 +344,7 @@ the Manhattan workroom with no structural changes and a judges'
 table operating on autopilot in the best sense. The casting
 energy is even rather than loud, the runway shows are competent,
 and the cycle plays as the era at its most procedural. tiered.tv
-places it seventeenth because the season delivers the format
+places it eighteenth because the season delivers the format
 cleanly but produces none of the workroom friction the era's
 stronger cycles carry — a run that earns its slot on execution
 alone, lower than its sister cycles because it raises its voice
@@ -331,7 +354,7 @@ even less than they do.
 
 tag: The recovery cycle — the modern era back at full scale after a disrupted run.
 slot_argument: The rebooted creative team and the Manhattan workroom at normal production scale again. A steadying cycle whose argument is structural rather than spectacular.
-community_rank_hint: rank=18 delta=0 sentiment=hold
+community_rank_hint: rank=19 delta=0 sentiment=hold
 
 Season nineteen is the modern era recovering its footing, and
 the canon reads it as a steadying run. Project Runway returns to
@@ -339,7 +362,7 @@ full production scale after a disrupted prior cycle, with the
 rebooted creative team and the Manhattan workroom intact and the
 casting energy even. The season's argument is structural — the
 format works when the conditions let it — rather than a standout
-room. tiered.tv places it eighteenth because the steadying
+room. tiered.tv places it nineteenth because the steadying
 matters more than the spectacle here: a competent recovery cycle
 that does the necessary work of resetting normal scale without
 producing the kind of workroom the modern era's strongest run
@@ -349,7 +372,7 @@ delivered.
 
 tag: The interrupted cycle — production reshaped by the pandemic.
 slot_argument: The format intact, the circumstances around it anything but. A run the canon reads through its context rather than against it.
-community_rank_hint: rank=19 delta=0 sentiment=hold
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
 Season eighteen is the disrupted cycle, and the canon places it
 near the bottom for circumstantial reasons rather than punitive
@@ -358,7 +381,7 @@ and it reads through that context — a run that had to adapt
 around conditions no prior cycle faced. The Manhattan workroom
 and the modern creative team are intact, and the format holds,
 but the circumstances pull editorial weight the season can't
-fully absorb. tiered.tv places it nineteenth because the format
+fully absorb. tiered.tv places it twentieth because the format
 works while the context fights it: a cycle whose read is
 inseparable from the conditions it was made under, ranked
 honestly rather than harshly.
@@ -367,7 +390,7 @@ honestly rather than harshly.
 
 tag: The detour. The show's only run filmed off the East Coast — included for historical importance.
 slot_argument: First Lifetime season, first off the East Coast. The critical read calls it a coastal disconnect; the LA workroom and the LA garment district both do less editorial work on camera than Manhattan does.
-community_rank_hint: rank=20 delta=0 sentiment=hold
+community_rank_hint: rank=21 delta=0 sentiment=hold
 
 Season six is the detour, and the canon places it last for
 editorial reasons rather than punitive ones. Project Runway's
