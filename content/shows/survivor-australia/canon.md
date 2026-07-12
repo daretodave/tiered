@@ -28,7 +28,7 @@ era_bands:
 
 tag: The widely-praised peak of the series — the Australian version at its most complete.
 slot_argument: Heroes V Villains assembled a cast with reputations to play, gave them a coherent premise, and ran at the highest strategic density the Australian format had achieved. The top slot is clear.
-community_rank_hint: rank=1 delta=0 sentiment=up
+community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Heroes V Villains is the peak of Australian Survivor. The season assembled a cast that had earned reputations — some as fan favorites, some as players who played too hard — and put them in a game where those reputations had currency. The Samoa setting gave the production its best visual register. Twenty-four episodes at a strategic density the Australian version had been building toward. The cast filled the format's longest-running strengths without a wasted episode. The canon places it first because the best Australian Survivor season should demand that it be the show at its fullest extent — and this one does.
 

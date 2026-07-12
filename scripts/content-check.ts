@@ -1722,6 +1722,37 @@ export function collectCanonRationaleClosingFormulaIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-91 MED: `community_rank_hint`'s `sentiment` is an
+// authored editorial hint (used as the community-signal fallback for
+// freshly-seeded shows before live votes accumulate) that must agree
+// with its own `delta` — a season that hasn't moved (`delta=0`) can't
+// simultaneously be trending "up". The live-votes path in
+// `src/lib/community/live.ts` derives sentiment from delta and can't
+// drift, but the static-frontmatter fallback trusts the authored
+// value verbatim, so authoring drift is only caught by inspection.
+// Two outliers found by corpus grep (married-at-first-sight-australia,
+// survivor-australia) both paired `delta=0` with `sentiment=up`
+// against 545 sibling `delta=0` entries correctly paired with
+// `sentiment=hold`; fixed same-tick, so this ships strict at floor 0.
+export function collectCanonDeltaZeroSentimentUpIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    for (const entry of canon.entries) {
+      const hint = entry.community_rank_hint
+      if (!hint) continue
+      if (hint.delta === 0 && hint.sentiment === 'up') {
+        issues.push({
+          file: `content/shows/${show.slug}/canon.md`,
+          message: `community_rank_hint self-contradiction — canonical_position ${entry.rank} (${entry.title}) pairs \`delta=0\` with \`sentiment=up\`, rendering an up-arrow pill for a season that hasn't moved. Use \`sentiment=hold\` for \`delta=0\`, matching every other zero-delta entry in the corpus. See plan/CRITIQUE.md pass-91.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-35 MED (issue #329): the `CanonMethodology` component's
 // own DEFAULT body for the `01 · WHO` cell reads "One editor, named.
 // ... we will tell you who, and we will not hide behind plural
@@ -3291,6 +3322,20 @@ function main(): number {
     failures.push(...themeTaglineDescAlignmentIssues)
   } else {
     for (const issue of themeTaglineDescAlignmentIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-91 MED: both known violators
+  // (married-at-first-sight-australia, survivor-australia) are fixed
+  // in the same commit — strict ships day one, matching the STRICT
+  // family above.
+  const CANON_DELTA_ZERO_SENTIMENT_UP_STRICT = true
+  const canonDeltaZeroSentimentUpIssues = collectCanonDeltaZeroSentimentUpIssues()
+  if (CANON_DELTA_ZERO_SENTIMENT_UP_STRICT) {
+    failures.push(...canonDeltaZeroSentimentUpIssues)
+  } else {
+    for (const issue of canonDeltaZeroSentimentUpIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

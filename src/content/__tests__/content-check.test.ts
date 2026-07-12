@@ -11,6 +11,7 @@ import {
   collectBackHalfHyphenIssues,
   collectCardTaglineGapIssues,
   collectFeaturedThemeMissingPullIssues,
+  collectCanonDeltaZeroSentimentUpIssues,
   collectCanonMethSiblingsPluralEditorIssues,
   collectCanonMethWhoClosingPairEchoIssues,
   collectCanonMethWhoPluralEditorIssues,
@@ -4317,6 +4318,85 @@ describe('content-check — canon-rationale closing-formula adjacency (critique 
   it('tolerates a show without a canon (no-op rather than crash)', () => {
     makeShow(tmp, 'alpha')
     expect(collectCanonRationaleClosingFormulaIssues()).toEqual([])
+  })
+})
+
+describe('content-check — canon community_rank_hint delta=0/sentiment=up self-contradiction (critique pass-91)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-sentiment-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonWithHint(
+    root: string,
+    show: string,
+    hint: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\n---\n\n## 1. One\n\ncommunity_rank_hint: ${hint}\n\n${ninetyWords}\n`,
+    )
+  }
+
+  it('passes at the live catalog (no delta=0/sentiment=up outlier after the pass-91 fix)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectCanonDeltaZeroSentimentUpIssues()).toEqual([])
+  })
+
+  it('flags delta=0 paired with sentiment=up', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithHint(tmp, 'alpha', 'rank=1 delta=0 sentiment=up')
+    const issues = collectCanonDeltaZeroSentimentUpIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md')
+    expect(issues[0]!.message).toMatch(/community_rank_hint self-contradiction/)
+    expect(issues[0]!.message).toMatch(/canonical_position 1 \(One\)/)
+  })
+
+  it('does not flag delta=0 paired with sentiment=hold (the correct pairing)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithHint(tmp, 'alpha', 'rank=1 delta=0 sentiment=hold')
+    expect(collectCanonDeltaZeroSentimentUpIssues()).toEqual([])
+  })
+
+  it('does not flag a nonzero delta paired with sentiment=up (the normal moving-up case)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    makeCanonWithHint(tmp, 'alpha', 'rank=1 delta=1 sentiment=up')
+    expect(collectCanonDeltaZeroSentimentUpIssues()).toEqual([])
+  })
+
+  it('does not flag an entry with no community_rank_hint authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeason(tmp, 'alpha', 1, 'one', { canonical_position: 1 })
+    const file = path.join(tmp, 'shows', 'alpha', 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: alpha\n---\n\n## 1. One\n\n${ninetyWords}\n`,
+    )
+    expect(collectCanonDeltaZeroSentimentUpIssues()).toEqual([])
+  })
+
+  it('tolerates a show without a canon (no-op rather than crash)', () => {
+    makeShow(tmp, 'alpha')
+    expect(collectCanonDeltaZeroSentimentUpIssues()).toEqual([])
   })
 })
 

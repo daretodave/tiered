@@ -21,6 +21,6 @@ weekly_question: "Does the original cast still hold up as the franchise's most c
 
 tag: The founding season — a three-couple experiment years before the format found its scale.
 slot_argument: Married at First Sight Australia started small — three couples, one panel of experts, a premise nobody local had tried. It earns the top slot by default today, but also on merit: the format's DNA is legible here before the show scaled up.
-community_rank_hint: rank=1 delta=0 sentiment=up
+community_rank_hint: rank=1 delta=0 sentiment=hold
 
 The debut season introduced Australia to the format at a fraction of the scale it would eventually reach — three couples matched by a panel of relationship experts, married within their first meeting, then given weeks to decide whether the experiment was worth keeping. The production is unmistakably lower-key than the show Married at First Sight Australia would become: fewer couples, less spectacle, more space for the premise itself to carry the hour. That restraint is part of what makes it worth ranking first. The show's now-famous dramatic register hadn't arrived yet, and the experiment reads as sincere as the format ever gets.
