@@ -3,7 +3,7 @@ show: big-brother
 number: 26
 title: Houseguests vs. the AI
 display_title: "Houseguests <em>vs.</em><br/>the AI"
-canonical_position: 18
+canonical_position: 19
 premiere_date: 2024-07-17
 ep_count: 30
 location: Studio City, California

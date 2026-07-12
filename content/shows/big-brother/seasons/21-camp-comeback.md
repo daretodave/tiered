@@ -2,7 +2,7 @@
 show: big-brother
 number: 21
 title: Camp Comeback
-canonical_position: 22
+canonical_position: 23
 premiere_date: 2019-06-25
 ep_count: 36
 location: Studio City, California

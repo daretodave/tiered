@@ -1,7 +1,7 @@
 ---
 show: big-brother
 editor: tiered.tv editor
-last_revised: 2026-07-09
+last_revised: 2026-07-12
 meth_who_h: "Who ranks it"
 meth_who_p: One tiered.tv editor who has watched every season of Big Brother, calibrated against the kitchen-table consensus of long-running BB fans. The read is opinionated but defensible — we treat the first two decades as a coherent body of work. Old-era and modern-era seasons get weighed on their own terms, not directly against each other.
 meth_how_h: "How I weigh it"
@@ -12,7 +12,7 @@ tier_s_blurb: Format-defining or unrepeatable. The summers Big Brother taught it
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
-weekly_question: Across all twenty-six summers, which Big Brother season holds up best on a 2026 rewatch?
+weekly_question: Across all twenty-seven summers, which Big Brother season holds up best on a 2026 rewatch?
 era_bands:
   - key: pilot
     label: Pilot
@@ -31,7 +31,7 @@ era_bands:
     range: [2015, 2018]
   - key: streaming-era
     label: Streaming era
-    range: [2019, 2024]
+    range: [2019, 2025]
 ---
 
 # Editor's Canon — Big Brother
@@ -74,7 +74,7 @@ tag: The first mass-returnee summer — the season the franchise stopped treatin
 slot_argument: The blueprint for every later returnee season. Three veteran pairs slotted in alongside newbies, and the Duos twist binds the room into pairs from Day One.
 community_rank_hint: rank=5 delta=-1 sentiment=down
 
-Fifth, one slot below the season that taught the house its alliance vocabulary and several slots above every returnee format that borrows its blueprint — Coaches Twist at #6 turns the veteran mix into a structural experiment, Vets and Newbies Reprise at #12 reruns the same premise five years later with diminishing returns, and Camp Comeback down at #22 chases a related re-entry idea without the same casting discipline. This is the season the later attempts are copying, whether they say so or not. It ranks below Renegades Era only because that season came first and had nothing to copy; everything after this one, including its own sequel, works from a template it drew.
+Fifth, one slot below the season that taught the house its alliance vocabulary and several slots above every returnee format that borrows its blueprint — Coaches Twist at #6 turns the veteran mix into a structural experiment, Vets and Newbies Reprise at #12 reruns the same premise five years later with diminishing returns, and Camp Comeback down at #23 chases a related re-entry idea without the same casting discipline. This is the season the later attempts are copying, whether they say so or not. It ranks below Renegades Era only because that season came first and had nothing to copy; everything after this one, including its own sequel, works from a template it drew.
 
 ## 14. Coaches Twist
 
@@ -170,76 +170,84 @@ tag: The summer the Hacker comp installed a weekly authority structurally adjace
 slot_argument: A modern-era summer that knows what it is — clean alliance lines, a coherent twist mechanic, and a casting bench that holds the broadcast's runway.
 community_rank_hint: rank=17 delta=-4 sentiment=down
 
-Seventeenth, the last of the modern-era run before the canon turns to seasons defined more by concept than by house dynamics. The Hacker Summer knows exactly what it is — one clean mechanic, one hardened alliance split — which is enough to edge out Houseguests vs. the AI at #18 but not enough to climb past the mythology-heavy seasons above it. The distinction between this slot and the next one down is instructive: a twist administered by a competition the houseguests actually play still ranks ahead of a twist administered by a theme controlling the season from outside the room.
+Seventeenth, the last of the modern-era run before the canon turns to seasons defined more by concept than by house dynamics. The Hacker Summer knows exactly what it is — one clean mechanic, one hardened alliance split — which is enough to edge out the twist-stacked seasons below it, A Summer of Mystery and Houseguests vs. the AI, but not enough to climb past the mythology-heavy seasons above it. The distinction between this slot and the next one down is instructive: a twist administered by a competition the houseguests actually play still ranks ahead of a twist administered by a theme controlling the season from outside the room.
+
+## 27. A Summer Of Mystery
+
+tag: The most twist-stacked summer since Battle of the Block — three overlapping mechanics in one run.
+slot_argument: Block Buster's three-way safety competition, a surprise Mastermind power set, and a one-off elimination-by-competition week all land in the same summer, and all three stay houseguest-run rather than system-run.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Eighteenth, sitting just below the Hacker Summer's single clean mechanic and just above Houseguests vs. the AI, which hands its twist authority to a system rather than a room. A Summer of Mystery runs three overlapping devices in one stretch — the revived Block Buster turning nominations into a three-way safety competition, a Mastermind power set dropped mid-game, and a Week 9 stretch that swaps a standard vote for an elimination competition. All three stay houseguest-administered, which is enough to clear the AI-controlled season below it, but three stacked mechanics can't out-argue the Hacker Summer's single sharpened hook. The Rachel Reilly cameo folds into the twist rather than anchoring a full returnee run, so density earns the slot, not lineage.
 
 ## 26. Houseguests vs. the AI
 
 tag: The most twist-mechanized framing the franchise has attempted.
 slot_argument: A coherent close to the streaming-era stretch — the twist authority handed to a system. Ambitious framing on a solid newbie bench; the machinery is both the argument and the ceiling.
-community_rank_hint: rank=18 delta=0 sentiment=hold
+community_rank_hint: rank=19 delta=-1 sentiment=down
 
-Eighteenth, sitting below every houseguest-administered twist above it for the same reason — when a system rather than a person runs the mechanic, the canon treats the season as one degree more distant from what makes Big Brother work. That's the case against ranking Houseguests vs. the AI any higher than the Hacker Summer. It stays ahead of America's Player at #19 because the newbie cast here is sharper, and the machinery, however dominant, resolves into a coherent single argument — the double-barreled twist stack one slot down never fully resolves into one.
+Nineteenth, sitting below every houseguest-administered twist above it for the same reason — when a system rather than a person runs the mechanic, the canon treats the season as one degree more distant from what makes Big Brother work. That's the case against ranking Houseguests vs. the AI any higher than the Hacker Summer or the twist-stacked summer directly above it. It stays ahead of America's Player at #20 because the newbie cast here is sharper, and the machinery, however dominant, resolves into a coherent single argument — the double-barreled twist stack one slot down never fully resolves into one.
 
 ## 8. America's Player
 
 tag: A double-barreled twist season — relationships in the house, the public in one houseguest's ear.
 slot_argument: A confident middle-canon hold; the twist stack is more than the season can fully metabolize, but the texture is real.
-community_rank_hint: rank=19 delta=-5 sentiment=down
+community_rank_hint: rank=20 delta=-6 sentiment=down
 
-Nineteenth, a full five-slot drop from where the canon's format-shaping tier ends, and the point where twist stacking starts working against the show rather than for it. America's Player carries two separate premises — pre-loaded relationship grudges and a public-vote secret-task mechanic — and neither fully supports the other, which is why it trails the AI-driven season above it despite being the more houseguest-centered of the two. It still ranks ahead of Exes in the House because two mismatched twists is a more interesting failure than one twist that hasn't been calibrated yet.
+Twentieth, a full six-slot drop from where the canon's format-shaping tier ends, and the point where twist stacking starts working against the show rather than for it. America's Player carries two separate premises — pre-loaded relationship grudges and a public-vote secret-task mechanic — and neither fully supports the other, which is why it trails the AI-driven season above it despite being the more houseguest-centered of the two. It still ranks ahead of Exes in the House because two mismatched twists is a more interesting failure than one twist that hasn't been calibrated yet.
 
 ## 4. Exes In The House
 
 tag: The franchise's first big casting swing — the X-Factor twist gives the house a charge.
 slot_argument: The twist is unrepeatable in this form and the casting commits, even if the execution still reads early-era.
-community_rank_hint: rank=20 delta=-5 sentiment=down
+community_rank_hint: rank=21 delta=-6 sentiment=down
 
-Twentieth, the last season whose low placement is really about timing rather than concept. Exes in the House runs a rougher, earlier version of the relationship-twist idea America's Player would attempt with more layers years later, which is why it trails that season by one slot despite being the more historically important of the two. It stays ahead of BB Takeover because a single unrepeatable casting swing, however unevenly executed, beats a season where five different guest-driven twists compete for the same runway. One clear idea, poorly timed, outranks five competing ideas every time.
+Twenty-first, the last season whose low placement is really about timing rather than concept. Exes in the House runs a rougher, earlier version of the relationship-twist idea America's Player would attempt with more layers years later, which is why it trails that season by one slot despite being the more historically important of the two. It stays ahead of BB Takeover because a single unrepeatable casting swing, however unevenly executed, beats a season where five different guest-driven twists compete for the same runway. One clear idea, poorly timed, outranks five competing ideas every time.
 
 ## 17. BB Takeover
 
 tag: The summer the producers handed weekly twist authority to a rotating cast of celebrity guests.
 slot_argument: An experiment the franchise tried, learned from and quietly walked back. The pacing pulls in five directions at once and the casting never quite settles.
-community_rank_hint: rank=21 delta=-5 sentiment=down
+community_rank_hint: rank=22 delta=-6 sentiment=down
 
-Twenty-first, ranked below Exes in the House because a season split five ways by rotating celebrity guests never settles into anything as legible as a single unrepeatable twist, even a rough one. BB Takeover still sits ahead of Camp Comeback, though, because whatever the Takeover format's problems, they're problems with the twist itself — a mechanic the franchise tried, disliked, and dropped. That's a cleaner kind of canon failure than what put Camp Comeback in a lower slot, where the issue isn't the format's ambition but what the season came to represent once it aired.
+Twenty-second, ranked below Exes in the House because a season split five ways by rotating celebrity guests never settles into anything as legible as a single unrepeatable twist, even a rough one. BB Takeover still sits ahead of Camp Comeback, though, because whatever the Takeover format's problems, they're problems with the twist itself — a mechanic the franchise tried, disliked, and dropped. That's a cleaner kind of canon failure than what put Camp Comeback in a lower slot, where the issue isn't the format's ambition but what the season came to represent once it aired.
 
 ## 21. Camp Comeback
 
 tag: The streaming era's hardest reach for a re-entry engine — and the run is part of franchise text.
 slot_argument: The structural swing is real and the Camp Comeback mechanic is ambitious, but the season around it is part of franchise text for reasons the broadcast had to work around. Slot honors the reach; placement honors the run.
-community_rank_hint: rank=22 delta=0 sentiment=hold
+community_rank_hint: rank=23 delta=-1 sentiment=down
 
-Twenty-second, held down by circumstances the show itself had to address rather than by any failure of the re-entry concept, which is more ambitious on paper than almost anything ranked below it. Camp Comeback reaches for a structural idea — evicted players staying in the game with a live path back — that no season above BB Takeover would have attempted, and on format ambition alone this would sit much higher. It stays ahead of Project DNA because a full-season structural mechanic, even one overshadowed by what the season became, is a bigger swing than a single-twist gimmick confined to a handful of houseguests.
+Twenty-third, held down by circumstances the show itself had to address rather than by any failure of the re-entry concept, which is more ambitious on paper than almost anything ranked below it. Camp Comeback reaches for a structural idea — evicted players staying in the game with a live path back — that no season above BB Takeover would have attempted, and on format ambition alone this would sit much higher. It stays ahead of Project DNA because a full-season structural mechanic, even one overshadowed by what the season became, is a bigger swing than a single-twist gimmick confined to a handful of houseguests.
 
 ## 5. Project DNA
 
 tag: The strangest early experiment — identical twins, swapping in and out under one name.
 slot_argument: The audacity earns the canon slot; the execution earns the lower-half placement.
-community_rank_hint: rank=23 delta=-6 sentiment=down
+community_rank_hint: rank=24 delta=-7 sentiment=down
 
-Twenty-third, the point in the canon where audacity starts outweighing polish as the deciding factor. Project DNA's twist touches only two houseguests directly, which is a much smaller structural swing than Camp Comeback's season-wide re-entry mechanic one slot up, and that narrowness is exactly why it sits below it. It still ranks ahead of the Pilot because a gamble this strange, dropped into a house that otherwise plays it straight, is a bigger canon statement than a season that hadn't yet figured out what kind of show it wanted to be. Weird and narrow beats sincere and unformed, at least this far down the list.
+Twenty-fourth, the point in the canon where audacity starts outweighing polish as the deciding factor. Project DNA's twist touches only two houseguests directly, which is a much smaller structural swing than Camp Comeback's season-wide re-entry mechanic one slot up, and that narrowness is exactly why it sits below it. It still ranks ahead of the Pilot because a gamble this strange, dropped into a house that otherwise plays it straight, is a bigger canon statement than a season that hadn't yet figured out what kind of show it wanted to be. Weird and narrow beats sincere and unformed, at least this far down the list.
 
 ## 1. The Pilot
 
 tag: The format before the format found itself — public votes, daily airings, a different show entirely.
 slot_argument: Format-historical weight earns a canon slot even at the bottom; the rewatch case is real but modest.
-community_rank_hint: rank=24 delta=-6 sentiment=down
+community_rank_hint: rank=25 delta=-7 sentiment=down
 
-Twenty-fourth, kept out of the bottom two spots by format-historical weight alone — nothing about the pilot's own execution would earn it a higher slot than Project DNA, but being the season that taught the producers what didn't work still counts for something the canon values. It ranks ahead of MVP Summer because the Pilot's shortcomings are the honest kind: a format still finding its shape, tried in good faith. MVP Summer's problems are a different order entirely, which is why a season with far more mechanical daring than this one still finishes lower. Historical value earns a floor; it doesn't earn much above it.
+Twenty-fifth, kept out of the bottom two spots by format-historical weight alone — nothing about the pilot's own execution would earn it a higher slot than Project DNA, but being the season that taught the producers what didn't work still counts for something the canon values. It ranks ahead of MVP Summer because the Pilot's shortcomings are the honest kind: a format still finding its shape, tried in good faith. MVP Summer's problems are a different order entirely, which is why a season with far more mechanical daring than this one still finishes lower. Historical value earns a floor; it doesn't earn much above it.
 
 ## 15. MVP Summer
 
 tag: The season the live feeds outpaced the broadcast.
 slot_argument: A season that aged hard and aged fast. The MVP twist is structurally interesting; the run around it is part of franchise text for reasons the broadcast had to address on air.
-community_rank_hint: rank=25 delta=-6 sentiment=down
+community_rank_hint: rank=26 delta=-7 sentiment=down
 
-Twenty-fifth, the clearest gap in the canon between what a season's twist promised and what the season became. The MVP mechanic is a genuinely interesting structural idea, a real jump from anything in the tier above it, and on format alone this might outrank the Pilot. It doesn't, because what the room made of that structure overrides the mechanic's own merits. It still finishes ahead of the Winter Couples at the bottom of the canon because MVP Summer's problems came from within a normal summer format; Winter Couples never had a normal summer to work with in the first place, which is the harder deficit to overcome.
+Twenty-sixth, the clearest gap in the canon between what a season's twist promised and what the season became. The MVP mechanic is a genuinely interesting structural idea, a real jump from anything in the tier above it, and on format alone this might outrank the Pilot. It doesn't, because what the room made of that structure overrides the mechanic's own merits. It still finishes ahead of the Winter Couples at the bottom of the canon because MVP Summer's problems came from within a normal summer format; Winter Couples never had a normal summer to work with in the first place, which is the harder deficit to overcome.
 
 ## 9. The Winter Couples
 
 tag: The off-season run — the season the show earned its summer-only commitment.
 slot_argument: Closes the canon at the bottom; the off-season slot and the constraining twist catch up with the season fast.
-community_rank_hint: rank=26 delta=-6 sentiment=down
+community_rank_hint: rank=27 delta=-7 sentiment=down
 
-Twenty-sixth, and the floor of the canon for a straightforward reason: no other season enters at as structural a disadvantage. Winter Couples was slotted into an off-season broadcast window before a single houseguest was cast, which means the season most below it in reputation — MVP Summer — at least got a normal summer's runway to go wrong on its own terms. This one didn't have that chance. The pairing twist compounds the problem rather than offsetting it, locking the cast into a premise before the room could generate its own dynamics. Last place here isn't a verdict on the cast so much as on the circumstances the format handed them.
+Twenty-seventh, and the floor of the canon for a straightforward reason: no other season enters at as structural a disadvantage. Winter Couples was slotted into an off-season broadcast window before a single houseguest was cast, which means the season most below it in reputation — MVP Summer — at least got a normal summer's runway to go wrong on its own terms. This one didn't have that chance. The pairing twist compounds the problem rather than offsetting it, locking the cast into a premise before the room could generate its own dynamics. Last place here isn't a verdict on the cast so much as on the circumstances the format handed them.
