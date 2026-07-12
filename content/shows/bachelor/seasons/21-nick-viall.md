@@ -2,7 +2,7 @@
 show: bachelor
 number: 21
 title: Nick Viall
-canonical_position: 12
+canonical_position: 13
 premiere_date: 2017-01-02
 ep_count: 12
 location: Agoura Hills, California

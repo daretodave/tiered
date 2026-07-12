@@ -2,7 +2,7 @@
 show: bachelor
 number: 27
 title: Zach Shallcross
-canonical_position: 17
+canonical_position: 18
 premiere_date: 2023-01-23
 ep_count: 12
 location: Agoura Hills, California

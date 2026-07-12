@@ -2,7 +2,7 @@
 show: bachelor
 number: 24
 title: Peter Weber
-canonical_position: 15
+canonical_position: 16
 premiere_date: 2020-01-06
 ep_count: 12
 location: Agoura Hills, California

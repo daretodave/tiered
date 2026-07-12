@@ -2,7 +2,7 @@
 show: bachelor
 number: 22
 title: Arie Luyendyk Jr.
-canonical_position: 11
+canonical_position: 12
 premiere_date: 2018-01-01
 ep_count: 11
 location: Agoura Hills, California

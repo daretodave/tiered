@@ -2,7 +2,7 @@
 show: bachelor
 number: 5
 title: Jesse Palmer
-canonical_position: 21
+canonical_position: 22
 premiere_date: 2004-04-07
 ep_count: 6
 location: Agoura Hills, California

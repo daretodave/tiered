@@ -2,7 +2,7 @@
 show: bachelor
 number: 26
 title: Clayton Echard
-canonical_position: 28
+canonical_position: 29
 premiere_date: 2022-01-03
 ep_count: 11
 location: Agoura Hills, California

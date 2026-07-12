@@ -2,7 +2,7 @@
 show: bachelor
 number: 23
 title: Colton Underwood
-canonical_position: 13
+canonical_position: 14
 premiere_date: 2019-01-07
 ep_count: 12
 location: Agoura Hills, California

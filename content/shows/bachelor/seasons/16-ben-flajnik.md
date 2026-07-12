@@ -2,7 +2,7 @@
 show: bachelor
 number: 16
 title: Ben Flajnik
-canonical_position: 24
+canonical_position: 25
 premiere_date: 2012-01-02
 ep_count: 11
 location: Agoura Hills, California

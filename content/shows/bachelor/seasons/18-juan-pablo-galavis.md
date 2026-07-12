@@ -2,7 +2,7 @@
 show: bachelor
 number: 18
 title: Juan Pablo Galavis
-canonical_position: 10
+canonical_position: 11
 premiere_date: 2014-01-05
 ep_count: 11
 location: Agoura Hills, California
