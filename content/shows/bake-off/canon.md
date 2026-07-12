@@ -19,7 +19,7 @@ era_bands:
     range: [2010, 2016]
   - key: channel-4
     label: Channel 4 era
-    range: [2017, 2024]
+    range: [2017, 2025]
 ---
 
 # Editor's Canon — The Great British Bake Off
@@ -128,11 +128,19 @@ community_rank_hint: rank=13 delta=0 sentiment=hold
 
 The series where the new pairing stops being new. Alison Hammond and Noel Fielding worked a confident second run, with Prue Leith and Paul Hollywood on the bench and a themed roster — a 1970s Week among them — continuing the post-national format. The casting class reads competent rather than memorable, the bench holds its by-now-familiar discipline, and the run confirms the rebuilt format works without straining to prove it. This is a settled piece of television more than one the canon argues over: useful for tracking where the current era sits, less rewarding as a rewatch than the runs that asked harder questions of the tent.
 
+## 16. The Hammond Continues
+
+tag: The pairing's third year — same lineup, same format, nothing new to report.
+slot_argument: A third consecutive year with no format news and no lineup change. It confirms the post-Hammond era is stable but gives the canon even less to argue about than the settled year before it.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+The series where the settled pairing stops needing a story. Alison Hammond and Noel Fielding worked a confident third run, with Prue Leith and Paul Hollywood on the bench and the post-national themed-week format three years in with no changes to report. The casting class reads workmanlike rather than memorable, and the broadcast leans on the bakes because there is no lineup news left to lean on. The most comfortable and least distinctive year the current era has produced — a confirmation series, one slot below its predecessor, because a third uneventful year says less than a second. Worth the watch for completists, less rewarding than the runs that asked something new of the tent.
+
 ## 11. The Bubble Year
 
 tag: The pandemic series — Bake Off shot inside a sealed COVID bubble, Lucas's first run.
 slot_argument: A series defined by how it was made more than what it produced. The bubble premise carries real historical texture, but the compressed shoot and lighter bench keep it low in the canon.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+community_rank_hint: rank=15 delta=0 sentiment=hold
 
 The pandemic series, and a piece of television defined by its production. The crew sealed cast and team into a self-contained bubble at Down Hall Hotel after relocating from Welford Park, and Matt Lucas joined Noel Fielding at the tent flap as Sandi Toksvig stepped away. Prue Leith and Paul Hollywood anchor the bench, the casting class bonds harder than a normal shoot allows, and the compressed six-week schedule leaves its texture on the run. A series worth the watch as a record of how the format survived 2020 — the bubble premise is doing more editorial work than the bakes, which is exactly why it sits low.
 
@@ -140,6 +148,6 @@ The pandemic series, and a piece of television defined by its production. The cr
 
 tag: The bubble, again — the second sealed COVID shoot, less novelty to recommend it.
 slot_argument: A competent run carrying the same production weight as the year before with none of its strangeness. The lowest canon slot — the constraint stopped being interesting and the run never argued past it.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
 The second bubble year, and the run where the constraint stopped being interesting. The production returned to Down Hall Hotel for another sealed shoot under COVID protocols, with Noel Fielding and Matt Lucas working a settled second pairing and Prue Leith and Paul Hollywood back on the bench. The casting class has the familiar bubble closeness, the bench reads disciplined, and the format leads with the bakes again rather than the premise. A competent piece of television that carries the same weight as the first bubble year with less to recommend it — the lowest slot in the canon, and a completist's entry more than a rewatch.

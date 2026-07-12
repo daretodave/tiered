@@ -2,7 +2,7 @@
 show: bake-off
 number: 11
 title: The Bubble Year
-canonical_position: 14
+canonical_position: 15
 premiere_date: 2020-09-22
 ep_count: 10
 location: Down Hall Hotel, Hatfield Heath, Essex

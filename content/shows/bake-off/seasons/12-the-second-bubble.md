@@ -2,7 +2,7 @@
 show: bake-off
 number: 12
 title: The Second Bubble
-canonical_position: 15
+canonical_position: 16
 premiere_date: 2021-09-21
 ep_count: 10
 location: Down Hall Hotel, Hatfield Heath, Essex
