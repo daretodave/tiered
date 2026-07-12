@@ -49,8 +49,7 @@ pass).
 | show | filed/declared | gap |
 |---|---|---|
 | survivor | 50/51 | 1* |
-| amazing-race | 38/39 | 1 |
-| top-chef | 22/23 | 1 |
+| amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1 |
 | bake-off | 15/16 | 1 |
 | love-island-uk | 11/12 | 1 |
@@ -119,6 +118,15 @@ blind count bump:
   a premiere date lands in the past. Skipped to `dragrace` for
   this tick's Rule 2 pick (season 18, aired and concluded
   January–April 2026).
+- **amazing-race** (gap row marked `1*`) — verified at drain-tick
+  author time (2026-07-12): Season 39 is filmed (Sept–Oct 2025)
+  and CBS has confirmed a Fall 2026 slot (Wed 9:30pm, following
+  Survivor 51) but no exact premiere date has been set — unaired
+  as of this tick. Same confirmed-but-unaired precedent as the
+  survivor row above; deferred rather than drained, picked up
+  again once a premiere date lands in the past. Skipped to
+  `top-chef` for this tick's Rule 2 pick (season 23 "Carolinas",
+  aired and concluded March–June 2026).
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
