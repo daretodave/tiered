@@ -30,10 +30,11 @@ one of the 68 catalogued shows, cross-checked against the
 filesystem. **59 new/renewed/announced seasons found** across 28
 previously-gap-free shows; the pre-existing 28-show gap carries
 forward unchanged (no scout finding touched those declared
-counts beyond what's noted below). **68 shows · 745/1083 seasons
-filed · gap 338 across 55 shows** (rhodubai drained to zero this
-sweep tick; the-challenge progressed 40→41 and big-brother
-progressed 26→27 this drain tick — see Sweep notes below).
+counts beyond what's noted below). **68 shows · 746/1083 seasons
+filed · gap 337 across 55 shows** (rhodubai drained to zero this
+sweep tick; the-challenge progressed 40→41, big-brother
+progressed 26→27, and bachelor progressed 28→29 this drain tick
+— see Sweep notes below).
 
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
@@ -65,7 +66,7 @@ pass).
 | alone-australia | 3/4 | 1* |
 | the-challenge | 41/42 | 1* |
 | big-brother | 27/28 | 1* |
-| bachelor | 28/30 | 2 |
+| bachelor | 29/30 | 1* |
 | project-runway | 20/22 | 2 |
 | love-island-us | 6/8 | 2 |
 | american-idol | 23/25 | 2 |
@@ -207,6 +208,18 @@ blind count bump:
   date) — no finale date announced. Same confirmed-but-unaired
   precedent as the other `1*` rows above; deferred until the
   season concludes.
+- **bachelor** (gap row marked `1*`, cloud drain tick
+  2026-07-12) — Season 29 ("Grant Ellis") aired and concluded
+  January–March 2025; filed this tick as
+  `content/shows/bachelor/seasons/29-grant-ellis.md`, `canon.md`
+  rebased (inserted at rank 10, ranks 10–28 shifted to 11–29),
+  `era_bands` recent-era widened to `[2017, 2025]`. Show
+  frontmatter `seasons` bumped 28→29 and blurb/tagline/
+  card_tagline count references updated to match. Season 30 has
+  no cast lead, no confirmed premiere date, and scout research
+  found only speculative casting rumors — same
+  confirmed-but-unaired precedent as the other `1*` rows above;
+  deferred until an official lead and premiere date land.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
