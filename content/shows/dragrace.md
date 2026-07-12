@@ -5,10 +5,10 @@ palette:
   paper: "#2D0B2A"
   ink: "#F2E1D2"
   primary: "#E64B86"
-seasons: 17
+seasons: 18
 status: airing
-blurb: "17 seasons. Quiet velvet, loud pink."
-tagline: "17 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
+blurb: "18 seasons. Quiet velvet, loud pink."
+tagline: "18 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
 card_tagline: "The format that built a global drag economy, and still sets the bar every other franchise spends a season chasing."
 tier: S
 network: "MTV"

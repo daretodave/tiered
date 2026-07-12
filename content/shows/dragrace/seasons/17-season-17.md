@@ -6,7 +6,7 @@ slug: season-17
 premiere_date: 2025-01-03
 location: Los Angeles, California
 host: RuPaul Charles
-canonical_position: 14
+canonical_position: 15
 eyebrow: "Aired winter 2025 · MTV · the most recent flagship"
 lede: "The newest U.S.-flagship run, a standard-format MTV-era season carrying the franchise's settled production scale and a fresh modern cast through the familiar workroom-and-runway shape."
 premiere_caption: "MTV · Friday 8/7c"

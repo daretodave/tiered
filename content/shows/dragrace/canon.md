@@ -1,7 +1,7 @@
 ---
 show: dragrace
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-07-12
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched Drag Race since the Logo years and I've replayed every U.S.-flagship season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable drag fans agree on after a long argument. Not the only ranking — the one I'd defend in a group chat.
 meth_how_h: "How I weigh it"
@@ -19,7 +19,7 @@ era_bands:
     range: [2009, 2016]
   - key: vh1
     label: VH1 era
-    range: [2017, 2025]
+    range: [2017, 2026]
 ---
 
 ## 5. Season 5
@@ -245,13 +245,32 @@ We rank it here because the premiere experiment is a genuine
 format argument, even though the contest behind it stays solid
 rather than sharp — the swing outranks the execution.
 
+## 18. Season 18
+
+tag: The record-premiere finale rewrite — a genuine structural swing undercut by uneven judging.
+slot_argument: The franchise's highest-rated MTV premiere yet, built on a veteran-heavy cast and a rebuilt finale trading the top-two lip sync for an eliminated-cast tournament. Split judging reception keeps it below the premiere experiment above it.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season 18 lands fourteenth on the strength of its finale swing.
+The season pulls the franchise's highest-rated MTV premiere yet,
+anchored by a veteran-heavy cast and a franchise-first drag
+grandmother-and-granddaughter pairing through the Dion family
+line. RuPaul Charles and Michelle Visage anchor the panel. The
+real structural argument sits at the back of the season: the
+traditional top-two lip-sync gives way to a full eliminated-cast
+tournament ahead of the final round, a genuine rewrite of how
+the show closes. Reception splits on execution — praise for the
+cast's depth, real pushback on inconsistent judging call to
+call — which keeps it just below the cleaner structural swing of
+Season 13's premiere experiment.
+
 ## 17. Season 17
 
 tag: The most recent flagship — the settled grammar run clean, no format swing to carry it past the structural seasons.
 slot_argument: A standard-format MTV-era season at the franchise's settled production scale with a fresh modern cast. The contest runs clean, but carries no structural experiment — the canon's argument lens seats it under the seasons that do.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+community_rank_hint: rank=15 delta=0 sentiment=hold
 
-Season 17 settles at fourteenth on a full post-finale read. It
+Season 17 settles at fifteenth on a full post-finale read. It
 plays a standard MTV-era competition at the production scale
 the franchise has settled into, with RuPaul Charles and
 Michelle Visage anchoring a familiar panel and a fresh modern
@@ -259,7 +278,7 @@ cast. The workroom-and-runway shape is intact and confident
 across the run. What it lacks is a structural argument — there
 is no format experiment reshaping the season the way the
 entries above it carry one. On a settled read it sits just
-below the restructured-premiere season directly above: a
+below the restructured-premiere seasons directly above: a
 clean, competent flagship year whose case is execution rather
 than invention.
 
@@ -267,9 +286,9 @@ than invention.
 
 tag: The filter comes off — the franchise's actual personality starts to surface.
 slot_argument: The first real step up from the pilot: a finished-looking show, a larger cast, an edit that knows where the tension is. The last pre-Visage panel, with a workroom that runs hot enough to carry the hour.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
-Season 2 sits fifteenth as the first real step up from the
+Season 2 sits sixteenth as the first real step up from the
 pilot. It drops the soft filter and shoots like a finished
 show, with a larger cast and an edit that knows where the
 tension is. RuPaul Charles hosts the last season before
@@ -284,9 +303,9 @@ starts to surface.
 
 tag: The uneven last Logo run — craft holds, the contest drifts.
 slot_argument: The final Logo-era season. A larger cast and a slicker edit, but a workroom whose chemistry never fully catches the way the seasons on either side did. The runway holds up; the competition around it loses its grip.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+community_rank_hint: rank=17 delta=0 sentiment=hold
 
-Season 7 lands sixteenth as the franchise's most uneven Logo
+Season 7 lands seventeenth as the franchise's most uneven Logo
 chapter. It runs a large cast with a more polished edit than the
 early years, but the workroom chemistry stays cooler than the
 seasons around it — the personalities never lock together the
@@ -300,7 +319,7 @@ note before the network move reset the scale entirely.
 
 tag: The pilot — origin texture in lower resolution.
 slot_argument: The one that started it, and it shows: short runtime, heavy soft filter, a visible budget, and a panel still working out its own grammar with a different fashion judge. Historically essential, editorially the roughest draft.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season 1 sits last, and honestly so. It is the one that started
 the franchise, and every limitation is on screen — a short
