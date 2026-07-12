@@ -48,3 +48,19 @@ finales:
     season: 17
     finale_date: 2025-04-18
     status: aired
+  - show: love-island-us
+    season: 8
+    finale_date: 2026-07-12
+    status: scheduled
+  - show: love-island-uk
+    season: 12
+    finale_date: 2026-07-27
+    status: scheduled
+  - show: the-ultimatum
+    season: 4
+    finale_date: 2026-07-22
+    status: scheduled
+  - show: project-runway
+    season: 22
+    finale_date: 2026-09-10
+    status: scheduled

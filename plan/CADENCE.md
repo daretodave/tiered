@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | never (armed 2026-07-12) | DUE — first sweep runs on the next eligible march tick |
+| season-sweep | 7 days | 2026-07-12 | next due 2026-07-19 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -24,9 +24,14 @@ that.
 
 ## Season gap table
 
-Generated 2026-07-12 by `/oversight` (cross-grep of frontmatter
-`seasons:` vs. `content/shows/<slug>/seasons/` file count).
-**68 shows · 742/1024 seasons filed · gap 282 across 28 shows.**
+Regenerated 2026-07-12 by the first weekly sweep (`/march` Step
+1.5, Rule 1a) — 6 `scout` batches (≤12 shows each) covered every
+one of the 68 catalogued shows, cross-checked against the
+filesystem. **59 new/renewed/announced seasons found** across 28
+previously-gap-free shows; the pre-existing 28-show gap carries
+forward unchanged (no scout finding touched those declared
+counts beyond what's noted below). **68 shows · 742/1083 seasons
+filed · gap 341 across 56 shows.**
 
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
@@ -35,42 +40,119 @@ remove it at zero) in the same commit; the weekly sweep
 regenerates the whole table.
 
 Declared counts are frontmatter claims — verify at author time.
-Known-suspect counts: `ink-master` (16, conservative estimate,
-mainline-vs-spinoff numbering unresolved),
-`married-at-first-sight-australia` (13, unverified estimate),
-`chopped` (sources disagree 62 vs 64). The drain tick that
-verifies a count corrects the frontmatter in the same commit.
+`chopped`'s prior 62-vs-64 ambiguity is resolved by this sweep:
+season 64 began production after 2026-03-09, confirming the
+64-count source. Still-suspect: `married-at-first-sight-australia`
+(13, unverified estimate — no sweep finding either way this
+pass).
 
 | show | filed/declared | gap |
 |---|---|---|
+| survivor | 50/51 | 1 |
+| dragrace | 17/18 | 1 |
+| amazing-race | 38/39 | 1 |
+| top-chef | 22/23 | 1 |
+| rhony | 15/16 | 1 |
+| bake-off | 15/16 | 1 |
+| love-island-uk | 11/12 | 1 |
+| dancing-with-the-stars | 34/35 | 1 |
+| americas-got-talent | 20/21 | 1 |
+| rhoa | 16/17 | 1 |
+| rhonj | 14/15 | 1 |
+| the-voice | 29/30 | 1 |
+| below-deck | 12/13 | 1 |
+| alone | 12/13 | 1 |
+| love-is-blind | 10/11 | 1 |
 | rhodubai | 1/2 | 1 |
-| the-ultimatum | 1/2 | 1 |
+| alone-australia | 3/4 | 1 |
+| the-challenge | 40/42 | 2 |
+| big-brother | 26/28 | 2 |
+| bachelor | 28/30 | 2 |
+| project-runway | 20/22 | 2 |
+| love-island-us | 6/8 | 2 |
+| american-idol | 23/25 | 2 |
+| hells-kitchen | 24/26 | 2 |
+| rhoc | 18/20 | 2 |
+| masterchef-australia | 16/18 | 2 |
+| below-deck-mediterranean | 9/11 | 2 |
+| masked-singer | 13/15 | 2 |
+| below-deck-down-under | 2/5 | 3 |
+| the-ultimatum | 1/4 | 3 |
 | perfect-match | 1/4 | 3 |
-| selling-sunset | 6/9 | 3 |
-| traitors-uk | 1/4 | 3 |
-| dragrace-uk | 3/7 | 4 |
-| queer-eye | 6/10 | 4 |
 | rhod | 1/5 | 4 |
-| rhoslc | 1/6 | 5 |
+| queer-eye | 6/10 | 4 |
+| selling-sunset | 6/10 | 4 |
+| traitors-uk | 1/5 | 4 |
 | the-apprentice | 10/15 | 5 |
+| dragrace-uk | 3/8 | 5 |
 | too-hot-to-handle | 1/6 | 5 |
-| rhom | 1/7 | 6 |
-| shark-tank | 11/17 | 6 |
+| rhoslc | 1/7 | 6 |
 | the-circle | 1/7 | 6 |
-| bachelor-in-paradise | 1/10 | 9 |
-| rhop | 1/10 | 9 |
-| summer-house | 1/10 | 9 |
+| shark-tank | 11/18 | 7 |
+| rhom | 1/8 | 7 |
 | dragrace-allstars | 1/11 | 10 |
-| southern-charm | 1/11 | 10 |
+| bachelor-in-paradise | 1/11 | 10 |
+| rhop | 1/11 | 10 |
+| summer-house | 1/11 | 10 |
 | 90-day-fiance | 1/12 | 11 |
-| vanderpump-rules | 1/12 | 11 |
+| southern-charm | 1/12 | 11 |
 | american-ninja-warrior | 6/18 | 12 |
+| vanderpump-rules | 1/13 | 12 |
 | married-at-first-sight-australia | 1/13 | 12 |
-| married-at-first-sight | 6/19 | 13 |
-| ink-master | 1/16 | 15 |
+| married-at-first-sight | 6/21 | 15 |
+| ink-master | 1/17 | 16 |
 | so-you-think-you-can-dance | 1/18 | 17 |
 | the-real-world | 1/33 | 32 |
-| chopped | 6/62 | 56 |
+| chopped | 6/64 | 58 |
+
+## Sweep notes (2026-07-12, first pass)
+
+Flagged findings that did **not** move the gap table this pass —
+require editorial judgment at drain/scaffold time rather than a
+blind count bump:
+
+- **americas-next-top-model** (ended) — Tyra Banks says a cycle
+  25 is "in the works" (Feb 2026); no formal network greenlight.
+  Watch, don't drain.
+- **the-apprentice** (ended) — early-stage Amazon reboot talks
+  reported, not confirmed. Watch.
+- **the-circle** (ended) — Hulu ordered a "reimagined" version
+  (Deadline, 2026-06-10) with a Love Island-style format change.
+  Unclear whether this continues the existing season numbering
+  or is a full reboot; decide at scaffold time.
+- **survivor-australia** — numbering convention is ambiguous
+  between Network 10's own count and Wikipedia's overall count;
+  declared 12 may already reflect one of the two conventions.
+  Two further seasons reportedly planned for 2027. Verify which
+  convention this catalog's frontmatter uses before any count
+  change.
+- **traitors** (US) — season 5 is reportedly split into an NBC
+  civilian edition ("New Blood", premiering 2026-09-17) and a
+  separate Peacock celebrity edition (~Jan 2027). Whether these
+  are sequential seasons of one show or warrant a separate show
+  entry needs an editorial call, not an autonomous count bump.
+- **bachelorette** — season 22 (Taylor Frankie Paul) was pulled
+  by ABC days before its planned 2026-03-22 premiere following a
+  resurfaced controversy; airing status is unresolved. No season
+  added to the gap table pending clarity.
+
+Status-field corrections noted for the next tick that touches
+these shows (not actioned this pass — sweep only owns the gap
+table):
+
+- `the-voice` frontmatter reads `status: ended`; season 30 is
+  confirmed with a dated 2026-09-21 premiere. Should be `airing`
+  or `hiatus`, not `ended`.
+- `bachelor-in-paradise` and `traitors` (US) frontmatter both
+  read `status: airing` but are between confirmed seasons
+  (paradise resumes summer 2027; traitors US season 4 concluded
+  2026-02-26). Likely `hiatus`.
+
+Four dated finales filed to `content/calendar.yml` this pass
+(air dates only, no outcome data — standing rule):
+`love-island-us` s8 (2026-07-12), `love-island-uk` s12
+(2026-07-27), `the-ultimatum` s4 (2026-07-22),
+`project-runway` s22 (2026-09-10).
 
 ## Show-add log
 
@@ -82,4 +164,4 @@ verifies a count corrects the frontmatter in the same commit.
 
 | date | new seasons found | gap after |
 |---|---|---|
-| (first sweep pending) | — | 282 |
+| 2026-07-12 | 59 | 341 |
