@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 37
-canonical_position: 34
+canonical_position: 35
 title: Spies, Lies & Allies
 display_title: "Spies, Lies <em>&</em> Allies"
 host: TJ Lavin

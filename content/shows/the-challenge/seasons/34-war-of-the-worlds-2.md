@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 34
-canonical_position: 36
+canonical_position: 37
 title: War of the Worlds 2
 display_title: "<em>War of the Worlds</em> 2"
 host: TJ Lavin

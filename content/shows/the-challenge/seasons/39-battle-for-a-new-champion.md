@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 39
-canonical_position: 40
+canonical_position: 41
 title: Battle for a New Champion
 host: TJ Lavin
 premiere_date: 2023-10-25
