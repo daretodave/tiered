@@ -15,7 +15,7 @@ format_summary: "Standard format · 8 episodes"
 format_caption: "the UK edition's foundational, iPlayer-only run"
 premiere_caption: "BBC Three · iPlayer, October 2019"
 episodes_caption: "8 episodes, the shortest run to date"
-filming_caption: "Filmed at 3 Mills Studios, London"
+filming_caption: "3 Mills Studios · site of Britain's largest surviving tidal mill"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:
   - episode_label: "Ep 1 · the panel introduces itself"
