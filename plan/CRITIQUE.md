@@ -1,5 +1,50 @@
 # CRITIQUE
 
+> Last pass: 2026-07-12 at commit e60ceca
+> Pass count: 91
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 91 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/traitors-uk/season/series-1`,
+> `/shows/married-at-first-sight-australia/season/the-original`,
+> `/shows`, `/shows/traitors-uk/canon`) and authed (`/u/e2e`,
+> `/shows/married-at-first-sight-australia/canon`,
+> `/shows/traitors-uk/season/series-1`,
+> `/shows/married-at-first-sight-australia/season/the-original`,
+> `/shows/traitors-uk/canon`) walks ran, desktop + mobile,
+> targeting the two most-recently-shipped shows (The Traitors UK,
+> Married at First Sight Australia — both single-season,
+> single-canon-entry freshly-seeded shows) for the scaffolding
+> defect classes that recur on thin-catalog shows. Zero
+> mechanical findings (no console errors, no failed first-party
+> requests beyond one benign RSC-prefetch abort, no mobile
+> overflow, complete SEO/meta tags, no per-show SVG iconography
+> violations, no spoiler leakage). Auth handshake confirmed
+> working (`authState: authenticated:cloud`, correct signed-in
+> chrome, live comment composer, no signed-out flash). Confirmed
+> prior fixes still hold: sole-canon-entry rank-bar peak
+> rendering, `tier_s_blurb` fallback collision, signed-out header
+> flash. Filed 5 findings (2 MED, 3 LOW): (1) traitors-uk's
+> `filming_caption` uses "Filmed at" instead of "Filmed in,"
+> slipping past the existing bare-restatement lint which only
+> matches the literal word "in"; (2) MAFS Australia's season page
+> restates "three couples, matched sight unseen" across five
+> separate fields; (3) traitors-uk repeats the six-word phrase
+> "Ardross Castle in the Scottish Highlands" verbatim between the
+> hero lede and the body; (4) every /shows B-tier tile doubles up
+> "review in progress" (status pill) and "canon in review" (tile
+> footer) on one card; (5) two canon.md files
+> (married-at-first-sight-australia, survivor-australia) pair
+> `delta=0` with `sentiment=up` instead of the corpus-standard
+> `sentiment=hold`, rendering a self-contradictory "↑ 0" pill —
+> reader-agent evidence originally undercounted this as a single
+> outlier; corpus grep confirmed two.
+>
+> ───── Pass 90 metadata kept below for history ─────
+>
 > Last pass: 2026-07-11 at commit 07a958d
 > Pass count: 90
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2047,6 +2092,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/traitors-uk/season/series-1 — the FILMED stat tile's caption is a near-bare restatement of the `location` field it sits under, the same defect class the pass-89 #551 fix targeted, but it slips through because the shipped regression test only matches the literal preposition "in," not "at." `content/shows/traitors-uk/seasons/01-series-1.md`: `location: "Ardross Castle, Scottish Highlands"` / `filming_caption: "Filmed at Ardross Castle, Scottish Highlands"` — `isBareRestatement()` in `src/content/__tests__/filming-caption-distinct.test.ts` (~line 19) only normalizes against `Filmed in ${location}`, so this "Filmed at" variant passes the test green while still reading as a bare restatement to a reader. Fix: broaden `isBareRestatement()` to match any "Filmed <preposition> <location>" form (in/at/on/near), not just the literal word "in," then rewrite `filming_caption` to add real texture (e.g. "Ardross Castle · a Highland fortress with its own Round Table hall"). Content-only + a one-line test-helper broadening. Spoiler discipline P0 intact (production/location detail only). (URL: /shows/traitors-uk/season/series-1, source: critique-pass-91)
+
+- [ ] [MED] [anon] /shows/married-at-first-sight-australia/season/the-original — the single fact "three couples, matched sight unseen" is restated across five separate fields rendered on the same page: hero eyebrow ("Three couples, one Sydney experiment"), lede ("three couples matched sight unseen by relationship experts"), pull quote ("Three couples, matched sight unseen, married before they'd said more than vows"), and both the FORMAT stat tile (`format_caption: "Three couples, matched by experts, married before they'd spoken"`) and CAST SIZE stat tile (`cast_size_caption: "Three couples, six strangers matched sight unseen"`) — the last two stack directly on top of each other on the page and both open with the identical clause "Three couples,". Reads templated on a freshly-seeded single-season show rather than each element adding new information. Source: `content/shows/married-at-first-sight-australia/seasons/01-the-original.md`. Fix: vary the CAST SIZE caption to add a fact not already stated twice above it (e.g. reference the expert panel makeup or the timeline to Decision Day instead of repeating "three couples matched sight unseen"). Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/married-at-first-sight-australia/season/the-original, source: critique-pass-91)
+
+- [ ] [LOW] [anon] /shows/traitors-uk/season/series-1 — the exact six-word phrase "Ardross Castle in the Scottish Highlands" repeats verbatim between the hero lede and the "Shape of the season" body paragraph a few lines below it, an avoidable echo against the "plain sentences over clever ones" voice bar. `content/shows/traitors-uk/seasons/01-series-1.md` lede: "...built inside Ardross Castle in the Scottish Highlands, hosted by Claudia Winkleman." / body: "...Claudia Winkleman hosts a group of strangers at Ardross Castle in the Scottish Highlands, working out a cloak-and-Round-Table game as they go." Fix: vary the second reference (e.g. "the castle" or "the Highlands fortress") rather than repeating the full six-word phrase. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/traitors-uk/season/series-1, source: critique-pass-91)
+
+- [ ] [LOW] [anon] /shows — every B-tier ("canon still forming") tile carries two chrome elements that say the same thing at once: the `ShowsStatusPill` reads "review in progress" and the tile's own footer meta (`ShowsTile.tsx` `metaText()`) reads "{N} seasons · canon in review" directly below it on the same small card — the same status word doubled with no new information the second time. Affects every B-tier show on the index (51+ tiles as of this pass). Source: `src/components/shows/ShowsStatusPill.tsx:8` (`label = inReview ? 'review in progress' : ...`) and `src/components/shows/ShowsTile.tsx:27` (`` `${seasons} seasons · canon in review` ``) both fire off the same `status` prop simultaneously. Distinct from the already-resolved pass-52 #417 (ratio-overflow guard) and pass-87 #539 (tooltip legibility) findings, which addressed the ratio's shape, not this pill-vs-footer redundancy. Fix: drop the repeated "review"/"in review" word from one of the two surfaces — e.g. have the tile footer state season count alone ("{N} seasons") when the status pill already carries the review-state message. Chrome-only, one component. Spoiler discipline P0 intact. (URL: /shows, source: critique-pass-91)
+
+- [ ] [MED] [authed] /shows/married-at-first-sight-australia/canon — the sole canon entry's community pill renders "↑ 0" (up-arrow paired with zero movement), a self-contradictory shape on a page where the entry hasn't moved (no votes cast yet). `content/shows/married-at-first-sight-australia/canon.md:24`: `community_rank_hint: rank=1 delta=0 sentiment=up`. A corpus-wide grep across every `content/shows/*/canon.md` found 547 total `delta=0` entries; 545 correctly pair with `sentiment=hold` (including the sibling freshly-seeded show `traitors-uk/canon.md:23`, which renders the correct "◆ hold" state) — two outliers pair `delta=0` with `sentiment=up`: this row's Married at First Sight Australia entry and a second, previously-unfiled instance at `content/shows/survivor-australia/canon.md:31`. `communitySignalForSeason()` in `src/lib/community/live.ts` derives sentiment from delta on the live-votes path but the static-frontmatter fallback (used for un-voted freshly-seeded shows) trusts the authored value verbatim, so authoring drift isn't caught. Fix: change both lines to `sentiment=hold`, matching the corpus-standard pairing; consider a `content-check.ts` invariant asserting `delta === 0` implies `sentiment === hold` across the corpus so future authoring drift is caught at verify-gate time rather than by critique. Content-only, two one-line edits + optional lint addition. Spoiler discipline P0 intact (community-sentiment chrome only, no outcome exposure). (URL: /shows/married-at-first-sight-australia/canon, /shows/survivor-australia/canon, source: critique-pass-91)
 
 - [ ] [LOW] [anon] /shows/chopped/season/the-four-ingredient-standard — the PREMIERED stat tile's caption restates the network and air-window already stated in the page eyebrow one line above, instead of adding a genuine new fact the way the site's established convention does. `content/shows/chopped/seasons/04-the-four-ingredient-standard.md`: `eyebrow: "Aired spring–summer 2010 · Food Network · the four-ingredient basket locks in"` and, one stat-tile down, `premiere_caption: "Food Network · spring into summer 2010"` — both name "Food Network" and both restate the spring/summer 2010 window (in slightly different phrasing), so the two lines read as near-duplicates rather than value+detail. This is the same defect class the pass-87 #540 finding fixed for Chopped Season 1 (`premiere_caption` dropped to weekday-only, "Food Network · Tuesday", once scout research confirmed no sourced clock-time existed) — but that fix landed only on S1's file; S4 was promoted into the canon afterward and carries the same pattern unfixed. Fix: rewrite `premiere_caption` in `content/shows/chopped/seasons/04-the-four-ingredient-standard.md` to add a real new fact (day-of-week if verifiable — April 6, 2010 was a Tuesday, matching the show's established Tuesday timeslot per S1's caption) instead of restating the network + air-window already shown in the eyebrow above it. Content-only, one field. Spoiler discipline P0 intact (premiere scheduling only). (URL: /shows/chopped/season/the-four-ingredient-standard, source: critique-pass-90)
 - [x] [MED] [anon] /shows/bachelor-in-paradise/season/tulum — the auto-generated `<meta name="description">` and `og:description` for this newly-added season page truncate mid-clause with a dangling cutoff, reading as broken rather than a deliberate teaser. Rendered: "The franchise's first shared beach house, pulling contestants from recent Bachelor and Bachelorette seasons into one Tulum resort for a faster…" — cuts off before the sentence's second half ("more compressed rose ceremony format"), visible in both the meta description and the reused `og:description`. This is the first page this newly-seeded show has ever been critiqued on, so the truncation-boundary bug is fresh, not a regression. Fix: truncate the generated description at the nearest sentence/clause boundary (or raise the character threshold slightly) rather than a fixed character count that lands mid-clause. Likely in the season page's metadata-generation helper (verify exact path at fix-time — probably `src/app/shows/[show]/season/[slug]/page.tsx`'s `generateMetadata`). Spoiler discipline P0 intact (SEO chrome only). (URL: /shows/bachelor-in-paradise/season/tulum, source: critique-pass-89)
