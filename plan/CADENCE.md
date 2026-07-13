@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| the-apprentice | 10/15 | 5 |
 | dragrace-uk | 3/8 | 5 |
 | too-hot-to-handle | 1/6 | 5 |
 | rhoslc | 1/7 | 6 |
@@ -560,6 +559,38 @@ Four dated finales filed to `content/calendar.yml` this pass
 `love-island-us` s8 (2026-07-12), `love-island-uk` s12
 (2026-07-27), `the-ultimatum` s4 (2026-07-22),
 `project-runway` s22 (2026-09-10).
+
+- **the-apprentice** — DRAINED this tick (cloud drain, 2026-07-13):
+  the show's real 10/15 gap (not a confirmed-but-unaired
+  deferral — five historical seasons genuinely missing from the
+  catalog) was the smallest true gap on the board once every
+  starred `1*`/`2*` row was excluded as deferred. Seasons 11
+  ("The Resumption," 2011 — celebrity format resuming after
+  Season 10's one-off civilian detour), 12 ("The Crossover,"
+  2012 — casting drifting toward the wider reality-TV genre), 13
+  ("The All-Stars Cycle," 2013 — the only season in the show's
+  run cast entirely from returning celebrities, a structural
+  first), 14 ("The Final Cycle," 2015 — the last Trump-hosted
+  season before his departure from the show later that year), and
+  15 ("The Reboot," 2017 — Arnold Schwarzenegger replacing Trump
+  as host, the format's only host change) filed, completing the
+  show's declared 15/15 count. `canon.md` rebased: Season 13
+  inserted at rank 9 (the all-returnee structure is a genuine
+  format first, ranked above the celebrity era's roughest
+  stretch) and Season 14 at rank 10 (retrospective historical
+  weight — last season on the original hosting continuity, not
+  an on-screen distinction); Seasons 8 and 9 shifted 9→11 and
+  10→12; Season 12 inserted at rank 13 and Season 11 at rank 14
+  (both read as the celebrity era's settled, unremarkable middle
+  — no structural hook); Season 15 inserted at rank 15 (judged
+  against the founding-era standard this canon's methodology
+  explicitly states, a full host/format reboot earns the bottom
+  slot). No new entry cracks S-tier — the existing top 5
+  (founding-era seasons) are unchanged. `era_bands` already
+  covered the full range (`celebrity-era` [2008, 2016] spans
+  S11–S14; `revival-era` [2017, 2017] covers S15) — no widening
+  needed. Gap table row removed — show fully drained. 782 seasons
+  filed catalog-wide as of this tick.
 
 ## Show-add log
 
