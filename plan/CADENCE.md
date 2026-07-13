@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| selling-sunset | 6/10 | 4 |
 | traitors-uk | 1/5 | 4 |
 | the-apprentice | 10/15 | 5 |
 | dragrace-uk | 3/8 | 5 |
@@ -491,6 +490,33 @@ blind count bump:
   system now produces (ranks 1–5 = S, 6–10 = A) rather than the
   old "two seasons" framing written when only 6 of 10 were ranked.
   Gap table row removed — show fully drained.
+- **selling-sunset** — DRAINED this tick (cloud drain, 2026-07-13):
+  the gap table's "declared 10" was wrong — scout research confirms
+  the show has aired exactly 9 seasons as of this tick (matching
+  the frontmatter's existing `seasons: 9`, which needed no
+  correction); Season 10 is renewed and in production (filming
+  began June 2026) but has no premiere date, projected H1 2027 —
+  same confirmed-but-unaired precedent as the other starred rows,
+  deferred until it airs. Seasons 7 ("Season 7," Nov 2023 — the
+  brokerage relocates to a bigger, more polished office next door,
+  full cast continuity), 8 ("Season 8," Sept 2024 — Alanna Gold
+  joins, first season since Season 4 to skip the standalone
+  reunion special), and 9 ("Season 9," Oct 2025 — Sandra Vergara
+  joins, reunion special restored after Season 8's gap) filed,
+  completing the show's true 9/9 count. `canon.md` rebased: Season
+  9 inserted at rank 5 (reunion restored + new cast reads as real
+  recovery), Season 6 shifted 5→6, Season 7 inserted at rank 7
+  (office upgrade only, no roster change — a physical, not
+  structural, swing), Season 3 shifted 6→8, Season 8 inserted at
+  rank 9 (dropping the reunion is a genuine step back from the
+  format hook Season 5 established). Every shifted season's
+  `canonical_position` updated to match. `era_bands` extended with
+  two new one-year bands — `reunion-gap-era` [2024, 2024] and
+  `restoration-era` [2025, 2025] — covering the now-complete
+  2019–2025 aired span (2026's unaired Season 10 left open).
+  `meth_who_p`/`meth_when_p` rewritten to reflect all nine seasons
+  now ranked, Season 10 flagged as next-due once it airs. Gap
+  table row removed — show fully drained.
 
 Status-field corrections noted for the next tick that touches
 these shows (not actioned this pass — sweep only owns the gap
