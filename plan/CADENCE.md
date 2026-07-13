@@ -71,10 +71,10 @@ pass).
 | love-island-us | 7/8 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
-| masterchef-australia | 17/18 | 1 |
+| masterchef-australia | 17/18 | 1* |
 | hells-kitchen | 24/26 | 2* |
 | below-deck-mediterranean | 10/11 | 1* |
-| masked-singer | 13/15 | 2 |
+| masked-singer | 14/15 | 1* |
 | below-deck-down-under | 2/5 | 3 |
 | the-ultimatum | 1/4 | 3 |
 | perfect-match | 1/4 | 3 |
@@ -363,6 +363,34 @@ blind count bump:
   `content/shows/rhodubai/seasons/02-the-new-addition.md`,
   `canon.md` rebased (season 2 ranked #1 ahead of the founding
   season 1, now #2). Gap table row removed — show fully drained.
+- **masked-singer** — DRAINED this tick (cloud drain, 2026-07-13):
+  Season 14 ("The Insider") premiered 2026-01-07 (two-hour
+  special) and concluded April 1, 2026 (12 episodes), fully
+  aired — the established era's first panel change in franchise
+  history (Rita Ora replacing Nicole Scherzinger, who'd held the
+  seat since Season 1), plus a season-exclusive "Insider" dual
+  role mechanic for one masked contestant. Filed this tick as
+  `content/shows/masked-singer/seasons/14-the-insider.md`.
+  `canon.md` rebased: new entry inserted at rank 13, ahead of
+  Season 13 ("The Pattern," now rank 14) — editorial call: S13's
+  entire case rested on "the pattern as the product" (thirteen
+  cycles, unbroken panel); S14 directly broke that continuity,
+  which outweighs pure recency-decay ordering. Show frontmatter
+  `seasons` bumped 13→14, `blurb` updated to "14 seasons."
+  `tagline`/`card_tagline` already token-driven (`{yearsWord}`),
+  no change needed. `established-era` band `[2023, 2026]`
+  already covered the new season, no widening needed. Season 15
+  is renewed (announced May 2026) but has no premiere date —
+  reporting points to a producer change (Eureka Productions,
+  replacing Fox Entertainment Studios) and a likely LA-to-New
+  Jersey filming relocation, with a midseason 2026–27 target
+  (roughly Q1 2027), not fall 2026. Same confirmed-but-unaired
+  precedent as the other `1*` rows above; deferred until a
+  premiere date lands. (Separately: the `masterchef-australia`
+  row above is corrected to `1*` this tick — it was drained and
+  its remaining season deferred as confirmed-but-unaired on the
+  prior tick, 2026-07-13, but the row was left unmarked; fixed
+  for table-convention consistency, no new research performed.)
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
