@@ -2,7 +2,7 @@
 show: too-hot-to-handle
 number: 1
 title: "Season 1 (2020)"
-canonical_position: 1
+canonical_position: 2
 premiere_date: 2020-04-17
 ep_count: 8
 host: "Lana (AI voice)"

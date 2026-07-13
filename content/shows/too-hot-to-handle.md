@@ -6,7 +6,7 @@ palette:
   ink: "#FCE8D6"
   primary: "#FF3B5C"
 seasons: 6
-status: hiatus
+status: ended
 blurb: "6 seasons. Every kiss costs the group cash."
 tagline: "Singles who think they've booked a normal hot-singles getaway meet Lana instead — an AI host enforcing one rule: no physical intimacy, or the group's shared cash prize keeps shrinking. Self-control becomes the real competition, and no season plays it the same way twice."
 card_tagline: "An AI host, a shrinking cash prize, and a villa full of serial daters told to behave."
