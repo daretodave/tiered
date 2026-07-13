@@ -1,13 +1,13 @@
 ---
 show: below-deck-mediterranean
 editor: tiered.tv editor
-last_revised: 2026-06-19
+last_revised: 2026-07-13
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Every aired season of Below Deck Mediterranean, from the Montenegro origin through the Athens run. The ranking weights cast chemistry across all three departments, location quality, captain authority, and what each season added to the format. Outcomes and firings don't move the needle. The season that runs the format cleanest earns the slot."
+meth_who_p: "tiered.tv's editor. Every aired season of Below Deck Mediterranean, from the Montenegro origin through the Barcelona II run. The ranking weights cast chemistry across all three departments, location quality, captain authority, and what each season added to the format. Outcomes and firings don't move the needle. The season that runs the format cleanest earns the slot."
 meth_how_h: "How I weigh it"
 meth_how_p: "Location does more work here than in the original series — the difference between a strong Adriatic anchorage and a forgettable stretch of coast shapes a season's entire texture. Cast chemistry across deck, interior, and galley counts next, then how clearly the captain's authority organizes the drama. Seasons that pushed into new geography earn credit for the risk."
 meth_when_h: "When I revisit"
-meth_when_p: "Nine slots covering the full run, from the Montenegro foundation through the Athens expansion. A season that improves on second watch moves up. One that deflates stays put. The ranking is not trying to be final — it's staking a clear claim about where Dubrovnik and Malta sit above the rest, revised only when a season earns it."
+meth_when_p: "Ten slots covering the full run, from the Montenegro foundation through the Barcelona II return. A season that improves on second watch moves up. One that deflates stays put. The ranking is not trying to be final — it's staking a clear claim about where Dubrovnik and Malta sit above the rest, revised only when a season earns it."
 tier_s_blurb: "The franchise peak — Dubrovnik and Malta represent what Below Deck Mediterranean looks like when cast chemistry, location, and command authority all operate above the format's ceiling."
 tier_a_blurb: "Distinctive seasons that took a creative risk and paid it back — a different captain, a freshwater lake, the island geometry of Malta's neighboring islands. Strong enough to sit close to the top."
 tier_b_blurb: "Solid franchise entries that work through their run cleanly. The Adriatic coast, the Dalmatian return, Athens on first pass — each adds something without defining the format."
@@ -70,11 +70,19 @@ community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Season 6 returned to Croatia — Sibenik's Dalmatian coast carrying a different character than Dubrovnik. The M/Y Lady Michelle gave the production a new yacht profile to work with, and an 18-episode run gave the season room to develop its crew dynamics across multiple departments. Captain Sandy's command faced the department-level friction the format runs on. The Adriatic setting delivered visually without asking for editorial assistance. A dependable mid-run entry that earns its place in the canon without reaching the upper tier.
 
+## 10. Season 10 — Barcelona II
+
+tag: A Barcelona return with a genuine format first — a new yacht and a charter-guest matchmaker twist.
+slot_argument: Barcelona II lacks Athens's or Como's claim to new geography — a second trip to the same city. What it adds is a real format wrinkle (the matchmaker charter), a new yacht, and an 18-episode run. Dependable, Sibenik-mold, not groundbreaking.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Season 10 sends Below Deck Mediterranean back to Barcelona for the first time since Season 3, this time with Captain Sandy Yawn in command rather than João Franco. The location argument is weaker than Malta's or Athens's — this is a return, not a first — but the season adds real texture elsewhere. The M/Y Bravado, a new 147-foot yacht, gives the production a different profile to shoot, and the 18-episode run matches Sibenik's length. The charter-guest matchmaker twist is a genuine format first, the kind of structural addition the methodology rewards. It lands where Sibenik does: a dependable mid-canon season that works the format cleanly without redefining it.
+
 ## 9. Season 9 — Athens
 
 tag: The franchise's first Athens season — a genuine geographic expansion that's still finding its cast ceiling.
 slot_argument: Athens was a franchise first — new Aegean geography, a coastline the show hadn't worked before. The location argument is strong; the cast argument is still developing. A season that earns mid-canon now and may move with distance.
-community_rank_hint: rank=6 delta=0 sentiment=hold
+community_rank_hint: rank=7 delta=0 sentiment=hold
 
 Season 9 marked the franchise's first time filming in Athens — the Greek capital's coastline and the Aegean setting giving the production geography it hadn't used before. The M/Y Purpose's Trinity-built profile suited the Aegean scale. Captain Sandy's command maintained the organizational structure the format relies on. The cast brought enough interpersonal texture across departments to sustain 17 episodes. A notable franchise expansion that lands in the honest middle of the canon — the location is the argument; the cast is still developing one.
 
@@ -82,7 +90,7 @@ Season 9 marked the franchise's first time filming in Athens — the Greek capit
 
 tag: The origin run — the Med spinoff assembled its identity off the coast of Montenegro.
 slot_argument: The founding season established the franchise template — captain authority as organizing principle, Med location as visual texture, charter guests as external pressure. Rough in the way origin runs are, essential for the same reason.
-community_rank_hint: rank=7 delta=0 sentiment=hold
+community_rank_hint: rank=8 delta=0 sentiment=hold
 
 The Below Deck Mediterranean origin. The Kotor Bay setting gave the show a European character that distinguished it from the Caribbean parent — tighter anchorages, stonewalled port towns, a visual register that needed less editorial framing to pay off. Captain Sandy established her command style across a crew that hadn't worked together, under production conditions that were still finding the right rhythms for the spinoff. The season assembles the format live, the way origin runs always do, and the rough edges are part of the record. What came after built on what was set here.
 
@@ -90,7 +98,7 @@ The Below Deck Mediterranean origin. The Kotor Bay setting gave the show a Europ
 
 tag: The Riviera run — strong visual material on the Ligurian coast, a cast that took longer to catch.
 slot_argument: The Italian Riviera gave the franchise strong visual material — Genoa, the Ligurian coast, the 180-foot M/Y Mustique. The cast took longer to generate friction than the run needed; the back half did most of the work.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Season 8 put the franchise on the Italian Riviera — Genoa and the Ligurian coast providing some of the strongest visual material the show had worked with since Como. The M/Y Mustique at 180 feet gave charters a large-format yacht profile. Captain Sandy's command held through a cast that took time to find the department-level friction the format runs on. When the dynamics settled, they produced real tension. The season works; it just works harder than the Malta run to get there.
 
@@ -98,6 +106,6 @@ Season 8 put the franchise on the Italian Riviera — Genoa and the Ligurian coa
 
 tag: The Mallorca season — functional Med, steady Sandy command, cast chemistry that never quite catches.
 slot_argument: Mallorca and Ibiza gave the show strong western Med material. Captain Sandy's command kept the season organized. The cast produced department friction but never found the sustained chemistry that elevates a season above its mechanics.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 The reliable entry in the founding run — Captain Sandy back at the helm, the yacht working Mallorca's coves and the Ibiza stretch, the format running cleanly through its charter structure. The western Mediterranean setting delivered strong visual material. What's missing is the cast chemistry that elevates the format above its mechanics. Department-level friction is present but no storyline finds sustained traction. A season that works through its episodes and leaves the format exactly where it found it. The Como season proved what a more adventurous location change could do with the same structure.

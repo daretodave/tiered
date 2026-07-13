@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 8
 title: "Italian Riviera"
-canonical_position: 8
+canonical_position: 9
 premiere_date: "2023-09-25"
 location: "Italian Riviera and Genoa, Italy"
 host: "Sandy Yawn"

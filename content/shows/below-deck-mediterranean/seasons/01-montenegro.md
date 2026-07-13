@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 1
 title: "Montenegro"
-canonical_position: 7
+canonical_position: 8
 premiere_date: "2016-05-03"
 location: "Kotor Bay, Montenegro"
 host: "Sandy Yawn"
