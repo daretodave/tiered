@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| rhoslc | 1/7 | 6 |
 | the-circle | 1/7 | 6 |
 | shark-tank | 11/18 | 7 |
 | rhom | 1/8 | 7 |
@@ -649,6 +648,38 @@ Four dated finales filed to `content/calendar.yml` this pass
   confirmed the series finale, no further seasons expected); no
   season-count correction needed (`seasons: 6` was already
   accurate). Gap table row removed — show fully drained.
+
+- **rhoslc** — DRAINED this tick (cloud drain, 2026-07-13): the
+  gap table's "declared 7" was wrong — scout research confirms
+  the show has aired exactly 6 seasons as of this tick (matching
+  the frontmatter's existing `seasons: 6`, which needed no
+  correction); Season 7 is renewed and currently in production
+  (with a filming suspension/resumption around Feb–Mar 2026) but
+  has no announced premiere date — same confirmed-but-unaired
+  precedent as the other starred rows, deferred until it airs.
+  Seasons 2 (2021–22, all six founding women return plus new
+  housewife Jennie Nguyen, the show's longest order at 24
+  episodes), 3 (2022–23, the cast contracts to a core four after
+  Jen Shah's departure and Mary Cosby stepping back, the
+  franchise's tightest order since the debut plus a widely
+  discussed two-part reunion), 4 (2023–24, Angie Katsanevas and
+  Monica Garcia join as new full housewives and Cosby returns in
+  a reduced friend-of role, a rebuild season), 5 (2024–25, Cosby
+  is promoted back to full housewife, Bronwyn Newport joins, and
+  two friends of the cast round out the show's fullest ensemble
+  yet), and 6 (2025–26, all seven full housewives from the prior
+  year return with zero new departures, the most cast-stable
+  season the show has run) filed, completing the show's true 6/6
+  count. `canon.md` fully rebased across all six seasons: Season
+  1 unchanged at #1 (the founding cast's specificity still
+  unmatched), Season 6 ranked #2 (settled, zero-turnover
+  maturity), Season 5 ranked #3 (fullest ensemble, but scale over
+  focus), Season 4 ranked #4 (a solid rebuild), Season 2 ranked
+  #5 (the longest order stretches thin), Season 3 ranked #6
+  (real cast instability, despite a tight order and a memorable
+  reunion). Every season's `canonical_position` updated to match.
+  `era_bands` skipped (only 6 seasons, below the 8-season
+  threshold). Gap table row removed — show fully drained.
 
 ## Show-add log
 
