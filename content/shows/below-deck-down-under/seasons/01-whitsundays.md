@@ -2,7 +2,7 @@
 show: below-deck-down-under
 number: 1
 title: "Whitsundays"
-canonical_position: 1
+canonical_position: 2
 premiere_date: "2022-03-17"
 location: "Whitsundays, Queensland, Australia"
 host: "Jason Chambers"

@@ -2,7 +2,7 @@
 show: below-deck-down-under
 number: 2
 title: "Western Australia"
-canonical_position: 2
+canonical_position: 4
 premiere_date: "2023-07-17"
 location: "Ningaloo Reef, Western Australia, Australia"
 host: "Jason Chambers"
