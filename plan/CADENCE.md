@@ -70,8 +70,8 @@ pass).
 | project-runway | 21/22 | 1* |
 | love-island-us | 7/8 | 1* |
 | american-idol | 24/25 | 1* |
+| rhoc | 19/20 | 1* |
 | hells-kitchen | 24/26 | 2 |
-| rhoc | 18/20 | 2 |
 | masterchef-australia | 16/18 | 2 |
 | below-deck-mediterranean | 9/11 | 2 |
 | masked-singer | 13/15 | 2 |
@@ -267,6 +267,38 @@ blind count bump:
   May 2026 upfronts) but not expected to premiere until 2027 —
   same confirmed-but-unaired precedent as the other `1*` rows
   above; deferred until a premiere date lands in the past.
+- **love-island-us** (gap row marked `1*`, cloud drain tick
+  2026-07-13) — Season 8's finale aired 2026-07-12 as scheduled,
+  but Bravo-style precedent applies: a separate reunion special is
+  confirmed for 2026-08-31, seven weeks out. Same
+  confirmed-but-unconcluded precedent as the rhoa reunion
+  deferral above; Season 8 is NOT filed this tick (no season file
+  exists yet — it would need full authoring, not just a ranking
+  note). The `<!-- finale-shift:love-island-us:8 -->` AUDIT row
+  stays Pending with a deferral note rather than draining;
+  revisit once the reunion airs. This tick's Rule 2 pick moved to
+  the next smallest-gap show instead (rhoc, below).
+- **rhoc** — DRAINED this tick (cloud drain, 2026-07-13): Season
+  19 aired and fully concluded July–November 2025 (regular run
+  finale 2025-10-30, three-part reunion concluding 2025-11-20);
+  filed this tick as
+  `content/shows/rhoc/seasons/19-the-resurfacing.md` (editorial
+  title — RHOC seasons carry no official Bravo subtitle, matching
+  this catalog's existing house convention for the show).
+  `canon.md` rebased: new entry inserted at rank 17 (Gretchen
+  Rossi's return as a "friend of the housewives" after a 12-year
+  hiatus reads as sharper hook energy than S18's plain
+  continuation, but below S17's full-cast-return weight), S18
+  "The Continuation" 17→18, S15 "The Bubble" 18→19. Show
+  frontmatter `seasons` bumped 18→19, `blurb` updated to "19
+  seasons."; `tagline`/`card_tagline` carry no season-count
+  language, no change needed. `revival-era` band `[2021, 2026]`
+  already covered the 2025 premiere/finale, no widening needed.
+  Season 20 premiered 2026-07-09 and is currently airing (only
+  the premiere had aired as of this tick's 2026-07-13 reference
+  date) — no finale or reunion date announced. Same
+  confirmed-but-unconcluded precedent as the other `1*` rows
+  above; deferred until the season (and its reunion) concludes.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
