@@ -2,7 +2,7 @@
 show: queer-eye
 number: 4
 title: "Home State"
-canonical_position: 5
+canonical_position: 6
 premiere_date: "2019-07-19"
 ep_count: 8
 location: "Kansas City, Missouri, USA — with an episode one detour to Illinois"

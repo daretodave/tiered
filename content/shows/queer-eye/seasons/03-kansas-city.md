@@ -2,7 +2,7 @@
 show: queer-eye
 number: 3
 title: "Kansas City"
-canonical_position: 4
+canonical_position: 5
 premiere_date: "2019-03-15"
 ep_count: 8
 location: "Kansas City, Missouri, USA"

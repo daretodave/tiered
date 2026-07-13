@@ -2,7 +2,7 @@
 show: queer-eye
 number: 5
 title: "Philadelphia"
-canonical_position: 3
+canonical_position: 4
 premiere_date: "2020-06-05"
 ep_count: 10
 location: "Philadelphia, Pennsylvania, USA"

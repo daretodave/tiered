@@ -2,7 +2,7 @@
 show: queer-eye
 number: 6
 title: "Austin"
-canonical_position: 6
+canonical_position: 8
 premiere_date: "2021-12-31"
 ep_count: 10
 location: "Austin, Texas, USA"
