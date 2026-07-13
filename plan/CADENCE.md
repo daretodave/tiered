@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| too-hot-to-handle | 1/6 | 5 |
 | rhoslc | 1/7 | 6 |
 | the-circle | 1/7 | 6 |
 | shark-tank | 11/18 | 7 |
@@ -620,6 +619,36 @@ Four dated finales filed to `content/calendar.yml` this pass
   `four-chair-era` [2022, 2025] added to cover Series 4-7 —
   contiguous, no gaps, covering the full 2019-2025 aired span.
   Gap table row removed — show fully drained.
+
+- **too-hot-to-handle** — DRAINED this tick (cloud drain,
+  2026-07-13): Season 2 (2021, Turks and Caicos debut — the
+  first season to award the prize to a single individual winner
+  rather than splitting it), Season 3 (2022, prize doubled to
+  $200,000, released as a single-day full-season drop, reverted
+  to a dual couple-plus-single winner structure), Season 4 (2022,
+  the "Wild Love" fake-show cover story — a structural first
+  built to stop cast members who recognized the real premise
+  from gaming it), Season 5 (2023, the steadiest entry — no new
+  mechanic, the established rolling-cast format run with
+  confidence), and Season 6 (2024, the confirmed series finale —
+  the counterpart "Bad Lana" AI inverting the no-penalty rule for
+  stretches of the run, the first multi-couple prize split, first
+  cast-transparency casting, and the format's first
+  returning-alumni crossover) filed, completing the show's
+  declared 6/6 count. `canon.md` fully rebased: Season 6 ranked
+  #1 (the finale season's pile of structural firsts), Season 1
+  (previously #1) settles to #2 (the founding season, still
+  unmatched for rawness), Season 4 ranked #3 (the boldest
+  mid-run structural swing), Season 3 ranked #4 (real but
+  smaller scale-up news), Season 2 ranked #5 (a genuine
+  experiment season 3 immediately reverted), Season 5 ranked #6
+  (steady execution, no structural first). Every season's
+  `canonical_position` updated to match. `era_bands` skipped
+  (only 6 seasons, below the 8-season threshold). Show
+  frontmatter `status` corrected `hiatus` → `ended` (Season 6 is
+  confirmed the series finale, no further seasons expected); no
+  season-count correction needed (`seasons: 6` was already
+  accurate). Gap table row removed — show fully drained.
 
 ## Show-add log
 
