@@ -6,7 +6,7 @@ premiere_date: 2010-03-14
 ep_count: 12
 location: "New York City, New York"
 host: "Donald Trump"
-canonical_position: 10
+canonical_position: 12
 eyebrow: "Aired spring 2010 · NBC · celebrity era, third edition"
 lede: "Fourteen celebrities split into Rocksolid and Tenacity, with a mid-season reshuffle of its own. The boardroom's rhythm swings hard — one episode cuts three people before a task even starts, another lets the whole cast stay."
 pull: "A season where the boardroom's own rhythm becomes the least predictable part of the format."

@@ -1,7 +1,7 @@
 ---
 show: the-apprentice
 editor: tiered.tv editor
-last_revised: 2026-07-04
+last_revised: 2026-07-13
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched The Apprentice from season one through the celebrity pivot and the NBC finale. The ranking weights what the format was capable of at its best — smart task design, real competitive tension, a boardroom with stakes. Celebrity seasons and the late NBC years are ranked against the founding-era standard, not their own lower ceiling."
 meth_how_h: "How I weigh it"
@@ -89,11 +89,27 @@ community_rank_hint: { rank: 8, delta: 0, sentiment: hold }
 
 Season seven is the hinge the whole show turns on. Swapping civilian hopefuls for fourteen celebrities changes what a firing means — nobody here is losing a job, and the boardroom has to find new stakes to replace the one the founding era built its tension around. Charity proceeds give the format a new argument for caring about the outcome, and the gendered team split (all women against all men) is a clean structural hook. Weighed against the founding-era standard, the tasks read thinner and the competitive stakes softer. But no other season changes the show's fundamental premise this much, for better and worse.
 
+## 13. Season Thirteen
+
+tag: The only all-returning cast the format ever ran — a structural first, not a retread.
+slot_argument: Every competitor in season thirteen has already played a celebrity cycle, competing for a second shot with the format's shape already understood. Genuinely new in a way most celebrity seasons aren't.
+community_rank_hint: { rank: 9, delta: 0, sentiment: hold }
+
+Season thirteen is the only entry in the show's run cast entirely from returning players — every competitor has already survived a prior celebrity cycle and returns for a second shot at the boardroom. That familiarity changes what the season is: contestants play with a sharper read on the format's pressure points than any first-time cast could manage, and the strategy sharpens accordingly. It doesn't touch the founding era's standard — the stakes are still charity, not a career, and the tasks read the same as any other celebrity cycle. But no other celebrity-era season made a genuine structural change to how the cast itself was assembled, and that earns it a real edge over the seasons around it.
+
+## 14. Season Fourteen
+
+tag: The last season built on the show's original hosting continuity — a modest but real historical hook.
+slot_argument: Nothing changes on screen — the tasks and boardroom run exactly like the six celebrity cycles before it. What earns this season a slot above the format's rougher stretches is what happened after it aired.
+community_rank_hint: { rank: 10, delta: 0, sentiment: hold }
+
+Judged purely on what airs, season fourteen is a straightforward celebrity cycle — the same charity stakes, the same task rhythm, the same boardroom logic the format had settled into six cycles earlier. Nothing here reinvents anything. What separates it from the seasons around it is retrospective weight: this turned out to be the final season built on the continuity the show had run on since its debut. That's a modest factor, not a headline — the canon isn't ranking history, it's ranking episodes — but it's real enough to lift this season a notch above entries with comparable on-screen substance and nothing else to point to.
+
 ## 8. Season Eight
 
 tag: Celebrity era, round two — a roster reshuffle and a double firing the founding format never needed.
 slot_argument: Season eight's gender-split teams collapse mid-run when the men's roster thins, forcing a reshuffle the founding format never needed. A double elimination and a five-criteria final task feel engineered rather than earned.
-community_rank_hint: { rank: 9, delta: 0, sentiment: hold }
+community_rank_hint: { rank: 11, delta: 0, sentiment: hold }
 
 Season eight is the celebrity era working through its growing pains. The gender-based Athena-versus-KOTU split looked clean on paper, but attrition on the men's side forced a mid-season reshuffle the founding format never had to reach for — a sign the celebrity casting pool doesn't always sustain a full run. The double-elimination episode and the five-criteria final task both read as the show engineering drama rather than letting it emerge from the tasks, the exact inversion of what made the founding seasons work. Judged against that standard, this is a season patched together in real time rather than one that runs clean.
 
@@ -101,6 +117,30 @@ Season eight is the celebrity era working through its growing pains. The gender-
 
 tag: Celebrity era, third try — a boardroom whose own rhythm swings from brutal to bloodless week to week.
 slot_argument: Season nine repeats the reshuffle pattern from the season before it, but its real mark is boardroom volatility — one episode cuts three people before a task starts, another fires nobody.
-community_rank_hint: { rank: 10, delta: 0, sentiment: hold }
+community_rank_hint: { rank: 12, delta: 0, sentiment: hold }
 
 Season nine is the celebrity era's least settled entry. The Rocksolid-versus-Tenacity split reshuffles partway through, echoing a pattern the format had already leaned on the season before — a sign the celebrity casting well produces less durable team chemistry than the founding-era draft did. The real tell is the boardroom's own inconsistency: one week removes three people before a single task has even started, and another week removes nobody at all. That kind of swing reads as a format without a stable internal logic, the opposite of the founding era's consistent week-to-week criteria. It's the weakest case the celebrity pivot has made yet.
+
+## 12. Season Twelve
+
+tag: Celebrity era, comfortable middle — steady format, casting drifting toward the wider reality-TV genre.
+slot_argument: No structural change, no growing pains — just the format running itself competently while the casting starts pulling more directly from other reality shows.
+community_rank_hint: { rank: 13, delta: 0, sentiment: hold }
+
+Season twelve doesn't do anything the format hasn't already done. The charity-stakes structure holds steady, the tasks run the same shape they've run since the pivot, and the boardroom applies the same logic it settled into cycles earlier. The one thing worth noting is the casting: this cycle leans harder into names pulled from pop music and other reality franchises than any cycle before it, an early sign of the show drawing directly from the genre it once stood apart from. That's a minor texture shift, not a real argument for the season. Ranked against a format that isn't reaching for anything new, this sits in the celebrity era's comfortable, forgettable middle.
+
+## 11. Season Eleven
+
+tag: The celebrity format resuming after one season away — no new argument, just the format back in its groove.
+slot_argument: Season eleven doesn't do anything season ten's civilian detour didn't already prove was optional. The show returns to celebrities and charity stakes, and nothing about the return distinguishes it.
+community_rank_hint: { rank: 14, delta: 0, sentiment: hold }
+
+Season eleven's whole story is a return trip. After one season spent back with civilian hopefuls, the show goes back to celebrities and charity stakes, pulling a cast from music, sports, and reality television into the same structure the format had already run three times by this point. There's no new wrinkle to point to — the tasks look like the tasks from the cycles before it, the boardroom runs the same logic, and the casting doesn't push in any new direction the way the season after it does. It's the celebrity era at its most settled, which also makes it the celebrity era at its least memorable. A season with nothing wrong and nothing to argue for.
+
+## 15. Season Fifteen
+
+tag: A full reboot — new host, new titles, new boardroom, and the hardest break in the show's history.
+slot_argument: Arnold Schwarzenegger replaces Trump entirely, the first host change the format has ever made. Judged against the founding-era standard this canon holds every season to, a full reset with no continuity earns the bottom slot.
+community_rank_hint: { rank: 15, delta: 0, sentiment: hold }
+
+The New Celebrity Apprentice is the hardest discontinuity in the show's run. Arnold Schwarzenegger takes over hosting duties — the first change of host the format has ever made — and the new opening titles and rebuilt boardroom signal a clean break from everything before it, including the celebrity cycles it's nominally continuing. The task format is recognizable, but recognizable tasks aren't what this canon rewards; the standard here is the founding era's task design, cast chemistry, and boardroom stakes, and a full reset carries none of the accumulated continuity that made the earlier seasons legible as a single format. It's a real television event and the weakest case in the canon for what The Apprentice does well.

@@ -6,7 +6,7 @@ premiere_date: 2009-03-01
 ep_count: 12
 location: "New York City, New York"
 host: "Donald Trump"
-canonical_position: 9
+canonical_position: 11
 eyebrow: "Aired spring 2009 · NBC · celebrity era, second edition"
 lede: "Sixteen celebrities return for a second charity-stakes run, split into Athena and KOTU, until a depleted men's roster forces a mid-season reshuffle. A double-elimination episode follows."
 pull: "A season the show has to rebuild on the fly, mid-run."
