@@ -75,7 +75,7 @@ pass).
 | hells-kitchen | 24/26 | 2* |
 | below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 14/15 | 1* |
-| below-deck-down-under | 2/5 | 3 |
+| below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 1/4 | 3 |
 | perfect-match | 1/4 | 3 |
 | rhod | 1/5 | 4 |
@@ -391,6 +391,38 @@ blind count bump:
   its remaining season deferred as confirmed-but-unaired on the
   prior tick, 2026-07-13, but the row was left unmarked; fixed
   for table-convention consistency, no new research performed.)
+- **below-deck-down-under** — DRAINED this tick (cloud drain,
+  2026-07-13): Season 3 ("Seychelles") aired February 3 – May 26,
+  2025 (17 episodes), fully concluded — the franchise's first
+  season entirely outside Australian waters, introducing the new
+  flagship yacht *Katina* alongside a mostly new crew. Season 4
+  ("Canouan") aired February 2 – June 1, 2026 (18 episodes), fully
+  concluded — first Caribbean setting for this branch, a
+  veteran-heavy returning crew (Ben Robinson, Daisy Kelliher among
+  them), and a franchise-first charter crossover with the full
+  cast of The Real Housewives of Salt Lake City Season 6 as
+  guests; reportedly the branch's best cross-platform performance
+  in two years. Filed this tick as
+  `content/shows/below-deck-down-under/seasons/03-seychelles.md`
+  and `04-canouan.md`. `canon.md` rebased: Season 4 ranked #1
+  (veteran crew register + the crossover-charter structural
+  first outweigh the Whitsundays' origin-season case), Season 1
+  "Whitsundays" 1→2, Season 3 "Seychelles" ranked #3 (ambition —
+  new yacht, new setting — without the Australian seasons'
+  banked crew chemistry), Season 2 "Western Australia" 2→4. Show
+  frontmatter `seasons` bumped 2→4, `blurb` rewritten to drop the
+  now-stale "Australian waters" present-tense claim (the founding
+  premise `tagline`/`card_tagline` left as-is — historically
+  accurate, describes the show's origin). `founding-run` era band
+  narrowed to `[2022, 2024]` (Australia-only run, covering the
+  gapped 2024) and a new `global-expansion` band added at
+  `[2025, 2026]` (Seychelles + Caribbean) — contiguous, no gaps,
+  reflecting a real premise shift (the franchise leaving
+  Australian waters despite the "Down Under" name). Season 5 was
+  renewed May 2026 with Captain Jason Chambers confirmed
+  returning, but no premiere date set (industry reporting points
+  to early 2027) — same confirmed-but-unaired precedent as the
+  other `1*` rows above; deferred until a premiere date lands.
 - **americas-next-top-model** (ended) — Tyra Banks says a cycle
   25 is "in the works" (Feb 2026); no formal network greenlight.
   Watch, don't drain.
