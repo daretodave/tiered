@@ -3,7 +3,7 @@ show: rhod
 number: 1
 slug: season-1
 title: "Season 1"
-canonical_position: 1
+canonical_position: 3
 premiere_date: "2016-04-11"
 location: "Dallas, Texas"
 ep_count: 11
