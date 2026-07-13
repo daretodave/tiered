@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| rhod | 1/5 | 4 |
 | queer-eye | 6/10 | 4 |
 | selling-sunset | 6/10 | 4 |
 | traitors-uk | 1/5 | 4 |
@@ -446,6 +445,22 @@ blind count bump:
   by ABC days before its planned 2026-03-22 premiere following a
   resurfaced controversy; airing status is unresolved. No season
   added to the gap table pending clarity.
+- **rhod** — DRAINED this tick (content-curator authoring pass,
+  2026-07-13): Seasons 2 ("The Expansion," 2017), 3 ("The
+  Consolidation," 2018), 4 ("The Reckoning," 2019–20), and 5
+  ("The Closing Chapter," 2021, Bravo's billed final season)
+  filed, completing the show's 5/5 count. `canon.md` fully
+  rebased: Season 3 ranked #1 (the only season with zero cast
+  turnover — full operational fluency), Season 2 #2 (the
+  cast-expansion season that finds the show's most durable
+  six-woman configuration), Season 1 #3 (was #1; historically
+  essential founding season, now outranked by the two settled
+  six-woman years), Season 4 #4 (cast churn plus a widely
+  reported reunion controversy pulls focus from the on-screen
+  format work), Season 5 #5 (billed final season; a resurfaced
+  off-camera controversy outweighs the on-screen storylines).
+  Every season file's `canonical_position` updated to match. Gap
+  table row removed — show fully drained.
 
 Status-field corrections noted for the next tick that touches
 these shows (not actioned this pass — sweep only owns the gap
