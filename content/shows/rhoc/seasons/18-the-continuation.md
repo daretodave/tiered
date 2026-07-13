@@ -2,7 +2,7 @@
 show: rhoc
 number: 18
 title: "The Continuation"
-canonical_position: 17
+canonical_position: 18
 location: "Orange County, California"
 host: Andy Cohen
 premiere_date: "2023-09-06"

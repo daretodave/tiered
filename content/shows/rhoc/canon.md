@@ -1,13 +1,13 @@
 ---
 show: rhoc
 editor: tiered.tv editor
-last_revised: 2026-06-22
+last_revised: 2026-07-13
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. All eighteen seasons of RHOC ranked here — the founding Coto de Caza era through the revival era's current run. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
+meth_who_p: "tiered.tv's editor. All nineteen seasons of RHOC ranked here — the founding Coto de Caza era through the revival era's current run. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
 meth_how_h: "How I weigh it"
 meth_how_p: "Originator status doesn't automatically confer quality. Seasons are weighed on what they did with the format — whether the social world generated genuine pressure or coasted on novelty, whether the casting carried the episodes or the production filled around it. The OC setting is a constant; the question is always whether it earns its keep."
 meth_when_h: "When I revisit"
-meth_when_p: "All eighteen seasons are seeded here — the founding era through the revival era. The ranking covers the full run to date; the order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "All nineteen seasons are seeded here — the founding era through the revival era. The ranking covers the full run to date; the order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
 tier_s_blurb: "Seasons where the OC social world functions as genuine pressure system — casting confident, format fluent, the setting doing real narrative work."
 tier_a_blurb: "Seasons where the Orange County architecture works — cast chemistry with stakes, the gated-community premise running with purpose and clarity."
 tier_b_blurb: "Solid seasons running the format competently — watchable, with enough genuine social texture to earn their place, even when the casting or situation wasn't at peak pressure."
@@ -153,16 +153,24 @@ Season twelve opens the transition era in earnest. Without Heather Dubrow, the s
 ## 13. The Overhaul
 
 tag: The transition era fully underway — two new members, a founding figure reduced, the rebuild in progress.
-slot_argument: Two new members, one founder reduced — the most transitional RHOC season. Integration uneven, ensemble not assembled. Sixteenth; above S18 and S15 because the construction work has clearer direction.
+slot_argument: Two new members, one founder reduced — the most transitional RHOC season. Integration uneven, ensemble not assembled. Sixteenth; above S19, S18, and S15 because the construction work has clearer direction.
 community_rank_hint: rank=16 delta=0 sentiment=hold
 
 Season thirteen is the transition era fully underway — two new cast members, Vicki Gunvalson in a reduced role, and a show in genuine reconstruction mode. Gina Kirschenheiter and Emily Simpson arrive with chemistry between themselves that is credible and, in some scenes, the season's strongest material. But their integration with the existing cast runs uneven across twenty-two episodes, and the show never quite resolves the tension between the cast it has and the cast it's building. Sixteenth in the full canon — not without merit, but the construction work is visible, and the gap between potential and execution is real.
 
+## 19. The Resurfacing
+
+tag: A marquee comeback lands on a cast that already knows its own rhythms.
+slot_argument: Slots seventeenth — above S18 because Gretchen Rossi's headline return gives sharper hook energy than a plain continuation. Below S17 because a friend-of-the-housewives role carries less structural weight than a full cast return.
+community_rank_hint: rank=17 delta=new sentiment=up
+
+Season nineteen runs the revival era's now-familiar seven-person configuration and layers in the year's biggest marketing swing: Gretchen Rossi returns as a friend of the housewives after twelve years away, giving the season a hook the format hasn't had since Heather Dubrow's own comeback. The reappearance doesn't fully reset the social geometry the way a full housewife addition would — Gretchen's friend-of status limits how much weight she can carry structurally — but it injects real freshness into a cast that has otherwise settled into known patterns. Katie Ginella's run with the show closes out here. A capable season with genuine occasion energy, ahead of the plainer continuation that follows it.
+
 ## 18. The Continuation
 
 tag: The revival era in steady state — capable cast, familiar tensions, cruise altitude.
-slot_argument: Slots seventeenth — below S13 because the transition era's construction work has more momentum, and above S15 because the COVID-impacted production is a more severe constraint than a capable ensemble in familiar patterns.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+slot_argument: Slots eighteenth — below S19 because Gretchen Rossi's return gives that season a sharper hook. Above S15 because the COVID-impacted production is a harsher constraint than a capable ensemble in familiar patterns.
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season eighteen continues the revival-era configuration with Katie Ginella joining an ensemble that has settled into its social geometry. The Shannon Beador and Tamra Judge dynamic that structured season seventeen remains the show's central axis, and the production runs that architecture competently across the season. The cast knows its own patterns well enough to generate credible friction. The season is solid and watchable — the show running a capable configuration without pushing the format to new pressure. Honest, middle-tier television that belongs in the lower half of the canon without embarrassment.
 
@@ -170,6 +178,6 @@ Season eighteen continues the revival-era configuration with Katie Ginella joini
 
 tag: The most constrained production in the show's run — pandemic context shapes everything.
 slot_argument: Last in the canon. The COVID bubble production compresses the social world the format depends on, and the constrained geography limits what the cast can do. A capable cast in an impossible context — the constraints are the story.
-community_rank_hint: rank=18 delta=0 sentiment=hold
+community_rank_hint: rank=19 delta=0 sentiment=hold
 
 Season fifteen is the franchise's most constrained production: filmed under pandemic restrictions at a Newport Beach resort, the cast confined to tighter geography than any prior Orange County season. The bubble setting limits the spontaneous movement and outside-world texture that give the format its social range — the show runs best when the Orange County world is open, and this season starts with it closed. The cast generates moments of genuine chemistry. But the production context defines the season more than the cast does, and the format can't fully recover from the constraint. Last in the canon, honestly placed.
