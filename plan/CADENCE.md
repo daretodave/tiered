@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| traitors-uk | 1/5 | 4 |
 | the-apprentice | 10/15 | 5 |
 | dragrace-uk | 3/8 | 5 |
 | too-hot-to-handle | 1/6 | 5 |
@@ -517,6 +516,32 @@ blind count bump:
   `meth_who_p`/`meth_when_p` rewritten to reflect all nine seasons
   now ranked, Season 10 flagged as next-due once it airs. Gap
   table row removed — show fully drained.
+- **traitors-uk** — DRAINED this tick (cloud drain, 2026-07-13):
+  the gap table's "declared 5" was wrong — scout research confirms
+  BBC's mainline (civilian) numbering runs 1–4 as of this tick
+  (matching the frontmatter's existing `seasons: 4`, which needed
+  no correction); the "5" appears to have come from a fan-wiki
+  overall-series count that folds in the separate Celebrity
+  Traitors UK spinoff, which BBC/Deadline number independently and
+  which this catalog does not track under `traitors-uk`. Series 5
+  (civilian) is renewed with Claudia Winkleman confirmed returning
+  but no premiere date locked (expected ~January 2027) — same
+  confirmed-but-unaired precedent as the other starred rows, not
+  filed. Series 2 (Jan 2024, 12 eps), 3 (Jan 2025, thrice-weekly
+  Wed–Fri broadcast, exact episode count unconfirmed so `ep_count`
+  omitted), and 4 (Jan 2026, 12 eps, paired for the first time with
+  the companion after-show "Uncloaked" hosted by Ed Gamble) filed,
+  completing the show's true 4/4 count. `canon.md` rebased: Series
+  2 ranked #1 (the format's most assured outing — a returning host
+  and a season's hindsight producing the tightest pacing of the
+  four), Series 1 "the original blueprint" 1→2, Series 4 ranked #3
+  (the Uncloaked after-show plus a Traitors-literate cast reads as
+  the most elaborate production, just below the peak), Series 3
+  ranked #4 (the thrice-weekly compression trades the format's
+  usual slow burn for speed — a legitimate experiment, but the
+  weakest entry on patience). Every season's `canonical_position`
+  updated to match. `era_bands` skipped (only 4 seasons, below the
+  8-season threshold). Gap table row removed — show fully drained.
 
 Status-field corrections noted for the next tick that touches
 these shows (not actioned this pass — sweep only owns the gap
