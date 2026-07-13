@@ -76,7 +76,7 @@ pass).
 | below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
-| the-ultimatum | 1/4 | 3 |
+| the-ultimatum | 3/4 | 1* |
 | perfect-match | 1/4 | 3 |
 | rhod | 1/5 | 4 |
 | queer-eye | 6/10 | 4 |
