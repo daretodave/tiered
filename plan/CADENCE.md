@@ -71,8 +71,8 @@ pass).
 | love-island-us | 7/8 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
-| hells-kitchen | 24/26 | 2 |
-| masterchef-australia | 16/18 | 2 |
+| masterchef-australia | 17/18 | 1 |
+| hells-kitchen | 24/26 | 2* |
 | below-deck-mediterranean | 9/11 | 2 |
 | masked-singer | 13/15 | 2 |
 | below-deck-down-under | 2/5 | 3 |
@@ -299,6 +299,39 @@ blind count bump:
   date) — no finale or reunion date announced. Same
   confirmed-but-unconcluded precedent as the other `1*` rows
   above; deferred until the season (and its reunion) concludes.
+- **hells-kitchen** — gap row re-marked `2*` this tick (cloud drain,
+  2026-07-13): both missing seasons are confirmed but unaired.
+  Season 25 (the franchise's 25th-anniversary season) has no
+  premiere date beyond "fall 2026" as of this tick; Season 26 has
+  no announced details beyond a double-renewal alongside Season
+  25 (both film at Foxwoods Resort Casino, Connecticut). Same
+  confirmed-but-unaired precedent as the `1*` rows above; deferred
+  until a premiere date lands. This tick's Rule 2 pick moved to
+  the next smallest-gap show instead (masterchef-australia,
+  below).
+- **masterchef-australia** — DRAINED this tick (cloud drain,
+  2026-07-13): Season 17 ("Back to Win") aired and fully concluded
+  April 28 – August 12, 2025 — the franchise's second all-returnee
+  season, deliberately reusing Season 12's "Back to Win" title six
+  years later on an already-settled four-judge panel (Andy Allen,
+  Poh Ling Yeow, Jean-Christophe Novelli, Sofia Levin — unchanged
+  from Season 16). Filed this tick as
+  `content/shows/masterchef-australia/seasons/17-back-to-win-2025.md`
+  — filename disambiguated with the air year (matching the
+  project-runway `new-york-2023`/`new-york-2025` house convention)
+  since Season 12 already owns the bare `back-to-win` slug;
+  frontmatter `title` still reads the real-world "Back to Win"
+  unchanged. `canon.md` rebased: new entry inserted at rank 3
+  (pairs the returnee-cast floor with a settled panel — strong,
+  but not season 12's "unrepeatable" debut-panel novelty), 14
+  entries below it shifted +1. Show frontmatter `seasons` bumped
+  16→17, `blurb`/`tagline`/`card_tagline` updated 16→17 /
+  sixteen→seventeen. `new-host-era` band widened `[2020, 2024]` →
+  `[2020, 2025]` to cover the 2025 air date. Season 18 premiered
+  2026-04-19 and is currently airing (week 13 as of this tick's
+  reference date, per public episode-count tracking) — no finale
+  date announced. Same confirmed-but-unconcluded precedent as the
+  other `1*` rows above; deferred until the season concludes.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
