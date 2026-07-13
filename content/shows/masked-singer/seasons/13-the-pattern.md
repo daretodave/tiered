@@ -3,7 +3,7 @@ show: masked-singer
 number: 13
 slug: the-pattern
 title: "The Pattern"
-canonical_position: 13
+canonical_position: 14
 premiere_date: "2025-03-26"
 location: "Los Angeles"
 ep_count: 11

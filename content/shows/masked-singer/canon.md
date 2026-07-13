@@ -1,13 +1,13 @@
 ---
 show: masked-singer
 editor: "tiered.tv editor"
-last_revised: 2026-06-23
+last_revised: 2026-07-13
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've tracked The Masked Singer from its Fox debut through its current run. The ranking weighs panel energy, costume spectacle, the caliber of celebrity talent assembled, and whether the guessing conceit stayed genuinely engaging across the full season. These rankings are honest readings of what the format delivered; the early seasons set the ceiling."
 meth_how_h: "How I weigh it"
 meth_how_p: "The central device is the disguise — and the ranking reflects how well each season made the disguise matter. Seasons where the celebrity roster carried real surprise value and the panel's guessing felt earned outscore seasons where the format ran on spectacle alone. Costume design ambition and the clarity of the show's tonal identity are secondary variables."
 meth_when_h: "When I revisit"
-meth_when_p: "The full thirteen-season run is now seeded. Each entry reflects honest standing against the others across the show's founding, expansion, and established eras. The canon will rebase if a future cycle makes a strong enough case to shift the ranking."
+meth_when_p: "The full fourteen-season run is now seeded. Each entry reflects honest standing against the others across the show's founding, expansion, and established eras. The canon will rebase if a future cycle makes a strong enough case to shift the ranking."
 tier_s_blurb: "The founding run, Seasons 1 through 5 — the disguise conceit at its freshest, the celebrity roster still capable of genuine surprise, and the panel's chemistry not yet worn smooth by repetition."
 tier_a_blurb: "Seasons where the disguise conceit found its fullest expression — celebrity caliber, panel chemistry, and production ambition all pulling together."
 tier_b_blurb: "Solid Masked Singer seasons — the format working with energy and spectacle, the celebrity roster delivering genuine surprise value."
@@ -122,10 +122,18 @@ community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Season twelve arrived in fall 2024 completing a spring-fall rhythm that marks the established era's deepest stretch. The format ran exactly as built across eleven prior cycles — ambitious costumes, a celebrity roster calibrated to the guessing conceit, a panel ensemble with years of shared chemistry. The fall premiere context that once anchored the show's largest audiences is now a routine slot rather than an event. That shift in register isn't a quality failure; it's the honest description of a long-running format in its most settled phase. The cadence holds. Twelfth slot.
 
-## 13. Season 13 — The Pattern
+## 14. Season 14 — The Insider
 
-tag: Thirteen cycles of the same format — the pattern as the product's identity.
-slot_argument: Thirteen cycles, same format — the pattern fully transparent to its audience. The show's most self-knowing cycle. Sits last for the established era's furthest reach and cumulative distance from its novelty origins.
+tag: The established era's first real break — a new panel voice after thirteen seasons of the same four chairs.
+slot_argument: Season fourteen breaks the premise thirteen rested on: the franchise's first panel change (Rita Ora for Nicole Scherzinger) plus a new Insider mechanic. A genuine disruption that earns a seat above season thirteen despite arriving later.
 community_rank_hint: rank=13 delta=0 sentiment=hold
 
-Season thirteen is the show's most pattern-settled cycle: thirteen iterations of the same disguise format, the same panel, the same Fox production machinery, and an audience that arrives knowing exactly how to watch. The costume design held. The celebrity roster delivered enough genuine guessing work to justify the format's run. What separates this cycle from the seasons above it is accumulated distance from the debut's urgency — the format is fully transparent to a viewer who has watched it across six years, and the ritual of it is the draw. The pattern is the product now. Thirteenth slot.
+Season fourteen is the established era's genuine outlier. Thirteen straight cycles ran the same panel long enough that season thirteen's entire argument was the pattern itself. Then Rita Ora took the seat Nicole Scherzinger had held since the beginning — the show's most stable set piece finally moved. The season leaned into that shake-up with dense theme-night programming across twelve episodes, and introduced an Insider mechanic that gave one masked contestant a second competitive role behind the scenes. Costume design and celebrity caliber held at established-era standard throughout. What separates this cycle is the disruption itself: the first real change to a format that had gone thirteen seasons without touching its foundation. Thirteenth slot.
+
+## 13. Season 13 — The Pattern
+
+tag: Thirteen cycles of the same format — the pattern as the product, until it wasn't.
+slot_argument: Thirteen cycles, same format — the pattern fully transparent to its audience, the show's most self-knowing cycle. That held until season fourteen broke the continuity it rested on. Sits last, having ceded its case to the season after.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season thirteen is the show's most pattern-settled cycle: thirteen iterations of the same disguise format, the same panel, the same Fox production machinery, and an audience that arrives knowing exactly how to watch. The costume design held. The celebrity roster delivered enough genuine guessing work to justify the format's run. What separates this cycle from the seasons above it is accumulated distance from the debut's urgency — the format is fully transparent to a viewer who has watched it across six years, and the ritual of it is the draw. The pattern is the product now. Fourteenth slot.
