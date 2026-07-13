@@ -3,7 +3,7 @@ show: dragrace-uk
 number: 1
 slug: series-1
 title: "Series 1 (2019)"
-canonical_position: 3
+canonical_position: 7
 premiere_date: 2019-10-03
 ep_count: 8
 location: "3 Mills Studios, London"

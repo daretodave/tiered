@@ -3,7 +3,7 @@ show: dragrace-uk
 number: 3
 slug: series-3
 title: "Series 3 (2021)"
-canonical_position: 2
+canonical_position: 5
 premiere_date: 2021-09-23
 ep_count: 10
 location: "Manchester, England"

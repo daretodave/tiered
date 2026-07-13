@@ -3,7 +3,7 @@ show: dragrace-uk
 number: 2
 slug: series-2
 title: "Series 2 (2021)"
-canonical_position: 1
+canonical_position: 3
 premiere_date: 2021-01-14
 ep_count: 10
 location: "Pinewood Studios, Buckinghamshire, England"
