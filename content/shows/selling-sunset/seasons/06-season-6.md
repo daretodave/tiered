@@ -2,7 +2,7 @@
 show: selling-sunset
 number: 6
 title: "Season 6"
-canonical_position: 5
+canonical_position: 6
 premiere_date: "2023-05-19"
 ep_count: 11
 location: "West Hollywood and Los Angeles, California"

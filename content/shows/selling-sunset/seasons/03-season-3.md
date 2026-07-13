@@ -2,7 +2,7 @@
 show: selling-sunset
 number: 3
 title: "Season 3"
-canonical_position: 6
+canonical_position: 8
 premiere_date: "2020-08-07"
 ep_count: 8
 location: "West Hollywood and Los Angeles, California"
