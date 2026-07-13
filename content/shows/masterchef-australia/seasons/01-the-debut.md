@@ -6,7 +6,7 @@ premiere_date: 2009-04-26
 ep_count: 18
 location: Melbourne, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 10
+canonical_position: 11
 eyebrow: "Aired April 2009 · The season that started it all"
 lede: "MasterChef Australia opens on Network Ten with a nationwide audition search, a three-judge panel with no prior template, and a question the format had never been asked in Australia: how good can a home cook actually get under professional pressure?"
 pull: "A nationwide search, a three-judge panel without a template, and home cooks who didn't know yet what the competition would ask of them."

@@ -6,7 +6,7 @@ premiere_date: 2010-04-19
 ep_count: 70
 location: Melbourne, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 6
+canonical_position: 7
 eyebrow: "Aired April 2010 · The season that proved the format could scale"
 lede: "Season two extends the MasterChef Australia template in nearly every direction — more episodes, more home cooks, a longer audition circuit. Gary Mehigan, George Calombaris, and Matt Preston arrive with the confidence of a panel that knows what it's doing."
 pull: "A longer run, a more confident panel, and the question of whether the format could carry its own weight across a full competition arc."

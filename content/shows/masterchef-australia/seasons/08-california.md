@@ -6,7 +6,7 @@ premiere_date: 2016-04-04
 ep_count: 63
 location: Melbourne, Australia; San Francisco, Napa Valley, San Diego, USA
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 7
+canonical_position: 8
 eyebrow: "Aired April 2016 · The founding era's first international journey"
 lede: "Season eight takes MasterChef Australia abroad for the first time. The penultimate week moves contestants to San Francisco, Napa Valley, and San Diego. Nigella Lawson anchors her own dedicated week in the studio."
 pull: "International travel enters the format for the first time, pushing the cast into unfamiliar terrain at the season's most critical competitive moment."

@@ -6,7 +6,7 @@ premiere_date: 2011-04-18
 ep_count: 58
 location: Melbourne, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 3
+canonical_position: 4
 eyebrow: "Aired April 2011 · The format settling into itself"
 lede: "Season three is when MasterChef Australia knows what it is. The audition circuit has a rhythm, the judging panel has built trust, and the home cooks arriving through the casting rounds are a more technically confident class than either of the first two seasons assembled."
 pull: "The format settled, the judging authoritative, and the rough edges of the debut gone. This is the template."

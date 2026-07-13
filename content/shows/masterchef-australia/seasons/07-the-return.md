@@ -6,7 +6,7 @@ premiere_date: 2015-04-13
 ep_count: 62
 location: Melbourne, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 9
+canonical_position: 10
 eyebrow: "Aired April 2015 · Marco returns, the format holds its register"
 lede: "Season seven runs the founding era's template with quiet confidence. Shannon Bennett replaces Kylie Kwong as recurring Immunity mentor, and Marco Pierre White comes back for a second consecutive dedicated week — the only guest to anchor two straight years of the format."
 pull: "The founding era in reliable form, Marco Pierre White returning, and Shannon Bennett lending the Immunity challenges a consistent culinary presence."

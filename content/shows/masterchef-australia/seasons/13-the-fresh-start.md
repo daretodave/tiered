@@ -6,7 +6,7 @@ premiere_date: 2021-04-19
 ep_count: 61
 location: Melbourne, Uluru, Apollo Bay, Daylesford, Australia
 host: Andy Allen, Melissa Leong, Jock Zonfrillo
-canonical_position: 14
+canonical_position: 15
 eyebrow: "Aired April 2021 · The new panel's first open-audition season"
 lede: "Season thirteen is the new panel's first season with an entirely fresh field. Three Immunity Pins, allocated in the first Mystery Box, are the season's strategic currency. Second Chance Week returns two eliminated contestants. Filming extends to Uluru and regional Victoria."
 pull: "The new panel's first ordinary season — a capable new cast finding its ceiling against judges still calibrating what they want from a fresh field."

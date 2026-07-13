@@ -7,7 +7,7 @@ premiere_date: 2023-05-07
 ep_count: 50
 location: Melbourne, Australia
 host: Andy Allen, Melissa Leong, Jock Zonfrillo
-canonical_position: 15
+canonical_position: 16
 eyebrow: "Aired May 2023 · The season that became a tribute"
 lede: "Season fifteen introduced a secret apron concept — winners' identities concealed from the active field — and blind-tasting immunity challenges. MasterClasses were dropped for the first time. The premiere was delayed one week following the death of judge Jock Zonfrillo."
 pull: "A shorter, structurally transitional season that carries a weight the production couldn't have anticipated — and handles it with honesty."

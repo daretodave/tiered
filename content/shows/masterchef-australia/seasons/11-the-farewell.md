@@ -6,7 +6,7 @@ premiere_date: 2019-07-28
 ep_count: 61
 location: Melbourne, Brisbane, Noosa, Rottnest Island, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 12
+canonical_position: 13
 eyebrow: "Aired July 2019 · The founding trio's last season"
 lede: "Season eleven is the founding trio's final season. Three former contestants replace Shannon Bennett as mentors. The grand finale expands to three finalists. Nigella Lawson and Massimo Bottura both appear. Filming spans Brisbane, Noosa, and Rottnest Island."
 pull: "The founding trio's last season together — a full-length competition with new mentors, an expanded finale, and three panelists working at the limit of a format they built."

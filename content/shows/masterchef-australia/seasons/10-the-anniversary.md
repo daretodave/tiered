@@ -6,7 +6,7 @@ premiere_date: 2018-04-02
 ep_count: 61
 location: Melbourne, Darwin, Dandenong Ranges, Adelaide, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 5
+canonical_position: 6
 eyebrow: "Aired April 2018 · Ten years in, the format at full ambition"
 lede: "Season ten marks the tenth anniversary. Gordon Ramsay makes his first appearance on MasterChef Australia for a dedicated week. Past winners return to judge auditions. A Ten-Year Superpower apron merges immunity and Power Apron advantages into a single hybrid mechanic."
 pull: "A tenth anniversary season that brought Gordon Ramsay to Australian home-cook television for the first time and pushed the format's ambition to match the milestone."

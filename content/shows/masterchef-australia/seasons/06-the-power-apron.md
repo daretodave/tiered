@@ -6,7 +6,7 @@ premiere_date: 2014-04-28
 ep_count: 60
 location: Melbourne, Australia
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 8
+canonical_position: 9
 eyebrow: "Aired April 2014 · The founding era adding its first structural wrinkle"
 lede: "Season six reintroduces the auditions and adds the Power Apron — a strategic advantage carrying across multiple challenges. Marco Pierre White anchors a dedicated week; Kylie Kwong joins as recurring Immunity mentor."
 pull: "A structural refresh that brought the auditions back and gave the competition its first strategic advantage mechanic."

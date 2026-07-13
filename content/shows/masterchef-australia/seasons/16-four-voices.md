@@ -6,7 +6,7 @@ premiere_date: 2024-04-22
 ep_count: 50
 location: Melbourne, Australia; Hong Kong
 host: Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, Sofia Levin
-canonical_position: 16
+canonical_position: 17
 eyebrow: "Aired April 2024 · The format's first four-judge panel"
 lede: "Season sixteen expands to four judges: Andy Allen returns alongside Poh Ling Yeow, Jean-Christophe Novelli, and food critic Sofia Levin. Three episodes film in Hong Kong — Po Lin Monastery, Victoria Harbour, Stanley Street markets — the format's second international location."
 pull: "A panel expansion that asks the format to support four distinct voices — a structural experiment still finding its rhythm."

@@ -7,7 +7,7 @@ premiere_date: 2022-04-18
 ep_count: 62
 location: Melbourne, Tasmania, Australia
 host: Andy Allen, Melissa Leong, Jock Zonfrillo
-canonical_position: 13
+canonical_position: 14
 eyebrow: "Aired April 2022 · New contestants against former competitors, then together"
 lede: "Season fourteen splits its cast between twelve new Fans and twelve returning Favourites, running them as competing groups before merging in Week 6. Off-site filming in Tasmania — Great Oyster Bay and a Launceston truffle farm — gives the season a distinctive location stretch."
 pull: "A mixed cast with an interesting structural premise — Fans versus Favourites until they're not — and a Tasmanian off-site that's among the format's most striking location choices."

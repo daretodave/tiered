@@ -6,7 +6,7 @@ premiere_date: 2017-04-03
 ep_count: 63
 location: Melbourne, Australia; Tokyo, Japan
 host: Gary Mehigan, George Calombaris, Matt Preston
-canonical_position: 4
+canonical_position: 5
 eyebrow: "Aired April 2017 · The founding era's most ambitious international reach"
 lede: "Season nine sends contestants to Tokyo for Japan Week — Michelin-starred kitchens, Shinjuku food stalls, Mount Fuji tea plantations. Back in Melbourne, a Power Pin gives its holder fifteen extra minutes in future challenges. Yotam Ottolenghi appears."
 pull: "The format at its most ambitious in the founding era — international challenges, a new strategic mechanic, and the full competitive intensity of a deep and capable cast."
