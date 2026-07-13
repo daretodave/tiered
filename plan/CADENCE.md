@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| queer-eye | 6/10 | 4 |
 | selling-sunset | 6/10 | 4 |
 | traitors-uk | 1/5 | 4 |
 | the-apprentice | 10/15 | 5 |
@@ -461,6 +460,37 @@ blind count bump:
   off-camera controversy outweighs the on-screen storylines).
   Every season file's `canonical_position` updated to match. Gap
   table row removed — show fully drained.
+- **queer-eye** — DRAINED this tick (cloud drain, 2026-07-13):
+  Seasons 7 ("New Orleans," 2023 — the full original Fab Five's
+  last outing together), 8 ("New Orleans II," 2024 — Bobby
+  Berk's final season, its episode order cut 7→6 after real-world
+  carjacking incidents disrupted the New Orleans shoot), 9 ("Las
+  Vegas," 2024 — Jeremiah Brent's debut as design specialist, the
+  franchise's first cast change since the 2018 reboot, paired
+  with the longest episode order of the run), and 10
+  ("Washington, D.C.," Jan 2026 — the announced series finale,
+  the shortest episode order in the show's history) filed,
+  completing the show's declared 10/10 count. `canon.md` fully
+  rebased across all ten seasons: Las Vegas inserted at rank 3
+  (the format's biggest structural event since 2018, executed
+  with confidence rather than compressed around the transition),
+  Philadelphia/Kansas City/Home State shifted +1 each, New
+  Orleans inserted at rank 7 (solid but no longer novel by the
+  show's fourth-plus new city), Austin shifted to rank 8,
+  Washington D.C. inserted at rank 9 (a deliberately compact
+  farewell — ranked below full-length seasons per this canon's
+  established room-to-breathe logic, though the brevity is a
+  choice, not a shortfall), New Orleans II inserted at rank 10
+  (the one season shaped by unplanned production disruption
+  rather than any creative choice). `era_bands` extended with two
+  new contiguous bands — `new-orleans-vegas` [2022, 2024] and
+  `farewell-era` [2025, 2026] — covering the full 2018–2026 aired
+  span. `meth_who_p`/`meth_when_p` rewritten to reflect the
+  now-complete, ended run; `tier_s_blurb`/`tier_a_blurb` rewritten
+  to describe the actual 5-and-5 tier split the fixed rank-cutoff
+  system now produces (ranks 1–5 = S, 6–10 = A) rather than the
+  old "two seasons" framing written when only 6 of 10 were ranked.
+  Gap table row removed — show fully drained.
 
 Status-field corrections noted for the next tick that touches
 these shows (not actioned this pass — sweep only owns the gap
