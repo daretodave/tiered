@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| dragrace-uk | 3/8 | 5 |
 | too-hot-to-handle | 1/6 | 5 |
 | rhoslc | 1/7 | 6 |
 | the-circle | 1/7 | 6 |
@@ -591,6 +590,36 @@ Four dated finales filed to `content/calendar.yml` this pass
   S11–S14; `revival-era` [2017, 2017] covers S15) — no widening
   needed. Gap table row removed — show fully drained. 782 seasons
   filed catalog-wide as of this tick.
+
+- **dragrace-uk** — DRAINED this tick (cloud drain, 2026-07-13):
+  the gap table's "declared 8" was wrong — scout research confirms
+  the show has aired exactly 7 series as of this tick (matching
+  the frontmatter's existing `seasons: 7`, which needed no
+  correction); Series 8 is renewed (casting opened Sept 2025) but
+  has no confirmed premiere date — same confirmed-but-unaired
+  precedent as the other starred rows, deferred until it airs.
+  Series 4 (2022 — the four-chair panel settles in, Dakota
+  Schiffer becomes the UK edition's first out trans woman
+  contestant, and Michelle Visage runs an episode solo in
+  RuPaul's absence, a franchise-wide first), 5 (2023 — cast
+  trimmed to ten, two built-in no-elimination weeks, a new
+  weekly aftershow), 6 (2024 — the franchise's first-ever cash
+  prize at £25,000 and a four-way finale breaking the standard
+  top-two format), and 7 (2025 — "The Lucky Cow" secret-vote
+  reprieve mechanic, same-night iPlayer/BBC Three simulcast)
+  filed, completing the show's true 7/7 count. `canon.md` fully
+  rebased across all seven series: Series 6's cash-prize milestone
+  ranked #1 (the single biggest structural swing in the batch),
+  Series 4's double franchise-first ranked #2, Series 2 (previously
+  #1) settles to #3, Series 7's new elimination mechanic ranked
+  #4, Series 3 (previously #2) settles to #5, Series 5 ranked #6
+  (the steadiest, least structurally novel entrant), Series 1
+  unchanged at #7 (the founding pilot). Every season's
+  `canonical_position` updated to match. `era_bands` widened: the
+  existing `iplayer-era` [2019, 2021] left unchanged, a new
+  `four-chair-era` [2022, 2025] added to cover Series 4-7 —
+  contiguous, no gaps, covering the full 2019-2025 aired span.
+  Gap table row removed — show fully drained.
 
 ## Show-add log
 
