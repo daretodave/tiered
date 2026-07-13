@@ -73,7 +73,7 @@ pass).
 | rhoc | 19/20 | 1* |
 | masterchef-australia | 17/18 | 1 |
 | hells-kitchen | 24/26 | 2* |
-| below-deck-mediterranean | 9/11 | 2 |
+| below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 13/15 | 2 |
 | below-deck-down-under | 2/5 | 3 |
 | the-ultimatum | 1/4 | 3 |
@@ -332,6 +332,31 @@ blind count bump:
   reference date, per public episode-count tracking) — no finale
   date announced. Same confirmed-but-unconcluded precedent as the
   other `1*` rows above; deferred until the season concludes.
+- **below-deck-mediterranean** — DRAINED this tick (cloud drain,
+  2026-07-13): Season 10 ("Barcelona II") aired and fully
+  concluded September 29, 2025 – January 26, 2026 (18 episodes)
+  — the franchise's second visit to Barcelona (first since
+  Season 3's João Franco run), this time with Captain Sandy
+  Yawn back in command aboard the new M/Y Bravado. Filed this
+  tick as
+  `content/shows/below-deck-mediterranean/seasons/10-barcelona-ii.md`
+  — location-numeral slug matching the sibling `below-deck`
+  show's `sint-maarten-ii`/`sint-maarten-iii` convention, since
+  the bare `barcelona` slug/title already belongs to Season 3.
+  `canon.md` rebased: new entry inserted at rank 6 (a returning
+  location, so it doesn't earn the new-geography credit that
+  lifted Malta/Como/Athens, but the charter-guest-matchmaker
+  format first and the new yacht land it in the Sibenik
+  "dependable return" tier), 4 entries below it shifted +1. Show
+  frontmatter `seasons` bumped 9→10, `blurb`/`card_tagline`
+  updated 9→10/nine→ten; `tagline` already token-driven
+  (`{yearsWord}`), no change needed. `sneddon-era` band
+  `[2024, 2026]` already covered the 2025 premiere, no widening
+  needed. Season 11 ("Akira One," Dubrovnik) premiered
+  2026-06-08 and is currently airing (at least 5 episodes aired
+  as of this tick's reference date) — no finale date announced.
+  Same confirmed-but-unaired precedent as the other `1*` rows
+  above; deferred until the season concludes.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as
