@@ -4,186 +4,195 @@
 > `.github/workflows/night.yml`). Overwritten whole each tick;
 > history lives in git.
 
-# DIGEST — 2026-07-12
+# DIGEST — 2026-07-13
 
 ## Headline
 
-A strong 26 hours: **24 march ticks, 24 green**, no crashes this
-window. The catalog grew by **5 new shows** (WAVE 10 fully
-drained: The Traitors UK, Married at First Sight Australia, The
-Real World, Ink Master, So You Think You Can Dance) plus 4
-critique passes (89–92, 15 findings total, all 0-high), several
-paired content/fix ticks, and an expand pass (54, 0 new
-candidates, WAVE 10 refill). The one real shadow, now the loudest
-signal in the backlog: the nightly **e2e-full breadth run went
-red a fourth consecutive night** (07-06 → 07-09 → 07-10 → 07-11),
-the identical 50-minute duration-ceiling breach every time, zero
-actual test regressions. The fix has sat unpromoted for 5 days
-(candidate #26) because it needs a `workflows`-scoped token the
-cloud loop doesn't carry. Deploy is green at HEAD (`71fe7de`).
+A high-volume, single-mission 26 hours: **23 march ticks, 21
+green, 2 red** (both the identical `SDK execution error: Prompt
+is too long` crash, both self-healed on the very next tick). The
+window sits almost entirely inside the **2026-07-12 mission
+pivot** (oversight `dd0f2d0`) — new-show creation is now LOCKED
+and every tick's content work went to **season-fill drain**:
+**16 seasons landed across 14 shows**, zero new shows, exactly as
+directed. Catalog holds steady at **68 shows**; the CADENCE gap
+table narrowed from **337 → 325** (summed across 52 remaining
+rows), and **rhodubai became the first show to hit gap-zero**
+under the new regime. The one real shadow: the nightly
+`E2E_FULL=1` breadth run went red again on 2026-07-12 — but this
+is a **newly-surfaced bug, not a repeat**. The prior four red
+nights (07-06→07-09→07-10→07-11) were all the same 50-minute
+duration-ceiling breach, fixed via oversight on 2026-07-12
+(timeout 50→75min). 07-12's run was the **first clean run under
+the new ceiling**, and it surfaced a genuine, previously-masked
+regression: mobile horizontal overflow on
+`/shows/the-challenge/season/vets-and-new-threats` — already
+triaged to issue #568 and an AUDIT row same day, so it's tracked,
+not lost. Deploy is green at HEAD (`62a5ee5`).
 
 ## While you were out
 
 | Time (UTC) | Tick | Outcome |
 |---|---|---|
-| 09:40–10:38 (07-11) | march → content fix ×2 | success — Below Deck Down Under S2 fragment fix, America's Next Top Model `card_tagline` overlap fix |
-| 11:13 | march → expand pass 53 | success — 0 new candidates, 2 existing updated |
-| 12:24 | march → critique pass 89 | success — 6 findings (5 med, 1 low) |
-| 13:34 | march → fix | success — anon vote-row eyebrow copy corrected to match 0.1x vote policy |
-| 14:34 | march → fix | success — RankScale now peaks a sole #1-of-1 canon entry instead of tailing it |
-| 15:32 | march → fix | success — missing `tier_s_blurb` added on freshly-seeded shows, regression test generalized |
-| 16:32 | march → content fix | success — filming_caption adds real texture instead of restating location |
-| 17:31 | march → content fix | success — masterchef `card_tagline` diverged from `tagline` |
-| 18:31 | march → content fix | success — Bachelor in Paradise Tulum lede trimmed to SEO clip budget |
-| 19:12 | march → critique pass 90 | success — 1 finding (0 high, 0 med, 1 low) |
-| 20:32 | march → content fix | success — stale `last_revised` timestamps refreshed across 9 canon files |
-| 21:30 | march → content fix | success — word-tic repetition fixed in best-villain-editing entry #01 |
-| 22:26 | march → content fix | success — best-newbie-casts `card_tagline` echo of H1 title fixed |
-| 23:10 | march → expand pass 54 | success — 0 new candidates, **WAVE 10 show-queue refill** filed, candidate #24 (stall pattern) reinforced |
-| 00:39–01:45 (07-12) | march → new show | success — The Traitors UK added |
-| 01:45–04:30 | march → new show | success — Married at First Sight Australia added |
-| 04:30–05:47 | march → new show | success — The Real World added |
-| 05:47–07:10 | march → new show | success — Ink Master added |
-| 07:09–08:06 | march → new show | success — So You Think You Can Dance added, **WAVE 10 fully drained** |
-| 08:06–09:56 | march → content fix ×3 | success — canon `community_rank_hint` self-contradiction fixed, MAFS Australia cast-size caption repetition cut, traitors-uk FILMED-caption bare restatement broadened+fixed |
-| 10:27 | march → critique pass 92 | success — 5 findings (0 high, 3 med, 2 low), all on the 3 freshly-shipped WAVE 10 shows |
+| 07-12 09:56 | march → fix | success — broadened bare-restatement check (closes critique pass-91 finding) |
+| 07-12 10:27 | march → critique pass 92 | success — 5 findings (0 high, 3 med, 2 low) |
+| 07-12 11:02 | march → digest | success — 2026-07-12 morning briefing |
+| 07-12 11:36 | march → expand pass 55 | success — 0 new candidates, WAVE 11 show-queue refill (now moot post-pivot) + candidate #24 reinforced |
+| 07-12 ~07:47 | oversight (local) | **mission pivot** — new shows LOCKED, season-fill drain to zero becomes the priority, weekly whole-catalog sweep added (Rule 1a) |
+| 07-12 12:36 | march → sweep | success — first weekly season sweep: 59 new/renewed seasons found across 28 shows, gap table seeded at 337 across 55 shows |
+| 07-12 13:46 | march → content | success — RuPaul's Drag Race Season 18 backfill, gap addressed |
+| 07-12 14:55 | march → content | success — Top Chef Season 23 (Carolinas) backfill, gap addressed |
+| 07-12 16:40 | march → content | success — Great British Bake Off Series 16 backfill, gap addressed |
+| 07-12 17:16 | march → critique pass 93 | success — 6 findings (1 high, 2 med, 3 low) |
+| 07-12 18:40 | march → content | success — RHODubai Season 2 backfill, **drained to gap-zero**; 10 shows deferred into CADENCE as `1*` |
+| 07-12 19:43 | march → content | success — The Challenge Season 41 ("Vets & New Threats") backfill, drained to 1* — **this is the page the nightly breadth run later flagged for mobile overflow** |
+| 07-12 20:42 | march → content | success — Big Brother Season 27 backfill, drained to 1* |
+| 07-12 21:35 | march → content | success — The Bachelor Season 29 backfill, drained to 1* |
+| 07-12 22:47 | march → content | success — Project Runway Season 21 backfill, drained to 1* |
+| 07-12 23:19 | (nightly, separate workflow) e2e-full | **red** — mobile overflow on the-challenge S41 page, 7,315 passed / 2 failed |
+| 07-12 23:41 | march → content | success — Love Island US Season 7 backfill, drained to 1* |
+| 07-13 00:40 | march → content | success — American Idol Season 24 backfill, drained to 1* |
+| 07-13 01:16 | march → triage | success — filed nightly e2e-full failure as issue #568, routed to AUDIT.md |
+| 07-13 02:34 | march | **red** — `SDK execution error: Prompt is too long`, no commit; self-healed next tick |
+| 07-13 04:41 | march → content | success — RHOC Season 19 backfill, drained to 1* |
+| 07-13 07:22 | march → content | success — MasterChef Australia Season 17 backfill, drained to 1 |
+| 07-13 08:31 | march → content | success — Below Deck Mediterranean Season 10 backfill, drained to 1* |
+| 07-13 09:47 | march → content | success — The Masked Singer Season 14 backfill, drained to 1* |
+| 07-13 10:42 | march → content | success — Below Deck Down Under Seasons 3–4 (two-season batch) backfill, drained to 1* |
 
-Net: 33 commits since the last digest window opened. 24 march
-ticks, **24 green, 0 red** — cleanest run in recent memory, no
-crashes, no no-ops.
+Net: 38 commits since the last digest window opened. 23 march
+ticks tallied above, 21 green / 2 red — both reds the same known,
+self-healing SDK crash class (see Tuning proposals).
 
 ## The saga
 
-**Shows scaffolded:** 5 this window — The Traitors UK, Married
-at First Sight Australia, The Real World, Ink Master, So You
-Think You Can Dance. Catalog holds **68 shows**, up from 63.
-WAVE 10 (filed expand pass 54 same window) is now fully drained
-— the new-show queue is back to **0 Pending "Add show" rows**,
-the same recurring empty-queue-after-full-drain pattern
-candidate #24 already names, for the second digest running.
-Expect a WAVE 11 refill from a future `/expand` pass per Rule 1's
-"keep the queue fed" mandate.
+**Shows scaffolded:** 0 this window, by design — the mission
+pivot locks new-show creation until the gap table reads zero.
+Catalog holds steady at **68 shows**.
 
-**Seasons drained:** each of the 5 fresh shows landed with its
-S1 only, no incremental Rule 2 drain batch shipped this window
-(the tick budget went entirely to the WAVE 10 scaffold-and-close
-cycle plus critique/fix pairs). Catalog holds **742 seasons**, up
-from 737. Largest remaining gaps now: **Chopped (56)**, The Real
-World (32), So You Think You Can Dance (17), Ink Master (15),
-Married at First Sight (13), Married at First Sight Australia
-(12), American Ninja Warrior (12), Vanderpump Rules (11), 90 Day
-Fiancé (11), Southern Charm (10), RuPaul's Drag Race All Stars
-(10). Sawtooth continues as expected — five new S1-only shows
-just re-widened the queue exactly as Rule 1/Rule 2 predict.
+**Seasons drained:** **16 seasons across 14 shows** this window —
+RuPaul's Drag Race S18, Top Chef S23, Bake Off Series 16, RHODubai
+S2 (gap-zero), The Challenge S41, Big Brother S27, The Bachelor
+S29, Project Runway S21, Love Island US S7, American Idol S24,
+RHOC S19, MasterChef Australia S17, Below Deck Mediterranean S10,
+The Masked Singer S14, Below Deck Down Under S3+S4. The CADENCE
+gap table (regenerated by the first weekly sweep, 07-12) opened at
+**337 across 55 shows**; today's table sums to **325 across 52
+shows** — rhodubai is the first show fully drained to zero and
+dropped off the table under the new regime. Pattern worth naming:
+almost every drain this window moved a show from gap-2 to
+gap-1-with-asterisk, not to zero — the asterisk means the *next*
+season hasn't aired yet in the real world, so these rows are now
+**blocked on air dates, not on writing capacity**. 25 of the 52
+remaining rows already carry that asterisk.
 
-**Velocity vs. bearings:** Rule 1 (show coverage) — very active,
-5 shows landed and the queue redrained same window as it was
-refilled. Rule 2 (canon completeness) — quiet this window (no
-drain batch shipped on an existing show); Chopped's 56-season gap
-is now by far the largest in the catalog and the natural next
-drain target. Rule 3 (themed list) — quota (≥10 lists) remains
-satisfied at 12, unchanged, no action needed.
+**Velocity vs. bearings:** Rule 1 (show coverage) — LOCKED per
+the pivot, correctly idle. Rule 1a (weekly sweep) — first run
+complete 07-12, next due 07-19, on schedule. Rule 2 (season
+completeness) — the whole window's engine; 16 seasons in ~25
+hours is the fastest drain rate logged yet, and the smallest-gap-
+first ordering is working exactly as specified. Rule 3 (themed
+lists) — untouched this window (12 lists, quota ≥10 satisfied),
+correctly deferred until gap-zero per the pivot's stated
+sequencing.
 
-**Critique backlog:** 4 passes landed (89/90/91/92, 15 findings
-total), consistently 0-high across every pass. Pass 92's 5
-findings are notable as a cluster — all five sit on the three
-just-shipped WAVE 10 singles (ink-master, so-you-think-you-can-dance,
-the-real-world), the predictable "fresh content invites fresh
-scrutiny" pattern: a season-title stutter, a wrong elapsed-year
-tagline (`{yearsWord}` misapplied to an `ended` show with no
-end-year field), templated canon-rationale phrasing shared across
-all three debuts, a watch_list marker gap, and a thin season
-eyebrow. None HIGH; all queued for the next `/iterate` tick.
+**Critique backlog:** 2 passes landed (92: 5 findings, 0 high;
+93: 6 findings, 1 high). Pass 93's 1 HIGH finding is still open
+and hasn't shown up in a digest before — worth a look (see Needs
+you).
 
 ## Queues now
 
-- **AUDIT.md Pending:** 3 real rows (plus template-placeholder
-  lines that aren't findings). The `[HIGH]` e2e-full timeout row
-  was updated this tick with a **fourth** consecutive-night
-  recurrence: run 29171935246 hit the identical 50-minute
-  ceiling, test count now 7,138 (up from 7,098 one day ago,
-  slowing growth but the completion percentage keeps drifting
-  down — 91.4%, vs. 92.4% two nights ago). Still blocked from
-  cloud (missing `workflows` OAuth scope), candidate #26 now **5
-  days** stale, unpromoted across four red nights. The Supabase
-  CLI pin (issue #416/#480) is now **28 days** stale, same
-  blocker. The low-score `YEAR_TENURE_RE` gap (score 2.7) is
-  unchanged, below the iterate threshold.
-- **AUDIT.md needs-user-call:** unchanged, 2 — Naked and Afraid
-  S12/13/15/16 premiere-date numbering ambiguity; The Apprentice
-  S5 "LA Season" framing check.
-- **CRITIQUE.md:** last pass **92** (2026-07-12T10:27Z, commit
-  71fe7de), 5 findings (0 high, 3 med, 2 low), all still pending
-  for the next `/iterate` tick. File continues to grow, tracked
-  by candidate #29.
-- **PHASE_CANDIDATES.md:** 23 pending awaiting promotion (was
-  20), up 3 this window despite pass 54 filing "0 new
-  candidates" — the net change reflects prior in-flight updates
-  settling. Last promotion still **2026-06-11** — now **31 days**
-  stale. Top scores unpromoted: **#15 (9.4)** show canon
-  completeness lax→strict gate, **#28 (8.3)** stat-tile
+- **AUDIT.md open:** 2 content-gaps rows (the standing
+  season-fill-drain row, which stays pending by design until the
+  gap table reads zero; the Love Island US S8 post-finale
+  shift-note row, held pending a reunion airing 2026-08-31) plus
+  4 non-content rows: the-challenge mobile-overflow bug (MED,
+  score 5.4, issue #568, filed today), a themed-list category-
+  enum docs drift (LOW), the `YEAR_TENURE_RE` teen-number gap
+  (LOW, below iterate threshold), and one unfilled template line.
+- **CRITIQUE.md:** last pass **93** (2026-07-12T17:16Z), 6
+  findings (1 high, 2 med, 3 low), all still pending for the next
+  `/iterate` tick. File now **3,463 lines / 1.6MB** (up from
+  3,201 two days ago) — still growing, tracked by candidate #29.
+- **PHASE_CANDIDATES.md:** file now **4,588 lines / 285KB** (up
+  from 4,106 two days ago). Top unpromoted scores unchanged: **#15
+  (9.4)** show canon completeness gate, **#28 (8.3)** stat-tile
   literal-duplicate invariant, **#25 (8.0)** canon-rationale/
-  season-body echo gate — all three unchanged from yesterday's
-  ranking.
-- **Triage:** 0 unlabeled open issues (clean). `triage:needs-
-  user`: 3 open, unchanged — #480, #398, #399 (the latter two now
-  **31 days** stale). `triage:loop-queued`: 1 — #416, now
-  absorbing a **fourth** distinct e2e-full incident under one
-  title-dedupe thread.
-- Other open issues worth a look: **#521** (severity:high —
+  season-body echo gate. Last real promotion is still
+  **2026-06-11 — now 32 days stale**. Candidates #26 (e2e-full
+  timeout) and #32 (issue-dedupe staleness) both resolved via
+  oversight 2026-07-12 and are off the board.
+- **Triage:** 0 unlabeled open issues (clean, actively worked —
+  #568 filed and routed same window). `triage:needs-user`: 3 open
+  — **#565** (fresh, 2026-07-12, the "Prompt is too long" crash
+  issue), and **#398/#399**, now **32–33 days stale**, no visible
+  owner action since filed 2026-06-11. `triage:loop-queued`: 1 —
+  **#568** (the mobile-overflow finding, same day).
+- Other open issues worth a look: **#521** (severity:high,
   signed-in vote/comment CTAs flash anon on non-cached season
-  pages), #535 (Summer House filming_caption restates location),
-  #373 (mobile HvV canon-meter pip label duplicate).
+  pages — open since 2026-07-09, **4 days**, no digest mention
+  until now), #535 (Summer House filming_caption restates
+  location), #405/#400 (loop-opened phase issues, no urgency
+  signal attached), #373 (mobile HvV pip-label duplicate, LOW).
 
 ## Needs you
 
-1. **e2e-full has now failed four nights running**
-   (07-06/07-09/07-10/07-11), always the identical 50-minute
-   duration-ceiling breach, never an actual test regression. The
-   fix (bump `timeout-minutes` in `.github/workflows/e2e-full.yml`)
-   has sat unpromoted 5 days because the cloud loop's token lacks
-   the `workflows` OAuth scope needed to push workflow-file
-   edits. This is now the single most-recurring unresolved item
-   in `plan/AUDIT.md`. Recommend an `/oversight` session to
-   promote candidate #26, bundled with candidate #32 (dedupe
-   staleness bound — issue #416 is now silently absorbing a
-   fourth unrelated incident under one 28-day-old thread) and the
-   Supabase CLI version pin (issue #416/#480) — all three are
-   edits to the same workflow-file family blocked by the same
-   permission gap.
-2. **Two `needs-user-call` AUDIT rows still need an editorial
-   decision, not more research:** Naked and Afraid's S12/13/15/16
-   numbering offset against real-world sources, and whether The
-   Apprentice S5's "Los Angeles Season" framing is accurate or
-   overstated.
-3. **Phase-candidate backlog (23 pending) hasn't been promoted in
-   31 days** and keeps growing. #15 (score 9.4, show canon
-   completeness gate) remains the standout — highest-scored open
-   candidate on the board, unpromoted longest of the top three.
-4. **#521** (severity:high, anon-CTA flash on signed-in season
-   pages) is open and hasn't surfaced in a recent digest before —
-   worth a look if `/triage` hasn't routed it yet.
+1. **The recurring `SDK execution error: Prompt is too long`
+   crash is now a confirmed pattern, not a one-off.** Two more
+   occurrences this window (2026-07-12T14:12:48Z run 29195822244,
+   filed as issue #565; 2026-07-13T02:34:36Z run 29219800641,
+   unfiled) bring the running total to **4 occurrences since
+   2026-07-08**, each self-healing on the next tick but each
+   costing a full crashed cycle. Candidate #29 (archive closed
+   CRITIQUE.md/AUDIT.md rows) has named this exact root cause for
+   5 days — `plan/CRITIQUE.md` and `plan/PHASE_CANDIDATES.md` have
+   both kept growing unpruned (now 1.6MB and 285KB respectively)
+   and are the most plausible driver of the prompt-length ceiling.
+   Recommend promoting #29 at the next `/oversight` session before
+   a fifth occurrence lands.
+2. **Issue #521 (severity:high)** — signed-in vote/comment CTAs
+   flash anon state on non-cached season pages — has been open 4
+   days with no digest visibility until this pass. Worth checking
+   whether `/triage` or `/iterate` has actually looked at it.
+3. **Two `triage:needs-user` issues (#398, #399) are now 32-33
+   days stale** with no apparent progress since filing on
+   2026-06-11. Worth a decision at the next `/oversight`: action,
+   re-scope, or close.
+4. **Phase-candidate backlog hasn't been promoted in 32 days**
+   and both the file and the backlog keep growing. #15 (score
+   9.4, show canon completeness gate) is still the standout
+   unpromoted candidate.
+5. **Critique pass 93's 1 HIGH finding** is unaddressed and
+   appearing in a digest for the first time — confirm the next
+   `/iterate` tick picks it up.
 
 ## Today's intent
 
-**Saga:** expect `/expand` to file WAVE 11 on the next
-empty-queue tick — candidate #24's stall pattern has now recurred
-twice running, worth deciding at the next `/oversight` whether
-the queue should carry a standing buffer instead of draining to
-zero every time. Meanwhile Rule 2 drains should resume on
-Chopped (56 remaining, the single largest gap in the catalog by a
-wide margin) and the five freshly-seeded WAVE 10 shows, each
-sitting at 12–32 remaining.
+**Saga:** keep draining the CADENCE gap table smallest-gap-first.
+Most of the small-gap rows are now asterisked (blocked on
+real-world air dates), so the genuinely actionable next targets
+are the **non-asterisked** rows: `the-ultimatum` (1/4, gap 3) and
+`perfect-match` (1/4, gap 3) — both fully writable now, unlike the
+25 deferred `1*`/`2*` rows sitting above them in sort order.
 
-**Top non-content finding:** the e2e-full breadth ceiling's
-fourth consecutive red night. Already has a scoped, unpromoted
-fix (candidate #26) plus two related proposals (#32, the
-Supabase CLI pin) — no new proposal needed, all three need
-promotion in the same local session.
+**Top non-content finding:** the mobile-overflow bug on
+`/shows/the-challenge/season/vets-and-new-threats` (issue #568,
+AUDIT MED, score 5.4) — already scoped with a trace path, ready
+for `/iterate` to pick up directly; no further research needed.
+
+**Second-priority finding:** the SDK "Prompt is too long" crash
+pattern (see Needs You #1) — a tuning proposal already exists
+(#29), it just needs promotion.
 
 ## Tuning proposals
 
-None new this tick. Candidates #26 and #32 (detailed above, both
-e2e-full/workflow-permission related) remain the standing
-proposals — no newly mistuned gate observed this window beyond
-what's already filed.
+None new this tick. Reinforcing **candidate #29** (archive closed
+CRITIQUE.md/AUDIT.md rows) with fresh numbers: `plan/CRITIQUE.md`
+grew 3,201 → 3,463 lines and `plan/PHASE_CANDIDATES.md` grew
+4,106 → 4,588 lines in the two days since it was last reinforced,
+while the "Prompt is too long" crash it was filed to explain
+recurred twice more in this window alone (4 occurrences total
+since 2026-07-08). The correlation is now strong enough that this
+should be treated as the standing top candidate for the next
+`/oversight` promotion round, alongside #15/#28/#25 on pure score.
