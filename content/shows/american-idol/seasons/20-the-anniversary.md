@@ -6,7 +6,7 @@ premiere_date: 2022-02-27
 ep_count: 18
 location: Hollywood, California
 host: Ryan Seacrest
-canonical_position: 20
+canonical_position: 21
 eyebrow: "Aired spring 2022 · The 20th season with retrospective framing"
 lede: "Season twenty marks the show's 20th year with retrospective elements and returning alumni from earlier eras. Katy Perry, Lionel Richie, and Luke Bryan presided over the milestone. The anniversary framing drew attention the standard cycle doesn't generate on its own."
 pull: "Two decades in, a milestone season with the alumni callbacks to prove it — the format using its own history as a draw."

@@ -6,7 +6,7 @@ premiere_date: 2019-02-17
 ep_count: 18
 location: Hollywood, California
 host: Ryan Seacrest
-canonical_position: 18
+canonical_position: 19
 eyebrow: "Aired spring 2019 · The revival finding its settled form"
 lede: "Season seventeen returns Katy Perry, Lionel Richie, and Luke Bryan for a second ABC cycle. The debut novelty has settled into something more functional — a panel with shared shorthand and an audition circuit that knew what it was looking for."
 pull: "The ABC format without the debut buzz — a more grounded run that showed the panel had staying power."

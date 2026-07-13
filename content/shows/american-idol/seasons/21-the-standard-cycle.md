@@ -6,7 +6,7 @@ premiere_date: 2023-02-19
 ep_count: 18
 location: Hollywood, California
 host: Ryan Seacrest
-canonical_position: 21
+canonical_position: 22
 eyebrow: "Aired spring 2023 · The ABC format in its most settled form"
 lede: "Season twenty-one runs the ABC format at its most routine. Katy Perry, Lionel Richie, and Luke Bryan return for their sixth cycle without structural change. The audition circuit and viewer vote run as established. No milestone framing, no panel disruption."
 pull: "The ABC revival in steady state — a season that knew what it was and delivered exactly that."

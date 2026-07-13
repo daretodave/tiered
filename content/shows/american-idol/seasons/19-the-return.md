@@ -6,7 +6,7 @@ premiere_date: 2021-02-14
 ep_count: 17
 location: Hollywood, California
 host: Ryan Seacrest
-canonical_position: 22
+canonical_position: 23
 eyebrow: "Aired spring 2021 · In-person competition back after COVID disruption"
 lede: "Season nineteen returns the competition to in-person production. Katy Perry, Lionel Richie, and Luke Bryan came back, the studio rounds resumed, and some audience restrictions remained. A season defined more by what it recovered from than by anything it generated on its own."
 pull: "The season the live competition came back — not fully yet, but enough to feel like the show again."

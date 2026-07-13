@@ -69,7 +69,7 @@ pass).
 | bachelor | 29/30 | 1* |
 | project-runway | 21/22 | 1* |
 | love-island-us | 7/8 | 1* |
-| american-idol | 23/25 | 2 |
+| american-idol | 24/25 | 1* |
 | hells-kitchen | 24/26 | 2 |
 | rhoc | 18/20 | 2 |
 | masterchef-australia | 16/18 | 2 |
@@ -253,6 +253,20 @@ blind count bump:
   confirmed-but-unaired precedent as the other `1*` rows above;
   deferred until the season's conclusion is confirmed on a later
   tick.
+- **american-idol** (gap row marked `1*`, cloud drain tick
+  2026-07-13) — Season 24 ("The Nashville Round") premiered
+  2026-01-26 and concluded with a 2026-05-11 finale, fully aired;
+  filed this tick as
+  `content/shows/american-idol/seasons/24-the-nashville-round.md`,
+  `canon.md` rebased (inserted at rank 17, ranks 17–23 shifted to
+  18–24). Show frontmatter `seasons` bumped 23→24 and blurb count
+  reference updated to match; `tagline`/`card_tagline` already
+  token-driven (`{yearsWord}`), no change needed. `era_bands`
+  abc-revival-era `[2018, 2026]` already covered the new season,
+  no widening needed. Season 25 is renewed (announced at ABC's
+  May 2026 upfronts) but not expected to premiere until 2027 —
+  same confirmed-but-unaired precedent as the other `1*` rows
+  above; deferred until a premiere date lands in the past.
 - **rhodubai** — DRAINED this tick (cloud drain, 2026-07-12):
   Season 2 ("The New Addition") aired June 2 – September 17,
   2024, fully concluded. Filed as

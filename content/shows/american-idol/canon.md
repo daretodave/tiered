@@ -1,13 +1,13 @@
 ---
 show: american-idol
 editor: tiered.tv editor
-last_revised: 2026-06-21
+last_revised: 2026-07-13
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched American Idol as a format document — not just a hits generator but a competition with rules, judging chemistry, and structural logic that either serves the singers or doesn't. The Fox era and the ABC revival are part of the same show. I hold them to the same standard."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — audition depth, whether the touring circuit surfaced genuinely competitive talent; judge chemistry, whether the panel's friction and warmth made the critique feel real; and cultural weight, whether the season landed as a genuine television event. The viewer vote is the constant. The quality of what it's voting on is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "All twenty-three seasons are now seeded — the original-panel era, the Fox rotation, and the ABC revival. The founding five still set the bar I judge every later era against: the deepest audition classes and the sharpest panel chemistry the format ever produced. Rotation and revival seasons earn their tier by clearing that standard."
+meth_when_p: "All twenty-four seasons are now seeded — the original-panel era, the Fox rotation, and the ABC revival. The founding five still set the bar I judge every later era against: the deepest audition classes and the sharpest panel chemistry the format ever produced. Rotation and revival seasons earn their tier by clearing that standard."
 tier_s_blurb: "The founding five Fox seasons — the deepest audition classes, the original Cowell-Jackson-Abdul panel at its sharpest, and the viewer vote landing on stakes that felt genuinely unpredictable."
 tier_a_blurb: "The panel's later original-era seasons and the rotation-era resets that followed — Lopez and Tyler's arrival, Harry Connick Jr.'s technical ear, the ABC network debut — strong when the judging chemistry clicked, uneven when it didn't."
 tier_b_blurb: "Solid American Idol. The audition tour finds real singers, the judging panel gives them something to push against, and the viewer vote lands on a finale that feels earned."
@@ -154,11 +154,19 @@ community_rank_hint: rank=16 delta=0 sentiment=hold
 
 Season twelve sits at the bottom of the Fox canon because the panel became the show in a way that damaged it. The on-camera friction between Nicki Minaj and Mariah Carey was not manufactured drama that made for good television — it was genuine conflict that made the judging table feel unstable and the critique unreliable. Keith Urban was present and professional. Randy Jackson shifted to a mentor role mid-season. Ratings dropped significantly. The contestants competed, but competing for attention against panel drama is not the environment the format was built to reward.
 
+## 24. The Nashville Round
+
+tag: The touring circuit replaced by one Nashville venue — a ratings rebound the ABC era hadn't seen since its debut.
+slot_argument: A structural gamble that traded the format's oldest piece of furniture for one venue, and the cultural weight of out-rating The Voice for the first time since the 2018 reboot outweighs the audition-depth question the consolidation raises.
+community_rank_hint: rank=17 delta=new sentiment=warm-up
+
+Season twenty-four is the boldest structural swing the ABC era has taken with the audition process itself. Trading the decades-old multi-city tour for a single stop at Belmont University in Nashville cuts against the usual reward for a wide touring circuit — but the Music City Takeover round kept the Hollywood Week mythology intact, and the new 'Ohana Round at Aulani gave the format a genuine change of scenery. Luke Bryan, Lionel Richie, and Carrie Underwood carried a season's chemistry into the new structure. What earns the slot is the cultural weight: the biggest premiere audience in four years, and the first time since the 2018 reboot that Idol out-rated The Voice. A real gamble that paid off.
+
 ## 22. The Closing Ceremony
 
 tag: Katy Perry's farewell season — mid-run announcement that gave the competition an unexpected weight.
 slot_argument: Season twenty-two gained a closing-ceremony register when Katy Perry confirmed her departure during the run. The announcement gave the final episodes genuine occasion the standard cycle hadn't generated in years.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season twenty-two earns its position above the mid-pack ABC seasons because the farewell framing did real work. When Katy Perry announced mid-run that she would not return, the remaining episodes carried a weight neither Perry nor the production had planned for — a closing ceremony that arrived by circumstance rather than design. Luke Bryan and Lionel Richie remained, and the panel's seven-season run found an end point that felt like an actual conclusion. The unplanned farewell landed more honestly than a produced one might have.
 
@@ -166,7 +174,7 @@ Season twenty-two earns its position above the mid-pack ABC seasons because the 
 
 tag: The revival in its second year — panel chemistry settled, debut novelty gone.
 slot_argument: Season seventeen returned the same panel to an ABC cycle that had shed its first-year novelty and settled into functional form. The panel's rapport made the audition rounds feel grounded.
-community_rank_hint: rank=18 delta=0 sentiment=hold
+community_rank_hint: rank=19 delta=0 sentiment=hold
 
 Season seventeen is the ABC revival finding its working form. Katy Perry, Lionel Richie, and Luke Bryan arrived with a season's chemistry behind them, and that shared shorthand produced a more grounded audition run than the debut year's novelty-driven energy. The spring competition ran shorter than the Fox era's standard cycles but used the compressed format cleanly. What the season lacks is the debut's event quality or any structural development that makes it stand out inside the ABC run. A functional second year — which is exactly what a revival needs to have.
 
@@ -174,7 +182,7 @@ Season seventeen is the ABC revival finding its working form. Katy Perry, Lionel
 
 tag: Carrie Underwood as judge — the first Idol winner to return in a permanent panel seat.
 slot_argument: Season twenty-three reframed the ABC panel by casting Carrie Underwood — the season-four winner — as Katy Perry's replacement. The callback gave the premiere a narrative no other panel reset in the show's history had carried.
-community_rank_hint: rank=19 delta=0 sentiment=hold
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
 Season twenty-three ranks ahead of the anniversary season because the Carrie Underwood casting is a structural innovation, not just promotional framing. A former Idol winner evaluating the competition she once entered brings genuine resonance to the audition rounds — the panel's critique carries different weight when one of its members has been on the other side of the table. Whether the new dynamic between Underwood, Lionel Richie, and Luke Bryan deepens over subsequent seasons or remains a season-one novelty is the open question. The premise earns the rank.
 
@@ -182,7 +190,7 @@ Season twenty-three ranks ahead of the anniversary season because the Carrie Und
 
 tag: The 20th season milestone — retrospective framing and alumni callbacks across the broadcast.
 slot_argument: Season twenty used its milestone status to draw returning alumni and add connective tissue to the show's Fox-era history. The anniversary attention gave a standard competition cycle more cultural reach than it could generate on its own.
-community_rank_hint: rank=20 delta=0 sentiment=hold
+community_rank_hint: rank=21 delta=0 sentiment=hold
 
 Season twenty's milestone framing did more than the surrounding standard cycles could have managed without it. The 20th anniversary brought returning alumni into broadcast content and gave the season hooks back to the show's original Fox run — the kind of connective tissue that reminds a general audience why the format mattered in the first place. Katy Perry, Lionel Richie, and Luke Bryan ran the competition in their by-now established rhythm. The anniversary generated cultural attention the content behind it hadn't earned unassisted. That is worth something, even if it's not a high-ranking something.
 
@@ -190,7 +198,7 @@ Season twenty's milestone framing did more than the surrounding standard cycles 
 
 tag: The ABC format in its most settled form — consistent and unmemorable.
 slot_argument: Season twenty-one returned the same panel for a sixth ABC cycle without format changes or memorable distinctions. The competition ran a clean arc and left no particular impression. The format at stable cruise.
-community_rank_hint: rank=21 delta=0 sentiment=hold
+community_rank_hint: rank=22 delta=0 sentiment=hold
 
 Season twenty-one is what happens when a format reaches equilibrium. Katy Perry, Lionel Richie, and Luke Bryan ran their sixth ABC cycle without structural change, and the competition produced a clean run from auditions to finale. Nothing went wrong. Nothing stood out. The audition circuit ran the standard route; the Hollywood round cut a competitive field; the live shows ran their arc. Season twenty-one is the clearest evidence that stable is not the same as good. It is also evidence that stable is better than broken. It ranks accordingly.
 
@@ -198,7 +206,7 @@ Season twenty-one is what happens when a format reaches equilibrium. Katy Perry,
 
 tag: In-person competition back — transitional energy after the COVID disruption.
 slot_argument: Season nineteen brought the live competition back to a stage after the previous season's remote finale. The return to in-person production was the story the season was built around, and some audience restrictions remained.
-community_rank_hint: rank=22 delta=0 sentiment=hold
+community_rank_hint: rank=23 delta=0 sentiment=hold
 
 Season nineteen sits near the bottom because the story it was telling — the return to normal competition after COVID — is a lower standard than the format should aspire to. Katy Perry, Lionel Richie, and Luke Bryan came back, and the live rounds resumed on stage rather than from contestants' homes. Some audience elements were still limited. The season functioned well enough relative to what preceded it; relative to what the format at its best looks like, the transitional register kept it from earning more. Getting back to normal is a category of television that doesn't age well.
 
@@ -206,6 +214,6 @@ Season nineteen sits near the bottom because the story it was telling — the re
 
 tag: The COVID finale — the only Idol season where the competition ended from living rooms.
 slot_argument: Season eighteen started normally and ended under COVID-19 constraints — contestants performing from home via video link for the finale. Managed as well as possible; the circumstances still mark the bottom of the canon.
-community_rank_hint: rank=23 delta=0 sentiment=hold
+community_rank_hint: rank=24 delta=0 sentiment=hold
 
 Season eighteen sits at the bottom because no amount of editorial goodwill can substitute for what a live performance competition is. The audition rounds ran before the pandemic disruption hit; the latter competition rounds and the finale did not. Contestants performed from home via video link. Katy Perry, Lionel Richie, and Luke Bryan joined remotely. The production adapted to an impossible situation. Viewing it now is watching the format hold its structure under maximum constraint — interesting as a document, difficult as a competition. The bottom of the canon for the same reason it deserves credit: it's the only one.
