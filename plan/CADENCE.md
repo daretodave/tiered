@@ -81,7 +81,6 @@ tick: 13 aired seasons confirmed via Wikipedia season articles
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| married-at-first-sight-australia | 11/13 | 2 |
 | married-at-first-sight | 6/21 | 15 |
 | ink-master | 1/17 | 16 |
 | so-you-think-you-can-dance | 1/18 | 17 |
@@ -968,6 +967,29 @@ Four dated finales filed to `content/calendar.yml` this pass
   span. `meth_who_p`/`meth_when_p`/`weekly_question` rewritten to
   reflect the complete 12/12 run. Gap table row removed — show fully
   drained. 892 seasons filed catalog-wide as of this tick.
+- **married-at-first-sight-australia** — DRAINED this tick (cloud
+  drain, 2026-07-14): Seasons 12 (2025, Jan–Apr, 40 episodes, the
+  format's biggest cast yet at thirteen couples — three mid-season
+  intruders arrive as entirely new couples rather than a swap-week
+  reshuffle; a real-world off-camera incident during filming drew
+  regulatory scrutiny, noted only as a brief factual production note)
+  and 13 (2026, Feb–Apr, 39 episodes, twelve couples, the franchise's
+  fourth same-sex male pairing among its mid-season intruders — and
+  Mel Schilling's final season on the panel she helped build since
+  season two; she died during this season's broadcast run, referenced
+  with dignity as real-world biographical fact, not a show twist)
+  filed, completing the show's true 13/13 count. `canon.md` fully
+  rebased: Season 13 inserted at rank 4 (milestone casting plus
+  genuine historical weight), Seasons 2/8/4/10 each shift down one
+  slot, Season 12 inserted at rank 9 (a real but incremental
+  structural variant on season ten's swap-week mechanic), Seasons
+  5/9/11/6 each shift down one slot to close the run at 13. Every
+  shifted season's `canonical_position` updated to match.
+  `rampolla-era` band widened `[2021, 2024]` → `[2021, 2026]` —
+  gap-free, covering the full 2015-2026 aired span. `meth_who_p`/
+  `meth_when_p`/`weekly_question` rewritten to reflect the complete
+  13/13 run. Gap table row removed — show fully drained. 904 seasons
+  filed catalog-wide as of this tick.
 
 ## Show-add log
 
