@@ -92,7 +92,7 @@ Season 20.
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
-| ink-master | 1/17 | 16 |
+| ink-master | 11/17 | 6 |
 | so-you-think-you-can-dance | 1/18 | 17 |
 | the-real-world | 1/33 | 32 |
 | chopped | 6/64 | 58 |
@@ -1000,6 +1000,48 @@ Four dated finales filed to `content/calendar.yml` this pass
   `meth_when_p`/`weekly_question` rewritten to reflect the complete
   13/13 run. Gap table row removed — show fully drained. 904 seasons
   filed catalog-wide as of this tick.
+- **ink-master** — progress this tick (cloud drain, 2026-07-14): the
+  gap table's declared count was corrected from the frontmatter's
+  stale 16 to the true 17 — scout research confirms 17 main-sequence
+  numbered seasons (Wikipedia series overview + season-category
+  index), with themed cycles like Redemption/Angels/Grudge Match
+  confirmed as separate spinoff series, not folded into flagship
+  numbering (one naming collision flagged: flagship Season 11
+  "Grudge Match — Cleen vs. Christian" is unrelated to the 2019
+  spinoff series of the same subtitle). Seasons 2-11 filed (10
+  seasons, hitting the per-tick cap) — the first live 24-hour finale
+  (S2), the Human Canvas Jury audience-input mechanic (S3), a
+  win-as-leverage power play (S4), the first themed/rivals-pairing
+  season (S5, "Rivals"), the mentor/apprentice-pairing NYC-landmark
+  season (S6, "Master vs. Apprentice"), a rookies-vs-veterans
+  dual-jury finale (S7, "Revenge"), the judges-turned-team-captains
+  season (S8, "Peck vs. Núñez"), the shop-vs-shop team format (S9,
+  "Shop Wars"), the Spike-to-Paramount-Network rebrand season (S10,
+  "Return of the Masters"), and a returning-veteran coach draft (S11,
+  "Grudge Match — Cleen vs. Christian"). `canon.md` fully rebased
+  across all eleven seeded seasons — Master vs. Apprentice's
+  landmark-location pairing mechanic ranked #2 behind the unchanged
+  founding Season 1, Shop Wars' team-stakes format at #3, Peck vs.
+  Núñez's judges-as-captains risk at #4, Rivals' themed-format debut
+  at #5, Revenge's stacked-mechanics season at #6, the two
+  untitled early seasons (2, 3) mid-pack for real but incremental
+  voting-mechanic firsts, Season 4's leverage wrinkle just below
+  them, Return of the Masters' ambitious-but-scattered network-handoff
+  season at #10, and the personal-history-driven Grudge Match season
+  last for leaning furthest toward drama over craft. `era_bands`
+  newly authored with 3 bands — `spike-originals` [2012, 2013],
+  `thematic-twist-era` [2014, 2017], `paramount-network-era` [2018,
+  2026] (widened ahead of the aired span to anticipate future
+  ticks extending the show past S11) — gap-free. Show frontmatter
+  `seasons` corrected 16→17, `blurb` updated to "17 seasons."
+  `status: hiatus` left unchanged — Season 18 is tracked by
+  aggregator sites at a tentative fall-2026 window but has no
+  primary-source (Variety/Deadline/THR) confirmation, so no premiere
+  date exists to defer against; revisit at a future tick. Gap table
+  row updated 1/17|16 → 11/17|6 (not starred — the remaining six
+  seasons, 12-17, are real and actionable, not confirmed-but-unaired)
+  — six seasons remain for a future drain tick. 927 seasons filed
+  catalog-wide as of this tick.
 
 ## Show-add log
 
