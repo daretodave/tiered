@@ -3,7 +3,7 @@ show: the-circle
 number: 1
 slug: inaugural-season
 title: "Season 1"
-canonical_position: 1
+canonical_position: 2
 premiere_date: "2020-01-01"
 ep_count: 12
 eyebrow: "Premiered January 2020 · Netflix"

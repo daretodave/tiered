@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| the-circle | 1/7 | 6 |
 | shark-tank | 11/18 | 7 |
 | rhom | 1/8 | 7 |
 | dragrace-allstars | 1/11 | 10 |
@@ -680,6 +679,42 @@ Four dated finales filed to `content/calendar.yml` this pass
   reunion). Every season's `canonical_position` updated to match.
   `era_bands` skipped (only 6 seasons, below the 8-season
   threshold). Gap table row removed — show fully drained.
+
+- **the-circle** — DRAINED this tick (cloud drain, 2026-07-14):
+  Seasons 2 (2021, the Joker twist plus a Superinfluencer round
+  and a second-chance re-entry mechanic), 3 (2021, a cloning
+  mechanic, a late secret-ratings twist, and a burner-account
+  mechanic — the format's busiest single-season run of new
+  machinery), 4 (2022, prize raised to $150,000, the format's
+  first celebrity guest catfishes, a Circle Data Breach twist),
+  5 ("The Circle Singles," 2022–23, the franchise's first
+  on-air subtitle, casting restricted to single players, the
+  show's first deaf contestant, last season on the original
+  Manchester set), 6 (2024, production relocates to a
+  purpose-built Atlanta set, marquee AI-generated contestant
+  "Max"), and 7 (2024, cast shrunk to 10 — the smallest of the
+  US run — "Disrupter Mode," a secret-superinfluencer round, and
+  single-name blocking rounds; the final season Netflix
+  produced before the format's June 2026-announced move to
+  Hulu) filed, completing the show's declared 7/7 count.
+  `canon.md` fully rebased across all seven seasons: Season 7
+  ranked #1 (the smallest cast sharpens every rating, and every
+  twist changes how the core mechanic plays rather than sitting
+  on top of it), Season 1 #2 (the founding season's shock of the
+  format existing at all still edges out every later run),
+  Season 2 #3 (four real strategic additions, no filler), Season
+  3 #4 (three new mechanics in one run, inventive but less
+  cohesive than Season 2's slate), Season 5 #5 (the Singles
+  subtitle sharpens the persona/authenticity tension via casting
+  but adds no new blocking mechanic), Season 4 #6 (the
+  celebrity-catfish cameo is a clever stunt that dilutes the
+  show's "strangers" premise even with real format additions),
+  Season 6 #7 (the AI-contestant twist earned real press
+  attention but resolves faster than its promotional build-up
+  promised — the season's headline hook under-delivers on the
+  core mechanic). `era_bands` skipped (7 seasons, below the
+  8-season threshold). Gap table row removed — show fully
+  drained.
 
 ## Show-add log
 
