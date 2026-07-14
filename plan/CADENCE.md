@@ -45,9 +45,10 @@ regenerates the whole table.
 Declared counts are frontmatter claims — verify at author time.
 `chopped`'s prior 62-vs-64 ambiguity is resolved by this sweep:
 season 64 began production after 2026-03-09, confirming the
-64-count source. Still-suspect: `married-at-first-sight-australia`
-(13, unverified estimate — no sweep finding either way this
-pass).
+64-count source. `married-at-first-sight-australia`'s prior
+"unverified estimate" flag is resolved by the 2026-07-14 drain
+tick: 13 aired seasons confirmed via Wikipedia season articles
++ trade press; Season 14 is announced/casting but unaired.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -80,7 +81,7 @@ pass).
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| married-at-first-sight-australia | 1/13 | 12 |
+| married-at-first-sight-australia | 11/13 | 2 |
 | married-at-first-sight | 6/21 | 15 |
 | ink-master | 1/17 | 16 |
 | so-you-think-you-can-dance | 1/18 | 17 |
