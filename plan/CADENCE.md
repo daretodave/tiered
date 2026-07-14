@@ -77,7 +77,7 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| dragrace-allstars | 1/11 | 10 |
+| dragrace-allstars | 10/11 | 1* |
 | bachelor-in-paradise | 1/11 | 10 |
 | rhop | 1/11 | 10 |
 | summer-house | 1/11 | 10 |
@@ -746,6 +746,30 @@ Four dated finales filed to `content/calendar.yml` this pass
   core mechanic). `era_bands` skipped (7 seasons, below the
   8-season threshold). Gap table row removed — show fully
   drained.
+- **dragrace-allstars** — drained this tick (cloud drain,
+  2026-07-14): Seasons 2 through 10 filed (9 seasons — Season 2
+  "Lip Sync For Your Legacy" debut on Logo TV through Season 10
+  "Tournament of All Stars," the franchise's record 18-queen
+  bracket reinvention on Paramount+), completing 10/11 of the
+  declared count. `canon.md` fully rebased across all ten seeded
+  seasons: Season 10's tournament reinvention ranked #2 behind
+  the unchanged founding Season 1, Season 2's format-flip debut
+  at #3, Season 4's one-of-a-kind tie finale at #4, Season 7
+  "All Winners" at #5, Season 9's charity-stakes no-elimination
+  format at #6, Season 5's Lip Sync Assassin debut at #7, Season
+  6's Assassin-tightened/RuDemption/streaming-move season at #8,
+  Season 3's jury-finale refinement at #9, Season 8's
+  standard-elimination-plus-Fame-Games season at #10. `era_bands`
+  newly authored with 3 bands — `logo-era` [2012, 2017],
+  `vh1-era` [2018, 2020], `streaming-era` [2021, 2025] —
+  gap-free, covering the full 2012–2025 aired span. Season 11 is
+  currently airing with no confirmed finale (projected
+  2026-07-17, three days out from this tick's reference date) —
+  same confirmed-but-unaired precedent as the other starred rows
+  above; deferred until the finale airs. Gap table row
+  re-marked `1*` (down from 10) rather than removed — one season
+  remains once Season 11 concludes. 823 seasons filed
+  catalog-wide as of this tick.
 
 ## Show-add log
 
