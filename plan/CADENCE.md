@@ -78,7 +78,7 @@ pass).
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
-| 90-day-fiance | 1/12 | 11 |
+| 90-day-fiance | 11/12 | 1* |
 | southern-charm | 1/12 | 11 |
 | american-ninja-warrior | 6/18 | 12 |
 | vanderpump-rules | 1/13 | 12 |
@@ -853,6 +853,34 @@ Four dated finales filed to `content/calendar.yml` this pass
   gap-free, covering the full 2017-2026 aired span. Gap table row
   removed — show fully drained. 850 seasons filed catalog-wide as
   of this tick.
+- **90-day-fiance** — drained this tick (cloud drain, 2026-07-14):
+  the smallest real (non-starred) gap on the board once every
+  confirmed-but-unaired `1*`/`2*` row was excluded — tied with
+  southern-charm at 11, both tier B/est_year 2014, resolved by
+  table order. Seasons 2 (2014, the six-couple ensemble template)
+  through 11 (2025, the franchise's first three-person cast) filed
+  — 10 seasons, hitting the per-tick cap. `canon.md` fully rebased
+  across all eleven seeded seasons: Season 11's throuple casting
+  ranked #1 (the format's first change to what a "couple" running
+  the visa clock even means), founding Season 1 settles to #2,
+  Season 5's first-ever returning couple at #3, Season 7's
+  ensemble expansion to seven couples at #4, Season 4's
+  franchise-launching Happily Ever After spinoff timing at #5,
+  Season 6's last-all-new-cast-for-a-decade distinction at #6,
+  Season 9's first Other-Way crossover at #7, Season 8's
+  three-returning-couple pandemic-window season at #8, Season 10's
+  second-crossover episode-count-tying run at #9, Season 2's
+  six-couple template-setting scale-up at #10, Season 3's
+  no-new-wrinkle season last at #11. `era_bands` newly authored
+  with 4 bands — `ensemble-era` [2014, 2016], `comeback-era`
+  [2017, 2019], `crossover-era` [2020, 2024], `throuple-era`
+  [2025, 2025] — gap-free, covering the full 2014-2025 aired span.
+  Season 12 premiered 2026-05-10 and is currently airing with no
+  finale or Tell-All date announced — same confirmed-but-unaired
+  precedent as the other starred rows above; deferred until the
+  season concludes. Gap table row re-marked `1*` (down from 11)
+  rather than removed — one season remains once Season 12
+  concludes. 860 seasons filed catalog-wide as of this tick.
 
 ## Show-add log
 
