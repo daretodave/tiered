@@ -3,7 +3,7 @@ show: rhop
 number: 1
 slug: season-1
 title: "Season 1"
-canonical_position: 1
+canonical_position: 3
 premiere_date: "2016-01-17"
 location: "Potomac, Maryland"
 ep_count: 10
