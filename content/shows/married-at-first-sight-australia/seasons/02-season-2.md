@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 2
 title: "Season 2"
-canonical_position: 4
+canonical_position: 5
 premiere_date: 2016-04-04
 ep_count: 7
 location: "Australia"

@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 8
 title: "Season 8"
-canonical_position: 5
+canonical_position: 6
 premiere_date: 2021-02-22
 ep_count: 32
 location: "Australia"

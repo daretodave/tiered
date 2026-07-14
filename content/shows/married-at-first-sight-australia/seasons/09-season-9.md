@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 9
 title: "Season 9"
-canonical_position: 9
+canonical_position: 11
 premiere_date: 2022-01-31
 ep_count: 37
 location: "Australia"

@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 10
 title: "Season 10"
-canonical_position: 7
+canonical_position: 8
 premiere_date: 2023-01-30
 ep_count: 36
 location: "Australia"

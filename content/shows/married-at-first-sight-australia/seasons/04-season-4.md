@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 4
 title: "Season 4"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2017-01-30
 ep_count: 29
 location: "Australia"

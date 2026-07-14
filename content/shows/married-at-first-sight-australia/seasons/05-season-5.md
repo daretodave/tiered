@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 5
 title: "Season 5"
-canonical_position: 8
+canonical_position: 10
 premiere_date: 2018-01-29
 ep_count: 32
 location: "Australia"

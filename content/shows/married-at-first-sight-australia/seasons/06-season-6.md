@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 6
 title: "Season 6"
-canonical_position: 11
+canonical_position: 13
 premiere_date: 2019-01-28
 ep_count: 41
 location: "Australia"

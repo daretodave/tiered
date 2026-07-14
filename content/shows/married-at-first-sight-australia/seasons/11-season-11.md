@@ -2,7 +2,7 @@
 show: married-at-first-sight-australia
 number: 11
 title: "Season 11"
-canonical_position: 10
+canonical_position: 12
 premiere_date: 2024-01-29
 ep_count: 38
 location: "Australia"
