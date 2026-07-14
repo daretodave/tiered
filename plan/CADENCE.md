@@ -51,6 +51,7 @@ pass).
 
 | show | filed/declared | gap |
 |---|---|---|
+| vanderpump-rules | 11/12 | 1 |
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
@@ -80,7 +81,6 @@ pass).
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| vanderpump-rules | 1/13 | 12 |
 | married-at-first-sight-australia | 1/13 | 12 |
 | married-at-first-sight | 6/21 | 15 |
 | ink-master | 1/17 | 16 |
@@ -914,6 +914,43 @@ Four dated finales filed to `content/calendar.yml` this pass
   guessed, a candidate for a verified follow-up pass. Gap table row
   removed — show fully drained. 870 seasons filed catalog-wide as
   of this tick.
+- **vanderpump-rules** — drained this tick (cloud drain, 2026-07-14):
+  the gap table's "declared 13" was wrong — scout research confirms
+  the show has fully aired exactly 12 seasons as of this tick
+  (matching the frontmatter's existing `seasons: 12`, which needed
+  no correction). Season 13 renewal is reported by tabloid press
+  (TMZ, RealityTea) but explicitly called "premature" by the
+  show's own EP in a Hollywood Reporter interview and unconfirmed
+  by Bravo as of the May 2026 upfronts — `status: hiatus` stays
+  accurate, no premiere date exists to defer against. Seasons 2
+  (2013, Ariana Madix joins recurring) through 11 (2024, Raquel
+  Leviss's final season before departure) filed — 10 seasons,
+  hitting the per-tick cap. `canon.md` fully rebased across all
+  eleven seeded seasons: Season 1 unchanged at #1 (the founding
+  season), Season 6's zero-departure ensemble expansion at #2,
+  Season 3's first successful growth test at #3, Season 7's Tom
+  Tom real-world expansion at #4, Season 5's cast-restoration
+  recovery at #5, Season 2's confident low-key sophomore run at
+  #6, Season 4's first real cast subtraction at #7, Season 8's
+  big cast addition undercut by the post-season Doute/Schroeder
+  termination news at #8, Season 10's Scandoval-overtaken run at
+  #9, Season 11's leaner post-scandal cast at #10, Season 9's
+  pandemic-gap-plus-firings rebuild last at #11 — this canon's
+  stated methodology rewards on-screen continuity over off-screen
+  disruption, so the two most turnover-heavy seasons (9, 10) rank
+  lowest despite otherwise-competent format execution. `era_bands`
+  newly authored with 4 bands — `founding-cast` [2013, 2015],
+  `ensemble-expansion` [2016, 2019], `post-firings-era` [2020,
+  2022], `scandoval-era` [2023, 2024] — gap-free, covering the
+  full 2013-2024 aired span. Season 12 (Dec 2025 – Mar 2026, a
+  full-cast reboot replacing every S11 regular except Lisa
+  Vanderpump) is fully aired and concluded but was out of scope
+  for this tick's 10-season cap — queued for the next drain tick,
+  not deferred as confirmed-but-unaired (it's already aired, just
+  unauthored). Gap table row re-marked `1` (no star — the
+  remaining season is real and actionable, not confirmed-but-
+  unaired) and moved to the top of the pick order. 891 seasons
+  filed catalog-wide as of this tick.
 
 ## Show-add log
 
