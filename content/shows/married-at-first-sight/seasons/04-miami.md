@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 4
 title: "Miami"
-canonical_position: 5
+canonical_position: 8
 take_h2: "New experts, a new coast."
 premiere_date: "2016-07-26"
 location: "Miami, Florida"
