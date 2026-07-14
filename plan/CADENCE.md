@@ -78,7 +78,6 @@ pass).
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
-| bachelor-in-paradise | 1/11 | 10 |
 | rhop | 1/11 | 10 |
 | summer-house | 1/11 | 10 |
 | 90-day-fiance | 1/12 | 11 |
@@ -770,6 +769,39 @@ Four dated finales filed to `content/calendar.yml` this pass
   re-marked `1*` (down from 10) rather than removed — one season
   remains once Season 11 concludes. 823 seasons filed
   catalog-wide as of this tick.
+- **bachelor-in-paradise** — DRAINED this tick (cloud drain,
+  2026-07-14): the gap table's "declared 11" was wrong — scout
+  research confirms the show has fully aired exactly 10 seasons
+  as of this tick (matching the frontmatter's existing
+  `seasons: 10`, which needed no correction); Season 11 is
+  renewed for Summer 2027 but has no confirmed premiere date —
+  same confirmed-but-unaired precedent as the other starred rows,
+  deferred until it airs. Seasons 2 (2015, the show's first
+  Sayulita season, introducing staggered wave arrivals and a
+  sibling-linked casting mechanic) through 10 (2025, the first
+  season filmed outside Mexico, relocating to Costa Rica after
+  nine straight Sayulita years, plus Golden Bachelor/ette
+  casting crossover) filed, completing the show's true 10/10
+  count. `canon.md` fully rebased across all ten seasons: the
+  founding Tulum season holds #1 (no format precedent existed
+  yet to build on), Season 8's Casa Amor-style gender-split twist
+  on the largest episode order in franchise history ranks #2,
+  Season 6's genuine same-sex-couple format accommodation paired
+  with Chris Harrison's hosting finale ranks #3, Season 10's
+  Costa Rica relocation plus Golden-spinoff casting expansion
+  ranks #4, Season 5's international crossover (Bachelorette
+  Canada/Bachelor NZ/Bachelor Japan) ranks #5, Season 9's
+  WGA-strike-disrupted-but-competently-absorbed run ranks #6,
+  Season 2's founding Sayulita house style ranks #7, Season 3's
+  repeated casting mechanic plus a rare disciplinary exit ranks
+  #8, Season 7's COVID-delayed no-dedicated-host run ranks #9,
+  Season 4's production-shutdown-shortened run ranks #10 (last —
+  defined by real-world disruption, not a format choice).
+  `era_bands` newly authored with 3 bands — `harrison-era`
+  [2014, 2019], `transition-era` [2020, 2021], `palmer-era`
+  [2022, 2025] — gap-free, covering the full 2014-2025 aired
+  span. Gap table row removed — show fully drained. 832 seasons
+  filed catalog-wide as of this tick.
 
 ## Show-add log
 
