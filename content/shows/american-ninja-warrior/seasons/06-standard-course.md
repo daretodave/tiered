@@ -7,7 +7,7 @@ ep_count: 14
 host: "Matt Iseman, Akbar Gbaja-Biamila, and Jenn Brown"
 aired_year: 2014
 location: "Venice Beach, Dallas, St. Louis, Miami, and Denver · national finals in Las Vegas, Nevada"
-canonical_position: 1
+canonical_position: 2
 eyebrow: "Aired May–Sep 2014 · NBC"
 lede: "St. Louis joins the qualifying rotation as a fifth city, alongside Venice Beach, Dallas, Miami, and Denver. The Salmon Ladder and Spider Climb move into city finals, while Piston Road, the Giant Ring, and the Silk Slider raise the bar in Las Vegas."
 pull: "Five cities, one Vegas course, and a host booth that finally holds still."

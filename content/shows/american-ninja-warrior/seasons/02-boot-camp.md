@@ -7,7 +7,7 @@ ep_count: 10
 host: "Matt Iseman, with Jimmy Smith and Alison Haislip"
 aired_year: 2010
 location: "Venice, California"
-canonical_position: 5
+canonical_position: 14
 eyebrow: "Premiered winter 2010 · G4"
 lede: "Season two keeps qualifying in Venice Beach but adds a new stage: Ninja Warrior Boot Camp, a team elimination gauntlet in the California mountains that decides who earns a trip to Mount Midoriyama. Matt Iseman takes over as lead host."
 pull: "Venice Beach gets a new gatekeeper: a team gauntlet standing between qualifiers and Japan."

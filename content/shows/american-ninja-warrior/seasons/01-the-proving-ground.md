@@ -7,7 +7,7 @@ ep_count: 8
 host: "Blair Herter and Alison Haislip"
 aired_year: 2009
 location: "Venice, California"
-canonical_position: 6
+canonical_position: 15
 eyebrow: "Debuted winter 2009 · G4"
 lede: "American Ninja Warrior begins as a search for Americans tough enough to compete on Mount Midoriyama, the legendary course from Japan's Sasuke. Qualifying trials in Venice, California whittle a field of hopefuls down to a handful with a shot at the real thing."
 pull: "A course built in Japan, and an open call for anyone in America who thought they could clear it."

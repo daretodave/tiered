@@ -7,7 +7,7 @@ ep_count: 24
 host: "Matt Iseman, with Jonny Moseley and Angela Sun"
 aired_year: 2012
 location: "Six qualifying regions, including Venice Beach, Dallas, and Miami · national finals in Las Vegas, Nevada"
-canonical_position: 3
+canonical_position: 7
 eyebrow: "Aired May–Jul 2012 · NBC/G4"
 lede: "Season four blows the format open: six regional qualifying cities, including Venice Beach, Dallas, and Miami, replace the single-city model. National finals move off Mount Midoriyama and onto a US-built replica course in Las Vegas for the first time."
 pull: "Six cities send hopefuls to Vegas, not Japan — the format's biggest swing yet."

@@ -7,7 +7,7 @@ ep_count: 21
 host: "Matt Iseman, Akbar Gbaja-Biamila, and Jenn Brown"
 aired_year: 2013
 location: "Venice Beach, Baltimore, Miami, and Denver · national finals in Las Vegas, Nevada"
-canonical_position: 2
+canonical_position: 5
 eyebrow: "Aired summer 2013 · NBC"
 lede: "Season five adds Baltimore and Denver to the qualifying rotation, and nationals return to Las Vegas for a second straight year. New obstacles like the Rope Glider and Hang Slider raise the bar on both stages."
 pull: "New cities, new obstacles, and a Vegas course that's starting to feel like home."
