@@ -79,7 +79,6 @@ pass).
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
-| southern-charm | 1/12 | 11 |
 | american-ninja-warrior | 6/18 | 12 |
 | vanderpump-rules | 1/13 | 12 |
 | married-at-first-sight-australia | 1/13 | 12 |
@@ -881,6 +880,40 @@ Four dated finales filed to `content/calendar.yml` this pass
   season concludes. Gap table row re-marked `1*` (down from 11)
   rather than removed — one season remains once Season 12
   concludes. 860 seasons filed catalog-wide as of this tick.
+- **southern-charm** — DRAINED this tick (cloud drain, 2026-07-14):
+  the gap table's "declared 12" was wrong — scout research confirms
+  the show has fully aired exactly 11 seasons as of this tick
+  (matching the frontmatter's existing `seasons: 11`, which needed
+  no correction); the "12" appears to have counted the May 2026
+  Season 12 renewal announcement as an aired season rather than
+  waiting for a premiere. Season 12 is renewed and filming but has
+  no confirmed premiere date — same confirmed-but-unaired precedent
+  as the other starred rows, deferred until it airs. Seasons 2
+  (2015, Landon Clements joins, Kathryn Dennis's role expands)
+  through 11 (2025-26, Charley Manley and Whitner Slagsvol join
+  after the show's heaviest-ever reshuffle) filed, completing the
+  show's true 11/11 count. `canon.md` fully rebased across all
+  eleven seasons: the zero-turnover Season 3 ranks #2 behind the
+  unchanged founding Season 1, Season 5's single clean addition on
+  the longest order to date at #3, Season 6 (Thomas Ravenel's exit,
+  the founding era's close) at #4, Season 11's post-reshuffle
+  stabilization at #5, Season 2's first cast growth at #6, Season
+  4's first founding-cast departure (Kroll in, Sudler-Smith out) at
+  #7, Season 9's third-straight-expansion diminishing novelty at
+  #8, Season 7's three-person refresh on a tightened 13-episode
+  order at #9, Season 8's biggest single-season expansion (four new
+  cast members at once) at #10, Season 10's heaviest-ever cast
+  turnover last at #11. `era_bands` newly authored with 4 bands —
+  `founding-trio` [2014, 2016], `kroll-meissner-years` [2017, 2019],
+  `post-ravenel-refresh` [2020, 2023], `reshuffle-era` [2024, 2026]
+  — gap-free, covering the full 2014-2026 aired span. `cast_size`/
+  `cast_size_caption` fields omitted on all ten new season files —
+  the brief supplied named joiners/departures per season but not
+  complete verified rosters, and a naive running tally risked
+  fabricating headcounts; the CAST stat tile is absent rather than
+  guessed, a candidate for a verified follow-up pass. Gap table row
+  removed — show fully drained. 870 seasons filed catalog-wide as
+  of this tick.
 
 ## Show-add log
 
