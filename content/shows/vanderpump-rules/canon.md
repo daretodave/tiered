@@ -3,15 +3,15 @@ show: vanderpump-rules
 editor: "tiered.tv editor"
 last_revised: 2026-07-14
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Vanderpump Rules is twelve seasons deep, and eleven are ranked here, weighed for how clearly the restaurant's workplace hierarchy and the staff's personal entanglements hold together as the cast grows and changes. This isn't presented as objective. It's one honest read, open to revision as the final season lands."
+meth_who_p: "tiered.tv's editor. Vanderpump Rules is twelve seasons deep, and all twelve are ranked here, weighed for how clearly the restaurant's workplace hierarchy and the staff's personal entanglements hold together as the cast grows and changes. This isn't presented as objective. It's one honest read, open to revision as the show returns."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most here — whether the restaurant's chain of command actually shapes a season's stakes, whether the ensemble reads as coworkers rather than a cast assembled for cameras, and whether real-world cast turnover disrupts that continuity or barely touches it. Seasons doing the first two while avoiding the third sit highest."
 meth_when_h: "When I revisit"
-meth_when_p: "Eleven of twelve seasons are ranked now, from the 2013 debut through the show's post-Scandoval run in 2024. Only the newest season remains unseeded. The order already reflects real cast turnover and format growth, and it will keep shifting once the final season gets its own slot."
+meth_when_p: "All twelve seasons are ranked now, from the 2013 debut through the 2025 cast reset that rebuilt the roster from one holdover. The order already reflects real cast turnover and format growth over the show's full run, and it will keep shifting if the show returns for a thirteenth season."
 tier_s_blurb: "The seasons where restaurant hierarchy, ensemble chemistry, and workplace stakes all land together with zero or minimal cast disruption — the format running at its most confident."
 tier_a_blurb: "Confident seasons still doing real work, whether absorbing a cast addition, a departure, or a real-world story that briefly outgrew the format itself."
 tier_b_blurb: "The show's default tier for a season that runs the format competently without pushing it forward — solid, not transformative."
-weekly_question: "With eleven of twelve seasons ranked, does Season 6's zero-turnover expansion still edge out Season 3's format-first growth?"
+weekly_question: "With all twelve seasons ranked, does Season 12's full cast reset land closer to Season 9's rebuild, or further below it?"
 era_bands:
   - key: founding-cast
     label: "Founding cast"
@@ -25,6 +25,9 @@ era_bands:
   - key: scandoval-era
     label: "Scandoval era"
     range: [2023, 2024]
+  - key: reboot-era
+    label: "Reboot era"
+    range: [2025, 2025]
 ---
 
 # Editor's Canon — Vanderpump Rules
@@ -115,4 +118,12 @@ tag: The most disrupted stretch in the show's run — the cast rebuilt before fi
 slot_argument: The longest gap in the show's history follows Jax Taylor and Brittany Cartwright's Bravo departures, and Brock Davies, Charli Burnett, and Raquel Leviss's promotions rebuild the roster from there.
 community_rank_hint: rank=11 delta=0 sentiment=hold
 
-Season 9 sits last because no other season in this canon absorbs this much change before a single scene airs. The longest gap in the show's history, a pandemic-era production pause, separates it from the season before, and Jax Taylor and Brittany Cartwright were let go by Bravo somewhere in the middle of it, ending their runs as series regulars. Seventeen episodes introduce Brock Davies as a new regular and promote Charli Burnett and Raquel Leviss to full-time status, rebuilding the roster almost from scratch. The restaurant's chain of command is still there underneath it, but this canon rewards accumulated continuity above almost everything else, and no season has less of it to work with.
+Season 9 ranks eleventh because almost no other season in this canon absorbs this much change before a single scene airs. The longest gap in the show's history, a pandemic-era production pause, separates it from the season before, and Jax Taylor and Brittany Cartwright were let go by Bravo somewhere in the middle of it, ending their runs as series regulars. Seventeen episodes introduce Brock Davies as a new regular and promote Charli Burnett and Raquel Leviss to full-time status, rebuilding the roster almost from scratch. The restaurant's chain of command is still there underneath it, and most of the ensemble carries over — which is exactly why the even deeper reset one season later ranks below it.
+
+## 12. Season 12
+
+tag: The most complete cast reset in the show's history — one name carried over, ten new regulars in.
+slot_argument: Lisa Vanderpump is the only holdover from Season 11; ten new cast members, four with prior guest appearances, rebuild the roster at SUR and TomTom from scratch.
+community_rank_hint: rank=12 delta=0 sentiment=hold
+
+Season 12 sits last because no season in this canon disrupts continuity more completely. Lisa Vanderpump is the only face carried over from Season 11 — every other regular and recurring cast member is gone, replaced by ten new names, four of whom had smaller appearances earlier in the show's run. The season does return to the format's founding premise, with SUR and TomTom's actual restaurant hierarchy driving the stakes again after seasons of personal drama that drifted from the floor. That's real credit. But this canon weighs accumulated continuity above almost everything else, and a reset this total costs more than a single season's format discipline can recover.
