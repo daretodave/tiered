@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| shark-tank | 11/18 | 7 |
 | rhom | 1/8 | 7 |
 | dragrace-allstars | 1/11 | 10 |
 | bachelor-in-paradise | 1/11 | 10 |
@@ -680,6 +679,39 @@ Four dated finales filed to `content/calendar.yml` this pass
   `era_bands` skipped (only 6 seasons, below the 8-season
   threshold). Gap table row removed — show fully drained.
 
+- **shark-tank** — DRAINED this tick (cloud drain, 2026-07-14): the
+  gap table's "declared 18" was wrong — scout research confirms the
+  show has fully aired exactly 17 seasons as of this tick (matching
+  the frontmatter's existing `seasons: 17`, which needed no
+  correction); Season 18 is renewed (announced May 12, 2026) but has
+  no confirmed premiere date, expected fall 2026 — same
+  confirmed-but-unaired precedent as the other starred rows,
+  deferred until it airs. Seasons 12 (2020–21, production relocated
+  to a Las Vegas quarantine bubble under COVID-19 distancing rules,
+  25 episodes), 13 (2021–22, a return to on-set normalcy after the
+  bubble format, 24 episodes), 14 (2022–23, the show's first-ever
+  live episode, 22 episodes), 15 (2023–24, a steady season with no
+  cast or format news, 22 episodes), 16 (2024–25, Daniel Lubetzky
+  promoted from recurring guest shark to full main-panel cast, also
+  Mark Cuban's final season as a main-panel shark, 20 episodes), and
+  17 (2025–26, Lubetzky's first full season as a main panelist,
+  Cuban's full departure from the main panel, moved from Friday to
+  Wednesday nights, 18 episodes) filed, completing the show's true
+  17/17 count. `canon.md` fully rebased across all seventeen
+  seasons: Season 12's pandemic-bubble format and Season 14's
+  first-ever live episode both rank in the upper-middle alongside
+  the show's other format-milestone seasons; Season 17 lands
+  mid-pack, mirroring Season 4's role as a settling-in season after
+  a panel shift; steady no-change seasons (13, 15) land in the
+  established tier-B middle; Season 16 ranks last — the most
+  consequential permanent panel disruption since the founding
+  years, consistent with this canon's precedent of ranking breaks in
+  long-held stability below even the unsettled early seasons.
+  `meth_who_p`/`meth_when_p` rewritten for "seventeen seasons
+  ranked." `era_bands` widened from 3 to 6 — added `pandemic-era`
+  [2020, 2021], `post-pandemic-era` [2022, 2023], and `new-panel-era`
+  [2024, 2026] — contiguous, no gaps, covering the full 2009-2026
+  aired span. Gap table row removed — show fully drained.
 - **the-circle** — DRAINED this tick (cloud drain, 2026-07-14):
   Seasons 2 (2021, the Joker twist plus a Superinfluencer round
   and a second-chance re-entry mechanic), 3 (2021, a cloning
