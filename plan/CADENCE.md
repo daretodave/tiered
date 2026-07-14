@@ -79,7 +79,7 @@ pass).
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
-| american-ninja-warrior | 16/18 | 2 |
+| american-ninja-warrior | 17/18 | 1* |
 | vanderpump-rules | 1/13 | 12 |
 | married-at-first-sight-australia | 1/13 | 12 |
 | married-at-first-sight | 6/21 | 15 |

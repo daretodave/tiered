@@ -7,7 +7,7 @@ meth_who_p: "tiered.tv's editor, watching American Ninja Warrior as a course-des
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things: course integrity — whether the stage design actually separates skill from luck; field depth — whether the competitors entering a season could plausibly test the course as built; and pacing — whether a season respects the difference between a qualifying round and a finals stage. Novelty obstacles matter less than whether the whole course holds together."
 meth_when_h: "When I revisit"
-meth_when_p: "Sixteen seasons are seeded now, from the show's tryout-era debut through the year touring contracted to a single Hollywood lot. Nothing sits at the top by default anymore — course integrity, field depth, and pacing decide the order, and a pandemic-disrupted season can rank below a founding one. Expect more movement as later seasons get added."
+meth_when_p: "Seventeen seasons are seeded now, from the show's tryout-era debut through the year touring contracted to a single Las Vegas address. Nothing sits at the top by default anymore — course integrity, field depth, and pacing decide the order, and a pandemic-disrupted season can rank below a founding one. Expect more movement as later seasons get added."
 tier_s_blurb: "American Ninja Warrior at its most complete — a course that finds the exact edge of what the field can do, and a finals stage that earns its buildup."
 tier_a_blurb: "Strong seasons where the course design and the field are evenly matched — hard enough to matter, fair enough to reward genuine skill."
 tier_b_blurb: "Solid seasons that run the format cleanly — dependable obstacles, a competent field, nothing that changes how the show gets talked about."
@@ -25,7 +25,7 @@ era_bands:
     range: [2016, 2019]
   - key: contraction-era
     label: "Contraction era"
-    range: [2020, 2024]
+    range: [2020, 2025]
 ---
 
 # Editor's Canon — American Ninja Warrior
@@ -85,6 +85,10 @@ Season sixteen holds the line season fifteen drew rather than pulling the show b
 ## 2. Boot Camp
 
 Season two is the first sign this could be more than a Sasuke tryout. Boot Camp, a team-based elimination stage in the California mountains, gives the format a genuine second act — a stage that tests something different than the Venice qualifiers do, which is the beginning of real pacing. But the field is still small and single-city, and the course itself is closer to season one's roughness than to what the show becomes later. It's a step in the right direction more than an arrival, which is exactly what a season this early should be.
+
+## 17. The Racing Finals
+
+Season seventeen is the boldest swing this canon has weighed, bigger than season nine's three-stage experiment. For the first time, Qualifiers, Semifinals, and National Finals all film on the Las Vegas Strip — the endpoint of three seasons of touring contraction, and the thinnest field depth this canon has recorded. Worse for course integrity: National Finals drops the vertical climb for a head-to-head racing bracket built from returning obstacles, trading the tower for a start line. This isn't season twelve's pandemic disruption — the choice is deliberate, the season runs a full thirteen episodes, and Cannonball Alley's return is a real nod to the show's history. But a finale that stops asking competitors to climb costs more than it earns.
 
 ## 1. The Proving Ground
 
