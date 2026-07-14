@@ -49,6 +49,13 @@ season 64 began production after 2026-03-09, confirming the
 "unverified estimate" flag is resolved by the 2026-07-14 drain
 tick: 13 aired seasons confirmed via Wikipedia season articles
 + trade press; Season 14 is announced/casting but unaired.
+`married-at-first-sight`'s prior declared count of 21 is
+corrected to 20 by the 2026-07-14 drain tick: scout research
+confirmed Season 21 is announced-only/unfilmed and was wrongly
+counted as declared; Season 20 (Seattle) premiered 2026-07-12
+and is currently airing, deferred per the confirmed-but-unaired
+precedent (not starred — three of the four remaining seasons,
+17 through 19, are real and actionable).
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -81,7 +88,7 @@ tick: 13 aired seasons confirmed via Wikipedia season articles
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| married-at-first-sight | 6/21 | 15 |
+| married-at-first-sight | 16/20 | 4 |
 | ink-master | 1/17 | 16 |
 | so-you-think-you-can-dance | 1/18 | 17 |
 | the-real-world | 1/33 | 32 |
