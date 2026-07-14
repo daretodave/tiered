@@ -3,7 +3,7 @@ show: ink-master
 number: 11
 title: "Grudge Match — Cleen vs. Christian"
 display_title: "Grudge Match:<br/><em>Cleen vs. Christian</em>"
-canonical_position: 11
+canonical_position: 17
 premiere_date: 2018-08-28
 ep_count: 16
 host: "Dave Navarro"

@@ -2,7 +2,7 @@
 show: ink-master
 number: 9
 title: "Shop Wars"
-canonical_position: 3
+canonical_position: 4
 premiere_date: 2017-06-06
 ep_count: 16
 host: "Dave Navarro"

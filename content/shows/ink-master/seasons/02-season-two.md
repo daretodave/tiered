@@ -2,7 +2,7 @@
 show: ink-master
 number: 2
 title: "Season Two"
-canonical_position: 8
+canonical_position: 10
 premiere_date: 2012-10-09
 ep_count: 13
 host: "Dave Navarro"

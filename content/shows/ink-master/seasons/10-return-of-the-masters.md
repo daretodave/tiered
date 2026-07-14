@@ -2,7 +2,7 @@
 show: ink-master
 number: 10
 title: "Return of the Masters"
-canonical_position: 10
+canonical_position: 13
 premiere_date: 2018-01-09
 ep_count: 16
 location: "Coney Island, NYC · Las Vegas, USA"

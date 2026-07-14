@@ -3,7 +3,7 @@ show: ink-master
 number: 8
 title: "Peck vs. Núñez"
 display_title: "Peck <em>vs.</em><br/>Núñez"
-canonical_position: 4
+canonical_position: 5
 premiere_date: 2016-08-23
 ep_count: 16
 host: "Dave Navarro"

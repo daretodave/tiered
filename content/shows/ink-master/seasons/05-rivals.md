@@ -3,7 +3,7 @@ show: ink-master
 number: 5
 title: "Ink Master: Rivals"
 display_title: "Ink Master:<br/><em>Rivals</em>"
-canonical_position: 5
+canonical_position: 6
 premiere_date: 2014-09-02
 ep_count: 16
 host: "Dave Navarro"

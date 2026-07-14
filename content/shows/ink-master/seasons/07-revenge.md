@@ -2,7 +2,7 @@
 show: ink-master
 number: 7
 title: "Revenge"
-canonical_position: 6
+canonical_position: 8
 premiere_date: 2016-03-01
 ep_count: 13
 host: "Dave Navarro"

@@ -2,7 +2,7 @@
 show: ink-master
 number: 4
 title: "Season Four"
-canonical_position: 9
+canonical_position: 12
 premiere_date: 2014-02-25
 ep_count: 13
 host: "Dave Navarro"

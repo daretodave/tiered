@@ -2,7 +2,7 @@
 show: ink-master
 number: 3
 title: "Season Three"
-canonical_position: 7
+canonical_position: 9
 premiere_date: 2013-07-16
 ep_count: 13
 host: "Dave Navarro"
