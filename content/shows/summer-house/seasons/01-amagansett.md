@@ -2,7 +2,7 @@
 show: summer-house
 number: 1
 title: "Amagansett"
-canonical_position: 1
+canonical_position: 3
 premiere_date: "2017-01-09"
 location: "Amagansett, New York"
 ep_count: 10
