@@ -77,7 +77,6 @@ pass).
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| rhom | 1/8 | 7 |
 | dragrace-allstars | 1/11 | 10 |
 | bachelor-in-paradise | 1/11 | 10 |
 | rhop | 1/11 | 10 |
