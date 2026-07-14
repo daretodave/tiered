@@ -78,7 +78,6 @@ pass).
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
-| rhop | 1/11 | 10 |
 | summer-house | 1/11 | 10 |
 | 90-day-fiance | 1/12 | 11 |
 | southern-charm | 1/12 | 11 |
@@ -802,6 +801,33 @@ Four dated finales filed to `content/calendar.yml` this pass
   [2022, 2025] — gap-free, covering the full 2014-2025 aired
   span. Gap table row removed — show fully drained. 832 seasons
   filed catalog-wide as of this tick.
+- **rhop** — DRAINED this tick (cloud drain, 2026-07-14): the gap
+  table's "declared 11" was wrong — scout research confirms the
+  show has fully aired exactly 10 seasons as of this tick
+  (matching the frontmatter's existing `seasons: 10`, which
+  needed no correction); Season 11 has a confirmed cast (filming
+  since April 2026) but no announced premiere date — same
+  confirmed-but-unaired precedent as the other starred rows,
+  deferred until it airs. Seasons 2 (2017, Monique Samuels joins,
+  Katie Rost exits mid-filming) through 10 (2025-26, Tia Glover
+  and Angel Massie join, Karen Huger absent from the main cast for
+  the first time in the show's run) filed, completing the show's
+  true 10/10 count. `canon.md` fully rebased across all ten
+  seasons: the two fully cast-stable seasons rank highest — Season
+  7 (zero turnover from Season 6) at #1, Season 4 (zero turnover
+  from Season 3, the show's first taste of full continuity) at #2
+  — the founding Season 1 settles to #3, Seasons 3 and 6 (each
+  adding one new housewife, otherwise stable) hold the upper-
+  middle, Seasons 5 and 2 (COVID delay/cast growth; Rost's
+  mid-filming exit) sit lower-middle, and Seasons 8-10 form the
+  bottom tier reflecting the show's heaviest cast churn, with
+  Season 10 last for Huger's real-world absence from the show's
+  central old-money role. `era_bands` newly authored with 4 bands
+  — `founding-era` [2016, 2019], `stable-core` [2020, 2022],
+  `turnover-era` [2023, 2024], `rebuild-era` [2025, 2026] — gap-
+  free, covering the full 2016-2026 aired span. Gap table row
+  removed — show fully drained. 841 seasons filed catalog-wide as
+  of this tick.
 
 ## Show-add log
 
