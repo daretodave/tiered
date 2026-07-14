@@ -92,7 +92,6 @@ Season 20.
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
-| ink-master | 11/17 | 6 |
 | so-you-think-you-can-dance | 1/18 | 17 |
 | the-real-world | 1/33 | 32 |
 | chopped | 6/64 | 58 |
@@ -1042,6 +1041,31 @@ Four dated finales filed to `content/calendar.yml` this pass
   seasons, 12-17, are real and actionable, not confirmed-but-unaired)
   — six seasons remain for a future drain tick. 927 seasons filed
   catalog-wide as of this tick.
+- **ink-master** — progress this tick (cloud drain, 2026-07-14):
+  Seasons 12-17 filed, closing out the show's full seventeen-season
+  run — the gender-split Battle of the Sexes (S12), the
+  pandemic-disrupted Turf War (S13), the total institutional
+  overhaul into the Paramount+ streaming era with a new host and
+  four-judge panel (S14), the all-rookie field with Navarro's full
+  absence (S15), the experience-split OGs vs. Young Guns with its
+  Jury of Peers mechanic (S16), and the hometown-pride four-finalist
+  Hometown Heroes (S17, the show's most recently concluded season,
+  confirmed with no Season 18 announced as of this tick). `canon.md`
+  fully rebased across all seventeen seasons — Season Fourteen's
+  all-star cast on a shorter run lands at #3 despite the
+  network/host/panel overhaul, OGs vs. Young Guns' working-artist
+  Jury of Peers at #7, Season Fifteen's rookie-only field at #11,
+  Hometown Heroes' rare four-finalist finale at #14, Battle of the
+  Sexes' demographic-not-skill split at #15, Turf War's
+  pandemic-cut finale tradition at #16, Grudge Match holding the
+  bottom slot at #17 — every other entry's `canonical_position`
+  renumbered to match. `era_bands` split `paramount-network-era`
+  into a linear-run band `paramount-network-era` [2018, 2021] and a
+  new `paramount-plus-era` [2022, 2026], gap-free across the full
+  2012-2026 aired span, on the real Season 14 network/host/panel
+  hinge. `meth_who_p`/`meth_when_p`/`weekly_question` rewritten for
+  the complete 17/17 run — gap table row removed, show fully
+  drained. 933 seasons filed catalog-wide as of this tick.
 
 ## Show-add log
 
