@@ -3,7 +3,7 @@ show: shark-tank
 number: 9
 slug: season-9
 title: "Season 9"
-canonical_position: 11
+canonical_position: 16
 premiere_date: "2017-10-01"
 ep_count: 24
 location: "Culver City, California"

@@ -3,7 +3,7 @@ show: shark-tank
 number: 11
 slug: season-11
 title: "Season 11"
-canonical_position: 7
+canonical_position: 10
 premiere_date: "2019-09-29"
 ep_count: 24
 location: "Culver City, California"

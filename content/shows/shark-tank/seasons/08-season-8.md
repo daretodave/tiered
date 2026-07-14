@@ -3,7 +3,7 @@ show: shark-tank
 number: 8
 slug: season-8
 title: "Season 8"
-canonical_position: 6
+canonical_position: 8
 premiere_date: "2016-09-23"
 ep_count: 24
 location: "Culver City, California"

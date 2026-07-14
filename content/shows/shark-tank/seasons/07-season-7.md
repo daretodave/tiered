@@ -3,7 +3,7 @@ show: shark-tank
 number: 7
 slug: season-7
 title: "Season 7"
-canonical_position: 8
+canonical_position: 11
 premiere_date: "2015-09-25"
 ep_count: 29
 location: "Culver City, California"
