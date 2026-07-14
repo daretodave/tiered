@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 5
 title: "Chicago"
-canonical_position: 7
+canonical_position: 9
 take_h2: "The format gets more room."
 premiere_date: "2017-04-20"
 location: "Chicago, Illinois"

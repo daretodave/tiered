@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 12
 title: "Atlanta II"
-canonical_position: 15
+canonical_position: 17
 take_h2: "Back to a city already proven."
 premiere_date: "2021-01-13"
 location: "Atlanta, Georgia"

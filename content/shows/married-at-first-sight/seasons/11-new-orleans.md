@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 11
 title: "New Orleans"
-canonical_position: 12
+canonical_position: 14
 take_h2: "The format runs on a longer clock."
 premiere_date: "2020-07-15"
 location: "New Orleans, Louisiana"

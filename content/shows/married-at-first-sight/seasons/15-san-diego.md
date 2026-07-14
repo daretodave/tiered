@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 15
 title: "San Diego"
-canonical_position: 5
+canonical_position: 7
 take_h2: "The panel grows to four."
 premiere_date: "2022-07-06"
 location: "San Diego, California"

@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 6
 title: "Boston"
-canonical_position: 9
+canonical_position: 11
 take_h2: "A specialist joins the panel."
 premiere_date: "2018-01-02"
 location: "Boston, Massachusetts"

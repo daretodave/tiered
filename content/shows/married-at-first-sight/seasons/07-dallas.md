@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 7
 title: "Dallas"
-canonical_position: 13
+canonical_position: 15
 take_h2: "The panel holds completely still."
 premiere_date: "2018-07-10"
 location: "Dallas, Texas"

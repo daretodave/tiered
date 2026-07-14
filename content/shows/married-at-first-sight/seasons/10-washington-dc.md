@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 10
 title: "Washington, D.C."
-canonical_position: 4
+canonical_position: 6
 take_h2: "Five couples, a bigger bet."
 premiere_date: "2020-01-01"
 location: "Washington, D.C."

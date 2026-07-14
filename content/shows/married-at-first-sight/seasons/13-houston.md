@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 13
 title: "Houston"
-canonical_position: 11
+canonical_position: 13
 take_h2: "The bigger cast becomes the norm."
 premiere_date: "2021-07-14"
 location: "Houston, Texas"

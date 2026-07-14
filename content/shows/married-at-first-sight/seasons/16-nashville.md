@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 16
 title: "Nashville"
-canonical_position: 6
+canonical_position: 8
 take_h2: "The longest season the format has run."
 premiere_date: "2023-01-04"
 location: "Nashville, Tennessee"
