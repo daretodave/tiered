@@ -51,7 +51,6 @@ pass).
 
 | show | filed/declared | gap |
 |---|---|---|
-| vanderpump-rules | 11/12 | 1 |
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
@@ -951,6 +950,23 @@ Four dated finales filed to `content/calendar.yml` this pass
   remaining season is real and actionable, not confirmed-but-
   unaired) and moved to the top of the pick order. 891 seasons
   filed catalog-wide as of this tick.
+- **vanderpump-rules** — DRAINED this tick (cloud drain, 2026-07-14):
+  Season 12 filed (premiered 2025-12-02, Bravo, 12 episodes plus a
+  separate 2-part reunion Mar 3/10 2026) — the most complete cast
+  turnover in the show's history, Lisa Vanderpump the sole holdover
+  from Season 11, ten new regulars (four with prior guest/background
+  appearances) rebuilding the SUR/TomTom staff from scratch. `canon.md`
+  fully rebased: Season 12 ranked #12 (last) — this canon's stated
+  methodology weighs accumulated cast continuity above nearly
+  everything else, and a full reset costs more than the season's
+  return to the restaurant-hierarchy premise earns back, so it settles
+  one slot below Season 9's previously-deepest rebuild. No other
+  season's rank shifted (Season 12 landed at the tail with nothing
+  below it to displace). `era_bands` widened with a new `reboot-era`
+  [2025, 2025] band — gap-free, covering the full 2013-2025 aired
+  span. `meth_who_p`/`meth_when_p`/`weekly_question` rewritten to
+  reflect the complete 12/12 run. Gap table row removed — show fully
+  drained. 892 seasons filed catalog-wide as of this tick.
 
 ## Show-add log
 
