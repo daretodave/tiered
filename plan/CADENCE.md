@@ -54,8 +54,11 @@ corrected to 20 by the 2026-07-14 drain tick: scout research
 confirmed Season 21 is announced-only/unfilmed and was wrongly
 counted as declared; Season 20 (Seattle) premiered 2026-07-12
 and is currently airing, deferred per the confirmed-but-unaired
-precedent (not starred — three of the four remaining seasons,
-17 through 19, are real and actionable).
+precedent. A same-day follow-up drain tick filed the three
+actionable seasons (17 Denver, 18 Chicago II, 19 Austin) and
+rebased canon.md, taking the show to 19/20 — the row now stars
+(1*) since the only remaining gap is the airing, unaired-verdict
+Season 20.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -88,7 +91,7 @@ precedent (not starred — three of the four remaining seasons,
 | dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| married-at-first-sight | 16/20 | 4 |
+| married-at-first-sight | 19/20 | 1* |
 | ink-master | 1/17 | 16 |
 | so-you-think-you-can-dance | 1/18 | 17 |
 | the-real-world | 1/33 | 32 |
