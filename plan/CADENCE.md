@@ -78,7 +78,6 @@ pass).
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
 | dragrace-allstars | 10/11 | 1* |
-| summer-house | 1/11 | 10 |
 | 90-day-fiance | 1/12 | 11 |
 | southern-charm | 1/12 | 11 |
 | american-ninja-warrior | 6/18 | 12 |
@@ -827,6 +826,32 @@ Four dated finales filed to `content/calendar.yml` this pass
   `turnover-era` [2023, 2024], `rebuild-era` [2025, 2026] — gap-
   free, covering the full 2016-2026 aired span. Gap table row
   removed — show fully drained. 841 seasons filed catalog-wide as
+  of this tick.
+- **summer-house** — DRAINED this tick (cloud drain, 2026-07-14):
+  the gap table's "declared 11" was wrong — scout research
+  confirms the show has fully aired exactly 10 seasons as of this
+  tick (matching the frontmatter's existing `seasons: 10`, which
+  needed no correction). Seasons 2 (2018, the first Watermill
+  move after East Hampton denied a return permit) through 10
+  (2026, six new main cast members, the largest single-season
+  addition yet, closed with the show's first three-part reunion)
+  filed, completing the show's true 10/10 count. `canon.md` fully
+  rebased across all ten seasons: the two most cast-stable
+  Watermill years rank highest — Season 4 (lightest turnover the
+  show has run) at #1, Season 3 (three new full-timers, two of
+  whom became years-long fixtures) at #2 — the founding Amagansett
+  season settles to #3, Season 7 (the format's full post-pandemic
+  return, heaviest reshuffle to that point) holds mid-upper,
+  Seasons 2 and 6 (each a location-change reset) sit at the
+  midpoint, Seasons 8-9 form the lower-middle on competent-but-
+  unremarkable turnover years, and Seasons 5 (pandemic live-in,
+  format break) and 10 (largest-ever cast overhaul) close out the
+  bottom for lack of the settled-cast continuity this canon
+  rewards most. `era_bands` newly authored with 4 bands —
+  `founding-era` [2017, 2020], `covid-pivot` [2021, 2021],
+  `post-covid-era` [2022, 2025], `overhaul-era` [2026, 2026] —
+  gap-free, covering the full 2017-2026 aired span. Gap table row
+  removed — show fully drained. 850 seasons filed catalog-wide as
   of this tick.
 
 ## Show-add log
