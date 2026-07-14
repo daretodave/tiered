@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 1
 slug: season-1
 title: "Season 1 (2014)"
-canonical_position: 1
+canonical_position: 2
 premiere_date: 2014-01-12
 ep_count: 6
 aired_year: 2014
