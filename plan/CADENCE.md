@@ -45,7 +45,14 @@ regenerates the whole table.
 Declared counts are frontmatter claims — verify at author time.
 `chopped`'s prior 62-vs-64 ambiguity is resolved by this sweep:
 season 64 began production after 2026-03-09, confirming the
-64-count source. `married-at-first-sight-australia`'s prior
+64-count source. progress (2026-07-15, cloud drain): chopped
+drained 16/64→26/64 (Seasons 17-26 filed, canon rebased across
+all 26 entries — the four-season overlap tangle of Seasons 22
+and 24 lands at the bottom of the full-baseline group, Season
+26's 8-episode count is the show's new all-time low and ranks
+dead last; a new `overlap-era` [2014,2015] era band was added
+to canon.era_bands, keeping coverage gap-free from 2009 through
+2015). Gap 48→38. `married-at-first-sight-australia`'s prior
 "unverified estimate" flag is resolved by the 2026-07-14 drain
 tick: 13 aired seasons confirmed via Wikipedia season articles
 + trade press; Season 14 is announced/casting but unaired.
@@ -93,7 +100,7 @@ Season 20.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 16/64 | 48 |
+| chopped | 26/64 | 38 |
 
 ## Sweep notes (2026-07-12, first pass)
 
