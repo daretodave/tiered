@@ -3,7 +3,7 @@ show: chopped
 number: 26
 title: "Season 26"
 slug: the-new-floor
-canonical_position: 26
+canonical_position: 36
 premiere_date: "2015-10-06"
 host: "Ted Allen"
 ep_count: 8

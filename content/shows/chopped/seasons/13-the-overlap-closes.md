@@ -3,7 +3,7 @@ show: chopped
 number: 13
 title: "Season 13"
 slug: the-overlap-closes
-canonical_position: 13
+canonical_position: 19
 premiere_date: "2012-09-04"
 host: "Ted Allen"
 ep_count: 12

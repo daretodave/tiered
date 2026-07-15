@@ -3,7 +3,7 @@ show: chopped
 number: 20
 title: "Season 20"
 slug: the-double-nest
-canonical_position: 18
+canonical_position: 25
 premiere_date: "2014-03-18"
 host: "Ted Allen"
 ep_count: 13

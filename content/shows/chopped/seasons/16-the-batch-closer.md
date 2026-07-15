@@ -3,7 +3,7 @@ show: chopped
 number: 16
 title: "Season 16"
 slug: the-batch-closer
-canonical_position: 10
+canonical_position: 14
 premiere_date: "2013-06-02"
 host: "Ted Allen"
 ep_count: 13

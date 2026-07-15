@@ -65,7 +65,20 @@ precedent. A same-day follow-up drain tick filed the three
 actionable seasons (17 Denver, 18 Chicago II, 19 Austin) and
 rebased canon.md, taking the show to 19/20 — the row now stars
 (1*) since the only remaining gap is the airing, unaired-verdict
-Season 20.
+Season 20. progress (2026-07-15, cloud drain): chopped drained
+26/64→36/64 (Seasons 27-36 filed, canon fully rebased across all
+36 entries — the 2016-2018 stretch folds five tournament blocks
+(Chopped Champions, Teen Tournament, Beat Bobby Flay, Star
+Power, Alton's Challenge, Gold Medal Games) directly into the
+numbered sequence and reopens the scheduling-overlap pattern;
+Season 33's 8-episode count, five of them the Star Power
+tournament, and Season 30's plain 8-episode shortfall both rank
+below Season 8's 9-episode floor but above Season 26's
+double-nested 8-episode low, which stays dead last; Seasons 31
+and 35 both run a record 20 episodes, the longest the format has
+aired; a new `tournament-era` [2016,2018] era band was added to
+canon.era_bands, keeping coverage gap-free from 2009 through
+2018). Gap 38→28.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -100,7 +113,7 @@ Season 20.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 26/64 | 38 |
+| chopped | 36/64 | 28 |
 
 ## Sweep notes (2026-07-12, first pass)
 
