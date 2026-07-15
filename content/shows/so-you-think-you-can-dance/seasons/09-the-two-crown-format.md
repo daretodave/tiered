@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 9
 title: "The Two-Crown Format"
-canonical_position: 11
+canonical_position: 16
 premiere_date: "2012-05-24"
 ep_count: 15
 aired_year: 2012

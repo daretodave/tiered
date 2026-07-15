@@ -3,23 +3,20 @@ show: so-you-think-you-can-dance
 editor: "tiered.tv editor"
 last_revised: 2026-07-15
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. So You Think You Can Dance now has eleven seasons ranked — weighed for how a format built on dance skill, not celebrity or ballroom scoring, holds up across six-judge rotations, a permanent panel, and the All-Stars era. I'm not claiming to be objective. I know technique when I see it, and I say so plainly."
+meth_who_p: "tiered.tv's editor. So You Think You Can Dance now has all eighteen seasons ranked — weighed for how a format built on dance skill, not celebrity or ballroom scoring, holds up from the six-judge era through All-Stars and the show's final years. I'm not claiming to be objective. I know technique when I see it, and I say so plainly."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether the season treats dance technique as the actual competition instead of a backdrop, whether the choreography-round callback structure gives every finalist a fair shot regardless of style, and whether the live-show format holds up as television once the novelty of a new competition series wears off."
 meth_when_h: "When I revisit"
-meth_when_p: "Eleven seasons are ranked now, spanning the six-judge debut, the permanent panel era, and the All-Stars years. Seven more aired before the series ended in 2024, and each earns its own slot as the ranking expands — including the shortened seasons and the shift to app-only voting."
+meth_when_p: "All eighteen seasons are ranked now, spanning the six-judge debut, the permanent panel era, the All-Stars years, and the format experiments that followed — the Next Generation rebrand, the pandemic-delayed return, and the show's final season in Atlanta before it ended its run in 2024."
 tier_s_blurb: "Seasons where the audition-to-live-show format runs at its tightest — technique-driven competition that never leans on a gimmick to stay interesting week to week."
 tier_a_blurb: "Confident seasons that run the open-audition, choreography-round format well, even when a particular judging panel or finalist mix keeps the season a half-step short of the ceiling."
 tier_b_blurb: "The show's default tier — a season that runs the format competently on a strong field of finalists, without redefining what the open-audition format can do."
 tier_c_blurb: "Seasons where the format shows visible strain — casting choices, judging turnover, or structural changes that keep the season from cohering as a whole."
-weekly_question: "Which era of the format — six-judge, permanent panel, or All-Stars — earns your top slot?"
+weekly_question: "Which era of the format — early seasons, the All-Stars run, or the later format experiments — earns your top slot?"
 era_bands:
   - key: founding
     label: "Founding"
-    range: [2005, 2005]
-  - key: six-judge-panel
-    label: "Six judges"
-    range: [2006, 2006]
+    range: [2005, 2006]
   - key: fixed-panel
     label: "Fixed panel"
     range: [2007, 2009]
@@ -29,6 +26,12 @@ era_bands:
   - key: single-episode-era
     label: "Single episode"
     range: [2012, 2014]
+  - key: format-experiments
+    label: "Format experiments"
+    range: [2015, 2019]
+  - key: post-hiatus-era
+    label: "Post-hiatus"
+    range: [2020, 2024]
 ---
 
 # Editor's Canon — So You Think You Can Dance
@@ -67,11 +70,28 @@ system through its early rounds before dissolving fixed partnerships
 at the Top 10, previewing the individual-voting shift season five
 later completes. It's the format finding its steady rhythm.
 
+## 12. Stage vs. Street
+
+tag: The team reinvention — Stage and Street replace decades of men-versus-women teams.
+slot_argument: A discipline-based team split, a tenth-anniversary retrospective, and a five-city audition tour make season twelve the format's boldest structural swing since the All-Stars era.
+community_rank_hint: rank=3 delta=0 sentiment=hold
+
+Season twelve earns its S-tier slot for doing what season seven did
+seven years earlier: reinventing a rule everyone assumed was fixed.
+The men-versus-women divide that anchored the format since its
+debut gives way to Stage and Street teams, split by discipline
+instead of gender, mentored by Travis Wall and Stephen 'tWitch'
+Boss. The five-city audition tour keeps the open-call premise
+intact, and a special mid-season episode marks the franchise's
+tenth anniversary without pausing the competition to do it. Jason
+Derulo's addition to the judging panel is a smaller change, but it
+fits a season unafraid to touch the format's oldest assumptions.
+
 ## 7. The All-Stars Season
 
 tag: The reinvention — finalists partner with returning All-Stars instead of each other.
 slot_argument: A reduced Top 11 field, a rotating All-Star partner system, and the show's first live HD broadcasts make season seven the boldest swing since its debut.
-community_rank_hint: rank=3 delta=0 sentiment=hold
+community_rank_hint: rank=4 delta=0 sentiment=hold
 
 Season seven earns its spot for sheer nerve. Instead of pairing
 finalists with each other, the season partners each dancer weekly
@@ -88,7 +108,7 @@ format proving it hasn't run out of new ideas by its seventh season.
 
 tag: The map redraw — New York drops off the tour, and a guest judge sits out a fairness question.
 slot_argument: A six-city audition sweep without the franchise's original host city, plus a rare on-panel fairness call, make season four a quieter, procedural entry.
-community_rank_hint: rank=4 delta=0 sentiment=hold
+community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Season four lands in the upper-middle of the canon for doing the
 unglamorous work of format maintenance well. New York drops off the
@@ -102,11 +122,29 @@ competing. Ten men and ten women move through the same hat-drawn
 pairing system season three established, keeping the live-show
 format stable while everything around it shifts.
 
+## 16. The New Studio
+
+tag: The production upgrade — a custom-built studio and the format's first live audition audience.
+slot_argument: A purpose-built set, a 120-camera bullet-time rig, and a live studio audience for televised auditions for the first time make season sixteen a genuine leap in production ambition.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Season sixteen lands solidly in the A-tier for investing in
+production rather than gimmick. The custom-built SYTYCD Hollywood
+set, wired with 120 cameras for bullet-time effects, is the biggest
+infrastructure investment the show has made since its debut, and
+the decision to let a live studio audience watch televised
+auditions for the first time adds a genuine energy the earlier
+audition-tape format never had. Laurieann Gibson and Dominic
+'D-Trix' Sandoval bring fresh eyes to the panel alongside Nigel
+Lythgoe and Mary Murphy, and the roughly 130 dancers who advance
+into the Hollywood round keep the open-call premise intact. It's a
+season built on craft, not reinvention.
+
 ## 2. The Vegas Callback
 
 tag: The training-camp season — a 116-dancer Vegas pool sets the structure later seasons inherit.
 slot_argument: A six-judge rotating panel and the debut of the Vegas training-camp week make season two the format's first real experiment in scale.
-community_rank_hint: rank=5 delta=0 sentiment=hold
+community_rank_hint: rank=7 delta=0 sentiment=hold
 
 Season two sits comfortably in the canon's confident middle for
 establishing a structure the show never abandons. A pool of 116
@@ -120,11 +158,29 @@ six-judge rotating panel is the season's one real experiment, wide
 enough to feel unwieldy but never dull, and it sets up season
 three's tighter fix.
 
+## 14. Back to Basics
+
+tag: The course correction — the adult cast returns, and ten All-Stars become Academy judges.
+slot_argument: A return to the adult Top 10 after a kids-only year, plus ten former finalists reshaped into Academy-round mentors, make season fourteen a confident recalibration.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season fourteen earns a steady A-tier slot for the same reason
+season eight did: it corrects course without pretending the prior
+format shift never happened. The adult cast returns after a year
+built entirely around young dancers, and the Top 10 live-show
+structure holds firm. What's genuinely clever here is repurposing
+the All-Stars mechanic — instead of partnering with finalists on
+stage, ten returning dancers sit as Academy-round judges and
+mentors, shaping the field before the live shows even begin. Nigel
+Lythgoe and Mary Murphy anchor a panel joined by newcomer Vanessa
+Hudgens, giving the season a settled, professional feel after a
+genuinely disruptive year.
+
 ## 1. Season 1
 
 tag: The founding season — open auditions, a callback week, and sixteen finalists with no celebrity draw to fall back on.
 slot_argument: Every rule the format runs on gets written here first, but ten seasons of refinement since have left this one looking like a rough draft — good bones, not the tightest execution.
-community_rank_hint: rank=6 delta=-5 sentiment=down
+community_rank_hint: rank=9 delta=-5 sentiment=down
 
 Season one settles into the middle of the canon now that ten more
 seasons give the format a body of precedent to sit beside. Before the show
@@ -141,7 +197,7 @@ itself: dance skill, tested live, with nothing else to hide behind.
 
 tag: The recalibration — the classic Top 20 returns, All-Stars narrowed to a later-round feature.
 slot_argument: A hybrid of the original bracket and the prior season's All-Stars innovation, plus the format's first text-and-online voting, make season eight a season of careful tuning rather than reinvention.
-community_rank_hint: rank=7 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season eight settles into a comfortable A-tier slot for correcting
 course without overcorrecting. After a season built around a reduced
@@ -155,11 +211,29 @@ by text and online for the first time, widening the format's reach
 without touching its core judging structure. It's a season of
 hybrids, and most of them land.
 
+## 15. The Fourth Chair
+
+tag: The panel expansion — a fourth judge joins for auditions and live shows.
+slot_argument: A four-judge panel and a mid-season roster cut make season fifteen a season of quiet structural tuning rather than a landmark run.
+community_rank_hint: rank=11 delta=0 sentiment=hold
+
+Season fifteen settles into the B-tier default for running the
+format competently without pushing it anywhere new. Stephen 'tWitch'
+Boss joins Nigel Lythgoe, Mary Murphy, and Vanessa Hudgens as a
+fourth judge, widening the panel for both auditions and live shows —
+a structural tweak more than a reinvention, though it gives the
+judging table a fuller, more varied perspective than the three-chair
+format allowed. A mid-season cut trims the roster before the
+competition's later rounds, tightening things up without
+dramatically reshaping the season's shape. It's a season that runs
+the open-audition format soundly on a strong field, without doing
+anything the canon will remember as a first.
+
 ## 10. The Extended Run
 
 tag: The stamina test — eleven competitive weeks, the longest the live-show format has run to that point.
 slot_argument: A competition stretched past nine weeks for the first time, plus a returning All-Stars mechanic, make season ten a test of format durability more than reinvention.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Season ten sits in the solid B-tier for testing the format's
 endurance rather than its rules. The competition runs eleven weeks,
@@ -178,7 +252,7 @@ stamina, not spectacle.
 
 tag: The one-off — the only fall broadcast in the franchise's run, reverted the following year.
 slot_argument: A September premiere, a World Series scheduling conflict, and a mid-season cast replacement make season six the format's messiest structural experiment.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
 Season six lands in the B-tier for an experiment the show tried once
 and never repeated. It's the only entry in the franchise to air in
@@ -195,7 +269,7 @@ scheduling strain keeps it from running as cleanly as its neighbors.
 
 tag: The digital pivot — phone voting disappears entirely, and callbacks move from Vegas to LA for the first time.
 slot_argument: A rebuilt voting system, a relocated callback week, and a competitive Top 20 showcase make season eleven a season of housekeeping ahead of the show's later years.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=14 delta=0 sentiment=hold
 
 Season eleven ranks in the C-tier not because it does anything
 poorly, but because its changes are mostly administrative.
@@ -210,20 +284,74 @@ tenth consecutive season at the helm, a steady presence the season
 leans on while everything around her keeps quietly modernizing. It's
 a maintenance season, not a landmark one.
 
+## 13. The Next Generation
+
+tag: The kids rebrand — the competition narrows to dancers aged eight to thirteen.
+slot_argument: A full rebrand to a youth competition, with ten All-Stars reshaped into mentors, makes season thirteen the format's furthest departure from its founding premise.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season thirteen ranks in the C-tier for a change too large to
+ignore: the show rebrands entirely as The Next Generation, narrowing
+the competition to dancers aged eight to thirteen. It's a legitimate
+structural experiment — ten returning All-Stars each mentor one
+young finalist, and Maddie Ziegler joins as a full fourth judge —
+but it trades away the premise the canon has valued most across
+twelve prior seasons: adult dancers competing on pure technique,
+with nothing but the audition tape and a live vote behind them. The
+shortened thirteen-episode order compounds the sense of a season
+built for a different show. Ambitious, but the furthest the format
+has strayed from itself.
+
 ## 9. The Two-Crown Format
 
 tag: The compressed season — the results show disappears, folding the format into its leanest footprint yet.
 slot_argument: A cut results show, a shortened fifteen-episode order, and judges gaining discretion over solo performances make season nine the format under its most visible strain.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
-Season nine closes the canon for now, and it earns the spot
-honestly: this is the season where the format's usual scaffolding
-gets stripped down the furthest. The standalone results show
-disappears entirely, folding the competition into a single two-hour
-broadcast each week — the leanest schedule since the debut season,
-and shorter than any run between them. Judges gain new discretion
-over which in-danger dancers perform a solo, and contestants get to
-choose from an available style pool during parts of the run. The
-All-Stars mechanic returns for a stretch of weeks before stepping
-aside again, and the season is built around crowning two champions
-rather than one. Ambitious, but the compression shows.
+Season nine earns its spot honestly: this is the season where the
+format's usual scaffolding gets stripped down the furthest. The
+standalone results show disappears entirely, folding the competition
+into a single two-hour broadcast each week — the leanest schedule
+since the debut season, and shorter than any run between them.
+Judges gain new discretion over which in-danger dancers perform a
+solo, and contestants get to choose from an available style pool
+during parts of the run. The All-Stars mechanic returns for a
+stretch of weeks before stepping aside again, and the season is
+built around crowning two champions rather than one. Ambitious, but
+the compression shows.
+
+## 17. The Return
+
+tag: The pandemic delay — a three-year gap, a condensed callback week, and a studio-only vote.
+slot_argument: A postponed production, a single-day Choreography Round, and a vote limited to the studio audience make season seventeen the format's most compromised return.
+community_rank_hint: rank=17 delta=0 sentiment=hold
+
+Season seventeen lands near the bottom of the canon for reasons
+mostly outside its own control, but the reasons still show on
+screen. Originally slated for early 2020, the season is shelved
+indefinitely by the pandemic and doesn't return until spring 2022 —
+the only multi-year gap in the show's history. Nigel Lythgoe steps
+back from the on-air panel for the first time since the format
+began, and the week-long Academy callback round condenses into a
+single day. The biggest structural loss is the vote itself: for the
+first time, only the studio audience decides who advances, cutting
+the home audience out of a mechanic the format built its identity
+on.
+
+## 18. The Atlanta Season
+
+tag: The relocation — production moves to Atlanta, and the vote moves to the judges alone.
+slot_argument: A full relocation, video-submission auditions instead of an open-call tour, and judges-only voting make season eighteen the format's most restructured run, closing out the series on its most-changed footing.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Season eighteen closes the canon for now, and it earns the spot
+honestly — this is the most-altered version of the format the show
+ever aired. Production leaves Los Angeles entirely for Atlanta's
+Pullman Yards, the open-call audition tour gives way to video
+submissions, and a Top 100 gets invited to the city sight unseen
+rather than discovered on the road. Auditions play out
+documentary-style on a flat floor with no stage and no live
+audience, and eliminations run on judges' calls alone, without the
+public vote that anchored every prior season. JoJo Siwa's arrival on
+the panel is a small change against a season that rewrites nearly
+everything else about how the show gets made.

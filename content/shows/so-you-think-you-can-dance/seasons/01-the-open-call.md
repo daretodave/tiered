@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 1
 title: "Season 1"
-canonical_position: 6
+canonical_position: 9
 premiere_date: "2005-07-20"
 ep_count: 12
 aired_year: 2005

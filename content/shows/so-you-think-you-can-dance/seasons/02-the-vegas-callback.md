@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 2
 title: "The Vegas Callback"
-canonical_position: 5
+canonical_position: 7
 premiere_date: "2006-05-25"
 ep_count: 23
 aired_year: 2006

@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 4
 title: "The New Audition Map"
-canonical_position: 4
+canonical_position: 5
 premiere_date: "2008-05-22"
 ep_count: 23
 aired_year: 2008

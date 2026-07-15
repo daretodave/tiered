@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 10
 title: "The Extended Run"
-canonical_position: 8
+canonical_position: 12
 premiere_date: "2013-05-14"
 ep_count: 18
 aired_year: 2013

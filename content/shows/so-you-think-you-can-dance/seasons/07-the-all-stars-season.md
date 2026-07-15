@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 7
 title: "The All-Stars Season"
-canonical_position: 3
+canonical_position: 4
 premiere_date: "2010-05-27"
 ep_count: 23
 aired_year: 2010

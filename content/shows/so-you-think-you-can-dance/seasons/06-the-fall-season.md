@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 6
 title: "The Fall Season"
-canonical_position: 9
+canonical_position: 13
 premiere_date: "2009-09-09"
 ep_count: 24
 aired_year: 2009

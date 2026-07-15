@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 8
 title: "The Top 20 Return"
-canonical_position: 7
+canonical_position: 10
 premiere_date: "2011-05-26"
 ep_count: 23
 aired_year: 2011

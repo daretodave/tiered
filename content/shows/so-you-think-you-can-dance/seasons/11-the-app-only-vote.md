@@ -2,7 +2,7 @@
 show: so-you-think-you-can-dance
 number: 11
 title: "The App-Only Vote"
-canonical_position: 10
+canonical_position: 14
 premiere_date: "2014-05-28"
 ep_count: 15
 aired_year: 2014
