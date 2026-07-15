@@ -3,11 +3,11 @@ show: chopped
 editor: "tiered.tv editor"
 last_revised: 2026-07-15
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Chopped has run more than sixty seasons on a closed-door, single-episode format; sixteen are ranked so far, from the debut through the show's long run of settled, fixed-format seasons. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
+meth_who_p: "tiered.tv's editor. Chopped has run more than sixty seasons on a closed-door, single-episode format; twenty-six are ranked so far, from the debut through the run's tangled 2014–2015 overlap era. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether the mystery basket's ingredients genuinely constrain the cooking rather than sitting as garnish, whether the three-round structure (appetizer, entrée, dessert) holds real elimination stakes each round, and whether the judging panel's mix of chefs produces sharp, specific critique rather than vague praise."
 meth_when_h: "When I revisit"
-meth_when_p: "Sixteen seasons are ranked now — Season 1 through Season 16, covering the run that fixed the basket's four-ingredient rule and the seven-season stretch that settled into it. 48 more seasons — tournament blocks, celebrity editions, and the show's steady stable of returning judges — are waiting to be watched fresh and slotted into this expanding canon."
+meth_when_p: "Twenty-six seasons are ranked now — the founding run, the settled stretch, and the tangled 2014–2015 stretch where three and four seasons routinely overlapped on the calendar. 38 more — tournament blocks, celebrity editions, and the show's steady stable of returning judges — are waiting to be watched and slotted into this expanding canon."
 tier_s_blurb: "Seasons where the mystery basket's structure is at its most complete — the founding hour, and the season that fixed the basket's ingredient count for the rest of the show's run."
 tier_a_blurb: "The show's long settled stretch — seasons that run the fixed format competently, differentiated only by episode count and a scheduling overlap or two."
 tier_b_blurb: "The format's floor — a season with real merit on screen, but the fewest episodes of any ranked entry to make its case."
@@ -22,6 +22,9 @@ era_bands:
   - key: settled-run
     label: "Settled Run"
     range: [2011, 2013]
+  - key: overlap-era
+    label: "Overlap Era"
+    range: [2014, 2015]
 ---
 
 # Editor's Canon — Chopped
@@ -130,26 +133,106 @@ community_rank_hint: rank=13 delta=0 sentiment=hold
 
 Season 13 ranks below Seasons 11 and 12 for a straightforward reason: it shares their scheduling overlap and adds a second ding of its own, running twelve episodes instead of the thirteen the format had settled into as its baseline. Neither issue touches the show's core mechanics — the four-ingredient basket, the three-round structure, and Ted Allen's hosting all run exactly as designed, episode to episode. But stacked together, a shortened count and a tangled release window leave this season with the least to argue for itself among the full run of settled-era entries. It's a competent hour of television every single week; it just doesn't have much distinguishing texture beyond what its neighbors already claim.
 
+## 17. Season 17
+
+tag: The mildest reopening of the overlap wrinkle — a shared tail with Season 16, nothing more.
+slot_argument: Season 17 runs a clean thirteen episodes but premieres three months before Season 16 finishes, tangling briefly with its predecessor's tail — the shallowest overlap of the new stretch that follows.
+community_rank_hint: rank=14 delta=0 sentiment=hold
+
+Season 17 opens a new run of scheduling overlaps, and it does so gently. Its only tangle is with the last few months of Season 16's own air window — a shared release calendar, not a shared cast or a format quirk. Everything on screen runs exactly as it has for seasons: the four-ingredient basket, the three-round structure, Ted Allen's hosting. What earns this season the best slot among the new batch is restraint. One season overlapped, and only at the tail, rather than the two-, three-, and four-season pileups that follow deeper into 2014 and 2015. It's the cleanest entry in an increasingly tangled stretch.
+
+## 18. Season 18
+
+tag: A week ahead of schedule — the first direct, if brief, overlap of the stretch.
+slot_argument: Season 18 premieres a week before Season 17 finishes airing, a tighter overlap than a shared tail — a small escalation in a stretch that keeps getting busier.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season 18 sits just below Season 17 for a small but real reason: its overlap is a touch more direct. Where Season 17 only caught the last stretch of a season already winding down, Season 18 starts while Season 17 still has a week of new episodes left to air — a brief, genuine overlap rather than a shared tail. Nothing about the format changes because of it. The locked basket, the three-round structure, and Ted Allen's hosting all run exactly as designed, across a long stretch from late November into May. But the calendar keeps getting a little busier season over season, and this is the next small step in that direction.
+
+## 21. Season 21
+
+tag: A single overlap, but a deep one — Season 21 starts four months before Season 20 finishes.
+slot_argument: Season 21 premieres well ahead of Season 20's finish, sharing more than four months of release calendar with it — one overlap, but a longer and deeper one than either Season 17 or Season 18 carries.
+community_rank_hint: rank=16 delta=0 sentiment=hold
+
+Season 21 only tangles with one other season, which on its face sounds like it belongs closer to the top of this new stretch. But that single overlap runs deep: Season 21 premieres in mid-July 2014, while Season 20 still has more than four months of new episodes left to air. That's a longer shared window than Season 17's tail-end tangle or Season 18's one-week overlap, even though it's still just the two seasons involved. The format itself is unaffected — locked basket, three rounds, Ted Allen hosting, same as always — but a canon built on scheduling clarity has to weigh depth as well as count, and this overlap runs deeper than its neighbors above it.
+
+## 19. Season 19
+
+tag: The deepest single-season nest yet — nearly all of Season 19 sits inside Season 18's window.
+slot_argument: Season 19 runs almost entirely inside Season 18's own air window, only its final few weeks spilling past — a single overlap, but the deepest containment this stretch has produced so far.
+community_rank_hint: rank=17 delta=0 sentiment=hold
+
+Season 19 ranks below Season 21 despite sharing its one-overlap profile, because the depth of that overlap is even more total. Season 21 shares four-plus months with a season that keeps running well past it; Season 19 is nearly swallowed whole, airing almost entirely inside Season 18's own window from February to June 2014, with only its last couple weeks running free. That's the deepest single-season nest this new stretch produces. None of it touches how an individual episode plays: the locked basket, the closed-door elimination, and Ted Allen's hosting are exactly what they've always been. But a canon weighing scheduling clarity has to rank near-total containment below a merely long shared window.
+
+## 20. Season 20
+
+tag: The first double overlap — two seasons, not one, sharing the calendar at once.
+slot_argument: Season 20 overlaps both Season 18 and the entirety of Season 19 before running solo into the fall — the first season in this stretch to tangle with two others, not just one.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Season 20 marks the point where a single overlapping neighbor becomes two. It shares its opening months with Season 18, still finishing up, and then overlaps the whole of Season 19 as that season runs its own course, before settling into a long solo stretch through the fall. That's a step up in scheduling density from anything Seasons 17 through 19 carry alone, even though each of those seasons' individual overlaps ran plenty deep. The format doesn't care — the locked basket, three rounds, and Ted Allen's hosting run exactly as designed across all thirteen episodes. But a canon tracking how crowded the release calendar gets has to mark this as a step down from a one-season tangle.
+
+## 23. Season 23
+
+tag: A two-season tangle inherited from the batch's busiest stretch — lighter than Season 22's own footprint.
+slot_argument: Season 23 overlaps Season 21's final month and nearly the entirety of Season 22's run — a real, inherited tangle, but a two-season one rather than the four-season pileup Season 22 itself carries.
+community_rank_hint: rank=19 delta=0 sentiment=hold
+
+Season 23 sits below the single- and double-overlap seasons above it because it inherits real density from the stretch it lands in, even without generating the worst of that density itself. It catches the tail of Season 21's run, then shares nearly the entirety of Season 22's long, sprawling season alongside it — a two-season overlap, not the four-season tangle Season 22 produces, but fuller and more sustained than a Season 18-style week or a Season 20-style split. None of it touches the format on screen — the locked basket, three-round structure, and Ted Allen's hosting run exactly as designed — but this canon weighs how tangled a season's own release window gets, and this one runs busy.
+
+## 25. Season 25
+
+tag: The most fully nested season of the stretch — contained inside Season 24, not sprawling.
+slot_argument: Season 25 airs entirely within Season 24's own window and overlaps most of Season 26 too — total containment inside one season, plus a second overlap, but not the four-season sprawl further down this stretch.
+community_rank_hint: rank=20 delta=0 sentiment=hold
+
+Season 25 never runs on its own. Season 24 is airing for the entirety of its run, start to finish, and Season 26 joins in for the back half on top of that. That's total containment inside one season plus a real second overlap — worse than Season 23's single-plus-partial tangle, but still short of the four-season pileups that define this stretch's worst entries. The format itself is untouched by any of it: the locked basket, three-round structure, and Ted Allen's hosting all run exactly as they have since Season 4 fixed the rules. What keeps this season from ranking any higher is simple — a viewer can't watch it without two other seasons also technically airing.
+
+## 22. Season 22
+
+tag: The most tangled season in this batch — four other seasons touched on the calendar.
+slot_argument: Season 22 overlaps the tail of Season 20, nearly all of Season 21, and both Season 23 and Season 24 at its far end — the deepest overlap footprint in this stretch, tied only by Season 24.
+community_rank_hint: rank=21 delta=0 sentiment=hold
+
+Season 22 is where this stretch's overlap problem peaks. It opens catching the tail of Season 20, runs alongside nearly the whole of Season 21, and stretches so long — nine months, into June 2015 — that it also overlaps both Season 23 and Season 24 at its far end. Four other seasons touched is more than any other entry in this run can claim, tied only by Season 24 further down the list. None of that changes what airs week to week: the locked basket, the three-round structure, and Ted Allen's hosting are exactly what they've always been. But a canon that rewards clean scheduling has to rank this busy a run near the bottom of the batch.
+
+## 24. Season 24
+
+tag: Tied for the widest tangle in the batch — and the one entangled with the shortest season yet.
+slot_argument: Season 24 overlaps the tail of Season 22 and Season 23, then stretches long enough to cover the entirety of both Season 25 and Season 26 — four seasons touched, tied with Season 22, but directly entangled with the format's shortest run.
+community_rank_hint: rank=22 delta=0 sentiment=hold
+
+Season 24 ties Season 22 for the widest overlap footprint here, and sits just below it for one reason: it's directly entangled with Season 26's eight-episode run, the shortest the format has aired. Season 24 opens catching the tail of Season 22 and Season 23, then stretches into December 2015, long enough to cover all of both Season 25 and Season 26 within its own window — four other seasons touched, matching Season 22's count, but alongside the format's current low point. Nothing about the format itself wavers — the basket, the rounds, Ted Allen's hosting are all intact — but the sprawl earns this season the bottom of the full-baseline group.
+
 ## 6. Season 6
 
 tag: The first sign of contraction — a shorter run than before, but nowhere near as steep as what follows.
 slot_argument: Season 6 runs twelve episodes, one below the four prior seasons' thirteen-episode baseline — a shorter cut than Season 13's, but far smaller than the ten- and nine-episode seasons that follow it in the show's timeline.
-community_rank_hint: rank=14 delta=0 sentiment=hold
+community_rank_hint: rank=23 delta=0 sentiment=hold
 
-Season 6 was the first season this canon had to reckon with a shorter episode count, and its place in that story is clearer now that fifteen more seasons are ranked around it. Twelve episodes instead of the established thirteen-episode baseline is a contraction, arriving alongside the crowded spring 2011 window when Food Network launched its separately branded Chopped All-Stars special elsewhere on the network. But Season 6's dip is mild next to what immediately follows it: Season 7 cuts to ten episodes, and Season 8 cuts further still, to nine. Ranked against the full run, Season 6 reads less like a low point and more like the opening note of a slide the show recovers from two seasons later.
+Season 6 was the first season this canon had to reckon with a shorter episode count, and its place in that story is clearer now that more seasons are ranked around it. Twelve episodes instead of the established thirteen-episode baseline is a contraction, arriving alongside the crowded spring 2011 window when Food Network launched its separately branded Chopped All-Stars special elsewhere on the network. But Season 6's dip is mild next to what immediately follows it: Season 7 cuts to ten episodes, and Season 8 cuts further still, to nine. Ranked against the full run, Season 6 reads less like a low point and more like the opening note of a slide the show recovers from two seasons later.
 
 ## 7. Season 7
 
 tag: The contraction deepens — ten episodes, the shortest run the show had put out at that point.
 slot_argument: Season 7 cuts to ten episodes, down from Season 6's twelve, continuing a decline that wouldn't bottom out until Season 8 — a season defined entirely by that shrinking count, with no other structural story to tell.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=24 delta=0 sentiment=hold
 
-Season 7 doesn't do anything wrong on screen — the mystery basket, the three-round structure, and Ted Allen's hosting all run exactly as the format has since Season 4 fixed its rules. What it doesn't have is much of a case for itself beyond that competence. Ten episodes is down from Season 6's twelve, continuing a slide that started the season before and wouldn't hit bottom until Season 8's nine-episode run. There's no returning-chef block, no callback episode, no scheduling quirk worth noting — just a shorter season sitting in the middle of the show's roughest stretch for episode counts. It's a fine season to watch; it's simply the second-weakest entry in this canon on the numbers alone.
+Season 7 doesn't do anything wrong on screen — the mystery basket, the three-round structure, and Ted Allen's hosting all run exactly as the format has since Season 4 fixed its rules. What it doesn't have is much of a case for itself beyond that competence. Ten episodes is down from Season 6's twelve, continuing a slide that started the season before and wouldn't hit bottom until Season 8's nine-episode run. There's no returning-chef block, no callback episode, no scheduling quirk worth noting — just a shorter season sitting in the middle of the show's roughest stretch for episode counts. It's a fine season to watch; it's simply one of the weaker entries in this canon on the numbers alone.
 
 ## 8. Season 8
 
-tag: The shortest run in the show's history to this point — nine episodes, and the floor of this canon.
-slot_argument: Season 8 cuts to nine episodes, the lowest count the show had aired at that point in its run, closing out a two-season contraction with the least material of any season ranked here.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+tag: The shortest run in the show's history to this point — nine episodes, and the floor of the settled era.
+slot_argument: Season 8 cuts to nine episodes, the lowest count the show had aired at that point in its run, closing out a two-season contraction with the least material of any season from the founding and settled eras.
+community_rank_hint: rank=25 delta=0 sentiment=hold
 
-Season 8 sits at the bottom of this canon for the simplest reason: nine episodes is the least amount of the show any ranked season here offers, the floor of a two-season contraction that started with Season 6's twelve and dipped through Season 7's ten before landing here. Nothing about the format itself falters — the four-ingredient basket, the closed-door elimination, and Ted Allen's hosting are all as reliable as they are everywhere else in this canon. But a ranked list has to weigh how much a season gives a viewer to hold onto, and nine self-contained hours is less than any other entry offers. Season 9's recovery, ranked six spots above it, is this season's direct rebuttal.
+Season 8 sat at the bottom of this canon for the simplest reason: nine episodes was the least amount of the show any ranked season offered at the time, the floor of a two-season contraction that started with Season 6's twelve and dipped through Season 7's ten before landing here. Nothing about the format itself falters — the four-ingredient basket, the closed-door elimination, and Ted Allen's hosting are all as reliable as they are everywhere else in this canon. But a ranked list has to weigh how much a season gives a viewer to hold onto, and nine self-contained hours was less than any other entry offered — until Season 26's eight-episode run took over that unhappy distinction.
+
+## 26. Season 26
+
+tag: The shortest run in the show's history — eight episodes, below even Season 8's low.
+slot_argument: Season 26 cuts to eight episodes, five short of the thirteen-episode baseline and below Season 8's previous nine-episode floor — the least material any ranked season here offers, plus a nested overlap on top of it.
+community_rank_hint: rank=26 delta=0 sentiment=hold
+
+Season 26 sits at the bottom of the full canon for the same basic reason Season 8 held that spot before it: episode count. Eight hours is five short of the thirteen-episode baseline and one below Season 8's previous nine-episode floor, the format's new low point. That alone is enough to rank it last, and it isn't the only mark against it — the season also airs entirely inside Season 24's window and overlaps most of Season 25 too. Nothing about the format itself is at fault; the locked basket, three-round structure, and Ted Allen's hosting hold exactly as they should. There's simply less of this season than any other, on the axis this canon measures most.
