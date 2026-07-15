@@ -92,7 +92,7 @@ Season 20.
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
-| so-you-think-you-can-dance | 1/18 | 17 |
+| so-you-think-you-can-dance | 11/18 | 7 |
 | the-real-world | 1/33 | 32 |
 | chopped | 6/64 | 58 |
 
