@@ -3,7 +3,7 @@ show: chopped
 number: 33
 title: "Season 33"
 slug: the-tournament-majority
-canonical_position: 35
+canonical_position: 43
 premiere_date: "2017-03-21"
 host: "Ted Allen"
 ep_count: 8

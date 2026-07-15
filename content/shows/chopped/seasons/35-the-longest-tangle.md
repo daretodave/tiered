@@ -3,7 +3,7 @@ show: chopped
 number: 35
 title: "Season 35"
 slug: the-longest-tangle
-canonical_position: 30
+canonical_position: 38
 premiere_date: "2017-07-18"
 host: "Ted Allen"
 ep_count: 20

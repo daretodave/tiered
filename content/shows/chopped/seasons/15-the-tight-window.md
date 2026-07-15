@@ -3,7 +3,7 @@ show: chopped
 number: 15
 title: "Season 15"
 slug: the-tight-window
-canonical_position: 13
+canonical_position: 16
 premiere_date: "2013-04-02"
 host: "Ted Allen"
 ep_count: 13

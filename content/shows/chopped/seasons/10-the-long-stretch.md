@@ -3,7 +3,7 @@ show: chopped
 number: 10
 title: "Season 10"
 slug: the-long-stretch
-canonical_position: 11
+canonical_position: 14
 premiere_date: "2011-12-20"
 host: "Ted Allen"
 ep_count: 13

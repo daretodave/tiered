@@ -3,7 +3,7 @@ show: chopped
 number: 3
 title: "Season 3"
 slug: the-redemption-episode
-canonical_position: 9
+canonical_position: 12
 premiere_date: "2009-10-13"
 host: "Ted Allen"
 ep_count: 13

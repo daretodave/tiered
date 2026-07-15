@@ -3,7 +3,7 @@ show: chopped
 number: 11
 title: "Season 11"
 slug: the-overlap-opens
-canonical_position: 16
+canonical_position: 19
 premiere_date: "2012-02-07"
 host: "Ted Allen"
 ep_count: 13

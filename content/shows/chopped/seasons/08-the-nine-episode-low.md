@@ -3,7 +3,7 @@ show: chopped
 number: 8
 title: "Season 8"
 slug: the-nine-episode-low
-canonical_position: 33
+canonical_position: 41
 premiere_date: "2011-07-12"
 host: "Ted Allen"
 ep_count: 9

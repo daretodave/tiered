@@ -3,7 +3,7 @@ show: chopped
 number: 12
 title: "Season 12"
 slug: the-overlap-holds
-canonical_position: 17
+canonical_position: 20
 premiere_date: "2012-06-05"
 host: "Ted Allen"
 ep_count: 13

@@ -78,7 +78,22 @@ double-nested 8-episode low, which stays dead last; Seasons 31
 and 35 both run a record 20 episodes, the longest the format has
 aired; a new `tournament-era` [2016,2018] era band was added to
 canon.era_bands, keeping coverage gap-free from 2009 through
-2018). Gap 38→28.
+2018). Gap 38→28. progress (2026-07-15, cloud drain): chopped
+drained 36/64→46/64 (Seasons 37-46 filed, canon fully rebased
+across all 46 entries — Season 42's episode count is cut to 8,
+a shortfall on the order of Seasons 26/30/33, but it compounds
+that with the widest scheduling footprint the show has ever
+aired (a 19-month window touching every other season in the
+batch), taking the outright bottom slot; Season 41's 13 episodes
+spare it that fate but its own 15-month span still ties it for
+the worst pure overlap case ranked so far, landing it just above
+Season 42; three more tournament blocks (Champs Throwdown,
+Sweets Showdown, the $50,000 Champs Challenge) each give up 5 of
+13 episodes to a bracket, echoing Seasons 29/34/36's swings
+rather than Season 33's dilution problem, and rank accordingly
+high; the `tournament-era` [2016,2018] era band widens to
+[2016,2020], keeping coverage gap-free from 2009 through 2020).
+Gap 28→18.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -113,7 +128,7 @@ canon.era_bands, keeping coverage gap-free from 2009 through
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 36/64 | 28 |
+| chopped | 46/64 | 18 |
 
 ## Sweep notes (2026-07-12, first pass)
 
