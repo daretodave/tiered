@@ -93,7 +93,7 @@ Season 20.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 6/64 | 58 |
+| chopped | 16/64 | 48 |
 
 ## Sweep notes (2026-07-12, first pass)
 
