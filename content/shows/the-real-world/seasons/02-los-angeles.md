@@ -2,7 +2,7 @@
 show: the-real-world
 number: 2
 title: "Los Angeles (1993)"
-canonical_position: 7
+canonical_position: 9
 premiere_date: 1993-06-26
 ep_count: 21
 location: "Venice Beach, Los Angeles, CA"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 18
 title: "Denver (2006)"
-canonical_position: 17
+canonical_position: 21
 premiere_date: 2006-09-26
 ep_count: 24
 location: "downtown Denver, CO"

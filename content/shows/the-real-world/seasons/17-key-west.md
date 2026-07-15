@@ -2,7 +2,7 @@
 show: the-real-world
 number: 17
 title: "Key West (2006)"
-canonical_position: 20
+canonical_position: 30
 premiere_date: 2006-02-21
 ep_count: 22
 location: "a waterfront house, Key West, FL"

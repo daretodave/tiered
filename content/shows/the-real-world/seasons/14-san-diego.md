@@ -2,7 +2,7 @@
 show: the-real-world
 number: 14
 title: "San Diego (2004)"
-canonical_position: 11
+canonical_position: 14
 premiere_date: 2004-01-06
 ep_count: 24
 location: "a house overlooking San Diego Bay, San Diego, CA"

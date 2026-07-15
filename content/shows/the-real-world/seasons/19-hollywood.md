@@ -2,7 +2,7 @@
 show: the-real-world
 number: 19
 title: "Hollywood (2006)"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2006-10-31
 location: "Hollywood Hills, Los Angeles, CA"
 eyebrow: "Aired fall 2006 · the season that traded group jobs for showbiz ambition"

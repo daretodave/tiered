@@ -2,7 +2,7 @@
 show: the-real-world
 number: 16
 title: "Austin (2005)"
-canonical_position: 19
+canonical_position: 28
 premiere_date: 2005-03-02
 ep_count: 24
 location: "a downtown loft, Austin, TX"

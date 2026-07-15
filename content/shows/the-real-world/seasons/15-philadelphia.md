@@ -2,7 +2,7 @@
 show: the-real-world
 number: 15
 title: "Philadelphia (2004)"
-canonical_position: 16
+canonical_position: 20
 premiere_date: 2004-09-22
 ep_count: 24
 location: "Center City, Philadelphia, PA"

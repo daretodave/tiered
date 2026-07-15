@@ -2,7 +2,7 @@
 show: the-real-world
 number: 9
 title: "New Orleans (2000)"
-canonical_position: 21
+canonical_position: 31
 premiere_date: 2000-06-14
 ep_count: 23
 location: "Garden District, New Orleans, LA"
