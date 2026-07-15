@@ -2,7 +2,7 @@
 show: the-real-world
 number: 8
 title: "Hawaii (1999)"
-canonical_position: 10
+canonical_position: 18
 premiere_date: 1999-06-15
 ep_count: 23
 location: "Diamond Head, Honolulu, HI"

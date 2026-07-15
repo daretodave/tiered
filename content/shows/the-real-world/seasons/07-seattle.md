@@ -2,7 +2,7 @@
 show: the-real-world
 number: 7
 title: "Seattle (1998)"
-canonical_position: 9
+canonical_position: 15
 premiere_date: 1998-06-16
 ep_count: 20
 location: "Pier 70, Elliott Bay, Seattle, WA"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 5
 title: "Miami (1996)"
-canonical_position: 3
+canonical_position: 4
 premiere_date: 1996-07-10
 ep_count: 22
 location: "Rivo Alto Island, Miami Beach, FL"
