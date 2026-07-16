@@ -3,7 +3,7 @@ show: chopped
 number: 45
 title: "Season 45"
 slug: the-fifty-thousand-challenge
-canonical_position: 9
+canonical_position: 12
 premiere_date: "2020-01-21"
 host: "Ted Allen"
 ep_count: 13

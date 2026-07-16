@@ -3,7 +3,7 @@ show: chopped
 number: 40
 title: "Season 40"
 slug: the-champs-throwdown
-canonical_position: 11
+canonical_position: 14
 premiere_date: "2018-07-17"
 host: "Ted Allen"
 ep_count: 13

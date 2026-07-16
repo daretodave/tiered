@@ -3,7 +3,7 @@ show: chopped
 number: 14
 title: "Season 14"
 slug: the-january-return
-canonical_position: 15
+canonical_position: 18
 premiere_date: "2013-01-06"
 host: "Ted Allen"
 ep_count: 13

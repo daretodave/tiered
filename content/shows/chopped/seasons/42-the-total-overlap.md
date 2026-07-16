@@ -3,7 +3,7 @@ show: chopped
 number: 42
 title: "Season 42"
 slug: the-total-overlap
-canonical_position: 46
+canonical_position: 56
 premiere_date: "2018-11-20"
 host: "Ted Allen"
 ep_count: 8

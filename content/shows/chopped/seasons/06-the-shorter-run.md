@@ -3,7 +3,7 @@ show: chopped
 number: 6
 title: "Season 6"
 slug: the-shorter-run
-canonical_position: 39
+canonical_position: 49
 premiere_date: "2011-01-04"
 host: "Ted Allen"
 ep_count: 12

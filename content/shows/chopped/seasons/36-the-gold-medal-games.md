@@ -3,7 +3,7 @@ show: chopped
 number: 36
 title: "Season 36"
 slug: the-gold-medal-games
-canonical_position: 8
+canonical_position: 10
 premiere_date: "2017-12-12"
 host: "Ted Allen"
 ep_count: 13

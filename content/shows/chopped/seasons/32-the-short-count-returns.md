@@ -3,7 +3,7 @@ show: chopped
 number: 32
 title: "Season 32"
 slug: the-short-count-returns
-canonical_position: 21
+canonical_position: 24
 premiere_date: "2017-01-03"
 host: "Ted Allen"
 ep_count: 12

@@ -3,7 +3,7 @@ show: chopped
 number: 43
 title: "Season 43"
 slug: the-sweets-showdown
-canonical_position: 10
+canonical_position: 13
 premiere_date: "2019-07-09"
 host: "Ted Allen"
 ep_count: 13

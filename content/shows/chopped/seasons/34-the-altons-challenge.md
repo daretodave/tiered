@@ -3,7 +3,7 @@ show: chopped
 number: 34
 title: "Season 34"
 slug: the-altons-challenge
-canonical_position: 7
+canonical_position: 9
 premiere_date: "2017-05-09"
 host: "Ted Allen"
 ep_count: 13

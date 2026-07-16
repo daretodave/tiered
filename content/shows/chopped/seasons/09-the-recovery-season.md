@@ -3,7 +3,7 @@ show: chopped
 number: 9
 title: "Season 9"
 slug: the-recovery-season
-canonical_position: 13
+canonical_position: 16
 premiere_date: "2011-08-30"
 host: "Ted Allen"
 ep_count: 13

@@ -3,7 +3,7 @@ show: chopped
 number: 38
 title: "Season 38"
 slug: the-inner-nest
-canonical_position: 35
+canonical_position: 44
 premiere_date: "2018-05-15"
 host: "Ted Allen"
 ep_count: 13
