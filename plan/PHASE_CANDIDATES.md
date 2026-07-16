@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-12 at commit 426ec40
-> Pass count: 55
+> Last pass: 2026-07-16 at commit b9ed14f
+> Pass count: 56
 
 ## Considered (awaiting promotion)
 
@@ -21,6 +21,66 @@
 **Filed:** <ISO date>
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
+     filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
+     critique-pass evidence (passes 90-93).
+     Window since pass 55 (426ec40, 2026-07-12): ~4 days / 120 commits. Both
+     thresholds met (20 commits, 48 hours).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled issues;
+     Step 1.5 cadence gates found neither the season-sweep (due 2026-07-19) nor
+     show-add (locked, gap table non-zero) clock due; Step 2.0's shipping-mode
+     gate is lifted (Phase 36 [x]) so the critique rate-limit applied normally —
+     it did NOT fire this tick because a Pending [HIGH] finding already sits
+     queued (pass-93, dragrace season-18 missing `pull` field), which blocks
+     condition 3 of the gate. Step 3a (phase) and 3b (data) both empty. Step
+     3b.5 (content-gaps) was checked carefully: both Pending content-gaps rows
+     — the standing Rule 2 season-fill drain and a `source: self` finale-shift
+     row for Love Island US season 8 — were verified non-actionable this tick.
+     Every remaining `plan/CADENCE.md` gap-table row (30 shows) is starred
+     (confirmed-but-unaired or still-airing, not yet concluded); the closest to
+     resolving is alone-australia (Season 4 premiered 2026-07-15, one day before
+     this tick, but hasn't concluded). The finale-shift row is blocked on the
+     same reunion-deferral precedent already documented by a 2026-07-13 drain
+     tick (Love Island US season 8's regular run concluded but its reunion special
+     is confirmed for 2026-08-31 — not yet aired). Bearings' Rule 3 (themed
+     lists) is explicitly gated to fire "only once the gap table reads zero,"
+     which it has not literally reached, so list work was not started
+     unilaterally from this tick. This left Step 3c (expand) as the correct
+     dispatch per march's own documented order.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): 6 rows — a mobile-overflow bug
+       (score 5.4), a ship-content issue-mirror idempotency gap (score 3.0), a
+       YEAR_TENURE_RE teen-number blind spot (score 2.7), a themed-list category
+       enum drift doc gap (score 2.4), plus the two content-gaps rows already
+       covered above. All are single-tick-sized fixes already well-scoped for
+       `/iterate`, not phase-shape candidates — none proposed as new expand
+       candidates.
+     - plan/CRITIQUE.md Pending: 29 rows (passes 83-93), mostly single-page LOW
+       content nits already suited to individual `/iterate` fixes. Three rows
+       mapped directly onto existing filed candidates rather than new signal:
+       pass-90 (Chopped S4 PREMIERED caption) and pass-93 (Top Chef Carolinas
+       FILMED/FORMAT caption) both reinforce candidate #28 (stat-tile
+       value/caption literal-duplicate invariant, score 8.3) — reinforcement
+       note added. pass-92 (three freshly-shipped single-canon shows sharing
+       near-identical canon-rationale opener/closer templating) is a related but
+       distinct cross-show sub-pattern of candidate #25 (canon-rationale/
+       season-body verbatim-argument echo gate, score 8.0) — reinforcement note
+       added, flagged as an open scope question for `/oversight` rather than
+       silently folded in, since the detection mechanic would differ (cross-show
+       vs. cross-file-same-show). pass-91 ("51+ tiles" on the still-unfiltered
+       B tier) confirms candidate #30's growth trend (39→51+ tiles across 5
+       passes) — reinforcement note added, with a correction: the original
+       "grows every tick" rationale is now stale since the 2026-07-12 pivot
+       locked new-show creation to the biweekly clock; the compounding argument
+       still holds, just at a slower cadence.
+     - GH issues: 1 open (`triage:loop-queued` #568), already mirrored 1:1 as
+       the AUDIT.md mobile-overflow bug row above — no new signal.
+     - spec.md / design/: no commits touching either since pass 55 (2026-07-12).
+     No candidate scored high enough on fresh, uncaptured signal to justify a
+     4th new numbered candidate this pass — every strong signal traced back to
+     an already-filed, well-scored candidate awaiting `/oversight` promotion.
 -->
 
 <!-- Pass 55 (2026-07-12, commit 426ec40) — 0 new phase-shape candidates filed;
@@ -810,8 +870,16 @@ workflow diffs in one local session).
 
 **Score:** 5.2 (impact: 6, ease: 7 → 4.2 base + 1.0 signal multiplicity —
 catalog growth reinforces)
-**Source pass:** 52
-**Filed:** 2026-07-11
+**Source pass:** 52 (reinforced pass 56)
+**Filed:** 2026-07-11 (reinforced 2026-07-16)
+**Pass-56 reinforcement:** critique pass-91 confirms the B tier has kept growing since
+filing — "51+ tiles as of this pass," up from the 39 cited at filing five passes ago.
+Note a correction to the original growth rationale: the 2026-07-12 oversight pivot
+LOCKED new-show creation to a biweekly add-and-drain-fully clock (no longer Rule 1's
+perpetual mandate), so the B tier no longer grows every single tick — but it still
+grew by 12+ tiles in 5 passes from the existing backlog + clock-filed adds, so the
+compounding-gap argument holds, just at a slower cadence than originally stated. The
+original pass-77 finding remains unresolved and Pending in `plan/CRITIQUE.md`.
 **Source signals:**
 - Critique pass-77 [LOW] `/shows` B-tier ("Canon still forming") holds 39
   shows in one flat scroll with no in-page filter or sort beyond global
@@ -921,8 +989,26 @@ to address the pattern class in one sitting rather than three.
 multiplicity bonus raised again at pass 49 — a 10th independent instance closed in
 the very next commit window after pass 48's filing, the shortest gap yet between
 reinforcements)
-**Source pass:** 44 (reinforced pass 46, 47, 48, reinforced again pass 49)
-**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09)
+**Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56)
+**Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09,
+2026-07-16)
+**Pass-56 reinforcement (new sub-pattern, scope question for `/oversight`):** critique
+pass-92 found a related but distinct shape on three freshly-shipped, single-canon-entry
+shows (The Real World, Ink Master, So You Think You Can Dance) — each show's lone
+canon.md rationale opens on a near-identical templated clause ("The founding season —
+the format's first real test of...") and closes on a near-identical variant ("is the
+only entry so far, and it's the [only possible/clear] call at #1"). This is **cross-show**
+templating (three different shows' canon.md files echoing each other) rather than this
+candidate's documented **cross-file, same-show** echo (one show's season body vs. its
+own canon.md rationale) — the detection mechanic would differ (compare each new
+single-entry canon opener/closer against the N most-recently-authored single-entry
+canons, not against a sibling field in the same show). Still Pending in
+`plan/CRITIQUE.md`, unresolved as of this filing. Flagging as an open scope question
+rather than folding it silently into this candidate's existing sketch: `/oversight`
+should decide whether to widen this candidate's detection mechanic to cover both shapes
+in one phase, or split the cross-show case into its own smaller candidate — the
+root-cause family (content authored without checking a sibling/precedent surface) is
+identical either way.
 **Pass-49 reinforcement:** a tenth independent instance closed within the same
 20-commit window this pass is scoring — Shark Tank Season 11 (issue #512, closed
 commit 45e75fa/095b3f3), filed by critique pass-82 and fixed the same tick as a
@@ -1042,8 +1128,25 @@ critique finding that was itself already systemic across 139 files/22 shows, sam
 root-cause family as candidate #25; multiplicity bonus raised at pass 49 by a second,
 independently-discovered defect shape on one of the six pairs this candidate already
 proposes to gate)
-**Source pass:** 48 (reinforced pass 49)
-**Filed:** 2026-07-08 (reinforced 2026-07-09)
+**Source pass:** 48 (reinforced pass 49, reinforced again pass 56)
+**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16)
+**Pass-56 reinforcement:** two more independent instances surfaced by critique passes
+90 and 93, both still Pending in `plan/CRITIQUE.md` at this filing. Critique pass-90
+found Chopped Season 4's PREMIERED caption restating the eyebrow's network + air-window
+verbatim — explicitly the *same defect class the pass-87 #540 finding already fixed on
+Chopped Season 1*, but S4 was promoted into the canon afterward and shipped with the
+identical unfixed pattern, proving new content keeps re-introducing this gap exactly as
+predicted. Critique pass-93 found Top Chef Carolinas' FILMED and FORMAT captions both
+restating the same three city names in slightly different order — a fresh pair-level
+instance the scope sketch's six-pair list already covers (`format_summary`/
+`format_caption`). Partial, uncoordinated progress has also landed organically since
+this candidate's last reinforcement: issue #551 (pass-89) shipped a narrower
+`filming-caption-distinct.test.ts` corpus-wide scan for the bare "Filmed in <location>"
+restatement shape specifically — proof the generalized six-pair helper this candidate
+proposes is buildable and cheap, but the ad hoc per-defect-shape tests keep shipping
+one field at a time instead of the single reusable gate, so newly-authored pairs
+(PREMIERED/eyebrow, FILMED/FORMAT) keep landing unguarded. Still zero of the recurring
+instances caught pre-ship by a gate.
 **Pass-49 reinforcement:** the `cast_size`/`cast_size_caption` pair — one of the six
 value/caption pairs this candidate's scope sketch already lists for gating — proved
 the risk live this window: issue #508 (CLOSED, commit fdc59fa) found the CAST SIZE
