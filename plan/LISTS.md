@@ -45,6 +45,7 @@ last time a curator actually looked.
 | best-challenge-design | craft | 2026-07-16 | 2026-07-16 | |
 | moving-day | structure | 2026-07-16 | 2026-07-16 | |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
+| where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
 
 ## Ideas
 
