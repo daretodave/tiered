@@ -3,11 +3,11 @@ show: chopped
 editor: "tiered.tv editor"
 last_revised: 2026-07-16
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Chopped has run more than sixty seasons on a closed-door, single-episode format; fifty-six are ranked so far, from the debut through the run's 2020–2024 stretch of stacked tournament blocks and its deepest scheduling entanglements yet. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
+meth_who_p: "tiered.tv's editor. Chopped has run more than sixty seasons on a closed-door, single-episode format; sixty-two are ranked so far, from the debut through a 2024–2026 stretch of stacked tournament blocks, total-containment calendars, and two genuine format firsts. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether the mystery basket's ingredients genuinely constrain the cooking rather than sitting as garnish, whether the three-round structure (appetizer, entrée, dessert) holds real elimination stakes each round, and whether the judging panel's mix of chefs produces sharp, specific critique rather than vague praise."
 meth_when_h: "When I revisit"
-meth_when_p: "Fifty-six seasons are ranked now — the founding run, the settled stretch, the tournament era, and a 2020–2024 stretch where stacked tournament blocks and total containment become routine. 8 more, celebrity editions and the show's steady stable of returning judges, are waiting to be watched and slotted into this expanding canon."
+meth_when_p: "Sixty-two seasons are ranked now — the founding run, the settled stretch, the tournament era, and a 2024–2026 stretch where stacked tournament blocks, total containment, and a swapped round order all become part of the format's routine. 2 more, celebrity editions and the show's steady stable of returning judges, are waiting to be watched and slotted into this expanding canon."
 tier_s_blurb: "Seasons where the mystery basket's structure is at its most complete — the founding hour, and the season that fixed the basket's ingredient count for the rest of the show's run."
 tier_a_blurb: "The show's long settled stretch — seasons that run the fixed format competently, differentiated only by episode count and a scheduling overlap or two."
 tier_b_blurb: "The format's floor — seasons where episode-count shortfalls and calendar sprawl compound each other, leaving the least material of any ranked entry to make its case."
@@ -30,7 +30,7 @@ era_bands:
     range: [2016, 2020]
   - key: crossover-era
     label: "Crossover Era"
-    range: [2021, 2024]
+    range: [2021, 2026]
 ---
 
 # Editor's Canon — Chopped
@@ -195,11 +195,19 @@ community_rank_hint: rank=20 delta=0 sentiment=hold
 
 Season 16 is the last entry in this batch, and it plays exactly like you'd expect one of seven full-baseline seasons in this stretch to play: competent, unremarkable in the best sense, running the closed-door format without a single structural wrinkle. Thirteen episodes carry it from June into November 2013, comfortably inside the standard the show settled into after Season 9's recovery. There's no returning-chef gimmick here, no shortened count, no scheduling overlap to complicate the read — just four new chefs every hour, a locked basket, and a verdict read after each course. By this point in the run, that reliability is the whole story, and it's a perfectly fine note to end this stretch of seasons on.
 
+## 62. Season 62
+
+tag: Two genuine format firsts — a swapped round order, a host at the judging table — on a calendar with zero overlap at all.
+slot_argument: Season 62 shares no scheduling overlap with any other season in this batch, then adds two structural firsts a clean-calendar season rarely also brings — real format credit layered onto Season 27's own cleanliness.
+community_rank_hint: rank=21 delta=0 sentiment=hold
+
+Season 62 closes out this batch with the cleanest release window of any season here — nine months with no other season sharing its calendar at all, edging past Season 27's own zero-overlap run. What separates it from Season 27 is format credit: a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the judging table as a fourth judge, only the second time a host has judged in the show's history. Neither swing touches the closed-door premise itself, but a calendar this clean plus two genuine firsts is enough to edge Season 62 just above Season 27.
+
 ## 27. Season 27
 
 tag: The cleanest calendar in years — thirteen episodes, no overlap on either side, and only a light thematic wrinkle.
 slot_argument: Season 27 runs the standard format with zero scheduling overlap and only one gently themed episode, the plainest, most self-contained entry the show has produced in a long stretch.
-community_rank_hint: rank=21 delta=0 sentiment=hold
+community_rank_hint: rank=22 delta=0 sentiment=hold
 
 Season 27 slots at the top of the show's run of clean, full-baseline seasons for a simple reason: it has less noise than any of them. Thirteen episodes, no overlap at the front or the back, and a single lightly themed college-focused hour that barely counts as a departure — new chefs, closed door, same three-round elimination. Where Seasons 9 through 16 each carried some small distinguishing texture, whether a recovery narrative or a brisk air window, Season 27 offers only the format itself, running as cleanly as the show has ever managed. That plainness is exactly what earns it the best slot among this batch's clean-execution seasons, even without any single standout hook.
 
@@ -207,7 +215,7 @@ Season 27 slots at the top of the show's run of clean, full-baseline seasons for
 
 tag: Full baseline, tangled in a scheduling quirk that has nothing to do with the format itself.
 slot_argument: Season 11 runs the standard thirteen episodes but airs across an unusually long, staggered window — February to November 2012 — that overlaps directly with Seasons 12 and 13, a production-calendar wrinkle rather than a format one.
-community_rank_hint: rank=22 delta=0 sentiment=hold
+community_rank_hint: rank=23 delta=0 sentiment=hold
 
 Season 11 runs the full thirteen-episode format competently, the same locked basket and three-round structure every season since Season 4 has carried. What knocks it slightly below the seasons just above it is entirely off-screen: its air-date window is the longest and most tangled of this stretch, opening in February 2012 and not closing until late November, overlapping directly with Season 12's run and, briefly, Season 13's too. That staggered scheduling doesn't touch anything about how an individual episode plays — the mystery basket, the judging panel, and Ted Allen's hosting are unaffected — but it does make Season 11 harder to watch as a clean, self-contained block, which costs it a little in a canon that rewards structural clarity.
 
@@ -215,7 +223,7 @@ Season 11 runs the full thirteen-episode format competently, the same locked bas
 
 tag: The middle of the overlap tangle — full baseline, same scheduling quirk as Season 11.
 slot_argument: Season 12 runs thirteen episodes from June to November 2012, overlapping on the calendar with both Season 11 and Season 13 — the densest stretch of concurrent Chopped seasons the show ever aired.
-community_rank_hint: rank=23 delta=0 sentiment=hold
+community_rank_hint: rank=24 delta=0 sentiment=hold
 
 Season 12 sits right beside Season 11 in this canon for a reason: it shares the exact same production-calendar quirk. Thirteen episodes run from June to November 2012, a window that overlaps with Season 11's back half and Season 13's front half — the densest stretch of concurrent Chopped seasons the show has aired. On screen, nothing about that overlap matters; each episode is still a self-contained, closed-door hour with an all-new cast of four. But a canon built on structural clarity has to note when the format's usual one-season-at-a-time rhythm gets muddied, even if the muddying happens entirely in the release calendar rather than in the show itself.
 
@@ -223,7 +231,7 @@ Season 12 sits right beside Season 11 in this canon for a reason: it shares the 
 
 tag: A twelve-episode season split by a long gap, overlapping Season 33's premiere for its final six weeks.
 slot_argument: Season 32 runs one episode short of the standard baseline, its weekly winter run giving way to a long stretch of quiet before a May finale that lands after Season 33 has already begun.
-community_rank_hint: rank=24 delta=0 sentiment=hold
+community_rank_hint: rank=25 delta=0 sentiment=hold
 
 Season 32 lands just past the show's cleaner overlap band for a mix of small reasons rather than one big one. It runs twelve episodes instead of thirteen — the same shortfall Season 13 carried — but its overlap is lighter, touching only Season 33's premiere rather than two neighboring seasons at once. Combine a mild episode-count dip with a single, mild overlap, and Season 32 reads as a slightly cleaner cousin of Season 13's profile, which is enough to edge it just ahead. The format itself never wavers across either the weekly winter stretch or the long gap that follows — the locked basket and three-round structure hold exactly as they should.
 
@@ -231,7 +239,7 @@ Season 32 lands just past the show's cleaner overlap band for a mix of small rea
 
 tag: One episode short of baseline, tangled in the same overlap stretch as Seasons 11 and 12.
 slot_argument: Season 13 runs twelve episodes instead of the thirteen-episode standard, airing September 2012 to February 2013 in the same overlapping window as Seasons 11 and 12 — a double mark against an otherwise competent season.
-community_rank_hint: rank=25 delta=0 sentiment=hold
+community_rank_hint: rank=26 delta=0 sentiment=hold
 
 Season 13 ranks below Seasons 11 and 12 for a straightforward reason: it shares their scheduling overlap and adds a second ding of its own, running twelve episodes instead of the thirteen the format had settled into as its baseline. Neither issue touches the show's core mechanics — the four-ingredient basket, the three-round structure, and Ted Allen's hosting all run exactly as designed, episode to episode. But stacked together, a shortened count and a tangled release window leave this season with the least to argue for itself among the full run of settled-era entries. It's a competent hour of television every single week; it just doesn't have much distinguishing texture beyond what its neighbors already claim.
 
@@ -239,7 +247,7 @@ Season 13 ranks below Seasons 11 and 12 for a straightforward reason: it shares 
 
 tag: The mildest reopening of the overlap wrinkle — a shared tail with Season 16, nothing more.
 slot_argument: Season 17 runs a clean thirteen episodes but premieres three months before Season 16 finishes, tangling briefly with its predecessor's tail — the shallowest overlap of the new stretch that follows.
-community_rank_hint: rank=26 delta=0 sentiment=hold
+community_rank_hint: rank=27 delta=0 sentiment=hold
 
 Season 17 opens a new run of scheduling overlaps, and it does so gently. Its only tangle is with the last few months of Season 16's own air window — a shared release calendar, not a shared cast or a format quirk. Everything on screen runs exactly as it has for seasons: the four-ingredient basket, the three-round structure, Ted Allen's hosting. What earns this season the best slot among the new batch is restraint. One season overlapped, and only at the tail, rather than the two-, three-, and four-season pileups that follow deeper into 2014 and 2015. It's the cleanest entry in an increasingly tangled stretch.
 
@@ -247,7 +255,7 @@ Season 17 opens a new run of scheduling overlaps, and it does so gently. Its onl
 
 tag: The lightest scheduling footprint this stretch has produced — a single front-end overlap, nothing at the back.
 slot_argument: Season 46 premieres just as two neighboring seasons finish their own runs, then closes the rest of its stretch entirely alone — the mildest overlap this canon has recorded since Season 17 first reopened the pattern.
-community_rank_hint: rank=27 delta=0 sentiment=hold
+community_rank_hint: rank=28 delta=0 sentiment=hold
 
 Season 46 doesn't do anything new with the format, and that's exactly its case for ranking this well. Thirteen ordinary episodes, no tournament, and a scheduling footprint lighter than almost anything else in this stretch — a brief overlap at the front with two finishing neighbors, then months of running entirely solo. That echoes Season 17's "mildest reopening" a few years earlier, just with two light touches instead of one. The locked basket, three-round structure, and Ted Allen's hosting run at full confidence throughout, with nothing else competing for attention on the release calendar. After a run of increasingly tangled entries, Season 46 is a clean, quiet season to land on.
 
@@ -255,15 +263,23 @@ Season 46 doesn't do anything new with the format, and that's exactly its case f
 
 tag: A week ahead of schedule — the first direct, if brief, overlap of the stretch.
 slot_argument: Season 18 premieres a week before Season 17 finishes airing, a tighter overlap than a shared tail — a small escalation in a stretch that keeps getting busier.
-community_rank_hint: rank=28 delta=0 sentiment=hold
+community_rank_hint: rank=29 delta=0 sentiment=hold
 
 Season 18 sits just below Season 17 for a small but real reason: its overlap is a touch more direct. Where Season 17 only caught the last stretch of a season already winding down, Season 18 starts while Season 17 still has a week of new episodes left to air — a brief, genuine overlap rather than a shared tail. Nothing about the format changes because of it. The locked basket, the three-round structure, and Ted Allen's hosting all run exactly as designed, across a long stretch from late November into May. But the calendar keeps getting a little busier season over season, and this is the next small step in that direction.
+
+## 57. Season 57
+
+tag: A tournament and a celebrity crossover give real format credit against a single, but total, contained neighbor.
+slot_argument: Season 57 opens with a five-episode tournament and a promotional crossover, then absorbs the entirety of Season 58's own window inside its six-month run — one contained neighbor, with real runway on both ends.
+community_rank_hint: rank=30 delta=0 sentiment=hold
+
+Season 57 opens with a five-episode Spin It to Win It tournament, then eight standalone hours, one tied to a Kung Fu Panda 4 promotional push. That's real format credit, on par with anything Season 18's mild single-week overlap has to offer. What keeps it just below Season 18 is depth rather than count: Season 58's entire run airs somewhere inside this season's own six-month window, a deeper single-season relationship than Season 18's brief overlap, with real runway on both ends. It ranks well clear of Season 56's no-tournament season, which loses most of its calendar to Season 55 rather than absorbing one contained neighbor with runway to spare.
 
 ## 56. Season 56
 
 tag: No tournament at all — the first season in a long stretch to skip a bracket — against a majority overlap with Season 55.
 slot_argument: Season 56 runs thirteen standard hours with zero tournament content, the plainest entry this stretch has produced, offset by a real overlap that swallows the majority of its own release window.
-community_rank_hint: rank=29 delta=0 sentiment=hold
+community_rank_hint: rank=31 delta=0 sentiment=hold
 
 Season 56 has nothing but plain format execution to offer — thirteen standalone hours, including a Halloween episode and a Friendsgiving episode, but no tournament bracket anywhere, the first season in a long stretch to skip one entirely. That plainness echoes Season 27's own clean-calendar case, but Season 56 doesn't get Season 27's clean schedule to go with it: roughly three and a half of its own five months share the calendar with Season 55, the majority of its own release window. Slotting it just below Season 18's mild overlap and just above Season 21's deeper single tangle reflects that trade — real format plainness, but a real overlap problem too, tipping it toward the busier half of this canon.
 
@@ -271,7 +287,7 @@ Season 56 has nothing but plain format execution to offer — thirteen standalon
 
 tag: A single overlap, but a deep one — Season 21 starts four months before Season 20 finishes.
 slot_argument: Season 21 premieres well ahead of Season 20's finish, sharing more than four months of release calendar with it — one overlap, but a longer and deeper one than either Season 17 or Season 18 carries.
-community_rank_hint: rank=30 delta=0 sentiment=hold
+community_rank_hint: rank=32 delta=0 sentiment=hold
 
 Season 21 only tangles with one other season, which on its face sounds like it belongs closer to the top of this new stretch. But that single overlap runs deep: Season 21 premieres in mid-July 2014, while Season 20 still has more than four months of new episodes left to air. That's a longer shared window than Season 17's tail-end tangle or Season 18's one-week overlap, even though it's still just the two seasons involved. The format itself is unaffected — locked basket, three rounds, Ted Allen hosting, same as always — but a canon built on scheduling clarity has to weigh depth as well as count, and this overlap runs deeper than its neighbors above it.
 
@@ -279,7 +295,7 @@ Season 21 only tangles with one other season, which on its face sounds like it b
 
 tag: A Casino Royale bracket with stakes climbing to $25,000, tangled in a lopsided, one-sided overlap with Season 50.
 slot_argument: Season 51's own thirteen-week run shares nearly its entire calendar with Season 50's, even though Season 50 itself only loses its final third to the tangle.
-community_rank_hint: rank=31 delta=0 sentiment=hold
+community_rank_hint: rank=33 delta=0 sentiment=hold
 
 Season 51 opens with a genuine tournament swing — Casino Royale, a gambling-themed bracket with stakes climbing to $25,000, an idea this format hasn't tried before — then closes with seven standalone themed hours. The problem is the calendar: roughly the first eleven of this season's own thirteen weeks share the release window with Season 50's still-airing run, even though Season 50 itself only loses its final third to the overlap. That's a lopsided, one-sided tangle rather than a clean shared tail, which is what keeps Season 51 below Season 21's own single, deep-but-symmetric overlap. The tournament content is real and earns its slot; the asymmetric scheduling keeps it out of the cleaner half of this canon.
 
@@ -287,15 +303,23 @@ Season 51 opens with a genuine tournament swing — Casino Royale, a gambling-th
 
 tag: The longest season the format has aired — twenty episodes, almost entirely concurrent with Season 30's run.
 slot_argument: Season 31 folds a four-part Beat Bobby Flay tournament into a record twenty-episode season, nearly all of it airing at the same time as Season 30's own back half.
-community_rank_hint: rank=32 delta=0 sentiment=hold
+community_rank_hint: rank=34 delta=0 sentiment=hold
 
 Season 31 is a genuine tug-of-war between two forces this canon weighs against each other. On one hand, it's the longest season the format has ever produced, with a crossover tournament block that gives it real structural interest. On the other, that entire twenty-episode run shares almost all of its calendar with Season 30, a deeper single-season overlap than anything in the cleaner bands above it. The tournament content and the extra length keep it from sinking to the bottom of the overlap group, landing it just ahead of Season 19's near-total single-season nest — but the sheer completeness of the entanglement, not just its presence, is what keeps this season out of the cleaner tiers entirely.
+
+## 58. Season 58
+
+tag: A regional tournament with an extended finale round, inside a total containment matched only by Season 19 and Season 54.
+slot_argument: Season 58's entire three-month run sits inside Season 57's own six-month window, a containment as deep as Season 19's, offset by a genuine five-part regional tournament and an extended finale round Season 19 never had.
+community_rank_hint: rank=35 delta=0 sentiment=hold
+
+Season 58 pairs a genuine format swing with the deepest containment this canon tracks. A five-episode Battle Italiano tournament moves through four Italian regions before a finale that doubles the usual appetizer round to thirty minutes, and a Drag Brunch guest judge adds a second wrinkle — real credit, on par with Season 31's own crossover tournament. But Season 58's entire three-month run sits inside Season 57's own window, a containment as total as anything this canon has measured short of Season 54's even deeper nest. That combination — genuine tournament credit against total containment — lands it just below Season 31's record-length season and just above Season 54's bigger, similarly nested sequel bracket.
 
 ## 54. Season 54
 
 tag: A bigger sequel bracket — Casino Royale XL — inside the most total single-season containment this canon has measured.
 slot_argument: Season 54 sits entirely inside Season 53's own window with nothing else touching it at all, an even more total containment than Season 19's own single-season nest, offset by a proven, escalated tournament.
-community_rank_hint: rank=33 delta=0 sentiment=hold
+community_rank_hint: rank=36 delta=0 sentiment=hold
 
 Season 54 scales up an earlier idea rather than inventing a new one — Casino Royale XL, an explicitly bigger sequel to Season 51's gambling-themed bracket — bookended by standard hours that keep the format's usual shape. What defines this season is containment: its entire thirteen-episode run sits inside Season 53's own window, with nothing else touching it at any point, an even more total nest than Season 19's previously worst single-season containment. That's a real structural problem, but a proven, escalated tournament format is enough to keep this season just above Season 19 itself, which had no comparable format hook to offset its own total containment.
 
@@ -303,7 +327,7 @@ Season 54 scales up an earlier idea rather than inventing a new one — Casino R
 
 tag: The deepest single-season nest yet — nearly all of Season 19 sits inside Season 18's window.
 slot_argument: Season 19 runs almost entirely inside Season 18's own air window, only its final few weeks spilling past — a single overlap, but the deepest containment this stretch has produced so far.
-community_rank_hint: rank=34 delta=0 sentiment=hold
+community_rank_hint: rank=37 delta=0 sentiment=hold
 
 Season 19 ranks below Season 21 despite sharing its one-overlap profile, because the depth of that overlap is even more total. Season 21 shares four-plus months with a season that keeps running well past it; Season 19 is nearly swallowed whole, airing almost entirely inside Season 18's own window from February to June 2014, with only its last couple weeks running free. That's the deepest single-season nest this new stretch produces. None of it touches how an individual episode plays: the locked basket, the closed-door elimination, and Ted Allen's hosting are exactly what they've always been. But a canon weighing scheduling clarity has to rank near-total containment below a merely long shared window.
 
@@ -311,15 +335,23 @@ Season 19 ranks below Season 21 despite sharing its one-overlap profile, because
 
 tag: The first double overlap — two seasons, not one, sharing the calendar at once.
 slot_argument: Season 20 overlaps both Season 18 and the entirety of Season 19 before running solo into the fall — the first season in this stretch to tangle with two others, not just one.
-community_rank_hint: rank=35 delta=0 sentiment=hold
+community_rank_hint: rank=38 delta=0 sentiment=hold
 
 Season 20 marks the point where a single overlapping neighbor becomes two. It shares its opening months with Season 18, still finishing up, and then overlaps the whole of Season 19 as that season runs its own course, before settling into a long solo stretch through the fall. That's a step up in scheduling density from anything Seasons 17 through 19 carry alone, even though each of those seasons' individual overlaps ran plenty deep. The format doesn't care — the locked basket, three rounds, and Ted Allen's hosting run exactly as designed across all thirteen episodes. But a canon tracking how crowded the release calendar gets has to mark this as a step down from a one-season tangle.
+
+## 60. Season 60
+
+tag: No tournament at all, the longest solo-length window in this batch, still touching two other seasons.
+slot_argument: Season 60 skips the bracket entirely for five themed cuisine hours, then overlaps Season 59 for six and a half months and contains the whole of Season 61's own window within its nine-month run.
+community_rank_hint: rank=39 delta=0 sentiment=hold
+
+Season 60 skips the tournament bracket entirely, letting five themed cuisine and dietary hours — Greek, soul food, vegetarian, sushi, night market — carry all thirteen episodes across the longest calendar window in this batch, more than nine months. It touches two other seasons, the same count as Season 20's own double overlap, but the shape differs: Season 60 overlaps Season 59 for roughly six and a half months and contains the entirety of Season 61's window within it, rather than splitting one long overlap and one full-season tangle the way Season 20 does. That mix of a plain no-tournament format and a bounded two-season footprint lands it just below Season 20 and just above Season 23's inherited tangle.
 
 ## 23. Season 23
 
 tag: A two-season tangle inherited from the batch's busiest stretch — lighter than Season 22's own footprint.
 slot_argument: Season 23 overlaps Season 21's final month and nearly the entirety of Season 22's run — a real, inherited tangle, but a two-season one rather than the four-season pileup Season 22 itself carries.
-community_rank_hint: rank=36 delta=0 sentiment=hold
+community_rank_hint: rank=40 delta=0 sentiment=hold
 
 Season 23 sits below the single- and double-overlap seasons above it because it inherits real density from the stretch it lands in, even without generating the worst of that density itself. It catches the tail of Season 21's run, then shares nearly the entirety of Season 22's long, sprawling season alongside it — a two-season overlap, not the four-season tangle Season 22 produces, but fuller and more sustained than a Season 18-style week or a Season 20-style split. None of it touches the format on screen — the locked basket, three-round structure, and Ted Allen's hosting run exactly as designed — but this canon weighs how tangled a season's own release window gets, and this one runs busy.
 
@@ -327,15 +359,23 @@ Season 23 sits below the single- and double-overlap seasons above it because it 
 
 tag: Two five-part tournaments, including a guest-architect Martha Rules bracket, in a season that never airs on its own.
 slot_argument: Season 49 sits entirely inside Season 47's own window, while in turn fully containing Season 48's run within its own — a season defined by other seasons' calendars, front and back.
-community_rank_hint: rank=37 delta=0 sentiment=hold
+community_rank_hint: rank=41 delta=0 sentiment=hold
 
 Season 49 folds two genuine tournament swings into one season — a five-part Comfort Food Feud opener and Chopped: Martha Rules, a different guest-architect crossover than Season 34's Alton's Challenge — but its own calendar never gets a chance to run solo. The season's entire span sits inside Season 47's own window, while simultaneously containing Season 48's run within its own, a season defined by other seasons' schedules at both ends. That double-bind is a genuinely new scheduling problem, worse than Season 23's inherited two-season tangle, but the two real tournament swings — one of them a proper guest-architect format like Season 34's own hook — keep it just above Season 25's simpler single-season nest just below.
+
+## 61. Season 61
+
+tag: A new auction-budget tournament and two crossovers, inside total containment plus a second overlap.
+slot_argument: Season 61's entire run sits inside Season 60's window and also overlaps roughly four months of Season 59's tail — total containment plus a second touch, offset by a genuinely new auction mechanic and two crossover hours.
+community_rank_hint: rank=42 delta=0 sentiment=hold
+
+Season 61 pairs a genuinely new tournament mechanic with a familiar containment problem. A five-episode Name Your Price tournament has chefs bid a budget on the basket's fourth mystery ingredient, with real stakes on the unspent total, and two crossover hours — one tied to a White Lotus promotional push, one to a Superman release — add further texture. But the season's entire run sits inside Season 60's own window, and it overlaps roughly four months of Season 59's tail besides, a total containment plus a second touch much like Season 25's own profile. The tournament and crossovers are enough to edge Season 61 above Season 25, though not past Season 49's own two-tournament, double-bind calendar just above it.
 
 ## 25. Season 25
 
 tag: The most fully nested season of the stretch — contained inside Season 24, not sprawling.
 slot_argument: Season 25 airs entirely within Season 24's own window and overlaps most of Season 26 too — total containment inside one season, plus a second overlap, but not the four-season sprawl further down this stretch.
-community_rank_hint: rank=38 delta=0 sentiment=hold
+community_rank_hint: rank=43 delta=0 sentiment=hold
 
 Season 25 never runs on its own. Season 24 is airing for the entirety of its run, start to finish, and Season 26 joins in for the back half on top of that. That's total containment inside one season plus a real second overlap — worse than Season 23's single-plus-partial tangle, but still short of the four-season pileups that define this stretch's worst entries. The format itself is untouched by any of it: the locked basket, three-round structure, and Ted Allen's hosting all run exactly as they have since Season 4 fixed the rules. What keeps this season from ranking any higher is simple — a viewer can't watch it without two other seasons also technically airing.
 
@@ -343,15 +383,23 @@ Season 25 never runs on its own. Season 24 is airing for the entirety of its run
 
 tag: A hub built on regional identity — the All-American Showdown — inside a gap-riddled calendar this batch has produced.
 slot_argument: Season 53 functions as a hub much like Season 37 does, touching three neighboring seasons across a ten-month span for just thirteen episodes, its gaps as much a signature as its bracket.
-community_rank_hint: rank=39 delta=0 sentiment=hold
+community_rank_hint: rank=44 delta=0 sentiment=hold
 
 Season 53 runs a genuinely new tournament idea — the All-American Showdown, a regional bracket organizing chefs by geography rather than theme or returning-cast status — but its real signature is a gap-riddled, ten-month calendar for just thirteen episodes. It functions as a hub the way Season 37 does, brushing Season 52's own tail, fully containing Season 54's entire window, and overlapping roughly four months of Season 55's front stretch — touching three seasons, one fewer than Season 37's five-season footprint. That narrower reach, plus a real tournament hook Season 37 never had, is enough to edge this season above Season 22's own four-season tangle, even with a calendar sprawling further than its episode count would suggest.
+
+## 59. Season 59
+
+tag: The highest proportion of themed-block episodes this canon has measured, against a milder two-season touch.
+slot_argument: Season 59 gives ten of its thirteen hours to a Legends tournament and a Hungry for Love pairs block, the thinnest standard-format stretch here, while touching only Season 60 and Season 61 rather than a wider tangle.
+community_rank_hint: rank=45 delta=0 sentiment=hold
+
+Season 59 gives ten of its thirteen hours over to a five-episode Legends tournament, which brings former champions back as finale sous chefs, and a five-episode Hungry for Love pairs block — the highest proportion of themed-block episodes this canon has measured, leaving only three standard hours. That's a thinner stretch of ordinary format than even Season 53's own regional bracket offers, which is enough to rank it just below Season 53's hub-like calendar. What keeps Season 59 out of the bottom tier is how few seasons it touches: it overlaps only Season 60 and Season 61, a milder footprint than Season 22's own four-season tangle, even with less standard format on offer than either neighbor around it.
 
 ## 22. Season 22
 
 tag: The most tangled season in this batch — four other seasons touched on the calendar.
 slot_argument: Season 22 overlaps the tail of Season 20, nearly all of Season 21, and both Season 23 and Season 24 at its far end — the deepest overlap footprint in this stretch, tied only by Season 24.
-community_rank_hint: rank=40 delta=0 sentiment=hold
+community_rank_hint: rank=46 delta=0 sentiment=hold
 
 Season 22 is where this stretch's overlap problem peaks. It opens catching the tail of Season 20, runs alongside nearly the whole of Season 21, and stretches so long — nine months, into June 2015 — that it also overlaps both Season 23 and Season 24 at its far end. Four other seasons touched is more than any other entry in this run can claim, tied only by Season 24 further down the list. None of that changes what airs week to week: the locked basket, the three-round structure, and Ted Allen's hosting are exactly what they've always been. But a canon that rewards clean scheduling has to rank this busy a run near the bottom of the batch.
 
@@ -359,7 +407,7 @@ Season 22 is where this stretch's overlap problem peaks. It opens catching the t
 
 tag: Tied for the widest tangle in the batch — and the one entangled with the shortest season yet.
 slot_argument: Season 24 overlaps the tail of Season 22 and Season 23, then stretches long enough to cover the entirety of both Season 25 and Season 26 — four seasons touched, tied with Season 22, but directly entangled with the format's shortest run.
-community_rank_hint: rank=41 delta=0 sentiment=hold
+community_rank_hint: rank=47 delta=0 sentiment=hold
 
 Season 24 ties Season 22 for the widest overlap footprint here, and sits just below it for one reason: it's directly entangled with Season 26's eight-episode run, the shortest the format has aired. Season 24 opens catching the tail of Season 22 and Season 23, then stretches into December 2015, long enough to cover all of both Season 25 and Season 26 within its own window — four other seasons touched, matching Season 22's count, but alongside the format's current low point. Nothing about the format itself wavers — the basket, the rounds, Ted Allen's hosting are all intact — but the sprawl earns this season the bottom of the full-baseline group.
 
@@ -367,7 +415,7 @@ Season 24 ties Season 22 for the widest overlap footprint here, and sits just be
 
 tag: Contained inside a wider season, but the tighter of two overlapping neighbors caught the same way.
 slot_argument: Season 39 airs almost entirely within Season 37's own window alongside Season 38, plus overlaps with Season 40 and Season 41 — four seasons touched, a step past the deepest tangles this canon had previously ranked.
-community_rank_hint: rank=42 delta=0 sentiment=hold
+community_rank_hint: rank=48 delta=0 sentiment=hold
 
 Season 39 runs the format competently across thirteen full episodes, but almost none of that run happens without company — it sits inside Season 37's wider window for nearly its entire course, shares that space with Season 38, and brushes both Season 40 and Season 41 besides. Four seasons touched is a real escalation past Season 22 and Season 24's four-season tangles, since here the containment runs deeper, not just wider. What earns Season 39 the better half of this pairing is timing: it closes a few weeks before Season 38 does, a marginally tighter, less sprawling window than its immediate neighbor. Nothing about an individual hour suffers; the calendar is simply crowded around it.
 
@@ -375,7 +423,7 @@ Season 39 runs the format competently across thirteen full episodes, but almost 
 
 tag: Three tournament blocks and a record $100,000 stake, nested inside two overlapping seasons at once.
 slot_argument: Season 48's entire run sits inside both Season 47's and Season 49's overlapping windows simultaneously, a doubly nested calendar this canon hasn't measured before, offset by the densest tournament stretch it has run.
-community_rank_hint: rank=43 delta=0 sentiment=hold
+community_rank_hint: rank=49 delta=0 sentiment=hold
 
 Season 48 crams three tournament blocks — Grudge Match building to a record $100,000 finale, a four-part Meat Fight bracket, and three Hangry Baskets episodes — into thirteen episodes, the densest format stretch this canon has measured. The cost is a genuinely new worst-case calendar: the entire season sits inside both Season 47's and Season 49's overlapping windows at once, a doubly nested containment nothing else here has matched. That combination — maximum format density against maximum scheduling entanglement — lands it just below Season 39's own four-season tangle and just above Season 38's total single-season nest, since Season 48's problem runs deeper than either even though its format offers real, if compromised, credit in return.
 
@@ -383,7 +431,7 @@ Season 48 crams three tournament blocks — Grudge Match building to a record $1
 
 tag: A season with almost no calendar of its own — nested inside one neighbor, tangled with three more.
 slot_argument: Season 38 airs entirely within Season 37's window while also overlapping Season 39, Season 40, and Season 41 — the deepest single-season containment this canon has measured, worse than Season 39's own version of the same problem.
-community_rank_hint: rank=44 delta=0 sentiment=hold
+community_rank_hint: rank=50 delta=0 sentiment=hold
 
 Season 38 takes the same basic problem Season 39 has and runs it one step further. Its entire thirteen-episode run sits inside Season 37's own air window — total containment, the kind Season 19 and Season 25 previously defined — while also sharing pieces of its calendar with Season 39, Season 40, and Season 41 at once. That's total containment plus a three-season spillover, a combination nothing else in this canon quite matches. The format itself is unbothered: the locked basket, three-round structure, and Ted Allen's hosting play out exactly as designed. But a season a viewer can watch only alongside three or four others at any given moment earns the weaker slot in this pairing.
 
@@ -391,7 +439,7 @@ Season 38 takes the same basic problem Season 39 has and runs it one step furthe
 
 tag: No tournament this time — just two holiday hours on one of the widest calendars in the batch.
 slot_argument: Season 44 skips the bracket format for a pair of Thanksgiving-themed episodes, but its eleven-month run touches five other seasons, edging past Season 38's containment problem into outright breadth.
-community_rank_hint: rank=45 delta=0 sentiment=hold
+community_rank_hint: rank=51 delta=0 sentiment=hold
 
 Season 44 doesn't lean on a tournament to distinguish itself — its one format wrinkle is a pair of Thanksgiving-themed episodes, a lighter touch than any bracket this batch has run. What keeps it below Season 38 despite that lighter wrinkle is breadth: Season 44's own eleven-month stretch touches five other seasons, one more than Season 38's four, even though none of those overlaps runs quite as total as Season 38's own containment. It's a wash between depth and breadth, and this canon has consistently favored width as the somewhat worse problem once a season is touching this many neighbors. The holiday hours are a nice touch; the calendar around them is not.
 
@@ -399,7 +447,7 @@ Season 44 doesn't lean on a tournament to distinguish itself — its one format 
 
 tag: Two new tournament formats — Beat the Judge, Beat Bobby Flay — the deepest containment this canon has measured.
 slot_argument: Season 47's thirteen-month run fully contains Season 48 and Season 49 while brushing two more seasons besides — the widest containment problem the format has produced, offset by the densest format stretch it has run.
-community_rank_hint: rank=46 delta=0 sentiment=hold
+community_rank_hint: rank=52 delta=0 sentiment=hold
 
 Season 47 introduces two genuinely new tournament formats back to back — Beat the Judge, a head-to-head chef-versus-judge duel the show has never run before, then a five-part Beat Bobby Flay crossover — real invention on par with anything Season 37's hub status has to answer for. But the calendar is worse than Season 37's own five-season footprint: Season 47's thirteen-month run fully contains both Season 48 and Season 49 within its own window, while also brushing two more seasons at the edges, the deepest containment combination this canon has measured. That's enough to rank it just below Season 37 despite the genuine format credit — two new tournament ideas aren't quite enough to offset containing two other seasons whole.
 
@@ -407,7 +455,7 @@ Season 47 introduces two genuinely new tournament formats back to back — Beat 
 
 tag: The hub of this stretch's tangle — the season most other overlaps in this batch run through.
 slot_argument: Season 37 catches Season 36's tail, contains nearly all of Season 38 and Season 39, and brushes Season 40 and Season 41 — five other seasons touched, the widest footprint any standard season in this canon has produced.
-community_rank_hint: rank=47 delta=0 sentiment=hold
+community_rank_hint: rank=53 delta=0 sentiment=hold
 
 Season 37 is where this stretch's overlap problem peaks among the standard, non-tournament seasons. It opens catching Season 36's last few months, then becomes the host season for both Season 38 and Season 39's near-total containment, and stretches long enough to brush Season 40 and Season 41 at its far end — five other seasons touched, more than any other standard entry in this run. None of that changes what airs week to week: the locked basket, three-round elimination, and Ted Allen's hosting run exactly as they always have. But a canon that rewards clean scheduling has to rank the hub of a five-season tangle below every other full-baseline season it's ranked so far, save one.
 
@@ -415,7 +463,7 @@ Season 37 is where this stretch's overlap problem peaks among the standard, non-
 
 tag: Two neighboring seasons entangled across nearly eight months — the deepest and longest overlap the format has produced.
 slot_argument: Season 35 overlaps almost the entirety of Season 34's run, then hands off directly into an overlap with Season 36 — twenty episodes stretched across the format's longest and busiest calendar span.
-community_rank_hint: rank=48 delta=0 sentiment=hold
+community_rank_hint: rank=54 delta=0 sentiment=hold
 
 Season 35 sits near the bottom of the full-baseline group because its overlap problem is the deepest this canon has measured, even though it only touches two other seasons rather than the four Season 22 and Season 24 each brush against. The difference is totality: Season 35 contains nearly the whole of Season 34's run inside its own, then immediately overlaps Season 36 too, leaving barely a month of its span running solo. Twenty episodes and a couple of scattered themed hours are real positives, but they don't offset a calendar this consumed by other seasons. It's a longer, deeper version of the double-overlap problem Season 20 first introduced, and it ranks among the lowest of this canon's episode-count-intact seasons.
 
@@ -423,7 +471,7 @@ Season 35 sits near the bottom of the full-baseline group because its overlap pr
 
 tag: The first sign of contraction — a shorter run than before, but nowhere near as steep as what follows.
 slot_argument: Season 6 runs twelve episodes, one below the four prior seasons' thirteen-episode baseline — a shorter cut than Season 13's, but far smaller than the ten- and nine-episode seasons that follow it in the show's timeline.
-community_rank_hint: rank=49 delta=0 sentiment=hold
+community_rank_hint: rank=55 delta=0 sentiment=hold
 
 Season 6 was the first season this canon had to reckon with a shorter episode count, and its place in that story is clearer now that more seasons are ranked around it. Twelve episodes instead of the established thirteen-episode baseline is a contraction, arriving alongside the crowded spring 2011 window when Food Network launched its separately branded Chopped All-Stars special elsewhere on the network. But Season 6's dip is mild next to what immediately follows it: Season 7 cuts to ten episodes, and Season 8 cuts further still, to nine. Ranked against the full run, Season 6 reads less like a low point and more like the opening note of a slide the show recovers from two seasons later.
 
@@ -431,7 +479,7 @@ Season 6 was the first season this canon had to reckon with a shorter episode co
 
 tag: The contraction deepens — ten episodes, the shortest run the show had put out at that point.
 slot_argument: Season 7 cuts to ten episodes, down from Season 6's twelve, continuing a decline that wouldn't bottom out until Season 8 — a season defined entirely by that shrinking count, with no other structural story to tell.
-community_rank_hint: rank=50 delta=0 sentiment=hold
+community_rank_hint: rank=56 delta=0 sentiment=hold
 
 Season 7 doesn't do anything wrong on screen — the mystery basket, the three-round structure, and Ted Allen's hosting all run exactly as the format has since Season 4 fixed its rules. What it doesn't have is much of a case for itself beyond that competence. Ten episodes is down from Season 6's twelve, continuing a slide that started the season before and wouldn't hit bottom until Season 8's nine-episode run. There's no returning-chef block, no callback episode, no scheduling quirk worth noting — just a shorter season sitting in the middle of the show's roughest stretch for episode counts. It's a fine season to watch; it's simply one of the weaker entries in this canon on the numbers alone.
 
@@ -439,7 +487,7 @@ Season 7 doesn't do anything wrong on screen — the mystery basket, the three-r
 
 tag: The shortest run in the show's history to this point — nine episodes, and the floor of the settled era.
 slot_argument: Season 8 cuts to nine episodes, the lowest count the show had aired at that point in its run, closing out a two-season contraction with the least material of any season from the founding and settled eras.
-community_rank_hint: rank=51 delta=0 sentiment=hold
+community_rank_hint: rank=57 delta=0 sentiment=hold
 
 Season 8 sat at the bottom of this canon for the simplest reason: nine episodes was the least amount of the show any ranked season offered at the time, the floor of a two-season contraction that started with Season 6's twelve and dipped through Season 7's ten before landing here. Nothing about the format itself falters — the four-ingredient basket, the closed-door elimination, and Ted Allen's hosting are all as reliable as they are everywhere else in this canon. But a ranked list has to weigh how much a season gives a viewer to hold onto, and nine self-contained hours was less than any other entry offered — until Season 26's eight-episode run took over that unhappy distinction.
 
@@ -447,7 +495,7 @@ Season 8 sat at the bottom of this canon for the simplest reason: nine episodes 
 
 tag: Eight episodes tie the format's shortest run, most of them sharing the calendar with Season 31's longer stretch.
 slot_argument: Season 30 offers the fewest episodes since Season 26, with a brief overlap at its own premiere and a much longer one running through most of its back half.
-community_rank_hint: rank=52 delta=0 sentiment=hold
+community_rank_hint: rank=58 delta=0 sentiment=hold
 
 Season 30 ranks just below the show's episode-count shortfalls for the same reason Season 8 once anchored that group: eight hours is simply less than the format promises, tied now with Season 26 for the fewest episodes the show has produced. Unlike Season 33 right below it, nothing here complicates the shortfall with a tournament block eating into the standard format — every one of Season 30's eight episodes is the ordinary closed-door hour, just fewer of them than usual, with a brief tail overlap at the front and a longer one running alongside Season 31 at the back. That plainness is exactly why it sits above Season 33's more compounded problem, even at the same episode count.
 
@@ -455,7 +503,7 @@ Season 30 ranks just below the show's episode-count shortfalls for the same reas
 
 tag: Eight episodes, five of them a celebrity charity tournament — the thinnest stretch of pure format the show has produced.
 slot_argument: Season 33 ties the format's shortest episode count and gives the majority of even that short run to a Star Power celebrity tournament, leaving only three standard hours.
-community_rank_hint: rank=53 delta=0 sentiment=hold
+community_rank_hint: rank=59 delta=0 sentiment=hold
 
 Season 33 ranks below Season 30 for compounding the same eight-episode shortfall with a second problem: most of the season isn't the standard format at all. Five of its eight hours are a Star Power celebrity charity tournament, leaving only three episodes that run the closed-door, mystery-basket premise this canon actually measures. That's the biggest proportional departure any season here has taken — bigger even than Season 2's four-episode Champions block relative to its full thirteen — and unlike those earlier swings, it isn't paired with a full-length season to balance it out. What's left, once the tournament is set aside, is barely enough format to judge.
 
@@ -463,7 +511,7 @@ Season 33 ranks below Season 30 for compounding the same eight-episode shortfall
 
 tag: The shortest run in the show's history — eight episodes, below even Season 8's low.
 slot_argument: Season 26 cuts to eight episodes, five short of the thirteen-episode baseline and below Season 8's previous nine-episode floor — the least material any ranked season here offers, plus a nested overlap on top of it.
-community_rank_hint: rank=54 delta=0 sentiment=hold
+community_rank_hint: rank=60 delta=0 sentiment=hold
 
 Season 26 sits below every episode-count shortfall for the same basic reason Season 8 once anchored that group: episode count. Eight hours is five short of the thirteen-episode baseline, one below Season 8's nine-episode floor. That alone is enough to rank it this low, and it isn't the only mark against it — the season also airs entirely inside Season 24's window and overlaps most of Season 25 too. Nothing about the format itself is at fault; the locked basket, three-round structure, and Ted Allen's hosting hold exactly as they should. There's simply less of this season than nearly any other, on the axis this canon measures most.
 
@@ -471,7 +519,7 @@ Season 26 sits below every episode-count shortfall for the same basic reason Sea
 
 tag: A full thirteen-episode season with the single busiest calendar this canon has ever measured.
 slot_argument: Season 41's fifteen-month run touches five other seasons and rivals Season 42's own sprawl — the worst pure overlap case this canon has ranked, kept just ahead of Season 42 only because it doesn't also lose episodes.
-community_rank_hint: rank=55 delta=0 sentiment=hold
+community_rank_hint: rank=61 delta=0 sentiment=hold
 
 Season 41 keeps the full thirteen-episode baseline, which is the only thing standing between it and the very bottom of this canon. Its own air window runs more than fifteen months, touching Season 40, Season 42, Season 43, Season 44, and Season 45 — a wider, deeper overlap than Season 35's previous record. Nothing about an individual hour is at fault: the locked basket, three-round structure, and Ted Allen's hosting hold up fine, and a single themed opener does no real damage. But no other full-length season here shares its calendar with this many neighbors, over this long a stretch, and that alone sinks it below every episode-count shortfall this canon has previously ranked.
 
@@ -479,6 +527,6 @@ Season 41 keeps the full thirteen-episode baseline, which is the only thing stan
 
 tag: The format's shortest count and its widest calendar, in the same season.
 slot_argument: Season 42 cuts to eight episodes and stretches across nineteen months that touch every other season in this batch — the single worst combination of shortfall and overlap this canon has ranked, taking the bottom spot outright.
-community_rank_hint: rank=56 delta=0 sentiment=hold
+community_rank_hint: rank=62 delta=0 sentiment=hold
 
 Season 42 sits at the very bottom of this canon because it fails on both axes this canon measures, at the same time. Eight episodes ties the format's shortest count, the same floor Season 26, Season 30, and Season 33 have all occupied. But Season 42 also stretches across nineteen months — the longest single-season air window the format has produced — touching every other season in this batch at some point, a footprint nothing else here comes close to matching. Neither problem excuses the other; together, they leave this the least the format has ever offered while asking the most of a viewer's patience. Nothing about the mechanics falters. There's simply nothing left to weigh in its favor.

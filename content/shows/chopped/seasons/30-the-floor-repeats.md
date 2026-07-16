@@ -3,7 +3,7 @@ show: chopped
 number: 30
 title: "Season 30"
 slug: the-floor-repeats
-canonical_position: 52
+canonical_position: 58
 premiere_date: "2016-09-22"
 host: "Ted Allen"
 ep_count: 8

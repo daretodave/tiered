@@ -3,7 +3,7 @@ show: chopped
 number: 24
 title: "Season 24"
 slug: the-widest-tangle
-canonical_position: 41
+canonical_position: 47
 premiere_date: "2015-04-28"
 host: "Ted Allen"
 ep_count: 13

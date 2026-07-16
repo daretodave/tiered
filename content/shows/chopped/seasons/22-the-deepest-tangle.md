@@ -3,7 +3,7 @@ show: chopped
 number: 22
 title: "Season 22"
 slug: the-deepest-tangle
-canonical_position: 40
+canonical_position: 46
 premiere_date: "2014-10-14"
 host: "Ted Allen"
 ep_count: 13

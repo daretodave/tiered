@@ -3,7 +3,7 @@ show: chopped
 number: 49
 title: "Season 49"
 slug: the-martha-rules
-canonical_position: 37
+canonical_position: 41
 premiere_date: "2020-11-10"
 host: "Ted Allen"
 ep_count: 13

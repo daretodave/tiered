@@ -3,7 +3,7 @@ show: chopped
 number: 21
 title: "Season 21"
 slug: the-midrun-start
-canonical_position: 30
+canonical_position: 32
 premiere_date: "2014-07-15"
 host: "Ted Allen"
 ep_count: 13

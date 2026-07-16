@@ -3,7 +3,7 @@ show: chopped
 number: 27
 title: "Season 27"
 slug: the-open-calendar
-canonical_position: 21
+canonical_position: 22
 premiere_date: "2016-01-05"
 host: "Ted Allen"
 ep_count: 13

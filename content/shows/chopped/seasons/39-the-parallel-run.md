@@ -3,7 +3,7 @@ show: chopped
 number: 39
 title: "Season 39"
 slug: the-parallel-run
-canonical_position: 42
+canonical_position: 48
 premiere_date: "2018-06-26"
 host: "Ted Allen"
 ep_count: 13

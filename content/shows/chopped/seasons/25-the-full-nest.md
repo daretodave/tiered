@@ -3,7 +3,7 @@ show: chopped
 number: 25
 title: "Season 25"
 slug: the-full-nest
-canonical_position: 38
+canonical_position: 43
 premiere_date: "2015-08-25"
 host: "Ted Allen"
 ep_count: 13

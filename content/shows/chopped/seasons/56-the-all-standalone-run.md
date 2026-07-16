@@ -3,7 +3,7 @@ show: chopped
 number: 56
 title: "Season 56"
 slug: the-all-standalone-run
-canonical_position: 29
+canonical_position: 31
 premiere_date: "2023-08-22"
 host: "Ted Allen"
 ep_count: 13

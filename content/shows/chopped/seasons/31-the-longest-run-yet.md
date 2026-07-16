@@ -3,7 +3,7 @@ show: chopped
 number: 31
 title: "Season 31"
 slug: the-longest-run-yet
-canonical_position: 32
+canonical_position: 34
 premiere_date: "2016-10-13"
 host: "Ted Allen"
 ep_count: 20

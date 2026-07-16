@@ -3,7 +3,7 @@ show: chopped
 number: 7
 title: "Season 7"
 slug: the-ten-episode-dip
-canonical_position: 50
+canonical_position: 56
 premiere_date: "2011-05-03"
 host: "Ted Allen"
 ep_count: 10

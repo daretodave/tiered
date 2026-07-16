@@ -3,7 +3,7 @@ show: chopped
 number: 19
 title: "Season 19"
 slug: the-nested-window
-canonical_position: 34
+canonical_position: 37
 premiere_date: "2014-02-04"
 host: "Ted Allen"
 ep_count: 13

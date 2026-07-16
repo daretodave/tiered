@@ -3,7 +3,7 @@ show: chopped
 number: 18
 title: "Season 18"
 slug: the-early-premiere
-canonical_position: 28
+canonical_position: 29
 premiere_date: "2013-11-26"
 host: "Ted Allen"
 ep_count: 13

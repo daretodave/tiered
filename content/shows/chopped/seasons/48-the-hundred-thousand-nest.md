@@ -3,7 +3,7 @@ show: chopped
 number: 48
 title: "Season 48"
 slug: the-hundred-thousand-nest
-canonical_position: 43
+canonical_position: 49
 premiere_date: "2020-12-15"
 host: "Ted Allen"
 ep_count: 13

@@ -3,7 +3,7 @@ show: chopped
 number: 23
 title: "Season 23"
 slug: the-inherited-tangle
-canonical_position: 36
+canonical_position: 40
 premiere_date: "2014-12-16"
 host: "Ted Allen"
 ep_count: 13

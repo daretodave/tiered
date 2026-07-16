@@ -3,7 +3,7 @@ show: chopped
 number: 41
 title: "Season 41"
 slug: the-widest-footprint
-canonical_position: 55
+canonical_position: 61
 premiere_date: "2018-12-11"
 host: "Ted Allen"
 ep_count: 13

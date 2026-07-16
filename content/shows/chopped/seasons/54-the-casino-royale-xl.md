@@ -3,7 +3,7 @@ show: chopped
 number: 54
 title: "Season 54"
 slug: the-casino-royale-xl
-canonical_position: 33
+canonical_position: 36
 premiere_date: "2022-12-27"
 host: "Ted Allen"
 ep_count: 13

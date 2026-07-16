@@ -3,7 +3,7 @@ show: chopped
 number: 51
 title: "Season 51"
 slug: the-casino-royale
-canonical_position: 31
+canonical_position: 33
 premiere_date: "2021-12-28"
 host: "Ted Allen"
 ep_count: 13

@@ -3,7 +3,7 @@ show: chopped
 number: 37
 title: "Season 37"
 slug: the-five-season-tangle
-canonical_position: 47
+canonical_position: 53
 premiere_date: "2018-03-13"
 host: "Ted Allen"
 ep_count: 13

@@ -3,7 +3,7 @@ show: chopped
 number: 53
 title: "Season 53"
 slug: the-all-american-showdown
-canonical_position: 39
+canonical_position: 44
 premiere_date: "2022-10-18"
 host: "Ted Allen"
 ep_count: 13

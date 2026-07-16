@@ -3,7 +3,7 @@ show: chopped
 number: 47
 title: "Season 47"
 slug: the-triple-nest
-canonical_position: 46
+canonical_position: 52
 premiere_date: "2020-04-07"
 host: "Ted Allen"
 ep_count: 13

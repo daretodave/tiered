@@ -3,7 +3,7 @@ show: chopped
 number: 44
 title: "Season 44"
 slug: the-double-thanksgiving
-canonical_position: 45
+canonical_position: 51
 premiere_date: "2019-09-24"
 host: "Ted Allen"
 ep_count: 13

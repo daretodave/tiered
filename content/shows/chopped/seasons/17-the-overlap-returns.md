@@ -3,7 +3,7 @@ show: chopped
 number: 17
 title: "Season 17"
 slug: the-overlap-returns
-canonical_position: 26
+canonical_position: 27
 premiere_date: "2013-08-13"
 host: "Ted Allen"
 ep_count: 13

@@ -3,7 +3,7 @@ show: chopped
 number: 46
 title: "Season 46"
 slug: the-brief-tail
-canonical_position: 27
+canonical_position: 28
 premiere_date: "2020-07-14"
 host: "Ted Allen"
 ep_count: 13
