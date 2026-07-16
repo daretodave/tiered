@@ -42,6 +42,7 @@ last time a curator actually looked.
 | best-non-winning-runs | tone | 2026-07-10 | 2026-07-10 | |
 | best-newbie-casts | tone | 2026-07-11 | 2026-07-11 | |
 | pandemic-seasons | era | 2026-07-16 | 2026-07-16 | |
+| best-challenge-design | craft | 2026-07-16 | 2026-07-16 | |
 
 ## Ideas
 
