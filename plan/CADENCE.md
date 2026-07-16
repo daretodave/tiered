@@ -133,6 +133,31 @@ double-counting the same aired episodes under three different
 numbers. A follow-up drain tick should verify Food Network's own
 on-air season-number branding (not just streaming "Volume" labels)
 before filing 63/64 — see issue #584 for the full research trail.
+**Resolved (2026-07-16, cloud drain, follow-up scout pass):**
+verdict is that Chopped is genuinely complete at 62 aired seasons
+— no Food Network content aired after Season 62's May 5, 2026
+finale as of this tick. Cross-checked Wikipedia's episode-list
+article against epguides.com's continuous sequential episode
+numbering (ep. 762–764 fall inside Season 62's window with no
+renumbering break) and found date-matched proof the third-party
+"Season 63"/"Season 64" labels are a re-slicing of the same
+episodes: IMDb dates "Season 63 Episode 5" to July 22, 2025 (the
+exact date Wikipedia lists as Season 60's finale), and
+next-episode.net dates "Season 63 Episode 6" to July 29, 2025
+(the exact date and episode Wikipedia lists as the Season 62
+premiere). Food Network GO's "Volume" branding is confirmed as a
+streaming-library curation label spanning multiple real broadcast
+seasons (Volume 3 alone spans S42/43/53/55/56), not a marketing
+name for a single production season. Frontmatter `seasons: 64`
+corrected to `seasons: 62` in the same commit; `canon.md`'s
+`meth_who_p`/`meth_when_p` rewritten to drop the "2 more waiting"
+framing. `era_bands`' `crossover-era` [2021, 2026] already covers
+the full aired span, no widening needed. Gap table row removed —
+show fully drained at 62/62. Separately (not a Chopped season):
+the research surfaced a distinct 8-episode spinoff, "Chopped
+Castaways" (Ted Allen-hosted, Food Network, premiered 2026-05-12),
+which is out of scope for Rule 2 and not filed as a new show —
+new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -167,7 +192,6 @@ before filing 63/64 — see issue #584 for the full research trail.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 62/64 | 2 |
 
 ## Sweep notes (2026-07-12, first pass)
 
