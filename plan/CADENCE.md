@@ -93,7 +93,18 @@ Sweets Showdown, the $50,000 Champs Challenge) each give up 5 of
 rather than Season 33's dilution problem, and rank accordingly
 high; the `tournament-era` [2016,2018] era band widens to
 [2016,2020], keeping coverage gap-free from 2009 through 2020).
-Gap 28→18.
+Gap 28→18. progress (2026-07-16, cloud drain): chopped drained
+46/64→56/64 (Seasons 47-56 filed, canon fully rebased across all
+56 entries — Season 47's dual new tournament formats (Beat the
+Judge, a Beat Bobby Flay crossover) sit against the deepest
+containment combination yet measured; Season 48 stacks a
+record $100,000 Grudge Match, Meat Fight, and Hangry Baskets
+into a doubly-nested calendar; Seasons 50 and 55 post the
+format's second- and third-highest episode counts (18 and 19)
+on genuinely new multi-block formats, ranking among the
+strongest entries in the batch; a new `crossover-era` [2021,2024]
+era band was added to canon.era_bands, keeping coverage
+gap-free from 2009 through January 2024). Gap 18→8.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -128,7 +139,7 @@ Gap 28→18.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 46/64 | 18 |
+| chopped | 56/64 | 8 |
 
 ## Sweep notes (2026-07-12, first pass)
 
