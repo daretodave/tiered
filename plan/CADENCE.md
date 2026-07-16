@@ -104,7 +104,35 @@ format's second- and third-highest episode counts (18 and 19)
 on genuinely new multi-block formats, ranking among the
 strongest entries in the batch; a new `crossover-era` [2021,2024]
 era band was added to canon.era_bands, keeping coverage
-gap-free from 2009 through January 2024). Gap 18→8.
+gap-free from 2009 through January 2024). Gap 18→8. progress
+(2026-07-16, cloud drain): chopped drained 56/64→62/64 (Seasons
+57-62 filed, canon fully rebased across all 62 entries — none of
+the six carries an episode-count shortfall, the first batch since
+Season 46 to clear the format's 13-episode baseline across the
+board, so the ranking axis shifts entirely to overlap severity and
+themed-block saturation; Season 59 gives ten of its thirteen hours
+to a Legends tournament and a Hungry for Love pairs block, the
+highest themed-block proportion this canon has measured, but its
+milder two-neighbor overlap keeps it out of the bottom tier;
+Seasons 57 and 58 post the show's first pure total-containment
+pair where neither season carries a shortfall (Season 58's entire
+six-month run sits inside Season 57's); Season 62 lands among the
+batch's strongest entries on the strength of two format firsts —
+a "No Kid Hungry" charity episode swaps the usual round order for
+breakfast/lunch/dinner, and "Ted's Takeover" puts host Ted Allen
+at the judging table, only the second time any host has judged in
+the show's history; the `crossover-era` [2021,2024] era band
+widens to [2021,2026], keeping coverage gap-free from 2009 through
+May 2026). Gap 8→2. **Seasons 63-64 deferred** — scout research
+surfaced a genuine sourcing conflict: streaming-tracker sites
+(next-episode.net, Food Network GO "Volume" branding) split the
+same broadcast content Wikipedia documents as Season 62 into finer
+"Season 63"/"Season 64" blocks whose air windows overlap Season
+62's rather than extending past it, so filing them now risks
+double-counting the same aired episodes under three different
+numbers. A follow-up drain tick should verify Food Network's own
+on-air season-number branding (not just streaming "Volume" labels)
+before filing 63/64 — see issue #584 for the full research trail.
 
 | show | filed/declared | gap |
 |---|---|---|
@@ -139,7 +167,7 @@ gap-free from 2009 through January 2024). Gap 18→8.
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
 | the-real-world | 31/33 | 2* |
-| chopped | 56/64 | 8 |
+| chopped | 62/64 | 2 |
 
 ## Sweep notes (2026-07-12, first pass)
 
