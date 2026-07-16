@@ -3,11 +3,11 @@ show: chopped
 editor: "tiered.tv editor"
 last_revised: 2026-07-16
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Chopped has run more than sixty seasons on a closed-door, single-episode format; sixty-two are ranked so far, from the debut through a 2024–2026 stretch of stacked tournament blocks, total-containment calendars, and two genuine format firsts. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
+meth_who_p: "tiered.tv's editor. Chopped has run sixty-two seasons on a closed-door, single-episode format, from the debut through a 2024–2026 stretch of stacked tournament blocks, total-containment calendars, and two genuine format firsts. Every aired season is ranked. Each is judged on format execution, not cast drama — there's no season-long story here to weigh."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most — whether the mystery basket's ingredients genuinely constrain the cooking rather than sitting as garnish, whether the three-round structure (appetizer, entrée, dessert) holds real elimination stakes each round, and whether the judging panel's mix of chefs produces sharp, specific critique rather than vague praise."
 meth_when_h: "When I revisit"
-meth_when_p: "Sixty-two seasons are ranked now — the founding run, the settled stretch, the tournament era, and a 2024–2026 stretch where stacked tournament blocks, total containment, and a swapped round order all become part of the format's routine. 2 more, celebrity editions and the show's steady stable of returning judges, are waiting to be watched and slotted into this expanding canon."
+meth_when_p: "All sixty-two seasons are ranked — the founding run, the settled stretch, the tournament era, and a 2024–2026 stretch where stacked tournament blocks, total containment, and a swapped round order all become part of the format's routine. This canon is complete; it reopens only once Food Network orders a sixty-third season."
 tier_s_blurb: "Seasons where the mystery basket's structure is at its most complete — the founding hour, and the season that fixed the basket's ingredient count for the rest of the show's run."
 tier_a_blurb: "The show's long settled stretch — seasons that run the fixed format competently, differentiated only by episode count and a scheduling overlap or two."
 tier_b_blurb: "The format's floor — seasons where episode-count shortfalls and calendar sprawl compound each other, leaving the least material of any ranked entry to make its case."
