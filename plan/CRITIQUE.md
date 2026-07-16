@@ -1,5 +1,51 @@
 # CRITIQUE
 
+> Last pass: 2026-07-16 at commit e2dfbc8
+> Pass count: 94
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 94 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), authed pass with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/chopped/season/the-double-first`, `/shows`,
+> `/shows/chopped/canon`,
+> `/shows/the-real-world/season/go-big-or-go-home`) and authed
+> (`/u/e2e`, `/shows/chopped/season/the-double-first`,
+> `/shows/the-real-world/season/go-big-or-go-home`,
+> `/shows/chopped/canon`, `/themes`) walks ran, desktop + mobile,
+> targeting the two content-gap drains that landed this tick's
+> preceding commits (Chopped seasons 7-62 backfilled to
+> gap-drained, with the canon fully reranked; The Real World
+> seasons 22-31 backfilled), never critiqued before. Zero
+> console errors, zero failed first-party requests beyond the
+> known-benign RSC-prefetch abort noise on `/u/e2e` (documented
+> across many prior passes), no per-show SVG iconography
+> violations, no spoiler leakage — winner/elimination outcomes
+> consistently avoided in favor of structural/format framing on
+> both fresh season pages. Auth handshake confirmed working
+> (`authState: authenticated:cloud`, correct `@e2e` chrome on
+> every capture, no signed-out flash). Filed 2 findings (1 high,
+> 1 medium): (1) The Real World S31 (Go Big or Go Home) overflows
+> the 375px mobile viewport by 7px (`scrollWidth` 382 vs.
+> `innerWidth` 375), reproduced independently on both the
+> anonymous and authenticated passes and not present on any other
+> page walked this pass at the same viewport — isolated to this
+> season's content, likely the long FILMED value/caption pair,
+> the forced `<br/>` in `display_title`, or the adjacent-seasons
+> row; (2) Chopped S62 (the-double-first) restates its two real
+> facts (the No Kid Hungry round-order swap, Ted Allen judging as
+> a fourth judge) in near-verbatim phrasing across the body,
+> section 03 ("Where it sits"), and the first two watch-list
+> bullets — a thin-season templating tell distinct from the
+> already-fixed within-page body-vs-canon verbatim-quote
+> collision class. No findings dropped at self-assessment this
+> pass — both reader passes converged cleanly and everything else
+> (vote/comment affordances, canon page, themes index, voice,
+> SEO/meta) checked clean.
+>
+> ───── Pass 93 metadata kept below for history ─────
+>
 > Last pass: 2026-07-12 at commit 1d6b8d4
 > Pass count: 93
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2143,6 +2189,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon+authed] /shows/the-real-world/season/go-big-or-go-home — the page overflows the 375px mobile viewport horizontally (document.scrollWidth measured 382px vs. window.innerWidth 375px, a 7px overflow), reproduced independently on both the anonymous and authenticated cloud walker passes. Not reproduced on any other page walked this pass at the same 375px viewport — `/`, `/shows`, `/shows/chopped/canon`, and the sibling freshly-shipped `/shows/chopped/season/the-double-first` all measured exactly `scrollWidth === innerWidth` (375/375), so this is specific to this season's rendered content, not a global chrome regression. Likely culprits (not yet pinned to a single element): the long unbroken `location`/`filming_caption` value ("the Gold Spike, downtown Las Vegas, NV" / "A penthouse above the Gold Spike, downtown Las Vegas" — `content/shows/the-real-world/seasons/31-go-big-or-go-home.md`), the forced `<br/>` in `display_title: "Go Big<br/>or Go Home"` at mobile hero font sizes, or the adjacent-seasons row (`AdjacentSeasons.tsx` / `.related-title`, `.season-related` in `src/styles/screens.css:1102-1114`) rendering a neighboring season title next to this one. `.season-related` does collapse to a single column under the existing `@media (max-width: 560px)` rule (`screens.css:1313`), so the stacked layout itself isn't the culprit — the overflow likely comes from an un-wrapped text run inside one of the stacked cells. Fix: inspect this page at 375px in devtools to isolate the exact overflowing element (stats strip FILMED value/caption pair and the adjacent-seasons title/caption cells are the first two places to check) and apply `word-break`/`overflow-wrap`/`min-width: 0` there rather than a page-wide fix. (URL: /shows/the-real-world/season/go-big-or-go-home, source: critique-pass-94)
+
+- [ ] [MED] [anon] /shows/chopped/season/the-double-first — Season 62's page restates its two real facts (the No Kid Hungry charity episode swapping the round order to breakfast/lunch/dessert, and the Ted's Takeover episode putting Ted Allen at the table as a fourth judge) in near-verbatim phrasing across three separate sections instead of varying the framing per section the way the canonical reference page (Heroes vs. Villains) does across its "01 The take" / "02 The shape of the season" / "03 Where it sits" sections. `content/shows/chopped/seasons/62-the-double-first.md`: the body/lede pairs "a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert rounds for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen himself at the judging table as a fourth judge — only the second time in the show's history a host has judged," then section 03 ("Where it sits in the canon") repeats the same two facts in near-identical wording ("a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the judging table as a fourth judge, only the second time a host has judged in the show's history"), and the first two `watch_list` bullets restate the same two facts again. This is a thin-season templating tell — Season 62 has only two genuinely distinct facts to work with, and the current content repeats both rather than varying the angle or shortening the template. Fix: for thin seasons like this, either vary the phrasing/angle more deliberately per section (each section should add a new lens on the same two facts rather than re-quoting the prior section's sentence) or drop one of the redundant restatements (e.g. don't restate both facts in both the body and section 03; let the watch-list bullets be the only place bullet-level detail repeats). Content-only, no structural/component change. Spoiler discipline P0 intact (no outcome exposure — the two facts are structural/format details, not results). (URL: /shows/chopped/season/the-double-first, source: critique-pass-94)
 
 - [x] [HIGH] [anon] /shows/dragrace/season/season-18 — the "THE TAKE" section, the first editorial content block on every season page immediately below the hero, renders empty of any supporting sentence: just the section heading followed by the bare season title, then straight into "02 THE SHAPE OF THE SEASON." Every sibling season page shipped this same batch (Top Chef Carolinas, Bake Off Hammond) carries a one-to-two sentence pull quote in this slot. Root cause: `content/shows/dragrace/seasons/18-season-18.md` has no `pull` frontmatter field — confirmed this is a show-wide gap (zero of the eighteen dragrace season files carry a `pull:` field), but Season 18 is the only one currently live and critiqued, so it's the first to visibly break. Verified on both desktop and mobile captures — not a viewport-specific render quirk. Fix: add a one-sentence `pull` field to `content/shows/dragrace/seasons/18-season-18.md` matching the pattern used by `content/shows/top-chef/seasons/23-carolinas.md` and `content/shows/bake-off/seasons/16-the-hammond-continues.md` (a spoiler-safe framing sentence, not a recap). Content-only, one field; the show-wide `pull` backfill across the other 17 dragrace seasons is a larger follow-on but not blocking this row. Spoiler discipline P0 intact. (URL: /shows/dragrace/season/season-18, source: critique-pass-93) — issue: #585 — RESOLVED 826fae3: added `pull: "Record premiere numbers and a genuine format swing — the finale trades the usual top-two lip sync for a full eliminated-cast tournament. The judging split is real: the polish gets praised, the calls don't always."` to `content/shows/dragrace/seasons/18-season-18.md`, matching the sibling pattern (framing sentence, not a recap). The show-wide 17-season `pull` backfill remains a follow-on, not addressed here. No outcome exposure. Verify gate green: 3542/3542 unit tests, content:check ok, build clean, 4335/4335 e2e. Closes #585.
 
