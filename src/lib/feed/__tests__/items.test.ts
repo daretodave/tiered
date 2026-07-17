@@ -1,10 +1,17 @@
 import path from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { __resetContentCache, setContentRoot } from '@/content'
 import {
-  FEED_LIMIT,
+  getAllShows,
+  getAllThemes,
+  getCanon,
+  __resetContentCache,
+  setContentRoot,
+} from '@/content'
+import {
+  BASE_FEED_LIMIT,
   buildGlobalFeedItems,
   buildShowFeedItems,
+  feedLimit,
 } from '../items'
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../content')
@@ -22,9 +29,13 @@ afterAll(() => {
 describe('buildGlobalFeedItems', () => {
   const items = buildGlobalFeedItems()
 
-  it('is non-empty and capped at FEED_LIMIT', () => {
+  it('is non-empty and capped at the catalog-scaled feed limit', () => {
+    const canonThemeCount =
+      getAllShows().filter((s) => getCanon(s.slug)?.last_revised).length +
+      getAllThemes().length
     expect(items.length).toBeGreaterThan(0)
-    expect(items.length).toBeLessThanOrEqual(FEED_LIMIT)
+    expect(items.length).toBeLessThanOrEqual(feedLimit(canonThemeCount))
+    expect(feedLimit(0)).toBe(BASE_FEED_LIMIT)
   })
 
   it('is sorted newest-first with a stable url tiebreak', () => {

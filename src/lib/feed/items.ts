@@ -5,11 +5,21 @@ import type { FeedItem } from './rss'
 import { parseIsoDate, seasonDate } from './dates'
 
 // RSS convention — keep feeds bounded. Per-show feeds are well
-// under this; the global feed gets the newest 100 items. 100
-// ensures the feed covers the full canon + theme catalog as
-// show count grows (39+ shows × 1 canon each + 12 themes + recent
-// season items all fit comfortably under the cap).
-export const FEED_LIMIT = 100
+// under this baseline cap.
+export const BASE_FEED_LIMIT = 100
+
+// The global feed's cap scales with catalog size: one canon-revision
+// item per show plus one item per theme should never consume the
+// whole window on its own, or season items (the actual new-content
+// signal) get crowded out entirely once the catalog grows past the
+// static baseline — which it already has (68 canons + 33 themes > 100).
+// Rule 3's target is "hundreds" of themed lists over time
+// (plan/bearings.md), so this must scale rather than need repeated
+// manual re-bumping. 2x headroom keeps canon+theme items to at most
+// half the window, guaranteeing room for recent season items.
+export function feedLimit(canonThemeCount: number): number {
+  return Math.max(BASE_FEED_LIMIT, canonThemeCount * 2)
+}
 
 // First sentence of a content blurb, whitespace-collapsed, bounded.
 // The source is already P0 spoiler-clean (season blurb / theme
@@ -68,24 +78,29 @@ function themeItem(theme: {
 }
 
 // Newest first; guid asc tiebreak for total determinism.
-function sortCap(items: FeedItem[]): FeedItem[] {
+function sortCap(items: FeedItem[], limit: number): FeedItem[] {
   return [...items]
     .sort(
       (a, b) =>
         b.date.getTime() - a.date.getTime() || a.url.localeCompare(b.url),
     )
-    .slice(0, FEED_LIMIT)
+    .slice(0, limit)
 }
 
 export function buildGlobalFeedItems(): FeedItem[] {
+  const themes = getAllThemes()
   const out: FeedItem[] = []
+  let canonThemeCount = themes.length
   for (const show of getAllShows()) {
     out.push(...seasonItems(show.slug, show.name, show.est_year))
     const c = canonItem(show.slug, show.name, getCanon(show.slug))
-    if (c) out.push(c)
+    if (c) {
+      out.push(c)
+      canonThemeCount++
+    }
   }
-  for (const t of getAllThemes()) out.push(themeItem(t))
-  return sortCap(out)
+  for (const t of themes) out.push(themeItem(t))
+  return sortCap(out, feedLimit(canonThemeCount))
 }
 
 // null == unknown show (the route turns this into a 404).
@@ -95,5 +110,5 @@ export function buildShowFeedItems(showSlug: string): FeedItem[] | null {
   const out: FeedItem[] = [...seasonItems(show.slug, show.name, show.est_year)]
   const c = canonItem(show.slug, show.name, getCanon(show.slug))
   if (c) out.push(c)
-  return sortCap(out)
+  return sortCap(out, BASE_FEED_LIMIT)
 }
