@@ -52,6 +52,7 @@ last time a curator actually looked.
 | when-the-cast-was-already-related | structure | 2026-07-17 | 2026-07-17 | |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
 | rulebook-rewritten-every-season | single | 2026-07-17 | 2026-07-17 | |
+| a-way-back-in | craft | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
