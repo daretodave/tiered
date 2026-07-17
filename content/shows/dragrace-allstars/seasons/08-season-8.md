@@ -3,7 +3,7 @@ show: dragrace-allstars
 number: 8
 title: "Season 8"
 slug: season-8
-canonical_position: 10
+canonical_position: 11
 premiere_date: "2023-05-12"
 host: "RuPaul Charles"
 ep_count: 12

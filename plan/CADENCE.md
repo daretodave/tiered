@@ -187,7 +187,6 @@ new-show creation is locked to the biweekly show-add clock.
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | the-ultimatum | 3/4 | 1* |
-| dragrace-allstars | 10/11 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
@@ -869,7 +868,20 @@ Four dated finales filed to `content/calendar.yml` this pass
   above; deferred until the finale airs. Gap table row
   re-marked `1*` (down from 10) rather than removed — one season
   remains once Season 11 concludes. 823 seasons filed
-  catalog-wide as of this tick.
+  catalog-wide as of this tick. progress (2026-07-17, cloud
+  drain, march-dispatched): confirmed via scout research that
+  Season 11's finale aired today (2026-07-17), closing the
+  confirmed-but-unaired deferral. Filed
+  `content/shows/dragrace-allstars/seasons/11-season-11.md`
+  (18-queen tournament rerun, tightened to a top-two-per-bracket
+  cutoff plus a per-cycle Comeback Queen reentry) and rebased
+  `canon.md` across all eleven seasons — Season 11 slots at #9,
+  a stacked-refinement entry sitting below Season 10's tournament
+  reinvention, pushing Season 3 to #10 and Season 8 to #11.
+  `streaming-era` widened to `[2021, 2026]`. Show frontmatter
+  `status` moved `airing` → `hiatus` (no Season 12 announced).
+  Gap table row removed — show fully drained at 11/11. 824
+  seasons filed catalog-wide as of this tick.
 - **bachelor-in-paradise** — DRAINED this tick (cloud drain,
   2026-07-14): the gap table's "declared 11" was wrong — scout
   research confirms the show has fully aired exactly 10 seasons

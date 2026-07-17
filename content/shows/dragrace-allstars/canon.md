@@ -1,15 +1,15 @@
 ---
 show: dragrace-allstars
 editor: "tiered.tv editor"
-last_revised: 2026-07-14
+last_revised: 2026-07-17
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. All Stars is eleven seasons deep, spread across three networks, with ten now ranked against each other — every season but the one still airing. The read favors format ambition over cast celebrity, and asks whether a season's elimination twist actually changes how the game gets played."
+meth_who_p: "tiered.tv's editor. All Stars is eleven seasons deep, spread across three networks, with every season now ranked against every other. The read favors format ambition over cast celebrity, and asks whether a season's elimination twist actually changes how the game gets played."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things carry the most weight — whether a season's elimination mechanic is a genuine structural swing rather than a cosmetic tweak, whether the returning cast's history with each other and the format produces real chemistry, and whether the legacy stakes on offer feel earned rather than just bigger."
 meth_when_h: "When I revisit"
-meth_when_p: "With ten of eleven seasons now seeded, only Season 11 — still airing — remains outside this canon. Revisits will slot each new season in once it wraps, updating positions and era bands as the show adds new format experiments to weigh against the ones already ranked here."
+meth_when_p: "With all eleven seasons now seeded, this canon is complete against the current catalog. Revisits will slot in a renewed season once it wraps, updating positions and era bands as the show adds new format experiments to weigh against the ones already ranked here."
 tier_s_blurb: "The seasons that swing hardest at the game's actual structure — a founding format, a full tournament reinvention, a competitor-decided elimination, a one-of-a-kind tie, and an all-winners no-elimination premise."
-tier_a_blurb: "Real format ideas running one step behind the season that tried them first — a second no-elimination premise, a debuting mechanic, a stacked refinement, a finale addition, and a fan-vote side game."
+tier_a_blurb: "Real format ideas running one step behind the season that tried them first — a second no-elimination premise, a debuting mechanic, a stacked refinement, a tightened tournament rerun, a finale addition, and a fan-vote side game."
 tier_b_blurb: "Reserved for seasons whose format ideas work but don't yet reshape the game — solid entries once the canon runs deep enough to need a third band."
 weekly_question: "Does the tournament reinvention in Season 10 already outrank the format Season 1 started with?"
 era_bands:
@@ -21,7 +21,7 @@ era_bands:
     range: [2018, 2020]
   - key: streaming-era
     label: "Streaming era"
-    range: [2021, 2025]
+    range: [2021, 2026]
 ---
 
 # Editor's Canon — RuPaul's Drag Race All Stars
@@ -174,11 +174,30 @@ re-entry. That's a lot of format ideas for one cycle to carry,
 and the season mostly manages it. The canon ranks it eighth for
 real ambition that reads more as refinement than reinvention.
 
+## 11. Season 11
+
+tag: The tournament rerun, tightened — Season 10's bracket shape again, with a smaller cutoff and a recurring reentry twist.
+slot_argument: Eighteen queens, three brackets, but only the top two per bracket advance now, down from Season 10's top three, plus a Comeback Queen reentry built into every cycle instead of one Wildcard moment at the finale.
+community_rank_hint: rank=9 delta=0 sentiment=hold
+
+Season 11 reruns Tournament of All Stars' bracket shape rather
+than reinventing it, which is why it sits below Season 10, but
+the rerun stacks two real adjustments onto the format. The
+advancement bar tightens — only the top two scorers per bracket
+move on, not the top three Season 10 allowed, shrinking the
+safety margin inside every bracket. A new Comeback Queen
+mechanic gives each bracket its own reentry chance for an
+eliminated queen, spreading what Season 10 saved for a single
+end-of-season Wildcard across the whole season. Eighteen
+returning queens carry the format again. The canon ranks it
+ninth for stacking real adjustments onto an established swing
+rather than landing a new one of its own.
+
 ## 3. Season 3
 
 tag: The jury finale debut — a refinement of Lip Sync For Your Legacy rather than a swing of its own.
 slot_argument: Previously eliminated queens return to vote on the final four, a real addition to the finale structure, layered onto a format the prior season had already installed.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season 3 moves the show to VH1 and keeps Lip Sync For Your
 Legacy running close to how Season 2 left it — the top two lip
@@ -189,17 +208,17 @@ get the last lip sync for the $100,000 prize. It's a genuine
 structural addition, handing the finale's last decision to the
 cast that lived the season, not just the judges. Ten queens
 pulled from the flagship's first nine seasons give the jury real
-texture. The canon ranks it ninth for a real but narrower
+texture. The canon ranks it tenth for a real but narrower
 addition than the swings ranked above it.
 
 ## 8. Season 8
 
 tag: The season that steps back to standard elimination — with a fan-vote side game and a new permanent judge.
-slot_argument: Fame Games adds a real fan-vote layer, and Ts Madison's arrival is a genuine panel change, but reverting to standard elimination is the least ambitious structural choice of the ten.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+slot_argument: Fame Games adds a real fan-vote layer, and Ts Madison's arrival is a genuine panel change, but reverting to standard elimination is the least ambitious structural choice of the eleven.
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Season 8 sits at the bottom of the canon because its central
-structural choice is the least ambitious of the ten — after
+structural choice is the least ambitious of the eleven — after
 several cycles of experimental elimination mechanics, the season
 returns to a straightforward weekly vote. What keeps it from
 feeling like a retreat is Fame Games, a parallel fan-vote
@@ -209,4 +228,4 @@ apart from the main game. Ts Madison also joins the judging
 panel as a permanent member for the first time, a real and
 lasting change. Twelve returning queens carry a season that
 plays it structurally safer than the rest. The canon ranks it
-tenth for real additions on a familiar shape.
+eleventh for real additions on a familiar shape.

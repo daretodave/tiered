@@ -3,7 +3,7 @@ show: dragrace-allstars
 number: 3
 title: "Season 3"
 slug: season-3
-canonical_position: 9
+canonical_position: 10
 premiere_date: "2018-01-25"
 host: "RuPaul Charles"
 ep_count: 8
