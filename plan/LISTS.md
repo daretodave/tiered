@@ -57,6 +57,7 @@ last time a curator actually looked.
 | built-for-the-drop | craft | 2026-07-17 | 2026-07-17 | |
 | closing-statement | craft | 2026-07-17 | 2026-07-17 | |
 | new-network-same-rulebook | structure | 2026-07-17 | 2026-07-17 | |
+| one-rule-fills-every-seat | craft | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
