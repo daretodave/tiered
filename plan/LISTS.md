@@ -61,6 +61,7 @@ last time a curator actually looked.
 | the-place-fought-back | tone | 2026-07-17 | 2026-07-17 | |
 | the-house-that-kept-changing | single | 2026-07-17 | 2026-07-17 | |
 | tried-once-never-repeated | structure | 2026-07-17 | 2026-07-17 | |
+| not-who-they-say-they-are | craft | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
