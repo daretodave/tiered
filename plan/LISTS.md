@@ -49,6 +49,7 @@ last time a curator actually looked.
 | when-the-basket-became-a-bracket | single | 2026-07-16 | 2026-07-16 | |
 | familiar-faces-wrong-franchise | craft | 2026-07-17 | 2026-07-17 | |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
+| when-the-cast-was-already-related | structure | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
