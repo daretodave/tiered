@@ -51,6 +51,7 @@ last time a curator actually looked.
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-17 | 2026-07-17 | |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
+| rulebook-rewritten-every-season | single | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
