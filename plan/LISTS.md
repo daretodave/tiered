@@ -55,6 +55,7 @@ last time a curator actually looked.
 | a-way-back-in | craft | 2026-07-17 | 2026-07-17 | |
 | new-flags-planted-fast | craft | 2026-07-17 | 2026-07-17 | |
 | built-for-the-drop | craft | 2026-07-17 | 2026-07-17 | |
+| closing-statement | craft | 2026-07-17 | 2026-07-17 | |
 
 ## Ideas
 
