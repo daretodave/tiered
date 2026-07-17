@@ -191,7 +191,6 @@ new-show creation is locked to the biweekly show-add clock.
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
-| the-real-world | 31/33 | 2* |
 
 ## Sweep notes (2026-07-12, first pass)
 
@@ -1163,6 +1162,26 @@ Four dated finales filed to `content/calendar.yml` this pass
   hinge. `meth_who_p`/`meth_when_p`/`weekly_question` rewritten for
   the complete 17/17 run — gap table row removed, show fully
   drained. 933 seasons filed catalog-wide as of this tick.
+- **the-real-world** — DRAINED this tick (cloud drain, 2026-07-17):
+  unlike every other starred row in the gap table, this one had never
+  been verified by a per-tick note — scout research confirmed both
+  missing seasons are real, aired, non-deferred: Season 32 ("Seattle:
+  Bad Blood," Oct 2016–Jan 2017, MTV, a decoy-cast rivals twist plus
+  the format's first personal smartphones) and Season 33 ("Atlanta,"
+  summer 2019, the franchise's move off linear MTV onto Facebook
+  Watch, its final numbered season to date). Both filed; `canon.md`
+  fully rebased across all 33 seasons — Atlanta's platform-defining
+  streaming pivot lands at #5, just below the format's two other
+  reinvention seasons (Las Vegas 2002 at #3, Miami's group-job hinge
+  at #4); Seattle: Bad Blood's decoy-casting twist lands at #10,
+  adjacent to the format's other structural-overhaul seasons
+  (Ex-Plosion #7, Skeletons #9). `era_bands`' `reinvention-era`
+  widened to [2014, 2017] to absorb Bad Blood; a new `streaming-era`
+  [2018, 2019] band added for Atlanta, gap-free across the full
+  1992-2019 aired span. `meth_how_p`/`meth_when_p` rewritten to drop
+  the stale "two seasons still waiting" framing now that the show's
+  complete aired run (33/33) is seeded. Gap table row removed — show
+  fully drained. 935 seasons filed catalog-wide as of this tick.
 
 ## Show-add log
 
