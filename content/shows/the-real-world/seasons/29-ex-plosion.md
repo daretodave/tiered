@@ -2,7 +2,7 @@
 show: the-real-world
 number: 29
 title: "Ex-Plosion (2014)"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2014-01-22
 ep_count: 12
 location: "San Francisco, CA"

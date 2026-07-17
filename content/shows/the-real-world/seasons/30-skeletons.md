@@ -2,7 +2,7 @@
 show: the-real-world
 number: 30
 title: "Skeletons (2014)"
-canonical_position: 8
+canonical_position: 9
 premiere_date: 2014-12-03
 ep_count: 13
 location: "the West Loop, Chicago, IL"

@@ -3,7 +3,7 @@ show: the-real-world
 number: 10
 title: "Back to New York (2001)"
 display_title: "Back to<br/>New York"
-canonical_position: 12
+canonical_position: 14
 premiere_date: 2001-07-03
 ep_count: 22
 location: "Greenwich Village, Manhattan"

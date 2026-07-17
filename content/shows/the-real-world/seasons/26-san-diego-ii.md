@@ -2,7 +2,7 @@
 show: the-real-world
 number: 26
 title: "San Diego (2011)"
-canonical_position: 26
+canonical_position: 28
 premiere_date: 2011-09-14
 ep_count: 12
 location: "a beachfront house, La Jolla, San Diego, CA"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 22
 title: "Cancun (2009)"
-canonical_position: 23
+canonical_position: 25
 premiere_date: 2009-06-11
 ep_count: 12
 location: "ME Cancún resort, Cancún, Mexico"

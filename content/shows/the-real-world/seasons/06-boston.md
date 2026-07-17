@@ -2,7 +2,7 @@
 show: the-real-world
 number: 6
 title: "Boston (1997)"
-canonical_position: 18
+canonical_position: 20
 premiere_date: 1997-07-15
 ep_count: 23
 location: "Beacon Hill, Boston, MA"

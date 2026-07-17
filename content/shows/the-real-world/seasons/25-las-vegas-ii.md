@@ -2,7 +2,7 @@
 show: the-real-world
 number: 25
 title: "Las Vegas (2011)"
-canonical_position: 25
+canonical_position: 27
 premiere_date: 2011-03-09
 ep_count: 13
 location: "the Hard Rock Hotel, Las Vegas, NV"

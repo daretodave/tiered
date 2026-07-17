@@ -2,7 +2,7 @@
 show: the-real-world
 number: 13
 title: "Paris (2003)"
-canonical_position: 16
+canonical_position: 18
 premiere_date: 2003-06-04
 ep_count: 20
 location: "Paris, France"

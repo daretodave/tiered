@@ -3,7 +3,7 @@ show: the-real-world
 number: 24
 title: "Back to New Orleans (2010)"
 display_title: "Back to<br/>New Orleans"
-canonical_position: 17
+canonical_position: 19
 premiere_date: 2010-06-16
 ep_count: 12
 location: "an Uptown residence, New Orleans, LA"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 4
 title: "London (1995)"
-canonical_position: 5
+canonical_position: 6
 premiere_date: 1995-06-28
 ep_count: 23
 location: "Notting Hill, London"

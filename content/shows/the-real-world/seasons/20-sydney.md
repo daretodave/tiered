@@ -2,7 +2,7 @@
 show: the-real-world
 number: 20
 title: "Sydney (2007)"
-canonical_position: 15
+canonical_position: 17
 premiere_date: 2007-06-26
 ep_count: 24
 location: "a house overlooking Sydney Harbour, Sydney, Australia"

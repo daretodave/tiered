@@ -2,7 +2,7 @@
 show: the-real-world
 number: 11
 title: "Chicago (2002)"
-canonical_position: 13
+canonical_position: 15
 premiere_date: 2002-01-15
 ep_count: 24
 location: "Wicker Park, Chicago, IL"

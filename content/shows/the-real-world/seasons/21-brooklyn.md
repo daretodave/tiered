@@ -2,7 +2,7 @@
 show: the-real-world
 number: 21
 title: "Brooklyn (2009)"
-canonical_position: 11
+canonical_position: 13
 premiere_date: 2009-03-04
 ep_count: 24
 location: "a DUMBO loft, Brooklyn, NY"

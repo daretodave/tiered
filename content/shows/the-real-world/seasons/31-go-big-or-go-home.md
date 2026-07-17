@@ -3,7 +3,7 @@ show: the-real-world
 number: 31
 title: "Go Big or Go Home (2016)"
 display_title: "Go Big<br/>or Go Home"
-canonical_position: 10
+canonical_position: 12
 premiere_date: 2016-03-30
 ep_count: 12
 location: "the Gold Spike, downtown Las Vegas, NV"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 28
 title: "Portland (2013)"
-canonical_position: 29
+canonical_position: 31
 premiere_date: 2013-03-27
 ep_count: 12
 location: "338 NW 9th Ave, Portland, OR"

@@ -2,7 +2,7 @@
 show: the-real-world
 number: 27
 title: "St. Thomas (2012)"
-canonical_position: 27
+canonical_position: 29
 premiere_date: 2012-06-06
 ep_count: 12
 location: "an estate on Hassel Island, U.S. Virgin Islands"
