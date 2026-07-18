@@ -73,6 +73,7 @@ last time a curator actually looked.
 | same-license-different-rules | structure | 2026-07-18 | 2026-07-18 | |
 | been-here-before | craft | 2026-07-18 | 2026-07-18 | |
 | the-mic-changed-hands | craft | 2026-07-18 | 2026-07-18 | |
+| live-without-a-net | craft | 2026-07-18 | 2026-07-18 | |
 
 ## Ideas
 
