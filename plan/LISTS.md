@@ -71,6 +71,7 @@ last time a curator actually looked.
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
 | same-license-different-rules | structure | 2026-07-18 | 2026-07-18 | |
+| been-here-before | craft | 2026-07-18 | 2026-07-18 | |
 
 ## Ideas
 
