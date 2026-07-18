@@ -67,6 +67,7 @@ last time a curator actually looked.
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
 | milestones-spent-not-marked | craft | 2026-07-18 | 2026-07-18 | |
+| same-crown-new-price-tag | structure | 2026-07-18 | 2026-07-18 | |
 
 ## Ideas
 
