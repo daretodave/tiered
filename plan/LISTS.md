@@ -63,6 +63,7 @@ last time a curator actually looked.
 | tried-once-never-repeated | structure | 2026-07-17 | 2026-07-17 | |
 | not-who-they-say-they-are | craft | 2026-07-17 | 2026-07-17 | |
 | who-actually-got-the-vote | craft | 2026-07-18 | 2026-07-18 | |
+| the-shifting-yardstick | single | 2026-07-18 | 2026-07-18 | |
 
 ## Ideas
 
