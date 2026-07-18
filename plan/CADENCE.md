@@ -178,7 +178,6 @@ new-show creation is locked to the biweekly show-add clock.
 | big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
 | project-runway | 21/22 | 1* |
-| love-island-us | 7/8 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
 | masterchef-australia | 17/18 | 1* |
@@ -1194,6 +1193,41 @@ Four dated finales filed to `content/calendar.yml` this pass
   the stale "two seasons still waiting" framing now that the show's
   complete aired run (33/33) is seeded. Gap table row removed — show
   fully drained. 935 seasons filed catalog-wide as of this tick.
+- **love-island-us** — gap table row removed this tick (cloud drain,
+  2026-07-18): stale — the show was already drained to 8/8 by the
+  prior tick's finale-shift commit (`08-fiji-2026.md` authored,
+  `canon.md` rebased, frontmatter `seasons` bumped 7→8), but that
+  commit only touched `plan/AUDIT.md` and never updated this table.
+  No new research needed; pure housekeeping to keep the table
+  authoritative.
+- **american-ninja-warrior** — individually verified for the first
+  time this tick (cloud drain, 2026-07-18): unlike every other row
+  in the gap table, this one had carried its original `1*` mark
+  since the 2026-07-12 sweep with no per-tick re-check. Scout
+  research confirms Season 18 premiered 2026-06-08 on NBC and is
+  currently airing (6 episodes aired as of this tick's reference
+  date, most recently the Eastern Regional Finals on 2026-07-13) —
+  real and confirmed, but not concluded. Same confirmed-but-unaired
+  precedent as the other starred rows; deferred. Total episode count
+  and finale date are unresolved between sources (NBC Insider states
+  13 episodes with a National Finals round; a third-party schedule
+  tracker lists only 9, ending in early August with no National
+  Finals listed) — re-verify once a finale date is confirmed,
+  target window early September 2026.
+- **Rule 2 stall, 2026-07-18 tick:** every remaining row in the gap
+  table (28 shows after the love-island-us removal above) now
+  carries an individual confirmed-but-unaired verification note —
+  none crossed into "concluded" territory since their last check
+  (closest candidates: `masterchef-australia` S18, likely finale
+  early-to-mid August per S17's precedent; `alone-australia` S4,
+  premiered 2026-07-15, three days old, too early to have
+  concluded). No season was actionable for authoring this tick.
+  This is the first tick since the mission pivot where the entire
+  board is starred — not a "gap table reads zero" state (Rule 3 /
+  show-add stay locked; 28 real gaps remain), just a temporary
+  pipeline stall on real-world air dates. Next actionable drain
+  fires whenever the weekly sweep (due 2026-07-19) or a future
+  tick's re-check finds a row whose deferred date has passed.
 
 ## Show-add log
 
