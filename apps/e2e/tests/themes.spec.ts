@@ -363,10 +363,12 @@ test.describe('show page → themes cross-link retrofit', () => {
     expect(count).toBeGreaterThanOrEqual(2)
   })
 
-  test('bachelor show page does NOT surface the block (no themes reference it)', async ({
+  test('alone-the-skills-challenge show page does NOT surface the block (no themes reference it)', async ({
     page,
   }) => {
-    await page.goto('/shows/bachelor', { waitUntil: 'domcontentloaded' })
+    await page.goto('/shows/alone-the-skills-challenge', {
+      waitUntil: 'domcontentloaded',
+    })
     const featured = page.getByTestId('featured-themes')
     await expect(featured).toHaveCount(0)
   })
