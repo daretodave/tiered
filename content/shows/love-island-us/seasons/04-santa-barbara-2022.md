@@ -3,7 +3,7 @@ show: love-island-us
 number: 4
 slug: santa-barbara-2022
 title: "Season 4 (2022)"
-canonical_position: 4
+canonical_position: 5
 premiere_date: 2022-07-19
 ep_count: 38
 location: Santa Barbara, California, USA
