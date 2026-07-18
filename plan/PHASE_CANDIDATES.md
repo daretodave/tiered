@@ -340,6 +340,58 @@
      signal this pass. #16 — conflict correction (see above). #31 —
      resolved, struck through (see above). -->
 
+### 33. content-gaps gate (Step 3b.5) needs a bug-priority carve-out
+
+**Score:** 5.5 (impact: 7 — the gate is documented to fire "on most
+content-eligible ticks indefinitely" now that Rule 3 is the perpetual
+objective, so without a carve-out a high-scoring bug can structurally never
+reach `/iterate` again, not just wait its turn; ease: 8 — a single
+conditional check added to Step 3b.5 in `skills/march.md`, no schema or
+data-layer change, self-contained to one file)
+**Source pass:** digest 2026-07-15 (first raised, not filed to this file —
+only written into that day's `plan/DIGEST.md`, which is overwritten nightly
+and so was lost); re-filed digest 2026-07-18 with updated evidence
+**Filed:** 2026-07-18
+**Why:** `skills/march.md` Step 3b.5 dispatches every content-eligible tick
+to `/ship-content` (Rule 2 season-fill, then Rule 3 themed lists) whenever
+any `category: content-gaps` AUDIT row is Pending — by design, per the
+2026-07-12 oversight pivot, this now includes an explicit note that the
+dispatch "still fires on most content-eligible ticks indefinitely" since
+Rule 3's own mission is "hundreds of excellent lists over months and
+years." That design choice is sound for maximizing content velocity, but it
+has an unpriced cost: issue #568 (mobile horizontal overflow on season
+pages, AUDIT score 5.4 — the highest-scoring non-standing row in the file)
+was filed 2026-07-13 and has now sat unaddressed for **5 straight days**
+across **5 consecutive red e2e-full breadth nights**, growing from 1
+affected URL to **3**. Critique pass 94 (2026-07-16) independently
+rediscovered the same defect on the same URL and filed it as a HIGH
+finding — two detection paths converging on one unfixed bug. In that same
+window, 4 consecutive digest ticks (07-13 through 07-18) have logged 100%
+of commits landing in content/audit/triage and 0% in
+iterate/critique/expand/phase/data. The content-gate was designed to be
+biased toward content, not to be absolute — but in practice it has behaved
+as absolute for a week, because Rule 3 (unlike Rule 2) has no natural
+gap-zero state that would ever let it yield control back.
+**Scope sketch:**
+- In `skills/march.md` Step 3b.5, before dispatching to `/ship-content`,
+  add one check: if `plan/AUDIT.md` has a Pending **non-content-gaps** row
+  scoring ≥5.0 (chosen to sit above the standing Rule-2 drain row's own 4.5
+  bias-adjusted score, so it only fires for genuinely high-priority bugs,
+  not routine findings), skip to Step 3d (`/iterate`) for that one tick,
+  then resume normal 3b.5 priority on the next tick.
+- No change to Rule 1/2/3 content mechanics themselves, no change to
+  scoring formulas, no change to the standing Rule-2 drain row's
+  "stays Pending until gap table reads zero" contract.
+- Consider whether the same carve-out should apply ahead of Step 3c
+  (`/expand`) as well, or only ahead of 3d — a scoped bug fix arguably
+  matters more than either the next themed list or the next expand pass,
+  but expand's own posture-gating already gives it a natural throttle
+  Rule 3 lacks.
+**Estimated phases:** 1 (small — a few lines in one skill file).
+**Conflicts:** none. Complements candidate #29 (archive closed rows) —
+both address different symptoms of the same underlying pattern (the loop
+running so much content that its own maintenance/bug-fixing steps starve).
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
@@ -1337,6 +1389,19 @@ this candidate ships, extend the archive pattern to move `~~(superseded)~~`
 into a lighter-weight one-line index, not just CRITIQUE.md/AUDIT.md rows.
 Still unpromoted, now 2 days stale, two independent files now exhibiting
 the same growth-without-pruning defect this candidate names.
+
+**Reinforced (digest 2026-07-18):** the predicted failure mode has now
+recurred to **20 total occurrences** on issue #565 (title: "Cloud march tick
+crashed"), 2 more landing overnight 07-17→18 (00:01 and 00:03 UTC), both
+immediately after the nightly e2e-full breadth crawl window closes — a
+timing correlation worth checking for a causal link (shared runner resource
+pressure) rather than treating as coincidence. `plan/CRITIQUE.md` is now
+3,513 lines (was 3,096 at the 07-11 reinforcement) and `plan/PHASE_CANDIDATES.md`
+(this file) is 4,691 lines (was 4,106) — both have grown, not shrunk, in the
+7 days since the last reinforcement, consistent with the content-gate (see
+new candidate #33 below) leaving almost no ticks free for `/critique` or
+`/expand` passes that would otherwise prune them. Still unpromoted, now 39
+days stale since first filing (2026-07-09).
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
