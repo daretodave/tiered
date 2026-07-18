@@ -74,6 +74,7 @@ last time a curator actually looked.
 | been-here-before | craft | 2026-07-18 | 2026-07-18 | |
 | the-mic-changed-hands | craft | 2026-07-18 | 2026-07-18 | |
 | live-without-a-net | craft | 2026-07-18 | 2026-07-18 | |
+| a-guest-spot-with-room-to-grow | craft | 2026-07-18 | 2026-07-18 | |
 
 ## Ideas
 
