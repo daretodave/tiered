@@ -83,6 +83,7 @@ last time a curator actually looked.
 | played-it-straight | tone | 2026-07-19 | 2026-07-19 | |
 | running-long-running-short | craft | 2026-07-19 | 2026-07-19 | |
 | the-other-side-of-the-table | craft | 2026-07-19 | 2026-07-19 | |
+| when-the-crew-stepped-into-frame | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
