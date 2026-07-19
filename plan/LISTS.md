@@ -93,6 +93,7 @@ last time a curator actually looked.
 | the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
 | the-twist-is-the-format | single | 2026-07-19 | 2026-07-19 | |
 | the-broadcast-wasnt-the-whole-show | craft | 2026-07-19 | 2026-07-19 | |
+| a-second-life-built-into-the-format | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
