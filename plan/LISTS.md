@@ -95,6 +95,7 @@ last time a curator actually looked.
 | the-broadcast-wasnt-the-whole-show | craft | 2026-07-19 | 2026-07-19 | |
 | a-second-life-built-into-the-format | craft | 2026-07-19 | 2026-07-19 | |
 | the-finale-broke-its-own-rulebook | craft | 2026-07-19 | 2026-07-19 | |
+| the-competition-leaves-the-country | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
