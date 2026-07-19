@@ -87,6 +87,7 @@ last time a curator actually looked.
 | built-for-one-playing-as-a-team | craft | 2026-07-19 | 2026-07-19 | |
 | away-from-home-turf | craft | 2026-07-19 | 2026-07-19 | |
 | the-roster-was-the-twist | single | 2026-07-19 | 2026-07-19 | |
+| two-channels-same-night | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
