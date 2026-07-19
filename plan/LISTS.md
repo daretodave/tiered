@@ -79,6 +79,7 @@ last time a curator actually looked.
 | a-change-of-address | craft | 2026-07-19 | 2026-07-19 | |
 | the-hand-behind-the-couple | craft | 2026-07-19 | 2026-07-19 | |
 | before-the-spinoff-had-a-name | craft | 2026-07-19 | 2026-07-19 | |
+| not-the-usual-order | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 

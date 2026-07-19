@@ -2094,6 +2094,10 @@ const FIRST_ALL_RETURNEE_ALLOWLIST: Record<string, number[]> = {
   // Amazing Race S11 All-Stars (2007) — the franchise's first
   // all-returnee race.
   'amazing-race': [11],
+  // Top Chef S8 All-Stars (2010) — the franchise's first returnees
+  // event; canon entry `## 8. All-Stars` tag names it explicitly
+  // ("The franchise's first returnees event...").
+  'top-chef': [8],
 }
 
 export function collectThemeFactualFirstClaimIssues(): Failure[] {
