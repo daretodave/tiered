@@ -91,6 +91,7 @@ last time a curator actually looked.
 | the-elimination-round-never-keeps-its-name | single | 2026-07-19 | 2026-07-19 | |
 | the-clock-had-to-make-room | single | 2026-07-19 | 2026-07-19 | |
 | the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
+| the-twist-is-the-format | single | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
