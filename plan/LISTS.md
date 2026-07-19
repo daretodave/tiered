@@ -77,6 +77,7 @@ last time a curator actually looked.
 | a-guest-spot-with-room-to-grow | craft | 2026-07-18 | 2026-07-18 | |
 | one-season-two-flags | structure | 2026-07-19 | 2026-07-19 | |
 | a-change-of-address | craft | 2026-07-19 | 2026-07-19 | |
+| the-hand-behind-the-couple | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
