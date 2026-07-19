@@ -28,16 +28,28 @@ Regenerated 2026-07-19 by the second full weekly sweep (`/march`
 Step 1.5, Rule 1a) — 6 `scout` batches (≤12 shows each) covered
 every one of the 68 catalogued shows, cross-checked against the
 filesystem. Verdict: the 28-show board that closed out 2026-07-18
-entirely starred (confirmed-but-unaired) stays almost entirely
+entirely starred (confirmed-but-unaired) stays entirely
 starred — most flagged seasons have now begun airing but none
-have concluded — **except one genuine new find: `survivor-australia`,
-never previously flagged, carries two fully concluded, unfiled
-seasons** (S13 "Australia V The World," aired Aug 2025; S14
-"Redemption," aired Feb–~May 2026). That's the sweep's one real,
-actionable gap and the next Rule 2 pick. **68 shows · 29 carry a
-gap · 31 gap-slots total** (28 shows × 1 deferred slot each, +1
-extra deferred slot on `hells-kitchen`, +2 real slots on
-`survivor-australia`). See Sweep notes below for per-show detail
+have concluded. **Correction (2026-07-19, same-day march tick):**
+the sweep's one claimed "genuine new find," `survivor-australia`
+S13 "Australia V The World" / S14 "Redemption," is a **false
+positive** — this is a numbering-convention collision, not
+unfiled content. Both titles and both premiere dates
+(2025-08-17 / 2026-02-23) match our own catalog's **already-filed**
+`11-australia-v-the-world.md` / `12-redemption.md` exactly (filed
+2026-06-20, `39047a4`) — the sweep's external source counts the
+same two aired seasons as #13/#14 under a convention that runs
+two ahead of Network 10's own numbering, which this catalog
+follows. The first sweep (2026-07-12, line below) had already
+flagged this exact ambiguity and warned against an autonomous
+count bump without verifying convention first; the second sweep
+missed that flag. No content is missing — `survivor-australia` is
+fully drained at 12/12, canon complete. Row removed from the
+table below; frontmatter/filenames need no change. **68 shows ·
+28 carry a gap · 29 gap-slots total** (28 shows × 1 deferred slot
+each, +1 extra deferred slot on `hells-kitchen`). Every remaining
+slot is starred (confirmed-but-unaired) — there is no actionable
+Rule 2 pick this tick. See Sweep notes below for per-show detail
 and the two prior editions of this paragraph's stale aggregate
 numbers, now retired.
 
@@ -166,7 +178,6 @@ new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
-| survivor-australia | 12/14 | **2 (real, not starred — next Rule 2 pick)** |
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
@@ -524,12 +535,14 @@ blind count bump:
   (Deadline, 2026-06-10) with a Love Island-style format change.
   Unclear whether this continues the existing season numbering
   or is a full reboot; decide at scaffold time.
-- **survivor-australia** — numbering convention is ambiguous
-  between Network 10's own count and Wikipedia's overall count;
-  declared 12 may already reflect one of the two conventions.
-  Two further seasons reportedly planned for 2027. Verify which
-  convention this catalog's frontmatter uses before any count
-  change.
+- **survivor-australia** — **RESOLVED (2026-07-19 correction).**
+  This catalog uses Network 10's own count (declared 12, matching
+  filed 12/12). The 2026-07-19 sweep's "S13/S14" find was the same
+  two aired seasons (Australia V The World, Redemption) already
+  filed here as S11/S12 under a source using the +2 Wikipedia-style
+  convention this note warned about — a false-positive gap, not new
+  content. Two further seasons reportedly planned for 2027 remain
+  the real next watch point once they air.
 - **traitors** (US) — season 5 is reportedly split into an NBC
   civilian edition ("New Blood", premiering 2026-09-17) and a
   separate Peacock celebrity edition (~Jan 2027). Whether these
@@ -1242,17 +1255,19 @@ shows against fresh web research; cross-grepped `content/shows/*.md`
 frontmatter `seasons:` vs. filed season files in every show's
 `seasons/` directory.
 
-**The one real find:** `survivor-australia` — never previously
-flagged in this table — carries two fully concluded, unfiled
-seasons: **S13 "Australia V The World"** (aired Aug 2025) and
+**The claimed find, corrected same-day:** this sweep flagged
+`survivor-australia` as carrying two fully concluded, unfiled
+seasons — **S13 "Australia V The World"** (aired Aug 2025) and
 **S14 "Redemption"** (new host David Genat, premiered 2026-02-23).
-Both air windows are well in the past for a format that airs
-~50 episodes over a few months; treat as aired-and-concluded, but
-a future drain tick should pin the exact S14 finale date at author
-time before writing the ranked entry (source discipline —
-Wikipedia's episode list is the fastest confirm). This is the
-sweep's only actionable Rule 2 pick this cycle; every other row
-below stays starred.
+A same-day `/march` tick caught this as a **false positive**: it
+*was* previously flagged (the 2026-07-12 sweep's numbering-
+ambiguity note above, missed by this pass), and both titles +
+premiere dates match content already filed as S11/S12
+(`39047a4`, 2026-06-20) — the "S13/S14" label is a +2
+Wikipedia-style numbering convention describing the same aired
+content this catalog already carries under Network 10's count.
+No content was missing. Every row in the table stays starred;
+there is no actionable Rule 2 pick this cycle.
 
 **Rows that moved from "confirmed-but-unaired" to "now airing,
 not yet concluded"** (numeric filed/declared unchanged — deferred
@@ -1324,4 +1339,4 @@ No calendar or gap-table action.
 | date | new seasons found | gap after |
 |---|---|---|
 | 2026-07-12 | 59 | 341 |
-| 2026-07-19 | 2 (survivor-australia S13, S14) | 31 |
+| 2026-07-19 | 0 (survivor-australia S13/S14 claim corrected same-day — false positive, see notes) | 29 |
