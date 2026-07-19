@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-07-12 | next due 2026-07-19 |
+| season-sweep | 7 days | 2026-07-19 | next due 2026-07-26 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -24,17 +24,22 @@ that.
 
 ## Season gap table
 
-Regenerated 2026-07-12 by the first weekly sweep (`/march` Step
-1.5, Rule 1a) — 6 `scout` batches (≤12 shows each) covered every
-one of the 68 catalogued shows, cross-checked against the
-filesystem. **59 new/renewed/announced seasons found** across 28
-previously-gap-free shows; the pre-existing 28-show gap carries
-forward unchanged (no scout finding touched those declared
-counts beyond what's noted below). **68 shows · 746/1083 seasons
-filed · gap 337 across 55 shows** (rhodubai drained to zero this
-sweep tick; the-challenge progressed 40→41, big-brother
-progressed 26→27, and bachelor progressed 28→29 this drain tick
-— see Sweep notes below).
+Regenerated 2026-07-19 by the second full weekly sweep (`/march`
+Step 1.5, Rule 1a) — 6 `scout` batches (≤12 shows each) covered
+every one of the 68 catalogued shows, cross-checked against the
+filesystem. Verdict: the 28-show board that closed out 2026-07-18
+entirely starred (confirmed-but-unaired) stays almost entirely
+starred — most flagged seasons have now begun airing but none
+have concluded — **except one genuine new find: `survivor-australia`,
+never previously flagged, carries two fully concluded, unfiled
+seasons** (S13 "Australia V The World," aired Aug 2025; S14
+"Redemption," aired Feb–~May 2026). That's the sweep's one real,
+actionable gap and the next Rule 2 pick. **68 shows · 29 carry a
+gap · 31 gap-slots total** (28 shows × 1 deferred slot each, +1
+extra deferred slot on `hells-kitchen`, +2 real slots on
+`survivor-australia`). See Sweep notes below for per-show detail
+and the two prior editions of this paragraph's stale aggregate
+numbers, now retired.
 
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
@@ -161,6 +166,7 @@ new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
+| survivor-australia | 12/14 | **2 (real, not starred — next Rule 2 pick)** |
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
@@ -1229,6 +1235,84 @@ Four dated finales filed to `content/calendar.yml` this pass
   fires whenever the weekly sweep (due 2026-07-19) or a future
   tick's re-check finds a row whose deferred date has passed.
 
+## Sweep notes (2026-07-19, second full pass)
+
+Six `scout` batches (≤12 shows each) re-covered all 68 catalogued
+shows against fresh web research; cross-grepped `content/shows/*.md`
+frontmatter `seasons:` vs. filed season files in every show's
+`seasons/` directory.
+
+**The one real find:** `survivor-australia` — never previously
+flagged in this table — carries two fully concluded, unfiled
+seasons: **S13 "Australia V The World"** (aired Aug 2025) and
+**S14 "Redemption"** (new host David Genat, premiered 2026-02-23).
+Both air windows are well in the past for a format that airs
+~50 episodes over a few months; treat as aired-and-concluded, but
+a future drain tick should pin the exact S14 finale date at author
+time before writing the ranked entry (source discipline —
+Wikipedia's episode list is the fastest confirm). This is the
+sweep's only actionable Rule 2 pick this cycle; every other row
+below stays starred.
+
+**Rows that moved from "confirmed-but-unaired" to "now airing,
+not yet concluded"** (numeric filed/declared unchanged — deferred
+status stands until a finale date is confirmed in the past):
+`alone` (S13 "World Championship," premiered 2026-06-17),
+`alone-australia` (S4, premiered 2026-07-15 — 4 days old, far too
+early to have concluded), `below-deck-mediterranean` (S11,
+Dubrovnik/Croatia cast, premiered 2026-06-08), `big-brother` (S28
+"Time Trip," premiered 2026-07-09, marks the show's 1000th
+episode), `masterchef-australia` (S18, premiered 2026-04-19, no
+finale date confirmed by either scout pass — re-verify next
+tick), `project-runway` (S22, Freeform, premiered 2026-07-09),
+`rhoc` (S20, premiered 2026-07-09), `the-ultimatum` (S4, premiered
+2026-07-15 — finale/reunion confirmed 2026-07-22, now added to
+`content/calendar.yml` for the phase-39 finale gate to pick up
+next week).
+
+**Rows with a newly confirmed date (still future, still
+deferred):** `survivor` (S51 premiere confirmed for 2026-09-23,
+CBS — previously only "expected fall 2026" with no exact date);
+`the-challenge` (S42 "Cutthroat" confirmed premiering 2026-08-05
+on Paramount+, its new home); `married-at-first-sight` (S20
+"Seattle" reunion/finale now confirmed 2026-08-27, added to
+`content/calendar.yml`); `rhoa` (S17's three-part reunion pushed
+from the prior estimate of 2026-08-02 to 2026-08-23 — regular
+season already concluded 2026-06-28, only the reunion is
+outstanding; added to `content/calendar.yml`).
+
+**No change, re-confirmed:** `amazing-race`, `rhony`,
+`love-island-uk`, `dancing-with-the-stars`, `americas-got-talent`,
+`rhonj`, `below-deck`, `love-is-blind`, `american-idol`, `bachelor`,
+`hells-kitchen`, `masked-singer`, `below-deck-down-under`,
+`90-day-fiance`, `american-ninja-warrior`. Every other catalogued
+show (39 total, gap-free) was cross-checked with no discrepancy
+found — filed count matches declared count and no premiered-but-
+unfiled season surfaced.
+
+**Still-outstanding frontmatter status corrections** (flagged, not
+applied — Rule 1a scopes the sweep to `plan/CADENCE.md` /
+`plan/LISTS.md` / `content/calendar.yml`, not direct frontmatter
+edits; a future drain or fix tick should apply these): `the-voice`
+frontmatter reads `status: ended` but S30 is confirmed for a
+2026-09-21 premiere — should read `hiatus` (carried forward,
+unresolved since the 2026-07-12 sweep). `the-ultimatum` frontmatter
+reads `status: hiatus` but S4 has been actively airing since
+2026-07-15 — should read `airing` (new this tick; low urgency
+since the season concludes 2026-07-22, days away).
+
+Revival checks on every `ended` show in the catalog (12 shows:
+`alone-frozen`, `alone-the-skills-challenge`,
+`americas-next-top-model`, `jersey-shore`, `queer-eye`,
+`so-you-think-you-can-dance`, `the-apprentice`, `the-circle`,
+`the-real-world`, `too-hot-to-handle`, and two below-deck spinoffs)
+turned up nothing greenlit — only speculative chatter for
+`americas-next-top-model` (Tyra Banks teasing a return, no
+network/date) and `the-apprentice` (Amazon "exploring" a reboot,
+explicitly "not in active development" per the studio). Neither
+rises to the confirmed-signal bar this table uses for inclusion.
+No calendar or gap-table action.
+
 ## Show-add log
 
 | date filed | slug | drain completed |
@@ -1240,3 +1324,4 @@ Four dated finales filed to `content/calendar.yml` this pass
 | date | new seasons found | gap after |
 |---|---|---|
 | 2026-07-12 | 59 | 341 |
+| 2026-07-19 | 2 (survivor-australia S13, S14) | 31 |

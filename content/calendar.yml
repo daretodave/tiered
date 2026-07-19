@@ -64,3 +64,11 @@ finales:
     season: 22
     finale_date: 2026-09-10
     status: scheduled
+  - show: rhoa
+    season: 17
+    finale_date: 2026-08-23
+    status: scheduled
+  - show: married-at-first-sight
+    season: 20
+    finale_date: 2026-08-27
+    status: scheduled
