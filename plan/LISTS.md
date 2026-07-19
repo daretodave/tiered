@@ -84,6 +84,7 @@ last time a curator actually looked.
 | running-long-running-short | craft | 2026-07-19 | 2026-07-19 | |
 | the-other-side-of-the-table | craft | 2026-07-19 | 2026-07-19 | |
 | when-the-crew-stepped-into-frame | craft | 2026-07-19 | 2026-07-19 | |
+| built-for-one-playing-as-a-team | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
