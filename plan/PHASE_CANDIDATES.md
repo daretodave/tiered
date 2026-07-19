@@ -392,6 +392,25 @@ gap-zero state that would ever let it yield control back.
 both address different symptoms of the same underlying pattern (the loop
 running so much content that its own maintenance/bug-fixing steps starve).
 
+**Update (digest 2026-07-19):** issue #568 is now **6 days old** (07-13
+through 07-19), the e2e-full breadth crawl is on its **6th consecutive red
+night**, and the defect has grown from 3 affected URLs to **4**
+(`love-island-us/season/fiji-2026` joined tonight). It has just been
+escalated MED→HIGH in `plan/AUDIT.md` on the strength of new evidence: all
+four affected URLs fail identically on both `season-page.spec.ts:172` and
+`smoke-mobile.spec.ts:25`, confirming this is a shared-component CSS defect
+rather than four independent content strings — the fix is now more clearly
+scoped than at filing time, which raises ease without changing the
+carve-out's own shape. The same night's crawl also missed its 75-minute
+ceiling at 95.6% complete; the retries this bug forces (2 retries × 8
+failing specs/night, growing with each new affected URL) are a plausible
+compounding contributor to that separate timeout erosion, meaning this one
+fix may relax two symptoms at once. Content-gate window is now **7
+consecutive digest ticks** (07-13 through 07-19) at 100%
+content/audit/triage commits, 0% iterate/critique/expand/phase/data. No
+change to score or scope sketch — filing this as reinforcing evidence for
+`/oversight` to weigh, not a re-score.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
