@@ -89,6 +89,7 @@ last time a curator actually looked.
 | the-roster-was-the-twist | single | 2026-07-19 | 2026-07-19 | |
 | two-channels-same-night | craft | 2026-07-19 | 2026-07-19 | |
 | the-elimination-round-never-keeps-its-name | single | 2026-07-19 | 2026-07-19 | |
+| the-clock-had-to-make-room | single | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
