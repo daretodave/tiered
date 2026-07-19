@@ -78,6 +78,7 @@ last time a curator actually looked.
 | one-season-two-flags | structure | 2026-07-19 | 2026-07-19 | |
 | a-change-of-address | craft | 2026-07-19 | 2026-07-19 | |
 | the-hand-behind-the-couple | craft | 2026-07-19 | 2026-07-19 | |
+| before-the-spinoff-had-a-name | craft | 2026-07-19 | 2026-07-19 | |
 
 ## Ideas
 
