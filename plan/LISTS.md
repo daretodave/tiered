@@ -109,6 +109,7 @@ last time a curator actually looked.
 | never-needed-a-villain | tone | 2026-07-20 | 2026-07-20 | |
 | the-blackout-had-a-loophole | craft | 2026-07-20 | 2026-07-20 | |
 | when-the-reward-pointed-somewhere-else | craft | 2026-07-20 | 2026-07-20 | |
+| twice-in-one-year | era | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
