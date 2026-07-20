@@ -97,6 +97,7 @@ last time a curator actually looked.
 | the-finale-broke-its-own-rulebook | craft | 2026-07-19 | 2026-07-19 | |
 | the-competition-leaves-the-country | craft | 2026-07-19 | 2026-07-19 | |
 | the-grudge-was-the-casting-call | craft | 2026-07-20 | 2026-07-20 | |
+| sight-unseen-already-committed | craft | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
