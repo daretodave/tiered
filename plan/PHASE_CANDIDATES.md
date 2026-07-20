@@ -411,6 +411,24 @@ content/audit/triage commits, 0% iterate/critique/expand/phase/data. No
 change to score or scope sketch — filing this as reinforcing evidence for
 `/oversight` to weigh, not a re-score.
 
+**Update (digest 2026-07-20):** issue #568 is now **8 days old**, the
+breadth crawl's on its **8th consecutive red night**, but the
+affected-URL count held flat at 4 for the first time (no growth since
+07-19) — the defect itself has stopped spreading even though nothing has
+fixed it yet. New evidence sharpens the fix path further: `plan/CRITIQUE.md`
+pass 94 (2026-07-16, independently run, still the latest pass) diagnosed
+the exact same URL and already narrowed the culprit to one of three named
+candidates (the `location`/`filming_caption` string, the forced `<br/>` in
+`display_title`, or `AdjacentSeasons.tsx` rendering), ruling out the mobile
+stacking media-query as the cause. Two independent detection paths have
+now converged on one URL with a pre-narrowed fix list — this is the
+clearest this bug's fix path has ever been, and it's had zero
+`/iterate` attention across 8 days. This window (07-19 through 07-20) was
+otherwise the cleanest content-gate window yet: 41/41 commits were
+content/audit-progress, 0 triage, 0 critique, 0 sweep, 0 expand, 0
+iterate — the gate has not yielded a single tick since filing. No change
+to score or scope sketch.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
