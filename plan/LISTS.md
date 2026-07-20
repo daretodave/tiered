@@ -112,6 +112,7 @@ last time a curator actually looked.
 | twice-in-one-year | era | 2026-07-20 | 2026-07-20 | |
 | when-age-became-the-casting-brief | craft | 2026-07-20 | 2026-07-20 | |
 | proving-the-debut-wasnt-luck | tone | 2026-07-20 | 2026-07-20 | |
+| the-doubters-had-to-walk-it-back | tone | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
