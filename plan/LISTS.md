@@ -110,6 +110,7 @@ last time a curator actually looked.
 | the-blackout-had-a-loophole | craft | 2026-07-20 | 2026-07-20 | |
 | when-the-reward-pointed-somewhere-else | craft | 2026-07-20 | 2026-07-20 | |
 | twice-in-one-year | era | 2026-07-20 | 2026-07-20 | |
+| when-age-became-the-casting-brief | craft | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
