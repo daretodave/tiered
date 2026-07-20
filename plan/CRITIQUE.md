@@ -1,48 +1,54 @@
 # CRITIQUE
 
-> Last pass: 2026-07-16 at commit e2dfbc8
-> Pass count: 94
+> Last pass: 2026-07-20 at commit 81ee1d7
+> Pass count: 95
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 94 ran in the cloud loop via Path A2
+> 95 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), authed pass with a
-> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
-> `/shows/chopped/season/the-double-first`, `/shows`,
-> `/shows/chopped/canon`,
-> `/shows/the-real-world/season/go-big-or-go-home`) and authed
-> (`/u/e2e`, `/shows/chopped/season/the-double-first`,
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon (6 URLs: `/`,
+> `/themes/when-age-became-the-casting-brief`,
+> `/themes/twice-in-one-year`,
+> `/shows/the-real-world/season/go-big-or-go-home`, `/shows`,
+> `/themes`) and authed (`/`, `/u/e2e`,
+> `/themes/when-age-became-the-casting-brief`,
 > `/shows/the-real-world/season/go-big-or-go-home`,
-> `/shows/chopped/canon`, `/themes`) walks ran, desktop + mobile,
-> targeting the two content-gap drains that landed this tick's
-> preceding commits (Chopped seasons 7-62 backfilled to
-> gap-drained, with the canon fully reranked; The Real World
-> seasons 22-31 backfilled), never critiqued before. Zero
-> console errors, zero failed first-party requests beyond the
-> known-benign RSC-prefetch abort noise on `/u/e2e` (documented
-> across many prior passes), no per-show SVG iconography
-> violations, no spoiler leakage — winner/elimination outcomes
-> consistently avoided in favor of structural/format framing on
-> both fresh season pages. Auth handshake confirmed working
-> (`authState: authenticated:cloud`, correct `@e2e` chrome on
-> every capture, no signed-out flash). Filed 2 findings (1 high,
-> 1 medium): (1) The Real World S31 (Go Big or Go Home) overflows
-> the 375px mobile viewport by 7px (`scrollWidth` 382 vs.
-> `innerWidth` 375), reproduced independently on both the
-> anonymous and authenticated passes and not present on any other
-> page walked this pass at the same viewport — isolated to this
-> season's content, likely the long FILMED value/caption pair,
-> the forced `<br/>` in `display_title`, or the adjacent-seasons
-> row; (2) Chopped S62 (the-double-first) restates its two real
-> facts (the No Kid Hungry round-order swap, Ted Allen judging as
-> a fourth judge) in near-verbatim phrasing across the body,
-> section 03 ("Where it sits"), and the first two watch-list
-> bullets — a thin-season templating tell distinct from the
-> already-fixed within-page body-vs-canon verbatim-quote
-> collision class. No findings dropped at self-assessment this
-> pass — both reader passes converged cleanly and everything else
-> (vote/comment affordances, canon page, themes index, voice,
-> SEO/meta) checked clean.
+> `/shows/chopped/canon`) walks ran, desktop + mobile, targeting
+> the two freshly-shipped themed lists (never critiqued before)
+> and verifying the #568 mobile-overflow fix landed clean. Zero
+> console errors, zero failed first-party requests across all
+> page/viewport combinations, no per-show SVG iconography
+> violations, no spoiler leakage. The #568 fix confirmed holding
+> (`scrollWidth === innerWidth === 375` on both `/` and the
+> season page, both auth states). Auth handshake confirmed
+> working (correct `@e2e` chrome on every capture). Two findings
+> self-assessed away as not-bugs: the themed-list "Save (this
+> device)" button is intentional device-local scoping (tested
+> behavior, `ListDetailTools.test.tsx`), and the absence of a
+> vote/comment thread on list pages matches spec — lists are
+> editorial curation surfaces, not community-vote surfaces like
+> season pages (`spec.md` "community is a ±1 vote, not a personal
+> ranked list"; no vote/comment pattern in the `Best Premieres`
+> design reference either). The Chopped canon page's uniform
+> "◆ HOLD" community pills across all 5 S-tier entries was also
+> dropped — traced to `communitySignal()`/`community/live.ts`,
+> confirmed data-driven (not a static stub), so plausible given
+> real vote volume; too speculative to file without deeper vote-
+> count verification. Filed 2 findings (1 medium, 1 low):
+> (1) `/shows` pillar page — Bake Off's card copy (`blurb`,
+> `tagline`, `card_tagline`) still reads "15 seasons" while
+> `seasons: 16` and the card's own stat badge both say 16 —
+> frontmatter count was bumped without updating the three prose
+> fields; (2) The Real World S31 (Go Big or Go Home)'s EPISODES
+> stat tile description ("12 episodes filmed above the Gold
+> Spike") bare-restates the episode count and re-spends the
+> "Gold Spike" location fact already used two tiles up in the
+> FILMED tile — a fresh instance of the stat-caption-restates-
+> value defect class, in a tile the existing regression test
+> doesn't cover. Both freshly-shipped themed lists read clean —
+> voice, structure, save/share affordances, no spoiler leakage,
+> no duplicate-restatement tells.
 >
 > ───── Pass 93 metadata kept below for history ─────
 >
@@ -2191,6 +2197,10 @@
 ## Pending
 
 - [x] [HIGH] [anon+authed] /shows/the-real-world/season/go-big-or-go-home — the page overflows the 375px mobile viewport horizontally (document.scrollWidth measured 382px vs. window.innerWidth 375px, a 7px overflow), reproduced independently on both the anonymous and authenticated cloud walker passes. Not reproduced on any other page walked this pass at the same 375px viewport — `/`, `/shows`, `/shows/chopped/canon`, and the sibling freshly-shipped `/shows/chopped/season/the-double-first` all measured exactly `scrollWidth === innerWidth` (375/375), so this is specific to this season's rendered content, not a global chrome regression. Likely culprits (not yet pinned to a single element): the long unbroken `location`/`filming_caption` value ("the Gold Spike, downtown Las Vegas, NV" / "A penthouse above the Gold Spike, downtown Las Vegas" — `content/shows/the-real-world/seasons/31-go-big-or-go-home.md`), the forced `<br/>` in `display_title: "Go Big<br/>or Go Home"` at mobile hero font sizes, or the adjacent-seasons row (`AdjacentSeasons.tsx` / `.related-title`, `.season-related` in `src/styles/screens.css:1102-1114`) rendering a neighboring season title next to this one. `.season-related` does collapse to a single column under the existing `@media (max-width: 560px)` rule (`screens.css:1313`), so the stacked layout itself isn't the culprit — the overflow likely comes from an un-wrapped text run inside one of the stacked cells. Fix: inspect this page at 375px in devtools to isolate the exact overflowing element (stats strip FILMED value/caption pair and the adjacent-seasons title/caption cells are the first two places to check) and apply `word-break`/`overflow-wrap`/`min-width: 0` there rather than a page-wide fix. (URL: /shows/the-real-world/season/go-big-or-go-home, source: critique-pass-94) — issue: #568 (shared-component defect, same underlying bug as the AUDIT.md `/shows/the-challenge/season/vets-and-new-threats` finding filed via /triage 2026-07-13) — RESOLVED 4557353: all three flagged candidates were ruled out by empirical Playwright measurement; the actual cause was `.stat-val` missing `overflow-wrap: break-word` (an unbreakable slash-joined `format_summary` string overflows the 2-column mobile stats grid on this page and on american-ninja-warrior/the-runoffs) plus, on the other two affected URLs, `.ep-foot`'s unconditional `white-space: nowrap`. Fixed both in `src/styles/screens.css`. This page now measures `scrollWidth === clientWidth` (375/375) at 375px. Verify gate green: 195 test files / 3545 unit tests, build (1407 pages), 4560 e2e (27.3m). Closes #568.
+
+- [ ] [MED] [anon] /shows — Bake Off's card copy contradicts its own stat badge on the same card: the prose reads "15 seasons" while the badge two lines below reads "16 SEASONS." `content/shows/bake-off.md`: `seasons: 16` but `blurb` ("15 seasons. A tent, a field, a sponge."), `tagline` ("15 seasons of amateur bakers..."), and `card_tagline` ("...15 seasons of the gentlest competition...") were never updated when the season count was bumped to 16 — the home page's Bake Off tile (badge only, no prose) correctly shows 16 and confirms the drift is isolated to these three prose fields. Fix: update `blurb`, `tagline`, and `card_tagline` in `content/shows/bake-off.md` from "15 seasons" to "16 seasons." Content-only, three fields, no structural change. Spoiler discipline P0 intact (season count only, no outcome exposure). (URL: /shows, source: critique-pass-95)
+
+- [ ] [LOW] [anon] /shows/the-real-world/season/go-big-or-go-home — the EPISODES stat tile's description bare-restates its own value and re-spends a fact the FILMED tile already owns, breaking the pattern every sibling season in this show follows (`episodes_caption: "N episodes, <distinct new fact>"` — e.g. S2 "21 episodes, first cross-country Winnebago arrival", S4 "23 episodes, the format's longest run yet"). `content/shows/the-real-world/seasons/31-go-big-or-go-home.md`: `episodes_caption: "12 episodes filmed above the Gold Spike"` restates the "12" the EPISODES tile's own value already shows, and "the Gold Spike" duplicates `filming_caption: "A penthouse above the Gold Spike, downtown Las Vegas"` two tiles up in the same stat rail. This is a fresh instance of the stat-caption-restates-value defect class (same family as the resolved pass-91/#563 `filming_caption` fix), but in the `episodes_caption` field, which the existing `filming-caption-distinct.test.ts` regression test doesn't cover. Fix: rewrite `episodes_caption` to add a genuinely new fact about the season's episode structure (pacing, mission count, etc.) instead of restating the location. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/the-real-world/season/go-big-or-go-home, source: critique-pass-95)
 
 - [ ] [MED] [anon] /shows/chopped/season/the-double-first — Season 62's page restates its two real facts (the No Kid Hungry charity episode swapping the round order to breakfast/lunch/dessert, and the Ted's Takeover episode putting Ted Allen at the table as a fourth judge) in near-verbatim phrasing across three separate sections instead of varying the framing per section the way the canonical reference page (Heroes vs. Villains) does across its "01 The take" / "02 The shape of the season" / "03 Where it sits" sections. `content/shows/chopped/seasons/62-the-double-first.md`: the body/lede pairs "a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert rounds for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen himself at the judging table as a fourth judge — only the second time in the show's history a host has judged," then section 03 ("Where it sits in the canon") repeats the same two facts in near-identical wording ("a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the judging table as a fourth judge, only the second time a host has judged in the show's history"), and the first two `watch_list` bullets restate the same two facts again. This is a thin-season templating tell — Season 62 has only two genuinely distinct facts to work with, and the current content repeats both rather than varying the angle or shortening the template. Fix: for thin seasons like this, either vary the phrasing/angle more deliberately per section (each section should add a new lens on the same two facts rather than re-quoting the prior section's sentence) or drop one of the redundant restatements (e.g. don't restate both facts in both the body and section 03; let the watch-list bullets be the only place bullet-level detail repeats). Content-only, no structural/component change. Spoiler discipline P0 intact (no outcome exposure — the two facts are structural/format details, not results). (URL: /shows/chopped/season/the-double-first, source: critique-pass-94)
 
