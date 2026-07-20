@@ -100,6 +100,7 @@ last time a curator actually looked.
 | sight-unseen-already-committed | craft | 2026-07-20 | 2026-07-20 | |
 | the-vote-left-the-phone-line | era | 2026-07-20 | 2026-07-20 | |
 | never-starts-cold | craft | 2026-07-20 | 2026-07-20 | |
+| the-couch-kept-adding-chairs | craft | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
