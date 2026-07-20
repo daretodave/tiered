@@ -105,6 +105,7 @@ last time a curator actually looked.
 | the-format-learned-to-travel | single | 2026-07-20 | 2026-07-20 | |
 | the-slow-build-was-the-point | tone | 2026-07-20 | 2026-07-20 | |
 | no-template-to-copy | era | 2026-07-20 | 2026-07-20 | |
+| funny-on-purpose | tone | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
