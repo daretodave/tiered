@@ -101,6 +101,7 @@ last time a curator actually looked.
 | the-vote-left-the-phone-line | era | 2026-07-20 | 2026-07-20 | |
 | never-starts-cold | craft | 2026-07-20 | 2026-07-20 | |
 | the-couch-kept-adding-chairs | craft | 2026-07-20 | 2026-07-20 | |
+| the-team-never-means-the-same-thing-twice | single | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
