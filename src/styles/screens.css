@@ -697,7 +697,7 @@
   .stat:nth-child(n+3) { border-top: 1px solid color-mix(in oklab, var(--show-ink) 8%, transparent); padding-top: 24px; }
 }
 .stat-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); margin-bottom: 10px; }
-.stat-val { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--show-ink); letter-spacing: -0.015em; line-height: 1.15; text-wrap: balance; }
+.stat-val { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--show-ink); letter-spacing: -0.015em; line-height: 1.15; text-wrap: balance; overflow-wrap: break-word; }
 .stat-cap { margin-top: 4px; font: 400 12px/1.4 var(--mono); color: color-mix(in oklab, var(--show-ink) 40%, transparent); letter-spacing: 0.04em; }
 
 /* EPISODE RHYTHM */
@@ -706,7 +706,7 @@
   border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
   display: flex; align-items: center; gap: 18px;
 }
-@media (max-width: 560px) { .ep-strip { padding: 16px 20px; flex-wrap: wrap; } }
+@media (max-width: 560px) { .ep-strip { padding: 16px 20px; flex-wrap: wrap; } .ep-foot { white-space: normal; min-width: 0; overflow-wrap: break-word; flex-basis: 100%; } }
 .ep-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); white-space: nowrap; }
 .ep-bars { flex: 1; display: grid; gap: 3px; min-width: 0; }
 .ep-bar { height: 14px; background: color-mix(in oklab, var(--show-ink) 12%, transparent); border-radius: 2px; }
