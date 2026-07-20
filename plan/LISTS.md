@@ -102,6 +102,7 @@ last time a curator actually looked.
 | never-starts-cold | craft | 2026-07-20 | 2026-07-20 | |
 | the-couch-kept-adding-chairs | craft | 2026-07-20 | 2026-07-20 | |
 | the-team-never-means-the-same-thing-twice | single | 2026-07-20 | 2026-07-20 | |
+| the-format-learned-to-travel | single | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
