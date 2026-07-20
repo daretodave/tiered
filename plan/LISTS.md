@@ -107,6 +107,7 @@ last time a curator actually looked.
 | no-template-to-copy | era | 2026-07-20 | 2026-07-20 | |
 | funny-on-purpose | tone | 2026-07-20 | 2026-07-20 | |
 | never-needed-a-villain | tone | 2026-07-20 | 2026-07-20 | |
+| the-blackout-had-a-loophole | craft | 2026-07-20 | 2026-07-20 | |
 
 ## Ideas
 
