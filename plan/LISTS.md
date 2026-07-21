@@ -129,6 +129,7 @@ last time a curator actually looked.
 | every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
 | the-paycheck-writes-the-plot | craft | 2026-07-21 | 2026-07-21 | |
 | the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
+| everything-but-the-pass-keeps-changing | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
