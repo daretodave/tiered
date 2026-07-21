@@ -126,6 +126,7 @@ last time a curator actually looked.
 | the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
 | the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
 | the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
+| every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
