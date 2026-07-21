@@ -122,6 +122,7 @@ last time a curator actually looked.
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-21 | 2026-07-21 | |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
+| wealth-as-the-whole-pitch | tone | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
