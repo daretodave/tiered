@@ -47,8 +47,8 @@ entries:
     season: 6
     season_label: "S06"
     rank: 6
-    title: "An agent leaves the org chart entirely to start her own"
-    blurb: "Christine Quinn's exit to open a competing brokerage is the clearest version of this list's whole idea — someone doesn't just leave a job, she leaves the hierarchy to become the boss of one herself, elsewhere."
+    title: "An agent's outside ambitions start to strain the brokerage's chain of command"
+    blurb: "One of the Oppenheim Group's top earners spends the season weighing loyalty to the firm's org chart against plans that don't fit inside it. The tension between staying under the structure and building one of her own is the sharpest version of this list's whole idea."
   - show: vanderpump-rules
     season: 6
     season_label: "S06"
