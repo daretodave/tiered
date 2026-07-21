@@ -128,6 +128,7 @@ last time a curator actually looked.
 | the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
 | every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
 | the-paycheck-writes-the-plot | craft | 2026-07-21 | 2026-07-21 | |
+| the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
