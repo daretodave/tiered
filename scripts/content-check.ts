@@ -2098,6 +2098,13 @@ const FIRST_ALL_RETURNEE_ALLOWLIST: Record<string, number[]> = {
   // event; canon entry `## 8. All-Stars` tag names it explicitly
   // ("The franchise's first returnees event...").
   'top-chef': [8],
+  // Alone S5 Redemption (2018) — the franchise's first all-returnee
+  // season; canon entry `## 5. Season 5 — Redemption` slot_argument
+  // names it explicitly ("The show's first returning-contestant
+  // season"), and the season's own `format_changes` confirms it
+  // ("First all-returning-contestant season — 10 non-winners from
+  // seasons 1-4").
+  alone: [5],
 }
 
 export function collectThemeFactualFirstClaimIssues(): Failure[] {

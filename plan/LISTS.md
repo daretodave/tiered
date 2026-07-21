@@ -116,6 +116,7 @@ last time a curator actually looked.
 | when-the-vote-came-back-tied | craft | 2026-07-21 | 2026-07-21 | |
 | the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
 | the-season-structure-never-holds-still | single | 2026-07-21 | 2026-07-21 | |
+| the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
