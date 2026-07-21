@@ -114,6 +114,7 @@ last time a curator actually looked.
 | proving-the-debut-wasnt-luck | tone | 2026-07-20 | 2026-07-20 | |
 | the-doubters-had-to-walk-it-back | tone | 2026-07-20 | 2026-07-20 | |
 | when-the-vote-came-back-tied | craft | 2026-07-21 | 2026-07-21 | |
+| the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
