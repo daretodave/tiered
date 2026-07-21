@@ -1,5 +1,38 @@
 # CRITIQUE
 
+> Last pass: 2026-07-21 at commit 403b4ef
+> Pass count: 97
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 97 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (6 URLs: `/`, `/themes/the-zip-code-was-the-only-constant`,
+> `/themes/the-tent-moved-more-than-the-show-admits`,
+> `/shows/rhony`, `/shows/bake-off`, `/themes`) and authed (`/`,
+> `/u/e2e`, `/themes/the-zip-code-was-the-only-constant`,
+> `/themes/the-tent-moved-more-than-the-show-admits`,
+> `/shows/rhony/season/the-second-act`) walks ran, desktop +
+> mobile, targeting the two freshly-shipped themed lists (never
+> critiqued before). Zero console errors, zero failed
+> first-party requests (one flaky RSC-prefetch abort on `/u/e2e`
+> was non-reproducible across repeat runs and not filed), zero
+> mobile overflow (`scrollWidth === innerWidth` at 375px on
+> every page), no per-show SVG iconography violations, no
+> spoiler leakage on either new list or the RHONY season page.
+> Auth handshake confirmed working (`@e2e` chrome on every
+> capture, no signed-out flash). Filed 2 findings, both
+> low-to-medium: (1) single-show themed lists (both freshly-shipped
+> ones checked) carry no link back to the parent show's canon
+> page anywhere on the detail page — systemic across the
+> `/themes` index too, and one-directional since show pages
+> already link forward to their single-show lists; (2) the
+> list-detail hero's `SHOWS 1` stat is trivially true on every
+> single-show list and repeats what the title already says.
+>
+> ───── Pass 96 metadata kept below for history ─────
+>
 > Last pass: 2026-07-21 at commit d047d22
 > Pass count: 96
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2240,6 +2273,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /themes/the-zip-code-was-the-only-constant, /themes/the-tent-moved-more-than-the-show-admits — single-show themed lists carry no link back to the parent show's canon page anywhere on the detail page. Confirmed on both freshly-shipped lists checked this pass (RHONY-only and Bake Off-only): raw HTML for `/themes/the-zip-code-was-the-only-constant` has zero occurrences of `href="/shows/rhony"` (only 15 `href="/shows/rhony/season/..."` links to individual seasons), and `/themes/the-tent-moved-more-than-the-show-admits` has zero occurrences of `href="/shows/bake-off"`. The breadcrumb reads `Lists / <plain-text title>` — the title itself isn't a link. This is systemic, not isolated to these two lists: `/themes` index cards also never link to `/shows/<slug>` (checked — only 3 unrelated `/shows/` hrefs found on the whole index, none matching these two shows). The relationship is one-directional — a show page's themed-lists module already links forward to its single-show lists (verified on `/shows/rhony`) — but a reader who lands on the list itself has to detour through a season page and use *that* page's breadcrumb to reach the show's canon ranking. Fix: on single-show list detail pages, make the show name in the hero/eyebrow a link to `/shows/<slug>` (or add a small "more <show>" line near the entry list), matching the forward link show pages already carry. Content-neutral, presentational-only change — no schema, no spoiler exposure (URL: /themes/the-zip-code-was-the-only-constant, /themes/the-tent-moved-more-than-the-show-admits, source: critique-pass-97)
+
+- [ ] [LOW] [authed] /themes/the-zip-code-was-the-only-constant, /themes/the-tent-moved-more-than-the-show-admits — the list-detail hero's `SHOWS` stat reads `SHOWS 1` on every single-show themed list, a fact the page title has already stated (e.g. "Real Housewives of New York City: the zip code was the only constant") and that tells a first-time reader nothing new. Confirmed on both freshly-shipped single-show lists this pass: `ENTRIES 15 / SHOWS 1 / CURATED BY tiered.tv editor / LAST REVISED July 2026` and `ENTRIES 12 / SHOWS 1 / ...` respectively — the `SHOWS 1` cell is trivially true for every single-show list and wastes a stat-strip slot. Fix: on single-show lists, either suppress the `SHOWS` stat cell or swap it for a fact the reader doesn't already know (e.g. the season-span years covered). Content-neutral, presentational-only change (URL: /themes/the-zip-code-was-the-only-constant, /themes/the-tent-moved-more-than-the-show-admits, source: critique-pass-97)
 
 - [x] [HIGH] [anon+authed] /shows/the-real-world/season/go-big-or-go-home — the page overflows the 375px mobile viewport horizontally (document.scrollWidth measured 382px vs. window.innerWidth 375px, a 7px overflow), reproduced independently on both the anonymous and authenticated cloud walker passes. Not reproduced on any other page walked this pass at the same 375px viewport — `/`, `/shows`, `/shows/chopped/canon`, and the sibling freshly-shipped `/shows/chopped/season/the-double-first` all measured exactly `scrollWidth === innerWidth` (375/375), so this is specific to this season's rendered content, not a global chrome regression. Likely culprits (not yet pinned to a single element): the long unbroken `location`/`filming_caption` value ("the Gold Spike, downtown Las Vegas, NV" / "A penthouse above the Gold Spike, downtown Las Vegas" — `content/shows/the-real-world/seasons/31-go-big-or-go-home.md`), the forced `<br/>` in `display_title: "Go Big<br/>or Go Home"` at mobile hero font sizes, or the adjacent-seasons row (`AdjacentSeasons.tsx` / `.related-title`, `.season-related` in `src/styles/screens.css:1102-1114`) rendering a neighboring season title next to this one. `.season-related` does collapse to a single column under the existing `@media (max-width: 560px)` rule (`screens.css:1313`), so the stacked layout itself isn't the culprit — the overflow likely comes from an un-wrapped text run inside one of the stacked cells. Fix: inspect this page at 375px in devtools to isolate the exact overflowing element (stats strip FILMED value/caption pair and the adjacent-seasons title/caption cells are the first two places to check) and apply `word-break`/`overflow-wrap`/`min-width: 0` there rather than a page-wide fix. (URL: /shows/the-real-world/season/go-big-or-go-home, source: critique-pass-94) — issue: #568 (shared-component defect, same underlying bug as the AUDIT.md `/shows/the-challenge/season/vets-and-new-threats` finding filed via /triage 2026-07-13) — RESOLVED 4557353: all three flagged candidates were ruled out by empirical Playwright measurement; the actual cause was `.stat-val` missing `overflow-wrap: break-word` (an unbreakable slash-joined `format_summary` string overflows the 2-column mobile stats grid on this page and on american-ninja-warrior/the-runoffs) plus, on the other two affected URLs, `.ep-foot`'s unconditional `white-space: nowrap`. Fixed both in `src/styles/screens.css`. This page now measures `scrollWidth === clientWidth` (375/375) at 375px. Verify gate green: 195 test files / 3545 unit tests, build (1407 pages), 4560 e2e (27.3m). Closes #568.
 
