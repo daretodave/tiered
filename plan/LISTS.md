@@ -124,6 +124,7 @@ last time a curator actually looked.
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
 | wealth-as-the-whole-pitch | tone | 2026-07-21 | 2026-07-21 | |
 | the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
+| the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
