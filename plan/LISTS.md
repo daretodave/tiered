@@ -125,6 +125,7 @@ last time a curator actually looked.
 | wealth-as-the-whole-pitch | tone | 2026-07-21 | 2026-07-21 | |
 | the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
 | the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
+| the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
 
 ## Ideas
 
