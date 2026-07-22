@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-16 at commit b9ed14f
-> Pass count: 56
+> Last pass: 2026-07-22 at commit a47ce26
+> Pass count: 57
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,147 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 57 (2026-07-22, commit HEAD, cloud) — 1 new phase-shape candidate
+     filed (#34); reinforced 2 existing candidates (#25, #28) with fresh
+     critique-pass evidence (passes 94-96).
+     Window since pass 56 (b9ed14f, 2026-07-16): ~5.8 days / 204 commits. Both
+     thresholds met (20 commits, 48 hours).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5 cadence gates: season-sweep last ran 2026-07-19, next
+     due 2026-07-26 — not due; show-add stays LOCKED (gap table non-zero, 27
+     shows still carry a gap). Step 2.0's shipping-mode gate is lifted (Phase
+     36 [x]) so the critique rate-limit applied normally — it did NOT fire
+     this tick: only 11 commits / ~7.7h since the last pass (c4a0065,
+     2026-07-21), under both the 12-commit and 24-hour thresholds. Step 3a
+     (phase) and 3b (data) both empty. Step 3b.5 (content-gaps): the standing
+     Rule 2 season-fill drain row (score 4.5) was checked carefully — earlier
+     in this same tick the-ultimatum drained to 4/4 and masterchef-australia
+     was re-verified still deferred (no finale date set); every one of the
+     27 remaining `plan/CADENCE.md` gap-table rows is starred
+     (confirmed-but-unaired), each with a documented future or unconfirmed
+     air/finale date from the 2026-07-19 sweep or this tick's own
+     re-verification — no row crossed into "concluded" territory. Same
+     "Rule 2 stall" shape already precedented at the 2026-07-18 tick (see
+     `plan/CADENCE.md` line ~1254): not a "gap table reads zero" state, so
+     Rule 3 (themed lists) correctly stayed locked rather than being
+     unilaterally unblocked. This left Step 3c (expand) as the correct
+     dispatch per march's own documented order.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): 5 rows — the recurring
+       e2e-full breadth-crawl duration-ceiling breach (score 5.4, MED,
+       filed via /triage of issue #636 — this is the fresh signal behind
+       candidate #34 below), a ship-content issue-mirror idempotency gap
+       (score 3.0), a `/ship-a-phase` mirror-close-trailer reliability gap,
+       a `YEAR_TENURE_RE` teen-number blind spot (score 2.7), and a
+       themed-list category enum drift doc gap (score 2.4). The latter four
+       are single-tick-sized fixes already well-scoped for `/iterate`, not
+       phase-shape candidates — none proposed as new expand candidates.
+     - plan/CRITIQUE.md Pending: 33 rows (passes through 96), mostly
+       single-page LOW content nits already suited to individual `/iterate`
+       fixes. Three rows mapped onto existing filed candidates: pass-95
+       (Real World "go-big-or-go-home" `episodes_caption` restating its own
+       EPISODES value, plus cross-referencing the FILMED tile's fact) and
+       the still-open pass-90 (Chopped S4 PREMIERED/eyebrow restatement,
+       confirmed still unfixed) both reinforce candidate #28 (stat-tile
+       value/caption literal-duplicate invariant, score 8.3) —
+       reinforcement note added, flagging the cross-tile restatement shape
+       as a scope question beyond the current same-pair-only sketch.
+       pass-94 (Chopped S62 "the-double-first," a thin two-fact season
+       repeating both facts near-verbatim across body/canon-rationale/
+       watch-list) and pass-96 (Drag Race S18, a three-way echo across
+       `pull`/body/canon-rationale with no thin-season excuse) both
+       reinforce candidate #25 (canon-rationale/season-body verbatim-echo
+       gate, score 8.0) — reinforcement note added; pass-96 flagged as an
+       open scope question (whether to widen detection to the `pull` field
+       as a third compared surface), mirroring the pass-56 cross-show
+       scope-question precedent.
+     - GH issues: 2 open — `triage:loop-queued` #636 (e2e-full, 1:1 mirror
+       of the AUDIT.md row above, no new signal beyond it) and
+       `triage:reviewed` #629 (a themed-list content ticket, not a phase
+       signal).
+     - spec.md / design/: no commits touching either since pass 56
+       (`git log b9ed14f..HEAD -- spec.md design/` empty).
+     Fresh, uncaptured signal justifying the one new candidate this pass:
+     the e2e-full breadth crawl has now bred a **second** duration-ceiling
+     breach (2026-07-21T00:41:24Z, run 29787007925) after the 2026-07-12
+     timeout-bump "fix" (superseded candidate #26) — the workflow file's
+     own comment already named sharding as "the real fix... if 75 stops
+     being enough," and it just stopped being enough 9 days later. Filed as
+     candidate #34 rather than reopening #26, mirroring how #32's
+     recurrences would be handled (closed candidates get a fresh number on
+     recurrence, not a silent reopen).
+-->
+
+### 34. Shard the e2e-full breadth crawl across parallel Playwright workers
+
+**Score:** 6.2 (impact: 7, ease: 6 → 4.2 base + 2.0 signal multiplicity — this exact
+fix was pre-named by the superseded candidate #26's own scope sketch and by a comment
+still live in the workflow file itself; independently confirmed by an AUDIT.md triage
+row and a mirrored GitHub issue; this is the second erosion cycle of the same
+single-worker bottleneck in under three weeks)
+**Source pass:** 57
+**Filed:** 2026-07-22
+**Why:** The nightly `e2e-full` breadth crawl went red again at
+2026-07-21T00:41:24Z (run 29787007925) — not a test regression, the same
+duration-ceiling breach class as superseded candidate #26: all 9,278 of 9,278
+completed checks passed, but the "Exhaustive e2e crawl (E2E_FULL=1)" step hit
+`.github/workflows/e2e-full.yml`'s `timeout-minutes: 75` wall with 734 of
+10,012 tests still remaining (92.7% complete). Candidate #26 already fixed this
+once (2026-07-12, `timeout-minutes` 50→75) after four consecutive red nights,
+but explicitly flagged the bump as a stopgap: the workflow file itself still
+carries the comment "If 75 stops being enough, the real fix is sharding the
+crawl, not another bump" (`.github/workflows/e2e-full.yml:92`). Nine days
+later, it stopped being enough — test count grew from 7,138 (at the 50→75
+bump) to 10,012 (+40%), tracking the content saga's own perpetual season-drain
+mandate exactly as candidate #26 predicted it would. The crawl runs Playwright
+with `workers: 1` (`apps/e2e/playwright.config.ts:82`), so wall-clock scales
+linearly with total page count and every future content tick makes the next
+breach arrive sooner. A third timeout bump would only buy a few more weeks
+before recurring a third time — the structural bottleneck (single worker) is
+unaddressed either way. **BLOCKED FROM CLOUD**: the fix requires editing
+`.github/workflows/e2e-full.yml`, which the cloud loop's `ACTIONS_PAT` cannot
+push (lacks the `workflows` OAuth scope — the identical blocker candidate #26
+and issue #416/#480 already hit on this same file family). Filed as a fresh
+candidate rather than reopening #26 (which is marked resolved/superseded) —
+same convention as how a recurrence of #32's dedupe fix would get its own
+number.
+**Source signals:**
+- `plan/AUDIT.md` [MED, score 5.4] "Nightly e2e-full breadth crawl went red
+  again 2026-07-21T00:41:24Z" — filed 2026-07-21 via `/triage` of issue #636,
+  explicitly cites the workflow file's own "shard, not another bump" comment
+  and flags BLOCKED FROM CLOUD.
+- GitHub issue #636 (open, `triage:loop-queued`), 1:1 mirror of the AUDIT row,
+  no independent new information beyond it.
+- Candidate #26 itself (superseded 2026-07-12) — its own scope sketch already
+  named sharding as the necessary follow-up "once even 75 minutes stops being
+  enough," which is exactly what happened.
+**Scope sketch:**
+- Convert the single "Exhaustive e2e crawl" step in
+  `.github/workflows/e2e-full.yml` into a matrix of N parallel jobs, each
+  running `pnpm --dir apps/e2e exec playwright test --shard=<i>/<N>`
+  (Playwright's built-in sharding flag — no config-file change needed beyond
+  passing the flag). Pick N (likely 4) so each shard's wall-clock comfortably
+  fits inside a much shorter per-shard timeout, well under the current
+  75-minute wall.
+- Keep `workers: 1` per shard (unchanged) if the single-worker constraint
+  exists for a reason (e.g. Supabase container contention under `E2E_FULL=1`)
+  — verify that assumption at implementation time; if it was only ever a
+  historical default, consider raising both shard count and per-shard workers
+  together for a bigger win.
+- The "Pre-start Supabase containers" and "Production build" steps either
+  need to run once and be shared (build artifact reuse across matrix jobs) or
+  be duplicated per shard — duplication is simpler to ship first, artifact
+  sharing is the natural follow-up if setup cost dominates.
+- Same `workflows`-scope cloud blocker as candidate #26/#32/issue #416 —
+  ships via `/oversight` in a local session, not through `01_build_plan.md`.
+  Recommend bundling with any other pending workflow-file edits in the same
+  session per the established pattern.
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same precedent as candidate #26/#32).
+**Conflicts:** none. Supersedes-in-spirit candidate #26 (same root cause,
+now proven the timeout-bump approach doesn't scale) without literally
+reopening it.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
@@ -1073,14 +1214,32 @@ to address the pattern class in one sitting rather than three.
 
 ### 25. Canon-rationale/season-body verbatim-argument echo gate
 
-**Score:** 8.0 (impact: 8, ease: 8 → 6.4 base + 1.6 signal multiplicity, impact bumped
+**Score:** 8.3 (impact: 8, ease: 8 → 6.4 base + 1.9 signal multiplicity, impact bumped
 7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit;
 multiplicity bonus raised again at pass 49 — a 10th independent instance closed in
 the very next commit window after pass 48's filing, the shortest gap yet between
-reinforcements)
-**Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56)
+reinforcements; raised again at pass 57 — 12th and 13th independent instances,
+one of them ruling out "thin season" as an excuse)
+**Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56, 57)
 **Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09,
-2026-07-16)
+2026-07-16, 2026-07-22)
+**Pass-57 reinforcement (two new instances, one raises a scope question):** critique
+pass-94 found a 12th instance on `/shows/chopped/season/the-double-first` (Season 62)
+— a thin two-fact season repeating both facts near-verbatim across the body/lede, the
+canon-rationale-equivalent "03 Where it sits in the canon" section, AND the first two
+`watch_list` bullets (triple restatement, not just the documented two-field pair).
+Still Pending in `plan/CRITIQUE.md` as of this filing. Critique pass-96 found a 13th
+instance on `/shows/dragrace/season/18` that widens the pattern: the `pull` field, the
+season body, AND the canon.md rationale all converge on the same five facts near-
+verbatim — a **three-way** echo, not the documented two-field (canon-rationale ↔
+season-body) shape this candidate's scope sketch targets. Unlike Chopped S62, Drag
+Race S18 has plenty of distinct material available, so there's no thin-season excuse
+this time — the finding explicitly names it "the same section-level restatement defect
+class already open on Chopped S62... a second, unrelated show hitting the same tell."
+Open scope question for `/oversight`, same shape as the pass-56 cross-show question
+below: widen `collectCanonRationaleSeasonBodyEchoIssues()` to compare `pull` as a third
+surface against body + rationale, or scope that as a follow-on candidate once the
+two-field gate ships. Both instances still unresolved (Pending) as of this filing.
 **Pass-56 reinforcement (new sub-pattern, scope question for `/oversight`):** critique
 pass-92 found a related but distinct shape on three freshly-shipped, single-canon-entry
 shows (The Real World, Ink Master, So You Think You Can Dance) — each show's lone
@@ -1212,13 +1371,27 @@ show's canon+season pair*, a shape none of the existing gates cover.
 
 ### 28. Stat-tile value/caption literal-duplicate invariant
 
-**Score:** 8.3 (impact: 8, ease: 9 → 7.2 base + 1.1 signal multiplicity — a single
+**Score:** 8.5 (impact: 8, ease: 9 → 7.2 base + 1.3 signal multiplicity — a single
 critique finding that was itself already systemic across 139 files/22 shows, same
 root-cause family as candidate #25; multiplicity bonus raised at pass 49 by a second,
 independently-discovered defect shape on one of the six pairs this candidate already
-proposes to gate)
-**Source pass:** 48 (reinforced pass 49, reinforced again pass 56)
-**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16)
+proposes to gate; raised again at pass 57 by a third defect shape — cross-tile
+restatement, not just same-pair)
+**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57)
+**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22)
+**Pass-57 reinforcement (new sub-shape — cross-tile, not just same-pair):** critique
+pass-95 found `/shows/the-real-world/season/go-big-or-go-home`'s `episodes_caption`
+doing double duty as a defect: it restates its own EPISODES tile's "12" value (a clean
+instance of the `ep_count`/`episodes_caption` pair already named in this candidate's
+six-pair scope sketch) *and* it separately duplicates "the Gold Spike" from the
+FILMED tile's `filming_caption` two tiles up in the same stat rail — a cross-tile
+restatement dimension the current scope sketch's same-pair-only check would not catch.
+Still Pending in `plan/CRITIQUE.md` as of this filing. Separately, pass-90's Chopped
+Season 4 PREMIERED/eyebrow instance (noted at pass-56) remains unfixed — confirmed
+still Pending, no new information beyond persistence. Seventh consecutive expand pass
+(48, 49, 56, 57 explicitly; the intervening passes found no new instance to report) to
+find live evidence of this defect class recurring on freshly-shipped or freshly-
+promoted content, still zero instances caught pre-ship by a gate.
 **Pass-56 reinforcement:** two more independent instances surfaced by critique passes
 90 and 93, both still Pending in `plan/CRITIQUE.md` at this filing. Critique pass-90
 found Chopped Season 4's PREMIERED caption restating the eyebrow's network + air-window
