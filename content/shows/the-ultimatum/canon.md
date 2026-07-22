@@ -1,13 +1,13 @@
 ---
 show: the-ultimatum
 editor: "tiered.tv editor"
-last_revised: 2026-07-13
+last_revised: 2026-07-22
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. The Ultimatum has three seasons ranked now — weighed for how honestly the format's central risk plays out: real couples, a hard deadline, and partners who might walk out with someone else entirely. I'm not claiming to be objective. I'm trying to be honest."
+meth_who_p: "tiered.tv's editor. The Ultimatum has four seasons ranked now — weighed for how honestly the format's central risk plays out: real couples, a hard deadline, and partners who might walk out with someone else entirely. I'm not claiming to be objective. I'm trying to be honest."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most here — whether the format's pressure feels earned rather than manufactured, whether the new partners introduced mid-season create real emotional stakes instead of shock value, and whether the season's casting brings enough history and tension to make the deadline actually mean something."
 meth_when_h: "When I revisit"
-meth_when_p: "Three seasons are ranked now, plus a queer-love edition that exists as its own separate title. Season four is confirmed for July 2026, and once it airs it earns its own slot in this ranking — evaluated against the same standard the founding season set, not given a pass for being newest."
+meth_when_p: "Four seasons are ranked now, plus a queer-love edition that exists as its own separate title. Season four aired in July 2026 and earned its slot here on the same standard the founding season set — a franchise-first setting, not a pass for being newest, is what moved it up the board."
 tier_s_blurb: "Seasons where the ultimatum itself creates real, unscripted tension — couples whose history makes every decision costly, not just watchable."
 tier_a_blurb: "Confident seasons that run the format's structure well, even when a specific pairing or trial period keeps the season a half-step short of the ceiling."
 tier_b_blurb: "The show's default tier — a season that runs the format competently on a strong cast, without redefining what the premise can do."
@@ -35,11 +35,30 @@ touches it. Two more seasons have tested the same premise
 since, and neither has matched the pressure this one built
 from a standing start.
 
+## 4. Season 4
+
+tag: Franchise-first setting — the same ultimatum, run for the first time by a cast already rooted in the city on screen.
+slot_argument: Every prior season borrowed a filming city; season four's cast already lives in the one they're filmed in. That closeness — friend groups, careers, ties already at stake — raises the format's core risk without changing a rule of it.
+community_rank_hint: rank=2 delta=0 sentiment=hold
+
+Season four's case for the second slot isn't about drama the
+show captured — it's about a structural change to what's at
+risk. Every previous season filmed in a city chosen for
+production, with couples relocated into it. This one flips
+that: six couples who already live in Las Vegas take the
+ultimatum in their own city, surrounded by the friend groups,
+jobs, and community ties a relocated cast never has to risk.
+The format itself hasn't changed — same deadline, same
+three-week trial marriage, same binary choice at the end —
+but the stakes underneath it do, because losing this bet
+doesn't just cost a relationship. It costs a life these
+couples already built.
+
 ## 3. Season 3
 
 tag: The mature format's rebound — the same ultimatum, run by a cast willing to actually risk it.
-slot_argument: Two seasons deep, the show no longer has to sell the premise. Season three's case for rank two is a cast willing to let the trial marriages create real friction, not just new introductions.
-community_rank_hint: rank=2 delta=0 sentiment=hold
+slot_argument: Two seasons deep, the show no longer has to sell the premise. Season three's case for rank three is a cast willing to let the trial marriages create real friction, not just new introductions.
+community_rank_hint: rank=3 delta=0 sentiment=hold
 
 Season three arrives with the format already proven, which
 changes what earns points here. There's no novelty payoff
@@ -57,7 +76,7 @@ instead of coasting on a format everyone already recognizes.
 
 tag: The sophomore format check — the same premise, running for the first time without the element of surprise.
 slot_argument: Season two proves the structure repeats, but the deadline's stakes lean more on the format holding steady than on any single new pairing raising the pressure past what season one set.
-community_rank_hint: rank=3 delta=0 sentiment=hold
+community_rank_hint: rank=4 delta=0 sentiment=hold
 
 Season two's job was never to reinvent the premise — it's to
 prove season one wasn't a fluke, and on that count it mostly

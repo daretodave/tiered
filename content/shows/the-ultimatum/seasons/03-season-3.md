@@ -2,7 +2,7 @@
 show: the-ultimatum
 number: 3
 title: "Season 3"
-canonical_position: 2
+canonical_position: 3
 premiere_date: "2024-12-04"
 eyebrow: "Premiered December 2024 · Netflix"
 lede: "Two seasons in, the premise doesn't need to prove itself. Six new couples take the same ultimatum — propose, or trial-marry someone else from the group for three weeks — with the format now a known quantity and the pressure resting on the cast."

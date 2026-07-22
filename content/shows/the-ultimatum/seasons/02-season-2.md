@@ -2,7 +2,7 @@
 show: the-ultimatum
 number: 2
 title: "Season 2"
-canonical_position: 3
+canonical_position: 4
 premiere_date: "2023-08-23"
 eyebrow: "Premiered August 2023 · Netflix"
 lede: "A new set of couples takes on the same ultimatum: propose within weeks, or trial-marry someone new from inside the group for three weeks. Season two arrives already knowing the format works — the pressure now is proving the tension wasn't a fluke."
