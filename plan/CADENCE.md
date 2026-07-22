@@ -53,6 +53,25 @@ Rule 2 pick this tick. See Sweep notes below for per-show detail
 and the two prior editions of this paragraph's stale aggregate
 numbers, now retired.
 
+**Rule 2 pick, 2026-07-22 tick:** re-verified the two nearest
+candidates flagged for follow-up. `masterchef-australia` S18
+confirmed still airing (top 5 remain, no finale date set by
+Network 10 as of 2026-07-22) — stays deferred, re-verify after
+early August. `the-ultimatum` S4 confirmed concluded — finale +
+reunion (episodes 9-10 of 10) released 2026-07-22 per Netflix's
+own schedule, closing the deferral flagged at the 2026-07-18
+stall. DRAINED this tick: Season 4 filed
+(`content/shows/the-ultimatum/seasons/04-season-4.md`), canon
+rebased (S4 inserted at rank 2 — franchise-first Las Vegas
+setting, cast filmed in the city they actually live in for the
+first time in the franchise's run — S3 shifted rank 2→3, S2
+shifted rank 3→4), show frontmatter bumped `seasons: 3` → `4`.
+Row removed from the table below; show fully drained at 4/4.
+**27 shows now carry a gap · 28 gap-slots total** (26 shows × 1
+deferred slot each, +1 extra deferred slot on `hells-kitchen`)
+— 68-show catalog total unchanged, only the-ultimatum's row
+cleared.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
@@ -202,7 +221,6 @@ new-show creation is locked to the biweekly show-add clock.
 | below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
-| the-ultimatum | 3/4 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
 | married-at-first-sight | 19/20 | 1* |
