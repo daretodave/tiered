@@ -1,5 +1,29 @@
 # CRITIQUE
 
+> Last pass: 2026-07-22 at commit 26fba3c
+> Pass count: 99
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 99 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (5 URLs: `/`, `/shows/the-ultimatum/season/season-4`, `/shows`,
+> `/themes/the-workroom-outlasted-the-network`, `/themes`) and
+> authed (`/`, `/shows/the-ultimatum/season/season-4`,
+> `/shows/the-ultimatum/canon`,
+> `/themes/some-casts-didnt-need-week-one`, `/u/e2e`) walks ran,
+> desktop + mobile. Anon pass: zero findings, clean SEO/mobile/
+> console, freshly-shipped season-4 backfill + canon rebase and
+> the workroom-outlasted-the-network themed list both verified
+> spoiler-clean against source content. Authed pass surfaced one
+> new MED finding (below) on the-ultimatum's freshly-shipped
+> season-4 stat rail; dropped the long-documented benign RSC
+> Link-prefetch-teardown `net::ERR_ABORTED` artifact on `/u/e2e`
+> per prior-pass precedent (15+ passes).
+>
+> ───── Pass 98 metadata kept below for history ─────
+>
 > Last pass: 2026-07-21 at commit c4a0065
 > Pass count: 98
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2308,6 +2332,8 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [authed] /shows/the-ultimatum/season/season-4 (and seasons 2, 3 — systemic to the show) — this week's flagship season backfill loses half its stat rail because three content fields season 1 has were never carried forward. `statsFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:166-204`) builds 6 tiles unconditionally, then `populatedStats` (line 526-528) silently drops any tile whose value AND caption are both empty — so the gap is invisible on the page itself, only visible by diffing against a sibling season. `content/shows/the-ultimatum/seasons/04-season-4.md` (and 02/03) carry no `location`, `filming_caption`, `ep_count`, or `episodes_caption` — so FILMED and EPISODES vanish from the rail entirely, even though the season's own lede leads with location as its whole hook ("Las Vegas, the first city in the franchise's run where the cast already lives"). Separately, `host_caption: "{seasonOrdinalWord} season at the helm"` is set on all three files but `host` (the name) never is — so the HOST tile survives the filter (caption is non-empty) but renders with no name above it, just the bare caption. Season 1's file (`01-season-1.md`) carries all of these fields correctly; 2/3/4 are the outliers. Confirmed via direct frontmatter diff, not just observation. Fix: add `location` + a distinct `filming_caption` gloss, `ep_count` + `episodes_caption`, and `host` to `content/shows/the-ultimatum/seasons/02-season-2.md`, `03-season-3.md`, and `04-season-4.md`, following the Season 1 pattern (each field drawn from the season's own lede/pull, not a repeat of another tile's value). Content-only, three files. Spoiler discipline P0 intact — no outcome exposure, this is a missing-production-detail gap. (URL: /shows/the-ultimatum/season/season-4, source: critique-pass-99)
 
 - [x] [HIGH] [anon] /themes/the-paycheck-writes-the-plot — entry #6 (Selling Sunset S06, rank 6) states a specific season plot outcome as fact directly under the page's own "NO SPOILERS · REVIEWED" badge, in tension with agents.md §7's spoiler definition ("winners, eliminations, plot beats, ... relationship outcomes" are spoilers; only format/casting/location/tonal shifts are fair game). `content/themes/the-paycheck-writes-the-plot.md` lines 46-51: `title: "An agent leaves the org chart entirely to start her own"` / `blurb: "Christine Quinn's exit to open a competing brokerage is the clearest version of this list's whole idea — someone doesn't just leave a job, she leaves the hierarchy to become the boss of one herself, elsewhere."` — this names a specific cast member's on-screen departure and the specific business outcome (opening a competing brokerage) as a plot beat of the season, which reads as exactly the class of reveal the P0 spoiler rule exists to prevent for a reader who hasn't watched S06 yet, regardless of how widely the real-world departure was covered in entertainment press outside the show. Fix: rewrite the rank-6 entry to describe the structural pattern (an agent's business ambitions competing with the firm's org chart) without naming the specific outcome — e.g. lead with the tension/setup rather than the resolution, matching how the rest of the list's entries (checked: ranks 1-5, 7) describe format/stakes without confirming outcomes. Content-only, one field (or title+blurb pair). Spoiler discipline P0 — same-day patch per agents.md §7; this is the highest-priority row in this pass. (URL: /themes/the-paycheck-writes-the-plot, source: critique-pass-98) — issue: #646 — RESOLVED 5be8a0f: rewrote the rank-6 `title`/`blurb` to "An agent's outside ambitions start to strain the brokerage's chain of command" — drops the named cast member and the confirmed departure/outcome, reframes around the season-long tension between org-chart loyalty and outside ambition, matching the list's other entries' format/stakes-only framing. No outcome exposure. Verify gate green: 195 test files / 3545 unit tests, content:check ok (68 shows/1040 seasons/68 canons/100 themes), build clean, 4611 e2e (27.7m). Closes #646.
 
