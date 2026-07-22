@@ -140,6 +140,7 @@ last time a curator actually looked.
 | a-dating-experiment-still-writing-its-own-rulebook | single | 2026-07-22 | 2026-07-22 | |
 | every-summer-gets-its-own-twist | single | 2026-07-22 | 2026-07-22 | |
 | when-scripted-went-dark | era | 2026-07-22 | 2026-07-22 | |
+| the-charter-map-as-the-whole-story | single | 2026-07-22 | 2026-07-22 | |
 
 ## Ideas
 
