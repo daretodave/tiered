@@ -132,6 +132,7 @@ last time a curator actually looked.
 | everything-but-the-pass-keeps-changing | single | 2026-07-21 | 2026-07-21 | |
 | some-casts-didnt-need-week-one | single | 2026-07-22 | 2026-07-22 | |
 | season-one-doesnt-own-every-first | craft | 2026-07-22 | 2026-07-22 | |
+| the-workroom-outlasted-the-network | single | 2026-07-22 | 2026-07-22 | |
 
 ## Ideas
 
