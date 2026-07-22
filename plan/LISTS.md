@@ -134,6 +134,7 @@ last time a curator actually looked.
 | season-one-doesnt-own-every-first | craft | 2026-07-22 | 2026-07-22 | |
 | the-workroom-outlasted-the-network | single | 2026-07-22 | 2026-07-22 | |
 | every-season-tests-a-new-theory-of-the-kitchen | single | 2026-07-22 | 2026-07-22 | |
+| a-show-that-never-had-a-home-address | single | 2026-07-22 | 2026-07-22 | |
 
 ## Ideas
 
