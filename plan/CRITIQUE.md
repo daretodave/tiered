@@ -1,5 +1,40 @@
 # CRITIQUE
 
+> Last pass: 2026-07-22 at commit c763ed2
+> Pass count: 101
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 101 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (5 URLs: `/`, `/shows/big-brother/season/a-summer-of-mystery`,
+> `/shows`, `/themes/the-format-kept-moving-the-furniture`,
+> `/themes`) and authed (`/`,
+> `/shows/big-brother/season/a-summer-of-mystery`, `/u/e2e`,
+> `/shows/love-island-us/season/fiji-2026`,
+> `/shows/the-ultimatum/season/season-4`) walks ran, desktop +
+> mobile. Anon pass surfaced 3 new findings (below): a same-page
+> spoiler contradiction on the Big Brother S27 season page (watch-
+> for copy withholds the mystery-houseguest identity, the canon
+> rationale rendered lower on the same page names it), a
+> format_summary/cast_size headcount-duplication recurrence of the
+> #464 defect class on the same season, and a Title Case
+> inconsistency across several Big Brother season titles. Authed
+> pass surfaced 1 new finding: a 375px mobile horizontal overflow
+> on the Love Island US season 8 (Fiji 2026) page, not reproduced
+> on any other page walked this pass. Re-confirmed (not refiled):
+> the-ultimatum/season-4's already-Pending missing-stat-fields row
+> (pass-99/100) is still live and unchanged. Dropped as non-
+> findings: Love Island US's vote-question copy (already resolved
+> by the pass-88 `voteQuestionFor()` scaling fix, this show was
+> named in that fix's own allowlist) and a single-viewport RSC
+> prefetch `net::ERR_ABORTED` on `/u/e2e` mobile (walker artifact,
+> same long-documented benign class as prior passes, low
+> confidence, not filed).
+>
+> ───── Pass 100 metadata kept below for history ─────
+>
 > Last pass: 2026-07-22 at commit adca5b6
 > Pass count: 100
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2359,6 +2394,14 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/big-brother/season/a-summer-of-mystery — the page contradicts its own spoiler discipline within a single page load. Section 04 (WHAT TO WATCH FOR) deliberately withholds the identity of the season's "mystery 17th houseguest," framing it as unresolved suspense: `watch_list` entry 2 reads "A past winner checks in as the season's billed mystery 17th houseguest — a premiere-night twist the broadcast plays coy about all night. The room spends its first hours guessing at the catch." (`content/shows/big-brother/seasons/27-a-summer-of-mystery.md:24-25`). Section 03 (WHERE IT SITS IN THE CANON), rendered earlier on the exact same page from the show's canon rationale, names the person outright: "The Rachel Reilly cameo folds into the twist rather than anchoring a full returnee run, so density earns the slot, not lineage." (`content/shows/big-brother/canon.md:181`). agents.md §7 explicitly lists "twists" as a P0 spoiler category (only format/casting/location/tonal shifts are fair game) — and the page's own copy treats this specific twist's identity as the thing being protected in one section, then discloses it two sections later on the same render. A reader who reads top-to-bottom gets the "guessing at the catch" suspense beat undercut by the canon paragraph directly above it. Fix: rewrite the canon.md slot_argument for `## 27. A Summer Of Mystery` to describe the cameo generically (e.g. "A past-winner cameo folds into the twist rather than anchoring a full returnee run") without naming the person, matching the restraint the watch_list copy already exercises on the same page. Content-only, one file. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-101)
+
+- [ ] [MED] [anon] /shows/big-brother/season/a-summer-of-mystery — the FORMAT stat tile restates the same headcount fact the adjacent CAST SIZE tile already owns instead of describing the season's actual game format. `format_summary: "16 houseguests + a mystery 17th slot"` sits beside `cast_size: 17` / `cast_size_caption: "16 newcomers plus a premiere-night mystery arrival"` (`content/shows/big-brother/seasons/27-a-summer-of-mystery.md:13,19-20`) — a reader sees the "16...17" headcount math stated twice in two consecutive tiles, while FORMAT's own caption (`format_caption: "Block Buster, Mastermind powers, a vote-free elimination week"`) already has the season's real structural hook available and unused in the value line. Same defect class already fixed on Bachelor S28 (format_summary rewritten to describe structural format rather than restate cast headcount, closes #464), recurring here on a different show. Fix: rewrite `format_summary` to name the season's twist stack (Block Buster's revived safety mechanic + the Mastermind power set + the Week 9 vote-free elimination) rather than the headcount, since cast_size/cast_size_caption already carry that fact. Content-only, one file. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-101)
+
+- [ ] [LOW] [anon] Big Brother season titles apply Title Case inconsistently — several capitalize minor words (of, in, and) that standard title-case convention lowercases, while the show's own newest entry gets it right. Confirmed via grep of `content/shows/big-brother/seasons/*.md` `title:` fields: over-capitalized — "A Summer Of Mystery", "Summer Of Secrets", "Den Of Temptation", "Battle Of The Block", "Exes In The House", "Vets And Newbies Reprise"; correctly cased — "Houseguests vs. the AI", "Veterans vs. Newbies". Rendered verbatim in the page `<title>` and H1. Fix: lowercase "of," "the," "in," and "and" in the six affected `title:` fields to match the show's own correctly-cased entries. Content-only, six files. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-101)
+
+- [ ] [HIGH] [authed] /shows/love-island-us/season/fiji-2026 — page overflows the 375px mobile viewport horizontally (Playwright-measured `scrollWidth` 384px vs `innerWidth` 375px), the only one of five URLs walked this pass where this happens; the same page is clean at desktop (1280px), and sibling season pages walked in the same pass (Big Brother S27, Ultimatum S4) measure exactly 375/375 at mobile. Two candidate causes not yet pinned to a single element: the season's unusually long `host` value ("Ariana Madix (narrator Iain Stirling)" — `content/shows/love-island-us/seasons/08-fiji-2026.md:9`), or the 35-entry `episode_heat` array rendering an extra stat-rail tile not present on the other two season pages walked. Fix: inspect this page at 375px to isolate the overflowing element — check the HOST stat tile's value wrap behavior and the episode-heat strip's grid sizing (`SeasonEpStrip.tsx` / `.ep-strip` in `src/styles/screens.css:704-714`) first, then apply `overflow-wrap`/`min-width: 0` at the actual source rather than a page-wide fix. (URL: /shows/love-island-us/season/fiji-2026, source: critique-pass-101)
 
 - [ ] [MED] [authed] /shows/the-ultimatum/season/season-4 (and seasons 2, 3 — systemic to the show) — this week's flagship season backfill loses half its stat rail because three content fields season 1 has were never carried forward. `statsFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:166-204`) builds 6 tiles unconditionally, then `populatedStats` (line 526-528) silently drops any tile whose value AND caption are both empty — so the gap is invisible on the page itself, only visible by diffing against a sibling season. `content/shows/the-ultimatum/seasons/04-season-4.md` (and 02/03) carry no `location`, `filming_caption`, `ep_count`, or `episodes_caption` — so FILMED and EPISODES vanish from the rail entirely, even though the season's own lede leads with location as its whole hook ("Las Vegas, the first city in the franchise's run where the cast already lives"). Separately, `host_caption: "{seasonOrdinalWord} season at the helm"` is set on all three files but `host` (the name) never is — so the HOST tile survives the filter (caption is non-empty) but renders with no name above it, just the bare caption. Season 1's file (`01-season-1.md`) carries all of these fields correctly; 2/3/4 are the outliers. Confirmed via direct frontmatter diff, not just observation. Fix: add `location` + a distinct `filming_caption` gloss, `ep_count` + `episodes_caption`, and `host` to `content/shows/the-ultimatum/seasons/02-season-2.md`, `03-season-3.md`, and `04-season-4.md`, following the Season 1 pattern (each field drawn from the season's own lede/pull, not a repeat of another tile's value). Content-only, three files. Spoiler discipline P0 intact — no outcome exposure, this is a missing-production-detail gap. (URL: /shows/the-ultimatum/season/season-4, source: critique-pass-99) — re-confirmed independently by critique-pass-100's authenticated walk: raw text dump shows `HOST\nfourth season at the helm` with no name line at all, versus Survivor 50 and Perfect Match season pages in the same pass pairing the descriptor with the actual host name. Same root cause, no new fix needed — still awaiting the pass-99 content fix above.
 
