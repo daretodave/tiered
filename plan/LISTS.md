@@ -137,6 +137,7 @@ last time a curator actually looked.
 | a-show-that-never-had-a-home-address | single | 2026-07-22 | 2026-07-22 | |
 | the-fix-stayed-after-the-season-left | craft | 2026-07-22 | 2026-07-22 | |
 | a-dating-experiment-still-writing-its-own-rulebook | single | 2026-07-22 | 2026-07-22 | |
+| every-summer-gets-its-own-twist | single | 2026-07-22 | 2026-07-22 | |
 
 ## Ideas
 
