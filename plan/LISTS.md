@@ -142,6 +142,7 @@ last time a curator actually looked.
 | when-scripted-went-dark | era | 2026-07-22 | 2026-07-22 | |
 | the-charter-map-as-the-whole-story | single | 2026-07-22 | 2026-07-22 | |
 | the-map-outlasted-the-cast | single | 2026-07-22 | 2026-07-22 | |
+| seven-ways-to-break-the-same-app | single | 2026-07-22 | 2026-07-22 | |
 
 ## Ideas
 
