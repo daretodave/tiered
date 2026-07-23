@@ -165,6 +165,7 @@ last time a curator actually looked.
 | the-masks-changed-every-week-the-panel-never-did | single | 2026-07-23 | 2026-07-23 | |
 | every-season-split-the-room-differently | single | 2026-07-23 | 2026-07-23 | |
 | the-episode-order-never-found-its-ceiling | single | 2026-07-23 | 2026-07-23 | |
+| the-anchor-count-set-the-ceiling | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
