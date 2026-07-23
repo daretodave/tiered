@@ -158,6 +158,7 @@ last time a curator actually looked.
 | some-seasons-rebuild-the-roster-others-just-move-the-furniture | single | 2026-07-23 | 2026-07-23 | |
 | the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
 | the-season-everyone-got-their-audience-back | era | 2026-07-23 | 2026-07-23 | |
+| the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
