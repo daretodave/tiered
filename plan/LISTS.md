@@ -156,6 +156,7 @@ last time a curator actually looked.
 | no-season-sends-a-queen-home-the-same-way-twice | single | 2026-07-23 | 2026-07-23 | |
 | new-house-rules-every-time-the-castle-reopens | single | 2026-07-23 | 2026-07-23 | |
 | some-seasons-rebuild-the-roster-others-just-move-the-furniture | single | 2026-07-23 | 2026-07-23 | |
+| the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
