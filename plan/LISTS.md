@@ -146,6 +146,7 @@ last time a curator actually looked.
 | the-lead-was-already-in-the-building | single | 2026-07-22 | 2026-07-22 | |
 | the-format-kept-moving-the-furniture | single | 2026-07-22 | 2026-07-22 | |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
+| the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
