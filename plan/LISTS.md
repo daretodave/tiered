@@ -161,6 +161,7 @@ last time a curator actually looked.
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
 | the-fire-pit-never-moved | single | 2026-07-23 | 2026-07-23 | |
 | the-roster-never-held-still | single | 2026-07-23 | 2026-07-23 | |
+| the-founding-five-kept-getting-replaced | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
