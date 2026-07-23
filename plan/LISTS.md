@@ -151,6 +151,7 @@ last time a curator actually looked.
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
+| two-coasts-one-open-call | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
