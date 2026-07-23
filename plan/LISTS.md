@@ -159,6 +159,7 @@ last time a curator actually looked.
 | the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
 | the-season-everyone-got-their-audience-back | era | 2026-07-23 | 2026-07-23 | |
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
+| the-fire-pit-never-moved | single | 2026-07-23 | 2026-07-23 | |
 
 ## Ideas
 
