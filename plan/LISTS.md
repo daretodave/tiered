@@ -28,7 +28,7 @@ last time a curator actually looked.
 
 | list | category | last_revised | last_reviewed | flags |
 |---|---|---|---|---|
-| survivor-pillars | single | 2026-04-15 | 2026-04-15 | review due 2026-07-14 |
+| survivor-pillars | single | 2026-04-15 | 2026-07-24 | reviewed 2026-07-24, no change |
 | best-comeback-seasons | tone | 2026-05-21 | 2026-05-21 | |
 | best-hosting | craft | 2026-07-16 | 2026-07-16 | |
 | best-location-reveals | craft | 2026-05-21 | 2026-05-21 | |
