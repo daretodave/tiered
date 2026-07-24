@@ -172,6 +172,7 @@ last time a curator actually looked.
 | the-bar-took-three-seasons-to-open | single | 2026-07-24 | 2026-07-24 | |
 | the-franchise-started-borrowing-from-itself | craft | 2026-07-24 | 2026-07-24 | |
 | it-took-five-seasons-to-find-a-home | single | 2026-07-24 | 2026-07-24 | |
+| someone-else-held-the-chair-for-a-while | craft | 2026-07-24 | 2026-07-24 | |
 
 ## Ideas
 
