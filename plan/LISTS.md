@@ -168,6 +168,7 @@ last time a curator actually looked.
 | the-anchor-count-set-the-ceiling | single | 2026-07-23 | 2026-07-23 | |
 | the-social-geometry-resets-then-it-holds | single | 2026-07-24 | 2026-07-24 | |
 | the-friend-credit-became-the-farm-system | single | 2026-07-24 | 2026-07-24 | |
+| full-time-was-a-status-not-a-promise | single | 2026-07-24 | 2026-07-24 | |
 
 ## Ideas
 
