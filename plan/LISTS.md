@@ -174,6 +174,7 @@ last time a curator actually looked.
 | it-took-five-seasons-to-find-a-home | single | 2026-07-24 | 2026-07-24 | |
 | someone-else-held-the-chair-for-a-while | craft | 2026-07-24 | 2026-07-24 | |
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
+| the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 
 ## Ideas
 
