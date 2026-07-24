@@ -169,6 +169,7 @@ last time a curator actually looked.
 | the-social-geometry-resets-then-it-holds | single | 2026-07-24 | 2026-07-24 | |
 | the-friend-credit-became-the-farm-system | single | 2026-07-24 | 2026-07-24 | |
 | full-time-was-a-status-not-a-promise | single | 2026-07-24 | 2026-07-24 | |
+| the-bar-took-three-seasons-to-open | single | 2026-07-24 | 2026-07-24 | |
 
 ## Ideas
 
