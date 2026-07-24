@@ -1,5 +1,36 @@
 # CRITIQUE
 
+> Last pass: 2026-07-24 at commit d5c811c
+> Pass count: 102
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 102 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (5 URLs: `/`, `/shows/chopped/season/the-double-first`,
+> `/shows`, `/themes/the-anchor-count-set-the-ceiling`,
+> `/themes`) and authed (`/`,
+> `/shows/chopped/season/the-double-first`, `/u/e2e`,
+> `/shows/married-at-first-sight/season/austin`,
+> `/themes/the-anchor-count-set-the-ceiling`) walks ran, desktop
+> + mobile. Anon pass surfaced 2 new findings (below): a
+> mobile-only comprehension gap on the `/shows` B-tier status
+> pill (the disambiguating tooltip from pass-87 #539 is
+> unreachable on touch, so "1 / 3" still misreads against the
+> adjacent season count on phones) and a voice-consistency slip
+> on the newest themed list (`the-anchor-count-set-the-ceiling`
+> entry #15 names two real cast members while all 15 other
+> entries anonymize equivalent claims). Also re-verified two
+> prior fixes hold clean: large-canon TTFB (Chopped, previously
+> flagged, confirmed fast — 176ms) and the phase-36 SSR
+> auth-state fix (vote-pair + comment composer both reflect
+> signed-in state on the raw server response, no anon-shell
+> flash, confirmed via authed `curl`). Authed pass surfaced zero
+> new findings — everything checked out clean.
+>
+> ───── Pass 101 metadata kept below for history ─────
+>
 > Last pass: 2026-07-22 at commit c763ed2
 > Pass count: 101
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2402,6 +2433,10 @@
 - [ ] [LOW] [anon] Big Brother season titles apply Title Case inconsistently — several capitalize minor words (of, in, and) that standard title-case convention lowercases, while the show's own newest entry gets it right. Confirmed via grep of `content/shows/big-brother/seasons/*.md` `title:` fields: over-capitalized — "A Summer Of Mystery", "Summer Of Secrets", "Den Of Temptation", "Battle Of The Block", "Exes In The House", "Vets And Newbies Reprise"; correctly cased — "Houseguests vs. the AI", "Veterans vs. Newbies". Rendered verbatim in the page `<title>` and H1. Fix: lowercase "of," "the," "in," and "and" in the six affected `title:` fields to match the show's own correctly-cased entries. Content-only, six files. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-101)
 
 - [ ] [HIGH] [authed] /shows/love-island-us/season/fiji-2026 — page overflows the 375px mobile viewport horizontally (Playwright-measured `scrollWidth` 384px vs `innerWidth` 375px), the only one of five URLs walked this pass where this happens; the same page is clean at desktop (1280px), and sibling season pages walked in the same pass (Big Brother S27, Ultimatum S4) measure exactly 375/375 at mobile. Two candidate causes not yet pinned to a single element: the season's unusually long `host` value ("Ariana Madix (narrator Iain Stirling)" — `content/shows/love-island-us/seasons/08-fiji-2026.md:9`), or the 35-entry `episode_heat` array rendering an extra stat-rail tile not present on the other two season pages walked. Fix: inspect this page at 375px to isolate the overflowing element — check the HOST stat tile's value wrap behavior and the episode-heat strip's grid sizing (`SeasonEpStrip.tsx` / `.ep-strip` in `src/styles/screens.css:704-714`) first, then apply `overflow-wrap`/`min-width: 0` at the actual source rather than a page-wide fix. (URL: /shows/love-island-us/season/fiji-2026, source: critique-pass-101)
+
+- [ ] [MED] [anon] /shows (mobile) — the B-tier "canon still forming" status pill's disambiguating detail is unreachable on touch. `ShowsStatusPill` (`src/components/shows/ShowsStatusPill.tsx:8-11`) renders the visible label `in progress · ${shipped} / ${target}` (target hardcoded to the review-floor of 3, unrelated to season count) with the clarifying context only available via a `title` attribute — a hover-only affordance with no touch equivalent. Concrete case: the Alone: Frozen tile shows `in progress · 1 / 3` directly above `1 season · canon in review` on the same small card; a mobile reader has no way to learn the "1 / 3" counts canon entries toward an internal review floor, not seasons, so it reads as contradicting the "1 season" stated two lines below it. This is a different manifestation than the already-Pending line-2452 finding (which is about the pill's wording duplicating the tile footer's "in review" on desktop) — this one is about the disambiguating tooltip from the pass-87 #539 fix being structurally inaccessible on the device class most likely to hit the ambiguity. Fix: move the disambiguating text out of `title=` into visible copy on narrow viewports (e.g. a `@media (hover: none)` variant that always shows "1 of 3 canon entries" instead of the bare "1 / 3" ratio), or drop the ratio from the visible label entirely in favor of a self-explanatory phrase like "building canon." Chrome-only, one component. Spoiler discipline P0 intact (display-state only). (URL: /shows, source: critique-pass-102)
+
+- [ ] [MED] [anon] /themes/the-anchor-count-set-the-ceiling — entry #15 breaks the list's own anonymization convention by naming real cast members, the only entry in the set of 16 to do so. Every other entry describes equivalent returning/departing-cast claims generically ("a key return after a season away," "a cast member with decades of franchise history," "the founding cast," "a significant new cast member") — entry #15's blurb instead states outright: "Kandi Burruss and Kenya Moore anchor a roster that's otherwise almost entirely new, and the math is lopsided — two long-tenured names against five people building history from zero." (`content/themes/the-anchor-count-set-the-ceiling.md:105`, RHOA Season 16). RHOA's `status` is `airing` and Season 16 is its most recent entry, so this is also the single ranked item most likely to be read by someone who hasn't caught up on the current season — the one place the list drops the restraint it exercises everywhere else. Fix: rewrite the blurb to match the list's established anonymized register (e.g. "Two returning anchors try to steady a roster that's otherwise almost entirely new") rather than naming the two cast members. Content-only, one field. Spoiler discipline P0 intact (this is a voice-consistency fix, not an outcome exposure — naming a cast member as present in a season isn't itself a spoiler under agents.md §7, but the list's own internal convention is broken here). (URL: /themes/the-anchor-count-set-the-ceiling, source: critique-pass-102)
 
 - [ ] [MED] [authed] /shows/the-ultimatum/season/season-4 (and seasons 2, 3 — systemic to the show) — this week's flagship season backfill loses half its stat rail because three content fields season 1 has were never carried forward. `statsFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:166-204`) builds 6 tiles unconditionally, then `populatedStats` (line 526-528) silently drops any tile whose value AND caption are both empty — so the gap is invisible on the page itself, only visible by diffing against a sibling season. `content/shows/the-ultimatum/seasons/04-season-4.md` (and 02/03) carry no `location`, `filming_caption`, `ep_count`, or `episodes_caption` — so FILMED and EPISODES vanish from the rail entirely, even though the season's own lede leads with location as its whole hook ("Las Vegas, the first city in the franchise's run where the cast already lives"). Separately, `host_caption: "{seasonOrdinalWord} season at the helm"` is set on all three files but `host` (the name) never is — so the HOST tile survives the filter (caption is non-empty) but renders with no name above it, just the bare caption. Season 1's file (`01-season-1.md`) carries all of these fields correctly; 2/3/4 are the outliers. Confirmed via direct frontmatter diff, not just observation. Fix: add `location` + a distinct `filming_caption` gloss, `ep_count` + `episodes_caption`, and `host` to `content/shows/the-ultimatum/seasons/02-season-2.md`, `03-season-3.md`, and `04-season-4.md`, following the Season 1 pattern (each field drawn from the season's own lede/pull, not a repeat of another tile's value). Content-only, three files. Spoiler discipline P0 intact — no outcome exposure, this is a missing-production-detail gap. (URL: /shows/the-ultimatum/season/season-4, source: critique-pass-99) — re-confirmed independently by critique-pass-100's authenticated walk: raw text dump shows `HOST\nfourth season at the helm` with no name line at all, versus Survivor 50 and Perfect Match season pages in the same pass pairing the descriptor with the actual host name. Same root cause, no new fix needed — still awaiting the pass-99 content fix above.
 
