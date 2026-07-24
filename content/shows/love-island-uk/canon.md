@@ -1,7 +1,7 @@
 ---
 show: love-island-uk
 editor: tiered.tv editor
-last_revised: 2026-05-15
+last_revised: 2026-07-24
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched every series from the 2015 Santanyí villa through the most recent Mallorca run. The ranking is one editor's read, calibrated against what reasonable Love Island fans agree on after a long argument — each summer and winter edition weighed against the arc, not by recency. Honest about the show, calibrated against the room."
 meth_how_h: "How I weigh it"
@@ -73,21 +73,29 @@ tag: The reset that worked — the winter format finally clicking, and Maya Jama
 slot_argument: A new villa, a new host, and a sharply cast group gave the off-season run an energy the first winter edition lacked. The stronger of the two winter editions by a clear margin.
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
-Series 9 sits just below Series 2 because a great reset of a secondary format still ranks behind connective tissue in the show's main line — the winter edition matters enormously to its own format's history, but the original era's momentum-building years carry more weight in the canon as a whole. Above it, though, is a clean call: Series 6 is the winter format's first draft, finding out whether the idea worked at all, while Series 9 is the winter format actually working. A reset that succeeds outranks the experiment that made the reset necessary in the first place, and the two winter editions are close enough in every other respect that this is the only argument that separates them.
+Series 9 sits just below Series 2 because a great reset of a secondary format still ranks behind connective tissue in the show's main line — the winter edition matters enormously to its own format's history, but the original era's momentum-building years carry more weight in the canon as a whole. Below it, though, sits the newest kind of gamble: Series 12 answers a real ratings crisis with real structural risk, but an overhaul mid-verdict still trails a winter reset that had already proven itself. A finished success outranks a bold experiment whose outcome nobody can call yet, and that gap is the only thing keeping Series 9 ahead of the boldest swing the format has taken in years.
+
+## 12. Series 12 (Summer 2025)
+
+tag: The shake-up summer — the format publicly tearing up its own rulebook after a real ratings scare.
+slot_argument: The boldest single-summer swing since Series 6 — blind coupling, an always-open hideaway, and cameras finally rolling through mealtimes, all landing in the same run as a direct response to decline.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Series 12 sits below Series 9 because ambition and proof are different arguments — Series 9 is a winter reset that had already worked by the time the credits rolled, while Series 12's overhaul arrives mid-decline with its verdict still open, a swing the canon can respect without yet calling a win. It ranks above Series 6, though, because the stakes are bigger and the swing is wider: Series 6 tested whether the format could survive a new continent and a new host, while Series 12 rewrites coupling, privacy and pacing inside the mainline summer edition itself. A larger risk taken in the format that matters most outranks a smaller one taken in its off-season branch.
 
 ## 6. Series 6 — Winter, South Africa (2020)
 
 tag: The location experiment — the first winter edition and Laura Whitmore's hosting debut.
 slot_argument: A bold off-season swing: a new continent, a new host, and proof the format travels. A confident concept opener, if rougher around the edges than the winter run that followed.
-community_rank_hint: rank=7 delta=0 sentiment=hold
+community_rank_hint: rank=8 delta=0 sentiment=hold
 
-Series 6 ranks below Series 9 for the reason already covered from the other side — it's the rough draft, not the reset that actually clicked. But it ranks above Series 10, and that comparison cuts the other way: Series 10 is a summer edition doing everything correctly with nothing new to prove, while Series 6 is a season that took a real risk and mostly landed it. A confident swing that shows some seams outranks a safe, well-executed season with no swing at all — structural ambition counts for something here, even when the polish isn't quite there yet. That's the trade this canon keeps making in the middle tiers: importance over comfort, when the two are close.
+Series 6 ranks below Series 12 on scale alone: both seasons take a real swing at the format, but Series 12 rewrites coupling, privacy and pacing inside the mainline summer edition, while Series 6's risk stayed contained to a single off-season branch proving it could exist at all. It still ranks above Series 10, and that comparison cuts the other way — Series 10 runs the established format with nothing new to prove, while Series 6 took a real risk and mostly landed it. Structural ambition counts for something in these middle tiers, even when the polish isn't quite there yet; importance over comfort, when the two are close.
 
 ## 10. Series 10 (Summer 2023)
 
 tag: The mature-format summer — a milestone run with the production fully settled.
 slot_argument: A landmark number with every familiar mechanic in its expected place. Polished and steady; it confirms the modern identity rather than pushing the show forward.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Series 10 sits below Series 6 for the reason covered on the other side of that comparison — steadiness doesn't outrank a genuine structural risk. But it sits comfortably above Series 8, and there the case is about control rather than ambition. Both seasons are working the same mature, twist-heavy machine, but Series 10 keeps the mechanics in service of the season, while Series 8 lets them start running the show. That's a small difference in a big format, but it's the one that separates a well-made summer from a summer that occasionally feels like it's managing itself. Tonal control is the tiebreaker in this stretch of the canon, and Series 10 has more of it.
 
@@ -95,7 +103,7 @@ Series 10 sits below Series 6 for the reason covered on the other side of that c
 
 tag: The modern machine — the format running heavy, every mechanic in motion at once.
 slot_argument: A large contemporary cast and a brisk, twist-forward structure. Competently made and widely watched, but the relentless machinery can crowd out the chemistry.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Series 8 lands below Series 10 for exactly the control gap described from the other side — the machinery here is louder than the season needs it to be. But it stays above Series 11, and that's a matter of degree: both seasons are heavy with structure, but Series 8's cast is still doing the work through chemistry that structure gets in the way of, while Series 11 leans on star power and stacked mechanics to generate its energy from scratch. Crowded chemistry still outranks manufactured energy, even when the crowding is real. It's the difference between a season that has something the twists keep interrupting and a season built around the twists from the start.
 
@@ -103,7 +111,7 @@ Series 8 lands below Series 10 for exactly the control gap described from the ot
 
 tag: The celebrity-bombshell summer — the modern machine running at its most processed.
 slot_argument: A famous face at launch, a private desirability-ranking coupling, and era mechanics stacked end to end. The most twist-forward, recognisability-driven summer the franchise has made.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Series 11 sits below Series 8 for the reason already made from the other direction — manufactured energy is still a notch below chemistry that structure merely crowds. But it comfortably outranks Series 7 at the bottom of the canon, and that comparison is more one-sided: whatever you think of a season built on star power and stacked mechanics, Series 11 is trying hard and mostly succeeding at generating energy, while Series 7 is a season spent recovering the energy it lost to the longest gap in the show's history. A processed summer beats a muted one. Series 11 knows exactly what kind of season it's being; Series 7 spends most of its run finding out.
 
@@ -111,6 +119,6 @@ Series 11 sits below Series 8 for the reason already made from the other directi
 
 tag: The comeback — the format restarting from a cold stop after the only cancelled summer.
 slot_argument: The longest gap in the show's history, then the lights back on in Mallorca. Important as a restart, less commanding as a season; the long pause is felt throughout.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Series 7 sits last in the canon, and the comparison to Series 11 above it is the whole argument: a season that's overly processed still beats one that's undercooked, because at least the processed season delivers on its own terms. Series 7's problem was never the format or the cast — both are intact and capable — it's that the season arrives already depleted, spending its energy on simply restarting rather than building anything new on top of that restart. Every other season in this canon is either doing something the format hadn't done before or doing the established thing at full strength. Series 7 is the one season doing neither.

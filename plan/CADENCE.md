@@ -200,7 +200,7 @@ new-show creation is locked to the biweekly show-add clock.
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
-| love-island-uk | 11/12 | 1* |
+| love-island-uk | 12/13 | 1* |
 | dancing-with-the-stars | 34/35 | 1* |
 | americas-got-talent | 20/21 | 1* |
 | rhoa | 16/17 | 1* |
@@ -263,6 +263,26 @@ blind count bump:
   `content/calendar.yml` — still airing as of this tick, not yet
   concluded. Same confirmed-but-unaired precedent; deferred,
   picked up once the finale date lands in the past.
+  **Correction (2026-07-24, cloud drain re-verify tick):** the
+  "12" label was wrong — a genuinely unfiled season, not the
+  unaired one this row was tracking. Scout research confirmed
+  the real-world **Series 12 (Summer 2025)** aired and concluded
+  2025-08-04 and had never been filed; the season this row's
+  `calendar.yml` entry actually describes (finale 2026-07-27,
+  still airing as of this tick) is **Series 13**. DRAINED this
+  tick: Series 12 filed
+  (`content/shows/love-island-uk/seasons/12-summer-2025.md`,
+  premiered 2025-06-09, the "tear up the rulebook" format-overhaul
+  summer — blind launch coupling, always-open hideaway, mealtimes
+  filmed for the first time), canon rebased (inserted at rank 7,
+  between Series 9 and Series 6, on the strength of its structural
+  ambition outweighed by Series 9's proven reset but outweighing
+  Series 6's smaller off-season swing), show frontmatter bumped
+  `seasons: 11` → `12` (blurb/tagline/card_tagline count refs
+  updated to match). `content/calendar.yml`'s entry relabeled
+  `season: 12` → `13` to match reality; still `status: scheduled`,
+  unconcluded, correctly deferred. Gap table row updated to
+  `12/13 · 1*` — same net gap (1), now correctly numbered.
 - **dancing-with-the-stars** (gap row marked `1*`, cloud drain
   tick 2026-07-12) — verified at author time: the declared-35
   count reflects Season 35 being confirmed for fall 2026, but no
