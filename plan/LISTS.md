@@ -178,6 +178,7 @@ last time a curator actually looked.
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
 | no-season-here-got-the-calendar-to-itself | single | 2026-07-24 | 2026-07-24 | |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
+| not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 
 ## Ideas
 
