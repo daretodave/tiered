@@ -1,33 +1,37 @@
 # CRITIQUE
 
-> Last pass: 2026-07-24 at commit d5c811c
-> Pass count: 102
+> Last pass: 2026-07-24 at commit fabb4fe7
+> Pass count: 103
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 102 ran in the cloud loop via Path A2
+> 103 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), both anon and authed
 > passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
-> (5 URLs: `/`, `/shows/chopped/season/the-double-first`,
-> `/shows`, `/themes/the-anchor-count-set-the-ceiling`,
-> `/themes`) and authed (`/`,
-> `/shows/chopped/season/the-double-first`, `/u/e2e`,
-> `/shows/married-at-first-sight/season/austin`,
-> `/themes/the-anchor-count-set-the-ceiling`) walks ran, desktop
-> + mobile. Anon pass surfaced 2 new findings (below): a
-> mobile-only comprehension gap on the `/shows` B-tier status
-> pill (the disambiguating tooltip from pass-87 #539 is
-> unreachable on touch, so "1 / 3" still misreads against the
-> adjacent season count on phones) and a voice-consistency slip
-> on the newest themed list (`the-anchor-count-set-the-ceiling`
-> entry #15 names two real cast members while all 15 other
-> entries anonymize equivalent claims). Also re-verified two
-> prior fixes hold clean: large-canon TTFB (Chopped, previously
-> flagged, confirmed fast — 176ms) and the phase-36 SSR
-> auth-state fix (vote-pair + comment composer both reflect
-> signed-in state on the raw server response, no anon-shell
-> flash, confirmed via authed `curl`). Authed pass surfaced zero
-> new findings — everything checked out clean.
+> (5 URLs: `/`, `/shows/perfect-match/season/season-4`,
+> `/shows/dragrace/season/season-18`, `/themes`,
+> `/themes/no-season-here-got-the-calendar-to-itself`) and authed
+> (`/`, `/shows/perfect-match/season/season-4`, `/u/e2e`,
+> `/themes/no-season-here-got-the-calendar-to-itself`, `/shows`)
+> walks ran, desktop + mobile, zero console errors/failed
+> requests/overflow across both. 5 findings filed (below): a new
+> FORMAT/CAST-SIZE stat-tile duplication instance on Perfect
+> Match S4 (known defect class, first time on this show); the
+> `/themes` featured rail stuck on a June revision date while the
+> page's own "LISTS REVISED" stat reads July — a curation-staleness
+> gap, not a code bug; two internal-consistency defects on the
+> newest themed list (`no-season-here-got-the-calendar-to-itself`
+> entry #5's title claims a symmetric "either side, same time"
+> relationship its own body describes as nested containment, and
+> entries #3 and #12 both independently claim exclusive "longest
+> single season" status with no tie acknowledgment — a direct
+> contradiction); and a low-severity "Either direction" canon-nav
+> label rendering on Perfect Match S4, the canon tail, where only
+> a backward link exists. No spoiler-discipline violations found
+> in either pass. Authed pass re-confirmed the phase-36 SSR
+> auth-state fix holds clean (header, vote-pair, comment composer,
+> and `/u/e2e` self-view all correctly reflect signed-in state via
+> raw HTML, no anon-shell flash).
 >
 > ───── Pass 101 metadata kept below for history ─────
 >
@@ -3548,6 +3552,16 @@
   - issue: #460 — RESOLVED eb6522d: rewrote the WHEN-section closing sentence(s) in alone-australia, below-deck, below-deck-adventure, below-deck-mediterranean, hells-kitchen, the-voice, and rhoa to assert a show-specific claim instead of the shared candor disclaimer. american-idol already carried a distinct affirmative closer ("Rotation and revival seasons earn their tier by clearing that standard.") and needed no edit — verified directly, not just taken on the sub-agent's word. All touched `meth_when_p` fields re-verified independently at 40-60 words after two content-curator overshoots (below-deck-adventure at 63 words, hells-kitchen at 62 words, rhoa at 61 words) were trimmed by hand. Verify gate green: leg1 (194 test files / 2781 unit tests, content:check ok), leg2 (build, 876 pages), leg3 (2918 e2e). Closes #460.
 
 - [ ] [MED] [anon] /shows/dragrace, /themes/the-season-structure-never-holds-still, /themes/the-finals-never-run-the-same-course-twice — show/season/themed-list detail routes serve `Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate` with `x-vercel-cache: MISS` on every anonymous request, forcing an origin round-trip for spoiler-reviewed editorial content that carries no anon-specific personalization on these routes. Measured TTFB ran 190-557ms on these routes vs. ~100ms on the edge-cached hub pages (`/`, `/shows`, `/themes`, which serve `public, max-age=0, must-revalidate` + `x-vercel-cache: HIT`, confirmed via repeated `curl -I`). Root cause: `src/app/shows/[show]/page.tsx:37` sets `export const dynamic = 'force-dynamic'` deliberately — the phase-35 comment explains this renders per-request so the live Supabase community-ranking aggregate never goes stale (the fix for the earlier "refresh always shows 0" bug), and that freshness guarantee is correct and should not be reverted — the same conclusion the resolved #541 TTFB investigation already reached. But the whole page (hero, blurb, canon prose, stat tiles — none of it live or personalized) rides along as fully dynamic just because one small widget on it needs live data. The URL contract already documents `/api/ranking/[show]` as "cached aggregate, served via ISR," and phase 36 already proved this exact hybrid pattern works for a different live widget (a bold-but-tiny `GET /api/auth/me` client island hydrating auth-state chrome over an otherwise-cacheable page). Fix: apply the same pattern to the community-ranking block — let the show/season page shell return to ISR (or static + revalidate), and hydrate just the live vote-count/ranking numbers client-side from the already-ISR-cached `/api/ranking/[show]` route, the way the auth island does, rather than forcing the entire page dynamic for one widget's sake. This is an architecture-level change (touches the page's data-fetching shape across the show/season/theme route group), not a one-line fix — flagged MED rather than HIGH since current behavior is correct, just slower than necessary for anonymous readers. (URL: /shows/dragrace, /themes/the-season-structure-never-holds-still, /themes/the-finals-never-run-the-same-course-twice, source: critique-pass-96)
+
+- [ ] [MED] [anon] /shows/perfect-match/season/season-4 — the FORMAT stat tile restates the exact same cast-count fact the adjacent CAST SIZE tile already owns, the same defect class already fixed on Bachelor S28 (#464) and Big Brother S27 (pending row above), recurring here on a show not previously touched by either fix. FORMAT reads "Crossover matchmaking, broadest cast net yet / 20 contestants, mixer re-entries continue" while CAST SIZE reads "20 players / The villa's biggest cast yet" — the "20" headcount appears in both tiles. Fix: drop the contestant count from the FORMAT value/caption in `content/shows/perfect-match/seasons/04-season-4.md`, leaving FORMAT to describe only the mechanic (crossover casting, mixer re-entries) since CAST SIZE already owns the number. Content-only, one file. Spoiler discipline P0 intact (cast-count only, no outcomes). (URL: /shows/perfect-match/season/season-4, source: critique-pass-103)
+
+- [ ] [MED] [anon] /themes — the featured rail's "Featured for June 2026" badge visibly lags the page's own "LISTS REVISED" stat, which reads July 2026, because the featured badge derives from `latestFeaturedRevised()` (`src/components/lists/ListsFeaturedRow.tsx:16-21`) across the four themes currently flagged `featured: true` in frontmatter (`best-villain-editing`, `best-finales`, `best-comeback-seasons`, `best-premieres` — all last revised 2026-05-21 or 2026-06-12), while dozens of themed lists have shipped and been revised through July via the ongoing Rule 3 content drain. This isn't a code bug (the derive-from-data pattern is deliberate, per the pass-24 #269 fix this component's own comment cites) — it's a curation-staleness gap: the featured rotation hasn't been refreshed since the content-drain mission began shipping lists at volume. A reader sees the page's own "3 featured this month" claim sitting next to a visibly outdated month stamp beside a current-month stat two sections down. Fix: swap one or more of the four `featured: true` flags to a July-revised list that represents the current drain's strongest work, via `/ship-content` curation rather than a code change. (URL: /themes, source: critique-pass-103)
+
+- [ ] [MED] [anon] /themes/no-season-here-got-the-calendar-to-itself — entry #5's title claims a symmetric flanking relationship ("Two full seasons air on either side of this one, at the exact same time") that the entry's own body describes as nested containment instead: "This run sits inside one neighboring season's window while another neighbor's entire run sits inside its own — a doubly nested calendar the format hadn't measured before." (`content/themes/no-season-here-got-the-calendar-to-itself.md:44-45`). The very next entry (#6, lines 50-51) uses the correct phrasing for the same relationship type — "Contained by one neighbor, while fully containing another" — confirming #5's title is the outlier, not the convention. Fix: rewrite entry #5's title to match its body's containment framing, e.g. "Contained by one neighbor's window while containing another's entirely" (adjusted to stay distinct from entry #6's near-identical wording). Content-only, one field. Spoiler discipline P0 intact (calendar/scheduling fact only). (URL: /themes/no-season-here-got-the-calendar-to-itself, source: critique-pass-103)
+
+- [ ] [MED] [authed] /themes/no-season-here-got-the-calendar-to-itself — entries #3 and #12 independently claim exclusive "longest single season" status, a direct contradiction within the same 13-entry list. Entry #3 (rank 3, lines 32-33): "Nine months on air, and four other seasons share the calendar with it" / "The longest single season in this stretch also touches the most neighbors..." Entry #12 (rank 12, lines 86-87): "Nine months on air, no bracket in sight, and a whole neighboring season nested inside it" / "...carry a tournament-free season across the longest single window this run has produced." Both claim nine months and sole "longest" status with no tie acknowledgment — contrast entry #4 (line 38-39), which correctly flags a shared superlative: "Tied for the deepest footprint, and directly entangled with the format's shortest run." Fix: either verify the two seasons' actual air-window lengths and correct whichever claim is wrong, or reword one entry to "tied for longest" following entry #4's established tie-handling convention. Content-only, one or two fields. Spoiler discipline P0 intact (air-date/scheduling fact only). (URL: /themes/no-season-here-got-the-calendar-to-itself, source: critique-pass-103)
+
+- [ ] [LOW] [anon] /shows/perfect-match/season/season-4 — the "Adjacent in the canon" section subhead reads "Either direction" even though season 4 is the canon tail (most recent of 4), so only a backward link to season 3 renders — the static label promises bidirectional navigation that isn't present on this page. Fix: make the section subhead conditional ("One direction." / "Either direction.") based on whether both a prior and next canon entry exist, in the shared season-page component that renders this section. Chrome-only, no content change. (URL: /shows/perfect-match/season/season-4, source: critique-pass-103)
 
 - [ ] [MED] [authed] /shows/dragrace/season/18 — the page's three narrative sections ("01 THE TAKE" from the season's `pull` field, "02 THE SHAPE OF THE SEASON" from the season body, and "03 WHERE IT SITS IN THE CANON" from the `canon.md` entry) were authored independently but converge on restating the same five facts near-verbatim: the record/highest-rated MTV premiere, the veteran-heavy cast, the drag grandmother-and-granddaughter Dion-family pairing, the finale's top-two-lip-sync-to-eliminated-cast-tournament swap, and the split judging reception. Reading the page top to bottom feels like three passes over identical ground rather than three distinct lenses — contrast with the canonical Heroes vs. Villains reference, where each section adds new information instead of re-covering the last one. `content/shows/dragrace/seasons/18-season-18.md`'s `pull` field and body, and `content/shows/dragrace/canon.md`'s season-18 entry, all lean on the same five facts in near-identical phrasing. This is the same section-level restatement defect class already open on `/shows/chopped/season/the-double-first` (pass-94, still Pending above) — a second, unrelated show hitting the same tell, this time with plenty of distinct material available (unlike Chopped S62's genuinely thin two-fact season) so there's no excuse of a thin season here. Fix: vary the angle per section — keep `pull` as the hook, let the body own the cast/format mechanics once, and let the canon entry focus purely on the ranking rationale (why #14 and not #13 or #15) without re-listing the same five facts. Content-only, one show, no structural change. Spoiler discipline P0 intact (no outcome/elimination exposure discussed in any of the three sections). (URL: /shows/dragrace/season/18, source: critique-pass-96)
 
