@@ -189,6 +189,7 @@ last time a curator actually looked.
 | the-diners-were-never-extras | craft | 2026-07-25 | 2026-07-25 | |
 | the-season-the-audience-showed-up-all-at-once | tone | 2026-07-25 | 2026-07-25 | |
 | the-open-call-built-the-format | craft | 2026-07-25 | 2026-07-25 | |
+| every-season-strikes-a-different-bargain-with-lana | single | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 
