@@ -182,6 +182,7 @@ last time a curator actually looked.
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
 | missing-on-purpose | craft | 2026-07-25 | 2026-07-25 | |
 | one-rule-never-bends | craft | 2026-07-25 | 2026-07-25 | |
+| down-to-just-the-two-of-you | craft | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 
