@@ -187,6 +187,7 @@ last time a curator actually looked.
 | no-one-got-a-night-off | tone | 2026-07-25 | 2026-07-25 | |
 | the-room-kept-changing-size | single | 2026-07-25 | 2026-07-25 | |
 | the-diners-were-never-extras | craft | 2026-07-25 | 2026-07-25 | |
+| the-season-the-audience-showed-up-all-at-once | tone | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 
