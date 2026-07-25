@@ -183,6 +183,7 @@ last time a curator actually looked.
 | missing-on-purpose | craft | 2026-07-25 | 2026-07-25 | |
 | one-rule-never-bends | craft | 2026-07-25 | 2026-07-25 | |
 | down-to-just-the-two-of-you | craft | 2026-07-25 | 2026-07-25 | |
+| the-turnaround-skipped-a-year | craft | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 
