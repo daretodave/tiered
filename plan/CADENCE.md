@@ -72,6 +72,20 @@ deferred slot each, +1 extra deferred slot on `hells-kitchen`)
 — 68-show catalog total unchanged, only the-ultimatum's row
 cleared.
 
+**Rule 2 pick, 2026-07-25 tick:** re-verified the two nearest
+candidates by premiere date among the rows flagged "now airing"
+by the 2026-07-19 sweep. `alone` S13 "World Championship"
+confirmed still airing (premiered 2026-06-17; 11-episode season
+per Wikipedia + TVMaze, scheduled finale 2026-08-26; 5 episodes
+remain as of this tick) — stays deferred, re-verify early
+September. `below-deck-mediterranean` S11 confirmed still airing
+(premiered 2026-06-08; 10-episode season per TV Guide's episode
+grid, scheduled finale 2026-08-10; 3 episodes remain as of this
+tick) — stays deferred, re-verify mid-August. Neither crossed
+into concluded territory; no drain this tick. Gap table unchanged
+at 27 shows / 28 gap-slots. Next actionable check is the weekly
+sweep, due 2026-07-26 (tomorrow), which re-covers the full board.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
