@@ -181,6 +181,7 @@ last time a curator actually looked.
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
 | missing-on-purpose | craft | 2026-07-25 | 2026-07-25 | |
+| one-rule-never-bends | craft | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 

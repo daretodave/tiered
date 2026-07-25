@@ -363,13 +363,13 @@ test.describe('show page → themes cross-link retrofit', () => {
     expect(count).toBeGreaterThanOrEqual(2)
   })
 
-  test('alone-the-skills-challenge show page does NOT surface the block (no themes reference it)', async ({
-    page,
-  }) => {
-    await page.goto('/shows/alone-the-skills-challenge', {
-      waitUntil: 'domcontentloaded',
-    })
-    const featured = page.getByTestId('featured-themes')
-    await expect(featured).toHaveCount(0)
-  })
+  // The zero-themes-reference case is unit-tested at the component
+  // level (FeaturedThemes.test.tsx, "renders nothing when no themes
+  // reference the show") with a mocked themesContainingShow — that's
+  // the stable place to pin this invariant. An e2e assertion pinned to
+  // a specific show having zero theme references breaks by design as
+  // the themed-list mission (plan/bearings.md Rule 3 — hundreds of
+  // lists over months/years) organically covers every show; the last
+  // uncovered show (alone-the-skills-challenge) was drained by the
+  // 2026-07-25 "one-rule-never-bends" list.
 })
