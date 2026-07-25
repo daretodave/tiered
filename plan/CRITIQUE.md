@@ -1,20 +1,33 @@
 # CRITIQUE
 
-> Last pass: 2026-07-24 at commit fabb4fe7
-> Pass count: 103
+> Last pass: 2026-07-25 at commit f3065fe1
+> Pass count: 104
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 103 ran in the cloud loop via Path A2
+> 104 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), both anon and authed
 > passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
-> (5 URLs: `/`, `/shows/perfect-match/season/season-4`,
-> `/shows/dragrace/season/season-18`, `/themes`,
-> `/themes/no-season-here-got-the-calendar-to-itself`) and authed
-> (`/`, `/shows/perfect-match/season/season-4`, `/u/e2e`,
-> `/themes/no-season-here-got-the-calendar-to-itself`, `/shows`)
+> (5 URLs: `/`, `/shows/love-island-uk/season/summer-2025`,
+> `/shows`, `/themes/straight-to-camera-never-to-each-other`,
+> `/themes`) and authed (`/`,
+> `/shows/love-island-uk/season/summer-2025`,
+> `/shows/love-island-uk/community`,
+> `/themes/straight-to-camera-never-to-each-other`, `/u/e2e`)
 > walks ran, desktop + mobile, zero console errors/failed
-> requests/overflow across both. 5 findings filed (below): a new
+> requests/mobile overflow across both, no spoiler-discipline
+> violations. 4 findings filed (below): a HIGH — the community
+> full-rank table on `/shows/[show]/community` drops its
+> APPROVAL % column entirely on mobile even though the page's own
+> lede copy says approval share is what orders the table; a MED —
+> the same community page's `<title>`/canonical still describe
+> the show's editorial canon rather than the community page
+> itself; a MED — the freshly-shipped Love Island UK S12 season's
+> EPISODES stat caption bare-restates its own value (recurring
+> instance of an already-open defect class); a LOW — the freshly-
+> shipped `straight-to-camera-never-to-each-other` theme's meta
+> description runs 252 chars, well past SERP-snippet budget.
+> Previous pass 103 filed (below): a new
 > FORMAT/CAST-SIZE stat-tile duplication instance on Perfect
 > Match S4 (known defect class, first time on this show); the
 > `/themes` featured rail stuck on a June revision date while the
@@ -2429,6 +2442,14 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [authed] /shows/love-island-uk/community (systemic to `/shows/[show]/community`) — the full-ranking table's header collapses from 5 data columns to 1 on mobile (RANK / SEASON / VOTES only), dropping APPROVAL % and 7D entirely — the exact metric the page's own lede copy just told the reader drives the order. Confirmed via raw render diff at both viewports: explanatory copy (present at both) reads "the share of 'in' votes orders every season 1..N below"; desktop table header reads "RANK / SEASON / APPROVAL / % / 7D / VOTES" with row 03 showing "Series 1 (2015) 2015 100% — 1"; mobile table header reads "RANK / SEASON / VOTES" with the same row showing "Series 1 (2015) 2015 1" — the 100% approval figure is nowhere on the page at 375px. Fix: keep an APPROVAL % column (or a compact combined "100% · 1 vote" cell) in the mobile table layout instead of dropping the metric the lede copy just promised; if column width is the constraint, stack APPROVAL under SEASON rather than cutting it. Likely in the community-rank table component consumed by `src/app/shows/[show]/community/page.tsx`. (URL: /shows/love-island-uk/community, source: critique-pass-104)
+
+- [ ] [MED] [authed] /shows/love-island-uk/community (systemic to `/shows/[show]/community`) — the page's `<title>` tag and `rel=canonical` both describe the show's editorial canon identity, not the community page itself, reading as if the page never got its own metadata pass. Confirmed: title renders "Love Island UK — the canon, no spoilers — tiered.tv"; canonical renders `https://tiered.tv/shows/love-island-uk` (not self-referential to `/shows/love-island-uk/community`) — despite the page's actual on-page content being the community vote table ("What readers are voting on," "LIVE," "VOTERS THIS WEEK") with no canon-ranking content of its own. Fix: give `/shows/[show]/community` its own `<title>` (e.g. "Love Island UK — community rank — tiered.tv") and a self-referential canonical, matching the distinct title/description pattern the season and theme pages already use. Likely in the `generateMetadata()` for `src/app/shows/[show]/community/page.tsx`. Spoiler discipline P0 intact (metadata-only change). (URL: /shows/love-island-uk/community, source: critique-pass-104)
+
+- [ ] [MED] [anon] /shows/love-island-uk/season/summer-2025 — the EPISODES stat tile's caption bare-restates its own value, adding zero new information, unlike every sibling tile on the same page (FORMAT, CAST SIZE, HOST all add a distinct fact in their captions). Recurring instance of an already-open defect class (see the LOW `/shows/the-real-world/season/go-big-or-go-home` EPISODES-caption row below, pass-95). Confirmed at source: `content/shows/love-island-uk/seasons/12-summer-2025.md` — `ep_count: 49` / `episodes_caption: "Around 49 episodes"` — the caption literally just re-says the number with filler. Fix: rewrite `episodes_caption` to add a distinct fact (nightly airing cadence, run length in weeks) instead of restating the count, matching the pattern `format_caption`/`cast_size_caption`/`host_caption` already follow on the same page. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/love-island-uk/season/summer-2025, source: critique-pass-104)
+
+- [ ] [LOW] [anon] /themes/straight-to-camera-never-to-each-other — the theme's meta description runs 252 characters, well past the ~155-160 character range search engines typically render before truncating the SERP snippet. Confirmed: `content/themes/straight-to-camera-never-to-each-other.md` `description` field measures 252 chars: "A cast member can say something to a co-star, or say it straight to a lens where nobody else in the room can push back. This tracks the seasons where that second channel — the confessional, the Diary Room, the Beach Hut — carries real narrative weight." Fix: trim the `description` field to end at a natural clause boundary within ~155 characters. SEO-only, no visible-page or spoiler impact. (URL: /themes/straight-to-camera-never-to-each-other, source: critique-pass-104)
 
 - [x] [HIGH] [anon] /shows/big-brother/season/a-summer-of-mystery — the page contradicts its own spoiler discipline within a single page load. Section 04 (WHAT TO WATCH FOR) deliberately withholds the identity of the season's "mystery 17th houseguest," framing it as unresolved suspense: `watch_list` entry 2 reads "A past winner checks in as the season's billed mystery 17th houseguest — a premiere-night twist the broadcast plays coy about all night. The room spends its first hours guessing at the catch." (`content/shows/big-brother/seasons/27-a-summer-of-mystery.md:24-25`). Section 03 (WHERE IT SITS IN THE CANON), rendered earlier on the exact same page from the show's canon rationale, names the person outright: "The Rachel Reilly cameo folds into the twist rather than anchoring a full returnee run, so density earns the slot, not lineage." (`content/shows/big-brother/canon.md:181`). agents.md §7 explicitly lists "twists" as a P0 spoiler category (only format/casting/location/tonal shifts are fair game) — and the page's own copy treats this specific twist's identity as the thing being protected in one section, then discloses it two sections later on the same render. A reader who reads top-to-bottom gets the "guessing at the catch" suspense beat undercut by the canon paragraph directly above it. Fix: rewrite the canon.md slot_argument for `## 27. A Summer Of Mystery` to describe the cameo generically (e.g. "A past-winner cameo folds into the twist rather than anchoring a full returnee run") without naming the person, matching the restraint the watch_list copy already exercises on the same page. Content-only, one file. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-101) — issue: #659 — RESOLVED c54a837: reworded the canon.md slot_argument to "A past-winner cameo folds into the twist rather than anchoring a full returnee run, so density earns the slot, not lineage." — drops the named cast member, matching the watch_list's existing restraint. Verify gate green: 195 test files / 3545 unit tests, content:check ok (68 shows/1041 seasons/68 canons/121 themes), build clean (1446 pages), 4677 e2e (27.7m). Closes #659.
 
