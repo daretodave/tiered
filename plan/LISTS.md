@@ -179,6 +179,7 @@ last time a curator actually looked.
 | no-season-here-got-the-calendar-to-itself | single | 2026-07-24 | 2026-07-24 | |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
+| straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
 
 ## Ideas
 
