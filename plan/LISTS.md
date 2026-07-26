@@ -605,6 +605,62 @@ last time a curator actually looked.
   blocked pending this fix — do not re-attempt either from
   scratch once the-voice's catalog is corrected, the scout
   research trail for both is already preserved above.
+- 2026-07-26 tenth pass, cloud /march tick: zero-ship. Re-verified
+  the single-show floor exhaustively before trying fresh cross-show
+  ground.
+  - **Single-show floor, re-checked in full:** built a complete map
+    of every `category: single` list's `show:` field against all 68
+    shows in `content/shows/*.md`. Every show clearing 10 seasons
+    already has a dedicated single-show list, including all ten
+    candidates this pass specifically re-checked (american-idol,
+    the-challenge, big-brother, rhoc, bachelor, shark-tank,
+    project-runway, amazing-race, dancing-with-the-stars,
+    masterchef-australia) plus four more checked independently
+    (americas-got-talent, naked-and-afraid, rhom, survivor-australia).
+    The only uncovered shows are the same ten pass-4 already flagged
+    as too thin (alone-australia, alone-frozen,
+    alone-the-skills-challenge, below-deck-adventure,
+    below-deck-down-under, perfect-match, rhod, rhodubai, rhoslc,
+    the-ultimatum) — confirmed again, none clears 10 seasons. This
+    path is now exhausted at two independent passes (4 and 10).
+  - show canceled/hiatus then revived years later, ranked cross-show
+    (American Idol Fox→ABC S16, RHOM's Peacock continuation S5) —
+    rejected: American Idol S16 is already spent entry-for-entry in
+    `new-network-same-rulebook` (rank 4); RHOM S5 is a same-platform
+    continuation of S4, not a multi-year-gap revival; no third clean
+    hit.
+  - The Apprentice's 2017 Schwarzenegger-hosted reboot as a fresh
+    angle — rejected: already the #1 entry in `the-mic-changed-hands`,
+    total preemption.
+  - prize-money / stakes escalation as its own angle — rejected:
+    `same-crown-new-price-tag` already owns this territory in full
+    (14 entries, 8 shows).
+  - round-number milestone seasons — re-confirmed
+    `milestones-spent-not-marked` already fully owns this; would be
+    a reskin.
+  - streaming-exclusive / simulcast premiere as an era cut —
+    rejected: only 13 scattered hits catalog-wide, no throughline
+    distinct from `new-network-same-rulebook` /
+    `same-license-different-rules`.
+  - charity-tie-in editions — rejected: 23 grep hits, all incidental
+    phrasing or single isolated cases already covered
+    (RHOD S2, pass-4's `wealth-as-the-whole-pitch` reskin finding).
+  - production-halting labor strikes — rejected: only 6 hits, all
+    false positives ("strikes gold," names), zero real cases.
+  - The Voice mechanics list restricted to the safe S1-21 range
+    (working around the AUDIT.md the-voice corruption blocker
+    instead of waiting on it) — rejected: only 6 of pass-8's 11
+    confirmed mechanics fall before the corrupted S22 boundary,
+    short of the 10-entry floor even before the per-show cap. Stays
+    parked until the AUDIT fix lands; no safe-range workaround
+    exists.
+  - **Assessment:** confirms pass 7/9's wall — 172 lists, both the
+    single-show floor and grep-groundable cross-show angles are
+    genuinely spent for this tick's research method. Standing
+    recommendation unchanged: authorize scout-assisted Rule 3
+    research, or accept lower per-tick hit rates as the steady
+    state. Both are process decisions for a future `/expand` or
+    oversight tick, not this one.
 
 ## Notes
 
