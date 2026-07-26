@@ -326,6 +326,48 @@ last time a curator actually looked.
     the-phone-line's territory), natural-disaster production
     disruption (2 hits), real-sibling (non-twin) team casting
     (zero hits).
+- 2026-07-26 fourth pass, same tick: zero-ship. Anchored the
+  search on the 11 least-represented shows across the ledger
+  (alone-australia, alone-frozen, alone-the-skills-challenge,
+  below-deck-adventure, below-deck-down-under, perfect-match,
+  rhod, rhodubai, rhoslc, the-ultimatum, traitors), none of
+  which clears 10 seasons so none is a category:single
+  candidate — looked for a cross-show mechanic grounded in
+  their season-file text instead.
+  - off-camera controversy overshadowing the on-camera season
+    (RHOD S4/S5 reunion fallout, RHOSLC S3's two-part reunion,
+    RHONJ S6's legal situation) — rejected: collides with the
+    real-names-plus-negative-outcomes hard rule and tabloid-tone
+    risk; also too thin to reach 10 safely-paraphrasable entries
+    without a scout pass.
+  - each Alone-verse spinoff bends one founding rule (Frozen's
+    shared prize pool, Skills Challenge dropping the wilderness
+    drop, Australia's international leap) — rejected: this is
+    exactly one-rule-never-bends (shipped 2026-07-25), which
+    already covers all four Alone shows plus Naked and Afraid.
+  - Housewives founding season pitched on one non-wealth
+    social-identity marker (RHOD's church-and-charity manners,
+    RHOSLC's LDS-adjacent world) — rejected: RHODubai S1 already
+    anchors wealth-as-the-whole-pitch on the identical device: a
+    social register the franchise hadn't filmed before as the
+    whole editorial argument. Reskinning wealth to faith/manners
+    is the same angle, not a new one.
+  - shared/collective prize pool replacing a solo-winner model
+    (Alone: Frozen's day-50 split) — rejected: the only clean
+    season-file hit in the entire catalog; can't clear the ≥3-show
+    floor and alone-frozen has too few seasons for category:single.
+  - Below Deck crew/cast crossing over between franchise
+    spinoffs (Down Under S4's veteran crew, S3's celebrity
+    charter cameo) — rejected: confined to one spinoff, no
+    comparable hits in below-deck, below-deck-mediterranean, or
+    below-deck-sailing-yacht season text; adjacent to
+    already-shipped familiar-faces-wrong-franchise.
+  - The Ultimatum S4's cast already living in the filming city
+    — rejected: a single data point across the whole catalog
+    (grepped broadly for "local cast" language, zero other
+    hits); can't clear the cross-canon floor, and it isn't a
+    recurring pattern within The Ultimatum's own other three
+    seasons either.
 
 ## Notes
 
