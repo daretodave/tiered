@@ -196,6 +196,7 @@ last time a curator actually looked.
 | home-seasons-waited-relocation-seasons-didnt | single | 2026-07-25 | 2026-07-25 | |
 | the-numbers-ran-out-casting-became-the-format | single | 2026-07-26 | 2026-07-26 | |
 | the-team-rule-never-makes-it-to-a-second-season | single | 2026-07-26 | 2026-07-26 | |
+| the-goodbye-became-part-of-the-format | craft | 2026-07-26 | 2026-07-26 | |
 
 ## Ideas
 
