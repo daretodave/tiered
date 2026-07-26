@@ -573,6 +573,38 @@ last time a curator actually looked.
     respective blockers clear — do not re-derive them from
     scratch; the scout research trail is preserved in this entry
     and the AUDIT.md row.
+- 2026-07-26 ninth pass, cloud /march tick: zero-ship — spent the
+  tick escalating the eighth pass's blocker rather than starting a
+  tenth blind concept search, given the seventh pass's own
+  assessment that the grep-groundable well is close to exhausted
+  at 172 lists (the count still stands at 172 this tick). Ran a full
+  scout verification of every real NBC season (1-30) against our
+  29 `the-voice` season files to pin the exact scope of the
+  season-numbering blocker flagged at pass 8. Result was much
+  worse than a numbering offset: confirmed the show's own
+  frontmatter (`status: hiatus`, blurb/tagline "signing off...
+  the chairs turned one last time") and `29-the-finale.md`'s
+  "series finale" framing are factually **false** and currently
+  live — The Voice has not ended; real Season 29 aired Feb 2026
+  and real Season 30 is confirmed for Sep 2026. The underlying
+  corruption spans 8 season files (22-29): a phantom "spring 2022"
+  season, a conflated/mislabeled Shelton-farewell entry, a fully
+  omitted real season (Shelton's true on-screen farewell has no
+  file), a duplicated season (24 and 25 both describe the same
+  real cycle), and a fabricated finale. Filed the complete
+  season-by-season diff as an escalated `[HIGH]` row in
+  `plan/AUDIT.md` (raised from `[MED]`, score 2.5→4.8) rather than
+  attempting a rushed rewrite this tick — the blast radius (file
+  renames, canon rebase, cross-list reference audit, e2e fixture
+  regen, plus authoring the two real seasons we're missing
+  entirely) is exactly the kind of irreversible-if-wrong surgery
+  this loop shouldn't attempt without a review checkpoint.
+  Recommended promoting it to a dedicated `/expand` phase or an
+  oversight-reviewed tick. Both pass-8 Rule 3 leads (cross-show
+  vote-override mechanic, single-show Voice-mechanics list) stay
+  blocked pending this fix — do not re-attempt either from
+  scratch once the-voice's catalog is corrected, the scout
+  research trail for both is already preserved above.
 
 ## Notes
 
