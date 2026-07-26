@@ -282,6 +282,50 @@ last time a curator actually looked.
     pass on Amazing Race / Love Island UK / Traitors confirmed
     enough cross-show data points to clear the single-show cap
     (10 entries across 6 shows).
+- 2026-07-26 third pass, same tick: zero-ship. Drafted one
+  concept in full before catching the overlap; scoped and
+  rejected four more before stopping.
+  - gender-split cast as the format's whole premise (The
+    Challenge Battle of the Sexes, Ink Master S12, ANTM S20,
+    Survivor Vanuatu/One World/The Amazon, Hell's Kitchen Battle
+    of the Ages, SYTYCD Stage vs. Street) — drafted a full
+    12-entry list before rejecting: 3 of the 12 planned entries
+    (The Challenge S06, Ink Master S12, ANTM S20) already carry
+    near-identical framing in one-rule-fills-every-seat, and Ink
+    Master S12 separately appears in the-other-side-of-the-
+    table. Raw overlap read under the 40% floor but the
+    underlying angle — "gender divide as a single-rule casting
+    device" — is the same angle one-rule-fills-every-seat already
+    owns, just re-sliced.
+  - barrier-breaking "first" casting milestones (first Black
+    Bachelor/Bachelorette, first male ANTM contestant, first
+    transgender Real World/Drag Race/Drag Race UK contestant,
+    first deaf Circle contestant, first same-sex MAFS Australia/
+    Bachelor in Paradise couple) — rejected: season-one-doesnt-
+    own-every-first already ships the strongest five candidates
+    (Real World S03, The Circle S05, Bachelor in Paradise S06,
+    MAFS Australia S03, Drag Race UK S04) under near-identical
+    "genuine first" framing. The leftover pool (Bachelor S25,
+    Bachelorette S13, Drag Race S14, ANTM S11, ANTM S20, RHOBH
+    S10) is six entries across five shows — short of the 10-entry
+    floor, and shipping it would read as a reskin of an existing
+    list, not a distinct angle.
+  - weather / on-location production-hazard disruption — rejected:
+    thin grounding, only two confirmed season-file hits.
+  - Chopped tournament cash-prize escalation — rejected: single-
+    show only, can't clear the cross-canon floor even tagged
+    craft/era, and same-crown-new-price-tag already covers three
+    of Chopped's own tournament-prize seasons cross-show.
+  - swept several smaller candidates by grep before drafting
+    anything: opening-title-sequence/HD-transition production
+    facts (fewer than 5 hits, too thin), home-turf/hometown-
+    filming angle (mostly unrelated "hometown date" hits, too
+    thin and mixed), profession-based casting briefs like
+    firefighter or nurse casts (2 hits, too thin), app/social-
+    media voting mechanics beyond SYTYCD (already the-vote-left-
+    the-phone-line's territory), natural-disaster production
+    disruption (2 hits), real-sibling (non-twin) team casting
+    (zero hits).
 
 ## Notes
 
