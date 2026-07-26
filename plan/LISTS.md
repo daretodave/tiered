@@ -469,6 +469,66 @@ last time a curator actually looked.
     mined — check `the-other-side-of-the-table` first before
     ever proposing a "contestant crossed to judge/host" angle
     again.
+- 2026-07-26 seventh pass, same day (cloud march tick): zero-ship.
+  Steered deliberately away from every domain the six prior
+  passes had already grepped (casting, vote, prize/advantage,
+  judge/host, hidden-identity, location/travel mechanics) toward
+  audience reception, production credits, and franchise-branding
+  angles instead.
+  - audience/ratings-peak framing (DWTS S05, American Idol S05/
+    S24, Jersey Shore S03, Survivor S02, Drag Race S18, Love
+    Island UK S05, Love Island US S06/S07/S08, Bachelor S17,
+    Summer House S10) — the single richest-looking lead of the
+    pass, 9 shows deep with real season-file grounding — rejected
+    outright on total preemption: `the-season-the-audience-
+    showed-up-all-at-once` (shipped 2026-07-25) already spends 8
+    of the 9 candidate shows entry-for-entry under the identical
+    framing. **Flag:** `running-on-muscle-memory` independently
+    reuses the same American Idol S05 / DWTS S05 ratings-peak
+    beats as supporting texture — this vein is now spent from
+    three separate angles. Treat "ratings/audience peak" as fully
+    closed going forward, same tier as the alumni-authority flag
+    above.
+  - spinoff genealogy ("show that seeded a whole spinoff tree")
+    — rejected: `before-the-spinoff-had-a-name` already ranks
+    this exact founding-season set (RHOC, Drag Race, Below Deck,
+    Traitors UK, Love Island UK, Top Chef, RHOBH, Selling
+    Sunset, Summer House, Southern Charm, MasterChef).
+  - narrator-as-distinct-role (separate voiceover narrator vs.
+    on-camera host) — real device on Love Island UK/US (Iain
+    Stirling, Matthew Hoffman) but only 2 clean shows; Real
+    World's "narration" hits are title-card copy, not an episode
+    narrator role — can't clear the 3-show floor.
+  - production-house/studio branding across sibling shows
+    (Studio Lambert, World of Wonder, Bunim/Murray, etc.) —
+    zero real hits; the only near-match was a Big Brother
+    alliance nickname, not a studio credit.
+  - awards/critical recognition (Emmy, Peabody, Critics Choice)
+    — zero hits catalog-wide; would need a scout pass, not
+    groundable from repo text.
+  - holiday/Christmas special editions — thin, incidental Chopped
+    tournament hits only, not a cross-show pattern.
+  - franchise/format renaming as its own angle — already fully
+    owned single-show by `the-format-answered-to-a-different-name`
+    (Apprentice); no fresh cross-show cut survives without
+    reskinning.
+  - **Assessment (content-curator, 2026-07-26):** the well for
+    NEW cross-show angles groundable purely from repo season-file
+    text is now close to exhausted at 172 lists. Every domain this
+    pass and the six before it touched was either fully spent by
+    an existing list, too thin to ground, or a reskin of a
+    already-shipped single-show deep dive. Remaining unclaimed
+    territory (ratings data, awards, production credits, external
+    reception facts) exists outside the repo and would need a
+    `scout`-assisted research pass to ground safely — a process
+    change, not something the next blind content-curator pass can
+    solve by grepping harder. **Recommendation for a future
+    `/expand` or oversight tick:** consider authorizing scout
+    involvement in Rule 3 research, or accept a lower Rule-3 hit
+    rate (more zero-ship ticks between successful ships) as the
+    172-list mark is the new steady state, rather than continuing
+    to spend a full verify+e2e cycle chasing a new concept every
+    single tick.
 
 ## Notes
 
