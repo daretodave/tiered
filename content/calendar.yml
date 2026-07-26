@@ -51,7 +51,7 @@ finales:
   - show: love-island-us
     season: 8
     finale_date: 2026-07-12
-    status: scheduled
+    status: aired
   - show: love-island-uk
     season: 13
     finale_date: 2026-07-27
@@ -71,4 +71,12 @@ finales:
   - show: married-at-first-sight
     season: 20
     finale_date: 2026-08-27
+    status: scheduled
+  - show: below-deck-mediterranean
+    season: 11
+    finale_date: 2026-08-10
+    status: scheduled
+  - show: alone
+    season: 13
+    finale_date: 2026-08-26
     status: scheduled
