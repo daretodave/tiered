@@ -661,6 +661,60 @@ last time a curator actually looked.
     research, or accept lower per-tick hit rates as the steady
     state. Both are process decisions for a future `/expand` or
     oversight tick, not this one.
+- 2026-07-26 eleventh pass, cloud `/march` tick: zero-ship. Rather
+  than repeat a blind grep sweep, acted on pass 7/9/10's own
+  recommendation and ran one bounded `scout`-assisted external
+  research pass explicitly steered away from every domain the
+  ten prior passes had already covered (full exclusion list
+  handed to scout: casting devices, game mechanics, production/
+  format angles, alumni-authority pipeline, ratings/awards,
+  holidays/strikes/streaming, revival/spinoff genealogy, venue
+  reuse, etc.).
+  - **Traitors as reality's crossover clearinghouse** (real,
+    heavily-sourced alumni migration into Traitors US/UK from
+    Survivor, Big Brother, RHOBH, RHOM, Below Deck, Vanderpump
+    Rules, The Challenge across S1-S3 — Cirie Fields/Stephenie
+    LaGrossa, Rachel Reilly/Cody Calafiore/Dan Gheesling, Kate
+    Chastain, Brandi Glanville/Larsa Pippen, Tom Sandoval, Johnny
+    Bananas/CT/Trishelle, Parvati Shallow) — scout's strongest
+    lead, easily clearing the entry floor on raw facts. **Rejected
+    on total preemption, not thinness**: `familiar-faces-wrong-
+    franchise` entry #2 already ranks exactly this phenomenon
+    ("Traitors S01 — Ten reality-TV veterans... pair alumni from
+    other reality competitions with members of the public"), and
+    the list's whole angle (importing a face the audience knows
+    from elsewhere) is the identical mechanism scout's candidate
+    would extend season-by-season. A season-by-season expansion
+    of an angle a shipped list already opens with as its founding
+    entry is a depth-add to that list, not a distinct new one —
+    flagging for a future review-batch tick to consider whether
+    `familiar-faces-wrong-franchise` itself should be *extended*
+    with S2/S3 Traitors crossover entries (bearings Rule 3 already
+    permits extending an existing list over forcing a >40%-overlap
+    new one).
+  - **Duty-of-care/legal-reckoning format changes** (Ofcom rules
+    post-Love Island UK, ITV's mandated aftercare protocol) —
+    scout's own secondary candidate, flagged weak: strong on
+    love-island-uk alone, but no comparably-documented regulatory
+    episode confirmed yet for two more shows without drifting into
+    personal-drama territory (spoiler/mod discipline concern, not
+    just thinness). Not pursued further this pass.
+  - **Assessment:** the scout-assisted method pass 7 recommended
+    does surface real leads (this is the second scout pass in a
+    row to find something with genuine factual depth, after pass
+    8's Voice-mechanics find) — but both leads found across two
+    scout passes now resolve to territory a shipped list already
+    owns (pass 8: `the-other-side-of-the-table`'s alumni-authority
+    angle for one of its concepts; this pass: `familiar-faces-
+    wrong-franchise`'s crossover-casting angle). The 172-list
+    ledger's coverage is dense enough that even fresh external
+    research keeps re-discovering angles the ledger already
+    shipped first. Standing recommendation holds: a future
+    `/expand` or oversight tick should decide between (a) biasing
+    Rule 3 toward *extending* existing lists (the option this pass
+    surfaced concretely for `familiar-faces-wrong-franchise`)
+    rather than always hunting a wholly new slug, or (b) accepting
+    a lower per-tick Rule 3 hit rate as the 172-list steady state.
 
 ## Notes
 
