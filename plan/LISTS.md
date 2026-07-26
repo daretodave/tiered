@@ -47,7 +47,7 @@ last time a curator actually looked.
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
 | when-the-basket-became-a-bracket | single | 2026-07-16 | 2026-07-16 | |
-| familiar-faces-wrong-franchise | craft | 2026-07-17 | 2026-07-17 | |
+| familiar-faces-wrong-franchise | craft | 2026-07-26 | 2026-07-26 | extended 2026-07-26 (Traitors S02/S03 entries) |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-17 | 2026-07-17 | |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
@@ -715,6 +715,28 @@ last time a curator actually looked.
     surfaced concretely for `familiar-faces-wrong-franchise`)
     rather than always hunting a wholly new slug, or (b) accepting
     a lower per-tick Rule 3 hit rate as the 172-list steady state.
+- 2026-07-26 twelfth pass, cloud `/march` tick: **shipped** — acted
+  on pass 11's own flagged next step instead of a twelfth blind
+  concept search. Rather than hunt a wholly new slug, extended
+  `familiar-faces-wrong-franchise` with two new entries covering
+  Traitors US Season 2 and Season 3 — both all-alumni casts (no
+  civilians), distinct from entry #2's Season 1 mixed-cast framing.
+  Ran a fresh scout verification pass first (season-2/season-3
+  cast rosters get conflated in casual sourcing — Kate Chastain and
+  Parvati Shallow both have appearances outside their primary
+  season that would have mis-pinned the facts) before writing:
+  confirmed Season 2 (Sandra Diaz-Twine + Parvati Shallow/Survivor,
+  Janelle Pierzina/Big Brother, Johnny Bananas/The Challenge, Larsa
+  Pippen/RHOM) and Season 3 (Tony Vlachos + Boston Rob/Survivor,
+  Britney Haynes/Big Brother, Tom Sandoval/Vanderpump Rules) against
+  Wikipedia + NBC Insider + TVInsider + Today.com, excluding every
+  name flagged as cross-season-ambiguous. New entries land at rank
+  10/11; `traitors` now holds 3 of 11 entries, at the same per-show
+  cap `the-apprentice` already sits at on this list. `last_revised`
+  bumped (real content change, not a no-op review). This resolves
+  the extend-vs-invent question pass 10/11 raised as a process
+  decision for a future tick — this tick made the call rather than
+  deferring it again.
 
 ## Notes
 

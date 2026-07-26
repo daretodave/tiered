@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-26
 featured: false
 related:
   - firsts
@@ -67,4 +67,16 @@ entries:
     rank: 9
     title: "The UK version's own narrator crosses the Atlantic for the American reboot."
     blurb: "Iain Stirling, the voice viewers already know from Love Island UK, takes the booth for the American version's biggest relaunch. The villa rules stay the same; the narration arrives fully formed from somewhere else."
+  - show: traitors
+    season: 2
+    season_label: "S02"
+    rank: 10
+    title: "The civilian mix disappears; the entire cast now arrives already famous from somewhere else."
+    blurb: "Season two swaps the mixed pilot cast for an all-alumni roster: Survivor's Sandra Diaz-Twine and Parvati Shallow, Big Brother's Janelle Pierzina, The Challenge's Johnny Bananas, and Real Housewives of Miami's Larsa Pippen. Not one castmate needs an introduction."
+  - show: traitors
+    season: 3
+    season_label: "S03"
+    rank: 11
+    title: "A third straight all-alumni cast, its two biggest names both borrowed from the same show."
+    blurb: "Season three keeps the no-civilians rule and doubles down on one franchise: Survivor's Tony Vlachos and Rob Mariano anchor a cast that also imports Big Brother's Britney Haynes and Vanderpump Rules' Tom Sandoval. The recognition keeps compounding, franchise by franchise."
 ---
