@@ -415,6 +415,60 @@ last time a curator actually looked.
     full-cast-import angle) — rejected: not separately groundable;
     the real hits are already consumed by familiar-faces-wrong-
     franchise's existing entries.
+- 2026-07-26 sixth pass, same tick: zero-ship. Went in on the
+  strongest surviving lead (alumni-to-authority pipeline) plus
+  nine more candidates; none cleared the gate.
+  - alumni-to-host/judge/mentor authority pipeline (former
+    contestant returns as host/judge/coach) — the single
+    strongest-looking lead going in, with a genuinely rich grep
+    hit set (Bachelorette S17/S18, MasterChef Australia S10/S11,
+    Project Runway S17, Shark Tank S10, Ink Master S10/S12,
+    SYTYCD S7, Big Brother S14, The Voice S14) — rejected outright:
+    `the-other-side-of-the-table` already ships this exact angle
+    with this exact same 10-entry season set, entry for entry.
+    Total preemption, not partial overlap.
+  - sequel-season branding name-drop ("X: All-Stars," "X: Rivals,"
+    "X: Redemption" as the format's own device) — rejected: the
+    branding is just the marketing wrapper on a returnee cast;
+    the underlying seasons are already spent across
+    best-returnees, tried-once-never-repeated, and
+    same-crown-new-price-tag. Reskin, not a new angle.
+  - shared filming location/venue reuse across unrelated
+    franchises — rejected: generic city matches (LA, Las Vegas,
+    NYC) are too common to read as an editorial observation (Las
+    Vegas alone hit 47 files); no specific-enough venue/facility
+    overlap groundable.
+  - cast size deliberately shrunk for one season only, then
+    reverted — real hits exist (Circle S07, Real World S25, Drag
+    Race UK S05, MasterChef US S11, Drag Race All Stars S11) but
+    the territory is already worked from multiple angles
+    (the-couch-kept-adding-chairs, the-room-kept-changing-size,
+    the-anchor-count-set-the-ceiling, full-time-was-a-status-not-
+    a-promise); couldn't confirm a genuine revert-next-season
+    pattern for most hits either.
+  - judge/host pairs who are real-life married couples or
+    siblings on the same panel — zero groundable hits.
+  - winner decided by a finals mechanic used exactly once —
+    already explicitly covered by tried-once-never-repeated.
+  - blind-judging/blind-casting mechanics — fully spent by
+    not-knowing-was-the-point (Voice blind auditions, Ink Master
+    blind draft, MasterChef mystery box, Chopped basket, Amazing
+    Race blind Detour/U-Turn/blind-date pairs).
+  - guest-chair coverage/promotion mechanics — fully spent across
+    someone-else-held-the-chair-for-a-while, the-mic-changed-hands,
+    and a-guest-spot-with-room-to-grow.
+  - hidden-identity/concealment-as-format mechanic — fully spent
+    by not-who-they-say-they-are (Circle AI contestant, Traitors,
+    Masked Singer).
+  - judge chair retired entirely with no replacement (panel
+    shrinks by design) — zero hits in season file text.
+  - Queer Eye single-show deep dive — already has a dedicated,
+    comprehensive single-show list
+    (a-show-that-never-had-a-home-address, 10/10 seasons).
+  - **Flag for future ticks:** the alumni-authority vein is fully
+    mined — check `the-other-side-of-the-table` first before
+    ever proposing a "contestant crossed to judge/host" angle
+    again.
 
 ## Notes
 
