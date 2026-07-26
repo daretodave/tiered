@@ -198,6 +198,7 @@ last time a curator actually looked.
 | the-team-rule-never-makes-it-to-a-second-season | single | 2026-07-26 | 2026-07-26 | |
 | the-goodbye-became-part-of-the-format | craft | 2026-07-26 | 2026-07-26 | |
 | the-reshuffle-stays-in-house | single | 2026-07-26 | 2026-07-26 | |
+| the-cold-open-then-never-again | single | 2026-07-26 | 2026-07-26 | |
 
 ## Ideas
 
