@@ -255,6 +255,35 @@ last time a curator actually looked.
     away-from-home-turf already uses RHONY's three biggest
     trips (Scary Island, Morocco, Cartagena) with near-identical
     framing.
+- 2026-07-26 second pass, same tick: widened the search across
+  the full 68-show catalog before zero-shipping again.
+  - recurring signature challenge as ritual (Restaurant Wars,
+    Snatch Game, etc.) — rejected: overlaps best-challenge-design
+    and the-diners-were-never-extras too closely to clear the
+    <40% angle floor.
+  - anniversary / retrospective milestone framing — rejected:
+    milestones-spent-not-marked already ships this exact angle.
+  - live-episode / broadcast-live firsts — rejected: only two
+    confirmed non-generic cases in season-file text (Shark Tank
+    S14, Ink Master S02–S12); "live shows" is standard, not a
+    distinguishing first, for DWTS/Idol/Voice/SYTYCD/AGT.
+  - fan-favorite / parallel audience-voted award (Survivor Fan
+    Favorite, BB America's Favorite Houseguest, Drag Race Miss
+    Congeniality) — rejected: only one clean hit in season-file
+    text (Drag Race UK S07); the Survivor/BB award facts aren't
+    in the repo's season files and would need a scout pass.
+  - guest-host / temporary judge substitute — rejected: fully
+    covered by someone-else-held-the-chair-for-a-while.
+  - vote-authority / tiebreak mechanics — rejected: fully covered
+    by who-actually-got-the-vote and when-the-vote-came-back-tied.
+  - twin / identical-sibling casting device (BB05 Project DNA,
+    BB16 Battle of the Block, BB17 BB Takeover, Bachelor in
+    Paradise S03 Sayulita, Top Chef S23 Carolinas) — rejected:
+    real angle, spans 3 shows, but only 5 confident data points
+    surfaced in season-file text and 3 of 5 are Big Brother —
+    over the roughly-half single-show cap at this sample size.
+    Worth a scout pass (Amazing Race, Love Island, Traitors) to
+    see if it scales to a full 10+ entry list later.
 
 ## Notes
 
