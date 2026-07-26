@@ -368,6 +368,53 @@ last time a curator actually looked.
     hits); can't clear the cross-canon floor, and it isn't a
     recurring pattern within The Ultimatum's own other three
     seasons either.
+- 2026-07-26 fifth pass, same tick: zero-ship. Biased the search
+  toward era/tone/structure per the brief's steer, grepped ~10
+  more concepts, none cleared the gate.
+  - recession-era casting or prize-money framing (2008-2012) —
+    rejected: every grep hit for "2008/2009/2010" and "debt/
+    unemployment/economy"-adjacent terms across season files
+    resolved to unrelated premiere-date coincidences or the
+    Bachelor's "date economy" travel-logistics phrase, not
+    actual recession-era editorial framing. Zero real hits.
+  - a live/unedited-broadcast era distinct from the-vote-left-
+    the-phone-line's phone-to-app angle — rejected: re-confirmed
+    the pass-2 finding, only two non-generic season-file hits
+    (Shark Tank S14, Ink Master S02-S12); not a pattern.
+  - tonal "deliberate reset" after a divisive predecessor season
+    (SYTYCD S14 "Back to Basics", American Idol S13 "The Reset")
+    — rejected: only two confirmed season-file hits catalog-wide
+    after grepping "back to basics / course correct / dial down
+    the conflict" phrasing; can't clear a 3-show floor.
+  - cross-show episode-count volatility (total season length
+    swinging year to year, as a structure list) — rejected: the
+    generic "shortest/longest season" phrasing already appears
+    piecemeal across dozens of already-shipped lists per show,
+    and the clean version of this exact angle is already spent
+    single-show on MAFS Australia (the-episode-order-never-
+    found-its-ceiling); a cross-show cut would double-dip the
+    same MAFS Australia seasons plus reads as a reskin of
+    running-long-running-short's per-episode-runtime angle.
+  - a dedicated American Idol single-show list (24 seasons, no
+    existing single-show list of its own) — rejected: American
+    Idol already appears in 21 existing cross-show lists, and
+    the-only-constant-was-the-vote alone spends 12 of its 24
+    seasons on vote-mechanic framing; every other season's
+    strongest hook (panel turnover, network moves, pandemic,
+    milestones) is already spent elsewhere too. No throughline
+    left that isn't a reskin of an already-shipped angle.
+  - international/global-casting-expansion angle — rejected: too
+    thin, scattered single hits with no coherent cross-show
+    pattern in season-file text.
+  - multi-country / split-location single-season shoot — rejected:
+    5 loose, unrelated hits, no coherent throughline.
+  - clip-show / flashback episode as a structural device —
+    rejected: zero hits catalog-wide.
+  - franchise crossover guest cameos within a sibling show's
+    episode (distinct from familiar-faces-wrong-franchise's
+    full-cast-import angle) — rejected: not separately groundable;
+    the real hits are already consumed by familiar-faces-wrong-
+    franchise's existing entries.
 
 ## Notes
 
