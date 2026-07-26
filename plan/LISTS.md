@@ -529,6 +529,50 @@ last time a curator actually looked.
     172-list mark is the new steady state, rather than continuing
     to spend a full verify+e2e cycle chasing a new concept every
     single tick.
+- 2026-07-26 eighth pass, cloud /march tick: zero-ship, but acted
+  on the seventh pass's recommendation and used `scout` (not just
+  repo grep) to try to ground a new angle. Two concepts explored:
+  - Cross-show "panel/audience mechanic overrides a vote result"
+    (The Voice Instant Save, American Idol Judges' Save, DWTS
+    Judges' Save, SYTYCD Twitter Save, Big Brother Diamond
+    Power of Veto / America's Veto) — scout confirmed all five as
+    real, distinct, well-sourced mechanics, but the clean set only
+    reaches 5-6 entries total, well short of the 10-entry floor
+    even before applying the ≤3-entries-per-show cap. Rejected:
+    too thin to ship as its own list; not extendable without
+    diluting the angle with weaker analogs (SYTYCD's baseline
+    bottom-group design isn't a real "override," AGT's Golden
+    Buzzer is confirmed pre-vote, not an override at all — see
+    scout notes). Worth revisiting if the-voice's own multi-
+    mechanic history (see below) can be split out, freeing this
+    cross-show cut to stand on the remaining shows plus 1-2 more
+    if a future pass finds them.
+  - Single-show (category: single) "The Voice: format mechanics
+    introduced season by season," modeled on the already-shipped
+    `the-toolkit-never-sat-still` (MasterChef Australia) template
+    — scout found ~11 real, well-sourced mechanic introductions
+    (Steal S3, Instant Save S5, Block S14, Comeback Stage S15,
+    Live Cross Battles S16, Mega Mentor + Playoff Pass S23, Coach
+    Replay S26, Carson Callback S28, Super Steal/Battle of
+    Champions S29, team-size expansion S2), comfortably clearing
+    the entry floor with real facts. **Blocked before drafting**:
+    cross-checking two of these season numbers against our own
+    `content/shows/the-voice/seasons/*.md` files surfaced a
+    season-numbering discrepancy — our `26-the-duo.md` (Dan+Shay)
+    and `28-the-homecoming.md` (Levine's return) each look like
+    they're describing real events that actually belong to real-
+    world Season 25 and Season 27 respectively. Authoring new
+    theme entries on top of a season-numbering scheme that may not
+    line up with the real-world facts scout would supply risks
+    shipping wrong specifics. Filed as `plan/AUDIT.md` (category:
+    bug, score 2.5) rather than pushed through this tick — needs a
+    dedicated verification pass over all 29 of the-voice's season
+    files before any content (this list or otherwise) leans on a
+    specific season number matching a specific real-world event.
+    **Both concepts above remain live leads** once their
+    respective blockers clear — do not re-derive them from
+    scratch; the scout research trail is preserved in this entry
+    and the AUDIT.md row.
 
 ## Notes
 
