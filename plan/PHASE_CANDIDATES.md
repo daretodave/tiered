@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-22 at commit a47ce26
-> Pass count: 57
+> Last pass: 2026-07-26 at commit 4ec52529
+> Pass count: 58
 
 ## Considered (awaiting promotion)
 
@@ -1371,14 +1371,43 @@ show's canon+season pair*, a shape none of the existing gates cover.
 
 ### 28. Stat-tile value/caption literal-duplicate invariant
 
-**Score:** 8.5 (impact: 8, ease: 9 → 7.2 base + 1.3 signal multiplicity — a single
+**Score:** 8.7 (impact: 8, ease: 9 → 7.2 base + 1.5 signal multiplicity — a single
 critique finding that was itself already systemic across 139 files/22 shows, same
 root-cause family as candidate #25; multiplicity bonus raised at pass 49 by a second,
 independently-discovered defect shape on one of the six pairs this candidate already
 proposes to gate; raised again at pass 57 by a third defect shape — cross-tile
-restatement, not just same-pair)
-**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57)
-**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22)
+restatement, not just same-pair; raised again at pass 58 by five simultaneous fresh
+instances in one critique pass, across four different shows, on both the exact-pair
+and cross-tile shapes this candidate already names)
+**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57, 58)
+**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22, 2026-07-26)
+**Pass-58 reinforcement (five fresh instances in a single critique pass, pass-104):**
+still zero pre-ship gate, and the defect class keeps landing on newly-authored or
+newly-promoted content exactly as predicted. All five are currently Pending in
+`plan/CRITIQUE.md` at this filing: (1) Big Brother S27 "A Summer Of Mystery" —
+`format_summary` ("16 houseguests + a mystery 17th slot") restates the adjacent
+`cast_size_caption`'s headcount instead of describing the season's actual twist
+stack — the exact `cast_size`/`format_summary` cross-tile shape, on a show already
+touched by this candidate's #508 fix on a different pair; (2) Top Chef "Carolinas" —
+`filming_caption` and `format_caption` both restate the same three city names in
+reordered phrasing, the same `location`/`format_summary` cross-tile shape pass-93
+already reinforced this candidate with, recurring on a fresh show; (3) Perfect
+Match S4 — `format_summary` restates `cast_size`'s exact headcount fact, a third
+independent instance of the identical cross-tile shape now confirmed on three
+unrelated shows (Bachelor S28 #464, Big Brother S27 above, Perfect Match S4); (4)
+Love Island UK "Summer 2025" — `episodes_caption` bare-restates its own `ep_count`
+value with zero added fact, the same same-pair shape the six-pair scope sketch
+below already lists for `ep_count`/`episodes_caption`; (5) Chopped "The Four-
+Ingredient Standard" — `premiere_caption` restates the page eyebrow's network +
+air-window one line above, the identical `premiere_date`/`premiere_caption` +
+eyebrow shape pass-56 first reinforced this candidate with (Chopped S4), now
+recurring on a different Chopped season. Ninth consecutive expand pass (48, 49,
+56, 57, 58) to find live evidence of this exact defect class recurring on
+freshly-shipped or freshly-promoted content; still zero instances caught pre-ship
+by a gate, and this pass alone found five — the highest single-pass count yet,
+confirming the six-pair scope sketch below (unchanged since pass 49) is already
+sized correctly for the recurring shapes and does not need to be widened further,
+only shipped.
 **Pass-57 reinforcement (new sub-shape — cross-tile, not just same-pair):** critique
 pass-95 found `/shows/the-real-world/season/go-big-or-go-home`'s `episodes_caption`
 doing double duty as a defect: it restates its own EPISODES tile's "12" value (a clean
@@ -1532,8 +1561,9 @@ promote independently; this candidate has no dependency on #25 shipping first.
 
 ### 29. Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
 
-**Score:** 5.0 (impact: 6 — a live stability risk for every future march tick that
-reads these files, not just a nice-to-have; ease: 8 — mechanical move of already-
+**Score:** 5.6 (impact: 7 — raised at pass 58 from a projected risk to a *confirmed*
+live failure: a plain `Read` of `plan/CADENCE.md` failed outright this tick on the
+same token-ceiling class this candidate names; ease: 8 — mechanical move of already-
 `[x]`-closed rows to a new archive file, git history keeps everything regardless,
 no schema or gate-logic change)
 **Source pass:** digest 2026-07-09
@@ -1612,6 +1642,25 @@ pressure) rather than treating as coincidence. `plan/CRITIQUE.md` is now
 new candidate #33 below) leaving almost no ticks free for `/critique` or
 `/expand` passes that would otherwise prune them. Still unpromoted, now 39
 days stale since first filing (2026-07-09).
+
+**Reinforced (expand pass 58, 2026-07-26):** a fresh, first-hand failure mode
+this same march tick, not just file-size arithmetic: a plain `Read` of
+`plan/CADENCE.md` (a *third* plan file, not one of the two this candidate was
+originally filed against) failed outright this tick with "File content (35701
+tokens) exceeds maximum allowed tokens (25000)" — the exact ceiling-breach
+class this candidate names, now confirmed spreading beyond CRITIQUE.md/
+PHASE_CANDIDATES.md to the cadence/gap-table ledger that every single
+`/march` tick's Step 1.5 depends on reading. Growth continues unabated on the
+original two files as well: `plan/CRITIQUE.md` is now 3,818 lines (was 3,513
+at the 07-18 reinforcement, +305 in 8 days) and `plan/PHASE_CANDIDATES.md`
+(this file) is 4,966 lines (was 4,691, +275 in 8 days) — both still growing,
+not shrinking, 17 days after first filing. `plan/AUDIT.md` by contrast sits
+at a comparatively modest 620 lines, only because its `[x]`-closed rows
+already get folded into terse one-line progress notes rather than kept
+verbatim — informal proof the archive pattern this candidate proposes works
+in practice, just not yet applied to the two files that need it most. Still
+unpromoted, now 3 consecutive expand passes (52, digest 07-18, 58) finding
+worsening evidence with zero mitigation shipped.
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 

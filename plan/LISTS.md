@@ -212,6 +212,47 @@ last time a curator actually looked.
      cuts (category: single). -->
 
 - (empty — seed at the first Rule 3 tick)
+- 2026-07-26 zero-ship tick: checked ~20 concepts, all rejected —
+  logged here so a future tick doesn't re-walk the same ground.
+  - mid-season "bombshell" cast additions (dating formats) —
+    rejected: the-cast-was-still-arriving already owns this angle
+    (Casa Amor, Paradise, Too Hot to Handle, MAFS Australia).
+  - portable power items / artifacts across formats — rejected:
+    the-advantage-was-never-free already covers idols, Power
+    Apron, Fire Tokens, the Armory, Den of Temptation.
+  - companion aftershow / second-screen programs (Aftersun,
+    After Dark, Uncloaked) — rejected: the-broadcast-wasnt-the-
+    whole-show already ships this exact angle.
+  - non-elimination round/leg as a mid-season mercy twist —
+    rejected: thin grounding in season-file text beyond what
+    a-way-back-in and never-needed-a-villain already cite
+    (Drag Race All Stars S04/S07).
+  - real exes / grudges as the casting brief — rejected:
+    the-grudge-was-the-casting-call already ships this.
+  - The Voice's Steal/Block/Instant Save mechanics — rejected:
+    not groundable in the repo's own season files (canon and
+    season blurbs only discuss coaching-chair turnover), and
+    exact season-of-introduction isn't confident enough to ship
+    without a scout pass.
+  - AGT's Golden Buzzer as a craft angle — rejected: only one
+    show in the catalog runs it, so it can't clear the ≥3-show
+    cross-canon floor; season files don't carry the granular
+    intro-year detail needed for a single-show version either.
+  - Real Housewives "cast wipe / roster reset ranked per
+    franchise" applied to a fifth city (RHONY was the specific
+    candidate, its S14 total recast being a genuinely unique
+    event) — rejected: this observational template already
+    ships for RHOC (the-founding-five-kept-getting-replaced),
+    Southern Charm (the-founding-seven-slowly-rebuilt), Selling
+    Sunset (some-seasons-rebuild-the-roster-others-just-move-
+    the-furniture), RHONJ (the-social-geometry-resets-then-it-
+    holds), and the cast-size cut of it cross-show
+    (the-couch-kept-adding-chairs). A fifth pass reads as
+    templated even with all-new entries.
+  - RHONY group-trip-as-pressure-cooker single list — rejected:
+    away-from-home-turf already uses RHONY's three biggest
+    trips (Scary Island, Morocco, Cartagena) with near-identical
+    framing.
 
 ## Notes
 
