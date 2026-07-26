@@ -199,6 +199,7 @@ last time a curator actually looked.
 | the-goodbye-became-part-of-the-format | craft | 2026-07-26 | 2026-07-26 | |
 | the-reshuffle-stays-in-house | single | 2026-07-26 | 2026-07-26 | |
 | the-cold-open-then-never-again | single | 2026-07-26 | 2026-07-26 | |
+| the-resemblance-was-never-just-a-fun-fact | craft | 2026-07-26 | 2026-07-26 | |
 
 ## Ideas
 
@@ -276,14 +277,11 @@ last time a curator actually looked.
     covered by someone-else-held-the-chair-for-a-while.
   - vote-authority / tiebreak mechanics — rejected: fully covered
     by who-actually-got-the-vote and when-the-vote-came-back-tied.
-  - twin / identical-sibling casting device (BB05 Project DNA,
-    BB16 Battle of the Block, BB17 BB Takeover, Bachelor in
-    Paradise S03 Sayulita, Top Chef S23 Carolinas) — rejected:
-    real angle, spans 3 shows, but only 5 confident data points
-    surfaced in season-file text and 3 of 5 are Big Brother —
-    over the roughly-half single-show cap at this sample size.
-    Worth a scout pass (Amazing Race, Love Island, Traitors) to
-    see if it scales to a full 10+ entry list later.
+  - twin / identical-sibling casting device — shipped 2026-07-26
+    as the-resemblance-was-never-just-a-fun-fact once the scout
+    pass on Amazing Race / Love Island UK / Traitors confirmed
+    enough cross-show data points to clear the single-show cap
+    (10 entries across 6 shows).
 
 ## Notes
 
