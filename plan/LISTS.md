@@ -46,7 +46,7 @@ last time a curator actually looked.
 | moving-day | structure | 2026-07-16 | 2026-07-16 | |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
-| when-the-basket-became-a-bracket | single | 2026-07-16 | 2026-07-16 | |
+| when-the-basket-became-a-bracket | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
 | familiar-faces-wrong-franchise | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Dancing with the Stars S29, Masked Singer S13 entries) |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
