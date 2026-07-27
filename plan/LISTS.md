@@ -99,7 +99,7 @@ last time a curator actually looked.
 | the-grudge-was-the-casting-call | craft | 2026-07-20 | 2026-07-20 | |
 | sight-unseen-already-committed | craft | 2026-07-20 | 2026-07-20 | |
 | the-vote-left-the-phone-line | era | 2026-07-20 | 2026-07-20 | |
-| never-starts-cold | craft | 2026-07-20 | 2026-07-20 | |
+| never-starts-cold | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Jersey Shore S01, Below Deck Mediterranean S03 entries) |
 | the-couch-kept-adding-chairs | craft | 2026-07-20 | 2026-07-20 | |
 | the-team-never-means-the-same-thing-twice | single | 2026-07-20 | 2026-07-20 | |
 | the-format-learned-to-travel | single | 2026-07-20 | 2026-07-20 | |
@@ -1078,6 +1078,34 @@ last time a curator actually looked.
     revisiting this list should check for genuinely new round-number
     seasons added to the catalog rather than re-running this exact
     grep against the same 68 shows.
+- 2026-07-27 nineteenth pass: **shipped** — extend-first again, this
+  time steered explicitly away from `milestones-spent-not-marked` and
+  `familiar-faces-wrong-franchise` (both already extended earlier
+  today) toward a fresh candidate. Grepped every season file for
+  premiere-energy language (`runs hot|hot from|never cools|no slow
+  burn|confrontational chemistry|early and often|from the first
+  episode`) and cross-checked hits against `never-starts-cold` (13
+  entries, 6 shows, last touched 2026-07-20). Several leads
+  (top-chef S05, rhonj S01, southern-charm S01, amazing-race S11)
+  were scoped and passed over — top-chef S05's "hot" language
+  describes its *closing* stretch, not the premiere, off-angle for
+  this list's specific thesis; rhonj S01 and southern-charm S01 are
+  each already spent 3-4 times elsewhere on adjacent-but-distinct
+  founding-cast framings, and southern-charm S01 is specifically
+  framed in `where-the-warmth-ran-out` as opening *warm and genteel*
+  before cooling — reusing it here would read as a soft contradiction
+  against this list's "hot and stays hot" claim. Two candidates
+  survived clean: Jersey Shore S01 (confirmed unused anywhere in the
+  ledger — "the ensemble's confrontational chemistry surfaces early
+  and often... a tight, confident debut that never has to explain its
+  own premise," a close-to-verbatim match for the list's thesis) and
+  Below Deck Mediterranean S03/Barcelona (confirmed the one
+  below-deck-mediterranean season with zero prior ledger appearances
+  out of ten aired — "cast chemistry that never let the season
+  settle" across the João Franco-helmed run). Appended at ranks 14-15
+  (existing 1-13 order left untouched, same no-rebase precedent as
+  pass 16). `last_revised` bumped (real content change). Extend-first
+  now stands at 5-for-6 (12, 14, 16, 17, 19 shipped; 15 zero-shipped).
 
 ## Notes
 
