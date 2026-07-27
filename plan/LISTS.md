@@ -176,7 +176,7 @@ last time a curator actually looked.
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
 | the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
-| no-season-here-got-the-calendar-to-itself | single | 2026-07-24 | 2026-07-24 | |
+| no-season-here-got-the-calendar-to-itself | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
@@ -1106,6 +1106,83 @@ last time a curator actually looked.
   (existing 1-13 order left untouched, same no-rebase precedent as
   pass 16). `last_revised` bumped (real content change). Extend-first
   now stands at 5-for-6 (12, 14, 16, 17, 19 shipped; 15 zero-shipped).
+- 2026-07-27 twentieth pass: **shipped** — no Rule 2 pick available
+  (season-gap table fully starred), so ran a Rule 3 tick. Explored a
+  format-mechanic angle first per the brief's steer, then pivoted to
+  extend-first on a recently-drained-show gap.
+  - Grepped `double elimination|bottom two|bottom-two` and a
+    team-vs-individual-switch pattern catalog-wide — both came back
+    at 2-4 file hits (`the-apprentice/canon.md`, `dragrace-uk` S4,
+    `dragrace-allstars` S1, `masterchef` S13/canon), short of any
+    floor and mostly canon-level mentions rather than season-file
+    grounding. Rejected as too thin.
+  - Checked the brief's "format changes forced by a real cast exit
+    mid-season, excluding negative outcomes" lead directly: grepped
+    `left the (show|villa|house)|personal reasons|family emergency|
+    voluntarily (left|exited|withdrew)|withdrew from the|dropped out|
+    exit(ed)? the (show|season)|replaced mid-season|pulled from the
+    season` across every season file — zero hits catalog-wide.
+    Rejected: not groundable from repo text.
+  - Read Queer Eye S7-S10 fresh (per the brief's recently-drained-show
+    lead) and found Queer Eye S8's real security-incident production
+    disruption (two carjackings near the crew forcing a cut from
+    seven to six episodes). Grepped for the broader "production
+    disruption forced a shortened/rescheduled season" pattern
+    (`shut down|halted filming|resumed filming|writers.? strike|
+    injury forces|withdr(aws|ew)|legal matter|investigation (halts|
+    forces)|scheduling collision` etc.) expecting a fresh angle —
+    **fully preempted**: `the-schedule-didnt-ask-permission` (craft,
+    10 entries, 8 shows, last revised 2026-07-18) already ships this
+    exact angle end to end, Queer Eye S8 included at rank 3, plus
+    Bachelor in Paradise S4, Amazing Race S12/S33, Drag Race UK S6,
+    SYTYCD S6, Big Brother S9, RHOP S10, MasterChef Australia S15.
+    Re-grepped every sub-pattern (strike/injury/withdrawal/hurricane/
+    wildfire) hunting extend room — every real hit resolved to a
+    season already in that list; the one near-miss (Real World S24
+    "Back to New Orleans," a post-Katrina rebuilding assignment) is
+    about the job the cast does, not a real-time production
+    disruption to their own shoot — off-angle, correctly excluded.
+    **Flag:** this angle (and `the-schedule-didnt-ask-permission`) is
+    now confirmed comprehensive across the full catalog; don't
+    re-run this grep set without new seeded seasons.
+  - Pivoted to extend-first on Chopped specifically, since its
+    single-show calendar-overlap list
+    (`no-season-here-got-the-calendar-to-itself`, 13 entries) covers
+    seasons 42, 37, 22, 24, 48, 49, 20, 19, 58, 57, 56, 60, 62 but the
+    six season files that sit *between* its already-claimed 17-26
+    "batch" era (S17, S18, S21, S23, S25, S26) turned out to be
+    entirely about this exact scheduling-overlap angle in their own
+    lede/pull/body text and were never pulled into the list. Verified
+    each against `content/shows/chopped/seasons/{17,18,21,23,25,
+    26}-*.md` directly, then grepped the full `content/themes/*.md`
+    ledger for `chopped` season numbers 17/18/21/23/25/26 — zero
+    prior appearances anywhere, confirmed clean.
+  - Shipped: inserted all six at their editorially-correct tangle-
+    depth rank rather than appending — S25/S26 (each entirely nested
+    inside S24, the batch's tightest single-season containment) land
+    at ranks 5-6, ahead of the existing S48/S49 (now 7-8); S23 (a
+    real but shallower two-neighbor tangle) lands at rank 9, ahead of
+    S20 (now 10); S21 (a deep single-season overlap, explicitly
+    closer to S19's nest than S17's tail per its own body text) lands
+    at rank 11, just above S19 (now 12); S18 and S17 (the mildest,
+    shallowest tail-only tangles) land at 17-18, just above the
+    already-alone S62 (now 19). Existing 13 entries' rank numbers
+    shifted to absorb the six new slots; no entry's underlying text
+    changed, only rank order. List now runs 19 entries (single-show,
+    no cross-canon floor applies). `last_revised` bumped (real
+    content change) — this is category:single, so the ≥3-shows floor
+    and ≤3-entries-per-show cap don't apply (all 19 entries are
+    Chopped by design).
+  - **Assessment:** extend-first now stands at 6-for-7 (12, 14, 16,
+    17, 19, 20 shipped; 15 zero-shipped). This pass also confirms a
+    new sub-heuristic worth flagging: a single-show list built around
+    a show's own release-calendar mechanics (rather than a cross-show
+    craft/tone angle) can still have unclaimed seasons sitting
+    *between* its existing entries even after 13 entries — worth
+    re-checking other single-show "structural/scheduling" lists
+    (e.g. `running-long-running-short`, `the-episode-order-never-
+    found-its-ceiling`) the same way in a future tick before assuming
+    they're comprehensive just because they're long.
 
 ## Notes
 
