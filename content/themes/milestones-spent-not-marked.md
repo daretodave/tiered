@@ -12,6 +12,7 @@ featured: false
 related:
   - best-comeback-seasons
   - closing-statement
+  - the-other-side-of-the-table
 entries:
   - show: big-brother
     season: 25
@@ -103,22 +104,34 @@ entries:
     rank: 15
     title: "Alumni callbacks and retrospective packages carry the milestone more than the competition does."
     blurb: "The twentieth season leans on returning faces and look-back segments to sell the occasion, while the judging panel runs its established rhythm with nothing structurally new underneath it."
+  - show: shark-tank
+    season: 10
+    season_label: "S10"
+    rank: 16
+    title: "A 200th-episode victory lap keeps the tank's own format untouched."
+    blurb: "The tenth-anniversary premiere doubles as the show's 200th overall episode, and a guest-shark rotation marks the occasion — including a former pitcher back to judge instead of pitch. The classic six and the pitch format itself don't move an inch."
   - show: naked-and-afraid
     season: 10
     season_label: "S10 · The Decade Mark"
-    rank: 16
+    rank: 17
     title: "A stripped-down format has nowhere to hide a milestone that doesn't actually change anything."
     blurb: "Season ten lands on the round number mid-transition from an earlier casting shift, and the show doesn't pretend the occasion resolved anything — just two people, 21 days, same as always."
   - show: masked-singer
     season: 10
     season_label: "S10 · The Milestone"
-    rank: 17
+    rank: 18
     title: "The tenth season's whole argument is that the format didn't need to change for the occasion."
     blurb: "Same panel, same costume conceit, same structure that worked at the debut — reaching double digits without an overhaul is the point here, not a workaround for skipping one."
+  - show: project-runway
+    season: 10
+    season_label: "S10 · New York"
+    rank: 19
+    title: "Ten cycles in, the workroom doesn't even pause to mark the number."
+    blurb: "The tenth-season milestone arrives with the same sixteen-designer format, the same Parsons workroom, and a judges' table that no longer needs an introduction. Nearly two hundred episodes deep, the show takes stock of its own run without slowing down to celebrate it."
   - show: dancing-with-the-stars
     season: 20
     season_label: "S20 · The Milestone"
-    rank: 18
+    rank: 20
     title: "The promotional campaign is the only place the milestone actually shows up."
     blurb: "ABC leans hard into the twentieth-season marketing, but the season itself runs ten standard episodes with the usual pairing structure — the anniversary changed the graphics, not the format."
 ---

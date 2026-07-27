@@ -66,7 +66,7 @@ last time a curator actually looked.
 | the-shifting-yardstick | single | 2026-07-18 | 2026-07-18 | |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
-| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Top Chef S20, Below Deck S10, Drag Race S15 entries) |
+| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Shark Tank S10, Project Runway S10 entries) |
 | same-crown-new-price-tag | structure | 2026-07-18 | 2026-07-18 | |
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
@@ -932,6 +932,78 @@ last time a curator actually looked.
   strengthens the standing recommendation that a targeted grep
   cross-check against ledger lists should be the default first move
   each Rule 3 tick.
+- 2026-07-27 seventeenth pass: **shipped** — extend-first again, this
+  time steered away from family-relation grep (pass 16's exact
+  method) toward a "generational/age-divide casting premise" grep
+  first, then a "milestone season not yet in `milestones-spent-not-
+  marked`" grep second, per the brief's instruction to pick a
+  different angle.
+  - Generational-divide lead (`millennials|gen x|generations|battle
+    of the (ages|eras)` across season files) surfaced Survivor S33
+    "Millennials vs. Gen X" and The Challenge S40 "Battle of the
+    Eras" as candidates for `when-age-became-the-casting-brief` —
+    **rejected on preemption**: Survivor S33 is already the exact
+    same generational-split fact in `the-dividing-line-was-drawn-
+    before-day-one` (rank 6, single-show), and The Challenge S40 is
+    already spent 6+ times over (`best-comeback-seasons`,
+    `milestones-spent-not-marked`, `best-hosting`,
+    `one-rule-fills-every-seat`, `the-finale-broke-its-own-rulebook`,
+    `the-elimination-round-never-keeps-its-name`, `never-starts-
+    cold`) with the identical era-split framing. No fresh room.
+  - Also scoped a "family-legacy/prestige lead casting" angle
+    (Bachelor S03 Andrew Firestone "first family-legacy lead," S09
+    Lorenzo Borghese "princely lineage") — rejected: only 2 confirmed
+    hits after a broad grep for heir/dynasty/socialite/aristocrat
+    language returned 150 mostly-false-positive files; can't clear a
+    cross-show floor and Bachelor alone doesn't reach a fresh
+    single-show list without a scout pass.
+  - Pivoted to re-grepping `anniversary|milestone` across every
+    season file and cross-checking hits against `milestones-spent-
+    not-marked`'s existing 18 entries (16 shows). Two genuinely
+    unclaimed round-number-milestone seasons survived the check:
+    Shark Tank S10 (10th-anniversary premiere doubling as the show's
+    200th overall episode, guest sharks marking the occasion, the
+    classic-six panel and pitch format otherwise untouched — the
+    same season's "former contestant judges" fact is already used
+    once in `the-other-side-of-the-table`, but for a distinct
+    specific claim, not this list's round-number throughline) and
+    Project Runway S10 (`format_changes: []` in the season's own
+    frontmatter — a completely unclaimed season anywhere in the
+    203-list ledger, explicitly the steadiest "milestone that
+    changed nothing" case in the catalog). Verified both against the
+    show's own season file text before writing, and confirmed neither
+    fact requires naming a winner (both are format/production-level
+    observations, clean of the pass-13 spoiler disqualifier).
+  - Also checked and rejected three more milestone-adjacent
+    candidates on inspection: The Real World S20 "Sydney" (a genuine
+    geographic first, not a round-number-anniversary framing — off
+    angle for this list), So You Think You Can Dance S10 "The
+    Extended Run" (about a run-length record, not an anniversary
+    occasion), and The Challenge S30 "XXX: Dirty 30" (a real,
+    strong-looking 30th-season milestone with heavy structural
+    rebuild, but already spent 4 times over — `best-reunion-
+    specials`, `the-elimination-round-never-keeps-its-name`,
+    `a-second-life-built-into-the-format`, plus others — passed on
+    adding a 5th appearance to avoid over-mining one season when two
+    completely fresh seasons were available instead).
+  - Shipped: both new entries inserted at ranks 16 (Shark Tank S10)
+    and 19 (Project Runway S10) in the "changed nothing" back half
+    of the list, alongside Naked and Afraid S10, Masked Singer S10,
+    and Dancing with the Stars S20 (renumbered rank 17, 18, 20
+    respectively). List now runs 20 entries across 18 shows.
+    `last_revised` bumped (real content change); added
+    `the-other-side-of-the-table` as a third `related` cross-link
+    given the Shark Tank S10 overlap.
+  - **Assessment:** extend-first now stands at 4-for-5 (12, 14, 16,
+    17 shipped; 15 zero-shipped) against a blind new-concept search's
+    historical ~1-in-13 rate. The generational-divide angle is now
+    fully closed (flag for future passes: don't re-derive it —
+    Survivor S33 and Challenge S40 are both preempted). The specific
+    "grep milestone|anniversary against milestones-spent-not-marked"
+    lead is likely now much thinner after this pass — a future tick
+    revisiting this list should check for genuinely new round-number
+    seasons added to the catalog rather than re-running this exact
+    grep against the same 68 shows.
 
 ## Notes
 
