@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-27
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -56,57 +56,69 @@ entries:
     title: "Teams split by discipline instead of gender for the first time in a decade."
     blurb: "Stage and Street squads replace the usual men-versus-women format, each mentored by a different choreographer, while a mid-season special marks the show's tenth year on air."
   - show: so-you-think-you-can-dance
+    season: 3
+    season_label: "S03"
+    rank: 8
+    title: "A two-judge panel goes permanent, and fixed partnerships stop mid-season."
+    blurb: "Nigel Lythgoe and Mary Murphy settle into a permanent two-seat panel with a rotating guest completing the table, a structure the franchise keeps for years. Hat-drawn pairs from auditions dissolve at the Top 10, and dancers start drawing a new partner every week from there."
+  - show: so-you-think-you-can-dance
     season: 11
     season_label: "S11"
-    rank: 8
+    rank: 9
     title: "Phone voting disappears, and the ballot moves entirely online."
     blurb: "Interactive telephone voting is dropped for good, with the show's website and a dedicated app taking over as the only way to vote. Callbacks relocate from Las Vegas to Los Angeles the same season."
   - show: so-you-think-you-can-dance
     season: 16
     season_label: "S16"
-    rank: 9
+    rank: 10
     title: "A custom-built studio wires 120 cameras into the audition round."
     blurb: "A purpose-built set nicknamed SYTYCD Hollywood debuts with a bullet-time camera rig, and televised auditions welcome a live studio audience for the first time in the show's run."
   - show: so-you-think-you-can-dance
     season: 2
     season_label: "S02"
-    rank: 10
+    rank: 11
     title: "A Vegas training camp becomes the callback structure every later season copies."
     blurb: "A new host and a six-judge rotating panel arrive alongside a 116-dancer callback week at a Las Vegas hotel — the template the franchise leans on for years after. The audition machine finds its permanent shape here."
   - show: so-you-think-you-can-dance
     season: 14
     season_label: "S14"
-    rank: 11
+    rank: 12
     title: "The adult competition returns, and former finalists move from partners to judges."
     blurb: "After a season built entirely around kid dancers, the Top 10 format comes back for adults, with ten All-Stars now judging and mentoring instead of dancing alongside the finalists."
   - show: so-you-think-you-can-dance
     season: 8
     season_label: "S08"
-    rank: 12
+    rank: 13
     title: "The field returns to twenty, and fans can vote online instead of just by phone."
     blurb: "A reduced eleven-dancer season gives way to the classic twenty again, and the All-Stars mechanic narrows to a late-round fixture. Text and online voting open for the first time alongside the phone lines."
   - show: so-you-think-you-can-dance
     season: 10
     season_label: "S10"
-    rank: 13
+    rank: 14
     title: "The competition runs past nine weeks for the first time in the show's history."
     blurb: "Eleven competitive weeks make this the longest live-show stretch the format had attempted, with the single-broadcast structure from the year before holding steady throughout."
   - show: so-you-think-you-can-dance
     season: 6
     season_label: "S06"
-    rank: 14
+    rank: 15
     title: "The only season the show ever airs in the fall instead of summer."
     blurb: "A September-to-December broadcast window replaces the usual summer run, an experiment the format reverts the very next year. World Series coverage even bumps two results episodes off the air entirely."
   - show: so-you-think-you-can-dance
+    season: 15
+    season_label: "S15"
+    rank: 16
+    title: "A fourth chair joins the panel, and a mid-season cut tightens the field early."
+    blurb: "Stephen 'tWitch' Boss expands the judging table to four alongside three returning voices, the format's first four-judge stretch in years. A trim before the live shows narrows the field further, in what the season itself frames as structural tuning rather than reinvention."
+  - show: so-you-think-you-can-dance
     season: 4
     season_label: "S04"
-    rank: 15
+    rank: 17
     title: "The audition tour skips New York for the first time in the show's run."
     blurb: "Six cities replace the usual stop lineup, and a guest judge steps back from the panel over a conflict of interest with a competing dancer. A quieter season, mostly noted for what changes at the margins."
   - show: so-you-think-you-can-dance
     season: 1
     season_label: "S01"
-    rank: 16
+    rank: 18
     title: "The open-call format every later season measures its rewrites against."
     blurb: "No celebrities, no professional partners — just open auditions in three cities and a live public vote deciding who stays. Every structural swing this format has tried since starts from the rulebook this season writes."
 ---
