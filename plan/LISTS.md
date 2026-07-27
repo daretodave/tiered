@@ -101,7 +101,7 @@ last time a curator actually looked.
 | the-vote-left-the-phone-line | era | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S11 entry) |
 | never-starts-cold | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Jersey Shore S01, Below Deck Mediterranean S03 entries) |
 | the-couch-kept-adding-chairs | craft | 2026-07-20 | 2026-07-20 | |
-| the-team-never-means-the-same-thing-twice | single | 2026-07-20 | 2026-07-20 | |
+| the-team-never-means-the-same-thing-twice | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Ink Master S17 — drops teams entirely after a decade of team experiments, bookends S01's pre-team baseline) |
 | the-format-learned-to-travel | single | 2026-07-20 | 2026-07-20 | |
 | the-slow-build-was-the-point | tone | 2026-07-20 | 2026-07-20 | |
 | no-template-to-copy | era | 2026-07-20 | 2026-07-20 | |

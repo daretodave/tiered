@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-07-27
 featured: false
 related:
   - when-the-basket-became-a-bracket
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "No teams, no captains — just sixteen artists on their own"
     blurb: "Before any of the format's team experiments, the debut runs entirely on individual scoring: one artist, one client, one outcome. Every later swing at the team question is really a departure from this starting point."
+  - show: ink-master
+    season: 17
+    season_label: "S17 · Hometown Heroes"
+    rank: 12
+    title: "A decade of team experiments ends with the format dropping teams for good"
+    blurb: "Fifteen artists carry a home region into every challenge, but the season runs entirely on individual scoring — no shop, no mentor, no drafted roster. After testing shop wars, mentor pairs, and gender splits, the format's final answer to the team question is simply no."
 ---
