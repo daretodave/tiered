@@ -834,6 +834,78 @@ last time a curator actually looked.
     for missing obvious entries" the default first move each Rule 3
     tick, ahead of any new-concept search, rather than a coin-flip
     choice.
+- 2026-07-27 fifteenth pass, cloud `/march` tick: zero-ship. Followed
+  the extend-first precedent (pass 12/14) and ran the specific lead
+  handed off: checked the six earliest-authored (2026-05-21/22)
+  theme files — `best-premieres`, `firsts`, `best-returnees`,
+  `best-villain-editing`, `best-post-merge`, `best-reunion-specials`
+  — against the six shows whose content-curator scaffold+drain
+  postdates them (americas-next-top-model, the-apprentice, queer-eye,
+  selling-sunset, jersey-shore, chopped). Read every candidate show's
+  `canon.md` + season files in full, found several plausible-looking
+  matches, then cross-grepped every existing `content/themes/*.md`
+  for the same show+season pair before writing anything — that check
+  killed every lead:
+  - The Apprentice S13 ("The All-Stars Cycle," all-returning
+    celebrity cast) — strong-looking `best-returnees` candidate on
+    its own text ("a sharper read on strategy than any fresh cast
+    could bring") — **preempted**: `the-format-answered-to-a-
+    different-name` rank 4 already ships this exact season with
+    near-identical framing ("the only cast in the show's run built
+    entirely from returning players... a genuine structural first").
+    Same underlying fact, same emphasis — not a distinct facet.
+  - Chopped S1 — looked strong for `firsts` ("a format so complete
+    on day one... barely had to touch it since") — **preempted**:
+    the identical fact is already `best-challenge-design`'s Chopped
+    S1 entry, verbatim in spirit ("arrives fully formed in episode
+    one and barely changes for the rest of the show's run"). Chopped
+    S1 is already spent four times over (also in
+    `the-countdown-doesnt-negotiate`, `not-knowing-was-the-point`,
+    `the-goodbye-became-part-of-the-format`) — no unclaimed facet
+    left for a fifth list.
+  - Queer Eye S1 (Georgia) — looked strong for `firsts` (founding
+    season, format arrives fully confident) — **preempted**:
+    `the-format-never-blinked` rank 1 already ships this identical
+    observation verbatim ("the founding format arrives with nothing
+    yet to react against").
+  - ANTM Cycle 17 ("The All Stars," all-returnee cast) — the
+    obvious `best-returnees` candidate by structure — **disqualified
+    by the season's own text**, not preemption: both the canon entry
+    and the season file explicitly frame it as failing the exact
+    bar `best-returnees` sets ("an entertaining novelty that
+    functions more as a reunion special than a genuine competition,"
+    "less meaningful as a competition"). The list's angle requires
+    the returnee format to have paid off; ANTM's own editorial
+    voice says this one didn't.
+  - Selling Sunset's reunion-special history (introduced S5, skipped
+    S8, restored S9) — considered for `best-reunion-specials` —
+    too thin a fit: the show's own text frames the reunion only as
+    a structural presence/absence (a format hook that exists or
+    doesn't), never as a craft judgment on any specific reunion's
+    execution (host handling, altitude, whether it read the season
+    back). `best-reunion-specials`'s angle is specifically about
+    the hour's craft, not the format's history of having one.
+  - Checked `best-post-merge`/`best-villain-editing` against all six
+    shows on principle — no groundable candidates. None of these six
+    formats has a vote-based antagonist arc (Chopped, Queer Eye,
+    Selling Sunset, Jersey Shore aren't elimination-by-jury formats;
+    The Apprentice's boardroom firing isn't edited as a "villain"
+    narrative in any season file) or a late-game compression stretch
+    comparable to Survivor's merge / Big Brother's jury phase / Top
+    Chef's closing run (grepped ANTM's late cycles for a comparable
+    "finale stretch" beat — the one hit, Cycle 6, is a location/
+    judging-panel note, not a compression-and-pressure narrative).
+  - **Assessment:** this pass confirms the extend-first method's
+    hit rate isn't unconditional — the specific six-show/six-list
+    lead handed off this tick, while well-targeted on paper, turned
+    out to already be fully harvested by the ledger's existing 203
+    lists (each of these six shows already carries 7-21 theme-list
+    appearances). The extend-first approach remains sound in
+    principle (2-for-4 now, still well ahead of blind search); this
+    particular lead is exhausted — a future tick chasing the same
+    "list predates a show's drain" heuristic should pick a
+    different show/list pairing, or re-verify via grep first before
+    drafting, the way this pass did.
 
 ## Notes
 
