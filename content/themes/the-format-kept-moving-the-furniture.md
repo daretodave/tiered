@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-07-27
 featured: false
 related:
   - the-lead-was-already-in-the-building
@@ -109,15 +109,33 @@ entries:
     title: "A significantly bigger cast, everything else running by the book"
     blurb: "Thirty-one men is a real jump from the standard twenty-five, but the mansion, the eleven-episode length, and the travelogue back-half all stay right where the format expects them. The season's weight is in the casting, not the structure."
   - show: bachelorette
+    season: 14
+    season_label: "S14"
+    rank: 17
+    title: "A modest cast bump, the rest of the format holding its shape"
+    blurb: "Twenty-eight men is a smaller reach past the standard twenty-five than the season before it, but the mansion, the eleven-episode length, and the international travelogue all land exactly where the format expects. A gentler version of the same casting-only deviation."
+  - show: bachelorette
     season: 6
     season_label: "S06"
-    rank: 17
+    rank: 18
     title: "The season the standard format actually locks into place"
     blurb: "Twenty-five men, eleven episodes, the Agoura Hills mansion, and a four-country travel run — every piece the format would repeat for the next decade shows up here at once, fully assembled."
   - show: bachelorette
+    season: 10
+    season_label: "S10"
+    rank: 19
+    title: "A second clean-format season closes out the show's first era"
+    blurb: "Twenty-five men, eleven episodes, the mansion, and an international run — the format runs exactly to spec while the season itself closes the book on the franchise's first ten leads. Structurally, nothing here strays from the template."
+  - show: bachelorette
+    season: 9
+    season_label: "S09"
+    rank: 20
+    title: "A quieter cast, the format running exactly to spec"
+    blurb: "Twenty-five men, eleven episodes, back at the mansion, four stops abroad — every format piece lands where the standard expects. The season's only real departure is tone: a softer, less wattage-driven cast than the runs around it."
+  - show: bachelorette
     season: 12
     season_label: "S12"
-    rank: 18
+    rank: 21
     title: "By the book in every way the format allows"
     blurb: "Standard cast size, standard episode count, the mansion, the travelogue — a decade into the format's run, this season runs the template with no deviation to point to at all. The clean control case for this whole list."
 ---

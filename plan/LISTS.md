@@ -51,7 +51,7 @@ last time a curator actually looked.
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
-| rulebook-rewritten-every-season | single | 2026-07-17 | 2026-07-17 | |
+| rulebook-rewritten-every-season | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S3, S15 entries — tagline claimed eighteen seasons, only 16 were filed); ledger row missed at filing time, backfilled this tick |
 | a-way-back-in | craft | 2026-07-17 | 2026-07-17 | |
 | new-flags-planted-fast | craft | 2026-07-17 | 2026-07-17 | |
 | built-for-the-drop | craft | 2026-07-17 | 2026-07-17 | |
@@ -144,7 +144,7 @@ last time a curator actually looked.
 | the-map-outlasted-the-cast | single | 2026-07-22 | 2026-07-22 | |
 | seven-ways-to-break-the-same-app | single | 2026-07-22 | 2026-07-22 | |
 | the-lead-was-already-in-the-building | single | 2026-07-22 | 2026-07-22 | |
-| the-format-kept-moving-the-furniture | single | 2026-07-22 | 2026-07-22 | |
+| the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
 | running-on-muscle-memory | tone | 2026-07-23 | 2026-07-23 | |
@@ -1232,6 +1232,59 @@ last time a curator actually looked.
     admits` gap 4) that weren't individually vetted this pass for
     whether the gap is a curated omission or a genuine unclaimed
     season — flag for a future extend-first pass.
+- 2026-07-27 twenty-second pass (unlogged at ship time, backfilled
+  here): `rulebook-rewritten-every-season` (So You Think You Can
+  Dance) shipped — same-day content commit `604a39a2` added S3 and
+  S15, closing the same tagline/entry-count mismatch class as the
+  eighteenth-pass find (tagline said "eighteen seasons," only 16
+  were filed). That commit also re-vetted the three flagged
+  candidates from the twenty-first pass (`the-shifting-yardstick`,
+  `every-season-split-the-room-differently`,
+  `the-tent-moved-more-than-the-show-admits`) and confirmed all
+  three correctly exclude their apparent gaps — no edit needed.
+  The ledger row for this list was never bumped at ship time; this
+  pass backfills it (see the row above).
+- 2026-07-27 twenty-third pass (`/march` cloud tick): **shipped**
+  — no Rule 2 pick available (season-gap table unchanged since the
+  2026-07-26 sweep, every slot starred confirmed-but-unaired), so
+  ran the extend-first heuristic against the full scripted
+  single-show scan from the twenty-first pass. Widened the check:
+  computed entries-vs-filed-seasons gap for every `category: single`
+  list catalog-wide, sorted by gap size, and read past the large
+  gaps (obviously curated superlative lists, e.g. `survivor-pillars`
+  gap 46 with only 4 entries by design) down to the small-gap tier
+  where the earlier hits (SYTYCD, Love Island UK, Chopped) actually
+  lived.
+  - `the-format-kept-moving-the-furniture` (Bachelorette, ranked by
+    format departure from the standard template) stood out: gap 3,
+    and its own tagline explicitly reads "This ranks all twenty-one
+    seasons" — Bachelorette has 21 filed seasons but the list only
+    carried 18 entries, the exact tagline/entry-count mismatch class
+    that paid off on `rulebook-rewritten-every-season`. Grepped every
+    theme file for `show: bachelorette` + season 9/10/14 — zero
+    prior appearances anywhere in the 172-list ledger, confirmed
+    clean.
+  - Read all three missing seasons' own files
+    (`content/shows/bachelorette/seasons/{09-desiree-hartsock,
+    10-andi-dorfman,14-becca-kufrin}.md`): all three are format-clean
+    by the list's own criterion (Agoura Hills mansion, ~11 episodes,
+    international travel), S14's 28-man cast a mild bump over the
+    25-man standard (milder than S13's already-ranked 31-man jump),
+    S9 and S10 fully standard on every format axis.
+  - Shipped: inserted S14 at rank 17 (between S13's 31-man deviation
+    and S6's clean lock-in), S6 shifted 17→18, then inserted S10 at
+    19 (era-closing but structurally clean) and S9 at 20 (quieter
+    cast, tonally softer but format-clean), shifting S12 — explicitly
+    billed in its own blurb as "the clean control case for this whole
+    list" — to the new dead-last rank 21. List now runs 21 entries,
+    matching the tagline's own claim exactly for the first time.
+    `last_revised` bumped (real content change).
+  - **Assessment:** extend-first now stands at 8-for-9 across the
+    logged passes (12, 14, 16, 17, 19, 20, 22, 23 shipped; 15
+    zero-shipped). The scripted single-show gap scan is proving to
+    be the most reliable source of genuine finds this week — worth
+    keeping as the default first move on a Rule-2-blocked tick before
+    inventing a new concept from scratch.
 
 ## Notes
 
