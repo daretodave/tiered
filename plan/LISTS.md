@@ -737,6 +737,61 @@ last time a curator actually looked.
   the extend-vs-invent question pass 10/11 raised as a process
   decision for a future tick — this tick made the call rather than
   deferring it again.
+- 2026-07-27 thirteenth pass, cloud `/march` tick: zero-ship. Ran a
+  fresh `scout`-assisted research pass (the method pass 8/11/12
+  validated), explicitly briefed on every domain the twelve prior
+  passes had already ruled out, hunting a wholly new angle rather
+  than another extend candidate.
+  - **Post-show entrepreneurial outcomes** ("Second Acts" — real-
+    world business ventures contestants built after their season,
+    e.g. Christian Siriano's label after Project Runway S4, Ring's
+    $1B Amazon sale after a Shark Tank pass, Scrub Daddy's $1.3B
+    lifetime sales after Lori Greiner's investment, Stephanie
+    Izard's Girl & the Goat after Top Chef S4, Nadiya Hussain's
+    post-Bake-Off-S6 career, Trixie Mattel's cosmetics/motel
+    business after Drag Race All Stars S3) — scout's strongest
+    lead, 9 well-sourced entries across 7 shows, comfortably
+    clearing the entry floor on raw facts and genuinely distinct
+    from the already-shipped alumni-authority angle (business
+    outcomes, not a TV-industry return). **Rejected outright, not
+    on thinness but on a hard spoiler-discipline violation**: every
+    single entry's grounding fact is "X won this season" — the
+    entrant's post-show business only exists in most cases because
+    they won, so the list cannot be written without stating the
+    season's winner for all 9 entries. `agents.md` §7 defines
+    winners as a P0 spoiler with no real-world-fame carve-out — the
+    identical precedent CRITIQUE pass-98 already established for
+    Selling Sunset's Christine Quinn entry ("regardless of how
+    widely the real-world departure was covered in entertainment
+    press outside the show"). This is a categorical, durable
+    rejection: **any Rule 3 angle whose entries require naming a
+    season's winner as the grounding fact is disqualified before
+    grounding/thinness even matters** — flag this so no future pass
+    re-derives "post-show achievements," "where winners are now," or
+    similar angles expecting the spoiler question to be a per-entry
+    judgment call.
+  - Judging-panel demographic firsts — rejected: overlaps the
+    already-ruled-out barrier-breaking-castings bucket; thin once
+    Drag Race (where it's not a "first" by design) is excluded.
+  - Format elements borrowed from other genres (party games →
+    Traitors/Big Brother, Endemol social-experiment origins) —
+    rejected: only 5-6 groundable entries, short of the floor, and
+    origin-story sourcing skews to secondary/wiki rather than
+    primary sources.
+  - Filming-permit/union agreements (Below Deck maritime charter
+    law, Alone/Naked and Afraid wilderness permits) — rejected:
+    plausible domains but sourcing is trade-press-thin, risked not
+    clearing the citation bar.
+  - **Assessment:** the scout-assisted method keeps surfacing real,
+    well-sourced leads (this is the third scout pass in a row to
+    find something with genuine factual depth) but each has now
+    resolved to either total preemption (pass 11) or a categorical
+    spoiler-discipline block (this pass) rather than a shippable
+    concept. Standing recommendation unchanged from pass 7/9/11: a
+    future `/expand` or oversight tick should decide between biasing
+    Rule 3 toward extending existing lists (the option that broke
+    the streak at pass 12) or accepting a lower per-tick hit rate as
+    the 172-list steady state.
 
 ## Notes
 
