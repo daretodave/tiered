@@ -159,7 +159,7 @@ last time a curator actually looked.
 | the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
 | the-season-everyone-got-their-audience-back | era | 2026-07-23 | 2026-07-23 | |
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
-| the-fire-pit-never-moved | single | 2026-07-23 | 2026-07-23 | |
+| the-fire-pit-never-moved | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Love Island UK S12 entry) |
 | the-roster-never-held-still | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-five-kept-getting-replaced | single | 2026-07-23 | 2026-07-23 | |
 | the-masks-changed-every-week-the-panel-never-did | single | 2026-07-23 | 2026-07-23 | |
@@ -1183,6 +1183,55 @@ last time a curator actually looked.
     (e.g. `running-long-running-short`, `the-episode-order-never-
     found-its-ceiling`) the same way in a future tick before assuming
     they're comprehensive just because they're long.
+- 2026-07-27 twenty-first pass (`/march` cloud tick): **shipped** —
+  no Rule 2 pick available (season-gap table unchanged at 36 shows /
+  37 gap-slots, every slot starred confirmed-but-unaired), so ran the
+  twentieth pass's flagged lead directly: checked the two named
+  single-show "structural/scheduling" lists for unclaimed seasons
+  sitting inside their own show's already-filed run.
+  - `the-episode-order-never-found-its-ceiling` (Married at First
+    Sight Australia): all 13 filed/declared seasons already ranked
+    1-13 — fully comprehensive, no gap to extend.
+  - `running-long-running-short` is cross-show (`category: craft`,
+    12 entries across 8 shows), not single-show — the flagged
+    single-show heuristic doesn't apply to it; not touched this pass.
+  - Widened the check to every `category: single` list against its
+    own show's filed-season count via a direct script comparison
+    (entries vs. `content/shows/<slug>/seasons/*.md` file count).
+    Most gaps found are curated superlative lists (not meant to be
+    exhaustive per-season rankings) rather than genuine content
+    gaps — skipped those. `the-fire-pit-never-moved` (Love Island
+    UK, ranked by how much new format machinery each series added)
+    stood out: 11 of 12 filed seasons covered, missing only the
+    newest, Series 12 (Summer 2025) — confirmed via direct grep that
+    this season has never appeared in any list anywhere in the
+    172-theme ledger. Read the season's own file
+    (`content/shows/love-island-uk/seasons/12-summer-2025.md`): its
+    own lede/pull explicitly frame it as "the format's boldest
+    single-summer overhaul" — a blind launch coupling replacing the
+    live line-up, the hideaway opening continuously instead of
+    occasionally, and cameras rolling through mealtimes for the
+    first time, three new mechanics landing at once rather than
+    staggered across years.
+  - Shipped: inserted at rank 2 (just below S3's Casa Amor debut,
+    ahead of S6's continent-and-host reset) — three simultaneous new
+    mechanics reads as more total "new machinery" added in one
+    series than S6 or S9's single format resets, per the list's own
+    ranking criterion. Existing ranks 2-11 shifted to 3-12; no
+    entry's underlying text changed, only rank order. List now runs
+    12 entries (single-show, no cross-canon floor applies).
+    `last_revised` bumped (real content change).
+  - **Assessment:** the twentieth pass's flagged heuristic (unclaimed
+    seasons hiding inside single-show lists that look comprehensive)
+    paid off again on the second list tried. Worth a systematic
+    single-show sweep on a future tick — this pass only checked two
+    named lists plus a scripted full-ledger scan; the scripted scan
+    surfaced several more single-show lists with real entry/season
+    gaps (`the-shifting-yardstick` gap 3, `every-season-split-the-
+    room-differently` gap 3, `the-tent-moved-more-than-the-show-
+    admits` gap 4) that weren't individually vetted this pass for
+    whether the gap is a curated omission or a genuine unclaimed
+    season — flag for a future extend-first pass.
 
 ## Notes
 
