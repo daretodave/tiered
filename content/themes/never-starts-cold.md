@@ -7,7 +7,7 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-07-27
 featured: false
 related:
   - best-premieres
@@ -91,4 +91,16 @@ entries:
     rank: 13
     title: "An athletic cast erases the format's usual early-episode gap"
     blurb: "Season twelve's casting leans hard into athletic backgrounds, and the result is a competitive field with no visibly weak early episode. The choreography in the back-half reflects real physical credentials the cast walked in with."
+  - show: jersey-shore
+    season: 1
+    season_label: "S01"
+    rank: 14
+    title: "Eight strangers turn a shore house into a hit by the first episode"
+    blurb: "The gym-tanning-laundry rhythm and the ensemble's confrontational chemistry both land immediately. It's a founding season that never has to explain its own premise or build toward anything — it just delivers from the jump."
+  - show: below-deck-mediterranean
+    season: 3
+    season_label: "S03 · Barcelona"
+    rank: 15
+    title: "A new captain lands and the crew's chemistry never cools all season"
+    blurb: "João Franco's lone season at the helm pushes the crew dynamic into more confrontational territory early, and the Barcelona-to-Malta run never settles into a quiet stretch before the season's out."
 ---
