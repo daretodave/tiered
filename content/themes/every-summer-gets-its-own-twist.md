@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-07-27
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -80,57 +80,81 @@ entries:
     title: "Sixteen houseguests move in already paired for life"
     blurb: "The only winter-slotted season builds its entire structure around 'Til Death Do You Part couples, constraining the game more than it ever opens it up. A twist that shows what happens when pairing becomes the whole premise."
   - show: big-brother
+    season: 6
+    season_label: "S06"
+    rank: 12
+    title: "Every houseguest walks in already secretly paired with someone else in the cast"
+    blurb: "Summer of Secrets pairs every houseguest with a hidden partner from the same cast, and the alliance math locks in before the first competition even airs. It's the shape S9's couples twist would later run at full scale, minus the marriage stakes."
+  - show: big-brother
     season: 5
     season_label: "S05"
-    rank: 12
+    rank: 13
     title: "One cast slot is secretly two people, and nobody in the house knows"
     blurb: "Project DNA hides a pair of identical twins swapping in and out under a single identity across the season's opening weeks. The strangest structural gamble the franchise has ever tried, and it never ran the experiment again."
   - show: big-brother
+    season: 18
+    season_label: "S18"
+    rank: 14
+    title: "A weekly secret power adds a third nominator, and an evicted houseguest gets a way back in"
+    blurb: "Roadkill hands its winner the power to add a third nominee to the block, undoing whatever plan the Head of Household just built. Battle Back then gives one evicted houseguest a competition-based route back into the game, stacking two structural twists into a single summer."
+  - show: big-brother
     season: 20
     season_label: "S20"
-    rank: 13
+    rank: 15
     title: "A weekly competition exists purely to undo the Head of Household's plan"
     blurb: "The Hacker comp hands its winner the power to swap out an HoH's nominee, an authority sitting right next to the season's actual seat of power. The alliance lines that harden around it become the summer's real story."
   - show: big-brother
     season: 15
     season_label: "S15"
-    rank: 14
+    rank: 16
     title: "The public gets a third nomination slot, every single week"
     blurb: "The MVP twist hands viewers a standing vote inside the house's own nomination process, tightening the game on paper. What the mechanic actually did to the season's texture became its own piece of franchise history."
   - show: big-brother
     season: 1
     season_label: "S01"
-    rank: 15
+    rank: 17
     title: "The format the franchise tried once, then walked away from for good"
     blurb: "Before houseguests ever got a vote, the audience alone decided every eviction — the European model, ported over almost untouched. The house-vote pivot one year later makes this the twist Big Brother never brought back."
   - show: big-brother
     season: 8
     season_label: "S08"
-    rank: 16
+    rank: 18
     title: "One houseguest quietly works for an audience the rest of the house can't see"
     blurb: "America's Player hands the public a secret weekly mission to assign one competitor, layered on top of a cast built from existing grudges and relationships. Two twists stacked on a single summer, each pulling its own direction."
   - show: big-brother
+    season: 12
+    season_label: "S12"
+    rank: 19
+    title: "A public vote installs one houseguest as a covert saboteur working against the house from inside"
+    blurb: "The Saboteur twist lets viewers vote a houseguest into a secret role built to work the house's alliances from the inside, the same public-vote-directed shape America's Player ran seasons earlier. The Brigade alliance forming alongside it becomes the season's real story."
+  - show: big-brother
     season: 17
     season_label: "S17"
-    rank: 17
+    rank: 20
     title: "A rotating cast of guests gets handed the keys to the twist machine"
     blurb: "BB Takeover lets a different celebrity guest install a new mechanic into the game every week, pulling the season's pacing in as many directions as there are guests. An experiment the franchise tried once and quietly retired."
   - show: big-brother
     season: 25
     season_label: "S25"
-    rank: 18
+    rank: 21
     title: "A new universe rewrites the rules of the house, every single week"
     blurb: "The 25th-anniversary season's Multiverse twist drops a fresh power or curse on the house weekly, stretched across the longest run the franchise has ever produced. Ambition measured in both mechanics and sheer runway."
   - show: big-brother
     season: 22
     season_label: "S22"
-    rank: 19
+    rank: 22
     title: "Sixteen returning legends walk in, and the producers mostly get out of the way"
     blurb: "The second all-star cast runs twist-light by design, with a single Safety Suite wrinkle standing in for the usual mechanical stack. The bet here is that accumulated history does more work than any gimmick could."
   - show: big-brother
     season: 11
     season_label: "S11"
-    rank: 20
+    rank: 23
     title: "Four high-school cliques sort the whole cast before anyone reads the room"
     blurb: "Athletes, brains, off-beats, and populars get assigned on day one, front-loading alliance lines before the house has had a single night to settle in. One of the format's earliest bets that a social frame beats a mechanic."
+  - show: big-brother
+    season: 4
+    season_label: "S04"
+    rank: 24
+    title: "Every houseguest walks in already carrying a hidden ex from inside the cast"
+    blurb: "The X-Factor twist reveals on Day One that every houseguest has an ex somewhere in the house, the franchise's first big swing at seeding secret history into the cast. The format lands rough around the edges, but the idea outlives the season it debuted in."
 ---

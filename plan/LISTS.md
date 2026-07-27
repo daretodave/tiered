@@ -138,7 +138,7 @@ last time a curator actually looked.
 | the-fix-stayed-after-the-season-left | craft | 2026-07-22 | 2026-07-22 | |
 | the-only-constant-was-the-vote | single | 2026-07-22 | 2026-07-22 | |
 | a-dating-experiment-still-writing-its-own-rulebook | single | 2026-07-22 | 2026-07-22 | |
-| every-summer-gets-its-own-twist | single | 2026-07-22 | 2026-07-22 | |
+| every-summer-gets-its-own-twist | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Big Brother S04, S06, S12, S18 entries — twist mechanics never claimed anywhere in the ledger) |
 | when-scripted-went-dark | era | 2026-07-22 | 2026-07-22 | |
 | the-charter-map-as-the-whole-story | single | 2026-07-22 | 2026-07-22 | |
 | the-map-outlasted-the-cast | single | 2026-07-22 | 2026-07-22 | |
