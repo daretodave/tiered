@@ -66,7 +66,7 @@ last time a curator actually looked.
 | the-shifting-yardstick | single | 2026-07-18 | 2026-07-18 | |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
-| milestones-spent-not-marked | craft | 2026-07-18 | 2026-07-18 | |
+| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Top Chef S20, Below Deck S10, Drag Race S15 entries) |
 | same-crown-new-price-tag | structure | 2026-07-18 | 2026-07-18 | |
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
@@ -792,6 +792,48 @@ last time a curator actually looked.
     Rule 3 toward extending existing lists (the option that broke
     the streak at pass 12) or accepting a lower per-tick hit rate as
     the 172-list steady state.
+- 2026-07-27 fourteenth pass, cloud `/march` tick: **shipped** — acted
+  on pass 11/12/13's own standing recommendation a second time rather
+  than hunting a fifteenth wholly-new concept. Ran one bounded
+  `scout`-assisted pass explicitly steered toward the extend option
+  first (per pass 12's precedent) rather than a blind new-angle
+  search, and toward a genuinely new angle only as a fallback.
+  - Scout returned an extend candidate: `milestones-spent-not-marked`
+    (round-number seasons ranked by whether the show actually rebuilt
+    the format around the occasion, or just changed the graphics) was
+    missing three well-sourced milestone seasons from shows not yet in
+    it. Verified each against the show's own season file before
+    writing: Top Chef S20 "World All-Stars" (16 chefs from 11
+    international editions, entire season filmed abroad for the first
+    time, London through a Paris finale, Padma Lakshmi's final
+    season — NBCUniversal press release), Below Deck S10 "St. Lucia"
+    (a dedicated Watch What Happens Live 10th-anniversary special
+    stood in for the usual reunion; Fraser Olender became the
+    franchise's first male chief stew aboard its largest yacht to
+    date — Bravotv.com + Newsweek), and Drag Race S15 (largest cast
+    in franchise history, premiered the same season the show moved
+    from VH1 to MTV — a transition that briefly shrank episodes from
+    90 to 60 minutes before backlash reversed it — Wikipedia +
+    Variety). None of the three grounding facts requires naming a
+    winner or elimination — all format/production firsts, clean of
+    the pass-13 spoiler disqualifier.
+  - Shipped: all three inserted into `milestones-spent-not-marked`
+    at ranks 4, 7, and 10 respectively (Top Chef's full-season
+    reinvention reads as strong as the existing top tier; Below
+    Deck's reunion-format swap plus a genuine cast first reads as
+    solid-but-not-total; Drag Race's milestone gets real structural
+    churn but some of it is network-forced rather than a deliberate
+    anniversary choice) — 11 existing entries below rank 3 shifted
+    down accordingly, list now runs 18 entries across 16 shows.
+    `last_revised` bumped (real content change).
+  - **Assessment:** the extend-first approach (this pass, and pass
+    12) has now shipped twice in three attempts, against a blind
+    new-angle search's roughly 1-in-13 hit rate over the pass 1-11
+    span. Standing recommendation strengthens: a future `/expand` or
+    oversight tick should consider making "check every ledger list
+    for missing obvious entries" the default first move each Rule 3
+    tick, ahead of any new-concept search, rather than a coin-flip
+    choice.
 
 ## Notes
 
