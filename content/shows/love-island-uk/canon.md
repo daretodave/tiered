@@ -1,7 +1,7 @@
 ---
 show: love-island-uk
 editor: tiered.tv editor
-last_revised: 2026-07-24
+last_revised: 2026-07-27
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched every series from the 2015 Santanyí villa through the most recent Mallorca run. The ranking is one editor's read, calibrated against what reasonable Love Island fans agree on after a long argument — each summer and winter edition weighed against the arc, not by recency. Honest about the show, calibrated against the room."
 meth_how_h: "How I weigh it"
@@ -22,7 +22,7 @@ era_bands:
     range: [2020, 2022]
   - key: jama-era
     label: "Maya Jama era"
-    range: [2023, 2025]
+    range: [2023, 2026]
 ---
 
 # Editor's Canon — Love Island UK
@@ -97,21 +97,29 @@ tag: The mature-format summer — a milestone run with the production fully sett
 slot_argument: A landmark number with every familiar mechanic in its expected place. Polished and steady; it confirms the modern identity rather than pushing the show forward.
 community_rank_hint: rank=9 delta=0 sentiment=hold
 
-Series 10 sits below Series 6 for the reason covered on the other side of that comparison — steadiness doesn't outrank a genuine structural risk. But it sits comfortably above Series 8, and there the case is about control rather than ambition. Both seasons are working the same mature, twist-heavy machine, but Series 10 keeps the mechanics in service of the season, while Series 8 lets them start running the show. That's a small difference in a big format, but it's the one that separates a well-made summer from a summer that occasionally feels like it's managing itself. Tonal control is the tiebreaker in this stretch of the canon, and Series 10 has more of it.
+Series 10 sits below Series 6 for the reason covered on the other side of that comparison — steadiness doesn't outrank a genuine structural risk. But it sits above Series 13, and the case there is also about control: both are the same mature, twist-heavy machine running at full confidence, but Series 10 carries the milestone weight of a landmark number on top of that steadiness, while Series 13 is the same competent machine a summer later, with no number to make it feel like an occasion. Tonal control keeps both above the seasons where the mechanics start running the show; the milestone is what edges Series 10 ahead of the newer one.
+
+## 13. Series 13 (Summer 2026)
+
+tag: The mature machine, one summer later — a minor twist on an otherwise settled format.
+slot_argument: No overhaul, no milestone number — just the established machine with a new sleepover mechanic slotted into the usual bombshell rhythm, and a nightly companion show riding alongside it.
+community_rank_hint: rank=10 delta=0 sentiment=hold
+
+Series 13 sits just below Series 10 because the milestone gives Series 10 an occasion this run doesn't have — both are the same competent, twist-heavy machine at full confidence, but one of them is a landmark number and the other is simply the next one along. It ranks above Series 8, though, and that comparison is about restraint: Series 13's one new mechanic, the sleepover twist, slots into the season without crowding it, while Series 8 runs several mechanics at once until they start competing with the cast for attention. A single well-placed twist beats a machine running loud, even when neither season is trying to reinvent anything.
 
 ## 8. Series 8 (2022)
 
 tag: The modern machine — the format running heavy, every mechanic in motion at once.
 slot_argument: A large contemporary cast and a brisk, twist-forward structure. Competently made and widely watched, but the relentless machinery can crowd out the chemistry.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
-Series 8 lands below Series 10 for exactly the control gap described from the other side — the machinery here is louder than the season needs it to be. But it stays above Series 11, and that's a matter of degree: both seasons are heavy with structure, but Series 8's cast is still doing the work through chemistry that structure gets in the way of, while Series 11 leans on star power and stacked mechanics to generate its energy from scratch. Crowded chemistry still outranks manufactured energy, even when the crowding is real. It's the difference between a season that has something the twists keep interrupting and a season built around the twists from the start.
+Series 8 lands below Series 13 for exactly the restraint gap described from the other side — one clean new mechanic beats several stacked ones fighting for the same runtime. But it stays above Series 11, and that's a matter of degree: both seasons are heavy with structure, but Series 8's cast is still doing the work through chemistry that structure gets in the way of, while Series 11 leans on star power and stacked mechanics to generate its energy from scratch. Crowded chemistry still outranks manufactured energy, even when the crowding is real. It's the difference between a season that has something the twists keep interrupting and a season built around the twists from the start.
 
 ## 11. Series 11 (Summer 2024)
 
 tag: The celebrity-bombshell summer — the modern machine running at its most processed.
 slot_argument: A famous face at launch, a private desirability-ranking coupling, and era mechanics stacked end to end. The most twist-forward, recognisability-driven summer the franchise has made.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Series 11 sits below Series 8 for the reason already made from the other direction — manufactured energy is still a notch below chemistry that structure merely crowds. But it comfortably outranks Series 7 at the bottom of the canon, and that comparison is more one-sided: whatever you think of a season built on star power and stacked mechanics, Series 11 is trying hard and mostly succeeding at generating energy, while Series 7 is a season spent recovering the energy it lost to the longest gap in the show's history. A processed summer beats a muted one. Series 11 knows exactly what kind of season it's being; Series 7 spends most of its run finding out.
 
@@ -119,6 +127,6 @@ Series 11 sits below Series 8 for the reason already made from the other directi
 
 tag: The comeback — the format restarting from a cold stop after the only cancelled summer.
 slot_argument: The longest gap in the show's history, then the lights back on in Mallorca. Important as a restart, less commanding as a season; the long pause is felt throughout.
-community_rank_hint: rank=12 delta=0 sentiment=hold
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
 Series 7 sits last in the canon, and the comparison to Series 11 above it is the whole argument: a season that's overly processed still beats one that's undercooked, because at least the processed season delivers on its own terms. Series 7's problem was never the format or the cast — both are intact and capable — it's that the season arrives already depleted, spending its energy on simply restarting rather than building anything new on top of that restart. Every other season in this canon is either doing something the format hadn't done before or doing the established thing at full strength. Series 7 is the one season doing neither.

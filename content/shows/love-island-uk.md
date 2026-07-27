@@ -5,11 +5,11 @@ palette:
   paper: "#F4C76A"
   ink: "#2B1208"
   primary: "#D63B5C"
-seasons: 12
+seasons: 13
 status: airing
-blurb: "12 seasons. Mallorca, golden hour, Casa Amor."
-tagline: "12 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015, summer and winter editions included."
-card_tagline: "Mallorca villa, fire pit, text messages read aloud — 12 seasons of the original everyone else has been adapting since 2015."
+blurb: "13 seasons. Mallorca, golden hour, Casa Amor."
+tagline: "13 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015, summer and winter editions included."
+card_tagline: "Mallorca villa, fire pit, text messages read aloud — 13 seasons of the original everyone else has been adapting since 2015."
 tier: A
 network: "ITV2"
 est_year: 2015

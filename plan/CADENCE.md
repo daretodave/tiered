@@ -214,7 +214,6 @@ new-show creation is locked to the biweekly show-add clock.
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
-| love-island-uk | 12/13 | 1* |
 | dancing-with-the-stars | 34/35 | 1* |
 | americas-got-talent | 20/21 | 1* |
 | rhoa | 16/17 | 1* |
@@ -327,6 +326,27 @@ surfaced by this sweep were added to `content/calendar.yml`:
 (2026-08-26); `love-island-us` S8's calendar entry was corrected
 from `scheduled` to `aired` (finale confirmed 2026-07-12, already
 picked up by a prior finale-gate tick).
+
+**Rule 2 pick, 2026-07-27 tick:** `love-island-uk` Series 13's
+`content/calendar.yml` finale date (2026-07-27) matched today —
+scout-verified the live final did in fact air tonight (UK time),
+closing the deferral this same sweep had just re-confirmed as
+starred. DRAINED this tick: Series 13 filed
+(`content/shows/love-island-uk/seasons/13-summer-2026.md`,
+premiered 2026-06-01 — a settling-back-in summer after Series 12's
+rulebook rewrite, with a new "sleepover" bombshell mechanic and a
+nightly companion after-show, "The Debrief," but no structural
+overhaul), canon rebased (Series 13 inserted at rank 10, between
+Series 10's milestone-number steadiness and Series 8's
+twist-crowded machine; Series 8/11/7 shift down one rank each),
+`jama-era` band widened `[2023, 2025]` → `[2023, 2026]`, show
+frontmatter bumped `seasons: 12` → `13` (blurb/tagline/card_tagline
+count refs updated to match), `content/calendar.yml` entry
+corrected `scheduled` → `aired`. Row removed from the table above;
+show fully drained at 13/13. **35 shows now carry a gap · 36
+gap-slots total** (34 shows × 1 deferred slot each, +1 extra
+deferred slot on `hells-kitchen`) — 68-show catalog total
+unchanged, only love-island-uk's row cleared.
 
 ## Sweep notes (2026-07-12, first pass)
 
