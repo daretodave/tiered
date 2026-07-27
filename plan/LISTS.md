@@ -49,7 +49,7 @@ last time a curator actually looked.
 | when-the-basket-became-a-bracket | single | 2026-07-16 | 2026-07-16 | |
 | familiar-faces-wrong-franchise | craft | 2026-07-26 | 2026-07-26 | extended 2026-07-26 (Traitors S02/S03 entries) |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
-| when-the-cast-was-already-related | structure | 2026-07-17 | 2026-07-17 | |
+| when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
 | rulebook-rewritten-every-season | single | 2026-07-17 | 2026-07-17 | |
 | a-way-back-in | craft | 2026-07-17 | 2026-07-17 | |
@@ -906,6 +906,32 @@ last time a curator actually looked.
     "list predates a show's drain" heuristic should pick a
     different show/list pairing, or re-verify via grep first before
     drafting, the way this pass did.
+- 2026-07-27 sixteenth pass, `/march` tick: **shipped** — extend-first
+  again (pass 12/14 precedent), this time anchored on a repo grep for
+  family-relation language (`sibling|cousin|married couple|twin|
+  family member|husband and wife|brother and sister|father and son|
+  mother and daughter`) across every season file, cross-checked
+  against `when-the-cast-was-already-related` (10/10 entries, last
+  touched 2026-07-17). Top Chef S23 Carolinas's "twin brothers"
+  cast fact was already claimed by `the-resemblance-was-never-just-
+  a-fun-fact` (rank 4) — confirmed via grep before drafting, not
+  reused. Three genuinely unclaimed hits survived the cross-check:
+  Bachelor in Paradise S02 (a sibling-linked casting mechanic tying
+  two real siblings' rose fates together — confirmed in both the
+  season file and the show's own canon.md rationale, distinct from
+  S03's twin-pair fact already spent in the resemblance list), and
+  americas-next-top-model S07/S15 (the format's first and
+  second-ever sibling-pair castings, confirmed in both season files'
+  `cast_size_caption` and lede text, neither used in any existing
+  list). Appended at ranks 11-13 (existing 1-10 order left
+  untouched — the new entries are incidental casting facts, not
+  format-defining premises, so they sit below the existing bottom
+  entry on merit without needing a rebase). `last_revised` bumped
+  (real content change). This is the extend-first method's third
+  hit in four attempts (12, 14, 16 shipped; 15 zero-shipped) —
+  strengthens the standing recommendation that a targeted grep
+  cross-check against ledger lists should be the default first move
+  each Rule 3 tick.
 
 ## Notes
 

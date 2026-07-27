@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-27
 featured: false
 related:
   - best-returnees
@@ -72,4 +72,22 @@ entries:
     rank: 10
     title: "Some racers ran the route with an actual sibling or parent as their partner."
     blurb: "Eleven teams pair an online personality with a real relative or a close friend — one of two allowed partner types. When it's family, the relationship is genuine, even though the season's whole premise is organized around something else."
+  - show: bachelor-in-paradise
+    season: 2
+    season_label: "S02"
+    rank: 11
+    title: "A new casting mechanic ties two real siblings' rose fates together."
+    blurb: "Season two settles into its Sayulita-era house style by adding a genuine structural first — two actual siblings enter the cast with their rose eligibility deliberately linked, turning a family tie into a real format mechanic rather than a passing fact."
+  - show: americas-next-top-model
+    season: 7
+    season_label: "S07 · The CW Opening"
+    rank: 12
+    title: "The CW era opens with the format's first-ever sibling pair in the cast."
+    blurb: "Cycle seven's move to a new network comes with a casting first: two sisters compete on the same cycle, the earliest the show ever put an actual family tie into its contestant pool. The interpersonal wrinkle gives a transitional cycle real texture."
+  - show: americas-next-top-model
+    season: 15
+    season_label: "S15 · The Fashion Pivot"
+    rank: 13
+    title: "Eight cycles later, a second sibling pair joins a season staged around reinvention."
+    blurb: "Cycle fifteen's overhaul of the prize package and its all-Italy shoot arrive alongside a quieter first: the show's second-ever sibling pair, the first since Cycle seven put real family stakes back into the cast."
 ---
