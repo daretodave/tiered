@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-26
+last_revised: 2026-07-27
 featured: false
 related:
   - firsts
@@ -79,4 +79,16 @@ entries:
     rank: 11
     title: "A third straight all-alumni cast, its two biggest names both borrowed from the same show."
     blurb: "Season three keeps the no-civilians rule and doubles down on one franchise: Survivor's Tony Vlachos and Rob Mariano anchor a cast that also imports Big Brother's Britney Haynes and Vanderpump Rules' Tom Sandoval. The recognition keeps compounding, franchise by franchise."
+  - show: dancing-with-the-stars
+    season: 29
+    season_label: "S29"
+    rank: 12
+    title: "A Netflix real-estate docu-series star lands a ballroom seat meant for a totally different kind of celebrity."
+    blurb: "Chrishell Stause arrives already known to millions from Selling Sunset, a show with no crossover history with a broadcast ballroom competition. The recognition comes from a rival network's streaming hit, not from anywhere near the dance floor."
+  - show: masked-singer
+    season: 13
+    season_label: "S13"
+    rank: 13
+    title: "A Real Housewife steps into a costume designed for a stranger's franchise entirely."
+    blurb: "Erika Jayne, known from Bravo's Real Housewives of Beverly Hills, competes under a full disguise on a competing network's format. The costume asks the audience to guess a face they already know from a completely different show."
 ---
