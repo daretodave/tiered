@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-07-27
 featured: false
 related:
   - who-actually-got-the-vote
@@ -49,4 +49,10 @@ entries:
     rank: 6
     title: "The season that put a country on hold, one phone line at a time"
     blurb: "American Idol's debut turns the toll-free call-in vote into a genuine national habit, with no text option and no app anywhere close to existing yet. Every later shift on this list — text, app, streaming — starts from this one dial tone."
+  - show: so-you-think-you-can-dance
+    season: 11
+    season_label: "S11"
+    rank: 7
+    title: "The phone line doesn't just shrink here — it disappears"
+    blurb: "Season eleven drops interactive telephone voting entirely, moving the ballot fully onto the show's website and a new dedicated smartphone app. Every other season on this list keeps the phone as a fallback option; this one is the rare case that just turns it off."
 ---
