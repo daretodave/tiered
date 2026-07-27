@@ -66,7 +66,7 @@ last time a curator actually looked.
 | the-shifting-yardstick | single | 2026-07-18 | 2026-07-18 | |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
-| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Shark Tank S10, Project Runway S10 entries) |
+| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S12 entry, third extension today) |
 | same-crown-new-price-tag | structure | 2026-07-18 | 2026-07-18 | |
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
@@ -932,6 +932,80 @@ last time a curator actually looked.
   strengthens the standing recommendation that a targeted grep
   cross-check against ledger lists should be the default first move
   each Rule 3 tick.
+- 2026-07-27 eighteenth pass: **shipped** — a fourth same-day extend
+  on `milestones-spent-not-marked` (already extended twice earlier
+  today by the sixteenth/seventeenth passes). Before drafting,
+  checked several other extension candidates and cross-checked every
+  hit against the full ledger:
+  - `when-the-crew-stepped-into-frame` (medical/injury craft list) —
+    re-grepped `medical|injury|injured|withdr|tap(ped)? out` catalog
+    wide; the only new file beyond the list's existing 8 entries was
+    Bachelor S26, and its "medical-device salesman" hit is the lead's
+    day job, not an on-set medical event — false positive, no room.
+  - `the-judges-picked-a-side` (mentor/coach-authority craft list,
+    11 entries) — re-grepped `mentor` catalog-wide (18 file hits);
+    every candidate resolved to a season already spent on this exact
+    list or on `the-other-side-of-the-table` (confirmed Project
+    Runway S17's "former winner as workroom mentor" is already
+    `the-other-side-of-the-table`'s entry, not free to reuse here).
+    No fresh room.
+  - `the-resemblance-was-never-just-a-fun-fact` (twin-casting craft
+    list, 10 entries, 6 shows) — read in full; already comprehensive
+    across Big Brother, Bachelor in Paradise, Top Chef, Traitors,
+    Love Island UK, Amazing Race. No obvious gap.
+  - Re-ran the `anniversary|milestone` grep from pass 17 catalog-wide
+    to see if anything surfaced beyond the two already claimed
+    earlier today. It re-confirmed pass 17's own prediction that the
+    lead is thinning: of ~15 new file hits, all but one resolved to
+    either (a) a **casting** milestone (first trans contestant, first
+    sibling pair, first same-sex couple) rather than this list's
+    round-number-*format*-rebuild angle — off-angle, not a fit — or
+    (b) total preemption by another shipped list already using the
+    identical framing: Survivor Australia S11's "tenth-anniversary
+    crossover" is already `one-season-two-flags` rank 1 verbatim
+    ("A tenth-anniversary format that shrinks the whole season
+    around the international divide"), and Love Island UK S10 is
+    already `the-fire-pit-never-moved` rank 10 verbatim ("A milestone
+    number lands on a format with nothing left to prove
+    structurally... marketed rather than structurally acted on").
+    Married at First Sight Australia S13 was also ruled out for an
+    unrelated reason: its season file references a cast member's
+    real-world death during the broadcast run, which this loop
+    won't build editorial copy around regardless of milestone
+    framing.
+  - The one survivor: So You Think You Can Dance S12 ("Stage vs.
+    Street") — its own season file explicitly frames it as "the
+    show's tenth-anniversary season," with a dedicated mid-run
+    retrospective special (`A Decade of Dance`) AND a genuine
+    structural first (Stage/Street squads replacing the decade-old
+    men-versus-women divide) tied directly to the occasion in the
+    lede/pull text. S12 already appears in `the-judges-picked-a-side`
+    (the mentor-coaching angle) and `the-open-call-built-the-format`
+    (the five-city audition-tour angle) — confirmed neither existing
+    entry mentions the anniversary occasion itself, so this is a
+    distinct, unclaimed claim, not a duplicate. Note the season
+    *number* (12) isn't itself round — the tenth-anniversary lands
+    two seasons after the literal tenth season because the franchise
+    ran two cycles a year early on — but the occasion, the special,
+    and the structural rebuild are all real and explicit in the
+    season's own text, so it clears the list's actual thesis (real
+    rebuild vs. cosmetic marking) even though the round number is a
+    calendar-year anniversary rather than a season-count one.
+  - Shipped: inserted at rank 9 (top tier, alongside Below Deck S10
+    and Project Runway S20 — a genuine structural swing, not a
+    "changed nothing" entry), shifting the prior ranks 9-20 down to
+    10-21. List now runs 21 entries across 18 shows. `last_revised`
+    bumped (real content change) — this is the third distinct
+    extension of this list in one day (sixteenth/seventeenth/
+    eighteenth passes), landing a total of 6 new entries since this
+    morning.
+  - **Assessment:** the `anniversary|milestone` keyword lead is now
+    genuinely close to fully drained after three same-day passes —
+    a future tick should not re-run this exact grep against the
+    catalog without first checking for newly-seeded shows/seasons.
+    The mentor/coach-authority and twin-casting extend candidates
+    checked this pass are both confirmed comprehensive; don't
+    re-check them without new seeded content either.
 - 2026-07-27 seventeenth pass: **shipped** — extend-first again, this
   time steered away from family-relation grep (pass 16's exact
   method) toward a "generational/age-divide casting premise" grep
