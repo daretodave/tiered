@@ -164,6 +164,62 @@ ships via `/oversight` directly, same precedent as candidate #26/#32).
 now proven the timeout-bump approach doesn't scale) without literally
 reopening it.
 
+### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
+
+**Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
+loop's only human-facing instrument, with a mechanical, well-understood fix)
+**Source pass:** digest, 2026-07-27
+**Filed:** 2026-07-27
+**Why:** `plan/DIGEST.md` sat frozen on its 2026-07-20 snapshot for a full
+week — the six daily night runs after it (07-21 through 07-26) all show
+`conclusion: cancelled` in `gh run list --workflow night`, and the run before
+that (07-20) burned its full 30-minute job timeout. Root cause confirmed via
+`gh run view --log` on every run: `night.yml` intentionally shares the
+`march` concurrency group (`cancel-in-progress: false`) so its commit never
+races a concurrent march push — but march fires roughly hourly while night
+fires once a day, and GitHub Actions concurrency groups only keep the
+*most-recently-queued* run per group. Every night trigger that landed while a
+march run was in progress got queued, and the next march trigger (almost
+always <1h later) silently evicted it before it started — no error, no log,
+nothing. Worse, cancelled runs don't hit the workflow's `if: failure()`
+issue-filing step, so this produced zero signal anywhere: no GitHub issue,
+no AUDIT row, no comment — only visible by reading raw run history by hand,
+which is exactly how tonight's tick found it. The cost isn't just a missing
+status page: for that week, the breadth-verdict escalation, the saga
+progress report, and the meta-loop's tuning-proposal cadence all went dark
+at once, since digest is the only thing that does any of the three.
+**Source signals:**
+- `plan/AUDIT.md` [HIGH, score 6.4] filed this tick with the full run-by-run
+  evidence (six cancelled runs' database IDs, the one timeout, the
+  `if: failure()` blind spot).
+- `.github/workflows/night.yml`'s own header comment, which states the
+  shared-group rationale plainly ("Shares the march concurrency group so
+  cloud writers never race") — the intent was sound, the failure mode
+  (starvation, not racing) wasn't anticipated.
+**Scope sketch:**
+- Give `night.yml` its own concurrency group (e.g. `group: night`) instead
+  of sharing `march`'s, so its daily trigger can never be evicted by an
+  hourly march run queuing behind it.
+- The original race this guarded against (night's commit landing mid-march-
+  push) needs a lighter substitute: since the digest commit only ever touches
+  `plan/DIGEST.md` (+ occasional `plan/AUDIT.md` / `plan/PHASE_CANDIDATES.md`
+  rows, never code), a `git pull --ff-only` immediately before the commit
+  step (already implied by skills/digest.md §3 step 1, but re-run it right
+  before the final commit too) plus a retry-once-on-push-rejection loop
+  would cover the actual risk (a lost push) without needing a shared queue.
+- Alternative if a shared queue is still preferred: bump `night.yml`'s
+  `timeout-minutes` well past march's typical run length (some march ticks
+  run 50+ minutes) so a queued night run has enough runway to actually start
+  and finish once it's next in line, rather than dying to the job timeout
+  the way the 07-20 run did.
+- Likely the identical `workflows` OAuth-scope cloud-permission blocker as
+  candidates #26/#34 (this is a `.github/workflows/night.yml` edit) — verify
+  at implementation time; if blocked, bundle with #26/#34's other pending
+  workflow-file edits in the same local/`/oversight` session.
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same precedent as candidate #26/#34).
+**Conflicts:** none.
+
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
      critique-pass evidence (passes 90-93).

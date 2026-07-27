@@ -4,200 +4,154 @@
 > `.github/workflows/night.yml`). Overwritten whole each tick;
 > history lives in git.
 
-# DIGEST — 2026-07-20
+# DIGEST — 2026-07-27
 
 ## Headline
 
-**The cleanest content-gate window on record — 21 themed lists in ~24
-hours, zero non-content commits, and only 1 march failure — while the
-mobile-overflow bug's spread finally plateaued at 4 URLs even as its fix
-path got sharper, and a new, unrelated bug surfaced: two of the last two
-shipped phases orphaned their own tracking issues.** 41 commits since the
-last digest (21 content + 20 audit-progress — a perfect alternation, no
-stragglers), 23 march ticks (21 green, 1 red, 1 still running at read
-time). The one failure was issue #565's familiar "prompt is too long"
-crash (now 25 recurrences) — down sharply from the last window's 4
-failures. The e2e-full breadth crawl is red for an **8th consecutive
-night**, but for the first time the affected-URL count held flat at 4
-instead of growing, and `plan/CRITIQUE.md`'s pass-94 diagnosis (already on
-file, independently arrived at) turns out to name the exact same URL with
-a pre-narrowed list of culprits — two detection paths converging on one
-bug with a short fix list, still untouched by `/iterate` after 8 days.
-Separately, while checking phase-shipping hygiene I found that Phase 44's
-and Phase 46's shipping commits both failed to correctly close their
-mirror issues (#400 and #405, both still open) — a new, previously
-undocumented defect, filed this tick. Deploy is green at HEAD (`f42e52c`).
+**The night shift is back after a silent 7-day outage — and it
+found its own outage as the top story.** `plan/DIGEST.md` sat
+frozen on its 2026-07-20 snapshot all week because `night.yml`
+shares a concurrency group with `march`, and march's hourly
+triggers kept evicting the once-daily night run from its queue
+slot before it could start — six cancellations, one timeout,
+zero alarms anywhere. Meanwhile the content saga kept moving
+without interruption: 22 commits in the last 26h, all Rule 3
+(themed-list) work, zero yield to anything else. e2e-full's
+duration-ceiling breach is now on its **7th consecutive red
+night**, unpromoted 6 days after filing. And `the-voice`'s deep
+content corruption (filed last night) is still an open HIGH row
+nobody has started fixing.
 
 ## While you were out
 
-| Time (UTC, 07-19→20) | Tick | Outcome |
-|---|---|---|
-| 11:37 (last digest) | digest | success — 2026-07-19 briefing |
-| 12:02–17:00 | march → content (5 ticks) | success — 5 themed lists (when-the-crew-stepped-into-frame, built-for-one-playing-as-a-team, away-from-home-turf, the-roster-was-the-twist, two-channels-same-night) |
-| 17:03–20:04 | march → content (3 ticks) | success — 3 themed lists (the-elimination-round-never-keeps-its-name, the-clock-had-to-make-room, the-city-already-had-a-show) |
-| 21:02–00:02 | march → content (3 ticks) | success — 3 themed lists (twist-is-the-format, the-broadcast-wasnt-the-whole-show, a-second-life-built-into-the-format) |
-| 01:12 | march | **failure** — "Prompt is too long" crash, no commit, issue #565 (25th recurrence) |
-| 02:35–05:21 | march → content (3 ticks) | success — 3 themed lists (the-finale-broke-its-own-rulebook, the-competition-leaves-the-country, the-grudge-was-the-casting-call) |
-| 06:36–09:12 | march → content (3 ticks) | success — 3 themed lists (sight-unseen-already-committed, the-vote-left-the-phone-line, never-starts-cold) |
-| 10:36 | march → content | success — themed list (the-couch-kept-adding-chairs) |
-| — (nightly, separate workflow) 23:20 07-19 | e2e-full | **red** — mobile overflow held at 4 URLs (no growth), 8th consecutive red night, crawl cut at 75-minute step ceiling (9,411/9,927 tests, 94.8%) |
-| ~10:59–11:38 | march → content (2 ticks) | success — 2 themed lists (the-team-never-means-the-same-thing-twice, the-format-learned-to-travel) — plus one more (the-slow-build-was-the-point) landed just before this read |
-| 11:37 | march | in progress at read time (conclusion not yet recorded) |
+Pulse window: last 26h (2026-07-26T09:38Z → 2026-07-27T11:38Z).
 
-Net: 23 march ticks in the window — 21 green, 1 red (issue #565's crash
-pattern, self-healed on the next retry, zero content lost), 1 still
-running. Every green content tick fell through to Rule 3 — zero ticks
-reached `/critique`, `/iterate`, `/expand`, `/ship-a-phase`, `/ship-data`,
-or the weekly sweep (not due until 2026-07-26).
+| Tick | Verb | Outcome |
+|---|---|---|
+| 22 commits | content (18) / audit progress-notes (4) | All Rule 3 (themed-list) drain — extend-first pattern on `milestones-spent-not-marked` and `when-the-cast-was-already-related`, plus several zero-ship passes recorded as audit notes. Zero commits from `/iterate`, `/triage`, `/ship-a-phase`, or `/ship-data` this window — the content gate held 100% purity. |
+| march runs (22 in window) | dispatcher ticks | 19 success, 3 failure — all 3 failures match the self-healing `issue #565` crash pattern (now 32 recurrences total, zero content lost each time; next tick always recovers). |
+| e2e-full (nightly breadth) | duration-ceiling breach | **Red again**, 7th consecutive night (07-21→07-27). All completed checks passed; the crawl just runs out of its 75-minute wall before finishing (9,098/~10,200+ tests, ~89% complete tonight). Not a regression — a scaling problem. See "Needs you." |
+| night (this tick) | digest | **First successful run in a week.** See Headline — the gap itself is tonight's top finding. |
+| deploy:check | HEAD `32c7475` | `ready` on Vercel. No red deploy. |
 
 ## The saga
 
-**Shows scaffolded:** 0 — still LOCKED per the 2026-07-12 mission pivot.
-Catalog holds at **68 shows**, 1,040 season files.
+**Rule 2 (season-fill drain) stays fully stalled.** Every row in
+`plan/CADENCE.md`'s gap table (36 shows) is starred
+(confirmed-but-unaired) — there is no unstarred gap for the
+dispatcher to act on, so Rule 3 has correctly owned every content
+tick since the last sweep (2026-07-26, next due 2026-08-02).
 
-**Seasons drained:** none — Rule 2 stayed structurally stalled on the same
-all-starred (confirmed-but-unaired) gap table all window (28 shows / 29
-gap-slots). No sweep ran this window (last one 2026-07-19, next due
-2026-07-26), so no new gap-table evidence either way.
+**Rule 3 (themed lists) is deep into diminishing returns.** The
+catalog now carries **172 live themed lists** (craft 63, single
+70, era 10, structure 13, tone 16). `plan/LISTS.md`'s Ideas log
+shows the extend-first strategy dominating: last night alone ran
+at least 15 numbered passes on a single tick, most zero-shipping
+before landing two genuinely fresh entries by extending
+`milestones-spent-not-marked` (Shark Tank S10, Project Runway
+S10) rather than finding a new concept. The log's own assessment:
+"extend-first now stands at 4-for-5" against "a blind new-concept
+search's historical ~1-in-13 rate" — the well of fresh angles is
+real but shallow, and getting shallower. Worth watching whether
+`/expand` needs to widen Rule 3's search space before the
+zero-ship streaks start costing more ticks than they yield.
 
-**Themed lists (Rule 3):** **21 lists shipped this window** — a new high,
-up from 17 at the last digest. Ledger (`plan/LISTS.md`) now **77 rows**,
-up from 56. Titles: when-the-crew-stepped-into-frame,
-built-for-one-playing-as-a-team, away-from-home-turf,
-the-roster-was-the-twist, two-channels-same-night,
-the-elimination-round-never-keeps-its-name, the-clock-had-to-make-room,
-the-city-already-had-a-show, the-twist-is-the-format,
-the-broadcast-wasnt-the-whole-show, a-second-life-built-into-the-format,
-the-finale-broke-its-own-rulebook, the-competition-leaves-the-country,
-the-grudge-was-the-casting-call, sight-unseen-already-committed,
-the-vote-left-the-phone-line, never-starts-cold,
-the-couch-kept-adding-chairs, the-team-never-means-the-same-thing-twice,
-the-format-learned-to-travel, the-slow-build-was-the-point. "Ideas"
-parking lot still empty — no sign of angle exhaustion after 77 lists.
-**Category-balance note (a good one):** the ledger's category mix is now
-41 craft / 13 structure / 11 single / 7 tone / 4 era — craft has been
-badly oversaturated (41/77, >50%) for several windows, and tonight's final
-tick (`the-slow-build-was-the-point`) explicitly self-corrected, steering
-into `tone` (6 lists at the time) rather than defaulting to craft again.
-Worth watching whether this becomes a repeated pattern or was a one-off.
-
-**Velocity vs. bearings:** Rule 1 (show coverage) — LOCKED, correctly
-idle. Rule 1a (weekly sweep) — not due this window (next 2026-07-26), no
-new evidence. Rule 2 (season completeness) — third straight full-window
-stall since the pivot, still a real-world calendar artifact. Rule 3
-(themed lists) — new velocity high (21 vs. 17), and the first sign this
-window of the loop noticing and correcting its own category skew without
-being told to.
-
-**Critique backlog:** still pass **94** (2026-07-16, `plan/CRITIQUE.md`
-flat at 3,513 lines) — now **4 days stale**, unchanged from the last
-digest. Both open pass-94 findings remain unresolved: the mobile-overflow
-HIGH (now directly relevant to tonight's AUDIT update — see below) and the
-Chopped S62 repetition MED.
+**New content-integrity risk surfaced and contained:** `the-voice`
+has a confirmed, deep factual corruption (8 of 29 season files —
+wrong dates, conflated casts, a fabricated "series finale" that
+never happened, a currently-live false "the show has ended" claim
+in its own frontmatter). Filed HIGH last night with a full fix
+scope; the loop has correctly locked new `the-voice` content
+until it's resolved, but nothing has started the fix pass itself
+yet — see "Needs you."
 
 ## Queues now
 
-- **AUDIT.md open:** 6 rows. The mobile-overflow row (HIGH, score 5.4,
-  issue #568) is the longest-standing real finding — **8 days old**,
-  URL count held at 4 for the first time, now cross-referenced against
-  CRITIQUE pass-94's independent diagnosis of the same URL (see Needs
-  you). One **new** row filed this tick (LOW, score 3.6): the
-  `/ship-a-phase` mirror-close trailer bug (issues #400, #405 both
-  orphaned). The standing Rule-2 drain row stays Pending by design (28
-  shows, all starred).
-- **CRITIQUE.md:** pass 94 (2026-07-16), 3,513 lines, 4 days stale — no
-  growth since the last digest.
-- **PHASE_CANDIDATES.md:** now 4,801 lines (was 4,775), candidate #33
-  reinforced this tick with the plateau + cross-reference evidence. Top
-  unpromoted scores unchanged: **#15 (9.4)** show canon completeness
-  gate, **#28 (8.3)** stat-tile literal-duplicate invariant, **#25
-  (8.0)** canon-rationale echo gate, **#33 (5.5)** content-gate
-  bug-priority carve-out. Last real promotion is now **39 days stale**
-  (2026-06-11).
-- **Triage:** 4 `triage:needs-user` open: **#565** (prompt-too-long
-  crash, now **25 recurrences**, 1 more this window), **#586** (night
-  digest crash 07-16, no new recurrence), and the long-stale **#398/#399**
-  (39-40 days, no owner action). 1 `triage:loop-queued`: **#568**
-  (mobile-overflow, 8 comments, 8 days old, still HIGH).
+- `plan/AUDIT.md` Pending: 7 rows. 1 standing content-gaps row
+  (Rule 2 drain, stalled per above — not actionable). 6
+  non-content: e2e-full duration-ceiling breach (MED 5.4, 7th
+  recurrence), the-voice corruption (HIGH 4.8), night-workflow
+  starvation (HIGH 6.4, filed this tick), plus 3 LOW single-tick
+  fixes (`ship-content` mirror idempotency, `/ship-a-phase` close-
+  trailer reliability, `YEAR_TENURE_RE` teen-number blind spot,
+  themed-list category enum drift).
+- `plan/PHASE_CANDIDATES.md`: 43 total candidates filed, 16
+  pending promotion (35 total after tonight's addition). Top
+  three by score: #15 (9.4, show-canon completeness gate), #28
+  (8.7, stat-tile duplicate-value invariant), #25 (8.3, canon-
+  rationale echo gate) — none promoted in 39+ days.
+- `plan/CRITIQUE.md`: pass 104, 2026-07-25 — 2 days stale, current
+  by this file's own cadence.
+- GitHub issues: 11 open. `triage:needs-user` — 4 (#398, #399
+  both 46+ days stale; #565 self-healing crash tracker, 32
+  recurrences; #586 night-crash tracker, now superseded by
+  tonight's fuller root-cause row). `triage:loop-queued` — 1
+  (#636, the e2e-full mirror). 0 unlabeled.
 
 ## Needs you
 
-1. **The mobile-overflow bug (issue #568) is 8 days old, on its 8th
-   consecutive red breadth night, but its spread has stopped** — the
-   affected-URL count held at 4 tonight instead of growing, and the
-   75-minute crawl step is hitting its wall clock at a stable ~94.8%
-   complete (not eroding further, not recovering). The more actionable
-   news: `plan/CRITIQUE.md` pass 94 independently diagnosed the exact
-   same URL (`/shows/the-real-world/season/go-big-or-go-home`) via the
-   cloud walker three days before tonight's crawl even ran, and already
-   narrowed the cause to one of three named candidates — a long
-   `location`/`filming_caption` string, the forced `<br/>` in
-   `display_title: "Go Big<br/>or Go Home"`, or `AdjacentSeasons.tsx`
-   rendering — while ruling out the mobile stacking media query. I've
-   folded this cross-reference into the AUDIT row and into candidate
-   #33. This is now the shortest this bug's fix path has ever looked,
-   and it's had zero `/iterate` attention across 8 days because the
-   content-gate hasn't yielded a single tick since the row was filed.
-   Worth an explicit decision on candidate #33.
-2. **New finding: `/ship-a-phase`'s close trailer failed on both of the
-   last two phases shipped.** Phase 44's commit (`b8ebba8`) has no
-   `Closes #N` trailer at all, orphaning issue #400. Phase 46's commit
-   (`9ed40d5`) has `Closes #46` — the phase *number*, not the mirror
-   issue number — which resolves to an unrelated, already-closed May
-   issue, orphaning issue #405. Both #400 and #405 are still open. I
-   checked all 30 other closed phase-mirror issues (Phase 1–45 excluding
-   44/46) and every one closed correctly, so this looks like an isolated
-   two-phase slip rather than a systemic pattern — but the mechanism
-   (phase-number/issue-number confusion, or an omitted trailer) could
-   recur. Filed as a new LOW AUDIT row (score 3.6). Digest is notes-only
-   scope, so #400/#405 were not closed manually this tick — that's a
-   short, low-risk cleanup task for a local session.
-3. **Issue #565's crash pattern is now at 25 recurrences** (1 more this
-   window, down sharply from 3 the prior window). Fully self-healing,
-   zero content lost. Candidate #29 (archive closed rows) remains the
-   standing unpromoted mitigation.
-4. **Issue #586 (night-shift crash on 07-16)** — no new recurrence since,
-   still looks transient.
-5. **`triage:needs-user` issues #398/#399 are now 39-40 days stale** with
-   no apparent progress since filing 2026-06-11.
-6. **Phase-candidate backlog hasn't been promoted in 39 days.** #15
-   (score 9.4) is still the standout, followed by #28 (8.3) and #25
-   (8.0).
+1. **Night-shift starvation (new, HIGH, score 6.4).** `night.yml`
+   shares a concurrency group with `march`; march's hourly cadence
+   keeps evicting night's queued daily run before it starts.
+   Tonight's success was luck, not a fix — expect this to recur
+   most nights until the workflow is decoupled. Candidate #35 has
+   the scope sketch (own concurrency group + a lighter race guard
+   for the digest's plan/-only commit). Likely blocked from cloud
+   (same `workflows` OAuth-scope gap as candidates #26/#34) —
+   needs local/`/oversight`.
+2. **e2e-full duration ceiling, 7th straight red night.** Candidate
+   #34 (shard the crawl) has sat unpromoted 6 days. Every
+   completed check still passes — this is pure scaling debt, not a
+   quality regression, but the crawl's effective coverage keeps
+   eroding as the catalog grows.
+3. **`the-voice` content corruption (HIGH, filed 07-26).** 8
+   season files need a source-by-source Wikipedia/NBC re-verify,
+   a possible file-count insertion, a frontmatter status fix
+   (`hiatus`→`airing`), and two new seasons authored. Scoped as too
+   large and too fabrication-risky for a same-tick autonomous
+   patch — recommends a dedicated `/expand`-tracked phase or an
+   oversight-reviewed tick.
+4. **`triage:needs-user` issues #398/#399** — 46+ days stale, no
+   apparent movement since filing 2026-06-11.
+5. **Phase-candidate backlog unpromoted 39+ days** — #15 (9.4) is
+   the standout; #28 and #25 close behind.
 
 ## Today's intent
 
-**Saga:** Rule 2 stays stalled — next actionable drain fires whenever a
-deferred air date passes or next week's sweep (2026-07-26). Expect Rule 3
-to keep absorbing every content tick; watch whether tonight's tone-steer
-on category balance repeats, since craft is still at 41/77 (~53%) of the
-ledger.
+**Saga:** Rule 2 stays stalled until the next sweep (2026-08-02)
+or a starred row's air date passes. Expect Rule 3 to keep
+absorbing every content tick, with zero-ship passes becoming more
+common as the 172-list well gets harder to mine — watch whether
+extend-first keeps outperforming blind new-concept search, or
+whether it's time to widen the search space.
 
-**Top non-content finding:** the mobile-overflow bug (issue #568, HIGH,
-score 5.4) — 8 days old, spread has plateaued at 4 URLs, and two
-independent diagnoses (breadth crawl + critique pass 94) now agree on the
-URL and narrow the fix to three named candidates. The single highest-value
-non-content action available, blocked only by gate design (candidate #33).
+**Top non-content finding:** the night-shift starvation bug
+(candidate #35) — a full week of the loop's only human-facing
+instrument going dark with zero alarm anywhere, root-caused and
+scoped tonight. Fixing it doesn't just restore the digest; it
+restores the meta-loop's ability to notice things like this at
+all going forward.
 
-**Second-priority finding:** the new `/ship-a-phase` mirror-close bug
-(issues #400, #405 orphaned) — small, isolated so far, but worth a quick
-manual close-and-comment plus a look at the close-trailer logic before the
-next phase ships.
+**Second-priority finding:** `the-voice` corruption — live,
+reader-facing, false editorial claim ("the show has ended") that
+needs a dedicated verification pass before any more `the-voice`
+content ships.
 
 ## Tuning proposals
 
-1. **Reinforced candidate #33** (content-gaps gate bug-priority
-   carve-out) with this tick's evidence: issue #568's URL count plateaued
-   at 4 (first time not growing) and its fix path sharpened via the
-   CRITIQUE pass-94 cross-reference; the content-gate window is now the
-   cleanest on record (41/41 commits content/audit, zero yield to any
-   other verb). No change to score or scope sketch — evidence only,
-   `/oversight` decides.
-2. **Candidate #29** (archive closed rows) remains the standing proposed
-   fix for `plan/CRITIQUE.md` (3,513 lines, flat) and
-   `plan/PHASE_CANDIDATES.md` (now 4,801 lines, growing) — no new
-   evidence to add beyond issue #565's continued (slower) recurrence.
-3. **No new candidate filed for the phase-mirror-close bug** — evidence
-   (2 isolated instances, 30/30 other phases correct) doesn't yet
-   warrant a rails change; filed as an AUDIT row instead so a future
-   `/iterate` or local session can decide whether it needs a process fix
-   or was a one-time double-slip.
+1. **New candidate #35** (decouple `night.yml`'s concurrency group
+   from `march`) — filed this tick with full run-history evidence:
+   6 cancelled runs, 1 timeout, and the `if: failure()` blind spot
+   that let all of it go unnoticed for a week. Scope sketch
+   proposes a dedicated `group: night` plus a lighter pre-commit
+   `git pull --ff-only` + retry-once guard in place of the shared
+   queue, since the digest's commit only ever touches `plan/`
+   prose. `/oversight` decides.
+2. **Reinforced candidate #34** (shard the e2e-full crawl) with
+   this tick's evidence: 7th consecutive red night, still
+   unpromoted 6 days after filing. No change to score or scope —
+   evidence only.
+3. **No new candidate filed for the-voice.** It's a content-fix
+   scope, not a rails change — tracked as the HIGH AUDIT row with
+   a recommendation for a dedicated `/expand`-tracked phase or an
+   oversight-reviewed tick, not a `/digest`-level tuning proposal.
