@@ -200,6 +200,7 @@ last time a curator actually looked.
 | the-reshuffle-stays-in-house | single | 2026-07-26 | 2026-07-26 | |
 | the-cold-open-then-never-again | single | 2026-07-26 | 2026-07-26 | |
 | the-resemblance-was-never-just-a-fun-fact | craft | 2026-07-26 | 2026-07-26 | |
+| the-reunion-kept-changing-its-own-rules | structure | 2026-07-28 | 2026-07-28 | |
 
 ## Ideas
 
