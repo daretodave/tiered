@@ -59,7 +59,7 @@ last time a curator actually looked.
 | new-network-same-rulebook | structure | 2026-07-17 | 2026-07-17 | |
 | one-rule-fills-every-seat | craft | 2026-07-17 | 2026-07-17 | |
 | the-place-fought-back | tone | 2026-07-17 | 2026-07-17 | |
-| the-house-that-kept-changing | single | 2026-07-17 | 2026-07-17 | |
+| the-house-that-kept-changing | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (The Real World S08 Hawaii, S10 Back to New York, S13 Paris entries — three genuine format "firsts" the list's own chronological-tour thesis had skipped; confirmed via grep these were the only unclaimed real-world seasons out of 14 candidates that stated a real structural/geographic first in their own season-file text, not just casting/tonal color) |
 | tried-once-never-repeated | structure | 2026-07-17 | 2026-07-17 | |
 | not-who-they-say-they-are | craft | 2026-07-17 | 2026-07-17 | |
 | who-actually-got-the-vote | craft | 2026-07-18 | 2026-07-18 | |
