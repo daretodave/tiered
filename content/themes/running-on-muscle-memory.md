@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-07-28
 featured: false
 related:
   - played-it-straight
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "A panel finally finds its rhythm the same year the lineup breaks apart."
     blurb: "Two years into a three-judge run, the critique had warmed into something collaborative, and the audition circuit found real coverage across cities. The format sounds settled here — right before the show resets the panel again the very next season."
+  - show: american-idol
+    season: 14
+    season_label: "S14 · The Quiet Year"
+    rank: 14
+    title: "The panel carries over untouched, and the season doesn't try to prove anything new."
+    blurb: "The Lopez–Connick–Urban table returns exactly as it left off, running the standard late-cycle format with no panel drama and no structural pivots to announce. It's the purest version of this list's whole premise — a season with nothing to show for itself but the format working."
 ---
