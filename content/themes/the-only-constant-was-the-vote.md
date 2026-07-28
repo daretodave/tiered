@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-07-28
 featured: false
 related:
   - the-panel-turned-over-more-than-the-contestants-did
@@ -56,39 +56,51 @@ entries:
     title: "A new judge arrives warm, and the original panel announces its own end"
     blurb: "Ellen DeGeneres joins with an encouragement-first critique style, and partway through the season Simon Cowell announces he's leaving after this run. The founding panel starts dismantling itself in real time, on camera."
   - show: american-idol
+    season: 11
+    season_label: "S11"
+    rank: 8
+    title: "The rock-era panel's chemistry peaks the same season it dissolves"
+    blurb: "Steven Tyler and Jennifer Lopez close out their two-season run alongside Randy Jackson, departing together right as the table had finally settled into a working rhythm. The panel would be rebuilt from scratch the following year."
+  - show: american-idol
     season: 13
     season_label: "S13"
-    rank: 8
+    rank: 9
     title: "The panel rebuilds a second year running, this time aimed at stability"
     blurb: "Jennifer Lopez returns, Keith Urban stays, and Harry Connick Jr. joins with a technical, working-musician critique voice. After a turbulent prior season, this panel change reads as a course correction rather than a shake-up."
   - show: american-idol
     season: 23
     season_label: "S23"
-    rank: 9
+    rank: 10
     title: "A former winner takes a permanent seat at the judges' table for the first time"
     blurb: "Carrie Underwood joins Lionel Richie and Luke Bryan, closing a loop the format had never closed before — its own alum sitting in judgment of the next class of contestants."
   - show: american-idol
     season: 15
     season_label: "S15"
-    rank: 10
+    rank: 11
     title: "Fox announces the end before the season even airs, and the show leans into it"
     blurb: "Every live show carries retrospective weight once the farewell is public, with former contestants and judges — including two of the original panel — returning throughout. The season turns its own ending into its structure."
   - show: american-idol
     season: 22
     season_label: "S22"
-    rank: 11
+    rank: 12
     title: "A mid-run exit announcement gives the closing episodes a farewell register"
     blurb: "Katy Perry confirms she won't return as judge while the season is still airing. Luke Bryan and Lionel Richie stay put, but the news reshapes the tone of the back-half before the competition itself does."
   - show: american-idol
     season: 20
     season_label: "S20"
-    rank: 12
+    rank: 13
     title: "The show marks twenty years by looking backward instead of changing anything"
     blurb: "Retrospective segments and returning alumni get woven into the season under the standing Perry-Richie-Bryan panel. The format uses its own archive as the hook here, rather than introducing anything new to the competition mechanics."
   - show: american-idol
+    season: 8
+    season_label: "S08"
+    rank: 14
+    title: "The original panel runs intact one last time, without knowing it yet"
+    blurb: "Paula Abdul departs after this season, closing out the original panel's only fully unbroken run. Nothing about the season itself changes the format — its weight is entirely retrospective, earned only once the breakup that followed made this its final unified year."
+  - show: american-idol
     season: 1
     season_label: "S01"
-    rank: 13
+    rank: 15
     title: "No template existed before this season wrote one"
     blurb: "A nationwide audition tour, an untested three-judge panel, and a viewer vote treated as a genuine civic act — the founding document every later rewrite answers to. Rank it last not as a weak swing, but as the season all the others revise."
 ---

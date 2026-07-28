@@ -136,7 +136,7 @@ last time a curator actually looked.
 | every-season-tests-a-new-theory-of-the-kitchen | single | 2026-07-22 | 2026-07-22 | |
 | a-show-that-never-had-a-home-address | single | 2026-07-22 | 2026-07-22 | |
 | the-fix-stayed-after-the-season-left | craft | 2026-07-22 | 2026-07-22 | |
-| the-only-constant-was-the-vote | single | 2026-07-22 | 2026-07-22 | |
+| the-only-constant-was-the-vote | single | 2026-07-28 | 2026-07-28 | extended +2 (S11, S08) |
 | a-dating-experiment-still-writing-its-own-rulebook | single | 2026-07-22 | 2026-07-22 | |
 | every-summer-gets-its-own-twist | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Big Brother S04, S06, S12, S18 entries — twist mechanics never claimed anywhere in the ledger) |
 | when-scripted-went-dark | era | 2026-07-22 | 2026-07-22 | |
