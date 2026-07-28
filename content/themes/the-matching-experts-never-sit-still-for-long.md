@@ -50,63 +50,75 @@ entries:
     title: "The founding four run their last season together"
     blurb: "Atlanta proves the premise travels outside New York, but it's also the founding panel's closing chapter — the last season before Miami rebuilds the table around a single holdover."
   - show: married-at-first-sight
+    season: 8
+    season_label: "S08 · Philadelphia"
+    rank: 7
+    title: "A second straight hold turns out to be the panel's last together"
+    blurb: "Schwartz, Roberson, and Griffin carry over from Dallas untouched, matching three new couples in Philadelphia. Nobody watching knows it yet, but this is the last season this exact panel sits at the table together."
+  - show: married-at-first-sight
     season: 19
     season_label: "S19 · Austin"
-    rank: 7
+    rank: 8
     title: "The panel finally holds still while the whole show changes address"
     blurb: "Austin keeps its three experts and five couples exactly as Chicago II left them. What actually moves is the network — eighteen straight seasons on Lifetime end here, with Peacock taking over instead."
   - show: married-at-first-sight
     season: 5
     season_label: "S05 · Chicago"
-    rank: 8
+    rank: 9
     title: "The post-Miami panel holds, and the broadcast finally settles on one network"
     blurb: "Schwartz, DeAlto, and Roberson carry over unchanged from Miami, but Season 5 is also the first to air solely on Lifetime after four seasons splitting the broadcast with FYI and A&E — plus two extra episodes to work with."
   - show: married-at-first-sight
     season: 12
     season_label: "S12 · Atlanta II"
-    rank: 9
+    rank: 10
     title: "The panel holds through a return trip and a six-season renewal"
     blurb: "Schwartz, Coles, and Roberson carry over from New Orleans as the format revisits Atlanta for the first time since Season 3, part of a six-season renewal that locked in the show's expansion through Season 17."
   - show: married-at-first-sight
     season: 10
     season_label: "S10 · Washington, D.C."
-    rank: 10
+    rank: 11
     title: "A settled panel absorbs the show's biggest structural swing yet"
     blurb: "Schwartz, Roberson, and Coles carry over unchanged even as the cast expands past three couples for the first time. The table stays the same size while everything sitting around it grows."
   - show: married-at-first-sight
+    season: 11
+    season_label: "S11 · New Orleans"
+    rank: 12
+    title: "The panel holds through the longest broadcast calendar the show ever tries"
+    blurb: "Schwartz, Roberson, and Coles carry over from Washington, D.C. unchanged while the season itself stretches to nearly four months amid pandemic conditions — close to double the usual run. The table stays put; the calendar around it doesn't."
+  - show: married-at-first-sight
     season: 16
     season_label: "S16 · Nashville"
-    rank: 11
+    rank: 13
     title: "A four-expert panel gets its longest test yet"
     blurb: "The Schwartz-Roberson-Holec-Franklin table carries over from San Diego untouched, but the season around it stretches to twenty-three episodes — the format's longest order, testing a panel that isn't moving at all."
   - show: married-at-first-sight
     season: 7
     season_label: "S07 · Dallas"
-    rank: 12
+    rank: 14
     title: "The first season with no panel change of any kind"
     blurb: "Schwartz, Roberson, and Griffin return from Boston untouched — the first season since the founding lineup broke up where nothing at the table moves. Dallas is the format on cruise control, with nothing left to explain."
   - show: married-at-first-sight
     season: 1
     season_label: "S01 · New York"
-    rank: 13
+    rank: 15
     title: "The founding lineup every later swap answers to"
     blurb: "Four relationship experts match three couples with no track record to lean on and no returning cast to reassure anyone. Every panel change this format has made since starts from the table New York sets here."
   - show: married-at-first-sight
     season: 2
     season_label: "S02 · New York II"
-    rank: 14
+    rank: 16
     title: "The one season that proves the panel didn't need to change at all"
     blurb: "The same four experts return for a second round in the same city, no swap required. Before the table starts turning over every few seasons, New York II shows the format holding perfectly steady."
   - show: married-at-first-sight
     season: 14
     season_label: "S14 · Boston II"
-    rank: 15
+    rank: 17
     title: "A repeat city, an unchanged panel, nothing left to prove"
     blurb: "The Schwartz-Roberson-Coles panel and five-couple format carry over unchanged from Houston, the season's only real news being a return to a city Season 6 already proved works. Nothing structural gets tested twice over."
   - show: married-at-first-sight
     season: 18
     season_label: "S18 · Chicago II"
-    rank: 16
+    rank: 18
     title: "The format running on pure muscle memory, panel included"
     blurb: "Same three experts, same five-couple structure, a second trip to a city the show already proved. Chicago II is the panel's quietest season — nothing at the table moves at all."
 ---

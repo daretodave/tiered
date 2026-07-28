@@ -118,7 +118,7 @@ last time a curator actually looked.
 | the-season-structure-never-holds-still | single | 2026-07-21 | 2026-07-21 | |
 | the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
 | the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-21 | 2026-07-21 | |
-| the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Married at First Sight S05, S07, S12, S14 entries — 4 of 7 unclaimed filed seasons; S08/S11/S13 remain unclaimed for a future pass) |
+| the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (second pass: Married at First Sight S08 Philadelphia + S11 New Orleans entries, 16->18 — S13 Houston still deferred, thinnest remaining hook: third straight unchanged five-couple season with no fresh angle beyond the two already claimed) |
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-21 | 2026-07-21 | |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
