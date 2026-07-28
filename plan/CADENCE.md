@@ -348,6 +348,29 @@ gap-slots total** (34 shows × 1 deferred slot each, +1 extra
 deferred slot on `hells-kitchen`) — 68-show catalog total
 unchanged, only love-island-uk's row cleared.
 
+**Rule 2 stall, 2026-07-28 tick:** re-verified the pick-order-top
+candidates (tier S first, then tier A oldest-`est_year`-first per
+the standing tie-break) — `survivor` (S51), `the-challenge` (S42),
+`big-brother` (S28), `amazing-race` (S39), `bachelor` — none have
+concluded. Survivor 51 premiere reconfirmed 2026-09-23 (CBS,
+"Open Era" format), still 8 weeks out. The Challenge: Cutthroat
+S42 premiere reconfirmed 2026-08-05 (Paramount+, the format's
+first streaming-exclusive season), still 8 days out. Amazing Race
+39 premiere reconfirmed 2026-09-30 (CBS, following Survivor 51's
+slot) — no change to the deferred status, just a firmer date than
+the previous "no exact date" note. Bachelor Season 30 stays
+undated (renewed but no 2026 fall slot on ABC's announced
+schedule; still casting). **Newly confirmed this tick: `big-brother`
+S28 ("Time Trip") now has a finale date** — Thursday 2026-10-01,
+90-minute episode, closing an 87-day cycle — previously "no finale
+date announced" per the 2026-07-12 note above. Added to
+`content/calendar.yml` (`status: scheduled`) so the phase-39 finale
+gate picks it up automatically once it airs. No row is actionable
+for authoring this tick — every remaining gap-table slot stays
+starred (confirmed-but-unaired). Gap table unchanged at 35 shows /
+36 gap-slots. Next actionable check is the weekly sweep, due
+2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —

@@ -80,3 +80,7 @@ finales:
     season: 13
     finale_date: 2026-08-26
     status: scheduled
+  - show: big-brother
+    season: 28
+    finale_date: 2026-10-01
+    status: scheduled
