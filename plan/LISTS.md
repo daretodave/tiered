@@ -147,7 +147,7 @@ last time a curator actually looked.
 | the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
-| running-on-muscle-memory | tone | 2026-07-23 | 2026-07-23 | |
+| running-on-muscle-memory | tone | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
