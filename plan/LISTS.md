@@ -138,7 +138,7 @@ last time a curator actually looked.
 | the-fix-stayed-after-the-season-left | craft | 2026-07-22 | 2026-07-22 | |
 | the-only-constant-was-the-vote | single | 2026-07-28 | 2026-07-28 | extended +2 (S11, S08) |
 | a-dating-experiment-still-writing-its-own-rulebook | single | 2026-07-22 | 2026-07-22 | |
-| every-summer-gets-its-own-twist | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Big Brother S04, S06, S12, S18 entries — twist mechanics never claimed anywhere in the ledger) |
+| every-summer-gets-its-own-twist | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Big Brother S10 "Adam and Eve" premiere twist — distinct axis from its best-newbie-casts mention) |
 | when-scripted-went-dark | era | 2026-07-22 | 2026-07-22 | |
 | the-charter-map-as-the-whole-story | single | 2026-07-22 | 2026-07-22 | |
 | the-map-outlasted-the-cast | single | 2026-07-22 | 2026-07-22 | |
@@ -1566,6 +1566,33 @@ last time a curator actually looked.
   unlisted single-show pairs (top-chef, the-voice,
   american-ninja-warrior, and amazing-race were confirmed curated this
   pass and can be skipped, narrowing the remaining unchecked set).
+- 2026-07-28 thirtieth pass (cloud march tick): **shipped** —
+  extend-first again. Rule 2 was checked first: `plan/CADENCE.md`'s
+  gap table is unchanged since the twenty-ninth pass (all slots
+  starred, season-sweep not due until 2026-08-02, show-add locked at
+  a non-zero gap), so Rule 2 stayed fully stalled. Fell through to
+  Rule 3. `every-summer-gets-its-own-twist` (Big Brother twist
+  mechanics, ranked by how much each summer's mechanic actually
+  rewired the house) had 24 entries against Big Brother's filed
+  seasons, missing S03, S07, and S10. Read all three season files.
+  S03 and S07 were rejected — S03's file frames that season as
+  general strategic evolution with no discrete twist mechanic, and
+  S07 ("All-Stars") is a casting format, not an in-season mechanic,
+  so neither fits this list's stated axis. S10 ("Renegades Era")
+  fit cleanly: its own season file documents an "Adam and Eve"
+  premiere twist, two houseguests moved into the house alone days
+  ahead of the rest of the cast. Confirmed via grep that this fact
+  had one prior mention in the ledger (`best-newbie-casts`, rank 6),
+  where it's supporting color for a newbie-cast-strength argument,
+  not the ranking criterion there — a distinct enough angle to reuse
+  without duplicating that list's claim. Shipped: appended at rank 25
+  (the mechanic reads as thinner than the ranked twists above it —
+  premiere-week-only, dissolved once the cast settled), title 76
+  chars, blurb 273 chars, both under the 140/280 schema caps.
+  `last_revised` bumped. List still carries two deliberate gaps (S03,
+  S07) — not an oversight, they were checked and rejected on their
+  merits. Extend-first now stands at 13-for-14 across the logged
+  passes.
 
 ## Notes
 
