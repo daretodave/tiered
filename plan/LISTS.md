@@ -89,7 +89,7 @@ last time a curator actually looked.
 | the-roster-was-the-twist | single | 2026-07-19 | 2026-07-19 | |
 | two-channels-same-night | craft | 2026-07-19 | 2026-07-19 | |
 | the-elimination-round-never-keeps-its-name | single | 2026-07-19 | 2026-07-19 | |
-| the-clock-had-to-make-room | single | 2026-07-19 | 2026-07-19 | |
+| the-clock-had-to-make-room | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (90 Day Fiancé S03 entry, rank 3 — the one season here where the six-couple shape held completely steady, no comeback/crossover wrinkle; list now runs 11 entries, matching the full 11 filed flagship seasons) |
 | the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
 | the-twist-is-the-format | single | 2026-07-19 | 2026-07-19 | |
 | the-broadcast-wasnt-the-whole-show | craft | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 · The Debrief companion show, its own distinct fact from the-fire-pit-never-moved's same-day S13 entry) |
@@ -1528,6 +1528,44 @@ last time a curator actually looked.
     extend-first move is likely checking newly seeded shows/seasons
     against the ledger, not re-running blanket scans of already-
     swept lists.
+- 2026-07-28 twenty-ninth pass (content-curator tick): **shipped** —
+  extend-first again. The twenty-sixth pass's own scripted single-show
+  entries-vs-filed-seasons scan had reported the well dry, but that
+  scan covered ~25 named shows explicitly and skipped several
+  single-show lists it never named. Re-ran the same entries-vs-filed-
+  seasons comparison against every remaining unlisted `category:
+  single` show (90-day-fiance, the-apprentice, top-chef, rhoc,
+  masterchef, the-circle, love-is-blind, selling-sunset,
+  dragrace-allstars, traitors-uk, the-voice, survivor-australia,
+  american-ninja-warrior, amazing-race) directly against each show's
+  `content/shows/<slug>/seasons/*.md` file count. Most matched exactly
+  (rhoc 19/19, masterchef 16/16, the-circle 7/7, love-is-blind 10/10
+  ×2 lists, selling-sunset 9/9, traitors-uk 4/4, survivor-australia
+  12/12, the-apprentice 15/15) or are curated superlative cuts with no
+  "ranks all N" claim (top-chef, the-voice, american-ninja-warrior,
+  amazing-race). `the-clock-had-to-make-room` (90 Day Fiancé, ranked
+  by how the flagship's ensemble/comeback/crossover shape kept
+  stretching against its fixed 90-day clock) stood out: 10 entries
+  against 11 filed seasons, missing exactly Season 3. Read the
+  season's own file: its lede states plainly "no major structural
+  wrinkle here" — the one season that held the six-couple shape
+  completely steady, sitting right between S02 (which introduces the
+  six-couple default) and S04 (which shrinks back to five the same
+  month the first spinoff launches). Confirmed via grep that
+  `90-day-fiance` season 3 has never appeared in any other list in the
+  ledger. Shipped: inserted at rank 3 in chronological order (existing
+  ranks 3-10 shifted to 4-11), framed as the list's steady-state
+  contrast — the season that proves the shape could hold still right
+  before the format starts bending it again. List now runs 11 entries,
+  matching 90 Day Fiancé's full filed-season count for the first time.
+  `last_revised` bumped (real content change). Extend-first now stands
+  at 12-for-13 across the logged passes. **Assessment:** the
+  twenty-sixth pass's "well is dry" conclusion held for the shows it
+  actually checked, but its coverage wasn't the full single-show
+  catalog — a future tick should keep working through the remaining
+  unlisted single-show pairs (top-chef, the-voice,
+  american-ninja-warrior, and amazing-race were confirmed curated this
+  pass and can be skipped, narrowing the remaining unchecked set).
 
 ## Notes
 
