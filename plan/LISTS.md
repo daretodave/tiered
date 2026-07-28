@@ -1388,6 +1388,52 @@ last time a curator actually looked.
   passes, zero remaining hits) — a future tick should stop re-running
   it blind and instead check for newly-drained seasons first, the way
   this pass did for love-island-uk S13.
+- 2026-07-28 twenty-seventh pass (content-curator tick): zero-ship.
+  Checked the tick's two flagged extend candidates in full before
+  searching for a new concept.
+  - `love-island-uk` Series 13 — confirmed already extended into both
+    lists whose stated scope covers its two genuine new facts
+    (`the-fire-pit-never-moved` rank 8, the sleepover twist;
+    `the-broadcast-wasnt-the-whole-show` rank 12, The Debrief
+    companion show — both same-day 2026-07-28 edits from an earlier
+    tick). Read S13's own season file in full and checked its
+    remaining facts (Casa Amor in its usual slot, Maya Jama's fourth
+    summer, twelve launch islanders, Mallorca again) against 13 more
+    lists already carrying prior Love Island UK entries
+    (the-mic-changed-hands, the-season-the-audience-showed-up-all-
+    at-once, the-hand-behind-the-couple, the-host-never-walks-into-
+    the-room, who-actually-got-the-vote,
+    the-resemblance-was-never-just-a-fun-fact,
+    the-cast-arrived-pre-famous, the-cast-was-still-arriving,
+    not-the-usual-order, same-license-different-rules,
+    the-blackout-had-a-loophole, straight-to-camera-never-to-each-
+    other, the-fix-stayed-after-the-season-left,
+    before-the-spinoff-had-a-name) — none of those facts is new or
+    unclaimed against any of their scopes. No gap.
+  - `the-ultimatum` Season 4 — confirmed already captured: its
+    defining new fact (a cast drawn entirely from Las Vegas locals,
+    the franchise's first casting-pool change) is already
+    `season-one-doesnt-own-every-first` rank 10, matching the
+    season's own lede almost verbatim. Re-confirmed the 2026-07-26
+    fourth-pass rejection of this exact fact as a standalone
+    cross-show list (single data point, no cross-canon floor) still
+    holds. No other list's stated scope covers a cast-is-local-to-
+    the-shoot fact.
+  - `married-at-first-sight` — left alone per the brief; the ledger's
+    own note on `the-matching-experts-never-sit-still-for-long`
+    already documents Season 13 Houston as the thinnest remaining
+    hook, deferred across two same-day extension passes.
+  - Searched four fresh domains for a new concept, all rejected:
+    showrunner/EP-departure language (1 file hit, not a pattern);
+    competition "theme night" devices, e.g. decades night (zero
+    hits catalog-wide); remote/video-call judging as its own craft
+    angle (only American Idol S18, already spent in
+    `pandemic-seasons`); a "results show as its own episode"
+    structural cut (4 hits, all So You Think You Can Dance, already
+    owned by `rulebook-rewritten-every-season`). None reaches the
+    10-entry floor or the ≥3-show cross-canon floor. No list shipped
+    this tick — the grep-groundable well documented as near-
+    exhausted by passes 7 through 26 held again this pass.
 
 ## Notes
 
