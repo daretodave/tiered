@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-07-28
 featured: false
 related:
   - a-change-of-address
@@ -85,4 +85,16 @@ entries:
     rank: 12
     title: "A new pairing arrives at a flap the show never had to rebuild"
     blurb: "Alison Hammond's first series lands at Welford Park, the same field the show has returned to since the bubble years ended — proof the address had absorbed enough turnover by now that a presenter change barely touches its own story."
+  - show: bake-off
+    season: 10
+    season_label: "S10"
+    rank: 13
+    title: "A third Channel 4 year, and the field has nothing new to add"
+    blurb: "Welford Park's third straight settled year has nothing new to say about the address — the real headline is Sandi Toksvig's farewell as presenter, not the field. The quietest location story the format tells before the bubble years upend everything."
+  - show: bake-off
+    season: 16
+    season_label: "S16"
+    rank: 14
+    title: "The third Hammond year, and the address goes fully silent"
+    blurb: "A third straight series at Welford Park with the same four faces and no location news at all — the settled Channel 4 era at its most comfortable and its least eventful. If any season proves the address stopped being a story, it's this one."
 ---

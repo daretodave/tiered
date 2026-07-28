@@ -120,7 +120,7 @@ last time a curator actually looked.
 | the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-21 | 2026-07-21 | |
 | the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (second pass: Married at First Sight S08 Philadelphia + S11 New Orleans entries, 16->18 — S13 Houston still deferred, thinnest remaining hook: third straight unchanged five-couple season with no fresh angle beyond the two already claimed) |
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
-| the-tent-moved-more-than-the-show-admits | single | 2026-07-21 | 2026-07-21 | |
+| the-tent-moved-more-than-the-show-admits | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Bake Off S10, S16 entries — both genuinely unclaimed anywhere in the ledger, confirmed via grep; the two other apparent gaps, S09/S15, stay excluded on purpose because `running-on-muscle-memory` already spends their identical "settled, nothing new" address fact) |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
 | wealth-as-the-whole-pitch | tone | 2026-07-21 | 2026-07-21 | |
 | the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
@@ -1593,6 +1593,45 @@ last time a curator actually looked.
   S07) — not an oversight, they were checked and rejected on their
   merits. Extend-first now stands at 13-for-14 across the logged
   passes.
+- 2026-07-28 thirty-first pass (content-curator tick): **shipped** —
+  extend-first again, steered away from every list touched earlier
+  today (pandemic-seasons, the-clock-had-to-make-room,
+  the-broadcast-wasnt-the-whole-show,
+  the-matching-experts-never-sit-still-for-long,
+  the-only-constant-was-the-vote, every-summer-gets-its-own-twist,
+  the-fire-pit-never-moved, the-reunion-kept-changing-its-own-rules).
+  Re-grepped every theme file for an explicit "ranks all N seasons"
+  numeric claim and cross-checked each hit's entry count against its
+  show's filed-season count directly — most resolved to exact matches
+  already confirmed by earlier passes (shark-tank 17/17, dragrace-uk
+  7/7, queer-eye 10/10 across two separate lists, masterchef-australia
+  17/17, dragrace-allstars 11/11, rhony/rhoc/rhonj/rhobh/rhoa/rhom all
+  matched, americas-got-talent 20/20, alone 12/12). One real gap
+  survived: `the-tent-moved-more-than-the-show-admits` (Bake Off,
+  ranked by how much weight the literal filming address carried each
+  series, `status: growing`) carried 12 entries against 16 filed Bake
+  Off seasons — the twenty-second pass's backfilled note claimed this
+  gap was "correctly excluded," so re-verified from scratch rather
+  than trusting the note blind. Read all four missing season files
+  (09, 10, 15, 16): S09 and S15 are both already spent in
+  `running-on-muscle-memory` under the identical "settled, nothing new
+  to report" address framing (confirmed via grep, season_label text
+  matches near-verbatim) — the twenty-second pass's exclusion holds
+  for those two. S10 and S16 are genuinely unclaimed anywhere in the
+  178-list ledger (confirmed via grep for `show: bake-off` + season 10
+  and 16 specifically) — both season files describe a further
+  consecutive settled year at Welford Park with zero location news
+  (S10 "Sandi's Final Year," S16 "The Hammond Continues," the latter's
+  own pull text calling itself "the show at its most comfortable and
+  its least distinctive"), a clean fit for this list's bottom tier
+  alongside the already-ranked S4/S6 "nothing new" entries. Shipped:
+  appended at ranks 13–14, below S14 (Hammond's arrival, still a
+  presenter-change story) since S10 and S16 carry even less location
+  news than any existing entry. `last_revised` bumped (real content
+  change); list now runs 14 entries against Bake Off's 16 filed
+  seasons, with S09/S15 remaining as confirmed-deliberate exclusions,
+  not oversights. Extend-first now stands at 14-for-15 across the
+  logged passes.
 
 ## Notes
 
