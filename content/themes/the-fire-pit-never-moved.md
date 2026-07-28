@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-07-28
 featured: false
 related:
   - the-mic-changed-hands
@@ -56,33 +56,39 @@ entries:
     title: "Second-villa machinery and twist density start crowding the format's original simplicity"
     blurb: "Casa Amor now shares the runtime with a thicker stack of format twists than any earlier summer carried, and the season leans on structure nearly as much as on the cast walking through it."
   - show: love-island-uk
+    season: 13
+    season_label: "S13"
+    rank: 8
+    title: "A sleepover twist and a nightly companion show arrive, but the season plays it safe by comparison"
+    blurb: "A new sleepover mechanic reshuffles early bombshells before their first recoupling, and a nightly companion show joins the schedule for the first time. Both land on top of an otherwise settled format, with none of the previous series' full structural overhaul."
+  - show: love-island-uk
     season: 4
     season_label: "S04"
-    rank: 8
+    rank: 9
     title: "The second-villa twist stops being an event and starts being load-bearing"
     blurb: "One year after its debut, Casa Amor returns as an expected pillar rather than a surprise — proof the format had already decided which twist was staying for good."
   - show: love-island-uk
     season: 7
     season_label: "S07"
-    rank: 9
+    rank: 10
     title: "The format restarts cold after the only cancelled summer in its history"
     blurb: "The longest gap the show has ever taken ends with the villa reopening in Mallorca, the fire pit and Casa Amor both picking back up exactly where the format left off before the year away."
   - show: love-island-uk
     season: 2
     season_label: "S02"
-    rank: 10
+    rank: 11
     title: "No new twist arrives, but the runtime nearly doubles and the pacing has to catch up"
     blurb: "The season doesn't add a mechanic — it just runs the founding format for a much longer stretch, forcing the show to learn how to sustain a whole summer instead of a shorter debut run."
   - show: love-island-uk
     season: 10
     season_label: "S10"
-    rank: 11
+    rank: 12
     title: "A milestone number lands on a format with nothing left to prove structurally"
     blurb: "Every mechanic the show has assembled by now — the fire pit, the public vote, Casa Amor — runs here in its settled, mature form, with the milestone marketed rather than structurally acted on."
   - show: love-island-uk
     season: 5
     season_label: "S05"
-    rank: 12
+    rank: 13
     title: "Peak audience, zero new machinery — the format just runs what it already built"
     blurb: "The most-watched original-era summer adds nothing structurally new; it simply executes the established fire pit, vote, and Casa Amor rhythm at the loudest possible volume."
 ---

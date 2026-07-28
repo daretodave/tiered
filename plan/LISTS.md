@@ -159,7 +159,7 @@ last time a curator actually looked.
 | the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
 | the-season-everyone-got-their-audience-back | era | 2026-07-23 | 2026-07-23 | |
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
-| the-fire-pit-never-moved | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Love Island UK S12 entry) |
+| the-fire-pit-never-moved | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 entry — sleepover twist + The Debrief companion show) |
 | the-roster-never-held-still | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-five-kept-getting-replaced | single | 2026-07-23 | 2026-07-23 | |
 | the-masks-changed-every-week-the-panel-never-did | single | 2026-07-23 | 2026-07-23 | |
@@ -1285,6 +1285,28 @@ last time a curator actually looked.
     be the most reliable source of genuine finds this week — worth
     keeping as the default first move on a Rule-2-blocked tick before
     inventing a new concept from scratch.
+- 2026-07-28 twenty-fourth pass (`/march` tick): **shipped** — Rule 2
+  gap table read zero actionable picks (every remaining slot starred
+  confirmed-but-unaired per the 2026-07-19 sweep), so ran extend-first
+  again per the standing recommendation. `love-island-uk` Series 13
+  (Summer 2026) was drained into the catalog the prior tick
+  (`30e93b15`, 2026-07-27) — checked whether any single-show Love
+  Island UK list had picked it up yet. `the-fire-pit-never-moved`
+  (ranked by how much new format machinery each series added) still
+  read 12/13, its newest season the one gap. Confirmed via grep that
+  S13 had zero prior appearances anywhere in the ledger. Read the
+  season's own file: a new sleepover mechanic (early bombshells placed
+  in a separate villa before their first recoupling) and a new nightly
+  companion show, The Debrief, both debut this series — genuine new
+  machinery, but the season's own lede explicitly frames it as calmer
+  than S12's three-mechanic overhaul ("none of last summer's
+  structural risk"). Inserted at rank 8 (below S8's twist-density
+  crowding, above S4's "twist becomes routine" entry, which has zero
+  new mechanics of its own) — existing ranks 8-12 shifted to 9-13, no
+  other entry's text touched. List now runs 13 entries, matching Love
+  Island UK's full filed-season count for the first time.
+  `last_revised` bumped (real content change). Extend-first now stands
+  at 9-for-10 across the logged passes.
 
 ## Notes
 
