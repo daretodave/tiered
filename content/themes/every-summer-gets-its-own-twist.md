@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-07-28
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -157,4 +157,10 @@ entries:
     rank: 24
     title: "Every houseguest walks in already carrying a hidden ex from inside the cast"
     blurb: "The X-Factor twist reveals on Day One that every houseguest has an ex somewhere in the house, the franchise's first big swing at seeding secret history into the cast. The format lands rough around the edges, but the idea outlives the season it debuted in."
+  - show: big-brother
+    season: 10
+    season_label: "S10"
+    rank: 25
+    title: "Two houseguests move in alone, days before the rest of the cast even arrives"
+    blurb: "The season's Adam-and-Eve premiere drops two houseguests into the house alone, ahead of the other eleven — a private head start nobody else gets. The device itself lasts through premiere week, but the alliance it seeds outlives it, becoming its own piece of franchise lore."
 ---
