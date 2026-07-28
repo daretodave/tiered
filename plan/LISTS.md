@@ -176,7 +176,7 @@ last time a curator actually looked.
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
 | the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
-| no-season-here-got-the-calendar-to-itself | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
+| no-season-here-got-the-calendar-to-itself | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
@@ -1786,6 +1786,47 @@ last time a curator actually looked.
   mechanic, same tier logic as S28/S54's existing "confident rerun"
   entries). `last_revised` bumped (real content change). Extend-first
   now stands at 15-for-16 across the logged passes.
+- 2026-07-28 thirty-fifth pass (content-curator tick): **shipped** —
+  extend-first again. Rule 2 re-checked first per `plan/CADENCE.md`'s
+  standing 2026-07-28 stall note (every gapped show still starred,
+  season-sweep not due until 2026-08-02) — fell through to Rule 3.
+  Rather than re-run the entries-vs-filed-seasons scan (confirmed
+  exhausted five times over at pass 32) or the newly-drained-show
+  watch (no fresh drain since the-ultimatum S4/love-island-uk S13,
+  both already fully mined by passes 24/26/27/34), grepped every
+  Chopped season file for calendar/overlap language directly, since
+  `no-season-here-got-the-calendar-to-itself` only carried 19 of 62
+  filed seasons and the prior extension passes had worked from the
+  batch-drain progress notes rather than a full file sweep. The grep
+  (`overlap|tangl|nest|calendar|window|footprint`) surfaced three
+  genuinely unclaimed hits: Seasons 11, 12, and 13 — a self-contained
+  three-season "overlap chain" whose own filenames
+  (`the-overlap-opens` / `the-overlap-holds` / `the-overlap-closes`)
+  and lede/pull text explicitly state each season's overlap with the
+  other two (S12's own text: "sits at the center of the show's most
+  tangled release window, overlapping Season 11's back half and...
+  Season 13's front half"). Confirmed via grep these three seasons
+  had zero prior appearances anywhere in the 204-list ledger. Also
+  checked Seasons 6, 10, 14, and 15 (other filenames suggesting
+  calendar relevance) — rejected: S10/S14/S15 each explicitly state a
+  *clean*, non-overlapping window (S14: "clear of the scheduling
+  overlap that tangled Seasons 11 through 13"), which would blur this
+  list's existing S62 "only season that shares its calendar with
+  nobody" claim if added as parallel "alone" entries; S6's calendar
+  fact is a sibling-special launch (Chopped All-Stars), not a
+  numbered-season overlap, off this list's specific axis. Shipped:
+  inserted the three-season chain at ranks 10-12 (S12 first as the
+  deepest of the three — boxed in by both neighbors at once — then
+  S11 opening the chain, then S13 closing it with an added
+  episode-count shortfall), positioned right after S23's "real
+  tangle, inherited but never the deepest" and ahead of S20's "first
+  double overlap" — existing ranks 10-19 shifted to 13-22. Did not
+  reuse either season's own "densest" superlative in the new blurbs,
+  since S22/S24's already-ranked four-neighbor footprints are
+  objectively deeper — the season files' own claims reflect what was
+  true when written, not the full 62-season ranked set. List now runs
+  22 entries. `last_revised` bumped (real content change). Extend-first
+  now stands at 16-for-17 across the logged passes.
 
 ## Notes
 
