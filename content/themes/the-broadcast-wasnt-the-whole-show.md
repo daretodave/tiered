@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-07-28
 featured: false
 related:
   - live-without-a-net
@@ -79,10 +79,16 @@ entries:
     rank: 11
     title: "The newest twist on the companion channel arrives"
     blurb: "This summer's run ships with Unlocked, a companion series built into the season's structure rather than added after the fact. The format keeps proving it can't just air an edited hour anymore — the parallel channel is baked in from the start."
+  - show: love-island-uk
+    season: 13
+    season_label: "S13"
+    rank: 12
+    title: "A new nightly companion show joins the schedule for the first time"
+    blurb: "The Debrief becomes the villa's newest companion program this series, running most weeknights alongside the main episode. A calmer summer than the year before on every other front, but the franchise still finds room to add a new channel to how fans keep up."
   - show: big-brother
     season: 1
     season_label: "S01"
-    rank: 12
+    rank: 13
     title: "The founding experiment: a live feed running before anyone called it that"
     blurb: "The debut season pairs its edited broadcast with a live internet feed of the house, an early bet that some fans would rather watch the house directly than wait for the edit. The instinct behind every companion channel on this list starts here, small and untested."
 ---

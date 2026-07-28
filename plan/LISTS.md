@@ -92,7 +92,7 @@ last time a curator actually looked.
 | the-clock-had-to-make-room | single | 2026-07-19 | 2026-07-19 | |
 | the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
 | the-twist-is-the-format | single | 2026-07-19 | 2026-07-19 | |
-| the-broadcast-wasnt-the-whole-show | craft | 2026-07-19 | 2026-07-19 | |
+| the-broadcast-wasnt-the-whole-show | craft | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 · The Debrief companion show, its own distinct fact from the-fire-pit-never-moved's same-day S13 entry) |
 | a-second-life-built-into-the-format | craft | 2026-07-19 | 2026-07-19 | |
 | the-finale-broke-its-own-rulebook | craft | 2026-07-19 | 2026-07-19 | |
 | the-competition-leaves-the-country | craft | 2026-07-19 | 2026-07-19 | |
@@ -1340,6 +1340,54 @@ last time a curator actually looked.
   (single-show, no cross-canon floor applies). `last_revised` bumped
   (real content change). Extend-first now stands at 10-for-11 across
   the logged passes.
+- 2026-07-28 twenty-sixth pass (content-curator tick): **shipped** —
+  extend-first again, explicitly steered away from every list touched
+  earlier today (the-matching-experts-never-sit-still-for-long,
+  the-only-constant-was-the-vote, when-the-basket-became-a-bracket,
+  every-summer-gets-its-own-twist, the-team-never-means-the-same-
+  thing-twice, the-reunion-kept-changing-its-own-rules,
+  familiar-faces-wrong-franchise, when-the-cast-was-already-related,
+  rulebook-rewritten-every-season, the-fire-pit-never-moved). Ran the
+  scripted `category: single` entries-vs-filed-seasons gap check
+  across ~25 more single-show lists before confirming every one of
+  them either matches its show's filed-season count exactly (masked-
+  singer, queer-eye, married-at-first-sight-australia, below-deck-
+  sailing-yacht, vanderpump-rules, alone, rhom, rhony, dragrace-uk,
+  americas-got-talent, southern-charm, summer-house, rhonj,
+  bachelor-in-paradise, rhop, love-island-us, below-deck-mediterranean,
+  rhobh, americas-got-talent again, shark-tank, masterchef-australia,
+  rhoa) or is a deliberately curated superlative cut with no "ranks
+  all N seasons" tagline claim to hold it to (hells-kitchen, bachelor,
+  americas-next-top-model, project-runway, big-brother, dragrace,
+  ink-master ×2, the-challenge) — the exact-count-mismatch well this
+  week's passes 22-24 mined is now fully dry across the whole single-
+  show floor, a third independent confirmation after passes 4 and 10.
+  Pivoted to checking whether `love-island-uk` Series 13 (drained
+  2026-07-27, already claimed once today by `the-fire-pit-never-moved`
+  for its overall new-format-machinery angle) had a second, genuinely
+  distinct fact available for a different list: its season file's own
+  lede states a nightly companion show, The Debrief, "joining the
+  schedule for the first time" — a clean fit for
+  `the-broadcast-wasnt-the-whole-show` (craft, companion-channel
+  angle), confirmed via grep to have zero prior Love Island UK S13
+  appearances anywhere in the ledger. Verified the fact is a genuine
+  structural first stated directly in the season's own frontmatter/
+  body (not fabricated, not requiring a winner or outcome). Inserted
+  at rank 12 — grouped with the other freshly-launched, not-yet-
+  proven companion-show debuts (BB S8 After Dark, BB S27 Unlocked)
+  rather than the list's top tier, which is reserved for companion
+  channels with an established cultural track record (Aftersun S3-S5,
+  BB S15's live-feed takeover) — ahead of BB S1's founding-experiment
+  entry, which stays last by design as the list's origin-story closer.
+  List now runs 13 entries across 6 shows (love-island-uk now holds 4,
+  matching Big Brother's existing 4-entry count on this same list, so
+  no new per-list high-water mark). `last_revised` bumped (real
+  content change). Extend-first now stands at 11-for-12 across the
+  logged passes. **Flag:** the single-show entries-vs-filed-seasons
+  gap check is very likely fully exhausted now (3 independent full
+  passes, zero remaining hits) — a future tick should stop re-running
+  it blind and instead check for newly-drained seasons first, the way
+  this pass did for love-island-uk S13.
 
 ## Notes
 
