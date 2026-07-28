@@ -1678,6 +1678,85 @@ last time a curator actually looked.
     playbook. Extend-first stands at 14-for-15 across the logged
     passes; this pass doesn't change that ratio (zero-ship on a
     thorough check, not a failed attempt at a bad concept).
+- 2026-07-28 thirty-third pass (content-curator tick): zero-ship. Per
+  the brief's own steer, explicitly skipped the entries-vs-filed-
+  seasons scan (confirmed exhausted five times over at pass 32) and
+  hunted a wholly new cross-show concept instead, following the
+  brief's four suggested directions (network/production-house cuts,
+  format-mechanic angles, unclaimed tone/mood cuts, production/
+  broadcast-fact comparisons). All four resolved to either total
+  preemption or thin grounding.
+  - Musical scoring / soundtrack as a craft device (needle drops,
+    signature score cues) — rejected: grepped `soundtrack|scoring|
+    score composer|music supervisor|needle drop|theme song` across
+    every season file; only 12 hits catalog-wide, and every one is
+    incidental canon-level prose ("the editing leans on a moodier
+    score") rather than a dated production event — the same "scenic
+    texture, not a standalone fact" pattern the twenty-eighth pass
+    already identified for camera/aerial-footage language. No
+    coherent pattern to rank.
+  - Production-house/studio branding across sibling shows (Studio
+    Lambert, World of Wonder, Bunim/Murray, 51 Minds) — re-confirmed
+    the seventh pass's finding verbatim: zero real season-file hits,
+    the only near-match a Big Brother alliance nickname. Still
+    unworkable without a scout pass, and scout-sourced production
+    credits were already the seventh pass's own explicit
+    recommendation for a *different*, not-yet-authorized process.
+  - Physical set/workroom redesign mid-run (a competition rebuilding
+    its own kitchen, tent, or boardroom as a mid-format event) —
+    grepped `redesign|renovat|rebuilt the (set|studio|workroom|
+    kitchen|tent|stage)|new set design|set overhaul`; 6 file hits,
+    none describing a genuine dated set-rebuild event (mostly
+    unrelated "reboot"/"relaunch" false positives). Too thin to
+    ground.
+  - A dedicated "imported foreign format" list (seasons whose founding
+    premise is explicitly a licensed adaptation of an existing
+    international format, e.g. Big Brother's Dutch origin, Dancing
+    with the Stars' BBC origin) — scoped in full before rejecting:
+    `no-template-to-copy` already ships both of the two cleanest hits
+    (Big Brother S1 "a borrowed European format," DWTS S1 "a British
+    import") verbatim, under its existing debut-season framing. A
+    dedicated version would need a third clean non-overlapping show
+    and reads as a reskin of the same list's founding-season angle,
+    not a distinct one.
+  - Host/judge tenure-length as its own cross-show cut (ranking
+    seasons by where they sit in a host's personal tenure arc,
+    independent of the format's own age) — scoped against
+    `best-hosting`'s existing 18 entries: the "veteran host, later
+    season" framing is already the explicit throughline for at least
+    six of its entries (Probst S34, Keoghan S11, RuPaul S9/S13,
+    Ramsay S17, Padma S20, Klum S16, Daly S21). A tenure-length list
+    would double-dip the same seasons under the same observation —
+    total preemption, not a fresh axis.
+  - Simultaneous international-sibling broadcast (a US season airing
+    the same window a foreign-language sibling edition debuts) —
+    checked against the two already-shipped broadcast-schedule era/
+    craft lists (`two-channels-same-night`, `twice-in-one-year`) to
+    confirm the domain wasn't already spent from a different angle;
+    it's a distinct claim in theory, but no season file in the
+    catalog actually states a sibling-edition premiere date for
+    cross-referencing — would need a scout pass to ground safely, the
+    same blocker the ninth/eleventh passes hit on comparable
+    real-world-date research.
+  - Charity-stakes-as-mechanic (contestants compete for a chosen
+    charity rather than personal winnings, as a recurring structural
+    device rather than a one-off special) — rejected: re-confirmed
+    the tenth pass's charity-tie-in finding (23 scattered hits, all
+    incidental or already-covered single cases, e.g. The Apprentice
+    S7's celebrity-charity format already inside `when-scripted-went-
+    dark`); no coherent 3-show pattern survives beyond what's already
+    spent.
+  - **Assessment:** this pass's four leads each independently
+    resolved the same way passes 7-28 kept resolving: either full
+    preemption by an already-shipped list's existing entries (imported-
+    format, tenure-length), or thin/scattered grounding that would need
+    external scout research to safely ground (production-house
+    branding, simultaneous-international-broadcast) — reconfirming
+    the standing assessment that the grep-groundable well for wholly
+    new cross-show concepts is genuinely dry at 203 lists. No fresh
+    lead to flag this time; a future tick's best move remains watching
+    for newly-drained shows/seasons per the thirty-second pass's own
+    closing note, not another blind concept sweep.
 
 ## Notes
 
