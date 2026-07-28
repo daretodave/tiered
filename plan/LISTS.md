@@ -118,7 +118,7 @@ last time a curator actually looked.
 | the-season-structure-never-holds-still | single | 2026-07-21 | 2026-07-21 | |
 | the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
 | the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-21 | 2026-07-21 | |
-| the-matching-experts-never-sit-still-for-long | single | 2026-07-21 | 2026-07-21 | |
+| the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Married at First Sight S05, S07, S12, S14 entries — 4 of 7 unclaimed filed seasons; S08/S11/S13 remain unclaimed for a future pass) |
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-21 | 2026-07-21 | |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
@@ -1308,6 +1308,38 @@ last time a curator actually looked.
   Island UK's full filed-season count for the first time.
   `last_revised` bumped (real content change). Extend-first now stands
   at 9-for-10 across the logged passes.
+- 2026-07-28 twenty-fifth pass (content-curator tick): **shipped** —
+  extend-first again, steered away from every list touched earlier
+  today (the-reunion-kept-changing-its-own-rules, the-only-constant-
+  was-the-vote, and the nine lists listed in the twenty-fourth pass's
+  own commit history). Ran the scripted single-show entries-vs-filed-
+  seasons gap check across several `category: single` lists before
+  finding a real hit: `the-matching-experts-never-sit-still-for-long`
+  (Married at First Sight, ranked by how much the expert panel itself
+  changed shape) carried only 12 entries against 19 filed seasons —
+  a 7-season gap, well beyond the usual 2-4 the checklist expects.
+  Read all 7 missing season files (05, 07, 08, 11, 12, 13, 14) in
+  full; each one's own lede/pull text already states explicitly
+  whether the panel changed that year, so every candidate is
+  groundable straight from the season file with zero fabrication
+  risk. Picked the 4 cleanest, most narratively distinct of the 7 to
+  ship this tick rather than force all seven into one commit: Season
+  5 Chicago (panel unchanged post-Miami, broadcast consolidates onto
+  Lifetime alone), Season 7 Dallas (the season's own text calls it
+  "the first season since the founding lineup broke up" with zero
+  panel change), Season 12 Atlanta II (panel unchanged, tied to the
+  six-season renewal announcement), and Season 14 Boston II (panel
+  unchanged, a second visit to a repeat city). Seasons 8, 11, and 13
+  remain unclaimed — all three are also panel-unchanged seasons with
+  thinner distinguishing hooks in their own text, flagged in the
+  ledger row for a future pass rather than forced in alongside
+  stronger material this tick. Inserted the four new entries at their
+  editorially-correct rank among the list's existing "no panel
+  change" cluster (ranks 8-15), renumbering five existing entries'
+  rank fields without touching their text; list now runs 16 entries
+  (single-show, no cross-canon floor applies). `last_revised` bumped
+  (real content change). Extend-first now stands at 10-for-11 across
+  the logged passes.
 
 ## Notes
 
