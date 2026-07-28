@@ -1434,6 +1434,100 @@ last time a curator actually looked.
     10-entry floor or the ≥3-show cross-canon floor. No list shipped
     this tick — the grep-groundable well documented as near-
     exhausted by passes 7 through 26 held again this pass.
+- 2026-07-28 twenty-eighth pass (content-curator tick): zero-ship.
+  Given a starting brief of six "fresh territory" leads a prior tick
+  had flagged as not yet touched — checked each in full before any
+  blind search of my own.
+  - Reunion special's own format changing (multi-part reunion, live-
+    audience reunion, virtual/remote reunion) — **fully preempted**:
+    `the-reunion-kept-changing-its-own-rules` (structure, shipped
+    2026-07-28, the immediately prior ledger entry) already ships
+    this exact angle end to end — RHOA S12's virtual-reunion first,
+    RHOP's one-to-two-to-three-part expansion, Selling Sunset's
+    standalone-reunion invention and its one-season pause, Summer
+    House's three-part-plus-bonus expansion, MAFS S19's same-day
+    finale/reunion collapse, Bachelor in Paradise S07's check-in-
+    montage swap, and Real World S30's reunion skip. Nothing left
+    unclaimed in this vein.
+  - Prize itself changing shape (cash vs. non-cash, a symbolic prize
+    replacing cash, a prize split between multiple winners
+    non-Alone-Frozen-style) — **fully preempted**:
+    `same-crown-new-price-tag` (structure, 14 entries, 8 shows)
+    already owns this exact territory in full — Drag Race UK S6's
+    first-ever cash prize, Drag Race All Stars S9's cash-to-charity
+    swap, Too Hot to Handle's shared-pool mechanic across three
+    seasons, Alone: Frozen's shared fifty-day split, ANTM S15's
+    check-to-magazine-credit swap, and Survivor Australia S11's
+    halved anniversary purse. Re-confirms the 2026-07-26 tenth-pass
+    finding that this well is spent.
+  - Format mechanics tied to real crew/production choices (multi-
+    camera vs. single-camera, night-vs-day filming shifts, drone/
+    aerial footage introduction, remote-controlled challenge
+    elements) — rejected: grepped `drone|aerial|night shoot|multi-
+    camera|handheld camera|camera operator|cinematographer` etc.
+    catalog-wide. Every real hit (Survivor Palau/Gabon/Philippines/
+    China, Real World S1) is incidental scenic-editing commentary
+    ("the editing leans on aerials," "camera operators clearly
+    relish the backdrops"), not a dated production-choice *event*
+    (an introduction, a switch, a first). No coherent groundable
+    pattern — what exists reads as prose texture already folded into
+    existing craft/location lists, not a standalone fact.
+  - Judge/host wardrobe or on-camera persona device as a recurring
+    bit — rejected: no groundable pattern. A broad grep for
+    wardrobe/signature-look/catchphrase language returned 113 files,
+    all false positives on unrelated words; a narrower pass for
+    "uniform / dress code / matching outfits" returned only 3 hits,
+    all Bachelor aviation-lead costuming already implicitly spent in
+    single-show framing, not a cross-show wardrobe *device*.
+  - Franchise tagline/opening-narration line changing mid-run to
+    reflect a tonal shift — rejected: no groundable pattern. Grepped
+    `narrat|voiceover|catchphrase|opening line|title sequence` (51
+    incidental hits, none describing an actual narration-line change
+    event) and `true story|stop being polite|start getting real`
+    (zero hits) — the classic Real World cold-open narration change
+    is real-world trivia but isn't stated anywhere in the repo's own
+    season files, and would need a scout pass to ground safely.
+  - Filming moved from a usual studio/soundstage to an unusual
+    one-off location for structural (not international-travel)
+    reasons — checked the one promising repo hit, So You Think You
+    Can Dance S16 ("The New Studio" — a purpose-built set with a
+    120-camera rig and the format's first live studio audience for
+    televised auditions) — **preempted**: already claimed by both
+    `rulebook-rewritten-every-season` and `live-without-a-net`
+    (season_label "S16 · The New Studio" verbatim). SYTYCD's 18
+    seasons are already spread across 24 existing lists catalog-wide
+    (re-confirming the 2026-07-26 fifth-pass finding that the show
+    has no unclaimed throughline left); a supporting grep for
+    `soundstage|backlot|studio audience` (32 hits) surfaced no other
+    show with a comparable structural studio-move fact — the rest
+    are either this same SYTYCD season or pandemic-era "no live
+    audience" facts already owned by `pandemic-seasons`.
+  - Also swept two adjacent leads on inspection: sponsor/branded-
+    challenge integration (zero hits catalog-wide) and a night-vs-day
+    filming-shift angle distinct from the crew-choices lead above
+    (5 hits, all the word "overnight" used as an in-game mechanic —
+    Traitors' overnight murders, Survivor Africa's overnight
+    elephant-proofing — not a production filming-schedule fact).
+  - **Assessment:** this pass's brief supplied six specific,
+    well-reasoned leads explicitly framed as unexplored by the prior
+    27 passes; five resolved to total preemption by lists shipped in
+    the same 24-48 hour window (the reunion-format and prize-shape
+    leads in particular were closed by tickets that landed the same
+    day this pass ran), and the sixth (crew/production mechanics)
+    turned out to be present only as incidental scenic prose, never a
+    dated event fact. This confirms the ledger is moving fast enough
+    now that "fresh territory" lists compiled even a day or two
+    earlier can already be stale by the time a pass reads them — a
+    future brief drafting new leads should re-grep against the
+    ledger's current state immediately before handing off a
+    candidate, rather than relying on a static list. Standing
+    recommendation unchanged: extend-first (11-for-12 to date)
+    remains the more reliable move than a new-concept search once a
+    Rule 2 slot isn't available, but passes 26/27 already confirmed
+    the single-show gap-scan well is dry — the next productive
+    extend-first move is likely checking newly seeded shows/seasons
+    against the ledger, not re-running blanket scans of already-
+    swept lists.
 
 ## Notes
 
