@@ -30,7 +30,7 @@ last time a curator actually looked.
 |---|---|---|---|---|
 | survivor-pillars | single | 2026-04-15 | 2026-07-24 | reviewed 2026-07-24, no change |
 | best-comeback-seasons | tone | 2026-05-21 | 2026-07-24 | reviewed 2026-07-24, no change |
-| best-hosting | craft | 2026-07-16 | 2026-07-16 | |
+| best-hosting | craft | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Traitors UK S01 entry — Claudia Winkleman's hosting tone documented in the season's own watch_list text, genuinely unclaimed anywhere in the ledger despite S01 appearing in 9 other lists under different facts) |
 | best-location-reveals | craft | 2026-05-21 | 2026-07-24 | reviewed 2026-07-24, no change |
 | best-post-merge | structure | 2026-05-21 | 2026-05-21 | |
 | best-premieres | craft | 2026-05-21 | 2026-05-21 | |
