@@ -1632,6 +1632,52 @@ last time a curator actually looked.
   seasons, with S09/S15 remaining as confirmed-deliberate exclusions,
   not oversights. Extend-first now stands at 14-for-15 across the
   logged passes.
+- 2026-07-28 thirty-second pass (content-curator tick): zero-ship.
+  Steered away from every list touched today (pandemic-seasons,
+  the-clock-had-to-make-room, the-broadcast-wasnt-the-whole-show,
+  the-matching-experts-never-sit-still-for-long, the-only-constant-was-
+  the-vote, every-summer-gets-its-own-twist, the-fire-pit-never-moved,
+  the-reunion-kept-changing-its-own-rules, the-tent-moved-more-than-the-
+  show-admits, the-shifting-yardstick, running-on-muscle-memory,
+  best-hosting). Re-ran the single-show entries-vs-filed-seasons gap
+  check a fifth independent time (after passes 4, 10, 26, 29, 31), this
+  time using a fresh grep pattern (`all (nine|ten|...|twenty[a-z-]*)
+  seasons`) targeting explicit "ranks all N seasons" claims phrased
+  differently than the prior passes' methods caught, cross-checked
+  directly against each show's `content/shows/<slug>/seasons/*.md` file
+  count. Every claim resolved to an exact match: masked-singer 14/14,
+  americas-got-talent 20/20, rhop 10/10, shark-tank 17/17, bachelorette
+  21/21, dragrace-allstars 11/11, rhonj 14/14, rhobh 15/15, summer-house
+  10/10, masterchef-australia 17/17, married-at-first-sight-australia
+  13/13 (x2 lists), southern-charm 11/11, rhoa 16/16, alone 12/12, rhoc
+  19/19, below-deck-mediterranean 10/10, and below-deck 12/12
+  (`the-charter-map-as-the-whole-story`). No new gap survived.
+  - Also checked one non-count-driven candidate per the brief's second
+    method: `the-judging-table-never-got-to-coast` (Ink Master, 11
+    entries against 17 filed seasons, missing S06/S08/S09/S10/S11/S12).
+    Read all six missing season files in full. All six sit inside Ink
+    Master's coaching-team era, where the resident two-judge panel this
+    list's own description calls "the one constant" is replaced
+    entirely by past-winner coaches or the judges themselves stepping
+    into coaching roles (S08's "the two resident judges quit judging
+    and started drafting rosters," S09's shop-vs-shop format, S10-S12's
+    winner-led/coach-led teams) — none of the six has an intact neutral
+    judging panel for this list's stated axis to rank. S06's viewer-vote
+    fact is the one near-miss, but it repeats the identical mechanic
+    already spent on the S04/S05 entries, not a new complication. Also
+    confirmed S08's "judges become team captains" fact is already the
+    #1 entry of `the-judges-picked-a-side`, verbatim — total preemption
+    even before the axis mismatch is considered. All six exclusions are
+    deliberate, not an oversight.
+  - **Assessment:** the entries-vs-filed-seasons gap-scan is now
+    confirmed exhausted across the entire single-show catalog (five
+    independent passes, zero remaining hits) — a future tick should
+    stop re-running it blind and instead watch for newly-drained shows/
+    seasons (the productive move passes 24 and 29 both used) or pivot
+    to a wholly new cross-show concept search per the pass 7-13
+    playbook. Extend-first stands at 14-for-15 across the logged
+    passes; this pass doesn't change that ratio (zero-ship on a
+    thorough check, not a failed attempt at a bad concept).
 
 ## Notes
 
