@@ -46,7 +46,7 @@ last time a curator actually looked.
 | moving-day | structure | 2026-07-16 | 2026-07-16 | |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
-| when-the-basket-became-a-bracket | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
+| when-the-basket-became-a-bracket | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Chopped S49 "Martha Rules" entry — a second guest-architect basket swap the season's own text explicitly compares to S34's Alton's Challenge; genuinely distinct from S49's prior sole appearance, the calendar-overlap fact in no-season-here-got-the-calendar-to-itself); previously extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
 | familiar-faces-wrong-franchise | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Dancing with the Stars S29, Masked Singer S13 entries) |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
@@ -1757,6 +1757,35 @@ last time a curator actually looked.
     lead to flag this time; a future tick's best move remains watching
     for newly-drained shows/seasons per the thirty-second pass's own
     closing note, not another blind concept sweep.
+- 2026-07-28 thirty-fourth pass (content-curator tick): **shipped** —
+  extend-first, following the brief's own steer toward the recently-
+  drained Chopped batch (S17-S62 fully filed). Checked the brief's
+  named leads first (Love Island UK S13, The Ultimatum S4, MAFS S17-19)
+  and confirmed each already fully spent per the twenty-seventh pass's
+  own note and `the-matching-experts-never-sit-still-for-long`'s
+  standing S13-Houston deferral — no fresh room there. Pivoted to
+  `when-the-basket-became-a-bracket` (Chopped tournament-block list, 15
+  entries, last touched 2026-07-27) and read every not-yet-listed
+  tournament-flavored Chopped season file (S40, S45, S49, S44) looking
+  for a genuinely unclaimed format-shape fact. S40 and S45 both
+  resolved to total preemption — S40's returning-champs bracket is
+  already `down-to-just-the-two-of-you`'s and `same-crown-new-price-
+  tag`'s claim, and S45's "leads with the tournament instead of closing
+  on it" fact is the identical placement swing S28 already owns on this
+  same list. S49 survived: its own season file explicitly frames
+  Chopped: Martha Rules as "a different guest-architect crossover than
+  Season 34's Alton's Challenge" — a second, genuinely distinct instance
+  of the guest-hand-on-the-basket mechanic this list's S34 entry (rank
+  8) already tracks, paired with a second five-part tournament
+  (Comfort Food Feud) stacked in the same season. Confirmed via grep
+  that S49's only other ledger appearance
+  (`no-season-here-got-the-calendar-to-itself`, rank 8) spends a wholly
+  different fact (the season's calendar-nesting position, not the
+  guest-architect swap) — no overlap. Shipped: appended at rank 16 as
+  the safest, most derivative entry (a rerun of an established
+  mechanic, same tier logic as S28/S54's existing "confident rerun"
+  entries). `last_revised` bumped (real content change). Extend-first
+  now stands at 15-for-16 across the logged passes.
 
 ## Notes
 

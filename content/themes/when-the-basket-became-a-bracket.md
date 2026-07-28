@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-07-28
 featured: false
 related: []
 entries:
@@ -101,4 +101,10 @@ entries:
     rank: 15
     title: "An explicit sequel scales up a bracket instead of inventing a new one."
     blurb: "Casino Royale XL bills itself as a bigger version of an earlier gambling-themed tournament, same mechanic, higher stakes, nothing structurally new. The safest kind of tournament block this format runs — a proven idea, just louder."
+  - show: chopped
+    season: 49
+    season_label: "S49"
+    rank: 16
+    title: "A second guest hand takes the basket, right behind another five-part bracket."
+    blurb: "Chopped: Martha Rules hands basket design to a second guest culinary figure, echoing Season 34's Alton's Challenge. This guest-architect swap lands right behind a five-part Comfort Food Feud bracket — the same season doubling up on tournaments for the first time."
 ---
