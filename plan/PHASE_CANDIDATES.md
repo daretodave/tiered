@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-26 at commit 4ec52529
-> Pass count: 58
+> Last pass: 2026-07-28 at commit 6ce864f7
+> Pass count: 59
 
 ## Considered (awaiting promotion)
 
@@ -21,6 +21,70 @@
 **Filed:** <ISO date>
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 59 (2026-07-28, commit 6ce864f7, cloud) — 1 new phase-shape candidate
+     filed (#36); reinforced 1 existing candidate (#34) with fresh persistence
+     evidence. No action needed on #35 (filed fresh by /digest the day before,
+     2026-07-27, still current) or #25/#28 (both already captured the pass-94/
+     pass-96 critique instances at pass 57 — re-checked this pass, no new
+     critique-pass evidence beyond what's already documented there).
+     Window since pass 58 (4ec52529, 2026-07-26): ~2 days / 119 commits. Both
+     thresholds met (20 commits, 48 hours).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5 cadence gates: season-sweep last ran 2026-07-26, next
+     due 2026-08-02 — not due; show-add stays LOCKED (gap table non-zero, 35
+     shows carry a gap, all starred/confirmed-but-unaired). Step 2.0's
+     shipping-mode gate is lifted (Phase 36 [x]) so the critique rate-limit
+     applied normally — it did NOT fire this tick: two Pending [HIGH]
+     critique findings already sit queued (pass-104 community-table mobile
+     column drop; pass-101 love-island-us mobile overflow), blocking
+     condition 3 of the gate. Step 3a (phase) and 3b (data) both empty.
+     Step 3b.5 (content-gaps): the standing Rule 2 season-fill drain row
+     (score 4.5) was checked — every one of the 35 remaining
+     `plan/CADENCE.md` gap-table rows is starred (confirmed-but-unaired),
+     re-verified same-day by an earlier tick's "Rule 2 stall" note (commit
+     3e9f9c3b, 2026-07-28T15:12:30Z) covering the pick-order-top candidates
+     (survivor, the-challenge, big-brother, amazing-race, bachelor) — no new
+     information would come from re-running that check hours later, so this
+     tick treated it as already-exhausted for the day rather than
+     re-dispatching into `/ship-content`. Rule 3 (themed lists) stays locked
+     (gap table non-zero). This left Step 3c (expand) as the correct dispatch.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): 4 rows — the recurring
+       e2e-full breadth-crawl duration-ceiling breach (score 5.4, MED, now
+       7 consecutive red nights since filing — reinforcement added to
+       candidate #34 below), the-voice's confirmed live factual corruption
+       ([HIGH], score 4.8 — filed as new candidate #36 below, since the row
+       itself explicitly asks for `/expand` treatment given its 7-step
+       multi-file scope), the night-shift starvation finding (already filed
+       fresh as candidate #35 by `/digest` the day before, no action needed),
+       plus two small single-tick bugs (ship-a-phase close-trailer
+       reliability, ship-content issue-mirror idempotency) already well-scoped
+       for `/iterate`, not phase-shape candidates.
+     - plan/CRITIQUE.md Pending: 52 rows. The "stat tile restates an
+       already-stated fact" cluster (8 instances across 7 shows) traces
+       entirely to already-filed candidates #25 (cross-file echo, canon
+       rationale vs. season body vs. `pull`) and #28 (same-file tile-pair
+       duplicate) — both already reinforced with this exact evidence at
+       pass 57, re-verified this pass with no new instances beyond what's
+       documented there. No new critique-driven candidate this pass.
+     - GH issues: `triage:loop-queued` #636 (e2e-full, 1:1 mirror of the
+       AUDIT.md row, no new signal beyond the persistence note added below);
+       4 stale `triage:needs-user` issues (#586, #565, #399, #398, all
+       June/July infra-crash reports) — a repeating pattern but each is an
+       already-closed-loop report, not a fresh structural gap distinct from
+       #35's night-shift fix; not filed as a separate candidate.
+     - spec.md / design/: no commits touching either since pass 58.
+     Fresh, uncaptured signal justifying the one new candidate this pass:
+     the-voice's factual corruption (8 of 29 season files carrying wrong
+     dates/conflated casts, a fabricated "series finale," and a currently-
+     LIVE false "show has ended" claim in production) is exactly the audit
+     shape `/expand` exists to catch — the AUDIT.md row itself (filed
+     2026-07-26, escalated same-day) explicitly recommends "promoting to a
+     dedicated `/expand`-tracked phase" given the blast radius and the risk
+     of an autonomous content tick compounding the fabrication with no
+     review checkpoint. Filed as candidate #36.
 -->
 
 <!-- Pass 57 (2026-07-22, commit HEAD, cloud) — 1 new phase-shape candidate
@@ -94,15 +158,113 @@
      recurrence, not a silent reopen).
 -->
 
+### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim
+
+**Score:** 6.0 (impact: 8, ease: 6 → 4.8 base + 2.0 signal multiplicity/urgency —
+a currently-LIVE reader-facing false claim on a shipped show page, and the
+source AUDIT row itself explicitly asks for `/expand` treatment given the
+blast radius; -0.8 for genuine scope uncertainty — the fix touches file
+renumbering, a canon rebase, and cross-catalog reference cleanup, closer to
+"3+ phases or unclear scope" than a clean 1-phase ship)
+**Source pass:** 59
+**Filed:** 2026-07-28
+**Why:** `plan/AUDIT.md` (line 621) documents a confirmed, deep factual
+corruption across `content/shows/the-voice/seasons/22-*.md` through
+`29-*.md` (8 files) plus the show's own frontmatter — not a simple
+off-by-one numbering issue, but conflated cast lists, wrong premiere dates,
+a duplicated real season, an omitted real season (the actual on-screen
+Blake Shelton farewell has no filed season at all), and a fabricated
+"series finale" that never happened. The blast radius is live and reader-
+facing right now: `content/shows/the-voice.md` reads `status: hiatus` and
+its `blurb`/`tagline`/`card_tagline` state the show "signed off" after a
+"fourteen-year run" — a false claim on a production page. Root cause: a
+phantom "spring 2022" season was inserted for a broadcast year where NBC
+actually ran only one cycle (confirmed via Hollywood Reporter + TV Series
+Finale), and that single insertion cascades a +1 offset through every
+later file, compounding into the outright cast/date conflations. This is
+exactly the case `/expand` exists to catch: an audit finding that scores
+moderately on the standard impact×ease formula (4.8) but whose true scope
+— renumber/insert/verify across 8+ files, rebase canon ranks, cross-check
+every themed-list entry citing `show: the-voice` with season ≥22, and
+regenerate e2e canonical-URL fixtures after the renames — is structurally
+too large and too fabrication-risk-sensitive to hand to a single
+autonomous content tick with no review checkpoint. The AUDIT row's own
+filing explicitly recommends promoting this to a dedicated phase or a
+direct oversight-reviewed tick rather than letting a routine Rule 2 drain
+touch it.
+**Source signals:**
+- `plan/AUDIT.md` [HIGH, score 4.8] filed 2026-07-26 during a cloud
+  `/march` tick's Rule 3 research pass (8th pass), escalated same-day (9th
+  pass) with a full scout-verified season-by-season accounting against
+  Wikipedia + NBC Insider/Today.com sourcing. Still Pending as of this
+  filing.
+- The row itself blocks further the-voice content authoring ("do not
+  author new the-voice content depending on any specific season number
+  ≥22's real-world event") until this resolves — an active constraint on
+  the standing Rule 2 season-fill drain, not just a cosmetic content bug.
+- Confirmed real, still-unaired seasons exist that the catalog has never
+  filed: real NBC Season 29 (Feb 2026, first-ever 3-coach "Battle of
+  Champions" format) and real Season 30 (confirmed airing Sep 2026) — both
+  currently invisible to readers because the catalog's own (wrong)
+  `29-the-finale.md` claims the show already ended.
+**Scope sketch:**
+- A dedicated scout-verification pass re-confirming each of the 8 affected
+  files' real-world cast/date/event against primary sourcing (Wikipedia
+  per-season articles, NBC Insider, Today.com) — largely already done by
+  the AUDIT row's own 9th-pass research; this step is closer to a
+  transcription/formalization of existing findings than fresh research.
+- Decide file-count treatment: real Season 23 (Shelton's true on-screen
+  farewell) has no filed season at all and needs insertion, which shifts
+  every later file's number — a rename, not just a content edit, so every
+  shifted season's `NN-<slug>.md` filename and `canonical_position` moves.
+- Rewrite `content/shows/the-voice.md`: `status: hiatus` → `airing`, strip
+  the false "signed off"/"fourteen-year run" framing from
+  `blurb`/`tagline`/`card_tagline`.
+- Author the two real unfiled seasons (S29 "Battle of Champions," Feb 2026;
+  S30, Sep 2026 — casting/coaches only, spoiler-safe, no outcomes since
+  S30 hasn't aired at filing time).
+- Rebase `canon.md` fully across the renumbered range — ranks and
+  `canonical_position` for every season from 22 onward.
+- Cross-check every `content/themes/*.md` entry citing `show: the-voice`
+  with `season` ≥ 22 for now-wrong `season_label`/title references (the
+  19f schema's `related`/entry-title-must-match-frontmatter invariant
+  makes stale entries a `content:check` failure risk once the source
+  files renumber).
+- Regenerate/verify `apps/e2e/src/fixtures/canonical-urls.ts` picks up the
+  renamed slugs automatically (it's content-loader-derived, per bearings)
+  — confirm no stale hardcoded reference survives elsewhere.
+**Estimated phases:** 1, but an unusually dense one — file renumbering +
+canon rebase + cross-catalog reference cleanup in a single commit is a
+larger, higher-fabrication-risk unit than a normal Rule 2 drain tick;
+`/oversight` may prefer to review the scout-verification output before
+authorizing the autonomous loop to touch the renumbering, given how much
+of the original corruption already came from an unsupervised assumption
+(unbroken twice-yearly cadence) compounding silently across 8 files.
+**Conflicts:** none with `spec.md` or the URL contract — this is a
+content-accuracy fix, not a new surface. Overlaps operationally with the
+standing Rule 2 season-fill drain row (both touch `content/shows/the-voice/`),
+but the AUDIT row explicitly blocks routine Rule 2 authoring on this show
+until the corruption resolves, so this should ship as its own reviewed
+unit rather than fall out of an ordinary drain tick.
+
 ### 34. Shard the e2e-full breadth crawl across parallel Playwright workers
 
-**Score:** 6.2 (impact: 7, ease: 6 → 4.2 base + 2.0 signal multiplicity — this exact
-fix was pre-named by the superseded candidate #26's own scope sketch and by a comment
-still live in the workflow file itself; independently confirmed by an AUDIT.md triage
-row and a mirrored GitHub issue; this is the second erosion cycle of the same
-single-worker bottleneck in under three weeks)
-**Source pass:** 57
-**Filed:** 2026-07-22
+**Score:** 6.6 (impact: 7, ease: 6 → 4.2 base + 2.4 signal multiplicity — raised at
+pass 59 from persistence evidence: same breach recurring nightly, unaddressed 6 days
+after filing)
+**Source pass:** 57 (reinforced pass 59)
+**Filed:** 2026-07-22 (reinforced 2026-07-28)
+**Pass-59 reinforcement (persistence, still unpromoted):** `plan/AUDIT.md`'s
+source row (line 619) confirms the same breach has now recurred **every single
+night since filing** — 7 consecutive red `e2e-full` runs (2026-07-21 through
+2026-07-27, run IDs tracked in issue #636's comment thread, one "Recurred"
+comment per night), each dying on the identical 75-minute wall with all
+completed checks passing. Candidate #34 itself has sat unpromoted for 6 days
+with the standing recommendation unchanged (shard, don't bump the timeout a
+third time). No new scope information this pass — the fix shape and the cloud
+`workflows`-OAuth-scope blocker are exactly as documented at filing — this is
+a pure urgency signal: every day this stays unpromoted is another guaranteed
+red night with zero new information, burning CI minutes for no signal.
 **Why:** The nightly `e2e-full` breadth crawl went red again at
 2026-07-21T00:41:24Z (run 29787007925) — not a test regression, the same
 duration-ceiling breach class as superseded candidate #26: all 9,278 of 9,278
