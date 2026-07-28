@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-28
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -109,4 +109,16 @@ entries:
     rank: 16
     title: "The modern era proves its opening season wasn't a fluke"
     blurb: "Season fourteen had to set new terms; season fifteen has to show those terms survive a second run. The 21-day structure and the recalibrated casting approach both hold up under repetition."
+  - show: naked-and-afraid
+    season: 5
+    season_label: "S05"
+    rank: 17
+    title: "The founding era's confidence arrives with nothing left to prove"
+    blurb: "Season five sharpens the casting and tightens the editing rhythm, but no scoring system, casting profile, or budget shifts here. The steadiest season the yardstick measures — a format executing, not testing."
+  - show: naked-and-afraid
+    season: 6
+    season_label: "S06"
+    rank: 18
+    title: "The PSR era's calmest, most settled stretch"
+    blurb: "A year after the scoring system arrives, season six absorbs it completely and stops needing to prove anything. Pairings run more deliberate, the rhythm holds — no yardstick shift to measure this time."
 ---

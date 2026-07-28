@@ -63,7 +63,7 @@ last time a curator actually looked.
 | tried-once-never-repeated | structure | 2026-07-17 | 2026-07-17 | |
 | not-who-they-say-they-are | craft | 2026-07-17 | 2026-07-17 | |
 | who-actually-got-the-vote | craft | 2026-07-18 | 2026-07-18 | |
-| the-shifting-yardstick | single | 2026-07-18 | 2026-07-18 | |
+| the-shifting-yardstick | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Naked and Afraid S05, S06 entries — the two remaining founding-era "no shift" seasons the list's own scoring/casting/budget angle had skipped; S19 stays excluded on purpose, still airing per its own season file) |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
 | milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S12 entry, third extension today) |
