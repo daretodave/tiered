@@ -52,7 +52,7 @@ last time a curator actually looked.
 | when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
 | the-cast-was-still-arriving | structure | 2026-07-17 | 2026-07-17 | |
 | rulebook-rewritten-every-season | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S3, S15 entries — tagline claimed eighteen seasons, only 16 were filed); ledger row missed at filing time, backfilled this tick |
-| a-way-back-in | craft | 2026-07-17 | 2026-07-17 | |
+| a-way-back-in | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Love Island US S08 entry, rank 9 — a new "vote-back-in" mechanic the season's own file calls "the boldest structural swing the format has tried since Casa Amor itself," letting the villa reverse a dumping days after it happens; confirmed via a full `show: love-island-us` grep across every theme file that S08's three prior ledger appearances (`the-cast-outgrew-the-format` rank 4 cast-size fact, `it-took-five-seasons-to-find-a-home` rank 8 and `never-starts-cold` rank 3, both centering the Casa Amor rebuild / record-premiere facts) never touch this specific comeback mechanic, and that love-island-us had zero prior appearances anywhere in `a-way-back-in` itself) |
 | new-flags-planted-fast | craft | 2026-07-17 | 2026-07-17 | |
 | built-for-the-drop | craft | 2026-07-17 | 2026-07-17 | |
 | closing-statement | craft | 2026-07-17 | 2026-07-17 | |
@@ -2349,6 +2349,52 @@ last time a curator actually looked.
   floor already). `last_revised` bumped to 2026-07-29 (real content
   change). Extend-first now stands at 28-for-29 across the logged
   passes.
+- 2026-07-29 forty-eighth pass (content-curator tick): **shipped** —
+  extend-first, following the forty-first/forty-second passes' own
+  flag list of eleven freshly-drained 2026-premiere seasons not yet
+  fully vetted for a second facet (Top Chef S23, Drag Race S18,
+  American Idol S24, Love Island US S08 were the four not already
+  closed out by the forty-sixth pass). Checked each in turn against
+  its own season file text before drafting anything: Top Chef S23
+  is now spent five times over (`the-format-learned-to-travel`,
+  `a-way-back-in`'s own prior LCK-rule-change entry,
+  `the-resemblance-was-never-just-a-fun-fact`,
+  `the-broadcast-wasnt-the-whole-show`, `the-countdown-doesnt-
+  negotiate`) — no facet left ungrounded. Drag Race S18's three
+  remaining facts (restructured eliminated-cast-tournament finale,
+  grandmother-granddaughter casting first, record MTV premiere) are
+  each already claimed verbatim in `the-season-structure-never-
+  holds-still`, `when-the-cast-was-already-related` +
+  `season-one-doesnt-own-every-first`, and (by strong inference)
+  `the-season-the-audience-showed-up-all-at-once` respectively — no
+  room. American Idol S24's three headline facts (Nashville
+  single-venue audition consolidation, the voting-app retirement,
+  the ratings surge) are already `the-open-call-built-the-format`
+  rank 1, `the-only-constant-was-the-vote` rank 3, and
+  `the-season-the-audience-showed-up-all-at-once` rank 7 in turn —
+  the season's remaining texture (the 'Ohana Round relocation to
+  Aulani, Hawaii) is a single mentoring-round location swap with no
+  cross-show analog grounded elsewhere in the catalog, too thin on
+  its own. Love Island US S08 survived: its own season file states
+  a brand-new "vote-back-in" mechanic — the villa can vote to
+  reverse a dumping days after it happens — calling it "the boldest
+  structural swing the format has tried since Casa Amor itself."
+  Confirmed via grep this is distinct from S08's three existing
+  ledger appearances (cast-size, Casa Amor rebuild ×2, record
+  premiere) and that love-island-us had zero prior entries anywhere
+  in `a-way-back-in` (craft, "a real path back into the game," last
+  touched 2026-07-17) — a direct thesis match for a list otherwise
+  built entirely from reality-competition redemption mechanics.
+  Shipped: inserted at rank 9, directly below Top Chef S23's "rare
+  update to an existing mechanic" and above Bachelor in Paradise
+  S02's "first wrinkle" — a brand-new mechanic on a running format,
+  not yet proven recurring, sits between those two in structural
+  weight. Existing ranks 9-12 shifted to 10-13. List now runs 13
+  entries across 9 shows, comfortably clear of the cross-canon
+  floor and no show past the 3-entry-per-show cap (dragrace-allstars
+  holds 3, the list's high-water mark, unchanged this pass).
+  `last_revised` bumped (real content change). Extend-first now
+  stands at 29-for-30 across the logged passes.
 
 ## Notes
 

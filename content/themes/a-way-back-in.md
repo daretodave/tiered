@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-29
 featured: false
 related:
   - best-challenge-design
@@ -61,28 +61,34 @@ entries:
     rank: 8
     title: "A decade-old comeback mechanic gets its rules rewritten, and the door back in shuts a little longer."
     blurb: "Last Chance Kitchen has run for years without much tinkering; here its entry point moves, genuinely changing how far a chef's second chance can reach. A rare update to a mechanic the show usually leaves alone."
+  - show: love-island-us
+    season: 8
+    season_label: "S08"
+    rank: 9
+    title: "A vote can undo a dumping days after it already happened."
+    blurb: "Three Fiji summers in, the villa gets its boldest structural swing yet — a new mechanic lets islanders vote to reverse someone's dumping days after it happens, a genuine door back in wired directly into the format."
   - show: bachelor-in-paradise
     season: 2
     season_label: "S02"
-    rank: 9
+    rank: 10
     title: "A format built on exits gets its first real wrinkle — contestants sent home can come back."
     blurb: "Season one treated leaving the beach as final. Season two doesn't — eliminated cast members get a genuine chance to return, changing the calculus for who's actually safe once someone's gone."
   - show: masterchef-australia
     season: 13
     season_label: "S13 · The Fresh Start"
-    rank: 10
+    rank: 11
     title: "Second Chance Week turns a whole episode block into a formal route back into the kitchen."
     blurb: "Two eliminated home cooks get a dedicated week built around fighting for a return, adding real pressure to a field that assumed its numbers were locked. Leaving stops being the last word."
   - show: perfect-match
     season: 4
     season_label: "S04"
-    rank: 11
+    rank: 12
     title: "The mixer becomes routine, and re-entry stops being a twist and starts being expected."
     blurb: "By its fourth run, the format's comeback event isn't a novelty anymore — it's baked into how the villa's biggest-yet cast expects the season to work. The mechanic outlives its own surprise."
   - show: dragrace-allstars
     season: 10
     season_label: "S10 · Tournament of All Stars"
-    rank: 12
+    rank: 13
     title: "A judge-picked Wildcard Lottery brings one eliminated queen back for one last shot before the finale."
     blurb: "Unlike the season-long ladders of earlier All Stars runs, this format saves its comeback chance for one pre-finale twist, decided by judge vote instead of a competition among the eliminated — the mechanic still finding new shapes at the franchise's biggest scale."
 ---
