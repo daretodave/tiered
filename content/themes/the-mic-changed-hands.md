@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-29
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "Rita Ora hosts the first cycle without Tyra Banks since the show began."
     blurb: "The VH1 move brings a new host and a social-media scoring twist into the format in the same run, a lot of change to absorb in ten episodes. The show's own canon reads it as a rocky first stretch for the new era."
+  - show: survivor-australia
+    season: 12
+    season_label: "S12 · Redemption"
+    rank: 17
+    title: "David Genat takes the torch chair Jonathan LaPaglia held for eleven straight seasons."
+    blurb: "Redemption is the format's first hosting handoff since the Australian version began, closing out an eleven-season run behind the torch. The Samoa location and the full 45-day, 24-episode length hold steady around the new voice."
 ---

@@ -72,7 +72,7 @@ last time a curator actually looked.
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
 | same-license-different-rules | structure | 2026-07-18 | 2026-07-18 | |
 | been-here-before | craft | 2026-07-18 | 2026-07-18 | |
-| the-mic-changed-hands | craft | 2026-07-18 | 2026-07-18 | |
+| the-mic-changed-hands | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Survivor Australia S12 "Redemption" entry, rank 17 — David Genat's debut, confirmed via grep of every prior season's own `host:` frontmatter field that Jonathan LaPaglia hosted all eleven prior seasons (S1-S11), making this the franchise's first-ever hosting handoff; distinct from S12's two existing ledger appearances, `a-way-back-in` rank 7 and `sorted-before-they-landed` rank 10, which both center the Redemption Beach return-twist / pre-sorted-cast-retirement facts and only mention the host change as scene-setting texture, never as the entry's own thesis; zero prior survivor-australia entries anywhere in this specific list) |
 | live-without-a-net | craft | 2026-07-18 | 2026-07-18 | |
 | a-guest-spot-with-room-to-grow | craft | 2026-07-18 | 2026-07-18 | |
 | one-season-two-flags | structure | 2026-07-19 | 2026-07-19 | |
@@ -2223,6 +2223,31 @@ last time a curator actually looked.
   prompt to check `milestones-spent-not-marked` specifically, not a
   closed door, whenever a freshly-drained season is a genuine
   round-number anniversary.
+- 2026-07-29 forty-fourth pass (content-curator tick): **shipped** —
+  extend-first again. `plan/CADENCE.md` re-checked first: unchanged
+  since the forty-third pass (still fully starred, next sweep
+  2026-08-02) — fell through to Rule 3. Read the full tail of this
+  file first to confirm no duplicate work; the forty-first/forty-second
+  passes' own flag list (twelve freshly-drained 2026-premiere seasons)
+  was the starting point. Chased Survivor Australia S12 ("Redemption"):
+  its own file names David Genat as host, and its watch_list body notes
+  his register "reads differently than LaPaglia's hosting register."
+  Grepped every other survivor-australia season file's `host:`
+  frontmatter field directly and confirmed Jonathan LaPaglia hosted all
+  eleven prior seasons (S01-S11) without interruption — S12 is the
+  franchise's first-ever hosting handoff. Checked S12's two existing
+  ledger appearances before writing: `a-way-back-in` rank 7 centers the
+  Redemption Beach return-twist, `sorted-before-they-landed` rank 10
+  centers the retirement of the archetype pre-sorted-cast habit; both
+  mention "a new host" only as one clause of scene-setting, neither
+  makes the handoff itself the entry's thesis. `the-mic-changed-hands`
+  (craft, dedicated host-handoff list, last touched 2026-07-18) had
+  zero prior survivor-australia entries — confirmed via a full
+  `show: survivor-australia` grep across every theme file. Shipped:
+  appended at rank 17 (existing 1-16 order untouched). List now runs
+  17 entries across 16 shows, comfortably clear of the cross-canon
+  floor. `last_revised` bumped (real content change). Extend-first now
+  stands at 25-for-26 across the logged passes.
 
 ## Notes
 
