@@ -176,7 +176,7 @@ last time a curator actually looked.
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
 | the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
-| no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
+| no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29, second pass same day (Chopped S40, S41, S44, S46 entries — a four-season block from the same S37-S46 cluster the list already partly mined, ranks 2/4/5/26; rebase to 27 entries); previously extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
@@ -1912,6 +1912,54 @@ last time a curator actually looked.
   elsewhere is spent for that number, even on a technically distinct
   axis — spend a different season's fact instead of stretching the
   same digit twice.
+- 2026-07-29 thirty-eighth pass (content-curator tick): **shipped** —
+  extend-first again, following the thirty-seventh pass's own closing
+  recommendation to check newly-drained shows/seasons before a blind
+  concept sweep. `plan/CADENCE.md` unchanged (still fully starred,
+  next sweep 2026-08-02) — fell through to Rule 3. Rather than start a
+  fifth Chopped list or force the flagged-but-thin MAFS S13 Houston
+  lead (re-checked its own season file directly: still nothing beyond
+  "third straight unchanged five-couple season," confirming the
+  twenty-seventh/twenty-eighth pass's deferral), read the S37-S46
+  Chopped cluster in full — a stretch `no-season-here-got-the-
+  calendar-to-itself` had already mined for S37 and S42 (rank 2/1
+  going into this pass) but not fully drained. Read S40, S41, S43,
+  S44, S45, S46 directly. Found four genuinely groundable, still-
+  unclaimed calendar facts: S41 ("the widest overlap footprint in
+  this entire batch, tied only by Season 42 itself" — five explicit
+  neighbors: S40/42/43/44/45); S44 ("one of the broadest overlapping
+  calendars in this batch," five neighbors: S41/42/43/45/46, its own
+  Thanksgiving-hours fact still unclaimed anywhere); S40 (five named
+  neighbors: S37-39/41/42 — its Champs Throwdown tournament fact is
+  already spent twice over, in `same-crown-new-price-tag` rank 11 and
+  `down-to-just-the-two-of-you` rank 9, but the calendar fact itself
+  had never been used, so the new entry draws only on that axis, per
+  the thirty-seventh pass's own "don't stretch the same digit twice"
+  rule); and S46 ("the lightest overlap in years," a front-only brush
+  with S44 and S45, nothing at the back). Confirmed via grep none of
+  the four appear anywhere in the list's existing 23 entries. Rejected
+  S43 for this pass — its calendar text exists but its headline fact
+  (the five-part dessert-course tournament) is already the exact rank-
+  10 entry in `when-the-basket-became-a-bracket`, and its calendar
+  footprint is comparatively shallow next to the other four, not worth
+  a second claim this tick. Shipped: inserted S41 at rank 2 (directly
+  under S42, matching its own "tied for widest" claim), S37 shifts to
+  rank 3, S40 new at rank 4, S44 new at rank 5, then every existing
+  rank 3-22 shifts down by four to ranks 6-25; S46 inserted at rank 26
+  (a shallow, front-only tangle, positioned just ahead of S62's "alone"
+  closer, the same shelf the shallow S17 entry already occupies one
+  slot up); S62 "alone" closer moves from rank 23 to the new final
+  rank 27. List now runs 27 entries, still comfortably under the
+  30-entry soft cap for extended lists. `last_revised` stays
+  2026-07-29 (already today's date from the pass-35 edit; still a real
+  content change, so no bump needed but noted here for the record).
+  Extend-first now stands at 18-for-19 across the logged passes. This
+  also reconfirms the S37-S46 stretch specifically as a dense,
+  still-partially-unmined pocket — a future Chopped-adjacent pass
+  should check S43's remaining calendar-only angle and the S38/S39
+  neighbors S37 and S40 both cite (both still fully unclaimed
+  anywhere in the 205-list ledger) before reaching for a wholly new
+  concept.
 
 ## Notes
 
