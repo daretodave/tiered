@@ -34,7 +34,7 @@ last time a curator actually looked.
 | best-location-reveals | craft | 2026-05-21 | 2026-07-24 | reviewed 2026-07-24, no change |
 | best-post-merge | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Big Brother S12 "The Brigade" entry, rank 8 — the season's own text explicitly frames the jury phase as the alliance's hardest stress test ("has to argue against itself," "the texture of those late confessionals is what fans remember"), distinct from the season's two prior ledger appearances, which cover the Saboteur twist mechanic and the finale's 3-part HoH format, not the jury-phase compression itself) |
 | best-premieres | craft | 2026-05-21 | 2026-05-21 | |
-| best-returnees | structure | 2026-05-21 | 2026-05-21 | |
+| best-returnees | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Apprentice S13 "The All-Stars Cycle" entry, rank 7 — the season's own file states it's the only cycle cast entirely from returning celebrities, "a genuine structural first for the franchise," with the familiarity giving the cast "a sharper read on strategy than any fresh cast could bring," directly matching this list's own-recognition-does-real-work thesis; zero prior the-apprentice entries anywhere in this list. Dancing with the Stars S15 "All-Stars" entry, rank 8 — the season's own file frames the returning cast's retained technique as producing "a different competitive texture than any standard-cast season could," compressing the usual week-one adjustment period; distinct from S15's existing appearance in `tried-once-never-repeated`, which centers the format-never-repeated fact rather than the payoff itself. List now runs 8 entries across 7 shows) |
 | best-villain-editing | craft | 2026-05-21 | 2026-05-21 | |
 | firsts | structure | 2026-05-21 | 2026-05-21 | |
 | best-reunion-specials | structure | 2026-05-22 | 2026-05-22 | |
@@ -2248,6 +2248,33 @@ last time a curator actually looked.
   17 entries across 16 shows, comfortably clear of the cross-canon
   floor. `last_revised` bumped (real content change). Extend-first now
   stands at 25-for-26 across the logged passes.
+- 2026-07-29 forty-fifth pass (content-curator tick): **shipped** —
+  extend-first, `best-returnees` (structure, "returnee seasons that
+  paid off," thin at only 6 entries since 2026-05-21, never touched
+  after the initial ship). `plan/CADENCE.md` re-checked first per the
+  brief: still fully starred, next sweep 2026-08-02 — fell through to
+  Rule 3. Grepped every season file catalog-wide for "all-star" /
+  "returnee" hits not yet drawn on by this specific list. Two genuine,
+  distinct-facet finds: The Apprentice S13 "The All-Stars Cycle" —
+  the season's own file calls it the only cycle cast entirely from
+  returning celebrities and a "genuine structural first," with the
+  shared history giving contestants "a sharper read on strategy than
+  any fresh cast could bring" — a clean match for this list's
+  recognition-does-real-narrative-work thesis, and zero prior
+  the-apprentice appearances anywhere in this list. Dancing with the
+  Stars S15 "All-Stars" — already ranked once in
+  `tried-once-never-repeated` (rank 6) for the format-never-repeated
+  fact, but that entry's own thesis is "the show doesn't run this
+  back," not the payoff itself; S15's own season file separately
+  states the retained-technique cast produced "a different
+  competitive texture than any standard-cast season could" and
+  compressed the usual week-one adjustment period, which is exactly
+  this list's own "added up to something newbies couldn't" angle —
+  confirmed distinct before writing, not a reskin. Both appended
+  (ranks 7-8, existing 1-6 order untouched); list now runs 8 entries
+  across 7 shows, comfortably clear of the cross-canon floor.
+  `last_revised` bumped (real content change). Extend-first now
+  stands at 26-for-27 across the logged passes.
 
 ## Notes
 

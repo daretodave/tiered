@@ -6,7 +6,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: false
 related:
   - best-finales
@@ -49,4 +49,16 @@ entries:
     rank: 6
     title: "Returnees framed by the grudges between them, not just the wins behind them."
     blurb: "Fourteen pairs of cast members who genuinely disliked each other, forced to compete as a unit. The returnee recognition does the setup work, then the pair architecture unlocks confessional texture no newbie team could give — a partner you hate, a finish line you share."
+  - show: the-apprentice
+    season: 13
+    season_label: "S13 · The All-Stars Cycle"
+    rank: 7
+    title: "Zero newcomers, and the boardroom strategy sharpens for it."
+    blurb: "Fourteen celebrities who already survived one cycle return for a second run, and it shows immediately in sharper strategic reads no first-timer could match. The show's only all-returning cast turns familiarity into the season's real argument, not just its premise."
+  - show: dancing-with-the-stars
+    season: 15
+    season_label: "S15 · All-Stars"
+    rank: 8
+    title: "A returning cast skips the week-one learning curve entirely."
+    blurb: "Every competitor already knows the choreography, so the season opens at a level no standard cast could match — the usual early-weeks adjustment period simply doesn't happen. Nostalgia becomes a competitive edge here, not just an emotional hook."
 ---
