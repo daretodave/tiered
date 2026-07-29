@@ -42,7 +42,7 @@ last time a curator actually looked.
 | best-non-winning-runs | tone | 2026-07-10 | 2026-07-10 | |
 | best-newbie-casts | tone | 2026-07-11 | 2026-07-11 | |
 | pandemic-seasons | era | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (The Voice S19 entry — first cycle produced entirely under pandemic protocols, zero prior appearances anywhere in the 178-list ledger) |
-| best-challenge-design | craft | 2026-07-16 | 2026-07-16 | |
+| best-challenge-design | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Amazing Race S37 entry, rank 15 — the season's own format_changes/watch_list text names three brand-new route mechanics debuting together, Fork in the Road, Driver's Seat, and Valet Roulette, layered onto returning tools; confirmed via a full `show: amazing-race` grep across every theme file that S37's sole prior appearance, `the-roster-was-the-twist` rank 10, stakes the record-cast-size/casting-twist fact and explicitly frames its own thesis as casting swings rather than rule mechanics ("Most Race twists change a rule... The rarer move changes who gets to stand at the starting line"), leaving the new-tools-debut fact itself unclaimed; list now runs 15 entries across 7 shows) |
 | moving-day | structure | 2026-07-16 | 2026-07-16 | |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |

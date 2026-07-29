@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-16
+last_revised: 2026-07-29
 featured: false
 related:
   - best-hosting
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "Partners reshuffle every round, and no alliance gets to lean on a fixed teammate."
     blurb: "A spy-themed season built on rotating pairs instead of fixed ones — the partner architecture without the partner commitment. The moving-target rule keeps the room's math unstable for all 21 episodes, and players learn to game the reshuffle."
+  - show: amazing-race
+    season: 37
+    season_label: "S37"
+    rank: 15
+    title: "Three new route mechanics debut and stack onto a full slate of returning tools."
+    blurb: "Fork in the Road, Driver's Seat, and Valet Roulette all land this season, layered over holdovers like the Intersection and Head-to-Head. The toolkit is the most crowded the format has ever run in a single outing."
 ---
