@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-07-29
 featured: false
 related:
   - played-it-straight
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "The panel carries over untouched, and the season doesn't try to prove anything new."
     blurb: "The Lopez–Connick–Urban table returns exactly as it left off, running the standard late-cycle format with no panel drama and no structural pivots to announce. It's the purest version of this list's whole premise — a season with nothing to show for itself but the format working."
+  - show: traitors
+    season: 4
+    season_label: "S04"
+    rank: 15
+    title: "A fourth trip to the castle plays the format exactly as designed."
+    blurb: "All-celebrity cast, the three-episode-then-weekly drop, the same castle — season four earns its slot by executing a format that already knows what it is. Its own text calls this confidence, not reinvention."
 ---

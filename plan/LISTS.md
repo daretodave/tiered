@@ -147,7 +147,7 @@ last time a curator actually looked.
 | the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
-| running-on-muscle-memory | tone | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
+| running-on-muscle-memory | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
@@ -2034,6 +2034,58 @@ last time a curator actually looked.
   should treat that pool as tapped out and either pick up S45 for the
   calendar list or move off Chopped entirely toward a fresh cross-show
   concept, per the thirty-ninth pass's own recommendation.
+- 2026-07-29 forty-first pass (content-curator tick): **shipped** —
+  moved off Chopped entirely per the fortieth pass's own closing
+  instruction (both Chopped lists sit at/near their soft cap and were
+  left untouched this pass). Rule 2 re-checked first: `plan/CADENCE.md`
+  stall is unchanged, next sweep 2026-08-02 — fell through to Rule 3.
+  Rather than re-run the single-show entries-vs-filed-seasons scan
+  (confirmed exhausted five independent times through pass 32) or
+  re-derive already-closed domains from the Ideas log, checked every
+  show's most recently-aired filed season directly (grepped
+  `premiere_date: 2026` across `content/shows/**/seasons/*.md`) for a
+  freshly-drained season the ledger hadn't caught yet — the same method
+  that paid off for Love Island UK S13 and The Ultimatum S4 in earlier
+  passes, just widened past those two specific shows. Found Traitors
+  (US) Season 4 ("Ardross 2026," premiered January 2026): confirmed via
+  a full `show: traitors$` grep across every theme file that it has
+  zero prior appearances anywhere in the 205-list ledger — Seasons 1-3
+  are well-mined (`familiar-faces-wrong-franchise`, `best-hosting`,
+  `not-who-they-say-they-are`, `when-the-vote-came-back-tied`, and
+  others) but Season 4 had never been drawn on. Read the season's own
+  file in full: its lede/body explicitly frame it as carrying "no
+  reinvention" forward from Season 2's all-celebrity/three-drop-then-
+  weekly template — "a confident, repeatable machine doing what it now
+  does well." Checked it first against `familiar-faces-wrong-franchise`
+  (where Seasons 2 and 3 already live) and rejected that fit: S04's own
+  text states plainly it repeats S02/S03's all-alumni casting with no
+  new wrinkle, so a fourth entry there would just restate an already-
+  claimed fact a third time, thinner than the two it would sit beside.
+  Pivoted to `running-on-muscle-memory` (tone, cross-show, last
+  extended 2026-07-28 with American Idol S14) — a direct thesis match:
+  the list ranks seasons "running on pure execution, not reinvention,"
+  and Traitors S04's own text uses nearly the identical framing
+  unprompted. Shipped: appended at rank 15, directly after American
+  Idol S14 (explicitly billed in its own blurb as "the purest version
+  of this list's whole premise") — Traitors S04 reads as a second,
+  cross-franchise instance of that same purest-form execution-over-
+  reinvention case. This is the list's first Traitors entry and its
+  sixth distinct show (joining american-idol, masterchef, bake-off,
+  project-runway, top-chef). `last_revised` bumped (real content
+  change). Extend-first now stands at 21-for-22 across the logged
+  passes.
+  **Flag for a future tick:** the `premiere_date: 2026` grep surfaced
+  12 other freshly-aired seasons besides Traitors S04 (Traitors UK S04,
+  Top Chef S23, Survivor S50, Survivor Australia S12, Naked and Afraid
+  S19, MasterChef S16, MAFS Australia S13, Love Island US S08, Love
+  Island UK S13, Love Is Blind S10, Drag Race S18, American Idol S24) —
+  this pass only fully vetted Traitors S04. The others were not
+  individually checked against the full ledger this tick; a future
+  extend-first pass should run the same "grep every 2026 premiere,
+  cross-check against every list referencing that show" method against
+  the remaining eleven before falling back to a blind concept search.
+  MAFS Australia S13 is already known-thin (the standing Houston
+  deferral); the rest are unverified leads, not confirmed dead ends.
 
 ## Notes
 
