@@ -176,7 +176,7 @@ last time a curator actually looked.
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
 | the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
-| no-season-here-got-the-calendar-to-itself | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
+| no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
@@ -1827,6 +1827,57 @@ last time a curator actually looked.
   true when written, not the full 62-season ranked set. List now runs
   22 entries. `last_revised` bumped (real content change). Extend-first
   now stands at 16-for-17 across the logged passes.
+- 2026-07-29 thirty-sixth pass (content-curator tick): **shipped** —
+  extend-first again, third straight tick mining Chopped. Rule 2
+  re-checked first: `plan/CADENCE.md`'s stall note is unchanged
+  (28-show board entirely starred, next sweep 2026-08-02, no fresh
+  drain since love-island-uk S13 / the-ultimatum S4, both already
+  fully mined by passes 24/26/27/34) — fell through to Rule 3.
+  Compiled a full census of every Chopped season's ledger claims
+  across all 62 filed seasons (grepping `show: chopped` plus context
+  across `content/themes/*.md`) rather than trusting the two Chopped
+  lists' own entry lists, since the batch-drain progress notes have
+  repeatedly undercounted in prior passes. 40 of 62 seasons carry at
+  least one claim; 22 remained fully unclaimed (S3, S5-S10, S14-S16,
+  S27, S30-S32, S35, S38-S39, S41, S44-S46, S50). Read the unclaimed
+  seasons' own files looking for a angle distinct from both existing
+  Chopped lists' axes (calendar overlap; tournament/bracket format
+  swings). Scoped an episode-count-deviation angle across S6-S9's
+  documented contraction-then-recovery arc (12→10→9→13 episodes) as
+  a candidate new single-show list, read S30-S32/S35/S50 for
+  supporting entries, then caught a stronger fit before drafting
+  further: S35's own file explicitly frames itself in the exact
+  calendar-overlap language `no-season-here-got-the-calendar-to-
+  itself` already ranks by ("the deepest, longest entanglement the
+  format has produced," two neighbors — Season 34 and Season 36 —
+  each overlapped for nearly their full run, tied for the format's
+  longest single season at 20 episodes). A dedicated new episode-
+  count list would have been a real angle for S6-S9, but starting a
+  fourth Chopped list while a season this well-suited to an existing
+  one sat unclaimed read as the wrong call — extend the existing
+  list first. Confirmed via grep S35 carries zero prior appearances
+  anywhere in the 204-list ledger (checked all six themed lists that
+  reference other shows' season 35s to rule out a false-positive
+  match). Shipped: inserted at rank 10, directly after S23's "real
+  tangle, inherited but never the deepest" and ahead of the S12/S11/
+  S13 overlap-chain block (existing ranks 10-22 shifted to 11-23).
+  Did not reuse S35's own "deepest, longest entanglement" superlative
+  verbatim in the new blurb — S42/S37/S22's already-ranked footprints
+  (touching every other season in the batch; five neighbors; four
+  neighbors) are objectively wider by neighbor count, even though
+  S35's two overlaps are each individually deeper than most of that
+  tier's — same "the season file's own claim reflects what was true
+  when written, not the full ranked set" logic the thirty-fifth pass
+  used for the S11/S12/S13 chain. List now runs 23 entries.
+  `last_revised` bumped (real content change). The S6-S9 episode-
+  count-contraction angle (12→10→9→13, plus S30's tied-record-low 8
+  episodes, S31's record-high 20 episodes) is flagged here unshipped
+  for a future tick — it's a genuinely distinct axis from both
+  existing Chopped lists (literal episode count, not calendar
+  overlap or bracket structure) and reads strong enough to ground a
+  fourth single-show Chopped list on its own, but a same-tick second
+  Chopped list felt like reaching past the stronger single move.
+  Extend-first now stands at 17-for-18 across the logged passes.
 
 ## Notes
 
