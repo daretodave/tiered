@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: false
 related:
   - survivor-pillars
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "The new-era post-merge finally breathing at the right tempo."
     blurb: "Ninety-minute episodes and a 26-day clock combine into a post-merge that doesn't feel rushed or padded. Journeys and the sanctuary mechanic add texture, the cast types stabilize, and the stretch reads as Survivor at cruising altitude — the modern format delivering."
+  - show: big-brother
+    season: 12
+    season_label: "S12"
+    rank: 8
+    title: "A founding alliance stress-tested exactly where the format wants it tested."
+    blurb: "The Brigade's four-way pact runs the house from night one, but Big Brother saves its hardest test for the jury phase — the season's alliance has to argue against itself once the room contracts. The late confessionals are the stretch fans still cite."
 ---

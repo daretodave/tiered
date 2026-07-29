@@ -32,7 +32,7 @@ last time a curator actually looked.
 | best-comeback-seasons | tone | 2026-05-21 | 2026-07-24 | reviewed 2026-07-24, no change |
 | best-hosting | craft | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Traitors UK S01 entry — Claudia Winkleman's hosting tone documented in the season's own watch_list text, genuinely unclaimed anywhere in the ledger despite S01 appearing in 9 other lists under different facts) |
 | best-location-reveals | craft | 2026-05-21 | 2026-07-24 | reviewed 2026-07-24, no change |
-| best-post-merge | structure | 2026-05-21 | 2026-05-21 | |
+| best-post-merge | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Big Brother S12 "The Brigade" entry, rank 8 — the season's own text explicitly frames the jury phase as the alliance's hardest stress test ("has to argue against itself," "the texture of those late confessionals is what fans remember"), distinct from the season's two prior ledger appearances, which cover the Saboteur twist mechanic and the finale's 3-part HoH format, not the jury-phase compression itself) |
 | best-premieres | craft | 2026-05-21 | 2026-05-21 | |
 | best-returnees | structure | 2026-05-21 | 2026-05-21 | |
 | best-villain-editing | craft | 2026-05-21 | 2026-05-21 | |
@@ -2086,6 +2086,43 @@ last time a curator actually looked.
   the remaining eleven before falling back to a blind concept search.
   MAFS Australia S13 is already known-thin (the standing Houston
   deferral); the rest are unverified leads, not confirmed dead ends.
+- 2026-07-29 nineteenth pass: **shipped** — extended `best-post-merge`
+  (structure, last touched 2026-05-21, and previously checked
+  zero-ship against six shows in the 2026-07-27 fifteenth pass).
+  Checked candidate shows/seasons outside that already-exhausted set
+  for a genuine back-half/endgame-compression claim grounded in the
+  season's own text: Traitors UK S03 ("compressed" thrice-weekly
+  Round Table schedule) — **preempted**, the identical compression
+  fact already anchors `new-house-rules-every-time-the-castle-
+  reopens` rank 1 in near-identical language. Traitors US S01/S03/S04
+  ("the endgame build" watch_list beat) — rejected, the phrasing is
+  boilerplate repeated near-verbatim across every season file, no
+  season stands out as distinctive. Amazing Race S12/S23/S30/S38 —
+  rejected, the format's "compression" language is about broadcast-
+  schedule cuts, not back-half gameplay intensity; the show has no
+  natural vote/alliance endgame to compress. MasterChef Australia
+  S11 (three-finalist grand finale, "a pressure layer to the final
+  stretch") — rejected, already spent twice (`the-toolkit-never-sat-
+  still` rank 11, `the-judges-picked-a-side` rank 11) on the same
+  finale-structure fact; a third appearance would restate it, and
+  the season's own text doesn't otherwise dramatize an intensifying
+  back-half beyond that one structural note. Drag Race S18, Drag
+  Race All Stars S10/S11, The Challenge S24/S31 (already-claimed
+  back-half beats in `the-slow-build-was-the-point`) — rejected as
+  either preempted or format-novelty facts (bracket/finale
+  restructuring) rather than a compression-and-pressure narrative.
+  One genuine hit survived: Big Brother S12 "The Brigade" — the
+  season's own watch_list text explicitly frames the jury phase as
+  the founding alliance's hardest stress test ("has to argue against
+  itself once the cast contracts," "the texture of those late
+  confessionals is what fans remember"), confirmed distinct from the
+  season's two existing ledger appearances (`every-summer-gets-its-
+  own-twist` rank 19, the Saboteur twist mechanic;
+  `the-finale-broke-its-own-rulebook` rank 6, the 3-part finale HoH
+  format) — neither touches the jury-phase compression itself.
+  Appended at rank 8 (existing 1-7 order untouched, new entry sits
+  below the existing bottom entry on merit). `last_revised` bumped
+  (real content change). Extend-first stands at 22-for-23.
 
 ## Notes
 
