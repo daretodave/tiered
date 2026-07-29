@@ -8,7 +8,7 @@ status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-07-29
 featured: true
-featured_pull: "Nine premiere episodes that laid down the format statement in hour one and never had to restate it."
+featured_pull: "Eleven premiere episodes that laid down the format statement in hour one and never had to restate it."
 related:
   - firsts
   - best-newbie-casts
@@ -68,4 +68,16 @@ entries:
     rank: 9
     title: "The whole premise gets said out loud before anyone's moved out."
     blurb: "Six couples state, on camera, whether they're ready to marry — the premiere compresses the entire format into one blunt scene before a single bag gets packed. Every episode since runs on the same binary the opening minutes lay down."
+  - show: rhony
+    season: 1
+    season_label: "S01"
+    rank: 10
+    title: "The premiere that gives the Housewives format its shape."
+    blurb: "Five women, one city, no handbook — the debut sets every beat the Housewives franchise still runs on: the social circuit, the dinners, the obligations. Manhattan carries as much weight as the cast. The premiere invents the format's grammar in real time."
+  - show: summer-house
+    season: 1
+    season_label: "S01 · Amagansett"
+    rank: 11
+    title: "A premiere that skips the ramp-up and states the format cold."
+    blurb: "No host, no competition, no elaborate rules — just a fixed friend group, one rented house, and a weekend commute the premiere treats as the whole plot engine. The format arrives complete in hour one, and Bravo would spend a decade building on exactly this shape."
 ---
