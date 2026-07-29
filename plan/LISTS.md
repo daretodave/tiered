@@ -46,7 +46,7 @@ last time a curator actually looked.
 | moving-day | structure | 2026-07-16 | 2026-07-16 | |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
-| when-the-basket-became-a-bracket | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Chopped S49 "Martha Rules" entry — a second guest-architect basket swap the season's own text explicitly compares to S34's Alton's Challenge; genuinely distinct from S49's prior sole appearance, the calendar-overlap fact in no-season-here-got-the-calendar-to-itself); previously extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
+| when-the-basket-became-a-bracket | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Chopped S03 "the redemption episode" entry, rank 17 — a single callback episode bringing back four prior finalists, the season's own text explicitly framing it as a smaller-scale echo of S02's four-episode Champions block one rank up; zero prior appearances anywhere in the ledger); previously extended 2026-07-28 (Chopped S49 "Martha Rules" entry — a second guest-architect basket swap the season's own text explicitly compares to S34's Alton's Challenge; genuinely distinct from S49's prior sole appearance, the calendar-overlap fact in no-season-here-got-the-calendar-to-itself); previously extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
 | familiar-faces-wrong-franchise | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Dancing with the Stars S29, Masked Singer S13 entries) |
 | the-cast-arrived-pre-famous | era | 2026-07-17 | 2026-07-17 | |
 | when-the-cast-was-already-related | structure | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelor in Paradise S02, ANTM S07, ANTM S15 entries) |
@@ -1991,6 +1991,49 @@ last time a curator actually looked.
   now one entry under its soft cap, so the next Chopped calendar
   lead should ground a new single-show list rather than push this
   one past 30.
+- 2026-07-29 fortieth pass (content-curator tick): **shipped** — extend-first,
+  honoring the thirty-ninth pass's own closing note not to push
+  `no-season-here-got-the-calendar-to-itself` past its 30-entry soft cap
+  (it sits at 29). Rebuilt a full cross-list census of every Chopped
+  season's ledger claims directly (grepping `show: chopped` across all
+  fifteen themes files that reference the show) rather than trusting any
+  single list's own progress notes. 8 of 62 filed seasons remained fully
+  unclaimed: S3, S5, S10, S14, S15, S16, S27, S45. Read all eight season
+  files directly. S45's own calendar-overlap text (four named neighbors —
+  S41, S42, S44, S46) would have been a legitimate
+  `no-season-here-got-the-calendar-to-itself` entry, but per this tick's
+  own steer that list stays untouched at 29 this pass — flagged below
+  instead of shipped. S5, S10, S14, S15, S16, and S27 all resolved to the
+  same "settled format, nothing new to report" fact already spent
+  structurally by the recovery-holds narrative `thirteen-was-the-promise-
+  not-the-rule` tells with its own S9 entry; none carries an editorially
+  distinct hook strong enough to ground a fourth single-show list on its
+  own, and stretching six near-identical "quiet, uneventful season" blurbs
+  across a new list would fail the "a reader would click it" bar. S3
+  survived: its own season file explicitly frames its episode 8 redemption
+  callback as a smaller-scale echo of Season 2's four-episode Champions
+  block ("a smaller swing than the multi-episode Champions block a season
+  earlier") — a genuinely distinct data point (one callback episode, not a
+  multi-episode block) on the exact axis `when-the-basket-became-a-bracket`
+  already ranks by, and S3 had zero prior appearances anywhere in the
+  205-list ledger. Shipped: appended at rank 17 (the list's new floor,
+  below S49's rank-16 "second guest hand" entry) — S3's one-episode
+  callback reads as an even smaller swing than any of the list's existing
+  bottom-tier "confident rerun" entries (S28, S54, S49), since it isn't
+  even a multi-episode block. `last_revised` bumped (real content change).
+  Extend-first now stands at 20-for-21 across the logged passes.
+  **Flagged, not shipped:** S45's calendar-overlap fact (four named
+  neighbors, confirmed unclaimed) is ready to slot into
+  `no-season-here-got-the-calendar-to-itself` the moment a future tick
+  either genuinely clears that list's soft cap or decides landing exactly
+  on 30 is fine — re-read S45's own file directly rather than re-deriving
+  the neighbor list from scratch. With S3 now claimed and S45 deliberately
+  held back, the unclaimed-Chopped-season pool is down to six seasons (S5,
+  S10, S14, S15, S16, S27), all six sharing the same thin "settled,
+  nothing new" fact this pass's own review just spent — a future tick
+  should treat that pool as tapped out and either pick up S45 for the
+  calendar list or move off Chopped entirely toward a fresh cross-show
+  concept, per the thirty-ninth pass's own recommendation.
 
 ## Notes
 

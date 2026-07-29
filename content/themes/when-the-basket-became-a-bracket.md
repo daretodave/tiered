@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-07-29
 featured: false
 related: []
 entries:
@@ -107,4 +107,10 @@ entries:
     rank: 16
     title: "A second guest hand takes the basket, right behind another five-part bracket."
     blurb: "Chopped: Martha Rules hands basket design to a second guest culinary figure, echoing Season 34's Alton's Challenge. This guest-architect swap lands right behind a five-part Comfort Food Feud bracket — the same season doubling up on tournaments for the first time."
+  - show: chopped
+    season: 3
+    season_label: "S03"
+    rank: 17
+    title: "The same returning-chef idea, shrunk down to a single callback episode"
+    blurb: "A season after Season 2's four-episode Champions block, Season 3 shrinks the idea to one hour: four chefs who lost a prior final get a single callback episode, then the format snaps back to all-new casts. The smallest returning-chef swing on this list."
 ---
