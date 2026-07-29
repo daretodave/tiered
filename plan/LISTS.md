@@ -201,6 +201,7 @@ last time a curator actually looked.
 | the-cold-open-then-never-again | single | 2026-07-26 | 2026-07-26 | |
 | the-resemblance-was-never-just-a-fun-fact | craft | 2026-07-26 | 2026-07-26 | |
 | the-reunion-kept-changing-its-own-rules | structure | 2026-07-28 | 2026-07-28 | |
+| thirteen-was-the-promise-not-the-rule | single | 2026-07-29 | 2026-07-29 | new list 2026-07-29 (Chopped episode-count-deviation angle, 10 entries — flagged unshipped by the thirty-sixth pass) |
 
 ## Ideas
 
@@ -1878,6 +1879,39 @@ last time a curator actually looked.
   fourth single-show Chopped list on its own, but a same-tick second
   Chopped list felt like reaching past the stronger single move.
   Extend-first now stands at 17-for-18 across the logged passes.
+- 2026-07-29 thirty-seventh pass (cloud march, new-list tick):
+  **shipped** — picked up the thirty-sixth pass's own flagged-unshipped
+  lead: a fourth Chopped list on episode-count deviation. Rule 2
+  re-checked first per `plan/CADENCE.md`'s standing stall note
+  (unchanged, next sweep 2026-08-02) — fell through to Rule 3. Pulled
+  `ep_count` for all 62 filed Chopped seasons directly (not from prior
+  passes' notes) and found 13 seasons deviating from the 13-episode
+  baseline: S6(12), S7(10), S8(9), S13(12), S26(8), S30(8), S31(20),
+  S32(12), S33(8), S35(20), S42(8), S50(18), S55(19). Cross-checked
+  each against both existing Chopped lists' actual entry blurbs (not
+  just entry presence) before including — five were already spending
+  the exact same episode-count number in their existing blurb text
+  (S13's "twelve episodes instead of the usual thirteen" in
+  no-season-here-got-the-calendar-to-itself; S26's and S42's "eight
+  episodes" in the same list; S33's "eight episodes" in
+  when-the-basket-became-a-bracket; S35's "tied for the format's
+  longest run" headline in no-season-here-got-the-calendar-to-itself,
+  added just two passes ago) — excluded all five as too thin a
+  distinction from an already-published fact, despite the technical
+  different-axis allowance prior passes used for less literal overlaps.
+  Shipped a new single-show list, `thirteen-was-the-promise-not-the-
+  rule`, with the 8 remaining clean deviations (S6, S7, S8, S30, S31,
+  S32, S50, S55) plus two baseline-anchor entries: S9 (the recovery
+  season, returning to 13 after the S6-S8 dip) and S1 (the debut that
+  set the 13-episode standard in the first place) — 10 entries total,
+  ranked by deviation magnitude from the 13-episode baseline, S1/S9
+  closing the list as the origin/recovery bookends. `related` points
+  at both sibling Chopped lists. The S13/S26/S33/S35/S42 exclusion
+  should stand as a general rule for future extend-first passes: a
+  season whose *specific number* already appears in a published blurb
+  elsewhere is spent for that number, even on a technically distinct
+  axis — spend a different season's fact instead of stretching the
+  same digit twice.
 
 ## Notes
 
