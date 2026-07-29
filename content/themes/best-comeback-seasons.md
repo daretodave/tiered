@@ -1,14 +1,14 @@
 ---
 slug: best-comeback-seasons
 title: "Comebacks worth the swing"
-tagline: "A comeback season arrives with the highest pre-air risk a franchise can take — a reset, a returnee cast, a milestone, a network move, a do-over premise. These are the runs where five different shows <b>came back swinging and the swing connected</b>."
+tagline: "A comeback season arrives with the highest pre-air risk a franchise can take — a reset, a returnee cast, a milestone, a network move, a do-over premise. These are the runs where the gamble <b>came back swinging and the swing connected</b>."
 category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: true
-featured_pull: "Five comeback seasons that had everything to lose — hiatus, milestone, all-star reunion — and came back earning it."
+featured_pull: "Ten comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
 related:
   - best-returnees
   - best-finales
@@ -50,4 +50,28 @@ entries:
     rank: 6
     title: "The first all-star house in fourteen years, where the cast is the format."
     blurb: "Sixteen returning houseguests spanning the show's full history, the franchise's second all-star season and the first since 2006. Produced inside a strict bubble and twist-light by design. The premise leaves the recognition to do the heavy lifting, and it does."
+  - show: dragrace
+    season: 10
+    season_label: "S10"
+    rank: 7
+    title: "The network jump's biggest risk paid off one season later."
+    blurb: "VH1's first year still felt transitional. Season ten is where the jump fully lands — deeper cast, higher budget, a runway operating at the scale the move had promised all along. The real risk wasn't the network switch itself, but proving it was worth taking."
+  - show: rhoc
+    season: 16
+    season_label: "S16 · The Return"
+    rank: 8
+    title: "One returning Housewife resets the whole social order."
+    blurb: "Three exits, two newcomers, and one original Housewife back after four seasons away — her return alone reshapes the cast's social geometry. Not a network jump, not a milestone. Just one comeback doing the structural work an entire reset usually requires."
+  - show: masterchef-australia
+    season: 17
+    season_label: "S17 · Back to Win"
+    rank: 9
+    title: "The franchise repeats its own comeback formula, and it lands again."
+    blurb: "Six years after the first Back to Win, two dozen alumni return to a panel that's no longer finding its footing. Same all-returnee premise, minus the first attempt's uncertainty — a panel that already knows itself meeting a cast raising the floor on purpose."
+  - show: americas-next-top-model
+    season: 22
+    season_label: "S22 · The Casting Revival"
+    rank: 10
+    title: "A quiet post-hiatus return with the strongest casting in years."
+    blurb: "Cycle 22 comes back after a full year off the air, and the casting is the best the late-CW seasons produced — a range of looks and approaches the intervening cycles hadn't matched. No reinvention, no fanfare. Just a hiatus return that quietly does its job."
 ---
