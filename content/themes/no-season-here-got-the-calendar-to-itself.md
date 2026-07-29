@@ -68,123 +68,129 @@ entries:
     title: "Tied for the deepest footprint, and directly entangled with the format's shortest run"
     blurb: "Four other seasons share this one's calendar, including the season that would go on to record the format's smallest episode count. An eight-month run tying together nearly everything airing around it."
   - show: chopped
+    season: 45
+    season_label: "S45"
+    rank: 10
+    title: "Four different neighbors, never one deep entanglement"
+    blurb: "A five-part $50,000 tournament opens the year before eight standard hours carry the season into late July, brushing Seasons 41, 42, 44, and 46 along the way — four separate touches, never one deep tangle."
+  - show: chopped
     season: 25
     season_label: "S25"
-    rank: 10
+    rank: 11
     title: "The batch's most completely nested single season"
     blurb: "Season 25 airs entirely inside Season 24's own window, with Season 26 sharing its back-half too — the most fully contained run in the whole stretch, never once airing on a calendar of its own."
   - show: chopped
     season: 26
     season_label: "S26"
-    rank: 11
+    rank: 12
     title: "The format's shortest run yet, nested twice over"
     blurb: "Eight episodes — the fewest the show had aired to that point — air entirely inside Season 24's window while overlapping most of Season 25 alongside it. A short count and a tight nest, same season."
   - show: chopped
     season: 48
     season_label: "S48"
-    rank: 12
+    rank: 13
     title: "Two full seasons air on either side of this one, at the exact same time"
     blurb: "This run sits inside one neighboring season's window while another neighbor's entire run sits inside its own — a doubly nested calendar the format hadn't measured before. Three tournament blocks pack the same thirteen episodes anyway."
   - show: chopped
     season: 49
     season_label: "S49"
-    rank: 13
+    rank: 14
     title: "Contained by one neighbor, while fully containing another"
     blurb: "This season's whole run sits inside an earlier season's air window, and in turn swallows a later season's run completely within its own. Two five-part tournaments fill the same thirteen hours regardless of the crowding."
   - show: chopped
     season: 23
     season_label: "S23"
-    rank: 14
+    rank: 15
     title: "A real tangle, inherited but never the deepest"
     blurb: "Season 23 catches Season 21's final month, then runs alongside nearly all of Season 22 — two seasons sharing its calendar, not four, a genuine overlap that still falls short of the batch's busiest stretch."
   - show: chopped
     season: 35
     season_label: "S35"
-    rank: 15
+    rank: 16
     title: "Tied for the format's longest run, and entangled with a neighbor on both ends"
     blurb: "Season 35 shares nearly the whole of Season 34's calendar, then hands straight into an overlap with Season 36 the moment Season 34 wraps — two deep entanglements back to back, on one of the two longest single seasons this format has aired."
   - show: chopped
     season: 12
     season_label: "S12"
-    rank: 16
+    rank: 17
     title: "Two neighbors overlap this run from both sides at once"
     blurb: "Season 11's back-half hasn't wrapped before Season 12 starts, and Season 13 begins before Season 12 finishes — a season boxed in by two neighbors simultaneously. None of it touches a single episode; the basket and panel run exactly as designed."
   - show: chopped
     season: 11
     season_label: "S11"
-    rank: 17
+    rank: 18
     title: "The overlap chain's opening season, reaching two neighbors ahead"
     blurb: "Thirteen episodes stretch across nine months, long enough to run alongside all of Season 12 and brush Season 13's premiere before Season 11's own finale airs. The first run in this stretch to touch two numbered neighbors at once."
   - show: chopped
     season: 13
     season_label: "S13"
-    rank: 18
+    rank: 19
     title: "The chain closes a season short, one episode under baseline"
     blurb: "Season 13 inherits Season 12's overlap and closes the chain out — but it does the closing at twelve episodes instead of the usual thirteen, a shortfall stacked on top of the tangle. Two marks against an otherwise unremarkable season."
   - show: chopped
     season: 20
     season_label: "S20"
-    rank: 19
+    rank: 20
     title: "The first time this format ever overlapped two seasons at once"
     blurb: "Two earlier seasons share this one's opening months before it settles into a long solo stretch through the fall. The release calendar's first real double-booking, on a season that otherwise runs the format exactly as designed."
   - show: chopped
     season: 21
     season_label: "S21"
-    rank: 20
+    rank: 21
     title: "One deep overlap, not yet a pileup"
     blurb: "Season 21 starts more than four months before Season 20 wraps — a single, sustained overlap that reads closer to the batch's tightest single-season nests than to its shallow tail-end tangles."
   - show: chopped
     season: 19
     season_label: "S19"
-    rank: 21
+    rank: 22
     title: "One neighboring season swallows this one almost whole"
     blurb: "This run sits inside a single neighboring season's air window for nearly its entire length, the tightest single-season nest the format had aired to that point. The tangle lives entirely in the release calendar, nowhere on screen."
   - show: chopped
     season: 58
     season_label: "S58"
-    rank: 22
+    rank: 23
     title: "A modern-era season that never gets a calendar of its own"
     blurb: "This run airs entirely inside one neighboring season's six-month window, with a regional tournament and a guest-judge hour giving it real format credit against the total containment. No independent release calendar at all."
   - show: chopped
     season: 57
     season_label: "S57"
-    rank: 23
+    rank: 24
     title: "The neighbor with enough runway to swallow another season whole"
     blurb: "Two months of solo airtime open this run and about a month more close it, with a full neighboring season absorbed somewhere in between. One tournament and one promotional crossover fill the months on either side."
   - show: chopped
     season: 56
     season_label: "S56"
-    rank: 24
+    rank: 25
     title: "No tournament anywhere in the season, and still most of it overlaps a neighbor"
     blurb: "Every episode here runs the plain format, no bracket in sight — the rare season with nothing but execution to offer. More than half of its own five-month window still shares the calendar with the season before it."
   - show: chopped
     season: 60
     season_label: "S60"
-    rank: 25
+    rank: 26
     title: "Nine months on air, no bracket in sight, and a whole neighboring season nested inside it"
     blurb: "Five themed cuisine hours carry a tournament-free season across the longest single window this run has produced. One later season's entire run airs somewhere inside it, while an earlier neighbor only brushes the front edge."
   - show: chopped
     season: 18
     season_label: "S18"
-    rank: 26
+    rank: 27
     title: "One week of direct overlap, a notch past the season before it"
     blurb: "Season 18 premieres with Season 17 still airing its final week — a small step up from the prior season's tail-only tangle, and an early sign of how crowded this run's calendar is about to get."
   - show: chopped
     season: 17
     season_label: "S17"
-    rank: 27
+    rank: 28
     title: "A tail-end overlap reopens, gently"
     blurb: "Season 17 shares only its final months on air with Season 16's back-half — the first overlap since a season that ran with a clean calendar. It's a shallow tangle, nothing like the pileups still a few years out."
   - show: chopped
     season: 46
     season_label: "S46"
-    rank: 28
+    rank: 29
     title: "A brief front-end brush, then the format runs clean to the close"
     blurb: "Season 46 premieres while Seasons 44 and 45 are both still wrapping up, a light overlap that never repeats — the back-half runs entirely alone, the calmest close this crowded stretch of the calendar produces before the format's one truly solo run."
   - show: chopped
     season: 62
     season_label: "S62"
-    rank: 29
+    rank: 30
     title: "The only season in the whole run that shares its calendar with nobody"
     blurb: "Two genuine format firsts — a swapped round order, a host joining the judging table — land in the one season with a completely clean release window. After years of tangled calendars, one season finally airs entirely alone."
 ---

@@ -176,7 +176,7 @@ last time a curator actually looked.
 | the-host-never-walks-into-the-room | craft | 2026-07-24 | 2026-07-24 | |
 | the-dividing-line-was-drawn-before-day-one | single | 2026-07-24 | 2026-07-24 | |
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
-| no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29, third pass same day (Chopped S38, S39 entries — nested/overlap calendar facts, confirmed unclaimed elsewhere in the 200+-list ledger; inserted at ranks 6/7, rebase to 29 entries); previously extended 2026-07-29, second pass same day (Chopped S40, S41, S44, S46 entries — a four-season block from the same S37-S46 cluster the list already partly mined, ranks 2/4/5/26; rebase to 27 entries); previously extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
+| no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29, fourth pass same day (Chopped S45 entry, rank 10 — the season's own file explicitly names four overlaps, Seasons 41/42/44/46, "at different points" across a Jan-July 2020 run; all four named neighbors were already ranked here individually but S45 itself had zero prior appearances anywhere in the ledger; picks up the fortieth pass's own flagged-but-deferred lead now that the list can land exactly on its 30-entry cap rather than exceed it; list now runs 30 entries, at the hard cap); previously extended 2026-07-29, third pass same day (Chopped S38, S39 entries — nested/overlap calendar facts, confirmed unclaimed elsewhere in the 200+-list ledger; inserted at ranks 6/7, rebase to 29 entries); previously extended 2026-07-29, second pass same day (Chopped S40, S41, S44, S46 entries — a four-season block from the same S37-S46 cluster the list already partly mined, ranks 2/4/5/26; rebase to 27 entries); previously extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
 | not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
@@ -2123,6 +2123,56 @@ last time a curator actually looked.
   Appended at rank 8 (existing 1-7 order untouched, new entry sits
   below the existing bottom entry on merit). `last_revised` bumped
   (real content change). Extend-first stands at 22-for-23.
+- 2026-07-29 forty-second pass (content-curator tick): **shipped** —
+  extend-first, picking up the fortieth pass's own explicitly flagged
+  lead rather than starting a blind concept search. `plan/CADENCE.md`
+  re-checked first (still fully starred, next sweep 2026-08-02) —
+  fell through to Rule 3. The fortieth pass had confirmed Chopped
+  S45's own file names four calendar overlaps (Seasons 41, 42, 44,
+  46, "at different points" across a January-to-July 2020 run) but
+  deliberately held it back rather than push
+  `no-season-here-got-the-calendar-to-itself` from 29 to 30 in the
+  same tick it landed S3 elsewhere. Re-read S45's season file directly
+  to confirm the fact still held (it does) and re-grepped
+  `season: 45` plus `show: chopped` across every theme file to
+  reconfirm zero prior appearances anywhere in the ledger — S45 itself
+  had never been drawn on, even though all four of its named
+  neighbors (S41/S42/S44/S46) are already individually ranked in this
+  same list. Landing exactly on the list's 30-entry cap (not past it)
+  reads as a clean finish, not an overreach, since the schema caps at
+  30 and this is the last unclaimed entry the fortieth pass's own
+  census identified for this specific list. Inserted at rank 10,
+  directly below S24 (rank 9, "tied for the deepest footprint... four
+  other seasons") and above S25 (rank 11, a nested-nesting relationship
+  of a different flavor) — S45's four named touches read as shallower
+  than S24's "directly entangled" framing (spread "at different
+  points" over a long run rather than one deep simultaneous tangle),
+  so it sits just below that tier. Existing ranks 10-29 shifted to
+  11-30. `last_revised` bumped (real content change). List now runs
+  30 entries, at the hard cap — no further Chopped calendar entries
+  should be added to this specific list; a future Chopped-adjacent
+  pass should treat this list as closed and look to the still-flagged
+  eleven other 2026-premiere seasons (Traitors UK S04, Top Chef S23,
+  Survivor S50, Survivor Australia S12, Naked and Afraid S19,
+  MasterChef S16, MAFS Australia S13, Love Island US S08, Love Island
+  UK S13, Love Is Blind S10, Drag Race S18, American Idol S24) from
+  the forty-first pass's own flag — checked all twelve this pass and
+  found every one of them already claimed at least once elsewhere in
+  the ledger under a different fact (confirmed via grep: Survivor S50
+  in `the-cast-outgrew-the-format` + `who-actually-got-the-vote`;
+  Survivor Australia S12 in `a-way-back-in` + `sorted-before-they-
+  landed`; Top Chef S23 in four lists including
+  `the-format-learned-to-travel` and `the-resemblance-was-never-just-
+  a-fun-fact`; Traitors UK S04 in `new-house-rules-every-time-the-
+  castle-reopens` + `the-broadcast-wasnt-the-whole-show`; MasterChef
+  S16, Love Island US S08, Love Is Blind S10, Drag Race S18, and
+  American Idol S24 each in three or more lists already) — none of
+  the eleven is a genuinely fresh single-appearance lead the way S45
+  was, and Naked and Afraid S19 remains explicitly excluded (still
+  airing per its own season file, zero distinguishing content beyond
+  a placeholder "current season" note). The forty-first pass's flag
+  should be considered closed rather than re-checked again from
+  scratch. Extend-first stands at 23-for-24.
 
 ## Notes
 
