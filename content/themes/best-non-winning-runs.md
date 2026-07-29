@@ -6,7 +6,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-10
+last_revised: 2026-07-29
 featured: false
 related:
   - best-post-merge
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "A house defined by its pairings rather than one through-line."
     blurb: "Big Brother's thirteenth season is remembered for how its dynamics lived across multiple pairs and shifting arcs. The texture comes from a house where the loudest stories belonged to several duos at once — the season's shape is distributed, not carried by a single run."
+  - show: the-real-world
+    season: 4
+    season_label: "S04 · London (1995)"
+    rank: 8
+    title: "An international cast that turns culture clash into ensemble texture."
+    blurb: "Drawn from four countries into one Notting Hill flat, London's ensemble carries the season collectively — small culture-clash beats scattered across every roommate, not one dominant arc. The lighter tone the show chased needed a full house, not a single lead."
 ---
