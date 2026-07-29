@@ -6,7 +6,7 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: false
 related:
   - firsts
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "Off Koh Rong, on a returnee cast voted in by the audience."
     blurb: "Cambodia paired a fresh Southeast Asian location with a fan-voted roster, and the reveal lands as a thesis: new water, familiar faces, second chances. The setting's openness gives the idol-era cast room to play loud from day one."
+  - show: ink-master
+    season: 10
+    season_label: "S10 · Return of the Masters"
+    rank: 8
+    title: "Coney Island's boardwalk announces a season built for bigger stages."
+    blurb: "Coney Island opens the season, a location the format had never used before, and the boardwalk visibly reshapes the early challenges' texture. The finale then closes on an even bigger stage in Las Vegas — the reveal at the front end previews the scale the season is chasing."
 ---
