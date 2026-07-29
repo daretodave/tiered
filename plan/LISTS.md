@@ -66,7 +66,7 @@ last time a curator actually looked.
 | the-shifting-yardstick | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Naked and Afraid S05, S06 entries — the two remaining founding-era "no shift" seasons the list's own scoring/casting/budget angle had skipped; S19 stays excluded on purpose, still airing per its own season file) |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
-| milestones-spent-not-marked | craft | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (So You Think You Can Dance S12 entry, third extension today) |
+| milestones-spent-not-marked | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Survivor S50 entry, rank 2 — the season's own file frames it as the largest cast in franchise history (24 returning castaways) playing a set of format mechanics fans voted on months before filming, a genuine occasion-rebuild distinct from the same season's two prior ledger facets, the oversized-cast angle in `the-cast-outgrew-the-format` and the fan-vote-authority angle in `who-actually-got-the-vote`; existing ranks 2-21 shifted to 3-22, list now runs 22 entries); previously extended 2026-07-27 (So You Think You Can Dance S12 entry, third extension today) |
 | same-crown-new-price-tag | structure | 2026-07-18 | 2026-07-18 | |
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
@@ -2173,6 +2173,56 @@ last time a curator actually looked.
   a placeholder "current season" note). The forty-first pass's flag
   should be considered closed rather than re-checked again from
   scratch. Extend-first stands at 23-for-24.
+- 2026-07-29 forty-third pass (content-curator tick): **shipped** —
+  extend-first again. `plan/CADENCE.md` re-checked first: unchanged
+  since the forty-second pass (35 shows / 36 gap-slots, every slot
+  starred confirmed-but-unaired, next sweep 2026-08-02) — fell through
+  to Rule 3. `no-season-here-got-the-calendar-to-itself` hit its
+  30-entry hard cap last pass, and the forty-second pass's own closing
+  note confirmed all eleven other flagged 2026-premiere seasons
+  (Traitors UK S04, Top Chef S23, Survivor S50, Survivor Australia S12,
+  Naked and Afraid S19, MasterChef S16, MAFS Australia S13, Love Island
+  US S08, Love Island UK S13, Love Is Blind S10, Drag Race S18,
+  American Idol S24) are each already claimed at least once elsewhere —
+  but "claimed once" isn't the same test as "no fresh facet left," the
+  distinction extend-first has repeatedly turned into a second or third
+  hit on the same season (Chopped S49, Big Brother S12, Love Island UK
+  S13). Re-read Survivor S50's own season file directly rather than
+  trusting the "already claimed" note as a dead end: its lede/pull
+  frames the season as fan-voted format mechanics (tribe colors, food
+  rations, the final stretch, the immunity necklace itself, all put to
+  an audience vote months before filming) layered on top of the
+  largest cast in franchise history (24 returning castaways). Checked
+  `milestones-spent-not-marked` (craft, round-number-season-rebuild
+  angle, last extended 2026-07-27, 21 entries) — Survivor's own S40
+  "Winners at War" already anchors rank 2 there, but S50 itself,
+  a genuine 50th-season/26th-year milestone, had never been drawn on
+  by that list despite being a stronger occasion-rebuild case than
+  several already-ranked entries (fan-authored rules across four
+  format categories, not just an oversized cast). Confirmed via read
+  that the existing survivor-50 ledger appearances
+  (`the-cast-outgrew-the-format`'s oversized-cast angle,
+  `who-actually-got-the-vote`'s fan-vote-authority angle) are each a
+  single-axis claim; `milestones-spent-not-marked`'s angle is the
+  distinct occasion-framing claim — does the round number get spent on
+  real structural rebuild or just marketing — that synthesizes both
+  facts together the way its existing Winners at War and Big Brother
+  S25 entries synthesize their own multiple format changes. Shipped:
+  inserted at rank 2, directly below Big Brother S25 "The Multiverse"
+  and above the existing Survivor S40 entry (now rank 3) — fan-authored
+  rules reads as at least as deep a structural intervention as Winners
+  at War's two twists, so it doesn't rank beneath its sister season.
+  Existing ranks 2-21 shifted to 3-22 (text unchanged, rank fields
+  only). List now runs 22 entries across 18 shows. `last_revised`
+  bumped (real content change). Extend-first now stands at 24-for-25
+  across the logged passes. **Flag for a future tick:** this
+  "re-check a season the ledger already logged as claimed against a
+  list whose specific axis wasn't checked" move just paid off a second
+  time on this same list (rank-2 slot, following the eighteenth pass's
+  SYTYCD S12 find) — worth treating "already claimed elsewhere" as a
+  prompt to check `milestones-spent-not-marked` specifically, not a
+  closed door, whenever a freshly-drained season is a genuine
+  round-number anniversary.
 
 ## Notes
 
