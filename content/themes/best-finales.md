@@ -1,12 +1,12 @@
 ---
 slug: best-finales
 title: "Finales that stuck the landing"
-tagline: "Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free. <b>The seven entries below all clear that bar</b> — some by tightening the format's existing template, some by changing what 'finale' means."
+tagline: "Closing runs that pay off the season they spent a dozen episodes building. The stakes feel earned, the last hour sits at the right altitude, and nothing gets handed over for free. <b>The entries below all clear that bar</b> — some by tightening the format's existing template, some by changing what 'finale' means."
 category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-06-12
+last_revised: 2026-07-29
 featured: true
 featured_pull: "Seven finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
 related:
@@ -56,4 +56,10 @@ entries:
     rank: 7
     title: "The endgame where the modern alliance game finally takes itself seriously."
     blurb: "The season that taught Big Brother its strategic vocabulary lands a finale that earns it. The closing run rewards the alliance play the summer spent assembling — sharp enough to hold against every era that followed it."
+  - show: american-idol
+    season: 22
+    season_label: "S22"
+    rank: 8
+    title: "A judge's real goodbye gives the closing episodes an occasion the format hadn't earned on its own."
+    blurb: "Katy Perry's mid-run exit turns the last stretch into a genuine send-off for seven seasons of panel chemistry, not a staged one. The closing register works because the circumstance was real, and the finale earns weight the format hadn't been carrying all year."
 ---
