@@ -6,9 +6,9 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: true
-featured_pull: "Six premiere episodes that laid down the format statement in hour one and never had to restate it."
+featured_pull: "Nine premiere episodes that laid down the format statement in hour one and never had to restate it."
 related:
   - firsts
   - best-newbie-casts
@@ -56,4 +56,16 @@ entries:
     rank: 7
     title: "A marooning that hands the cast their own clothes off their backs."
     blurb: "The pirate framing lands in the first hour, with the cast marooned in a Panamanian village to buy their own supplies. A premiere that swings bigger — wider setting, wider personalities — and signals a season playing in a larger register."
+  - show: selling-sunset
+    season: 1
+    season_label: "S01"
+    rank: 8
+    title: "The listings and the office tension arrive at equal weight."
+    blurb: "Seven agents, one brokerage, eight-figure listings — the docusoap's two halves click together in the premiere, no separate ramp-up needed. The workplace friction isn't earned later; it's there from the first sale, already at full strength."
+  - show: the-ultimatum
+    season: 1
+    season_label: "S01"
+    rank: 9
+    title: "The whole premise gets said out loud before anyone's moved out."
+    blurb: "Six couples state, on camera, whether they're ready to marry — the premiere compresses the entire format into one blunt scene before a single bag gets packed. Every episode since runs on the same binary the opening minutes lay down."
 ---
