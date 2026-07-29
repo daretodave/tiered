@@ -371,6 +371,23 @@ starred (confirmed-but-unaired). Gap table unchanged at 35 shows /
 36 gap-slots. Next actionable check is the weekly sweep, due
 2026-08-02.
 
+**Rule 2 stall, 2026-07-29 tick:** re-verified the same
+pick-order-top candidates — `survivor` (S51), `the-challenge`
+(S42), `big-brother` (S28), `amazing-race` (S39), `bachelor`
+(S30) — plus the two nearest scheduled finales already in
+`content/calendar.yml`, `below-deck-mediterranean` (S11) and
+`alone` (S13). None have concluded; no dates moved earlier. One
+minor status update: **`bachelor` S30's expected window softened**
+— multiple outlets (Deadline's "2026 TV Premiere Dates" feature,
+ScreenRant) now track it as midseason/spring 2027 rather than
+fall 2026, with no lead cast yet; still fully undated, no change
+to deferred status. `below-deck-mediterranean` confirmed still
+airing (episode 8 aired 2026-07-28); `alone` confirmed still
+airing (6 of 10 survivalists remain). No row is actionable for
+authoring this tick — every gap-table slot stays starred. Gap
+table unchanged at 35 shows / 36 gap-slots. Next actionable check
+is the weekly sweep, due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
