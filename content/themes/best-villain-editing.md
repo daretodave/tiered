@@ -6,7 +6,7 @@ category: craft
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-29
 featured: true
 featured_pull: "Five seasons where the antagonist arc ran the room — not a subplot, the whole narrative spine the rest of the cast played inside."
 related:
@@ -56,4 +56,10 @@ entries:
     rank: 7
     title: "Antagonist edits drawn straight from the post-merge tactical grammar."
     blurb: "Cagayan's villainy reads as competence — the cast plays loud, the moves are blatant, and the edit doesn't soften the paranoia. Modern Survivor villainy invented here as a tactical posture, not a personality flaw."
+  - show: survivor
+    season: 19
+    season_label: "S19 · Samoa"
+    rank: 8
+    title: "One player, one editorial bet, and the villain mold gets recast."
+    blurb: "Samoa's edit tilts around one dominant personality so hard the rest of the cast plays inside that read. Polarizing precisely because the format leans this far into a single player — and the archetype it sets stuck around for years."
 ---

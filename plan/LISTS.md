@@ -35,7 +35,7 @@ last time a curator actually looked.
 | best-post-merge | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Big Brother S12 "The Brigade" entry, rank 8 — the season's own text explicitly frames the jury phase as the alliance's hardest stress test ("has to argue against itself," "the texture of those late confessionals is what fans remember"), distinct from the season's two prior ledger appearances, which cover the Saboteur twist mechanic and the finale's 3-part HoH format, not the jury-phase compression itself) |
 | best-premieres | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Selling Sunset S01 entry, rank 8 — the season's own file states the format "arrives already whole"/"fully formed," the docusoap-plus-office-friction premise landing at full strength in the premiere with no ramp-up, genuinely unclaimed elsewhere despite S01's other appearances covering drop-pacing, pre-fame casting, and spinoff-replicability facts, not the premiere itself; The Ultimatum S01 entry, rank 9 — the season's own watch_list text frames Ep 1 as compressing "the show's entire premise" into one scene, distinct from S01's four other ledger appearances centering the forced-choice mechanic, release-drop pacing, and producer-vs-contestant pairing agency, none of which stake the premiere-episode-as-format-statement claim itself; considered and rejected Chopped S01 (already staked near-identically by best-challenge-design's "format that never needed a rewrite"), The Voice S01 and Masked Singer S01 (both already staked by not-knowing-was-the-point / the-doubters-had-to-walk-it-back with near-identical "arrived fully formed" framing), Married at First Sight S01 and Perfect Match S01 (both already staked by sight-unseen-already-committed / familiar-faces-wrong-franchise), and Traitors UK S01 / Drag Race UK S01 (both season files explicitly frame themselves as the rough-draft, "still finding its rules" version, failing this list's landed-on-purpose thesis); list now runs 9 entries across 8 shows) |
 | best-returnees | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Apprentice S13 "The All-Stars Cycle" entry, rank 7 — the season's own file states it's the only cycle cast entirely from returning celebrities, "a genuine structural first for the franchise," with the familiarity giving the cast "a sharper read on strategy than any fresh cast could bring," directly matching this list's own-recognition-does-real-work thesis; zero prior the-apprentice entries anywhere in this list. Dancing with the Stars S15 "All-Stars" entry, rank 8 — the season's own file frames the returning cast's retained technique as producing "a different competitive texture than any standard-cast season could," compressing the usual week-one adjustment period; distinct from S15's existing appearance in `tried-once-never-repeated`, which centers the format-never-repeated fact rather than the payoff itself. List now runs 8 entries across 7 shows) |
-| best-villain-editing | craft | 2026-05-21 | 2026-05-21 | |
+| best-villain-editing | craft | 2026-07-29 | 2026-07-29 | 2026-07-29 forty-seventh pass: extended (7→8 entries, 6→7 shows) with Survivor S19 Samoa at rank 8. Grounded in the season's own lede/pull text — "the casting and editorial frame builds around a single dominant personality whose play reshaped what the format would accept as a villain archetype for years afterward," "the format leans into a single player to an unusual degree," "polarizing." Confirmed via a full `show: survivor` + `season: 19` grep (multiline, across every `content/themes/*.md`) that this season has zero prior appearances anywhere in the 205+-list ledger — genuinely unclaimed. Distinct from the existing Survivor entries here (S20 ensemble-villain-tribe, S07 tonal-permission, S28 tactical-competence-as-villainy): S19's angle is the single-player editorial bet itself, the season the format first let one personality carry the whole narrative frame. Spoiler-safe — no individual named, no outcome implied, matches the list's existing convention (rank 1's entry also declines to name anyone). Considered Survivor Australia S08 "Heroes V Villains" as a second addition but passed — its reputation/casting-split fact is already spent at `sorted-before-they-landed` rank 1 with near-identical framing ("heroes who played with honor, villains who played with ruthlessness"), too close to a duplicate to justify a second appearance without a materially distinct facet. |
 | firsts | structure | 2026-05-21 | 2026-05-21 | |
 | best-reunion-specials | structure | 2026-05-22 | 2026-05-22 | |
 | best-finales | craft | 2026-06-12 | 2026-06-12 | |
@@ -2312,6 +2312,43 @@ last time a curator actually looked.
   stays 2026-07-29 (already today's date from the earlier pass; a real
   content change, no bump needed, noted here for the record).
   Extend-first now stands at 27-for-28 across the logged passes.
+- 2026-07-29 forty-seventh pass (content-curator tick): **shipped** —
+  extend-first, `best-villain-editing` (craft, untouched since the
+  initial 2026-05-21 ship, 7 entries / 6 shows, `featured: true`).
+  Sampled `content/themes/*.md` across categories for schema/voice
+  first, then checked this list plus `best-location-reveals` (also
+  dormant since 2026-05-21) as the two least-recently-touched craft
+  lists not already claimed by today's other passes. Ruled out
+  `best-location-reveals`: every plausible founding-season candidate
+  (Alone S1, Naked and Afraid S1, Below Deck S1, Southern Charm S1)
+  is already mined 3-6+ times elsewhere in the ledger. For
+  `best-villain-editing`, read Survivor S19 (Samoa), Survivor S23
+  (South Pacific), and Survivor Australia S08 (Heroes V Villains) as
+  candidates. S23 rejected — its own text frames a veteran-pairing
+  casting strategy, not a sustained antagonist-editing arc. Survivor
+  Australia S08 rejected — its reputation/casting-split fact is
+  already spent at `sorted-before-they-landed` rank 1 in near-
+  identical language ("heroes who played with honor, villains who
+  played with ruthlessness"), too close a duplicate. Survivor S19
+  survived: its own lede/pull frame the season as building "around a
+  single dominant personality whose play reshaped what the format
+  would accept as a villain archetype for years afterward," with the
+  format leaning "into a single player to an unusual degree" to the
+  point the season reads as "polarizing." Confirmed via a full
+  multiline `show: survivor` + `season: 19` grep across every
+  `content/themes/*.md` that this exact season+show pair has never
+  appeared anywhere in the 205+-list ledger — genuinely unclaimed, and
+  distinct from this list's existing Survivor entries (S20's ensemble
+  villain tribe, S07's tonal permission-to-be-loud, S28's tactical-
+  competence-as-villainy) since S19's angle is the single-player
+  editorial bet itself. Written spoiler-safe, no individual named, no
+  outcome implied — matching the list's existing convention. Shipped:
+  appended at rank 8 (existing 1-7 order untouched). List now runs 8
+  entries across 6 shows (Survivor's third entry on this list; no new
+  distinct show added, but comfortably clear of the cross-canon
+  floor already). `last_revised` bumped to 2026-07-29 (real content
+  change). Extend-first now stands at 28-for-29 across the logged
+  passes.
 
 ## Notes
 
