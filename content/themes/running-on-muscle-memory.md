@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "A fourth trip to the castle plays the format exactly as designed."
     blurb: "All-celebrity cast, the three-episode-then-weekly drop, the same castle — season four earns its slot by executing a format that already knows what it is. Its own text calls this confidence, not reinvention."
+  - show: traitors-uk
+    season: 4
+    season_label: "S04"
+    rank: 16
+    title: "A fourth trip to Ardross Castle needs no rulebook refresher."
+    blurb: "Claudia Winkleman returns to the same Highland castle for a fourth run, and the cloak-and-Round-Table mechanic barely needs explaining anymore. The season leans into its own mythology instead of reinventing it — pure execution, not a format still finding its rules."
 ---

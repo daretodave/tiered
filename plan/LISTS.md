@@ -147,7 +147,7 @@ last time a curator actually looked.
 | the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
-| running-on-muscle-memory | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
+| running-on-muscle-memory | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29, second pass same day (Traitors UK S04 "Series 4 (2026)" entry, rank 16 — the season's own lede/watch_list frames a fourth run at the same Ardross Castle as leaning "into the format's own mythology rather than reinventing it," with a cast that's "clearly watched the earlier series" and a game that "barely needs explaining anymore," a direct thesis match distinct from S04's two existing ledger appearances (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-every-time-the-castle-reopens` rank 3), both of which center the Uncloaked companion-show/spinoff fact rather than the core game-and-host confidence claim; seventh distinct show on this list, first traitors-uk entry, distinct from the existing Traitors US S04 entry at rank 15); previously extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
@@ -2275,6 +2275,43 @@ last time a curator actually looked.
   across 7 shows, comfortably clear of the cross-canon floor.
   `last_revised` bumped (real content change). Extend-first now
   stands at 26-for-27 across the logged passes.
+- 2026-07-29 forty-sixth pass (content-curator tick): **shipped** —
+  extend-first, `running-on-muscle-memory` (tone, second pass same
+  day; last touched earlier today with the Traitors US S04 entry).
+  `plan/CADENCE.md` re-checked first per the brief: still fully
+  starred, next sweep 2026-08-02 — fell through to Rule 3. Re-walked
+  the eleven flagged-but-unvetted 2026-premiere seasons from the
+  forty-first/forty-second passes' own flag list (Top Chef S23,
+  MasterChef S16, Love Is Blind S10, Drag Race S18, American Idol
+  S24, Love Island US S08, Traitors UK S04, MAFS Australia S13) —
+  MasterChef S16 and Love Is Blind S10 both confirmed dead ends: both
+  seasons' existing ledger appearances (`the-competition-leaves-the-
+  country` / `every-season-tests-a-new-theory-of-the-kitchen` for
+  MasterChef S16; `fifteen-and-fifteen-every-single-season` /
+  `a-dating-experiment-still-writing-its-own-rulebook` for Love Is
+  Blind S10) already spend the exact same season-file facts
+  (World Cup regional structure; "return to form" after a quiet
+  season) a fresh entry would have to reuse. MAFS Australia S13
+  re-confirmed still thin (standing Houston deferral, unchanged since
+  the twenty-seventh/twenty-eighth passes). Traitors UK S04 survived:
+  read the season file directly. Its two existing ledger appearances
+  (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-
+  every-time-the-castle-reopens` rank 3) both center the Uncloaked
+  companion-show/spinoff fact. The season's own lede/watch_list
+  separately frames the *core game* — Claudia Winkleman back at
+  Ardross Castle for a fourth run, a cast that's "clearly watched the
+  earlier series," the cloak-and-Round-Table mechanic that "barely
+  needs explaining anymore," production that "leans into the format's
+  own mythology rather than reinventing it" — as a distinct,
+  unclaimed facet matching `running-on-muscle-memory`'s own
+  execution-not-reinvention thesis practically verbatim. Confirmed via
+  grep zero prior traitors-uk entries anywhere in this specific list
+  (Traitors US S04 sits at rank 15, a different show by this catalog's
+  own convention). Shipped: appended at rank 16 (existing 1-15 order
+  untouched). List now runs 16 entries across 7 shows. `last_revised`
+  stays 2026-07-29 (already today's date from the earlier pass; a real
+  content change, no bump needed, noted here for the record).
+  Extend-first now stands at 27-for-28 across the logged passes.
 
 ## Notes
 
