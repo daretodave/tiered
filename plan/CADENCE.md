@@ -406,6 +406,15 @@ extended with a Southern Charm S01 entry (commit 975efa0e — see
 cross into concluded territory is 2026-08-05 (`the-challenge` S42
 premiere).
 
+**Rule 2 stall, 2026-07-30 tick (cloud march, later tick):**
+re-verified the same pick-order-top candidates and the same two
+nearest `calendar.yml` finales — all still future-dated, earliest
+2026-08-05. No row actionable. Gap table unchanged at 35 shows /
+36 gap-slots. Fell through to Rule 3: `one-season-two-flags`
+extended with a Bachelor in Paradise S05 "Sayulita 2018" entry
+(commit 8631a3d3 — see `plan/LISTS.md`). Next actionable check
+remains the weekly sweep, due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
