@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-30
 featured: false
 related:
   - new-flags-planted-fast
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "A masked contestant secretly does double duty behind the scenes, and the panel isn't the one viewers remember."
     blurb: "Season fourteen adds an 'Insider' twist — one costumed contestant also holds a season-exclusive behind-the-scenes role nobody else in the cast knows about. The celebrity panel itself turns over for the first time in the show's run, too."
+  - show: big-brother
+    season: 6
+    season_label: "S06"
+    rank: 12
+    title: "Every houseguest walks in already hiding a real connection to someone else in the house."
+    blurb: "Fourteen houseguests move into the Studio City house, and every single one is secretly paired with somebody else already inside. The alliance math gets dense before the first competition even airs, and the concealment is the whole engine, not a mid-season swerve."
 ---
