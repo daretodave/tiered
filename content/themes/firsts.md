@@ -6,7 +6,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-21
+last_revised: 2026-07-30
 featured: false
 related:
   - best-premieres
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "The rough draft — short, soft-focus, and made before the franchise knew itself."
     blurb: "A heavily stylized first run with a soft-focus filter, a visible budget, and a panel still working out its grammar. The cast is small and scrappy, the challenges rough-drafted. It earns its place precisely as the rough draft the format kept and sharpened."
+  - show: jersey-shore
+    season: 1
+    season_label: "S01"
+    rank: 8
+    title: "A shore-house format MTV barely touched for the rest of the show's run."
+    blurb: "Eight strangers, one house near the boardwalk, and a gym-tan-laundry rhythm that arrives fully formed in episode one. Every season after — Miami, Florence, two returns to Seaside Heights — keeps the same ensemble format the debut set, changing only the location."
 ---

@@ -295,14 +295,16 @@ test.describe('/themes/[theme] detail (phase 19h shape)', () => {
   }) => {
     await page.goto('/themes/firsts', { waitUntil: 'domcontentloaded' })
     const entries = page.getByTestId('list-entry')
-    await expect(entries).toHaveCount(7)
+    await expect(entries).toHaveCount(8)
     // pass-40 #355: meta-cell now reads `SHOWS / 6` (bare integer), not
     // `SPANS / 6 shows`. The dl renders both `dt` and `dd` text — assert
     // on the bare `dd` value via the `.meta-val` selector so we pin the
     // canonical accounting voice, not the historical `SPANS` label.
+    // 2026-07-30 themed-list extend added Jersey Shore S01 (rank 8),
+    // taking the list to 8 entries across 7 distinct shows.
     await expect(
       page.getByTestId('list-meta-shows').locator('.meta-val'),
-    ).toHaveText('6')
+    ).toHaveText('7')
   })
 
   test('adjacent-lists section either shows links or is absent', async ({
