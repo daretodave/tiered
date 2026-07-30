@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-07-30
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -62,57 +62,63 @@ entries:
     title: "Sandi Toksvig and Noel Fielding take the tent flap from Mel and Sue."
     blurb: "The Channel 4 reset changes the network, the hosts, and a judge in the same move, keeping Welford Park as the one piece of continuity carrying the audience across. New voices at the flap, same tent behind them."
   - show: americas-got-talent
+    season: 2
+    season_label: "S02"
+    rank: 9
+    title: "AGT's first host swap arrives one season after its first host ever sat down."
+    blurb: "Jerry Springer replaces Regis Philbin for the format's second season, while the judging panel — Piers Morgan, Sharon Osbourne, David Hasselhoff — carries over untouched, proving the host chair could turn over this early without unsettling anything else."
+  - show: americas-got-talent
     season: 12
     season_label: "S12"
-    rank: 9
+    rank: 10
     title: "Tyra Banks takes over a stage Nick Cannon held for eight seasons."
     blurb: "The judging panel — Cowell, Mel B, Mandel, Klum — runs its second year together without interruption, giving the new host a stable format to step into. A host change in an otherwise settled show is its own kind of pressure test."
   - show: americas-got-talent
     season: 14
     season_label: "S14"
-    rank: 10
+    rank: 11
     title: "Terry Crews and two new judges arrive at the table in the same season."
     blurb: "The dual overhaul at host and panel makes this the most structurally unsettled year since the format's early seasons. Crews brings a warmer register to the stage while the table rebuilds its shorthand in real time."
   - show: love-island-uk
     season: 9
     season_label: "S09"
-    rank: 11
+    rank: 12
     title: "Maya Jama's debut is the winter format finally finding its footing."
     blurb: "A new villa in Franschhoek and a new host arrive together, and the pairing produces the strongest of the show's off-season runs. Jama's first season in the role lands clean, and the reset reads as confident rather than experimental."
   - show: love-island-uk
     season: 6
     season_label: "S06"
-    rank: 12
+    rank: 13
     title: "Laura Whitmore opens the post-Flack era in a brand-new location."
     blurb: "The first winter edition moves the villa to Cape Town and hands hosting to Laura Whitmore in the same swing. A new continent and a new host arrive together, and the format proves — a little unevenly — that it travels."
   - show: bachelorette
     season: 19
     season_label: "S19 · Gabby Windey & Rachel Recchia"
-    rank: 13
+    rank: 14
     title: "Jesse Palmer's first Bachelorette season is also the franchise's boldest format swing."
     blurb: "Two co-leads share the entire run for the first time in the US version, rather than splitting it midway, and Palmer steps into the hosting chair alongside them. A debut season on two fronts at once."
   - show: ink-master
     season: 14
     season_label: "S14"
-    rank: 14
+    rank: 15
     title: "Joel Madden takes over hosting as the whole show rebuilds around him."
     blurb: "The move to Paramount+ lands in the same season as the host change, with the judging panel expanding to four for the first time. Dave Navarro doesn't disappear — he shifts into a smaller, recurring role introducing twists instead."
   - show: below-deck
     season: 11
     season_label: "S11 · Grenada"
-    rank: 15
+    rank: 16
     title: "A new captain takes the helm and the crew has to relearn the chain of command."
     blurb: "Grenada introduces Captain Kerry Titheradge, whose hands-on style reads differently from his predecessor's from the first episode. A new authority figure at the top of the boat generates real, visible friction below deck."
   - show: americas-next-top-model
     season: 23
     season_label: "S23"
-    rank: 16
+    rank: 17
     title: "Rita Ora hosts the first cycle without Tyra Banks since the show began."
     blurb: "The VH1 move brings a new host and a social-media scoring twist into the format in the same run, a lot of change to absorb in ten episodes. The show's own canon reads it as a rocky first stretch for the new era."
   - show: survivor-australia
     season: 12
     season_label: "S12 · Redemption"
-    rank: 17
+    rank: 18
     title: "David Genat takes the torch chair Jonathan LaPaglia held for eleven straight seasons."
     blurb: "Redemption is the format's first hosting handoff since the Australian version began, closing out an eleven-season run behind the torch. The Samoa location and the full 45-day, 24-episode length hold steady around the new voice."
 ---
