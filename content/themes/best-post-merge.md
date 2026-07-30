@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-07-30
 featured: false
 related:
   - survivor-pillars
@@ -37,28 +37,34 @@ entries:
     rank: 4
     title: "A closing run of services that never let the field coast."
     blurb: "Top Chef's compression point is the run of challenges before the finale, and Las Vegas turns it into a gauntlet. The deepest field the show had assembled stays deep all the way down — the back-half plays as chef against chef at a defining level, no padding."
+  - show: top-chef
+    season: 17
+    season_label: "S17 · All-Stars L.A."
+    rank: 5
+    title: "A returnee bench deep enough to keep raising its own ceiling."
+    blurb: "All-Stars L.A. brings back alumni with unfinished business, and the closing stretch runs harder because everyone already knows what the judges are watching for. The bench stays deep all the way to the finale approach."
   - show: dragrace
     season: 6
     season_label: "S06"
-    rank: 5
+    rank: 6
     title: "A top-five stretch that lifted the format's late-game ceiling."
     blurb: "Drag Race's compression happens in the final handful of queens, and the sixth season's back-half is the run the franchise still cites. The challenges harden, the critiques sharpen, and the cast meets every one — a top five with no weak link and real tension."
   - show: the-challenge
     season: 30
     season_label: "S30 · XXX: Dirty 30"
-    rank: 6
+    rank: 7
     title: "An endgame that pushed bodies and alliances to the breaking point."
     blurb: "The Challenge compresses into the brutal stretch before the final, and Dirty 30 runs that gauntlet harder than most. Politics tighten as the field thins, eliminations come fast, and the season builds toward a final that earns its reputation."
   - show: survivor
     season: 45
     season_label: "S45 · Mom I Won"
-    rank: 7
+    rank: 8
     title: "The new-era post-merge finally breathing at the right tempo."
     blurb: "Ninety-minute episodes and a 26-day clock combine into a post-merge that doesn't feel rushed or padded. Journeys and the sanctuary mechanic add texture, the cast types stabilize, and the stretch reads as Survivor at cruising altitude — the modern format delivering."
   - show: big-brother
     season: 12
     season_label: "S12"
-    rank: 8
+    rank: 9
     title: "A founding alliance stress-tested exactly where the format wants it tested."
     blurb: "The Brigade's four-way pact runs the house from night one, but Big Brother saves its hardest test for the jury phase — the season's alliance has to argue against itself once the room contracts. The late confessionals are the stretch fans still cite."
 ---
