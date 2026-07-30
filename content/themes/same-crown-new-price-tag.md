@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-30
 featured: false
 related:
   - who-actually-got-the-vote
@@ -85,16 +85,22 @@ entries:
     rank: 12
     title: "A full relaunch arrives with a quarter-million-dollar prize bump."
     blurb: "New network, new host, an expanded judging panel — and a prize that jumps to $250,000 for the most decorated field the show has assembled. The stakes rise right alongside everything else that changed."
+  - show: american-ninja-warrior
+    season: 7
+    season_label: "S07 · Military Appreciation"
+    rank: 13
+    title: "The grand prize doubles to one million dollars, and never goes back."
+    blurb: "Season seven's win jumps to one million dollars in a single stroke, arriving alongside a six-city qualifying expansion and a harder Vegas course. The number becomes the format's standard payout in every full season that follows."
   - show: americas-next-top-model
     season: 15
     season_label: "S15"
-    rank: 13
+    rank: 14
     title: "Winning stops meaning a check and starts meaning a magazine credit."
     blurb: "The prize package overhauls into Vogue Italia coverage and an IMG Models contract, repositioning what the competition is actually for. A cycle that changes the reward instead of just raising it."
   - show: survivor-australia
     season: 11
     season_label: "S11 · Australia V The World"
-    rank: 14
+    rank: 15
     title: "An anniversary special cuts the prize pool in half on purpose."
     blurb: "A tenth-anniversary crossover trims the game to sixteen days and halves the standard prize money to match. A celebratory format that treats a smaller purse as part of the concept, not a budget cut."
 ---
