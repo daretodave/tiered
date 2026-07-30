@@ -37,6 +37,7 @@ last time a curator actually looked.
 | best-returnees | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Apprentice S13 "The All-Stars Cycle" entry, rank 7 — the season's own file states it's the only cycle cast entirely from returning celebrities, "a genuine structural first for the franchise," with the familiarity giving the cast "a sharper read on strategy than any fresh cast could bring," directly matching this list's own-recognition-does-real-work thesis; zero prior the-apprentice entries anywhere in this list. Dancing with the Stars S15 "All-Stars" entry, rank 8 — the season's own file frames the returning cast's retained technique as producing "a different competitive texture than any standard-cast season could," compressing the usual week-one adjustment period; distinct from S15's existing appearance in `tried-once-never-repeated`, which centers the format-never-repeated fact rather than the payoff itself. List now runs 8 entries across 7 shows) |
 | best-villain-editing | craft | 2026-07-29 | 2026-07-29 | 2026-07-29 forty-seventh pass: extended (7→8 entries, 6→7 shows) with Survivor S19 Samoa at rank 8. Grounded in the season's own lede/pull text — "the casting and editorial frame builds around a single dominant personality whose play reshaped what the format would accept as a villain archetype for years afterward," "the format leans into a single player to an unusual degree," "polarizing." Confirmed via a full `show: survivor` + `season: 19` grep (multiline, across every `content/themes/*.md`) that this season has zero prior appearances anywhere in the 205+-list ledger — genuinely unclaimed. Distinct from the existing Survivor entries here (S20 ensemble-villain-tribe, S07 tonal-permission, S28 tactical-competence-as-villainy): S19's angle is the single-player editorial bet itself, the season the format first let one personality carry the whole narrative frame. Spoiler-safe — no individual named, no outcome implied, matches the list's existing convention (rank 1's entry also declines to name anyone). Considered Survivor Australia S08 "Heroes V Villains" as a second addition but passed — its reputation/casting-split fact is already spent at `sorted-before-they-landed` rank 1 with near-identical framing ("heroes who played with honor, villains who played with ruthlessness"), too close to a duplicate to justify a second appearance without a materially distinct facet. |
 | firsts | structure | 2026-05-21 | 2026-05-21 | |
+| season-one-doesnt-own-every-first | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (11→12 entries). American Ninja Warrior S05 "New Ground" entry, rank 12 — the season's own file states plainly that Season five is "also the first season to broadcast a woman clearing the Warped Wall in a city final," a direct match for this list's own thesis (a genuine first landing well past a show's debut), confirmed via a full `american-ninja-warrior` grep across every `content/themes/*.md` that S05 had zero prior appearances anywhere in the 205+-list ledger — the show's other 12 ledger entries (S01-S04, S06-S17, spread across nine different lists) never touch this fact. Distinct from S05's own canon.md entry, which frames the season around course-design proof ("the proof season") rather than this casting/achievement milestone. season_label kept bare "S05," matching this same list's own existing bare-label precedent for American Ninja Warrior's S03 entry one rank up, despite S05 also carrying an editorial title ("New Ground"). List now runs 12 entries across 11 shows.
 | best-reunion-specials | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (7→8 entries, 5→6 shows). RHOSLC S03 entry, rank 8 — the season's own lede/pull/watch_list text states the season closes with "a two-part reunion still widely discussed" that "became one of the franchise's most discussed," a direct match for this list's reunion-craft-quality thesis, genuinely distinct from the season's three other ledger appearances (`the-couch-kept-adding-chairs` rank 1 cast-size-cut fact, `a-guest-spot-with-room-to-grow` S05 promotion/demotion fact, `new-flags-planted-fast`/`the-doubters-had-to-walk-it-back` S01 founding-cast facts), none of which touch the reunion itself. Confirmed via a full `show: rhoslc` grep across every `content/themes/*.md`. First Real Housewives entry on this list — tagline/description broadened from "competition franchise" to "reality franchise" to cover the addition honestly, consistent with the sibling list `the-reunion-kept-changing-its-own-rules`, which already mixes competition and Housewives entries freely. Considered and rejected RHOD S04 "The Reckoning" (its own reunion-builds-all-season fact is already staked at `the-slow-build-was-the-point` rank 12 under near-identical pacing framing) and RHOA S10 "The Anniversary" (its returning-cast-anchors-the-arc fact is already staked at `milestones-spent-not-marked` rank 13). |
 | best-finales | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (American Idol S22 entry, rank 8 — the season's own lede/body text states Katy Perry's mid-run announcement that she wouldn't return gave the closing episodes "a closing-ceremony register the competition hadn't been carrying," a farewell that "landed because it was real rather than staged"; confirmed via a full `show: american-idol` grep across every `content/themes/*.md` that S22 has zero prior ledger appearances anywhere. List now runs 8 entries across 7 shows.) |
 | best-non-winning-runs | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Real World S04 "London (1995)" entry, rank 8 — the season's own watch_list text states the international cast "give[s] the ensemble a texture no prior season had," with culture-clash beats "scattered" across every roommate rather than one dominant story; confirmed via a full `show: the-real-world` grep across every `content/themes/*.md` that S04's three prior ledger appearances (`one-season-two-flags` dual-location fact, `the-house-that-kept-changing` rank 3 chronological-first fact, `funny-on-purpose` rank 1 tonal comedy-pivot fact) each stake a distinct axis from the ensemble-texture claim itself. List now runs 8 entries across 7 shows.) |
@@ -2514,6 +2515,40 @@ last time a curator actually looked.
   freely. List now runs 8 entries across 6 shows. `last_revised`
   bumped (real content change). Extend-first now stands at
   31-for-32 across the logged passes.
+- 2026-07-30 fifty-second pass (content-curator tick): **shipped** —
+  extend-first, `season-one-doesnt-own-every-first` (craft, 11
+  entries / 11 shows, last touched 2026-07-22). `plan/CADENCE.md`
+  re-checked first per the brief: still fully starred as of this
+  morning's re-verification — fell through to Rule 3. Checked
+  `git log --oneline -30 -- content/shows/` for the freshest catalog
+  additions first (per the brief's stated priority order), but the
+  most recent show/season commits were all prior ticks' own extends,
+  not fresh unshipped content — pivoted to a full single-show census
+  instead. Ran a `show: american-ninja-warrior` grep across every
+  `content/themes/*.md`: 13 lists reference the show across 16 season
+  mentions (S01-S04, S06-S17), but S05 ("New Ground") had never once
+  appeared — the only unclaimed season out of the show's 17 filed.
+  Read S05's own season file directly: its closing line states
+  "it's also the first season to broadcast a woman clearing the
+  Warped Wall in a city final" — a clean, spoiler-safe casting/
+  achievement milestone landing five seasons into an established run,
+  a direct thesis match for this list (firsts that land well past a
+  show's debut, not at it). Confirmed via the same full-ledger grep
+  that S05 is entirely unclaimed, and checked S05's own canon.md
+  entry separately to confirm it stakes a different fact (course-
+  design proof, "the proof season") than the Warped Wall milestone.
+  Shipped: appended at rank 12 (existing 1-11 order untouched) —
+  this list has no strict chronological or magnitude ordering
+  convention across its existing entries, so a straight append reads
+  consistently with how the list was built pass over pass.
+  `season_label` kept bare "S05," matching this same list's own
+  existing American Ninja Warrior S03 entry one rank up, which uses
+  a bare label despite that season also carrying an editorial title
+  ("Prime-Time Preview") — following established in-file precedent
+  over introducing a new subtitle convention. List now runs 12
+  entries across 11 shows. `last_revised` bumped (real content
+  change). Extend-first now stands at 32-for-33 across the logged
+  passes.
 
 ## Notes
 

@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-07-30
 featured: false
 related:
   - firsts
@@ -79,6 +79,12 @@ entries:
     rank: 11
     title: "The host's chair sits empty for an episode, a first for the franchise anywhere in the world."
     blurb: "Four series into the UK edition, Michelle Visage steps in as head judge for an episode RuPaul can't attend — the first time any Drag Race edition worldwide has run without him. The same season casts the UK edition's first out trans woman contestant."
+  - show: american-ninja-warrior
+    season: 5
+    season_label: "S05"
+    rank: 12
+    title: "A city qualifier broadcasts the first woman to clear the Warped Wall."
+    blurb: "Season five widens the qualifying map to Baltimore and Denver and refreshes the course with the Rope Glider and Hang Slider. Then, in one of those city rounds, the milestone lands quietly — a genuine first for the show's five-year run."
 ---
 
 # Season one doesn't own every first
