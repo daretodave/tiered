@@ -44,7 +44,7 @@ last time a curator actually looked.
 | best-newbie-casts | tone | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (7→8 entries, 7→8 shows). Southern Charm S01 entry, rank 8 — the season's own file states the founding cast is "seven Charleston natives and transplants... a founding cast whose overlapping histories carry real weight from episode one," distinct from S01's three prior ledger appearances (`the-founding-seven-slowly-rebuilt` rank 9 — roster-turnover fact; `before-the-spinoff-had-a-name` rank 10 — franchise-founding fact; `where-the-warmth-ran-out` rank 4 — tonal-erosion fact), confirmed via full `show: southern-charm` grep. |
 | pandemic-seasons | era | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (The Voice S19 entry — first cycle produced entirely under pandemic protocols, zero prior appearances anywhere in the 178-list ledger) |
 | best-challenge-design | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Amazing Race S37 entry, rank 15 — the season's own format_changes/watch_list text names three brand-new route mechanics debuting together, Fork in the Road, Driver's Seat, and Valet Roulette, layered onto returning tools; confirmed via a full `show: amazing-race` grep across every theme file that S37's sole prior appearance, `the-roster-was-the-twist` rank 10, stakes the record-cast-size/casting-twist fact and explicitly frames its own thesis as casting swings rather than rule mechanics ("Most Race twists change a rule... The rarer move changes who gets to stand at the starting line"), leaving the new-tools-debut fact itself unclaimed; list now runs 15 entries across 7 shows) |
-| moving-day | structure | 2026-07-16 | 2026-07-16 | |
+| moving-day | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (10→11 entries, 10→11 shows). Drag Race All Stars S03 entry, rank 5 — the season's own watch_list text states "All Stars moves to VH1 for the first time this cycle," pulling ten returning queens from a wider stretch of past flagship seasons than Season 2 drew from, with Lip Sync For Your Legacy carrying over unchanged and a new jury-vote finale mechanic absorbing the bigger stage; confirmed via a full `show: dragrace-allstars` grep across every `content/themes/*.md` that the season's sole prior ledger appearance (`no-season-sends-a-queen-home-the-same-way-twice`) stakes the jury-finale mechanic itself, never the network move. Inserted at rank 5, directly below the flagship Drag Race S09 VH1-move entry (rank 3) — a sibling franchise's own parallel, smaller-stakes version of the same jump, landing just as cleanly. Existing ranks 4-10 shifted to 5-11. Considered and rejected as already-claimed: America's Next Top Model S07 "The CW Opening" (its network-move fact is already staked verbatim at `new-network-same-rulebook` rank 10) and Project Runway S06 "Los Angeles" (its Bravo-to-Lifetime-plus-relocation fact is already double-staked at `new-network-same-rulebook` and `the-workroom-outlasted-the-network`); Drag Race S07 and Project Runway S05 were also checked but both are the season *before* their respective network moves, not the move itself, so neither states a moving-day fact of its own. |
 | when-the-chairs-turned-over | craft | 2026-07-16 | 2026-07-16 | |
 | where-the-warmth-ran-out | tone | 2026-07-16 | 2026-07-16 | |
 | when-the-basket-became-a-bracket | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Chopped S03 "the redemption episode" entry, rank 17 — a single callback episode bringing back four prior finalists, the season's own text explicitly framing it as a smaller-scale echo of S02's four-episode Champions block one rank up; zero prior appearances anywhere in the ledger); previously extended 2026-07-28 (Chopped S49 "Martha Rules" entry — a second guest-architect basket swap the season's own text explicitly compares to S34's Alton's Challenge; genuinely distinct from S49's prior sole appearance, the calendar-overlap fact in no-season-here-got-the-calendar-to-itself); previously extended 2026-07-27 (Chopped S36, S43, S48 entries — tournament/event blocks the list's own scope had missed) |
@@ -2583,6 +2583,44 @@ last time a curator actually looked.
   on this list, well under the informal per-show cap). `last_revised`
   bumped (real content change). Extend-first now stands at 33-for-34
   across the logged passes.
+- 2026-07-30 fifty-fourth pass (content-curator tick): **shipped** —
+  extend-first, `moving-day` (structure, "network/platform moves mid-
+  run," 10 entries across 10 shows, last touched 2026-07-16 — one of
+  the ledger's three oldest untouched rows alongside
+  `when-the-chairs-turned-over` and `where-the-warmth-ran-out`).
+  `plan/CADENCE.md` re-checked first — still fully starred, no Rule 2
+  pick, fell through to Rule 3. Avoided `when-the-chairs-turned-over`
+  outright given its two existing the-voice entries (S24, S07) and the
+  brief's explicit block on any the-voice ≥S22 material — didn't want
+  to risk touching a list already carrying flagged-corrupt-adjacent
+  content this tick. Grepped every `content/shows/*/seasons/*.md` for
+  network-move language ("moves to", "leaves \[network\]", VH1/Hulu/
+  Freeform/Peacock/Paramount/Lifetime mentions) and checked five
+  candidates against the full ledger before landing one. Rejected as
+  already-claimed: ANTM S07 "The CW Opening" (its network-move fact is
+  staked verbatim at `new-network-same-rulebook` rank 10) and Project
+  Runway S06 "Los Angeles" (its Bravo-to-Lifetime-plus-relocation fact
+  is double-staked at `new-network-same-rulebook` and
+  `the-workroom-outlasted-the-network`). Rejected as not-actually-the-
+  move: Drag Race S07 and Project Runway S05, both explicitly framed
+  in their own season files as the *last* season before their
+  respective network moves, not the move itself. One candidate
+  survived clean: Drag Race All Stars S03, whose own watch_list text
+  states "All Stars moves to VH1 for the first time this cycle,"
+  pulling ten returning queens from a wider stretch of past flagship
+  seasons than Season 2 drew from, Lip Sync For Your Legacy carrying
+  over unchanged, and a new jury-vote finale mechanic absorbing the
+  bigger stage. Confirmed via a full `show: dragrace-allstars` grep
+  across every `content/themes/*.md` that the season's sole prior
+  ledger appearance (`no-season-sends-a-queen-home-the-same-way-
+  twice`) stakes the jury-finale mechanic itself, never the network
+  move — genuinely unclaimed. Shipped: inserted at rank 5, directly
+  below the flagship Drag Race S09 VH1-move entry (rank 3) — a sibling
+  franchise's own parallel, smaller-stakes version of the same jump,
+  landing just as cleanly. Existing ranks 4-10 shifted to 5-11. List
+  now runs 11 entries across 11 shows. `last_revised` bumped (real
+  content change). Extend-first now stands at 34-for-35 across the
+  logged passes.
 
 ## Notes
 

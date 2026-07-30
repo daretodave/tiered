@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-16
+last_revised: 2026-07-30
 featured: false
 related:
   - firsts
@@ -37,40 +37,46 @@ entries:
     rank: 4
     title: "A two-year hiatus ends with a full network switch and an all-new panel."
     blurb: "Idol leaves Fox for ABC after a two-year gap, installing three new judges behind the desk. Ryan Seacrest stays put, and the premiere plays like a genuine relaunch rather than a rerun."
+  - show: dragrace-allstars
+    season: 3
+    season_label: "S03"
+    rank: 5
+    title: "All Stars follows the flagship to VH1, and the Legacy mechanic barely notices the move."
+    blurb: "All Stars leaves Logo for VH1 the same year the mothership does, pulling ten returning queens from a wider stretch of past seasons than before. Lip Sync For Your Legacy carries over unchanged, and a new jury-vote finale absorbs the extra attention the bigger network brings."
   - show: project-runway
     season: 21
     season_label: "S21 · New York"
-    rank: 5
+    rank: 6
     title: "Heidi Klum returns to host the show's first season off Bravo in decades."
     blurb: "Project Runway leaves its longtime home for Freeform, streaming next-day on Hulu, and brings Klum back to the host chair after eight years away. A new judge and a livelier premiere twist announce the reset early."
   - show: rhom
     season: 4
     season_label: "S04"
-    rank: 6
+    rank: 7
     title: "Eight years off the air, a new streaming home, and almost an entirely new cast."
     blurb: "Bravo's Miami chapter resurfaces exclusively on Peacock with only two full-time holdovers from the original run. The network jump and the cast overhaul arrive as one single, high-risk swing."
   - show: love-island-us
     season: 4
     season_label: "S04"
-    rank: 7
+    rank: 8
     title: "A network exit becomes a full streaming reinvention, cadence included."
     blurb: "Love Island leaves CBS for Peacock, swaps hosts and narrators, and trades its weekly broadcast slot for a daily-drop release. Nearly every mechanical piece of the American format changes at once."
   - show: ink-master
     season: 14
     season_label: "S14"
-    rank: 8
+    rank: 9
     title: "A new host, a new streaming home, and a doubled judging panel in one season."
     blurb: "Ink Master moves to Paramount+, hands hosting duties to Joel Madden, and expands its panel to four judges for the first time. Dave Navarro doesn't vanish — he shifts into a smaller, recurring role."
   - show: dancing-with-the-stars
     season: 31
     season_label: "S31"
-    rank: 9
+    rank: 10
     title: "Fifteen years of network broadcast end with a quiet move to streaming."
     blurb: "Dancing with the Stars leaves ABC's schedule for Disney+, ending a decade and a half as a network broadcast staple. The format itself barely changes — only the screen it reaches viewers on does."
   - show: americas-next-top-model
     season: 23
     season_label: "S23"
-    rank: 10
+    rank: 11
     title: "The VH1 relaunch swaps hosts and adds a scoring gimmick that never settles in."
     blurb: "Top Model leaves the CW for VH1 with a new host taking over from Tyra Banks and social-media metrics folded into the judging. The pieces don't cohere, and the show's own canon calls this its lowest point."
 ---
