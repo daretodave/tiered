@@ -86,7 +86,7 @@ last time a curator actually looked.
 | when-the-crew-stepped-into-frame | craft | 2026-07-19 | 2026-07-19 | |
 | built-for-one-playing-as-a-team | craft | 2026-07-19 | 2026-07-19 | |
 | away-from-home-turf | craft | 2026-07-19 | 2026-07-19 | |
-| the-roster-was-the-twist | single | 2026-07-19 | 2026-07-19 | |
+| the-roster-was-the-twist | single | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). Amazing Race S07 entry, rank 3 — the season's own `format_changes: [first-crossover-returnees]` field and body text ("The crossover season, with a pair of returning Survivor players folded into the lineup and CBS leaning into the publicity") document it as the franchise's founding instance of the alumni-crossover casting mechanic that S31 (rank 2, three-show crossover) and S38 (rank 1, full Big Brother field) later scale up — a genuine origin point on this list's own casting-experiment axis that had never been drawn on. Confirmed via a full multiline `show: amazing-race` + `season: 7` grep across every `content/themes/*.md` that S07's only other ledger appearance (`best-finales` rank 1) spends a wholly different fact (the closing leg's foot race to the mat), never the crossover-casting angle. Inserted at rank 3, directly below S31 and above the returnee/all-stars cluster (S29/S11/S18/S24) — a single-pair crossover reads as a smaller bend than S31's three-franchise field, but distinct in kind from the all-returnee seasons that follow. Existing ranks 3-12 shifted to 4-13, text unchanged. Considered and passed over: MAFS Season 13 "Houston" for `the-matching-experts-never-sit-still-for-long` (re-confirmed still thin — its only remaining hook, "third straight unchanged panel," restates facts already staked by the S10-S12/S14 unchanged-panel cluster and risks a near-duplicate of S11's "nearly four months" calendar claim; left deferred, not shipped). |
 | two-channels-same-night | craft | 2026-07-19 | 2026-07-19 | |
 | the-elimination-round-never-keeps-its-name | single | 2026-07-19 | 2026-07-19 | |
 | the-clock-had-to-make-room | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (90 Day Fiancé S03 entry, rank 3 — the one season here where the six-couple shape held completely steady, no comeback/crossover wrinkle; list now runs 11 entries, matching the full 11 filed flagship seasons) |
@@ -2395,6 +2395,45 @@ last time a curator actually looked.
   holds 3, the list's high-water mark, unchanged this pass).
   `last_revised` bumped (real content change). Extend-first now
   stands at 29-for-30 across the logged passes.
+- 2026-07-30 forty-ninth pass (content-curator tick): **shipped** —
+  extend-first, `the-roster-was-the-twist` (Amazing Race, single-show,
+  "casting experiments ranked by how far each reshaped the race,"
+  last touched 2026-07-19, 12 entries). Steered clear of
+  `the-vote-left-the-phone-line`, already extended earlier today
+  (American Idol S24, era_range widened to [2002, 2026]). Re-checked
+  the standing MAFS S13 "Houston" deferral first rather than assume it
+  dead: read the season's own file directly again — its only fact
+  beyond the panel holding (Schwartz-Coles-Roberson unchanged) is
+  being "the third straight" season built on the Washington, D.C.
+  cast-size expansion, which restates ground the already-ranked S10/
+  S11/S12/S14 entries on `the-matching-experts-never-sit-still-for-
+  long` cover from their own distinct angles (cast expansion, longest
+  broadcast calendar, six-season renewal, repeat-city visit); worse,
+  S13's own "roughly four months" premiere-to-close language sits
+  uncomfortably close to S11's already-published "nearly four months"
+  pandemic-calendar claim. Left it deferred rather than force a
+  fifth entry into an already-well-covered cluster — the four prior
+  passes' judgment holds. Pivoted to a fresh sweep: grepped every
+  season file catalog-wide for crossover/spinoff language, which
+  surfaced Amazing Race S07's own `format_changes:
+  [first-crossover-returnees]` field and body text ("The crossover
+  season, with a pair of returning Survivor players folded into the
+  lineup") — the franchise's founding instance of the alumni-crossover
+  casting mechanic that `the-roster-was-the-twist`'s own rank-1 (S38)
+  and rank-2 (S31) entries later escalate to a full multi-show field.
+  Confirmed via a full multiline `show: amazing-race` + `season: 7`
+  grep across every `content/themes/*.md` that S07's only other
+  ledger appearance (`best-finales` rank 1) spends a wholly different
+  fact — the closing leg's foot race to the mat, not the crossover-
+  casting angle — so the new entry doesn't restate anything already
+  published. Shipped: inserted at rank 3, directly below S31 and
+  above the returnee/all-stars cluster (S29/S11/S18/S24) — reading it
+  as a smaller, earlier bend of the same crossover idea S31 and S38
+  later scale up, not an all-returnee season in its own right.
+  Existing ranks 3-12 shifted to 4-13, text unchanged. List now runs
+  13 entries (single-show, no cross-canon floor applies). `last_revised`
+  bumped (real content change). Extend-first now stands at 30-for-31
+  across the logged passes.
 
 ## Notes
 
