@@ -6,7 +6,7 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-11
+last_revised: 2026-07-30
 featured: false
 related:
   - firsts
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "The first-time bakers the tent had been waiting for."
     blurb: "Twelve amateur bakers, the tent's first year at Welford Park, the broadcast crossing to BBC One. The casting class arrived with the personalities a ten-week run can hang on — warm, sharp, fully themselves on camera. The series long-running fans cite as Bake Off at peak form."
+  - show: southern-charm
+    season: 1
+    season_label: "S01"
+    rank: 8
+    title: "A founding cast that already knew each other before the cameras rolled."
+    blurb: "Seven Charleston locals and transplants arrive with real overlapping histories, not backstory built for TV. Old-money manners hold the surface together while the season's real friction comes from relationships that predate the show itself."
 ---
