@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-07-30
 featured: false
 related:
   - familiar-faces-wrong-franchise
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "The crossover pool finally reaches past America's own dating shows into an international one."
     blurb: "Three seasons of pulling alumni from Love Is Blind and Too Hot to Handle give way to a fourth that also recruits from Married at First Sight Australia and Vanderpump Rules. Eight episodes, the shortest run yet, hold the villa's biggest cast."
+  - show: bachelor-in-paradise
+    season: 5
+    season_label: "S05"
+    rank: 8
+    title: "A Winter-Games-style crossover folds in whole delegations from three sibling international editions at once."
+    blurb: "Contestants from Bachelorette Canada, Bachelor New Zealand, and Bachelor Japan join the domestic cast in a Winter-Games-style crossover, an import the spinoff never repeated. Nineteen arrive day one, with sixteen more staggering in later."
 ---
