@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-30
 featured: false
 related:
   - firsts
@@ -73,16 +73,22 @@ entries:
     rank: 10
     title: "The photoshoots head to São Paulo, the only cycle the show sets foot in South America."
     blurb: "Season twelve gives the modeling competition a Brazilian backdrop it never revisits, closing out a longtime panelist's run on the judging panel in the same cycle. No later cycle returns to the continent."
+  - show: the-real-world
+    season: 27
+    season_label: "S27 · St. Thomas (2012)"
+    rank: 11
+    title: "An isolated Caribbean estate stands in for the house, and the format never returns there"
+    blurb: "Seven roommates share an isolated estate on Hassel Island, off St. Thomas — the franchise's only season filmed in the Caribbean, and just its second ever shot outside the contiguous U.S. The format never returns to the Caribbean again."
   - show: below-deck
     season: 10
     season_label: "S10 · St. Lucia"
-    rank: 11
+    rank: 12
     title: "A captain change mid-charter gives one season a shape no other run shares."
     blurb: "St. Lucia splits command between two captains partway through the season, an anomaly the format doesn't repeat before or after. Crew dynamics adjust around a transition no other charter has to navigate."
   - show: rhod
     season: 3
     season_label: "S03 · The Consolidation"
-    rank: 12
+    rank: 13
     title: "The same six women return with nobody new to introduce, a settled cast the show doesn't keep still for long."
     blurb: "Season three carries the identical six-woman cast over from the year before with zero new additions, the only run this franchise goes without introducing somebody. The lineup starts changing again the very next season."
 ---

@@ -61,7 +61,7 @@ last time a curator actually looked.
 | one-rule-fills-every-seat | craft | 2026-07-17 | 2026-07-17 | |
 | the-place-fought-back | tone | 2026-07-17 | 2026-07-17 | |
 | the-house-that-kept-changing | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (The Real World S08 Hawaii, S10 Back to New York, S13 Paris entries — three genuine format "firsts" the list's own chronological-tour thesis had skipped; confirmed via grep these were the only unclaimed real-world seasons out of 14 candidates that stated a real structural/geographic first in their own season-file text, not just casting/tonal color) |
-| tried-once-never-repeated | structure | 2026-07-17 | 2026-07-17 | |
+| tried-once-never-repeated | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). The Real World S27 "St. Thomas (2012)" entry, rank 11 — the season's own file states plainly it's "the only Real World season filmed in the Caribbean" and "just the second [season] filmed outside the contiguous United States," with an isolated resort estate standing in for the usual shared house; confirmed via a full multiline `show: the-real-world` + `season: 27` grep across every `content/themes/*.md` that this season has zero prior appearances anywhere in the 205-list ledger — genuinely unclaimed, distinct from the show's other one-off-location entries already staked elsewhere (S22 Cancún resort-suite fact on this same list, S08 Hawaii / S13 Paris / S10 Back-to-New-York format "firsts" on `the-house-that-kept-changing`). Inserted at rank 11, directly below ANTM S12's São Paulo entry — a comparable pure-location one-off swing, smaller in structural terms than Cancún's resort-suite/job-tie-in fact one rank up. Existing ranks 11-12 shifted to 12-13. |
 | not-who-they-say-they-are | craft | 2026-07-17 | 2026-07-17 | |
 | who-actually-got-the-vote | craft | 2026-07-18 | 2026-07-18 | |
 | the-shifting-yardstick | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Naked and Afraid S05, S06 entries — the two remaining founding-era "no shift" seasons the list's own scoring/casting/budget angle had skipped; S19 stays excluded on purpose, still airing per its own season file) |
@@ -2549,6 +2549,40 @@ last time a curator actually looked.
   entries across 11 shows. `last_revised` bumped (real content
   change). Extend-first now stands at 32-for-33 across the logged
   passes.
+- 2026-07-30 fifty-third pass (content-curator tick): **shipped** —
+  extend-first, steered clear of the eight lists already touched
+  earlier today (best-post-merge, season-one-doesnt-own-every-first,
+  best-reunion-specials, best-newbie-casts, the-mic-changed-hands,
+  the-couch-kept-adding-chairs, the-roster-was-the-twist,
+  the-vote-left-the-phone-line). `plan/CADENCE.md` re-checked first —
+  still fully starred, no Rule 2 pick, fell through to Rule 3. Grepped
+  every `content/shows/*/seasons/*.md` for explicit one-off-location
+  language ("only season", "never again", "the only time") and cross-
+  checked every hit against `tried-once-never-repeated` (structure,
+  "one-off format swings ranked by how much they actually changed the
+  format's shape," 12 entries across 12 shows, last touched
+  2026-07-17 — one of the ledger's oldest untouched rows). Most hits
+  resolved to seasons already spent on this exact list (Jersey Shore
+  S04, Real World S22, ANTM S12) or on sibling single-show lists. One
+  survived clean: The Real World S27 "St. Thomas (2012)" — the
+  season's own file states plainly it's "the only Real World season
+  filmed in the Caribbean" and "just the second [season] filmed
+  outside the contiguous United States," an isolated resort estate
+  standing in for the usual shared house. Confirmed via a full
+  multiline `show: the-real-world` + `season: 27` grep across every
+  `content/themes/*.md` that this season has zero prior appearances
+  anywhere in the 205-list ledger — genuinely unclaimed, and distinct
+  from the show's other location "firsts" already staked on
+  `the-house-that-kept-changing` (Hawaii S08, Back-to-New-York S10,
+  Paris S13) and from S22's own resort-suite/job-tie-in fact on this
+  same list. Shipped: inserted at rank 11, directly below ANTM S12's
+  São Paulo entry — a comparable pure-location one-off swing, read as
+  a smaller structural bend than Cancún's resort-suite-plus-job-tie-in
+  fact one rank up. Existing ranks 11-12 shifted to 12-13. List now
+  runs 13 entries across 12 shows (The Real World now holds 2 entries
+  on this list, well under the informal per-show cap). `last_revised`
+  bumped (real content change). Extend-first now stands at 33-for-34
+  across the logged passes.
 
 ## Notes
 
