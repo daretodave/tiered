@@ -388,6 +388,24 @@ authoring this tick — every gap-table slot stays starred. Gap
 table unchanged at 35 shows / 36 gap-slots. Next actionable check
 is the weekly sweep, due 2026-08-02.
 
+**Rule 2 stall, 2026-07-30 tick (cloud march):** re-verified the
+same pick-order-top candidates — `survivor` (S51, premiere
+2026-09-23), `the-challenge` (S42, premiere 2026-08-05),
+`big-brother` (S28, finale 2026-10-01), `amazing-race` (S39,
+premiere 2026-09-30), `bachelor` (S30, undated) — plus the two
+nearest scheduled finales in `content/calendar.yml`,
+`below-deck-mediterranean` (S11, finale 2026-08-10) and `alone`
+(S13, finale 2026-08-26). Every one of these dates is still in
+the future as of this tick; none could have concluded since
+yesterday's re-verify. No row actionable for authoring this tick
+— every gap-table slot stays starred. Gap table unchanged at 35
+shows / 36 gap-slots. Fell through to Rule 3: `best-newbie-casts`
+extended with a Southern Charm S01 entry (commit 975efa0e — see
+`plan/LISTS.md`). Next actionable check is the weekly sweep, due
+2026-08-02; the earliest date any pick-order candidate could
+cross into concluded territory is 2026-08-05 (`the-challenge` S42
+premiere).
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
