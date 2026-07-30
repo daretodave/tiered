@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-07-30
 featured: false
 related:
   - best-hosting
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "Three new route mechanics debut and stack onto a full slate of returning tools."
     blurb: "Fork in the Road, Driver's Seat, and Valet Roulette all land this season, layered over holdovers like the Intersection and Head-to-Head. The toolkit is the most crowded the format has ever run in a single outing."
+  - show: amazing-race
+    season: 38
+    season_label: "S38"
+    rank: 16
+    title: "One new route mechanic debuts, small in scale but genuinely new."
+    blurb: "A U-Turn penalty now follows a team that survives a non-elimination leg, paired with a new Double U-Turn Vote — a private ballot, public reveal mid-route. The season's own text calls it the one genuinely new mechanic, modest next to Season 37's toolkit but real."
 ---
