@@ -7,7 +7,7 @@ category: craft
 sentiment: verdict
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-30
 featured: false
 related:
   - best-finales
@@ -67,4 +67,10 @@ entries:
     rank: 9
     title: "A brand-new host and a rebuilt boardroom arrive framed as a beginning, not an ending."
     blurb: "Arnold Schwarzenegger takes over hosting duties for the first time in the show's history, with new titles and a redesigned boardroom signaling a fresh start. It reads like day one of something new — and turns out to be the last."
+  - show: below-deck-adventure
+    season: 1
+    season_label: "S01 · Svalbard"
+    rank: 10
+    title: "A franchise experiment plays like a normal launch and quietly never gets a second charter."
+    blurb: "Below Deck Adventure's lone season carries none of a farewell's usual signals — a new vessel, a new climate, a captain proving himself in Arctic waters. No reinvention narrative, no advance notice. The format just doesn't come back for a second season."
 ---
