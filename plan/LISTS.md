@@ -2435,6 +2435,46 @@ last time a curator actually looked.
   bumped (real content change). Extend-first now stands at 30-for-31
   across the logged passes.
 
+- 2026-07-30 fiftieth pass (cloud march tick): zero-ship. Rule 2
+  re-checked first: `plan/CADENCE.md`'s gap table stays unchanged at
+  35 shows / 36 gap-slots, every slot starred (confirmed-but-unaired)
+  — no actionable season to author this tick, falling to Rule 3.
+  Extend-first swept seven leads before landing on zero:
+  `new-house-rules-every-time-the-castle-reopens` (Traitors UK,
+  single) — rejected, the show carries exactly 4 filed seasons
+  against `seasons: 4`, naturally capped, no room to extend.
+  `survivor-pillars` (single) — rejected, the list's own tagline
+  states its four entries are load-bearing ("pull any one of them out
+  and the canon falls over"); padding it would break its own thesis.
+  `firsts` (structure) — two sub-candidates drafted via
+  content-curator (MasterChef Australia S01, Shark Tank S01) then
+  reverted after a full-ledger re-grep found both already staked:
+  `the-toolkit-never-sat-still` rank 15 covers the MasterChef
+  Australia S01 founding-format fact in near-identical framing, and
+  `not-the-usual-order` rank 2 covers Shark Tank S01 using the
+  literal phrase "needed no second draft." `one-season-two-flags`
+  (single) — rejected, a broad nationality/cast-divide grep across
+  the catalog surfaced zero unclaimed candidates. `best-newbie-casts`
+  (tone) — RHOD S1 considered, rejected: already staked on
+  `new-flags-planted-fast` rank 11 with a near-identical
+  founding-cast-specificity framing. `seven-ways-to-break-the-same-app`
+  and `the-wait-between-seasons-was-never-the-same-twice` (both
+  single) — rejected, The Circle and RHOM each carry exactly 7 filed
+  seasons against their own `seasons:` counts, fully saturated.
+  `the-competition-leaves-the-country` (craft) — two sub-candidates
+  from America's Next Top Model (S03, S20) checked: S03's own file
+  is too vague to ground a specific-country claim, and S20's Rio/São
+  Paulo fact is already spent verbatim on `the-itinerary-was-the-
+  format` rank 14. A final lead, `the-goodbye-became-part-of-the-
+  format` (craft, 12/30 entries, genuine room) — considered Survivor
+  S1's torch-snuffing elimination ritual as a fresh entry, rejected:
+  Survivor S1 already carries 11 ledger appearances (the highest
+  count checked this pass), and two of those (`no-template-to-copy`
+  rank 1, `missing-on-purpose` rank 3) already put "a torch" in their
+  own text — too close to the pitch to land as a distinct fact
+  without reading as restating ground already covered. No lead
+  cleared the excellence gate this pass.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
