@@ -7,11 +7,11 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-07-30
 featured: false
 related:
   - who-actually-got-the-vote
-era_range: [2002, 2025]
+era_range: [2002, 2026]
 entries:
   - show: dancing-with-the-stars
     season: 31
@@ -55,4 +55,10 @@ entries:
     rank: 7
     title: "The phone line doesn't just shrink here — it disappears"
     blurb: "Season eleven drops interactive telephone voting entirely, moving the ballot fully onto the show's website and a new dedicated smartphone app. Every other season on this list keeps the phone as a fallback option; this one is the rare case that just turns it off."
+  - show: american-idol
+    season: 24
+    season_label: "S24"
+    rank: 8
+    title: "The app itself becomes the thing that gets retired"
+    blurb: "Season twenty-four retires its dedicated voting app mid-relaunch, pushing the ballot back onto the website, social platforms, and text. Proof the move away from the phone was never a straight line toward a single app."
 ---
