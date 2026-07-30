@@ -1,17 +1,18 @@
 ---
 slug: best-reunion-specials
 title: "Reunion specials that closed the loop"
-tagline: "Every competition franchise has a closing hour to land — Survivor's reunion, Drag Race's Reunited, The Challenge's reunion special, Top Chef's reunion episode. These are the ones where that hour <b>read the season back to itself</b> — the right cast on stage, the right beats, the right altitude for what just aired."
+tagline: "Every reality franchise has a closing hour to land — Survivor's reunion, Drag Race's Reunited, The Challenge's reunion special, Top Chef's reunion episode, a Real Housewives sit-down. These are the ones where that hour <b>read the season back to itself</b> — the right cast on stage, the right beats, the right altitude for what just aired."
 category: structure
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-05-22
+last_revised: 2026-07-30
 featured: false
 related:
   - best-finales
   - survivor-pillars
-description: "The reunion hour as a craft job — done well across Survivor, Drag Race, The Challenge, Top Chef, and The Traitors. Closings that sat the right cast on stage, asked the right questions, and hit the altitude the season had earned."
+  - the-reunion-kept-changing-its-own-rules
+description: "The reunion hour as a craft job — done well across Survivor, Drag Race, The Challenge, Top Chef, The Traitors, and Real Housewives. Closings that sat the right cast on stage, asked the right questions, and hit the altitude the season had earned."
 entries:
   - show: survivor
     season: 20
@@ -55,4 +56,10 @@ entries:
     rank: 7
     title: "The closing gathering for a season the audience had been loud about."
     blurb: "The Traitors had become appointment television by its second year, and the reunion hour gathers a buzzy cast back together to revisit it. The episode meets the noise the season generated — a closing conversation among players the audience had argued over for weeks."
+  - show: rhoslc
+    season: 3
+    season_label: "S03"
+    rank: 8
+    title: "A leaner cast makes the two-part reunion hit harder than the season around it."
+    blurb: "Season three trims the cast to its core four after a hard year off-camera. The tighter room pays off at the reunion — a two-part special the show's own text calls one of the most discussed in the franchise's history."
 ---

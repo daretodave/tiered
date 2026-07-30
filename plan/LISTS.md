@@ -37,7 +37,7 @@ last time a curator actually looked.
 | best-returnees | structure | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Apprentice S13 "The All-Stars Cycle" entry, rank 7 — the season's own file states it's the only cycle cast entirely from returning celebrities, "a genuine structural first for the franchise," with the familiarity giving the cast "a sharper read on strategy than any fresh cast could bring," directly matching this list's own-recognition-does-real-work thesis; zero prior the-apprentice entries anywhere in this list. Dancing with the Stars S15 "All-Stars" entry, rank 8 — the season's own file frames the returning cast's retained technique as producing "a different competitive texture than any standard-cast season could," compressing the usual week-one adjustment period; distinct from S15's existing appearance in `tried-once-never-repeated`, which centers the format-never-repeated fact rather than the payoff itself. List now runs 8 entries across 7 shows) |
 | best-villain-editing | craft | 2026-07-29 | 2026-07-29 | 2026-07-29 forty-seventh pass: extended (7→8 entries, 6→7 shows) with Survivor S19 Samoa at rank 8. Grounded in the season's own lede/pull text — "the casting and editorial frame builds around a single dominant personality whose play reshaped what the format would accept as a villain archetype for years afterward," "the format leans into a single player to an unusual degree," "polarizing." Confirmed via a full `show: survivor` + `season: 19` grep (multiline, across every `content/themes/*.md`) that this season has zero prior appearances anywhere in the 205+-list ledger — genuinely unclaimed. Distinct from the existing Survivor entries here (S20 ensemble-villain-tribe, S07 tonal-permission, S28 tactical-competence-as-villainy): S19's angle is the single-player editorial bet itself, the season the format first let one personality carry the whole narrative frame. Spoiler-safe — no individual named, no outcome implied, matches the list's existing convention (rank 1's entry also declines to name anyone). Considered Survivor Australia S08 "Heroes V Villains" as a second addition but passed — its reputation/casting-split fact is already spent at `sorted-before-they-landed` rank 1 with near-identical framing ("heroes who played with honor, villains who played with ruthlessness"), too close to a duplicate to justify a second appearance without a materially distinct facet. |
 | firsts | structure | 2026-05-21 | 2026-05-21 | |
-| best-reunion-specials | structure | 2026-05-22 | 2026-05-22 | |
+| best-reunion-specials | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (7→8 entries, 5→6 shows). RHOSLC S03 entry, rank 8 — the season's own lede/pull/watch_list text states the season closes with "a two-part reunion still widely discussed" that "became one of the franchise's most discussed," a direct match for this list's reunion-craft-quality thesis, genuinely distinct from the season's three other ledger appearances (`the-couch-kept-adding-chairs` rank 1 cast-size-cut fact, `a-guest-spot-with-room-to-grow` S05 promotion/demotion fact, `new-flags-planted-fast`/`the-doubters-had-to-walk-it-back` S01 founding-cast facts), none of which touch the reunion itself. Confirmed via a full `show: rhoslc` grep across every `content/themes/*.md`. First Real Housewives entry on this list — tagline/description broadened from "competition franchise" to "reality franchise" to cover the addition honestly, consistent with the sibling list `the-reunion-kept-changing-its-own-rules`, which already mixes competition and Housewives entries freely. Considered and rejected RHOD S04 "The Reckoning" (its own reunion-builds-all-season fact is already staked at `the-slow-build-was-the-point` rank 12 under near-identical pacing framing) and RHOA S10 "The Anniversary" (its returning-cast-anchors-the-arc fact is already staked at `milestones-spent-not-marked` rank 13). |
 | best-finales | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (American Idol S22 entry, rank 8 — the season's own lede/body text states Katy Perry's mid-run announcement that she wouldn't return gave the closing episodes "a closing-ceremony register the competition hadn't been carrying," a farewell that "landed because it was real rather than staged"; confirmed via a full `show: american-idol` grep across every `content/themes/*.md` that S22 has zero prior ledger appearances anywhere. List now runs 8 entries across 7 shows.) |
 | best-non-winning-runs | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (The Real World S04 "London (1995)" entry, rank 8 — the season's own watch_list text states the international cast "give[s] the ensemble a texture no prior season had," with culture-clash beats "scattered" across every roommate rather than one dominant story; confirmed via a full `show: the-real-world` grep across every `content/themes/*.md` that S04's three prior ledger appearances (`one-season-two-flags` dual-location fact, `the-house-that-kept-changing` rank 3 chronological-first fact, `funny-on-purpose` rank 1 tonal comedy-pivot fact) each stake a distinct axis from the ensemble-texture claim itself. List now runs 8 entries across 7 shows.) |
 | best-newbie-casts | tone | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (7→8 entries, 7→8 shows). Southern Charm S01 entry, rank 8 — the season's own file states the founding cast is "seven Charleston natives and transplants... a founding cast whose overlapping histories carry real weight from episode one," distinct from S01's three prior ledger appearances (`the-founding-seven-slowly-rebuilt` rank 9 — roster-turnover fact; `before-the-spinoff-had-a-name` rank 10 — franchise-founding fact; `where-the-warmth-ran-out` rank 4 — tonal-erosion fact), confirmed via full `show: southern-charm` grep. |
@@ -2474,6 +2474,46 @@ last time a curator actually looked.
   own text — too close to the pitch to land as a distinct fact
   without reading as restating ground already covered. No lead
   cleared the excellence gate this pass.
+- 2026-07-30 fifty-first pass (content-curator tick): **shipped** —
+  extend-first, `best-reunion-specials` (structure, "reunion
+  specials that closed the loop," last touched 2026-05-22, the
+  ledger's oldest untouched-since-May list, 7 entries across 5
+  shows). Skipped the seven leads the fiftieth pass had already
+  swept (`new-house-rules-every-time-the-castle-reopens`,
+  `survivor-pillars`, `firsts`, `one-season-two-flags`,
+  `best-newbie-casts`, `seven-ways-to-break-the-same-app` /
+  `the-wait-between-seasons-was-never-the-same-twice`,
+  `the-competition-leaves-the-country`) and widened the search
+  instead toward the least-recently-reviewed rows in the ledger
+  table. Grepped every `content/shows/*/seasons/*.md` for the word
+  "reunion" catalog-wide (124 hits) and read every hit's surrounding
+  context rather than trusting the keyword alone. RHOSLC S03's own
+  file was the clean strongest hit — its lede/pull/watch_list text
+  states the season closes with "a two-part reunion still widely
+  discussed" that "became one of the franchise's most discussed" —
+  a direct match for this list's reunion-craft-quality thesis (not
+  a format-length-change fact, which is `the-reunion-kept-changing-
+  its-own-rules`'s territory). Confirmed via a full `show: rhoslc`
+  grep across every `content/themes/*.md` that RHOSLC S03's three
+  other ledger appearances (cast-size-cut, promotion/demotion,
+  founding-cast facts) never touch the reunion. Checked two more
+  reunion-quality-flavored candidates from the same grep sweep
+  before settling — RHOD S04 "The Reckoning" (rejected: its
+  reunion-builds-all-season fact is already staked at
+  `the-slow-build-was-the-point` rank 12 under near-identical
+  pacing framing) and RHOA S10 "The Anniversary" (rejected: its
+  returning-cast-anchors-the-arc fact is already staked at
+  `milestones-spent-not-marked` rank 13) — both would have
+  restated ground already covered elsewhere. Shipped: inserted
+  RHOSLC S03 at rank 8. Broadened the list's own tagline/description
+  from "every competition franchise" to "every reality franchise"
+  to honestly cover the first non-competition (Real Housewives)
+  entry — a deliberate, minimal edit, consistent with the sibling
+  list `the-reunion-kept-changing-its-own-rules` (already `related`
+  from this list), which mixes competition and Housewives entries
+  freely. List now runs 8 entries across 6 shows. `last_revised`
+  bumped (real content change). Extend-first now stands at
+  31-for-32 across the logged passes.
 
 ## Notes
 
