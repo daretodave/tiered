@@ -415,6 +415,25 @@ extended with a Bachelor in Paradise S05 "Sayulita 2018" entry
 (commit 8631a3d3 — see `plan/LISTS.md`). Next actionable check
 remains the weekly sweep, due 2026-08-02.
 
+**Rule 2 stall, 2026-07-31 tick (cloud march):** re-verified the
+same pick-order-top candidates — `survivor` (S51, premiere
+2026-09-23), `the-challenge` (S42, premiere 2026-08-05),
+`big-brother` (S28, finale 2026-10-01), `amazing-race` (S39,
+premiere 2026-09-30), `bachelor` (S30, undated) — plus the
+nearest scheduled `calendar.yml` finales (`below-deck-mediterranean`
+S11, finale 2026-08-10; `alone` S13, finale 2026-08-26). No
+breaking news, cancellations, or moved dates surfaced for any of
+the seven; all still future-dated, earliest 2026-08-05. No row
+actionable. Gap table unchanged at 35 shows / 36 gap-slots. Fell
+through to Rule 3: `survivor-pillars` (the sole review-due list
+at 107 days, below the 5-list batch threshold) re-verified —
+checked whether Survivor S46-S50 should displace S45 "Mom I Won"
+as the steady-state pillar; all five read as either mixed/
+unremarkable in their own canon tags or explicitly provisional
+pending a first replay read, so S45 stays. No content change;
+`plan/LISTS.md` `last_reviewed` bumped (commit 0bd7c58b). Next
+actionable check remains the weekly sweep, due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
