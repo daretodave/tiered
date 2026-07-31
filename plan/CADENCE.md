@@ -482,6 +482,31 @@ new entries came from shows not yet represented here. See
 full grounding. Next actionable check remains the weekly sweep,
 due 2026-08-02.
 
+**Rule 2 stall, 2026-07-31 tick (cloud march, tenth dispatch):**
+re-verified the same seven pick-order-top candidates (`survivor`
+S51 premiere 2026-09-23, `the-challenge` S42 premiere 2026-08-05,
+`big-brother` S28 finale 2026-10-01, `amazing-race` S39 premiere
+2026-09-30, `bachelor` S30 undated, `below-deck-mediterranean` S11
+finale 2026-08-10, `alone` S13 finale 2026-08-26) — all still
+future-dated, earliest unchanged at 2026-08-05. No row actionable.
+Gap table unchanged at 35 shows / 36 gap-slots. Fell through to
+Rule 3 extend-first: `a-change-of-address` (craft) grew 10→12
+entries, 6→7 shows — Below Deck Down Under S03 "Seychelles" (new
+rank 1, the franchise's first season entirely outside Australian
+waters, an earlier and cleaner claim to the departure-from-home-
+waters fact than the existing S04 Canouan entry a season later,
+now reordered 1→2 as a matched pair) and Below Deck Mediterranean
+S05 "Lake Como" (new rank 3, the franchise's first freshwater
+season). Both grounded in each season's own `filming_caption`
+text; confirmed genuinely unclaimed via full per-show greps across
+every `content/themes/*.md`. Five candidates researched and
+rejected as already staked elsewhere with near-identical framing
+(Hell's Kitchen S19 Las Vegas, Shark Tank S12, Married at First
+Sight S15 San Diego, The Apprentice S05 "The Los Angeles Season,"
+Project Runway S06 Los Angeles). See `plan/LISTS.md` ledger row
+for full grounding. Next actionable check remains the weekly
+sweep, due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
