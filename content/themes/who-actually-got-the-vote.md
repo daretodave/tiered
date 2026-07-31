@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-31
 featured: false
 related:
   - best-challenge-design
@@ -43,40 +43,46 @@ entries:
     rank: 5
     title: "One houseguest's whole game gets outsourced to a public ballot, every single week."
     blurb: "America's Player hands the audience direct weekly control over one competitor's secret tasks, embedding viewer decisions inside the house itself. The public isn't just watching the game here — for one player, it's playing it."
+  - show: big-brother
+    season: 16
+    season_label: "S16"
+    rank: 6
+    title: "A public vote elects three houseguests into a side game, not who goes home."
+    blurb: "Team America installs mid-season, splitting a paid mission off from the house's own eviction track entirely. It's a narrower, one-off slice of audience authority next to this list's season-long ballots — a single casting call rather than a recurring lever."
   - show: dancing-with-the-stars
     season: 11
     season_label: "S11"
-    rank: 6
+    rank: 7
     title: "The gap between the scorecard and the phone lines becomes the whole story."
     blurb: "A culturally varied cast reshuffles unpredictably as the judges' marks and the live vote pull in different directions almost every week. The format's usual background tension moves to the foreground and stays there."
   - show: survivor
     season: 31
     season_label: "S31 · Cambodia"
-    rank: 7
+    rank: 8
     title: "Viewers cast the entire season before a single tribal council airs."
     blurb: "Twenty returning players make the roster because fans voted them there, chosen from a season-long ballot months ahead of filming. The audience gets real authorship over who shows up — and none at all once the game itself begins."
   - show: so-you-think-you-can-dance
     season: 17
     season_label: "S17"
-    rank: 8
+    rank: 9
     title: "The ballot survives, but it stops leaving the studio."
     blurb: "Home viewers lose their vote for the first time in the show's history, and only the room actually watching gets to decide. A quieter swing than the season that follows it, but the same direction of travel."
   - show: dragrace-allstars
     season: 8
     season_label: "S08"
-    rank: 9
+    rank: 10
     title: "A second, fan-run competition starts running underneath the real one."
     blurb: "Fame Games lets viewers pick a separate cash-prize winner from eliminated queens' runway looks, resolved in the same finale stretch as the main game. The audience gets a whole parallel contest to control, start to finish."
   - show: love-island-uk
     season: 11
     season_label: "S11"
-    rank: 10
+    rank: 11
     title: "Launch night swaps the public vote for a private, cast-only ranking instead."
     blurb: "The opening coupling runs on a 'Most to Least' desirability ranking the islanders decide among themselves, not a viewer vote. A format built entirely on public opinion briefly takes the audience out of the room to open the season."
   - show: dancing-with-the-stars
     season: 27
     season_label: "S27"
-    rank: 11
+    rank: 12
     title: "The format's oldest tension runs hotter than it had in years."
     blurb: "Judges' marks and the live vote diverge sharply enough to push competitors up and out in ways nobody expected going in. The season plays the format's core conflict — artistry versus popularity — more openly than any fall run before it."
 ---

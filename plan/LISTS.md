@@ -63,7 +63,7 @@ last time a curator actually looked.
 | the-house-that-kept-changing | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (The Real World S08 Hawaii, S10 Back to New York, S13 Paris entries — three genuine format "firsts" the list's own chronological-tour thesis had skipped; confirmed via grep these were the only unclaimed real-world seasons out of 14 candidates that stated a real structural/geographic first in their own season-file text, not just casting/tonal color) |
 | tried-once-never-repeated | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). The Real World S27 "St. Thomas (2012)" entry, rank 11 — the season's own file states plainly it's "the only Real World season filmed in the Caribbean" and "just the second [season] filmed outside the contiguous United States," with an isolated resort estate standing in for the usual shared house; confirmed via a full multiline `show: the-real-world` + `season: 27` grep across every `content/themes/*.md` that this season has zero prior appearances anywhere in the 205-list ledger — genuinely unclaimed, distinct from the show's other one-off-location entries already staked elsewhere (S22 Cancún resort-suite fact on this same list, S08 Hawaii / S13 Paris / S10 Back-to-New-York format "firsts" on `the-house-that-kept-changing`). Inserted at rank 11, directly below ANTM S12's São Paulo entry — a comparable pure-location one-off swing, smaller in structural terms than Cancún's resort-suite/job-tie-in fact one rank up. Existing ranks 11-12 shifted to 12-13. |
 | not-who-they-say-they-are | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (11→12 entries, 4→5 shows). Big Brother S06 "Summer of Secrets" entry, rank 12 — the season's own file states plainly "every houseguest walked in with a secret partner" ("format_caption"), a hidden-pairs twist that its own body text says makes the season "a casting season as much as a twist season" where "the alliance math gets dense fast" — the concealment mechanic structurally driving the whole run, not a one-episode decoration. First non-Circle/Traitors/Masked-Singer show on this list. Confirmed via a full `show: big-brother` grep across every `content/themes/*.md` that S06 has exactly one prior appearance (`every-summer-gets-its-own-twist` rank 12), which frames the same hidden-pairs fact through a different lens (comparing S06's twist to S09's later couples format across the franchise's twist history) rather than this list's concealment-carries-the-format thesis. Ruled out before landing here (per the brief's own prior findings, not re-litigated): Big Brother S08 "America's Player" (staked 3x elsewhere), Big Brother S27 "A Summer of Mystery" (premiere-night decoration, not structural), Traitors UK S03/S04 and Traitors US S04 (no fresh concealment fact in their own season files). Also checked and rejected: Real World S32 "Seattle: Bad Blood" (its cover-story/hidden-history fact is already staked near-identically at `the-grudge-was-the-casting-call` rank 2); MasterChef Australia S15 "Secrets and Surprises" (its secret-apron/blind-tasting concealment fact is already staked near-identically at `not-knowing-was-the-point` rank 5); Big Brother S05 "Project DNA" twin-swap (already staked at `every-summer-gets-its-own-twist` and `the-resemblance-was-never-just-a-fun-fact`). |
-| who-actually-got-the-vote | craft | 2026-07-18 | 2026-07-18 | |
+| who-actually-got-the-vote | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (11→12 entries). Big Brother S16 "Battle Of The Block" entry, rank 6 — the season's own watch_list/lede text states the Team America twist installs three houseguests into a paid side mission "voted by the public," a one-time casting-style ballot distinct from every other entry's continuous eviction/rulebook/task authority; confirmed via a full `show: big-brother` grep across every `content/themes/*.md` that S16's sole prior appearance (`every-summer-gets-its-own-twist` rank 2) stakes the twin-HoH Battle of the Block mechanic itself, never the Team America public-vote fact. Distinct from this list's existing BB S08 entry (rank 5, weekly ballot control over one player's ongoing tasks) — S16's vote is a single up-front casting call into a side game, not a recurring task-by-task ballot. Inserted at rank 6, directly below BB S08; existing ranks 6-11 shifted to 7-12. List now runs 12 entries across 6 shows. |
 | the-shifting-yardstick | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Naked and Afraid S05, S06 entries — the two remaining founding-era "no shift" seasons the list's own scoring/casting/budget angle had skipped; S19 stays excluded on purpose, still airing per its own season file) |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
 | pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
@@ -2621,6 +2621,61 @@ last time a curator actually looked.
   now runs 11 entries across 11 shows. `last_revised` bumped (real
   content change). Extend-first now stands at 34-for-35 across the
   logged passes.
+- 2026-07-31 fifty-fifth pass (content-curator tick, cloud march):
+  **shipped** — extend-first, `who-actually-got-the-vote` (craft,
+  "the seasons where the audience's authority over casting, rules,
+  or eliminations swings hardest, in either direction," 11 entries
+  across 6 shows before this pass, last touched 2026-07-18 — one of
+  the ledger's oldest untouched rows). Confirmed the Rule 2 gap-
+  table stall first via the tail of `plan/CADENCE.md`: the
+  2026-07-31 later-tick stall entry re-verifies the same seven
+  pick-order-top candidates as still future-dated, earliest
+  2026-08-05, no actionable Rule 2 pick this cycle — Rule 3 is the
+  correct target. Also confirmed the brief's six forbidden-today
+  lists (`built-for-the-drop`, `one-rule-fills-every-seat`,
+  `away-from-home-turf`, `twice-in-one-year`,
+  `when-age-became-the-casting-brief`,
+  `the-panel-turned-over-more-than-the-contestants-did`) were
+  already extended earlier today and left untouched this pass.
+  Grepped every `content/shows/*/seasons/*.md` for vote/casting-
+  authority language ("fan vote", "public vote", "viewer vote",
+  "voting power", "casting power") and cross-checked each hit
+  against a full `show:` grep of every `content/themes/*.md`.
+  Rejected as already-claimed or off-thesis: Survivor S50 and S31,
+  Big Brother S01/S02/S08, SYTYCD S17/S18, DWTS S11/S27, Drag Race
+  All Stars S08, and Love Island UK S11 (all already the list's own
+  existing entries); So You Think You Can Dance S01 (open-call
+  casting fact already staked at `the-open-call-built-the-format`);
+  Dancing with the Stars S09/S14/S19 (own files frame cast/host
+  facts, not a vote-authority swing); Love Island US S01/S03 (villa
+  recoupling votes are cast-internal, not audience-facing); Bachelor
+  S06 (rose-ceremony format fact, not a vote-channel swing);
+  Americas Got Talent S02-S20 assorted host/panel facts, no vote-
+  authority swing distinct from what's already staked at
+  `the-mic-changed-hands`/`when-the-chairs-turned-over`; American
+  Idol's audition/voting-platform seasons (already fully claimed at
+  `the-vote-left-the-phone-line`/`the-only-constant-was-the-vote`);
+  Ink Master S06 (guest-vote framing already thin, no standalone
+  fact in the season's own file). One candidate survived clean: Big
+  Brother S16 "Battle Of The Block," whose own watch_list/lede text
+  states the Team America twist installs three houseguests into a
+  paid side mission "voted by the public" — a one-time casting-style
+  public ballot, structurally distinct from every existing entry's
+  continuous eviction, rulebook-authorship, or weekly-task-control
+  fact, and distinct from this same list's existing BB S08 "America's
+  Player" entry (a recurring weekly task ballot over one player, not
+  a one-off casting vote into a side game). Confirmed via a full
+  `show: big-brother` grep across every `content/themes/*.md` that
+  S16's sole prior appearance (`every-summer-gets-its-own-twist`
+  rank 2) stakes the twin-HoH Battle of the Block mechanic itself,
+  never the Team America public-vote fact — genuinely unclaimed.
+  Shipped: inserted at rank 6, directly below the existing BB S08
+  entry (rank 5) — a smaller, one-time version of the same public-
+  ballot-inside-the-house idea that entry stakes at a recurring
+  scale. Existing ranks 6-11 shifted to 7-12. List now runs 12
+  entries across 6 shows. `last_revised` bumped (real content
+  change). Extend-first now stands at 35-for-36 across the logged
+  passes.
 
 ## Notes
 
