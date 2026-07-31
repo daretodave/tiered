@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-31
 featured: false
 related:
   - when-the-cast-was-already-related
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "The casting call narrows to current college students only, for one cycle."
     blurb: "Trading the open talent search for an education-only pool changes the competitive texture — less industry conditioning, more candid dynamics, but a narrower range than the show usually draws from."
+  - show: americas-next-top-model
+    season: 13
+    season_label: "S13 · The Height Experiment"
+    rank: 16
+    title: "Every seat goes to a contestant 5'7\" or shorter, no exceptions."
+    blurb: "Fourteen models come in under one explicit height cap, with the international leg swapped for domestic-only stops the same cycle. The premise is airtight as a casting rule, but the show's own read is blunt: novelty over depth once the season plays out."
 ---
