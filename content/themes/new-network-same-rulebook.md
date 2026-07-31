@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-31
 featured: false
 related:
   - firsts
@@ -43,40 +43,52 @@ entries:
     rank: 5
     title: "The host who built the format's identity comes back for a network that isn't Bravo."
     blurb: "Freeform and Hulu take over from Bravo, Heidi Klum returns to the host chair after eight seasons away, and Law Roach joins the judges' table for the first time — a livelier register for a genuinely new home."
+  - show: dragrace-allstars
+    season: 6
+    season_label: "S06"
+    rank: 6
+    title: "The spinoff jumps to Paramount+ streaming, and the judging panel doesn't even blink."
+    blurb: "All Stars leaves VH1 for Paramount+ with RuPaul, Michelle Visage, Carson Kressley, and Ross Mathews all still at the table. Thirteen returning queens, the largest cast the format had run, arrive alongside a new RuDemption ladder that gives eliminated queens a way back in."
+  - show: ink-master
+    season: 10
+    season_label: "S10 · Return of the Masters"
+    rank: 7
+    title: "Spike becomes Paramount Network mid-run, and nothing else about the season moves."
+    blurb: "Ink Master's tenth season opens on Spike and closes on the freshly renamed Paramount Network, with Dave Navarro hosting straight through the handoff. The season's new team format arrives on its own terms, unrelated to the channel's name change."
   - show: americas-next-top-model
     season: 6
     season_label: "S06 · The Network Finale"
-    rank: 6
+    rank: 8
     title: "UPN's last cycle gets an international send-off instead of a quiet exit."
     blurb: "Bangkok and Phuket deliver the franchise's biggest international reach yet, and Twiggy's first full season on the panel sharpens the judging table. Effort spent freely on a season about to change addresses."
   - show: american-idol
     season: 15
     season_label: "S15 · The Farewell"
-    rank: 7
+    rank: 9
     title: "Fox announces the ending before the season starts, and the show plays it as a retrospective."
     blurb: "Billed as the Farewell Season from the outset, Idol's last Fox run brings back alumni and past judges for a live-show stretch that carries the weight of a closing ceremony rather than a normal competition week."
   - show: bake-off
     season: 7
     season_label: "S07 · The Last BBC Year"
-    rank: 8
+    rank: 10
     title: "The BBC era's original four take one last lap before the format changes networks."
     blurb: "Mary Berry, Paul Hollywood, Mel Giedroyc, and Sue Perkins work the Welford Park tent together for the final time. Nobody pretends this run isn't a goodbye — the elegiac tone is the point."
   - show: dragrace
     season: 8
     season_label: "S08"
-    rank: 9
+    rank: 11
     title: "Logo's swan song trims the cast and polishes the runway on the way out."
     blurb: "Season eight arrives smaller and glossier than the seasons before it, a runway-forward edit that plays like a preview of the scale VH1 is about to bring rather than a proper farewell."
   - show: americas-next-top-model
     season: 7
     season_label: "S07 · The CW Opening"
-    rank: 10
+    rank: 12
     title: "The CW opens with new titles and a sibling-cast first, but the novelty does the heavy lifting."
     blurb: "A new opening sequence and a revised panel greet the network's debut cycle, and the first sibling contestants in the show's history add a genuine first. Barcelona's international leg gives it texture the competition itself doesn't quite match."
   - show: project-runway
     season: 6
     season_label: "S06 · Los Angeles"
-    rank: 11
+    rank: 13
     title: "A network move and a coast change land in the same season, and neither one sticks the landing."
     blurb: "Lifetime's first season also relocates production to Los Angeles — the only run in the show's history filmed away from the Manhattan workroom the format was built on. The show's own canon calls it a coastal disconnect."
 ---
