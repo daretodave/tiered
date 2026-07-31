@@ -8,7 +8,7 @@ era_range: [2016, 2023]
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-31
 featured: false
 related:
   - familiar-faces-wrong-franchise
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "Beyond its celebrity cameo, the regular competing cast itself skews more platform-fluent than earlier years."
     blurb: "Season four's main players lean more comfortable in front of a camera and an audience than the format's earlier rounds of total strangers, a shift the show's own casting notes acknowledge outright."
+  - show: bachelor
+    season: 23
+    season_label: "S23"
+    rank: 11
+    title: "The season's entire marketing pitch rests on one outside-world fact about its lead."
+    blurb: "Colton Underwood arrives with a former NFL practice-squad career already public, and the marketing leans its whole promotional argument on that single biographical hook — the clearest case in the catalog of an outside résumé doing the season's casting work."
 ---
