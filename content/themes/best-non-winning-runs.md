@@ -6,7 +6,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-07-31
 featured: false
 related:
   - best-post-merge
@@ -61,4 +61,10 @@ entries:
     rank: 8
     title: "An international cast that turns culture clash into ensemble texture."
     blurb: "Drawn from four countries into one Notting Hill flat, London's ensemble carries the season collectively — small culture-clash beats scattered across every roommate, not one dominant arc. The lighter tone the show chased needed a full house, not a single lead."
+  - show: top-chef
+    season: 14
+    season_label: "S14 · Charleston"
+    rank: 9
+    title: "A split cast of rookies and returning veterans doubles the season's depth."
+    blurb: "Charleston splits its roster between new chefs and returning veterans brought back to raise the level, and no single half carries the story. The deep bench works every Lowcountry challenge together — the season's shape comes from the whole kitchen, not one standout cook."
 ---
