@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-07-31
 featured: false
 related:
   - one-rule-fills-every-seat
@@ -55,22 +55,28 @@ entries:
     rank: 7
     title: "An 82-year-old competitor changes what the ballroom will ask of a cast."
     blurb: "Cloris Leachman's run at 82 becomes the season's organizing fact — the oldest competitor the format had fielded, a genuine expansion of who the show would cast, not a novelty booking. The wider cast age range gives the season a different texture than a typical fall slot."
+  - show: bachelorette
+    season: 15
+    season_label: "S15 · Hannah Brown"
+    rank: 8
+    title: "The youngest lead in franchise history takes the calendar to its longest run yet."
+    blurb: "Her unguarded, declarative presence on camera reshapes every cocktail party the season stages, and the shoot follows her across six countries — Rhode Island to Greece — the format's most ambitious travel arc yet. Age becomes the real center of gravity, not a footnote."
   - show: the-real-world
     season: 33
     season_label: "S33 · Atlanta (2019)"
-    rank: 8
+    rank: 9
     title: "The franchise's widest cast age range yet moves into a bed and breakfast."
     blurb: "Seven roommates span more decades than any prior cast, worth watching for how it unsettles the house's usual dynamic. The season also revives the format's original opening-title sequence for a run built for an entirely different platform."
   - show: survivor
     season: 9
     season_label: "S09 · Vanuatu"
-    rank: 9
+    rank: 10
     title: "The gender-split tribes skew older than the format had ever cast."
     blurb: "The second men-vs-women season lands with a noticeably older cast than the Amazon did, and the post-merge conversations carry real weight because of it. A more measured pace than the early seasons allowed, in a location the show treats with real care."
   - show: survivor
     season: 5
     season_label: "S05 · Thailand"
-    rank: 10
+    rank: 11
     title: "The marooning hands the two oldest players the job of building the tribes."
     blurb: "Thailand's opening twist puts age to direct competitive use: the two senior-most castaways draft their own tribes on the beach in the first ten minutes, setting a sharper social tone than the show's first four seasons ever found."
 ---
