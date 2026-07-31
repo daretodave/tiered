@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-07-31
 featured: false
 related:
   - moving-day
@@ -91,4 +91,16 @@ entries:
     rank: 13
     title: "The breakout season splits the difference: a launch drop, then a weekly wait."
     blurb: "Season two opens with a three-episode Peacock drop, then shifts to weekly for the rest of the run — a platform-native format borrowing linear TV's patience-testing rhythm for the run that cemented the show's reputation."
+  - show: traitors
+    season: 3
+    season_label: "S03"
+    rank: 14
+    title: "The three-episode-then-weekly drop from season two holds again, now the house rhythm, not a launch experiment."
+    blurb: "Season three keeps the three-episode Peacock drop before switching to weekly — the same shape season two introduced. Back-to-back seasons on that rhythm turn a launch choice into the format's standing house style."
+  - show: too-hot-to-handle
+    season: 5
+    season_label: "S05"
+    rank: 15
+    title: "A fifth season settles into three release batches, no single-day drop, no new mechanic to chase."
+    blurb: "Season five runs ten episodes across three scheduled batches — the same staggered rhythm the platform had already settled on, no full-day dump in sight. Lana's rule holds exactly as before; only the release clock keeps ticking to its own schedule."
 ---
