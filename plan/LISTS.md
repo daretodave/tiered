@@ -114,7 +114,7 @@ last time a curator actually looked.
 | when-age-became-the-casting-brief | craft | 2026-07-20 | 2026-07-20 | |
 | proving-the-debut-wasnt-luck | tone | 2026-07-20 | 2026-07-20 | |
 | the-doubters-had-to-walk-it-back | tone | 2026-07-20 | 2026-07-20 | |
-| when-the-vote-came-back-tied | craft | 2026-07-21 | 2026-07-21 | |
+| when-the-vote-came-back-tied | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). Drag Race All Stars S04 entry, rank 13 — the season's own eyebrow/pull text states plainly "the only tie in franchise history," and the finale deadlock is the one tie on this list that lands on the season's very last vote rather than a semifinal, nomination, or eviction stage; confirmed distinct from the show's two other appearances (`a-way-back-in` rank 5 and `no-season-sends-a-queen-home-the-same-way-twice` rank 5, both staking the LaLaParUza lip-sync re-entry mechanic, and this same list's own S11 rank 6 entry, a mid-competition semifinal-advancement tie, not a finale-level one) via a full `show: dragrace-allstars` grep across every `content/themes/*.md`. Framed on the tie's timing only — no outcome/resolution stated, matching agents.md §7 spoiler discipline (the season's own copy never confirms how the deadlock was resolved, so neither does this entry). |
 | the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
 | the-season-structure-never-holds-still | single | 2026-07-21 | 2026-07-21 | |
 | the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
