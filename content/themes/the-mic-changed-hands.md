@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-07-31
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -121,4 +121,10 @@ entries:
     rank: 18
     title: "David Genat takes the torch chair Jonathan LaPaglia held for eleven straight seasons."
     blurb: "Redemption is the format's first hosting handoff since the Australian version began, closing out an eleven-season run behind the torch. The Samoa location and the full 45-day, 24-episode length hold steady around the new voice."
+  - show: american-ninja-warrior
+    season: 2
+    season_label: "S02 · Boot Camp"
+    rank: 19
+    title: "Matt Iseman takes the broadcast in just the show's second season and never lets go."
+    blurb: "A new mountain-stage team elimination gauntlet now stands between the Venice Beach qualifiers and the trip to Japan, raising the stakes before the course itself gets any harder. The booth changes hands the same year, and the newcomer keeps the chair for good."
 ---
