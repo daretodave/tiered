@@ -75,7 +75,7 @@ last time a curator actually looked.
 | been-here-before | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (11→14 entries, 6→7 shows). First list touch since creation (2026-07-18) — never reviewed or extended before this pass. Three The Real World entries, all genuine location-revisit seasons unmined by this list before: S24 "Back to New Orleans (2010)" (rank 5) — the season's own lede/body states it's "a decade after the franchise's first visit to the city," swapping the built commercial set for a real Uptown residence and post-Katrina volunteer rebuilding in place of a typical group job; distinct from its sole prior ledger appearance at `the-house-that-kept-changing` (rank 10), which stakes the residential-property format-first fact, never the location-revisit framing itself. S25 "Las Vegas (2011)" (rank 8) — the season's own file states it's "the format's second trip to Las Vegas," with the smallest cast since Hollywood and a charity internship replacing the original run's nightclub job; distinct from its two prior appearances (`the-cast-outgrew-the-format`, headcount-extreme fact; `when-the-reward-pointed-somewhere-else`, stakes-point-outward fact), neither of which frames the season as a return trip. S26 "San Diego (2011)" (rank 11) — the season's own file states it's "seven years after the franchise's first San Diego season," returning to the group-job structure with a new job (House of Blues) on the same La Jolla coastline; confirmed via a full `show: the-real-world` grep across every `content/themes/*.md` that S26 had zero prior appearances anywhere in the ledger — genuinely unclaimed. All three verified via direct reads of `content/shows/the-real-world/seasons/{24,25,26}-*.md`; `season_label` suffixes copied verbatim from each season's own frontmatter `title` field. Existing ranks 5-11 shifted to 6-14; description broadened to name The Real World alongside the six existing shows (no count-tail construction). List now runs 14 entries across 7 shows, no show over 3 entries. Blurbs for entries #5, #8, and #11 were rewritten post-draft to clear `content-check`'s deck-vs-body / headline-echo restatement gate (pass-33/pass-38 invariants) — each now opens on a fact the title doesn't already state, same underlying facts preserved. |
 | the-mic-changed-hands | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (17→18 entries). America's Got Talent S02 "The First Refinement" entry, rank 9 — the season's own file states "Jerry Springer replaces Regis Philbin as host" with the judging panel (Piers Morgan, Sharon Osbourne, David Hasselhoff) returning intact, the franchise's own first-ever host handoff, one season before Nick Cannon even joins; confirmed via a full `show: americas-got-talent` + `season: 2` grep across every `content/themes/*.md` that S02's two prior ledger appearances (`two-coasts-one-open-call`, `pre-recap-culture-seasons`) each stake an open-call-geography or pre-recap-era fact, never the host-change fact itself. Inserted at rank 9, directly above the existing S12/S14 AGT entries — a smaller, earlier version of the same host-turnover idea those later seasons scale up. Existing ranks 9-17 shifted to 10-18. americas-got-talent now holds 3 entries on this list, at the informal per-show cap. Previously extended 2026-07-29 (Survivor Australia S12 "Redemption" entry, rank 17 [now 18] — David Genat's debut, confirmed via grep of every prior season's own `host:` frontmatter field that Jonathan LaPaglia hosted all eleven prior seasons (S1-S11), making this the franchise's first-ever hosting handoff; distinct from S12's two existing ledger appearances, `a-way-back-in` rank 7 and `sorted-before-they-landed` rank 10, which both center the Redemption Beach return-twist / pre-sorted-cast-retirement facts and only mention the host change as scene-setting texture, never as the entry's own thesis; zero prior survivor-australia entries anywhere in this specific list). Rejected this pass: `the-goodbye-became-part-of-the-format` (craft, 12/30 entries) — swept Traitors US/UK S1 (both already stake the "cloaks, candlelit Round Table, breakfast reveal" founding-ritual fact verbatim at `firsts` rank 5), Survivor S22 Redemption Island (already stakes the identical "elimination doesn't have to be final" rewrite fact at `a-second-life-built-into-the-format` rank 1), Love Island UK S1 (already stakes the "fire pit, recoupling, public vote — all invented" fact at `the-fire-pit-never-moved` rank 5), Masked Singer S1 (the unmasking-reveal fact already has its own dedicated list, `the-reveal-was-the-whole-show`, rank 4), Bachelor S1 (the rose-ceremony-invented fact already staked at `no-template-to-copy` rank 4), Big Brother S1 (the public-vote-eviction fact already staked at `who-actually-got-the-vote`), and Amazing Race S1 (no elimination-ritual language in the season's own file to ground a fresh entry) — no lead cleared the excellence gate for that list this pass; also checked MasterChef Australia S12/S13 panel-change facts for `the-mic-changed-hands` and `when-the-chairs-turned-over` before confirming S12 was already claimed at `when-the-chairs-turned-over` rank 2. |
 | live-without-a-net | craft | 2026-07-18 | 2026-07-18 | |
-| a-guest-spot-with-room-to-grow | craft | 2026-07-18 | 2026-07-18 | |
+| a-guest-spot-with-room-to-grow | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (11→12 entries). First list touch since creation (2026-07-18) — never reviewed or extended before this pass. Vanderpump Rules S08 entry, rank 6 — the season's own file states "Season 8 brings the show's biggest single-season cast addition: Beau Clark is promoted to a full regular," following his S07 file's own record of Clark joining as a recurring face the year before; a full year on the show precedes the promotion, matching this list's own thesis (a guest role that earns its way up, not a fresh casting call). Confirmed via a full `Beau Clark` grep across every `content/themes/*.md` that the fact was genuinely unclaimed anywhere in the ledger. Inserted at rank 6, above the show's existing S09 entry (a later, larger version of the same promotion pattern); existing ranks 6-11 shifted to 7-12. vanderpump-rules now holds 4 of 12 entries (S03, S06, S08, S09) — the highest single-show concentration on this list, still within informal per-show norms for a 12-entry cross-canon list at this size. Rejected this pass: Vanderpump Rules S04 (James Kennedy's promotion) — already staked verbatim at `the-paycheck-writes-the-plot` rank 9. RHOBH S11 (Sutton Stracke "elevated to a full cast member") — already staked at `the-friend-credit-became-the-farm-system` rank 1, RHOBH's own dedicated single-show list. Shark Tank S03 (Mark Cuban's full-time promotion) — already staked at `the-extra-seat-is-never-a-swap` rank 9, Shark Tank's own dedicated single-show list. Also swept and rejected on-thesis mismatch (demotions or fresh-hire facts, not promotions): RHOC S19, Ink Master S14, Selling Sunset S04, RHOM S02, Summer House S03, Southern Charm S07, RHODubai S02, RHOA S15, MasterChef S08, Ink Master S15, America's Got Talent S04, and several RHOP seasons (S02, S03, S05, S06, S08, S10). Flag for a future pass, not fixed this tick: Shark Tank's own S16 and S17 season files each independently claim to be Daniel Lubetzky's "first" full-time season — a frontmatter data inconsistency worth reconciling before either season is used again as a grounding source. |
 | one-season-two-flags | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (7→8 entries, 7→8 shows). Bachelor in Paradise S05 "Sayulita 2018" entry, rank 8 — a Winter-Games-style crossover folding in whole delegations from three sibling international editions (Bachelorette Canada, Bachelor New Zealand, Bachelor Japan) at once, distinct from the binary national splits (Survivor Australia, ANTM, The Challenge) and single-import casts (Top Chef World All-Stars) already on the list. Confirmed via full `show: bachelor-in-paradise` grep with zero prior appearances anywhere in the ledger. Facts verified against `content/shows/bachelor-in-paradise/seasons/05-sayulita-2018.md`. |
 | a-change-of-address | craft | 2026-07-19 | 2026-07-19 | |
 | the-hand-behind-the-couple | craft | 2026-07-19 | 2026-07-19 | |
@@ -2799,6 +2799,54 @@ last time a curator actually looked.
   across 7 shows, no show over 3 entries. `last_revised` bumped (real
   content change). Extend-first now stands at 36-for-37 across the
   logged passes.
+
+- 2026-07-31 fifty-eighth pass (content-curator tick): **shipped** —
+  extend-first, `a-guest-spot-with-room-to-grow` (craft, "guest spot
+  gets moved up into the main cast, the judges' table, or the lead
+  chair itself," 11 entries across 6 shows before this pass, untouched
+  since it was created 2026-07-18 — never reviewed, never extended,
+  another one of the ledger's oldest cold rows). Avoided every list
+  already touched today per the ledger's own `last_revised` column:
+  `been-here-before`, `best-villain-editing`, `built-for-the-drop`,
+  `who-actually-got-the-vote`, `one-rule-fills-every-seat`,
+  `when-age-became-the-casting-brief`, and `survivor-pillars`
+  (review only, no change). Considered `not-the-usual-order` and
+  `played-it-straight` as alternate cold-row candidates; read both in
+  full and set them aside in favor of the promotion-thesis list, whose
+  narrower angle (recurring guest earns a bump, not just a new hire)
+  made grounding easier to verify cleanly. Grepped catalog-wide across
+  every `content/shows/**/seasons/*.md` for `promot(e|ed|ion)`,
+  `recurring`, `series regular`, and `full[- ]time` patterns, then
+  read every hit's season file in full and cross-grepped every
+  `content/themes/*.md` for the same fact before drafting. Vanderpump
+  Rules S08 survived clean: the season's own file states "Season 8
+  brings the show's biggest single-season cast addition: Beau Clark is
+  promoted to a full regular," and its S07 file independently confirms
+  Clark's prior year as a recurring face — a full promotion arc, not a
+  same-season invention. Confirmed via a full `Beau Clark` grep across
+  every `content/themes/*.md` that the fact was genuinely unclaimed.
+  Rejected as duplicates already staked elsewhere in the ledger:
+  Vanderpump Rules S04 (James Kennedy's promotion, already at
+  `the-paycheck-writes-the-plot` rank 9), RHOBH S11 (Sutton Stracke's
+  promotion, already at `the-friend-credit-became-the-farm-system`
+  rank 1), Shark Tank S03 (Mark Cuban's promotion, already at
+  `the-extra-seat-is-never-a-swap` rank 9). Rejected on thesis mismatch
+  (demotions or fresh-hire facts, not promotions from an existing
+  guest role): RHOC S19, Ink Master S14 and S15, Selling Sunset S04,
+  RHOM S02, Summer House S03, Southern Charm S07, RHODubai S02, RHOA
+  S15, MasterChef S08, America's Got Talent S04, and RHOP S02, S03,
+  S05, S06, S08, S10. Flagged but not fixed this tick: Shark Tank's own
+  S16 and S17 season files each independently claim to be Daniel
+  Lubetzky's "first" full-time season — a frontmatter data
+  inconsistency worth reconciling before either season is used again
+  as a grounding source for a new entry. Shipped: inserted at rank 6,
+  directly above the show's existing S09 entry (a later, larger
+  version of the same promotion pattern); existing ranks 6-11 shifted
+  to 7-12. `last_revised` bumped (real content change). List now runs
+  12 entries; vanderpump-rules holds 4 of them (S03, S06, S08, S09),
+  the highest single-show concentration on this list but still within
+  informal per-show norms for a 12-entry cross-canon list. Extend-first
+  now stands at 37-for-38 across the logged passes.
 
 ## Notes
 

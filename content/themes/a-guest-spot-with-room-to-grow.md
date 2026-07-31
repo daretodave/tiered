@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-31
 featured: false
 related:
   - the-cast-outgrew-the-format
@@ -44,39 +44,45 @@ entries:
     title: "The show's biggest expansion yet comes from promoting insiders, not casting new ones."
     blurb: "Brittany Cartwright and Lala Kent move up to full series regulars, while Billie Lee and Raquel Leviss step into the recurring tier those two just vacated. The ensemble keeps scaling, but the growth comes from inside the cast's own ranks."
   - show: vanderpump-rules
+    season: 8
+    season_label: "S08"
+    rank: 6
+    title: "A second season finishes the promotion his debut season started."
+    blurb: "Beau Clark spends Season 7 as a recurring face at SUR; Season 8 makes it official, promoting him to a full series regular alongside the show's biggest single-season cast addition yet. A full year of recurring appearances comes first — the credit isn't rushed."
+  - show: vanderpump-rules
     season: 9
     season_label: "S09"
-    rank: 6
+    rank: 7
     title: "A pandemic-delayed season rebuilds itself around two promotions."
     blurb: "After the longest gap in the show's history, and with two prior regulars let go in the interim, the season restocks its main cast by moving Charli Burnett and Raquel Leviss up from recurring status instead of starting over from scratch."
   - show: rhobh
     season: 12
     season_label: "S12"
-    rank: 7
+    rank: 8
     title: "A decades-long 'friend of' finally gets the full title."
     blurb: "Kathy Hilton steps up from friend-of status to a full Housewife credit, and her history with Beverly Hills gives the cast a different social register than a first-time addition could. The Aspen and New York trips put it under real pressure."
   - show: rhoa
     season: 14
     season_label: "S14"
-    rank: 8
+    rank: 9
     title: "A supporting player gets the full-time credit after years on the show's edges."
     blurb: "A longtime Friend of the cast moves up to full-time Housewife the same season the franchise shifts its premiere date by six months. The promoted cast member brings a decade-plus of franchise history into the main six, and it shows."
   - show: rhop
     season: 9
     season_label: "S09"
-    rank: 9
+    rank: 10
     title: "One season on the show's edges earns a full-time seat at the table."
     blurb: "Keiarna Stewart moves up from a recurring role to the main cast after just one season on the periphery, arriving the same year three prior full-timers don't return. A familiar face lands differently once the credit says housewife, not friend."
   - show: rhoslc
     season: 5
     season_label: "S05"
-    rank: 10
+    rank: 11
     title: "A promotion, a demotion, and a promotion again, all for the same housewife."
     blurb: "Mary Cosby is promoted back to full housewife status after a season spent stepping back, in the fullest ensemble the show has ever fielded. The status ladder here runs in both directions before it finally settles."
   - show: shark-tank
     season: 16
     season_label: "S16"
-    rank: 11
+    rank: 12
     title: "A recurring guest shark finally gets a permanent seat at the panel."
     blurb: "Daniel Lubetzky, a familiar guest for years, moves up to the main panel the same season Mark Cuban's run as a regular shark ends. It's the tank's biggest roster shift in years, and the clearest promotion the guest chair has produced."
 ---
