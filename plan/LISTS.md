@@ -118,7 +118,7 @@ last time a curator actually looked.
 | the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
 | the-season-structure-never-holds-still | single | 2026-07-21 | 2026-07-21 | |
 | the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
-| the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-21 | 2026-07-21 | |
+| the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (The Voice S23 "The Farewell" entry, rank 2 — Blake Shelton's twelfth and final season, the last founding coach's departure, zero prior appearances anywhere in the ledger; confirmed via full grep of `show: the-voice` across content/themes/*.md before writing) |
 | the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (second pass: Married at First Sight S08 Philadelphia + S11 New Orleans entries, 16->18 — S13 Houston still deferred, thinnest remaining hook: third straight unchanged five-couple season with no fresh angle beyond the two already claimed) |
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Bake Off S10, S16 entries — both genuinely unclaimed anywhere in the ledger, confirmed via grep; the two other apparent gaps, S09/S15, stay excluded on purpose because `running-on-muscle-memory` already spends their identical "settled, nothing new" address fact) |
