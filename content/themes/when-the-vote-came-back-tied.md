@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-07-30
 featured: false
 related:
   - who-actually-got-the-vote
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "A Final 5 vote ties, and the house rule kicks in"
     blurb: "With five houseguests left, an eviction vote splits evenly. Per the standing rule, the Head of Household casts the deciding vote — the rule this season puts directly to the test."
+  - show: dragrace-allstars
+    season: 4
+    season_label: "S04"
+    rank: 13
+    title: "The only tie in the franchise's history lands on the very last vote"
+    blurb: "Every other deadlock on this list gets settled somewhere on the way to a finale — a semifinal, a nomination, a revote. Season 4's tie happens at the final vote itself, the one round the format almost never leaves open. Still the only time it's happened, franchise-wide."
 ---
