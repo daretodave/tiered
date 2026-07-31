@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-07-31
 featured: false
 related:
   - live-without-a-net
@@ -43,22 +43,28 @@ entries:
     rank: 5
     title: "The editors let a medical-attention scene breathe instead of cutting around it."
     blurb: "Koh Rong's heat becomes visible on camera by episode four, and the cut holds on the conditions check instead of trimming past it — a tonal choice the franchise rarely makes, in a season otherwise playing a familiar returning format straight."
+  - show: bachelor-in-paradise
+    season: 3
+    season_label: "S03"
+    rank: 6
+    title: "Producers step onto the beach and remove a contestant, outside the usual rose-ceremony structure."
+    blurb: "Sayulita's own week one carries the season's real wrinkle, early enough that the spinoff is still settling into its own rhythm. The exit skips the elimination process entirely, and the crew's usual invisible authority becomes, briefly, the story instead of the backdrop."
   - show: dragrace-uk
     season: 6
     season_label: "S06"
-    rank: 6
+    rank: 7
     title: "A contestant's injury forces the week to run without an elimination."
     blurb: "Series 6 hands out the franchise's first cash prize, but the season's real structural surprise is an injury withdrawal that skips a week's elimination entirely — a wrinkle the format almost never allows itself."
   - show: so-you-think-you-can-dance
     season: 6
     season_label: "S06 · The Fall Season"
-    rank: 7
+    rank: 8
     title: "An illness withdrawal forces a late replacement before the live shows even start."
     blurb: "Season six is already running a scheduling experiment — its only fall broadcast — when an original Top 20 dancer withdraws due to illness before the broadcast rounds begin. A replacement steps in, and the format holds its shape anyway."
   - show: alone-frozen
     season: 1
     season_label: "S01 · Labrador"
-    rank: 8
+    rank: 9
     title: "A shared prize pool raises the stakes on the franchise's built-in medical tap-out."
     blurb: "Alone: Frozen swaps a solo winner for a collective prize split among everyone who reaches day fifty. That twist quietly changes what a medical tap costs — no longer just one survivalist's exit, but a smaller share for everyone left."
 ---
