@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-31
 featured: false
 related: []
 era_range: [1992, 2008]
@@ -96,4 +96,22 @@ entries:
     rank: 14
     title: "The Housewives franchise begins with no forum thread or recap column waiting to dissect it."
     blurb: "Five women in a gated community launched an entire genre in March 2006, years before recap culture and social feeds turned every Housewives episode into real-time commentary. Back then, the discourse loop was just neighbors talking."
+  - show: bachelor
+    season: 1
+    season_label: "S01 · Alex Michel"
+    rank: 15
+    title: "The format's debut season aired years before a single rose ceremony could trend online."
+    blurb: "Six episodes in the spring of 2002, with no recap column parsing the cocktail parties the next morning and no forum thread arguing the latest elimination in real time. Whatever discourse existed happened at the office the next day, not in a comments section."
+  - show: bachelorette
+    season: 1
+    season_label: "S01 · Trista Rehn"
+    rank: 16
+    title: "The franchise's first gender-flipped season aired with no live-tweet tracking a single rose."
+    blurb: "Six episodes in the winter of 2003, years before a hashtag could shape opinion on the flip before the broadcast even ended. The format's first attempt at inverting itself found its audience the old way — word of mouth, not a recap thread."
+  - show: so-you-think-you-can-dance
+    season: 1
+    season_label: "S01"
+    rank: 17
+    title: "Fox's dance competition opened cold with no recap beat waiting to grade the choreography."
+    blurb: "Auditions across three cities in the summer of 2005, years before a recap column existed to dissect a single routine the next morning. The open-call format grew its audience one broadcast at a time, not through a comments section."
 ---

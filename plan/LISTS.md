@@ -66,7 +66,7 @@ last time a curator actually looked.
 | who-actually-got-the-vote | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (11→12 entries). Big Brother S16 "Battle Of The Block" entry, rank 6 — the season's own watch_list/lede text states the Team America twist installs three houseguests into a paid side mission "voted by the public," a one-time casting-style ballot distinct from every other entry's continuous eviction/rulebook/task authority; confirmed via a full `show: big-brother` grep across every `content/themes/*.md` that S16's sole prior appearance (`every-summer-gets-its-own-twist` rank 2) stakes the twin-HoH Battle of the Block mechanic itself, never the Team America public-vote fact. Distinct from this list's existing BB S08 entry (rank 5, weekly ballot control over one player's ongoing tasks) — S16's vote is a single up-front casting call into a side game, not a recurring task-by-task ballot. Inserted at rank 6, directly below BB S08; existing ranks 6-11 shifted to 7-12. List now runs 12 entries across 6 shows. |
 | the-shifting-yardstick | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Naked and Afraid S05, S06 entries — the two remaining founding-era "no shift" seasons the list's own scoring/casting/budget angle had skipped; S19 stays excluded on purpose, still airing per its own season file) |
 | the-schedule-didnt-ask-permission | craft | 2026-07-18 | 2026-07-18 | |
-| pre-recap-culture-seasons | era | 2026-07-18 | 2026-07-18 | |
+| pre-recap-culture-seasons | era | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (14→17 entries, 14→17 shows). Bachelor S01 "Alex Michel" (rank 15) and Bachelorette S01 "Trista Rehn" (rank 16) — both season's own files confirm 2002/2003 premiere dates and six-episode debut runs, well inside the list's era_range; grounded on the list's own pre-social-media timing thesis, distinct from these seasons' existing appearances (played-it-straight, not-the-usual-order, the-mic-changed-hands, a-guest-spot-with-room-to-grow), none of which stake the recap-culture-timing fact. So You Think You Can Dance S01 (rank 17) — own file confirms a July 2005 premiere and an open-call founding format, distinct from its existing appearance at the-open-call-built-the-format (format-founding-bet fact, not the timing fact). Confirmed via full `show:` greps across every `content/themes/*.md` that none of the three seasons had a prior appearance on this specific list. List now runs 17 entries across 17 shows, no show over 1 entry. |
 | milestones-spent-not-marked | craft | 2026-07-29 | 2026-07-29 | extended 2026-07-29 (Survivor S50 entry, rank 2 — the season's own file frames it as the largest cast in franchise history (24 returning castaways) playing a set of format mechanics fans voted on months before filming, a genuine occasion-rebuild distinct from the same season's two prior ledger facets, the oversized-cast angle in `the-cast-outgrew-the-format` and the fan-vote-authority angle in `who-actually-got-the-vote`; existing ranks 2-21 shifted to 3-22, list now runs 22 entries); previously extended 2026-07-27 (So You Think You Can Dance S12 entry, third extension today) |
 | same-crown-new-price-tag | structure | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (14→15 entries, 9→10 shows). American Ninja Warrior S07 "Military Appreciation" entry, rank 13 — the season's own lede/format_caption text states plainly "the grand prize doubles to one million dollars" the same year the qualifying map widens to six cities and the Vegas course gets harder, a direct match for this list's reward-itself-got-rewritten thesis. Confirmed via a full `show: american-ninja-warrior` grep across every `content/themes/*.md` that S07 has exactly two other ledger appearances (`when-the-reward-pointed-somewhere-else` rank 6, staking the USS Iowa military-tribute-location fact, and `never-needed-a-villain`), neither of which touches the prize amount. Considered and passed over as a second, thinner option: American Ninja Warrior S10 "The Mega Wall," whose own file also documents a $10,000 qualifying bonus and a $100,000 fallback prize — genuinely unclaimed too, but a messier, two-tier addition next to S07's cleaner single-number swing, and S10's own file already stakes a separate course-structure fact at `the-finals-never-run-the-same-course-twice` rank 9, closer to double-dipping the same season. Inserted at rank 13, directly below Ink Master S14's own cash-prize-bump entry; americas-next-top-model and survivor-australia shifted from ranks 13–14 to 14–15. List now runs 15 entries across 10 shows, no single show over 3 entries. |
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
@@ -2944,6 +2944,53 @@ last time a curator actually looked.
   change). One clean entry landed this pass rather than a forced second
   or third; extend-first now stands at 39-for-40 across the logged
   passes.
+- 2026-07-31 sixty-first pass (content-curator tick): **shipped** —
+  extend-first, `pre-recap-culture-seasons` (era, "seasons that aired
+  before recap culture existed," 14 entries across 14 shows before this
+  pass, untouched since it was created 2026-07-18 — one of the ledger's
+  oldest cold rows). Re-checked `plan/CADENCE.md` first: still
+  non-actionable, every remaining gap-table candidate future-dated
+  (earliest 2026-08-05). Avoided every list already touched today per
+  the ledger's own `last_revised` column (when-the-crew-stepped-into-
+  frame, new-network-same-rulebook, live-without-a-net,
+  when-scripted-went-dark, the-place-fought-back, the-mic-changed-hands,
+  a-change-of-address, the-cast-arrived-pre-famous,
+  a-guest-spot-with-room-to-grow, been-here-before, best-villain-editing,
+  built-for-the-drop, one-rule-fills-every-seat, who-actually-got-the-
+  vote, away-from-home-turf, twice-in-one-year,
+  when-age-became-the-casting-brief,
+  the-panel-turned-over-more-than-the-contestants-did, survivor-pillars).
+  Also considered `the-schedule-didnt-ask-permission` (another cold row
+  from 2026-07-17/18) but passed — the sixtieth pass had already scoped
+  it this same day and rejected its best remaining leads (Bachelor in
+  Paradise S07, RHONJ S06) as claimed elsewhere or off-thesis, so a
+  second search the same day risked re-walking the identical dry ground.
+  Landed on `pre-recap-culture-seasons` instead: the list's era_range
+  (1992-2008) and its own pre-social-media timing thesis is orthogonal to
+  every list touched today, and five catalog shows with pre-2009
+  `est_year` values (bachelor, bachelorette, so-you-think-you-can-dance,
+  rhoa, rhony) had zero prior appearances on this specific list. Read
+  each candidate's own season-01 file in full before drafting: Bachelor
+  S01 "Alex Michel" (premiere_date 2002-03-25, six episodes) and
+  Bachelorette S01 "Trista Rehn" (premiere_date 2003-01-08, six
+  episodes) both confirmed via full `show:` greps across every
+  `content/themes/*.md` to already appear elsewhere in the ledger
+  (played-it-straight, not-the-usual-order, the-mic-changed-hands,
+  a-guest-spot-with-room-to-grow) but never under this list's specific
+  pre-recap-culture timing fact — genuinely unclaimed on that axis. So
+  You Think You Can Dance S01 (premiere_date 2005-07-20) confirmed via
+  the same grep method to appear only at `the-open-call-built-the-format`
+  (the format-founding-bet fact, not the timing fact). Passed on RHOA S01
+  and RHONY S01 as a fourth/fifth addition to keep the pass to three
+  clean entries rather than force more than needed to clear meaningful
+  room. Shipped: appended at ranks 15-17 (Bachelor, then Bachelorette,
+  then So You Think You Can Dance, roughly chronological by premiere
+  year); existing ranks 1-14 unchanged. `season_label` suffixes for the
+  Bachelor/Bachelorette entries use the seasons' own frontmatter `title`
+  values (lead names), matching this ledger's existing precedent for
+  those two shows elsewhere. `last_revised` bumped (real content
+  change). List now runs 17 entries across 17 shows, no show over 1
+  entry. Extend-first now stands at 40-for-41 across the logged passes.
 
 ## Notes
 
