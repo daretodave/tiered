@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-07-31
 featured: false
 related:
   - pandemic-seasons
@@ -73,4 +73,16 @@ entries:
     rank: 10
     title: "The franchise's 25th-anniversary season runs longer than any before it, dual strikes or not"
     blurb: "Season twenty-five premieres August 2, 2023, squarely inside the joint WGA/SAG-AFTRA walkout, and stretches to roughly 100 days and 46 episodes — the longest run the format has ever produced. The Comicverse anniversary theme never has to pause for scripted television's silence."
+  - show: southern-charm
+    season: 9
+    season_label: "S09"
+    rank: 11
+    title: "A third straight round of new arrivals lands squarely inside the fall strike window"
+    blurb: "Season nine premieres September 14, 2023, in the middle of the SAG-AFTRA walkout, adding three more cast members across a seventeen-episode run — the franchise's longest yet. Bravo's unscripted slate keeps expanding while scripted production sits idle."
+  - show: selling-sunset
+    season: 7
+    season_label: "S07"
+    rank: 12
+    title: "Streaming's release calendar doesn't blink either, three weeks before the strike ends"
+    blurb: "Season seven premieres November 3, 2023, deep inside the WGA/SAG-AFTRA window, with the Oppenheim Group's roster intact and a reunion two weeks later. Netflix's drop-day calendar needs no scripted writers' room either."
 ---
