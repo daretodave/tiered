@@ -72,7 +72,7 @@ last time a curator actually looked.
 | the-cast-outgrew-the-format | structure | 2026-07-18 | 2026-07-18 | |
 | the-judges-picked-a-side | craft | 2026-07-18 | 2026-07-18 | |
 | same-license-different-rules | structure | 2026-07-18 | 2026-07-18 | |
-| been-here-before | craft | 2026-07-18 | 2026-07-18 | |
+| been-here-before | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (11→14 entries, 6→7 shows). First list touch since creation (2026-07-18) — never reviewed or extended before this pass. Three The Real World entries, all genuine location-revisit seasons unmined by this list before: S24 "Back to New Orleans (2010)" (rank 5) — the season's own lede/body states it's "a decade after the franchise's first visit to the city," swapping the built commercial set for a real Uptown residence and post-Katrina volunteer rebuilding in place of a typical group job; distinct from its sole prior ledger appearance at `the-house-that-kept-changing` (rank 10), which stakes the residential-property format-first fact, never the location-revisit framing itself. S25 "Las Vegas (2011)" (rank 8) — the season's own file states it's "the format's second trip to Las Vegas," with the smallest cast since Hollywood and a charity internship replacing the original run's nightclub job; distinct from its two prior appearances (`the-cast-outgrew-the-format`, headcount-extreme fact; `when-the-reward-pointed-somewhere-else`, stakes-point-outward fact), neither of which frames the season as a return trip. S26 "San Diego (2011)" (rank 11) — the season's own file states it's "seven years after the franchise's first San Diego season," returning to the group-job structure with a new job (House of Blues) on the same La Jolla coastline; confirmed via a full `show: the-real-world` grep across every `content/themes/*.md` that S26 had zero prior appearances anywhere in the ledger — genuinely unclaimed. All three verified via direct reads of `content/shows/the-real-world/seasons/{24,25,26}-*.md`; `season_label` suffixes copied verbatim from each season's own frontmatter `title` field. Existing ranks 5-11 shifted to 6-14; description broadened to name The Real World alongside the six existing shows (no count-tail construction). List now runs 14 entries across 7 shows, no show over 3 entries. Blurbs for entries #5, #8, and #11 were rewritten post-draft to clear `content-check`'s deck-vs-body / headline-echo restatement gate (pass-33/pass-38 invariants) — each now opens on a fact the title doesn't already state, same underlying facts preserved. |
 | the-mic-changed-hands | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (17→18 entries). America's Got Talent S02 "The First Refinement" entry, rank 9 — the season's own file states "Jerry Springer replaces Regis Philbin as host" with the judging panel (Piers Morgan, Sharon Osbourne, David Hasselhoff) returning intact, the franchise's own first-ever host handoff, one season before Nick Cannon even joins; confirmed via a full `show: americas-got-talent` + `season: 2` grep across every `content/themes/*.md` that S02's two prior ledger appearances (`two-coasts-one-open-call`, `pre-recap-culture-seasons`) each stake an open-call-geography or pre-recap-era fact, never the host-change fact itself. Inserted at rank 9, directly above the existing S12/S14 AGT entries — a smaller, earlier version of the same host-turnover idea those later seasons scale up. Existing ranks 9-17 shifted to 10-18. americas-got-talent now holds 3 entries on this list, at the informal per-show cap. Previously extended 2026-07-29 (Survivor Australia S12 "Redemption" entry, rank 17 [now 18] — David Genat's debut, confirmed via grep of every prior season's own `host:` frontmatter field that Jonathan LaPaglia hosted all eleven prior seasons (S1-S11), making this the franchise's first-ever hosting handoff; distinct from S12's two existing ledger appearances, `a-way-back-in` rank 7 and `sorted-before-they-landed` rank 10, which both center the Redemption Beach return-twist / pre-sorted-cast-retirement facts and only mention the host change as scene-setting texture, never as the entry's own thesis; zero prior survivor-australia entries anywhere in this specific list). Rejected this pass: `the-goodbye-became-part-of-the-format` (craft, 12/30 entries) — swept Traitors US/UK S1 (both already stake the "cloaks, candlelit Round Table, breakfast reveal" founding-ritual fact verbatim at `firsts` rank 5), Survivor S22 Redemption Island (already stakes the identical "elimination doesn't have to be final" rewrite fact at `a-second-life-built-into-the-format` rank 1), Love Island UK S1 (already stakes the "fire pit, recoupling, public vote — all invented" fact at `the-fire-pit-never-moved` rank 5), Masked Singer S1 (the unmasking-reveal fact already has its own dedicated list, `the-reveal-was-the-whole-show`, rank 4), Bachelor S1 (the rose-ceremony-invented fact already staked at `no-template-to-copy` rank 4), Big Brother S1 (the public-vote-eviction fact already staked at `who-actually-got-the-vote`), and Amazing Race S1 (no elimination-ritual language in the season's own file to ground a fresh entry) — no lead cleared the excellence gate for that list this pass; also checked MasterChef Australia S12/S13 panel-change facts for `the-mic-changed-hands` and `when-the-chairs-turned-over` before confirming S12 was already claimed at `when-the-chairs-turned-over` rank 2. |
 | live-without-a-net | craft | 2026-07-18 | 2026-07-18 | |
 | a-guest-spot-with-room-to-grow | craft | 2026-07-18 | 2026-07-18 | |
@@ -2755,6 +2755,50 @@ last time a curator actually looked.
     external research; extend-first remains the reliable fallback
     (35-for-36) for future ticks that don't have a hard requirement to
     ship a brand-new slug.
+- 2026-07-31 fifty-seventh pass (content-curator tick): **shipped** —
+  extend-first, `been-here-before` (craft, "the return trips ranked by
+  how much actually changed the second — or third — time through," 11
+  entries across 6 shows before this pass, untouched since it was
+  created 2026-07-18 — never reviewed, never extended, one of the
+  ledger's oldest cold rows). Avoided every list already touched today
+  (survivor-pillars review; best-villain-editing,
+  who-actually-got-the-vote, built-for-the-drop,
+  one-rule-fills-every-seat, away-from-home-turf, twice-in-one-year,
+  when-age-became-the-casting-brief, and
+  the-panel-turned-over-more-than-the-contestants-did all already
+  extended earlier today per the pass 55/56 log and the ledger's own
+  `last_revised` column). Grepped catalog-wide for `II` season titles
+  and `second (season|trip|visit)` / `returns? to` body-text patterns,
+  cross-checked every hit against a full `show:` grep of every
+  `content/themes/*.md`. Rejected The Challenge S26 "Battle of the
+  Exes II" — its own file confirms a different filming country
+  (Argentina) from S22's Dominican Republic, so it's a format repeat,
+  not a location repeat; off-thesis for this list. Three The Real
+  World seasons survived clean: S24 "Back to New Orleans (2010)" (own
+  file: "a decade after the franchise's first visit to the city,"
+  built set swapped for a real residence, post-Katrina rebuilding
+  replacing the usual group job) — distinct from its sole prior
+  appearance at `the-house-that-kept-changing`, which stakes the
+  residential-property format-first fact, not the revisit itself. S25
+  "Las Vegas (2011)" (own file: "the format's second trip to Las
+  Vegas," smallest cast since Hollywood, charity internship replacing
+  the original nightclub job) — distinct from its two prior
+  appearances (`the-cast-outgrew-the-format`'s headcount-extreme fact,
+  `when-the-reward-pointed-somewhere-else`'s stakes-point-outward
+  fact), neither of which frames the season as a return trip. S26 "San
+  Diego (2011)" — zero prior appearances anywhere in the ledger,
+  genuinely unclaimed; own file states "seven years after the
+  franchise's first San Diego season," group-job structure returning
+  with a new job (House of Blues) on the same La Jolla coastline.
+  Shipped: inserted at ranks 5, 8, and 11 (ordered by degree of
+  change, matching the list's own descending-change structure);
+  existing ranks 5-11 shifted to 6-14. `season_label` suffixes copied
+  verbatim from each season's own frontmatter `title`. Description
+  broadened to name The Real World alongside the six existing shows
+  (named-shows list, not a count-tail). List now runs 14 entries
+  across 7 shows, no show over 3 entries. `last_revised` bumped (real
+  content change). Extend-first now stands at 36-for-37 across the
+  logged passes.
 
 ## Notes
 
