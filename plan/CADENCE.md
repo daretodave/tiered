@@ -444,6 +444,30 @@ Handle S05 — see `plan/LISTS.md` ledger row and `plan/AUDIT.md`
 progress note for grounding). Next actionable check remains the
 weekly sweep, due 2026-08-02.
 
+**Rule 2 stall, 2026-07-31 tick (cloud march, yet another tick):**
+cross-checked `content/calendar.yml` directly against the same
+seven pick-order-top candidates (`survivor` S51 premiere
+2026-09-23, `the-challenge` S42 premiere 2026-08-05,
+`big-brother` S28 finale 2026-10-01, `amazing-race` S39 premiere
+2026-09-30, `bachelor` S30 undated, `below-deck-mediterranean`
+S11 finale 2026-08-10, `alone` S13 finale 2026-08-26) — every
+date confirmed still future, earliest unchanged at 2026-08-05.
+No row actionable. Gap table unchanged at 35 shows / 36
+gap-slots. Fell to Rule 3, briefed specifically for a wholly new
+list (not extend-first): `content-curator` read the full
+205-row ledger + 55-pass Ideas log, scoped five fresh candidate
+angles, rejected all five (one on total preemption by
+`the-cast-arrived-pre-famous`, one on thinness, one on a dry
+re-grep, one on missing groundable text, and the strongest lead —
+a cross-show `status: hiatus` list — on factual-risk grounds: several
+of the 13 hiatus-flagged shows are long-running mainstays where
+the status almost certainly means "not yet confirmed renewed,"
+the same stale-metadata failure mode already confirmed live for
+`the-voice`'s HIGH-severity corruption row in `plan/AUDIT.md`).
+Zero-shipped; fifty-sixth pass logged in full in `plan/LISTS.md`
+Ideas section. Next actionable check remains the weekly sweep,
+due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —

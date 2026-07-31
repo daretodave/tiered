@@ -2676,6 +2676,85 @@ last time a curator actually looked.
   entries across 6 shows. `last_revised` bumped (real content
   change). Extend-first now stands at 35-for-36 across the logged
   passes.
+- 2026-07-31 fifty-sixth pass (content-curator tick): **zero-ship**.
+  Briefed specifically to ship a wholly *new* `content/themes/<slug>.md`
+  (not an extend) end to end. Read the full 205-row ledger table and
+  the complete Ideas log (fifty-five prior passes, ~45+ distinct
+  rejected concepts) before searching, then scoped five candidate
+  angles the log hadn't explicitly closed, none of which cleared the
+  gate:
+  - **Shows currently `status: hiatus`, ranked by whether their most
+    recent season reads as a deliberate pause vs. an ordinary episode
+    that just happens to be the latest one filed** — the single
+    strongest-looking lead going in (13 shows carry the status:
+    vanderpump-rules, traitors-uk, the-voice, the-ultimatum, rhom,
+    rhodubai, rhod, rhobh, ink-master, hells-kitchen, dragrace-allstars,
+    dancing-with-the-stars, below-deck-sailing-yacht). **Rejected on a
+    factual-risk basis, not thinness**: several of these are long-
+    running mainstays (Dancing with the Stars at 34 seasons, Hell's
+    Kitchen at 24, Ink Master at 17) where `status: hiatus` almost
+    certainly reflects "not yet confirmed renewed as of authoring,"
+    not a genuine editorial pause — the same class of stale-metadata
+    error the 2026-07-26 ninth pass already caught and escalated for
+    `the-voice` (whose `status: hiatus` + "series finale" framing
+    turned out to be factually false against real-world airings).
+    Building a themed list's entire thesis on a status field this
+    unreliable risks shipping the identical error a second time.
+    Flagging rather than re-attempting: this angle stays closed until
+    a dedicated verification pass confirms which `hiatus` labels are
+    real production pauses vs. stale renewal bookkeeping.
+  - **Platform-fame-specific casting** (contestants cast because of a
+    social-media/influencer following specifically, as a narrower cut
+    than general pre-fame casting) — **rejected on total preemption**:
+    `the-cast-arrived-pre-famous` (era, 10 entries) already stakes this
+    exact angle almost verbatim, including Amazing Race S28 "Social
+    Media Stars" (a whole season cast from platform personalities) and
+    The Circle S04 (a main cast explicitly described in its own text as
+    more "platform-fluent" than earlier years). No unclaimed room left.
+  - **Wildcard/leaderboard/numeric-scoring mechanic as its own craft
+    angle** — grepped `wildcard|wild card` (8 file hits) and
+    `leaderboard|scoreboard|point(s)? system|scoring system` (9 file
+    hits) catalog-wide. Rejected as too thin and incoherent: the
+    "wild card" hits are mostly episode-title matches (The Voice S27
+    "The Wild Card") rather than a repeatable structural device, and
+    the scoring-system hits are scattered one-offs (The Challenge S41,
+    Naked and Afraid S04/S08, Drag Race All Stars S10, Big Brother S23,
+    American Ninja Warrior S09/S15) with no coherent shared throughline
+    — nowhere near the 10-entry floor without reskinning several
+    already-shipped twist/format lists.
+  - **Mentor/coach-authority as a structural device** — re-grepped
+    `mentor|mentorship` (27 file hits) to see if the well genuinely
+    reopened since the 2026-07-28 twenty-seventh/twenty-eighth passes
+    flagged it fully mined. Re-confirmed dry: every real hit resolves
+    to a season already staked at `the-judges-picked-a-side` or
+    `the-other-side-of-the-table` under near-identical framing. No new
+    room; don't re-check without newly seeded seasons.
+  - **Reverse alumni-authority** (a host/judge from one format
+    appearing as a *contestant* somewhere else, the inverse of
+    `the-other-side-of-the-table`'s contestant-to-authority pipeline)
+    — scoped but rejected: no groundable hits anywhere in the catalog's
+    own season-file text; would need a `scout` pass this tick doesn't
+    have access to, and the closest analogs (Housewives cast competing
+    on Traitors) are cast members, not hosts/judges, and are already
+    spent by `familiar-faces-wrong-franchise`.
+  - Also re-confirmed, on inspection rather than fresh grep, that the
+    single-show floor (passes 4/10/26/29) and the age/gender/family-
+    relation casting axes (passes 16, twenty-sixth pass third-pass,
+    and this show's own `when-age-became-the-casting-brief` entry) are
+    still fully harvested — no newly-drained season has landed since
+    the last Rule 2 sweep (`plan/CADENCE.md` stays fully starred as of
+    this tick) to reopen either door.
+  - **Decision:** no candidate cleared the excellence gate (distinct
+    angle, <40% overlap, ≥3-show floor, clean grounding without
+    fabrication risk) without either total preemption by an existing
+    list or a factual-integrity risk on stale frontmatter. Rather than
+    force a reskin or lean on unverified `hiatus` status, this tick
+    ships nothing new. Standing recommendation unchanged from pass
+    7/9/11/13: the grep-groundable well for wholly new concepts is
+    genuinely closed at this ledger size without `scout`-assisted
+    external research; extend-first remains the reliable fallback
+    (35-for-36) for future ticks that don't have a hard requirement to
+    ship a brand-new slug.
 
 ## Notes
 
