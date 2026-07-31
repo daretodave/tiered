@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-07-31
 featured: false
 related:
   - the-schedule-didnt-ask-permission
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "Ink Master closes out its live-finale tradition for good."
     blurb: "Nine men and nine women split the field, each side coached by a past winner, and the season ends on the format's last real-time finale broadcast — a tradition running since Season Two retires here."
+  - show: love-island-us
+    season: 8
+    season_label: "S08"
+    rank: 11
+    title: "Love Island US swaps Casa Amor's edited reveal for a live, unedited feed of the other villa."
+    blurb: "Season eight's Casa Amor rebuild drops the usual highlight-reel narration entirely, letting each cast member watch their exes' new pairings play out as they happen. It's the first outing of this recurring twist to skip the edit bay altogether."
 ---
