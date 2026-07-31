@@ -434,6 +434,16 @@ pending a first replay read, so S45 stays. No content change;
 `plan/LISTS.md` `last_reviewed` bumped (commit 0bd7c58b). Next
 actionable check remains the weekly sweep, due 2026-08-02.
 
+**Rule 2 stall, 2026-07-31 tick (cloud march, later tick):**
+re-verified the same seven pick-order-top candidates and
+`calendar.yml` finales — all still future-dated, earliest
+2026-08-05. No row actionable. Gap table unchanged at 35 shows /
+36 gap-slots. Fell through to Rule 3 extend-first: `built-for-
+the-drop` (craft) grew 13→15 entries (Traitors S03, Too Hot to
+Handle S05 — see `plan/LISTS.md` ledger row and `plan/AUDIT.md`
+progress note for grounding). Next actionable check remains the
+weekly sweep, due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
