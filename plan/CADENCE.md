@@ -468,6 +468,20 @@ Zero-shipped; fifty-sixth pass logged in full in `plan/LISTS.md`
 Ideas section. Next actionable check remains the weekly sweep,
 due 2026-08-02.
 
+**Rule 2 stall, 2026-07-31 tick (cloud march, ninth dispatch):**
+re-verified the same seven pick-order-top candidates and
+`calendar.yml` finales — all still future-dated, earliest
+2026-08-05. No row actionable. Gap table unchanged at 35 shows /
+36 gap-slots. Fell through to Rule 3 extend-first: `best-villain-
+editing` (craft) grew 8→11 entries, 5→8 shows — RHOC S07 "The
+Volatility" (rank 9), RHONJ S04 "The Feud" (rank 10), RHOA S07
+"The Read" (rank 11). Survivor already carried 4/8 entries in
+this list, over the craft-list 3-per-show ceiling, so all three
+new entries came from shows not yet represented here. See
+`plan/LISTS.md` ledger row and `plan/AUDIT.md` progress note for
+full grounding. Next actionable check remains the weekly sweep,
+due 2026-08-02.
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
