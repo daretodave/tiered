@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-01
 featured: false
 related:
   - survivor-pillars
@@ -67,4 +67,10 @@ entries:
     rank: 9
     title: "A founding alliance stress-tested exactly where the format wants it tested."
     blurb: "The Brigade's four-way pact runs the house from night one, but Big Brother saves its hardest test for the jury phase — the season's alliance has to argue against itself once the room contracts. The late confessionals are the stretch fans still cite."
+  - show: big-brother
+    season: 14
+    season_label: "S14 · Coaches Twist"
+    rank: 10
+    title: "A coaches-flip summer whose jury phase runs two alliance layers deep."
+    blurb: "Draft-day loyalty debts sit underneath the newbies' own pacts once the merge hits, a hidden second scoring system nobody actually voted on. Confessionals sharpen as both layers surface together — the back-half payoff for a mechanic that looked purely early-game at the premiere."
 ---
