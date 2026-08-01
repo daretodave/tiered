@@ -7,7 +7,7 @@ category: tone
 sentiment: warm-up
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - best-newbie-casts
@@ -61,22 +61,34 @@ entries:
     rank: 8
     title: "A touring pilot too small and too new to manufacture its own drama."
     blurb: "Ten amateur bakers move estate to estate with no fixed tent and no established format to perform against. The bench reads gentler, and the whole season plays sincere simply because nobody involved knows yet what Bake Off is supposed to look like."
+  - show: married-at-first-sight
+    season: 1
+    season_label: "S01 · New York"
+    rank: 9
+    title: "A blind-marriage premise, sold completely straight because nothing about it has aired before."
+    blurb: "Three couples marry strangers picked by experts who've never let them meet, and the show has no returning cast or viewer trust to lean on. It plays the whole premise straight, letting the format's own strangeness do all the work."
   - show: married-at-first-sight-australia
     season: 1
     season_label: "S01 · The Original"
-    rank: 9
+    rank: 10
     title: "Three couples testing a premise with no precedent, no returning cast, no shortcut."
     blurb: "Before the panel and the cast size both grew several times over, the format ran at its smallest and plainest — a blind wedding, weeks of ordinary domestic life, and a Decision Day with nothing manufactured underneath it."
   - show: bachelorette
     season: 1
     season_label: "S01 · Trista Rehn"
-    rank: 10
+    rank: 11
     title: "The format flips for the first time, and the tone stays completely sincere."
     blurb: "Twenty-five men, a compressed six-episode run, and a lead the show trusts to carry an inverted premise without irony. The season plays it straight because the flip itself was already the whole experiment."
   - show: bachelor
     season: 1
     season_label: "S01 · Alex Michel"
-    rank: 11
+    rank: 12
     title: "The mansion's very first season, drafted earnest because the format hadn't learned to wink yet."
     blurb: "Twenty-five women, a six-episode run, and a host still finding his own cadence. Every cocktail party plays load-bearing because nothing about the format has hardened into a formula anyone could perform against yet."
+  - show: the-apprentice
+    season: 1
+    season_label: "S01 · The Original"
+    rank: 13
+    title: "A business competition with real stakes, played completely straight from the start."
+    blurb: "Sixteen contestants work real business tasks, then face a boardroom that turns on one phrase. The cast plays it straight — no celebrity leverage, no posturing — and the format's grammar takes shape cleanly from episode one."
 ---
