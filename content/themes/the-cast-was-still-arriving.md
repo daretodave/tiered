@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-17
+last_revised: 2026-08-01
 featured: false
 related:
   - best-returnees
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "Nine couples marry, then three more join mid-experiment"
     blurb: "The cast grows from nine matched pairs to twelve once mid-season additions arrive, including a same-sex male couple among the newcomers — new marriages dropped into an experiment already weeks into its commitment ceremonies."
+  - show: married-at-first-sight
+    season: 17
+    season_label: "S17 · Denver"
+    rank: 11
+    title: "The blind-marriage format's first mid-experiment swap arrives sixteen seasons in"
+    blurb: "After sixteen seasons of locking every couple in from day one, Denver breaks the pattern: when one bride's match doesn't work out, production pairs her groom with a brand-new participant partway through the experiment already underway."
 ---
