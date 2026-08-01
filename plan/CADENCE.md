@@ -525,6 +525,19 @@ mid-experiment rematch per the season's own lede/body text. See
 full grounding. Next actionable check remains the weekly sweep,
 due 2026-08-02 (tomorrow).
 
+**Rule 2 stall, 2026-08-01 tick (cloud march, 64th+ Rule-3 dispatch):**
+re-verified the same seven pick-order-top candidates and
+`content/calendar.yml` finales — all still future-dated, earliest
+unchanged at 2026-08-05. No row actionable. Gap table unchanged at
+35 shows / 36 gap-slots. Fell through to Rule 3 extend-first,
+excluding the 12 lists already touched today: `not-the-usual-order`
+(craft) grew 11→13 entries, 11→12 shows — American Ninja Warrior
+S12 "St. Louis" (rank 12, pandemic closed-set episode-count crash)
+and Perfect Match S04 (rank 13, biggest-ever cast in the shortest-
+ever episode order). See `plan/LISTS.md` ledger row (sixty-fourth+
+pass, Ideas log) for full grounding. Next actionable check remains
+the weekly sweep, due 2026-08-02 (tomorrow).
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
