@@ -3050,6 +3050,64 @@ last time a curator actually looked.
     the grep-groundable well for wholly new concepts is effectively
     exhausted at 176 lists; extend-first remains the reliable fallback
     for ticks without a hard new-slug requirement.
+- 2026-08-01 sixty-third pass (content-curator tick): **zero-ship**.
+  Briefed to extend `the-judges-picked-a-side` (11 entries, craft,
+  ink-master and so-you-think-you-can-dance both already at the 3-show
+  craft-list cap) or, failing that, `same-license-different-rules`
+  (12 entries, structure). Neither cleared the gate.
+  - **`the-judges-picked-a-side`.** Grepped `mentor|coach|draft(s|ed)?|
+    roster` across every season file for the four shows with headroom
+    (masterchef, masterchef-australia, big-brother, american-idol) plus
+    a wider sweep of shows not yet on the list (hells-kitchen, top-chef,
+    chopped, dragrace, dragrace-uk, the-challenge, dancing-with-the-
+    stars, americas-got-talent). Read every real hit in full: MasterChef
+    S01/S03/S04/S05/S11 ("Legends") all use "mentor/coach" only as
+    generic panel-critique language, no authority-to-a-side swap;
+    MasterChef Australia S07 "The Return" swaps Shannon Bennett in for
+    Kylie Kwong as recurring Immunity mentor, but that's a continuation
+    of the exact mentor-role fact S06 already stakes at rank 10, not a
+    fresh structural swing; American Idol S06 and S24's "roster" hits
+    are the finalist pool, not a coaching seat; Big Brother S23's "team
+    captain" houseguests aren't a judging panel stepping down (same
+    dead end the 2026-07-31 before-the-spinoff-had-a-name pass already
+    logged); Top Chef S18 Portland's rotating alumni are guest judges,
+    not coaches with a roster; The Challenge S33/S34 "roster reveal"
+    is a cast-import fact, no judging-panel authority involved; Hell's
+    Kitchen S01's red/blue teams are a built-in format feature, not a
+    neutral panel trading its neutrality. Confirms, a fourth time now
+    (prior closures logged 2026-07-27 eighteenth pass, 2026-07-28
+    twenty-seventh/twenty-eighth passes, 2026-07-31 fifty-sixth pass,
+    2026-07-31 before-the-spinoff-had-a-name pass), that this list has
+    no fresh room — the mentor/coach-authority well is fully drained
+    catalog-wide, not just against the four under-cap shows.
+  - **`same-license-different-rules`.** Two specific candidates looked
+    strong on a first pass and both turned out to be already spent
+    under different framing: MasterChef Australia S02 "The Expansion"
+    (70-episode season, the founding era's longest run, a genuine
+    scale break from the American original's 13-25 episode norm) is
+    already staked at `the-toolkit-never-sat-still` rank 12 and
+    `proving-the-debut-wasnt-luck` rank 11, both using near-identical
+    "tests whether the format can carry a much longer run" framing.
+    The Traitors UK S04 "Uncloaked" companion after-show (a genuine
+    UK-catches-up-to-the-US-sibling structural first) is already
+    staked three times over — `the-broadcast-wasnt-the-whole-show`
+    rank 7, `running-on-muscle-memory` rank 16, and
+    `new-house-rules-every-time-the-castle-reopens` rank 3 — the last
+    of which uses the identical "structural first for the UK version"
+    language this list would have restated. Widened the search to
+    Survivor Australia (S06 Brains V Brawn, S09 Titans V Rebels —
+    both settled-scale archetype-divide seasons already claimed by
+    `sorted-before-they-landed` and `the-place-fought-back`/`the-
+    schedule-didnt-ask-permission`) and confirmed via full per-show
+    greps that Drag Race, Love Island UK/US, and Married at First
+    Sight Australia are comparably saturated — dozens of prior list
+    passes have already mined nearly every cast-size, panel, episode-
+    count, and schedule fact across all twelve shows this list's own
+    six-franchise scope is closed to. No candidate season retained an
+    unclaimed sibling-comparison fact distinct enough from an existing
+    list's framing to justify a new entry.
+  - **Decision:** no candidate on either target cleared the excellence
+    gate. Neither theme file was touched this pass.
 
 ## Notes
 
