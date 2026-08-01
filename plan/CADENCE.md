@@ -538,6 +538,21 @@ ever episode order). See `plan/LISTS.md` ledger row (sixty-fourth+
 pass, Ideas log) for full grounding. Next actionable check remains
 the weekly sweep, due 2026-08-02 (tomorrow).
 
+**Rule 2 stall, 2026-08-01 tick (cloud march, 65th+ Rule-3 dispatch):**
+re-verified the same seven pick-order-top candidates and
+`content/calendar.yml` finales — all still future-dated, earliest
+unchanged at 2026-08-05 (`the-challenge` S42 premiere). No row
+actionable. Gap table unchanged at 35 shows / 36 gap-slots. Fell
+through to Rule 3 extend-first, excluding the 13 lists already
+touched today: `two-channels-same-night` (craft) grew 11→12
+entries, 7 shows held — Dancing with the Stars S33 "Fall 2024"
+(rank 8, the Disney+/ABC simulcast holding through a second,
+uneventful year with the Hough/Ribeiro hosting team), show now at
+its 3/3 informal per-show cap. See `plan/LISTS.md` ledger row
+(sixty-fifth pass, Ideas log) and `plan/AUDIT.md` progress note for
+full grounding. Next actionable check remains the weekly sweep, due
+2026-08-02 (tomorrow).
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
