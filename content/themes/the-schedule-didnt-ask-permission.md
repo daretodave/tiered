@@ -5,9 +5,9 @@ description: "A writers' strike, a security pause, an injury, a real-world legal
 tagline: "A strike moves the air date, an investigation pauses the shoot, an injury forces a week nobody planned for. <b>This ranks the seasons where the outside world got a vote in how the format ran, and the show finished the year anyway.</b>"
 category: craft
 sentiment: hold
-status: started
+status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-18
+last_revised: 2026-08-01
 featured: false
 related:
   - pandemic-seasons
@@ -31,46 +31,58 @@ entries:
     rank: 3
     title: "Security incidents near the set cut a planned seven-episode order down to six"
     blurb: "A pair of carjackings close to the crew forces a mid-shoot pause, and the added cost trims the order by a full episode — right as a longtime specialist closes out his final run in the chair."
+  - show: survivor-australia
+    season: 6
+    season_label: "S06 · Brains V Brawn"
+    rank: 4
+    title: "Closed international borders push the season out of its usual overseas setting and into the outback"
+    blurb: "When COVID closes international borders, Australian Survivor comes home to inland Queensland instead of a Pacific island — the franchise's first entirely domestic season, with the Brains-versus-Brawn tribe split carrying the format without leaving Australia."
   - show: dragrace-uk
     season: 6
     season_label: "S06"
-    rank: 4
+    rank: 5
     title: "A contestant's knee injury forces a no-elimination week nobody built into the format"
     blurb: "A queen withdraws mid-competition after hurting herself on set, and the following week runs with nobody sent home as a direct result — a structural wrinkle the season didn't plan for and the format rarely allows."
   - show: so-you-think-you-can-dance
     season: 6
     season_label: "S06 · The Fall Season"
-    rank: 5
+    rank: 6
     title: "A World Series scheduling collision and a late illness withdrawal test a broadcast experiment"
     blurb: "The only fall-scheduled season in the franchise's run gets its first two results shows bumped off the air by postseason baseball, and an original finalist withdraws due to illness before the live shows even start."
   - show: big-brother
     season: 9
     season_label: "S09 · The Winter Couples"
-    rank: 6
+    rank: 7
     title: "A writers' strike hands the show a winter slot it never asked for"
     blurb: "CBS needs a February programming gap filled during a 2008 labor stoppage that idled scripted production, and the show answers with its only off-season run — an emergency booking that hardens into a structural twist."
   - show: bachelor-in-paradise
     season: 9
     season_label: "S09"
-    rank: 7
+    rank: 8
     title: "A strike-disrupted broadcast year bumps the show off its usual night"
     blurb: "The 2023 WGA strike reshapes that fall's broadcast grid enough to move the season to Thursday, off its usual Monday-Tuesday slot, airing right behind a brand-new spinoff's debut season."
   - show: amazing-race
     season: 12
     season_label: "S12"
-    rank: 8
+    rank: 9
     title: "A winter writers' strike tightens the production calendar around an entire route"
     blurb: "The 2007 labor stoppage disrupts the wider CBS schedule that season, compressing the airing window and forcing the editing room to work around a tighter turnaround leg by leg."
   - show: masterchef-australia
     season: 15
     season_label: "S15 · Secrets and Surprises"
-    rank: 9
+    rank: 10
     title: "An unplanned loss pushes the premiere back a week and reshapes the format around it"
     blurb: "The season's start slides by a week following an unexpected loss on the judging panel, and the format drops its usual MasterClasses entirely — a shorter, structurally different season built under circumstances nobody scripted."
+  - show: rhonj
+    season: 11
+    season_label: "S11 · The Pause"
+    rank: 11
+    title: "Pandemic protocols shrink the episode order and cut the group trips the format runs on"
+    blurb: "Reduced contact and limited travel strip out the group trips, restaurant scenes, and shared spaces the format normally runs on, and the episode count shrinks to match. The same core cast returns — the production conditions decide what kind of season this can be."
   - show: rhop
     season: 10
     season_label: "S10"
-    rank: 10
+    rank: 12
     title: "A real-world legal matter keeps the franchise's longest-running fixture off the main season"
     blurb: "For the first time in ten seasons, the show runs without one of its most established full-time cast members — a real-world matter, not a creative call, reshaping the ensemble for an entire run."
 ---
