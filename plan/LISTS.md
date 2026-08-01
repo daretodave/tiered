@@ -88,7 +88,7 @@ last time a curator actually looked.
 | built-for-one-playing-as-a-team | craft | 2026-07-19 | 2026-07-19 | |
 | away-from-home-turf | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (13→14 entries). RHOBH S06 "The Restock" entry, rank 9 — the season's own filming_caption and body text name a stretch in "Amsterdam, Cayman Islands" alongside the Beverly Hills scenes, and the body states plainly that trip "provide[s] the close-quarters pressure the format runs on," matching this list's exact thesis. Confirmed distinct from RHOBH's existing rank-6 entry (S07's Hong Kong/Dubai trips) via season number, and confirmed via a full `show: rhobh` grep across every `content/themes/*.md` that S06 is otherwise staked only on cast-hierarchy angles (`the-friend-credit-became-the-farm-system` rank 7, Erika Girardi's friend-tier-skip fact) — no other list claims S06's trip itself. Also checked RHOBH S05 ("The Apex," `wealth-as-the-whole-pitch` rank 13) for overlap since its own file separately names an Amsterdam leg — different season, different framing (real-estate-aspiration angle, not close-quarters-pressure), no collision. Inserted at rank 9, between RHOP S03 (French Riviera) and RHODubai S01 — a mid-tier trip, less extreme than Scary Island/Morocco/Cartagena but stronger than the list's lower entries. Existing ranks 9-13 shifted to 10-14. List now runs 14 entries across 7 shows. |
 | the-roster-was-the-twist | single | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). Amazing Race S07 entry, rank 3 — the season's own `format_changes: [first-crossover-returnees]` field and body text ("The crossover season, with a pair of returning Survivor players folded into the lineup and CBS leaning into the publicity") document it as the franchise's founding instance of the alumni-crossover casting mechanic that S31 (rank 2, three-show crossover) and S38 (rank 1, full Big Brother field) later scale up — a genuine origin point on this list's own casting-experiment axis that had never been drawn on. Confirmed via a full multiline `show: amazing-race` + `season: 7` grep across every `content/themes/*.md` that S07's only other ledger appearance (`best-finales` rank 1) spends a wholly different fact (the closing leg's foot race to the mat), never the crossover-casting angle. Inserted at rank 3, directly below S31 and above the returnee/all-stars cluster (S29/S11/S18/S24) — a single-pair crossover reads as a smaller bend than S31's three-franchise field, but distinct in kind from the all-returnee seasons that follow. Existing ranks 3-12 shifted to 4-13, text unchanged. Considered and passed over: MAFS Season 13 "Houston" for `the-matching-experts-never-sit-still-for-long` (re-confirmed still thin — its only remaining hook, "third straight unchanged panel," restates facts already staked by the S10-S12/S14 unchanged-panel cluster and risks a near-duplicate of S11's "nearly four months" calendar claim; left deferred, not shipped). |
-| two-channels-same-night | craft | 2026-07-19 | 2026-07-19 | |
+| two-channels-same-night | craft | 2026-08-01 | 2026-08-01 | extended 11→12 entries (7 shows held). Added dancing-with-the-stars S33 "Fall 2024" rank 8 (Disney+/ABC simulcast held through a second, uneventful year with the Hough/Ribeiro hosting team — confirmed via full `season: 33` grep across every `content/themes/*.md`, zero prior DWTS-33 hits anywhere in the catalog). Show now at 3/3 informal per-show cap. |
 | the-elimination-round-never-keeps-its-name | single | 2026-08-01 | 2026-08-01 | extended 2026-08-01 (content-curator tick, Rule 2 confirmed stalled per `plan/CADENCE.md`'s fully-future-dated gap table (earliest 2026-08-05), fell through to Rule 3 per the standing priority order; avoided every list already touched today — the-cast-was-still-arriving, played-it-straight, the-schedule-didnt-ask-permission, the-cast-outgrew-the-format, before-the-spinoff-had-a-name, running-long-running-short). First touch since creation (2026-07-19), a single-show list (no cross-canon floor applies). 18→20 entries, single show (The Challenge) throughout by design. Read every not-yet-used-here The Challenge season file (S1-6, S9-11, S14-15, S18-19, S22-24, S26-28, S32, S34, S37, S39) before drafting. Final Reckoning (S32) entry, rank 13 — the season's own lede states plainly it "close[s] out the Reckoning trilogy," a title that names the arc's own ending rather than introducing a new mechanic, a fresh facet of this list's naming-convention thesis; confirmed via a full `show: the-challenge` grep across every `content/themes/*.md` that S32's sole prior appearance (`the-cold-open-then-never-again`, an unrelated episode-structure fact) never touches the naming axis. Battle for a New Champion (S39) entry, rank 18 — the season's own `cast_size_caption` ("all veterans, none with a win") and lede state the cast is built entirely from never-won veterans, so the title states the season's whole casting premise upfront rather than branding an in-game mechanic; confirmed via the same grep that S39's sole prior appearance (`the-cold-open-then-never-again`, the same unrelated episode-structure fact) never touches the naming axis either. Considered and rejected: Battle of the Bloodlines (S27) — its title does name a real casting gimmick (veterans paired with family), but the season's own text calls it "the structural sibling of Fresh Meat," too close a restatement of the already-claimed S12 Fresh Meat entry's naming logic to add cleanly; Rivals II (S24) and Rivals III (S28) — both already implicitly covered by the S21 Rivals entry's own point that "the franchise reruns the label itself... across several later seasons," a second stake would pad rather than add a fact; Spies, Lies & Allies (S37) — no equivalent in-file text names an elimination round or mechanic distinctly from the season's rookie-infiltration premise already covered elsewhere (`the-cast-outgrew-the-format`), so a naming-convention claim couldn't be grounded. Ranks 13-20 renumbered to seat both new entries in season-chronological position; ranks 1-12 unchanged. |
 | the-clock-had-to-make-room | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (90 Day Fiancé S03 entry, rank 3 — the one season here where the six-couple shape held completely steady, no comeback/crossover wrinkle; list now runs 11 entries, matching the full 11 filed flagship seasons) |
 | the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
@@ -3153,6 +3153,70 @@ last time a curator actually looked.
   (11-16 entries each) with no fresh unclaimed angle surfacing on a
   first-pass read, not pursued further once `not-the-usual-order`
   cleared the gate.
+
+- 2026-08-01 sixty-fifth pass (content-curator tick, cloud march):
+  **shipped.** Rule 2 confirmed non-actionable (CADENCE.md gap table
+  fully starred, earliest confirmed unaired conclusion 2026-08-05, 0
+  finales due today per `finale-gate.mjs`). Fell through to Rule 3.
+  Excluded the 13 lists already touched today. Began at the two
+  coldest rows, `the-judges-picked-a-side` and `same-license-
+  different-rules` (both 2026-07-18) — independently re-verified
+  today's earlier pass-63 zero-ship conclusion on both (grepped
+  mentor/coach/draft language across masterchef, masterchef-
+  australia, big-brother, american-idol, ink-master, top-chef,
+  hells-kitchen, so-you-think-you-can-dance, dragrace, dragrace-uk,
+  the-challenge, dancing-with-the-stars, americas-got-talent; every
+  hit was either a non-fit or already staked elsewhere), confirming
+  both lists remain dead this tick. Worked forward through the
+  2026-07-19 batch: `built-for-one-playing-as-a-team` (Ink Master and
+  Big Brother candidates rejected — over-cap or already claimed 3x
+  under near-identical framing), `the-city-already-had-a-show` and
+  `the-competition-leaves-the-country` (all four shows already at
+  their 3-per-show cap), `the-twist-is-the-format` (discovered this
+  list is a near-duplicate thesis of the more complete `every-summer-
+  gets-its-own-twist` — every fresh BB-twist candidate checked, S17
+  BB Takeover, S11 Cliques Summer, S10 Renegades Era, was already
+  claimed there or at `best-hosting`/`the-resemblance-was-never-
+  just-a-fun-fact` under matching framing; not pursued further),
+  `a-second-life-built-into-the-format` (The Voice's "Comeback Stage"
+  considered but rejected — no grounding text exists in any
+  `content/shows/the-voice/seasons/*.md` file, would require
+  fabrication), `the-finale-broke-its-own-rulebook` (Drag Race UK S06's
+  four-way-finale/cash-prize fact looked promising, a 15th show for a
+  14-entry list, but cross-grepping `show: dragrace-uk` across every
+  theme file found the identical fact already staked three times over
+  — `same-crown-new-price-tag` rank 1, `when-the-crew-stepped-into-
+  frame` rank 7, and `the-series-the-uk-edition-finally-made-its-own`
+  rank 1 — and the season's other structural fact, its injury-driven
+  no-elimination week, already claimed twice — `the-schedule-didnt-
+  ask-permission` rank 5 and `when-the-crew-stepped-into-frame` rank 7
+  again — confirming Drag Race UK S06 is fully saturated). Also
+  checked `no-template-to-copy` (Queer Eye S01 doesn't fit the
+  era_range — the catalogued show is the 2018 Netflix reboot per its
+  `est_year` frontmatter, not the 2003 original) and
+  `it-took-five-seasons-to-find-a-home` (Love Island US S01's
+  CBS-nightly-broadcast fact already exhaustively staked there at
+  rank 3). Landed on `two-channels-same-night` (craft, dual-platform-
+  release thesis, last touched 2026-07-19, 11 entries/7 shows) —
+  broadened the grep past the list's existing vocabulary
+  (`simulcast|day-and-date|same (day|night|hour)|two networks|two
+  platforms`) across every `content/shows/**/seasons/*.md` and cross-
+  checked every new hit's show+season against the full catalog.
+  Rejected Married at First Sight S19 "Austin" (its Peacock-launch,
+  same-day finale/reunion fact is already staked near-verbatim at
+  `the-batch-drop-settles-in` rank 9) and two Below Deck Down Under /
+  RHOM candidates (S03 already claimed at `a-change-of-address`, RHOM
+  S04's single-platform fact already claimed at `moving-day` under
+  matching framing). Shipped one entry (11→12, shows held at 7):
+  Dancing with the Stars S33 "Fall 2024" at rank 8, the format's
+  second full season on the Disney+/ABC simulcast, confirmed via a
+  full `season: 33` grep across every `content/themes/*.md` file
+  turning up zero prior DWTS-S33 hits anywhere in the catalog. Fills
+  the real editorial gap between the list's S32 launch entry (rank 2)
+  and its S34 hiatus-close entry (now rank 9), completing the
+  three-season throughline the S34 entry's own "outlasts three
+  seasons" framing already implied. Dancing with the Stars now sits
+  at 3/3 informal per-show cap for this list.
 
 ## Notes
 

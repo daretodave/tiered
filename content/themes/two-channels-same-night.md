@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - moving-day
@@ -56,27 +56,33 @@ entries:
     title: "A cable simulcast widens the course's audience without touching a single obstacle"
     blurb: "Season eight trims its qualifying map to five cities and adds a simulcast on Esquire Network alongside NBC, reaching a wider audience the same year the course itself gets harder."
   - show: dancing-with-the-stars
+    season: 33
+    season_label: "S33 · Fall 2024"
+    rank: 8
+    title: "A second full season proves the dual-platform release wasn't a one-off launch move"
+    blurb: "Season thirty-three keeps the Disney+/ABC simulcast running through a second year, with the Hough/Ribeiro hosting team settling into a steadier rhythm — the delivery model holding without any of the fanfare its debut got."
+  - show: dancing-with-the-stars
     season: 34
     season_label: "S34 · Fall 2025"
-    rank: 8
+    rank: 9
     title: "The dual-platform release outlasts three seasons before the show pauses"
     blurb: "Season thirty-four closes the ballroom format's most recent run with its Disney+/ABC simulcast still fully intact — the delivery model holding steady even as the show heads into hiatus."
   - show: rhom
     season: 7
     season_label: "S07"
-    rank: 9
+    rank: 10
     title: "A same-day release quietly becomes a next-day one instead"
     blurb: "A year after Peacock started carrying the Miami franchise same-day alongside Bravo, the gap widens by a day — a small adjustment to a dual-platform model that's otherwise settled into routine."
   - show: below-deck-down-under
     season: 1
     season_label: "S01 · Whitsundays"
-    rank: 10
+    rank: 11
     title: "An Australian launch runs on one platform only, for exactly one season"
     blurb: "Before Bravo and Peacock synced schedules for this franchise, the debut Whitsundays season streamed on Peacock alone — a model every later season in the franchise would leave behind."
   - show: married-at-first-sight
     season: 5
     season_label: "S05 · Chicago"
-    rank: 11
+    rank: 12
     title: "The format gives up its second channel and settles onto one home"
     blurb: "Four seasons into simulcasting across FYI and A&E, season five lands solely on Lifetime — the dual-platform run quietly retired in favor of a longer episode order and one settled address."
 ---
