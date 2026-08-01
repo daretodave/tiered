@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -86,39 +86,51 @@ entries:
     title: "The premise gets named for the emotion driving it, not the mechanic running it."
     blurb: "Vendettas brands a season on grudge history alone — the individual format underneath barely changes, but the title reframes it as a season built on carried resentment instead of fresh competition."
   - show: the-challenge
+    season: 32
+    season_label: "S32 · Final Reckoning"
+    rank: 13
+    title: "The trilogy closer finally names its own ending, not a new mechanic"
+    blurb: "Final Reckoning closes out the three-season arc the season's own text calls the Reckoning trilogy, and the naming convention bends for once — branding the story's payoff instead of introducing a fresh rule. Fixed pairs carry the connective storyline home."
+  - show: the-challenge
     season: 33
     season_label: "S33 · War of the Worlds"
-    rank: 13
+    rank: 14
     title: "A fresh-blood casting swing gets a title big enough for a global cast pool."
     blurb: "War of the Worlds names the collision between franchise veterans and total outsiders as exactly that — a worlds-collide premise the naming convention had never reached for at this scale before."
   - show: the-challenge
     season: 35
     season_label: "S35 · Total Madness"
-    rank: 14
+    rank: 15
     title: "A new safety mechanic gets folded into a title about the setting, not the rule."
     blurb: "Total Madness names the tone of a bunker season more than the red-skull rule running underneath it, a rare case where the branding describes the register instead of explaining the structure."
   - show: the-challenge
     season: 36
     season_label: "S36 · Double Agents"
-    rank: 15
+    rank: 16
     title: "A spy theme names a partner mechanic that keeps refusing to hold still."
     blurb: "Double Agents brands a rotating-partner rule as an act of betrayal built into the format itself, matching the naming convention to a structure where no alliance is safe from a reshuffle."
   - show: the-challenge
     season: 38
     season_label: "S38 · Ride or Dies"
-    rank: 16
+    rank: 17
     title: "The title borrows a phrase for loyalty and hands it to pairs the show didn't manufacture."
     blurb: "Ride or Dies names a season built on real-life bonds instead of produced rivalries, the naming convention finally describing a kind of pair the format hadn't tried casting before."
   - show: the-challenge
+    season: 39
+    season_label: "S39 · Battle for a New Champion"
+    rank: 18
+    title: "The marquee spells out the stakes before a single mission airs"
+    blurb: "No rookies, no past champions — a cast built entirely from veterans who had never won. Battle for a New Champion's own title states the season's whole premise upfront, the naming convention's boldest bet yet on telling the audience exactly what's on the line."
+  - show: the-challenge
     season: 40
     season_label: "S40 · Battle of the Eras"
-    rank: 17
+    rank: 19
     title: "The fortieth season names itself after the franchise's own timeline."
     blurb: "Battle of the Eras turns the naming habit inward, branding a season after the show's own history instead of a new mechanic. Decades of casting become the premise, and the title says so outright."
   - show: the-challenge
     season: 41
     season_label: "S41 · Vets & New Threats"
-    rank: 18
+    rank: 20
     title: "The newest season nests three named mechanics inside one plain, descriptive title."
     blurb: "Vets & New Threats keeps its own title literal while Performance Points, a Lock In, and a Stake a Claim twist do the actual branding underneath. The naming convention has learned to spread across a whole system instead of one word."
 ---
