@@ -6,7 +6,7 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-01
 featured: false
 related:
   - firsts
@@ -61,4 +61,10 @@ entries:
     rank: 8
     title: "A founding cast that already knew each other before the cameras rolled."
     blurb: "Seven Charleston locals and transplants arrive with real overlapping histories, not backstory built for TV. Old-money manners hold the surface together while the season's real friction comes from relationships that predate the show itself."
+  - show: rhom
+    season: 1
+    season_label: "S01"
+    rank: 9
+    title: "Miami's founding six play established socialites from the first scene, no ramp-up required."
+    blurb: "Six women who already knew Miami's social scene by heart — old family names, new money, sun-soaked ambition — click into place immediately. The season's own pitch is glamour and friction in equal measure, and the founding cast delivers both without a settling-in period."
 ---
