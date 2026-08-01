@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - firsts
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "A home-cook format earns a version sized for kids."
     blurb: "Eighteen home cooks and a still-forming elimination format open the American run in 2010. Three years later, the same host anchors a junior spinoff cast entirely with kids."
+  - show: chopped
+    season: 2
+    season_label: "S02"
+    rank: 12
+    title: "A late-season champions block becomes the blueprint for a whole spinoff series."
+    blurb: "Season two spends its final four hours letting past winners cook against each other for cumulative prize money, the closed-door format's first break from all-new chefs every hour. Food Network spins the idea into its own standalone tournament series that same year."
 ---
