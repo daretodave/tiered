@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - who-actually-got-the-vote
@@ -49,34 +49,40 @@ entries:
     rank: 6
     title: "Eliminated contestants get a shot at rewriting someone else's match."
     blurb: "The mixer lets castoffs re-enter and test pairings that had already settled, reaching further into a couple's business than the debut season dared. Every match in the villa becomes contestable again, on the show's own schedule."
+  - show: perfect-match
+    season: 3
+    season_label: "S03"
+    rank: 7
+    title: "The mixer stops requiring a villa stay at all."
+    blurb: "Season three's mixer goes further than any before it — outsiders who never lived in the villa now compete for the same matches as returned castoffs, in the show's widest crossover cast yet. The outside hand no longer needs a contestant already inside to reach in."
   - show: the-ultimatum
     season: 1
     season_label: "S01"
-    rank: 7
+    rank: 8
     title: "The ultimatum is the show's rule; the new partner is still their pick."
     blurb: "Production forces the choice — propose, or trial-marry someone else for three weeks — but leaves the actual pairing to the contestants, chosen from within the group. The rule sets the fence; the couple still walks the field."
   - show: love-is-blind
     season: 1
     season_label: "S01 · Atlanta"
-    rank: 8
+    rank: 9
     title: "No panel, no algorithm — just two people choosing each other blind."
     blurb: "Atlanta's pods strip out sight, not choice. Contestants propose to whoever they've talked into it, with no expert or algorithm making the call for them — the format removes one variable, not the decision."
   - show: too-hot-to-handle
     season: 1
     season_label: "S01"
-    rank: 9
+    rank: 10
     title: "Nobody matches anybody — an AI just penalizes what happens next."
     blurb: "Lana never assigns a single pair. The villa sorts itself out by attraction alone, and the only outside hand belongs to a rule about touching, not a decision about who's right for whom."
   - show: love-island-uk
     season: 1
     season_label: "S01"
-    rank: 10
+    rank: 11
     title: "The villa picks its own partners; the audience weighs in after."
     blurb: "Series 1 hands the entire opening coupling to the islanders' own first impressions — no expert, no algorithm, not even a producer's hand on the pairing. The public vote that follows judges the couples; it doesn't make them."
   - show: love-island-us
     season: 1
     season_label: "S01"
-    rank: 11
+    rank: 12
     title: "The same peer-picked coupling ports across an ocean, unchanged."
     blurb: "Fiji's islanders choose partners on sight exactly the way Mallorca's did, proving the format's least-engineered matching system travels as cleanly as its fire pit. The couple still does all the choosing."
 ---
