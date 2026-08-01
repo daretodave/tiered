@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-08-01
 featured: false
 related:
   - best-returnees
@@ -90,4 +90,10 @@ entries:
     rank: 13
     title: "Eight cycles later, a second sibling pair joins a season staged around reinvention."
     blurb: "Cycle fifteen's overhaul of the prize package and its all-Italy shoot arrive alongside a quieter first: the show's second-ever sibling pair, the first since Cycle seven put real family stakes back into the cast."
+  - show: top-chef
+    season: 23
+    season_label: "S23 · Carolinas"
+    rank: 14
+    title: "A real-life couple joins the Carolinas roster, each cooking their own track."
+    blurb: "Fifteen chefs make up the season's cast, and two of them are real-life partners entered as individual competitors rather than a duo — a second genuine family tie alongside the twin brothers already cooking in the same kitchen."
 ---

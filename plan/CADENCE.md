@@ -553,6 +553,26 @@ its 3/3 informal per-show cap. See `plan/LISTS.md` ledger row
 full grounding. Next actionable check remains the weekly sweep, due
 2026-08-02 (tomorrow).
 
+**Rule 2 stall, 2026-08-01 tick (cloud march, 66th+ Rule-3 dispatch):**
+re-verified the same seven pick-order-top candidates (`survivor` S51
+premiere 2026-09-23, `the-challenge` S42 premiere 2026-08-05,
+`big-brother` S28 finale 2026-10-01, `amazing-race` S39 premiere
+2026-09-30, `bachelor` S30 undated, `below-deck-mediterranean` S11
+finale 2026-08-10, `alone` S13 finale 2026-08-26) against
+`content/calendar.yml` — every scheduled finale/premiere still
+future-dated, earliest unchanged at 2026-08-05. `scripts/finale-gate.mjs`
+confirmed 0 finales due. No row actionable. Gap table unchanged at 35
+shows / 36 gap-slots. Fell through to Rule 3 extend-first, excluding
+the 15 lists already touched today: `when-the-cast-was-already-related`
+(structure) grew 13→14 entries, 12→13 shows — Top Chef S23 "Carolinas"
+entry, rank 14 (top-chef's first appearance on this list), the season's
+own `cast_size_caption` text ("fifteen chefs, including life partners
+and twin brothers") grounding a real-life-couple-as-individual-
+competitors fact distinct from the twin-brothers resemblance fact
+already staked elsewhere in the ledger. See `plan/LISTS.md` ledger row
+and `plan/AUDIT.md` progress note for full grounding. Next actionable
+check remains the weekly sweep, due 2026-08-02 (tomorrow).
+
 ## Sweep notes (2026-07-12, first pass)
 
 Flagged findings that did **not** move the gap table this pass —
