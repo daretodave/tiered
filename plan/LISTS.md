@@ -2991,6 +2991,65 @@ last time a curator actually looked.
   those two shows elsewhere. `last_revised` bumped (real content
   change). List now runs 17 entries across 17 shows, no show over 1
   entry. Extend-first now stands at 40-for-41 across the logged passes.
+- 2026-08-01 sixty-second pass (content-curator tick): **zero-ship**.
+  Briefed specifically to author a wholly new `content/themes/<slug>.md`
+  (not an extend) — the fourth Rule 3 tick of the day, after three
+  earlier extend-first passes already landed on `best-non-winning-runs`,
+  `pre-recap-culture-seasons`, and `the-cast-was-still-arriving`.
+  Re-confirmed the Rule 2 gap table stays non-actionable (earliest
+  candidate 2026-08-05) and that zero tone/craft/era lists currently sit
+  below the ≥3-show floor, so neither Rule 2 nor the phase-41 below-floor
+  avenue applied. Read the full Ideas log (sixty-one prior passes) before
+  searching, then scoped six fresh candidates the log hadn't explicitly
+  closed:
+  - **A show's own lead/central figure brought back a second time in the
+    same role** (Bachelor S15, Brad Womack returning as lead after his
+    S11 run) — the single strongest-looking lead going in. **Rejected on
+    total preemption**: `the-lead-was-already-in-the-building` (single,
+    11 entries) already stakes this exact Brad Womack fact at rank 2,
+    "The Bachelor who said no to everyone comes back to try again," as
+    part of a comprehensive single-show survey of every Bachelor lead's
+    franchise history. No unclaimed room, and the underlying device
+    (a repeat central figure) doesn't recur cleanly on any other show in
+    the catalog — Bachelorette leads are drawn from Bachelor's cast by
+    format design, not a comparable "second time in the same chair"
+    fact, so a cross-show cut doesn't independently exist either.
+  - **Multi-year hiatus-then-revival, distinct from
+    `the-turnaround-skipped-a-year`'s short-gap angle** (American Idol's
+    two-year Fox-to-ABC gap, ANTM's CW-to-VH1 revival after a year off)
+    — rejected on total preemption: both candidates are already staked
+    at `moving-day` (American Idol S16 rank 4, "A two-year hiatus ends
+    with a full network switch and an all-new panel"; ANTM S23 rank 11,
+    "The VH1 relaunch"), and every real hiatus-revival case catalog-wide
+    is inseparable from a simultaneous network move already claimed
+    there — no distinct facet survives.
+  - **On-site mental-health support / aftercare as a visible format
+    element** — grepped `therapist|mental health|aftercare|on-site
+    support|wellness check` catalog-wide: only 3 hits, spanning 2 shows
+    (bachelorette, bachelor-in-paradise). Too thin for the 3-show floor.
+  - **A pre-season boot-camp / qualifying round ahead of the main
+    format** — grepped `boot camp|qualifying round|last-chance round|
+    wildcard round|pre-season`: 4 scattered hits (top-chef, ink-master,
+    chopped x2), no coherent shared throughline, no clean device
+    repeating the same way twice.
+  - **A season's episode order extended mid-run (a "back nine" pickup)**
+    — grepped `back nine|extended (the )?order|additional episodes|
+    episode order (was )?extended|expanded order`: zero hits
+    catalog-wide.
+  - **True international day-and-date simulcast (multiple countries,
+    same premiere hour), distinct from `two-channels-same-night`'s
+    domestic dual-platform angle** — grepped `international audience|
+    worldwide|global premiere|day-and-date international|simultaneously
+    in`: only 2 hits (top-chef S20, dragrace-uk S04), no coherent
+    cross-show pattern.
+  - **Decision:** no candidate cleared the excellence gate without
+    either total preemption by an existing list (Brad Womack, the
+    hiatus-revival pair) or thin, incoherent grounding (aftercare,
+    boot-camp qualifiers, back-nine pickups, international simulcast).
+    Consistent with the standing assessment from passes 7/9/11/13/56:
+    the grep-groundable well for wholly new concepts is effectively
+    exhausted at 176 lists; extend-first remains the reliable fallback
+    for ticks without a hard new-slug requirement.
 
 ## Notes
 
