@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-01
 featured: false
 related:
   - not-the-usual-order
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "A two-hour premiere clears extra room before the panel even finishes changing."
     blurb: "Season fourteen opens with a feature-length hour to handle a new panelist's debut alongside the usual disguise reveals, then settles back into the format's standard weekly length for the rest of the run."
+  - show: top-chef
+    season: 20
+    season_label: "S20 · World All-Stars"
+    rank: 13
+    title: "The judges' table itself gets supersized to fit the international bench."
+    blurb: "World All-Stars pulls sixteen alumni from Top Chef franchises worldwide into London kitchens for the format's biggest cast yet. The show's own copy admits the elimination challenge and closing judging session both run long, giving the deeper bench room to argue its case."
 ---
