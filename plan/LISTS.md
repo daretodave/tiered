@@ -148,7 +148,7 @@ last time a curator actually looked.
 | the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
-| running-on-muscle-memory | tone | 2026-07-29 | 2026-07-29 | extended 2026-07-29, second pass same day (Traitors UK S04 "Series 4 (2026)" entry, rank 16 — the season's own lede/watch_list frames a fourth run at the same Ardross Castle as leaning "into the format's own mythology rather than reinventing it," with a cast that's "clearly watched the earlier series" and a game that "barely needs explaining anymore," a direct thesis match distinct from S04's two existing ledger appearances (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-every-time-the-castle-reopens` rank 3), both of which center the Uncloaked companion-show/spinoff fact rather than the core game-and-host confidence claim; seventh distinct show on this list, first traitors-uk entry, distinct from the existing Traitors US S04 entry at rank 15); previously extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
+| running-on-muscle-memory | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (Married at First Sight Australia S09 entry, rank 17 — the season's own file states plainly it runs "at its most settled," with the Aiken–Schilling–Rampolla panel in its second year together, eleven couples at franchise-standard scale, and "no new structural twist," proving the format doesn't need novelty now that the panel and cast rhythm have bedded in; confirmed via a full `show: married-at-first-sight-australia` grep across every `content/themes/*.md` that S09's two other ledger appearances — `the-episode-order-never-found-its-ceiling` rank 6 (an episode-count record fact) and `the-reshuffle-stays-in-house` rank 8 (a returning-participant recasting fact) — never touch the settled-panel/no-new-mechanic tone claim staked here; eighth distinct show on this list, first MAFS Australia entry); previously extended 2026-07-29, second pass same day (Traitors UK S04 "Series 4 (2026)" entry, rank 16 — the season's own lede/watch_list frames a fourth run at the same Ardross Castle as leaning "into the format's own mythology rather than reinventing it," with a cast that's "clearly watched the earlier series" and a game that "barely needs explaining anymore," a direct thesis match distinct from S04's two existing ledger appearances (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-every-time-the-castle-reopens` rank 3), both of which center the Uncloaked companion-show/spinoff fact rather than the core game-and-host confidence claim; seventh distinct show on this list, first traitors-uk entry, distinct from the existing Traitors US S04 entry at rank 15); previously extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
@@ -3416,6 +3416,47 @@ last time a curator actually looked.
   vote-mechanic, and rules-changed facts respectively) never touch
   Deeley's own steadying role. Shipped one entry (18→19 entries,
   15 shows). See the ledger row for the full accounting.
+- 2026-08-02 seventy-second pass (content-curator tick, cloud march):
+  Rule-2 season-fill re-confirmed stalled (every remaining
+  `plan/CADENCE.md` gap-table row still starred/confirmed-but-unaired),
+  fell through to Rule 3. No ledger row shows a 90-day review-due flag,
+  so this stayed an extension tick. Avoided the eleven lists already
+  extended earlier today by prior ticks in this loop (best-returnees,
+  best-hosting, best-non-winning-runs, away-from-home-turf, the-season-
+  everyone-got-their-audience-back, tried-once-never-repeated, the-
+  reunion-kept-changing-its-own-rules, best-villain-editing, the-
+  paycheck-writes-the-plot, the-house-that-kept-changing, pandemic-
+  seasons). Spent most of the pass on `best-location-reveals` (craft, 9
+  entries, real headroom, survivor already 3/3) chasing several
+  candidates that all sank on dedup: Love Island UK S06's Cape Town
+  winter-villa reveal is already staked near-verbatim at `a-change-of-
+  address` rank 6; Big Brother S27's Hotel Mystère premiere-theme
+  reveal is already staked near-verbatim at `running-long-running-
+  short` rank 11; Selling Sunset S01's office/brokerage intro reads as
+  format-and-cast framing, not a location-reveal beat, too thin;
+  Naked and Afraid doesn't fit the list's single-season-location thesis
+  at all (each episode recasts a new location for new pairs). Pivoted
+  to `played-it-straight` (tone, 13 entries, bachelor already 3/3) —
+  grepped `plays it straight|played it straight|completely straight` in
+  season files fresh, but every hit sank too: Married at First Sight
+  S02's "the sequel plays it straight" line duplicates `been-here-
+  before` rank 14's identical same-panel/same-city fact; Queer Eye S06
+  was already flagged over-claimed by the prior 2026-08-01 pass note on
+  this same list. Landed on `running-on-muscle-memory` (tone, 16
+  entries, real headroom, american-idol already over the informal cap
+  at 4 but every other show under it) instead. Shipped Married at First
+  Sight Australia S09 (rank 17) — the season's own file states it runs
+  "at its most settled," the same three-expert panel in its second year
+  together, eleven couples at franchise-standard scale, "no new
+  structural twist," proving the format doesn't need novelty once the
+  panel and cast rhythm have bedded in; confirmed via a full `show:
+  married-at-first-sight-australia` grep that S09's two other ledger
+  appearances (`the-episode-order-never-found-its-ceiling` rank 6, an
+  episode-count-record fact; `the-reshuffle-stays-in-house` rank 8, a
+  returning-participant recasting fact) never touch the settled-panel
+  tone claim staked here. List now runs 17 entries across 8 shows,
+  first MAFS Australia appearance. See the ledger row for the full
+  accounting.
 
 ## Notes
 

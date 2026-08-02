@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-02
 featured: false
 related:
   - played-it-straight
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "A fourth trip to Ardross Castle needs no rulebook refresher."
     blurb: "Claudia Winkleman returns to the same Highland castle for a fourth run, and the cloak-and-Round-Table mechanic barely needs explaining anymore. The season leans into its own mythology instead of reinventing it — pure execution, not a format still finding its rules."
+  - show: married-at-first-sight-australia
+    season: 9
+    season_label: "S09"
+    rank: 17
+    title: "A second full year with the same panel, and the season stops needing to prove anything."
+    blurb: "Eleven couples run at the format's standard scale with the same expert panel in its second year together — no new mechanic, no panel change, just a settled rhythm confident enough not to explain itself."
 ---
