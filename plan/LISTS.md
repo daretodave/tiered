@@ -128,7 +128,7 @@ last time a curator actually looked.
 | the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
 | the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
 | every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
-| the-paycheck-writes-the-plot | craft | 2026-07-21 | 2026-07-21 | |
+| the-paycheck-writes-the-plot | craft | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (14→16 entries, 7 shows, below-deck-down-under 1→3 entries, now at cap). Below Deck Down Under S03 Seychelles entry, rank 15 — the season's own lede states Captain Jason Chambers keeps his "returning command" over "a mostly new crew building chemistry from scratch," a distinct hierarchy-fact from S01's green-launch stake already on this list (S01 is a chain of command sorting itself for the first time ever; S03 is an already-proven captain's authority holding while the ranks beneath him are the unknown quantity) — confirmed via full `show: below-deck-down-under` grep that S03's only other ledger appearance (`a-change-of-address`, rank 1) stakes the relocation-out-of-Australian-waters fact, not a chain-of-command fact. Below Deck Down Under S04 Canouan entry, rank 16 — the season's own lede names Chef Ben Robinson and Chief Stew Daisy Kelliher as a "veteran crew carrying decades of Below Deck experience" under Chambers's command, a seniority-earned-elsewhere-vs-authority-on-this-boat fact distinct from both S01 and S03's stakes here, confirmed via the same grep that S04's only other appearance (`a-change-of-address`, rank 2) stakes the Caribbean-relocation fact. Considered and rejected: Below Deck Down Under S02 Western Australia (season file has no crew-hierarchy-specific text, only "Captain Jason Chambers adapted his command style to the stripped-back context" — too thin to ground a distinct chain-of-command claim); Below Deck Sailing Yacht S02 Croatia (would duplicate `the-quiet-register-was-the-whole-point-until-ibiza` rank 1's existing "cross-department friction" stake on the same season); Below Deck Mediterranean S02–S10 (all ten Below Deck Mediterranean seasons already comprehensively staked on the closely-related command-continuity thesis at the single-show list `the-command-held-for-nine-seasons-then-didnt`, and no season there offered a fact distinct enough from that existing command-authority framing to avoid reading as a duplicate stake); Below Deck Adventure has only one aired season (Svalbard), already used here at rank 14, no headroom. |
 | the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
 | everything-but-the-pass-keeps-changing | single | 2026-07-21 | 2026-07-21 | |
 | some-casts-didnt-need-week-one | single | 2026-07-22 | 2026-07-22 | |
@@ -3288,6 +3288,44 @@ last time a curator actually looked.
   unclaimed). Shipped all three (15→18 entries), rebased ranks 4-15
   down to 6-18 to keep the list's chronological ordering intact, and
   bumped `last_revised`.
+- 2026-08-02 sixty-eighth pass (content-curator tick, cloud march):
+  **shipped**. Rule 2 confirmed non-actionable again (same starred
+  CADENCE.md gap table). Re-confirmed no review batch was due (no
+  ledger row past the 90-day `last_reviewed` window). Spent most of
+  the pass on Path B — tested four fresh angles (a double-elimination-
+  episode list, further extensions to `wealth-as-the-whole-pitch`,
+  `the-doubters-had-to-walk-it-back`, and `the-reveal-was-the-whole-
+  show`) and rejected every candidate either for too-thin catalog-wide
+  grounding or because the specific fact was already staked elsewhere
+  with near-identical framing (Love Is Blind S01's reveal fact is
+  already claimed at `sight-unseen-already-committed`; Bake Off S08's
+  survived-the-network-move fact is already claimed at `best-comeback-
+  seasons`; a Traitors S01 "breakfast reveal" phrase is already claimed
+  at `firsts` rank 5). Fell through to extend-first. Targeted
+  `the-paycheck-writes-the-plot` (craft, 14 entries/7 shows,
+  vanderpump-rules/below-deck/selling-sunset all at the informal
+  3-entry cap, below-deck-mediterranean/below-deck-sailing-yacht/
+  below-deck-down-under/below-deck-adventure with headroom). Ruled out
+  Below Deck Sailing Yacht S02 (duplicates `the-quiet-register-was-
+  the-whole-point-until-ibiza` rank 1's cross-department-friction
+  stake on the same season) and all of Below Deck Mediterranean S02-
+  S10 (already comprehensively staked on the closely related command-
+  continuity thesis at the single-show list `the-command-held-for-
+  nine-seasons-then-didnt`, with no season distinct enough from that
+  framing to avoid a duplicate stake). Below Deck Down Under S02
+  Western Australia's season file has no crew-hierarchy-specific text
+  (only "adapted his command style" with no department detail) — too
+  thin. S03 Seychelles and S04 Canouan both cleared: S03's own lede
+  states an already-proven captain keeps command over "a mostly new
+  crew building chemistry from scratch," the inverse structural fact
+  from S01's green-launch stake already on this list; S04's own lede
+  names two veteran crew members bringing "decades of Below Deck
+  experience" into a new captain-crew pairing, a seniority-vs-
+  authority fact distinct from both. Confirmed via full
+  `show: below-deck-down-under` grep that neither season's only other
+  ledger appearance (`a-change-of-address`, relocation thesis) stakes
+  a hierarchy fact. Shipped both (14→16 entries, below-deck-down-under
+  1→3, now at cap), bumped `last_revised`.
 
 ## Notes
 

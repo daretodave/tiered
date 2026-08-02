@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-02
 featured: false
 related:
   - a-guest-spot-with-room-to-grow
@@ -97,4 +97,16 @@ entries:
     rank: 14
     title: "A smaller crew in a harder climate leaves nowhere to hide the hierarchy"
     blurb: "Seven crew members and an Arctic posting leave far less room than the superyacht branches allow — Captain Kerry Titheradge's authority, and every department's place under it, plays out with nowhere left to disperse the pressure."
+  - show: below-deck-down-under
+    season: 3
+    season_label: "S03 · Seychelles"
+    rank: 15
+    title: "A proven captain's command holds steady while the ranks beneath him rebuild trust"
+    blurb: "Captain Jason Chambers keeps his command for a third season, but most of the department heads under him are new, earning that chain of trust from scratch aboard the largest superyacht the franchise has ever chartered."
+  - show: below-deck-down-under
+    season: 4
+    season_label: "S04 · Canouan"
+    rank: 16
+    title: "A veteran crew turns the chain of command into a proving ground, not a mystery"
+    blurb: "Chef Ben Robinson and Chief Stew Daisy Kelliher bring years of Below Deck rank-and-file experience into Captain Jason Chambers's Caribbean debut, so the season tests whether seniority earned elsewhere changes how authority works on this boat."
 ---
