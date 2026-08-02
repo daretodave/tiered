@@ -157,7 +157,7 @@ last time a curator actually looked.
 | no-season-sends-a-queen-home-the-same-way-twice | single | 2026-07-23 | 2026-07-23 | |
 | new-house-rules-every-time-the-castle-reopens | single | 2026-07-23 | 2026-07-23 | |
 | some-seasons-rebuild-the-roster-others-just-move-the-furniture | single | 2026-07-23 | 2026-07-23 | |
-| the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
+| the-company-upstairs-changed-hands | era | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick): 12→13 entries, 9→10 shows, first RHOM appearance on this list. Shortlisted this row as one of the coldest, least-mined rows in the ledger (untouched since creation 2026-07-23, zero prior pass-note history anywhere in this file). RHOM S01 entry, new rank 4 (ranks 4-12 rebased to 5-13 to hold the list's chronological order) — the season's own `premiere_date` frontmatter (2011-02-22) lands just twenty-five days after Comcast's acquisition of NBCUniversal formally closed (January 28, 2011, the same well-established public-record anchor event this list's existing Voice S01/AGT S06/Top Chef S09 entries already use), the tightest turnaround of any entry on the list; the season's own file supplies the "real story" clause (six-woman founding Miami cast, Bravo's first South Florida shoot). Confirmed via a full `show: rhom` grep across every `content/themes/*.md` that S01's three prior ledger appearances (`new-flags-planted-fast`, `wealth-as-the-whole-pitch`, `best-newbie-casts`) stake founding-cast/wealth-pitch/newbie-casting facts, none touching the corporate-ownership-timing angle staked here. Considered and rejected before landing on RHOM: `someone-else-held-the-chair-for-a-while` (craft, also cold, extensively chased first — Drag Race UK S04's Michelle Visage-covers-RuPaul fact is already staked near-verbatim at `season-one-doesnt-own-every-first` rank 11; Shark Tank S09's guest-shark-covers-O'Leary's-absence fact is already staked near-verbatim at the single-show list `the-extra-seat-is-never-a-swap` rank 5; Ink Master S15's Dave Navarro absence has no named replacement filling his specific chair, off-thesis; AGT S17 has no season-file text grounding a Cowell-absence/guest-judge fact — zero-ship on this list this pass); `the-host-never-walks-into-the-room` (craft, fully cold, zero pass-note history) — all four shows already on the list (too-hot-to-handle, love-island-uk, love-island-us, the-circle) sit at the 3-per-show craft cap, and no fifth show's season file grounds a genuine disembodied-host-authority fact (Perfect Match's Nick Lachey is a standard on-camera host per every season file read) — not pursued further. |
 | the-season-everyone-got-their-audience-back | era | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, cloud march, 11→12 entries, status started→growing). Started from a `pandemic-seasons` extension attempt that dead-ended: grepped `returns? to normal|full audience|live audience returns|back in person|resumes production|after (the|a) (pandemic|shutdown|hiatus)|post-pandemic|return to (full|in-person)` (case-insensitive) across every `content/shows/**/seasons/*.md`, cross-checked all 11 hits against this list's own entries and the wider ledger. Most hits were already staked here (American Idol S19, The Voice S20, AGT S16, Love Island US S03, DWTS S30, Bachelor in Paradise S07 — the last of these is actually the *disruption* entry already claimed by `pandemic-seasons` rank 2, not a recovery fact) or thin (AGT S17 "The Panel in Form" — its own file frames the season around panel chemistry with only a passing "post-pandemic" mention, not a grounded recovery thesis). Shipped one entry: Summer House S06 "The Reset Summer" (rank 12) — the season's own pull states "a new house, a mostly new energy, after the pandemic forced the format to run without one for a year," a genuinely distinct recovery-of-format fact from its two other ledger stakes (`the-roster-never-held-still` rank 7 and `a-change-of-address` rank 9, both of which cover the cast-turnover/relocation fact, not the format-restoration fact). Also considered and rejected as already-claimed with near-identical framing during the original `pandemic-seasons` research this same pass: Project Runway S18 "New York" (its production-disruption fact is already staked at `the-workroom-outlasted-the-network` rank 7 — confirmed on a second read despite that entry's euphemistic phrasing, the underlying fact is the same pandemic-production disruption), Drag Race S12 (its remote-finale-rebuild fact is already staked verbatim at `the-season-structure-never-holds-still` rank 8), Big Brother S22 "The Second All-Stars" (its bubble-production fact already surfaces in `the-company-upstairs-changed-hands` rank 8's own blurb text — "sixteen returning houseguests move into a strict bubble" — too close to restake). List now runs 12 entries across 10 shows (Summer House now appears twice, both facts distinct). |
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
 | the-fire-pit-never-moved | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 entry — sleepover twist + The Debrief companion show) |
@@ -3490,6 +3490,79 @@ last time a curator actually looked.
   not the structural pairing bet. Shipped one entry (10→11 entries,
   7→8 shows, first `the-challenge` appearance on this list). See the
   ledger row for the full accounting.
+- 2026-08-02 seventy-fourth pass (content-curator tick): **zero-ship**.
+  Briefed to extend `the-judges-picked-a-side` (11 entries, craft,
+  6 shows, unchanged since creation 2026-07-18 despite five prior
+  zero-ship reviews: 2026-07-27 eighteenth, 2026-07-28 twenty-
+  seventh/twenty-eighth, 2026-07-31 fifty-sixth and "before-the-
+  spinoff-had-a-name," 2026-08-01 sixty-third). Re-verified from
+  scratch rather than trusting the prior closures at face value —
+  read every season file in full rather than relying on keyword
+  greps alone:
+  - **Ink Master, every season not already on the list.** S06
+    "Master vs. Apprentice" pairs contestants into mentor/apprentice
+    teams, but the mentors are fellow artists, not the resident
+    judging panel — off-thesis, no evaluator trades neutrality for a
+    coaching chair. S10 "Return of the Masters" has three past
+    winners captain six-artist teams, but that's the identical
+    alumni-coach-while-the-resident-panel-stays-neutral mechanic S12
+    "Battle of the Sexes" already stakes at rank 6 ("the resident
+    judges stay judges; the coaching chair belongs to alumni") — a
+    second stake would restate it. S13 "Turf War" runs the same
+    returning-contestant-as-squad-captain mechanic as S10, same dead
+    end. S07 "Revenge," S09 "Shop Wars," S14, S15, S16 "OGs vs.
+    Young Guns," and S17 "Hometown Heroes" carry no coach/mentor-
+    authority swap at all (rookie-vs-veteran face-offs, shop-vs-shop
+    tag team, panel-size changes, a Jury of Peers, an all-rookie
+    reset, a hometown theme) — off-thesis.
+  - **So You Think You Can Dance, every season not already on the
+    list.** S07 "The All-Stars Season" introduces the All-Stars
+    mechanic as a rotating weekly partner pool, not the season-long
+    team-coaching relationship with a fixed roster that S12/S13/S14
+    already stake — a distinct, thinner mechanic (partnering, not
+    coaching a side). S15 "The Fourth Chair" only expands the panel
+    to four judges. S09 "The Two-Crown Format" gives judges solo-
+    pick discretion and reuses the (already-elsewhere) All-Stars
+    window for a few weeks — neither is a structural authority swap.
+  - **MasterChef Australia.** Full-catalog `coach|mentor` grep
+    returns only S06 (already ranked 10), S07 (confirmed, again, as
+    a continuation of S06's exact mentor-role fact, not a fresh
+    swing), and S11 (already ranked 11). Read S12 "Back to Win," S14
+    "Fans and Favourites," and S16 "Four Voices" directly — a panel
+    debut, a Fans-vs-Favourites cast split, and a panel expansion to
+    four, none involving a coaching-with-a-roster swap.
+  - **Big Brother.** Full-catalog `coach|mentor` grep across all 27
+    season files returns exactly one hit, S14 — confirms there is no
+    second coaches-format season to add.
+  - **Project Runway.** Grep hits on S01, S17, S20. S17 is already
+    claimed by `the-other-side-of-the-table` (former-winner-as-
+    workroom-mentor). S01 and S20 both reference Tim Gunn as
+    "mentor," but that's the show's permanent, every-season format
+    premise, not a season-specific structural swap — the exact class
+    of exclusion this brief already applies to The Voice.
+  - **Top Chef, Drag Race, Drag Race UK.** Zero `coach|mentor|
+    draft(ed)?|roster` hits anywhere in these shows' season files.
+  - **Catalog-wide `coach(es|ing)?` sweep.** Beyond the shows above,
+    the only new hits were The Voice (excluded per brief — permanent
+    format premise), Survivor S39 "Island of the Idols" and S23
+    "South Pacific," Survivor Australia S03, Bake Off S04, and
+    America's Next Top Model S03. Checked each: Survivor's "mentor
+    twist" in S39 is a genuine season-specific format change, but
+    Survivor carries no evaluative judges' table at all — there is
+    no neutral-panel role for the twist to swap out of, so it fails
+    this list's own premise regardless of how novel the twist is.
+    Bake Off S04 explicitly frames Paul Hollywood's work that series
+    as the bench "pulling craft from the room rather than coaching
+    it" — the opposite direction from this list's thesis. ANTM S03's
+    "runway coaching" is generic critique-language, the same false-
+    positive class the 2026-08-01 pass already flagged on MasterChef
+    (US)'s early seasons.
+  - **Decision:** no candidate cleared the excellence gate. Confirms
+    a sixth time (following the five priors logged above) that this
+    list's mentor/coach-authority well is fully drained catalog-wide.
+    Theme file not touched this pass; ledger row left as-is,
+    consistent with how the five prior zero-ship reviews on this
+    same list were logged.
 
 ## Notes
 
