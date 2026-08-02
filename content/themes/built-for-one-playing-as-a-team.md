@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-02
 featured: false
 related:
   - the-judges-picked-a-side
@@ -71,4 +71,10 @@ entries:
     rank: 10
     title: "One coaching chair holds two coaches for the first time in the format's run."
     blurb: "A country duo shares a single seat on the panel, making recruiting decisions together instead of alone. The season is remembered for the structural novelty more than the competitive heat it produced."
+  - show: the-challenge
+    season: 12
+    season_label: "S12 · Fresh Meat"
+    rank: 11
+    title: "The franchise's first pairing experiment forces solo competitors to sink or swim together."
+    blurb: "Each returning veteran drafts a rookie stranger from outside the cast, and every mission — and every elimination — falls on the pair as a single unit. The franchise's first paired format, testing whether team stakes could hold against its usual individual rhythm."
 ---
