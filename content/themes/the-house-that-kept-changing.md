@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-08-02
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -32,75 +32,93 @@ entries:
     title: "The first season to leave the country, chasing laughs over drama."
     blurb: "Three Americans, two Britons, a German, and an Australian share a Notting Hill flat for the format's first shoot entirely outside the US, with producers deliberately aiming lighter than the two heavier seasons before it."
   - show: the-real-world
+    season: 6
+    season_label: "S06 · Boston (1997)"
+    rank: 4
+    title: "The first season with its own pre-broadcast casting special."
+    blurb: "A converted Beacon Hill firehouse hosts the group job, but the real first happens before the premiere: a standalone casting special introduces the roommates ahead of time, a promotional device the franchise keeps reusing."
+  - show: the-real-world
+    season: 7
+    season_label: "S07 · Seattle (1998)"
+    rank: 5
+    title: "The first crack in the show's own 'total strangers' premise."
+    blurb: "Two roommates already know each other from college, and the opening narration quietly swaps 'seven strangers' for 'seven people' — a small amendment, but the first time the franchise admits its founding premise had shifted."
+  - show: the-real-world
     season: 8
     season_label: "S08 · Hawaii (1999)"
-    rank: 4
+    rank: 6
     title: "The house leaves the mainland for the first time."
     blurb: "A Diamond Head beach house puts the cast outside the contiguous United States for the first time, a real geographic first distinct from London's leave-the-country season, with a Waikiki surf-shop job the format hadn't tried before."
   - show: the-real-world
     season: 9
     season_label: "S09 · New Orleans (2000)"
-    rank: 5
+    rank: 7
     title: "Every piece of the house style finally runs at once."
     blurb: "A public-access TV station group job, a full-cast trip to South Africa, and a crossover stunt with sister series Road Rules — New Orleans is the season where the format's established pieces all fit together in one run."
   - show: the-real-world
     season: 10
     season_label: "S10 · Back to New York (2001)"
-    rank: 6
+    rank: 8
     title: "The franchise finally breaks its own new-city rule."
     blurb: "A decade after the original loft, the format revisits a prior city for the first time and treats the return as an event, with a visibly bigger production. The group job now carries real stakes — losing it costs your spot in the house."
   - show: the-real-world
+    season: 11
+    season_label: "S11 · Chicago (2002)"
+    rank: 9
+    title: "A casting first, and the franchise's fastest turnaround yet."
+    blurb: "A converted Wicker Park bookstore and coffeehouse hosts the first Real World cast with two openly gay roommates living together, filmed on the tightest production turnaround the format had run to date."
+  - show: the-real-world
     season: 12
     season_label: "S12 · Las Vegas (2002)"
-    rank: 7
+    rank: 10
     title: "The house becomes a hotel suite for the first time."
     blurb: "The cast trades a private residence for a suite inside The Palms Casino Resort, working events at the resort's own nightclub. The format's first hotel-set season, and a noticeably louder, faster gear for the show."
   - show: the-real-world
     season: 13
     season_label: "S13 · Paris (2003)"
-    rank: 8
+    rank: 11
     title: "The cast lands somewhere English isn't the first language."
     blurb: "Paris is the first season set in a country where English isn't the primary language, and the shared group job disappears — each roommate takes an individual placement instead, a real break from the format's long-running single-job structure."
   - show: the-real-world
     season: 21
     season_label: "S21 · Brooklyn (2009)"
-    rank: 9
+    rank: 12
     title: "A casting first lands back in the city the format started in."
     blurb: "A DUMBO loft over the Brooklyn Bridge — back in the city where the whole format began — hosts the franchise's first openly transgender roommate, a genuine casting milestone for a show whose casting had already changed a great deal."
   - show: the-real-world
     season: 24
     season_label: "S24 · Back to New Orleans (2010)"
-    rank: 10
+    rank: 13
     title: "The first season housed in an actual residence, not a built set."
     blurb: "On the franchise's second trip to New Orleans, eight strangers share an Uptown residential property instead of a purpose-built loft or hotel, taking on volunteer rebuilding work in the years following Hurricane Katrina."
   - show: the-real-world
     season: 29
     season_label: "S29 · Ex-Plosion (2014)"
-    rank: 11
+    rank: 14
     title: "The founding narration retires, and the house grows mid-season."
     blurb: "A San Francisco season overhauls three habits at once: the original seven-strangers narration is gone, cast members get personal smartphones for the first time, and the house expands well past its usual seven roommates."
   - show: the-real-world
     season: 30
     season_label: "S30 · Skeletons (2014)"
-    rank: 12
+    rank: 15
     title: "A house that never stops changing shape, one guest at a time."
     blurb: "A rotating visitor from a roommate's past — family, an ex, an old friend — moves into the Chicago house for one week at a time all season long, a structural twist new to the format that the show never quite repeats."
   - show: the-real-world
     season: 31
     season_label: "S31 · Go Big or Go Home (2016)"
-    rank: 13
+    rank: 16
     title: "The house finally imports its own spinoff's competition mechanic."
     blurb: "Staying in the Gold Spike penthouse now requires completing missions borrowed directly from the franchise's own Challenge and Road Rules spinoffs — the clearest structural crossover the original format had ever attempted."
   - show: the-real-world
     season: 32
     season_label: "S32 · Seattle: Bad Blood (2016)"
-    rank: 14
+    rank: 17
     title: "Newcomers arrive under a cover story, and the house phone disappears."
     blurb: "Seven new roommates are told during casting they're joining Road Rules — the real reason, genuine prior history with the original cast, waits until move-in day. It's also the first season to swap the house phone for personal smartphones."
   - show: the-real-world
     season: 33
     season_label: "S33 · Atlanta (2019)"
-    rank: 15
+    rank: 18
     title: "The franchise leaves linear MTV for its first streaming home."
     blurb: "A bed and breakfast in Atlanta hosts the franchise's move off linear MTV broadcast entirely, landing instead on Facebook Watch with weekly episodes and daily bonus clips — the format's first fully streaming home."
 ---
