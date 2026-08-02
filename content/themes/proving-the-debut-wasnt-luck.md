@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-02
 featured: false
 related:
   - firsts
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "Same five specialists, a season willing to go further"
     blurb: "The Fab Five stay in Atlanta's orbit but widen who counts as a nominee, trusting a format centered on one week and one person's whole story. The rapport earned in the debut run does the heavy lifting from episode one."
+  - show: the-challenge
+    season: 2
+    season_label: "S02 · Real World/Road Rules Challenge"
+    rank: 15
+    title: "The team-vs-team spine locks into place a season after the rough draft"
+    blurb: "Road Rules All-Stars proved returnees made good TV; this one proves the format itself works. Real World alumni face Road Rules alumni for the first time, and the team-vs-team rivalry spine that carries the franchise for the next two decades locks into place here."
 ---

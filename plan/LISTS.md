@@ -112,7 +112,7 @@ last time a curator actually looked.
 | when-the-reward-pointed-somewhere-else | craft | 2026-07-20 | 2026-07-20 | |
 | twice-in-one-year | era | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (14→15 entries, 4→5 shows). Big Brother S09 "The Winter Couples" entry, rank 8 — the season's own file states plainly it's "the only Big Brother season to air in winter," premiering February 12, 2008, five months ahead of that year's regular summer edition (S10, July 13, 2008; premiere dates confirmed via both seasons' own frontmatter), a genuine calendar-pace match for this list's twice-in-a-year thesis distinct from every other show already on the list (ANTM, DWTS, Project Runway, So You Think You Can Dance). Confirmed via a full `show: big-brother` grep across every `content/themes/*.md` that S09's four prior ledger appearances (`built-for-one-playing-as-a-team` — couples-team-structure fact; `every-summer-gets-its-own-twist` — twist-history fact; `when-scripted-went-dark` and `the-schedule-didnt-ask-permission` — both staking the writers'-strike-as-cause fact; `tried-once-never-repeated` — the one-off-swing fact) each stake a materially different angle from this list's pure calendar-pacing claim; the blurb here deliberately doesn't restate the strike as its primary thesis (already spent twice) and instead frames the fact as "the only year this house... runs twice." Inserted at rank 8, directly below Project Runway S03 (2006) and above So You Think You Can Dance S05 (2009) — chronologically correct for the list's year-ordered structure. Existing ranks 8-14 shifted to 9-15. List now runs 15 entries across 5 shows. |
 | when-age-became-the-casting-brief | craft | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (10→11 entries). Bachelorette S15 "Hannah Brown" entry, rank 8 — the season's own eyebrow ("Youngest lead to date") and body text ("The youngest Bachelorette to that point takes the calendar") state the lead's age as the season's defining casting fact, paired with producers stretching the book to its longest modern run in response — a direct match for this list's single-individual age-as-organizing-fact thesis, the same shape as the existing DWTS S07 entry one rank up. Confirmed via a full `show: bachelorette` grep across every `content/themes/*.md` that S15 has zero prior appearances anywhere in the 205-list ledger (seasons 1-14 and 16-21 are all claimed elsewhere; 15 was the one gap). Inserted at rank 8, directly below DWTS S07 (rank 7) — both single-individual age facts, ahead of the ensemble-cast-range entries that follow. Existing ranks 8-10 shifted to 9-11. List now runs 11 entries across 9 shows. |
-| proving-the-debut-wasnt-luck | tone | 2026-07-20 | 2026-07-20 | |
+| proving-the-debut-wasnt-luck | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (eightieth pass, content-curator tick): 14→15 entries, first the-challenge entry on this list (14→15 shows). The Challenge S02 "Real World/Road Rules Challenge" entry, rank 15 — the season's own file states plainly the season is "the one that named the show," where "the team-vs-team spine that defines the franchise locks into place," a direct match for this list's sophomore-season-proves-the-debut-wasnt-luck thesis (S01 "Road Rules All-Stars" is explicitly the franchise's own "rough draft," "the format barely exists yet"). Confirmed via a full `show: the-challenge` grep across every `content/themes/*.md` (60+ prior appearances checked, spanning S01, S06-S8, S11-S13, S16-S17, S20-S22, S24-S25, S27-S41) that season 2 specifically had never once been staked anywhere in the ledger — genuinely unclaimed, the only gap left in the franchise's early run. Landed on this list after a `the-challenge` single-show gap census (found 12 unclaimed seasons out of 41: S02-05, S09-10, S14-15, S18-19, S23, S26) turned up several format-sequel candidates (S05 "Battle of the Seasons" inventing the season-vs-season grouping structure, S09/S10/S18 "sequel proves the original format could carry a season without a fluke") that read thematically close to this list but didn't fit its strict literal-season-2 convention (every existing entry is the show's actual sophomore season, not a mid-run format sequel) — S02 was the one candidate that satisfied both the thesis and the convention. |
 | the-doubters-had-to-walk-it-back | tone | 2026-07-20 | 2026-07-20 | |
 | when-the-vote-came-back-tied | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (12→13 entries). Drag Race All Stars S04 entry, rank 13 — the season's own eyebrow/pull text states plainly "the only tie in franchise history," and the finale deadlock is the one tie on this list that lands on the season's very last vote rather than a semifinal, nomination, or eviction stage; confirmed distinct from the show's two other appearances (`a-way-back-in` rank 5 and `no-season-sends-a-queen-home-the-same-way-twice` rank 5, both staking the LaLaParUza lip-sync re-entry mechanic, and this same list's own S11 rank 6 entry, a mid-competition semifinal-advancement tie, not a finale-level one) via a full `show: dragrace-allstars` grep across every `content/themes/*.md`. Framed on the tie's timing only — no outcome/resolution stated, matching agents.md §7 spoiler discipline (the season's own copy never confirms how the deadlock was resolved, so neither does this entry). |
 | the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
@@ -3788,6 +3788,61 @@ last time a curator actually looked.
   over). One list extended, one list searched and left clean with
   the search documented here so a future pass doesn't re-walk the
   same RHOP-reunion dead end.
+- 2026-08-02 eightieth pass (content-curator tick): **extended one
+  list**. Avoided the 24 lists already touched today by earlier
+  passes in this loop (best-hosting, best-returnees, best-villain-
+  editing, best-finales, best-non-winning-runs, best-newbie-casts,
+  the-house-that-kept-changing, tried-once-never-repeated, the-
+  judges-picked-a-side, same-license-different-rules, built-for-
+  one-playing-as-a-team, away-from-home-turf, the-city-already-
+  had-a-show, the-competition-leaves-the-country, the-slow-build-
+  was-the-point, no-template-to-copy, wealth-as-the-whole-pitch,
+  the-paycheck-writes-the-plot, running-on-muscle-memory, the-
+  company-upstairs-changed-hands, the-season-everyone-got-their-
+  audience-back, the-turnaround-skipped-a-year, no-one-got-a-
+  night-off, the-reunion-kept-changing-its-own-rules) and the four
+  confirmed-dead rows. Opened by checking `too-hot-to-handle`'s six
+  season files directly for an unclaimed cross-show fact (only 2
+  raw ledger mentions, looked under-mined) — read all six in full,
+  found a genuinely striking S04 device (the cast is told they're
+  filming an unrelated show, "Wild Love," complete with its own
+  logo and a guest host playing along, to stop anyone who
+  recognizes the format from gaming it) and the S06 "Bad Lana"
+  counterpart-AI twist, but both turned out already fully staked at
+  the show's own single-show list, `every-season-strikes-a-
+  different-bargain-with-lana`, at ranks 1-2 — and a `cover story|
+  fake show|different series|decoy` catalog-wide grep confirmed the
+  misdirection-casting device doesn't recur anywhere else in the
+  catalog, so it can't clear the ≥3-show cross-canon floor as a
+  fresh list either. Pivoted to a full single-show gap census on
+  `the-challenge` (41 filed seasons, the catalog's deepest bench) by
+  grepping every `show: the-challenge` hit across `content/themes/
+  *.md`: 29 of 41 seasons already staked somewhere, leaving 12
+  genuinely unclaimed (S02-05, S09-10, S14-15, S18-19, S23, S26).
+  Read all 12 season files directly. S05 "Battle of the Seasons"
+  (inventing the season-vs-season grouping structure "the franchise
+  still uses") and S09/S10/S18 (each an explicit format sequel
+  proving the original "wasn't a fluke" — Battle of the Sexes 2,
+  Inferno II, Duel II) all read thematically close to
+  `proving-the-debut-wasnt-luck`, but that list's own convention is
+  strict: every one of its 14 existing entries is the show's actual
+  sophomore season, never a mid-run format sequel — so none of
+  those four qualified without breaking the list's established
+  pattern. The Challenge's own literal season 2, "Real World/Road
+  Rules Challenge," did fit both the convention and the thesis: its
+  own file states the season "named the show" and that "the team-
+  vs-team spine that defines the franchise locks into place here,"
+  directly answering season 1's own self-described "rough draft"
+  status. Confirmed via the same full-ledger grep that season 2 had
+  never once been staked anywhere. Shipped: appended at rank 15
+  (14→15 entries, 14→15 shows, first the-challenge appearance on
+  this list). S23 "Battle of the Seasons (2012)" and S26 "Battle of
+  the Exes II" were also read in full as second-string candidates
+  (both explicit "the sequel doesn't fully repeat the original's
+  magic" seasons) but set aside once S02 landed cleanly — a second
+  the-challenge entry on the same list this pass would crowd a
+  list built as one-entry-per-show. See the ledger row for the full
+  accounting.
 
 ## Notes
 
