@@ -211,7 +211,6 @@ new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
-| dragrace-allstars | 11/12 | 1 |
 | survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
@@ -365,11 +364,31 @@ reunion (already correctly in `content/calendar.yml`, final part
 Both stay starred in the table above; re-verify at the next Rule 2
 pick-order check.
 
-**68 shows catalogued · 46 shows carry a gap · 47 gap-slots total**
-(46 shows × 1 deferred/actionable slot each, +1 extra deferred slot
-on `hells-kitchen`) — up from 34 shows / 35 slots after dedup. One
-row (`dragrace-allstars`) is genuinely actionable now; the other 45
-remain starred (confirmed-but-unaired).
+**Correction (2026-08-02, same-day cloud march tick):** the
+`dragrace-allstars` row this sweep added ("Season 11 concluded,
+not yet filed") is a **false positive** — Season 11 was already
+fully filed 556 commits prior (`1fceb14a`, `11-season-11.md`),
+with the show's `canon.md` ranking all eleven seasons and
+`seasons: 11` in frontmatter already matching. The sweep's own
+prose even said "frontmatter/filed both sit at 11," directly
+contradicting the "11/12 declared" row it filed — the "12"
+appears to trace to unverified fan-wiki Season 12 speculation the
+sweep's source surfaced, not an official renewal (scout-verified:
+no primary source — Wikipedia, Paramount+, trade press — confirms
+a Season 12; the cited Season 11 details — 18 queens, three
+brackets, $200,000 Lip Sync Smackdown finale, 2026-07-17 finale —
+match our already-filed Season 11 exactly). Row removed from the
+table above; no content was missing, no frontmatter change needed.
+Same failure class as the 2026-07-19 `survivor-australia`
+false-positive — a sweep-source numbering/speculation artifact,
+not unfiled content.
+
+**68 shows catalogued · 45 shows carry a gap · 46 gap-slots total**
+(45 shows × 1 deferred slot each, +1 extra deferred slot on
+`hells-kitchen`) — corrected down from the sweep's uncorrected
+46 shows / 47 slots. Every remaining slot is starred
+(confirmed-but-unaired); zero actionable Rule 2 work this tick.
+Falls through to Rule 3 per the established stall pattern.
 
 ## Sweep notes (2026-07-26, third full pass)
 
@@ -1851,4 +1870,4 @@ No calendar or gap-table action.
 | 2026-07-12 | 59 | 341 |
 | 2026-07-19 | 0 (survivor-australia S13/S14 claim corrected same-day — false positive, see notes) | 29 |
 | 2026-07-26 | 9 | 37 |
-| 2026-08-02 | 12 (1 concluded/actionable — dragrace-allstars S11 — + 11 newly confirmed-but-unaired; a pre-existing duplicate alone-australia row also deduped) | 47 |
+| 2026-08-02 | 11 (dragrace-allstars S11 claim corrected same-day — false positive, see notes — + 11 newly confirmed-but-unaired; a pre-existing duplicate alone-australia row also deduped) | 46 |
