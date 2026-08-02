@@ -6,7 +6,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-02
 featured: false
 related:
   - best-post-merge
@@ -31,40 +31,46 @@ entries:
     rank: 3
     title: "The workroom cohort fans still call the strongest the show assembled."
     blurb: "Project Runway's fourth season runs on the friction between several designers, all of them quotable. It is remembered as an ensemble — the most-cited workroom moments scatter across multiple arcs rather than gathering behind one through-line."
+  - show: survivor
+    season: 37
+    season_label: "S37 · David vs. Goliath"
+    rank: 4
+    title: "A twenty-player cast so deep the confessionals never need to lean on one voice."
+    blurb: "David vs. Goliath splits twenty new players into two tribes, and the season trusts an unusually deep bench to carry full confessional stretches from the marooning through a hot, sustained merge — the run's shape comes from the whole cast, not one storyline."
   - show: dragrace
     season: 5
     season_label: "S05"
-    rank: 4
+    rank: 5
     title: "A celebrated cast whose energy spread across the whole room."
     blurb: "Drag Race's fifth season gets quoted as an ensemble. The texture is distributed across many performers — challenge runs, Untucked moments, and runway looks that all carry weight — so the season's lasting shape comes from a deep cast, not from whoever stood last on the stage."
   - show: survivor
     season: 7
     season_label: "S07 · Pearl Islands"
-    rank: 5
+    rank: 6
     title: "A season whose loudest narratives belonged to its sharpest edges."
     blurb: "Pearl Islands gets quoted on its biggest personalities, the loud, sharp-edged players who fill every scene. The season's pirate framing rewarded going for the throat, and the runs the show still leans on are the ones that lived in the swinging."
   - show: the-challenge
     season: 28
     season_label: "S28 · Rivals III"
-    rank: 6
+    rank: 7
     title: "A pairs-format season whose best arcs scatter across the teams."
     blurb: "Rivals III runs on its partnerships, and the season's most-cited stretches spread across multiple pairs. The texture is built from teams forced to play together while barely tolerating each other — the shape of the run lives in those collisions, not in one closing team."
   - show: big-brother
     season: 13
     season_label: "S13 · Veterans vs. Newbies"
-    rank: 7
+    rank: 8
     title: "A house defined by its pairings rather than one through-line."
     blurb: "Big Brother's thirteenth season is remembered for how its dynamics lived across multiple pairs and shifting arcs. The texture comes from a house where the loudest stories belonged to several duos at once — the season's shape is distributed, not carried by a single run."
   - show: the-real-world
     season: 4
     season_label: "S04 · London (1995)"
-    rank: 8
+    rank: 9
     title: "An international cast that turns culture clash into ensemble texture."
     blurb: "Drawn from four countries into one Notting Hill flat, London's ensemble carries the season collectively — small culture-clash beats scattered across every roommate, not one dominant arc. The lighter tone the show chased needed a full house, not a single lead."
   - show: top-chef
     season: 14
     season_label: "S14 · Charleston"
-    rank: 9
+    rank: 10
     title: "A split cast of rookies and returning veterans doubles the season's depth."
     blurb: "Charleston splits its roster between new chefs and returning veterans brought back to raise the level, and no single half carries the story. The deep bench works every Lowcountry challenge together — the season's shape comes from the whole kitchen, not one standout cook."
 ---
