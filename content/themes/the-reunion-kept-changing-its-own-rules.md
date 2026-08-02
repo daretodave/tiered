@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: "2026-07-28"
+last_revised: "2026-08-02"
 featured: false
 related:
   - best-reunion-specials
@@ -72,4 +72,10 @@ entries:
     rank: 10
     title: "Only the second season in three decades to skip the reunion entirely."
     blurb: "Eleven guests rotate through the West Loop house across the season, a structural twist new to the format on its own. Skeletons also closes without a reunion — only the second time in the show's history, after Season 10."
+  - show: rhop
+    season: 6
+    season_label: "S06"
+    rank: 11
+    title: "Three parts becomes four, and the reunion keeps growing to match the cast."
+    blurb: "Season six pushes the reunion to four parts, one more than Season 5's expansion, making it the longest closing format RHOP had run yet. The number keeps climbing as the cast grows — the show's reunion length has become its own escalating subplot."
 ---
