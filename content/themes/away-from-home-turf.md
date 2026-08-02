@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-02
 featured: false
 related:
   - a-change-of-address
@@ -67,34 +67,40 @@ entries:
     rank: 9
     title: "A new-era cast gets its first away-from-home stress test in two countries"
     blurb: "Erika Girardi's system-shifting arrival dominates the headlines, but the format runs its real test elsewhere — a stretch in Amsterdam and the Cayman Islands that strips away every piece of the city's social infrastructure the cast usually leans on."
+  - show: rhobh
+    season: 9
+    season_label: "S09"
+    rank: 10
+    title: "A cast still settling gets the franchise's best travel itinerary in years"
+    blurb: "Denise Richards arrives as a full Housewife the same season Rome and Paris put the group about as far from Beverly Hills as this format has traveled — atmospheric turf a still-reshuffling cast leans on to find its new footing."
   - show: rhodubai
     season: 1
     season_label: "S01"
-    rank: 10
+    rank: 11
     title: "A cast built on relocated wealth gets pulled somewhere even less familiar"
     blurb: "Dubai's expat social world is already unmoored from any single home country, and a mid-season getaway pulls the founding six further still from their controlled environment — a stress test on a cast barely a season old."
   - show: rhodubai
     season: 2
     season_label: "S02"
-    rank: 11
+    rank: 12
     title: "Bali is the swing that makes the sophomore season feel earned"
     blurb: "Five of the founding six return, one new full-timer joins, and a mid-season trip to Bali becomes the real hinge — proof the format's move to the Gulf wasn't an idea that couldn't survive leaving Dubai."
   - show: the-real-world
     season: 29
     season_label: "S29 · Ex-Plosion (2014)"
-    rank: 12
+    rank: 13
     title: "The group trip stops being a set piece and starts setting up the twist"
     blurb: "An early trip does the format's usual scene-setting work here, but it also doubles as the mechanism that sets the season's namesake twist in motion — the device repurposed as plot engine, not just a change of scenery."
   - show: rhoa
     season: 8
     season_label: "S08"
-    rank: 13
+    rank: 14
     title: "The season that skips its own centerpiece, and the gap shows"
     blurb: "No international trip, a shorter episode order, and a new housewife whose register never quite lands — season eight is the clearest evidence of how much editorial weight the device usually carries, made visible by its absence."
   - show: americas-next-top-model
     season: 13
     season_label: "S13"
-    rank: 14
+    rank: 15
     title: "Dropping the international leg costs the format its strongest engine"
     blurb: "Cycle 13 swaps the usual trip abroad for domestic-only locations and narrows the cast around an explicit height cap. Both bets read as novelty rather than depth — proof that annual stretch overseas was doing real editorial work."
 ---
