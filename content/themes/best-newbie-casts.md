@@ -6,7 +6,7 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-02
 featured: false
 related:
   - firsts
@@ -67,4 +67,10 @@ entries:
     rank: 9
     title: "Miami's founding six play established socialites from the first scene, no ramp-up required."
     blurb: "Six women who already knew Miami's social scene by heart — old family names, new money, sun-soaked ambition — click into place immediately. The season's own pitch is glamour and friction in equal measure, and the founding cast delivers both without a settling-in period."
+  - show: rhonj
+    season: 1
+    season_label: "S01"
+    rank: 10
+    title: "A founding cast whose real-life history did the show's work for it."
+    blurb: "Five women already inside the same north Jersey social world arrive with real grievances, not manufactured backstory. The format is still finding its footing, but the cast never needs a settling-in period — the dinner-table friction was already real."
 ---
