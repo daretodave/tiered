@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-02
 featured: false
 related:
   - the-place-fought-back
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "The live all-night finale runs its last lap"
     blurb: "Season twelve closes out the format's longest-running tradition — the live, overnight finale tattoo session — before the show retires it for good. A fitting send-off for the mechanic that always doubled as an endurance test."
+  - show: alone
+    season: 10
+    season_label: "S10 · Frozen"
+    rank: 11
+    title: "A shift to winter turns the night itself into the format's hardest test"
+    blurb: "Season ten moves the show to frozen Labrador, where the first night's shelter choices carry more weight than any summer season ever demanded. Fire and warmth stop being comfort and become the only thing between a survivalist and a cold that never lets up after dark."
 ---
