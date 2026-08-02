@@ -91,7 +91,7 @@ last time a curator actually looked.
 | two-channels-same-night | craft | 2026-08-01 | 2026-08-01 | extended 11→12 entries (7 shows held). Added dancing-with-the-stars S33 "Fall 2024" rank 8 (Disney+/ABC simulcast held through a second, uneventful year with the Hough/Ribeiro hosting team — confirmed via full `season: 33` grep across every `content/themes/*.md`, zero prior DWTS-33 hits anywhere in the catalog). Show now at 3/3 informal per-show cap. |
 | the-elimination-round-never-keeps-its-name | single | 2026-08-01 | 2026-08-01 | extended 2026-08-01 (content-curator tick, Rule 2 confirmed stalled per `plan/CADENCE.md`'s fully-future-dated gap table (earliest 2026-08-05), fell through to Rule 3 per the standing priority order; avoided every list already touched today — the-cast-was-still-arriving, played-it-straight, the-schedule-didnt-ask-permission, the-cast-outgrew-the-format, before-the-spinoff-had-a-name, running-long-running-short). First touch since creation (2026-07-19), a single-show list (no cross-canon floor applies). 18→20 entries, single show (The Challenge) throughout by design. Read every not-yet-used-here The Challenge season file (S1-6, S9-11, S14-15, S18-19, S22-24, S26-28, S32, S34, S37, S39) before drafting. Final Reckoning (S32) entry, rank 13 — the season's own lede states plainly it "close[s] out the Reckoning trilogy," a title that names the arc's own ending rather than introducing a new mechanic, a fresh facet of this list's naming-convention thesis; confirmed via a full `show: the-challenge` grep across every `content/themes/*.md` that S32's sole prior appearance (`the-cold-open-then-never-again`, an unrelated episode-structure fact) never touches the naming axis. Battle for a New Champion (S39) entry, rank 18 — the season's own `cast_size_caption` ("all veterans, none with a win") and lede state the cast is built entirely from never-won veterans, so the title states the season's whole casting premise upfront rather than branding an in-game mechanic; confirmed via the same grep that S39's sole prior appearance (`the-cold-open-then-never-again`, the same unrelated episode-structure fact) never touches the naming axis either. Considered and rejected: Battle of the Bloodlines (S27) — its title does name a real casting gimmick (veterans paired with family), but the season's own text calls it "the structural sibling of Fresh Meat," too close a restatement of the already-claimed S12 Fresh Meat entry's naming logic to add cleanly; Rivals II (S24) and Rivals III (S28) — both already implicitly covered by the S21 Rivals entry's own point that "the franchise reruns the label itself... across several later seasons," a second stake would pad rather than add a fact; Spies, Lies & Allies (S37) — no equivalent in-file text names an elimination round or mechanic distinctly from the season's rookie-infiltration premise already covered elsewhere (`the-cast-outgrew-the-format`), so a naming-convention claim couldn't be grounded. Ranks 13-20 renumbered to seat both new entries in season-chronological position; ranks 1-12 unchanged. |
 | the-clock-had-to-make-room | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (90 Day Fiancé S03 entry, rank 3 — the one season here where the six-couple shape held completely steady, no comeback/crossover wrinkle; list now runs 11 entries, matching the full 11 filed flagship seasons) |
-| the-city-already-had-a-show | craft | 2026-07-19 | 2026-07-19 | |
+| the-city-already-had-a-show | craft | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (Rule-2 season-fill fully stalled, fourth straight weekly sweep — fell through to Rule 3; this was the coldest untouched craft/single row in the ledger, created 2026-07-19 and never revisited). The Challenge S34 "War of the Worlds 2" entry, new rank 3 — the season's own file states it "filmed across Chiang Mai and Phuket, Thailand," premiering 2019-08-28, which lands five weeks ahead of Below Deck S07's own Phuket anchor (premiered 2019-10-01, already staked at rank 4/prior rank 3) — a tighter same-year pairing than the list's existing 13-year-apart Phuket entries (below-deck S07 vs. ANTM S06), on par with the rank-1/2 Marrakech pair's five-week gap. Confirmed via full `show: the-challenge` grep across every `content/themes/*.md`: S34 already appears in `one-season-two-flags` (rank 2, staked on the US-vs-UK rivalry structural layer — a distinct fact from the location coincidence staked here) and nowhere else; zero prior appearance in this list. Entries 3-15 renumbered to 4-16 to slot the new entry into its earned position ahead of the existing Phuket pair; americas-next-top-model and the-real-world both hold at their existing 3/3 informal per-show cap, the-challenge is a brand-new show for this list (12th distinct show, list-diversity floor of 3 cleared many times over). List now runs 16 entries, well under the 24-entry soft ceiling. Considered and rejected: Real Housewives of Atlanta (any season) — RHOA's Atlanta tenure since 2008 is already the reference anchor cited by the existing real-world S33 and so-you-think-you-can-dance S18 entries ("the city has been another network's steadiest social-drama address since 2008"); adding an actual RHOA entry would just restate the same fact from the other side, not a new coincidence. Hell's Kitchen S19 "Las Vegas" (Caesars Palace, first-ever Nevada production) — genuinely unclaimed for this specific angle, but its "left California for the first time" fact reads too close to the already-staked `everything-but-the-pass-keeps-changing` rank-10 entry on the same season ("The kitchen leaves California for the first time in the show's run"); held back to avoid a soft-duplicate framing even though the underlying blurb text differs. Shark Tank S12 (Las Vegas) and Ink Master S10 (partial Las Vegas leg) — both too thin on their own season files to ground a genuine "the city was already claimed" coincidence beyond a bare location line, no lede/pull text to draw from. |
 | the-twist-is-the-format | single | 2026-07-19 | 2026-07-19 | |
 | the-broadcast-wasnt-the-whole-show | craft | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 · The Debrief companion show, its own distinct fact from the-fire-pit-never-moved's same-day S13 entry) |
 | a-second-life-built-into-the-format | craft | 2026-07-19 | 2026-07-19 | |
@@ -3563,6 +3563,60 @@ last time a curator actually looked.
     Theme file not touched this pass; ledger row left as-is,
     consistent with how the five prior zero-ship reviews on this
     same list were logged.
+- 2026-08-02 seventy-fifth pass (content-curator tick): Rule-2
+  season-fill re-confirmed stalled a fourth full weekly sweep — every
+  remaining `plan/CADENCE.md` gap-table row is still starred/confirmed-
+  but-unaired across all 45 shows carrying a gap, zero actionable
+  Rule-2 work. Fell through to Rule 3. Avoided the fifteen lists
+  already touched earlier today by prior ticks in this loop
+  (away-from-home-turf, best-finales, best-hosting, best-returnees,
+  best-villain-editing, built-for-one-playing-as-a-team, no-one-got-
+  a-night-off, running-on-muscle-memory, the-company-upstairs-changed-
+  hands, the-house-that-kept-changing, the-paycheck-writes-the-plot,
+  the-reunion-kept-changing-its-own-rules, the-season-everyone-got-
+  their-audience-back, tried-once-never-repeated, the-judges-picked-
+  a-side). Picked the coldest untouched row in the whole ledger:
+  `the-city-already-had-a-show` (craft, 15 entries since its
+  2026-07-19 creation, never revisited in the eighteen days since).
+  Read all 15 existing entries in full to map the per-show
+  distribution and the city clusters (Marrakech, Phuket, Manchester,
+  Las Vegas, Sydney, Atlanta, Miami, D.C.) before hunting a new
+  coincidence. Grepped every season file's `location:` field for the
+  list's already-claimed cities and found The Challenge S34 "War of
+  the Worlds 2" — its own file states it filmed "across Chiang Mai
+  and Phuket, Thailand," premiering 2019-08-28, five weeks ahead of
+  Below Deck S07's own Phuket premiere (2019-10-01, already on this
+  list). That's a tighter same-year pairing than the list's existing
+  Phuket cluster (below-deck S07 2019 vs. ANTM S06 2006, thirteen
+  years apart), genuinely on par with the rank-1/2 Marrakech pair's
+  own five-week gap — earned a top-tier slot, not a tail append.
+  Confirmed via full `show: the-challenge` grep across every
+  `content/themes/*.md` that S34's only other appearance
+  (`one-season-two-flags` rank 2) stakes the US-vs-UK rivalry
+  structural-format fact, not the location coincidence — a distinct
+  fact, safe to reuse the season. Inserted at rank 3 per the
+  insertion/rebase rule, renumbering the fifteen existing entries at
+  ranks 3-15 down to 4-16. List now runs 16 entries (well under the
+  24-entry soft ceiling), 12 distinct shows (up from 11), with
+  americas-next-top-model and the-real-world both already sitting at
+  their 3/3 informal per-show cap and untouched this pass. Considered
+  and rejected: Real Housewives of Atlanta (any season) — RHOA's
+  Atlanta tenure since 2008 is already the reference anchor the
+  existing real-world S33 and so-you-think-you-can-dance S18 entries
+  cite ("the city has been another network's steadiest social-drama
+  address since 2008"); staking an actual RHOA entry would just
+  restate that same fact from the other side. Hell's Kitchen S19
+  "Las Vegas" (Caesars Palace, first-ever Nevada production) — a
+  genuinely unclaimed angle for this list, but its own "first time
+  production moved out of California" hook reads too close to the
+  already-staked `everything-but-the-pass-keeps-changing` rank-10
+  entry on the same season ("The kitchen leaves California for the
+  first time in the show's run"); held back rather than risk a
+  soft-duplicate framing. Shark Tank S12 and Ink Master S10 (both
+  carry a Las Vegas location line) — too thin on their own season
+  files to ground a real coincidence beyond a bare `location:`
+  field, no lede/pull/eyebrow text to draw an entry from. See the
+  ledger row for the full accounting.
 
 ## Notes
 
