@@ -6,7 +6,7 @@ category: craft
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-02
 featured: true
 featured_pull: "Five seasons where the antagonist arc ran the room — not a subplot, the whole narrative spine the rest of the cast played inside."
 related:
@@ -80,4 +80,10 @@ entries:
     rank: 11
     title: "One new addition, and the whole season's register sharpens."
     blurb: "A single cast newcomer matches, then exceeds, the group's verbal facility, and the edit centers the season on the friction that produces. Sharper and more combative than anything the franchise had aired before, with a Puerto Rico stretch that puts it on full display."
+  - show: project-runway
+    season: 13
+    season_label: "S13 · New York"
+    rank: 12
+    title: "A Manhattan cast the edit trusts to carry the whole hour on friction."
+    blurb: "Cycle 13 fills the workroom with a more confrontational ensemble than the cycles around it, and the show leans on that tension instead of the challenges. No format twist needed — the season's whole case is the room itself, sustained from open to close."
 ---
