@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-02
 featured: false
 related:
   - firsts
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "The same six women return with nobody new to introduce, a settled cast the show doesn't keep still for long."
     blurb: "Season three carries the identical six-woman cast over from the year before with zero new additions, the only run this franchise goes without introducing somebody. The lineup starts changing again the very next season."
+  - show: americas-next-top-model
+    season: 17
+    season_label: "S17 · The All Stars"
+    rank: 14
+    title: "Every contestant is a returning alumna, a full-cast swing the show never runs back."
+    blurb: "Cycle 17 fills its entire roster with alumnae from prior cycles instead of searching for new talent, trading the open-casting engine for a reunion-flavored lineup. The next cycle reverts to standard casting, and no later season repeats an all-returnee field."
 ---
