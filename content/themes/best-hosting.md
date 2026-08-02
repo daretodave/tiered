@@ -7,7 +7,7 @@ category: craft
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-08-02
 featured: false
 related:
   - best-reunion-specials
@@ -121,4 +121,10 @@ entries:
     rank: 18
     title: "A new co-host lands at the tent flap and the chemistry reads instantly."
     blurb: "Presenter changes are a genuine risk for a format this reliant on warmth, and the new pairing finds its rhythm faster than the format usually allows. The host chemistry becomes the season's most reassuring constant."
+  - show: so-you-think-you-can-dance
+    season: 17
+    season_label: "S17"
+    rank: 19
+    title: "Cat Deeley holds a three-year gap and a full judging overhaul together without the show missing a beat."
+    blurb: "The season returns after a three-year pandemic delay, condenses its callback round to a single day, and swaps out the entire judging panel — and Deeley's sixteenth year hosting is the one constant holding a genuinely disrupted format together."
 ---
