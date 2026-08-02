@@ -54,7 +54,7 @@
     "jose": "^6.0.0",
     "jsdom": "^25.0.0",
     "png-to-ico": "^2.1.0",
-    "postcss": "^8.4.0",
+    "postcss": "^8.5.18",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.5.0",
