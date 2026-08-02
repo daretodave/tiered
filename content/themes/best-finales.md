@@ -6,7 +6,7 @@ category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-02
 featured: true
 featured_pull: "Seven finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
 related:
@@ -62,4 +62,10 @@ entries:
     rank: 8
     title: "A judge's real goodbye gives the closing episodes an occasion the format hadn't earned on its own."
     blurb: "Katy Perry's mid-run exit turns the last stretch into a genuine send-off for seven seasons of panel chemistry, not a staged one. The closing register works because the circumstance was real, and the finale earns weight the format hadn't been carrying all year."
+  - show: ink-master
+    season: 17
+    season_label: "S17 · Hometown Heroes"
+    rank: 9
+    title: "A rare four-finalist finale gives the format one extra round to prove itself."
+    blurb: "Hometown Heroes builds its whole season around regional pride, then sends a fourth artist into the last round — only the second time the show has ever gone that deep. That extra chair doesn't feel like padding — it's one more genuine test before the crown changes hands."
 ---
