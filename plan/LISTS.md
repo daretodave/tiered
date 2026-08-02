@@ -123,7 +123,7 @@ last time a curator actually looked.
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Bake Off S10, S16 entries — both genuinely unclaimed anywhere in the ledger, confirmed via grep; the two other apparent gaps, S09/S15, stay excluded on purpose because `running-on-muscle-memory` already spends their identical "settled, nothing new" address fact) |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
-| wealth-as-the-whole-pitch | tone | 2026-07-21 | 2026-07-21 | |
+| wealth-as-the-whole-pitch | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, seventy-eighth pass): 13→14 entries. Below Deck flagship S01 "Sint Maarten" entry, rank 14 — the season's own file states plainly that "the clear-water Caribbean backdrop gave the show a visual register it would return to again," a distinct wealth-as-visual-identity fact from this show's four other ledger appearances (`before-the-spinoff-had-a-name` stakes the format-origin fact, `the-charter-map-as-the-whole-story` stakes the location-variety fact, `the-paycheck-writes-the-plot` stakes the crew-hierarchy fact, `where-the-warmth-ran-out` stakes a tonal-erosion fact) — confirmed via full `show: below-deck$` grep across every `content/themes/*.md` before writing. Considered and rejected: RHOD S01, RHOSLC S01 (both open on faith/church social registers, not a wealth/real-estate pitch); RHONJ S01 (opens on shared-history/dinner-table confrontation, not real estate); Below Deck Down Under S01 (franchise-identity/expansion register, better fit for `new-flags-planted-fast`, risked over-concentrating the Below Deck franchise on this list); Summer House S01 (modest Hamptons rental, too weak a wealth-pitch to ground a claim); Selling Sunset S01 and Southern Charm S01 (both already at or past their informal per-show stake count elsewhere in the catalog for this exact thesis). |
 | the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
 | the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
 | the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
@@ -184,7 +184,7 @@ last time a curator actually looked.
 | missing-on-purpose | craft | 2026-07-25 | 2026-07-25 | |
 | one-rule-never-bends | craft | 2026-07-25 | 2026-07-25 | |
 | down-to-just-the-two-of-you | craft | 2026-07-25 | 2026-07-25 | |
-| the-turnaround-skipped-a-year | craft | 2026-07-25 | 2026-07-25 | |
+| the-turnaround-skipped-a-year | craft | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, seventy-eighth pass): 10→12 entries, 5→6 shows. Love Island UK S09 "Winter, South Africa" (rank 3) + S10 "Summer 2023" (rank 4) inserted — Maya Jama's own hosting run supplies the connective fact: her winter debut season states she "steps into the role for the first time," and the summer season that follows states she is "easing into the Mallorca chair" after "debuting on the winter edition." The two premieres land 140 days apart (2023-01-16 to 2023-06-05), tighter than the-circle's confirmed-back-to-back 147-day pair, so the new pair inserts above it and every entry from the-circle down rebases by +2 (was rank 3→12, now rank 5→12... existing ten entries shifted to ranks 5–12). Rejected the obvious first candidate, Big Brother S09→S10 (also a 152-day gap, also a real production-calendar shift back to summer): that exact fact — a once-a-summer format running a second time inside one calendar year — is already the entire premise of the sibling list `twice-in-one-year` (S09 sits at rank 8 there with the identical framing), so staking it again here would read as a duplicate of a related list rather than a genuinely distinct angle. Confirmed via full `show: love-island-uk` grep that neither S09 nor S10 has been staked for a turnaround/gap fact anywhere else in the catalog. |
 | no-one-got-a-night-off | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick): 10→11 entries. Alone S10 "Frozen" entry, rank 11 — the season's own file states plainly that "in frozen conditions, the first night's choices carry more weight than in any previous season" and that the winter shift means "shelter and caloric demands dramatically elevated," a direct match for this list's literal-no-rest thesis: winter turns a night of failed shelter from mere discomfort into a genuine hazard, the same nightly stakes this list's other entries stake for wildlife fences, missing shelter kits, and live overnight finales. Confirmed via a full `show: alone` + `season: 10` grep (multiline, across every `content/themes/*.md`) that S10's one other ledger appearance (`the-ten-items-are-never-the-same-ten-items` rank 5) stakes a different fact entirely — the gear-list-doesn't-transfer-across-seasons angle, not the nightly life-or-death stakes staked here. Considered and rejected before landing on Alone S10: Survivor S14 Fiji (have-nots camp runs with "no shelter, no rice, no fire," a strong literal fact, but already staked at `the-slow-build-was-the-point` rank 10 for a related-enough pre-merge-hardship angle that a second stake here read too close to a duplicate); The Challenge S30 "Dirty 30" and its "franchise's longest finals approach to date" endurance-close language (too close to the already-shipped S32/S35 entries on this same list, and the-challenge is already at its informal 2-entry cap); Survivor S38 "Edge of Extinction" (the Edge-beach premise is genuinely rough in reality, but the season's own file never states the hardship in the text itself — nothing to ground the claim in); Amazing Race S36 and S38 (their "no non-elimination legs" facts are about elimination stakes, not physical rest, off-thesis); Big Brother's have-not/slop-bed mechanic (no season file in the catalog states it directly — nothing to cite); Project Runway, Top Chef, and Hell's Kitchen (checked for marathon-sewing/overnight-service tropes; no season file states an overnight-format fact in its own text). Ink Master held at its existing 3-entry cap; the-challenge held at 2. List now runs 11 entries across 7 shows. |
 | the-room-kept-changing-size | single | 2026-07-25 | 2026-07-25 | |
 | the-diners-were-never-extras | craft | 2026-07-25 | 2026-07-25 | |
@@ -3718,6 +3718,40 @@ last time a curator actually looked.
   scope change belonging to a future rewrite, not a same-tick
   extension. Left `no-template-to-copy` and `the-competition-leaves-
   the-country` `last_reviewed`-only bumped, no content change.
+
+- 2026-08-02 seventy-eighth pass (content-curator tick): **extended
+  two lists**, no new concept cleared the gate. Shipped
+  `wealth-as-the-whole-pitch` (tone, 13→14 entries): Below Deck
+  flagship S01 "Sint Maarten" at rank 14, grounded in the season's
+  own "clear-water Caribbean backdrop gave the show a visual
+  register it would return to again" line — a wealth-as-visual-
+  identity fact distinct from the show's four other ledger stakes
+  (format-origin, location-variety, crew-hierarchy, tonal-erosion).
+  Also shipped `the-turnaround-skipped-a-year` (craft, 10→12
+  entries, 5→6 shows): Love Island UK S09 "Winter, South Africa"
+  and S10 "Summer 2023" inserted at ranks 3–4 on a 140-day premiere
+  gap tied to Maya Jama's own hosting run (her winter debut, then
+  "easing into the Mallorca chair" as her first summer edition) —
+  tighter than the-circle's confirmed-back-to-back 147-day pair, so
+  the-circle and everything below it rebased down by two ranks.
+  Rejected the first candidate for that slot, Big Brother S09→S10
+  (a near-identical 152-day winter-to-summer gap): that exact fact
+  is already the entire premise of the sibling list
+  `twice-in-one-year` (S09 sits there at rank 8 with the same
+  framing), so staking it again here would duplicate a related list
+  rather than add a distinct angle. Before landing on these two,
+  worked the standing search order first: `never-needed-a-villain`,
+  `the-blackout-had-a-loophole`, and `the-doubters-had-to-walk-it-
+  back` were all opened and searched (RHOD/RHOSLC/RHONJ S01 wealth-
+  pitch mismatches, Shark Tank S01 and ANTM S24 doubt-framing
+  mismatches) and came up dry — no unclaimed, grounded fact found
+  in any of the three after a real search, so all three are left
+  untouched, `last_reviewed` not bumped since no review pass was
+  logged against them this tick. Did not touch any of the ~15 lists
+  already extended earlier today by prior passes in this loop, nor
+  the confirmed-dead rows (`the-judges-picked-a-side`,
+  `same-license-different-rules`, `no-template-to-copy`,
+  `the-competition-leaves-the-country`).
 
 ## Notes
 

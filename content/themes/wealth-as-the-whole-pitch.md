@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-02
 featured: false
 related:
   - the-cast-arrived-pre-famous
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "Five seasons in, the Beverly Hills pitch still hasn't lost its shine"
     blurb: "New cast additions and a trip to Amsterdam test whether the format can still lean on aspirational real estate as its hook this deep into a run. It can — this is the early era's high point, mansions and all."
+  - show: below-deck
+    season: 1
+    season_label: "S01 · Sint Maarten"
+    rank: 14
+    title: "A superyacht charter format builds its visual identity on wealth before anything else"
+    blurb: "The founding season assembles the whole format aboard a charter yacht off Sint Maarten, and the clear-water Caribbean backdrop becomes a visual register the franchise returns to for over a decade. The wealth on display sells the show before the crew drama does."
 ---
