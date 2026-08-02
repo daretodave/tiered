@@ -158,7 +158,7 @@ last time a curator actually looked.
 | new-house-rules-every-time-the-castle-reopens | single | 2026-07-23 | 2026-07-23 | |
 | some-seasons-rebuild-the-roster-others-just-move-the-furniture | single | 2026-07-23 | 2026-07-23 | |
 | the-company-upstairs-changed-hands | era | 2026-07-23 | 2026-07-23 | |
-| the-season-everyone-got-their-audience-back | era | 2026-07-23 | 2026-07-23 | |
+| the-season-everyone-got-their-audience-back | era | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, cloud march, 11→12 entries, status started→growing). Started from a `pandemic-seasons` extension attempt that dead-ended: grepped `returns? to normal|full audience|live audience returns|back in person|resumes production|after (the|a) (pandemic|shutdown|hiatus)|post-pandemic|return to (full|in-person)` (case-insensitive) across every `content/shows/**/seasons/*.md`, cross-checked all 11 hits against this list's own entries and the wider ledger. Most hits were already staked here (American Idol S19, The Voice S20, AGT S16, Love Island US S03, DWTS S30, Bachelor in Paradise S07 — the last of these is actually the *disruption* entry already claimed by `pandemic-seasons` rank 2, not a recovery fact) or thin (AGT S17 "The Panel in Form" — its own file frames the season around panel chemistry with only a passing "post-pandemic" mention, not a grounded recovery thesis). Shipped one entry: Summer House S06 "The Reset Summer" (rank 12) — the season's own pull states "a new house, a mostly new energy, after the pandemic forced the format to run without one for a year," a genuinely distinct recovery-of-format fact from its two other ledger stakes (`the-roster-never-held-still` rank 7 and `a-change-of-address` rank 9, both of which cover the cast-turnover/relocation fact, not the format-restoration fact). Also considered and rejected as already-claimed with near-identical framing during the original `pandemic-seasons` research this same pass: Project Runway S18 "New York" (its production-disruption fact is already staked at `the-workroom-outlasted-the-network` rank 7 — confirmed on a second read despite that entry's euphemistic phrasing, the underlying fact is the same pandemic-production disruption), Drag Race S12 (its remote-finale-rebuild fact is already staked verbatim at `the-season-structure-never-holds-still` rank 8), Big Brother S22 "The Second All-Stars" (its bubble-production fact already surfaces in `the-company-upstairs-changed-hands` rank 8's own blurb text — "sixteen returning houseguests move into a strict bubble" — too close to restake). List now runs 12 entries across 10 shows (Summer House now appears twice, both facts distinct). |
 | the-judging-table-never-got-to-coast | single | 2026-07-23 | 2026-07-23 | |
 | the-fire-pit-never-moved | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Love Island UK S13 entry — sleepover twist + The Debrief companion show) |
 | the-roster-never-held-still | single | 2026-07-23 | 2026-07-23 | |
@@ -3326,6 +3326,40 @@ last time a curator actually looked.
   ledger appearance (`a-change-of-address`, relocation thesis) stakes
   a hierarchy fact. Shipped both (14→16 entries, below-deck-down-under
   1→3, now at cap), bumped `last_revised`.
+- 2026-08-02 sixty-ninth pass (content-curator tick, cloud march):
+  review-due check first — every ledger row's `last_reviewed` is
+  2026-07-18 or later, well inside the 90-day window, so no review
+  batch was due. Targeted `pandemic-seasons` (era, 18 entries, 18
+  shows, real headroom under the 24-entry ceiling) for extension.
+  Grepped `pandemic|COVID|bubble format|quarantine` afresh across
+  `content/shows/**/seasons/*.md`, cross-checked every candidate
+  against the full ledger. Landed on three candidates that looked
+  clean at first pass — Project Runway S18, Drag Race S12, Big
+  Brother S22 — but a second dedup read against each candidate's
+  other ledger stake sank all three: Project Runway S18's
+  production-disruption fact is already staked (in euphemistic
+  form) at `the-workroom-outlasted-the-network` rank 7; Drag Race
+  S12's remote-finale-rebuild fact is staked near-verbatim at
+  `the-season-structure-never-holds-still` rank 8; Big Brother S22's
+  bubble-production fact already surfaces inside
+  `the-company-upstairs-changed-hands` rank 8's own blurb ("sixteen
+  returning houseguests move into a strict bubble"). `pandemic-
+  seasons` left untouched this pass — genuinely exhausted for now,
+  confirming the prior 2026-08-01 pass's own rejection notes on two
+  of these three candidates. Pivoted to the sibling recovery list
+  `the-season-everyone-got-their-audience-back` (era, 11 entries,
+  10 shows, `last_reviewed` 2026-07-23, no flags note on file yet).
+  Grepped recovery-language patterns across every season file;
+  most hits were already claimed there, and AGT S17 "The Panel in
+  Form" was too thin (its own file frames the season around panel
+  chemistry, not a grounded recovery thesis). Shipped one entry:
+  Summer House S06 "The Reset Summer" (rank 12) — the season's own
+  pull states the new house arrives "after the pandemic forced the
+  format to run without one for a year," a format-restoration fact
+  distinct from the season's two other ledger stakes (both cover
+  cast turnover / relocation, not format recovery). List now runs
+  12 entries across 10 shows, status started→growing. See the
+  ledger row for the full candidate-by-candidate accounting.
 
 ## Notes
 

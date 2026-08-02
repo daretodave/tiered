@@ -5,9 +5,9 @@ description: "Every network found its own timeline for getting back to normal af
 tagline: "Nobody agreed on a shared finish line for getting back to normal — some formats found their footing again within months, others took two full years to get a live audience back in the room. <b>These are the seasons where recovery, not reinvention, was the whole argument.</b>"
 category: era
 sentiment: warm-up
-status: started
+status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-08-02
 featured: false
 related:
   - pandemic-seasons
@@ -80,4 +80,10 @@ entries:
     rank: 11
     title: "The weekend commute finally comes all the way back to Summer House"
     blurb: "Set aside during the pandemic season and eased back gradually since, the classic city-to-Hamptons rhythm runs at full strength again here — even as three new cast members join and three leave for good, the format's biggest reshuffle yet."
+  - show: summer-house
+    season: 6
+    season_label: "S06"
+    rank: 12
+    title: "Summer House gets its actual house back after a year without one"
+    blurb: "The pandemic-era season before this one ran the cast full-time with no separate house at all. Season six restores a real Hamptons property and the weekend-commute rhythm the format depends on, even as three new cast members and a relocation land in the same stretch."
 ---
