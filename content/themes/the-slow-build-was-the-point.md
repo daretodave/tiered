@@ -7,7 +7,7 @@ category: tone
 sentiment: warm-up
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-02
 featured: false
 related:
   - never-starts-cold
@@ -91,4 +91,16 @@ entries:
     rank: 13
     title: "The format's American debut takes its time finding its own rhythm"
     blurb: "The inaugural villa run opens at a measured pace while the show learns its own format in real time, then the recoupling weeks reliably spike the temperature. The steady climb becomes the blueprint every later season inherits."
+  - show: big-brother
+    season: 23
+    season_label: "S23"
+    rank: 14
+    title: "A team draft on night one that only pays off months later"
+    blurb: "Sixteen newcomers get sorted into four captain-picked teams before a single competition runs, a deliberate bet on an unproven, all-newcomer cast. The strategic payoff doesn't show itself until deep into the summer, when the newbies' own game finally catches up to the premise."
+  - show: rhony
+    season: 11
+    season_label: "S11"
+    rank: 15
+    title: "A dense season that saves its clearest payoff for the back-half"
+    blurb: "Season eleven lets real personal weight sit alongside the usual social friction instead of rushing past it. A Rome trip lands late in the run, and the production and emotional registers finally line up there — a payoff earned by everything that came before it."
 ---
