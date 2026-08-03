@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-03
 featured: false
 related:
   - away-from-home-turf
@@ -109,4 +109,16 @@ entries:
     rank: 16
     title: "The pods land in a metro area a Housewives cast already calls turf, one bridge over"
     blurb: "Season seven's D.C. run in 2024 is the strongest pod experiment since Seattle. Potomac's Housewives cast has worked the DC suburbs a bridge away since 2016."
+  - show: bachelor
+    season: 15
+    season_label: "S15"
+    rank: 17
+    title: "A hometown finale claims Cape Town nine years before a whole dating-show villa does"
+    blurb: "Season 15's finale swing lands in Cape Town in 2011, the furthest a hometown leg had traveled to that point. An unrelated dating format claims the exact same skyline for a full season nine years later."
+  - show: love-island-uk
+    season: 6
+    season_label: "S06"
+    rank: 18
+    title: "A winter villa relocates to the same Cape Town skyline a Bachelor finale already used"
+    blurb: "The franchise's first winter edition moves its whole villa to Cape Town in 2020, new host and new continent at once. A returning Bachelor had already used the same city for a single finale leg nine years earlier."
 ---
