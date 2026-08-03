@@ -153,7 +153,7 @@ last time a curator actually looked.
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
 | two-coasts-one-open-call | single | 2026-07-23 | 2026-07-23 | |
-| the-advantage-was-never-free | craft | 2026-07-23 | 2026-07-23 | |
+| the-advantage-was-never-free | craft | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (ninetieth pass, content-curator tick): first touch since creation (2026-07-23). 10→11 entries, survivor now 2/11 on this list. Survivor S41 "New Era I" entry, inserted at rank 2 (existing ranks 2-10 shifted to 3-11) — the season's own `format_changes` field and body text name the Shot in the Dark directly: a guaranteed vote-safety draw that carries a literal one-in-six chance of eliminating the player outright instead of nullifying the vote against them, a distinct and narrower craft fact from this list's own cost-of-holding-an-advantage thesis than any existing entry states (every other entry's cost is strategic/social; this one's cost is the game itself). Confirmed via a full `show: survivor` grep across every `content/themes/*.md` that S41's three prior ledger appearances (`firsts` rank 3, `survivor-pillars` rank 3, `pandemic-seasons` rank 1) each stake the season's broader post-pandemic-reset/new-mechanics-arriving-together fact as their primary thesis, mentioning the Shot in the Dark only as one clause inside that wider reset narrative — none isolates the advantage's own life-or-death cost as its stated claim, the fact this list specifically requires. Considered and rejected before landing here: Big Brother's Power of Veto (used identically almost every season, no single-season cost story to stake) and Ink Master's flash-challenge immunity (no season file states a real cost attached to holding it, off-thesis). |
 | no-season-sends-a-queen-home-the-same-way-twice | single | 2026-07-23 | 2026-07-23 | |
 | new-house-rules-every-time-the-castle-reopens | single | 2026-07-23 | 2026-07-23 | |
 | some-seasons-rebuild-the-roster-others-just-move-the-furniture | single | 2026-07-23 | 2026-07-23 | |
@@ -4086,6 +4086,65 @@ last time a curator actually looked.
   kitchen seriously"). See the ledger row for the full accounting.
   Entries: 15→16 (this list). Shows: still 1 (single-show list, no
   cross-canon floor).
+
+- **2026-08-03, ninetieth pass.** Rule 2 confirmed stalled again
+  (CADENCE.md's 2026-08-02 sweep: every remaining gap-slot
+  starred/confirmed-but-unaired, next sweep due 2026-08-09) — fell
+  through to Rule 3. Avoided the brief's exclusion list (`the-
+  season-structure-never-holds-still`, `running-on-muscle-memory`,
+  `down-to-just-the-two-of-you`, `not-the-usual-order`, `the-
+  format-learned-to-travel` — already touched 3x today) and the
+  named confirmed dead-ends (`firsts`, `best-location-reveals`,
+  `the-grudge-was-the-casting-call`, `best-reunion-specials`,
+  `when-the-crew-stepped-into-frame`, `the-vote-left-the-phone-
+  line`). Chased several fresh single-show candidates first, all
+  dead-ended: `the-twist-is-the-format` (Big Brother twist-mechanic
+  list, 16/27 seasons filed) — the two remaining seasons not yet
+  claimed anywhere on this specific list's own thesis, S03 and S07,
+  both read their own season files as format-settling/all-star-
+  casting facts with no actual twist mechanic to stake, and every
+  other unclaimed-here BB season (S06, S09, S11, S18, S22, S23) is
+  already staked at the near-total-coverage sibling list `every-
+  summer-gets-its-own-twist` for the identical twist fact — genuine
+  dead end, confirmed via full per-season reads. `never-needed-a-
+  villain` (tone, 16 entries/8 shows) — broad `camaraderie|no bad
+  guy|friendliest|good sportsmanship|root(ed|ing) for one another|
+  help(ed|ing)? (a )?rival|cheer(ed|ing) (on |for )?(each other|one
+  another)` grep across every `content/shows/**/seasons/*.md`
+  turned up zero hits outside the shows already staked; a narrower
+  `mutual respect|collaborative rather than|generosity|kindness`
+  grep surfaced only one candidate (AGT S03, "critique feels
+  collaborative"), too thin — that's panel shorthand, not a warmth/
+  no-villain thesis. `the-blackout-had-a-loophole` (craft, 14
+  entries/14 shows, one entry per show) — checked Bachelor and
+  both Traitors franchises for a phone/blackout/no-contact loophole
+  fact distinct from the existing entries; zero hits in any season
+  file. `the-reveal-was-the-whole-show` (tone, 12 entries/7 shows)
+  — chased The Circle as a fresh eighth show (the format's whole
+  premise is a concealed-identity reveal), but its strongest
+  candidate, S04's celebrity-cameo catfish reveal, is already
+  staked near-verbatim at `familiar-faces-wrong-franchise` rank 5
+  ("the recognition is the whole joke, and everyone watching gets
+  it right away") — too close a duplicate. `no-season-sends-a-
+  queen-home-the-same-way-twice` (Drag Race All Stars, single) and
+  `the-format-answered-to-a-different-name` (The Apprentice,
+  single) are both fully saturated — every aired season of each
+  show is already filed, confirmed by a direct entry count against
+  each show's season-file glob (11/11 and 15/15 respectively); dead
+  ends until either show airs a new season. Landed on `the-
+  advantage-was-never-free` (craft, 10 entries/8 shows, first touch
+  since creation on 2026-07-23): shipped Survivor S41 "New Era I"
+  at rank 2 (10→11 entries, survivor now 2/11) — the season's own
+  `format_changes` field and body name the Shot in the Dark
+  advantage directly, a guaranteed vote-safety draw carrying a
+  literal one-in-six elimination risk, distinct from S41's three
+  other ledger appearances (`firsts`, `survivor-pillars`,
+  `pandemic-seasons`), all of which stake the season's broader
+  post-pandemic-reset fact and mention the Shot in the Dark only in
+  passing, never isolating its own cost-of-holding claim. See the
+  ledger row for the full accounting. Entries: 10→11 (this list).
+  Shows: 8 unchanged (survivor now holds 2 of the list's 11
+  entries, well under any per-show craft-list cap).
 
 ## Notes
 
