@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-03
 featured: false
 related:
   - the-twist-is-the-format
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "The soft filter drops, and the show starts looking like itself"
     blurb: "Season 2 drops the pilot's heavy filter, adds a larger cast, and runs the last season before the panel's permanent chair got filled. The format's first real evolution, one season removed from the original draft."
+  - show: dragrace
+    season: 5
+    season_label: "S05"
+    rank: 11
+    title: "A third judge and a rotating fourth chair expand the panel table"
+    blurb: "Season five expands the two-person panel season three had just locked into a four-seat table: Michelle Visage and Santino Rice as regulars, plus a rotating guest chair. The judging structure keeps moving even after it looked settled."
 ---
