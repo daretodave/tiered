@@ -110,9 +110,15 @@ entries:
     title: "A single city keeps the address fixed while the pantry does the actual traveling."
     blurb: "Boston never leaves its own city limits, but the working pantry pulls from across New England — Atlantic seafood, Yankee traditions, and the region's immigrant kitchens. The regional sourcing does the moving the production itself never has to."
   - show: top-chef
+    season: 14
+    season_label: "S14 · Charleston"
+    rank: 17
+    title: "A single city holds even after the format proved it could travel."
+    blurb: "Charleston stays fixed in one city five years after Texas invented the road show — the season's split rookie-veteran roster and Lowcountry rice-and-Gullah-Geechee brief do the format's work instead of any itinerary."
+  - show: top-chef
     season: 1
     season_label: "S01 · San Francisco"
-    rank: 17
+    rank: 18
     title: "The founding season, before the format has anywhere to go yet."
     blurb: "One city, eleven episodes, no Last Chance Kitchen, no road-show grammar — just Bravo figuring out what the competition even was. Every later swing at travel starts from the fixed, single-set shape this season sets first."
 ---
