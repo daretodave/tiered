@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: "2026-07-24"
+last_revised: "2026-08-03"
 featured: false
 related:
   - sight-unseen-already-committed
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A U-Turn vote that keeps its target hidden until the move is already made"
     blurb: "The largest field the race had ever fielded gets a new Blind U-Turn vote added to its toolkit — a strategic weapon teams can use without immediately revealing who they aimed it at. One more way the season folds not-knowing into the gameplay itself."
+  - show: love-island-uk
+    season: 12
+    season_label: "S12"
+    rank: 11
+    title: "The launch coupling goes in blind, written profiles standing in for a first look"
+    blurb: "Series twelve replaces the usual live line-up with sight-unseen profiles: girls pick a partner from a dating-profile card before the boys are even revealed. The show's oldest ritual, the walk down the line, gets rebuilt around not looking first."
 ---

@@ -179,7 +179,7 @@ last time a curator actually looked.
 | the-countdown-doesnt-negotiate | craft | 2026-07-24 | 2026-07-24 | |
 | no-season-here-got-the-calendar-to-itself | single | 2026-07-29 | 2026-07-29 | extended 2026-07-29, fourth pass same day (Chopped S45 entry, rank 10 — the season's own file explicitly names four overlaps, Seasons 41/42/44/46, "at different points" across a Jan-July 2020 run; all four named neighbors were already ranked here individually but S45 itself had zero prior appearances anywhere in the ledger; picks up the fortieth pass's own flagged-but-deferred lead now that the list can land exactly on its 30-entry cap rather than exceed it; list now runs 30 entries, at the hard cap); previously extended 2026-07-29, third pass same day (Chopped S38, S39 entries — nested/overlap calendar facts, confirmed unclaimed elsewhere in the 200+-list ledger; inserted at ranks 6/7, rebase to 29 entries); previously extended 2026-07-29, second pass same day (Chopped S40, S41, S44, S46 entries — a four-season block from the same S37-S46 cluster the list already partly mined, ranks 2/4/5/26; rebase to 27 entries); previously extended 2026-07-29 (Chopped S35 entry, rank 10 — a two-neighbor entanglement with Season 34 and Season 36 the season's own file calls the format's "longest and most entangled single season," zero prior appearances anywhere in the ledger; rebase to 23 entries); previously extended 2026-07-28 (Chopped S11, S12, S13 entries — the format's founding overlap chain, each season's own file explicitly stating its overlap with the other two; rebase to 22 entries); previously extended 2026-07-27 (Chopped S17, S18, S21, S23, S25, S26 entries; full rebase to 19 entries) |
 | the-wait-between-seasons-was-never-the-same-twice | single | 2026-07-24 | 2026-07-24 | |
-| not-knowing-was-the-point | craft | 2026-07-24 | 2026-07-24 | |
+| not-knowing-was-the-point | craft | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (content-curator tick, ninety-eighth pass, Rule-2 season-fill confirmed stalled per `plan/CADENCE.md`'s fully-starred gap table, fell through to Rule 3 extend-first): first touch since creation (2026-07-24). 10→11 entries, 6→7 shows, first love-island-uk entry on this list. Love Island UK S12 "Summer 2025" entry, rank 11 — the season's own frontmatter watch_list states plainly "girls picked a partner sight-unseen from written dating profiles before the boys were even revealed," and the lede calls out "a blind launch coupling" as one of the season's headline format swaps, a direct match for this list's not-knowing-until-the-decision's-already-made thesis. Confirmed via a full `show: love-island-uk` grep across every `content/themes/*.md` that S12's one other ledger appearance (`the-fire-pit-never-moved` rank 2) stakes a broader three-mechanic-overhaul fact (blind coupling + always-open hideaway + filmed mealtimes together), never the blind-coupling mechanic alone as its primary claim — leaving the narrow blind-judgment angle genuinely unclaimed. Appended at rank 11 (bottom); the list's existing ten entries run in loose editorial-strength order and the new entry, a single-episode device rather than a season-spanning judging structure, reads as the list's lightest-weight case. |
 | straight-to-camera-never-to-each-other | craft | 2026-07-25 | 2026-07-25 | |
 | missing-on-purpose | craft | 2026-07-25 | 2026-07-25 | |
 | one-rule-never-bends | craft | 2026-07-25 | 2026-07-25 | |
@@ -4302,6 +4302,50 @@ last time a curator actually looked.
   organizing-logic fact staked here. Shipped both: 17→19 entries.
   See the ledger row for the full accounting. Shows: still 1
   (single-show list, no cross-canon floor).
+
+- **2026-08-03, ninety-eighth pass.** Rule 2 confirmed stalled
+  again (CADENCE.md's season-gap table is fully starred/confirmed-
+  but-unaired, next sweep due 2026-08-09) — fell through to Rule 3.
+  Extended `not-knowing-was-the-point` (craft, 10 entries, 6 shows,
+  untouched since creation on 2026-07-24): 10→11 entries, 6→7
+  shows. Added Love Island UK S12 "Summer 2025" at rank 11 — the
+  season's own frontmatter watch_list states "girls picked a
+  partner sight-unseen from written dating profiles before the
+  boys were even revealed," and the lede names "a blind launch
+  coupling" as a headline format swap, a clean fit for the list's
+  blind-decision-before-the-reveal thesis. Confirmed via a full
+  `show: love-island-uk` grep across every `content/themes/*.md`
+  that S12's only other ledger appearance (`the-fire-pit-never-
+  moved` rank 2) stakes a broader three-mechanic-overhaul fact
+  (blind coupling bundled with the always-open hideaway and filmed
+  mealtimes together), never the blind-coupling mechanic alone —
+  leaving the narrow fairness-through-not-knowing angle unclaimed.
+  Rejected several candidates before landing here: Bake Off's
+  technical challenge (grepped every season file under
+  `content/shows/bake-off/seasons` for blind/anonymous-judging
+  language — no season file states it in the text, would have
+  required inventing a fact); Masked Singer (already at 3 entries
+  on the closely related `the-reveal-was-the-whole-show`, and its
+  reveal-as-spectacle framing there is a different enough angle
+  from this list's fairness-mechanic framing that a second stake
+  read like forcing a near-duplicate rather than a genuinely fresh
+  fact); `the-blackout-had-a-loophole` (read in full, checked for
+  a groundable extension — essentially no fresh candidates
+  survived a grep pass, ruled out as too thin); `sight-unseen-
+  already-committed` (considered The Circle S03, but the season's
+  actual content is a cloning/burner-account mechanic, not a
+  blind-commitment fact — would have been a stretched fit).
+  Confirmed maxed-out and passed over without further work: `the-
+  founding-seven-slowly-rebuilt` (11/11 Southern Charm seasons),
+  `the-command-held-for-nine-seasons-then-didnt` (10/10 Below Deck
+  Mediterranean seasons), `the-toolkit-never-sat-still` (17/17
+  MasterChef Australia seasons). `the-matching-experts-never-sit-
+  still-for-long` re-checked (S13 Houston read in full — its only
+  fact, a third-straight-unchanged-panel during a ~4-month run, sits
+  too close to the already-shipped S11/S12 "panel holds through a
+  long calendar" entries; S20 has no season file yet, a Rule-2 gap
+  not usable here) — confirms the 2026-07-28 pass's judgment that
+  S13 was correctly left unshipped.
 
 ## Notes
 
