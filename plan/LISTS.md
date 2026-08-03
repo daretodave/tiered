@@ -103,7 +103,7 @@ last time a curator actually looked.
 | never-starts-cold | craft | 2026-07-27 | 2026-08-03 | extended 2026-07-27 (Jersey Shore S01, Below Deck Mediterranean S03 entries). Reviewed 2026-08-03 (eighty-second pass): the only three shows carrying `episode_heat` data (Survivor, The Challenge, love-island-us) are all already at the list's 3/3 informal per-show cap; no fresh heat-map fact available without breaching it. Confirmed dead this pass — no new headroom found. |
 | the-couch-kept-adding-chairs | craft | 2026-07-30 | 2026-07-30 | extended 2026-07-30 (13→14 entries, 7→8 shows). Real Housewives of Dallas S02 "The Expansion" entry, rank 3 — the season's own file states the founding four "grows to six" with D'Andra Simmons and Kameron Westcott joining a returning core of four, and unlike most swings on this list the wider circle proves durable, carrying unchanged into RHOD's next season; confirmed non-duplicate via full `show: rhod` grep (no prior RHOD mention anywhere in the ledger). Inserted at rank 3, existing ranks 3-13 shifted to 4-14. rhod now holds 1 entry on this list, well under the informal per-show cap. |
 | the-team-never-means-the-same-thing-twice | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Ink Master S17 — drops teams entirely after a decade of team experiments, bookends S01's pre-team baseline) |
-| the-format-learned-to-travel | single | 2026-07-20 | 2026-07-20 | |
+| the-format-learned-to-travel | single | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (eighty-seventh pass, content-curator tick): 14→15 entries, first review since creation (2026-07-20). Top Chef S12 "Boston" entry, rank 14 — the season's own filming_caption/lede/body text states the season "uses Boston's restaurant scene and the wider New England pantry — Atlantic seafood, Yankee traditions, immigrant kitchens" as its working register, without the production ever leaving the city; distinct angle from this list's existing single-city tail entries (Seattle rank 10 stakes a carried-over-habit fact, D.C. rank 11 stakes a stylistic-ambition fact, Las Vegas rank 13 stakes a cast-depth fact, San Francisco rank 15 stakes the founding pre-travel fact) — Boston's angle is that the ingredient sourcing itself spans a wider region even while the production stays fixed in one city, a genuinely different facet of the list's travel thesis. Confirmed via a full `show: top-chef` + `season: 12` grep (multiline, across every `content/themes/*.md`) that S12's sole prior ledger appearance (`running-on-muscle-memory` rank 12) stakes a settled-format/host-chemistry fact, not a travel/geography fact. Inserted at rank 14, directly above the S01 San Francisco founding entry, which shifted from rank 14 to rank 15. Rejected Top Chef S11 "New Orleans" — its own file's "the city carried the season" / setting-as-ingredient framing is already staked near-verbatim at `best-location-reveals` rank 5 ("the location isn't scenery; it's a brief"), too close a duplicate of both that entry and this list's own Miami rank-12 entry. Rejected Top Chef S04 "Chicago" — genuinely unclaimed for a travel fact (its own ledger appearance at `the-diners-were-never-extras` rank 4 stakes a Restaurant Wars-tradition fact instead), but held back this pass to avoid stacking a third near-identical "single city, no travel" tail entry in one sitting; flagged as the next clean candidate for this list. |
 | the-slow-build-was-the-point | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, Rule-2 season-fill confirmed stalled per `plan/CADENCE.md`'s fully-starred gap table, fell through to Rule 3; first touch since creation 2026-07-20). 13→15 entries, 7→9 shows. Big Brother S23 "The Team Captains" entry, rank 14 — the season's own watch_list text states plainly "Ep 22 · the newbie game matures — Late in the run the cast's strategic literacy is fully visible. A season that bet on its newcomers and gets repaid in the back half," a direct match for this list's patient-bet-pays-off-later thesis. Confirmed via a full `show: big-brother` + `season: 23` grep across every `content/themes/*.md` that S23's two prior appearances (`built-for-one-playing-as-a-team` rank 6 and `every-summer-gets-its-own-twist` rank 6) both stake the premiere-night team-draft mechanic itself, never the deferred strategic payoff staked here. RHONY S11 "The Roman Chapter" entry, rank 15 — the season's own lede/body text states the Rome trip "raised the production register and gave the season a destination worth the build," anchoring the back half after a front half that "let both registers coexist" rather than resolving quickly; confirmed via a full `show: rhony` + `season: 11` grep that S11's sole prior appearance (`the-zip-code-was-the-only-constant` rank 12) stakes a short-run cast-churn fact, not the slow-build/destination-payoff fact. Rejected as off-thesis or already-claimed: MasterChef S13 "United Tastes of America" (the season's own file states its regional structure dissolves at midseason and the back half runs *without* the organizing concept — the inverse of a payoff, not a match); Masked Singer S02 "The Escalation" (an even, ensemble-wide escalation across the whole run, not a quiet-front-half/hot-back-half structure); RHOBH S08, Hell's Kitchen S11, MAFS Australia S10 (all workmanlike or twist-forward season files with no textual slow-build/payoff framing). Also ruled out re-extending `the-competition-leaves-the-country` and `no-template-to-copy` this pass — see Ideas log. |
 | no-template-to-copy | era | 2026-07-20 | 2026-08-02 | reviewed 2026-08-02, no change — confirmed maxed out: exactly twelve catalog shows have an `est_year` inside the `era_range` [2000, 2005] and all twelve already hold this list's S01 slot; no thirteenth eligible show exists and a second entry from an already-claimed show would contradict the founding-season thesis. Dead end until a new show onboards into that window. |
 | funny-on-purpose | tone | 2026-08-01 | 2026-08-01 | extended 2026-08-01 (content-curator tick, extend-first fallback per the standing Rule-3 priority — Rule 2 confirmed stalled this tick, every remaining `plan/CADENCE.md` gap-table row starred/confirmed-but-unaired; avoided every list already touched today per the tick's own exclusion list). First touch since creation (2026-07-20) — never reviewed or extended before this pass. 13→14 entries, 8→9 shows. Shark Tank S08 "Season 8" entry, rank 8 — the season's own watch_list text states plainly the classic six's rapport is "at its loosest and funniest here, four seasons into a lineup that stopped needing an adjustment period a while ago," a direct, explicit match for this list's joke-lands-first thesis (a settled panel's chemistry itself generating the season's comic register, the same shape as this list's existing AGT S07 entry one rank up). Confirmed via a full `show: shark-tank` grep across every `content/themes/*.md` (18+ prior appearances checked, including the show's own dedicated single-show list `the-extra-seat-is-never-a-swap`, which stakes S07 and S09 but not S08) that Shark Tank S08 had zero prior appearances anywhere in the ledger — genuinely unclaimed, and the first Shark Tank entry on this specific list. Inserted at rank 8, directly below the AGT S07 settled-panel entry and above RHOA S09; existing ranks 8-13 shifted to 9-14. Considered and rejected as too weak a fact or off-thesis before landing on Shark Tank: Masked Singer S01/S04 (own files describe Ken Jeong's "exuberance" and panel warmth but never use explicit funny/comedy language, too soft a textual match); RHONY S07 "The Return" (Dorinda Medley's debut is described as "sharp, funny, and immediately essential," a genuine textual hit, but the same debut event is already staked at the show's own `the-zip-code-was-the-only-constant` rank 2 entry for the roster-churn/reentry fact, too close a shared event to add cleanly without restating it); The Apprentice S11/S12 (both explicitly frame themselves as unremarkable continuations of S07's already-claimed charity-stakes format, "nothing here reinvents the format," no fresh comedic fact of their own); RHOD/RHOBH/RHOA/RHOC charity-gala mentions surfaced via a broad `charity\|tribute\|benefit` sweep (all false positives on "benefits/benefited" or off-thesis for a joke-forward tone claim). List now runs 14 entries across 9 shows, no show over 2 (dragrace, bake-off, dragrace-uk, americas-got-talent all sit at 2, well under any per-show cap). |
@@ -3990,6 +3990,59 @@ last time a curator actually looked.
   rejected — its longest-founding-era-run framing is already staked
   at `running-on-muscle-memory` rank 2, touched this same day by
   the 84th pass.
+
+- **2026-08-03, eighty-seventh pass.** Rule 2 confirmed stalled
+  again (CADENCE.md's 2026-08-02 weekly sweep: all 46 gap-slots
+  starred/confirmed-but-unaired). Avoided the four lists already
+  touched today (83rd–86th passes): `the-season-structure-never-
+  holds-still`, `running-on-muscle-memory`, `down-to-just-the-two-
+  of-you`, `not-the-usual-order`. Re-checked the task brief's
+  headroom candidates against the ledger before spending time on
+  any: `the-vote-left-the-phone-line` (partially explored same day,
+  skipped), `best-reunion-specials` and `when-the-crew-stepped-
+  into-frame` (both confirmed dead-end by the 86th pass, skipped
+  without re-litigating). Spent real time on `the-grudge-was-the-
+  casting-call` (craft, 10 entries/4 shows, never reviewed since
+  creation) chasing a fifth show for the list's exes/rivals-as-
+  casting-premise thesis: The Challenge's own sequel seasons
+  (Rivals II S24, Rivals III S28, Battle of the Exes II S26) all
+  read their own files as "iteration" / "professional rivalry
+  rather than personal grievance" / cast "meta-awareness" —
+  every one either contradicts the list's real-grudge thesis
+  outright or reads as a near-duplicate of the same list's own
+  S21/S22 entries already anchoring the franchise's slots; a
+  broad `real-life ex|rival|prior relationship|actual ex|genuine
+  rivalry|real feud` grep across every `content/shows/**/seasons/
+  *.md` for shows outside the four already on the list (the-
+  challenge, the-real-world, big-brother, ink-master) surfaced
+  nothing that groundably stakes a designed-around-real-history
+  casting premise — married-at-first-sight-australia S03 and
+  survivor-australia S07 were the closest hits and both are off-
+  thesis (a same-sex-couple casting milestone and a family-pairs
+  premise, neither an exes/rivals grudge). Left this list
+  untouched rather than force a weak fit; flagged as still open
+  for a future pass with a wider net (a genuine gap-fill show
+  hasn't turned up yet). Landed instead on `the-format-learned-
+  to-travel` (single, Top Chef road-show/geography thesis,
+  14 entries, first review since creation on 2026-07-20): added
+  Top Chef S12 "Boston" at rank 14 (14→15 entries). Confirmed via
+  a full `show: top-chef` + `season: 12` grep that S12's only
+  prior ledger appearance (`running-on-muscle-memory` rank 12)
+  stakes a settled-format/host-chemistry fact, not a travel or
+  geography fact, and cross-checked the new entry's angle (the
+  New England pantry sourcing travels even though the production
+  itself never leaves Boston) against this list's other three
+  single-city tail entries (Seattle, D.C., Las Vegas) for overlap
+  — clean. Rejected Top Chef S11 "New Orleans" as a near-duplicate
+  of both this list's own Miami entry and `best-location-reveals`
+  rank 5's "location isn't scenery, it's a brief" framing. Held
+  back a second candidate, Top Chef S04 "Chicago" (genuinely
+  unclaimed for a travel fact), rather than stack a third near-
+  identical "single city, no travel" tail entry in the same
+  sitting — flagged as the next clean pickup for this list. See
+  the `the-format-learned-to-travel` ledger row for the full
+  accounting. Entries: 14→15 (this list). Shows: still 1 (single-
+  show list, no cross-canon floor).
 
 ## Notes
 
