@@ -6,7 +6,7 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-03
 featured: false
 related:
   - firsts
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A founding cast whose real-life history did the show's work for it."
     blurb: "Five women already inside the same north Jersey social world arrive with real grievances, not manufactured backstory. The format is still finding its footing, but the cast never needs a settling-in period — the dinner-table friction was already real."
+  - show: rhobh
+    season: 1
+    season_label: "S01"
+    rank: 11
+    title: "The casting was confident before the format was — and the debut proves it."
+    blurb: "Beverly Hills' social architecture gives every dinner party real stakes, and the debut cast plays those stakes like veterans from scene one — even while the show itself is still working out its own rules."
 ---
