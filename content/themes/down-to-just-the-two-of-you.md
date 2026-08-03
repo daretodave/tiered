@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-03
 featured: false
 related:
   - when-the-vote-came-back-tied
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "The first tentative step toward racing instead of judging"
     blurb: "Season fifteen introduces a new Stage 2 as the format's first non-timed, head-to-head race, replacing the old Power Tower tiebreaker. A smaller swing than what the show tries two years later, but the same idea."
+  - show: amazing-race
+    season: 30
+    season_label: "S30"
+    rank: 12
+    title: "A leg detour narrows to exactly one team against one other"
+    blurb: "Head-to-Head challenges debut this season, engineered so a single team faces a single rival on the same clue instead of the whole field working it together. The race gets its first taste of a genuine two-team duel, mid-leg."
 ---
