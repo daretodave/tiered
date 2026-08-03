@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-08-02
 featured: false
 related:
   - firsts
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "A Real Housewife steps into a costume designed for a stranger's franchise entirely."
     blurb: "Erika Jayne, known from Bravo's Real Housewives of Beverly Hills, competes under a full disguise on a competing network's format. The costume asks the audience to guess a face they already know from a completely different show."
+  - show: below-deck-down-under
+    season: 4
+    season_label: "S04 · Canouan"
+    rank: 14
+    title: "A full Real Housewives cast comes aboard as charter guests for the first time."
+    blurb: "Bravo's Salt Lake City cast turns up on a yacht paying customers usually book, trading their own show's cameras for someone else's charter. The faces are instantly recognizable — just not from anywhere near a superyacht."
 ---
