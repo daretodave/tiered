@@ -189,7 +189,7 @@ last time a curator actually looked.
 | the-room-kept-changing-size | single | 2026-07-25 | 2026-07-25 | |
 | the-diners-were-never-extras | craft | 2026-07-25 | 2026-07-25 | |
 | the-season-the-audience-showed-up-all-at-once | tone | 2026-07-25 | 2026-07-25 | |
-| the-open-call-built-the-format | craft | 2026-07-25 | 2026-07-25 | |
+| the-open-call-built-the-format | craft | 2026-08-03 | 2026-08-03 | 92nd pass: +MasterChef Australia S01 at rank 12 (12→13 entries, 5→6 shows) — nationwide audition search + three-judge panel with no local playbook, grounded in the season's own lede/body; shifted AGT S01 to rank 13 |
 | every-season-strikes-a-different-bargain-with-lana | single | 2026-07-25 | 2026-07-25 | |
 | the-series-the-uk-edition-finally-made-its-own | single | 2026-07-25 | 2026-07-25 | |
 | fifteen-and-fifteen-every-single-season | single | 2026-07-25 | 2026-07-25 | |
@@ -4145,6 +4145,80 @@ last time a curator actually looked.
   ledger row for the full accounting. Entries: 10→11 (this list).
   Shows: 8 unchanged (survivor now holds 2 of the list's 11
   entries, well under any per-show craft-list cap).
+
+- **2026-08-03, ninety-second pass.** Rule 2 confirmed stalled
+  again (CADENCE.md's 2026-08-02 sweep: every remaining gap-slot
+  starred/confirmed-but-unaired, next sweep due 2026-08-09) —
+  fell through to Rule 3. Avoided every list already touched
+  today (`the-format-learned-to-travel`, touched 4x across the
+  87th/88th/89th/91st passes; `the-advantage-was-never-free`,
+  90th pass) and every confirmed dead end filed by the 90th pass
+  (`the-twist-is-the-format`, `never-needed-a-villain`, `the-
+  blackout-had-a-loophole`, `the-reveal-was-the-whole-show`,
+  `no-season-sends-a-queen-home-the-same-way-twice`, `the-format-
+  answered-to-a-different-name`). Chased six candidates before
+  landing one: `the-doubters-had-to-walk-it-back` (tone) — Bake
+  Off S08 read like a clean fit but its network-move fact is
+  already staked near-verbatim at `best-comeback-seasons` rank 2
+  ("survived a full network move with its soul intact"), and a
+  broader grep across Married at First Sight Australia, 90 Day
+  Fiancé, and Big Brother's pilot season turned up only false-
+  positive keyword hits (relationship skepticism, not show-
+  reception skepticism) — no new candidate found, list untouched.
+  `the-franchise-started-borrowing-from-itself` (craft) — checked
+  Below Deck Down Under S01 for a Captain-crossover fact from
+  Below Deck Mediterranean; the season's own file never names the
+  prior-show connection, so the claim isn't groundable — untouched.
+  `the-open-call-built-the-format` (craft) — MasterChef Australia
+  S01's audition-search fact shipped (see ledger row); this is the
+  list actually extended this pass. `the-diners-were-never-extras`
+  (craft) — broad grep for real-diner/restaurant language surfaced
+  no unclaimed candidates beyond the list's existing 6 shows —
+  untouched. `the-countdown-doesnt-negotiate` (craft) — MasterChef
+  Australia has zero clock/timer language across its season files
+  (confirmed via grep); 90 Day Fiancé's visa countdown is a season-
+  long deadline, not a per-task on-screen timer, and is already the
+  entire premise of `the-clock-had-to-make-room` — untouched. `the-
+  fix-stayed-after-the-season-left` (craft, 10 entries/8 shows) —
+  the most-chased candidate this pass, ultimately dead-ended on
+  every angle tried: Survivor S41 Shot in the Dark is already
+  staked 4x elsewhere as of the 90th pass (over-mined); Big Brother
+  S06's own season file is about a hidden-pairs twist, not the
+  Power of Veto, and no BB season file actually names the Veto's
+  debut; Dancing with the Stars S02's fixed two-night cadence is
+  already staked near-verbatim at `twice-in-one-year` rank 3; Ink
+  Master S13 and the show generally are the wrong fit entirely —
+  `the-team-rule-never-makes-it-to-a-second-season` already
+  documents that Ink Master's team formats are one-season
+  experiments by design, the opposite of this list's "stayed"
+  thesis; American Ninja Warrior S13's Split Decision/family-teams
+  facts are already staked 3x elsewhere (`never-needed-a-villain`,
+  `the-finals-never-run-the-same-course-twice`, `when-the-cast-
+  was-already-related`); So You Think You Can Dance S03's
+  permanent-panel fact is already staked near-verbatim at `when-
+  the-chairs-turned-over` rank 14; Perfect Match's mixer mechanic
+  (debut + routinization) is already the exact thesis of `a-way-
+  back-in` ranks 4 and 12. Also spot-checked `the-batch-drop-
+  settles-in` (era, 4 shows) as a fresh-show opportunity — Love Is
+  Blind has zero release-cadence language in any season file
+  (confirmed via reads of S06 and S09), and would require
+  inventing the batch-drop fact — untouched. Shipped: `the-open-
+  call-built-the-format` +MasterChef Australia S01 at rank 12
+  (12→13 entries, 5→6 distinct shows — american-idol, american-
+  ninja-warrior, so-you-think-you-can-dance, the-voice, americas-
+  got-talent, masterchef-australia). Full-corpus grep against
+  `show: masterchef-australia` across every `content/themes/*.md`
+  confirmed the season's three prior appearances (`the-goodbye-
+  became-part-of-the-format`, `the-toolkit-never-sat-still`,
+  `never-needed-a-villain`) all stake unrelated facts (elimination
+  ritual, kitchen toolkit, tone), leaving the audition-search angle
+  clean. **Orchestrator fix (verify gate):** the drafted blurb's
+  "three-judge panel building its chemistry live" tripped the
+  strict `THEME_VERB_STEM_CLUSTERS` "build" check (#409) — this
+  list's own rank-2 and rank-4 entries already use "US-built" /
+  "built a stage," so a third use crossed the max-2-per-list floor.
+  Reworded to "earning its chemistry live" before commit; no other
+  change.
 
 ## Notes
 

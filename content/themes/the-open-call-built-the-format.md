@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-03
 featured: false
 related:
   - best-premieres
@@ -79,10 +79,16 @@ entries:
     rank: 11
     title: "Four mismatched ears made the blind audition a real gamble again"
     blurb: "Snoop Dogg and Michael Bublé joined Reba McEntire and Gwen Stefani for the most tonally scattered panel the show has assembled, making the blind-audition stage more unpredictable than any prior season's chair turns."
+  - show: masterchef-australia
+    season: 1
+    season_label: "S01 · The Debut"
+    rank: 12
+    title: "A nationwide search invented the whole format, with no local playbook to borrow from"
+    blurb: "MasterChef Australia opens with a country-wide audition hunt and a three-judge panel earning its chemistry live, on air, with nothing to copy. The search itself does the real work of deciding who reaches the bench, months before the elimination rounds even find their rhythm."
   - show: americas-got-talent
     season: 1
     season_label: "S01"
-    rank: 12
+    rank: 13
     title: "With no format yet, the open call decided what the show was"
     blurb: "Regis Philbin anchored a judging table with zero inherited precedent, and singers, comedians, and acrobats shared one stage because nobody had defined a category the format wouldn't accept."
 ---
