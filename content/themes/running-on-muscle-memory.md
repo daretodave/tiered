@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-03
 featured: false
 related:
   - played-it-straight
@@ -115,4 +115,10 @@ entries:
     rank: 17
     title: "A second full year with the same panel, and the season stops needing to prove anything."
     blurb: "Eleven couples run at the format's standard scale with the same expert panel in its second year together — no new mechanic, no panel change, just a settled rhythm confident enough not to explain itself."
+  - show: alone-australia
+    season: 3
+    season_label: "S03 · West Coast Range"
+    rank: 18
+    title: "A third season stops proving the format and starts just running it."
+    blurb: "Three seasons in, the crew's self-filmed footage reads more assured and the edit rhythm tightens, the season's own account says. It calls the run one that consolidates the format rather than expanding it — a deepened Australian cast pool carrying the rest."
 ---
