@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-03
 featured: false
 related:
   - before-the-spinoff-had-a-name
@@ -73,22 +73,28 @@ entries:
     rank: 10
     title: "The first returnee event ran longer than any season before it"
     blurb: "Eighteen chefs came back for Top Chef's first All-Stars season, and the season ran seventeen episodes to fit them — several more than the standard order. The bigger cast bought a longer runway toward the finale."
+  - show: rhoc
+    season: 5
+    season_label: "S05"
+    rank: 11
+    title: "Eighteen episodes give the founding era its longest run yet"
+    blurb: "The cast's social geometry has finally settled, freeing season five to let competing storylines unfold in parallel rather than compete for scarce time. The order runs eighteen episodes — six more than the year before, and the founding era's longest yet."
   - show: 90-day-fiance
     season: 10
     season_label: "S10"
-    rank: 11
+    rank: 12
     title: "A second straight crossover season pushes the episode count to a franchise high"
     blurb: "Season 10 brought in another Before the 90 Days pairing alongside six new couples, and needed twenty episodes to fit them all in — tying the franchise's longest run yet, well past the show's usual order of around a dozen."
   - show: american-ninja-warrior
     season: 12
     season_label: "S12"
-    rank: 12
+    rank: 13
     title: "A closed-set pandemic season needs a fraction of the format's usual episode count"
     blurb: "Every qualifying city folds into one closed set at St. Louis's America's Center, and the order drops to eight episodes — well under the show's usual mid-teens-to-twenty range — as a 50-competitor team tournament stands in for the regular format."
   - show: perfect-match
     season: 4
     season_label: "S04"
-    rank: 13
+    rank: 14
     title: "The biggest cast the villa has ever held runs the format's shortest episode order"
     blurb: "Twenty contestants — the format's largest villa yet — compress into eight episodes, fewer than any season before it, while the mixer's re-entry mechanic keeps new arrivals cycling through a cast the shorter order barely has room to settle."
 ---
