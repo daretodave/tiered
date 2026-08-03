@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-03
 featured: false
 related:
   - the-competition-leaves-the-country
@@ -92,9 +92,15 @@ entries:
     title: "The deepest cast the show has assembled needs no travel at all."
     blurb: "One city, one strip, no multi-stop itinerary — Las Vegas argues the format's ceiling was never about geography. The case for staying put, made right in the middle of the run that would later go on the road."
   - show: top-chef
+    season: 12
+    season_label: "S12 · Boston"
+    rank: 14
+    title: "A single city keeps the address fixed while the pantry does the actual traveling."
+    blurb: "Boston never leaves its own city limits, but the working pantry pulls from across New England — Atlantic seafood, Yankee traditions, and the region's immigrant kitchens. The regional sourcing does the moving the production itself never has to."
+  - show: top-chef
     season: 1
     season_label: "S01 · San Francisco"
-    rank: 14
+    rank: 15
     title: "The founding season, before the format has anywhere to go yet."
     blurb: "One city, eleven episodes, no Last Chance Kitchen, no road-show grammar — just Bravo figuring out what the competition even was. Every later swing at travel starts from the fixed, single-set shape this season sets first."
 ---
