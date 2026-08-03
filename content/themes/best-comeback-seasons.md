@@ -6,9 +6,9 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-03
 featured: true
-featured_pull: "Ten comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
+featured_pull: "Eleven comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
 related:
   - best-returnees
   - best-finales
@@ -74,4 +74,10 @@ entries:
     rank: 10
     title: "A quiet post-hiatus return with the strongest casting in years."
     blurb: "Cycle 22 comes back after a full year off the air, and the casting is the best the late-CW seasons produced — a range of looks and approaches the intervening cycles hadn't matched. No reinvention, no fanfare. Just a hiatus return that quietly does its job."
+  - show: hells-kitchen
+    season: 17
+    season_label: "S17 · All Stars"
+    rank: 11
+    title: "Sixteen black-jacket winners come back and raise the floor, not just the stakes."
+    blurb: "Sixteen previous black-jacket winners return for the franchise's first all-star edition, every one of them already fluent in the format. The risk was a flatter, meltdown-light season; instead the cooking sharpens and the field runs tighter than any cast before it."
 ---

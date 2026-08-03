@@ -2105,6 +2105,13 @@ const FIRST_ALL_RETURNEE_ALLOWLIST: Record<string, number[]> = {
   // ("First all-returning-contestant season — 10 non-winners from
   // seasons 1-4").
   alone: [5],
+  // Hell's Kitchen S17 All-Stars (2017) — the franchise's first
+  // all-star edition; canon entry `## 17. All Stars` tag names it
+  // explicitly ("The first all-star edition — every chef arrived
+  // having already earned a black jacket"), and the season's own
+  // `eyebrow`/`format_caption` confirm it ("First themed edition" /
+  // "first all-star edition; all sixteen had earned black jackets").
+  'hells-kitchen': [17],
 }
 
 export function collectThemeFactualFirstClaimIssues(): Failure[] {
