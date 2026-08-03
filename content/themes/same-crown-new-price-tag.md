@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-03
 featured: false
 related:
   - who-actually-got-the-vote
@@ -79,28 +79,34 @@ entries:
     rank: 11
     title: "Returning champions get real money on the table for the first time."
     blurb: "A five-part Champs Throwdown folds into an otherwise standard season, climbing to a $50,000 finale for the format's former winners. The show's usual closed-door premise stays intact around a genuinely new stake."
+  - show: chopped
+    season: 51
+    season_label: "S51"
+    rank: 12
+    title: "The record cash tournament doesn't set a new floor."
+    blurb: "Season 51's Casino Royale bracket climbs to a $25,000 finale — a quarter of the $100,000 Grudge Match payout Season 48 had just set as the format's ceiling. Proof a Chopped tournament's stakes don't keep rising by default."
   - show: ink-master
     season: 14
     season_label: "S14"
-    rank: 12
+    rank: 13
     title: "A full relaunch arrives with a quarter-million-dollar prize bump."
     blurb: "New network, new host, an expanded judging panel — and a prize that jumps to $250,000 for the most decorated field the show has assembled. The stakes rise right alongside everything else that changed."
   - show: american-ninja-warrior
     season: 7
     season_label: "S07 · Military Appreciation"
-    rank: 13
+    rank: 14
     title: "The grand prize doubles to one million dollars, and never goes back."
     blurb: "Season seven's win jumps to one million dollars in a single stroke, arriving alongside a six-city qualifying expansion and a harder Vegas course. The number becomes the format's standard payout in every full season that follows."
   - show: americas-next-top-model
     season: 15
     season_label: "S15"
-    rank: 14
+    rank: 15
     title: "Winning stops meaning a check and starts meaning a magazine credit."
     blurb: "The prize package overhauls into Vogue Italia coverage and an IMG Models contract, repositioning what the competition is actually for. A cycle that changes the reward instead of just raising it."
   - show: survivor-australia
     season: 11
     season_label: "S11 · Australia V The World"
-    rank: 15
+    rank: 16
     title: "An anniversary special cuts the prize pool in half on purpose."
     blurb: "A tenth-anniversary crossover trims the game to sixteen days and halves the standard prize money to match. A celebratory format that treats a smaller purse as part of the concept, not a budget cut."
 ---
