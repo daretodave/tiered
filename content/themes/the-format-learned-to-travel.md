@@ -92,21 +92,27 @@ entries:
     title: "A fixed city carries the format without a mile of travel."
     blurb: "Chicago never leaves its own city limits, but the season leans on the city's restaurant infrastructure — neighborhood institutions, ethnic kitchens — as the brief itself, the most confident the single-city format got before Texas started drawing a map."
   - show: top-chef
+    season: 5
+    season_label: "S05 · New York"
+    rank: 14
+    title: "The single-city format faces its toughest media market yet."
+    blurb: "New York never leaves Manhattan and the outer boroughs, but the density of the city's restaurant tradition — borough food cultures, immigrant kitchens, Manhattan fine dining — pushes the cast under tougher scrutiny than any earlier season had faced."
+  - show: top-chef
     season: 6
     season_label: "S06 · Las Vegas"
-    rank: 14
+    rank: 15
     title: "The deepest cast the show has assembled needs no travel at all."
     blurb: "One city, one strip, no multi-stop itinerary — Las Vegas argues the format's ceiling was never about geography. The case for staying put, made right in the middle of the run that would later go on the road."
   - show: top-chef
     season: 12
     season_label: "S12 · Boston"
-    rank: 15
+    rank: 16
     title: "A single city keeps the address fixed while the pantry does the actual traveling."
     blurb: "Boston never leaves its own city limits, but the working pantry pulls from across New England — Atlantic seafood, Yankee traditions, and the region's immigrant kitchens. The regional sourcing does the moving the production itself never has to."
   - show: top-chef
     season: 1
     season_label: "S01 · San Francisco"
-    rank: 16
+    rank: 17
     title: "The founding season, before the format has anywhere to go yet."
     blurb: "One city, eleven episodes, no Last Chance Kitchen, no road-show grammar — just Bravo figuring out what the competition even was. Every later swing at travel starts from the fixed, single-set shape this season sets first."
 ---
