@@ -6,7 +6,7 @@ category: craft
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-04
 featured: true
 featured_pull: "Five seasons where the antagonist arc ran the room — not a subplot, the whole narrative spine the rest of the cast played inside."
 related:
@@ -62,28 +62,34 @@ entries:
     rank: 8
     title: "One player, one editorial bet, and the villain mold gets recast."
     blurb: "Samoa's edit tilts around one dominant personality so hard the rest of the cast plays inside that read. Polarizing precisely because the format leans this far into a single player — and the archetype it sets stuck around for years."
+  - show: hells-kitchen
+    season: 4
+    season_label: "S04 · Black Jackets"
+    rank: 9
+    title: "The season the show learns to match its own intensity to the cast."
+    blurb: "Season four fields the most volatile cast the show had assembled — real kitchen talent next to personalities that made every service unpredictable. What's new is control: production finally channels both, keeping the tension calibrated instead of chaotic all season."
   - show: rhoc
     season: 7
     season_label: "S07"
-    rank: 9
+    rank: 10
     title: "A peak-era cast at its most combustible, no manufacture required."
     blurb: "Season seven runs Orange County's established social world at maximum pressure — years of history and competing loyalties finally generate real friction instead of manufactured drama. The edit lets the volatility carry the hour rather than smoothing it over."
   - show: rhonj
     season: 4
     season_label: "S04"
-    rank: 10
+    rank: 11
     title: "The fault lines from the prior season, run at sustained pressure."
     blurb: "A leaner cast means no new arrivals to soften the dynamics — just established grievances pressing hard against each other for a full season. The edit needs zero setup and spends the whole runtime on the pressure itself, the franchise's most concentrated early stretch."
   - show: rhoa
     season: 7
     season_label: "S07"
-    rank: 11
+    rank: 12
     title: "One new addition, and the whole season's register sharpens."
     blurb: "A single cast newcomer matches, then exceeds, the group's verbal facility, and the edit centers the season on the friction that produces. Sharper and more combative than anything the franchise had aired before, with a Puerto Rico stretch that puts it on full display."
   - show: project-runway
     season: 13
     season_label: "S13 · New York"
-    rank: 12
+    rank: 13
     title: "A Manhattan cast the edit trusts to carry the whole hour on friction."
     blurb: "Cycle 13 fills the workroom with a more confrontational ensemble than the cycles around it, and the show leans on that tension instead of the challenges. No format twist needed — the season's whole case is the room itself, sustained from open to close."
 ---
