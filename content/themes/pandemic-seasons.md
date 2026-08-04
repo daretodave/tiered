@@ -120,4 +120,10 @@ entries:
     rank: 18
     title: "Strict health protocols turn a sealed villa into a time capsule of a strange year."
     blurb: "Production locks the cast inside strict isolation measures for the show's second season, and the constraints show up on screen throughout — a distinctive, visibly limited run unlike anything the format had done before."
+  - show: bachelor
+    season: 25
+    season_label: "S25"
+    rank: 19
+    title: "A single resort bubble replaces the mansion and every travel leg, for the first time in the franchise's run."
+    blurb: "The show's usual season-long circuit collapses into one address for all twelve episodes, premiere through finale. The pacing, the date structure, and the elimination rhythm were never designed around a single property before — the constraint reshapes the format entirely."
 ---
