@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-04
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "The public gets to name a third nominee every week"
     blurb: "The MVP twist hands viewers a weekly vote to add a third name to the nomination block, stacking a second nominating power on top of whatever the Head of Household already decided that week."
+  - show: big-brother
+    season: 3
+    season_label: "S03"
+    rank: 17
+    title: "No new mechanic arrives — the house getting sharper at the existing one is the season's real swing"
+    blurb: "Season three adds no producer-built mechanic. It hardens the Head of Household ceremony into a real weekly engine and starts casting for game sense over camera ease — the core loop sharpening is the actual swing, not a twist bolted on top."
 ---
