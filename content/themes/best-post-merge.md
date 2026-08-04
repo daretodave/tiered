@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-04
 featured: false
 related:
   - survivor-pillars
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A coaches-flip summer whose jury phase runs two alliance layers deep."
     blurb: "Draft-day loyalty debts sit underneath the newbies' own pacts once the merge hits, a hidden second scoring system nobody actually voted on. Confessionals sharpen as both layers surface together — the back-half payoff for a mechanic that looked purely early-game at the premiere."
+  - show: traitors
+    season: 4
+    season_label: "S04"
+    rank: 11
+    title: "The Round Table's late votes carry the season's real tension."
+    blurb: "By the back-half, Ardross's banishment votes tighten and the deduction game turns properly pointed — the season's own late stretch does the format's hardest job without reaching for a new twist to sell it. A settled machine proving it still runs hot where it counts."
 ---
