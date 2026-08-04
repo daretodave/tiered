@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-04
 featured: false
 related:
   - best-villain-editing
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "A battleship qualifier turns the whole course into a tribute"
     blurb: "A military-themed qualifier aboard the USS Iowa folds genuine respect into the format's usual structure, and an expanded six-city map means more competitors than ever are on hand to cheer a veteran through the course."
+  - show: top-chef
+    season: 11
+    season_label: "S11 · New Orleans"
+    rank: 17
+    title: "A warm New Orleans cast keeps the competitive heat on the food itself"
+    blurb: "Creole and Cajun traditions, gulf seafood, and the city's restaurant culture frame every challenge, and the season's real trick is a cast that competes hard without turning on each other. The kitchen tension stays about the cooking, never the cast."
 ---

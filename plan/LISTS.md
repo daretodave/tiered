@@ -107,7 +107,7 @@ last time a curator actually looked.
 | the-slow-build-was-the-point | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, Rule-2 season-fill confirmed stalled per `plan/CADENCE.md`'s fully-starred gap table, fell through to Rule 3; first touch since creation 2026-07-20). 13→15 entries, 7→9 shows. Big Brother S23 "The Team Captains" entry, rank 14 — the season's own watch_list text states plainly "Ep 22 · the newbie game matures — Late in the run the cast's strategic literacy is fully visible. A season that bet on its newcomers and gets repaid in the back half," a direct match for this list's patient-bet-pays-off-later thesis. Confirmed via a full `show: big-brother` + `season: 23` grep across every `content/themes/*.md` that S23's two prior appearances (`built-for-one-playing-as-a-team` rank 6 and `every-summer-gets-its-own-twist` rank 6) both stake the premiere-night team-draft mechanic itself, never the deferred strategic payoff staked here. RHONY S11 "The Roman Chapter" entry, rank 15 — the season's own lede/body text states the Rome trip "raised the production register and gave the season a destination worth the build," anchoring the back half after a front half that "let both registers coexist" rather than resolving quickly; confirmed via a full `show: rhony` + `season: 11` grep that S11's sole prior appearance (`the-zip-code-was-the-only-constant` rank 12) stakes a short-run cast-churn fact, not the slow-build/destination-payoff fact. Rejected as off-thesis or already-claimed: MasterChef S13 "United Tastes of America" (the season's own file states its regional structure dissolves at midseason and the back half runs *without* the organizing concept — the inverse of a payoff, not a match); Masked Singer S02 "The Escalation" (an even, ensemble-wide escalation across the whole run, not a quiet-front-half/hot-back-half structure); RHOBH S08, Hell's Kitchen S11, MAFS Australia S10 (all workmanlike or twist-forward season files with no textual slow-build/payoff framing). Also ruled out re-extending `the-competition-leaves-the-country` and `no-template-to-copy` this pass — see Ideas log. |
 | no-template-to-copy | era | 2026-07-20 | 2026-08-02 | reviewed 2026-08-02, no change — confirmed maxed out: exactly twelve catalog shows have an `est_year` inside the `era_range` [2000, 2005] and all twelve already hold this list's S01 slot; no thirteenth eligible show exists and a second entry from an already-claimed show would contradict the founding-season thesis. Dead end until a new show onboards into that window. |
 | funny-on-purpose | tone | 2026-08-01 | 2026-08-01 | extended 2026-08-01 (content-curator tick, extend-first fallback per the standing Rule-3 priority — Rule 2 confirmed stalled this tick, every remaining `plan/CADENCE.md` gap-table row starred/confirmed-but-unaired; avoided every list already touched today per the tick's own exclusion list). First touch since creation (2026-07-20) — never reviewed or extended before this pass. 13→14 entries, 8→9 shows. Shark Tank S08 "Season 8" entry, rank 8 — the season's own watch_list text states plainly the classic six's rapport is "at its loosest and funniest here, four seasons into a lineup that stopped needing an adjustment period a while ago," a direct, explicit match for this list's joke-lands-first thesis (a settled panel's chemistry itself generating the season's comic register, the same shape as this list's existing AGT S07 entry one rank up). Confirmed via a full `show: shark-tank` grep across every `content/themes/*.md` (18+ prior appearances checked, including the show's own dedicated single-show list `the-extra-seat-is-never-a-swap`, which stakes S07 and S09 but not S08) that Shark Tank S08 had zero prior appearances anywhere in the ledger — genuinely unclaimed, and the first Shark Tank entry on this specific list. Inserted at rank 8, directly below the AGT S07 settled-panel entry and above RHOA S09; existing ranks 8-13 shifted to 9-14. Considered and rejected as too weak a fact or off-thesis before landing on Shark Tank: Masked Singer S01/S04 (own files describe Ken Jeong's "exuberance" and panel warmth but never use explicit funny/comedy language, too soft a textual match); RHONY S07 "The Return" (Dorinda Medley's debut is described as "sharp, funny, and immediately essential," a genuine textual hit, but the same debut event is already staked at the show's own `the-zip-code-was-the-only-constant` rank 2 entry for the roster-churn/reentry fact, too close a shared event to add cleanly without restating it); The Apprentice S11/S12 (both explicitly frame themselves as unremarkable continuations of S07's already-claimed charity-stakes format, "nothing here reinvents the format," no fresh comedic fact of their own); RHOD/RHOBH/RHOA/RHOC charity-gala mentions surfaced via a broad `charity\|tribute\|benefit` sweep (all false positives on "benefits/benefited" or off-thesis for a joke-forward tone claim). List now runs 14 entries across 9 shows, no show over 2 (dragrace, bake-off, dragrace-uk, americas-got-talent all sit at 2, well under any per-show cap). |
-| never-needed-a-villain | tone | 2026-07-20 | 2026-07-20 | |
+| never-needed-a-villain | tone | 2026-08-04 | 2026-08-04 | extended 2026-08-04 (hundred-and-third pass, content-curator tick): 16→17 entries, 8→9 shows. First touch since creation (2026-07-20) — never reviewed or extended before this pass. Top Chef S11 "New Orleans" entry, rank 17 — the season's own body text states plainly "the cast skewed warm without losing competitive edge, the kitchen tension stayed about the food," a direct, explicit match for this list's mentorship/shared-credit/mutual-respect thesis. Confirmed via a full `show: top-chef` grep across every `content/themes/*.md` that S11's only other ledger appearance (`best-location-reveals` rank 5) stakes a city-as-culinary-identity location fact, never the cast's own on-screen warmth — leaving this angle unclaimed. List now runs 17 entries across 9 shows, no show over 3 (american-ninja-warrior and masterchef-australia both hold the ceiling at 3). |
 | the-blackout-had-a-loophole | craft | 2026-07-20 | 2026-07-20 | |
 | when-the-reward-pointed-somewhere-else | craft | 2026-07-20 | 2026-08-03 | Reviewed 2026-08-03 (eighty-second pass), first review since creation. Exhaustive charity/tribute/military/telethon/veterans/donation grep across the whole `content/shows/` tree — every real hit already staked at its current rank (Apprentice S07, DragRace All Stars S09, Chopped S55/S62, MasterChef Australia S15); every remaining hit a false positive (DWTS S09 "entertainment veterans," Amazing Race S24 and Project Runway S20 "veterans" = returning cast, RHOC/RHOBH "charity obligations" too thin/generic to ground a season-specific event). No new candidate found — this list looks tapped out on its charity/tribute axis for now. |
 | twice-in-one-year | era | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (14→15 entries, 4→5 shows). Big Brother S09 "The Winter Couples" entry, rank 8 — the season's own file states plainly it's "the only Big Brother season to air in winter," premiering February 12, 2008, five months ahead of that year's regular summer edition (S10, July 13, 2008; premiere dates confirmed via both seasons' own frontmatter), a genuine calendar-pace match for this list's twice-in-a-year thesis distinct from every other show already on the list (ANTM, DWTS, Project Runway, So You Think You Can Dance). Confirmed via a full `show: big-brother` grep across every `content/themes/*.md` that S09's four prior ledger appearances (`built-for-one-playing-as-a-team` — couples-team-structure fact; `every-summer-gets-its-own-twist` — twist-history fact; `when-scripted-went-dark` and `the-schedule-didnt-ask-permission` — both staking the writers'-strike-as-cause fact; `tried-once-never-repeated` — the one-off-swing fact) each stake a materially different angle from this list's pure calendar-pacing claim; the blurb here deliberately doesn't restate the strike as its primary thesis (already spent twice) and instead frames the fact as "the only year this house... runs twice." Inserted at rank 8, directly below Project Runway S03 (2006) and above So You Think You Can Dance S05 (2009) — chronologically correct for the list's year-ordered structure. Existing ranks 8-14 shifted to 9-15. List now runs 15 entries across 5 shows. |
@@ -4432,6 +4432,48 @@ last time a curator actually looked.
   were grepped for trip/travel language and came back either empty
   or (RHONJ S11) describing pandemic-restricted *reduced* travel,
   the opposite fact — no groundable candidate found, left untouched.
+
+- **2026-08-04, hundred-and-third pass.** Rule 2 confirmed stalled
+  again (`plan/CADENCE.md`'s gap table remains fully starred/
+  confirmed-but-unaired, next sweep due 2026-08-09) — fell through
+  to Rule 3. Avoided `running-on-muscle-memory`, `closing-statement`,
+  and `best-location-reveals` per the task brief (all three freshly
+  touched today by passes 101-102), and passed on `best-comeback-
+  seasons` / `not-knowing-was-the-point` per the standing exclusion.
+  Tried `the-season-the-audience-showed-up-all-at-once` (tone, 11
+  entries/9 shows, untouched since creation) first: grepped every
+  season file for explicit ratings-record language ("most-watched,"
+  "highest-rated," "biggest audience," etc.) and found the corpus's
+  genuine record-claim seasons are already staked on this exact
+  list, with the one fresh-looking candidate (Love Island US S08,
+  Peacock's "biggest Love Island debut yet") already spent on the
+  identical fact at `never-starts-cold` rank 3 — left unshipped
+  rather than force a near-duplicate. Also tried `the-doubters-had-
+  to-walk-it-back` (tone, 15 entries/15 shows, one-per-show streak
+  intact, untouched since creation): chased Amazing Race S33/S34
+  (pandemic-interruption and international-opening facts), Big
+  Brother S07/S22 (all-star-cast facts), and Alone Frozen/Alone: The
+  Skills Challenge S01 (spinoff-format facts) as candidates, but none
+  of their own season files carry the external pre-air-skepticism
+  framing this list's thesis needs — every candidate read as a
+  format-change fact, not a doubt-to-acclaim one — left unshipped.
+  Landed on `never-needed-a-villain` (tone, 16 entries/8 shows,
+  never touched since its 2026-07-20 creation): Top Chef S11 "New
+  Orleans" reads plainly in its own body text, "the cast skewed warm
+  without losing competitive edge, the kitchen tension stayed about
+  the food" — a direct match for the list's mentorship/shared-
+  credit/mutual-respect thesis. Confirmed via a full `show: top-chef`
+  grep across every `content/themes/*.md` that S11's only other
+  ledger appearance (`best-location-reveals` rank 5) stakes an
+  unrelated city-as-culinary-identity location fact. Shipped Top
+  Chef S11 at rank 17 (16→17 entries, 8→9 shows), appended at the
+  tail since the list's existing order reads as append-order rather
+  than a ranked strength ordering. Also spot-checked Project Runway
+  (S1/S2/S5/S12/S15) and Americas Got Talent S07 for a second
+  mentorship-adjacent entry: Project Runway S1 is already claimed
+  6x across the ledger, too over-mined for a 7th stake, and AGT S07's
+  "settled panel" chemistry fact is already spent on the identical
+  angle at `funny-on-purpose` — both passed over.
 
 ## Notes
 
