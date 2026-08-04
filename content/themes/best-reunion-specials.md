@@ -6,7 +6,7 @@ category: structure
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - best-finales
@@ -62,4 +62,10 @@ entries:
     rank: 8
     title: "A leaner cast makes the two-part reunion hit harder than the season around it."
     blurb: "Season three trims the cast to its core four after a hard year off-camera. The tighter room pays off at the reunion — a two-part special the show's own text calls one of the most discussed in the franchise's history."
+  - show: 90-day-fiance
+    season: 3
+    season_label: "S03"
+    rank: 9
+    title: "A Tell All reunion debuts quietly, then never leaves the format again."
+    blurb: "Season three keeps the six-couple format exactly as season two set it — no comeback couple, no crossover, nothing new to absorb. The one real addition is the closing Tell All: a reunion special that becomes a permanent fixture from here on."
 ---
