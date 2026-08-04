@@ -148,7 +148,7 @@ last time a curator actually looked.
 | the-format-kept-moving-the-furniture | single | 2026-07-27 | 2026-07-27 | extended 2026-07-27 (Bachelorette S09, S10, S14 entries — tagline already claimed all 21 seasons, only 18 were filed) |
 | the-toolkit-never-sat-still | single | 2026-07-22 | 2026-07-22 | |
 | the-command-held-for-nine-seasons-then-didnt | single | 2026-07-23 | 2026-07-23 | |
-| running-on-muscle-memory | tone | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (Alone Australia S3 "West Coast Range" entry, rank 18 — the season's own body text states plainly "the production team handles the self-filmed footage more confidently," citing a tighter edit rhythm and a deepened Australian cast pool, and frames the season as one that "consolidates rather than expands the format's range" in the canon write-up — a direct match for this list's execution-not-reinvention thesis; confirmed via a full `show: alone-australia` + `season: 3` grep across every `content/themes/*.md` that this season's two prior ledger appearances (`the-place-fought-back` rank 7, staking the sustained-rainfall/terrain-as-antagonist fact, and `one-rule-never-bends` rank 9, staking the no-format-rule-changed fact) never stake the production/execution-confidence claim as their own central thesis; ninth distinct show on this list, first alone-australia entry); previously extended 2026-08-02 (Married at First Sight Australia S09 entry, rank 17 — the season's own file states plainly it runs "at its most settled," with the Aiken–Schilling–Rampolla panel in its second year together, eleven couples at franchise-standard scale, and "no new structural twist," proving the format doesn't need novelty now that the panel and cast rhythm have bedded in; confirmed via a full `show: married-at-first-sight-australia` grep across every `content/themes/*.md` that S09's two other ledger appearances — `the-episode-order-never-found-its-ceiling` rank 6 (an episode-count record fact) and `the-reshuffle-stays-in-house` rank 8 (a returning-participant recasting fact) — never touch the settled-panel/no-new-mechanic tone claim staked here; eighth distinct show on this list, first MAFS Australia entry); previously extended 2026-07-29, second pass same day (Traitors UK S04 "Series 4 (2026)" entry, rank 16 — the season's own lede/watch_list frames a fourth run at the same Ardross Castle as leaning "into the format's own mythology rather than reinventing it," with a cast that's "clearly watched the earlier series" and a game that "barely needs explaining anymore," a direct thesis match distinct from S04's two existing ledger appearances (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-every-time-the-castle-reopens` rank 3), both of which center the Uncloaked companion-show/spinoff fact rather than the core game-and-host confidence claim; seventh distinct show on this list, first traitors-uk entry, distinct from the existing Traitors US S04 entry at rank 15); previously extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger) |
+| running-on-muscle-memory | tone | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (Alone Australia S3 "West Coast Range" entry, rank 18 — the season's own body text states plainly "the production team handles the self-filmed footage more confidently," citing a tighter edit rhythm and a deepened Australian cast pool, and frames the season as one that "consolidates rather than expands the format's range" in the canon write-up — a direct match for this list's execution-not-reinvention thesis; confirmed via a full `show: alone-australia` + `season: 3` grep across every `content/themes/*.md` that this season's two prior ledger appearances (`the-place-fought-back` rank 7, staking the sustained-rainfall/terrain-as-antagonist fact, and `one-rule-never-bends` rank 9, staking the no-format-rule-changed fact) never stake the production/execution-confidence claim as their own central thesis; ninth distinct show on this list, first alone-australia entry); previously extended 2026-08-02 (Married at First Sight Australia S09 entry, rank 17 — the season's own file states plainly it runs "at its most settled," with the Aiken–Schilling–Rampolla panel in its second year together, eleven couples at franchise-standard scale, and "no new structural twist," proving the format doesn't need novelty now that the panel and cast rhythm have bedded in; confirmed via a full `show: married-at-first-sight-australia` grep across every `content/themes/*.md` that S09's two other ledger appearances — `the-episode-order-never-found-its-ceiling` rank 6 (an episode-count record fact) and `the-reshuffle-stays-in-house` rank 8 (a returning-participant recasting fact) — never touch the settled-panel/no-new-mechanic tone claim staked here; eighth distinct show on this list, first MAFS Australia entry); previously extended 2026-07-29, second pass same day (Traitors UK S04 "Series 4 (2026)" entry, rank 16 — the season's own lede/watch_list frames a fourth run at the same Ardross Castle as leaning "into the format's own mythology rather than reinventing it," with a cast that's "clearly watched the earlier series" and a game that "barely needs explaining anymore," a direct thesis match distinct from S04's two existing ledger appearances (`the-broadcast-wasnt-the-whole-show` rank 7, `new-house-rules-every-time-the-castle-reopens` rank 3), both of which center the Uncloaked companion-show/spinoff fact rather than the core game-and-host confidence claim; seventh distinct show on this list, first traitors-uk entry, distinct from the existing Traitors US S04 entry at rank 15); previously extended 2026-07-29 (Traitors US S04 "Season 4 (2026)" entry — a freshly-drained season, premiered Jan 2026, its own text stating "no reinvention here... a confident, repeatable machine," a direct match for this list's thesis; zero prior appearances anywhere in the ledger, first Traitors entry on this list, sixth show); previously extended 2026-07-28 (American Idol S14 "The Quiet Year" entry — the season's own text names the exact "muscle memory" phrase; zero prior appearances anywhere in the ledger); extended again 2026-08-03, hundredth pass (The Ultimatum S03 entry, rank 19 — the season's own lede states plainly the premise "doesn't need to prove itself" three seasons in, with the format now "a known quantity" and the pull framing the whole season as a test of whether "a new cast's own history" can make a familiar deadline sting again — a direct match for this list's execution-not-reinvention thesis; confirmed via a full `show: the-ultimatum` grep across every `content/themes/*.md` that S03 had zero prior ledger appearances anywhere — its sibling seasons are staked at `built-for-the-drop` (S01), `the-hand-behind-the-couple` (S01), `missing-on-purpose` (S01), `best-premieres` (S01), `proving-the-debut-wasnt-luck` (S02), and `season-one-doesnt-own-every-first` (S04), none touching S03; thirteenth distinct show on this list, first the-ultimatum entry, appended at the bottom rather than rebased since its cast-history framing reads as a marginally more hedged fit than the pure-execution top tier) |
 | the-itinerary-was-the-format | single | 2026-07-23 | 2026-07-23 | |
 | sorted-before-they-landed | single | 2026-07-23 | 2026-07-23 | |
 | the-founding-seven-slowly-rebuilt | single | 2026-07-23 | 2026-07-23 | |
@@ -4346,6 +4346,50 @@ last time a curator actually looked.
   long calendar" entries; S20 has no season file yet, a Rule-2 gap
   not usable here) — confirms the 2026-07-28 pass's judgment that
   S13 was correctly left unshipped.
+
+- **2026-08-03, hundredth pass.** Rule 2 confirmed stalled again
+  (CADENCE.md's gap table is a 46-slot table, all
+  starred/confirmed-but-unaired, next sweep due 2026-08-09) — fell
+  through to Rule 3. Explicitly avoided `best-comeback-seasons` and
+  `not-knowing-was-the-point` per the task brief (both already at
+  their pass-98/99 shipped state, zero further work due). Surveyed
+  lightly-mined shows first — `the-ultimatum` (4 seasons, only 5
+  ledger appearances total pre-tick) — and found Season 3 had zero
+  appearances anywhere in the 205+-list ledger, confirmed via a full
+  `show: the-ultimatum` grep across every `content/themes/*.md`
+  (S01 staked 4x at `built-for-the-drop`, `the-hand-behind-the-
+  couple`, `missing-on-purpose`, `best-premieres`; S02 at `proving-
+  the-debut-wasnt-luck`; S04 at `season-one-doesnt-own-every-first`;
+  S03 untouched). Read S03's own file: its lede/pull state the
+  premise "doesn't need to prove itself" three seasons in, the
+  format is now "a known quantity," and the season's whole bet
+  rests on "a new cast's own history" making a familiar deadline
+  sting again — a clean, direct match for `running-on-muscle-
+  memory` (tone, 18 entries/12 shows before this tick, last touched
+  today by an earlier pass for its Alone Australia S3 entry) and
+  its execution-not-reinvention thesis. Distinct from S02's already-
+  claimed `proving-the-debut-wasnt-luck` angle (S02 tests whether
+  the format's tension survives a second cast; S03 explicitly treats
+  the format as settled and shifts the test onto the cast alone — a
+  different beat). Shipped: The Ultimatum S03 at rank 19 (18→19
+  entries, 12→13 shows). Also chased and dead-ended: an "Alone
+  franchise spinoffs recast their own alumni into a structurally
+  different format" angle (Alone: Frozen's shared-prize-pool twist,
+  Alone: The Skills Challenge's no-wilderness-drop/no-elimination
+  twist) — a genuinely fresh cross-show fact pattern, but only two
+  shows clear the thesis cleanly (a third candidate, Drag Race All
+  Stars, keeps the flagship's own elimination format rather than
+  reinventing it, a weaker fit), short of both the ≥3-shows floor
+  and the 10-24-entry range a wholly new list needs — logged here
+  as a live idea for a future tick if a third clean alumni-recast
+  spinoff surfaces. Also spot-checked The Ultimatum S04's "first
+  city the cast already lives in" home-turf fact against `away-
+  from-home-turf` (wrong direction — that list stakes casts pulled
+  *away* from home turf, the opposite fact) and `a-change-of-
+  address` (stakes the show's own fixed set relocating, not the
+  cast's relationship to the location) — no existing list fits, and
+  a fresh list on this narrower thesis has no groundable third-show
+  candidate yet; left unshipped.
 
 ## Notes
 

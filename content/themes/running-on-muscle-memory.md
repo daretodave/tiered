@@ -121,4 +121,10 @@ entries:
     rank: 18
     title: "A third season stops proving the format and starts just running it."
     blurb: "Three seasons in, the crew's self-filmed footage reads more assured and the edit rhythm tightens, the season's own account says. It calls the run one that consolidates the format rather than expanding it — a deepened Australian cast pool carrying the rest."
+  - show: the-ultimatum
+    season: 3
+    season_label: "S03"
+    rank: 19
+    title: "Three trips through the same deadline, and the format stops explaining itself."
+    blurb: "The premise doesn't need proving by its third run — propose, or trial-marry someone new from the group. The season's whole bet is that a new cast's own history can still make a deadline this familiar sting."
 ---
