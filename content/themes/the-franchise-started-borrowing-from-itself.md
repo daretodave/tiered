@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-24
+last_revised: 2026-08-04
 featured: false
 related:
   - before-the-spinoff-had-a-name
@@ -62,15 +62,21 @@ entries:
     title: "The cast on screen this year would help build the franchise's biggest spinoff."
     blurb: "Boston's cast reads like any other converted-firehouse season on the surface. It also becomes one of the earliest groups to cross over into the franchise's long-running Challenge spinoff, years before that crossover became routine."
   - show: the-real-world
+    season: 9
+    season_label: "S09 · New Orleans (2000)"
+    rank: 9
+    title: "A decade in, the flagship crosses back into the spinoff it created."
+    blurb: "New Orleans stages an on-screen crossover stunt with sister series Road Rules, folding cast and screen time over from the format this show helped launch years earlier. Ten years into the original run, that kind of shared appearance already reads as routine, not a special event."
+  - show: the-real-world
     season: 31
     season_label: "S31 · Go Big or Go Home (2016)"
-    rank: 9
+    rank: 10
     title: "The house finally runs on the rules its own spinoff invented."
     blurb: "For the first time, staying in the house requires completing missions borrowed directly from the Challenge and Road Rules format the franchise itself spun off years earlier. The clearest merger the original run ever attempted."
   - show: bachelor-in-paradise
     season: 10
     season_label: "S10"
-    rank: 10
+    rank: 11
     title: "The beach opens its casting call to two spinoffs at once."
     blurb: "Season ten's move to Costa Rica comes with contestants pulled from the Golden Bachelor and Golden Bachelorette spinoffs, an age-inclusive casting expansion the format hadn't tried before. The franchise's family tree gets a little more tangled."
 ---
