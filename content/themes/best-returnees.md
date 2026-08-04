@@ -6,7 +6,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-04
 featured: false
 related:
   - best-finales
@@ -67,4 +67,10 @@ entries:
     rank: 9
     title: "Twelve returning queens pick their own teams, and old dynamics resurface in minutes."
     blurb: "All Stars' debut leans on cast recognition the flagship show can't access this early — the returning roster self-selects into two-queen teams, and alliances and rivalries from prior seasons surface in the premiere instead of building up over weeks."
+  - show: big-brother
+    season: 22
+    season_label: "S22"
+    rank: 10
+    title: "Twist-light on purpose, so sixteen returning houseguests carry the whole season on accumulated history."
+    blurb: "The franchise's second all-star cast, and the first since 2006, moves into a strict-bubble house with just one standing wrinkle. Two decades of context do the narrative work no newbie cast could — the modern era's argument that it earned its own legends."
 ---
