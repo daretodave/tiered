@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-04
 featured: false
 related:
   - best-challenge-design
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "A judge-picked Wildcard Lottery brings one eliminated queen back for one last shot before the finale."
     blurb: "Unlike the season-long ladders of earlier All Stars runs, this format saves its comeback chance for one pre-finale twist, decided by judge vote instead of a competition among the eliminated — the mechanic still finding new shapes at the franchise's biggest scale."
+  - show: dragrace
+    season: 18
+    season_label: "S18"
+    rank: 14
+    title: "A rebuilt finale hands the whole eliminated cast one last shot at the crown."
+    blurb: "Season eighteen scraps the usual top-two lip sync and runs a full tournament for everyone the show already sent home, right before the final round. Nearly the entire cast gets a genuine route back into contention at the season's biggest moment."
 ---
