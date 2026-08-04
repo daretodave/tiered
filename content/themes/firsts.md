@@ -6,7 +6,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - best-premieres
@@ -25,40 +25,52 @@ entries:
     rank: 2
     title: "A first that found its cadence on the road almost immediately."
     blurb: "Eleven teams, a route marker, and a host nobody had heard of yet. The format barely changed after this — the casting, the geography, the rhythm all arrive close to finished. It holds up because so little ever had to be rebuilt."
+  - show: dancing-with-the-stars
+    season: 1
+    season_label: "S01 · The Premiere"
+    rank: 3
+    title: "A ballroom import that plays like it had already been running for years."
+    blurb: "Six episodes in the summer of 2005, and the American version already has its rhythm — celebrity-pro pairs, live judges, phone votes, landing complete in a shortened freshman run. Nothing about the format needed rebuilding before season two."
   - show: survivor
     season: 41
     season_label: "S41 · New Era I"
-    rank: 3
+    rank: 4
     title: "A deliberate reset that works like a season one for the post-pandemic show."
     blurb: "Shorter run, new mechanics arriving together, pacing tightened on purpose. The first season back after the pause plays like Survivor remembering itself out loud, testing what carries over. The redraw the format kept, and the shape the next decade is built on."
   - show: top-chef
     season: 1
     season_label: "S01 · San Francisco"
-    rank: 4
+    rank: 5
     title: "The first Top Chef — the format recognizable, but not yet finished."
     blurb: "Bravo opens its culinary competition in San Francisco with a small cast, tight kitchens, and a different host in the chair. No Last Chance Kitchen, no road show, no Padma yet. A historically important first draft whose bones held all the way through."
   - show: traitors
     season: 1
     season_label: "S01"
-    rank: 5
+    rank: 6
     title: "The origin, with the US adaptation inventing itself live at the castle."
     blurb: "The American version assembled in real time at Ardross Castle — cloaks, candlelit Round Table, breakfast reveal, a mixed cast of alumni and civilians meeting the format cold. Rougher than what follows, and it stuck: you watch the show learn itself."
   - show: bake-off
     season: 8
     season_label: "S08 · The Channel 4 Reset"
-    rank: 6
+    rank: 7
     title: "A true redraw — new network, new hosts, new judge, one piece kept."
     blurb: "New presenters at the tent flap, a new judge beside Paul Hollywood, and Welford Park as the single thread carrying the audience across. A structural experiment the franchise pulled off in one move. The reset the Channel 4 era was built on."
   - show: dragrace
     season: 1
     season_label: "S01"
-    rank: 7
+    rank: 8
     title: "The rough draft — short, soft-focus, and made before the franchise knew itself."
     blurb: "A heavily stylized first run with a soft-focus filter, a visible budget, and a panel still working out its grammar. The cast is small and scrappy, the challenges rough-drafted. It earns its place precisely as the rough draft the format kept and sharpened."
+  - show: masterchef
+    season: 1
+    season_label: "S01 · The Debut"
+    rank: 9
+    title: "A cooking format that worked out its own grammar in real time, seams included."
+    blurb: "Gordon Ramsay, Graham Elliot, and Joe Bastianich run the first American MasterChef across a tight thirteen episodes, sorting out the white apron, the mystery box, and their own panel chemistry as they go. A rough draft the format kept nearly whole."
   - show: jersey-shore
     season: 1
     season_label: "S01"
-    rank: 8
+    rank: 10
     title: "A shore-house format MTV barely touched for the rest of the show's run."
     blurb: "Eight strangers, one house near the boardwalk, and a gym-tan-laundry rhythm that arrives fully formed in episode one. Every season after — Miami, Florence, two returns to Seaside Heights — keeps the same ensemble format the debut set, changing only the location."
 ---
