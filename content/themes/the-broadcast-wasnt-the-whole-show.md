@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-08-04
 featured: false
 related:
   - live-without-a-net
@@ -61,34 +61,46 @@ entries:
     rank: 8
     title: "The backstage show returns after a long absence"
     blurb: "Untucked comes back this season for the first time since the franchise's debut year, restoring the backstage venue where a returning cast actually opens up. The competition format changes too, but the companion show's comeback is its own real story."
+  - show: dragrace-uk
+    season: 5
+    season_label: "S05"
+    rank: 9
+    title: "A new weekly aftershow gives the UK edition its own backstage venue"
+    blurb: "Series 5 pairs its calmest cast yet with a first: a dedicated weekly aftershow letting eliminated queens keep talking past the main broadcast. Not required to follow the competition, but the first real companion program the UK edition can call its own."
   - show: top-chef
     season: 23
     season_label: "S23"
-    rank: 9
+    rank: 10
     title: "The companion series changes its own rules mid-run"
     blurb: "Last Chance Kitchen's entry rule shifts this season, delaying when eliminated chefs can start fighting their way back. A small tweak, but proof of how load-bearing the companion webisodes have become — the show can't touch its own rulebook without touching theirs."
   - show: love-island-uk
     season: 3
     season_label: "S03"
-    rank: 10
+    rank: 11
     title: "Aftersun finds its footing as the show becomes a phenomenon"
     blurb: "Series 3 is the summer the aftershow settles into a real rhythm, right as the main series turns into a genuine cultural event. The companion program stops feeling optional and starts feeling like half of how people actually followed the season."
   - show: big-brother
     season: 27
     season_label: "S27"
-    rank: 11
+    rank: 12
     title: "The newest twist on the companion channel arrives"
     blurb: "This summer's run ships with Unlocked, a companion series built into the season's structure rather than added after the fact. The format keeps proving it can't just air an edited hour anymore — the parallel channel is baked in from the start."
   - show: love-island-uk
     season: 13
     season_label: "S13"
-    rank: 12
+    rank: 13
     title: "A new nightly companion show joins the schedule for the first time"
     blurb: "The Debrief becomes the villa's newest companion program this series, running most weeknights alongside the main episode. A calmer summer than the year before on every other front, but the franchise still finds room to add a new channel to how fans keep up."
   - show: big-brother
     season: 1
     season_label: "S01"
-    rank: 13
+    rank: 14
     title: "The founding experiment: a live feed running before anyone called it that"
     blurb: "The debut season pairs its edited broadcast with a live internet feed of the house, an early bet that some fans would rather watch the house directly than wait for the edit. The instinct behind every companion channel on this list starts here, small and untested."
+  - show: shark-tank
+    season: 6
+    season_label: "S06"
+    rank: 15
+    title: "The tank spins off a companion series that stands apart from the season itself"
+    blurb: "Season six's classic six holds without a single change, and the finale hands off to something new: Beyond the Tank, a spinoff revisiting past pitches instead of this run's own story. The least load-bearing entry here — it looks backward, not alongside the season in progress."
 ---
