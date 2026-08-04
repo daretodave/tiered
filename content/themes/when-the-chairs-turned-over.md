@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - best-hosting
@@ -109,16 +109,22 @@ entries:
     rank: 16
     title: "A pop-rock coach turns the chairs into a genuine guessing game."
     blurb: "Gwen Stefani's debut alongside Pharrell Williams gives the blind auditions a musical register the returning coaches hadn't offered in six cycles. Suddenly nobody's sure which chair is going to turn for a given voice."
+  - show: so-you-think-you-can-dance
+    season: 12
+    season_label: "S12 · Stage vs. Street"
+    rank: 17
+    title: "A third judge joins the table the same season the teams stop splitting by gender."
+    blurb: "Jason Derulo takes a seat alongside Nigel Lythgoe and Paula Abdul just as the finalists split into Stage and Street squads for the first time. Two structural changes land in the same season, and the judging panel absorbs its share without slowing the show down."
   - show: masterchef-australia
     season: 11
     season_label: "S11"
-    rank: 17
+    rank: 18
     title: "The founding panel's last season together, with the mentors already changing."
     blurb: "Gary Mehigan, George Calombaris, and Matt Preston judge as a trio for the final time, while three former contestants take over the mentor role. The show is still running at full strength, but the changeover is visible around the edges."
   - show: hells-kitchen
     season: 7
     season_label: "S07"
-    rank: 18
+    rank: 19
     title: "A new sous chef quietly becomes a fixture behind the pass."
     blurb: "Andi Van Willigan takes the Red Team pass, a post she'd hold for three more seasons — the kind of change that never gets its own storyline, just a steadier authority on that side of the kitchen from here on."
 ---
