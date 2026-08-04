@@ -6,7 +6,7 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - firsts
@@ -61,10 +61,16 @@ entries:
     rank: 8
     title: "Coney Island's boardwalk announces a season built for bigger stages."
     blurb: "Coney Island opens the season, a location the format had never used before, and the boardwalk visibly reshapes the early challenges' texture. The finale then closes on an even bigger stage in Las Vegas — the reveal at the front end previews the scale the season is chasing."
+  - show: below-deck-down-under
+    season: 2
+    season_label: "S02 · Western Australia"
+    rank: 9
+    title: "Ningaloo Reef trades marina glamour for the franchise's most remote water yet."
+    blurb: "Season two moves the franchise to Western Australia's Ningaloo Reef — the franchise's most remote charter yet — trading the Whitsundays' tourist infrastructure for longer open-water passages and fewer port calls. The isolation sets the register before the first guest boards."
   - show: alone-australia
     season: 2
     season_label: "S02 · Fiordland"
-    rank: 9
+    rank: 10
     title: "A fjord jump hands the Australian format a scale it had never touched."
     blurb: "Alone Australia's second season leaves the country for the first time, swapping Tasmania's moorland for New Zealand's fjord terrain and rainforest. The scale reads immediately, and the cast's opening camp calls show the environment doing real work before the competition starts."
 ---
