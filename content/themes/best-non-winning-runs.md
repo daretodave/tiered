@@ -6,7 +6,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-04
 featured: false
 related:
   - best-post-merge
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A split cast of rookies and returning veterans doubles the season's depth."
     blurb: "Charleston splits its roster between new chefs and returning veterans brought back to raise the level, and no single half carries the story. The deep bench works every Lowcountry challenge together — the season's shape comes from the whole kitchen, not one standout cook."
+  - show: big-brother
+    season: 6
+    season_label: "S06"
+    rank: 11
+    title: "A hidden-pairs twist that let a stacked cast do the actual work."
+    blurb: "Fourteen houseguests move in already secretly paired with someone else in the house, and the canon still calls this the strongest pre-2010 cast the format assembled. The twist serves the room instead of crowding it — alliance math dense, no one voice carrying the summer."
 ---
