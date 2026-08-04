@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-04
 featured: false
 related:
   - proving-the-debut-wasnt-luck
@@ -94,4 +94,10 @@ entries:
     rank: 15
     title: "A new city franchise many assumed was one Housewives too many"
     blurb: "Adding another city to an already sprawling franchise, built around a social world the brand hadn't filmed before, looked like a stretch too far. The debut cast's specificity won over doubters fast, turning a fatigue worry into one of Bravo's most-praised launches in years."
+  - show: survivor
+    season: 41
+    season_label: "S41 · New Era I"
+    rank: 16
+    title: "A shortened clock and a pile of new twists fans expected to wreck the format"
+    blurb: "Cutting the game from 39 days to 26 and adding three new mechanics at once looked, on paper, like a formula in crisis. The post-pandemic reset played the changes straight, and the season became the template the next decade of the show still runs on."
 ---
