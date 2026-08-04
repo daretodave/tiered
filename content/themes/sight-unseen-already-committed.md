@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-04
 featured: false
 related:
   - the-grudge-was-the-casting-call
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "The blind-marriage format runs on pure, practiced momentum."
     blurb: "Five new couples go through the same no-meeting-beforehand process a fourth city already proved works. Nothing structural is left to prove about the premise itself — it just runs."
+  - show: the-circle
+    season: 6
+    season_label: "S06"
+    rank: 12
+    title: "Players rank each other as trustworthy before confirming anyone in the game is even human."
+    blurb: "Season 6 pushes the format's core gamble one step further: players build real trust and alliances with a profile they can't even confirm is a person, using a dedicated how-human rating scale to decide who's worth the connection."
 ---
