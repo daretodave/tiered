@@ -130,7 +130,7 @@ last time a curator actually looked.
 | every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
 | the-paycheck-writes-the-plot | craft | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (14→16 entries, 7 shows, below-deck-down-under 1→3 entries, now at cap). Below Deck Down Under S03 Seychelles entry, rank 15 — the season's own lede states Captain Jason Chambers keeps his "returning command" over "a mostly new crew building chemistry from scratch," a distinct hierarchy-fact from S01's green-launch stake already on this list (S01 is a chain of command sorting itself for the first time ever; S03 is an already-proven captain's authority holding while the ranks beneath him are the unknown quantity) — confirmed via full `show: below-deck-down-under` grep that S03's only other ledger appearance (`a-change-of-address`, rank 1) stakes the relocation-out-of-Australian-waters fact, not a chain-of-command fact. Below Deck Down Under S04 Canouan entry, rank 16 — the season's own lede names Chef Ben Robinson and Chief Stew Daisy Kelliher as a "veteran crew carrying decades of Below Deck experience" under Chambers's command, a seniority-earned-elsewhere-vs-authority-on-this-boat fact distinct from both S01 and S03's stakes here, confirmed via the same grep that S04's only other appearance (`a-change-of-address`, rank 2) stakes the Caribbean-relocation fact. Considered and rejected: Below Deck Down Under S02 Western Australia (season file has no crew-hierarchy-specific text, only "Captain Jason Chambers adapted his command style to the stripped-back context" — too thin to ground a distinct chain-of-command claim); Below Deck Sailing Yacht S02 Croatia (would duplicate `the-quiet-register-was-the-whole-point-until-ibiza` rank 1's existing "cross-department friction" stake on the same season); Below Deck Mediterranean S02–S10 (all ten Below Deck Mediterranean seasons already comprehensively staked on the closely-related command-continuity thesis at the single-show list `the-command-held-for-nine-seasons-then-didnt`, and no season there offered a fact distinct enough from that existing command-authority framing to avoid reading as a duplicate stake); Below Deck Adventure has only one aired season (Svalbard), already used here at rank 14, no headroom. |
 | the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
-| everything-but-the-pass-keeps-changing | single | 2026-07-21 | 2026-07-21 | |
+| everything-but-the-pass-keeps-changing | single | 2026-08-04 | 2026-08-04 | extended 2026-08-04 (cloud march, 12→13 entries). Hell's Kitchen S10 "Twenty Episodes" entry, rank 13 — the season's own lede and pull cite a franchise-record twenty-episode order plus celebrity guests joining dinner service across the run, a distinct structural-expansion fact from every other entry already on this list (none stake the episode-count/celebrity-guest combination), confirmed via full `show: hells-kitchen` grep against all 12 prior entries before adding. |
 | some-casts-didnt-need-week-one | single | 2026-07-22 | 2026-07-22 | |
 | season-one-doesnt-own-every-first | craft | 2026-07-22 | 2026-07-22 | |
 | the-workroom-outlasted-the-network | single | 2026-07-22 | 2026-07-22 | |
@@ -4741,6 +4741,48 @@ last time a curator actually looked.
   canons/174 themes), build 1501 pages, e2e 4841/4841 in 29.9m. List
   now runs 19 entries across 18 shows (Bachelor's second appearance,
   no new show added).
+
+- **2026-08-04, hundred-and-twelfth pass, cloud march.** Rule 2
+  re-confirmed stalled (`plan/CADENCE.md`'s gap table still fully
+  starred/confirmed-but-unaired per the 2026-08-02 sweep; no season
+  has concluded since). Fell through to Rule 3. Tried two candidates
+  before finding a clean one. First, spawned a content-curator
+  sub-agent against `the-grudge-was-the-casting-call` (10 entries):
+  exhausted, per-show informal cap already maxed at 3/3 on both
+  The Challenge and The Real World, and no unclaimed
+  grudge-drove-the-casting fact turned up across roughly fifteen
+  other candidate shows checked. Second, spawned a sub-agent against
+  `the-blackout-had-a-loophole` (14 entries): also exhausted — no
+  sanctioned-crack-in-the-information-blackout fact found beyond the
+  baseline no-phones/no-contact facts already staked on the list.
+  Rather than force a weak or duplicate entry onto either, pivoted to
+  a `category: single` list with real headroom:
+  `everything-but-the-pass-keeps-changing` (Hell's Kitchen, 12 entries
+  against 24 declared seasons). Did the research directly rather than
+  via sub-agent — the missing-season pool was small enough to check by
+  hand: grepped `format_summary`/`format_caption`/`lede`/`pull` across
+  every season file for seasons not yet on the list (1, 2, 3, 4, 5, 7,
+  8, 10, 11, 13, 14, 15) and read the strongest candidate,
+  `content/shows/hells-kitchen/seasons/10-twenty-episodes.md`, in
+  full. Its own lede and pull cite a franchise-record twenty-episode
+  order plus celebrity guests joining dinner service across the run,
+  and its own verdict is that the extra length costs more than the
+  addition buys — a distinct structural-expansion fact from every
+  other Hell's Kitchen entry already on this list (immunity mechanics,
+  age-capped casts, geographic relocations, all-star/head-chef casts —
+  none stake the episode-count/celebrity-guest combination). Confirmed
+  unclaimed via a full `show: hells-kitchen` grep against all 12 prior
+  entries before drafting. First blurb draft ran 309 characters,
+  over the 280-char schema ceiling; trimmed to 271 characters while
+  keeping both facts (franchise-record 20 episodes; celebrities join
+  dinner service) and the same critical verdict framing. `single`-
+  category lists are exempt from the deck/body-opener-divergence,
+  headline-body-echo, and verbatim-phrase-echo invariants, so no
+  further rewrite was needed on that front. `pnpm content:check`
+  clean after the edit (68 shows/1043 seasons/68 canons/174 themes;
+  only pre-existing, unrelated warnings tracked under issues
+  #393/#394). List now runs 13 entries (still one show, by design —
+  this is the show's dedicated single-category list).
 
 ## Notes
 
