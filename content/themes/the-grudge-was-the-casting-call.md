@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-20
+last_revised: 2026-08-04
 featured: false
 related:
   - when-the-cast-was-already-related
@@ -73,4 +73,22 @@ entries:
     rank: 10
     title: "A different person from someone's actual past shows up every single week."
     blurb: "Chicago's cast shares the house with a rotating guest — an ex, a family member, an old friend — who moves in for one week at a time. The house never gets a real break from somebody's history."
+  - show: rhonj
+    season: 1
+    season_label: "S01"
+    rank: 11
+    title: "Five Jersey women already inside the same social circle become the founding cast."
+    blurb: "No stranger-meets-stranger premiere here — every dinner-table dynamic, every loyalty and slight, predates the first camera setup by years. The franchise's defining blowup wasn't manufactured on a soundstage; it was already loaded before production said action."
+  - show: bachelor-in-paradise
+    season: 1
+    season_label: "S01"
+    rank: 12
+    title: "Every castmate already appeared on The Bachelor or The Bachelorette."
+    blurb: "Paradise doesn't introduce a new cast — it recycles one, some of whom competed for the very same lead in a different season entirely. The show bets that shared televised history reads as real tension from episode one, no fresh-strangers premise required."
+  - show: selling-sunset
+    season: 1
+    season_label: "S01"
+    rank: 13
+    title: "Seven coworkers with real office history become the cast, no strangers required."
+    blurb: "The Oppenheim Group's agents didn't meet for the cameras — they already worked the same desks, competed for the same listings, and carried real unresolved friction into the premiere. The brokerage's history is the plot; the real estate is just the backdrop."
 ---
