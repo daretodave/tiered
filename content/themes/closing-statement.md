@@ -7,7 +7,7 @@ category: craft
 sentiment: verdict
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - best-finales
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A franchise experiment plays like a normal launch and quietly never gets a second charter."
     blurb: "Below Deck Adventure's lone season carries none of a farewell's usual signals — a new vessel, a new climate, a captain proving himself in Arctic waters. No reinvention narrative, no advance notice. The format just doesn't come back for a second season."
+  - show: rhod
+    season: 5
+    season_label: "S05 · The Closing Chapter"
+    rank: 11
+    title: "Bravo bills the season as the franchise's goodbye, then an off-camera story defines the ending instead."
+    blurb: "Season five returns all five Housewives plus one new addition for what Bravo billed at the time as RHOD's last season. A resurfaced-clip controversy draws outside press attention no earlier season saw, and the send-off ends up defined by noise, not nostalgia."
 ---
