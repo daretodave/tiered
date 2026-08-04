@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-19
+last_revised: 2026-08-04
 featured: false
 related:
   - the-elimination-round-never-keeps-its-name
@@ -61,22 +61,28 @@ entries:
     rank: 8
     title: "A second returnee outing tests whether one comeback season was a fluke."
     blurb: "Eleven teams who'd already raced once get another lap around the globe, a follow-up to an earlier all-returnee season years before. The point isn't nostalgia — it's finding out whether the comeback idea holds up a second time."
+  - show: hells-kitchen
+    season: 6
+    season_label: "S06 · Rising Stakes"
+    rank: 9
+    title: "A single returning contestant tests whether one loss really is the end."
+    blurb: "A dismissed contestant from the previous season returns mid-competition to reclaim a spot on the line — the format's first time reaching backward for a second chance instead of engineering one into the season itself. A small swing next to a full comeback beach, but a genuine one."
   - show: masterchef
     season: 12
     season_label: "S12 · Back to Win"
-    rank: 9
+    rank: 10
     title: "Twenty home cooks who already know the Mystery Box get another shot."
     blurb: "Back to Win pulls twenty returning contestants from seasons five through eleven into an all-stars run staged entirely around second chances, with immunity pins adding a strategic layer a rookie field wouldn't know how to use."
   - show: dragrace-allstars
     season: 1
     season_label: "S01"
-    rank: 10
+    rank: 11
     title: "A whole spinoff gets built on the idea of a second run."
     blurb: "All Stars' debut resets twelve returning queens into a new game from scratch — self-selected teams, joint eliminations, a panic-button twist unique to this format. The entire premise of the spinoff is a second chance, not one twist inside a normal season."
   - show: bachelor-in-paradise
     season: 1
     season_label: "S01"
-    rank: 11
+    rank: 12
     title: "The format turns 'it didn't work out' into its whole premise."
     blurb: "Bachelor in Paradise pulls contestants whose stories didn't finish on the flagship shows into one shared beach house, running the same rose ceremony at a faster, group-house pace. Not a twist bolted onto an existing show — the entire show is the second chance."
 ---
