@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - firsts
@@ -85,6 +85,12 @@ entries:
     rank: 12
     title: "A city qualifier broadcasts the first woman to clear the Warped Wall."
     blurb: "Season five widens the qualifying map to Baltimore and Denver and refreshes the course with the Rope Glider and Hang Slider. Then, in one of those city rounds, the milestone lands quietly — a genuine first for the show's five-year run."
+  - show: americas-next-top-model
+    season: 11
+    season_label: "S11"
+    rank: 13
+    title: "Eleven cycles into an established run, the competing cast gets its first transgender contestant."
+    blurb: "The show treats the casting as a structural decision, not a passing detail, folding it into a cycle that also sends the field to Amsterdam for its international leg. A genuine first arriving well past the point the format needed to prove itself."
 ---
 
 # Season one doesn't own every first

@@ -132,7 +132,7 @@ last time a curator actually looked.
 | the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
 | everything-but-the-pass-keeps-changing | single | 2026-08-04 | 2026-08-04 | extended 2026-08-04 (cloud march, 12→13 entries). Hell's Kitchen S10 "Twenty Episodes" entry, rank 13 — the season's own lede and pull cite a franchise-record twenty-episode order plus celebrity guests joining dinner service across the run, a distinct structural-expansion fact from every other entry already on this list (none stake the episode-count/celebrity-guest combination), confirmed via full `show: hells-kitchen` grep against all 12 prior entries before adding. |
 | some-casts-didnt-need-week-one | single | 2026-07-22 | 2026-07-22 | |
-| season-one-doesnt-own-every-first | craft | 2026-07-22 | 2026-07-22 | |
+| season-one-doesnt-own-every-first | craft | 2026-08-04 | 2026-08-04 | extended 2026-08-04 (America's Next Top Model S11 "The Inclusion Cycle" entry, rank 13 — the show's own lede/body states the cycle's first transgender contestant in the competing cast was "a structural decision, not background detail," eleven cycles into the run; grounded in the season file itself, not a canon-only mention. Checked the full `americas-next-top-model` grep across content/themes/*.md first — S11 was entirely unclaimed anywhere in the ledger. Season-label kept bare `S11`: "The Inclusion Cycle" reads as an in-season editorial nickname, not a network-marketed subtitle, per the header-slot rule.) |
 | the-workroom-outlasted-the-network | single | 2026-07-22 | 2026-07-22 | |
 | every-season-tests-a-new-theory-of-the-kitchen | single | 2026-07-22 | 2026-07-22 | |
 | a-show-that-never-had-a-home-address | single | 2026-07-22 | 2026-07-22 | |
