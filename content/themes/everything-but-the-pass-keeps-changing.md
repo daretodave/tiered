@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-04
 featured: false
 related:
   - the-twist-is-the-format
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "The last season with no subtitle, no gimmick, no theme to lean on"
     blurb: "Eighteen chefs run the format at its most unadorned, right before the show commits to a themed edition every year after. The one quiet signal that change is coming: custom episode titles finally retire the show's long-running numbered-chefs formula."
+  - show: hells-kitchen
+    season: 10
+    season_label: "S10"
+    rank: 13
+    title: "The kitchen adds celebrity guests just as the episode order hits a franchise high"
+    blurb: "Twenty episodes is a franchise record on its own; the season also layers in celebrities working service alongside the chefs all season long. The format stretches further than any prior run, and the season's own verdict: the extra length costs more than the addition buys."
 ---
