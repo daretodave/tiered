@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-04
 featured: false
 related:
   - a-guest-spot-with-room-to-grow
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "Potomac reaches its biggest cast ever, even as its longest tenures were already ending"
     blurb: "One new full housewife pushes the roster to eight, the largest group the show has fielded. Filmed months before it aired, the season turns out to be the last full-time stretch for two of the franchise's longest-running names."
+  - show: rhodubai
+    season: 2
+    season_label: "S02"
+    rank: 15
+    title: "Dubai swaps a founding face for a new one, and the number holds"
+    blurb: "Season two returns five of the founding six and adds one new full-time housewife, landing right back at six women total. Every other swing on this list moves the number — this one proves a swap doesn't have to."
 ---
