@@ -5074,6 +5074,53 @@ last time a curator actually looked.
   14→15 entries, shows unchanged at 10. See ledger row for the
   full trail.
 
+- **fifth 2026-08-05 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md` fully starred and re-ran the
+  below-10-entry and below-3-shows census — no non-`single` list
+  is under floor and unexcluded; Rule 3a is exhausted for today,
+  matching the second and third passes above. Spent the rest of
+  the tick on extend-first candidates against healthy lists and
+  came up empty on every one:
+  `the-goodbye-became-part-of-the-format` — tried Survivor S1's
+  torch-snuffing elimination ritual, already spent twice on this
+  exact show (`no-template-to-copy` rank 1, `missing-on-purpose`
+  rank 3, both already using "a torch" in their own text, per the
+  standing rejection note above).
+  `the-diners-were-never-extras` — tried Vanderpump Rules S07's
+  Tom Tom bar opening, already claimed twice
+  (`the-map-outlasted-the-cast`, `a-change-of-address`); Top Chef
+  is already at the informal 3-entry craft cap (S01/S04/S08) and
+  Hell's Kitchen's other seasons didn't turn up a fresh unclaimed
+  real-service beat within budget.
+  `someone-else-held-the-chair-for-a-while` — tried Big Brother
+  S21's Camp Comeback/Whacktivity twist, found already claimed
+  four times over (`every-summer-gets-its-own-twist`,
+  `a-way-back-in`, `the-twist-is-the-format`,
+  `a-second-life-built-into-the-format`); tried Project Runway
+  S11's team-format swap, already claimed at
+  `built-for-one-playing-as-a-team` rank 7; tried Project Runway
+  S20's no-single-host mentor-led season, already claimed
+  near-verbatim at `milestones-spent-not-marked` rank 9; tried
+  The Voice S4's Shakira/Usher guest-coach swap, found staked
+  practically word-for-word at
+  `the-panel-turned-over-more-than-the-contestants-did` rank 6
+  (a dedicated single-show list already covering every Voice
+  panel-turnover season). `the-mic-changed-hands` — tried DWTS
+  S30's Alfonso Ribeiro co-host addition; ruled out on thesis fit
+  (the list tracks lead-host handoffs, Ribeiro joined *alongside*
+  Tyra Banks rather than replacing her, and the show is already
+  claimed at S29 for the actual Bergeron-to-Banks handoff).
+  Considered inventing a fresh peer-judging-format concept off
+  Alone: The Skills Challenge's alumni-judge-alumni structure
+  (`content/shows/alone-the-skills-challenge/seasons/01-season-1.md`)
+  but couldn't clear the ≥3-distinct-show cross-canon floor — no
+  other show in the catalog stakes a genuine peer-judged (not
+  guest-judged) structure in its own season-file text. Declined
+  to force a sub-floor invention or reskin already-spent ground.
+  Zero-ship, per the Mission statement's standing allowance —
+  consistent with the second, third, and fourth 2026-08-05 passes
+  above.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
