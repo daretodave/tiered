@@ -5121,6 +5121,57 @@ last time a curator actually looked.
   consistent with the second, third, and fourth 2026-08-05 passes
   above.
 
+- **sixth 2026-08-05 pass (content-curator tick): zero-ship.**
+  Confirmed `plan/CADENCE.md` still fully starred (Rule 2 stalled
+  on every gap row — no concluded season to file), fell through
+  to Rule 3 per ship-content.md §4 Step 1. Confirmed the review
+  batch is empty: every ledger `last_reviewed` postdates
+  2026-07-12's seed and sits well inside the 90-day window (the
+  oldest, `survivor-pillars` at `last_reviewed: 2026-07-31`, is
+  five days stale, nowhere near due) — zero lists review-due,
+  skipped the review-batch path per the brief. Spent the tick on
+  extend-first candidates against healthy tone lists not touched
+  earlier today, and came up empty on every one — each candidate
+  turned out to be a near-verbatim duplicate of a fact already
+  spent on the exact same season elsewhere in the ledger:
+  `no-one-got-a-night-off` — tried Alone: Frozen S01 (its own file
+  emphasizes "colder and darker" conditions and a shared-prize
+  twist); rejected because the cold/dark fact is already staked
+  almost word-for-word at `the-place-fought-back` rank 1 ("darker
+  days, colder nights"), a list already touched today and thus
+  double-excluded. `played-it-straight` — tried Shark Tank S01
+  (own file: "a format with no second draft," "lands fully formed
+  from the first pitch"); rejected because that exact "no second
+  draft" language is already spent at `not-the-usual-order` rank 2
+  for the identical founding-confidence fact, just filed under the
+  episode-count thesis instead. `best-newbie-casts` — tried three
+  candidates for a genre-diversifying rookie-cast entry beyond its
+  four existing Housewives-adjacent shows: RHOA S01 (confident-cast
+  fact already staked at `wealth-as-the-whole-pitch` rank 10,
+  "the format is unpolished; the pitch is already clear");
+  Vanderpump Rules S01 (identical "confident enough to build an
+  entire Bravo universe" fact already staked at `the-franchise-
+  started-borrowing-from-itself` rank 4, on a season already
+  claimed six times over across the ledger); Below Deck S01
+  (proto-format fact already staked at `before-the-spinoff-had-a-
+  name` rank 3 and four other lists). Also spot-checked two small
+  franchises for any remaining headroom: RHODubai (2 filed seasons,
+  7 existing ledger stakes — already over-claimed relative to its
+  size) and Queer Eye (10 seasons, every one claimed 1-3 times
+  across `a-show-that-never-had-a-home-address` and `the-format-
+  never-blinked` plus scattered craft/tone entries) — neither has a
+  fresh angle left. The pattern across all six checks: the catalog
+  now runs enough season-1/founding-cast-focused lists (`firsts`,
+  `no-template-to-copy`, `season-one-doesnt-own-every-first`,
+  `before-the-spinoff-had-a-name`, `wealth-as-the-whole-pitch`,
+  `the-franchise-started-borrowing-from-itself`, `not-the-usual-
+  order`, `played-it-straight`, `best-newbie-casts` itself) that a
+  show's debut-season facts are reliably pre-claimed before a new
+  list gets to them. Declined to force a sub-40%-overlap invention
+  or reskin already-spent ground. Zero-ship, per the Mission
+  statement's standing allowance — consistent with the second
+  through fifth 2026-08-05 passes above.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
