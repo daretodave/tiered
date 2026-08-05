@@ -124,7 +124,7 @@ last time a curator actually looked.
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Bake Off S10, S16 entries — both genuinely unclaimed anywhere in the ledger, confirmed via grep; the two other apparent gaps, S09/S15, stay excluded on purpose because `running-on-muscle-memory` already spends their identical "settled, nothing new" address fact) |
 | the-zip-code-was-the-only-constant | single | 2026-07-21 | 2026-07-21 | |
 | wealth-as-the-whole-pitch | tone | 2026-08-02 | 2026-08-02 | extended 2026-08-02 (content-curator tick, seventy-eighth pass): 13→14 entries. Below Deck flagship S01 "Sint Maarten" entry, rank 14 — the season's own file states plainly that "the clear-water Caribbean backdrop gave the show a visual register it would return to again," a distinct wealth-as-visual-identity fact from this show's four other ledger appearances (`before-the-spinoff-had-a-name` stakes the format-origin fact, `the-charter-map-as-the-whole-story` stakes the location-variety fact, `the-paycheck-writes-the-plot` stakes the crew-hierarchy fact, `where-the-warmth-ran-out` stakes a tonal-erosion fact) — confirmed via full `show: below-deck$` grep across every `content/themes/*.md` before writing. Considered and rejected: RHOD S01, RHOSLC S01 (both open on faith/church social registers, not a wealth/real-estate pitch); RHONJ S01 (opens on shared-history/dinner-table confrontation, not real estate); Below Deck Down Under S01 (franchise-identity/expansion register, better fit for `new-flags-planted-fast`, risked over-concentrating the Below Deck franchise on this list); Summer House S01 (modest Hamptons rental, too weak a wealth-pitch to ground a claim); Selling Sunset S01 and Southern Charm S01 (both already at or past their informal per-show stake count elsewhere in the catalog for this exact thesis). |
-| the-batch-drop-settles-in | era | 2026-07-21 | 2026-07-21 | |
+| the-batch-drop-settles-in | era | 2026-07-21 | 2026-08-05 | reviewed 2026-08-05, no change — considered as a fallback extend target after both named candidates (`one-season-two-flags`, `the-vote-left-the-phone-line`) were confirmed already resolved earlier the same day. Drafted a Love Island US S04 candidate (Peacock debut's "daily streaming drop" replacing CBS's nightly broadcast slot, per the season's own `episodes_caption`) but rejected before shipping: the identical fact is already double-staked, at `moving-day` rank 8 ("trades its weekly broadcast slot for a daily-drop release") and `same-license-different-rules` rank 4 ("a 38-episode daily streaming drop"), both near-verbatim phrasing of the same CBS-to-Peacock pivot. A third stake here would restate the same fact under this list's batch-vs-single-day thesis rather than add a genuinely distinct angle — reads as a reskin, not new ground. No other Love Island US season carries a distinct release-cadence fact (S01-S03 ran CBS nightly broadcast, S05-S08 all inherit S04's daily-drop pattern with no further change). |
 | the-reveal-was-the-whole-show | tone | 2026-07-21 | 2026-07-21 | |
 | the-extra-seat-is-never-a-swap | single | 2026-07-21 | 2026-07-21 | |
 | every-seat-had-an-expiration-date-except-one | single | 2026-07-21 | 2026-07-21 | |
@@ -4952,6 +4952,44 @@ last time a curator actually looked.
   S04 (rank 7) + S05 (rank 8), rebasing naked-and-afraid/love-is-
   blind/queer-eye by +2. List grew 12→14 entries, 6→7 shows; see
   ledger row for the full rejected-candidate trail.
+
+- **second 2026-08-05 pass, cloud `/march` tick: zero-ship.**
+  Re-checked `plan/CADENCE.md` — still fully starred, Rule 2
+  stalled, fell through to Rule 3. Re-verified both named
+  candidates from the brief and found both already resolved by an
+  earlier pass the same day: `one-season-two-flags` already
+  extended 8→9 (MasterChef US S16, see ledger row) and
+  `the-vote-left-the-phone-line` already re-confirmed a dead end
+  after exhaustive research (see ledger row). Rebuilt the full
+  below-floor census from scratch (`grep -c '^  - show:'` across
+  every `content/themes/*.md`, cross-referenced against
+  `category:`) to confirm no other non-single list sits under the
+  10-entry floor: every list under 10 entries carries `category:
+  single` (survivor-pillars, seven-ways-to-break-the-same-app,
+  every-season-strikes-a-different-bargain-with-lana, the-quiet-
+  register-was-the-whole-point-until-ibiza, home-seasons-waited-
+  relocation-seasons-didnt, it-took-five-seasons-to-find-a-home,
+  new-house-rules-every-time-the-castle-reopens, the-series-the-
+  uk-edition-finally-made-its-own, some-seasons-rebuild-the-
+  roster-others-just-move-the-furniture, the-wait-between-
+  seasons-was-never-the-same-twice) except `one-season-two-flags`
+  (9, already this-day's extend) and `the-vote-left-the-phone-
+  line` (8, already this-day's dead end) — both legitimately
+  exhausted for today. Pivoted to extending a healthy list per
+  established extend-first practice: tried `the-batch-drop-
+  settles-in` (sits exactly at the 10-entry floor) with a Love
+  Island US S04 daily-drop candidate — rejected on total
+  preemption (see ledger row: the identical CBS-to-Peacock
+  release-cadence fact is already staked at `moving-day` rank 8
+  and `same-license-different-rules` rank 4, near-verbatim
+  phrasing both times). No further Love Island US season offers a
+  distinct release-cadence fact. Declined to force either named
+  candidate or invent a new list rather than reskin already-spent
+  ground, consistent with the 2026-07-26 eleven-pass assessment
+  (this file, above) that the grep-groundable well is close to
+  exhausted and lower per-tick hit rates are the expected steady
+  state at this list count. Zero-ship, per the Mission statement's
+  standing allowance.
 
 ## Notes
 
