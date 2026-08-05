@@ -5314,6 +5314,62 @@ last time a curator actually looked.
   standing allowance — eleventh consecutive zero-ship-or-narrow-
   extend Rule 3 outcome today; the well reads genuinely dry pending
   the 2026-08-09 weekly sweep or a Rule 2 finale landing.
+- **twelfth 2026-08-05 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred
+  (2026-08-02 sweep, next due 2026-08-09) — Rule 2 stalled, fell
+  through to Rule 3. Review batch still empty (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31). Re-confirmed
+  the below-10-entry, non-`single` census is unchanged from the
+  second-through-eleventh passes: `one-season-two-flags` (9
+  entries, `structure`) and `the-vote-left-the-phone-line` (8,
+  `era`) are the only two, both already exhaustively dead-ended
+  today. Spent this pass chasing a fresh cross-canon angle instead
+  of retrying either: grepped every `content/shows/**/seasons/*.md`
+  for `pandemic|COVID|quarantine|bubble` and traced every hit
+  through the two sibling era lists that already own this territory
+  (`pandemic-seasons`, 19 entries/19 shows, and `the-season-
+  everyone-got-their-audience-back`, 12 entries/11 shows) — every
+  single hit not already on one of those two lists turned out to be
+  a near-verbatim duplicate of a fact staked on a *third* list under
+  a different thesis: Top Chef S18 Portland's alumni-guest-judge
+  swap is spent at `someone-else-held-the-chair-for-a-while` rank 5;
+  Vanderpump Rules S09's "longest gap in the show's history" is
+  spent at `a-guest-spot-with-room-to-grow` rank 7 nearly word for
+  word; RHOA S13's December-premiere/cast-shrink pairing is spent at
+  `the-couch-kept-adding-chairs` rank 11, also near-verbatim. Both
+  pandemic-era lists are genuinely exhausted — every remaining
+  pandemic-hit season file (RHONJ S11, RHOBH S10, MasterChef S11's
+  sibling season already used) resolves to an existing stake per the
+  87th/98th/2026-08-03 passes' own notes, reconfirmed here rather
+  than re-trusted. Pivoted to `the-open-call-built-the-format`
+  (craft, 13 entries/6 shows, real headroom under the 24-entry
+  ceiling, untouched since its 2026-08-03 extend) — read every
+  founding/audition-search season across the remaining talent-search
+  shows in the catalog (MasterChef US S01, Top Chef S01, Drag Race
+  S01, Big Brother S01, Project Runway S01, Hell's Kitchen S01, Bake
+  Off S01, Ink Master S01, America's Next Top Model S01, MasterChef
+  Australia S02) and found every usable fact already spent: MasterChef
+  US S01's white-apron audition is staked near-verbatim at `firsts`
+  rank 9; ANTM S01's casting-call/makeover-panel-photoshoot grammar
+  is staked three times over (`no-template-to-copy`, `played-it-
+  straight`, `pre-recap-culture-seasons`); MasterChef Australia S02's
+  "longer audition circuit" is staked near-verbatim at `proving-the-
+  debut-wasnt-luck` rank 11 (that show's all 17 seasons are in fact
+  claimed at least once across the ledger, confirmed via a full
+  `show: masterchef-australia` read); Top Chef, Drag Race, Big
+  Brother, Project Runway, Hell's Kitchen, Bake Off, and Ink Master's
+  own S01 files carry no audition/casting-search language at all —
+  not groundable without fabricating a fact for a genre (docusoap,
+  fashion-elimination, tattoo-elimination) this list's touring-
+  audition thesis doesn't actually fit. `the-open-call-built-the-
+  format` is genuinely at its natural show-genre ceiling, not just
+  its entry-count ceiling. Declined to force a duplicate or off-genre
+  entry. Zero-ship, per the Mission statement's standing allowance —
+  twelfth consecutive zero-ship-or-narrow-extend Rule 3 outcome
+  today; every angle checked across this and the prior eleven passes
+  converges on the same conclusion: the grep-groundable well at 176
+  lists is exhausted for the day, pending the 2026-08-09 weekly sweep
+  or a Rule 2 finale landing.
 
 ## Notes
 
