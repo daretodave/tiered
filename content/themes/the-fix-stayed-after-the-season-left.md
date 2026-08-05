@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-08-05
 featured: false
 related:
   - tried-once-never-repeated
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A quiet returnee experiment in season eleven becomes a twist the franchise keeps reaching for."
     blurb: "Survivor's eleventh season slots two returning players into an otherwise new cast, a soft version of a twist the show would later run at full scale. It wasn't billed as a big swing at the time. The franchise borrows the idea back again and again."
+  - show: american-ninja-warrior
+    season: 13
+    season_label: "S13 · The Restoration"
+    rank: 11
+    title: "A choice-driven obstacle mechanic debuts quietly and keeps getting reused."
+    blurb: "Season thirteen introduces Split Decision alongside a restored Vegas finale — the kind of add that could've been a one-season experiment. Season fourteen's own copy confirms otherwise: the mechanic returns for a third run, already a fixture."
 ---
