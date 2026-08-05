@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-05
 featured: false
 related:
   - best-location-reveals
@@ -43,70 +43,76 @@ entries:
     rank: 5
     title: "Mongolia's steppe and taiga carry the season on the biome alone"
     blurb: "Season six drops ten fresh survivalists into Ulaan Taiga's steppe-and-taiga wilderness, a biome with no precedent anywhere else in the franchise. Without a returning-cast story to lean on, the landscape alone sets the season's terms."
+  - show: alone
+    season: 1
+    season_label: "S01 · Vancouver Island I"
+    rank: 6
+    title: "The founding shoot proved the wilderness could carry the whole show"
+    blurb: "Quatsino Sound's cold, wet terrain set the survival math before any other season existed for comparison. Every harsher location the franchise chased later — Arctic cold, southern-hemisphere winter, desert heat — is still judged by the bar this founding shoot set first."
   - show: alone-australia
     season: 1
     season_label: "S01 · South West Tasmania"
-    rank: 6
+    rank: 7
     title: "Sustained wet and cold became the founding season's steady antagonist"
     blurb: "Ten survivalists opened the Australian format in South West Tasmania's alpine moorland, where relentless wet weather shaped every shelter call from the first hours. The terrain, not the format's newness, set the real difficulty."
   - show: alone-australia
     season: 3
     season_label: "S03 · West Coast Range"
-    rank: 7
+    rank: 8
     title: "One of Australia's wettest corners did the season's heavy lifting"
     blurb: "Tasmania's West Coast Range is genuinely one of the country's rainiest regions, and sustained rainfall over rugged terrain became the season's real test across thirteen self-filmed episodes."
   - show: alone-australia
     season: 2
     season_label: "S02 · Fiordland"
-    rank: 8
+    rank: 9
     title: "A wetter, less predictable climate forced a full gear rethink"
     blurb: "Fiordland's fjord terrain and temperate rainforest run wetter and less forgiving than the founding season's moorland, and the cast's opening camp choices show it. The location asked the format to prove it could travel."
   - show: survivor
     season: 32
     season_label: "S32 · Kaôh Rōng"
-    rank: 9
+    rank: 10
     title: "Heat and humidity became visible on camera, medical scenes included"
     blurb: "Koh Rong's climate read on screen in a way classic-era Survivor rarely allowed, and the editors let medical-attention moments breathe instead of cutting around them. The conditions became part of the season's texture."
   - show: survivor
     season: 17
     season_label: "S17 · Gabon"
-    rank: 10
+    rank: 11
     title: "Elephants and real heat turned a water run into the day's event"
     blurb: "Loango's savanna shares its water sources with a local elephant population, and the cast's runs for water became scenes the show held on longer than strategy required. The heat left its mark on the pacing too."
   - show: survivor
     season: 6
     season_label: "S06 · The Amazon"
-    rank: 11
+    rank: 12
     title: "A real jungle camp turns humidity and insects into a steady opponent"
     blurb: "The Rio Negro's deep-jungle camp is a working location, not a set — biting insects, oppressive humidity, and water that has to be filtered before it's safe to drink. The show holds on that physical toll instead of cutting around it."
   - show: survivor
     season: 2
     season_label: "S02 · The Australian Outback"
-    rank: 12
+    rank: 13
     title: "Drought, then flood, then heat again — Queensland set the pace"
     blurb: "A cattle station in inland Queensland ran the cast through drought, a wet-season break, and the heat returning, and the show let the cinematography sit in the discomfort instead of cutting around it."
   - show: survivor-australia
     season: 6
     season_label: "S06 · Brains V Brawn"
-    rank: 13
+    rank: 14
     title: "Border closures sent the show home to outback heat instead of a beach"
     blurb: "COVID travel restrictions pushed Australian Survivor's production into Queensland's interior for the first time, trading tropical islands for red dirt and inland heat that shaped the season's whole visual register."
   - show: below-deck-adventure
     season: 1
     season_label: "S01 · Svalbard"
-    rank: 14
+    rank: 15
     title: "Norway's High Arctic asked a charter crew for something new"
     blurb: "Below Deck Adventure sent its expedition vessel to Svalbard, where polar plunges and glacier passages replaced the usual poolside charter routine. Cold-weather waters demanded a command style the franchise's motor yachts had never required."
   - show: the-challenge
     season: 33
     season_label: "S33 · War of the Worlds"
-    rank: 15
+    rank: 16
     title: "Namibia's desert coast reshaped the missions themselves"
     blurb: "Filmed in Swakopmund, the desert's scale changed the language of the endurance missions the show could run, pushing the format further than its usual locations allowed."
   - show: the-challenge
     season: 28
     season_label: "S28 · Rivals III"
-    rank: 16
+    rank: 17
     title: "Patagonian wind and cold gave a familiar format its edge back"
     blurb: "The third Rivals season ran its late endurance missions through Patagonia's windswept, cold-weather terrain — leaning on the location's scale to keep the missions demanding two seasons into the same structure."
 ---
