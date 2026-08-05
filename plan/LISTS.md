@@ -5172,6 +5172,66 @@ last time a curator actually looked.
   statement's standing allowance — consistent with the second
   through fifth 2026-08-05 passes above.
 
+- **ninth 2026-08-05 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred —
+  every row confirmed-but-unaired, Rule 2 stalled — and fell
+  through to Rule 3 per ship-content.md §4 Step 1. Re-confirmed
+  the review batch is empty: every ledger `last_reviewed` sits
+  well inside the 90-day window (oldest, `survivor-pillars` at
+  2026-07-31, five days stale), so this stayed a new-list/extend
+  tick, not a review batch. Rebuilt the below-10-entry,
+  non-`single` census fresh (`grep -c '^  - show:'` across every
+  `content/themes/*.md` cross-referenced against `category:`) and
+  confirmed `one-season-two-flags` (9 entries, `structure`,
+  already extended once today from 8→9) is still the only
+  non-`single` list under the schema-typical floor —
+  `the-vote-left-the-phone-line` (8, `era`) remains the
+  already-logged dead end. Spent the tick trying five fresh
+  candidates against `one-season-two-flags`'s own
+  national-divide / imported-sibling-roster thesis, none of which
+  the second-through-sixth passes above had named: The Challenge
+  S11 "The Gauntlet 2" (Veterans-vs-Rookies — a returning-cast
+  split, not a nationality split, off-thesis); The Challenge S33
+  "War of the Worlds" (its own file frames the split as
+  franchise-veterans-vs-outside-pool "fresh blood," never as a
+  national divide, and that exact fresh-blood fact is already
+  triple-claimed at `the-elimination-round-never-keeps-its-name`,
+  `the-place-fought-back`, and `the-cold-open-then-never-again` —
+  staking it here would be a fourth claim on an off-thesis fact);
+  Hell's Kitchen S21 "Battle of the Ages" (an age-decade split,
+  20s-vs-40s, not a nationality split — off-thesis); America's
+  Next Top Model S09 "The China Turn" (a two-city international
+  filming leg, but the cast itself isn't split along a national
+  line — a location fact, not a casting-structure fact, better
+  territory for `best-location-reveals` than this list); Australian
+  Survivor S08 "Heroes V Villains" (an archetype split — heroes
+  vs. villains — not a nationality split, off-thesis). Also ran a
+  fresh whole-catalog grep for "imported...roster/cast" and
+  "alumni of [nationality]" phrasing beyond the season files
+  already staked on this list (S11 Australia v The World, S34 War
+  of the Worlds 2, S18 British Invasion, S16 Global Gauntlet, S20
+  World All-Stars, S04 London, S22 The American Dream, Perfect
+  Match S04, Bachelor in Paradise S05) and found zero fresh hits.
+  `one-season-two-flags` is genuinely exhausted at 9 for today.
+  Also tried three bounded new-concept angles, all rejected before
+  drafting: a music/score-as-craft-signature list (grepped the
+  full show catalog for soundtrack/composer/needle-drop/theme-song
+  language — zero hits in any season file's own prose, not
+  groundable without fabricating a fact); a narrator/voiceover-
+  handoff angle distinct from `the-mic-changed-hands`'s host
+  handoffs (the only textual hits are bare parentheticals inside
+  the `host:` frontmatter field, e.g. Love Island US S02's `host:
+  Arielle Vandenberg (narrator Matthew Hoffman)` — never framed in
+  a season's own lede/pull/body as an editorial narrator-change
+  story, too thin to stake even one entry on); and a social-media/
+  hashtag-voting-integration era angle (grepped for Twitter/
+  hashtag/Instagram — hits confined to two Ink Master seasons plus
+  its own canon, one show, fails the ≥3-distinct-show cross-canon
+  floor outright). Declined to force a sub-floor invention or
+  reskin already-spent ground. Zero-ship, per the Mission
+  statement's standing allowance — consistent with the second
+  through sixth 2026-08-05 passes above.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
