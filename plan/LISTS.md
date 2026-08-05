@@ -5232,6 +5232,53 @@ last time a curator actually looked.
   statement's standing allowance — consistent with the second
   through sixth 2026-08-05 passes above.
 
+- **tenth 2026-08-05 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred
+  (2026-08-02 sweep; earliest scheduled finale is masterchef-
+  australia S18 on 2026-08-09, still days out — no row crossed
+  into concluded territory) so Rule 2 stayed stalled; fell
+  through to Rule 3. Re-confirmed `one-season-two-flags` (9
+  entries, `structure`) remains the only non-`single` list under
+  the 10-entry floor. Tried five more angles the ninth pass hadn't
+  named: (1) Amazing Race S31 "Reality Showdown"'s cross-franchise
+  alumni cast (`content/shows/amazing-race/seasons/31-reality-
+  showdown.md`, `format_changes`: "Five Amazing Race, three
+  Survivor, and three Big Brother teams") — rejected, already
+  staked at `familiar-faces-wrong-franchise` and off-thesis
+  regardless (a domestic cross-franchise import, not a national
+  divide, per this list's own tagline requiring a national-line
+  split or a sibling *international*-edition roster); (2) grepped
+  the whole catalog for international-roster-import language on
+  Drag Race All Stars / Below Deck / Love Island — only hit
+  (Drag Race All Stars S06) describes international streaming
+  co-distribution, not a casting divide, not groundable; (3) a
+  new "filmed back-to-back with its sibling season" production-
+  pairing concept — grepped for back-to-back/concurrently/
+  same-production-block language and found genuine hits on only
+  two shows (The Circle S02/S07, Queer Eye S07) — fails the
+  ≥3-distinct-show cross-canon floor outright, and neither show
+  alone clears a `category: single` list either; (4) The Voice
+  S26 "The Duo"'s shared-chair novelty — already the anchor entry
+  (rank 10) of `built-for-one-playing-as-a-team`; re-confirmed the
+  Steal/Block/Instant Save mechanics remain ungroundable per the
+  already-logged 2026-07-26 rejection; (5) a "shared filming city
+  with an unrelated show" angle — already fully shipped as
+  `the-city-already-had-a-show` (`last_revised: 2026-08-03`, two
+  days old, not stale). Also re-checked whether Chopped's
+  calendar-overlap angle had room — `no-season-here-got-the-
+  calendar-to-itself` already sits at the 30-entry schema cap, no
+  other show files enough premiere-date granularity to extend it
+  cross-show. Every angle either duplicated ground already staked
+  verbatim elsewhere, failed the cross-canon floor on grep-
+  confirmed data, or hit a list already at its structural ceiling.
+  Declined to force a sub-floor invention. Zero-ship, per the
+  Mission statement's standing allowance — consistent with the
+  second through ninth 2026-08-05 passes above. Tenth consecutive
+  zero-ship pass today; the day's content well reads genuinely
+  dry pending either the weekly sweep (due 2026-08-09) surfacing
+  new season text, or a Rule 2 finale crossing into concluded
+  territory (masterchef-australia S18, 2026-08-09).
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
