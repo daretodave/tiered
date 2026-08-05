@@ -4991,6 +4991,52 @@ last time a curator actually looked.
   state at this list count. Zero-ship, per the Mission statement's
   standing allowance.
 
+- **third 2026-08-05 pass: zero-ship.** Re-confirmed `plan/CADENCE.md`
+  fully starred (Rule 2 stalled), fell through to Rule 3. Re-checked
+  both named candidates from the brief independently and found both
+  already resolved by earlier same-day passes: `one-season-two-flags`
+  extended 8→9 (MasterChef US S16) and `the-vote-left-the-phone-line`
+  re-confirmed a dead end. Rebuilt the below-10-entry census from
+  scratch (`grep -c '^  - show:'` across every `content/themes/*.md`
+  cross-referenced against `category:`) and confirmed every remaining
+  sub-floor list is `category: single` and every one of those is
+  genuinely at its show's filed-season ceiling — checked each show's
+  filed `content/shows/<slug>/seasons/*.md` count against the entry
+  count directly rather than trusting the brief's named list: The
+  Circle (`seven-ways-to-break-the-same-app`, 7 filed/7 used), Below
+  Deck Sailing Yacht (`the-quiet-register-was-the-whole-point-until-
+  ibiza`, 5/5), Jersey Shore (`home-seasons-waited-relocation-
+  seasons-didnt`, 6/6), Love Island US (`it-took-five-seasons-to-
+  find-a-home`, 8/8), Traitors UK (`new-house-rules-every-time-the-
+  castle-reopens`, 4/4), Drag Race UK (`the-series-the-uk-edition-
+  finally-made-its-own`, 7/7), Selling Sunset (`some-seasons-
+  rebuild-the-roster-others-just-move-the-furniture`, 9/9), Too Hot
+  to Handle (`every-season-strikes-a-different-bargain-with-lana`,
+  6/6), Survivor (`survivor-pillars`, deliberately curated small —
+  reviewed 2026-07-31, no change). No headroom anywhere in the
+  below-floor set. Tried inventing a fresh cross-canon concept next
+  — worked a grep-driven pass across roughly a dozen candidate
+  angles before giving up on each: medical-evacuation/tap-out
+  language on the Alone franchise (spoiler-adjacent — reads as an
+  elimination-outcome tell, P0 discipline rejects it outright);
+  weather/production-disruption filming stories (`hurricane|
+  evacuat|wildfire` grep hit exactly one season file, The Real World
+  S24 — not groundable cross-show); holiday-themed special episodes
+  (`Christmas|Halloween` grep hit only Chopped, and only at the
+  episode level, not season level); day-and-date international
+  simulcast timing (10 season-file hits across RHOM/MAFS/Drag Race
+  UK/DWTS/ANW, but the angle collapses into `same-license-different-
+  rules`'s existing licensing/localization thesis on inspection);
+  sabotage-as-a-mechanic (`sabotage` grep hit one season file,
+  Ink Master S11 — not groundable cross-show); recurring signature-
+  challenge-as-ritual, live-broadcast firsts, fan-favorite parallel
+  awards, gender-split-cast premise, and RHONY-style cast-wipe
+  angles were all re-confirmed as already-rejected ground from the
+  2026-07-26 log above. Declined to force a sub-40%-overlap list or
+  reskin already-spent ground. Zero-ship, per the Mission statement's
+  standing allowance — consistent with the same-day precedent set by
+  the second 2026-08-05 pass immediately above.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
