@@ -5278,6 +5278,42 @@ last time a curator actually looked.
   dry pending either the weekly sweep (due 2026-08-09) surfacing
   new season text, or a Rule 2 finale crossing into concluded
   territory (masterchef-australia S18, 2026-08-09).
+- **eleventh 2026-08-05 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred
+  (2026-08-02 sweep, next due 2026-08-09) — Rule 2 stalled, fell
+  through to Rule 3. Review batch still empty (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31). Re-confirmed
+  `one-season-two-flags` (9 entries, `structure`) is still the only
+  non-`single` list under the 10-entry floor and tried four fresh
+  candidate shows none of the prior four same-day passes had named:
+  RHODubai S01 (its "international mix" is the show's baseline
+  expat-community premise, already the province of `wealth-as-the-
+  whole-pitch`, not a one-off structural national-line split —
+  off-thesis); Drag Race UK S04 (read in full — its distinct facts
+  are a trans-cast milestone and a host-absence episode, neither a
+  nationality split — off-thesis); Drag Race All Stars S06
+  (re-confirmed directly — the "international" hit is WOW Presents
+  Plus co-distribution, not a casting divide, matching the already-
+  logged rejection); MasterChef Australia S16 "Four Voices" and S09
+  "Japan" (both read in full — a four-judge panel expansion and a
+  Tokyo location block respectively, not a cast split along a
+  national line; MasterChef Australia isn't on this list at all, so
+  this was a genuinely fresh show to check, it just didn't ground).
+  Below Deck franchise-wide grep
+  (`British|American|Australian|Kiwi|South African|Irish|Scottish|
+  nationalit` across all `below-deck*/seasons/*.md`) returned zero
+  hits — no franchise in that family stakes a nationality fact in
+  its own text. Also spot-checked for single-show headroom: American
+  Idol (24 seasons, no dedicated single list) is already
+  comprehensively covered by `the-only-constant-was-the-vote` (15
+  seasons across judging-panel/network/vote-mechanic angles) with no
+  clean gap left; `the-advantage-was-never-free` (11 entries/7
+  shows, healthy) has no fresh portable-advantage candidate beyond
+  what the fifth 08-05 pass already rejected. Declined to force a
+  weak or off-thesis entry. Zero-ship, per the Mission statement's
+  standing allowance — eleventh consecutive zero-ship-or-narrow-
+  extend Rule 3 outcome today; the well reads genuinely dry pending
+  the 2026-08-09 weekly sweep or a Rule 2 finale landing.
 
 ## Notes
 
