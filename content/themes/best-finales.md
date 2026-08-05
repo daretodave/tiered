@@ -6,7 +6,7 @@ category: craft
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-05
 featured: true
 featured_pull: "Seven finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
 related:
@@ -68,4 +68,10 @@ entries:
     rank: 9
     title: "A rare four-finalist finale gives the format one extra round to prove itself."
     blurb: "Hometown Heroes builds its whole season around regional pride, then sends a fourth artist into the last round — only the second time the show has ever gone that deep. That extra chair doesn't feel like padding — it's one more genuine test before the crown changes hands."
+  - show: hells-kitchen
+    season: 17
+    season_label: "S17 · All Stars"
+    rank: 10
+    title: "The format's first three-person finale closes out its toughest field yet."
+    blurb: "Every chef on the roster already owns a black jacket, and that baseline sharpens the whole back-half. The season answers with one extra station standing than the format usually allows, because this field earned the room."
 ---
