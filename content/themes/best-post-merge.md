@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-05
 featured: false
 related:
   - survivor-pillars
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "The Round Table's late votes carry the season's real tension."
     blurb: "By the back-half, Ardross's banishment votes tighten and the deduction game turns properly pointed — the season's own late stretch does the format's hardest job without reaching for a new twist to sell it. A settled machine proving it still runs hot where it counts."
+  - show: dragrace-allstars
+    season: 10
+    season_label: "S10 · Tournament of All Stars"
+    rank: 12
+    title: "A semifinal that finally puts three tournaments in one room."
+    blurb: "Eighteen queens run three separate brackets all season, and the semifinal is the first time all three share a stage — the format finally compressing into one true field, arriving in a single late-season beat instead of building all year."
 ---
