@@ -6,9 +6,9 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-08-05
 featured: true
-featured_pull: "Eleven comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
+featured_pull: "Twelve comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
 related:
   - best-returnees
   - best-finales
@@ -80,4 +80,10 @@ entries:
     rank: 11
     title: "Sixteen black-jacket winners come back and raise the floor, not just the stakes."
     blurb: "Sixteen previous black-jacket winners return for the franchise's first all-star edition, every one of them already fluent in the format. The risk was a flatter, meltdown-light season; instead the cooking sharpens and the field runs tighter than any cast before it."
+  - show: rhoc
+    season: 19
+    season_label: "S19"
+    rank: 12
+    title: "A twelve-years-gone original returns to a cast that had already found its footing on its own."
+    blurb: "Gretchen Rossi comes back as a friend of the Housewives after more than a decade away, the season's clear marketing hook. The cast around her doesn't structurally need the jolt, but a return this delayed still earns its moment on screen."
 ---
