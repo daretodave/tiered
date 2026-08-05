@@ -6,7 +6,7 @@ category: structure
 sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-05
 featured: false
 related:
   - best-finales
@@ -68,4 +68,10 @@ entries:
     rank: 9
     title: "A Tell All reunion debuts quietly, then never leaves the format again."
     blurb: "Season three keeps the six-couple format exactly as season two set it — no comeback couple, no crossover, nothing new to absorb. The one real addition is the closing Tell All: a reunion special that becomes a permanent fixture from here on."
+  - show: rhodubai
+    season: 2
+    season_label: "S02"
+    rank: 10
+    title: "The expanded cast's first reunion closes out the franchise's longest season yet."
+    blurb: "Season two stages its reunion with this expanded six-woman lineup for the first time, the back-half building toward it all season. The full cast, new addition included, sits down face to face to close out RHODubai's longest run yet."
 ---
