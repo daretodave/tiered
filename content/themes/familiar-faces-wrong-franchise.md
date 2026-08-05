@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-05
 featured: false
 related:
   - firsts
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "A full Real Housewives cast comes aboard as charter guests for the first time."
     blurb: "Bravo's Salt Lake City cast turns up on a yacht paying customers usually book, trading their own show's cameras for someone else's charter. The faces are instantly recognizable — just not from anywhere near a superyacht."
+  - show: below-deck-down-under
+    season: 3
+    season_label: "S03 · Seychelles"
+    rank: 15
+    title: "One charter guest borrowed from an entirely different franchise."
+    blurb: "Corinne Olympios's single stop aboard, on leave from Bachelor in Paradise, lands on a crew still learning each other's names under a returning captain's command. Everyone else booking the franchise's biggest yacht yet stays inside the show's own world."
 ---
