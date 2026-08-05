@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-05
 featured: false
 related:
   - the-twist-is-the-format
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "The kitchen adds celebrity guests just as the episode order hits a franchise high"
     blurb: "Twenty episodes is a franchise record on its own; the season also layers in celebrities working service alongside the chefs all season long. The format stretches further than any prior run, and the season's own verdict: the extra length costs more than the addition buys."
+  - show: hells-kitchen
+    season: 11
+    season_label: "S11"
+    rank: 14
+    title: "The founding era's last season leaves with one more structural tweak"
+    blurb: "A tight fourteen-episode, sixteen-chef run adds a mid-season twist to how punishment challenges play out, changing the back-half's competitive math without touching the dinner-service core. The founding era closes on its own terms, not just a round number."
 ---
