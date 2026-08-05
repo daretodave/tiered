@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-05
 featured: false
 related:
   - best-returnees
@@ -96,4 +96,10 @@ entries:
     rank: 14
     title: "A real-life couple joins the Carolinas roster, each cooking their own track."
     blurb: "Fifteen chefs make up the season's cast, and two of them are real-life partners entered as individual competitors rather than a duo — a second genuine family tie alongside the twin brothers already cooking in the same kitchen."
+  - show: amazing-race
+    season: 2
+    season_label: "S02"
+    rank: 15
+    title: "The format's second outing quietly widens its casting mold to include real siblings."
+    blurb: "Eleven teams race from Pahrump, Nevada through the Mediterranean, the Horn of Africa, and southern Asia, and the casting itself is where the family tie shows up — sibling pairs join dating couples and lifelong friends in the widened team archetypes."
 ---
