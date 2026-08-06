@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-08-06
 featured: false
 related:
   - live-without-a-net
@@ -55,22 +55,28 @@ entries:
     rank: 7
     title: "A casting vetting failure plays out live, and producers pull two islanders from the villa days apart."
     blurb: "The season's real wrinkle isn't a twist — it's the casting process failing in public. Old posts resurface days into the run, and two islanders exit the villa in response, a live vetting story playing out alongside the format itself."
+  - show: love-island-us
+    season: 8
+    season_label: "S08"
+    rank: 8
+    title: "A second straight summer, the same casting failure returns — and stops being a fluke."
+    blurb: "Season eight repeats season seven's exact wrinkle — an islander exits after resurfaced posts — but frames it as the second consecutive casting stumble, not an isolated one. The vetting process itself becomes the running story."
   - show: dragrace-uk
     season: 6
     season_label: "S06"
-    rank: 8
+    rank: 9
     title: "A contestant's injury forces the week to run without an elimination."
     blurb: "Series 6 hands out the franchise's first cash prize, but the season's real structural surprise is an injury withdrawal that skips a week's elimination entirely — a wrinkle the format almost never allows itself."
   - show: so-you-think-you-can-dance
     season: 6
     season_label: "S06 · The Fall Season"
-    rank: 9
+    rank: 10
     title: "An illness withdrawal forces a late replacement before the live shows even start."
     blurb: "Season six is already running a scheduling experiment — its only fall broadcast — when an original Top 20 dancer withdraws due to illness before the broadcast rounds begin. A replacement steps in, and the format holds its shape anyway."
   - show: alone-frozen
     season: 1
     season_label: "S01 · Labrador"
-    rank: 10
+    rank: 11
     title: "A shared prize pool raises the stakes on the franchise's built-in medical tap-out."
     blurb: "Alone: Frozen swaps a solo winner for a collective prize split among everyone who reaches day fifty. That twist quietly changes what a medical tap costs — no longer just one survivalist's exit, but a smaller share for everyone left."
 ---
