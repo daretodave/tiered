@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-06
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "A former pitcher sits in the tank for the first time, judging instead of pitching."
     blurb: "The tenth-anniversary season seats the show's first-ever former contestant as a guest shark — someone who once stood where the pitchers stand now, evaluating deals from the other side of the panel."
+  - show: masterchef-australia
+    season: 16
+    season_label: "S16"
+    rank: 12
+    title: "One of the panel's four new judges once competed as a home cook herself."
+    blurb: "Poh Ling Yeow steps into the newly expanded four-judge panel having once cooked as a contestant on the format's own bench. The season treats her judging voice as simply one more at the table, not a novelty to explain."
 ---
