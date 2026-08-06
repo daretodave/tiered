@@ -5570,6 +5570,98 @@ last time a curator actually looked.
   invention (per the sixth pass's approach) rather than extension,
   or wait for Rule 2 to unstall on 2026-08-09.
 
+- **eighth 2026-08-06 pass (content-curator tick): zero-ship.**
+  Re-confirmed `content/calendar.yml` against today's date: every
+  `status: aired` row is already past its finale and none is a
+  season-fill gap (that's the phase-39 ranking-shift audit path, not
+  Rule 2); the nearest `scheduled` finale (masterchef-australia S18,
+  2026-08-09) is still 3 days out. Rule 2 genuinely stalled, fell
+  through to Rule 3 per the sixth/seventh passes' own conclusion.
+
+  Worked two extension targets and two new-single-show concepts,
+  four candidates in total:
+  - **`best-location-reveals`** (craft, 10 entries — at floor,
+    `last_revised: 2026-08-04`, untouched today) — read in full.
+    Chased five candidates, all rejected on duplicate-fact grounds:
+    Below Deck Adventure S01 "Svalbard" (own file: "the franchise's
+    boldest lateral swing," "the expedition vessel demanded its own
+    visual language from the first charter") is already staked at
+    `new-flags-planted-fast` rank 1 for the identical
+    Arctic-setting-as-bold-identity fact. Traitors UK S01 (own file:
+    "Ardross Castle in the Scottish Highlands") is the literal same
+    castle already staked at this list's own rank 2 (Traitors US
+    S01) — two Highland-castle entries in one list reads as a
+    reskin, not a distinct angle. Alone S11 "South Africa" (own
+    file/watch_list: "Ep 1 · The Karoo arrival," "the opening
+    episode establishes how radically the biome differs") is a
+    strong opening-reveal beat, but the underlying fact — heat and
+    thirst replacing cold and wet, the Karoo semi-desert — is
+    already staked verbatim at `the-place-fought-back` rank 4.
+    Alone S09 "Labrador" and S08 "Northern Patagonia" (both
+    unclaimed) read as solid new-biome entries but neither carries
+    the sharp opening-minutes visual beat the list's own thesis
+    requires — genuinely weaker than the existing ten. Love Island
+    UK S06 "winter 2020" (own file: villa relocates to South
+    Africa) is already staked at `a-change-of-address` rank 6 for
+    the identical "villa jumps continents" fact. No candidate
+    cleared both the duplicate check and the thesis-strength bar.
+  - **`away-from-home-turf`** (craft, 15 entries, room to 24,
+    `last_revised: 2026-08-02`, untouched today) — read in full.
+    Grepped `trip to|travels? to|group trip|international
+    (trip|leg)|abroad|getaway` across the season files of every
+    Housewives franchise and adjacent ensemble show NOT already in
+    the list: `rhoc`, `rhonj`, `rhoslc`, `rhom`, `vanderpump-rules`,
+    `southern-charm`, `summer-house` — zero hits in any of their own
+    season-file text. Checked the shows already in the list for
+    unclaimed seasons: RHOP's only away-from-home-turf season (S03)
+    is already staked at rank 8; RHOA's only two qualifying seasons
+    (S06, S08) are already staked at ranks 5 and 14; RHODubai has
+    only 2 filed seasons and both are already staked (ranks 11–12).
+    No fresh season available anywhere in the catalog for this
+    thesis.
+  - **A Traitors UK "series that finally made the format its own"
+    single-show list**, modeled on the shipped
+    `the-series-the-uk-edition-finally-made-its-own` (Drag Race UK)
+    — rejected on two grounds: only 4 series are filed (below the
+    10-entry schema floor for any list, `category: single`
+    included), and all 4 are already fully claimed at
+    `new-house-rules-every-time-the-castle-reopens` (S01 rank 4
+    already stakes the identical "debut series sets the rules every
+    later recalibration answers to" angle this concept would need).
+  - **Show-saturation spot-checks** before investing further:
+    counted full-roster coverage for four mid-sized shows via
+    `show: <slug>` grep across every `content/themes/*.md`.
+    dragrace-allstars (11 filed seasons) — all 11 already appear in
+    `no-season-sends-a-queen-home-the-same-way-twice` alone, on top
+    of a dozen other lists. survivor-australia (12 filed seasons) —
+    all 12 already appear in `sorted-before-they-landed` alone.
+    rhom (7 filed seasons) — all 7 already appear in
+    `the-wait-between-seasons-was-never-the-same-twice` alone.
+    queer-eye (10 filed seasons) — all 10 already appear in THREE
+    separate fully-covering lists
+    (`a-show-that-never-had-a-home-address`,
+    `the-room-kept-changing-size`, `the-format-never-blinked`).
+    Every one of these shows is completely exhausted for its own
+    obvious angle; no room for a new single-show list on any of
+    them without restaking an already-fully-claimed fact.
+
+  No candidate cleared the excellence gate across four distinct
+  extension/new-list targets (nine total chased leads within them).
+  Zero-ship, per the Mission statement's standing allowance — on
+  top of three successful extends already landed earlier today
+  (`best-premieres`, `best-challenge-design`, `best-returnees`).
+  `last_reviewed` left unchanged on both below-floor rows (not
+  re-touched this pass). This pass's negative results (the five
+  `best-location-reveals` rejections, the away-from-home-turf
+  full-catalog grep, the Traitors UK single-show dead end, and the
+  four show-saturation counts) are recorded here so a future tick
+  can skip past them without re-deriving the same dead ends. The
+  172-list catalog is reading as saturated across an increasingly
+  wide swath of its mid-sized shows, not just its largest — a
+  future tick may need Rule 2 to unstall (masterchef-australia S18,
+  2026-08-09) or a genuinely new concept domain outside the fifteen
+  already logged as spent.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
