@@ -5969,6 +5969,62 @@ last time a curator actually looked.
   editorial title). List grew 16→17 entries. `last_revised` bumped
   (real content change).
 
+- **fourteenth 2026-08-06 pass (cloud march tick): zero-ship.**
+  Re-verified Rule 2 stayed stalled (gap table fully starred per the
+  2026-08-02 sweep, earliest scheduled finale masterchef-australia
+  2026-08-09 still 3 days future) and the review batch stayed empty
+  (oldest last_reviewed still survivor-pillars at 2026-07-31, well
+  inside the 90-day threshold). Fell through to Rule 3.
+
+  Ran a fresh entry-floor sweep across all 175 ledger lists
+  (category != single, entries < 10 OR distinct shows < 3) before
+  reading the thirteenth pass's own notes above -- independently landed
+  on the same two below-floor rows the thirteenth pass had already
+  flagged as exhausted: the-vote-left-the-phone-line (era, 8/8) and
+  one-season-two-flags (structure, 9/9). Worked both anyway, from
+  scratch, without relying on the prior pass's verdict, since this
+  tick had no direct visibility into that in-session context:
+  - **the-vote-left-the-phone-line** -- searched the-voice,
+    big-brother, love-island-uk, love-island-us, masked-singer, and
+    bachelor-in-paradise for a documented phone-to-app/streaming vote-
+    channel shift grounded in a season's own frontmatter text. Found
+    one strong near-miss, SYTYCD S8 ("Fans can now vote by text and
+    online alongside the phone line, the first season to open up
+    those channels") -- but confirmed via full-catalog grep that the
+    identical fact is already staked verbatim at
+    rulebook-rewritten-every-season rank 13. No other show in the
+    catalog documents a vote-channel mechanism at all (most "public
+    vote" mentions are abstract, with no phone/text/app specifics).
+    Zero qualifying, non-duplicate candidates. Left at 8/8.
+  - **one-season-two-flags** -- searched for a tenth season
+    structuring its cast along an explicit national-line split or
+    sibling-franchise import, across love-island-uk, traitors(-uk),
+    dragrace(-allstars/-uk), big-brother, below-deck (all editions),
+    masterchef-australia, married-at-first-sight-australia, top-chef,
+    the-challenge, americas-next-top-model, the-real-world,
+    perfect-match, bachelor-in-paradise, jersey-shore, 90-day-fiance,
+    and a dozen other shows with no format hook for this thesis. Nine
+    candidates had real international content but every one either
+    duplicated a fact already staked on this list or an adjacent one
+    (familiar-faces-wrong-franchise, same-license-different-rules),
+    was a cross-border shoot rather than a cast split/import, or was
+    baseline franchise diversity rather than a one-off structural
+    choice (90-day-fiance's entire premise is international by
+    design, which fails the "one-off" test outright). Zero qualifying
+    candidates. Left at 9/9.
+
+  Both rows now carry two independent zero-ship verdicts in the same
+  day (thirteenth pass's parenthetical + this pass's full rework) --
+  strong signal these two are genuinely exhausted until either a new
+  season lands with the right documented fact, or Rule 2 unstalls
+  (nearest date: masterchef-australia's 2026-08-09 finale, 3 days
+  out) and a fresh show's season files enter the pool. Declined to
+  chase a fifteenth candidate this tick given the volume of catalog
+  territory already covered by the day's thirteen prior passes (see
+  the running list of touched/exhausted lists in the thirteenth
+  pass's note above). last_reviewed/last_revised left unchanged
+  on both rows (no content change).
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
