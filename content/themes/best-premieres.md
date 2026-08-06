@@ -6,9 +6,9 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-06
 featured: true
-featured_pull: "Eleven premiere episodes that laid down the format statement in hour one and never had to restate it."
+featured_pull: "Twelve premiere episodes that laid down the format statement in hour one and never had to restate it."
 related:
   - firsts
   - best-newbie-casts
@@ -80,4 +80,10 @@ entries:
     rank: 11
     title: "A premiere that skips the ramp-up and states the format cold."
     blurb: "No host, no competition, no elaborate rules — just a fixed friend group, one rented house, and a weekend commute the premiere treats as the whole plot engine. The format arrives complete in hour one, and Bravo would spend a decade building on exactly this shape."
+  - show: big-brother
+    season: 27
+    season_label: "S27 · A Summer Of Mystery"
+    rank: 12
+    title: "A ninety-minute premiere stages the whole gimmick before the first competition runs."
+    blurb: "The compound gets redressed as Hotel Mystère, sixteen houseguests walk through the door, and a billed mystery seventeenth arrival keeps the room guessing — all inside one 90-minute premiere, before a single competition airs."
 ---
