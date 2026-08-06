@@ -6,7 +6,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-06
 featured: false
 related:
   - best-finales
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "Twist-light on purpose, so sixteen returning houseguests carry the whole season on accumulated history."
     blurb: "The franchise's second all-star cast, and the first since 2006, moves into a strict-bubble house with just one standing wrinkle. Two decades of context do the narrative work no newbie cast could — the modern era's argument that it earned its own legends."
+  - show: alone-the-skills-challenge
+    season: 1
+    season_label: "S01"
+    rank: 11
+    title: "A spinoff format that literally cannot be cast with newcomers."
+    blurb: "Every judge and every builder is a returning Alone contestant — the rotating construction brief only works because each competitor already proved survival skill on the flagship show. No newbie cast could staff this format at all."
 ---
