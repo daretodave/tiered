@@ -118,7 +118,7 @@ last time a curator actually looked.
 | the-finals-never-run-the-same-course-twice | single | 2026-07-21 | 2026-07-21 | |
 | the-season-structure-never-holds-still | single | 2026-08-03 | 2026-08-03 | extended 2026-08-03 (eighty-third pass, content-curator tick): 10→11 entries, first review since 2026-07-21 creation. Dragrace has 18 filed seasons; 8 were missing from this list (S1, S4, S5, S7, S8, S10, S11, S17) — read all eight season files directly chasing a fresh premiere-shape/panel-chair/network-address/finale-format fact. S10 ("the season the VH1 jump fully pays off") and S8 (Logo's swan song previewing VH1 scale) are both already staked at `best-comeback-seasons` and `new-network-same-rulebook` respectively for the identical network-move fact; S4 and S11 are casting/tone facts with no structural claim in their own files; S17's own body states plainly "there is no structural experiment here"; S7 ("the last Logo season") is proximate to S9's network move already in this list but isn't itself a structural shift, so it was passed over. S5 landed clean: its own body text states the panel runs "RuPaul Charles... Michelle Visage, Santino Rice and a rotating fourth chair" — a genuine panel-table expansion barely two seasons after S3 (already rank 6 here) locks in the two-person Visage panel, confirmed via a full `show: dragrace` grep that S5's other two ledger appearances (`best-non-winning-runs` ensemble-cast fact, `funny-on-purpose` comedy/cast fact) never touch the panel's own structure. Appended at rank 11 as the mildest swing in the set — no renumbering needed. |
 | the-ten-items-are-never-the-same-ten-items | single | 2026-07-21 | 2026-07-21 | |
-| the-panel-turned-over-more-than-the-contestants-did | single | 2026-07-31 | 2026-07-31 | extended 2026-07-31 (The Voice S23 "The Farewell" entry, rank 2 — Blake Shelton's twelfth and final season, the last founding coach's departure, zero prior appearances anywhere in the ledger; confirmed via full grep of `show: the-voice` across content/themes/*.md before writing) |
+| the-panel-turned-over-more-than-the-contestants-did | single | 2026-08-06 | 2026-08-06 | extended 2026-07-31 (The Voice S23 "The Farewell" entry, rank 2 — Blake Shelton's twelfth and final season, the last founding coach's departure, zero prior appearances anywhere in the ledger; confirmed via full grep of `show: the-voice` across content/themes/*.md before writing) **extended 2026-08-06** (thirteenth 2026-08-06 pass, content-curator tick — Rule 2 confirmed stalled per `plan/CADENCE.md`'s fully-starred gap table, fell through to Rule 3; skipped the seven lists already extended earlier today plus the exhaustively dead-ended below-floor rows, and did a full census of every unclaimed The Voice season number across the entire ledger via a catalog-wide `show: the-voice` grep with 1-line-after context on every `content/themes/*.md` hit: of the show's 29 filed seasons, 22 numbers were already staked somewhere in the catalog, leaving seven genuinely unclaimed — S03, S05, S08, S09, S13, S22, S25. Read all seven season files directly. Rejected S03 (own file centers competitive chemistry settling in, not a turnover event), S05 (its "coaches return" fact is the direct sequel to this list's own S04 rank-6 entry, which already narrates the snap-back — a second stake would restate the same swap from its other side), S08 and S09 (both Christina Aguilera's and Gwen Stefani's *repeat* returns, reading as thinner echoes of the founding-coach-return angle already anchored at rank 8's S28 Adam Levine entry), and S25 (its own pull — "no debut urgency, no structural novelty" — is a low-turnover season, closer to a duplicate of the already-staked S12 lowest-turnover entry at rank 14 than a fresh turnover fact). Shipped The Voice S13 "The Star Power" at rank 17 — the season's own file states Jennifer Hudson's arrival brought coaching credentials ("Grammy-winning, Oscar-winning") that "set a new standard for what a coach's biography could bring" and shaped her blind-audition recruiting instincts, a genuinely fresh credentials-elevate-recruiting angle distinct from every other debut already on this list (S21 Ariana's hype, S29 Kelsea's recency, S16 John Legend's quiet era-close, S14 Kelly Clarkson's former-winner angle). Confirmed via a full-catalog grep for "Jennifer Hudson" that her only other ledger appearance is a different season entirely (S15, `never-needed-a-villain` rank 6, staking a shared-panel absence-of-manufactured-rivalry fact, not this list's credentials-elevate-recruiting fact). List grew 16→17 entries. `last_revised` bumped (real content change).) |
 | the-matching-experts-never-sit-still-for-long | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (second pass: Married at First Sight S08 Philadelphia + S11 New Orleans entries, 16->18 — S13 Houston still deferred, thinnest remaining hook: third straight unchanged five-couple season with no fresh angle beyond the two already claimed) |
 | the-format-answered-to-a-different-name | single | 2026-07-21 | 2026-07-21 | |
 | the-tent-moved-more-than-the-show-admits | single | 2026-07-28 | 2026-07-28 | extended 2026-07-28 (Bake Off S10, S16 entries — both genuinely unclaimed anywhere in the ledger, confirmed via grep; the two other apparent gaps, S09/S15, stay excluded on purpose because `running-on-muscle-memory` already spends their identical "settled, nothing new" address fact) |
@@ -5898,6 +5898,76 @@ last time a curator actually looked.
   `the-cast-arrived-pre-famous` and `away-from-home-turf`). List grew
   13→14 entries, 12→13 shows (rhobh's first appearance on this
   particular list). `last_revised` bumped (real content change).
+
+- **thirteenth 2026-08-06 pass (content-curator tick): extended
+  `the-panel-turned-over-more-than-the-contestants-did`.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred
+  (next sweep due 2026-08-09) — Rule 2 stalled, fell through to Rule
+  3. Re-confirmed the review batch is empty (oldest `last_reviewed`
+  still `survivor-pillars` at 2026-07-31). Skipped re-touching the
+  seven lists already extended earlier today (`best-premieres`,
+  `best-challenge-design`, `best-returnees`,
+  `when-the-crew-stepped-into-frame`, `not-who-they-say-they-are`,
+  `milestones-spent-not-marked`, `season-one-doesnt-own-every-first`)
+  and declined to re-walk the two exhaustively dead-ended below-floor
+  rows (`one-season-two-flags` 9/9, `the-vote-left-the-phone-line`
+  8/8) or the zero-ship targets already worked today
+  (`best-location-reveals`, `away-from-home-turf`,
+  `familiar-faces-wrong-franchise`, `best-newbie-casts`,
+  `the-house-that-kept-changing`, `when-the-cast-was-already-related`,
+  `firsts`, `best-non-winning-runs`, `the-diners-were-never-extras`,
+  `the-grudge-was-the-casting-call`, `a-second-life-built-into-the-
+  format`).
+
+  Instead of a new concept, ran a full show-level saturation census
+  on a franchise no earlier pass today had touched: The Voice, 29
+  filed seasons. A catalog-wide `show: the-voice` grep with one line
+  of trailing context across every `content/themes/*.md` turned up 22
+  already-claimed season numbers, leaving seven genuinely unclaimed —
+  S03, S05, S08, S09, S13, S22, S25. Read all seven season files
+  directly rather than trusting the grep alone. Picked
+  `the-panel-turned-over-more-than-the-contestants-did` (single, The
+  Voice's own coach-turnover list, 16 entries, untouched since
+  2026-07-31) as the extend target since every one of the seven
+  unclaimed seasons is centrally a coaching-panel-change story — a
+  natural fit for this list's own thesis and outside the reach of the
+  cross-canon floor (`category: single`).
+
+  Worked all seven before drafting: S03 (own file centers competitive
+  chemistry settling in, not a turnover event — rejected); S05 (its
+  "Christina and CeeLo return" fact is the literal sequel to this
+  list's own S04 rank-6 entry, which already narrates the snap-back
+  from the far side — restaking it would retell the same swap, not a
+  fresh fact — rejected); S08 and S09 (Christina Aguilera's and Gwen
+  Stefani's *repeat* returns, each reading as a thinner echo of the
+  founding-coach-return angle already anchored at this list's own
+  rank-8 S28 Adam Levine entry — rejected); S22 (Blake-and-Gwen
+  reunion plus Camila Cabello's debut, a real double-turnover event,
+  but its own pull frames the season as "the format running at its
+  streaming-era middle register" rather than a genuine structural
+  turnover claim — set aside as weaker than the shipped pick); S25
+  (its own pull — "no debut urgency, no structural novelty" — is
+  explicitly a low-turnover season, closer to a duplicate of the
+  already-staked S12 lowest-turnover entry at rank 14 than a fresh
+  turnover fact — rejected).
+
+  Shipped The Voice S13 "The Star Power" at rank 17. The season's own
+  file states Jennifer Hudson's arrival brought "Grammy-winning,
+  Oscar-winning" credentials that "set a new standard for what a
+  coach's biography could bring," directly shaping her blind-audition
+  recruiting instincts — a genuinely fresh credentials-elevate-
+  recruiting angle, distinct from every debut already on this list
+  (S21 Ariana Grande's anticipation, S29 Kelsea Ballerini's recency,
+  S16 John Legend's quiet era-close, S14 Kelly Clarkson's
+  former-winner angle). Confirmed via a full-catalog grep for
+  "Jennifer Hudson" that her only other ledger appearance sits on a
+  different season entirely (S15, `never-needed-a-villain` rank 6,
+  staking a shared-panel absence-of-manufactured-rivalry fact against
+  Kelly Clarkson — not this list's credentials-elevate-recruiting
+  fact). `season_label` kept bare "S13" per this list's own
+  all-bare-label convention (every existing entry omits the season's
+  editorial title). List grew 16→17 entries. `last_revised` bumped
+  (real content change).
 
 ## Notes
 

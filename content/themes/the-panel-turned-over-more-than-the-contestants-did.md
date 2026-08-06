@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-06
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "A former competition winner takes a coaching chair for the first time"
     blurb: "Kelly Clarkson joins Alicia Keys, Blake Shelton, and Adam Levine, and the panel absorbs someone who once won a format built exactly like this one. A different kind of turnover — new chair, entirely new vantage point."
+  - show: the-voice
+    season: 13
+    season_label: "S13"
+    rank: 17
+    title: "A single debut brings a résumé no chair turn alone could match"
+    blurb: "Jennifer Hudson joins Miley Cyrus, Blake Shelton, and Adam Levine with a Grammy and an Oscar already behind her — the most credentialed newcomer the table had seated, and her recruiting instincts in the blind auditions read like it."
 ---
