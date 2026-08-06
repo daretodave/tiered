@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-06
 featured: false
 related:
   - new-flags-planted-fast
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "Every houseguest walks in already hiding a real connection to someone else in the house."
     blurb: "Fourteen houseguests move into the Studio City house, and every single one is secretly paired with somebody else already inside. The alliance math gets dense before the first competition even airs, and the concealment is the whole engine, not a mid-season swerve."
+  - show: big-brother
+    season: 18
+    season_label: "S18"
+    rank: 13
+    title: "A weekly competition win comes with a hidden power nobody else in the house can see."
+    blurb: "The Roadkill twist lets its winner secretly tack a third name onto the block, and the rest of the cast spends the week trying to unmask who pulled it off. One isolated concealed role inside an otherwise ordinary summer, not the season's whole structure."
 ---
