@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-06
 featured: false
 related: []
 era_range: [1992, 2008]
@@ -114,4 +114,10 @@ entries:
     rank: 17
     title: "Fox's dance competition opened cold with no recap beat waiting to grade the choreography."
     blurb: "Auditions across three cities in the summer of 2005, years before a recap column existed to dissect a single routine the next morning. The open-call format grew its audience one broadcast at a time, not through a comments section."
+  - show: the-real-world
+    season: 20
+    season_label: "S20 · Sydney (2007)"
+    rank: 18
+    title: "The franchise's first season outside North America or Europe aired with no live global feed reacting to it."
+    blurb: "Sydney Harbour gave the format its most distant setting yet in the summer of 2007, a couple of years before live-tweeting became a reality-TV habit. Whatever reaction the season got traveled by word of mouth, not a real-time feed."
 ---
