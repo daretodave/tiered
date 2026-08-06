@@ -5475,6 +5475,101 @@ last time a curator actually looked.
   UK-vs-World, Celebrity Big Brother) are recorded here so a future
   tick can skip past them without re-deriving the dead end.
 
+- **seventh 2026-08-06 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md` fully starred (earliest scheduled
+  finale masterchef-australia 2026-08-09, still future) and the full
+  ledger table clean on review-due (no `last_reviewed` older than
+  ~19 days against the 90-day threshold) — Rule 2 stalled, Rule 3
+  again. Re-confirmed the below-floor census unchanged
+  (`one-season-two-flags` 9/9, `the-vote-left-the-phone-line` 8/8,
+  both `category: single`-adjacent dead ends already exhaustively
+  logged across twelve 2026-08-05 passes and today's re-checks); no
+  new season landed to unlock fresh material, so declined to re-walk
+  that ground per the brief's own instruction.
+
+  Spent the tick hunting an extension for a healthy, untouched-today
+  list rather than a new concept, working through eight distinct
+  candidate lists:
+  - **`familiar-faces-wrong-franchise`** (craft, 15 entries,
+    `last_revised: 2026-08-05`) — read in full, chased several
+    crossover-casting leads; every clean hit was already staked at
+    its current rank or fell outside the "familiar face recast into
+    an unrelated franchise" thesis. No candidate found.
+  - **`best-newbie-casts`** (tone, 11 entries,
+    `last_revised: 2026-08-03`) — read in full; researched several
+    debut-season candidates, none cleared both the duplicate check
+    and the thesis fit.
+  - **`the-house-that-kept-changing`** (single, Real World) — Real
+    World S07's turnover fact is already claimed at rank 5; no
+    second angle available without duplicating.
+  - **`when-the-cast-was-already-related`** (structure, 15 entries,
+    `last_revised: 2026-08-05`) — Real World S07 doesn't fit the
+    family-tie thesis (its dynamic is friendship/roommate, not
+    blood/marriage relation). Rejected.
+  - **`firsts`** (structure, 10 entries,
+    `last_revised: 2026-08-04`) — Real World S07 doesn't carry a
+    clean franchise/format "first" distinct from what's already
+    filed. Rejected.
+  - **`best-non-winning-runs`** (tone, 11 entries,
+    `last_revised: 2026-08-04`) — the deepest chase this pass.
+    Rejected MasterChef S04 as a near-duplicate of
+    `running-on-muscle-memory` rank 2 (same "deep bench carries the
+    season" fact already staked). Rejected Vanderpump Rules S06,
+    Southern Charm S04, Jersey Shore S02, and Masked Singer S09 as
+    off-thesis on read of their own season files. Final lead: a
+    catalog-wide grep for `stacked (cast|roster|field)|loaded
+    (cast|roster|field)|crowded field|talent(ed)? (roster|field) ran
+    deep|the whole (room|house|cast) carries` across every
+    `content/shows/**/seasons/*.md` returned exactly one hit —
+    Drag Race S11 (`eyebrow: "...the loaded cast"`, lede: "cast
+    heavy on big, confrontational personalities... the edit leans
+    into the friction more than the craft"). Checked the full
+    catalog for `show: dragrace` + `season: 11`: already staked at
+    `best-villain-editing` rank 5 ("The combustible workroom the
+    edit refused to cool off" — "stacks the workroom with large,
+    confrontational personalities and spends its budget on the
+    friction rather than the sewing machine"), a near-verbatim
+    match to the fact this list would need. The season's own
+    editorial hook is villain/conflict editing, not "ensemble
+    carries the season with no single dominant narrative" —
+    restaking it here would read as a reskinned duplicate of the
+    villain-editing entry, not a distinct angle. Rejected.
+  - **`the-diners-were-never-extras`** (craft, 10 entries — at
+    floor, `last_revised: 2026-07-25`, oldest untouched list in the
+    ledger) — read in full; top-chef already sits at the informal
+    3-entry show cap and every other candidate season either
+    duplicates a fact staked elsewhere or doesn't ground the "the
+    non-competitor cast member earns real narrative weight" thesis
+    in its own season-file text. No candidate found.
+  - **`the-grudge-was-the-casting-call`** (craft, 13 entries,
+    `last_revised: 2026-08-04`) — read in full; the-challenge and
+    real-world both sit at the informal 3-entry cap, other
+    candidates either duplicate facts staked elsewhere or read
+    off-thesis. No candidate found.
+  - **`a-second-life-built-into-the-format`** (craft, 12 entries,
+    `last_revised: 2026-08-04`) — briefly checked Ink Master S10's
+    Angels-spinoff fact against the thesis; doesn't cleanly fit
+    (the spinoff isn't a "second life for eliminated competitors
+    inside the same season," which is what this list actually
+    tracks). Rejected.
+
+  No candidate cleared the excellence gate across eight distinct
+  extension targets. Zero-ship, per the Mission statement's standing
+  allowance — on top of two successful extends and one relocated
+  extend already landed earlier today. `last_reviewed` left
+  unchanged on both below-floor rows (no new negative-result
+  grounding this pass). This pass's negative results (all eight
+  list-specific rejections above, especially the Drag Race
+  S11 / `best-villain-editing` near-duplicate) are recorded here so
+  a future tick can skip past them without re-deriving the dead end.
+  The catalog is reading as genuinely saturated at its current
+  172-list size — most remaining unclaimed season-file facts are
+  either sub-thesis-strength, already claimed under an adjacent
+  frame, or blocked by the informal per-show cap on craft/tone
+  lists. A future tick may need to lean harder on brand-new concept
+  invention (per the sixth pass's approach) rather than extension,
+  or wait for Rule 2 to unstall on 2026-08-09.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
