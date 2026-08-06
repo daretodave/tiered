@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-06
 featured: false
 related:
   - firsts
@@ -91,6 +91,12 @@ entries:
     rank: 13
     title: "Eleven cycles into an established run, the competing cast gets its first transgender contestant."
     blurb: "The show treats the casting as a structural decision, not a passing detail, folding it into a cycle that also sends the field to Amsterdam for its international leg. A genuine first arriving well past the point the format needed to prove itself."
+  - show: rhobh
+    season: 11
+    season_label: "S11"
+    rank: 14
+    title: "Eleven seasons in, Beverly Hills casts its first Asian American Housewife."
+    blurb: "Crystal Kung Minkoff's arrival lands the same season Sutton Stracke is promoted from friend of the group to full cast member — the biggest configuration shift of the franchise's later run, arriving well after the show had already found its footing."
 ---
 
 # Season one doesn't own every first

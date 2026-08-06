@@ -132,7 +132,7 @@ last time a curator actually looked.
 | the-format-never-blinked | single | 2026-07-21 | 2026-07-21 | |
 | everything-but-the-pass-keeps-changing | single | 2026-08-05 | 2026-08-05 | extended 2026-08-04 (cloud march, 12→13 entries). Hell's Kitchen S10 "Twenty Episodes" entry, rank 13 — the season's own lede and pull cite a franchise-record twenty-episode order plus celebrity guests joining dinner service across the run, a distinct structural-expansion fact from every other entry already on this list (none stake the episode-count/celebrity-guest combination), confirmed via full `show: hells-kitchen` grep against all 12 prior entries before adding. **extended 2026-08-05** (content-curator tick, Rule-2 season-fill confirmed stalled; reached this list after `best-challenge-design` and `familiar-faces-wrong-franchise` both proved exhausted on a full-catalog sweep — Drag Race, The Voice, AGT, Ink Master, Alone: The Skills Challenge, Perfect Match, Traitors UK, Top Chef S20/S22, Love Is Blind, Below Deck Mediterranean/Sailing Yacht, The Real World, RHODubai, MasterChef, Naked and Afraid, Project Runway, Southern Charm, Queer Eye, Summer House, The Ultimatum, and Dancing with the Stars all searched and every plausible candidate fact confirmed already staked elsewhere): 13→14 entries. Hell's Kitchen S11 "Power Shift" entry, rank 14 — the season's own file states plainly it "keeps the format compact — fourteen episodes, sixteen chefs — while adding a mid-season punishment twist that changes how the back half of the competition is structured," closing out "the founding era" on its own terms; a genuine structural-swing fact distinct from every other entry on this list. Confirmed via a full `show: hells-kitchen` grep across every `content/themes/*.md` that S11 had zero prior ledger appearances anywhere before this pass. Bare `S11` season_label matches this list's own established convention for Hell's Kitchen's pre-themed-era seasons (S06, S09, S10, S16 all render bare, no marketed subtitle existed for these pre-S17 seasons) — the season file's internal curatorial title "Power Shift" is not a network-marketed subtitle, so it's kept out of the header slot per the header-slot marketed-title rule and used only in this ledger note. hells-kitchen remains the list's only show (category: single, no cross-canon floor applies). |
 | some-casts-didnt-need-week-one | single | 2026-07-22 | 2026-07-22 | |
-| season-one-doesnt-own-every-first | craft | 2026-08-04 | 2026-08-04 | extended 2026-08-04 (America's Next Top Model S11 "The Inclusion Cycle" entry, rank 13 — the show's own lede/body states the cycle's first transgender contestant in the competing cast was "a structural decision, not background detail," eleven cycles into the run; grounded in the season file itself, not a canon-only mention. Checked the full `americas-next-top-model` grep across content/themes/*.md first — S11 was entirely unclaimed anywhere in the ledger. Season-label kept bare `S11`: "The Inclusion Cycle" reads as an in-season editorial nickname, not a network-marketed subtitle, per the header-slot rule.) |
+| season-one-doesnt-own-every-first | craft | 2026-08-06 | 2026-08-06 | extended 2026-08-04 (America's Next Top Model S11 "The Inclusion Cycle" entry, rank 13 — the show's own lede/body states the cycle's first transgender contestant in the competing cast was "a structural decision, not background detail," eleven cycles into the run; grounded in the season file itself, not a canon-only mention. Checked the full `americas-next-top-model` grep across content/themes/*.md first — S11 was entirely unclaimed anywhere in the ledger. Season-label kept bare `S11`: "The Inclusion Cycle" reads as an in-season editorial nickname, not a network-marketed subtitle, per the header-slot rule.) **extended 2026-08-06** (twelfth same-day Rule-3 pass, content-curator: RHOBH S11 "The Evolution" entry, rank 14 — the season's own file states Crystal Kung Minkoff "joins as the franchise's first Asian American Housewife" the same season Sutton Stracke is elevated to full cast member; confirmed via a full `show: rhobh` grep that S11's two prior stakes (`the-cast-arrived-pre-famous` rank 7, Kathy Hilton's pre-fame profile; `the-friend-credit-became-the-farm-system` rank 1, the season's tier-movement fact) never name Crystal or the milestone. RHOBH S10 "first Black Housewife" was checked and rejected — already gestured at under `pandemic-seasons` rank 13's "the cast makes franchise history" framing, too close to a duplicate. `season_label` kept bare "S11" per the header-slot rule. List grew 13→14 entries, 12→13 shows — first RHOBH appearance on this list. Full search trail logged in the Ideas section below.) |
 | the-workroom-outlasted-the-network | single | 2026-07-22 | 2026-07-22 | |
 | every-season-tests-a-new-theory-of-the-kitchen | single | 2026-07-22 | 2026-07-22 | |
 | a-show-that-never-had-a-home-address | single | 2026-07-22 | 2026-07-22 | |
@@ -5839,6 +5839,65 @@ last time a curator actually looked.
   Neither was a viable target. This tick did not touch any file
   outside `content/themes/milestones-spent-not-marked.md` and this
   ledger.
+
+- **twelfth 2026-08-06 pass (content-curator tick): extended
+  `season-one-doesnt-own-every-first`.** Re-confirmed
+  `plan/CADENCE.md`'s gap table still fully starred (next sweep due
+  2026-08-09) — Rule 2 stalled, fell through to Rule 3. Re-confirmed
+  the review batch is empty (oldest `last_reviewed` still
+  `survivor-pillars` at 2026-07-31). Skipped re-touching the eight
+  lists already extended or exhaustively worked earlier today
+  (`best-premieres`, `best-challenge-design`, `best-returnees`,
+  `when-the-crew-stepped-into-frame`, `not-who-they-say-they-are`,
+  `milestones-spent-not-marked`, plus the zero-ship targets
+  `best-location-reveals` and `away-from-home-turf`) and declined to
+  re-walk the two exhaustively dead-ended below-floor rows
+  (`one-season-two-flags` 9/9, `the-vote-left-the-phone-line` 8/8).
+
+  Picked `season-one-doesnt-own-every-first` (craft, 13 entries/12
+  shows, `last_revised: 2026-08-04`, real headroom under the
+  24-entry cap, untouched today) and re-read the 2026-07-26 "barrier-
+  breaking firsts" Ideas rejection in full before starting — that
+  note rejected a *standalone* barrier-breaking-firsts list because
+  its leftover pool (after this list's own five strongest candidates)
+  ran only six entries across five shows, short of a 10-entry floor
+  for a new list. That reasoning doesn't block *extending* this
+  already-shipped list with one clean pick from the same leftover
+  pool, so re-checked each name in that pool against the current
+  ledger: Bachelor S25 and Bachelorette S13's milestone-lead facts
+  are both already staked (Bachelorette S13 at
+  `the-lead-was-already-in-the-building`'s sibling territory —
+  confirmed via a full `show: bachelorette` + `season: 13` grep
+  showing the season's sole other appearance already centers the
+  same historic-lead fact under a different list); Drag Race S14 and
+  ANTM S20's hits read as passing mentions, not a season-file-level
+  milestone claim strong enough for this list's own bar. RHOBH S10
+  ("first Black Housewife," Garcelle Beauvais) was the strongest
+  remaining candidate on paper, but `pandemic-seasons` rank 13
+  already stakes the identical season under the title "Production
+  runs short the same season the cast makes franchise history" —
+  the "franchise history" phrase directly gestures at the same
+  casting-milestone fact, too close to a duplicate to restake here
+  even under a different frame. RHOBH S11 "The Evolution" cleared
+  cleanly: the season's own file states Crystal Kung Minkoff "joins
+  as the franchise's first Asian American Housewife" the same season
+  Sutton Stracke is elevated to full cast member. Ran a full
+  `show: rhobh` grep across every `content/themes/*.md` first — S11
+  had two prior stakes (`the-cast-arrived-pre-famous` rank 7, staking
+  Kathy Hilton's pre-fame tabloid profile; `the-friend-credit-became-
+  the-farm-system` rank 1, staking the season's *three-way tier
+  movement* — Sutton's promotion plus Kathy's friend-of arrival plus
+  "a new full Housewife on top of both moves," the last clause never
+  naming Crystal or the milestone itself) — neither entry names
+  Crystal Kung Minkoff or stakes the first-Asian-American-Housewife
+  fact, confirming this is genuinely unclaimed ground. Shipped at
+  rank 14 (list's new bottom slot, `season_label` kept bare "S11" per
+  the header-slot rule — "The Evolution" reads as this site's own
+  editorial title, not a network-marketed subtitle, matching the
+  bare-label precedent already set for RHOBH in
+  `the-cast-arrived-pre-famous` and `away-from-home-turf`). List grew
+  13→14 entries, 12→13 shows (rhobh's first appearance on this
+  particular list). `last_revised` bumped (real content change).
 
 ## Notes
 
