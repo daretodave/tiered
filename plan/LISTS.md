@@ -5397,6 +5397,84 @@ last time a curator actually looked.
   shows unchanged at 10 (big-brother now 2/12). `last_revised` bumped
   (real content change).
 
+- **sixth 2026-08-06 pass (content-curator tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md` fully starred (earliest scheduled
+  finale masterchef-australia 2026-08-09, still future) — Rule 2
+  stalled, fell through to Rule 3. Re-read both below-floor ledger
+  rows in full (`one-season-two-flags`, 9 entries/9 shows;
+  `the-vote-left-the-phone-line`, 8 entries/8 shows) per the brief's
+  instruction to look for a genuinely fresh angle before re-treading
+  logged dead ends — found none: the twelve 2026-08-05 passes plus
+  the same-day `best-premieres` pass already exhausted the
+  grep-groundable season-file text for both theses, and no new
+  season landed today to unlock fresh material. Declined to re-walk
+  that ground per the brief's own instruction.
+
+  Spent the rest of the tick hunting a wholly new cross-show concept,
+  deliberately working outside every domain already logged as spent
+  (casting, vote mechanics, judge/host, hidden-identity, location,
+  ratings, spinoff genealogy, production credits, awards, national
+  divide, vote channel, gender split, barrier-breaking firsts) per
+  the standing 2026-07-26 "well close to exhausted" assessment. Four
+  candidates chased and rejected:
+  - **Cast recruited from the show's own filming city, breaking the
+    format's usual import-a-cast norm** — grounded in The Ultimatum
+    S04 "Las Vegas" own file (lede: "the first city in the
+    franchise's run where the cast actually lives"; pull: "Every
+    past season borrowed a city for the shoot"). Genuinely fresh,
+    unclaimed elsewhere. But a full-catalog case-insensitive grep
+    for `already liv(e|es|ed)|local cast|native to|hometown cast`
+    across every `content/shows/**/*.md` returned exactly three
+    hits — The Ultimatum S04's season file + its own `canon.md`,
+    plus one unrelated RHOSLC `canon.md` mention that doesn't
+    describe a local-casting fact at all. Every Real Housewives
+    franchise is trivially "local cast" by premise every season
+    (not a deviating structural choice, so not a comparable fact),
+    and no other competition/dating format in the catalog states an
+    explicit local-recruitment deviation in its own season-file
+    text. One genuinely groundable show — can't clear the ≥3-show
+    cross-canon floor, and The Ultimatum's own 4 filed seasons are
+    too few to carry a `category: single` list on their own.
+    Rejected.
+  - **A UK-vs-international Drag Race crossover casting a roster
+    from multiple sibling editions in one season** (the real-world
+    "UK vs the World" format) — checked
+    `content/shows/dragrace-uk/seasons/` (7 files) and
+    `content/shows/dragrace-allstars/seasons/` (11 files): not
+    filed in this catalog under either slug. No groundable season
+    to stake — a catalog gap, not something this tick can fix
+    (would need a Rule 1a sweep finding first). Rejected.
+  - **A celebrity-cast edition of an existing format running
+    alongside its civilian season** (Celebrity Big Brother and
+    analogues) — checked `content/shows/big-brother/seasons/` and a
+    catalog-wide grep for "Celebrity" in season titles/body text:
+    zero hits. No celebrity-edition seasons filed. Rejected.
+  - **Saturation spot-check** — before investing further in a new
+    concept, sanity-checked how thin the remaining catalog margin
+    actually is by counting Married at First Sight Australia's own
+    cross-list footprint (13 filed seasons): already staked across
+    11 distinct themed lists (`the-reshuffle-stays-in-house`,
+    `the-hand-behind-the-couple`,
+    `the-episode-order-never-found-its-ceiling`,
+    `sight-unseen-already-committed`, `the-cast-was-still-arriving`,
+    `not-the-usual-order`, `played-it-straight`,
+    `proving-the-debut-wasnt-luck`, `running-on-muscle-memory`,
+    `same-license-different-rules`,
+    `season-one-doesnt-own-every-first`). Even a mid-tier,
+    lightly-marketed franchise in this catalog is this heavily
+    mined — consistent with the standing "well close to exhausted
+    past 172 lists" assessment.
+
+  No candidate cleared the excellence gate. Zero-ship, per the
+  Mission statement's standing allowance — on top of two successful
+  extends already landed earlier today (`best-premieres`,
+  `best-challenge-design`). `last_reviewed` left unchanged on both
+  below-floor rows (no new negative-result grounding beyond what
+  today's earlier `best-premieres` pass already logged there); this
+  pass's own new negative results (Ultimatum local-cast, Drag Race
+  UK-vs-World, Celebrity Big Brother) are recorded here so a future
+  tick can skip past them without re-deriving the dead end.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
