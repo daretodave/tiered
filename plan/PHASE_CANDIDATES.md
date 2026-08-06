@@ -326,6 +326,17 @@ ships via `/oversight` directly, same precedent as candidate #26/#32).
 now proven the timeout-bump approach doesn't scale) without literally
 reopening it.
 
+**Update (digest 2026-08-06):** two more red nights (08-04 run
+30959832574, 08-05 run 31056138181), both dying on the identical
+75-minute wall — **16 consecutive red nights now** (07-21 through
+08-05). The catalog has held flat at 10,485 tests for both nights (no
+growth since 08-03), and completion held flat too (~89.5% both nights,
+9,399/10,485 on 08-04 per the prior digest, 9,389/10,485 on 08-05) —
+the erosion trend has plateaued rather than reversing, likely
+because this window's content ships were Rule-3 themed-list extends
+(which don't add new e2e URLs) rather than new season files. Still
+unpromoted 16 days after filing.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -381,6 +392,20 @@ at once, since digest is the only thing that does any of the three.
 **Estimated phases:** 0 (workflow-config change, not a build-plan phase —
 ships via `/oversight` directly, same precedent as candidate #26/#34).
 **Conflicts:** none.
+
+**Update (digest 2026-08-06):** the starvation race fired again —
+2026-08-05's night run (31000808252, created 11:16:35Z) shows
+`conclusion: cancelled`, confirmed via bracketing `march` runs
+(10:34:07Z→12:07:02Z and 11:27:38Z→13:26:17Z) matching the exact
+diagnosed mechanism: the daily trigger queued mid-march-run and the
+next hourly march trigger evicted it before it started. This is the
+third confirmed loss since the 2026-07-27 diagnosis (07-28, 07-30, now
+08-05) — a loss roughly every 3-5 nights, not self-resolving. This
+particular loss cost a full day of `plan/DIGEST.md` staleness (frozen
+on its 08-04 snapshot until this tick caught up), the same failure
+mode as the original week-long blackout, just shorter because the next
+day's run happened to get a clear runway. Still unpromoted 10 days
+after filing.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
@@ -787,6 +812,33 @@ otherwise the cleanest content-gate window yet: 41/41 commits were
 content/audit-progress, 0 triage, 0 critique, 0 sweep, 0 expand, 0
 iterate — the gate has not yielded a single tick since filing. No change
 to score or scope sketch.
+
+**Update (digest 2026-08-06):** the predicted failure mode has now fully
+materialized and gone further than the filing itself anticipated. Since
+`/expand` pass 59 (2026-07-28T19:24:18Z) — **9 straight days, 348
+commits** — the loop has shipped precisely 0 `iterate:`, 0 `critique:`,
+0 `expand:`, 0 `fix:`, 0 `phase:`, and 0 `data:` commits; the only
+non-content-gate activity in that entire window was 1 scheduled
+`sweep:` (weekly season sweep, its own cadence trigger, not a `/iterate`
+tick) and 4 `digest:` commits (one of which was skipped outright by the
+`night.yml` starvation bug, candidate #35). The consequence is no longer
+hypothetical: `plan/CRITIQUE.md` now carries **2** Pending HIGH rows
+(pass 101 — `/shows/love-island-us/season/fiji-2026` mobile overflow;
+pass 104 — `/shows/love-island-uk/community` mobile table dropping its
+APPROVAL % column), and `skills/march.md` Step 2 condition 3 ("no
+pending HIGH critique already queued for iterate") means `/critique`
+itself cannot run again until `/iterate` clears them. Because Step
+3b.5's content-gaps gate never yields control to `/iterate`, the loop
+has locked itself out of both its bug-fixing path AND its bug-detection
+path simultaneously — a closed loop, not just a slow queue. `/expand`
+being 9 days stale (last pass 59) confirms Step 3c is starved
+identically. Three other fully-scoped candidates (#34, #35, #36) are
+also stuck behind this same gate, since none of them are `/ship-content`
+shaped. This makes #33 the single highest-leverage unpromoted candidate
+in this file: promoting it doesn't just fix one bug, it reopens the
+loop's ability to ever run `/iterate`, `/critique`, or `/expand` again
+without a human forcing a tick by hand. No change to score or scope
+sketch — the fix shape identified 2026-07-18 was already correct.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
