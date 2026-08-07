@@ -6460,6 +6460,74 @@ last time a curator actually looked.
   S13) as closed and either wait for new season drops or search
   entirely outside this pool.
 
+- **2026-08-07 thirty-second pass (content-curator tick): zero-ship.**
+  (Note: the file already carries an entry labeled "thirty-first pass"
+  immediately above this one, dated the same day — this pass's brief
+  described the prior tick as "the thirtieth" and asked for this one
+  to be labeled "thirty-first," but that label was already taken by
+  the time this pass started, so it's numbered thirty-second to keep
+  the sequence unambiguous.) Re-confirmed `plan/CADENCE.md`'s gap
+  table still fully starred (no actionable Rule 2 pick) and
+  `plan/LISTS.md`'s review ledger has zero lists review-due (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31, 7 days out).
+  The immediately-prior thirty-first pass had already closed its four
+  seeded directions and the phase-41 below-floor avenue, so this pass
+  deliberately searched a different pool: **under-mined shows**,
+  ranked by how few theme files currently reference them (`grep -l
+  "show: <slug>"` across `content/themes/*.md`), on the theory that a
+  show with few appearances might still be carrying an ungrounded
+  fact. Checked, in order, and confirmed each already fully drained:
+  - **below-deck-sailing-yacht** (4 files at search start, the fewest
+    of any show) — read all five season files start to finish; every
+    one of the five (Ionian Islands, Croatia, Menorca, Sardinia,
+    Ibiza) is already ranked, with its own season file's exact
+    location/register language, on the single-show list
+    `the-quiet-register-was-the-whole-point-until-ibiza`. No second
+    angle survives a re-read — the files are short and the "quiet
+    register vs. the coast" thesis consumes essentially every
+    sentence they contain.
+  - **rhom** (7 files) — read all seven season files. S4's Peacock-
+    exclusive-revival-after-eight-years fact is already staked at
+    `moving-day` rank 7. S6's "back to Bravo linear, Peacock
+    same-day" hybrid-release fact and S7's "same-day slips to
+    next-day" follow-up are both already staked at `two-channels-
+    same-night` ranks 3 and 10. S1/S2/S3/S5 (founding cast, first
+    cast overhaul, original-run closer, quietest-numbers revival
+    season) were checked against the ledger and don't carry a
+    distinct-enough hook beyond what's already implicit in the S4
+    moving-day entry — nothing ungrounded left to stake.
+  - **rhop** (8-9 files) — read the show file and cross-checked
+    against `the-couch-kept-adding-chairs` (which alone already
+    stakes 9 of RHOP's 10 seasons on the cast-size-ladder thesis),
+    `wealth-as-the-whole-pitch`, `the-schedule-didnt-ask-permission`,
+    `the-reunion-kept-changing-its-own-rules`, `the-cast-arrived-
+    pre-famous`, `pandemic-seasons`, `full-time-was-a-status-not-a-
+    promise`, `new-flags-planted-fast`, and `a-guest-spot-with-room-
+    to-grow`. Every season, 1 through 10, already carries at least
+    one staked fact; several carry three or four. Fully saturated.
+  - **shark-tank** (7 files at search start) — read seven season
+    files spanning the panel's evolution (S02 fifth-chair rotation
+    begins, S03 Harrington exits/Cuban goes full-time/Greiner debuts,
+    S09 a core seat sits empty for a stretch, S11 marquee guest
+    names, S16 Lubetzky promoted, S17 new timeslot + new full-timer)
+    expecting a fresh panel-turnover angle — then found the entire
+    seventeen-season run already ranked on the single-show list
+    `the-extra-seat-is-never-a-swap` (last revised 2026-07-21),
+    which stakes exactly this thesis end to end. Dead end.
+  Recurring pattern across all four: this catalog's handful of
+  under-represented-by-count shows are under-represented because an
+  early single-show list already consumed nearly every fact their
+  (typically short) season files carry, not because they're
+  unmined. The shows that *look* like fresh territory by raw
+  file-count are, on inspection, some of the most completely drained
+  in the catalog. Shipped nothing. No ledger row changed. Next tick
+  should either wait for a new season to land (nearest real finales:
+  masterchef-australia 2026-08-09, below-deck-mediterranean
+  2026-08-10) or pick a genuinely unexamined pool — the four-and-
+  fewer-season shows the thirtieth pass already closed out, and the
+  under-file-count shows this pass just closed out, both look
+  exhausted for now.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
