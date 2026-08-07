@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-08-07
 featured: false
 related:
   - survivor-pillars
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "A semifinal that finally puts three tournaments in one room."
     blurb: "Eighteen queens run three separate brackets all season, and the semifinal is the first time all three share a stage — the format finally compressing into one true field, arriving in a single late-season beat instead of building all year."
+  - show: the-challenge
+    season: 25
+    season_label: "S25 · Free Agents"
+    rank: 13
+    title: "A weekly vote-out sharpens as the solo field narrows toward the finish."
+    blurb: "Every player runs solo, with a weekly vote-out sending someone into a head-to-head elimination match. As the field narrows, late missions hold on individual endurance the format rarely affords elsewhere — the mechanic the franchise leaned on for years after."
 ---
