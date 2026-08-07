@@ -6382,6 +6382,84 @@ last time a curator actually looked.
   land on one of these shows or pivot the zero-`category:single`
   census off this exhausted pool entirely.
 
+- **2026-08-07 thirty-first pass (content-curator cloud march tick):
+  zero-ship.** Re-confirmed Rule 2 still stalled (`plan/CADENCE.md`
+  gap table fully starred, nearest real finales masterchef-australia
+  2026-08-09 and below-deck-mediterranean 2026-08-10, both still in
+  the future) and `plan/LISTS.md`'s review ledger has zero lists
+  review-due (oldest `last_reviewed` is `survivor-pillars` at
+  2026-07-31). Deliberately pivoted off the exhausted
+  `category:single` 4-season-show census the thirtieth pass closed
+  out, and worked the brief's three seeded productive directions
+  plus one original candidate instead:
+  1. **`the-ultimatum` S4 (Las Vegas, local-cast angle)** — the
+     season's headline fact ("the first city in the franchise's run
+     where the cast already lives," per its own `pull` field) is
+     already staked verbatim at rank 10 of
+     `season-one-doesnt-own-every-first`
+     ("Four seasons of borrowed cities end when the cast finally
+     plays in its own hometown"). Direct duplicate, not an extend
+     candidate — that list is a craft list, this would need a new
+     angle, and there's no second fact in the S4 file to build one
+     from.
+  2. **`the-real-world` S32/S33 (decoy-cast rivals, streaming
+     pivot)** — both seasons, plus every other "first" the two
+     season files carry (S29's retired narration, personal
+     smartphones, S32's house-phone swap, S33's Facebook Watch move
+     and revived title sequence), are already comprehensively
+     claimed by the single-show list `the-house-that-kept-changing`
+     (ranks 14/17/18 cover S29/S32/S33 by name). Nothing left
+     ungrounded to build a fresh list from.
+  3. **`chopped` Seasons 17-26** — read past the calendar-overlap
+     titles (`the-deepest-tangle`, `the-widest-tangle`, etc.) to
+     check for any non-scheduling fact; every one of these ten
+     season files is purpose-built for and fully consumed by the
+     single-show `no-season-here-got-the-calendar-to-itself`
+     thesis (confirmed at its 30-entry cap since 2026-07-29). No
+     second angle exists in the watch_list/body text — basket
+     format, judges, and hosting are all flagged explicitly as
+     unchanged.
+  4. **`love-island-uk` Series 13 (sleepover twist, The Debrief
+     companion show)** — both facts are already staked: the
+     sleepover mechanic at rank 8 of the single-show
+     `the-fire-pit-never-moved`, and The Debrief's launch at rank 13
+     of the cross-show craft list `the-broadcast-wasnt-the-whole-show`
+     (which — checked in full — already covers every companion-show/
+     aftershow launch in the catalog: traitors S02 Postmortem,
+     traitors-uk S04 Uncloaked, dragrace-uk S05's aftershow,
+     dragrace-allstars S05's Untucked return, top-chef S09/S23 Last
+     Chance Kitchen, shark-tank S06 Beyond the Tank, big-brother
+     S01/S08/S15/S27, and love-island-uk S03/S04/S05/S13 — a wider
+     net than the earlier "podcast|aftershow" grep the twenty-ninth
+     pass ran, which missed "companion show," "Uncloaked,"
+     "Postmortem," "Debrief," and "Beyond the Tank" entirely. Re-
+     confirmed fully exhausted regardless.)
+  5. **Original candidate: a cross-show "secretly cast hidden
+     real-life connection" thesis** (the-real-world S32's decoy
+     Road-Rules cover story, S29's Ex-Plosion twist, big-brother
+     S04's X-Factor hidden-ex-couples twist) — grepped every season
+     file for `secretly cast|hidden identity|prior (relationship|
+     connection|history)|hidden connection` and related phrasing;
+     the only real hits land on two shows (the-real-world,
+     big-brother), and the big-brother S04 fact is already staked in
+     the single-show `the-twist-is-the-format`. Short of the
+     ≥3-distinct-show floor even before checking for duplication.
+  6. Spot-checked the phase-41 below-floor avenue: no new
+     tone/craft/era list has shipped since the 2026-08-01 pass
+     confirmed zero lists sat below the ≥3-show floor, and every
+     pass since then has only extended existing lists (which can't
+     newly create a below-floor row) — the avenue stays closed
+     without a fresh below-floor candidate to point at.
+
+  Every seeded direction in this tick's brief turned out to already
+  be fully mined by a list shipped within the last week — the
+  season-fill drain has been running hot enough recently that fresh
+  facts get claimed within a pass or two of the season landing.
+  Shipped nothing. Next tick should treat all four seeded directions
+  (the-ultimatum S4, real-world S32/S33, chopped 17-26, love-island-uk
+  S13) as closed and either wait for new season drops or search
+  entirely outside this pool.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
