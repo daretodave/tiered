@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-24
+last_revised: 2026-08-07
 featured: false
 related:
   - the-mic-changed-hands
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "One holiday hour borrows a single outside judge, then hands the chair back"
     blurb: "A Drag Brunch-themed episode brings in one guest judge for a single hour inside an otherwise standard season — the smallest, lightest version of a borrowed seat this format runs."
+  - show: masterchef
+    season: 10
+    season_label: "S10 · The Milestone"
+    rank: 11
+    title: "Two outside chefs join the table just to mark the number ten"
+    blurb: "Ramsay, Sanchez, and Bastianich stay put for the tenth season — nobody's seat is in danger. Grant Achatz and Masaharu Morimoto guest judge alongside them anyway, chairs added purely to mark the occasion rather than cover for anyone missing."
 ---
