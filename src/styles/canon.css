@@ -1080,10 +1080,18 @@
   .cp-he-title { font-size: 30px; }
   .cp-cl-cols,
   .cp-cl-row {
-    grid-template-columns: 40px 1fr 80px;
+    /* Below 640px the visual approval bar is dropped for space, but the
+       APPROVAL % number takes its place rather than disappearing outright
+       (critique pass 104, #660) — the lede copy on this page promises
+       "the share of 'in' votes orders every season," so the metric that
+       backs that sentence must survive down to 375px. */
+    grid-template-columns: 40px 1fr 44px 66px;
+    column-gap: 10px;
   }
   .cp-cl-cols .col-bar,
   .cp-cl-row .cp-clr-bar { display: none; }
+  .cp-cl-cols .col-pct,
+  .cp-cl-row .cp-clr-pct { display: block; }
 }
 
 @media (max-width: 560px) {
