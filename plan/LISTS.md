@@ -6025,6 +6025,67 @@ last time a curator actually looked.
   pass's note above). last_reviewed/last_revised left unchanged
   on both rows (no content change).
 
+- **2026-08-07 pass (content-curator tick): zero-ship.** Re-confirmed
+  `plan/CADENCE.md`'s gap table still fully starred (no actionable
+  Rule 2 work), so fell through to Rule 3. Excluded the three lists
+  named off-limits for this tick (`one-rule-never-bends`,
+  `when-scripted-went-dark`, `the-couch-kept-adding-chairs`) plus two
+  more already touched earlier the same day
+  (`best-post-merge`, `someone-else-held-the-chair-for-a-while`).
+
+  Tried new-list angles first: no genuinely fresh, < 40%-overlap
+  cross-show concept surfaced after checking the full ledger topic
+  spread against the show/season catalog.
+
+  Fell back to searching extend candidates across `tone`/`craft`/`era`
+  lists not touched today. Investigated, read in full, and rejected:
+  `not-knowing-was-the-point` (Ink Master's remaining unclaimed
+  seasons all center facts — team structure, judge-picked sides,
+  grudge casting, finales — already staked on other lists, not the
+  blind-judgment thesis this list needs); `sight-unseen-already-
+  committed` (both anchor franchises, MAFS and Love Is Blind, are
+  saturated elsewhere in the catalog); `the-blackout-had-a-loophole`
+  (no ungrounded candidate found after a full-catalog search for the
+  specific controlled-crack-in-isolation thesis); `the-place-fought-
+  back` (Naked and Afraid's season files use only generic "Multiple
+  wilderness locations" text with no specific-environment detail;
+  Amazing Race season files lack the extreme-weather texture the
+  thesis needs); `the-open-call-built-the-format` (MasterChef US S01
+  and every other remaining open-call candidate duplicate a fact
+  already staked elsewhere); `away-from-home-turf` (grepped every
+  season file under `content/shows/**/seasons/*.md` for
+  trip/getaway/excursion language — zero matches; the Housewives,
+  Vanderpump Rules, and Real World season files that would extend
+  this thesis don't carry the group-trip detail in their own
+  frontmatter/body, and inventing a season number for a real-world
+  trip fact without file grounding was declined per the
+  never-fabricate rule); `the-advantage-was-never-free` and
+  `when-the-reward-pointed-somewhere-else` (same grounding problem —
+  season files don't narrate advantage mechanics or charity/tribute
+  detail in prose, so a new entry would rest on outside knowledge the
+  season's own file can't confirm); `milestones-spent-not-marked`
+  (already 23 entries / 20 shows and last revised the day before;
+  globbed every `*anniversary*`/`*milestone*`-slugged season file in
+  the catalog and all were already claimed on this list);
+  `no-template-to-copy` and `pre-recap-culture-seasons` (both deep
+  into their era range already, no unclaimed founding-era season
+  files left ungrounded); `twice-in-one-year`, `the-vote-left-the-
+  phone-line` (independently re-confirmed exhausted at 8/8, matching
+  the thirteenth/fourteenth 2026-08-06 passes' verdict — no season
+  file in the catalog narrates a phone-to-app vote-channel shift
+  beyond what's already staked), `who-actually-got-the-vote`, and
+  `when-age-became-the-casting-brief` (both well-populated already,
+  no fresh candidate cleared a duplicate-fact check in the time
+  available this tick).
+
+  Recurring blocker across nearly every candidate: season markdown
+  files in this repo are frontmatter-plus-short-blurb for most of the
+  catalog and don't narrate the granular mechanic/location/charity
+  detail several existing list theses depend on, so extending those
+  theses further requires outside-knowledge claims this pass declined
+  to make without a documented source. Shipped nothing. No ledger row
+  changed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
