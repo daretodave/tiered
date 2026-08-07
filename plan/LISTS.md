@@ -6337,6 +6337,51 @@ last time a curator actually looked.
   candidate theses need to ground a genuinely distinct, non-templated
   entry without fabrication. Shipped nothing. No ledger row changed.
 
+- 2026-08-07 thirtieth pass (content-curator tick): zero-ship.
+  Continued the zero-`category:single`-list census (pass 28 cleared
+  `rhoslc`, pass 29 cleared `rhod`). Re-scoped pass 29's flagged
+  candidate, `perfect-match` (4 seasons, richest season-file grounding
+  of the remaining 4-season shows at 147 lines), and confirmed it is
+  in fact over-staked: 9 existing theme files already carry
+  `perfect-match` entries (`built-for-the-drop`,
+  `the-hand-behind-the-couple`, `a-way-back-in`,
+  `familiar-faces-wrong-franchise`, `not-the-usual-order`,
+  `one-season-two-flags`, `the-batch-drop-settles-in`,
+  `the-blackout-had-a-loophole`, `the-cast-was-still-arriving`)
+  covering the crossover-casting premise, the mixer re-entry
+  mechanic (twice), the staggered-batch release schedule, the
+  growing cast size / shrinking episode count, and the blackout/
+  no-contact rule — essentially everything the four season files
+  narrate. Checked all remaining 4-season candidates the same way:
+  `traitors` — drastically over-staked (29 entries / 22 files against
+  4 seasons, immediate disqualify). `below-deck-down-under` — thin,
+  caption-only season files (no watch_list/episode_heat); its only
+  hard facts (location moves, host continuity, ep_count growth, the
+  RHOSLC charter-guest crossover) already staked across 11 entries in
+  7 lists. `the-ultimatum` — only 7 staked entries looked promising,
+  but its season files are even thinner (location/ep_count
+  undocumented for S2/S3) and the show repeats the identical four
+  beats (premiere statement, pairing, swap, decision day) every
+  season — those exact beats are already claimed by
+  `missing-on-purpose`, `best-premieres`, `the-hand-behind-the-couple`,
+  `built-for-the-drop`, `proving-the-debut-wasnt-luck`,
+  `running-on-muscle-memory`, and
+  `season-one-doesnt-own-every-first`. Also swept `alone-australia`
+  (3 seasons, 11 entries/7 lists — every watch_list beat, weather/
+  terrain, self-filmed premise, location reveal, production
+  consolidation, already converted into existing entries) and
+  `rhodubai` (2 seasons, 7 entries/6 lists — money-story premise,
+  group trip, reunion, cast-swap-holds-the-number, and pre-fame
+  credentials already cover essentially all nine watch_list items the
+  two season files contain). The three single-season remaining shows
+  (`alone-frozen`, `alone-the-skills-challenge`,
+  `below-deck-adventure`) aren't structurally viable for a
+  `category: single` ranked list at all — no second season to rank
+  against. No candidate cleared the excellence gate's dedup floor.
+  Shipped nothing. Next tick should either wait for a fresh season to
+  land on one of these shows or pivot the zero-`category:single`
+  census off this exhausted pool entirely.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
