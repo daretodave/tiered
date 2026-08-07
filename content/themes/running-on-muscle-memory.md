@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-08-06
 featured: false
 related:
   - played-it-straight
@@ -127,4 +127,10 @@ entries:
     rank: 19
     title: "Three trips through the same deadline, and the format stops explaining itself."
     blurb: "The premise doesn't need proving by its third run — propose, or trial-marry someone new from the group. The season's whole bet is that a new cast's own history can still make a deadline this familiar sting."
+  - show: the-voice
+    season: 25
+    season_label: "S25"
+    rank: 20
+    title: "A second year anchoring the panel, and the format stops needing to prove it."
+    blurb: "Reba McEntire's second cycle in the chair runs the blind auditions with practiced efficiency, and Gwen Stefani's return adds a familiar edge rather than a new one. No debut, no structural pivot — just a panel that already knows the job."
 ---
