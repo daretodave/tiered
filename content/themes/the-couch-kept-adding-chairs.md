@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-07
 featured: false
 related:
   - a-guest-spot-with-room-to-grow
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "Dubai swaps a founding face for a new one, and the number holds"
     blurb: "Season two returns five of the founding six and adds one new full-time housewife, landing right back at six women total. Every other swing on this list moves the number — this one proves a swap doesn't have to."
+  - show: rhoslc
+    season: 6
+    season_label: "S06"
+    rank: 16
+    title: "Salt Lake City finally stops swinging its own roster at all"
+    blurb: "All seven housewives from the season before return with zero departures, the most cast-stable stretch the show has run after years of contractions and rebuilds. Every other entry here is a swing; this one is the franchise finally sitting still."
 ---
