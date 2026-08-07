@@ -6607,6 +6607,72 @@ last time a curator actually looked.
   2026-08-10) or pursue the jury/eliminated-decides-the-ending lead if
   a third grounding show turns up.
 
+- **2026-08-07 thirty-fifth pass (cloud march tick): zero-ship.**
+  Re-confirmed `plan/CADENCE.md`'s gap table still fully starred (no
+  actionable Rule 2 pick; nearest real finales masterchef-australia
+  2026-08-09 and below-deck-mediterranean 2026-08-10, both still
+  future) and `plan/LISTS.md`'s review ledger has zero lists
+  review-due (oldest `last_reviewed` is `survivor-pillars` at
+  2026-07-31, 7 days out). Worked the brief's flagged lead first,
+  then one fresh pool:
+  1. **Jury/eliminated-competitors-return-as-decision lead re-check.**
+     Grepped every `content/shows/*/seasons/*.md` for `jury` again
+     looking for a third grounding show beyond Ink Master S07
+     "Revenge" and Drag Race All Stars S03. Only two new hits
+     surfaced, both off-thesis: Big Brother's `12-the-brigade.md` and
+     `13-veterans-vs-newbies.md` reference the format's baseline
+     endgame jury phase (not a mid-run eliminated-cast-returns twist,
+     already ruled off-thesis by the thirty-fourth pass), and
+     dragrace-uk `06-series-6.md`'s hit is an unrelated mid-season
+     injury reference, not a jury mechanic at all. Lead stays at 2
+     shows, still short of the ≥3-distinct-show floor. Still flagged
+     for a future tick if a genuine third show surfaces.
+  2. **Fresh pool: mid-season/new-season host-changeover mechanic,
+     grepped catalog-wide** (`takes over as host`, `steps in as
+     judge`, etc.). Landed hits across americas-got-talent (3
+     seasons), ink-master (1), bachelor-in-paradise (1), and
+     love-island-us (2) — a promising 4-distinct-show spread at
+     first glance. Read every hit's context and cross-checked against
+     the ledger: the entire pool is already staked. AGT's three hits
+     (S02, S12, S14) are already the exact three entries in
+     `the-mic-changed-hands` (ranks 9-11) — that show is already at
+     the tone/craft 3-per-show cap. Ink Master S14 is already
+     `the-mic-changed-hands` rank 15. Bachelor in Paradise S08 (Jesse
+     Palmer's debut) is already staked in `the-bar-took-three-seasons-
+     to-open` rank 6 ("Jesse Palmer takes over hosting duties for the
+     first time, but Wells Adams keeps his job through the handoff").
+     Love Island US S04 (Sarah Hyland) and S06 (Ariana Madix) are each
+     staked three-plus times over — `it-took-five-seasons-to-find-a-
+     home`, `same-license-different-rules`, `the-host-never-walks-
+     into-the-room`. This entire mechanic, across every show that
+     carries it, turns out to already be the founding thesis of
+     `the-mic-changed-hands` and its show-specific companions. Dead
+     end.
+  3. **Freshest-filed-season spot-check.** Cross-referenced the four
+     most recently added season files catalog-wide (`git log
+     --diff-filter=A` on `content/shows/*/seasons/*.md`):
+     love-island-uk S13 (added 2026-07-27), love-island-us S08 (added
+     2026-07-18), dragrace-allstars S11 (added 2026-07-17), and
+     chopped S57-62 (added 2026-07-16). Every one of these is already
+     staked in multiple lists — love-island-uk S13 in
+     `the-broadcast-wasnt-the-whole-show` and `the-fire-pit-never-
+     moved`; love-island-us S08 in six different lists including
+     `it-took-five-seasons-to-find-a-home` and `live-without-a-net`;
+     dragrace-allstars S11 in three (`no-season-sends-a-queen-home-
+     the-same-way-twice`, `same-crown-new-price-tag`,
+     `when-the-vote-came-back-tied`); chopped S57-62 across
+     `no-season-here-got-the-calendar-to-itself`,
+     `when-the-basket-became-a-bracket`, and others. The season-fill
+     drain is running fast enough that fresh material gets claimed
+     within days of landing — there is no unmined recent-season
+     backlog to work from right now.
+  Shipped nothing. No ledger row changed. Next tick should keep the
+  jury lead flagged (still 2 shows) and either wait for a new season
+  to land (masterchef-australia 2026-08-09, below-deck-mediterranean
+  2026-08-10) or search a pool none of passes 28-35 have touched yet
+  — the host-changeover, under-file-count, four-and-fewer-season, and
+  structural-mechanic pools are all now confirmed exhausted.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
