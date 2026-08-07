@@ -6165,6 +6165,107 @@ last time a curator actually looked.
   fresh angle would need to ground itself without fabrication.
   Shipped nothing. No ledger row changed.
 
+- **2026-08-07 pass (content-curator tick, twenty-sixth pass in the
+  current mission sequence): zero-ship.** Re-confirmed Rule 2 still
+  stalled (`plan/CADENCE.md` gap table fully starred, nearest real
+  finale masterchef-australia 2026-08-09, still in the future) and
+  Rule 3 priority-1 (extend a below-10-entry, non-`single` list)
+  came up empty: a full re-scan via
+  `grep -c '^  - show:' content/themes/*.md` confirms the only two
+  below-floor non-`single` lists in the catalog are `one-season-two-
+  flags` (`structure`, 9 entries) and `the-vote-left-the-phone-line`
+  (`era`, 8 entries) — both independently re-confirmed dead-ended by
+  exhaustive, ~30-file sweeps logged on their own ledger rows earlier
+  this week (2026-08-05 for both, re-confirmed again in today's
+  unlabeled and twenty-fifth passes above); every other sub-10-entry
+  list in the catalog is `category: single` and independently
+  confirmed capped at its show's full aired-season count (survivor-
+  pillars, one-season-two-flags's single-show cousins, and the eight
+  single-show lists the twentieth pass's own note lists as N-of-N).
+  No new season shipped since those checks to reopen either row.
+
+  Fell to priority-2 (a genuinely fresh cross-show concept) and
+  worked through fourteen candidate angles distinct from the ones the
+  unlabeled and twenty-fifth passes above already logged:
+  1. Winter/extreme-cold filming conditions as a craft angle —
+     grepped every `content/shows/**/seasons/*.md` for
+     `winter|snow|sub-zero|freezing`; only three hits, all three
+     `alone` season files (S03, S10, S11/12) — one show, fails the
+     ≥3-distinct-show floor outright.
+  2. Profession-themed / same-occupation casting pools (firefighters,
+     nurses, veterans) — grepped the same tree for occupation
+     keywords; the lone hit is american-ninja-warrior's show-level
+     file, not a season file, and it isn't a cast-occupation claim —
+     no groundable candidate.
+  3. Host farewell / final season under a departing voice — direct
+     duplicate territory: `the-mic-changed-hands`'s own description
+     already states its thesis covers "the first run under a new
+     voice, or occasionally the last under a departing one."
+  4. Insider-judge casting (a panelist who competed on the same show
+     earlier) — the closest existing analog,
+     `the-lead-was-already-in-the-building`, is a Bachelor-only
+     single-show list; a cross-show version risks duplicating
+     `the-franchise-started-borrowing-from-itself`'s own
+     cast-crossing-into-a-different-role thesis, confirmed by reading
+     that list's description in full.
+  5. Finale relocated away from the show's home set — overlaps two
+     existing lists at once (`best-location-reveals`,
+     `the-competition-leaves-the-country`); no distinct thesis left
+     to stake without restating one of them.
+  6. Prize-value escalation/inflation across a franchise's run —
+     direct duplicate: `same-crown-new-price-tag`'s own description
+     already states its thesis is exactly this ("more money, less
+     money, a magazine credit instead of cash... the reward itself
+     got rewritten").
+  7. A season built around a live two-night premiere event —
+     overlaps `best-premieres`'s existing thesis, no distinct fact
+     to stake beyond it.
+  8. Aftershow/companion-podcast tie-in launch — grepped every season
+     file for `podcast|aftershow`; only two hits, both inside the
+     Drag Race franchise family (dragrace-uk S05, dragrace-allstars
+     S05), short of the ≥3-distinct-show floor and too thin to ground
+     as its own thesis regardless.
+  9. Cast alumni crossing into a rival network's competing format —
+     direct duplicate: `familiar-faces-wrong-franchise`'s own
+     description already states this exact thesis ("imported someone
+     the audience already knew from a completely different program").
+  10. A format's first season shot in a deliberately vérité,
+      confessional-free style — grepped for
+      `verite|vérité|fly-on-the-wall|no confessional`; one hit
+      (the-real-world S01), a single show, and not even framed as a
+      season-over-season swing — no cross-canon candidate.
+  11. Flagship crossing a round-number aired-episode-count milestone
+      — overlaps `milestones-spent-not-marked`'s existing thesis,
+      already re-confirmed exhausted (23 entries/20 shows, every
+      anniversary/milestone-slugged season file already claimed) by
+      the unlabeled pass earlier today.
+  12. Judge/host stepping in as a last-minute injury replacement
+      mid-season — grepped for
+      `injur(y|ed)|replaced mid-season|stepped in as a replacement`;
+      one hit (dragrace-uk S06), a single show, too thin to ground a
+      cross-show thesis without fabricating detail for the other
+      shows a list like this would need.
+  13. Studio-audience-dropped-then-restored as its own craft angle,
+      distinct from the pandemic era — too close a duplicate of the
+      existing `pandemic-seasons` era list's own no-studio-audience
+      thesis; the twenty-fifth pass above already rejected the
+      adjacent "bubble production" framing on the same grounds.
+  14. A sibling-edition crossover tournament pulling contestants from
+      multiple national versions of the same format — checked against
+      both `one-season-two-flags`'s national-divide thesis and
+      `familiar-faces-wrong-franchise`'s imported-face thesis; any
+      genuine sibling-tournament fact in the catalog would double-
+      stake one of those two rather than open new ground.
+
+  Same recurring blocker as every pass logged above today: most
+  season markdown files in this repo are frontmatter-plus-short-blurb
+  and don't narrate the granular mechanic/scheduling/production
+  detail a fresh angle needs to ground itself without fabrication,
+  and the catalog's 176 existing lists have covered the format-
+  mechanic, casting, location, and craft angles thoroughly enough
+  that most fresh-sounding ideas turn out to be an existing list's
+  thesis restated. Shipped nothing. No ledger row changed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
