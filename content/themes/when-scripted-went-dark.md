@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-07
 featured: false
 related:
   - pandemic-seasons
@@ -85,4 +85,16 @@ entries:
     rank: 12
     title: "Streaming's release calendar doesn't blink either, three weeks before the strike ends"
     blurb: "Season seven premieres November 3, 2023, deep inside the WGA/SAG-AFTRA window, with the Oppenheim Group's roster intact and a reunion two weeks later. Netflix's drop-day calendar needs no scripted writers' room either."
+  - show: americas-got-talent
+    season: 18
+    season_label: "S18"
+    rank: 13
+    title: "A third straight year with the same panel opens a month into the writers' strike"
+    blurb: "Season eighteen premieres May 30, 2023, four weeks into the WGA walkout, running the Cowell-Klum-Vergara-Mandel panel for a third consecutive summer. NBC's open-call format needs no writers' room to keep the audition line moving."
+  - show: below-deck-mediterranean
+    season: 8
+    season_label: "S08 · Italian Riviera"
+    rank: 14
+    title: "The charter moves west to the Italian Riviera in the middle of a second Hollywood strike"
+    blurb: "Season eight premieres September 25, 2023, squarely inside the joint WGA/SAG-AFTRA walkout, relocating the charter west to Genoa and the Italian Riviera for the first time. Bravo's unscripted slate keeps its charters moving with no scripted writers' room to answer to."
 ---
