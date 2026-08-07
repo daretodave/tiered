@@ -1,7 +1,38 @@
 # CRITIQUE
 
-> Last pass: 2026-07-25 at commit f3065fe1
-> Pass count: 104
+> Last pass: 2026-08-07 at commit c7e79bd8
+> Pass count: 105
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 105 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (5 URLs: `/`, `/themes/best-post-merge`, `/shows`,
+> `/themes/someone-else-held-the-chair-for-a-while`, `/themes`)
+> and authed (`/`, `/themes/best-post-merge`,
+> `/shows/big-brother/community`,
+> `/themes/someone-else-held-the-chair-for-a-while`, `/u/e2e`)
+> walks ran, desktop + mobile, zero console errors/failed
+> requests/mobile overflow across both. 3 findings filed
+> (below): a HIGH — Survivor S45's site-wide "Mom I Won" season
+> title (used on this pass's freshly-extended `best-post-merge`
+> list and 6+ other surfaces) telegraphs a finale outcome
+> directly beneath a "NO SPOILERS" badge, reopening a question
+> issue #101 sidestepped when it aligned labels to this same
+> canonical title without vetting it for spoiler safety; a MED
+> row bumped to HIGH — the `/shows/[show]/community`
+> canonical/title mismatch (previously filed against
+> Love Island UK) reconfirmed on Big Brother's community page,
+> confirming it's systemic to the whole route family; a LOW —
+> both of this pass's freshly-extended themed lists carry
+> over-length meta descriptions (191 / 187 chars), same defect
+> class as an already-Pending row. Two reader-surfaced
+> observations were assessed and dropped: a low-severity "Ardross"
+> possessive voice nit (the site already uses "Ardross" standalone
+> elsewhere, so not a clear inconsistency), and a mobile-only
+> failed RSC prefetch request on `/u/e2e` (reader's own read: likely
+> benign navigation-cancelled prefetch, not a hard failure).
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
 > 104 ran in the cloud loop via Path A2
@@ -2443,9 +2474,13 @@
 
 ## Pending
 
+- [ ] [HIGH] [authed] /themes/best-post-merge — entry #08 (Survivor S45) labels the season "SURVIVOR · S45 · MOM I WON," directly telegraphing a finale outcome (a winner exists and delivers an on-camera line to her mother about winning) two lines below the page's own "NO SPOILERS · REVIEWED" badge. agents.md §7 defines "winners... finale outcomes" as P0 spoilers; only format/casting/location/tonal shifts are fair game. Root cause is systemic, not new to this list: `content/shows/survivor/seasons/45-mom-i-won.md` sets `title: Mom I Won` as the season's canonical title, which a prior fix (issue #101, critique-pass-1) deliberately propagated to every surface referencing this season — the season's own page H1, `content/shows/survivor/canon.md`, and at least 6 themed lists (`best-finales`, `best-newbie-casts`, `best-non-winning-runs`, `best-post-merge`, `best-reunion-specials`, `survivor-pillars`) all display "Mom I Won" verbatim. #101 fixed *label consistency* (aligning divergent labels to the canonical title) without questioning whether the canonical title itself was spoiler-safe — this row reopens that question. Fix: rename the season's `title` field to something that doesn't confirm a winner-facing outcome (e.g. a location/format-based name matching the site's non-revealing season-title convention used elsewhere — "New Era III" or similar), then repropagate the renamed label across canon.md and all 6+ themed-list `season_label` fields, the same mechanical sweep #101 already performed once. Content-only, no schema/URL change (the season's file-slug `45-mom-i-won.md` and route can stay as-is if renaming the slug is out of scope; the visible `title:` field is what leaks). Spoiler discipline P0 — same-day-patch priority. (URL: /themes/best-post-merge, and systemically /shows/survivor/season/mom-i-won, /shows/survivor/canon, /themes/best-finales, /themes/best-newbie-casts, /themes/best-non-winning-runs, /themes/best-reunion-specials, /themes/survivor-pillars, source: critique-pass-105)
+
+- [ ] [LOW] [anon] /themes/best-post-merge, /themes/someone-else-held-the-chair-for-a-while — both freshly-extended themed lists' meta descriptions overrun the ~155-160 char SERP-truncation budget. `best-post-merge`: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs where every move counts — vote density, paranoia, and tension the franchise gets quoted on." (191 chars). `someone-else-held-the-chair-for-a-while`: "A host exits or a judge can't make it that week, and instead of pausing production, the show pulls in a guest — for one episode, one season, or as a built-in rotating seat from the start." (187 chars). Same defect class as the already-Pending `/themes/straight-to-camera-never-to-each-other` row above (252 chars). Fix: trim both `description` fields in `content/themes/best-post-merge.md` and `content/themes/someone-else-held-the-chair-for-a-while.md` to end at a natural clause boundary within ~155-160 characters; the fuller sentence can stay in `tagline`. SEO-only, no visible-page or spoiler impact. (URL: /themes/best-post-merge, /themes/someone-else-held-the-chair-for-a-while, source: critique-pass-105)
+
 - [x] [HIGH] [authed] /shows/love-island-uk/community (systemic to `/shows/[show]/community`) — the full-ranking table's header collapses from 5 data columns to 1 on mobile (RANK / SEASON / VOTES only), dropping APPROVAL % and 7D entirely — the exact metric the page's own lede copy just told the reader drives the order. Confirmed via raw render diff at both viewports: explanatory copy (present at both) reads "the share of 'in' votes orders every season 1..N below"; desktop table header reads "RANK / SEASON / APPROVAL / % / 7D / VOTES" with row 03 showing "Series 1 (2015) 2015 100% — 1"; mobile table header reads "RANK / SEASON / VOTES" with the same row showing "Series 1 (2015) 2015 1" — the 100% approval figure is nowhere on the page at 375px. Fix: keep an APPROVAL % column (or a compact combined "100% · 1 vote" cell) in the mobile table layout instead of dropping the metric the lede copy just promised; if column width is the constraint, stack APPROVAL under SEASON rather than cutting it. Likely in the community-rank table component consumed by `src/app/shows/[show]/community/page.tsx`. (URL: /shows/love-island-uk/community, source: critique-pass-104) — issue: #751 — RESOLVED (this commit): the `@media (max-width: 640px)` rule in `src/styles/canon.css` hid `.cp-clr-bar` AND left `.cp-clr-pct` under the earlier 980px `display: none`, dropping the % entirely. Fix keeps the visual bar hidden at ≤640px but restores the APPROVAL % number in its place, with `grid-template-columns: 40px 1fr 44px 66px` sized to avoid horizontal overflow at 375px. Verify gate green: 195 test files / 3547 unit tests, content:check ok (68 shows/1043 seasons/68 canons/174 themes), build clean (1501 pages), 4841 e2e (29.1m). Closes #751.
 
-- [ ] [MED] [authed] /shows/love-island-uk/community (systemic to `/shows/[show]/community`) — the page's `<title>` tag and `rel=canonical` both describe the show's editorial canon identity, not the community page itself, reading as if the page never got its own metadata pass. Confirmed: title renders "Love Island UK — the canon, no spoilers — tiered.tv"; canonical renders `https://tiered.tv/shows/love-island-uk` (not self-referential to `/shows/love-island-uk/community`) — despite the page's actual on-page content being the community vote table ("What readers are voting on," "LIVE," "VOTERS THIS WEEK") with no canon-ranking content of its own. Fix: give `/shows/[show]/community` its own `<title>` (e.g. "Love Island UK — community rank — tiered.tv") and a self-referential canonical, matching the distinct title/description pattern the season and theme pages already use. Likely in the `generateMetadata()` for `src/app/shows/[show]/community/page.tsx`. Spoiler discipline P0 intact (metadata-only change). (URL: /shows/love-island-uk/community, source: critique-pass-104)
+- [ ] [HIGH] [authed] /shows/love-island-uk/community (systemic to `/shows/[show]/community`) — the page's `<title>` tag and `rel=canonical` both describe the show's editorial canon identity, not the community page itself, reading as if the page never got its own metadata pass. Confirmed: title renders "Love Island UK — the canon, no spoilers — tiered.tv"; canonical renders `https://tiered.tv/shows/love-island-uk` (not self-referential to `/shows/love-island-uk/community`) — despite the page's actual on-page content being the community vote table ("What readers are voting on," "LIVE," "VOTERS THIS WEEK") with no canon-ranking content of its own. Fix: give `/shows/[show]/community` its own `<title>` (e.g. "Love Island UK — community rank — tiered.tv") and a self-referential canonical, matching the distinct title/description pattern the season and theme pages already use. Likely in the `generateMetadata()` for `src/app/shows/[show]/community/page.tsx`. Spoiler discipline P0 intact (metadata-only change). (URL: /shows/love-island-uk/community, source: critique-pass-104) — **severity bumped MED→HIGH at pass 105**: independently reconfirmed on a second show's community page (`/shows/big-brother/community`) by a fresh authed walker pass with no awareness of this existing row — same exact canonical/title mismatch (`rel=canonical` still points at `/shows/big-brother`), confirming this is systemic across every `/shows/[show]/community` route rather than a one-off, matching the bar the Bake Off finding (line above, #652) was bumped at. (URL: /shows/big-brother/community, source: critique-pass-105)
 
 - [ ] [MED] [anon] /shows/love-island-uk/season/summer-2025 — the EPISODES stat tile's caption bare-restates its own value, adding zero new information, unlike every sibling tile on the same page (FORMAT, CAST SIZE, HOST all add a distinct fact in their captions). Recurring instance of an already-open defect class (see the LOW `/shows/the-real-world/season/go-big-or-go-home` EPISODES-caption row below, pass-95). Confirmed at source: `content/shows/love-island-uk/seasons/12-summer-2025.md` — `ep_count: 49` / `episodes_caption: "Around 49 episodes"` — the caption literally just re-says the number with filler. Fix: rewrite `episodes_caption` to add a distinct fact (nightly airing cadence, run length in weeks) instead of restating the count, matching the pattern `format_caption`/`cast_size_caption`/`host_caption` already follow on the same page. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/love-island-uk/season/summer-2025, source: critique-pass-104)
 
