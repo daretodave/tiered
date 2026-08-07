@@ -6266,6 +6266,75 @@ last time a curator actually looked.
   that most fresh-sounding ideas turn out to be an existing list's
   thesis restated. Shipped nothing. No ledger row changed.
 
+- **2026-08-07 pass (content-curator tick, twenty-seventh pass in the
+  current mission sequence): zero-ship.** Re-confirmed Rule 2 still
+  stalled (`plan/CADENCE.md` gap table fully starred, nearest real
+  finale masterchef-australia 2026-08-09, still in the future).
+  Skipped every list touched today, extending the exclusion set with
+  `running-on-muscle-memory` and `when-the-basket-became-a-bracket`
+  (the latter confirmed at its hard 30-entry cap as of 2026-07-29 —
+  ineligible regardless of new material). Worked six extend-first
+  candidates last touched 2026-07-24 through 2026-08-01, deliberately
+  outside today's already-mined tone/craft/era/single sweeps:
+  1. `thirteen-was-the-promise-not-the-rule` (single, Chopped
+     episode-count-deviation) — the 37th-pass census of every Chopped
+     season's `ep_count` already identified every clean deviation
+     (S6/S7/S8/S30/S31/S32/S50/S55) plus both baseline anchors
+     (S1/S9); every remaining deviating season already has its exact
+     count spent verbatim elsewhere (S13/S26/S33/S35/S42). Re-using
+     the same digit would double-stake a fact. Fully exhausted absent
+     a newly-drained Chopped season.
+  2. `the-countdown-doesnt-negotiate` (craft, on-screen timer/clock
+     thesis) — grepped Chopped/Top Chef/MasterChef/ANW/Ink Master
+     seasons for `clock|timer|countdown|ticking|buzzer|time limit`;
+     every hit already claimed by this list's existing entries.
+     Chopped S15's "brisker clock" is a release-calendar fact, not an
+     in-episode timer; Shark Tank S01's "a few minutes to make their
+     case" is editorial pacing, not a depicted countdown graphic —
+     both declined as off-thesis stretches.
+  3. `the-diners-were-never-extras` (craft, real-stakes dining-room
+     thesis) — checked four more Top Chef Restaurant Wars seasons
+     (S05, S10, S12, S17); all four read as generic restatements of
+     the format with no headline fact distinct enough to earn a slot
+     (S17 duplicates the already-shipped S08 entry outright). Checked
+     Vanderpump Rules S07/S09/S12; S07's Tom Tom opening is already
+     staked twice elsewhere (`a-change-of-address` rank 10,
+     `the-map-outlasted-the-cast` rank 1), S12's cast-turnover fact
+     restates S01's staff-hierarchy entry too closely.
+  4. `the-goodbye-became-part-of-the-format` (craft, elimination-
+     ritual-as-signature thesis) — checked Survivor S1, Big Brother
+     S1, and The Challenge S1 as founding-ritual candidates; none of
+     their own season files narrate the specific gesture/phrase in
+     enough detail (Survivor's file names a torch but no
+     snuff/"tribe has spoken" language; Big Brother S1's eviction was
+     public-vote, predating the houseguest-vote ritual the thesis
+     needs). Would require outside knowledge the season files don't
+     confirm.
+  5. `before-the-spinoff-had-a-name` (craft) — re-read its own
+     exhaustive 2026-08-01 rejection log (90 Day Fiancé S1, Vanderpump
+     Rules S1, Real World S1, Ink Master S5, Below Deck Med S1 already
+     checked there); independently re-verified Real World S01's file
+     still doesn't credit itself with spawning The Challenge. Checked
+     three fresh candidates: The Apprentice S07 (an in-show pivot, not
+     a spun-off show — off-thesis), Masked Singer S01 and Shark Tank
+     S01 (neither file carries spinoff-founding language).
+  6. `no-season-here-got-the-calendar-to-itself` (single, Chopped) —
+     confirmed already at its hard 30-entry cap since 2026-07-29;
+     ineligible to extend regardless of new material.
+
+  Also traced one fresh-concept candidate — "Drag Race All Stars
+  keeps reinventing its own elimination mechanic season to season"
+  (grounded in S3/S4/S5/S6 jury/tie/Lip-Sync-Assassin/RuDemption
+  facts) — before confirming it fully duplicates the already-shipped
+  `no-season-sends-a-queen-home-the-same-way-twice`, which already
+  covers all 11 All Stars seasons with the identical facts.
+
+  Same recurring blocker as every pass logged above today: most
+  season markdown files in this repo are frontmatter-plus-short-blurb
+  and don't narrate the granular mechanic/venue/ritual detail these
+  candidate theses need to ground a genuinely distinct, non-templated
+  entry without fabrication. Shipped nothing. No ledger row changed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
