@@ -6529,6 +6529,84 @@ last time a curator actually looked.
   under-file-count shows this pass just closed out, both look
   exhausted for now.
 
+- **2026-08-07 thirty-fourth pass (content-curator tick): zero-ship.**
+  (Note: labeled "thirty-third" at authoring time, but that number was
+  already taken by the immediately-prior tick's shipped list — The
+  Challenge sequel-seasons report card, commit `bf048a25` — so this
+  entry is renumbered thirty-fourth to keep the sequence unambiguous,
+  same correction pattern as the thirty-first/thirty-second collision
+  noted above.) Re-confirmed `plan/CADENCE.md`'s gap table still fully starred (no
+  actionable Rule 2 pick) and `plan/LISTS.md`'s review ledger has
+  zero lists review-due (oldest `last_reviewed` is `survivor-pillars`
+  at 2026-07-31, 7 days out; nearest real finales masterchef-australia
+  2026-08-09 and below-deck-mediterranean 2026-08-10, both still in
+  the future). The prior two passes had already closed the
+  `category:single` four-season-show census and the under-file-count
+  pool (below-deck-sailing-yacht, rhom, rhop, shark-tank), so this
+  pass worked two fresh pools instead:
+  1. **Under-referenced-show census, broadened to every show in the
+     catalog.** Ran a per-show `grep -l "show: <slug>"` census across
+     every `content/themes/*.md` for shows not yet checked by name in
+     the ledger: the-voice (20 files), dragrace-allstars (19),
+     the-circle (17), american-ninja-warrior (16), americas-got-talent
+     (15), the-apprentice (13), too-hot-to-handle (12),
+     married-at-first-sight-australia (11), queer-eye (10),
+     perfect-match (9), love-is-blind (8), rhodubai (6), alone-frozen
+     (5), alone-the-skills-challenge (3). Cross-checked the low-count
+     outliers against the ledger's own history: love-is-blind is
+     already fully claimed (10/10 seasons across two single-show lists
+     per the twenty-ninth pass), and perfect-match / rhodubai /
+     alone-frozen / alone-the-skills-challenge were all confirmed
+     exhausted or structurally ineligible for `category: single`
+     (single-season shows, no second entry to rank against) by the
+     thirtieth pass. No fresh headroom anywhere in this pool — the
+     high-file-count shows are high-file-count precisely because
+     they're the most thoroughly mined, and the low-file-count shows
+     are low-count because their (typically short) season files were
+     exhausted early, not because they're unexamined.
+  2. **Fresh structural-mechanic sweep, catalog-wide.** Grepped every
+     `content/shows/*/seasons/*.md` for several mechanics no existing
+     list stakes: blind/concealed-identity judging
+     (`blind tasting|judges couldn't see|identity concealed`) — one
+     hit only (masterchef-australia S15), sub-floor. Production
+     disruption — wildfire/hurricane/evacuation language — zero hits
+     catalog-wide. Medical-evacuation/injury-forced format change —
+     zero hits. Postponed/pulled/pushed-back episodes — three hits but
+     only two distinct shows (the-real-world, so-you-think-you-can-
+     dance), sub-floor. Fan-vote-added wildcard casting — two hits,
+     two shows (survivor S50, dragrace-allstars S08), sub-floor.
+     Most promising lead found: **a jury of previously-eliminated
+     competitors returning mid-format to help decide part of the
+     outcome**, as a twist distinct from a franchise's baseline
+     endgame jury. Cleanly grounded in Ink Master S07 "Revenge" (its
+     own finale watch_list text: "a jury of previously eliminated
+     artists gets real input alongside the judges for the first
+     time") and Drag Race All Stars S03 (its own `eyebrow`/lede/pull:
+     "the jury finale debuts," "previously eliminated queens return as
+     a jury, voting on which two of the final four lip sync for the
+     crown"). Ink Master S03's Human Canvas Jury is a different flavor
+     (tattoo clients voting, not eliminated competitors) so it can't
+     stack with S07 as a second entry for the same show under this
+     thesis. Grepped every other franchise's season files for `jury`:
+     Survivor and Big Brother both carry a baseline jury phase as
+     foundational format DNA present in nearly every season (not
+     introduced as a spotlight-worthy mid-run twist), and traitors,
+     the-challenge, masterchef, project-runway, hells-kitchen,
+     americas-next-top-model, and dragrace never mention a jury
+     mechanic at all. Two shows only — short of the ≥3-distinct-show
+     cross-canon floor for a `tone`/`craft`/`era` list, and too thin a
+     résumé (one qualifying season each) for `category: single` on
+     either show alone. **Flagged for a future tick:** if a third
+     show's season file ever documents an eliminated-cast-returns-to-
+     decide mechanic, this angle clears the floor cleanly and reads as
+     a genuinely fresh craft hook nothing else in the ledger stakes.
+  Shipped nothing. No ledger row changed. Next tick should treat the
+  under-referenced-show pool as fully closed (three consecutive
+  passes have now confirmed it) and either wait for a new season to
+  land (masterchef-australia 2026-08-09, below-deck-mediterranean
+  2026-08-10) or pursue the jury/eliminated-decides-the-ending lead if
+  a third grounding show turns up.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
