@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-07
 featured: false
 related:
   - missing-on-purpose
@@ -37,46 +37,52 @@ entries:
     rank: 4
     title: "The rookie-cast rule bends next: ten returnees, a brand-new continent"
     blurb: "Redemption sends ten non-winners from the first four seasons to Mongolia's steppe and taiga — the format's first all-returning field, and its first step outside North America, tested in the same season."
+  - show: alone
+    season: 7
+    season_label: "S07 · The Arctic"
+    rank: 5
+    title: "The no-crew rule survives its first real addition: a host"
+    blurb: "Colby Donaldson joins the format at its coldest environment yet, but the self-filmed, no-crew-on-location core holds. The Arctic proves a host can layer onto the show without touching the rule the whole premise depends on."
   - show: alone-frozen
     season: 1
     season_label: "S01 · Labrador"
-    rank: 5
+    rank: 6
     title: "The solo-winner rule breaks entirely: six veterans splitting one prize"
     blurb: "Alone: Frozen keeps the self-filmed isolation and drops the rest: returning players only, Labrador's winter cold, and a $500,000 pool split equally among everyone who reaches day fifty."
   - show: alone-the-skills-challenge
     season: 1
     season_label: "S01"
-    rank: 6
+    rank: 7
     title: "The wilderness-endurance rule disappears completely"
     blurb: "No remote drop, no tap-out clock, no elimination arc — alumni build shelters, bridges, and traps from their own properties instead, judged by a fellow veteran. The most radical departure keeps the cast and drops the survival test."
   - show: alone-australia
     season: 1
     season_label: "S01 · South West Tasmania"
-    rank: 7
+    rank: 8
     title: "The founding rule proves it can travel: same premise, new hemisphere"
     blurb: "Ten survivalists in Tasmania's buttongrass moorland run the identical self-filmed, no-crew structure the original version invented — no bend this time, just proof the format wasn't a fluke of its first location."
   - show: alone-australia
     season: 2
     season_label: "S02 · Fiordland"
-    rank: 8
+    rank: 9
     title: "The regional spinoff bends its own home-turf rule first"
     blurb: "Fiordland sends the Australian format outside Australia for the first time — New Zealand's fjord terrain and temperate rainforest test whether the localized version could survive its own international leap."
   - show: alone-australia
     season: 3
     season_label: "S03 · West Coast Range"
-    rank: 9
+    rank: 10
     title: "The rule holds steady, and cast depth carries the season instead"
     blurb: "West Coast Range doesn't bend a single rule — same solo structure, same home state — and lets three years of a deepening candidate pool and a more assured production carry the run instead."
   - show: naked-and-afraid
     season: 4
     season_label: "S04 · The PSR Season"
-    rank: 10
+    rank: 11
     title: "The naked judgment call gets a number attached to it"
     blurb: "Season four formalizes the Primitive Survival Rating into a visible, trackable score, testing whether the founding format actually needed a quantified metric or had been running on unspoken judgment the whole time."
   - show: naked-and-afraid
     season: 2
     season_label: "S02 · The Expansion"
-    rank: 11
+    rank: 12
     title: "Proving the founding rule needed no changes at all"
     blurb: "Season two runs the identical 21-day, no-gear, no-clothing structure with fresh pairings and new terrain — no bend, no adjustment, just the same premise proving it could repeat itself on demand."
 ---
