@@ -6086,6 +6086,85 @@ last time a curator actually looked.
   to make without a documented source. Shipped nothing. No ledger row
   changed.
 
+- **2026-08-07 pass (content-curator tick, twenty-fifth pass in the
+  current mission sequence): zero-ship.** Re-confirmed Rule 2 still
+  stalled (gap table fully starred, earliest real finale
+  masterchef-australia 2026-08-09) and skipped every list already
+  touched today (`best-post-merge`, `the-couch-kept-adding-chairs`,
+  `one-rule-never-bends`, `the-finals-never-run-the-same-course-twice`,
+  `when-scripted-went-dark`, `someone-else-held-the-chair-for-a-while`,
+  `running-on-muscle-memory`). Searched for a fresh new-list angle
+  (not an extend) across ~14 concepts before falling back to a
+  documented zero-ship:
+  - double-elimination / bottom-two mechanics — already checked and
+    rejected in an earlier pass (2026-07-27, twentieth) as too thin
+    (2-4 file hits catalog-wide, mostly canon-level, not
+    season-file-grounded); re-confirmed still thin, not re-chased.
+  - tiebreaker / sudden-death / coin-flip mechanics — grepped every
+    season file catalog-wide for `tiebreak|tie-break|sudden death|
+    coin flip|split the vote|deadlock`, zero hits. Not groundable.
+  - a jury-of-eliminated-players "first introduced" angle — rejected:
+    jury is a day-one format element for the shows that run it, not a
+    season-over-season change to track, so there's no swing to rank.
+  - a parallel/secondary-bracket mechanic (Survivor's Edge of
+    Extinction, Top Chef's Last Chance Kitchen run alongside the main
+    game) — rejected: both are already staked (Edge of Extinction at
+    `best-challenge-design` rank 12, Last Chance Kitchen at
+    `a-way-back-in` rank 8) under the redemption/second-chance thesis
+    those lists already own; a third framing would duplicate, not add.
+  - draft-style team-captain selection (Big Brother's Coaches Twist,
+    Challenge/Top Chef captain-picks-team formats) — rejected: heavy
+    overlap risk against the already-saturated team-structure cluster
+    (`the-team-never-means-the-same-thing-twice`,
+    `built-for-one-playing-as-a-team`,
+    `the-team-rule-never-makes-it-to-a-second-season`); Big Brother's
+    Coaches Twist specifically is already staked at
+    `the-judges-picked-a-side` and `best-post-merge`.
+  - real-world-event scheduling collisions (Olympics, World Cup,
+    election nights competing for a premiere's attention) — rejected:
+    grepped for "Olympics"/"World Cup"/"election" catalog-wide; every
+    "World Cup" hit refers to MasterChef's in-format national-teams
+    mechanic, not a real-world broadcast collision, and no season file
+    states an external-event scheduling conflict in its own prose.
+    Would require outside-knowledge claims the never-fabricate rule
+    blocks.
+  - sponsor/branded-challenge integration as its own craft angle —
+    rejected: already effectively owned by `the-paycheck-writes-the-
+    plot`, near-duplicate thesis.
+  - wardrobe/makeover-department craft angle — rejected: only one
+    show in the catalog (Queer Eye) centers wardrobe as format, fails
+    the ≥3-show cross-canon floor outright.
+  - zero-drama/sincere-cast tone angle — rejected: `played-it-straight`
+    already ships this exact thesis (deliberately-sincere or
+    not-yet-formulaic seasons), confirmed by reading its frontmatter.
+  - tribe-swap-as-mid-season-structural-change — rejected: this is
+    Survivor's own single-show tribe-structure territory, already
+    covered by `the-team-never-means-the-same-thing-twice`.
+  - returning-winners-as-mentors/judges — rejected: already staked at
+    `the-franchise-started-borrowing-from-itself`.
+  - a bubble/no-studio-audience production angle distinct from
+    pandemic-seasons — rejected: too close a duplicate of the existing
+    `pandemic-seasons` era list's own thesis.
+  - reliable-frontmatter-field angles (cast_size trends, ep_count
+    swings, host-tenure milestones, calendar-slot moves) — checked
+    each against the ledger and found all five already claimed
+    (`the-couch-kept-adding-chairs`, `the-cast-outgrew-the-format`,
+    `running-long-running-short`, `milestones-spent-not-marked`,
+    `no-season-here-got-the-calendar-to-itself` /
+    `the-schedule-didnt-ask-permission`), all recently touched or
+    confirmed exhausted by earlier passes today.
+  - single-show gap check: scanned the 71 existing `category: single`
+    lists against the 68-show catalog; the only shows without a
+    single-show list of their own (rhodubai, and a handful of other
+    recent additions) don't have enough aired seasons (rhodubai: 2) to
+    clear the 10-entry floor.
+
+  Same recurring blocker as the twenty-third pass: most season
+  markdown files in this repo are frontmatter-plus-short-blurb and
+  don't narrate the granular mechanic/scheduling/production detail a
+  fresh angle would need to ground itself without fabrication.
+  Shipped nothing. No ledger row changed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
