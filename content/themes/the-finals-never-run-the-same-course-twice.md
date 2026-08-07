@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-07
 featured: false
 related:
   - best-challenge-design
@@ -68,21 +68,33 @@ entries:
     title: "The standard four-stage finals return, and the wall gets taller"
     blurb: "A season after the three-stage experiment, nationals go back to the usual four stages, and a new eighteen-foot Mega Wall raises the stakes at qualifying instead. The format restores its own baseline on purpose."
   - show: american-ninja-warrior
+    season: 7
+    season_label: "S07 · Military Appreciation"
+    rank: 10
+    title: "The four-stage climb holds, but both ends get rebuilt obstacles"
+    blurb: "Season seven keeps the four-stage finals structure intact but rebuilds pieces of it — Stage 1 adds the Sonic Curve, Coin Flip, and Triple Swing; Stage 3 adds the Psycho Chainsaw and Area 51. The course stays recognizable, just harder at both ends."
+  - show: american-ninja-warrior
     season: 6
     season_label: "S06"
-    rank: 10
+    rank: 11
     title: "Five cities and one Vegas course settle into the format's default shape"
     blurb: "St. Louis joins the qualifying rotation, and the show finally holds a stable multi-city-to-Vegas rhythm long enough to feel like a template. Every later swing at the finals structure is a departure from the shape this season locks in."
   - show: american-ninja-warrior
+    season: 5
+    season_label: "S05"
+    rank: 12
+    title: "The Vegas course gets its first real refresh, not just a rerun"
+    blurb: "Season five sends nationals back to Las Vegas for a second straight year, and the course isn't identical — the Rope Glider joins qualifying and the Hang Slider debuts on the national stage. Proof the move wasn't a one-season fluke."
+  - show: american-ninja-warrior
     season: 1
     season_label: "S01"
-    rank: 11
+    rank: 13
     title: "Before Vegas existed, the finals were a real course in Japan"
     blurb: "The debut season sends its qualifiers straight at the actual Mount Midoriyama course from Japan's Sasuke, with no American-built replica standing in. Every later rebuild of the finals is a rebuild of something that didn't originate here at all."
   - show: american-ninja-warrior
     season: 14
     season_label: "S14"
-    rank: 12
+    rank: 14
     title: "A new qualifying city arrives, and the finals hold their shape anyway"
     blurb: "San Antonio's Alamodome takes over qualifying, the first full course built outside the Pacific Northwest circuit, but semifinals stay in Hollywood and nationals return to the Strip with the standard four-stage format completely intact."
 ---
