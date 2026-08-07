@@ -57,7 +57,7 @@ entries:
     blurb: "The Challenge compresses into the brutal stretch before the final, and Dirty 30 runs that gauntlet harder than most. Politics tighten as the field thins, eliminations come fast, and the season builds toward a final that earns its reputation."
   - show: survivor
     season: 45
-    season_label: "S45 · Mom I Won"
+    season_label: "S45"
     rank: 8
     title: "The new-era post-merge finally breathing at the right tempo."
     blurb: "Ninety-minute episodes and a 26-day clock combine into a post-merge that doesn't feel rushed or padded. Journeys and the sanctuary mechanic add texture, the cast types stabilize, and the stretch reads as Survivor at cruising altitude — the modern format delivering."

@@ -1,7 +1,7 @@
 ---
 show: survivor
 number: 45
-title: Mom I Won
+title: Survivor 45
 premiere_date: 2023-09-27
 ep_count: 14
 location: Mamanuca Islands, Fiji

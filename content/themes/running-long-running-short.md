@@ -33,7 +33,7 @@ entries:
     blurb: "The standalone results episode folds into a single two-hour broadcast each week, the leanest weekly schedule the format had run since its debut season — less airtime overall, none of it spent on a separate results hour."
   - show: survivor
     season: 45
-    season_label: "S45 · Mom I Won"
+    season_label: "S45"
     rank: 4
     title: "By the show's mid-forties, the extra half hour finally stops feeling like an experiment."
     blurb: "The 90-minute cut and the 26-day clock read as the format's natural rhythm here — long enough to let a conversation breathe, tight enough that nothing drags. A runtime bet that took several seasons to actually settle in."

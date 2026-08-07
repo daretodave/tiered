@@ -155,13 +155,13 @@ seventh because the season's structural choices are bold enough
 to make Palau distinctive without making it gimmicky, a tightrope
 very few twist-heavy seasons ever pull off.
 
-## 45. Mom I Won
+## 45. Survivor 45
 
 tag: The new-era season that stopped feeling like a compromise.
-slot_argument: By fall 2023 the 26-day format had stabilized into the show's true shape. Mom I Won is the new-era run executing at scale.
+slot_argument: By fall 2023 the 26-day format had stabilized into the show's true shape. Survivor 45 is the new-era run executing at scale.
 community_rank_hint: rank=7 delta=-1 sentiment=down
 
-Mom I Won is the most fully realized version of new-era Survivor.
+Survivor 45 is the most fully realized version of new-era Survivor.
 By the fall of 2023 the 26-day format had stopped feeling like a
 compromise and started feeling like the show's true shape. The
 90-minute episode found its rhythm — room for character without
