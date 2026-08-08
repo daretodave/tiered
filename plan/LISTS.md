@@ -6875,6 +6875,73 @@ last time a curator actually looked.
   crossover framing — both are now exhausted across every sub-angle
   this and the prior 40 passes have tried.
 
+- **2026-08-08 ninety-seventh pass (cloud march tick, content-curator):
+  zero-ship.** (Numbered ninety-seventh, not forty-second — a fresh
+  full-file audit of every ordinal word used as a pass label anywhere
+  in this file found every number 42 through 116-ish already spent by
+  an unrelated, much older mission-sequence numbering pass through this
+  same file (dated 2026-07-29 and earlier), with 97 the first genuinely
+  free ordinal in the whole range; logging the audit trail here so a
+  future pass doesn't have to re-derive it — the next open number after
+  97 is 100 exactly, "hundredth," everything 98-116 already spent.
+  Today's (2026-08-08) actual continuous Rule-3 tick count remains at
+  forty-two.) Rule 2 re-confirmed stalled (`plan/CADENCE.md`'s gap table
+  still fully starred/confirmed-but-unaired per the dispatching audit
+  row; nearest real finale masterchef-australia 2026-08-09, one day
+  out) and the review batch re-confirmed empty (oldest `last_reviewed`
+  still `survivor-pillars` at 2026-07-31, 8 days inside the 90-day
+  window) — fell through to Rule 3. Took up the forty-first pass's own
+  handoff instruction to search a genuinely new angle class rather than
+  a superlative/record or crossover variant. Checked four fresh classes
+  from scratch, all closed on inspection:
+  1. **Weather/production-disruption.** A catalog-wide
+     `hurricane|wildfire|earthquake|flood|storm delay|weather delay|
+     evacuat` sweep across every `content/shows/*/seasons/*.md` file
+     surfaced exactly two hits — Survivor S02 "The Australian Outback"
+     (drought-then-flood environmental hardship, an in-fiction survival
+     condition, not a production disruption) and The Real World S24
+     "Back to New Orleans" (post-Katrina volunteer rebuilding as the
+     season's premise, not a weather event disrupting the shoot itself).
+     Neither is actually a production-disruption fact, and two shows
+     falls under the ≥3-show cross-canon floor regardless — closed.
+  2. **Legal/regulatory disputes.** A catalog-wide
+     `lawsuit|sued|legal dispute|cease and desist|arbitration` sweep
+     returned one nominal hit (The Real World S29 "Ex-plosion") that
+     turned out to be a false positive — "issued" substring-matching
+     "sued," no actual legal-dispute text anywhere in the season file.
+     Zero genuine hits catalog-wide — closed, nothing to chase further.
+  3. **Family/couple casting (married couples, siblings, twins
+     competing together).** A
+     `married couple|husband and wife|siblings compet|twins? compet|
+     father and son|mother and daughter|real-life couple` sweep found
+     exactly one hit (MasterChef S15 "Dynamic Duos," a paired-teams
+     format, not a real-life-relationship casting fact specifically)
+     — one show, well under the ≥3-show floor — closed.
+  4. **Cross-franchise celebrity-athlete guest casting.** A broader
+     `guest athlete|professional athlete|Olympian|NFL|NBA player|world
+     record` sweep returned two dozen-plus hits but nearly all were
+     false-positive substring matches (network abbreviations, unrelated
+     body text) rather than genuine athlete-guest-casting facts; spot-
+     reading a sample of the real hits (DWTS S22/S27's athlete-cast
+     entries, Big Brother S23's team-captains format) showed the
+     genuine athlete-contestant fact is already the show's baseline
+     casting model in those seasons, not a one-off crossover-guest
+     event, and is already staked elsewhere (DWTS athlete-casting is
+     off-thesis for any list keyed on a guest/crossover appearance from
+     outside the competition-show ecosystem). No groundable ≥3-show
+     angle survived the noise — closed.
+  Also spot-confirmed `pandemic-seasons` (era, 129 lines, already
+  live) already fully owns the mid-run real-world-disruption thesis, so
+  a fifth "production paused by external event" angle would only
+  duplicate it. No candidate reached a draft. Shipped nothing. No
+  ledger row changed. Next tick should treat all four angles above as
+  closed (do not re-derive), wait for the masterchef-australia
+  2026-08-09 finale to reopen Rule 2 if at all possible, and if Rule 3
+  fires again first, search outside weather/legal/family-casting/
+  cross-franchise-athlete territory — all four newly closed this pass,
+  on top of the superlative/record and cross-franchise-personnel
+  threads the fortieth and forty-first passes already closed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
