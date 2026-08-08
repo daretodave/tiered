@@ -47,6 +47,25 @@
 //     Echoes the issue number on stdout. Best-effort on failure
 //     (exit 1, caller continues).
 //
+//   content-open --unit "<show-or-theme-name>"
+//               --title "<title>"
+//               --body-file <path>
+//
+//     Find-or-create-or-reopen a `/ship-content` mirror issue.
+//     Idempotent, same shape as phase-open: matches on the title's
+//     " — <unit>" suffix (the show/theme display name, per
+//     ship-content's own "content: <unit-type> — <name>" title
+//     convention) rather than a prefix, since the unit-type varies
+//     (new-show / season-batch / themed-list) but the trailing name
+//     is the stable reuse key.
+//       * existing open issue with matching title suffix → reuse,
+//       * latest closed issue with matching title suffix → reopen,
+//                                                          comment,
+//       * none → create.
+//     Echoes the issue number on stdout. Best-effort on failure
+//     (exit 1, caller continues — the mirror is best-effort per
+//     ship-content.md Step 2).
+//
 //   phase-close --phase <id>
 //               --commit <sha>
 //               --deploy-url <url>
@@ -107,6 +126,7 @@ const VALID_CATEGORY = new Set([
 const LABEL_PALETTE = {
   'loop:opened': { color: '5319e7', description: 'Opened by the autonomous loop' },
   'loop:phase': { color: '0e8a16', description: 'Phase mirror — opens at phase start, closes on ship' },
+  'loop:content': { color: '006b75', description: 'Content mirror — opens at ship-content start, closes on ship' },
   'severity:high': { color: 'b60205', description: 'High severity finding' },
   'severity:med': { color: 'fbca04', description: 'Medium severity finding' },
   'severity:low': { color: 'c5def5', description: 'Low severity finding' },
@@ -240,6 +260,51 @@ function findPhaseIssue(phaseId, repo) {
   // Prefer an OPEN match; fall back to the most-recent CLOSED. gh
   // returns issues newest-first, so matches[0] is already the most
   // recent for the all-closed case.
+  const open = matches.find((row) => String(row.state).toUpperCase() === 'OPEN')
+  if (open) return { number: open.number, state: 'OPEN' }
+  return { number: matches[0].number, state: 'CLOSED' }
+}
+
+// Build the " — <name>" suffix used to find-or-create the content mirror.
+// ship-content.md's title convention is "content: <unit-type> — <name>" —
+// the unit-type varies but the trailing show/theme name is the stable
+// reuse key across a show's multi-tick drain.
+export function contentTitleSuffix(unit) {
+  return ` — ${unit}`
+}
+
+export function isContentMatch(title, unit) {
+  return (title ?? '').endsWith(contentTitleSuffix(unit))
+}
+
+// Same shape as findPhaseIssue, filtered by the loop:content label
+// instead of loop:phase, matched by title suffix instead of prefix.
+function findContentIssue(unit, repo) {
+  const r = ghCall([
+    'issue',
+    'list',
+    '--repo',
+    repo,
+    '--state',
+    'all',
+    '--label',
+    'loop:content',
+    '--json',
+    'number,title,state',
+    '--limit',
+    '200',
+  ])
+  if (r.status !== 0) {
+    return { error: r.stderr.trim() || `gh issue list exited ${r.status}` }
+  }
+  let arr
+  try {
+    arr = JSON.parse(r.stdout || '[]')
+  } catch (e) {
+    return { error: `gh issue list returned non-JSON: ${e.message}` }
+  }
+  const matches = arr.filter((row) => isContentMatch(row.title ?? '', unit))
+  if (matches.length === 0) return null
   const open = matches.find((row) => String(row.state).toUpperCase() === 'OPEN')
   if (open) return { number: open.number, state: 'OPEN' }
   return { number: matches[0].number, state: 'CLOSED' }
@@ -463,6 +528,119 @@ function cmdPhaseOpen(flags) {
   process.stdout.write(`${number}\n`)
 }
 
+function cmdContentOpen(flags) {
+  const unit = flags.unit
+  const title = flags.title
+  const bodyFile = flags['body-file']
+  const repo = process.env.GH_REPO
+
+  if (!process.env.GH_TOKEN) {
+    process.stderr.write('loop-issue: GH_TOKEN missing from env (.env not loaded?)\n')
+    process.exit(1)
+  }
+  if (!repo) {
+    process.stderr.write('loop-issue: GH_REPO missing (set in .env)\n')
+    process.exit(1)
+  }
+  if (!unit) {
+    process.stderr.write('loop-issue: --unit is required\n')
+    process.exit(1)
+  }
+  if (!title || !bodyFile) {
+    process.stderr.write('loop-issue: --title and --body-file are required\n')
+    process.exit(1)
+  }
+  if (!fs.existsSync(bodyFile)) {
+    process.stderr.write(`loop-issue: body file not found: ${bodyFile}\n`)
+    process.exit(1)
+  }
+  if (!isContentMatch(title, unit)) {
+    process.stderr.write(
+      `loop-issue: --title must end with "${contentTitleSuffix(unit)}" so reuse-by-suffix works\n`,
+    )
+    process.exit(1)
+  }
+
+  for (const name of ['loop:content', 'loop:opened']) {
+    const r = ensureLabel(name, repo)
+    if (r.error) {
+      process.stderr.write(`loop-issue: label ensure failed for ${name}: ${r.error}\n`)
+      process.exit(1)
+    }
+  }
+
+  const found = findContentIssue(unit, repo)
+  if (found && found.error) {
+    process.stderr.write(`loop-issue: content lookup failed: ${found.error}\n`)
+    process.exit(1)
+  }
+
+  if (found && found.state === 'OPEN') {
+    // Reuse — no new issue, no comment churn. An orphan from a prior
+    // incomplete tick (the #577/#580 regression class) gets closed by
+    // this tick's own Closes trailer instead of leaking a duplicate.
+    process.stdout.write(`${found.number}\n`)
+    return
+  }
+
+  if (found && found.state === 'CLOSED') {
+    const reopen = ghCall(['issue', 'reopen', String(found.number), '--repo', repo])
+    if (reopen.status !== 0) {
+      process.stderr.write(
+        `loop-issue: content reopen failed for #${found.number} (status ${reopen.status})\n${reopen.stderr}\n`,
+      )
+      process.exit(1)
+    }
+    const comment = ghCall([
+      'issue',
+      'comment',
+      String(found.number),
+      '--repo',
+      repo,
+      '--body',
+      buildContentResumeCommentBody({ unit }),
+    ])
+    if (comment.status !== 0) {
+      process.stderr.write(
+        `loop-issue: content resume comment failed for #${found.number} (status ${comment.status})\n${comment.stderr}\n`,
+      )
+    }
+    process.stdout.write(`${found.number}\n`)
+    return
+  }
+
+  const r = ghCall([
+    'issue',
+    'create',
+    '--repo',
+    repo,
+    '--title',
+    title,
+    '--body-file',
+    path.resolve(bodyFile),
+    '--label',
+    'loop:content,loop:opened',
+  ])
+  if (r.status !== 0) {
+    process.stderr.write(`loop-issue: gh issue create (content) failed (${r.status})\n${r.stderr}\n`)
+    process.exit(1)
+  }
+  const number = parseIssueNumber(r.stdout)
+  if (!number) {
+    process.stderr.write(`loop-issue: could not parse issue number from gh stdout:\n${r.stdout}\n`)
+    process.exit(1)
+  }
+  process.stdout.write(`${number}\n`)
+}
+
+export function buildContentResumeCommentBody({ unit }) {
+  return [
+    `Content work on "${unit}" resumed at ${new Date().toISOString()}.`,
+    '',
+    '_Reopened by the autonomous loop. A prior tick opened this mirror and closed it (or left it dangling) before the unit shipped; this run reuses the same number instead of opening a duplicate._',
+  ].join('\n')
+}
+
 function cmdPhaseClose(flags) {
   const phaseId = flags.phase
   const commit = flags.commit
@@ -602,6 +780,8 @@ function main(argv) {
       return cmdPhaseOpen(flags)
     case 'phase-close':
       return cmdPhaseClose(flags)
+    case 'content-open':
+      return cmdContentOpen(flags)
     case 'verify-close-trailer':
       return cmdVerifyCloseTrailer(flags)
     case '--help':
@@ -640,6 +820,10 @@ Usage:
       → posts a "phase shipped" comment; commit's Closes #N auto-closes
       (alternatively pass --number <N> to skip the lookup)
 
+  node scripts/loop-issue.mjs content-open --unit "<show-or-theme-name>" \\
+      --title "content: <unit-type> — <show-or-theme-name>" --body-file <path>
+      → find-or-create-or-reopen a ship-content mirror; echoes the issue number
+
   node scripts/loop-issue.mjs verify-close-trailer --phase <id> \\
       --commit-msg-file <path>
       → gating: confirms the not-yet-pushed commit's Closes #N trailer
@@ -658,9 +842,12 @@ export const __test = {
   buildCloseCommentBody,
   buildPhaseResumeCommentBody,
   buildPhaseShippedCommentBody,
+  buildContentResumeCommentBody,
   extractClosesNumber,
   phaseTitlePrefix,
   isPhaseMatch,
+  contentTitleSuffix,
+  isContentMatch,
   LABEL_PALETTE,
   VALID_SEVERITY,
   VALID_CATEGORY,

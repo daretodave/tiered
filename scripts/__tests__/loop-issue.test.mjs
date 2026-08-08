@@ -21,9 +21,12 @@ const {
   buildCloseCommentBody,
   buildPhaseResumeCommentBody,
   buildPhaseShippedCommentBody,
+  buildContentResumeCommentBody,
   extractClosesNumber,
   phaseTitlePrefix,
   isPhaseMatch,
+  contentTitleSuffix,
+  isContentMatch,
   LABEL_PALETTE,
   VALID_SEVERITY,
   VALID_CATEGORY,
@@ -164,6 +167,35 @@ test('extractClosesNumber picks the phase mirror number even when the trailer lo
   // check (not this function) is what catches the wrong-number case.
   const message = 'feat: colocated-test gate — phase 46\n\nCloses #46\n'
   assert.equal(extractClosesNumber(message), 46)
+})
+
+test('contentTitleSuffix builds a " — <name>" suffix', () => {
+  assert.equal(contentTitleSuffix('90 Day Fiancé'), ' — 90 Day Fiancé')
+  assert.equal(contentTitleSuffix('Married at First Sight Australia'), ' — Married at First Sight Australia')
+})
+
+test('isContentMatch matches by title suffix, unit-type prefix agnostic', () => {
+  assert.equal(isContentMatch('content: season-batch — 90 Day Fiancé', '90 Day Fiancé'), true)
+  assert.equal(isContentMatch('content: new-show — 90 Day Fiancé', '90 Day Fiancé'), true)
+  assert.equal(isContentMatch('content: season-batch — Selling Sunset', '90 Day Fiancé'), false)
+})
+
+test('isContentMatch does not false-positive on a name that is a substring of another', () => {
+  // "Love Island" must not match a title actually about "Love Island UK".
+  assert.equal(isContentMatch('content: season-batch — Love Island UK', 'Love Island'), false)
+  assert.equal(isContentMatch('content: season-batch — Love Island', 'Love Island'), true)
+})
+
+test('buildContentResumeCommentBody mentions the unit name + ISO timestamp', () => {
+  const body = buildContentResumeCommentBody({ unit: 'Married at First Sight Australia' })
+  assert.match(body, /Married at First Sight Australia/)
+  assert.match(body, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/)
+  assert.match(body, /resumed/i)
+})
+
+test('LABEL_PALETTE has the loop:content label for the content-open path', () => {
+  assert.ok(LABEL_PALETTE['loop:content'])
+  assert.match(LABEL_PALETTE['loop:content'].color, /^[0-9a-f]{6}$/)
 })
 
 test('VALID_* enums match the documented brief', () => {

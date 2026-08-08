@@ -304,19 +304,29 @@ If no content-gap rows or all score < 3.0: exit cleanly. Log
 
 ### Step 2 — Mirror to GitHub (best-effort)
 
-Open a GitHub issue documenting the unit being shipped:
+Open (or, per the find-or-reuse contract below, **reuse**) a GitHub
+issue documenting the unit being shipped:
 
 ```bash
-N=$(gh issue create \
+N=$(node scripts/loop-issue.mjs content-open \
+    --unit "<show-or-theme-name>" \
     --title "content: <unit-type> — <show-or-theme-name>" \
-    --label content,loop-queued \
-    --body-file /tmp/content-issue-body.md \
-    --json number --jq .number) || N=""
+    --body-file /tmp/content-issue-body.md) || N=""
 echo "content-issue: ${N:-skip}"
 ```
 
-The body explains: source row, rule, files about to ship.
-On failure: log, set `N=""`, continue. Mirror is best-effort.
+Idempotent, mirroring the phase mirror's `phase-open` shape
+(`scripts/loop-issue.mjs`): if an issue tagged `loop:content` whose
+title already ends in ` — <show-or-theme-name>` is open, reuse its
+number instead of creating a duplicate; if the latest match is
+closed, reopen it and log a resume comment; only create fresh when
+no match exists. This closes the orphaned-mirror gap that let
+issues #577 and #580 dangle (a tick opened the mirror, then
+failed/timed out before shipping or closing it, and the next tick
+for the same show created a brand-new issue instead of reusing the
+old number). The body explains: source row, rule, files about to
+ship. On failure: log, set `N=""`, continue. Mirror is
+best-effort.
 
 ### Step 3 — Spawn sub-agents in parallel
 
