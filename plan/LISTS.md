@@ -7130,6 +7130,38 @@ last time a curator actually looked.
   (Rule 2 unstalling, or the masterchef-australia 2026-08-09
   finale-gate drain) over continuing to re-slice this space.
 
+- **2026-08-08 (cloud march tick, forty-seventh pass in today's
+  sequence): zero-ship.** Rule 2 re-confirmed stalled — `git log
+  --since="2026-08-05" --name-only --diff-filter=A -- 'content/shows/*/
+  seasons/*.md'` returns zero newly-filed season files, so no fresh
+  grounding material has landed since the forty-sixth pass ran
+  (`plan/CADENCE.md`'s gap table unchanged since the 2026-08-02 sweep,
+  nearest real finale masterchef-australia still one day out at
+  2026-08-09). Review batch re-checked and still empty (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31, 8 days inside the
+  90-day window). Declined to re-walk the zero-`category: single` show
+  pool for a fourth time this week — independently re-verified from
+  first principles rather than trusting the log: recomputed the current
+  8-show pool directly (`comm` against every `content/shows/*.md` slug
+  vs. every `show:` key under a `category: single` theme) and got the
+  same eight (alone-australia, alone-frozen, alone-the-skills-challenge,
+  below-deck-adventure, below-deck-down-under, perfect-match, rhodubai,
+  traitors); read each show's own season count directly rather than
+  citing a prior pass's number — alone-frozen, alone-the-skills-
+  challenge, below-deck-adventure are genuinely single-season
+  (structurally ineligible); rhodubai carries 2 aired seasons but was
+  already individually rejected as too thin at line 6376/6766 above;
+  alone-australia (3 seasons), below-deck-down-under (4 seasons), and
+  traitors (4 seasons) were each individually re-confirmed
+  exhaustively mined with cited rejection reasoning at lines 209 and
+  the traitors cross-stake note above — no new season landed for any of
+  the three since those passes ran, so the reasoning still holds
+  unchanged. No new angle class attempted beyond this re-verification;
+  the fortieth-through-forty-sixth passes' closed-class list stands.
+  Shipped nothing. No ledger row changed. Next actionable Rule 3 lead
+  is still a new season landing (Rule 2 unstalling, or the
+  masterchef-australia 2026-08-09 finale-gate drain).
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
