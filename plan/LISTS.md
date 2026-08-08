@@ -7046,6 +7046,52 @@ last time a curator actually looked.
   next rather than re-deriving this same search. No ledger row
   changed.
 
+- **2026-08-08 (cloud march tick, forty-fifth pass in today's
+  sequence): zero-ship.** Rule 2 re-confirmed stalled (CADENCE gap
+  table still fully starred/confirmed-but-unaired, no drain since the
+  2026-08-02 sweep) and the review batch still empty (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31, 8 days inside
+  the 90-day window) — fell through to Rule 3. Explicitly skipped
+  every angle class the log already marks closed and stepped back to
+  four genuinely different classes:
+  1. **Casting-representation/demographic "firsts"** — a catalog-wide
+     sweep for diversity/representation-first language surfaced 14
+     real hits across 10 shows, but every one already resolves to an
+     existing entry (`season-one-doesnt-own-every-first`,
+     `pandemic-seasons`, and prior passes' leftover-pool checks); the
+     remaining pool (14/13) is too large to be a below-floor extend
+     target and too fully-claimed to be a standalone list. Closed —
+     fully mined.
+  2. **Format tried once, then explicitly walked back a season
+     later** (distinct from `tried-once-never-repeated` by requiring
+     the season's own text to state the reversal) — six strong,
+     explicit hits (ANW S16, ANTM S21, Big Brother S17, SYTYCD S06/S08,
+     Too Hot to Handle S03) all individually confirmed already staked,
+     most in near-identical language, at `running-long-running-short`,
+     `the-itinerary-was-the-format`, `every-summer-gets-its-own-twist`,
+     `best-hosting`, `rulebook-rewritten-every-season`, and
+     `tried-once-never-repeated`. Zero surviving candidates — vein
+     completely saturated.
+  3. **Editorial/critical reception patterns** ("aged well/poorly",
+     reassessment framing) — a catalog-wide grep for that register
+     returned zero hits anywhere in the season corpus. Dead on
+     arrival, nothing to chase.
+  4. **International-format adaptation delta** — `same-license-
+     different-rules` is already logged "fourth confirmation dead" as
+     of the seventy-sixth pass (2026-08-02); declined to re-run a
+     fifth search on ground already confirmed dead four times.
+  Shipped nothing. No ledger row changed. Between this pass and the
+  prior 44, the mechanic/format/casting/production-fact search space
+  now reads essentially fully mined at the current 180-list ledger
+  density; the two below-floor rows (`the-vote-left-the-phone-line`
+  era 8/8, `one-season-two-flags` structure 9/9) remain parked pending
+  either a new season landing or their own 90-day review clock —
+  the oldest ledger entry (`survivor-pillars`, `last_reviewed`
+  2026-07-31) is still ~82 days from that clock. A future pass should
+  treat any new season landing (Rule 2 unstalling, or a finale-gate
+  drain) as the next genuinely new source of Rule 3 work rather than
+  continuing to re-slice an exhausted angle space.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
