@@ -285,9 +285,11 @@ describing what shipped + what the user can now do. Add
 "Decisions" section listing autonomous design calls.
 
 **If Step 2.5 captured a phase issue number** (`$PHASE_ISSUE`),
-add a `Closes #<N>` trailer to the commit body. GitHub auto-closes
-the phase mirror when the commit pushes to main; that's
-the canonical ship signal on the public timeline.
+add a `Closes #<N>` trailer to the commit body, where `<N>` is
+**`$PHASE_ISSUE` — the mirror issue's own number, never the
+phase ordinal.** GitHub auto-closes the phase mirror when the
+commit pushes to main; that's the canonical ship signal on the
+public timeline.
 
 ```bash
 git add <explicit files>
@@ -300,11 +302,46 @@ feat: <family> page family — phase <N>
 Decisions:
 - <design call 1 — picked X over Y because <reason>>
 
-Closes #<phase-issue-number>
+Closes #$PHASE_ISSUE
 EOF
 )"
-git push origin main
 ```
+
+**Before pushing, verify the trailer actually resolves to this
+phase's mirror issue** — do not push first and check after.
+Two prior phases (44, 46) each shipped with a broken trailer:
+44 omitted it entirely; 46 wrote `Closes #46` (the phase
+ordinal) instead of `Closes #405` (the real mirror issue),
+which silently closed an unrelated already-closed issue and
+left the true mirror (#405) orphaned. Both stayed open for
+weeks before anyone noticed. Catch it here instead:
+
+```bash
+git log -1 --format=%B > /tmp/phase-commit-msg.txt
+node scripts/loop-issue.mjs verify-close-trailer \
+    --phase "<N>" \
+    --commit-msg-file /tmp/phase-commit-msg.txt
+```
+
+- **Exits 0** — the trailer's `Closes #<N>` resolves to an OPEN
+  issue titled `Phase <N> — ...`. Push:
+  ```bash
+  git push origin main
+  ```
+- **Exits 1** — read the stderr diagnostic (missing trailer,
+  wrong number, title mismatch, or already-closed target), fix
+  the commit body, and amend before pushing:
+  ```bash
+  git commit --amend -m "$(cat <<'EOF'
+  <same message, corrected Closes # trailer>
+  EOF
+  )"
+  # re-run the verify command above; only push once it exits 0
+  ```
+- **Skip this check** only if Step 2.5 never captured
+  `$PHASE_ISSUE` (the mirror-open call itself failed) — there is
+  nothing to verify against, and that failure was already logged
+  as non-gating in Step 2.5.
 
 **No `Co-Authored-By:` trailer. No emojis.**
 

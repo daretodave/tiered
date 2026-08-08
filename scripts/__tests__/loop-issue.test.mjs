@@ -21,6 +21,7 @@ const {
   buildCloseCommentBody,
   buildPhaseResumeCommentBody,
   buildPhaseShippedCommentBody,
+  extractClosesNumber,
   phaseTitlePrefix,
   isPhaseMatch,
   LABEL_PALETTE,
@@ -139,6 +140,30 @@ test('LABEL_PALETTE has every label the open + phase-open paths apply', () => {
     assert.ok(LABEL_PALETTE[name], `missing palette entry: ${name}`)
     assert.match(LABEL_PALETTE[name].color, /^[0-9a-f]{6}$/, `invalid color for ${name}`)
   }
+})
+
+test('extractClosesNumber reads a trailer on its own line', () => {
+  const message = 'feat: phase 12 — thing\n\n- did stuff\n\nCloses #405\n'
+  assert.equal(extractClosesNumber(message), 405)
+})
+
+test('extractClosesNumber returns null when no trailer is present (Phase 44 regression)', () => {
+  const message = 'feat: BRAND_SPELLING_STRICT invariant — phase 44\n\n- did stuff\n'
+  assert.equal(extractClosesNumber(message), null)
+})
+
+test('extractClosesNumber does not match "Closes #N" mentioned mid-sentence, only its own line', () => {
+  const message = 'docs: explain that pushing Closes #405 style trailers auto-closes issues\n'
+  assert.equal(extractClosesNumber(message), null)
+})
+
+test('extractClosesNumber picks the phase mirror number even when the trailer looks like a phase ordinal (Phase 46 regression shape)', () => {
+  // The Phase 46 bug wasn't a parsing bug — the wrong number was written
+  // into the trailer in the first place. This test just documents that
+  // extraction is number-agnostic; verify-close-trailer's title-prefix
+  // check (not this function) is what catches the wrong-number case.
+  const message = 'feat: colocated-test gate — phase 46\n\nCloses #46\n'
+  assert.equal(extractClosesNumber(message), 46)
 })
 
 test('VALID_* enums match the documented brief', () => {

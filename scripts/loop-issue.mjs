@@ -54,6 +54,20 @@
 //     Posts a "phase shipped" comment. The commit's `Closes #N`
 //     trailer auto-closes the issue. Best-effort.
 //
+//   verify-close-trailer --phase <id>
+//                        --commit-msg-file <path>
+//
+//     Gating (unlike the other subcommands): reads the not-yet-pushed
+//     phase commit's message, extracts its `Closes #N` trailer, and
+//     confirms #N resolves to an OPEN issue whose title matches
+//     `Phase <id> — `. Exits 1 (with a diagnostic) on a missing
+//     trailer, a wrong number, or a title mismatch — the two
+//     regression classes that orphaned issues #400 (Phase 44: trailer
+//     omitted entirely) and #405 (Phase 46: trailer cited the phase
+//     ordinal, #46, instead of the actual mirror issue number). Run
+//     this after Step 10's commit and before the push; amend the
+//     commit message and re-run if it fails.
+//
 // Required env (from .env or shell):
 //   GH_TOKEN    repo-scoped PAT
 //   GH_REPO     owner/repo, e.g. <REPO_SLUG>
@@ -511,6 +525,69 @@ export function buildPhaseShippedCommentBody({ phaseId, commit, deployUrl }) {
   ].join('\n')
 }
 
+// Extracts the N from a "Closes #N" trailer that sits on its own line
+// (GitHub's own auto-close convention). Returns null if absent.
+export function extractClosesNumber(message) {
+  const m = /^Closes #(\d+)\s*$/m.exec(message ?? '')
+  return m ? Number(m[1]) : null
+}
+
+function cmdVerifyCloseTrailer(flags) {
+  const phaseId = flags.phase
+  const messageFile = flags['commit-msg-file']
+  const repo = process.env.GH_REPO
+
+  if (!phaseId) {
+    process.stderr.write('loop-issue: --phase is required\n')
+    process.exit(1)
+  }
+  if (!messageFile || !fs.existsSync(messageFile)) {
+    process.stderr.write('loop-issue: --commit-msg-file is required and must exist\n')
+    process.exit(1)
+  }
+  if (!process.env.GH_TOKEN || !repo) {
+    process.stderr.write('loop-issue: GH_TOKEN/GH_REPO missing — cannot verify close trailer\n')
+    process.exit(1)
+  }
+
+  const message = fs.readFileSync(messageFile, 'utf-8')
+  const number = extractClosesNumber(message)
+  if (!number) {
+    process.stderr.write(
+      `loop-issue: no "Closes #<N>" trailer found in the commit message — phase ${phaseId} would ship with an orphaned mirror issue (the Phase 44 regression class)\n`,
+    )
+    process.exit(1)
+  }
+
+  const r = ghCall(['issue', 'view', String(number), '--repo', repo, '--json', 'title,state'])
+  if (r.status !== 0) {
+    process.stderr.write(`loop-issue: gh issue view #${number} failed (status ${r.status})\n${r.stderr}\n`)
+    process.exit(1)
+  }
+  let issue
+  try {
+    issue = JSON.parse(r.stdout)
+  } catch (e) {
+    process.stderr.write(`loop-issue: gh issue view #${number} returned non-JSON: ${e.message}\n`)
+    process.exit(1)
+  }
+  if (!isPhaseMatch(issue.title ?? '', phaseId)) {
+    process.stderr.write(
+      `loop-issue: Closes #${number} resolves to "${issue.title}", which does not start with "${phaseTitlePrefix(phaseId)}" — wrong issue number in the trailer (the Phase 46 regression class: phase ordinal used instead of the mirror issue number). Fix the trailer before pushing.\n`,
+    )
+    process.exit(1)
+  }
+  if (String(issue.state).toUpperCase() !== 'OPEN') {
+    process.stderr.write(
+      `loop-issue: Closes #${number} ("${issue.title}") is already ${issue.state} — the trailer would not close anything live on push. Double check the mirror issue number.\n`,
+    )
+    process.exit(1)
+  }
+  process.stdout.write(
+    `loop-issue: Closes #${number} verified — "${issue.title}" is OPEN and matches phase ${phaseId}\n`,
+  )
+}
+
 // --- entry point ------------------------------------------------------
 
 function main(argv) {
@@ -525,6 +602,8 @@ function main(argv) {
       return cmdPhaseOpen(flags)
     case 'phase-close':
       return cmdPhaseClose(flags)
+    case 'verify-close-trailer':
+      return cmdVerifyCloseTrailer(flags)
     case '--help':
     case '-h':
     case 'help':
@@ -561,6 +640,12 @@ Usage:
       → posts a "phase shipped" comment; commit's Closes #N auto-closes
       (alternatively pass --number <N> to skip the lookup)
 
+  node scripts/loop-issue.mjs verify-close-trailer --phase <id> \\
+      --commit-msg-file <path>
+      → gating: confirms the not-yet-pushed commit's Closes #N trailer
+      resolves to an OPEN issue titled "Phase <id> — ...". Exits 1 on
+      a missing trailer or a wrong/mismatched number.
+
 Env (from .env or shell):
   GH_TOKEN, GH_REPO
 `)
@@ -573,6 +658,7 @@ export const __test = {
   buildCloseCommentBody,
   buildPhaseResumeCommentBody,
   buildPhaseShippedCommentBody,
+  extractClosesNumber,
   phaseTitlePrefix,
   isPhaseMatch,
   LABEL_PALETTE,
