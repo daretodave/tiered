@@ -6712,6 +6712,67 @@ last time a curator actually looked.
   outside format-mechanic/coach-crossover/spinoff-genesis/tone-axis
   territory, all four reconfirmed exhausted this pass.
 
+- **2026-08-08 thirty-ninth pass (content-curator tick): zero-ship.**
+  (Numbered thirty-ninth, not thirty-eighth — that number was already
+  spent by the 2026-07-29 entry above, per the file's own established
+  renumber-past-a-collision convention.) Re-confirmed via the orchestrator
+  that `plan/CADENCE.md`'s gap table is still fully starred (no actionable
+  Rule 2 pick; nearest real finales masterchef-australia 2026-08-09 and
+  below-deck-mediterranean 2026-08-10, both still future) and that no
+  ledger row is 90-day review-due — fell through to Rule 3. Ran a fresh
+  full-catalog census (`grep -c "rank:"` across all 178 `content/themes/*.md`
+  files, cross-referenced against each file's `category`) to independently
+  re-derive which non-`single` (tone/craft/era/structure) lists sit below
+  the 10-entry typical floor, rather than trusting the last pass's list by
+  name: confirms exactly two, unchanged — `one-season-two-flags`
+  (structure, 9 entries) and `the-vote-left-the-phone-line` (era, 8
+  entries). No third below-floor cross-canon list exists anywhere in the
+  catalog. Worked both directly:
+  1. **`the-vote-left-the-phone-line`.** Independently re-derived the same
+     So You Think You Can Dance S08 candidate the 2026-07-30 and
+     2026-08-05 passes had already found and rejected — its own
+     `pull`/`watch_list` states plainly "the show's first text-and-online
+     voting" / "Fans can now vote by text and online alongside the phone
+     line, the first season to open up those channels," which reads on
+     first pass as a clean, ungrounded fit for this list's phone-to-other-
+     channel thesis. Drafted the entry at rank 5 (shifting ranks 5-8 to
+     6-9), then caught before finalizing — via a full `show:
+     so-you-think-you-can-dance` + `season: 8` grep across
+     `content/themes/*.md` — that `rulebook-rewritten-every-season` rank
+     13 already stakes this exact fact as its own stated primary claim,
+     near-verbatim: "The field returns to twenty, and fans can vote
+     online instead of just by phone." Reverted the draft in full (file
+     now byte-identical to the pre-tick version) rather than double-stake
+     a fact two prior passes had already confirmed spent elsewhere. This
+     is now the third independent pass to derive and reject this same
+     candidate — logging it a third time so a future pass can skip
+     re-deriving it and go straight to the rejection. No other candidate
+     found: a fresh sweep of American Idol, Dancing with the Stars,
+     America's Got Talent, and So You Think You Can Dance season files
+     for `toll-free|text-to-vote|call-in vote|vote via|voting app|SMS
+     vote|dial-in|phone line|phone vote` turned up nothing beyond what
+     the 2026-08-05 pass's widened Voice/Masked Singer/Big Brother/Love
+     Island sweep had already ruled ungrounded or already-staked.
+  2. **`one-season-two-flags`.** The 2026-08-05 entry above already
+     records two same-day passes (an initial extend to 9/9 plus an
+     independent ~30-file re-verification) that found no tenth
+     distinct-show candidate; only 3 days old and not review-due. Spot-
+     checked for a reason to reopen it anyway — no new season has landed
+     in any of the shows touched by that search (masterchef-australia and
+     below-deck-mediterranean, the two nearest real finales, are both
+     still airing) — so there is no new fact available that the
+     2026-08-05 passes couldn't already see. Left untouched.
+  Also reconfirmed `rhodubai` (2 aired seasons, `content/shows/rhodubai/
+  seasons/`) is still the only show in the catalog with zero single-show
+  list and still can't clear the 10-entry floor — no change since the
+  thirty-seventh pass's census. Shipped nothing. No ledger row changed.
+  Next tick should skip re-deriving the SYTYCD S08 candidate (permanently
+  dead, confirmed three times), leave `one-season-two-flags` parked until
+  either a new season lands or its own 90-day review clock comes due, and
+  either wait for a real Rule 2 finale (masterchef-australia 2026-08-09 is
+  the nearest) or search a pool outside everything the thirty-fourth
+  through thirty-ninth passes have already closed out.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
