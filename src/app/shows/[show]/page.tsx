@@ -43,7 +43,13 @@ export function generateStaticParams(): Params[] {
   return getAllShows().map((show) => ({ show: show.slug }))
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Params
+  searchParams?: Promise<Search>
+}): Promise<Metadata> {
   const show = getShow(params.show)
   if (!show) {
     return buildMetadata({
@@ -51,6 +57,20 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       description: '',
       path: `/shows/${params.show}`,
       noIndex: true,
+    })
+  }
+  const sp = (await searchParams) ?? {}
+  // CRITIQUE pass 104/105 HIGH: the consolidated show page (phase 33)
+  // renders two distinct views off one route via `?view=community`,
+  // but metadata never varied by that param — every visitor to the
+  // community vote table got the canon page's title and a canonical
+  // pointing at the plain /shows/<slug> URL, describing content the
+  // page wasn't showing them. Self-referential per view.
+  if (sp.view === 'community') {
+    return buildMetadata({
+      title: `${show.name} — community rank`,
+      description: `See how tiered.tv readers are voting on every ${show.name} season, no spoilers.`,
+      path: `/shows/${show.slug}?view=community`,
     })
   }
   return buildMetadata({
