@@ -7010,6 +7010,42 @@ last time a curator actually looked.
   pool outside location/cadence/crossover/mechanic-borrow territory
   entirely.
 
+- **2026-08-08 (cloud march tick, forty-fourth pass in today's
+  sequence): zero-ship.** The forty-third pass's parked lead — a
+  third distinct show for the cross-franchise-mechanic-borrow angle —
+  was resolved and shipped independently between that pass and this
+  one (commit `f877bd18`, `the-pitch-names-where-the-idea-came-from`:
+  American Ninja Warrior S01's Sasuke/Mount Midoriyama framing cleared
+  the ≥3-show floor alongside the already-confirmed Bachelor in
+  Paradise S08 and The Challenge S16 facts). That thread is now
+  closed; nothing left to pick up there. This pass instead chased the
+  secondary lead that same ship left parked in the Notes above: `the-
+  vote-left-the-phone-line` (era, 8 entries) has one new grounded
+  candidate confirmed unclaimed — So You Think You Can Dance S08's
+  own `pull`/watch_list text states "the show's first text-and-online
+  voting" — but project convention treats a 3-5 entry batch as the
+  bar for a worthwhile extend, not a single row. Searched for 2+ more
+  vote-channel-change candidates across every show plausibly carrying
+  one: Big Brother (all-stars S07, americas-player S08, MVP S15,
+  den-of-temptation S19, S27 — all describe in-house eviction-vote
+  twists, not audience channel changes), Dancing with the Stars
+  (S11/S19/S21 — generic "phone-vote"/"live-vote" language, no
+  channel specificity beyond the already-staked S01/S31), American
+  Idol (no ungrounded season beyond the four already staked),
+  America's Got Talent (no season besides the already-staked S20
+  names a vote channel at all), Love Island US/UK (only generic
+  "public vote," no phone/text/app/web specificity), The Voice S18
+  (a COVID remote-production pivot, not a voting-channel change), all
+  RuPaul's Drag Race variants (votes referenced are in-cast/jury/fan-
+  side-game, not audience elimination-channel changes), and Masked
+  Singer (no season file mentions "vote" at all). A catalog-wide grep
+  for `text.?to.?vote|toll.?free|vote via|voting app|online voting|
+  call.?in vote|SMS vote` surfaced nothing beyond what's already
+  staked. Zero-shipped; SYTYCD S08 stays parked at 1 confirmed
+  candidate — a future pass should pair it with whatever surfaces
+  next rather than re-deriving this same search. No ledger row
+  changed.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
