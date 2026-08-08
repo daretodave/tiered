@@ -7092,6 +7092,44 @@ last time a curator actually looked.
   drain) as the next genuinely new source of Rule 3 work rather than
   continuing to re-slice an exhausted angle space.
 
+- **2026-08-08 (cloud march tick, forty-sixth pass in today's
+  sequence): zero-ship.** Rule 2 re-confirmed stalled (CADENCE gap
+  table still fully starred/confirmed-but-unaired, no drain since the
+  2026-08-02 sweep; nearest real finale masterchef-australia lands
+  2026-08-09, one day out) and the review batch still empty (oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31, 8 days inside
+  the 90-day window) — fell through to Rule 3. Re-walked the "8 shows
+  with zero `category: single` list" angle (alone-australia,
+  alone-frozen, alone-the-skills-challenge, below-deck-adventure,
+  below-deck-down-under, perfect-match, rhodubai, traitors) as a
+  candidate fresh lead before checking whether it had already been
+  covered. It had: lines 629-634 and 6557-6566 above (twenty-eighth
+  through thirty-fifth passes, 2026-08-07) already exhaustively
+  censused this exact pool — rhod, rhoslc, and the-ultimatum shipped
+  from it as new single-show lists, and the remaining four
+  (alone-frozen, alone-the-skills-challenge, perfect-match, rhodubai)
+  are explicitly confirmed structurally ineligible for
+  `category: single` (single-season shows, no second season to rank
+  against). Independently re-verified `traitors` (US, 4 seasons) is
+  already cross-staked across 9+ existing lists spanning all four
+  seasons (`show: traitors` grep against every `content/themes/*.md`
+  file), so a dedicated single-show list would only duplicate
+  existing entries, not add ground. No fresh candidate surfaced from
+  this angle. Declined to re-run any of the thirteen angle classes
+  the fortieth through forty-fifth passes already closed (superlative/
+  record, cross-franchise-personnel, weather/production-disruption,
+  legal/regulatory, family/couple casting, cross-franchise
+  celebrity-athlete guests, mid-season bombshell additions, portable
+  advantage items, companion aftershows/mercy-twists/signature-ritual/
+  anniversary/live-firsts/fan-favorite-award, casting-representation
+  firsts, format-tried-then-walked-back, editorial-reception framing,
+  international-adaptation delta). Shipped nothing. No ledger row
+  changed. The search space remains what the forty-fifth pass
+  described: essentially fully mined at the current 180-list ledger
+  density. A future pass should keep prioritizing a new season landing
+  (Rule 2 unstalling, or the masterchef-australia 2026-08-09
+  finale-gate drain) over continuing to re-slice this space.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
