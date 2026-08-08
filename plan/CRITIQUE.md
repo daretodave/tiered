@@ -1,7 +1,25 @@
 # CRITIQUE
 
-> Last pass: 2026-08-08 at commit 3e9d4b6e
-> Pass count: 106
+> Last pass: 2026-08-08 at commit 38f9f3bd
+> Pass count: 107
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 107 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed
+> passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
+> (5 URLs: `/`, `/shows/survivor/season/survivor-50`, `/shows`,
+> `/themes/when-the-chairs-turned-over`, `/themes`) and authed
+> (`/`, `/shows/survivor/season/survivor-50`, `/u/e2e`,
+> `/shows/survivor?view=community`) walks ran, desktop + mobile,
+> zero console errors/failed requests/mobile overflow across
+> both, no spoiler leaks. 1 finding filed (below): a MED — the
+> community-view (`?view=community`) og:image was left out of
+> the pass-104/105 title/canonical fix and still falls back to
+> the generic sitewide social card instead of the show's own
+> tinted OG image. The anon pass's only other observation (the
+> already-open `best-finales` "Seven finales" stale-count row)
+> was confirmed still unresolved, not re-filed.
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
 > 106 ran in the cloud loop via Path A2
@@ -2471,6 +2489,8 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [authed] /shows/survivor?view=community (systemic to `/shows/[show]?view=community`) — the community-view og:image was left out of the pass-104/105 title/canonical fix and still serves the generic sitewide social card instead of the show's own tinted OG image. Confirmed via source read: `generateMetadata()` in `src/app/shows/[show]/page.tsx:69-75` returns a distinct `title`/`description`/`path` for the `sp.view === 'community'` branch but never passes an `image` argument to `buildMetadata`, unlike the canon-view branch two lines below it (`page.tsx:80`, `image: \`/shows/${show.slug}/opengraph-image\``) — so `buildMetadata`'s default-image fallback (`src/lib/seo.ts`) fires and the community view's og:image resolves to `https://tiered.tv/opengraph-image` (generic) instead of `https://tiered.tv/shows/survivor/opengraph-image` (show-tinted, confirmed live on the canon view). A reader who shares a community-view link gets a preview card indistinguishable from the homepage. Fix: pass the same `image: \`/shows/${show.slug}/opengraph-image\`` argument to the community-view `buildMetadata` call at `page.tsx:70-74` (the existing `opengraph-image.tsx` route is show-scoped, not view-scoped, so no new route is needed — just thread the same image reference through both branches). Chrome/SEO-only, no spoiler impact. (URL: /shows/survivor?view=community, source: critique-pass-107)
 
 - [ ] [LOW] [anon] /themes/best-post-merge, /themes/someone-else-held-the-chair-for-a-while — both freshly-extended themed lists' meta descriptions overrun the ~155-160 char SERP-truncation budget. `best-post-merge`: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs where every move counts — vote density, paranoia, and tension the franchise gets quoted on." (191 chars). `someone-else-held-the-chair-for-a-while`: "A host exits or a judge can't make it that week, and instead of pausing production, the show pulls in a guest — for one episode, one season, or as a built-in rotating seat from the start." (187 chars). Same defect class as the already-Pending `/themes/straight-to-camera-never-to-each-other` row above (252 chars). Fix: trim both `description` fields in `content/themes/best-post-merge.md` and `content/themes/someone-else-held-the-chair-for-a-while.md` to end at a natural clause boundary within ~155-160 characters; the fuller sentence can stay in `tagline`. SEO-only, no visible-page or spoiler impact. (URL: /themes/best-post-merge, /themes/someone-else-held-the-chair-for-a-while, source: critique-pass-105)
 
