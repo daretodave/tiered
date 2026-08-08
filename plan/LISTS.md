@@ -6942,6 +6942,73 @@ last time a curator actually looked.
   on top of the superlative/record and cross-franchise-personnel
   threads the fortieth and forty-first passes already closed.
 
+- **2026-08-08 forty-third pass (content-curator tick): zero-ship.**
+  Rule 2/review-batch pre-checks skipped per the dispatching brief
+  (well-documented stalled state, unchanged since the fortieth/
+  forty-first/ninety-seventh passes) — went straight to a fresh Rule 3
+  angle search, explicitly avoiding the nine confirmed-closed classes
+  (superlative/record, cross-franchise-personnel, weather/production-
+  disruption, legal/regulatory, family/couple casting, cross-franchise
+  celebrity-athlete guests, mid-season bombshell additions, portable
+  advantage items, companion aftershows/mercy-twists/signature-ritual/
+  anniversary/live-firsts/fan-favorite-award). Checked five candidate
+  classes, all closed on inspection:
+  1. **One-off mechanic never repeated.** Exactly the existing
+     `tried-once-never-repeated` thesis — no new angle here, already
+     live.
+  2. **Contestant/alum becomes host or crew.** `the-mic-changed-hands`
+     (general host handoffs, 14 entries) and `the-other-side-of-the-
+     table` (alum crosses to coach/mentor/judge/host, explicitly
+     including hosting — 12 entries, already stakes Bachelorette's
+     alumnae-hosting fact at ranks 9-10) fully cover this;
+     `when-the-crew-stepped-into-frame` covers the separate production-
+     crew-visibility angle. Nothing orphaned.
+  3. **Iconic location/setting changed for a structural reason.**
+     Already saturated six ways over: `away-from-home-turf`,
+     `a-change-of-address`, `the-place-fought-back`, `the-house-that-
+     kept-changing`, `the-zip-code-was-the-only-constant`, `home-
+     seasons-waited-relocation-seasons-didnt`, `the-competition-leaves-
+     the-country`. No distinct lane left.
+  4. **Broadcast-cadence change (weekly to nightly or vice versa).** A
+     catalog-wide `nightly|weeknights|episodes a week|times a week`
+     sweep surfaced real text, but every hit is Love Island US/UK's
+     baseline nightly format (not a mid-run change) or a same-franchise
+     companion-show cadence note — one show's worth of grounding,
+     nowhere near the ≥3-show floor. Closed.
+  5. **Cross-franchise, cross-genre structural-mechanic borrowing**
+     (distinct from `the-franchise-started-borrowing-from-itself`,
+     which is scoped explicitly to in-franchise/sibling-spinoff
+     borrowing). This one came closest: found two genuinely strong,
+     ungrounded-elsewhere candidates — Bachelor in Paradise S08's Casa
+     Amor-style split "borrowed from Love Island UK" (its own `pull`
+     states this explicitly) and The Challenge S16 "The Island," an
+     explicit "Survivor-style experiment" per its own `eyebrow`/`lede`.
+     Neither season is staked in any existing ledger list. But a wide
+     follow-up sweep (`-style twist/split/format/elimination`,
+     `borrowed`, `modeled after`, `took a page from`, `lifted from`,
+     plus name-checks of Big Brother/Love Island/Survivor/Traitors/
+     Shark Tank/Idol/Voice/Amazing Race/Top Chef/Project Runway/Drag
+     Race across every other show's season files) found no third
+     distinct show carrying an equally explicit, equally clean
+     cross-franchise mechanic-borrow fact — every other near-hit
+     (Perfect Match's cross-franchise cast pool, Amazing Race's Reality
+     Showdown cast, RHOD's alumnae texture) is a cast-crossover or
+     license-adaptation fact already spent under the closed crossover-
+     episode thread or the international-adaptation lists (`new-
+     network-same-rulebook`, `same-license-different-rules`, `the-
+     series-the-uk-edition-finally-made-its-own`), not a distinct third
+     mechanic-borrow. Two shows is short of the ≥3-show cross-canon
+     floor — parked, not closed: a future pass should re-check this
+     specific angle first if a new season lands anywhere with an
+     explicit "X-style" or "borrowed from Y" line, since the Bachelor
+     in Paradise S08 and Challenge S16 facts are confirmed live and
+     unclaimed.
+  Shipped nothing. No ledger row changed. Next tick should skip
+  re-deriving angles 1-4 above (conclusively closed) and, if Rule 3
+  fires again before a third mechanic-borrow show surfaces, search a
+  pool outside location/cadence/crossover/mechanic-borrow territory
+  entirely.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
