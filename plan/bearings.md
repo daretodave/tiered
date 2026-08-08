@@ -540,7 +540,7 @@ retired) — color + type only.
 its seasons must become eligible entries in the relevant themed
 lists so cross-canon lists genuinely span the flavors. The
 cross-canon-coverage invariant (Rule 3, ≥3 distinct shows for
-tone/craft/era lists) already enforces breadth; franchise
+tone/structure/craft/era lists) already enforces breadth; franchise
 editions count as distinct shows for that purpose. A completed
 show add also event-flags plausible lists `review-due` in
 `plan/LISTS.md` (see Rule 3).
@@ -662,22 +662,26 @@ Concept ideas accumulate in `plan/LISTS.md` `## Ideas` — any
 skill may append; Rule 3 ticks draw from it or invent.
 
 After phase 19f lands the schema refresh, every new themed list
-**must carry**: `category` (one of tone / craft / era / single),
-`tagline` (detail-page pull, ≤360 chars, one optional `<b>`
-span), `sentiment`, `status`, `curator`, `last_revised` (ISO),
-`featured` (boolean, default false), `related` (0-4 slugs), and
-optional `era_range` (required for category=era). Every entry
-**must carry** `title` (≤140 chars, the curator's framing
-phrase) plus the existing `blurb`. The schema enforces this; a
-list without a `category` or with a tagline missing the `<b>`
-discipline will fail `pnpm content:check` and block the commit.
+**must carry**: `category` (one of tone / structure / craft /
+era / single — `structure` split out of `tone` at critique
+pass-31 for format/structural cuts: returnees, post-merge,
+reunion specials, firsts; see `src/content/schemas.ts`
+`themeCategorySchema`), `tagline` (detail-page pull, ≤360 chars,
+one optional `<b>` span), `sentiment`, `status`, `curator`,
+`last_revised` (ISO), `featured` (boolean, default false),
+`related` (0-4 slugs), and optional `era_range` (required for
+category=era). Every entry **must carry** `title` (≤140 chars,
+the curator's framing phrase) plus the existing `blurb`. The
+schema enforces this; a list without a `category` or with a
+tagline missing the `<b>` discipline will fail
+`pnpm content:check` and block the commit.
 
 **Cross-canon coverage (phase 41).** Every themed list with
-`category` in {`tone`, `craft`, `era`} must carry entries from
-**≥ 3 distinct shows**. The `/themes` hero copy and every
-`CROSS-CANON LIST` tag promise cross-show coverage, so the data
-has to back the claim. `category: single` is the legal carve-out
-for a deliberately one-show tier. `scripts/content-check.ts`
+`category` in {`tone`, `structure`, `craft`, `era`} must carry
+entries from **≥ 3 distinct shows**. The `/themes` hero copy and
+every `CROSS-CANON LIST` tag promise cross-show coverage, so the
+data has to back the claim. `category: single` is the legal
+carve-out for a deliberately one-show tier. `scripts/content-check.ts`
 enforces this — lax (warns) during the phase-41 drain, strict
 (fails) once the drain completes. A themed-list entry's `title`
 and `season_label` must also match the season's own frontmatter

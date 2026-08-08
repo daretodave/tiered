@@ -248,11 +248,14 @@ title: "<≤80-char list title>"
 description: "<≤280-char one-line overview-row description>"
 tagline: "<≤360-char detail-page pull. 1-2 sentences. ONE
   optional <b>...</b> emphasis span. No exclamation points.>"
-category: tone | craft | era | single
-  # tone  = mood / editorial slant lists
-  # craft = production / casting / direction lists
-  # era   = bounded time-range lists (era_range required)
-  # single = single-show tiers
+category: tone | structure | craft | era | single
+  # tone      = mood / editorial slant lists
+  # structure = format / structural cuts (returnees, post-merge,
+  #             reunion specials, firsts) — split out of tone at
+  #             critique pass-31
+  # craft     = production / casting / direction lists
+  # era       = bounded time-range lists (era_range required)
+  # single    = single-show tiers
 sentiment: warm-up | warm-down | neutral | hold | verdict | consensus
   # optional; defaults to "hold"
 status: growing | stable | updated | started
@@ -292,12 +295,12 @@ Tagging discipline:
 - `featured: true` is editorial — only set when the list is
   ready for the home-page hero row.
 - **Cross-canon coverage (phase 41).** A list tagged `tone`,
-  `craft`, or `era` must be **born cross-show** — author entries
-  from **≥ 3 distinct shows** in the first pass. The `/themes`
-  hero and the `CROSS-CANON LIST` tag promise cross-show
-  coverage; `pnpm content:check` enforces ≥ 3 shows on every
-  `tone`/`craft`/`era` list (strict once the phase-41 drain
-  completes). A genuinely one-show tier is tagged
+  `structure`, `craft`, or `era` must be **born cross-show** —
+  author entries from **≥ 3 distinct shows** in the first pass.
+  The `/themes` hero and the `CROSS-CANON LIST` tag promise
+  cross-show coverage; `pnpm content:check` enforces ≥ 3 shows on
+  every `tone`/`structure`/`craft`/`era` list (strict once the
+  phase-41 drain completes). A genuinely one-show tier is tagged
   `category: single` instead — that is the only legal carve-out.
 - **Entry-title discipline.** An entry's `title` is your framing
   phrase, but its `season_label` suffix (the text after ` · `)

@@ -155,7 +155,10 @@ Pre-flight checklist before committing a content tick:
   row in the same commit. A review bumps ledger
   `last_reviewed` always, frontmatter `last_revised` only on
   real change. Ship at the 19f schema — `title`, `description`, `tagline`,
-  `category` (one of `tone` / `craft` / `era` / `single`),
+  `category` (one of `tone` / `structure` / `craft` / `era` /
+  `single` — `structure` split out of `tone` at critique
+  pass-31 for format/structural cuts: returnees, post-merge,
+  reunion specials, firsts),
   `sentiment`, `status`, `curator` byline, `last_revised` ISO,
   `featured` boolean (default false), `related` (0–2 slugs in
   practice; cap is 4), and 10–24 entries each with `title` +
@@ -164,12 +167,13 @@ Pre-flight checklist before committing a content tick:
   rejects themes missing either, and the filter chips +
   index-last-revised stat both depend on them.
 - **Cross-canon coverage (Rule 3, phase 41).** Every themed list
-  tagged `tone`, `craft`, or `era` must carry entries from **≥ 3
-  distinct shows** — `category: single` is the only carve-out for
-  a deliberately one-show tier. New lists are born cross-show; an
-  existing `tone`/`craft`/`era` list still below the floor is
-  itself a valid content-tick target — author 3–5 cross-show
-  entries into it. An entry's `title`/`season_label` must match
+  tagged `tone`, `structure`, `craft`, or `era` must carry entries
+  from **≥ 3 distinct shows** — `category: single` is the only
+  carve-out for a deliberately one-show tier. New lists are born
+  cross-show; an existing `tone`/`structure`/`craft`/`era` list
+  still below the floor is itself a valid content-tick target —
+  author 3–5 cross-show entries into it. An entry's
+  `title`/`season_label` must match
   the season's frontmatter `title` exactly, never free-hand.
   `pnpm content:check` warns during the phase-41 drain and fails
   strict once it completes.
@@ -278,9 +282,9 @@ non-zero, then Rule 3; Rule 1 only via the cadence clock):
   `## Ideas` or invent one, pass the bearings Rule 3 excellence
   gate (distinct angle vs. the ledger, click-worthy title,
   every entry earning its slot), and add the ledger row in the
-  same commit. A `tone`/`craft`/`era` list below the ≥ 3
-  distinct-show floor is also a valid Rule 3 target (phase 41)
-  — author cross-show entries into it.
+  same commit. A `tone`/`structure`/`craft`/`era` list below the
+  ≥ 3 distinct-show floor is also a valid Rule 3 target (phase
+  41) — author cross-show entries into it.
 - **Rule 4 — retired.** Skip any row tagged
   `category: facade-gap` (auto-mark `[x] superseded by 19a`).
   Per-show illustration is prohibited per `design/CLAUDE.md`.
@@ -440,7 +444,9 @@ the entire visual contribution.
 - Write `content/themes/<slug>.md` at the 19f schema:
   - Theme fields: `slug`, `title`, `description`, `tagline`
     (1–2 sentences, one optional `<b>...</b>`),
-    `category` (`tone` / `craft` / `era` / `single`),
+    `category` (`tone` / `structure` / `craft` / `era` /
+    `single` — `structure` for format/structural cuts:
+    returnees, post-merge, reunion specials, firsts),
     `sentiment` (default `hold`), `status` (default `stable`),
     `curator` (default `"tiered.tv Editors"`),
     `last_revised` (today's ISO date), `featured` (default
