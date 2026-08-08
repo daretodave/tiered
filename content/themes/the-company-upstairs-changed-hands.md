@@ -1,18 +1,18 @@
 ---
 slug: the-company-upstairs-changed-hands
 title: "The company upstairs changed hands and nobody on set noticed"
-description: "CBS split from Viacom, Comcast absorbed NBCUniversal, Viacom and CBS reunited, and Discovery merged into Warner Bros. Discovery — real corporate history playing out upstairs while these seasons kept filming to schedule below it."
+description: "CBS split from Viacom, Comcast absorbed NBCUniversal, Viacom and CBS reunited, Discovery merged into Warner Bros. Discovery, and Paramount merged with Skydance — real corporate history playing out upstairs while these seasons kept filming to schedule below it."
 tagline: "A network's ownership can split, merge, or completely change hands without a single line of on-screen dialogue ever mentioning it. <b>Every season here premiered inside one of those real corporate shakeups, and the format just kept filming through the paperwork.</b>"
 category: era
 sentiment: hold
-status: started
+status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-08
 featured: false
 related:
   - no-template-to-copy
   - when-scripted-went-dark
-era_range: [2006, 2022]
+era_range: [2006, 2025]
 entries:
   - show: big-brother
     season: 7
@@ -92,4 +92,22 @@ entries:
     rank: 13
     title: "A survival format opens a new era under a brand-new corporate parent"
     blurb: "Season fourteen premieres June 1, 2022, roughly two months after Warner Bros. Discovery officially forms around Discovery Channel's ownership. The season opens a new casting era for the paired-survival format; the merger upstairs isn't part of the pitch."
+  - show: survivor
+    season: 49
+    season_label: "S49"
+    rank: 14
+    title: "A settled new-era season premieres seven weeks into a brand-new corporate parent"
+    blurb: "Survivor 49 premieres September 24, 2025, about seven weeks after Paramount Global's merger with Skydance Media closes, forming Paramount Skydance Corporation. Three new tribes on the Mamanucas carry the real headline; the ownership change doesn't get a mention."
+  - show: amazing-race
+    season: 38
+    season_label: "S38"
+    rank: 15
+    title: "A franchise crossover season airs one day after its sister show, both under the same freshly merged company"
+    blurb: "Season thirty-eight premieres September 25, 2025, exactly seven weeks after Paramount and Skydance's merger closes and a single day after Survivor's own season premiere under the same new parent. The Big Brother-veteran cast is the real story; the merger stays off-screen."
+  - show: ink-master
+    season: 17
+    season_label: "S17 · Hometown Heroes"
+    rank: 16
+    title: "A Paramount Network tattoo season opens under the corporation's brand-new banner"
+    blurb: "Hometown Heroes premieres October 29, 2025, about twelve weeks after Paramount Global's merger with Skydance closes into Paramount Skydance Corporation. The regional casting hook carries the season's pitch; the corporate handoff never makes the broadcast."
 ---
