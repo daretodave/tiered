@@ -177,6 +177,24 @@ describe('generateMetadata — community view (?view=community)', () => {
     )
   })
 
+  // CRITIQUE pass 107 MED: the pass-104/105 title/canonical fix above
+  // never threaded an `image` argument through the community branch,
+  // so buildMetadata's default-image fallback fired and a shared
+  // community-view link rendered the generic sitewide card instead of
+  // the show's own tinted OG image (already correct on the canon view,
+  // see the pass-69 test above).
+  it('points the community view OG image at the same per-show opengraph-image route as the canon view', async () => {
+    getShowMock.mockReturnValue(makeShow({ slug: 'top-chef' }))
+    const meta = await generateMetadata({
+      params: { show: 'top-chef' },
+      searchParams: Promise.resolve({ view: 'community' }),
+    })
+    expect(meta.openGraph?.images).toEqual([
+      { url: 'https://tiered.tv/shows/top-chef/opengraph-image' },
+    ])
+    expect(meta.twitter?.images).toEqual(['https://tiered.tv/shows/top-chef/opengraph-image'])
+  })
+
   it('leaves the canon view untouched when no view param is present', async () => {
     getShowMock.mockReturnValue(makeShow({ name: 'Survivor', slug: 'survivor' }))
     const meta = await generateMetadata({

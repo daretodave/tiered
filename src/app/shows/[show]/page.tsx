@@ -71,6 +71,7 @@ export async function generateMetadata({
       title: `${show.name} — community rank`,
       description: `See how tiered.tv readers are voting on every ${show.name} season, no spoilers.`,
       path: `/shows/${show.slug}?view=community`,
+      image: `/shows/${show.slug}/opengraph-image`,
     })
   }
   return buildMetadata({
