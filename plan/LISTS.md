@@ -6773,12 +6773,58 @@ last time a curator actually looked.
   the nearest) or search a pool outside everything the thirty-fourth
   through thirty-ninth passes have already closed out.
 
+- **2026-08-08 fortieth pass (content-curator tick, two rounds): zero-ship.**
+  Rule 2 re-confirmed stalled — but this pass re-verified `plan/CADENCE.md`'s
+  gap table directly against the live file rather than trusting the prior
+  five passes' cited "35 shows/36 gap-slots" figure: the table actually
+  reads **45 shows / 46 gap-slots**, unchanged since the 2026-08-02 fourth
+  sweep regenerated it, every row still starred/confirmed-but-unaired
+  (nearest real finales masterchef-australia 2026-08-09, below-deck-
+  mediterranean 2026-08-10, both still future). No drain has actually
+  happened since the fourth sweep — the "35/36" figure the thirty-fifth
+  through thirty-ninth passes carried forward was a stale copy error, not a
+  real change; a future pass should cite 45/46 until the next sweep or an
+  actual drain changes it. No ledger row 90-day review-due (oldest
+  `last_reviewed` still `survivor-pillars` at 2026-07-31) — fell through to
+  Rule 3.
+
+  Round 1 (general fresh-angle sweep): the `structure`-category exemption
+  lead (14 files actually carry `category: structure`, not the stale "4"
+  the Notes entry below claimed — corrected there) — all 14 are cross-show
+  constructs, none single-show, so no under-served smaller show is left to
+  seed; 75 files already carry `category: single`, blanketing the catalog
+  densely. "Went live" broadcast-immediacy angle (Shark Tank S14, Ink
+  Master S02/04/11/12/13, SYTYCD S07) — fully staked already in
+  `live-without-a-net` (11 entries/6 shows, Ink Master + SYTYCD already at
+  the 3-per-show craft cap). Accessibility/representation casting fact
+  (DWTS S22 deaf cast member) — single instance, no third grounding show.
+  Title-sequence/nostalgia-callback (Real World Atlanta S33) — single
+  instance, already covered by existing platform-move framing. Clip-show/
+  retrospective-episode mechanic — zero hits catalog-wide.
+
+  Round 2 (crossover-episode angle, flagged "not fully closed" by round 1):
+  full cross-reference of the three seed candidates (`the-apprentice` S12,
+  `the-challenge` S02, `survivor-australia` S11) plus a corpus-wide
+  crossover-language sweep. All three seeds, and every other genuine
+  format-level crossover season found (Amazing Race S07/S38, 90 Day
+  Fiancé S09/S10, Real World S09/S31, Top Chef S20, Below Deck Down Under
+  S03/S04, Bachelor in Paradise S05, Perfect Match S01/S04, Ink Master
+  S10), are already staked, most in 3-4 separate lists apiece. Thread now
+  genuinely closed — do not re-open it.
+
+  Next pass should wait for a real Rule 2 finale (masterchef-australia
+  2026-08-09 is one day out) rather than continuing the Rule 3 search on
+  largely exhausted ground; if Rule 3 fires again first, start from
+  unexplored superlative/record or cross-franchise-personnel angles,
+  neither tried in the pass-by-pass log above.
+
 ## Notes
 
-- **Category enum drift (filed as an AUDIT row 2026-07-12):**
-  4 live lists carry `category: structure` while bearings Rule 3
-  + `skills/ship-content.md` document the enum as
-  tone/craft/era/single. The schema evidently accepts
-  `structure`, and the cross-canon ≥3-shows floor is documented
-  as keying on {tone, craft, era} — so `structure` lists may be
-  silently exempt from the floor. Reconcile on a future tick.
+- **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
+  2026-08-08 fortieth pass):** 14 live lists carry `category: structure`
+  (not the "4" originally logged here) while bearings Rule 3 +
+  `skills/ship-content.md` document the enum as tone/craft/era/single. The
+  schema evidently accepts `structure`, and the cross-canon ≥3-shows floor
+  is documented as keying on {tone, craft, era} — so `structure` lists may
+  be silently exempt from the floor. All 14 are cross-show, none
+  single-show. Reconcile on a future tick.
