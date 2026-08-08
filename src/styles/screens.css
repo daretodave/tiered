@@ -706,7 +706,7 @@
   border-bottom: 1px solid color-mix(in oklab, var(--show-ink) 12%, transparent);
   display: flex; align-items: center; gap: 18px;
 }
-@media (max-width: 560px) { .ep-strip { padding: 16px 20px; flex-wrap: wrap; } .ep-foot { white-space: normal; min-width: 0; overflow-wrap: break-word; flex-basis: 100%; } }
+@media (max-width: 560px) { .ep-strip { padding: 16px 20px; flex-wrap: wrap; } }
 .ep-key { font: 500 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--show-ink) 55%, transparent); white-space: nowrap; }
 .ep-bars { flex: 1; display: grid; gap: 3px; min-width: 0; }
 .ep-bar { height: 14px; background: color-mix(in oklab, var(--show-ink) 12%, transparent); border-radius: 2px; }
@@ -714,6 +714,13 @@
 .ep-bar.med { background: color-mix(in oklab, var(--show-primary) 55%, color-mix(in oklab, var(--show-ink) 12%, transparent)); }
 .ep-foot { font: 500 11px/1 var(--mono); color: color-mix(in oklab, var(--show-ink) 55%, transparent); letter-spacing: 0.06em; white-space: nowrap; }
 .ep-foot em { color: var(--show-ink); font-style: normal; }
+/* Mobile override MUST come after the base .ep-foot rule above — equal
+   specificity means source order decides, and this block was previously
+   defined before the base rule, so its white-space: normal was silently
+   clobbered at every viewport width. Confirmed the resulting overflow via
+   Playwright (scrollWidth 384px vs innerWidth 375px on
+   love-island-us/season/fiji-2026 — long ep_heat captions never wrapped). */
+@media (max-width: 560px) { .ep-foot { white-space: normal; min-width: 0; overflow-wrap: break-word; flex-basis: 100%; } }
 
 /* BODY GRID — 3 col */
 .body-grid {
