@@ -1,38 +1,36 @@
 # CRITIQUE
 
-> Last pass: 2026-08-07 at commit c7e79bd8
-> Pass count: 105
+> Last pass: 2026-08-08 at commit 3e9d4b6e
+> Pass count: 106
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 105 ran in the cloud loop via Path A2
+> 106 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), both anon and authed
 > passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
-> (5 URLs: `/`, `/themes/best-post-merge`, `/shows`,
-> `/themes/someone-else-held-the-chair-for-a-while`, `/themes`)
-> and authed (`/`, `/themes/best-post-merge`,
-> `/shows/big-brother/community`,
-> `/themes/someone-else-held-the-chair-for-a-while`, `/u/e2e`)
-> walks ran, desktop + mobile, zero console errors/failed
-> requests/mobile overflow across both. 3 findings filed
-> (below): a HIGH — Survivor S45's site-wide "Mom I Won" season
-> title (used on this pass's freshly-extended `best-post-merge`
-> list and 6+ other surfaces) telegraphs a finale outcome
-> directly beneath a "NO SPOILERS" badge, reopening a question
-> issue #101 sidestepped when it aligned labels to this same
-> canonical title without vetting it for spoiler safety; a MED
-> row bumped to HIGH — the `/shows/[show]/community`
-> canonical/title mismatch (previously filed against
-> Love Island UK) reconfirmed on Big Brother's community page,
-> confirming it's systemic to the whole route family; a LOW —
-> both of this pass's freshly-extended themed lists carry
-> over-length meta descriptions (191 / 187 chars), same defect
-> class as an already-Pending row. Two reader-surfaced
-> observations were assessed and dropped: a low-severity "Ardross"
-> possessive voice nit (the site already uses "Ardross" standalone
-> elsewhere, so not a clear inconsistency), and a mobile-only
-> failed RSC prefetch request on `/u/e2e` (reader's own read: likely
-> benign navigation-cancelled prefetch, not a hard failure).
+> (5 URLs: `/`, `/shows/survivor/season/50`, `/shows`,
+> `/themes/best-finales`, `/themes`) and authed (`/`,
+> `/themes/best-finales`, `/shows/survivor?view=community`,
+> `/u/e2e`) walks ran, desktop + mobile, zero console
+> errors/failed requests/mobile overflow across both, no spoiler
+> leaks. 3 findings filed (below): a MED — `/themes/best-finales`'
+> `featured_pull` still reads "Seven finales" though the list has
+> grown to 10 entries (a stale count left behind by content
+> growth, same class as prior stale-superlative rows); a MED —
+> the community pane's "this week's question" card promises "your
+> vote feeds the next update" with zero adjacent affordance
+> connecting it to the season rows below where voting actually
+> happens; a LOW — `VotePair`'s season-page call site hardcodes
+> `initialCount={0}` so a season's real vote count visibly flashes
+> in ~2s after hydration rather than SSR-ing correctly. Two
+> reader-surfaced observations were assessed and dropped: the
+> `/themes/[theme]` "SAVE (THIS DEVICE)" label when signed in
+> (deliberate, already litigated and closed across three prior
+> passes — #272, #377, #385 — the device-scope qualifier is
+> intentional honesty, not a regression), and a mobile-only failed
+> RSC prefetch request on `/u/e2e` (long-documented benign
+> Link-prefetch-teardown artifact, dropped every prior pass it's
+> surfaced).
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
 > 104 ran in the cloud loop via Path A2
@@ -3616,6 +3614,12 @@
 - [ ] [LOW] [anon] /shows/perfect-match/season/season-4 — the "Adjacent in the canon" section subhead reads "Either direction" even though season 4 is the canon tail (most recent of 4), so only a backward link to season 3 renders — the static label promises bidirectional navigation that isn't present on this page. Fix: make the section subhead conditional ("One direction." / "Either direction.") based on whether both a prior and next canon entry exist, in the shared season-page component that renders this section. Chrome-only, no content change. (URL: /shows/perfect-match/season/season-4, source: critique-pass-103)
 
 - [ ] [MED] [authed] /shows/dragrace/season/18 — the page's three narrative sections ("01 THE TAKE" from the season's `pull` field, "02 THE SHAPE OF THE SEASON" from the season body, and "03 WHERE IT SITS IN THE CANON" from the `canon.md` entry) were authored independently but converge on restating the same five facts near-verbatim: the record/highest-rated MTV premiere, the veteran-heavy cast, the drag grandmother-and-granddaughter Dion-family pairing, the finale's top-two-lip-sync-to-eliminated-cast-tournament swap, and the split judging reception. Reading the page top to bottom feels like three passes over identical ground rather than three distinct lenses — contrast with the canonical Heroes vs. Villains reference, where each section adds new information instead of re-covering the last one. `content/shows/dragrace/seasons/18-season-18.md`'s `pull` field and body, and `content/shows/dragrace/canon.md`'s season-18 entry, all lean on the same five facts in near-identical phrasing. This is the same section-level restatement defect class already open on `/shows/chopped/season/the-double-first` (pass-94, still Pending above) — a second, unrelated show hitting the same tell, this time with plenty of distinct material available (unlike Chopped S62's genuinely thin two-fact season) so there's no excuse of a thin season here. Fix: vary the angle per section — keep `pull` as the hook, let the body own the cast/format mechanics once, and let the canon entry focus purely on the ranking rationale (why #14 and not #13 or #15) without re-listing the same five facts. Content-only, one show, no structural change. Spoiler discipline P0 intact (no outcome/elimination exposure discussed in any of the three sections). (URL: /shows/dragrace/season/18, source: critique-pass-96)
+
+- [ ] [MED] [anon] /themes, /themes/best-finales — the `/themes` featured rail's pull quote for "Finales that stuck the landing" reads "Seven finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched," but the list itself carries 10 entries (verified: `grep -c "^  - show:" content/themes/best-finales.md` → 10, and the rendered `/themes/best-finales` page confirms 10 numbered entries #01-#10 with a "9 SHOWS · 10 ENTRIES" stat badge directly above the stale pull quote on the `/themes` card). The list has grown since `featured_pull` was authored (last_revised 2026-08-05) and the count word was never updated to match. Fix: update `featured_pull` in `content/themes/best-finales.md` (line 11) from "Seven finales" to "Ten finales" (or rephrase count-agnostically, e.g. "These finales cleared the altitude..."). Content-only, one field. Spoiler discipline P0 intact (no outcome content in the pull quote). Consider a `content-check` invariant that flags a `featured_pull` number-word against `entries.length` to catch this defect class automatically as lists grow. (URL: /themes, /themes/best-finales, source: critique-pass-106)
+
+- [ ] [MED] [authed] /shows/survivor?view=community — the community pane's "this week's question" card (`src/components/canon/CommunityWeeklyQuestionCard.tsx`) invites the signed-in reader to act — "Your vote feeds the next update. One vote per reader; change your mind within 72h." — but the card itself renders no interactive control, only a static status span (`<span className="cp-cq-meta">votes pending · closes Thursday</span>`, confirmed via DOM inspection: no `<button>`, `role`, or click handler on the CTA slot; clicking the card produces no navigation, no modal, no network call). The actual voting mechanism lives one section down, on the individual season rows in `CommunityRankList` (`src/components/canon/CommunityRankList.tsx`), which link out to each season's own page where the real vote-pair control is — but nothing on the weekly-question card itself points there. A reader who reads the card's copy and looks for something to click on the card finds nothing; the intended flow (cast a vote on a season row below, which feeds the weekly aggregate) is real but structurally disconnected from the card that makes the promise. Fix: either (a) add a short connecting line or link on the card pointing at the season list below ("Cast it on a season below."), or (b) rescope the card's copy to describe the aggregate rather than imply the card itself is actionable (e.g. "This week's tally · votes pending · closes Thursday" without the "Your vote feeds..." imperative). Content/chrome-only, scoped to `CommunityWeeklyQuestionCard.tsx`. Spoiler discipline P0 intact (aggregate-vote copy only, no outcome exposure). (URL: /shows/survivor?view=community, source: critique-pass-106)
+
+- [ ] [LOW] [authed] /shows/survivor/season/heroes-vs-villains — `VotePair`'s season-page call site hardcodes `initialCount={0}` (`src/app/shows/[show]/season/[slug]/page.tsx:585`) regardless of the season's actual existing vote count, so on every season page with a nonzero vote total, a reader briefly sees "0 votes so far" before the real count corrects itself once the client-side `/api/vote` fetch resolves. Measured on this pass: polling `[data-testid=vote-pair]` every 300ms post-load showed `{hydrated:false, count:'0'}` through ~1.7s, flipping to the real value at ~2.0s. Not a spoiler or functional break (the count self-corrects, and the vote controls themselves work correctly throughout), but a visible regression on a highly-trafficked surface — the reverse of the resolved #522 auth-state SSR gap (that fix seeded `VotePair`/`VoteRowHead`/`CommentThreadLive` with a synchronous `initialSignedIn` prop precisely to avoid this class of flash; the vote *count* wasn't included in that seeding). Fix: thread the real vote count into the season page's server component (the same place `initialSignedIn` is already resolved per #522) and pass it as `initialCount` instead of the hardcoded `0`, so the SSR response carries the true count from first paint. Chrome/data-wiring only, no schema change (the count is already read server-side elsewhere on the page for aggregate display). Spoiler discipline P0 intact (vote-count display only). (URL: /shows/survivor/season/heroes-vs-villains and every /shows/<show>/season/<slug> URL with existing votes, source: critique-pass-106)
 
 ## Done
 - [x] [HIGH] [authed] /shows/love-island-us/season/fiji-2026 — page overflows the 375px mobile viewport horizontally (Playwright-measured `scrollWidth` 384px vs `innerWidth` 375px), the only one of five URLs walked this pass where this happens; the same page is clean at desktop (1280px), and sibling season pages walked in the same pass (Big Brother S27, Ultimatum S4) measure exactly 375/375 at mobile. (URL: /shows/love-island-us/season/fiji-2026, source: critique-pass-101) — issue: #759 — RESOLVED 5575ae83: root cause was a CSS cascade source-order bug, not either of the two candidate causes named in the original finding. The mobile `@media (max-width: 560px) { .ep-foot { white-space: normal; ... } }` override was declared *before* the unconditional base `.ep-foot { white-space: nowrap; ... }` rule in `src/styles/screens.css` — equal specificity means source order decides, so the base rule always won and the mobile override was silently clobbered at every viewport width, leaving the season's long `episode_heat_caption` unwrapped. Moved the mobile override to after the base rule; no selector or specificity change. Verified via Playwright on the target page and sibling season pages (Big Brother S27, Ultimatum S4) — clean at 375px, no regression. Verify gate green: typecheck/content-check/unit tests clean, build (1506 pages), 4856 e2e (30.6m). Closes #759.
