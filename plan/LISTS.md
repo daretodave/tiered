@@ -6674,6 +6674,44 @@ last time a curator actually looked.
   — the host-changeover, under-file-count, four-and-fewer-season, and
   structural-mechanic pools are all now confirmed exhausted.
 
+- **2026-08-08 thirty-seventh pass (cloud march tick, content-curator):
+  zero-ship.** Re-confirmed `plan/CADENCE.md`'s gap table still fully
+  starred (no actionable Rule 2 pick; nearest real finales
+  masterchef-australia 2026-08-09 and below-deck-mediterranean
+  2026-08-10, both still future) and zero lists review-due. Closed the
+  jury/eliminated-competitors-return-as-decision lead **permanently**
+  rather than re-flagging it: a fresh `jury` grep across every
+  `content/shows/*/seasons/*.md` and `canon.md` still surfaces no third
+  grounding show beyond Ink Master S07 "Revenge" and Drag Race All
+  Stars S03 (Big Brother's hits remain the franchise's baseline endgame
+  jury, off-thesis per the thirty-fourth pass), and tracing the fact's
+  actual disposition shows Ink Master's three jury flavors (S03 Human
+  Canvas Jury, S07 Revenge, S16 OGs vs. Young Guns) are already fully
+  staked at ranks 2-4 of the existing single-show list
+  `the-judging-table-never-got-to-coast` — there is no orphaned fact
+  left to rescue into a new list; this is a permanent 2-show cross-canon
+  ceiling. Also re-checked the two known below-floor non-single rows
+  (`the-vote-left-the-phone-line` era 8/8, `one-season-two-flags`
+  structure 9/9) — both still parked, no new season landed to reopen
+  either. Ran a fresh full-catalog `show:` mention census (1,199 hits
+  across 143 files for ~35 slugs) confirming only `rhodubai` still lacks
+  any single-show list, and its 2 aired seasons still can't clear the
+  10-entry floor. Checked four fresh candidate angles from scratch, all
+  rejected as already-staked or sub-floor: aftershow/companion-broadcast
+  tie-ins (fully staked in `the-broadcast-wasnt-the-whole-show`),
+  contestant-becomes-coach/judge/mentor crossover (fully staked, 12
+  entries, in `the-other-side-of-the-table`), season-that-birthed-a-
+  spinoff (fully staked, 12 entries, in `before-the-spinoff-had-a-name`),
+  and a chaos/underdog/sincerity tone-axis sweep against the 16 existing
+  `category: tone` lists (nearest open lane is already
+  `played-it-straight`'s exact thesis; no distinct groundable mood
+  cleared the <40% overlap bar). Shipped nothing. No ledger row changed.
+  Next tick should treat the jury lead as closed for good (not
+  re-checked again), keep the two below-floor rows parked pending a new
+  season, and either wait for a real Rule 2 finale or search a pool
+  outside format-mechanic/coach-crossover/spinoff-genesis/tone-axis
+  territory, all four reconfirmed exhausted this pass.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12):**
