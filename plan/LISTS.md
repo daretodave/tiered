@@ -6818,6 +6818,63 @@ last time a curator actually looked.
   unexplored superlative/record or cross-franchise-personnel angles,
   neither tried in the pass-by-pass log above.
 
+- **2026-08-08 forty-first pass (content-curator tick): zero-ship.**
+  Rule 2 still stalled (CADENCE fully starred, nearest real finale
+  masterchef-australia 2026-08-09 still a day out at pass time; no ledger
+  row 90-day review-due). Took up the fortieth pass's two explicit
+  handoff angles.
+
+  Angle 1 (superlative/record seasons): the natural sub-dimensions all
+  turned out to be already staked, just not under a title carrying the
+  word "record" — which is why keyword search alone missed them across
+  40 prior passes. Cast-size records are `the-cast-outgrew-the-format`
+  (15 entries/12 shows, Survivor S50, Project Runway S09, etc.).
+  Audience/ratings records are `the-season-the-audience-showed-up-all-
+  at-once` (11 entries/8 shows). Prize-money records are `same-crown-
+  new-price-tag` (16 entries/11 shows). Episode-count/cast-size records
+  within one franchise are already fully tracked single-show at
+  `the-episode-order-never-found-its-ceiling` (MAFS Australia) and
+  `the-roster-was-the-twist` (Amazing Race, cast-size entries at rank
+  11-12). Milestone-framed records (longest run, largest cast) are
+  covered at `milestones-spent-not-marked`. Did draft one extend —
+  Love Island US S08's Peacock most-watched-debut record onto
+  `the-season-the-audience-showed-up-all-at-once` — before catching,
+  on a full pass-log cross-check (not just the current ledger-row
+  text), that the hundred-and-third pass had already tried and
+  rejected this exact fact as a near-duplicate of `never-starts-cold`
+  rank 3 ("Peacock's biggest Love Island debut yet"). Reverted the
+  edit in full; the file is untouched from its 2026-07-25 state.
+  Angle 1 is now conclusively closed across every sub-dimension tried.
+
+  Angle 2 (cross-franchise-personnel): the two strongest real-world
+  leads both fail the in-text grounding rule. Ariana Madix's
+  Vanderpump Rules history is grounded in the VPR corpus (seasons 2,
+  3, 11) but never cross-referenced in the Love Island US files she
+  narrates/hosts-adjacent for — no season file names the VPR
+  connection. Tyra Banks' modeling/ANTM background is likewise never
+  named in her AGT S12 or DWTS S29 season files — both describe only
+  the in-show host handoff, already the subject of `the-mic-changed-
+  hands`. A broader corpus grep for host/judge crossover language
+  (`hosted by`, `guest judge`, `known from`, `crossed over from`)
+  surfaced no fresh grounded lead: Traitors UK S04's Uncloaked
+  aftershow (hosted by Ed Gamble) is a companion-show host, not a
+  crossover from another *competition* franchise; Bachelorette S17/S18
+  are alumnae-hosted (in-franchise, not cross-franchise); Top Chef S18
+  and MasterChef Australia S16 guest judges are in-franchise alumni or
+  ungrounded to an outside show; Selling Sunset's Tan France reunion-
+  host fact is grounded only to Selling Sunset itself (his Queer Eye
+  run is never named in the Selling Sunset files) and the fact itself
+  is already spent twice, at `the-reunion-kept-changing-its-own-rules`
+  and `some-seasons-rebuild-the-roster-others-just-move-the-furniture`.
+  No ≥3-show cross-franchise-personnel angle clears the grounding bar.
+
+  Both fortieth-pass handoff angles are now closed. Next tick should
+  wait for a real Rule 2 finale (masterchef-australia 2026-08-09) if
+  at all possible; if Rule 3 fires again first, it will need a
+  genuinely new angle class rather than a variant of superlative or
+  crossover framing — both are now exhausted across every sub-angle
+  this and the prior 40 passes have tried.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
