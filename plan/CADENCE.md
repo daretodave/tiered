@@ -229,7 +229,6 @@ new-show creation is locked to the biweekly show-add clock.
 | project-runway | 21/22 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
-| masterchef-australia | 17/18 | 1* |
 | hells-kitchen | 24/26 | 2* |
 | below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 14/15 | 1* |
@@ -296,12 +295,23 @@ same day on Paramount+ (the franchise's move off MTV) — both
 already correctly reflected in the existing `41/42, 1*` row, no
 change needed.
 
-**Not yet actionable — re-verify next pass:** `masterchef-
-australia`'s S18 grand finale aired today, 2026-08-09 (Petro
-Papathomas vs. Vinnie Gibaldi, $250k prize), but the winner is not
-yet reflected in indexed public sources as of this sweep — stays
-starred/deferred rather than drained this tick so a Rule 2 filing
-can cite a confirmed result; re-check first.
+**Drained same-day (2026-08-09, cloud march tick, breaking the
+zero-ship streak):** `masterchef-australia` S18 — the note above
+deferred this row pending a confirmed winner in indexed sources,
+but on review that bar doesn't apply: this catalog's spoiler
+discipline never publishes the winner, so a Rule 2 season page
+needs only production facts (premiere/finale dates, episode
+count, panel, cast, format), all of which are independently
+confirmed (Wikipedia's episode table + TV Guide's parallel
+listing, cross-verified against this show's historical 50-62
+ep_count pattern to catch a mis-scraped "23" infobox figure).
+Filed `18-open-call.md` (60 episodes, on-air auditions returning
+after five seasons off-camera, the panel's third season
+unchanged), inserted at canon rank 15 (S13/S15/S16 shifted
++1), `seasons: 17→18` in frontmatter. Row removed below — show
+fully drained at 18/18. **45 shows now carry a gap · 46
+gap-slots total** (44 shows × 1 deferred slot each, +1 extra
+deferred slot on `hells-kitchen`).
 
 **Recurring false-positive, monitored only, not reopened:**
 `chopped` — a scout batch again surfaced third-party "Season
