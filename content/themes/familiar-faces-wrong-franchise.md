@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-08-09
 featured: false
 related:
   - firsts
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "One charter guest borrowed from an entirely different franchise."
     blurb: "Corinne Olympios's single stop aboard, on leave from Bachelor in Paradise, lands on a crew still learning each other's names under a returning captain's command. Everyone else booking the franchise's biggest yacht yet stays inside the show's own world."
+  - show: top-chef
+    season: 23
+    season_label: "S23 · Carolinas"
+    rank: 16
+    title: "Charlotte borrows a whole cast from Charleston's own show for one guest stretch."
+    blurb: "Carolinas sets aside a guest stretch billed outright as a Southern Charm crossover, bringing Charleston's Bravo ensemble into the kitchen alongside established culinary guests. The recognition comes from a completely different franchise, not a rival kitchen."
 ---
