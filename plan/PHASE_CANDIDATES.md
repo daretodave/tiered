@@ -337,6 +337,15 @@ because this window's content ships were Rule-3 themed-list extends
 (which don't add new e2e URLs) rather than new season files. Still
 unpromoted 16 days after filing.
 
+**Update (digest 2026-08-09):** four more red nights (08-06, 08-07
+×2 runs, 08-08), same 75-minute wall each time — **20 consecutive
+red nights now** (07-20 through 08-08, or 20 counting back one
+further than the 08-06 update's window). Catalog grew slightly to
+10,510 tests (from 10,485), a MasterChef Australia season backfill
+landing in this window. All completed checks continue to pass; this
+remains a pure duration-ceiling breach, not a quality regression.
+Still unpromoted 19 days after filing.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -405,6 +414,23 @@ particular loss cost a full day of `plan/DIGEST.md` staleness (frozen
 on its 08-04 snapshot until this tick caught up), the same failure
 mode as the original week-long blackout, just shorter because the next
 day's run happened to get a clear runway. Still unpromoted 10 days
+after filing.
+
+**Update (digest 2026-08-09):** worst recurrence yet — **two
+consecutive nights lost**, not one. `gh run list --workflow night`
+shows 08-07 (created 10:46:40Z) and 08-08 (created 10:43:05Z) both
+`conclusion: cancelled`, back to back, the first time this has
+happened since the 07-27 diagnosis (prior losses were isolated:
+07-28, 07-30, 08-01, 08-02, 08-05 — never two in a row). The result
+was a 3-day digest blackout (frozen on the 08-06 snapshot through
+08-09), the longest since the original week-long outage that
+prompted this candidate's filing. The loss cadence itself is also
+accelerating: 5 losses in the 12 nights since diagnosis (07-28,
+07-30, 08-01, 08-02, 08-05, 08-07, 08-08 — 7 losses in 13 nights,
+not the "every 3-5 nights" rate noted at the 08-06 update). Now the
+single most urgent of the four unpromoted candidates in this file —
+recommend promoting ahead of #34/#33/#36 given it is actively
+degrading rather than holding steady. Still unpromoted 13 days
 after filing.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
@@ -839,6 +865,28 @@ in this file: promoting it doesn't just fix one bug, it reopens the
 loop's ability to ever run `/iterate`, `/critique`, or `/expand` again
 without a human forcing a tick by hand. No change to score or scope
 sketch — the fix shape identified 2026-07-18 was already correct.
+
+**Update (digest 2026-08-09):** the predicted worst case did NOT
+hold for the following 3 days — without promotion, the loop cleared
+both Pending HIGH `plan/CRITIQUE.md` rows on its own (mobile
+`.ep-foot` overflow, community-view `og:image`), which reopened
+`/critique`'s Step 2 condition 3, and it ran three more times
+(passes 106, 107, 108) alongside 6 `fix:` commits in 113 total —
+non-content share rose from 0% to ~9.7%. The mechanism: not every
+Rule-3 tick finds a row scoring ≥3.0 (30 of 48 Rule-3 passes this
+window were zero-ship), so the content-gate does periodically yield
+control even without a carve-out — it's biased-but-not-absolute in
+practice, contrary to the 08-06 update's "never yields" framing.
+That said, the underlying risk is real, not resolved: pass 108
+filed a fresh Pending HIGH (community weekly-question card CTA,
+now systemic across 2 shows) that reloads the exact same lockout
+precondition, and `/expand` (Step 3c, gated behind the same 3b.5)
+is still 12 days stale (pass 59, unchanged since 08-06) — so while
+`/critique` proved resilient, `/expand` has shown no equivalent
+self-recovery. Downgrading from "single highest-leverage row in
+the file" to "real but currently non-blocking" — #35 and #34 are
+the more urgent unpromoted candidates this cycle (see their
+08-09 updates). No change to score or scope sketch.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
