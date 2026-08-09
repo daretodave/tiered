@@ -1,13 +1,13 @@
 ---
 show: masterchef-australia
 editor: tiered.tv editor
-last_revised: 2026-06-21
+last_revised: 2026-08-09
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've followed MasterChef Australia as a format document — not just whether the cooking is good, but whether the show makes the cooking matter to a general audience. The Australian version is a serious object. The ranking holds it to that standard."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — casting depth, whether the bench had genuine technical range across the full run; judging authority, whether the panel framed the cooking with real culinary precision; and format integrity, whether the season structure earned the length it asked of viewers. The nationwide audition is the constant. Everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "All seventeen seasons are now seeded. The founding-era rankings (S1–S11) are stable — the founding trio's run has a clear hierarchy of format innovation and casting depth. The new-era rankings (S12–S17) will sharpen as the format fully absorbs the panel and structural changes those seasons introduced."
+meth_when_p: "All eighteen seasons are now seeded. The founding-era rankings (S1–S11) are stable — the founding trio's run has a clear hierarchy of format innovation and casting depth. The new-era rankings (S12–S18) will sharpen as the format fully absorbs the panel and structural changes those seasons introduced."
 tier_s_blurb: "MasterChef Australia at its ceiling — the format and the cast in complete alignment, the cooking earning the pressure the panel puts on it."
 tier_a_blurb: "Strong MasterChef Australia. The judging panel authoritative, the home cook bench deep, the competition running at a level that justifies the format's ambitions."
 tier_b_blurb: "Solid MasterChef Australia. A capable field and a clean format delivery — the founding trio's standard, held consistently across the run."
@@ -19,7 +19,7 @@ era_bands:
     range: [2009, 2019]
   - key: new-host-era
     label: "New host era"
-    range: [2020, 2025]
+    range: [2020, 2026]
 ---
 
 # Editor's Canon — MasterChef Australia
@@ -136,11 +136,19 @@ community_rank_hint: rank=14 delta=0 sentiment=hold
 
 Season fourteen splits its cast as twelve new Fans against twelve returning Favourites, running separate tracks through the first six weeks before merging. The split gives the early episodes a clear competitive logic — two distinct groups with different levels of experience navigating the same format. The merge reshapes the field in ways both groups have to reckon with. Tasmania's off-site filming, at Great Oyster Bay and a Launceston truffle farm, is the new era's most distinctive domestic location choice. The back half of the season doesn't quite sustain the energy the structure generates.
 
+## 18. Open Call
+
+tag: A standard open-audition season carried by the format's steadiest new-era panel — auditions return after five years off.
+slot_argument: Season eighteen earns the fifteenth slot on a fully settled panel and a real structural return — on-air auditions, absent since series thirteen — but lacks a subtitle-level premise to top the era's more distinctive seasons.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season eighteen runs the format's standard shape — a nationwide search, an open field, no returnee premise, no subtitle. What sets it apart is the panel. Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin enter their third season as an unchanged four, the format's longest-serving lineup without a swap, judging with an ease that shows in how fast the season finds its rhythm. On-air auditions return for the first time since series thirteen, narrowing forty hopefuls to twenty-four across three broadcast episodes rather than resolving off-camera. A dense run of themed weeks and a wide guest roster keep the middle stretch full. Solid, well-judged, structurally competent — without the singular premise that lifts the seasons above it.
+
 ## 13. The Fresh Start
 
 tag: The new panel's first open-audition season — a capable new cast, a panel still calibrating.
 slot_argument: The Fresh Start runs the new panel's format honestly against an entirely new field — but it's the season where they're still calibrating. Season fourteen's mixed-cast structure had more distinctive energy.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
 Season thirteen is the new panel's first test with a wholly fresh field — no returning alumni, no shared history with the judges. Andy Allen, Melissa Leong, and Jock Zonfrillo are individually authoritative but still calibrating their collective read on a cast that hasn't been through the format before. A limited Immunity Pin allocation and a Second Chance Week keep the competitive stakes clear. Filming extends to Uluru and the Victorian countryside. A solid season that sits below the new panel's best work, which required a more experienced cast to push against.
 
@@ -148,7 +156,7 @@ Season thirteen is the new panel's first test with a wholly fresh field — no r
 
 tag: A shorter, transitional season that became something the production couldn't have scripted.
 slot_argument: Secrets and Surprises runs genuinely interesting experiments in a run too short to test them fully. Structural brevity limits what the season can establish; the seasons above have more complete competitive arcs.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+community_rank_hint: rank=17 delta=0 sentiment=hold
 
 Season fifteen runs a shorter format around a secret apron concept — winners' identities concealed from the active field — and blind-tasting immunity challenges where the panel evaluates dishes without knowing who cooked them. MasterClasses are dropped for the first time. A cast of eighteen runs through fifty episodes. Jock Zonfrillo's presence throughout gives the season a quality the production couldn't have anticipated. The format experiments are worth watching; the run is too short to test them fully. A season that matters more than its placement reflects.
 
@@ -156,6 +164,6 @@ Season fifteen runs a shorter format around a secret apron concept — winners' 
 
 tag: A panel expansion the format is still absorbing — four judges, Hong Kong, a work in progress.
 slot_argument: Four Voices introduces a four-judge panel — the format's biggest structural change since the founding trio departed — but hasn't settled into a coherent identity. It holds the last slot as the newest and least resolved entry.
-community_rank_hint: rank=17 delta=0 sentiment=hold
+community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season sixteen expands to four judges — Andy Allen joined by Poh Ling Yeow, Jean-Christophe Novelli, and food critic Sofia Levin — in the format's largest panel since it began. Three episodes film in Hong Kong, at Po Lin Monastery, Victoria Harbour, and Stanley Street markets, and they're the season's strongest stretch. A cast of twenty-two runs through fifty episodes. The four-judge dynamic hasn't settled into a coherent voice. The format is clearly looking for its next form. This season sits last because it hasn't yet found it.
