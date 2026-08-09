@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-08-02 | next due 2026-08-09 |
+| season-sweep | 7 days | 2026-08-09 | next due 2026-08-16 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -256,6 +256,80 @@ new-show creation is locked to the biweekly show-add clock.
 | selling-sunset | 9/10 | 1* |
 | summer-house | 10/11 | 1* |
 | traitors-uk | 4/5 | 1* |
+| top-chef | 23/24 | 1* |
+
+## Sweep notes (2026-08-09, fifth full pass)
+
+Fifth full weekly sweep (`/march` Step 1.5, Rule 1a, cloud march) —
+6 `scout` batches (≤12 shows each) covered every one of the 68
+catalogued shows, cross-checked against the filesystem (same 3
+pre-existing tracked frontmatter/filed mismatches recur, no new
+ones: `90-day-fiance` 11/12, `american-ninja-warrior` 17/18,
+`married-at-first-sight` 19/20 — all previously flagged, none
+actionable this pass; Rule 1a scopes this sweep to this file /
+`plan/LISTS.md` / `content/calendar.yml`, not direct frontmatter
+edits).
+
+**One genuinely new finding: `top-chef` gains a confirmed-but-
+unaired Season 24.** Bravo renewed the show for a 24th season
+2026-05-14 (Hollywood Reporter); no premiere date announced yet.
+The prior sweep had this show gap-free at 23/23 — added to the
+table above as `23/24, 1*`. **46 shows now carry a gap · 47
+gap-slots total** (45 shows × 1 deferred slot each, +1 extra
+deferred slot on `hells-kitchen`, +1 new slot on `top-chef`).
+
+**Deferred-date corrections (numeric status unchanged, still
+starred):** `below-deck-mediterranean` S11's finale was previously
+estimated ~2026-08-10 — corrected to a confirmed 2026-08-24 (12-
+episode season, SeriesReminder schedule); still airing, not
+concluded. `traitors` (US) S5 "New Blood" (NBC civilian edition,
+Alan Cumming hosting) now has a confirmed premiere date of
+2026-09-17, locking in the previously-open date on the
+already-tracked declared=5 row; a scout flagged possible sourcing
+ambiguity over whether a separately-reported Peacock "celebrity"
+S5 (expected winter 2027) is the same season or a sequential
+entry — flagged for editorial disambiguation next pass, no table
+action taken. `the-challenge` S41 "Vets & New Threats" finale
+aired 2026-08-05 (already filed as our S41,
+`41-vets-and-new-threats.md`) and S42 "Cutthroat" premiered the
+same day on Paramount+ (the franchise's move off MTV) — both
+already correctly reflected in the existing `41/42, 1*` row, no
+change needed.
+
+**Not yet actionable — re-verify next pass:** `masterchef-
+australia`'s S18 grand finale aired today, 2026-08-09 (Petro
+Papathomas vs. Vinnie Gibaldi, $250k prize), but the winner is not
+yet reflected in indexed public sources as of this sweep — stays
+starred/deferred rather than drained this tick so a Rule 2 filing
+can cite a confirmed result; re-check first.
+
+**Recurring false-positive, monitored only, not reopened:**
+`chopped` — a scout batch again surfaced third-party "Season
+63/64" claims (SeasonTracker, Moviefone), the exact streaming
+"Volume"-branding source confusion investigated and resolved
+2026-07-16 (both frontmatter and filed season files correctly sit
+at 62/62, cross-verified against Wikipedia + epguides.com episode
+dates). No reopening.
+
+**Flagged but not actionable, unchanged from prior sweeps:**
+`bachelorette` S22 remains pulled by ABC (domestic-violence
+investigation involving a cast member, surfaced March 2026) with
+no rescheduled air date or formal cancellation — stays out of the
+gap table pending an official ABC decision. `the-voice`
+frontmatter still reads `status: ended` but S30 is confirmed for a
+2026-09-21 premiere — should read `hiatus` (carried forward,
+unresolved since the 2026-07-12 sweep; out of Rule 1a's scope to
+fix directly).
+
+**No change, re-confirmed:** every other catalogued show among the
+68 — including all 45 previously-starred rows (still confirmed-
+but-unaired, none concluded this week) and every previously
+gap-free show (`dragrace`, `love-island-uk`, `love-island-us`,
+`survivor-australia`, `naked-and-afraid`, `perfect-match`,
+`queer-eye`, `rhobh`, `rhod`, `rhodubai`, `so-you-think-you-can-
+dance`, `the-apprentice`, `the-real-world`, `the-ultimatum`,
+`too-hot-to-handle`, and both `alone` spinoffs) — no discrepancy
+found this pass.
 
 ## Sweep notes (2026-08-02, fourth full pass)
 
@@ -1871,3 +1945,4 @@ No calendar or gap-table action.
 | 2026-07-19 | 0 (survivor-australia S13/S14 claim corrected same-day — false positive, see notes) | 29 |
 | 2026-07-26 | 9 | 37 |
 | 2026-08-02 | 11 (dragrace-allstars S11 claim corrected same-day — false positive, see notes — + 11 newly confirmed-but-unaired; a pre-existing duplicate alone-australia row also deduped) | 46 |
+| 2026-08-09 | 1 (top-chef S24, newly confirmed-but-unaired; chopped's recurring "S63/S64" false positive re-flagged, not reopened) | 47 |
