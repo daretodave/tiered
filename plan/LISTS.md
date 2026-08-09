@@ -7292,6 +7292,42 @@ last time a curator actually looked.
   `/expand` look at whether Rule 3's parameters (entry cap headroom,
   overlap floor) need tuning rather than more search ticks against
   an exhausted surface.
+- 2026-08-09 fourth same-day pass (cloud march tick): re-confirmed
+  Rule 2 gap table still fully starred (47/47, `top-chef` S24
+  newly added by the fifth sweep) before falling to Rule 3.
+  Reviewed the review-due ledger (zero rows past 90 days; oldest
+  `last_reviewed` is `survivor-pillars` at 2026-07-31, 9 days out)
+  and the under-quota cross-canon census (scripted a full
+  `entries[].show` distinct-count sweep across every non-`single`
+  themed list — zero lists sit below the 3-distinct-show floor,
+  all 78 cross-canon lists clear it). Worked two fresh axes not
+  logged by the three earlier same-day passes: (1) parent-child /
+  multi-generational cast pairs — grepped
+  `father-daughter|mother-son|father and daughter|mother and son|
+  father and son|mother and daughter|parent-child|multi-
+  generational` across every season file; exactly one hit
+  (big-brother S08 "America's Player," and even that's a stray
+  phrase, not a real parent-child cast pair), nowhere near the
+  3-show floor. (2) guest judge / celebrity cameo as a craft
+  angle — grepped `guest judge|cameo|crossover episode|special
+  guest host` across every season file; 16 hits spanning 10+
+  shows (dragrace-uk, chopped, masterchef, masterchef-australia,
+  shark-tank, sytycd, top-chef, the-circle, bachelor-in-paradise,
+  below-deck-down-under), genuinely cross-show at first glance —
+  but every hit is a single-episode aside (one Drag Brunch guest
+  judge, one rotating weekly "Legend," a couple of celebrity
+  cameo names in passing) rather than a season-defining fact any
+  season's own lede/pull actually stakes its identity on; the
+  Golden-Buzzer precedent (rejected 2026-07-26 for the identical
+  thin-single-episode-mention problem) applies here too. Neither
+  axis clears the excellence gate. Shipped nothing this pass. The
+  four same-day passes now cover: finale/format-license/live-
+  broadcast, the two lowest-floor structural leads, five fresh
+  axes (disruption, wardrobe, prize-structure, runtime, single-
+  category census), and now parent-child + guest-judge — the
+  saturation signal holds. Next actionable Rule 3 lead remains a
+  new season landing or an `/oversight`/`/expand` parameter
+  adjustment.
 
 ## Notes
 
