@@ -1,37 +1,40 @@
 # CRITIQUE
 
-> Last pass: 2026-08-09 at commit 6f3babc1
-> Pass count: 108
+> Last pass: 2026-08-09 at commit 2abae9fc
+> Pass count: 109
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 108 ran in the cloud loop via Path A2
+> 109 ran in the cloud loop via Path A2
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), both anon and authed
 > passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
 > (5 URLs: `/`, `/shows/masterchef-australia/season/open-call`,
-> `/shows`, `/themes/best-comeback-seasons`, `/themes`) and
-> authed (`/`, `/shows/survivor/season/survivor-50`, `/u/e2e`,
+> `/shows`, `/themes/the-open-call-built-the-format`, `/themes`)
+> and authed (`/`, `/shows/top-chef/season/carolinas`, `/u/e2e`,
 > `/shows/masterchef-australia?view=community`) walks ran,
 > desktop + mobile, zero console errors/failed requests/mobile
-> overflow across both, no spoiler leaks. The freshly-drained
-> MasterChef Australia S18 page (filed same-day) reads clean and
-> matches the gold-standard season-page shape; its community-view
-> og:image confirmed fixed per the pass-107 resolution. 2 findings
-> filed (below): a new MED — the Survivor 50 canon.md rationale
-> stacks dense jargon ("hung on a quarter-century of casting
-> work," "settled grammar," "earns its settled standing only
-> after the next post-finale pass") that asks a first-time reader
-> to reread the paragraph to parse the argument, a voice
-> violation distinct from the already-resolved #483
-> canon/season-body duplication finding on this same page. And an
-> existing MED (pass-106, `CommunityWeeklyQuestionCard.tsx`'s
-> disconnected "cast your vote" CTA) bumped to HIGH — the authed
-> pass independently reproduced the identical structural defect
-> on a second, unrelated show (`masterchef-australia`), confirming
-> it's systemic to the component rather than a one-page issue. The
-> anon pass's only other observation (the already-open
-> `best-finales` "Seven finales" stale-count row) was confirmed
-> still unresolved, not re-filed.
+> overflow across both, no spoiler leaks. 1 new finding filed
+> (below): a HIGH — the freshly-drained MasterChef Australia S18
+> page repeats the same "on-air auditions return...twenty-four
+> across three broadcast episodes" clause near-verbatim across
+> four locations on the season page (lede, watch_list entry,
+> body, canon.md rationale) plus a fifth echo in the
+> `the-open-call-built-the-format` themed list's own entry #14
+> blurb — a fresh instance of the cross-surface verbatim-echo
+> defect class on the newest content. The already-open
+> `best-finales` "Seven finales" stale-count row (pass-106) was
+> independently reconfirmed live (10 entries / 9 shows, badge
+> reads correctly, only the featured_pull text is stale) but not
+> re-filed — exact duplicate. Two LOW findings from the authed
+> pass (RSC prefetch `net::ERR_ABORTED` on `/u/e2e` for non-root
+> paths) were assessed and dropped as critique-tooling noise, not
+> a live product defect — `isRscPrefetchAbort()` in
+> `scripts/critique-walk.mjs` filters only the root-path prefetch;
+> broadening that filter is a walker-script improvement, not a
+> CRITIQUE.md-worthy site finding. The authed pass also drove two
+> live interactions directly (VotePair click round-trip, comment
+> composer open state) — both correct, singular/plural label
+> confirmed still fixed (issue #138).
 > (`scripts/critique-walk.mjs` — headless chromium, fresh
 > isolated context, no Chrome MCP needed), both anon and authed
 > passes with a freshly-minted `CRITIQUE_SESSION_COOKIE`. Anon
@@ -2516,6 +2519,8 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/masterchef-australia/season/open-call — the freshly-drained MasterChef Australia S18 page repeats the same stock clause near-verbatim across four separate locations that are each supposed to add distinct editorial angle: the season file's `lede` frontmatter field, its `watch_list` first entry body, its markdown body paragraph, AND the canon.md rationale for slot 15 — plus a fifth echo in the `the-open-call-built-the-format` themed list's own entry #14 blurb. Confirmed via direct file reads: `content/shows/masterchef-australia/seasons/18-open-call.md` `lede` — "Season eighteen brings on-air auditions back for the first time since series thirteen, narrowing forty hopefuls to twenty-four contestants."; same file's `watch_list[0].body` — "Auditions move back on camera for the first time since series thirteen. Forty hopefuls compete across three broadcast episodes for twenty-four spots on the bench..."; same file's markdown body — "on-air auditions return for the first time since series thirteen, narrowing forty hopefuls to twenty-four across three broadcast episodes"; `content/shows/masterchef-australia/canon.md` "## 18. Open Call" rationale — "On-air auditions return for the first time since series thirteen, narrowing forty hopefuls to twenty-four across three broadcast episodes rather than resolving off-camera."; `content/themes/the-open-call-built-the-format.md` entry #14 blurb — "narrowing forty hopefuls to twenty-four across three broadcast episodes." A reader who reads the season page top to bottom, then clicks into the canon section or the themed list, hits the same fact phrased the same way four or five times. Fix: keep ONE canonical phrasing of the auditions-return fact (the `watch_list` entry is the most natural home for the full statistic), then rewrite the `lede`, the markdown body, the canon.md rationale, and the themed-list blurb to each make a different point using the fact rather than restating it — the page's own "A panel three seasons in" and "A dense run of themed weeks" watch_list entries already model varied, non-repetitive framing and can serve as the pattern. Content-only, five field edits across three files. Spoiler discipline P0 intact (no outcome/elimination content in any of the repeated text). (URL: /shows/masterchef-australia/season/open-call, /themes/the-open-call-built-the-format, source: critique-pass-109)
 
 - [ ] [MED] [authed] /shows/survivor/season/survivor-50 — the canon.md rationale for the newest, almost certainly highest-traffic season page stacks dense insider jargon rather than the site's plain-spoken peer voice, asking a first-time reader to reread the paragraph to parse the argument. Confirmed live on the rendered page (Section 03 "Where it sits in the canon," both viewports): "Survivor 50 is the franchise's milestone, and the canon weighs it the way the show itself frames the run — as the fiftieth season's own ceremony, hung on a quarter-century of casting work rather than on a new structural argument... the format around it stayed settled grammar at this point... A season this new earns its settled standing only after the next post-finale pass." (`content/shows/survivor/canon.md` "## 50. Survivor 50" rationale paragraph). This is distinct from the already-resolved `#483` finding (STALE — that one flagged near-verbatim duplication between canon.md and the season-file body; the season body was rewritten to a different angle and the duplication is gone, but the canon.md rationale itself was never re-examined for voice and still carries the "ceremony"/"settled grammar"/"quarter-century of casting work" cluster). Fix: rewrite the canon.md rationale in plainer, more concrete language — state directly that the season is too new to have a settled ranking yet, without the ceremony/settled-grammar/replay-read metaphor cluster. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/survivor/season/survivor-50, source: critique-pass-108)
 
