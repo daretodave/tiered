@@ -7248,6 +7248,49 @@ last time a curator actually looked.
   the next actionable Rule 3 lead is a new season landing (Rule 2
   unstalling or a future finale-gate drain), not further re-slicing
   of already-mined seasons.
+- 2026-08-09 (content-curator tick, Rule-3 pass following the
+  post-finale-drain follow-up and second pass logged above):
+  zero-ship. Re-confirmed Rule 2 gap table fully starred (46/46
+  confirmed-but-unaired) before falling to Rule 3. Read the full
+  Ideas log and the 181-file theme catalog first; skipped every
+  already-logged dead end (masterchef-australia S18's three facts,
+  the-pitch-names-where-the-idea-came-from's 4th entry,
+  running-on-muscle-memory / before-the-spinoff-had-a-name,
+  least-mined-show census, zero-category:single census). Worked
+  five fresh axes instead: (1) non-pandemic production
+  disruption/shutdown — grepped investigat|lawsuit|walked off|
+  shutdown|halted filming etc. across every season file; found
+  exactly one grounded case (bachelor-in-paradise S04 Sayulita's
+  on-set-misconduct shutdown), no 2nd/3rd show, floor not cleared;
+  (2) wardrobe/catchphrase-as-brand — grepped
+  catchphrase|signature (phrase|look)|went viral|iconic (outfit|
+  look)|dress code across every season file, one weak non-hit,
+  no grounding; (3) prize-structure changes — confirmed fully
+  saturated by the existing 16-entry same-crown-new-price-tag;
+  (4) episode runtime/length changes (90-minute moves, two-hour
+  premieres, folded broadcasts) — found a genuinely rich grounded
+  set (amazing-race S35/S36, mafs S10, sytycd S09, big-brother
+  S27, masked-singer S14) but confirmed the existing 13-entry
+  running-long-running-short already covers this exact set
+  verbatim, including all of the above plus survivor S45, ninja
+  warrior S15/S16, amazing-race S30, real-world S01, bachelor S24,
+  top-chef S20; (5) category:single show-gap census — independently
+  re-derived the 8-show zero-single-list pool from frontmatter and
+  confirmed each already individually pre-rejected with cited
+  reasoning at lines 6343-6387 and 7095-7163 (below-deck-down-under,
+  perfect-match, alone-australia, rhodubai all over-staked across
+  6-9 existing lists; alone-frozen/alone-the-skills-challenge/
+  below-deck-adventure structurally ineligible, single season only;
+  traitors cross-staked across 9+ lists). Shipped nothing. No
+  ledger row changed. The 181-list ledger reads genuinely saturated
+  at current density across every axis tried today. Next actionable
+  Rule 3 lead is a new season landing (Rule 2 unstalling, or a
+  finale-gate drain), not further re-slicing of already-mined
+  seasons. Three consecutive zero-ship passes today on non-
+  overlapping search axes — flagging for a future `/oversight` or
+  `/expand` look at whether Rule 3's parameters (entry cap headroom,
+  overlap floor) need tuning rather than more search ticks against
+  an exhausted surface.
 
 ## Notes
 
