@@ -7162,6 +7162,61 @@ last time a curator actually looked.
   is still a new season landing (Rule 2 unstalling, or the
   masterchef-australia 2026-08-09 finale-gate drain).
 
+- **2026-08-09 (content-curator tick, post-finale-drain follow-up):
+  zero-ship.** Rule 2 gap table re-confirmed fully starred
+  (confirmed-but-unaired) across all 46 remaining slots — no
+  actionable backfill. Followed up on masterchef-australia S18
+  (`content/shows/masterchef-australia/seasons/18-open-call.md`),
+  the finale-gate season already mined twice earlier today
+  (`the-open-call-built-the-format` rank 14 for the on-air-auditions
+  return, `running-on-muscle-memory` rank 21 for the unchanged
+  four-judge panel). Investigated the season's third fact — its own
+  copy calling out "one of the broadest guest lineups the format has
+  assembled in a single run" (Maggie Beer, Rick Stein, Curtis Stone,
+  Adriano Zumbo, Marion Grasby, plus a Finals Week guest) — as a
+  candidate extension or new small cross-show list. Pulled every
+  other show's season file matching `guest roster|guest lineup|
+  guest judges|guest chefs` (15 files: top-chef S06/S18, sytycd S08,
+  shark-tank S11/S17, masterchef S07/S10, masterchef-australia S16,
+  dragrace-uk S06/S07) looking for 2+ more grounded, unstaked
+  "unusually deep guest bench" facts. Found the angle saturated from
+  two directions: (1) Shark Tank's guest-chair mechanic is already
+  fully carried by `the-extra-seat-is-never-a-swap` (single-show,
+  17/17 seasons — S11 at rank 10 and S17 at rank 8 both already
+  frame their own guest lineups as the "loudest"/"highest-profile
+  yet"); (2) the milestone/occasion-flavored guest crossovers
+  (masterchef-australia S16's Jamie Oliver/Rick Stein against the
+  four-judge-panel debut, masterchef US S10's Grant Achatz/Morimoto
+  against the tenth-anniversary season) are already staked at
+  `someone-else-held-the-chair-for-a-while` (rank 9, rank 11).
+  Masterchef-australia S18's fact is distinct from both — no
+  occasion, no chair change, just breadth on a standing panel — but
+  that narrower shape doesn't have two more grounded, unstaked
+  same-shape seasons to pair with it (dragrace-uk S07's Nadine
+  Coyle/Jane Horrocks credit is real but thin, and its season's
+  stronger fact, The Lucky Cow twist, is off-thesis territory
+  already logged dead at `a-second-life-built-into-the-format`).
+  Didn't clear the 3-distinct-show floor for a new list, and didn't
+  find a clean fit inside an existing one. Also chased a secondary
+  lead — season files naming a specific rival franchise's mechanic
+  by name, for a possible fourth entry on the 3-entry
+  `the-pitch-names-where-the-idea-came-from` (explicitly flagged
+  "room to grow" at creation) — via a grep for `Love Island|modeled
+  (on|after)|borrowed from|inspired by` across every season file.
+  The best hit, the-real-world S31 ("missions borrowed directly from
+  the Challenge and Road Rules"), doesn't fit that list's "a
+  different franchise entirely" thesis (the Challenge is the Real
+  World's own spinoff) and is already staked exactly on that
+  self-referential angle at `the-franchise-started-borrowing-from-
+  itself` rank 10. perfect-match S03's wider crossover-casting pool
+  (Love Is Blind, Bachelor, Bachelorette, Love Island) was considered
+  for `familiar-faces-wrong-franchise` (already extended today with
+  top-chef S23) but rejected as too close in shape to that list's
+  own perfect-match S01 entry (rank 1, "cast pulled wholesale" from
+  the same dating-show pool) on a list currently marked `stable`.
+  Shipped nothing. No ledger row changed. Next actionable Rule 3 lead
+  is still a new season landing.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
