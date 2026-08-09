@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-09
 featured: false
 related:
   - running-on-muscle-memory
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "The momentum season that built toward the format's actual peak"
     blurb: "Series four rides the wave the previous summer's breakout created, casting energy running as hot as the format had managed yet — the bridge between Love Island UK becoming a hit and becoming the biggest show of its summer."
+  - show: summer-house
+    season: 10
+    season_label: "S10"
+    rank: 12
+    title: "The three-part reunion that broke the show's own audience record"
+    blurb: "The tenth season pairs its biggest-ever cast overhaul with a first-of-its-kind three-part reunion, and the payoff shows up in the numbers — the reunion night draws the largest same-day audience the show has pulled in ten seasons."
 ---
