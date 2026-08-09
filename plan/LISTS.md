@@ -7479,6 +7479,48 @@ last time a curator actually looked.
   had one genuinely fresh season (Summer House S10) filed since the
   last attempt, confirming that re-checking prior negative results
   against newly-filed seasons remains worth doing before zero-shipping.
+- **2026-08-09 ninth same-day pass (content-curator tick): zero-ship.**
+  Re-confirmed Rule 2 gap table still fully starred (46/46) before
+  falling to Rule 3. Re-checked review-due status: `survivor-pillars`
+  remains the oldest `last_reviewed` at ~9 days, nowhere near the
+  90-day floor. Read all eight prior same-day passes' logged dead ends
+  and did not re-walk any of them. Worked two fresh axes: (1)
+  strike-disrupted production seasons — real-world 2007-08 WGA and
+  2023 WGA/SAG-AFTRA labor stoppages that visibly reshaped a season's
+  schedule or production calendar. Grounded a clean cross-show set via
+  `content/shows/**/*.md` (`amazing-race` S12's compressed winter
+  route, `big-brother` S09 "The Winter Couples" timed to the strike's
+  final day, `bachelor-in-paradise` S09's Thursday-slot move during the
+  2023 walkout, plus MAFS Australia S05 which turned out to be a
+  metaphorical "strike twice" idiom, not a real labor dispute — not
+  grounded, discarded). Full `grep -i strike` across every season file
+  found the axis **already fully shipped**: `when-scripted-went-dark`
+  (era, 14 entries / 12 shows, last revised 2026-08-07) stakes exactly
+  these three seasons for this exact fact, plus eleven more. (2)
+  Explicit Olympic/athlete-cast-premise seasons — DWTS S06 "The Olympic
+  Cast", S18 "Winter Athletes", S26 "Athletes" (all-Olympic/Paralympic
+  cast, no standard celebrity pairings), cross-checked against
+  `survivor-australia` S03 "Champions V Contenders" (elite-athlete
+  tribe vs. everyday-Australians tribe as the season's own stated
+  format premise). Confirmed via full `show: dancing-with-the-stars`
+  grep that this axis is **also already fully shipped**: the 12-entry
+  single-show `some-casts-didnt-need-week-one` stakes all three DWTS
+  athlete seasons (plus every other credentialed-cast DWTS season) for
+  the identical "skipped the learning curve" fact, and
+  `one-rule-fills-every-seat` separately stakes S26 rank 4 / S18 rank
+  13 for the "every seat goes to an Olympian" casting-rule fact. No
+  third show clears the cross-canon floor cleanly for a fresh list on
+  this axis: The Apprentice S06's "several recent Winter Olympians...
+  for name recognition" is a casting aside inside a celebrity-cast
+  season, not a structural athlete-cast premise, and doesn't stand up
+  next to DWTS/Survivor Australia's explicit format framing. Shipped
+  nothing this pass. Files written: `plan/LISTS.md` (this note),
+  `plan/AUDIT.md` (standing row progress log). Nine same-day Rule-3
+  passes today; three shipped, six zero-shipped — both axes worked
+  this pass were genuinely fresh (not re-walks) but both turned out to
+  be complete duplicates of existing lists rather than open ground,
+  confirming the ledger's saturation at the current ~181-list size is
+  now the dominant failure mode for new-axis search, not thin grounding.
 
 ## Notes
 
