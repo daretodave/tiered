@@ -5,9 +5,9 @@ description: "Some seasons chase a new twist. Others settle into a rhythm they a
 tagline: "A show doesn't stay interesting only by reinventing itself every year — sometimes the more interesting thing is watching a format that already knows exactly what it is. <b>These are the seasons where the host, the panel, and the format all stopped explaining themselves and just ran.</b>"
 category: tone
 sentiment: hold
-status: stable
+status: updated
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-08-09
 featured: false
 related:
   - played-it-straight
@@ -133,4 +133,10 @@ entries:
     rank: 20
     title: "A second year anchoring the panel, and the format stops needing to prove it."
     blurb: "Reba McEntire's second cycle in the chair runs the blind auditions with practiced efficiency, and Gwen Stefani's return adds a familiar edge rather than a new one. No debut, no structural pivot — just a panel that already knows the job."
+  - show: masterchef-australia
+    season: 18
+    season_label: "S18 · Open Call"
+    rank: 21
+    title: "A panel three seasons deep, and the format stops explaining itself."
+    blurb: "Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin return unchanged for a third straight season — the format's longest-serving panel without a single swap, reading forty new auditions with a chemistry that stopped needing to settle in."
 ---
