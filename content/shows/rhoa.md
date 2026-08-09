@@ -9,7 +9,7 @@ seasons: 16
 status: airing
 blurb: "16 seasons. Atlanta's social world, unfiltered."
 tagline: "The Housewives franchise's biggest ratings engine — {yearsWord} years of Atlanta opulence, confrontational chemistry, and a cast that never let the cameras catch them at less than full volume."
-card_tagline: "The Housewives franchise's biggest ratings engine, running on Atlanta opulence and confrontational cast chemistry."
+card_tagline: "Atlanta's highest-rated Bravo cast never once dialed the volume down for a camera."
 tier: B
 network: Bravo
 est_year: 2008
