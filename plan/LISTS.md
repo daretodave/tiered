@@ -7358,6 +7358,43 @@ last time a curator actually looked.
   ledger row other than `best-post-merge` changed. Files written:
   `content/themes/best-post-merge.md` (14th entry appended),
   `plan/LISTS.md` (this note + the Ledger row).
+- **2026-08-09 sixth same-day pass (cloud march tick, zero-ship):**
+  re-confirmed Rule 2 gap table still fully starred (47/47) before
+  falling to Rule 3; zero lists 90-day review-due (oldest
+  `last_reviewed` still `survivor-pillars` at 2026-07-31, 9 days
+  out). Re-checked the three below-floor lists identified by
+  earlier passes: `the-vote-left-the-phone-line` (era, 8/8) — dead
+  across 6+ prior re-checks, no new finale has landed to reopen it;
+  `one-season-two-flags` (structure, 9/9) — dead across roughly a
+  dozen re-checks since 2026-08-05, its two nearest real-finale
+  candidates (masterchef-australia, below-deck-mediterranean)
+  still airing; `the-pitch-names-where-the-idea-came-from` (craft,
+  3/3) — shipped deliberately tight 2026-08-08 after an exhaustive
+  full-catalog sweep, re-chased twice more since with nothing
+  found. Worked two fresh extend axes not logged by the five
+  earlier same-day passes: (1) medical-evacuation / on-set
+  safety-incident format changes — grepped
+  `evacuat|medical (emergency|evac)|injury forced|safety
+  (protocol|incident)` across every season file, zero hits
+  catalog-wide. (2) Amazing Race S28 "Social Media Stars" —
+  read the season file directly; its hometown-start format change
+  and first-ever-country route stops (Colombia/Armenia/Georgia)
+  are genuinely unclaimed, but no natural cross-show home clears
+  the excellence gate (`away-from-home-turf` is fixed-set-only,
+  `the-competition-leaves-the-country` is explicitly scoped to
+  judged cooking/modeling relocations, `firsts` is a season-1
+  thesis, `new-flags-planted-fast` is a spinoff-launch thesis) and
+  the fact is AR-exclusive, so it can't clear the 3-show floor
+  standalone. Also independently re-verified two other candidates
+  are already claimed: Drag Race All Stars S9's charity/no-
+  personal-purse format is staked at
+  `when-the-reward-pointed-somewhere-else` rank 10 (that list's
+  own 2026-08-03 note documents an exhaustive charity/tribute grep
+  already exhausting this axis); AR S28's already-famous casting
+  is correctly staked at `the-cast-arrived-pre-famous` rank 1
+  already, nothing to add there. Shipped nothing this pass. The
+  saturation signal holds; next actionable Rule 3 lead remains a
+  new season landing (Rule 2 unstalling or a finale-gate drain).
 
 ## Notes
 
