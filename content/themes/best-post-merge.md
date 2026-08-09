@@ -6,7 +6,7 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-07
+last_revised: 2026-08-09
 featured: false
 related:
   - survivor-pillars
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "A weekly vote-out sharpens as the solo field narrows toward the finish."
     blurb: "Every player runs solo, with a weekly vote-out sending someone into a head-to-head elimination match. As the field narrows, late missions hold on individual endurance the format rarely affords elsewhere — the mechanic the franchise leaned on for years after."
+  - show: top-chef
+    season: 4
+    season_label: "S04 · Chicago"
+    rank: 14
+    title: "The technical bench Chicago spent all season stacking finally pays off."
+    blurb: "Elimination Challenges in the back-half compound rather than coast, and the season's own account of its late services calls the cooking the strongest the franchise had shown to that point — the payoff for a deep bench assembled one city-specific challenge at a time."
 ---
