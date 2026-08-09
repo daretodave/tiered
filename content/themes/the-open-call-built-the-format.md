@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-08-09
 featured: false
 related:
   - best-premieres
@@ -91,4 +91,10 @@ entries:
     rank: 13
     title: "With no format yet, the open call decided what the show was"
     blurb: "Regis Philbin anchored a judging table with zero inherited precedent, and singers, comedians, and acrobats shared one stage because nobody had defined a category the format wouldn't accept."
+  - show: masterchef-australia
+    season: 18
+    season_label: "S18 · Open Call"
+    rank: 14
+    title: "On-air auditions return after a five-season absence to do the sorting again"
+    blurb: "The tryout stage goes back on camera for the first time since series thirteen, narrowing forty hopefuls to twenty-four across three broadcast episodes — the format's real filtering work, visible again after five seasons off-screen."
 ---
