@@ -7216,6 +7216,38 @@ last time a curator actually looked.
   the same dating-show pool) on a list currently marked `stable`.
   Shipped nothing. No ledger row changed. Next actionable Rule 3 lead
   is still a new season landing.
+- 2026-08-09 second pass, same day (cloud march tick, independent of
+  the pass above): re-chased `the-pitch-names-where-the-idea-came-
+  from` for a fourth entry — no new candidate since the pass above.
+  Re-chased masterchef-australia S18's third unstaked fact ("a dense
+  run of themed weeks... format variety rather than a single
+  unifying gimmick") two ways: as a new cross-show list (grepped
+  `unifying gimmick|format variety|variety rather than|no
+  season-long twist` across every `content/shows/**/seasons/*.md` —
+  only one other hit, an unrelated Real World S01 debut-format fact,
+  fails the 3-distinct-show floor) and as a fit inside
+  `milestones-spent-not-marked` (S18 isn't a round-number anniversary
+  season, rejected). Checked `running-on-muscle-memory` (21 entries,
+  room to 30) against unstaked Shark Tank seasons for its
+  settled-format thesis: S11 and S14's headline facts are already
+  staked at `the-extra-seat-is-never-a-swap` and `live-without-a-net`
+  respectively; S15's cleanest textual match ("proof the format
+  doesn't need constant tinkering") is already staked verbatim at
+  `the-extra-seat-is-never-a-swap` rank 17 ("the quietest seat chart
+  the format has ever run"); S16/S17 are panel-change seasons, the
+  opposite of the list's thesis. Checked `before-the-spinoff-had-a-
+  name` (12 entries) for a fresh founding-season pair — none
+  identified without a fresh scout pass outside this tick's scope.
+  Swept cross-list stake counts for the least-mined shows (queer-eye,
+  naked-and-afraid, the-circle, survivor-australia,
+  married-at-first-sight-australia, dragrace-allstars,
+  americas-next-top-model, the-real-world) — all sit in the same
+  10–24 stake range as the rest of the catalog, none thin enough to
+  yield an easy fresh fact. Shipped nothing. No ledger row changed.
+  The 181-list ledger reads close to saturated at current density —
+  the next actionable Rule 3 lead is a new season landing (Rule 2
+  unstalling or a future finale-gate drain), not further re-slicing
+  of already-mined seasons.
 
 ## Notes
 
