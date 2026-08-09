@@ -9,7 +9,7 @@ seasons: 14
 status: airing
 blurb: "14 seasons. New Jersey's social world at the kitchen table."
 tagline: "Bravo's New Jersey chapter — {yearsWord} years of family loyalty, suburban tension, and the confrontational cast chemistry that made dinner-table drama the franchise's most recognizable signature."
-card_tagline: "Bravo's New Jersey chapter — family loyalty, suburban tension, and dinner-table confrontation as the franchise's most recognizable signature."
+card_tagline: "In Bravo's New Jersey households, family loyalty curdles into suburban confrontation — the dinner-table blowup this franchise built its identity on."
 tier: B
 network: Bravo
 est_year: 2009
