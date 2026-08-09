@@ -7521,6 +7521,46 @@ last time a curator actually looked.
   be complete duplicates of existing lists rather than open ground,
   confirming the ledger's saturation at the current ~181-list size is
   now the dominant failure mode for new-axis search, not thin grounding.
+- **2026-08-09 tenth same-day pass (content-curator tick): zero-ship.**
+  Re-confirmed Rule 2 gap table still fully starred (46/46, unchanged
+  since the same-day masterchef-australia drain) before falling to Rule
+  3; zero lists review-due (`survivor-pillars` still the oldest
+  `last_reviewed`, well inside the 90-day window). Worked four fresh
+  axes, all closed on inspection: (1) **casting-pool restriction as the
+  season's premise** (college-only, height caps, all-athlete rosters,
+  head-chefs-only, age ceilings) — well-grounded across ANTM, DWTS,
+  Hell's Kitchen, MasterChef, The Challenge, Ink Master, Big Brother,
+  but fully duplicates the existing `one-rule-fills-every-seat` (16
+  entries, same examples). (2) **judging panel gains a chair without
+  turnover** (distinct from replacement/turnover, already covered by
+  `the-panel-turned-over-more-than-the-contestants-did` /
+  `the-masks-changed-every-week-the-panel-never-did`) — only two clean
+  grounded instances survive (SYTYCD S15 "The Fourth Chair," Chopped
+  S62's one-episode Ted Allen stunt); a plausible third (American Idol
+  S8 adding Kara DioGuardi) isn't actually stated in that season's own
+  file (explicitly says "the complete original panel"), so it wasn't
+  fabricated — below the 3-show floor with real grounding, parked. (3)
+  **elimination-reversal/comeback mechanics** (Redemption Island, Camp
+  Comeback, RuDemption, Last Chance Kitchen, the Perfect Match mixer) —
+  fully saturated by the existing `a-way-back-in` (14 entries, same
+  shows/seasons). (4) **national-cast-split or imported-roster seasons**
+  — `one-season-two-flags` already exists and is strong (9 entries / 8
+  shows) but sits one below the presumed 10-entry floor; searched hard
+  for a clean 10th (MasterChef S10's England field-trip episodes,
+  Traitors/Love Island crossovers, Drag Race UK) and nothing cleanly
+  fit the "cast literally split or imported by nationality" bar rather
+  than just filming abroad — stays parked at 9. One incidental find
+  logged for a future pass: **So You Think You Can Dance S08** ("The
+  Top 20 Return") explicitly states it's "the first season to open up"
+  text-and-online voting alongside the phone line — a clean, grounded
+  9th candidate for the parked `the-vote-left-the-phone-line` era list
+  (`content/shows/so-you-think-you-can-dance/seasons/08-the-top-20-return.md`,
+  watch_list "Ep 3 · a new way to vote"); still needs one more
+  candidate beyond this to clear a 10-entry floor — checked Big
+  Brother, AGT, DWTS, The Voice, Masked Singer season files for
+  vote-channel-specific language, no hits this pass. Shipped nothing.
+  No ledger row changed. Ten same-day Rule-3 passes today; three
+  shipped, seven zero-shipped.
 
 ## Notes
 
