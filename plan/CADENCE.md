@@ -114,6 +114,25 @@ at 11/11. **44 shows now carry a gap · 45 gap-slots total** (43
 shows × 1 deferred slot each, +1 extra deferred slot on
 `hells-kitchen`, +1 extra slot on `top-chef`).
 
+**Rule 2 pick, 2026-08-10 tick (cloud march, second pass same
+day):** `americas-got-talent` S21 confirmed concluded (premiered
+2026-06-02, 23 episodes per Wikipedia + NBC Insider + TVInsider,
+panel unchanged from S20 — Cowell/Mandel/Vergara/Mel B — double
+Golden Buzzer + new Judges' Callbacks twist). DRAINED: Season 21
+filed (`content/shows/americas-got-talent/seasons/21-the-panel-
+doubles-down.md`), canon rebased (S21 inserted at rank 17 —
+outranks the prior second-year-panel argument by pairing settled
+chemistry with genuine new structural stakes — S17/S18/S19/S20
+each shifted +1), show frontmatter bumped `seasons: 20` → `21`.
+Same-tick fact fix surfaced during research: S19/S20 wrongly
+credited Sofia Vergara's exit after S19 — corrected to Heidi
+Klum (Vergara has judged continuously and returns for S21 as her
+7th season); S19 renamed `19-the-vergara-finale.md` →
+`19-the-klum-departure.md` and rewritten, S20 rewritten to match.
+Row removed below — americas-got-talent fully drained at 21/21.
+**43 shows now carry a gap · 44 gap-slots total** (42 shows × 1
+deferred slot each, +1 extra deferred slot on `hells-kitchen`).
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
@@ -243,7 +262,6 @@ new-show creation is locked to the biweekly show-add clock.
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
 | dancing-with-the-stars | 34/35 | 1* |
-| americas-got-talent | 20/21 | 1* |
 | rhoa | 16/17 | 1* |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
