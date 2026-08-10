@@ -7857,6 +7857,87 @@ last time a curator actually looked.
   each found headroom for); the next actionable **new-list** lead is a
   new season landing (Rule 2 unstalling, or a finale-gate drain), not
   further re-slicing of the already-mined 182-list catalog.
+- **2026-08-10 nineteenth same-day pass (content-curator tick,
+  extend-first strategy): zero-ship.** Re-confirmed the Rule 2 gap
+  table still fully starred (both re-verification passes filed
+  earlier today hold, and a cloud march tick's eighteenth same-day
+  pass — a shipped `been-here-before` extend, Below Deck
+  Mediterranean S11 — landed after the seventeenth pass logged
+  above and before this one) before falling to Rule 3. Surveyed the full
+  181-row ledger via a compact regex extraction (list/category/
+  last_revised/last_reviewed columns) and per-file entry-count
+  greps, then worked eight candidate lists in sequence looking for
+  one clean, unclaimed, well-grounded entry: `the-pitch-names-
+  where-the-idea-came-from` (3/24, craft) — no new cross-franchise-
+  crediting fact found; The Real World S31's borrowed-format-rules
+  fact is already staked at `the-franchise-started-borrowing-from-
+  itself` rank 10. `the-diners-were-never-extras` (10/24, craft) —
+  every fresh Top Chef/Hell's Kitchen "diners"/"Restaurant Wars"
+  mention found was either already claimed elsewhere or templated
+  boilerplate too thin to stake. `the-competition-leaves-the-
+  country` (11/24, tone) — no genuine new international-relocation-
+  of-a-judged-competition fact; nearest hits were domestic
+  relocations or docusoap facts, off-thesis. `same-license-
+  different-rules` (12/24, craft, deliberately 2-per-franchise) —
+  partial read, no clean third-divergence angle surfaced before
+  moving on. `the-judges-picked-a-side` (11/24, craft) — the one
+  fresh lead, Big Brother S23 "The Team Captains," is a contestant-
+  driven twist, not a judge-driven one; off-thesis. `wealth-as-the-
+  whole-pitch` (14/24, tone) — checked RHOSLC S01, RHOD S01, RHONJ
+  S01, Below Deck Down Under S01, Below Deck Adventure S01, and
+  Selling Sunset S08/S09; all either off-thesis, already claimed
+  4x elsewhere (Below Deck Down Under S01), thesis-inverted (Below
+  Deck Adventure S01 bets on adventure over luxury), or too weak a
+  wealth-pitch match. `no-one-got-a-night-off` (11/24, tone) — the
+  only grep hit, Big Brother S27, was a false-positive substring
+  match with no actual no-rest content. `the-cast-outgrew-the-
+  format` (15/24, structure) looked most promising on a headcount-
+  superlative grep (`largest/biggest/smallest cast/roster/field`,
+  `record cast`, etc. across every season file, 33 file hits) and
+  got the deepest search of the pass — RHOP S05/S08/S09 all state
+  explicit cast-size-record facts, but every Real Housewives
+  headcount swing (any city, any season) is already the exact
+  thesis of this list's own `related` sibling
+  `the-couch-kept-adding-chairs` (16 entries, all-RHO, RHOP S08
+  itself staked there at rank 14 for the identical largest-cast
+  fact) — using any RHOP entry here would double-stake the sibling
+  list's turf, so Housewives is out for this list entirely. Beyond
+  Housewives: Drag Race flagship S14's "franchise's biggest cast to
+  that point" fact is already staked at `the-season-structure-
+  never-holds-still` rank 9, near-verbatim (confirmed by re-reading
+  that entry directly — this list's own 2026-08-01 ledger note had
+  already logged and rejected this exact candidate for the same
+  reason, missed on this pass's first scan and caught on a second,
+  careful check before drafting anything final). MasterChef S04's
+  "twenty-three home cooks, largest founding-era field" fact is
+  staked *twice* already, at `running-on-muscle-memory` rank 2 and
+  `every-season-tests-a-new-theory-of-the-kitchen` rank 4. Married
+  at First Sight Australia S12's "format's biggest cast yet, forty
+  episodes" fact is staked at `same-license-different-rules` rank
+  5. Vanderpump Rules S06's "show's biggest expansion yet" fact is
+  staked at `a-guest-spot-with-room-to-grow` rank 5. Southern Charm
+  S07's "biggest single-season addition since the founding cast"
+  fact is staked at `the-founding-seven-slowly-rebuilt` rank 5 (a
+  repeat of a rejection this list's own 2026-08-01 ledger note
+  already logged). Every headcount-superlative season with real
+  own-file grounding that a fresh catalog-wide grep surfaces has
+  already been claimed by one list or another — the fact-space
+  itself, not just this list's slot count, reads as saturated.
+  Two candidate season files (Amazing Race S34, S35; The Real
+  World S29) were also checked and rejected on the same
+  identical-fact-elsewhere basis (`running-long-running-short`
+  rank 1 for AR S35's field-size record; `the-house-that-kept-
+  changing` rank 14 for TRW S29's mid-season cast growth). Shipped
+  nothing; no file changed, no ledger row touched. Nineteen
+  same-day Rule-3 passes across 2026-08-09/10; five shipped
+  (three extends, one new list, plus the eighteenth pass's
+  `been-here-before` extend noted above), fourteen zero-shipped.
+  This pass's finding narrows the standing headroom claim from the
+  seventeenth pass: extend-first search still has real headroom on
+  *some* lists (per the fifth/eighth/sixteenth/eighteenth passes),
+  but the specific headcount-superlative fact-space this pass
+  worked is itself saturated across every list that touches it,
+  independent of any single list's entry-count ceiling.
 
 ## Notes
 
