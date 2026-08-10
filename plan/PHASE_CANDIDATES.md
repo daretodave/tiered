@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-07-28 at commit 6ce864f7
-> Pass count: 59
+> Last pass: 2026-08-10 at commit ba1eec84
+> Pass count: 60
 
 ## Considered (awaiting promotion)
 
@@ -21,6 +21,81 @@
 **Filed:** <ISO date>
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 60 (2026-08-10, commit ba1eec84, cloud) — 0 new phase-shape
+     candidates filed; escalated candidate #36 with a critical new
+     discovery (a second, older, still-live instance of the-voice's
+     fabricated-finale claim, found in a themed list — see the update
+     appended to #36 above), and separately filed a scoped single-entry
+     AUDIT.md fix (score 7.2) for that instance so `/ship-content` picks
+     it up directly next tick rather than waiting on the full remediation.
+     Window since pass 59 (6ce864f7, 2026-07-28): 13 days / 12 commits
+     since the last CRITIQUE pass (this is the expand window's nearest
+     available commit-count proxy; the raw commit count since pass 59
+     itself is 514, dominated by content-velocity ticks). Both thresholds
+     met (20 commits, 48 hours) by a wide margin.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: season-sweep last ran 2026-08-09, next due
+     2026-08-16 — not due; show-add stays LOCKED (43/44 shows carry a
+     gap, all starred/confirmed-but-unaired per the same-day third
+     re-verification pass, commit ba1eec84). Step 2.0's shipping-mode
+     gate is lifted (Phase 36 [x]); the critique rate-limit's own
+     condition 3 blocked re-dispatch (pass 111's HIGH finding already
+     sits Pending). Step 3a/3b empty. Step 3b.5: the standing Rule 2
+     drain row (score 4.5) was checked — three earlier ticks today
+     already drove two real drains (below-deck-mediterranean S11,
+     americas-got-talent S21) and then exhaustively re-verified all 19
+     remaining un-touched shows with no new drain candidate (commit
+     ba1eec84's own message: "closes out re-verification of essentially
+     the full 43-show board for today"). This tick independently
+     re-checked the two items that pass had flagged as genuinely
+     unresolved (rhoc S20 episode count, the-circle US S8 renewal) via a
+     fresh scout pass rather than re-running the full 43-show sweep a
+     fourth time same-day — both confirmed unchanged, no new information.
+     Treated as content-gap-exhausted-for-today rather than re-dispatching
+     into `/ship-content` a fourth time (the AUDIT row filed this pass is
+     the actual outcome of that diligence, not a no-op). This left Step
+     3c (expand) as the correct dispatch.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): the same 3 rows pass 59
+       already knew about — e2e-full crawl timeout (candidate #34) and
+       night.yml starvation (candidate #35) are both kept current by
+       `/digest`'s daily updates (most recently 2026-08-10 for #34,
+       noting the 07-26→08-08 fourteen-night streak broke once on
+       08-09, structurally inconclusive; 2026-08-06+ for #35, still
+       recurring intermittently) — no fresh reinforcement needed from
+       this pass. The `YEAR_TENURE_RE` teen-number gap (score 2.7)
+       remains below the filing threshold, unchanged.
+     - the-voice corruption (candidate #36, AUDIT score 4.8): re-read in
+       full plus a direct `git log -p` scan of every `content/themes/`
+       commit since pass 59 for `show: the-voice` entries with
+       `season` ≥ 22 — found the closing-statement.md hit documented
+       above. This is the pass's one substantive new signal.
+     - plan/CRITIQUE.md Pending: 57 rows (up from 52 at pass 59). Pass
+       111's 5 new findings (1 HIGH, 3 MED, 1 LOW) all traced to already-
+       filed candidates: the HIGH (the-challenge lede/shape duplicate)
+       and one MED (masterchef-australia softer restatement) nest in
+       candidate #13's cross-surface echo registry; the rhetorical-
+       template-repeat MED (3 of 4 entries on one themed list) is
+       explicitly candidate #13's own scope item (a); the FILMED-stat MED
+       reinforces candidate #28 (same-file stat-tile duplication). No new
+       critique-driven candidate this pass.
+     - GH issues: #762 (the-voice, mirrors candidate #36) and #763
+       (night.yml, mirrors candidate #35) both still open,
+       `triage:needs-user`, unchanged since 2026-08-08 — no new signal.
+     - spec.md / design/: no commits touching either since pass 59.
+     - Candidate #33 (content-gaps gate needs a bug-priority carve-out):
+       this tick's own dispatch (see above — treating an exhausted
+       content-gap queue as "fall through" rather than mechanically
+       re-running `/ship-content`) is a live example of the same friction
+       #33 diagnoses from the other direction (a blocked bug, not an
+       exhausted queue) — noted here as a data point, not fresh filing
+       evidence; #33's own scope already covers this.
+     No new phase-shape candidate filed — the one substantive discovery
+     this pass (the second the-voice fabrication instance) is scoped
+     small enough to ship as a single `/ship-content` tick via the AUDIT
+     row filed alongside this pass, not a phase.
 -->
 
 <!-- Pass 59 (2026-07-28, commit 6ce864f7, cloud) — 1 new phase-shape candidate
@@ -246,6 +321,32 @@ standing Rule 2 season-fill drain row (both touch `content/shows/the-voice/`),
 but the AUDIT row explicitly blocks routine Rule 2 authoring on this show
 until the corruption resolves, so this should ship as its own reviewed
 unit rather than fall out of an ordinary drain tick.
+
+**Update (expand pass 60, 2026-08-10):** confirmed a second live
+instance of the exact same fabricated "series finale" claim, in a
+themed list rather than the show page — `content/themes/closing-
+statement.md`'s `show: the-voice, season: 29` entry (rank 3)
+restates "Fourteen years in, The Voice closes... The season plays
+with the focus a real series finale earns" nearly verbatim to the
+already-documented false claim. Git-blamed to `92d1be9b`
+(2026-07-17), which **predates** the 07-26 discovery entirely — this
+was never caught by the addendum that flagged the one other
+post-discovery violation (`9ec927d9`). Found via `git log -p
+--since=2026-07-28 -- content/themes/` while gathering this pass's
+signals; exactly the cross-catalog reference risk this candidate's
+own scope sketch already named ("cross-check every
+`content/themes/*.md` entry citing `show: the-voice` with season ≥
+22"), now with a second concrete confirmed hit. Filed as a scoped,
+independent single-entry fix — `plan/AUDIT.md` [HIGH, score 7.2],
+not folded into this candidate's own scope, since a deletion (drop
+the entry, renumber ranks) carries none of the renumbering/fact-
+verification risk the full remediation does and doesn't need to
+wait for it. That AUDIT row now outscores every other Pending
+content-gaps row, so the next `/march` Step 3b.5 dispatch should
+pick it up directly. This candidate's own scope (the full 8-file
+remediation) is unchanged and still recommended for a dedicated
+oversight-reviewed session — the new finding raises confidence that
+the live blast radius is larger than one page, not smaller.
 
 ### 34. Shard the e2e-full breadth crawl across parallel Playwright workers
 
