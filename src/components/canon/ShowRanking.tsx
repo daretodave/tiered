@@ -156,6 +156,7 @@ export function ShowRanking({
           <CommunityWeeklyQuestionCard
             question={canon?.weekly_question ?? null}
             votersThisWeek={community.votersThisWeek}
+            hasRankedSeasons={community.entries.length > 0}
           />
         </div>
         {community.entries.length > 0 ? (

@@ -29,6 +29,7 @@ export function CommunityRankList({
   const live = source === 'votes'
   return (
     <div
+      id="community-rank-list"
       className="cp-community-list"
       data-testid="community-rank-list"
       data-source={source}

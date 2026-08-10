@@ -975,6 +975,14 @@
   color: var(--ink-70);
   margin-top: 8px;
 }
+.cp-cq-link {
+  color: var(--show-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cp-cq-link:hover {
+  color: var(--show-ink);
+}
 .cp-cq-cta {
   display: flex;
   flex-direction: column;
