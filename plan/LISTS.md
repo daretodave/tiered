@@ -7710,6 +7710,32 @@ last time a curator actually looked.
   zero-shipped. Next actionable Rule 3 lead is still a new season landing
   (Rule 2 unstalling or a finale-gate drain), not further re-slicing of
   the current 182-list catalog.
+- **2026-08-10 fifteenth same-day pass (cloud march tick, content-curator
+  tick): zero-ship.** Confirmed Rule 2 gap table still fully starred and
+  Rule 3 remains the only live path. Worked six fresh axes suggested by
+  the calling brief, all closed on inspection: (1) runtime/episode-length
+  change stated as its own format shift (distinct from episode-count
+  changes) — grounded via `90-minute episode` at Amazing Race S35/S36
+  and Survivor S45, but only 2 distinct shows, short of the 3-show
+  cross-canon floor; no third hit anywhere in the catalog after a full
+  `minute episode|minute format|minute runtime` grep. (2) secret-identity
+  / undercover-role premise (the Traitors mechanic and its analogs) —
+  already fully shipped as `not-who-they-say-they-are` (craft, 13
+  entries spanning the-circle, traitors, traitors-uk, masked-singer,
+  big-brother); zero headroom. (3) reboot/relaunch marketed as distinct
+  from a straight renewal — saturated catalog-wide (24+ existing theme
+  files already touch it, e.g. `moving-day`, `same-crown-new-price-tag`,
+  `closing-statement`, `best-comeback-seasons`); no clean gap. (4)
+  split-vote/double-vote and (5) team-to-individual scoring-switch and
+  elimination-immunity trade mechanics — zero grounding catalog-wide
+  after targeted greps. (6) professional-athlete-only casting blocks —
+  already spent across `some-casts-didnt-need-week-one` and
+  `one-rule-fills-every-seat` (DWTS) plus survivor-australia's own
+  canon; no third fresh show. Shipped nothing. No ledger row changed.
+  Fifteen same-day Rule-3 passes across 2026-08-09/10; three shipped,
+  twelve zero-shipped. The catalog's saturation at 182 lists remains the
+  dominant failure mode; next actionable Rule 3 lead is still a new
+  season landing.
 
 ## Notes
 
