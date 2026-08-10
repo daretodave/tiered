@@ -7,7 +7,7 @@ category: craft
 sentiment: verdict
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-10
 featured: false
 related:
   - best-finales
@@ -25,58 +25,52 @@ entries:
     rank: 2
     title: "All seven roommates come home for one last summer, and the title says exactly what it is."
     blurb: "MTV brings the original cast back to Seaside Heights for a victory lap instead of a reinvention. Thirteen episodes, the same seven roommates, and a season that knows going in it's the last one."
-  - show: the-voice
-    season: 29
-    season_label: "S29 · The Finale"
-    rank: 3
-    title: "Three veteran coaches anchor the chairs one last time while a new voice joins for a single season."
-    blurb: "Fourteen years in, The Voice closes with Reba McEntire, Michael Bublé, and Adam Levine providing continuity around Kelsea Ballerini's coaching debut. The season plays with the focus a real series finale earns."
   - show: too-hot-to-handle
     season: 6
     season_label: "S06"
-    rank: 4
+    rank: 3
     title: "The most structurally ambitious season doubles as the send-off, alumni included."
     blurb: "A counterpart AI, a reworked prize structure, and two returning alumni make season six the format's biggest swing yet. Billed in advance as the finale season, every twist works to make the ending earn its scale."
   - show: americas-next-top-model
     season: 24
     season_label: "S24 · The Finale"
-    rank: 5
+    rank: 4
     title: "Tyra Banks comes back to close the show the way she opened it."
     blurb: "After one cycle with a different host, Banks returns for a compact, all-domestic finale season. The show's founding face closes out fifteen years on VH1 with more sincerity than the relaunch that preceded it."
   - show: the-real-world
     season: 33
     season_label: "S33 · Atlanta (2019)"
-    rank: 6
+    rank: 5
     title: "The format's oldest opening titles return just as the show lands on an entirely new platform."
     blurb: "The move to Facebook Watch comes with a revived 1990s-style title sequence and a wider casting age range than any prior season. The nostalgia reads as a callback; the platform jump doesn't come billed as a farewell."
   - show: the-circle
     season: 7
     season_label: "S07"
-    rank: 7
+    rank: 6
     title: "The tightest version of the format yet arrives without any goodbye framing at all."
     blurb: "Season seven trims the cast to its smallest size and sharpens the rate-and-block mechanics with a new twist. It plays like a show mid-refinement, not one aware its run is about to close."
   - show: so-you-think-you-can-dance
     season: 18
     season_label: "S18 · The Atlanta Season"
-    rank: 8
+    rank: 7
     title: "A full relocation and an overhauled audition process arrive with no hint of an ending."
     blurb: "Production leaves Los Angeles for Atlanta, auditions move to video-only submission, and judges take over eliminations. Every change reads like a format resetting for its next chapter, not preparing to close one."
   - show: the-apprentice
     season: 15
     season_label: "S15 · The Reboot"
-    rank: 9
+    rank: 8
     title: "A brand-new host and a rebuilt boardroom arrive framed as a beginning, not an ending."
     blurb: "Arnold Schwarzenegger takes over hosting duties for the first time in the show's history, with new titles and a redesigned boardroom signaling a fresh start. It reads like day one of something new — and turns out to be the last."
   - show: below-deck-adventure
     season: 1
     season_label: "S01 · Svalbard"
-    rank: 10
+    rank: 9
     title: "A franchise experiment plays like a normal launch and quietly never gets a second charter."
     blurb: "Below Deck Adventure's lone season carries none of a farewell's usual signals — a new vessel, a new climate, a captain proving himself in Arctic waters. No reinvention narrative, no advance notice. The format just doesn't come back for a second season."
   - show: rhod
     season: 5
     season_label: "S05 · The Closing Chapter"
-    rank: 11
+    rank: 10
     title: "Bravo bills the season as the franchise's goodbye, then an off-camera story defines the ending instead."
     blurb: "Season five returns all five Housewives plus one new addition for what Bravo billed at the time as RHOD's last season. A resurfaced-clip controversy draws outside press attention no earlier season saw, and the send-off ends up defined by noise, not nostalgia."
 ---
