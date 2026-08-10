@@ -133,6 +133,30 @@ Row removed below — americas-got-talent fully drained at 21/21.
 **43 shows now carry a gap · 44 gap-slots total** (42 shows × 1
 deferred slot each, +1 extra deferred slot on `hells-kitchen`).
 
+**Rule 2 pick, 2026-08-10 tick (cloud march, third pass same
+day):** re-verified 19 shows across the gap table not already
+covered by the two earlier picks above or the 2026-08-09 sweep's
+"no change, re-confirmed" list: `rhom`, `southern-charm`,
+`vanderpump-rules`, `ink-master`, `traitors`, `bachelor-in-
+paradise`, `top-chef`, `married-at-first-sight-australia`,
+`the-circle`, `dragrace-uk`, `rhoc`, `bake-off`, `alone-
+australia`, `traitors-uk`, `selling-sunset`, `summer-house`,
+`rhop`, `rhoslc`, `masterchef` (US). Every one confirmed still
+correctly starred — no season crossed into concluded territory.
+Two near-misses worth noting for future ticks: `top-chef` S23's
+finale aired 2026-06-08 but is already filed (`23-carolinas.md`,
+`seasons: 23` matches); `rhoc` S20 premiered 2026-07-09 and is
+mid-run (3-4 of an unconfirmed episode count aired, remaining
+dates TBA per Wikipedia — re-verify once the episode table
+firms up, likely September). `the-circle` (US) S8 renewal
+status is genuinely unresolved in public reporting (conflicting
+Hulu-move vs. quiet-cancellation signals, no confirmed date
+either way) — stays starred, re-verify when a decision surfaces.
+No table action this tick; gap unchanged at 43/44. Combined with
+the two 2026-08-10 drains above, this closes out re-verification
+of essentially the full 43-show board for today — the next
+actionable check is the 2026-08-16 weekly sweep.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
