@@ -2,7 +2,7 @@
 show: below-deck-mediterranean
 number: 9
 title: "Athens"
-canonical_position: 7
+canonical_position: 8
 premiere_date: "2024-06-03"
 location: "Athens, Greece"
 host: "Sandy Yawn"

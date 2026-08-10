@@ -86,6 +86,34 @@ into concluded territory; no drain this tick. Gap table unchanged
 at 27 shows / 28 gap-slots. Next actionable check is the weekly
 sweep, due 2026-07-26 (tomorrow), which re-covers the full board.
 
+**Rule 2 pick, 2026-08-10 tick (cloud march):** re-verified the two
+nearest candidates flagged airing by the 2026-08-09 fifth sweep.
+`alone` S13 "World Championship" confirmed still airing (premiere
+2026-06-17, 11 episodes, finale 2026-08-26) — stays deferred.
+`below-deck-mediterranean` S11 confirmed still airing (premiere
+2026-06-08, 12 episodes per a corrected weekly-cadence read, 10
+aired as of this tick, finale 2026-08-24) but its production facts
+— new M/Y Akira One, returning Sandy/Aesha/Nathan/Joe crew nucleus,
+new Chef Joy Lefaucheur, Dubrovnik location callback to the
+franchise's Season 2 peak — are independently confirmed (Bravo's
+own crew-bio page + Wikipedia + trade press), the same bar the
+2026-08-09 tick applied to drain masterchef-australia S18 mid-air.
+DRAINED this tick: Season 11 filed
+(`content/shows/below-deck-mediterranean/seasons/11-dubrovnik-ii.md`),
+canon rebased (S11 inserted at rank 7 — strong location argument,
+cast chemistry still unproven this early — Athens/Montenegro/
+Italian Riviera/Mallorca each shifted +1), show frontmatter bumped
+`seasons: 10` → `11` (blurb/card_tagline counts corrected to match).
+`the-challenge` S42 "Cutthroat" (premiered 2026-08-05) was also
+checked — confirmed premiere date, Bangkok/Thailand location, cast
+size, host, and the season's rotating-captain format twist, but
+episode count and finale date are NOT yet published by any source
+(too early post-premiere) — stays deferred pending a full episode
+order. Row removed below — below-deck-mediterranean fully drained
+at 11/11. **44 shows now carry a gap · 45 gap-slots total** (43
+shows × 1 deferred slot each, +1 extra deferred slot on
+`hells-kitchen`, +1 extra slot on `top-chef`).
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
@@ -230,7 +258,6 @@ new-show creation is locked to the biweekly show-add clock.
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
 | hells-kitchen | 24/26 | 2* |
-| below-deck-mediterranean | 10/11 | 1* |
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | 90-day-fiance | 11/12 | 1* |
