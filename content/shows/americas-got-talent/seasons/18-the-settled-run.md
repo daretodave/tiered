@@ -5,7 +5,7 @@ title: "The Settled Run"
 premiere_date: 2023-05-30
 location: Hollywood, California
 host: Terry Crews
-canonical_position: 19
+canonical_position: 20
 eyebrow: "Aired summer 2023 · third consecutive year, same four-person panel"
 lede: "Season eighteen is the third full run of the Cowell-Klum-Vergara-Mandel configuration. The panel has developed real shorthand, the format runs in a practiced shape, and the open-call audition pool delivers familiar range without the friction that makes any of it feel urgent."
 pull: "Three years of the same panel produces the most competent and least surprising version of this era — the format works, and that is enough."
