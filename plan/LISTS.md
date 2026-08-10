@@ -7561,6 +7561,73 @@ last time a curator actually looked.
   vote-channel-specific language, no hits this pass. Shipped nothing.
   No ledger row changed. Ten same-day Rule-3 passes today; three
   shipped, seven zero-shipped.
+- **2026-08-09 eleventh same-day pass (content-curator tick): zero-ship.**
+  Re-confirmed the three known below-floor lists are all still dead:
+  `the-vote-left-the-phone-line` (era, 8/8, standing note explicitly bars
+  re-surfacing SYTYCD S08 — not touched); `one-season-two-flags`
+  (structure, 9/9, re-checked twice on 2026-08-05, no 10th candidate
+  found today either); `the-pitch-names-where-the-idea-came-from` (craft,
+  3/3, re-chased for a 4th entry twice already today via
+  `borrowed from|inspired by|modeled (on|after)`-style greps — ran a
+  third pass on fresh patterns (`styled after|copies the format|
+  -style twist|-style premise|essentially a|its own version of|a page
+  from` and separately `borrowed from|borrows (the|a|its)|credited
+  (to|as)|takes its cue from`) and found nothing new: every hit was
+  either the already-shipped Bachelor in Paradise S08 Casa Amor
+  entry, or a self-referential intra-franchise "borrows from its own
+  earlier season" fact (Real World S31 borrowing from its own
+  Challenge/Road Rules spinoffs — already rejected 2026-08-09 first
+  pass; Big Brother S13 and Top Chef S13 both cite the *same
+  franchise's own earlier season*, not a different show; ANTM S01
+  is the one being borrowed *from*, not doing the borrowing) — none
+  is a genuine cross-franchise credit, so the list stays parked at 3.
+  Read all ten prior same-day passes' logged dead ends and skipped
+  every one of them. Worked four fresh, previously-untried axes: (1)
+  **back-to-back season production overlap** ("filmed back-to-back
+  with Season N," a season's own copy stating it shot immediately
+  before or after an adjacent season) — grepped
+  `back-to-back|filmed together|shot back to back|filmed
+  concurrently|same shoot|back to back with|in tandem with|same
+  production block` across every season file; found three genuinely
+  grounded, unstaked hits (The Circle S02 "filmed back-to-back with
+  Season 3," The Circle S07 "filmed... back-to-back with Season 6,"
+  Queer Eye S07 New Orleans "filmed back-to-back with the season
+  that follows") but only 2 distinct shows — short of the 3-show
+  cross-canon floor even after broadening the grep twice more
+  (`back to back season|two seasons in one|double season shoot|
+  filmed both seasons|shot two seasons`, zero further hits
+  catalog-wide). (2) **two-night weekly premiere cadence as a
+  season's own structural first** (distinct from `best-premieres`'
+  format-statement thesis) — grepped `two-night|two night premiere|
+  back-to-back premiere nights|premieres across two nights`; the
+  only hit, Dancing with the Stars S02's performance-night/
+  results-night cadence, is single-show only. (3) **reunion filmed
+  at a distinct destination/location** (an angle `best-reunion-
+  specials`, sitting exactly at the 10-entry floor, could have
+  used) — grepped `reunion.{0,40}(filmed|held|staged).{0,40}
+  (location|resort|destination|island|stage)` across every season
+  file; zero hits catalog-wide. (4) **sibling/twin contestant
+  pairs as a season's own casting fact** (distinct from the
+  parent-child axis the fourth same-day pass already closed) —
+  grepped `real-life siblings|brother and sister compete|twin
+  sisters|twin brothers|siblings compete`; the only hit, Top Chef
+  S23's "twin brothers" cast-size caption, is single-show and too
+  thin (a caption fragment, not a season-defining fact). Also
+  independently re-verified a fifth lead, 90 Day Fiancé S04's
+  concurrent-spinoff-launch timing, is already staked verbatim at
+  `the-franchise-started-borrowing-from-itself` rank 1 ("airs the
+  same month TLC launches the franchise's first spinoff") — not
+  fresh ground. None of the five leads worked this pass cleared the
+  excellence gate: three failed the 3-distinct-show floor with real
+  grounding (back-to-back filming, two-night cadence, sibling
+  casting), one found zero grounding catalog-wide (reunion
+  destination), and one was already shipped. Shipped nothing. No
+  ledger row changed. Eleven same-day Rule-3 passes today; three
+  shipped, eight zero-shipped. The 181-list ledger's saturation at
+  current density continues to hold; the next actionable Rule 3
+  lead remains a new season landing (Rule 2 unstalling, or a
+  finale-gate drain) rather than further re-slicing of already-mined
+  seasons.
 
 ## Notes
 
