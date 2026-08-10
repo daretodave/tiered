@@ -20,11 +20,11 @@ watch_list:
   - episode_label: "On-air auditions return"
     body: "Auditions move back on camera for the first time since series thirteen. Forty hopefuls compete across three broadcast episodes for twenty-four spots on the bench — a structural return the format hasn't used in five years."
   - episode_label: "A panel three seasons in"
-    body: "Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin enter this season as an unchanged four — the format's longest-serving lineup without a single swap. Watch for how quickly a fully settled panel locks into its rhythm."
+    body: "Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin return as the same four for a third straight season — no swaps, no additions. Watch for how quickly a panel this settled finds its rhythm."
   - episode_label: "A dense run of themed weeks"
     body: "Family Favorites, Global Week, Nostalgia Week, Masters Week, and more stack through the middle of the run. The season leans on format variety rather than a single unifying gimmick to carry sixty episodes."
   - episode_label: "A wide guest roster"
     body: "Maggie Beer, Rick Stein, Curtis Stone, Adriano Zumbo, and Marion Grasby all appear this season, alongside a high-profile Finals Week guest judge — one of the broadest guest lineups the format has assembled in a single run."
 ---
 
-Season eighteen runs the format's standard shape: an open nationwide search, no returnee premise, no subtitle. The panel enters its third season unchanged — the format's longest-serving lineup — anchoring a run that also brings the audition process back on camera after five years away. A dense run of themed weeks and a wide guest roster carry the middle of the run.
+Season eighteen runs the format's standard shape: an open nationwide search, no returnee premise, no subtitle. A fully settled panel means no shake-in period this time — judging chemistry lands steady from episode one, with the audition process itself back on camera after five years away. A dense run of themed weeks and a wide guest roster carry the middle of the run.
