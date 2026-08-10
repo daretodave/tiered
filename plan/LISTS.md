@@ -7767,6 +7767,96 @@ last time a curator actually looked.
   already exhausted by fifteen prior passes today — is what found the
   open ground this time; a future pass stuck on axis-search should try
   the same move first.
+- **2026-08-10 seventeenth same-day pass (content-curator tick, new-list
+  mandate — extends explicitly out of scope this pass): zero-ship.**
+  Re-confirmed the Rule 2 gap table still fully starred before falling to
+  Rule 3, and re-read all sixteen prior same-day passes' logged dead ends
+  in full before starting so none were re-walked. Worked ten fresh axes
+  not named in any prior same-day pass log: (1) **a season's own copy
+  stating the network deliberately scheduled its premiere behind a
+  built-in mega-audience event** (distinct from
+  `the-calendar-moved-the-format-didnt`'s voluntary-slot-with-no-external-
+  driver thesis) — grepped `premier\w* (immediately )?(right )?after|
+  scheduled (directly |immediately )?(behind|after)|dropped behind` across
+  every season file and found genuine, strong grounding, but only inside
+  one show: Survivor S02 "The Australian Outback" and S08 "All-Stars"
+  both explicitly cite a CBS post-Super Bowl premiere slot in their own
+  `lede`/`watch_list` text (S02: "the post-Super Bowl premiere... week one
+  drew over forty million viewers"; S08: "dropped behind Super Bowl
+  XXXVIII... CBS slotted the premiere right after the Super Bowl").
+  Broadened to a looser lead-in-scheduling thesis and found one more
+  candidate, Amazing Race S10 ("CBS held the show in the Sunday hour
+  through the fall, leaning on the post-football lead-in for steady
+  numbers") — a recurring-weekly-slot fact, not a single premiere-night
+  event, and a materially thinner match for the thesis. A full
+  `Super Bowl|Grammy|Oscars|Golden Globes|Macy's|Rose Parade|New Year's
+  Day|Emmys|60 Minutes|lead-in|counter-program` sweep across every other
+  show's season files (Big Brother, American Idol, The Voice, AGT, DWTS,
+  Masked Singer, Shark Tank, Top Chef included) turned up zero further
+  scheduling-strategy hits — DWTS S23's "opened weeks after the Rio
+  Olympics" is a casting-freshness fact (cast members' Olympic
+  performances still fresh in public memory), not a lead-in-scheduling
+  fact, a different claim on inspection. Two shows, one of them a thin
+  fit — short of the 3-distinct-show cross-canon floor for `craft`, and
+  too thin (2 entries) to stand alone as a `category: single` Survivor
+  list even under this ledger's tight-list precedent. (2) **a past
+  winner or alumnus crossing to the judges'/mentors' side of the table**
+  — real, well-grounded hits (Shark Tank S10's first former-contestant
+  guest shark, MasterChef Australia S11's three former-contestant
+  mentors replacing Shannon Bennett) but the entire angle is already
+  fully shipped as `the-other-side-of-the-table` (craft, 12 entries / 8
+  shows, `status: growing`) — confirmed via a full read of that file;
+  a new list here would run near-total thesis overlap, and extending it
+  is explicitly out of scope for this pass's new-list mandate. (3)
+  **sponsor / branded-challenge / "presented by" language** — zero hits
+  catalog-wide. (4) **showrunner / executive-producer / new-production-
+  company change stated as the season's own fact** — exactly one hit
+  (So You Think You Can Dance S17), short of the floor. (5) **live-
+  studio-audience debut or removal** — real hits (SYTYCD S16's first
+  live audience for televised auditions, AGT S15/S16's pandemic
+  audience loss/return, DWTS S29/S30) but fully saturated across
+  `pandemic-seasons`, `who-actually-got-the-vote` (SYTYCD S17's
+  studio-only vote mechanic already staked there), and
+  `the-other-side-of-the-table` (DWTS S30's Alfonso Ribeiro, a former
+  champion, joining the hosting desk — the identical winner-crosses-the-
+  line fact already covered by axis 2 above). (6) **production
+  disruption via a natural-disaster evacuation or relocation** —
+  grepped `hurricane|typhoon|wildfire|evacuat|relocated (production|
+  filming)` catalog-wide; exactly one hit (The Real World S24's
+  post-Katrina rebuilding-work premise, and even that isn't a
+  mid-shoot evacuation), nowhere near the floor. (7) **a visible
+  budget-scale jump or drop stated as the season's own fact** — real,
+  multi-show grounding (Drag Race S01/S04/S10, Drag Race UK S01,
+  ANTM S01, The Real World S10, Amazing Race S01, Chopped S61) but on
+  inspection every hit is a facet of the already-thoroughly-mined
+  founding-season-rough-draft thesis (`firsts`, `no-template-to-copy`,
+  `season-one-doesnt-own-every-first`) or an existing network-move
+  entry (`the-workroom-outlasted-the-network` for Drag Race S10) — no
+  clean, unduped angle left standing on its own. (8) **a stated
+  cinematography/format shift** (drone footage, aspect ratio, HD/4K) —
+  one incidental hit (Survivor S10 Palau, a passing aside, not a
+  season-defining claim), zero floor. (9) **a season's own copy
+  crediting a non-competition source by name** (a movie, video game,
+  or board game as a format's stated inspiration, distinct from
+  `the-pitch-names-where-the-idea-came-from`'s rival-reality-franchise-
+  only scope) — zero hits catalog-wide. (10) **zero-single-list show
+  census, re-derived independently from frontmatter and the ledger's
+  76 single-category files** — cross-checked against the pool of shows
+  with no `category: single` entry and confirmed, independently, the
+  same result the ninth same-day pass logged: every such show is
+  already pre-rejected as over-staked elsewhere or structurally
+  ineligible (single-season spinoffs, or a majority-veteran baseline
+  that makes a "returnee" angle unclear). None of the ten axes cleared
+  the excellence gate for a brand-new list. Shipped nothing. No ledger
+  row changed. Seventeen same-day Rule-3 passes across 2026-08-09/10;
+  four shipped (three extends, one new list — `the-calendar-moved-the-
+  format-didnt`), thirteen zero-shipped. The catalog's saturation at
+  182 lists is, on this pass's independent re-derivation, a real and
+  current ceiling for brand-new-list search specifically (as opposed to
+  extend-first search, which the fifth/eighth/sixteenth passes above
+  each found headroom for); the next actionable **new-list** lead is a
+  new season landing (Rule 2 unstalling, or a finale-gate drain), not
+  further re-slicing of the already-mined 182-list catalog.
 
 ## Notes
 
