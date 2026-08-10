@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-08-10
 featured: false
 related:
   - best-challenge-design
@@ -97,4 +97,10 @@ entries:
     rank: 14
     title: "A rebuilt finale hands the whole eliminated cast one last shot at the crown."
     blurb: "Season eighteen scraps the usual top-two lip sync and runs a full tournament for everyone the show already sent home, right before the final round. Nearly the entire cast gets a genuine route back into contention at the season's biggest moment."
+  - show: americas-got-talent
+    season: 21
+    season_label: "S21"
+    rank: 15
+    title: "A new Judges' Callbacks round gives select acts a second chance at reaching the live shows."
+    blurb: "The same four-judge panel returns for year two, but a new mechanic sits underneath it — acts that don't clear an earlier round outright can get pulled back for one more shot at the judges before the live-show cutoff arrives."
 ---
