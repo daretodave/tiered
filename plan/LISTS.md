@@ -7628,6 +7628,43 @@ last time a curator actually looked.
   lead remains a new season landing (Rule 2 unstalling, or a
   finale-gate drain) rather than further re-slicing of already-mined
   seasons.
+- **2026-08-10 twelfth same-day pass (cloud march tick, content-curator
+  tick): zero-ship.** Re-confirmed the gap table (regenerated
+  2026-08-09) has all 43 gap-slots starred — Rule 2 stalled, Rule 3
+  owns this tick. Re-checked the three known below-floor lists first,
+  per the excellence gate's own precedence: `the-vote-left-the-phone-line`
+  (era, 8/8, standing note still bars SYTYCD S08); `one-season-two-flags`
+  (structure, 9/9, no 10th candidate found across three fresh greps);
+  `the-pitch-names-where-the-idea-came-from` (craft, 3/3, re-chased for a
+  4th entry via broadened `borrowed from`/`inspired by`/`modeled on`/
+  `-style twist`/`credited (to|as)`-style patterns — every hit is either
+  already shipped or a self-referential intra-franchise borrow, not a
+  genuine cross-franchise credit). All three remain dead ends. Worked
+  seven fresh leads not logged in any prior same-day pass: (1) HD/4K
+  broadcast as a season's own stated first — one genuine hit (SYTYCD
+  S07), short of the 3-show floor; (2) double-elimination episode as a
+  structural first — no season-level grounding found; (3) all-female /
+  all-male judging-panel composition as a milestone — zero hits
+  catalog-wide; (4) mid-season structural rupture (rule/command change
+  partway through a season) — three genuinely distinct-show hits
+  (Hell's Kitchen S11, MAFS Australia S06, Below Deck S10) looked
+  promising but every fact turned out already staked verbatim elsewhere
+  (`tried-once-never-repeated` rank 12, `the-reshuffle-stays-in-house`
+  rank 1) or too thin to carry a season-defining claim; (5) Emmy/award
+  language as a season's own stated fact — zero hits catalog-wide; (6)
+  real-life couple cast among strangers as a pre-existing-relationship
+  twist — zero hits catalog-wide; (7) masterchef-australia S18's
+  remaining unstaked facts (the season filed same-day via the finale-gate
+  drain) — re-confirmed via the ledger's own audit trail that all three
+  groundable facts from this season (on-air-auditions return, unchanged
+  panel, guest-roster breadth) were already mined and exhausted across
+  three separate passes yesterday. None of the seven cleared the
+  excellence gate. Shipped nothing. No ledger row changed. Twelve
+  same-day Rule-3 passes across 2026-08-09/10; three shipped, nine
+  zero-shipped. The 182-list ledger's saturation at current density
+  continues to hold; the next actionable Rule 3 lead remains a new
+  season landing (Rule 2 unstalling, or a finale-gate drain) rather than
+  further re-slicing of already-mined seasons.
 
 ## Notes
 
