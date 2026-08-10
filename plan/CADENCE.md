@@ -182,6 +182,36 @@ correctly starred. No table action this tick; gap unchanged at
 row has now been re-verified within the last three weeks; next
 actionable check remains the 2026-08-16 weekly sweep.
 
+**Rule 2 pick, 2026-08-10 tick (cloud march, fifth pass same
+day):** re-verified the 8 gap-table shows not yet touched by any
+earlier pass today: `survivor`, `rhoa`, `the-voice`, `big-brother`,
+`project-runway`, `married-at-first-sight`, `shark-tank`,
+`love-island-us`. Zero crossed into concluded territory. Nearest
+finales: `rhoa` S17 2026-08-23; `married-at-first-sight` S20
+"Seattle" 2026-08-27 (Peacock original, frontmatter already
+correct); `project-runway` S22 2026-09-10; `big-brother` S28
+2026-10-01. Same-tick fact fix surfaced during research:
+`project-runway`'s `network` frontmatter still read "Bravo" even
+though the already-filed Season 21 (`21-new-york-2025.md`) and
+`canon.md`'s own `meth_when_p` documented the Bravo-to-Freeform
+move as the show's most recent network shift — corrected to
+"Freeform" to match the show's own canon. `survivor` S51 ("The Open Era"),
+`the-voice` S30 (new coaches Queen Latifah + Riley Green), and
+`shark-tank` S18 haven't premiered yet (all three land late
+September 2026). One numbering question resolved as a non-issue:
+scout flagged `love-island-us` S9's premiere date as unconfirmed,
+which would have implied the "8/9, 1*" gap row is wrong (show
+already fully filed at 8/8) — cross-checked against this file's
+own 2026-07-19 sweep research (line ~477: Season 9 confirmed,
+premieres 2027-06-16, 37 episodes, casting open) and the filed
+`content/shows/love-island-us/seasons/08-fiji-2026.md` (premiere
+2026-06-02, 35 episodes, matches frontmatter `seasons: 8` exactly)
+— the row is correct as starred, not a stale-count error. No table
+action this tick; gap unchanged at 43/44. This closes out full
+re-verification of the entire 43-show board within the last three
+weeks for the second time today; next actionable check remains the
+2026-08-16 weekly sweep.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
