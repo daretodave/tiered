@@ -157,6 +157,31 @@ the two 2026-08-10 drains above, this closes out re-verification
 of essentially the full 43-show board for today — the next
 actionable check is the 2026-08-16 weekly sweep.
 
+**Rule 2 pick, 2026-08-10 tick (cloud march, fourth pass same
+day):** re-verified the 14 shows whose last confirmation predated
+today's board — all last touched by the 2026-07-19 sweep's "no
+change, re-confirmed" list, now three weeks stale: `amazing-race`,
+`rhony`, `love-island-uk`, `dancing-with-the-stars`, `rhonj`,
+`below-deck`, `love-is-blind`, `american-idol`, `masked-singer`,
+`below-deck-down-under`, `90-day-fiance`, `american-ninja-warrior`,
+`hells-kitchen`, `bachelor`. Zero crossed into concluded territory.
+Most haven't even premiered their pending season yet — several
+(`american-idol` S25, `masked-singer` S15, `bachelor` S30) have
+slipped a full year or more past original expectations. Two are
+close but not there: `90-day-fiance` S12's finale airs 2026-08-16
+(six days out); `american-ninja-warrior` S18's National Finals
+began airing today, still multiple weeks from a finale. One
+numbering question resolved as a non-issue: scout flagged that
+`love-island-uk`'s ITV numbering might put the currently-filed
+season out of sync with the "confirmed but unaired" S14 row —
+cross-checked against `content/shows/love-island-uk/seasons/
+13-summer-2026.md` and confirmed it already correctly covers the
+June–July 2026 series ITV calls series 13; S14 (summer 2027) stays
+correctly starred. No table action this tick; gap unchanged at
+43/44. Between this pass and the third pass above, every gap-table
+row has now been re-verified within the last three weeks; next
+actionable check remains the 2026-08-16 weekly sweep.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
