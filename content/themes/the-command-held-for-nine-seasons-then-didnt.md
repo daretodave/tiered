@@ -1,13 +1,13 @@
 ---
 slug: the-command-held-for-nine-seasons-then-didnt
-title: "The command held for nine seasons, then didn't."
-description: "Below Deck Mediterranean has run under Captain Sandy Yawn's command for nine of its ten seasons. The tenth ran under someone else entirely, and it turns out to be the sharpest evidence for how much that authority actually matters."
-tagline: "Nine of Below Deck Mediterranean's ten seasons answer to Captain Sandy Yawn's command, and one answers to someone else entirely. <b>This ranks all ten by how much that authority actually shaped what happened aboard, using the one exception as the control.</b>"
+title: "The command held for ten seasons, then didn't."
+description: "Below Deck Mediterranean has run under Captain Sandy Yawn's command for ten of its eleven seasons. The other ran under someone else entirely, and it turns out to be the sharpest evidence for how much that authority actually matters."
+tagline: "Ten of Below Deck Mediterranean's eleven seasons answer to Captain Sandy Yawn's command, and one answers to someone else entirely. <b>This ranks all eleven by how much that authority actually shaped what happened aboard, using the one exception as the control.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-08-10
 featured: false
 related:
   - the-charter-map-as-the-whole-story
@@ -62,15 +62,21 @@ entries:
     title: "Command holds while the cast takes its time finding friction"
     blurb: "Captain Sandy's authority carries the Riviera run through a cast that needs most of the season to generate real friction. The command never wavers — it's just working harder than usual to have something worth holding together."
   - show: below-deck-mediterranean
+    season: 11
+    season_label: "S11 · Dubrovnik II"
+    rank: 9
+    title: "The authority has history with this crew; the room around it doesn't."
+    blurb: "Captain Sandy returns to Dubrovnik with three seasons of established trust in her closest crew, even as nearly everyone else aboard meets her command for the first time. The clearest recent test of whether that trust travels to a mostly new room."
+  - show: below-deck-mediterranean
     season: 1
     season_label: "S01 · Montenegro"
-    rank: 9
+    rank: 10
     title: "The first test of an authority that hadn't been established yet"
     blurb: "The origin season is where Captain Sandy's command authority gets built in real time, alongside a crew hierarchy that's still sorting itself out. Rough by necessity — every later season's command dynamic answers to this one."
   - show: below-deck-mediterranean
     season: 4
     season_label: "S04 · Mallorca"
-    rank: 10
+    rank: 11
     title: "Reliable command, a season that never asks it to prove anything"
     blurb: "Captain Sandy runs a clean, functional charter season through Mallorca and Ibiza, but the cast never generates friction sharp enough to test her authority. The weakest showcase for the format's central throughline, even if not the weakest season overall."
 ---
