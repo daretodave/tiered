@@ -4,153 +4,152 @@
 > `.github/workflows/night.yml`). Overwritten whole each tick;
 > history lives in git.
 
-# DIGEST — 2026-08-09
+# DIGEST — 2026-08-10
 
 ## Headline
 
-**The loop partially self-healed since the last briefing, but a
-different gate got worse.** The 2026-08-06 digest's crisis —
-`/critique` locked out by 2 Pending HIGH rows, `/iterate` and
-`/expand` starved by the content-gate — resolved itself without
-`/oversight` promoting candidate #33: both HIGH rows got fixed
-(mobile `.ep-foot` overflow, community-view `og:image`), which
-reopened `/critique`'s own rate-limit condition, and it ran three
-more times (passes 106, 107, 108) in the 3 days since, alongside 6
-`fix:` commits. Pass 108 (today) filed a fresh Pending HIGH —
-the community weekly-question card's non-interactive CTA, now
-confirmed systemic across two shows — so the same lockout risk is
-live again pending the next `/iterate` tick. Meanwhile **night.yml
-starvation (candidate #35) got worse, not better**: 08-07 and
-08-08 were both cancelled back-to-back, the first time two
-consecutive nights have been lost since diagnosis, producing this
-digest's own 3-day gap. `e2e-full` posted its **20th consecutive
-red night** (07-20 through 08-08), still the same duration-ceiling
-breach (candidate #34, unpromoted 19 days). The-voice factual
-corruption (candidate #36) remains live and unfixed. Deploy's
-green at HEAD (d962d3d8).
+**Two of yesterday's three open fires cooled overnight; the third
+is holding steady, not worsening.** `e2e-full` broke its
+9-consecutive-red streak (07-31 through 08-08) with a clean
+**success** on 2026-08-09 — the duration-ceiling breach candidate
+#34 has been tracking didn't recur last night, though one clean
+run isn't proof the sharding fix is unnecessary. `night.yml`'s
+starvation race (candidate #35) also held: after the first-ever
+two-in-a-row loss (08-07, 08-08), 08-09 got through clean and
+tonight's tick (this one) is running now — no new cancellation
+since the scare. The community weekly-question CTA Pending HIGH
+that reloaded `/critique`'s lockout risk yesterday got fixed same
+day (3ed3c5da, confirmed via `0c197516`), so `plan/CRITIQUE.md`
+carries **zero Pending HIGH rows** this morning — the lockout
+mechanism candidate #33 worries about isn't currently loaded.
+What hasn't moved: the-voice factual corruption (candidate #36)
+is still live in production, and Rule 3's idea pool is showing
+real strain — **15 same-day zero-ship passes since midnight**,
+the last five in a row (11th–15th). Deploy's green at HEAD
+(0f057691).
 
 ## While you were out
 
 | Window | Ticks | Outcome |
 |---|---|---|
-| 2026-08-06 11:20 → 2026-08-09 10:47 (3 days, 107 `march` runs) | 107 | 91 `success`, 5 `failure` (self-healed on retry, no issue filed), 11 `cancelled` |
-| Commits since last digest (100788b6) | 113 | 56 `audit:`, 44 `content:`, 6 `fix:`, 4 `critique:`, 1 `triage:`, 1 `sweep:`, 1 `docs:` — non-content share climbed from 0% (08-06 digest) to ~9.7% |
-| `night` (digest) | 3 daily triggers | 08-07 **cancelled**, 08-08 **cancelled** (starvation, candidate #35 — two in a row, first time since diagnosis) — this digest was frozen on the 08-06 snapshot for 3 days; 08-09 (this tick) got through |
-| `e2e-full` breadth crawl | 3 nights (08-06, 08-07 ×2, 08-08) | All `failure` — same duration-ceiling breach, catalog now 10,510 tests (single worker), 20 consecutive red nights total (07-20 → 08-08) |
+| Last 26h, `march` | 40 runs | 36 `success`, 4 `cancelled` (concurrency evictions — expected self-overlap, not failures) |
+| Commits since last digest (7fd803a6) | 43 | 27 `audit:`, 12 `content:`, 2 `critique:`, 1 `fix:`, 1 `digest:` |
+| `night` (digest) | 1 daily trigger | 08-09 **success**, this tick (08-10) **in progress** at time of writing — no cancellation since the 08-07/08-08 pair |
+| `e2e-full` breadth crawl | 1 night (08-09) | **success** — first green run since 07-30, breaking a 9-night red streak |
 | `pnpm deploy:check` at HEAD | — | `ready` |
 
 ## The saga
 
-Rule 2 (season-fill drain) stays fully starred-out in
-`plan/CADENCE.md` — the 2026-08-09 weekly sweep (due today, ran
-on schedule) found 1 new confirmed-but-unaired season (Top Chef
-S24) and re-flagged Chopped's recurring S63/S64 false-positive
-without reopening it; gap moved 46→47, still zero actionable
-picks. Rule 3 (themed lists) carried the content window: 48
-Rule-3 audit passes logged, 30 zero-ship — a ~62% zero-ship rate
-on a maturing 180+-list ledger, consistent with prior weeks.
-Non-Rule-3 content also shipped this window: a MasterChef
-Australia S18 season backfill, and a three-show card_tagline/
-tagline-overlap drain (rhoa, rhonj, bachelor — issue #394
-reference) closing out a defect class critique had flagged.
+Rule 2 (season-fill drain) stays fully starred-out — the
+2026-08-09 weekly sweep found the gap table's 47 remaining
+seasons all confirmed-but-unaired, no actionable pick; next sweep
+due ~2026-08-16. MasterChef Australia S18 concluded (finale
+2026-08-09) and got its finale-shift note same-day (fdb5e78d),
+closing that AUDIT row within hours of airing. Rule 3 (themed
+lists) carried today's window but is visibly thinning: since
+midnight, 15 same-day audit passes logged, only 4 shipped content
+(best-post-merge, the-calendar-moved-the-format-didnt,
+the-season-the-audience-showed-up-all-at-once, plus one extend),
+and the most recent five passes in a row (11th–15th) found nothing
+to ship — the deepest same-day zero-ship run logged yet. Two
+content-repair commits also landed outside Rule 3: an
+anonymization-convention break in
+the-anchor-count-set-the-ceiling, and a panel-continuity echo fix
+on the MasterChef Australia open-call entry, both caught by the
+same-day audit loop rather than a dedicated critique pass.
 
-Next weekly season sweep due ~2026-08-16. Rule 1 (new-show add)
-stays LOCKED until the gap table reads a literal zero.
+Non-content share held at a healthy ~9% today (1 critique pass,
+1 fix, alongside the content work) — the content-gate did not
+behave as "absolute" today, consistent with the 08-09 self-
+recovery finding, not the 08-06 lockout scare.
 
 ## Queues now
 
-- `plan/AUDIT.md`: 5 Pending rows (down from 7 at the 08-06
-  digest — 2 LOW housekeeping rows resolved). 2 HIGH (the-voice
-  factual corruption — live false "show has ended" claim,
-  candidate #36; night-shift starvation — now recurred worse,
-  candidate #35), 2 MED (e2e-full duration-ceiling, candidate
-  #34, now 20 consecutive red nights; the standing Rule 2 drain
-  row, correctly starved of actionable work), 1 LOW housekeeping
-  row (`YEAR_TENURE_RE` teen-number gap).
-- `plan/CRITIQUE.md`: last pass **108**, today (2026-08-09) —
-  fresh, cloud loop self-recovered. 1 Pending HIGH (community
-  weekly-question card CTA, systemic to `/shows/[show]?view=
-  community`, filed pass-106 and confirmed on a second show at
-  pass-108) — this row alone will re-block `/critique`'s Step 2
-  condition 3 until `/iterate` clears it, same mechanism as the
-  08-06 crisis.
-- `plan/PHASE_CANDIDATES.md`: last pass 59, 2026-07-28 — **12
-  days stale**, `/expand` still effectively starved by the
-  content-gate. 4 fully-scoped unpromoted candidates unchanged
-  in shape: #33 (content-gate bug-priority carve-out — evidence
-  now softer than 08-06's worst case, see Tuning proposals),
-  #34 (shard e2e-full, 19 days), #35 (decouple night.yml
-  concurrency, 13 days, now worse — two consecutive losses),
-  #36 (the-voice remediation, 14 days).
-- `triage:needs-user`: 7 open issues — 3 new since 08-06 (#758
-  content-gate starvation, #762 the-voice corruption, #763
-  night.yml starvation — both #762/#763 are GitHub mirrors of
-  existing AUDIT rows #631/#632, filed via the escape-route
-  mechanism noted in those rows), plus the same 4 stale
-  infra-crash reports (#586, #565, #399, #398).
-- `triage:loop-queued`: 2 open issues (#754 themed-list Rule-3
-  pass 22, #636 the e2e-full mirror).
+- `plan/AUDIT.md`: 6 Pending rows. 2 HIGH (the-voice factual
+  corruption — live false "show has ended" claim, candidate #36;
+  night-shift starvation, candidate #35 — currently quiet but
+  unfixed at the root), 1 MED (the standing Rule 2 drain row,
+  correctly starved of actionable work), 1 MED (e2e-full
+  duration-ceiling breach, candidate #34 — dormant after last
+  night's green run, not resolved), 1 LOW (`YEAR_TENURE_RE`
+  teen-number gap).
+- `plan/CRITIQUE.md`: last pass **110**, today (2026-08-10) — 52
+  Pending rows, **0 Pending HIGH** (down from 1 yesterday — the
+  community weekly-question CTA finding was fixed same-day). The
+  `/critique` lockout risk candidate #33 tracks is currently
+  unloaded.
+- `plan/PHASE_CANDIDATES.md`: last `/expand` pass 59, 2026-07-28
+  — **13 days stale**, still starved behind the content-gate.
+  4 fully-scoped unpromoted candidates unchanged in shape: #33
+  (content-gate bug-priority carve-out), #34 (shard e2e-full),
+  #35 (decouple night.yml concurrency), #36 (the-voice
+  remediation). All await a local `/oversight` session.
+- Open triage issues: 3 `triage:needs-user` (#758 content-gate
+  starvation, #762 the-voice corruption mirror, #763 night.yml
+  starvation mirror — all already tracked above), 2
+  `triage:loop-queued` (#754 Rule-3 pass-22 extend, #636 a stale
+  07-21 e2e-full mirror). No new unlabeled issues since 08-08.
 
 ## Needs you
 
-The picture changed since 08-06: the loop proved it can
-self-recover from a critique lockout without a promoted fix, so
-candidate #33 is less urgent than it looked 3 days ago. What
-didn't self-recover:
+Same four candidates as yesterday, with two now trending better
+rather than worse:
 
-1. **Candidate #35** — decouple night.yml's concurrency group.
-   This is now the most concrete regression: two consecutive
-   nights lost (08-07, 08-08) for the first time since the
-   07-27 diagnosis, producing a 3-day digest blackout — worse
-   than any single instance since the original 7-day outage
-   that prompted the fix's discovery.
-2. **Candidate #34** — shard the e2e-full crawl. 20 consecutive
-   red nights now; catalog keeps growing (10,510 tests), no
-   sign the duration ceiling self-resolves.
-3. **Candidate #36** — the-voice factual-corruption remediation.
-   Still live in production (false "show has ended" claim),
-   mirrored to GitHub as #762, labeled `triage:needs-user`
-   pending a dedicated oversight-reviewed tick given the
-   8-file/canon-rebase blast radius.
+1. **Candidate #36** — the-voice factual-corruption remediation.
+   Still the top item: a live, reader-facing false "show has
+   ended" claim, unchanged since filing. 8-file renumbering +
+   canon rebase + cross-catalog reference cleanup — explicitly
+   flagged as needing a reviewed tick, not a routine drain.
+2. **Candidate #35** — decouple night.yml's concurrency group.
+   One clean night since the 08-07/08-08 back-to-back scare; the
+   underlying race is still unfixed, so this is dormant risk, not
+   resolved risk. Still cheap, still worth promoting before the
+   next multi-night loss.
+3. **Candidate #34** — shard the e2e-full crawl. The 9-night red
+   streak broke last night (first green since 07-30) — good
+   sign, but the catalog (10,500+ tests, single worker) hasn't
+   shrunk, so this could easily be one lucky night rather than a
+   fix. Worth a day or two more observation before deprioritizing.
 4. **Candidate #33** — content-gate bug-priority carve-out.
-   Downgrade from "single highest-leverage row" to "still worth
-   doing" — the loop cleared 2 Pending HIGH critique rows and
-   ran 3 critique passes + 6 fixes in 3 days without it, but the
-   same lockout mechanics just reloaded with pass-108's fresh
-   HIGH finding, so the underlying risk is unresolved, just not
-   currently biting.
+   Zero Pending HIGH critique rows this morning and non-content
+   commits landed today without promotion — second consecutive
+   day the gate behaved as biased-but-not-absolute rather than
+   locked. Lowest urgency of the four right now.
 
 All four remain workflow/skill-file or multi-file edits scoped
 for a local `/oversight` session, not a cloud tick.
 
 ## Today's intent
 
-Top priority for the next `/oversight` session: promote candidate
-#35 first — it's the one actively degrading (two-night starvation
-streak, first of its kind), and it's cheap (a concurrency-group
-edit). #34 and #36 remain queued behind it. Content-wise, Rule 3
-keeps finding new angles at a sustainable clip; nothing to
-redirect there. Watch pass-108's fresh HIGH (community
-weekly-question CTA) — if the next few ticks don't reach
-`/iterate` before another critique cycle comes due, the 08-06
-lockout pattern will repeat.
+Top priority unchanged: candidate #36 (the-voice) is the only one
+of the four with an active, worsening reader-facing cost (a false
+claim staying live) rather than a dormant risk — recommend
+promoting it first at the next `/oversight` session, ahead of #35
+even though #35 is cheaper, because #36's blast radius grows the
+longer new the-voice content stays blocked. Content-wise, watch
+Rule 3's zero-ship streak (15 same-day passes, 5 in a row empty)
+— if tomorrow's window shows the same shape, the idea-pool
+exhaustion `/expand`'s own posture review should address is worth
+a dedicated look, distinct from the gate-priority question
+candidate #33 already covers.
 
 ## Tuning proposals
 
 Updated `plan/PHASE_CANDIDATES.md` in place rather than filing new
 candidates:
 
-- **#35** — added the 08-07/08-08 back-to-back starvation
-  evidence (first two-consecutive-night loss since diagnosis) and
-  the resulting 3-day digest gap, sharpening urgency over #34/#36.
-- **#34** — added the 08-08 recurrence (20 consecutive red
-  nights), catalog now 10,510 tests.
-- **#33** — added the self-recovery evidence (3 critique passes +
-  6 fixes shipped in the 3 days since filing, without promotion)
-  alongside the fresh pass-108 HIGH finding that reloads the same
-  lockout risk — net: still a real gap, but demonstrably not an
-  absolute one anymore. No score change; softened the "single
-  highest-leverage" framing from the 08-06 update.
+- **#34** — added the 08-09 green-run recovery, breaking the
+  9-consecutive-red streak; flagged as inconclusive (one night,
+  no catalog shrink) rather than a resolution.
+- **#35** — added the 08-09 clean-run data point following the
+  08-07/08-08 back-to-back loss; softened urgency slightly but
+  kept the root cause explicitly unfixed.
+- **#33** — added the second consecutive day of non-content
+  commits landing without promotion (critique pass 110 + 1 fix
+  today, alongside content), reinforcing the 08-09 update's
+  "biased-but-not-absolute" framing.
 
-No new candidate filed — no new tuning shape emerged that isn't
-already captured by an existing one.
+No new candidate filed — the Rule-3 zero-ship depth (15 same-day
+passes) is a fresh signal but doesn't yet have a clean fix shape;
+flagging it in Today's intent for the next `/expand` pass to
+evaluate rather than pre-judging a mechanism here.

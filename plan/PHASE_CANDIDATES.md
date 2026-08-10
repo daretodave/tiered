@@ -346,6 +346,18 @@ landing in this window. All completed checks continue to pass; this
 remains a pure duration-ceiling breach, not a quality regression.
 Still unpromoted 19 days after filing.
 
+**Update (digest 2026-08-10):** the 9-consecutive-red streak (07-31
+through 08-08) broke — the 2026-08-09 run posted `success`, the
+first green `e2e-full` since 07-30. Catalog size is unchanged
+(still 10,500+ tests, single worker), so this reads as inconclusive
+rather than resolved: either the run got lucky on timing/contention,
+or something else shaved enough wall-clock to clear the 75-minute
+wall this one time. Recommend one or two more nights of observation
+before either promoting or deprioritizing — a second consecutive
+green run would meaningfully weaken the case for sharding; a
+reversion to red would confirm the plateau noted at 08-09 was
+temporary, not a trend break. Still unpromoted 20 days after filing.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -432,6 +444,19 @@ single most urgent of the four unpromoted candidates in this file —
 recommend promoting ahead of #34/#33/#36 given it is actively
 degrading rather than holding steady. Still unpromoted 13 days
 after filing.
+
+**Update (digest 2026-08-10):** 08-09's night run posted `success`
+— the first clean run since the 08-07/08-08 back-to-back loss, and
+tonight's tick (08-10, this one) is running now with no contention
+signs. One clean night doesn't retire the finding — the root cause
+(the shared concurrency group's most-recently-queued-wins eviction)
+is completely unchanged, and the 08-06 update already showed a
+single clean night (08-06 itself) sitting between two loss clusters.
+Softening from "single most urgent of the four" to "still urgent,
+currently dormant" — #36 (the-voice) is the one candidate whose cost
+is actively growing rather than intermittent, and should lead the
+next `/oversight` session ahead of this one. Still unpromoted 14
+days after filing.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
@@ -887,6 +912,21 @@ self-recovery. Downgrading from "single highest-leverage row in
 the file" to "real but currently non-blocking" — #35 and #34 are
 the more urgent unpromoted candidates this cycle (see their
 08-09 updates). No change to score or scope sketch.
+
+**Update (digest 2026-08-10):** second consecutive day of
+self-recovery — pass 108's fresh Pending HIGH (community
+weekly-question CTA) got fixed same-day (3ed3c5da), so
+`plan/CRITIQUE.md` opened this morning with **0 Pending HIGH rows**,
+and today's window also shipped 1 critique pass (110) plus 1 `fix:`
+commit alongside 12 `content:` commits — non-content activity
+landing without promotion for a second day running. `/expand`
+remains the one queue that hasn't self-recovered (still pass 59,
+now 13 days stale) — the carve-out's real value may be narrower
+than originally scoped (protecting Step 3d specifically) rather
+than Step 3c, which shows no equivalent resilience. Holding at
+"real but currently non-blocking," lowest urgency of the four
+unpromoted candidates this cycle. No change to score or scope
+sketch.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
