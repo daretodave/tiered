@@ -102,7 +102,7 @@ entries:
     season_label: "S16"
     rank: 15
     title: "Two returning anchors try to steady five brand-new additions"
-    blurb: "Kandi Burruss and Kenya Moore anchor a roster that's otherwise almost entirely new, and the math is lopsided — two long-tenured names against five people building history from zero. The lowest anchor ratio the show has run."
+    blurb: "Two long-tenured anchors try to steady a roster that's otherwise almost entirely new, and the math is lopsided — two founding names against five people building history from zero. The lowest anchor ratio the show has run."
   - show: rhoa
     season: 8
     season_label: "S08"
