@@ -7665,6 +7665,51 @@ last time a curator actually looked.
   continues to hold; the next actionable Rule 3 lead remains a new
   season landing (Rule 2 unstalling, or a finale-gate drain) rather than
   further re-slicing of already-mined seasons.
+- **2026-08-10 thirteenth same-day pass (cloud march tick, content-curator
+  tick): zero-ship.** Re-confirmed the gap table is still all-starred (Rule
+  2 stalled) and left the three known below-floor lists untouched per the
+  brief (`the-vote-left-the-phone-line`, `one-season-two-flags`,
+  `the-pitch-names-where-the-idea-came-from` — no re-check this pass).
+  Worked four fresh axes, all failed on prior coverage rather than thin
+  grounding: (1) COVID-era bubble/quarantine filming as an on-camera
+  production fact — `content/themes/pandemic-seasons.md` already stakes
+  this exact axis at 19 entries (Survivor S41's quarantine bubble, RHOC
+  S15's sealed resort, Shark Tank S12's distanced panel, Bake Off S11's
+  hotel bubble, Love Island US S02's sealed villa, Bachelor S25's single-
+  resort collapse, and more) — any new list would run near-total overlap;
+  (2) age-milestone casting (oldest/youngest-ever, stated as the season's
+  own fact) — `content/themes/when-age-became-the-casting-brief.md`
+  already stakes this exact axis at 11 entries, including both grep hits
+  this pass turned up fresh (DWTS S07 Cloris Leachman at 82, Bachelorette
+  S15 Hannah Brown as youngest-ever lead) plus Survivor S05's oldest-
+  castaways-draft-tribes framing; (3) host/judge real-life event addressed
+  on-camera (pregnancy, injury, guest-covered absence) as a structural
+  fact — three existing lists already own this ground:
+  `someone-else-held-the-chair-for-a-while` (11 entries, guest-fills-a-seat
+  framing, already carries the Shark Tank S03/S07/S09 absence-coverage
+  facts and the Drag Race All Stars S02 Todrick-Hall-for-Ross-Mathews swap
+  this pass's grep surfaced fresh), `the-panel-turned-over-more-than-the-
+  contestants-did` (The Voice chair-swap history, single-show), and
+  `the-extra-seat-is-never-a-swap` (Shark Tank seat history, single-show)
+  — no clean gap remained; (4) a season's own copy framing itself as a
+  test/experimental/pilot run for a mechanic later kept or dropped — the
+  two clean candidate pools are both already fully mined: the literal
+  "season one as pilot" pool (Bake Off S01, Big Brother S01, Top Chef S01,
+  Drag Race S01, ANTM S01, Drag Race UK S01) is split across
+  `no-template-to-copy`, `played-it-straight`, and
+  `the-goodbye-became-part-of-the-format` already; the "sophomore season
+  proves the debut wasn't a fluke" pool (The Voice S02, Drag Race S02,
+  Ink Master S02) is fully staked in `proving-the-debut-wasnt-luck`; and
+  the "mid-run mechanic swapped in and tested" pool (MasterChef's rotating
+  third chair, SYTYCD's structural swings) is fully staked in
+  `every-season-tests-a-new-theory-of-the-kitchen` and
+  `rulebook-rewritten-every-season`. Every entry a fresh list could
+  plausibly draw already sits in one of these six lists, well past the
+  40% overlap ceiling. Shipped nothing. No ledger row changed. Thirteen
+  same-day Rule-3 passes across 2026-08-09/10; three shipped, ten
+  zero-shipped. Next actionable Rule 3 lead is still a new season landing
+  (Rule 2 unstalling or a finale-gate drain), not further re-slicing of
+  the current 182-list catalog.
 
 ## Notes
 
