@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-08-10
 featured: false
 related:
   - the-judges-picked-a-side
@@ -77,4 +77,10 @@ entries:
     rank: 11
     title: "The franchise's first pairing experiment forces solo competitors to sink or swim together."
     blurb: "Each returning veteran drafts a rookie stranger from outside the cast, and every mission — and every elimination — falls on the pair as a single unit. The franchise's first paired format, testing whether team stakes could hold against its usual individual rhythm."
+  - show: the-challenge
+    season: 41
+    season_label: "S41 · Vets & New Threats"
+    rank: 12
+    title: "A season built entirely around pairs still won't let the pairing hold still."
+    blurb: "Performance Points, a mid-season Lock In, and a late Stake a Claim twist keep every pair's status contested from open to close. The team premise isn't just adopted here — it stays up for renegotiation the whole way through."
 ---
