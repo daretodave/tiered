@@ -96,5 +96,5 @@ entries:
     season_label: "S18 · Open Call"
     rank: 14
     title: "On-air auditions return after a five-season absence to do the sorting again"
-    blurb: "The tryout stage goes back on camera for the first time since series thirteen, narrowing forty hopefuls to twenty-four across three broadcast episodes — the format's real filtering work, visible again after five seasons off-screen."
+    blurb: "The tryout stage returns to camera after five seasons handled off-screen — the sorting of the cast happens where the audience can watch it, not before the broadcast even starts."
 ---
