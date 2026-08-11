@@ -234,6 +234,30 @@ correctly starred `11/12, 1*` either way, no table action needed.
 No table action this tick; gap unchanged at 43/44. Next actionable
 check remains the 2026-08-16 weekly sweep.
 
+**Rule 2 pick, 2026-08-11 tick (cloud march, second pass same
+day):** re-verified the three nearest-finale shows on the board
+(`rhoa` 2026-08-23, `alone` 2026-08-26, `married-at-first-sight`
+2026-08-27) rather than re-walking the full board a third time
+today. `rhoa` S17 confirmed on track, no change — the regular
+finale (ep. 17) already aired 2026-08-02, the remaining content is
+a three-part reunion (Part 1 aired 2026-08-09, Part 2 airs
+2026-08-16, Part 3 — the true season closer — airs 2026-08-23 as
+recorded). `married-at-first-sight` S20 "Seattle" confirmed
+unchanged — finale + reunion both air 2026-08-27 per Peacock's own
+release schedule. **Correction surfaced this tick:** `alone` S13
+"World Championship"'s episode count and finale date were wrong —
+Wikipedia's episode table (independently corroborated by History.com's
+official show page through episode 9) now shows a 12-episode season,
+not 11: episode 12 "Subzero" is the true finale, airing 2026-09-02,
+not 2026-08-26 as previously recorded (2026-08-26 is now episode 11,
+the penultimate). No winner announced (Wikipedia infobox reads TBD).
+Flagging here so a future Rule 2 pick doesn't file the season
+prematurely on the stale 11-episode/Aug-26 read — the row stays
+correctly starred `12/13, 1*` either way (declared count in the
+table below was already 13, unaffected), no table action needed
+beyond this correction. No table action this tick; gap unchanged at
+43/44. Next actionable check remains the 2026-08-16 weekly sweep.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
