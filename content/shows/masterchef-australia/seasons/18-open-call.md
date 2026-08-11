@@ -9,7 +9,7 @@ host: Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, Sofia Levin
 canonical_position: 15
 eyebrow: "Aired April 2026 · On-air auditions return, the panel's third season together"
 lede: "Season eighteen returns the audition process to the screen for the first time since series thirteen. The panel enters its third season unchanged — Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin — the format's steadiest lineup yet."
-pull: "A standard open-audition season run by a panel that no longer needs to find its footing — the auditions are back on camera, and the judging chemistry is the steadiest the new era has produced."
+pull: "A standard open-audition season run by a panel that no longer needs to find its footing — the judging chemistry is the steadiest the new era has produced."
 format_summary: "Home cook competition · on-air auditions return"
 format_caption: "24 contestants from a pool of 40, selected across three audition episodes"
 premiere_caption: "Network Ten · April 2026"
@@ -27,4 +27,4 @@ watch_list:
     body: "Maggie Beer, Rick Stein, Curtis Stone, Adriano Zumbo, and Marion Grasby all appear this season, alongside a high-profile Finals Week guest judge — one of the broadest guest lineups the format has assembled in a single run."
 ---
 
-Season eighteen runs the format's standard shape: an open nationwide search, no returnee premise, no subtitle. A fully settled panel means no shake-in period this time — judging chemistry lands steady from episode one, with the audition process itself back on camera after five years away. A dense run of themed weeks and a wide guest roster carry the middle of the run.
+Season eighteen runs the format's standard shape: an open nationwide search, no returnee premise, no subtitle. The middle stretch of the run carries the real variety instead — a run of themed cooking weeks paired with one of the broadest guest line-ups the format has fielded, keeping sixty episodes from settling into a single groove.

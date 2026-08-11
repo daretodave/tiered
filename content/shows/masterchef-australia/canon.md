@@ -142,7 +142,7 @@ tag: A standard open-audition season carried by the format's steadiest new-era p
 slot_argument: Season eighteen earns the fifteenth slot on a fully settled panel and a real structural return — on-air auditions, absent since series thirteen — but lacks a subtitle-level premise to top the era's more distinctive seasons.
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
-Season eighteen runs the format's standard shape — a nationwide search, an open field, no returnee premise, no subtitle. What sets it apart is the panel: Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin enter their third season as an unchanged four, judging with an ease that shows in how fast the season finds its rhythm. The audition process moving back in front of the cameras is real structural change, but it's a return to how the show used to run, not a new premise — the season lacks the subtitle-level hook that lifts the era's more distinctive runs above it. Solid, well-judged, structurally competent, but settled rather than singular.
+What sets season eighteen apart is the panel. Andy Allen, Poh Ling Yeow, Jean-Christophe Novelli, and Sofia Levin enter their third season as an unchanged four, judging with an ease that shows in how fast the season finds its rhythm — no shake-in period, no early feeling-out stretch the way Four Voices or The Fresh Start needed. That steadiness is the season's whole case: a panel this settled can carry a straightforward format competently, but competence alone doesn't produce a defining identity. The season lacks the subtitle-level hook that lifts the era's more distinctive runs above it. Solid, well-judged, structurally competent, but settled rather than singular.
 
 ## 13. The Fresh Start
 
