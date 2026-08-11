@@ -16,7 +16,7 @@ format_caption: "First all-reality-personality cast — no civilians"
 host_caption: "Alan Cumming's second season at the castle"
 premiere_caption: "Peacock · 3-episode drop then weekly"
 episodes_caption: "About a dozen episodes including a reunion"
-filming_caption: "Ardross Castle, Scottish Highlands"
+filming_caption: "Ardross Castle · a second winter in the same Highland towers"
 watch_list:
   - episode_label: "Ep 1 · The new era opens"
     body: "An all-reality cast replaces the civilian mix and the release model moves to a three-episode launch. Watch the show step into the season that defined its public reputation."

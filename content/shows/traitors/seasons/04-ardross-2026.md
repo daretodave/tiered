@@ -16,7 +16,7 @@ format_caption: "All-celebrity cast — no civilians"
 host_caption: "Alan Cumming's fourth season at the castle"
 premiere_caption: "Peacock · 3-episode drop then weekly"
 episodes_caption: "About a dozen episodes including a reunion"
-filming_caption: "Ardross Castle, Scottish Highlands"
+filming_caption: "Ardross Castle · a fourth winter in the same Highland towers"
 watch_list:
   - episode_label: "Ep 1 · The latest cohort"
     body: "An all-celebrity cast arrives at Ardross. The format is fully familiar now — watch the season open with the machine running on rails."

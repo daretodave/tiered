@@ -16,7 +16,7 @@ format_caption: "All-reality/celebrity cast — no civilians"
 host_caption: "Alan Cumming's third season at the castle"
 premiere_caption: "Peacock · 3-episode drop then weekly"
 episodes_caption: "About a dozen episodes including a reunion"
-filming_caption: "Ardross Castle, Scottish Highlands"
+filming_caption: "Ardross Castle · a third winter in the same Highland towers"
 watch_list:
   - episode_label: "Ep 1 · The cast assembles"
     body: "Another all-reality and celebrity cohort arrives at Ardross. The format is settled now — watch the season open with a machine that knows itself."

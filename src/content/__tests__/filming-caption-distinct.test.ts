@@ -18,6 +18,23 @@ import { getAllSeasons, getAllShows } from '../index'
 // "Filmed in <location>", so a "Filmed at <location>" bare restatement
 // (traitors-uk series-1) shipped green. Broadened to the full set of
 // prepositions a caption plausibly opens with.
+//
+// Critique pass-114 (traitors US, all 4 seasons) flagged a caption with
+// no "Filmed <preposition>" wording at all — just the location string
+// with its trailing clause dropped — as the same defect class, and
+// suggested widening this check to flag any caption that is a strict
+// prefix/substring of `location`. Investigated and NOT applied: a
+// corpus-wide scan found 15+ shows (alone, bake-off, big-brother,
+// dancing-with-the-stars, dragrace-uk, hells-kitchen, jersey-shore,
+// love-island-uk, masterchef-australia, naked-and-afraid, perfect-match,
+// queer-eye, rhobh, rhonj, selling-sunset, so-you-think-you-can-dance,
+// vanderpump-rules) legitimately reuse a caption that's a plain
+// substring of `location` (most commonly: the caption drops the
+// trailing country, e.g. "Austin, Texas" vs. location "Austin, Texas,
+// USA") — an established, accepted convention this test already passes
+// for. A blanket prefix/substring rule would false-positive all of
+// them. The traitors defect was fixed at the content layer instead
+// (four distinct, non-bare captions) without widening this check.
 
 const FILMED_PREPOSITIONS = ['in', 'at', 'on', 'near']
 

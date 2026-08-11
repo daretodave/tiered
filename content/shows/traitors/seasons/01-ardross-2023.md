@@ -18,7 +18,7 @@ cast_size_caption: "10 reality-TV alumni, 10 members of the public"
 host_caption: "Alan Cumming's first season at the castle"
 premiere_caption: "Peacock · all episodes January 2023"
 episodes_caption: "10 game episodes plus a reunion special"
-filming_caption: "Ardross Castle, Scottish Highlands"
+filming_caption: "Ardross Castle · Scots Baronial towers remodeled in the 1850s"
 watch_list:
   - episode_label: "Ep 1 · The castle opens"
     body: "The American template assembled live: the cloaks, the candlelit Round Table, the breakfast reveal. Watch the mixed cast of alumni and civilians meet the format for the first time."
