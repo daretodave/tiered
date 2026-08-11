@@ -8039,6 +8039,49 @@ last time a curator actually looked.
   move, to be re-applied the moment Rule 2 unstalls and files a fresh
   season.
 
+- **2026-08-11, twenty-fourth same-day Rule-3 pass (cloud march
+  tick): zero-ship.** Re-confirmed Rule 2 fully stalled (CADENCE gap
+  table unchanged, 43 shows/44 gap-slots, every row starred). Worked
+  five fresh axes not covered by any prior pass:
+  - **International-format-export** (`international|exported|adapted
+    internationally|other versions of the show|licensed format|later
+    adopted`) — zero genuine hits catalog-wide; all matches were
+    location/casting false positives (e.g.
+    `masterchef-australia/09-japan.md`).
+  - **Filmed-in-secrecy/media-blackout**
+    (`blackout|media blackout|sealed set|locked down|confidentiality|
+    phones confiscated|no leaks`) — zero hits catalog-wide.
+  - **Disaster/weather production disruption**
+    (`storm|flood|evacuat|typhoon|monsoon|wildfire`) — only two
+    distinct shows ground (Bachelor in Paradise S07's storm
+    relocation, Survivor S02's drought/floods texture), and the
+    Survivor hit reads as atmospheric color, not a disruption fact —
+    short of the 3-show floor even generously read.
+  - **Cross-network reality-veteran castmates** — real and
+    well-grounded, but this is the exact standing thesis of the
+    existing `familiar-faces-wrong-franchise` (16/24 entries, craft)
+    — full overlap.
+  - **Companion aftershow debuting as a season's own stated first**
+    — the closest miss: Traitors UK's Uncloaked, Traitors US's
+    Postmortem, Drag Race UK's aftershow, Love Island UK's The
+    Debrief, Shark Tank's Beyond the Tank, Big Brother's Unlocked,
+    Top Chef's Last Chance Kitchen (7 distinct shows, genuinely
+    grounded) — but a themes-directory grep found
+    `the-broadcast-wasnt-the-whole-show.md` already stakes every one
+    of these exact facts verbatim. Full duplicate, caught before
+    drafting.
+  Also spot-checked live-finale-as-structural-first (Ink Master only,
+  single-show) and bonus/recap-episode-as-a-first (Summer House S10
+  only, single-show) — neither clears a cross-canon floor.
+  Twenty-four same-day Rule-3 passes across 2026-08-09/10/11; six
+  shipped, eighteen zero-shipped. Both the 23rd and 24th passes now
+  independently converge on the same verdict: no fresh ground until
+  Rule 2 unstalls and a new season lands (see the 20th pass's
+  frontmatter-mining move — the last reliable source of new
+  headroom, and it requires a freshly-filed season to work on).
+  Tracked in open issue #758 (triage:needs-user, dispatch-mechanics
+  question for `/oversight`).
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
