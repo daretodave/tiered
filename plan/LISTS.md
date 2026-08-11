@@ -8082,6 +8082,80 @@ last time a curator actually looked.
   Tracked in open issue #758 (triage:needs-user, dispatch-mechanics
   question for `/oversight`).
 
+- **2026-08-11, twenty-fifth same-day Rule-3 pass (cloud march
+  tick): zero-ship.** Re-confirmed Rule 2 fully stalled (CADENCE gap
+  table unchanged, 43 shows/44 gap-slots, every row starred). Worked
+  the census-driven lead handed to this pass: 7 shows in the catalog
+  carry zero `category: single` themed list (`alone-australia`,
+  `alone-frozen`, `alone-the-skills-challenge`, `below-deck-adventure`,
+  `below-deck-down-under`, `perfect-match`, `rhodubai`). Checked the
+  three candidates with enough seasons to clear the 3-entry
+  single-show floor:
+  - **below-deck-down-under** (4 filed seasons). Read all four season
+    files. Every season's headline fact is already staked elsewhere:
+    S01 Whitsundays at `new-flags-planted-fast` rank 6 (franchise
+    launch), S02 Western Australia at `best-location-reveals` rank 9
+    (remote-water reveal), S03 Seychelles and S04 Canouan both at
+    `a-change-of-address` ranks 1-2 (the franchise's location moves).
+    All four seasons' command-continuity/crew facts are *also*
+    separately staked at `the-paycheck-writes-the-plot` (ranks
+    13/15/16) and the show's own existing craft entries. No unclaimed
+    thesis left to found a dedicated single-show list on.
+  - **perfect-match** (4 filed seasons). Read all four season files.
+    Every season is staked multiple times over: S01 at
+    `the-cast-was-still-arriving` rank 6, `the-hand-behind-the-couple`
+    rank 5, and `the-blackout-had-a-loophole` rank 14; S02 at
+    `a-way-back-in` rank 4, `the-batch-drop-settles-in` rank 5, and
+    `the-hand-behind-the-couple` rank 6; S03 at
+    `the-batch-drop-settles-in` rank 8 and `the-hand-behind-the-couple`
+    rank 7; S04 at `a-way-back-in` rank 12, `not-the-usual-order` rank
+    14, and `the-batch-drop-settles-in` rank 10. The mixer-mechanic
+    escalation (S02 introduces it, S03 widens it to non-villa
+    newcomers, S04 makes it routine) reads like a clean single-show
+    thesis at first glance, but it's the exact ground `a-way-back-in`
+    already covers verbatim (ranks 4 and 12, "a new event called the
+    mixer," "the mixer becomes routine"). No distinct angle left.
+  - **alone-australia** (3 filed seasons). Read all three season
+    files. S01 South West Tasmania is staked at
+    `when-the-crew-stepped-into-frame` rank 4, `the-place-fought-back`
+    rank 7, `one-rule-never-bends` rank 8, `new-flags-planted-fast`
+    rank 15, and `the-blackout-had-a-loophole` rank 13; S02 Fiordland
+    at `best-location-reveals` rank 10, `the-place-fought-back` rank
+    9, and `one-rule-never-bends` rank 9; S03 West Coast Range at
+    `running-on-muscle-memory` rank 18, `the-place-fought-back` rank
+    8, and `one-rule-never-bends` rank 10. Every season's terrain,
+    format-origin, and production-confidence facts are already spent
+    across seven different cross-show lists. No headroom.
+  - The remaining four zero-list shows can't clear the floor at all:
+    `alone-frozen`, `alone-the-skills-challenge`, and
+    `below-deck-adventure` each have exactly 1 filed season (a
+    `category: single` list needs a minimum of 3 entries per the
+    `survivor-pillars`/traitors-family precedent this ledger already
+    treats as the floor), and `rhodubai` has 2. Below Deck Adventure
+    S01 is independently confirmed spent (`the-paycheck-writes-the-
+    plot` rank 14, `new-flags-planted-fast` rank 1); RHODubai was
+    already flagged over-claimed relative to its size by an earlier
+    pass (see the entry above at "RHODubai (2 filed seasons, 7
+    existing ledger stakes — already over-claimed relative to its
+    size)").
+  - One fresh cross-show axis tried beyond the single-show lead:
+    celebrity/reality-personality guest cameos as a season's own
+    stated first (`cameo|guest star|crossover cast|celebrity guest`
+    across every season file, 13 file hits). The cleanest grounded
+    pair — The Circle S04's celebrity catfish cameo and Chopped S61's
+    in-costume celebrity basket-reveal cameo — don't share a real
+    thesis (one is a competing-adjacent format mechanic, the other a
+    one-off promotional tie-in), and the Circle S04 fact is already
+    claimed verbatim at `the-cast-arrived-pre-famous` rank 10. No
+    third distinct show grounded either way.
+  Twenty-five same-day Rule-3 passes across 2026-08-09/10/11; six
+  shipped, nineteen zero-shipped. The single-show floor is now
+  confirmed saturated for every show with 3+ filed seasons; the four
+  shows still below the floor need Rule 2 to file a second or third
+  season before a dedicated list is possible at all — the same
+  standing blocker the twenty-fourth pass's note lands on. Tracked in
+  open issue #758.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
