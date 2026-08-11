@@ -64,3 +64,29 @@ for (const r of seasonRedirects) {
     ).toBe(r.toPath)
   })
 }
+
+// CRITIQUE pass-112 — the-command-held-for-nine-seasons-then-didnt was
+// renamed to the-command-held-for-ten-seasons-then-didnt after a
+// content extend made the slug's spelled-out number contradict the
+// theme's own title/body. src/middleware.ts 308s the retired path so
+// bookmarks/external links still land somewhere real.
+test('retired theme slug redirect: /themes/the-command-held-for-nine-seasons-then-didnt → /themes/the-command-held-for-ten-seasons-then-didnt', async ({
+  page,
+  request,
+}) => {
+  const fromPath = '/themes/the-command-held-for-nine-seasons-then-didnt'
+  const toPath = '/themes/the-command-held-for-ten-seasons-then-didnt'
+
+  const head = await request.get(fromPath, { maxRedirects: 0 })
+  expect(head.status(), `${fromPath} must 308 (permanent)`).toBe(308)
+  expect(new URL(head.headers().location, 'http://x').pathname).toBe(toPath)
+
+  const response = await page.goto(fromPath, { waitUntil: 'domcontentloaded' })
+  expect(response?.status()).toBe(200)
+  expect(new URL(page.url()).pathname).toBe(toPath)
+
+  const canonical = page.locator('link[rel="canonical"]')
+  await expect(canonical).toHaveCount(1)
+  const href = await canonical.getAttribute('href')
+  expect(new URL(href ?? '').pathname).toBe(toPath)
+})

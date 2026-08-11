@@ -10,7 +10,7 @@ curator: "tiered.tv editor"
 last_revised: 2026-07-23
 featured: false
 related:
-  - the-command-held-for-nine-seasons-then-didnt
+  - the-command-held-for-ten-seasons-then-didnt
   - the-clock-had-to-make-room
 entries:
   - show: masked-singer

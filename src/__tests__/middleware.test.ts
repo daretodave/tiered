@@ -85,6 +85,45 @@ describe('middleware — phase-29 /search retirement', () => {
   })
 })
 
+describe('middleware — CRITIQUE pass-112 theme slug redirect', () => {
+  it('redirects the retired nine-seasons theme URL to the ten-seasons slug with a 308', async () => {
+    const res = await middleware(
+      makeRequest('/themes/the-command-held-for-nine-seasons-then-didnt'),
+    )
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe(
+      'http://localhost/themes/the-command-held-for-ten-seasons-then-didnt',
+    )
+  })
+
+  it('drops the query string on the theme-slug redirect', async () => {
+    const res = await middleware(
+      makeRequest('/themes/the-command-held-for-nine-seasons-then-didnt', {
+        search: '?ref=twitter',
+      }),
+    )
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe(
+      'http://localhost/themes/the-command-held-for-ten-seasons-then-didnt',
+    )
+  })
+
+  it('skips Auth0 entirely on the retired theme URL', async () => {
+    await middleware(
+      makeRequest('/themes/the-command-held-for-nine-seasons-then-didnt'),
+    )
+    expect(middlewareMock).not.toHaveBeenCalled()
+  })
+
+  it('does NOT redirect the new ten-seasons slug (only the retired path redirects)', async () => {
+    const res = await middleware(
+      makeRequest('/themes/the-command-held-for-ten-seasons-then-didnt'),
+    )
+    expect(res.status).not.toBe(308)
+    expect(middlewareMock).toHaveBeenCalledOnce()
+  })
+})
+
 describe('middleware — Auth0 SDK composition', () => {
   it('awaits auth0.middleware(request) exactly once per non-/search request', async () => {
     await middleware(makeRequest('/shows/survivor'))

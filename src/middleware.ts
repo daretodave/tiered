@@ -32,6 +32,22 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(url, 308)
   }
 
+  // CRITIQUE pass-112 — the theme's own title/description/body read
+  // "ten seasons" after the 2026-08-10 Below Deck Med S11 extend, but
+  // the slug (and therefore the canonical URL) still said "nine" — a
+  // self-contradiction visible in the address bar. Renamed the theme
+  // file; this permanent redirect keeps the old URL live for anyone
+  // who bookmarked or linked it.
+  if (
+    request.nextUrl.pathname ===
+    '/themes/the-command-held-for-nine-seasons-then-didnt'
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/themes/the-command-held-for-ten-seasons-then-didnt'
+    url.search = ''
+    return NextResponse.redirect(url, 308)
+  }
+
   const auth0Response = await auth0.middleware(request)
 
   // Auth-route paths return a redirect / 200 directly — don't stamp

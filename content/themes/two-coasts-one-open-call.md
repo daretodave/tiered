@@ -10,7 +10,7 @@ curator: "tiered.tv editor"
 last_revised: 2026-07-23
 featured: false
 related:
-  - the-command-held-for-nine-seasons-then-didnt
+  - the-command-held-for-ten-seasons-then-didnt
   - a-show-that-never-had-a-home-address
 entries:
   - show: americas-got-talent
