@@ -32,10 +32,8 @@ watch_list:
     body: "The closing run before the two-part reunion. A season built on shifting partner status carries that tension into the final's physical demands."
 ---
 
-Sixteen returning Vets paired against sixteen New Threats pulled
-from outside the franchise's usual pool — Survivor, Big Brother,
-Love Island, and more. MTV filmed across Santiago and the Andes
-Mountains, Chile, over 21 episodes. A Performance Points system
-sets partner order, a mid-season Lock In fixes pairs, and a
-Stake a Claim twist keeps that status contested through the
-back half. The multi-phase mechanic is a genuine structural swing.
+MTV filmed the season across Santiago and the Andes Mountains,
+Chile, over 21 episodes. A Performance Points system sets
+partner order, a mid-season Lock In fixes pairs, and a Stake a
+Claim twist keeps that status contested through the back half —
+a genuine structural swing for the season's dual-cast format.
