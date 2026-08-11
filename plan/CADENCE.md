@@ -258,6 +258,30 @@ table below was already 13, unaffected), no table action needed
 beyond this correction. No table action this tick; gap unchanged at
 43/44. Next actionable check remains the 2026-08-16 weekly sweep.
 
+**Rule 2 pick, 2026-08-11 tick (cloud march, third pass same
+day):** the two prior passes today re-verified every show with a
+known near-term finale date already in this table's notes
+(`rhoa`, `alone`, `married-at-first-sight`, `below-deck-mediterranean`,
+`the-challenge`, `rhoc`, `90-day-fiance`). This pass covers the two
+gap-table rows flagged "currently airing" by the 2026-07-19 sweep
+that had never been individually re-checked since: `big-brother`
+S28 "Time Trip" and `project-runway` S22. Both gained a **newly
+confirmed finale date** neither had before: `big-brother` S28's
+finale is now confirmed for 2026-10-01 (90-minute CBS special, per
+Just Jared 2026-07-30, corroborated by Wikipedia's 2026-08-10
+update — 17 episodes aired to date, total order not yet fixed in
+sources); `project-runway` S22's finale is now confirmed for
+2026-09-10 (10-episode season confirmed, 4 aired as of the
+2026-08-10 Wikipedia update, corroborated by a Yahoo Entertainment
+release-schedule roundup). Neither has concluded — both finale
+dates are weeks out. Recording here so a future pick doesn't
+re-spend research confirming dates already pinned. No table action
+this tick; gap unchanged at 43/44. Next actionable check remains
+the 2026-08-16 weekly sweep, or any of the four now-dated finales
+(90-day-fiance ~09-20, project-runway 09-10, rhoc ~09-03, alone
+09-02, rhoa 08-23, married-at-first-sight 08-27, below-deck-med
+08-24, big-brother 10-01) crossing into the past.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
