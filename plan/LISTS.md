@@ -8156,6 +8156,42 @@ last time a curator actually looked.
   standing blocker the twenty-fourth pass's note lands on. Tracked in
   open issue #758.
 
+- **2026-08-11, twenty-sixth same-day Rule-3 pass (cloud march
+  tick): zero-ship.** Re-confirmed Rule 2 fully stalled (CADENCE gap
+  table re-verified unchanged, 43 shows/44 gap-slots, every row
+  starred) before falling to Rule 3. Re-checked the three still-
+  below-floor lists (`the-vote-left-the-phone-line` 8/8 era,
+  `one-season-two-flags` 9/9 structure, `the-pitch-names-where-the-
+  idea-came-from` 3/3 craft) against every angle not yet logged
+  against them — no new candidate on any of the three, consistent
+  with the twenty-first/twenty-third passes' findings. One genuinely
+  fresh axis tried: `americas-got-talent` S21's own `eyebrow`/`lede`
+  states plainly "for the third time in the show's history, each
+  judge can award two Golden Buzzers instead of one" — a judge-
+  power-escalation fact distinct from the same season's
+  Judges'-Callbacks-round fact already staked at `a-way-back-in`
+  rank 15. Ran a full `content/shows/*/seasons/*.md` regex sweep
+  (`judges? (can now|gain|are given|receive) (a |an )?(new|second|
+  extra|additional)|panel (gains|is given) a new|new power for the
+  (judges|panel|coaches)`) for a comparable panel-power-grant fact
+  on any other judged show (Drag Race, Top Chef, MasterChef,
+  Chopped, The Voice, Ink Master) — zero hits catalog-wide. Also
+  checked whether the fact fits an existing list's thesis as a
+  supporting entry rather than founding a new one:
+  `the-advantage-was-never-free` is the nearest sibling by surface
+  similarity but its thesis is a portable token one *player* carries
+  and pays a cost to hold, not a standing rule change to *judge*
+  authority — not a fit. No third show groundable either way, so
+  the Golden Buzzer fact can't clear even a single-show floor (AGT
+  has no `category: single` list yet and only one of its 21 filed
+  seasons mentions the mechanic by name in its own text). Logging
+  this dead end so a future pass doesn't re-derive it. Twenty-six
+  same-day Rule-3 passes across 2026-08-09/10/11; six shipped,
+  twenty zero-shipped. No change to the twenty-fourth/twenty-fifth
+  passes' standing verdict: no fresh ground until Rule 2 unstalls
+  (a new season lands) or a not-yet-frontmatter-mined season
+  surfaces. Tracked in open issue #758.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
