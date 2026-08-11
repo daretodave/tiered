@@ -459,6 +459,22 @@ green run would meaningfully weaken the case for sharding; a
 reversion to red would confirm the plateau noted at 08-09 was
 temporary, not a trend break. Still unpromoted 20 days after filing.
 
+**Update (digest 2026-08-11):** the observation window resolved —
+2026-08-10's run (31441429717) posted `failure`, the identical
+75-minute-wall duration-ceiling breach (9,462 of 10,544 tests
+complete, 89.7%, run 23:16:11→00:30:47 UTC = 74m36s). The 08-09
+green run was the outlier, not a trend break: single-night
+recoveries on a fixed 75-minute wall against a catalog that only
+grows were always going to happen occasionally by timing/contention
+luck, but the structural bottleneck (`workers: 1`,
+`apps/e2e/playwright.config.ts:82`) is unchanged and the catalog
+(10,544 tests, +34 since 08-09) hasn't shrunk. This closes the
+observation window opened at 08-10 — recommend promoting at the
+next `/oversight` session rather than watching for a third data
+point; every additional red night is CI minutes burned for zero new
+information, exactly the pass-59 urgency signal restated. Still
+unpromoted 21 days after filing (07-22 filing, 07-28 reinforcement).
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -1028,6 +1044,29 @@ than Step 3c, which shows no equivalent resilience. Holding at
 "real but currently non-blocking," lowest urgency of the four
 unpromoted candidates this cycle. No change to score or scope
 sketch.
+
+**Update (digest 2026-08-11):** the one holdout self-recovered too —
+`/expand` ran pass 60 the same evening (2026-08-10T18:12Z), 13 days
+after pass 59, finding 0 new candidates but escalating candidate #36
+on its own. So all three gated verbs (`/iterate` via critique-fallback,
+`/critique`, `/expand`) have now self-recovered at least once without
+this carve-out shipping, just on longer cadences than a dedicated
+carve-out would give them. Today's window sharpens the mechanism
+further: Rule 3's idea pool hit a new record **25 same-day zero-ship
+passes** (up from 15 two days ago), and on three of those exhausted
+ticks cloud `march` fell through to `plan/CRITIQUE.md` instead of a
+26th search — landing 3 fixes (masterchef-australia S18 echo,
+below-deck-mediterranean S11 stat repetition, the-challenge S41
+stat-caption punctuation-only restatement) and driving Pending HIGH
+to zero again. This is the exact behavior #33's scope sketch wanted
+to force explicitly, now happening organically as Rule 3's search
+space thins — the emptier the idea pool gets, the more often the
+gate yields on its own. Still worth shipping for determinism (an
+explicit ≥5.0 carve-out doesn't depend on Rule 3 running dry first),
+but three consecutive days of unforced self-recovery across all
+three verbs makes this the least urgent of the four unpromoted
+candidates by a wider margin than yesterday. No change to score or
+scope sketch.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
