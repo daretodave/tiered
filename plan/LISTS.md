@@ -8012,6 +8012,32 @@ last time a curator actually looked.
   concentrated in freshly-filed seasons' unmined frontmatter fields,
   and every currently-filed freshly-drained season has now had that
   treatment applied.
+- 2026-08-11, twenty-third same-day Rule-3 pass (cloud march tick):
+  zero-ship. Re-confirmed Rule 2 fully stalled (CADENCE gap table
+  unchanged, 43 shows/44 gap-slots, every row starred). Two new
+  checks beyond the twenty-first/twenty-second passes' ground:
+  - **Single-show floor sweep.** Built the full season-count table
+    from every show's frontmatter (49 shows at ≥10 aired seasons) and
+    cross-referenced each against the 76-file `category: single`
+    list set by direct content read (not filename pattern-matching,
+    which produces false positives). Every ≥10-season show sampled —
+    spanning competition, docusoap, dating, dance, drag, and survival
+    — already carries at least one dedicated single-show list. No
+    headroom.
+  - **Cross-canon floor spot-check.** `twice-in-one-year`,
+    `the-vote-left-the-phone-line`, `no-template-to-copy`,
+    `the-company-upstairs-changed-hands` all sit comfortably above
+    the ≥3-distinct-show floor (4-10 shows each). No violation.
+  - Two fresh axes tried and killed: prize-structure-wasn't-cash
+    (collides with the standing rejected-ideas log's Chopped
+    prize-escalation / shared-prize-pool entries — same fact-space);
+    pre-fame/influencer casting (full overlap with the already-shipped
+    `the-cast-arrived-pre-famous`, era_range 2016-2023).
+  Twenty-three same-day Rule-3 passes across 2026-08-09/10/11; six
+  shipped, seventeen zero-shipped. No new leads surfaced — the
+  standing watch item remains the twentieth pass's frontmatter-mining
+  move, to be re-applied the moment Rule 2 unstalls and files a fresh
+  season.
 
 ## Notes
 
