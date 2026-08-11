@@ -11,9 +11,9 @@ eyebrow: "A new yacht returns to the franchise's best waters — Dubrovnik, Croa
 lede: "Below Deck Mediterranean sends Captain Sandy Yawn back to Dubrovnik for the first time since Season 2, now aboard the new M/Y Akira One. Sandy, Aesha Scott, Nathan Gallagher, and Joe Bradley anchor a mostly rebuilt crew under a new chef running the galley."
 pull: "A return to the water that made the franchise's best season — new yacht, new chef, a nucleus of returning crew asked to prove Dubrovnik's magic wasn't a one-time thing."
 format_summary: "Charter yacht · Dubrovnik, Croatia"
-format_caption: "Superyacht charter, Dubrovnik and the Adriatic coast"
+format_caption: "Superyacht charter aboard the new M/Y Akira One"
 host_caption: "Captain Sandy Yawn's third season with this crew nucleus, back in Dubrovnik"
-filming_caption: "Dubrovnik, Croatia · the franchise's second season in these waters"
+filming_caption: "The franchise's second season in these waters"
 premiere_caption: "Bravo · June 2026"
 ---
 
