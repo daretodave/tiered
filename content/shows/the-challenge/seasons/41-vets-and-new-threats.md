@@ -15,7 +15,7 @@ format_caption: "duos evolve into fixed and contested pairs"
 cast_size: 32
 cast_size_caption: "16 Vets, 16 New Threats"
 premiere_caption: "MTV · summer 2025"
-filming_caption: "Santiago; the Andes Mountains, Chile"
+filming_caption: "The season opens in Santiago, then shifts to Andes altitude by episode 14"
 host_caption: "TJ Lavin, twenty-sixth season at the helm"
 episode_heat: [med, med, hot, med, med, hot, med, hot, hot, hot, med, hot, med, hot, hot, med, hot, hot, med, hot, hot]
 episode_heat_caption: "Lock In at ep 9, Stake a Claim heats the back-half"
