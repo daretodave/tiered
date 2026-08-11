@@ -3,18 +3,18 @@ import { describe, expect, it } from 'vitest'
 import { ShowsStatusPill } from '../ShowsStatusPill'
 
 describe('<ShowsStatusPill>', () => {
-  it('formats as "in progress · N / T" when shipped < target', () => {
+  it('formats as "N of T canon entries" when shipped < target — self-explanatory without a hover title', () => {
     render(<ShowsStatusPill shipped={2} target={3} />)
     const pill = screen.getByTestId('show-tile-status')
     expect(pill.textContent?.replace(/\s+/g, ' ').trim()).toBe(
-      'in progress · 2 / 3',
+      '2 of 3 canon entries',
     )
   })
 
-  it('renders 0 / N for an unstarted canon', () => {
+  it('renders "0 of N canon entries" for an unstarted canon', () => {
     render(<ShowsStatusPill shipped={0} target={3} />)
     expect(screen.getByTestId('show-tile-status').textContent).toContain(
-      '0 / 3',
+      '0 of 3 canon entries',
     )
   })
 

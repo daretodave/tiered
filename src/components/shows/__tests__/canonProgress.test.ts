@@ -28,7 +28,7 @@ beforeEach(() => {
 })
 
 describe('CANON_TARGET', () => {
-  // The B-tier "in progress · N / T" pill renders T as the target.
+  // The B-tier "N of T canon entries" pill renders T as the target.
   // T is read by `ShowsTile`'s status pill on every /shows visit
   // for every B-tier show. A silent drift (3 → 4) ships the wrong
   // promotion floor to every B-tier reader without any visible

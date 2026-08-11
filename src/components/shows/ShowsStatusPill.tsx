@@ -5,7 +5,7 @@ type ShowsStatusPillProps = {
 
 export function ShowsStatusPill({ shipped, target }: ShowsStatusPillProps) {
   const inReview = shipped >= target
-  const label = inReview ? 'review in progress' : `in progress · ${shipped} / ${target}`
+  const label = inReview ? 'review in progress' : `${shipped} of ${target} canon entries`
   const title = inReview
     ? 'Canon entries published, under editorial review'
     : `${shipped} of ${target} canon entries published toward the review floor`

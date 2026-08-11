@@ -77,7 +77,6 @@ describe('<TierSection>', () => {
     expect(screen.getByTestId('shows-grid').className).toBe('shows-grid cols-3')
     expect(screen.getByTestId('shows-tile').dataset['variant']).toBe('small')
     const pill = screen.getByTestId('show-tile-status')
-    expect(pill.textContent).toContain('in progress')
-    expect(pill.textContent).toContain('0 / 3')
+    expect(pill.textContent).toContain('0 of 3 canon entries')
   })
 })

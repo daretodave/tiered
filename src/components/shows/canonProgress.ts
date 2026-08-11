@@ -1,6 +1,6 @@
 import { getCanon } from '@/content'
 
-// The B-tier "in progress · N / T" pill. T matches the season-floor
+// The B-tier "N of T canon entries" pill. T matches the season-floor
 // the canon-mode promotion uses (see phase 26 brief). N is the number
 // of canon entries currently shipped for the show.
 export const CANON_TARGET = 3
