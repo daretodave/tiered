@@ -7978,6 +7978,40 @@ last time a curator actually looked.
   move the sixteenth pass logged finding on The Challenge S41 earlier
   today; worth trying first on any future same-day pass before
   re-deriving a brand-new cross-show axis.
+- 2026-08-11, twenty-first same-day Rule-3 pass (cloud march tick):
+  zero-ship. Re-confirmed Rule 2 (season-fill) fully stalled — CADENCE
+  gap table re-verified at 43 shows/44 gap-slots, every row starred.
+  Checked, in order:
+  - The three lists still below the 10-entry schema floor
+    (`the-vote-left-the-phone-line` 8/8 era, `one-season-two-flags`
+    9/9 structure, `the-pitch-names-where-the-idea-came-from` 3/3
+    craft) — all three re-confirmed dead by multiple prior passes
+    today; no new candidate found on this pass either.
+  - The twentieth pass's own winning move (re-mine a freshly-drained
+    season's own frontmatter for a second unstaked fact) applied
+    again to Below Deck Mediterranean S11 "Dubrovnik II" specifically
+    — its two remaining textual fragments (new yacht M/Y Akira One,
+    new chef Joy Lefaucheur) are both already quoted as supporting
+    clauses inside its two existing entries (`been-here-before` rank
+    6, `the-command-held-for-nine-seasons-then-didnt` rank 9), not
+    left as a distinct unclaimed thesis. A `grep -ri "new
+    (superyacht|yacht|vessel|charter yacht)|new to the fleet"` across
+    every Below Deck-family show confirmed S11 is the only season in
+    the entire catalog phrased this way — can't clear even a
+    single-show floor.
+  - Three fresh new-list axes, none cleared the ≥3-show cross-canon
+    floor: explicit temperature/altitude-extremity-as-the-season's-
+    own-stated-record (2 shows: Drag Race S08, Below Deck Adventure
+    S01), compressed/unusually-short filming-window as the season's
+    own stated fact (2 shows: Hell's Kitchen S08, Bake Off S12),
+    crossover episode explicitly joining two franchises (1 hit
+    catalog-wide: Chopped S61).
+  Twenty-one same-day Rule-3 passes across 2026-08-09/10/11; six
+  shipped, fifteen zero-shipped. No new ground found this pass — the
+  catalog's remaining headroom (per the twentieth pass's note) is
+  concentrated in freshly-filed seasons' unmined frontmatter fields,
+  and every currently-filed freshly-drained season has now had that
+  treatment applied.
 
 ## Notes
 
