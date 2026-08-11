@@ -399,6 +399,20 @@ describe('seasonDisplayTitle — shared title framing (critique-pass-68 MED)', (
     const season = makeSeason({ number: 50, title: 'Survivor 50' })
     expect(seasonDisplayTitle(show, season)).toBe('Survivor — Survivor 50')
   })
+
+  it('drops the "S<N>" prefix when the title is the generic label spelled out in words (critique-pass-92 MED)', () => {
+    const show = makeShow({ name: 'Ink Master', slug: 'ink-master' })
+    const season = makeSeason({ number: 1, title: 'Season One' })
+    expect(seasonDisplayTitle(show, season)).toBe('Ink Master — Season One')
+  })
+
+  it('keeps the prefix when a spelled-out label carries extra info beyond the bare season name', () => {
+    const show = makeShow({ name: 'Ink Master', slug: 'ink-master' })
+    const season = makeSeason({ number: 3, title: 'Season Three: Redemption' })
+    expect(seasonDisplayTitle(show, season)).toBe(
+      'Ink Master S3 — Season Three: Redemption',
+    )
+  })
 })
 
 describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () => {

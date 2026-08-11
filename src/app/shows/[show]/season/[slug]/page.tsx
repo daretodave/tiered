@@ -42,6 +42,7 @@ import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
 import { seasonWatchOrderLine } from '@/lib/season/watch-order'
 import { auth0 } from '@/lib/auth0'
 import { headerUserFromSession } from '@/components/chrome/headerUser'
+import { numberToWords } from '@/lib/show-tenure'
 
 type Params = { show: string; slug: string }
 
@@ -100,8 +101,19 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 // information a second time ("Survivor S50 — Survivor 50"). Extend
 // the guard to drop the prefix whenever the title already contains
 // both the show name and the season number.
+//
+// CRITIQUE pass 92 MED: the generic-label guard above only matches
+// the numeral form ("Season 1"). A spelled-out numeral ("Season
+// One") hits the same stutter in word form ("Ink Master S1 —
+// Season One") and slipped through both existing branches. Compare
+// against the capitalized spelled-out form too.
 export function seasonDisplayTitle(show: Show, season: Season): string {
   if (season.title === `Season ${season.number}`) {
+    return `${show.name} — ${season.title}`
+  }
+  const spelledOut = numberToWords(season.number)
+  const spelledOutLabel = `Season ${spelledOut.charAt(0).toUpperCase()}${spelledOut.slice(1)}`
+  if (season.title === spelledOutLabel) {
     return `${show.name} — ${season.title}`
   }
   if (
