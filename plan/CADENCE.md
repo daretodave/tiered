@@ -212,6 +212,28 @@ re-verification of the entire 43-show board within the last three
 weeks for the second time today; next actionable check remains the
 2026-08-16 weekly sweep.
 
+**Rule 2 pick, 2026-08-11 tick (cloud march):** re-verified the two
+gap-table rows with the most unresolved production facts as of
+yesterday's board: `the-challenge` S42 "Cutthroat" still has no
+published episode count or finale date (Wikipedia's infobox shows
+only 2 aired episodes, Episode 3 airing 2026-08-12 titled "TBA") —
+no change, stays deferred. `rhoc` S20 still has no full episode
+order (Wikipedia's episode table lists 9 rows through a projected
+2026-09-03 close but only Episodes 1-3 carry confirmed air dates,
+Episode 4 onward still TBA) — no change, stays deferred.
+**Correction surfaced this tick:** the 2026-08-10 fourth-pass note
+above recorded `90-day-fiance` S12's finale as airing 2026-08-16 —
+that date is wrong. TVGuide's own episode grid places 2026-08-16 as
+Episode 15 of a 20-episode order (the season premiered 2026-05-10,
+not a date implying an Aug-16 close), with a finale now projected
+around 2026-09-20 (Episodes 18-20 still carry placeholder titles,
+so that date is provisional, not a confirmed TLC press date).
+Flagging here so a future Rule 2 pick doesn't file the season
+prematurely on the stale "5 days out" read — the row stays
+correctly starred `11/12, 1*` either way, no table action needed.
+No table action this tick; gap unchanged at 43/44. Next actionable
+check remains the 2026-08-16 weekly sweep.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
