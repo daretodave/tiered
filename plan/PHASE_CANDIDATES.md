@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-10 at commit ba1eec84
-> Pass count: 60
+> Last pass: 2026-08-11 at commit 55bf8186
+> Pass count: 61
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,60 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 61 (2026-08-11, commit 55bf8186, cloud) — 0 new phase-shape
+     candidates filed; escalated candidate #33 with the first
+     genuine hit of the dispatch-starvation wall it describes (see
+     the update appended to #33 above). Window since pass 60
+     (ba1eec84, 2026-08-10T17:54:21Z): 29 commits (≥20 threshold met).
+     Preceding dispatch context: march Step 1 (triage) found 0
+     unlabeled issues. Step 1.5: season-sweep last ran 2026-08-09,
+     next due 2026-08-16 — not due; show-add stays LOCKED (43/44
+     shows carry a gap, all starred/confirmed-but-unaired, unchanged
+     since the same-day fifth re-verification). Step 2.0's
+     shipping-mode gate is lifted (Phase 36 [x]); critique gate
+     checked and not due (9 commits / ~5.75h since pass 113's last
+     pass, both below threshold). Step 3a/3b empty. Step 3b.5: the
+     standing Rule 2 drain row (score 4.5) would mechanically fire,
+     but `plan/CRITIQUE.md`'s Pending queue — the escape valve the
+     last five ticks used instead of a same-day Nth zero-ship Rule 3
+     search — was found fully empty for the first time (both
+     remaining rows resolved in the immediately preceding commit,
+     55bf8186), and `plan/AUDIT.md`'s remaining non-content-gaps rows
+     are all cloud-blocked or oversight-parked (the-voice corruption
+     #36, night-shift concurrency, e2e-full breadth-crawl timeout,
+     and a deliberately-low-scored LOW row). With both fallbacks dry
+     and a 27th same-day Rule 3 search judged near-zero expected
+     value (25+ prior same-day passes already exhaustive per
+     candidate #33's own tracking), this tick diverted to Step 3c
+     instead — `/expand`'s own rate-limit gate was independently
+     open (29 commits since pass 60, posture bold, real signals
+     pending, no phase/data work), making this a well-justified
+     substitution rather than an arbitrary skip.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): unchanged from pass
+       60 — e2e-full crawl timeout (#34) and night.yml starvation
+       (#35) both cloud-blocked, the-voice corruption (#36)
+       oversight-parked, YEAR_TENURE_RE gap (score 2.7) still below
+       filing threshold, new LOW theme-description-budget row (score
+       1.5, deliberately low) filed this same day by the tick that
+       drained CRITIQUE — not independently filing-worthy, it already
+       documents its own two remediation paths for oversight.
+     - plan/CRITIQUE.md Pending: zero rows — first empty reading in
+       the multi-day window candidate #33 has been tracking.
+     - Triage backlog (`triage:loop-queued`): 2 open issues (#754
+       content-extend mirror, #636 e2e-full failure mirror, already
+       covered by #34) — no new clustering pattern.
+     - spec.md / design/: no diff since pass 60 (`git log -p
+       ba1eec84..HEAD -- spec.md design/` empty) — no drift signal.
+     - Commit pattern since pass 60: dominated by critique-fix +
+       content-trim commits (the CRITIQUE-fallback pattern itself),
+       consistent with #33's update, no other new refactor-shaped
+       cluster.
+     No new candidate met the bar for a fresh filing — every
+     concrete gap already has an open candidate (#33/#34/#35/#36)
+     tracking it; this pass's contribution is the fresh #33 evidence
+     above. -->
 
 <!-- Pass 60 (2026-08-10, commit ba1eec84, cloud) — 0 new phase-shape
      candidates filed; escalated candidate #36 with a critical new
@@ -1067,6 +1121,43 @@ but three consecutive days of unforced self-recovery across all
 three verbs makes this the least urgent of the four unpromoted
 candidates by a wider margin than yesterday. No change to score or
 scope sketch.
+
+**Update (2026-08-11, expand pass 61, cloud march):** the
+self-recovery pattern hit its first genuine wall today. By this
+tick, `plan/CRITIQUE.md`'s Pending section had gone fully to zero
+(the last two rows — a theme-description SERP-budget trim and a
+love-island-uk stat-caption fix — were resolved in the immediately
+preceding commit, 55bf8186) after five consecutive ticks had drawn
+down the CRITIQUE queue as an escape valve from the exact starvation
+this candidate describes (commits 09a8b94e, b5c1dc51, 368dc8c0,
+416bd84a, 0a05a908, each tick's own commit message citing "issue
+#758" and "dispatch-starvation pattern" explicitly). With CRITIQUE
+empty, this tick checked `plan/AUDIT.md`'s remaining Pending rows for
+a further fallback and found none available: the two HIGH bug rows
+(#36's the-voice corruption, and the night-shift concurrency bug)
+are both explicitly parked for `/oversight`/blocked-from-cloud, the
+e2e-full breadth-crawl row (#34) is likewise cloud-blocked, and the
+one LOW content-gaps row (theme-description budget) was deliberately
+filed at score 1.5 to stay out of auto-dispatch. This is the first
+day where the informal self-recovery mechanism (organically falling
+through to CRITIQUE/AUDIT fixes when Rule 2/3 stall) ran completely
+dry — there was no more real, cheap, scoped work left to substitute
+for a same-day-27th zero-ship Rule 3 search. This tick's own
+resolution was to divert to `/expand` itself (Step 3c would have
+fired next had 3b.5 not mechanically outscored it) rather than either
+force a near-certain-zero-value search or produce a bare no-op —
+which is itself evidence for the "the carve-out should also cover
+Step 3c" question raised in the original scope sketch, now answered
+in the affirmative by lived experience rather than speculation.
+Net: the multi-day trend of "self-recovery makes this less urgent"
+reverses today — the fallback well is not infinite, and this is the
+first tick to hit its bottom. Re-raising to the same urgency tier as
+#34/#35 (the previously-cited "more urgent" candidates this cycle).
+No change to score or scope sketch — the fix shape (an explicit ≥5.0
+carve-out ahead of Step 3b.5, extended to gate ahead of Step 3c too)
+remains correct and is now the highest-priority unpromoted candidate
+in this file, since it is the one candidate whose absence measurably
+cost a tick today.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
