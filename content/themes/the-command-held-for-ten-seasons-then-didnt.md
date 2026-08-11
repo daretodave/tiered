@@ -1,13 +1,13 @@
 ---
 slug: the-command-held-for-ten-seasons-then-didnt
 title: "The command held for ten seasons, then didn't."
-description: "Below Deck Mediterranean has run under Captain Sandy Yawn's command for ten of its eleven seasons. The other ran under someone else entirely, and it turns out to be the sharpest evidence for how much that authority actually matters."
+description: "Below Deck Mediterranean has run under Captain Sandy Yawn's command for ten of its eleven seasons. The other ran under someone else entirely."
 tagline: "Ten of Below Deck Mediterranean's eleven seasons answer to Captain Sandy Yawn's command, and one answers to someone else entirely. <b>This ranks all eleven by how much that authority actually shaped what happened aboard, using the one exception as the control.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-10
+last_revised: 2026-08-11
 featured: false
 related:
   - the-charter-map-as-the-whole-story

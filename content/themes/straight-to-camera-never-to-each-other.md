@@ -1,13 +1,13 @@
 ---
 slug: straight-to-camera-never-to-each-other
 title: "Straight to camera, never to each other"
-description: "A cast member can say something to a co-star, or say it straight to a lens where nobody else in the room can push back. This tracks the seasons where that second channel — the confessional, the Diary Room, the Beach Hut — carries real narrative weight."
+description: "A cast member can say something to a co-star, or say it straight to a lens where nobody else in the room can push back."
 tagline: "A show can let two people say something to each other, or let one of them say it straight to a lens where nobody can push back. <b>This ranks the seasons where that second channel — the confessional, the Diary Room, the Beach Hut — ends up carrying more of the story than anything said out loud.</b>"
 category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-08-11
 featured: false
 related:
   - best-hosting

@@ -6,12 +6,12 @@ category: structure
 sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-09
+last_revised: 2026-08-11
 featured: false
 related:
   - survivor-pillars
   - best-returnees
-description: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs where every move counts — vote density, paranoia, and tension the franchise gets quoted on."
+description: "The late-game stretch where a season's field compresses and the pressure spikes. The back-half runs where every move counts."
 entries:
   - show: survivor
     season: 28

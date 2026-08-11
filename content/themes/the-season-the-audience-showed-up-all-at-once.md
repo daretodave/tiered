@@ -1,13 +1,13 @@
 ---
 slug: the-season-the-audience-showed-up-all-at-once
 title: "The season the audience showed up all at once"
-description: "Every long-running format has one season where the audience shows up in numbers it never quite matches again — a premiere record, a ratings high, a run the show's own history still points back to first."
+description: "Every long-running format has one season where the audience shows up in numbers it never quite matches again."
 tagline: "A format's biggest audience doesn't arrive on schedule — it lands in one specific season, and the show usually knows exactly which one. <b>These are the runs a premiere record, a ratings high, or a franchise's own retrospective still cites as the high-water mark.</b>"
 category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-09
+last_revised: 2026-08-11
 featured: false
 related:
   - running-on-muscle-memory

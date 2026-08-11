@@ -1,13 +1,13 @@
 ---
 slug: someone-else-held-the-chair-for-a-while
 title: "Someone else held the chair for a while"
-description: "A host exits or a judge can't make it that week, and instead of pausing production, the show pulls in a guest — for one episode, one season, or as a built-in rotating seat from the start."
+description: "A host exits or a judge can't make it that week, and instead of pausing production, the show pulls in a guest."
 tagline: "A guest chef judging next to the regulars, a rotation of celebrities splitting hosting duties, a future full-timer's very first appearances covering someone else's seat — <b>these are the seasons that solved a vacancy without ever pausing the show.</b>"
 category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-07
+last_revised: 2026-08-11
 featured: false
 related:
   - the-mic-changed-hands
