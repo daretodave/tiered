@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-08-11
 featured: false
 related:
   - when-the-basket-became-a-bracket
@@ -60,7 +60,7 @@ entries:
     season_label: "S22"
     rank: 8
     title: "Nine months on air, and four other seasons share the calendar with it"
-    blurb: "The longest single season in this stretch also touches the most neighbors — a tail catch, a near-total overlap, two more brushed at the finish. The basket and the judging table never notice; the release calendar does all the tangling."
+    blurb: "One of two longest single seasons in this stretch, this run also touches the most neighbors — a tail catch, a near-total overlap, two more brushed at the finish. The basket and the judging table never notice; the release calendar does all the tangling."
   - show: chopped
     season: 24
     season_label: "S24"
@@ -168,7 +168,7 @@ entries:
     season_label: "S60"
     rank: 26
     title: "Nine months on air, no bracket in sight, and a whole neighboring season nested inside it"
-    blurb: "Five themed cuisine hours carry a tournament-free season across the longest single window this run has produced. One later season's entire run airs somewhere inside it, while an earlier neighbor only brushes the front edge."
+    blurb: "Five themed cuisine hours carry a tournament-free season across a nine-month window, tied with Season 22 for the longest single stretch this run has produced. One later season's entire run airs somewhere inside it, while an earlier neighbor only brushes the front edge."
   - show: chopped
     season: 18
     season_label: "S18"
