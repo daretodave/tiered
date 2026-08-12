@@ -10,7 +10,7 @@ host: Noel Fielding and Alison Hammond
 eyebrow: "Aired autumn 2024 · Hammond's second run, the post-national format settled"
 lede: "The Hammond settles. Alison Hammond and Noel Fielding worked their second run together, with Prue Leith and Paul Hollywood on the bench and a themed-week roster — a 1970s Week among them — that continued the post-national format."
 pull: "The new pairing stops being new. A settled, competent run that confirms the post-2023 format works without giving the canon much to argue about."
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "Hammond's second run settles in"
 format_caption: "Hammond's settled second run, the post-national format"
 filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
 premiere_caption: "Channel 4 · Tuesday evenings"

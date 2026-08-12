@@ -134,7 +134,7 @@ tag: The pairing's third year — same lineup, same format, nothing new to repor
 slot_argument: A third consecutive year with no format news and no lineup change. It confirms the post-Hammond era is stable but gives the canon even less to argue about than the settled year before it.
 community_rank_hint: rank=14 delta=0 sentiment=hold
 
-The series where the settled pairing stops needing a story. Alison Hammond and Noel Fielding worked a confident third run, with Prue Leith and Paul Hollywood on the bench and the post-national themed-week format three years in with no changes to report. The casting class reads workmanlike rather than memorable, and the broadcast leans on the bakes because there is no lineup news left to lean on. The most comfortable and least distinctive year the current era has produced — a confirmation series, one slot below its predecessor, because a third uneventful year says less than a second. Worth the watch for completists, less rewarding than the runs that asked something new of the tent.
+This slot sits one below The Hammond Settles for a simple reason: a second uneventful year still confirmed the rebuilt format worked, and a third has nothing left to confirm. Settles could argue it was proving something; Continues is just doing it again — that is the ceiling, not a demotion. Same pairing, same bench, same themed-week format as the year before gives the canon less to argue for than its predecessor earned. It still ranks well above the era's production-driven entries, like The Bubble Year, because none of that instability touches this run — tent, bench, and format are all exactly where the show left them.
 
 ## 11. The Bubble Year
 

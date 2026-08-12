@@ -8,7 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2019 · Sandi Toksvig's last run at the tent flap"
-format_summary: "13 bakers · 10 episodes · Channel 4"
+format_summary: "Toksvig-Fielding pairing's last run"
 format_caption: "the Toksvig-Fielding presenter pair's final run together"
 filming_caption: "Welford Park, Berkshire, Channel 4 year three"
 premiere_caption: "Channel 4 · Tuesday evenings"

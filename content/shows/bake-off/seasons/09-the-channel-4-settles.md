@@ -8,7 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2018 · Channel 4, year two"
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "New lineup's second year settles in"
 format_caption: "the new lineup running smoothly in its second year"
 filming_caption: "Welford Park, Berkshire, Channel 4 year two"
 premiere_caption: "Channel 4 · Tuesday evenings"

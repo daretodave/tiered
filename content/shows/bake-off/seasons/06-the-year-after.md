@@ -10,7 +10,7 @@ host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2015 · Welford Park, year two"
 lede: "The series that consolidated the prior year's peak. Welford Park was now the show's permanent home, the BBC One audience had locked in, and the casting class arrived with a denser end-to-end bench than the run before it."
 pull: "The BBC era at full confidence — same tent, same lineup, sharper format. The series that quietly argues Bake Off's best run came late, not early."
-format_summary: "12 bakers · 10 episodes · BBC One"
+format_summary: "Full BBC One audience, Welford"
 format_caption: "the BBC One audience locked in, the bench at full confidence"
 filming_caption: "Welford Park, Berkshire, year two"
 premiere_caption: "BBC One · Wednesday evenings"

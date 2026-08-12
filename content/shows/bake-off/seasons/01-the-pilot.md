@@ -10,7 +10,7 @@ host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2010 · The touring pilot"
 lede: "The original Bake Off, before the tent was a tent and before the show fixed itself to one country estate. Ten amateur bakers move from location to location across the UK, working signature, technical and showstopper under Mary Berry and Paul Hollywood for the first time."
 pull: "Bake Off before it knew what Bake Off was. A six-episode pilot that toured the UK and figured the format out one stop at a time."
-format_summary: "10 bakers · 6 episodes · touring format"
+format_summary: "Touring format · no fixed tent"
 format_caption: "the only series to tour the country rather than fix at one estate"
 filming_caption: "filmed at a different UK location each week"
 premiere_caption: "BBC Two · Tuesday evenings"

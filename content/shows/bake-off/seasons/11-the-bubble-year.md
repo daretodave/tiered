@@ -10,7 +10,7 @@ host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2020 · The COVID-bubble series, Matt Lucas's first run"
 lede: "The pandemic series. The production sealed cast and crew into a self-contained bubble at Down Hall Hotel, relocating from Welford Park, and Matt Lucas joined Noel Fielding at the tent flap as Sandi Toksvig stepped away."
 pull: "The series Bake Off shot inside a biosphere — a compressed bubble production that tells you more about how television survived 2020 than about the format itself."
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "COVID-bubble production, new hosts"
 format_caption: "the COVID-bubble production under a new presenter pairing"
 filming_caption: "Down Hall Hotel, Essex — relocated from Welford for the bubble"
 premiere_caption: "Channel 4 · Tuesday evenings"

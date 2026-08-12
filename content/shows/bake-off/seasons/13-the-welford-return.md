@@ -10,7 +10,7 @@ host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2022 · The tent returns to Welford Park"
 lede: "The Welford return. The production moved out of the COVID bubble and back to Welford Park, with Noel Fielding and Matt Lucas working Lucas's final run together and Prue Leith and Paul Hollywood anchoring the bench in the show's longtime home."
 pull: "The series that put the tent back where it belonged. A confident return marked by a themed-week controversy that pushed the producers to rethink how Bake Off frames a culture."
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "Post-bubble return to Welford"
 format_caption: "the post-bubble return to Welford, Lucas's final run"
 filming_caption: "Welford Park, Berkshire — back home after two bubble years"
 premiere_caption: "Channel 4 · Tuesday evenings"

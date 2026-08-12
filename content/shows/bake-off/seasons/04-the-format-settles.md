@@ -8,7 +8,7 @@ ep_count: 10
 location: Harptree Court, Somerset
 host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2013 · Harptree Court, year two"
-format_summary: "13 bakers · 10 episodes · BBC Two"
+format_summary: "Second Harptree year, format settled"
 format_caption: "the format running smoothly in its second Harptree year"
 filming_caption: "Harptree Court, Somerset, for a second year"
 premiere_caption: "BBC Two · Tuesday evenings"

@@ -10,7 +10,7 @@ host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2021 · The second and final COVID-bubble series"
 lede: "The second bubble year. The production returned to Down Hall Hotel for another sealed-off shoot under COVID protocols, with Noel Fielding and Matt Lucas working their second run together and Prue Leith and Paul Hollywood back on the bench."
 pull: "The bubble premise stops being a novelty and starts being a constraint. A competent run carrying the same production weight as the year before, with less of the first one's strangeness to recommend it."
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "Second compressed bubble shoot"
 format_caption: "the second compressed bubble production, same lineup"
 filming_caption: "Down Hall Hotel, Essex — the bubble's second and final year"
 premiere_caption: "Channel 4 · Tuesday evenings"

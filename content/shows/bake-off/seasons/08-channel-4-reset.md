@@ -10,7 +10,7 @@ host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2017 · The Channel 4 era opens"
 lede: "The Channel 4 reset. Sandi Toksvig and Noel Fielding replace Mel and Sue at the tent flap, Prue Leith joins Paul Hollywood at the judge's table, and the show keeps Welford Park as the one piece of continuity carrying the audience across."
 pull: "A structural experiment the franchise pulled off in one move — new network, new hosts, new judge, same tent. The series the Channel 4 era was built on."
-format_summary: "12 bakers · 10 episodes · Channel 4"
+format_summary: "New hosts, new judge, new network"
 format_caption: "new hosts, new judge, new network — the format reset"
 filming_caption: "Welford Park, Berkshire, the one piece of continuity"
 premiere_caption: "Channel 4 · Tuesday evenings"
