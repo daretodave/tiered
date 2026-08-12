@@ -360,6 +360,43 @@ love-island-uk removal. Next actionable check remains the
 2026-08-16 weekly sweep, or `american-ninja-warrior`'s 2026-08-17
 finale crossing into the past (closest dated finale in the table).
 
+**Rule 2 pick, 2026-08-12 tick (cloud march, fourth pass same
+day):** the three passes above left 18 gap-table rows unchecked
+today — two `scout` batches (9 shows each) covered every one of
+them: `alone-australia`, `bachelor-in-paradise`, `dragrace-uk`,
+`rhom`, `the-circle`, `traitors`, `shark-tank`, `southern-charm`,
+`vanderpump-rules`, `bake-off`, `ink-master`,
+`married-at-first-sight-australia`, `masterchef`, `rhop`,
+`rhoslc`, `selling-sunset`, `summer-house`, `traitors-uk`. **No
+row crossed into concluded territory** — every next-unfiled
+season across all 18 shows is either pre-premiere or, in
+`alone-australia`'s case, mid-run (S4 premiered 2026-07-15,
+finale expected 2026-09-09). All 42 gap-table rows are now
+individually re-verified as of today (25 checked in the first
+three passes + these 18) — the entire board is confirmed
+starred, no actionable Rule 2 pick exists at this hour.
+
+Three findings worth recording so future ticks don't re-spend
+research: **`rhom`** (Real Housewives of Miami) S8 production is
+on indefinite pause per Bravo (March 2026) — no filming start, no
+cast, no date; Andy Cohen has said it will return but gave no
+timeline. **`bachelor-in-paradise`** S11 was pushed a full year,
+to summer 2027, as part of a franchise "reset." **`traitors`**
+(US) main celebrity edition S5 (Peacock) is pushed to winter
+2027; a separate, differently-numbered civilian spinoff "The
+Traitors: New Blood" premieres 2026-09-17 on NBC/Peacock — this
+catalog tracks the numbered mainline season, so New Blood is not
+a Rule 2 target under the `traitors` slug. These three rows can
+be skipped in near-term Rule 2 passes (re-verify window: `rhom`
+no earlier than a confirmed filming-start report; `bachelor-in-
+paradise` and `traitors` no earlier than late 2026). Next
+actionable check for the rest of the 18-show batch: `bake-off`
+S17 premieres 2026-09-09, `rhoslc` S7 premieres 2026-09-16,
+`rhop` S11 premieres 2026-10-05 — none finish before their
+premiere, so no near-term action expected from this batch either.
+Next actionable check overall remains the 2026-08-16 weekly
+sweep, or `american-ninja-warrior`'s 2026-08-17 finale.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
