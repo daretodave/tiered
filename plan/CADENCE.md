@@ -322,6 +322,44 @@ check remains the 2026-08-16 weekly sweep, or any dated finale
 09-02, rhoa 08-23, married-at-first-sight 08-27, big-brother 10-01)
 crossing into the past.
 
+**Rule 2 pick, 2026-08-12 tick (cloud march, third pass same
+day):** instead of a fourth same-day recheck of the two
+already-exhausted rows above, two `scout` batches (22 shows total)
+covered every row NOT individually re-verified since 2026-08-09 or
+earlier — `survivor`, `amazing-race`, `rhony`, `dancing-with-the-
+stars`, `rhoa`, `rhonj`, `the-voice`, `below-deck`, `alone`,
+`love-is-blind`, `big-brother`, `bachelor`, `project-runway`,
+`american-idol`, `hells-kitchen`, `masked-singer`,
+`below-deck-down-under`, `american-ninja-warrior`,
+`married-at-first-sight`, `love-island-uk`, `love-island-us`,
+`top-chef`. **One stale row found and corrected: `love-island-uk`.**
+The table's `13/14` declared-vs-filed pair was wrong — show
+frontmatter (`content/shows/love-island-uk.md`) reads
+`seasons: 13`, matching the 13 filed season files exactly
+(`13-summer-2026.md`, Mallorca villa, premiered 2026-06-01, finale
+aired 2026-07-27, already ranked in `canon.md` #13). The scout's
+initial read flagged this as a fresh finale to file — cross-
+checking our own catalog showed it's the *exact same* season
+already filed via the phase-39 finale-gate pathway 16 days ago (see
+the RESOLVED `AUDIT.md` row for the Love Island UK S13 finale-shift
+note). The `14` in this table was simply never corrected after
+that drain — a housekeeping miss, not new content. **Row removed
+below; love-island-uk is gap-free at 13/13.** No season file
+written this tick. Two smaller date refinements surfaced in the
+same research pass, recorded so future picks don't re-spend
+research: `alone` S13's finale is confirmed 2026-09-02 (Wikipedia,
+updated 2026-08-11) — already reflected in this section's date
+list above, no correction needed; `american-ninja-warrior` S18's
+finale is now confirmed 2026-08-17 (NBC's own episode guide, 11
+episodes total, resolving the long-standing 9-vs-13 source
+conflict) — 5 days out, stays deferred. Every other row in the
+22-show batch confirmed still correctly starred (pre-premiere or
+mid-run, no other finale concluded). **43 shows now carry a gap ·
+44 gap-slots total → 42 shows · 43 gap-slots total** after the
+love-island-uk removal. Next actionable check remains the
+2026-08-16 weekly sweep, or `american-ninja-warrior`'s 2026-08-17
+finale crossing into the past (closest dated finale in the table).
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
@@ -480,7 +518,6 @@ new-show creation is locked to the biweekly show-add clock.
 | vanderpump-rules | 12/13 | 1* |
 | bake-off | 16/17 | 1* |
 | ink-master | 17/18 | 1* |
-| love-island-uk | 13/14 | 1* |
 | love-island-us | 8/9 | 1* |
 | married-at-first-sight-australia | 13/14 | 1* |
 | masterchef | 16/17 | 1* |
