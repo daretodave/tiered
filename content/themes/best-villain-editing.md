@@ -34,10 +34,10 @@ entries:
     blurb: "The Traitors hands a few players a villain edit by design — the format makes deception the job. Season two runs that engine at full strength, with an all-reality cast that knows how to play to a camera and a Round Table built to amplify every loaded glance."
   - show: big-brother
     season: 19
-    season_label: "S19 · Den Of Temptation"
+    season_label: "S19 · Den of Temptation"
     rank: 4
     title: "A summer of dominant-player editing, mythologized as it happened."
-    blurb: "Den Of Temptation builds its broadcast around a single house power center, and the framing never wavers from it. The temptation twist hands the season its loud antagonist frame, and the narrative bends around the loudest player in the room."
+    blurb: "Den of Temptation builds its broadcast around a single house power center, and the framing never wavers from it. The temptation twist hands the season its loud antagonist frame, and the narrative bends around the loudest player in the room."
   - show: dragrace
     season: 11
     season_label: "S11"

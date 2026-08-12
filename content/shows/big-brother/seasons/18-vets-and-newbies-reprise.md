@@ -1,7 +1,7 @@
 ---
 show: big-brother
 number: 18
-title: Vets And Newbies Reprise
+title: Vets and Newbies Reprise
 canonical_position: 12
 premiere_date: 2016-06-22
 ep_count: 37

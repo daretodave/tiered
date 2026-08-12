@@ -27,7 +27,7 @@ entries:
     blurb: "Seven incoming roommates are told during casting they're joining Road Rules. The actual reason — real prior history with an original cast member — stays hidden from the house until move-in day."
   - show: big-brother
     season: 4
-    season_label: "S04 · Exes In The House"
+    season_label: "S04 · Exes in the House"
     rank: 3
     title: "The house's first big twist plants an ex behind every houseguest's back."
     blurb: "Thirteen houseguests move in, and Day One reveals the catch: every single one has an ex already inside the house. It's the blueprint the franchise keeps borrowing from whenever it wants a season anchored in shared history."

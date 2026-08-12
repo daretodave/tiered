@@ -1,7 +1,7 @@
 ---
 show: big-brother
 number: 4
-title: Exes In The House
+title: Exes in the House
 canonical_position: 21
 premiere_date: 2003-07-08
 ep_count: 30

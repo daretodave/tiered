@@ -1,7 +1,7 @@
 ---
 show: big-brother
 number: 16
-title: Battle Of The Block
+title: Battle of the Block
 canonical_position: 8
 premiere_date: 2014-06-25
 ep_count: 37

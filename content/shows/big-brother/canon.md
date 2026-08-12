@@ -36,7 +36,7 @@ era_bands:
 
 # Editor's Canon — Big Brother
 
-## 6. Summer Of Secrets
+## 6. Summer of Secrets
 
 tag: The old-era ceiling — the season the casting team got everything right.
 slot_argument: Long-running fans tend to land here when asked for the best pre-2010 cast. The twist serves the room instead of crowding it.
@@ -92,7 +92,7 @@ community_rank_hint: rank=7 delta=-1 sentiment=down
 
 Seventh, the clearest case in the canon for foundational weight without peak execution. Every season ranked above it — both all-star casts, the alliance-era pivot, the veteran-and-newbies blueprint, the coaches experiment — runs on the engine this summer installed, but installing an engine and driving it well are different achievements, and the six seasons above it simply did more with the format once it existed. It still ranks above Battle of the Block and everything twist-stacked below, because raw format weight beats a crowded rule book. The middle of the canon starts here: everything below this slot gets judged on execution rather than on origin.
 
-## 16. Battle Of The Block
+## 16. Battle of the Block
 
 tag: The most twist-stacked summer of the modern era — Big Brother running every mechanic the format had.
 slot_argument: Twin HoH, Battle of the Block, Team America and the Detonators forming inside it all. The cast played through a thicker rule book than any prior season.
@@ -124,7 +124,7 @@ community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Eleventh, sitting just below the canon's hinge point and just above a returnee season it outranks mostly on ambition. The Multiverse earns its slot for reach — no season above it, including anything in the top ten, attempts this much structural churn across this long a runway — but reach without full control is why it sits below Strategy Era Begins rather than in the top tier with the other format-shaping seasons. It ranks ahead of Vets and Newbies Reprise because a milestone season swinging hard at scale is a bigger canon argument than a competent rerun of an older format, even one that executes more cleanly.
 
-## 18. Vets And Newbies Reprise
+## 18. Vets and Newbies Reprise
 
 tag: The format revisiting its returnee-and-rookies engine five years on.
 slot_argument: A confident reset of the BB13 template, with the Roadkill twist adding a secret third nominator and the Battle Back pulling an evicted player back into the room.
@@ -156,7 +156,7 @@ community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Fifteenth, one slot above a season that carries a bigger reputation than its canon placement suggests. Festie Besties ranks below Cliques Summer because it inherits rather than invents the sorting logic, but it edges ahead of Den of Temptation at #16 on sheer density — two twists running at once, both landing, is a harder needle to thread than the single-returnee-and-statue premise the season below it builds around. The modern era likes to call Den of Temptation its anchor text, and the canon doesn't dispute the ambition, but a season that stacks more mechanics and keeps them legible earns the nod here.
 
-## 19. Den Of Temptation
+## 19. Den of Temptation
 
 tag: The modern era's anchor — a single returnee and a goddess statue rigged with three public-vote powers.
 slot_argument: A season the franchise points to when it argues the modern run has its own canonical text. Mythology layered thicker than any prior summer, and an editing approach that knows it.
@@ -172,7 +172,7 @@ community_rank_hint: rank=17 delta=-4 sentiment=down
 
 Seventeenth, the last of the modern-era run before the canon turns to seasons defined more by concept than by house dynamics. The Hacker Summer knows exactly what it is — one clean mechanic, one hardened alliance split — which is enough to edge out the twist-stacked seasons below it, A Summer of Mystery and Houseguests vs. the AI, but not enough to climb past the mythology-heavy seasons above it. The distinction between this slot and the next one down is instructive: a twist administered by a competition the houseguests actually play still ranks ahead of a twist administered by a theme controlling the season from outside the room.
 
-## 27. A Summer Of Mystery
+## 27. A Summer of Mystery
 
 tag: The most twist-stacked summer since Battle of the Block — three overlapping mechanics in one run.
 slot_argument: Block Buster's three-way safety competition, a surprise Mastermind power set, and a one-off elimination-by-competition week all land in the same summer, and all three stay houseguest-run rather than system-run.
@@ -196,7 +196,7 @@ community_rank_hint: rank=20 delta=-6 sentiment=down
 
 Twentieth, a full six-slot drop from where the canon's format-shaping tier ends, and the point where twist stacking starts working against the show rather than for it. America's Player carries two separate premises — pre-loaded relationship grudges and a public-vote secret-task mechanic — and neither fully supports the other, which is why it trails the AI-driven season above it despite being the more houseguest-centered of the two. It still ranks ahead of Exes in the House because two mismatched twists is a more interesting failure than one twist that hasn't been calibrated yet.
 
-## 4. Exes In The House
+## 4. Exes in the House
 
 tag: The franchise's first big casting swing — the X-Factor twist gives the house a charge.
 slot_argument: The twist is unrepeatable in this form and the casting commits, even if the execution still reads early-era.

@@ -1,7 +1,7 @@
 ---
 show: big-brother
 number: 6
-title: Summer Of Secrets
+title: Summer of Secrets
 canonical_position: 1
 premiere_date: 2005-07-07
 ep_count: 30

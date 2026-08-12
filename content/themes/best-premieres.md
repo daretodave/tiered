@@ -46,7 +46,7 @@ entries:
     blurb: "Season 4 walks in with a cast of real range and a panel fully in sync. The opening workroom runs sharp and personal — the kind of friction the show later learned to engineer, arriving here the moment the doors open."
   - show: big-brother
     season: 6
-    season_label: "S06 · Summer Of Secrets"
+    season_label: "S06 · Summer of Secrets"
     rank: 6
     title: "Every houseguest crosses the threshold already carrying a secret."
     blurb: "The hidden-pairs twist lands at the door, and the premiere sets the alliance math racing before the first night is over. A casting season and a twist season at once, and the opening hour makes both promises clearly."
@@ -82,7 +82,7 @@ entries:
     blurb: "No host, no competition, no elaborate rules — just a fixed friend group, one rented house, and a weekend commute the premiere treats as the whole plot engine. The format arrives complete in hour one, and Bravo would spend a decade building on exactly this shape."
   - show: big-brother
     season: 27
-    season_label: "S27 · A Summer Of Mystery"
+    season_label: "S27 · A Summer of Mystery"
     rank: 12
     title: "A ninety-minute premiere stages the whole gimmick before the first competition runs."
     blurb: "The compound gets redressed as Hotel Mystère, sixteen houseguests walk through the door, and a billed mystery seventeenth arrival keeps the room guessing — all inside one 90-minute premiere, before a single competition airs."

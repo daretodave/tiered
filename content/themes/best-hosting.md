@@ -45,7 +45,7 @@ entries:
     blurb: "The VH1 jump raises the stakes of every entrance and every critique, and RuPaul's panel presence holds the format's intimacy against a much bigger stage. The reads stay personal even as the cameras pull wider."
   - show: big-brother
     season: 27
-    season_label: "S27 · A Summer Of Mystery"
+    season_label: "S27 · A Summer of Mystery"
     rank: 6
     title: "Julie Chen Moonves narrates a haunted-hotel theme without letting the bit outrun the game."
     blurb: "Three stacked twists and a redressed set could easily tip into gimmick, and Julie's straight-faced delivery at the live shows is what keeps Hotel Mystère feeling like Big Brother instead of a theme night. Decades of practice at this exact job show."
