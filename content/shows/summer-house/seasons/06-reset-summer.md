@@ -13,7 +13,7 @@ format_summary: "Docusoap · new Hamptons house"
 format_caption: "relocation after several years in Watermill"
 filming_caption: "The Hamptons · a new house after the Watermill years"
 premiere_caption: "Bravo · January 2022"
-episodes_caption: "17 episodes, a two-part finale"
+episodes_caption: "Seventeen episodes, closing on the format's first two-part finale"
 watch_list:
   - episode_label: "Format · a new house"
     body: "The group relocates to a new Hamptons house, the first move since the show settled into Watermill years earlier. Watch for how a new setting resets the group's established rhythms."

@@ -16,7 +16,7 @@ cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2023"
 filming_caption: "South West Tasmania · founding shoot for the Australian format"
-episodes_caption: "12 competition episodes"
+episodes_caption: "Twelve episodes — one shorter than the West Coast Range return three years later"
 watch_list:
   - episode_label: "Ep 1 · first camp"
     body: "Watch how each survivalist selects their base camp site. Shelter decisions made in the first hours shape the whole run — and the South West Tasmanian terrain offers very different options than anything from the US version."

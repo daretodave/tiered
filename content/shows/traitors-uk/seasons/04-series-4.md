@@ -15,7 +15,7 @@ pull: "A fourth trip to the castle, now with its own after-show — the format c
 format_summary: "Standard format · companion after-show added"
 format_caption: "paired for the first time with Uncloaked, hosted by Ed Gamble"
 premiere_caption: "BBC One · launched January 2026"
-episodes_caption: "12 episodes across four weeks"
+episodes_caption: "Twelve episodes, plus a companion aftershow for the first time"
 filming_caption: "Ardross Castle · fourth winter at the Highland towers"
 host_caption: "Claudia Winkleman, {seasonOrdinalWord} series at the helm"
 watch_list:

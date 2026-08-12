@@ -16,7 +16,7 @@ cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2024"
 filming_caption: "Fiordland · first shoot outside Australia"
-episodes_caption: "10 competition episodes"
+episodes_caption: "Ten episodes — the tightest run of the three Australian seasons filed so far"
 watch_list:
   - episode_label: "Ep 1 · location reveal"
     body: "The first episode establishes Fiordland's scale immediately. The transition from Tasmania's open moorland to fjord-and-rainforest terrain reads as a genuine format step change — watch for how survivalists read the environment in their first camp decisions."

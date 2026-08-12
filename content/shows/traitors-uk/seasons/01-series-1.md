@@ -15,7 +15,7 @@ pull: "The format before anyone else had copied it: cloaks, candlelight, and a H
 format_summary: "Standard format · 12 episodes"
 format_caption: "the format's original, UK-only run"
 premiere_caption: "BBC One · launched November 2022"
-episodes_caption: "12 episodes across three weeks"
+episodes_caption: "Twelve episodes, broadcast across three weeks"
 filming_caption: "Ardross Castle · Scots Baronial towers rebuilt in the 1850s"
 host_caption: "Claudia Winkleman, {seasonOrdinalWord} series at the helm"
 watch_list:

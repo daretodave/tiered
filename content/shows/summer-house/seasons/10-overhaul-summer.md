@@ -13,7 +13,7 @@ format_summary: "Docusoap · biggest overhaul yet"
 format_caption: "six new main cast members, the largest addition ever"
 filming_caption: "The Hamptons · the show's most reshaped cast to date"
 premiere_caption: "Bravo · February 2026"
-episodes_caption: "16 regular episodes, a first three-part reunion"
+episodes_caption: "Sixteen regular episodes, extended by a bonus post-reunion coda"
 watch_list:
   - episode_label: "Cast · six new members"
     body: "Six new members join the main cast this season, the largest single-season addition in the show's history, while several longtime cast members step away. Watch for how a half-new ensemble finds its footing."

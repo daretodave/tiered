@@ -15,7 +15,7 @@ pull: "The debut's rough edges sanded down — same castle, same cloaks, a forma
 format_summary: "Standard format · 12 episodes"
 format_caption: "second series, format fully dialed in"
 premiere_caption: "BBC One · launched January 2024"
-episodes_caption: "12 episodes across four weeks"
+episodes_caption: "Twelve episodes, spread across four weeks"
 filming_caption: "Ardross Castle · same Highland towers as Series 1"
 host_caption: "Claudia Winkleman, {seasonOrdinalWord} series at the helm"
 watch_list:

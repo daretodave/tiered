@@ -16,7 +16,7 @@ cast_size: 10
 cast_size_caption: "10 individual survivalists"
 premiere_caption: "SBS · March 2025"
 filming_caption: "West Coast Range · Tasmania return with a deeper cast pool"
-episodes_caption: "13 competition episodes"
+episodes_caption: "Thirteen episodes, the longest of the three Australian seasons to date"
 watch_list:
   - episode_label: "Ep 1 · new terrain"
     body: "The West Coast Range offers different terrain from the South West — watch for how survivalists read a Tasmanian environment that shares a biome family with Season 1 but presents distinct micro-environments and resource profiles."
