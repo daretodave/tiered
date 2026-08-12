@@ -253,3 +253,36 @@ test.describe('vote state pill — public never sees the pill', () => {
     expect(labelText).not.toMatch(/^community votes?$/)
   })
 })
+
+test.describe('vote-pair SSR count seeding (critique pass-106)', () => {
+  test('raw SSR HTML seeds the vote count from the true aggregate, never a hardcoded 0', async ({
+    context,
+  }) => {
+    await context.clearCookies()
+
+    // read_vote's aggregate is session-independent (its own RPC
+    // contract comment: "an anon visitor with no cookie still sees
+    // the true net"), so an unauthenticated GET reports the same
+    // voter_count the page's server component now seeds VotePair
+    // with. Before the pass-106 fix, `initialCount` was hardcoded
+    // to 0 regardless of this value, so a season with existing
+    // votes flashed "0 votes so far" until the client mount fetch
+    // resolved a few hundred ms later.
+    const api = await context.request.get(
+      `/api/vote?targetType=season&targetId=${encodeURIComponent(SEASON_TARGET)}`,
+    )
+    expect(api.ok()).toBe(true)
+    const apiJson = await api.json()
+    expect(apiJson.ok).toBe(true)
+    const trueCount = Number(apiJson.count)
+
+    const res = await context.request.get(SEASON_URL)
+    expect(res.ok()).toBe(true)
+    const html = await res.text()
+
+    const match = html.match(/data-testid="vote-count"[^>]*>([\d,]+)</)
+    expect(match).not.toBeNull()
+    const ssrCount = Number((match?.[1] ?? '').replace(/,/g, ''))
+    expect(ssrCount).toBe(trueCount)
+  })
+})

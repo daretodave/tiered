@@ -43,6 +43,7 @@ import { seasonWatchOrderLine } from '@/lib/season/watch-order'
 import { auth0 } from '@/lib/auth0'
 import { headerUserFromSession } from '@/components/chrome/headerUser'
 import { numberToWords } from '@/lib/show-tenure'
+import { readVote } from '@/lib/supabase/server'
 
 type Params = { show: string; slug: string }
 
@@ -515,6 +516,19 @@ export default async function SeasonPage({ params }: { params: Params }) {
   })
 
   const seasonTargetId = `${show.slug}:${season.number}`
+  // Critique pass-106 LOW: VotePair's initialCount used to hardcode
+  // 0 regardless of the season's true vote total, so any season
+  // with existing votes flashed "0 votes so far" until the client
+  // mount fetch resolved. read_vote's aggregate is session-
+  // independent (see the RPC's own contract comment), so a null
+  // sessionId still returns the true voter_count for SSR.
+  const initialVoteCount = await readVote({
+    sessionId: null,
+    targetType: 'season',
+    targetId: seasonTargetId,
+  })
+    .then((r) => r.voterCount)
+    .catch(() => 0)
   const { prev, next } = adjacentByCanon(show, seasons, season)
   const { rows: appearsIn, hasCrossRef: appearsInHasCrossRef } = appearsInRowsFor(
     show,
@@ -594,7 +608,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
               }
               voteSlot={
                 <VotePair
-                  initialCount={0}
+                  initialCount={initialVoteCount}
                   targetType="season"
                   targetId={seasonTargetId}
                   subject={`${show.name} ${season.title}`}
