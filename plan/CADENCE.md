@@ -282,6 +282,22 @@ the 2026-08-16 weekly sweep, or any of the four now-dated finales
 09-02, rhoa 08-23, married-at-first-sight 08-27, below-deck-med
 08-24, big-brother 10-01) crossing into the past.
 
+**Rule 2 pick, 2026-08-12 tick (cloud march):** re-verified the two
+gap-table rows still lacking a confirmed finale date after
+yesterday's three passes: `the-challenge` S42 "Cutthroat" and `rhoc`
+S20. `the-challenge` S42 — no change; Wikipedia's episode table still
+shows only 2 aired episodes (Episode 3, airing today 2026-08-12, still
+titled "TBA" as of this check), no full episode order or finale date
+published by MTV/Paramount+ — stays deferred. `rhoc` S20 — episode
+schedule filled in further since yesterday: Episodes 4-7 now carry
+confirmed air dates (through 2026-08-20), Episode 8 (2026-08-27) and a
+presumed Episode 9 (2026-09-03) remain title-TBA and Bravo has not
+labeled either as the season finale — closer to complete than
+yesterday's snapshot but still not a confirmed close, stays deferred.
+No table action this tick; gap unchanged at 43/44. Next actionable
+check remains the 2026-08-16 weekly sweep, or any of the eight dated
+finales listed above crossing into the past.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
