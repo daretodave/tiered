@@ -4,10 +4,15 @@ number: 3
 title: "Season 3"
 canonical_position: 3
 premiere_date: "2024-12-04"
+ep_count: 10
+location: "Phoenix, Arizona"
 eyebrow: "Premiered December 2024 · Netflix"
 lede: "Two seasons in, the premise doesn't need to prove itself. Six new couples take the same ultimatum — propose, or trial-marry someone else from the group for three weeks — with the format now a known quantity and the pressure resting on the cast."
 pull: "By season three the format is established. What's left to test is whether a new cast can make the same deadline feel like it matters again."
 premiere_caption: "Netflix · December 2024"
+filming_caption: "Downtown Phoenix · couples housed at AVE Phoenix Terra"
+episodes_caption: "Ten episodes, released across three weeks"
+host: "Nick and Vanessa Lachey"
 host_caption: "{seasonOrdinalWord} season at the helm"
 format_summary: "Trial-marriage experiment"
 format_caption: "Couples reassigned for a three-week trial marriage"
@@ -30,4 +35,3 @@ someone new from inside the group for three weeks. By season
 three the format is a known quantity — the show isn't
 proving the premise works anymore, it's betting a new cast's
 history is enough to make the deadline sting.
-</content>

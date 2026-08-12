@@ -4,10 +4,15 @@ number: 4
 title: "Season 4"
 canonical_position: 2
 premiere_date: "2026-07-15"
+ep_count: 10
+location: "Las Vegas, Nevada"
 eyebrow: "Premiered July 2026 · Netflix"
 lede: "Four seasons in, the ultimatum finally lands in a city its cast actually calls home. Six Las Vegas couples take the same deal — propose, or trial-marry someone new from the group for three weeks — as locals instead of visitors."
 pull: "Every past season borrowed a city for the shoot. Season four hands the format to couples who already live in the one on screen — and lets that closeness do the work."
 premiere_caption: "Netflix · July 2026"
+filming_caption: "Las Vegas · couples housed at the Ariva high-rise"
+episodes_caption: "Ten episodes, an eight-episode drop plus a two-episode close"
+host: "Nick and Vanessa Lachey"
 host_caption: "{seasonOrdinalWord} season at the helm"
 format_summary: "Trial-marriage experiment"
 format_caption: "Couples reassigned for a three-week trial marriage"

@@ -89,4 +89,3 @@ known mechanic than an open question, and the season settles
 into competent execution rather than pushing the format
 anywhere new. It's a solid hour of television that just isn't
 the standard-setter its predecessor was.
-</content>

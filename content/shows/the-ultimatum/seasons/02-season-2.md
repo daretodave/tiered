@@ -4,10 +4,15 @@ number: 2
 title: "Season 2"
 canonical_position: 4
 premiere_date: "2023-08-23"
+ep_count: 10
+location: "Charlotte, North Carolina"
 eyebrow: "Premiered August 2023 · Netflix"
 lede: "A new set of couples takes on the same ultimatum: propose within weeks, or trial-marry someone new from inside the group for three weeks. Season two arrives already knowing the format works — the pressure now is proving the tension wasn't a fluke."
 pull: "The premise had already been tested once. Season two's job is proving the format's tension travels beyond a single freshman cast."
 premiere_caption: "Netflix · August 2023"
+filming_caption: "Charlotte · Optimist Hall's exposed-brick backdrop"
+episodes_caption: "Ten episodes, split across two release nights"
+host: "Nick and Vanessa Lachey"
 host_caption: "{seasonOrdinalWord} season at the helm"
 format_summary: "Trial-marriage experiment"
 format_caption: "Couples reassigned for a three-week trial marriage"
@@ -31,4 +36,3 @@ weeks. Season two isn't introducing the format — it's testing
 whether the tension holds up now that everyone involved
 already knows what they signed up for, and whether new
 pairings still create real stakes.
-</content>
