@@ -11,11 +11,11 @@ format_changes: [all-returnee-cast, fan-voted-format]
 eyebrow: "Aired spring 2026 · returning castaways only"
 lede: "All 24 castaways returning, from Season 1 through the season that just aired, for the biggest cast in the show's history — and a set of game mechanics the fans voted on themselves."
 pull: "Survivor 50 pulls its entire cast from the show's own history — winners, near-misses, and one-season wonders alike — the largest roster the franchise has fielded. The season's mechanics carry an audience's fingerprints: tribe colors, food rations, the final stretch, and the immunity necklace itself were all put to a fan vote months before the marooning."
-filming_caption: "Mamanuca · eighteenth consecutive Fiji shoot"
+filming_caption: "Mamanuca · sixteenth consecutive Fiji shoot"
 premiere_caption: "CBS · special three-hour premiere"
 episodes_caption: "26 days in country"
 format_summary: "All-Returnee · Fan-Voted Format"
-format_caption: "24 returning players, mechanics chosen by fan vote"
+format_caption: "Fans voted on tribe colors, food rations, and the final stretch"
 cast_size: 24
 cast_size_caption: "largest cast in franchise history"
 host_caption: "fiftieth season at the helm"
