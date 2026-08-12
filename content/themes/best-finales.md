@@ -8,7 +8,7 @@ status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-08-05
 featured: true
-featured_pull: "Seven finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
+featured_pull: "Ten finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
 related:
   - best-returnees
   - survivor-pillars
