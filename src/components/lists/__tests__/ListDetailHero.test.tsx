@@ -141,6 +141,36 @@ describe('<ListDetailHero>', () => {
     expect(screen.queryByTestId('list-suggest')).toBeNull()
   })
 
+  // Critique pass-97: single-show lists carried no link back to the
+  // parent show's canon page anywhere on the detail page — a reader
+  // landing on the list had to detour through a season page to reach
+  // the show. The crumb now inserts a linked show-name segment for
+  // single-show lists, mirroring the `Shows / <ShowName> / Season N`
+  // pattern SeasonHero already uses.
+  it('inserts a linked show-name crumb segment for a single-show list (pass-97)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({ title: 'The zip code was the only constant' })}
+        shows={[show({ slug: 'rhony', name: 'The Real Housewives of New York City' })]}
+      />,
+    )
+    const hero = screen.getByTestId('list-hero')
+    const showLink = hero.querySelector('a[href="/shows/rhony"]')
+    expect(showLink?.textContent).toBe('The Real Housewives of New York City')
+  })
+
+  it('omits the show-name crumb segment for a cross-show list', () => {
+    render(
+      <ListDetailHero
+        theme={theme()}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+      />,
+    )
+    const hero = screen.getByTestId('list-hero')
+    expect(hero.querySelector('a[href="/shows/survivor"]')).toBeNull()
+    expect(hero.querySelector('a[href="/shows/top-chef"]')).toBeNull()
+  })
+
   it('singular meta for a single-entry single-show theme', () => {
     render(
       <ListDetailHero

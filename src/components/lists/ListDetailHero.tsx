@@ -13,6 +13,7 @@ type ListDetailHeroProps = {
 export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
   const entryCount = theme.entries.length
   const showCount = shows.length
+  const soleShow = shows.length === 1 ? shows[0] : undefined
   const segments = parseTagline(theme.tagline)
   const revised = formatRevisedRelative(theme.last_revised)
   // Critique pass-40 #355 closure: the cell previously read `SPANS / 6
@@ -47,6 +48,18 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
           <li className="crumb-sep" aria-hidden="true">
             /
           </li>
+          {soleShow && (
+            <>
+              <li>
+                <Link href={`/shows/${soleShow.slug}`} prefetch={false}>
+                  {soleShow.name}
+                </Link>
+              </li>
+              <li className="crumb-sep" aria-hidden="true">
+                /
+              </li>
+            </>
+          )}
           <li>
             <span className="current">{theme.title}</span>
           </li>
