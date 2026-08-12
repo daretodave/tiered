@@ -298,6 +298,30 @@ No table action this tick; gap unchanged at 43/44. Next actionable
 check remains the 2026-08-16 weekly sweep, or any of the eight dated
 finales listed above crossing into the past.
 
+**Rule 2 pick, 2026-08-12 tick (cloud march, second pass same
+day):** rather than re-check `the-challenge` S42 / `rhoc` S20 again
+hours after the pass above (nothing changes that fast — both
+confirmed unchanged: `the-challenge` S42E3 aired today but still
+carries no distinct episode title per Rotten Tomatoes/DIRECTV, no
+episode order or finale date published; `rhoc` S20 episodes 8-9
+remain untitled, no finale label from Bravo), spot-checked
+`90-day-fiance` S12 instead — the one row flagged yesterday with a
+provisional, unconfirmed finale date. Update: TVGuide's episode
+database now carries real titles through Episode 17 ("Last Fling
+Before the Ring" 8/23, "Are We Really Doing This?" 8/30), and the
+9/20/2026 finale slot is now a locked schedule entry rather than a
+placeholder-inferred guess — but Episodes 18-20 still carry generic
+`Episode #12.18/19/20` labels and no standalone TLC/press.wbd.com
+release formally labels 9/20 as "the finale." Recording the
+firmed-up schedule date here so a future pick doesn't re-spend
+research confirming it; the row stays correctly starred `11/12, 1*`
+either way — episode 20 hasn't aired, no season file to write yet.
+No table action this tick; gap unchanged at 43/44. Next actionable
+check remains the 2026-08-16 weekly sweep, or any dated finale
+(90-day-fiance 09-20, project-runway 09-10, rhoc ~09-03, alone
+09-02, rhoa 08-23, married-at-first-sight 08-27, big-brother 10-01)
+crossing into the past.
+
 Pick order for Rule 2 drain ticks: **top row first**
 (smallest-gap-first — finish shows; tie-break higher tier, then
 older `est_year`). Drain ticks update this table's row (or
