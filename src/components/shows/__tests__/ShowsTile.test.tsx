@@ -72,7 +72,7 @@ describe('<ShowsTile>', () => {
     expect(tile.style.getPropertyValue('--tile-primary')).toBe('#D55E36')
   })
 
-  it('small variant with status renders the in-progress pill + canon-in-review meta', () => {
+  it('small variant with status renders the in-progress pill and a plain season-count meta, without restating the review state', () => {
     render(
       <ShowsTile
         show={show({ slug: 'traitors', name: 'Traitors', seasons: 3 })}
@@ -84,7 +84,9 @@ describe('<ShowsTile>', () => {
     expect(tile.dataset['variant']).toBe('small')
     const pill = screen.getByTestId('show-tile-status')
     expect(pill.textContent).toContain('2 of 3 canon entries')
-    expect(tile.textContent).toContain('canon in review')
+    const meta = tile.querySelector('.show-tile-meta')
+    expect(meta?.textContent).toBe('3 seasons')
+    expect(tile.textContent).not.toContain('canon in review')
     expect(tile.textContent).not.toContain('canon + community')
   })
 

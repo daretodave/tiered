@@ -24,7 +24,7 @@ function tagText(show: Show): string {
 
 function metaText(show: Show, status?: ShowsTileProps['status']): string {
   if (status) {
-    return `${show.seasons} season${show.seasons === 1 ? '' : 's'} · canon in review`
+    return `${show.seasons} season${show.seasons === 1 ? '' : 's'}`
   }
   return `${show.seasons} season${show.seasons === 1 ? '' : 's'} · canon + community · est. ${show.est_year}`
 }
