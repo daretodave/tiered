@@ -8234,6 +8234,60 @@ last time a curator actually looked.
   not-yet-frontmatter-mined season surfaces. Tracked in open issue
   #758.
 
+- **2026-08-12, second same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 fully stalled (two
+  independent Rule-2 re-verify passes already logged today, gap
+  table unchanged, every row starred). Read the full Ledger table
+  fresh (182 rows) and the tail of this Ideas log, including the
+  first 2026-08-12 pass immediately above — this pass was dispatched
+  independently of that one and reached the same verdict before
+  discovering the prior entry already existed. Re-derived entry
+  counts for every list directly from `content/themes/*.md` (a
+  `show:`-line count per file) rather than trusting ledger prose,
+  confirming the only non-`single` lists below the 10-entry floor
+  are the same three the last six-plus passes have exhausted:
+  `the-vote-left-the-phone-line` (era, 8/8 shows), `one-season-two-
+  flags` (structure, 9/9 shows), and `the-pitch-names-where-the-
+  idea-came-from` (craft, 3/3 shows) — plus `the-calendar-moved-the-
+  format-didnt` (craft, 4 entries/3 shows, shipped deliberately
+  tight on 2026-08-09 with its own note that a broader schedule-slot
+  search came up empty). Re-ran broadened regexes on two of these
+  theses beyond what's logged against them: a wider night-of-week/
+  season-of-year schedule-slot sweep (`moves? .* to a (new|
+  different) (night|slot|day)|new time slot|switches? nights|first
+  (Sunday|Monday|...) premiere`) across every season file — zero
+  hits; and a wider national-divide sweep (`(Canadians?|Britons?|
+  Australians?|Americans?) (join|face off against|...)|split (the
+  cast )?(by|along) (nationality|country)|half (British|American|
+  ...)`) — one hit, survivor-australia S11, already the list's own
+  rank-1 entry. Independently tried five fresh axes not named in the
+  first 2026-08-12 entry above, all killed: (1) cross-show cast-size
+  records ("largest/smallest cast in franchise history," grounded
+  via Survivor S50, MasterChef S11, Drag Race S14, Drag Race All
+  Stars S6, Ink Master S8, Bachelor in Paradise S4 — genuinely
+  well-grounded across 6+ shows, but the entire fact-space is
+  already staked verbatim at `the-cast-outgrew-the-format`, 15
+  entries/11 shows, including every one of those exact seasons); (2)
+  per-episode runtime/length changes (Amazing Race S35/S36, Survivor
+  S45, Big Brother S27, American Ninja Warrior S15/S16 — already
+  fully staked at `running-long-running-short`, 13 entries/10
+  shows); (3) full judging-panel turnover as a craft angle — already
+  staked at `when-the-chairs-turned-over`, 19 entries; (4) new
+  showrunner/executive-producer/production-company credited by a
+  season's own text — zero catalog-wide hits; (5) crossover-episode
+  language joining two franchises — one hit catalog-wide (Chopped
+  S61), already noted as sub-floor by an earlier pass and unchanged.
+  No new ground. This independently reconfirms the standing verdict
+  logged immediately above and by the twenty-first through
+  twenty-sixth same-day passes on 2026-08-09/10/11: no fresh Rule 3
+  ground exists in the currently-filed catalog. The blocker is
+  upstream — Rule 3 needs either a freshly-filed Rule 2 season (to
+  mine its frontmatter, the only reliable source of new headroom per
+  the twentieth pass) or a fresh angle a human editor supplies via
+  the Ideas parking lot. Shipped nothing this tick rather than force
+  a duplicate or thinly-grounded list. No ledger row changed.
+  Tracked in open issue #758.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
