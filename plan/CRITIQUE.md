@@ -1,48 +1,30 @@
 # CRITIQUE
 
-> Last pass: 2026-08-11 at commit cf9fe883
-> Pass count: 114
+> Last pass: 2026-08-12 at commit c8d1316c
+> Pass count: 115
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 114 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 115 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed), both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
-> `/shows/traitors/season/ardross-2026`, `/shows`,
-> `/themes/no-template-to-copy`,
-> `/shows/bake-off/season/the-hammond-continues`) and authed (`/`,
-> `/shows/traitors/season/ardross-2026`,
-> `/shows/bake-off/season/the-hammond-continues`, `/u/e2e`,
-> `/themes/no-template-to-copy`) walks ran, desktop + mobile, zero
-> console errors/failed first-party requests/mobile overflow
-> across both (the `/u/e2e` mobile RSC-prefetch abort recurred —
-> same accepted noise class as passes 85/86/87/111/112/113, not
-> refiled), no spoiler leaks. 1 new finding filed (below): a MED —
-> all four Traitors US seasons' FILMED stat-tile caption is a bare
-> prefix-substring of the `location` field (identical defect class
-> already fixed on traitors-uk series-1, closes #563, but the
-> broadened `isBareRestatement()` check still doesn't catch a
-> caption with no "Filmed <preposition>" wording at all). 2 raw
-> observations dropped at self-assessment: the freshly-shipped
-> `/themes/no-template-to-copy` 184-char meta description is a
-> duplicate instance of the already-tracked, deliberately-parked
-> systemic themed-list SERP-budget overrun (`plan/AUDIT.md`,
-> ~155/181 themes affected, score kept low pending an oversight
-> call between mass-trim and budget-relaxation — not re-filed
-> individually); the bake-off season page's meta description
-> ending "…and a themed roster…" was initially flagged as a
-> mid-clause cut but on inspection matches the site's own
-> documented `clipToSeoBudget` word-boundary-fallback-with-
-> ellipsis behavior (ends on a whole word, stop-words trimmed),
-> the same non-bug precedent already established at passes
-> 62/67/68/85/86 — not filed as new, but see the note appended
-> below to the existing pass-100 Pending row, which quotes
-> near-identical whole-word-ellipsis endings and may itself be
-> the same non-bug misfiled a few passes before that precedent
-> was consistently applied; flagging for `/iterate` to
-> re-verify against current `clipToSeoBudget` (wired since
-> 7173f3ae, which predates pass-100) rather than treating it as
-> an open code bug.
+> `/shows/survivor/season/survivor-50`, `/shows`, `/themes`,
+> `/shows/survivor`) and authed (`/sign-in`,
+> `/shows/survivor/season/survivor-50`,
+> `/shows/survivor?view=community`, `/`) walks ran, desktop +
+> mobile, zero console errors/failed first-party requests/mobile
+> overflow across both, no spoiler leaks. 2 new findings filed
+> (below), both MED, both on `/shows/survivor/season/survivor-50`:
+> the FILMED stat tile's "consecutive Fiji shoot" count jumps from
+> fifteenth (S49) to eighteenth (S50), skipping two ordinals; and
+> the FORMAT tile's caption restates the exact cast-size number
+> ("24") the adjacent CAST SIZE tile already leads with — the same
+> stat-tile-duplication defect class fixed elsewhere in this pass
+> window (Top Chef Carolinas, Big Brother S27). Authed pass filed
+> zero findings — every authed-only surface checked (sign-in
+> redirect, account chrome, live comment-input, vote-pair state,
+> community pane) matched already-verified-good behavior, no new
+> defects.
 >
 > ───── Pass 113 metadata kept below for history ─────
 >
@@ -2688,6 +2670,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/survivor/season/survivor-50 — the FILMED stat tile's shoot-count caption breaks the site's own consecutive-season counting pattern: S48 says "fourteenth consecutive Fiji shoot," S49 says "fifteenth," and the very next season, S50, jumps to "eighteenth" — skipping sixteenth and seventeenth entirely. Confirmed via direct file read: `content/shows/survivor/seasons/48-survivor-48.md:14` `filming_caption: "Mamanuca · fourteenth consecutive Fiji shoot"`; `49-survivor-49.md:14` `filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"`; `50-survivor-50.md:14` `filming_caption: "Mamanuca · eighteenth consecutive Fiji shoot"`. Rendered on the page: "FILMED / Mamanuca Islands, Fiji / Mamanuca · eighteenth consecutive Fiji shoot," on the site's newest, likely highest-traffic season page. Fix: correct `50-survivor-50.md`'s `filming_caption` to "sixteenth consecutive Fiji shoot" (or verify against real production history if a genuine hiatus occurred and note it) so the count increments by one from S49, matching the established S44→S49 pattern. Content-only, one field. Spoiler discipline P0 intact (production/location detail only). (URL: /shows/survivor/season/survivor-50, source: critique-pass-115)
+
+- [ ] [MED] [anon] /shows/survivor/season/survivor-50 — the FORMAT stat tile's caption restates the exact cast-size number that the adjacent CAST SIZE tile already leads with, instead of adding a distinct fact — the same recurring stat-tile-duplication defect class already fixed elsewhere on the site (e.g. Perfect Match S4, Below Deck Mediterranean S11, Top Chef Carolinas, Big Brother S27), now reproducing on the site's newest, likely highest-traffic season page. Confirmed via direct file read: `content/shows/survivor/seasons/50-survivor-50.md:17-20` — `format_summary: "All-Returnee · Fan-Voted Format"`, `format_caption: "24 returning players, mechanics chosen by fan vote"`, `cast_size: 24`, `cast_size_caption: "largest cast in franchise history"`. Rendered: "FORMAT / All-Returnee · Fan-Voted Format / 24 returning players, mechanics chosen by fan vote" immediately followed by "CAST SIZE / 24 players / largest cast in franchise history" — the number 24 and the "returning/all-returnee" fact both appear twice across the two tiles. Fix: rewrite `format_caption` to describe the fan-vote mechanic itself (e.g. which specific rules were voted on) rather than restating the headcount, mirroring the fix pattern already applied to the Perfect Match S4 and Below Deck Mediterranean S11 instances of this defect class. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/survivor/season/survivor-50, source: critique-pass-115)
 
 - [x] [MED] [anon] [authed] /shows/traitors/season/ardross-2026 (and /shows/traitors/season/ardross-2023, /shows/traitors/season/ardross-2024, /shows/traitors/season/ardross-2025 — systemic to the show, all four seasons) — every Traitors US season's FILMED stat-tile caption is a bare prefix-substring of the `location` field directly above it, adding zero new information; the same defect class the `isBareRestatement()` regression test was built to catch, but this instance slips through because the caption carries no "Filmed in/at/on/near" wording at all — just the location string with its trailing clause dropped. Confirmed via direct file read on all four seasons: `content/shows/traitors/seasons/01-ardross-2023.md` through `04-ardross-2026.md` each carry `location: "Ardross Castle, Scottish Highlands, Scotland"` and `filming_caption: "Ardross Castle, Scottish Highlands"` — identical pair, four times over. Rendered page reads "FILMED / Ardross Castle, Scottish Highlands, Scotland / Ardross Castle, Scottish Highlands." Independently reproduced by both the anon and authed pass-114 walkers. Distinct from the already-closed `#563` fix on traitors-uk series-1/dragrace-uk series-1 (those had a literal "Filmed at <location>" prefix the broadened check now catches; this caption has no preposition at all, so `isBareRestatement()` — which only normalizes against the "Filmed <preposition> <location>" form — never fires). Fix: rewrite `filming_caption` on all four traitors seasons to add real texture beyond the place name (following the traitors-uk series-1 precedent: "Ardross Castle · Scots Baronial towers rebuilt in the 1850s," scout-verified architect Alexander Ross for Sir Alexander Matheson — the same fact could differentiate at least the earliest season, with later seasons finding their own angle so all four aren't identical), and widen `isBareRestatement()` (`src/content/__tests__/filming-caption-distinct.test.ts`) to also flag a caption that is a strict prefix/substring of `location` with no added clause, not just the "Filmed <preposition>" form specifically. Content-only, four files + a test-helper broadening. Spoiler discipline P0 intact (production/location detail only, no outcome exposure). (URL: /shows/traitors/season/ardross-2026, source: critique-pass-114) — RESOLVED (2026-08-11, cloud march tick): rewrote all four `filming_caption` fields with distinct, non-bare texture — S1 "Ardross Castle · Scots Baronial towers remodeled in the 1850s" (scout-verified architect Alexander Ross for Sir Alexander Matheson, following the traitors-uk series-1 precedent), S2/S3/S4 "Ardross Castle · a second/third/fourth winter in the same Highland towers." The suggested `isBareRestatement()` widening was investigated but NOT applied: a corpus-wide scan found 15+ shows (alone, bake-off, big-brother, dancing-with-the-stars, dragrace-uk, hells-kitchen, jersey-shore, love-island-uk, masterchef-australia, naked-and-afraid, perfect-match, queer-eye, rhobh, rhonj, selling-sunset, so-you-think-you-can-dance, vanderpump-rules) legitimately reuse a caption that's a plain substring of `location` (most commonly dropping the trailing country) — an accepted, established convention a blanket prefix/substring rule would have false-positived across the whole corpus. Documented the investigation and the narrower fix in the test file's own comment instead. Content-only, four files + one test-comment update, no schema/URL change. Picked up directly by `/march` in place of a further same-day zero-ship Rule-3 search, per the dispatch-starvation pattern tracked in issue #758.
 
