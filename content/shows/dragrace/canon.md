@@ -251,18 +251,18 @@ tag: The record-premiere finale rewrite — a genuine structural swing undercut 
 slot_argument: The franchise's highest-rated MTV premiere yet, built on a veteran-heavy cast and a rebuilt finale trading the top-two lip sync for an eliminated-cast tournament. Split judging reception keeps it below the premiere experiment above it.
 community_rank_hint: rank=14 delta=0 sentiment=hold
 
-Season 18 lands fourteenth on the strength of its finale swing.
-The season pulls the franchise's highest-rated MTV premiere yet,
-anchored by a veteran-heavy cast and a franchise-first drag
-grandmother-and-granddaughter pairing through the Dion family
-line. RuPaul Charles and Michelle Visage anchor the panel. The
-real structural argument sits at the back of the season: the
-traditional top-two lip-sync gives way to a full eliminated-cast
-tournament ahead of the final round, a genuine rewrite of how
-the show closes. Reception splits on execution — praise for the
-cast's depth, real pushback on inconsistent judging call to
-call — which keeps it just below the cleaner structural swing of
-Season 13's premiere experiment.
+Season 18 sits between two structural-argument seasons, and the
+placement comes down to execution. It lands below Season 13
+because the same premiere-record credit that earns its slot
+also draws split reception — the judging pushback Season 13's
+contained, solid run never had to answer for. That gap in
+reception, not the size of the swing, is what costs Season 18
+the higher spot. It lands above Season 17 because a rewritten
+finale still outranks a season with no structural swing at all,
+however cleanly Season 17 runs the settled format. The
+veteran-heavy cast and the Dion-family pairing color the
+season; the finale rewrite and the premiere record are what
+actually earn the rank.
 
 ## 17. Season 17
 
