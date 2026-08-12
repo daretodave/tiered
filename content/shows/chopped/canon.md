@@ -201,7 +201,7 @@ tag: Two genuine format firsts — a swapped round order, a host at the judging 
 slot_argument: Season 62 shares no scheduling overlap with any other season in this batch, then adds two structural firsts a clean-calendar season rarely also brings — real format credit layered onto Season 27's own cleanliness.
 community_rank_hint: rank=21 delta=0 sentiment=hold
 
-Season 62 closes out this batch with the cleanest release window of any season here — nine months with no other season sharing its calendar at all, edging past Season 27's own zero-overlap run. What separates it from Season 27 is format credit: a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the judging table as a fourth judge, only the second time a host has judged in the show's history. Neither swing touches the closed-door premise itself, but a calendar this clean plus two genuine firsts is enough to edge Season 62 just above Season 27.
+Season 62 sits between this batch's two cleanest-calendar seasons, and the placement comes down to a fine distinction. It shares Season 27's zero-overlap release window, but adds real format credit — two structural firsts Season 27 never attempts — which is enough to edge it just above. That same credit doesn't reach Season 16's spot at the top of this stretch: this canon rates Season 16's unbroken baseline reliability as the harder thing to sustain across a full run than a single season's novel wrinkle, however genuine. Season 62 lands where variation on a proven format beats plain execution, but plain execution sustained this long still beats variation.
 
 ## 27. Season 27
 
