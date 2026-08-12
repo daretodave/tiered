@@ -89,7 +89,7 @@ entries:
     season: 48
     season_label: "S48"
     rank: 13
-    title: "Two full seasons air on either side of this one, at the exact same time"
+    title: "Nested twice at once — held by one neighbor, holding another entirely"
     blurb: "This run sits inside one neighboring season's window while another neighbor's entire run sits inside its own — a doubly nested calendar the format hadn't measured before. Three tournament blocks pack the same thirteen episodes anyway."
   - show: chopped
     season: 49
