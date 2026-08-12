@@ -2234,6 +2234,49 @@ export function collectSeasonSectionSubheadIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-95/pass-117 MED (247+ files across 22 shows at filing,
+// 248 of 374 season files carrying both fields as of this commit,
+// spanning 20 shows). The EPISODES stat tile already renders `ep_count`
+// as its own bold value; an `episodes_caption` that opens with the same
+// digit, immediately followed (within a couple of adjective words) by
+// "episode(s)", re-spends that fact instead of adding new texture — the
+// same defect class `filming-caption-distinct.test.ts` already guards
+// for `filming_caption`/`location` (pass-89/#551, pass-91/#563), on a
+// field that check doesn't cover. Distinguishes real hedges and
+// spelled-out forms (`"Around 37 episodes"`, `"Thirteen episodes,
+// one visa clock apiece"`) — which read as a deliberate stylistic
+// choice, not a copy of the tile value — from a bare digit-leading
+// restatement (`"13 episodes, ..."`, `"~46 episodes across roughly 100
+// days"`): only the latter opens with the literal numeral the tile
+// already displays. Ships LAX during the corpus drain — the toggle in
+// main() below warns instead of failing; subsequent `/ship-content`
+// drain ticks rotate one show's captions at a time to a genuinely
+// distinct fact, and the final drain tick flips
+// EPISODES_CAPTION_BARE_RESTATEMENT_STRICT to true, mirroring the
+// SEASON_SECTION_SUBHEAD_STRICT / CARD_TAGLINE_OPENER_OVERLAP_STRICT
+// lax→strict pattern above. See plan/CRITIQUE.md pass-95/pass-117.
+function isEpisodesCaptionBareRestatement(epCount: number, caption: string): boolean {
+  const trimmed = caption.trim()
+  const pattern = new RegExp(`^~?${epCount}\\b(?:\\s+\\S+){0,2}\\s+episodes?\\b`, 'i')
+  return pattern.test(trimmed)
+}
+
+export function collectEpisodesCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.ep_count || !season.episodes_caption) continue
+      if (!isEpisodesCaptionBareRestatement(season.ep_count, season.episodes_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `episodes_caption "${season.episodes_caption}" opens by restating the EPISODES stat tile's own value (${season.ep_count}) instead of adding a distinct fact — the same defect class as the resolved pass-91/#563 filming_caption fix, on a field that check doesn't cover. Rewrite to lead with a genuinely new detail (pacing, structure, a companion series, a mission/challenge count) the way the corpus's clean examples already do (e.g. hedging the count as approximate — "Around N episodes" — or spelling it out and pairing it with new information — "Thirteen episodes, one returning storyline"). See plan/CRITIQUE.md pass-95/pass-117.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3236,6 +3279,25 @@ function main(): number {
     failures.push(...seasonSectionSubheadIssues)
   } else {
     for (const issue of seasonSectionSubheadIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-95/pass-117 MED: ships LAX during the corpus drain —
+  // 248 of 374 season files that carry both `ep_count` and
+  // `episodes_caption` currently trip this invariant, spanning 20 shows.
+  // Subsequent /ship-content drain ticks rewrite one show's captions at
+  // a time to a genuinely distinct fact, and the final drain tick flips
+  // EPISODES_CAPTION_BARE_RESTATEMENT_STRICT to true. One-line toggle
+  // mirroring SEASON_SECTION_SUBHEAD_STRICT above (the lax→strict
+  // pattern).
+  const EPISODES_CAPTION_BARE_RESTATEMENT_STRICT = false
+  const episodesCaptionBareRestatementIssues =
+    collectEpisodesCaptionBareRestatementIssues()
+  if (EPISODES_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...episodesCaptionBareRestatementIssues)
+  } else {
+    for (const issue of episodesCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

@@ -23,6 +23,7 @@ import {
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
   collectEditorialFirstPersonIssues,
+  collectEpisodesCaptionBareRestatementIssues,
   collectFailures,
   collectHomeNarratorVoiceIssues,
   findBrandSpellingMatches,
@@ -6297,6 +6298,123 @@ describe('content-check — season-page Section 01 H2 verbatim restate (critique
       take_h2: '"The villains hold the floor."',
     })
     expect(collectSeasonSectionSubheadIssues()).toEqual([])
+  })
+})
+
+describe('content-check — episodes_caption bare ep_count restatement (critique pass-95/pass-117)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-episodes-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that opens with the bare digit ep_count value ("13 episodes, ...")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '13',
+      episodes_caption: '"13 episodes, one redemption callback at episode 8"',
+    })
+    const issues = collectEpisodesCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restating the EPISODES stat tile/)
+    expect(issues[0]!.message).toMatch(/pass-95\/pass-117/)
+  })
+
+  it('flags a caption where the digit is followed by a short adjective before "episodes" ("12 competition episodes")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '12',
+      episodes_caption: '"12 competition episodes"',
+    })
+    const issues = collectEpisodesCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('flags a leading-tilde approximate restatement ("~46 episodes across roughly 100 days")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '46',
+      episodes_caption: '"~46 episodes across roughly 100 days"',
+    })
+    const issues = collectEpisodesCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('does NOT flag a word-hedged approximation ("Around 37 episodes") — "Around" adds real information the bare digit lacks', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '37',
+      episodes_caption: '"Around 37 episodes"',
+    })
+    expect(collectEpisodesCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does NOT flag a spelled-out count paired with a distinct fact ("Thirteen episodes, one returning storyline")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '13',
+      episodes_caption: '"Thirteen episodes, one returning storyline"',
+    })
+    expect(collectEpisodesCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does NOT flag a caption whose leading number happens to match ep_count but names a different unit ("39 days in country")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '39',
+      episodes_caption: '"39 days in country"',
+    })
+    expect(collectEpisodesCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no episodes_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      ep_count: '13',
+    })
+    expect(collectEpisodesCaptionBareRestatementIssues()).toEqual([])
   })
 })
 
