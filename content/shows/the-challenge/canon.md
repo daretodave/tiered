@@ -614,17 +614,18 @@ tag: The pair architecture reinvented as a three-phase contest — points, then 
 slot_argument: Sixteen returning Vets against sixteen New Threats drawn from well outside the franchise's usual pool, run through a Performance Points system that resolves into a Lock In and a late Stake a Claim twist. Filmed in Chile.
 community_rank_hint: rank=34 delta=new sentiment=up
 
-Vets & New Threats sits thirty-fourth for a format that earns its
-three-act structure. Performance Points decide the order players
-choose partners in, a mid-season Lock In fixes those pairs, and a
-later Stake a Claim twist reopens the question — a genuine rule
-sequence, not a single reskinned mechanic. The New Threats side
-pulls castmates from well outside the franchise's usual pool,
-sharpening the fresh-blood question the returnee era keeps asking.
-Santiago and the Andes give the missions a new visual register.
-The canon places it among the twist-heavy modern seasons because
-the format keeps evolving across the run rather than settling
-into one shape and holding it.
+Vets & New Threats sits thirty-fourth on the strength of a
+genuine rule sequence, not a reskinned trade — the same
+three-act discipline that separates it from its neighbors. It
+slots above Battle of the Bloodlines, which solves the same
+fresh-blood problem through blood relation rather than an open
+casting draft, and just below Spies, Lies & Allies, whose
+rookie-infiltration gamble runs longer and lands less cleanly.
+The New Threats side pulls from outside the franchise's usual
+pool, the same returnee-era question its neighbors ask, but the
+pair mechanic's tighter structural spine earns it the higher
+slot. Santiago and the Andes widen the register further. The
+canon ranks it new and rising as the format keeps evolving.
 
 ## 37. Spies, Lies & Allies
 
