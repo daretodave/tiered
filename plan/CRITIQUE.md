@@ -1,30 +1,28 @@
 # CRITIQUE
 
-> Last pass: 2026-08-12 at commit c8d1316c
-> Pass count: 115
+> Last pass: 2026-08-12 at commit d51a45fa
+> Pass count: 116
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 115 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 116 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed), both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
-> `/shows/survivor/season/survivor-50`, `/shows`, `/themes`,
-> `/shows/survivor`) and authed (`/sign-in`,
-> `/shows/survivor/season/survivor-50`,
-> `/shows/survivor?view=community`, `/`) walks ran, desktop +
+> `/shows/bake-off/season/the-hammond-continues`, `/shows`,
+> `/themes`, `/shows/bake-off`) and authed (`/sign-in`,
+> `/shows/bake-off/season/the-hammond-continues`,
+> `/shows/bake-off?view=community`, `/`) walks ran, desktop +
 > mobile, zero console errors/failed first-party requests/mobile
 > overflow across both, no spoiler leaks. 2 new findings filed
-> (below), both MED, both on `/shows/survivor/season/survivor-50`:
-> the FILMED stat tile's "consecutive Fiji shoot" count jumps from
-> fifteenth (S49) to eighteenth (S50), skipping two ordinals; and
-> the FORMAT tile's caption restates the exact cast-size number
-> ("24") the adjacent CAST SIZE tile already leads with — the same
-> stat-tile-duplication defect class fixed elsewhere in this pass
-> window (Top Chef Carolinas, Big Brother S27). Authed pass filed
-> zero findings — every authed-only surface checked (sign-in
-> redirect, account chrome, live comment-input, vote-pair state,
-> community pane) matched already-verified-good behavior, no new
-> defects.
+> (below): a LOW on the-hammond-continues (section 02/03 body
+> copy re-explains the same three cast/format facts in
+> near-identical sentence structure back to back); and a MED,
+> systemic across all 16 Bake Off season files — the FORMAT stat
+> tile's `format_summary` is a bare "N bakers · M episodes ·
+> Network" pattern that restates the CAST SIZE, EPISODES, and
+> PREMIERED tiles verbatim with zero distinguishing format fact,
+> unlike sibling shows that reserve FORMAT for something the
+> count/network tiles don't already say.
 >
 > ───── Pass 113 metadata kept below for history ─────
 >
@@ -2670,6 +2668,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [authed] /shows/bake-off/season/the-hammond-continues (systemic to the show — all 16 Bake Off season files) — the FORMAT stat tile's headline restates facts three separate adjacent tiles already own: `format_summary: "12 bakers · 10 episodes · Channel 4"` repeats the exact number CAST SIZE already leads with (`cast_size: 12`), the exact number EPISODES already leads with (`ep_count: 10`), and the exact network PREMIERED already states — with zero distinguishing format fact of its own. This is not a one-off content slip; it is the show-wide template. Confirmed via grep across `content/shows/bake-off/seasons/*.md` — all 16 files repeat `cast_size`/`ep_count`/network verbatim inside `format_summary` (e.g. `02-valentines-mansion.md`: "12 bakers · 8 episodes · BBC Two"; `03-harptree-court.md`: "12 bakers · 10 episodes · BBC Two"; `13-the-welford-return.md`: "12 bakers · 10 episodes · Channel 4"), unlike sibling shows (Big Brother's "N houseguests · <twist name>", Survivor's "All-Returnee · Fan-Voted Format") which correctly reserve the FORMAT tile for something the count/network tiles don't already say. Rendered on `/shows/bake-off/season/the-hammond-continues`: "FORMAT / 12 bakers · 10 episodes · Channel 4 / Hammond's third run, no format changes reported / CAST SIZE / 12 players / 12 amateur bakers in Hammond's third run." Fix: rewrite `format_summary` across all 16 Bake Off season files to name each season's actual format distinction (theme rotation, tent move, judging-panel change, technical-challenge twist) instead of repeating cast size/episode count/network, following the corrected pattern already applied to Big Brother S27 and Top Chef Carolinas. Content-only, 16 files (one field each). Spoiler discipline P0 intact (production/format facts only, no outcome exposure). (URL: /shows/bake-off/season/the-hammond-continues, source: critique-pass-116)
+
+- [ ] [LOW] [anon] /shows/bake-off/season/the-hammond-continues — the "02 THE SHAPE OF THE SEASON" and "03 WHERE IT SITS IN THE CANON" body sections re-explain the same three facts (Hammond/Fielding's third run together, Leith/Hollywood on the bench, post-national themed-week format unchanged) in near-identical sentence structure back to back, with no new information in the second pass beyond the canon-slot framing. Confirmed: Section 02 reads "Alison Hammond and Noel Fielding worked their third run together, Prue Leith and Paul Hollywood anchored the bench, and the post-national themed-week format kept running exactly as it had the year before." Section 03, immediately below, reads "Alison Hammond and Noel Fielding worked a confident third run, with Prue Leith and Paul Hollywood on the bench and the post-national themed-week format three years in with no changes to report." Fix: rewrite the "WHERE IT SITS IN THE CANON" paragraph in `content/shows/bake-off/seasons/16-the-hammond-continues.md` to lead with canon-ranking rationale (why this rank, what separates it from adjacent seasons) rather than re-listing the same cast/format facts already covered in "THE SHAPE OF THE SEASON" — same defect class as prior lede/canon-rationale echo fixes (e.g. masterchef-australia S18). Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/bake-off/season/the-hammond-continues, source: critique-pass-116)
 
 - [x] [MED] [anon] /shows/survivor/season/survivor-50 — the FILMED stat tile's shoot-count caption breaks the site's own consecutive-season counting pattern: S48 says "fourteenth consecutive Fiji shoot," S49 says "fifteenth," and the very next season, S50, jumps to "eighteenth" — skipping sixteenth and seventeenth entirely. Confirmed via direct file read: `content/shows/survivor/seasons/48-survivor-48.md:14` `filming_caption: "Mamanuca · fourteenth consecutive Fiji shoot"`; `49-survivor-49.md:14` `filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"`; `50-survivor-50.md:14` `filming_caption: "Mamanuca · eighteenth consecutive Fiji shoot"`. Rendered on the page: "FILMED / Mamanuca Islands, Fiji / Mamanuca · eighteenth consecutive Fiji shoot," on the site's newest, likely highest-traffic season page. Fix: correct `50-survivor-50.md`'s `filming_caption` to "sixteenth consecutive Fiji shoot" (or verify against real production history if a genuine hiatus occurred and note it) so the count increments by one from S49, matching the established S44→S49 pattern. Content-only, one field. Spoiler discipline P0 intact (production/location detail only). (URL: /shows/survivor/season/survivor-50, source: critique-pass-115) — RESOLVED: `filming_caption` corrected to "Mamanuca · sixteenth consecutive Fiji shoot", restoring the unbroken S44→S50 ordinal sequence (no genuine production hiatus found).
 
