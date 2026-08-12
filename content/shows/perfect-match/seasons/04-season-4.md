@@ -18,7 +18,7 @@ premiere_caption: "Netflix · May 2026"
 filming_caption: "Filmed at a villa near Tulum, Mexico"
 episodes_caption: "Eight-episode fourth run — the format's shortest yet"
 format_summary: "Crossover matchmaking, broadest cast net yet"
-format_caption: "20 contestants, mixer re-entries continue"
+format_caption: "Casting reaches into Married at First Sight Australia and Vanderpump Rules"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · twenty in the villa"

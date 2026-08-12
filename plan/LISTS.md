@@ -8192,6 +8192,48 @@ last time a curator actually looked.
   (a new season lands) or a not-yet-frontmatter-mined season
   surfaces. Tracked in open issue #758.
 
+- **2026-08-12 (content-curator tick): zero-ship.** Re-confirmed
+  Rule 2 fully stalled (`plan/CADENCE.md` season-sweep last ran
+  2026-08-09, gap table unchanged, every row still starred) before
+  falling to Rule 3, per the brief's own framing. Read the full
+  Ledger table and the entire Ideas log (through the twenty-sixth
+  same-day pass above) before touching anything. Independently
+  re-derived, from scratch, the same two below-floor cross-canon
+  lists prior passes have repeatedly flagged: `the-vote-left-the-
+  phone-line` (era, 8 entries/8 shows) and `one-season-two-flags`
+  (structure, 9 entries/9 shows); `the-pitch-names-where-the-idea-
+  came-from` (craft, 3 entries/3 shows) also re-checked. Worked
+  `the-vote-left-the-phone-line` first without reading ahead in the
+  log: grepped every season file catalog-wide for phone/text/app/
+  online vote-channel language and landed on the identical
+  candidate at least three prior passes (2026-07-30, 2026-08-05,
+  2026-08-09 sixth pass) already found and rejected — So You Think
+  You Can Dance S08's "fans can now vote by text and online
+  alongside the phone line" fact — then confirmed via a full
+  `show: so-you-think-you-can-dance` + `season: 8` grep across
+  `content/themes/*.md` that `rulebook-rewritten-every-season` rank
+  13 already stakes this exact fact verbatim ("fans can vote online
+  instead of just by phone"). No other candidate turned up across
+  The Voice, Big Brother, Masked Singer, DWTS, AGT, or American
+  Idol beyond what's already staked in the list or at S24's
+  app-retirement entry. `one-season-two-flags`: searched Top Chef
+  S22 (Destination Canada — a US-flagship road show, not a
+  nationality-split cast), MasterChef US S10 (international field
+  challenges, not a split roster), American Ninja Warrior S15 (no
+  international-divide fact at all), and RHODubai — none clear the
+  list's national-divide/borrowed-roster thesis, consistent with
+  the roughly dozen prior re-checks since 2026-08-05. No new season
+  has landed in any show touched by either search since the
+  2026-08-09 sweep, so no new fact exists that the prior passes
+  couldn't already see. Did not re-open the single-show census (the
+  2026-08-09 fifth/eighth passes and others already independently
+  re-derived and confirmed every zero-single-list show is either
+  under the 3-season floor or already over-staked elsewhere).
+  Shipped nothing. No ledger row changed. Standing verdict holds:
+  no fresh Rule 3 ground until Rule 2 unstalls or a
+  not-yet-frontmatter-mined season surfaces. Tracked in open issue
+  #758.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
