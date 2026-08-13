@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-07
+last_revised: 2026-08-13
 featured: false
 related:
   - a-guest-spot-with-room-to-grow
@@ -43,70 +43,76 @@ entries:
     rank: 5
     title: "Miami barely changes its headcount and completely changes its cast"
     blurb: "The number moves from six to seven, but that flat math hides a total overhaul: two originals exit, one drops to a recurring role, and four new faces fill the gap. The steadiest-looking swing on this list is actually the loudest."
+  - show: rhom
+    season: 7
+    season_label: "S07"
+    rank: 6
+    title: "A veteran steps back to guest status the same season a new voice steps in"
+    blurb: "Nicole Martin steps back to a guest role after four years full-time, and Stephanie Shojaee takes the open seat. The headcount holds exactly where it was — a handoff, not a shake-up, in a cast that's already found its rhythm."
   - show: rhonj
     season: 3
     season_label: "S03"
-    rank: 6
+    rank: 7
     title: "New Jersey expands its cast by pulling new housewives from inside the same family"
     blurb: "The roster grows from five to seven, but the new seats don't go to strangers — they go to people who already share blood and history with the existing cast. The bigger number turns out to be the smaller problem."
   - show: rhonj
     season: 13
     season_label: "S13"
-    rank: 7
+    rank: 8
     title: "New Jersey's revival era reaches its largest cast yet"
     blurb: "Rachel Fuda and Danielle Cabral join full-time, and both arrive with enough presence to matter from the first episode rather than settling in slowly. Eight women on the roster, built around a marquee wedding the format was made for."
   - show: rhoc
     season: 6
     season_label: "S06"
-    rank: 8
+    rank: 9
     title: "Orange County adds one seat and the whole social register moves up with it"
     blurb: "The founding era's seven-woman cast grows to eight, and the new addition doesn't just fill a chair — she shifts the group's economic and social axis entirely. One new voice, and the show changes registers."
   - show: rhoc
     season: 9
     season_label: "S09"
-    rank: 9
+    rank: 10
     title: "Orange County trims two seats after a stretch that ran long"
     blurb: "After a season that stretched the peak-era cast past its natural focus, the roster contracts from eight down to six. The smaller group runs its established dynamics with more discipline than the crowded season before it managed."
   - show: rhoa
     season: 5
     season_label: "S05"
-    rank: 10
+    rank: 11
     title: "Atlanta adds two voices at exactly the moment its cast peaks"
     blurb: "The established core grows from six to seven, and both new additions arrive with enough social standing to matter immediately. It's the addition the franchise points to most often when the conversation turns to its ceiling."
   - show: rhoa
     season: 13
     season_label: "S13"
-    rank: 11
+    rank: 12
     title: "Atlanta's cast shrinks the same season everything else about the show slows down"
     blurb: "Two significant departures leave the roster at five, its smallest count in years, arriving alongside the franchise's first December premiere. A quieter cast for a season built around a quieter, more careful register."
   - show: rhony
     season: 5
     season_label: "S05"
-    rank: 12
+    rank: 13
     title: "New York adds two voices and the whole season gets sharper for it"
     blurb: "The cast grows from six to seven, and one new addition in particular arrives with an outsider's sharp attention to the room. The bigger group produces the most editorially textured season of the show's early run."
   - show: rhony
     season: 14
     season_label: "S14"
-    rank: 13
+    rank: 14
     title: "New York doesn't adjust its cast, it replaces the entire thing"
     blurb: "Five brand-new housewives take over completely, down one seat from the prior roster but up against a much bigger question — whether the franchise's identity ever lived in the cast, or just in the city underneath it."
   - show: rhop
     season: 8
     season_label: "S08"
-    rank: 14
+    rank: 15
     title: "Potomac reaches its biggest cast ever, even as its longest tenures were already ending"
     blurb: "One new full housewife pushes the roster to eight, the largest group the show has fielded. Filmed months before it aired, the season turns out to be the last full-time stretch for two of the franchise's longest-running names."
   - show: rhodubai
     season: 2
     season_label: "S02"
-    rank: 15
+    rank: 16
     title: "Dubai swaps a founding face for a new one, and the number holds"
     blurb: "Season two returns five of the founding six and adds one new full-time housewife, landing right back at six women total. Every other swing on this list moves the number — this one proves a swap doesn't have to."
   - show: rhoslc
     season: 6
     season_label: "S06"
-    rank: 16
+    rank: 17
     title: "Salt Lake City finally stops swinging its own roster at all"
     blurb: "All seven housewives from the season before return with zero departures, the most cast-stable stretch the show has run after years of contractions and rebuilds. Every other entry here is a swing; this one is the franchise finally sitting still."
 ---
