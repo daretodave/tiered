@@ -8671,6 +8671,56 @@ last time a curator actually looked.
   only 3 cross-show hits) are each already staked on this exact fact
   at `when-age-became-the-casting-brief`, `built-for-one-playing-as-
   a-team`, and `the-judges-picked-a-side` respectively.
+- **2026-08-13, eleventh same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled
+  (`plan/CADENCE.md`'s gap table fully starred, nearest dated finale
+  american-ninja-warrior S18 still 4 days out at 2026-08-17) and read
+  the full 182-row Ledger plus all ten same-day Ideas-log passes above
+  before starting, avoiding every axis already killed today. Chased
+  one genuinely fresh-feeling lead not logged by any prior pass
+  today: **a veteran's own credibility staked directly on a novice's
+  performance** (mentor/apprentice pairing, or a judge/coach trading
+  panel neutrality for a roster with real stakes), independently
+  arrived at and grounded — before any cross-check — in what read as
+  four clean cross-show hits: MasterChef S09 "The Mentorship" (three
+  judges each draft and mentor eight home cooks), Ink Master S06
+  "Master vs. Apprentice" (eighteen artists paired by experience, "a
+  bad round now reflects on two reputations, not one"), Survivor S39
+  "Island of the Idols" (two returning legends coach newcomers who
+  visit their beach one at a time), and So You Think You Can Dance
+  S12 "Stage vs. Street" (two mentors take over team-building from
+  the judges' panel). Killed in full once a targeted `content/themes`
+  grep ran against each: `the-judges-picked-a-side` already stakes
+  MasterChef S09 at rank 2 ("all three judges pick a team and mentor
+  it through the whole season") and SYTYCD S12 at rank 9 ("two
+  mentors split the finalists into camps instead of letting the
+  judges rule alone") — the list's whole thesis (a judge/coach trades
+  neutrality for a roster with real stakes) *is* this candidate list,
+  just already shipped six shows deep. `the-other-side-of-the-table`
+  already stakes Survivor S39 at rank 2 with near-identical framing
+  to what I drafted ("two returning legends set up their own beach
+  just to coach the newcomers who visit them"). Ink Master S06's
+  mentor/apprentice fact is the most saturated of the four — already
+  spent three times over, near-verbatim each time, at
+  `built-for-one-playing-as-a-team` rank 4 ("mentors and apprentices
+  compete as linked teams instead of lone entrants — a bad round now
+  reflects on two reputations, not one"), `every-season-split-the-
+  room-differently` rank 3, and `the-team-rule-never-makes-it-to-a-
+  second-season` rank 3. Not a partial-overlap judgment call on any
+  of the four — every candidate entry is a near-verbatim restatement
+  of an already-shipped entry, confirming the mentor/coaching-stakes
+  angle isn't a gap at all, just an already-well-mined existing list
+  (`the-judges-picked-a-side`, craft, 11 entries/6 shows, real
+  headroom under the 24-cap) that this pass rediscovered from a
+  different entry point. No fresh ground found; no ledger row
+  changed. This independently reconfirms, via an eleventh distinct
+  search path, the standing verdict tracked on issue #758: the
+  catalog is saturated at current density and the next actionable
+  Rule 3 lead is a new season landing (Rule 2 unstalling), not
+  further re-slicing of already-mined seasons. Eleventh consecutive
+  same-day zero-ship/extend-exhausted tick, per bearings.md Rule 3's
+  own explicit permission to ship nothing rather than force a
+  duplicate list.
 
 ## Notes
 
