@@ -8519,6 +8519,34 @@ last time a curator actually looked.
   the currently-filed catalog until Rule 2 unstalls and files a fresh
   season (the twentieth pass's frontmatter-mining move is still the
   only reliable source of new headroom). Tracked in open issue #758.
+- **2026-08-13, sixth same-day Rule-3 pass (content-curator direct
+  invocation, cloud march tick): zero-ship; redirected to a critique
+  fix.** Re-confirmed Rule 2 still stalled (gap table unchanged at
+  42 shows/43 gap-slots, nearest dated finale still 4 days out) and
+  read the full 182-row Ledger plus this Ideas log's five earlier
+  same-day passes before starting. Chased roughly a dozen independent
+  leads — RHOM/RHODubai/the-ultimatum/perfect-match/below-deck-
+  down-under/below-deck-adventure/alone-australia/traitors-uk as
+  fresh single-show candidates (all below the 10-entry floor), RHOM
+  S04/S06 network-move facts (already staked verbatim at `moving-day`
+  and `two-channels-same-night`), Alone Australia as a `same-license-
+  different-rules` 7th pair (format never actually breaks from the US
+  original), companion-aftershow entries across five shows (zero
+  grounding in season-file text), a fresh `away-from-home-turf` RHO
+  entry (zero group-trip language in any candidate show's files), The
+  Ultimatum S4 into `the-hand-behind-the-couple` (already staked at
+  `season-one-doesnt-own-every-first` rank 10), and Below Deck Down
+  Under S3 into a location list (already staked at `a-change-of-
+  address` rank 1). A full occurrence sweep confirmed the corpus
+  totals 2,342 show-occurrences across 181 theme files (~36/show
+  average) with even the smallest shows mined 5-17 times each. No
+  fresh ground found anywhere. Rather than log a seventh consecutive
+  zero-ship with nothing else to show for the tick, redirected the
+  slot to `plan/CRITIQUE.md` pass-120's second MED finding instead —
+  added a root-level `src/app/not-found.tsx` so unmatched top-level
+  URLs (e.g. `/account`) get the branded chrome-ful 404 instead of
+  Next's bare fallback (see that finding's RESOLVED note for detail).
+  No ledger row changed. Tracked in open issue #758.
 
 ## Notes
 
