@@ -1,5 +1,37 @@
 # CRITIQUE
 
+> Last pass: 2026-08-13 at commit a9aed0fa
+> Pass count: 119
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 119 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/big-brother/season/a-summer-of-mystery`,
+> `/shows/queer-eye/season/las-vegas`,
+> `/themes/the-couch-kept-adding-chairs`, `/shows`) and authed
+> (`/sign-in`, `/shows/selling-sunset/season/season-9`,
+> `/shows/dragrace-uk?view=community`, `/`) walks ran, desktop +
+> mobile, zero console errors/failed first-party requests/mobile
+> overflow across both, no spoiler leaks. Auth handshake confirmed
+> live (authenticated:cloud); /sign-in correctly redirects an
+> already-authed visitor to the homepage rather than re-showing
+> the form; comment composer and vote block on selling-sunset S9
+> render their correct live authed states. The big-brother S27
+> page (this catalog's spoiler-history hot spot) was re-walked
+> specifically as a regression check: both prior fixes — the
+> named-cameo leak (#659) and the format/cast-size headcount
+> contradiction — hold on the live site, no new leak found. The
+> already-known dragrace-uk zero-vote em-dash pattern reproduced
+> again on the community table but is already tracked (Pending,
+> MED, alongside big-brother + jersey-shore) and was correctly not
+> re-filed. **Zero new findings — a clean pass**, the first
+> no-findings pass since the episodes_caption/OG-image/em-dash
+> sweep that ran through passes 116-118.
+>
+> ───── Pass 118 metadata kept below for history ─────
+>
 > Last pass: 2026-08-13 at commit ab85915f
 > Pass count: 118
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
