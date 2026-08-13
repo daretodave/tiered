@@ -12,7 +12,7 @@ format_summary: "Second Harptree year, format settled"
 format_caption: "the format running smoothly in its second Harptree year"
 filming_caption: "Harptree Court, Somerset, for a second year"
 premiere_caption: "BBC Two · Tuesday evenings"
-episodes_caption: "10 episodes across the run"
+episodes_caption: "Ten episodes for a second consecutive year, matching the season before it."
 host_caption: "Mel Giedroyc and Sue Perkins, loose at the tent flap"
 ---
 

@@ -14,7 +14,7 @@ format_summary: "BBC One promotion, move to Welford"
 format_caption: "the format's network promotion and its move to Welford Park"
 filming_caption: "Welford Park, Berkshire — the tent's permanent home from this run on"
 premiere_caption: "BBC One · Wednesday evenings"
-episodes_caption: "10 episodes, the peak BBC run"
+episodes_caption: "Ten episodes for a third year running, arriving alongside the jump to BBC One."
 cast_size: 12
 cast_size_caption: "12 amateur bakers across the run"
 host_caption: "Mel Giedroyc and Sue Perkins, fifth year at the tent flap"

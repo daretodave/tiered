@@ -12,7 +12,7 @@ format_summary: "Toksvig-Fielding pairing's last run"
 format_caption: "the Toksvig-Fielding presenter pair's final run together"
 filming_caption: "Welford Park, Berkshire, Channel 4 year three"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes across the run"
+episodes_caption: "Unbroken since Harptree, ten episodes mark an eighth year running."
 host_caption: "Sandi Toksvig's final year at the tent flap"
 ---
 

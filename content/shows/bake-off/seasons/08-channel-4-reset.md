@@ -14,7 +14,7 @@ format_summary: "New hosts, new judge, new network"
 format_caption: "new hosts, new judge, new network — the format reset"
 filming_caption: "Welford Park, Berkshire, the one piece of continuity"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes across the Channel 4 debut"
+episodes_caption: "The move to Channel 4 kept the count at ten — a sixth straight year."
 cast_size: 12
 cast_size_caption: "12 amateur bakers across the Channel 4 debut run"
 host_caption: "Sandi Toksvig and Noel Fielding, first year at the tent flap"

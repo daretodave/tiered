@@ -12,7 +12,7 @@ format_summary: "New lineup's second year settles in"
 format_caption: "the new lineup running smoothly in its second year"
 filming_caption: "Welford Park, Berkshire, Channel 4 year two"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes across the run"
+episodes_caption: "Channel 4's second year, still ten episodes — a seventh straight year."
 host_caption: "Sandi Toksvig and Noel Fielding, settled at the tent flap"
 ---
 

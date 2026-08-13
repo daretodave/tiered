@@ -14,7 +14,7 @@ format_summary: "Post-bubble return to Welford"
 format_caption: "the post-bubble return to Welford, Lucas's final run"
 filming_caption: "Welford Park, Berkshire — back home after two bubble years"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes from the Welford return"
+episodes_caption: "Eleven straight years at ten episodes, even as the tent moved back to Welford."
 cast_size: 12
 cast_size_caption: "12 amateur bakers in the first post-bubble run"
 host_caption: "Noel Fielding and Matt Lucas, Lucas's final year at the tent flap"

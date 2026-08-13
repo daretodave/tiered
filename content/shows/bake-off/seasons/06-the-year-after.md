@@ -14,7 +14,7 @@ format_summary: "Full BBC One audience, Welford"
 format_caption: "the BBC One audience locked in, the bench at full confidence"
 filming_caption: "Welford Park, Berkshire, year two"
 premiere_caption: "BBC One · Wednesday evenings"
-episodes_caption: "10 episodes across the run"
+episodes_caption: "Four years running now at ten episodes, a length nobody comments on anymore."
 cast_size: 12
 cast_size_caption: "12 amateur bakers across the run"
 host_caption: "Mel Giedroyc and Sue Perkins, sixth year at the tent flap"

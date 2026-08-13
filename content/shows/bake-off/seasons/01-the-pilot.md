@@ -14,7 +14,7 @@ format_summary: "Touring format · no fixed tent"
 format_caption: "the only series to tour the country rather than fix at one estate"
 filming_caption: "filmed at a different UK location each week"
 premiere_caption: "BBC Two · Tuesday evenings"
-episodes_caption: "6 episodes, the shortest run in the canon"
+episodes_caption: "Six episodes, still the shortest run in the show's history."
 cast_size: 10
 cast_size_caption: "10 amateur bakers across the pilot"
 host_caption: "Mel Giedroyc and Sue Perkins, inventing the double-act in real time"

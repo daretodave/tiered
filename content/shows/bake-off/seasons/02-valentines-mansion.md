@@ -12,7 +12,7 @@ format_summary: "First series to fix at one estate"
 format_caption: "the second series and the first to fix the tent to one estate"
 filming_caption: "Valentines Mansion in east London"
 premiere_caption: "BBC Two · Tuesday evenings"
-episodes_caption: "8 episodes, stretched from the pilot's six"
+episodes_caption: "Eight episodes, two more than the pilot's six-episode run."
 host_caption: "Mel Giedroyc and Sue Perkins, second year at the tent flap"
 ---
 

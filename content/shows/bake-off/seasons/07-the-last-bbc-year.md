@@ -14,7 +14,7 @@ format_summary: "Final year of the original lineup"
 format_caption: "the original presenter-and-judge lineup's final run together"
 filming_caption: "Welford Park, Berkshire, the BBC era's third year there"
 premiere_caption: "BBC One · Wednesday evenings"
-episodes_caption: "10 episodes across the final BBC run"
+episodes_caption: "The BBC era closed with its fifth straight year at ten episodes."
 cast_size: 12
 cast_size_caption: "12 amateur bakers across the run"
 host_caption: "Mel Giedroyc and Sue Perkins, final BBC year"

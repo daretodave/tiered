@@ -14,7 +14,7 @@ format_summary: "Hammond's first run at the tent"
 format_caption: "Hammond's first run, the post-national-themes format"
 filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes under the new presenter pairing"
+episodes_caption: "Twelve years now at ten episodes, holding steady through the presenter change."
 cast_size: 12
 cast_size_caption: "12 amateur bakers in Hammond's debut run"
 host_caption: "Noel Fielding and Alison Hammond, Hammond's first year"

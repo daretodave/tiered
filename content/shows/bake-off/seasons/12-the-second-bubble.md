@@ -14,7 +14,7 @@ format_summary: "Second compressed bubble shoot"
 format_caption: "the second compressed bubble production, same lineup"
 filming_caption: "Down Hall Hotel, Essex — the bubble's second and final year"
 premiere_caption: "Channel 4 · Tuesday evenings"
-episodes_caption: "10 episodes from a second compressed shoot"
+episodes_caption: "A tenth consecutive year at ten episodes, even inside a second bubble shoot."
 cast_size: 12
 cast_size_caption: "12 amateur bakers in the second sealed production"
 host_caption: "Noel Fielding and Matt Lucas, settled in their second year"

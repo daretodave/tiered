@@ -12,7 +12,7 @@ format_summary: "First year at Harptree Court"
 format_caption: "the tent moves to Harptree Court for the first time"
 filming_caption: "Harptree Court, Somerset, the show's new home"
 premiere_caption: "BBC Two · Tuesday evenings"
-episodes_caption: "10 episodes, the new standard length"
+episodes_caption: "Ten episodes — the length every series since has kept."
 host_caption: "Mel Giedroyc and Sue Perkins, tighter double-act"
 ---
 
