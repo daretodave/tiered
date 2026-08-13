@@ -1,5 +1,40 @@
 # CRITIQUE
 
+> Last pass: 2026-08-13 at commit 161b72e1
+> Pass count: 120
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 120 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/the-ultimatum/season/season-4`,
+> `/shows/americas-got-talent/season/the-panel-doubles-down`,
+> `/themes/one-rule-fills-every-seat`, `/shows`) and authed
+> (`/`, `/shows/below-deck-mediterranean/season/dubrovnik-ii`,
+> `/shows/the-ultimatum?view=community`, `/u/e2e`) walks ran,
+> desktop + mobile, zero console errors/failed first-party
+> requests/mobile overflow across both, no spoiler leaks. Auth
+> handshake confirmed live (authenticated:cloud) via
+> `/api/auth/me`; The Ultimatum's community table correctly
+> lists the freshly-drained Season 4 row with a sane zero-vote
+> "movers" state. **3 new findings filed** (all Pending, none
+> HIGH): a systemic MED — `voteQuestionFor()` produces a
+> trivial "top N of N" vote question on every season page of
+> the 17 catalogued shows whose total season count falls in
+> [2,9]; a LOW — AGT S21's `host_caption` hardcodes a literal
+> string instead of the `{seasonOrdinalWord}` macro every
+> sibling file uses; a MED — unmatched top-level URLs (e.g.
+> `/account`) fall through to Next's bare built-in 404 instead
+> of the site's branded `(default)/not-found.tsx`, because no
+> root-level `app/not-found.tsx` exists to catch routes outside
+> every route group's subtree. Freshly-drained content (The
+> Ultimatum S4, AGT S21/S19/S20 rename, Below Deck Med S11, the
+> extended `one-rule-fills-every-seat` list) all re-verified
+> clean — no leftover breakage from the recent content ticks.
+>
+> ───── Pass 119 metadata kept below for history ─────
+>
 > Last pass: 2026-08-13 at commit a9aed0fa
 > Pass count: 119
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2709,6 +2744,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/the-ultimatum/season/season-4 (and every 2-9 season show, systemic) — the per-season community vote CTA asks a threshold question that's trivial whenever the show's total season count falls in the 2-9 range, because `voteQuestionFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:350-358`) returns `` `Does this belong in the community top ${show.seasons}?` `` for that range — when `show.seasons` is the show's *entire* run, "top N of N" has no discriminating power; every season that exists trivially clears the bar. Confirmed live on The Ultimatum (4 total seasons, question reads "Does this belong in the community top 4?" directly beside a "4 SEASONS" stat in the same hero block). The function already special-cases `seasons === 1` ("Does this season hold up?") and `seasons >= 10` (fixed "top 10") — the fix pass that added those two cases (critique-pass-88, per the code comment) didn't close the gap for the 2-9 range colliding with the show's own total. Reach check: 17 catalogued shows currently have `seasons` in [2,9] (`alone-australia`, `below-deck-down-under`, `dragrace-uk`, `jersey-shore`, `love-island-us`, `perfect-match`, `rhom`, `rhod`, `rhoslc`, `selling-sunset`, `below-deck-sailing-yacht`, `the-circle`, `the-ultimatum`, `too-hot-to-handle`, `rhodubai`, `traitors-uk`, `traitors`) — every season page on every one of those shows renders this trivial question today. Fix: when the threshold would equal `show.seasons` (i.e., the show hasn't yet outgrown the question), fall back to the 1-season phrasing ("Does this season hold up?") or a non-numeric framing ("Does this belong near the top?") instead of a "top N of N" comparison. Chrome/voice-only, no spoiler impact. (URL: /shows/the-ultimatum/season/season-4, source: critique-pass-120)
+
+- [ ] [LOW] [anon] /shows/americas-got-talent/season/the-panel-doubles-down — `host_caption` is hardcoded as the literal string `"Eighth season at the helm"` instead of the `{seasonOrdinalWord} season at the helm` template macro every other America's Got Talent season file uses (confirmed: all 20 sibling season files in `content/shows/americas-got-talent/seasons/` use the macro; only `21-the-panel-doubles-down.md` spells it out literally). The rendered value is currently correct (Terry Crews' S14-S21 run makes S21 his 8th season), but it's a leftover authoring inconsistency from the same content tick that renamed/rewrote the S19/S20 files, and it will silently drift out of sync if the macro's computation ever changes upstream. Fix: swap S21's `host_caption` back to the `{seasonOrdinalWord} season at the helm` macro for consistency with the rest of the corpus. Content-only, one field. Spoiler discipline P0 unaffected. (URL: /shows/americas-got-talent/season/the-panel-doubles-down, source: critique-pass-120)
+
+- [ ] [MED] [authed] /account (and any unmatched top-level URL — systemic) — a mistyped or stale URL that doesn't correspond to any route strands the reader on the bare, chrome-less built-in Next.js 404 (`404 / This page could not be found.`, `bodyTextLength: 33`, no `<header>`, no wordmark, no footer, no nav) instead of the site's own branded `src/app/(default)/not-found.tsx` (which has proper copy — "The page you're looking for hasn't been built yet, or never existed." — plus a "Back to tiered.tv" link). Confirmed via direct fetch: the served HTML's own React payload identifies the route as Next's internal `["", "_not-found"]` boundary, not the `(default)` group's custom one — route groups only catch `notFound()` calls or matched-but-missing children within their own subtree; a URL with no matching segment anywhere falls through to whatever root-level `app/not-found.tsx` provides, and no such file exists in this repo (only the nested `(default)/not-found.tsx` does). So paths under `(default)`'s tree get the branded 404, but a completely unmatched top-level path (like `/account`, which resolves to no route at all) gets Next's stock unstyled page. Confirmed on both desktop and mobile viewports, authenticated session — identical bare output on both. Fix: add a root-level `src/app/not-found.tsx` that renders the same shared app shell (header + footer) and reuses the `(default)` group's copy/link, so any unmatched URL still reads as tiered.tv with a way back to Shows/Lists/Home. Chrome-only, no content or spoiler impact. (URL: /account, source: critique-pass-120)
 
 - [x] [MED] [anon] /shows/big-brother/season/a-summer-of-mystery — the FORMAT stat tile's headline states a different houseguest count than the CAST SIZE tile two tiles later, reading as a contradiction to a reader scanning the spec row in order: `format_summary: "16 houseguests · three stacked twists"` vs `cast_size: 17` / `cast_size_caption: "16 newcomers plus a premiere-night mystery arrival"`. Both numbers are individually correct (16 originally-cast houseguests plus a premiere-night 17th mystery arrival), but FORMAT states the smaller number as if it were the full cast, so the reader hits "16" first and only learns about the 17th two tiles later. The same show already solved this exact ambiguity on a different season: `content/shows/big-brother/seasons/25-the-multiverse.md` reads `format_summary: "16+ houseguests · weekly Multiverse power or curse"` (the "+" signals an uncounted addition) paired with `cast_size: 17` — S27 doesn't follow that established sibling convention. Confirmed via direct read of `content/shows/big-brother/seasons/27-a-summer-of-mystery.md` and `25-the-multiverse.md`. Fix: change S27's `format_summary` to `"16+ houseguests · three stacked twists"`, matching S25's precedent, or fold "plus a mystery arrival" into the FORMAT headline directly. Content-only, one field. Spoiler discipline P0 intact (cast-count/format facts only, no outcome exposure — the mystery arrival's identity is not named). (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-117) — RESOLVED (2026-08-12, cloud march tick): changed S27's `format_summary` from `"16 houseguests · three stacked twists"` to `"16+ houseguests · three stacked twists"`, matching the S25 sibling convention exactly (the "+" signals the uncounted premiere-night arrival already spelled out two tiles later in `cast_size_caption`). No other field touched; spoiler discipline P0 unaffected.
 
