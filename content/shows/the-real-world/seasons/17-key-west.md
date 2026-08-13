@@ -12,7 +12,7 @@ pull: "A season that leans into a small island's pace rather than a big city's n
 format_summary: "Individual-jobs format · 22 episodes"
 format_caption: "jobs tied to the island's tourism and boating economy"
 premiere_caption: "MTV · premiered February 2006"
-episodes_caption: "22 episodes filmed on the island"
+episodes_caption: "A slower, more sun-soaked pace than the seasons right before it"
 filming_caption: "A smaller island house, a step down in scale from the format's recent city lofts"
 cast_size: 7
 cast_size_caption: "Seven roommates on a small island, working tourism-economy jobs"

@@ -12,7 +12,7 @@ pull: "The fastest turnaround the format had run yet — and the first season th
 format_summary: "Group-job format · 24 episodes"
 format_caption: "tightest production turnaround of the franchise's early run"
 premiere_caption: "MTV · premiered January 2002"
-episodes_caption: "24 episodes, the format's longest season to date"
+episodes_caption: "The longest season to date, a length Las Vegas ties immediately after it"
 filming_caption: "Filmed in a converted bookstore/coffeehouse, Wicker Park, Chicago"
 cast_size: 7
 cast_size_caption: "Seven roommates, including two openly gay cast members"

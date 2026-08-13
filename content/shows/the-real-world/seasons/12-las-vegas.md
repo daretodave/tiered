@@ -12,7 +12,7 @@ pull: "The season that swapped the house for a hotel suite, and turned the forma
 format_summary: "Casino-resort format · 24 episodes"
 format_caption: "first season set inside a hotel/casino resort rather than a private house"
 premiere_caption: "MTV · premiered January 2002"
-episodes_caption: "24 episodes, a full-length season at the resort"
+episodes_caption: "The group job ties directly to a nightclub inside the resort itself"
 filming_caption: "A working casino suite, not a private house — a first for the format"
 cast_size: 7
 cast_size_caption: "Seven roommates sharing a suite at a working casino resort"

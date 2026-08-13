@@ -12,7 +12,7 @@ pull: "A familiar coastline and a shared job, after a run of seasons built aroun
 format_summary: "Group-job format · 12 episodes"
 format_caption: "the show's second visit to San Diego"
 premiere_caption: "MTV · premiered fall 2011"
-episodes_caption: "12 episodes filmed in La Jolla"
+episodes_caption: "Seven years after the first San Diego run, back in the shorter format"
 filming_caption: "A beachfront house in La Jolla, San Diego"
 cast_size: 7
 cast_size_caption: "Seven roommates working together at House of Blues"

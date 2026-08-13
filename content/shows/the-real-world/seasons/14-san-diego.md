@@ -12,7 +12,7 @@ pull: "A bayfront house, a fast-moving cast, and a structure that keeps splittin
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "a fast, confrontational cast dynamic from episode one"
 premiere_caption: "MTV · premiered January 2004"
-episodes_caption: "24 episodes overlooking San Diego Bay"
+episodes_caption: "Continues Paris's individual-jobs structure, now in a bayfront house"
 filming_caption: "A bayfront house that puts the harbor in near-constant view"
 cast_size: 7
 cast_size_caption: "Seven roommates in one of the franchise's more combustible casts"

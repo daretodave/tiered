@@ -12,7 +12,7 @@ pull: "The season that turned casting itself into a broadcast event, months befo
 format_summary: "Group-job format · 23 episodes"
 format_caption: "first season with a pre-broadcast casting special"
 premiere_caption: "MTV · premiered July 1997"
-episodes_caption: "23 episodes, group job at an after-school program"
+episodes_caption: "A group job at an after-school program, the only New England season"
 filming_caption: "Filmed in a converted firehouse, Beacon Hill, Boston"
 cast_size: 7
 cast_size_caption: "Seven roommates in a converted firehouse"

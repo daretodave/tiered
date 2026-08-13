@@ -12,7 +12,7 @@ pull: "A house that never stops changing shape, one visitor from someone's past 
 format_summary: "Skeleton format · 13 episodes"
 format_caption: "a rotating weekly guest joins from each roommate's past"
 premiere_caption: "MTV · premiered December 2014"
-episodes_caption: "13 episodes filmed in the West Loop"
+episodes_caption: "One episode longer than before, and only the second season without a reunion"
 filming_caption: "A house in Chicago's West Loop"
 cast_size: 7
 cast_size_caption: "Seven roommates, plus eleven rotating one-week guests"

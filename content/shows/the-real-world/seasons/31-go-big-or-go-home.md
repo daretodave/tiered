@@ -13,7 +13,7 @@ pull: "The house finally imports the competitive structure its own spinoff had r
 format_summary: "Mission/elimination format · 12 eps"
 format_caption: "the first season requiring missions to stay in the house"
 premiere_caption: "MTV · premiered spring 2016"
-episodes_caption: "12 episodes filmed above the Gold Spike"
+episodes_caption: "The format's third Las Vegas season, and its first not set at a resort"
 filming_caption: "A penthouse above the Gold Spike, downtown Las Vegas"
 cast_size: 7
 cast_size_caption: "Seven roommates, with one addition mid-season"

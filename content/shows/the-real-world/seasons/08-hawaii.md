@@ -12,7 +12,7 @@ pull: "The first stamp on a new kind of passport — the format's first season o
 format_summary: "Group-job format · 23 episodes"
 format_caption: "first US season filmed outside the contiguous states"
 premiere_caption: "MTV · premiered June 1999"
-episodes_caption: "23 episodes, group job at a Waikiki surf shop"
+episodes_caption: "A Waikiki surf shop group job, the format's first beach-culture backdrop"
 filming_caption: "Filmed at a beach house near Diamond Head, Honolulu"
 cast_size: 7
 cast_size_caption: "Seven roommates under Diamond Head"

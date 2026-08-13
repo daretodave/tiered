@@ -12,7 +12,7 @@ pull: "Not a format twist — a cultural one. San Francisco is the season the sh
 format_summary: "Cast-representation season · 20 episodes"
 format_caption: "widened casting and subject matter for the franchise"
 premiere_caption: "MTV · premiered June 1994"
-episodes_caption: "20 episodes, one mid-season cast replacement"
+episodes_caption: "The shortest run yet, with one mid-season cast replacement"
 filming_caption: "Filmed at 949 Lombard St, Russian Hill, San Francisco"
 cast_size: 7
 cast_size_caption: "Seven roommates, one mid-season replacement"

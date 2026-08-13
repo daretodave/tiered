@@ -12,7 +12,7 @@ pull: "A season that rewrites its own format mid-run, and grows the house to mat
 format_summary: "Restructured format · 12 eps + reunion"
 format_caption: "the franchise's first season with 12 total roommates"
 premiere_caption: "MTV · premiered January 2014"
-episodes_caption: "12 episodes plus a reunion special"
+episodes_caption: "Well short of the format's mid-2000s peak length, plus a reunion special"
 filming_caption: "A house in San Francisco, CA"
 cast_size: 12
 cast_size_caption: "Seven original roommates, growing to twelve"

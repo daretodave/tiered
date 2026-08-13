@@ -12,7 +12,7 @@ pull: "The season that proved the format could survive a cast change — and tha
 format_summary: "Sequel format · 21 episodes"
 format_caption: "first season with a cast eviction and replacement"
 premiere_caption: "MTV · premiered June 1993"
-episodes_caption: "21 episodes, first cross-country Winnebago arrival"
+episodes_caption: "One fewer episode than the debut season, first Winnebago arrival"
 filming_caption: "Filmed at a house near Venice Beach, Los Angeles"
 cast_size: 7
 cast_size_caption: "Seven roommates, with a mid-season replacement"

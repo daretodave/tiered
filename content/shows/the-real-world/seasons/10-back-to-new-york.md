@@ -13,7 +13,7 @@ pull: "The season that dared to go back — the first sequel city in a decade of
 format_summary: "First revisit season · 22 episodes"
 format_caption: "job loss now triggers eviction from the house"
 premiere_caption: "MTV · premiered July 2001"
-episodes_caption: "22 episodes, preceded by a week-long casting special"
+episodes_caption: "A week-long casting special preceded this, the first sequel-city season"
 filming_caption: "Filmed at a Greenwich Village loft, Manhattan"
 cast_size: 7
 cast_size_caption: "Seven roommates in an 8,000-square-foot loft"

@@ -12,7 +12,7 @@ pull: "By 2005, the format knew exactly what it was — Austin just runs it well
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "a competent, comfortable season without a major structural swing"
 premiere_caption: "MTV · premiered March 2005"
-episodes_caption: "24 episodes filmed downtown"
+episodes_caption: "The city's live-music scene gives the run a distinct local flavor"
 filming_caption: "A downtown loft with the city's live-music scene as a recurring backdrop"
 cast_size: 7
 cast_size_caption: "Seven roommates in a downtown Austin loft"

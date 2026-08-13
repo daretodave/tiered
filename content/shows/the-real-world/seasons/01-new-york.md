@@ -12,7 +12,7 @@ pull: "The format before anyone had a name for it: strangers, a loft, and a came
 format_summary: "Original format · 22 episodes"
 format_caption: "the season that started the modern docusoap"
 premiere_caption: "MTV · premiered May 1992"
-episodes_caption: "22 half-hour episodes, MTV's first docusoap season"
+episodes_caption: "Half-hour episodes, the length the franchise kept for most of its run"
 filming_caption: "Filmed in a SoHo loft, New York City"
 cast_size: 7
 cast_size_caption: "Seven strangers, one shared loft"

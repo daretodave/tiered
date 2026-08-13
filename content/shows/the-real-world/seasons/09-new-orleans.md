@@ -12,7 +12,7 @@ pull: "By 2000, the format had a house style — and New Orleans runs every piec
 format_summary: "Group-job format · 23 episodes"
 format_caption: "franchise crossover with Road Rules, plus an international trip"
 premiere_caption: "MTV · premiered June 2000"
-episodes_caption: "23 episodes, group job at a public-access TV station"
+episodes_caption: "A public-access TV job, plus a group trip to South Africa"
 filming_caption: "Filmed at the Belfort Mansion, Garden District, New Orleans"
 cast_size: 7
 cast_size_caption: "Seven roommates at a historic Garden District mansion"

@@ -12,7 +12,7 @@ pull: "A season built less on spectacle and more on seven people actually talkin
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "a cast known for engaging directly with race and class"
 premiere_caption: "MTV · premiered September 2004"
-episodes_caption: "24 episodes filmed in Center City"
+episodes_caption: "Individual jobs continue from the two seasons before it"
 filming_caption: "Filmed in a Center City loft, Philadelphia, PA"
 cast_size: 7
 cast_size_caption: "Seven roommates known for unusually direct conversation"

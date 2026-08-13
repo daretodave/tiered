@@ -13,7 +13,7 @@ pull: "A second trip to a city the format had already changed once, now asking t
 format_summary: "Group-job format · 12 episodes"
 format_caption: "the first season housed in a residential property"
 premiere_caption: "MTV · premiered summer 2010"
-episodes_caption: "12 episodes filmed Uptown"
+episodes_caption: "A decade after the first New Orleans visit, now in the shorter format"
 filming_caption: "An Uptown residence, New Orleans, LA"
 cast_size: 8
 cast_size_caption: "Eight roommates doing post-Katrina rebuilding work"

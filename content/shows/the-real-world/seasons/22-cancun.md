@@ -12,7 +12,7 @@ pull: "A resort suite standing in for the usual house, with the group job built 
 format_summary: "Group-job format · 12 episodes"
 format_caption: "the franchise's only season filmed in Mexico"
 premiere_caption: "MTV · premiered summer 2009"
-episodes_caption: "12 episodes filmed in Cancún"
+episodes_caption: "A steep cut from the season before, half as many episodes as it ran"
 filming_caption: "A resort suite at the ME Cancún resort, Mexico"
 cast_size: 8
 cast_size_caption: "Eight roommates working for the resort's trip company"

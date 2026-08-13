@@ -12,7 +12,7 @@ pull: "The first season to leave the country, and the first to chase comedy over
 format_summary: "International cast · 23 episodes"
 format_caption: "first season filmed entirely outside the US"
 premiere_caption: "MTV · premiered June 1995"
-episodes_caption: "23 episodes, the format's longest run yet"
+episodes_caption: "The longest run yet, chasing a lighter, funnier tone than the season before"
 filming_caption: "Filmed at 18 Powis Terrace, Notting Hill, London"
 cast_size: 7
 cast_size_caption: "Seven roommates from four countries"

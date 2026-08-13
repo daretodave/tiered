@@ -12,7 +12,7 @@ pull: "The end of an era, spoken in the very words the show used to open every e
 format_summary: "Individual-jobs format · 12 episodes"
 format_caption: "the last season with the franchise's original narration"
 premiere_caption: "MTV · premiered spring 2013"
-episodes_caption: "12 episodes filmed in Portland"
+episodes_caption: "No mandatory group job — each roommate applies for their own position"
 filming_caption: "A loft on NW 9th Avenue, Portland, OR"
 cast_size: 8
 cast_size_caption: "Eight roommates, each pursuing individually chosen jobs"

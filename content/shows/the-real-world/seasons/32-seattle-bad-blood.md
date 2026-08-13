@@ -13,7 +13,7 @@ pull: "The house's decoy-cast rivals give the season's oldest premise, seven str
 format_summary: "Decoy-cast rivals format · 12 eps"
 format_caption: "the first season to secretly cast real-life rivals as newcomers"
 premiere_caption: "MTV · premiered fall 2016"
-episodes_caption: "12 episodes filmed in Capitol Hill, Seattle"
+episodes_caption: "The first season to swap the shared house phone for personal smartphones"
 filming_caption: "A house in Capitol Hill, Seattle, WA"
 cast_size: 14
 cast_size_caption: "Seven original roommates plus seven secretly cast newcomers"

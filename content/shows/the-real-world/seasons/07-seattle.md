@@ -12,7 +12,7 @@ pull: "The season where the title sequence itself had to change — the 'total s
 format_summary: "Group-job format · 20 episodes"
 format_caption: "first cast with a pre-existing connection"
 premiere_caption: "MTV · premiered June 1998"
-episodes_caption: "20 episodes, group job at a local radio station"
+episodes_caption: "Matches the format's shortest run, group job at a radio station"
 filming_caption: "Filmed at Pier 70, Elliott Bay, Seattle"
 cast_size: 7
 cast_size_caption: "Seven roommates, two of whom already knew each other"

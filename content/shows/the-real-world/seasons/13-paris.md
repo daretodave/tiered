@@ -12,7 +12,7 @@ pull: "The season that proved the format could travel somewhere the cast didn't 
 format_summary: "Individual-jobs format · 20 episodes"
 format_caption: "first season outside an English-speaking country; jobs go individual"
 premiere_caption: "MTV · premiered June 2003"
-episodes_caption: "20 episodes filmed across Paris"
+episodes_caption: "Ties the format's episode floor, last seen in Seattle five years earlier"
 filming_caption: "The franchise's first shoot in a non-English-speaking country"
 cast_size: 7
 cast_size_caption: "Seven roommates navigating a city in a language most didn't speak"

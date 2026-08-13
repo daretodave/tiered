@@ -12,7 +12,7 @@ pull: "A casting first the franchise had never made before, in a city it had sta
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "the franchise's first openly transgender cast member"
 premiere_caption: "MTV · premiered March 2009"
-episodes_caption: "24 episodes filmed in DUMBO"
+episodes_caption: "A return to the format's original city, seventeen years later"
 filming_caption: "A loft with the Brooklyn Bridge in view, back in the format's original city"
 cast_size: 7
 cast_size_caption: "Seven roommates, including the franchise's first openly transgender cast member"

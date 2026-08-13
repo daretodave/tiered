@@ -12,7 +12,7 @@ pull: "By its eighteenth season, the machine behind the show was running as smoo
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "noticeably sharper production polish than surrounding seasons"
 premiere_caption: "MTV · premiered September 2006"
-episodes_caption: "24 episodes filmed downtown"
+episodes_caption: "A cooler, more urban visual register than the sun-soaked seasons before it"
 filming_caption: "Filmed at a downtown loft, Denver, CO"
 cast_size: 7
 cast_size_caption: "Seven roommates in a downtown Denver loft"

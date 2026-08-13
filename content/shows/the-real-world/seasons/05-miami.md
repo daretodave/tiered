@@ -12,7 +12,7 @@ pull: "The season that turned cohabitation into a job. Every group-assignment se
 format_summary: "First group-job season · 22 episodes"
 format_caption: "introduced the recurring group-assignment structure"
 premiere_caption: "MTV · premiered July 1996"
-episodes_caption: "22 episodes, first season built around a shared task"
+episodes_caption: "Backed by $50,000 in seed money for a shared business venture"
 filming_caption: "Filmed at a house on Rivo Alto Island, Miami Beach"
 cast_size: 7
 cast_size_caption: "Seven roommates, one shared business venture"

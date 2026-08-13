@@ -12,7 +12,7 @@ pull: "The season that took the format to the other side of the world, and let t
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "first season filmed outside North America or Europe"
 premiere_caption: "MTV · premiered June 2007"
-episodes_caption: "24 episodes filmed in Sydney"
+episodes_caption: "A house overlooking Sydney Harbour, the format's most striking skyline yet"
 filming_caption: "The franchise's first shoot outside North America or Europe"
 cast_size: 7
 cast_size_caption: "Seven roommates on the format's most distant location yet"

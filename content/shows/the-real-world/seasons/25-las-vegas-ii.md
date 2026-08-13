@@ -12,7 +12,7 @@ pull: "A return to the city that reinvented the format once, this time with a sm
 format_summary: "Group-job format · 13 episodes"
 format_caption: "the show's second visit to Las Vegas"
 premiere_caption: "MTV · premiered spring 2011"
-episodes_caption: "13 episodes filmed at the Hard Rock Hotel"
+episodes_caption: "One extra episode, with a charity job replacing the nightclub gig"
 filming_caption: "A penthouse at the Hard Rock Hotel, Las Vegas"
 cast_size: 7
 cast_size_caption: "Seven roommates, the smallest cast since Hollywood"
