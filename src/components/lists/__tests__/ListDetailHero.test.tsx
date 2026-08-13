@@ -124,6 +124,31 @@ describe('<ListDetailHero>', () => {
     expect(revised).not.toMatch(/this week|this month|this year|today|yesterday/i)
   })
 
+  // Critique pass-100 closure: Entries/Shows are the page's headline
+  // stats and get the site-wide number-first, large-serif treatment
+  // (`.meta-cell--stat`); Curated by/Last revised stay the smaller
+  // label-first definition-list treatment since they're text, not counts.
+  it('marks only the entries and shows cells as headline stats (pass-100)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({ curator: 'M. Reyes', last_revised: '2026-05-10' })}
+        shows={[show()]}
+      />,
+    )
+    expect(
+      screen.getByTestId('list-meta-entries').className,
+    ).toContain('meta-cell--stat')
+    expect(
+      screen.getByTestId('list-meta-shows').className,
+    ).toContain('meta-cell--stat')
+    expect(
+      screen.getByTestId('list-meta-curator').className,
+    ).not.toContain('meta-cell--stat')
+    expect(
+      screen.getByTestId('list-meta-revised').className,
+    ).not.toContain('meta-cell--stat')
+  })
+
   // Critique pass-45 #384 closure: the hero renders the reader-scope
   // tools row (Save + Share + shield) only. Suggest moved out of the
   // hero into <SuggestEntryCTA>, an editorial-footer slot rendered by

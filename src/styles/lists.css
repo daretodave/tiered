@@ -633,6 +633,19 @@ h1.list-title {
   letter-spacing: -0.01em;
   margin: 0;
 }
+.list-meta .meta-cell--stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+}
+.list-meta .meta-cell--stat .meta-val {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.list-meta .meta-cell--stat .meta-key {
+  margin: 0;
+}
 
 .list-tools {
   margin-top: 24px;

@@ -81,11 +81,11 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
       </p>
 
       <dl className="list-meta" data-testid="list-meta">
-        <div className="meta-cell" data-testid="list-meta-entries">
+        <div className="meta-cell meta-cell--stat" data-testid="list-meta-entries">
           <dt className="meta-key">Entries</dt>
           <dd className="meta-val">{entryCount}</dd>
         </div>
-        <div className="meta-cell" data-testid="list-meta-shows">
+        <div className="meta-cell meta-cell--stat" data-testid="list-meta-shows">
           <dt className="meta-key">Shows</dt>
           <dd className="meta-val">{showCount}</dd>
         </div>

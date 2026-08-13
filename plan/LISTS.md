@@ -8564,6 +8564,25 @@ last time a curator actually looked.
   trivial as the finding already documented. `voteQuestionFor()` now
   drops the numeric threshold for that range too (see that finding's
   RESOLVED note). No ledger row changed. Logged on issue #758.
+- **2026-08-13, eighth same-day pass (cloud march tick): redirected
+  without re-searching.** Re-checked only what could plausibly have
+  changed since the seventh pass: `plan/CADENCE.md` gap table unchanged
+  (nearest dated finale `american-ninja-warrior` S18 still 4 days out
+  at 2026-08-17), no new season content landed. Also confirmed the
+  pass-95/117 `episodes_caption` drain — the other standing redirect
+  target — is now fully complete (corpus zero, commit `51112015`), and
+  all three `plan/CRITIQUE.md` pass-120 findings picked up by the sixth
+  and seventh passes are now resolved. With every established redirect
+  target exhausted, picked up the next-cheapest genuinely mechanical
+  `plan/CRITIQUE.md` finding instead of a themed-list search: pass-100's
+  LOW finding that the list-detail page's own `ENTRIES`/`SHOWS` headline
+  stats render in the smaller label-first `.meta-val` treatment (18px)
+  instead of the site-wide number-first 32px-serif stat pattern used
+  everywhere else (home hero, `/shows`, `/themes`). Fixed via a
+  `.meta-cell--stat` modifier scoped to just those two cells (Curated
+  by/Last revised keep the original treatment — they're prose, not
+  counts). No ledger row changed (chrome-only, not a themed list).
+  Logged on issue #758.
 
 ## Notes
 
