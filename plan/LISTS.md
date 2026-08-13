@@ -8628,6 +8628,49 @@ last time a curator actually looked.
   already-mined seasons. Zero-ship, per bearings.md Rule 3's own
   explicit permission to ship nothing rather than force an overlapping
   or thin list.
+- **2026-08-13, tenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled
+  (`plan/CADENCE.md`'s gap table fully starred, nearest dated finale
+  american-ninja-warrior S18 still 4 days out) and read this file's
+  full Notes tail (all nine prior same-day passes) before starting,
+  avoiding every axis already killed today. Chased one genuinely
+  fresh-feeling lead: **the schoolyard-style draft mechanic**, where
+  a named authority figure picks a roster/tribe/team in front of the
+  full cast before competition starts. Found strong, well-worded
+  grounding in three shows via a catalog-wide `draft` grep: Survivor
+  S05 Thailand (the two oldest castaways draft their own tribes on
+  the beach — the format's first schoolyard pick), Big Brother S23
+  "The Team Captains" (four captains draft sixteen newcomers into
+  teams on the premiere), and Ink Master S08 "Peck vs. Núñez" (the
+  two resident judges become rival captains and draft thirty artists
+  into two teams). Looked like a clean 3-show craft/structure list —
+  killed once a full per-season ledger grep showed all three facts
+  already spent under different framings: Survivor S05's draft is
+  already staked at `when-age-became-the-casting-brief` rank 11
+  ("the two senior-most castaways draft their own tribes... age to
+  direct competitive use"); Big Brother S23's draft is already staked
+  at `built-for-one-playing-as-a-team` rank 6 ("team captains draft
+  the house in front of the whole cast on night one"); Ink Master
+  S08's draft is already staked at `the-judges-picked-a-side` rank 1
+  (the judges-become-captains fact, and Ink Master separately runs
+  17+ ledger appearances across every other angle of this same
+  season). Not a partial-overlap judgment call — each of the three
+  candidate entries is a near-verbatim restatement of an existing,
+  already-shipped entry. No fresh ground found; no ledger row
+  changed. This independently reconfirms, via a genuinely new search
+  path rather than a retread, the standing verdict tracked on issue
+  #758: the catalog is saturated at current density and the next
+  actionable Rule 3 lead is a new season landing (Rule 2 unstalling),
+  not further re-slicing of already-mined seasons. Tenth consecutive
+  same-day zero-ship/extend-exhausted tick, per bearings.md Rule 3's
+  own explicit permission to ship nothing rather than force a
+  duplicate list.
+- 2026-08-13 tenth same-day pass: schoolyard-style draft mechanic
+  (authority figure drafts a roster/team/tribe in front of the cast)
+  — rejected: Survivor S05, Big Brother S23, and Ink Master S08 (the
+  only 3 cross-show hits) are each already staked on this exact fact
+  at `when-age-became-the-casting-brief`, `built-for-one-playing-as-
+  a-team`, and `the-judges-picked-a-side` respectively.
 
 ## Notes
 
