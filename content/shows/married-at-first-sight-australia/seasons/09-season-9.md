@@ -17,7 +17,7 @@ cast_size: 22
 cast_size_caption: "Twenty-two participants across eleven matched couples"
 premiere_caption: "Nine Network · January 2022"
 filming_caption: "Australia · ninth season"
-episodes_caption: "37 episodes, a long and steady run"
+episodes_caption: "Thirty-seven episodes, opening with eight couples before growing to eleven"
 host_caption: "Second season for the Aiken–Schilling–Rampolla panel"
 watch_list:
   - episode_label: "Ep 1 · eight weddings"

@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Three new regulars join the cast"
 premiere_caption: "Bravo · winter 2020"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "24 episodes, the show's biggest ensemble yet"
+episodes_caption: "Twenty-four episodes, a length the show has now used four times"
 ---
 
 Season 8 brings the show's biggest single-season cast addition: Beau Clark is promoted to a full regular, joined by new regulars Max Boyens, Brett Caprioni, and Dayna Kathan. Twenty-four episodes carry that bigger ensemble through SUR's usual mix of hierarchy and personal drama. Weeks after the season wrapped, Bravo announced Kristen Doute and Stassi Schroeder would leave the show, following public accusations from a former cast member — news that reshaped the cast for the next season.

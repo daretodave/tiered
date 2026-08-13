@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Ariana and Schwartz become regulars"
 premiere_caption: "Bravo · fall 2014"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "21 episodes, the longest order to that point"
+episodes_caption: "Twenty-one episodes, the longest order to that point"
 ---
 
 Season 3 rewards two seasons of buildup: Ariana Madix and Tom Schwartz move up to full series regulars, and James Kennedy graduates from guest spots to a recurring role. Twenty-one episodes, the longest order yet, give the expanded cast real room to work through SUR's daily hierarchy and the friendships and relationships tangled up in it. No one leaves. The ensemble just gets bigger, and the show holds together fine.

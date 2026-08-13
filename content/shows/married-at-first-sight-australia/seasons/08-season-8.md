@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "Twenty-four participants across twelve matched couples"
 premiere_caption: "Nine Network · February 2021"
 filming_caption: "Australia · eighth season"
-episodes_caption: "32 episodes with a refreshed expert panel"
+episodes_caption: "Thirty-two episodes, with nine couples growing to twelve mid-season"
 host_caption: "First season for Alessandra Rampolla on the expert panel"
 watch_list:
   - episode_label: "Ep 1 · a new expert at the altar"

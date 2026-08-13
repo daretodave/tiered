@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "A smaller, veteran-heavy cast returns"
 premiere_caption: "Bravo · winter 2024"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "19 episodes, a leaner returning cast"
+episodes_caption: "Nineteen episodes, matching last season's order"
 ---
 
 Season 11 airs in the immediate aftermath of the prior season's headlines, with Raquel Leviss not returning to the cast. Lisa Vanderpump, Tom Schwartz, Tom Sandoval, Ariana Madix, Katie Maloney, Scheana Shay, Lala Kent, James Kennedy, and Ally Lewber make up the returning core, with Brock Davies back in a recurring role. Nineteen episodes work through SUR's hierarchy with a noticeably smaller, more veteran ensemble than the seasons just before it.

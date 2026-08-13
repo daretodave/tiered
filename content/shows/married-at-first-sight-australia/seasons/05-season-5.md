@@ -17,7 +17,7 @@ cast_size: 22
 cast_size_caption: "Twenty-two participants across eleven matched couples"
 premiere_caption: "Nine Network · January 2018"
 filming_caption: "Australia · fifth season"
-episodes_caption: "32 episodes, roughly in line with the year before"
+episodes_caption: "Thirty-two episodes, roughly in line with the year before"
 host_caption: "Fifth season for the relationship-experts panel"
 watch_list:
   - episode_label: "Ep 1 · eleven weddings"

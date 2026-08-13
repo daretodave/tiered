@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Nearly full cast returns"
 premiere_caption: "Bravo · winter 2023"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "19 episodes, most of the cast returning"
+episodes_caption: "Nineteen episodes, already airing when the season's biggest headline broke"
 ---
 
 Season 10 brings back nearly the entire prior cast — Charli Burnett steps back to a recurring role and Brock Davies appears less often, while Ally Lewber joins in a recurring spot. Nineteen episodes were already airing when the season's defining real-world story broke in March 2023: Tom Sandoval's affair with Raquel Leviss became public, a tabloid event the press quickly nicknamed Scandoval. It's the most-covered season the show has ever had.

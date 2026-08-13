@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "Twenty-four participants across twelve matched couples"
 premiere_caption: "Nine Network · February 2026"
 filming_caption: "Australia · thirteenth season"
-episodes_caption: "39 episodes, the last with Mel Schilling on the panel"
+episodes_caption: "Thirty-nine episodes, filmed across five cities from Adelaide to the Gold Coast"
 host_caption: "Mel Schilling's final season on the expert panel"
 watch_list:
   - episode_label: "Ep 1 · nine weddings"

@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Ten new regulars, one returning veteran"
 premiere_caption: "Bravo · winter 2025"
 filming_caption: "SUR and TomTom, West Hollywood"
-episodes_caption: "12 episodes, a fully rebuilt cast"
+episodes_caption: "Twelve episodes, the shortest order in the show's history"
 cast_size: 11
 cast_size_caption: "Vanderpump alone returns, joined by ten new names"
 watch_list:

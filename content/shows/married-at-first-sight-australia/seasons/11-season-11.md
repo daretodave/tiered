@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "Twenty-four participants across twelve matched couples"
 premiere_caption: "Nine Network · January 2024"
 filming_caption: "Australia · eleventh season"
-episodes_caption: "38 episodes, the format's longest run to date"
+episodes_caption: "Thirty-eight episodes, the format's longest run to date"
 host_caption: "Fifth season for the Aiken–Schilling–Rampolla panel"
 watch_list:
   - episode_label: "Ep 1 · nine weddings"

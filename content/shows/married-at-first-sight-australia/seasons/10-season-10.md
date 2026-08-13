@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "Twenty-four participants across twelve matched couples"
 premiere_caption: "Nine Network · January 2023"
 filming_caption: "Australia · tenth season"
-episodes_caption: "36 episodes, including the new swap-week stretch"
+episodes_caption: "Thirty-six episodes, with ten couples growing to twelve mid-season"
 host_caption: "Fourth season for the Aiken–Schilling–Rampolla panel"
 watch_list:
   - episode_label: "Ep 1 · ten weddings"

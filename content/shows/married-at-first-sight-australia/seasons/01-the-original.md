@@ -17,7 +17,7 @@ cast_size: 6
 cast_size_caption: "Six strangers with weeks to reach Decision Day"
 premiere_caption: "Nine Network · July 2015"
 filming_caption: "Sydney · the format's Australian debut"
-episodes_caption: "8 episodes across the first experiment"
+episodes_caption: "Eight episodes, the shortest run before the format expanded"
 host_caption: "Debut season for the relationship-experts panel"
 watch_list:
   - episode_label: "Ep 1 · the wedding"

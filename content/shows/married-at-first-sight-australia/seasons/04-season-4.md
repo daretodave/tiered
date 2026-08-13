@@ -17,7 +17,7 @@ cast_size: 20
 cast_size_caption: "Twenty participants across ten matched couples"
 premiere_caption: "Nine Network · January 2017"
 filming_caption: "Australia · fourth season"
-episodes_caption: "29 episodes, the format's biggest expansion yet"
+episodes_caption: "Twenty-nine episodes, the format's biggest expansion yet"
 host_caption: "Fourth season for the relationship-experts panel"
 watch_list:
   - episode_label: "Ep 1 · ten weddings"

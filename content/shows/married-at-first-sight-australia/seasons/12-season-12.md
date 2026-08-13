@@ -17,7 +17,7 @@ cast_size: 26
 cast_size_caption: "Twenty-six participants across thirteen matched couples"
 premiere_caption: "Nine Network · January 2025"
 filming_caption: "Australia · twelfth season"
-episodes_caption: "40 episodes, surpassing season eleven's previous high"
+episodes_caption: "Forty episodes, surpassing season eleven's previous high"
 host_caption: "Sixth season for the Aiken–Schilling–Rampolla panel"
 watch_list:
   - episode_label: "Ep 1 · ten weddings"

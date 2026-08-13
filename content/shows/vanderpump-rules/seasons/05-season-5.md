@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Stassi returns, Brittany joins"
 premiere_caption: "Bravo · fall 2016"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "24 episodes, cast fully restored"
+episodes_caption: "Twenty-four episodes, matching last season's order"
 ---
 
 Season 5 brings Stassi Schroeder back into the main cast after a season away, restoring the group to something close to its original shape. Brittany Cartwright joins in a recurring role, adding one more name to a fast-growing ensemble. Twenty-four episodes let the reunited cast settle back into SUR's familiar rhythms — the chain of command, the relationships, the friendships — without much time lost to reintroduction.

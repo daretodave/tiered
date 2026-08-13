@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "About twenty-four participants across the season's couples"
 premiere_caption: "Nine Network · February 2020"
 filming_caption: "Australia · seventh season"
-episodes_caption: "36 episodes across the panel's last season together"
+episodes_caption: "Thirty-six episodes, with new couples folded in partway through"
 host_caption: "Seventh and final season with the founding three-expert panel"
 watch_list:
   - episode_label: "Ep 1 · the panel's last season together"

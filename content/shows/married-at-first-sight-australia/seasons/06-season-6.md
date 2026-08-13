@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "Twenty-four participants across twelve matched couples"
 premiere_caption: "Nine Network · January 2019"
 filming_caption: "Australia · sixth season"
-episodes_caption: "41 episodes, the largest order to that point"
+episodes_caption: "Forty-one episodes, the largest order to that point"
 host_caption: "Sixth season for the relationship-experts panel"
 watch_list:
   - episode_label: "Ep 1 · a bigger cast again"

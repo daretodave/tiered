@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "Cast rebuilds after Bravo departures"
 premiere_caption: "Bravo · fall 2021"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "17 episodes after the longest gap in the show's history"
+episodes_caption: "Seventeen episodes after the longest gap in the show's history"
 ---
 
 Season 9 arrives after the longest gap in the show's history, a pandemic-era pause that reshaped the cast before a single scene aired. Jax Taylor and Brittany Cartwright were let go by Bravo in the interim, ending their runs as series regulars. The seventeen-episode season introduces Brock Davies as a new regular and promotes Charli Burnett and Raquel Leviss to full-time status, rebuilding the ensemble around SUR's familiar hierarchy.

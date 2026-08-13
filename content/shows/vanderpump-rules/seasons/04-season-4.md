@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant staff"
 format_caption: "James Kennedy promoted, Stassi steps back"
 premiere_caption: "Bravo · fall 2015"
 filming_caption: "SUR restaurant, West Hollywood"
-episodes_caption: "24 episodes, the new baseline order"
+episodes_caption: "Twenty-four episodes, the new baseline order"
 ---
 
 Season 4 reshapes the cast for the first time: James Kennedy is promoted to a full series regular, and Faith Stowers and Lala Kent join in recurring roles. Stassi Schroeder steps back from her regular spot after three seasons, appearing only as a guest. Twenty-four episodes give the new lineup plenty of runway, and the restaurant's hierarchy still drives the season even as the faces around it start to shift.

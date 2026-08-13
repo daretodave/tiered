@@ -8471,6 +8471,54 @@ last time a curator actually looked.
   #758 — commented on the issue to log this occurrence rather than
   acting unilaterally on the dispatch mechanics (that stays a human
   call per #758's own framing).
+- **2026-08-13, fifth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled — every
+  row in the `plan/CADENCE.md` gap table remains starred, and the
+  nearest dated finale (american-ninja-warrior S18, 2026-08-17) is
+  still four days out from today. Read the full 182-row Ledger and
+  the tail of this Ideas log (through the fourth same-day pass
+  immediately above) before touching anything. Ran the ledger's
+  review-due check first: scanned every `last_reviewed` cell — the
+  oldest is `the-blackout-had-a-loophole` at 2026-07-20, 24 days past
+  today, nowhere near the 90-day/5-list review-batch trigger. No
+  review work due. Tried three fresh leads, each killed on contact:
+  (1) **Redemption-Island-style comeback mechanic's origin season**
+  (Survivor S22) as a candidate add to `a-way-back-in` (craft,
+  15 entries) — read S22's own frontmatter/body ("the first
+  Redemption Island season," "the mechanic the franchise still runs
+  in modified form gets invented here"), which looked like clean,
+  unclaimed grounding for the list's missing origin-point entry
+  (rank 3's S27 blurb already implies S22 as "the first attempt"
+  without naming it). Killed once a `show: survivor` sweep across
+  `content/themes/*.md` turned up `best-challenge-design` rank 3
+  already staking S22 verbatim on this exact fact ("the season that
+  stops sending anyone home for good... the mechanic creates a
+  pacing puzzle the format spends a decade learning to balance") —
+  a near word-for-word duplicate of the entry I was about to draft.
+  Not a partial-overlap judgment call; the same fact, same season,
+  already spent. (2) **Headroom check on `the-place-fought-back`**
+  (tone, 17 entries/7 shows) for a fresh location-hazard entry — read
+  the full file; `alone` alone already holds 5 of the 17 slots and
+  every other represented show sits at 1-4, consistent with the
+  twenty-first pass's (2026-08-11) finding that the temperature/
+  altitude-extremity sub-angle only grounds in 2 shows catalog-wide.
+  No unclaimed season found that wouldn't push an already-heavy show
+  further over its informal per-show share. (3) **Fan-voted wildcard
+  casting addition** (public vote adds a contestant to the field,
+  distinct from elimination voting) — grepped
+  `fan-voted|fans (choose|pick|select|vote in) a (wildcard|
+  contestant)|public vote (adds|selects|chooses)` across every season
+  file: only two hits catalog-wide, both Survivor (S31 Cambodia, S50),
+  both single-show and both already staked elsewhere (`best-location-
+  reveals`/`who-actually-got-the-vote` for S31; `the-cast-outgrew-the-
+  format`/`who-actually-got-the-vote` for S50) — can't clear the
+  ≥3-show floor and no headroom left on either season regardless.
+  No fresh ground found. Shipped nothing this pass; no ledger row
+  changed. Fifth consecutive same-day zero-ship, independently
+  reconfirming the standing verdict: no new Rule 3 ground exists in
+  the currently-filed catalog until Rule 2 unstalls and files a fresh
+  season (the twentieth pass's frontmatter-mining move is still the
+  only reliable source of new headroom). Tracked in open issue #758.
 
 ## Notes
 

@@ -15,7 +15,7 @@ format_summary: "Docusoap · restaurant + bar staff"
 format_caption: "Beau Clark joins, Tom Tom opens"
 premiere_caption: "Bravo · winter 2018"
 filming_caption: "SUR restaurant, West Hollywood · Tom Tom opens"
-episodes_caption: "24 episodes, second-longest order to date"
+episodes_caption: "Twenty-four episodes, second-longest order to date"
 ---
 
 Season 7 adds Beau Clark to the cast in a recurring role, a modest addition compared to the growth spurts before it. The bigger real-world news: Tom Tom, a bar co-owned by several cast members, opens during this run, giving the show's world a second real address to work out of. Twenty-four episodes balance that expansion with the SUR floor plan that's carried the show since the beginning.
