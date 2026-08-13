@@ -14,7 +14,7 @@ format_summary: "Extended Women Tell All special, longer than usual"
 format_caption: "soccer-player single dad takes the mansion"
 filming_caption: "Agoura Hills · South Korea, Vietnam, Dominican Republic"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "11 episodes including specials"
+episodes_caption: "Eleven episodes — one fewer than the season prior."
 cast_size: 27
 cast_size_caption: "27 women in the opening field"
 host_caption: "Chris Harrison's eighteenth season"

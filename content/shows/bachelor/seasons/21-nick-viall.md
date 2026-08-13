@@ -14,7 +14,7 @@ format_summary: "Hometown episode runs as an extended set piece"
 format_caption: "a lead the audience already knew well"
 filming_caption: "Agoura Hills · Wisconsin, Bahamas, Finland"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — one more than the season that followed."
 cast_size: 30
 cast_size_caption: "30 women in the opening field"
 host_caption: "Chris Harrison's twenty-first season"

@@ -14,7 +14,7 @@ format_summary: "Travel circuit resumes after bubble season"
 format_caption: "first season under a new host"
 filming_caption: "Agoura Hills · Houston, Croatia, Iceland"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "11 episodes including specials"
+episodes_caption: "Eleven episodes, down one from the season before it."
 cast_size: 31
 cast_size_caption: "31 women in the opening field"
 host_caption: "Jesse Palmer's first season as host"

@@ -14,7 +14,7 @@ format_summary: "Traditional rose ceremonies, atypical finale format"
 format_caption: "the franchise's loudest single-image pitch"
 filming_caption: "Agoura Hills · Singapore, Thailand, Portugal"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes, one up from the season directly before it."
 cast_size: 30
 cast_size_caption: "30 women in the opening field"
 host_caption: "Chris Harrison's twenty-third season"

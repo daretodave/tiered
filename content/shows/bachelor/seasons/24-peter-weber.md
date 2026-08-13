@@ -14,7 +14,7 @@ format_summary: "Extended finale cut, longer episode runtime"
 format_caption: "the aviation frame, staged hard"
 filming_caption: "Agoura Hills · Cleveland, Costa Rica, Australia"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — same length as the two seasons bracketing it."
 cast_size: 30
 cast_size_caption: "30 women in the opening field"
 host_caption: "Chris Harrison's twenty-fourth season"

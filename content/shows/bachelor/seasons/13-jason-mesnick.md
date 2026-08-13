@@ -14,7 +14,7 @@ format_summary: "25 women · first single-dad lead"
 format_caption: "Seattle real-estate dad takes the mansion"
 filming_caption: "Agoura Hills · New Zealand finale"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "11 episodes including After the Final Rose"
+episodes_caption: "Eleven episodes — two more than the season prior ran."
 cast_size: 25
 host_caption: "Chris Harrison's thirteenth season"
 watch_list:

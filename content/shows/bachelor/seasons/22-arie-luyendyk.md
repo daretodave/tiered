@@ -14,7 +14,7 @@ format_summary: "Unusually extended finale runway and close"
 format_caption: "a returnee pulled from the deep archive"
 filming_caption: "Agoura Hills · Lake Tahoe, Paris, Tuscany"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "11 episodes including specials"
+episodes_caption: "Eleven episodes — the shortest run since season eighteen."
 cast_size: 29
 cast_size_caption: "29 women in the opening field"
 host_caption: "Chris Harrison's twenty-second season"

@@ -14,7 +14,7 @@ format_summary: "Traditional rose ceremonies, no twist"
 format_caption: "standard cadence, full travel circuit"
 filming_caption: "Agoura Hills · Malta, Montreal, Tulum"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "11 episodes including specials"
+episodes_caption: "Eleven episodes — two more than the season that followed."
 cast_size: 32
 cast_size_caption: "32 women in the opening field"
 host_caption: "Jesse Palmer's third season as host"

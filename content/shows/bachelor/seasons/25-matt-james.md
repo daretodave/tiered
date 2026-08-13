@@ -14,7 +14,7 @@ format_summary: "Single-resort format, no travel legs"
 format_caption: "first lead cast before any prior run"
 filming_caption: "Nemacolin resort bubble · single-location season"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — the last twelve-episode run before the host change."
 cast_size: 32
 cast_size_caption: "32 women in the opening field"
 host_caption: "Chris Harrison's twenty-fifth season"

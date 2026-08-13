@@ -15,7 +15,7 @@ format_summary: "Longest runway to date, plus on-camera therapy beats"
 format_caption: "the same lead, three years later"
 filming_caption: "Agoura Hills · Costa Rica, Anguilla, Cape Town"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — one more than the season before it."
 cast_size: 30
 cast_size_caption: "30 women in the opening field"
 host_caption: "Chris Harrison's fifteenth season"

@@ -14,7 +14,7 @@ format_summary: "Traditional format, nine-episode run"
 format_caption: "compressed season, fastest-ever lead turnaround"
 filming_caption: "Agoura Hills · Edinburgh, Madrid, Dominican Republic"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "9 episodes including specials"
+episodes_caption: "Nine episodes — the fewest since 2008's season twelve."
 cast_size: 25
 cast_size_caption: "25 women in the opening field"
 host_caption: "Jesse Palmer's fourth season as host"

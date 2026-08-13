@@ -14,7 +14,7 @@ format_summary: "Franchise's first full Las Vegas dates leg"
 format_caption: "the modern Bachelor begins here"
 filming_caption: "Agoura Hills · Mexico City, Warsaw, Jamaica"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — matches the season before and after it."
 cast_size: 28
 cast_size_caption: "28 women in the opening field"
 host_caption: "Chris Harrison's twentieth season"

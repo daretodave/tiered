@@ -14,7 +14,7 @@ format_summary: "Traditional rose ceremonies, full travel circuit"
 format_caption: "the format played straight again"
 filming_caption: "Agoura Hills · the Bahamas, Hungary, Thailand"
 premiere_caption: "ABC · Monday 8/7c"
-episodes_caption: "12 episodes including specials"
+episodes_caption: "Twelve episodes — one more than the seasons bracketing it."
 cast_size: 30
 cast_size_caption: "30 women in the opening field"
 host_caption: "Jesse Palmer's second season as host"
