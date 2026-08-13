@@ -8432,6 +8432,45 @@ last time a curator actually looked.
   in not-yet-filed Rule 2 seasons, and every currently-filed season
   this pass touched has already been mined by an earlier pass.
   Tracked in open issue #758.
+- 2026-08-13 fourth same-day pass (cloud march tick, ~05:23 UTC, one
+  hour after the third pass zero-shipped): re-confirmed Rule 2 still
+  stalled (CADENCE gap table unchanged since the morning's fourth-pass
+  re-verification — 42 shows / 43 gap-slots, nearest actionable
+  american-ninja-warrior S18 finale 2026-08-17, still 4 days out).
+  Read the third pass's full search trail above plus the wider
+  Ideas-log history before starting so this pass didn't retread
+  covered ground. Surveyed the catalog state: ~150 shipped theme
+  files, 76 already `category: single` (most single-eligible shows
+  already carry a dedicated list). `pnpm content:check` confirms no
+  list is currently below the phase-41 cross-canon floor (no fresh
+  target via that channel either). Tried six fresh axes beyond the
+  third pass's six: (1) **judging panel permanently shrinks without
+  replacement** (inverse of the already-rejected "panel gains a
+  chair") — zero catalog-wide hits. (2) **judge/host personal "save"
+  power rescuing a contestant from elimination** — only weak,
+  non-holding canon-level mentions (masterchef, masterchef-australia),
+  no season-file grounding, sub-3-show. (3) **live results-show
+  introduced as a structural first** — concentrated on a single show
+  (so-you-think-you-can-dance, 3 seasons) plus stray masterchef canon
+  mentions, not cross-show groundable. (4) **influencer/social-media
+  casting boom as an era angle** — amazing-race S28 "Social Media
+  Stars" is already staked verbatim at `the-cast-arrived-pre-famous`
+  ("the format's most literal version of the platform-first casting
+  pivot"); overlap too high. (5) **real-life couples/family entering
+  as separate unpaired competitors** — already the exact stated
+  premise of `when-the-cast-was-already-related` (structure, stable).
+  (6) **episode-count volatility (peak-then-recede) as a cross-show
+  craft list** — the runtime-per-episode version already ships
+  cross-show (`running-long-running-short`); the count-volatility
+  version is already the dedicated single-show list
+  `the-episode-order-never-found-its-ceiling` (MAFS Australia); no
+  fresh cross-show slice left that isn't a reskin of one of the two.
+  No fresh ground found. Shipped nothing this pass; no ledger row
+  changed. Fourth consecutive same-day zero-ship, following the same
+  Rule-2-stalled / Rule-3-saturated pattern tracked in open issue
+  #758 — commented on the issue to log this occurrence rather than
+  acting unilaterally on the dispatch mechanics (that stays a human
+  call per #758's own framing).
 
 ## Notes
 
