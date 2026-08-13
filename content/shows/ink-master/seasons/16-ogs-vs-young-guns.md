@@ -15,7 +15,7 @@ pull: "Ten-plus years of experience against artists still building a reputation 
 format_summary: "Experience split · Jury of Peers finale"
 format_caption: "OGs (10+ years) vs. Young Guns, trimmed by a pre-season selection round"
 premiere_caption: "Paramount+ · fall 2024"
-episodes_caption: "10 episodes, closing with a Jury of Peers finale"
+episodes_caption: "Ten episodes, a third consecutive season at the format's current standard."
 cast_size: 16
 cast_size_caption: "16 artists split by experience, four cut before teams form"
 host_caption: "Joel Madden's third season at the helm"

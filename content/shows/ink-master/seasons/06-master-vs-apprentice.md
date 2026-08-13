@@ -16,7 +16,7 @@ pull: "A mentor's reputation and an apprentice's future both ride on the same ta
 format_summary: "Mentor/apprentice pairing · viewer-vote finals lock"
 format_caption: "18 artists paired by experience; a viewer vote could secure a finals spot"
 premiere_caption: "Spike · summer 2015"
-episodes_caption: "16 episodes across New York City landmark locations"
+episodes_caption: "Sixteen episodes for a second straight season at the Rivals-era length."
 filming_caption: "American Museum of Natural History, Brooklyn Museum, US Custom House"
 cast_size: 18
 cast_size_caption: "18 artists paired across a mentor/apprentice structure"

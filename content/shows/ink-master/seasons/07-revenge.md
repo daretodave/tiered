@@ -14,7 +14,7 @@ pull: "Two juries, one finale — the judges still rule, but for the first time 
 format_summary: "Rookies vs. veterans · face-off eliminations"
 format_caption: "8 new contestants vs. 8 returning veterans; a 48-hour two-part finale"
 premiere_caption: "Spike · spring 2016"
-episodes_caption: "13 episodes, closing on a two-part 48-hour finale"
+episodes_caption: "Back down to thirteen episodes after two seasons at the longer Rivals count."
 host_caption: "Dave Navarro's seventh season at the helm"
 watch_list:
   - episode_label: "Premiere · rookies meet veterans"

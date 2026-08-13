@@ -14,7 +14,7 @@ pull: "The clients wearing the ink finally get a vote — a Human Canvas Jury we
 format_summary: "Elimination tattoo challenges · audience + canvas voting"
 format_caption: "First season with Twitter voting and a Human Canvas Jury"
 premiere_caption: "Spike · summer 2013"
-episodes_caption: "13 episodes, one season-long jury mechanic"
+episodes_caption: "Thirteen episodes for a second straight season, matching Season Two's run."
 host_caption: "Dave Navarro's third season at the helm"
 watch_list:
   - episode_label: "Premiere · new voting mechanic explained"

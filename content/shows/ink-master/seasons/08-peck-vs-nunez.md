@@ -15,7 +15,7 @@ pull: "The judges stop judging and start coaching — a structural risk the form
 format_summary: "Judges as team captains · 30-artist draft"
 format_caption: "Peck and Núñez draft and coach rival teams rather than judge as a neutral panel"
 premiere_caption: "Spike · fall 2016"
-episodes_caption: "16 episodes, largest cast draft the format had run"
+episodes_caption: "Sixteen episodes again, the longer count returning with the team-draft format."
 cast_size: 30
 cast_size_caption: "30 artists drafted across two judge-led teams"
 host_caption: "Dave Navarro's eighth season at the helm"

@@ -14,7 +14,7 @@ pull: "Winning a challenge no longer just protects you — it lets you send some
 format_summary: "Elimination tattoo challenges · live finale"
 format_caption: "Winners could place a rival in the bottom; finale aired as \"Ink Master Live\""
 premiere_caption: "Spike · spring 2014"
-episodes_caption: "13 episodes, live finale broadcast"
+episodes_caption: "A third straight season at thirteen episodes, its longest run at that length."
 host_caption: "Dave Navarro's fourth season at the helm"
 watch_list:
   - episode_label: "Premiere · the new power play"

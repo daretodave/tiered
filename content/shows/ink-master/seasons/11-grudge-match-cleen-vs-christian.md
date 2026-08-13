@@ -15,7 +15,7 @@ pull: "Two former competitors turned coaches, a live head-to-head finale between
 format_summary: "Coach draft · live Grudge Match finale"
 format_caption: "Two coaches draft 9-artist teams via blind critique; team size used as sabotage"
 premiere_caption: "Paramount Network · fall 2018"
-episodes_caption: "16 episodes, closing on a live coach-vs-coach finale"
+episodes_caption: "Sixteen episodes, a fourth straight season holding that count."
 cast_size: 18
 cast_size_caption: "Two 9-artist teams, coached by two returning Ink Master veterans"
 host_caption: "Dave Navarro's eleventh season at the helm"

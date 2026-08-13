@@ -14,7 +14,7 @@ pull: "The host changes, the network changes, the judges' panel doubles — but 
 format_summary: "All-star cast · new host, new network"
 format_caption: "Ten returning artists and four past winners judged by an expanded panel"
 premiere_caption: "Paramount+ · fall 2022"
-episodes_caption: "10 episodes, the format's new standard length"
+episodes_caption: "Ten episodes, five fewer than Turf War as the show reset under a new host."
 cast_size: 14
 cast_size_caption: "10 returning artists plus 4 past Ink Master winners"
 host_caption: "Joel Madden's first season at the helm"

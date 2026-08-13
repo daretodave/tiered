@@ -14,7 +14,7 @@ pull: "Four regional squads, a returning veteran leading each one, and a finale 
 format_summary: "Regional squads · hybrid team format"
 format_caption: "20 artists in four regional squads, each captained by a returning veteran"
 premiere_caption: "Paramount Network · winter 2020"
-episodes_caption: "15 episodes; the finale format shifted mid-production"
+episodes_caption: "Fifteen episodes, one shorter than the five-season run at sixteen it followed."
 cast_size: 20
 cast_size_caption: "20 artists split across four veteran-led regional squads"
 host_caption: "Dave Navarro's thirteenth season at the helm"

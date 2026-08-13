@@ -14,7 +14,7 @@ pull: "Fifteen artists, one hometown each to represent, and a rare four-finalist
 format_summary: "Hometown theme · four-finalist finale"
 format_caption: "15 artists compete under a regional hometown-pride theme"
 premiere_caption: "Paramount+ · fall 2025"
-episodes_caption: "10 episodes, the format's most recent flagship run"
+episodes_caption: "Ten episodes for a fourth straight season since the reset."
 cast_size: 15
 cast_size_caption: "15 artists, each carrying a hometown into the competition"
 host_caption: "Joel Madden's fourth season at the helm"

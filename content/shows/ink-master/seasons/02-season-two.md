@@ -14,7 +14,7 @@ pull: "A live 24-hour finale, split into 6-hour blocks — the first time the sh
 format_summary: "Elimination tattoo challenges · live finale"
 format_caption: "First season to close on a live, real-time finale broadcast"
 premiere_caption: "Spike · Tuesday nights"
-episodes_caption: "13 episodes, closing on a live broadcast"
+episodes_caption: "Thirteen episodes, three more than the ten-episode debut season."
 host_caption: "Dave Navarro's second season at the helm"
 watch_list:
   - episode_label: "Premiere · the panel returns"

@@ -14,7 +14,7 @@ pull: "Fifteen new artists, no veterans to lean on, and a three-round finale tha
 format_summary: "All-rookie field · three-round finale"
 format_caption: "15 rookies split into teams, reshuffled mid-season"
 premiere_caption: "Paramount+ · fall 2023"
-episodes_caption: "10 episodes, closing on a three-round finale"
+episodes_caption: "Ten episodes for a second straight season at the shorter, Madden-era length."
 cast_size: 15
 cast_size_caption: "15 new artists, the first all-rookie field since Season Twelve"
 host_caption: "Joel Madden's second season at the helm"

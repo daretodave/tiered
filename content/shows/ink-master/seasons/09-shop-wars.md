@@ -14,7 +14,7 @@ pull: "The trophy stops belonging to a person — for the first time, an entire 
 format_summary: "Shop vs. shop · tag-team elimination"
 format_caption: "9 rookie shops vs. 9 veteran shops; the winning shop takes the title as a team"
 premiere_caption: "Spike · summer 2017"
-episodes_caption: "16 episodes, tag-team format throughout"
+episodes_caption: "A second straight season at sixteen since the team-draft format returned."
 cast_size: 18
 cast_size_caption: "9 rookie shops go head-to-head with 9 veteran shops"
 host_caption: "Dave Navarro's ninth season at the helm"

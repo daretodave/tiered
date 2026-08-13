@@ -15,7 +15,7 @@ pull: "Real rivalries, not random casting — the season bets that people who al
 format_summary: "Rivals pairing · social-vote finalist lock"
 format_caption: "Real-life rivals paired against each other; a vote could lock a finals spot"
 premiere_caption: "Spike · fall 2014"
-episodes_caption: "16 episodes, the format's first rivals structure"
+episodes_caption: "Sixteen episodes, longer than the season before it, as Rivals premiered."
 host_caption: "Dave Navarro's fifth season at the helm"
 watch_list:
   - episode_label: "Premiere · rivals introduced"

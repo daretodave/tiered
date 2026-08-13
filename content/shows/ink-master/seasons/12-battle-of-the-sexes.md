@@ -14,7 +14,7 @@ pull: "Nine men, nine women, and four past winners coaching from the sidelines �
 format_summary: "Gender-split teams · Clash of the Coaches"
 format_caption: "9 men vs. 9 women, each team coached by a past Ink Master winner"
 premiere_caption: "Paramount Network · summer 2019"
-episodes_caption: "16 episodes, closing on the format's last live finale"
+episodes_caption: "Sixteen episodes, a fifth straight season at the format's longest stable length."
 cast_size: 18
 cast_size_caption: "9 men and 9 women, each side coached by a past winner"
 host_caption: "Dave Navarro's twelfth season at the helm"

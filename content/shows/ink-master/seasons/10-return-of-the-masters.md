@@ -15,7 +15,7 @@ pull: "Three past winners, three teams, one live network handoff mid-run — the
 format_summary: "Three winner-led teams · Master Face-Off"
 format_caption: "Three teams of six, each led by a past winner; entry via the Angels spinoff"
 premiere_caption: "Spike → Paramount Network · winter 2018"
-episodes_caption: "16 episodes, opening on Coney Island and closing in Las Vegas"
+episodes_caption: "A third consecutive season at sixteen episodes."
 filming_caption: "Opens on Coney Island; finale held in Las Vegas"
 cast_size: 18
 cast_size_caption: "Three teams of six, each led by a previous Ink Master winner"
