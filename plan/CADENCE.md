@@ -24,6 +24,22 @@ that.
 
 ## Season gap table
 
+**Rule 2 stall, 2026-08-13 tick (cloud march):** checked the
+nearest dated candidate before falling through — `american-
+ninja-warrior` S18's finale is confirmed 2026-08-17 (still 4
+days out). Every other dated finale in the table (90-day-fiance
+09-20, rhoa reunion 08-23, married-at-first-sight 08-27, alone
+09-02, project-runway 09-10) is further out still. No row
+crossed into concluded territory since the 2026-08-12 fourth
+pass, which had already re-verified the full 42-show board
+same-day. No table action this tick; gap unchanged at 42 shows
+/ 43 gap-slots. Fell through to Rule 3: extended
+`one-rule-fills-every-seat` (The Apprentice S07, 16→17 entries)
+— see `plan/LISTS.md` for the full rationale. Next actionable
+check remains the 2026-08-16 weekly sweep, or
+`american-ninja-warrior`'s 2026-08-17 finale crossing into the
+past.
+
 Regenerated 2026-07-19 by the second full weekly sweep (`/march`
 Step 1.5, Rule 1a) — 6 `scout` batches (≤12 shows each) covered
 every one of the 68 catalogued shows, cross-checked against the
