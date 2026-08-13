@@ -15,7 +15,7 @@ cast_size: 8
 cast_size_caption: "Eight roommates sharing one shore house"
 premiere_caption: "MTV · series premiere"
 filming_caption: "Seaside Heights boardwalk, New Jersey"
-episodes_caption: "9 episodes, hour-long format"
+episodes_caption: "Nine episodes, with the gym-tanning-laundry routine locked in by episode one."
 ---
 
 Eight strangers move into a shore house steps from the Seaside Heights boardwalk for one summer, and MTV's format arrives fully formed from the first episode. The gym-tanning-laundry routine becomes an instant cultural shorthand, and the ensemble's confrontational chemistry surfaces early and often. It's a tight, confident debut that never has to explain its own premise, and the boardwalk setting does real work instead of sitting as scenery.

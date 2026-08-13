@@ -15,7 +15,7 @@ cast_size: 7
 cast_size_caption: "The same seven roommates for one final summer"
 premiere_caption: "MTV · closing season of the original run"
 filming_caption: "Seaside Heights boardwalk, New Jersey"
-episodes_caption: "13 episodes, closing out the original series"
+episodes_caption: "Thirteen episodes filmed around a cast member's pregnancy, a series first."
 ---
 
 The original run closes with all seven roommates back in the Seaside Heights house for one final summer, thirteen episodes that wrap up the format MTV built three years earlier. Production continues around a visibly pregnant cast member, a first for the show and a reminder of how much time has passed since the group first moved in together. It's a victory-lap season more than a reinvention, closing out the boardwalk era on familiar terms before the original series wraps.

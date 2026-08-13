@@ -13,7 +13,7 @@ pull: "The cast thought they'd booked a different show. That's the whole twist."
 format_summary: "Villa retreat · fake-show cover story"
 format_caption: "Cast believes they're filming an unrelated series"
 premiere_caption: "Netflix · December 2022"
-episodes_caption: "10 episodes, staggered release"
+episodes_caption: "Ten episodes bring new workshop and trust-test challenges to the format."
 cast_size: 14
 cast_size_caption: "14 singles, staggered entry throughout the season"
 host_caption: "Fourth season with Lana at the helm"

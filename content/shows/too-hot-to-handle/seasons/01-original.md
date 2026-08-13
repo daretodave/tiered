@@ -12,7 +12,7 @@ pull: "The season that taught reality dating its strangest rule: touch less, win
 format_summary: "Villa retreat · no-contact rule"
 format_caption: "Debut run of the shrinking shared prize pool"
 premiere_caption: "Netflix · April 2020"
-episodes_caption: "8 episodes across the debut run"
+episodes_caption: "Eight episodes track a debut cast that plays it loose and combustible."
 host_caption: "Lana, the franchise's AI host from episode one"
 take_h2: "The format's founding rule, set in one episode."
 ---

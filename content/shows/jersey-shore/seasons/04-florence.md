@@ -15,7 +15,7 @@ cast_size: 7
 cast_size_caption: "The same seven roommates from Season 3, no additions or departures"
 premiere_caption: "MTV · the show's only international season"
 filming_caption: "Florence, Italy · the series' only overseas shoot"
-episodes_caption: "12 episodes, shot entirely overseas"
+episodes_caption: "Twelve episodes, with a language barrier the format's never faced before."
 ---
 
 MTV sends the full Seaside Heights cast to Florence for a summer, the only season in the show's run filmed entirely outside the United States. The same seven roommates from the prior season return with no additions or departures, so the house dynamic carries over intact even as the setting changes completely. Cobblestone streets and a language barrier replace the boardwalk, and the format holds up fine away from home turf.

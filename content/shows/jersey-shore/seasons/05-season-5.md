@@ -15,7 +15,7 @@ cast_size: 7
 cast_size_caption: "The same seven roommates, no roster changes"
 premiere_caption: "MTV · winter return to Seaside Heights"
 filming_caption: "Seaside Heights boardwalk, New Jersey"
-episodes_caption: "11 episodes, the shortest season of the run"
+episodes_caption: "Eleven episodes leave less room for the season to build its usual momentum."
 ---
 
 After a summer in Florence, the cast returns to the familiar Seaside Heights house for the shortest season of the series, eleven episodes against the usual twelve or thirteen. All seven roommates are back with no additions or departures, so the ensemble dynamic is the most settled it's been. The compressed episode count means less room for the format to build momentum, and the season reads as a tighter, quicker lap around a house the group knows inside and out.

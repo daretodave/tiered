@@ -13,7 +13,7 @@ pull: "Sometimes the best move is not to change anything."
 format_summary: "Villa retreat · rolling cast"
 format_caption: "Ten singles start, four more arrive as the season runs"
 premiere_caption: "Netflix · July 2023, staggered release"
-episodes_caption: "10 episodes across three release batches"
+episodes_caption: "Ten episodes, released across three separate batches."
 cast_size: 14
 cast_size_caption: "10 singles at the start, 4 more join later"
 host_caption: "Fifth season with Lana at the helm"

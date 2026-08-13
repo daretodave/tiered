@@ -15,7 +15,7 @@ cast_size: 7
 cast_size_caption: "The core seven, plus a new permanent roommate joining the house"
 premiere_caption: "MTV · highest-rated series premiere"
 filming_caption: "Seaside Heights boardwalk, New Jersey"
-episodes_caption: "13 episodes, back on the Seaside Heights boardwalk"
+episodes_caption: "Thirteen episodes as the seven-plus-one ensemble finds its footing."
 ---
 
 The cast returns to the original Seaside Heights house after a summer away, and the premiere draws MTV's largest audience yet for the series, a record for the network at the time. Angelina doesn't return this season; in her place, Snooki's longtime friend Deena Cortese joins as a permanent roommate, the first cast addition since the show began. The dynamic recalibrates around seven long-time roommates and one newcomer finding her footing.

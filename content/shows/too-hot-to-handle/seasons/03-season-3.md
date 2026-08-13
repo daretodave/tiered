@@ -13,7 +13,7 @@ pull: "Ten episodes, one day, twice the prize — the show's biggest swing at sc
 format_summary: "Villa retreat · dual-category prize"
 format_caption: "Winning couple and winning single split a doubled pot"
 premiere_caption: "Netflix · January 2022, full-season drop"
-episodes_caption: "10 episodes, released all at once"
+episodes_caption: "Ten episodes, all landing in one sitting instead of a staggered wait."
 cast_size: 15
 cast_size_caption: "15 singles enter across the season"
 host_caption: "Third season with Lana at the helm"

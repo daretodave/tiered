@@ -13,7 +13,7 @@ pull: "For the first time, the shared prize pool doesn't stay shared."
 format_summary: "Villa retreat · single-winner prize"
 format_caption: "Lana narrows the field to three, cast votes by ballot"
 premiere_caption: "Netflix · June 2021"
-episodes_caption: "10 episodes, staggered release"
+episodes_caption: "Ten episodes, released in staggered batches across the summer."
 cast_size: 15
 cast_size_caption: "15 singles across the season, including late arrivals"
 host_caption: "Second season with Lana at the helm"
