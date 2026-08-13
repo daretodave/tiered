@@ -12,7 +12,7 @@ pull: "The judging table got sharper, the critique got more honest, and the show
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel reset, new critical voice"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Third season at the helm"
 ---
 
 Howard Stern's arrival as judge changes the panel's center of gravity. Stern brings a different standard of critique — direct, informed, often the sharpest read in the room — while Sharon Osbourne and Howie Mandel provide range and warmth alongside him. The three-way dynamic is more interesting than anything the founding era produced. The audition pool benefits: acts that clear Stern's bar feel genuinely earned. The format's open-call promise lands with more credibility when the critique behind it has teeth.

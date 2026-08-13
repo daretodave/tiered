@@ -12,7 +12,7 @@ pull: "The return of a full house gives the open-call spectacle its energy back 
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "first full live-audience season since the pandemic"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Third season at the helm"
 ---
 
 Season sixteen is the format's best run since the pandemic curtailed it. A full live audience returns, and the audition energy variety competition depends on is back in the room. Sofia Vergara's first complete season at the table gives the four-person panel a working shape it never fully achieved under restricted conditions. The chemistry between Cowell, Klum, Vergara, and Mandel reads as a settled configuration for the first time. The format runs cleanest when everyone can hear the crowd.

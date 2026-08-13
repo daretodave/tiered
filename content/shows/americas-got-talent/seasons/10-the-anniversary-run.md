@@ -12,7 +12,7 @@ pull: "Ten seasons in, the format has enough of a record to look back on — and
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "10th anniversary, embedded panel"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Seventh season at the helm"
 ---
 
 Season ten is the anniversary the format was due. Howard Stern, Howie Mandel, Mel B, and Heidi Klum run their second year together, and the panel chemistry is settled and functional. The audition rounds are broad, the live competition moves with practiced efficiency, and the milestone framing gives the production a sense of occasion without disrupting what works. A confident mid-era season that delivers the open-call promise without needing to reinvent it.

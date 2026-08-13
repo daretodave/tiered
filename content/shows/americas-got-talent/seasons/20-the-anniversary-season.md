@@ -12,7 +12,7 @@ pull: "The anniversary resets more than the calendar — Mel B's return to the p
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "20th anniversary, Mel B replaces Klum"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Seventh season at the helm"
 ---
 
 Season twenty arrives with a milestone and one seat changed at the judging table. The anniversary framing gives the production a hook, but the bigger shift is Mel B returning to replace Heidi Klum — Simon Cowell, Sofia Vergara, and Howie Mandel continue unchanged. The new pairing brings unpredictability back to the auditions. Whether the swap earns its slot takes a full season to answer, but the format arrives with more structural interest than the middle years managed.

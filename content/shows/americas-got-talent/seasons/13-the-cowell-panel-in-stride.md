@@ -12,7 +12,7 @@ pull: "Three years of the same panel produces shorthand — the critique is fast
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "established panel, third year together"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Second season at the helm"
 ---
 
 Season thirteen is the Cowell-era panel at its most cohesive. Three years together has built genuine shorthand at the table — Cowell's industry instincts, Mel B's bluntness, Howie Mandel's novelty radar, and Heidi Klum's enthusiasm pull in different directions without tipping into manufactured conflict. Tyra Banks runs the stage with settled confidence. The audition pool is broad, and the live rounds move with practiced efficiency. A reliable, assured version of the format without the voltage of a reset year.

@@ -12,7 +12,7 @@ pull: "Two new judges, two distinct instincts — the panel finds new friction a
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel overhaul, four new voices"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Sixth season at the helm"
 ---
 
 Season nine is defined by what changes at the judging table. Mel B and Heidi Klum arrive alongside Howard Stern and Howie Mandel, and the new pairing generates real contrast — Mel B's directness, Klum's enthusiasm, Stern's exacting standard, Mandel's instinct for novelty. The four-person dynamic is more textured than the preceding years. The audition pool runs wide, and new judges bring fresh reactions to familiar categories.

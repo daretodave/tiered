@@ -12,7 +12,7 @@ pull: "A new host in a settled format is its own kind of pressure test — the p
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "host transition after 8-year run"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "First season at the helm"
 ---
 
 Tyra Banks takes over a stage Nick Cannon had held for eight seasons, and the transition is the defining editorial story of the year. The judging panel — Cowell, Mel B, Mandel, Klum — runs its second year together with real chemistry. The audition pool runs wide across disciplines. A host change in a settled format produces uneven footing early; the panel's stability keeps the competition on course. Functional rather than electric.

@@ -12,7 +12,7 @@ pull: "The pandemic redraws what the live competition can be — the format runs
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "COVID production, adjusted live format"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Second season at the helm"
 ---
 
 Season fifteen runs under pandemic conditions that limit what a live variety competition can be. Audience restrictions dampen the energy the audition and live rounds depend on; the open-call spectacle works best with a full room. Sofia Vergara and Heidi Klum at the judging table alongside Cowell and Mandel bring genuine range, but no panel chemistry overcomes a production that cannot deliver the stage experience the show was built around. The season runs quieter than it should.

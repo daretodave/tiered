@@ -12,7 +12,7 @@ pull: "The format had spent two seasons learning what a prime-time variety compe
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "founding era at full confidence"
 premiere_caption: "NBC · Tuesday 8/7c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Second season at the helm"
 ---
 
 Jerry Springer's second season as host runs the founding era's format at its most settled. The audition circuit is deeper than either prior year, and Piers Morgan, Sharon Osbourne, and David Hasselhoff have developed a shorthand that makes the critique feel collaborative rather than assembled. The production has grown to match the live-round ambitions. Acts arrive knowing what the open call rewards, and the format meets them there. The founding era at full confidence.

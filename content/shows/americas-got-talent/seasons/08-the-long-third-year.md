@@ -12,7 +12,7 @@ pull: "A functional season from a panel that still does its job well — just wi
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "Stern panel, third year"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Fifth season at the helm"
 ---
 
 Season eight is the Stern-era panel at its most routine. Howard Stern, Sharon Osbourne, and Howie Mandel are still a strong judging table — chemistry real, critique honest — but three seasons together has filed down the friction that made the first year feel like a reset. The audition circuit runs familiar patterns, the live rounds move without surprise, and nothing pushes the format forward. Functional and settled, from a panel that did its defining work earlier.

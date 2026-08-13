@@ -12,7 +12,7 @@ pull: "A new critical voice at the judging table gives the format a second-act e
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel reset, Simon Cowell joins"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Eighth season at the helm"
 ---
 
 Simon Cowell's arrival resets the panel's center of gravity. Where Howard Stern brought a radio broadcaster's precision, Cowell brings an industry executive's instincts — sharper on commercial viability, more direct about what works at scale. Mel B, Howie Mandel, and Heidi Klum provide range alongside him. The audition pool benefits from a judge with different calibration. A panel overhaul in a settled format produces friction that keeps the open-call promise honest. Fresh footing in a familiar frame.

@@ -12,7 +12,7 @@ pull: "A new host and two new judges arriving together give the season a debut-y
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "new host, two new judges"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "First season at the helm"
 ---
 
 Season fourteen opens the modern era with the most significant structural overhaul since the Stern years. Terry Crews brings warmth to the hosting role; Julianne Hough and Gabrielle Union at the judging table offer fresh calibration alongside Cowell and Mandel. The dual reset at host and panel creates a season perpetually in negotiation with itself. The audition pool is broad, but new voices at the table are still building shorthand. Most interesting when the disagreements feel unscripted.

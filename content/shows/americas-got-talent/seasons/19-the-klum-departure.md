@@ -12,7 +12,7 @@ pull: "Four years of the same configuration is one too many — the panel runs m
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "fourth year of the same panel, Klum's era closing"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Sixth season at the helm"
 ---
 
 Season nineteen is the fourth consecutive run of an unchanged panel configuration, and that consistency is the season's primary editorial fact. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel know exactly where each other stands, and the judging table reflects that — smooth, practiced, and short on friction. The audition rounds are broad but rarely surprising. Heidi Klum's departure after this season becomes the run's most notable editorial marker.

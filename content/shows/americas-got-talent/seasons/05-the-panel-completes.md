@@ -12,7 +12,7 @@ pull: "Not a peak but a completion — the judging identity that would carry the
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "founding era closes"
 premiere_caption: "NBC · Tuesday 8/7c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Second season at the helm"
 ---
 
 Season five is the founding era's closing chapter rather than its high point. Nick Cannon is now fully settled as host, and Howie Mandel, Sharon Osbourne, and Piers Morgan run their first complete season together after the prior year's transition. The three-way dynamic — Mandel's enthusiasm, Osbourne's directness, Morgan's precision — has a full season to develop shorthand. The audition pool holds the format's open-call range. A functional, stable close to the era that built the show's identity.

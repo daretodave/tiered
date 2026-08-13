@@ -12,7 +12,7 @@ pull: "A second season together lets the panel stop negotiating with itself and 
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "settled four-person panel, second year running"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Fourth season at the helm"
 ---
 
 Season seventeen benefits from the simplest structural advantage in a panel competition: a year of actual chemistry. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have stopped building their dynamic and started operating on it. The judging rounds are more assured than the prior year's full debut, and the critiques carry the ease of people who know where each other stands. A solid post-pandemic season — the format runs with the confidence a settled judging table provides.

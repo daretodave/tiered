@@ -12,7 +12,7 @@ pull: "Three years of the same panel produces the most competent and least surpr
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "three consecutive seasons, same panel configuration"
 premiere_caption: "NBC · Tuesday 9/8c"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Fifth season at the helm"
 ---
 
 Season eighteen is the settled middle of a multi-year configuration — familiar faces, practiced rhythms, no structural change to push the format. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have now run together long enough that the judging table operates smoothly rather than dynamically. The audition pool delivers variety acts across a wide range of disciplines, and Terry Crews moves through the hosting duties with ease. Competent in every respect and rarely more than that.
