@@ -12,7 +12,7 @@ eyebrow: "Aired spring 2018–spring 2019 · Food Network · nested inside Seaso
 lede: "Thirteen episodes run from May 2018 into May 2019, airing entirely within Season 37's own window while also sharing the calendar with Season 39, Season 40, and Season 41."
 pull: "Season 38 is a full, competent season that simply never gets to run on its own — contained inside one neighbor, overlapping three more, in the densest single stretch this batch produces."
 premiere_caption: "Food Network · May 2018 into May 2019"
-episodes_caption: "13 episodes, entirely inside Season 37's window"
+episodes_caption: "Spans exactly one year, May 2018 into May 2019"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, fully nested run"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

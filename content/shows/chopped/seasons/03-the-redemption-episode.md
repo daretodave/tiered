@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2009–spring 2010 · Food Network · one redemption episod
 lede: "Thirteen episodes hold mostly to the closed-door format, with one exception: episode 8 brings back four chefs who'd previously lost in a Chopped final for a single callback hour, testing the format against competitors who already know exactly what a loss here costs."
 pull: "One episode breaks the closed-door rule here — four chefs who'd already lost a Chopped final once come back for a single callback hour, a smaller swing than the multi-episode Champions block a season earlier, but a real test of whether the mystery basket still humbles a chef who's been through it before."
 premiere_caption: "Food Network · fall 2009 into spring 2010"
-episodes_caption: "13 episodes, one redemption callback at episode 8"
+episodes_caption: "Third straight season at thirteen episodes, the count still steady."
 format_summary: "4 chefs · 3 rounds · one returning-chef episode"
 format_caption: "appetizer, entrée, dessert — standard, except episode 8's callback"
 cast_size_caption: "four competing chefs per episode, all-new except one callback hour"

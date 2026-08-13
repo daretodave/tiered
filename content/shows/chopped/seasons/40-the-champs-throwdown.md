@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2018–summer 2019 · Food Network · a Champs Throwdown 
 lede: "Thirteen episodes fold in a five-part Chopped Champs Throwdown — returning champions competing for a $50,000 prize — running through October and November, inside a season that shares its calendar with more neighbors than any other tournament season."
 pull: "Season 40 brings back the returning-champions idea with real money on the table, but its year-long air window overlaps five other seasons — the busiest calendar any tournament entry in this canon has run."
 premiere_caption: "Food Network · July 2018 into July 2019"
-episodes_caption: "13 episodes, a 5-episode Champs Throwdown in fall 2018"
+episodes_caption: "Five-episode block matches the tournament length of Seasons 28 and 29"
 format_summary: "4 chefs · 3 rounds · Champs Throwdown interspersed"
 format_caption: "appetizer, entrée, dessert — plus a five-part $50,000 champions bracket"
 cast_size_caption: "four competing chefs per episode, past champions across the tournament block"

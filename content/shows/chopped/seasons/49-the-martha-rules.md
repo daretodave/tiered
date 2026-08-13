@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2020–spring 2021 · Food Network · two tournaments, nest
 lede: "Thirteen episodes run from November 2020 into May 2021, opening with a five-part Comfort Food Feud tournament, then Chopped: Martha Rules — a guest culinary figure taking over the baskets for another five-part bracket — closing the season out."
 pull: "Season 49 folds two five-part tournaments into one season, including a guest-architect Martha Rules bracket, while sitting entirely inside Season 47's window and fully containing Season 48's own run."
 premiere_caption: "Food Network · November 2020 into May 2021"
-episodes_caption: "13 episodes, two five-part tournaments"
+episodes_caption: "One episode finishes a bracket held over from Season 48"
 format_summary: "4 chefs · 3 rounds · Comfort Food Feud, then Martha Rules"
 format_caption: "appetizer, entrée, dessert — two tournaments, one with guest baskets"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

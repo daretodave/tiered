@@ -12,7 +12,7 @@ eyebrow: "Aired winter–summer 2024 · Food Network · fully contains Season 58
 lede: "Thirteen episodes run February into August 2024, led by a five-episode Spin It to Win It tournament and eight standalone hours, one tied to a Kung Fu Panda 4 promotional push. Season 58's entire run airs somewhere inside this six-month window."
 pull: "Season 57 gives its own tournament and a promotional crossover real format credit, and its six-month window has enough runway on both ends that containing Season 58 whole barely dents it."
 premiere_caption: "Food Network · February into August 2024"
-episodes_caption: "13 episodes, five-part tournament plus eight standalone hours"
+episodes_caption: "Runs solo two months before S58, one month after"
 format_summary: "4 chefs · 3 rounds · Spin It to Win It opener"
 format_caption: "five-episode tournament, then standard format the rest of the way"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

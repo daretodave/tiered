@@ -3283,15 +3283,15 @@ function main(): number {
     }
   }
 
-  // Critique pass-95/pass-117 MED: ships LAX during the corpus drain —
-  // 248 of 374 season files that carry both `ep_count` and
-  // `episodes_caption` currently trip this invariant, spanning 20 shows.
-  // Subsequent /ship-content drain ticks rewrite one show's captions at
-  // a time to a genuinely distinct fact, and the final drain tick flips
-  // EPISODES_CAPTION_BARE_RESTATEMENT_STRICT to true. One-line toggle
-  // mirroring SEASON_SECTION_SUBHEAD_STRICT above (the lax→strict
-  // pattern).
-  const EPISODES_CAPTION_BARE_RESTATEMENT_STRICT = false
+  // Critique pass-95/pass-117 MED: shipped LAX during the corpus drain —
+  // 248 of 374 season files across 20 shows tripped this invariant at
+  // filing. The drain ran across passes 118-119 and this cloud tick
+  // (chopped's 62 season files, the last show carrying the defect);
+  // corpus-wide count is now zero. Flipping to STRICT per the
+  // SEASON_SECTION_SUBHEAD_STRICT / CARD_TAGLINE_OPENER_OVERLAP_STRICT
+  // lax→strict pattern — a regression now fails the gate instead of
+  // warning.
+  const EPISODES_CAPTION_BARE_RESTATEMENT_STRICT = true
   const episodesCaptionBareRestatementIssues =
     collectEpisodesCaptionBareRestatementIssues()
   if (EPISODES_CAPTION_BARE_RESTATEMENT_STRICT) {

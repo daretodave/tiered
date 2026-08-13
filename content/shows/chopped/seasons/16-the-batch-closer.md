@@ -12,7 +12,7 @@ eyebrow: "Aired summer–fall 2013 · Food Network · closing this stretch at fu
 lede: "Thirteen episodes carry Season 16 from June into November 2013, closing out this batch at the full baseline the format has held, with one brief dip, since Season 9's recovery."
 pull: "Season 16 is the last entry in this batch, and it plays exactly like you'd expect a seventh full-baseline season to play: competent, unremarkable in the best sense, and running the closed-door format without a single structural wrinkle."
 premiere_caption: "Food Network · June into November 2013"
-episodes_caption: "13 episodes, closing this batch at full baseline"
+episodes_caption: "Thirteen episodes, premiering almost a year to the day after Season 12."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, closing the stretch"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

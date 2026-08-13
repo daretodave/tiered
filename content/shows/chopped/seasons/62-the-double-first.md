@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2025–spring 2026 · Food Network · two format firsts, 
 lede: "Thirteen standalone episodes run July 2025 into May 2026, the only season in this batch with no overlap. A charity hour swaps the usual round order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the table as a fourth judge."
 pull: "Season 62 skips the tournament bracket, but two genuine structural firsts and a calendar shared with no other season make it one of the cleanest, most distinctive entries this canon has ranked in years."
 premiere_caption: "Food Network · July 2025 into May 2026"
-episodes_caption: "13 episodes across more than nine months, no overlap"
+episodes_caption: "A nine-plus-month run, first episode to last"
 format_summary: "4 chefs · 3 rounds · two structural firsts"
 format_caption: "a swapped round order once, a judging host once"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

@@ -12,7 +12,7 @@ eyebrow: "Aired late 2023–winter 2024 · Food Network · no tournament, a majo
 lede: "Thirteen episodes run from August 2023 into January 2024, all of them standalone hours — including a Halloween-themed episode and a Friendsgiving-themed episode — with no tournament bracket of any kind, a rarity in this stretch of the show's run."
 pull: "Season 56 has nothing but format execution to offer against a real problem — roughly three and a half of its own five months share the calendar with Season 55, the majority of its own release window."
 premiere_caption: "Food Network · August 2023 into January 2024"
-episodes_caption: "13 episodes, all standalone, no tournament block"
+episodes_caption: "About five months end to end, a compact release run"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, no tournament this time"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

@@ -12,7 +12,7 @@ eyebrow: "Aired spring 2020–spring 2021 · Food Network · two tournaments, tr
 lede: "Thirteen episodes run from April 2020 into May 2021, opening with a six-part Beat the Judge block — a new judge-versus-chef format — then a five-part Beat Bobby Flay crossover, before two standalone hours close the season out."
 pull: "Season 47 pairs two genuinely new tournament formats with the deepest containment combination this canon has measured — three other seasons fully swallowed inside its own thirteen-month run."
 premiere_caption: "Food Network · April 2020 into May 2021"
-episodes_caption: "13 episodes, two tournament blocks back to back"
+episodes_caption: "Only two hours run standalone: Pickle Panic, PB and J"
 format_summary: "4 chefs · 3 rounds · Beat the Judge, then Beat Bobby Flay"
 format_caption: "appetizer, entrée, dessert — two tournament blocks, no standard majority"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

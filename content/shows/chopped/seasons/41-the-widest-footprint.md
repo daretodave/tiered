@@ -12,7 +12,7 @@ eyebrow: "Aired winter 2018–spring 2020 · Food Network · the batch's widest 
 lede: "Thirteen episodes stretch from December 2018 into March 2020, more than fifteen months touching Season 40, Season 42, Season 43, Season 44, and Season 45 at various points — the widest overlap footprint in this entire batch, tied only by Season 42 itself."
 pull: "Season 41 keeps its full episode count, but its calendar is the most sprawling this canon has measured — a fifteen-month run that brushes five other seasons before it finally closes."
 premiere_caption: "Food Network · December 2018 into March 2020"
-episodes_caption: "13 episodes across more than fifteen months"
+episodes_caption: "Thirteen episodes, standard length inside the batch's widest sprawl"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — one themed opener, no tournament block"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

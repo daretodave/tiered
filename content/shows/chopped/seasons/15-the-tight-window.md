@@ -12,7 +12,7 @@ eyebrow: "Aired spring–summer 2013 · Food Network · the show's tightest wind
 lede: "Thirteen episodes run from April to July 2013, the tightest air window of the show's settled-baseline stretch — a few weeks brisker than Season 14 and months shorter than Season 10's stretch."
 pull: "Season 15 runs the identical thirteen-episode format as the seasons around it, just on a noticeably brisker clock — April to July, the tightest window since the recovery began. A season that moves fast reads a little more confident than one that lingers."
 premiere_caption: "Food Network · April into July 2013"
-episodes_caption: "13 episodes, the show's tightest window yet"
+episodes_caption: "Thirteen episodes, the eleventh season in the batch at that count."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, brisk pace"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

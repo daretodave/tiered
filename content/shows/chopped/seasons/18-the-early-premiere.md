@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2013–spring 2014 · Food Network · a week of direct over
 lede: "Thirteen episodes run from late November 2013 into May 2014, premiering a week before Season 17 finishes — a brief, direct overlap rather than the tail-only tangle before it."
 pull: "Season 18 opens while Season 17 still has one week left to run, a tighter overlap than its predecessor's tail-end tangle. It's a small escalation, not yet the multi-season pileup a few years down the line."
 premiere_caption: "Food Network · November 2013 into May 2014"
-episodes_caption: "13 episodes, one week of direct overlap with Season 17"
+episodes_caption: "Thirteen episodes, the show's sixth different calendar year on air."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, a week of direct overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

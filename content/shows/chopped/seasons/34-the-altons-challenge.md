@@ -12,7 +12,7 @@ eyebrow: "Aired spring–fall 2017 · Food Network · a guest architect closes t
 lede: "Eight standard episodes run May into July 2017, then a three-month gap gives way to a five-part Chopped: Alton's Challenge tournament, with a guest culinary figure shaping the baskets while Ted Allen hosts throughout, exactly as he always has."
 pull: "Season 34 splits cleanly in two — eight ordinary hours, then a long pause, then a five-episode tournament built around a guest culinary figure designing the baskets. Ted Allen never leaves the host chair either way."
 premiere_caption: "Food Network · May into November 2017"
-episodes_caption: "13 episodes, a 5-episode tournament closes the season"
+episodes_caption: "Spans six months total, from May into November 2017"
 format_summary: "4 chefs · 3 rounds · Alton's Challenge closes season"
 format_caption: "appetizer, entrée, dessert — except the closing 5-episode tournament"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

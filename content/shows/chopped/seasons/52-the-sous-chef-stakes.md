@@ -12,7 +12,7 @@ eyebrow: "Aired spring–fall 2022 · Food Network · real job stakes, the clean
 lede: "Thirteen episodes run from April into October 2022, seven standalone themed hours giving way to a five-part Desperately Seeking Sous-Chef tournament — chefs competing for real staff jobs at the judges' own restaurants — before a single finale closes the season out."
 pull: "Season 52 pairs a genuinely new tournament stakes gimmick with the cleanest calendar this batch has produced — just a one-week brush with one neighbor, at the very end of its own six-and-a-half-month run."
 premiere_caption: "Food Network · April into October 2022"
-episodes_caption: "13 episodes, the cleanest calendar in the batch"
+episodes_caption: "A four-month gap separates the bracket from its finale"
 format_summary: "4 chefs · 3 rounds · Sous-Chef tournament closes it"
 format_caption: "appetizer, entrée, dessert — plus a five-part sous-chef job tournament"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

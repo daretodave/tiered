@@ -12,7 +12,7 @@ eyebrow: "Aired winter–spring 2013 · Food Network · a clean, unclustered sea
 lede: "Thirteen episodes run from January into May 2013, four full-baseline seasons removed from Season 6 through 8's contraction and clear of the scheduling overlap that tangled Seasons 11 through 13."
 pull: "Season 14 runs the format at its most settled — full baseline, no overlap with a neighboring season, no shortened count to explain. By this point, the recovery isn't news anymore; it's just how the show runs."
 premiere_caption: "Food Network · January into May 2013"
-episodes_caption: "13 episodes, a clean single-season air window"
+episodes_caption: "Thirteen episodes, nearly four years to the week since the 2009 debut."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, no overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

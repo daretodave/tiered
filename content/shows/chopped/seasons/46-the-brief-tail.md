@@ -12,7 +12,7 @@ eyebrow: "Aired summer–fall 2020 · Food Network · the lightest overlap in ye
 lede: "Thirteen episodes run from July into late October 2020, premiering while Season 44 and Season 45 are both still finishing their own runs — a brief overlap at the front, nothing at all at the back."
 pull: "Season 46 gets in and out clean, catching only a light tail overlap with two finishing neighbors before running the rest of its own stretch entirely alone."
 premiere_caption: "Food Network · July into October 2020"
-episodes_caption: "13 episodes, a brief overlap at the front only"
+episodes_caption: "A tight three-and-a-half-month turnaround, start to finish"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, no tournament block"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

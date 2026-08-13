@@ -12,7 +12,7 @@ eyebrow: "Aired winter–summer 2018 · Food Network · a Gold Medal Games tourn
 lede: "Thirteen episodes open with a single standard hour, then a five-part Gold Medal Games tournament in January, before settling into regular episodes with a long gap ahead of a June finale — premiering while Season 35 is still airing."
 pull: "Season 36 folds a five-episode tournament right into its opening stretch, then stretches the rest of its run out with a wide gap before the finale. It also shares nearly three months of calendar with Season 35 on the way in."
 premiere_caption: "Food Network · December 2017 into June 2018"
-episodes_caption: "13 episodes, a 5-episode tournament in January"
+episodes_caption: "Spans six months total, December into the following June"
 format_summary: "4 chefs · 3 rounds · Gold Medal Games interspersed"
 format_caption: "appetizer, entrée, dessert — plus a five-part games tournament"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

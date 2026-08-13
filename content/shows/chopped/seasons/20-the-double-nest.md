@@ -12,7 +12,7 @@ eyebrow: "Aired spring–fall 2014 · Food Network · two seasons overlapped at 
 lede: "Thirteen episodes run from March into late November 2014, the longest span yet — overlapping Season 18 through mid-May and all of Season 19 through early June, then running solo the rest of the year."
 pull: "Season 20 is the first season in this stretch to overlap two others at once, not just one. Two months where three seasons are technically airing together, then a long solo stretch into the fall — the format's release calendar getting genuinely busy."
 premiere_caption: "Food Network · March into November 2014"
-episodes_caption: "13 episodes, overlapping two prior seasons at once"
+episodes_caption: "Thirteen episodes, the series' milestone twentieth season overall."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, a double overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

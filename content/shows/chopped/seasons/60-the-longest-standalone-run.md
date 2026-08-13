@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2024–summer 2025 · Food Network · the longest window in
 lede: "Thirteen standalone episodes run October 2024 into July 2025, more than nine months with no tournament block anywhere in the season — Greek, soul food, vegetarian, sushi, and night-market hours carry the format instead, the longest single window in this batch."
 pull: "Season 60 skips the bracket format entirely and lets themed cuisine hours carry all thirteen episodes across the longest calendar window in this batch — two other seasons touch it, but neither swallows it whole."
 premiere_caption: "Food Network · October 2024 into July 2025"
-episodes_caption: "13 episodes across more than nine months"
+episodes_caption: "Thirteen episodes, the standard count for this stretch"
 format_summary: "4 chefs · 3 rounds · full 13-episode standalone run"
 format_caption: "appetizer, entrée, dessert — themed cuisine hours, no tournament"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

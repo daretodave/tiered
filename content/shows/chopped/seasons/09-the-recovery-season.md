@@ -12,7 +12,7 @@ eyebrow: "Aired late summer–winter 2011 · Food Network · back to a full thir
 lede: "Thirteen episodes return Season 9 to the baseline the show set back in Season 5, after two straight seasons of shrinking counts. Nothing on screen explains the recovery — the format simply runs at full strength again, no different than it ever was."
 pull: "Season 9 answers two seasons of contraction the simplest way possible: it just runs thirteen episodes again, the baseline the format hadn't hit since Season 5. No gimmick, no explanation offered on screen — just proof the shorter cycles were never permanent."
 premiere_caption: "Food Network · late summer into winter 2011"
-episodes_caption: "13 episodes, back to the baseline after two shorter seasons"
+episodes_caption: "Thirteen episodes, the sixth season in this batch to hit that count."
 format_summary: "4 chefs · 3 rounds · full 13-episode return"
 format_caption: "appetizer, entrée, dessert — standard format, full length again"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

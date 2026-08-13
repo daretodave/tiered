@@ -12,7 +12,7 @@ eyebrow: "Aired winter–spring 2011 · Food Network · a shortened, 12-episode 
 lede: "Twelve episodes — one fewer than the thirteen-episode baseline the last four seasons ran — carry the standard closed-door format through winter and spring 2011, airing alongside the debut of Food Network's separately branded Chopped All-Stars special that March."
 pull: "Season 6 runs a season shorter than the baseline the show had just settled into, and its spring 2011 window overlaps with Food Network's launch of the separately branded Chopped All-Stars special — a franchise-expansion footnote that doesn't touch the mainline format itself."
 premiere_caption: "Food Network · winter into spring 2011"
-episodes_caption: "12 episodes, one shorter than the established baseline"
+episodes_caption: "Twelve episodes — the same count Season 13 lands on later."
 format_summary: "4 chefs · 3 rounds · 12-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, shorter season"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

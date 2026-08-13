@@ -12,7 +12,7 @@ eyebrow: "Aired winter–summer 2015 · Food Network · inheriting Season 22's t
 lede: "Thirteen episodes run from December 2014 into June 2015, overlapping Season 21's final month and nearly the entire run of Season 22 alongside it — a two-season tangle inherited from the batch's busiest stretch."
 pull: "Season 23 doesn't set the tangle in motion, but it sits inside almost the whole of it, running alongside Season 22 for nearly its entire course. Two other seasons, not four — a real overlap, but not the deepest one this stretch produces."
 premiere_caption: "Food Network · December 2014 into June 2015"
-episodes_caption: "13 episodes, overlapping two seasons across its run"
+episodes_caption: "Six months on air, the tightest window of this overlap stretch"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, an inherited overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

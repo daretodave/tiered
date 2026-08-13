@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2018–spring 2019 · Food Network · nested alongside Se
 lede: "Thirteen episodes run from June 2018 into May 2019, sitting inside Season 37's wider window alongside Season 38 and overlapping Season 40 and Season 41 as well — a season that never really runs alone."
 pull: "Season 39 has no tournament and no gimmick to set it apart — just a full baseline run sharing its calendar with three other seasons at once, closing out a few weeks ahead of Season 38."
 premiere_caption: "Food Network · June 2018 into May 2019"
-episodes_caption: "13 episodes, overlapping three other seasons"
+episodes_caption: "Spans about eleven months, June 2018 into May 2019"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, no tournament block"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

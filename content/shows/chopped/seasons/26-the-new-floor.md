@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2015 · Food Network · the shortest run in the show's hist
 lede: "Eight episodes run from October into December 2015, the shortest season the format has aired — below even Season 8's nine-episode low — airing entirely inside Season 24's window and overlapping most of Season 25 too."
 pull: "Season 26 gives a viewer less than any season ranked before it: eight self-contained hours, a full five short of the thirteen-episode baseline, nested inside two other seasons' air windows on top of it. The format holds up fine episode to episode — there's just less of it."
 premiere_caption: "Food Network · October into December 2015"
-episodes_caption: "8 episodes, the fewest the show has aired to date"
+episodes_caption: "Wraps in about ten weeks, a fast turnaround for the format"
 format_summary: "4 chefs · 3 rounds · an 8-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, the shortest run yet"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

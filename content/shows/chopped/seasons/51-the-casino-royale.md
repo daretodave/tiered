@@ -12,7 +12,7 @@ eyebrow: "Aired winter–spring 2022 · Food Network · a gambling bracket, a lo
 lede: "Thirteen episodes run from late December 2021 into April 2022, opening with a five-part Casino Royale tournament — a gambling-themed bracket with stakes climbing to $25,000 — before closing with seven standalone themed hours."
 pull: "Season 51's own calendar barely gets a chance to run solo — nearly its entire thirteen-week span shares the release window with Season 50's own long run, even though Season 50 itself only loses its final third to the overlap."
 premiere_caption: "Food Network · December 2021 into April 2022"
-episodes_caption: "13 episodes, a 5-episode gambling-themed bracket"
+episodes_caption: "Four qualifying battles build toward one bracket finale"
 format_summary: "4 chefs · 3 rounds · Casino Royale interspersed"
 format_caption: "appetizer, entrée, dessert — plus a five-part gambling-themed bracket"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

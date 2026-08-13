@@ -12,7 +12,7 @@ eyebrow: "Aired spring–winter 2015 · Food Network · the widest tangle in the
 lede: "Thirteen episodes run from April into December 2015, overlapping the tail of Season 22 and Season 23 at the start, then stretching long enough to cover the entirety of both Season 25 and Season 26 at the finish."
 pull: "Season 24 touches four other seasons across its run, tied with Season 22 for the deepest footprint here — and it's the one directly entangled with the shortest season the format has aired. A long run doing a lot of overlapping work."
 premiere_caption: "Food Network · April into December 2015"
-episodes_caption: "13 episodes, overlapping four other seasons across its run"
+episodes_caption: "Thirteen episodes, a standard count despite the crowded calendar"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, the widest tangle in the batch"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

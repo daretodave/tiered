@@ -12,7 +12,7 @@ eyebrow: "Aired spring 2018–summer 2019 · Food Network · the widest footprin
 lede: "Thirteen episodes stretch from March 2018 into June 2019, catching Season 36's tail, containing nearly the whole of Season 38 and Season 39, and brushing Season 40 and Season 41 at the far end — five other seasons touched."
 pull: "Season 37 doesn't run a tournament or lose an episode — its case against it is purely the calendar, touching more other seasons than any standard season this canon has ranked."
 premiere_caption: "Food Network · March 2018 into June 2019"
-episodes_caption: "13 episodes across a fifteen-month air window"
+episodes_caption: "Thirteen episodes, the show's standard length despite the sprawl"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, no tournament block"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

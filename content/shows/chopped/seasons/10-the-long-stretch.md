@@ -12,7 +12,7 @@ eyebrow: "Aired winter 2011–spring 2012 · Food Network · the format's longes
 lede: "Thirteen episodes stretch from late December 2011 into late May 2012, the longest air window of any season in this batch — five full months for the second consecutive full-baseline run to prove the recovery wasn't a one-off."
 pull: "Season 10 doesn't have to prove anything Season 9 didn't already prove — it just confirms it, running the same full thirteen episodes across the longest stretch of any season here, December into May."
 premiere_caption: "Food Network · December 2011 into May 2012"
-episodes_caption: "13 episodes, the longest air window in this batch"
+episodes_caption: "Thirteen episodes, the last clean calendar before overlaps begin."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, extended air window"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

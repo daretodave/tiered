@@ -12,7 +12,7 @@ eyebrow: "Aired spring 2024 · Food Network · entirely inside Season 57's windo
 lede: "Thirteen episodes run April into June 2024, opening with a five-episode Battle Italiano tournament — Emilia-Romagna, Veneto, Puglia, Tuscany, then a finale — before eight standalone hours close the season, one a Drag Brunch episode. The run airs inside Season 57's window."
 pull: "Season 58 never gets a week of its own calendar, but a regional tournament with an extended finale round and a Drag Brunch guest judge give it real format credit against that total containment."
 premiere_caption: "Food Network · April into June 2024"
-episodes_caption: "13 episodes across roughly three months"
+episodes_caption: "Just under three months, one continuous stretch"
 format_summary: "4 chefs · 3 rounds · Battle Italiano opener"
 format_caption: "five-episode regional tournament, extended finale round, standard hours"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

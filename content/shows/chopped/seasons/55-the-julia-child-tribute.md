@@ -12,7 +12,7 @@ eyebrow: "Aired spring–winter 2023 · Food Network · two tournaments, a near-
 lede: "Nineteen episodes — the format's third-highest count — run from April into December 2023, weaving a five-part Military Salute tournament built around the armed services and a five-part Julia Child's Kitchen tribute bracket into one long season."
 pull: "Season 55 packs more format into one season than either neighbor around it — two five-part tournaments on the format's third-longest episode count — balanced against two separate, substantial overlaps rather than one."
 premiere_caption: "Food Network · April into December 2023"
-episodes_caption: "19 episodes, the format's third-highest count"
+episodes_caption: "Only two seasons run longer, at eighteen and twenty episodes"
 format_summary: "4 chefs · 3 rounds · two tournament blocks"
 format_caption: "appetizer, entrée, dessert — two tournament blocks, a tribute among them"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

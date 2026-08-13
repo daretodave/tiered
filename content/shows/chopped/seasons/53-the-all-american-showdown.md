@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2022–summer 2023 · Food Network · a gap-riddled ten-mon
 lede: "Thirteen episodes stretch from October 2022 into August 2023 — an unusually wide ten-month span — opening with eight standalone hours, then closing with a five-part All-American Showdown tournament built around regional identity: West, North, South, East, and a Finale."
 pull: "Season 53 functions as a hub the way its more tangled neighbor does, just touching one fewer season — its real signature is the gap-riddled, ten-month calendar it stretches across for just thirteen episodes."
 premiere_caption: "Food Network · October 2022 into August 2023"
-episodes_caption: "13 episodes across an unusually wide ten-month span"
+episodes_caption: "Two broadcast gaps, one nearly five months long"
 format_summary: "4 chefs · 3 rounds · All-American Showdown closes it"
 format_caption: "appetizer, entrée, dessert — plus a five-part regional-identity bracket"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

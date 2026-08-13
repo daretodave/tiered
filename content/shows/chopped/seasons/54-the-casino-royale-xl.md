@@ -12,7 +12,7 @@ eyebrow: "Aired winter–spring 2023 · Food Network · a bigger sequel bracket,
 lede: "Thirteen episodes run from December 2022 into March 2023, opening with one standalone hour before a five-part Casino Royale XL tournament — an explicitly larger sequel to an earlier gambling-themed bracket — then closing with seven standalone hours."
 pull: "Season 54 sits entirely inside Season 53's window with nothing else touching it at all — an even more total containment than Season 19's own single-season nest — offset by a proven, escalated sequel tournament."
 premiere_caption: "Food Network · December 2022 into March 2023"
-episodes_caption: "13 episodes, entirely inside Season 53's window"
+episodes_caption: "Four qualifying battles scale up before the grand finale"
 format_summary: "4 chefs · 3 rounds · Casino Royale XL interspersed"
 format_caption: "appetizer, entrée, dessert — plus a bigger, five-part Casino Royale sequel"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

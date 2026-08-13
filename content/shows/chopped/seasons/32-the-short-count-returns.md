@@ -12,7 +12,7 @@ eyebrow: "Aired winter–spring 2017 · Food Network · twelve episodes, one bel
 lede: "Twelve episodes run from January into May 2017, weekly through the winter before a long gap ahead of the finale — one episode short of the standard baseline, and overlapping Season 33's premiere for its final six weeks."
 pull: "Season 32 runs a season shorter than the thirteen-episode standard, with a long stretch of quiet between its winter run and its May finale — and Season 33 already airing by the time that finale arrives."
 premiere_caption: "Food Network · January into May 2017"
-episodes_caption: "12 episodes, one below the thirteen-episode baseline"
+episodes_caption: "Spans just over four months, January through the May finale"
 format_summary: "4 chefs · 3 rounds · 12-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, shorter count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

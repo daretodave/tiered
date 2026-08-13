@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2017–winter 2018 · Food Network · entangled with both
 lede: "Twenty episodes stretch across nearly eight months, tying the format's longest run, and overlap almost the entirety of Season 34's own run before overlapping Season 36 too — the deepest, longest entanglement the format has produced."
 pull: "Season 35 barely runs alone. It shares nearly all of Season 34's calendar, then hands off directly into an overlap with Season 36 — two entangled neighbors across an eight-month span, the longest and busiest release window this canon has seen."
 premiere_caption: "Food Network · July 2017 into March 2018"
-episodes_caption: "20 episodes, tied for the longest run the show has aired"
+episodes_caption: "Ties Season 31's twenty-episode run for the format's longest"
 format_summary: "4 chefs · 3 rounds · full 20-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, scattered themed hours"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

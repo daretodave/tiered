@@ -12,7 +12,7 @@ eyebrow: "Aired spring–summer 2011 · Food Network · a ten-episode run, down 
 lede: "Ten episodes carry Season 7 through spring and summer 2011, down from Season 6's twelve — the second season in a row to trim its episode count, continuing a contraction the format wouldn't reverse until two seasons later."
 pull: "Season 7 doesn't change anything about the closed-door format itself — the same locked basket, the same three rounds, the same rotating judging panel. What it does change is the episode count, cutting to ten, continuing a slide from thirteen that started with Season 6 and wouldn't reverse until Season 9."
 premiere_caption: "Food Network · spring into summer 2011"
-episodes_caption: "10 episodes, down from Season 6's twelve"
+episodes_caption: "Ten episodes, the second-shortest count in this whole batch of seasons."
 format_summary: "4 chefs · 3 rounds · 10-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, shorter season"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

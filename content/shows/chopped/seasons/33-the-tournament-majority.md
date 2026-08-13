@@ -12,7 +12,7 @@ eyebrow: "Aired spring 2017 · Food Network · a tournament fills most of the se
 lede: "Eight episodes tie the format's shortest run, and five of them — the majority — are a Star Power celebrity charity tournament rather than the standard mystery-basket hour, leaving only three regular episodes in the entire season."
 pull: "Season 33 is mostly not the standard format at all — five of its eight episodes are a celebrity charity tournament, the biggest proportional departure this canon has seen, on top of the format's shortest episode count."
 premiere_caption: "Food Network · March into May 2017"
-episodes_caption: "8 episodes, five of them a celebrity tournament"
+episodes_caption: "Premieres several weeks before Season 32's own May finale"
 format_summary: "4 chefs · 3 rounds · Star Power tournament, majority"
 format_caption: "appetizer, entrée, dessert — mostly a celebrity charity tournament"
 cast_size_caption: "four competitors per episode, celebrities across the tournament block"

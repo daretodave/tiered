@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2012–winter 2013 · Food Network · twelve episodes, one 
 lede: "Twelve episodes run from September 2012 into February 2013, closing out the show's densest overlap stretch and landing one below the thirteen-episode baseline the format had otherwise held since Season 9."
 pull: "Season 13 closes out the overlap chain that opened with Season 11, but it does it at twelve episodes instead of the standard thirteen — a double mark against an otherwise competent season, though nothing on screen actually suffers for it."
 premiere_caption: "Food Network · September 2012 into February 2013"
-episodes_caption: "12 episodes, one below the thirteen-episode baseline"
+episodes_caption: "Twelve episodes matches Season 6's count, the only other match in the batch."
 format_summary: "4 chefs · 3 rounds · 12-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, shorter count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

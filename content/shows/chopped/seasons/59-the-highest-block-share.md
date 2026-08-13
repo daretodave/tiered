@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2024–spring 2025 · Food Network · the highest block s
 lede: "Thirteen episodes run August 2024 into May 2025: a five-episode Legends tournament brings former champions back as finale sous chefs, then a five-episode Hungry for Love pairs block, then three standalone hours. Ten of thirteen episodes sit inside a themed block."
 pull: "Season 59 gives ten of its thirteen hours over to bracket or theme, the highest share this canon has measured — real credit for two genuine format swings, but the thinnest standard-format stretch any full-length season here offers."
 premiere_caption: "Food Network · August 2024 into May 2025"
-episodes_caption: "13 episodes across roughly eight and a half months"
+episodes_caption: "About eight and a half months, first watch to last"
 format_summary: "4 chefs · 3 rounds · two five-episode blocks"
 format_caption: "Legends tournament, then Hungry for Love pairs, then 3 standard hours"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

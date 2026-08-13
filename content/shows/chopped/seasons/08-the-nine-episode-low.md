@@ -12,7 +12,7 @@ eyebrow: "Aired summer–winter 2011 · Food Network · the shortest run in the 
 lede: "Nine episodes carry Season 8 through summer and winter 2011 — the shortest run the show had aired at that point, the bottom of a two-season contraction that started with Season 6."
 pull: "Season 8 cuts to nine episodes, the fewest the show had aired to that point, closing out a two-season slide that started with Season 6's twelve and continued through Season 7's ten. The format itself — basket, rounds, panel — never wavers."
 premiere_caption: "Food Network · summer into winter 2011"
-episodes_caption: "9 episodes, the shortest run in the show's history to that point"
+episodes_caption: "Nine episodes remains the shortest count anywhere in this batch of seasons."
 format_summary: "4 chefs · 3 rounds · 9-episode run"
 format_caption: "appetizer, entrée, dessert — the format's shortest run yet"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

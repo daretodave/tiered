@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2019–winter 2020 · Food Network · a Sweets Showdown b
 lede: "Thirteen episodes fold in a five-part Sweets Showdown tournament built entirely around dessert — chocolate, doughnuts, cake, ice cream, and a grand finale — running through October before the season closes out in February 2020."
 pull: "Season 43 hands its tournament over completely to dessert, a tighter theme than any of the format's earlier bracket seasons, and pairs it with a real overlap on both sides of the calendar."
 premiere_caption: "Food Network · July 2019 into February 2020"
-episodes_caption: "13 episodes, a 5-episode dessert tournament in October"
+episodes_caption: "Eight standard hours frame the five-part dessert bracket"
 format_summary: "4 chefs · 3 rounds · Sweets Showdown interspersed"
 format_caption: "appetizer, entrée, dessert — plus a five-part all-dessert bracket"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

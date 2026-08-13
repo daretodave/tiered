@@ -12,7 +12,7 @@ eyebrow: "Aired fall–winter 2016 · Food Network · the longest season yet, 20
 lede: "Twenty episodes make Season 31 the longest run the format has aired, weaving a four-part Chopped: Beat Bobby Flay tournament through the standard hours while running concurrently with almost the entirety of Season 30's own back half."
 pull: "Season 31 doubles down on runtime — twenty episodes, the most the format has ever put out at once, plus a four-part Beat Bobby Flay tournament folded in. It also shares nearly its whole calendar with Season 30, airing at the same time almost start to finish."
 premiere_caption: "Food Network · October into December 2016"
-episodes_caption: "20 episodes, the longest run the format has aired"
+episodes_caption: "Seven episodes longer than the format's usual thirteen-hour season"
 format_summary: "4 chefs · 3 rounds · Beat Bobby Flay interspersed"
 format_caption: "appetizer, entrée, dessert — plus a four-part Bobby Flay tournament"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

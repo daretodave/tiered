@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2018–summer 2020 · Food Network · the widest calendar y
 lede: "Eight episodes — five short of the standard baseline — stretch from November 2018 into June 2020, a nineteen-month window that overlaps every other season in this entire batch at some point."
 pull: "Season 42 pairs the format's shortest count with its widest calendar ever — less material than any ranked season offers, spread across the longest single air window the show has produced."
 premiere_caption: "Food Network · November 2018 into June 2020"
-episodes_caption: "8 episodes across a nineteen-month air window"
+episodes_caption: "Ties Seasons 26, 30, and 33 for the shortest episode count"
 format_summary: "4 chefs · 3 rounds · an 8-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, a themed one-off included"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

@@ -12,7 +12,7 @@ eyebrow: "Aired spring–summer 2010 · Food Network · the four-ingredient bask
 lede: "Thirteen episodes standardize the mystery basket to exactly four ingredients per round, appetizer through dessert — a fixed count the show never varies from again. Earlier seasons ran baskets of three or five ingredients; Season 4 settles the rule for good."
 pull: "Season 4 fixes the single most durable rule in Chopped's history: four ingredients, every basket, every round, no exceptions. Earlier seasons let that number drift — three here, five there — but from this season forward, the count never moves again."
 premiere_caption: "Food Network · spring into summer 2010"
-episodes_caption: "13 episodes, the four-ingredient basket rule locks in for good"
+episodes_caption: "Fourth season running at thirteen episodes while the basket rule changes."
 format_summary: "4 chefs · 3 rounds · basket fixed at 4 ingredients"
 format_caption: "appetizer, entrée, dessert — four ingredients per basket, permanently"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

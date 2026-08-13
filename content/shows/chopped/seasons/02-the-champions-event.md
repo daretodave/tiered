@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2009 · Food Network · past champions return for episode
 lede: "Thirteen episodes carry the format through its first full year, until the final four hours break from the closed-door premise: past winners return across a multi-episode block to compete for cumulative prize money, the show's first departure from all-new chefs every hour."
 pull: "Season 2 runs the closed-door format for nine ordinary hours, then spends its final four episodes on something new: past winners cooking against each other in a multi-episode block for cumulative money — a structural departure the show would spin off into its own standalone tournament series later that same year."
 premiere_caption: "Food Network · summer 2009"
-episodes_caption: "13 episodes, 4-episode Champions block closes the season"
+episodes_caption: "Same episode count as Season 1 — the change happens inside it."
 format_summary: "4 chefs · 3 rounds · past champions return late"
 format_caption: "appetizer, entrée, dessert — except episodes 10-13, a champions block"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

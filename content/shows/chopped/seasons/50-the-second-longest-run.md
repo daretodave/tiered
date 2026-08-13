@@ -12,7 +12,7 @@ eyebrow: "Aired summer 2021–spring 2022 · Food Network · three blocks, a nea
 lede: "Eighteen episodes — the format's second-highest count — run from June 2021 into March 2022, weaving three themed Time Capsule hours, a five-part Alton's Maniacal Baskets tournament, and a five-part Playing with Fire live-grilling bracket through a single long season."
 pull: "Season 50 trades a clean calendar for sheer format volume — three distinct blocks, an eighteen-episode run, and an unusual five-month mid-season gap — with only a light tail overlap against one neighbor to show for it."
 premiere_caption: "Food Network · June 2021 into March 2022"
-episodes_caption: "18 episodes, the format's second-longest run"
+episodes_caption: "Five hours longer than this format's usual thirteen"
 format_summary: "4 chefs · 3 rounds · three tournament/thematic blocks"
 format_caption: "appetizer, entrée, dessert — three distinct tournament/thematic blocks"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

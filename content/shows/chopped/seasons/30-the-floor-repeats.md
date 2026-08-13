@@ -12,7 +12,7 @@ eyebrow: "Aired fall 2016 · Food Network · eight episodes, tied for the shorte
 lede: "Eight episodes carry Season 30 through fall and winter 2016, tying Season 26 for the shortest run the format has aired — premiering just before Season 29 wraps and running alongside most of Season 31's much longer stretch."
 pull: "Season 30 gives a viewer eight hours and not much else — the shortest count the format has produced since Season 26, with wide gaps in its back half and most of its run shared with Season 31's calendar."
 premiere_caption: "Food Network · September into December 2016"
-episodes_caption: "8 episodes, tied for the fewest the show has aired"
+episodes_caption: "Five episodes shorter than the format's usual full-season count"
 format_summary: "4 chefs · 3 rounds · an 8-episode run"
 format_caption: "appetizer, entrée, dessert — standard format, a short count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

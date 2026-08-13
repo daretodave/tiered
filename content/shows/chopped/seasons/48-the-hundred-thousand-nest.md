@@ -12,7 +12,7 @@ eyebrow: "Aired winter 2020–spring 2021 · Food Network · nested inside two s
 lede: "Thirteen episodes run from December 2020 into March 2021, opening with one standalone hour before a five-part Grudge Match tournament, a four-part Meat Fight bracket, and three Hangry Baskets episodes — the densest run of back-to-back tournament blocks yet."
 pull: "Season 48 crams three tournament blocks and a record $100,000 stake into thirteen episodes, then sits entirely inside two overlapping seasons at once — the densest format and the deepest double containment this canon has measured."
 premiere_caption: "Food Network · December 2020 into March 2021"
-episodes_caption: "13 episodes, three tournament blocks back to back"
+episodes_caption: "Every hour but one sits inside a tournament block"
 format_summary: "4 chefs · 3 rounds · triple tournament stretch"
 format_caption: "appetizer, entrée, dessert — three tournament blocks in a row"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"

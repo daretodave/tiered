@@ -12,7 +12,7 @@ eyebrow: "Aired summer–fall 2010 · Food Network · the standard format's firs
 lede: "Thirteen episodes run the newly fixed four-ingredient basket format start to finish with no experiments, no returning chefs, and no departures from the closed-door premise — the first season to simply execute the rule Season 4 just locked in."
 pull: "No returning chefs, no callback episodes, no basket-count variance — Season 5 is the first to run the fully settled four-ingredient format cleanly from the first episode to the last, proof the rule Season 4 fixed actually holds up over a full run."
 premiere_caption: "Food Network · summer into fall 2010"
-episodes_caption: "13 episodes, zero format experiments"
+episodes_caption: "Fifth straight season at thirteen episodes, the streak ends next season."
 format_summary: "4 chefs · 3 rounds · settled, no variance"
 format_caption: "appetizer, entrée, dessert — the standard format, no deviations"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
