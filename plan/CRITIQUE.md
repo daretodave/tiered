@@ -1,33 +1,37 @@
 # CRITIQUE
 
-> Last pass: 2026-08-12 at commit d40bd892
-> Pass count: 117
+> Last pass: 2026-08-13 at commit ab85915f
+> Pass count: 118
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 117 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 118 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed), both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
-> `/shows/big-brother/season/a-summer-of-mystery`, `/shows`,
-> `/themes`, `/shows/chopped`) and authed (`/sign-in`,
-> `/shows/big-brother/season/a-summer-of-mystery`,
-> `/shows/big-brother?view=community`, `/`) walks ran, desktop +
+> `/shows/jersey-shore/season/season-1`,
+> `/themes/one-rule-fills-every-seat`, `/shows`,
+> `/shows/too-hot-to-handle/season/original`) and authed
+> (`/sign-in`, `/shows/jersey-shore/season/season-1`,
+> `/shows/jersey-shore?view=community`, `/`) walks ran, desktop +
 > mobile, zero console errors/failed first-party requests/mobile
-> overflow across both, no spoiler leaks. 2 new findings filed
-> (below): a MED on Big Brother S27 (FORMAT tile states "16
-> houseguests" while CAST SIZE states 17, reading as a
-> contradiction — the show already solved this on S25 with a
-> "16+" convention S27 doesn't follow); and a LOW on Big Brother's
-> zero-vote community table (27 rows of literal em-dashes, honest
-> but inert-reading). 2 existing Pending rows bumped LOW→MED after
-> independent re-confirmation with broader evidence: the `/shows`
-> B-tier double-status redundancy (pass-91, now 26 passes stale)
-> and the `episodes_caption` bare-restatement defect (pass-95,
-> now confirmed systemic across 247 files/22 shows, not a
-> one-off). 1 stale Pending row closed as already-resolved: the
-> pass-54 Big Brother `seasons: 26` staleness claim — S27 is in
-> fact filed and frontmatter is current, the row was simply never
-> migrated to Done when the fix landed.
+> overflow across both, no spoiler leaks. Auth handshake confirmed
+> live (`/api/auth/me` → signedIn:true); /sign-in correctly
+> redirects an already-authed visitor; comment composer, vote
+> block, and the pass-108 community-question link all render in
+> their correct live states. 4 new findings filed (below): a MED
+> on too-hot-to-handle S1's episodes_caption verbatim-duplicating
+> the body sentence (same defect class as the ongoing pass-95/117
+> episodes_caption drain, this file just hadn't been swept); a MED
+> on `/shows` missing a bespoke OG image (third instance of the
+> pass-69 #448 gap, after the still-open `/u/[handle]` row from
+> pass-89); a LOW on jersey-shore S1's format_caption opening
+> lowercase against the corpus-wide capitalized convention; and a
+> MED on cross-surface zero-vote representation drift between the
+> community rank table ("— — —") and the season-page vote block
+> ("0 votes so far") describing the identical fact two different
+> ways. 1 existing Pending row bumped LOW→MED after reproducing
+> the same zero-vote em-dash defect on a second show (jersey-shore,
+> alongside the pass-117 big-brother original).
 >
 > ───── Pass 113 metadata kept below for history ─────
 >
@@ -2676,7 +2680,15 @@
 
 - [x] [MED] [anon] /shows/big-brother/season/a-summer-of-mystery — the FORMAT stat tile's headline states a different houseguest count than the CAST SIZE tile two tiles later, reading as a contradiction to a reader scanning the spec row in order: `format_summary: "16 houseguests · three stacked twists"` vs `cast_size: 17` / `cast_size_caption: "16 newcomers plus a premiere-night mystery arrival"`. Both numbers are individually correct (16 originally-cast houseguests plus a premiere-night 17th mystery arrival), but FORMAT states the smaller number as if it were the full cast, so the reader hits "16" first and only learns about the 17th two tiles later. The same show already solved this exact ambiguity on a different season: `content/shows/big-brother/seasons/25-the-multiverse.md` reads `format_summary: "16+ houseguests · weekly Multiverse power or curse"` (the "+" signals an uncounted addition) paired with `cast_size: 17` — S27 doesn't follow that established sibling convention. Confirmed via direct read of `content/shows/big-brother/seasons/27-a-summer-of-mystery.md` and `25-the-multiverse.md`. Fix: change S27's `format_summary` to `"16+ houseguests · three stacked twists"`, matching S25's precedent, or fold "plus a mystery arrival" into the FORMAT headline directly. Content-only, one field. Spoiler discipline P0 intact (cast-count/format facts only, no outcome exposure — the mystery arrival's identity is not named). (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-117) — RESOLVED (2026-08-12, cloud march tick): changed S27's `format_summary` from `"16 houseguests · three stacked twists"` to `"16+ houseguests · three stacked twists"`, matching the S25 sibling convention exactly (the "+" signals the uncounted premiere-night arrival already spelled out two tiles later in `cast_size_caption`). No other field touched; spoiler discipline P0 unaffected.
 
-- [ ] [LOW] [authed] /shows/big-brother?view=community (and any show with zero community votes) — the community rank table renders all 27 rows with three consecutive em-dashes each (approval%, 7-day trend, vote count) since Big Brother has zero community votes yet. The state is honest — it matches the page's own "MIRRORING THE CANON" banner and "VOTERS THIS WEEK · 0" — but a first-time authenticated reader scrolling past 27 identical `— — —` rows with no explanation reads the table as inert or broken rather than "early and honest." The page doesn't explain to a logged-in reader why their own vote hasn't seeded any data either. Confirmed via Playwright walk of `/shows/big-brother?view=community` in authenticated mode — all 27 rows render the identical em-dash pattern. Fix: consider a lighter-weight empty-state treatment for shows with zero community votes (e.g. visually collapse or de-emphasize the dash columns, or foreground the vote CTA above the table) rather than rendering a full 27-row wall of placeholders. Chrome-only, no content change. Spoiler discipline P0 intact. (URL: /shows/big-brother?view=community, source: critique-pass-117)
+- [ ] [MED] [authed] /shows/big-brother?view=community, /shows/jersey-shore?view=community (and any show with zero community votes — systemic) — the community rank table renders every row with three consecutive em-dashes (approval%, 7-day trend, vote count) since the show has zero community votes yet. The state is honest — it matches the page's own "MIRRORING THE CANON" banner and "VOTERS THIS WEEK · 0" — but a first-time authenticated reader scrolling past a wall of identical `— — —` rows with no explanation reads the table as inert or broken rather than "early and honest." The page doesn't explain to a logged-in reader why their own vote hasn't seeded any data either. Confirmed via Playwright walk of `/shows/big-brother?view=community` (27/27 rows) in authenticated mode; **reproduced pass-118 on a second show, `/shows/jersey-shore?view=community`** — all 6 rows render the identical em-dash pattern — confirming this is systemic to the shared `CommunityRankList` component's zero-vote path, not a Big Brother-specific edge case. Bumped LOW→MED on reproduction. Fix: consider a lighter-weight empty-state treatment for shows with zero community votes (e.g. visually collapse or de-emphasize the dash columns, or foreground the vote CTA above the table) rather than rendering a full wall of placeholders. Chrome-only, no content change. Spoiler discipline P0 intact. (URL: /shows/big-brother?view=community, source: critique-pass-117; reproduced: /shows/jersey-shore?view=community, source: critique-pass-118)
+
+- [ ] [MED] [anon] /shows/too-hot-to-handle/season/original — the EPISODES stat tile's caption reuses a body sentence verbatim instead of adding a distinct fact, the same defect class this file's `filming_caption`/`episodes_caption` siblings across the corpus have been drained for over recent passes (pass-95/117 episodes_caption bare-restatement drain). `content/shows/too-hot-to-handle/seasons/01-original.md`: `episodes_caption: "Eight episodes track a debut cast that plays it loose and combustible."` — the markdown body two sentences later reads "...The debut cast plays it loose and combustible, testing that rule from the first episode..." — the clause "the debut cast plays it loose and combustible" appears verbatim in both places on the same rendered page. Fix: rewrite `episodes_caption` to add a fact not already stated in the lede/body — e.g. pacing across the 8-episode run, or how the debut season compares structurally to later ones — rather than lifting the body's own sentence. Content-only, one field. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/too-hot-to-handle/season/original, source: critique-pass-118)
+
+- [ ] [MED] [anon] /shows — the catalog index, a primary top-nav destination, falls back to the generic sitewide OG image instead of a bespoke one, unlike every show page, season page, and themed-list page on the site. Confirmed via captured metadata: `/shows` og:image resolves to `https://tiered.tv/opengraph-image` (identical to the homepage's), while `/shows/jersey-shore/season/season-1` resolves to `.../shows/jersey-shore/season/season-1/opengraph-image` and `/themes/one-rule-fills-every-seat` resolves to `.../themes/one-rule-fills-every-seat/opengraph-image`. Repo confirms no `opengraph-image.tsx` exists under `src/app/(default)/shows/` — only the per-show, per-season, and per-theme dynamic routes exist (`src/app/shows/[show]/opengraph-image.tsx` etc.), the same pattern already proven out by the pass-69 fix (#448) and the still-open pass-89 `/u/[handle]` row. This is a third, previously-unfiled instance of the same gap: the catalog index itself never got a bespoke OG image when the per-show/season/theme routes were wired. Fix: add a dynamic `opengraph-image.tsx` under `src/app/(default)/shows/` (a tier-band stat treatment fits the page's own S/A/B content) following the shipped pattern. Chrome/SEO-only, no spoiler impact. (URL: /shows, source: critique-pass-118)
+
+- [ ] [LOW] [anon] /shows/jersey-shore/season/season-1 — the FORMAT stat tile's caption opens lowercase ("the founding ensemble cast") while every other stat-tile caption on the same page — and the equivalent field on every other season file in the corpus — opens with a capital letter. Confirmed via `content/shows/jersey-shore/seasons/01-season-1.md`: `format_caption: "the founding ensemble cast"` vs. sibling fields on the same file (`cast_size_caption: "Eight roommates sharing one shore house"`, `episodes_caption: "Nine episodes, with the gym-tanning-laundry routine locked in by episode one."`, both capitalized) and a corpus-wide check of `format_caption` across `content/shows/*/seasons/*.md` — every other instance opens capitalized. Fix: capitalize to "The founding ensemble cast" to match the sentence-case convention every other stat-tile caption follows. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/jersey-shore/season/season-1, source: critique-pass-118)
+
+- [ ] [MED] [authed] /shows/jersey-shore?view=community (and any season with zero community votes, cross-referenced against its own season page — systemic) — the community rank table represents a season's zero-vote state as an em-dash row (`— — —` across approval/7-day/votes), while that same season's own vote block on its season page (`/shows/jersey-shore/season/season-1`) represents the identical zero-vote state as the numeric "0 votes so far." A signed-in reader bouncing between the two surfaces for the same season sees two different symbols for the same underlying fact — the community table's dash reads as missing/broken data, while the season page's "0" reads as a real, honest zero. Confirmed via authenticated Playwright walk: community table row reads "02 Season 1 2009 — — —"; the same season's vote block reads "YOUR VOTE / CAST VOTE / YOU HAVEN'T VOTED YET / 0 VOTES SO FAR." Distinct from the adjacent em-dash-empty-state row above (that row is about the table's own readability in isolation; this is about representational consistency between two surfaces describing the same fact). Fix: pick one representation for the zero-vote state and use it on both surfaces — either render "0"/"0%" in the community table's vote cells, or change the season-page vote block to the same "—" placeholder language when the count is zero. Chrome-only, no content change. Spoiler discipline P0 intact. (URL: /shows/jersey-shore?view=community, /shows/jersey-shore/season/season-1, source: critique-pass-118)
 
 - [x] [MED] [authed] /shows/bake-off/season/the-hammond-continues (systemic to the show — all 16 Bake Off season files) — the FORMAT stat tile's headline restates facts three separate adjacent tiles already own: `format_summary: "12 bakers · 10 episodes · Channel 4"` repeats the exact number CAST SIZE already leads with (`cast_size: 12`), the exact number EPISODES already leads with (`ep_count: 10`), and the exact network PREMIERED already states — with zero distinguishing format fact of its own. This is not a one-off content slip; it is the show-wide template. Confirmed via grep across `content/shows/bake-off/seasons/*.md` — all 16 files repeat `cast_size`/`ep_count`/network verbatim inside `format_summary` (e.g. `02-valentines-mansion.md`: "12 bakers · 8 episodes · BBC Two"; `03-harptree-court.md`: "12 bakers · 10 episodes · BBC Two"; `13-the-welford-return.md`: "12 bakers · 10 episodes · Channel 4"), unlike sibling shows (Big Brother's "N houseguests · <twist name>", Survivor's "All-Returnee · Fan-Voted Format") which correctly reserve the FORMAT tile for something the count/network tiles don't already say. Rendered on `/shows/bake-off/season/the-hammond-continues`: "FORMAT / 12 bakers · 10 episodes · Channel 4 / Hammond's third run, no format changes reported / CAST SIZE / 12 players / 12 amateur bakers in Hammond's third run." Fix: rewrite `format_summary` across all 16 Bake Off season files to name each season's actual format distinction (theme rotation, tent move, judging-panel change, technical-challenge twist) instead of repeating cast size/episode count/network, following the corrected pattern already applied to Big Brother S27 and Top Chef Carolinas. Content-only, 16 files (one field each). Spoiler discipline P0 intact (production/format facts only, no outcome exposure). (URL: /shows/bake-off/season/the-hammond-continues, source: critique-pass-116) — RESOLVED (2026-08-12, cloud march tick): rewrote `format_summary` on all 16 files to a short, season-specific format distinction (e.g. `01-the-pilot.md` "Touring format · no fixed tent", `08-channel-4-reset.md` "New hosts, new judge, new network", `16-the-hammond-continues.md` "Hammond's third run, lineup unchanged") — none repeat cast_size/ep_count/network, `format_caption` untouched (already distinct). Picked up in place of a same-day-exhausted Rule-3 search per the dispatch-starvation pattern tracked in issue #758.
 
