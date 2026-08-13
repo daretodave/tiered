@@ -520,7 +520,7 @@ describe('whereItSitsCopy — Section 03 "WHERE IT SITS IN THE CANON" body', () 
   })
 })
 
-describe('voteQuestionFor — scales the default vote question to catalog size (critique-pass-88)', () => {
+describe('voteQuestionFor — scales the default vote question to catalog size (critique-pass-88, critique-pass-120)', () => {
   it('keeps the original "top 10" phrasing for shows with 10+ seasons (no regression)', () => {
     const show = makeShow({ seasons: 47 })
     expect(voteQuestionFor(show)).toBe('Does this belong in the community top 10?')
@@ -531,14 +531,14 @@ describe('voteQuestionFor — scales the default vote question to catalog size (
     expect(voteQuestionFor(show)).toBe('Does this belong in the community top 10?')
   })
 
-  it('scales the threshold down for a mid-size catalog (7 seasons)', () => {
+  it('drops the numeric threshold for a mid-size catalog (7 seasons) — pass-120: "top 7 of 7" is trivial', () => {
     const show = makeShow({ name: 'The Circle', slug: 'the-circle', seasons: 7 })
-    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 7?')
+    expect(voteQuestionFor(show)).toBe('Does this belong near the top?')
   })
 
-  it('scales the threshold down for a small catalog (2 seasons)', () => {
+  it('drops the numeric threshold for a small catalog (2 seasons) — pass-120: "top 2 of 2" is trivial', () => {
     const show = makeShow({ seasons: 2 })
-    expect(voteQuestionFor(show)).toBe('Does this belong in the community top 2?')
+    expect(voteQuestionFor(show)).toBe('Does this belong near the top?')
   })
 
   it('drops the numeric threshold entirely for a 1-season show', () => {

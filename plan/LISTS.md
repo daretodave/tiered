@@ -8547,6 +8547,23 @@ last time a curator actually looked.
   URLs (e.g. `/account`) get the branded chrome-ful 404 instead of
   Next's bare fallback (see that finding's RESOLVED note for detail).
   No ledger row changed. Tracked in open issue #758.
+- **2026-08-13, seventh same-day pass (cloud march tick): redirected
+  without re-searching.** Re-checked only what could plausibly have
+  changed since the sixth pass one commit earlier: `plan/CADENCE.md`
+  gap table unchanged (42 shows/43 gap-slots, nearest dated finale
+  `american-ninja-warrior` S18 still 4 days out at 2026-08-17), no
+  new season content landed between the sixth
+  pass and this one. Given the sixth pass's full occurrence sweep
+  (2,342 show-occurrences across 181 themes, every catalogued show
+  mined 5+ times) already confirmed exhaustion minutes earlier, an
+  eighth identical concept walk would not have found anything the
+  seventh pass's own predecessor hadn't already ruled out — redirected
+  straight to `plan/CRITIQUE.md` pass-120's remaining MED finding
+  instead: the per-season community vote question asked "top N of N"
+  on every 2-9-season show (systemic, 17 shows), which is exactly as
+  trivial as the finding already documented. `voteQuestionFor()` now
+  drops the numeric threshold for that range too (see that finding's
+  RESOLVED note). No ledger row changed. Logged on issue #758.
 
 ## Notes
 

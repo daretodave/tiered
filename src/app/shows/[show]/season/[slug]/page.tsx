@@ -343,10 +343,17 @@ export function whereItSitsCopy(
 // at 1-6), making the question logically empty — every season
 // trivially clears a bar the catalog can't exceed. Scale the
 // fallback to the show's real size: shows with ≥10 seasons keep the
-// original phrasing (no regression), shows with 2-9 seasons get a
-// threshold matching their own ceiling, and 1-season shows drop the
+// original phrasing (no regression), and 1-season shows drop the
 // numeric framing entirely since "top 1" is meaningless. Only fires
 // when a season has no explicit `vote_question` override.
+//
+// critique-pass-120 MED: the pass-88 fix's own 2-9 branch
+// (`...community top ${show.seasons}?`) collided with `show.seasons`
+// meaning the show's *entire* run — "top 4 of 4" has no discriminating
+// power, every season on a 2-9-season show trivially clears the bar.
+// Drop the numeric threshold for that range too and use a non-numeric
+// framing instead, matching the 1-season branch's approach rather than
+// reintroducing a number the show can never exceed.
 export function voteQuestionFor(show: Show): string {
   if (show.seasons >= 10) {
     return 'Does this belong in the community top 10?'
@@ -354,7 +361,7 @@ export function voteQuestionFor(show: Show): string {
   if (show.seasons === 1) {
     return 'Does this season hold up?'
   }
-  return `Does this belong in the community top ${show.seasons}?`
+  return 'Does this belong near the top?'
 }
 
 // Section 05 ("Adjacent in the canon") subhead. critique-pass-29 LOW:
