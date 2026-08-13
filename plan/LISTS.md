@@ -8373,6 +8373,66 @@ last time a curator actually looked.
   cap. Full rationale filed against the `the-couch-kept-adding-chairs`
   ledger row above.
 
+- **2026-08-13, third same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled (gap
+  table fully starred; nearest dated finale, american-ninja-warrior
+  S18, still 4 days out) and that both earlier passes today already
+  shipped extends (`one-rule-fills-every-seat`, craft; `the-couch-
+  kept-adding-chairs`, craft) before falling to Rule 3 a third time.
+  Per the brief, deliberately avoided a third craft pick and worked
+  cross-canon-floor-fix and new-list candidates in tone/structure/era
+  first. Confirmed no genuine cross-canon-floor violation exists to
+  fix: the four lists still under the 10-entry schema-guideline floor
+  (`the-vote-left-the-phone-line` era 8/8 shows, `one-season-two-flags`
+  structure 9/9, `the-pitch-names-where-the-idea-came-from` craft 3/3,
+  `the-calendar-moved-the-format-didnt` craft 4/3) all already clear
+  the ≥3-distinct-show floor comfortably — this is an entry-count
+  gap, not a cross-canon violation, so channel (b) has no live target
+  right now. Worked six fresh axes for a genuinely new tone/structure/
+  era list, each independently grepped catalog-wide and checked
+  against the full `content/themes/*.md` set before rejecting:
+  (1) **guest-host-or-judge substitution** — a real, 3-show-grounded
+  hit (too-hot-to-handle S04, bachelor-in-paradise S07, plus a
+  big-brother S26 false positive, a negated "not a guest host" line)
+  — but both genuine hits are already staked verbatim at
+  `the-host-never-walks-into-the-room` (thh S04, rank 5) and
+  `someone-else-held-the-chair-for-a-while` (bip S07, rank 1). (2)
+  **age-record casting** (youngest/oldest superlatives) — survivor
+  S05 and dancing-with-the-stars S07 both already staked at
+  `when-age-became-the-casting-brief` (ranks 11 and 7); the
+  amazing-race S29 grep hit was a false positive, no age language in
+  the file at all. (3) **production relocates its home base out of
+  its usual city for the first time** — so-you-think-you-can-dance
+  S18's Atlanta relocation is already staked at `the-city-already-
+  had-a-show`. (4) **a reunion special format debuts and becomes a
+  permanent fixture** — 90-day-fiance S03's Tell All ("a reunion
+  special that becomes a permanent fixture from here on") is already
+  staked verbatim at `best-reunion-specials` rank 9; checked six
+  other reunion-mentioning season files (rhonj S07, rhoc S16,
+  southern-charm S11, rhodubai S02, americas-next-top-model S17,
+  love-is-blind S06-S10) for a comparable first-time-format-change
+  fact — none stated one explicitly enough to ground without
+  inventing detail the season's own text doesn't carry. (5)
+  **double-elimination as a stated mechanic** — one catalog-wide hit
+  (the-apprentice canon), short of the 3-show floor. (6) **a former
+  contestant returns as a judge/coach/host** — one catalog-wide hit
+  (masterchef-australia S11), short of the floor. Also re-ran the
+  explicit no-villain/warm-cast phrase sweep
+  (`no villain|without a villain|no manufactured (drama|conflict)|
+  genuine camaraderie|collegial|no bad blood`) looking for a fresh
+  entry into `never-needed-a-villain` (tone, 17/24, real headroom
+  under the cap) — zero catalog-wide hits beyond what the list
+  already stakes. Zero hits also on backdoor-pilot / spin-off-
+  announced-mid-run and clip-show / flashback-episode language,
+  confirming the twenty-fourth pass's (2026-08-11) findings still
+  hold. No fresh ground found. Shipped nothing this pass; no ledger
+  row changed. Consistent with the standing verdict logged by the
+  twenty-first through twenty-sixth same-day passes and both
+  2026-08-12 passes: the catalog's remaining headroom is concentrated
+  in not-yet-filed Rule 2 seasons, and every currently-filed season
+  this pass touched has already been mined by an earlier pass.
+  Tracked in open issue #758.
+
 ## Notes
 
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
