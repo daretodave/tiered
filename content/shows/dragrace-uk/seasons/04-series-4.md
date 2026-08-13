@@ -14,7 +14,7 @@ pull: "A season that made history in the workroom and, for one episode, ran with
 format_summary: "Standard format · 10 episodes"
 format_caption: "12 queens, panel settled at four chairs"
 premiere_caption: "BBC Three · iPlayer, September 2022"
-episodes_caption: "10 episodes, one without RuPaul in the chair"
+episodes_caption: "Ten episodes, one without RuPaul in the chair"
 filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:

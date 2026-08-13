@@ -15,7 +15,7 @@ pull: "This time, every player in the building is single, and playing to prove i
 format_summary: "Rate-and-block · Singles cast"
 format_caption: "Casting restricted to single, unattached contestants for the first time"
 premiere_caption: "Netflix · December 2022"
-episodes_caption: "13 episodes across weekly Wednesday batches"
+episodes_caption: "Thirteen episodes carry the format's first on-air subtitle, The Circle Singles"
 cast_size_caption: "13 single players, including the show's first deaf contestant"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "Last season filmed in the original Manchester apartment complex"

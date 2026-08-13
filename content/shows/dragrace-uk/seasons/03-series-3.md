@@ -14,7 +14,7 @@ pull: "The format proving it can travel inside its own country, not just borrow 
 format_summary: "Standard format · 10 episodes"
 format_caption: "first series to relocate production outside London"
 premiere_caption: "BBC Three · iPlayer, September 2021"
-episodes_caption: "10 episodes, matching the prior series' run"
+episodes_caption: "Ten episodes, matching the prior series' run"
 filming_caption: "Manchester · Northern England's broadcast hub"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:

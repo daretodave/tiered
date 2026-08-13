@@ -14,7 +14,7 @@ pull: "Twenty-five thousand pounds on the line and a finale that throws out the 
 format_summary: "Standard format · 10 episodes"
 format_caption: "12 queens, first cash-prize series in the franchise"
 premiere_caption: "BBC Three · iPlayer, September 2024"
-episodes_caption: "10 episodes, finale runs a four-way structure"
+episodes_caption: "Ten episodes, finale runs a four-way structure"
 filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:

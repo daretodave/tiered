@@ -15,7 +15,7 @@ pull: "The smallest cast yet, and the sharpest set of edges the rate-and-block g
 format_summary: "Rate-and-block · Disrupter Mode"
 format_caption: "A new twist splits the cast between blocking immunity and real disadvantage"
 premiere_caption: "Netflix · September 2024"
-episodes_caption: "13 episodes across weekly batches"
+episodes_caption: "Thirteen episodes run the smallest cast in the show's history, just 10 players"
 cast_size_caption: "10 players, the smallest cast of the show's US run"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "Filmed in Atlanta, Georgia, back-to-back with Season 6"

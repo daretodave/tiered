@@ -15,7 +15,7 @@ pull: "Three fresh mechanics, and a blocked player who never quite leaves the ga
 format_summary: "Rate-and-block · cloning twist"
 format_caption: "A blocked player can duplicate another profile to keep playing"
 premiere_caption: "Netflix · September 2021"
-episodes_caption: "13 episodes across weekly Wednesday batches"
+episodes_caption: "Thirteen episodes hinge on a new cloning mechanic"
 cast_size_caption: "13 players cycle through the Manchester building"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "Filmed in the same Salford, Greater Manchester apartment complex"

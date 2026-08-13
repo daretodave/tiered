@@ -14,7 +14,7 @@ pull: "The series that proves the UK edition can stand entirely on its own, no a
 format_summary: "Standard format · 10 episodes"
 format_caption: "first series filmed at Pinewood Studios"
 premiere_caption: "BBC Three · iPlayer, January 2021"
-episodes_caption: "10 episodes, the season's first double-digit run"
+episodes_caption: "Ten episodes, the season's first double-digit run"
 filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:

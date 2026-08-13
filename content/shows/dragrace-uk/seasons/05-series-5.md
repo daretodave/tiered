@@ -14,7 +14,7 @@ pull: "A calmer series, built to hold its cast rather than test them — the UK 
 format_summary: "Standard format · 10 episodes"
 format_caption: "10 queens, two built-in no-elimination weeks"
 premiere_caption: "BBC Three · iPlayer, September 2023"
-episodes_caption: "10 episodes, a smaller cast than Series 4"
+episodes_caption: "Ten episodes, a smaller cast than Series 4"
 filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:

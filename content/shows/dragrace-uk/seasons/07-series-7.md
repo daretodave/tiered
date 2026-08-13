@@ -14,7 +14,7 @@ pull: "The queens get a vote of their own for the first time — The Lucky Cow h
 format_summary: "Standard format · 10 episodes"
 format_caption: "12 queens, debut of The Lucky Cow twist"
 premiere_caption: "BBC Three · iPlayer 8pm, BBC Three 9pm same night"
-episodes_caption: "10 episodes, first series with The Lucky Cow"
+episodes_caption: "Ten episodes, first series with The Lucky Cow"
 filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:
