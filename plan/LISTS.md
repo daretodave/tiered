@@ -8583,6 +8583,51 @@ last time a curator actually looked.
   by/Last revised keep the original treatment — they're prose, not
   counts). No ledger row changed (chrome-only, not a themed list).
   Logged on issue #758.
+- **2026-08-13, ninth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled (gap
+  table fully starred, nearest dated finale still days out) and read
+  the full 182-row Ledger plus all eight same-day Ideas-log passes
+  above before starting, so this pass avoided every axis already
+  killed today (gender-split casting, RHO cast-composition swaps,
+  guest-host substitution, age-record casting, home-base relocation,
+  reunion-format-debuts-permanent, double-elimination, returning-
+  judge/coach, no-villain sweep, non-pandemic disruption, wardrobe/
+  catchphrase, prize-structure, episode-runtime, category:single
+  show-gap census, parent-child casting, medical-evacuation, live-
+  results-show, influencer-casting-era, paired-couples-as-separate-
+  competitors, episode-count volatility, Redemption-Island origin,
+  location-hazard headroom, fan-voted wildcard casting, and a dozen
+  single-show candidates). Worked one genuinely fresh axis not logged
+  by any prior pass: **the live studio audience as a stated structural
+  mechanic** (its debut, its removal, its return, distinct from a
+  blanket pandemic-disruption frame) — grepped `live audience|studio
+  audience|filmed live|broadcasts? live|aired live` across every
+  season file. Found 14 hits across so-you-think-you-can-dance
+  (S16, S17, S18), shark-tank (S14), dancing-with-the-stars (S01,
+  S27, S29, S30), americas-got-talent (S15, S16), and american-idol
+  (S19). Killed on contact once cross-checked: the pandemic-specific
+  half of the set (DWTS S29/S30, AGT S15/S16, American Idol S19,
+  SYTYCD S17) is already staked verbatim, fact-for-fact, across the
+  two existing era lists `pandemic-seasons` (the audience-vanishes
+  half) and `the-season-everyone-got-their-audience-back` (the
+  audience-returns half) — both already quote the exact "no studio
+  audience" / "studio audience returns" language from these same
+  season files. The residual non-pandemic hits (Shark Tank S14's
+  first-ever live episode, SYTYCD S16's first live audition audience,
+  DWTS S01's inaugural live-audience format, DWTS S27's judges-vs-
+  audience score-gap tension, SYTYCD S18's audience-free documentary-
+  style auditions) don't clear the ≥3-distinct-show floor on their
+  own once the pandemic-claimed seasons are excluded — only two
+  non-SYTYCD shows remain (Shark Tank, DWTS), and SYTYCD alone would
+  need three separate entries to backfill the third show, pushing
+  well past this list's natural shape. No fresh ground found; no
+  ledger row changed. This independently reconfirms the standing
+  verdict tracked on issue #758: the catalog is saturated at current
+  density, and the next actionable Rule 3 lead is a new season
+  landing (Rule 2 unstalling) rather than further re-slicing of
+  already-mined seasons. Zero-ship, per bearings.md Rule 3's own
+  explicit permission to ship nothing rather than force an overlapping
+  or thin list.
 
 ## Notes
 
