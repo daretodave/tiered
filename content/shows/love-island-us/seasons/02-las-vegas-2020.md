@@ -17,7 +17,7 @@ cast_size: 11
 cast_size_caption: "Launch islanders inside a sealed production bubble"
 host_caption: "Arielle Vandenberg, second season hosting"
 premiere_caption: "CBS · August 2020"
-episodes_caption: "34 episodes, the longest CBS-era run"
+episodes_caption: "Thirty-four episodes, the longest CBS-era run"
 filming_caption: "The Cromwell rooftop, Las Vegas — a relocated villa"
 episode_heat: [med, med, med, hot, med, med, hot, med, med, hot, med, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, hot, hot, hot, hot]
 episode_heat_caption: "Long run, regular recoupling spikes"

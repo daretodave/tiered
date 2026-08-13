@@ -17,7 +17,7 @@ cast_size: 11
 cast_size_caption: "Launch islanders, with arrivals across a long run"
 host_caption: "Sarah Hyland takes over hosting duties"
 premiere_caption: "Peacock · July 2022"
-episodes_caption: "38 episodes on a daily streaming drop"
+episodes_caption: "Thirty-eight episodes, the franchise's longest season yet"
 filming_caption: "Santa Barbara, California — a stateside villa"
 episode_heat: [med, med, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, med, med, hot, hot, hot, hot]
 episode_heat_caption: "Long streaming run, recoupling-week spikes"

@@ -15,7 +15,7 @@ cast_size: 7
 cast_size_caption: "Seven agents at The Oppenheim Group"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes, each running about an hour"
 take_h2: "The format, fully formed."
 ---
 

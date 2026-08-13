@@ -15,7 +15,7 @@ cast_size: 11
 cast_size_caption: "The same eleven-agent roster as Season 6, unchanged"
 premiere_caption: "Netflix · full season drop, reunion two weeks later"
 filming_caption: "West Hollywood, in a new office roughly double the size of the last one"
-episodes_caption: "11 episodes plus a standalone reunion"
+episodes_caption: "Eleven episodes plus a standalone reunion, matching Season 6's run length"
 take_h2: "The brokerage moves next door — and up."
 ---
 

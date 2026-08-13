@@ -15,7 +15,7 @@ cast_size: 10
 cast_size_caption: "The same ten-agent roster as Season 2, unchanged"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes, the third and final season at this length"
 take_h2: "Steady as it goes."
 ---
 

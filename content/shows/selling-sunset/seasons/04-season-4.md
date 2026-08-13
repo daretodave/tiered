@@ -15,7 +15,7 @@ cast_size: 11
 cast_size_caption: "Eleven agents, with two new additions and one moved back to recurring status"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "10 episodes, up from 8"
+episodes_caption: "Ten episodes, up from eight the season before"
 take_h2: "The format stretches its legs."
 ---
 

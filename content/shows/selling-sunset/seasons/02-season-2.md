@@ -15,7 +15,7 @@ cast_size: 10
 cast_size_caption: "Ten agents, including three moved up from recurring status"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes, the same length as the debut season"
 take_h2: "The bench gets deeper."
 ---
 

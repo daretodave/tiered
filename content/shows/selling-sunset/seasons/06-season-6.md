@@ -15,7 +15,7 @@ cast_size: 11
 cast_size_caption: "Eleven agents after the show's largest single-season roster turnover"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood, with a group retreat filmed in Palm Springs"
-episodes_caption: "11 episodes, longest season yet"
+episodes_caption: "Eleven episodes, the longest season yet"
 take_h2: "New faces, new ground."
 ---
 

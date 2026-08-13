@@ -15,7 +15,7 @@ cast_size: 13
 cast_size_caption: "Thirteen agents, including newcomer Sandra Vergara"
 premiere_caption: "Netflix · full season drop, reunion one week later"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "10 episodes plus a standalone reunion"
+episodes_caption: "Ten episodes plus a standalone reunion, back after a season without one"
 take_h2: "The reunion comes back — and brings someone new."
 ---
 

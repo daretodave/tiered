@@ -15,7 +15,7 @@ cast_size: 12
 cast_size_caption: "Twelve agents, including newcomer Alanna Gold"
 premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "11 episodes, no reunion special"
+episodes_caption: "Eleven episodes, the third season in a row at this length"
 take_h2: "The reunion takes a season off."
 ---
 

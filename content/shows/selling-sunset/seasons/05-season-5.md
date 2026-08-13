@@ -15,7 +15,7 @@ cast_size: 12
 cast_size_caption: "Twelve agents, including newcomer Chelsea Lazkani"
 premiere_caption: "Netflix · full season drop, reunion two weeks later"
 filming_caption: "West Hollywood and the Sunset Strip"
-episodes_caption: "10 episodes plus a standalone reunion"
+episodes_caption: "Ten episodes plus a standalone reunion, matching Season 4's run length"
 take_h2: "The reunion becomes part of the format."
 ---
 
