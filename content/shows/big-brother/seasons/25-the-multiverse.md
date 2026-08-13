@@ -14,7 +14,7 @@ format_summary: "16+ houseguests · weekly Multiverse power or curse"
 format_caption: "Comicverse theme; longest season in franchise history"
 filming_caption: "Studio City soundstage, Comicverse theme"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "~46 episodes across roughly 100 days"
+episodes_caption: "Forty-six episodes, the longest run in franchise history"
 cast_size: 17
 cast_size_caption: "16 to 17 houseguests"
 host_caption: "Julie Chen Moonves, twenty-fifth summer at the helm"

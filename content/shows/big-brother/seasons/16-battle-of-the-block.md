@@ -14,7 +14,7 @@ format_summary: "16 houseguests · two HoHs per week"
 format_caption: "twin HoH, Battle of the Block, Team America"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "37 episodes across the summer run"
+episodes_caption: "Thirty-seven episodes, built around twin HoHs each week"
 cast_size: 16
 cast_size_caption: "16 houseguests, three of them voted Team America"
 host_caption: "Julie Chen's sixteenth summer at the helm"

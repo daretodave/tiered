@@ -18,7 +18,7 @@ cast_size: 24
 cast_size_caption: "24 new players across two tribes"
 premiere_caption: "Network 10 · 2025"
 filming_caption: "Samoa, LaPaglia's final full-length season at the helm"
-episodes_caption: "24 competition episodes"
+episodes_caption: "Twenty-four episodes, LaPaglia's final full-length season"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · the familiar divide"

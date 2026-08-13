@@ -18,7 +18,7 @@ cast_size: 14
 cast_size_caption: "14 players: 7 Australian veterans, 7 international castaways"
 premiere_caption: "Network 10 · 2025"
 filming_caption: "Samoa, the tenth-anniversary crossover's compressed 16-day game"
-episodes_caption: "10 episodes · 16-day game"
+episodes_caption: "Ten episodes, a 16-day anniversary crossover format"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · two worlds meet"

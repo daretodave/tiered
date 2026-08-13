@@ -14,7 +14,7 @@ format_summary: "14 houseguests · three returning pairs"
 format_caption: "veterans paired with the new cast on Day One"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "30 episodes across the summer run"
+episodes_caption: "Thirty episodes, three veteran pairs mixed into the new cast"
 cast_size: 14
 cast_size_caption: "14 houseguests, six of them returning"
 host_caption: "Julie Chen's thirteenth summer at the helm"

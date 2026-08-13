@@ -14,7 +14,7 @@ format_summary: "16 houseguests · evicted players stay, with a way back"
 format_caption: "Camp Comeback room plus Whacktivity secret powers"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "36 episodes across the summer run"
+episodes_caption: "Thirty-six episodes, with evicted players parked for a way back"
 cast_size: 16
 cast_size_caption: "16 houseguests, no returnees"
 host_caption: "Julie Chen Moonves, twenty-first summer at the helm"

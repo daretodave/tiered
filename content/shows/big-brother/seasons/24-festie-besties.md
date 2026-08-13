@@ -14,7 +14,7 @@ format_summary: "16 houseguests · bound groups share their fate"
 format_caption: "Festie Besties plus the BB Motel / Dyre Fest"
 filming_caption: "Studio City soundstage, Pinwheel theme"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "28 episodes across the summer run"
+episodes_caption: "Twenty-eight episodes, houseguests bound into festie pairs"
 cast_size: 16
 cast_size_caption: "16 newcomers"
 host_caption: "Julie Chen Moonves, twenty-fourth summer at the helm"

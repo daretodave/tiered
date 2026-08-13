@@ -18,7 +18,7 @@ cast_size: 24
 cast_size_caption: "12 pairs, 24 players total"
 premiere_caption: "Network 10 · 2022"
 filming_caption: "Second Queensland run, home to the pairs-format debut"
-episodes_caption: "24 competition episodes"
+episodes_caption: "Twenty-four episodes, the format's first loved-ones pairs"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · the pairs split"

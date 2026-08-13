@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "24 players across two tribes"
 premiere_caption: "Network 10 · 2026"
 filming_caption: "Samoa, opening chapter of the Genat hosting era"
-episodes_caption: "24 episodes · 45-day game"
+episodes_caption: "Twenty-four episodes, David Genat's debut as host"
 host_caption: "First season at the helm for David Genat"
 watch_list:
   - episode_label: "Ep 1 · new host, new era"

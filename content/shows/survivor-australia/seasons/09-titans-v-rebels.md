@@ -18,7 +18,7 @@ cast_size: 24
 cast_size_caption: "24 new players across two tribes"
 premiere_caption: "Network 10 · 2024"
 filming_caption: "Samoa, a fresh cast built around a clean archetype divide"
-episodes_caption: "24 competition episodes"
+episodes_caption: "Twenty-four episodes across a 47-day game"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · the archetype divide"

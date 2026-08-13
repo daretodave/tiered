@@ -17,7 +17,7 @@ cast_size: 24
 cast_size_caption: "24 returning players"
 premiere_caption: "Network 10 · 2020"
 filming_caption: "Fiji, under 2020 production constraints for the all-returnee cast"
-episodes_caption: "25 competition episodes"
+episodes_caption: "Twenty-five episodes, the first all-returnee cast"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · returnee dynamics"

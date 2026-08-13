@@ -14,7 +14,7 @@ format_summary: "16+ houseguests · three stacked twists"
 format_caption: "Block Buster, Mastermind powers, a vote-free elimination week"
 filming_caption: "Studio City soundstage, redressed as Hotel Mystère"
 premiere_caption: "CBS · 90-minute premiere special"
-episodes_caption: "39 episodes, including the Unlocked companion series"
+episodes_caption: "Thirty-nine episodes, three stacked twists inside Hotel Mystère"
 cast_size: 17
 cast_size_caption: "16 newcomers plus a premiere-night mystery arrival"
 host_caption: "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm"

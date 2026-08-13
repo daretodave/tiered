@@ -14,7 +14,7 @@ format_summary: "16 houseguests · one returnee, three temptations"
 format_caption: "the goddess statue dispenses public-vote powers"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "38 episodes across the summer run"
+episodes_caption: "Thirty-eight episodes, centered on one returning houseguest"
 cast_size: 16
 cast_size_caption: "16 houseguests including one returning veteran"
 host_caption: "Julie Chen's nineteenth summer at the helm"

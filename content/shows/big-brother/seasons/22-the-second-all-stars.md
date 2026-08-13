@@ -14,7 +14,7 @@ format_summary: "16 returnees · all-star cast, twist-light"
 format_caption: "Safety Suite the only standing weekly wrinkle"
 filming_caption: "Studio City soundstage, strict bubble production"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "33 episodes across the summer run"
+episodes_caption: "Thirty-three episodes, the franchise's second all-star cast"
 cast_size: 16
 cast_size_caption: "16 returning houseguests across BB history"
 host_caption: "Julie Chen Moonves, twenty-second summer at the helm"

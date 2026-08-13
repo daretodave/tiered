@@ -15,7 +15,7 @@ format_summary: "16 houseguests · BB AI controls the twists"
 format_caption: "AI Arena sets a final nominee; BB Instant drops"
 filming_caption: "Studio City soundstage, BB AI theme"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "30 episodes across the summer run"
+episodes_caption: "Thirty episodes, with an in-house AI controlling the twists"
 cast_size: 16
 cast_size_caption: "16 newcomers"
 host_caption: "Julie Chen Moonves, twenty-sixth summer at the helm"

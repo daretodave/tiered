@@ -14,7 +14,7 @@ format_summary: "16 houseguests · four captain-picked teams"
 format_caption: "High Roller's Room wildcard, BB Bucks economy"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "30 episodes across the summer run"
+episodes_caption: "Thirty episodes, sorted into four captain-picked teams"
 cast_size: 16
 cast_size_caption: "16 newcomers, the most diverse cast to date"
 host_caption: "Julie Chen Moonves, twenty-third summer at the helm"

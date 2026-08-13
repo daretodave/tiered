@@ -14,7 +14,7 @@ format_summary: "13 houseguests · the Saboteur twist"
 format_caption: "a public-vote saboteur works the room from the inside"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "30 episodes across the summer run"
+episodes_caption: "Thirty episodes, with a public-vote Saboteur seat in the cast"
 cast_size: 13
 cast_size_caption: "13 houseguests including the Saboteur seat"
 host_caption: "Julie Chen's twelfth summer at the helm"

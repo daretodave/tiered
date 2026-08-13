@@ -18,7 +18,7 @@ cast_size: 24
 cast_size_caption: "12 champions, 12 contenders"
 premiere_caption: "Network 10 · 2018"
 filming_caption: "Fiji debut, the season the Australian version found its own identity"
-episodes_caption: "25 competition episodes"
+episodes_caption: "Twenty-five episodes, the format's move to Fiji"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · cast architecture"

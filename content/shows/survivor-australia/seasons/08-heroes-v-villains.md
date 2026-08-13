@@ -18,7 +18,7 @@ cast_size: 24
 cast_size_caption: "Mix of returnees and new players across two tribes"
 premiere_caption: "Network 10 · 2023"
 filming_caption: "Samoa return, the show's most acclaimed season"
-episodes_caption: "24 competition episodes"
+episodes_caption: "Twenty-four episodes, back in Samoa after two Queensland runs"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · cast architecture"

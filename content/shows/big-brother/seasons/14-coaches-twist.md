@@ -14,7 +14,7 @@ format_summary: "16 houseguests · 4 coaches, 12 newbies"
 format_caption: "veterans mentor the new cast, then enter the game"
 filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
-episodes_caption: "30 episodes across the summer run"
+episodes_caption: "Thirty episodes, four coaches mentoring twelve newbies"
 cast_size: 16
 cast_size_caption: "16 houseguests including four coaches"
 host_caption: "Julie Chen's fourteenth summer at the helm"
