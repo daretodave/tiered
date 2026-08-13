@@ -14,7 +14,7 @@ format_caption: "the founding format, deepened"
 cast_size: 5
 cast_size_caption: "The Fab Five return, chemistry already set"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes, arriving just over four months after the debut season."
 filming_caption: "Atlanta and surrounding Georgia suburbs"
 ---
 

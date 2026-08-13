@@ -14,7 +14,7 @@ format_caption: "the format's first relocation"
 cast_size: 5
 cast_size_caption: "The Fab Five, working outside Georgia for the first time"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes, arriving nine months after season two — the longest gap yet."
 filming_caption: "Kansas City, Missouri"
 ---
 

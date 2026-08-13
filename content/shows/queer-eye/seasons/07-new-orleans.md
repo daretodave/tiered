@@ -14,7 +14,7 @@ format_caption: "the founding format, new city"
 cast_size: 5
 cast_size_caption: "The complete original Fab Five, together one more time"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "7 episodes, hour-long format"
+episodes_caption: "Seven episodes — fewer than any season before it."
 filming_caption: "New Orleans, Louisiana"
 ---
 

@@ -14,7 +14,7 @@ format_caption: "the reboot's founding format"
 cast_size: 5
 cast_size_caption: "The Fab Five — one specialist per lane, every episode"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes — shared by each of the reboot's first four seasons."
 filming_caption: "Atlanta and surrounding Georgia suburbs"
 ---
 

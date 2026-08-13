@@ -14,7 +14,7 @@ format_caption: "a shortened order, security-driven"
 cast_size: 5
 cast_size_caption: "Bobby Berk's final season as design specialist"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "6 episodes — cut from a planned seven"
+episodes_caption: "Six episodes — cut from a planned seven"
 filming_caption: "New Orleans, Louisiana"
 ---
 

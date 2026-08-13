@@ -14,7 +14,7 @@ format_caption: "the standard format, ten episodes"
 cast_size: 5
 cast_size_caption: "The Fab Five, settled into the expanded episode count"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "10 episodes, hour-long format"
+episodes_caption: "Ten episodes, premiering on New Year's Eve — an unusual release date."
 filming_caption: "Austin, Texas"
 ---
 

@@ -14,7 +14,7 @@ format_caption: "the format's largest season to date"
 cast_size: 5
 cast_size_caption: "The Fab Five, with two extra episodes to work with"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "10 episodes — the show's longest run yet"
+episodes_caption: "Ten episodes — the show's longest run yet"
 filming_caption: "Philadelphia, Pennsylvania"
 ---
 

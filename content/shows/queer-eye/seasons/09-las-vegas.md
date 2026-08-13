@@ -14,7 +14,7 @@ format_caption: "the format's first cast change"
 cast_size: 5
 cast_size_caption: "Jeremiah Brent joins as design specialist"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "10 episodes — the longest order of the Netflix run"
+episodes_caption: "Ten episodes — the longest order of the Netflix run"
 filming_caption: "Las Vegas, Nevada"
 ---
 

@@ -14,7 +14,7 @@ format_caption: "a personal detour, then business as usual"
 cast_size: 5
 cast_size_caption: "The Fab Five, with Jonathan Van Ness's history front and center early"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "8 episodes, hour-long format"
+episodes_caption: "Eight episodes — the last season before the format expanded to ten."
 filming_caption: "Kansas City, Missouri, plus an Illinois episode"
 ---
 

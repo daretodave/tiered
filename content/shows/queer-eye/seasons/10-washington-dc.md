@@ -14,7 +14,7 @@ format_caption: "the shortest order, by design"
 cast_size: 5
 cast_size_caption: "Jeremiah Brent's second and final season in the design chair"
 premiere_caption: "Netflix · full season drop"
-episodes_caption: "5 episodes — the shortest order in the show's history"
+episodes_caption: "Five episodes — the shortest order in the show's history"
 filming_caption: "Washington, D.C., Montgomery County, and Northern Virginia"
 ---
 
