@@ -9121,6 +9121,18 @@ last time a curator actually looked.
   a new season landing (Rule 2 unstalling), not further re-slicing of
   already-mined seasons. No ledger row changed; no `content/themes/`
   file touched.
+- **2026-08-14, fourth cloud march tick same day: redirected again, no
+  new Rule-3 search attempted.** Same two blockers persist: Rule 2
+  still stalled (nearest dated finale american-ninja-warrior
+  2026-08-17, 3 days out), Rule 3 still exhausted (nineteen consecutive
+  same-day zero-ship passes including the fresh coverage-census
+  reconfirmation above; issue #758's standing saturation verdict
+  unchanged). Redirected the slot to a pending `plan/CRITIQUE.md`
+  finding instead: rewrote the Chopped Season 4 `premiere_caption`
+  from "Food Network · spring into summer 2010" (a near-duplicate of
+  the eyebrow's own network + air-window text) to "Food Network ·
+  Tuesday", matching Season 1's established weekday-only caption style
+  (commit 9a7ebdb9). No ledger row changed by this entry itself.
 
 ## Notes
 
