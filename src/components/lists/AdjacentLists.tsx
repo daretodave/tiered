@@ -14,16 +14,16 @@ const CATEGORY_LABELS: Record<Theme['category'], string> = {
   single: 'single-show',
 }
 
-function tagFor(theme: Theme, other: Theme, side: 'left' | 'right'): string {
+function tagFor(theme: Theme, other: Theme): string {
   const otherCat = CATEGORY_LABELS[other.category]
   if (theme.category === other.category) {
-    return side === 'left' ? `↩ similar ${otherCat} list` : `${otherCat} list ↪`
+    return `similar ${otherCat} list`
   }
   const otherShows = new Set(other.entries.map((e) => e.show))
   if (otherShows.size <= 1) {
-    return side === 'left' ? `↩ ${otherCat} list` : `${otherCat} list ↪`
+    return `${otherCat} list`
   }
-  return side === 'left' ? '↩ cross-canon list' : 'cross-canon list ↪'
+  return 'cross-canon list'
 }
 
 export function AdjacentLists({ theme, related }: AdjacentListsProps) {
@@ -45,7 +45,7 @@ export function AdjacentLists({ theme, related }: AdjacentListsProps) {
               data-testid="list-adjacent-link"
               data-slug={other.slug}
             >
-              <span className="adj-tag">{tagFor(theme, other, side)}</span>
+              <span className="adj-tag">{tagFor(theme, other)}</span>
               <span className="adj-title">{other.title}</span>
               <span className="adj-blurb">{other.description}</span>
             </Link>
