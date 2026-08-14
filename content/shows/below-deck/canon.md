@@ -1,9 +1,9 @@
 ---
 show: below-deck
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-08-14
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. The ranking covers the full run — Lee Rosbach's decade at the helm and Kerry Titheradge's opening seasons. It weighs location character, cast chemistry, captain-authority dynamics, and what each season contributed to the format. Outcomes don't figure in. It is one read, held with confidence."
+meth_who_p: "tiered.tv's editor. The ranking covers the full run — Lee Rosbach's decade at the helm (seasons 1–10) and Kerry Titheradge's opening seasons (seasons 11–12). It weighs location character, cast chemistry, captain-authority dynamics, and what each season contributed to the format. Outcomes don't figure in. It is one read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "Cast dynamics come first, but location and charter-guest variety shape the season's texture. A season that generates friction across multiple departments — deck, interior, galley — earns more than one that confines it to a single storyline. The seasons that taught the show what it was receive credit for laying the groundwork."
 meth_when_h: "When I revisit"
