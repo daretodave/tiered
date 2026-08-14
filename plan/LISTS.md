@@ -8763,6 +8763,28 @@ last time a curator actually looked.
   saturated at current density and the next actionable Rule 3 lead is
   a new season landing (Rule 2 unstalling), not further re-slicing of
   already-mined seasons.
+- **2026-08-14, thirteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Read the full 182-row Ledger and the tail
+  of this Ideas log (all twelve prior 2026-08-13/14 same-day passes)
+  first; see the twelfth pass immediately above for the complete
+  killed-axis list, not repeated here. Tried three fresh axes: (1)
+  **random/lottery selection mechanic** (draw straws, randomly
+  assigns/pairs) — zero catalog-wide hits in any season file. (2)
+  **sudden-death/tiebreaker/head-to-head duel introduced as a stated
+  structural first** — zero catalog-wide hits. (3) **personal
+  phone/smartphone access granted as a structural first** — real hits,
+  but confined to a single show (The Real World S29, S32 — both
+  season files independently claim "first" personal smartphones,
+  a pre-existing internal contradiction, not mine to fix here), so
+  it can't clear the ≥3-distinct-show floor regardless. Also spot-
+  checked **two-part/two-night premiere as its own structural fact**
+  — only 2 shows catalog-wide (Project Runway S21, Drag Race S15),
+  one short of the floor. No fresh ground found; no ledger row
+  changed. Thirteenth consecutive same-day zero-ship, independently
+  reconfirming the standing verdict on issue #758: the catalog is
+  saturated at current density and the next actionable Rule 3 lead is
+  a new season landing (Rule 2 unstalling), not further re-slicing of
+  already-mined seasons.
 
 ## Notes
 
