@@ -58,7 +58,7 @@ vi.mock('@/content', async () => {
 import { isValidElement } from 'react'
 import { render, screen } from '@testing-library/react'
 import {
-  ADJACENT_SECTION_H2,
+  adjacentSectionH2For,
   appearsInRowsFor,
   buildSections,
   generateMetadata,
@@ -770,14 +770,26 @@ describe('appearsInRowsFor — self-referential canon row vs. real cross-referen
   })
 })
 
-describe('ADJACENT_SECTION_H2 — Section 05 "Adjacent in the canon" subhead', () => {
+describe('adjacentSectionH2For — Section 05 "Adjacent in the canon" subhead', () => {
   // critique-pass-29 LOW: the legacy "Read next." subhead framed both
   // adjacent cards (a canon-above neighbor and a canon-below one) as
   // the reader's forward path. For a reader on canon slot #02, slot
   // #01 is read-previous, not read-next. "Either direction." reads
-  // honestly against either pair the section can render.
-  it('renders the bidirectional "Either direction." literal', () => {
-    expect(ADJACENT_SECTION_H2).toBe('Either direction.')
+  // honestly when both a prior and a next canon entry exist.
+  it('renders the bidirectional "Either direction." literal when both sides exist', () => {
+    expect(adjacentSectionH2For(true, true)).toBe('Either direction.')
+  })
+
+  // critique-pass-103 LOW: on a canon tail/head only one adjacent
+  // card renders (e.g. the most recent season in a canon has no
+  // "next" entry) — the static "Either direction." literal promised
+  // bidirectional navigation the page doesn't actually render.
+  it('renders "One direction." when only a prior entry exists (canon tail)', () => {
+    expect(adjacentSectionH2For(true, false)).toBe('One direction.')
+  })
+
+  it('renders "One direction." when only a next entry exists (canon head)', () => {
+    expect(adjacentSectionH2For(false, true)).toBe('One direction.')
   })
 
   it('never re-introduces the legacy unidirectional "Read next." subhead', () => {
@@ -785,8 +797,9 @@ describe('ADJACENT_SECTION_H2 — Section 05 "Adjacent in the canon" subhead', (
     // back to a forward-only subhead would resurface the
     // misframing the critique-pass-29 finding flagged on the HvV
     // page (canon-above neighbor framed as "read next").
-    expect(ADJACENT_SECTION_H2 as string).not.toBe('Read next.')
-    expect(ADJACENT_SECTION_H2.toLowerCase()).not.toMatch(/\bnext\b/)
+    expect(adjacentSectionH2For(true, true) as string).not.toBe('Read next.')
+    expect(adjacentSectionH2For(true, true).toLowerCase()).not.toMatch(/\bnext\b/)
+    expect(adjacentSectionH2For(true, false).toLowerCase()).not.toMatch(/\bnext\b/)
   })
 })
 

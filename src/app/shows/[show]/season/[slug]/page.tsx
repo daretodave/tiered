@@ -369,9 +369,18 @@ export function voteQuestionFor(show: Show): string {
 // reader's forward path, but the section can render a canon-above
 // neighbor (slot #N-1) alongside a canon-below one (slot #N+1) — for
 // a reader on slot #02, slot #01 is read-previous, not read-next.
-// "Either direction." reads honestly against any pair the section
-// renders and preserves the page's eyebrow + h2 rhythm.
-export const ADJACENT_SECTION_H2 = 'Either direction.' as const
+// "Either direction." reads honestly when both a prior and a next
+// canon entry exist.
+//
+// critique-pass-103 LOW: on a canon tail/head (only one side
+// present — e.g. the most recent season in a canon, which has no
+// "next" entry), the static "Either direction." literal promised
+// bidirectional navigation the page doesn't render. Scale the
+// subhead to what's actually present: "One direction." when only a
+// single adjacent card renders.
+export function adjacentSectionH2For(hasPrev: boolean, hasNext: boolean): string {
+  return hasPrev && hasNext ? 'Either direction.' : 'One direction.'
+}
 
 // critique-pass-56/68 MED (systemic across every single-season show):
 // the TOC array and the inline article-eyebrow numbers were each
@@ -683,7 +692,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             {adjacentVisible ? (
               <section id="s-related" data-testid="section-related">
                 <div className="article-eyebrow"><span className="num">{numFor('s-related')}</span><span>Adjacent in the canon</span></div>
-                <h2>{ADJACENT_SECTION_H2}</h2>
+                <h2>{adjacentSectionH2For(Boolean(prev), Boolean(next))}</h2>
                 <AdjacentSeasons prev={prev} next={next} />
               </section>
             ) : null}
