@@ -9,8 +9,8 @@ meth_how_p: "Three lenses — casting depth, whether the amateur bench had enoug
 meth_when_h: "When I revisit"
 meth_when_p: "The canon now covers all sixteen seasons — the full founding era, the rotation and evolution years, and the modern themed runs through the current airing season. Rankings in the lower third are provisional and will shift as the run develops further distance."
 tier_s_blurb: "MasterChef at its ceiling — the format and the cast pushing each other to a level that justifies the whole enterprise."
-tier_a_blurb: "Strong MasterChef. The format working at a high level — a deep bench, clear judging, and genuine culinary stakes across the run."
-tier_b_blurb: "Solid MasterChef. The format working at a consistent level — strong amateur talent, clear judging, a competition that respects what home cooks can do."
+tier_a_blurb: "Strong MasterChef. A deep bench, real culinary range, and stakes that hold up across the whole run — the format performing near its best."
+tier_b_blurb: "Solid MasterChef. Strong amateur talent and clear judging carry a season that respects what home cooks can do, even without a standout run."
 tier_c_blurb: "Transitional or limited MasterChef. Interesting ideas or good intent, but something structural — panel instability, a dissolved gimmick, a disrupted production — keeps it from reaching the tier above."
 weekly_question: "Which season made the strongest case for home-cook competition as serious food television?"
 era_bands:
