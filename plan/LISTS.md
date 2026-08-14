@@ -8785,6 +8785,81 @@ last time a curator actually looked.
   saturated at current density and the next actionable Rule 3 lead is
   a new season landing (Rule 2 unstalling), not further re-slicing of
   already-mined seasons.
+- **2026-08-14, fourteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Read the full 182-row Ledger and the
+  complete Ideas-log tail (all thirteen prior 2026-08-13/14 same-day
+  passes, including the twelfth pass's full killed-axis list — gender-
+  split casting, RHO cast-composition swaps, guest-host substitution,
+  age-record casting, home-base relocation, reunion-format-debuts-
+  permanent, double-elimination, returning-judge/coach, no-villain
+  sweep, non-pandemic disruption, wardrobe/catchphrase, prize-
+  structure, episode-runtime, category:single show-gap census,
+  parent-child casting, medical-evacuation, live-results-show,
+  influencer-casting-era, paired-couples-as-separate-competitors,
+  episode-count volatility, Redemption-Island origin, location-hazard
+  headroom, fan-voted wildcard casting, live-studio-audience mechanic,
+  schoolyard draft mechanic, mentor/apprentice credibility staking,
+  confessional/editing style, narrator/voiceover device, random/
+  lottery selection, sudden-death/tiebreaker, personal phone/
+  smartphone access, two-part/two-night premiere) before starting. Ran
+  the review-due check first: every ledger `last_reviewed` cell falls
+  between 2026-07-18 and 2026-08-13, all comfortably inside the
+  90-day/5-list trigger — no review work due, confirming the note the
+  thirteenth pass left stands. Chased one genuinely fresh-feeling lead
+  not logged by any prior pass: **the season that scaled its own cast
+  larger than any before it** (a "biggest cast/roster in the show's
+  history" superlative stated as the season's own structural bet,
+  distinct from ordinary cast-composition churn). Grounded it
+  independently via a catalog-wide `largest cast|biggest cast|biggest
+  roster|largest roster` sweep before checking the ledger, and it
+  looked exceptionally strong on first read — real, explicit "biggest
+  cast in the show's history" language in season files across Amazing
+  Race, Shark Tank, RHOP, The Real World, Project Runway, Survivor,
+  Selling Sunset, Vanderpump Rules, MasterChef, Drag Race, Southern
+  Charm, MAFS Australia, Drag Race All Stars, Perfect Match, and
+  Summer House — comfortably 10+ shows deep. Killed in full once each
+  candidate was cross-checked against `content/themes/*.md`: Survivor
+  S50, Project Runway S09, and both Drag Race All Stars S06/S10 are
+  already staked verbatim on this exact fact at `the-cast-outgrew-the-
+  format` (structure, 15 entries/12 shows, real headroom under the
+  24-cap); Amazing Race S37 already claims "the largest US cast the
+  franchise has ever fielded" at `the-roster-was-the-twist` (Amazing
+  Race single-show list), which would have made a same-show S35 entry
+  read as a contradicted rerun of a superlative the show already
+  spent; MasterChef S04 and S09 are already staked at `every-season-
+  tests-a-new-theory-of-the-kitchen` (MasterChef single-show list,
+  ranks 4 and 9, near-identical "largest cast"/"biggest structural
+  swing" framing); Southern Charm S07 is already staked at `the-
+  founding-seven-slowly-rebuilt` rank 5 ("the biggest refresh since
+  the debut season itself"); Selling Sunset S04 and S06 are already
+  staked at `some-seasons-rebuild-the-roster-others-just-move-the-
+  furniture` ranks 4 and 1; RHOP S08 is already staked at `full-time-
+  was-a-status-not-a-promise` rank 7 ("the biggest cast the show has
+  run"); Vanderpump Rules S06 is already staked at `the-map-outlasted-
+  the-cast` rank 8 ("the show's biggest cast yet"); Drag Race S14 is
+  already staked at `the-season-structure-never-holds-still` rank 9;
+  MAFS Australia S12 is already staked at `the-reshuffle-stays-in-
+  house` rank 5; Perfect Match S04 is already staked at `the-batch-
+  drop-settles-in` rank 4. Not one candidate survived the cross-check
+  — every single "biggest cast ever" fact in the entire catalog is
+  already spent, spread across nine different existing lists (six of
+  them dedicated single-show cast-composition lists). This is a
+  stronger and more exhaustive disconfirmation than most prior passes'
+  single- or double-hit rejections: an axis that looked like a clean
+  10-show new list on first grep turned out to have zero headroom
+  anywhere in the corpus. Also spot-checked two smaller leads: **blind
+  or anonymous judging as a stated structural mechanic** (judges
+  evaluate without knowing who cooked/made the work) — only one
+  genuine hit catalog-wide (MasterChef Australia S15's blind-tasting
+  immunity twist), short of the floor; **a franchise crossover episode
+  airing as a standalone special** — only one show's files use the
+  language at all (Chopped S61's two crossover episodes), single-show
+  and thin, not cross-canon groundable. No fresh ground found; no
+  ledger row changed. Fourteenth consecutive same-day zero-ship,
+  independently reconfirming the standing verdict on issue #758: the
+  catalog is saturated at current density and the next actionable
+  Rule 3 lead is a new season landing (Rule 2 unstalling), not further
+  re-slicing of already-mined seasons.
 
 ## Notes
 
