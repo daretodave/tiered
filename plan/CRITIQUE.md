@@ -1,5 +1,38 @@
 # CRITIQUE
 
+> Last pass: 2026-08-14 at commit bf3b7f2f
+> Pass count: 121
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 121 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/chopped/season/season-1`, `/shows`,
+> `/themes/one-rule-fills-every-seat`,
+> `/themes/the-couch-kept-adding-chairs`) and authed (`/`,
+> `/shows/chopped/season/season-1?view=community`, `/u/e2e`,
+> `/shows/big-brother?view=community`) walks ran, desktop +
+> mobile, zero console errors/failed first-party
+> requests/mobile overflow across both, no spoiler leaks (both
+> recently-extended themed lists read in full, all 17 entries
+> each, no winner/elimination/finale exposure). Auth handshake
+> confirmed live (authenticated:e2e) via `/api/auth/me`. **5 new
+> findings filed** (all Pending, none HIGH): two MED a11y —
+> themed-list entry titles aren't real headings (span, not h3,
+> across both list templates), and the vote-pair caption
+> microcopy fails WCAG AA contrast (3.27:1 vs 4.5:1 required);
+> three LOW — home ships the full 68-show catalog inline on
+> mobile before the themed-lists section, `/shows` B tier is one
+> flat undifferentiated 54-show grid, and the two recently-
+> extended themed lists over-concentrate entries in 2 shows each
+> (35% of entries from 2 of 8-9 represented shows). All three
+> pass-120 findings (trivial vote question, AGT host_caption,
+> unmatched-route 404) confirmed already resolved — none
+> competed as a pending HIGH.
+>
+> ───── Pass 120 metadata kept below for history ─────
+>
 > Last pass: 2026-08-13 at commit 161b72e1
 > Pass count: 120
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2744,6 +2777,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /themes/one-rule-fills-every-seat, /themes/the-couch-kept-adding-chairs (systemic — both list templates, likely every themed list) — the 17 ranked entries on each themed-list page render their titles inside `<span class="entry-title">` (22px serif, weight 500) nested in an `<a class="entry-row">` — visually heading-weight but semantically plain spans. The only real headings on the page are the h1 and a single h2 ("The 17, in order."). A screen-reader user navigating by heading — the standard way to skim a long ranked list — gets one h2 and then nothing; all 17 entries are invisible to heading-based navigation. Compare `/shows`, where every tile name is a real h3. Confirmed via direct HTML fetch: `<span class="entry-title">Salt Lake City cuts its cast almost in half in a single season</span>` inside `<a class="entry-row" href="/shows/rhoslc/season/season-3">`; CSS confirms `.entry-title{font-family:var(--font-family-serif);font-size:22px;font-weight:500}`. Fix: wrap each entry-title in an h3 (or h4 nested under the section's h2) so themed-list entries are heading-navigable, matching the `/shows` tile pattern — likely a shared list-entry component, so the fix should propagate to every themed list, not just these two. Chrome-only, no content or spoiler impact. (URL: /themes/one-rule-fills-every-seat, /themes/the-couch-kept-adding-chairs, source: critique-pass-121)
+
+- [ ] [MED] [authed] /shows/chopped/season/season-1?view=community (likely systemic to every vote-pair caption sitewide) — the vote-pair caption microcopy ("one vote per reader. community rank updates weekly.") renders at 11px with ~40% opacity ink-on-paper, producing ~3.3:1 contrast against its background — below WCAG AA's 4.5:1 minimum for text under 14px (or 18px bold). Confirmed identically at mobile viewport. Computed style: color `oklab(0.9316 0.0006 0.0169 / 0.4)` on background `oklab(0.2494 -0.0061 -0.0087)` resolves to fg RGB [112,113,110] vs bg RGB [29,34,38] → contrast 3.27:1. Fix: raise the muted-caption opacity/lightness token (or bump the min font-size) so small helper copy clears 4.5:1 against `--show-paper`; check whether the same token is reused elsewhere in the vote-pair/comment chrome, since one token fix could cover multiple surfaces. Chrome-only, no spoiler impact. (URL: /shows/chopped/season/season-1?view=community, source: critique-pass-121)
+
+- [ ] [LOW] [anon] / (mobile) — the home page ships the full 68-show catalog inline as link tiles ("the rest of the index") even on mobile, in addition to the three featured show cards above it — roughly doubling the page's DOM/text weight before the reader reaches the themed-lists / how-it-works section, arguably the more distinctive content. Captured home page text includes ~65 additional "Genre | Show name | N seasons | →" rows between the three featured cards and the Editor's Canon / Community Rank explainer section (bodyTextLength ~6300 chars). Fix: consider truncating the inline "rest of the index" list on mobile (e.g. first 10-15 with a "See all 68" link) to reach the themed-lists / how-it-works content sooner. Chrome-only, no spoiler impact. (URL: /, source: critique-pass-121)
+
+- [ ] [LOW] [anon] /shows (desktop) — B tier renders as one flat 54-show grid with no sub-structure. B tier alone holds 54 of the site's 68 shows (S: 2, A: 12, B: 54) — 79% of the catalog in one undifferentiated section. A first-time visitor gets a clear sense of S/A tier curation, then hits a wall of 54 tiles with no further structure; alphabetical clumps (Below Deck ×5, Real Housewives ×9, Alone ×4) read as near-duplicates in a flat scroll. Fix: consider sub-grouping B tier by `genre_tag` (already present in frontmatter) or adding a filter/search affordance above the B-tier grid so the long tail is browsable rather than just scrollable. Chrome-only, no spoiler impact. (URL: /shows, source: critique-pass-121)
+
+- [ ] [LOW] [anon] /themes/one-rule-fills-every-seat, /themes/the-couch-kept-adding-chairs — both recently-extended themed lists over-concentrate entries in 2 of their represented shows. "the-couch-kept-adding-chairs": RHOSLC (#1, #2, #17) and RHOM (#4, #5, #6) = 6 of 17 entries (35%) from 2 of 9 shows. "one-rule-fills-every-seat": Hell's Kitchen (#2, #7, #10) and Ink Master (#3, #11, #13) = 6 of 17 entries from 2 of 8 shows. Individual entries read fine and form a coherent arc per franchise, but stacked together the lists read less like a broad sample across the roster (per each page's own framing) and more like two franchise deep-dives with guest appearances. Fix: when extending a Rule-3 list going forward, prefer under-represented shows once a show already holds 2+ slots, unless the list's own premise explicitly calls for franchise depth (in which case say so in the description). Not urgent — apply on future extensions rather than retrofitting existing entries. Content/voice, no spoiler impact. (URL: /themes/one-rule-fills-every-seat, /themes/the-couch-kept-adding-chairs, source: critique-pass-121)
 
 - [x] [MED] [anon] /shows/the-ultimatum/season/season-4 (and every 2-9 season show, systemic) — the per-season community vote CTA asks a threshold question that's trivial whenever the show's total season count falls in the 2-9 range, because `voteQuestionFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:350-358`) returns `` `Does this belong in the community top ${show.seasons}?` `` for that range — when `show.seasons` is the show's *entire* run, "top N of N" has no discriminating power; every season that exists trivially clears the bar. Confirmed live on The Ultimatum (4 total seasons, question reads "Does this belong in the community top 4?" directly beside a "4 SEASONS" stat in the same hero block). The function already special-cases `seasons === 1` ("Does this season hold up?") and `seasons >= 10` (fixed "top 10") — the fix pass that added those two cases (critique-pass-88, per the code comment) didn't close the gap for the 2-9 range colliding with the show's own total. Reach check: 17 catalogued shows currently have `seasons` in [2,9] (`alone-australia`, `below-deck-down-under`, `dragrace-uk`, `jersey-shore`, `love-island-us`, `perfect-match`, `rhom`, `rhod`, `rhoslc`, `selling-sunset`, `below-deck-sailing-yacht`, `the-circle`, `the-ultimatum`, `too-hot-to-handle`, `rhodubai`, `traitors-uk`, `traitors`) — every season page on every one of those shows renders this trivial question today. Fix: when the threshold would equal `show.seasons` (i.e., the show hasn't yet outgrown the question), fall back to the 1-season phrasing ("Does this season hold up?") or a non-numeric framing ("Does this belong near the top?") instead of a "top N of N" comparison. Chrome/voice-only, no spoiler impact. (URL: /shows/the-ultimatum/season/season-4, source: critique-pass-120) — RESOLVED (2026-08-13, cloud march tick, seventh same-day Rule-3 redirect): `voteQuestionFor()`'s 2-9 branch now returns the non-numeric `'Does this belong near the top?'` (matching the row's own suggested fix) instead of reintroducing a threshold equal to the show's own total. The `>= 10` and `=== 1` branches are unchanged (no regression). Updated the two colliding unit tests (7-season and 2-season cases) to assert the new copy. Verify gate green all three legs: fast gate (typecheck + 197 test files / 3595 unit tests + content:check, 68 shows / 1046 seasons / 68 canons / 181 themes); build; 4874 e2e passed.
 
