@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-08-09
+last_revised: 2026-08-14
 featured: false
 related:
   - the-schedule-didnt-ask-permission
@@ -18,7 +18,7 @@ entries:
     season_label: "S04"
     rank: 1
     title: "The first time Shark Tank premiered in the fall"
-    blurb: "None of the show's first three seasons premiere in fall. Season 4 does, landing alongside the show's biggest episode order yet — twenty-six hours. The tank doesn't change; only the month it opens does."
+    blurb: "None of the show's first three seasons premiere in fall. Season 4 does, landing alongside the show's biggest episode order yet — twenty-six hours. What shifted was the release date, not the show itself."
   - show: bachelor-in-paradise
     season: 8
     season_label: "S08"
@@ -30,7 +30,7 @@ entries:
     season_label: "S14 · Winter Premiere"
     rank: 3
     title: "The first winter premiere since the show's early seasons"
-    blurb: "A January debut breaks a run of premieres the format had settled into years before — the headline structural note on an otherwise standard eighteen-episode season. The kitchen runs exactly as designed; only the calendar around it moved."
+    blurb: "A January debut breaks a run of premieres the format had settled into years before — the headline structural note on an otherwise standard eighteen-episode season. Nothing else about the season changed — it just landed on a different point in the network's calendar."
   - show: shark-tank
     season: 17
     season_label: "S17"
