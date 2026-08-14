@@ -8721,6 +8721,48 @@ last time a curator actually looked.
   same-day zero-ship/extend-exhausted tick, per bearings.md Rule 3's
   own explicit permission to ship nothing rather than force a
   duplicate list.
+- **2026-08-14, twelfth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled per the
+  standing gap-table verdict tracked on issue #758 and read the full
+  Ledger plus all eleven 2026-08-13 same-day Ideas-log passes above
+  before starting, avoiding every axis already killed (gender-split
+  casting, RHO cast-composition swaps, guest-host substitution,
+  age-record casting, home-base relocation, reunion-format-debuts-
+  permanent, double-elimination, returning-judge/coach, no-villain
+  sweep, non-pandemic disruption, wardrobe/catchphrase, prize-
+  structure, episode-runtime, category:single show-gap census,
+  parent-child casting, medical-evacuation, live-results-show,
+  influencer-casting-era, paired-couples-as-separate-competitors,
+  episode-count volatility, Redemption-Island origin, location-hazard
+  headroom, fan-voted wildcard casting, live-studio-audience mechanic,
+  schoolyard draft mechanic, mentor/apprentice credibility staking).
+  Also independently re-derived and rejected the two structural
+  zero-single-show-list angles and the tone/craft/era cross-canon-
+  floor check the brief pre-supplied — both confirmed already closed.
+  Tried two fresh axes not logged by any prior pass: (1) **confessional
+  or talking-head editing style as its own stated craft fact** —
+  grepped `confessional` across every season file (39 hits: Top Chef,
+  Real World, The Challenge, Survivor, Project Runway, Perfect Match,
+  Big Brother, Amazing Race). On inspection every hit is a generic,
+  scene-setting use of the word inside a rationale already staked for
+  a different fact (jury-phase alliance pressure, strategic-talk
+  density, etc.) rather than the season's own text making a distinct
+  claim about the confessional/editing *style itself* changing — no
+  season file states a stylistic shift (sit-down vs. verité, new
+  lighting rig, new interview format) as its own structural fact, so
+  there's nothing to stake without inventing detail. (2) **narrator or
+  voiceover device as a stated structural mechanic** — grepped
+  `narrat|voiceover|voice-over` across every season file (48 hits);
+  nearly all are false positives on "narrative" rather than an actual
+  narrator/voiceover device, and the handful of genuine hits (e.g. The
+  Voice's chair-turn framing, Real World's cold-open framing) are
+  either already staked at `never-starts-cold` or too thin/single-show
+  to clear the floor. No fresh ground found on either axis; no ledger
+  row changed. Twelfth consecutive same-day zero-ship, independently
+  reconfirming the standing verdict on issue #758: the catalog is
+  saturated at current density and the next actionable Rule 3 lead is
+  a new season landing (Rule 2 unstalling), not further re-slicing of
+  already-mined seasons.
 
 ## Notes
 
