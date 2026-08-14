@@ -12,7 +12,7 @@ lede: "A veteran-heavy cast pulls the franchise's highest-rated MTV premiere on 
 pull: "Record premiere numbers and a genuine format swing — the finale trades the usual top-two lip sync for a full eliminated-cast tournament. The judging split is real: the polish gets praised, the calls don't always."
 premiere_caption: "MTV · Friday 8/7c, record premiere audience"
 format_summary: "Restructured finale · veteran-heavy cast"
-format_caption: "eliminated-cast tournament ahead of the top three"
+format_caption: "The finale runs a full eliminated-cast tournament ahead of the top three"
 format_changes: [restructured-finale, elimination-tournament]
 cast_size: 14
 cast_size_caption: "franchise-first drag grandmother-and-granddaughter pairing"

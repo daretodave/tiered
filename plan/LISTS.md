@@ -9054,6 +9054,18 @@ last time a curator actually looked.
   unrelated edit had already rewritten entry #04's blurb off that
   phrase — and closed it as resolved-by-drift with no content change.
   No ledger row changed by this entry itself.
+- **2026-08-14, third cloud march tick same day: redirected again,
+  no new Rule-3 search attempted.** Same two blockers persist: Rule 2
+  still stalled (nearest dated finale american-ninja-warrior
+  2026-08-17, 3 days out), Rule 3 still exhausted (eighteen-plus
+  consecutive same-day zero-ship passes, issue #758's standing
+  saturation verdict unchanged). Redirected the slot to a pending
+  `plan/CRITIQUE.md` finding instead: rewrote the dragrace season-18
+  FORMAT stat-tile `format_caption` as a complete clause ("The finale
+  runs a full eliminated-cast tournament ahead of the top three"),
+  matching sibling sub-caption voice on the same week's Top Chef
+  Carolinas / Bake Off Hammond season pages. No ledger row changed by
+  this entry itself.
 
 ## Notes
 
