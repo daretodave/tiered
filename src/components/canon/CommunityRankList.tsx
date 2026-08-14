@@ -51,8 +51,13 @@ export function CommunityRankList({
       <div className="cp-cl-rows" data-testid="community-rank-rows">
         {entries.map((entry) => {
           const voted = hasVoteData(entry)
+          // A season with zero decisive votes has a defined approval
+          // (0%) and vote count (0) — the same honest-zero convention
+          // VotePair uses ("0 votes so far"). Only the trend column has
+          // no zero-vote analog (no baseline delta is computable), so
+          // it alone keeps the em-dash placeholder (critique pass-117/118).
           const pct =
-            entry.approval == null ? null : Math.round(entry.approval * 100)
+            entry.approval == null ? 0 : Math.round(entry.approval * 100)
           return (
             <a
               key={entry.season.number}
@@ -66,12 +71,9 @@ export function CommunityRankList({
                 {entry.season.title}
                 <span className="sub">{entry.tag}</span>
               </div>
-              <div
-                className="cp-clr-bar"
-                data-empty={voted && pct != null ? 'false' : 'true'}
-              >
+              <div className="cp-clr-bar" data-empty={voted ? 'false' : 'true'}>
                 <div className="cp-clr-bar-track">
-                  {voted && pct != null ? (
+                  {voted ? (
                     <div
                       className="cp-clr-bar-fill"
                       style={{ width: `${pct}%` }}
@@ -79,13 +81,13 @@ export function CommunityRankList({
                   ) : null}
                 </div>
               </div>
-              {voted && pct != null ? (
-                <div className="cp-clr-pct">{pct}%</div>
-              ) : (
-                <div className="cp-clr-pct cp-cl-cell--empty" aria-hidden="true">
-                  —
-                </div>
-              )}
+              <div
+                className={
+                  voted ? 'cp-clr-pct' : 'cp-clr-pct cp-cl-cell--empty'
+                }
+              >
+                {pct}%
+              </div>
               {entry.trend != null &&
               entry.trend !== 0 &&
               entry.voteCount >= MOVER_VOTE_FLOOR ? (
@@ -102,18 +104,13 @@ export function CommunityRankList({
                   —
                 </div>
               )}
-              {voted ? (
-                <div className="cp-clr-votes">
-                  {entry.voteCount.toLocaleString()}
-                </div>
-              ) : (
-                <div
-                  className="cp-clr-votes cp-cl-cell--empty"
-                  aria-hidden="true"
-                >
-                  —
-                </div>
-              )}
+              <div
+                className={
+                  voted ? 'cp-clr-votes' : 'cp-clr-votes cp-cl-cell--empty'
+                }
+              >
+                {entry.voteCount.toLocaleString()}
+              </div>
             </a>
           )
         })}

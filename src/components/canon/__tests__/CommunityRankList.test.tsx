@@ -48,14 +48,26 @@ describe('<CommunityRankList>', () => {
     expect(screen.getByText('Heroes vs. Villains')).toBeInTheDocument()
   })
 
-  it('hides approval/pct/trend/votes cells when no vote data', () => {
+  it('renders honest-zero approval/votes (not em-dashes) when no vote data, and dims the empty bar (regression guard for critique pass-117/118)', () => {
     const entries = [row(1, 20, 'Heroes vs. Villains')]
     const { container } = render(
       <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
     )
+    // No decisive votes yet, so the bar itself stays empty/dimmed...
     expect(container.querySelector('.cp-clr-bar-fill')).toBeNull()
-    const placeholders = container.querySelectorAll('.cp-cl-cell--empty')
-    expect(placeholders.length).toBeGreaterThanOrEqual(3)
+    expect(
+      container.querySelector('.cp-clr-bar[data-empty="true"]'),
+    ).not.toBeNull()
+    // ...but approval% and vote count render the same honest "0" the
+    // season page's own vote block uses ("0 votes so far"), not a
+    // dash that reads as missing/broken data. Only the trend column
+    // (no zero-vote analog) keeps the em-dash placeholder.
+    expect(screen.getByText('0%')).toBeInTheDocument()
+    expect(container.querySelector('.cp-clr-votes')).toHaveTextContent('0')
+    expect(
+      container.querySelector('.cp-clr-trend.cp-cl-cell--empty'),
+    ).not.toBeNull()
+    expect(container.querySelectorAll('.cp-cl-cell--empty')).toHaveLength(3)
   })
 
   it('renders real approval %, votes and a RankShiftPill off the trend', () => {
