@@ -10,7 +10,7 @@ ep_count: 13
 cast_size: 4
 eyebrow: "Aired fall 2015 · Food Network · entirely inside Season 24's window"
 lede: "Thirteen episodes run from August into December 2015, airing entirely within Season 24's own window and overlapping most of Season 26's short run alongside it."
-pull: "Season 25 never runs on its own — Season 24 is airing for the whole of it, and Season 26 joins in for its own back half. It's the most fully nested single season in this stretch, contained rather than sprawling."
+pull: "Season 25 never runs on its own — Season 24 is airing for the whole of it, and Season 26 joins in for its own back-half. It's the most fully nested single season in this stretch, contained rather than sprawling."
 premiere_caption: "Food Network · August into December 2015"
 episodes_caption: "Runs a full slate while Season 26, nested alongside it, cuts to eight"
 format_summary: "4 chefs · 3 rounds · full 13-episode run"

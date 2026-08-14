@@ -1579,12 +1579,11 @@ export function collectEditorialBylineSingularIssues(): Failure[] {
 // editorial copy on /themes/best-finales + /themes/best-post-merge.
 // Pin: every occurrence of the literal `back half` in a themed-list
 // entry title / blurb / tagline / description / body_md, or in a
-// season's `episode_heat_caption`, must render as `back-half`. The
-// scoping matches the cross-reference surfaces the row spotted —
-// canon prose and season ledes/bodies sit outside this scanner's
-// source set, where the form drift is not visible on a single
-// reader scroll. A future critique that flags a wider drift can
-// extend the source set.
+// season's `episode_heat_caption` / `pull`, must render as
+// `back-half`. The scoping matches the cross-reference surfaces the
+// row spotted — canon prose sits outside this scanner's source set,
+// where the form drift is not visible on a single reader scroll. A
+// future critique that flags a wider drift can extend the source set.
 const BACK_HALF_HYPHEN_RE = /\bback half\b/gi
 
 export function collectBackHalfHyphenIssues(): Failure[] {
@@ -1615,6 +1614,7 @@ export function collectBackHalfHyphenIssues(): Failure[] {
         `${seasonFile} (episode_heat_caption)`,
         season.episode_heat_caption,
       )
+      flag(`${seasonFile} (pull)`, season.pull)
     }
   }
   return issues

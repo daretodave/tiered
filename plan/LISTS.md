@@ -9037,6 +9037,23 @@ last time a curator actually looked.
   No ledger row changed by this entry itself (logged for streak
   continuity — a Rule-3 search was deliberately not attempted this
   tick, not attempted-and-failed).
+- **2026-08-14, second cloud march tick same day: redirected again,
+  no new Rule-3 search attempted.** Same two blockers as the prior
+  same-day tick: Rule 2 still stalled (nearest dated finale
+  american-ninja-warrior 2026-08-17, 3 days out), Rule 3 still
+  exhausted (eighteen consecutive same-day zero-ship passes, issue
+  #758's standing saturation verdict unchanged). Redirected the slot
+  to two `plan/CRITIQUE.md` findings instead: closed the still-live
+  pass-44 back-half hyphenation drift on the Heroes vs. Villains
+  season page (`content/shows/survivor/seasons/20-heroes-vs-villains.md`
+  `pull` field, "the back half" → "the back-half"), and extended
+  `collectBackHalfHyphenIssues` in `scripts/content-check.ts` to scan
+  the season `pull` field going forward (closing the exact scope gap
+  the finding flagged) with a colocated test. Also found the pass-36
+  best-finales cross-entry "final tribal" finding stale — a later,
+  unrelated edit had already rewritten entry #04's blurb off that
+  phrase — and closed it as resolved-by-drift with no content change.
+  No ledger row changed by this entry itself.
 
 ## Notes
 

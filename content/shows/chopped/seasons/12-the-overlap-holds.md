@@ -10,7 +10,7 @@ ep_count: 13
 cast_size: 4
 eyebrow: "Aired summer–fall 2012 · Food Network · overlaps Seasons 11 and 13's air dates"
 lede: "Thirteen episodes run from June to November 2012, sitting squarely inside the overlap Season 11 opened and Season 13 continues — the densest stretch of concurrent Chopped seasons the show has aired."
-pull: "Season 12 sits at the center of the show's most tangled release window, overlapping with both Season 11's back half and Season 13's front half. On screen, none of that matters — the format runs exactly as it does everywhere else in this canon."
+pull: "Season 12 sits at the center of the show's most tangled release window, overlapping with both Season 11's back-half and Season 13's front half. On screen, none of that matters — the format runs exactly as it does everywhere else in this canon."
 premiere_caption: "Food Network · June into November 2012"
 episodes_caption: "Thirteen episodes, a few months shorter than Season 11's own stretch."
 format_summary: "4 chefs · 3 rounds · full 13-episode run"

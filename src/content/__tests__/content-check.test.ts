@@ -3832,6 +3832,34 @@ ${sixtyWords}
     expect(issues[0]!.message).toMatch(/back-half hyphenation drift/)
   })
 
+  it('flags a season `pull` field that uses the unhyphenated form', () => {
+    makeShow(tmp, 'beta')
+    const seasonFile = path.join(
+      tmp,
+      'shows',
+      'beta',
+      'seasons',
+      '20-twentieth.md',
+    )
+    mkdirSync(path.dirname(seasonFile), { recursive: true })
+    writeFileSync(
+      seasonFile,
+      `---
+show: beta
+number: 20
+title: twentieth
+pull: "${sixtyWords} the back half rarely lets the editor breathe."
+---
+
+${sixtyWords}
+`,
+    )
+    const issues = collectBackHalfHyphenIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/beta/seasons/20-twentieth.md (pull)')
+    expect(issues[0]!.message).toMatch(/back-half hyphenation drift/)
+  })
+
   it('case-insensitive match catches `Back Half` and possessive `season\'s back half`', () => {
     makeMultiEntryTheme(tmp, 'mixed-case', {
       entries: [
