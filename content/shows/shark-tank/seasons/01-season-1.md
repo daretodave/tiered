@@ -18,7 +18,7 @@ episodes_caption: "Seven-episode freshman run"
 format_summary: "Pitch competition"
 format_caption: "Five-shark founding panel"
 cast_size: 5
-cast_size_caption: "Five sharks: Corcoran, O'Leary, John, Herjavec, Harrington"
+cast_size_caption: "Five sharks: Harrington, Corcoran, O'Leary, John, Herjavec"
 take_h2: "A format with no second draft."
 ---
 
