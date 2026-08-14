@@ -8986,6 +8986,38 @@ last time a curator actually looked.
   fabricating facts — the next actionable Rule 3 lead is a new season
   landing (Rule 2 unstalling), not further re-slicing of already-mined
   seasons.
+- **2026-08-14, eighteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled (every
+  CADENCE gap row starred confirmed-but-unaired, nearest dated finale
+  american-ninja-warrior S18 on 2026-08-17 still days out). Read the
+  full 182-row ledger and all seventeen prior 2026-08-13/14 same-day
+  passes' killed-axis lists before starting. Tried two fresh axes: (1)
+  **judge/coach panel seat-count changes** (a panel expanding or
+  shrinking by a seat, distinct from personnel turnover) — grepped
+  catalog-wide for explicit count language and found candidates across
+  7 shows (SYTYCD S02/S03/S15, Married at First Sight S15, Ink Master
+  S14, MasterChef Australia S16, America's Next Top Model S13/S14,
+  America's Got Talent S09, Drag Race All Stars S08), but every single
+  one is already staked, several 2-3x over, across at least fifteen
+  existing lists (`when-the-chairs-turned-over`,
+  `someone-else-held-the-chair-for-a-while`, `the-itinerary-was-the-
+  format`, `moving-day`, `the-matching-experts-never-sit-still-for-
+  long`, `rulebook-rewritten-every-season`,
+  `the-competition-leaves-the-country`,
+  `the-judging-table-never-got-to-coast`, `the-toolkit-never-sat-
+  still`, `one-rule-fills-every-seat`, `same-crown-new-price-tag`,
+  `proving-the-debut-wasnt-luck`, `every-seat-had-an-expiration-date-
+  except-one`, `the-other-side-of-the-table`,
+  `same-license-different-rules`) — a fully drained well, a stronger
+  disconfirmation than most prior passes. (2) **in-franchise
+  theme/gimmick branding** (All-Stars vs. Legends vs. Champions naming)
+  — already explicitly rejected earlier in this log (the branding is
+  just the marketing wrapper on a returnee cast, no new fact). No
+  fresh ground found; no ledger row changed. Eighteenth consecutive
+  same-day zero-ship, reconfirming the standing verdict on issue #758:
+  the catalog is saturated at current density — the next actionable
+  Rule 3 lead is a new season landing (Rule 2 unstalling), not further
+  re-slicing of already-mined seasons.
 
 ## Notes
 
