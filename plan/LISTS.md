@@ -9066,6 +9066,61 @@ last time a curator actually looked.
   matching sibling sub-caption voice on the same week's Top Chef
   Carolinas / Bake Off Hammond season pages. No ledger row changed by
   this entry itself.
+- **2026-08-14, nineteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Read the full 212-row Ledger and the
+  complete Ideas-log tail (all eighteen prior 2026-08-13/14 same-day
+  search passes plus the three redirected cloud-march ticks) before
+  starting. Rather than re-run another text-claim grep against the
+  season corpus (the axis class the eighteen prior passes had already
+  exhausted — see the eighteenth pass above for the full enumeration),
+  tried a structurally different methodology: an exhaustive
+  **category:single coverage census** across every show with enough
+  aired seasons to plausibly clear the 10-entry floor, independent of
+  any specific in-text "first" claim. Cross-referenced each show's
+  `seasons:` frontmatter count against every existing `category:
+  single` theme file's `show:` field. Checked every candidate with
+  ≥10 aired seasons not obviously already staked: `americas-got-talent`
+  (21 seasons) — already dedicated at `two-coasts-one-open-call` (20
+  entries). `chopped` (62 seasons) — already carries three dedicated
+  lists (`when-the-basket-became-a-bracket`,
+  `thirteen-was-the-promise-not-the-rule`,
+  `no-season-here-got-the-calendar-to-itself`). `dancing-with-the-stars`
+  (34 seasons) — already dedicated at `some-casts-didnt-need-week-one`
+  (12 entries); also independently drafted and killed a second DWTS
+  candidate thesis (the host chair changing hands — Tom Bergeron solo
+  through S26, Erin Andrews added S27–28, Tyra Banks solo S29, Tyra
+  Banks + Alfonso Ribeiro S30–31, Julianne Hough + Alfonso Ribeiro
+  S32–34) on two independent grounds: only four genuine transition
+  seasons in the show's own frontmatter (S27, S29, S30, S32), short of
+  the 10-entry floor on its own, and the Tyra-Banks-debut fact is
+  already staked at the cross-show craft list `the-mic-changed-hands`.
+  `american-idol` (24 seasons) — already dedicated at
+  `the-only-constant-was-the-vote` (15 entries). `the-voice` (29
+  seasons) — already dedicated at
+  `the-panel-turned-over-more-than-the-contestants-did` (20 entries).
+  `masked-singer` (14 seasons) — already dedicated at
+  `the-masks-changed-every-week-the-panel-never-did` (15 entries).
+  `married-at-first-sight-australia` (13 seasons) — already dedicated
+  at `the-reshuffle-stays-in-house` (13 entries). `survivor-australia`
+  (12 seasons) — already dedicated at `sorted-before-they-landed` (12
+  entries). `love-is-blind` (10 seasons) — already carries two
+  dedicated lists (`a-dating-experiment-still-writing-its-own-rulebook`,
+  `fifteen-and-fifteen-every-single-season`). `queer-eye` (10 seasons)
+  — already carries three dedicated lists (`the-room-kept-changing-size`,
+  `the-format-never-blinked`, `a-show-that-never-had-a-home-address`).
+  Every sub-10-season show (`traitors-uk` 4, `the-circle` 7,
+  `the-ultimatum` 4) stays too thin for the entry floor regardless of
+  coverage, consistent with the fifteenth pass's narrower finding on a
+  different 7-show set. Result: every catalog show with enough aired
+  seasons to plausibly support a 10-24-entry single-show tier already
+  carries at least one dedicated `category: single` list, several
+  carrying two or three. A structurally different search path
+  (coverage census instead of text-claim grep) independently
+  reconfirms the standing verdict on issue #758: the catalog is
+  saturated at current density and the next actionable Rule 3 lead is
+  a new season landing (Rule 2 unstalling), not further re-slicing of
+  already-mined seasons. No ledger row changed; no `content/themes/`
+  file touched.
 
 ## Notes
 
