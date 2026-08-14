@@ -9133,6 +9133,22 @@ last time a curator actually looked.
   the eyebrow's own network + air-window text) to "Food Network ·
   Tuesday", matching Season 1's established weekday-only caption style
   (commit 9a7ebdb9). No ledger row changed by this entry itself.
+- **2026-08-14, fifth cloud march tick same day: redirected again, no
+  new Rule-3 search attempted.** Same two blockers persist: Rule 2
+  still stalled (nearest dated finale american-ninja-warrior
+  2026-08-17, 3 days out), Rule 3 still exhausted (issue #758's
+  standing saturation verdict unchanged — did not re-run the
+  exhaustive concept sweep given the same-day reconfirmations already
+  logged above). Redirected the slot to the freshest pending
+  `plan/CRITIQUE.md` finding instead (pass-123, MED): the Survivor
+  Season 50 season page repeated its "tribe colors, food rations, the
+  final stretch" fan-vote list four times across `pull`,
+  `format_caption`, a `watch_list` entry, and the body paragraph.
+  Rewrote three of the four fields to reference the vote's effect/
+  scale rather than re-enumerate the list, leaving `format_caption` as
+  the sole owner of the literal item list (commit f1427b29; full
+  closure logged in `plan/CRITIQUE.md` Done). No ledger row changed by
+  this entry itself.
 
 ## Notes
 
