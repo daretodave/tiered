@@ -8897,6 +8897,50 @@ last time a curator actually looked.
   on issue #758: the catalog is saturated at current density and the
   next actionable Rule 3 lead is a new season landing (Rule 2
   unstalling), not further re-slicing of already-mined seasons.
+- **2026-08-14, sixteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled (CADENCE
+  gap table unchanged, 42 shows / 43 gap-slots, every row starred) and
+  zero lists review-due (all `last_reviewed` cells inside the 90-day
+  floor). Also confirmed zero `tone`/`structure`/`craft`/`era` lists
+  sit below the 3-distinct-show cross-canon floor (programmatic check
+  across all 183 theme files). Re-read the full ledger plus all
+  fifteen prior 2026-08-13/14 same-day passes' killed-axis lists
+  before starting. Tried four fresh axes: (1) **production/crew
+  credits changing hands** (composer, editor, DP) — zero catalog-wide
+  hits grepping `composer|cinematographer|director of photography|
+  score composed|theme song|title music` across every season file;
+  nothing to ground. (2) **format elements explicitly borrowed FROM
+  one franchise INTO another, named in text** — real hits (Bachelor in
+  Paradise S08's Love-Island-style twist, The Real World S31's
+  Challenge/Road-Rules-borrowed missions) but killed outright: already
+  staked at `the-pitch-names-where-the-idea-came-from` (craft, 3
+  shows), `the-franchise-started-borrowing-from-itself`, and
+  `same-license-different-rules`/`familiar-faces-wrong-franchise` —
+  rediscovery, not a fresh angle. (3) **broadcast time-slot/day change
+  as its own structural first** — strong-looking hits (Bachelor in
+  Paradise S09 Thursday move, Shark Tank S17 Friday→Wednesday, Hell's
+  Kitchen S14 winter premiere, Shark Tank S04 first fall premiere) all
+  already staked verbatim at `the-calendar-moved-the-format-didnt`
+  (craft, 3 shows) and `the-schedule-didnt-ask-permission`. (4) **a
+  season that ran opposite a major real-world event, referenced in its
+  own text** — grepped `Super Bowl|Olympics|World Cup|World Series|
+  Grammy|election`; real hits (Survivor S02/S08 post-Super-Bowl,
+  DWTS S18/S23/S25/S26 Olympics-timed, SYTYCD S06 World Series
+  conflict) but SYTYCD's hit is already spent at
+  `the-schedule-didnt-ask-permission` rank 6, leaving only 2 distinct
+  shows (Survivor, DWTS) — short of the ≥3-show floor. Adjacent leads
+  also spot-checked and killed: opening-titles/title-sequence change
+  (every hit already staked 2-5x over on existing lists — Real World
+  S07, The Apprentice S15, Ink Master's five dedicated lists), clip-
+  show/recap-as-a-first (zero hits), remote/virtual judging (zero
+  hits), season filmed across two continents (only 2 hits, sub-floor),
+  HD/4K-shift-as-a-first (zero hits), election/inauguration-timed
+  premiere (zero hits). No fresh ground found; no ledger row changed.
+  Sixteenth consecutive same-day zero-ship, reconfirming the standing
+  verdict on issue #758: the catalog is saturated at current density
+  under every axis triable without fabricating facts — the next
+  actionable Rule 3 lead is a new season landing (Rule 2 unstalling),
+  not further re-slicing of already-mined seasons.
 
 ## Notes
 
