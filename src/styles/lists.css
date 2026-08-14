@@ -824,6 +824,7 @@ h1.list-title {
   color: var(--color-ink-1);
 }
 .entry-title {
+  margin: 0;
   font-family: var(--font-family-serif);
   font-weight: 500;
   font-size: 22px;

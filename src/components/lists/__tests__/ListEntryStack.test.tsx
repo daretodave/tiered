@@ -145,6 +145,23 @@ describe('<ListEntryStack>', () => {
     ).toMatch(/The 2, in order\./)
   })
 
+  it('renders each entry title as an h3 so ranked entries are heading-navigable (critique pass-121)', () => {
+    render(
+      <ListEntryStack
+        theme={theme({
+          entries: [
+            { show: 'survivor', season: 41, rank: 2, title: 'Second.', blurb: 'b' },
+            { show: 'survivor', season: 1, rank: 1, title: 'First.', blurb: 'a' },
+          ],
+        })}
+        showsBySlug={showsMap([show()])}
+      />,
+    )
+    const headings = screen.getAllByRole('heading', { level: 3 })
+    expect(headings).toHaveLength(2)
+    expect(headings.map((h) => h.textContent)).toEqual(['First.', 'Second.'])
+  })
+
   it('entries-meta scopes the editor-ranking phrase to "Editor\'s pick" — reserves "Editor\'s Canon" for the per-show canon, with a straight ASCII apostrophe (critique pass-24 #275)', () => {
     const { container } = render(
       <ListEntryStack

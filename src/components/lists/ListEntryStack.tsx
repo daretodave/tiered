@@ -61,7 +61,7 @@ export function ListEntryStack({ theme, showsBySlug, seasonSlugByKey }: ListEntr
                     <span aria-hidden="true">·</span>
                     <span>{seasonLabel}</span>
                   </span>
-                  <span className="entry-title">{entry.title}</span>
+                  <h3 className="entry-title">{entry.title}</h3>
                   <span className="entry-blurb">{entry.blurb}</span>
                 </span>
                 <span className="entry-arrow" aria-hidden="true">
