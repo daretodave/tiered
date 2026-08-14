@@ -392,10 +392,10 @@ Canada's border-crossing swing or Texas's format overhaul. The
 Charlotte, Greenville and Asheville staging is a competent
 regional immersive in the Wisconsin-Houston-Kentucky mold,
 Kristen Kish's third season at the host chair with no
-judging-panel change, and the roster's life-partners-and-twin-
-brothers wrinkle gives the cast real texture without reshaping
-the format. A season that argues on structure, narrowly, and
-wins the case.
+judging-panel change, and the roster's
+life-partners-and-twin-brothers wrinkle gives the cast real
+texture without reshaping the format. A season that argues on
+structure, narrowly, and wins the case.
 
 ## 21. Wisconsin
 
