@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-11 at commit 55bf8186
-> Pass count: 61
+> Last pass: 2026-08-13 at commit 1ad8b034
+> Pass count: 62
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,72 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 62 (2026-08-13, commit 1ad8b034, cloud) — 0 new phase-shape
+     candidates filed; reinforced candidate #33 with today's most
+     intense content-gate starvation evidence yet (11 same-day Rule-3
+     zero-ship passes, both informal fallback wells — episodes_caption
+     drain and CRITIQUE pass-120 — spent by mid-day; see the update
+     appended to #33 above).
+     Window since pass 61 (55bf8186, 2026-08-11T16:48:32Z): 87 commits /
+     ~7 hours. Both thresholds met (20 commits comfortably; the 48h
+     clock hadn't independently elapsed, but the commit-count threshold
+     alone is sufficient per march.md Step 3c condition 2's OR logic).
+     Preceding dispatch context: march Step 1 (triage) found 0
+     unlabeled issues. Step 1.5: season-sweep last ran 2026-08-09, next
+     due 2026-08-16 — not due; show-add stays LOCKED (CADENCE gap table
+     unchanged, 42 shows / 43 gap-slots, all starred/confirmed-but-
+     unaired per today's own re-verification passes). Step 2.0's
+     shipping-mode gate is lifted (Phase 36 [x]); critique gate checked
+     and not due (8 commits / ~7h since pass 120's last pass, both
+     below the 12-commit/24h threshold). Step 3a/3b empty. Step 3b.5:
+     the standing Rule 2 drain row (score 4.5, category content-gaps)
+     would mechanically fire, but today's own commit history already
+     shows 11 consecutive same-day Rule-3 zero-ship passes plus both
+     established CRITIQUE/AUDIT fallback drains (episodes_caption,
+     pass-120 findings) fully spent — a twelfth same-day search judged
+     near-zero expected value on the strength of that same-day evidence
+     alone, the identical substitution logic pass 61 used two days ago.
+     `/expand`'s own gate was independently open (87 commits since pass
+     61, posture bold, real signals pending — CRITIQUE.md's 32 Pending
+     rows — no phase/data work), making this a well-justified
+     substitution rather than an arbitrary skip.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): unchanged in shape from
+       pass 61 — e2e-full crawl timeout (#34) and night.yml starvation
+       (#35) both cloud-blocked, the-voice corruption (#36)
+       oversight-parked, YEAR_TENURE_RE gap (score 2.7) still below
+       filing threshold, theme-description-budget LOW row unchanged.
+       No new non-content-gaps row crossed the filing threshold.
+     - plan/CRITIQUE.md Pending: 32 rows (down from the 33 issue #758's
+       last comment cited, after today's list-detail stat fix). All
+       single-page LOW/MED content or chrome nits, or the two standing
+       `[needs-user-call]` rows (the-shows "Lists revised" naming
+       question, `/u/[handle]` zeroed-stat-scaffold question) already
+       flagged for a human call — no new clustering pattern distinct
+       from existing candidates #25/#28/#29's scope. Checked the one
+       previously-uncaptured LOW (search input / comment textarea
+       `outline:none` with no `focus-visible` replacement, critique
+       pass-100) against existing candidates — no match, but it's a
+       single small CSS fix (not confirmed by interactive tab-through
+       either), correctly `/iterate`-sized rather than phase-shape.
+     - Triage backlog (`triage:loop-queued`): 2 open issues (#754
+       content-extend mirror, #636 e2e-full mirror, already covered by
+       #34) — no new clustering pattern. `triage:needs-user`: #758
+       (this exact starvation pattern, mirrors #33) gained an eighth
+       same-day status comment today confirming the fallback-well
+       exhaustion; no new issue.
+     - spec.md / design/: no diff since pass 61 (`git log
+       55bf8186..HEAD -- spec.md design/` empty) — no drift signal.
+     - Data growth: 68 shows / 1046 season files, incremental growth
+       consistent with steady-state Rule 2 drain, not a step-change.
+     - Commit pattern since pass 61: 32 `content:`, 26 `audit:`, 18
+       `critique:`, 8 `fix:`, 2 `digest:`, 1 `expand:` — dominated by
+       the same content-gate-substitution pattern candidate #33
+       describes, consistent with prior passes' commit-shape findings.
+     No new candidate met the bar for a fresh filing — every concrete
+     gap already has an open candidate (#33/#34/#35/#36) tracking it;
+     this pass's contribution is today's sharpest #33 evidence yet. -->
 
 <!-- Pass 61 (2026-08-11, commit 55bf8186, cloud) — 0 new phase-shape
      candidates filed; escalated candidate #33 with the first
@@ -1158,6 +1224,43 @@ carve-out ahead of Step 3b.5, extended to gate ahead of Step 3c too)
 remains correct and is now the highest-priority unpromoted candidate
 in this file, since it is the one candidate whose absence measurably
 cost a tick today.
+
+**Update (2026-08-13, expand pass 62, cloud march):** the pattern
+intensified further today, though the loop's own resilience held.
+Today alone produced **eleven consecutive same-day Rule-3 zero-ship
+passes** (commits through `1ad8b034`), each documented with a
+distinct dead axis in `plan/LISTS.md`'s Ideas log — Rule 2 stayed
+fully stalled the entire day (CADENCE gap table unchanged, nearest
+dated finale `american-ninja-warrior` S18 still 4 days out). Critically,
+today's ticks also exhausted **both** of the informal fallback wells
+that had been absorbing the starvation on prior days: the
+`episodes_caption` bare-restatement content drain hit corpus-zero
+(commit `51112015`), and all three `plan/CRITIQUE.md` pass-120
+findings got fixed (`037fcdeb`, `b56f4195`, `2d6f2606`, `62329f4a`).
+By the eighth same-day occurrence (per issue #758's own running
+comment thread, run `31740198466`), the tick had to reach for the
+next-cheapest mechanical CRITIQUE.md finding (pass-100's list-detail
+stat treatment) specifically because the two established redirect
+targets were spent — direct confirmation of this candidate's core
+claim that the fallback well is finite, not infinite. This cloud
+march tick (`/march` pass following the eleventh zero-ship commit)
+is itself a second data point: with CRITIQUE.md's Pending queue back
+down to 32 rows (all LOW/MED single-page content nits or two
+standing `[needs-user-call]` rows, none scoring high enough to
+mechanically outrank the standing 4.5 content-gaps row) and no fresh
+non-content-gaps AUDIT row above threshold, this tick again diverted
+directly to Step 3c (`/expand`) rather than force a twelfth same-day
+Rule-3 search — the same well-justified substitution pass 61
+pioneered two days ago, now recurring for a second time. Net: the
+self-recovery mechanism is still functioning (today shipped 3 real
+`fix:` commits plus this expand pass, not pure content churn), but it
+increasingly depends on ad hoc tick-level judgment calls to find
+*something* non-content to do rather than a deterministic rule — and
+today's density (11 zero-ship passes, both wells drained) is the
+second-highest on record after pass 61's 25-pass day. No change to
+score or scope sketch. Still the highest-priority unpromoted
+candidate in the file; ripe for `/oversight` promotion whenever a
+human session next reviews this file.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
