@@ -8941,6 +8941,51 @@ last time a curator actually looked.
   under every axis triable without fabricating facts — the next
   actionable Rule 3 lead is a new season landing (Rule 2 unstalling),
   not further re-slicing of already-mined seasons.
+- **2026-08-14, seventeenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled (CADENCE
+  gap table unchanged, 42 shows / 43 gap-slots, every row starred
+  confirmed-but-unaired; nearest dated finale american-ninja-warrior
+  S18 on 2026-08-17 still 3 days out). Tried three fresh axes not
+  covered by the prior sixteen same-day passes: (1) **prize-structure
+  change as a stated structural fact** — 6 genuine candidates across 6
+  distinct shows (ANW S7 grand-prize doubling to $1M, Drag Race S16
+  raised prize + rate-a-queen, Ink Master S9 "Shop Wars" shop-not-artist
+  prize + S14's $250K jump, Drag Race All Stars S9's charity-not-cash
+  franchise first, The Circle S4's raised prize pool, Too Hot to Handle
+  S2/S3's prize mechanics) but every one already staked, several 2-3x
+  over, across `the-finals-never-run-the-same-course-twice`,
+  `the-season-structure-never-holds-still`,
+  `the-team-rule-never-makes-it-to-a-second-season`,
+  `the-team-never-means-the-same-thing-twice`,
+  `same-crown-new-price-tag`,
+  `no-season-sends-a-queen-home-the-same-way-twice`,
+  `seven-ways-to-break-the-same-app`, `familiar-faces-wrong-franchise`,
+  `sight-unseen-already-committed`, and five separate Too Hot to Handle
+  lists (`every-season-strikes-a-different-bargain-with-lana`,
+  `the-batch-drop-settles-in`, `tried-once-never-repeated`,
+  `closing-statement`, `built-for-the-drop`, `missing-on-purpose`).
+  (2) **showrunner/executive-producer change named in-text** (creative
+  leadership, distinct from the already-killed composer/editor/DP
+  axis) — essentially zero real hits: SYTYCD S17 only notes Nigel
+  Lythgoe *remaining* EP (no change), Project Runway S17's "new
+  creative team" refers to host/mentor/judges (the already-killed
+  host-substitution axis), Hell's Kitchen S8 "New Regime" is a kitchen-
+  brigade season nickname, not a production-leadership fact. The
+  corpus doesn't narrate EP/showrunner turnover as an in-text
+  structural fact anywhere. (3) **episode-runtime/format change**
+  (hour → 90-minute/two-hour, live component added/dropped) — 5+
+  distinct-show hits (Amazing Race S35/S36, Big Brother S27, Married
+  at First Sight S10, SYTYCD S9, Survivor S45, plus ANW S15/S16,
+  Amazing Race S30, Real World S1, Bachelor S24, Masked Singer S14,
+  Top Chef S20) but all already staked as the complete entry list of
+  `running-long-running-short` (craft), whose own description names
+  this exact axis — nothing left un-covered. No fresh ground found; no
+  ledger row changed. Seventeenth consecutive same-day zero-ship,
+  reconfirming the standing verdict on issue #758: the catalog is
+  saturated at current density under every axis triable without
+  fabricating facts — the next actionable Rule 3 lead is a new season
+  landing (Rule 2 unstalling), not further re-slicing of already-mined
+  seasons.
 
 ## Notes
 
