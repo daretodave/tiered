@@ -9018,6 +9018,25 @@ last time a curator actually looked.
   the catalog is saturated at current density — the next actionable
   Rule 3 lead is a new season landing (Rule 2 unstalling), not further
   re-slicing of already-mined seasons.
+- **2026-08-14, cloud march tick: redirected before a nineteenth
+  same-day search attempt.** Re-confirmed the same two blockers the
+  eighteenth pass just closed out (Rule 2: nearest dated finale
+  american-ninja-warrior 2026-08-17, still 3 days out; Rule 3: the
+  full 182-row ledger plus all eighteen same-day passes above show
+  every checked angle class exhausted, per issue #758's standing
+  verdict). Rather than re-run a search the last eighteen consecutive
+  attempts (spanning judge/coach panels, in-franchise branding,
+  mid-season twists, artifacts, aftershows, non-elimination mercy
+  rounds, casting grudges, roster-wipe applications, and group-trip
+  framing) already confirmed dry, redirected this tick's slot to a
+  pending `plan/CRITIQUE.md` finding instead, following the 38443ff7
+  precedent: fixed the jersey-shore Season 1 FORMAT stat-tile
+  caption's stray lowercase open ("the founding ensemble cast" →
+  "The founding ensemble cast"), matching the sentence-case
+  convention every other stat-tile caption in the corpus follows.
+  No ledger row changed by this entry itself (logged for streak
+  continuity — a Rule-3 search was deliberately not attempted this
+  tick, not attempted-and-failed).
 
 ## Notes
 

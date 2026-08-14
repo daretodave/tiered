@@ -10,7 +10,7 @@ eyebrow: "Premiered December 2009 · MTV"
 lede: "Eight roommates share one shore house near the Seaside Heights boardwalk for a single summer, and MTV builds its format around the group's own energy — gym, tanning, and laundry become the season's unofficial refrain almost immediately."
 pull: "A shore house, eight strangers, and one summer — the format MTV would barely touch for the rest of the show's run."
 format_summary: "Docusoap · shore house ensemble"
-format_caption: "the founding ensemble cast"
+format_caption: "The founding ensemble cast"
 cast_size: 8
 cast_size_caption: "Eight roommates sharing one shore house"
 premiere_caption: "MTV · series premiere"
