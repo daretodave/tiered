@@ -1262,6 +1262,29 @@ score or scope sketch. Still the highest-priority unpromoted
 candidate in the file; ripe for `/oversight` promotion whenever a
 human session next reviews this file.
 
+**Update (digest 2026-08-14):** the `episodes_caption` fallback well
+— the specific redirect target that absorbed the 08-12/08-13
+starvation (248→0 warnings, seven shows drained) — hit true
+corpus-zero mid-tick yesterday (commit `51112015`, chopped the final
+show). With that well now permanently gone (not just temporarily
+drained, since the whole warning class is fixed), today's window
+(10 more zero-ship passes, ninth through eighteenth, spanning
+08-13 22:12 through 08-14 10:42) shows the loop leaning on the two
+remaining wells instead: `/critique` ran three passes in the window
+(119 no findings, 120 three findings, 121 five findings) and
+`/expand` ran pass 62 — both wells that candidate #33's 08-11 update
+already flagged as *not* self-sustaining on their own (critique's
+Pending queue only refills on a schedule, expand is posture-gated).
+Today is the first day the loop has had to run this leanly-provisioned
+on fallback substitutes since the pattern was first diagnosed — one
+fewer well than at any prior digest update. `plan/CRITIQUE.md`'s
+Pending count is back up to 33 rows (from 32 at the 08-13 update),
+so the near-term substitution supply is intact, but the structural
+point stands: every well this candidate's absence has been living off
+is either finite (episodes_caption, now spent) or intermittent
+(critique refill, expand posture). No change to score or scope
+sketch. Still the highest-priority unpromoted candidate in the file.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
