@@ -1,5 +1,48 @@
 # CRITIQUE
 
+> Last pass: 2026-08-14 at commit d63bebc5
+> Pass count: 123
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 123 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/survivor/season/survivor-50`, `/shows`, `/themes`,
+> `/themes/a-change-of-address`) and authed (`/u/e2e`,
+> `/shows/survivor/season/survivor-50`,
+> `/shows/top-chef?view=community`, `/themes/a-change-of-address`,
+> `/sign-in`) walks ran, desktop + mobile, zero console
+> errors/failed first-party requests/mobile overflow across both,
+> no spoiler leaks; `/sign-in` correctly redirected the
+> already-signed-in visitor to `/`. Auth handshake confirmed live
+> (authenticated:cloud). **2 new findings filed** (both Pending,
+> MED, none HIGH): Survivor 50's fan-vote mechanics list ("tribe
+> colors, food rations, the final stretch") repeats across four
+> separate fields on the same season page (`pull`,
+> `format_caption`, a `watch_list` entry, and the body paragraph)
+> — a side effect of the pass-115 fix that drew `format_caption`'s
+> replacement text from `pull`; and the freshly-shipped
+> `a-change-of-address` themed list's #1 and #2 entries (both
+> Below Deck Down Under) open with near-duplicate "identity was/
+> built its identity on Australian anchorages" phrasing back to
+> back. One anon-pass observation from the reader sub-agent
+> (curly vs. straight apostrophe inconsistency in `layout.tsx`/
+> `(default)/page.tsx` meta descriptions and `tierLede.ts`) was
+> reviewed and dropped — pass-24 #275's closure note explicitly
+> carves out `layout.tsx` metadata and `(default)/page.tsx`
+> metadata as intentionally keeping `&rsquo;` typography
+> ("narrative editorial body copy... keeps its intentional
+> `&rsquo;` typography — only the two CSS-uppercased label
+> surfaces flipped"); re-filing would relitigate an already-
+> adjudicated convention, not surface a bug. The two already-open
+> Pending rows this pass's page set revisited (`/u/e2e` bare
+> record scaffold, Top Chef community "voters this week" wording)
+> were reconfirmed still open, not re-filed. No pending HIGH
+> competes for iterate.
+>
+> ───── Pass 122 metadata kept below for history ─────
+>
 > Last pass: 2026-08-14 at commit f7baa2c9
 > Pass count: 122
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2811,6 +2854,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [authed] /shows/survivor/season/survivor-50 — the same fan-vote mechanics list ("tribe colors, food rations, the final stretch") appears four separate times on the site's newest, highest-traffic season page: the `pull` field, the FORMAT stat tile's `format_caption`, a `watch_list` entry body, and the main narrative body paragraph. Confirmed via direct file read of `content/shows/survivor/seasons/50-survivor-50.md`: `pull` (line 13) "...tribe colors, food rations, the final stretch, and the immunity necklace itself were all put to a fan vote..."; `format_caption` (line 18) "Fans voted on tribe colors, food rations, and the final stretch"; `watch_list` Ep 2 `body` (line 26) "...which format tweaks — necklace design, tribe colors, food rations — actually change how people play"; main body (line 38) "...voting on tribe colors, food rations, the final stretch, and more across four rounds..." Root cause: the pass-115 fix that resolved the FORMAT/CAST SIZE tile duplication (issue history at pass-115, this file) deliberately drew the `format_caption` replacement text from the `pull` field's own phrasing, which introduced this cross-field echo as a side effect — the `watch_list` and body occurrences predate that fix and were never reconciled against it. A reader moving through the page (THE TAKE → FORMAT tile → What to watch for → shape of the season) hits the identical three-item list four times. Fix: keep `format_caption` as the sole owner of the literal "tribe colors, food rations, the final stretch" list (it's the tile whose job is naming the mechanic); rewrite `pull`, the `watch_list` Ep 2 entry, and the body paragraph to reference the fan vote's *effect* rather than re-enumerating the same three items each time (e.g. body could focus on the scale — "four rounds of voting before the season even started" — instead of repeating the item list). Content-only, one file, four fields. Spoiler discipline P0 intact — no outcome/elimination/winner facts touched. (URL: /shows/survivor/season/survivor-50, source: critique-pass-123)
+
+- [ ] [MED] [authed] /themes/a-change-of-address — the list's #1 and #2 entries (Below Deck Down Under S03 and S04, back-to-back at the top of a freshly-shipped 12-entry list) open their blurbs with near-identical phrasing establishing the same premise twice in a row. Confirmed via direct file read of `content/themes/a-change-of-address.md`: entry #01 blurb opens "Below Deck Down Under's identity was built on Australian anchorages, and season three is the one that actually leaves them first..."; entry #02 blurb opens "Below Deck Down Under built its identity on Australian and Pacific anchorages. Season four moves the whole operation to the Caribbean..." Reading top to bottom, the "[show]'s identity was/built its identity on Australian anchorages" clause repeats verbatim in substance at the start of both entries, with #02 restating a premise #01 already established one entry above. Fix: rewrite entry #02's opener to skip re-establishing the "built its identity on Australian anchorages" premise (already stated in #01) and lead directly with what's new about S04 — the Caribbean relocation and the charter crossover. Content-only, one field, one entry. Spoiler discipline P0 intact — no outcome/elimination facts touched, and neither show is an elimination format. (URL: /themes/a-change-of-address, source: critique-pass-123)
 
 - [x] [MED] [anon] /shows/top-chef/season/carolinas — the FORMAT stat tile's value line restates the exact episode count the adjacent EPISODES tile already leads with, the same recurring stat-tile-duplication defect class already fixed across many other shows/seasons (Bake Off all 16 files, Big Brother S27, Southern Charm, Below Deck Med S11, Survivor 50), now reproducing on a different field pairing on this season. Confirmed via rendered page text: "EPISODES / 14 / FORMAT / Regional immersive · 14 eps / Last Chance Kitchen's re-entry point moves later this season" — `content/shows/top-chef/seasons/23-carolinas.md` `format_summary: "Regional immersive · 14 eps"` repeats the `ep_count: 14` value already shown one tile earlier; `format_caption` was already fixed at critique-pass-93 to name the real format tweak (LCK re-entry rule) and stays untouched by this finding. Fix: drop the `· 14 eps` suffix from `format_summary`, leaving just `"Regional immersive"` (or replace it with a genuinely distinct format fact), so EPISODES is the sole owner of the episode count. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/top-chef/season/carolinas, source: critique-pass-122) — RESOLVED: dropped the `· 14 eps` suffix from `format_summary`, leaving `"Regional immersive"` — matches the concise, ep-count-free style already used across every other Top Chef season's `format_summary` (e.g. S22's "International road show", S21's "Road show · Wisconsin"). EPISODES tile remains the sole owner of the episode count; `format_caption`'s LCK re-entry framing untouched.
 
