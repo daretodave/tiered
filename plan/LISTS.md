@@ -8860,6 +8860,43 @@ last time a curator actually looked.
   catalog is saturated at current density and the next actionable
   Rule 3 lead is a new season landing (Rule 2 unstalling), not further
   re-slicing of already-mined seasons.
+- **2026-08-14, fifteenth same-day Rule-3 pass (content-curator direct
+  invocation): zero-ship.** Re-confirmed Rule 2 still stalled and
+  re-read the full 182-row Ledger plus all fourteen prior 2026-08-13/14
+  same-day passes' killed-axis list before starting (gender-split
+  casting through franchise-crossover-as-standalone-special — see the
+  fourteenth pass immediately above for the complete enumeration, not
+  repeated here). First independently re-verified the brief's
+  single-show-gap claim rather than trusting it: grepped all seven
+  named shows (alone-australia, alone-frozen,
+  alone-the-skills-challenge, below-deck-adventure,
+  below-deck-down-under, perfect-match, rhodubai) against every
+  `category: single` theme file — zero hits in any single list — and
+  cross-checked each show's season count (3/1/1/1/4/4/2) against the
+  10-24-entry floor. Confirmed closed. Tried three fresh axes: (1)
+  **leaderboard/scoring-system introduced as a stated first** — only
+  one catalog-wide hit (American Ninja Warrior S15), short of the
+  floor. (2) **physical set/kitchen/workroom redesign distinct from
+  cast turnover or relocation** — grepped
+  `rebuilt|redesigned|renovated` catalog-wide; nearly every hit is
+  cast-roster language already staked at existing roster-churn lists
+  (`the-founding-five-kept-getting-replaced`,
+  `some-seasons-rebuild-the-roster-others-just-move-the-furniture`,
+  `the-cast-outgrew-the-format`), no distinct physical-space fact
+  survives. (3) **"back to basics" — a season explicitly dialing down
+  accumulated twists/experiments to play the format straight** — this
+  one looked strong on first grep (Amazing Race S32, Bachelor S27,
+  SYTYCD S08/S14, Summer House S07 all carry real
+  "back-to-basics"/"structural experiments" language), but the ledger
+  cross-check killed it outright: `played-it-straight` (tone, 13
+  entries) already stakes Amazing Race S32 (rank 3) and Bachelor S27
+  (rank 2) on this exact thesis with near-identical framing — not a
+  fresh angle, just a rediscovery of an existing list's spine. No
+  fresh ground found; no ledger row changed. Fifteenth consecutive
+  same-day zero-ship, independently reconfirming the standing verdict
+  on issue #758: the catalog is saturated at current density and the
+  next actionable Rule 3 lead is a new season landing (Rule 2
+  unstalling), not further re-slicing of already-mined seasons.
 
 ## Notes
 
