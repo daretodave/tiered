@@ -7,6 +7,7 @@ premiere_date: "2012-01-05"
 ep_count: 11
 location: "Seaside Heights, New Jersey"
 eyebrow: "Premiered January 2012 · MTV"
+take_h2: "A tighter, quicker lap."
 lede: "The cast returns to Seaside Heights after the Italy season for the shortest run in the show's history, eleven episodes with all seven roommates back and no roster changes."
 pull: "Home turf again, the same seven roommates, and the tightest episode order of the series."
 format_summary: "Docusoap · shore house, shortest run"

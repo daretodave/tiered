@@ -7,6 +7,7 @@ premiere_date: "2009-12-03"
 ep_count: 9
 location: "Seaside Heights, New Jersey"
 eyebrow: "Premiered December 2009 · MTV"
+take_h2: "The format arrives fully formed."
 lede: "Eight roommates share one shore house near the Seaside Heights boardwalk for a single summer, and MTV builds its format around the group's own energy — gym, tanning, and laundry become the season's unofficial refrain almost immediately."
 pull: "A shore house, eight strangers, and one summer — the format MTV would barely touch for the rest of the show's run."
 format_summary: "Docusoap · shore house ensemble"

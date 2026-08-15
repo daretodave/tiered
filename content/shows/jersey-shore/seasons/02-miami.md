@@ -7,6 +7,7 @@ premiere_date: "2010-07-29"
 ep_count: 13
 location: "South Beach, Miami Beach, Florida"
 eyebrow: "Premiered July 2010 · MTV"
+take_h2: "The format's first real test."
 lede: "MTV moves the house south for the summer, trading the Seaside Heights boardwalk for South Beach's neon sprawl. The same ensemble chemistry that built the format's reputation gets tested against a new coastline, a new house, and the show's longest episode order yet."
 pull: "New coastline, same house dynamic — Miami tests whether the format travels beyond the boardwalk."
 format_summary: "Docusoap · shore house on the road"

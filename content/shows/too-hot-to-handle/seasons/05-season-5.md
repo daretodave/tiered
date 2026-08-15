@@ -8,6 +8,7 @@ ep_count: 10
 location: "Emerald Pavilion, Turks and Caicos"
 host: "Lana (AI voice)"
 eyebrow: "Aired summer 2023 · the format running steady, not reinventing itself"
+take_h2: "Confident, and nothing new."
 lede: "Season five returns to the Emerald Pavilion and plays the format straight — the same $200,000 starting prize, the same rolling-cast structure as season four, ten singles at the start and four more arriving later. No new mechanic, just the format running at full confidence."
 pull: "Sometimes the best move is not to change anything."
 format_summary: "Villa retreat · rolling cast"

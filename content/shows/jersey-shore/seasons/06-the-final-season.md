@@ -7,6 +7,7 @@ premiere_date: "2012-10-04"
 ep_count: 13
 location: "Seaside Heights, New Jersey"
 eyebrow: "Premiered October 2012 · MTV"
+take_h2: "A victory lap, not a reinvention."
 lede: "MTV closes out the original run with all seven roommates back in Seaside Heights for one last summer, the final season before the format wraps for good."
 pull: "Thirteen episodes, the same seven roommates, and the last lap in the house that built the format."
 format_summary: "Docusoap · shore house, series finale season"

@@ -7,6 +7,7 @@ premiere_date: "2011-08-04"
 ep_count: 12
 location: "Florence, Italy"
 eyebrow: "Premiered August 2011 · MTV"
+take_h2: "Away from home turf, intact."
 lede: "MTV sends the cast overseas for the only time in the series' run, swapping the shore house for an apartment in Florence, Italy, with the same seven roommates from the prior season and no roster changes."
 pull: "The one season with no boardwalk in sight — a Tuscan apartment standing in for the shore house."
 format_summary: "Docusoap · shore house abroad"

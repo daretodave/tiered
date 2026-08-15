@@ -8,6 +8,7 @@ ep_count: 10
 location: "Turks and Caicos Islands"
 host: "Lana (AI voice)"
 eyebrow: "Released January 2022 · the whole season dropped in a single day"
+take_h2: "The format's biggest jump yet."
 lede: "Season three returns to Turks and Caicos, doubles the starting cash prize to $200,000, and reverts to a dual winning-couple-plus-single prize structure. It's the only season in the run Netflix released as a full ten-episode drop instead of a staggered rollout."
 pull: "Ten episodes, one day, twice the prize — the show's biggest swing at scale."
 format_summary: "Villa retreat · dual-category prize"
