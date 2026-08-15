@@ -9292,6 +9292,21 @@ last time a curator actually looked.
   suggested. Content-only, one field. No ledger row changed by this
   entry itself (a Rule-3 search was deliberately not attempted this
   tick, not attempted-and-failed).
+- **2026-08-15, cloud march tick: redirected, no new Rule-3 search
+  attempted.** Same two blockers persist: Rule 2 still stalled (CADENCE
+  gap table unchanged, all rows starred/confirmed-but-unaired; nearest
+  dated finale american-ninja-warrior S18 still two days out at
+  2026-08-17). Rule 3 confirmed exhausted (issue #758's standing
+  saturation verdict, re-confirmed multiple times same-day already; not
+  re-run a search several immediately preceding same-day ticks already
+  confirmed dry). Redirected this tick's slot to the pending
+  `plan/CRITIQUE.md` pass-91 LOW finding instead: traitors-uk series-1's
+  six-word phrase "Ardross Castle in the Scottish Highlands" repeated
+  verbatim between the hero lede and the "Shape of the season" body
+  paragraph. Reworded the body's second reference to "the castle," the
+  exact fix the finding suggested. Content-only, one field. No ledger
+  row changed by this entry itself (a Rule-3 search was deliberately
+  not attempted this tick, not attempted-and-failed).
 
 ## Notes
 
