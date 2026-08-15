@@ -19,6 +19,7 @@ describe('<CommunityLiveStrip>', () => {
     expect(strip).toHaveTextContent('Thursday 9pm ET')
     expect(strip).toHaveTextContent('mirroring the canon')
     expect(strip).toHaveTextContent('open to anyone')
+    expect(strip).toHaveTextContent('voters, last 7 days')
   })
 
   it('renders Supabase-derived recompute, voters and version when live', () => {

@@ -45,7 +45,7 @@ export function CommunityLiveStrip({
           next update · <b>{NEXT_RECOMPUTE_LABEL}</b>
         </span>
         <span>
-          voters this week · <b>{votersThisWeek.toLocaleString()}</b>
+          voters, last 7 days · <b>{votersThisWeek.toLocaleString()}</b>
         </span>
         <span>
           status · <b>{status}</b>

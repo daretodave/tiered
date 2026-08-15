@@ -9257,6 +9257,25 @@ last time a curator actually looked.
   error (commit 7a71f9af). No ledger row changed by this entry itself
   (a Rule-3 search was deliberately not attempted this tick, not
   attempted-and-failed).
+- **2026-08-15, cloud march tick: redirected, no new Rule-3 search
+  attempted.** Same two blockers persist: Rule 2 still stalled (CADENCE
+  gap table unchanged, all rows starred/confirmed-but-unaired; nearest
+  dated finale american-ninja-warrior S18 still two days out at
+  2026-08-17). Rule 3 confirmed exhausted (the immediately preceding
+  same-day tick's search closed dry; issue #758's saturation verdict
+  unchanged; not re-run a search the preceding tick already confirmed
+  dry). Redirected this tick's slot to the pending `plan/CRITIQUE.md`
+  pass-122 MED finding instead, per the established workaround
+  (issue #758): the top-chef community view's live-status strip
+  aggregate read "VOTERS THIS WEEK · 0" directly above ranking rows
+  showing nonzero all-time vote counts, an internal-contradiction read
+  even though both numbers were individually honest (one trailing-7d,
+  one all-time, with no scope label distinguishing them). Relabeled to
+  "voters, last 7 days" in `src/components/canon/CommunityLiveStrip.tsx`
+  — the exact fix the finding suggested, same value, explicit time-scope
+  (commit pending this tick). No ledger row changed by this entry itself
+  (a Rule-3 search was deliberately not attempted this tick, not
+  attempted-and-failed).
 
 ## Notes
 
