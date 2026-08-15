@@ -9149,6 +9149,78 @@ last time a curator actually looked.
   the sole owner of the literal item list (commit f1427b29; full
   closure logged in `plan/CRITIQUE.md` Done). No ledger row changed by
   this entry itself.
+- **2026-08-15, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship.** Re-confirmed the standing blockers before starting:
+  Rule 2 season-fill stalled (`plan/CADENCE.md` gap table fully starred,
+  confirmed-but-unaired), and Rule 3 is deep into the saturation streak
+  logged through 2026-08-14 (nineteen-plus same-day zero-ship passes plus
+  several redirects, issue #758's standing verdict). Read the full
+  212-row Ledger and the Ideas-log tail before starting. Tried four fresh
+  axes not explicitly enumerated in the 2026-08-14 killed-axis lists: (1)
+  **a casting/representation milestone stated as its own structural
+  fact** (first same-sex couple, first transgender contestant, first
+  same-sex commitment ceremony, first HIV-positive cast member, etc.) —
+  grepped `first (openly gay|same-sex|transgender|nonbinary|out gay|
+  interracial)|first .*(HIV|Asian American|Hispanic American)` across
+  every `content/shows/**/*.md` and found four strong, well-grounded,
+  cross-show hits (married-at-first-sight-australia S03, bachelor-in-
+  paradise S06, americas-next-top-model S11, the-real-world S03) —
+  looked like a clean 4-show new list on first read. Killed outright
+  once cross-checked against the ledger: all four are already staked,
+  fact-for-fact, at `season-one-doesnt-own-every-first` (craft, ranks
+  1/2/3/13) — that list's own thesis ("a casting milestone, a location
+  breakthrough, a structural rule nobody had tried before," landing
+  outside the debut season) is this exact candidate list, already
+  shipped fourteen shows deep with real headroom under the 24-cap. Not a
+  partial overlap — near-verbatim restatement of already-shipped
+  entries. (2) **weather or natural-disaster production disruption**
+  (hurricane/storm/wildfire forcing a relocation or delay) — grepped
+  `hurricane|wildfire|typhoon|storm forced|weather.*evacuat` catalog-wide:
+  zero hits. (3) **a themed casting cohort drawn from a shared real-world
+  profession** (military veterans, first responders) as the season's own
+  stated casting brief — grepped `military veteran|first responders|
+  active-duty|servicemembers`: zero hits. (4) **a self-elimination/quit/
+  forfeit mechanic** stated as a structural first — grepped `self-
+  eliminat|voluntarily left the (game|competition|show)|forfeits? (the|
+  their) (spot|place)|quit the (game|show|competition)`: zero hits.
+  Also chased a fifth, initially promising lead: **a season's own text
+  staking an explicit ratings/audience record** (highest-rated, most-
+  watched, record premiere, etc.) as a distinct angle from the milestone-
+  anniversary framing. First checked whether this was already a shipped
+  list at all — it is: `the-season-the-audience-showed-up-all-at-once`
+  (tone, 12 entries/10 shows) already owns this exact thesis. Re-ran the
+  same ratings-record grep the list's own prior extend passes used
+  (`largest audience|biggest premiere|most-watched|record audience|
+  series-best|franchise-best|network record|biggest crowd|drew the
+  largest|series high|highest-rated|record turnout|biggest turnout|
+  record-setting`) across every season file looking for a genuinely new,
+  unstaked hit to extend the list with. One candidate looked clean on
+  first pass — Love Island US S08's "Peacock's biggest Love Island
+  debut yet" / "most-watched season debut in Peacock history" fact,
+  not yet present in `the-season-the-audience-showed-up-all-at-once`
+  itself — and was drafted as a full new entry (rank 5, bare "S08"
+  label per the header-slot marketed-title rule) before a final
+  duplicate-check caught what the list's own 2026-08-09 extend note
+  had already logged: this identical ratings-record fact is already
+  spent at `never-starts-cold` rank 3 ("Season eight's premiere posts
+  Peacock's biggest Love Island debut yet..."), and the list's own
+  2026-08-09 pass had independently re-confirmed and rejected the same
+  candidate for the same reason. Reverted the draft in full (no diff
+  left on `content/themes/the-season-the-audience-showed-up-all-at-once.md`)
+  once the duplicate was confirmed — a near-miss worth logging so a
+  future pass doesn't re-draft the identical entry a third time.
+  Checked every other candidate the broader grep surfaced (masked-singer
+  canon S12, chopped S59) and confirmed both off-thesis (S12's line is
+  an audience-decline observation, not a record; S59's "highest block
+  share" is a programming-block-share fact, not an audience-size fact).
+  No fresh ground found on any of the five axes; no ledger row changed;
+  no `content/themes/` file left modified. This independently
+  reconfirms, via five more distinct search paths, the standing
+  saturation verdict tracked on issue #758: the catalog is dense enough
+  at current size that a genuinely fresh, unstaked cross-show angle is
+  very hard to find without a new season landing (Rule 2 unstalling).
+  Zero-ship, per bearings.md Rule 3's own explicit permission to ship
+  nothing rather than force a duplicate or thin list.
 
 ## Notes
 
