@@ -196,6 +196,39 @@ describe('<ListDetailHero>', () => {
     expect(hero.querySelector('a[href="/shows/top-chef"]')).toBeNull()
   })
 
+  // Critique pass-78/pass-111: when a show repeats across entries, the
+  // Entries/Shows stat pair otherwise reads as an unexplained mismatch
+  // (e.g. "ENTRIES 12 / SHOWS 10") until the reader reaches the repeat
+  // entry. The label switches to "Unique shows" to explain it inline.
+  it('relabels the shows stat "Unique shows" when a show repeats across entries (pass-78/pass-111)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({
+          entries: [
+            { show: 'survivor', season: 41, rank: 1, title: 'A.', blurb: 'a.' },
+            { show: 'survivor', season: 40, rank: 2, title: 'B.', blurb: 'b.' },
+            { show: 'top-chef', season: 1, rank: 3, title: 'C.', blurb: 'c.' },
+          ],
+        })}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+      />,
+    )
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-key')?.textContent).toBe('Unique shows')
+    expect(cell.querySelector('.meta-val')?.textContent?.trim()).toBe('2')
+  })
+
+  it('keeps the bare "Shows" label when entries and shows counts match', () => {
+    render(
+      <ListDetailHero
+        theme={theme()}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+      />,
+    )
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-key')?.textContent).toBe('Shows')
+  })
+
   it('singular meta for a single-entry single-show theme', () => {
     render(
       <ListDetailHero

@@ -13,6 +13,11 @@ type ListDetailHeroProps = {
 export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
   const entryCount = theme.entries.length
   const showCount = shows.length
+  // Critique pass-78/pass-111: when a show repeats (entryCount >
+  // showCount), the bare "Shows" label reads as a counting error next to
+  // "Entries" until the reader reaches the repeat entry further down the
+  // page. "Unique shows" explains the discrepancy inline instead.
+  const showsLabel = entryCount === showCount ? 'Shows' : 'Unique shows'
   const soleShow = shows.length === 1 ? shows[0] : undefined
   const segments = parseTagline(theme.tagline)
   const revised = formatRevisedRelative(theme.last_revised)
@@ -86,7 +91,7 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
           <dd className="meta-val">{entryCount}</dd>
         </div>
         <div className="meta-cell meta-cell--stat" data-testid="list-meta-shows">
-          <dt className="meta-key">Shows</dt>
+          <dt className="meta-key">{showsLabel}</dt>
           <dd className="meta-val">{showCount}</dd>
         </div>
         <div className="meta-cell" data-testid="list-meta-curator">
