@@ -3,6 +3,7 @@ show: below-deck-down-under
 number: 1
 title: "Whitsundays"
 canonical_position: 2
+take_h2: "The franchise plants its flag."
 premiere_date: "2022-03-17"
 location: "Whitsundays, Queensland, Australia"
 host: "Jason Chambers"

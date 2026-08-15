@@ -3,6 +3,7 @@ show: perfect-match
 number: 3
 title: "Season 3"
 canonical_position: 3
+take_h2: "The mixer expands again."
 premiere_date: "2025-08-01"
 ep_count: 10
 aired_year: 2025

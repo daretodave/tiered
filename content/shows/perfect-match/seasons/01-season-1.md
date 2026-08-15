@@ -3,6 +3,7 @@ show: perfect-match
 number: 1
 title: "Season 1"
 canonical_position: 2
+take_h2: "The crossover gimmick, justified."
 premiere_date: "2023-02-14"
 ep_count: 12
 aired_year: 2023

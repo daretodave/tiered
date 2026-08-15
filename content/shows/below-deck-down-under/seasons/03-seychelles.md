@@ -3,6 +3,7 @@ show: below-deck-down-under
 number: 3
 title: "Seychelles"
 canonical_position: 3
+take_h2: "New ocean, new crew."
 premiere_date: "2025-02-03"
 location: "Seychelles, Indian Ocean"
 host: "Jason Chambers"

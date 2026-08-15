@@ -3,6 +3,7 @@ show: perfect-match
 number: 4
 title: "Season 4"
 canonical_position: 4
+take_h2: "A leaner run, wider net."
 premiere_date: "2026-05-13"
 ep_count: 8
 aired_year: 2026
