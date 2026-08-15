@@ -9407,6 +9407,41 @@ last time a curator actually looked.
   drain row for the matching progress note (warning count 844 -> 831).
   No ledger row changed by this entry itself (a Rule-3 search was
   deliberately not attempted this tick, not attempted-and-failed).
+- **2026-08-15, cloud march tick: Rule-3 search attempted and confirmed
+  dry, zero-ship.** Two lines of attack this pass, both dead ends:
+  - **Single-show-list census follow-up.** Extended the 2026-08-11
+    census move (the pass that found 7 shows with zero `category:
+    single` list) to the shows that census didn't fully resolve.
+    Direct-read (not filename pattern-matching) confirmed `alone`
+    already carries `the-ten-items-are-never-the-same-ten-items` (12
+    entries, one per season), `summer-house` already carries
+    `the-roster-never-held-still` (10 entries), `rhop` already carries
+    `full-time-was-a-status-not-a-promise` (10 entries), `jersey-shore`
+    already carries `home-seasons-waited-relocation-seasons-didnt` (6
+    entries, matching its full 6-season count), and `rhom` already
+    carries `the-wait-between-seasons-was-never-the-same-twice` (7
+    entries, matching its full 7-season count). No headroom on any of
+    the five.
+  - **the-vote-left-the-phone-line extension lead.** A cross-referenced
+    note pointed at SYTYCD S08's text/online voting rollout as a
+    candidate rank-5 insert. Drafted the entry, then caught on a full
+    read of this list's own ledger row that the exact candidate was
+    already proposed and rejected three times over (2026-07-30, two
+    passes on 2026-08-05) as a verbatim duplicate of
+    `rulebook-rewritten-every-season` rank 13 — that row explicitly
+    warns future passes not to resurface it. Reverted the draft edit
+    before committing; file left byte-identical to its pre-tick state.
+  - Also re-checked the international/global-alumni-cast angle (Top
+    Chef S20 World All-Stars, MasterChef S16 Global Gauntlet) — both
+    seasons' headline facts confirmed already staked at
+    `milestones-spent-not-marked` rank 5 and
+    `the-competition-leaves-the-country` rank 11 respectively. Full
+    overlap, no new list.
+  Rule 2 separately reconfirmed stalled (CADENCE gap table unchanged,
+  nearest dated finale american-ninja-warrior S18 still two days out
+  at 2026-08-17). Net: zero-ship this tick, reconfirming issue #758's
+  standing saturation verdict. No ledger row added or edited — nothing
+  shipped or changed in `content/themes/`.
 
 ## Notes
 
