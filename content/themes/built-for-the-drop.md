@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-15
 featured: false
 related:
   - moving-day
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "A fifth season settles into three release batches, no single-day drop, no new mechanic to chase."
     blurb: "Season five runs ten episodes across three scheduled batches — the same staggered rhythm the platform had already settled on, no full-day dump in sight. Lana's rule holds exactly as before; only the release clock keeps ticking to its own schedule."
+  - show: queer-eye
+    season: 1
+    season_label: "S01 · Georgia"
+    rank: 16
+    title: "Ten seasons of Fab Five makeovers, one release rhythm the whole time"
+    blurb: "The reboot's Georgia debut lands as a single Netflix batch, and the platform never once revisits the choice — every season since, new city or not, still drops the same way. No staggered rollout, no single-day reversal, just the same full-season release since 2018."
 ---
