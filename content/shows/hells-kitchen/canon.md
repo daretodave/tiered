@@ -199,7 +199,7 @@ tag: Geographic diversity as casting principle — twenty states, one kitchen.
 slot_argument: Season twenty-four's one-per-state structure is the most geographically varied cast construction the franchise has used. The twenty-chef field gives the format more room than any other Foxwoods season.
 community_rank_hint: rank=22 delta=0 sentiment=hold
 
-Season twenty-four is the show's most geographically deliberate cast yet — twenty chefs, each representing a different U.S. state, competing at Foxwoods Resort Casino for a head chef role and $250,000. The one-per-state framing is more than a graphic on the application form: it produces a cast with a broader range of regional kitchen cultures than a standard open call generates. Michelle Tribble and James Avery return as sous-chefs for the second consecutive Foxwoods season. The expanded twenty-chef field gives the format more to work with across its sixteen episodes.
+Season twenty-four sits just below season twenty-three and just above the pair that follows. The gap with twenty-three comes down to floor versus breadth: twenty-three's cast arrives already running kitchens, which tightens every service, while twenty-four's one-per-state premise optimizes for range of origin rather than uniform experience — a genuinely different casting bet, just not one that raises the competitive floor the same way. Against season twenty-two and season twenty-one, though, twenty-four's concept holds for all sixteen episodes rather than fading or reorganizing partway through, which is the gap that keeps it ahead of both.
 
 ## 22. Season 22
 

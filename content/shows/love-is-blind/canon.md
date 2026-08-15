@@ -60,7 +60,7 @@ tag: The established era's clearest bounce-back — Ohio takes the pods seriousl
 slot_argument: The Columbus cast re-engages with the blind-dating premise at a level the established era hasn't reliably managed, generating early pod momentum and a production that matches the cast's energy.
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
-Fifth is the right slot for the established era's most encouraging season. Columbus arrives after Denver's subdued run and immediately reads differently: the cast's buy-in for the pod experiment is apparent from the opening episodes, the connection-building phase generates real stakes rather than ambient familiarity, and the production leans into the experiment. It doesn't climb to the founding batch's upper tier — Chicago and Atlanta have history and execution on their side — but Columbus runs at a level that holds its own in the middle of the full ten-season ranking.
+Fifth places Columbus above Houston and Minneapolis but short of the founding batch's top two. Set against Houston specifically: Houston runs the format competently and nothing breaks, but Columbus's early episodes push past the small-talk phase faster, which is the gap between a season viewers stay tuned into and one they coast through. Chicago and Atlanta keep the top two slots on first-mover history and tighter execution, a bar Columbus doesn't clear — but nothing behind it in the running order engages at Columbus's level, and that's what fifth is measuring.
 
 ## 5. Houston
 

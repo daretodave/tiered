@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired winter 2026 · A return to form after Denver's quiet season"
 lede: "Season ten delivers the established era's clearest return to form: a cast that re-engages with the pod premise at speed, connection-building that generates real stakes early, and a production that leans into the experiment. Columbus sits just outside the founding-batch tier."
 pull: "Ohio gives the pods the buy-in they need."
+take_h2: "The bounce-back, taken seriously."
 format_summary: "Pod dating · altar reveal"
 format_caption: "Thirteen episodes including reunion"
 cast_size: 30

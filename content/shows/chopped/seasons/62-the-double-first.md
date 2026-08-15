@@ -9,7 +9,7 @@ host: "Ted Allen"
 ep_count: 13
 cast_size: 4
 eyebrow: "Aired summer 2025–spring 2026 · Food Network · two format firsts, zero overlap"
-lede: "Thirteen standalone episodes run July 2025 into May 2026, the only season in this batch with no overlap. A charity hour swaps the usual round order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the table as a fourth judge."
+lede: "Thirteen standalone episodes run July 2025 into May 2026 — the only season in this batch with a calendar it doesn't have to share."
 pull: "Season 62 skips the tournament bracket, but two genuine structural firsts and a calendar shared with no other season make it one of the cleanest, most distinctive entries this canon has ranked in years."
 premiere_caption: "Food Network · July 2025 into May 2026"
 episodes_caption: "A nine-plus-month run, first episode to last"
@@ -23,10 +23,10 @@ watch_list:
     body: "A charity episode replaces the usual appetizer-entrée-dessert structure with breakfast, lunch, and dessert rounds. Watch it as a rare change to the format's own course order."
   - episode_label: "Ted's Takeover · host at the table"
     body: "Ted Allen joins the judging panel as a fourth judge for one hour, only the second time a host has judged in the show's history. Watch how the panel dynamic shifts with him on the other side of the table."
-  - episode_label: "Every episode · zero overlap"
-    body: "This season starts about three weeks after both Season 60 and Season 61 finish airing, and nothing else in this batch touches its calendar. Watch it as the cleanest release window in this entire batch."
-  - episode_label: "Season close · May 2026"
-    body: "Season 62 closes out in May 2026, having run its full nine-plus months without sharing the calendar with a single other season. Watch this run as a rare, fully solo stretch for the format."
+  - episode_label: "No Kid Hungry hour · the pantry problem"
+    body: "Breakfast, lunch, and dessert rounds draw from a different pantry than the usual appetizer-entrée-dessert lineup — savory breakfast staples don't overlap with a dessert basket the way an entrée course would. Watch how the chefs adjust their instincts to a course order the format has never asked of them before."
+  - episode_label: "Ted's Takeover · judging from the other side"
+    body: "Ted Allen spends the hour on the panel instead of running it, changing what gets asked and how a critique lands coming from someone who has hosted every prior season. Watch for how the other judges defer to — or push back on — his read on a plate."
 ---
 
-Thirteen standalone episodes run from July 2025 into May 2026, the only season in this batch that shares its calendar with no other season at all. Two structural firsts define the run: a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert rounds for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen himself at the judging table as a fourth judge — only the second time in the show's history a host has judged.
+Season 62 spends its nine months on two structural firsts instead of sharing a release window with anything else in the batch. A No Kid Hungry charity hour swaps the format's usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen on the other side of the table as a fourth judge — only the second time in the show's history a host has scored the food instead of just eating it.
