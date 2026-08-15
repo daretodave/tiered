@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-15
 featured: false
 related:
   - same-crown-new-price-tag
@@ -91,16 +91,22 @@ entries:
     rank: 13
     title: "Fifteen home cooks, the tightest field since the very first season"
     blurb: "A rotating guest-judge format keeps the panel busy, so the season pulls the contestant pool back down to its smallest size in a decade. Fewer cooks means every challenge gets more screen time to breathe."
+  - show: so-you-think-you-can-dance
+    season: 7
+    season_label: "S07 · The All-Stars Season"
+    rank: 14
+    title: "Finalist field drops from twenty to eleven, the tightest run the format had fielded to that point"
+    blurb: "The All-Stars pairing mechanic draws the attention, but the smaller pool is what lets each returning specialist actually anchor a full episode instead of splitting time across a much larger bench. Six women, five men — one week's whole show rests on that count."
   - show: the-circle
     season: 7
     season_label: "S07"
-    rank: 14
+    rank: 15
     title: "Ten players, the smallest room the format has ever run"
     blurb: "The US version strips its cast down further than it ever had, and the format tightens right along with it — new blocking rules that can send home one name instead of the usual pair. Fewer players raises the weight of every profile."
   - show: the-real-world
     season: 25
     season_label: "S25 · Las Vegas (2011)"
-    rank: 15
+    rank: 16
     title: "Seven roommates, the smallest group since the show's Hollywood run"
     blurb: "A second trip to Las Vegas comes back with a noticeably thinner cast than the original visit, the smallest the franchise had fielded in years. A shared charity job stands in for the group's usual house dynamic."
 ---
