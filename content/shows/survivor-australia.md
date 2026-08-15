@@ -9,7 +9,7 @@ seasons: 12
 status: airing
 blurb: "12 seasons. The outback mindset, the Fijian coast, the Australian cast."
 tagline: "In {yearsWord} years on Network 10, the Australian version has built its own strategic register — longer days, bigger casts, and a playing style that rewards endurance over flash."
-card_tagline: "The Australian version built its own strategic register — longer days, bigger casts, and a playing style that rewards endurance over flash."
+card_tagline: "This version plays a longer, grindier game — bigger tribes, extended days in the elements, a strategic style built for the marathon."
 tier: B
 network: "Network 10"
 est_year: 2016

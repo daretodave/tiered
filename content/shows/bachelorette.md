@@ -9,7 +9,7 @@ seasons: 21
 status: airing
 blurb: "21 seasons. She holds the roses now."
 tagline: "21 seasons of one woman with the calendar, the keys, and the final say. The flip-the-script sibling that turned out to be its own show — warmer, sharper, and more willing to let the lead drive."
-card_tagline: "She holds the calendar, the keys, and the final say — 21 seasons of the flip-the-script sibling that turned out to be its own show."
+card_tagline: "21 seasons in, she runs the process herself — picking the dates, keeping the keys, and making the last call none of her exes get to make."
 tier: A
 network: "ABC"
 est_year: 2003

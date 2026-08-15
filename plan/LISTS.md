@@ -9326,6 +9326,26 @@ last time a curator actually looked.
   surviving instance. Content-only, one field. No ledger row changed by
   this entry itself (a Rule-3 search was deliberately not attempted this
   tick, not attempted-and-failed).
+- **2026-08-15, cloud march tick: Rule-3 search attempted and confirmed
+  dry, redirected to a content:check warning drain.** content-curator
+  ran a fresh Rule-3 pass against the full 181-slug ledger and surfaced
+  five candidate angles (cast-crossover density, format-pivot seasons,
+  reunion-special framing, judge-panel turnover, and a "shortest season"
+  structural cut) — none cleared the excellence gate: each either
+  overlapped an existing live list past the ~40% threshold or fell
+  below the cross-canon 3-show floor once the starred/unaired seasons
+  were excluded. Rule 2 remained separately stalled (CADENCE gap table
+  unchanged, all rows starred, nearest dated finale
+  american-ninja-warrior S18 still two days out at 2026-08-17).
+  Redirected this tick's slot to the `card_tagline`/`tagline` five-word
+  verbatim-overlap `content:check` warning instead, draining it across
+  13 shows (bachelorette, bake-off, below-deck-adventure,
+  below-deck-down-under, below-deck-sailing-yacht, dragrace,
+  love-is-blind, love-island-us, project-runway, survivor-australia,
+  the-challenge, top-chef, traitors) — see `plan/AUDIT.md`'s standing
+  season-fill-drain row for the matching progress note. No ledger row
+  changed by this entry itself (a Rule-3 search was attempted and
+  failed the excellence gate, not skipped).
 
 ## Notes
 
