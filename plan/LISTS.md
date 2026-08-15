@@ -9361,6 +9361,21 @@ last time a curator actually looked.
   matching progress note. No ledger row changed by this entry itself (a
   Rule-3 search was deliberately not attempted this tick, not
   attempted-and-failed).
+- **2026-08-15, cloud march tick (later dispatch same day): redirected
+  again, no new Rule-3 search attempted.** Same two blockers persist:
+  Rule 2 still stalled (CADENCE gap table unchanged, all rows starred,
+  nearest dated finale american-ninja-warrior S18 still two days out at
+  2026-08-17); Rule 3 confirmed saturated (issue #758's standing
+  verdict, re-confirmed several times already today by the entries
+  above, most recently the-ultimatum/traitors take_h2 drain at
+  bf8f4f2a). Redirected this tick's slot to the `take_h2` `content:check`
+  warning again (pass-47 / issue #393), draining the two next-smallest-
+  count offenders: below-deck-sailing-yacht (S1-S5) and rhod (S1-S5),
+  both shows now fully cleared of this warning class — see
+  `plan/AUDIT.md`'s standing season-fill-drain row for the matching
+  progress note (warning count 865 -> 855). No ledger row changed by
+  this entry itself (a Rule-3 search was deliberately not attempted
+  this tick, not attempted-and-failed).
 
 ## Notes
 
