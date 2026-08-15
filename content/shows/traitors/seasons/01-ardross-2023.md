@@ -9,6 +9,7 @@ ep_count: 10
 location: Ardross Castle, Scottish Highlands, Scotland
 host: Alan Cumming
 eyebrow: "Aired winter 2023 · The American template, built live"
+take_h2: "The show learning itself."
 lede: "The origin. The US adaptation invents itself in real time at Ardross Castle, with Alan Cumming presiding over a 50/50 cast — ten reality-TV alumni paired with ten members of the public. Nightly murders, prize-pot missions, and the Round Table arrive on a single full-batch drop."
 pull: "Rougher than what follows — you watch the show learn itself."
 format_summary: "Mixed cast · full-batch drop"

@@ -9,6 +9,7 @@ ep_count: 12
 location: Ardross Castle, Scottish Highlands, Scotland
 host: Alan Cumming
 eyebrow: "Aired winter 2024 · The breakout the show's reputation rests on"
+take_h2: "Finding its footing, loudly."
 lede: "The breakout. The US version finds its own identity: an all-reality cast replaces the civilian mix, the release model goes weekly after a three-episode drop, and a companion after-show arrives. The format tightens around Alan Cumming into the season everyone points to."
 pull: "The American port finally found its footing — loudly."
 format_summary: "All-celebrity cast · weekly run"
