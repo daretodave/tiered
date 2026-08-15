@@ -9240,6 +9240,23 @@ last time a curator actually looked.
   finding (commit ce8e2ef8). No ledger row changed by this entry itself
   (logged for streak continuity — a Rule-3 search was deliberately not
   attempted this tick, not attempted-and-failed).
+- **2026-08-15**: Rule 2 still stalled (CADENCE gap table unchanged, all
+  rows starred/confirmed-but-unaired; nearest dated finale
+  american-ninja-warrior S18 still two days out). Rule 3 confirmed
+  exhausted (the immediately preceding same-day tick's search closed
+  dry a few hours earlier; issue #758's saturation verdict unchanged).
+  Rather than re-run a doomed same-day Rule-3 search, redirected this
+  tick's slot to two pending `plan/CRITIQUE.md` findings sharing one
+  root cause: pass-78 (best-comeback-seasons) and pass-111
+  (the-calendar-moved-the-format-didnt) both flagged the themed-list
+  detail hero's Entries/Shows stat pair reading as an unexplained
+  count mismatch when a show repeats across entries. Fixed once at the
+  component level — `ListDetailHero` now relabels the cell "Unique
+  shows" whenever `entryCount !== showCount`, explaining the
+  discrepancy inline instead of leaving it to look like a counting
+  error (commit 7a71f9af). No ledger row changed by this entry itself
+  (a Rule-3 search was deliberately not attempted this tick, not
+  attempted-and-failed).
 
 ## Notes
 
