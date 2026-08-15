@@ -1285,6 +1285,28 @@ is either finite (episodes_caption, now spent) or intermittent
 (critique refill, expand posture). No change to score or scope
 sketch. Still the highest-priority unpromoted candidate in the file.
 
+**Update (digest 2026-08-15):** the margin recovered today, on both
+wells this candidate flagged as non-self-sustaining. A new finite
+well opened and got drained the same day it opened: `take_h2`
+(season-page Section 01 H2 verbatim-restates-H1 warning) went from
+undrained to two same-day redirect passes covering 16 seasons across
+7 shows (`1c1fdad6` 8 seasons/5 shows, `aca233c2` 8 seasons/2 shows),
+each logged as its own `audit:` mirror row. Separately, `/critique`
+had its strongest single-day drain on record — three passes (122, 2
+findings; 123, 2 findings; 124, 3 findings) plus eleven same-day
+`critique drain` fix commits pulled the Pending count from 33 down to
+**18 rows**, the lowest it has been in weeks. Net: only 3 same-day
+Rule-3 zero-ship passes logged today (vs. 10-11 on the two prior
+diagnosis days), because `take_h2` and a well-stocked critique queue
+absorbed most of the pressure instead. This does not change the
+underlying diagnosis — `take_h2` is itself now spent after today
+(same finite-well pattern as `episodes_caption`), and critique's
+refill remains schedule-dependent, not deterministic — but it is
+evidence the candidate's own text should carry: the fallback margin
+oscillates well-to-well rather than monotonically thinning. No change
+to score or scope sketch. Still the highest-priority unpromoted
+candidate in the file.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
