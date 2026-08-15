@@ -9346,6 +9346,21 @@ last time a curator actually looked.
   season-fill-drain row for the matching progress note. No ledger row
   changed by this entry itself (a Rule-3 search was attempted and
   failed the excellence gate, not skipped).
+- **2026-08-15, cloud march tick (second dispatch same day): redirected
+  again, no new Rule-3 search attempted.** Same two blockers persist:
+  Rule 2 still stalled (CADENCE gap table unchanged, nearest dated
+  finale american-ninja-warrior S18 still two days out at 2026-08-17);
+  Rule 3 confirmed saturated (issue #758's standing verdict,
+  re-confirmed twice already today by the two entries directly above).
+  Redirected this tick's slot to the `take_h2` `content:check` warning
+  (pass-47 / issue #393 — 889 season pages whose Section 01 H2 verbatim-
+  restates the page H1), draining the 8 smallest-count offenders across
+  5 shows (alone-australia S1/S2/S3, alone-frozen S1,
+  alone-the-skills-challenge S1, below-deck-adventure S1, rhodubai
+  S1/S2) — see `plan/AUDIT.md`'s standing season-fill-drain row for the
+  matching progress note. No ledger row changed by this entry itself (a
+  Rule-3 search was deliberately not attempted this tick, not
+  attempted-and-failed).
 
 ## Notes
 
