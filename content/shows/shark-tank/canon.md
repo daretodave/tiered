@@ -56,7 +56,7 @@ debut got right immediately.
 ## 5. Season 5
 
 tag: The panel finds its lineup — six sharks, five seats a night, the rotation the show keeps for years.
-slot_argument: Season five widens the fifth-seat rotation into a full six-person bench, the format the show would run largely unchanged for the rest of its run. It's the season where Shark Tank stops adjusting the panel and starts trusting it.
+slot_argument: Season five widens the fifth-seat rotation into a full six-person bench, the format the show would keep largely unchanged for the rest of its life. It's the season where Shark Tank stops adjusting the panel and starts trusting it.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Season five is where Shark Tank stops tinkering with its panel

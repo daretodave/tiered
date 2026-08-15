@@ -9273,9 +9273,25 @@ last time a curator actually looked.
   one all-time, with no scope label distinguishing them). Relabeled to
   "voters, last 7 days" in `src/components/canon/CommunityLiveStrip.tsx`
   — the exact fix the finding suggested, same value, explicit time-scope
-  (commit pending this tick). No ledger row changed by this entry itself
+  (commit 047c2ee5). No ledger row changed by this entry itself
   (a Rule-3 search was deliberately not attempted this tick, not
   attempted-and-failed).
+- **2026-08-15, cloud march tick: redirected, no new Rule-3 search
+  attempted.** Same two blockers persist: Rule 2 still stalled (CADENCE
+  gap table unchanged, all rows starred/confirmed-but-unaired; nearest
+  dated finale american-ninja-warrior S18 still two days out at
+  2026-08-17). Rule 3 confirmed exhausted (issue #758's standing
+  saturation verdict, re-confirmed multiple times same-day already; not
+  re-run a search several immediately preceding same-day ticks already
+  confirmed dry). Redirected this tick's slot to a pending
+  `plan/CRITIQUE.md` pass-84 LOW finding instead: Shark Tank's Season 5
+  canon `slot_argument` repeated "run" twice in close proximity ("...the
+  format the show would run largely unchanged for the rest of its
+  run."). Rewrote to "...the format the show would keep largely
+  unchanged for the rest of its life," the exact fix the finding
+  suggested. Content-only, one field. No ledger row changed by this
+  entry itself (a Rule-3 search was deliberately not attempted this
+  tick, not attempted-and-failed).
 
 ## Notes
 
