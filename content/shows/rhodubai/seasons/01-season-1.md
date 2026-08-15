@@ -3,6 +3,7 @@ show: rhodubai
 number: 1
 slug: season-1
 title: "Season 1"
+take_h2: "Relocated wealth, first chapter."
 canonical_position: 2
 premiere_date: "2022-06-01"
 ep_count: 14

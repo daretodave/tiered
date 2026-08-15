@@ -2,6 +2,7 @@
 show: below-deck-adventure
 number: 1
 title: "Svalbard"
+take_h2: "The franchise goes arctic."
 canonical_position: 1
 premiere_date: "2022-11-01"
 location: "Svalbard Archipelago, Norway"

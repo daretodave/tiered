@@ -2,6 +2,7 @@
 show: alone-australia
 number: 1
 title: "South West Tasmania"
+take_h2: "The format's founding proof."
 canonical_position: 2
 premiere_date: 2023-03-29
 ep_count: 12

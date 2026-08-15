@@ -2,6 +2,7 @@
 show: alone-frozen
 number: 1
 title: "Labrador"
+take_h2: "A collective endurance question."
 canonical_position: 1
 location: "Labrador, Canada"
 premiere_date: "2022-08-11"

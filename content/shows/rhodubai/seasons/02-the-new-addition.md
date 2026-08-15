@@ -3,6 +3,7 @@ show: rhodubai
 number: 2
 slug: the-new-addition
 title: "The New Addition"
+take_h2: "A more confident chapter."
 canonical_position: 1
 premiere_date: "2024-06-02"
 ep_count: 15
