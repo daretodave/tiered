@@ -10,7 +10,7 @@ ep_count: 12
 location: "Ardross Castle, Scottish Highlands"
 host: "Claudia Winkleman"
 eyebrow: "Aired Nov–Dec 2022 · BBC One's original Highland run"
-lede: "The series that started it all: a cloaked-Traitors game built inside Ardross Castle in the Scottish Highlands, hosted by Claudia Winkleman. Rougher than the polished machine the format would become, and the run the American version later copied, castle included."
+lede: "The series that started it all: a cloaked-Traitors game built inside Ardross Castle in the Scottish Highlands, hosted by Claudia Winkleman. Rougher than the polished machine the format would become, and the run the American version later copied wholesale."
 pull: "The format before anyone else had copied it: cloaks, candlelight, and a Highland castle nobody outside the UK had heard of yet."
 format_summary: "Standard format · 12 episodes"
 format_caption: "the format's original, UK-only run"
