@@ -9221,6 +9221,25 @@ last time a curator actually looked.
   very hard to find without a new season landing (Rule 2 unstalling).
   Zero-ship, per bearings.md Rule 3's own explicit permission to ship
   nothing rather than force a duplicate or thin list.
+- **2026-08-15, cloud march tick: redirected, no new Rule-3 search
+  attempted.** Same two blockers as the prior same-day tick: Rule 2
+  still stalled (nearest dated finale american-ninja-warrior 2026-08-17,
+  2 days out), Rule 3 still exhausted (the prior tick's fresh-axis pass —
+  casting/representation milestone, weather disruption, military casting
+  cohort, self-elimination mechanic, ratings-record extend — closed dry
+  or already-spent across the board; issue #758's standing saturation
+  verdict unchanged). Rather than re-run a search the immediately
+  preceding tick just confirmed dry, redirected this tick's slot to a
+  pending `plan/CRITIQUE.md` finding instead, following the established
+  precedent (jersey-shore/dragrace/HvV redirect fixes): rewrote entry
+  #02's (Below Deck Down Under S04) blurb opener on
+  `content/themes/a-change-of-address.md` to drop the "built its
+  identity on Australian anchorages" premise entry #01 already
+  established, leading directly with the Caribbean relocation and the
+  franchise-first charter crossover instead. Closes the pass-123 MED
+  finding (commit ce8e2ef8). No ledger row changed by this entry itself
+  (logged for streak continuity — a Rule-3 search was deliberately not
+  attempted this tick, not attempted-and-failed).
 
 ## Notes
 
