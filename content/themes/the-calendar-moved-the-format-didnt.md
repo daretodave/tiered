@@ -5,9 +5,9 @@ description: "A first fall premiere, a first winter slot, a decades-familiar nig
 tagline: "A first fall premiere, a first winter debut, a Friday night finally abandoned — nothing forced these moves, the networks just tried a new spot on the calendar. <b>The schedule changed on purpose, and the format underneath it ran exactly as it always had.</b>"
 category: craft
 sentiment: hold
-status: started
+status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-14
+last_revised: 2026-08-15
 featured: false
 related:
   - the-schedule-didnt-ask-permission
@@ -37,4 +37,16 @@ entries:
     rank: 4
     title: "A Friday slot the show held for years finally moves"
     blurb: "Season 17 leaves Shark Tank's familiar Friday night for Wednesday. A new full-time panelist joins the same season, but the night change is the fact the season's own copy leads with."
+  - show: amazing-race
+    season: 5
+    season_label: "S05"
+    rank: 5
+    title: "The race's first summer slot, billed as an experiment from the start"
+    blurb: "CBS moves the race into July for the first time, calling it the summer experiment in the season's own copy. Eleven teams run the same global route and rules the show has always used — only the calendar slot is being tested."
+  - show: hells-kitchen
+    season: 5
+    season_label: "S05"
+    rank: 6
+    title: "The format's first winter premiere, years before it becomes a pattern"
+    blurb: "The first four seasons all premiere in late spring or summer. Season five moves to a January debut instead, the format's first winter slot — seven years before Season 14 revisits the idea. The brigade, the pass, and the block run exactly as built."
 ---
