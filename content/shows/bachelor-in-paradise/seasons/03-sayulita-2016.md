@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 3
 slug: sayulita-2016
 title: "Season 3"
+take_h2: "A twin twist, an early exit."
 canonical_position: 8
 premiere_date: "2016-08-02"
 location: "Sayulita, Mexico"

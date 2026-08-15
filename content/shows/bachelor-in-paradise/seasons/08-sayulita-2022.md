@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 8
 slug: sayulita-2022
 title: "Season 8"
+take_h2: "A Love Island-style twist arrives."
 canonical_position: 2
 premiere_date: "2022-09-27"
 location: "Sayulita, Mexico"

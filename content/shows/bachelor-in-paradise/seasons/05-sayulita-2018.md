@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 5
 slug: sayulita-2018
 title: "Season 5"
+take_h2: "A Winter-Games-style international crossover."
 canonical_position: 5
 premiere_date: "2018-08-07"
 location: "Riviera Nayarit, Mexico"

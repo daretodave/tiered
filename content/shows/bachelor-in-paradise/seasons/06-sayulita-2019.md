@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 6
 slug: sayulita-2019
 title: "Season 6"
+take_h2: "The rose ceremony finally adapts."
 canonical_position: 3
 premiere_date: "2019-08-05"
 location: "Sayulita, Mexico"

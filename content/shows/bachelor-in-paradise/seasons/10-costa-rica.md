@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 10
 slug: costa-rica
 title: "Season 10"
+take_h2: "The beach finally leaves Mexico."
 canonical_position: 4
 premiere_date: "2025-07-07"
 location: "Costa Rica"

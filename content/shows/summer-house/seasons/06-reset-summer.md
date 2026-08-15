@@ -2,6 +2,7 @@
 show: summer-house
 number: 6
 title: "The Reset Summer"
+take_h2: "A new house, new energy."
 canonical_position: 6
 premiere_date: "2022-01-17"
 location: "The Hamptons, New York"

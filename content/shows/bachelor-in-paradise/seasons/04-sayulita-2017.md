@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 4
 slug: sayulita-2017
 title: "Season 4"
+take_h2: "A bartender debuts, production halts."
 canonical_position: 10
 premiere_date: "2017-08-14"
 location: "Sayulita, Mexico"

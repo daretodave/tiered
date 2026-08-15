@@ -3,6 +3,7 @@ show: bachelor-in-paradise
 number: 1
 slug: tulum
 title: "Season 1"
+take_h2: "Paradise's first proof of concept."
 canonical_position: 1
 premiere_date: "2014-08-04"
 location: "Tulum, Mexico"

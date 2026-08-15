@@ -2,6 +2,7 @@
 show: summer-house
 number: 10
 title: "The Overhaul Summer"
+take_h2: "The biggest cast turnover yet."
 canonical_position: 10
 premiere_date: "2026-02-03"
 location: "The Hamptons, New York"

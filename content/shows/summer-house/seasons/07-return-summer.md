@@ -2,6 +2,7 @@
 show: summer-house
 number: 7
 title: "The Return Summer"
+take_h2: "The weekend commute comes back."
 canonical_position: 4
 premiere_date: "2023-02-13"
 location: "The Hamptons, New York"
