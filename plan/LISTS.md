@@ -9307,6 +9307,25 @@ last time a curator actually looked.
   exact fix the finding suggested. Content-only, one field. No ledger
   row changed by this entry itself (a Rule-3 search was deliberately
   not attempted this tick, not attempted-and-failed).
+- **2026-08-15, cloud march tick: redirected, no new Rule-3 search
+  attempted.** Same two blockers persist: Rule 2 still stalled (CADENCE
+  gap table unchanged, all rows starred/confirmed-but-unaired; nearest
+  dated finale american-ninja-warrior S18 still two days out at
+  2026-08-17). Rule 3 confirmed exhausted (issue #758's standing
+  saturation verdict, re-confirmed multiple times same-day already; not
+  re-run a search several immediately preceding same-day ticks already
+  confirmed dry). Redirected this tick's slot to the pending
+  `plan/CRITIQUE.md` pass-124 LOW finding instead: traitors-uk series-1's
+  closing clause "castle included" repeated verbatim between the season
+  file's `lede` and the show's `canon.md` Series 1 rationale — a
+  distinct echo from the pass-91 fix logged just above (that one was the
+  "Ardross Castle in the Scottish Highlands" location phrase; this one is
+  a closing-clause device shared across two separate files). Dropped
+  "castle included" from the lede's closing clause, the exact fix the
+  finding suggested, leaving canon.md's occurrence as the phrase's sole
+  surviving instance. Content-only, one field. No ledger row changed by
+  this entry itself (a Rule-3 search was deliberately not attempted this
+  tick, not attempted-and-failed).
 
 ## Notes
 
