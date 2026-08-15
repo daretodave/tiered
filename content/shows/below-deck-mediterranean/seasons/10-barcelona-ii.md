@@ -8,6 +8,7 @@ location: "Barcelona, Spain"
 host: "Sandy Yawn"
 ep_count: 18
 eyebrow: "Barcelona II — the franchise's return to Spain on the new M/Y Bravado"
+take_h2: "The boldest charter twist yet."
 lede: "Below Deck Mediterranean returns to Barcelona for the first time since Season 3, now with Captain Sandy Yawn at the helm and a new yacht, the M/Y Bravado. Eighteen episodes and a charter-guest matchmaker twist give the season fresh format territory to work."
 pull: "A return to Barcelona with a new yacht and a genuine format first — a charter guest's own matchmaker turns a single trip into the boldest charter twist the show has tried."
 format_summary: "Charter yacht · Barcelona, Spain"

@@ -9,6 +9,7 @@ episodes: 24
 aired_year: 2020
 location: "West Hollywood, California"
 eyebrow: "Premiered January 2020 · Bravo"
+take_h2: "The calm before real news."
 lede: "The show's biggest single-season cast addition: Beau Clark is promoted to a full regular, joined by new regulars Max Boyens, Brett Caprioni, and Dayna Kathan, across a twenty-four-episode run."
 pull: "The show's biggest new-cast swing yet, followed within weeks by real news that reshaped who stayed."
 format_summary: "Docusoap · restaurant staff"

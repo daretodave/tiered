@@ -9,6 +9,7 @@ episodes: 24
 aired_year: 2016
 location: "West Hollywood, California"
 eyebrow: "Premiered November 2016 · Bravo"
+take_h2: "The founding cast reunites."
 lede: "Stassi Schroeder returns to the main cast after a season away, restoring the group to something close to its original shape, while Brittany Cartwright joins in a recurring role."
 pull: "A recovery season that puts the founding cast back together and lets it run at full strength."
 format_summary: "Docusoap · restaurant staff"

@@ -9,6 +9,7 @@ episodes: 17
 aired_year: 2013
 location: "West Hollywood, California"
 eyebrow: "Premiered November 2013 · Bravo"
+take_h2: "The recipe barely changes."
 lede: "SUR's staff returns for a tighter, seventeen-episode run. Ariana Madix joins the cast in a recurring role, and James Kennedy starts turning up as a guest — early names in what becomes a much bigger ensemble."
 pull: "A confident sophomore season that barely changes the recipe — proof the format didn't need a fix."
 format_summary: "Docusoap · restaurant staff"

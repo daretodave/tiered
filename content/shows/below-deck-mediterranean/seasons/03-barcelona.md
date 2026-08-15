@@ -8,6 +8,7 @@ location: "Barcelona, Spain / Malta"
 host: "João Franco"
 ep_count: 16
 eyebrow: "The João Franco season — a different command style in the Med"
+take_h2: "A different captain, sharper edges."
 lede: "Season 3 handed the helm to João Franco — the franchise's first command-style experiment. Barcelona's port energy and the Malta leg provided western Mediterranean summer at its most vivid, and a confrontational cast pushed the season's texture further than the founding run."
 pull: "The format's edgiest stretch — a different captain, a different coast, and cast chemistry that never let the season settle."
 format_summary: "Charter yacht · Western Mediterranean"

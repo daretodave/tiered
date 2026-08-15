@@ -9,6 +9,7 @@ episodes: 25
 aired_year: 2017
 location: "West Hollywood, California"
 eyebrow: "Premiered December 2017 · Bravo"
+take_h2: "The biggest cast yet."
 lede: "The show's biggest expansion so far: Brittany Cartwright and Lala Kent move up to full series regulars, and Billie Lee and Raquel Leviss join in recurring roles, in the longest episode order the show has run."
 pull: "Proof the format scales without breaking — the biggest cast yet, running at the show's longest order."
 format_summary: "Docusoap · restaurant staff"

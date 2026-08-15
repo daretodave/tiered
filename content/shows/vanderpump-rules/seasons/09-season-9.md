@@ -9,6 +9,7 @@ episodes: 17
 aired_year: 2021
 location: "West Hollywood, California"
 eyebrow: "Premiered September 2021 · Bravo"
+take_h2: "Rebuilt before filming even started."
 lede: "Season 9 arrives after the longest gap in the show's history, a pandemic-era pause that reshaped the cast before a single scene aired. Jax Taylor and Brittany Cartwright were let go by Bravo in the interim."
 pull: "The most disrupted stretch in the show's run — the cast rebuilt from the outside in before filming even started."
 format_summary: "Docusoap · restaurant staff"

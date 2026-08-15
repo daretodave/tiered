@@ -8,6 +8,7 @@ location: "Italian Riviera and Genoa, Italy"
 host: "Sandy Yawn"
 ep_count: 16
 eyebrow: "The Riviera run — Genoa and the Italian coast on the M/Y Mustique"
+take_h2: "Beautiful waters, slow-building chemistry."
 lede: "Season 8 moved west along the Italian coast — Genoa and the Riviera giving the production strong visual material. The cast took longer to generate the department friction the format depends on, the back half carrying more of the weight."
 pull: "The Italian Riviera is beautiful; the season took longer to find its cast chemistry than the run could comfortably absorb."
 format_summary: "Charter yacht · Ligurian Sea"

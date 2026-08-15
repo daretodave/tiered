@@ -8,6 +8,7 @@ location: "Mallorca, Spain / Ibiza, Spain"
 host: "Sandy Yawn"
 ep_count: 15
 eyebrow: "Solid franchise television in the western Mediterranean"
+take_h2: "Solid, but never quite defining."
 lede: "Captain Sandy returned for Season 4, taking the yacht from Mallorca's coves to the Ibiza stretch. The western Mediterranean setting gave the production strong visual material, but the cast's chemistry never produced the sustained friction that distinguishes the format's best."
 pull: "Functional Below Deck Mediterranean — beautiful western Med waters, reliable Sandy command, and a cast that works through its charter run without a defining moment."
 format_summary: "Charter yacht · Western Mediterranean"

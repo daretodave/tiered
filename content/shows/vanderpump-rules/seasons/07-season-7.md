@@ -9,6 +9,7 @@ episodes: 24
 aired_year: 2018
 location: "West Hollywood, California"
 eyebrow: "Premiered December 2018 · Bravo"
+take_h2: "A second address opens."
 lede: "Beau Clark joins the cast in a recurring role, a modest addition next to the growth spurts before it. The bigger real-world news: Tom Tom, a bar co-owned by several cast members, opens during this run."
 pull: "The show's world gets a second real address, and SUR's floor plan doesn't lose a step for it."
 format_summary: "Docusoap · restaurant + bar staff"

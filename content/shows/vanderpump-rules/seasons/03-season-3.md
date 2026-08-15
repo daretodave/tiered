@@ -9,6 +9,7 @@ episodes: 21
 aired_year: 2014
 location: "West Hollywood, California"
 eyebrow: "Premiered November 2014 · Bravo"
+take_h2: "A cast that finally scales."
 lede: "Two seasons of buildup pay off: Ariana Madix and Tom Schwartz move up to full series regulars, and James Kennedy graduates from guest spots to a recurring role, in the show's longest order yet."
 pull: "The first season to prove the format scales — a bigger cast, and SUR's hierarchy holds every bit of it."
 format_summary: "Docusoap · restaurant staff"
