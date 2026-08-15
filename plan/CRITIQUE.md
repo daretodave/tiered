@@ -1,5 +1,52 @@
 # CRITIQUE
 
+> Last pass: 2026-08-15 at commit 5457dcb7
+> Pass count: 125
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 125 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/traitors/season/ardross-2026`, `/shows`,
+> `/themes/one-rule-fills-every-seat`,
+> `/shows/below-deck-down-under/season/canouan`) and authed
+> (`/u/e2e`, `/shows/perfect-match/season/season-4`,
+> `/shows/traitors?view=community`,
+> `/themes/one-rule-fills-every-seat`, `/sign-in`) walks ran,
+> desktop + mobile, zero console errors/failed first-party
+> requests/mobile overflow across both, no spoiler leaks;
+> `/sign-in` correctly redirected the already-signed-in visitor to
+> `/`. Auth handshake confirmed live (authenticated:cloud). **5 new
+> findings filed** (all Pending, 0 HIGH, 3 MED, 2 LOW): US
+> Traitors S4's eyebrow line repeats verbatim as the opening
+> sentence of the body paragraph, the same defect class as the
+> already-fixed traitors-uk "castle included" echo; Below Deck
+> Down Under Canouan's season-file body and `canon.md` Season 4
+> rationale — both rendering on the same season page — restate
+> the same crew/Seychelles/RHOSLC-crossover facts near-verbatim;
+> Perfect Match S4 restates its two headline facts (shortest run,
+> biggest cast) across five-plus separate fields (`lede`,
+> `cast_size_caption`, `format_changes`, `episodes_caption`, two
+> `watch_list` entries, and the body paragraph); US Traitors S4's
+> `format_summary`/`format_caption` pair restates "all-celebrity"
+> with no new fact added; and the recently-extended
+> `one-rule-fills-every-seat` themed list seats two consecutive
+> America's Next Top Model entries (#16, #17) at its tail, on top
+> of the already-pending general over-concentration finding for
+> the same list. One reader-surfaced observation was assessed and
+> dropped: the authed pass's Traitors community-view "0% approval
+> on a 0-vote, rank-1 row" read as a contradiction, but
+> `CommunityRankList.test.tsx`'s pass-117/118 regression guard
+> confirms honest-zero-not-em-dash is the deliberate, already-
+> tested behavior for zero-vote rows — not a bug. Two further
+> observations (failed first-party RSC prefetch on `/u/e2e`, both
+> viewports) were dropped as the same long-documented benign
+> Link-prefetch-teardown artifact noted on multiple prior passes.
+> No pending HIGH competes for iterate.
+>
+> ───── Pass 124 metadata kept below for history ─────
+>
 > Last pass: 2026-08-15 at commit 7159f961
 > Pass count: 124
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2903,6 +2950,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/traitors/season/ardross-2026 — the eyebrow line repeats verbatim as the opening sentence of the body paragraph directly below it. Same defect class as the already-fixed traitors-uk "castle included" echo, recurring on a different show/page. Eyebrow (frontmatter): "Aired winter 2026 · The newest entry, the format running smoothly". Body's opening sentence: "Season four is the newest entry, the format running smoothly." — the clause after the middle dot is copied word-for-word into the very next thing the reader reads. Fix: rewrite the body's opening sentence so it doesn't restate the eyebrow verbatim — paraphrase the way sibling season pages do (e.g. Traitors S3's eyebrow "The all-celebrity machine, running confidently" pairs with body text "The format running with confidence," varied rather than copied). Content-only, one sentence in `content/shows/traitors/seasons/04-ardross-2026.md`. Spoiler discipline P0 intact (format-mechanics only). (URL: /shows/traitors/season/ardross-2026, source: critique-pass-125)
+
+- [ ] [MED] [anon] /shows/below-deck-down-under/season/canouan — the season file's body paragraph and the show's `canon.md` Season 4 rationale — both of which render on the same season page — restate the same crew/location/crossover facts almost sentence-for-sentence, the same defect class as the already-fixed traitors-uk "castle included" echo (season-file-vs-canon.md duplication), here spanning most of the paragraph rather than one closing clause. Season file body (`content/shows/below-deck-down-under/seasons/04-canouan.md`): "anchoring Katina off Canouan for a second run after its Seychelles introduction. Captain Jason Chambers led a veteran crew — Chef Ben Robinson and Chief Stew Daisy Kelliher among them — carrying decades of Below Deck experience. A franchise-first charter crossover brought the full cast of The Real Housewives of Salt Lake City aboard as guests..." `canon.md` Season 4 rationale: "anchoring Katina off Canouan for a second run after the yacht's Seychelles introduction... Chef Ben Robinson and Chief Stew Daisy Kelliher brought decades of Below Deck experience... A franchise-first charter crossover, booking the full cast of The Real Housewives of Salt Lake City as guests..." Fix: give the canon.md rationale a distinct job — the ranking argument relative to sibling seasons (it already has a `slot_argument` field doing some of this) — rather than re-narrating the same season summary the body paragraph already covers. Content-only, one file (`content/shows/below-deck-down-under/canon.md`). Spoiler discipline P0 intact. (URL: /shows/below-deck-down-under/season/canouan, source: critique-pass-125)
+
+- [ ] [MED] [authed] /shows/perfect-match/season/season-4 — the season's two headline facts (episode count cut to eight, cast expanded to twenty) are restated across five-plus separate fields in near-identical wording instead of each field adding new texture. Confirmed in `content/shows/perfect-match/seasons/04-season-4.md`: `cast_size_caption` ("The villa's biggest cast yet"), `format_changes[0]`/`[1]` ("the shortest season yet" / "the broadest yet"), `lede` ("the villa's biggest cast yet... Eight tight episodes, the shortest run yet"), `episodes_caption` ("the format's shortest yet"), `watch_list` Ep 1 ("the format's biggest yet") and Ep 8 ("the shortest run yet"), and the body paragraph ("its shortest run... the biggest cast yet"). Same defect class as the already-filed Top Chef Carolinas LCK four-field repetition (pass-124), more extensive here. Fix: pick one field to own each headline stat plainly (e.g. `episodes_caption` for run length, `cast_size_caption` for cast size) and give the `lede`, body paragraph, and both flagged `watch_list` entries a genuinely different angle — a specific contestant, a judge/host reaction, or a comparison to a specific prior season rather than the generic "yet" superlative repeated each time. Content-only, up to five field edits, no schema change. Spoiler discipline P0 intact (format-mechanics facts only). (URL: /shows/perfect-match/season/season-4, source: critique-pass-125)
+
+- [ ] [LOW] [anon] /shows/traitors/season/ardross-2026 — the FORMAT meta field's value and its italic subtitle restate the same fact with no new information added. `format_summary`: "All-celebrity cast · weekly run"; `format_caption`: "All-celebrity cast — no civilians" — "no civilians" is the definitional inverse of "all-celebrity," not a new fact, unlike sibling meta fields on the same page (e.g. FILMED/PREMIERED) where the subtitle does add detail the value line doesn't have. Fix: swap `format_caption` for a fact not already implied by `format_summary` (e.g. cast size, or a contrast with a prior season's cast makeup). Content-only, one field in `content/shows/traitors/seasons/04-ardross-2026.md`. Spoiler discipline P0 intact. (URL: /shows/traitors/season/ardross-2026, source: critique-pass-125)
+
+- [ ] [LOW] [anon] /themes/one-rule-fills-every-seat — the recently-extended 17-entry list seats two consecutive America's Next Top Model entries at its tail (#16 "S19 · The College Edition", #17 "S13 · The Height Experiment"), on top of the already-pending general over-concentration finding for this same list (Hell's Kitchen ×3, Ink Master ×3). ANTM is now also at 3 entries (#12, #16, #17), and #16/#17 being adjacent compounds the concentration issue into a visible back-to-back repeat when scanning the list top to bottom. Fix: when next extending or reviewing this list, interleave by show so no two consecutive ranks share a show (per `content/themes/one-rule-fills-every-seat.md`), addressable alongside the existing pending over-concentration row. Content/curation, no spoiler impact. (URL: /themes/one-rule-fills-every-seat, source: critique-pass-125)
 
 - [x] [LOW] [anon] /shows/traitors-uk/season/series-1 — the closing clause "castle included" appears verbatim in two different content fields that both render on the same season page: the season file's `lede` ("...the run the American version later copied, castle included.") and the show's `canon.md` Series 1 rationale, which the season page also surfaces ("...the format proved sturdy enough that an American version borrowed it wholesale, castle included."). Not the same defect already fixed this same day at 89a9896a (that fix reworded the "Ardross Castle in the Scottish Highlands" location phrase's second occurrence within the season file alone) — this is a second, distinct verbatim echo, this time a closing-clause device shared across two separate files (`content/shows/traitors-uk/seasons/01-series-1.md` and `content/shows/traitors-uk/canon.md`). Fix: reword one occurrence, e.g. drop "castle included" from the lede's closing clause (it's already established two sentences earlier) or vary the canon.md phrasing to a different closing device. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/traitors-uk/season/series-1, source: critique-pass-124) — RESOLVED (2026-08-15, cloud march tick, redirected from a stalled ship-content dispatch per issue #758 — Rule 2 confirmed still fully starred per `plan/CADENCE.md` gap table, nearest dated finale american-ninja-warrior S18 still 2 days out; Rule 3 confirmed exhausted per the same-day zero-ship pass logged in `plan/LISTS.md`, commit `508ae657`): dropped "castle included" from the season file's `lede` closing clause, leaving "...Rougher than the polished machine the format would become, and the run the American version later copied wholesale." The canon.md occurrence was left as-is (it keeps the phrase's only surviving instance, and "wholesale" already echoes canon.md's own "borrowed it wholesale" language, so the two fields now read as complementary rather than duplicated). One field edit, `content/shows/traitors-uk/seasons/01-series-1.md`. No facts changed, spoiler discipline P0 intact.
 
