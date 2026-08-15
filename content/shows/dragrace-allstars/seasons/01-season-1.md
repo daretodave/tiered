@@ -11,6 +11,7 @@ cast_size: 12
 eyebrow: "Aired fall 2012 · Logo TV · the first All Stars run"
 lede: "The spinoff's debut resets twelve returning queens into a genuinely new game — self-selected two-queen teams, a joint-elimination stake, and a panic-button twist that lets a benched partner step into a lip sync mid-song. RuPaul Charles hosts a six-episode run."
 pull: "A panic button, joint eliminations, and self-selected teams — All Stars' opening format experiment, run once and never repeated the same way again."
+take_h2: "A format run only once."
 premiere_caption: "Logo TV · October 2012"
 format_summary: "Two-queen teams · she-mergency twist"
 format_caption: "self-selected teams, joint eliminations"

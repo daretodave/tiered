@@ -12,6 +12,7 @@ episodes: 22
 eyebrow: "Premiered September 2023 · ABC"
 lede: "Season fifteen keeps every part of the format exactly where the last few years left it — the classic six, the rotating guest chair, no cast news to report. It's a quiet, competent season by design, more proof the format doesn't need constant tinkering to keep working."
 pull: "A quiet season, competent by design rather than by accident."
+take_h2: "Quiet, competent, unchanged."
 premiere_caption: "ABC · September 2023"
 filming_caption: "Culver City · another steady shoot for the classic six"
 episodes_caption: "22-episode run, no notable changes"

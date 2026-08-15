@@ -12,6 +12,7 @@ episodes: 24
 eyebrow: "Premiered September 2016 · ABC"
 lede: "Guest sharks keep rotating through the added seat season seven introduced, but it reads less like an experiment now and more like a fixture. The classic six carry every episode as always, twenty-four episodes deep into the format's most settled stretch yet."
 pull: "The wrinkle from last season becomes a fixture — nothing new to fix, one seat left to refine."
+take_h2: "A wrinkle becomes a fixture."
 premiere_caption: "ABC · September 2016"
 filming_caption: "Culver City · shoot behind the guest seat's second year"
 episodes_caption: "24-episode eighth run"

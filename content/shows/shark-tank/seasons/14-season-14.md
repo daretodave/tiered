@@ -12,6 +12,7 @@ episodes: 22
 eyebrow: "Premiered September 2022 · ABC"
 lede: "Season fourteen keeps the classic six and guest-chair rotation exactly as fans expect, but delivers a genuine first: a live episode, aired as it happened rather than edited afterward. The rest of the run holds its usual rhythm — one broadcast is the real structural departure."
 pull: "A format this settled still finds room for a genuine first."
+take_h2: "One broadcast breaks the routine."
 premiere_caption: "ABC · September 2022"
 filming_caption: "Culver City · shoot behind the season's live broadcast"
 episodes_caption: "22-episode run, one aired live"

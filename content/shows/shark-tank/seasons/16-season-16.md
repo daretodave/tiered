@@ -12,6 +12,7 @@ episodes: 20
 eyebrow: "Premiered October 2024 · ABC"
 lede: "Season sixteen brings real panel news: Daniel Lubetzky, a recurring guest shark for years, moves up to the main panel, while Mark Cuban's run as a regular shark comes to a close this year. Twenty episodes carry the tank through its biggest roster shift in years."
 pull: "The biggest panel shift the tank has seen in years."
+take_h2: "The biggest shakeup in years."
 premiere_caption: "ABC · October 2024"
 filming_caption: "Culver City · shoot behind the panel's biggest shakeup in years"
 episodes_caption: "20-episode run through a major roster shift"

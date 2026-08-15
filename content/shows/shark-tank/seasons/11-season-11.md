@@ -12,6 +12,7 @@ episodes: 24
 eyebrow: "Premiered September 2019 · ABC"
 lede: "The classic six anchor every episode exactly as they have for years, but season eleven's guest-shark rotation reaches a new level of star power — recurring guests alongside one-off names from well outside the usual entrepreneur circuit. Steady format, a louder guest lineup."
 pull: "The same steady six, a noticeably louder set of guest names."
+take_h2: "Same six, louder guests."
 premiere_caption: "ABC · September 2019"
 filming_caption: "Culver City · shoot behind the eleventh run"
 episodes_caption: "24-episode eleventh run"

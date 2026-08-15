@@ -12,6 +12,7 @@ episodes: 25
 eyebrow: "Premiered October 2020 · ABC"
 lede: "Season twelve leaves Culver City for a Las Vegas soundstage, filming the whole run inside a strict pandemic bubble — the classic six six feet apart, waves and fist bumps replacing handshakes. The most visibly different the tank has looked, even with the same format underneath."
 pull: "The same six sharks, the strangest set the tank has ever used."
+take_h2: "Six feet apart, still pitching."
 premiere_caption: "ABC · October 2020"
 filming_caption: "Las Vegas · shot inside a pandemic production bubble"
 episodes_caption: "25-episode run filmed under strict distancing rules"

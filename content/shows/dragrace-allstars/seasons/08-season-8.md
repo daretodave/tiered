@@ -11,6 +11,7 @@ cast_size: 12
 eyebrow: "Aired spring–summer 2023 · Ts Madison joins the panel"
 lede: "Twelve returning queens compete under a standard elimination format again, alongside a new fan-vote side-competition. Eliminated queens' runway looks replay during Untucked, and viewers vote for a separate cash-prize winner apart from the main game."
 pull: "A return to standard elimination, plus a fan-vote side-game running underneath it — two competitions for the price of one season."
+take_h2: "A return to standard elimination."
 premiere_caption: "Paramount+ · May 2023"
 format_summary: "Fame Games · a fan-vote side-competition"
 format_caption: "viewers vote on eliminated queens' runway looks"

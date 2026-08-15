@@ -12,6 +12,7 @@ episodes: 24
 eyebrow: "Premiered October 2021 · ABC"
 lede: "Season thirteen returns Shark Tank to Culver City and to normal, closing the door on the prior year's distanced set. The classic six and the rotating guest chair pick up exactly where they left off — no roster changes, no format wrinkles, just the tank back to itself."
 pull: "The bubble season ends; the format picks up right where it left off."
+take_h2: "Back to the tank, unchanged."
 premiere_caption: "ABC · October 2021"
 filming_caption: "Culver City · back on the show's home set"
 episodes_caption: "24-episode run, business as usual"

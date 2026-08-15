@@ -11,6 +11,7 @@ cast_size: 13
 eyebrow: "Aired summer 2021 · Paramount+ debut · the largest cast yet"
 lede: "Thirteen returning queens — the largest All Stars cast yet — move the show to its new streaming home. Lip Sync Assassin returns, then tightens partway through so only the challenge winner stays safe. A new side ladder, RuDemption, gives eliminated queens a shot at re-entry."
 pull: "The biggest cast the format had run, on a brand-new streaming home, with a side ladder giving eliminated queens a way back in."
+take_h2: "The biggest cast so far."
 premiere_caption: "Paramount+ · June 2021"
 format_summary: "RuDemption · Lip Sync Assassin tightens"
 format_caption: "only the challenge winner stays safe past the midpoint"

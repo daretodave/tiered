@@ -11,6 +11,7 @@ cast_size: 18
 eyebrow: "Aired spring–summer 2025 · a record eighteen-queen bracket tournament"
 lede: "Eighteen queens — the largest cast in franchise history — split into three six-queen brackets, each running across three episodes before the top scorers advance to a semifinal. An MVQ points system lets bottom queens redistribute points among their peers."
 pull: "Eighteen queens, three brackets, and a tournament structure that reinvents what an All Stars season's shape can even look like."
+take_h2: "Eighteen queens, three brackets."
 premiere_caption: "Paramount+ · May 2025"
 format_summary: "Bracket tournament · MVQ points system"
 format_caption: "three six-queen brackets, top scorers advance to semis"
