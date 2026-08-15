@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired spring 2023 · The pod experiment at its most convincing"
 lede: "The fourth season is the founding batch's best execution of the format: a cast that engages with the pod premise on its own terms, connection-building that feels earned rather than performed, and production that breathes. Seattle is Love Is Blind running at its most convincing."
 pull: "The format's central argument gets its clearest test in Seattle."
+take_h2: "The premise, finally taken seriously."
 format_summary: "Pod dating · altar reveal"
 format_caption: "The format at its most fully realized in the founding run"
 cast_size: 30

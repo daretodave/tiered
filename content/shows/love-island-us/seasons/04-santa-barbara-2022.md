@@ -11,6 +11,7 @@ host: Sarah Hyland (narrator Iain Stirling)
 eyebrow: "Aired summer 2022 · The streaming reset"
 lede: "The biggest reset in the show's history: the move from CBS to Peacock, a new host in Sarah Hyland, and Iain Stirling — the Love Island UK narrator — taking the booth. A daily-drop streaming cadence replaces the network slot, filmed in Santa Barbara."
 pull: "Same villa rules, brand-new machine underneath."
+take_h2: "The rebuild, running underneath."
 format_summary: "Peacock move · daily-drop cadence"
 format_caption: "New host, new narrator, streaming reinvention"
 cast_size: 11

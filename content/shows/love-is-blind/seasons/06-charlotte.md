@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired winter 2024 · Uneven pods, flashes of genuine connection"
 lede: "Season six moves the experiment to the Southeast and delivers a mixed result: the pod phase has moments of real depth, but the cast's engagement is inconsistent, and the season never builds the heat the format needs. Charlotte is the established era's most uneven entry."
 pull: "The pods work in patches — and patches aren't quite enough."
+take_h2: "Real moments, no real momentum."
 format_summary: "Pod dating · altar reveal"
 format_caption: "Thirteen episodes including reunion"
 cast_size: 30

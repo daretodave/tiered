@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired winter 2022 · Refined production, a cast worth arguing about"
 lede: "The second season sharpens the format the Atlanta original invented: tighter pacing, more developed pod sequences, and a cast whose dynamics kept the season in the conversation well after it aired. Chicago is where Love Is Blind started feeling confident rather than experimental."
 pull: "The production clicks here, and the cast makes the most of it."
+take_h2: "Confidence arrives in year two."
 format_summary: "Pod dating · altar reveal"
 format_caption: "The format running with two seasons of confidence"
 cast_size: 30

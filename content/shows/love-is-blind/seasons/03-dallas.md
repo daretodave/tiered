@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired fall 2022 · The pod experiment at its most strained"
 lede: "The third season moves to Dallas and runs the format competently, but the pod phase — the engine the whole show depends on — never generates the depth the premise needs. A watchable season that demonstrates the format's floor more than its ceiling."
 pull: "The pods are the whole show, and Dallas is where they work the least."
+take_h2: "The floor, not the ceiling."
 format_summary: "Pod dating · altar reveal"
 format_caption: "The format running without the chemistry it needs"
 cast_size: 30

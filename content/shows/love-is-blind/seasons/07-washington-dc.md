@@ -11,6 +11,7 @@ host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Aired fall 2024 · The established era's strongest pod experiment"
 lede: "Season seven takes the format to Washington, D.C. and produces the best pod experiment since Seattle: a cast that engages the blind-dating premise seriously, connections that carry weight into the engagement phase, and production that gives the experiment room."
 pull: "The D.C. cast gives the pods something real to work with."
+take_h2: "The best run since Seattle."
 format_summary: "Pod dating · altar reveal"
 format_caption: "Thirteen episodes including reunion"
 cast_size: 30
