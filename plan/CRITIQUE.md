@@ -1,53 +1,65 @@
 # CRITIQUE
 
-> Last pass: 2026-08-15 at commit 6e872163
-> Pass count: 126
+> Last pass: 2026-08-15 at commit 257a2d51
+> Pass count: 127
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 > `/march` Step 2's normal rate-limited cadence is active. Pass
-> 126 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> 127 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP
 > needed), both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Both passes rotated to a fresh URL
-> set not covered by pass 125. Anon (5 URLs: `/`,
-> `/shows/chopped/season/the-double-first`, `/shows`,
-> `/themes/best-finales`, `/shows/love-is-blind/season/columbus`)
-> and authed (`/u/e2e`, `/shows/hells-kitchen/season/battle-of-
-> the-states`, `/shows/chopped?view=community`,
-> `/themes/best-comeback-seasons`, `/sign-in`) walks ran, desktop
-> + mobile, zero console errors/failed first-party requests/mobile
-> overflow across both, no spoiler leaks. Auth handshake confirmed
-> live (authenticated:cloud), `@e2e` handle rendered in header
-> chrome on every authed URL. **5 new findings filed** (all
-> Pending, 3 HIGH, 1 MED, 1 LOW): Chopped S62's hero lede and
-> section-02 body paragraph restate the same three facts (date
-> range, zero-calendar-overlap, the two format firsts) in
-> near-identical wording; Love Is Blind Columbus's season body
-> and `canon.md` Season 10 rationale — both rendering on the same
-> page — repeat four phrases almost verbatim ("most encouraging
-> season," "buy-in for the pod experiment," etc.); Hell's Kitchen
-> Battle of the States' season body and `canon.md` Season 24
-> rationale restate the same sous-chef-return and
-> geographic-diversity facts near-verbatim — three independent
-> instances of the same season-file/canon.md echo defect class in
-> one walk, across three different shows; Chopped S62 separately
-> restates its "zero overlap" fact six times across the eyebrow,
-> lede, body, and two `watch_list` bullets; and Love Is Blind's
-> season files (confirmed catalog-wide, 0/10) have no `take_h2`
-> field, so Columbus's "01 The Take" section reuses the bare page
-> title as its headline where sibling shows render a distinct
-> editorial hook — same optional-field gap the recent `take_h2`
-> warning-drain commits have been closing on other shows. Two
-> reader-surfaced observations were assessed and dropped: the
-> authed pass's Chopped community-view all-zero vote table reads
-> as a "wall of zeros," but this is the deliberate, already-tested
-> honest-zero rendering the pass-117/118 `CommunityRankList` fix
-> chose over em-dashes, further explained in-page by the "MIRRORING
-> THE CANON" status banner — not a new bug; and a failed
-> first-party RSC prefetch request on `/u/e2e` was dropped as the
-> same long-documented benign Link-prefetch-teardown artifact
-> noted on numerous prior passes. No pending HIGH previously
-> queued for iterate before this pass — the three HIGH rows filed
-> this pass are new and now compete normally.
+> set not covered by pass 126. Anon (5 URLs:
+> `/shows/survivor/season/survivor-50`,
+> `/shows/top-chef/season/carolinas`,
+> `/shows/traitors/season/ardross-2026`,
+> `/themes/the-cast-outgrew-the-format`,
+> `/shows/americas-got-talent/season/the-panel-doubles-down`) and
+> authed (`/shows/traitors?view=community`,
+> `/shows/survivor/season/survivor-50`,
+> `/themes/one-rule-fills-every-seat`,
+> `/shows/top-chef/season/carolinas`,
+> `/shows/americas-got-talent/season/the-panel-doubles-down`)
+> walks ran, desktop + mobile, zero console errors/failed
+> first-party requests/mobile overflow across both, no spoiler
+> leaks. Auth handshake confirmed live (authenticated:cloud),
+> `@e2e` handle rendered in header chrome on every authed URL.
+> Reader returned 6 anon + 3 authed candidate findings; two anon
+> candidates were dropped as weak/dependent-on-a-sibling-finding
+> (a themed-list echo of the survivor-50 cast-size fact, purely
+> derivative of the filed survivor-50 row) or merged (a
+> single-season AGT watch_list gap folded into the broader
+> systemic 0/21-file version from the authed pass), and one anon
+> candidate (the AGT ordinal contradiction) was merged with an
+> authed candidate (the same page's 3-field Golden-Buzzer/
+> Callbacks echo) into one HIGH row since both trace to the same
+> season file + canon.md rationale and a single content pass
+> would naturally fix both. **5 new findings filed** (all
+> Pending, 1 HIGH, 3 MED, 1 LOW): AGT S21 "The panel doubles down"
+> compounds an outright ordinal contradiction (Take says the
+> Golden-Buzzer twist happens "for the first time," Shape/Canon
+> both say "for the third time") with a 3-field near-verbatim
+> repetition of the same Golden-Buzzer/Callbacks fact set across
+> lede/body/canon.md rationale; Top Chef Carolinas repeats its
+> filming-location facts across three separate field-pairs
+> (lede/Shape-body verbatim clause, plus the FILMED tile caption
+> self-restating its own value line) — a third distinct repetition
+> instance on a page that already has one pending LOW row for the
+> same defect class; Survivor 50's lede and Shape-of-the-Season
+> body restate the same cast-size framing near-verbatim, the site's
+> newest/highest-traffic page accumulating yet another instance of
+> a defect class several prior passes have already fixed elsewhere
+> on the same page; Traitors Ardross 2026 repeats "on merit" and a
+> "hasn't had the time" clause across three consecutive sections
+> (Take, Shape, Canon), with Take itself restating the idea twice
+> in two sentences; and America's Got Talent's entire 21-season
+> catalog has no `watch_list` field at all (confirmed
+> catalog-wide, 0/21), so no AGT season page ever renders the
+> sibling-established "What to watch for" section. One anon
+> candidate was dropped as purely derivative (a themed-list entry
+> echoing the filed Survivor 50 cast-size fact, not an independent
+> defect). No pending HIGH previously queued for iterate before
+> this pass — the one HIGH row filed this pass is new and now
+> competes normally.
 >
 > ───── Pass 125 metadata kept below for history ─────
 >
@@ -3001,6 +3013,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/americas-got-talent/season/the-panel-doubles-down — the page carries two compounding defects around the same fact set (the returning-panel/double-Golden-Buzzer/Judges'-Callbacks twist). (1) A direct ordinal contradiction: "01 The Take" says the format hands the panel something to be surprised by "for the first time," while "02 The Shape of the Season" and "03 Where It Sits in the Canon" both say the double-Golden-Buzzer twist is happening "for the third time in the show's history" — a first-time reader hits the contradiction immediately after the hero. (2) Once past that, the same fact set (panel unchanged for a second year, two Golden Buzzers per judge, new Judges' Callbacks round) repeats near-verbatim across three separate fields — lede, body, and the `canon.md` rank rationale — rather than each adding new texture. Confirmed in `content/shows/americas-got-talent/seasons/21-the-panel-doubles-down.md` (`lede`, body) and `content/shows/americas-got-talent/canon.md` line 162 (rationale), all three rendering on the same URL: lede — "Season twenty-one runs the same four-person judging table for a second year — Cowell, Mandel, Vergara, and Mel B return unchanged. Each judge can now award two Golden Buzzers, and a new Judges' Callbacks round gives select acts another shot at the live shows."; Take — "A settled panel walks in with real chemistry — and, for the first time, the format hands it something to be surprised by too."; body — "...for the third time in the show's history, each judge can award two Golden Buzzers instead of one, and a new Judges' Callbacks round gives select acts a second chance at the live shows."; canon.md — "...for the third time in the show's run, every judge gets two Golden Buzzers instead of one, and a new Judges' Callbacks round hands select acts another shot at the live rounds." Same defect class as the many already-fixed lede/body/canon.md echoes (chopped, love-is-blind, hells-kitchen, below-deck-down-under), compounded here by an outright factual contradiction rather than just repetition. Fix: rewrite the Take's clause so "first" modifies something actually true (e.g., "for the first time this settled panel gets a twist to react to") or drop the ordinal from Take entirely; then let the `canon.md` rationale keep the "third time" fact for its comparative ranking job, rewrite the body paragraph toward a different angle (how the twist actually plays out, or a specific act), and trim the lede to name the two format changes without re-narrating them in full sentences. Content-only, up to three field edits across two files. Spoiler discipline P0 intact (format-mechanics facts only, no outcome exposure). (URL: /shows/americas-got-talent/season/the-panel-doubles-down, source: critique-pass-127)
+
+- [ ] [MED] [anon+authed] /shows/top-chef/season/carolinas — the season's filming-location facts repeat across three separate field-pairs instead of each carrying a distinct fact, a third instance of the repetition-class defect already flagged on this same page (see the pending LOW row below on the LCK re-entry fact). (1) The `lede` and the "02 Shape of the Season" body share a verbatim 13-word clause listing the filming stops: lede — "A Charlotte-centered season with stops in Greenville, Asheville and the U.S. National Whitewater Center." vs. Shape body — "Carolinas keeps Top Chef's regional-immersive grammar centered on Charlotte, with stops in Greenville, Asheville and the U.S. National Whitewater Center." (2) The FILMED stat tile's caption restates its own value line directly above it with only one clause added: value "Charlotte, NC & Greenville, SC" vs. caption "Charlotte, NC and Greenville, SC · with stops in Asheville" (`content/shows/top-chef/seasons/23-carolinas.md`: `location` + `filming_caption`). The FILMED/FORMAT cross-tile duplication was already fixed at pass-93 (format_caption rewritten to the LCK fact), but that fix didn't touch `filming_caption` itself, which still self-restates. Fix: rewrite the Shape-of-the-Season body's opening to skip re-listing all three cities (name one stop's specific detail instead), and rewrite `filming_caption` to lead with a new fact rather than repeating the city names the FILMED value line already states (e.g. "With stops in Asheville and the U.S. National Whitewater Center"). Content-only, two field edits. Spoiler discipline P0 intact. (URL: /shows/top-chef/season/carolinas, source: critique-pass-127)
+
+- [ ] [MED] [anon] /shows/survivor/season/survivor-50 — the `lede` and the "02 Shape of the Season" body restate the same cast-size fact with near-identical phrasing, the site's newest and highest-traffic season page continuing to accumulate this defect class despite several prior independent fixes on the same page (FORMAT/CAST tile dupe, canon.md/body echo, four-times-repeated fan-vote mechanics list — all previously resolved). Lede: "All 24 castaways returning, from Season 1 through the season that just aired, for the biggest cast in the show's history" vs. Shape body: "Survivor 50 gathers twenty-four returning castaways spanning the show's full run, from Season 1 through the season that just aired, for the largest cast in franchise history." — the "from Season 1 through the season that just aired" clause and the biggest/largest-cast superlative both recur verbatim in substance. Fix: let the lede own the "from Season 1 through the season that just aired" framing once; open the Shape-of-the-Season paragraph with a different angle (e.g. the winners/near-misses cast mix, or the fan-voted-mechanics framing) instead of re-establishing cast size and span. Content-only, one field in `content/shows/survivor/seasons/50-survivor-50.md`. Spoiler discipline P0 intact (format-mechanics facts only). (URL: /shows/survivor/season/survivor-50, source: critique-pass-127)
+
+- [ ] [MED] [anon] /shows/traitors/season/ardross-2026 — the phrase "on merit" and the "hasn't had the time the earlier seasons have had" clause both repeat near-verbatim across three consecutive sections (Take, Shape of the Season, Where It Sits in the Canon), and the Take section itself says the same thing twice within two sentences. Take: "Settling in on merit. The newest entry — slotting in on merit as it settles." (both sentences restate the same idea with "on merit" twice); Shape: "It lands at the tail of the canon on merit: a clean, well-made run that has not yet had the time the earlier seasons have."; Canon: "Fourth as the newest entry, ranked on merit at the tail... a clean, well-made season that simply has not had the time the earlier runs have had to prove its place in the canon." Same defect class as this page's already-resolved eyebrow/body echo (pass-125) and the currently-pending FORMAT-field LOW row below — a third distinct repetition instance on the same page. Fix: rewrite the Take to a single clear sentence without repeating "on merit" twice; let only one of Shape/Canon carry the "hasn't had time yet" framing, and give the other section a distinct observation (e.g. a specific cast dynamic or format detail) instead of re-arguing the same ranking point three times. Content-only, up to two field edits. Spoiler discipline P0 intact (format-mechanics facts only, no outcome exposure). (URL: /shows/traitors/season/ardross-2026, source: critique-pass-127)
+
+- [ ] [LOW] [authed] /shows/americas-got-talent/season/the-panel-doubles-down (systemic — all 21 America's Got Talent season files) — the entire America's Got Talent catalog has no `watch_list` field on any season, so the "What to watch for" section that renders on sibling season pages (Survivor 50, Top Chef Carolinas both show a full "04 What to watch for" block with 4-6 spoiler-safe moments) never appears for any AGT season, including this freshly-shipped S21 page — on-page nav drops straight from "03 Where it sits in the canon" to "04 Adjacent in the canon," one section short of the sibling-page pattern. Confirmed: `grep -L watch_list content/shows/americas-got-talent/seasons/*.md` returns all 21 files. Fix: backfill `watch_list` on AGT season files going forward, starting with the newest/highest-traffic ones (this S21 page first), following the 4-6-entry spoiler-safe, format-mechanics pattern already established on Survivor/Top Chef. Content-only, additive field, no schema change. Spoiler discipline P0 intact (watch_list entries are format-mechanics moments only, never outcomes). (URL: /shows/americas-got-talent/season/the-panel-doubles-down, source: critique-pass-127)
 
 - [x] [HIGH] [anon] /shows/chopped/season/the-double-first — the hero lede directly under the H1 and the section-02 body paragraph restate the same three facts (the July 2025–May 2026 date range, the "no other season shares this calendar" claim, the charity-round-swap detail, the Ted's Takeover judging detail) in near-identical wording. Confirmed via file read of `content/shows/chopped/seasons/62-the-double-first.md`: `lede` — "Thirteen standalone episodes run July 2025 into May 2026, the only season in this batch with no overlap. A charity hour swaps the usual round order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the table as a fourth judge." Body (the markdown content below frontmatter) — "Thirteen standalone episodes run from July 2025 into May 2026, the only season in this batch that shares its calendar with no other season at all. Two structural firsts define the run: a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert rounds for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen himself at the judging table as a fourth judge — only the second time in the show's history a host has judged." Same defect class as the many already-fixed lede/body and season-file/canon.md echoes (traitors S4, traitors-uk series-1, below-deck-down-under S4). Fix: keep the `lede` as a short one-line hook (drop the charity/Ted's-Takeover detail there, since `take_h2` and the `watch_list` entries already cover them) and let the body paragraph carry the full explanation with its own sentence structure, not a near-restatement. Content-only, one field in `content/shows/chopped/seasons/62-the-double-first.md`. Spoiler discipline P0 intact (format-mechanics facts only). (URL: /shows/chopped/season/the-double-first, source: critique-pass-126) — RESOLVED (2026-08-15, cloud march tick): trimmed `lede` to a one-line calendar-only hook, dropped the charity/Ted's-Takeover detail there, and rewrote the body paragraph with its own sentence structure (no longer a near-restatement) — addressed together with the MED row below in the same file.
 
