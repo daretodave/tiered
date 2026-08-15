@@ -1,5 +1,54 @@
 # CRITIQUE
 
+> Last pass: 2026-08-15 at commit 7159f961
+> Pass count: 124
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 124 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Anon (5 URLs: `/`,
+> `/shows/traitors-uk/season/series-1`, `/shows`,
+> `/themes/the-calendar-moved-the-format-didnt`,
+> `/shows/top-chef/season/carolinas`) and authed (`/u/e2e`,
+> `/shows/traitors-uk/season/series-1`,
+> `/shows/top-chef?view=community`,
+> `/themes/the-calendar-moved-the-format-didnt`, `/sign-in`) walks
+> ran, desktop + mobile, zero console errors/failed first-party
+> requests/mobile overflow across both, no spoiler leaks;
+> `/sign-in` correctly redirected the already-signed-in visitor to
+> `/`. Auth handshake confirmed live (authenticated:cloud). **3 new
+> findings filed** (all Pending, LOW, none HIGH/MED): traitors-uk
+> series-1's "castle included" closing clause repeats verbatim
+> between the season file's `lede` and the show's `canon.md`
+> Series 1 rationale, both of which render on the same season
+> page; Top Chef Carolinas' Last Chance Kitchen re-entry-delay
+> fact repeats near-identically across four separate fields
+> (`pull`, `format_caption`, the body paragraph, and the Ep 6
+> `watch_list` entry); and Top Chef's community view renders an
+> em-dash in every row of the "7D" column with no inline
+> explanation, while the actual explanation ("deltas populate
+> once weekly updates start producing them") sits in a separate
+> block well above the table. Three reader-surfaced observations
+> were assessed and dropped: a failed first-party RSC prefetch
+> request on `/u/e2e` (long-documented benign Link-prefetch-
+> teardown artifact, dropped on multiple prior passes); the
+> `/themes/[theme]` "SAVE (THIS DEVICE)" label when authed
+> (deliberate, already litigated and closed across three prior
+> passes — #272, #377, #385); and a desktop-only visible
+> run-together "Editor's CanonCURATED" tab label on Top Chef's
+> community view (already litigated at pass-16 #215 — the
+> accessible name was fixed via `aria-label`, the visual lockup
+> was deliberately preserved as styled chrome). A fourth
+> observation — the freshly-extended `the-calendar-moved-the-
+> format-didnt` list's Shark Tank/Hell's Kitchen repeat entries —
+> was dropped as already addressed same-day by the `ListDetailHero`
+> unique-shows fix (7a71f9af), which the reader's own capture
+> confirmed live in the stat block. No pending HIGH competes for
+> iterate.
+>
+> ───── Pass 123 metadata kept below for history ─────
+>
 > Last pass: 2026-08-14 at commit d63bebc5
 > Pass count: 123
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2855,7 +2904,11 @@
 
 ## Pending
 
+- [ ] [LOW] [anon] /shows/traitors-uk/season/series-1 — the closing clause "castle included" appears verbatim in two different content fields that both render on the same season page: the season file's `lede` ("...the run the American version later copied, castle included.") and the show's `canon.md` Series 1 rationale, which the season page also surfaces ("...the format proved sturdy enough that an American version borrowed it wholesale, castle included."). Not the same defect already fixed this same day at 89a9896a (that fix reworded the "Ardross Castle in the Scottish Highlands" location phrase's second occurrence within the season file alone) — this is a second, distinct verbatim echo, this time a closing-clause device shared across two separate files (`content/shows/traitors-uk/seasons/01-series-1.md` and `content/shows/traitors-uk/canon.md`). Fix: reword one occurrence, e.g. drop "castle included" from the lede's closing clause (it's already established two sentences earlier) or vary the canon.md phrasing to a different closing device. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/traitors-uk/season/series-1, source: critique-pass-124)
 
+- [ ] [LOW] [anon] /shows/top-chef/season/carolinas — the season's Last Chance Kitchen re-entry-delay fact (its one genuine format tweak) repeats near-identically across four separate `content/shows/top-chef/seasons/23-carolinas.md` fields instead of each field adding new texture: `pull` ("Last Chance Kitchen now opens later, so the door back in stays shut a little longer"), `format_caption` ("Last Chance Kitchen's re-entry point moves later this season"), the body paragraph ("delays the companion series and changes how far a chef's second chance actually reaches"), and the Ep 6 `watch_list` entry ("the companion series opens later than usual, and the door back in works differently than in any prior season") — "door back in" and "opens later" both recur verbatim across non-adjacent fields. Same defect class as the many already-fixed stat-tile-duplication findings on this page (FORMAT/EPISODES, FILMED/FORMAT), just spread across narrative fields rather than adjacent tiles. Fix: keep one field owning the plain restatement (likely `format_caption`) and give the other three a genuinely different angle — a contestant or judge reaction to the rule change, a specific chef affected, or a comparison to the prior season's LCK format. Content-only, up to three field edits. Spoiler discipline P0 intact (format-mechanics fact only, no outcome exposure). (URL: /shows/top-chef/season/carolinas, source: critique-pass-124)
+
+- [ ] [LOW] [authed] /shows/top-chef?view=community — the full-ranking table's "7D" column renders an em-dash on every one of its rows with no in-table label, tooltip, or footnote explaining why, even though the page does explain it: a separate "What moved this week" block well above the table states that movers populate once weekly updates start producing deltas. A reader who lands on the table first (its natural scan order, ranked below the summary strip) sees 23 unexplained em-dashes with no local cue that the column isn't broken. Fix: add a short inline note near the "7D" table header (or a hover tooltip on the header cell) restating that deltas populate after the first weekly update, so the column is self-explanatory without requiring the reader to have already read the block above it. Chrome-copy-only, no data change. Spoiler discipline P0 intact. (URL: /shows/top-chef?view=community, source: critique-pass-124)
 
 - [x] [MED] [anon] /shows/top-chef/season/carolinas — the FORMAT stat tile's value line restates the exact episode count the adjacent EPISODES tile already leads with, the same recurring stat-tile-duplication defect class already fixed across many other shows/seasons (Bake Off all 16 files, Big Brother S27, Southern Charm, Below Deck Med S11, Survivor 50), now reproducing on a different field pairing on this season. Confirmed via rendered page text: "EPISODES / 14 / FORMAT / Regional immersive · 14 eps / Last Chance Kitchen's re-entry point moves later this season" — `content/shows/top-chef/seasons/23-carolinas.md` `format_summary: "Regional immersive · 14 eps"` repeats the `ep_count: 14` value already shown one tile earlier; `format_caption` was already fixed at critique-pass-93 to name the real format tweak (LCK re-entry rule) and stays untouched by this finding. Fix: drop the `· 14 eps` suffix from `format_summary`, leaving just `"Regional immersive"` (or replace it with a genuinely distinct format fact), so EPISODES is the sole owner of the episode count. Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/top-chef/season/carolinas, source: critique-pass-122) — RESOLVED: dropped the `· 14 eps` suffix from `format_summary`, leaving `"Regional immersive"` — matches the concise, ep-count-free style already used across every other Top Chef season's `format_summary` (e.g. S22's "International road show", S21's "Road show · Wisconsin"). EPISODES tile remains the sole owner of the episode count; `format_caption`'s LCK re-entry framing untouched.
 
