@@ -13,6 +13,7 @@ episodes: 18
 eyebrow: "Premiered September 2012 · Bravo's first Miami cast overhaul"
 lede: "The founding cast turns over for the first time — two originals exit, one moves to a recurring role, and three new full-time housewives step in alongside a fourth new face, resetting Miami's social circle just one season in."
 pull: "The first real test of whether Miami's social world survives a full cast reset — and it does, louder than before."
+take_h2: "A reset that lands louder."
 premiere_caption: "Bravo · September 2012"
 filming_caption: "Miami · first cast overhaul of the original run"
 format_summary: "Social reality"

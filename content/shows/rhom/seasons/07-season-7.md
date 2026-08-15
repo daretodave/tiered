@@ -13,6 +13,7 @@ episodes: 20
 eyebrow: "Premiered June 2025 · Bravo linear, Peacock next-day"
 lede: "Stephanie Shojaee joins the main cast alongside Alexia Nepola, Larsa Pippen, Lisa Hochstein, Guerdy Abraira, and Julia Lemigova on the now-familiar Bravo-and-Peacock schedule. Nicole Martin steps back to a guest role after four seasons as a full-timer."
 pull: "The most recent chapter adds one new voice to a cast that already knows exactly how it works together."
+take_h2: "One new voice, a familiar rhythm."
 premiere_caption: "Bravo · June 2025"
 filming_caption: "Miami · Bravo linear with Peacock next-day"
 format_summary: "Social reality"

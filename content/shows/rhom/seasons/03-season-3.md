@@ -13,6 +13,7 @@ episodes: 16
 eyebrow: "Premiered August 2013 · Bravo's Miami chapter closes out its original run"
 lede: "Alexia Nepola returns to full-time status alongside Lea Black, Adriana de Moura, Lisa Hochstein, and Joanna Krupa, with a tighter recurring roster around them. Sixteen episodes wrap the original Bravo run — the last new RHOM before an eight-year gap."
 pull: "A leaner, more settled cast closes out the original run, unaware it's about to become the franchise's longest hiatus."
+take_h2: "The original run quietly closes."
 premiere_caption: "Bravo · August 2013"
 filming_caption: "Miami · final season before an eight-year hiatus"
 format_summary: "Social reality"

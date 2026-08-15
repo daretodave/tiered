@@ -10,6 +10,7 @@ ep_count: 24
 eyebrow: "Premiered September 2021 · Bravo"
 lede: "All six founding women return, and Jennie Nguyen joins as the season's new full housewife. At twenty-four episodes, this is RHOSLC's longest season to date — a stress test for how far the founding cast's chemistry stretches once a seventh voice enters the room."
 pull: "The founding six get company, and the longest episode order yet tests whether Salt Lake City's social world scales past its first six voices."
+take_h2: "A seventh voice, a longer test."
 premiere_caption: "Bravo · September 2021"
 filming_caption: "Salt Lake City · the full founding cast, plus one"
 format_summary: "Social reality"

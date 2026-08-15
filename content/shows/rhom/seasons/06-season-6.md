@@ -13,6 +13,7 @@ episodes: 20
 eyebrow: "Premiered November 2023 · Back on Bravo, Peacock same-day"
 lede: "The revival cast returns to linear television for the first time since the Peacock relaunch, airing on Bravo with same-day Peacock streaming. The core group carries over intact, and original-era housewife Ana Quincoces reappears in a guest role."
 pull: "The revival cast graduates to Bravo's linear schedule without losing the Peacock audience it built — a hybrid model the show keeps running."
+take_h2: "The revival goes linear too."
 premiere_caption: "Bravo · November 2023"
 filming_caption: "Miami · back on Bravo linear, day-after on Peacock"
 format_summary: "Social reality"

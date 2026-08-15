@@ -10,6 +10,7 @@ ep_count: 19
 eyebrow: "Premiered September 2025 · Bravo"
 lede: "All seven full housewives from the year before return — Barlow, Cosby, Gay, Marks, Rose, Katsanevas, and Newport — with no new departures from the core group. It's the most cast-stable season RHOSLC has run, a settled version of the format after several years of turnover."
 pull: "Seven housewives, zero new departures — after years of turnover, RHOSLC finally settles into a lineup that holds."
+take_h2: "The lineup finally holds."
 premiere_caption: "Bravo · September 2025"
 filming_caption: "Salt Lake City · the same seven housewives, one year later"
 format_summary: "Social reality"
