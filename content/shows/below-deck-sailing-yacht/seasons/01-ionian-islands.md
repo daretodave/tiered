@@ -8,6 +8,7 @@ location: "Ionian Islands, Greece"
 host: "Glenn Shephard"
 ep_count: 11
 eyebrow: "The origin season"
+take_h2: "Builds the format's architecture."
 lede: "The sailing-yacht format assembled itself in the Ionian Islands, where Captain Glenn Shephard commanded his first charter crew through Greek waters that demanded a different skill set than any motor yacht."
 pull: "The season that built the architecture — rough at the edges, essential to everything that followed."
 format_summary: "Sailing yacht · Ionian Islands"

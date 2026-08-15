@@ -8,6 +8,7 @@ location: "Sardinia, Italy"
 host: "Glenn Shephard"
 ep_count: 14
 eyebrow: "The Sardinian peak"
+take_h2: "The most polished entry."
 lede: "By Season 4 the format had found its confidence — a Sardinian coastline the cameras knew how to frame, crew dynamics that had developed real texture, and Captain Glenn's most assured command of the run."
 pull: "The most polished season of five, and the clearest case for what the sailing-yacht format can be."
 format_summary: "Sailing yacht · Sardinia"

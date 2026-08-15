@@ -10,6 +10,7 @@ ep_count: 18
 aired_year: 2021
 episodes: 18
 eyebrow: "Aired January–May 2021 · Bravo"
+take_h2: "Closes on its own terms."
 lede: "Dr. Tiffany Moon joins a returning five for a run Bravo billed, at the time, as RHOD's final season. A resurfaced clip involving a returning cast member becomes a significant off-camera storyline, widely covered well beyond the show's usual press cycle."
 pull: "Billed as the last chapter, and it plays like one — new cast, real off-camera friction, and a franchise entry that closes on its own terms."
 premiere_caption: "Bravo · January 2021"

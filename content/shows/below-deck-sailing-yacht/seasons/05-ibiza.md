@@ -8,6 +8,7 @@ location: "Ibiza, Spain"
 host: "Glenn Shephard"
 ep_count: 13
 eyebrow: "The final charter"
+take_h2: "A louder final charter."
 lede: "The final season before the hiatus brought Below Deck Sailing Yacht to Ibiza, where the island's social energy and a different charter-guest dynamic put the format in new territory for a close."
 pull: "A complete season in a new register — the busiest setting of the run, and the most telling distance from the Ionian origin."
 format_summary: "Sailing yacht · Ibiza"

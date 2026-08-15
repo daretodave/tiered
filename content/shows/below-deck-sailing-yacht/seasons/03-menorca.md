@@ -8,6 +8,7 @@ location: "Menorca, Spain"
 host: "Glenn Shephard"
 ep_count: 14
 eyebrow: "Balearic confidence"
+take_h2: "A steadier, quieter register."
 lede: "The format moved west to the Balearic Islands and Menorca's quieter coastline — limestone coves, uncrowded anchorages — where a crew with Croatian experience behind it found a steadier stride."
 pull: "The western Mediterranean gave the show a new register; the crew had the experience to use it."
 format_summary: "Sailing yacht · Balearic Islands"

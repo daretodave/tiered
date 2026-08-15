@@ -8,6 +8,7 @@ premiere_date: "2016-04-11"
 location: "Dallas, Texas"
 ep_count: 11
 eyebrow: "Premiered April 2016 · Bravo"
+take_h2: "A distinct social register."
 lede: "Five women enter Dallas's tight social scene — church committees, charity galas, old-fashioned Southern manners — and the personalities big enough to test them. RHOD arrives with a compact founding cast and a social register the Housewives franchise hadn't filmed before."
 pull: "Church, charity, and old-fashioned Southern manners — the social architecture that makes this Housewives chapter feel like nowhere else in the franchise."
 premiere_caption: "Bravo · April 2016"
