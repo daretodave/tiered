@@ -10,6 +10,7 @@ ep_count: 10
 eyebrow: "Premiered January 2016 · Bravo"
 lede: "Six women in Potomac, Maryland's social circle navigate old family money against newer wealth, all from a Black upper-middle-class world Bravo hadn't filmed before. RHOP's founding cast is smaller than most Housewives debuts, but the social terrain is entirely new."
 pull: "A social world organized by old money and new money — the structural tension that sets this Housewives chapter apart from the start."
+take_h2: "A social register Bravo hadn't filmed."
 premiere_caption: "Bravo · January 2016"
 filming_caption: "Potomac · first shoot in a Black upper-middle-class world"
 format_summary: "Social reality"

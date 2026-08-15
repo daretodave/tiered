@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "Aired April–August 2018 · Bravo"
 lede: "Season three adds Candiace Dillard as the group's sixth full-time housewife, while Charrisse Jackson-Jordan steps back to a recurring role. A multi-episode trip to the French Riviera gives the season its biggest set piece, closing with a two-part reunion."
 pull: "A French Riviera trip pulls the Potomac cast further from home than the show has ever traveled before."
+take_h2: "The cast's first trip abroad."
 premiere_caption: "Bravo · April 2018"
 filming_caption: "Potomac and the French Riviera · the show's biggest trip yet"
 format_summary: "Social reality"

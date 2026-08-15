@@ -9,6 +9,7 @@ location: "Atlanta and surrounding Georgia suburbs, USA"
 eyebrow: "Premiered June 2018 · Netflix"
 lede: "The Fab Five return to Georgia for a second round, and the format widens who gets cast as the week's nominee — the show's curiosity about a person's life extending further than its debut run ever did."
 pull: "Same five specialists, same one-week structure — and a season more willing to sit with a nominee's full story."
+take_h2: "The format widens its casting net."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the founding format, deepened"
 cast_size: 5

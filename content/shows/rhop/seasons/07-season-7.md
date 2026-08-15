@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "Aired October 2022–March 2023 · Bravo"
 lede: "Season seven runs with the exact same seven housewives as Season 6 — the most cast-stable season the show had produced to that point, with no new addition and no departure. Twenty episodes let a group that's already spent a full season together go even deeper."
 pull: "The most cast-stable season RHOP had run so far, seven housewives with nothing left to introduce and nowhere to hide."
+take_h2: "A cast with nothing left to prove."
 premiere_caption: "Bravo · October 2022"
 filming_caption: "Potomac · the show's most cast-stable season to date"
 format_summary: "Social reality"

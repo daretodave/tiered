@@ -10,6 +10,7 @@ ep_count: 14
 eyebrow: "Aired April–July 2017 · Bravo"
 lede: "Season two brings back five of Season 1's six housewives and adds Monique Samuels as the group's newest full-time cast member. Katie Rost's run ends partway through filming, leaving the group to find its footing with a newly reshaped roster mid-season."
 pull: "A cast reshuffle mid-filming forces Season 2 to redraw its own social map before the year is out."
+take_h2: "One exit reshapes the group mid-season."
 premiere_caption: "Bravo · April 2017"
 filming_caption: "Potomac · a mid-season cast change reshapes the group"
 format_summary: "Social reality"

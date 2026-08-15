@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "Aired August–December 2020 · Bravo"
 lede: "Season five adds Wendy Osefo as the group's seventh full-time housewife, the largest cast yet. A COVID-19 delay pushed the season from its original spring date to an August premiere, and a three-part reunion caps off the longest episode order in the show's run to that point."
 pull: "A pandemic delay and a cast that grows to seven make Season 5 the biggest version of RHOP the show has run yet."
+take_h2: "Delayed, then the biggest cast yet."
 premiere_caption: "Bravo · August 2020 (delayed from a planned May premiere)"
 filming_caption: "Potomac · production shifted by the COVID-19 pandemic"
 format_summary: "Social reality"

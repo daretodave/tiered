@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "Aired November 2023–April 2024 · Bravo"
 lede: "Season eight grows to eight full-time housewives with the addition of Nneka Ihim, the largest cast RHOP has run. Filmed in the summer of 2023, the season also turns out to be Candiace Dillard Bassett's and Robyn Dixon's final season as full-time cast members."
 pull: "The biggest cast in RHOP history also turns out to be the last stop for two of its longest-running housewives."
+take_h2: "The biggest cast, and a quiet farewell."
 premiere_caption: "Bravo · November 2023"
 filming_caption: "Potomac · filmed April–July 2023"
 format_summary: "Social reality"

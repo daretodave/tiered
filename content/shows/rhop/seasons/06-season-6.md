@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "Aired July–December 2021 · Bravo"
 lede: "Season six adds Mia Thornton as a new full-time housewife while Monique Samuels does not return, keeping the cast at seven. Filmed over the first half of 2021, the season closes with a four-part reunion, the longest reunion format RHOP had run to that point."
 pull: "A new housewife steps into a cast reshaped by one high-profile exit, and Season 6 has to prove the group still holds together."
+take_h2: "A newcomer steps into a changed cast."
 premiere_caption: "Bravo · July 2021"
 filming_caption: "Potomac · filmed January–May 2021"
 format_summary: "Social reality"

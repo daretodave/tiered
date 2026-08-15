@@ -9,6 +9,7 @@ location: "Kansas City, Missouri, USA"
 eyebrow: "Premiered March 2019 · Netflix"
 lede: "The Fab Five leave Georgia for the first time, relocating the whole format to Kansas City. Same five specialists, same one-nominee-a-week structure — now tested against a different city's rhythms outside the only backdrop the show had known."
 pull: "The format's first road trip — proof the show travels as well as it settles."
+take_h2: "The format survives its first move."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the format's first relocation"
 cast_size: 5

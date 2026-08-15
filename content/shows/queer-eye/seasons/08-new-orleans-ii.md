@@ -9,6 +9,7 @@ location: "New Orleans, Louisiana, USA"
 eyebrow: "Premiered January 2024 · Netflix"
 lede: "Filmed in the same New Orleans production block as the season before it, this run was cut short after real-world security incidents disrupted the shoot. It's also Bobby Berk's final season as the show's design specialist."
 pull: "A harder-won season than its twin, and Bobby Berk's last round in the design chair."
+take_h2: "Real-world trouble cuts the order short."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "a shortened order, security-driven"
 cast_size: 5

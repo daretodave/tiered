@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "Aired May–September 2019 · Bravo"
 lede: "Season four runs with the exact same six housewives as Season 3 — no new addition, no departure — the first time RHOP holds its full-time cast steady from one season to the next. Katie Rost returns briefly in a guest capacity, but the core group carries the season on its own."
 pull: "The first fully unchanged cast in RHOP history lets Season 4 run on chemistry the show has already spent two seasons building."
+take_h2: "A test of chemistry alone."
 premiere_caption: "Bravo · May 2019"
 filming_caption: "Potomac · the first fully returning full-time cast"
 format_summary: "Social reality"
