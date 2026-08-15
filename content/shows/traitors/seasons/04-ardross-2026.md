@@ -31,4 +31,4 @@ watch_list:
     body: "The late stretch tightens the pressure. The newest season working the format toward its close."
 ---
 
-Season four is the newest entry, the format running smoothly. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here — the show executes a settled formula confidently, the candlelit Round Table and prize-pot missions running on rails. It lands at the tail of the canon on merit: a clean, well-made run that has not yet had the time the earlier seasons have.
+Season four is the latest chapter, the machine running with ease. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here — the show executes a settled formula confidently, the candlelit Round Table and prize-pot missions running on rails. It lands at the tail of the canon on merit: a clean, well-made run that has not yet had the time the earlier seasons have.
