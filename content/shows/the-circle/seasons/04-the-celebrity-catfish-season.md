@@ -12,6 +12,7 @@ cast_size: 13
 eyebrow: "Aired spring 2022 · Netflix · the format's first celebrity cameo"
 lede: "Season 4 raises the prize pool to $150,000 and adds a franchise first: celebrity guest catfishes playing to grow the pot rather than compete for the win. A new Circle Data Breach twist reshapes how blocking plays out for a stretch of the season."
 pull: "A pop-group cameo plays catfish for the pot, not for the crown."
+take_h2: "Celebrities join as catfish."
 format_summary: "Rate-and-block · celebrity cameo"
 format_caption: "Guest celebrities play catfish to grow the prize, not to win it"
 premiere_caption: "Netflix · May 2022"

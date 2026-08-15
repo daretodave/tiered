@@ -9,6 +9,7 @@ ep_count: 12
 eyebrow: "Premiered January 2020 · Netflix"
 lede: "Strangers move into separate apartments and only ever interact through a purpose-built social app called The Circle. Every player can appear as themselves or invent a persona, and the group's ratings of each other decide who stays and who gets blocked."
 pull: "One shared app decides who's genuine, who's playing a part, and who goes home."
+take_h2: "The format laid bare."
 premiere_caption: "Netflix · January 2020"
 episodes_caption: "Twelve episodes released in three drops"
 format_summary: "One app · ratings · blocks"

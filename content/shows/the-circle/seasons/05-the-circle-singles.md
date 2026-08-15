@@ -12,6 +12,7 @@ cast_size: 13
 eyebrow: "Aired winter 2022-23 · Netflix · the format's first on-air subtitle"
 lede: "Season 5 carries the format's first official on-air subtitle, The Circle Singles, restricting casting to single, unattached players and layering dating-adjacent stakes onto the usual rate-and-block strategy."
 pull: "This time, every player in the building is single, and playing to prove it."
+take_h2: "The format's first subtitle."
 format_summary: "Rate-and-block · Singles cast"
 format_caption: "Casting restricted to single, unattached contestants for the first time"
 premiere_caption: "Netflix · December 2022"

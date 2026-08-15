@@ -12,6 +12,7 @@ cast_size: 11
 eyebrow: "Aired spring 2024 · Netflix · the first US-built season, in Atlanta"
 lede: "Season 6 relocates production to a brand-new Atlanta build, the first US-set season after the original Manchester complex is dismantled. Its marquee hook is Max, an AI-generated contestant competing behind a real human's photo."
 pull: "One profile in the building isn't human, and the whole cast is trying to prove it."
+take_h2: "One profile isn't human."
 format_summary: "Rate-and-block · AI contestant"
 format_caption: "An AI-generated player competes disguised behind a real human's photo"
 premiere_caption: "Netflix · April 2024"

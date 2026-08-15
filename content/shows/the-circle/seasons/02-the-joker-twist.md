@@ -12,6 +12,7 @@ cast_size: 11
 eyebrow: "Aired spring 2021 · Netflix · same Manchester set as Season 1"
 lede: "Season 2 returns to the same Salford apartment building and layers in new twists: a secret Joker shaping first impressions, an all-vulnerable episode with automatic blocks, a Superinfluencer round, and a second-chance mechanic for blocked players."
 pull: "A secret player shapes every first impression before the group even knows the role exists."
+take_h2: "The stakes get sharper."
 format_summary: "Rate-and-block · Joker twist"
 format_caption: "A secret Joker shapes newcomers' first impressions before the group finds out"
 premiere_caption: "Netflix · April 2021"
