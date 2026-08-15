@@ -24,7 +24,7 @@ entries:
     season_label: "S04 · Canouan"
     rank: 2
     title: "A franchise named for Australian waters relocates to the Caribbean for its fourth season."
-    blurb: "Below Deck Down Under built its identity on Australian and Pacific anchorages. Season four moves the whole operation to the Caribbean, plus a franchise-first charter crossover with a full reality cast aboard as guests."
+    blurb: "Season four moves the whole operation to the Caribbean — the franchise's biggest jump yet — plus a franchise-first charter crossover with a full reality cast aboard as guests."
   - show: below-deck-mediterranean
     season: 5
     season_label: "S05 · Lake Como"
