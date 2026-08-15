@@ -1,5 +1,56 @@
 # CRITIQUE
 
+> Last pass: 2026-08-15 at commit 6e872163
+> Pass count: 126
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 126 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Both passes rotated to a fresh URL
+> set not covered by pass 125. Anon (5 URLs: `/`,
+> `/shows/chopped/season/the-double-first`, `/shows`,
+> `/themes/best-finales`, `/shows/love-is-blind/season/columbus`)
+> and authed (`/u/e2e`, `/shows/hells-kitchen/season/battle-of-
+> the-states`, `/shows/chopped?view=community`,
+> `/themes/best-comeback-seasons`, `/sign-in`) walks ran, desktop
+> + mobile, zero console errors/failed first-party requests/mobile
+> overflow across both, no spoiler leaks. Auth handshake confirmed
+> live (authenticated:cloud), `@e2e` handle rendered in header
+> chrome on every authed URL. **5 new findings filed** (all
+> Pending, 3 HIGH, 1 MED, 1 LOW): Chopped S62's hero lede and
+> section-02 body paragraph restate the same three facts (date
+> range, zero-calendar-overlap, the two format firsts) in
+> near-identical wording; Love Is Blind Columbus's season body
+> and `canon.md` Season 10 rationale — both rendering on the same
+> page — repeat four phrases almost verbatim ("most encouraging
+> season," "buy-in for the pod experiment," etc.); Hell's Kitchen
+> Battle of the States' season body and `canon.md` Season 24
+> rationale restate the same sous-chef-return and
+> geographic-diversity facts near-verbatim — three independent
+> instances of the same season-file/canon.md echo defect class in
+> one walk, across three different shows; Chopped S62 separately
+> restates its "zero overlap" fact six times across the eyebrow,
+> lede, body, and two `watch_list` bullets; and Love Is Blind's
+> season files (confirmed catalog-wide, 0/10) have no `take_h2`
+> field, so Columbus's "01 The Take" section reuses the bare page
+> title as its headline where sibling shows render a distinct
+> editorial hook — same optional-field gap the recent `take_h2`
+> warning-drain commits have been closing on other shows. Two
+> reader-surfaced observations were assessed and dropped: the
+> authed pass's Chopped community-view all-zero vote table reads
+> as a "wall of zeros," but this is the deliberate, already-tested
+> honest-zero rendering the pass-117/118 `CommunityRankList` fix
+> chose over em-dashes, further explained in-page by the "MIRRORING
+> THE CANON" status banner — not a new bug; and a failed
+> first-party RSC prefetch request on `/u/e2e` was dropped as the
+> same long-documented benign Link-prefetch-teardown artifact
+> noted on numerous prior passes. No pending HIGH previously
+> queued for iterate before this pass — the three HIGH rows filed
+> this pass are new and now compete normally.
+>
+> ───── Pass 125 metadata kept below for history ─────
+>
 > Last pass: 2026-08-15 at commit 5457dcb7
 > Pass count: 125
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -2950,6 +3001,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/chopped/season/the-double-first — the hero lede directly under the H1 and the section-02 body paragraph restate the same three facts (the July 2025–May 2026 date range, the "no other season shares this calendar" claim, the charity-round-swap detail, the Ted's Takeover judging detail) in near-identical wording. Confirmed via file read of `content/shows/chopped/seasons/62-the-double-first.md`: `lede` — "Thirteen standalone episodes run July 2025 into May 2026, the only season in this batch with no overlap. A charity hour swaps the usual round order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen at the table as a fourth judge." Body (the markdown content below frontmatter) — "Thirteen standalone episodes run from July 2025 into May 2026, the only season in this batch that shares its calendar with no other season at all. Two structural firsts define the run: a No Kid Hungry charity episode swaps the usual appetizer-entrée-dessert rounds for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen himself at the judging table as a fourth judge — only the second time in the show's history a host has judged." Same defect class as the many already-fixed lede/body and season-file/canon.md echoes (traitors S4, traitors-uk series-1, below-deck-down-under S4). Fix: keep the `lede` as a short one-line hook (drop the charity/Ted's-Takeover detail there, since `take_h2` and the `watch_list` entries already cover them) and let the body paragraph carry the full explanation with its own sentence structure, not a near-restatement. Content-only, one field in `content/shows/chopped/seasons/62-the-double-first.md`. Spoiler discipline P0 intact (format-mechanics facts only). (URL: /shows/chopped/season/the-double-first, source: critique-pass-126)
+
+- [ ] [HIGH] [anon] /shows/love-is-blind/season/columbus — the season body paragraph and the `canon.md` Season 10 rationale — both of which render on the same season page — repeat the same four phrases almost verbatim: "the established era's most encouraging season," "buy-in for the pod experiment," "generates early/real stakes rather than ambient familiarity," and "doesn't climb to the founding batch's top/upper tier." Confirmed via file read. Season body (`content/shows/love-is-blind/seasons/10-columbus.md`): "Columbus is the established era's most encouraging season and the clearest bounce-back after Denver's subdued run. The Ohio cast arrives with genuine buy-in for the pod experiment — the blind-dating premise generates early stakes rather than ambient familiarity — and the production matches that energy. It doesn't climb to the founding batch's top tier..." `canon.md` "## 10. Columbus" body: "Fifth is the right slot for the established era's most encouraging season. Columbus arrives after Denver's subdued run and immediately reads differently: the cast's buy-in for the pod experiment is apparent from the opening episodes, the connection-building phase generates real stakes rather than ambient familiarity, and the production leans into the experiment. It doesn't climb to the founding batch's upper tier..." Same defect class as the already-fixed shark-tank Season 11, love-island-uk, mafs-new-york, the-voice-finale, and perfect-match season-file/canon.md duplications. Fix: rewrite the `canon.md` Season 10 rationale to argue the rank-5 slot comparatively (why it sits below Chicago/Atlanta but above Houston specifically) rather than re-narrating the season body's descriptive claims. Content-only, one field in `content/shows/love-is-blind/canon.md`. Spoiler discipline P0 intact (no outcome exposure — altar results are explicitly out of scope per `meth_how_p`). (URL: /shows/love-is-blind/season/columbus, source: critique-pass-126)
+
+- [ ] [HIGH] [authed] /shows/hells-kitchen/season/battle-of-the-states — the season body paragraph and the `canon.md` Season 24 rationale — both rendering on the same season page — restate the same two facts almost verbatim: the Michelle Tribble/James Avery sous-chef return, and the "most geographically deliberate/varied cast" claim. Confirmed via file read. Season body (`content/shows/hells-kitchen/seasons/24-battle-of-the-states.md`): "Michelle Tribble and James Avery return as sous-chefs. The one-per-state framing is the most geographically varied cast construction the franchise has used, and the expanded field gives the format more moving parts across sixteen episodes." `canon.md` "## 24. Season 24" body: "Season twenty-four is the show's most geographically deliberate cast yet... Michelle Tribble and James Avery return as sous-chefs for the second consecutive Foxwoods season... The expanded twenty-chef field gives the format more to work with across its sixteen episodes." Same defect class as the already-fixed shark-tank/love-island-uk/mafs-new-york/the-voice-finale/perfect-match season-file/canon.md duplications, now on a third dish this pass (chopped, love-is-blind, hells-kitchen all flagged the same class in a single walk). Fix: rewrite the `canon.md` Season 24 rationale to argue the rank-22 slot comparatively against neighboring seasons (why it beats S21 but sits below the seasons above it) instead of re-narrating the sous-chef/casting facts the body already states. Content-only, one field in `content/shows/hells-kitchen/canon.md`. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/hells-kitchen/season/battle-of-the-states, source: critique-pass-126)
+
+- [ ] [MED] [anon] /shows/chopped/season/the-double-first — the "zero overlap / no other season shares this calendar" fact is stated or restated six separate times on one page: the eyebrow ("TWO FORMAT FIRSTS, ZERO OVERLAP"), the lede, section 02's opening sentence, two separate `watch_list` bullets ("Every episode · zero overlap" and "Season close · May 2026"), and the show's cross-reference list blurb. Confirmed via file read of `content/shows/chopped/seasons/62-the-double-first.md`: `watch_list[2].body` — "nothing else in this batch touches its calendar. Watch it as the cleanest release window in this entire batch."; `watch_list[3].body` — "without sharing the calendar with a single other season. Watch this run as a rare, fully solo stretch for the format." Reads as padding on a page that otherwise has two genuinely distinct format firsts (the charity round-order swap, Ted's Takeover) to spend words on. Fix: state the zero-overlap fact once, prominently (the eyebrow is the natural home for it), and rewrite the two redundant `watch_list` bullets to cover a different angle each — one could focus on the charity round's specific menu constraint, the other on what Ted Allen's presence changes about the judging dynamic. Content-only, two field edits in the same file this pass's HIGH finding above also touches — addressable in the same drain. Spoiler discipline P0 intact. (URL: /shows/chopped/season/the-double-first, source: critique-pass-126)
+
+- [ ] [LOW] [anon] /shows/love-is-blind/season/columbus — the "01 The Take" section's headline is just the page title repeated ("Columbus.") followed by a single short sentence, thinner than sibling season pages' equivalent section. Confirmed via file read: `title: "Columbus"` and `pull: "Ohio gives the pods the buy-in they need."` — compare to Chopped S62's `take_h2` field, "Two firsts, and a calendar all its own.", a substantive standalone headline distinct from its title ("Season 62"). Love Is Blind's season files have no `take_h2` field at all — `pull` is doing double duty as both the section headline and the one-line hook. Fix: add a `take_h2` field to `content/shows/love-is-blind/seasons/10-columbus.md` (and audit sibling Love Is Blind season files for the same gap) with a distinct editorial headline, matching the pattern already established on Chopped and other shows with `take_h2`. Content-only, schema field already exists elsewhere in the codebase (additive use, no schema change). Spoiler discipline P0 intact. (URL: /shows/love-is-blind/season/columbus, source: critique-pass-126)
 
 - [x] [MED] [anon] /shows/traitors/season/ardross-2026 — the eyebrow line repeats verbatim as the opening sentence of the body paragraph directly below it. Same defect class as the already-fixed traitors-uk "castle included" echo, recurring on a different show/page. Eyebrow (frontmatter): "Aired winter 2026 · The newest entry, the format running smoothly". Body's opening sentence: "Season four is the newest entry, the format running smoothly." — the clause after the middle dot is copied word-for-word into the very next thing the reader reads. Fix: rewrite the body's opening sentence so it doesn't restate the eyebrow verbatim — paraphrase the way sibling season pages do (e.g. Traitors S3's eyebrow "The all-celebrity machine, running confidently" pairs with body text "The format running with confidence," varied rather than copied). Content-only, one sentence in `content/shows/traitors/seasons/04-ardross-2026.md`. Spoiler discipline P0 intact (format-mechanics only). (URL: /shows/traitors/season/ardross-2026, source: critique-pass-125) — RESOLVED: rewrote the body's opening sentence from "Season four is the newest entry, the format running smoothly." to "Season four is the latest chapter, the machine running with ease." — same idea, no longer a verbatim echo of the eyebrow clause. Word count stays within the 50-80 bound (78 words). Commit ec08546a.
 
