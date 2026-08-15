@@ -29,4 +29,4 @@ watch_list:
     body: "The debut run closes out at Ardross Castle. Notice how compact the season feels next to the format's later, more elaborate twists."
 ---
 
-The series that started it all, and the roughest version of the format you'll find: Claudia Winkleman hosts a group of strangers at Ardross Castle in the Scottish Highlands, working out a cloak-and-Round-Table game as they go. Watch it for the origin energy — the format finding its own rules live, before any other version, UK or US, had a template to follow.
+The series that started it all, and the roughest version of the format you'll find: Claudia Winkleman hosts a group of strangers at the castle, working out a cloak-and-Round-Table game as they go. Watch it for the origin energy — the format finding its own rules live, before any other version, UK or US, had a template to follow.
