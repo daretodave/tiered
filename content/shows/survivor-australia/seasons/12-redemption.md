@@ -9,6 +9,7 @@ location: "Upolu, Samoa"
 host: "David Genat"
 format_changes: ["redemption-beach-twist", "host-change-genat"]
 eyebrow: "Aired February 2026 · The Genat era begins"
+take_h2: "A new face, new chapter."
 lede: "David Genat's debut as host introduced Redemption Beach — voted-out players competing for a chance to return — and reset Australian Survivor with a new face behind the torch. The 24-episode, 45-day Samoa run delivers the full-length format under new creative stewardship."
 pull: "A new host, a new twist, a new chapter. The Redemption Beach mechanic adds a layer of strategic uncertainty the longer Australian format can absorb — eliminated players are never fully out."
 format_summary: "Redemption Beach twist · new host · Samoa"

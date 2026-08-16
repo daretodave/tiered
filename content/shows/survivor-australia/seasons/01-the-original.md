@@ -9,6 +9,7 @@ location: "Upolu, Samoa"
 host: "Jonathan LaPaglia"
 format_changes: []
 eyebrow: "Aired May 2016 · The Australian format, assembled from scratch"
+take_h2: "Finding its Australian register."
 lede: "Australian Survivor launched with 24 players in Samoa — bigger cast, longer episodes, a different strategic rhythm than the US original. The show assembled its own identity here for a Network 10 audience with no local precedent."
 pull: "Twenty-four players on a Samoan beach, the format finding its Australian register in real time — more endurance, more social complexity, more room to breathe."
 format_summary: "Sole survivor · tribal council"

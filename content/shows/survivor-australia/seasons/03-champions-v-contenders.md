@@ -10,6 +10,7 @@ location: "Savusavu, Fiji"
 host: "Jonathan LaPaglia"
 format_changes: ["champions-v-contenders-cast-split", "fiji-location-debut"]
 eyebrow: "Aired July 2018 · Australian Survivor moves to Fiji"
+take_h2: "The show becomes its own."
 lede: "Australian Survivor found its format identity in season three. The champions-versus-contenders split gave the season a social architecture unlike anything the first two runs had found, and Fiji gave the production a new visual register to work with."
 pull: "Olympians and elite athletes on one tribe, everyday Australians on the other — the cast architecture alone set this season apart from everything before it."
 format_summary: "Champions vs. Contenders · Fiji"

@@ -10,6 +10,7 @@ location: "Upolu, Samoa"
 host: "Jonathan LaPaglia"
 format_changes: ["titans-v-rebels-cast-split"]
 eyebrow: "Aired January 2024 · A clean new cast divide in Samoa"
+take_h2: "Solid, without a new ceiling."
 lede: "Titans V Rebels brought a new archetype divide to Samoa: achievers and power figures on one tribe, free spirits and underdogs on the other. Twenty-four players, 47 days, the Australian version running at its established pace with a cast built around clear social contrast."
 pull: "Titans and Rebels — the labels carry enough cultural weight to give the cast an immediate social framing, and the season runs on what happens when those identities meet the tribal council format."
 format_summary: "Titans vs. Rebels · new cast · Samoa"

@@ -10,6 +10,7 @@ location: "Savusavu, Fiji"
 host: "Jonathan LaPaglia"
 format_changes: []
 eyebrow: "Aired July 2019 · The champions-v-contenders format, revisited"
+take_h2: "Capable, but the novelty's gone."
 lede: "Australian Survivor returned to champions-versus-contenders for a second pass. Back in Fiji with a capable cast, the season delivers engaged strategic play across a long run — without the structural novelty that made season three feel like a discovery."
 pull: "A capable second pass on the champions-versus-contenders premise — the cast is game, the format is proven, and the season asks what happens when the surprise has worn off."
 format_summary: "Champions vs. Contenders · Fiji"

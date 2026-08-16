@@ -10,6 +10,7 @@ location: "Charters Towers, Queensland, Australia"
 host: "Jonathan LaPaglia"
 format_changes: ["blood-v-water-pairs-format", "second-domestic-season"]
 eyebrow: "Aired January 2022 · The pairs format comes to Australian Survivor"
+take_h2: "Strategy shadowed by relationship."
 lede: "The second Queensland season introduced the pairs format — loved ones separated into opposing tribes, every strategic move shadowed by the social cost of competing against someone you came with. Blood V Water ran the relational premise through 24 episodes of outback heat."
 pull: "Twelve pairs split at the start — the format's central tension is built before the game even begins. Every alliance, every vote, every tribal council carries the question of what the game is worth."
 format_summary: "Blood vs. Water · pairs format · Queensland"

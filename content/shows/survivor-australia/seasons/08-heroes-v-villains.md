@@ -10,6 +10,7 @@ location: "Upolu, Samoa"
 host: "Jonathan LaPaglia"
 format_changes: ["heroes-v-villains-cast-split", "return-to-international-filming"]
 eyebrow: "Aired January 2023 · Australian Survivor returns to Samoa"
+take_h2: "The format's highest register yet."
 lede: "Australian Survivor returned to Samoa for its most acclaimed season. A Heroes-versus-Villains cast of familiar names and new players ran the format at a strategic density the show had not matched before — 24 episodes at the Australian version's highest register."
 pull: "A cast divided by reputation — heroes who played with honor, villains who played with ruthlessness — the framework gave the season its social architecture and let the players live up to it."
 format_summary: "Heroes vs. Villains · returnees + new cast · Samoa"

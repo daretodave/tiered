@@ -9,6 +9,7 @@ location: "Savusavu, Fiji"
 host: "Jonathan LaPaglia"
 format_changes: ["all-returnee-cast"]
 eyebrow: "Aired July 2020 · Australian Survivor's first all-returnee cast"
+take_h2: "Right premise, uneven execution."
 lede: "Australian Survivor brought back its most memorable players for an all-returnee season in Fiji. Four seasons of cast members with established reputations, playing against each other's prior game — with production constraints in 2020 shaping what the season could deliver."
 pull: "The all-returnee premise gave the show its most recognizable cast to date — players already known to each other and to the audience, working against reputations they had spent four seasons building."
 format_summary: "All Stars · returnees · Fiji"
