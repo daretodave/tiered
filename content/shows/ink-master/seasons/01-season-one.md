@@ -26,7 +26,7 @@ watch_list:
     body: "Ink Master's earliest signature structure shows up quickly: artists tattoo walk-in clients they've never met, working within a strict clock. The format's whole tension — craft versus time pressure — is legible from these first challenges."
   - episode_label: "Mid-season · flash challenges"
     body: "Smaller design-focused challenges break up the elimination rounds, giving the judges — and the audience — a clearer read on each artist's individual style before the stakes rise again."
-  - episode_label: "Judging table deliberations"
+  - episode_label: "Late-season · judging table deliberations"
     body: "The judges' critiques are unusually technical for reality TV — watch for specifics on line work, shading, and composition rather than vague reality-show praise. This is where the show's credibility with actual tattoo artists gets built."
   - episode_label: "Final stretch · the last chairs"
     body: "As the field narrows, the challenges scale up in difficulty and the judging gets sharper. Worth watching for how differently each remaining artist handles pressure they can't erase."
