@@ -31,4 +31,11 @@ watch_list:
     body: "Some rounds send home only the lowest scorer in the room, breaking from the format's usual two-name blocking pairs."
 ---
 
-Season 7 pulls the cast down to just 10 players, the smallest group in the show's US run, and tightens the format around it. "Disrupter Mode" hands some players blocking immunity while saddling others with real disadvantage, a secret superinfluencer can decide a blocking alone, and some rounds send only the single lowest-rated player home instead of the usual pair. It's also the final season Netflix produced before the format moves to Hulu.
+A cast this small changes the math of every single vote — with
+only ten players in the building, there's nowhere to hide a bad
+read, and disrupter mode raises the stakes further by making
+blocking immunity and real jeopardy the same twist wearing two
+faces. Cutting the usual two-name block down to one name doesn't
+soften the room; it sharpens exactly who's responsible when
+someone goes home. It's the final season Netflix produced before
+the format moves to Hulu.

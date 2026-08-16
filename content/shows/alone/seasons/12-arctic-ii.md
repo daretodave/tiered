@@ -20,4 +20,11 @@ host: "Colby Donaldson"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 
-Season twelve returned to the Canadian Arctic — the sub-Arctic wilderness that season seven used to open the Colby era — with a fresh cast and no structural novelty beyond the location itself. A new field facing the same extreme demands: intensive shelter requirements, unforgiving caloric math, sub-zero conditions. The environment is unchanged; only the survivalists are new. A reliable entry that earns its place in a deep canon without resetting what the show can do.
+Twelve seasons in, Alone doesn't need a gimmick to stay
+compelling — repeating a location and trusting the cast alone to
+make the season distinct is its own kind of confidence, the
+opposite of a franchise reaching for a twist to justify another
+run. The intensive shelter demands, the caloric math, the
+sub-zero stretches: none of it gets easier with familiarity,
+which is exactly the point. A season that proves the format's
+depth rather than its need for reinvention.

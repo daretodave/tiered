@@ -29,10 +29,11 @@ watch_list:
     body: "Watch for guest sharks pulled from well outside the usual investor circuit — the louder-lineup trend from recent seasons pushed even further here."
 ---
 
-Season seventeen moves Shark Tank from its longtime Friday slot to
-Wednesday nights, and the panel looks different too — Daniel
-Lubetzky sits as a full-time shark for the first time, and Mark
-Cuban isn't part of the main rotation this year. The guest chair
-keeps pulling louder names than ever, several from well outside
-the usual investor circuit. Eighteen episodes settle the new
-lineup in fast.
+A Wednesday slot is unfamiliar territory for a show built around
+Friday's lower-pressure real estate, and eighteen episodes is
+enough runway to see whether the new night sticks. Lubetzky
+trading a recurring guest seat for a permanent one signals the
+panel wanted his voice at the table full-time, not just when
+scheduling allowed — and the guest chair pulling names from
+further outside the usual investor circuit keeps the tank's
+outside perspective growing.
