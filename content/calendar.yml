@@ -78,7 +78,7 @@ finales:
     status: scheduled
   - show: alone
     season: 13
-    finale_date: 2026-08-26
+    finale_date: 2026-09-03
     status: scheduled
   - show: big-brother
     season: 28
@@ -87,4 +87,4 @@ finales:
   - show: masterchef-australia
     season: 18
     finale_date: 2026-08-09
-    status: scheduled
+    status: aired

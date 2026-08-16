@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-08-09 | next due 2026-08-16 |
+| season-sweep | 7 days | 2026-08-16 | next due 2026-08-23 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,94 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Sixth full weekly sweep, 2026-08-16 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows,
+cross-checked against the filesystem (same 3 pre-existing tracked
+frontmatter/filed mismatches recur — `90-day-fiance` 11/12,
+`american-ninja-warrior` 17/18, `married-at-first-sight` 19/20 — none
+actionable this pass). **No genuinely new gaps found.** Every one of the
+42 previously-starred rows was independently re-verified against fresh
+sources and reconfirmed accurate — no season crossed from
+confirmed-but-unaired into concluded territory this pass, and no
+show previously believed gap-free turned up an unfiled season. **Gap
+table unchanged: 42 shows carry a gap · 43 gap-slots total.** Nearest
+dated candidates remain `90-day-fiance` (S12 finale airs tonight,
+2026-08-16, per Deadline — too close to today's research window to
+confirm aired) and `american-ninja-warrior` (S18 finale scheduled
+tomorrow, 2026-08-17); both stay deferred pending next tick's
+re-verification.
+
+**Two calendar corrections landed in `content/calendar.yml` this
+tick.** `alone` S13's finale date was carried at 2026-08-26 (set
+2026-07-25) but fresh sourcing (Wikipedia + TV Series Finale, episode
+12 "Subzero" explicitly dated) puts the real finale at **2026-09-03**
+— corrected. `masterchef-australia` S18's calendar row still read
+`status: scheduled` for a finale that already fired and was drained
+same-day by the 2026-08-09 sweep — corrected to `status: aired`
+(cosmetic; the finale-gate keys off `finale_date`, not `status`, so
+this didn't affect gate behavior, just hygiene).
+
+**One calendar date flagged uncertain, not corrected.**
+`below-deck-mediterranean` S11's finale is carried at 2026-08-24 (the
+fifth sweep's correction from an earlier ~08-10 estimate), but this
+pass's research — an 2026-08-10 episode-10 recap showing the season
+only about halfway through its typical 17-20 episode run — casts
+doubt on that date, suggesting the real finale lands in
+September/October instead. No confirmed replacement date exists yet,
+so the calendar entry is left as-is rather than guessing; flagged for
+priority re-verification at the 2026-08-23 sweep, one day before the
+carried date would lapse.
+
+**`traitors` (US) "New Blood" disambiguation resolved.** The fifth
+sweep flagged sourcing ambiguity over whether the 2026-09-17 NBC
+premiere is Season 5 or a distinct entry. This pass's research
+clarifies: "New Blood" is a separately-branded, first-ever
+all-civilian edition — **not** officially numbered as Season 5. The
+true numbered Season 5 is a distinct celebrity edition already in
+production for Peacock, expected winter 2027 (unofficial estimate,
+~January 2027). No table action — the existing `4/5, 1*` row
+continues to track "New Blood" as the next filed installment
+regardless of official numbering, but future copy should not
+conflate the two.
+
+**Status-field discrepancies carried forward (out of Rule 1a's
+scope to fix directly — flagged for visibility only).** Five shows'
+`status` frontmatter reads inconsistently with reality because each
+sits in a between-seasons gap with no imminent premiere: `bachelor`
+(next season pushed to 2027 per Deadline, Apr 2026 — reads `airing`),
+`bachelor-in-paradise` (S11 pushed to summer 2027 — reads `airing`),
+`dragrace-uk` (S7 ended Nov 2025, S8 not until 2026-09-03 — reads
+`airing`), `perfect-match` (S4 concluded May 2026, no S5 confirmed —
+reads `airing`), `top-chef` (S23 finale already aired 2026-06-08, S24
+dateless — reads `airing`). Two more carry forward unresolved from
+prior sweeps: `the-voice` (S30 confirmed 2026-09-21 — should read
+`hiatus` not `ended`) and `bachelorette` (S22 pulled indefinitely,
+no ABC decision — should read `hiatus` not `airing`). None of these
+are gap-table actions; noting them here so a future oversight pass
+can decide whether to widen Rule 1a's scope to include status-field
+corrections.
+
+**Reconfirmed no-revival, no action:** `so-you-think-you-can-dance`
+(Fox exec explicitly ruled out a return, May 2026), `the-apprentice`
+(Amazon reboot talks exist but studio confirms "not in active
+development," May 2026), `americas-next-top-model` (Tyra Banks
+teasing only, no network greenlight). **Flagged as a future
+show-add signal, no action (locked to the biweekly clock):**
+`jersey-shore`'s spinoff "Jersey Shore Family Vacation" is airing
+its final 18-episode run in 2026 — a distinct MTV series from the
+already-fully-drained `jersey-shore` catalog entry, surfaced here for
+whenever the show-add clock next arms.
+
+**Freshly confirmed premiere/finale dates, no table action (all
+already represented by existing starred rows):** `survivor` S51
+premieres 2026-09-23 (CBS, confirmed); `the-challenge` S42
+"Cutthroat" and `project-runway` S22 have both moved from
+confirmed-but-unaired to now-airing (no finale date published for
+either yet, stay deferred); `dancing-with-the-stars` S35 premieres
+2026-09-15; `rhoslc` S7 premieres 2026-09-16; `rhony` S16 premieres
+2026-09-08; `hells-kitchen` S25 premieres 2026-09-24; `love-island-us`
+reunion airs 2026-08-31 (not a new season).
 
 **Rule 2 stall, 2026-08-13 tick (cloud march):** checked the
 nearest dated candidate before falling through — `american-
@@ -2280,3 +2368,4 @@ No calendar or gap-table action.
 | 2026-07-26 | 9 | 37 |
 | 2026-08-02 | 11 (dragrace-allstars S11 claim corrected same-day — false positive, see notes — + 11 newly confirmed-but-unaired; a pre-existing duplicate alone-australia row also deduped) | 46 |
 | 2026-08-09 | 1 (top-chef S24, newly confirmed-but-unaired; chopped's recurring "S63/S64" false positive re-flagged, not reopened) | 47 |
+| 2026-08-16 | 0 (every one of the 42 starred rows reconfirmed; two calendar.yml date/status corrections and a traitors "New Blood" disambiguation surfaced, no gap-table change — see notes) | 43 |
