@@ -7,7 +7,7 @@ category: tone
 sentiment: warm-down
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-16
 featured: false
 related:
   - best-villain-editing
@@ -37,58 +37,64 @@ entries:
     rank: 4
     title: "A seventh voice joins the founding six, and the longer season tests what holds."
     blurb: "The show's longest episode order yet gives a cast years into its own rhythms more runway than it's ever had. That extra room cuts both ways — the back-half spends it testing where everyone in the group actually stands."
-  - show: southern-charm
+  - show: rhom
     season: 1
     season_label: "S01"
     rank: 5
+    title: "Old Miami friendships meet new money, and the warmth never fully survives it."
+    blurb: "The season's own pitch pairs years of real friendship with family-business ambition and new money, treating that pairing as the whole hook. Six women who've known each other for years spend the season finding out how much ambition that friendship can actually hold."
+  - show: southern-charm
+    season: 1
+    season_label: "S01"
+    rank: 6
     title: "Charleston manners hold a room together right up until they don't."
     blurb: "Old-money politeness is the whole social contract this founding cast runs on, and the season's real story is watching that contract strain. Every dinner party opens warm and genteel; several close somewhere much colder."
   - show: vanderpump-rules
     season: 1
     season_label: "S01"
-    rank: 6
+    rank: 7
     title: "A restaurant's actual chain of command turns friendship into hierarchy."
     blurb: "SUR's staff start the season as coworkers and friends in roughly equal measure. Lisa Vanderpump's chain of command doesn't respect that distinction, and by the finale the hierarchy has reshaped the friend group more than any single argument did."
   - show: selling-sunset
     season: 1
     season_label: "S01"
-    rank: 7
+    rank: 8
     title: "A small brokerage's office warmth barely survives its first real listing fight."
     blurb: "Seven agents share one desk, one boss, and one client pool, friendly enough at the open. Eight-figure listings and real office tension share equal billing, and by the finale, warmth and rivalry are splitting the same room."
   - show: below-deck
     season: 1
     season_label: "S01 · Sint Maarten"
-    rank: 8
+    rank: 9
     title: "A brand-new crew learns fast that living where you work erodes goodwill."
     blurb: "Captain Lee's first crew starts the charter season like any new coworkers — polite, green, figuring each other out. Close quarters, service pressure, and zero time off do the rest, and a friendly crew turns short-tempered faster than expected."
   - show: summer-house
     season: 1
     season_label: "S01 · Amagansett"
-    rank: 9
+    rank: 10
     title: "A fixed group of city friends learns a share house changes a friendship's terms."
     blurb: "The whole premise is a group of established New York friends sharing one Hamptons roof every weekend of the summer. That closeness is the format's early charm, and its biggest liability once the group can't just go home between hangouts."
   - show: jersey-shore
     season: 1
     season_label: "S01"
-    rank: 10
+    rank: 11
     title: "Eight strangers' instant chemistry gets a stress test the boardwalk can't soften."
     blurb: "The gym-tanning-laundry routine reads as pure fun through the season's opening stretch, roommates finding an easy rhythm fast. A full summer in one house eventually asks more of that chemistry than a shore-house friendship can always deliver."
   - show: the-real-world
     season: 1
     season_label: "S01"
-    rank: 11
+    rank: 12
     title: "Reality TV's first season proves strangers-to-friends doesn't always hold for a full run."
     blurb: "Seven strangers move into a SoHo loft with no format precedent to guide them, and the early episodes play like real bonding. By the back-half, the confessionals do less bonding and more accounting for what's gone wrong."
   - show: big-brother
     season: 11
     season_label: "S11"
-    rank: 12
+    rank: 13
     title: "Day-one friend groups get built into the game, then get dismantled by it."
     blurb: "Four cliques sort the house before the cast has had a night to read the room, and the loyalty a friend group provides gets treated as strategy from day one. By midseason, that built-in group is the first thing the game asks houseguests to break."
   - show: the-challenge
     season: 21
     season_label: "S21 · Rivals"
-    rank: 13
+    rank: 14
     title: "Some forced-together rivals warm up. The pairs who started friendly do the opposite."
     blurb: "Fourteen pairs walk in carrying real history, several teamed specifically because they can't stand each other. The real twist is watching hostile pairs soften while pairs that started civil drift toward real friction instead."
 ---

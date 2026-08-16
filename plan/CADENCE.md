@@ -41,6 +41,26 @@ confirm aired) and `american-ninja-warrior` (S18 finale scheduled
 tomorrow, 2026-08-17); both stay deferred pending next tick's
 re-verification.
 
+**Rule 2 stall, 2026-08-16 tick (cloud march, same-day follow-up):**
+re-verified both nearest dated candidates flagged above before
+falling through to Rule 3 — and both previously-carried dates turn
+out to have been wrong, pointing at mid-season episodes rather than
+actual finales. `90-day-fiance` S12: the 2026-08-16 episode ("It's
+Better to Bend Than Break") is episode 15 of 16, not the finale —
+the true finale ("Last Fling Before the Ring," ep. 16) airs
+**2026-08-23**, corroborated by TVmaze's episode guide and an
+independent episode-tracking recap outlet. `american-ninja-warrior`
+S18: the 2026-08-17 date is episode 11 ("National Finals 2") of a
+13-episode season, not the finale — the true finale ("National
+Finals 4," ep. 13) airs **2026-08-31**, corroborated by a full
+schedule aggregator and independent search cross-check (medium-high
+confidence; NBC's own episode-guide page timed out on fetch).
+Neither finale has aired as of this tick. No table action — both
+rows stay correctly starred `1*`, just with corrected target dates
+for the next re-verification pass. Fell through to Rule 3: extended
+`where-the-warmth-ran-out` (RHOM S01 added, rank 5, 13→14 entries,
+13→14 shows) — see `plan/LISTS.md` for the full grounding note.
+
 **Two calendar corrections landed in `content/calendar.yml` this
 tick.** `alone` S13's finale date was carried at 2026-08-26 (set
 2026-07-25) but fresh sourcing (Wikipedia + TV Series Finale, episode
