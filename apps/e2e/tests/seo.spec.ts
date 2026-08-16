@@ -69,6 +69,17 @@ test('per-route opengraph-image: /themes/[theme]', async ({ page }) => {
   expect(response?.headers()['content-type'] ?? '').toMatch(/image\/png/i)
 })
 
+// CRITIQUE pass-89: /u/[handle] previously fell back to the sitewide
+// default OG (indistinguishable from the homepage's card) for every
+// profile share. An unknown handle must still 404 cleanly through the
+// real Next.js runtime, not just the unit-mocked notFound() branch —
+// the populated-profile path needs a seeded member and is covered by
+// the unit test instead (`__tests__/opengraph-image.test.tsx`).
+test('per-route opengraph-image: /u/[handle] unknown handle 404s', async ({ page }) => {
+  const response = await page.goto('/u/__no-such-member-xyz__/opengraph-image')
+  expect(response?.status()).toBe(404)
+})
+
 test('/about emits FAQPage JSON-LD with ≥4 questions', async ({ page }) => {
   await page.goto('/about', { waitUntil: 'domcontentloaded' })
   const raw = await page.locator('script#ld-about-faq').textContent()
