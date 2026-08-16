@@ -7,6 +7,7 @@ canonical_position: 10
 premiere_date: 2016-06-09
 location: "Vancouver Island, BC, Canada"
 eyebrow: "Aired summer 2016 · The format holding up on familiar ground"
+take_h2: "Proving the format wasn't a fluke."
 lede: "Back to Vancouver Island for a second run — same waters, same coastal rainforest, different survivalists. Season two tested whether the format was a novelty or something sturdier, and answered clearly: a more confident production and a field that arrived better prepared."
 pull: "The format running with more assurance than it had any right to in its second outing."
 format_summary: "Solo survival · self-filmed"

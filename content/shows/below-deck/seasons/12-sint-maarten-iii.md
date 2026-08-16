@@ -9,6 +9,7 @@ premiere_date: "2025-02-01"
 ep_count: 16
 aired_year: 2025
 eyebrow: "Season 12 · Sint Maarten, Anguilla, St. Barths"
+take_h2: "Three islands, one charter route."
 lede: "The third Sint Maarten season expanded the franchise's island-hopping range — Anguilla and St. Barths joined the charter rotation, giving Captain Kerry's second run a multi-island format no previous Below Deck season had attempted."
 pull: "Island-hopping across three Caribbean destinations opened up the format in ways a single anchorage couldn't."
 format_summary: "Superyacht charter · multi-island"

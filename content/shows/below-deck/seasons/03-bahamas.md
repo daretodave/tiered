@@ -8,6 +8,7 @@ location: "The Bahamas"
 host: "Lee Rosbach"
 ep_count: 14
 eyebrow: "The format at full capacity"
+take_h2: "Full capacity, finally reached."
 lede: "The show found its footing in the Bahamas. Captain Lee, a more confident production, and a cast that generated chemistry across the hierarchy combined to deliver the season that first felt like Below Deck running at full capacity."
 pull: "The season where the format stopped proving itself and started delivering on its promise."
 format_summary: "Charter yacht · Bahamas"

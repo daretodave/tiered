@@ -7,6 +7,7 @@ canonical_position: 4
 premiere_date: 2018-06-14
 location: "Züünkharaa, Mongolia"
 eyebrow: "Aired summer 2018 · The first returning-contestant season, in Mongolia"
+take_h2: "Familiar faces, unfamiliar terrain."
 lede: "The show's first all-returnee field brought ten non-winners from the first four seasons to northern Mongolia — a new continent, a new biome, and a cast the audience already knew. Redemption combined a format experiment with a genuinely novel landscape, and both bets landed."
 pull: "Familiar names, unfamiliar terrain — the combination gave the format a new kind of stakes."
 format_summary: "All-returnees · self-filmed"

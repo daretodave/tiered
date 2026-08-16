@@ -7,6 +7,7 @@ canonical_position: 8
 premiere_date: 2023-06-08
 location: "Labrador, Newfoundland and Labrador, Canada"
 eyebrow: "Aired summer 2023 · Winter-survival format, Labrador in the cold"
+take_h2: "The format meets winter."
 lede: "Season ten returned to Labrador in winter — frozen conditions for the first time in the franchise. The wilderness in winter is a different proposition from anything the show had attempted, and the format change was structural."
 pull: "The format in winter is a different show. Season ten is the proof."
 format_summary: "Solo survival · self-filmed · winter conditions"

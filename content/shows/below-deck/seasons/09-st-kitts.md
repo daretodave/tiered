@@ -9,6 +9,7 @@ premiere_date: "2021-11-01"
 ep_count: 15
 aired_year: 2021
 eyebrow: "Season 9 · St. Kitts"
+take_h2: "A tighter, quicker charter run."
 lede: "A tighter fifteen-episode season set off the volcanic shores of St. Kitts, where a new crew worked through the charter format's familiar pressures in a compact arc."
 pull: "The shortest Lee-era season — focused, but without the room to fully stretch."
 format_summary: "Superyacht charter · Caribbean"

@@ -8,6 +8,7 @@ location: "British Virgin Islands, Caribbean"
 host: "Lee Rosbach"
 ep_count: 14
 eyebrow: "Format consolidation"
+take_h2: "The format gets more assured."
 lede: "The second season moved to the British Virgin Islands and found a cleaner groove. Captain Lee's authority settled into something more defined, the chief stew hierarchy sharpened, and charter guests arrived with expectations the crew had to meet under pressure."
 pull: "The format learning what it was — sharper, more assured, and better at using the location."
 format_summary: "Charter yacht · BVI"

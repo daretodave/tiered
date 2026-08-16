@@ -7,6 +7,7 @@ canonical_position: 12
 premiere_date: 2017-06-08
 location: "Quatsino, BC, Canada"
 eyebrow: "Aired summer 2017 · The only paired-teams season"
+take_h2: "Survival becomes a partnership."
 lede: "Season four replaced ten solo survivalists with seven two-person teams — the show's most radical structural departure. Back at Quatsino Sound, but the fundamental premise had changed: survival was now a partnership, not a solitary exercise."
 pull: "Alone with a partner is a different show — which is exactly what this season demonstrates."
 format_summary: "Paired teams · self-filmed"

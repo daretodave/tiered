@@ -7,6 +7,7 @@ canonical_position: 3
 premiere_date: 2020-06-11
 location: "Great Slave Lake, Northwest Territories, Canada"
 eyebrow: "Aired summer 2020 · First Colby Donaldson season, Canadian Arctic"
+take_h2: "The harshest environment yet."
 lede: "Season seven opened the Colby era at Great Slave Lake, Northwest Territories — the show's most demanding environment yet. Colby Donaldson joined as host, adding a structural element without disrupting the self-filmed, wilderness-first premise."
 pull: "The Arctic raised the environmental stakes to their highest point yet."
 format_summary: "Solo survival · self-filmed · hosted"

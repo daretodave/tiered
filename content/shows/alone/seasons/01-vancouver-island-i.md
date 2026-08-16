@@ -7,6 +7,7 @@ canonical_position: 2
 premiere_date: 2015-06-18
 location: "Quatsino, Vancouver Island, BC, Canada"
 eyebrow: "Aired summer 2015 · The format, assembled from scratch"
+take_h2: "The format invents itself."
 lede: "The origin. Ten survivalists dropped individually along Quatsino Sound on Vancouver Island, each carrying ten items from a pre-approved gear list and a camera kit — no crew, no contact. The format that would run for twelve seasons invented itself on these shores."
 pull: "No host, no crew, no precedent — just ten people and a wilderness they had to document themselves."
 format_summary: "Solo survival · self-filmed"

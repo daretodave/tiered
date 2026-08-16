@@ -9,6 +9,7 @@ premiere_date: "2020-11-01"
 ep_count: 17
 aired_year: 2020
 eyebrow: "Season 8 · Antigua"
+take_h2: "Back to familiar Caribbean waters."
 lede: "Below Deck returned to the Caribbean with an Antigua charter run that delivered the format's reliable rhythm — crew hierarchy friction, demanding guests, and Captain Lee navigating it all."
 pull: "A solid Caribbean run that holds its own in the middle of the pack."
 format_summary: "Superyacht charter · Caribbean"

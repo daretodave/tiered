@@ -8,6 +8,7 @@ location: "U.S. Virgin Islands, Caribbean"
 host: "Lee Rosbach"
 ep_count: 14
 eyebrow: "Solid ground, lower ceiling"
+take_h2: "Solid, but never quite igniting."
 lede: "Season four moved to the U.S. Virgin Islands and delivered a reliable charter run. Captain Lee held the command deck with his characteristic directness, the interior and deck departments generated their usual friction, and the St. John waters made for beautiful footage."
 pull: "Functional Below Deck — the format working reliably even when the cast chemistry doesn't fully ignite."
 format_summary: "Charter yacht · USVI"
