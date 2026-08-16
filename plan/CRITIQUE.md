@@ -1,5 +1,66 @@
 # CRITIQUE
 
+> Last pass: 2026-08-16 at commit 324b68c9
+> Pass count: 128
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 128 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Both passes rotated to a fresh URL
+> set not covered by pass 127 — this time deliberately sampling
+> shows outside the recent survivor/top-chef/traitors/AGT rotation
+> (shark-tank, alone, the-circle) to check whether recently-fixed
+> defect classes (lede/body echo, host_caption ordinal misuse) are
+> corpus-wide or were isolated to the shows repeatedly sampled.
+> Anon (5 URLs: `/`, `/shows`,
+> `/shows/shark-tank/season/season-17`,
+> `/shows/alone/season/arctic-ii`, `/themes/best-finales`) and
+> authed (`/shows/shark-tank/season/season-17`,
+> `/shows/alone/season/arctic-ii`, `/themes/best-finales`,
+> `/shows/the-circle/season/disrupter-mode`, `/u/e2e`) walks ran,
+> desktop + mobile, zero console errors/failed first-party
+> requests/mobile overflow across both (one benign `_rsc` prefetch
+> teardown abort on `/u/e2e`, see the LOW tooling row below), no
+> spoiler leaks. Auth handshake confirmed live (authenticated:cloud),
+> `@e2e` handle rendered in header chrome on every authed URL.
+> Reader returned 4 anon + 5 authed candidate findings. Two anon
+> candidates (FORMAT-tile field-semantics drift between shows;
+> the "What to watch for" section missing on Alone) were dropped
+> on verification — both trace to legitimate per-show/per-season
+> optional-field variance (Alone S12 genuinely has no `watch_list`
+> authored; `format_summary` vs `format_caption` usage isn't a
+> documented contract), not defects. One LOW anon candidate
+> (season-page `<title>` "Season 17" vs "S12" formatting) was
+> dropped as a false positive — `seasonDisplayTitle()`
+> (`src/app/shows/[show]/season/[slug]/page.tsx:111`) already
+> handles this intentionally and correctly per two prior critique
+> passes (68, 73), documented in the surrounding code comments.
+> One authed candidate (vote-pair post-click/delta state
+> unverifiable because the bot account has never voted) was
+> dropped as critique-coverage meta-commentary, not a site defect.
+> The authed HIGH lede/body-echo candidate on shark-tank and the
+> anon MED version of the same finding, plus a third instance
+> found on the-circle, were merged into one HIGH row covering all
+> three pages, since all three verified as the identical defect
+> class (body paragraph re-deriving the lede's own sentence with
+> light word-swapping) with a 3/3 hit rate on a previously
+> unsampled set — filed as a corpus-wide-suspect finding rather
+> than three separate rows. **3 new findings filed** (all Pending,
+> 1 HIGH, 1 MED, 1 LOW): the systemic lede/body near-verbatim echo
+> above; Alone's `host_caption` token misapplied to Colby
+> Donaldson, a host who joined mid-run at S7 (not S1), inflating
+> his tenure ordinal on 6 season files (S7-S12) — same documented
+> bug class already fixed on `americas-got-talent` and
+> `americas-next-top-model`; and a LOW tooling fix to
+> `scripts/critique-walk.mjs`'s `isRscPrefetchAbort()` filter,
+> which only suppresses the homepage-link prefetch-abort noise
+> class and lets the same noise resurface as a "new" finding on
+> any other page with an outbound `Link` prefetch. No pending HIGH
+> previously queued for iterate before this pass.
+>
+> ───── Pass 127 metadata kept below for history ─────
+>
 > Last pass: 2026-08-15 at commit 257a2d51
 > Pass count: 127
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3013,6 +3074,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon+authed] /shows/shark-tank/season/season-17, /shows/alone/season/arctic-ii, /shows/the-circle/season/disrupter-mode — the season-page `lede` frontmatter field and the markdown body's opening paragraph are near-verbatim restatements of the same sentence on all three sampled season pages (100% hit rate on a fresh, previously-uncritiqued sample), suggesting this defect class — already fixed one-off on chopped/love-is-blind/hells-kitchen/below-deck-down-under/AGT-S21 — may still be live corpus-wide rather than fully drained. Confirmed at source: `content/shows/shark-tank/seasons/17-season-17.md` — `lede: "Season seventeen moves Shark Tank from Friday to Wednesday nights, and the panel looks different too — Daniel Lubetzky sits as a full-time shark for the first time, while Mark Cuban isn't part of the rotation. The guest chair keeps pulling louder names than ever."` vs. body opening `"Season seventeen moves Shark Tank from its longtime Friday slot to Wednesday nights, and the panel looks different too — Daniel Lubetzky sits as a full-time shark for the first time, and Mark Cuban isn't part of the main rotation this year. The guest chair keeps pulling louder names than ever, several from well outside the usual investor circuit."` Same pattern in `content/shows/alone/seasons/12-arctic-ii.md` (lede vs. `02 THE SHAPE OF THE SEASON` body, both opening "Season twelve returned to the Canadian Arctic...") and `content/shows/the-circle/seasons/07-disrupter-mode.md` (lede vs. body, both opening "Season 7 pulls the cast down to just 10 players, the smallest group in the show's US run..."). Fix: give the `lede` and the body's opening sentence distinct jobs (lede states what changed; body explains why it matters or adds a new angle) instead of the body re-deriving the lede's own sentence with light word-swapping — same fix pattern already applied to the AGT-S21 row above. Given the 3/3 hit rate on an unrelated sample, worth a corpus-wide grep pass (compare `lede` against the first ~40 words of each season's body across all 68 shows) rather than fixing these three in isolation. Content-only, three files this pass; likely more corpus-wide. Spoiler discipline P0 intact — no outcome/elimination/winner facts touched, format-mechanics and premise facts only. (URLs: /shows/shark-tank/season/season-17, /shows/alone/season/arctic-ii, /shows/the-circle/season/disrupter-mode, source: critique-pass-128)
+
+- [ ] [MED] [authed] /shows/alone/season/arctic-ii (and seasons 07–11, systemic to the show) — the `host_caption: "{seasonOrdinalWord} season at the helm"` token substitutes the season's absolute `number` field, which is only correct for a host who has been at the helm since the show's Season 1 (per the documented convention in `.claude/agents/content-curator.md` / `skills/ship-content.md` Rule 2, and the exact bug class already fixed on `americas-got-talent` and `americas-next-top-model`). Colby Donaldson does not host Alone until Season 7 (seasons 1–6 carry no `host`/`host_caption` field at all) — so his S12 caption renders "twelfth season at the helm," implying 12 continuous seasons, when S12 is actually his sixth season hosting (S7 through S12). Confirmed via direct frontmatter check: `content/shows/alone/seasons/07-arctic.md` (Colby's actual first season as host) carries the identical macro and would render "seventh season at the helm" instead of the correct "first" — the same off-by-six error repeats identically across all six of his season files (07 through 12). Fix: replace the macro with a literal, hand-computed ordinal on all six files (`07` → "First season at the helm" ... `12` → "Sixth season at the helm"), matching the literal-ordinal pattern already shipped for AGT's five-host history and ANTM S24. Content-only, six files (`content/shows/alone/seasons/07-arctic.md` through `12-arctic-ii.md`), one field each. Spoiler discipline P0 intact — host tenure is public record, not a plot outcome. (URL: /shows/alone/season/arctic-ii, source: critique-pass-128)
+
+- [ ] [LOW] [tooling] `scripts/critique-walk.mjs` `isRscPrefetchAbort()` — the filter that suppresses expected `net::ERR_ABORTED` noise from Next.js `Link` prefetch teardown only matches `u.pathname === '/'` (the header wordmark's link home), so any other same-origin outbound prefetch aborted at page-teardown (e.g. a "Browse all shows →" link prefetching `/shows?_rsc=...`) still surfaces as a false-positive-flavored failed-request finding on every future pass that visits a page with such a link — confirmed reproducing identically on `/u/e2e` desktop + mobile this pass. Fix: broaden the check to match any same-origin URL carrying a `_rsc` search param aborted at teardown, not just `pathname === '/'` — `scripts/critique-walk.mjs:388-397`. Not a site defect; a critique-tooling fix that stops this noise class from re-surfacing as a "new" finding on every walk. (source: critique-pass-128)
 
 - [x] [HIGH] [anon] /shows/americas-got-talent/season/the-panel-doubles-down — the page carries two compounding defects around the same fact set (the returning-panel/double-Golden-Buzzer/Judges'-Callbacks twist). (1) A direct ordinal contradiction: "01 The Take" says the format hands the panel something to be surprised by "for the first time," while "02 The Shape of the Season" and "03 Where It Sits in the Canon" both say the double-Golden-Buzzer twist is happening "for the third time in the show's history" — a first-time reader hits the contradiction immediately after the hero. (2) Once past that, the same fact set (panel unchanged for a second year, two Golden Buzzers per judge, new Judges' Callbacks round) repeats near-verbatim across three separate fields — lede, body, and the `canon.md` rank rationale — rather than each adding new texture. Confirmed in `content/shows/americas-got-talent/seasons/21-the-panel-doubles-down.md` (`lede`, body) and `content/shows/americas-got-talent/canon.md` line 162 (rationale), all three rendering on the same URL: lede — "Season twenty-one runs the same four-person judging table for a second year — Cowell, Mandel, Vergara, and Mel B return unchanged. Each judge can now award two Golden Buzzers, and a new Judges' Callbacks round gives select acts another shot at the live shows."; Take — "A settled panel walks in with real chemistry — and, for the first time, the format hands it something to be surprised by too."; body — "...for the third time in the show's history, each judge can award two Golden Buzzers instead of one, and a new Judges' Callbacks round gives select acts a second chance at the live shows."; canon.md — "...for the third time in the show's run, every judge gets two Golden Buzzers instead of one, and a new Judges' Callbacks round hands select acts another shot at the live rounds." Same defect class as the many already-fixed lede/body/canon.md echoes (chopped, love-is-blind, hells-kitchen, below-deck-down-under), compounded here by an outright factual contradiction rather than just repetition. Fix: rewrite the Take's clause so "first" modifies something actually true (e.g., "for the first time this settled panel gets a twist to react to") or drop the ordinal from Take entirely; then let the `canon.md` rationale keep the "third time" fact for its comparative ranking job, rewrite the body paragraph toward a different angle (how the twist actually plays out, or a specific act), and trim the lede to name the two format changes without re-narrating them in full sentences. Content-only, up to three field edits across two files. Spoiler discipline P0 intact (format-mechanics facts only, no outcome exposure). (URL: /shows/americas-got-talent/season/the-panel-doubles-down, source: critique-pass-127) — RESOLVED (2026-08-16, cloud march tick): dropped the ordinal from `pull` ("for the first time" → removed, no longer contradicts the "third time" facts in body/canon.md), trimmed `lede` to a single sentence naming both format changes without re-narrating them, and rewrote the body paragraph off the mechanical golden-buzzer/callbacks recap toward how the twist plays out in practice (faster critiques, buzzer landing earlier in the season) so it stops repeating the same fact set a third time. `canon.md`'s "third time" rationale left untouched per the finding's own guidance — it owns that comparative-ranking fact. Content-only, one file (`content/shows/americas-got-talent/seasons/21-the-panel-doubles-down.md`), three fields (lede, pull, body). Spoiler discipline P0 unaffected (format-mechanics facts only). Verify gate green: leg1 3623 unit tests + content:check, leg2 build, leg3 4875 e2e.
 
