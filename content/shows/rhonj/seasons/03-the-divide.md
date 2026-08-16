@@ -10,6 +10,7 @@ ep_count: 22
 host: "Andy Cohen"
 eyebrow: "The family fracture — the franchise's most consequential season"
 lede: "The addition of new cast members from within the existing family rewrites the show's social geometry entirely. Season three is RHONJ finding its sharpest argument — conflicts no longer between acquaintances but within a family, on camera, with no exit."
+take_h2: "Proximity as format."
 pull: "Proximity is the format. Season three understood that before any other season did."
 premiere_caption: "Bravo · May 2011"
 filming_caption: "Montville, New Jersey and surrounding areas"

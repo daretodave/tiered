@@ -10,6 +10,7 @@ ep_count: 11
 host: "Andy Cohen"
 eyebrow: "Where the New Jersey franchise began — Bravo, May 2009"
 lede: "Five women in the same suburban north Jersey social world, with enough shared history to generate real friction from the first episode. RHONJ arrives with a distinct social register and a cast that knew exactly what it was walking into."
+take_h2: "Chemistry, not manufacture."
 pull: "The founding confrontation at the dinner table entered the cultural vocabulary because the cast brought it — not because the show manufactured it."
 premiere_caption: "Bravo · May 2009"
 filming_caption: "Franklin Lakes and surrounding New Jersey"

@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: []
 eyebrow: "Aired Jan–Apr 2022 · A steady run for the new panel"
 lede: "Season nine settles into the panel Married at First Sight Australia found the year before — Aiken, Schilling, and Rampolla — running eleven couples across 37 episodes without introducing a new structural twist. It's the format at its most consistent."
+take_h2: "The steady, twist-free stretch."
 pull: "No new mechanic, no panel change — just the format running at a scale it's fully comfortable with."
 format_summary: "Eleven couples · steady format, no new mechanic"
 format_caption: "The second season with the Aiken–Schilling–Rampolla panel"

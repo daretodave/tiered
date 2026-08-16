@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: ["Mid-season intruders include the franchise's fourth same-sex male pairing", "Mel Schilling's final season on the expert panel"]
 eyebrow: "Aired Feb–Apr 2026 · Mel Schilling's final season with the panel"
 lede: "Season thirteen runs twelve couples, nine at the start and three joining mid-season, including the franchise's fourth same-sex male pairing. It's also Mel Schilling's final season with the panel she helped build since season two — she died during this season's broadcast run."
+take_h2: "The panel's final chapter."
 pull: "Mel Schilling's final season closes a decade on the panel she helped define, paired with a casting milestone that keeps expanding who the format matches."
 format_summary: "Twelve couples · fourth same-sex male pairing"
 format_caption: "Nine couples open the season; three intruder couples join mid-run"

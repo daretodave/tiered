@@ -10,6 +10,7 @@ ep_count: 13
 host: "Andy Cohen"
 eyebrow: "The original cast returns — tensions compound, season two"
 lede: "The original five reassemble with more history between them and a show that has begun to understand what its specific social world can sustain. Season two builds pressure without yet finding the family fault line that will define what follows."
+take_h2: "Finding its footing."
 pull: "The format gains its footing. The social architecture of north Jersey becomes less backdrop and more structure."
 premiere_caption: "Bravo · May 2010"
 filming_caption: "Franklin Lakes and surrounding New Jersey"

@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: ["Partner swap week continues"]
 eyebrow: "Aired Jan–Apr 2024 · The swap-week format continues"
 lede: "Season eleven carries the partner swap week forward from the year before, running nine couples that grow to twelve with mid-season additions, including a same-sex male couple among the new arrivals. 38 episodes make it the format's longest run to date."
+take_h2: "Refinement over reinvention."
 pull: "The format's biggest season by episode count settles into a mechanic it introduced the year before rather than chasing a new one."
 format_summary: "Twelve couples · swap week continues"
 format_caption: "The partner swap week returns from the season before"

@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: []
 eyebrow: "Aired July 2015 · Three couples, one Sydney experiment"
 lede: "Married at First Sight Australia began small: three couples matched sight unseen by relationship experts, married within minutes of meeting, then given weeks to build a life together before Decision Day. The premise, tried cold, for the first time on Australian television."
+take_h2: "A premise tried cold."
 pull: "Three couples, matched sight unseen, married before they'd said more than vows — the format's whole premise tried cold, with no precedent and no returning cast to lean on."
 format_summary: "Expert-matched marriage · Decision Day"
 format_caption: "Three couples, matched by experts, married before they'd spoken"

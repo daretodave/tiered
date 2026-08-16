@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: ["Rule change allows two participants to leave their matches and re-pair"]
 eyebrow: "Aired Jan–Apr 2019 · Twelve couples, the format's most-discussed rule change"
 lede: "Season six is the format's largest to date — 41 episodes and twelve couples once mid-season additions arrive. It's also the most controversial: a mid-experiment rule change let two participants re-pair with each other, drawing significant public backlash."
+take_h2: "The rule-change backlash."
 pull: "The format's biggest season by episode count is also the one where a single rule change became the story."
 format_summary: "Twelve couples · controversial mid-season rule change"
 format_caption: "A rule change allowing a mid-experiment re-pairing sparked real backlash"

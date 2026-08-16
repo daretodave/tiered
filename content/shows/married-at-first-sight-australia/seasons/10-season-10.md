@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: ["Partner swap week introduced"]
 eyebrow: "Aired Jan–Apr 2023 · A new swap-week twist"
 lede: "Season ten introduces a structural first: a partner swap week that shuffles the couples' usual pairings for a stretch of the experiment. Ten couples open the season, growing to twelve with mid-season additions, across 36 episodes with the now-settled expert panel."
+take_h2: "The swap-week debut."
 pull: "The format finds a genuinely new mechanic after years of running the same shape — a swap week that shakes up the routine."
 format_summary: "Twelve couples · partner swap week introduced"
 format_caption: "A new swap-week mechanic shuffles the season's usual pairings"

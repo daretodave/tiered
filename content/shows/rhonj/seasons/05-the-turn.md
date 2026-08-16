@@ -10,6 +10,7 @@ ep_count: 25
 host: "Andy Cohen"
 eyebrow: "The reconciliation arc — season five, summer 2013"
 lede: "Season five asks whether the family conflict that powered the franchise's peak can move toward resolution. The attempted reconciliation arc gives the season a clear direction and an earnest emotional register — softer than what came before, but honest about what it is."
+take_h2: "Catching its breath."
 pull: "The franchise catching its breath — and doing it with more grace than you'd expect."
 premiere_caption: "Bravo · July 2013"
 filming_caption: "Montville, New Jersey and surrounding areas"

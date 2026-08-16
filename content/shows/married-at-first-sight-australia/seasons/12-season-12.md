@@ -10,6 +10,7 @@ host: "Relationship experts panel"
 format_changes: ["Mid-season intruders arrive as three entirely new couples rather than a partner swap"]
 eyebrow: "Aired Jan–Apr 2025 · The format's biggest cast yet, at 40 episodes"
 lede: "Season twelve grows to thirteen couples, the format's biggest pool yet, with three entirely new couples joining mid-season instead of reshuffled partners. At 40 episodes, it's the longest run to date, and an isolated off-camera incident drew regulatory scrutiny during filming."
+take_h2: "Fresh intruders, bigger cast."
 pull: "The format's biggest cast yet tries something structurally new: intruders who arrive as fresh matches, not reshuffled partners."
 format_summary: "Thirteen couples · three fresh intruder pairs"
 format_caption: "Ten couples open the season; three intruder couples join as new pairs"
