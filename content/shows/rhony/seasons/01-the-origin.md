@@ -10,6 +10,7 @@ ep_count: 16
 eyebrow: "The season that built the template"
 lede: "Five women, one city, no handbook. RHONY invented the Housewives format here — a specific social world, a camera willing to sit inside it, and a cast with enough distinct voices to make the city feel like a character rather than a backdrop."
 pull: "The origin document. Everything the Housewives franchise became starts here."
+take_h2: "The format's blueprint."
 format_summary: "NYC social reality"
 format_caption: "Original five-woman cast"
 cast_size: 5

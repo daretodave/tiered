@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "A transitional season with a new recurring setting"
 lede: "Season eight introduces Dorinda Medley's Berkshires house as a recurring group destination — contained, pressure-built, the environment the format thrives on. Jules Wainstein joins the cast, and the season is uneven in the way transitional years tend to be."
 pull: "The Berkshires house as recurring location is the season's real contribution."
+take_h2: "A transitional, uneven year."
 format_summary: "NYC social reality"
 format_caption: "Jules Wainstein joins"
 cast_size: 7

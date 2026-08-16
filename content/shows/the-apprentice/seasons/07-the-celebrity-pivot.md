@@ -10,6 +10,7 @@ canonical_position: 8
 eyebrow: "Aired winter 2008 · NBC · the celebrity era begins"
 lede: "Fourteen celebrities replace the civilian cast, split by gender into an all-women team and an all-men team, competing for charity money instead of a job offer. The format's biggest change yet."
 pull: "The moment the show traded a job offer for a charity check and a marquee cast."
+take_h2: "Job offer, now charity."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era begins, charity proceeds"
 cast_size: 14

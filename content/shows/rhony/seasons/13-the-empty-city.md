@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "The season filmed in a changed New York"
 lede: "Season thirteen filmed when New York's social world was under genuine disruption — the city that powers RHONY wasn't itself. Eboni K. Williams joined with a fresh editorial perspective. The season registers as a document of a difficult moment more than a working season."
 pull: "New York as RHONY needs it wasn't available. The season shows it."
+take_h2: "A city that couldn't deliver."
 format_summary: "NYC social reality"
 format_caption: "Eboni K. Williams joins"
 cast_size: 6

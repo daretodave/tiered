@@ -10,6 +10,7 @@ canonical_position: 12
 eyebrow: "Aired spring 2010 · NBC · celebrity era, third edition"
 lede: "Fourteen celebrities split into Rocksolid and Tenacity, with a mid-season reshuffle of its own. The boardroom's rhythm swings hard — one episode cuts three people before a task even starts, another lets the whole cast stay."
 pull: "A season where the boardroom's own rhythm becomes the least predictable part of the format."
+take_h2: "An uneven boardroom rhythm."
 format_summary: "Celebrity competition · reshuffled teams"
 format_caption: "celebrity era, third edition"
 cast_size: 14

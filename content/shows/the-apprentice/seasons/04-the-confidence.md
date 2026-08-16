@@ -10,6 +10,7 @@ canonical_position: 3
 eyebrow: "Aired fall 2005 · NBC · the founding era at full operating confidence"
 lede: "By its fourth season the format knew what it was. Assured task design, a casting pool with genuine competitive range, and a boardroom that applied consistent criteria from week to week."
 pull: "The founding era's most efficient execution — the format delivering without friction."
+take_h2: "Running without friction."
 format_summary: "Business competition · confident casting"
 format_caption: "founding era, full confidence"
 cast_size: 18

@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "The mid-run season that leaned into summer"
 lede: "Season six stretches the franchise's geography, moving from the Manhattan social circuit out to the Hamptons and then to St. Barths. Kristen Taekman joins the cast, and the season finds its energy in the friction between summer-house proximity and city-built personalities."
 pull: "The Hamptons as pressure cooker. The cast performs better when they can't escape each other."
+take_h2: "A steady mid-run entry."
 format_summary: "NYC social reality"
 format_caption: "Kristen Taekman joins"
 cast_size: 7

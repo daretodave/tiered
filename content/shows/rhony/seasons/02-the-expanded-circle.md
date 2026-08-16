@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "The transitional season"
 lede: "Kelly Bensimon joins an established core cast and immediately shifts the dynamic. Season two is where the show starts arguing about its own rules — still uneven, already essential."
 pull: "The foundation was laid in season one. Season two is where the builders started arguing about the floor plan."
+take_h2: "Growing pains, sharper edges."
 format_summary: "NYC social reality"
 format_caption: "Original cast plus one"
 cast_size: 6

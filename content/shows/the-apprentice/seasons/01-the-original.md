@@ -10,6 +10,7 @@ canonical_position: 1
 eyebrow: "Aired winter 2004 · NBC · the format's first run"
 lede: "Sixteen business hopefuls, two teams, and a boardroom built around a single phrase. The show invented its format from scratch and played it with full conviction from episode one."
 pull: "A business competition with real stakes — a job, not a brand, at the end of the table."
+take_h2: "Inventing the format cold."
 format_summary: "Business competition · 2 teams"
 format_caption: "founding season, NBC"
 cast_size: 16

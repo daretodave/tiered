@@ -10,6 +10,7 @@ canonical_position: 10
 eyebrow: "Aired winter 2015 · NBC · the last Trump-hosted season"
 lede: "The celebrity format runs one more time, with no on-screen sign of what's coming. Months later, Trump's outside career took a turn that ended his relationship with the show — making this the final season with the original hosting continuity intact."
 pull: "The last season that runs on the continuity the show was built with."
+take_h2: "An ending nobody saw coming."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, final Trump-hosted cycle"
 cast_size: 14

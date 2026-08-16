@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "The season that carried its weight to Rome"
 lede: "Season eleven is emotionally dense — the cast navigated real weight alongside the usual social dynamics, and the show let both registers coexist. The Rome trip raised the production register and gave the season a destination worth the build. Barbara Kavovit joined briefly."
 pull: "A season with more underneath the surface than it advertised."
+take_h2: "Weight beneath the surface."
 format_summary: "NYC social reality"
 format_caption: "Barbara Kavovit joins briefly"
 cast_size: 7

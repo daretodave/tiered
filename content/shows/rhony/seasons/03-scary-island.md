@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "The season that defined the franchise"
 lede: "Season three is where RHONY became a cultural institution. The New York scenes are strong; the group trip to St. John is something else entirely — television the format hadn't shown it was capable of."
 pull: "Specific, strange, and genuinely difficult to look away from. The season that showed the format's ceiling."
+take_h2: "The franchise's defining moment."
 format_summary: "NYC social reality"
 format_caption: "Original cast · group travel episode"
 cast_size: 6

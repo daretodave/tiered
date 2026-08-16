@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "The reentry that reordered the cast's gravity"
 lede: "Bethenny Frankel's return after four seasons away reorganizes the cast on contact. Season seven is structured around that reentry — the social recalibration, the returning history. Dorinda Medley debuts simultaneously, arriving with an immediate and fully formed voice."
 pull: "The cast reorganized itself around one return. Good television almost always does."
+take_h2: "The reentry that mattered."
 format_summary: "NYC social reality"
 format_caption: "Bethenny Frankel returns · Dorinda Medley joins"
 cast_size: 7

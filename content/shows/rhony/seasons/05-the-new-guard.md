@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "The most editorially textured early season"
 lede: "Two strong additions — Heather Thomson and Carole Radziwill — join an established cast and shift the register. Radziwill in particular watched the room with a journalist's attention, and the season is sharper for it."
 pull: "Manhattan feels real here, not like a set. The format sustaining across a full run."
+take_h2: "Two additions, real shift."
 format_summary: "NYC social reality"
 format_caption: "Two new cast members join"
 cast_size: 7

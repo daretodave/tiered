@@ -10,6 +10,7 @@ canonical_position: 15
 eyebrow: "Aired winter 2017 · NBC · a full format reboot"
 lede: "The New Celebrity Apprentice replaces Trump with Arnold Schwarzenegger for the first host change in the show's history, alongside new opening titles and a rebuilt boardroom — a clean break from every season before it."
 pull: "The first time in the show's history that someone other than Trump runs the boardroom."
+take_h2: "A clean break."
 format_summary: "Celebrity competition · new host"
 format_caption: "full reboot, new host and boardroom"
 cast_size: 12

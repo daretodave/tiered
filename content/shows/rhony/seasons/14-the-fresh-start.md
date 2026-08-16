@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "The reboot that asked if RHONY still held without its legacy"
 lede: "Five new Housewives reset RHONY's social world from scratch. Season fourteen is the reboot's opening statement — a new cast, a different register, and the fundamental question of whether the franchise's identity lives in the cast or the city."
 pull: "Five strangers in a city that needed reintroduction. The reboot's first word."
+take_h2: "The reboot's opening statement."
 format_summary: "NYC social reality · full cast reboot"
 format_caption: "Entirely new cast"
 cast_size: 5

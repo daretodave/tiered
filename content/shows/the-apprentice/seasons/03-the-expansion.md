@@ -10,6 +10,7 @@ canonical_position: 2
 eyebrow: "Aired winter 2005 · NBC · the founding era's creative peak"
 lede: "The most inventive task design of the founding era, paired with the widest contestant pool outside season one. The show trusted its cast to generate the drama, and they delivered."
 pull: "The founding era's best argument that smart task design and real competitive tension were all the format needed."
+take_h2: "Peak task design."
 format_summary: "Business competition · diverse casting"
 format_caption: "founding era, task-design peak"
 cast_size: 18
