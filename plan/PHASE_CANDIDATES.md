@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-13 at commit 1ad8b034
-> Pass count: 62
+> Last pass: 2026-08-16 at commit 564c8912
+> Pass count: 63
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,67 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 63 (2026-08-16, commit 564c8912, cloud) — 0 new phase-shape
+     candidates filed; two reinforcement updates appended below (#33, #34).
+     Window since pass 62 (1ad8b034, 2026-08-13T23:40:01Z): 92 commits /
+     ~51.6 hours. Both thresholds met comfortably.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: season-sweep last ran 2026-08-16 (this same tick's
+     predecessor, sixth full weekly sweep) — not due again until 08-23;
+     show-add stays LOCKED (CADENCE gap table unchanged, 42 shows/43
+     gap-slots). Step 2.0's shipping-mode gate is lifted (Phase 36 [x]);
+     critique gate checked and not due (10 commits / ~4.3h since pass
+     127's last pass, both below the 12-commit/24h threshold). Step
+     3a/3b empty (no pending phase rows, no Pending AUDIT rows at all —
+     the Pending section is fully empty, a first for this file's recent
+     history). Step 3b.5: no Pending content-gaps row exists to dispatch
+     (contrast pass 61/62, which diverted here because 3b.5 mechanically
+     outscored 3c despite starvation — this tick 3b.5 has nothing to
+     dispatch at all, so 3c was reached on its own merits, not via
+     substitution). `/expand`'s own gate was independently open (92
+     commits since pass 62, posture bold, real signal in
+     `plan/CRITIQUE.md`'s Pending queue, no phase/data work).
+     Signals reviewed:
+     - plan/AUDIT.md Pending: **fully empty** — every row from pass 62's
+       review (e2e-full timeout #34, night.yml starvation #35, the-voice
+       corruption #36, YEAR_TENURE_RE gap, theme-description-budget LOW)
+       has either been resolved+archived or is tracked purely in this
+       file now rather than as a live AUDIT row. No new non-content-gaps
+       row to file.
+     - plan/CRITIQUE.md Pending: 18 rows carried from the 2026-08-15
+       digest's strongest-yet single-day drain (33→18), unchanged in
+       shape since — 1 HIGH (AGT S21 ordinal contradiction + 3-field
+       echo, pass-127), several MED/LOW single-page content nits, the
+       two standing `[needs-user-call]` rows. No new clustering pattern
+       distinct from existing candidates.
+     - Triage backlog: identical to pass 62 (#754, #636 already covered
+       by #34; #758 mirrors #33, gained another same-day comment
+       2026-08-15). No new issue.
+     - spec.md / design/: `git log 1ad8b034..HEAD -- spec.md design/`
+       empty — no drift signal.
+     - Data growth: 68 shows / 1046 seasons, steady-state growth.
+     - Commit pattern since pass 62: dominated by repeated `content:
+       content-gap redirect — take_h2 warning drain` commits climbing
+       8→10→11→13→14→17→19→20→22→24→25→27→30 seasons across many
+       same-day ticks, plus `critique: pass 127`. This directly updates
+       #33's 2026-08-15 digest claim that the `take_h2` well was "spent
+       after today" — `pnpm content:check` this tick still surfaces
+       **305 remaining take_h2 warnings** (mostly Top Chef's back
+       catalog), so the well is far larger and more durable than the
+       08-15 update assumed. Appended as an update to #33 below.
+     - `gh run list --workflow=e2e-full.yml`: 6 consecutive red nights
+       now (08-10 through 08-15), following the single 08-09 green
+       outlier the 08-10/08-11 updates already discussed — confirms the
+       08-11 update's read that 08-09 was a timing outlier, not a trend
+       break. Issue #636 got another same-day recurrence comment
+       (2026-08-16T00:23:45Z). Appended as an update to #34 below.
+       `night.yml` stayed green for 5 straight runs (08-11 through
+       08-15) — no new #35 starvation evidence this window.
+     No new candidate met the bar for a fresh filing — every concrete
+     gap already has an open candidate (#33/#34/#35/#36) tracking it;
+     this pass's contribution is corrected/reinforced evidence on two
+     of them. -->
 
 <!-- Pass 62 (2026-08-13, commit 1ad8b034, cloud) — 0 new phase-shape
      candidates filed; reinforced candidate #33 with today's most
@@ -594,6 +655,22 @@ next `/oversight` session rather than watching for a third data
 point; every additional red night is CI minutes burned for zero new
 information, exactly the pass-59 urgency signal restated. Still
 unpromoted 21 days after filing (07-22 filing, 07-28 reinforcement).
+
+**Update (expand pass 63, 2026-08-16, cloud march):** the 08-11
+close-out held — six more consecutive red nights since (08-10 through
+08-15), same 75-minute-wall duration-ceiling breach each time, no
+further green outliers. Issue #636 picked up another same-day
+recurrence comment this morning (2026-08-16T00:23:45Z, run
+31913822337). `night.yml` itself stayed green for 5 straight runs in
+the same window (08-11 through 08-15) — the sibling starvation
+candidate (#35) shows no new evidence this window, this remains a
+pure e2e-full/sharding problem, not a scheduling one. No change to
+score or scope sketch — still blocked from cloud (`.github/workflows/
+e2e-full.yml` needs the `workflows` OAuth scope the cloud loop's
+`ACTIONS_PAT` lacks). 26 days unpromoted since filing (07-22 filing,
+07-28 reinforcement). Ripe for `/oversight` promotion at the next
+local session — a human pushing the workflow-file edit is the only
+path that closes this one.
 
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
@@ -1306,6 +1383,34 @@ evidence the candidate's own text should carry: the fallback margin
 oscillates well-to-well rather than monotonically thinning. No change
 to score or scope sketch. Still the highest-priority unpromoted
 candidate in the file.
+
+**Update (expand pass 63, 2026-08-16, cloud march):** the 08-15
+update's read on `take_h2` was wrong in scale, not direction. The
+well did not go spent — it kept absorbing pressure straight through
+this window: since the 08-15 digest, the same-day redirect commits
+climbed 8→10→11→13→14→17→19→20→22→24→25→27→30 seasons across a long
+run of same-day ticks, all still `take_h2`, all still landing cleanly
+as their own `audit:` mirror rows. `pnpm content:check` run fresh this
+tick surfaces **305 remaining `take_h2` warnings** (mostly Top Chef's
+back catalog, seasons 01 through the low-20s), an order of magnitude
+larger than the "16 seasons across 7 shows, now spent" picture the
+08-15 update had. The likely explanation: 08-15's redirect passes only
+cleared the shows already in flight that day: the warning class itself
+spans far more of the catalog than any single day's drain touched.
+Practically, this means the fallback well the loop has been living off
+is sturdier than any prior update believed — three consecutive digest
+updates (08-13, 08-14, 08-15) each treated a well as being at or near
+exhaustion shortly before a bigger one turned out to still be there.
+Separately, this was also the first tick in the file's recent history
+where `plan/AUDIT.md`'s Pending section was found **fully empty** (no
+content-gaps row, no bug row) — Step 3b.5 had nothing to dispatch on
+its own merits, so this tick reached `/expand` without the
+substitution logic pass 61/62 needed. No change to score or scope
+sketch — the fix shape stays correct regardless of how deep any given
+well runs; a deterministic carve-out doesn't depend on guessing well
+depth correctly. Still the highest-priority unpromoted candidate in
+the file, now with corrected evidence about how much slack the loop
+has been running on.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
