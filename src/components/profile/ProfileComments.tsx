@@ -5,10 +5,13 @@ type ProfileCommentsProps = {
   comments: ProfileCommentView[]
 }
 
-// Recent PUBLISHED comments only — the read path already filtered
-// pending/hidden/removed at the query. The body was spoiler-gated
-// at write time (phase 12); the context link points at a public
-// season page and never surfaces a rank or outcome.
+// Recent published comments, plus — on a self-view only — the
+// viewer's own held-for-review comment(s) (`held: true`), pinned on
+// top by the caller. A stranger's profile never carries a held row;
+// pending/hidden/removed comments are never fetched for any other
+// viewer. The body was spoiler-gated at write time (phase 12); the
+// context link points at a public season page and never surfaces a
+// rank or outcome.
 export function ProfileComments({ comments }: ProfileCommentsProps) {
   if (comments.length === 0) {
     return (
@@ -25,7 +28,13 @@ export function ProfileComments({ comments }: ProfileCommentsProps) {
           key={c.id}
           className="flex flex-col gap-1.5 border-b border-line-soft pb-5 last:border-b-0"
           data-testid="profile-comment"
+          data-held={c.held ? 'true' : undefined}
         >
+          {c.held ? (
+            <span className="comment-held" data-testid="profile-comment-held-badge">
+              held for review
+            </span>
+          ) : null}
           <p className="text-ink-1" data-testid="profile-comment-excerpt">
             {c.excerpt}
           </p>

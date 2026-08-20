@@ -4,6 +4,7 @@ import {
   excerpt,
   formatMemberSince,
   isPopulatedProfile,
+  mergeProfileComments,
   parseSeasonTarget,
   pickFeaturedSeason,
   publicDisplayName,
@@ -59,7 +60,7 @@ describe('excerpt', () => {
 })
 
 describe('shapeProfileComment', () => {
-  it('shapes a season comment with resolved season context', () => {
+  it('shapes a season comment with resolved season context, not held by default', () => {
     const out = shapeProfileComment({
       id: 'c1',
       body: '  The location work is a quiet argument for the format.  ',
@@ -72,6 +73,7 @@ describe('shapeProfileComment', () => {
       excerpt: 'The location work is a quiet argument for the format.',
       createdAt: '2026-05-01T00:00:00Z',
       season: { showSlug: 'survivor', seasonNumber: 20 },
+      held: false,
     })
   })
 
@@ -84,6 +86,40 @@ describe('shapeProfileComment', () => {
       target_id: 'abc',
     })
     expect(out.season).toBeNull()
+  })
+
+  it('marks a comment held when the caller passes held=true', () => {
+    const out = shapeProfileComment(
+      {
+        id: 'c3',
+        body: 'Just posted.',
+        created_at: '2026-05-03T00:00:00Z',
+        target_type: 'comment',
+        target_id: 'xyz',
+      },
+      true,
+    )
+    expect(out.held).toBe(true)
+  })
+})
+
+describe('mergeProfileComments', () => {
+  it('pins held rows above published rows without reordering within each group', () => {
+    const published = [
+      { id: 'p1', held: false },
+      { id: 'p2', held: false },
+    ]
+    const heldRows = [{ id: 'h1', held: true }]
+    expect(mergeProfileComments(published, heldRows)).toEqual([
+      { id: 'h1', held: true },
+      { id: 'p1', held: false },
+      { id: 'p2', held: false },
+    ])
+  })
+
+  it('returns just the published list when there are no held rows', () => {
+    const published = [{ id: 'p1', held: false }]
+    expect(mergeProfileComments(published, [])).toEqual(published)
   })
 })
 

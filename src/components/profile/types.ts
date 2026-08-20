@@ -11,6 +11,9 @@ export type ProfileCommentView = {
   // target. `href` is always a clean slug-canonical season URL
   // when present (never the digit form that 308-redirects).
   context: { label: string; href: string } | null
+  // True for the viewer's own pending comment. Only ever populated
+  // on a self-view — never rendered for a stranger's profile.
+  held: boolean
 }
 
 export type ProfileView = {

@@ -63,6 +63,7 @@ describe('@/components/profile barrel — runtime re-exports', () => {
         excerpt: 'sample',
         when: '2026-05-20',
         context: null,
+        held: false,
       }
       expect(comment.context).toBeNull()
 

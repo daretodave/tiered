@@ -960,6 +960,75 @@ describe('getProfileActivity', () => {
   })
 })
 
+// --- new: getOwnHeldComments (CRITIQUE pass-129 HIGH — a member's own
+// held comment was invisible on their own profile) ---
+describe('getOwnHeldComments', () => {
+  beforeEach(() => {
+    process.env['NEXT_PUBLIC_SUPABASE_URL'] = 'https://example.supabase.co'
+    process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-key'
+    vi.resetModules()
+  })
+  afterEach(() => {
+    H.state.fromFn = null
+    if (savedUrl !== undefined) process.env['NEXT_PUBLIC_SUPABASE_URL'] = savedUrl
+    else delete process.env['NEXT_PUBLIC_SUPABASE_URL']
+    if (savedKey !== undefined) process.env['SUPABASE_SERVICE_ROLE_KEY'] = savedKey
+    else delete process.env['SUPABASE_SERVICE_ROLE_KEY']
+  })
+
+  it('returns [] for a blank sub without touching the query', async () => {
+    const mod = await import('../server')
+    expect(await mod.getOwnHeldComments({ sub: '   ' })).toEqual([])
+  })
+
+  it('fetches the pending rows for the given sub', async () => {
+    const rec: { limit?: number; calls: unknown[][] } = { calls: [] }
+    queueFrom(
+      [
+        {
+          data: [
+            {
+              id: 9,
+              body: 'held take',
+              created_at: '2026-05-04T00:00:00Z',
+              target_type: 'season',
+              target_id: 'survivor:1',
+            },
+          ],
+          error: null,
+        },
+      ],
+      rec,
+    )
+    const mod = await import('../server')
+    const out = await mod.getOwnHeldComments({ sub: 'auth0|me' })
+    expect(out).toEqual([
+      {
+        id: '9',
+        body: 'held take',
+        created_at: '2026-05-04T00:00:00Z',
+        target_type: 'season',
+        target_id: 'survivor:1',
+      },
+    ])
+    expect(rec.calls).toContainEqual(['eq', 'status', 'pending'])
+  })
+
+  it('degrades to [] on a query error', async () => {
+    queueFrom([{ data: null, error: { message: 'down' } }])
+    const mod = await import('../server')
+    expect(await mod.getOwnHeldComments({ sub: 'auth0|me' })).toEqual([])
+  })
+
+  it('clamps limit into [1, 30]', async () => {
+    const rec: { limit?: number; calls: unknown[][] } = { calls: [] }
+    H.state.fromFn = () => makeQB({ data: [], error: null }, rec)
+    const mod = await import('../server')
+    await mod.getOwnHeldComments({ sub: 'auth0|me', limit: 999 })
+    expect(rec.limit).toBe(30)
+  })
+})
+
 // --- new: claimAnonSession ---
 describe('claimAnonSession', () => {
   beforeEach(() => {

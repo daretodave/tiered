@@ -64,17 +64,36 @@ export type ShapedProfileComment = {
   excerpt: string
   createdAt: string
   season: SeasonTarget | null
+  // True for the viewer's own pending (not-yet-published) comment.
+  // Only ever populated on a self-view — see `getOwnHeldComments`.
+  held: boolean
 }
 
 export function shapeProfileComment(
   raw: RawProfileComment,
+  held = false,
 ): ShapedProfileComment {
   return {
     id: raw.id,
     excerpt: excerpt(raw.body),
     createdAt: raw.created_at,
     season: parseSeasonTarget(raw.target_type, raw.target_id),
+    held,
   }
+}
+
+// Pins the viewer's own held comments above the published list (the
+// same "held rows first, then recency" ordering the season thread
+// already applies via `sortThread`) so a member who just posted sees
+// it acknowledged at the top of their own profile, not buried or
+// missing. Both input lists arrive newest-first from their queries;
+// this only needs to interleave by the held flag, not re-sort within
+// each group.
+export function mergeProfileComments<T extends { held: boolean }>(
+  published: T[],
+  held: T[],
+): T[] {
+  return [...held, ...published]
 }
 
 // `users.display_name` is sourced from the Auth0 profile's `name`

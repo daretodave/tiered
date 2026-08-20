@@ -8,6 +8,7 @@ const withContext: ProfileCommentView = {
   excerpt: 'The location work is a quiet argument for the format.',
   when: '2d ago',
   context: { label: 'Survivor · Season 20', href: '/shows/survivor/season/heroes-vs-villains' },
+  held: false,
 }
 
 const noContext: ProfileCommentView = {
@@ -15,6 +16,15 @@ const noContext: ProfileCommentView = {
   excerpt: 'Agreed with the point above.',
   when: '1w ago',
   context: null,
+  held: false,
+}
+
+const held: ProfileCommentView = {
+  id: 'c3',
+  excerpt: 'Just posted this, waiting on review.',
+  when: 'just now',
+  context: null,
+  held: true,
 }
 
 describe('<ProfileComments>', () => {
@@ -41,5 +51,23 @@ describe('<ProfileComments>', () => {
     expect(
       screen.getByTestId('profile-comment-context-plain').textContent,
     ).toBe('In a discussion')
+  })
+
+  it('renders a held-for-review badge on the viewer own pending comment', () => {
+    render(<ProfileComments comments={[held]} />)
+    expect(screen.getByTestId('profile-comment-held-badge').textContent).toBe(
+      'held for review',
+    )
+    expect(
+      screen.getByTestId('profile-comment').getAttribute('data-held'),
+    ).toBe('true')
+  })
+
+  it('does not render a held badge on a published comment', () => {
+    render(<ProfileComments comments={[withContext]} />)
+    expect(screen.queryByTestId('profile-comment-held-badge')).toBeNull()
+    expect(
+      screen.getByTestId('profile-comment').getAttribute('data-held'),
+    ).toBeNull()
   })
 })

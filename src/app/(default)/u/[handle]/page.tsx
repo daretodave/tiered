@@ -15,16 +15,44 @@ import { formatWhen } from '@/lib/comments/thread'
 import {
   formatMemberSince,
   isPopulatedProfile,
+  mergeProfileComments,
   pickFeaturedSeason,
   publicDisplayName,
   shapeProfileComment,
+  type RawProfileComment,
 } from '@/lib/profile/context'
 import { buildMetadata, canonicalUrl, jsonLdScriptProps } from '@/lib/seo'
-import { getProfileActivity } from '@/lib/supabase/server'
+import { getOwnHeldComments, getProfileActivity } from '@/lib/supabase/server'
 
 type Params = { handle: string }
 
 export const dynamic = 'force-dynamic'
+
+// Resolves a raw profile comment row (published or the viewer's own
+// held row) into the view-model ProfileComments renders — season
+// context resolution needs the content loaders, so this stays in
+// the page rather than the pure `lib/profile/context` helpers.
+function toCommentView(raw: RawProfileComment, held: boolean): ProfileCommentView {
+  const shaped = shapeProfileComment(raw, held)
+  let context: ProfileCommentView['context'] = null
+  if (shaped.season) {
+    const show = getShow(shaped.season.showSlug)
+    const season = getSeason(shaped.season.showSlug, shaped.season.seasonNumber)
+    if (show && season) {
+      context = {
+        label: `${show.name} · Season ${shaped.season.seasonNumber}`,
+        href: `/shows/${show.slug}/season/${season.slug}`,
+      }
+    }
+  }
+  return {
+    id: shaped.id,
+    excerpt: shaped.excerpt,
+    when: formatWhen(shaped.createdAt),
+    context,
+    held: shaped.held,
+  }
+}
 
 // Shared by generateMetadata + the page so the profile_activity
 // RPC + recent-comments read run once per request, not twice.
@@ -32,26 +60,9 @@ const loadProfile = cache(async (handle: string): Promise<ProfileView | null> =>
   const activity = await getProfileActivity({ handle })
   if (!activity) return null
 
-  const comments: ProfileCommentView[] = activity.recentComments.map((raw) => {
-    const shaped = shapeProfileComment(raw)
-    let context: ProfileCommentView['context'] = null
-    if (shaped.season) {
-      const show = getShow(shaped.season.showSlug)
-      const season = getSeason(shaped.season.showSlug, shaped.season.seasonNumber)
-      if (show && season) {
-        context = {
-          label: `${show.name} · Season ${shaped.season.seasonNumber}`,
-          href: `/shows/${show.slug}/season/${season.slug}`,
-        }
-      }
-    }
-    return {
-      id: shaped.id,
-      excerpt: shaped.excerpt,
-      when: formatWhen(shaped.createdAt),
-      context,
-    }
-  })
+  const comments: ProfileCommentView[] = activity.recentComments.map((raw) =>
+    toCommentView(raw, false),
+  )
 
   const populated = isPopulatedProfile({
     publishedCommentCount: activity.publishedCommentCount,
@@ -124,10 +135,27 @@ export default async function UserProfilePage({
   // earns a concrete next-action CTA (the rhetorical prompt
   // becomes one click).
   const session = await auth0.getSession().catch(() => null)
-  const viewer = headerUserFromSession(
-    session?.user as Record<string, unknown> | undefined,
-  )
+  const sessionUser = session?.user as Record<string, unknown> | undefined
+  const viewer = headerUserFromSession(sessionUser)
   const isSelfView = viewer?.handle === profile.handle
+  const viewerSub =
+    typeof sessionUser?.['sub'] === 'string' ? sessionUser['sub'] : null
+
+  // A member's own held (pending-review) comment is otherwise
+  // invisible on their own profile — CRITIQUE pass-129 HIGH. Only
+  // fetched, and only ever rendered, on the self-view branch; a
+  // stranger's profile never queries or shows another member's held
+  // row (spoiler/privacy discipline P0).
+  const comments =
+    isSelfView && profile.populated && viewerSub
+      ? mergeProfileComments(
+          profile.comments,
+          (await getOwnHeldComments({ sub: viewerSub })).map((raw) =>
+            toCommentView(raw, true),
+          ),
+        )
+      : profile.comments
+
   const featuredShow = !profile.populated && isSelfView ? getFeaturedShow() : null
   const selfViewSeason = featuredShow
     ? pickFeaturedSeason(getCanon(featuredShow.slug), (n) =>
@@ -183,7 +211,7 @@ export default async function UserProfilePage({
           />
           <div className="flex flex-col gap-4">
             <h2 className="font-serif text-xl text-ink-0">Recent comments</h2>
-            <ProfileComments comments={profile.comments} />
+            <ProfileComments comments={comments} />
           </div>
         </>
       ) : (

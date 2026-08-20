@@ -33,6 +33,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const {
   getProfileActivityMock,
+  getOwnHeldCommentsMock,
   getSessionMock,
   getShowMock,
   getSeasonMock,
@@ -45,6 +46,7 @@ const {
   ProfileEmptyMock,
 } = vi.hoisted(() => ({
   getProfileActivityMock: vi.fn(),
+  getOwnHeldCommentsMock: vi.fn(),
   getSessionMock: vi.fn(),
   getShowMock: vi.fn(),
   getSeasonMock: vi.fn(),
@@ -76,6 +78,7 @@ const {
         excerpt: string
         when: string
         context: { label: string; href: string } | null
+        held: boolean
       }>
     }) => <div data-testid="profile-comments" />,
   ),
@@ -92,6 +95,7 @@ const {
 
 vi.mock('@/lib/supabase/server', () => ({
   getProfileActivity: getProfileActivityMock,
+  getOwnHeldComments: getOwnHeldCommentsMock,
 }))
 vi.mock('@/lib/auth0', () => ({
   auth0: { getSession: getSessionMock },
@@ -152,6 +156,8 @@ const populatedActivity = (over: Partial<Activity> = {}): Activity =>
 
 beforeEach(() => {
   getProfileActivityMock.mockReset()
+  getOwnHeldCommentsMock.mockReset()
+  getOwnHeldCommentsMock.mockResolvedValue([])
   getSessionMock.mockReset()
   getSessionMock.mockResolvedValue(null)
   getShowMock.mockReset()
@@ -526,5 +532,82 @@ describe('UserProfilePage — comment context resolution', () => {
     const comments = ProfileCommentsMock.mock.calls[0]?.[0]?.comments
     expect(comments).toHaveLength(1)
     expect(comments?.[0]?.context).toBeNull()
+  })
+})
+
+// --------------------------------------------------------------------
+// Own held (pending-review) comment — CRITIQUE pass-129 HIGH regression
+// guard. The season-page thread already pins the viewer's own held
+// comment on top with a "held for review" badge; the profile read
+// path used to filter to published-only, silently dropping it.
+// --------------------------------------------------------------------
+
+describe('UserProfilePage — own held comment (self-view only)', () => {
+  const publishedComment: RawComment = {
+    id: 'pub-1',
+    body: 'A published take.',
+    created_at: '2026-05-01T00:00:00.000Z',
+    target_type: 'comment',
+    target_id: 'some-uuid',
+  }
+  const heldRow: RawComment = {
+    id: 'held-1',
+    body: 'Just posted, still under review.',
+    created_at: '2026-05-12T00:00:00.000Z',
+    target_type: 'comment',
+    target_id: 'another-uuid',
+  }
+
+  it('self-view + populated + a real sub → fetches own held rows and pins them above published, marked held', async () => {
+    getProfileActivityMock.mockResolvedValue(
+      populatedActivity({
+        handle: 'e2e',
+        recentComments: [publishedComment],
+      }),
+    )
+    getSessionMock.mockResolvedValue({
+      user: { nickname: 'e2e', sub: 'auth0|e2e-sub' },
+    })
+    getOwnHeldCommentsMock.mockResolvedValue([heldRow])
+    render(await UserProfilePage({ params: { handle: 'e2e' } }))
+    expect(getOwnHeldCommentsMock).toHaveBeenCalledWith({ sub: 'auth0|e2e-sub' })
+    const comments = ProfileCommentsMock.mock.calls[0]?.[0]?.comments
+    expect(comments).toHaveLength(2)
+    expect(comments?.[0]?.id).toBe('held-1')
+    expect(comments?.[0]?.held).toBe(true)
+    expect(comments?.[1]?.id).toBe('pub-1')
+    expect(comments?.[1]?.held).toBe(false)
+  })
+
+  it('a different signed-in viewer (stranger) → getOwnHeldComments is NEVER called', async () => {
+    getProfileActivityMock.mockResolvedValue(
+      populatedActivity({ handle: 'e2e', recentComments: [publishedComment] }),
+    )
+    getSessionMock.mockResolvedValue({
+      user: { nickname: 'someone-else', sub: 'auth0|someone-else-sub' },
+    })
+    render(await UserProfilePage({ params: { handle: 'e2e' } }))
+    expect(getOwnHeldCommentsMock).not.toHaveBeenCalled()
+    const comments = ProfileCommentsMock.mock.calls[0]?.[0]?.comments
+    expect(comments).toHaveLength(1)
+    expect(comments?.[0]?.held).toBe(false)
+  })
+
+  it('self-view but NOT populated → getOwnHeldComments is NEVER called (the empty state renders instead)', async () => {
+    getProfileActivityMock.mockResolvedValue(baseActivity({ handle: 'e2e' }))
+    getSessionMock.mockResolvedValue({
+      user: { nickname: 'e2e', sub: 'auth0|e2e-sub' },
+    })
+    render(await UserProfilePage({ params: { handle: 'e2e' } }))
+    expect(getOwnHeldCommentsMock).not.toHaveBeenCalled()
+  })
+
+  it('anonymous viewer of a populated profile → getOwnHeldComments is NEVER called', async () => {
+    getProfileActivityMock.mockResolvedValue(
+      populatedActivity({ handle: 'e2e', recentComments: [publishedComment] }),
+    )
+    getSessionMock.mockResolvedValue(null)
+    render(await UserProfilePage({ params: { handle: 'e2e' } }))
+    expect(getOwnHeldCommentsMock).not.toHaveBeenCalled()
   })
 })

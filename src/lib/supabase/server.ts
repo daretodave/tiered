@@ -415,6 +415,36 @@ type EmbeddedProfileCommentRow = {
   sessions: { auth0_sub: string | null } | { auth0_sub: string | null }[] | null
 }
 
+async function fetchOwnComments(
+  client: SupabaseClient,
+  sub: string,
+  status: 'published' | 'pending',
+  limit: number,
+): Promise<ProfileComment[]> {
+  try {
+    const q = await client
+      .from('comments')
+      .select(
+        'id, body, created_at, target_type, target_id, sessions!inner(auth0_sub)',
+      )
+      .eq('status', status)
+      .eq('sessions.auth0_sub', sub)
+      .order('created_at', { ascending: false })
+      .limit(limit)
+    if (q.error) return []
+    const rows = (q.data ?? []) as unknown as EmbeddedProfileCommentRow[]
+    return rows.map((r) => ({
+      id: String(r.id),
+      body: String(r.body),
+      created_at: String(r.created_at),
+      target_type: r.target_type,
+      target_id: String(r.target_id),
+    }))
+  } catch {
+    return []
+  }
+}
+
 export async function getProfileActivity(args: {
   handle: string
   recentLimit?: number
@@ -439,30 +469,12 @@ export async function getProfileActivity(args: {
   const sub = row.auth0_sub
   const recentLimit = Math.min(Math.max(args.recentLimit ?? 8, 1), 30)
 
-  let recentComments: ProfileComment[] = []
-  try {
-    const q = await client
-      .from('comments')
-      .select(
-        'id, body, created_at, target_type, target_id, sessions!inner(auth0_sub)',
-      )
-      .eq('status', 'published')
-      .eq('sessions.auth0_sub', sub)
-      .order('created_at', { ascending: false })
-      .limit(recentLimit)
-    if (!q.error) {
-      const rows = (q.data ?? []) as unknown as EmbeddedProfileCommentRow[]
-      recentComments = rows.map((r) => ({
-        id: String(r.id),
-        body: String(r.body),
-        created_at: String(r.created_at),
-        target_type: r.target_type,
-        target_id: String(r.target_id),
-      }))
-    }
-  } catch {
-    recentComments = []
-  }
+  const recentComments = await fetchOwnComments(
+    client,
+    sub,
+    'published',
+    recentLimit,
+  )
 
   return {
     handle: row.handle,
@@ -473,6 +485,27 @@ export async function getProfileActivity(args: {
     votedShowCount: Number(row.voted_show_count) || 0,
     recentComments,
   }
+}
+
+// Own held-for-review comments (status='pending') for the signed-in
+// viewer of their own profile. Deliberately a separate call from
+// getProfileActivity — the base profile read is shared (via React
+// cache) between generateMetadata (which never reads the session,
+// keeping the meta description third-person for every viewer — see
+// CRITIQUE pass-45) and the page body. Held rows are only ever
+// fetched, and only ever rendered, on the self-view branch; a
+// stranger viewing this profile never triggers this query and never
+// sees another member's held comment. Same visibility contract the
+// season thread already enforces (`isOwnHeldVisible`).
+export async function getOwnHeldComments(args: {
+  sub: string
+  limit?: number
+}): Promise<ProfileComment[]> {
+  const sub = args.sub.trim()
+  if (!sub) return []
+  const client = serviceRoleClient()
+  const limit = Math.min(Math.max(args.limit ?? 8, 1), 30)
+  return fetchOwnComments(client, sub, 'pending', limit)
 }
 
 // Ensure the authed user has a sessions row linked to their sub,
