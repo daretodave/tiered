@@ -9611,6 +9611,64 @@ last time a curator actually looked.
   credit, national-cast-split, or calendar-slot-move fact reopens the
   three craft/structure lists) rather than re-searching the same,
   already-filed season files again.
+- **2026-08-20, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship, fourth consecutive same-day pass.** Re-confirmed both
+  standing blockers first: Rule 2 season-fill still stalled
+  (`plan/CADENCE.md` — 42 shows / 43 gap-slots, every row starred
+  confirmed-but-unaired) and zero ledger rows carry a `review-due` flag
+  (oldest `last_reviewed` cells, `the-judges-picked-a-side` and
+  `same-license-different-rules`, both 2026-07-18, well inside the 90-day
+  floor). Read the full 212-row Ledger plus the Ideas-log tail (the three
+  prior same-day zero-ship passes above, plus the 2026-08-13/14/15
+  eighteen-plus-pass saturation streak) before starting, and avoided
+  re-walking any already-logged dead end. Chased fourteen fresh axes, all
+  confirmed dead: (1) judge/host guest-appearance facts — real hits but
+  all single-episode asides already spent at `the-judges-picked-a-side` /
+  `familiar-faces-wrong-franchise`; (2) wardrobe/style-branding facts —
+  no cross-show device beyond Queer Eye's own single-show format; (3)
+  live-studio-audience-as-mechanic (non-pandemic) — the pandemic-era hits
+  are spent at `pandemic-seasons` / `the-season-everyone-got-their-
+  audience-back`, residual hits (Shark Tank S14, SYTYCD S16, DWTS
+  S01/S27) below the 3-show floor once those are excluded; (4)
+  franchise-crossover casting — `familiar-faces-wrong-franchise` (16
+  entries) already at its natural ceiling across 11 shows, nothing
+  unclaimed; (5) fan-favorite award as a formal mechanic — only generic
+  casting-language hits (Top Chef S17, ANTM S17), already spent under
+  returnee-cast lists; (6) casting/representation firsts (first
+  same-sex couple, first transgender contestant — 5 strong hits across
+  The Real World, MAFS Australia x2, Bachelor in Paradise, ANTM, Drag
+  Race) — looked genuinely fresh on first read but confirmed already
+  fully staked at `season-one-doesnt-own-every-first` (14 shows deep),
+  same thesis under a different title; (7) jury mechanic as a
+  cross-show structural first — hits are each show's own long-standing
+  internal mechanic, not a "first" fact, no groundable list; (8) twins
+  as a casting hook — only 2 hits catalog-wide (Top Chef S23, Big
+  Brother S05), sub-floor; (9) real-world event tie-in (Olympics/World
+  Cup/election) — DWTS's Olympic-athlete seasons (S06/S18/S26) are
+  real but single-show; (10) reunion-special format changes — both
+  existing reunion lists (`best-reunion-specials` 10 entries,
+  `the-reunion-kept-changing-its-own-rules` 11 entries) already cover
+  virtual/COVID reunions, multi-part expansion, standalone specials,
+  skip seasons, and timing collapses, neither under the extension floor;
+  (11) filming-crew/behind-the-scenes credit changes — essentially zero
+  groundable hits catalog-wide; (12) filmed-out-of-broadcast-order —
+  all grep hits were false positives (emotional "holding back," not a
+  production-order fact); (13) pre-existing friend-group casting — one
+  real hit (The Real World S07), sub-floor; (14) hidden-idol/blindside
+  mechanic spreading beyond its origin show — confined entirely to
+  Survivor's own files, not cross-show. Also re-checked
+  `milestones-spent-not-marked` (craft, 23 entries, one short of the
+  informal 24-cap) for extension headroom in full: already covers every
+  round-number season with a genuine structural swing across 15 shows,
+  including the near-miss "milestone that changed nothing" counter-cases
+  (Naked and Afraid S10, Project Runway S10, DWTS S20, Masked Singer
+  S10) — no new eligible season found. Net: no `content/themes/*.md`
+  file written or edited. Fourth consecutive zero-ship Rule 3 tick
+  today, landing on the same standing verdict as the three prior
+  same-day passes and the Aug 13-15 saturation streak (issue #758): the
+  catalog is dense enough at 212 lists that the next actionable Rule 3
+  lead is a new season landing (Rule 2 unstalling), not further
+  re-slicing of already-mined season files.
 
 ## Notes
 
