@@ -22,6 +22,12 @@ host_caption: "RuPaul, with Michelle Visage"
 watch_list:
   - episode_label: "Ep 1 · premiere read"
     body: "A veteran-heavy cast steps out under the franchise's biggest MTV premiere numbers yet. Watch how a room full of seasoned queens changes the opening night's temperature."
+  - episode_label: "Ep 4 · the Dion pairing"
+    body: "The franchise's first grandmother-and-granddaughter pairing shares a season for the first time. Watch how the judging panel treats two queens from the same family line running the same gauntlet."
+  - episode_label: "Ep 9 · the judging split widens"
+    body: "A stretch of challenges where the panel's polish praise and its inconsistent call-to-call critiques both show up in the same episode. Watch for the gap between the room's reaction and the scorecard."
+  - episode_label: "Ep 13 · setting up the rewrite"
+    body: "The season starts laying groundwork for a finale that won't run the usual top-two lip sync. Watch how the back stretch reshapes itself around a format the cast hasn't faced before."
   - episode_label: "Ep 16 · restructured finale"
     body: "The finale swaps the usual top-two lip sync for a full eliminated-cast tournament ahead of the final round. Watch how the new shape changes the hour's rhythm."
 ---
