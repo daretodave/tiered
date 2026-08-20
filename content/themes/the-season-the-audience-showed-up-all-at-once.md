@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-11
+last_revised: 2026-08-20
 featured: false
 related:
   - running-on-muscle-memory
@@ -18,7 +18,7 @@ entries:
     season_label: "S05"
     rank: 1
     title: "The highest-rated season American Idol ever aired"
-    blurb: "Season five's audition field ran deeper than any before it, and the audience followed — this is the run the franchise's own record books still cite as its highest-rated season, full stop."
+    blurb: "Season five's audition field ran deeper than any before it, and the audience followed — this is Idol's highest-rated season, full stop."
   - show: dancing-with-the-stars
     season: 5
     season_label: "S05"
@@ -66,13 +66,13 @@ entries:
     season_label: "S04"
     rank: 9
     title: "The season the coaching panel proved the format's ceiling"
-    blurb: "Guest coaches cycled through the chairs for the first time this run, a shakeup the show hadn't tried before. It's also the run the franchise's own editorial history reaches for first when the question of the show's real drawing power comes up."
+    blurb: "Guest coaches cycled through the chairs for the first time this run, a shakeup the show hadn't tried before, and the ratings from this stretch are still the numbers people point to when they talk about the show's real drawing power."
   - show: rhoa
     season: 5
     season_label: "S05"
     rank: 10
     title: "The season the franchise still cites first when the high point comes up"
-    blurb: "Season five is the version of RHOA the franchise's own retrospectives reach for first when the argument about its peak comes up — the Atlanta ensemble working at its most quotable."
+    blurb: "Season five is the version of RHOA most often named as the show's peak — the Atlanta ensemble working at its most quotable."
   - show: love-island-uk
     season: 4
     season_label: "S04"
