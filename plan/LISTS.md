@@ -9535,6 +9535,82 @@ last time a curator actually looked.
   explicit permission to ship nothing rather than force a duplicate or
   thin list — consistent with, and adding seven more non-redundant
   negative results to, issue #758's standing saturation verdict.
+- **2026-08-20, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship, extend-a-thin-list strategy tried per the tick's
+  brief.** Re-confirmed both standing blockers first: Rule 2 season-fill
+  still stalled (`plan/CADENCE.md` — every gap-table row starred
+  confirmed-but-unaired) and zero lists carry a `review-due` flag. Rather
+  than hunt a brand-new list concept (the last two ticks' strategy,
+  already confirmed low-odds at 182-list saturation per issue #758), this
+  pass worked the 13 candidate thin lists named in the brief, checking
+  each for genuine unmined headroom before touching anything. Result: all
+  13 are dead this tick, for two distinct reasons —
+  - **Nine are `category: single` lists mathematically capped at their
+    show's exact aired-season count** (independently re-verified against
+    each show's own frontmatter `seasons:` field, not just trusted from
+    the ledger): `new-house-rules-every-time-the-castle-reopens` /
+    traitors-uk (4 entries = seasons: 4), `the-blueprint-gets-rewritten-
+    every-winter` / traitors (4 = seasons: 4), `the-return-trip-built-
+    into-the-format` / the-ultimatum (4 = seasons: 4), `the-quiet-
+    register-was-the-whole-point-until-ibiza` / below-deck-sailing-yacht
+    (5 = seasons: 5), `every-season-strikes-a-different-bargain-with-lana`
+    / too-hot-to-handle (6 = seasons: 6), `home-seasons-waited-
+    relocation-seasons-didnt` / jersey-shore (6 = seasons: 6),
+    `seven-ways-to-break-the-same-app` / the-circle (7 = seasons: 7),
+    `the-series-the-uk-edition-finally-made-its-own` / dragrace-uk (7 =
+    seasons: 7), `the-wait-between-seasons-was-never-the-same-twice` /
+    rhom (7 = seasons: 7), `it-took-five-seasons-to-find-a-home` /
+    love-island-us (8 = seasons: 8), `some-seasons-rebuild-the-roster-
+    others-just-move-the-furniture` / selling-sunset (9 = seasons: 9).
+    (That's 11 lists/shows, not 9 — the brief bundled two extras in with
+    the single-show set.) None of these shows has an unfiled aired season
+    per Rule 2's own stalled gap table, so none of these lists can gain a
+    legitimate new entry until a new season airs and gets filed.
+  - **Three are cross-canon (`craft`/`structure`) lists already
+    exhaustively re-searched within the last five to seven days, each
+    confirmed dead by dedicated re-check passes this tick did not need to
+    repeat from scratch:** `the-pitch-names-where-the-idea-came-from`
+    (craft, 3/3) was re-checked 2026-08-15 with ~20 grep patterns across
+    every season file and confirmed to hold at 3 entries/3 shows — this
+    pass independently re-ran the brief's own suggested grep
+    (`borrowed from|credited (to|as)|traces back to|named after|calls it
+    a|modeled (on|after)|lifted from|inspired by`) and got the same five
+    hits the brief flagged, each confirming the brief's own read: ANTM
+    S01 ("Every modeling competition since borrowed from what this cycle
+    drafted") and Big Brother S13 ("the move every later returnee season
+    is borrowed from") are both the season being borrowed FROM, backwards
+    of the list's thesis; Big Brother S01 credits "the European
+    original" — same-IP territorial license, not a different franchise;
+    The Real World S31 credits "the Challenge and Road Rules," MTV's own
+    spinoffs of Real World itself, already staked on that self-referential
+    angle at `the-franchise-started-borrowing-from-itself` rank 10. No
+    fourth candidate found. `one-season-two-flags` (structure, 9/9) has
+    been re-confirmed dead across dozens of passes stretching back to
+    2026-08-05 (see the many log entries above) and nothing has changed
+    since — no new season filed in the interim. `the-calendar-moved-the-
+    format-didnt` (craft, 6/4) was re-checked twice on 2026-08-15 alone
+    (a dozen-plus fresh grep sweeps each time) and held at 6 entries/4
+    shows both times. Since Rule 2 has filed zero new seasons since any
+    of these three checks, re-running the identical greps this pass would
+    only reproduce the identical dead result — logged here without
+    re-deriving it, per the standing "don't re-walk an already-logged
+    dead end" instruction.
+  Net: every named candidate is either mathematically capped (no new
+  season exists to draw from) or was already exhaustively searched within
+  the last week with no new ground and no new source material has
+  appeared since. No `content/themes/*.md` file touched. This is a
+  genuine, diligence-backed zero-ship — the extend-a-thin-list strategy
+  is sound in principle, but this particular candidate set had already
+  been drained by the loop's own recent activity before this tick started.
+  A future Rule 3 tick's most productive move on any of these 13 lists is
+  to wait for Rule 2 to unstall (a new season airing on any of
+  traitors-uk, traitors, the-ultimatum, below-deck-sailing-yacht,
+  too-hot-to-handle, jersey-shore, the-circle, dragrace-uk, rhom,
+  love-island-us, or selling-sunset reopens its matching single-show
+  list; a fresh season anywhere with an explicit cross-franchise-borrow
+  credit, national-cast-split, or calendar-slot-move fact reopens the
+  three craft/structure lists) rather than re-searching the same,
+  already-filed season files again.
 
 ## Notes
 
