@@ -1002,6 +1002,10 @@
   font-family: var(--serif); font-size: 16px; line-height: 1.55;
   outline: 0;
 }
+.comment-ta:focus-visible {
+  outline: 2px solid var(--show-primary);
+  outline-offset: 4px;
+}
 .comment-ta::placeholder { color: color-mix(in oklab, var(--show-ink) 40%, transparent); }
 .comment-flag {
   margin-top: 8px;
