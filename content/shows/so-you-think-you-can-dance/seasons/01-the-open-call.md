@@ -8,7 +8,7 @@ ep_count: 12
 aired_year: 2005
 location: "Los Angeles, California"
 host: "Lauren Sánchez"
-eyebrow: "Premiered July 2005 · Fox"
+eyebrow: "Premiered July 2005 · Fox's original open-audition dance competition"
 lede: "Fox's new dance competition sends hopefuls through open auditions in three cities before a choreography-round callback week narrows the field to sixteen finalists who compete live, judged on technique rather than fame."
 pull: "No celebrities, no pro partners to lean on — the format's founding bet was that dance skill alone could carry a live network competition, and the debut season sets every rule that followed."
 premiere_caption: "Fox · July 2005 premiere"
