@@ -9,7 +9,7 @@ location: "Charleston, South Carolina"
 ep_count: 17
 eyebrow: "Premiered November 2025 · Bravo"
 lede: "Season eleven settles into a smaller, steadier lineup after season ten's overhaul, welcoming Charley Manley and Whitner Slagsvol alongside eight returning cast members across seventeen episodes, including a two-part reunion."
-pull: "After the show's biggest reset, a leaner cast tries to find its footing again."
+pull: "After the show's biggest reset, a leaner cast tries to rebuild its rhythm."
 premiere_caption: "Bravo · November 2025"
 filming_caption: "Charleston · a smaller, steadier group after the reshuffle"
 format_summary: "Social reality"
