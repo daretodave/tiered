@@ -17,7 +17,7 @@ cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2022"
 filming_caption: "Labrador, Canada"
 host: "Colby Donaldson"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Third season at the helm"
 ---
 
 Season nine introduced Labrador as an Alone location — a subarctic coastal wilderness between the temperate Pacific Northwest and the full Arctic interior. The boreal forest and tundra edges of eastern Canada bring their own gear calculus: colder than Vancouver Island, windier and more coastal than the Northwest Territories interior, with shorter summer nights and a demanding food environment. Ten survivalists navigated the location without any prior Alone template to reference. A solid new-biome entry in the Colby era.

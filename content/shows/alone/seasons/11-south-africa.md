@@ -17,7 +17,7 @@ cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2024"
 filming_caption: "Northern Cape · franchise's first African shoot"
 host: "Colby Donaldson"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Fifth season at the helm"
 format_changes:
   - "First season set in Africa — Northern Cape, South Africa"
   - "Arid semi-desert biome; heat and water scarcity replace cold and precipitation as primary threats"

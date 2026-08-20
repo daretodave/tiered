@@ -17,7 +17,7 @@ cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2021"
 filming_caption: "Northern Patagonia · a cooler, denser face of the biome"
 host: "Colby Donaldson"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Second season at the helm"
 ---
 
 Northern Patagonia returned to the biome that anchors the canon's top slot while ensuring a genuinely distinct run. The northern Argentine reaches offer different terrain from the southern stretch season three mapped: lush lake country, denser forest, different food sources and shelter demands. Ten survivalists entered a landscape recognizably Patagonian but encountered it without prior Alone precedent. A Colby-era entry that builds on the format's most celebrated location without simply repeating it.

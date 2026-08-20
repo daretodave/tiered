@@ -17,7 +17,7 @@ cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2025"
 filming_caption: "Northwest Territories · second Arctic shoot, new cast"
 host: "Colby Donaldson"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Sixth season at the helm"
 ---
 
 Twelve seasons in, Alone doesn't need a gimmick to stay

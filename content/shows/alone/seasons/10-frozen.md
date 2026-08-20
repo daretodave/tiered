@@ -17,7 +17,7 @@ cast_size_caption: "10 individual survivalists"
 premiere_caption: "History Channel · June 2023"
 filming_caption: "Labrador, Canada (winter filming)"
 host: "Colby Donaldson"
-host_caption: "{seasonOrdinalWord} season at the helm"
+host_caption: "Fourth season at the helm"
 format_changes:
   - "First winter-format season — filming in cold-weather conditions rather than summer/fall"
   - "Survivalists compete in frozen terrain; shelter and caloric demands dramatically elevated"
