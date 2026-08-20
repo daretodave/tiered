@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-16 at commit 564c8912
-> Pass count: 63
+> Last pass: 2026-08-20 at commit 95062958
+> Pass count: 64
 
 ## Considered (awaiting promotion)
 
@@ -1997,8 +1997,19 @@ workflow diffs in one local session).
 
 **Score:** 5.2 (impact: 6, ease: 7 → 4.2 base + 1.0 signal multiplicity —
 catalog growth reinforces)
-**Source pass:** 52 (reinforced pass 56)
-**Filed:** 2026-07-11 (reinforced 2026-07-16)
+**Source pass:** 52 (reinforced pass 56, reinforced again pass 64)
+**Filed:** 2026-07-11 (reinforced 2026-07-16, 2026-08-20)
+**Pass-64 reinforcement (steady growth continues, still unpromoted):** critique
+pass-121 confirms the B tier at 54 shows — 79% of the 68-show catalog in one flat
+section (S: 2, A: 12, B: 54) — up from "51+" at the pass-56 reinforcement a month
+ago. Catalog total also grew (58→68 shows) over the same window. Growth has slowed
+under the locked biweekly show-add clock (candidate #24 retired the old perpetual
+refill), but it hasn't stopped — 3+ new tiles since pass-56. Both the original
+pass-77 finding and pass-121's independent re-confirmation remain unresolved and
+Pending in `plan/CRITIQUE.md`. Score held at 5.2 (growth rate too modest under the
+new clock to justify a further bump); flagging for `/oversight` as a low-risk,
+data-already-exists candidate worth a look whenever a chrome-focused session comes
+up — no new content authoring required per the original scope sketch.
 **Pass-56 reinforcement:** critique pass-91 confirms the B tier has kept growing since
 filing — "51+ tiles as of this pass," up from the 39 cited at filing five passes ago.
 Note a correction to the original growth rationale: the 2026-07-12 oversight pivot
@@ -2117,9 +2128,48 @@ multiplicity bonus raised again at pass 49 — a 10th independent instance close
 the very next commit window after pass 48's filing, the shortest gap yet between
 reinforcements; raised again at pass 57 — 12th and 13th independent instances,
 one of them ruling out "thin season" as an excuse)
-**Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56, 57)
+**Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56, 57,
+reinforced again pass 64)
 **Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09,
-2026-07-16, 2026-07-22)
+2026-07-16, 2026-07-22, 2026-08-20)
+**Pass-64 reinforcement (five weeks unreinforced despite the highest instance rate
+yet — eight-plus new occurrences, two genuinely new shows, same-page re-recurrence
+on already-"fixed" pages):** No expand pass touched this candidate between pass-57
+(2026-07-22) and this one — five weeks and six passes (58-63) running past it while
+`plan/CRITIQUE.md`'s pending queue kept accumulating fresh instances of the exact
+defect class. In that gap, two genuinely new shows joined the affected list: Top
+Chef (`carolinas`, critique pass-124/127 — lede/body echo on filming-location facts,
+a *third* repetition instance on the same page after the pass-93 FILMED/FORMAT
+tile fix left `filming_caption` itself still self-restating) and Traitors
+(`ardross-2026`, critique pass-127 — "on merit" repeated three times across
+Take/Shape/Canon, a third distinct repetition instance on a page that already had
+its eyebrow/body echo fixed at pass-125). Survivor 50 — the site's flagship,
+highest-traffic season page — was hit again (pass-127, cast-size fact restated
+verbatim-in-substance across lede and Shape body) despite "several prior
+independent fixes on the same page" already closed (FORMAT/CAST tile dupe,
+canon.md/body echo, a four-times-repeated fan-vote mechanics list). Perfect Match
+restated its two headline facts across five-plus fields (pass-125). The most
+recent critique pass (129, same day as this filing) landed three more in one
+sweep: The Real World Atlanta (lede/body/canon triple-restatement, explicitly
+named "the same defect class already fixed on shark-tank S17, alone S12, the-circle
+S7, and survivor-50 — now confirmed on a show outside that fixed set"), Big
+Brother's newest season (a three-mechanic list repeated four times across
+lede/Take/Shape/Canon), and Southern Charm (a lighter two-field word-recycle
+variant, same root symptom in a new module pair). None of these eight-plus fresh
+instances were caught pre-ship; each is either a still-open `plan/CRITIQUE.md`
+Pending row or was closed reactively as a one-off content edit days to weeks after
+shipping — the same "reactive, never structural" pattern this candidate has now
+documented across 20+ instances. The new information this window adds beyond raw
+instance count: **the defect is re-recurring on pages that were already
+individually patched** (Survivor 50, Top Chef Carolinas, and Traitors each got a
+prior one-off fix, then grew a *new* echo pair in a *different* field on the same
+page) — direct evidence that field-by-field content edits don't close the class,
+they just relocate the next occurrence to an unpatched field pair on the same
+page. Score held at 8.3 (already near ceiling on impact/ease); flagging urgency
+instead of a further score bump — this is the highest-scored candidate in the file
+and the longest-unreinforced relative to its own signal rate. Recommend
+`/oversight` promote at the next session rather than let a pass-70+ reinforcement
+restate the same case a third time.
 **Pass-57 reinforcement (two new instances, one raises a scope question):** critique
 pass-94 found a 12th instance on `/shows/chopped/season/the-double-first` (Season 62)
 — a thin two-fact season repeating both facts near-verbatim across the body/lede, the
