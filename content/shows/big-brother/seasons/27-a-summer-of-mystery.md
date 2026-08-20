@@ -8,8 +8,8 @@ ep_count: 39
 location: Studio City, California
 host: Julie Chen Moonves
 eyebrow: "Aired summer 2025 · The Hotel Mystère twist"
-lede: "The 27th season leans into a haunted-hotel theme, redressing the compound as Hotel Mystère, and stacks three mechanics on top of it — a revived Block Buster nomination twist, a surprise Mastermind power set, and a Week 9 stretch that swaps the vote for a competition."
-pull: "A Summer of Mystery stacks three mechanics into one run — Block Buster, Mastermind, and a vote-free elimination week — inside a haunted-hotel theme, with a premiere-night mystery arrival keeping the opening hour off balance."
+lede: "The 27th season leans into a haunted-hotel theme, redressing the compound as Hotel Mystère, and layers on three twists — a revived Block Buster, a Mastermind power set, and a Week 9 vote swap."
+pull: "A Summer of Mystery bets that Hotel Mystère's theme can carry three stacked twists without curdling into stunt television — and the cast mostly proves it right, with a premiere-night mystery arrival keeping the opening hour off balance."
 format_summary: "16+ houseguests · three stacked twists"
 format_caption: "Block Buster, Mastermind powers, a vote-free elimination week"
 filming_caption: "Studio City soundstage, redressed as Hotel Mystère"
