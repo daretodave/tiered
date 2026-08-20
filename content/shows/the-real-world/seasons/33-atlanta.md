@@ -27,4 +27,4 @@ watch_list:
     body: "The Urban Oasis Bed and Breakfast is a genuinely different kind of house than the format's usual lofts — worth watching for how the setting shapes the season."
 ---
 
-Roommates share the Urban Oasis Bed and Breakfast in Atlanta for a season built for a different platform entirely: the franchise's first move off linear MTV broadcast, landing instead on Facebook Watch with weekly full episodes, daily bonus clips, and occasional live cast chats. The season also widens its casting age range further than any prior run, while reviving a version of the format's original 1990s-style opening title sequence.
+Weekly episodes plus daily bonus story drops and live cast chats ask for a different kind of attention than a once-a-week MTV broadcast ever did — appointment viewing swapped for something closer to a running feed. Casting further outside the usual college-age bracket than any prior run, and reaching back for the franchise's original title card, reads as a season hedging its own bet: keep the format recognizable while everything about how it actually reaches viewers changes underneath it.
