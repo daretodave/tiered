@@ -217,7 +217,22 @@ export function statsFor(season: Season, genreTag: string): SeasonStat[] {
   ]
 }
 
-function adjacentByCanon(
+// critique-pass-129 HIGH: when an adjacent canon entry shares its
+// title with the current season (Project Runway's "New York" runs
+// 20 of its 21 seasons under one title), the caption slot is the
+// only way a reader can tell the two links apart before clicking.
+// No show in the catalog authors the per-season `tag` field, so
+// fall back to the adjacent season's premiere year whenever its
+// title exactly matches the current page's — a same-year collision
+// (e.g. two "New York" seasons landing on the calendar the same
+// year) is rare enough to accept without a further tie-break.
+function yearCaptionFor(season: Season): string | undefined {
+  if (season.premiere_date) return season.premiere_date.slice(0, 4)
+  if (season.aired_year != null) return String(season.aired_year)
+  return undefined
+}
+
+export function adjacentByCanon(
   show: Show,
   seasons: Season[],
   current: Season,
@@ -228,11 +243,12 @@ function adjacentByCanon(
   const pos = ranked.findIndex((s) => s.number === current.number)
   const toSide = (s: Season | undefined | null): AdjacentSide | null => {
     if (!s) return null
+    const titleCollides = s.title === current.title
     return {
       href: `/shows/${show.slug}/season/${s.slug}`,
       rank: s.canonical_position ?? null,
       title: s.title,
-      caption: s.tag,
+      caption: s.tag ?? (titleCollides ? yearCaptionFor(s) : undefined),
     }
   }
   if (pos === -1) {

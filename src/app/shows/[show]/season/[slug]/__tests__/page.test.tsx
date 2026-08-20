@@ -58,6 +58,7 @@ vi.mock('@/content', async () => {
 import { isValidElement } from 'react'
 import { render, screen } from '@testing-library/react'
 import {
+  adjacentByCanon,
   adjacentSectionH2For,
   appearsInRowsFor,
   buildSections,
@@ -767,6 +768,91 @@ describe('appearsInRowsFor — self-referential canon row vs. real cross-referen
     const { rows, hasCrossRef } = appearsInRowsFor(show, season, [], null)
     expect(rows).toHaveLength(0)
     expect(hasCrossRef).toBe(false)
+  })
+})
+
+describe('adjacentByCanon — critique-pass-129 title-collision caption fallback', () => {
+  // Project Runway runs 20 of its 21 seasons under the identical
+  // title "New York" and no show in the catalog authors the
+  // per-season `tag` field, so the "Adjacent in the canon" cards
+  // rendered two unlabeled links a reader could not tell apart.
+  const show = makeShow({ slug: 'project-runway', name: 'Project Runway' })
+
+  it('falls back to the premiere year when an adjacent title matches the current season', () => {
+    const current = makeSeason({
+      show: 'project-runway',
+      number: 21,
+      slug: 'new-york-2025',
+      title: 'New York',
+      premiere_date: '2025-07-31',
+      canonical_position: 16,
+    })
+    const prevNeighbor = makeSeason({
+      show: 'project-runway',
+      number: 20,
+      slug: 'new-york-2023',
+      title: 'New York',
+      premiere_date: '2023-06-15',
+      canonical_position: 15,
+    })
+    const nextNeighbor = makeSeason({
+      show: 'project-runway',
+      number: 12,
+      slug: 'new-york-2013-fall',
+      title: 'New York',
+      premiere_date: '2013-07-18',
+      canonical_position: 17,
+    })
+    const { prev, next } = adjacentByCanon(
+      show,
+      [current, prevNeighbor, nextNeighbor],
+      current,
+    )
+    expect(prev?.caption).toBe('2023')
+    expect(next?.caption).toBe('2013')
+  })
+
+  it('leaves the caption undefined when adjacent titles are already distinct', () => {
+    const current = makeSeason({
+      show: 'project-runway',
+      number: 6,
+      slug: 'los-angeles',
+      title: 'Los Angeles',
+      premiere_date: '2009-08-20',
+      canonical_position: 21,
+    })
+    const prevNeighbor = makeSeason({
+      show: 'project-runway',
+      number: 18,
+      slug: 'new-york-2020',
+      title: 'New York',
+      premiere_date: '2020-12-03',
+      canonical_position: 20,
+    })
+    const { prev } = adjacentByCanon(show, [current, prevNeighbor], current)
+    expect(prev?.caption).toBeUndefined()
+  })
+
+  it('prefers an authored `tag` over the year fallback even when titles collide', () => {
+    const current = makeSeason({
+      show: 'project-runway',
+      number: 21,
+      slug: 'new-york-2025',
+      title: 'New York',
+      premiere_date: '2025-07-31',
+      canonical_position: 16,
+    })
+    const prevNeighbor = makeSeason({
+      show: 'project-runway',
+      number: 20,
+      slug: 'new-york-2023',
+      title: 'New York',
+      premiere_date: '2023-06-15',
+      canonical_position: 15,
+      tag: 'The Freeform-era refinement.',
+    })
+    const { prev } = adjacentByCanon(show, [current, prevNeighbor], current)
+    expect(prev?.caption).toBe('The Freeform-era refinement.')
   })
 })
 
