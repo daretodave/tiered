@@ -247,10 +247,54 @@ describe('<ListDetailHero>', () => {
       />,
     )
     expect(screen.getByTestId('list-meta-entries').textContent).toContain('1')
-    // pass-40 #355: bare value `1` (singular pluralization happens on
-    // the canonical `formatListMetaLine` accounting line, not the
-    // meta-strip cell — the cell holds a bare integer).
+    // pass-97: single-show lists swap the trivial "Shows / 1" stat for
+    // the season-number span the list covers — a single-entry list
+    // covers exactly that one season.
     const cell = screen.getByTestId('list-meta-shows')
-    expect(cell.querySelector('.meta-val')?.textContent?.trim()).toBe('1')
+    expect(cell.querySelector('.meta-val')?.textContent?.trim()).toBe('S1')
+  })
+
+  // Critique pass-97: "SHOWS 1" on every single-show list was trivially
+  // true (the crumb/title already name the one show) and told the
+  // reader nothing new. The cell now reports the season-number span the
+  // list actually covers instead.
+  it('swaps the trivial "Shows: 1" stat for a season-span stat on single-show lists (pass-97)', () => {
+    render(
+      <ListDetailHero
+        theme={theme({
+          entries: [
+            {
+              show: 'rhony',
+              season: 1,
+              rank: 1,
+              title: 'The original.',
+              blurb: 'Season one.',
+            },
+            {
+              show: 'rhony',
+              season: 15,
+              rank: 2,
+              title: 'The latest.',
+              blurb: 'Season fifteen.',
+            },
+          ],
+        })}
+        shows={[show({ slug: 'rhony', name: 'The Real Housewives of New York City' })]}
+      />,
+    )
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-key')?.textContent).toBe('Season span')
+    expect(cell.querySelector('.meta-val')?.textContent?.trim()).toBe('S1–S15')
+  })
+
+  it('keeps the bare "Shows" stat (not season span) on cross-show lists', () => {
+    render(
+      <ListDetailHero
+        theme={theme()}
+        shows={[show(), show({ slug: 'top-chef', name: 'Top Chef' })]}
+      />,
+    )
+    const cell = screen.getByTestId('list-meta-shows')
+    expect(cell.querySelector('.meta-key')?.textContent).not.toBe('Season span')
   })
 })

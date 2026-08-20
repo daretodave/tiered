@@ -19,6 +19,16 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
   // page. "Unique shows" explains the discrepancy inline instead.
   const showsLabel = entryCount === showCount ? 'Shows' : 'Unique shows'
   const soleShow = shows.length === 1 ? shows[0] : undefined
+  // Critique pass-97: on a single-show list the "Shows" stat is
+  // trivially 1 — the crumb and the title already name the one show,
+  // so the cell told the reader nothing new. Swap it for the
+  // season-number span the list actually covers, a fact distinct from
+  // both ENTRIES (a bare count) and the old SHOWS cell.
+  const seasonNumbers = theme.entries.map((entry) => entry.season)
+  const minSeason = Math.min(...seasonNumbers)
+  const maxSeason = Math.max(...seasonNumbers)
+  const seasonSpanValue =
+    minSeason === maxSeason ? `S${minSeason}` : `S${minSeason}–S${maxSeason}`
   const segments = parseTagline(theme.tagline)
   const revised = formatRevisedRelative(theme.last_revised)
   // Critique pass-40 #355 closure: the cell previously read `SPANS / 6
@@ -91,8 +101,8 @@ export function ListDetailHero({ theme, shows }: ListDetailHeroProps) {
           <dd className="meta-val">{entryCount}</dd>
         </div>
         <div className="meta-cell meta-cell--stat" data-testid="list-meta-shows">
-          <dt className="meta-key">{showsLabel}</dt>
-          <dd className="meta-val">{showCount}</dd>
+          <dt className="meta-key">{soleShow ? 'Season span' : showsLabel}</dt>
+          <dd className="meta-val">{soleShow ? seasonSpanValue : showCount}</dd>
         </div>
         <div className="meta-cell" data-testid="list-meta-curator">
           <dt className="meta-key">Curated by</dt>
