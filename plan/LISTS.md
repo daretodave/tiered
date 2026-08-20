@@ -9486,6 +9486,55 @@ last time a curator actually looked.
   ship nothing rather than force a duplicate or thin list — consistent
   with, and adding four more non-redundant negative results to, issue
   #758's standing saturation verdict.
+- **2026-08-20, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship.** Re-confirmed the standing blockers before starting:
+  Rule 2 season-fill still stalled (`plan/CADENCE.md` — 42 shows / 43
+  gap-slots, every row starred confirmed-but-unaired; the two nearest
+  dated candidates, `90-day-fiance` S12 finale 2026-08-23 and
+  `american-ninja-warrior` S18 finale 2026-08-31, both still days out
+  from today), and the review-due bar clean (no ledger row carries an
+  explicit `review-due` flag; the oldest `last_reviewed` dates,
+  `the-judges-picked-a-side` and `same-license-different-rules` at
+  2026-07-18, sit well inside the 90-day floor). Read the full Ledger and
+  the Ideas-log tail (through the 2026-08-15 saturation entries and
+  issue #758's standing verdict) before starting, and did not re-walk any
+  already-logged dead end. Tried seven fresh axes not explicitly
+  enumerated in the prior logs, each verified by grep across every
+  `content/shows/**/*.md`: (1) **a season going alcohol-free / "dry" as
+  an explicit format or casting brief** — grepped `sober|alcohol-free|no
+  alcohol|dry season|wellness era`: zero hits catalog-wide. (2) **a
+  season casting a set of twins as a swap/casting-hook mechanic** —
+  grepped `identical twins|set of twins|twin sisters|twin brothers`: only
+  two hits (top-chef S23, big-brother S05 "Project DNA"), below the
+  3-show cross-canon floor. (3) **a season's own text staking an explicit
+  prize-pool record** (distinct from the ratings-record thesis
+  `the-season-the-audience-showed-up-all-at-once` already owns) —
+  grepped `prize (pool|money) (doubled|increased|jumped)|record
+  prize|biggest (prize|jackpot)|grand prize (doubled|grew)`: zero hits.
+  (4) **a duty-of-care / aftercare program added as a stated format
+  change** — grepped `aftercare|duty of care|psychological support|
+  welfare (team|check)|mental health (support|team)`: zero hits. (5) **a
+  confessional/diary-room mechanic introduced as a structural first** —
+  grepped `confession(al)? booth|diary room`: one hit (the-real-world
+  S02), nowhere near the floor. (6) **a companion podcast launched
+  alongside a season as a stated format/marketing fact** — grepped
+  `companion podcast|official podcast|weekly podcast`: zero hits. (7) **a
+  season explicitly cast around social-media/influencer fame as a stated
+  casting brief** — grepped `social media (influencer|star|following)|
+  influencer cast|TikTok`: one hit (love-island-us S07), nowhere near the
+  floor. Also re-ran the 2026-08-11/2026-08-15 single-show-list census
+  follow-up against the filesystem directly rather than trusting the
+  prior pass's counts: confirmed `below-deck-adventure` (1 filed season),
+  `alone-frozen` (1 filed season), and `alone-the-skills-challenge` (1
+  filed season) still sit far below the 3-entry single-show floor;
+  `rhodubai` now carries 2 filed seasons (`01-season-1`,
+  `02-the-new-addition`) — one season short of the floor, no headroom
+  yet. No fresh ground found on any of the seven axes within this pass's
+  search budget; no ledger table row added, no `content/themes/` file
+  written or edited. Zero-ship this tick, per bearings.md Rule 3's
+  explicit permission to ship nothing rather than force a duplicate or
+  thin list — consistent with, and adding seven more non-redundant
+  negative results to, issue #758's standing saturation verdict.
 
 ## Notes
 
