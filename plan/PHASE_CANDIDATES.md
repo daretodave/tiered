@@ -414,6 +414,61 @@
      recurrence, not a silent reopen).
 -->
 
+### 37. Cloud workflows need a fallback (or at least faster escalation) for org-level Claude access outages
+
+**Score:** 5.4 (impact: 9, ease: 6 — every cloud-scheduled workflow shares
+one auth path with no fallback and no dedicated alert, but the true root
+cause is an org-console setting outside this repo, so any in-repo mitigation
+is partial)
+**Source pass:** digest, 2026-08-20
+**Filed:** 2026-08-20
+**Why:** Both of tiered.tv's cloud-scheduled workflows — `march` (roughly
+hourly) and `night`/`/digest` (daily) — went dark on the exact same root
+cause at the exact same time: `Claude Code returned an error result: Your
+organization has disabled Claude subscription access for Claude Code · Use
+an Anthropic API key instead, or ask your admin to enable access`. For
+`march` that meant 178 consecutive non-success runs across 4+ days
+(2026-08-16T07:51 UTC to 2026-08-20T09:15 UTC, only one commit landing the
+entire window); for `night` it meant `plan/DIGEST.md` frozen on its 08-15
+snapshot through three failed nights and one cancelled one. Neither
+workflow has any fallback path — both depend solely on the subscription-
+billed `CLAUDE_CODE_OAUTH_TOKEN`, so when the org toggle flips off, both go
+fully dark simultaneously with nothing degrading gracefully. Worse, the
+signal quality is bad: `march`'s own safety-net auto-filer kept appending
+"Recurred" comments to issue #565 (178 of them across this repo's history)
+because its 14-day title-match dedup found a same-titled issue, but #565's
+only actual triage comment is from 2026-07-12 and diagnoses a completely
+different root cause ("prompt is too long" / context growth) — it was never
+re-triaged when the failure signature changed to the org-access error, so
+anyone reading #565 today gets a stale diagnosis for a live, different
+problem. This is the second occurrence of this exact org-access signature
+in 5 weeks (issue #586, 2026-07-16; this run, 2026-08-16 through 08-20),
+both times self-healing without any human action visible in either issue
+thread — suggesting either an intermittent org billing/quota toggle that
+resolves on its own, or a human quietly re-enabling it each time with no
+comment left behind. Either way, 4+ days of total loop silence twice in 5
+weeks is worth a structural look, not just another "Recurred" comment.
+**Scope sketch:** (1) re-triage issue #565 with the correct current root
+cause rather than letting the stale 07-12 diagnosis keep absorbing
+unrelated recurrences; (2) evaluate whether `march.yml` and `night.yml`
+should carry an `ANTHROPIC_API_KEY` fallback (pay-per-token, not
+subscription-billed) so an org-access toggle degrades to "runs, but costs
+money" instead of "doesn't run at all" — a deliberate cost/reliability
+tradeoff only a human should make; (3) at minimum, add a distinct alert for
+"N consecutive same-workflow failures" (both march and night) so a
+multi-day outage surfaces faster than a human noticing a suspiciously quiet
+git log, which is how this pass found it.
+**Source signals:**
+- `plan/AUDIT.md` [HIGH, score 7.2] filed this tick — the march-loop outage,
+  with the full 178-run breakdown and root-cause confirmation from both the
+  first and last failed run in the window.
+- `plan/AUDIT.md` [HIGH, score 6.4, updated this tick] — the sibling
+  night-shift row, now carrying a second, distinct-root-cause occurrence of
+  the same "silent multi-day digest gap" symptom (issue #777).
+- GH issue #565 (178 comments, open since 2026-07-12) and issue #777
+  (filed 08-16, triaged today) — both need a human's eyes at the next
+  `/oversight` session; neither is loop-fixable.
+
 ### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim
 
 **Score:** 6.0 (impact: 8, ease: 6 → 4.8 base + 2.0 signal multiplicity/urgency —
