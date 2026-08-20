@@ -1,5 +1,56 @@
 # CRITIQUE
 
+> Last pass: 2026-08-20 at commit e5f2a226
+> Pass count: 129
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass
+> 129 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP
+> needed), both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Both passes rotated to a fresh URL
+> set not covered by pass 128 — sampling shows outside the recent
+> shark-tank/alone/the-circle rotation (big-brother, the-real-world,
+> southern-charm, project-runway) to widen corpus coverage. Anon
+> (5 URLs: `/`, `/shows`,
+> `/shows/big-brother/season/a-summer-of-mystery`,
+> `/shows/the-real-world/season/atlanta`,
+> `/themes/never-starts-cold`) and authed
+> (`/shows/southern-charm/season/season-11`,
+> `/shows/project-runway/season/new-york-2025`,
+> `/themes/never-starts-cold`, `/u/e2e`) walks ran, desktop +
+> mobile, zero console errors/failed first-party requests/mobile
+> overflow across both (one benign `_rsc` prefetch teardown abort
+> on `/u/e2e`, already tracked as the pass-128 LOW tooling row —
+> not re-filed), no spoiler leaks. Auth handshake confirmed live
+> (authenticated:cloud), `@e2e` handle rendered in header chrome
+> on every authed URL. Reader returned 4 anon + 6 authed candidate
+> findings. Two candidates were dropped on self-assessment: the
+> `/shows` H1 pun ("All shows. Tiered.") reads as a deliberate,
+> mild brand-voice flourish rather than a defect, and the vote-pair
+> post-click/delta-animation coverage gap was filed as a tooling
+> note only (no product defect, not actionable by a content/code
+> fix — dropped, not filed). **6 new findings filed** (all
+> Pending, 2 HIGH, 3 MED, 1 LOW): own-profile `/u/e2e` silently
+> omits the viewer's own held-for-review comment (present on the
+> season-page thread, absent on the profile's "Recent comments"
+> list — the two surfaces disagree about the same comment's
+> existence); Project Runway's "Adjacent in the canon" module
+> renders ambiguous same-titled "New York" links for six different
+> seasons with no disambiguating year/number, because no season
+> in the entire catalog sets a `tag` field; a lede/body echo +
+> triple-repeated fact list on `the-real-world`'s Atlanta season
+> (same defect class fixed on shark-tank/alone/the-circle, now
+> confirmed corpus-wide rather than isolated); a quadruple-repeated
+> three-mechanic list on `big-brother`'s "A Summer of Mystery"
+> season (same defect class fixed on survivor-50); a repeated
+> "footing" clause across `southern-charm` S11's take headline and
+> subtext; and a LOW zero-vote-state framing note ("0 VOTES SO
+> FAR" reads as an empty feature rather than an invitation) on
+> both freshly-sampled season pages. No pending HIGH previously
+> queued for iterate before this pass.
+>
+> ───── Pass 128 metadata kept below for history ─────
+>
 > Last pass: 2026-08-16 at commit 324b68c9
 > Pass count: 128
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3074,6 +3125,18 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [authed] /u/e2e — the signed-in owner's own profile silently omits their own held-for-review comment, while the season-page thread the comment was posted on shows it correctly. `ProfileComments.tsx` queries "Recent PUBLISHED comments only — the read path already filtered pending/hidden/removed at the query" (component comment, lines 8-9), whereas `CommentThreadLive.tsx` refetches after posting so the author's own held comment is "pinned on top as held for review" (lines 47-48) and `CommentItem.tsx` renders an explicit "held for review" badge for the viewer's own pending comment on the thread view. A member who posts a comment sees it acknowledged as held on the season page — then if they check their own profile to follow up, the comment has vanished with no held-state indicator, reading identically to a comment that was never submitted. Fix: extend the profile comments query to include the viewer's own held comments (self-view only, never a stranger's) with the same "held for review" badge `CommentItem` already renders on the season thread, so the two surfaces agree about the same comment's existence. Content/code, one query + one badge reuse in `src/components/profile/ProfileComments.tsx`. Spoiler discipline P0 intact — held-state visibility change is scoped to the comment's own author, never a stranger; no held/hidden/removed comment becomes visible to anyone but its author. (URL: /u/e2e, source: critique-pass-129)
+
+- [ ] [HIGH] [authed] /shows/project-runway/season/new-york-2025 — the "Adjacent in the canon" module renders both neighboring canon entries labeled only "New York" with no distinguishing detail — `#15 IN CANON / New York` and `#17 IN CANON / New York` — identical to each other and to the current page's own season title. Confirmed in content: Project Runway seasons 14, 15, 16, 17, 18, and 21 (the current page) all carry `title: New York` with no `tag` field set anywhere in the show's season files; `grep -rl "^tag:" content/shows/*/seasons/*.md` returns zero files site-wide, so `AdjacentSeasons.tsx`'s optional caption slot never renders for any show — it only bites here because Project Runway reuses the same title across six seasons. A reader can't tell which of six same-named seasons either adjacent link points to before clicking. Fix: populate a disambiguating caption (year or season number) for seasons that share a title with a sibling season in the same show's canon — either author a `tag` field per colliding season, or fall back to the premiere year in `AdjacentSeasons.tsx` when the current season's title exactly matches an adjacent entry's title. Content + one component change. Spoiler discipline P0 intact — season titles and years are public record, not outcomes. (URL: /shows/project-runway/season/new-york-2025, source: critique-pass-129)
+
+- [ ] [MED] [anon] /shows/the-real-world/season/atlanta — the `lede` and the "Shape of the season" body paragraph open with nearly the same sentence, then both restate the same three facts (Facebook Watch move off linear MTV, casting age range, revived 1990s title card) a third time in "Where it sits in the canon." Same lede/body-echo + repeated-fact-list defect class already fixed on shark-tank S17, alone S12, the-circle S7, and survivor-50 — now confirmed on a show outside that fixed set. Lede: "Roommates share the Urban Oasis Bed and Breakfast in Atlanta for a season that leaves linear MTV broadcast behind for Facebook Watch, the franchise's first fully streaming home." Section 02: "Roommates share the Urban Oasis Bed and Breakfast in Atlanta for a season built for a different platform entirely: the franchise's first move off linear MTV broadcast, landing instead on Facebook Watch..." Section 03 repeats the same Facebook Watch + casting-age + title-card facts a third time. Fix: vary the section-02 opening clause instead of restating the lede's subject+setting construction verbatim, and let "Where it sits in the canon" argue the ranking rationale without re-listing the same three facts already covered above. Content-only, `content/shows/the-real-world/seasons/33-atlanta.md`. Spoiler discipline P0 intact — platform/format/casting facts only. (URL: /shows/the-real-world/season/atlanta, source: critique-pass-129)
+
+- [ ] [MED] [anon] /shows/big-brother/season/a-summer-of-mystery — the same three-mechanic list (revived Block Buster nomination twist, Mastermind power set, Week 9 vote-free elimination) is enumerated in nearly identical order and language four separate times on one page: the lede, "The take," "Shape of the season," and "Where it sits in the canon." Same repeated-mechanics-list defect class already fixed on survivor-50, now confirmed on a different season page. Lede: "...stacks three mechanics on top of it — a revived Block Buster nomination twist, a surprise Mastermind power set, and a Week 9 stretch that swaps the vote for a competition." Take: "...Block Buster, Mastermind, and a vote-free elimination week..." Shape: "...a revived Block Buster turns nominations into a three-way safety competition, a Mastermind power set drops surprise advantages mid-game, and a Week 9 stretch swaps the vote..." Canon: "...the revived Block Buster turning nominations into a three-way safety competition, a Mastermind power set dropped mid-game, and a Week 9 stretch that swaps a standard vote..." Fix: keep the full three-mechanic enumeration in one section (the lede or "Shape of the season") and have the other sections reference it by name only ("the Block Buster twist," "the mid-season power") rather than re-describing all three mechanics each time. Content-only, `content/shows/big-brother/seasons/27-a-summer-of-mystery.md` + `canon.md` rationale. Spoiler discipline P0 intact — format-mechanics facts only, no outcome exposure. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-129)
+
+- [ ] [MED] [authed] /shows/southern-charm/season/season-11 — "THE TAKE" module repeats the same word in its two-line pairing: heading "A smaller circle, finding its footing." immediately followed by "After the show's biggest reset, a leaner cast tries to find its footing again." Reads as a first-draft echo rather than the plain, considered sentence pair the voice calls for — not the full lede/body verbatim-echo class already fixed elsewhere, but the same underlying symptom (a phrase recycled across two adjacent copy fields) in a new module (`take_h2` / `pull`). Source: `content/shows/southern-charm/seasons/11-season-11.md` — `take_h2: "A smaller circle, finding its footing."` / `pull: "After the show's biggest reset, a leaner cast tries to find its footing again."` Fix: rewrite one of the two lines to drop the repeated "footing" — e.g. `pull: "After the show's biggest reset, a leaner cast tries to rebuild its rhythm."` Content-only, one field. Spoiler discipline P0 intact. (URL: /shows/southern-charm/season/season-11, source: critique-pass-129)
+
+- [ ] [LOW] [anon] /shows/big-brother/season/a-summer-of-mystery, /shows/the-real-world/season/atlanta — the community vote block reads "0 VOTES SO FAR" on both sampled season pages, which for a first-time visitor reads as either a broken counter or a site nobody has used yet — undercuts the pitch that "community rank" is a live, real signal. "CAST A VOTE / COUNTS MORE ONCE YOU SIGN IN / 0 / VOTES SO FAR / one vote per reader. community rank updates weekly." — identical zero on both unrelated season pages, likely true site-wide on any season without accumulated votes. Fix: reframe the zero state ("be the first to vote") so it reads as an invitation rather than an empty feature, on the shared vote-block component. Chrome-only copy change, no content-file edits. Spoiler discipline P0 unaffected. (URL: /shows/big-brother/season/a-summer-of-mystery, /shows/the-real-world/season/atlanta, source: critique-pass-129)
 
 - [x] [HIGH] [anon+authed] /shows/shark-tank/season/season-17, /shows/alone/season/arctic-ii, /shows/the-circle/season/disrupter-mode — the season-page `lede` frontmatter field and the markdown body's opening paragraph are near-verbatim restatements of the same sentence on all three sampled season pages (100% hit rate on a fresh, previously-uncritiqued sample), suggesting this defect class — already fixed one-off on chopped/love-is-blind/hells-kitchen/below-deck-down-under/AGT-S21 — may still be live corpus-wide rather than fully drained. Confirmed at source: `content/shows/shark-tank/seasons/17-season-17.md` — `lede: "Season seventeen moves Shark Tank from Friday to Wednesday nights, and the panel looks different too — Daniel Lubetzky sits as a full-time shark for the first time, while Mark Cuban isn't part of the rotation. The guest chair keeps pulling louder names than ever."` vs. body opening `"Season seventeen moves Shark Tank from its longtime Friday slot to Wednesday nights, and the panel looks different too — Daniel Lubetzky sits as a full-time shark for the first time, and Mark Cuban isn't part of the main rotation this year. The guest chair keeps pulling louder names than ever, several from well outside the usual investor circuit."` Same pattern in `content/shows/alone/seasons/12-arctic-ii.md` (lede vs. `02 THE SHAPE OF THE SEASON` body, both opening "Season twelve returned to the Canadian Arctic...") and `content/shows/the-circle/seasons/07-disrupter-mode.md` (lede vs. body, both opening "Season 7 pulls the cast down to just 10 players, the smallest group in the show's US run..."). Fix: give the `lede` and the body's opening sentence distinct jobs (lede states what changed; body explains why it matters or adds a new angle) instead of the body re-deriving the lede's own sentence with light word-swapping — same fix pattern already applied to the AGT-S21 row above. Given the 3/3 hit rate on an unrelated sample, worth a corpus-wide grep pass (compare `lede` against the first ~40 words of each season's body across all 68 shows) rather than fixing these three in isolation. Content-only, three files this pass; likely more corpus-wide. Spoiler discipline P0 intact — no outcome/elimination/winner facts touched, format-mechanics and premise facts only. (URLs: /shows/shark-tank/season/season-17, /shows/alone/season/arctic-ii, /shows/the-circle/season/disrupter-mode, source: critique-pass-128) — fixed f5567dbb: rewrote all three bodies to carry distinct jobs from their ledes.
 
