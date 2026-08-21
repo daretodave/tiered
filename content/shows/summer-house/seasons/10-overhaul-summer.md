@@ -12,7 +12,7 @@ lede: "Summer House's tenth season brings the biggest cast overhaul in the show'
 pull: "The largest single-season cast turnover the show has run, closing with the first reunion format built across three parts instead of one."
 format_summary: "Docusoap · biggest overhaul yet"
 format_caption: "six new main cast members, the largest addition ever"
-filming_caption: "The Hamptons · the show's most reshaped cast to date"
+filming_caption: "The Hamptons · six seasons running, the location the show has used longest"
 premiere_caption: "Bravo · February 2026"
 episodes_caption: "Sixteen regular episodes, extended by a bonus post-reunion coda"
 watch_list:
