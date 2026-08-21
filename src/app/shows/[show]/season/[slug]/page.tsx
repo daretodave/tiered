@@ -447,6 +447,19 @@ export function takeH2For(season: Season): string {
   return season.take_h2 ?? `${season.title}.`
 }
 
+// Section 02 ("The shape of the season") H2. critique-pass-131 HIGH:
+// this section's H2 was a bare JSX literal (`A rhythm worth
+// tracking.`), not per-season editorial copy — every season in the
+// catalog rendered the identical string, in contrast to Section 01's
+// `take_h2` override (which at least has an escape hatch even before
+// it's authored per-season). `shape_h2` is the optional frontmatter
+// override, mirroring `take_h2`'s shape; the literal becomes the
+// fallback rather than the only value. Exported so the colocated page
+// test can pin both branches.
+export function shapeH2For(season: Season): string {
+  return season.shape_h2 ?? 'A rhythm worth tracking.'
+}
+
 // SeasonHero byline. critique-pass-38 MED (issue #339): the byline
 // `Canon entry by the tiered.tv editor` and the RankScale headLabel
 // `Editor's Canon` stack the same attribution claim twice in the same
@@ -679,7 +692,7 @@ export default async function SeasonPage({ params }: { params: Params }) {
             {shapeHasCopy ? (
               <section id="s-shape" data-testid="section-shape">
                 <div className="article-eyebrow"><span className="num">{numFor('s-shape')}</span><span>The shape of the season</span></div>
-                <h2>A rhythm worth tracking.</h2>
+                <h2>{shapeH2For(season)}</h2>
                 {bodyParagraphs.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}

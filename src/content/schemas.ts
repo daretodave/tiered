@@ -149,6 +149,17 @@ export const seasonFrontmatterSchema = z.object({
   // the lax→strict catalog drain (see
   // `scripts/content-check.ts` § collectSeasonSectionSubheadIssues).
   take_h2: z.string().min(1).max(80).optional(),
+  // Section 02 ("The shape of the season") H2 override. Critique
+  // pass-131 HIGH: the default H2 was a bare JSX literal
+  // (`A rhythm worth tracking.`) shared verbatim by every season in
+  // the catalog, not per-season editorial copy — unlike Section 01's
+  // `take_h2` override, it never had an escape hatch. Mirrors
+  // `take_h2`'s shape exactly: a 2-to-5-word editorial fragment that
+  // previews the season's structural rhythm. Optional — absent value
+  // preserves the shared literal as the fallback during the lax→strict
+  // catalog drain (see `scripts/content-check.ts` §
+  // collectSeasonSectionShapeSubheadIssues).
+  shape_h2: z.string().min(1).max(80).optional(),
   vote_question: z.string().min(1).max(120).optional(),
   aired_year: z.number().int().min(1900).max(2100).optional(),
   episodes: z.number().int().positive().optional(),

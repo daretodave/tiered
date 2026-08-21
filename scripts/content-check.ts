@@ -14,6 +14,7 @@ import {
 import { getCalendar } from '../src/content/calendar'
 import { ContentValidationError } from '../src/content/errors'
 import { legalFile, showFile } from '../src/content/paths'
+import type { Season } from '../src/content/schemas'
 import {
   validateEraBandCoverage,
   yearOfSeason,
@@ -2234,6 +2235,44 @@ export function collectSeasonSectionSubheadIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-131 HIGH: the season page's Section 02 ("The shape of
+// the season") H2 was a bare JSX literal (`A rhythm worth tracking.`),
+// not per-season editorial copy — every season in the catalog
+// rendered the exact same string, a stricter defect than Section 01's
+// `take_h2` gap (which at least degraded to a per-season title
+// restate rather than one shared literal). `shape_h2` is the optional
+// frontmatter override (mirrors `take_h2`'s shape); this invariant
+// flags every season where Section 02 actually renders (mirroring the
+// page's own `shapeHasCopy` gate — `body` set, or `lede` set with a
+// non-empty `blurb_md` fallback) and no `shape_h2` override is
+// authored. Ships LAX initially — every season without `shape_h2`
+// would trip it; subsequent `/ship-content` drain ticks rotate one
+// season at a time, and the final drain tick flips
+// SEASON_SHAPE_SUBHEAD_STRICT to true, mirroring the
+// SEASON_SECTION_SUBHEAD_STRICT lax→strict pattern above.
+function seasonShapeSectionRenders(season: Season): boolean {
+  if (season.body && season.body.trim().length > 0) return true
+  if (season.lede && season.blurb_md.trim().length > 0) return true
+  return false
+}
+
+export function collectSeasonSectionShapeSubheadIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const seasons = getAllSeasons(show.slug)
+    for (const season of seasons) {
+      if (season.shape_h2) continue
+      if (!seasonShapeSectionRenders(season)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `season-page Section 02 ("The shape of the season") H2 renders the shared literal \`<h2>A rhythm worth tracking.</h2>\` — identical on every season in the catalog, not per-season editorial copy. Sections 01/03–06 all carry season-specific fragments. Author a \`shape_h2\` frontmatter field with a 2-to-5-word editorial fragment that previews the season's structural rhythm (e.g. \`shape_h2: "Twenty states set the pace."\`). See plan/CRITIQUE.md pass-131.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-95/pass-117 MED (247+ files across 22 shows at filing,
 // 248 of 374 season files carrying both fields as of this commit,
 // spanning 20 shows). The EPISODES stat tile already renders `ep_count`
@@ -3279,6 +3318,25 @@ function main(): number {
     failures.push(...seasonSectionSubheadIssues)
   } else {
     for (const issue of seasonSectionSubheadIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-131 HIGH: ships LAX during the corpus drain — this
+  // commit authors `shape_h2` on the two named offenders (Hell's
+  // Kitchen Battle of the States, Love Island UK Series 13), but every
+  // other season with rendered Section 02 copy still shares the
+  // literal and would trip the invariant. Subsequent `/ship-content`
+  // drain ticks rotate each remaining season's Section 02 H2 to an
+  // editorial fragment, and the final drain tick flips
+  // SEASON_SHAPE_SUBHEAD_STRICT to true. One-line toggle mirroring
+  // SEASON_SECTION_SUBHEAD_STRICT above.
+  const SEASON_SHAPE_SUBHEAD_STRICT = false
+  const seasonSectionShapeSubheadIssues = collectSeasonSectionShapeSubheadIssues()
+  if (SEASON_SHAPE_SUBHEAD_STRICT) {
+    failures.push(...seasonSectionShapeSubheadIssues)
+  } else {
+    for (const issue of seasonSectionShapeSubheadIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

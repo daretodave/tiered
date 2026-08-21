@@ -28,6 +28,7 @@ import {
   collectHomeNarratorVoiceIssues,
   findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
+  collectSeasonSectionShapeSubheadIssues,
   collectSeasonSectionSubheadIssues,
   collectShowBlurbTaglineCountRepetitionIssues,
   collectShowCardTaglineOpenerOverlapIssues,
@@ -6326,6 +6327,101 @@ describe('content-check — season-page Section 01 H2 verbatim restate (critique
       take_h2: '"The villains hold the floor."',
     })
     expect(collectSeasonSectionSubheadIssues()).toEqual([])
+  })
+})
+
+describe('content-check — season-page Section 02 H2 shared literal (critique pass-131)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-shape-subhead-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('does not flag the two live named offenders — `shape_h2` drained them at filing', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    const offenders = collectSeasonSectionShapeSubheadIssues().filter(
+      (f) =>
+        f.file.endsWith('24-battle-of-the-states.md') ||
+        f.file.endsWith('13-summer-2026.md'),
+    )
+    expect(offenders).toEqual([])
+  })
+
+  it('flags a season whose Section 02 renders (via `lede`) with no `shape_h2` authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'launch', {
+      title: 'Launch',
+      lede: '"A calm launch season."',
+    })
+    const issues = collectSeasonSectionShapeSubheadIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-launch.md')
+    expect(issues[0]!.message).toMatch(/A rhythm worth tracking/)
+    expect(issues[0]!.message).toMatch(/shape_h2/)
+    expect(issues[0]!.message).toMatch(/pass-131/)
+  })
+
+  it('flags a season whose Section 02 renders (via `body`) with no `shape_h2` authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'launch', {
+      title: 'Launch',
+      body: `"${sixtyWords}"`,
+    })
+    const issues = collectSeasonSectionShapeSubheadIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('does NOT flag a season whose `shape_h2` is authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'launch', {
+      title: 'Launch',
+      lede: '"A calm launch season."',
+      shape_h2: '"Twenty states set the pace."',
+    })
+    expect(collectSeasonSectionShapeSubheadIssues()).toEqual([])
+  })
+
+  it('does NOT flag a season where Section 02 never renders (no `body`, no `lede`)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'launch', {
+      title: 'Launch',
+    })
+    expect(collectSeasonSectionShapeSubheadIssues()).toEqual([])
   })
 })
 

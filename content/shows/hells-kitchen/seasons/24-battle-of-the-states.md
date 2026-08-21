@@ -18,6 +18,7 @@ cast_size_caption: "twenty chefs, one from each represented U.S. state"
 premiere_caption: "Fox · Thursday 9/8c"
 filming_caption: "Foxwoods Resort Casino, Ledyard, Connecticut"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Twenty states set the pace."
 ---
 
 Battle of the States brings twenty chefs — each representing a different U.S. state — to Foxwoods Resort Casino for the second consecutive season there. Michelle Tribble and James Avery return as sous-chefs. The one-per-state framing is the most geographically varied cast construction the franchise has used, and the expanded field gives the format more moving parts across sixteen episodes.

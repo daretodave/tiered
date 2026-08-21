@@ -67,6 +67,7 @@ import {
   isCompetitionGenre,
   seasonDisplayTitle,
   seasonHeroBylineFor,
+  shapeH2For,
   statsFor,
   takeH2For,
   voteQuestionFor,
@@ -618,6 +619,25 @@ describe('takeH2For — Section 01 ("The take") H2 (issue #393)', () => {
     // documents the coupling.
     const season = makeSeason({ title: 'Heroes vs. Villains', take_h2: undefined })
     expect(takeH2For(season)).toBe('Heroes vs. Villains.')
+  })
+})
+
+describe('shapeH2For — Section 02 ("The shape of the season") H2 (critique pass-131)', () => {
+  // critique-pass-131 HIGH: the default H2 was a bare JSX literal
+  // (`A rhythm worth tracking.`) shared verbatim by every season in
+  // the catalog — not per-season editorial copy, unlike Section 01's
+  // `take_h2` override. `shape_h2` is the optional frontmatter
+  // override; absent value preserves the shared literal during the
+  // lax→strict catalog drain (see `scripts/content-check.ts` §
+  // collectSeasonSectionShapeSubheadIssues).
+  it('returns the `shape_h2` override verbatim when authored', () => {
+    const season = makeSeason({ shape_h2: 'Twenty states set the pace.' })
+    expect(shapeH2For(season)).toBe('Twenty states set the pace.')
+  })
+
+  it('falls back to the shared literal when no override is authored (catalog drain default)', () => {
+    const season = makeSeason({ shape_h2: undefined })
+    expect(shapeH2For(season)).toBe('A rhythm worth tracking.')
   })
 })
 
