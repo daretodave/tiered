@@ -1,5 +1,39 @@
 # CRITIQUE
 
+> Last pass: 2026-08-21 at commit 0afa78f7
+> Pass count: 134
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 134
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set outside the
+> recent rotation. Anon (5 URLs: `/`, `/shows/chopped/season/the-double-first`,
+> `/shows/big-brother`, `/themes`, `/themes/best-premieres`) came back
+> clean — zero console errors/failed requests, zero mobile overflow,
+> no spoiler leaks, entry counts reconciled — 0 findings. Authed (4
+> URLs: `/shows/dancing-with-the-stars/season/fall-2025`,
+> `/shows/bachelor-in-paradise/season/costa-rica`,
+> `/themes/no-one-got-a-night-off`, `/u/e2e`) surfaced 3 findings, all
+> independently re-verified against source before filing: a mid-clause
+> SEO description clip on DWTS S34 (the lede has no early clause
+> boundary for `clipToSeoBudget` to land on, so it cuts mid-phrase);
+> DWTS S34's canon.md slot-34 `slot_argument`/rationale paragraph
+> confirmed near-verbatim identical to the season file's own body
+> paragraph (word-swap level only) — same echo-defect class fixed
+> repeatedly elsewhere, this is a fresh instance; and `/u/e2e`'s OG
+> image confirmed still generic despite pass-89's row reading
+> RESOLVED — source read shows `src/app/(default)/u/[handle]/opengraph-image.tsx`
+> exists but `page.tsx`'s `generateMetadata` never threads an `image:`
+> argument through to `buildMetadata()`, so the route is unreachable
+> dead code, the same shadowing bug pass-69 fixed for shows/seasons/
+> themes. Filed as a correction reopening the pass-89 claim rather
+> than a duplicate. Bachelor in Paradise/Costa Rica and the
+> no-one-got-a-night-off list were checked and ruled clean (distinct
+> editorial arguments, correct entry-count reconciliation).
+>
+> ───── Pass 133 metadata kept below for history ─────
+>
 > Last pass: 2026-08-21 at commit 6f363180
 > Pass count: 133
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3303,6 +3337,12 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [authed] /u/e2e (systemic — every `/u/[handle]` profile) — the profile page's social-card image still resolves to the generic sitewide OG image, even though pass-89's row for this exact page is marked RESOLVED in the Done section below. Re-verified against source, not just the live page: `src/app/(default)/u/[handle]/opengraph-image.tsx` exists and correctly builds a per-profile card, but `generateMetadata()` in the sibling `page.tsx` never passes an `image` argument to `buildMetadata()` (`src/lib/seo.ts`), whose unconditional default-image fallback (`siteConfig.defaultOgImage`) permanently shadows the file-convention route — confirmed live: `og:image` on `/u/e2e` resolves to `https://tiered.tv/opengraph-image` (the homepage's image), not `https://tiered.tv/u/e2e/opengraph-image`. This is the identical shadowing mechanism pass-69 (#448) fixed for shows/seasons/themes by explicitly threading an `image:` argument through `generateMetadata`; the pass-89 fix added the image-generation route but never added the matching `image:` argument, so the route has been unreachable dead code since it shipped. Fix: thread `image: \`/u/${profile.handle}/opengraph-image\`` through both `buildMetadata()` calls in `src/app/(default)/u/[handle]/page.tsx`'s `generateMetadata` (the not-found branch can keep the default), mirroring the pass-69 fix already applied to the show/season/theme page families. Chrome/SEO-only, no spoiler impact. (URL: /u/e2e, source: critique-pass-134, reopens pass-89 #551 — see Done entry below)
+
+- [ ] [MED] [authed] /shows/dancing-with-the-stars/season/fall-2025 — the season's canon rationale (`content/shows/dancing-with-the-stars/canon.md`, "## 34. Fall 2025" `slot_argument`/body paragraph) is a near-verbatim paraphrase of the season file's own body paragraph (`content/shows/dancing-with-the-stars/seasons/34-fall-2025.md`), differing only at the word-swap level. Season body: "Season thirty-four was the show's most recent competitive run before Dancing with the Stars entered hiatus. Julianne Hough and Alfonso Ribeiro returned for a third year at the desk... It delivered the format cleanly." Canon rationale: "Season thirty-four ran as the final competitive edition before Dancing with the Stars entered hiatus. Julianne Hough and Alfonso Ribeiro returned for a third year at the hosting desk... It delivered the format competently." On the rendered season page this surfaces as Section 02 ("The shape of the season," rendering the body paragraph verbatim) and Section 03 ("Where it sits in the canon," rendering `whereItSitsCopy()` which quotes the canon rationale) reading as the same argument twice with a thin coat of synonym substitution — same defect class already fixed repeatedly elsewhere (shark-tank S17, alone S12, the-circle S7, survivor-50, big-brother S27), a fresh instance on a previously-unflagged show. Fix: rewrite the `slot_argument`/rationale paragraph under "## 34. Fall 2025" in `content/shows/dancing-with-the-stars/canon.md` so it argues the ranking decision (why slot #34, what separates it from its neighbors) rather than re-summarizing the same season facts the body paragraph already covers. Content-only, one paragraph. Spoiler discipline P0 intact (ranking-argument prose only). (URL: /shows/dancing-with-the-stars/season/fall-2025, source: critique-pass-134)
+
+- [ ] [MED] [authed] /shows/dancing-with-the-stars/season/fall-2025 — the auto-generated `<meta name="description">` (derived from `lede` via `clipToSeoBudget`, budget 159 chars) cuts off mid-phrase rather than at a clause boundary. Computed output: "Season thirty-four was the show's most recent competitive run before it entered hiatus. Julianne Hough and Alfonso Ribeiro returned as co-hosts for a third…" — the sentence should continue "...for a third year," but the comma sits past the 159-char window and the first sentence-end ("hiatus.") falls before `clipToSeoBudget`'s `minCut` (95 chars), so neither the sentence-boundary nor clause-boundary branch fires and the function falls through to the raw last-space cut, landing mid-clause after "third" instead of at "year,". Distinct from the site's documented intentional clause-boundary clipping (confirmed non-bug at passes 62/67/68/88) because this lands inside a clause, not at one. Fix: shorten or restructure `lede` in `content/shows/dancing-with-the-stars/seasons/34-fall-2025.md` so the SEO-budget clip lands on an earlier clause boundary (e.g. end the first sentence's clause before the host-return detail, or move the "for a third year" clause earlier), consistent with how prior instances of this defect class were resolved by content edits rather than algorithm changes. Spoiler discipline P0 intact (SEO chrome only). (URL: /shows/dancing-with-the-stars/season/fall-2025, source: critique-pass-134)
 
 - [x] [LOW] [authed] /shows/summer-house/season/overhaul-summer — the FILMED stat tile's caption restates the page's own cast-turnover angle instead of carrying a location-specific fact, a fresh instance of the ongoing stat-caption-restatement drain (a different tile pairing than the previously-named FORMAT/EPISODES cases). Confirmed live: FILMED value "The Hamptons, New York" / caption "The Hamptons · the show's most reshaped cast to date" — the caption's second clause repeats the cast-overhaul framing already stated in the eyebrow, take, shape, and canon sections rather than adding a filming-specific detail (a house feature, a production first). Fix: rewrite `filming_caption` in `content/shows/summer-house/seasons/10-overhaul-summer.md` to carry a genuine location-specific fact instead of restating the cast-turnover angle four other sections already cover. Content-only, one field. Spoiler discipline P0 intact (location/production facts only). (URL: /shows/summer-house/season/overhaul-summer, source: critique-pass-132) — RESOLVED (2026-08-21, cloud march tick, content-gap redirect per issue #758): cross-checked every Summer House season's `location` field — Amagansett (S01, 1 season), Watermill (S02-S04, 3 seasons), the Hamptons (S05-S10, now 6 seasons) — and rewrote `filming_caption` to "The Hamptons · six seasons running, the location the show has used longest," a genuine, grounded location-tenure fact distinct from the cast-turnover framing already carried by the eyebrow/take/shape/canon sections and distinct from `episodes_caption`'s own episode-count-extension fact.
 
