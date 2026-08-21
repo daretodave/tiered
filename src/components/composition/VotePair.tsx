@@ -30,6 +30,13 @@ type VotePairProps = {
   targetId: string
   label?: string
   labelSingular?: string
+  // Critique pass-129/132/133 MED (issue #758 redirect): a
+  // freshly-added season with no votes yet rendered "0 / votes so
+  // far" — reconfirmed on 5 unrelated shows across three passes,
+  // reading as a broken counter or a site nobody uses rather than
+  // an invitation. `zeroLabel` swaps in below the (still-shown,
+  // still-accurate) 0 whenever the voter count is exactly 0.
+  zeroLabel?: string
   // Critique pass-68 HIGH: `label`/`labelSingular` double as the
   // visible pluralized caption under the count ("votes so far"),
   // so they can't also carry the show/season name into the
@@ -80,6 +87,7 @@ export function VotePair({
   targetId,
   label = 'votes so far',
   labelSingular = 'vote so far',
+  zeroLabel = 'be the first to vote',
   subject,
   initialSignedIn,
 }: VotePairProps) {
@@ -202,7 +210,12 @@ export function VotePair({
   // integer the reader sees is still the distinct voter count
   // on the target, not the signed net — the pass-34 retarget
   // from "net votes" stays; only the wording around it moves.
-  const displayLabel = Math.round(state.count) === 1 ? labelSingular : label
+  const roundedCount = Math.round(state.count)
+  const displayLabel =
+    roundedCount === 0 ? zeroLabel : roundedCount === 1 ? labelSingular : label
+  // ariaSubject stays pinned to the plural `label` regardless of the
+  // zero-state swap — the aria-labels describe the vote *action*
+  // ("Vote on votes so far"), not the current tally's wording.
   const ariaSubject = subject ?? label
 
   // State pill copy (#160): surfaces for every signed-in member

@@ -9974,6 +9974,62 @@ last time a curator actually looked.
   unlock remains Rule 2 filing a new season, or an oversight-authorized
   scout-research process to reach facts outside the repo's own season-
   file text.
+- **2026-08-21, content-curator direct invocation (`/ship-content` Rule 3
+  tick, eighth same-day pass): zero-ship.** Re-confirmed both standing
+  blockers first: Rule 2 season-fill still stalled (`plan/CADENCE.md`
+  gap table fully starred, confirmed-but-unaired) and no ledger row is
+  review-due (oldest `last_reviewed`, `survivor-pillars` at 2026-07-31,
+  well inside the 90-day floor). Read the full Ledger table plus the
+  entire Ideas-log tail (all seven same-day passes above, plus the
+  2026-08-13 through 2026-08-20 saturation streak) before starting.
+  Confirmed the four named cross-canon extend candidates
+  (`one-season-two-flags` 9/9 structure, `the-calendar-moved-the-format-
+  didnt` 6/4 craft, `the-vote-left-the-phone-line` 8/8 era,
+  `the-pitch-names-where-the-idea-came-from` 3/3 craft) were each
+  independently re-confirmed dead earlier this same day by passes four
+  through seven above and declined to re-walk any of them, per the
+  standing "don't re-derive an already-logged dead end same day"
+  instruction. Also declined to re-run the `category: single`
+  mathematically-capped census or the Perfect Match / Alone Australia
+  saturation check (both re-confirmed exhaustively dead by the second
+  same-day pass above). Spent this pass's search budget on six
+  genuinely fresh, not-previously-logged axes, each verified by grep
+  across every `content/shows/**/*.md` before being ruled out: (1)
+  opening title sequence / theme song changes — grepped `theme song|
+  title sequence|opening credits|title card|main title`: only 3 hits,
+  all on a single show (the-real-world), nowhere near the 3-show
+  cross-canon floor; (2) POV/body-cam or drone footage as a stated
+  format first — grepped `GoPro|body cam|POV camera|drone footage|
+  first-person camera`: one hit (shark-tank), sub-floor; (3) a
+  medical-evacuation mid-competition as a stated structural fact across
+  Survivor/Alone/Naked and Afraid/Amazing Race — grepped `medevac|
+  medically evacuated|medical evacuation|pulled from the game for
+  medical|emergency medical`: zero hits catalog-wide (also spoiler-
+  adjacent territory, correctly avoided by the season files
+  themselves); (4) a first-HD/first-digital-film format change —
+  grepped `first season filmed in|first time the format used|shot on
+  film instead|switched to digital|4K|high-definition premiere|first HD
+  season`: 2 hits (survivor-australia, southern-charm), no shared
+  thesis between them, sub-floor; (5) accessibility/sign-language/
+  closed-captioning as a stated casting or production brief — grepped
+  `sign language|closed caption|accessib|disab(led|ility)`: 2 hits, both
+  dancing-with-the-stars (same show), sub-floor; (6) a
+  recession/financial-crisis-era casting brief (2008-09) as an era
+  thesis distinct from the already-shipped pandemic/streaming/strike era
+  lists — grepped `recession|financial crisis|economic downturn|2008
+  crash|Great Recession`: 2 hits, both the-apprentice (canon +one season
+  file, same show), sub-floor. None of the six axes cleared the
+  ≥3-distinct-show cross-canon floor even before checking for ledger
+  duplication. Net: no `content/themes/*.md` file written or edited
+  this tick; no ledger row changed. Eighth consecutive same-day
+  zero-ship pass, consistent with the extended 2026-08-13 through
+  2026-08-21 saturation streak (issue #758): every angle a blind
+  grep-and-read pass over the 67-show catalog can still generate at 181
+  lists either lands inside an already-shipped list's address or fails
+  to clear the cross-canon floor on its own. The next unlock remains
+  either Rule 2 filing a new season, or an oversight-authorized process
+  change (scout-assisted research) to reach facts outside the repo's own
+  season-file text.
 
 ## Notes
 

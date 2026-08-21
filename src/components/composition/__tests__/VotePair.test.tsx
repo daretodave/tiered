@@ -224,9 +224,9 @@ describe('<VotePair>', () => {
         .querySelector('.vote-label')?.textContent
     }
 
-    it('renders the plural form when the count is 0', () => {
+    it('renders the zero-state invitation when the count is 0', () => {
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
-      expect(labelText()).toBe('votes so far')
+      expect(labelText()).toBe('be the first to vote')
     })
 
     it('renders the singular form when the count is exactly 1', async () => {
@@ -257,15 +257,27 @@ describe('<VotePair>', () => {
       expect(labelText()).toBe('approval')
     })
 
-    it('flips to the plural label after a singular-count round-trip retract', async () => {
+    it('honors a custom zeroLabel prop independently of label/labelSingular', () => {
+      render(
+        <VotePair
+          initialCount={0}
+          targetType="season"
+          targetId="survivor:20"
+          zeroLabel="no votes yet"
+        />,
+      )
+      expect(labelText()).toBe('no votes yet')
+    })
+
+    it('flips to the zero-state invitation after a singular-count round-trip retract', async () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
       await flushAsync()
       expect(labelText()).toBe('vote so far')
       // Re-click up to retract; optimistic voter count drops to 0,
-      // so the unit pluralizes.
+      // so the label swaps to the zero-state invitation.
       fireEvent.click(screen.getByTestId('vote-up'))
-      expect(labelText()).toBe('votes so far')
+      expect(labelText()).toBe('be the first to vote')
     })
 
     it('keeps the action-describing aria-labels on the plural form regardless of count', async () => {
@@ -310,7 +322,7 @@ describe('<VotePair>', () => {
       )
     }
 
-    it('the label ends with /votes? so far$/ on every render state', async () => {
+    it('the label ends with /votes? so far$/ on every non-zero render state, and reads the zero-state invitation at 0 (pass-129/132/133)', async () => {
       const fixtures: VoteBody[] = [
         { ok: true, value: 0, count: 0, signedIn: false },
         { ok: true, value: 0, count: 5, signedIn: true },
@@ -324,7 +336,11 @@ describe('<VotePair>', () => {
           <VotePair initialCount={0} targetType="season" targetId="survivor:20" />,
         )
         await flushAsync()
-        expect(labelText()).toMatch(/votes? so far$/)
+        if (body.count === 0) {
+          expect(labelText()).toBe('be the first to vote')
+        } else {
+          expect(labelText()).toMatch(/votes? so far$/)
+        }
         unmount()
       }
     })
