@@ -15,7 +15,7 @@ format_caption: "Last Chance Kitchen's re-entry point moves later this season"
 cast_size: 15
 cast_size_caption: "fifteen chefs, including life partners and twin brothers"
 premiere_caption: "Bravo · Monday 9/8c"
-filming_caption: "Charlotte, NC and Greenville, SC · with stops in Asheville"
+filming_caption: "With stops in Asheville and the U.S. National Whitewater Center"
 host_caption: "Kristen Kish's third season as host"
 watch_list:
   - episode_label: "Ep 1 · Charlotte open"
@@ -32,11 +32,11 @@ watch_list:
     body: "A guest-judge stretch brings Charleston's reality-TV world into the kitchen, alongside guest turns from established culinary names."
 ---
 
-Carolinas keeps Top Chef's regional-immersive grammar centered on
-Charlotte, with stops in Greenville, Asheville and the U.S.
-National Whitewater Center. Kristen Kish returns for a third
-season at the host chair, Tom Colicchio and Gail Simmons
-unchanged at the table. The real structural news is Last Chance
-Kitchen's new entry rule — a shift from the show's usual
-quick-turnaround safety net into something the early eliminations
-now have to sit with longer.
+Carolinas keeps Top Chef's regional-immersive grammar intact, this
+time anchored by an outdoor Quickfire at the U.S. National
+Whitewater Center that pulls the cast out of a standard kitchen.
+Kristen Kish returns for a third season at the host chair, Tom
+Colicchio and Gail Simmons unchanged at the table. The real
+structural news is Last Chance Kitchen's new entry rule — a shift
+from the show's usual quick-turnaround safety net into something
+early eliminations now have to sit with longer.
