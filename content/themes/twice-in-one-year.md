@@ -7,101 +7,113 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-08-21
 featured: false
 related:
   - no-template-to-copy
   - pre-recap-culture-seasons
-era_range: [2003, 2013]
+era_range: [2002, 2013]
 entries:
+  - show: amazing-race
+    season: 2
+    season_label: "S02"
+    rank: 1
+    title: "A second race is already booked before this one even airs"
+    blurb: "Season two starts from Pahrump, Nevada in March 2002 and widens the casting brief to sibling pairs and dating couples. A third race is already lined up for the same year's fall slot — the earliest run in this catalog to try a twice-a-year pace."
+  - show: amazing-race
+    season: 3
+    season_label: "S03"
+    rank: 2
+    title: "The fall race that proves the twice-a-year pace actually works"
+    blurb: "Season three follows season two by about seven months, expanding to twelve teams and a route across Europe, the Mediterranean, and Asia. Both seasons land in 2002 — a full year before any other show in this catalog tries the same pace."
   - show: americas-next-top-model
     season: 1
     season_label: "S01"
-    rank: 1
+    rank: 3
     title: "The cycle that proved a competition format could run twice in a single year"
-    blurb: "UPN's debut cycle premieres in May 2003, and a second cycle is already on air by December — the same calendar year. No other show in this catalog had tried that pace yet; this is where it starts."
+    blurb: "UPN's debut cycle premieres in May 2003, and a second cycle is already on air by December — the same calendar year. The modeling format catches a pace only a handful of competition shows would keep up for the rest of the decade."
   - show: americas-next-top-model
     season: 2
     season_label: "S02"
-    rank: 2
+    rank: 4
     title: "A second cycle lands before the year is even over, proving the debut wasn't a fluke"
     blurb: "Cycle two premieres in December 2003, seven months after cycle one — a genuine second full season inside the same calendar year. The pace becomes a habit almost immediately."
   - show: dancing-with-the-stars
     season: 2
     season_label: "S02"
-    rank: 3
+    rank: 5
     title: "The ballroom format locks its weekly rhythm and its yearly pace in the same season"
     blurb: "Season two expands to ten episodes and introduces the performance-then-results two-night cadence that defines the show for good. It also premieres in spring 2006, five months ahead of a second season that same year."
   - show: dancing-with-the-stars
     season: 3
     season_label: "S03"
-    rank: 4
+    rank: 6
     title: "The fall half of the ballroom format's first full double year"
     blurb: "Season three moves to a fall slot and stretches to twelve episodes, completing 2006 as the first calendar year the format runs twice. The longer runtime becomes the standard the show keeps from here on."
   - show: americas-next-top-model
     season: 6
     season_label: "S06"
-    rank: 5
+    rank: 7
     title: "A modeling competition's spring cycle wraps one network era just before its pace repeats"
     blurb: "Cycle six premieres in March 2006 as the show's final UPN-era cycle, with a second cycle already lined up for the fall. The twice-a-year pace carries straight through a network handoff most shows would have paused for."
   - show: americas-next-top-model
     season: 7
     season_label: "S07"
-    rank: 6
+    rank: 8
     title: "A new network inherits the same biannual habit without losing a beat"
     blurb: "Cycle seven opens the CW era in September 2006, months after cycle six closed out the show's UPN run. Two different networks, one calendar year, and the biannual cadence never breaks stride."
   - show: project-runway
     season: 3
     season_label: "S03 · New York"
-    rank: 7
+    rank: 9
     title: "A third show in the same year proves the twice-a-year pace isn't just a ballroom trick"
     blurb: "Season three's summer premiere lands only months after season two, and the workroom holds together at the same level — proof the format could run twice in a single year. 2006 turns out to be the one year this pace runs across three different shows in the catalog at once."
   - show: big-brother
     season: 9
     season_label: "S09 · The Winter Couples"
-    rank: 8
+    rank: 10
     title: "The one year this once-a-summer format found itself running twice"
     blurb: "Big Brother had premiered once a year, every summer, since 2000. A February 2008 slot gives the format a second full season five months ahead of that year's regular summer cycle — the only year this house, not a ballroom or a runway, runs twice."
   - show: so-you-think-you-can-dance
     season: 5
     season_label: "S05"
-    rank: 9
+    rank: 11
     title: "A show that had only ever run once a year decides, just this once, to run twice"
     blurb: "Season five's May 2009 premiere sets up something the franchise had never tried before: a second season the same year, shifted onto a September start."
   - show: so-you-think-you-can-dance
     season: 6
     season_label: "S06"
-    rank: 10
+    rank: 12
     title: "The one-off fall companion nobody expected this format to attempt again"
     blurb: "Season six premieres in September 2009, months after season five closed — the franchise's only fall-scheduled run. The show reverts to one season a year again starting the very next cycle."
   - show: project-runway
     season: 7
     season_label: "S07 · New York"
-    rank: 11
+    rank: 13
     title: "A fresh network home tries the same biannual pace, four years after the first attempt"
     blurb: "Season seven's January 2010 premiere lands on Lifetime and takes a second real swing at running two seasons in the same year, a pace the workroom format had first tried back in 2006."
   - show: project-runway
     season: 8
     season_label: "S08 · New York"
-    rank: 12
+    rank: 14
     title: "The summer half completes a second full double year for the workroom format"
     blurb: "Season eight premieres in July 2010, six months after season seven, closing out the format's second calendar year carrying two full seasons. The casting runs louder than the spring half did."
   - show: dancing-with-the-stars
     season: 16
     season_label: "S16"
-    rank: 13
+    rank: 15
     title: "The final spring edition of a pace the ballroom format ran for eight straight years"
     blurb: "Season sixteen premieres in March 2013 as, in hindsight, the last spring season before the format settles into one season a year for good — an eight-year run of twice-yearly premieres closing out quietly."
   - show: americas-next-top-model
     season: 20
     season_label: "S20"
-    rank: 14
+    rank: 16
     title: "The modeling competition's own decade-long habit enters its final year, too"
     blurb: "Cycle twenty premieres in February 2013, the same year a ballroom show across the dial runs its own final spring-to-fall pair. A decade-old pace winds down here too, on schedule and without any fanfare."
   - show: americas-next-top-model
     season: 21
     season_label: "S21"
-    rank: 15
+    rank: 17
     title: "The last cycle of this run lands the same year as its ballroom counterpart"
     blurb: "Cycle twenty-one's August 2013 premiere closes the final year this modeling format runs two full cycles, the same calendar year a ballroom competition elsewhere on this list wound down an identical habit."
 ---
