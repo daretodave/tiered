@@ -116,6 +116,7 @@ export async function generateMetadata({
     title: `@${profile.handle}`,
     description,
     path: `/u/${profile.handle}`,
+    image: `/u/${profile.handle}/opengraph-image`,
     noIndex: !profile.populated,
   })
 }

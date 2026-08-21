@@ -224,6 +224,25 @@ describe('/u/[handle] generateMetadata', () => {
     expect(meta.alternates?.canonical).toBe('https://tiered.tv/u/canonform')
   })
 
+  // CRITIQUE pass-134 MED (reopens pass-89 #551): buildMetadata's
+  // unconditional default-image fallback was shadowing this route's
+  // own opengraph-image.tsx because generateMetadata never threaded
+  // an `image:` argument through — the exact mechanism pass-69 #448
+  // fixed for shows/seasons/themes. Pin the per-profile image so it
+  // can't regress back to the sitewide default silently.
+  it('points OpenGraph + Twitter images at the per-profile opengraph-image route, not the site default', async () => {
+    getProfileActivityMock.mockResolvedValue(
+      populatedActivity({ handle: 'regular' }),
+    )
+    const meta = await generateMetadata({ params: { handle: 'regular' } })
+    expect(meta.openGraph?.images).toEqual([
+      { url: 'https://tiered.tv/u/regular/opengraph-image' },
+    ])
+    expect(meta.twitter?.images).toEqual([
+      'https://tiered.tv/u/regular/opengraph-image',
+    ])
+  })
+
   // CRITIQUE pass-45 MED (#1139, supersedes pass-36 #331): the meta
   // surface is third-person for every viewer. `<meta name="description">`
   // is only ever read by crawlers, social-card unfurlers, and search
