@@ -1,5 +1,49 @@
 # CRITIQUE
 
+> Last pass: 2026-08-21 at commit 2b9247a3
+> Pass count: 131
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 131
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Both passes rotated to a fresh URL set
+> not covered by pass 130 — sampling shows outside the recent
+> amazing-race/american-idol/bake-off/dragrace-allstars rotation
+> (love-island-uk, hells-kitchen, jersey-shore, love-is-blind) plus
+> unvisited themes and `/u/e2e`. Anon (5 URLs: `/`, `/shows`,
+> `/shows/love-island-uk/season/summer-2026`,
+> `/shows/hells-kitchen/season/battle-of-the-states`,
+> `/themes/the-calendar-moved-the-format-didnt`) and authed
+> (`/shows/jersey-shore/season/the-final-season`,
+> `/shows/love-is-blind/season/columbus`,
+> `/themes/the-judging-table-never-got-to-coast`, `/u/e2e`) walks ran,
+> desktop + mobile, zero console errors/failed first-party requests
+> (one low-confidence aborted RSC prefetch on `/u/e2e`, assessed as
+> benign navigation noise and not filed)/mobile overflow across both,
+> no spoiler leaks. Auth handshake confirmed live
+> (authenticated:cloud), `@e2e` handle rendered in header chrome on
+> every authed URL; `/u/e2e` correctly shows a zero-vote "No votes
+> yet" empty state consistent with the test account's actual
+> activity. Reader returned 2 anon + 3 authed candidate findings; 4
+> passed self-assessment as valid, actionable, non-duplicate findings
+> (1 HIGH, 3 MED) and were filed; the aborted-RSC-fetch candidate was
+> dropped as non-actionable noise per the reader's own low-confidence
+> flag. Findings: a genuine code-level bug — the season page "Shape
+> of the season" (Section 02) H2 is a hardcoded literal
+> ("A rhythm worth tracking.") in `page.tsx`, not per-season content
+> like Section 01's `take_h2`-driven H2, so it renders identically
+> across the entire catalog; Love Island UK S13 word-pool echo
+> (machine/rhythm/settle repeated across take_h2/lede/pull/body);
+> Love Is Blind Columbus `format_caption`/`episodes_caption` field
+> mixup (episode-count copy misfielded onto the format stat, no
+> `episodes_caption` set at all); and a take_h2-vs-body phrase-echo
+> pattern confirmed on two season files at once (Jersey Shore S6
+> "victory lap, not a reinvention" and Love Is Blind Columbus
+> "bounce-back"/"buy-in").
+>
+> ───── Pass 130 metadata kept below for history ─────
+>
 > Last pass: 2026-08-20 at commit 286116bb
 > Pass count: 130
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3162,6 +3206,14 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [anon] /shows/hells-kitchen/season/battle-of-the-states, /shows/love-island-uk/season/summer-2026 — the season page's Section 02 ("Shape of the season") H2 is a hardcoded literal in the page template, not per-season editorial copy, so it renders as the exact same string on every season page in the entire catalog. Confirmed via source: `src/app/shows/[show]/season/[slug]/page.tsx:682` reads `<h2>A rhythm worth tracking.</h2>` as a bare JSX literal, in contrast to the adjacent Section 01 H2 at line 671, `<h2>{takeH2For(season)}</h2>`, which resolves per-season via the optional `take_h2` frontmatter field (added at critique pass-47, issue #392/#393, with a `collectSeasonSectionSubheadIssues` invariant guarding against exactly this class of regression). A `grep -rl "A rhythm worth tracking" content/shows/*/seasons/*.md` returns zero files — no season file has ever set this string, confirming it is not sourced from content at all. Reproduced identically on Hell's Kitchen S24 and Love Island UK S13 in this pass; will reproduce on all ~298 catalog seasons. Fix: add an optional `shape_h2` field to `seasonFrontmatterSchema` (mirroring `take_h2`'s shape: `z.string().min(1).max(80).optional()`), export a `shapeH2For(season)` helper (`season.shape_h2 ?? "A rhythm worth tracking."`) so the current literal becomes the fallback rather than the only value, and swap the Section 02 render to `<h2>{shapeH2For(season)}</h2>`. Extend `collectSeasonSectionSubheadIssues` (or add a sibling invariant) to flag Section 02 the same way Section 01 is already flagged, shipped LAX during the corpus drain per the existing `take_h2` precedent. One code change (schema + helper + render swap + invariant), then a standing `/ship-content` drain rotates `shape_h2` in one season at a time, same cadence as the existing `take_h2` drain. Spoiler discipline P0 intact — subhead-only change, no outcome/winner/elimination exposure. (URL: /shows/hells-kitchen/season/battle-of-the-states, source: critique-pass-131)
+
+- [ ] [MED] [anon] /shows/love-island-uk/season/summer-2026 — the take_h2/lede/pull fields and the "Shape of the season" body draw from the same small word pool, echoing "machine," "rhythm," and "settle/settling" back to back across two sections meant to argue distinct angles. Confirmed via `content/shows/love-island-uk/seasons/13-summer-2026.md`: `take_h2: "The machine settles back in."`, `lede: "...Series 13 runs the established machine..."`, `pull: "A mature machine running its established rhythm..."`, and the body opens "Series 13 is the format settling back into its own rhythm... the machine mostly just runs." "Machine" appears four times across four fields, "rhythm" twice, "settle"/"settling" twice — the two sections read as restating each other rather than each doing distinct editorial work. Fix: rewrite the "Shape of the season" body opener to drop "machine"/"rhythm"/"settle" (already spent by take_h2/lede/pull) and instead describe the season's specific mechanics (the new sleepover twist, The Debrief companion show) without recycling the metaphor. Content-only, one field in `content/shows/love-island-uk/seasons/13-summer-2026.md`. Spoiler discipline P0 intact — format/mechanic facts only. (URL: /shows/love-island-uk/season/summer-2026, source: critique-pass-131)
+
+- [ ] [MED] [authed] /shows/love-is-blind/season/columbus — the EPISODES stat tile renders with no caption at all, while episode-count copy that belongs there is misfielded onto the FORMAT stat's caption instead. Confirmed via `content/shows/love-is-blind/seasons/10-columbus.md`: `format_caption: "Thirteen episodes including reunion"` and no `episodes_caption` key set anywhere in the file, even though `episodes_caption` is an established optional schema field (`src/content/schemas.ts:163`) already in use elsewhere — e.g. `content/shows/jersey-shore/seasons/06-the-final-season.md` correctly sets `episodes_caption: "Thirteen episodes filmed around a cast member's pregnancy, a series first."` distinct from its own `format_caption`. A reader sees the FORMAT tile captioned with an episode count instead of a format fact, and the EPISODES tile captioned with nothing. Fix: add `episodes_caption` to the Columbus season file carrying the reunion/episode-count note (or a fresh episode-cadence fact), and rewrite `format_caption` to actually describe the pod-dating format instead of restating the episode count. Content-only, one file. Spoiler discipline P0 intact — episode count and format mechanics are public record, no outcome exposure. (URL: /shows/love-is-blind/season/columbus, source: critique-pass-131)
+
+- [ ] [MED] [authed] /shows/jersey-shore/season/the-final-season, /shows/love-is-blind/season/columbus — the take_h2/pull headline and the "Shape of the season" body restate the same key phrase almost verbatim, confirmed on two unrelated season files in the same pass, suggesting a template habit rather than a one-off. Jersey Shore S6: `take_h2: "A victory lap, not a reinvention."` vs. body "It's a victory-lap season more than a reinvention, closing out the boardwalk era on familiar terms..." Love Is Blind Columbus: `take_h2: "The bounce-back, taken seriously."` / `pull: "Ohio gives the pods the buy-in they need."` vs. body "...the clearest bounce-back after Denver's subdued run. The Ohio cast arrives with genuine buy-in for the pod experiment..." In both cases the body's job — to expand on the take with new information — instead collapses back into the take's own words a few sentences later. Fix: treat `take_h2`/`pull` as the compressed pull-quote and require the body to advance the thought with new phrasing (specific mechanics, comparative framing) rather than re-using the take's key phrase; apply to both files now and flag as a pattern to watch for in future `/ship-content` drain passes. Content-only, one field per file. Spoiler discipline P0 intact. (URL: /shows/jersey-shore/season/the-final-season, /shows/love-is-blind/season/columbus, source: critique-pass-131)
 
 - [x] [HIGH] [authed] /u/e2e — the signed-in owner's own profile silently omits their own held-for-review comment, while the season-page thread the comment was posted on shows it correctly. `ProfileComments.tsx` queries "Recent PUBLISHED comments only — the read path already filtered pending/hidden/removed at the query" (component comment, lines 8-9), whereas `CommentThreadLive.tsx` refetches after posting so the author's own held comment is "pinned on top as held for review" (lines 47-48) and `CommentItem.tsx` renders an explicit "held for review" badge for the viewer's own pending comment on the thread view. A member who posts a comment sees it acknowledged as held on the season page — then if they check their own profile to follow up, the comment has vanished with no held-state indicator, reading identically to a comment that was never submitted. Fix: extend the profile comments query to include the viewer's own held comments (self-view only, never a stranger's) with the same "held for review" badge `CommentItem` already renders on the season thread, so the two surfaces agree about the same comment's existence. Content/code, one query + one badge reuse in `src/components/profile/ProfileComments.tsx`. Spoiler discipline P0 intact — held-state visibility change is scoped to the comment's own author, never a stranger; no held/hidden/removed comment becomes visible to anyone but its author. (URL: /u/e2e, source: critique-pass-129) - issue: #781 — RESOLVED (2026-08-20, cloud march tick, a4eb8e58): added `getOwnHeldComments()` (self-view-only pending-status query, kept separate from `getProfileActivity()` to preserve the `React.cache()` dedup with `generateMetadata`), `mergeProfileComments()` pins held rows above published, and `ProfileComments.tsx` now renders the same "held for review" badge `CommentItem.tsx` shows on the thread view. Spoiler discipline intact — held query only ever runs on `isSelfView`. Verify gate green: fast gate + build + e2e (4875/4875 passed, 24.3m).
 
