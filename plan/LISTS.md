@@ -10030,6 +10030,79 @@ last time a curator actually looked.
   either Rule 2 filing a new season, or an oversight-authorized process
   change (scout-assisted research) to reach facts outside the repo's own
   season-file text.
+- **2026-08-21, content-curator direct invocation (`/ship-content` Rule 3
+  tick, ninth same-day pass): zero-ship.** Re-confirmed both standing
+  blockers first: Rule 2 season-fill still stalled (`plan/CADENCE.md` gap
+  table fully starred, confirmed-but-unaired) and no ledger row is
+  review-due (oldest `last_reviewed`, `survivor-pillars` at 2026-07-31,
+  21 days old, well inside the 90-day floor). Did not re-touch
+  `one-season-two-flags`, `the-calendar-moved-the-format-didnt`, or
+  `the-pitch-names-where-the-idea-came-from`, per the day's standing
+  instruction — all three re-confirmed dead multiple times already today.
+  Ran a census of every list under the informal 10-entry floor to check
+  for a viable extend target: `some-seasons-rebuild-the-roster-others-
+  just-move-the-furniture` (single/selling-sunset, 9 entries) and
+  `it-took-five-seasons-to-find-a-home` (single/love-island-us, 8
+  entries) are both mathematically capped at their show's exact aired-
+  season count (9/9, 8/8 respectively) — no unfiled season to draw from;
+  `new-house-rules-every-time-the-castle-reopens` (single/traitors-uk, 4
+  entries) is likewise capped at 4/4. Checked `the-schedule-didnt-ask-
+  permission` (craft, 12 entries/8 shows — not thin, but worth a look)
+  against RHOBH S10 and Bachelor in Paradise S07, the two clearest
+  on-thesis misses: both are pandemic-schedule disruptions already
+  staked verbatim at `pandemic-seasons` (ranks 13 and 2), so adding them
+  here would restate rather than extend — declined as non-substantive.
+  Spent the remainder of the pass chasing eight fresh invent-new axes,
+  each grepped directly against `content/shows/**/*.md` before being
+  ruled out: (1) wildfire/hurricane/flood/storm production disruption —
+  `wildfire|hurricane|storm forced|evacuat|flood(ed|ing)?|tornado|
+  typhoon|monsoon`: 1 hit (survivor S02), sub-floor; (2) shortened
+  episode order from real-world disruption — `shortened season|episode
+  order (was )?(cut|reduced|trimmed)|truncated season|cut short|
+  abbreviated season|fewer episodes than (usual|planned)`: 3 shows
+  (rhobh, queer-eye, ink-master) but no shared thesis — rhobh S10 is
+  pandemic (already at `pandemic-seasons`), queer-eye S08 is a security
+  incident (already at `the-schedule-didnt-ask-permission` rank 3),
+  ink-master's hit is a pandemic-disrupted finale broadcast format, a
+  different fact; effectively 2 shows on the literal "order got shorter"
+  angle once dupes are excluded, sub-floor; (3) double elimination/no-
+  elimination-week safety mechanics — `double elimination|nobody (went|
+  goes) home|no one (was |is )?(sent home|eliminated)|safety twist|
+  immunity idol|save mechanic`: 5 hits across essentially single-show
+  clusters (the-apprentice, survivor, dragrace-allstars), no coherent
+  cross-show thesis; (4) guest-host/co-host rotation as a structural
+  device — `guest host|stand-in host|filled in (for|as) host|co-
+  host(ed|ing)? for|substitute host`: 3 shows (too-hot-to-handle,
+  bachelor-in-paradise, big-brother) but too-hot-to-handle S04's "guest
+  host" is a fictional-cover-story bit, not a hosting-format change, and
+  the big-brother S26 hit is a negation ("not a guest host"); net one
+  real case (bachelor-in-paradise S07, already staked at both
+  `pandemic-seasons` and `someone-else-held-the-chair-for-a-while`),
+  sub-floor; (5) clip-show/flashback/recap episodes as filler structure
+  — `clip show|clip episode|clip-packed|flashback episode|recap
+  episode`: zero hits catalog-wide; (6) mentor/coach role introduced —
+  `celebrity mentor|adds? a mentor|mentor program|mentor role|
+  introduces? a coach|coaching (role|system)`: 3 shows (masterchef-
+  australia, ink-master, american-idol) but no shared mechanic —
+  MasterChef Australia's is a former-contestant judge replacement
+  (American Idol's is a sitting judge reassigned mid-season, Ink
+  Master's is alumni-winner coaches) — three different facts wearing
+  the same search term, not one list; (7) twice-weekly/nightly airing
+  cadence changes — `twice a week|two episodes a week|moved to a
+  weekly|weekly instead of|switched from weekly|nightly episodes|five
+  nights a week|aired nightly`: zero hits; (8) finale airing on a
+  different night/network than the rest of the season — `finale
+  (aired|moved|airs) on a different (night|network)|finale simulcast|
+  finale moved to`: 1 hit (the-voice), sub-floor. Net: no
+  `content/themes/*.md` file written or edited this tick; no ledger row
+  changed. Ninth consecutive same-day zero-ship pass, consistent with
+  the extended 2026-08-13 through 2026-08-21 saturation streak (issue
+  #758). Every angle this pass could generate either landed inside an
+  already-shipped list's address, restated a fact already staked
+  elsewhere, or failed the ≥3-distinct-show cross-canon floor outright.
+  The next unlock remains Rule 2 filing a new season, or an oversight-
+  authorized scout-research process to reach facts outside the repo's
+  own season-file text.
 
 ## Notes
 
