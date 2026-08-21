@@ -9918,6 +9918,62 @@ last time a curator actually looked.
   an oversight-authorized process change (scout-assisted research, as
   flagged by the 2026-07-26 seventh/eighth passes) to reach facts outside
   the repo's own season-file text.
+- **2026-08-21, content-curator direct invocation (`/ship-content` Rule 3
+  tick, seventh same-day pass): zero-ship.** Confirmed the standing
+  blockers unchanged (Rule 2 gap table fully starred, zero lists
+  90-day-review-due — oldest `last_reviewed` is `survivor-pillars` at
+  21 days) before starting. Considered the four named extend candidates
+  from the brief and deliberately did not re-walk them — all four were
+  independently reconfirmed dead earlier this same day (`one-season-two-
+  flags` 9/9 structure, `the-calendar-moved-the-format-didnt` 6/4 craft,
+  `the-vote-left-the-phone-line` 8/8 era, `the-pitch-names-where-the-
+  idea-came-from` 3/3 craft — see the two rows immediately above and
+  the sixth-pass Ideas entry), per the standing "don't re-derive an
+  already-logged dead end same day" instruction. Spent the pass instead
+  independently chasing invent-new angles the sixth pass's nine-item
+  sweep hadn't named: (1) a full Real Housewives franchise sweep —
+  already exhaustively staked across nine dedicated RHO-cluster lists
+  (`the-couch-kept-adding-chairs`, `the-founding-five-kept-getting-
+  replaced`, `the-friend-credit-became-the-farm-system`, `the-social-
+  geometry-resets-then-it-holds`, `the-zip-code-was-the-only-constant`,
+  `the-anchor-count-set-the-ceiling`, `full-time-was-a-status-not-a-
+  promise`, `the-schedule-kept-changing-as-much-as-the-cast`, `four-
+  names-never-leave-the-credits`) covering address moves, anchor/judge
+  turnover, full-time-cast status, friend-tier promotions, and franchise-
+  wide schedule shifts — no untouched structural facet found; (2) the
+  Below Deck cluster — charter fees (`the-paycheck-writes-the-plot`),
+  captain tenure (`the-command-held-for-ten-seasons-then-didnt`), and
+  yacht/route geography (`the-charter-map-as-the-whole-story`) already
+  claim the obvious cuts; (3) Married at First Sight Australia's 13
+  seasons — fully drained across two single-show lists already at 13/13
+  (`the-episode-order-never-found-its-ceiling`, `the-reshuffle-stays-in-
+  house`); (4) a Hollywood-labor-strike/production-disruption angle
+  (Big Brother S09 "The Winter Couples," Amazing Race S12 and S33,
+  Bachelor in Paradise S04 and S09) — independently re-derived via a
+  `strike|WGA|SAG-AFTRA` grep across every season file, then found this
+  is the exact address of `the-schedule-didnt-ask-permission` (12
+  entries/8 shows, craft), which already names all four seasons by rank;
+  (5) the reverse-direction format-origin-crediting angle (a season's
+  own copy naming itself as the one OTHER adaptations later copied,
+  rather than the borrowing direction `the-pitch-names-where-the-idea-
+  came-from` covers) — swept for `the template|copied wholesale|the
+  version every|the model for|set the template` and found exactly one
+  clean hit in the whole catalog, Traitors UK S01's own lede ("the run
+  the American version later copied wholesale"); rejected as a list seed
+  because Traitors US and Traitors UK film at the literal same fixed
+  location (Ardross Castle, Scottish Highlands) every single season on
+  both sides of the Atlantic, so there is no season-to-season variation
+  left to rank against — the fact is real but doesn't repeat, and two
+  same-franchise shows don't clear the cross-canon floor as their own
+  list regardless. Net: no `content/themes/*.md` file written or edited
+  this tick; no ledger row's `last_reviewed` bumped beyond what the two
+  rows above already carry from earlier same-day passes (no fresh
+  re-derivation performed on those two, per the diligence note above).
+  Seventh consecutive same-day zero-ship pass, consistent with the
+  2026-08-13 through 2026-08-21 saturation streak (issue #758). The next
+  unlock remains Rule 2 filing a new season, or an oversight-authorized
+  scout-research process to reach facts outside the repo's own season-
+  file text.
 
 ## Notes
 
