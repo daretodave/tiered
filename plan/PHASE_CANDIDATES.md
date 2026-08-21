@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-20 at commit 95062958
-> Pass count: 64
+> Last pass: 2026-08-21 at commit 0d9e2dd7
+> Pass count: 65
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,57 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 65 (2026-08-21, commit 0d9e2dd7, cloud) — 0 new phase-shape
+     candidates filed; two reinforcement updates appended below (#25, #33).
+     Window since pass 64 (95062958, 2026-08-20T12:33:52Z): 29 commits /
+     ~14.6 hours. Commit threshold met (≥20); time threshold not (< 48h).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: neither cadence clock due (season-sweep next due
+     2026-08-23; show-add LOCKED, gap table unchanged 42 shows/43
+     gap-slots). Step 2.0's shipping-mode gate is lifted (Phase 36 [x]);
+     critique gate checked and not due (4 commits / ~2.4h since pass 131,
+     both below the 12-commit/24h threshold). Step 3a/3b empty (no
+     pending phase rows, no Pending category:data AUDIT rows). Step 3b.5
+     dispatched to `/ship-content`: the standing Rule-2 season-fill row
+     (score 4.5) matched on paper, but Rule 2 is fully starred/unaired
+     (CADENCE gap table unchanged) and Rule 3 zero-shipped on independent
+     re-search (5 fresh angles — double-elimination episodes, judging/
+     scoring-system overhauls, phone-restriction format devices, prize-
+     form vs. prize-amount, voluntary self-elimination — all sub-floor),
+     consistent with the same-day 2026-08-21 zero-ship already logged in
+     `plan/LISTS.md` before this tick started. `/ship-content` returned
+     with nothing shipped, falling through per its own contract. `/expand`'s
+     own gate was independently open (29 commits since pass 64, posture
+     bold, live signal in `plan/AUDIT.md` + `plan/CRITIQUE.md` Pending,
+     no phase/data work pending) — reached on its own merits, not a
+     substitution.
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending: no new non-content-gaps rows since pass 64;
+       the four standing HIGH/MED bug rows (the-voice corruption #762,
+       night-shift starvation #35/#763, org-access outage #565 re-triage,
+       e2e-full sharding #34) are all already filed as candidates/issues
+       and explicitly marked for a human `/oversight` session — cloud
+       cannot push workflow-file edits (missing `workflows` OAuth scope)
+       or safely attempt the-voice's 8-file renumbering cascade without a
+       review checkpoint. No new engineering signal here beyond what's
+       already tracked.
+     - `plan/CRITIQUE.md` Pending: the last ~29 commits closed 6 more
+       findings via the "content-gap redirect" workaround (issue #758) —
+       5 of them fresh instances of candidate #25's echo-defect class
+       (2 of those 5 on pages with a *prior* independent fix already
+       logged), the 6th a genuine systemic code fix (Project Runway
+       adjacent-season disambiguation, `adjacentByCanon()` fallback).
+       Both #25 and #33 got substantive same-pass reinforcement below —
+       see those entries for the full evidence chain.
+     - `spec.md` / `design/`: no diff since pass 64 (checked via
+       `git log -p --since=<pass-64-timestamp>`, empty on both paths).
+     - Triage backlog: 0 unlabeled issues (Step 1 already confirmed this
+       tick); no new clustering pattern.
+     No genuinely new candidate concept surfaced — every fresh signal
+     this pass maps cleanly onto an existing unpromoted candidate (#25
+     or #33), so filing a duplicate would just fragment the evidence
+     trail rather than add information. Reinforcing in place instead. -->
 
 <!-- Pass 63 (2026-08-16, commit 564c8912, cloud) — 0 new phase-shape
      candidates filed; two reinforcement updates appended below (#33, #34).
@@ -1467,6 +1518,35 @@ depth correctly. Still the highest-priority unpromoted candidate in
 the file, now with corrected evidence about how much slack the loop
 has been running on.
 
+**Update (expand pass 65, 2026-08-21, cloud march):** the informal
+"content-gap redirect" workaround this candidate proposes to formalize
+is now a named, self-referential practice in the loop's own commit
+history — six of the ~29 commits since pass 64 (2026-08-20) carry the
+literal phrase "per issue #758's established workaround" or "content-gap
+redirect" in their subject/body (11d9eb6c, f7643199, 9842f0da, 6177bbf9,
+492a10c9, 07e6c046), each one picking the oldest actionable
+non-`[needs-user-call]` `plan/CRITIQUE.md` row by hand once Rule 2/3 both
+confirmed dry for the tick, shipping it under a `content:` subject, then
+logging a companion `audit:` commit ticking the row and noting the
+redirect on the standing season-fill row. This is exactly candidate #33's
+proposed Step 3b.5 carve-out, minus the actual skill-file edit — the loop
+has been hand-simulating the fix for weeks rather than having it. Two new
+data points this pass: (1) the workaround is demonstrably *working* — five
+of the six redirects closed real defect-class instances (see candidate #25's
+same-pass update), the sixth (286116bb, Project Runway adjacent-season
+disambiguation) shipped a genuine systemic code fix, so the practice isn't
+just busywork, it's clearing real backlog that Step 3b.5's literal gate
+would otherwise starve indefinitely; (2) `/expand`'s own gate reopened this
+pass largely *because of* that commit volume (29 commits since pass 64, just
+past the 20-commit threshold) — the redirect pattern is incidentally what
+kept the loop's overall commit cadence healthy enough for `/expand` itself
+to fire on schedule. Recommend `/oversight` treat this as a low-risk
+promotion: the scope sketch has been running as an unwritten process for
+over a month with a clean track record and zero incidents, so codifying it
+into `skills/march.md` Step 3b.5 formalizes existing behavior rather than
+introducing new risk. Score unchanged at 5.5; still unpromoted 34 days
+after filing (2026-07-18).
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
@@ -2315,6 +2395,27 @@ capitalization invariant and #13's cross-corpus cliché registry — those catch
 different defect shapes (style/formatting drift vs. cross-corpus phrase reuse) in
 the same file; this candidate catches cross-field argument duplication *within one
 show's canon+season pair*, a shape none of the existing gates cover.
+
+**Update (expand pass 65, 2026-08-21, cloud march):** five more independent
+instances landed and were fixed reactively in the ~29 commits since pass 64
+(2026-08-20), every one via the undocumented "content-gap redirect" workaround
+(candidate #33) rather than a structural gate: Top Chef Carolinas (a fourth
+distinct repetition on a page that already had one prior fix — the LCK
+re-entry-delay fact repeated across `format_caption`/pull/watch_list/body,
+commit 11d9eb6c), Survivor 50 (the site's flagship page hit *again* — lede/body
+cast-size-and-span echo, commit 9842f0da, on top of the "several prior
+independent fixes on the same page" pass-64 already logged), Southern Charm
+S11 (`take_h2`/pull "footing" word-echo, commit 6177bbf9), The Real World
+Atlanta (lede/body/canon triple-restatement of the same three facts, commit
+492a10c9), and Big Brother's newest season (a three-mechanic list repeated
+across four fields, commit 07e6c046). Two of five are second-strike pages
+(Top Chef Carolinas, Survivor 50) — direct, continued confirmation of pass-64's
+core finding that field-level one-off edits relocate the defect rather than
+closing it. Net since filing (2026-07-06): 20+ instances documented, now
+spanning at least 18 distinct shows, with a same-day recurrence rate that has
+never required more than ~24 hours to produce fresh evidence at any check-in
+since pass-56. Score held at 8.3 (ceiling); still the highest-scored
+unpromoted candidate in the file, six weeks after filing.
 
 ### 28. Stat-tile value/caption literal-duplicate invariant
 
