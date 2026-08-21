@@ -30,12 +30,10 @@ watch_list:
     body: "The fan vote also shaped the season's endgame format. Watch how the chosen final-stretch mechanics play out for a cast built entirely of veterans."
 ---
 
-Survivor 50 gathers twenty-four returning castaways spanning the
-show's full run, from Season 1 through the season that just
-aired, for the largest cast in franchise history. Rather than an
-all-winners lineup, the mix includes past winners, multi-time
-returnees, and finalists who never quite closed the deal. Fans
-shaped the mechanics themselves, casting votes across four
-rounds during the prior season's broadcast, before a single
-tribe reached the Mamanucas. Probst hosts his fiftieth season
-on the islands.
+Rather than an all-winners lineup, the cast mixes past
+champions, multi-time returnees, and finalists who never quite
+closed the deal — a quarter-century of different eras and
+strategic instincts sharing the same tribes. Fans shaped the
+mechanics themselves, casting votes across four rounds during
+the prior season's broadcast, before a single tribe reached the
+Mamanucas. Probst hosts his fiftieth season on the islands.
