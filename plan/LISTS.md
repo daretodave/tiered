@@ -9782,6 +9782,63 @@ last time a curator actually looked.
   writing time was spent. This is a diligence-backed zero-ship,
   consistent with the extended 2026-08-13 through 2026-08-21
   saturation streak (issue #758).
+- **2026-08-21, content-curator direct invocation (`/ship-content` Rule 3
+  tick, third same-day pass): zero-ship.** Re-confirmed both standing
+  blockers before starting: Rule 2 season-fill still stalled
+  (`plan/CADENCE.md` gap table fully starred, confirmed-but-unaired) and
+  no ledger row is review-due (oldest `last_reviewed`, `survivor-pillars`
+  at 2026-07-31, 21 days old, well inside the 90-day floor). Read the
+  full Ledger plus the Ideas-log tail (both same-day passes above, plus
+  the 2026-08-13 through 2026-08-20 saturation streak) before starting.
+  Applied the corrected process from the second same-day pass's mistake
+  — grepped every candidate show/angle against the full ledger **before**
+  drafting any entry copy, not after. Brainstormed and checked seven
+  fresh-seeming axes, all confirmed already comprehensively staked:
+  (1) narrator-distinct-from-host as a craft device (Too Hot to Handle's
+  Lana, Love Island UK/US's Stirling/Hoffman split, The Circle's
+  app-only authority) — fully shipped already at
+  `the-host-never-walks-into-the-room` (12 entries/4 shows); (2)
+  judges'-panel expansion/turnover as a structural escalation (fourth
+  chair added, panel doubled) — already exhaustively covered at
+  `when-the-chairs-turned-over` (19 entries/10 shows), including the
+  exact AGT-S09 four-chair-expansion and MasterChef Australia
+  panel-growth facts this pass independently surfaced; (3) same-format,
+  different-country licensing divergence (cast size, panel size,
+  episode count, release cadence) — already shipped in full at
+  `same-license-different-rules` (12 entries/12 shows) covering
+  Survivor/Survivor Australia, MasterChef/MasterChef Australia,
+  Love Island UK/US, MAFS/MAFS Australia, Drag Race/Drag Race UK, and
+  Traitors/Traitors UK pairs; (4) cast-headcount records (largest/
+  smallest field a format has run) — already shipped in full at
+  `the-cast-outgrew-the-format` (16 entries/12 shows); (5) audience
+  vote-authority swings (casting power, rulebook input, ballot removed)
+  — already shipped in full at `who-actually-got-the-vote` (12
+  entries/6 shows); (6) open-call/audition/tryout mechanic doing
+  structural work before the taped season starts — already shipped in
+  full at `the-open-call-built-the-format` (14 entries/6 shows); (7)
+  prize-money and reward-structure swings (cash-prize records, prize
+  pool splits, magazine-credit payouts replacing cash) — independently
+  derived from Chopped's $100k/$50k/$25k tournament-tier season files
+  and Drag Race All Stars' escalating/charity-swap finale payouts,
+  then found already shipped in full, near-verbatim, at
+  `same-crown-new-price-tag` (16 entries/9 shows) — every specific
+  season this pass surfaced (Chopped S40/S48/S51, Drag Race All Stars
+  S01/S03/S07/S09/S11, American Ninja Warrior S07, ANTM S15, Survivor
+  Australia S11, Too Hot to Handle S01/S02/S06) was already an entry
+  there. Also re-confirmed the `category: single` avenue is closed per
+  the second same-day pass's census: every multi-season show in the
+  67-show catalog already has a dedicated single-show list, or (Perfect
+  Match, Alone Australia) is confirmed fully saturated on every
+  groundable angle. Net: no `content/themes/*.md` file written or
+  edited this tick; no ledger row changed. Third consecutive same-day
+  zero-ship pass, consistent with the extended 2026-08-13 through
+  2026-08-21 saturation streak (issue #758): at 212 lists, this catalog's
+  actionable Rule-3 surface area is exhausted for every angle this pass
+  could generate — reward structure, panel composition, casting
+  mechanics, licensing divergence, vote authority, and headcount records
+  are each already mined to their natural ceiling across the shows that
+  carry groundable season-file text. The next unlock remains Rule 2
+  filing a new season.
 
 ## Notes
 

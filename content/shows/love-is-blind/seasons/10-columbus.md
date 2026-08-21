@@ -13,7 +13,8 @@ lede: "Season ten delivers the established era's clearest return to form: a cast
 pull: "Ohio gives the pods the buy-in they need."
 take_h2: "The bounce-back, taken seriously."
 format_summary: "Pod dating · altar reveal"
-format_caption: "Thirteen episodes including reunion"
+format_caption: "The format regaining the buy-in Denver's cast lacked"
+episodes_caption: "Thirteen episodes including reunion"
 cast_size: 30
 cast_size_caption: "15 men and 15 women in the pods"
 host_caption: "{seasonOrdinalWord} season with Nick and Vanessa Lachey"
