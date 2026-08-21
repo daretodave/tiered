@@ -13,7 +13,7 @@ pull: "A touring circuit compressed into one Nashville venue, a voting app retir
 format_summary: "Talent competition · single-venue audition · viewer vote"
 format_caption: "Nashville consolidates the touring circuit; voting moves off-app"
 premiere_caption: "ABC · Monday 8/7c"
-filming_caption: "Belmont University, Nashville; Aulani Resort & Spa, Ko Olina, Hawaii"
+filming_caption: "Belmont opens the season; the Aulani 'Ohana Round arrives later in the run"
 host_caption: "{seasonOrdinalWord} season at the helm"
 watch_list:
   - episode_label: "Ep 1 · the Nashville consolidation"
