@@ -22,4 +22,4 @@ filming_caption: "Columbus · tenth city, a return to form"
 premiere_caption: "Netflix · February 2026"
 ---
 
-Columbus is the established era's most encouraging season and the clearest bounce-back after Denver's subdued run. The Ohio cast arrives with genuine buy-in for the pod experiment — the blind-dating premise generates early stakes rather than ambient familiarity — and the production matches that energy. It doesn't climb to the founding batch's top tier, but it runs at a level that reminds you what the format is capable of when the cast takes it seriously.
+Columbus resets the tone after Denver's subdued run: the pod conversations move fast from the opening episode, stakes show up early instead of staying ambient, and production keeps pace with the energy. It stops short of the founding batch's top tier, but it's the clearest sign yet of what the format can do when everyone at the pods is actually trying.
