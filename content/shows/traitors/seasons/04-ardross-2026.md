@@ -9,9 +9,9 @@ ep_count: 12
 location: Ardross Castle, Scottish Highlands, Scotland
 host: Alan Cumming
 eyebrow: "Aired winter 2026 · The newest entry, the format running smoothly"
-take_h2: "Settling in on merit."
+take_h2: "A confident settling-in."
 lede: "The most recent run. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. The format is steady and familiar here — a confident, repeatable machine doing what it now does well."
-pull: "The newest entry — slotting in on merit as it settles."
+pull: "The newest entry, ranked here on merit rather than novelty."
 format_summary: "All-celebrity cast · weekly run"
 format_caption: "The third straight celebrity-only field since Season 2's switch"
 host_caption: "Alan Cumming's fourth season at the castle"
@@ -31,4 +31,4 @@ watch_list:
     body: "The late stretch tightens the pressure. The newest season working the format toward its close."
 ---
 
-Season four is the latest chapter, the machine running with ease. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here — the show executes a settled formula confidently, the candlelit Round Table and prize-pot missions running on rails. It lands at the tail of the canon on merit: a clean, well-made run that has not yet had the time the earlier seasons have.
+Season four is the latest chapter, the machine running with ease. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here — the show executes a settled formula confidently, the candlelit Round Table and prize-pot missions running on rails. The season's strength is craft, not spectacle: a fluent cast keeps the hour moving without a structural wrinkle like Season 3's mid-game arrivals to lean on.
