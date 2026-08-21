@@ -45,7 +45,13 @@ export function CommunityRankList({
         <span>Season</span>
         <span className="col-bar">Approval</span>
         <span className="col-pct col-r">%</span>
-        <span className="col-trend col-r">7d</span>
+        <span
+          className="col-trend col-r"
+          title="Populates after the first weekly update — until then every row shows an em-dash, not a stalled counter."
+          aria-label="7 day trend. Populates after the first weekly update — until then every row shows an em-dash, not a stalled counter."
+        >
+          7d
+        </span>
         <span className="col-r">Votes</span>
       </div>
       <div className="cp-cl-rows" data-testid="community-rank-rows">

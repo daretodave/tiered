@@ -129,6 +129,22 @@ describe('<CommunityRankList>', () => {
     ).not.toBeNull()
   })
 
+  it('the 7d column header explains the em-dash placeholder inline (regression guard for critique pass-124)', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
+    )
+    const header = screen.getByText('7d')
+    expect(header).toHaveAttribute(
+      'title',
+      expect.stringContaining('Populates after the first weekly update'),
+    )
+    expect(header).toHaveAttribute(
+      'aria-label',
+      expect.stringContaining('Populates after the first weekly update'),
+    )
+  })
+
   it('live-source meta names the cadence in editorial voice, not engineering (regression guard for #256)', () => {
     const entries = [
       row(1, 20, 'Heroes vs. Villains', {
