@@ -1,6 +1,6 @@
 ---
 slug: the-team-rule-never-makes-it-to-a-second-season
-title: "Ink Master: the team rule never makes it to a second season"
+title: "Ink Master: a new team shape every single year"
 description: "Ink Master rebuilds its own team structure almost every season — real-life rivals, mentor and apprentice pairs, judges turned coaches, shop against shop, region against region. This tracks the seasons where the organizing rule actually changed."
 tagline: "Most competition formats pick one team structure and spend years refining it. <b>Ink Master picks a new one almost every season</b> — rivals, mentor-and-apprentice pairs, judges turned coaches, shop against shop, region against region."
 category: single
