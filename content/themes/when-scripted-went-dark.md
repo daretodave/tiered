@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-07
+last_revised: 2026-08-21
 featured: false
 related:
   - pandemic-seasons
@@ -97,4 +97,16 @@ entries:
     rank: 14
     title: "The charter moves west to the Italian Riviera in the middle of a second Hollywood strike"
     blurb: "Season eight premieres September 25, 2023, squarely inside the joint WGA/SAG-AFTRA walkout, relocating the charter west to Genoa and the Italian Riviera for the first time. Bravo's unscripted slate keeps its charters moving with no scripted writers' room to answer to."
+  - show: project-runway
+    season: 20
+    season_label: "S20 · New York"
+    rank: 15
+    title: "Fourteen returning designers premiere six weeks into the WGA walkout"
+    blurb: "Season twenty premieres June 15, 2023, reuniting a veterans-only cast with no single host — mentor Christian Siriano and the judges panel carry the season instead. The workroom's returning-cast rhythm never needed a writers' room to keep it running."
+  - show: love-island-us
+    season: 5
+    season_label: "S05"
+    rank: 16
+    title: "A second Peacock season settles in four days after the SAG-AFTRA strike begins"
+    blurb: "Season five premieres July 18, 2023, joining the still-running WGA walkout on the actors' side too, while the daily-drop Peacock format settles into a confident, repeatable groove in its second cycle. A nightly unscripted format never needed a picket line to slow the drops."
 ---
