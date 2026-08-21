@@ -9724,6 +9724,64 @@ last time a curator actually looked.
   catalog's actionable Rule-3 surface area is exhausted for every
   concept this pass could generate or the brief could name, and the
   next unlock is Rule 2 filing a new season.
+- **2026-08-21, content-curator direct invocation (`/ship-content` Rule 3
+  tick, second same-day pass): zero-ship, with a caught-and-reverted
+  drafting mistake logged for process.** Re-confirmed both standing
+  blockers first: Rule 2 season-fill still stalled (`plan/CADENCE.md`
+  gap table fully starred confirmed-but-unaired) and no ledger row is
+  `review-due` (oldest `last_reviewed` cell, `survivor-pillars` at
+  2026-07-31, inside the 90-day floor). Took the "extend-first, then
+  check for a show with no dedicated single-show list" angle from the
+  brief. Built a census of every `category: single` list's dominant
+  show (via `entries:\n  - show: <slug>` anchor greps across all 76
+  single-category files) against the full 66-show catalog and found
+  exactly two shows with no dedicated single-show list and more than
+  one aired season: `perfect-match` (4 seasons) and `alone-australia`
+  (3 seasons) — `alone-the-skills-challenge` also lacks one but is
+  1-season-only, not viable. Drafted a 4-entry Perfect Match list on
+  the thesis "the crossover casting pool widens every season" (S01
+  Netflix-only pool → S02 adds Squid Game: The Challenge/The Mole →
+  S03 widest pool yet, Bachelor/Love Island franchises → S04 first
+  reach past Netflix's own slate, Married at First Sight
+  Australia/Vanderpump Rules), grounded directly in each season's own
+  `lede`/`pull`/`format_changes` text. **Mistake: wrote the file before
+  running the full-ledger `show: perfect-match` grep, not after.**
+  Running it afterward (as due diligence before logging this as
+  shipped) surfaced that all 4 seasons already carry 2-4 entries apiece
+  staking this exact fact, in places near-verbatim, across 7+ existing
+  lists: `familiar-faces-wrong-franchise` (S01), `the-cast-was-still-
+  arriving` (S01), `the-blackout-had-a-loophole` (S01), `the-hand-
+  behind-the-couple` (S01/S02/S03), `a-way-back-in` (S02/S04),
+  `the-batch-drop-settles-in` (S02/S03/S04), `not-the-usual-order`
+  (S04), and `built-for-the-drop` (S04 — whose blurb, "the crossover
+  pool finally reaches past America's own dating shows into an
+  international one," is nearly word-for-word the S04 entry drafted
+  here). This isn't a borderline ~40% call; Perfect Match's entire
+  4-season run is already saturated on this exact angle. Reverted the
+  draft — `content/themes/the-crossover-net-keeps-widening.md` was
+  overwritten with an explanatory rejected-draft comment (invalid
+  frontmatter, deliberately so `pnpm content:check` fails loudly rather
+  than silently shipping the redundant list) because this agent's
+  toolset has no delete/rm primitive; **that file must be `git rm`'d
+  before the next verify run.** Checked `alone-australia` next —
+  already flagged "both thin and exhaustively mined" by the 2026-08-07
+  ledger note on `the-return-trip-built-into-the-format`; re-verified
+  that note directly against all 3 seasons this pass and confirmed it
+  still holds: `one-rule-never-bends` (format-travel rule, all 3
+  seasons), `the-place-fought-back` (weather/terrain, all 3 seasons),
+  `best-location-reveals` (S02's fjord jump), `when-the-crew-stepped-
+  into-frame` (S01's medical-tap export), `new-flags-planted-fast`
+  (S01's founding-import angle), `the-blackout-had-a-loophole` (S01's
+  isolation-rule import), `running-on-muscle-memory` (S03's
+  consolidation) — 7 stakes across 3 seasons, every season touched
+  2-3 times, no unclaimed angle for a 3-entry floor. Both leads dead.
+  Net: no valid `content/themes/*.md` file shipped this tick. Process
+  note for future ticks: run the full `grep -rl "show: <slug>"
+  content/themes/*.md` saturation check on a candidate show **before**
+  drafting entries, not after — would have caught this one before any
+  writing time was spent. This is a diligence-backed zero-ship,
+  consistent with the extended 2026-08-13 through 2026-08-21
+  saturation streak (issue #758).
 
 ## Notes
 
