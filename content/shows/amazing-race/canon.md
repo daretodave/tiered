@@ -636,18 +636,18 @@ tag: The Big Brother crossover — every team carrying a former houseguest, star
 slot_argument: Thirteen teams stocked with Big Brother veterans, a start in the format's Dutch birthplace, and the first new U-Turn penalty since Season 33. The cross-franchise lineage gives it a more concrete format hook than the season below it.
 community_rank_hint: rank=37 delta=0 sentiment=hold
 
-Season 38 stocked its entire field with Big Brother veterans —
-thirteen teams, each carrying at least one former US houseguest
-— and the canon rewards the cross-franchise argument. The field
-left Hoorn, the Netherlands, the birthplace of the Big Brother
-format, through the Czech Republic, Hungary, Croatia, Romania,
-Greece, Italy, and France before a New York finish. A U-Turn
-penalty carried by a non-elimination survivor is the first
-genuinely new mechanic since Season 33, joining a returning
-Express Pass, Hazard, and Double U-Turn Vote. The canon places
-it thirty-seventh because the crossover concept and new
-mechanic give it a more concrete format-historical reason to
-exist than the season below it.
+Season 38 earns its slot on a cross-franchise argument neither
+neighbor can match — a field built entirely from Big Brother
+veterans, paired with the first new U-Turn wrinkle since Season
+33. That format-historical hook outranks Season 37's
+twist-saturation premise directly below it, which layers
+concept onto the standard format rather than reshaping it. It
+still sits behind Season 36's tighter, self-contained structural
+set one slot up, where a charter route and a stripped-down
+non-elimination rule make the more disciplined case. The canon
+places it thirty-seventh because concrete format lineage beats a
+busier premise, even short of a season with its own structural
+argument.
 
 ## 37. Season 37
 
