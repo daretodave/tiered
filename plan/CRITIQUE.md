@@ -1,5 +1,51 @@
 # CRITIQUE
 
+> Last pass: 2026-08-22 at commit 89380f86
+> Pass count: 135
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 135
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set outside the
+> recent rotation. Anon (5 URLs: `/`, `/shows/the-voice/season/the-finale`,
+> `/shows`, `/shows/vanderpump-rules`, `/themes/best-non-winning-runs`)
+> surfaced 2 findings after self-assessment dropped a third — the
+> reader's HOST/FILMED tile-caption flag on The Voice S29 was
+> re-verified against source and found to be a false positive (both
+> captions pair the tile value with genuinely new information — coach
+> tenure, Ballerini's debut — matching the corpus's established
+> "good" pattern, not the bare-restatement defect class). Kept: a
+> genuine `slot_argument`/canon-body verbatim echo on Vanderpump
+> Rules Season 1 ("SUR's actual chain of command as real stakes"
+> repeated word-for-word across both fields), and a lighter
+> eyebrow/lede conceptual echo on The Voice S29 (final-season +
+> fourteen-year-run stated twice, paraphrased not verbatim — LOW).
+> Authed (4 URLs: `/shows/queer-eye/season/washington-dc`,
+> `/shows/selling-sunset/season/season-9`, `/u/e2e`,
+> `/themes/best-comeback-seasons`) surfaced 4 findings, one dropped as
+> a duplicate of the already-pending pass-128 tooling row (the
+> `/u/e2e` mobile "failed request" was another `isRscPrefetchAbort()`
+> false-positive class instance — a different aborted `_rsc` prefetch
+> URL, same root cause already tracked, not a new site defect). Kept:
+> a genuine FILMED-caption bare restatement on Queer Eye's Washington
+> D.C. finale (caption re-lists the exact same three jurisdictions the
+> value line already states, zero new information — downgraded
+> HIGH→MED to match this defect class's established severity band,
+> e.g. top-chef/carolinas), a Shape-of-Season/canon.md verbatim phrase
+> echo on the same page ("Netflix announced the ending mid-production"
+> repeated word-for-word), and a three-way Take/Shape/canon.md
+> restatement of the same fact set on Selling Sunset Season 9
+> (Vergara's arrival + the reunion's return after Season 8's gap +
+> Tan France hosting, stated with only light rewording three times).
+> Selling Sunset's own FILMED caption was checked and ruled clean (adds
+> a genuine new detail, "the Sunset Strip," not present in the value
+> line) — cited in the Queer Eye finding as the correct pattern by
+> contrast. `/themes/best-comeback-seasons` was checked and ruled
+> clean.
+>
+> ───── Pass 134 metadata kept below for history ─────
+>
 > Last pass: 2026-08-21 at commit 0afa78f7
 > Pass count: 134
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3337,6 +3383,16 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [MED] [anon] /shows/vanderpump-rules — the Season 1 canon entry's `slot_argument` ("WHY THIS SLOT" pull-quote) and the entry's own rationale paragraph, both rendering on the same page, share an 8-word verbatim clause. `slot_argument` (`content/shows/vanderpump-rules/canon.md`, "## 1. Season 1"): "A young waitstaff under Lisa Vanderpump treats SUR's actual chain of command as real stakes from the first episode, launching a format that outlasted nearly every other Bravo spinoff." Rationale paragraph, same section: "...it's how fast the show treats SUR's actual chain of command as real stakes, not just backdrop." Same defect class as the many already-fixed slot_argument/rationale and lede/body echoes elsewhere in the corpus (shark-tank S17, alone S12, the-circle S7, survivor-50, big-brother S27, real-world/atlanta, love-is-blind/columbus), now confirmed on a previously-unflagged show. Fix: rewrite `slot_argument` to argue why Season 1 tops the canon specifically (the format-founding significance, or what separates it from Season 6's own strong claim) instead of re-deriving the rationale paragraph's own chain-of-command clause. Content-only, one field in `content/shows/vanderpump-rules/canon.md`. Spoiler discipline P0 intact (format/premise facts only). (URL: /shows/vanderpump-rules, source: critique-pass-135)
+
+- [ ] [LOW] [anon] /shows/the-voice/season/the-finale — the eyebrow directly above the H1 and the lede directly below it restate the same two facts (final season, fourteen-year run) back to back, paraphrased rather than verbatim but immediately adjacent. Eyebrow (`content/shows/the-voice/seasons/29-the-finale.md`): "The Voice closes — the final season of a fourteen-year run." Lede, next line: "Season twenty-nine marked the end of The Voice's run on NBC, the format's fourteenth year on air." Fix: let the eyebrow own the final-season/fourteen-year framing and open the lede on a different fact (the coaching panel, or Kelsea Ballerini's debut) instead of re-stating tenure and closure a second time. Content-only, one field. Spoiler discipline P0 intact (format facts only). (URL: /shows/the-voice/season/the-finale, source: critique-pass-135)
+
+- [ ] [MED] [authed] /shows/queer-eye/season/washington-dc — the FILMED meta-column stat states its value, then the caption directly beneath it restates the identical location list with zero new information added. Confirmed via `content/shows/queer-eye/seasons/10-washington-dc.md`: `location: "Washington, D.C.; Montgomery County, Maryland; and Northern Virginia, USA"` / `filming_caption: "Washington, D.C., Montgomery County, and Northern Virginia"` — the caption is the value line re-punctuated, not a distinct fact. Contrast with the same pass's Selling Sunset S9 FILMED field, which does this correctly (`location: "West Hollywood and Los Angeles, California"` / `filming_caption: "West Hollywood and the Sunset Strip"` — a genuinely new location detail). Same defect class as the corpus's ongoing bare-restatement drain (`isCastSizeCaptionBareRestatement`/`isEpisodesCaptionBareRestatement` cover the CAST SIZE/EPISODES tiles; FILMED has no automated check, same gap already content-fixed manually on top-chef/carolinas and summer-house). Fix: rewrite `filming_caption` to add a genuinely new detail (e.g. that this is the show's first three-jurisdiction shoot, or a neighborhood-specific note) instead of re-listing the same three places the value line already states. Content-only, one field. Spoiler discipline P0 intact (location facts only). (URL: /shows/queer-eye/season/washington-dc, source: critique-pass-135)
+
+- [ ] [MED] [authed] /shows/queer-eye/season/washington-dc — the "Shape of the season" body paragraph and the `canon.md` Season 10 rationale, both rendering on the same page, restate the same clause almost verbatim. Season body (`content/shows/queer-eye/seasons/10-washington-dc.md`): "...Netflix announced the ending mid-production — a farewell season by design, not one cut short by circumstance." `canon.md` "## 10. Washington, D.C." rationale: "...Netflix announced the ending mid-production, and the season plays like a show choosing exactly how it wants to close rather than a run trailing off." Same defect class as the many already-fixed season-body/canon.md echoes (love-is-blind/columbus, hells-kitchen/battle-of-the-states, the-real-world/atlanta). Fix: keep the mid-production-announcement fact in the season body only; rewrite the canon.md rationale to argue the rank-9 slot comparatively against neighboring seasons (why brevity costs it position against Philadelphia/Austin's longer runs — a comparison the rationale already gestures at later in the same paragraph) without re-establishing the announcement premise a second time. Content-only, one field in `content/shows/queer-eye/canon.md`. Spoiler discipline P0 intact (no outcome exposure). (URL: /shows/queer-eye/season/washington-dc, source: critique-pass-135)
+
+- [ ] [MED] [authed] /shows/selling-sunset/season/season-9 — the same fact set (Sandra Vergara joining the roster, the standalone reunion returning after Season 8's one-season gap, Tan France hosting) is restated three times back to back across "The take," the "Shape of the season" body, and the `canon.md` rationale, each only lightly reworded. Take (`pull`): "The reunion comes back after a season off, and a new agent joins right as it does." Body: "Season 9 adds Sandra Vergara to the Oppenheim Group's roster and brings the reunion special back after Season 8's one-season gap — Tan France returns to host for a fifth consecutive time..." `canon.md` "## 9. Season 9" rationale: "Season 9 brings Sandra Vergara into the Oppenheim Group's roster and restores the standalone reunion special after Season 8's one-season gap, with Tan France back behind the reunion desk." Same defect class as the corpus's ongoing repeated-fact-list drain (big-brother/a-summer-of-mystery, dragrace-allstars/tournament-of-all-stars). Fix: keep the full fact set in the "Shape of the season" body only; rewrite `pull` to lead with the season's tone/impact instead of re-listing the facts, and rewrite the `canon.md` rationale to argue the rank-5 slot comparatively (it already does this in its closing sentence — trim the opening to reference the facts by name, "the reunion's return," rather than re-deriving them). Content-only, two field edits across `content/shows/selling-sunset/seasons/09-season-9.md` and `content/shows/selling-sunset/canon.md`. Spoiler discipline P0 intact (casting/format facts only, no outcome exposure). (URL: /shows/selling-sunset/season/season-9, source: critique-pass-135)
 
 - [x] [MED] [authed] /u/e2e (systemic — every `/u/[handle]` profile) — the profile page's social-card image still resolves to the generic sitewide OG image, even though pass-89's row for this exact page is marked RESOLVED in the Done section below. Re-verified against source, not just the live page: `src/app/(default)/u/[handle]/opengraph-image.tsx` exists and correctly builds a per-profile card, but `generateMetadata()` in the sibling `page.tsx` never passes an `image` argument to `buildMetadata()` (`src/lib/seo.ts`), whose unconditional default-image fallback (`siteConfig.defaultOgImage`) permanently shadows the file-convention route — confirmed live: `og:image` on `/u/e2e` resolves to `https://tiered.tv/opengraph-image` (the homepage's image), not `https://tiered.tv/u/e2e/opengraph-image`. This is the identical shadowing mechanism pass-69 (#448) fixed for shows/seasons/themes by explicitly threading an `image:` argument through `generateMetadata`; the pass-89 fix added the image-generation route but never added the matching `image:` argument, so the route has been unreachable dead code since it shipped. Fix: thread `image: \`/u/${profile.handle}/opengraph-image\`` through both `buildMetadata()` calls in `src/app/(default)/u/[handle]/page.tsx`'s `generateMetadata` (the not-found branch can keep the default), mirroring the pass-69 fix already applied to the show/season/theme page families. Chrome/SEO-only, no spoiler impact. (URL: /u/e2e, source: critique-pass-134, reopens pass-89 #551 — see Done entry below) — RESOLVED (2026-08-21, cloud march tick, redirected per issue #758): threaded `image: \`/u/${profile.handle}/opengraph-image\`` through the populated-profile `buildMetadata()` call in `src/app/(default)/u/[handle]/page.tsx`'s `generateMetadata`; the not-found branch was left on the site default per the finding's own guidance, since `opengraph-image.tsx` calls `notFound()` for unknown handles and never renders for that branch. New unit test pins `openGraph.images`/`twitter.images` to the per-profile route so this can't silently regress back to the sitewide default. Redirected from a stalled ship-content dispatch: Rule 2 (season-fill) fully stalled, all 42 CADENCE.md gap-table rows starred/confirmed-but-unaired since the 2026-08-16 sweep; Rule 3 (themed lists) already logged exhausted for today by earlier same-day ticks.
 
