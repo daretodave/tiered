@@ -81,6 +81,17 @@ describe('clipToSeoBudget', () => {
     )
     expect(result).not.toMatch(/\bthe…$/)
   })
+
+  it('trims a trailing bare ordinal off the word-boundary fallback cut', () => {
+    // critique pass 136: alone/arctic-ii's real lede — the only em dash
+    // falls before minCut, so the raw word-boundary fallback used to
+    // land on "...in its twelfth…", a dangling adjective with no noun.
+    const lede =
+      'Season twelve returned to the Canadian Arctic — the environment that opened the Colby era — with a new cast and the format confidence of a show in its twelfth run. The second Arctic outing: same extreme demands, different survivalists.'
+    const result = clipToSeoBudget(lede)
+    expect(result).not.toMatch(/twelfth…$/)
+    expect(lede.startsWith(result.slice(0, -1))).toBe(true)
+  })
 })
 
 describe('canonicalUrl', () => {

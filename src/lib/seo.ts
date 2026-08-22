@@ -28,12 +28,58 @@ export const siteConfig = {
 // word-by-word in case more than one stop word chains together.
 const TRAILING_STOP_WORDS = new Set(['the', 'a', 'an', 'and', 'or', 'of', 'to'])
 
+// Season copy routinely spells out ordinals via the `{seasonOrdinalWord}`
+// token (phase 43) — "...in its twelfth run", "a show in its twentieth
+// season". A raw word-boundary cut can land right after one of these,
+// leaving a dangling adjective with no noun ("...in its twelfth…",
+// critique pass 136). Trim a trailing bare ordinal the same way as a
+// trailing stop word — bounded to the show catalog's realistic season
+// range (Survivor tops out at 50/51) so the check can't misfire on an
+// unrelated word.
+function buildOrdinalWords(): Set<string> {
+  const ones = [
+    'zeroth',
+    'first',
+    'second',
+    'third',
+    'fourth',
+    'fifth',
+    'sixth',
+    'seventh',
+    'eighth',
+    'ninth',
+  ]
+  const teens = [
+    'tenth',
+    'eleventh',
+    'twelfth',
+    'thirteenth',
+    'fourteenth',
+    'fifteenth',
+    'sixteenth',
+    'seventeenth',
+    'eighteenth',
+    'nineteenth',
+  ]
+  const tensCardinal = ['twenty', 'thirty', 'forty', 'fifty', 'sixty']
+  const tensOrdinal = ['twentieth', 'thirtieth', 'fortieth', 'fiftieth', 'sixtieth']
+  const words = new Set<string>([...ones, ...teens, ...tensOrdinal])
+  for (const tens of tensCardinal) {
+    for (let j = 1; j <= 9; j++) {
+      words.add(`${tens}-${ones[j]}`)
+    }
+  }
+  return words
+}
+
+const ORDINAL_WORDS = buildOrdinalWords()
+
 function trimTrailingStopWords(text: string): string {
   let result = text.replace(/[\s,;:—-]+$/, '')
   for (;;) {
     const lastSpace = result.lastIndexOf(' ')
     const lastWord = (lastSpace >= 0 ? result.slice(lastSpace + 1) : result).toLowerCase()
-    if (!TRAILING_STOP_WORDS.has(lastWord)) return result
+    if (!TRAILING_STOP_WORDS.has(lastWord) && !ORDINAL_WORDS.has(lastWord)) return result
     if (lastSpace < 0) return ''
     result = result.slice(0, lastSpace).replace(/[\s,;:—-]+$/, '')
   }
