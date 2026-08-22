@@ -16,7 +16,7 @@ cast_size: 5
 cast_size_caption: "Jeremiah Brent's second and final season in the design chair"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Five episodes — the shortest order in the show's history"
-filming_caption: "Washington, D.C., Montgomery County, and Northern Virginia"
+filming_caption: "The show's first season shot across three jurisdictions at once"
 ---
 
 Washington, D.C. closes out the series, and Netflix announced the ending mid-production — a farewell season by design, not one cut short by circumstance. Five episodes make it the shortest order the show has ever run, filmed across the capital, Montgomery County, and Northern Virginia rather than one city. Jeremiah Brent returns for a second and final round in the design chair. The compact length reads like a show choosing exactly how much room its goodbye needs.
