@@ -10247,3 +10247,46 @@ last time a curator actually looked.
   deleted the stale row entirely. No `content/themes/*.md` file
   written or edited this pass — ledger hygiene only, zero risk to
   published content.
+- **2026-08-22, cloud march tick (`/ship-content` Rule 3, further
+  same-day pass): zero-ship.** Re-confirmed Rule 2 stalled (CADENCE
+  gap table unchanged, all 43 gap-slots across 42 shows starred
+  confirmed-but-unaired). Deliberately avoided re-targeting the day's
+  five already-touched lists (`when-the-chairs-turned-over`,
+  `built-for-the-drop`, `season-one-doesnt-own-every-first`,
+  `when-scripted-went-dark`, `same-castle-different-clock-every-winter`)
+  and the four already-confirmed-dead concepts
+  (`the-pitch-names-where-the-idea-came-from`,
+  `the-calendar-moved-the-format-didnt`, `the-vote-left-the-phone-line`,
+  `one-season-two-flags`). Checked three fresh candidates via full
+  season-file reads: (1) `best-challenge-design` (craft, 17/24 —
+  real headroom) — Drag Race and MasterChef (US) challenge-mechanic
+  swings are both already staked verbatim by their own dedicated
+  single-show lists (`the-season-structure-never-holds-still`,
+  `every-season-tests-a-new-theory-of-the-kitchen`); any new entry
+  here would restate an already-shipped sibling fact. (2)
+  `the-diners-were-never-extras` (craft, 10/24) — tried a Below Deck /
+  Below Deck Mediterranean yacht-chef-under-guest-pressure angle;
+  read `below-deck` seasons 3 (Bahamas) and 8 (Antigua) plus
+  `below-deck-mediterranean` season 11 (Dubrovnik II) in full, none
+  carry a season-specific standout fact strong enough to clear
+  "every entry earns its slot" — rejected as too thin. (3)
+  `when-the-reward-pointed-somewhere-else` (craft, 11/24) — checked
+  AGT S17's Nightbirde tribute buzzer (in-episode narrative tribute,
+  not a stakes/prize redirection — different fact, rejected) and
+  grepped `charity|charitable|tribute|donat` across every season
+  file for other candidates (Apprentice S08/S11/S12/S14, Survivor
+  S35/S37, RHOD/RHOC/RHOBH, Naked and Afraid S19, ANTM S09) — the
+  non-Apprentice hits are docusoap charity-gala storylines off this
+  list's competition-stakes thesis entirely, and the Apprentice hits
+  restate S07's already-staked celebrity-charity-pivot fact rather
+  than adding a new one. Also spot-checked cross-canon saturation on
+  Project Runway, Queer Eye, The Voice, Shark Tank, and AGT — each
+  already carries a dedicated single-show or heavily-populated
+  cross-show list covering the obvious structural/casting/hosting
+  cuts. No `content/themes/*.md` file written or edited; no ledger
+  row changed. Consistent with issue #758's standing saturation
+  verdict — the catalog's actionable Rule-3 surface reads exhausted
+  again today for both keyword-driven and full-file-reading search.
+  The next unlock remains Rule 2 filing a new season, or an
+  oversight-authorized scout-research pass to reach facts outside
+  the repo's own season-file text.
