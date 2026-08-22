@@ -29,4 +29,4 @@ watch_list:
     body: "The competition thins to its strongest bakers. The showstoppers close out a series that never asked to be remembered for anything but the bakes."
 ---
 
-The Hammond continues, a third straight year with the same four faces and no format news. Alison Hammond and Noel Fielding worked their third run together, Prue Leith and Paul Hollywood anchored the bench, and the post-national themed-week format kept running exactly as it had the year before. Competent, comfortable, and the least distinctive of the three Hammond-era years — a stable watch more than a memorable one.
+No lineup change and no format news means no new entry point for a viewer looking for a hook — the tent-flap chemistry and the themed weeks ask to be taken on faith rather than discovered fresh. That's a fine trade for anyone who already loves the rhythm, and a flat one for anyone hoping this year would announce itself. Competent, comfortable, and the least distinctive of the three Hammond-era years — a stable watch more than a memorable one.
