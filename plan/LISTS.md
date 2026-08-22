@@ -10114,3 +10114,37 @@ last time a curator actually looked.
   is documented as keying on {tone, craft, era} — so `structure` lists may
   be silently exempt from the floor. All 14 are cross-show, none
   single-show. Reconcile on a future tick.
+
+- **2026-08-22, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship.** Re-confirmed both standing blockers: Rule 2
+  season-fill still stalled (`plan/CADENCE.md` — 42 shows/43 gap-slots,
+  every row starred confirmed-but-unaired; nearest finales 2026-08-23 and
+  2026-08-31, neither aired as of today) and no ledger row past the
+  90-day review floor (`survivor-pillars` closest, well under the ≥5-due
+  threshold). Read the full Ledger and the Ideas-log saturation tail
+  (issue #758's 18+-pass streak, 2026-08-13 through 2026-08-21) before
+  starting; did not re-walk any already-logged dead end. Independently
+  generated and grep-verified ~15 fresh candidate angles: network/show
+  rebrand mid-run (Ink Master S10, American Idol S16) — already shipped
+  at `new-network-same-rulebook`; elimination-round renaming (The
+  Challenge S08) — already the entire thesis of
+  `the-elimination-round-never-keeps-its-name`; show's-own-title rebrand
+  while staying on the same network (SYTYCD S13 "The Next Generation") —
+  only one catalog-wide hit, sub-floor; spinoff-launch/borrowing-back
+  (90 Day Fiancé, Vanderpump Rules, Below Deck Med, Ink Master Rivals) —
+  already shipped at `the-franchise-started-borrowing-from-itself`;
+  captain's-draft team-picking, sudden-death/coin-flip tiebreaks,
+  rotating single-guest-judge format — zero or single-show hits;
+  language-barrier-as-format-first (Real World Paris, Jersey Shore
+  Florence) — only 2 hits catalog-wide, sub-floor; wildcard/last-minute
+  casting replacement, companion recap podcast, single-location-only
+  season — zero hits catalog-wide. Every grounded angle either
+  duplicated an existing ledger entry's address or failed the
+  ≥3-distinct-show cross-canon floor. Net: no `content/themes/*.md` file
+  written or edited; no ledger row changed. Diligence-backed zero-ship,
+  consistent with issue #758's standing saturation verdict. Next unlock
+  remains Rule 2 filing a new season or an oversight-authorized
+  scout-research process. Redirected this tick to `plan/CRITIQUE.md`'s
+  highest-priority actionable Pending row instead (Vanderpump Rules
+  Season 1 `slot_argument` echo, pass-135 MED) — see `plan/AUDIT.md`
+  standing row and `plan/CRITIQUE.md` for the fix.
