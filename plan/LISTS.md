@@ -10148,3 +10148,42 @@ last time a curator actually looked.
   highest-priority actionable Pending row instead (Vanderpump Rules
   Season 1 `slot_argument` echo, pass-135 MED) — see `plan/AUDIT.md`
   standing row and `plan/CRITIQUE.md` for the fix.
+
+- **2026-08-22, content-curator direct invocation (`/ship-content` Rule 3
+  tick, second same-day pass): zero-ship.** Independently re-confirmed both
+  standing blockers before starting (Rule 2 season-fill stalled per
+  `plan/CADENCE.md` — every gap-table row starred; no ledger row past the
+  90-day review floor) and read the Ideas-log saturation tail (issue #758)
+  in full. Ran a fresh single-show census first: cross-referenced every
+  `category: single` file's first `show:` entry against all 67 catalog
+  shows via `category: single[\s\S]*?- show: (...)` greps. Confirmed the
+  same 7 under-covered shows the 2026-07-26 pass-4 identified
+  (`alone-australia`, `alone-frozen`, `alone-the-skills-challenge`,
+  `below-deck-adventure`, `below-deck-down-under`, `perfect-match`,
+  `rhodubai`) still can't clear the 10-entry single-show floor — none has
+  reached 10 aired seasons (highest is `below-deck-down-under` at 4
+  seasons; `perfect-match` at 4; the rest at 1-3). Then grepped six fresh
+  cross-show angles directly against `content/shows/**/*.md`, none of
+  which cleared the gate: (1) cross-franchise "imported face" casting
+  brief, independently rediscovered via a `crossover` grep hit on The
+  Apprentice S12 — rejected outright once read in full:
+  `familiar-faces-wrong-franchise` already ships that exact entry
+  verbatim, rank 8; (2) a "wildcard mechanic" cross-show angle (grepped
+  `wild ?card`: 4 shows hit — the-voice, dragrace-allstars, big-brother,
+  american-ninja-warrior) — rejected on read: the four hits are four
+  unrelated facts wearing the same word (a season subtitle whose body
+  text never mentions an actual wildcard mechanic, a house side-game
+  economy, a stated *absence* of a wildcard-invitation feature), no
+  shared thesis; (3) same-network night/timeslot move — grepped
+  `moved (to|from) a (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|
+  Sunday)`: 1 hit (bachelor-in-paradise), sub-floor; (4)
+  influencer/social-media-fame casting brief — grepped `influencer|TikTok
+  fame|social media following`: 2 shows (the-circle, amazing-race),
+  sub-floor; (5) post-9/11 tonal-shift era and political-unrest/
+  election-year filming backdrop — both grepped zero hits catalog-wide;
+  (6) world-record/real-world competitive record as a stated plot device
+  — zero hits. Net: no `content/themes/*.md` file written or edited this
+  tick; no ledger row changed. Consistent with issue #758's standing
+  saturation verdict — the catalog's blind grep-and-read search space
+  reads exhausted for a same-day third pass. Next unlock remains Rule 2
+  filing a new season or an oversight-authorized scout-research process.
