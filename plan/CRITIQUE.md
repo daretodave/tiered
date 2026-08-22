@@ -1,5 +1,41 @@
 # CRITIQUE
 
+> Last pass: 2026-08-22 at commit bf578316
+> Pass count: 136
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 136
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set outside the
+> recent rotation. Anon (5 URLs: `/`, `/shows/amazing-race/season/season-38`,
+> `/shows/love-is-blind`, `/themes`, `/themes/best-finales`) came back
+> clean across both viewports — zero console errors/failed requests,
+> zero mobile overflow, no spoiler leaks (including on the highest-risk
+> `/themes/best-finales` surface), spoiler-safe methodology copy
+> re-confirmed on Love Is Blind's canon block — 0 findings. Authed (4
+> URLs: `/shows/top-chef/season/carolinas`, `/shows/alone/season/arctic-ii`,
+> `/themes/best-hosting`, `/u/e2e`) surfaced 4 raw findings, 2 dropped
+> after self-assessment: the `/u/e2e` mobile "failed request" was
+> another `isRscPrefetchAbort()` false-positive class instance (see
+> pass-135 note on the same root cause, already tracked, not a new
+> site defect); the fourth ("couldn't exercise vote-pair post-click
+> state — e2e bot account has never voted") is a testing-coverage gap,
+> not a product bug, so not filed. Kept: a genuine live regression —
+> `/u/e2e/opengraph-image` 404s in production (confirmed via direct
+> `curl`, `x-matched-path: /_not-found`) even though the metadata
+> wiring pass-134 shipped (threading `image: \`/u/${handle}/opengraph-image\``
+> through `generateMetadata`) is present and unit tests for the route
+> pass locally — isolated to this one route family, since
+> `/shows/survivor/opengraph-image`, a season OG image, and a theme OG
+> image all return 200 live (HIGH); and a fresh instance of the
+> already-fixed-elsewhere mid-word meta-description truncation bug on
+> Alone S12 "The Arctic II" (`...format confidence of a show in its
+> twelfth…`, confirmed via curl against the live page, same defect
+> class as the resolved DWTS S34 clip — MED).
+>
+> ───── Pass 135 metadata kept below for history ─────
+>
 > Last pass: 2026-08-22 at commit 89380f86
 > Pass count: 135
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3383,6 +3419,10 @@
 > findings deduped by message.
 
 ## Pending
+
+- [ ] [HIGH] [authed] /u/e2e/opengraph-image — the per-profile social-card image route 404s live in production, even though the wiring is correct in source and unit tests for the route pass locally. `src/app/(default)/u/[handle]/opengraph-image.tsx` calls `getProfileActivity({ handle })` and hits `notFound()` when it returns null — confirmed via direct `curl -I https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 404`, `x-matched-path: /_not-found`, while `https://tiered.tv/u/e2e` itself returns 200 with populated profile content ("No votes yet" empty state, correctly reflecting the e2e bot account). This is a distinct, fresh manifestation from the pass-134 fix (which addressed `generateMetadata` never threading an `image:` argument through `buildMetadata()` — that fix is still present and correct): here the image-generation route itself fails to resolve the same handle that the page route resolves fine, in the same production request cycle. Isolated to this one route family — `/shows/survivor/opengraph-image`, a season OG image, and a theme OG image all confirmed 200 live via curl in the same pass. 21/21 unit tests in `src/app/(default)/u/[handle]/__tests__/opengraph-image.test.tsx` pass locally (they mock `getProfileActivity`, so they can't catch a live-only divergence). Fix: reproduce against the deployed runtime specifically — check whether `serviceRoleClient()` (in `src/lib/supabase/server.ts`, called by `getProfileActivity`) has a runtime-specific initialization issue under the image route's `export const runtime = 'nodejs'` context that differs from the page route's context (env var availability, cold-start timing, or an RPC error being silently swallowed into a null return rather than surfacing). No spoiler impact (profile-stat surface only). (URL: /u/e2e/opengraph-image, source: critique-pass-136)
+
+- [ ] [MED] [authed] /shows/alone/season/arctic-ii — the meta description is truncated mid-word, leaving a dangling adjective with no noun. Confirmed via `curl`: live `<meta name="description">` reads "...the format confidence of a show in its twelfth…" (159 chars). Source lede (`content/shows/alone/seasons/12-arctic-ii.md`) continues: "...the format confidence of a show in its twelfth run. The second Arctic outing: same extreme demands, different survivalists." — the truncation utility cuts at a fixed character budget instead of a word/clause boundary, landing between "twelfth" and "run." Same defect class as the already-fixed DWTS S34 description clip (pass-134), recurring here on a different page — the earlier fix addressed that one instance, not the underlying character-count truncation logic. Fix: find the shared SEO-description truncation helper (`clipToSeoBudget` or equivalent, referenced in the DWTS S34 fix) and make it truncate on the last word/clause boundary within budget rather than a hard character cutoff, so this defect class stops recurring page-by-page. Chrome/SEO-only, no spoiler impact. (URL: /shows/alone/season/arctic-ii, source: critique-pass-136)
 
 - [x] [MED] [anon] /shows/vanderpump-rules — the Season 1 canon entry's `slot_argument` ("WHY THIS SLOT" pull-quote) and the entry's own rationale paragraph, both rendering on the same page, share an 8-word verbatim clause. `slot_argument` (`content/shows/vanderpump-rules/canon.md`, "## 1. Season 1"): "A young waitstaff under Lisa Vanderpump treats SUR's actual chain of command as real stakes from the first episode, launching a format that outlasted nearly every other Bravo spinoff." Rationale paragraph, same section: "...it's how fast the show treats SUR's actual chain of command as real stakes, not just backdrop." Same defect class as the many already-fixed slot_argument/rationale and lede/body echoes elsewhere in the corpus (shark-tank S17, alone S12, the-circle S7, survivor-50, big-brother S27, real-world/atlanta, love-is-blind/columbus), now confirmed on a previously-unflagged show. Fix: rewrite `slot_argument` to argue why Season 1 tops the canon specifically (the format-founding significance, or what separates it from Season 6's own strong claim) instead of re-deriving the rationale paragraph's own chain-of-command clause. Content-only, one field in `content/shows/vanderpump-rules/canon.md`. Spoiler discipline P0 intact (format/premise facts only). (URL: /shows/vanderpump-rules, source: critique-pass-135) — RESOLVED (2026-08-22, cloud march tick): rewrote `slot_argument` to argue the format-founding/spinoff-proving significance and contrast it against Season 6's own scale claim, dropping the verbatim "chain of command as real stakes" clause entirely — no overlap with the rationale paragraph remains. Content-only, one field. Picked up per the established dispatch-starvation workaround (issue #758): Rule 2 (season-fill) confirmed still fully starred in `plan/CADENCE.md` (42 shows/43 gap-slots, nearest finales 2026-08-23 and 2026-08-31 unaired), Rule 3 (themed lists) confirmed exhausted for the day by an independent content-curator research pass (~15 fresh angles checked, all either already shipped or sub-floor) — rather than force a mediocre list, picked up the freshest actionable CRITIQUE.md MED finding instead.
 
