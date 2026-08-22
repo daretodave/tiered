@@ -2316,6 +2316,45 @@ export function collectEpisodesCaptionBareRestatementIssues(): Failure[] {
   return issues
 }
 
+// Critique pass-130 MED: the sibling defect to episodes_caption
+// bare-restatement above — the CAST SIZE stat tile already renders
+// `cast_size` as its own bold value, and 129 of 711 season files
+// across 19 shows open `cast_size_caption` with the same literal
+// digit (e.g. `cast_size: 12` / `cast_size_caption: "12 amateur
+// bakers in Hammond's third run"`). Unlike episodes_caption there is
+// no fixed trailing noun to anchor on (queens, bakers, players,
+// couples, chefs all appear) — the differentiator the corpus itself
+// draws is numeral-leading vs. spelled-out
+// (`cast_size_caption: "eighteen returning queens, three
+// six-queen brackets"` does not trip it), so this checks only
+// whether the caption opens on the literal numeral. Ships LAX during
+// the corpus drain — the toggle in main() below warns instead of
+// failing; subsequent `/ship-content` drain ticks rotate one show's
+// captions at a time to a genuinely distinct fact, mirroring the
+// episodes_caption lax→strict precedent exactly. See
+// plan/CRITIQUE.md pass-130.
+function isCastSizeCaptionBareRestatement(castSize: number, caption: string): boolean {
+  const trimmed = caption.trim()
+  const pattern = new RegExp(`^~?${castSize}\\b`, 'i')
+  return pattern.test(trimmed)
+}
+
+export function collectCastSizeCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.cast_size || !season.cast_size_caption) continue
+      if (!isCastSizeCaptionBareRestatement(season.cast_size, season.cast_size_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `cast_size_caption "${season.cast_size_caption}" opens by restating the CAST SIZE stat tile's own value (${season.cast_size}) instead of adding a distinct fact — the same defect class as the resolved episodes_caption drain (pass-95/117/118), on a sibling field that check doesn't cover. Rewrite to lead with a genuinely new detail (a casting-structure fact, a returnee/newcomer split, a franchise-first) the way the corpus's clean examples already do (e.g. spelling out the count and pairing it with new information — "Eighteen returning queens, three six-queen brackets"). See plan/CRITIQUE.md pass-130.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3356,6 +3395,22 @@ function main(): number {
     failures.push(...episodesCaptionBareRestatementIssues)
   } else {
     for (const issue of episodesCaptionBareRestatementIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Critique pass-130 MED: ships LAX during the corpus drain — 129 of
+  // 711 season files across 19 shows tripped this invariant at filing.
+  // Drain ticks rotate one show's cast_size_caption at a time, mirroring
+  // the episodes_caption lax→strict precedent; the final drain tick
+  // flips CAST_SIZE_CAPTION_BARE_RESTATEMENT_STRICT to true.
+  const CAST_SIZE_CAPTION_BARE_RESTATEMENT_STRICT = false
+  const castSizeCaptionBareRestatementIssues =
+    collectCastSizeCaptionBareRestatementIssues()
+  if (CAST_SIZE_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...castSizeCaptionBareRestatementIssues)
+  } else {
+    for (const issue of castSizeCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

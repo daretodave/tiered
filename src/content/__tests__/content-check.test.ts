@@ -19,6 +19,7 @@ import {
   collectBrandSpellingIssues,
   collectCanonRationaleDanglingPossessiveIssues,
   collectCalendarFailures,
+  collectCastSizeCaptionBareRestatementIssues,
   collectClicheRepetitionIssues,
   collectCrossShowIssues,
   collectEditorialBylineSingularIssues,
@@ -6539,6 +6540,102 @@ describe('content-check — episodes_caption bare ep_count restatement (critique
       ep_count: '13',
     })
     expect(collectEpisodesCaptionBareRestatementIssues()).toEqual([])
+  })
+})
+
+describe('content-check — cast_size_caption bare cast_size restatement (critique pass-130)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-cast-size-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that opens with the bare digit cast_size value ("12 amateur bakers...")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      cast_size: '12',
+      cast_size_caption: '"12 amateur bakers in a settled lineup"',
+    })
+    const issues = collectCastSizeCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restating the CAST SIZE stat tile/)
+    expect(issues[0]!.message).toMatch(/pass-130/)
+  })
+
+  it('flags a leading-tilde approximate restatement ("~300 competitors at the qualifier")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      cast_size: '300',
+      cast_size_caption: '"~300 competitors at the qualifier"',
+    })
+    const issues = collectCastSizeCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+  })
+
+  it('does NOT flag a spelled-out count paired with a distinct fact ("Eighteen returning queens, three six-queen brackets")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      cast_size: '18',
+      cast_size_caption: '"Eighteen returning queens, three six-queen brackets"',
+    })
+    expect(collectCastSizeCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does NOT flag a caption where the matching number appears mid-sentence rather than at the opener ("A settled lineup, 12 amateur bakers deep")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      cast_size: '12',
+      cast_size_caption: '"A settled lineup, 12 amateur bakers deep"',
+    })
+    expect(collectCastSizeCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no cast_size_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      cast_size: '12',
+    })
+    expect(collectCastSizeCaptionBareRestatementIssues()).toEqual([])
   })
 })
 

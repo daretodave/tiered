@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Unchanged since 2012 — ten episodes, a fourteenth year at that length."
 cast_size: 12
-cast_size_caption: "12 amateur bakers in Hammond's third run"
+cast_size_caption: "Twelve amateur bakers, competing solo — no team or pairing mechanic."
 host_caption: "Noel Fielding and Alison Hammond, their third series together"
 watch_list:
   - episode_label: "Ep 1 · the lineup, unchanged"
