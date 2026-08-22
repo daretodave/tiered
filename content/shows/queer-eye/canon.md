@@ -102,7 +102,7 @@ tag: The deliberately compact farewell — five episodes, announced as the final
 slot_argument: The shortest episode order the show has ever run works against it by this canon's own logic — more room has consistently ranked higher — even though the brevity here is a considered send-off, not a shortfall.
 community_rank_hint: rank=9 delta=0 sentiment=hold
 
-Washington, D.C. is a fitting goodbye — Netflix announced the ending mid-production, and the season plays like a show choosing exactly how it wants to close rather than a run trailing off. But this canon has consistently rewarded room: Philadelphia's extra two episodes over Kansas City, Austin's ten-episode length, all argued for seasons that let their conversations breathe. Five episodes, the shortest order in the show's history, is the opposite move, and even as an intentional creative choice for a send-off, it gives the season less space to work with than any standard-length run before it. Warm, tightly curated, and still ranked below the format at full length.
+Washington, D.C. is a fitting goodbye, and this canon still ranks it on room, not sentiment. Philadelphia's extra two episodes over Kansas City, Austin's ten-episode length — this canon has consistently rewarded seasons that let their conversations breathe. Five episodes, the shortest order in the show's history, is the opposite move, and even as a considered creative choice for a send-off, it gives the season less space to work with than any standard-length run before it. Warm, tightly curated, and still ranked below the format at full length.
 
 ## 8. New Orleans II
 
