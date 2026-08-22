@@ -35,7 +35,7 @@ era_bands:
 ## 1. Season 1
 
 tag: The founding season that set SUR's floor plan as real stakes — before the franchise existed.
-slot_argument: A young waitstaff under Lisa Vanderpump treats SUR's actual chain of command as real stakes from the first episode, launching a format that outlasted nearly every other Bravo spinoff.
+slot_argument: Vanderpump Rules' founding season, proving a Real Housewives spinoff could carry its own show before any of the format's later growth — Season 6's expansion included — ever put that premise to the test.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season 1 opens with total confidence in its premise: a young waitstaff working under Lisa Vanderpump at SUR, her West Hollywood restaurant, introduced through the Real Housewives of Beverly Hills universe. What makes the debut season work isn't the spinoff pedigree — it's how fast the show treats SUR's actual chain of command as real stakes, not just backdrop. Promotions and Vanderpump's own standards for her staff carry as much weight as any personal storyline, and the ensemble reads like actual coworkers rather than a cast assembled for cameras. Ten seasons of expansion since haven't replaced what Season 1 nailed first, which is why it still tops this canon.
