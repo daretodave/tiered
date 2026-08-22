@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-21
+last_revised: 2026-08-22
 featured: false
 related:
   - pandemic-seasons
@@ -103,10 +103,16 @@ entries:
     rank: 15
     title: "Fourteen returning designers premiere six weeks into the WGA walkout"
     blurb: "Season twenty premieres June 15, 2023, reuniting a veterans-only cast with no single host — mentor Christian Siriano and the judges panel carry the season instead. The workroom's returning-cast rhythm never needed a writers' room to keep it running."
+  - show: rhony
+    season: 14
+    season_label: "S14"
+    rank: 16
+    title: "A full-cast reboot premieres two days into the second, added strike"
+    blurb: "Season fourteen's five-Housewife reboot premieres July 16, 2023, two days after SAG-AFTRA joins the WGA's already-running walkout. An entirely new cast carries the franchise's identity while Bravo's unscripted machine keeps running through the labor stoppage."
   - show: love-island-us
     season: 5
     season_label: "S05"
-    rank: 16
+    rank: 17
     title: "A second Peacock season settles in four days after the SAG-AFTRA strike begins"
     blurb: "Season five premieres July 18, 2023, joining the still-running WGA walkout on the actors' side too, while the daily-drop Peacock format settles into a confident, repeatable groove in its second cycle. A nightly unscripted format never needed a picket line to slow the drops."
 ---
