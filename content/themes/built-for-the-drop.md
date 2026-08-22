@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-15
+last_revised: 2026-08-22
 featured: false
 related:
   - moving-day
@@ -31,82 +31,88 @@ entries:
     rank: 3
     title: "Twelve episodes, three staggered drops — a release rhythm that mirrors an app-based game."
     blurb: "The Circle's debut doesn't binge-drop or run weekly — the season lands across three staggered batches, a cadence that echoes the app's own rating game: information trickling out, never all at once."
-  - show: selling-sunset
+  - show: dragrace-uk
     season: 1
     season_label: "S01"
     rank: 4
+    title: "A show's home channel doesn't actually broadcast anything"
+    blurb: "BBC Three had gone iPlayer-only years before Series 1 premiered, so the UK edition never had a linear time slot to answer to in the first place — just a platform queue, the same non-broadcast logic every other entry on this list runs on."
+  - show: selling-sunset
+    season: 1
+    season_label: "S01"
+    rank: 5
     title: "An eight-episode brokerage debut built for one sitting."
     blurb: "Selling Sunset's first season isn't paced for a network hour — it's a full-season drop designed to be finished in a weekend. The docusoap rhythm of listings and office friction rewards watching it all at once."
   - show: too-hot-to-handle
     season: 1
     season_label: "S01"
-    rank: 5
+    rank: 6
     title: "An AI host and a full-season drop arrive as one package."
     blurb: "Too Hot to Handle's debut needs no weekly wait to plant its own mythology — Lana's rule and the whole villa cast land in a single batch, a shrinking-prize gimmick that plays better in one sitting than parceled out."
   - show: the-ultimatum
     season: 1
     season_label: "S01"
-    rank: 6
+    rank: 7
     title: "A blunt premise gets a blunt release: the whole season, all at once."
     blurb: "Netflix's first run at this format doesn't ease viewers in over weeks — six couples' ultimatums land in one complete drop. A premise this direct suits a release that rewards finishing in a single sitting."
   - show: perfect-match
     season: 1
     season_label: "S01"
-    rank: 7
+    rank: 8
     title: "A crossover cast drawn from other platforms' castoffs, released the same way."
     blurb: "Perfect Match pulls its cast from across Netflix's dating slate and ships its own debut the same way — a full season at once, no weekly rollout slowing down contestants who already know how these shows end."
   - show: below-deck-down-under
     season: 1
     season_label: "S01 · Whitsundays"
-    rank: 8
+    rank: 9
     title: "The franchise's first non-Bravo-first season plants its flag on a streaming schedule."
     blurb: "Below Deck Down Under launches on Peacock rather than Bravo's Monday-night slot, giving the Whitsundays debut a release rhythm none of its yacht-charter siblings had to answer to."
   - show: love-is-blind
     season: 2
     season_label: "S02 · Chicago"
-    rank: 9
+    rank: 10
     title: "A second full-season drop proves the binge model wasn't a fluke."
     blurb: "Chicago repeats Atlanta's release shape exactly — one Netflix batch, no weekly wait — and a more confident season proves the format's binge-native pacing was a choice, not an accident of the debut."
   - show: too-hot-to-handle
     season: 2
     season_label: "S02"
-    rank: 10
+    rank: 11
     title: "The follow-up trades the full-batch drop for a staggered rollout."
     blurb: "Season two keeps Lana's rule but changes how the audience receives it — ten episodes arrive in a staggered release instead of one batch, the format's first real experiment with pacing its own reveal."
   - show: selling-sunset
     season: 2
     season_label: "S02"
-    rank: 11
+    rank: 12
     title: "A bigger roster, the same one-sitting release."
     blurb: "Selling Sunset's second season grows its cast without touching its release shape — eight episodes land together, same as season one. The bet is that a bigger ensemble still holds up watched in one stretch."
   - show: the-circle
     season: 2
     season_label: "S02"
-    rank: 12
+    rank: 13
     title: "Weekly Wednesday batches replace the staggered launch of season one."
     blurb: "The Circle's second season swaps its three-drop debut cadence for a steadier weekly-batch release — a middle path between a full-season dump and a network hour, still shaped by the platform, just tuned differently."
   - show: traitors
     season: 2
     season_label: "S02"
-    rank: 13
+    rank: 14
     title: "The breakout season splits the difference: a launch drop, then a weekly wait."
     blurb: "Season two opens with a three-episode Peacock drop, then shifts to weekly for the rest of the run — a platform-native format borrowing linear TV's patience-testing rhythm for the run that cemented the show's reputation."
   - show: traitors
     season: 3
     season_label: "S03"
-    rank: 14
+    rank: 15
     title: "The three-episode-then-weekly drop from season two holds again, now the house rhythm, not a launch experiment."
     blurb: "Season three keeps the three-episode Peacock drop before switching to weekly — the same shape season two introduced. Back-to-back seasons on that rhythm turn a launch choice into the format's standing house style."
   - show: too-hot-to-handle
     season: 5
     season_label: "S05"
-    rank: 15
+    rank: 16
     title: "A fifth season settles into three release batches, no single-day drop, no new mechanic to chase."
     blurb: "Season five runs ten episodes across three scheduled batches — the same staggered rhythm the platform had already settled on, no full-day dump in sight. Lana's rule holds exactly as before; only the release clock keeps ticking to its own schedule."
   - show: queer-eye
     season: 1
     season_label: "S01 · Georgia"
-    rank: 16
+    rank: 17
     title: "Ten seasons of Fab Five makeovers, one release rhythm the whole time"
     blurb: "The reboot's Georgia debut lands as a single Netflix batch, and the platform never once revisits the choice — every season since, new city or not, still drops the same way. No staggered rollout, no single-day reversal, just the same full-season release since 2018."
 ---
