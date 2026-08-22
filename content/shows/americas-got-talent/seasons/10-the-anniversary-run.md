@@ -13,6 +13,17 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "10th anniversary, embedded panel"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Seventh season at the helm"
+watch_list:
+  - episode_label: "Auditions · Drew Lynch's Golden Buzzer"
+    body: "Howie Mandel presses his Golden Buzzer for comedian Drew Lynch, whose stand-up set works his own stutter into the act itself."
+  - episode_label: "Auditions · a duet buzzer"
+    body: "Howard Stern's Golden Buzzer goes to dance duo Freckled Sky."
+  - episode_label: "Auditions · a gospel voice"
+    body: "Mel B's Golden Buzzer goes to gospel and soul singer Sharon Irving."
+  - episode_label: "Auditions · a classical voice"
+    body: "Heidi Klum's Golden Buzzer goes to opera singer Arielle Baril."
+  - episode_label: "Format · the buzzer goes to the guest chairs"
+    body: "For the first time, the rotating guest judges who sit in for the audition rounds get their own Golden Buzzer to press — expanding the mechanic beyond the four permanent judges for the anniversary season."
 ---
 
 Season ten is the anniversary the format was due. Howard Stern, Howie Mandel, Mel B, and Heidi Klum run their second year together, and the panel chemistry is settled and functional. The audition rounds are broad, the live competition moves with practiced efficiency, and the milestone framing gives the production a sense of occasion without disrupting what works. A confident mid-era season that delivers the open-call promise without needing to reinvent it.
