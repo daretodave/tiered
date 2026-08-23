@@ -39,7 +39,7 @@ tag: The foundational document — an open call that invented its own grammar.
 slot_argument: Season one arrives with no template, Regis Philbin anchoring a panel through auditions from virtuosic to chaotic. The open-call promise is loudest when nobody has defined what the format will accept.
 community_rank_hint: { rank: 2, delta: 0, sentiment: hold }
 
-The first season earns the second slot as the format's foundational document. Regis Philbin brought the gravitas of a broadcast-era host to a show that was genuinely uncertain what it was going to find on its stage, and the judging panel of Piers Morgan, Sharon Osbourne, and David Hasselhoff had no inherited template to follow. That absence of precedent is the season's defining quality — the open-call promise felt most alive before the format knew its own ceiling. Acts auditioned without understanding what the competition wanted, and the judging responses landed with a freshness the show spent years trying to recapture. The debut grammar held.
+The first season earns the second slot as the format's foundational document. Regis Philbin brought the gravitas of a broadcast-era host to a show that was genuinely uncertain what it was going to find on its stage, and the judging panel of Piers Morgan, Brandy Norwood, and David Hasselhoff had no inherited template to follow. That absence of precedent is the season's defining quality — the open-call promise felt most alive before the format knew its own ceiling. Acts auditioned without understanding what the competition wanted, and the judging responses landed with a freshness the show spent years trying to recapture. The debut grammar held.
 
 ## 3. The Format Settles
 
