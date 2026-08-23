@@ -118,6 +118,26 @@ rows [dragrace, dragrace-allstars] = 44). Every slot remains starred
 `plan/AUDIT.md` / `plan/LISTS.md` for where the tick falls through to
 next.
 
+**Same-day drain, 2026-08-23 cloud march tick (finale-gate pickup):**
+`scripts/finale-gate.mjs` filed a post-finale row for `rhoa` season 17
+off this same sweep's own `calendar.yml` correction (finale aired
+2026-08-02). Investigation found the row's "ranking-shift note" framing
+didn't fit — season 17 had never been filed at all (frontmatter still
+read `seasons: 16`, no `17-*.md` file existed), so this was a genuine
+Rule 2 gap that had just gone from starred (confirmed-but-unaired) to
+actionable (aired and substantively complete — regular season concluded,
+only the three-part reunion remains). Scout-researched public-record
+facts (premiere 2026-04-05, 17 episodes, Bravo; full cast overhaul —
+both season-16 anchors Kandi Burruss and Kenya Moore departed; six
+returning Housewives plus two new full-time additions, K. Michelle and
+Pinky Cole; Scotland cast trip) and filed `17-the-clean-slate.md`.
+`canon.md` rebased: Season 17 inserted at rank 16 (loses both anchors,
+but its two new additions carry established public profiles rather than
+a mismatched fit — argued against neighbor Season 8's anchor-loss
+precedent), Season 8 shifted 16→17. Frontmatter `seasons: 16→17`. `rhoa`
+row removed from the gap table below — show fully drained at 17/17.
+Gap 44→43 gap-slots, 44→43 shows carrying a gap.
+
 **Sixth full weekly sweep, 2026-08-16 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (same 3 pre-existing tracked
@@ -744,7 +764,6 @@ new-show creation is locked to the biweekly show-add clock.
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
 | dancing-with-the-stars | 34/35 | 1* |
-| rhoa | 16/17 | 1* |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
 | below-deck | 12/13 | 1* |
