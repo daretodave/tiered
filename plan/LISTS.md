@@ -10106,6 +10106,68 @@ last time a curator actually looked.
 
 ## Notes
 
+- **2026-08-23, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, additional same-day pass following the two zero-ships
+  already logged today): zero-ship.** Re-confirmed both standing
+  blockers before starting: Rule 2 still stalled (`plan/CADENCE.md` —
+  43 shows/gap-slots, every row starred confirmed-but-unaired) and no
+  ledger row past the 90-day review floor (`survivor-pillars` still
+  the oldest `last_reviewed` at 2026-07-31, well under the ≥5-due
+  threshold for a review batch). Excluded the six lists already
+  touched today (`when-the-chairs-turned-over`, `built-for-the-drop`,
+  `season-one-doesnt-own-every-first`, `when-scripted-went-dark`,
+  `same-castle-different-clock-every-winter`,
+  `the-anchor-count-set-the-ceiling`) and did not re-walk the four
+  already-confirmed dead ends (`the-pitch-names-where-the-idea-came-
+  from`, `the-calendar-moved-the-format-didnt`,
+  `the-vote-left-the-phone-line`, `one-season-two-flags`) or the two
+  2026-08-22 single-pass rejects (`best-challenge-design`,
+  `the-diners-were-never-extras`, `when-the-reward-pointed-somewhere-
+  else`). Re-ran the sub-10-entry census via
+  `grep -c '^  - show:' content/themes/*.md` (182 files) and confirmed
+  the same result as this morning's earlier pass — every sub-floor row
+  is `category: single` and mathematically capped at its show's full
+  aired-season count; no headroom exists until Rule 2 files a new
+  season. Chased four fresh cross-show candidates from scratch, all
+  rejected on inspection: (1) **reunion-special quality for a show not
+  yet on `best-reunion-specials`** — read every `reunion`-mentioning
+  season file for shows absent from that list (RHOA S10/S12, RHOP S10,
+  RHOM S02–S07, RHOC S08/S14–S19, RHONJ S07); RHOP S10's "three-part
+  reunion" is a regression from S06's already-staked four-part peak at
+  `the-reunion-kept-changing-its-own-rules` (rhop already appears there
+  3x) and reads as a step down, not a fresh craft fact; the RHOM
+  `host_caption: "Andy Cohen hosts the reunion"` lines are boilerplate
+  across all six seasons, too thin to ground an entry; RHOC S08's "the
+  reunion is notable" line in its own body text is too vague to stake
+  without inventing detail; RHONJ S07's "reunion of longtime
+  characters" refers to a cast member's on-season return, not a taped
+  reunion special, off-thesis. (2) **post-Super Bowl premiere
+  scheduling** — grepped `Super Bowl` across every season file: only
+  two hits, both Survivor (S02, S08), sub-floor for a cross-canon list
+  and too thin a fact pair to justify a new `category: single`
+  Survivor list on top of the show's existing several. (3) **Olympic
+  athletes recruited as a casting brief** — found a genuinely
+  cross-show pattern (The Apprentice S06, Survivor Australia S03,
+  Dancing with the Stars S06/S08/S10/S18/S23) but a full grep of
+  `Olymp` across every `content/themes/*.md` showed the entire
+  territory already exhaustively mined: `some-casts-didnt-need-week-
+  one` (single, DWTS, 6 of its own entries), `one-rule-fills-every-
+  seat` (DWTS S26 rank 5, S18 rank 14), `the-format-answered-to-a-
+  different-name` (The Apprentice S06 rank 5, the identical
+  Olympian-for-name-recognition fact drafted independently here), and
+  `sorted-before-they-landed` (Survivor Australia S03 rank 2, the
+  identical elite-athletes-vs-everyday-Australians casting-split
+  fact) — every candidate entry was already staked, most
+  near-verbatim. (4) **production disrupted by weather/natural
+  disaster** — grepped `hurricane|wildfire|evacuat|typhoon|earthquake`
+  and `\bstorm\b` across every season file: one hit each (The Real
+  World S24, Bachelor in Paradise S07), both single-show, sub-floor.
+  Also spot-checked drone/aerial cinematography and HD-broadcast
+  production-technology angles (near-zero hits) and a double-elimination
+  format-mechanic angle (2 hits, one show). No `content/themes/*.md`
+  file written or edited; no ledger row changed. Diligence-backed
+  zero-ship, consistent with issue #758's standing saturation verdict.
+
 - **2026-08-23, cloud march tick (`/ship-content` Rule 3, content-curator
   direct invocation): zero-ship, one significant finding surfaced.**
   Rule 2 still stalled (`plan/CADENCE.md` — 43 shows/gap-slots, every
