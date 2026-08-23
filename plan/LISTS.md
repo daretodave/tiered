@@ -10541,3 +10541,41 @@ last time a curator actually looked.
   next unlock remains Rule 2 filing a new season, or an oversight-
   authorized scout-research process to reach facts outside the repo's own
   season-file text.
+- **2026-08-23, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation, sixth same-day pass): zero-ship.** Re-confirmed both
+  standing blockers before starting: Rule 2 still structurally stalled
+  (`plan/CADENCE.md` — every gap-slot starred, confirmed-but-unaired) and
+  no ledger row past the 90-day review floor (`survivor-pillars` still
+  oldest `last_reviewed` at 2026-07-31, 23 days old). Read the Ledger's
+  condensed slug/category/date index plus this Notes tail (today's five
+  prior passes and the 2026-08-22/21/15 exhaustive sweeps) before starting,
+  to avoid re-walking confirmed dead ends. Fresh candidates chased and
+  rejected this pass, all via direct `content/shows/**/seasons/*.md` and
+  `content/themes/*.md` greps rather than trusting ledger prose:
+  charity/donation as a casting or format angle (15 hits across Real
+  World, The Challenge, The Apprentice, RHOD, RHOBH, Drag Race All Stars,
+  Chopped, American Idol — rejected as either a constant across a show's
+  own run, not a varying single-season fact, or scattered incidental
+  mentions too thin to ground a cross-show structural list); a
+  live-finale/live-broadcast extend onto `live-without-a-net` via Ink
+  Master S11's "Grudge Match" live coach-vs-coach finale (rejected — the
+  season's own `pull`/`lede` foreground the Cleen-vs-Christian personal
+  history as the primary hook, not the live-broadcast fact, and Ink
+  Master already holds a clean three-entry invents/sequel/closes arc
+  there); companion mobile app or interactive voting app (zero hits
+  catalog-wide); rotating/guest judge panel as a structural first (27
+  hits, almost entirely Chopped's own recurring format language already
+  exhaustively mined, plus SYTYCD entries already staked elsewhere);
+  alumni returning as producers/crew rather than judges/coaches (zero
+  hits); guest mentor distinct from guest judge (1 hit, American Idol
+  S24, sub-floor); clip show or flashback episode as format filler (zero
+  hits); crossover episode or cast guest-appearing on another network
+  show (1 hit, Chopped S61, sub-floor); stunt/influencer casting language
+  (zero hits). Also re-confirmed the RHOA well tapped by today's earlier
+  extend: `the-anchor-count-set-the-ceiling` sits at a mathematically
+  capped 17-of-17 seasons with zero headroom. No `content/themes/*.md`
+  file written or edited this pass; no ledger row changed. Sixth
+  consecutive same-day zero-ship pass, consistent with issue #758's
+  standing saturation verdict. The next unlock remains Rule 2 filing a
+  new season, or an oversight-authorized scout-research process to reach
+  facts outside the repo's own season-file text.
