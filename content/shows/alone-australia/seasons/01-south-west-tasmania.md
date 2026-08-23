@@ -14,7 +14,7 @@ pull: "No host, no crew, no precedent in Australia — just ten survivalists and
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists, each self-documenting with provided cameras"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists — the founding cast, with no prior playbook to follow."
 premiere_caption: "SBS · March 2023"
 filming_caption: "South West Tasmania · founding shoot for the Australian format"
 episodes_caption: "Twelve episodes — one shorter than the West Coast Range return three years later"

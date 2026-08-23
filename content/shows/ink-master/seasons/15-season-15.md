@@ -16,7 +16,7 @@ format_caption: "15 rookies split into teams, reshuffled mid-season"
 premiere_caption: "Paramount+ · fall 2023"
 episodes_caption: "Ten episodes for a second straight season at the shorter, Madden-era length."
 cast_size: 15
-cast_size_caption: "15 new artists, the first all-rookie field since Season Twelve"
+cast_size_caption: "Fifteen new artists, the first all-rookie field since Season Twelve."
 host_caption: "Joel Madden's second season at the helm"
 watch_list:
   - episode_label: "Premiere · a field of first-timers"

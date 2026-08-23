@@ -16,7 +16,7 @@ format_caption: "Lana narrows the field to three, cast votes by ballot"
 premiere_caption: "Netflix · June 2021"
 episodes_caption: "Ten episodes, released in staggered batches across the summer."
 cast_size: 15
-cast_size_caption: "15 singles across the season, including late arrivals"
+cast_size_caption: "Fifteen singles across the season, including several late arrivals."
 host_caption: "Second season with Lana at the helm"
 filming_caption: "Filmed at the Turtle Tail estate, Providenciales"
 watch_list:

@@ -14,7 +14,7 @@ pull: "The fjord terrain, the temperate rainforest, the sheer scale — Fiordlan
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists, first international location"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists — the first cast to film outside Australia."
 premiere_caption: "SBS · March 2024"
 filming_caption: "Fiordland · first shoot outside Australia"
 episodes_caption: "Ten episodes — the tightest run of the three Australian seasons filed so far"

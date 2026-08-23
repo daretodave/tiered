@@ -19,7 +19,7 @@ premiere_caption: "Spike · summer 2015"
 episodes_caption: "Sixteen episodes for a second straight season at the Rivals-era length."
 filming_caption: "American Museum of Natural History, Brooklyn Museum, US Custom House"
 cast_size: 18
-cast_size_caption: "18 artists paired across a mentor/apprentice structure"
+cast_size_caption: "Eighteen artists, paired mentor/apprentice on location at NYC landmarks."
 host_caption: "Dave Navarro's sixth season at the helm"
 watch_list:
   - episode_label: "Premiere · the pairings are set"

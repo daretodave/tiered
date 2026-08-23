@@ -17,7 +17,7 @@ format_caption: "Peck and Núñez draft and coach rival teams rather than judge 
 premiere_caption: "Spike · fall 2016"
 episodes_caption: "Sixteen episodes again, the longer count returning with the team-draft format."
 cast_size: 30
-cast_size_caption: "30 artists drafted across two judge-led teams"
+cast_size_caption: "Thirty artists — the largest cast the format has ever run."
 host_caption: "Dave Navarro's eighth season at the helm"
 watch_list:
   - episode_label: "Premiere · the draft"

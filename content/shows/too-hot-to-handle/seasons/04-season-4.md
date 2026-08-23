@@ -16,7 +16,7 @@ format_caption: "Cast believes they're filming an unrelated series"
 premiere_caption: "Netflix · December 2022"
 episodes_caption: "Ten episodes bring new workshop and trust-test challenges to the format."
 cast_size: 14
-cast_size_caption: "14 singles, staggered entry throughout the season"
+cast_size_caption: "Fourteen singles, entering the villa in staggered waves."
 host_caption: "Fourth season with Lana at the helm"
 watch_list:
   - episode_label: "Ep 1 · a different show entirely"

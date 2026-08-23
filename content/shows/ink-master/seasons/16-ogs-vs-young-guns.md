@@ -17,7 +17,7 @@ format_caption: "OGs (10+ years) vs. Young Guns, trimmed by a pre-season selecti
 premiere_caption: "Paramount+ · fall 2024"
 episodes_caption: "Ten episodes, a third consecutive season at the format's current standard."
 cast_size: 16
-cast_size_caption: "16 artists split by experience, four cut before teams form"
+cast_size_caption: "Sixteen artists, with eliminated peers voting formally for the first time."
 host_caption: "Joel Madden's third season at the helm"
 watch_list:
   - episode_label: "Premiere · the selection round"

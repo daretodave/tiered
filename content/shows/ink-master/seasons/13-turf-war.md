@@ -16,7 +16,7 @@ format_caption: "20 artists in four regional squads, each captained by a returni
 premiere_caption: "Paramount Network · winter 2020"
 episodes_caption: "Fifteen episodes, one shorter than the five-season run at sixteen it followed."
 cast_size: 20
-cast_size_caption: "20 artists split across four veteran-led regional squads"
+cast_size_caption: "Twenty artists, filming through the pandemic's earliest production disruptions."
 host_caption: "Dave Navarro's thirteenth season at the helm"
 watch_list:
   - episode_label: "Premiere · four squads take shape"

@@ -16,7 +16,7 @@ format_caption: "A counterpart AI inverts the no-penalty rule for stretches of t
 premiere_caption: "Netflix · July 2024, staggered release"
 episodes_caption: "Ten episodes end with a prize payout split across multiple winners, a first."
 cast_size: 16
-cast_size_caption: "16 singles, including two returning alumni"
+cast_size_caption: "Sixteen singles, including two returning alumni from earlier seasons."
 host_caption: "Sixth and final season with Lana at the helm"
 watch_list:
   - episode_label: "Ep 1 · the villa moves again"

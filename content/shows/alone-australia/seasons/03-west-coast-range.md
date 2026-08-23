@@ -14,7 +14,7 @@ pull: "The West Coast Range brought production confidence and a deeper cast pool
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists, return to Australian wilderness"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists, drawn from a candidate pool three years deep."
 premiere_caption: "SBS · March 2025"
 filming_caption: "West Coast Range · Tasmania return with a deeper cast pool"
 episodes_caption: "Thirteen episodes, the longest of the three Australian seasons to date"

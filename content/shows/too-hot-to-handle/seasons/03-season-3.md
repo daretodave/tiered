@@ -16,7 +16,7 @@ format_caption: "Winning couple and winning single split a doubled pot"
 premiere_caption: "Netflix · January 2022, full-season drop"
 episodes_caption: "Ten episodes, all landing in one sitting instead of a staggered wait."
 cast_size: 15
-cast_size_caption: "15 singles enter across the season"
+cast_size_caption: "Fifteen singles, competing for a doubled $200,000 prize pool."
 host_caption: "Third season with Lana at the helm"
 watch_list:
   - episode_label: "Release day · all ten episodes at once"
