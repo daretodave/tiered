@@ -10474,3 +10474,70 @@ last time a curator actually looked.
   (or a finale-gate pickup like this morning's RHOA S17), or an
   oversight-authorized scout pass to reach facts outside the repo's own
   season-file text.
+- **2026-08-23, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation, fifth same-day pass): zero-ship.** Re-confirmed both
+  standing blockers before starting: Rule 2 still structurally stalled
+  (`plan/CADENCE.md` — 43 shows/43 gap-slots, every row starred
+  confirmed-but-unaired) and no ledger row past the 90-day review floor
+  (`survivor-pillars` still oldest `last_reviewed` at 2026-07-31). Read all
+  four of today's prior passes in full and did not re-walk any of their
+  confirmed dead ends (six lists already touched today, the four
+  long-standing dead-end concepts, the sub-10-entry single-show census, the
+  reunion/Olympic-athlete/weather checks). Took the brief's suggestion to
+  mine canon.md rationale prose directly rather than season lede/pull/body,
+  reading the "first season to..." sentences across several heavily-canon'd
+  shows (90 Day Fiancé, Jersey Shore, Chopped, Married at First Sight,
+  Selling Sunset, Southern Charm, Vanderpump Rules, The Real World, The
+  Voice). Surfaced a genuinely fresh candidate axis: **an unplanned
+  mid-season cast/contestant departure** — The Real World S02
+  (`02-los-angeles.md`, "first season with a cast eviction and
+  replacement," a roommate leaves and is replaced mid-run), The Real World
+  S03 (`03-san-francisco.md`, a second consecutive mid-run replacement),
+  RHOP S02 (`02-season-2.md`, Katie Rost's run "ends partway through
+  filming"), and Jersey Shore S02 (`02-miami.md`, "one roommate departs
+  partway through, leaving seven to carry the rest of the season") were
+  all confirmed genuinely unclaimed via full `content/themes/*.md` greps
+  on each show/season pair. Widened the search catalog-wide for
+  injury/illness/withdrawal language and found only two more hits total —
+  Drag Race UK S06 (knee injury, no-elimination week) and So You Think You
+  Can Dance S06 (illness withdrawal, late replacement) — but both of those
+  turned out to be **already claimed, verbatim, in the existing
+  `the-schedule-didnt-ask-permission` list** (craft, 12/24 entries, ranks 5
+  and 6 respectively — "A contestant's knee injury forces a no-elimination
+  week nobody built into the format" / "A World Series scheduling collision
+  and a late illness withdrawal test a broadcast experiment"). That list's
+  thesis is specifically *outside-world-forced* production disruption
+  (strikes, injuries, investigations, pandemic protocol, border closures,
+  a real-world legal matter) — read all 12 of its existing entries in full
+  to confirm scope before deciding whether to extend it with the four
+  unclaimed candidates above. Declined: Real World S02/S03's roommate
+  replacements, RHOP S02's cast departure, and Jersey Shore S02's roommate
+  exit are ordinary voluntary/production cast-turnover decisions, not
+  events where "the outside world got a vote in how the format ran" — the
+  season files themselves don't cite a strike, injury, investigation, or
+  comparable external cause for any of the four. Folding them into
+  `the-schedule-didnt-ask-permission` would blur its sharp thesis rather
+  than extend it. Taken together, even every instance this angle can
+  generate catalog-wide — the four unclaimed plus the two already-claimed
+  — totals only six grounded entries across five shows, short of the
+  10-entry floor for a standalone new list regardless of the thesis
+  question. Also chased, more briefly, a "billed as the final/farewell
+  season" marketing-framing angle after spotting the phrase in three canon
+  files (RHOD, American Idol, Queer Eye) — fully saturated on inspection:
+  RHOD S05 and Queer Eye S10 are already `closing-statement` entries, and
+  American Idol S15's "Farewell Season" framing is already staked verbatim
+  in `new-network-same-rulebook` rank 9. Also grepped and rejected as
+  sub-floor or thesis-mismatched: fan-vote/write-in mechanics (zero hits
+  catalog-wide), mid-season episode-order extensions (zero hits),
+  premiere dates moved to dodge a real-world broadcast event (zero hits),
+  seasons filmed back-to-back with their successor (two hits, Queer Eye
+  and The Circle, no shared thesis), and virtual/zoom-taped reunions (two
+  hits, both RHOA, single-show and thin). No `content/themes/*.md` file
+  written or edited this pass; no ledger row changed. Fifth consecutive
+  same-day zero-ship pass, consistent with issue #758's standing
+  saturation verdict — a genuinely new axis (unplanned mid-season cast
+  departure) was found and fully chased down, and it converges on an
+  already-mature list's exact thesis rather than opening new ground. The
+  next unlock remains Rule 2 filing a new season, or an oversight-
+  authorized scout-research process to reach facts outside the repo's own
+  season-file text.
