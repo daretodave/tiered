@@ -48,6 +48,7 @@ vi.mock('next/navigation', () => ({
 import OpenGraphImage, {
   alt,
   contentType,
+  dynamic,
   runtime,
   size,
 } from '../opengraph-image'
@@ -78,6 +79,10 @@ beforeEach(() => {
 describe('segment-config exports — Next.js static analysis contract', () => {
   it('exports runtime = "nodejs" — the route hits Supabase via the server client, not edge-safe by convention with its content-layer siblings', () => {
     expect(runtime).toBe('nodejs')
+  })
+
+  it('exports dynamic = "force-dynamic" — without generateStaticParams this dynamic-segment route is otherwise static-eligible, and would permanently cache whichever response (including a stale notFound 404) the first request produced; mirrors the sibling page.tsx guard (critique pass-136)', () => {
+    expect(dynamic).toBe('force-dynamic')
   })
 
   it('exports size = { width: 1200, height: 630 } — the OpenGraph 1.91:1 ratio Twitter + Facebook expect', () => {
