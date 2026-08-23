@@ -246,8 +246,26 @@ test.describe('vote state pill — public never sees the pill', () => {
     // suffix names the count as a tally, and the integer is
     // still the distinct voter count (matches the ShiftCard's
     // `vote_count` framing). Tridirectional drift guard.
+    //
+    // AUDIT bug (2026-08-23, filed via #785/#787): this file runs
+    // in the same worker/order as `user-profile.spec.ts`, which
+    // casts (and never retracts) a vote on this same SEASON_TARGET.
+    // This spec's own "clicking up flips the pill" test can then
+    // retract that residual vote, so the true server-side count for
+    // SEASON_TARGET is not deterministic from this test's point of
+    // view — it depends on cross-file execution order. Rather than
+    // assume a nonzero count (VotePair renders the distinct
+    // `zeroLabel` "be the first to vote" instead of "N votes so far"
+    // when the count is 0 — see `VotePair.tsx`), branch on the
+    // count the anon API read itself just reported, the same way
+    // the "clicking up" test above branches on the observed
+    // post-click state instead of assuming one outcome.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).toHaveText(/votes? so far$/)
+    if (Number(api.count) === 0) {
+      await expect(label).toHaveText('be the first to vote')
+    } else {
+      await expect(label).toHaveText(/votes? so far$/)
+    }
     const labelText = (await label.textContent()) ?? ''
     expect(labelText).not.toMatch(/net votes?/)
     expect(labelText).not.toMatch(/^community votes?$/)
