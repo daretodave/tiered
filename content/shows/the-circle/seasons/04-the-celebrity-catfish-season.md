@@ -17,7 +17,7 @@ format_summary: "Rate-and-block · celebrity cameo"
 format_caption: "Guest celebrities play catfish to grow the prize, not to win it"
 premiere_caption: "Netflix · May 2022"
 episodes_caption: "Thirteen episodes raise the prize pool to $150,000 for the first time"
-cast_size_caption: "13 players, several already active on social media"
+cast_size_caption: "Thirteen players, several already active on social media"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "Same Manchester apartment complex as Seasons 2 and 3"
 watch_list:

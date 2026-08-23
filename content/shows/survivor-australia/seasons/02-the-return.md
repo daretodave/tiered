@@ -15,7 +15,7 @@ pull: "The second visit to Samoa brought tighter storytelling and a cast that ca
 format_summary: "Sole survivor · tribal council"
 format_caption: "24-player cast, returning location"
 cast_size: 24
-cast_size_caption: "24 players across two tribes"
+cast_size_caption: "Twenty-four players, the second cast to play the Australian format"
 premiere_caption: "Network 10 · 2017"
 filming_caption: "Second Samoa run with a steadier production hand"
 episodes_caption: "Twenty-six episodes, the format's second run in Samoa"

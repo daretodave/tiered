@@ -16,7 +16,7 @@ pull: "The sequel format carried less discovery than the Queensland original, bu
 format_summary: "Brains vs. Brawn II · Samoa · merge twist"
 format_caption: "Second Brains V Brawn installment with mid-game twist"
 cast_size: 24
-cast_size_caption: "24 new players across two tribes"
+cast_size_caption: "Twenty-four players, the Brains-vs-Brawn archetype divide's second cast"
 premiere_caption: "Network 10 · 2025"
 filming_caption: "Samoa, LaPaglia's final full-length season at the helm"
 episodes_caption: "Twenty-four episodes, LaPaglia's final full-length season"

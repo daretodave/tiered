@@ -17,7 +17,7 @@ format_summary: "Rate-and-block · Joker twist"
 format_caption: "A secret Joker shapes newcomers' first impressions before the group finds out"
 premiere_caption: "Netflix · April 2021"
 episodes_caption: "Thirteen episodes introduce a secret Joker twist"
-cast_size_caption: "11 players enter the Manchester building"
+cast_size_caption: "Eleven players, the first season to introduce a secret Joker twist"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "Filmed back-to-back with Season 3 in Salford, Greater Manchester"
 watch_list:

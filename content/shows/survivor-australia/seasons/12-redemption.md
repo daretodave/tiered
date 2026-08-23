@@ -15,7 +15,7 @@ pull: "A new host, a new twist, a new chapter. The Redemption Beach mechanic add
 format_summary: "Redemption Beach twist · new host · Samoa"
 format_caption: "Voted-out players can re-enter via Redemption Beach"
 cast_size: 24
-cast_size_caption: "24 players across two tribes"
+cast_size_caption: "Twenty-four players, the first cast under new host David Genat"
 premiere_caption: "Network 10 · 2026"
 filming_caption: "Samoa, opening chapter of the Genat hosting era"
 episodes_caption: "Twenty-four episodes, David Genat's debut as host"

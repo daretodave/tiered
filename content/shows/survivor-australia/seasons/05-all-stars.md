@@ -15,7 +15,7 @@ pull: "The all-returnee premise gave the show its most recognizable cast to date
 format_summary: "All Stars · returnees · Fiji"
 format_caption: "Full returnee cast, all prior Australian seasons"
 cast_size: 24
-cast_size_caption: "24 returning players"
+cast_size_caption: "Twenty-four returnees, drawn from the show's first four seasons"
 premiere_caption: "Network 10 · 2020"
 filming_caption: "Fiji, under 2020 production constraints for the all-returnee cast"
 episodes_caption: "Twenty-five episodes, the first all-returnee cast"

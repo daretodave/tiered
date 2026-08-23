@@ -15,7 +15,7 @@ pull: "Twenty-four players on a Samoan beach, the format finding its Australian 
 format_summary: "Sole survivor · tribal council"
 format_caption: "24-player cast, longer episode format"
 cast_size: 24
-cast_size_caption: "24 players across two tribes"
+cast_size_caption: "Twenty-four players, the first cast Australian Survivor ever fielded"
 premiere_caption: "Network 10 · 2016"
 filming_caption: "Samoa · the format's Australian identity assembled from scratch"
 episodes_caption: "Twenty-six episodes, built around a 24-player Samoan cast"

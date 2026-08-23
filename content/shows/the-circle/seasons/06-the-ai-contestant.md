@@ -17,7 +17,7 @@ format_summary: "Rate-and-block · AI contestant"
 format_caption: "An AI-generated player competes disguised behind a real human's photo"
 premiere_caption: "Netflix · April 2024"
 episodes_caption: "Thirteen episodes introduce Max, an AI contestant hiding behind a real photo"
-cast_size_caption: "11 players, cast revealed one day before premiere"
+cast_size_caption: "Eleven players, cast revealed one day before premiere"
 host_caption: "{seasonOrdinalWord} season with Michelle Buteau at the helm"
 filming_caption: "First season filmed on the new Atlanta, Georgia set"
 watch_list:

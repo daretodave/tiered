@@ -16,7 +16,7 @@ pull: "Seven Australian players against seven international Survivor veterans �
 format_summary: "Anniversary crossover · Australia vs international cast"
 format_caption: "7 Australians vs 7 international Survivor returnees · 16-day game"
 cast_size: 14
-cast_size_caption: "14 players: 7 Australian veterans, 7 international castaways"
+cast_size_caption: "Fourteen players — seven Australian veterans, seven international castaways"
 premiere_caption: "Network 10 · 2025"
 filming_caption: "Samoa, the tenth-anniversary crossover's compressed 16-day game"
 episodes_caption: "Ten episodes, a 16-day anniversary crossover format"
