@@ -68,8 +68,8 @@ entries:
     title: "Bigger costumes raised the bar the reveal had to clear"
     blurb: "Season six committed fully to theatrical spectacle, mounting the format's most elaborate costumes yet. The bigger the build, the more the moment underneath it had to deliver — and the disguise conceit held anyway."
   - show: americas-got-talent
-    season: 6
-    season_label: "S06 · The Stern Era Begins"
+    season: 7
+    season_label: "S07 · The Stern Era Begins"
     rank: 10
     title: "A sharper judge raised the stakes of every live reaction"
     blurb: "Howard Stern's arrival at the table made each act's unscripted reception feel like it actually mattered. Clearing his bar read as a real verdict rather than a formality, and that reaction became the season's most quoted material."

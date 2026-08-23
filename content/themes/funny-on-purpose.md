@@ -51,10 +51,10 @@ entries:
     blurb: "Howie Mandel's comic instincts complete a three-judge dynamic the founding seasons had been chasing, and a wider audition pool gives the panel plenty to riff on. The show starts feeling like a real competition and a genuine bit at the same time."
   - show: americas-got-talent
     season: 7
-    season_label: "S07 · The Panel in Stride"
+    season_label: "S07 · The Stern Era Begins"
     rank: 7
-    title: "A settled panel turns its shorthand into real comic chemistry"
-    blurb: "A second year together lets Howard Stern's precision, Sharon Osbourne's warmth and Howie Mandel's comic instincts develop actual rapport instead of performed disagreement. The table runs like a well-worn bit rather than three strangers finding their footing."
+    title: "A new voice at the table finds its comic footing fast"
+    blurb: "Howard Stern's precision plays off Sharon Osbourne's warmth and Howie Mandel's comic instincts from his first episode on, and the three find real rapport within a single season rather than needing years to develop it. The table runs like a bit that clicked immediately."
   - show: shark-tank
     season: 8
     season_label: "S08"

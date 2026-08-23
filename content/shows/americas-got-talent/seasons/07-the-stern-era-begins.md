@@ -1,16 +1,16 @@
 ---
 show: americas-got-talent
 number: 7
-title: "The Panel in Stride"
+title: "The Stern Era Begins"
 premiere_date: 2012-05-14
 location: New Jersey / Hollywood, California
 host: Nick Cannon
-canonical_position: 8
-eyebrow: "Aired summer 2012 · Stern–Osbourne–Mandel, second year together"
-lede: "The Stern-era panel runs its second season together. The chemistry between Howard Stern, Sharon Osbourne, and Howie Mandel is more settled, the shorthand is sharper, and the audition circuit benefits from a judging table that knows its own mind."
-pull: "Year two of the sharpest panel in the show's run — the critique has developed a groove, and the auditions are better for it."
+canonical_position: 6
+eyebrow: "Aired summer 2012 · Howard Stern joins, sharpest panel of the era"
+lede: "Howard Stern replaces Piers Morgan as judge, bringing celebrity credibility and a willingness to say uncomfortable truths about acts that aren't ready for prime time. Sharon Osbourne and Howie Mandel remain, and the panel dynamic shifts immediately."
+pull: "The judging table got sharper, the critique got more honest, and the show found a voice it had been circling since the debut."
 format_summary: "Variety competition · open audition · viewer vote"
-format_caption: "established panel, full run"
+format_caption: "panel reset, new critical voice"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Fourth season at the helm"
 watch_list:
@@ -24,4 +24,4 @@ watch_list:
     body: "A National Guard sergeant's audition, built around a stated combat-related stutter, draws public scrutiny after the Associated Press and the Minnesota National Guard dispute his account — a rare moment where the audition circuit's claims meet real-world fact-checking."
 ---
 
-Season seven runs the same panel as the year before, and familiarity pays off. Howard Stern, Sharon Osbourne, and Howie Mandel have developed real working shorthand — Stern's precision, Osbourne's warmth, Mandel's comic instincts. Disagreements feel genuine rather than performed. The audition pool runs wide, and the live rounds move with the confidence of a format that knows its own shape. A strong mid-era season that holds the show's credibility without trying to reset it.
+Howard Stern's arrival as judge changes the panel's center of gravity from his first episode. Stern brings a different standard of critique — direct, informed, often the sharpest read in the room — while Sharon Osbourne and Howie Mandel hold over, providing range and warmth alongside him. The three-way dynamic reads sharper than anything the founding era produced. Acts that clear Stern's bar feel genuinely earned, and the open-call promise lands with more credibility now that the critique has teeth.

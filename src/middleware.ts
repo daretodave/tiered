@@ -66,6 +66,31 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(url, 308)
   }
 
+  // 2026-08-23 cloud march — AUDIT.md bug fix. The americas-got-talent
+  // season files carried a systemic off-by-one on Howard Stern's real
+  // arrival (S07, not S06/S09 as previously written), which cascaded
+  // into two now-incorrect season slugs. Renamed both files to match
+  // the corrected facts; these permanent redirects keep old links live.
+  if (
+    request.nextUrl.pathname ===
+    '/shows/americas-got-talent/season/the-panel-in-stride'
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/shows/americas-got-talent/season/the-stern-era-begins'
+    url.search = ''
+    return NextResponse.redirect(url, 308)
+  }
+
+  if (
+    request.nextUrl.pathname ===
+    '/shows/americas-got-talent/season/the-long-third-year'
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/shows/americas-got-talent/season/the-panel-reshapes'
+    url.search = ''
+    return NextResponse.redirect(url, 308)
+  }
+
   const auth0Response = await auth0.middleware(request)
 
   // Auth-route paths return a redirect / 200 directly — don't stamp

@@ -7,7 +7,7 @@ location: New Jersey / Hollywood, California
 host: Nick Cannon
 canonical_position: 11
 eyebrow: "Aired summer 2016 · Simon Cowell joins, panel identity resets"
-lede: "Simon Cowell replaces Howard Stern as judge, shifting the panel's critical center after five Stern-era seasons. The panel now runs Cowell, Mel B, Howie Mandel, and Heidi Klum — a new four-way dynamic with a sharper industry perspective at the table."
+lede: "Simon Cowell replaces Howard Stern as judge, shifting the panel's critical center after four Stern-era seasons. The panel now runs Cowell, Mel B, Howie Mandel, and Heidi Klum — a new four-way dynamic with a sharper industry perspective at the table."
 pull: "A new critical voice at the judging table gives the format a second-act energy it had been missing since the Stern years peaked."
 format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel reset, Simon Cowell joins"

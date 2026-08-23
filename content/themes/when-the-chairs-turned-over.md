@@ -32,8 +32,8 @@ entries:
     title: "A new host, mentor, and judges' table try to prove the workroom is what matters."
     blurb: "The reboot rebuilds almost every chair at once, top to bottom. The season's whole argument is whether the format survives a full personnel change, and the Manhattan workroom is what carries it."
   - show: americas-got-talent
-    season: 9
-    season_label: "S09"
+    season: 8
+    season_label: "S08"
     rank: 4
     title: "The panel adds two new voices and doesn't miss a beat."
     blurb: "Sharon Osbourne exits and Mel B and Heidi Klum arrive alongside Howard Stern and Howie Mandel, expanding the table from three seats to four for the first time. The bigger panel produces more contrast, not more chaos."
@@ -60,7 +60,7 @@ entries:
     season_label: "S11"
     rank: 8
     title: "A new judge resets the panel's center of gravity."
-    blurb: "Simon Cowell replaces Howard Stern after five seasons at the desk, trading a broadcaster's precision for an industry executive's read on commercial appeal. Mel B, Howie Mandel, and Heidi Klum hold their seats, and the new dynamic finds its footing fast."
+    blurb: "Simon Cowell replaces Howard Stern after four seasons at the desk, trading a broadcaster's precision for an industry executive's read on commercial appeal. Mel B, Howie Mandel, and Heidi Klum hold their seats, and the new dynamic finds its footing fast."
   - show: masterchef
     season: 6
     season_label: "S06"

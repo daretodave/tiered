@@ -48,8 +48,8 @@ entries:
     season: 6
     season_label: "S06"
     rank: 6
-    title: "A sharper judging panel debuts the same year NBC's parent company changes hands"
-    blurb: "Season six premieres August 16, 2011, roughly six months after Comcast's deal for NBCUniversal officially closes. Howard Stern's arrival at the judging table is the season's real headline; the corporate handoff upstairs isn't part of the pitch."
+    title: "A quiet, unchanged season debuts the same year NBC's parent company changes hands"
+    blurb: "Season six premieres August 16, 2011, roughly six months after Comcast's deal for NBCUniversal officially closes. On screen, nothing at the judging table changes from the year before — the biggest ownership shift in NBC's history isn't part of the pitch either."
   - show: top-chef
     season: 9
     season_label: "S09 · Texas"

@@ -30,7 +30,7 @@ entries:
     season_label: "S06"
     rank: 3
     title: "Five seasons of one address end here"
-    blurb: "Howard Stern's arrival gets the headline, but season six also marks the first time New Jersey joins the record alongside Hollywood, closing out five consecutive seasons filmed at a single California address. The geography stops being a given."
+    blurb: "Nothing changes at the judging table this year, but season six marks the first time New Jersey joins the record alongside Hollywood, closing out five consecutive seasons filmed at a single California address. The geography stops being a given."
   - show: americas-got-talent
     season: 15
     season_label: "S15"
@@ -42,7 +42,7 @@ entries:
     season_label: "S09"
     rank: 5
     title: "The East Coast stretch holds for a second year"
-    blurb: "A reshaped judging panel shares the season with a location record still reading New Jersey and New York City only, Hollywood absent for a second straight year. The geography commitment matches the panel's — both still mid-experiment."
+    blurb: "The Golden Buzzer's debut gives a settled four-judge panel something new to do, while the location record still reads New Jersey and New York City only, Hollywood absent for a second straight year. The format changes; the address doesn't."
   - show: americas-got-talent
     season: 10
     season_label: "S10"
