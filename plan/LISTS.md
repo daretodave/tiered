@@ -10106,6 +10106,58 @@ last time a curator actually looked.
 
 ## Notes
 
+- **2026-08-23, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation): zero-ship, one significant finding surfaced.**
+  Rule 2 still stalled (`plan/CADENCE.md` — 43 shows/gap-slots, every
+  row starred confirmed-but-unaired). No ledger row 90-day review-due
+  (oldest `last_reviewed` still 2026-07-18, 36 days out). Census of
+  every sub-10-entry ledger row via `grep -c '^  - show:' content/themes/
+  *.md` across all 182 theme files found nearly every one is a
+  `category: single` list already mathematically capped at its show's
+  full aired-season count (`seven-ways-to-break-the-same-app` 7/7,
+  `it-took-five-seasons-to-find-a-home` 8/8,
+  `the-quiet-register-was-the-whole-point-until-ibiza` 5/5,
+  `home-seasons-waited-relocation-seasons-didnt` 6/6,
+  `the-series-the-uk-edition-finally-made-its-own` 7/7,
+  `the-blueprint-gets-rewritten-every-winter` 4/4,
+  `some-seasons-rebuild-the-roster-others-just-move-the-furniture` 9/9)
+  — no headroom until Rule 2 files a new season for any of them. The
+  four already-logged deep-dead-end rows (`one-season-two-flags`,
+  `the-calendar-moved-the-format-didnt`, `the-vote-left-the-phone-line`,
+  `the-pitch-names-where-the-idea-came-from`, all re-confirmed dead as
+  recently as 2026-08-21) were not re-walked. Mined RHOA S17 "The Clean
+  Slate" (`content/shows/rhoa/seasons/17-the-clean-slate.md`, already
+  staked once today at `the-anchor-count-set-the-ceiling` rank 17) for a
+  second distinct fact against six candidate sibling lists
+  (`the-cast-arrived-pre-famous` — era_range [2016,2023] excludes a 2026
+  season; `away-from-home-turf` — Scotland stretch too thin relative to
+  the season's own anchor-departure framing, and RHOA already holds 2
+  slots there; `the-couch-kept-adding-chairs` — same 7→8 headcount fact
+  already staked at `the-anchor-count-set-the-ceiling`, would double-dip;
+  `milestones-spent-not-marked` — not a round-number season;
+  `a-guest-spot-with-room-to-grow` — K. Michelle/Pinky Cole are external
+  hires, not internal promotions, off-thesis; `the-competition-leaves-
+  the-country` — thesis is judged competitions relocating operations,
+  doesn't fit a docusoap) — all six rejected. **Surfaced instead: a
+  likely near-duplicate list pair already live on the site.**
+  `same-castle-different-clock-every-winter` (created 2026-08-22) and
+  `new-house-rules-every-time-the-castle-reopens` (created 2026-07-23)
+  both single-show-rank the same four Traitors UK series on
+  substantially the same four underlying facts (S01 founding/no-US-
+  version-yet, S02 cast-scale-vs-structural-stasis, S03 thrice-weekly
+  broadcast-cadence compression, S04 the Uncloaked companion-show
+  pairing) — reworded but not editorially distinct, ~100% entry overlap
+  against the bearings Rule 3 excellence gate's >40% threshold. The
+  2026-08-22 ledger note authoring `same-castle-different-clock-every-
+  winter` claimed a full `traitors-uk` grep returned zero prior
+  appearances, which appears to have been a diligence error — `new-
+  house-rules-every-time-the-castle-reopens` plainly carries `show:
+  traitors-uk` and predates it by a month (already logged as 4/4 capped
+  in this file's 2026-08-21 entry). Filed as a fresh `plan/AUDIT.md`
+  finding rather than resolved in this tick — retiring, merging, or
+  re-angling one of two live list pages is an editorial call with
+  URL/redirect implications beyond a single extend-or-new-list pass.
+
 - **Category enum drift (filed as an AUDIT row 2026-07-12; corrected
   2026-08-08 fortieth pass):** 14 live lists carry `category: structure`
   (not the "4" originally logged here) while bearings Rule 3 +
