@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-08-16 | next due 2026-08-23 |
+| season-sweep | 7 days | 2026-08-23 | next due 2026-08-30 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,100 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Seventh full weekly sweep, 2026-08-23 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows,
+cross-checked against the filesystem (same 3 pre-existing tracked
+frontmatter/filed mismatches recur — `90-day-fiance` 11/12,
+`american-ninja-warrior` 17/18, `married-at-first-sight` 19/20 — none
+actionable this pass). **Two genuine new gaps found, both officially
+confirmed via a single TVLine report (mid-August 2026):** `dragrace`
+Season 19 renewed at MTV (no premiere date yet, pattern suggests
+~January 2027) and `dragrace-allstars` Season 12 renewed at Paramount+
+(no premiere date). The All Stars 12 claim is notable because this
+exact show carried a false-positive on this exact claim on 2026-08-02
+(traced to fan-wiki speculation, no primary source) — this time the
+claim was verified by fetching the TVLine article directly, which
+explicitly states both renewals ("RuPaul's Drag Race has been renewed
+for Season 19 at MTV, TVLine has learned" / "RuPaul's Drag Race All
+Stars has also been renewed for Season 12 at Paramount+") — treated as
+confirmed. Added as `dragrace | 18/19 | 1*` and `dragrace-allstars |
+11/12 | 1*`.
+
+**One long-carried table artifact corrected.** `hells-kitchen` has
+carried a "+1 extra deferred slot" (`24/26, 2*`) across every sweep
+since at least the fourth pass, with no sweep ever identifying what
+the second slot represented. This pass's scout batch checked
+Wikipedia's full episode list (S20 through S24, no skipped or
+unnumbered seasons) and found no evidence of a second unfilled season
+between S24 and the already-tracked S25 (confirmed premiering
+2026-09-24). Frontmatter/filed both sit at 24/24 — the show is fully
+drained through S24, one gap (S25) exists, not two. Corrected to
+`hells-kitchen | 24/25 | 1*`.
+
+**Two calendar.yml corrections.** `below-deck-mediterranean` S11's
+finale date was carried at 2026-08-24 (flagged uncertain by the prior
+sweep) — TV Guide's official episode listing resolves this: the season
+runs 15 episodes, not the previously assumed count, and the true
+finale ("Episode #11.15") airs **2026-09-14**. Corrected in
+`content/calendar.yml`. `rhoa` S17's calendar row read `finale_date:
+2026-08-23, status: scheduled`, but that date is actually the third
+part of the post-finale reunion special — the finale itself
+(episode 17) already aired **2026-08-02** per a dated recap. Corrected
+to `finale_date: 2026-08-02, status: aired` so the finale-detection
+gate (phase 39) can pick it up. **One calendar.yml addition:**
+`90-day-fiance` S12's finale was carried (in prose, not yet in the
+calendar file) at 2026-08-23 (episode 16), but the schedule shows the
+season runs to episode 20 — the true finale is expected **~2026-09-20**
+(titles TBA for the final episodes). Added to `content/calendar.yml`
+as `scheduled`.
+
+**Two newly-aired-but-not-yet-actionable seasons, deferred (matches
+already-filed catalog state, no gap-table row needed).** `alone-
+australia` S4 premiered 2026-07-15 (SBS, first-ever Arctic/Finland
+setting) — already correctly starred in the table below at `3/4, 1*`,
+just confirming it has now begun airing (no finale date yet).
+`rhoc` S20 premiered 2026-07-09 (Bravo) — already correctly starred at
+`19/20, 1*`, no finale date published yet.
+
+**Reconfirmed no-action (numbering/speculation artifacts, same
+resolved pattern as prior sweeps):** `chopped`'s recurring "Season
+63/64" indexing artifact resurfaced again alongside the already-known
+"Chopped Castaways" spinoff (out of scope, new-show creation locked)
+— same source-confusion pattern closed 2026-07-16, not reopened.
+`survivor-australia`'s Wikipedia numbering (season 14 overall = our
+season 12 under Network 10's convention) reconfirmed, no content
+missing. `masterchef-australia` S18 confirmed concluded (grand finale
+aired 2026-08-09, per multiple AU outlets) — already fully drained
+mid-air by the 2026-08-09 sweep, calendar.yml already correctly reads
+`aired`. `the-ultimatum` S4 (July 2026) already fully filed by the
+2026-07-22 Rule 2 pick — the general web still surfaces this as
+"new," but our catalog is current. `dragrace-allstars` S11 (aired
+May–July 2026) already fully filed, `married-at-first-sight-
+australia` S13 already fully filed and matches the season that
+concluded Apr 2026 — no action on either.
+
+**Flagged, no table action (confirmation genuinely absent or too far
+out to file):** `masked-singer` S15 is now confirmed delayed out of
+fall 2026 entirely, targeting Q1 2027 — stays starred, no date to add
+yet. `bake-off` Series 17's previously-assumed 2026-09-09 date is
+**not actually Channel 4-confirmed** — filming wrapped 2026-08-16,
+current best guesses cluster around 2026-09-01/09-02, but no official
+date exists; do not lock in 09-09 next time this row is touched.
+`below-deck` S13, `below-deck-down-under` S5, `love-is-blind` S11,
+`rhop` S11, `rhonj` S15, `selling-sunset` S10, `southern-charm` S12,
+`summer-house` S11, `vanderpump-rules` S13, `traitors-uk` S5, `top-
+chef` S24, and `the-circle` S8 (moving to Hulu with a celebrity-cast
+format overhaul, per Deadline June 2026) all remain confirmed-but-
+unaired with no firm premiere date — each already correctly starred
+in the existing 42 rows, no table change.
+
+**68 shows catalogued · 44 shows carry a gap · 44 gap-slots total**
+(43 pre-existing rows − 1 hells-kitchen extra-slot correction + 2 new
+rows [dragrace, dragrace-allstars] = 44). Every slot remains starred
+(confirmed-but-unaired); zero actionable Rule 2 work this tick — see
+`plan/AUDIT.md` / `plan/LISTS.md` for where the tick falls through to
+next.
 
 **Sixth full weekly sweep, 2026-08-16 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
@@ -663,7 +757,9 @@ new-show creation is locked to the biweekly show-add clock.
 | project-runway | 21/22 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
-| hells-kitchen | 24/26 | 2* |
+| hells-kitchen | 24/25 | 1* |
+| dragrace | 18/19 | 1* |
+| dragrace-allstars | 11/12 | 1* |
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | 90-day-fiance | 11/12 | 1* |
@@ -2389,3 +2485,4 @@ No calendar or gap-table action.
 | 2026-08-02 | 11 (dragrace-allstars S11 claim corrected same-day — false positive, see notes — + 11 newly confirmed-but-unaired; a pre-existing duplicate alone-australia row also deduped) | 46 |
 | 2026-08-09 | 1 (top-chef S24, newly confirmed-but-unaired; chopped's recurring "S63/S64" false positive re-flagged, not reopened) | 47 |
 | 2026-08-16 | 0 (every one of the 42 starred rows reconfirmed; two calendar.yml date/status corrections and a traitors "New Blood" disambiguation surfaced, no gap-table change — see notes) | 43 |
+| 2026-08-23 | 2 (dragrace S19 + dragrace-allstars S12, both officially confirmed via a single TVLine report — the All Stars 12 claim corrects the show's 2026-08-02 false positive with a genuine primary-source renewal this time; hells-kitchen's long-carried "+1 extra deferred slot" artifact corrected to 1, no second missing season ever existed) | 44 |

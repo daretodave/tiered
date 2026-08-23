@@ -66,15 +66,15 @@ finales:
     status: scheduled
   - show: rhoa
     season: 17
-    finale_date: 2026-08-23
-    status: scheduled
+    finale_date: 2026-08-02
+    status: aired
   - show: married-at-first-sight
     season: 20
     finale_date: 2026-08-27
     status: scheduled
   - show: below-deck-mediterranean
     season: 11
-    finale_date: 2026-08-24
+    finale_date: 2026-09-14
     status: scheduled
   - show: alone
     season: 13
@@ -88,3 +88,7 @@ finales:
     season: 18
     finale_date: 2026-08-09
     status: aired
+  - show: 90-day-fiance
+    season: 12
+    finale_date: 2026-09-20
+    status: scheduled
