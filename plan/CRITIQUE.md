@@ -1,5 +1,52 @@
 # CRITIQUE
 
+> Last pass: 2026-08-23 at commit b856e2eb
+> Pass count: 138
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 138
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set targeting the
+> AGT off-by-one/watch_list fix and the one-rule-fills-every-seat
+> reorder. Anon (5 URLs: `/`, `/shows/americas-got-talent/season/the-panel-holds`,
+> `/shows/americas-got-talent`, `/themes/one-rule-fills-every-seat`,
+> `/shows/rhoa/canon`) came back mechanically clean (0 console errors, 0
+> failed requests, 0 mobile overflow, no spoiler leaks) but surfaced one
+> real follow-on gap from the pass-137 judge-name fix: `canon.md`'s
+> `tier_s_blurb` (the S-tier founding-era summary) still reads "a
+> judging panel (Morgan, Osbourne, Hasselhoff, then Mandel)" with no
+> mention of Brandy Norwood, who actually held the seat Osbourne is
+> credited with for Season 1 — the pass-137 fix only touched the
+> slot-#02 rationale, not this separate tier-level summary a few
+> sections above it on the same page (MED — downgraded from the
+> reader's initial HIGH; this is an omission in a five-season summary,
+> not a wrong-season assertion). Authed (4 URLs:
+> `/shows/americas-got-talent/season/the-panel-holds`,
+> `/shows/americas-got-talent?view=community`,
+> `/themes/one-rule-fills-every-seat`, `/shows/rhoa/canon`) confirmed
+> auth chrome, vote-pair, and comment-input all reflect signed-in state
+> correctly with zero console errors/failed requests/mobile overflow;
+> the community weekly-question card's previously-fixed "cast it below"
+> link still resolves correctly. Three raw findings dropped after
+> self-assessment: the account-level "save (this device)" label is
+> honest existing design (no account-sync save feature exists to link
+> to, not a regression), the flattened vote-card copy sequence is a
+> pattern-match artifact of reading rendered innerText linearly rather
+> than DOM/ARIA structure (this exact copy has been iterated across
+> passes 12/15/22/27/49/84/89/160 already, most recently pass-89 —
+> re-litigating without new evidence isn't warranted), and all-zero AGT
+> community vote counts reflect real (honest) data state, not a product
+> bug. One kept — the community rank list's mobile breakpoint
+> (`@media max-width: 640px`, `src/styles/canon.css:1099`) hides the
+> `.col-bar` "Approval" text label but keeps the bare `.col-pct` "%"
+> column visible, so the mobile column head reads an unlabeled "%" with
+> no indication of what it measures (LOW — confirmed in source, same
+> breakpoint that pass-104/#660 deliberately kept the approval number
+> visible at 375px, just without carrying its own label down with it).
+>
+> ───── Pass 137 metadata kept below for history ─────
+>
 > Last pass: 2026-08-23 at commit ed0468ce
 > Pass count: 137
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3456,6 +3503,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] /shows/americas-got-talent — tier_s_blurb still omits Brandy Norwood, contradicting the pass-137-fixed Season 1 slot rationale
+- pass: 138 (commit b856e2eb)
+- viewport: desktop
+- category: comprehension
+- observation: The pass-137 fix corrected `canon.md`'s slot #02 rationale to name Brandy Norwood (not Sharon Osbourne) as Season 1's third judge, matching the season file, lede, and watch_list. But the S-tier founding-era summary blurb rendered a few sections above that same rationale on `/shows/americas-got-talent` was not updated — it still reads "a judging panel (Morgan, Osbourne, Hasselhoff, then Mandel)" with no mention of Norwood at all, so a reader scanning both blocks on one page gets two different accounts of who sat on the panel in season one.
+- evidence: `content/shows/americas-got-talent/canon.md:11` `tier_s_blurb: "The founding five seasons — the widest audition pools the show ever assembled, and a judging panel (Morgan, Osbourne, Hasselhoff, then Mandel) still discovering what the format could reward."` vs. the same file's slot #02 `slot_argument`/rationale (now correctly naming Norwood for Season 1; Osbourne genuinely joins starting Season 2 per line 58).
+- suggested fix: Update `tier_s_blurb` to reflect the corrected panel history, e.g. "a judging panel (Morgan, Norwood, Hasselhoff — Osbourne joins in season two — then Mandel)", so the tier-level summary and the season-level rationale agree.
+- source: browser (critique-pass-138, anon)
+
+### [LOW] /shows/americas-got-talent?view=community — mobile community rank list drops the "Approval" column label, leaving a bare unlabeled "%"
+- pass: 138 (commit b856e2eb)
+- viewport: mobile
+- category: mobile
+- observation: Below the 640px breakpoint, `CommunityRankList`'s mobile column-head layout hides the `.col-bar` "Approval" text span but keeps the bare `.col-pct` "%" span visible, so the mobile header row reads "Rank / Season / % / Votes" with no word telling a first-time mobile reader what the "%" measures. The desktop header carries the full "Approval" label; the number the mobile breakpoint was deliberately kept visible for (pass-104/#660) survives, but its label doesn't travel with it.
+- evidence: `src/styles/canon.css:1099-1102` — `.cp-cl-cols .col-bar, .cp-cl-row .cp-clr-bar { display: none; }` / `.cp-cl-cols .col-pct, .cp-cl-row .cp-clr-pct { display: block; }` inside the `@media (max-width: 640px)` block; `src/components/canon/CommunityRankList.tsx:46-47` renders `<span className="col-bar">Approval</span>` and `<span className="col-pct col-r">%</span>` as separate elements.
+- suggested fix: Give the mobile-visible `.col-pct` span its own short label text (e.g. "Appr. %" or an `aria-label="Approval percent"`) instead of relying on the desktop-only "Approval" span that gets hidden at this breakpoint.
+- source: browser (critique-pass-138, authed)
 
 ### [MED] /shows/rhoa/season/the-clean-slate — "zero returning anchors" restated near-verbatim three times on one page
 - pass: 137 (commit ed0468ce)
