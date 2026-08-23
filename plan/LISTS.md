@@ -165,7 +165,7 @@ last time a curator actually looked.
 | the-masks-changed-every-week-the-panel-never-did | single | 2026-07-23 | 2026-07-23 | |
 | every-season-split-the-room-differently | single | 2026-07-23 | 2026-07-23 | |
 | the-episode-order-never-found-its-ceiling | single | 2026-07-23 | 2026-07-23 | |
-| the-anchor-count-set-the-ceiling | single | 2026-07-23 | 2026-07-23 | |
+| the-anchor-count-set-the-ceiling | single | 2026-08-23 | 2026-08-23 | extended 2026-08-23 (16→17 entries, cloud march Rule-3 pass): added RHOA S17 "The Clean Slate" at rank 17, the true bottom — the season's own file states "Zero returning anchors for the first time in franchise history" (both S16 anchors depart), a literal-zero case distinct from S08's "no single defining anchor" framing at rank 16. No rebase needed; S17 genuinely sits below every prior entry. |
 | the-social-geometry-resets-then-it-holds | single | 2026-07-24 | 2026-07-24 | |
 | the-friend-credit-became-the-farm-system | single | 2026-07-24 | 2026-07-24 | |
 | full-time-was-a-status-not-a-promise | single | 2026-07-24 | 2026-07-24 | |
@@ -10290,3 +10290,39 @@ last time a curator actually looked.
   The next unlock remains Rule 2 filing a new season, or an
   oversight-authorized scout-research pass to reach facts outside
   the repo's own season-file text.
+- **2026-08-23, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation): extended `the-anchor-count-set-the-ceiling`
+  (single, RHOA, 16→17 entries).** Re-confirmed Rule 2 still
+  structurally stalled (CADENCE gap table at 43 gap-slots/43 shows,
+  every row starred confirmed-but-unaired). Per the brief, checked
+  today's brand-new source material first — RHOA S17 "The Clean
+  Slate" (`content/shows/rhoa/seasons/17-the-clean-slate.md`, filed
+  earlier today at canon rank 16) — against the ledger before
+  running a fresh keyword search. The season's own frontmatter states
+  the fact in almost list-ready language: `format_caption: "Zero
+  returning anchors for the first time in franchise history"`, with
+  both season-sixteen anchors (Kandi Burruss, Kenya Moore) departing
+  and six returning Housewives plus two full-time newcomers (K.
+  Michelle, Pinky Cole) filling the roster. That is a direct,
+  unclaimed hit against RHOA's own dedicated single-show list
+  `the-anchor-count-set-the-ceiling`, which ranks all prior sixteen
+  seasons purely by how many long-tenured cast members were in the
+  room. Read the full existing list plus RHOA S16's own file
+  (`16-the-new-guard.md`, cast_size 7, "two returning anchors, five
+  new additions") to confirm S17 is a genuine escalation, not a
+  restatement: S16 still had two anchors, S17 has zero — the
+  franchise's first literal-zero case. Checked against the list's
+  existing rank-16 entry (RHOA S08, "no defining anchor at all") to
+  confirm the two facts are distinct — S08 lost one defining anchor
+  but still ran a six-woman holdover cast, where S17 loses both
+  remaining anchors outright — so S17 slots below S08 at rank 17,
+  the true bottom, with no rebase needed elsewhere in the list. Also
+  grepped `show: rhoa` across every `content/themes/*.md` file to
+  confirm S17 isn't staked anywhere else in the ledger before
+  drafting. Bumped the theme's `sixteen`→`seventeen` count language in
+  `description` and `tagline` (season-count phrasing, not a show-count
+  tail — stays clear of the count-of-shows-tail invariant) and
+  `last_revised` to today. RHOA's own `canon.md` and season files were
+  NOT touched — this is a Rule 3 themed-list tick only. Files written:
+  `content/themes/the-anchor-count-set-the-ceiling.md`. Ledger updated:
+  `plan/LISTS.md` (this row and the row itself).

@@ -1,13 +1,13 @@
 ---
 slug: the-anchor-count-set-the-ceiling
 title: "The anchor count set the ceiling"
-description: "RHOA's ceiling has tracked one variable more than any trip or twist: how many long-tenured cast members were actually in the room. This ranks all sixteen seasons by anchor count, not by drama volume."
-tagline: "The show's own season copy keeps reaching for the same word, over and over — anchor. A returning face, a defining presence, a first season without one yet. <b>This ranks all sixteen seasons by how many long-tenured cast members were actually in the room, because that number predicted the ceiling more reliably than any trip or twist.</b>"
+description: "RHOA's ceiling has tracked one variable more than any trip or twist: how many long-tenured cast members were actually in the room. This ranks all seventeen seasons by anchor count, not by drama volume."
+tagline: "The show's own season copy keeps reaching for the same word, over and over — anchor. A returning face, a defining presence, a first season without one yet. <b>This ranks all seventeen seasons by how many long-tenured cast members were actually in the room, because that number predicted the ceiling more reliably than any trip or twist.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-08-23
 featured: false
 related:
   - the-founding-five-kept-getting-replaced
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "The one season that names its own problem: no defining anchor at all"
     blurb: "The departure that had anchored the show for years left a gap the new addition never filled. Season eight is the only entry in this run that states its anchor deficit as the plot outright."
+  - show: rhoa
+    season: 17
+    season_label: "S17"
+    rank: 17
+    title: "Both season-sixteen anchors leave, and the count finally hits zero"
+    blurb: "The two anchors who steadied the post-overhaul roster are both gone — a franchise first. Six returning faces and two new full-timers have to hold the season together with no anchor left in the room."
 ---
