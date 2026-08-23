@@ -8,7 +8,7 @@ ep_count: 10
 location: "West Hollywood and Los Angeles, California"
 eyebrow: "Premiered October 2025 · Netflix"
 lede: "Season 9 brings Sandra Vergara into the Oppenheim Group as a new agent and restores the standalone reunion after Season 8 skipped it, with Tan France hosting again. Ten episodes drop at once, the reunion a week later, putting the two-part structure back in place."
-pull: "The reunion comes back after a season off, and a new agent joins right as it does."
+pull: "Season 9 is the format finding its footing again — confident and whole after a stretch that felt structurally off."
 format_summary: "Docusoap · luxury brokerage"
 format_caption: "the reunion special returns after a season off"
 cast_size: 13

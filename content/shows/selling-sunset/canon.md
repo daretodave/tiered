@@ -70,7 +70,7 @@ tag: The season that brings the reunion back — and brings a new agent with it.
 slot_argument: Sandra Vergara joins the roster, and the standalone reunion returns after Season 8 skipped it, with Tan France back to host again. Real recovery, even if it's restoring ground rather than breaking new.
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
-Season 9 brings Sandra Vergara into the Oppenheim Group's roster and restores the standalone reunion special after Season 8's one-season gap, with Tan France back behind the reunion desk. That's the format's biggest structural hook returning right when the canon needed it to, and pairing it with a genuine new-agent addition gives the ensemble fresh friction to work through once the ten-episode main run wraps. It doesn't reinvent anything Season 5 didn't already establish, and a comeback still reads as a comeback rather than a leap forward. But putting the reunion back in place, with new blood in the mix, earns this season a real step up from the one before it.
+The reunion's return and the new-agent addition carry this season's rank — together, they're the format's biggest structural hook coming back right when the canon needed it to. That combination gives the ensemble fresh friction to work through once the ten-episode main run wraps. It doesn't reinvent anything Season 5 didn't already establish, and a comeback still reads as a comeback rather than a leap forward. But putting the reunion back in place, with new blood in the mix, earns this season a real step up from the one before it.
 
 ## 6. Season 6
 
