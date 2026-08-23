@@ -1,13 +1,13 @@
 ---
 show: rhoa
 editor: tiered.tv editor
-last_revised: 2026-06-22
+last_revised: 2026-08-23
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched RHOA from the debut season through the current cast. The ranking weighs cast chemistry, how well Atlanta itself functions as a social setting, and whether the season produces television that holds up beyond the initial headlines. One read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "Atlanta's social world is specific — it has its own rules around wealth, ambition, and public persona. Seasons that use those specifics earn more than seasons that simply stage conflict. The cast's internal relationships matter: how they push and pull against each other, not just whether they argue."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now covers all sixteen aired seasons through 2024. Season sixteen is the new-cast premiere — the first full run of the post-S15 configuration. Slots are held with confidence — each position reflects a judgment about what the season does with its cast, setting, and format. Sixteen seasons in, that judgment gets sharper with every rewatch, not softer."
+meth_when_p: "The canon now covers all seventeen aired seasons through 2026. Season seventeen opens with no returning anchors at all, the franchise's first fully unanchored run. Slots are held with confidence — each reflects a judgment about what the season does with its cast, setting, and format. Seventeen seasons in, that judgment gets sharper with every rewatch."
 tier_s_blurb: "Seasons 3 through 7 at their configuration peak — the cast dynamics that made Atlanta's social world specific, sustained across a run long enough for real relational history to build."
 tier_a_blurb: "The seasons that defined what RHOA is — cast-driven, Atlanta-specific, and genuinely difficult to look away from."
 tier_b_blurb: "Strong seasons with real moments, showing the format at full operational pressure even when not quite at its ceiling."
@@ -150,10 +150,18 @@ community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season thirteen is shaped entirely by its context. The COVID-19 production disruption pushed the premiere to December — the first time in franchise history — and reduced the full-time cast by two significant players. What remained was a smaller, more domestically oriented group operating in a more socially conscious register. Cynthia Bailey's wedding under pandemic restrictions was a central arc. Porsha Williams' social-justice work was featured prominently and in good faith. New Orleans was the travel sequence. A season without bad faith, but also without the pressure and configuration that make RHOA worth watching at its best.
 
+## 17. Season 17 — The Clean Slate
+
+tag: Both post-S15 anchors leave in the same move — the first fully unanchored season.
+slot_argument: Season seventeen loses both of season sixteen's anchors at once — the franchise's first fully unanchored season. What keeps it above the floor is who replaced them: two additions with established public profiles, not a mismatched fit.
+community_rank_hint: rank=16 delta=new sentiment=hold
+
+Season seventeen loses both of season sixteen's anchors in one move — the first time the franchise has opened a season with zero returning continuity at all. What keeps it off the absolute floor is who replaced them: K. Michelle and Pinky Cole each arrive with an established public presence of her own, closer to the season three or four pattern of additions who bring their own social register than to season eight's mismatched fit. Scotland gives the season a genuine international anchor point even as the cast itself has none. Sixteenth is the honest slot — a reset the show survives without yet proving it.
+
 ## 8. Season 8 — The Reset
 
 tag: The show in an identity gap — a transitional season between eras.
 slot_argument: The first season without a defining anchor, a new addition whose register sat at an angle to the show's mode, no international travel. Season eight sits at the bottom: the version of RHOA that least resembles what RHOA does best.
-community_rank_hint: rank=16 delta=0 sentiment=hold
+community_rank_hint: rank=17 delta=-1 sentiment=down
 
 Season eight is the franchise's weakest entry across these sixteen seasons. The departure of the cast member who had functioned as the show's social and comedic anchor left a gap the season never filled — the new full-time addition was a known actress whose demeanor, while not hostile to the format, sat at a fundamental angle to the high-pressure social register RHOA runs on. Twenty-one episodes with no international travel and a cast still finding its replacement configuration. The season has genuine moments, but it is primarily a bridge between what the show had been and what it was still working out how to become.
