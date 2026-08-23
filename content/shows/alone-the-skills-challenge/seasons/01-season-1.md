@@ -19,7 +19,7 @@ format_changes:
   - "Judge evaluates on day four against three pre-set criteria"
   - "No elimination arc — standalone episodes, no cumulative game"
 cast_size: 4
-cast_size_caption: "4 Alone alumni per episode (1 judge, 3 competitors)"
+cast_size_caption: "Four Alone alumni per episode (1 judge, 3 competitors)"
 premiere_caption: "History Channel · August 2022"
 filming_caption: "Participants' own properties across the USA"
 ---

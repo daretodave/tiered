@@ -16,7 +16,7 @@ canonical_position: 19
 premiere_caption: "CBS · Friday"
 format_summary: "11 teams of 2 · total strangers"
 cast_size: 22
-cast_size_caption: "22 individuals paired at the start"
+cast_size_caption: "Twenty-two strangers, paired into eleven teams at the line"
 eyebrow: "Aired spring 2017 · The total-strangers experiment"
 lede: "Twenty-two individuals met for the first time and chose their racing partners at the starting line — the boldest casting reset the format had attempted in years."
 pull: "No shared history, no warm-up — partnerships built on a hunch and tested against a global route from the first plane."

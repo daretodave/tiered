@@ -15,7 +15,7 @@ format_caption: "24 contestants from a pool of 40, selected across three auditio
 premiere_caption: "Network Ten · April 2026"
 filming_caption: "Melbourne studio production, Centenary Hall"
 cast_size: 24
-cast_size_caption: "24 home cooks, drawn from six states and territories"
+cast_size_caption: "Twenty-four home cooks, drawn from six states and territories"
 watch_list:
   - episode_label: "On-air auditions return"
     body: "Auditions move back on camera for the first time since series thirteen. Forty hopefuls compete across three broadcast episodes for twenty-four spots on the bench — a structural return the format hasn't used in five years."

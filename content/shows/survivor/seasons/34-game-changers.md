@@ -17,7 +17,7 @@ episodes_caption: "39 days in country"
 format_summary: "All returnees · 2 tribes"
 format_caption: "returnees cast for prior gameplay"
 cast_size: 20
-cast_size_caption: "20 veterans, mixed-era bench"
+cast_size_caption: "Twenty veterans split into two starting tribes of ten"
 host_caption: "thirty-fourth season at the helm"
 episode_heat: [hot, med, hot, hot, med, hot, hot, hot, med, hot, hot, hot, hot, hot]
 episode_heat_caption: "dense run · few quiet episodes"

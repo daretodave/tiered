@@ -17,7 +17,7 @@ format_changes:
   - "Winter setting in Labrador, Canada — colder and darker than any prior Alone location"
   - "Shared prize pool: every participant reaching 50 days splits $500,000 equally"
 cast_size: 6
-cast_size_caption: "6 returning Alone veterans"
+cast_size_caption: "Six veterans, the smallest season cast in Alone history"
 premiere_caption: "History Channel · August 2022"
 filming_caption: "Labrador · colder than any mainline Alone location"
 ---

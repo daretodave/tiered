@@ -15,7 +15,7 @@ format_summary: "Venice qualifiers · NBC primetime replay"
 format_caption: "first season with any NBC broadcast footprint"
 host_caption: "second season with the Iseman-Smith-Haislip trio"
 cast_size: 300
-cast_size_caption: "300+ competitors at the same single Venice Beach qualifier"
+cast_size_caption: "Three hundred-plus at the same single Venice Beach qualifier"
 take_h2: "A local show gets a network audience."
 ---
 
