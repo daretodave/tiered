@@ -11,7 +11,7 @@ eyebrow: "Both post-S15 anchors depart; a second full-cast reset in two years"
 lede: "Season seventeen strips away the two anchors — Kandi Burruss and Kenya Moore — who steadied season sixteen's rebuilt roster, testing whether the format can hold with no returning continuity at all."
 pull: "The anchors leave, and the reset resets again."
 format_summary: "Atlanta social reality"
-format_caption: "Zero returning anchors for the first time in franchise history"
+format_caption: "Six of eight full-timers return; the departed pair were the anchors"
 cast_size: 8
 cast_size_caption: "Eight full-time Housewives, two of them brand new"
 premiere_caption: "Bravo · April 2026"
