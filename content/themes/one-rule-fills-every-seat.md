@@ -97,18 +97,18 @@ entries:
     rank: 14
     title: "Olympic and Paralympic competitors join the celebrity cast and skip the usual learning curve."
     blurb: "Athletes trained for the world stage arrive already knowing how to use a body, compressing the week-one adjustment a standard spring cast usually needs. The choreographic floor sits noticeably higher than usual."
-  - show: masterchef
-    season: 14
-    season_label: "S14 · Generations"
-    rank: 15
-    title: "Baby Boomers, Gen X, Millennials, and Gen Z cook in separate teams before the field opens up."
-    blurb: "Twenty home cooks split by generation instead of skill or region, with a restaurant takeover challenge as the format's midseason highlight. The sorting produces early contrast, but the theme runs out before the individual phase begins."
   - show: americas-next-top-model
     season: 19
     season_label: "S19 · The College Edition"
-    rank: 16
+    rank: 15
     title: "The casting call narrows to current college students only, for one cycle."
     blurb: "Trading the open talent search for an education-only pool changes the competitive texture — less industry conditioning, more candid dynamics, but a narrower range than the show usually draws from."
+  - show: masterchef
+    season: 14
+    season_label: "S14 · Generations"
+    rank: 16
+    title: "Baby Boomers, Gen X, Millennials, and Gen Z cook in separate teams before the field opens up."
+    blurb: "Twenty home cooks split by generation instead of skill or region, with a restaurant takeover challenge as the format's midseason highlight. The sorting produces early contrast, but the theme runs out before the individual phase begins."
   - show: americas-next-top-model
     season: 13
     season_label: "S13 · The Height Experiment"
