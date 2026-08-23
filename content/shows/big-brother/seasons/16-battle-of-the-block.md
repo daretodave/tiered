@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty-seven episodes, built around twin HoHs each week"
 cast_size: 16
-cast_size_caption: "16 houseguests, three of them voted Team America"
+cast_size_caption: "Sixteen houseguests; three picked by public vote for Team America."
 host_caption: "Julie Chen's sixteenth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the twin HoH reveal"

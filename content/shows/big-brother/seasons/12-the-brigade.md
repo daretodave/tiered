@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty episodes, with a public-vote Saboteur seat in the cast"
 cast_size: 13
-cast_size_caption: "13 houseguests including the Saboteur seat"
+cast_size_caption: "Thirteen houseguests; the Brigade's four-man alliance formed by night two."
 host_caption: "Julie Chen's twelfth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the alliance forms"

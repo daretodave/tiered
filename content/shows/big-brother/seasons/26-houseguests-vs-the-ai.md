@@ -17,7 +17,7 @@ filming_caption: "Studio City soundstage, BB AI theme"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty episodes, with an in-house AI controlling the twists"
 cast_size: 16
-cast_size_caption: "16 newcomers"
+cast_size_caption: "Sixteen first-timers; the AI Arena comp could name a final nominee."
 host_caption: "Julie Chen Moonves, twenty-sixth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · BB AI introduced"

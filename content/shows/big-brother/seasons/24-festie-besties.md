@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage, Pinwheel theme"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Twenty-eight episodes, houseguests bound into festie pairs"
 cast_size: 16
-cast_size_caption: "16 newcomers"
+cast_size_caption: "Sixteen first-timers, all bound into festie pairs before the first eviction."
 host_caption: "Julie Chen Moonves, twenty-fourth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · Pinwheel opens"

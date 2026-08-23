@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty episodes, four coaches mentoring twelve newbies"
 cast_size: 16
-cast_size_caption: "16 houseguests including four coaches"
+cast_size_caption: "Sixteen houseguests; four entered as coaches before converting into players."
 host_caption: "Julie Chen's fourteenth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the coaches arrive"

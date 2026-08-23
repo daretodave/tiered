@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage, strict bubble production"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty-three episodes, the franchise's second all-star cast"
 cast_size: 16
-cast_size_caption: "16 returning houseguests across BB history"
+cast_size_caption: "Sixteen returnees — the franchise's first all-star cast since 2006."
 host_caption: "Julie Chen Moonves, twenty-second summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the lineup lands"

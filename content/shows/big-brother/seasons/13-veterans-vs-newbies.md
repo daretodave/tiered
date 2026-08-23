@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty episodes, three veteran pairs mixed into the new cast"
 cast_size: 14
-cast_size_caption: "14 houseguests, six of them returning"
+cast_size_caption: "Fourteen houseguests, marking the franchise's first mass-returnee summer."
 host_caption: "Julie Chen's thirteenth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the limo reveal"

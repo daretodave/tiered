@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty-eight episodes, centered on one returning houseguest"
 cast_size: 16
-cast_size_caption: "16 houseguests including one returning veteran"
+cast_size_caption: "Sixteen houseguests; a single returnee anchors the modern era's cast."
 host_caption: "Julie Chen's nineteenth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the returnee lands"

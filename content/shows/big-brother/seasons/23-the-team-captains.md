@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty episodes, sorted into four captain-picked teams"
 cast_size: 16
-cast_size_caption: "16 newcomers, the most diverse cast to date"
+cast_size_caption: "Sixteen newcomers — the most diverse cast the franchise had fielded."
 host_caption: "Julie Chen Moonves, twenty-third summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the draft"

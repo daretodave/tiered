@@ -16,7 +16,7 @@ filming_caption: "Studio City soundstage"
 premiere_caption: "CBS · Sunday, Wednesday, Thursday"
 episodes_caption: "Thirty-six episodes, with evicted players parked for a way back"
 cast_size: 16
-cast_size_caption: "16 houseguests, no returnees"
+cast_size_caption: "Sixteen first-timers; several seeded with secret Whacktivity powers."
 host_caption: "Julie Chen Moonves, twenty-first summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · Camp Director"
