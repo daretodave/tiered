@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-21 at commit 0d9e2dd7
-> Pass count: 65
+> Last pass: 2026-08-23 at commit 5abd7a16
+> Pass count: 66
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,50 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 66 (2026-08-23, commit 5abd7a16, cloud) — 0 new phase-shape
+     candidates filed; two reinforcement updates appended below (#28, #33).
+     Window since pass 65 (0d9e2dd7, 2026-08-21T03:00:01Z): 102 commits /
+     ~63.5 hours. Both thresholds well past (≥20 commits, ≥48h).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: neither cadence clock due (season-sweep ran earlier
+     this same tick's window at 2026-08-23, next due 2026-08-30; show-add
+     LOCKED, gap table 44 shows/44 gap-slots, all starred). Step 2.0's
+     shipping-mode gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase
+     rows). Critique gate checked and not due (4 commits / same-day since
+     pass 137, below the 12-commit/24h threshold). Step 3a/3b empty (no
+     pending phase rows, no Pending category:data AUDIT rows). Step 3b.5
+     found exactly one Pending AUDIT.md row — a freshly-filed [HIGH]
+     category:bug row (commit 5efa84ee, AGT Stern-era off-by-one, score
+     5.4) — which does not match Step 3b.5's category:content-gaps filter,
+     so it fell through undispatched. `/expand`'s own gate was
+     independently open (102 commits since pass 65, posture bold, live
+     signal in `plan/AUDIT.md` + `plan/CRITIQUE.md` Pending, no phase/data
+     work pending) and fired.
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending: exactly one row, the AGT bug above — see
+       candidate #33's pass-66 update for the dispatch-chain implications
+       this row's own routing exposed live, this tick.
+     - `plan/CRITIQUE.md` Pending: pass 137 (2026-08-23, same day) filed 4
+       findings (0 HIGH, 2 MED, 2 LOW). One MED (RHOA S17 format_caption/
+       body/canon.md triple restatement) precisely names candidate #28's
+       own scope gap — see that candidate's pass-66 update. The other MED
+       (AGT S1 canon.md judge-panel contradiction, a staleness/propagation
+       defect rather than a restatement echo) and both LOW findings (BB
+       S27's internally-consistent-but-differently-headlined cast count;
+       the authed community-view duplicate "live" label) don't match any
+       existing candidate's shape closely enough to cite as reinforcement
+       without overstating the fit — left for the ordinary content-gap
+       redirect / iterate path to close individually.
+     - `spec.md` / `design/`: no diff since pass 65 (`git log -p
+       --since=2026-08-21` empty on both paths).
+     - Triage backlog: 0 unlabeled issues (Step 1 already confirmed).
+     No genuinely new candidate concept surfaced this pass — the one new
+     AUDIT.md signal (the AGT bug row) is itself evidence for an existing
+     candidate's open question (#33) rather than a new phase shape, and
+     the one new CRITIQUE.md signal worth citing (RHOA S17) sharpens an
+     existing candidate's scope (#28) rather than proposing a new one.
+     Reinforcing in place instead. -->
 
 <!-- Pass 65 (2026-08-21, commit 0d9e2dd7, cloud) — 0 new phase-shape
      candidates filed; two reinforcement updates appended below (#25, #33).
@@ -1547,6 +1591,47 @@ into `skills/march.md` Step 3b.5 formalizes existing behavior rather than
 introducing new risk. Score unchanged at 5.5; still unpromoted 34 days
 after filing (2026-07-18).
 
+**Update (expand pass 66, 2026-08-23, cloud march):** the candidate's own
+open scope question — "consider whether the same carve-out should apply
+ahead of Step 3c (`/expand`) as well, or only ahead of 3d" — got a live,
+concrete answer this exact tick, and the answer is yes, it's a gap. This
+pass's own dispatch chain: Step 1 (triage) found 0 unlabeled issues; Step
+1.5 found neither cadence clock due; Step 2.0's shipping-mode gate stayed
+lifted (Phase 36 `[x]`, no `[ ]` phase rows); the critique gate wasn't due
+(4 commits / same-day since pass 137); Step 3a/3b empty; Step 3b.5 found
+exactly one Pending `plan/AUDIT.md` row — a freshly-filed `[HIGH]`
+`category: bug` row (commit 5efa84ee, 2026-08-23, score 5.4: a systemic
+off-by-one factual error across 6 America's Got Talent season files plus
+`canon.md`, discovered mid-tick during an unrelated content backfill) —
+but Step 3b.5 only matches `category: content-gaps` rows, so this bug row
+doesn't dispatch there. Step 3c (`/expand`) then found its own gate open
+on independent merits (102 commits / ~63.5h since pass 65, both well past
+threshold, posture bold, live AUDIT.md signal present, no phase/data
+pending) and fired — reaching this very update. Net effect: a HIGH-severity,
+same-day-filed bug row sat un-dispatched for this entire tick, not because
+of the CRITIQUE.md content-gap starvation this candidate was originally
+scoped around, but because `/expand`'s own rate-limited gate happened to
+open in the same window and out-prioritizes Step 3d in the dispatch order.
+This is a materially different mechanism than the content-gap-redirect
+workaround documented in the pass-65 update above — that workaround
+specifically drains `plan/CRITIQUE.md` rows by hand; it has no path for
+`plan/AUDIT.md` `category: bug` rows, which have no informal workaround
+covering them at all. The bug row will still get picked up (likely next
+tick, once `/expand`'s gate closes again and Step 3d is reached with
+nothing higher-priority ahead of it), so this is not a starvation
+failure on the scale documented for issue #568 in earlier updates — but
+it's a second, independent confirmation that the dispatch chain has more
+than one point where a scoped bug fix can wait behind non-bug work, and
+the existing scope sketch (a check ahead of Step 3b.5 only) would not
+have closed this instance. Recommend widening the scope sketch: place the
+carve-out check once, ahead of Step 3b in `skills/march.md`'s Step 3
+block (before content-gaps, expand, or iterate are ever evaluated), so a
+qualifying high-score `category: bug` (or `category: data`) row always
+preempts all three lower-priority branches in one place rather than
+needing a duplicated check ahead of each. Score unchanged at 5.5 (the
+new evidence sharpens the fix's correct location, not its urgency or
+size); still unpromoted 36 days after filing.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
@@ -2606,6 +2691,36 @@ fixture row owed since content-check runs at build/verify time, not per-route).
 detection mechanic and field scope — see pass-48 reinforcement note on #25 above).
 `/oversight` may bundle both into one "content de-duplication invariants" phase or
 promote independently; this candidate has no dependency on #25 shipping first.
+
+**Update (expand pass 66, 2026-08-23, cloud march):** critique pass 137
+(2026-08-23, same-day) found a fresh instance that names this candidate's
+exact gap directly rather than requiring inference: `/shows/rhoa/season/
+the-clean-slate`'s single headline fact ("zero returning anchors") is
+restated near-verbatim in three fields on one page — `format_caption`
+("Zero returning anchors for the first time in franchise history"), the
+markdown body's closing sentence, and `canon.md`'s slot-16 rationale. The
+finding's own text states: "the site already guards against this exact
+defect class for `episodes_caption` and `cast_size_caption`
+(`collectEpisodesCaptionBareRestatementIssues` /
+`collectCastSizeCaptionBareRestatementIssues` in
+`src/content/__tests__/content-check.test.ts`), but `format_caption` has
+no equivalent check, so this instance shipped uncaught." That is this
+candidate's six-pair scope sketch's exact framing, one gap short of
+complete: `format_caption` sits alongside `location`/`filming_caption`
+and the other five named pairs as a caption field with no bare-
+restatement gate. Whether `format_caption`'s counterpart value is
+`format_summary` (as used in earlier BB S27/Bachelor S28 instances
+already logged above) or format has no single paired value and needs a
+cross-field check against body/canon.md instead (as this instance shows)
+is worth resolving at ship time — the finding suggests the latter is
+also needed, since the duplication here isn't against an adjacent stat
+value but against the body and `canon.md` prose, which is closer to
+candidate #25's shape than a same-tile value/caption pair. Recommend the
+scope sketch explicitly fold in a `format_caption`-vs-body/canon.md check
+alongside the six value/caption pairs when this ships, since evidence
+now shows the same field triggers both defect classes this file
+separately tracks (#25 and #28). Score unchanged at 8.7 (ceiling); no
+change to estimated phases.
 
 ### 29. Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
 
