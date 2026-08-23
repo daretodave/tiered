@@ -90,3 +90,31 @@ test('retired theme slug redirect: /themes/the-command-held-for-nine-seasons-the
   const href = await canonical.getAttribute('href')
   expect(new URL(href ?? '').pathname).toBe(toPath)
 })
+
+// 2026-08-23 cloud march — same-castle-different-clock-every-winter
+// (authored 2026-08-22) and new-house-rules-every-time-the-castle-
+// reopens (authored a month earlier, 2026-07-23) ranked the same four
+// Traitors UK series on the same four facts — ~100% entry overlap.
+// Retired the newer duplicate; src/middleware.ts 308s its URL to the
+// older, surviving list so bookmarks/external links still land
+// somewhere real.
+test('retired theme slug redirect: /themes/same-castle-different-clock-every-winter → /themes/new-house-rules-every-time-the-castle-reopens', async ({
+  page,
+  request,
+}) => {
+  const fromPath = '/themes/same-castle-different-clock-every-winter'
+  const toPath = '/themes/new-house-rules-every-time-the-castle-reopens'
+
+  const head = await request.get(fromPath, { maxRedirects: 0 })
+  expect(head.status(), `${fromPath} must 308 (permanent)`).toBe(308)
+  expect(new URL(head.headers().location, 'http://x').pathname).toBe(toPath)
+
+  const response = await page.goto(fromPath, { waitUntil: 'domcontentloaded' })
+  expect(response?.status()).toBe(200)
+  expect(new URL(page.url()).pathname).toBe(toPath)
+
+  const canonical = page.locator('link[rel="canonical"]')
+  await expect(canonical).toHaveCount(1)
+  const href = await canonical.getAttribute('href')
+  expect(new URL(href ?? '').pathname).toBe(toPath)
+})

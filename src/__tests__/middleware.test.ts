@@ -124,6 +124,45 @@ describe('middleware — CRITIQUE pass-112 theme slug redirect', () => {
   })
 })
 
+describe('middleware — 2026-08-23 duplicate-theme retirement redirect', () => {
+  it('redirects the retired same-castle slug to the surviving new-house-rules slug with a 308', async () => {
+    const res = await middleware(
+      makeRequest('/themes/same-castle-different-clock-every-winter'),
+    )
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe(
+      'http://localhost/themes/new-house-rules-every-time-the-castle-reopens',
+    )
+  })
+
+  it('drops the query string on the retirement redirect', async () => {
+    const res = await middleware(
+      makeRequest('/themes/same-castle-different-clock-every-winter', {
+        search: '?ref=twitter',
+      }),
+    )
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe(
+      'http://localhost/themes/new-house-rules-every-time-the-castle-reopens',
+    )
+  })
+
+  it('skips Auth0 entirely on the retired slug', async () => {
+    await middleware(
+      makeRequest('/themes/same-castle-different-clock-every-winter'),
+    )
+    expect(middlewareMock).not.toHaveBeenCalled()
+  })
+
+  it('does NOT redirect the surviving slug (only the retired path redirects)', async () => {
+    const res = await middleware(
+      makeRequest('/themes/new-house-rules-every-time-the-castle-reopens'),
+    )
+    expect(res.status).not.toBe(308)
+    expect(middlewareMock).toHaveBeenCalledOnce()
+  })
+})
+
 describe('middleware — Auth0 SDK composition', () => {
   it('awaits auth0.middleware(request) exactly once per non-/search request', async () => {
     await middleware(makeRequest('/shows/survivor'))

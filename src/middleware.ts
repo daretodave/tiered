@@ -48,6 +48,24 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(url, 308)
   }
 
+  // 2026-08-23 cloud march — `same-castle-different-clock-every-winter`
+  // (authored 2026-08-22) and `new-house-rules-every-time-the-castle-
+  // reopens` (authored 2026-07-23, a month earlier) turned out to rank
+  // the same four Traitors UK series on the same four underlying facts
+  // (~100% entry overlap, well past the Rule 3 excellence gate's >40%
+  // threshold) — the newer list's authoring pass mistakenly found zero
+  // prior `traitors-uk` appearances. Retired the newer duplicate; this
+  // permanent redirect sends its URL to the older, surviving list.
+  if (
+    request.nextUrl.pathname ===
+    '/themes/same-castle-different-clock-every-winter'
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/themes/new-house-rules-every-time-the-castle-reopens'
+    url.search = ''
+    return NextResponse.redirect(url, 308)
+  }
+
   const auth0Response = await auth0.middleware(request)
 
   // Auth-route paths return a redirect / 200 directly — don't stamp
