@@ -1,5 +1,42 @@
 # CRITIQUE
 
+> Last pass: 2026-08-23 at commit ed0468ce
+> Pass count: 137
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 137
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set targeting
+> recently-drained content: RHOA S17, AGT S1, Big Brother S27, and the
+> `the-anchor-count-set-the-ceiling` themed list. Anon (5 URLs: `/`,
+> `/shows/rhoa/season/the-clean-slate`, `/shows/americas-got-talent/season/the-debut`,
+> `/themes/the-anchor-count-set-the-ceiling`, `/shows/big-brother/season/a-summer-of-mystery`)
+> came back mechanically clean (0 console errors, 0 failed requests, 0
+> mobile overflow) but surfaced 3 real content bugs: a self-contradicting
+> judge name on the AGT S1 page (MED — canon.md's slot #02 rationale
+> still names Sharon Osbourne for Season 1 while the season file, lede,
+> and watch_list all correctly name Brandy Norwood — the pass-127
+> season-file fix never propagated to canon.md's separate rationale
+> prose); RHOA S17's "zero returning anchors" fact restated near-verbatim
+> across format_caption, body, and canon.md rationale (MED — same defect
+> class the site already guards for episodes_caption/cast_size_caption,
+> but format_caption has no equivalent bare-restatement check); and
+> Big Brother S27's cast count phrased inconsistently as "16+ houseguests"
+> (FORMAT) vs "17 players" (CAST SIZE) — internally consistent once you
+> read the captions but presents two different headline numbers (LOW).
+> Authed (5 URLs: `/`, `/u/e2e`, `/shows/rhoa/season/the-clean-slate`,
+> `/shows/americas-got-talent?view=community`, `/shows/big-brother/season/a-summer-of-mystery`)
+> came back clean on vote-state copy, profile rendering, and mobile
+> reflow — one finding dropped after self-assessment (a single
+> non-reproduced `/shows` RSC-prefetch abort on `/u/e2e`, the same
+> `isRscPrefetchAbort()` false-positive class already tracked since
+> pass-135); one kept — the community view's "live" label appears twice
+> in immediate succession (tab caption + live-strip both read "live"
+> with no differentiating copy between them) (LOW).
+>
+> ───── Pass 136 metadata kept below for history ─────
+>
 > Last pass: 2026-08-22 at commit bf578316
 > Pass count: 136
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3419,6 +3456,42 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] /shows/americas-got-talent/season/the-debut — canon.md self-contradicts the season's own judge lineup
+- pass: 137 (commit ed0468ce)
+- viewport: desktop
+- category: voice
+- observation: The page renders two conflicting facts about the Season 1 judging panel. The lede, the "What to Watch For" watch_list entry, and the season body (`content/shows/americas-got-talent/seasons/01-the-debut.md`) all correctly name Piers Morgan, David Hasselhoff, and Brandy Norwood — with the watch_list entry explicitly noting Norwood is "the only season she appears on before Sharon Osbourne takes her seat starting Season 2." But the "Where It Sits in the Canon" section, rendered lower on the same page from `content/shows/americas-got-talent/canon.md:42` (slot #02 rationale), says "the judging panel of Piers Morgan, Sharon Osbourne, and David Hasselhoff" — naming the Season 2+ judge in place of Norwood for Season 1. The pass-127 fix ("content: backfill AGT watch_list S01-S04, fix S01 judge-panel error") corrected the season file but never propagated to canon.md's separate rationale prose for the same season.
+- evidence: Season file body (correct): "Brandy Norwood sits at the judging table alongside Piers Morgan and David Hasselhoff — the only season she appears on before Sharon Osbourne takes her seat starting Season 2." canon.md:42 (stale): "the judging panel of Piers Morgan, Sharon Osbourne, and David Hasselhoff had no inherited template to follow."
+- suggested fix: Edit `content/shows/americas-got-talent/canon.md` line 42's slot #02 rationale to name Brandy Norwood instead of Sharon Osbourne, matching the season file, lede, and watch_list already on the same page.
+- source: browser (critique-pass-137, anon)
+
+### [MED] /shows/rhoa/season/the-clean-slate — "zero returning anchors" restated near-verbatim three times on one page
+- pass: 137 (commit ed0468ce)
+- viewport: desktop
+- category: voice
+- observation: RHOA S17's single headline fact — no returning anchors — is restated almost word-for-word in three separate fields that all render on the same page: `format_caption` ("Zero returning anchors for the first time in franchise history"), the closing sentence of the markdown body ("...test whether a roster with zero returning anchors can hold the center"), and `canon.md`'s slot-16 rationale ("...the first time the franchise has opened a season with zero returning continuity at all"). The site already guards against this exact defect class for `episodes_caption` and `cast_size_caption` (`collectEpisodesCaptionBareRestatementIssues` / `collectCastSizeCaptionBareRestatementIssues` in `src/content/__tests__/content-check.test.ts`), but `format_caption` has no equivalent check, so this instance shipped uncaught.
+- evidence: `content/shows/rhoa/seasons/17-the-clean-slate.md` `format_caption: "Zero returning anchors for the first time in franchise history"` vs. body close and `content/shows/rhoa/canon.md` slot 16 rationale, both repeating "zero returning" language.
+- suggested fix: Rewrite `format_caption` to a distinct angle (e.g. cast composition or tenure math) instead of repeating "zero returning anchors" a third time; consider extending the existing bare-restatement guard pattern to cover `format_caption` so future instances trip the verify gate.
+- source: browser (critique-pass-137, anon)
+
+### [LOW] /shows/big-brother/season/a-summer-of-mystery — cast-count headline numbers don't match across meta-column stats
+- pass: 137 (commit ed0468ce)
+- viewport: mobile
+- category: comprehension
+- observation: The FORMAT stat tile reads "16+ houseguests · three stacked twists" while the CAST SIZE stat tile reads "17 players" with sub-caption "16 newcomers plus a premiere-night mystery arrival." The numbers are internally consistent once both captions are read (16 + 1 = 17), but a skimming reader sees two different top-line numbers ("16+" vs "17") for the same fact before reconciling the sub-captions underneath.
+- evidence: FORMAT: "16+ houseguests · three stacked twists"; CAST SIZE: "17 players" / "sixteen newcomers plus a premiere-night mystery arrival."
+- suggested fix: Align FORMAT's headline number with CAST SIZE's (e.g. "17 houseguests · three stacked twists") so the two stat tiles present one consistent top-line number.
+- source: browser (critique-pass-137, anon)
+
+### [LOW] /shows/americas-got-talent?view=community — "live" label repeated twice in immediate succession
+- pass: 137 (commit ed0468ce)
+- viewport: desktop
+- category: voice
+- observation: The word "live" appears twice back-to-back at the top of the community view: once as the Community tab's caption ("Community" + caption "live"), then again one element later as the live-strip's own label ("● live · last update · votes pending..."). Both are legitimate, distinct UI elements, but with no differentiating copy between them a first-time reader sees "live... live" rather than one clear signal.
+- evidence: Rendered DOM: `<span class="cp-tab-cap">live</span> ... <div class="cp-live-strip"><span class="cp-live-dot"></span>live</span><span>last update · <b>votes pending</b></span>`
+- suggested fix: Give the live-strip a distinct opening label (e.g. drop the redundant "live" word, lead straight with "last update" since the dot already signals live status) or change the tab caption to something like "vote now."
+- source: browser (critique-pass-137, authed)
 
 - [x] [HIGH] [authed] /u/e2e/opengraph-image — the per-profile social-card image route 404s live in production, even though the wiring is correct in source and unit tests for the route pass locally. `src/app/(default)/u/[handle]/opengraph-image.tsx` calls `getProfileActivity({ handle })` and hits `notFound()` when it returns null — confirmed via direct `curl -I https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 404`, `x-matched-path: /_not-found`, while `https://tiered.tv/u/e2e` itself returns 200 with populated profile content ("No votes yet" empty state, correctly reflecting the e2e bot account). This is a distinct, fresh manifestation from the pass-134 fix (which addressed `generateMetadata` never threading an `image:` argument through `buildMetadata()` — that fix is still present and correct): here the image-generation route itself fails to resolve the same handle that the page route resolves fine, in the same production request cycle. Isolated to this one route family — `/shows/survivor/opengraph-image`, a season OG image, and a theme OG image all confirmed 200 live via curl in the same pass. 21/21 unit tests in `src/app/(default)/u/[handle]/__tests__/opengraph-image.test.tsx` pass locally (they mock `getProfileActivity`, so they can't catch a live-only divergence). Fix: reproduce against the deployed runtime specifically — check whether `serviceRoleClient()` (in `src/lib/supabase/server.ts`, called by `getProfileActivity`) has a runtime-specific initialization issue under the image route's `export const runtime = 'nodejs'` context that differs from the page route's context (env var availability, cold-start timing, or an RPC error being silently swallowed into a null return rather than surfacing). No spoiler impact (profile-stat surface only). (URL: /u/e2e/opengraph-image, source: critique-pass-136) — RESOLVED (2026-08-23, cloud march tick, content-gap redirect per issue #758): root cause was route-level static caching, not a Supabase/runtime initialization issue — `serviceRoleClient()` and `getProfileActivity()` both behave correctly and return a clean `null` on no match. As a dynamic-segment (`[handle]`) metadata-image route with no `generateStaticParams`, Next treated it as static-eligible and permanently cached whichever response the first production request produced, including a stale `notFound()` 404. Sibling `page.tsx` already guards against this identical class of staleness with `export const dynamic = 'force-dynamic'`; added the same export to `opengraph-image.tsx`, mirroring that precedent, plus a segment-config unit test asserting the export. Picked up per the established dispatch-starvation workaround (issue #758): Rule 2 (season-fill) confirmed fully starred in `plan/CADENCE.md` (43 gap-slots/43 shows, season-sweep clock already run today), Rule 3 (themed lists) confirmed saturated by a sixth consecutive same-day zero-ship pass logged in `plan/LISTS.md` — rather than force mediocre or duplicate content work, picked up the sole pending HIGH `plan/CRITIQUE.md` finding instead. Verify gate green: fast gate (199 test files / 3665 tests, `content:check` ok), build clean (1513/1513 static pages, route table confirms `/u/[handle]/opengraph-image` now `ƒ` Dynamic), e2e 4879/4879 passed (23.4m).
 
