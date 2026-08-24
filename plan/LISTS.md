@@ -10614,3 +10614,63 @@ last time a curator actually looked.
   standing saturation verdict. The next unlock remains Rule 2 filing a
   new season, or an oversight-authorized scout-research process to reach
   facts outside the repo's own season-file text.
+- **2026-08-24, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation): zero-ship.** Re-confirmed both standing blockers
+  before starting: Rule 2 still structurally stalled per `plan/CADENCE.md`
+  (every gap-slot starred confirmed-but-unaired) and no ledger row past
+  the 90-day review floor. Read yesterday's seven same-day passes in full
+  before starting and did not re-walk any of their confirmed dead ends
+  (charity/donation casting, live-finale extend, companion app,
+  rotating-judge-panel, alumni-as-crew, clip-show/crossover-episode,
+  stunt-casting, unplanned mid-season cast departure, "billed as
+  final/farewell season," fan-vote/write-in mechanics, back-to-back
+  filming, virtual/Zoom reunions, the cross-canon 3-show-floor census).
+  Chased eight fresh angles this pass, all rejected: (1) **Alone
+  franchise's own spinoff shows as a cross-canon axis** (`alone-australia`,
+  `alone-frozen`, `alone-the-skills-challenge` — reasoned these 4 distinct
+  show slugs could clear the 3-show floor cleanly) — grepped all three
+  spinoff slugs across `content/themes/*.md` and found all of their aired
+  seasons (`alone-australia` S01-S03, `alone-frozen` S01,
+  `alone-the-skills-challenge` S01) already staked across 10 existing
+  lists, several (`one-rule-never-bends`) claiming all three spinoffs at
+  once — fully mined, no fresh angle available. (2) Spinoff-launch framing
+  generally — confirmed `before-the-spinoff-had-a-name` and
+  `the-franchise-started-borrowing-from-itself` already own this thesis
+  (25 files reference spin-off/spinoff catalog-wide). (3) Sophomore-season
+  format pivot ("found its footing in season two") — zero clean hits, and
+  the phrase space overlaps `proving-the-debut-wasnt-luck` /
+  `season-one-doesnt-own-every-first`. (4) Holiday-themed episodes —
+  sub-floor, effectively a Chopped-only recurring format feature. (5)
+  Production reschedule/postponement language — 9 files across ~9 shows
+  but all resolve into `the-schedule-didnt-ask-permission` /
+  `pandemic-seasons` / `the-turnaround-skipped-a-year` territory, already
+  mature lists. (6) Age-as-casting-brief — `when-age-became-the-casting-
+  brief` already owns this verbatim, and the raw hit count (4 files) is
+  sub-floor regardless. (7) Prize-value changes, judges'-panel size
+  changes, franchise renaming — all sub-floor (2-4 hits, mostly same-show
+  canon+season duplicates). (8) Guest-host rotation as a structural first
+  — 7 files/4 shows on the surface, but reading each in context found
+  three were false positives on the same keyword (Too Hot to Handle S4's
+  "guest host" is a fake-show cover-story misdirection, Shark Tank S7/S9's
+  "guest sharks" are panelist rotations not hosting, Big Brother S26's
+  "AI" is a controlling-device twist, not an absent host) — only Bachelor
+  in Paradise S7 is a genuine rotating-guest-host fact, sub-floor at n=1.
+  Also spot-checked "a panelist sits out a stretch of the season" (Shark
+  Tank S9) against "the reunion special takes a season off" (Selling
+  Sunset S8) — different facts entirely, no shared thesis, sub-floor
+  either way. Also checked Emmy/award-recognition language (zero literal
+  "Emmy" hits catalog-wide — the 15 raw file hits were all "award" as a
+  false-positive substring, e.g. AGT's Golden Buzzer) and real-life-
+  family-relation casting (twins/siblings/parent-child — zero hits) and
+  first-openly-LGBTQ+ contestant (2 distinct shows only, sub-floor and
+  likely already covered by `season-one-doesnt-own-every-first`'s firsts
+  thesis). No `content/themes/*.md` file written or edited this pass; no
+  ledger row changed. Eighth consecutive zero-ship pass across two
+  calendar days, consistent with issue #758's standing saturation
+  verdict — the catalog's actionable Rule-3 surface continues to read
+  exhausted for keyword-driven and full-file-reading search alike. The
+  next unlock remains Rule 2 filing a new season, a finale-gate pickup
+  extending an existing single-show list (per the 2026-08-23
+  `the-anchor-count-set-the-ceiling` precedent), or an oversight-
+  authorized scout-research process to reach facts outside the repo's own
+  season-file text.
