@@ -804,6 +804,16 @@ new-show creation is locked to the biweekly show-add clock.
 | traitors-uk | 4/5 | 1* |
 | top-chef | 23/24 | 1* |
 
+**Rule 2 stall, 2026-08-24 tick (cloud march):** re-checked the gap
+table against the 2026-08-23 full sweep's own findings (7 batches
+ago as of this tick) — every one of the 44 gap-slots across 44
+shows remains starred confirmed-but-unaired, no new date has moved
+into the past since yesterday's sweep. No row actionable. Fell
+through to Rule 3: extended `the-reveal-was-the-whole-show` (tone)
+with a Traitors (US) S01 entry. See `plan/AUDIT.md` standing row
+and `plan/LISTS.md` ledger for full grounding. Next actionable
+check remains the weekly sweep, due 2026-08-30.
+
 ## Sweep notes (2026-08-09, fifth full pass)
 
 Fifth full weekly sweep (`/march` Step 1.5, Rule 1a, cloud march) —
