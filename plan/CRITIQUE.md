@@ -3682,6 +3682,7 @@
 - evidence: Eyebrow: "AIRED SPRING 2026 · RETURNING CASTAWAYS ONLY". Lower on the page, the unambiguous version: "All-Returnee · Fan-Voted Format".
 - suggested fix: Reword the eyebrow to something unambiguous standalone, e.g. "ALL-RETURNEE CAST" or "ENTIRE CAST RETURNING", matching the already-clear phrasing used elsewhere on the page. Content-only, one field.
 - source: browser (critique-pass-141, anon)
+- resolved: 2026-08-24, cloud march tick, content-gap redirect per issue #758. Reworded `content/shows/survivor/seasons/50-survivor-50.md`'s `eyebrow` from "Aired spring 2026 · returning castaways only" to "Aired spring 2026 · all-returnee cast" — drops the ambiguous "only" qualifier while keeping the established "Aired <season> <year> · <detail>" pattern shared by every sibling Survivor season eyebrow. Verify gate green: fast gate (199 test files/3667 unit tests, content:check ok), build clean (1513/1513 static pages), e2e 4879/4879 passed (29.5m). Shipped at c592d9be.
 
 ### [LOW] /shows/love-island-uk?view=community — mobile drops the 7D trend column while the page-level "voters, last 7 days" stat stays visible
 - pass: 141 (commit 949a34d3)
