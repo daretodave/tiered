@@ -1,5 +1,55 @@
 # CRITIQUE
 
+> Last pass: 2026-08-24 at commit 949a34d3
+> Pass count: 141
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 141
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set: `/`,
+> `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`,
+> `/themes`, and `/about` anon; `/shows/love-island-uk?view=
+> community`, `/u/e2e`, `/sign-in`, and `/shows/survivor?view=
+> community` authed. One authed test URL was malformed by the
+> dispatcher (`/shows/traitors-uk/season/04-series-4` — the real
+> slug is `series-4`, no leading season number); the reader correctly
+> traced it to a nonexistent slug via a live href grep, but the
+> resulting 404/missing-metadata/console-error findings it produced
+> were dropped as invalid rather than filed (confirmed by curling the
+> correct `series-4` URL — 200 — and re-verified no such numbered-slug
+> convention exists anywhere else in the routing). Both passes
+> otherwise came back mechanically clean (0 console errors, 0 failed
+> requests, 0 mobile overflow, all pages 200 with complete
+> title/description/canonical/OG image) — 6 findings filed this pass
+> (1 HIGH, 2 MED, 3 LOW): a HIGH reopening the pass-136 `/u/e2e/
+> opengraph-image` 404 — the 2026-08-23 fix added `export const
+> dynamic = 'force-dynamic'` on the theory the bug was permanent
+> static-caching of a first-hit 404, but the route still 404s live
+> right now with a confirmed-fresh `x-vercel-cache: MISS` / `age: 0`
+> response, meaning the caching diagnosis was incomplete — the sibling
+> `page.tsx` calls the identical `getProfileActivity({ handle })` and
+> succeeds (200, populated profile), so the divergence is specific to
+> the image route's execution context, not the caching layer; a MED
+> systemic pattern — meta descriptions on `/shows/love-island-uk`,
+> `/shows/survivor/season/survivor-50`, and `/themes` all reuse the
+> page's own H1/lede copy near-verbatim (reordered clauses or a
+> mid-sentence truncation with a dangling ellipsis on survivor-50)
+> rather than standing as independent search-snippet summaries — one
+> row covering all three pages since it's the same template-level
+> defect, not three unrelated echoes; a MED on `/shows/survivor?view=
+> community` where the visible APPROVAL % column sits beside a list
+> still in canon order (not approval order) with no inline cue that
+> the mirroring is intentional pre-threshold behavior; a LOW on
+> survivor-50's `<title>` doubling "Survivor" instead of following the
+> show-page branding pattern; a LOW on survivor-50's ambiguous
+> "RETURNING CASTAWAYS ONLY" eyebrow (reads like an access restriction
+> on first parse); and a LOW on Love Island UK's mobile community view
+> dropping the 7D trend column while the page-level "voters, last 7
+> days" stat stays visible, breaking the connection between the two.
+>
+> ───── Pass 140 metadata kept below for history ─────
+>
 > Last pass: 2026-08-24 at commit 9cc9376a
 > Pass count: 140
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3587,6 +3637,60 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] /u/e2e/opengraph-image — the per-profile social-card image still 404s live, reopening the pass-136 finding the 2026-08-23 fix believed it closed
+- pass: 141 (commit 949a34d3)
+- viewport: desktop
+- category: seo
+- observation: The 2026-08-23 fix (pass-136 resolution) added `export const dynamic = 'force-dynamic'` to `src/app/(default)/u/[handle]/opengraph-image.tsx` on the theory that Next was permanently caching a stale first-request `notFound()` response for this dynamic-segment metadata route. That fix is confirmed still present in source. But the route 404s live right now with headers proving the response is freshly computed, not cached — this is a genuine execution-context bug, not the caching issue the prior fix addressed.
+- evidence: `curl -sI https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 404`, `x-vercel-cache: MISS`, `age: 0`, `x-matched-path: /_not-found` (confirmed twice, both fresh MISSes). Meanwhile `https://tiered.tv/u/e2e` itself returns `200` with the populated `@e2e` profile rendered. Both routes call the identical `getProfileActivity({ handle })` from `src/lib/supabase/server.ts` with the identical handle — the page route resolves it successfully, the image route's `if (!activity) notFound()` branch fires. The divergence is specific to the image route's request/runtime context (`export const runtime = 'nodejs'`), not to caching, since caching would show `age > 0` or `x-vercel-cache: HIT/STALE` on a permanently-wedged response, not a fresh `MISS` on every request.
+- suggested fix: Reopen the pass-136 investigation with a corrected premise — the caching fix was necessary but not sufficient. Add logging or a temporary diagnostic to `opengraph-image.tsx`'s `getProfileActivity` call path to capture whether `serviceRoleClient()` is throwing/returning null specifically under the image route's `nodejs` runtime + dynamic-segment combination (env var propagation, cold-start race, or a swallowed RPC error are the likeliest culprits per the original pass-136 hypothesis that was set aside when the caching theory looked sufficient).
+- source: browser (critique-pass-141, authed)
+
+### [MED] systemic — meta descriptions on `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`, and `/themes` all reuse the page's own H1/lede copy near-verbatim instead of standing as independent summaries
+- pass: 141 (commit 949a34d3)
+- viewport: desktop
+- category: seo
+- observation: Three pages across two different templates (show page, season page, list-index page) show the same defect: the `<meta name="description">` is a reshuffled or truncated copy of the page's own visible lede/H1 text rather than an edited, independent search-snippet summary. On survivor-50 the truncation cuts mid-sentence with a dangling ellipsis and drops the season's actual differentiating hook (the fan-voted game mechanics). This reads as a template-level pattern, not three unrelated one-off echoes — related to, but a distinct manifestation from, the corpus's ongoing intra-page slot_argument/watch_list echo class.
+- evidence: Love Island UK — meta: "Mallorca villa, fire pit, text messages read aloud — 13 seasons of the original everyone else has been adapting since 2015." Body lede: "13 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015..." Survivor 50 — meta: "All 24 castaways returning, from Season 1 through the season that just aired, for the biggest cast in the show's history…" (dangling ellipsis, truncated). Full dek: "...for the biggest cast in the show's history — and a set of game mechanics the fans voted on themselves." /themes — meta: "Themed lists across the tiered.tv catalog — Premieres that earned it, Finales that stuck the landing, cross-canon and single-show tiers." H1 block: "Themed lists. Cross-canon and single-show."
+- suggested fix: Audit the meta-description generation step across the show/season/list templates for verbatim reuse of on-page headline/lede copy; write each as an independently-edited summary, and ensure truncation (if any) always lands on a complete clause rather than a dangling ellipsis mid-sentence.
+- source: browser (critique-pass-141, anon)
+
+### [MED] /shows/survivor?view=community — the visible APPROVAL % column sits beside a list still in canon order, reading as contradictory
+- pass: 141 (commit 949a34d3)
+- viewport: desktop
+- category: comprehension
+- observation: The community table's row order does not track the adjacent APPROVAL % column at all — e.g. a 100%/3-vote row and a 0%/0-vote row sit above a different 100%/1-vote row further down. A line of copy above the table explains this is intentional ("Until enough votes land, this mirrors the canon"), but that explanation is easy to miss on a first scan, and the % column sitting directly beside an order it doesn't drive reads as a data-integrity bug rather than a documented pre-threshold state.
+- evidence: Table excerpt: "01 Cagayan ... 100% — 3", "04 Micronesia: Fans vs. Favorites ... 0% — 0", "44 One World ... 100% — 1" — order is canon rank order, not approval-percentage order.
+- suggested fix: Either visually de-emphasize (gray out) the APPROVAL % column while the table is still mirroring canon order, or add a persistent inline flag on the column header itself (e.g. "APPROVAL % (canon order until threshold)") so the explanation doesn't rely on a reader having already read the line above the table.
+- source: browser (critique-pass-141, authed)
+
+### [LOW] /shows/survivor/season/survivor-50 — page `<title>` doubles "Survivor" instead of following the show-page branding pattern
+- pass: 141 (commit 949a34d3)
+- viewport: desktop
+- category: seo
+- observation: Show pages use the pattern "<Show> — the canon, no spoilers — tiered.tv"; this season page instead reads "Survivor — Survivor 50 — tiered.tv", which repeats the show name and drops the branding phrase, showing up as a redundant-looking tab title / search result.
+- evidence: Show page title (Love Island UK): "Love Island UK — the canon, no spoilers — tiered.tv". Season page title: "Survivor — Survivor 50 — tiered.tv".
+- suggested fix: Standardize season-page titles to a pattern like "Survivor 50 — the canon, no spoilers — tiered.tv" so the show name isn't stated twice and the branding phrase stays consistent with show pages. Check the shared title-building helper in `src/lib/seo.ts` for how season titles diverge from show titles.
+- source: browser (critique-pass-141, anon)
+
+### [LOW] /shows/survivor/season/survivor-50 — "RETURNING CASTAWAYS ONLY" eyebrow reads as an access restriction on first parse
+- pass: 141 (commit 949a34d3)
+- viewport: desktop
+- category: comprehension
+- observation: The eyebrow label directly under the breadcrumb ("AIRED SPRING 2026 · RETURNING CASTAWAYS ONLY") can be misread on first pass as gatekeeping copy (only returning viewers/players allowed) rather than its intended meaning — every competitor in the season is a returning player. Clearer phrasing already exists lower on the page.
+- evidence: Eyebrow: "AIRED SPRING 2026 · RETURNING CASTAWAYS ONLY". Lower on the page, the unambiguous version: "All-Returnee · Fan-Voted Format".
+- suggested fix: Reword the eyebrow to something unambiguous standalone, e.g. "ALL-RETURNEE CAST" or "ENTIRE CAST RETURNING", matching the already-clear phrasing used elsewhere on the page. Content-only, one field.
+- source: browser (critique-pass-141, anon)
+
+### [LOW] /shows/love-island-uk?view=community — mobile drops the 7D trend column while the page-level "voters, last 7 days" stat stays visible
+- pass: 141 (commit 949a34d3)
+- viewport: mobile
+- category: mobile
+- observation: The desktop community table shows a "7D" per-season trend column; on mobile (375px) that column is dropped entirely from the table header, even though the page-level "VOTERS, LAST 7 DAYS" stat stays prominent above it. A mobile reader can see the aggregate 7-day figure but has no way to see which seasons are contributing to it.
+- evidence: Desktop table header: "RANK / SEASON / APPROVAL / % / 7D / VOTES". Mobile table header: "RANK / SEASON / APPR. % / VOTES" (no 7D column).
+- suggested fix: Either keep a compact 7D indicator in the mobile row layout, or rephrase the page-level stat label so it doesn't imply per-row detail exists when the table can't show it at this breakpoint.
+- source: browser (critique-pass-141, mobile, authed)
 
 ### [MED] /shows/amazing-race/season/season-38 — the meta description, the "Shape of the Season" body, and the "What to Watch For" bullets all restate the same two facts three ways
 - pass: 140 (commit 9cc9376a)
