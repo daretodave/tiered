@@ -1,5 +1,56 @@
 # CRITIQUE
 
+> Last pass: 2026-08-24 at commit ee526d1a
+> Pass count: 139
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 139
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set: Survivor 50
+> (the newest season, golden-pattern show) and Top Chef's Editor's
+> Canon view, plus `/shows`, `/themes/best-newbie-casts`,
+> `/shows/survivor?view=community`, and `/u/e2e`. Anon (5 URLs: `/`,
+> `/shows/survivor/season/survivor-50`, `/shows`,
+> `/themes/best-newbie-casts`, `/shows/top-chef?view=canon`) came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, no spoiler leaks) but surfaced two real content findings
+> on Top Chef's canon page: the era-filter chips use two different
+> labeling conventions on the same control row (`Padma era` — first
+> name, no range — next to `Kish era (S21–S23)` — surname, with a
+> range), and the Las Vegas (#1) slot's `slot_argument` callout
+> repeats the exact same 13-word clause ("raised what a Quickfire was
+> allowed to demand") verbatim from the body prose two lines above it
+> — confirmed in `content/shows/top-chef/canon.md` lines 17–22 and
+> 28/33–35, the same repetition-class defect already fixed at pass-93
+> and pass-127 on this show's season pages. A third anon finding — the
+> Survivor 50 season page's "placeholder, not a verdict" framing gives
+> no forward pointer to when the canon position gets revisited — kept
+> at LOW. Authed (4 URLs: `/shows/survivor/season/survivor-50`,
+> `/shows/survivor?view=community`, `/themes/best-newbie-casts`,
+> `/u/e2e`) confirmed auth chrome, vote-pair, and comment-input all
+> reflect signed-in state correctly (nav shows `@e2e`, vote block
+> shows authenticated copy) with zero console errors/failed
+> requests/mobile overflow; `/u/e2e`'s empty state reads coherent, not
+> broken. One kept: Survivor's community view shows "voters, last 7
+> days · 0" directly above a ranking table where most rows already
+> carry nonzero vote totals, which reads as contradictory against the
+> page's own "live" framing (`src/components/canon/CommunityLiveStrip.tsx`).
+> Two raw findings dropped after self-assessment: an aborted RSC
+> prefetch to `/shows/survivor/season/cagayan` firing on every `/u/e2e`
+> load is the browser canceling the prefetch behind the page's own
+> "Start with Survivor →" CTA link (`pickFeaturedSeason` in
+> `src/lib/profile/context.ts`) when the automated walk navigates away
+> before it resolves — a session-timing artifact, not a product
+> defect. The mobile season-page TOC's uppercase casing and "N
+> sections" count (missing on desktop) is deliberate: `.toc-mobile-head`
+> / `.toc-mobile-meta` in `src/styles/screens.css:803-814` explicitly
+> set `text-transform: uppercase` as part of the mono-chrome mobile
+> accordion pattern, distinct by design from the desktop serif TOC —
+> not a bug.
+>
+> ───── Pass 138 metadata kept below for history ─────
+>
 > Last pass: 2026-08-23 at commit b856e2eb
 > Pass count: 138
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3503,6 +3554,42 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] /shows/top-chef?view=canon — era-filter chips use two different labeling conventions on the same control row
+- pass: 139 (commit ee526d1a)
+- viewport: desktop
+- category: comprehension
+- observation: The Editor's Canon era filter row shows two chips built from the same `era_bands` frontmatter but rendered inconsistently: "PADMA ERA" (host first name, no season range) sits next to "KISH ERA (S21–S23)" (host surname, with a parenthetical range). A first-time reader scanning the filter row has no way to tell why one chip carries a range and the other doesn't, or why one uses a first name and the other a surname.
+- evidence: `content/shows/top-chef/canon.md:16-22` — `era_bands: [{ key: padma, label: "Padma era", range: [2006, 2023] }, { key: kish, label: "Kish era (S21–S23)", range: [2024, 2026] }]`. Both entries carry a `range` field, but only the `kish` label string embeds it.
+- suggested fix: Standardize both era labels to the same pattern — either both `<Host> era (S#–S#)` or both without a parenthetical range (letting the UI derive the range display from the `range` field itself for both, rather than baking it into only one label string). Content-only, one-field edit.
+- source: browser (critique-pass-139, anon)
+
+### [MED] /shows/top-chef?view=canon — Las Vegas (#1) slot repeats its own body-prose clause verbatim in the "why this slot" callout
+- pass: 139 (commit ee526d1a)
+- viewport: desktop
+- category: voice
+- observation: The Las Vegas entry's body prose ("...a draft of culinary-school precision that raised what a Quickfire was allowed to demand.") and its adjacent `slot_argument` callout ("A Strip-staged season whose pre-show resumes raised what a Quickfire was allowed to demand...") share the exact same 13-word clause verbatim, back to back, for the same entry. Same repetition-class defect already fixed on this show's Carolinas season page at pass-93 and pass-127 (`filming_caption` / `format_caption` self-restating their own value lines), now recurring at the canon-page level.
+- evidence: `content/shows/top-chef/canon.md:28` (`slot_argument`) vs. lines 33-35 (body prose) — both contain "raised what a Quickfire was allowed to demand" word for word.
+- suggested fix: Rewrite the `slot_argument` callout to lead with a distinct fact (e.g. the depth of the returning-veteran bench, or the visual register of the Strip setting) instead of restating the body's own closing clause. Content-only, one-field edit.
+- source: browser (critique-pass-139, anon)
+
+### [LOW] /shows/survivor/season/survivor-50 — "placeholder, not a verdict" canon framing gives no forward pointer for when it gets revisited
+- pass: 139 (commit ee526d1a)
+- viewport: desktop
+- category: comprehension
+- observation: The "Where it sits in the canon" section explains, honestly and at length, why a brand-new season lands at #50 of 50 — but gives no visible date or trigger condition for when that placeholder position gets revisited, leaving the reader with an open loop.
+- evidence: Rendered text — "Fiftieth is a placeholder here, not a verdict: once the season gets its full post-finale pass, it'll be weighed on its own merits instead of just landing where every brand-new season starts out."
+- suggested fix: Add a concrete cue (e.g. a season-sweep-anchored phrase like "revisited after the next full canon pass") so the placeholder framing feels scheduled rather than open-ended. This pattern likely recurs on every newest-season page across the catalog, not just Survivor 50 — worth checking whether it's a shared template string before hand-editing one show.
+- source: browser (critique-pass-139, anon)
+
+### [MED] /shows/survivor?view=community — "voters, last 7 days · 0" reads as contradicting the nonzero vote totals in the same table
+- pass: 139 (commit ee526d1a)
+- viewport: desktop
+- category: comprehension
+- observation: The activity strip reads "LIVE · last update · 3d ago · voters, last 7 days · 0" directly above a ranking table where most rows already carry nonzero vote counts (e.g. Cagayan 100% / 3 votes, Borneo 100% / 3 votes). A returning signed-in reader has no way to tell whether community voting is actually live or the visible tallies are stale/seed data — the "0" and the page's own "live" framing read as contradictory without a total-voters figure to anchor against.
+- evidence: `src/components/canon/CommunityLiveStrip.tsx:42-48` renders `last update · {formatLastRecompute(lastRecomputeAt)}` and `voters, last 7 days · {votersThisWeek.toLocaleString()}` with no all-time total voters stat alongside the 7-day delta.
+- suggested fix: Show a "total voters" stat alongside "last 7 days," or add a short clause when the weekly figure is 0 (e.g. "no new votes since last update") so the live-vs-mirrored-canon status doesn't read as contradictory.
+- source: browser (critique-pass-139, authed)
 
 ### [LOW] /shows/americas-got-talent?view=community — mobile community rank list drops the "Approval" column label, leaving a bare unlabeled "%"
 - pass: 138 (commit b856e2eb)
