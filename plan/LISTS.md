@@ -10674,3 +10674,60 @@ last time a curator actually looked.
   `the-anchor-count-set-the-ceiling` precedent), or an oversight-
   authorized scout-research process to reach facts outside the repo's own
   season-file text.
+- **2026-08-24, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation, tenth same-day-class pass): zero-ship.** Re-confirmed
+  both standing blockers fresh rather than trusting the prior pass's
+  verbatim result: `plan/CADENCE.md`'s season gap table (43 shows/gap-slots)
+  is still entirely starred confirmed-but-unaired, and the ledger's oldest
+  `last_reviewed` (`survivor-pillars`, 2026-07-31) sits at 24 days, nowhere
+  near the 90-day/five-list review-batch floor — Rule 2 stays stalled, no
+  review batch is due, so this is a new-list-or-extend tick same as every
+  prior pass today. Read the full eighth/ninth-pass log immediately above
+  and did not re-walk any of its closed classes. Worked one genuinely new
+  angle end to end rather than a keyword sweep: **cast/panel headcount
+  superlatives stated explicitly in a season's own copy** (a season's lede,
+  pull, or `cast_size_caption` naming itself the show's biggest, smallest,
+  or fastest-reshuffled roster), reasoning this was a fresh, concrete,
+  cross-canon-eligible class distinct from the general "cast churn" and
+  "host/panel turnover" theses already shipped. Ran a full
+  `largest cast|biggest cast|largest roster|biggest roster|smallest cast|
+  smallest roster|largest group the|biggest group the|largest field|
+  biggest field|smallest field|largest pool|biggest pool|smallest pool`
+  sweep across every `content/shows/**/seasons/*.md` (31 files hit) and
+  read each candidate's own text plus a full `show:` grep of every
+  `content/themes/*.md` before drafting anything. Every strong-looking hit
+  was already staked, most near-verbatim: RHOP S09 ("RHOP's biggest cast
+  reshuffle yet," `cast_size: 7`) is already `a-guest-spot-with-room-to-
+  grow` rank 10 on the identical promotion-plus-three-exits fact; The Real
+  World S29 ("the largest cast yet," `cast_size: 12`) is already `the-
+  house-that-kept-changing` rank 14 ("the house grows mid-season... past
+  its usual seven roommates"); Southern Charm S07 ("the biggest cast
+  refresh since the show's debut") is already `the-founding-seven-slowly-
+  rebuilt` rank 5 with near-identical wording ("the biggest refresh since
+  the debut season itself"); Vanderpump Rules S06 ("the show's biggest
+  cast yet") is already `the-map-outlasted-the-cast` rank 8 verbatim
+  ("The show's biggest cast yet, working the same two addresses"); Shark
+  Tank S16 (a recurring guest earning a permanent seat) is already `the-
+  extra-seat-is-never-a-swap` rank 4. Checked RHOBH as a possible tenth
+  franchise for `the-couch-kept-adding-chairs` (currently 17 entries / 9
+  RHO-franchise shows, RHOBH the only one absent) — read `the-expansion`
+  (S02), `the-restock` (S06), `the-new-guard` (S08), `the-rotation` (S09):
+  none carries a `cast_size` field or a numeric "from X to Y" claim in its
+  own prose (only "two new cast members," ungroundable to a specific
+  before/after count), and RHOBH's cast-composition story is already fully
+  spent, 15/15 seasons, at the single-show `the-friend-credit-became-the-
+  farm-system` — adding an ungrounded headcount guess would violate the
+  own-file-first grounding discipline, so left unshipped rather than
+  invent a number. Also spot-checked a second fresh angle, real-world
+  election-cycle scheduling (a season's own copy citing an election as a
+  premiere-date or filming-calendar constraint): a full `[Ee]lection` grep
+  across every season file returned five hits, all false positives on
+  "selection"/"location selection," not a genuine election-cycle fact —
+  closed, sub-floor. No `content/themes/*.md` file written or edited this
+  pass; no ledger row changed. Tenth consecutive same-day-class zero-ship
+  pass, and the first of the ten to trace a fresh angle's every single
+  candidate to an already-claimed entry rather than a sub-floor raw hit
+  count — the strongest evidence yet that the catalog's headcount/roster-
+  size vein specifically is fully mined, not merely under-searched. The
+  next unlock remains unchanged: Rule 2 filing a new season, a finale-gate
+  pickup, or an oversight-authorized scout-research process.
