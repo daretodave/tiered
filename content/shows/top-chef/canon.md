@@ -18,7 +18,7 @@ era_bands:
     label: Padma era
     range: [2006, 2023]
   - key: kish
-    label: Kish era (S21–S23)
+    label: Kish era
     range: [2024, 2026]
 ---
 
