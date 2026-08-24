@@ -18,10 +18,12 @@ function Harness({
   bands,
   total,
   airedSeasons,
+  hasCommunitySignal,
 }: {
   bands: EraBand[]
   total: number
   airedSeasons?: number
+  hasCommunitySignal?: boolean
 }) {
   return (
     <div data-canon-page-root data-testid="root">
@@ -30,6 +32,7 @@ function Harness({
           bands={bands}
           total={total}
           airedSeasons={airedSeasons}
+          hasCommunitySignal={hasCommunitySignal}
         />
         <a className="cp-hero-entry" data-testid="e-pioneer" data-era="pioneer">
           a
@@ -134,5 +137,21 @@ describe('<CanonEraToolbar>', () => {
   it('omits the coverage note when airedSeasons is not provided', () => {
     render(<Harness bands={[]} total={1} />)
     expect(screen.queryByTestId('canon-coverage-note')).toBeNull()
+  })
+
+  // Critique pass-140: the ◆ hold / ↑ / ↓ community trend glyph's only
+  // plain-language gloss lived in a title/aria-label attribute, invisible
+  // to touch readers with no hover. A visible legend is the always-on
+  // fallback, shown only when at least one entry actually carries a pill.
+  it('shows a visible community-trend legend when hasCommunitySignal is true', () => {
+    render(<Harness bands={[]} total={3} hasCommunitySignal />)
+    expect(screen.getByTestId('canon-community-legend')).toHaveTextContent(
+      '◆ hold · ↑ / ↓ — community rank shift since the last update',
+    )
+  })
+
+  it('omits the community-trend legend when no entry carries a signal', () => {
+    render(<Harness bands={[]} total={3} />)
+    expect(screen.queryByTestId('canon-community-legend')).toBeNull()
   })
 })

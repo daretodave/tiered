@@ -79,6 +79,9 @@ export function ShowRanking({
     )
   const eraBands = canon?.era_bands ?? []
   const eraOf = makeEraOf(seasonOf, eraBands)
+  const hasCommunitySignal = entries.some(
+    (entry) => communitySignal(entry) !== null,
+  )
 
   return (
     <section
@@ -129,6 +132,7 @@ export function ShowRanking({
               bands={eraBands}
               total={entries.length}
               airedSeasons={show.seasons}
+              hasCommunitySignal={hasCommunitySignal}
             />
             {tierBands.map((band) => (
               <CanonTierBand

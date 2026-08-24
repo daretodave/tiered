@@ -27,6 +27,15 @@ type CanonEraToolbarProps = {
    * roadmap rather than a dead end (critique pass-79, perfect-match).
    */
   airedSeasons?: number
+  /**
+   * True when at least one ranked entry carries a live or fallback
+   * community trend pill (`◆ hold` / `↑ N` / `↓ N` in
+   * `CanonHeroEntries`). That glyph's only plain-language gloss lives
+   * in a `title`/`aria-label` attribute, invisible on touch devices
+   * with no hover — a visible legend here (critique pass-140) is the
+   * always-on fallback.
+   */
+  hasCommunitySignal?: boolean
 }
 
 const ALL = 'all'
@@ -35,6 +44,7 @@ export function CanonEraToolbar({
   bands,
   total,
   airedSeasons,
+  hasCommunitySignal,
 }: CanonEraToolbarProps) {
   const [active, setActive] = useState<string>(ALL)
   const [emptyEra, setEmptyEra] = useState(false)
@@ -136,6 +146,11 @@ export function CanonEraToolbar({
         <div className="cp-coverage-note" data-testid="canon-coverage-note">
           {seasonsRemaining} more season{seasonsRemaining === 1 ? '' : 's'}{' '}
           aired — ranking in progress.
+        </div>
+      )}
+      {hasCommunitySignal && (
+        <div className="cp-community-legend" data-testid="canon-community-legend">
+          ◆ hold · ↑ / ↓ — community rank shift since the last update
         </div>
       )}
     </>

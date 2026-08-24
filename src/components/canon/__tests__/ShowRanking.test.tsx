@@ -265,4 +265,51 @@ describe('<ShowRanking>', () => {
     expect(window.location.pathname).toBe(pathBefore)
     expect(new URLSearchParams(window.location.search).get('view')).toBeNull()
   })
+
+  // Critique pass-140: a visible legend must appear whenever any ranked
+  // entry carries a community trend pill, so touch readers (no hover)
+  // can parse the ◆ hold / ↑ / ↓ glyph without relying on title/aria-label.
+  it('shows the community-trend legend when a canon entry carries a community_rank_hint', () => {
+    const seasons = [season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]
+    const canonWithHint: CanonFile = {
+      ...canon(),
+      entries: [
+        {
+          rank: 1,
+          season: 20,
+          title: 'Heroes vs. Villains',
+          rationale: 'rationale body',
+          tag: 'tagline',
+          community_rank_hint: { rank: 1, delta: 0, sentiment: 'hold' },
+        },
+        { rank: 6, season: 1, title: 'Borneo', rationale: 'rationale body' },
+      ],
+    } as unknown as CanonFile
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={seasons}
+        canon={canonWithHint}
+        initialView="canon"
+        community={liveRanking(seasons, 'seasons')}
+      />,
+    )
+    expect(screen.getByTestId('canon-community-legend')).toHaveTextContent(
+      '◆ hold · ↑ / ↓ — community rank shift since the last update',
+    )
+  })
+
+  it('omits the community-trend legend when no canon entry carries a signal', () => {
+    const seasons = [season(20, 'Heroes vs. Villains'), season(1, 'Borneo')]
+    render(
+      <ShowRanking
+        show={SHOW}
+        seasons={seasons}
+        canon={canon()}
+        initialView="canon"
+        community={liveRanking(seasons, 'seasons')}
+      />,
+    )
+    expect(screen.queryByTestId('canon-community-legend')).toBeNull()
+  })
 })
