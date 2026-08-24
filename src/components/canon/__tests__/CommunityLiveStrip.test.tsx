@@ -68,4 +68,30 @@ describe('<CommunityLiveStrip>', () => {
     const firstItem = strip.querySelector('.cp-live-left > span:first-child')
     expect(firstItem?.textContent?.trim().startsWith('last update')).toBe(true)
   })
+
+  it('clarifies a zero weekly count on a live-votes page so it does not read as contradicting nonzero table totals (critique pass-139)', () => {
+    render(
+      <CommunityLiveStrip
+        source="votes"
+        lastRecomputeAt={new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()}
+        votersThisWeek={0}
+        version={1421}
+      />,
+    )
+    const strip = screen.getByTestId('community-live-strip')
+    expect(strip).toHaveTextContent('voters, last 7 days · 0 (no new votes since last update)')
+  })
+
+  it('does not add the zero-clause below the vote threshold — "votes pending" already reads honestly there', () => {
+    render(
+      <CommunityLiveStrip
+        source="canon"
+        lastRecomputeAt={null}
+        votersThisWeek={0}
+        version={null}
+      />,
+    )
+    const strip = screen.getByTestId('community-live-strip')
+    expect(strip).not.toHaveTextContent('no new votes since last update')
+  })
 })

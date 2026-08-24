@@ -14,6 +14,15 @@ type CommunityLiveStripProps = {
 // than an invented number. The raw snapshot-row id (`version`) is
 // carried as `data-version` for tests only, never shown as copy —
 // it's a DB row id, not a meaningful week/vote-cycle count.
+//
+// CRITIQUE pass 139 MED: on a `source: 'votes'` page, a "voters,
+// last 7 days · 0" reading sits directly above a table whose rows
+// already carry nonzero historical vote totals — without a clause
+// distinguishing "no new votes this week" from "the totals below
+// are stale," a returning reader can't tell the two apart. Only
+// fires for `source === 'votes'`; the `canon` (below-threshold)
+// case already reads honestly via `formatLastRecompute`'s "votes
+// pending" and needs no extra clause.
 export function CommunityLiveStrip({
   source,
   lastRecomputeAt,
@@ -43,6 +52,9 @@ export function CommunityLiveStrip({
         </span>
         <span>
           voters, last 7 days · <b>{votersThisWeek.toLocaleString()}</b>
+          {votersThisWeek === 0 && source === 'votes'
+            ? ' (no new votes since last update)'
+            : null}
         </span>
         <span>
           status · <b>{status}</b>
