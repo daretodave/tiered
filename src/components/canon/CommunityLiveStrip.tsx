@@ -36,9 +36,6 @@ export function CommunityLiveStrip({
       <div className="cp-live-left">
         <span>
           <span className="cp-live-dot" />
-          live
-        </span>
-        <span>
           last update · <b>{formatLastRecompute(lastRecomputeAt)}</b>
         </span>
         <span>

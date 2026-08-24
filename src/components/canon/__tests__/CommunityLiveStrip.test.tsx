@@ -54,4 +54,18 @@ describe('<CommunityLiveStrip>', () => {
     expect(strip).toHaveTextContent(/next update/)
     expect(strip).not.toHaveTextContent(/recompute/i)
   })
+
+  it('does not repeat a standalone "live" label next to the dot — the tab cap already says it (critique pass-137)', () => {
+    render(
+      <CommunityLiveStrip
+        source="canon"
+        lastRecomputeAt={null}
+        votersThisWeek={0}
+        version={null}
+      />,
+    )
+    const strip = screen.getByTestId('community-live-strip')
+    const firstItem = strip.querySelector('.cp-live-left > span:first-child')
+    expect(firstItem?.textContent?.trim().startsWith('last update')).toBe(true)
+  })
 })
