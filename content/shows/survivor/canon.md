@@ -922,7 +922,7 @@ there's no structural argument driving the placement — just a
 fresh cast and a round-number milestone. The canon hasn't had
 time to see how this season holds up against the rest of the
 field, and the order revisits its bottom slots less often than
-its top ones. Fiftieth is a placeholder here, not a verdict: once
-the season gets its full post-finale pass, it'll be weighed on
-its own merits instead of just landing where every brand-new
-season starts out.
+its top ones. Fiftieth is a placeholder here, not a verdict: it
+holds until the next full canon pass revisits the bottom slots,
+then it's weighed on its own merits instead of just landing
+where every brand-new season starts out.
