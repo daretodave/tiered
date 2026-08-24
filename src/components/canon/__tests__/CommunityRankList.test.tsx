@@ -181,4 +181,16 @@ describe('<CommunityRankList>', () => {
     const list = screen.getByTestId('community-rank-list')
     expect(list).toHaveTextContent(/air order/i)
   })
+
+  it('the mobile-visible % column header carries its own label so it is not orphaned when the desktop "Approval" header hides at the 640px breakpoint (regression guard for critique pass-138)', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    const { container } = render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
+    )
+    const pctHeader = container.querySelector('.col-pct')
+    expect(pctHeader).not.toBeNull()
+    expect(
+      pctHeader?.querySelector('.col-pct-mobile-label'),
+    ).toHaveTextContent('Appr.')
+  })
 })

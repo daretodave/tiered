@@ -836,6 +836,7 @@
   color: var(--ink-55);
 }
 .cp-cl-cols .col-r { text-align: right; }
+.col-pct-mobile-label { display: none; }
 
 .cp-cl-rows {
   display: flex;
@@ -1100,6 +1101,10 @@
   .cp-cl-row .cp-clr-bar { display: none; }
   .cp-cl-cols .col-pct,
   .cp-cl-row .cp-clr-pct { display: block; }
+  /* The desktop "Approval" header (.col-bar) is hidden above, so the
+     bare "%" left in .col-pct has no label — give it one at this
+     breakpoint only (critique pass-138, #758 content-gap redirect). */
+  .col-pct-mobile-label { display: inline; }
 }
 
 @media (max-width: 560px) {

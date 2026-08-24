@@ -44,7 +44,9 @@ export function CommunityRankList({
         <span>Rank</span>
         <span>Season</span>
         <span className="col-bar">Approval</span>
-        <span className="col-pct col-r">%</span>
+        <span className="col-pct col-r">
+          <span className="col-pct-mobile-label">Appr. </span>%
+        </span>
         <span
           className="col-trend col-r"
           title="Populates after the first weekly update — until then every row shows an em-dash, not a stalled counter."
