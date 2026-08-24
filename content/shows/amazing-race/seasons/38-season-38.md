@@ -21,11 +21,11 @@ lede: "A historic franchise crossover: thirteen teams of two, every one carrying
 pull: "The first season to stock the entire field with Big Brother veterans — a cross-franchise concept the format had never run at full scale."
 watch_list:
   - episode_label: "Casting · the crossover field"
-    body: "Thirteen teams of two, each built around at least one former US Big Brother houseguest. Promoted as a historic franchise crossover — watch how race instincts meet house instincts."
-  - episode_label: "Route · the Hoorn start"
-    body: "The season opens in Hoorn, the Netherlands, the birthplace of the Big Brother format — a starting line chosen to frame the crossover concept."
+    body: "Watch for how living-room alliance instincts hold up outside the house — Big Brother strategy is built on reading people in one room, not sprinting through unfamiliar cities under a countdown clock."
+  - episode_label: "Format · the pre-starting-line task"
+    body: "The route opens with the returning pre-starting-line task, a wrinkle that sorts team order before the first mat drop — worth watching for who it favors before the race proper begins."
   - episode_label: "Format · the new U-Turn penalty"
-    body: "A U-Turn penalty carried by a team that survived a non-elimination leg — the genuinely new mechanic this season, the first such tweak since Season 33."
+    body: "The season doubles down on U-Turn twists: alongside the survivor penalty, a Double U-Turn Vote debuts here too, a private ballot with a public reveal mid-route that adds a second layer of strategy to the format's oldest wrinkle."
   - episode_label: "Route · the European arc"
     body: "Hoorn through the Czech Republic, Hungary, Croatia, Romania, Greece, Italy, and France before a final leg back to a New York City finish."
 ---
