@@ -10907,3 +10907,60 @@ last time a curator actually looked.
   Rule 2 filing a new season, a finale-gate pickup extending an existing
   single-show list, or an oversight-authorized scout-research process to
   reach facts outside the repo's own season-file text.
+- **2026-08-24, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, fourteenth same-day-class pass): zero-ship.** Re-confirmed
+  both standing blockers unchanged: `plan/CADENCE.md`'s gap table is
+  still fully starred confirmed-but-unaired, and no ledger row clears
+  the 90-day/five-due review-batch floor (`survivor-pillars` still
+  oldest `last_reviewed`, well under threshold). Read all thirteen of
+  today's prior passes in full before starting and did not re-walk any
+  of their closed classes. Per the brief, targeted the specific fields
+  named as under-grepped so far: `format_summary`, `location`, and a
+  fresh show/franchise-pairing census. (1) **Full-catalog
+  `format_summary` read** (~250 lines across every `content/shows/**/
+  seasons/*.md`, read in full rather than sampled) — the one genuinely
+  new-looking device it surfaced was Drag Race All Stars S08's "Fame
+  Games," a fan-vote side-competition running for eliminated queens in
+  parallel with the main game, paying a separate cash prize rather than
+  a path back into the main competition (a real thesis distinct from
+  `a-second-life-built-into-the-format`, which is entirely built on
+  "second chance to keep playing the main game," confirmed by reading
+  all 12 of that list's live entries). Grepped `side.competition|
+  separate (cash )?prize|parallel competition|separate competition|its
+  own prize track` catalog-wide to find groundable siblings: only one
+  other hit, Ink Master S12's "Clash of the Coaches" (a coach-vs-coach
+  side bet, not an eliminated-contestant side track) — a different
+  sub-mechanic, not the same fact, and two shows total is sub-floor for
+  a cross-canon `craft`/`structure` list regardless. Also confirmed
+  MAFS Australia's format_summary reshuffle/swap-week language (S04,
+  S06, S10-S13) is fully spent, entry-for-entry, at
+  `the-reshuffle-stays-in-house` (single, 13/13 seasons, read in full).
+  (2) **`self-filmed` as a cross-show format device** — grepped
+  `self-filmed|self filmed` across every `content/shows/**/*.md`: 18
+  hits, all confined to `alone` and `alone-australia` (no
+  `naked-and-afraid` or other survival-format hit despite the shared
+  no-crew premise) — already the Alone-franchise territory the day's
+  eighth pass confirmed fully mined via `one-rule-never-bends`. (3)
+  **`location:` stat-tile text sweep** for unusual venue framing
+  (`compound|off-grid|no service|remote island|private island|
+  converted|abandoned|decommissioned|former`, case-insensitive) across
+  every season file — zero hits catalog-wide. (4) **Under-explored
+  show/franchise census** — checked the thinnest-looking candidates by
+  raw `show:` grep count across `content/themes/*.md` (rhodubai: 6
+  files / 2 aired seasons, rhom: 9 files, survivor-australia: 11 files,
+  love-is-blind: 8 files, perfect-match: 9 files) against each show's
+  own aired-season count: every one already carries a file count
+  proportional to its small season count, no thin gap large enough to
+  support a fresh cross-show or single-show angle. No
+  `content/themes/*.md` file written or edited this pass; no ledger row
+  changed. Fourteenth consecutive same-day-class zero-ship pass,
+  consistent with issue #758's standing saturation verdict — this pass
+  specifically targeted `format_summary`, `location`, and the
+  under-explored-pairing census the brief flagged as unswept fields, and
+  found the same result: every genuine cross-show fact is either
+  already the explicit thesis of a live, mature list or too thin (≤2
+  shows) to clear the cross-canon floor. The next unlock remains
+  unchanged: Rule 2 filing a new season, a finale-gate pickup extending
+  an existing single-show list, or an oversight-authorized
+  scout-research process to reach facts outside the repo's own
+  season-file text.
