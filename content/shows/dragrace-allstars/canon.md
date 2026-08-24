@@ -47,20 +47,21 @@ format every later entry will have to answer to.
 ## 10. Tournament of All Stars
 
 tag: The tournament reinvention — the biggest structural swing to the underlying game since Season 1.
-slot_argument: Eighteen queens, three brackets, an MVQ points system, and a Wildcard Lottery — no All Stars season has restructured the actual shape of the game this much since the format's debut.
+slot_argument: No season since Season 1's founding format has swung this hard at the game's underlying shape — but Season 1 built that shape from nothing, while this one reworks an existing one, which is why the swing lands second, not first.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Tournament of All Stars earns the runner-up slot by doing
 something no cycle between Season 1 and this one attempted: it
 rebuilds the game's underlying shape rather than tweaking the
-elimination mechanic on top of it. Eighteen queens — a
-franchise-wide record — split into three brackets of six, each
-running its own dedicated three-episode stretch before the top
-scorers converge on a semifinal. The MVQ points system turns
-even the bottom of a bracket into a strategic decision, and a
-judge-selected Wildcard Lottery adds one more twist ahead of the
-finale. The canon places it second because no All Stars season
-since the founding run has swung this hard at the format itself.
+elimination mechanic on top of it. The record-cast bracket
+rebuild and its MVQ scoring system are the clearest evidence —
+turning even a bad week into a strategic trade rather than a
+straight loss, with a Wildcard Lottery adding one more twist
+ahead of the finale. But Season 1 still ranks first because it
+built the game's shape from nothing, while this one rebuilds a
+shape the franchise already had. The canon places Tournament of
+All Stars second for the closest challenge that founding format
+has faced.
 
 ## 2. Season 2
 

@@ -11,15 +11,15 @@ cast_size: 18
 eyebrow: "Aired spring–summer 2025 · a record eighteen-queen bracket tournament"
 lede: "Eighteen queens — the largest cast in franchise history — split into three six-queen brackets, each running across three episodes before the top scorers advance to a semifinal. An MVQ points system lets bottom queens redistribute points among their peers."
 pull: "Eighteen queens, three brackets, and a tournament structure that reinvents what an All Stars season's shape can even look like."
-take_h2: "Eighteen queens, three brackets."
+take_h2: "The record cast, rebuilt as a tournament."
 premiere_caption: "Paramount+ · May 2025"
 format_summary: "Bracket tournament · MVQ points system"
-format_caption: "three six-queen brackets, top scorers advance to semis"
-cast_size_caption: "eighteen queens, the largest cast in franchise history"
+format_caption: "the MVQ system lets bottom scorers trade points to survive"
+cast_size_caption: "the record splits evenly, six queens to a bracket"
 host_caption: "RuPaul, {seasonOrdinalWord} season at the All Stars helm"
 watch_list:
   - episode_label: "Premiere · the bracket splits"
-    body: "Eighteen queens — a record cast for the franchise, flagship included — divide into three brackets of six. Watch how the tournament format changes what a premiere even has to accomplish with a cast this size."
+    body: "A field this large forces the premiere to work overtime — introducing personalities and bracket dynamics before a single elimination happens. Watch for how the episode paces all of it without losing momentum."
   - episode_label: "Early run · three episodes per bracket"
     body: "Each bracket gets its own dedicated three-episode stretch before the season moves to the next one. Watch for how the structure plays out as three self-contained tournaments under one roof."
   - episode_label: "Mid-season · the MVQ points system"
@@ -31,10 +31,9 @@ watch_list:
 ---
 
 Tournament of All Stars reinvents the season's shape entirely.
-Eighteen queens — the largest cast the franchise has ever
-assembled — split into three six-queen brackets, each running a
-dedicated three-episode stretch before the top scorers advance
-to a semifinal round. An MVQ points system lets bottom-scoring
-queens redistribute points among their peers, and a
-judge-selected Wildcard Lottery returns one eliminated queen
+The record cast splits into brackets, each running a dedicated
+stretch before top scorers advance to a semifinal round. The
+real invention lives in the mechanics: an MVQ points system lets
+bottom-scoring queens redistribute points among their peers, and
+a judge-selected Wildcard Lottery returns one eliminated queen
 ahead of the finale. RuPaul Charles hosts twelve episodes.
