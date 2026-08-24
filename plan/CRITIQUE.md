@@ -1,5 +1,49 @@
 # CRITIQUE
 
+> Last pass: 2026-08-24 at commit 90405f7a
+> Pass count: 142
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 142
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set: `/`,
+> `/shows/big-brother/season/a-summer-of-mystery`, `/shows/dragrace`,
+> `/themes/the-reveal-was-the-whole-show`, `/shows/traitors-uk?view=
+> canon` anon; `/u/e2e`, `/shows/rhoa/season/the-clean-slate?view=
+> community`, `/shows/dragrace?view=community`, `/sign-in` authed.
+> Both passes came back mechanically clean (0 console errors, 0
+> failed requests, 0 mobile overflow, all pages 200 with complete
+> title/description/canonical/OG image). The reader's raw output
+> surfaced 4 candidate findings; 2 were dropped on self-assessment
+> as already-litigated: a "past winner" mystery-houseguest disclosure
+> on the Big Brother S27 page and a residual Block Buster/Mastermind/
+> Week-9 name-repetition pattern both restate exact language the
+> pass-101 and pass-129 fixes deliberately preserved as the
+> established, correct baseline (watch_list's "a past winner," no
+> name, is the intended restraint; the lede/canon "name-only"
+> references vs. the body's one full functional description is the
+> intended post-pass-129 shape) — refiling them would reverse settled
+> editorial calls with no new evidence, not surface a fresh defect.
+> 2 findings filed this pass (0 HIGH, 1 MED, 1 LOW): a LOW voice
+> echo on `/shows/dragrace` where Season 5's canon dek and the
+> opening sentence of its body paragraph both lead with "the
+> cleanest contest/competition the franchise has ever produced,"
+> immediately adjacent on the page; and a MED logic gap in
+> `CommunityLiveStrip.tsx` where the pass-139 "no new votes since
+> last update" zero-clause only fires for `source === 'votes'` — the
+> code comment assumed the `canon` (below-threshold) case always
+> reads honestly via `formatLastRecompute`'s "votes pending," but
+> `lastRecomputeAt` is sourced independently from the global weekly
+> `rank_snapshots` cron and can be non-null even once a show has
+> dropped to canon-mirroring status, reproducing the exact same
+> zero-vs-nonzero-totals ambiguity pass-139 fixed, just ungated for
+> `source === 'canon'` (confirmed live on `/shows/dragrace?view=
+> community`: "voters, last 7 days · 0" above table rows already
+> showing nonzero per-season vote totals).
+>
+> ───── Pass 141 metadata kept below for history ─────
+>
 > Last pass: 2026-08-24 at commit 949a34d3
 > Pass count: 141
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3638,16 +3682,6 @@
 
 ## Pending
 
-### [HIGH] /u/e2e/opengraph-image — the per-profile social-card image still 404s live, reopening the pass-136 finding the 2026-08-23 fix believed it closed
-- pass: 141 (commit 949a34d3)
-- viewport: desktop
-- category: seo
-- observation: The 2026-08-23 fix (pass-136 resolution) added `export const dynamic = 'force-dynamic'` to `src/app/(default)/u/[handle]/opengraph-image.tsx` on the theory that Next was permanently caching a stale first-request `notFound()` response for this dynamic-segment metadata route. That fix is confirmed still present in source. But the route 404s live right now with headers proving the response is freshly computed, not cached — this is a genuine execution-context bug, not the caching issue the prior fix addressed.
-- evidence: `curl -sI https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 404`, `x-vercel-cache: MISS`, `age: 0`, `x-matched-path: /_not-found` (confirmed twice, both fresh MISSes). Meanwhile `https://tiered.tv/u/e2e` itself returns `200` with the populated `@e2e` profile rendered. Both routes call the identical `getProfileActivity({ handle })` from `src/lib/supabase/server.ts` with the identical handle — the page route resolves it successfully, the image route's `if (!activity) notFound()` branch fires. The divergence is specific to the image route's request/runtime context (`export const runtime = 'nodejs'`), not to caching, since caching would show `age > 0` or `x-vercel-cache: HIT/STALE` on a permanently-wedged response, not a fresh `MISS` on every request.
-- suggested fix: Reopen the pass-136 investigation with a corrected premise — the caching fix was necessary but not sufficient. Add logging or a temporary diagnostic to `opengraph-image.tsx`'s `getProfileActivity` call path to capture whether `serviceRoleClient()` is throwing/returning null specifically under the image route's `nodejs` runtime + dynamic-segment combination (env var propagation, cold-start race, or a swallowed RPC error are the likeliest culprits per the original pass-136 hypothesis that was set aside when the caching theory looked sufficient).
-- source: browser (critique-pass-141, authed)
-- resolved: content-gap redirect (issue #758), 2026-08-24 — neither `getProfileActivity` nor `serviceRoleClient()` was at fault. `pnpm build`'s route table showed the real cause: Next.js appends a disambiguation hash suffix (`-17s3nj`) to a metadata image route's URL whenever the route file lives inside the `(default)` route group, while the sibling `page.tsx` for the identical URL resolves cleanly whether grouped or not — so the browser was requesting `/u/[handle]/opengraph-image` but the build only ever emitted `/u/[handle]/opengraph-image-17s3nj`, a genuine 404, not an execution-context bug. The same defect independently broke `/shows/opengraph-image` (`-1mft58`), previously mismarked RESOLVED. Fix: `git mv` both `opengraph-image.tsx` files (+ colocated tests) out of `(default)`, mirroring the already-working `/themes/[theme]/opengraph-image.tsx` precedent where the page stays grouped and only the metadata file lives ungrouped. `pnpm build` post-fix confirms both routes now emit clean, unhashed paths. Full three-leg verify gate green (3667 unit tests, 4879 e2e tests, build).
-
 ### [MED] systemic — meta descriptions on `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`, and `/themes` all reuse the page's own H1/lede copy near-verbatim instead of standing as independent summaries
 - pass: 141 (commit 949a34d3)
 - viewport: desktop
@@ -5108,7 +5142,26 @@
 
 - [x] [MED] [authed] /shows/below-deck-sailing-yacht/season/ibiza — "Ibiza's island energy" and "a functional close to the run" each appear verbatim in both "The Shape of the Season" and "Where It Sits in the Canon," two adjacent prose sections restating the same descriptive clauses rather than building on each other. Confirmed identical on the mobile capture. Shape: "Ibiza's island energy is the loudest setting in the show's five-season run...A functional close to the run, best read with the full five seasons visible behind it." Canon: "...a closer that reads differently with the full five-season run visible. Ibiza's island energy — the busiest and most social of the settings...A functional close to the run, but the most provisional position in this ranking." Fix: differentiate the two sections' function — let "Shape of the Season" describe the season's setting and energy in isolation, and rewrite the canon rationale to argue the rank comparatively against neighboring seasons without re-quoting "Ibiza's island energy" or "a functional close to the run" a second time. Content-only, one field edit in `content/shows/below-deck-sailing-yacht/canon.md`. Spoiler discipline P0 intact (setting/tone facts only, no outcome exposure). (URL: /shows/below-deck-sailing-yacht/season/ibiza, source: critique-pass-133) — RESOLVED (2026-08-24, cloud march tick, content-gap redirect per issue #758): rewrote `canon.md`'s Season 5 rationale to argue the ranking comparison (why it sits last, below even the unpolished Season 1 debut) against the season's louder register, referencing "the louder register" and "an epilogue" instead of re-quoting "Ibiza's island energy" or "a functional close to the run." `content/shows/below-deck-sailing-yacht/seasons/05-ibiza.md`'s lede and Shape-of-Season body left untouched. Content-only, one field. Spoiler discipline P0 intact — setting/tone facts only, no outcome exposure.
 
+### [LOW] /shows/dragrace — Season 5's canon dek and the opening sentence of its body paragraph both lead with the identical "cleanest contest/competition the franchise has ever produced" claim
+- pass: 142 (commit 90405f7a)
+- viewport: desktop
+- category: voice
+- observation: The one-line dek immediately above the body paragraph and the body's own opening sentence restate the exact same claim in barely-varied wording, reading as templated rather than composed — the body adds nothing the dek hadn't already said one line above it.
+- evidence: `content/shows/dragrace/canon.md:27` `tag`: "The cleanest contest the franchise has ever produced — Logo-era Drag Race at its sharpest." Line 31, body opener: "Season 5 sits first because it is the cleanest competition the franchise has ever produced." Confirmed via direct file read; no existing Pending/Done row covers this show/season pairing.
+- suggested fix: Let the `tag` dek own the "cleanest contest" claim; rewrite the body's opening clause to lead with a concrete detail (the Logo-era cast's stamina across design/comedy/performance, or the Snatch Game turns already named two sentences later) before circling back to the "cleanest" argument, rather than re-asserting the same claim verbatim.
+- source: browser (critique-pass-142, anon)
+
+### [MED] /shows/dragrace?view=community — "voters, last 7 days · 0" reads as contradicting nonzero per-season vote totals in the same table, because the pass-139 zero-clause fix only fires for `source === 'votes'`
+- pass: 142 (commit 90405f7a)
+- viewport: desktop
+- category: comprehension
+- observation: The pass-139 fix (`CommunityLiveStrip.tsx`) added a "(no new votes since last update)" clause whenever `votersThisWeek === 0`, but scoped it narrowly to `source === 'votes'`, on the assumption — stated in the component's own code comment — that the `canon` (below-threshold) case "already reads honestly via `formatLastRecompute`'s 'votes pending'". That assumption only holds when `lastRecomputeAt` is null. In practice `lastRecomputeAt` is sourced independently from the most recent `rank_snapshots` row for the show (the global weekly cron), unfiltered by `source` or `votersThisWeek` — so a show that has dropped to canon-mirroring status can still carry a real, non-null "last update" timestamp from a prior snapshot, reproducing the exact same zero-vs-nonzero-totals ambiguity pass-139 fixed, just for `source === 'canon'` instead of `'votes'`.
+- evidence: `src/components/canon/CommunityLiveStrip.tsx:42-48` gates the zero-clause on `votersThisWeek === 0 && source === 'votes'`. `src/lib/community/ranking.ts:249-252` resolves `lastRecomputeAt` from the latest `rank_snapshots` row unconditionally, independent of `source`/`votersThisWeek`. Live render on `/shows/dragrace?view=community`: "LAST UPDATE · 3D AGO / VOTERS, LAST 7 DAYS · 0 / STATUS · MIRRORING THE CANON" directly above a ranking table where Seasons 5, 6, and 9 each show "100% / 1 vote".
+- suggested fix: Drop the `source === 'votes'` gate on the zero-clause in `CommunityLiveStrip.tsx` (or add an equivalent one) so it also fires whenever `lastRecomputeAt` is non-null and `votersThisWeek === 0`, regardless of `source` — the ambiguity is about the timestamp+zero combination, not the source label. Update the component's own comment, which currently states the now-disproven assumption.
+- source: browser (critique-pass-142, authed)
+
 ## Done
+- [x] [HIGH] [authed] /u/e2e/opengraph-image — the per-profile social-card image still 404s live, reopening the pass-136 finding the 2026-08-23 fix believed it closed. Root cause: Next.js appends a disambiguation hash suffix (`-17s3nj`) to a metadata image route's URL whenever the route file lives inside the `(default)` route group, while the sibling `page.tsx` for the identical URL resolves cleanly whether grouped or not — so the browser requested `/u/[handle]/opengraph-image` but the build only ever emitted `/u/[handle]/opengraph-image-17s3nj`. The same defect independently broke `/shows/opengraph-image`. (URL: /u/e2e/opengraph-image, source: critique-pass-141) — RESOLVED content-gap redirect (issue #758), 2026-08-24: `git mv` both `opengraph-image.tsx` files (+ colocated tests) out of `(default)`, mirroring the already-working `/themes/[theme]/opengraph-image.tsx` precedent. `pnpm build` post-fix confirmed both routes emit clean, unhashed paths. Re-verified live at pass-142 (2026-08-24, cloud march): `curl -sI https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 200`, `content-type: image/png`. This row was left in Pending without a proper Done move despite the fix landing at commit 761a95e3 (referenced inline but never migrated); closing it now (pass-142 self-assessment) to stop it competing for `/iterate` cycles as a live finding.
 - [x] [MED] [anon] /shows/married-at-first-sight-australia/season/season-13 — casting-breakdown fact (nine couples at open, three intruder couples mid-run, fourth same-sex male pairing) restated near-identically across five fields (lede, Shape-of-Season body, canon rationale, FORMAT caption, watch-list bullet). Kept the full fact in the lede only; rewrote the body opening, canon rationale, FORMAT caption, and watch-list bullet to reference it obliquely instead of re-deriving the clause. (pass-133; addressed at 72ee258f, cloud march content-gap redirect per issue #758)
 - [x] [LOW] [anon] /shows/big-brother/season/a-summer-of-mystery — cast-count headline numbers don't match across meta-column stats: the FORMAT stat tile read "16+ houseguests · three stacked twists" while the CAST SIZE stat tile read "17 players" with sub-caption "16 newcomers plus a premiere-night mystery arrival" — a skimming reader saw two different top-line numbers ("16+" vs "17") for the same fact before reconciling the sub-captions underneath. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-137) — RESOLVED c978fe8d (2026-08-24, cloud march tick, redirected from a stalled ship-content dispatch per issue #758 — Rule 2 fully starred at 43 gap-slots/43 shows, Rule 3 confirmed saturated through a ninth same-day zero-ship pass logged in `plan/LISTS.md`): changed `format_summary` from "16+ houseguests · three stacked twists" to "17 houseguests · three stacked twists", matching the CAST SIZE tile's already-reconciled total. Content-only, one field. Verify gate green: 199 test files / 3665 unit tests, content:check ok (68 shows/1047 seasons/68 canons/181 themes/3 legal docs), build clean (1513/1513 static pages), 4879 e2e (28.2m).
 
