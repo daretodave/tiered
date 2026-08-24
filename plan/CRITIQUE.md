@@ -3641,6 +3641,7 @@
 - evidence: `content/shows/top-chef/canon.md:16-22` — `era_bands: [{ key: padma, label: "Padma era", range: [2006, 2023] }, { key: kish, label: "Kish era (S21–S23)", range: [2024, 2026] }]`. Both entries carry a `range` field, but only the `kish` label string embeds it.
 - suggested fix: Standardize both era labels to the same pattern — either both `<Host> era (S#–S#)` or both without a parenthetical range (letting the UI derive the range display from the `range` field itself for both, rather than baking it into only one label string). Content-only, one-field edit.
 - source: browser (critique-pass-139, anon)
+- resolved: 2026-08-24, cloud march tick, content-gap redirect per issue #758. Checked every `label:` string across every `content/shows/*/canon.md` era_bands entry catalog-wide — no other show embeds a season range inside the label string, confirming the bare `<Host> era` pattern (no parenthetical) is the established convention, not the range-inclusive form. Dropped `(S21–S23)` from the Kish era label so both chips on this show now read `Padma era` / `Kish era`. Verify gate green: fast gate (199 test files/3666 unit tests, content:check ok), build clean (1513/1513 static pages), e2e 4879/4879 (30.6m). Shipped at abc1ac14.
 
 ### [MED] /shows/top-chef?view=canon — Las Vegas (#1) slot repeats its own body-prose clause verbatim in the "why this slot" callout
 - pass: 139 (commit ee526d1a)
