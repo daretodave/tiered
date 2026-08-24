@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-08-24
 featured: false
 related:
   - best-location-reveals
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "The format's signature turn got a genuinely strange twist"
     blurb: "Dan + Shay shared a single coaching chair, so the show's whole reveal mechanic — one chair, one turn, one voice deciding — had to make room for two people making the call together. The novelty reshaped the moment itself."
+  - show: traitors
+    season: 1
+    season_label: "S01"
+    rank: 13
+    title: "The breakfast reveal turns overnight tension into a daily ritual"
+    blurb: "Every episode resets on the same engineered instant: the cast gathers at breakfast to learn who didn't make it through the night. The show's own pitch names the beat outright — murder, banishment, breakfast — a ritual season one sets running from the first episode."
 ---
