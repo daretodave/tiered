@@ -57,7 +57,7 @@ tag: Mel Schilling's final season — and the franchise's fourth same-sex milest
 slot_argument: Season thirteen adds the franchise's fourth same-sex male pairing, but its real weight is historical: this became Mel Schilling's final season on the panel she helped build. It ranks fourth for milestone casting plus genuine loss.
 community_rank_hint: rank=4 delta=0 sentiment=hold
 
-Season thirteen ranks fourth for combining a real casting milestone with a genuine sense of historical weight. Nine couples open the season, and three intruder couples join mid-run, among them the franchise's fourth same-sex male pairing — continuing a pattern of milestone castings that stretches back to season three. But the season's larger significance sits outside the experiment itself: this became Mel Schilling's final season with the panel, a fixture since season two, who died during the show's broadcast run. That's not a plot twist to rank around — it's a real loss the franchise absorbed in public, and it gives this season a gravity few others in the catalog carry.
+Season thirteen ranks fourth for combining a real casting milestone with a genuine sense of historical weight. The mid-season intruders continue a pattern of milestone castings that stretches back to season three. But the season's larger significance sits outside the experiment itself: this became Mel Schilling's final season with the panel, a fixture since season two, who died during the show's broadcast run. That's not a plot twist to rank around — it's a real loss the franchise absorbed in public, and it gives this season a gravity few others in the catalog carry.
 
 ## 2. Season 2
 
