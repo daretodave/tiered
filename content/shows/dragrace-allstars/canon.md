@@ -182,16 +182,13 @@ community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Season 11 reruns Tournament of All Stars' bracket shape rather
 than reinventing it, which is why it sits below Season 10, but
-the rerun stacks two real adjustments onto the format. The
-advancement bar tightens — only the top two scorers per bracket
-move on, not the top three Season 10 allowed, shrinking the
-safety margin inside every bracket. A new Comeback Queen
-mechanic gives each bracket its own reentry chance for an
-eliminated queen, spreading what Season 10 saved for a single
-end-of-season Wildcard across the whole season. Eighteen
-returning queens carry the format again. The canon ranks it
-ninth for stacking real adjustments onto an established swing
-rather than landing a new one of its own.
+the tighter cutoff and the Comeback Queen twist aren't
+cosmetic — together they shrink the margin for error inside
+every bracket while keeping a reentry chance alive all season
+instead of saving it for one finale moment. Eighteen returning
+queens carry the format again. The canon ranks it ninth for
+stacking real adjustments onto an established swing rather than
+landing a new one of its own.
 
 ## 3. Season 3
 
