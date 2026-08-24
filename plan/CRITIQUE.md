@@ -1,5 +1,38 @@
 # CRITIQUE
 
+> Last pass: 2026-08-24 at commit 9cc9376a
+> Pass count: 140
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 140
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set: Amazing
+> Race S38 (newest season) and Bake Off's Editor's Canon view, plus
+> `/shows`, `/themes/best-finales`, `/shows/vanderpump-rules?view=
+> community`, and `/u/e2e`. Both passes came back mechanically clean
+> (0 console errors, 0 failed requests, 0 mobile overflow, all pages
+> 200 with complete title/description/canonical/OG image) — all 5
+> findings filed this pass are qualitative reads (2 MED, 3 LOW; 0
+> HIGH): a three-way fact echo on Amazing Race S38 across meta
+> description / shape-of-season body / what-to-watch-for bullets
+> (casting, route, and format moments all restate the same clauses
+> the body paragraph already states — a fresh instance of the
+> corpus's ongoing slot_argument/watch_list echo drain, on a field
+> pair not previously flagged); an undefined "◆ HOLD" community-trend
+> badge on Bake Off's canon view (the component does carry a hover
+> `title`/`aria-label` gloss for sighted-mouse and screen-reader
+> users, but no visible legend for touch/mobile readers who can't
+> hover); a canon-rank-vs-season-number visual pairing on the Amazing
+> Race S38 "Adjacent in the Canon" links that reads as a mismatch at
+> a glance even though it's intentional (rank and season number are
+> decoupled by design); a lighter slot_argument/body echo on Bake
+> Off canon's #1 slot (the "tent moved to Welford Park" clause); and
+> a mixed-metaphor sentence (proximity + vertical framing in the same
+> clause) in Vanderpump Rules' community weekly_question.
+>
+> ───── Pass 139 metadata kept below for history ─────
+>
 > Last pass: 2026-08-24 at commit ee526d1a
 > Pass count: 139
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3554,6 +3587,51 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] /shows/amazing-race/season/season-38 — the meta description, the "Shape of the Season" body, and the "What to Watch For" bullets all restate the same two facts three ways
+- pass: 140 (commit 9cc9376a)
+- viewport: desktop
+- category: voice
+- observation: The season's two defining facts — the Big Brother-veteran cast and the Hoorn starting line — are restated in near-identical phrasing across four separate fields on the same page: the meta description, the "Shape of the Season" body, and two of the "What to Watch For" bullets (Casting and Route). A third watch_list entry (Format) also restates the Shape body's U-Turn-penalty clause verbatim. A fresh instance of the corpus's ongoing slot_argument/watch_list echo drain, on a field pair (shape body vs. watch_list) not previously flagged on this show.
+- evidence: Meta description: "thirteen teams of two, every one carrying at least one former US Big Brother houseguest". Shape of the Season: "Thirteen teams of two, each built around at least one former US Big Brother houseguest, left Hoorn, the Netherlands, the birthplace of the Big Brother format... adds a U-Turn penalty for a non-elimination survivor, the season's one genuinely new mechanic." Watch-list Casting: "Thirteen teams of two, each built around at least one former US Big Brother houseguest." Watch-list Route: "The season opens in Hoorn, the Netherlands, the birthplace of the Big Brother format..." Watch-list Format: "A U-Turn penalty carried by a team that survived a non-elimination leg — the genuinely new mechanic this season..." All in `content/shows/amazing-race/seasons/38-season-38.md`.
+- suggested fix: Give each watch_list entry a distinct angle (a specific team, a host/route beat not already stated, a stakes framing) instead of restating the Shape-of-the-Season sentence clauses verbatim. Content-only, edits confined to the `watch_list` field.
+- source: browser (critique-pass-140, anon + authed)
+
+### [MED] /shows/bake-off?view=canon — the "◆ HOLD" community-trend badge has no visible legend for readers who can't hover
+- pass: 140 (commit 9cc9376a)
+- viewport: desktop
+- category: comprehension
+- observation: Every ranked entry with a live community signal carries a "COMMUNITY ◆ HOLD #NN" badge, but the only explanation of what "HOLD" means is a `title`/`aria-label` attribute ("Holding steady in the community ranking") that only surfaces on mouse hover or to screen readers — there is no legend visible in the page's rendered text, so a touch/mobile reader (who can't hover) sees an unexplained glyph-plus-word with no way to parse it.
+- evidence: `src/components/canon/CanonHeroEntries.tsx:32-46` — `trendSymbol()` renders the bare `◆ hold` / `↑ N` / `↓ N` text; `trendGloss()` supplies the plain-language explanation only via `title`/`aria-label` on the `<span>`, never as visible body copy.
+- suggested fix: Add a short visible legend near the Editor's Canon / Community toggle (e.g. "◆ hold · ↑/↓ community rank shift since last update") so the badge is self-explanatory without requiring a hover, which doesn't exist on touch devices.
+- source: browser (critique-pass-140, anon)
+
+### [LOW] /shows/amazing-race/season/season-38 — "Adjacent in the Canon" pairs canon rank with season number in a way that reads as a mismatch at a glance
+- pass: 140 (commit 9cc9376a)
+- viewport: desktop
+- category: navigation
+- observation: This page is Season 38 holding canon rank #37. The "Adjacent in the Canon" module's left link reads "#36 IN CANON → Season 36" (numbers happen to match, reads fine), but the right link reads "#38 IN CANON → Season 37" (numbers don't match at a glance). The body copy confirms this is intentional — canon rank is decoupled from season number — but the visual pairing gives no cue that the mismatch is deliberate rather than a labeling error.
+- evidence: Rendered text: "05 ADJACENT IN THE CANON. Either direction. ← #36 IN CANON / Season 36 · #38 IN CANON → / Season 37".
+- suggested fix: Distinguish the rank number and season number visually (e.g. separate lines with distinct styling, or label them explicitly as "canon #38" vs. "Season 37") so the pairing doesn't read as a copy error on shows where canon rank and season number diverge.
+- source: browser (critique-pass-140, anon)
+
+### [LOW] /shows/bake-off?view=canon — Slot #1's "Why This Slot" callout echoes the adjacent body paragraph's location clause
+- pass: 140 (commit 9cc9376a)
+- viewport: desktop
+- category: voice
+- observation: Slot #01 (Season 5, "The Welford Peak")'s "Why This Slot" rationale restates the body paragraph's tent-relocation clause almost verbatim — a lighter instance of the corpus's ongoing slot_argument-echo class, on a show not previously flagged for this defect.
+- evidence: Body: "The tent had relocated to Welford Park for this run, the audience had crossed over from BBC Two to BBC One..." Why This Slot: "The tent had moved to Welford Park and the show finally looked the way it was meant to."
+- suggested fix: Drop the repeated tent-relocation clause from "Why This Slot" and lead with the comparative canon argument instead (why it beats its neighbors), matching the fix pattern already applied elsewhere in the corpus. Content-only, one field in `content/shows/bake-off/canon.md`.
+- source: browser (critique-pass-140, authed)
+
+### [LOW] /shows/vanderpump-rules?view=community — weekly community question mixes proximity and vertical metaphors in one sentence
+- pass: 140 (commit 9cc9376a)
+- viewport: desktop
+- category: voice
+- observation: The community weekly question pairs a proximity metaphor ("land closer to") with a vertical-ranking metaphor ("further below it") for the same comparison, which reads as a stumble rather than a clean either/or framing.
+- evidence: `content/shows/vanderpump-rules/canon.md:14` — `weekly_question: "With all twelve seasons ranked, does Season 12's full cast reset land closer to Season 9's rebuild, or further below it?"`
+- suggested fix: Pick one spatial frame for the whole sentence — e.g. "...does Season 12's full cast reset rank closer to Season 9's rebuild, or further below it" (drop "land"), or "...land above Season 9's rebuild, or below it" (drop "closer"/"further"). Content-only, one field.
+- source: browser (critique-pass-140, authed)
 
 ### [MED] /shows/top-chef?view=canon — era-filter chips use two different labeling conventions on the same control row
 - pass: 139 (commit ee526d1a)
