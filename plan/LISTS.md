@@ -10791,3 +10791,48 @@ last time a curator actually looked.
   a finale-gate pickup extending an existing single-show list, or an
   oversight-authorized scout-research process to reach facts outside the
   repo's own season-file text.
+- **2026-08-24, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation, twelfth same-day-class pass): zero-ship.**
+  Re-confirmed both standing blockers unchanged (Rule 2 gap table fully
+  starred; no ledger row past the 90-day review floor). Read all eleven
+  of today's prior passes plus `the-pitch-names-where-the-idea-came-from`'s
+  full history before starting. Landed on what looked like a live lead:
+  The Real World S31 "Go Big or Go Home" states in its own copy
+  (`eyebrow`, `pull`, and body) that its mission structure is "borrowed
+  directly from the Challenge and Road Rules format." Read the full
+  season file and the show's `canon.md` slot_argument to confirm the
+  wording before treating it as a candidate 4th entry for
+  `the-pitch-names-where-the-idea-came-from` (craft, 3/3). On inspection
+  this fails the row's own standing scope note, not a fresh dead end: the
+  Challenge and Road Rules are Real World's own spinoffs, so the credit is
+  a self-referential intra-franchise borrow, exactly the disqualifying
+  case the row's 2026-08-15 twenty-pattern re-search already named
+  ("every hit is either already shipped or a self-referential
+  intra-franchise borrow, not a genuine cross-franchise credit"). Cross-
+  checked further and confirmed the same season is already correctly
+  staked — under the correct thesis — as entry 7/11 on
+  `the-cast-was-still-arriving` (structure, mid-season cast-addition
+  angle), which independently confirms the fact was already mined for
+  the one list it actually fits. No 4th entry found; row holds at 3/3.
+  Chased two fresh angles before falling back to the sub-10-entry census:
+  (1) a companion aftershow/day-after special as a season's own stated
+  first — grepped `aftershow|after-show|companion special|digital
+  exclusive|simulcast|day-after` across every `content/shows/**/*.md`
+  file; the 17 hits are all incidental mentions inside unrelated prose
+  (casting specials, digital-only bonus content, streaming-date notes),
+  none framing the season's own copy around an aftershow launch. Zero
+  floor. (2) a season built around a same-cast secret duo/alliance kept
+  hidden from the rest of the house as the season's own stated twist —
+  grepped `secret (duo|team|alliance|pair)|kept secret from|hidden
+  partnership` catalog-wide; zero hits. Both dead. Declined to re-run
+  `the-calendar-moved-the-format-didnt`, `the-vote-left-the-phone-line`,
+  or `one-season-two-flags`'s already-exhaustive sweeps a further time
+  this same day absent a new season file to search against. Net: no
+  `content/themes/*.md` file written or edited this pass; no ledger row
+  changed (the-pitch-names-where-the-idea-came-from's near-miss recorded
+  here rather than on its row, since the row's own facts didn't change).
+  Twelfth consecutive same-day-class zero-ship pass. The next unlock
+  remains unchanged: Rule 2 filing a new season, a finale-gate pickup
+  extending an existing single-show list, or an oversight-authorized
+  scout-research process to reach facts outside the repo's own
+  season-file text.
