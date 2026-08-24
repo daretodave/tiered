@@ -235,11 +235,15 @@ test('isAuthMeRequest: a non-URL string returns false, never throws', () => {
 })
 
 // --- isRscPrefetchAbort: walk-teardown filter --------------------
-// The header wordmark's `<Link href="/" prefetch>` issues a
-// `/?_rsc=…` payload that the per-page context.close() cancels as
-// net::ERR_ABORTED. Pass-3, pass-4, and pass-5 each re-litigated
-// this same class; the filter is narrow enough to leave any
-// real `/?_rsc=` failure visible.
+// Any `<Link prefetch>` on a page (the header wordmark's `/`, or an
+// in-body link like "Browse all shows →") issues a `?_rsc=…` payload
+// that the per-page context.close() cancels as net::ERR_ABORTED.
+// Pass-3, pass-4, and pass-5 each re-litigated the root-only case;
+// pass-128 found the same artifact recurring on non-root prefetches
+// because the filter only matched pathname === '/'. The caller
+// already gates on same-origin before invoking this, so the filter
+// now matches any path carrying `_rsc`, leaving any real non-aborted
+// failure visible regardless of path.
 
 test('isRscPrefetchAbort: header `/` prefetch + ERR_ABORTED → filtered', () => {
   assert.equal(
@@ -263,13 +267,20 @@ test('isRscPrefetchAbort: a real 500 / non-aborted failure on `/?_rsc=` still su
   )
 })
 
-test('isRscPrefetchAbort: `/?_rsc=` ABORTED on a non-root path still surfaces', () => {
+test('isRscPrefetchAbort: `/?_rsc=` ABORTED on a non-root path is now filtered (pass-128 fix)', () => {
   assert.equal(
     isRscPrefetchAbort('https://tiered.tv/shows?_rsc=abc', 'net::ERR_ABORTED'),
-    false,
+    true,
   )
   assert.equal(
     isRscPrefetchAbort('https://tiered.tv/shows/survivor?_rsc=abc', 'net::ERR_ABORTED'),
+    true,
+  )
+})
+
+test('isRscPrefetchAbort: a non-aborted failure on a non-root `_rsc` path still surfaces', () => {
+  assert.equal(
+    isRscPrefetchAbort('https://tiered.tv/shows?_rsc=abc', 'net::ERR_FAILED'),
     false,
   )
 })

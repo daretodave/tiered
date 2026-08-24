@@ -378,18 +378,20 @@ function sameOrigin(reqUrl, baseUrl) {
 }
 
 // Next.js `<Link prefetch>` cancellation artifact, not a broken
-// endpoint. The header wordmark renders `<Link href="/" prefetch>`
-// on every page, so the browser issues a `/?_rsc=…` prefetch
-// payload — and the walk's per-page `context.close()` cancels any
-// in-flight prefetch as `net::ERR_ABORTED`. Pass-3, pass-4, and
-// pass-5 each spent self-assessment cycles re-litigating the
-// same class of finding. Filter narrowly so a real `/?_rsc=` 500
-// (or any non-aborted failure) still surfaces.
+// endpoint. Any `<Link prefetch>` on the page (the header wordmark's
+// `/`, but also in-body links like "Browse all shows →") issues a
+// `?_rsc=…` prefetch payload — and the walk's per-page
+// `context.close()` cancels any in-flight prefetch as
+// `net::ERR_ABORTED`. Pass-3, pass-4, and pass-5 re-litigated the
+// root-only case; pass-128 found the same artifact recurring on
+// non-root prefetches (e.g. `/shows?_rsc=…`) because the filter only
+// matched `pathname === '/'`. The caller already gates on same-origin
+// before invoking this, so filtering on the `_rsc` param alone (any
+// path) is sufficient and covers every prefetchable link on the page.
 export function isRscPrefetchAbort(url, errorText) {
   if (errorText !== 'net::ERR_ABORTED') return false
   try {
     const u = new URL(url)
-    if (u.pathname !== '/') return false
     return u.searchParams.has('_rsc')
   } catch {
     return false
