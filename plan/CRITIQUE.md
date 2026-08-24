@@ -3652,6 +3652,7 @@
 - evidence: `content/shows/top-chef/canon.md:28` (`slot_argument`) vs. lines 33-35 (body prose) — both contain "raised what a Quickfire was allowed to demand" word for word.
 - suggested fix: Rewrite the `slot_argument` callout to lead with a distinct fact (e.g. the depth of the returning-veteran bench, or the visual register of the Strip setting) instead of restating the body's own closing clause. Content-only, one-field edit.
 - source: browser (critique-pass-139, anon)
+- resolved: 2026-08-24, cloud march tick, content-gap redirect per issue #758. Rewrote `slot_argument` to drop the shared "raised what a Quickfire was allowed to demand" clause and the Strip/judge's-table/Padma framing already covered by the body, replacing it with a comparative ranking case against the #2 slot (All-Stars) — first-time kitchen-veteran bench vs. eighteen returning alumni. 205 chars, under the 240-char schema cap. Verify gate green: fast gate (199 test files/3666 unit tests, content:check ok), build clean (1513/1513 static pages), e2e 4879/4879 (30.5m). Shipped at 9ee7a4a4.
 
 ### [LOW] /shows/survivor/season/survivor-50 — "placeholder, not a verdict" canon framing gives no forward pointer for when it gets revisited
 - pass: 139 (commit ee526d1a)
