@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-08-24
 featured: false
 related:
   - not-the-usual-order
@@ -91,4 +91,16 @@ entries:
     rank: 13
     title: "The judges' table itself gets supersized to fit the international bench."
     blurb: "World All-Stars pulls sixteen alumni from Top Chef franchises worldwide into London kitchens for the format's biggest cast yet. The show's own copy admits the elimination challenge and closing judging session both run long, giving the deeper bench room to argue its case."
+  - show: dragrace
+    season: 15
+    season_label: "S15"
+    rank: 14
+    title: "The network move trims the episode clock in half, and the backlash sends it back."
+    blurb: "MTV's arrival comes with a quiet cut: episodes shrink from ninety minutes to sixty. Fan backlash is immediate, and the longer runtime returns before the season wraps — one of the rare runtime bets the format reverses in real time, not the following year."
+  - show: americas-got-talent
+    season: 20
+    season_label: "S20 · The Anniversary Season"
+    rank: 15
+    title: "A milestone special buys two hours the regular broadcast never spends."
+    blurb: "A two-hour, non-competitive primetime special marks the show's 20th anniversary midseason, apart from the regular audition and live-show hours. The extra runtime goes to a nostalgia mega-mix and judge reflections, not a new round of competition."
 ---
