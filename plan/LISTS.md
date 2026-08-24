@@ -10836,3 +10836,74 @@ last time a curator actually looked.
   extending an existing single-show list, or an oversight-authorized
   scout-research process to reach facts outside the repo's own
   season-file text.
+
+- **2026-08-24, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, thirteenth same-day-class pass): zero-ship.** Re-confirmed
+  both standing blockers unchanged: `plan/CADENCE.md`'s gap table is
+  still fully starred confirmed-but-unaired, and no ledger row clears
+  the 90-day/five-due review-batch floor (`survivor-pillars` still
+  oldest `last_reviewed`, well under threshold). Read all twelve of
+  today's prior passes in full before starting, plus the tail of
+  2026-08-23's seven passes, and did not re-walk any of their closed
+  classes (reunion-special quality, Olympic-athlete casting, weather/
+  disaster disruption, election-cycle scheduling, cast/panel headcount
+  superlatives, host/panel-tenure captions, front-loaded/back-loaded
+  pacing, aftershow/companion-special framing, secret-duo/hidden-
+  alliance twists, Alone-franchise spinoff cross-canon axis, sophomore-
+  season pivot framing, guest-host rotation, Emmy/award language,
+  family-relation casting, first-openly-LGBTQ+ casting, or any of the
+  four long-standing dead-end concept rows). Per the brief, deliberately
+  targeted fields less commonly grepped so far rather than repeating a
+  casting/format/location/scheduling sweep. (1) **`host_caption`
+  full-catalog read** (Chopped, Project Runway, So You Think You Can
+  Dance, Top Chef, Bachelor, American Ninja Warrior, MAFS Australia,
+  Traitors UK, Drag Race All Stars, Below Deck franchises, Love Island
+  UK — 190+ lines read in full) — every genuine cross-show fact here
+  (host tenure milestones, hosting-debut seasons, panel-member handoffs)
+  is already the explicit thesis of the live `best-hosting` (craft,
+  19 entries) and `the-mic-changed-hands` (craft) lists; MAFS
+  Australia's rotating "relationship-experts panel" tenure captions
+  (`Nth season for the Aiken–Schilling–Rampolla panel`, "Mel Schilling's
+  final season on the expert panel") are a genuinely distinct texture
+  but the show has only 13 filed seasons and no second show in the
+  catalog runs an equivalent multi-expert rotating panel with dated
+  tenure captions, so it can't clear the ≥3-distinct-show floor as a
+  new cross-canon list and doesn't yet carry enough independent facts
+  for a `category: single` MAFS Australia list beyond what a future
+  single-show list would need to earn on its own terms. (2)
+  **`episode_heat_caption` full-catalog read** (Survivor, The Challenge,
+  Love Island US) — every caption resolves into front-loaded/back-loaded
+  pacing language already fully spent by the matched pair
+  `never-starts-cold` (craft, 15 entries) and `the-slow-build-was-the-
+  point` (tone, 15 entries), reconfirmed mature and cross-canon with no
+  headroom per yesterday's fourth pass; no third pacing shape (e.g. "flat,
+  no clear peak") turned up any hits. (3) **Single-category near-floor
+  headroom check** (the brief's suggested extend-first path) — re-ran the
+  same sub-10-entry `category: single` census the day's eighth, tenth,
+  and eleventh passes already ran and independently confirmed every
+  sub-floor single-show list is mathematically capped at its show's full
+  aired-season count; no new season has landed since those checks, so an
+  identical census over an identical corpus reproduces an identical
+  result. (4) Chased two genuinely fresh keyword angles to exhaustion,
+  both dead: simultaneous-dual-location filming (`simultaneously|same
+  time in two|two locations at once|dual location` — 13 hits, all false
+  positives on cast members or judges arriving "simultaneously," not a
+  dual-location shoot); a season built around an unresolved cliffhanger
+  carried into the next episode/season as its own stated structural
+  device (`cliffhanger|to-be-continued|left unresolved going into` —
+  zero hits catalog-wide). Also spot-checked a deliberate-downsized-cast-
+  as-artistic-choice angle distinct from the already-fully-mined
+  headcount-superlative vein (`scaled (down|back)|trimmed the (cast|
+  field|roster)|fewer contestants than|smaller (cast|field) (by design|
+  deliberately)`) — one hit (Summer House S04/S05), single-show and thin,
+  sub-floor. No `content/themes/*.md` file written or edited this pass;
+  no ledger row changed. Thirteenth consecutive same-day-class zero-ship
+  pass, consistent with issue #758's standing saturation verdict — this
+  pass specifically targeted the fields (`host_caption`,
+  `episode_heat_caption`, `cast_size_caption`-adjacent phrasing) the
+  brief flagged as less-commonly-grepped, and found the same result:
+  every genuine cross-show fact in those fields is already the explicit
+  thesis of a live, mature list. The next unlock remains unchanged:
+  Rule 2 filing a new season, a finale-gate pickup extending an existing
+  single-show list, or an oversight-authorized scout-research process to
+  reach facts outside the repo's own season-file text.
