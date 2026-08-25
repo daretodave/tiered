@@ -145,7 +145,7 @@ tag: Hometown pride sets the mood, but a rare four-finalist format is the real s
 slot_argument: The regional-pride framing leans more toward marketing than craft, but the four-finalist finale — only the format's second ever — is a genuine structural rarity that earns this season a respectable mid-pack slot.
 community_rank_hint: rank=14 delta=0 sentiment=hold
 
-Hometown Heroes ranks in the show's middle tier because its two big ideas pull in different directions. The hometown-pride theme, tying each artist to a home region, reads closer to marketing than to a real skill test — it shapes framing more than challenges. But the finale is a real structural event: only the second time in the show's history that four artists reach the last round instead of three, giving the format one extra finalist's worth of work to judge before it closes. That rarity, plus a technical panel that never lets the regional theme soften its critiques, is enough to land the season comfortably in the pack rather than near the bottom.
+Hometown Heroes ranks in the show's middle tier because its two big ideas pull in different directions. The hometown-pride theme, tying each artist to a home region, reads closer to marketing than to craft — it shapes framing more than challenges. The finale is the stronger case, and it holds up well against this canon's other recent finales: Season Fifteen tested range across three rounds, and Turf War's own finale got cut short by pandemic disruption. Hometown Heroes's four-finalist close carries neither problem — no interference, no gimmick, just the format's rare structure playing out clean. That, plus a panel that never softens its critiques for the regional theme, lands the season comfortably in the pack.
 
 ## 12. Battle of the Sexes
 

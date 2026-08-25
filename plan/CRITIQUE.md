@@ -3678,7 +3678,7 @@
 
 ## Pending
 
-### [MED] [anon] /shows/ink-master/season/hometown-heroes — the season body and canon.md rationale restate the identical finale-rarity sentence with one word swapped
+### [MED] [anon] /shows/ink-master/season/hometown-heroes — the season body and canon.md rationale restate the identical finale-rarity sentence with one word swapped — RESOLVED
 - pass: 143 (commit 21cbf24a)
 - viewport: desktop
 - category: voice
@@ -3686,6 +3686,7 @@
 - evidence: `content/shows/ink-master/seasons/17-hometown-heroes.md` body: "...only the second time in the show's history that four artists reach the last round instead of the usual three, giving the format one extra finalist's worth of work to weigh before it closes." `content/shows/ink-master/canon.md:148`: "...only the second time in the show's history that four artists reach the last round instead of three, giving the format one extra finalist's worth of work to judge before it closes."
 - suggested fix: Give the canon.md rationale its own argument (e.g., how Hometown Heroes compares to canon-adjacent seasons #13 and #15, or how the hometown-pride theme's marketing-adjacent framing weighed against the finale rarity in the ranking decision) instead of re-deriving the same finale-rarity sentence with a synonym swap.
 - source: browser (critique-pass-143, anon)
+- RESOLVED (2026-08-25, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled at 43/43 gap-slots starred, Rule 3 confirmed saturated, twenty-third same-day-class redirect): applied the suggested fix's first option — left the season body's "weigh" sentence untouched as sole owner of the finale-rarity fact, and rewrote `canon.md`'s rationale to argue comparatively against the two canon-adjacent seasons named in the finding (Season Fifteen's three-round versatility test, Turf War's pandemic-disrupted finale), landing on why Hometown Heroes's four-finalist close is the cleaner structural case rather than re-deriving the "second time in the show's history" claim. Content-only, one field (`content/shows/ink-master/canon.md`). Spoiler discipline P0 intact — format/structure facts only, no outcome exposure.
 
 ### [MED] [authed] /shows/vanderpump-rules/season/season-12?view=community — the vote block that actually takes a vote omits the 72-hour change-your-mind window that the show-level community pane states explicitly one level up
 - pass: 143 (commit 21cbf24a)
