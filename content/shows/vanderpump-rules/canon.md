@@ -11,7 +11,7 @@ meth_when_p: "All twelve seasons are ranked now, from the 2013 debut through the
 tier_s_blurb: "The seasons where restaurant hierarchy, ensemble chemistry, and workplace stakes all land together with zero or minimal cast disruption — the format running at its most confident."
 tier_a_blurb: "Confident seasons still doing real work, whether absorbing a cast addition, a departure, or a real-world story that briefly outgrew the format itself."
 tier_b_blurb: "The show's default tier for a season that runs the format competently without pushing it forward — solid, not transformative."
-weekly_question: "With all twelve seasons ranked, does Season 12's full cast reset land closer to Season 9's rebuild, or further below it?"
+weekly_question: "With all twelve seasons ranked, does Season 12's full cast reset rank closer to Season 9's rebuild, or further below it?"
 era_bands:
   - key: founding-cast
     label: "Founding cast"

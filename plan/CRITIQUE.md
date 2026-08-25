@@ -3798,6 +3798,7 @@
 - evidence: `content/shows/vanderpump-rules/canon.md:14` — `weekly_question: "With all twelve seasons ranked, does Season 12's full cast reset land closer to Season 9's rebuild, or further below it?"`
 - suggested fix: Pick one spatial frame for the whole sentence — e.g. "...does Season 12's full cast reset rank closer to Season 9's rebuild, or further below it" (drop "land"), or "...land above Season 9's rebuild, or below it" (drop "closer"/"further"). Content-only, one field.
 - source: browser (critique-pass-140, authed)
+- resolved: 2026-08-25, cloud march tick, content-gap redirect per issue #758 (twenty-first same-day-class dispatch to `/ship-content`; Rule 2 confirmed stalled — `plan/CADENCE.md` still 44/44 gap-slots starred, next sweep due 2026-08-30 — and Rule 3 confirmed exhausted for the day by the nineteenth consecutive same-day zero-ship pass already logged in `plan/LISTS.md` before this tick started). Applied the finding's own first suggested-fix option — dropped "land" and kept the vertical-ranking frame throughout: `weekly_question` now reads "...does Season 12's full cast reset rank closer to Season 9's rebuild, or further below it?" Content-only, one field in `content/shows/vanderpump-rules/canon.md`.
 
 ### [MED] /shows/top-chef?view=canon — era-filter chips use two different labeling conventions on the same control row
 - pass: 139 (commit ee526d1a)
