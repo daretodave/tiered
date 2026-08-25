@@ -15,14 +15,19 @@ type CommunityLiveStripProps = {
 // carried as `data-version` for tests only, never shown as copy —
 // it's a DB row id, not a meaningful week/vote-cycle count.
 //
-// CRITIQUE pass 139 MED: on a `source: 'votes'` page, a "voters,
-// last 7 days · 0" reading sits directly above a table whose rows
-// already carry nonzero historical vote totals — without a clause
+// CRITIQUE pass 139 MED, widened at pass 142: a "voters, last 7
+// days · 0" reading sits directly above a table whose rows already
+// carry nonzero historical vote totals — without a clause
 // distinguishing "no new votes this week" from "the totals below
-// are stale," a returning reader can't tell the two apart. Only
-// fires for `source === 'votes'`; the `canon` (below-threshold)
-// case already reads honestly via `formatLastRecompute`'s "votes
-// pending" and needs no extra clause.
+// are stale," a returning reader can't tell the two apart. The
+// ambiguity only exists once `lastRecomputeAt` is non-null (a real
+// timestamp reads as "live"); `formatLastRecompute(null)`'s "votes
+// pending" is already honest on its own and needs no extra clause.
+// Pass 139 gated this on `source === 'votes'`, but `lastRecomputeAt`
+// is sourced independently from the most recent `rank_snapshots`
+// row and can be non-null even once a show has dropped to
+// canon-mirroring status — so the clause fires on the
+// timestamp+zero combination, not the source label.
 export function CommunityLiveStrip({
   source,
   lastRecomputeAt,
@@ -52,7 +57,7 @@ export function CommunityLiveStrip({
         </span>
         <span>
           voters, last 7 days · <b>{votersThisWeek.toLocaleString()}</b>
-          {votersThisWeek === 0 && source === 'votes'
+          {votersThisWeek === 0 && lastRecomputeAt != null
             ? ' (no new votes since last update)'
             : null}
         </span>

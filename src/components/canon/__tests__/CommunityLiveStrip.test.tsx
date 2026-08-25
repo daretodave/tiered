@@ -94,4 +94,17 @@ describe('<CommunityLiveStrip>', () => {
     const strip = screen.getByTestId('community-live-strip')
     expect(strip).not.toHaveTextContent('no new votes since last update')
   })
+
+  it('clarifies a zero weekly count on a canon-mirroring page too, once a real recompute timestamp exists (critique pass-142)', () => {
+    render(
+      <CommunityLiveStrip
+        source="canon"
+        lastRecomputeAt={new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()}
+        votersThisWeek={0}
+        version={1421}
+      />,
+    )
+    const strip = screen.getByTestId('community-live-strip')
+    expect(strip).toHaveTextContent('voters, last 7 days · 0 (no new votes since last update)')
+  })
 })
