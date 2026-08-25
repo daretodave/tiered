@@ -11112,3 +11112,57 @@ last time a curator actually looked.
   finale-gate pickup extending an existing single-show list, or an
   oversight-authorized scout-research process to reach facts outside the
   repo's own season-file text.
+- **2026-08-25, content-curator direct invocation (`/ship-content` Rule 3
+  tick, nineteenth same-day-class pass): zero-ship.** Read the full Ledger
+  (181 tone/structure/craft/era/single rows) fresh rather than trusting
+  today's prior passes' summaries alone, and independently confirmed no
+  `tone`/`structure`/`craft`/`era` list sits below the ≥3-distinct-show
+  cross-canon floor — every one already cleared it in an earlier pass
+  (the brief's own suggested path (a) is a dead end today). Chased eight
+  fresh, not-yet-logged-by-name fact classes to exhaustion instead of
+  repeating today's earlier searches, each grep-verified against
+  `content/shows/**` and cross-checked against `content/themes/*.md`
+  before being ruled out: (1) **real-world labor-strike production
+  disruption** (WGA 2007-08, WGA/SAG-AFTRA 2023) — grepped `strike`
+  across every `content/shows/**` file: 7 hits (Big Brother S09, Amazing
+  Race S12, Bachelor in Paradise S09, an MAFS Australia S05 false
+  positive — "lightning strike twice" idiom, unrelated — plus two canon.md
+  mentions); all three genuine seasons are already staked verbatim at
+  `when-scripted-went-dark` (era, 17 entries/15 shows, ranks 1, 7, and 9
+  respectively) — a complete, mature list on this exact thesis. (2)
+  **cross-franchise family-lineage casting**, distinct from the
+  same-season family-tie premise already staked at
+  `when-the-cast-was-already-related` — grepped `daughter of|son of
+  [A-Z]|niece of|nephew of|cousin of [A-Z]|related to.*(star|alum|cast)`:
+  8 hits, every one a false positive inside `canon.md` `meth_who_p`
+  boilerplate phrasing, no groundable season-file fact. (3) **remote/
+  virtual judging via video call** — grepped `via video|remote judg|
+  zoom|video call judg|judges? (joined|appeared) remotely`: 1 real hit
+  (American Idol S18, "The Remote Season"), single-show and already
+  fully absorbed by that season's own pandemic framing at
+  `pandemic-seasons` — sub-floor, non-distinct. (4) **production
+  mishap/technical failure as a stated fact** — grepped `technical
+  difficult|reshot|malfunction|equipment failure|had to redo|reshoot`:
+  zero hits catalog-wide. (5) **weather/natural-disaster disruption** —
+  grepped `hurricane|wildfire|evacuat|weather (delay|forced)|storm
+  (forced|delayed)|flood(ing)?|monsoon|typhoon|cyclone`: 2 hits (Real
+  World S24, Survivor S02), no shared thesis, sub-floor. (6)
+  **occupation/identity casting-brief tribe divisions** (a white-collar/
+  blue-collar-style split) — grepped `all[- ](first responders|teachers|
+  military|veterans|nurses|doctors|athletes)|cast entirely (of|from)|
+  casting brief`: 6 hits, resolving to Survivor S30 "Worlds Apart"
+  (already the explicit thesis of `the-dividing-line-was-drawn-before-
+  day-one`) or canon boilerplate. (7) **Traitors UK S04's companion
+  after-show `Uncloaked`** — confirmed already staked verbatim at
+  `the-broadcast-wasnt-the-whole-show` rank 7 (the pass immediately
+  preceding this one today touched that same list for `last_reviewed`
+  only). (8) **non-cash/alternative prize structures** — re-read
+  `same-crown-new-price-tag` (16 entries/11 shows) in full; every
+  genuinely fresh instance already shipped, no headroom. No
+  `content/themes/*.md` file written or edited this pass; no ledger row
+  changed besides this note. Nineteenth consecutive same-day-class
+  zero-ship pass, consistent with issue #758's standing saturation
+  verdict. The next unlock remains unchanged: Rule 2 filing a new
+  season, a finale-gate pickup extending an existing single-show list,
+  or an oversight-authorized scout-research process to reach facts
+  outside the repo's own season-file text.
