@@ -3696,6 +3696,8 @@
 - evidence: `src/components/composition/SeasonInfoCard.tsx:50` — `voteHelp = 'one vote per reader. community rank updates weekly.'` (no 72h mention), rendered verbatim on the VPR season-12 page. Contrast `src/components/canon/CommunityWeeklyQuestionCard.tsx:40` — "Your vote feeds the next update. One vote per reader; change your mind within 72h.", rendered verbatim on `/shows/rhoslc?view=community` and `/shows/ink-master?view=community`.
 - suggested fix: Append the same clause to `SeasonInfoCard`'s `voteHelp` default, e.g. "one vote per reader; change your mind within 72h. community rank updates weekly." — puts the flexibility promise on the surface where the reader actually casts the vote.
 - source: browser (critique-pass-143, authed)
+- issue: #789
+- resolved: 2026-08-25, cloud march tick, `/iterate` (external-critique category, score 5.4 — impact 6 x ease 9, the default is used on every season page's community-vote row with no override site-wide, so the gap was systemic not VPR-specific). Applied the suggested fix verbatim: `SeasonInfoCard.tsx:50`'s `voteHelp` default now reads "one vote per reader; change your mind within 72h. community rank updates weekly." Matches `CommunityWeeklyQuestionCard.tsx`'s existing phrasing. No caller overrides this prop, so every season page's vote block now states the same flexibility window the show-level community pane already promised.
 
 ### [LOW] [anon] /shows — every B-tier show card repeats its own "REVIEW IN PROGRESS" eyebrow, redundant with the section header stating the same tier-wide status once
 - pass: 143 (commit 21cbf24a)
