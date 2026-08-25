@@ -1,48 +1,44 @@
 # CRITIQUE
 
-> Last pass: 2026-08-24 at commit 90405f7a
-> Pass count: 142
+> Last pass: 2026-08-25 at commit 21cbf24a
+> Pass count: 143
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 142
+> `/march` Step 2's normal rate-limited cadence is active. Pass 143
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
-> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set: `/`,
-> `/shows/big-brother/season/a-summer-of-mystery`, `/shows/dragrace`,
-> `/themes/the-reveal-was-the-whole-show`, `/shows/traitors-uk?view=
-> canon` anon; `/u/e2e`, `/shows/rhoa/season/the-clean-slate?view=
-> community`, `/shows/dragrace?view=community`, `/sign-in` authed.
-> Both passes came back mechanically clean (0 console errors, 0
-> failed requests, 0 mobile overflow, all pages 200 with complete
-> title/description/canonical/OG image). The reader's raw output
-> surfaced 4 candidate findings; 2 were dropped on self-assessment
-> as already-litigated: a "past winner" mystery-houseguest disclosure
-> on the Big Brother S27 page and a residual Block Buster/Mastermind/
-> Week-9 name-repetition pattern both restate exact language the
-> pass-101 and pass-129 fixes deliberately preserved as the
-> established, correct baseline (watch_list's "a past winner," no
-> name, is the intended restraint; the lede/canon "name-only"
-> references vs. the body's one full functional description is the
-> intended post-pass-129 shape) — refiling them would reverse settled
-> editorial calls with no new evidence, not surface a fresh defect.
-> 2 findings filed this pass (0 HIGH, 1 MED, 1 LOW): a LOW voice
-> echo on `/shows/dragrace` where Season 5's canon dek and the
-> opening sentence of its body paragraph both lead with "the
-> cleanest contest/competition the franchise has ever produced,"
-> immediately adjacent on the page; and a MED logic gap in
-> `CommunityLiveStrip.tsx` where the pass-139 "no new votes since
-> last update" zero-clause only fires for `source === 'votes'` — the
-> code comment assumed the `canon` (below-threshold) case always
-> reads honestly via `formatLastRecompute`'s "votes pending," but
-> `lastRecomputeAt` is sourced independently from the global weekly
-> `rank_snapshots` cron and can be non-null even once a show has
-> dropped to canon-mirroring status, reproducing the exact same
-> zero-vs-nonzero-totals ambiguity pass-139 fixed, just ungated for
-> `source === 'canon'` (confirmed live on `/shows/dragrace?view=
-> community`: "voters, last 7 days · 0" above table rows already
-> showing nonzero per-season vote totals).
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/ink-master/season/hometown-heroes`, `/shows`,
+> `/shows/rhoslc?view=canon`, `/themes/no-template-to-copy` anon;
+> `/u/e2e`, `/shows/vanderpump-rules/season/season-12?view=
+> community`, `/shows/rhoslc?view=community`, `/shows/ink-master?view=
+> community` authed. Both passes came back mechanically clean (0
+> console errors, 0 failed requests, 0 mobile overflow, all pages
+> 200). The readers' raw output surfaced 5 candidate findings; 2 were
+> dropped on self-assessment: a zero-community-votes-ten-months-post-
+> premiere observation on ink-master S17 reads as the product's
+> explicit by-design zero-vote state (the page's own "BE THE FIRST TO
+> VOTE" CTA already frames it positively) rather than a fixable
+> defect, and the authed reader's own note that it could not exercise
+> the vote-pair's post-click state was an explicitly self-flagged
+> testing-coverage gap, not a product finding. 3 findings filed this
+> pass (0 HIGH, 2 MED, 1 LOW): a MED voice echo on
+> `/shows/ink-master/season/hometown-heroes` where the season body's
+> "Shape of the season" paragraph and `canon.md`'s slot rationale
+> both restate the identical "only the second time... four artists
+> reach the last round instead of three" sentence with one word
+> swapped ("weigh" vs. "judge"); a MED comprehension gap where
+> `SeasonInfoCard.tsx`'s default `voteHelp` copy ("one vote per
+> reader. community rank updates weekly.") omits the 72-hour
+> change-your-mind window that the show-level
+> `CommunityWeeklyQuestionCard.tsx` states explicitly one level up
+> the page hierarchy, so the surface that actually takes the vote
+> says less about it than the surface that merely points at it; and a
+> LOW visual finding where every B-tier show card on `/shows` repeats
+> its own "REVIEW IN PROGRESS" eyebrow (54 times) directly below a
+> section header that already states the same tier-wide status once.
 >
-> ───── Pass 141 metadata kept below for history ─────
+> ───── Pass 142 metadata kept below for history ─────
 >
 > Last pass: 2026-08-24 at commit 949a34d3
 > Pass count: 141
@@ -3681,6 +3677,33 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/ink-master/season/hometown-heroes — the season body and canon.md rationale restate the identical finale-rarity sentence with one word swapped
+- pass: 143 (commit 21cbf24a)
+- viewport: desktop
+- category: voice
+- observation: The season's single authored observation (a four-finalist finale is only the second time the format has ever expanded past three) is restated near-verbatim in two separately rendered sections: the season body's "Shape of the season" paragraph and `canon.md`'s slot rationale for the same season. Only one word differs between the two sentences ("weigh" vs. "judge").
+- evidence: `content/shows/ink-master/seasons/17-hometown-heroes.md` body: "...only the second time in the show's history that four artists reach the last round instead of the usual three, giving the format one extra finalist's worth of work to weigh before it closes." `content/shows/ink-master/canon.md:148`: "...only the second time in the show's history that four artists reach the last round instead of three, giving the format one extra finalist's worth of work to judge before it closes."
+- suggested fix: Give the canon.md rationale its own argument (e.g., how Hometown Heroes compares to canon-adjacent seasons #13 and #15, or how the hometown-pride theme's marketing-adjacent framing weighed against the finale rarity in the ranking decision) instead of re-deriving the same finale-rarity sentence with a synonym swap.
+- source: browser (critique-pass-143, anon)
+
+### [MED] [authed] /shows/vanderpump-rules/season/season-12?view=community — the vote block that actually takes a vote omits the 72-hour change-your-mind window that the show-level community pane states explicitly one level up
+- pass: 143 (commit 21cbf24a)
+- viewport: desktop
+- category: comprehension
+- observation: `SeasonInfoCard.tsx`'s default `voteHelp` copy ("one vote per reader. community rank updates weekly.") never mentions the 72-hour window to change a vote. Meanwhile `CommunityWeeklyQuestionCard.tsx` — a card with no voting control of its own, which only links the reader down to the season rows — states the window explicitly. The surface where the reader is actually deciding whether to commit to a vote says less about its flexibility than the surface that merely points at it.
+- evidence: `src/components/composition/SeasonInfoCard.tsx:50` — `voteHelp = 'one vote per reader. community rank updates weekly.'` (no 72h mention), rendered verbatim on the VPR season-12 page. Contrast `src/components/canon/CommunityWeeklyQuestionCard.tsx:40` — "Your vote feeds the next update. One vote per reader; change your mind within 72h.", rendered verbatim on `/shows/rhoslc?view=community` and `/shows/ink-master?view=community`.
+- suggested fix: Append the same clause to `SeasonInfoCard`'s `voteHelp` default, e.g. "one vote per reader; change your mind within 72h. community rank updates weekly." — puts the flexibility promise on the surface where the reader actually casts the vote.
+- source: browser (critique-pass-143, authed)
+
+### [LOW] [anon] /shows — every B-tier show card repeats its own "REVIEW IN PROGRESS" eyebrow, redundant with the section header stating the same tier-wide status once
+- pass: 143 (commit 21cbf24a)
+- viewport: desktop and mobile
+- category: visual
+- observation: The B-tier section header already states "The canon is in progress. Every season reviewed before it lands." once for the whole 54-show group, but every individual card below it repeats its own "REVIEW IN PROGRESS" eyebrow line with no new information each time. S/A-tier cards use that eyebrow slot for genre/network instead.
+- evidence: Section header: "B / CANON STILL FORMING / The canon is in progress. Every season reviewed before it lands. / 54 SHOWS / REVIEW IN PROGRESS" — then each card individually repeats it, e.g. "REVIEW IN PROGRESS / CULINARY COMPETITION · FOOD NETWORK / Chopped". Confirmed identical on both desktop and mobile captures.
+- suggested fix: Drop the per-card "REVIEW IN PROGRESS" eyebrow (or fold it into the genre/network line as a single tag) in `ShowsStatusPill.tsx` since the section header already establishes tier-wide status; reserve the per-card eyebrow slot for genre/network only, matching how S/A-tier cards use that line.
+- source: browser (critique-pass-143, anon)
 
 ### [MED] systemic — meta descriptions on `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`, and `/themes` all reuse the page's own H1/lede copy near-verbatim instead of standing as independent summaries
 - pass: 141 (commit 949a34d3)
