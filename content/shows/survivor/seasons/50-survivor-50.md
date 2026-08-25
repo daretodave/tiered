@@ -9,7 +9,7 @@ location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [all-returnee-cast, fan-voted-format]
 eyebrow: "Aired spring 2026 · all-returnee cast"
-lede: "All 24 castaways returning, from Season 1 through the season that just aired, for the biggest cast in the show's history — and a set of game mechanics the fans voted on themselves."
+lede: "All 24 castaways returning, spanning the show's entire run, for the biggest cast yet — with game mechanics the fans voted on themselves."
 pull: "Survivor 50 pulls its entire cast from the show's own history — winners, near-misses, and one-season wonders alike — the largest roster the franchise has fielded. The season's mechanics carry an audience's fingerprints too: months before the marooning, fans voted on the format itself, shaping the game before a single tribe stepped off the boat."
 filming_caption: "Mamanuca · sixteenth consecutive Fiji shoot"
 premiere_caption: "CBS · special three-hour premiere"

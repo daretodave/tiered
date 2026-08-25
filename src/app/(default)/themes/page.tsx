@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: 'Lists',
     description:
-      'Themed lists across the tiered.tv catalog — Premieres that earned it, Finales that stuck the landing, cross-canon and single-show tiers.',
+      "Every ranking in the tiered.tv catalog that isn't a full show's canon — premieres, finales, format twists, feuds — sorted by theme, spoiler-free.",
     path: '/themes',
   })
 }
