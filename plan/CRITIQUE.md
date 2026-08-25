@@ -3727,6 +3727,7 @@
 - evidence: Table excerpt: "01 Cagayan ... 100% — 3", "04 Micronesia: Fans vs. Favorites ... 0% — 0", "44 One World ... 100% — 1" — order is canon rank order, not approval-percentage order.
 - suggested fix: Either visually de-emphasize (gray out) the APPROVAL % column while the table is still mirroring canon order, or add a persistent inline flag on the column header itself (e.g. "APPROVAL % (canon order until threshold)") so the explanation doesn't rely on a reader having already read the line above the table.
 - source: browser (critique-pass-141, authed)
+- resolved: 2026-08-25, cloud march tick, `/iterate` (external-critique category, highest-priority queue). Took the row's second suggested-fix option: added a persistent `(canon order)` inline flag to the "Approval" column header in `CommunityRankList.tsx`, rendered only while `source !== 'votes'` and styled de-emphasized via a new `.col-bar-note` rule using the existing `--ink-40` token. Two regression tests added (flag present for `source="canon"`, absent for `source="votes"`). Verify gate green: fast gate (3676 unit tests, content:check ok), build (1513 pages), 4879 e2e (30.2m).
 
 ### [LOW] /shows/survivor/season/survivor-50 — page `<title>` doubles "Survivor" instead of following the show-page branding pattern
 - pass: 141 (commit 949a34d3)
