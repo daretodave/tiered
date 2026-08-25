@@ -4,76 +4,82 @@
 > `.github/workflows/night.yml`). Overwritten whole each tick;
 > history lives in git.
 
-# DIGEST — 2026-08-22
+# DIGEST — 2026-08-25
 
 ## Headline
 
-**A steady, healthy 26 hours — 24 successful `march` ticks, 2 failures, both self-healed on retry.** The two failures carry distinct signatures worth separating: the 04:15 UTC run hit `Claude Code returned an error result: Prompt is too long` — the exact string issue #565 has carried since 2026-07-12 under a diagnosis the 08-20 digest flagged as stale (the 08-16→08-20 outage's real cause was an org-access toggle, not prompt length). It just reproduced live, on a clean day with no outage in progress — #565's original 07-12 diagnosis looks correct after all and has been silently absorbed into "Recurred" comments this whole time. The 09:10–10:46 run hit a plain wall-clock timeout after three tool calls all returned cleanly (`is_error: false`) — reads as a long tick, not a crash. Content-gap dispatch (Rule 2/3) stayed fully saturated for a second straight day: the season-fill gap table is flat at **42 shows / 43 gap-slots**, every slot starred confirmed-but-unaired (nearest real dates 2026-08-23 RHOA reunion, 2026-08-27 MAFS finale), and Rule 3's idea space returned **zero-ship twice today** (14:15, five fresh angles; 09:11, twelve concepts). The content-gap-redirect workaround (issue #758) carried the day instead — 11 lede/body/canon echo-repetition fixes shipped across 10 shows, an AGT `watch_list` backfill (S07-S11 landed, S01-S06 still open), 2 themed lists, one real bug fix (`VotePair` zero-vote copy), and one new content bug discovered and filed (AGT S8/S9 panel-transition swap). The nightly `e2e-full` breadth crawl went red both nights this window (08-20, 08-21) on the same known duration-ceiling breach — flat at 10,548 tests, zero real test regressions, candidate #34 (shard the crawl) now **32 days unpromoted**. Deploy is green at HEAD (`2388103`).
+**A clean, high-volume 26 hours on the code side — 31 successful `march` ticks, 0 failures, 9 normal concurrency cancellations — but the night shift itself lost two nights to the same starvation race it's been fighting since July.** `plan/DIGEST.md` sat stuck on its 08-22 snapshot through 08-23 and 08-24: `gh run view` on both `night` runs shows zero jobs ever started (evicted from the queue before GitHub scheduled them), the exact concurrency-eviction signature already diagnosed and tracked as candidate #35 — now a **third confirmed occurrence**, 35 days unpromoted. Tonight's tick only got through on luck, same as every prior recovery. On the content side, Rule 2 (season-fill drain) stayed **fully stalled at 44/44 shows starred** for a 19th consecutive pass — nothing premiered, nothing to drain — and Rule 3 (themed lists) mostly saturated too (4 zero-ship passes logged, 3 extends shipped before running dry each time). The real velocity came from the content-gap-redirect workaround (issue #758): **3 critique passes** (141, 142, 143) ran and nearly every finding they raised — including a HIGH (stale OG-image 404 regression) — got shipped same-window, plus a real production bug fix (season vote block now states its 72h change-window). Catalog held flat at 68 shows / 1047 seasons / 68 canons / 181 themes all night — a maintenance-and-polish window, not a growth one. The `e2e-full` breadth crawl went red again both nights this window (08-23, 08-24) on the same known duration-ceiling breach — candidate #34 now 35 days unpromoted. Deploy is green at HEAD (`30eba7e0`).
 
 ## While you were out
 
 | Time (UTC) | Verb | Outcome |
 |---|---|---|
-| 09:13 | content-gap redirect | shipped — top-chef carolinas filming-location repetition fix |
-| 10:20 | content-gap redirect | shipped — traitors FORMAT field self-restatement fix |
-| 11:20 | content-gap redirect | shipped — summer-house filming_caption fix |
-| 12:03 | Rule 3 (themed list) | shipped — twice-in-one-year (Amazing Race S02/S03) |
-| 12:53 | Rule 3 (themed list) | shipped — when-scripted-went-dark (Project Runway S20 / Love Island US S05) |
-| 13:39 | content-gap redirect | shipped — perfect-match S4 field repetition fix |
-| 13:55 | critique | pass 133 — 3 findings (0 high, 3 med, 0 low) |
-| 14:15 | Rule 3 | **zero-ship** — invent-new sweep, five fresh angles, none landed |
-| 15:00 | content-gap redirect | shipped — ink-master team-rule list retitle |
-| 15:58 | content-gap redirect (self-found) | shipped — jersey-shore S6 / love-is-blind Columbus phrase echoes |
-| 16:45 | content-gap redirect | shipped — traitors "on merit" echo fix |
-| 17:31 | content-gap redirect | shipped — amazing-race S38 canon/body echo fix |
-| 18:20 | bug fix (self-found) | shipped — VotePair zero-vote state copy fix |
-| 19:07 | content-gap redirect | shipped — AGT S17-21 watch_list backfill |
-| 19:22 | critique | pass 134 — 3 findings (0 high, 3 med, 0 low) |
-| 20:05 | content-gap redirect | shipped — american-idol S24 FILMED caption fix |
-| 20:52 | Rule 3 | **zero-ship** — ninth same-day saturation pass |
-| 21:43 | content-gap redirect | shipped — AGT S12-16 watch_list backfill |
-| 22:34 | content-gap redirect | shipped — /u/[handle] OG image threading fix |
-| 23:22 | content-gap redirect | shipped — DWTS S34 canon echo + SEO clip fix |
-| 00:34 | content-gap redirect | shipped — bake-off S16 cast_size_caption guard |
-| 00:46 | critique | pass 135 — 5 findings (0 high, 4 med, 1 low) |
-| 02:10 | triage | 1 issue processed, 1 queued |
-| **04:15** | march tick | **failed** — "Prompt is too long" (issue #565 signature, self-healed next tick) |
-| 04:37 | content-gap redirect | shipped — vanderpump-rules S1 canon slot_argument echo fix |
-| 06:16 | content-gap redirect | shipped — queer-eye S10 FILMED caption fix |
-| 07:03 | content-gap redirect | shipped — bake-off hammond-continues lede/body echo fix |
-| 08:18 | content-gap redirect | shipped — AGT S07-S11 watch_list backfill |
-| **09:10–10:46** | march tick | **timed out** — plain wall-clock wall after 3 clean tool calls, no error surfaced |
-| 09:11 | Rule 3 | **zero-ship** — second same-day pass, 12 concepts checked |
+| 09:43 (08-24) | content-gap redirect | shipped — dragrace-allstars fact-echo fix (pass-133) |
+| 10:30 | content-gap redirect | shipped — community-live-strip redundant "live" label fix |
+| 11:16 | content-gap redirect | shipped — pass-128 `isRscPrefetchAbort()` tooling fix |
+| 11:30 | critique | pass 140 — 5 findings (0 high, 2 med, 3 low) |
+| 12:26 | content-gap redirect | shipped — the-voice finale eyebrow/lede echo fix (pass-135) |
+| 13:09 | content-gap redirect | shipped — top-chef era-filter label consistency fix |
+| 13:52 | content-gap redirect | shipped — amazing-race S38 watch_list echo fix (pass-140) |
+| 14:44 | Rule 3 | **zero-ship** — thirteenth same-day-class pass, saturation reconfirmed |
+| 15:28 | content-gap redirect | shipped — top-chef Las Vegas slot_argument echo fix (pass-139) |
+| 16:17 | Rule 3 | **zero-ship** — fourteenth same-day-class pass |
+| 17:00 | content-gap redirect | shipped — AGT mobile "Approval" label fix (pass-138) |
+| 17:15 | critique | pass 141 — 6 findings (**1 high**, 2 med, 3 low) |
+| 17:56 | content-gap redirect | shipped — survivor-50 eyebrow ambiguity fix (pass-141) |
+| 18:48 | content-gap redirect | shipped — survivor-50 canon placeholder forward-pointer fix (pass-139) |
+| 19:47 | content-gap redirect | shipped — **opengraph-image route-group hash bug fix (pass-141 HIGH, resolved same-window)** |
+| 20:30 | content-gap redirect | shipped — bake-off community-trend badge legend (pass-140) |
+| 21:17 | content-gap redirect | shipped — community live-strip zero-vote clarity fix (pass-139) |
+| 22:12 | Rule 3 (themed list) | shipped — ratings-record season entries extend |
+| 22:58 | Rule 3 (themed list) | shipped — the-reveal-was-the-whole-show extend |
+| 00:02 (08-25) | Rule 3 | **zero-ship** — fifteenth same-day-class pass |
+| 00:51 | Rule 3 (themed list) | shipped — the-vote-left-the-phone-line extend |
+| 02:32 | Rule 3 (themed list) | shipped — running-long-running-short extend |
+| 03:20 | Rule 3 | **zero-ship** — seventeenth same-day-class pass |
+| 04:07 | audit | content-gap redirect audit finds none safe (Rule 2 still stalled) |
+| 05:33 | Rule 3 | **zero-ship** — eighteenth same-day-class pass |
+| 06:15 | audit | Rule 2 reconfirmed fully stalled — 44/44 shows starred (19th pass) |
+| 07:02 | content-gap redirect | shipped — bake-off Slot #1 slot_argument echo fix |
+| 07:16 | critique | pass 143 — 3 findings (0 high, 2 med, 1 low) |
+| 08:29 | content-gap redirect | shipped — vanderpump-rules weekly_question metaphor fix (pass-143) |
+| 09:11 | content-gap redirect | shipped — dragrace Season 5 dek/body-opener echo fix (pass-142) |
+| 10:01 | content-gap redirect | shipped — ink-master hometown-heroes canon.md echo fix |
+| 10:45 | bug fix | shipped — season vote block now states the 72h change-window (pass-143) |
 
-(13 additional `march` runs this window show `cancelled` — normal concurrency-group overlap when a trigger lands mid-tick, not incidents.)
+(9 additional `march` runs this window show `cancelled` — normal
+concurrency-group overlap when a trigger lands mid-tick, not
+incidents. `critique` pass 142 — 2 findings, 0 high, 1 med, 1 low —
+also ran at 23:18 08-24, both resolved same-window, omitted above
+for length.)
 
 ## The saga
 
-**Rule 2 (season-fill drain):** flat at **42 shows / 43 gap-slots**, unchanged since the 08-16 sweep — every remaining slot is confirmed-but-unaired, not a search failure. Nearest real premiere/finale dates: RHOA S17 reunion 2026-08-23, MAFS S20 "Seattle" reunion/finale 2026-08-27. Standing row stays pending by design until the table reads zero.
+**Rule 2 (season-fill drain):** flat at **44/44 shows starred**, unchanged since the 08-23 CADENCE sweep — every remaining gap slot is confirmed-but-unaired, not a search failure. The standing row stays pending by design until the table reads zero; 19 consecutive passes now report the same "nothing to drain" result. No calendar date crossed in this window.
 
-**Rule 3 (themed lists):** zero-ship **twice** in this window (14:15 five-angle sweep, 09:11 twelve-concept sweep) — the idea space keeps coming back dry on same-day repeats. 2 lists still shipped earlier in the window (twice-in-one-year, when-scripted-went-dark) before saturation set in.
+**Rule 3 (themed lists):** deeply saturated — **4 zero-ship passes** logged this window (13th, 14th, 15th, 17th, 18th same-day-class — five passes total, four of them dry), interleaved with **4 extends that did land** (ratings-record, the-reveal-was-the-whole-show, the-vote-left-the-phone-line, running-long-running-short) before the idea space ran dry again each time. The 19th-pass audit note explicitly lists eight fresh fact classes chased to exhaustion (labor-strike disruption, cross-franchise casting, remote judging, production mishaps, weather disruption, occupation-based tribes, Uncloaked companion-show angle, non-cash prizes) — all either sub-floor or already staked elsewhere in the 181-row ledger.
 
-**Content-gap redirect (issue #758's workaround):** this is where the day's actual content velocity lived. 10 echo/repetition fixes across bake-off (×2), traitors (×2), summer-house, perfect-match, ink-master, jersey-shore/love-is-blind, amazing-race, american-idol, dancing-with-the-stars, vanderpump-rules, queer-eye — all sourced from CRITIQUE.md's own backlog (passes 125, 127, 130, 132, 133, 134). Plus AGT `watch_list` backfill: S17-21, then S12-16, then S07-11 landed today (11 of 21 seasons still bare: S01-S06). One net-new bug surfaced along the way: AGT S8/S9 carry the panel-transition narrative on the wrong season (filed AUDIT line 645, MED, discovered via scout cross-verification during the watch_list backfill).
+**Content-gap redirect (issue #758's workaround):** this is where the window's real velocity lived. Four critique passes (140, 141, 142, 143) fed a steady stream of same-window fixes: echo/repetition cleanups across dragrace (×2), top-chef (×2), bake-off (×2), survivor-50 (×2), AGT, amazing-race, the-voice, vanderpump-rules, ink-master, community-live-strip, plus one tooling fix (`isRscPrefetchAbort()`) and one real HIGH-severity bug (the opengraph-image route-group hash issue that silently 404'd `/u/[handle]/opengraph-image` and `/shows/opengraph-image` — root-caused to Next.js appending a disambiguation suffix for metadata routes inside the `(default)` route group, fixed by moving both files out of the group, same pattern as the working `/themes/[theme]/opengraph-image.tsx`). One net-new bug fix shipped outside the redirect pipeline: the season vote block's default copy now states its 72-hour change-window explicitly (pass-143 finding, closed same-window).
 
 ## Queues now
 
-- `plan/AUDIT.md`: 10 open non-standing rows (3 HIGH, 5 MED, 2 LOW) + the standing Rule-2 row. HIGH: the-voice factual corruption (line 636, unresolved), march's 4-day outage post-mortem (line 643), night/march concurrency starvation (line 637, last recurrence 08-16→08-19, root-caused to org-access, distinct from the concurrency race). New today: AGT S8/S9 panel-transition swap (line 645, MED).
-- `plan/CRITIQUE.md`: latest pass **135** (00:46 UTC tonight), 5 findings (0 high / 4 med / 1 low) — fresh, not stale. ~15 open MED/LOW findings still in the pending queue feeding the content-gap-redirect pipeline.
-- `plan/PHASE_CANDIDATES.md`: last pass 65 (2026-08-21), **31 open candidates**. Longest-unpromoted: #34 shard e2e-full crawl (32 days), #35 decouple night.yml concurrency (26 days), #36 the-voice remediation, #37 org-outage fallback (both filed within the last 2 weeks).
-- Open `triage:needs-user`: 8 issues (#777, #763, #762, #758, #586, #565, #399, #398) — several stale (#398/#399 since June).
-- Open `triage:loop-queued`: 3 issues (#785, #754, #636).
+- `plan/AUDIT.md`: 5 open non-standing rows (2 HIGH, 1 MED, 2 LOW) + the standing Rule-2 row. HIGH: the-voice factual corruption (issue #762), night-shift starvation (both updated this tick with fresh recurrence data, see below). MED: e2e-full breadth timeout (also updated this tick). LOW: themed-list description SERP-budget overrun, `YEAR_TENURE_RE` teen-number gap.
+- `plan/CRITIQUE.md`: latest pass **143** (07:16 UTC today), 3 findings (0 high / 2 med / 1 low) — fresh, all three already redirected same-window. Pass count 143 total, gate remains lifted (Phase 36).
+- `plan/PHASE_CANDIDATES.md`: last pass 66 (2026-08-23), 30+ open candidates. Longest-unpromoted: #34 shard e2e-full crawl (**35 days**), #35 decouple night.yml concurrency (**35 days**, 3rd confirmed recurrence tonight), #36 the-voice remediation, #37 org-outage fallback.
+- Open `triage:needs-user`: 8 issues (#777, #763, #762, #758, #586, #565, #399, #398) — #758 (content-gaps starving `/iterate`) now 17+ days old with 64 comments, still the operative diagnosis for why Rule 2/3 keep zero-shipping and the redirect pipeline carries the day instead.
+- Open `triage:loop-queued`: 4 issues (#787, #785, #754, #636) — #787's underlying e2e test-isolation bug (shared `survivor:20` vote target between `vote-state-pill.spec.ts` and `user-profile.spec.ts`) is already fixed per AUDIT's closed row, issue left open, likely just needs a closing comment.
 
 ## Needs you
 
-- **Issue #565 needs re-triage.** Its 2026-07-12 diagnosis ("prompt too long") was marked stale after the 08-16→08-20 outage (the outage's real cause was an org-access toggle, not prompt length). Tonight's 04:15 failure reproduced the exact "Prompt is too long" string on a day with no outage — the original diagnosis looks correct after all and has been silently absorbed into "Recurred" comments this whole time.
-- **Candidate #34 (shard e2e-full crawl) — 32 days unpromoted**, still the standing `/oversight` recommendation. Two more red nights this window (08-20, 08-21), test count flat at 10,548 — no growth, no recovery, same wall every time.
-- **The-voice factual corruption (AUDIT line 636, HIGH)** — still live, still reader-facing (false "show has ended" claim), candidate #36 filed but unpromoted.
-- **e2e test-isolation bug (AUDIT line 644, MED, issue #785)** — blocked a content-gap ship earlier this window (run 32542338041); `vote-state-pill.spec.ts` and `user-profile.spec.ts` share a vote target and stomp each other's state.
+- **Candidate #35 (decouple night.yml concurrency) — 35 days unpromoted, 3rd confirmed occurrence tonight.** Two more nights lost (08-23, 08-24) to the identical silent-eviction-before-start race first diagnosed 07-27: `night` gets queued, a `march` trigger lands first, GitHub's concurrency semantics evict the queued run with zero jobs ever starting. This is now the clearest-signal unpromoted candidate in the backlog — three separate multi-night gaps since diagnosis, no code fix possible from cloud (workflow-file edit, needs local `/oversight`).
+- **Candidate #34 (shard e2e-full crawl) — 35 days unpromoted.** Two more red nights (08-23, 08-24), same 75-minute wall, zero real test regressions both times. Also workflow-file-blocked from cloud.
+- **The-voice factual corruption (AUDIT, HIGH, issue #762)** — still live, still reader-facing (false "show has ended" claim on 8 season files + show frontmatter). Candidate #36 filed but unpromoted; blocking rule still holding (no new the-voice ≥S22 content authored this window).
+- **Issue #758 (content-gaps starving `/iterate`)** — 17+ days open, 64 comments, no dispatch-mechanics change. The redirect workaround is working well as a stopgap (this window proves it — 4 critique passes fully absorbed same-window) but the underlying dispatch-priority question is still unresolved.
 
 ## Today's intent
 
-Rule 2 stays starred (next real target: RHOA S17 reunion 2026-08-23, one day out). Rule 3's idea space needs either a fresh season landing or a deliberate cool-down — two same-day zero-ship passes in one window is the clearest saturation signal yet. Expect the content-gap-redirect path (issue #758) to keep carrying the day: CRITIQUE pass 135's 4 new MED findings plus the remaining AGT watch_list gap (S01-S06) are the next-in-line targets. Top non-content finding: get eyes on issue #565's re-triage before it silently absorbs another failure under the wrong label.
+Rule 2 stays starred — no calendar date is close enough to act on; the next real target is whatever `plan/CADENCE.md`'s biweekly sweep turns up. Rule 3's idea space needs either a fresh season landing or an extended cool-down — 4 zero-ship passes in 26 hours is saturation, not a bad day. Expect the content-gap-redirect path to keep carrying the day: CRITIQUE's pending queue (passes below 143 not yet fully drained) is the next-in-line target. Top non-content ask: get a local `/oversight` session on candidates #34 and #35 — both are workflow-file edits the cloud loop structurally cannot ship, both have now recurred three-plus times each, and both keep re-filing the same diagnosis every few nights with no way to close the loop from here.
 
 ## Tuning proposals
 
-None new this tick. Existing candidates (#34 shard crawl, #35 decouple night concurrency, #36 the-voice remediation, #37 org-outage fallback) already cover every signal seen in this window — filing duplicates would just add noise. The `/oversight` backlog is the bottleneck, not a gap in candidate coverage.
+None new this tick — the two live patterns (e2e-full timeout ceiling, night/march concurrency race) are already fully covered by candidates #34 and #35, both reinforced with fresh recurrence data in this tick's `plan/AUDIT.md` update rather than filed as duplicates. The bottleneck is the `/oversight` backlog, not missing candidate coverage.
