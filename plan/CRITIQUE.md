@@ -1,42 +1,34 @@
 # CRITIQUE
 
-> Last pass: 2026-08-25 at commit 21cbf24a
-> Pass count: 143
+> Last pass: 2026-08-25 at commit bedc7788
+> Pass count: 144
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 143
+> `/march` Step 2's normal rate-limited cadence is active. Pass 144
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
-> `/`, `/shows/ink-master/season/hometown-heroes`, `/shows`,
-> `/shows/rhoslc?view=canon`, `/themes/no-template-to-copy` anon;
-> `/u/e2e`, `/shows/vanderpump-rules/season/season-12?view=
-> community`, `/shows/rhoslc?view=community`, `/shows/ink-master?view=
-> community` authed. Both passes came back mechanically clean (0
-> console errors, 0 failed requests, 0 mobile overflow, all pages
-> 200). The readers' raw output surfaced 5 candidate findings; 2 were
-> dropped on self-assessment: a zero-community-votes-ten-months-post-
-> premiere observation on ink-master S17 reads as the product's
-> explicit by-design zero-vote state (the page's own "BE THE FIRST TO
-> VOTE" CTA already frames it positively) rather than a fixable
-> defect, and the authed reader's own note that it could not exercise
-> the vote-pair's post-click state was an explicitly self-flagged
-> testing-coverage gap, not a product finding. 3 findings filed this
-> pass (0 HIGH, 2 MED, 1 LOW): a MED voice echo on
-> `/shows/ink-master/season/hometown-heroes` where the season body's
-> "Shape of the season" paragraph and `canon.md`'s slot rationale
-> both restate the identical "only the second time... four artists
-> reach the last round instead of three" sentence with one word
-> swapped ("weigh" vs. "judge"); a MED comprehension gap where
-> `SeasonInfoCard.tsx`'s default `voteHelp` copy ("one vote per
-> reader. community rank updates weekly.") omits the 72-hour
-> change-your-mind window that the show-level
-> `CommunityWeeklyQuestionCard.tsx` states explicitly one level up
-> the page hierarchy, so the surface that actually takes the vote
-> says less about it than the surface that merely points at it; and a
-> LOW visual finding where every B-tier show card on `/shows` repeats
-> its own "REVIEW IN PROGRESS" eyebrow (54 times) directly below a
-> section header that already states the same tier-wide status once.
+> `/`, `/shows/southern-charm/season/season-11`, `/themes`,
+> `/search`, `/themes/the-fire-pit-never-moved` anon; `/u/e2e`,
+> `/shows/masterchef/season/global-gauntlet?view=community`,
+> `/shows/bachelor-in-paradise?view=community`,
+> `/shows/rhop?view=community` authed. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, all pages 200 in the Playwright capture). The anon
+> reader's raw output surfaced 2 candidate findings; 1 was dropped on
+> self-assessment: the `/search` route's 308 redirect to `/` is not a
+> defect — `src/middleware.ts` documents it as a deliberate Phase 29
+> decision ("`/search` retired in favor of the cmd+k overlay ...
+> Permanent redirect so external links land somewhere sensible"),
+> so filing a "give `/search` a real route" fix would reverse an
+> already-shipped, intentional call rather than fix a bug. The authed
+> reader independently confirmed the mobile 7D-column label swap
+> flagged in earlier passes is deliberate component behavior, not a
+> regression, and returned zero findings. 1 finding filed this pass
+> (0 HIGH, 0 MED, 1 LOW): a LOW performance note that `/themes` now
+> ships all 181 lists' full descriptions unpaginated on first paint
+> (57KB+ of body text, 10-20x every other page walked this pass),
+> with no lazy-load or virtualization past the three featured tiles.
 >
 > ───── Pass 142 metadata kept below for history ─────
 >
@@ -3677,6 +3669,15 @@
 > findings deduped by message.
 
 ## Pending
+
+### [LOW] [anon] /themes — the index renders all 181 themed lists' full names, entry counts, and descriptions unpaginated on a single page load, with no lazy-load or virtualization past the three featured lists
+- pass: 144 (commit bedc7788)
+- viewport: desktop and mobile
+- category: performance
+- observation: The `/themes` index ships every one of its 181 lists' full one-to-two sentence descriptions inline on first paint, across the "BY TONE / BY STRUCTURE / BY CRAFT / BY ERA / SINGLE-SHOW" categories below the three featured tiles, rather than lazy-loading past the fold or paginating/virtualizing the by-tag sections. The page's own copy states "SHOWING · ALL 181 IN THE INDEX," confirming this is the full catalog rendered at once, not a preview.
+- evidence: Rendered body text length for `/themes` measured 57420 chars (desktop) / 57418 chars (mobile) — 10-20x every other page walked this pass (3000-6000 chars). No mechanical error (200 status, no console errors, no overflow), purely a payload-size/perceived-performance concern as the list catalog keeps growing (181 lists now vs. 9 at the pass-93 baseline referenced elsewhere in this file).
+- suggested fix: Paginate or virtualize the by-tag category sections below the three featured lists (e.g. show the first N per category with a "show more" affordance), or lazy-load each category's full list on tab/expand click instead of shipping all 181 descriptions in the initial HTML payload.
+- source: browser (critique-pass-144, anon)
 
 ### [MED] [anon] /shows/ink-master/season/hometown-heroes — the season body and canon.md rationale restate the identical finale-rarity sentence with one word swapped — RESOLVED
 - pass: 143 (commit 21cbf24a)
