@@ -10964,3 +10964,73 @@ last time a curator actually looked.
   an existing single-show list, or an oversight-authorized
   scout-research process to reach facts outside the repo's own
   season-file text.
+- **2026-08-24, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, fifteenth same-day-class pass): zero-ship.** Re-confirmed
+  both standing blockers unchanged: `plan/CADENCE.md`'s gap table is
+  still fully starred confirmed-but-unaired (44 shows/44 gap-slots), and
+  no ledger row clears the 90-day/five-due review-batch floor
+  (`survivor-pillars` still oldest `last_reviewed`, well under
+  threshold). Read all fourteen of today's prior passes in full before
+  starting and did not re-walk any of their closed classes (the list
+  recapped in the fourteenth pass's own note, plus every class named in
+  the day's first nine passes). Chased eight genuinely fresh,
+  not-previously-logged angles this pass, each grep-verified against
+  `content/shows/**/*.md` before being ruled out: (1) **two-night/
+  multi-part season-premiere events** — grepped `two-night|two-part
+  premiere|special two-hour|three-night event|multi-night premiere`: 2
+  real hits (Drag Race S15's two-part premiere, DWTS S02's two-night
+  weekly cadence), different mechanisms, no shared thesis, sub-floor;
+  DWTS S02's fact is already the explicit address of its own canon
+  `slot_argument` framing the season's structural-founding rank. (2)
+  **binge/batch-release distribution model** — grepped `binge|weekly
+  release|drop(s|ped)? all episodes|releases all|all at once`: 4 hits,
+  but this is the exact, already-shipped territory of
+  `the-batch-drop-settles-in` (confirmed via the slug's own existence,
+  referenced repeatedly in this file's Perfect Match zero-ship history).
+  (3) **duo/team-based competition-format twist** — grepped `duo
+  format|paired into teams|team-based twist|partner(ed)? format|pairs
+  instead of individual|competing in pairs|competing as (a )?duo`: 1 hit
+  (the-challenge canon, generic usage), sub-floor. (4) **multi-year
+  hiatus/comeback-after-a-break framing distinct from the already-shipped
+  farewell-season thesis** — grepped `hiatus|years? (later|apart|gap)|
+  after a \d+-year|returns? after (an|a) (extended|long)` and `off the
+  air|dark for|returned after|comeback after a break|multi-year gap|
+  years off` across `content/themes/*.md`: both patterns already hit
+  21 and 7 existing theme files respectively (`the-doubters-had-to-
+  walk-it-back`, `best-comeback-seasons`, `when-scripted-went-dark`,
+  `the-schedule-didnt-ask-permission`, among others) — the territory is
+  already comprehensively claimed, consistent with the 2026-08-23
+  fifth-pass finding on the adjacent "farewell season" angle. (5)
+  **episode-count/run-length superlative language ("longest run yet,"
+  "most episodes ever")** — grepped `longest (season|run) (yet|ever|in
+  franchise|in the show)|most episodes (ever|yet)|fewest episodes
+  (ever|yet)|shortest (season|run) (yet|ever)`: 34 files hit, but on
+  inspection this is generic per-show growth language scattered across
+  almost every long-running show's own natural season-over-season
+  expansion, not a shared cross-show mechanic — no coherent single
+  thesis ties Chopped's episode-count seasons to Married at First
+  Sight's to Bachelor in Paradise's; already-mature milestone lists
+  (`milestones-spent-not-marked`) cover the round-number cases that
+  matter editorially. (6) **sponsorship/brand-integration as a stated
+  structural device** — grepped `brand integration|sponsored by|
+  presented by|product placement|branded challenge`: zero hits
+  catalog-wide. (7) **set/studio physical redesign as a stated
+  production fact** — grepped `new set (was )?built|redesigned (the
+  )?(kitchen|studio|set)|set (was |gets a )?overhaul|renovated (the
+  )?(kitchen|studio|workroom)`: zero hits catalog-wide. (8)
+  **"supersized"/feature-length episode as a structural device** —
+  grepped `supersized|extended (runtime|episode)|feature-length
+  episode|movie-length`: 7 files, but reading each in context found
+  three unrelated facts wearing the word (Top Chef's own recurring
+  "supersized judge's table" texture across two of its own seasons,
+  RHOP S05's three-part reunion — already exhausted reunion-quality
+  territory — and Amazing Race S35's distinct "90-minute hour" runtime
+  change) — no shared cross-show thesis, and Top Chef's own two-hit
+  vein is single-show and sub-floor for a dedicated list on its own.
+  No `content/themes/*.md` file written or edited this pass; no ledger
+  row changed. Fifteenth consecutive same-day-class zero-ship pass,
+  consistent with issue #758's standing saturation verdict. The next
+  unlock remains unchanged: Rule 2 filing a new season, a finale-gate
+  pickup extending an existing single-show list, or an
+  oversight-authorized scout-research process to reach facts outside
+  the repo's own season-file text.
