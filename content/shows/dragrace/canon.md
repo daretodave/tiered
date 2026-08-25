@@ -28,16 +28,17 @@ tag: The cleanest contest the franchise has ever produced — Logo-era Drag Race
 slot_argument: A Logo-era cast with stamina across design, comedy and performance. Snatch Game lands some of the most-cited turns the show has ever produced. The grammar is figured out; the scale is not yet chasing it.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
-Season 5 sits first because it is the cleanest competition the
-franchise has ever produced. The cast had stamina across the
-lineup — front-runners pushing each other in design challenges,
-comedy queens delivering in Snatch Game, performers who could
-carry a lip-sync from the first week. RuPaul Charles hosted the
-era when the show had figured out its grammar but had not yet
-started chasing scale. Logo TV's smaller production budget kept
-the focus tight on the workroom and the runway. For people who
-came to Drag Race for the actual contest, Season 5 is what
-the format looks like running cleanly with nothing in front of it.
+The cast had stamina across the lineup — front-runners pushing
+each other in design challenges, comedy queens delivering in
+Snatch Game, performers who could carry a lip-sync from the
+first week. RuPaul Charles hosted the era when the show had
+figured out its grammar but had not yet started chasing scale.
+Logo TV's smaller production budget kept the focus tight on the
+workroom and the runway. Nothing here is fighting for the
+viewer's attention — no twist, no expanded cast, no gimmick
+pulling focus from the actual contest. For people who came to
+Drag Race for the craft itself, Season 5 is the format running
+at its most stripped-down and complete.
 
 ## 6. Season 6
 
