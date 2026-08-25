@@ -11034,3 +11034,55 @@ last time a curator actually looked.
   pickup extending an existing single-show list, or an
   oversight-authorized scout-research process to reach facts outside
   the repo's own season-file text.
+
+- **2026-08-25, content-curator direct invocation (`/ship-content` Rule 3
+  tick): zero-ship.** Re-confirmed both standing blockers before
+  starting: Rule 2 season-fill stalled (`plan/CADENCE.md` gap table
+  fully starred, confirmed-but-unaired), and Rule 3 deep into the
+  fifteen-plus-pass same-day saturation streak logged through
+  2026-08-24, issue #758's standing verdict. Read the Ledger and the
+  drained Ideas-log tail (zero unclaimed bullets remain) before
+  starting. Rather than a fresh blind keyword sweep, targeted
+  `season-one-doesnt-own-every-first` (craft, 17 entries/14 shows,
+  `status: growing`, real headroom under the 24-cap, last extended
+  2026-08-22) as the most promising below-cap list and grepped for
+  new casting/format "firsts" landing after a show's debut season.
+  Found several strong-looking candidates on first read, all killed
+  once cross-checked against the full ledger: (1) Big Brother S02's
+  "houseguests do the evicting for the first time" format fix —
+  already staked verbatim at `the-fix-stayed-after-the-season-left`
+  rank 4. (2) Queer Eye S09's first specialist-chair change since the
+  2018 reboot — already staked at `the-format-never-blinked` rank 8.
+  (3) Bachelorette S17's first alumnae-hosted season — already staked
+  at `the-other-side-of-the-table` rank 9. (4) Top Chef S22
+  "Destination Canada," the flagship's first season to leave the
+  US — already staked twice over, at `the-competition-leaves-the-
+  country` rank 1 and `the-format-learned-to-travel` rank 3 (its own
+  dedicated single-show list). (5) MasterChef Australia S08
+  "California," that franchise's first international trip — already
+  staked at `the-competition-leaves-the-country` rank 8. (6) Survivor
+  S12 Panama's hidden-idol/Exile Island introduction — already staked
+  at `the-advantage-was-never-free` rank 1, the exact thesis. (7) DWTS
+  S29's Tyra Banks host handoff — already staked at `the-mic-changed-
+  hands` rank 5 (and its pandemic-no-audience half already at
+  `pandemic-seasons` rank 7). Also re-ran the representation-milestone
+  axis fresh (`first (openly )?(gay|blind|deaf|married couple|
+  father-daughter|mother-daughter|military veteran|paralympian|
+  amputee)`) hunting for anything the 2026-08-15 pass's narrower
+  pattern might have missed: the one new-looking hit, The Circle S06's
+  first deaf-adjacent... no, its AI-generated contestant paired with
+  its first US-built set, is already double-staked at `not-who-they-
+  say-they-are` rank 1 and `seven-ways-to-break-the-same-app` rank 1,
+  both near-verbatim on the same two facts. Also swept `pandemic|
+  COVID|remote season|bubble` fresh against `content/themes/*.md` and
+  confirmed `pandemic-seasons` (19+ entries) already owns every hit
+  this pass turned up. No genuinely fresh, unclaimed, groundable
+  candidate found for `season-one-doesnt-own-every-first` or any other
+  below-floor list this pass. No `content/themes/*.md` file written or
+  edited this tick; no ledger row changed besides this entry. Sixteenth
+  consecutive same-day-class zero-ship pass in this streak, consistent
+  with issue #758's standing saturation verdict. The next unlock
+  remains unchanged: Rule 2 filing a new season, a finale-gate pickup
+  extending an existing single-show list, or an oversight-authorized
+  scout-research process to reach facts outside the repo's own
+  season-file text.
