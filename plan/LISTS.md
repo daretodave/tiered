@@ -11166,3 +11166,48 @@ last time a curator actually looked.
   season, a finale-gate pickup extending an existing single-show list,
   or an oversight-authorized scout-research process to reach facts
   outside the repo's own season-file text.
+- **2026-08-25, content-curator direct invocation (`/ship-content` Rule 3
+  tick, twentieth same-day-class pass): zero-ship.** Re-confirmed both
+  standing blockers unchanged (Rule 2 gap table fully starred/unaired;
+  no ledger row past the 90-day review floor). Read the Ledger and the
+  full day's nineteen prior passes' closed classes before starting, then
+  chased three fresh, not-yet-logged-by-name candidates to exhaustion,
+  each caught by direct file reads rather than a keyword miss: (1) **a
+  season's own text citing a specific ratings/audience record** — grepped
+  `highest-rated|most-watched|ratings (record|high)|drew the .* largest`
+  across every `content/shows/**` file: 10+ hits across Bachelor S17,
+  DWTS S05, American Idol S05/S24, Love Island UK S05, Drag Race S18,
+  Jersey Shore S03, Love Island US S06/S08 — read the candidate list in
+  full expecting a fresh angle, then found `the-season-the-audience-
+  showed-up-all-at-once` (tone, 14 entries/12 shows, shipped literally
+  yesterday 2026-08-24) already stakes every single one of those seasons
+  on this exact "ratings/audience peak" thesis. Dead on arrival. (2) **a
+  season's own text stating it played for charity/a donation instead of
+  a personal cash prize** — grepped `charity|donat|philanthrop`: real
+  hits at Drag Race All Stars S09 (no-elimination, Beautiful Benefactress
+  Badges fund donations instead of cash) and three Chopped seasons
+  (S33's Star Power charity tournament replacing the mystery basket,
+  S55's branch-of-service charity bracket, S62's No Kid Hungry charity
+  hour) — but Drag Race All Stars S09 is already staked verbatim at
+  `same-crown-new-price-tag` rank 2, and all three Chopped charity
+  episodes are already staked at `when-the-basket-became-a-bracket`
+  (ranks 10/13/18) under that list's bracket-format thesis, which is
+  precisely what each charity episode's own copy frames it as. No
+  headroom either direction. (3) **census follow-up on the remaining
+  unclaimed-single-show leads from the 2026-08-07 zero-`category:
+  single` sweep** — `alone-frozen`, `alone-the-skills-challenge`, and
+  `below-deck-adventure` each still carry zero dedicated `single` list,
+  confirmed via direct `show:` frontmatter reads of each show file: all
+  three carry exactly `seasons: 1`. A single-show ranked list requires
+  more than one season to rank against itself, so these three are a
+  structural dead end, not an unclaimed-but-findable angle — explaining
+  why nineteen prior passes never picked them up. `rhodubai` (`seasons:
+  2`) is the one marginal case left in that census; two entries reads too
+  thin to clear the excellence gate on its own and wasn't pursued further
+  this pass. No `content/themes/*.md` file written or edited this tick;
+  no ledger row changed besides this note. Twentieth consecutive
+  same-day-class zero-ship pass, consistent with issue #758's standing
+  saturation verdict. The next unlock remains unchanged: Rule 2 filing a
+  new season, a finale-gate pickup extending an existing single-show
+  list, or an oversight-authorized scout-research process to reach facts
+  outside the repo's own season-file text.
