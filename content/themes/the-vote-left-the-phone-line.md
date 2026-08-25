@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-08-25
 featured: false
 related:
   - who-actually-got-the-vote
@@ -61,4 +61,10 @@ entries:
     rank: 8
     title: "The app itself becomes the thing that gets retired"
     blurb: "Season twenty-four retires its dedicated voting app mid-relaunch, pushing the ballot back onto the website, social platforms, and text. Proof the move away from the phone was never a straight line toward a single app."
+  - show: so-you-think-you-can-dance
+    season: 8
+    season_label: "S08"
+    rank: 9
+    title: "Text and online arrive first, the phone line stays as backup"
+    blurb: "Season eight's Top 20 return also opens a second front on the ballot, letting fans reach in through the show's website and a text code for the first time. The toll-free call keeps running underneath it — the shutoff waits three more seasons, for season eleven."
 ---
