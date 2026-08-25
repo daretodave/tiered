@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-24
+last_revised: 2026-08-25
 featured: false
 related:
   - not-the-usual-order
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "A milestone special buys two hours the regular broadcast never spends."
     blurb: "A two-hour, non-competitive primetime special marks the show's 20th anniversary midseason, apart from the regular audition and live-show hours. The extra runtime goes to a nostalgia mega-mix and judge reflections, not a new round of competition."
+  - show: survivor-australia
+    season: 1
+    season_label: "S01 · The Original"
+    rank: 16
+    title: "Longer episodes, not just a bigger cast, mark the format's Australian debut."
+    blurb: "The show's own copy calls out the extra runtime directly — room for strategic conversation a tighter cut would lose. Twenty-four players also get more airtime per week than Borneo's sixteen ever did, making this a runtime bet as much as a cast-size one."
 ---
