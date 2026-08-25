@@ -3765,6 +3765,7 @@
 - evidence: Body: "The tent had relocated to Welford Park for this run, the audience had crossed over from BBC Two to BBC One..." Why This Slot: "The tent had moved to Welford Park and the show finally looked the way it was meant to."
 - suggested fix: Drop the repeated tent-relocation clause from "Why This Slot" and lead with the comparative canon argument instead (why it beats its neighbors), matching the fix pattern already applied elsewhere in the corpus. Content-only, one field in `content/shows/bake-off/canon.md`.
 - source: browser (critique-pass-140, authed)
+- resolved: 2026-08-25, cloud march tick, content-gap redirect per issue #758 (twentieth same-day-class dispatch to `/ship-content`; the standing gap-drain row is stalled and Rule 3's idea space stayed saturated, so this tick re-audited the CRITIQUE.md Pending list fresh rather than repeating an exhausted search and found three genuinely unaddressed content-only rows — this one shipped, the other two remain queued for a future tick). Dropped the tent-relocation echo from Slot #1's `slot_argument` and replaced it with the comparative canon argument against Slot #2 ("The Last BBC Year") — peak form vs. that series' own valedictory framing. 175 chars, under the 240-char schema cap.
 
 ### [LOW] /shows/vanderpump-rules?view=community — weekly community question mixes proximity and vertical metaphors in one sentence
 - pass: 140 (commit 9cc9376a)
