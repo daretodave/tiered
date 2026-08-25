@@ -843,6 +843,11 @@
 }
 .cp-cl-cols .col-r { text-align: right; }
 .col-pct-mobile-label { display: none; }
+.col-bar-note {
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink-40);
+}
 
 .cp-cl-rows {
   display: flex;

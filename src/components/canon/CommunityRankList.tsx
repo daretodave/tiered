@@ -43,7 +43,10 @@ export function CommunityRankList({
       <div className="cp-cl-cols" data-testid="community-rank-cols">
         <span>Rank</span>
         <span>Season</span>
-        <span className="col-bar">Approval</span>
+        <span className="col-bar">
+          Approval
+          {!live ? <span className="col-bar-note"> (canon order)</span> : null}
+        </span>
         <span className="col-pct col-r">
           <span className="col-pct-mobile-label">Appr. </span>%
         </span>

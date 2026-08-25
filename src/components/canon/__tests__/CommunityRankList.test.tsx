@@ -182,6 +182,26 @@ describe('<CommunityRankList>', () => {
     expect(list).toHaveTextContent(/air order/i)
   })
 
+  it('flags the Approval header as canon-order when the list is not yet live-vote-driven (regression guard for critique pass-141)', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
+    )
+    const header = screen.getByText('Approval')
+    expect(header).toHaveTextContent('(canon order)')
+  })
+
+  it('does not flag the Approval header once the list is live-vote-driven', () => {
+    const entries = [
+      row(1, 20, 'Heroes vs. Villains', { approval: 0.9, voteCount: 50 }),
+    ]
+    render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
+    )
+    const header = screen.getByText('Approval')
+    expect(header).not.toHaveTextContent('(canon order)')
+  })
+
   it('the mobile-visible % column header carries its own label so it is not orphaned when the desktop "Approval" header hides at the 640px breakpoint (regression guard for critique pass-138)', () => {
     const entries = [row(1, 20, 'Heroes vs. Villains')]
     const { container } = render(
