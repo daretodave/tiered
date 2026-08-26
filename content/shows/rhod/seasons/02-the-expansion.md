@@ -11,6 +11,7 @@ aired_year: 2017
 episodes: 14
 eyebrow: "Aired August–November 2017 · Bravo"
 take_h2: "The cast finds its shape."
+shape_h2: "Fourteen episodes, three more than the debut."
 lede: "The founding four return, joined by two new Dallas women — D'Andra Simmons and Kameron Westcott — expanding the cast to six. It's the configuration that becomes RHOD's most stable ensemble, replacing the debut year's leaner core with a wider social circle."
 pull: "Six women, one settled Dallas circle — the cast configuration RHOD rides through its most consistent stretch."
 premiere_caption: "Bravo · August 2017"

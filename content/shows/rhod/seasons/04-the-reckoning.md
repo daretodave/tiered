@@ -11,6 +11,7 @@ aired_year: 2019
 episodes: 17
 eyebrow: "Aired September 2019–January 2020 · Bravo"
 take_h2: "Builds toward one reunion."
+shape_h2: "Seventeen episodes, one shorter than before."
 lede: "Cary Deuber steps back from the main cast and Kary Brittingham joins the remaining five, a change that becomes the season's central story. What starts as new-cast integration turns into the most widely covered reunion in the show's run."
 pull: "A new arrival, a returning five, and a reunion the whole season builds toward — RHOD's most consequential hour."
 premiere_caption: "Bravo · September 2019"

@@ -11,6 +11,7 @@ aired_year: 2018
 episodes: 18
 eyebrow: "Aired August–December 2018 · Bravo"
 take_h2: "Zero introductions, full confidence."
+shape_h2: "Eighteen episodes, a new high."
 lede: "The same six women who closed season two return intact — the only RHOD season where the cast carries over completely unchanged. Free of new-cast integration work, the show runs its established Dallas social world at full confidence."
 pull: "One cast, eighteen episodes, zero introductions — RHOD's most settled season lets the established chemistry do the work."
 premiere_caption: "Bravo · August 2018"
