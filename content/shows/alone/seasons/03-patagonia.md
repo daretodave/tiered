@@ -13,7 +13,7 @@ pull: "The wilderness stopped being a backdrop and started being a character."
 format_summary: "Solo survival · self-filmed · international"
 format_caption: "First run outside North America; southern hemisphere winter conditions"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists meeting a biome with no shared reference point."
 premiere_caption: "History Channel · November 2016"
 filming_caption: "Patagonia · first shoot outside North America"
 ---

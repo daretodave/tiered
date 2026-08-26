@@ -13,7 +13,7 @@ pull: "The Arctic returns, and the format has the depth to meet it again."
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "Second Arctic run; Northwest Territories, Canada"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists, the twelfth roster in the franchise's history."
 premiere_caption: "History Channel · June 2025"
 filming_caption: "Northwest Territories · second Arctic shoot, new cast"
 host: "Colby Donaldson"

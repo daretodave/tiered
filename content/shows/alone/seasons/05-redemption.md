@@ -13,7 +13,7 @@ pull: "Familiar names, unfamiliar terrain — the combination gave the format a 
 format_summary: "All-returnees · self-filmed"
 format_caption: "10 non-winners from seasons 1–4 competing in a new location"
 cast_size: 10
-cast_size_caption: "10 returning survivalists, none of them previous winners"
+cast_size_caption: "Ten familiar faces whose limits the audience already knew."
 premiere_caption: "History Channel · June 2018"
 filming_caption: "Northern Mongolia, near Züünkharaa"
 format_changes:

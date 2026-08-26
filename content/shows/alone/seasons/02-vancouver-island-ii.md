@@ -13,7 +13,7 @@ pull: "The format running with more assurance than it had any right to in its se
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists returning to the season-one location"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten arrivals who studied season one's mistakes before starting."
 premiere_caption: "History Channel · June 2016"
 filming_caption: "Quatsino Sound, Vancouver Island, BC"
 ---

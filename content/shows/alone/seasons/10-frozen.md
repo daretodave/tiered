@@ -13,7 +13,7 @@ pull: "The format in winter is a different show. Season ten is the proof."
 format_summary: "Solo survival · self-filmed · winter conditions"
 format_caption: "First winter-season format; survivalists compete in frozen Labrador"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists, the same headcount the franchise has used since 2015."
 premiere_caption: "History Channel · June 2023"
 filming_caption: "Labrador, Canada (winter filming)"
 host: "Colby Donaldson"

@@ -13,7 +13,7 @@ pull: "No host, no crew, no precedent — just ten people and a wilderness they 
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists, each self-documenting with provided cameras"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten strangers with no earlier season's playbook to learn from."
 premiere_caption: "History Channel · June 2015"
 filming_caption: "Quatsino Sound, Vancouver Island, BC"
 ---

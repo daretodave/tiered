@@ -13,7 +13,7 @@ pull: "The Arctic raised the environmental stakes to their highest point yet."
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "First hosted season; Colby Donaldson joins as series host"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists with zero margin for the Arctic's early mistakes."
 premiere_caption: "History Channel · June 2020"
 filming_caption: "Great Slave Lake · the show's most demanding environment yet"
 host: "Colby Donaldson"

@@ -13,7 +13,7 @@ pull: "Labrador gives the format a new Canadian biome — colder than Vancouver 
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "First Labrador run; subarctic coastal wilderness"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists working through the franchise's shortest summer nights."
 premiere_caption: "History Channel · June 2022"
 filming_caption: "Labrador, Canada"
 host: "Colby Donaldson"

@@ -13,7 +13,7 @@ pull: "Mongolia without the returnee framing — the landscape holding the weigh
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists in northern Mongolia"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten first-timers taking on terrain only Redemption's cast had seen."
 premiere_caption: "History Channel · June 2019"
 filming_caption: "Ulaan Taiga, Northern Mongolia"
 ---

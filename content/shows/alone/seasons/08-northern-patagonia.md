@@ -13,7 +13,7 @@ pull: "Patagonia's northern reach proves the biome has more than one register."
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "Northern Patagonia; distinct terrain from the season-three Argentine run"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists meeting Patagonia's other face with no precedent."
 premiere_caption: "History Channel · June 2021"
 filming_caption: "Northern Patagonia · a cooler, denser face of the biome"
 host: "Colby Donaldson"

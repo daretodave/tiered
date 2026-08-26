@@ -13,7 +13,7 @@ pull: "The Karoo inverted the show's survival calculus — for the first time, h
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "First African location; arid Karoo semi-desert environment"
 cast_size: 10
-cast_size_caption: "10 individual survivalists"
+cast_size_caption: "Ten survivalists recalibrating cold-weather instincts for heat and thirst."
 premiere_caption: "History Channel · June 2024"
 filming_caption: "Northern Cape · franchise's first African shoot"
 host: "Colby Donaldson"
