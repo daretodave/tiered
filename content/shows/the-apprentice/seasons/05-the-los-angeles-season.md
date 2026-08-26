@@ -14,7 +14,7 @@ take_h2: "New coast, same rules."
 format_summary: "Business competition · LA production"
 format_caption: "founding era, westward relocation"
 cast_size: 18
-cast_size_caption: "18 competitors split into two boardroom teams"
+cast_size_caption: "Eighteen contestants, entertainment-industry task briefs"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

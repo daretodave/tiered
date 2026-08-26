@@ -14,7 +14,7 @@ take_h2: "Every player, a returnee."
 format_summary: "Celebrity competition · all-returning cast"
 format_caption: "celebrity era, All-Stars format"
 cast_size: 14
-cast_size_caption: "14 returning celebrities, no newcomers"
+cast_size_caption: "Fourteen returning celebrities, no newcomers"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

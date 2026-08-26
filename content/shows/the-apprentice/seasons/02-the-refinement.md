@@ -14,7 +14,7 @@ take_h2: "Proof, not luck."
 format_summary: "Business competition · expanded cast"
 format_caption: "first refinement, founding era"
 cast_size: 18
-cast_size_caption: "18 contestants, expanded casting"
+cast_size_caption: "Eighteen contestants, wider casting range"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

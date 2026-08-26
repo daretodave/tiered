@@ -14,7 +14,7 @@ take_h2: "Job offer, now charity."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era begins, charity proceeds"
 cast_size: 14
-cast_size_caption: "14 celebrities, all-women vs. all-men teams"
+cast_size_caption: "Fourteen celebrities, all-women vs. all-men teams"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

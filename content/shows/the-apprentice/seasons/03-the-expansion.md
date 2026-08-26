@@ -14,7 +14,7 @@ take_h2: "Peak task design."
 format_summary: "Business competition · diverse casting"
 format_caption: "founding era, task-design peak"
 cast_size: 18
-cast_size_caption: "18 contestants, founding era"
+cast_size_caption: "Eighteen contestants, widest pool since season one"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

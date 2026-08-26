@@ -14,7 +14,7 @@ take_h2: "Back in its groove."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, fourth cycle"
 cast_size: 16
-cast_size_caption: "16 celebrities, music/sports/reality mix"
+cast_size_caption: "Sixteen celebrities, music/sports/reality mix"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

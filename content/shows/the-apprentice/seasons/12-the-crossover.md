@@ -14,7 +14,7 @@ take_h2: "Casting drifts toward reality."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, fifth cycle"
 cast_size: 16
-cast_size_caption: "16 celebrities, reality-TV-heavy cast"
+cast_size_caption: "Sixteen celebrities, reality-TV-heavy cast"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -14,7 +14,7 @@ take_h2: "A clean break."
 format_summary: "Celebrity competition · new host"
 format_caption: "full reboot, new host and boardroom"
 cast_size: 12
-cast_size_caption: "12 celebrities, rebooted format"
+cast_size_caption: "Twelve celebrities, new opening titles"
 host_caption: "New host, first season at the helm"
 ---
 

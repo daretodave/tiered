@@ -14,7 +14,7 @@ take_h2: "Leaning into spectacle."
 format_summary: "Business competition · draft-picked teams"
 format_caption: "founding era, mansion vs. Tent City"
 cast_size: 18
-cast_size_caption: "18 contestants, an 8-men/10-women split"
+cast_size_caption: "Eighteen contestants, an 8-men/10-women split"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -14,7 +14,7 @@ take_h2: "Civilian format's last word."
 format_summary: "Business competition · second-chance cast"
 format_caption: "civilian format returns, final installment"
 cast_size: 16
-cast_size_caption: "16 contestants, a second-chance cast"
+cast_size_caption: "Sixteen contestants, a second-chance cast"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

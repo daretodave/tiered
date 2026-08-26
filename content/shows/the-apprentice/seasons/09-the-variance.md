@@ -14,7 +14,7 @@ take_h2: "An uneven boardroom rhythm."
 format_summary: "Celebrity competition · reshuffled teams"
 format_caption: "celebrity era, third edition"
 cast_size: 14
-cast_size_caption: "14 celebrities, Rocksolid vs. Tenacity"
+cast_size_caption: "Fourteen celebrities, Rocksolid vs. Tenacity"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

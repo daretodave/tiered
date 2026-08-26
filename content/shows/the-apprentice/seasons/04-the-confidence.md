@@ -14,7 +14,7 @@ take_h2: "Running without friction."
 format_summary: "Business competition · confident casting"
 format_caption: "founding era, full confidence"
 cast_size: 18
-cast_size_caption: "18 contestants, founding era"
+cast_size_caption: "Eighteen contestants, consistent boardroom criteria"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

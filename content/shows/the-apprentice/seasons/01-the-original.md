@@ -14,7 +14,7 @@ take_h2: "Inventing the format cold."
 format_summary: "Business competition · 2 teams"
 format_caption: "founding season, NBC"
 cast_size: 16
-cast_size_caption: "16 contestants, debut casting"
+cast_size_caption: "Sixteen hopefuls, no celebrity leverage"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

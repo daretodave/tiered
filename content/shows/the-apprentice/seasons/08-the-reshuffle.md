@@ -14,7 +14,7 @@ take_h2: "Rebuilding on the fly."
 format_summary: "Celebrity competition · gender teams"
 format_caption: "celebrity era, second edition"
 cast_size: 16
-cast_size_caption: "16 celebrities, teams reshuffled mid-run"
+cast_size_caption: "Sixteen celebrities, teams reshuffled mid-run"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -14,7 +14,7 @@ take_h2: "An ending nobody saw coming."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, final Trump-hosted cycle"
 cast_size: 14
-cast_size_caption: "14 celebrities, seventh celebrity cycle"
+cast_size_caption: "Fourteen celebrities, no structural surprises"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 
