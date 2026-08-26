@@ -9,6 +9,7 @@ host: "Glenn Shephard"
 ep_count: 13
 eyebrow: "The Dalmatian peak"
 take_h2: "The format's creative peak."
+shape_h2: "Thirteen episodes, a longer sprint."
 lede: "The Dalmatian Coast gave Below Deck Sailing Yacht its most vivid backdrop — Split, Hvar, the Croatian Adriatic running south — and the cast delivered the cross-department friction the format needed to reach its creative peak."
 pull: "The season where the sailing-yacht format proved what it could do with the right coast and the right crew."
 format_summary: "Sailing yacht · Dalmatian Coast"
