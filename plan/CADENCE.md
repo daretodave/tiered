@@ -814,6 +814,21 @@ with a Traitors (US) S01 entry. See `plan/AUDIT.md` standing row
 and `plan/LISTS.md` ledger for full grounding. Next actionable
 check remains the weekly sweep, due 2026-08-30.
 
+**Rule 2 stall, 2026-08-26 tick (cloud march):** re-checked the gap
+table against the 2026-08-23 full sweep's own findings — every one
+of the 44 gap-slots across 44 shows remains starred
+confirmed-but-unaired (nearest date, `married-at-first-sight`'s
+S20 finale, is tomorrow, 2026-08-27 — not yet aired at this tick).
+No row actionable. Rule 3 also checked: `plan/LISTS.md`'s oldest
+`last_reviewed` is 37 days old, well under the 90-day review floor
+— no review batch due either. Fell through to the established
+issue-#758 workaround: continued the `shape_h2` (pass-131) drain,
+`the-ultimatum` (4/4 → 0/4 files, tied with `traitors-uk` at 4
+remaining, both tier B est_year 2022, tie-broken alphabetically).
+See `plan/AUDIT.md` standing row for the four authored fragments.
+937 → 933 remaining corpus-wide. Next actionable Rule 2 check
+remains the weekly sweep, due 2026-08-30.
+
 ## Sweep notes (2026-08-09, fifth full pass)
 
 Fifth full weekly sweep (`/march` Step 1.5, Rule 1a, cloud march) —
