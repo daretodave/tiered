@@ -1,5 +1,35 @@
 # CRITIQUE
 
+> Last pass: 2026-08-26 at commit 36ad3e30
+> Pass count: 145
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 145
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/big-brother/season/a-summer-of-mystery`, `/shows`,
+> `/shows/love-is-blind?view=canon`, `/themes/best-location-reveals`
+> anon; `/u/e2e`, `/shows/rhony/season/the-second-act?view=community`,
+> `/shows/big-brother?view=community`,
+> `/shows/love-is-blind?view=community` authed. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, all pages 200). The authed reader cross-checked every
+> candidate against standing precedent (RHONY's location/filming_caption
+> pairing, the VotePair zero-state copy, the community zero-vote em-dash
+> pattern, `/u/e2e`'s empty-profile state) and confirmed all are already
+> adjudicated non-bugs — zero findings filed from that pass. The anon
+> reader surfaced 2 candidates, both new and both filed (0 HIGH, 1 MED,
+> 1 LOW): a MED a11y gap — the `/shows` tier-section headings render as
+> bare `<h2>S</h2>` / `<h2>A</h2>` / `<h2>B</h2>` with no accessible
+> label, unreadable out of context via a screen-reader heading-list scan
+> — and a LOW copy mismatch — `love-is-blind?view=canon`'s mid-pack
+> section header reads "worth watching again next week" though the
+> shelf is static, not weekly-rotating (hardcoded in
+> `CanonTierBand.tsx`'s per-tier copy map, not page-specific).
+>
+> ───── Pass 144 metadata kept below for history ─────
+
 > Last pass: 2026-08-25 at commit bedc7788
 > Pass count: 144
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3669,6 +3699,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows — the S/A/B tier-section headings render as bare single-letter `<h2>` elements with no accessible label
+- pass: 145 (commit 36ad3e30)
+- viewport: desktop
+- category: a11y
+- observation: Each tier section on `/shows` renders `<h2 class="tier-letter">S</h2>` (and `A`, `B`) beside an `aria-hidden` glyph and a sighted-only descriptive tag/sentence. A screen-reader user scanning the page's heading list — a standard assistive-tech navigation pattern — hears only "heading level 2, S" / "heading level 2, A" / "heading level 2, B" with no indication these mark tier sections, let alone what each tier means.
+- evidence: Raw HTML from the live page: `<div class="tier-glyph s" aria-hidden="true">...</div><div class="tier-letter-row"><h2 class="tier-letter">S</h2><div class="tier-desc">...</div></div>` — no `aria-label` on the `h2` or its containing row. Source: `src/components/shows/TierHead.tsx:18`.
+- suggested fix: Add an `aria-label` to each tier `h2` (e.g. `aria-label="S tier — format-defining"`) sourced from the existing tier-desc copy, so the accessible name matches what a sighted reader infers from context.
+- source: browser (critique-pass-145, anon)
+
+### [LOW] [anon] /shows/love-is-blind?view=canon — the mid-pack ("A" tier) canon section header says "worth watching again next week" though the shelf is static, not weekly-rotating
+- pass: 145 (commit 36ad3e30)
+- viewport: desktop
+- category: comprehension
+- observation: The A-tier canon section header reads "The seasons worth watching again next week." — but this shelf is the static rank-6-through-10 list, not a rotating or time-gated section. Only the community vote/rank-shift indicators elsewhere on the page carry a genuine weekly cadence. The "next week" clause reads as copy carried over from vote-cadence language into a section where it isn't literally true.
+- evidence: Hardcoded per-tier copy map in `src/components/canon/CanonTierBand.tsx:23` (`A: 'The seasons worth watching again next week.'`), confirmed live on `/shows/love-is-blind?view=canon` beside the static Houston/Minneapolis/Charlotte/Dallas/Denver rank-6-10 entries.
+- suggested fix: Drop "next week" from the A-tier header copy (e.g. "The seasons worth watching again.") and reserve weekly-cadence language for the vote/rank-shift copy where it's accurate.
+- source: browser (critique-pass-145, anon)
 
 ### [LOW] [anon] /themes — the index renders all 181 themed lists' full names, entry counts, and descriptions unpaginated on a single page load, with no lazy-load or virtualization past the three featured lists
 - pass: 144 (commit bedc7788)
