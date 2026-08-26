@@ -10,6 +10,7 @@ location: Ardross Castle, Scottish Highlands, Scotland
 host: Alan Cumming
 eyebrow: "Aired winter 2025 · The all-celebrity machine, running confidently"
 take_h2: "Confidence, plus one twist."
+shape_h2: "New players arrive mid-run."
 lede: "The format running with confidence. Another all-reality cast returns to Ardross Castle under Alan Cumming, the three-episode drop then weekly model now settled. The season's structural wrinkle: mid-game player additions, a fresh wave entering after the initial cohort."
 pull: "The machine running well, with a new twist folded in."
 format_summary: "All-celebrity cast · mid-game additions"

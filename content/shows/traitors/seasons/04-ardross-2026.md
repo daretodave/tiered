@@ -10,6 +10,7 @@ location: Ardross Castle, Scottish Highlands, Scotland
 host: Alan Cumming
 eyebrow: "Aired winter 2026 · The newest entry, the format running smoothly"
 take_h2: "A confident settling-in."
+shape_h2: "Same format, no new turn."
 lede: "The most recent run. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. The format is steady and familiar here — a confident, repeatable machine doing what it now does well."
 pull: "The newest entry, ranked here on merit rather than novelty."
 format_summary: "All-celebrity cast · weekly run"
