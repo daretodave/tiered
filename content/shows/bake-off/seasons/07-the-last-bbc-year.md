@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire, the BBC era's third year there"
 premiere_caption: "BBC One · Wednesday evenings"
 episodes_caption: "The BBC era closed with its fifth straight year at ten episodes."
 cast_size: 12
-cast_size_caption: "12 amateur bakers across the run"
+cast_size_caption: "Twelve bakers running the BBC era's strongest lineup end to end"
 host_caption: "Mel Giedroyc and Sue Perkins, final BBC year"
 watch_list:
   - episode_label: "Ep 1 · the last lineup arrives"

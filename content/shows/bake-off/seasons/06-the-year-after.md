@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire, year two"
 premiere_caption: "BBC One · Wednesday evenings"
 episodes_caption: "Four years running now at ten episodes, a length nobody comments on anymore."
 cast_size: 12
-cast_size_caption: "12 amateur bakers across the run"
+cast_size_caption: "Twelve bakers, no single star — the deepest bench yet"
 host_caption: "Mel Giedroyc and Sue Perkins, sixth year at the tent flap"
 watch_list:
   - episode_label: "Ep 1 · the lineup arrives"

@@ -16,7 +16,7 @@ filming_caption: "filmed at a different UK location each week"
 premiere_caption: "BBC Two · Tuesday evenings"
 episodes_caption: "Six episodes, still the shortest run in the show's history."
 cast_size: 10
-cast_size_caption: "10 amateur bakers across the pilot"
+cast_size_caption: "Ten bakers — the smallest cast size on record for the show"
 host_caption: "Mel Giedroyc and Sue Perkins, inventing the double-act in real time"
 watch_list:
   - episode_label: "Ep 1 · the tent opens"

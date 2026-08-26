@@ -16,7 +16,7 @@ filming_caption: "Down Hall Hotel, Essex — relocated from Welford for the bubb
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Ten episodes shot inside a six-week bubble, the tightest schedule yet."
 cast_size: 12
-cast_size_caption: "12 amateur bakers sealed into the production bubble"
+cast_size_caption: "Twelve bakers sealed together, bonding tighter than usual"
 host_caption: "Noel Fielding and Matt Lucas, Lucas's first year at the tent flap"
 watch_list:
   - episode_label: "Ep 1 · the bubble opens"

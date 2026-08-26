@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Thirteen years unbroken at ten episodes — the longest stable run yet."
 cast_size: 12
-cast_size_caption: "12 amateur bakers in Hammond's second run"
+cast_size_caption: "Twelve bakers, a competent bench without a defining standout"
 host_caption: "Noel Fielding and Alison Hammond, settled in their second year"
 watch_list:
   - episode_label: "Ep 1 · the settled pairing"

@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire — the tent's permanent home from thi
 premiere_caption: "BBC One · Wednesday evenings"
 episodes_caption: "Ten episodes for a third year running, arriving alongside the jump to BBC One."
 cast_size: 12
-cast_size_caption: "12 amateur bakers across the run"
+cast_size_caption: "Twelve bakers with the personalities the tent had been waiting for"
 host_caption: "Mel Giedroyc and Sue Perkins, fifth year at the tent flap"
 watch_list:
   - episode_label: "Ep 1 · the new tent"

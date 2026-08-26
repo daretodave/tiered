@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Twelve years now at ten episodes, holding steady through the presenter change."
 cast_size: 12
-cast_size_caption: "12 amateur bakers in Hammond's debut run"
+cast_size_caption: "Twelve bakers introduced to the format's new general-themed weeks"
 host_caption: "Noel Fielding and Alison Hammond, Hammond's first year"
 watch_list:
   - episode_label: "Ep 1 · Hammond arrives"

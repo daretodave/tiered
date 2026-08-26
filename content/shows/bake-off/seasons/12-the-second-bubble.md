@@ -16,7 +16,7 @@ filming_caption: "Down Hall Hotel, Essex — the bubble's second and final year"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "A tenth consecutive year at ten episodes, even inside a second bubble shoot."
 cast_size: 12
-cast_size_caption: "12 amateur bakers in the second sealed production"
+cast_size_caption: "Twelve bakers, a second bubble run with familiar closeness"
 host_caption: "Noel Fielding and Matt Lucas, settled in their second year"
 watch_list:
   - episode_label: "Ep 1 · the bubble, again"

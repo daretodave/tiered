@@ -16,7 +16,7 @@ filming_caption: "Welford Park, Berkshire, the one piece of continuity"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "The move to Channel 4 kept the count at ten — a sixth straight year."
 cast_size: 12
-cast_size_caption: "12 amateur bakers across the Channel 4 debut run"
+cast_size_caption: "Twelve bakers strong enough to absorb three changes at once"
 host_caption: "Sandi Toksvig and Noel Fielding, first year at the tent flap"
 watch_list:
   - episode_label: "Ep 1 · the new lineup arrives"
