@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Lake Tahoe, Paris, Tuscany"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Eleven episodes — the shortest run since season eighteen."
 cast_size: 29
-cast_size_caption: "29 women in the opening field"
+cast_size_caption: "Twenty-nine women met a racing driver returning after a decade away."
 host_caption: "Chris Harrison's twenty-second season"
 watch_list:
   - episode_label: "Ep 1 · the deep-archive lead"

@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Cleveland, Costa Rica, Australia"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes — same length as the two seasons bracketing it."
 cast_size: 30
-cast_size_caption: "30 women in the opening field"
+cast_size_caption: "Thirty women met a pilot lead, the format's second aviation-themed season."
 host_caption: "Chris Harrison's twenty-fourth season"
 watch_list:
   - episode_label: "Ep 1 · the aviation frame"

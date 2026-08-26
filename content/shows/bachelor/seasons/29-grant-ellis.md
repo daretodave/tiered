@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Edinburgh, Madrid, Dominican Republic"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Nine episodes — the fewest since 2008's season twelve."
 cast_size: 25
-cast_size_caption: "25 women in the opening field"
+cast_size_caption: "Twenty-five women met the franchise's second Black Bachelor lead."
 host_caption: "Jesse Palmer's fourth season as host"
 watch_list:
   - episode_label: "Ep 1 · the second precedent"

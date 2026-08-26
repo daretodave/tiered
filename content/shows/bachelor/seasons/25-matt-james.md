@@ -16,7 +16,7 @@ filming_caption: "Nemacolin resort bubble · single-location season"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes — the last twelve-episode run before the host change."
 cast_size: 32
-cast_size_caption: "32 women in the opening field"
+cast_size_caption: "Thirty-two women joined the franchise's first Black Bachelor season."
 host_caption: "Chris Harrison's twenty-fifth season"
 watch_list:
   - episode_label: "Ep 1 · the casting precedent"

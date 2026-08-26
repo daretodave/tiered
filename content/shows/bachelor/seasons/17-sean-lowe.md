@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · St. Croix, Canada, Thailand"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes, up from eleven the season prior."
 cast_size: 26
-cast_size_caption: "26 women in the opening field"
+cast_size_caption: "Twenty-six women joined the franchise's first deliberately drama-light edit."
 host_caption: "Chris Harrison's seventeenth season"
 watch_list:
   - episode_label: "Ep 1 · the Texas frame"

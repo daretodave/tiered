@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Houston, Croatia, Iceland"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Eleven episodes, down one from the season before it."
 cast_size: 31
-cast_size_caption: "31 women in the opening field"
+cast_size_caption: "Thirty-one women joined the season where travel resumed after the bubble year."
 host_caption: "Jesse Palmer's first season as host"
 watch_list:
   - episode_label: "Ep 1 · the new host"

@@ -17,7 +17,7 @@ filming_caption: "Agoura Hills · Costa Rica, Anguilla, Cape Town"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes — one more than the season before it."
 cast_size: 30
-cast_size_caption: "30 women in the opening field"
+cast_size_caption: "Thirty women joined the first season to stage on-camera therapy sessions."
 host_caption: "Chris Harrison's fifteenth season"
 watch_list:
   - episode_label: "Ep 1 · the second arrival"

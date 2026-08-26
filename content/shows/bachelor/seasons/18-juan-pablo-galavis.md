@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · South Korea, Vietnam, Dominican Republic"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Eleven episodes — one fewer than the season prior."
 cast_size: 27
-cast_size_caption: "27 women in the opening field"
+cast_size_caption: "Twenty-seven women joined a season with an unusually extended Women Tell All."
 host_caption: "Chris Harrison's eighteenth season"
 watch_list:
   - episode_label: "Ep 1 · the casting reveal"

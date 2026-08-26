@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · the Bahamas, Hungary, Thailand"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes — one more than the seasons bracketing it."
 cast_size: 30
-cast_size_caption: "30 women in the opening field"
+cast_size_caption: "Thirty women joined a season the franchise built as a pause from experimenting."
 host_caption: "Jesse Palmer's second season as host"
 watch_list:
   - episode_label: "Ep 1 · the settled register"

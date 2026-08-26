@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Singapore, Thailand, Portugal"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes, one up from the season directly before it."
 cast_size: 30
-cast_size_caption: "30 women in the opening field"
+cast_size_caption: "Thirty women joined a season with an atypical, tradition-breaking finale."
 host_caption: "Chris Harrison's twenty-third season"
 watch_list:
   - episode_label: "Ep 1 · the single-hook frame"

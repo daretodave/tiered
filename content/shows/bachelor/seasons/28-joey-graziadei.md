@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Malta, Montreal, Tulum"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Eleven episodes — two more than the season that followed."
 cast_size: 32
-cast_size_caption: "32 women in the opening field"
+cast_size_caption: "Thirty-two women opened a season run with no structural twist at all."
 host_caption: "Jesse Palmer's third season as host"
 watch_list:
   - episode_label: "Ep 1 · the deepest field"

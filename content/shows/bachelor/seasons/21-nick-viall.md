@@ -16,7 +16,7 @@ filming_caption: "Agoura Hills · Wisconsin, Bahamas, Finland"
 premiere_caption: "ABC · Monday 8/7c"
 episodes_caption: "Twelve episodes — one more than the season that followed."
 cast_size: 30
-cast_size_caption: "30 women in the opening field"
+cast_size_caption: "Thirty women joined the franchise's most-recycled lead to that point."
 host_caption: "Chris Harrison's twenty-first season"
 watch_list:
   - episode_label: "Ep 1 · the familiar lead"
