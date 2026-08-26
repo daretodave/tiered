@@ -1,5 +1,41 @@
 # CRITIQUE
 
+> Last pass: 2026-08-26 at commit 5bb341ce
+> Pass count: 147
+> Gated: YES — 2 pending HIGH findings queued (both bumped from MED
+> at pass-147: the meta-description-echoes-lede defect, now confirmed
+> on 5 pages across 3 passes; the vote-pair pre-vote triple-stack,
+> now confirmed on 4 shows across 2 passes). `/march` Step 2 will not
+> re-dispatch `/critique` until `/iterate` clears at least one HIGH.
+> Pass 147 ran in the cloud loop via Path A2
+> (`scripts/critique-walk.mjs` — headless chromium, fresh isolated
+> context, no Chrome MCP needed), both anon and authed passes with a
+> freshly-minted `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL
+> set: `/`, `/shows/rhony/season/the-second-act`, `/shows`,
+> `/themes/one-rule-fills-every-seat`, `/shows/summer-house?view=canon`
+> anon; `/u/e2e`, `/shows/rhony/season/the-second-act?view=community`,
+> `/shows/summer-house/season/overhaul-summer?view=community`,
+> `/shows/bake-off?view=community` authed. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, all pages 200, no spoiler leaks). 4 findings filed this
+> pass, 2 new + 2 bumps of existing pass-146 systemic rows (0 new
+> HIGH, 2 new MED, 2 rows bumped MED→HIGH): rhony/the-second-act's
+> FILMED stat caption bare-restates its own value line, just
+> reformatted from middot- to comma-separated — the same
+> `isBareRestatement()` guard gap flagged on queer-eye at pass-146,
+> now confirmed on a second show; bake-off's weekly community
+> question is a run-on sentence nesting two comparisons with an
+> unclear referent. The meta-description-echoes-lede systemic row
+> (pass-141/146) reproduced a fifth time on rhony/the-second-act —
+> bumped MED→HIGH since three rounds of per-page fixes have failed
+> to stop recurrence and only a template-level guard will. The
+> vote-pair pre-vote triple-stack row (pass-146) reproduced on two
+> more shows (rhony, summer-house) — bumped MED→HIGH since it's now
+> confirmed on every community-view page checked across two passes,
+> making it the default first-vote experience sitewide.
+>
+> ───── Pass 146 metadata kept below for history ─────
+
 > Last pass: 2026-08-26 at commit bbc5263b
 > Pass count: 146
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3736,6 +3772,24 @@
 
 ## Pending
 
+### [MED] [anon+authed] /shows/rhony/season/the-second-act — the FILMED stat caption bare-restates the value line above it, just reformatted from middot- to comma-separated
+- pass: 147 (commit HEAD)
+- viewport: desktop, mobile
+- category: voice
+- observation: The FILMED stat block shows the identical location list twice with no new information added the second time — the same defect class as the pass-91/#563 fix (queer-eye/las-vegas carries a fresh instance of this too, filed separately at pass-146), but this specific shape (no "Filmed <preposition>" prefix at all, just a reformatted duplicate) still slips past `isBareRestatement()`. Confirmed present on both the anon pass (desktop) and the authed community view (desktop + mobile) — same underlying content field, not a rendering-path bug.
+- evidence: Value: "New York City · Portugal · Casablanca" immediately followed by caption: "New York City, Portugal, Casablanca" — only the separator character changed.
+- suggested fix: Broaden `isBareRestatement()` in `src/content/__tests__/filming-caption-distinct.test.ts` to normalize separator characters (middot vs comma vs "and") before comparing caption against value, catching this reformatted-duplicate shape corpus-wide, not just this one page. Then rewrite `content/shows/rhony/seasons/15-the-second-act.md`'s `filming_caption` to add real texture (e.g. what changed about filming across three cities/countries instead of just listing them a second time).
+- source: browser (critique-pass-147, anon + authed)
+
+### [MED] [authed] /shows/bake-off?view=community — the weekly community-vote question is a run-on sentence nesting two comparisons with an unclear referent
+- pass: 147 (commit HEAD)
+- viewport: desktop
+- category: voice
+- observation: The prompt compares "the final BBC year" against "the peak Welford run" while simultaneously asking whether that comparison is itself "Bake Off's high-water mark" — a reader can't tell on first read whether the question is "which era is better" or "is the final BBC year the show's peak," since both readings are grammatically valid. Cuts against the plain-spoken, knowledgeable-peer voice bearings calls for.
+- evidence: "THIS WEEK'S QUESTION — Does the final BBC year hold up against the peak Welford run as Bake Off's high-water mark on rewatch in 2026?"
+- suggested fix: Split into one plain comparison and drop the redundant "high-water mark" clause, e.g. "Does the final BBC year hold up against the peak Welford run on rewatch?" Content-only, one field (likely the weekly-question copy source for bake-off).
+- source: browser (critique-pass-147, authed)
+
 ### [MED] [anon] /shows/perfect-match/season/season-4 — the crossover-casting fact is restated across five separate sections of the same page
 - pass: 146 (commit bbc5263b)
 - viewport: desktop
@@ -3754,23 +3808,23 @@
 - suggested fix: Cap the description at a full clause/sentence boundary under ~155 chars instead of a mid-thought ellipsis truncation, per the same `clipToSeoBudget` fix already applied to survivor-50 (pass-141/145).
 - source: browser (critique-pass-146, anon)
 
-### [MED] systemic (third recurrence) — `/shows` index meta description echoes the on-page lede verbatim, after two prior rounds of per-page field fixes for this exact defect class
-- pass: 146 (commit bbc5263b)
+### [HIGH] systemic (bumped MED→HIGH at pass-147, fifth recurrence) — meta descriptions echo their own page's lede/H1 verbatim, across five separate pages and three prior fix rounds
+- pass: 147 (commit HEAD), originally filed pass 146 (commit bbc5263b)
 - viewport: desktop
 - category: seo
-- observation: The pass-141 systemic finding (meta descriptions reusing on-page lede/H1 copy verbatim on love-island-uk, survivor-50, and /themes) was marked resolved via three one-off field rewrites. The identical defect now reproduces on a fourth page — the `/shows` index — meaning the per-page patches addressed symptoms, not the underlying meta-description generation step. Filed as a new row (not a bump of the closed pass-141 row, which has been moved to Done) because the fix approach needs to change: a template-level or content-check-level guard, not another one-off content edit.
-- evidence: `/shows` meta description: "Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review." On-page lede: "Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most..." — same opening clause verbatim.
-- suggested fix: Rather than editing this one string, add a `content-check.ts` invariant (or a shared `buildMetadata` helper default) that flags any page-level `description` sharing a long verbatim substring with its own lede/H1, so this class of drift is caught at author time across the whole corpus instead of recurring one page at a time.
-- source: browser (critique-pass-146, anon)
+- observation: The pass-141 systemic finding (meta descriptions reusing on-page lede/H1 copy verbatim on love-island-uk, survivor-50, and /themes) was marked resolved via three one-off field rewrites. It reproduced a fourth time on `/shows` index at pass-146. Pass-147's anon walk found a **fifth** instance on `/shows/rhony/season/the-second-act`: the meta description is a verbatim copy of the page's lede sentence, including the em dash. Five occurrences across three passes with three rounds of per-page patches confirms the root cause is structural (the meta-description generation step itself, or a missing content-check invariant), not any individual page's copy — bumping to HIGH to reflect that per-page whack-a-mole has definitively failed as a fix strategy.
+- evidence: `/shows` meta description: "Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review." On-page lede: "Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most..." — same opening clause verbatim. `/shows/rhony/season/the-second-act` meta description: "Season fifteen takes the reboot cast to Portugal and Casablanca — the trip tests what they're made of when Manhattan's scaffolding is gone." — identical to the on-page lede's opening sentence, em dash included.
+- suggested fix: Rather than editing individual strings, add a `content-check.ts` invariant (or a shared `buildMetadata` helper default) that flags any page-level `description` sharing a long verbatim substring with its own lede/H1, so this class of drift is caught at author time across the whole corpus instead of recurring one page at a time. This is now the highest-value fix in the queue — it will retroactively prevent every future recurrence of this exact defect class instead of resolving one more instance.
+- source: browser (critique-pass-146, anon; critique-pass-147, anon)
 
-### [MED] systemic [authed] /shows/queer-eye/season/las-vegas?view=community, /shows/dragrace/season/season-18?view=community — the pre-vote vote-pair widget states "no vote cast yet" four separate ways in a row
-- pass: 146 (commit bbc5263b)
-- viewport: desktop
+### [HIGH] systemic (bumped MED→HIGH at pass-147, reproduces on 4 shows across 2 passes) [authed] the pre-vote vote-pair widget states "no vote cast yet" four separate ways in a row, on every community view page checked so far
+- pass: 147 (commit HEAD), originally filed pass 146 (commit bbc5263b)
+- viewport: desktop, mobile
 - category: voice
-- observation: Before a reader has voted, the vote-pair widget stacks four redundant signals of the same fact — eyebrow "YOUR VOTE", button "CAST VOTE", status line "YOU HAVEN'T VOTED YET", tally "0", then a second CTA "BE THE FIRST TO VOTE" — identical on both season pages walked this pass, so the pattern is component-level, not page-specific. Reads as a widget that doesn't trust the reader to get it in one line, cutting against the knowledgeable-peer, plain-spoken voice.
-- evidence: "YOUR VOTE\nCAST VOTE\nYOU HAVEN'T VOTED YET\n0\nBE THE FIRST TO VOTE\none vote per reader; change your mind within 72h." — identical block on both queer-eye/las-vegas and dragrace/season-18 community views.
-- suggested fix: Collapse the pre-vote state to one status line + one CTA: keep "YOU HAVEN'T VOTED YET" and "CAST VOTE", drop the redundant "0" tally and the second "BE THE FIRST TO VOTE" CTA from the un-voted state. Component-only change (likely `VotePair.tsx` or its wrapper), applies sitewide.
-- source: browser (critique-pass-146, authed)
+- observation: Before a reader has voted, the vote-pair widget stacks four redundant signals of the same fact — eyebrow "YOUR VOTE", button "CAST VOTE", status line "YOU HAVEN'T VOTED YET", tally "0", then a second CTA "BE THE FIRST TO VOTE". Pass-146 found this identical on queer-eye/las-vegas and dragrace/season-18. Pass-147 reproduced the exact same block, byte-for-byte, on two more unrelated shows — rhony/the-second-act (desktop and mobile) and summer-house/overhaul-summer (desktop) — confirming this is a sitewide component defect present on every community-view season page in the catalog, not a two-show coincidence. Bumping to HIGH: this is now the default first-time experience for every reader's first vote on any show, and reads as a widget that doesn't trust the reader to get it in one line, cutting against the knowledgeable-peer, plain-spoken voice.
+- evidence: "YOUR VOTE\nCAST VOTE\nYOU HAVEN'T VOTED YET\n0\nBE THE FIRST TO VOTE\none vote per reader; change your mind within 72h." — identical block on queer-eye/las-vegas, dragrace/season-18 (pass-146), and rhony/the-second-act, summer-house/overhaul-summer (pass-147, desktop + mobile).
+- suggested fix: Collapse the pre-vote state to one status line + one CTA: keep "YOU HAVEN'T VOTED YET" and "CAST VOTE", drop the redundant "0" tally and the second "BE THE FIRST TO VOTE" CTA from the un-voted state. Component-only change (likely `VotePair.tsx` or its wrapper), applies sitewide in one commit.
+- source: browser (critique-pass-146, authed; critique-pass-147, authed)
 
 ### [MED] [authed] /shows/queer-eye/season/las-vegas?view=community — the FILMED stat caption bare-restates the location value one field above it
 - pass: 146 (commit bbc5263b)
