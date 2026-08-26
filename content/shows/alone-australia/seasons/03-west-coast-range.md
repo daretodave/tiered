@@ -3,6 +3,7 @@ show: alone-australia
 number: 3
 title: "West Coast Range"
 take_h2: "A confident, consolidating return."
+shape_h2: "Rain sets a slow pace."
 canonical_position: 3
 premiere_date: 2025-03-26
 ep_count: 13

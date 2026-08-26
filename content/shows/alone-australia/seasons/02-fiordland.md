@@ -3,6 +3,7 @@ show: alone-australia
 number: 2
 title: "Fiordland"
 take_h2: "The leap that paid off."
+shape_h2: "Ten episodes, deepening isolation."
 canonical_position: 1
 premiere_date: 2024-03-27
 ep_count: 10
