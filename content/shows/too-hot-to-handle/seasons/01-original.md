@@ -15,6 +15,7 @@ premiere_caption: "Netflix · April 2020"
 episodes_caption: "Eight episodes, the shortest run of the show; every season since has run ten."
 host_caption: "Lana, the franchise's AI host from episode one"
 take_h2: "The format's founding rule, set in one episode."
+shape_h2: "The prize shrinks with contact."
 ---
 
 Too Hot to Handle opens with a group of serial daters flown in for what they think is a normal hot-singles getaway, only to meet Lana, the AI voice who lays down the season's one hard rule: any physical intimacy costs the shared prize money. The debut cast plays it loose and combustible, testing that rule from the first episode, and the format finds its rhythm fast.
