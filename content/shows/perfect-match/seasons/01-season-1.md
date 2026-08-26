@@ -4,6 +4,7 @@ number: 1
 title: "Season 1"
 canonical_position: 2
 take_h2: "The crossover gimmick, justified."
+shape_h2: "Twelve episodes, no mixer yet."
 premiere_date: "2023-02-14"
 ep_count: 12
 aired_year: 2023

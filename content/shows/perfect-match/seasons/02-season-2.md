@@ -4,6 +4,7 @@ number: 2
 title: "Season 2"
 canonical_position: 1
 take_h2: "A structural twist earns itself."
+shape_h2: "Ten episodes, one mixer night."
 premiere_date: "2024-06-07"
 ep_count: 10
 aired_year: 2024

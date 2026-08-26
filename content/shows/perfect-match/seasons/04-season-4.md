@@ -4,6 +4,7 @@ number: 4
 title: "Season 4"
 canonical_position: 4
 take_h2: "A leaner run, wider net."
+shape_h2: "Eight episodes, one big villa."
 premiere_date: "2026-05-13"
 ep_count: 8
 aired_year: 2026
