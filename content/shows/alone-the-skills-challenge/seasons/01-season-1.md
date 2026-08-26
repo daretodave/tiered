@@ -3,6 +3,7 @@ show: alone-the-skills-challenge
 number: 1
 title: "Season 1"
 take_h2: "Bushcraft as the whole game."
+shape_h2: "A new brief each week."
 canonical_position: 1
 location: "Various locations, USA"
 premiere_date: "2022-08-04"
