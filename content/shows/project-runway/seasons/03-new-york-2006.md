@@ -14,7 +14,7 @@ premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format · 15 designers"
 format_caption: "first summer-slot run"
 cast_size: 15
-cast_size_caption: "15 designers, Parsons workroom"
+cast_size_caption: "Fifteen designers — the format's first cast decrease, down from sixteen."
 host_caption: "Heidi Klum's third season at the helm"
 format_changes: []
 ---

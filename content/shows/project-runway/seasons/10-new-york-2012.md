@@ -14,7 +14,7 @@ premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · 16 designers"
 format_caption: "tenth-season milestone"
 cast_size: 16
-cast_size_caption: "16 designers, Parsons workroom"
+cast_size_caption: "Sixteen designers — back to the pre-spike count after season 9's twenty."
 host_caption: "Heidi Klum's tenth season at the helm"
 format_changes: []
 ---

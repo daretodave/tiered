@@ -14,7 +14,7 @@ premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Larger workroom · 20 designers"
 format_caption: "cast scaled from 16 to 20"
 cast_size: 20
-cast_size_caption: "20 designers, Parsons workroom"
+cast_size_caption: "Twenty designers — eight more than the show opened with in season one."
 host_caption: "Heidi Klum's ninth season at the helm"
 format_changes:
   - "Cast size expanded to twenty designers"

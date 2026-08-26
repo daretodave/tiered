@@ -14,7 +14,7 @@ premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · 17 designers"
 format_caption: "post-return creative stability"
 cast_size: 17
-cast_size_caption: "17 designers, Parsons workroom"
+cast_size_caption: "Seventeen designers — the franchise's first count above sixteen."
 host_caption: "Heidi Klum's eighth season at the helm"
 format_changes: []
 ---

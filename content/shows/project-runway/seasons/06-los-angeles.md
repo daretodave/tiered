@@ -14,7 +14,7 @@ premiere_caption: "Lifetime · Thursday 10/9c"
 format_summary: "Standard format · 16 designers"
 format_caption: "first Lifetime season, LA-shot"
 cast_size: 16
-cast_size_caption: "16 designers, LA workroom"
+cast_size_caption: "Sixteen designers — the cast size holds steady through the coast move."
 host_caption: "Heidi Klum's sixth season at the helm"
 format_changes:
   - "Production moves from Bravo to Lifetime"

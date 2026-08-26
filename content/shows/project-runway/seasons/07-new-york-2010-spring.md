@@ -14,7 +14,7 @@ premiere_caption: "Lifetime · Thursday 10/9c"
 format_summary: "Standard format · 16 designers"
 format_caption: "return to New York"
 cast_size: 16
-cast_size_caption: "16 designers, Parsons workroom"
+cast_size_caption: "Sixteen designers, third straight season at this exact headcount."
 host_caption: "Heidi Klum's seventh season at the helm"
 format_changes: []
 ---

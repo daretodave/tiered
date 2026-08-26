@@ -14,7 +14,7 @@ premiere_caption: "Bravo · Wednesday 9/8c"
 format_summary: "Standard format · 16 designers"
 format_caption: "final Bravo-era season"
 cast_size: 16
-cast_size_caption: "16 designers, Parsons workroom"
+cast_size_caption: "Sixteen designers — the Bravo era's most-repeated headcount, tied with S2."
 host_caption: "Heidi Klum's fifth season at the helm"
 format_changes: []
 ---

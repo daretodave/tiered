@@ -14,7 +14,7 @@ premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format · 12 designers"
 format_caption: "the format's first run"
 cast_size: 12
-cast_size_caption: "12 designers, Parsons workroom"
+cast_size_caption: "Twelve designers — tied with S21 for the show's smallest cast."
 host_caption: "Heidi Klum's first season at the helm"
 format_changes: []
 ---
