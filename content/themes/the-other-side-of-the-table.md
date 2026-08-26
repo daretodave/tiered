@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-08-26
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "One of the panel's four new judges once competed as a home cook herself."
     blurb: "Poh Ling Yeow steps into the newly expanded four-judge panel having once cooked as a contestant on the format's own bench. The season treats her judging voice as simply one more at the table, not a novelty to explain."
+  - show: chopped
+    season: 59
+    season_label: "S59"
+    rank: 13
+    title: "Former champions leave the audience and step back in as the finale's sous chefs."
+    blurb: "A five-episode Legends tournament brings past champions back into the kitchen, not to cook against the field again but to assist the finalists as sous chefs under the clock. A support role built from the season's own history, not a rematch."
 ---
