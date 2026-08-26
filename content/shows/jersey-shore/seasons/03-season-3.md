@@ -8,6 +8,7 @@ ep_count: 13
 location: "Seaside Heights, New Jersey"
 eyebrow: "Premiered January 2011 · MTV"
 take_h2: "A newcomer finds her footing."
+shape_h2: "Same house, one new voice."
 lede: "The cast returns to Seaside Heights after a summer in Miami, and the premiere draws MTV's largest audience yet. Angelina doesn't return; longtime friend Deena Cortese joins the house permanently for the first time."
 pull: "Back on the boardwalk, with a record audience watching a new roommate settle into the house for the first time."
 format_summary: "Docusoap · shore house, new roommate"
