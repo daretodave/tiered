@@ -8,6 +8,7 @@ ep_count: 8
 location: "Los Angeles, California"
 eyebrow: "Premiered April 2022 · Netflix"
 take_h2: "Commits without blinking."
+shape_h2: "Eight episodes, four fast beats."
 lede: "Couples already living together, already unsure about marriage, get handed the same ultimatum: propose within weeks, or trial-marry someone new for three weeks. Netflix had never run a dating format this blunt about hesitation before."
 pull: "A trial marriage with someone else was never a subplot here — it's the whole premise, and season one commits to it without blinking."
 premiere_caption: "Netflix · April 2022"

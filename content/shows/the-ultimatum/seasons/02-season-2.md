@@ -8,6 +8,7 @@ ep_count: 10
 location: "Charlotte, North Carolina"
 eyebrow: "Premiered August 2023 · Netflix"
 take_h2: "Proving the tension travels."
+shape_h2: "Ten episodes, two release nights."
 lede: "A new set of couples takes on the same ultimatum: propose within weeks, or trial-marry someone new from inside the group for three weeks. Season two arrives already knowing the format works — the pressure now is proving the tension wasn't a fluke."
 pull: "The premise had already been tested once. Season two's job is proving the format's tension travels beyond a single freshman cast."
 premiere_caption: "Netflix · August 2023"

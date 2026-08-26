@@ -8,6 +8,7 @@ ep_count: 10
 location: "Phoenix, Arizona"
 eyebrow: "Premiered December 2024 · Netflix"
 take_h2: "A known quantity now."
+shape_h2: "Ten episodes, three-week release."
 lede: "Two seasons in, the premise doesn't need to prove itself. Six new couples take the same ultimatum — propose, or trial-marry someone else from the group for three weeks — with the format now a known quantity and the pressure resting on the cast."
 pull: "By season three the format is established. What's left to test is whether a new cast can make the same deadline feel like it matters again."
 premiere_caption: "Netflix · December 2024"

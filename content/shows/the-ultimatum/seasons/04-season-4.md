@@ -8,6 +8,7 @@ ep_count: 10
 location: "Las Vegas, Nevada"
 eyebrow: "Premiered July 2026 · Netflix"
 take_h2: "Finally playing at home."
+shape_h2: "Eight episodes, then two more."
 lede: "Four seasons in, the ultimatum finally lands in a city its cast actually calls home. Six Las Vegas couples take the same deal — propose, or trial-marry someone new from the group for three weeks — as locals instead of visitors."
 pull: "Every past season borrowed a city for the shoot. Season four hands the format to couples who already live in the one on screen — and lets that closeness do the work."
 premiere_caption: "Netflix · July 2026"
