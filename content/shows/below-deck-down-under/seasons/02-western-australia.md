@@ -4,6 +4,7 @@ number: 2
 title: "Western Australia"
 canonical_position: 4
 take_h2: "A harder, quieter coastline."
+shape_h2: "Longer passages, fewer ports."
 premiere_date: "2023-07-17"
 location: "Ningaloo Reef, Western Australia, Australia"
 host: "Jason Chambers"

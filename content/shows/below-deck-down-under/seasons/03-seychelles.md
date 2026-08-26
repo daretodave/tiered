@@ -4,6 +4,7 @@ number: 3
 title: "Seychelles"
 canonical_position: 3
 take_h2: "New ocean, new crew."
+shape_h2: "Episode count nearly doubles."
 premiere_date: "2025-02-03"
 location: "Seychelles, Indian Ocean"
 host: "Jason Chambers"

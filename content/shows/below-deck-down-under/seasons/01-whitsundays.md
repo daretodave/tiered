@@ -4,6 +4,7 @@ number: 1
 title: "Whitsundays"
 canonical_position: 2
 take_h2: "The franchise plants its flag."
+shape_h2: "A steady, standard-length season."
 premiere_date: "2022-03-17"
 location: "Whitsundays, Queensland, Australia"
 host: "Jason Chambers"

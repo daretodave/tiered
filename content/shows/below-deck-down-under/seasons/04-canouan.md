@@ -4,6 +4,7 @@ number: 4
 title: "Canouan"
 canonical_position: 1
 take_h2: "A veteran crew's biggest test."
+shape_h2: "Eighteen episodes, its longest run."
 premiere_date: "2026-02-02"
 location: "Canouan, Saint Vincent and the Grenadines"
 host: "Jason Chambers"
