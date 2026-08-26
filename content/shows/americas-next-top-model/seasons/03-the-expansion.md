@@ -13,7 +13,7 @@ pull: "The photoshoot creative finally has room to breathe — and the results a
 format_summary: "Modeling competition · expanded locations"
 format_caption: "first international location work"
 cast_size: 14
-cast_size_caption: "14 contestants, expanded casting"
+cast_size_caption: "Fourteen contestants, the deepest pool yet"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

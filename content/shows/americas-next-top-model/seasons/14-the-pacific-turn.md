@@ -13,7 +13,7 @@ pull: "A competent cycle that restores the international format and benefits fro
 format_summary: "Modeling competition · New Zealand international leg"
 format_caption: "André Leon Talley joins as permanent judge"
 cast_size: 13
-cast_size_caption: "13 contestants, spring 2010 casting"
+cast_size_caption: "Thirteen contestants, international travel resumes"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -13,7 +13,7 @@ pull: "A competent, unremarkable cycle that gets the most out of Morocco and not
 format_summary: "Modeling competition · standard CW format"
 format_caption: "first North African international leg"
 cast_size: 14
-cast_size_caption: "14 contestants, spring 2011 casting"
+cast_size_caption: "Fourteen contestants, the standard CW casting model"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

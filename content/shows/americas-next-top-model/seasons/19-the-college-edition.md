@@ -13,7 +13,7 @@ pull: "Greece saves it — the college-only casting restricts the pool more than
 format_summary: "Modeling competition · college-only casting"
 format_caption: "current students only; Oxford and Crete locations"
 cast_size: 14
-cast_size_caption: "14 college students, fall 2012 casting"
+cast_size_caption: "Fourteen contestants, less industry conditioning"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

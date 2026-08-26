@@ -13,7 +13,7 @@ pull: "A strong, grounded cycle that earns its rank on casting range and a locat
 format_summary: "Modeling competition · sole South American trip"
 format_caption: "Paulina Porizkova's final cycle as judge"
 cast_size: 13
-cast_size_caption: "13 contestants, spring 2009 casting"
+cast_size_caption: "Thirteen contestants, real competitive range"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

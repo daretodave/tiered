@@ -13,7 +13,7 @@ pull: "The casting is the best the late CW era produced — a cycle that gets cl
 format_summary: "Modeling competition · final CW season"
 format_caption: "post-hiatus return, 12-episode run"
 cast_size: 14
-cast_size_caption: "14 contestants, spring 2015 casting"
+cast_size_caption: "Fourteen contestants, the era's strongest casting"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

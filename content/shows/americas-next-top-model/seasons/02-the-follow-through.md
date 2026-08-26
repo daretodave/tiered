@@ -13,7 +13,7 @@ pull: "The format scales cleanly — a second cycle that proved the debut was no
 format_summary: "Modeling competition · expanded cast"
 format_caption: "first refinement, UPN"
 cast_size: 13
-cast_size_caption: "13 contestants, second casting"
+cast_size_caption: "Thirteen contestants, tighter elimination criteria"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -13,7 +13,7 @@ pull: "The British-versus-American structure gives the competition a real edge â
 format_summary: "Modeling competition Â· international cast split"
 format_caption: "9 British, 9 American contestants; London and Maui"
 cast_size: 18
-cast_size_caption: "18 contestants across two national contingents"
+cast_size_caption: "Eighteen contestants across two national contingents"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

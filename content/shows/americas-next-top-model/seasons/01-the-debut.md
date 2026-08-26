@@ -13,7 +13,7 @@ pull: "Every modeling competition since borrowed from what this cycle drafted: t
 format_summary: "Modeling competition · pilot season"
 format_caption: "first cycle, UPN"
 cast_size: 13
-cast_size_caption: "13 contestants, debut casting"
+cast_size_caption: "Thirteen contestants, a nationwide casting call"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

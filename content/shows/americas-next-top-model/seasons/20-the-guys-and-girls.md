@@ -13,7 +13,7 @@ pull: "The format opens up in a way it hadn't since the UPN era — male contest
 format_summary: "Modeling competition · co-ed cast"
 format_caption: "first male contestants; Rio de Janeiro and São Paulo"
 cast_size: 18
-cast_size_caption: "18 contestants, first co-ed cast configuration"
+cast_size_caption: "Eighteen contestants, first co-ed cast configuration"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

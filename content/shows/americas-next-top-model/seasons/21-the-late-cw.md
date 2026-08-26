@@ -13,7 +13,7 @@ pull: "The standard format without the international component — the cycle run
 format_summary: "Modeling competition · domestic only"
 format_caption: "LA-based production, no international leg"
 cast_size: 18
-cast_size_caption: "18 contestants, fall 2013 casting"
+cast_size_caption: "Eighteen contestants, open casting returns"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

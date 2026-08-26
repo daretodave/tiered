@@ -13,7 +13,7 @@ pull: "The CW era begins with a solid if transitional cycle — the novelty of t
 format_summary: "Modeling competition · network debut"
 format_caption: "first CW cycle, Jay Manuel joins final panel"
 cast_size: 13
-cast_size_caption: "13 contestants, including first sibling pair"
+cast_size_caption: "Thirteen contestants, including the first sibling pair"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

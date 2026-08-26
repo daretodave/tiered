@@ -13,7 +13,7 @@ pull: "Two cities and a farewell — a cycle that travels well but competes unev
 format_summary: "Modeling competition · two-city China leg"
 format_caption: "Twiggy's final cycle as permanent judge"
 cast_size: 13
-cast_size_caption: "13 contestants, fall 2007 casting"
+cast_size_caption: "Thirteen contestants, competing across two cities"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

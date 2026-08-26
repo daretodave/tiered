@@ -13,7 +13,7 @@ pull: "UPN's actual final cycle runs close to the peak quality of C4 and C5 — 
 format_summary: "Modeling competition · first Southeast Asia trip"
 format_caption: "final UPN cycle, Twiggy first full cycle"
 cast_size: 13
-cast_size_caption: "13 contestants, final UPN cast"
+cast_size_caption: "Thirteen contestants, closing out the UPN era"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

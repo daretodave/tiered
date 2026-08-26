@@ -13,7 +13,7 @@ pull: "The relaunch trades the format's editorial identity for social-media metr
 format_summary: "Modeling competition · VH1 relaunch"
 format_caption: "Rita Ora hosting; social-media scoring added"
 cast_size: 14
-cast_size_caption: "14 contestants, VH1 debut cast"
+cast_size_caption: "Fourteen contestants, first cycle without Tyra"
 host_caption: "first season at the helm"
 ---
 

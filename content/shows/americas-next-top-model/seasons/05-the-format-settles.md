@@ -13,7 +13,7 @@ pull: "The format fully settled — a UPN cycle running at its own peak, confide
 format_summary: "Modeling competition · international finale"
 format_caption: "UPN era, format at peak confidence"
 cast_size: 14
-cast_size_caption: "14 contestants, UPN mature era"
+cast_size_caption: "Fourteen contestants, an international finale stretch"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

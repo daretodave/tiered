@@ -13,7 +13,7 @@ pull: "A clean competition format with a strong location and a settled panel —
 format_summary: "Modeling competition · first Australia trip"
 format_caption: "record CW finale viewership, Twiggy on panel"
 cast_size: 13
-cast_size_caption: "13 contestants, spring 2007 casting"
+cast_size_caption: "Thirteen contestants, Twiggy's third cycle on panel"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

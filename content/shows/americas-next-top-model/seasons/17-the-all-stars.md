@@ -13,7 +13,7 @@ pull: "An entertaining novelty that functions more as a reunion special than a g
 format_summary: "Modeling competition · all-returnee cast"
 format_caption: "fan favorites and prior finalists returning"
 cast_size: 14
-cast_size_caption: "14 returning contestants from prior cycles"
+cast_size_caption: "Fourteen returning contestants from prior cycles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -13,7 +13,7 @@ pull: "The gimmick overwhelms the competition — the height restriction produce
 format_summary: "Modeling competition · height-cap format"
 format_caption: "first entirely domestic cycle, three-judge panel"
 cast_size: 14
-cast_size_caption: "14 contestants under 5'7\", domestic locations"
+cast_size_caption: "Fourteen contestants under 5'7\", domestic locations"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

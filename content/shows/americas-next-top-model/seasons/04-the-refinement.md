@@ -13,7 +13,7 @@ pull: "The UPN years close on this cycle having figured out the grammar every la
 format_summary: "Modeling competition · settled format"
 format_caption: "UPN peak cycle"
 cast_size: 13
-cast_size_caption: "13 contestants, varied casting"
+cast_size_caption: "Thirteen contestants, the widest range yet"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

@@ -13,7 +13,7 @@ pull: "The milestone casting is genuinely significant; the competition around it
 format_summary: "Modeling competition · milestone casting"
 format_caption: "Isis King; Amsterdam international leg"
 cast_size: 14
-cast_size_caption: "14 contestants, milestone cast configuration"
+cast_size_caption: "Fourteen contestants, a milestone cast configuration"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

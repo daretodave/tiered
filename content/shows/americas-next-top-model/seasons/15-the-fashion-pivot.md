@@ -13,7 +13,7 @@ pull: "The Fashion Pivot earns the top CW-era slot by actually changing what win
 format_summary: "Modeling competition · high-fashion pivot"
 format_caption: "Vogue Italia prize, IMG contract, André Leon Talley"
 cast_size: 14
-cast_size_caption: "14 contestants, including first sibling pair since C7"
+cast_size_caption: "Fourteen contestants, including first sibling pair since C7"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 

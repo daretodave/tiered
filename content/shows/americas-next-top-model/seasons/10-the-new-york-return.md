@@ -13,7 +13,7 @@ pull: "A homecoming that reinvigorates the format — New York sharpens everythi
 format_summary: "Modeling competition · NYC homecoming"
 format_caption: "Paulina Porizkova joins, expanded cast"
 cast_size: 14
-cast_size_caption: "14 contestants, expanded from prior cycles"
+cast_size_caption: "Fourteen contestants, first NYC street-cast search"
 host_caption: "{seasonOrdinalWord} season at the helm"
 ---
 
