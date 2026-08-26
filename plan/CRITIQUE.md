@@ -1,5 +1,41 @@
 # CRITIQUE
 
+> Last pass: 2026-08-26 at commit bbc5263b
+> Pass count: 146
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 146
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/perfect-match/season/season-4`, `/shows`,
+> `/shows/the-circle?view=canon`, `/themes/away-from-home-turf`
+> anon; `/u/e2e`, `/shows/queer-eye/season/las-vegas?view=community`,
+> `/shows/dragrace/season/season-18?view=community`,
+> `/shows/chopped?view=community` authed. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, all pages 200). 6 findings filed (0 HIGH, 4 MED, 2 LOW):
+> perfect-match S4's crossover-casting fact restated across five
+> sections of the same freshly-seeded page; its meta description
+> truncated mid-sentence with a dangling ellipsis; the `/shows`
+> index meta description echoing the on-page lede verbatim — the
+> third recurrence of the pass-141 systemic defect after two rounds
+> of per-page field fixes, suggesting the root cause needs a
+> template-level fix rather than more one-off edits (the orphaned
+> pass-141 row, marked resolved but never migrated, moved to Done
+> in this pass); the community vote-pair's pre-vote state
+> over-explaining "no vote yet" four ways on both queer-eye and
+> dragrace season pages; queer-eye Las Vegas's FILMED stat caption
+> bare-restating its own location value (drops only "USA"); and
+> dragrace S18's HOST caption partially restating "RuPaul" before
+> its one new fact. `/u/e2e`'s apparent missing sign-out control
+> was checked against source (`HeaderView.tsx`) and found to be a
+> false positive — Sign out exists behind an accessible,
+> aria-labelled account-menu disclosure, just not visible in flat
+> extracted page text — dropped, not filed.
+>
+> ───── Pass 145 metadata kept below for history ─────
+
 > Last pass: 2026-08-26 at commit 36ad3e30
 > Pass count: 145
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3700,6 +3736,60 @@
 
 ## Pending
 
+### [MED] [anon] /shows/perfect-match/season/season-4 — the crossover-casting fact is restated across five separate sections of the same page
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: voice
+- observation: The fact that Season 4 casts from non-Netflix dating shows (Married at First Sight Australia, Vanderpump Rules alumni) is restated near-verbatim in the meta column (FORMAT + CAST SIZE), the lede, THE TAKE, THE SHAPE OF THE SEASON's opening sentence, WHERE IT SITS IN THE CANON, and a WHAT TO WATCH FOR bullet — six occurrences on a single freshly-seeded page, the same content-gap echo pattern already fixed on other show/season pages but not yet applied here.
+- evidence: Lede: "Nick Lachey hosts a fourth season, again in Tulum, Mexico, casting past Netflix's own dating slate for the first time — Married at First Sight Australia and Vanderpump Rules alumni now filling out the villa..." | SHAPE opener: "Nick Lachey hosts a fourth season, again in Tulum, Mexico. For the first time the pool leans hard on non-Netflix franchises: Married at First Sight Australia and Vanderpump Rules alums mix in..." | WHERE IT SITS: "...leans hardest yet on shows outside Netflix's own dating universe — Married at First Sight Australia and Vanderpump Rules alums join..."
+- suggested fix: Give each section a distinct job — facts in the meta column, verdict in THE TAKE, mechanics in SHAPE, canon-ranking reasoning in WHERE IT SITS — rewriting the SHAPE opener and WHERE IT SITS clause so they build on the lede's fact instead of re-deriving it from scratch. Content-only, several field edits in one file.
+- source: browser (critique-pass-146, anon)
+
+### [LOW] [anon] /shows/perfect-match/season/season-4 — meta description is truncated mid-sentence with a dangling ellipsis
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: seo
+- observation: The `<meta name="description">` cuts off before the payoff clause naming which shows the crossover cast comes from, ending in an ellipsis rather than a complete thought — a search-result snippet a reader can't finish reading.
+- evidence: raw meta description: "Nick Lachey hosts a fourth season, again in Tulum, Mexico, casting past Netflix's own dating slate for the first time…"
+- suggested fix: Cap the description at a full clause/sentence boundary under ~155 chars instead of a mid-thought ellipsis truncation, per the same `clipToSeoBudget` fix already applied to survivor-50 (pass-141/145).
+- source: browser (critique-pass-146, anon)
+
+### [MED] systemic (third recurrence) — `/shows` index meta description echoes the on-page lede verbatim, after two prior rounds of per-page field fixes for this exact defect class
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: seo
+- observation: The pass-141 systemic finding (meta descriptions reusing on-page lede/H1 copy verbatim on love-island-uk, survivor-50, and /themes) was marked resolved via three one-off field rewrites. The identical defect now reproduces on a fourth page — the `/shows` index — meaning the per-page patches addressed symptoms, not the underlying meta-description generation step. Filed as a new row (not a bump of the closed pass-141 row, which has been moved to Done) because the fix approach needs to change: a template-level or content-check-level guard, not another one-off content edit.
+- evidence: `/shows` meta description: "Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review." On-page lede: "Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most..." — same opening clause verbatim.
+- suggested fix: Rather than editing this one string, add a `content-check.ts` invariant (or a shared `buildMetadata` helper default) that flags any page-level `description` sharing a long verbatim substring with its own lede/H1, so this class of drift is caught at author time across the whole corpus instead of recurring one page at a time.
+- source: browser (critique-pass-146, anon)
+
+### [MED] systemic [authed] /shows/queer-eye/season/las-vegas?view=community, /shows/dragrace/season/season-18?view=community — the pre-vote vote-pair widget states "no vote cast yet" four separate ways in a row
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: voice
+- observation: Before a reader has voted, the vote-pair widget stacks four redundant signals of the same fact — eyebrow "YOUR VOTE", button "CAST VOTE", status line "YOU HAVEN'T VOTED YET", tally "0", then a second CTA "BE THE FIRST TO VOTE" — identical on both season pages walked this pass, so the pattern is component-level, not page-specific. Reads as a widget that doesn't trust the reader to get it in one line, cutting against the knowledgeable-peer, plain-spoken voice.
+- evidence: "YOUR VOTE\nCAST VOTE\nYOU HAVEN'T VOTED YET\n0\nBE THE FIRST TO VOTE\none vote per reader; change your mind within 72h." — identical block on both queer-eye/las-vegas and dragrace/season-18 community views.
+- suggested fix: Collapse the pre-vote state to one status line + one CTA: keep "YOU HAVEN'T VOTED YET" and "CAST VOTE", drop the redundant "0" tally and the second "BE THE FIRST TO VOTE" CTA from the un-voted state. Component-only change (likely `VotePair.tsx` or its wrapper), applies sitewide.
+- source: browser (critique-pass-146, authed)
+
+### [MED] [authed] /shows/queer-eye/season/las-vegas?view=community — the FILMED stat caption bare-restates the location value one field above it
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: voice
+- observation: The FILMED stat block shows the location twice with no new information added the second time. Every other stat on the same page (PREMIERED, EPISODES, FORMAT, CAST SIZE) pairs its primary value with a caption that adds a fact the value alone doesn't carry; this one just restates itself with "USA" dropped. Root cause: `content/shows/queer-eye/seasons/09-las-vegas.md` sets `location: "Las Vegas, Nevada, USA"` and `filming_caption: "Las Vegas, Nevada"` — a bare restatement that isn't caught by the existing `isBareRestatement()` guard (added at pass-91/issue #563) because that check only matches "Filmed <preposition> <location>" forms; here `filming_caption` has no "Filmed" prefix at all, just the location text alone.
+- evidence: "FILMED\nLas Vegas, Nevada, USA\nLas Vegas, Nevada\nPREMIERED\nDec 11, 2024\nNetflix · full season drop" — contrast with the other three stat blocks, which each add new info.
+- suggested fix: Rewrite `filming_caption` to a fact the location value doesn't already carry (e.g. "First time the Fab Five has set up here"). Also broaden `isBareRestatement()` in `src/content/__tests__/filming-caption-distinct.test.ts` to catch a caption that's just the location string with no prefix at all, not only the "Filmed <preposition>" forms, so this shape is caught corpus-wide.
+- source: browser (critique-pass-146, authed)
+
+### [LOW] [authed] /shows/dragrace/season/season-18?view=community — the HOST stat caption partially restates the host's name before adding its one new fact
+- pass: 146 (commit bbc5263b)
+- viewport: desktop
+- category: comprehension
+- observation: The HOST stat shows "RuPaul Charles" as the primary value, then "RuPaul, with Michelle Visage" as the caption — the caption re-says "RuPaul" before adding the actually-new fact (Michelle Visage). Milder than the queer-eye FILMED echo filed this same pass, but the same underlying pattern of captions partially restating the value above them.
+- evidence: "HOST\nRuPaul Charles\nRuPaul, with Michelle Visage"
+- suggested fix: Trim `host_caption` in `content/shows/dragrace/seasons/18-season-18.md` to the new information only — "with Michelle Visage" — rather than repeating "RuPaul". Content-only, one field.
+- source: browser (critique-pass-146, authed)
+
 ### [MED] [anon] /shows — the S/A/B tier-section headings render as bare single-letter `<h2>` elements with no accessible label
 - pass: 145 (commit 36ad3e30)
 - viewport: desktop
@@ -3756,16 +3846,6 @@
 - evidence: Section header: "B / CANON STILL FORMING / The canon is in progress. Every season reviewed before it lands. / 54 SHOWS / REVIEW IN PROGRESS" — then each card individually repeats it, e.g. "REVIEW IN PROGRESS / CULINARY COMPETITION · FOOD NETWORK / Chopped". Confirmed identical on both desktop and mobile captures.
 - suggested fix: Drop the per-card "REVIEW IN PROGRESS" eyebrow (or fold it into the genre/network line as a single tag) in `ShowsStatusPill.tsx` since the section header already establishes tier-wide status; reserve the per-card eyebrow slot for genre/network only, matching how S/A-tier cards use that line.
 - source: browser (critique-pass-143, anon)
-
-### [MED] systemic — meta descriptions on `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`, and `/themes` all reuse the page's own H1/lede copy near-verbatim instead of standing as independent summaries
-- pass: 141 (commit 949a34d3)
-- viewport: desktop
-- category: seo
-- observation: Three pages across two different templates (show page, season page, list-index page) show the same defect: the `<meta name="description">` is a reshuffled or truncated copy of the page's own visible lede/H1 text rather than an edited, independent search-snippet summary. On survivor-50 the truncation cuts mid-sentence with a dangling ellipsis and drops the season's actual differentiating hook (the fan-voted game mechanics). This reads as a template-level pattern, not three unrelated one-off echoes — related to, but a distinct manifestation from, the corpus's ongoing intra-page slot_argument/watch_list echo class.
-- evidence: Love Island UK — meta: "Mallorca villa, fire pit, text messages read aloud — 13 seasons of the original everyone else has been adapting since 2015." Body lede: "13 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015..." Survivor 50 — meta: "All 24 castaways returning, from Season 1 through the season that just aired, for the biggest cast in the show's history…" (dangling ellipsis, truncated). Full dek: "...for the biggest cast in the show's history — and a set of game mechanics the fans voted on themselves." /themes — meta: "Themed lists across the tiered.tv catalog — Premieres that earned it, Finales that stuck the landing, cross-canon and single-show tiers." H1 block: "Themed lists. Cross-canon and single-show."
-- suggested fix: Audit the meta-description generation step across the show/season/list templates for verbatim reuse of on-page headline/lede copy; write each as an independently-edited summary, and ensure truncation (if any) always lands on a complete clause rather than a dangling ellipsis mid-sentence.
-- source: browser (critique-pass-141, anon)
-- resolved: 2026-08-25, cloud march tick, content-gap redirect per issue #758 (Rule 2 fully starred/deferred, Rule 3 saturated — redirected to this queued CRITIQUE finding instead of a no-op audit pass). Rewrote all three independently: `content/shows/love-island-uk.md`'s `card_tagline` now reads "Two seasons a year, one villa, endless recoupling — the format every other country's version traces back to" (previously a reshuffled echo of the body lede). `content/shows/survivor/seasons/50-survivor-50.md`'s `lede` shortened from 180 to 136 chars and reworded ("spanning the show's entire run, for the biggest cast yet") so `clipToSeoBudget` no longer truncates it mid-sentence with a dangling ellipsis — the fan-voted-mechanics hook now survives the cut. `src/app/(default)/themes/page.tsx`'s hardcoded `generateMetadata()` description rewritten to stop echoing the hero H1/gloss verbatim while still passing the page's own drift-guard test. All three verified against their schema char budgets before the full three-leg verify gate (typecheck/test/build + e2e, 4879 tests) ran green.
 
 ### [MED] /shows/survivor?view=community — the visible APPROVAL % column sits beside a list still in canon order, reading as contradictory
 - pass: 141 (commit 949a34d3)
@@ -5242,6 +5322,7 @@
 - RESOLVED (2026-08-25, cloud march tick): applied the suggested fix verbatim — dropped the `source === 'votes'` gate on the zero-clause in `CommunityLiveStrip.tsx`, replacing it with `lastRecomputeAt != null`, so the "(no new votes since last update)" clause now fires on the timestamp+zero combination regardless of source label. Rewrote the component's own code comment to state the corrected rationale instead of the disproven `source`-scoped assumption. Added a regression test (`CommunityLiveStrip.test.tsx`) covering the canon-mirroring + non-null-timestamp + zero-voters case. Verify gate green: fast gate, build clean, e2e 4879/4879 passed (30.3m). — aeeb6fb3
 
 ## Done
+- [x] [MED] systemic — meta descriptions on `/shows/love-island-uk`, `/shows/survivor/season/survivor-50`, and `/themes` all reused the page's own H1/lede copy near-verbatim instead of standing as independent summaries. (source: browser, critique-pass-141) — RESOLVED 2026-08-25, cloud march tick, content-gap redirect per issue #758 (Rule 2 fully starred/deferred, Rule 3 saturated — redirected to this queued CRITIQUE finding instead of a no-op audit pass). Rewrote all three independently: `content/shows/love-island-uk.md`'s `card_tagline` now reads "Two seasons a year, one villa, endless recoupling — the format every other country's version traces back to" (previously a reshuffled echo of the body lede). `content/shows/survivor/seasons/50-survivor-50.md`'s `lede` shortened from 180 to 136 chars and reworded ("spanning the show's entire run, for the biggest cast yet") so `clipToSeoBudget` no longer truncates it mid-sentence with a dangling ellipsis — the fan-voted-mechanics hook now survives the cut. `src/app/(default)/themes/page.tsx`'s hardcoded `generateMetadata()` description rewritten to stop echoing the hero H1/gloss verbatim while still passing the page's own drift-guard test. All three verified against their schema char budgets before the full three-leg verify gate (typecheck/test/build + e2e, 4879 tests) ran green. This row was left in Pending without a proper Done move despite the fix landing — closing it now (pass-146 self-assessment) to stop it competing for `/iterate` cycles as a live finding. **Reopened as a fresh, differently-scoped Pending row at pass-146**: the identical defect class reproduced on a fourth page (`/shows` index), meaning the per-page field patches addressed symptoms, not the meta-description generation step itself — see the new pass-146 Pending row for the recommended template/content-check-level fix.
 - [x] [HIGH] [authed] /u/e2e/opengraph-image — the per-profile social-card image still 404s live, reopening the pass-136 finding the 2026-08-23 fix believed it closed. Root cause: Next.js appends a disambiguation hash suffix (`-17s3nj`) to a metadata image route's URL whenever the route file lives inside the `(default)` route group, while the sibling `page.tsx` for the identical URL resolves cleanly whether grouped or not — so the browser requested `/u/[handle]/opengraph-image` but the build only ever emitted `/u/[handle]/opengraph-image-17s3nj`. The same defect independently broke `/shows/opengraph-image`. (URL: /u/e2e/opengraph-image, source: critique-pass-141) — RESOLVED content-gap redirect (issue #758), 2026-08-24: `git mv` both `opengraph-image.tsx` files (+ colocated tests) out of `(default)`, mirroring the already-working `/themes/[theme]/opengraph-image.tsx` precedent. `pnpm build` post-fix confirmed both routes emit clean, unhashed paths. Re-verified live at pass-142 (2026-08-24, cloud march): `curl -sI https://tiered.tv/u/e2e/opengraph-image` → `HTTP/2 200`, `content-type: image/png`. This row was left in Pending without a proper Done move despite the fix landing at commit 761a95e3 (referenced inline but never migrated); closing it now (pass-142 self-assessment) to stop it competing for `/iterate` cycles as a live finding.
 - [x] [MED] [anon] /shows/married-at-first-sight-australia/season/season-13 — casting-breakdown fact (nine couples at open, three intruder couples mid-run, fourth same-sex male pairing) restated near-identically across five fields (lede, Shape-of-Season body, canon rationale, FORMAT caption, watch-list bullet). Kept the full fact in the lede only; rewrote the body opening, canon rationale, FORMAT caption, and watch-list bullet to reference it obliquely instead of re-deriving the clause. (pass-133; addressed at 72ee258f, cloud march content-gap redirect per issue #758)
 - [x] [LOW] [anon] /shows/big-brother/season/a-summer-of-mystery — cast-count headline numbers don't match across meta-column stats: the FORMAT stat tile read "16+ houseguests · three stacked twists" while the CAST SIZE stat tile read "17 players" with sub-caption "16 newcomers plus a premiere-night mystery arrival" — a skimming reader saw two different top-line numbers ("16+" vs "17") for the same fact before reconciling the sub-captions underneath. (URL: /shows/big-brother/season/a-summer-of-mystery, source: critique-pass-137) — RESOLVED c978fe8d (2026-08-24, cloud march tick, redirected from a stalled ship-content dispatch per issue #758 — Rule 2 fully starred at 43 gap-slots/43 shows, Rule 3 confirmed saturated through a ninth same-day zero-ship pass logged in `plan/LISTS.md`): changed `format_summary` from "16+ houseguests · three stacked twists" to "17 houseguests · three stacked twists", matching the CAST SIZE tile's already-reconciled total. Content-only, one field. Verify gate green: 199 test files / 3665 unit tests, content:check ok (68 shows/1047 seasons/68 canons/181 themes/3 legal docs), build clean (1513/1513 static pages), 4879 e2e (28.2m).
