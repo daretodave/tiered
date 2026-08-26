@@ -4,6 +4,7 @@ number: 1
 slug: series-1
 title: "Series 1 (2022)"
 take_h2: "The format, still finding its rules."
+shape_h2: "Twelve episodes, three-week build."
 canonical_position: 2
 premiere_date: 2022-11-29
 ep_count: 12

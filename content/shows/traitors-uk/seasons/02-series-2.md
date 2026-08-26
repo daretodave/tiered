@@ -4,6 +4,7 @@ number: 2
 slug: series-2
 title: "Series 2 (2024)"
 take_h2: "A cast that already knows the game."
+shape_h2: "Twelve episodes, four-week spread."
 canonical_position: 1
 premiere_date: 2024-01-03
 ep_count: 12

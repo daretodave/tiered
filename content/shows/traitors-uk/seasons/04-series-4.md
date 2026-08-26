@@ -4,6 +4,7 @@ number: 4
 slug: series-4
 title: "Series 4 (2026)"
 take_h2: "Confident enough to spawn an after-show."
+shape_h2: "Twelve episodes, running alongside Uncloaked."
 canonical_position: 3
 premiere_date: 2026-01-01
 ep_count: 12

@@ -4,6 +4,7 @@ number: 3
 slug: series-3
 title: "Series 3 (2025)"
 take_h2: "The format, compressed to three nights."
+shape_h2: "A double-header opens the run."
 canonical_position: 4
 premiere_date: 2025-01-01
 location: "Ardross Castle, Scottish Highlands"
