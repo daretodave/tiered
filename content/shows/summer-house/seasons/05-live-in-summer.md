@@ -3,6 +3,7 @@ show: summer-house
 number: 5
 title: "The Live-In Summer"
 take_h2: "The commute disappears for six weeks."
+shape_h2: "Fourteen episodes, one new face."
 canonical_position: 9
 premiere_date: "2021-02-04"
 location: "The Hamptons, New York"

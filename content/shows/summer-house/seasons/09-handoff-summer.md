@@ -3,6 +3,7 @@ show: summer-house
 number: 9
 title: "The Handoff Summer"
 take_h2: "The show's longest order yet."
+shape_h2: "Eighteen episodes, one late departure."
 canonical_position: 8
 premiere_date: "2025-02-12"
 location: "The Hamptons, New York"

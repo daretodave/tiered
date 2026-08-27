@@ -15,6 +15,7 @@ format_caption: "six new main cast members, the largest addition ever"
 filming_caption: "The Hamptons · six seasons running, the location the show has used longest"
 premiere_caption: "Bravo · February 2026"
 episodes_caption: "Sixteen regular episodes, extended by a bonus post-reunion coda"
+shape_h2: "Sixteen episodes, a three-part reunion."
 watch_list:
   - episode_label: "Cast · six new members"
     body: "Six new members join the main cast this season, the largest single-season addition in the show's history, while several longtime cast members step away. Watch for how a half-new ensemble finds its footing."

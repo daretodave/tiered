@@ -3,6 +3,7 @@ show: summer-house
 number: 3
 title: "The Second Summer"
 take_h2: "The house holds, the cast shifts."
+shape_h2: "Fourteen episodes, the longest order yet."
 canonical_position: 2
 premiere_date: "2019-03-04"
 location: "Watermill, New York"

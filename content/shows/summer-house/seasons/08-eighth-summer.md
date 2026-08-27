@@ -3,6 +3,7 @@ show: summer-house
 number: 8
 title: "The Eighth Summer"
 take_h2: "A quieter reshuffle this year."
+shape_h2: "Seventeen episodes, a second year running."
 canonical_position: 7
 premiere_date: "2024-02-22"
 location: "The Hamptons, New York"

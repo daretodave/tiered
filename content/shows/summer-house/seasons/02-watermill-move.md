@@ -3,6 +3,7 @@ show: summer-house
 number: 2
 title: "The Watermill Move"
 take_h2: "New house, partly new cast."
+shape_h2: "Twelve episodes, three cast exits."
 canonical_position: 5
 premiere_date: "2018-01-22"
 location: "Watermill, New York"

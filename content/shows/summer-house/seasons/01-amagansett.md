@@ -14,6 +14,7 @@ format_caption: "the founding cast, house, and commute structure"
 filming_caption: "Amagansett · Bravo's first shared-rental shoot"
 premiere_caption: "Bravo · January 2017"
 take_h2: "A shared roof, no host required."
+shape_h2: "Ten episodes, weekend visits only."
 ---
 
 Summer House introduces its format cold: a fixed group of New York City friends who work in the city all week and pile into one rented house in Amagansett, New York, every weekend of the summer. There's no host and no competition — just a shared roof, a long commute, and group dynamics doing all the work. It's a confident debut for a format Bravo would keep building on.

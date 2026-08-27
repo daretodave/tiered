@@ -3,6 +3,7 @@ show: summer-house
 number: 4
 title: "The Steady Summer"
 take_h2: "The lightest turnover yet."
+shape_h2: "Sixteen episodes, a third year running."
 canonical_position: 1
 premiere_date: "2020-02-05"
 location: "Watermill, New York"
