@@ -12,6 +12,7 @@ eyebrow: "Aired late summer 2020 · The quarantine-bubble season"
 lede: "Travel restrictions forced the villa off the map and onto a Las Vegas hotel rooftop (The Cromwell), inside a quarantined production bubble. Arielle Vandenberg returns to host the most constrained build in the show's history — same format, radically different stage."
 pull: "A villa with no horizon — the season the pandemic redrew."
 take_h2: "Same rules, no open sky."
+shape_h2: "Thirty-four episodes, a sealed rooftop."
 format_summary: "Rooftop bubble · same villa rules"
 format_caption: "COVID-era quarantined production, no tropical exterior"
 cast_size: 11
