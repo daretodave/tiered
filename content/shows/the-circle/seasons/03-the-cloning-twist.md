@@ -13,6 +13,7 @@ eyebrow: "Aired fall 2021 · Netflix · third trip through the Manchester buildi
 lede: "Season 3 leans into new machinery: a cloning mechanic lets a blocked player duplicate another profile, a late secret-influencer twist hides ratings from the players entirely, and a burner-account mechanic hands a blocked player one final move."
 pull: "Three fresh mechanics, and a blocked player who never quite leaves the game."
 take_h2: "The busiest twist run."
+shape_h2: "Three new mechanics, one season."
 format_summary: "Rate-and-block · cloning twist"
 format_caption: "A blocked player can duplicate another profile to keep playing"
 premiere_caption: "Netflix · September 2021"

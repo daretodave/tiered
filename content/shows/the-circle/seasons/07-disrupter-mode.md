@@ -13,6 +13,7 @@ eyebrow: "Aired fall 2024 · Netflix · the closing chapter of the show's Netfli
 lede: "Season 7 pulls the cast down to just 10 players, the smallest group in the show's US run, and tightens the format with Disrupter Mode, a secret superinfluencer round, and blocking rounds that send home a single name instead of the usual pair."
 pull: "The smallest cast yet, and the sharpest set of edges the rate-and-block game has ever had."
 take_h2: "The sharpest edges yet."
+shape_h2: "Ten players, the final run."
 format_summary: "Rate-and-block · Disrupter Mode"
 format_caption: "A new twist splits the cast between blocking immunity and real disadvantage"
 premiere_caption: "Netflix · September 2024"
