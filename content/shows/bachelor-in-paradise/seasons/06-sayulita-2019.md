@@ -4,6 +4,7 @@ number: 6
 slug: sayulita-2019
 title: "Season 6"
 take_h2: "The rose ceremony finally adapts."
+shape_h2: "Thirteen episodes, the longest yet."
 canonical_position: 3
 premiere_date: "2019-08-05"
 location: "Sayulita, Mexico"

@@ -4,6 +4,7 @@ number: 2
 slug: sayulita-2015
 title: "Season 2"
 take_h2: "Waves of arrivals, not one group."
+shape_h2: "Twelve episodes, twenty-nine cast."
 canonical_position: 7
 premiere_date: "2015-08-02"
 location: "Sayulita, Mexico"

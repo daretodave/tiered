@@ -4,6 +4,7 @@ number: 9
 slug: sayulita-2023
 title: "Season 9"
 take_h2: "A new night, a shorter order."
+shape_h2: "Six years behind the bar."
 canonical_position: 6
 premiere_date: "2023-09-28"
 location: "Sayulita, Mexico"

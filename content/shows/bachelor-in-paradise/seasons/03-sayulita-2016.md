@@ -4,6 +4,7 @@ number: 3
 slug: sayulita-2016
 title: "Season 3"
 take_h2: "A twin twist, an early exit."
+shape_h2: "Thirty cast, eleven episodes."
 canonical_position: 8
 premiere_date: "2016-08-02"
 location: "Sayulita, Mexico"

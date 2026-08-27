@@ -4,6 +4,7 @@ number: 7
 slug: sayulita-2021
 title: "Season 7"
 take_h2: "No host, a storm, a montage."
+shape_h2: "A midseason VIP twist."
 canonical_position: 9
 premiere_date: "2021-08-16"
 location: "Sayulita, Mexico"
