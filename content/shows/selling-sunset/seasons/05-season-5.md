@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop, reunion two weeks later"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Ten episodes plus a standalone reunion, matching Season 4's run length"
 take_h2: "The reunion becomes part of the format."
+shape_h2: "Twelve agents, one newcomer."
 ---
 
 Season 5 welcomes Chelsea Lazkani to the main cast and introduces something new: a standalone reunion special, hosted by Tan France and released two weeks after the season itself. It's the first time the show pairs its ten-episode run with a separate reunion format, and the addition sticks — future seasons keep the two-part structure. The season itself keeps the brokerage's established office dynamics front and center.

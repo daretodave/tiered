@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Eight episodes, the third and final season at this length"
 take_h2: "Steady as it goes."
+shape_h2: "The last eight-episode season."
 ---
 
 Season 3 makes no changes to the roster — the same ten agents from Season 2 return, and nobody new joins the brokerage. Without a cast shake-up to lean on, the season leans into its existing office relationships, and Amanza's push toward her first major deal gives the show a genuine business arc alongside the usual desk tension. It's the format holding steady rather than expanding.

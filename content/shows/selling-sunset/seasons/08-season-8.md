@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Eleven episodes, the third season in a row at this length"
 take_h2: "The reunion takes a season off."
+shape_h2: "All eleven, dropped at once."
 ---
 
 Season 8 welcomes Alanna Gold to the Oppenheim Group as a new agent, and releases all eleven episodes at once rather than staggering them. The season also breaks from recent form: it's the first entry since Season 4 without a standalone reunion special, ending — at least for now — the two-part structure the show had used since Season 5. The roster otherwise stays consistent with Season 7's lineup.

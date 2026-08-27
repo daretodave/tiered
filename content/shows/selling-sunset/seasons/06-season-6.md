@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood, with a group retreat filmed in Palm Springs"
 episodes_caption: "Eleven episodes, the longest season yet"
 take_h2: "New faces, new ground."
+shape_h2: "Three out, two in."
 ---
 
 Season 6 turns over more of the main cast than any season before it — Maya Vander, Christine Quinn, and Vanessa Villela all depart, while Nicole Young and Bre Tiesi join the Oppenheim Group's roster. The season also breaks from its usual setting with a group retreat filmed in Palm Springs, its first arc built entirely outside the Sunset Strip office. Eleven episodes is the longest run yet.

@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop, reunion two weeks later"
 filming_caption: "West Hollywood, in a new office roughly double the size of the last one"
 episodes_caption: "Eleven episodes plus a standalone reunion, matching Season 6's run length"
 take_h2: "The brokerage moves next door — and up."
+shape_h2: "Same eleven, new address."
 ---
 
 Season 7 doesn't change the Oppenheim Group's cast at all — the same roster from Season 6 returns intact. What does change is the office: the brokerage relocates next door to a space roughly double the size of the old one, redesigned with noticeably more polish. The season's reunion special returns too, keeping the format's now-standard two-part structure in place. Eleven episodes carry the main run, same as last season.

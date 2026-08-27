@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Ten episodes, up from eight the season before"
 take_h2: "The format stretches its legs."
+shape_h2: "Eleven agents, two new faces."
 ---
 
 Season 4 runs longer than any season before it — ten episodes instead of eight — and spends some of that extra time on a high-profile celebrity listing that gives the brokerage's business side more weight than usual. Emma Hernan and Vanessa Villela join the main cast, and Romain Bonnet moves back to recurring. It's the first season to expand the format itself, not just the roster.

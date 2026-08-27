@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop, reunion one week later"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Ten episodes plus a standalone reunion, back after a season without one"
 take_h2: "The reunion comes back — and brings someone new."
+shape_h2: "Tan France's fifth reunion."
 ---
 
 Season 9 adds Sandra Vergara to the Oppenheim Group's roster and brings the reunion special back after Season 8's one-season gap — Tan France returns to host for a fifth consecutive time, his longest active run behind the reunion desk. Ten episodes make up the main season, with the reunion following a week later as its own release, restoring the two-part format the show had used through Season 7.

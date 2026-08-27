@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Eight episodes, each running about an hour"
 take_h2: "The format, fully formed."
+shape_h2: "Seven agents, eight episodes."
 ---
 
 Seven agents at The Oppenheim Group, one high-end Sunset Strip brokerage, and a full season built around who's selling what to whom. The show pairs eight-figure listings with genuine office tension from the start, and the format's two halves — real estate and workplace dynamics — click into place immediately. Eight episodes establish a brokerage with its own hierarchy, its own history, and its own unresolved friction.

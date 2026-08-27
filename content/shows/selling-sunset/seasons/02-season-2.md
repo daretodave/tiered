@@ -17,6 +17,7 @@ premiere_caption: "Netflix · full season drop"
 filming_caption: "West Hollywood and the Sunset Strip"
 episodes_caption: "Eight episodes, the same length as the debut season"
 take_h2: "The bench gets deeper."
+shape_h2: "Ten agents, same eight episodes."
 ---
 
 Season 2 keeps the entire founding cast and adds to it: Romain Bonnet and Davina Potratz move from recurring to main status, and interior designer Amanza Smith joins the roster outright. It's the first time the show widens its ensemble rather than simply returning it, and the larger group raises the stakes on an already crowded office. Eight episodes prove the format scales past its original seven.
