@@ -12,6 +12,7 @@ eyebrow: "Aired spring–summer 2024 · the first season to compete for charity,
 lede: "Eight returning queens compete for a season with no eliminations at all. Each week's top two performers earn Beautiful Benefactress Badges and lip sync for charitable donations, with badge winners able to block a rival from earning one the next week."
 pull: "A whole season with no eliminations, competing not for a personal purse but for a donation to The Palette Fund."
 take_h2: "No eliminations, only charity stakes."
+shape_h2: "Eight queens, a repeated cast size."
 premiere_caption: "Paramount+ · May 2024"
 format_summary: "No eliminations · charitable stakes"
 format_caption: "top two lip sync for donations, not personal cash"

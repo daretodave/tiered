@@ -12,6 +12,7 @@ eyebrow: "Aired summer–fall 2016 · Logo TV · Lip Sync For Your Legacy debuts
 lede: "Ten returning queens compete under a new mechanic: the top two challenge performers lip sync, and the winner personally chooses which struggling queen goes home, plus a $10,000 tip. Todrick Hall fills in for Ross Mathews. RuPaul Charles hosts nine episodes on Logo TV."
 pull: "Lip Sync For Your Legacy flips the format: the challenge winner decides who goes home, not the judges."
 take_h2: "The winner picks who leaves."
+shape_h2: "Nine episodes, a count never repeated."
 premiere_caption: "Logo TV · August 2016"
 format_summary: "Lip Sync For Your Legacy debuts"
 format_caption: "top two lip sync; the winner sends a queen home"
