@@ -9,6 +9,7 @@ host: "Sandy Yawn"
 ep_count: 18
 eyebrow: "Croatia returns — the Dalmatian coast on the M/Y Lady Michelle"
 take_h2: "Solid, not quite the peak."
+shape_h2: "Eighteen episodes, room to develop."
 lede: "Season 6 returned to Croatia — Sibenik's Dalmatian coast rather than the Dubrovnik corridor. The M/Y Lady Michelle gave the production a different yacht profile, and a large cast found friction early and held it across the run."
 pull: "A solid Croatia return that works the format without matching the Dubrovnik season's cast alignment or command intensity."
 format_summary: "Charter yacht · Adriatic"

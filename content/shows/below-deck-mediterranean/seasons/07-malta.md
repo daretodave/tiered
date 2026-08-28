@@ -9,6 +9,7 @@ host: "Sandy Yawn"
 ep_count: 20
 eyebrow: "The Malta season — 20 episodes, island-to-island, the format at full pace"
 take_h2: "Sandy's best since Dubrovnik."
+shape_h2: "Twenty episodes across three islands."
 lede: "Season 7 settled into Maltese waters for the first time — Malta, Gozo, and Comino's compact island geography pressing the cast close. Twenty episodes, the longest in the franchise, found the cast chemistry to justify the run."
 pull: "The best Sandy-led season since Dubrovnik — the cast, the island setting, and the command dynamics all worked together."
 format_summary: "Charter yacht · Central Mediterranean"

@@ -9,6 +9,7 @@ host: "Sandy Yawn"
 ep_count: 16
 eyebrow: "The Med spinoff finds its footing off Kotor Bay"
 take_h2: "The rough, essential origin season."
+shape_h2: "A hierarchy sorting itself."
 lede: "Below Deck Mediterranean launched in 2016 with Captain Sandy Yawn commanding a crew through charter season in the Adriatic. Kotor Bay's stone walls and clear-water anchorages gave the spinoff a visual identity distinct from the Caribbean parent from the first episode."
 pull: "The origin season — rough in the way that first seasons are, and essential for the same reason."
 format_summary: "Charter yacht · Adriatic"

@@ -9,6 +9,7 @@ host: "Sandy Yawn"
 ep_count: 17
 eyebrow: "Athens — franchise-first Greek capital waters on the M/Y Purpose"
 take_h2: "New geography, cast still developing."
+shape_h2: "Seventeen episodes finding new footing."
 lede: "Season 9 brought Below Deck Mediterranean to Athens — the Greek capital's coastline a genuine franchise first. The M/Y Purpose suited the Aegean scale, and a 17-episode run found enough cast texture to make the new location register."
 pull: "A genuine franchise first in Athens — the location earns its place; the cast chemistry is still finding its ceiling."
 format_summary: "Charter yacht · Aegean Sea"

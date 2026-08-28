@@ -9,6 +9,7 @@ host: "Sandy Yawn"
 ep_count: 16
 eyebrow: "The freshwater experiment — northern Italy gives the format new geography"
 take_h2: "The franchise's freshwater experiment."
+shape_h2: "Shorter passages, more port time."
 lede: "Season 5 moved Below Deck Mediterranean off open saltwater for the first time. Lake Como's tighter geography shifted pressure toward the interior department, and a cast with genuine interpersonal texture made the location change read as creative expansion."
 pull: "The season that proved the format could work on fresh water — and that the right location change is an editorial argument, not just a backdrop shift."
 format_summary: "Charter yacht · Freshwater lake"
