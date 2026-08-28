@@ -10,6 +10,7 @@ eyebrow: "Premiered December 2021 · Netflix"
 lede: "The Fab Five head to Austin for a season that keeps the expanded ten-episode length and the same reliable hero-makeover structure. No format changes, no relocated premise — just the show doing what it does well in a new city."
 pull: "A season that keeps doing the format well without asking it to do anything new."
 take_h2: "Dependable, not essential."
+shape_h2: "A New Year's Eve premiere."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the standard format, ten episodes"
 cast_size: 5

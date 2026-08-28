@@ -10,6 +10,7 @@ eyebrow: "Premiered July 2019 · Netflix"
 lede: "The season continues the Kansas City run, but opens somewhere else — episode one travels to Illinois for a personal-connection makeover tied to Jonathan Van Ness's own history, before the show returns to its regular rhythm."
 pull: "One specialist's home state opens the season before the format returns to its regular address."
 take_h2: "The format's most personal opening yet."
+shape_h2: "Eight episodes, one detour first."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "a personal detour, then business as usual"
 cast_size: 5

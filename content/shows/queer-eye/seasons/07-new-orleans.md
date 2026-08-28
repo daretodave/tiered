@@ -10,6 +10,7 @@ eyebrow: "Premiered May 2023 · Netflix"
 lede: "The Fab Five bring the format to New Orleans for the first time, working the same five-specialist, one-nominee structure the show has run since 2018. It's the last season with the complete original cast before any change to the design chair."
 pull: "One more season with the full original Fab Five, in a city the show had never worked before."
 take_h2: "The full original Fab Five's last lap."
+shape_h2: "Seven episodes, the shortest yet."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the founding format, new city"
 cast_size: 5

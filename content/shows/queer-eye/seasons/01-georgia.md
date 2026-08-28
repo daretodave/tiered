@@ -10,6 +10,7 @@ eyebrow: "Premiered February 2018 · Netflix"
 lede: "Five specialists — food and wine, fashion, culture, design, and grooming — team up each week to spend time with one nominee across metro Atlanta. The reboot keeps the makeover structure but leans hard into conversation, curiosity, and follow-through."
 pull: "Five specialists, one nominee, one house call — and a show more interested in a person's week than a wardrobe."
 take_h2: "Conversation over transformation."
+shape_h2: "Eight episodes, the founding format."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the reboot's founding format"
 cast_size: 5

@@ -10,6 +10,7 @@ eyebrow: "Premiered June 2020 · Netflix"
 lede: "Ten episodes — the reboot's longest season yet — take the Fab Five to Philadelphia, giving the format room to breathe that the standard eight-episode run never had. Same five specialists, same one-nominee structure, more space to let it work."
 pull: "Two extra episodes, one new city, and a format finally given room to stretch."
 take_h2: "Ten episodes suit the format well."
+shape_h2: "The format's longest order yet."
 format_summary: "Five specialists · one nominee weekly, expanded to 10"
 format_caption: "the format's largest season to date"
 cast_size: 5

@@ -10,6 +10,7 @@ eyebrow: "Premiered January 2026 · Netflix"
 lede: "The series finale, filmed across the capital and its Maryland and Virginia suburbs, was announced as the show's last mid-production — a deliberate farewell rather than a season cut short. Jeremiah Brent returns for his second and final run in the design chair."
 pull: "Five episodes, one city on three sides, and a season built to say goodbye on its own terms."
 take_h2: "The finale sets its own terms."
+shape_h2: "The shortest order to date."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the shortest order, by design"
 cast_size: 5

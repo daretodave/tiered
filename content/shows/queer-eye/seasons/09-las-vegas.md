@@ -10,6 +10,7 @@ eyebrow: "Premiered December 2024 · Netflix"
 lede: "The Fab Five set up in Las Vegas for the first time, and the season debuts Jeremiah Brent as the new design specialist — the first change to any of the five specialist roles since the reboot began in 2018."
 pull: "A new specialist, a new city, and the longest episode order the show has ever run."
 take_h2: "The Fab Five's first cast change."
+shape_h2: "Ten episodes, a December premiere."
 format_summary: "Five specialists · one nominee weekly"
 format_caption: "the format's first cast change"
 cast_size: 5
