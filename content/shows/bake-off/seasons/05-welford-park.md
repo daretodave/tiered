@@ -10,6 +10,7 @@ host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2014 · The tent's first year at Welford Park"
 lede: "The series Bake Off became appointment television. The tent moved to Welford Park for the first time, the broadcast crossed from BBC Two to BBC One, and the casting class arrived with the personalities the format had been waiting for."
 pull: "The high-water mark of the BBC era — Welford Park, BBC One, and the run the rest of the canon gets argued against."
+shape_h2: "The jump to BBC One."
 format_summary: "BBC One promotion, move to Welford"
 format_caption: "the format's network promotion and its move to Welford Park"
 filming_caption: "Welford Park, Berkshire — the tent's permanent home from this run on"

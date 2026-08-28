@@ -10,6 +10,7 @@ host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2016 · The final BBC series"
 lede: "The final BBC series, and the original four-person lineup's last run together at Welford Park. Mary Berry, Paul Hollywood, Mel Giedroyc and Sue Perkins work the tent one last time before the format moves networks."
 pull: "An elegiac last BBC run. The casting class is strong end to end, the bench is sharp, and the series carries a valedictory weight the years on either side cannot match."
+shape_h2: "The BBC era's fifth year."
 format_summary: "Final year of the original lineup"
 format_caption: "the original presenter-and-judge lineup's final run together"
 filming_caption: "Welford Park, Berkshire, the BBC era's third year there"
