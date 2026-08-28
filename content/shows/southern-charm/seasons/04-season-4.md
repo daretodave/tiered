@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Fifteen episodes, one new face in, one founding face out"
 episodes_caption: "The show's first season with a founding-cast exit"
 take_h2: "The first crack in the founding armor."
+shape_h2: "Fifteen episodes, the first real cast swap."
 ---
 
 Season four marks the first real turnover in Southern Charm's main cast: Austen Kroll joins as Whitney Sudler-Smith steps back, ending the run of the show's original seven. Fifteen episodes give the ensemble room to recalibrate around the change, testing whether Charleston's old-money social order depends on any one personality or holds regardless of who's sitting at the table. The core group's chemistry mostly answers that question.

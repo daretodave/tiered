@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Seventeen episodes, four new full-time cast members"
 episodes_caption: "The show's longest order to that point"
 take_h2: "The biggest expansion the show has run."
+shape_h2: "Seventeen episodes carry four new arrivals at once."
 ---
 
 Season eight brings four new names into Southern Charm's main cast at once: Venita Aspen, Taylor Ann Green, Olivia Flowers, and Chleb Ravenell, the biggest single-season expansion the show has ever run. Seventeen episodes, its longest order yet, give the widened ensemble room to establish itself within Charleston's existing social hierarchy. It's the clearest sign yet that the show is willing to trade founding-cast intimacy for a bigger, busier social world.

@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Seventeen episodes, three more new cast members"
 episodes_caption: "A second straight season at the show's longest length"
 take_h2: "The ensemble keeps widening."
+shape_h2: "Three more names added to an already large cast."
 ---
 
 Season nine adds three more names to Southern Charm's main cast: Rod Razavi, Rodrigo Reyes, and JT Thomas, continuing the expansion that season eight kicked off. Across seventeen episodes, an ensemble that's grown well past its founding size keeps testing how many new voices Charleston's old-money social order can absorb without losing what made it specific in the first place. The show keeps betting that a bigger table doesn't have to mean a less specific one.

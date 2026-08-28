@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Fourteen episodes, zero cast turnover"
 episodes_caption: "The show's first season with no roster changes"
 take_h2: "The cast, finally settled."
+shape_h2: "Zero roster changes across fourteen episodes."
 ---
 
 Season three is the first Southern Charm season with no cast changes at all. The same ensemble from season two returns intact, older friendships and rivalries now given room to deepen rather than reset around a newcomer. Fourteen episodes let Charleston's social hierarchy play out at full maturity, with a cast that has spent two years learning exactly how to read each other. It's the show's steadiest stretch yet.

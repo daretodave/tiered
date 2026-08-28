@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Sixteen episodes, the longest run to date"
 episodes_caption: "The show's longest order to that point"
 take_h2: "The deepest bench yet."
+shape_h2: "Sixteen episodes, one more face joins the table."
 ---
 
 Season five brings Chelsea Meissner into the main cast, continuing the gradual expansion that's defined Southern Charm since its debut. Sixteen episodes, the longest order the show had run to that point, give an increasingly crowded Charleston social circle plenty of room to work through old and new dynamics alike. The extra runway lets established relationships breathe even as the ensemble keeps growing around them.

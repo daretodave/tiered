@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Thirteen episodes, three new full-time cast members"
 episodes_caption: "The tightest episode order since Season 2"
 take_h2: "A three-person refresh, post-pandemic."
+shape_h2: "Three arrivals squeeze into thirteen episodes."
 ---
 
 Season seven brings the biggest cast refresh since the show's debut, adding Leva Bonaparte, Madison LeCroy, and John Pringle to the main lineup. It's also the tightest episode order since season two, thirteen episodes total, leaving less room to ease three new voices into Charleston's established social hierarchy. The result is a season that has to move fast, testing whether the format's manners-and-money template travels past its original cast.

@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Seventeen episodes, the show's most cast movement yet"
 episodes_caption: "A third straight season at the show's longest length"
 take_h2: "The heaviest reshuffle in show history."
+shape_h2: "Three arrivals, one promotion, three departures, one season."
 ---
 
 Season ten brings the heaviest cast turnover in Southern Charm's run. Ryan Albert, Salley Carson, and Molly O'Connell join the main lineup, Rodrigo Reyes is elevated to full-time status, and the season sees a mid-run departure alongside word that several cast members won't return after it wraps. Seventeen episodes carry an ensemble in the middle of its biggest reset yet, with the Charleston social order having to reform around a genuinely different room.

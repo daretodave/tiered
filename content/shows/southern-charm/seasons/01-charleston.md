@@ -16,6 +16,7 @@ format_caption: "Old-money manners, dinner parties as the pressure test"
 cast_size: 7
 cast_size_caption: "Sudler-Smith, Ravenel, Rose, Conover, Eubanks, Dennis, King"
 take_h2: "The founding cast, before the reputation existed."
+shape_h2: "A seven-person cast with no track record yet."
 ---
 
 Southern Charm introduces seven Charleston natives and transplants navigating old-money social codes, family businesses, and a debutante-adjacent world Bravo hadn't filmed before. Whitney Sudler-Smith, Thomas Ravenel, Shep Rose, Craig Conover, Cameran Eubanks, Kathryn Dennis, and Jenna King anchor a founding cast whose overlapping histories carry real weight from episode one. The show's specific setting — genteel manners over real friction — sets a template the franchise has run with ever since.

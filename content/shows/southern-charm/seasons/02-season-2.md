@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Twelve episodes, the show's tightest order yet"
 episodes_caption: "The shortest season order of the run so far"
 take_h2: "Two new voices, same social order."
+shape_h2: "One addition, one expanded role, twelve episodes."
 ---
 
 Season two brings Landon Clements into Southern Charm's main cast alongside a fuller role for Kathryn Dennis, widening the social circle the founding season introduced. Twelve episodes keep the format tight, tracking the same Charleston manners and family stakes with two additional voices in the mix. The core group's established chemistry carries the season, even as the new arrivals test how open this social world really is to outsiders.

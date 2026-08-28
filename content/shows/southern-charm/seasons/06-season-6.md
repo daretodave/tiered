@@ -16,6 +16,7 @@ format_summary: "Social reality"
 format_caption: "Sixteen episodes, the last of the original seven exits"
 episodes_caption: "The season that closes the founding cast's run"
 take_h2: "The founding era's last stand."
+shape_h2: "Sixteen episodes, zero founding cast members left standing."
 ---
 
 Season six marks the end of Southern Charm's founding era: Thomas Ravenel, one of the original seven, departs the main cast. Eliza Limehouse and Naomie Olindo, both already established in the ensemble, help carry the show's Charleston-manners template forward across sixteen episodes. It's the clearest test yet of whether the social world the debut season built can hold its shape without every one of the names that opened it.
