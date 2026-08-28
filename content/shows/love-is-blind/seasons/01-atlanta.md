@@ -12,6 +12,7 @@ eyebrow: "Aired winter 2020 · The pod format, assembled live"
 lede: "The original. Love Is Blind invents its format in real time on Netflix: pods where strangers talk without seeing each other, proposals without faces, a first in-person meeting, a wedding-planning sprint, and an altar where the answer is yes or no."
 pull: "Every later season runs from the template this one built."
 take_h2: "The rough draft, built live."
+shape_h2: "The ten-episode founding order."
 format_summary: "Pod dating · altar reveal"
 format_caption: "The inaugural run — the format finding its shape"
 cast_size: 30

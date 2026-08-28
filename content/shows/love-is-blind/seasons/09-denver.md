@@ -12,6 +12,7 @@ eyebrow: "Aired fall 2025 · The franchise's quietest run"
 lede: "Season nine is the first where no couple reached the altar — a milestone that reflects the pod phase's output. Denver is the show at its most subdued: connections don't build with the urgency the premise needs, and the season closes on a quieter note than any before it."
 pull: "The format's quietest run — and the canon's lowest slot."
 take_h2: "The engine, never quite firing."
+shape_h2: "One episode shorter than Minneapolis."
 format_summary: "Pod dating · altar reveal"
 format_caption: "First season with no couple reaching the altar"
 cast_size: 30

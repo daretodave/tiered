@@ -12,6 +12,7 @@ eyebrow: "Aired winter 2025 · Extra episode, uneven pod chemistry"
 lede: "Season eight is the first to run fourteen episodes, adding a dedicated wedding episode to the format. Minneapolis brings genuine cast energy to the pods, but can't sustain it — the connection-building arrives in peaks, and the production can't hold momentum across the longer run."
 pull: "More episodes, more room — not all of it filled."
 take_h2: "Extra time, uneven return."
+shape_h2: "The first added wedding episode."
 format_summary: "Pod dating · altar reveal"
 format_caption: "Fourteen episodes including wedding episode and reunion"
 cast_size: 30

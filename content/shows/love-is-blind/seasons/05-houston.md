@@ -12,6 +12,7 @@ eyebrow: "Aired fall 2023 · The format in cruise mode"
 lede: "The fifth season runs the pod experiment competently and without strain, with a cast that engages the format on reasonable terms. Houston is a solid, unhurried Love Is Blind season — durable enough to repeat without reinvention, but not a creative high point."
 pull: "Solid and unhurried — the format doing what it does."
 take_h2: "Competent, and comfortable with it."
+shape_h2: "The founding format's final ten."
 format_summary: "Pod dating · altar reveal"
 format_caption: "A confident, steady run on a settled format"
 cast_size: 30
