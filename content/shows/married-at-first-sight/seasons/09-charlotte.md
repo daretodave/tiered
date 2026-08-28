@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 9
 title: "Charlotte"
-canonical_position: 12
+canonical_position: 13
 take_h2: "A third expert swap."
 premiere_date: "2019-06-12"
 location: "Charlotte, North Carolina"

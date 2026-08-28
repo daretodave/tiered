@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 19
 title: "Austin"
-canonical_position: 4
+canonical_position: 5
 take_h2: "The format leaves Lifetime for the first time."
 premiere_date: "2025-10-23"
 location: "Austin, Texas"

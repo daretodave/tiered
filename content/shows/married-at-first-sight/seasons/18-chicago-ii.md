@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 18
 title: "Chicago II"
-canonical_position: 19
+canonical_position: 20
 take_h2: "A second trip to Chicago, nothing else moves."
 premiere_date: "2024-10-15"
 location: "Chicago, Illinois"

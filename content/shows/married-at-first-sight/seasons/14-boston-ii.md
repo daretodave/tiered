@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 14
 title: "Boston II"
-canonical_position: 18
+canonical_position: 19
 take_h2: "A second stop in a familiar city."
 premiere_date: "2022-01-05"
 location: "Boston, Massachusetts"

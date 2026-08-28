@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 3
 title: "Atlanta"
-canonical_position: 3
+canonical_position: 4
 take_h2: "The experiment leaves New York."
 premiere_date: "2015-12-01"
 location: "Atlanta, Georgia"

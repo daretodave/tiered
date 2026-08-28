@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 8
 title: "Philadelphia"
-canonical_position: 16
+canonical_position: 17
 take_h2: "The same panel, one more time."
 premiere_date: "2019-01-01"
 location: "Philadelphia, Pennsylvania"

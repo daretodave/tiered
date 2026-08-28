@@ -2,7 +2,7 @@
 show: married-at-first-sight
 number: 17
 title: "Denver"
-canonical_position: 5
+canonical_position: 6
 take_h2: "The longest season yet, and its first rematch."
 premiere_date: "2023-10-18"
 location: "Denver, Colorado"
