@@ -845,6 +845,18 @@ See `plan/AUDIT.md` standing row for the four authored fragments.
 937 → 933 remaining corpus-wide. Next actionable Rule 2 check
 remains the weekly sweep, due 2026-08-30.
 
+**Rule 2 stall, 2026-08-28 tick (cloud march):** re-checked the gap
+table against the 2026-08-23 full sweep's own findings — every one
+of the 43 gap-slots (post this tick's own married-at-first-sight
+correction above) remains starred confirmed-but-unaired. No row
+actionable. Fell through to the established issue-#758 workaround:
+continued the `shape_h2` (pass-131) drain, `southern-charm` (11/11
+→ 0/11 files, tied with `below-deck-mediterranean` at 11 remaining,
+tie-broken by older est_year — southern-charm 2014). See
+`plan/AUDIT.md` standing row for the eleven authored fragments.
+777 → 766 remaining corpus-wide. Next actionable Rule 2 check
+remains the weekly sweep, due 2026-08-30.
+
 ## Sweep notes (2026-08-09, fifth full pass)
 
 Fifth full weekly sweep (`/march` Step 1.5, Rule 1a, cloud march) —
