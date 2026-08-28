@@ -9,6 +9,7 @@ ep_count: 19
 aired_year: 2022
 eyebrow: "Aired spring/summer 2022 · The first spinoff crossover"
 take_h2: "A couple crosses over from the spinoff universe."
+shape_h2: "Nineteen episodes, matching season eight."
 lede: "Season nine arrives after the franchise's longest gap between flagship seasons, and brings the first couple to cross over from a spinoff series rather than a prior flagship run. Six new couples round out the rest of the cast."
 pull: "The visa clock now runs across the whole franchise, not just one show."
 format_summary: "K-1 visa · 90-day countdown"

@@ -9,6 +9,7 @@ ep_count: 20
 aired_year: 2023
 eyebrow: "Aired fall 2023-winter 2024 · A second spinoff crossover"
 take_h2: "The crossover pattern becomes routine."
+shape_h2: "One more episode than season nine."
 lede: "Season ten continues the crossover pattern season nine started, bringing in a couple from Before the 90 Days alongside six new pairs. The season ties the franchise's episode-count record for its longest single run yet."
 pull: "The crossover casting move that felt novel a season ago now reads as routine."
 format_summary: "K-1 visa · 90-day countdown"

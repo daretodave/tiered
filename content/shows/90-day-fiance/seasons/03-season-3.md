@@ -9,6 +9,7 @@ ep_count: 12
 aired_year: 2015
 eyebrow: "Aired fall 2015 · The six-couple format settles in"
 take_h2: "The format running on repeat."
+shape_h2: "Twelve episodes, same length as season two."
 lede: "Season three keeps the six-couple structure the prior season introduced, with partners arriving from a fresh mix of countries on the same ninety-day visa clock. There's no major structural wrinkle here — just the format finding a steady rhythm."
 pull: "The visa clock keeps running the same way it did the season before, comfortable rather than urgent."
 format_summary: "K-1 visa · 90-day countdown"

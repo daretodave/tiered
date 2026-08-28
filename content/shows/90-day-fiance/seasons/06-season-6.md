@@ -9,6 +9,7 @@ ep_count: 13
 aired_year: 2018
 eyebrow: "Aired fall/winter 2018 · The last all-new cast for years"
 take_h2: "No returning faces, all in on the clock."
+shape_h2: "Thirteen episodes, same length as season five."
 lede: "Six brand-new couples run the visa clock with zero returning faces from prior seasons, a full-strength ensemble the franchise could have skipped in favor of a comeback pairing. It's the last time the flagship casts an entirely fresh slate for nearly a decade."
 pull: "Six strangers-to-the-audience couples, no comeback storyline to lean on."
 format_summary: "K-1 visa · 90-day countdown"

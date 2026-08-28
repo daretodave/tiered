@@ -9,6 +9,7 @@ ep_count: 13
 aired_year: 2017
 eyebrow: "Aired fall 2017 · The franchise's first-ever comeback couple"
 take_h2: "A couple gets a second act."
+shape_h2: "Thirteen episodes, one fewer than season four."
 lede: "Season five brings back a couple from the prior season alongside four new pairs, the franchise's first time returning to a relationship the audience already knows. The format has to prove a second ninety-day stretch can matter as much as the first."
 pull: "The first time the show trusts the audience to care about a couple twice."
 format_summary: "K-1 visa · 90-day countdown"

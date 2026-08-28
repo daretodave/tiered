@@ -9,6 +9,7 @@ ep_count: 15
 aired_year: 2019
 eyebrow: "Aired fall 2019-winter 2020 · The ensemble grows to seven"
 take_h2: "Seven couples, one bigger clock."
+shape_h2: "Two more episodes than season six."
 lede: "Season seven expands the ensemble past six couples for the first time, running seven relationships through the visa clock at once. The bigger cast means more countries and more paperwork stress running in parallel, a stress test the format passes well."
 pull: "The season that proves the visa clock can hold seven relationships at once."
 format_summary: "K-1 visa · 90-day countdown"

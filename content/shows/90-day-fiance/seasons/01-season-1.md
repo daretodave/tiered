@@ -9,6 +9,7 @@ ep_count: 6
 aired_year: 2014
 eyebrow: "Aired winter 2014 · The format's original run"
 take_h2: "The clock the franchise still runs on."
+shape_h2: "Six episodes, no earlier season to match."
 lede: "The show that starts the whole 90 Day Fiancé universe. An American citizen, a fiancé(e) arriving from abroad, and a K-1 visa that gives them ninety days to marry or lose it — five couples navigate that clock before the franchise becomes an entire TLC universe of spinoffs."
 pull: "Every spinoff in the franchise still runs on the clock this season sets going."
 format_summary: "K-1 visa · 90-day countdown"

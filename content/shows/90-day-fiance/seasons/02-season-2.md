@@ -9,6 +9,7 @@ ep_count: 12
 aired_year: 2014
 eyebrow: "Aired fall 2014 · Six couples, the ensemble scales up"
 take_h2: "The six-couple template locks in."
+shape_h2: "Twelve episodes, double season one."
 lede: "Six couples replace season one's five, setting the ensemble size the franchise leans on for years. Partners arrive from across the globe, each running the same K-1 visa clock at once, testing whether the format holds at a larger scale."
 pull: "The scale-up that turns a format into a machine built to run every couple through the same ninety days at once."
 format_summary: "K-1 visa · 90-day countdown"

@@ -8,6 +8,7 @@ premiere_date: 2025-02-16
 aired_year: 2025
 eyebrow: "Aired winter-summer 2025 · The franchise's first three-person cast"
 take_h2: "The couple premise stops meaning two people."
+shape_h2: "Fifteen cast members, the biggest ensemble yet."
 lede: "Season eleven does something the format has never tried: cast a three-person unit as a single storyline alongside six traditional couples. It's a genuine change to the premise — 90 Day Fiancé has always run on two people and a visa clock."
 pull: "Ninety days, one visa clock, and for the first time, three people trying to make it work."
 format_summary: "K-1 visa · 90-day countdown"

@@ -9,6 +9,7 @@ ep_count: 19
 aired_year: 2020
 eyebrow: "Aired winter 2020-2021 · Production spanning a pandemic"
 take_h2: "Comeback couples become the norm."
+shape_h2: "Four more episodes than season seven."
 lede: "Season eight pairs four new couples with three returning ones, cementing the comeback-couple device as a permanent fixture rather than a one-off. Production stretches across the pandemic window, and the season closes with a two-part Tell All."
 pull: "Four new couples, three returning — the comeback format now runs as a habit."
 format_summary: "K-1 visa · 90-day countdown"

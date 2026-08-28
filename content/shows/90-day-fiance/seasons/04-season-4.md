@@ -8,6 +8,7 @@ ep_count: 14
 aired_year: 2016
 eyebrow: "Aired fall 2016 · The franchise's spinoff era begins"
 take_h2: "The universe starts expanding."
+shape_h2: "Back down to five couples this year."
 lede: "Season four narrows back to five couples, but the real news lands alongside it: the same month this season premieres, TLC launches 90 Day Fiancé: Happily Ever After, the franchise's first spinoff."
 pull: "The season that stops being just a show and becomes the center of a franchise."
 format_summary: "K-1 visa · 90-day countdown"
