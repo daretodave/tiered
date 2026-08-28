@@ -14,6 +14,7 @@ filming_caption: "Valentines Mansion in east London"
 premiere_caption: "BBC Two · Tuesday evenings"
 episodes_caption: "Eight episodes, two more than the pilot's six-episode run."
 host_caption: "Mel Giedroyc and Sue Perkins, second year at the tent flap"
+shape_h2: "Eight episodes, still calibrating."
 ---
 
 The early series the show was still figuring out at length. The run stretched to eight episodes from the pilot's six, the tent moved to Valentines Mansion in east London, and the broadcast started attracting a steady BBC Two audience. Mary Berry and Paul Hollywood read a touch more cautious than they later would, and Mel Giedroyc and Sue Perkins are still calibrating the warmth that defined their tenure. The format is mid-stretch rather than settled.

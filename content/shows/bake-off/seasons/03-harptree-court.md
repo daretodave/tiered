@@ -14,6 +14,7 @@ filming_caption: "Harptree Court, Somerset, the show's new home"
 premiere_caption: "BBC Two · Tuesday evenings"
 episodes_caption: "Ten episodes — the length every series since has kept."
 host_caption: "Mel Giedroyc and Sue Perkins, tighter double-act"
+shape_h2: "Ten episodes, a new home."
 ---
 
 The series the tent found its home. After two earlier runs working out what the show wanted to be, Bake Off fixed itself to Harptree Court in Somerset. The casting class is sharper than the prior years, Mary Berry and Paul Hollywood read more confident in their judging cadence, and Mel Giedroyc and Sue Perkins are working a tighter double-act. A useful study in a young format consolidating into something the audience returns to weekly.

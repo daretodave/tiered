@@ -14,6 +14,7 @@ filming_caption: "Welford Park, Berkshire, Channel 4 year three"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Unbroken since Harptree, ten episodes mark an eighth year running."
 host_caption: "Sandi Toksvig's final year at the tent flap"
+shape_h2: "Ten episodes, one final pairing."
 ---
 
 The final series with Sandi Toksvig at the tent flap. Toksvig and Noel Fielding work their last run as a presenter pair, Prue Leith and Paul Hollywood anchor a bench that reads fully settled, and the casting class arrives confident in what Bake Off is by this point. The technical challenges land with the bench's familiar discipline, and the broadcast trusts the room. A useful study in a settled-era series doing exactly what the format asks of it.
