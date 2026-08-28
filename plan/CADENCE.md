@@ -783,7 +783,6 @@ new-show creation is locked to the biweekly show-add clock.
 | below-deck-down-under | 4/5 | 1* |
 | 90-day-fiance | 11/12 | 1* |
 | american-ninja-warrior | 17/18 | 1* |
-| married-at-first-sight | 19/20 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
 | dragrace-uk | 7/8 | 1* |
 | rhom | 7/8 | 1* |
@@ -803,6 +802,23 @@ new-show creation is locked to the biweekly show-add clock.
 | summer-house | 10/11 | 1* |
 | traitors-uk | 4/5 | 1* |
 | top-chef | 23/24 | 1* |
+
+**Table correction, 2026-08-28 tick (cloud march):** `married-at-
+first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
+sweep) was stale — Season 20 ("Seattle") was fully filed and
+canon-rebased by an earlier tick today (commit `2f88f65e` /
+`63b5ef8c`, both season-fill + audit-tick, prior to this tick's
+start) but that tick's audit-tick commit only flipped `plan/
+AUDIT.md`, never touched this table. The show is genuinely 20/20
+now (verified: `content/shows/married-at-first-sight/seasons/
+20-seattle.md` exists with full editorial block, and `canon.md`
+ranks all twenty seasons — `meth_who_p`/`meth_when_p` both read
+"all twenty now ranked"). Row removed; gap table now 43 shows, not
+44. Every remaining row re-checked against this fact pattern this
+tick — no other row shows the same drift (spot-checked the two
+other calendar.yml entries with recently-passed finale dates,
+`rhoa` S17 and `masterchef-australia` S18, both already correctly
+reflected as fully filed prior to this tick).
 
 **Rule 2 stall, 2026-08-24 tick (cloud march):** re-checked the gap
 table against the 2026-08-23 full sweep's own findings (7 batches
