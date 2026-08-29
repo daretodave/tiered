@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The format at cruising altitude — polished, confident, exactly on brief"
 lede: "Season four ran the format with ease. The celebrity roster delivered, the panel's chemistry was warm and professionally competitive, and Nick Cannon ran the hosting with the confidence of a settled entertainer. No surprises, no rough edges."
 pull: "The format doing precisely what it promised, without stretching in any direction."
+shape_h2: "Second fall premiere, panel unchanged."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Settled mid-run format"
 cast_size: 4

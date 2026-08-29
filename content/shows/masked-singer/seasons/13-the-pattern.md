@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "Spring 2025 — the format running on its most established template"
 lede: "Season thirteen arrived in spring 2025 as The Masked Singer's most self-knowing cycle: a format that had run thirteen times, a panel settled across years of shared stage, and a disguise conceit the audience understood well enough to arrive as active participants."
 pull: "The format at its most self-knowing — the pattern as the product."
+shape_h2: "Second straight eleven-episode season."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Thirteenth cycle — established era"
 cast_size: 4

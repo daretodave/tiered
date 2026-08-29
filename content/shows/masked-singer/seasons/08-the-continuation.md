@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The format entering its fourth calendar year with full confidence"
 lede: "By season eight, The Masked Singer had been on air for nearly four years — long enough that its identity needed no explanation and its audience knew exactly what they came for. The costume design stayed ambitious, the celebrity roster kept the guessing conceit honest."
 pull: "Four years in, the format still knew the calibration that made it work."
+shape_h2: "Fourth fall premiere, panel intact."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Eighth cycle — expansion-era close"
 cast_size: 4

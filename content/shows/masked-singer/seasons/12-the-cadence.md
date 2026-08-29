@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "Back to fall — the show's two-per-year rhythm in full stride"
 lede: "Season twelve returned The Masked Singer to its fall premiere slot in September 2024, completing a spring-fall cadence that marked the show's deepest established-era run. The panel dynamic, the disguise format, and the Fox stage all ran as familiar fixtures."
 pull: "Two cycles a year, same show — the cadence is the structure now."
+shape_h2: "Eleven episodes, down from twelve."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Twelfth cycle — established era"
 cast_size: 4

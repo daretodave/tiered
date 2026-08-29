@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The format's fifth year — a fixture rather than an event"
 lede: "Season nine opened the established era with a format that no longer needed to announce itself. Five years in, The Masked Singer ran as a reliable Fox fixture, the panel dynamic settled, the guessing conceit still drawing an audience that came back for it."
 pull: "A show that ran in its fifth year without novelty and didn't need it."
+shape_h2: "Fourth winter premiere since debut."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Ninth cycle — established-era opener"
 cast_size: 4

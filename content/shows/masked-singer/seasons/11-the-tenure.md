@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "Six years in — the format's tenure as its own credential"
 lede: "Season eleven arrived in spring 2024 as The Masked Singer moved deeper into its established era. The same panel, the same Fox stage, the same disguise conceit that had run since 2019 — the format's staying power by this point a credential in itself."
 pull: "A show deep enough in its run that the tenure is the argument."
+shape_h2: "McCarthy's first season as Wahlberg."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Eleventh cycle — established era"
 cast_size: 4

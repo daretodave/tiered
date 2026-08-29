@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "Winter 2026 — the first panel change in thirteen seasons"
 lede: "Season fourteen opened with a two-hour premiere and, for the first time in the show's history, a new voice at the panel table — Rita Ora stepping into the chair Nicole Scherzinger had held since the format's debut. The disguise conceit stayed exactly as familiar as ever."
 pull: "Thirteen cycles of an unbroken panel, and then it broke."
+shape_h2: "Three theme nights, the Insider twist."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Fourteenth cycle — first panel change in show history"
 cast_size: 4

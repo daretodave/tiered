@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "Ten seasons without an identity shift — the format's durability argument"
 lede: "Season ten marked the double-digit milestone for a format that reached it without reinventing itself. The Masked Singer at ten seasons is recognizably the show that debuted in 2019 — same panel, same structure, same hook — and that continuity is the argument."
 pull: "Ten seasons, same show — and that's the argument, not the criticism."
+shape_h2: "Fifth fall premiere, panel original."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Tenth cycle — double-digit milestone"
 cast_size: 4

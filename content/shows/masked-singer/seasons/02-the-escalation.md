@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The season the format became a television event"
 lede: "Returning with a bigger celebrity roster and a panel that had found its chemistry, season two made the guessing conceit feel genuinely suspenseful rather than theatrical. The disguise held. The reveals surprised. The format stopped being a novelty and became appointment viewing."
 pull: "The disguise conceit finally had stakes — the panel had real arguments to make and real reasons to be wrong."
+shape_h2: "Twelve episodes, first fall date."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Expanded to 12 episodes"
 cast_size: 4

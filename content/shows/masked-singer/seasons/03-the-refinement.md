@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The founding era's most ambitious production — costume design at its peak"
 lede: "Season three pushed the theatrical ambition further than the first two cycles, with costume craftsmanship that crossed from elaborate prop into genuine production design. The celebrity roster's vocal caliber kept the panel's guesses genuinely uncertain through the back half."
 pull: "The costumes stopped being disguises and started being characters — and the show was better for it."
+shape_h2: "Second winter premiere, costumes escalate."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Production design reaches early peak"
 cast_size: 4

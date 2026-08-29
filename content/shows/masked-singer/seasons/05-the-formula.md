@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The founding run's clearest demonstration of format durability"
 lede: "By season five, The Masked Singer had its rhythm fully established — costume design at a consistent level, a celebrity roster calibrated to the panel's guessing range, and a host entirely at home in the format. Season five is the show at its proven, dependable altitude."
 pull: "Five seasons in, the format had its stride — confident, consistent, and comfortable with what it was."
+shape_h2: "First March premiere, rhythm settled."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Fifth cycle — format fully established"
 cast_size: 4

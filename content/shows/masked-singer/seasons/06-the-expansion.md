@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The format committing fully to theatrical spectacle"
 lede: "Season six arrived with the most elaborate costumes the show had mounted, and a celebrity roster that gave the panel genuine guessing work across thirteen episodes. The format scaled its production ambitions without losing the disguise conceit at the center."
 pull: "The costumes grew, the spectacle expanded, and the format held its shape."
+shape_h2: "Thirteen episodes, the longest cycle."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Sixth cycle — expansion-era premiere"
 cast_size: 4

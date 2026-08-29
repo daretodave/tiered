@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "A winter premiere that proved the format didn't need the fall calendar"
 lede: "Season seven launched in February, testing whether the format could hold audience attention outside the fall slot. The panel's chemistry was the season's engine, and the guessing conceit proved it didn't need seasonal urgency to function."
 pull: "The format ran in February and worked just fine — that's a durability argument all on its own."
+shape_h2: "Third winter premiere, twelve again."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Seventh cycle — mid-season winter premiere"
 cast_size: 4

@@ -11,6 +11,7 @@ host: "Nick Cannon"
 eyebrow: "The season that introduced a format American television hadn't seen"
 lede: "Celebrities in elaborate costumes, voices as their only identification, performing for a panel that had to guess who was beneath the mask. Season one arrived fully formed, the concept clicking from the first episode without the usual debut-season adjustment period."
 pull: "A format that required no bedding-in — it worked from the first episode."
+shape_h2: "Ten episodes, the shortest run."
 format_summary: "Celebrity costume singing competition"
 format_caption: "Original format — 10 episodes"
 cast_size: 4
