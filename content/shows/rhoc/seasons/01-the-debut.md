@@ -10,6 +10,7 @@ ep_count: 7
 eyebrow: "Where the Housewives franchise began — Bravo, March 2006"
 lede: "Five women in a California gated community, before anyone knew what a Housewives franchise was. RHOC arrives without a template to follow — the casting is its whole argument, and the Orange County setting does more social work than the production understood it was doing."
 pull: "The show that invented the format didn't know it was inventing anything. That's what makes the debut worth watching."
+shape_h2: "Seven episodes, the show's shortest run."
 premiere_caption: "Bravo · March 2006"
 filming_caption: "Coto de Caza gated community, Orange County"
 format_summary: "Social reality"

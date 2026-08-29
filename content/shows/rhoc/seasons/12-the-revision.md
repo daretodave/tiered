@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "Aired summer 2017 · Transition era begins, cast searches for its next shape"
 lede: "Without Heather Dubrow, the peak-era social register drops. Lydia McLaughlin returns, Peggy Sulahian joins, and the show begins searching for its next configuration. Genuine chemistry appears in places; the working unit isn't assembled yet."
 pull: "The peak era gives way — the show searching for the cast it's becoming."
+shape_h2: "Twenty episodes, one fewer again."
 premiere_caption: "Bravo · July 2017"
 filming_caption: "Orange County · transition era begins, cast in flux"
 format_summary: "Social reality"

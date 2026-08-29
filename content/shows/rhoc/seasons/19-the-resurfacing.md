@@ -12,6 +12,7 @@ episodes: 20
 eyebrow: "Aired summer 2025 · Gretchen Rossi returns after twelve years away"
 lede: "The revival-era cast holds together for another run, with one headline addition: Gretchen Rossi returns as a friend of the housewives after twelve years away, giving the season its most-asked-for comeback story."
 pull: "A steady cast gets a genuine jolt — the show's longest-teased comeback finally happens, threaded into a run that already knows its own rhythms."
+shape_h2: "Twenty episodes, two more than season eighteen."
 format_summary: "Real Housewives social reality format"
 cast_size: 7
 cast_size_caption: "Seven primary housewives, plus a marquee friend return"

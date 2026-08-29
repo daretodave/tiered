@@ -12,6 +12,7 @@ episodes: 18
 eyebrow: "Aired fall 2022 · Tamra Judge returns, revival era deepens"
 lede: "Tamra Judge's return after a six-season absence, alongside Heather Dubrow and Shannon Beador, reassembles a social geometry with deep franchise history and fresh edges."
 pull: "The revival era finding its voice — familiar faces, accumulated history, and a cast with real things to say to each other."
+shape_h2: "Eighteen episodes, one more than season sixteen."
 format_summary: "Real Housewives social reality format"
 cast_size: 6
 cast_size_caption: "Six primary housewives; one high-profile return"

@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "Aired spring 2010 · The founding era closes, cast consolidates"
 lede: "Season five closes the founding era with its longest episode run and a cast settled into its social configuration. Competing loyalties run in parallel across more episodes than the early seasons managed. The Coto de Caza world at its most familiar and sustained."
 pull: "The founding era's final chapter — more episodes, more cast configuration, and a social world about to shift registers entirely."
+shape_h2: "Eighteen episodes, a six-episode jump from season four."
 premiere_caption: "Bravo · March 2010"
 filming_caption: "Orange County · founding era's longest run, 18 episodes"
 format_summary: "Social reality"

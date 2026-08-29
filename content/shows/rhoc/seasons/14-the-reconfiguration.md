@@ -12,6 +12,7 @@ episodes: 19
 eyebrow: "Aired fall 2019 · Cast chemistry building after the S13 rebuild"
 lede: "Emily Simpson and Gina Kirschenheiter return with better footing, and Braunwyn Windham-Burke arrives as the season's boldest new variable."
 pull: "The transition era finding its cast — not there yet, but closer than the season before."
+shape_h2: "Nineteen episodes, three shorter than season thirteen."
 format_summary: "Real Housewives social reality format"
 cast_size: 6
 cast_size_caption: "Six primary housewives"
