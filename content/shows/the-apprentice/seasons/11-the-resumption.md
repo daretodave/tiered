@@ -11,6 +11,7 @@ eyebrow: "Aired spring 2011 · NBC · celebrity era, fourth cycle"
 lede: "The celebrity format returns after one season away, pulling cast members from music, sports, and reality television into the same charity-stakes structure the show settled into three cycles earlier."
 pull: "The celebrity era back in its groove — no reinvention, just the format running the way it runs now."
 take_h2: "Back in its groove."
+shape_h2: "Twelve episodes, a spring return."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, fourth cycle"
 cast_size: 16

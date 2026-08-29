@@ -11,6 +11,7 @@ eyebrow: "Aired fall 2004 · NBC · the format's first follow-through"
 lede: "The debut had built the grammar; season two applied it with more authority. Tighter tasks, a clearer boardroom logic, and a casting pool that pushed the competitive range further."
 pull: "The format scales cleanly — a follow-through that proved the debut was not a lucky draft."
 take_h2: "Proof, not luck."
+shape_h2: "Seventeen episodes, a fall premiere."
 format_summary: "Business competition · expanded cast"
 format_caption: "first refinement, founding era"
 cast_size: 18

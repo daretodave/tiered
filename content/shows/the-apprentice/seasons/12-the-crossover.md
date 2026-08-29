@@ -11,6 +11,7 @@ eyebrow: "Aired winter 2012 · NBC · celebrity era, fifth cycle"
 lede: "A fifth celebrity cycle draws even further from other reality franchises, with a cast leaning on pop music and reality-TV names — an early sign of the show cross-pollinating with the wider genre it once stood apart from."
 pull: "The celebrity era stops competing with other reality shows for attention and starts casting from them directly."
 take_h2: "Casting drifts toward reality."
+shape_h2: "Fourteen episodes, two more than before."
 format_summary: "Celebrity competition · charity stakes"
 format_caption: "celebrity era, fifth cycle"
 cast_size: 16

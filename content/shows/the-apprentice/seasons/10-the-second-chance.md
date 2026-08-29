@@ -11,6 +11,7 @@ eyebrow: "Aired fall 2010 · NBC · civilian format's last stand"
 lede: "The format returns to civilian hopefuls after three celebrity-cast runs, casting contestants whose careers the Great Recession had upended. Rewards shift from lavish prizes to meetings with real business leaders."
 pull: "The founding format's argument, made one more time, before the show leaves it behind for good."
 take_h2: "Civilian format's last word."
+shape_h2: "Thirteen episodes, back up by one."
 format_summary: "Business competition · second-chance cast"
 format_caption: "civilian format returns, final installment"
 cast_size: 16

@@ -11,6 +11,7 @@ eyebrow: "Aired spring 2013 · NBC · celebrity era, all-returning cast"
 lede: "Every contestant this season has competed in a prior celebrity cycle, back for a second run at the boardroom. The first season in the show's history to cast without a single newcomer."
 pull: "A structural first — the whole cast has already played this game once."
 take_h2: "Every player, a returnee."
+shape_h2: "Thirteen episodes, an all-returnee cast."
 format_summary: "Celebrity competition · all-returning cast"
 format_caption: "celebrity era, All-Stars format"
 cast_size: 14

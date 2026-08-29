@@ -11,6 +11,7 @@ eyebrow: "Aired spring 2009 · NBC · celebrity era, second edition"
 lede: "Sixteen celebrities return for a second charity-stakes run, split into Athena and KOTU, until a depleted men's roster forces a mid-season reshuffle. A double-elimination episode follows."
 pull: "A season the show has to rebuild on the fly, mid-run."
 take_h2: "Rebuilding on the fly."
+shape_h2: "Twelve episodes, a mid-run reshuffle."
 format_summary: "Celebrity competition · gender teams"
 format_caption: "celebrity era, second edition"
 cast_size: 16

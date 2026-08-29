@@ -11,6 +11,7 @@ eyebrow: "Aired winter 2007 · NBC · founding era's final civilian season"
 lede: "Two teams built through an alternating draft, one living in a Beverly Hills mansion, the other in a powerless campsite called Tent City. The founding era's last civilian season, and its most stunt-driven entry."
 pull: "The founding era's closing gambit — the format leaning on spectacle just as hard as strategy."
 take_h2: "Leaning into spectacle."
+shape_h2: "Fifteen episodes, an eight-and-ten split."
 format_summary: "Business competition · draft-picked teams"
 format_caption: "founding era, mansion vs. Tent City"
 cast_size: 18

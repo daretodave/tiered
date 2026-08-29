@@ -11,6 +11,7 @@ eyebrow: "Aired winter 2006 · NBC · founding era's westward move"
 lede: "The show moved production to Los Angeles and kept its business-task format intact. A different coast, a different visual register, and a cast still competing on the merits — the founding era's closing chapter."
 pull: "The founding era's last stand before the celebrity pivot changed what the show was."
 take_h2: "New coast, same rules."
+shape_h2: "Sixteen episodes, a February premiere."
 format_summary: "Business competition · LA production"
 format_caption: "founding era, westward relocation"
 cast_size: 18
