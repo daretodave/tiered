@@ -10,6 +10,7 @@ host: Julie Chen Moonves
 eyebrow: "Aired summer 2020 · The second all-star cast"
 lede: "The franchise's second all-star season, and the first since 2006. Sixteen returning houseguests spanning the show's full history walk back into a house produced inside a strict bubble. Twist-light by design — the cast is the format."
 pull: "The Second All-Stars is the season that argues the modern run has its own legends. Twist-light, cast-heavy, and built on more accumulated franchise text than any house before it."
+shape_h2: "One twist, sixteen returnees carrying the rest."
 format_summary: "16 returnees · all-star cast, twist-light"
 format_caption: "Safety Suite the only standing weekly wrinkle"
 filming_caption: "Studio City soundstage, strict bubble production"

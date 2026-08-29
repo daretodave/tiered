@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2010 · The Brigade alliance forms"
 lede: "The summer a four-man alliance walked into the house, named itself on the second night, and ran the season's social engine clean enough to become franchise text. The Brigade is the clearest piece of alliance lore Big Brother had produced to that point."
 pull: "The Brigade summer is the one long-running fans cite when they want to argue that a clean alliance can carry a Big Brother season. It is the cleanest piece of alliance lore the show has produced."
+shape_h2: "Thirty episodes, a four-man pact by night two."
 format_summary: "13 houseguests · the Saboteur twist"
 format_caption: "a public-vote saboteur works the room from the inside"
 filming_caption: "Studio City soundstage"

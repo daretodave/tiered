@@ -10,6 +10,7 @@ host: Julie Chen Moonves
 eyebrow: "Aired summer 2022 · The Festie Besties twist"
 lede: "A twist-dense single summer under a Pinwheel theme. Festie Besties binds houseguests into small groups that share safety and nomination fate, while the BB Motel sends players backstage to a hidden Dyre Fest game."
 pull: "Festie Besties is the modern era stacking its conceits into one mechanism — a binding-group twist that decides who falls together, layered with a backstage game few houses have tried."
+shape_h2: "Small groups share one fate, until they don't."
 format_summary: "16 houseguests · bound groups share their fate"
 format_caption: "Festie Besties plus the BB Motel / Dyre Fest"
 filming_caption: "Studio City soundstage, Pinwheel theme"

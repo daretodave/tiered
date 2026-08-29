@@ -10,6 +10,7 @@ host: Julie Chen Moonves
 eyebrow: "Aired 2023 · The 25th-anniversary season"
 lede: "The 25th-anniversary season, and the longest run in franchise history. The BB Multiverse drops a new weekly universe on the house — each one a power or a curse — under a Comicverse theme that frames the whole summer as a milestone."
 pull: "The Multiverse is the anniversary swing — the longest Big Brother ever ran, with a new universe rewriting the rules every week. Ambitious by design, and the streaming era's anchor text."
+shape_h2: "Forty-six episodes, a new rule dropped weekly."
 format_summary: "16+ houseguests · weekly Multiverse power or curse"
 format_caption: "Comicverse theme; longest season in franchise history"
 filming_caption: "Studio City soundstage, Comicverse theme"

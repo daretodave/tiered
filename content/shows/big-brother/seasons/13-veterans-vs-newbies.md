@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2011 · The first mass-returnee summer"
 lede: "The franchise's first big returnee season — three pairs of veterans from prior runs come back into the house alongside the new cast, and the show has to figure out, in real time, how returning players change what Big Brother can do on a single summer."
 pull: "Veterans vs. Newbies is the season the franchise stopped treating its alumni as nostalgia and started treating them as cast — the move every later returnee season is borrowed from."
+shape_h2: "Fourteen houseguests, paired off, then set loose."
 format_summary: "14 houseguests · three returning pairs"
 format_caption: "veterans paired with the new cast on Day One"
 filming_caption: "Studio City soundstage"

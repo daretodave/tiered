@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2017 · The Temptation twist"
 lede: "The summer the producers built the season around a single returning houseguest and a goddess statue rigged with three temptations the public could grant. The Den of Temptation is the modern-era anchor — the franchise's argument that the modern run has its own canonical text."
 pull: "Den of Temptation is the season the modern era's argument lives in. A single returnee, a public-vote temptation engine, and a cast playing under a thicker layer of mythology than any prior summer."
+shape_h2: "Three temptations, released one at a time."
 format_summary: "16 houseguests · one returnee, three temptations"
 format_caption: "the goddess statue dispenses public-vote powers"
 filming_caption: "Studio City soundstage"

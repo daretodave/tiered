@@ -10,6 +10,7 @@ host: Julie Chen Moonves
 eyebrow: "Aired summer 2019 · The Camp Comeback twist"
 lede: "The summer the producers kept evicted houseguests in the building. Camp Comeback parks them in a back room with a live path back into the game, and the Whacktivity comps seed secret powers across the cast from the first week."
 pull: "Camp Comeback is the season the franchise reached hardest for a re-entry engine — and the run around it is part of Big Brother text for reasons the edit had to work around."
+shape_h2: "Eviction night loses its finality, for a while."
 format_summary: "16 houseguests · evicted players stay, with a way back"
 format_caption: "Camp Comeback room plus Whacktivity secret powers"
 filming_caption: "Studio City soundstage"

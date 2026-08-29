@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2012 · The Coaches experiment"
 lede: "The summer the producers turned four returning veterans into coaches and asked the franchise a sharper structural question — can a Big Brother cast carry mentors and players in the same room. The format's most deliberate structural experiment of the returnee era."
 pull: "The Coaches twist is what Big Brother looks like when the producers ask the show to think about itself as a system. The result is the franchise's most deliberate structural experiment of the era."
+shape_h2: "Four coaches draft, then convert to players."
 format_summary: "16 houseguests · 4 coaches, 12 newbies"
 format_caption: "veterans mentor the new cast, then enter the game"
 filming_caption: "Studio City soundstage"
