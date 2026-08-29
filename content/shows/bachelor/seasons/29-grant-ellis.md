@@ -10,6 +10,7 @@ host: Jesse Palmer
 eyebrow: "Aired winter 2025 · Second Black Bachelor"
 lede: "The franchise's second Black Bachelor takes the mansion in the fastest turnaround the show has staged — cast the same year he appeared on the preceding Bachelorette season. Nine episodes, the shortest run in years, and a first stop in Edinburgh, Scotland."
 pull: "Ellis is the fastest turnaround the format has staged — a Bachelorette contestant becomes the lead in the same year, doubling the franchise's representation precedent along the way."
+shape_h2: "Edinburgh: new ground, brisk pace."
 format_summary: "Traditional format, nine-episode run"
 format_caption: "compressed season, fastest-ever lead turnaround"
 filming_caption: "Agoura Hills · Edinburgh, Madrid, Dominican Republic"

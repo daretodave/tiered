@@ -10,6 +10,7 @@ host: Jesse Palmer
 eyebrow: "Aired winter 2024 · The modern peak"
 lede: "A tennis professional takes the mansion in the season widely read as the modern era's high-water mark. The producers cast the deepest, most chemistry-forward field of the post-2016 run, and the production confidence shows from the limo line forward."
 pull: "Graziadei is the season the modern Bachelor finally clicked. Every casting choice and travel beat reads as a franchise operating at full confidence."
+shape_h2: "Eleven brisk, twist-free episodes."
 format_summary: "Traditional rose ceremonies, no twist"
 format_caption: "standard cadence, full travel circuit"
 filming_caption: "Agoura Hills · Malta, Montreal, Tulum"

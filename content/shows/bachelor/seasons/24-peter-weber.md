@@ -10,6 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2020 · Commercial-pilot lead"
 lede: "A commercial airline pilot takes the mansion after a sister-franchise run the prior summer. The producers revive the aerial-date economy a pilot lead unlocks — helicopter pickups read differently when the Bachelor flies them himself — and stage the role hard."
 pull: "Weber is the season the franchise returned to its pilot-lead playbook a decade after first trying it, and the production leaned into the aviation frame harder the second time."
+shape_h2: "A widening three-country travel arc."
 format_summary: "Extended finale cut, longer episode runtime"
 format_caption: "the aviation frame, staged hard"
 filming_caption: "Agoura Hills · Cleveland, Costa Rica, Australia"
