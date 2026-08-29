@@ -17,6 +17,7 @@ format_summary: "11 teams of 2 · back to basics"
 cast_size: 22
 cast_size_caption: "11 teams of 2"
 eyebrow: "Filmed late 2018 · Aired October 2020"
+shape_h2: "Mega Leg debuts, Yield returns."
 lede: "A back-to-basics standard season filmed in late 2018, its broadcast pushed from spring to fall 2020 — carrying the Mega Leg and the first Yield since 2007."
 pull: "A season that sat finished on a shelf for nearly two years, then aired into a very different world unchanged."
 watch_list:

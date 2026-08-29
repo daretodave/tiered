@@ -18,6 +18,7 @@ format_summary: "11 teams of 2 · all-stars"
 cast_size: 22
 cast_size_caption: "11 teams of 2"
 eyebrow: "Aired spring 2014 · The second full all-stars edition"
+shape_h2: "Second all-stars field, Wales debut."
 lede: "Eleven returning teams came back for the franchise's second full all-stars run, pulled from across the show's history into a route that finally set down in Wales."
 pull: "A returnee field that already knows where the airport lines slow them down — the kind of chemistry only shared race history can produce."
 watch_list:

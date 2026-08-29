@@ -16,6 +16,7 @@ format_summary: "11 teams of 2 · blind-date casting"
 cast_size: 22
 cast_size_caption: "6 couples + 5 blind-date pairs"
 eyebrow: "Aired spring 2015 · The blind-date casting experiment"
+shape_h2: "Five blind-date pairs, six couples."
 lede: "Five pairs of strangers met their racing partners for the first time at the starting line, run alongside six established couples on a route through Asia, Europe, and Africa."
 pull: "A casting concept that makes the first leg a first date — strangers learning each other and the format at the same time."
 watch_list:

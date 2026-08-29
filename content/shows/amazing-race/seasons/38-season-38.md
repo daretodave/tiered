@@ -17,6 +17,7 @@ format_summary: "13 teams of 2 · Big Brother crossover"
 cast_size: 26
 cast_size_caption: "13 teams of 2"
 eyebrow: "Aired fall 2025 · Big Brother crossover field"
+shape_h2: "Big Brother crossover, Hoorn start."
 lede: "A historic franchise crossover: thirteen teams of two, every one carrying at least one former US Big Brother houseguest, racing a global route."
 pull: "The first season to stock the entire field with Big Brother veterans — a cross-franchise concept the format had never run at full scale."
 watch_list:

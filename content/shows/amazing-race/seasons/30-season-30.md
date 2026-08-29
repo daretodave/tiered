@@ -16,6 +16,7 @@ format_summary: "11 teams of 2 · Head-to-Head debut"
 cast_size: 22
 cast_size_caption: "11 teams of 2"
 eyebrow: "Aired winter 2018 · Head-to-Head debuts"
+shape_h2: "Head-to-Head debuts, first partner swaps."
 lede: "Twelve legs compressed into an eight-episode broadcast, with the new Head-to-Head challenge and the first partner swaps the format had ever run."
 pull: "The season that handed the format two new tools — and made teams race each other directly for the first time."
 watch_list:

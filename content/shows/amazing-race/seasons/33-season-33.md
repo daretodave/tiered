@@ -16,6 +16,7 @@ format_summary: "11 teams of 2 · interrupted production"
 cast_size: 22
 cast_size_caption: "11 teams of 2"
 eyebrow: "Filming began 2020 · Resumed and aired 2022"
+shape_h2: "Nineteen-month pause, chartered resumption."
 lede: "The most logistically extraordinary season the franchise has run: filming stopped after three legs in early 2020 and didn't resume for roughly nineteen months."
 pull: "A season the world interrupted mid-route — paused for nineteen months, then restarted with a chartered jet and a reshuffled field."
 watch_list:

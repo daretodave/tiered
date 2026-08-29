@@ -16,6 +16,7 @@ format_summary: "12 teams of 2 · Mega Legs"
 cast_size: 24
 cast_size_caption: "12 teams of 2"
 eyebrow: "Aired fall 2022 · First international opening"
+shape_h2: "First non-US start, twelve teams."
 lede: "The first season to start the US race outside the United States — twelve teams launched from Munich, the widest field the show had run since its fifteenth outing."
 pull: "The race finally left home to start: a Munich launch, a twelve-team field, and a Mega Leg structure that lets a single leg run two hours."
 watch_list:

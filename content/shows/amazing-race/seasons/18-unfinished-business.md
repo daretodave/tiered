@@ -9,6 +9,7 @@ host: Phil Keoghan
 format_changes: [all-returnee-cast]
 canonical_position: 14
 eyebrow: "Aired spring 2011 · All-returnee cast"
+shape_h2: "Second returnee outing, eleven teams."
 lede: "The franchise's second full returnee outing, four years after All-Stars. Eleven teams from prior seasons came back to take another swing at the route, with the editing room leaning into the histories the audience already had with them."
 pull: "A second test of the all-stars argument — the template re-pressured by a different generation of returnees."
 premiere_caption: "CBS · Sunday 8/7c"
