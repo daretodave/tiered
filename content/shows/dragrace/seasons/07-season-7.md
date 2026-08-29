@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 17
 eyebrow: "Aired spring 2015 · Logo · the last Logo run"
 lede: "The final Logo-era season before the VH1 jump. A larger cast and a slicker edit, but a workroom whose chemistry never fully catches the way the seasons around it did."
+shape_h2: "A cooler, uneven workroom."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "last Logo season"

@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 18
 eyebrow: "Aired winter 2009 · Logo · the pilot season"
 lede: "The franchise before it knew what it was. A short, heavily stylized first run with a soft-focus filter, a tiny budget, and a cast figuring the rules out alongside the producers."
+shape_h2: "A soft-filtered pilot season."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format · pilot"
 format_caption: "soft-filter era"

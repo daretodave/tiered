@@ -10,6 +10,7 @@ format_changes: [remote-produced-finale]
 canonical_position: 5
 eyebrow: "Aired spring 2020 · VH1 · the remote-finale season"
 lede: "A strong VH1 cast whose run collided with the world shutting down — the finale was produced remotely, the first time the franchise had to rebuild its biggest hour from scratch."
+shape_h2: "A strong contest, interrupted."
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format · remote finale"
 format_caption: "first remotely produced finale"

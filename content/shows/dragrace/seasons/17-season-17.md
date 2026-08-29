@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 15
 eyebrow: "Aired winter 2025 · MTV · the most recent flagship"
 lede: "The newest U.S.-flagship run, a standard-format MTV-era season carrying the franchise's settled production scale and a fresh modern cast through the familiar workroom-and-runway shape."
+shape_h2: "No structural swing this year."
 premiere_caption: "MTV · Friday 8/7c"
 format_summary: "Standard format · modern era"
 format_caption: "current production scale"

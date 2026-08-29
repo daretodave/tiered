@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 4
 eyebrow: "Aired spring 2018 · VH1 · the franchise at full scale"
 lede: "The first VH1 season built entirely at the new scale, with the production confidence the network move had been promising. A cast deep on personality and a runway operating at its highest budget yet."
+shape_h2: "The franchise's highest budget yet."
 premiere_caption: "VH1 · Thursday 8/7c"
 format_summary: "Standard format"
 format_caption: "VH1 at full confidence"

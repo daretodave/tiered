@@ -10,6 +10,7 @@ format_changes: [opening-lip-sync-structure]
 canonical_position: 13
 eyebrow: "Aired winter 2021 · VH1 · the restructured premiere"
 lede: "The season that opened with an unusual premiere lip-sync structure, reworking how the first episode functions. A large VH1 cast filmed under tightened production conditions."
+shape_h2: "Filmed under tightened conditions."
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format · new premiere"
 format_caption: "restructured opening"

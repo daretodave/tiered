@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 6
 eyebrow: "Aired winter 2012 · Logo · the format clicks"
 lede: "The Logo era hits its stride. A cast with real range across comedy and craft, a Snatch Game that lands, and a workroom that runs at a temperature the earlier seasons only reached in flashes."
+shape_h2: "Panel and cast finally align."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "Logo at full stride"

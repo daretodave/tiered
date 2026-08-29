@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 16
 eyebrow: "Aired winter 2010 · Logo · the filter comes off"
 lede: "The season the show drops the soft filter and starts to look like itself. Bigger cast, sharper editing, and a workroom that finally runs hot enough to carry an hour."
+shape_h2: "A hotter, confrontational workroom."
 premiere_caption: "Logo · Monday 10/9c"
 format_summary: "Standard format"
 format_caption: "last pre-Visage panel"

@@ -10,6 +10,7 @@ format_changes: [two-part-premiere]
 canonical_position: 10
 eyebrow: "Aired winter 2023 · MTV · the two-part premiere"
 lede: "The largest premiere cast in franchise history, split across a two-part opening that reworks how the first stretch of the season unfolds. The first full MTV-era flagship year."
+shape_h2: "Episodes shrink to sixty minutes."
 premiere_caption: "MTV · Friday 8/7c"
 format_summary: "Standard format · two-part premiere"
 format_caption: "largest premiere cast yet"

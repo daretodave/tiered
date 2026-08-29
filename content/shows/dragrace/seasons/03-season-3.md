@@ -10,6 +10,7 @@ format_changes: [michelle-visage-joins-panel]
 canonical_position: 12
 eyebrow: "Aired winter 2011 · Logo · Visage joins the panel"
 lede: "The season Michelle Visage takes the main panel chair, and the judging finds the rhythm it keeps for the next decade. The cast expands and the runway categories sharpen with it."
+shape_h2: "The judging rhythm locks in."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "first Visage-panel season"

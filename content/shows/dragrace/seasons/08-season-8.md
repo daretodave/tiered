@@ -9,6 +9,7 @@ host: RuPaul Charles
 canonical_position: 11
 eyebrow: "Aired spring 2016 · Logo · the polished farewell"
 lede: "Logo's last produced season, and its most visually finished. A smaller, glossier cast and a runway-forward edit that previews the scale VH1 would soon bring."
+shape_h2: "A glossy handoff season."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "Logo's glossiest year"
