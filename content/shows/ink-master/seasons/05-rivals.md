@@ -12,6 +12,7 @@ format_changes: ["Real-life rivals paired against each other", "Social-vote fina
 eyebrow: "Aired fall 2014 · the first themed spinoff format"
 lede: "Ink Master's first full format pivot pairs real-life tattoo-artist rivals against each other, turning personal history into competitive fuel. Social-media voting adds a new wrinkle: enough audience support can lock in a finalist spot outright."
 pull: "Real rivalries, not random casting — the season bets that people who already have something to prove make for the sharpest television and the sharpest ink."
+shape_h2: "Sixteen episodes, the longest order yet."
 format_summary: "Rivals pairing · social-vote finalist lock"
 format_caption: "Real-life rivals paired against each other; a vote could lock a finals spot"
 premiere_caption: "Spike · fall 2014"

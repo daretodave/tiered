@@ -11,6 +11,7 @@ format_changes: ["Live 24-hour finale introduced"]
 eyebrow: "Aired fall 2012 · Spike's second season"
 lede: "Ink Master's second season keeps the format's stripped-down elimination pressure intact, but closes on a genuine first: a live finale built around a 24-hour tattoo, split into 6-hour blocks and judged in New York in real time."
 pull: "A live 24-hour finale, split into 6-hour blocks — the first time the show let the clock run in real time in front of an audience."
+shape_h2: "Thirteen episodes, three longer than the debut."
 format_summary: "Elimination tattoo challenges · live finale"
 format_caption: "First season to close on a live, real-time finale broadcast"
 premiere_caption: "Spike · Tuesday nights"

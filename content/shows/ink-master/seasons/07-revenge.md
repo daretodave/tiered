@@ -11,6 +11,7 @@ format_changes: ["Rookies vs. returning veterans", "Face-off eliminations", "Two
 eyebrow: "Aired spring 2016 · rookies vs. returning veterans"
 lede: "Season Seven splits the cast between eight first-timers and eight returning veterans, then adds a new wrinkle: some eliminations now settle by direct artist-vs-artist face-off. The finale runs long, stretching across 48 hours in two parts."
 pull: "Two juries, one finale — the judges still rule, but for the first time the artists sent home earlier get a say in who makes the last cut."
+shape_h2: "Thirteen episodes, three shorter than before."
 format_summary: "Rookies vs. veterans · face-off eliminations"
 format_caption: "8 new contestants vs. 8 returning veterans; a 48-hour two-part finale"
 premiere_caption: "Spike · spring 2016"

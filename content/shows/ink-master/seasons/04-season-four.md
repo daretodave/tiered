@@ -11,6 +11,7 @@ format_changes: ["Facebook/Twitter voting expanded", "Winners could place a riva
 eyebrow: "Aired winter–spring 2014 · Spike's fourth season"
 lede: "Season Four expands the audience-voting experiment across Facebook and Twitter, adds a new power play — winning an elimination round lets an artist put a rival straight into the bottom — and returns to a live broadcast for the finale, branded Ink Master Live."
 pull: "Winning a challenge no longer just protects you — it lets you send someone else to the bottom."
+shape_h2: "Thirteen episodes, a third year unchanged."
 format_summary: "Elimination tattoo challenges · live finale"
 format_caption: "Winners could place a rival in the bottom; finale aired as \"Ink Master Live\""
 premiere_caption: "Spike · spring 2014"

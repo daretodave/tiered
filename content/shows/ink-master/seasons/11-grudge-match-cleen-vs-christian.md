@@ -12,6 +12,7 @@ format_changes: ["Two veteran coaches draft rival teams via blind critique", "Te
 eyebrow: "Aired summer–fall 2018 · Paramount Network's second flagship season"
 lede: "Season Eleven pits two Ink Master veterans, Christian Buckingham and James \"Cleen Rock One\" Steinke, against each other as coaches. Each builds a nine-artist team through blind critiques, and the live finale closes with a coach-versus-coach 'Grudge Match.'"
 pull: "Two former competitors turned coaches, a live head-to-head finale between them — the personal history the season is named for finally gets settled on camera."
+shape_h2: "Sixteen episodes, two coaches drafting rivals."
 format_summary: "Coach draft · live Grudge Match finale"
 format_caption: "Two coaches draft 9-artist teams via blind critique; team size used as sabotage"
 premiere_caption: "Paramount Network · fall 2018"

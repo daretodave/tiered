@@ -11,6 +11,7 @@ format_changes: ["First all-rookie cast since Season Twelve", "DJ Tambe joins th
 eyebrow: "Aired fall 2023 · an all-rookie field"
 lede: "Season Fifteen resets the cast entirely: fifteen new artists, no returning veterans, the first fully rookie field since Season Twelve. DJ Tambe joins the panel, the field narrows through a mid-season reshuffle, and the finale runs three rounds testing different styles."
 pull: "Fifteen new artists, no veterans to lean on, and a three-round finale that asks for range instead of one signature style."
+shape_h2: "Ten episodes, unchanged from before."
 format_summary: "All-rookie field · three-round finale"
 format_caption: "15 rookies split into teams, reshuffled mid-season"
 premiere_caption: "Paramount+ · fall 2023"

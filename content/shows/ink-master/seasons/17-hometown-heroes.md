@@ -11,6 +11,7 @@ format_changes: ["Hometown/regional-pride season theme", "Second season ever to 
 eyebrow: "Aired fall 2025 · hometown pride on the line"
 lede: "Season Seventeen builds its theme around hometown pride, fifteen artists carrying their home region into every challenge. The finale runs four finalists deep, only the second time the format has ever expanded past its usual three-person close."
 pull: "Fifteen artists, one hometown each to represent, and a rare four-finalist close that gives the season one extra round to prove itself."
+shape_h2: "Ten episodes, a fourth season this length."
 format_summary: "Hometown theme · four-finalist finale"
 format_caption: "15 artists compete under a regional hometown-pride theme"
 premiere_caption: "Paramount+ · fall 2025"

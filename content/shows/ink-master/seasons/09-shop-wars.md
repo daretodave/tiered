@@ -11,6 +11,7 @@ format_changes: ["Shop-vs-shop team format", "Tag-team elimination", "Winning sh
 eyebrow: "Aired summer 2017 · shop vs. shop"
 lede: "Shop Wars rebuilds the format around the tattoo shop rather than the individual artist. Nine rookie shops face nine veteran shops in a tag-team elimination structure, and for the first time the prize belongs to the shop, not to any single artist."
 pull: "The trophy stops belonging to a person — for the first time, an entire shop wins or loses together."
+shape_h2: "Sixteen episodes, an eighteen-artist field again."
 format_summary: "Shop vs. shop · tag-team elimination"
 format_caption: "9 rookie shops vs. 9 veteran shops; the winning shop takes the title as a team"
 premiere_caption: "Spike · summer 2017"
