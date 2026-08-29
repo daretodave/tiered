@@ -11,6 +11,7 @@ format_changes: []
 eyebrow: "Aired Jan–Mar 2018 · Eleven couples, a steady scale-up"
 lede: "Season five holds the format at a similarly large scale to the year before — eleven couples across 32 episodes — with the same three-expert panel returning. One notable casting choice: a participant from the previous season gets matched again, a first for the format."
 take_h2: "A familiar face, retested."
+shape_h2: "Same scale, one season later."
 pull: "Eleven couples and a familiar face back in the experiment — proof the format was willing to test its own rules."
 format_summary: "Eleven couples · returning-participant casting"
 format_caption: "The cast includes a participant matched again from the prior season"

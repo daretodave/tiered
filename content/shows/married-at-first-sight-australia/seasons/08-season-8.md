@@ -11,6 +11,7 @@ format_changes: ["Alessandra Rampolla joins the expert panel, replacing Stratfor
 eyebrow: "Aired Feb–Apr 2021 · A refreshed expert panel"
 lede: "Season eight introduces Alessandra Rampolla to the expert panel, replacing Trisha Stratford alongside John Aiken and Mel Schilling, the lineup that holds for years after. Nine couples open the season, growing to twelve with mid-season additions across 32 episodes."
 take_h2: "A refreshed panel's debut."
+shape_h2: "Nine couples, growing to twelve."
 pull: "A new expert joins the panel, and the format proves it can absorb real change without losing its shape."
 format_summary: "Twelve couples · Alessandra Rampolla joins the panel"
 format_caption: "A new expert joins the panel for the first time since season two"

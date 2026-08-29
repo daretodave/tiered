@@ -11,6 +11,7 @@ format_changes: ["Mid-season rematch mechanic adds an 11th pairing"]
 eyebrow: "Aired Jan–Apr 2017 · Ten couples, the format goes big"
 lede: "Season four is the format's biggest leap yet — five couples become ten, and the episode order triples to 29. A mid-season rematch mechanic lets two participants whose original matches ended try again with each other, the format's first real structural twist."
 take_h2: "The rematch twist."
+shape_h2: "Episode count nearly quadruples."
 pull: "Ten couples and a rematch mechanic — the format finds its scale and its first real structural twist."
 format_summary: "Ten couples · mid-season rematch mechanic"
 format_caption: "A new rematch twist lets two participants re-pair mid-season"

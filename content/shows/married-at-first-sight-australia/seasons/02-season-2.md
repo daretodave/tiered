@@ -11,6 +11,7 @@ format_changes: ["Mel Schilling joins the expert panel"]
 eyebrow: "Aired April 2016 · Four couples, the expert panel takes shape"
 lede: "Season two brings back the blind-marriage format with four couples and introduces the three-expert panel that would anchor the show for years — John Aiken, Mel Schilling, and Trisha Stratford, working together for the first time."
 take_h2: "The panel's first shape."
+shape_h2: "The format's shortest order."
 pull: "Four couples and a settled expert panel — the format's first real test of whether the premise could repeat."
 format_summary: "Four couples · three-expert panel debuts"
 format_caption: "The show's now-familiar expert trio forms for the first time"

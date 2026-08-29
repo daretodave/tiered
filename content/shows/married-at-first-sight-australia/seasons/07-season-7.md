@@ -11,6 +11,7 @@ format_changes: ["Trisha Stratford's final season on the expert panel"]
 eyebrow: "Aired Feb–Apr 2020 · Trisha Stratford's final season"
 lede: "Season seven closes out Trisha Stratford's run on the expert panel and casts a same-sex couple for the first time since marriage equality became law — a milestone distinct from season three's earlier first. Around twelve couples run across 36 episodes."
 take_h2: "The founding panel's farewell."
+shape_h2: "Episode count steps back."
 pull: "The last season with the format's founding panel intact, and a milestone casting choice that matched the moment."
 format_summary: "About twelve couples · Stratford's final season"
 format_caption: "Trisha Stratford's last season on the expert panel"

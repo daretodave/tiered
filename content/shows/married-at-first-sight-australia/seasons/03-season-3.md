@@ -11,6 +11,7 @@ format_changes: []
 eyebrow: "Aired August 2016 · Five couples, a franchise-first pairing"
 lede: "Season three expands to five couples, its first real growth spurt, and casts the franchise's first same-sex couple — a real milestone for the format on Australian television. The three-expert panel returns intact, running the same steady process on a slightly bigger scale."
 take_h2: "A franchise-first pairing."
+shape_h2: "Cast grows, structure holds."
 pull: "Five couples, one first-of-its-kind pairing — the format proves it can grow and still feel new."
 format_summary: "Five couples · franchise-first same-sex pairing"
 format_caption: "The cast expands to five couples, including a milestone first"
