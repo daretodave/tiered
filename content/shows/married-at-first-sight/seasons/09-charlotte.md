@@ -10,6 +10,7 @@ ep_count: 15
 eyebrow: "Panel change, third time over · Charlotte"
 lede: "Season 9 swaps in Dr. Viviana Coles for Dr. Jessica Griffin, the third panel change since the show left its founding four-expert lineup. Schwartz and Roberson stay on, matching three new couples in Charlotte across roughly fifteen episodes."
 pull: "A new specialist, the same two returning experts, a new city. By the third swap, the pattern itself has become the format's real constant."
+shape_h2: "Second straight season at fifteen."
 premiere_caption: "Lifetime · June 2019"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Third panel change since founding lineup"

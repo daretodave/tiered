@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "Second visit, unchanged panel · Boston II"
 lede: "Season 14 returns to Boston for the first time since Season 6, with the Schwartz-Roberson-Coles panel and five-couple format carrying over unchanged from Houston. The season runs from a January premiere through a May finale, one of its longer stretches yet."
 pull: "Another repeat city, another season where nothing structural moves. By Boston II, the format is running purely on muscle memory."
+shape_h2: "January to a May finale."
 premiere_caption: "Lifetime · January 2022"
 format_summary: "Blind matching · five couples"
 format_caption: "Second visit to Boston"

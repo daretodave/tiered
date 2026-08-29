@@ -10,6 +10,7 @@ ep_count: 15
 eyebrow: "First season outside the Northeast · Atlanta"
 lede: "Season 3 moves the experiment south, the first time the show leaves the New York/New Jersey market it built its premise in. Three new couples are matched by the same four-expert panel that ran the first two seasons — its last season together before a shakeup."
 pull: "New York wasn't a fluke. Atlanta proves the format's premise works anywhere the experts are willing to take the risk."
+shape_h2: "Same fifteen-episode length, new market."
 premiere_caption: "FYI & A&E · December 2015"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Founding expert panel's final season"

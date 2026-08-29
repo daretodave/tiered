@@ -10,6 +10,7 @@ ep_count: 25
 eyebrow: "A new episode record, and the panel narrows to three · Denver"
 lede: "Season 17 runs twenty-five episodes, breaking Nashville's record, and narrows the panel to three as DeVon Franklin exits. It's also the first season to try an in-experiment rematch, pairing a new participant with one groom partway through."
 pull: "Twenty-five episodes tops Nashville's record by two. Denver pushes the format further than any season before it — in runtime, in panel shape, and in a rematch mechanic the show had never tried."
+shape_h2: "Six months, its longest stretch."
 premiere_caption: "Lifetime · October 2023"
 format_summary: "Blind matching · 25 episodes"
 format_caption: "New episode record, panel narrows to three"

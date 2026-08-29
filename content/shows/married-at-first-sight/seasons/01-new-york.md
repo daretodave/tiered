@@ -10,6 +10,7 @@ ep_count: 11
 eyebrow: "The season that started it all · New York"
 lede: "Three couples agree to marry strangers picked by a panel of relationship experts, with no courtship and no meeting beforehand. Season 1 sets the format's whole premise in place — a legal wedding and weeks of daily married life before anyone can just call it off."
 pull: "The premise had never been tried on American television. Season 1 plays it straight, and the strangeness of the format is the whole appeal."
+shape_h2: "Eleven episodes, the shortest order."
 premiere_caption: "FYI · July 2014"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Matched by experts, married before meeting"

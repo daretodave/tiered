@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "The cast finally grows · Washington, D.C."
 lede: "Season 10 is the first to expand past three couples — five pairs are matched this time, with the show's two-hour episodes stretching the season to roughly seventeen installments. The panel of Schwartz, Roberson, and Coles carries over unchanged from Charlotte."
 pull: "More couples means more matches to get right, more relationships to track at once. Washington is the biggest structural swing the format has taken since it left New York."
+shape_h2: "Two more couples than usual."
 premiere_caption: "Lifetime · January 2020"
 format_summary: "Blind matching · five couples"
 format_caption: "First expansion past three couples"

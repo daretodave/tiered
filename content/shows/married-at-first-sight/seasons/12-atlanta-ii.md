@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "Back to Atlanta, deep in a six-season order · Atlanta II"
 lede: "Season 12 returns the format to Atlanta for the first time since Season 3, part of a six-season renewal announced for the show. The Schwartz-Coles-Roberson panel and five-couple format both carry over from New Orleans for a three-hour premiere event."
 pull: "Same city as Season 3, a totally different show around it by now. Atlanta II is the format revisiting old ground with a panel and cast size neither of the founding seasons had."
+shape_h2: "A three-hour premiere event."
 premiere_caption: "Lifetime · January 2021"
 format_summary: "Blind matching · five couples"
 format_caption: "Second visit to Atlanta"

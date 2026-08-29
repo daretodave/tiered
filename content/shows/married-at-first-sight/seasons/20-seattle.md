@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "First-ever Seattle season, the show's largest cast · Seattle"
 lede: "Season 20 is the first to film in Seattle, and it fields the largest cast in the show's history — seven couples instead of the recent five. The expert panel is rebuilt from three to two, with Paul C. Brunson and Dr. Lisa Paz taking over the matching process."
 pull: "Seven couples, two experts, one new city — Seattle stacks more format change into one season than the show has tried since it left New York for the first time."
+shape_h2: "Group sessions make their return."
 premiere_caption: "Peacock · July 2026"
 format_summary: "Blind matching · largest cast, two-expert panel"
 format_caption: "First Seattle season, panel narrows to two experts"

@@ -10,6 +10,7 @@ ep_count: 15
 eyebrow: "A full panel overhaul · Miami"
 lede: "Season 4 moves to South Florida and rebuilds the expert panel almost entirely — only Dr. Pepper Schwartz stays from the founding lineup. Rachel DeAlto and Pastor Calvin Roberson join for the first time, bringing a different read on the matching process to three new couples."
 pull: "Three of four experts are new. Miami is the season that tests whether the format survives a change in who's doing the matching."
+shape_h2: "Third straight season, fifteen episodes."
 premiere_caption: "FYI & A&E · July 2016"
 format_summary: "Blind matching · legal marriage"
 format_caption: "New expert panel debuts"

@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "Second visit, unchanged panel · Chicago II"
 lede: "Season 18 returns to Chicago for the first time since Season 5, keeping the three-expert panel and five-couple format exactly as Denver left them. Running twenty episodes from an October premiere through a two-part reunion, it's the format's most settled stretch yet."
 pull: "Chicago II doesn't change a single structural piece — same panel, same cast size, same city the show already proved works. It's the format running purely on its own momentum."
+shape_h2: "Five fewer episodes than Denver."
 premiere_caption: "Lifetime · October 2024"
 format_summary: "Blind matching · five couples"
 format_caption: "Second visit to Chicago"

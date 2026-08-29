@@ -10,6 +10,7 @@ ep_count: 16
 eyebrow: "Another expert change · Boston"
 lede: "Season 6 swaps in Dr. Jessica Griffin, a Boston-based psychologist, for Rachel DeAlto — the second panel change in three seasons. Schwartz and Roberson stay on, matching three new couples in Boston across sixteen episodes of a now-familiar format."
 pull: "A new expert, a new city, the same premise running smoother than ever. Boston is the format settled into its rhythm."
+shape_h2: "One episode shorter than Chicago."
 premiere_caption: "Lifetime · January 2018"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Second panel change in three seasons"

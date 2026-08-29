@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "Panel holds through a longer season · Houston"
 lede: "Season 13 keeps the five-couple format and the Schwartz-Coles-Roberson panel intact, running for roughly four months between its July premiere and its close in November. It's the third straight season built around the larger cast size the format adopted in Washington, D.C."
 pull: "The five-couple structure isn't a novelty anymore by Houston — it's just how the show runs now."
+shape_h2: "Four months, July to November."
 premiere_caption: "Lifetime · July 2021"
 format_summary: "Blind matching · five couples"
 format_caption: "Third straight five-couple season"

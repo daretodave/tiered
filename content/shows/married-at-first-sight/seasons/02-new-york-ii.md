@@ -10,6 +10,7 @@ ep_count: 15
 eyebrow: "Back for round two · New York"
 lede: "Season 2 stays close to home, matching three new couples across the New York City area and northern New Jersey only months after the first season aired. The same four-expert panel returns, and the show adds four extra episodes to give the process more room to unfold."
 pull: "No format changes yet — just the same experts, the same city, and three new couples willing to test the premise a second time."
+shape_h2: "Four more episodes than debut."
 premiere_caption: "FYI & A&E · March 2015"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Same expert panel, same home city"

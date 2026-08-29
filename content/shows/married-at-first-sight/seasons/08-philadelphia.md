@@ -10,6 +10,7 @@ ep_count: 15
 eyebrow: "Griffin's final season on the panel · Philadelphia"
 lede: "Season 8 keeps the same three-expert panel — Schwartz, Roberson, and Griffin — for a second straight season, matching three new couples in Philadelphia. It turns out to be Griffin's last season before a roster change the following year."
 pull: "The format runs exactly as it did in Dallas. Philadelphia's only real distinction, in hindsight, is being the closing chapter for this particular panel."
+shape_h2: "Two episodes shorter than Dallas."
 premiere_caption: "Lifetime · January 2019"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Panel's final season together"

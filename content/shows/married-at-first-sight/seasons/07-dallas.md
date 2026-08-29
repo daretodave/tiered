@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "No changes at the top · Dallas"
 lede: "Season 7 keeps the Boston panel intact — Schwartz, Roberson, and Griffin all return, matching three new couples in Dallas across roughly seventeen episodes. It's the first season since the founding lineup broke up with no panel change of any kind."
 pull: "No new expert, no new format wrinkle — just the same three matchmakers running the process again in a new city. Dallas is the format on cruise control."
+shape_h2: "Back up to seventeen episodes."
 premiere_caption: "Lifetime · July 2018"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Unchanged panel, second season running"

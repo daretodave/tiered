@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "Filmed and aired across a longer arc · New Orleans"
 lede: "Season 11 keeps the five-couple format and panel from Washington, but the broadcast runs roughly four months instead of the usual two, as the show adjusts to pandemic conditions. Five new couples marry in a megasized New Orleans run of about seventeen episodes."
 pull: "The format doesn't change. The calendar around it does — New Orleans airs on a longer, slower rhythm than anything the show had tried before."
+shape_h2: "Four months instead of two."
 premiere_caption: "Lifetime · July 2020"
 format_summary: "Blind matching · five couples"
 format_caption: "Extended broadcast schedule"

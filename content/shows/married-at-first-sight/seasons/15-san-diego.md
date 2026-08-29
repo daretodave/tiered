@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "First four-expert panel · San Diego"
 lede: "Season 15 expands the panel from three experts to four for the first time — Dr. Viviana Coles exits, and DeVon Franklin and Dr. Pia Holec join Schwartz and Roberson at the table. It's the biggest panel change since Miami's overhaul back in Season 4."
 pull: "Not a swap this time — an expansion. San Diego is the first season with four experts weighing in on every match."
+shape_h2: "Six straight seasons at seventeen."
 premiere_caption: "Lifetime · July 2022"
 format_summary: "Blind matching · four-expert panel"
 format_caption: "Panel expands to four experts"

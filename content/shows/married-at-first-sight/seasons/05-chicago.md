@@ -10,6 +10,7 @@ ep_count: 17
 eyebrow: "The longest season yet · Chicago"
 lede: "Season 5 expands to seventeen episodes, two more than any prior season, giving the experts' matches more time to develop. The show also consolidates onto Lifetime alone after four seasons of simulcasting on FYI and A&E, with a settled panel for three new Chicago couples."
 pull: "More episodes, one network, a panel that's finally had a season to settle in together. Chicago is the format at its most confident so far."
+shape_h2: "Seventeen episodes, the longest yet."
 premiere_caption: "Lifetime · April 2017"
 format_summary: "Blind matching · legal marriage"
 format_caption: "Expanded to 17 episodes"
