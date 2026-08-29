@@ -10,6 +10,7 @@ location: Colorado (Denver, Boulder, Telluride, Aspen)
 eyebrow: "Aired late 2017 · The high-altitude road show"
 lede: "Top Chef goes back on the road, this time across Colorado — Denver, Boulder, Telluride, Aspen. Padma Lakshmi hosts and Tom Colicchio runs the judge's table as the season runs the regional-immersive grammar through mountain kitchens and shifting altitude."
 pull: "The road show at altitude — a state season testing whether elevation changes the cooking."
+shape_h2: "Fourteen episodes, the fourth straight season at this length."
 format_summary: "Road show · Colorado"
 format_caption: "multi-city, high-altitude kitchens"
 cast_size: 15

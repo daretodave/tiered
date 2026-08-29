@@ -10,6 +10,7 @@ location: Boston, Massachusetts
 eyebrow: "Aired late 2014 · New England pantries"
 lede: "Top Chef heads to New England with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season uses Boston's restaurant scene and the wider New England pantry — Atlantic seafood, Yankee traditions, immigrant kitchens — as its working register."
 pull: "The franchise asking what New England cooks like when it cooks for the camera."
+shape_h2: "Fourteen episodes, three shorter than the four seasons before it."
 format_summary: "Standard format"
 format_caption: "New England pantry and Boston restaurants"
 cast_size: 16

@@ -10,6 +10,7 @@ location: San Francisco, California
 eyebrow: "Aired spring 2006 · The pilot run"
 lede: "The first Top Chef. Bravo's culinary competition opens in San Francisco with Katie Lee hosting and Tom Colicchio at the judge's table. The format is recognizable but unfinished — no Last Chance Kitchen, no road show, no Padma yet."
 pull: "The pilot run. Top Chef finding its feet in a city that knew what it wanted to be eaten."
+shape_h2: "Eleven episodes, the shortest run the show has aired."
 format_summary: "Pilot · Standard"
 format_caption: "first season, pre-Padma host chair"
 cast_size: 12

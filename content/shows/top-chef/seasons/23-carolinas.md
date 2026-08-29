@@ -10,6 +10,7 @@ location: Charlotte, NC & Greenville, SC
 eyebrow: "Aired spring 2026 · Staged across the Carolinas"
 lede: "A Charlotte-centered season with stops in Greenville, Asheville and the U.S. National Whitewater Center. Kristen Kish's third season as host, Colicchio and Simmons return. A casting wrinkle sits alongside a Last Chance Kitchen rule change that delays how chefs get back in."
 pull: "A regional immersive shaped as much by geography as by Last Chance Kitchen's redrawn stakes — every early elimination now carries a longer wait before it can be answered."
+shape_h2: "Fourteen episodes, twelve seasons now without an episode-count change."
 format_summary: "Regional immersive"
 format_caption: "Last Chance Kitchen's re-entry point moves later this season"
 cast_size: 15

@@ -10,6 +10,7 @@ location: California (multiple cities)
 eyebrow: "Aired late 2015 · The road-show callback"
 lede: "Top Chef goes back on the road. A multi-city California season with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season borrows the regional-immersive idea Texas introduced and runs it across the state — wine country, central coast, Los Angeles."
 pull: "The road-show callback. Top Chef borrowing from Texas to test whether a state can do what a city does."
+shape_h2: "Fourteen episodes, unchanged as the show goes on the road in California."
 format_summary: "Road show · California"
 format_caption: "multi-city, regional immersive"
 cast_size: 17

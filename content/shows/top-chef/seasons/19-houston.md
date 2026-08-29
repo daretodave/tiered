@@ -10,6 +10,7 @@ location: Houston & Galveston, Texas
 eyebrow: "Aired spring 2022 · The space-city immersive"
 lede: "Top Chef returns to Texas, this time staged in Houston and Galveston. Padma Lakshmi hosts and Tom Colicchio runs the judge's table as the regional immersive runs through a sprawling, diverse food city and its gulf coast."
 pull: "The space-city season — a regional immersive on Houston's sprawl, diversity and gulf-coast pantry."
+shape_h2: "Fourteen episodes, the eighth straight season at this length."
 format_summary: "Road show · Houston"
 format_caption: "Houston and Galveston, gulf-coast briefs"
 cast_size: 15

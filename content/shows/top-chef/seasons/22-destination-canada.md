@@ -10,6 +10,7 @@ location: Toronto, Ontario & Calgary/Canmore, Alberta
 eyebrow: "Aired spring 2025 · The first Canada-set U.S. season"
 lede: "The first time the U.S. Top Chef flagship left the country, staged across Toronto and the Calgary–Canmore corridor. Kristen Kish's second season as host, Tom Colicchio at a supersized judge's table. With the run complete, the first-Canada-set argument is what holds."
 pull: "A season that measures itself in movement — a border crossing, a city brief, a mountain corridor, and a finals runway that carries all of it forward."
+shape_h2: "Fourteen episodes, unchanged as the flagship leaves the U.S. for the first time."
 format_summary: "International road show"
 format_caption: "Toronto and Alberta, supersized eps"
 cast_size: 15

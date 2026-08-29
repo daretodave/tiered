@@ -10,6 +10,7 @@ location: Charleston, South Carolina
 eyebrow: "Aired late 2016 · The split-cast returnee twist"
 lede: "Top Chef plants itself in Charleston with a casting wrinkle — a roster of new chefs cooking alongside a set of returning veterans brought back to raise the bench. Padma Lakshmi hosts, Tom Colicchio runs the judge's table, and Lowcountry cooking sets the regional brief."
 pull: "The season that mixed fresh blood with returnees and let Lowcountry cooking do the editorial work."
+shape_h2: "Fourteen episodes, holding steady as returnees join the new chefs."
 format_summary: "New chefs vs. returnees"
 format_caption: "split cast, Lowcountry briefs"
 cast_size: 16

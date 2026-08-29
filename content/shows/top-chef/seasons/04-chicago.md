@@ -10,6 +10,7 @@ location: Chicago, Illinois
 eyebrow: "Aired spring 2008 · Midwest kitchens on the front foot"
 lede: "Top Chef heads to Chicago with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season works the city's restaurant infrastructure hard, and the cast brings the most consistent technical bench the show had recruited by this point."
 pull: "The season Top Chef stopped looking for big-city glamour and started taking the kitchen seriously."
+shape_h2: "Fourteen episodes, matching the season before it exactly."
 format_summary: "Standard format"
 format_caption: "Chicago's restaurant culture front and center"
 cast_size: 16

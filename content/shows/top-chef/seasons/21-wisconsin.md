@@ -10,6 +10,7 @@ location: Wisconsin (Milwaukee, Madison)
 eyebrow: "Aired spring 2024 · Kristen Kish's hosting debut"
 lede: "Top Chef enters a new era. Kristen Kish takes the host chair for the first time, replacing Padma Lakshmi, with Tom Colicchio still at the judge's table. The season runs the regional immersive across Wisconsin — Milwaukee and Madison."
 pull: "The Kish-era opener — a new host, a familiar table, and a regional immersive across Wisconsin."
+shape_h2: "Fourteen episodes, ten straight seasons now, this time under a new host."
 format_summary: "Road show · Wisconsin"
 format_caption: "new host, Milwaukee and Madison"
 cast_size: 15

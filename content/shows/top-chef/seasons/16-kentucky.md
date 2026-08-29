@@ -10,6 +10,7 @@ location: Kentucky (Louisville, Lexington)
 eyebrow: "Aired late 2018 · The bourbon-country immersive"
 lede: "Top Chef sets up across Kentucky — Louisville and Lexington — with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season runs the regional-immersive format through bourbon culture and Southern culinary tradition."
 pull: "The bourbon-country season — a regional immersive built on Southern cooking and barrel culture."
+shape_h2: "Fourteen episodes, the fifth straight season holding this pace."
 format_summary: "Road show · Kentucky"
 format_caption: "multi-city, bourbon and Southern briefs"
 cast_size: 15

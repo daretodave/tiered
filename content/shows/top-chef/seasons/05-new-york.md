@@ -10,6 +10,7 @@ location: New York City
 eyebrow: "Aired late 2008 · The franchise in Manhattan kitchens"
 lede: "Top Chef returns to the East Coast for a New York City season with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The city's density of restaurant tradition shapes every challenge brief — borough food cultures, immigrant kitchens, Manhattan fine dining."
 pull: "The franchise testing itself against the city with the loudest restaurant tradition in the country."
+shape_h2: "Thirteen episodes, one shorter than the two seasons before it."
 format_summary: "Standard format"
 format_caption: "Manhattan fine-dining weight"
 cast_size: 17

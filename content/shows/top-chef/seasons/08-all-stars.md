@@ -11,6 +11,7 @@ location: New York City
 eyebrow: "Aired late 2010 · The first returnee season"
 lede: "The franchise's first returnees event. Eighteen chefs come back from the first seven seasons to cook in New York with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season runs longer than a standard run and earns every extra hour."
 pull: "The returnee event that proved Top Chef had a deep enough bench to argue against itself."
+shape_h2: "Seventeen episodes, the longest run the show had aired to that point."
 format_summary: "Returnees · NYC"
 format_caption: "first All-Stars, prior-season alumni"
 cast_size: 18

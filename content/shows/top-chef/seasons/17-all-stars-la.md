@@ -11,6 +11,7 @@ location: Los Angeles, California
 eyebrow: "Aired spring 2020 · The fan-favorite returnee event"
 lede: "Top Chef brings back a roster of fan-favorite alumni for an all-stars run staged in Los Angeles. Padma Lakshmi hosts and Tom Colicchio runs the judge's table as returnees who fell short the first time get a second argument."
 pull: "The second great returnee event — fan favorites with unfinished business and the bench to back it up."
+shape_h2: "Fourteen episodes, six straight seasons now, this time with returnees."
 format_summary: "Returnees · Los Angeles"
 format_caption: "fan-favorite alumni cast"
 cast_size: 15
