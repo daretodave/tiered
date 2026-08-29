@@ -8,6 +8,7 @@ premiere_date: 2025-06-05
 location: "Northwest Territories, Canada"
 eyebrow: "Aired summer 2025 · Second Arctic run, Canadian subarctic"
 take_h2: "Same demands, new faces."
+shape_h2: "Twelfth roster, familiar ground."
 lede: "Season twelve returned to the Canadian Arctic — the environment that opened the Colby era — with a new cast and the format confidence of a show in its twelfth run. The second Arctic outing: same extreme demands, different survivalists."
 pull: "The Arctic returns, and the format has the depth to meet it again."
 format_summary: "Solo survival · self-filmed · hosted"

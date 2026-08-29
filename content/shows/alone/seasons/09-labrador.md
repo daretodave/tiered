@@ -8,6 +8,7 @@ premiere_date: 2022-06-09
 location: "Labrador, Newfoundland and Labrador, Canada"
 eyebrow: "Aired summer 2022 · First Labrador run, subarctic coastal Canada"
 take_h2: "A new Canadian biome."
+shape_h2: "Shortest summer nights yet."
 lede: "Season nine brought the show to Labrador — subarctic eastern Canada, a location with no Alone precedent. Ten survivalists encountered boreal forest, tundra edges, and coastal conditions between the Pacific Northwest and the full Arctic interior."
 pull: "Labrador gives the format a new Canadian biome — colder than Vancouver Island, more coastal than the Arctic interior."
 format_summary: "Solo survival · self-filmed · hosted"

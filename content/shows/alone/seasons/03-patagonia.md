@@ -8,6 +8,7 @@ premiere_date: 2016-11-10
 location: "Patagonia, Argentina"
 eyebrow: "Aired November 2016 · The first international run, the format at full stretch"
 take_h2: "Wilderness becomes the main character."
+shape_h2: "First international location."
 lede: "The show's first move outside North America: ten survivalists in Argentine Patagonia, colder and wilder than Vancouver Island. The southern hemisphere winter, the unfamiliar terrain, and a sharper field combined to produce the format's strongest early-season argument."
 pull: "The wilderness stopped being a backdrop and started being a character."
 format_summary: "Solo survival · self-filmed · international"

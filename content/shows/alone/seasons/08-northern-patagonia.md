@@ -8,6 +8,7 @@ premiere_date: 2021-06-03
 location: "Northern Patagonia, Argentina"
 eyebrow: "Aired summer 2021 · Second Patagonia run, northern Argentine wilderness"
 take_h2: "Patagonia's other face."
+shape_h2: "Second visit, new terrain."
 lede: "Season eight returned to Patagonia but pushed north — denser forest, cooler lakes, a new set of survival priorities. The same vast wilderness as season three, but a distinctly different face of it."
 pull: "Patagonia's northern reach proves the biome has more than one register."
 format_summary: "Solo survival · self-filmed · hosted"

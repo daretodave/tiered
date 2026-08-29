@@ -8,6 +8,7 @@ premiere_date: 2024-06-06
 location: "Northern Cape, South Africa"
 eyebrow: "Aired summer 2024 · First African location, arid Karoo terrain"
 take_h2: "Heat and thirst, for once."
+shape_h2: "Northern Cape debut season."
 lede: "Season eleven took Alone to its first African location — the arid Northern Cape of South Africa. Ten survivalists faced a biome unlike anything in the franchise's run: hot, dry, with food and water demands that inverted the logic of every prior location."
 pull: "The Karoo inverted the show's survival calculus — for the first time, heat and thirst replaced cold and wet."
 format_summary: "Solo survival · self-filmed · hosted"

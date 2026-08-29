@@ -8,6 +8,7 @@ premiere_date: 2019-06-06
 location: "Ulaan Taiga, Mongolia"
 eyebrow: "Aired summer 2019 · First solo Mongolia run, closing the no-host era"
 take_h2: "The format runs straight again."
+shape_h2: "Closes the no-host era."
 lede: "Season six returned Alone to northern Mongolia — the same country as the Redemption run, but with a fresh cast of ten solo survivalists and no returning-contestant dynamic. The northern Mongolian wilderness got a second showcase, and this time the format ran straight."
 pull: "Mongolia without the returnee framing — the landscape holding the weight on its own terms."
 format_summary: "Solo survival · self-filmed"
