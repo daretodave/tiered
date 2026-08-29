@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel overhaul, four new voices"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Fifth season at the helm"
+shape_h2: "Mel B and Klum join."
 watch_list:
   - episode_label: "Auditions · a self-taught hybrid act"
     body: "Kenichi Ebina auditions with a self-choreographed style blending mime, illusion, hip-hop, and martial arts — a genre-defying performance that doesn't fit any single category the judges usually reach for."

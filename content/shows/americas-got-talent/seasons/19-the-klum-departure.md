@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "fourth year of the same panel, Klum's era closing"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Sixth season at the helm"
+shape_h2: "Klum leaves after this season."
 watch_list:
   - episode_label: "Premiere · a two-buzzer episode"
     body: "The season opener alone lands two Golden Buzzers — Heidi Klum for Indiana school janitor Richard Goodall's Journey cover, and Terry Crews for comedian Learnmore Jonasi's stand-up set."

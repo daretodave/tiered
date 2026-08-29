@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "double Golden Buzzers, new Judges' Callbacks round"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Eighth season at the helm"
+shape_h2: "Two golden buzzers now allowed."
 watch_list:
   - episode_label: "August · the Judges' Callbacks round"
     body: "A new two-part special sends each judge's shortlisted acts to perform again privately at the judges' homes, with celebrity guests sitting in alongside each panelist — a process round, not a results round."

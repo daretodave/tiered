@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "stable panel, new signature mechanic"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Sixth season at the helm"
+shape_h2: "One judge, an instant yes."
 watch_list:
   - episode_label: "Auditions · the first-ever Golden Buzzer"
     body: "The show's now-signature mechanic debuts this season, letting a judge override a split vote and send an act straight through — Howard Stern presses the first one in the format's history, for karate-demonstration duo Dustin's Dojo."

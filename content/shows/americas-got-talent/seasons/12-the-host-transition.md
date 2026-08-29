@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "host transition after 8-year run"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "First season at the helm"
+shape_h2: "Tyra takes over, panel intact."
 watch_list:
   - episode_label: "Premiere · Light Balance's Golden Buzzer"
     body: "Tyra Banks presses her own Golden Buzzer in her first episode as host, sending the LED dance troupe straight to the live shows — the host's own discretion becomes part of the format from her very first outing."

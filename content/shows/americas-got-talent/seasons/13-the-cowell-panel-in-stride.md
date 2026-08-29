@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "established panel, third year together"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Second season at the helm"
+shape_h2: "Same panel, its steadiest year."
 watch_list:
   - episode_label: "Premiere · Zurcaroh's aerial routine"
     body: "Tyra Banks sends the acrobatic dance troupe straight through with her host buzzer, the kind of large-ensemble spectacle the live rounds are built to showcase."

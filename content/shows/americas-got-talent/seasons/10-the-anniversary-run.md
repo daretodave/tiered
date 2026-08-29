@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "10th anniversary, embedded panel"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Seventh season at the helm"
+shape_h2: "Ten years in, five judges."
 watch_list:
   - episode_label: "Auditions · Drew Lynch's Golden Buzzer"
     body: "Howie Mandel presses his Golden Buzzer for comedian Drew Lynch, whose stand-up set works his own stutter into the act itself."

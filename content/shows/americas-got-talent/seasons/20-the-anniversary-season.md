@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "20th anniversary, Mel B replaces Klum"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Seventh season at the helm"
+shape_h2: "20th anniversary, Mel B returns."
 watch_list:
   - episode_label: "Premiere · Mel B rejoins the table"
     body: "Mel B returns to the panel after a six-season absence — she and Sofía Vergara had never actually met in person before filming began, and the on-camera adjustment period is real."

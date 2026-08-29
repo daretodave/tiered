@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "first format refinement"
 premiere_caption: "NBC · Tuesday 8/7c"
 host_caption: "First season at the helm"
+shape_h2: "Springer takes over as host."
 watch_list:
   - episode_label: "Auditions · a two-stage tryout"
     body: "The audition process expands into two stages this season — open-city tryouts followed by a Las Vegas callback round, a structure borrowed loosely from the UK format and a departure from Season 1's single-pass auditions."

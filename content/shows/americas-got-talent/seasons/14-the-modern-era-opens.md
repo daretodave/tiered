@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "new host, two new judges"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "First season at the helm"
+shape_h2: "Crews debuts, two judges join."
 watch_list:
   - episode_label: "Premiere · Kodi Lee's Golden Buzzer"
     body: "Gabrielle Union presses in her first episode at the table, and the blind, autistic singer-pianist's audition becomes the defining moment of the new panel's debut."

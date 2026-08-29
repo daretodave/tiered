@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "panel reset, Simon Cowell joins"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Eighth season at the helm"
+shape_h2: "Cowell joins, panel resets again."
 watch_list:
   - episode_label: "Premiere · a Golden Buzzer for Nessun Dorma"
     body: "Mel B presses her Golden Buzzer for 13-year-old opera singer Laura Bretan's rendition of 'Nessun Dorma' — Simon Cowell's first on-air reaction as a judge sets the tone for his tenure."

@@ -13,6 +13,7 @@ format_summary: "Variety competition · open audition · viewer vote"
 format_caption: "settled four-person panel, second year running"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Fourth season at the helm"
+shape_h2: "Same panel, second year running."
 watch_list:
   - episode_label: "Premiere · a saxophone Golden Buzzer"
     body: "Atlanta's Avery Dixon plays through a full standing ovation, and Terry Crews presses the buzzer himself — the host's own discretion is as much a part of the format by now as the judges'."
