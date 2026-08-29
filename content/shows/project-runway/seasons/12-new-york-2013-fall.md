@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2013 · Filmed in Manhattan"
 lede: "The reset cycle. After a season built on team structure, Project Runway returns to solo competition in the Manhattan workroom with a full field and a familiar judges' table."
 pull: "The course-correct. The show steps back from the structural experiment and runs the format the way the catalog era runs it."
+shape_h2: "Solo competition returns, no teams."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · Manhattan workroom"
 format_caption: "return to solo competition"

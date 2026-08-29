@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired winter 2004 · Filmed in Manhattan"
 lede: "The show invents itself on camera. Twelve designers, a Parsons workroom, a host nobody had seen do this yet, and a mentor figuring out his read alongside them."
 pull: "The grammar fashion competition still uses — the workroom, the runway, the judges' table — drafted in real time across twelve episodes."
+shape_h2: "Twelve designers, the debut season."
 premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format · 12 designers"
 format_caption: "the format's first run"

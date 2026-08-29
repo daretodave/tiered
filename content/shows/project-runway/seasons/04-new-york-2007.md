@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired fall 2007 · Filmed in Manhattan"
 lede: "The peak. A cast widely cited as the strongest in the show's history, a judges' table operating in lockstep, and a season-long runway run that holds up critique by critique."
 pull: "Fifteen designers, a judges' table in lockstep agreement, and a workroom confrontational enough to carry the editing on its own. The closest the show has come to a working blueprint."
+shape_h2: "Second straight season at fifteen."
 premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format · 15 designers"
 format_caption: "the peak-cast season"

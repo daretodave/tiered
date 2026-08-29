@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired fall 2016 · Filmed in Manhattan"
 lede: "A familiar late-Lifetime run. Project Runway's fifteenth season holds the standard format in the Manhattan workroom as the classic era approaches its close."
 pull: "The catalog late-period. A recognizable cycle that runs the format the way the era had standardized it."
+shape_h2: "Fourth straight standard-format season."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · Manhattan workroom"
 format_caption: "late-Lifetime classic cycle"

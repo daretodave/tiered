@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired winter 2010 · Filmed in Manhattan"
 lede: "The return. Sixteen designers back in a Manhattan workroom, the network change behind the show, and a season whose main job is to remind the audience what Project Runway looks like when the city is doing its work."
 pull: "The course-correct. Not the loudest season in the catalog, but the one that put the format back on the coast it was built for."
+shape_h2: "Third straight season at sixteen."
 premiere_caption: "Lifetime · Thursday 10/9c"
 format_summary: "Standard format · 16 designers"
 format_caption: "return to New York"

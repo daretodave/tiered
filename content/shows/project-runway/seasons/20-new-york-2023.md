@@ -9,6 +9,7 @@ location: New York City
 eyebrow: "Aired summer 2023 · Filmed in Manhattan · Returning-veterans edition"
 lede: "The veterans edition. Project Runway's twentieth season brings back fourteen designers from across the show's history for an all-stars cycle, with no single host — mentor Christian Siriano and the judges panel carry the season instead."
 pull: "The reunion season. Twenty cycles in, the show recasts itself with faces the audience already knows."
+shape_h2: "Fourteen returning designers, no host."
 premiere_caption: "Bravo · Thursday 8/7c"
 format_summary: "All-stars · returning veterans"
 format_caption: "designers from across the show's run"

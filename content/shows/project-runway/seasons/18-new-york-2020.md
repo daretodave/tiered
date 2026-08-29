@@ -9,6 +9,7 @@ host: Karlie Kloss
 eyebrow: "Aired winter 2020 · Filmed in Manhattan · Pandemic-affected production"
 lede: "The interrupted cycle. Project Runway's eighteenth season had its production reshaped by the pandemic, and the season carries the marks of a run that had to adapt around it."
 pull: "The disrupted season. The format intact, the circumstances around it anything but — a cycle the canon reads through its context."
+shape_h2: "The only pandemic-disrupted season."
 premiere_caption: "Bravo · Thursday 9/8c"
 format_summary: "Standard format · pandemic-affected"
 format_caption: "production reshaped mid-cycle"

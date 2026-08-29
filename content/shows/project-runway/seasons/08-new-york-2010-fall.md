@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2010 · Filmed in Manhattan"
 lede: "The first post-return season with a stable creative team. Seventeen designers in a Manhattan workroom, a judges' table operating from muscle memory, and a cast remembered for confrontational personalities."
 pull: "The season the show consolidates its second act. The format has its footing back and the casting team takes the room loud."
+shape_h2: "Seventeen designers, a new high."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · 17 designers"
 format_caption: "post-return creative stability"

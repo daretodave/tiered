@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired winter 2013 · Filmed in Manhattan"
 lede: "The team-format season. Project Runway opens its eleventh cycle by abandoning solo competition for an extended run of designed-by-committee challenges before the field reverts to individual work."
 pull: "The structural experiment. For a long opening stretch the workroom is a team room, and the editing has to track alliances instead of designers."
+shape_h2: "An extended team-format opening."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Team format · Manhattan workroom"
 format_caption: "extended team-challenge structure"

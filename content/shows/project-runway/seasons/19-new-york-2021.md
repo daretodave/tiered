@@ -9,6 +9,7 @@ host: Karlie Kloss
 eyebrow: "Aired fall 2021 · Filmed in Manhattan"
 lede: "The recovery cycle. Project Runway's nineteenth season runs the modern-era format back at full production scale in the Manhattan workroom after a disrupted prior run."
 pull: "The footing back. The modern era at normal scale again — a steadying cycle after an interrupted one."
+shape_h2: "No format changes, full scale returns."
 premiere_caption: "Bravo · Thursday 8/7c"
 format_summary: "Standard format · modern creative team"
 format_caption: "full-scale modern-era cycle"

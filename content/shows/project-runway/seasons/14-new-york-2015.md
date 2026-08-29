@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2015 · Filmed in Manhattan"
 lede: "A steady late-classic cycle. Project Runway's fourteenth season runs the standard format in the Manhattan workroom with a familiar judges' table and a full field of designers."
 pull: "The catalog holds. A recognizable Lifetime-era run that delivers the format without reinventing it."
+shape_h2: "Third straight standard-format season."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · Manhattan workroom"
 format_caption: "late-classic Lifetime cycle"

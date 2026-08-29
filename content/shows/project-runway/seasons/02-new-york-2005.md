@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired winter 2005 · Filmed in Manhattan"
 lede: "The first season after the show became a hit. Sixteen designers, a workroom that knows what it is now, and a judges' table whose chemistry has settled into something the audience can read like a familiar room."
 pull: "The season the show stops auditioning for the audience and starts running at its real scale."
+shape_h2: "Four more designers than debut."
 premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format · 16 designers"
 format_caption: "post-breakout, format settles in"

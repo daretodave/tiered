@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2014 · Filmed in Manhattan"
 lede: "A strong mid-period cast. Project Runway's thirteenth cycle runs a full Manhattan workroom with one of the more confrontational casting energies of the Lifetime era."
 pull: "The cast season of the Lifetime classic run. The workroom carries more friction than the catalog cycles around it."
+shape_h2: "Second straight standard-format season."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Standard format · Manhattan workroom"
 format_caption: "strong Lifetime-era cast"

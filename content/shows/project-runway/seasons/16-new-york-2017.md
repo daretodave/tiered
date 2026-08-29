@@ -9,6 +9,7 @@ host: Heidi Klum
 eyebrow: "Aired fall 2017 · Filmed in Manhattan · Final Lifetime season"
 lede: "The end of an era. Project Runway's sixteenth cycle is the last season on Lifetime before the show's network and creative reset, and it runs the classic-era format one final time."
 pull: "The Lifetime farewell. The last cycle before the reboot — a familiar room about to change hands."
+shape_h2: "Fifth straight, the final Lifetime season."
 premiere_caption: "Lifetime · Thursday 8/7c"
 format_summary: "Standard format · Manhattan workroom"
 format_caption: "final Lifetime-era season"

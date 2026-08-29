@@ -9,6 +9,7 @@ host: Karlie Kloss
 eyebrow: "Aired spring 2019 · Filmed in Manhattan · The Bravo reboot"
 lede: "The reboot. Project Runway returns to Bravo with a new host, a former winner installed as the workroom mentor, and a refreshed judges' table — the biggest reset in the show's history."
 pull: "The relaunch. New host, new mentor, new panel, same Manhattan workroom — the show rebuilt around fresh chairs."
+shape_h2: "Four format changes, one relaunch."
 premiere_caption: "Bravo · Thursday 8/7c"
 format_summary: "Standard format · new creative team"
 format_caption: "network return, full creative reset"

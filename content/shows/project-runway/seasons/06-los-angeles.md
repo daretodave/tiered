@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2009 · Filmed in Los Angeles"
 lede: "The relocation experiment. First season on Lifetime, first off the East Coast, and the only run in the show's history filmed away from the Manhattan workroom the format had been built around."
 pull: "The detour season. The critical read still calls it a coastal disconnect — the show feels off its rails because it is on the wrong coast."
+shape_h2: "Same headcount, a new coast."
 premiere_caption: "Lifetime · Thursday 10/9c"
 format_summary: "Standard format · 16 designers"
 format_caption: "first Lifetime season, LA-shot"

@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2025 · Filmed in Manhattan · The Freeform relaunch"
 lede: "The Freeform relaunch. Project Runway leaves Bravo for the first time in its modern era and brings Heidi Klum back to the host chair after eight seasons away, with a rebuilt judges' table finding a livelier, more personality-driven register."
 pull: "The comeback. New network, returning host, same Manhattan workroom — the show resets around a face the audience already knows."
+shape_h2: "Ten episodes, a two-part opener."
 premiere_caption: "Freeform · Thursdays, streaming next-day on Hulu"
 format_summary: "Network relaunch · host return"
 format_caption: "first mainline season off Bravo"

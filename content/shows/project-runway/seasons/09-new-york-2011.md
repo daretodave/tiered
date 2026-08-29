@@ -10,6 +10,7 @@ host: Heidi Klum
 eyebrow: "Aired summer 2011 · Filmed in Manhattan"
 lede: "The workroom-scaling experiment. Twenty designers in the Parsons room — the largest cast the show had attempted — and a format that decided to absorb the scale rather than fight it."
 pull: "The season that proved the format had more capacity than the early cycles suggested. Scale, taken seriously, paid off."
+shape_h2: "Twenty designers, the largest room."
 premiere_caption: "Lifetime · Thursday 9/8c"
 format_summary: "Larger workroom · 20 designers"
 format_caption: "cast scaled from 16 to 20"
