@@ -11,6 +11,7 @@ eyebrow: "The cast at its most socially pressurized"
 lede: "Season nine arrives with a cast operating at full social pressure. Tinsley Mortimer joins and fits the Manhattan register immediately. The interpersonal dynamics tighten at each stop — Mexico, the Berkshires — and the season earns its mid-run reputation."
 pull: "The Manhattan social circuit doing what it does best: producing real friction."
 take_h2: "Mid-run, at full pressure."
+shape_h2: "Twenty-two episodes, a third year running."
 format_summary: "NYC social reality"
 format_caption: "Tinsley Mortimer joins"
 cast_size: 7

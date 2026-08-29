@@ -11,6 +11,7 @@ eyebrow: "One addition that reorganized the cast's social order"
 lede: "Leah McSweeney's arrival disrupts the established cast hierarchy — she operates on a different frequency and the season uses that. The Newport trip adds a New England register the show hadn't tried before. A shorter episode count keeps the pacing tight."
 pull: "New blood doing exactly what it should: making everything else recalibrate."
 take_h2: "One arrival, real disruption."
+shape_h2: "Eighteen episodes, a shorter episode order."
 format_summary: "NYC social reality"
 format_caption: "Leah McSweeney joins"
 cast_size: 6

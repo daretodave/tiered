@@ -11,6 +11,7 @@ eyebrow: "Morocco, cast change, no safety valve"
 lede: "RHONY at full operational pressure. A Morocco group trip strips away the city's social scaffolding and pushes the cast into close quarters with no escape. Dense, committed, occasionally exhausting — exactly what the format looks like without a safety valve."
 pull: "Not the show at its most precise. The show at its most committed."
 take_h2: "Full pressure, no escape."
+shape_h2: "Twenty-two episodes, four more than before."
 format_summary: "NYC social reality"
 format_caption: "Cast change · international group trip"
 cast_size: 6

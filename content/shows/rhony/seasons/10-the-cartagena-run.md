@@ -11,6 +11,7 @@ eyebrow: "International travel, evolved dynamics"
 lede: "Season ten takes the cast to Cartagena, Colombia — the farthest international trip the show had attempted — and the distance does the format's work. A returning core cast with evolved interpersonal history gives the New York scenes genuine weight. Vermont adds comedic contrast."
 pull: "A cast that knows each other well enough to be genuinely dangerous. The format rewarding patience."
 take_h2: "Patience finally pays off."
+shape_h2: "Twenty episodes, down to a six-woman cast."
 format_summary: "NYC social reality"
 format_caption: "Established returning core cast"
 cast_size: 6

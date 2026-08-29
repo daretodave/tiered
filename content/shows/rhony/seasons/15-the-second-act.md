@@ -11,6 +11,7 @@ eyebrow: "The reboot cast finding its confidence"
 lede: "Season fifteen takes the reboot cast to Portugal and Casablanca — the trip tests what they're made of when Manhattan's scaffolding is gone. With a season's worth of shared history, the cast brings genuine friction to the material. The Moroccan leg carries a quiet echo."
 pull: "The second year is where a reboot cast stops performing and starts being themselves."
 take_h2: "Year two, more confidence."
+shape_h2: "Eighteen episodes, one wife added back."
 format_summary: "NYC social reality · reboot year two"
 format_caption: "Reboot cast continues with adjustments"
 cast_size: 6
