@@ -11,6 +11,7 @@ host: "Jonathan LaPaglia"
 format_changes: ["brains-v-brawn-sequel", "bounty-and-barren-merge-twist"]
 eyebrow: "Aired February 2025 · The Brains V Brawn format returns to Samoa"
 take_h2: "A familiar formula, one new twist."
+shape_h2: "Brains-Brawn sequel, merge twist."
 lede: "The Brains-versus-Brawn format returned — new cast, Samoa, and a mid-game Bounty and Barren twist that reshuffled the field at the merge. Jonathan LaPaglia's final full-length season ran the archetype divide across 24 episodes at the Australian version's standard pace."
 pull: "The sequel format carried less discovery than the Queensland original, but the cast played the archetype divide with strategic coherence and the mid-game twist added a layer the 2021 season did not have."
 format_summary: "Brains vs. Brawn II · Samoa · merge twist"

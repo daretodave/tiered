@@ -11,6 +11,7 @@ host: "Jonathan LaPaglia"
 format_changes: ["anniversary-crossover-special", "international-cast", "abbreviated-format"]
 eyebrow: "Aired August 2025 · Tenth anniversary crossover special"
 take_h2: "A celebration outside the rules."
+shape_h2: "Ten episodes, crossover cast."
 lede: "Australian Survivor's tenth anniversary: a 10-episode, 16-day crossover pitting Australian players against returning castaways from international Survivor franchises. Shorter game, smaller cast, half the standard prize pool — a celebratory format that operates by its own rules."
 pull: "Seven Australian players against seven international Survivor veterans — the cross-franchise cast created strategic dynamics no standard Australian Survivor season can access, in a compressed format that forces a different kind of game."
 format_summary: "Anniversary crossover · Australia vs international cast"

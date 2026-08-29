@@ -10,6 +10,7 @@ host: "Jonathan LaPaglia"
 format_changes: []
 eyebrow: "Aired July 2017 · A more assured production back in Samoa"
 take_h2: "A steadier hand returns."
+shape_h2: "Twenty-six episodes, second Samoa trip."
 lede: "Back in Samoa for a second run, Australian Survivor arrived with a steadier production hand and a cast that had studied the first season's longer-format strategic rhythm. The show was no longer assembling itself from scratch — it was starting to understand what it was."
 pull: "The second visit to Samoa brought tighter storytelling and a cast that came ready to play the Australian version's particular brand of endurance strategy."
 format_summary: "Sole survivor · tribal council"

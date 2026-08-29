@@ -11,6 +11,7 @@ host: "Jonathan LaPaglia"
 format_changes: ["first-domestic-filming", "brains-v-brawn-cast-split"]
 eyebrow: "Aired July 2021 · Australian Survivor's first domestic season"
 take_h2: "The backyard becomes the arena."
+shape_h2: "First domestic season, Queensland."
 lede: "When COVID closed international borders, Australian Survivor came home to Queensland's outback. The Brains-versus-Brawn split gave a cast contrast built for the long-form format, and Cloncurry's red dirt gave the show a visual register unlike any Samoa or Fiji run before it."
 pull: "The archetype divide was the right structure for a domestic season — Brains and Brawn reading clearly against Queensland's outback heat, the format finding new ground in its own backyard."
 format_summary: "Brains vs. Brawn · outback Queensland"
