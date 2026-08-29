@@ -11,6 +11,7 @@ canonical_position: 10
 eyebrow: "Aired Jun–Sep 2017 · NBC"
 lede: "Season nine tries a three-stage national finals — down from the usual four — a structural experiment the show doesn't repeat. Wildcard invitations to Nationals disappear, and a new fan-submission Obstacle Design Challenge puts seven crowd-picked obstacles on course."
 pull: "A finals course with one fewer stage — a bold swing the format never takes again."
+shape_h2: "Six cities, three-stage finals."
 format_summary: "Six-city qualifiers · three-stage finals"
 format_caption: "the only season with a three-stage (not four-stage) national finals"
 host_caption: "third season with Iseman, Gbaja-Biamila, and Leahy"

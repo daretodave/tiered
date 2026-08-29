@@ -11,6 +11,7 @@ canonical_position: 15
 eyebrow: "Aired Jun–Aug 2025 · NBC"
 lede: "Season seventeen collapses the show's geography — Qualifiers, Semifinals, and National Finals all film on the Las Vegas Strip, zero touring. Finals drop the standard four-stage climb for a head-to-head racing bracket built from returning obstacles, including Cannonball Alley."
 pull: "Zero touring, a racing bracket instead of the tower, and a finale betting on speed instead of the climb that built the show."
+shape_h2: "One city hosts every stage."
 format_summary: "All-Vegas season · racing bracket finals"
 format_caption: "the first season with every round filmed on the Las Vegas Strip"
 host_caption: "seventh season with Iseman, Gbaja-Biamila, and Hall"

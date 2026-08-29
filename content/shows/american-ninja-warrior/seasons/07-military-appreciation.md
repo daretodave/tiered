@@ -11,6 +11,7 @@ canonical_position: 1
 eyebrow: "Aired May–Sep 2015 · NBC"
 lede: "Season seven widens the qualifying map to six cities, including a military-themed course aboard the USS Iowa in San Pedro. New Stage 1 and Stage 3 obstacles raise the ceiling in Las Vegas, and the grand prize doubles to one million dollars."
 pull: "Six cities, a battleship qualifier, and a grand prize that finally matches the show's ambition."
+shape_h2: "Six cities, sixteen episodes."
 format_summary: "Six-city qualifiers · doubled grand prize"
 format_caption: "the season the grand prize jumps to one million dollars"
 host_caption: "Kristine Leahy joins the booth, replacing Jenn Brown"

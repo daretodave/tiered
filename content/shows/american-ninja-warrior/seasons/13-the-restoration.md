@@ -11,6 +11,7 @@ canonical_position: 11
 eyebrow: "Aired summer 2021 · NBC"
 lede: "Season thirteen restores the full-length season and brings National Finals back to Las Vegas, reinstating the million-dollar grand prize. Qualifying still runs a reduced two-location model, but a new Split Decision mechanic and teenager-inclusive family teams add fresh texture."
 pull: "Vegas is back, the prize is back, and a new choice-driven obstacle mechanic gives the format something to talk about."
+shape_h2: "Twelve episodes, two locations."
 format_summary: "Two-location qualifying · standard Vegas finals restored"
 format_caption: "the season Split Decision and three-person family teams debut"
 host_caption: "third season with Iseman, Gbaja-Biamila, and Hall"

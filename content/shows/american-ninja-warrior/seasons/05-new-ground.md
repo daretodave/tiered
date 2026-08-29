@@ -11,6 +11,7 @@ canonical_position: 5
 eyebrow: "Aired summer 2013 · NBC"
 lede: "Season five adds Baltimore and Denver to the qualifying rotation, and nationals return to Las Vegas for a second straight year. New obstacles like the Rope Glider and Hang Slider raise the bar on both stages."
 pull: "New cities, new obstacles, and a Vegas course that's starting to feel like home."
+shape_h2: "Twenty-one episodes, four cities."
 format_summary: "Four-city qualifiers · new obstacle lineup"
 format_caption: "second straight season with finals built in Las Vegas"
 host_caption: "Akbar Gbaja-Biamila and Jenn Brown join Iseman in the booth"

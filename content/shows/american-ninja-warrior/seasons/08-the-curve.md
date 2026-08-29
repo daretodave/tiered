@@ -11,6 +11,7 @@ canonical_position: 6
 eyebrow: "Aired Jun–Sep 2016 · NBC/Esquire Network"
 lede: "Season eight narrows to five qualifying cities but adds 28 new obstacles across the board. Indianapolis introduces the show's first curved course layout, and Philadelphia's finals course is built to be the hardest yet."
 pull: "Fewer cities, harder courses — Philadelphia sets a new bar for what a finals stage can ask."
+shape_h2: "Thirteen episodes, five cities."
 format_summary: "Five-city qualifiers · 28 new obstacles"
 format_caption: "Indianapolis debuts the show's first curved-layout course"
 host_caption: "Kristine Leahy's second season on the sidelines"

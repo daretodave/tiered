@@ -11,6 +11,7 @@ canonical_position: 12
 eyebrow: "Aired summer 2023 · NBC"
 lede: "Season fifteen drops the qualifying-city tour, running qualifying and semifinals at Universal Studios Hollywood for the first time. Separate men's/women's leaderboards debut, a new Runoffs mechanic replaces the Power Tower, and Stage 2 debuts head-to-head racing."
 pull: "No qualifying tour this year — just one lot in Hollywood, a taller Mega Wall, and a brand-new way to race."
+shape_h2: "Fourteen episodes, one location only."
 format_summary: "One-location qualifying/semifinals · new Runoffs mechanic"
 format_caption: "the first season without a separate qualifying-city tour"
 host_caption: "fifth season with Iseman, Gbaja-Biamila, and Hall"

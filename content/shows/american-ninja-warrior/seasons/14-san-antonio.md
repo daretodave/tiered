@@ -11,6 +11,7 @@ canonical_position: 8
 eyebrow: "Aired summer 2022 · NBC"
 lede: "Season fourteen anchors qualifying at San Antonio's Alamodome, the first full course built outside the Pacific Northwest circuit. Semifinals stay in Hollywood, and National Finals return to the Las Vegas Strip with the standard four-stage format intact."
 pull: "A new home city for qualifying, and a finals course that never stopped being the standard."
+shape_h2: "Three stages, one new city."
 format_summary: "Alamodome qualifiers · standard Vegas Strip finals"
 format_caption: "the season qualifying settles into a proper single-city model again"
 host_caption: "fourth season with Iseman, Gbaja-Biamila, and Hall"

@@ -11,6 +11,7 @@ canonical_position: 3
 eyebrow: "Aired May–Sep 2019 · NBC"
 lede: "Season eleven pushes into the Pacific Northwest with the show's first indoor course, at Tacoma Dome. Qualifiers choose Warped Wall or Mega Wall, and a new Power Tower offers a speed pass to Nationals. Zuri Hall joins the booth, forming the trio that anchors the show for years."
 pull: "The Iseman-Gbaja-Biamila-Hall booth starts here, and the course gets its first real choice built into qualifying."
+shape_h2: "Sixteen episodes, six cities."
 format_summary: "Six-city qualifiers · Warped Wall/Mega Wall choice"
 format_caption: "the season the Power Tower and its speed pass debut"
 host_caption: "Zuri Hall joins, replacing Kristine Leahy"

@@ -11,6 +11,7 @@ canonical_position: 13
 eyebrow: "Aired summer 2024 · NBC"
 lede: "Season sixteen keeps the single-location qualifying model, but reverts to the traditional two-hour broadcast after the episode count shrinks to eleven. Per-stage time limits increase across the standard four stages, and the Mega Wall's completion bonus doubles to $20,000."
 pull: "Fewer episodes, longer broadcasts, and a Mega Wall bonus that finally catches up to the wall's difficulty."
+shape_h2: "Eleven episodes, longer broadcasts return."
 format_summary: "One-location qualifying · two-hour broadcast returns"
 format_caption: "the shortest full-format season since the pandemic year"
 host_caption: "sixth season with Iseman, Gbaja-Biamila, and Hall"

@@ -11,6 +11,7 @@ canonical_position: 4
 eyebrow: "Aired May–Sep 2018 · NBC"
 lede: "Season ten restores the standard four-stage finals and brings back Dallas, Miami, Indianapolis, and Philadelphia for the first time in years, while Minneapolis joins the rotation. The new Mega Wall raises the stakes at qualifying, and the minimum competitor age drops to 19."
 pull: "An eighteen-foot wall, one attempt, and a course map that finally feels like a full national tour again."
+shape_h2: "Four stages return, six cities."
 format_summary: "Six-city qualifiers · Mega Wall debut"
 format_caption: "the season that restores the standard four-stage finals"
 host_caption: "fourth straight season with the same three-person booth"

@@ -11,6 +11,7 @@ canonical_position: 2
 eyebrow: "Aired May–Sep 2014 · NBC"
 lede: "St. Louis joins the qualifying rotation as a fifth city, alongside Venice Beach, Dallas, Miami, and Denver. The Salmon Ladder and Spider Climb move into city finals, while Piston Road, the Giant Ring, and the Silk Slider raise the bar in Las Vegas."
 pull: "Five cities, one Vegas course, and a host booth that finally holds still."
+shape_h2: "A fifth city, fourteen episodes."
 format_summary: "Five-city qualifiers · settled Vegas finals course"
 format_caption: "the format's first fully stable season, top to bottom"
 host_caption: "first season with the Iseman-Gbaja-Biamila-Brown trio intact"

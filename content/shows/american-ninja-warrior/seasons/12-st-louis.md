@@ -11,6 +11,7 @@ canonical_position: 17
 eyebrow: "Aired fall 2020 · NBC"
 lede: "Every planned qualifying city collapses into one closed-set location, St. Louis's America's Center, as the pandemic reshapes the season. Fifty returning competitors each recruit two ninjas for a team-based knockout tournament, with no Las Vegas finals this year."
 pull: "One city, one closed set, and a tournament bracket standing in for the usual qualifying-to-Vegas pipeline."
+shape_h2: "Eight episodes, one location."
 format_summary: "Single-city, team-based knockout tournament"
 format_caption: "no Las Vegas finals — the whole season is decided in St. Louis"
 host_caption: "second season with Iseman, Gbaja-Biamila, and Hall"

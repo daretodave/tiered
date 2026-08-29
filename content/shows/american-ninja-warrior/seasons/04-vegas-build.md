@@ -11,6 +11,7 @@ canonical_position: 7
 eyebrow: "Aired May–Jul 2012 · NBC/G4"
 lede: "Season four blows the format open: six regional qualifying cities, including Venice Beach, Dallas, and Miami, replace the single-city model. National finals move off Mount Midoriyama and onto a US-built replica course in Las Vegas for the first time."
 pull: "Six cities send hopefuls to Vegas, not Japan — the format's biggest swing yet."
+shape_h2: "One city becomes six."
 format_summary: "Six regional qualifiers · Vegas replica finals"
 format_caption: "first season with national finals built on US soil"
 host_caption: "Jonny Moseley and Angela Sun join the booth"
