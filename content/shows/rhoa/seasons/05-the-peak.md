@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "The season the franchise tends to cite first"
 lede: "Two strong additions join an established core at exactly the right moment. Season five is the version of RHOA most often cited when the argument about the franchise's ceiling comes up — and the argument holds."
 pull: "The cast at its most configured, the setting at its most specific."
+shape_h2: "Cast grows to seven Housewives."
 format_summary: "Atlanta social reality"
 format_caption: "Two new cast members join"
 cast_size: 7

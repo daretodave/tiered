@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "COVID-delayed, socially conscious, lower in energy"
 lede: "A December premiere — first in franchise history — and a season that reflects its moment. Two major cast departures, a New Orleans trip, and a more socially conscious register than RHOA usually carries. It is a careful season in a year that required care."
 pull: "The show in pause mode — present and considered, but operating below its usual pressure."
+shape_h2: "Cast shrinks to five full-timers."
 format_summary: "Atlanta social reality"
 format_caption: "Two departures; first December premiere"
 cast_size: 5

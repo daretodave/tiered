@@ -10,6 +10,7 @@ ep_count: 10
 eyebrow: "Where the Atlanta franchise began"
 lede: "Five women, one city — and a social world with its own rules around wealth, ambition, and public life. RHOA arrives with a specific cast and a specific setting, and uses both from the first episode."
 pull: "The foundation everything in the Atlanta franchise builds on."
+shape_h2: "Ten episodes, five women."
 format_summary: "Atlanta social reality"
 format_caption: "Original five-woman cast"
 cast_size: 5

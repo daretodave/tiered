@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "The tenth season, a returning anchor, Barcelona"
 lede: "The franchise's tenth season brought back its most central cast member after a two-year absence and structured an entire story arc around the reunion. Spain gives the season its strongest visual run. It ends with the cast reconfigured — a hinge point in the show's larger story."
 pull: "A returning anchor, an anniversary, and a season that functions as both."
+shape_h2: "Down to twenty-two episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Franchise anchor returns after two seasons"
 cast_size: 6

@@ -10,6 +10,7 @@ ep_count: 27
 eyebrow: "The golden-era cast at maximum episode count"
 lede: "Twenty-seven episodes. The golden-era lineup at full strength. Season six is RHOA running at the franchise's ceiling with the cast configuration that would define the show's reputation — Greece as a backdrop, Atlanta as the engine."
 pull: "The golden-era lineup, the highest episode count, and no obvious weak link in the cast."
+shape_h2: "Cast drops back to six."
 format_summary: "Atlanta social reality"
 format_caption: "Peak golden-era configuration"
 cast_size: 6

@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "The first major cast evolution"
 lede: "A strong new addition joins the original cast and gives the show a different kind of social energy. Season two is RHOA learning what it can become — and making a convincing case for its own longevity."
 pull: "The format's first genuine evolution — uneven in places, essential in others."
+shape_h2: "Episode count nearly doubles."
 format_summary: "Atlanta social reality"
 format_caption: "Expanded cast, new addition"
 cast_size: 6

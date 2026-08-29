@@ -10,6 +10,7 @@ ep_count: 25
 eyebrow: "A familiar face resets the cast's chemistry"
 lede: "A key returning cast member restores what season eight had lost, and the cast finds its chemistry again. Season nine is RHOA back at operational pressure — sharp group dynamics, a Maui trip, and structural comedy the show hadn't attempted quite this way before."
 pull: "The show rediscovers its configuration — and runs with it."
+shape_h2: "Back up to twenty-five episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Key returning cast member"
 cast_size: 6

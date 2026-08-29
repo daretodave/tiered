@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "The first season without a defining anchor"
 lede: "A new cast member who doesn't quite fit the show's register, a shorter episode run, and no international travel. Season eight is RHOA in an identity gap — a reset that hadn't yet found what it was resetting toward."
 pull: "A transitional season between eras, and it shows."
+shape_h2: "Down to twenty-one episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Without a franchise anchor for the first time"
 cast_size: 6

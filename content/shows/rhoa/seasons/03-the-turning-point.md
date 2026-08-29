@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "The season that declared the show's ambitions"
 lede: "A significant new cast addition and a more confident production approach push the third season past what RHOA had managed before. This is where the show commits to being a flagship, not just a franchise entry."
 pull: "Not the statistical peak — the season that proved the peak was possible."
+shape_h2: "Run stretches to twenty episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Major new cast addition"
 cast_size: 6

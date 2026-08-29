@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "A new premiere window and a freshly assembled cast"
 lede: "A May premiere replaced November — the first major format shift in franchise history. A third returning cast member and a longtime Friend promoted to full-time Housewife gave the season a reconfigured dynamic. Jamaica was the season's best stretch."
 pull: "The cast and the calendar both changed — the show rose to meet one of them."
+shape_h2: "Cast rebounds to six full-timers."
 format_summary: "Atlanta social reality"
 format_caption: "Season premiere moved from November to May"
 cast_size: 6

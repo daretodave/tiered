@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "RHOA at sustained full volume"
 lede: "The cast has found its chemistry and the season benefits from relationships with enough history to generate genuine friction. Season four is the show operating at full strength — dense, watchable, and fully formed."
 pull: "Established history, real friction — the Atlanta social world as a working system."
+shape_h2: "Longest run yet, twenty-two episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Established cast, peak dynamics"
 cast_size: 6

@@ -10,6 +10,7 @@ ep_count: 16
 eyebrow: "First full season of the post-S15 cast overhaul"
 lede: "Season sixteen marks the first full run of the post-S15 cast overhaul. Kandi Burruss and Kenya Moore anchored a largely new roster with genuine Atlanta roots, and Jamaica gave the new configuration its first real test under pressure."
 pull: "A new cast finding its footing with two anchors steady."
+shape_h2: "Episode count drops to sixteen."
 format_summary: "Atlanta social reality"
 format_caption: "Near-wholesale cast overhaul from S15"
 cast_size: 7

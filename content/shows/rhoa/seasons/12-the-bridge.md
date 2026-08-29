@@ -10,6 +10,7 @@ ep_count: 26
 eyebrow: "Twenty-six episodes spanning two eras"
 lede: "A returning cast member, twenty-six episodes, and the first virtual reunion in Bravo history. Season twelve starts as a high-volume franchise entry and finishes as a production landmark — the point where the show's pre-pandemic chapter closed."
 pull: "The season where the franchise's first long chapter ended."
+shape_h2: "Four cities across one season."
 format_summary: "Atlanta social reality"
 format_caption: "Key returning cast member; virtual reunion"
 cast_size: 6

@@ -10,6 +10,7 @@ ep_count: 25
 eyebrow: "The sharpest verbal season in the franchise"
 lede: "A single-season addition who could go word-for-word with anyone in the cast. Season seven is a verbally intensive season — sharper in register than almost anything the show had aired before, with a Puerto Rico trip that puts that sharpness on display."
 pull: "The cast at its most articulate and most combative — sometimes simultaneously."
+shape_h2: "A shorter run, twenty-five episodes."
 format_summary: "Atlanta social reality"
 format_caption: "One-season franchise addition"
 cast_size: 6

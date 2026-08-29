@@ -10,6 +10,7 @@ ep_count: 18
 eyebrow: "First unchanged cast since Season 6, last season for nearly all of them"
 lede: "The same six full-time cast members as season fourteen — the first unchanged main cast since season six. Eighteen episodes, Portugal as the travel highlight, and a season-ending cast overhaul that would redefine the franchise's next chapter."
 pull: "A stable cast on its last full run together."
+shape_h2: "Portugal joins the travel map."
 format_summary: "Atlanta social reality"
 format_caption: "Unchanged cast from S14; lowest episode count in window"
 cast_size: 6

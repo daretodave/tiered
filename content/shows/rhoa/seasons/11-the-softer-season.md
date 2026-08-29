@@ -10,6 +10,7 @@ ep_count: 23
 eyebrow: "A more domestic register, a Tokyo bachelorette"
 lede: "Two cast departures replaced by two new full-time additions produce a season that runs quieter than those around it. Season eleven has real moments — Tokyo is a genuine visual highlight — but it operates in a lower-intensity register that sits below the franchise's standard."
 pull: "Not the show at its floor, but not the show at its ceiling either."
+shape_h2: "Up to twenty-three episodes."
 format_summary: "Atlanta social reality"
 format_caption: "Two new full-time additions"
 cast_size: 6
