@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 11
 eyebrow: "Aired winter–spring 2007 · First season with 24 live finalists"
+shape_h2: "Forty-four episodes, finalists double."
 lede: "Season six doubles the finalist pool to twenty-four for the live voting rounds — the format's biggest structural shift since the debut. Mid-season, Idol Gives Back introduced a prime-time charity broadcast the show had never attempted."
 pull: "A bigger field and a bigger footprint — the season where the format learned how large it could run."
 format_summary: "Talent competition · nationwide audition · viewer vote"

@@ -8,6 +8,7 @@ ep_count: 16
 location: "Belmont University, Nashville; Aulani Resort, Hawaii"
 host: Ryan Seacrest
 eyebrow: "Aired winter–spring 2026 · ABC · auditions move to a single Nashville venue"
+shape_h2: "Sixteen episodes, one Nashville venue."
 lede: "Season twenty-four traded the touring audition circuit for one stop — Belmont University in Nashville — and kept the Hollywood Week name for a round rebranded Music City Takeover. The panel stayed the same, and the premiere drew Idol's biggest audience in four years."
 pull: "A touring circuit compressed into one Nashville venue, a voting app retired mid-relaunch, and a premiere audience the ABC era hadn't drawn since its debut season."
 format_summary: "Talent competition · single-venue audition · viewer vote"

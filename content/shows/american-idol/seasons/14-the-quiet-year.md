@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 14
 eyebrow: "Aired winter–spring 2015 · The stable panel running without structural change"
+shape_h2: "Thirty-seven episodes, the same panel."
 lede: "Season fourteen returns the Lopez–Connick–Urban panel with no format shifts or panel drama. The audition circuit ran its standard route and the competition followed the late-Fox structure. The panel's working chemistry carried cleanly from season thirteen."
 pull: "A stable season with nothing new to announce — the format running on muscle memory."
 format_summary: "Talent competition · nationwide audition · viewer vote"

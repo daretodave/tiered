@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 10
 eyebrow: "Aired winter–spring 2014 · A stable panel and technically rigorous critique"
+shape_h2: "Forty episodes, a rebuilt panel."
 lede: "Season thirteen rebuilds the panel after season twelve's turbulence: Jennifer Lopez returns, Keith Urban stays, Harry Connick Jr. joins. Connick's technically precise critique style shifted the register — more musically rigorous, warmer in chemistry than the previous lineup."
 pull: "The most technically grounded panel the show had run — stable chemistry and a more honest critique register."
 format_summary: "Talent competition · nationwide audition · viewer vote"

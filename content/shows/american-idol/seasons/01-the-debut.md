@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 2
 eyebrow: "Aired summer 2002 · The season that started it all"
+shape_h2: "Fourteen episodes, the first ever."
 lede: "American Idol arrives on Fox with Simon Cowell, Randy Jackson, and Paula Abdul sorting singers through a nationwide audition tour. Ryan Seacrest and Brian Dunkleman co-host. The viewer vote is the format's central gamble, and America takes it seriously from week one."
 pull: "A nationwide audition, a three-judge panel with no template, and a viewer vote that turned into a national conversation."
 format_summary: "Talent competition · nationwide audition · viewer vote"

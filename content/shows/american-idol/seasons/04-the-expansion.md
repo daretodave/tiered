@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 5
 eyebrow: "Aired winter–spring 2005 · Bigger circuit, longer run"
+shape_h2: "Forty episodes, the widest circuit."
 lede: "Season four pushes the audition circuit wider and the studio competition longer than any preceding season. Simon Cowell, Randy Jackson, and Paula Abdul return as the original panel tests how far the format can scale."
 pull: "The format at its most ambitious — more cities, more episodes, and production that aimed higher than it had before."
 format_summary: "Talent competition · widened audition tour · viewer vote"

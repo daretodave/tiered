@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 18
 eyebrow: "Aired spring 2024 · Katy Perry's farewell season as judge"
+shape_h2: "Eighteen episodes, one judge's farewell."
 lede: "Season twenty-two gained a farewell register when Katy Perry confirmed mid-run she would not return. Luke Bryan and Lionel Richie remained, but the announcement gave the closing episodes something the competition hadn't been carrying: genuine occasion."
 pull: "A standard competition elevated by the knowledge it was closing a chapter — the farewell framing earning its weight."
 format_summary: "Talent competition · nationwide audition · viewer vote"

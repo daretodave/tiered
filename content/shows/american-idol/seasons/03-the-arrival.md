@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 3
 eyebrow: "Aired winter–spring 2004 · The panel at full stride"
+shape_h2: "Thirty-eight episodes, circuit expands again."
 lede: "Season three expands the audition circuit and returns Simon Cowell, Randy Jackson, and Paula Abdul in the most settled version of their chemistry yet. The competition runs twelve weeks of studio rounds with genuine stakes at each elimination."
 pull: "The original panel at its most effective, a deeper field, and a competition that felt like the format always wanted to be this."
 format_summary: "Talent competition · expanded audition tour · viewer vote"

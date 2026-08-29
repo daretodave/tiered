@@ -8,6 +8,7 @@ location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 9
 eyebrow: "Aired winter–spring 2008 · The original panel at full working confidence"
+shape_h2: "Forty-three episodes, the panel settled."
 lede: "Season seven arrives with the original panel on a format that has fully found itself. The audition circuit produced a competitive top twelve, and the Hollywood round cut a field with more range than most prior seasons managed."
 pull: "The original panel fully settled, the audition field at its most competitive — the format doing exactly what it was built to do."
 format_summary: "Talent competition · nationwide audition · viewer vote"
