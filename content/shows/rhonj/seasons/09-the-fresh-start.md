@@ -11,6 +11,7 @@ eyebrow: "The cast that gave the franchise its second wind — Bravo, November 2
 lede: "Margaret Josephs and Jennifer Aydin arrive as full Housewives, bringing distinct registers and real presence. Season nine is the established era at its most confident — new cast embedded in familiar infrastructure, generating heat from the first episode."
 take_h2: "The best new blood."
 pull: "The S9 additions are the best new cast additions the franchise had seen since the founding era. The season knows it."
+shape_h2: "Fast ignition, no ramp-up."
 premiere_caption: "Bravo · November 2018"
 filming_caption: "New Jersey and surrounding areas"
 format_summary: "Cast refresh, two strong additions"

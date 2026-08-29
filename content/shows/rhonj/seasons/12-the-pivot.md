@@ -11,6 +11,7 @@ eyebrow: "A new chapter opens in the longest-running cast member's story — Bra
 lede: "Season twelve turns on a significant personal shift for the franchise's central figure. Her new relationship introduces an unfamiliar social world to an established cast — the show adjusts its center of gravity and finds new material in the process."
 take_h2: "One pivot, full reaction."
 pull: "The season turns on a single pivot point and has the confidence to let the rest of the cast react to it."
+shape_h2: "Center shifts, cast adapts."
 premiere_caption: "Bravo · May 2022"
 filming_caption: "New Jersey and surrounding areas"
 format_summary: "Personal pivot, new social world"

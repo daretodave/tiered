@@ -11,6 +11,7 @@ eyebrow: "Teresa Giudice returns, two new Housewives arrive — Bravo, July 2016
 lede: "Season seven runs on a clear organizing energy: the return of the franchise's most prominent cast member, a leaner roster, and two compelling new additions in Siggy Flicker and Dolores Catania. The show resets around a moment it can actually use."
 take_h2: "A leaner, focused reset."
 pull: "The leaner cast and the reunion of longtime characters give season seven more focus than the transitional year before it."
+shape_h2: "Fewer voices, less noise."
 premiere_caption: "Bravo · July 2016"
 filming_caption: "New Jersey and surrounding areas"
 format_summary: "Cast reset, key return"
