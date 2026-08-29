@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired winter 2018 · The evolution era opens"
 lede: "Season nine opened the evolution era by asking what else the paired-survival format could hold. A new casting approach, untested environments, and a structural reconsideration of what the 21-day premise was actually measuring."
 pull: "The format's first season in a new era — the rules unchanged but the argument shifting underneath them."
+shape_h2: "A new era's first case."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

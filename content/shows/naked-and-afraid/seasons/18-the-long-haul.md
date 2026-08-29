@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired 2025 · A format in genuinely long-form territory"
 lede: "At eighteen seasons, Naked and Afraid has outlasted every comparable survival format. Season eighteen runs for an audience that knows the 21-day premise more thoroughly than any competitor in the genre — familiar enough that genuine stakes still have to be earned."
 pull: "Eighteen seasons of two strangers, 21 days, nothing — a premise that has outlasted every competitor in its genre."
+shape_h2: "Eighteen seasons, no peer."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

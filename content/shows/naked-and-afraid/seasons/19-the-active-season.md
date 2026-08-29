@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Airing 2026 · Currently in progress"
 lede: "Season nineteen is the current season — still airing, still accumulating, not yet a finished object to rank. The 21-day paired-survival format enters its nineteenth run with more history behind it than any survival format on television."
 pull: "The current season holds the last slot because the canon doesn't rank what it can't yet see in full."
+shape_h2: "Still running, not yet ranked."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

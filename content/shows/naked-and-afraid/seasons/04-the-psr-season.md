@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired spring 2015 · The season that formalized the survival scoring system"
 lede: "Season four made the Primitive Survival Rating a prominent on-screen metric — a visible, trackable number that changed how the show talked about what it was measuring. Every season since inherited the language."
 pull: "The scoring overhaul gave the format a vocabulary for what it had always been doing."
+shape_h2: "A scoring system arrives."
 format_summary: "Paired survival · 21 days · PSR scoring"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

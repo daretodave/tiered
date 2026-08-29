@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired fall 2016 · The founding era extending its geographic reach"
 lede: "Season seven pushed the format's location selection further — more varied biomes, different environmental demands, a broader argument that the 21-day paired-survival clock could hold across terrain the show hadn't tested yet."
 pull: "More varied locations made the same 21-day clock feel like a different question each episode."
+shape_h2: "The map widens."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

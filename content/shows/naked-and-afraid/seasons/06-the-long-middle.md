@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired spring 2016 · The founding era at settled confidence"
 lede: "Season six arrived after the PSR overhaul had settled in. The pairings were more intentional, the production more assured, and the format no longer needed to prove its premise — it only needed to execute on it."
 pull: "The format had stopped proving itself and started refining itself — a harder transition to see but a real one."
+shape_h2: "Confidence without a rewrite."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

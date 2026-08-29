@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired 2024 · The modern era at comfortable stride"
 lede: "Season sixteen arrived past the modern era's opening uncertainty and past the confirmation that the era's approach was repeatable. The format running in a longer groove — familiar enough to execute cleanly, recent enough that its final standing is still settling."
 pull: "The modern era in full stride — no longer announcing itself, no longer proving itself, just delivering."
+shape_h2: "A longer, familiar groove."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

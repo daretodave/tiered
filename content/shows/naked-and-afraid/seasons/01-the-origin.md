@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired summer 2013 · The survival format, assembled from scratch"
 lede: "The debut. Multiple pairs of survivalists dropped into remote wilderness locations with nothing — no clothing, no gear, no safety net beyond the medical team — and 21 days to prove the premise could hold. It held."
 pull: "No clothes, no tools, no precedent — the format bet everything on the premise and the premise paid out."
+shape_h2: "Multiple pairs, one proof."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

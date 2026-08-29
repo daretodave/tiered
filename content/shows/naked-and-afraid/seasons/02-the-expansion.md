@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired winter 2014 · The format's first test of repeatability"
 lede: "Season two had to prove the premiere wasn't a novelty. Fresh pairings in new environments, a more deliberate casting approach, and the same uncompromising 21-day structure — the run that answered whether the format had a future."
 pull: "The format earned renewal by not needing to change anything to deserve it."
+shape_h2: "New pairings, same clock."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

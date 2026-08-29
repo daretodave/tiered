@@ -9,6 +9,7 @@ location: "Multiple wilderness locations"
 eyebrow: "Aired summer 2017 · The founding era's final run"
 lede: "Season eight closed the founding era with the format's vocabulary intact and its argument confirmed. Eight seasons in, the 21-day paired-survival premise had proven it could sustain a long run without needing to reinvent itself."
 pull: "The founding era closed with the format's core argument — 21 days, two strangers, nothing — fully confirmed."
+shape_h2: "The founding era closes."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
