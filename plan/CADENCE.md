@@ -869,6 +869,18 @@ the eleven authored fragments. 766 → 755 remaining corpus-wide.
 Next actionable Rule 2 check remains the weekly sweep, due
 2026-08-30.
 
+**Rule 2 stall, 2026-08-29 tick (cloud march):** re-checked the gap
+table against the 2026-08-23 full sweep's own findings — every one
+of the 43 gap-slots remains starred confirmed-but-unaired. No row
+actionable. Fell through to the established issue-#758 workaround:
+continued the `shape_h2` (pass-131) drain, `big-brother` (12/12 →
+0/12 files, smallest remaining scope corpus-wide, tied with `alone`,
+`below-deck`, `love-island-uk`, `survivor-australia`, and
+`vanderpump-rules` at 12, tie-broken by oldest est_year — 2000 vs
+2013-2016). See `plan/AUDIT.md` standing row for the twelve authored
+fragments. 755 → 743 remaining corpus-wide. Next actionable Rule 2
+check remains the weekly sweep, due 2026-08-30.
+
 ## Sweep notes (2026-08-09, fifth full pass)
 
 Fifth full weekly sweep (`/march` Step 1.5, Rule 1a, cloud march) —
