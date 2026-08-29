@@ -10,6 +10,7 @@ aired_year: 2024
 location: "West Hollywood, California"
 eyebrow: "Premiered January 2024 · Bravo"
 take_h2: "The leanest cast in years."
+shape_h2: "Nineteen again, same as before."
 lede: "Season 11 airs in the immediate aftermath of the prior season's headlines, with Raquel Leviss not returning to the cast. A smaller, veteran-heavy core carries the nineteen-episode run."
 pull: "The leanest ensemble in years, made up almost entirely of the show's longest-tenured names."
 format_summary: "Docusoap · restaurant staff"

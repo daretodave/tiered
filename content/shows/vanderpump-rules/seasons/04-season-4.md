@@ -10,6 +10,7 @@ aired_year: 2015
 location: "West Hollywood, California"
 eyebrow: "Premiered November 2015 · Bravo"
 take_h2: "The show's first real subtraction."
+shape_h2: "Twenty-four episodes, up three more."
 lede: "James Kennedy is promoted to a full series regular, Faith Stowers and Lala Kent join in recurring roles, and Stassi Schroeder steps back from her regular spot after three seasons to appear as a guest."
 pull: "The show's first real subtraction, offset by its biggest round of new names yet."
 format_summary: "Docusoap · restaurant staff"

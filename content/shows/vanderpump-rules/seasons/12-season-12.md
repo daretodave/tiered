@@ -10,13 +10,14 @@ aired_year: 2025
 location: "West Hollywood, California"
 eyebrow: "Premiered December 2025 · Bravo"
 take_h2: "One holdover, ten new faces."
+shape_h2: "Seven fewer episodes than last."
 lede: "Season 12 returns to SUR and TomTom with the most complete cast reset in the show's history. Lisa Vanderpump is the only name back from Season 11, joined by ten new regulars, four of whom had smaller appearances earlier in the show's run."
 pull: "The most complete cast turnover in the show's history — one holdover, ten new names, and a full return to the restaurant floor the format was built on."
 format_summary: "Docusoap · restaurant staff"
 format_caption: "Ten new regulars, one returning veteran"
 premiere_caption: "Bravo · winter 2025"
 filming_caption: "SUR and TomTom, West Hollywood"
-episodes_caption: "Twelve episodes, the shortest order in the show's history"
+episodes_caption: "Twelve episodes, the shortest run since Season 1"
 cast_size: 11
 cast_size_caption: "Vanderpump alone returns, joined by ten new names"
 watch_list:

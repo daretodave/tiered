@@ -78,7 +78,7 @@ tag: A confident, low-key sophomore season — proof the format didn't need a fi
 slot_argument: Ariana Madix joins in a recurring role and James Kennedy makes guest appearances, in a seventeen-episode run that barely changes the recipe Season 1 established.
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
-Season 2 ranks sixth because a confident sophomore season isn't the same as a format-advancing one. Ariana Madix joins the cast in a recurring role, and James Kennedy starts turning up as a guest, early names in what becomes a much bigger ensemble later on. Seventeen episodes, the show's shortest order, don't leave much room for those additions to do more than introduce themselves. What the season does prove is that Season 1 wasn't a fluke — the restaurant's chain of command and the staff's tangled relationships carry the show just as well the second time around, even without much new to say.
+Season 2 ranks sixth because a confident sophomore season isn't the same as a format-advancing one. Ariana Madix joins the cast in a recurring role, and James Kennedy starts turning up as a guest, early names in what becomes a much bigger ensemble later on. Seventeen episodes, a modest bump from Season 1's ten-episode debut, don't leave much room for those additions to do more than introduce themselves. What the season does prove is that Season 1 wasn't a fluke — the restaurant's chain of command and the staff's tangled relationships carry the show just as well the second time around, even without much new to say.
 
 ## 4. Season 4
 

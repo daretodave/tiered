@@ -10,6 +10,7 @@ aired_year: 2023
 location: "West Hollywood, California"
 eyebrow: "Premiered February 2023 · Bravo"
 take_h2: "The headline overtook the show."
+shape_h2: "Two episodes longer than last."
 lede: "Nearly the entire prior cast returns — Charli Burnett steps back to a recurring role, Brock Davies appears less often — while Ally Lewber joins in a recurring spot, across nineteen episodes."
 pull: "A stable, returning cast overtaken mid-run by the most-covered real-world story the show has ever generated."
 format_summary: "Docusoap · restaurant staff"
