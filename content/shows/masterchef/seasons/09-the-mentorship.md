@@ -9,6 +9,7 @@ host: Gordon Ramsay
 canonical_position: 2
 eyebrow: "Aired summer 2018 · Team mentorship model"
 lede: "Season nine restructures the competition entirely. Ramsay, Sanchez, and Bastianich each hand-pick eight home cooks and mentor their group through the full season — the largest cast in the show's run, and its most structurally ambitious format."
+shape_h2: "Twenty-three episodes across three groups."
 pull: "The show's boldest structural experiment — twenty-four home cooks, three mentors, one kitchen."
 format_summary: "Home cook competition · team mentorship · three-group draft"
 format_caption: "each judge drafts and mentors eight home cooks"

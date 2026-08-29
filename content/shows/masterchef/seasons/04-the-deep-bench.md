@@ -9,6 +9,7 @@ host: Gordon Ramsay
 canonical_position: 1
 eyebrow: "Aired summer 2013 · The founding era's peak"
 lede: "Season four is MasterChef at its founding-era best. The largest cast in the show's early run, twenty-five episodes, and a deep amateur bench with real technique — a three-judge panel in full sync, and challenges that consistently deliver."
+shape_h2: "Cast grows to twenty-three cooks."
 pull: "The founding era's deepest roster and longest run — and the format earns every episode."
 format_summary: "Home cook competition · team and individual challenges"
 format_caption: "largest cast and longest run in the founding era"

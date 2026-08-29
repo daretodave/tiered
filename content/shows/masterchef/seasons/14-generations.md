@@ -10,6 +10,7 @@ host: Gordon Ramsay
 canonical_position: 13
 eyebrow: "MasterChef: Generations · Aired 2024"
 lede: "MasterChef: Generations divides twenty home cooks into four generational cohorts — Baby Boomers, Gen X, Millennials, Gen Z — for initial team play before shifting to individual competition at midseason. A restaurant takeover challenge is the season's production highlight."
+shape_h2: "One episode fewer than before."
 pull: "A generational gimmick that works better as a team-formation device than as a sustained theme."
 format_summary: "Home cook competition · generational teams"
 format_caption: "four generational cohorts, restaurant takeover challenge"

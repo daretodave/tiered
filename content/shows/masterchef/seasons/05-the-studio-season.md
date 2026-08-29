@@ -9,6 +9,7 @@ host: Gordon Ramsay
 canonical_position: 10
 eyebrow: "Aired summer 2014 · Final founding trio"
 lede: "Season five runs the founding-era format at a reliable level across nineteen episodes. Ramsay, Elliot, and Bastianich appear together for the last time, and the competition delivers the format's familiar satisfactions without pushing beyond them."
+shape_h2: "Ends a three-season episode climb."
 pull: "The founding trio's final season — consistent, clean, and honest about its ceiling."
 format_summary: "Home cook competition · white apron audition · elimination"
 format_caption: "last season with the original judging trio"

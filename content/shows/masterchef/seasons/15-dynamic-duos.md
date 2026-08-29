@@ -10,6 +10,7 @@ host: Gordon Ramsay
 canonical_position: 15
 eyebrow: "MasterChef: Dynamic Duos · Filmed in Melbourne"
 lede: "MasterChef: Dynamic Duos sends twenty-four home cooks to Melbourne — the first US season outside Los Angeles — competing as twelve pairs throughout: married couples, siblings, and parent-and-child teams. Tiffany Derry joins Ramsay and Bastianich."
+shape_h2: "Derry replaces Sanchez as judge."
 pull: "A pairs format in a new city — the show reinventing its physical and structural identity at the same time."
 format_summary: "Pairs competition · twelve pairs throughout"
 format_caption: "first US MasterChef season filmed outside Los Angeles"

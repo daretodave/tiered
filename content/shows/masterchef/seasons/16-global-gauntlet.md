@@ -9,6 +9,7 @@ host: Gordon Ramsay
 canonical_position: 16
 eyebrow: "MasterChef: Global Gauntlet · Currently airing"
 lede: "MasterChef: Global Gauntlet films in Toronto with twenty home cooks in four regional groups — Europe, Asia-Pacific, Africa, and the Americas — in a World Cup-inspired structure. Gordon Ramsay, Joe Bastianich, and Tiffany Derry judge. Currently airing."
+shape_h2: "Hiatus for the World Cup."
 pull: "A World Cup structure applied to home cooking — the format's most globally-minded season yet."
 format_summary: "Home cook competition · four global regions"
 format_caption: "filmed in Toronto; World Cup-inspired regional mechanics"

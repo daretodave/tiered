@@ -9,6 +9,7 @@ host: Gordon Ramsay
 canonical_position: 9
 eyebrow: "Aired summer 2015 · Tosi joins, Elliot exits"
 lede: "Season six is a transitional year. Graham Elliot exits and Christina Tosi steps in, giving Ramsay a new creative foil and the show a pastry perspective it hadn't carried before. Twenty episodes run the familiar format while the new three-judge chemistry settles."
+shape_h2: "Cast ticks up to twenty-two."
 pull: "A panel overhaul in motion — the format holds steady while the judging dynamic rebuilds."
 format_summary: "Home cook competition · Mystery Box · Elimination Test"
 format_caption: "first season with Tosi, last with Elliot"
