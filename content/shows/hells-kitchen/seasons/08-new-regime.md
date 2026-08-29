@@ -17,6 +17,7 @@ cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Wednesday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Just four months behind season seven."
 ---
 
 Season eight follows season seven by four months — the third installment in eighteen months — and the pace costs something. Jean-Philippe Susilovic's long run at the maitre d' stand ends here; James Lukanik takes over the front of house. The cast works through the format's familiar paces competently but without the edge that made the stronger founding-era seasons memorable. This is Hell's Kitchen as a well-oiled machine rather than a live wire. Functional, watchable, a notch below.

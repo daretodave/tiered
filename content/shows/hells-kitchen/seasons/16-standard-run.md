@@ -17,6 +17,7 @@ cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Hollywood, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Two fewer episodes than season fifteen."
 ---
 
 Season sixteen is the evolution era's final standard-format run, and it leans on that template without ornamentation. Eighteen chefs and sixteen episodes hold to the red-and-blue structure the show had refined for years. The production introduced custom episode titles in place of the long-running "N Chefs Compete" formula — a quiet signal that the format was ready to move on. The kitchen runs solidly throughout. Nothing breaks. What it lacks in novelty, it compensates for in execution.

@@ -18,6 +18,7 @@ cast_size_caption: "sixteen returning black-jacket alumni"
 premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Hollywood, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Two fewer chefs than season sixteen."
 ---
 
 Season seventeen is the show's first genuine all-star run: every chef had previously earned a black jacket in their original season. That baseline changes the texture of the competition — meltdowns are less frequent, the cooking is sharper, and Ramsay's critiques operate at a different register. The first three-person finale in the show's history signals how closely the field ran at the end. The strongest entry the themed era has produced.

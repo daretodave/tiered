@@ -18,6 +18,7 @@ cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Thursday 9/8c"
 filming_caption: "Caesars Palace, Las Vegas"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Cast climbs back up to eighteen."
 ---
 
 Season nineteen is the show's first Nevada production, built on a purpose-constructed set at Caesars Palace that puts the cast in the shadow of the actual Hell's Kitchen restaurant. The geography is genuinely new — the first time production moved out of California — and the season introduces the Spells Kitchen Challenge, a new ingredient-identification format. The cast of eighteen runs the familiar red-and-blue structure. The location carries the season's identity; the format underneath is recognizable throughout.

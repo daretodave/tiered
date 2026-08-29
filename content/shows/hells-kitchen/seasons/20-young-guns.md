@@ -18,6 +18,7 @@ cast_size_caption: "eighteen chefs, all 24 or younger"
 premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Las Vegas, Nevada"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "The second premiere date of 2021."
 ---
 
 Season twenty builds its identity on a single casting rule: every chef is 24 or younger. It's the show's first age-restricted run — a cast defined by early-career energy rather than proven kitchen credentials. The gender-divided red-and-blue structure runs the familiar format across sixteen Las Vegas episodes. The youth angle drives the first half with real momentum. What it can't manufacture is the competitive depth that experience supplies, and that is where the season honestly settles.

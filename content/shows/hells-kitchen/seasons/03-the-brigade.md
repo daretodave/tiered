@@ -17,6 +17,7 @@ cast_size_caption: "fifteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Three more chefs, one fewer episode."
 ---
 
 The third season brings a wider cast and a format still working out its own pacing. There is enough personality spread across the two teams to sustain the dinner service pressure — distinct voices, genuine kitchen disagreements, moments where competition feels real. The uneven middle stretch shows a production not yet confident in what the quieter episodes should deliver. The cast is the most varied the early run had assembled, even if the structure does not always match it.

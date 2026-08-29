@@ -17,6 +17,7 @@ cast_size_caption: "seventeen chefs, two teams"
 premiere_caption: "Fox · Tuesday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Seventeen chefs, the largest cast yet."
 ---
 
 Season six has the strongest casting energy of the post-five stretch. The bench was deep enough to sustain real competition across the dinner service run, and the production made structural choices — chef's tables moved inside the kitchen, a returning competitor re-entering mid-season — that kept the format from settling into routine. The kitchen tension felt less manufactured than the seasons immediately around it. A season that earns its place in the upper half of the early run without apology.

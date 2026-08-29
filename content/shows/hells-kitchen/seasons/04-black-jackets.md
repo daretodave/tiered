@@ -17,6 +17,7 @@ cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Sixteen chefs, one more than season three."
 ---
 
 The fourth season is the early format at its most sustained. The cast was the most volatile Hell's Kitchen had assembled — genuine kitchen talent alongside personalities that made every dinner service unpredictable — and the production had learned how to frame both without losing the thread. Ramsay's demands felt matched to what the cast could deliver, making the kitchen tension feel earned. The black jacket phase, when top performers competed without team cover, arrived with real weight.

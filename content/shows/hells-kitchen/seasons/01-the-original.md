@@ -17,6 +17,7 @@ cast_size_caption: "twelve chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Fourteen episodes launch the format."
 ---
 
 Gordon Ramsay opens a working restaurant in Los Angeles, splits twelve aspiring chefs into two teams, and runs them through dinner services where real diners are waiting. The format is inventing its own rules on camera — elimination mechanics are not yet locked in, the kitchen culture is raw, and the tension between actual cooking and competitive theater is still being negotiated. The rough edges are the point. A foundational first draft.

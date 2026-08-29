@@ -18,6 +18,7 @@ cast_size_caption: "eighteen chefs, international field"
 premiere_caption: "Fox · Thursday 9/8c"
 filming_caption: "Los Angeles, California"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Seventh straight season at sixteen episodes."
 ---
 
 The American Dream season runs the familiar sixteen-episode structure with an international cast that gives the thematic hook genuine texture. The prize — head chef at Hell's Kitchen at Caesars Las Vegas — is among the franchise's more visible placements. This is the last season produced on the California stage, which gives it a quiet retrospective quality. The format holds at its reliable level throughout.

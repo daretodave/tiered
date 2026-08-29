@@ -17,6 +17,7 @@ cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Same run length, a new premiere slot."
 ---
 
 Season fourteen's most notable trait is the calendar: a January premiere was the format's first winter slot since the early seasons, signalling a scheduling flexibility the evolution era kept. Eighteen chefs and eighteen episodes hold to the established template, and the kitchen dynamics run in familiar channels. The format is competent, the dinner services land when needed. What the season doesn't do is push the cast into the upper tension register. The scheduling note is what stays with you.

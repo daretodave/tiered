@@ -17,6 +17,7 @@ cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Third straight season at eighteen episodes."
 ---
 
 Season fifteen is the last numbered-only run before the format moves into themed editions, and that context gives it a quiet finality the production couldn't have planned. The eighteen-episode run is tightly executed, the cast has solid range by evolution-era standards, and the dinner service pressure holds across the back half in a way season fourteen's doesn't. Both seasons share the same structure; the bench is what separates them. A controlled close to a decade of numbered runs.
