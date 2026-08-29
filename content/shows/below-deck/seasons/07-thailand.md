@@ -10,6 +10,7 @@ ep_count: 20
 aired_year: 2019
 eyebrow: "Season 7 · Phuket, Thailand"
 take_h2: "The franchise leaves the Caribbean."
+shape_h2: "Twenty episodes, the longest yet."
 lede: "Below Deck left the Atlantic basin entirely and anchored in Phuket — a first for the franchise, and a setting that brought a genuinely different texture to the charter format."
 pull: "Thailand pushed the franchise beyond its Caribbean frame and proved the format traveled well."
 format_summary: "Superyacht charter · Southeast Asia"

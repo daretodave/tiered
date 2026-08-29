@@ -10,6 +10,7 @@ ep_count: 17
 aired_year: 2022
 eyebrow: "Season 10 · St. Lucia"
 take_h2: "Two captains, one uneven season."
+shape_h2: "Seventeen episodes, one mid-season swap."
 lede: "The St. Lucia season introduced a structural anomaly — a mid-season captain change — that gave the run a unique shape no other Below Deck season shares."
 pull: "The captain transition mid-season changed the format's usual rhythm in ways the show hadn't navigated before."
 format_summary: "Superyacht charter · dual captains"

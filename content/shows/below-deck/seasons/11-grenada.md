@@ -10,6 +10,7 @@ ep_count: 17
 aired_year: 2024
 eyebrow: "Season 11 · Grenada"
 take_h2: "A new captain, a new era."
+shape_h2: "Seventeen episodes, a captain change."
 lede: "Grenada opened a new chapter — Captain Kerry Titheradge at the helm for the first time, the spice island's distinctive green coastline as backdrop, and a crew adjusting to a different command style."
 pull: "A format reset with a new captain, a new voice, and a Caribbean island that gave the era its own visual register."
 format_summary: "Superyacht charter · new captain era"

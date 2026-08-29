@@ -9,6 +9,7 @@ host: "Lee Rosbach"
 ep_count: 14
 eyebrow: "Cast churn as feature, not bug"
 take_h2: "Turnover, by design."
+shape_h2: "Fifth season, still fourteen episodes."
 lede: "Below Deck returned to Sint Maarten with an entirely new crew and proved that cast turnover was part of the format's design. A sharper interior hierarchy and Captain Lee's fifth season at the helm gave the return run a more confident shape."
 pull: "The second Sint Maarten run showed the format had found its identity and could sustain it."
 format_summary: "Charter yacht · Caribbean return"

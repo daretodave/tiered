@@ -9,6 +9,7 @@ host: "Lee Rosbach"
 ep_count: 14
 eyebrow: "The origin season"
 take_h2: "The format's rough draft."
+shape_h2: "Fourteen episodes, a first outing."
 lede: "The format that would become a Bravo staple assembled itself here, aboard a superyacht off Sint Maarten. Captain Lee Rosbach commanded his first crew through a charter season built on service pressure, hierarchy, and the peculiar social experiment of living where you work."
 pull: "Rough at the edges, essential to everything that followed — the season that built the architecture."
 format_summary: "Charter yacht · Caribbean"

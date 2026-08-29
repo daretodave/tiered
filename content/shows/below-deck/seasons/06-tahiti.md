@@ -10,6 +10,7 @@ ep_count: 17
 aired_year: 2018
 eyebrow: "Season 6 · French Polynesia"
 take_h2: "The show's most striking backdrop."
+shape_h2: "Seventeen episodes, a longer season."
 lede: "French Polynesia gave Below Deck its most visually striking setting yet — overwater bungalows, turquoise lagoons, and the overwater world of Tahiti as backdrop."
 pull: "The Polynesian setting stretched the show's visual register in a way no Caribbean season had managed."
 format_summary: "Superyacht charter · French Polynesia"
