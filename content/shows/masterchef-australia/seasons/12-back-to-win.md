@@ -15,6 +15,7 @@ format_summary: "All-returnee cast · new judge panel debut"
 format_caption: "every contestant a former high achiever"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
+shape_h2: "Sixty-one episodes, holding steady even as the panel resets entirely."
 watch_list:
   - episode_label: "Panel debut · Allen, Leong, Zonfrillo"
     body: "Three new judges arrive simultaneously, which means their dynamic — individual authority, collective voice, how they disagree — gets established in real time against a cast that knows the format well."

@@ -15,6 +15,7 @@ format_caption: "auditions return, new immunity structure"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Sixty episodes, seven fewer than the year before it."
 watch_list:
   - episode_label: "Early eps · Power Apron arrives"
     body: "Watch for how contestants navigate holding the Power Apron — the advantage mechanic is new and the field hasn't figured out how to play around it yet."

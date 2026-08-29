@@ -14,6 +14,7 @@ format_summary: "Home cook competition · new panel, new cast"
 format_caption: "three Immunity Pins, Second Chance Week"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne, Uluru, Apollo Bay, Daylesford"
+shape_h2: "Sixty-one episodes, closing out four straight seasons at this length."
 watch_list:
   - episode_label: "First Mystery Box · Immunity Pins"
     body: "The three Immunity Pins available all season are allocated in the opening Mystery Box. The early decision shapes the competitive landscape for the full run."

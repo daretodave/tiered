@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · 2025"
 filming_caption: "Melbourne studio production"
 cast_size: 24
 cast_size_caption: "Twenty-four returning contestants, spanning series 1–16"
+shape_h2: "Sixty episodes, ten more than either of the two seasons before it."
 watch_list:
   - episode_label: "Second all-returnee season"
     body: "Six years after season twelve introduced the Back to Win concept, twenty-four contestants return again — some from the earliest seasons, some from recent ones. The range of eras on one bench is the widest an all-returnee season has drawn from."

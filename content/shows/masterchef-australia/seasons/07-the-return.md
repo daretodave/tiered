@@ -15,6 +15,7 @@ format_caption: "Marco's second consecutive dedicated week"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Sixty-two episodes, matching season four's length exactly."
 watch_list:
   - episode_label: "Marco Week · second visit"
     body: "Marco Pierre White becomes the only guest to anchor two consecutive dedicated weeks. His return has a different energy — the format has already set his template, and this season uses it more fluently."

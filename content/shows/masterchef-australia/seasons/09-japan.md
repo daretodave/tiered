@@ -15,6 +15,7 @@ format_caption: "Tokyo challenges, Power Pin debut"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio + Tokyo on location"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Sixty-three episodes, unchanged from the year before."
 watch_list:
   - episode_label: "Japan Week · Tokyo"
     body: "Challenges set in Michelin-starred Tokyo restaurants, Shinjuku food stalls, and on Mount Fuji's tea plantations ask contestants to work with ingredients and techniques the studio format cannot introduce. The most demanding international block in the founding era."
