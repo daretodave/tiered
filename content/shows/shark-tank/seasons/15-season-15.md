@@ -11,6 +11,7 @@ aired_year: 2023
 episodes: 22
 eyebrow: "Premiered September 2023 · ABC"
 lede: "Season fifteen keeps every part of the format exactly where the last few years left it — the classic six, the rotating guest chair, no cast news to report. It's a quiet, competent season by design, more proof the format doesn't need constant tinkering to keep working."
+shape_h2: "Twenty-two episodes, holding steady again."
 pull: "A quiet season, competent by design rather than by accident."
 take_h2: "Quiet, competent, unchanged."
 premiere_caption: "ABC · September 2023"

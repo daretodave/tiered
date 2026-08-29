@@ -11,6 +11,7 @@ aired_year: 2015
 episodes: 29
 eyebrow: "Premiered September 2015 · ABC"
 lede: "The classic six carry on unchanged, but season seven adds a new wrinkle: guest sharks start rotating through an added seat instead of only filling in for an absence — the first hint the panel could grow without anyone losing their chair."
+shape_h2: "Twenty-nine episodes, third year running."
 pull: "A first hint the bench could grow — a guest chair added, not a seat replaced."
 take_h2: "A seat added, not replaced."
 premiere_caption: "ABC · September 2015"

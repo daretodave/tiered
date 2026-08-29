@@ -11,6 +11,7 @@ aired_year: 2013
 episodes: 29
 eyebrow: "Premiered September 2013 · ABC"
 lede: "The panel widens from two rotating guests into a full six-person bench — the lineup fans still call the classic six, five of them appearing on any given night."
+shape_h2: "Twenty-nine episodes, a new high."
 pull: "Six sharks, five seats a night — the rotation the show would keep running for years."
 premiere_caption: "ABC · September 2013"
 filming_caption: "Culver City · shoot where the classic six first assembles"

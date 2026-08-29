@@ -11,6 +11,7 @@ aired_year: 2009
 episodes: 7
 eyebrow: "Premiered August 2009 · ABC"
 lede: "Five investors, a folding table, and entrepreneurs with a few minutes to make their case — Shark Tank's first season is short, plain, and confident about a format nobody else on American television was running yet."
+shape_h2: "Seven episodes, its shortest run."
 pull: "A five-shark panel and a premise — real money on the table, minutes to convince it — that needed no second draft."
 premiere_caption: "ABC · August 2009"
 filming_caption: "Culver City · founding shoot for the show's entire run"

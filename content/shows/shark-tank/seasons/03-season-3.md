@@ -11,6 +11,7 @@ aired_year: 2012
 episodes: 15
 eyebrow: "Premiered January 2012 · ABC"
 lede: "Kevin Harrington is gone, and Mark Cuban steps into a full-time seat. Barbara Corcoran misses several episodes, filled in by a newcomer named Lori Greiner — her first appearances on the show."
+shape_h2: "Fifteen episodes, biggest jump yet."
 pull: "The lineup finally turns over — a full-time Cuban, and a first look at the shark who'd become a fixture."
 premiere_caption: "ABC · January 2012"
 filming_caption: "Culver City · shoot where the panel turns over"

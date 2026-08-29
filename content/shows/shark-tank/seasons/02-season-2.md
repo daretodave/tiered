@@ -11,6 +11,7 @@ aired_year: 2011
 episodes: 9
 eyebrow: "Premiered March 2011 · ABC"
 lede: "Nine episodes track the first crack in the original panel — Kevin Harrington's seat shrinks, Mark Cuban makes his first guest turns, and the show starts rotating a fifth chair instead of keeping it fixed."
+shape_h2: "Nine episodes, up from seven."
 pull: "The founding panel starts to shift — a fifth seat that rotates instead of staying put."
 premiere_caption: "ABC · March 2011"
 filming_caption: "Culver City · shoot where Cuban's guest turns begin"

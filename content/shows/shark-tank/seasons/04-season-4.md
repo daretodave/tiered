@@ -11,6 +11,7 @@ aired_year: 2012
 episodes: 26
 eyebrow: "Premiered September 2012 · ABC"
 lede: "Shark Tank's first fall premiere comes with its biggest order yet — 26 episodes. Barbara Corcoran and Lori Greiner formalize an alternating fifth seat, and the show starts checking in on past pitches."
+shape_h2: "Twenty-six episodes, show's biggest gain."
 pull: "A full season order, a settled fifth seat, and a format confident enough to look backward."
 premiere_caption: "ABC · September 2012"
 filming_caption: "Culver City · shoot behind the first fall premiere"

@@ -11,6 +11,7 @@ aired_year: 2018
 episodes: 23
 eyebrow: "Premiered October 2018 · ABC"
 lede: "Season ten arrives under a 10th-anniversary banner, its premiere doubling as the show's 200th overall episode. Guest sharks mark the occasion, including the first former contestant to sit in the tank's chair. The classic six anchor every pitch; the format doesn't change."
+shape_h2: "Twenty-three episodes, a one-episode dip."
 pull: "A victory-lap season, confident enough to celebrate instead of adjust."
 take_h2: "Confident enough to celebrate."
 premiere_caption: "ABC · October 2018"

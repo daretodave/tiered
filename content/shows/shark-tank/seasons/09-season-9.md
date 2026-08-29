@@ -11,6 +11,7 @@ aired_year: 2017
 episodes: 24
 eyebrow: "Premiered October 2017 · ABC"
 lede: "Kevin O'Leary is largely absent for a stretch of season nine, and the show leans harder on guest sharks than at any point since the panel settled — the steadiest years this canon has rewarded, finally under pressure."
+shape_h2: "Twenty-four episodes, unchanged from last."
 pull: "The classic six's steadiest years meet their first real interruption."
 take_h2: "The steady years, interrupted."
 premiere_caption: "ABC · October 2017"

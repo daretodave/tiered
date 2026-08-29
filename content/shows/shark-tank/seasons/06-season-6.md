@@ -11,6 +11,7 @@ aired_year: 2014
 episodes: 29
 eyebrow: "Premiered September 2014 · ABC"
 lede: "The classic six holds without a single change, a milestone 100th episode gets its own retrospective, and the season's finale leads straight into a new companion series."
+shape_h2: "Twenty-nine episodes, matching last year."
 pull: "A lineup that never needed fixing again, and a 100th episode to prove it."
 premiere_caption: "ABC · September 2014"
 filming_caption: "Culver City · shoot behind the show's 100th episode"

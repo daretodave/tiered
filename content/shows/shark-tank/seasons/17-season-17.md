@@ -11,6 +11,7 @@ aired_year: 2025
 episodes: 18
 eyebrow: "Premiered September 2025 · ABC"
 lede: "Season seventeen moves Shark Tank from Friday to Wednesday nights, and the panel looks different too — Daniel Lubetzky sits as a full-time shark for the first time, while Mark Cuban isn't part of the rotation. The guest chair keeps pulling louder names than ever."
+shape_h2: "Eighteen episodes, another year shorter."
 pull: "A new night, a new full-time shark, and the loudest guest lineup yet."
 take_h2: "A new night, new seat."
 premiere_caption: "ABC · September 2025"
