@@ -16,6 +16,7 @@ format_caption: "First season on Disney+; moved off ABC broadcast"
 host_caption: "Second season with Tyra Banks and Alfonso Ribeiro as co-hosts"
 premiere_caption: "Disney+ · September 2022"
 filming_caption: "CBS Television City, Los Angeles"
+shape_h2: "Twelve episodes, a streaming-exclusive debut."
 ---
 
 Season thirty-one is the show's historic distribution pivot. After fifteen-plus years as an ABC broadcast staple, regular episodes moved exclusively to Disney+ — a shift that changed where the format reached its audience without altering the structure. Tyra Banks and Alfonso Ribeiro returned as co-hosts, twelve episodes played out in the familiar competitive shape, and the arc followed the expected pattern. What changed was the platform, the screen, the delivery model, everything around the format rather than the format itself.

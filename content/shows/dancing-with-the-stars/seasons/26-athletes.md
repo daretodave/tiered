@@ -16,6 +16,7 @@ format_caption: "Condensed format; all-Olympic and Paralympic cast"
 host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · April 2018"
 filming_caption: "CBS Television City, Los Angeles"
+shape_h2: "Six episodes, the lone all-athlete edition."
 ---
 
 Season twenty-six compressed the format into six episodes and filled the cast entirely with Olympic and Paralympic competitors — Adam Rippon, Mirai Nagasu, Tonya Harding, and others who had spent careers developing the physical discipline the ballroom rewards. The condensed run changed the competitive texture: no warm-up weeks, no adjustment arc, just a field of athletes who arrived ready. As a structural experiment, it stands alone. Six episodes was brief, but the format departure was real and distinct.
