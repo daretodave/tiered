@@ -16,6 +16,7 @@ format_caption: "Six-episode debut run"
 host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 filming_caption: "CBS Television City, Los Angeles"
 premiere_caption: "ABC · June 2005"
+shape_h2: "Six episodes, an unproven format."
 ---
 
 Season one ran six episodes in the summer of 2005 and invented the format on American network television. Six celebrity-professional pairs danced ballroom and Latin routines before a live studio audience, a panel of three judges, and a public that could phone in votes. The structure came from a British original, but it found its American footing quickly — brash, warm, and built for appointment viewing. The short run left the network wanting another season before the finale aired.

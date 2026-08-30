@@ -16,6 +16,7 @@ format_caption: "Record viewership for the series"
 host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · September 2007"
 filming_caption: "CBS Television City, Los Angeles"
+shape_h2: "Eleven episodes, the biggest audience."
 ---
 
 Season five is the ratings high-water mark — the fall 2007 run drew the largest audience the format had produced and established DWTS as a genuine network cornerstone. Eleven episodes gave the competition room to develop week-to-week tension, and the audience responded in numbers that reflected how deeply the format had settled into appointment television. The casting energy matched the moment: a season that felt, from the premiere on, like the show at full confidence.

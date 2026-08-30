@@ -16,6 +16,7 @@ format_caption: "First season with two-night weekly cadence"
 host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · March 2006"
 filming_caption: "CBS Television City, Los Angeles"
+shape_h2: "Ten episodes, two nights weekly."
 ---
 
 Season two did the structural work that made the show last. Expanded from six episodes to ten, it introduced the performance-then-results two-night format that became the signature cadence. Samantha Harris joined Tom Bergeron as co-host, anchoring a partnership that held through season fourteen. Ten celebrity-professional pairs competed across ballroom and Latin disciplines, giving audiences a genuine elimination arc. The season reads today as the moment DWTS became its own format.

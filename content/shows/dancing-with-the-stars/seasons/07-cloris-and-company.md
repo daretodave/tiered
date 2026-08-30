@@ -16,6 +16,7 @@ format_caption: "Oldest contestant in show history at the time"
 host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · September 2008"
 filming_caption: "CBS Television City, Los Angeles"
+shape_h2: "Thirteen episodes, its widest cast."
 ---
 
 Season seven ran thirteen episodes with a cast wider in age and profile than the show had previously assembled. Cloris Leachman's participation at 82 anchored the season's identity — not as a novelty act but as a genuine expansion of what the format was willing to attempt. The rest of the cast brought strong athletic and entertainment credentials. The elimination arc had room to develop real competitive stakes in the back half as stronger partnerships moved to the front.
