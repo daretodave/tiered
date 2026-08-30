@@ -29,6 +29,7 @@ watch_list:
     body: "The staged returnees-arrival moment the season was built around. Watch the editing find the shot grammar for a cast pivot mid-run — the visual register changes the moment the champions walk in."
   - episode_label: "Ep 9 · post-pivot register"
     body: "Late-stage missions with the full cast in the same room. The pacing tightens, the confessionals sharpen, and the hour finds the register the franchise had spent five episodes setting up."
+shape_h2: "Twenty-six cast, mid-season arrival twist."
 ---
 
 The franchise's first attempt at staged returnees-arrival

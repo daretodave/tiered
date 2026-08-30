@@ -12,6 +12,7 @@ cast_size: 22
 premiere_caption: "MTV · 2009"
 host_caption: "seventh season at the helm"
 pull: "A late-era highlight for the franchise's structural maturity."
+shape_h2: "Twenty-two cast, two demarcated teams."
 ---
 
 Champions versus Challengers, with two clearly demarcated teams

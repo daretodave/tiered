@@ -29,6 +29,7 @@ watch_list:
     body: "Cast count tightens, the missions scale, and the hour finds its register. The middle of Rivals II is the format performing rather than discovering."
   - episode_label: "Ep 10 · final approach"
     body: "Pairs running through late-season endurance work with a year of pair-format muscle memory built across the cast pool. Watch the choreography reads cleaner than in the first Rivals."
+shape_h2: "Twenty-eight cast, second pairs of rivals."
 ---
 
 The pairs-of-rivals format with a year of execution under its

@@ -30,6 +30,7 @@ watch_list:
     body: "Mid-run dynamics where the two cast groups have started to merge. The room math tracks who has adapted and who has not."
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The mixed cast carries the season's fresh-blood premise into the final's physical work."
+shape_h2: "Thirty cast, outside-Champions fresh blood."
 ---
 
 Franchise returnees mixed with competitors from outside the

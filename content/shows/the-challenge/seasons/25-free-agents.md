@@ -28,6 +28,7 @@ watch_list:
     body: "Mid-season house dynamics where solo players build temporary voting blocs. The format produces alliance politics without the team architecture — a different shape than any pairs season."
   - episode_label: "Ep 12 · endurance run"
     body: "Late-stage missions where the solo geometry gets to perform. Watch the camera hold on individual reactions for longer than a pair or team season would have allowed."
+shape_h2: "Twenty-eight cast, weekly vote-out debuts."
 ---
 
 The solo format question of The Duel and The Duel II asked a

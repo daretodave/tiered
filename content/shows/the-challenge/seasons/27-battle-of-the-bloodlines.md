@@ -29,6 +29,7 @@ watch_list:
     body: "Mid-season house dynamics where the veteran-and-family pair architecture produces a different kind of alliance than rivalry or exes formats. The room feels more protective and more cautious."
   - episode_label: "Ep 10 · endurance work"
     body: "Late-stage missions where family pairs perform synchronized endurance work. Watch the editing find the moments where shared upbringing reads as physical sync."
+shape_h2: "Twenty-eight cast, family-tied rookies debut."
 ---
 
 The franchise's clearest experiment in importing fresh

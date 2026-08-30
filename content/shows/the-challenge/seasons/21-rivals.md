@@ -28,6 +28,7 @@ watch_list:
     body: "Mid-season house dynamics. Pairs who started as enemies have started cooperating; pairs who started civilly have started fraying. The room math is doing the work the missions usually do."
   - episode_label: "Ep 12 · final approach"
     body: "The format's final-round geometry. Pairs running through endurance work as a single body. Watch the shot language tilt from individual reaction to two-person physical synchronization."
+shape_h2: "Twenty-eight cast, pairs format debuts."
 ---
 
 The franchise's first pairs format, and the season that invents

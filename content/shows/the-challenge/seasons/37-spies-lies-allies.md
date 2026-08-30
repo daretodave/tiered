@@ -31,6 +31,7 @@ watch_list:
     body: "Mid-run beats where the strongest rookies start matching the veterans. The room math recomputes around who has adapted."
   - episode_label: "Ep 19 · endurance close"
     body: "The closing stretch. The mixed-experience cast carries the veteran-versus-rookie tension into the final's physical work."
+shape_h2: "Thirty-four cast, heaviest rookie infiltration yet."
 ---
 
 A spy-themed season that loads the cast with rookie Agents

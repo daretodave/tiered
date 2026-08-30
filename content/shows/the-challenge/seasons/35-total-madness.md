@@ -30,6 +30,7 @@ watch_list:
     body: "Late-stage beats where the red-skull mechanic governs who has secured a path to the final. The room math is built around the new rule."
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The cast carries the season's distinct safety stakes into the final's physical work."
+shape_h2: "Twenty-eight cast, red-skull mechanic debuts."
 ---
 
 An individual game set in an underground bunker, with a

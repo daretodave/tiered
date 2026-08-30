@@ -12,6 +12,7 @@ cast_size: 20
 premiere_caption: "MTV · 2006"
 host_caption: "second season at the helm"
 pull: "An attempt to import new athleticism without breaking the cast continuity the franchise had been building."
+shape_h2: "Twenty cast, vet-rookie pairing debuts."
 ---
 
 The franchise's first vet-and-rookie pairing experiment. Each

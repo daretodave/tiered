@@ -33,6 +33,7 @@ watch_list:
     body: "Late-stage missions where the architecture's parallel tracks converge. Watch the cast's awareness that the season is the franchise's milestone shape the room's posture."
   - episode_label: "Ep 18 · endurance finale"
     body: "The closing run of a 19-episode milestone season. The franchise's longest finals approach to date, with the cast carrying thirty seasons of muscle memory into the endurance work."
+shape_h2: "Twenty-eight cast, ambush and redemption twists."
 ---
 
 The franchise's milestone season, the run the next era reset

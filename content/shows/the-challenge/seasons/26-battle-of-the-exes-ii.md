@@ -29,6 +29,7 @@ watch_list:
     body: "House dynamics where the pair architecture has produced cross-couple alliances. The editing room runs the politics with the muscle memory of two prior pairs seasons."
   - episode_label: "Ep 11 · finals math"
     body: "Late-stage missions where the format's pair geometry meets a long endurance run. The choreography reads as practiced rather than discovered."
+shape_h2: "Twenty-six cast, second exes pairing."
 ---
 
 The exes-format question of S22 asked again, with a familiar

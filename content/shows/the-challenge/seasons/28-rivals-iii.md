@@ -29,6 +29,7 @@ watch_list:
     body: "Patagonia missions where the visual register does heavy lifting the format itself can no longer surprise the audience with. The wind, the scale, the cliff-side endurance work."
   - episode_label: "Ep 11 · pair geometry"
     body: "Late-stage endurance work where pairs synchronize through cold-weather conditions. Watch the camera find the moments where the cold itself produces involuntary collaboration between rivals."
+shape_h2: "Twenty-six cast, third pairs of rivals."
 ---
 
 The third pairs-of-rivals season, the run where the franchise's

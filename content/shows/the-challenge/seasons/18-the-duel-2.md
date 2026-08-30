@@ -12,6 +12,7 @@ cast_size: 26
 premiere_caption: "MTV · 2009"
 host_caption: "eighth season at the helm"
 pull: "The format question of the first Duel, asked again with sharper execution."
+shape_h2: "Twenty-six cast, individual format returns."
 ---
 
 The Duel returns as the franchise's second individual-format

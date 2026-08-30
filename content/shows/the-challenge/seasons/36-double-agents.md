@@ -30,6 +30,7 @@ watch_list:
     body: "Mid-run beats where players game the rotating-partner rule to engineer favorable pairings. The room math is the season's engine."
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The cast carries the rotating-pair instability into the final's physical work."
+shape_h2: "Thirty cast, partners rotate each round."
 ---
 
 A spy-themed season built on partners that rotate every round —

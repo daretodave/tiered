@@ -30,6 +30,7 @@ watch_list:
     body: "Late-stage beats where the trilogy storyline starts converging. The cast carries the weight of a multi-season arc into the room."
   - episode_label: "Ep 21 · endurance approach"
     body: "The closing stretch of the franchise's longest season. The fixed pairs run the final's physical work as a single body."
+shape_h2: "Twenty-eight cast, franchise's longest season yet."
 ---
 
 Fixed partner pairs close out the Reckoning trilogy, the

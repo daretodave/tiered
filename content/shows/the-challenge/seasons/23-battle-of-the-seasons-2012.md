@@ -28,6 +28,7 @@ watch_list:
     body: "House dynamics where original-season loyalty starts losing to in-house pragmatism. The architecture's whole premise gets quietly contradicted in the confessionals."
   - episode_label: "Ep 11 · late tightening"
     body: "Cast count drops far enough that the editing room can finally find a rhythm. The franchise's grammar reasserts itself in the back third — the missions sharpen, the confessionals carry."
+shape_h2: "Twenty-four cast, season-grouping idea repeats."
 ---
 
 The weaker take on a strong concept. MTV reprised the S5

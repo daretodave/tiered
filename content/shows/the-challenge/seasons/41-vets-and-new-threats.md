@@ -30,6 +30,7 @@ watch_list:
     body: "Missions built around the altitude and scale of the Andes Mountains widen the visual register for a cast already adjusting to locked-in or contested partnerships."
   - episode_label: "Ep 19 · final stretch"
     body: "The closing run before the two-part reunion. A season built on shifting partner status carries that tension into the final's physical demands."
+shape_h2: "Thirty-two cast, points-based partner lock-in."
 ---
 
 MTV filmed the season across Santiago and the Andes Mountains,

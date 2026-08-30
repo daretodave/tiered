@@ -12,6 +12,7 @@ cast_size: 24
 premiere_caption: "MTV · 2007"
 host_caption: "fourth season at the helm"
 pull: "The franchise consolidates rather than discovers."
+shape_h2: "Twenty-four cast, third Inferno run."
 ---
 
 Good Guys versus Bad Asses for the third time, with the format

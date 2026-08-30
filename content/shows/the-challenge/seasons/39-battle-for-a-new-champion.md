@@ -30,6 +30,7 @@ watch_list:
     body: "Mid-run beats where seasoned players push the room math. The cast plays with the experience the premise selected for."
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The all-veteran cast carries the shared stakes into the final's physical work."
+shape_h2: "Twenty-six cast, all never-won veterans."
 ---
 
 A cast with no rookies and no prior champions — every player a

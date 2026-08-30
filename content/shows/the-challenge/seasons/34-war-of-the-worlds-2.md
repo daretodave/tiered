@@ -31,6 +31,7 @@ watch_list:
     body: "Mid-run beats where the US-versus-UK frame is tested by individual self-interest. The room math complicates the clean archetype."
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The mixed international cast carries the rivalry premise into the final's physical work."
+shape_h2: "Thirty cast, US-vs-UK rivalry premise."
 ---
 
 The fresh-blood format returns with a US-versus-UK rivalry

@@ -30,6 +30,7 @@ watch_list:
     body: "Late-stage dynamics where the vendetta premise sharpens the elimination targeting. The cast plays the room with a year of carried history."
   - episode_label: "Ep 16 · endurance close"
     body: "The closing run of a 16-episode season. The cast carries the season's accumulated grievances into the final's physical work."
+shape_h2: "Twenty-eight cast, vendetta-premise casting."
 ---
 
 An individual season built on a grudge premise — every player
