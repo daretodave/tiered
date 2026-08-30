@@ -11,6 +11,7 @@ host: "Carson Daly"
 eyebrow: "The format at its most reliably consistent"
 lede: "Christina Aguilera and CeeLo Green returned after their guest-coach replacements in season four, and the show demonstrated something useful: the format was stable enough to survive roster rotation without losing its momentum."
 pull: "Not the ceiling — but the most consistent average the early run produced."
+shape_h2: "Twenty-four episodes, the length holds."
 format_summary: "Blind audition competition"
 format_caption: "Returning coach rotation — Christina and CeeLo back"
 cast_size: 4

@@ -10,6 +10,7 @@ host: "Carson Daly"
 eyebrow: "The founding era's last rotation — Pharrell and Shakira join"
 lede: "Season six closed the founding era with a fresh coaching lineup: Pharrell Williams and Shakira replaced CeeLo and Christina alongside the returning Blake Shelton and Adam Levine. The new combination brought genuine curiosity to the chairs."
 pull: "A fresh four-some in the last season of the founding chapter."
+shape_h2: "Six seasons in, one pivot."
 format_summary: "Blind audition competition"
 format_caption: "Pharrell Williams and Shakira join as coaches"
 cast_size: 4

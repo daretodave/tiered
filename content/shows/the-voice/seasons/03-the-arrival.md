@@ -11,6 +11,7 @@ host: "Carson Daly"
 eyebrow: "The season The Voice crossed over"
 lede: "Season three is where the format earned its cultural footprint. The coaches were comfortable enough with each other to be genuinely competitive, and the live shows raised the bar for the first time — The Voice stopped being a challenger and became appointment television."
 pull: "The format earning its place on the schedule."
+shape_h2: "Twenty-two episodes, the format settling."
 format_summary: "Blind audition competition"
 format_caption: "Four coaches at peak competitive chemistry"
 cast_size: 4

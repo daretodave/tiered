@@ -10,6 +10,7 @@ host: "Carson Daly"
 eyebrow: "The fifth anniversary season — a decade of blind auditions"
 lede: "Season ten marked the show's fifth anniversary and introduced a new coaching rotation, bringing fresh energy to a format that had comfortably established its rhythms. The milestone framing gave the season a sense of occasion, even if the format was firmly in its middle period."
 pull: "Five years in — the format confident, the chairs full, the run continuing."
+shape_h2: "The tenth cycle, clockwork intact."
 format_summary: "Blind audition competition"
 format_caption: "Fifth anniversary season, new coaching combination"
 cast_size: 4

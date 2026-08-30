@@ -10,6 +10,7 @@ host: "Carson Daly"
 eyebrow: "Christina Aguilera returns for the ascendant era"
 lede: "Christina Aguilera returned to the coaching chairs in season eight alongside Pharrell Williams, Blake Shelton, and Adam Levine. Her return gave the lineup a familiarity the previous rotations had traded away — not the freshest combination, but a reliably sharp one."
 pull: "A familiar lineup in a new era, working at a solid clip."
+shape_h2: "The spring slot, format unchanged."
 format_summary: "Blind audition competition"
 format_caption: "Christina Aguilera returns to the coaching panel"
 cast_size: 4

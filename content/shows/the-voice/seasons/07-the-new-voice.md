@@ -10,6 +10,7 @@ host: "Carson Daly"
 eyebrow: "Gwen Stefani's debut changes the coaching dynamic"
 lede: "Gwen Stefani joined The Voice for the first time in season seven, bringing a pop-rock edge to the chairs alongside Pharrell Williams and the returning Blake Shelton and Adam Levine. Her arrival was the most distinctive coaching debut since the original four."
 pull: "The freshest coaching combination the ascendant era produced."
+shape_h2: "Another cycle, six months on."
 format_summary: "Blind audition competition"
 format_caption: "Gwen Stefani joins as a coach for the first time"
 cast_size: 4

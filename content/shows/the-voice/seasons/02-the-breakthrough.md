@@ -11,6 +11,7 @@ host: "Carson Daly"
 eyebrow: "The season the format proved it had legs"
 lede: "The Voice returned for a second cycle without debut novelty as a crutch, and the result was cleaner — better-paced auditions, sharper battles, and a coaching dynamic that had moved from curious to genuinely competitive."
 pull: "Not a sophomore slump. A proof of concept."
+shape_h2: "Twenty-two episodes again, format holding."
 format_summary: "Blind audition competition"
 format_caption: "Original four-coach format, second cycle"
 cast_size: 4

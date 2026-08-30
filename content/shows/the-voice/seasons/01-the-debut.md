@@ -11,6 +11,7 @@ host: "Carson Daly"
 eyebrow: "The season that invented the format"
 lede: "Four coaches in spinning chairs. No sight of the singer. The blind audition arrived fully formed in season one, and what The Voice established here — the chair turn, the battle round, the four-coach competitive structure — is the grammar every subsequent season would use."
 pull: "Every version of this show that followed starts here."
+shape_h2: "Twenty-two episodes, an untested format."
 format_summary: "Blind audition competition"
 format_caption: "Original four-coach format"
 cast_size: 4

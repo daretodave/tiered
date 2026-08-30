@@ -11,6 +11,7 @@ host: "Carson Daly"
 eyebrow: "The season the format proved its ceiling"
 lede: "Two guest coaches — Shakira and Usher — replaced CeeLo and Christina, and the result was the best season The Voice produced. The coaching dynamic gained competitive urgency; the blind auditions ran at their sharpest. The format reached a ceiling here and stayed."
 pull: "The format at its sharpest — coaches competing hard, talent responding in kind."
+shape_h2: "Twenty-four episodes, a two-episode jump."
 format_summary: "Blind audition competition"
 format_caption: "Guest coach rotation — Shakira and Usher join"
 cast_size: 4
