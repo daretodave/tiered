@@ -15,6 +15,7 @@ format_caption: "post-hiatus return, 12-episode run"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, the era's strongest casting"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Cast and episodes both pull back."
 ---
 
 Cycle 22 benefits from something the intervening late-CW cycles struggled with:

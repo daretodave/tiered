@@ -15,6 +15,7 @@ format_caption: "record CW finale viewership, Twiggy on panel"
 cast_size: 13
 cast_size_caption: "Thirteen contestants, Twiggy's third cycle on panel"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Breaks a four-season streak at thirteen episodes."
 ---
 
 The Southern Reach earns its rank on location and format clarity. Sydney is the show's

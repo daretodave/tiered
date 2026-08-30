@@ -15,6 +15,7 @@ format_caption: "LA-based production, no international leg"
 cast_size: 18
 cast_size_caption: "Eighteen contestants, open casting returns"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Same run length, no international leg."
 ---
 
 Cycle 21 is the most straightforwardly unremarkable season of the late CW run.

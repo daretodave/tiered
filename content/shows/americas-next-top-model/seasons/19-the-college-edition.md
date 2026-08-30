@@ -15,6 +15,7 @@ format_caption: "current students only; Oxford and Crete locations"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, less industry conditioning"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Cast drops from eighteen back to fourteen."
 ---
 
 Cycle 19's casting restriction — college students only — cuts in both directions.

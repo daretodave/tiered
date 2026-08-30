@@ -15,6 +15,7 @@ format_caption: "André Leon Talley joins as permanent judge"
 cast_size: 13
 cast_size_caption: "Thirteen contestants, international travel resumes"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Episodes drop to twelve, cast to thirteen."
 ---
 
 The Pacific Turn delivers what cycle 13 withheld — a strong international location and

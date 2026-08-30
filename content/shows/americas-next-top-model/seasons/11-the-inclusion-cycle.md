@@ -15,6 +15,7 @@ format_caption: "Isis King; Amsterdam international leg"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, a milestone cast configuration"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Three straight seasons at thirteen episodes."
 ---
 
 Cycle 11 carries a production milestone that the show treated with real seriousness —

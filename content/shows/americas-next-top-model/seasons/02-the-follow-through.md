@@ -15,6 +15,7 @@ format_caption: "first refinement, UPN"
 cast_size: 13
 cast_size_caption: "Thirteen contestants, tighter elimination criteria"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Two more episodes than the debut."
 ---
 
 The first refinement, and it shows the format scaling. The casting pool pushes beyond

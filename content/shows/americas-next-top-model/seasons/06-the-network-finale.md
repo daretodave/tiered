@@ -15,6 +15,7 @@ format_caption: "final UPN cycle, Twiggy first full cycle"
 cast_size: 13
 cast_size_caption: "Thirteen contestants, closing out the UPN era"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Third straight season at thirteen episodes."
 ---
 
 The last UPN cycle closes with real ambition. Bangkok and Phuket mark the show's first

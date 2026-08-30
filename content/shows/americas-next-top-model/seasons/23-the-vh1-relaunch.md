@@ -15,6 +15,7 @@ format_caption: "Rita Ora hosting; social-media scoring added"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, first cycle without Tyra"
 host_caption: "first season at the helm"
+shape_h2: "Ten episodes, the shortest since the debut."
 ---
 
 Cycle 23 is the weakest season the show produced. The network move to VH1 brings a

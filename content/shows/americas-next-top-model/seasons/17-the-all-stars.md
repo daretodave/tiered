@@ -15,6 +15,7 @@ format_caption: "fan favorites and prior finalists returning"
 cast_size: 14
 cast_size_caption: "Fourteen returning contestants from prior cycles"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Fourteen returning contestants, zero rookies this cycle."
 ---
 
 Cycle 17 is the show's first full departure from its own format — every contestant is

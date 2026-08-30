@@ -15,6 +15,7 @@ format_caption: "first CW cycle, Jay Manuel joins final panel"
 cast_size: 13
 cast_size_caption: "Thirteen contestants, including the first sibling pair"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Fourth straight season at thirteen episodes."
 ---
 
 The CW era opens with a transition cycle — new network, new opening sequence, Jay Manuel

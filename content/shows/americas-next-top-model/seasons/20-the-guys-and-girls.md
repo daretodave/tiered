@@ -15,6 +15,7 @@ format_caption: "first male contestants; Rio de Janeiro and São Paulo"
 cast_size: 18
 cast_size_caption: "Eighteen contestants, first co-ed cast configuration"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Fourteen episodes, the longest run yet."
 ---
 
 Cycle 20 makes the largest structural change in the show's CW run: opening the

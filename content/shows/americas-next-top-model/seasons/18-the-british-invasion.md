@@ -15,6 +15,7 @@ format_caption: "9 British, 9 American contestants; London and Maui"
 cast_size: 18
 cast_size_caption: "Eighteen contestants across two national contingents"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Cast jumps to eighteen, split by ocean."
 ---
 
 Cycle 18's split-cast format is the most structurally interesting experiment the late

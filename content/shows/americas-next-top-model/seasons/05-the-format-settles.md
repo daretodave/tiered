@@ -15,6 +15,7 @@ format_caption: "UPN era, format at peak confidence"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, an international finale stretch"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Same thirteen episodes, cast grows to fourteen."
 ---
 
 Cycle five runs at the UPN era's full mature confidence. Casting is broad, photoshoot

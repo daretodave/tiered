@@ -15,6 +15,7 @@ format_caption: "first North African international leg"
 cast_size: 14
 cast_size_caption: "Fourteen contestants, the standard CW casting model"
 host_caption: "{seasonOrdinalWord} season at the helm"
+shape_h2: "Home base returns after a season abroad."
 ---
 
 Cycle 16 is a reliable CW-era entry that earns its place without distinguishing itself.
