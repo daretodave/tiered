@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, real competitive range"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast dips back to thirteen contestants."
+take_h2: "São Paulo, a fitting farewell."
 ---
 
 The South American Stretch earns its place in the canon on two fronts: São Paulo is

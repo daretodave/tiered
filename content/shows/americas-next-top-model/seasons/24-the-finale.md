@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, the finale's domestic-only cast"
 host_caption: "Tyra Banks returns after Rita Ora's one-cycle run"
 shape_h2: "Same ten-episode run closes the series."
+take_h2: "A warmer note to close."
 ---
 
 Cycle 24 earns its place above the VH1 relaunch on what it restores. Tyra Banks

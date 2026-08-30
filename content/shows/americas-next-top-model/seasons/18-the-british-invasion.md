@@ -16,6 +16,7 @@ cast_size: 18
 cast_size_caption: "Eighteen contestants across two national contingents"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast jumps to eighteen, split by ocean."
+take_h2: "A transatlantic split creates tension."
 ---
 
 Cycle 18's split-cast format is the most structurally interesting experiment the late

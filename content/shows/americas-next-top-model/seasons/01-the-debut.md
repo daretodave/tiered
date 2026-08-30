@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, a nationwide casting call"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Nine episodes, still the show's shortest."
+take_h2: "The format invents itself."
 ---
 
 The one that started it, and it shows. Thirteen contestants, a UPN budget, and a host

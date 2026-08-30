@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, the deepest pool yet"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "One more episode, one more contestant."
+take_h2: "Photoshoots finally leave the studio."
 ---
 
 The scale-up cycle. Photoshoot creative moves beyond the controlled studio into location

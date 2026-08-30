@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants under 5'7\", domestic locations"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast climbs to fourteen, three domestic stops."
+take_h2: "A gimmick, not a strength."
 ---
 
 Cycle 13 is the CW era's clearest format miscalculation. The explicit height cap narrows

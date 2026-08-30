@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, less industry conditioning"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast drops from eighteen back to fourteen."
+take_h2: "Campus casting narrows the pool."
 ---
 
 Cycle 19's casting restriction — college students only — cuts in both directions.

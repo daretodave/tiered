@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, competing across two cities"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Back to thirteen after one season below."
+take_h2: "Two cities, a divided response."
 ---
 
 The China Turn is the most ambitious location package of the CW's early cycles — Shanghai

@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, the widest range yet"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast drops back to thirteen, one more episode."
+take_h2: "UPN format at its peak."
 ---
 
 The top of the founding canon. The contestant pool has genuine range — different looks,

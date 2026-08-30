@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, closing out the UPN era"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Third straight season at thirteen episodes."
+take_h2: "UPN's real closing chapter."
 ---
 
 The last UPN cycle closes with real ambition. Bangkok and Phuket mark the show's first

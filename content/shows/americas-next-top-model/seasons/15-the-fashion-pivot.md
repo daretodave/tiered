@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, including first sibling pair since C7"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The first season filmed entirely abroad."
+take_h2: "Winning gets redefined."
 ---
 
 Cycle 15 commits to a different ambition. The prize overhaul — Vogue Italia coverage

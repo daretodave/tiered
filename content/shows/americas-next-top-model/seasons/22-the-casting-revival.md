@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, the era's strongest casting"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Cast and episodes both pull back."
+take_h2: "The strongest cast in years."
 ---
 
 Cycle 22 benefits from something the intervening late-CW cycles struggled with:

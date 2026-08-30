@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, including the first sibling pair"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Fourth straight season at thirteen episodes."
+take_h2: "A network still finding rhythm."
 ---
 
 The CW era opens with a transition cycle — new network, new opening sequence, Jay Manuel

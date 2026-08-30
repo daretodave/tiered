@@ -16,6 +16,7 @@ cast_size: 14
 cast_size_caption: "Fourteen contestants, first NYC street-cast search"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Two straight seasons back at thirteen episodes."
+take_h2: "New York sharpens the format."
 ---
 
 New York City as the production base changes what the show looks like. The street-casting

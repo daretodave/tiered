@@ -16,6 +16,7 @@ cast_size: 13
 cast_size_caption: "Thirteen contestants, tighter elimination criteria"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Two more episodes than the debut."
+take_h2: "Proof the debut wasn't luck."
 ---
 
 The first refinement, and it shows the format scaling. The casting pool pushes beyond
