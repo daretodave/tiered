@@ -9,6 +9,7 @@ host: RuPaul Charles
 format_changes: [michelle-visage-joins-panel]
 canonical_position: 12
 eyebrow: "Aired winter 2011 · Logo · Visage joins the panel"
+take_h2: "Judging settles; budget stays small."
 lede: "The season Michelle Visage takes the main panel chair, and the judging finds the rhythm it keeps for the next decade. The cast expands and the runway categories sharpen with it."
 shape_h2: "The judging rhythm locks in."
 premiere_caption: "Logo · Monday 9/8c"

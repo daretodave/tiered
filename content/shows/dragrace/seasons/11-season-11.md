@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: RuPaul Charles
 canonical_position: 8
 eyebrow: "Aired winter 2019 · VH1 · the loaded cast"
+take_h2: "Friction outshines the finesse."
 lede: "A VH1 season cast heavy on big, confrontational personalities. The workroom runs hot all the way through, and the edit leans into the friction more than the craft."
 shape_h2: "Drama outruns the runway craft."
 premiere_caption: "VH1 · Thursday 9/8c"

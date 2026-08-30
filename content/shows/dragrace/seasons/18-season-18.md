@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: RuPaul Charles
 canonical_position: 14
 eyebrow: "Aired winter 2026 · MTV · the franchise's biggest premiere yet"
+take_h2: "The finale rewrites itself."
 lede: "A veteran-heavy cast pulls the franchise's highest-rated MTV premiere on record, and a rebuilt finale trades the usual top-two lip sync for a full eliminated-cast tournament."
 shape_h2: "Sixteen episodes, one new tournament."
 pull: "Record premiere numbers and a genuine format swing — the finale trades the usual top-two lip sync for a full eliminated-cast tournament. The judging split is real: the polish gets praised, the calls don't always."

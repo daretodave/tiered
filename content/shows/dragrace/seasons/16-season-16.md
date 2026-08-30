@@ -9,6 +9,7 @@ host: RuPaul Charles
 format_changes: [first-impression-rate-a-queen, higher-prize]
 canonical_position: 9
 eyebrow: "Aired winter 2024 · MTV · the rate-a-queen opener"
+take_h2: "A real structural argument."
 lede: "The season that introduced a first-impression rate-a-queen mechanic to the opening hour and raised the prize. A real format swing wrapped around a strong, modern MTV-era cast."
 shape_h2: "The prize purse goes up."
 premiere_caption: "MTV · Friday 8/7c"

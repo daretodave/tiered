@@ -6,6 +6,7 @@ premiere_date: 2013-01-28
 ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
+take_h2: "The sharpest contest yet."
 format_changes: []
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"

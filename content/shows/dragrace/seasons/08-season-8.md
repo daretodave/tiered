@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: RuPaul Charles
 canonical_position: 11
 eyebrow: "Aired spring 2016 · Logo · the polished farewell"
+take_h2: "A polished, low-friction bridge."
 lede: "Logo's last produced season, and its most visually finished. A smaller, glossier cast and a runway-forward edit that previews the scale VH1 would soon bring."
 shape_h2: "A glossy handoff season."
 premiere_caption: "Logo · Monday 9/8c"

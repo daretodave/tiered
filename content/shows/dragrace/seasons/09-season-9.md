@@ -6,6 +6,7 @@ premiere_date: 2017-03-24
 ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
+take_h2: "Bigger reach, same craft."
 format_changes: [vh1-network-move]
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format"

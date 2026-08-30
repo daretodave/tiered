@@ -6,6 +6,7 @@ premiere_date: 2014-02-24
 ep_count: 14
 location: Los Angeles, California
 host: RuPaul Charles
+take_h2: "Two premieres, one deep cast."
 format_changes: [split-premiere]
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"

@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: RuPaul Charles
 canonical_position: 7
 eyebrow: "Aired winter 2022 · VH1 · the largest-cast season"
+take_h2: "A wider room, real chemistry."
 lede: "The franchise's biggest cast to that point, and the season that brought its first openly trans male performer into the workroom — a real inclusion milestone wrapped around a deep, varied lineup."
 shape_h2: "A trans male performer debuts."
 premiere_caption: "VH1 · Friday 8/7c"
