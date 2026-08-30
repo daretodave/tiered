@@ -10,6 +10,7 @@ eyebrow: "Aired late 2024 · The format in close succession"
 lede: "Season seventeen aired in the same calendar year as season sixteen — the modern era producing in close succession, the format's annual cadence tightening. A second 2024 season asks what the premise holds when the audience returns to it inside the same year."
 pull: "A format deep enough in its run to sustain two seasons in a year without losing what makes the premise work."
 shape_h2: "A tightened annual cadence."
+take_h2: "Two seasons, one calendar year."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

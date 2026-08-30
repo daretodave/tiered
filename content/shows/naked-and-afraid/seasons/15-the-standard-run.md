@@ -10,6 +10,7 @@ eyebrow: "Aired 2023 · The modern era finding its rhythm"
 lede: "Season fifteen arrived after the modern era's recalibration had settled. Operating from the format's current assumptions without transitional weight — the modern era proving its approach repeatable, not just possible."
 pull: "The modern era's first confident execution on its own terms — reliability as a genuine virtue."
 shape_h2: "The modern approach, repeated."
+take_h2: "Reliability becomes the modern virtue."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

@@ -10,6 +10,7 @@ eyebrow: "Aired 2022 · Full production scope resumed"
 lede: "Season thirteen brought the format back to full scale. International locations, standard casting, the 21-day premise operating without constraint — a recovery run that earns its placement by delivering the show at the reach it was designed for."
 pull: "The format back at full scope — what comes after a constrained season is proof of what the constraint cost."
 shape_h2: "Full scope, restored."
+take_h2: "What was lost, comes back."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

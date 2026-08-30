@@ -10,6 +10,7 @@ eyebrow: "Aired summer 2014 · A second season in the same calendar year"
 lede: "Discovery ran two Naked and Afraid seasons in 2014, and season three held its own. New pairings, new locations, the format at higher volume — and no dilution of the 21-day premise that made season one land."
 pull: "More seasons in a year is a test the format passed without needing to try harder."
 shape_h2: "A second run, same year."
+take_h2: "Two seasons, undiminished ambition."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

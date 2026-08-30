@@ -10,6 +10,7 @@ eyebrow: "Aired summer 2019 · The evolution era at its clearest"
 lede: "Season eleven arrived after the evolution era's opening experiments had settled into a recognizable production identity. The casting approach was more refined, the environmental pressure more deliberate — the format operating from a stable base without having to search for one."
 pull: "The evolution era's clearest self-portrait — a season that knew what it was and delivered it without apology."
 shape_h2: "The evolution era settles."
+take_h2: "The evolution era, unapologetic."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

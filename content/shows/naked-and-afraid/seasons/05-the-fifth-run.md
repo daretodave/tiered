@@ -10,6 +10,7 @@ eyebrow: "Aired summer 2015 · The founding era at full stride"
 lede: "By season five the format had found its production rhythm. The casting was more refined, the location selection more deliberate, and the editing language more assured."
 pull: "Season five did what the show does, at the level the show had learned to aspire to."
 shape_h2: "The rhythm, now practiced."
+take_h2: "The format matures on schedule."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

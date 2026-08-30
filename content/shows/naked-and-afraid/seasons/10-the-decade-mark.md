@@ -10,6 +10,7 @@ eyebrow: "Aired winter 2019 · The evolution era finding its footing"
 lede: "Season ten arrived with the shifts introduced in season nine still settling. A transitional run in the truest sense — not a reset, not a reinvention, but the evolution era working out in real time what the format was becoming."
 pull: "Ten seasons in, the show was honest about being in transition — and that honesty is the season's argument."
 shape_h2: "A transition shown plainly."
+take_h2: "Growing pains, unconcealed."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2

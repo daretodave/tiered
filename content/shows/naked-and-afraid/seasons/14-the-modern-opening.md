@@ -10,6 +10,7 @@ eyebrow: "Aired 2022 · The modern era begins"
 lede: "Season fourteen opened the modern era with updated casting priorities and a changed production approach after a decade in the field. A transitional season at the start of something new, asking what paired survival means for an audience that already knows the premise."
 pull: "A decade-plus format reconsidering its own terms — the modern era beginning its argument."
 shape_h2: "New terms, opening now."
+take_h2: "A veteran format, rethinking itself."
 format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
