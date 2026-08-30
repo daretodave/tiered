@@ -17,6 +17,7 @@ cast_size_caption: "Coaches: Blake Shelton, Nick Jonas, John Legend, Kelly Clark
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · March 2021"
 filming_caption: "Los Angeles · the tenth-anniversary cycle, first shot free of COVID limits"
+shape_h2: "March start, a slight schedule shift."
 ---
 
 Season twenty arrived as the streaming era's first full-production cycle after two years of constraint. The tenth anniversary gave the season occasion, and the return to standard conditions was tangible — the blind auditions had the live-audience energy the format depends on. Nick Jonas in his second coaching cycle brought more assurance than his interrupted debut. A recovery season, placed just above the bubble year.

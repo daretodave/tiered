@@ -17,6 +17,7 @@ cast_size_caption: "Coaches: Blake Shelton, Gwen Stefani, John Legend, Kelly Cla
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2019"
 filming_caption: "Los Angeles · the first cycle taped without Adam Levine's chair"
+shape_h2: "Fall cycle, seventeenth season steady."
 ---
 
 Season seventeen navigated the show's biggest structural change since its debut: the first panel without Adam Levine. Gwen Stefani's return provided familiarity alongside John Legend and Kelly Clarkson, and the blind auditions had competitive range. Blake Shelton anchored the season as the last active original coach, and the dynamic around him shifted accordingly. Competent, watchable, and carrying the weight of a format adjusting to new coordinates.
