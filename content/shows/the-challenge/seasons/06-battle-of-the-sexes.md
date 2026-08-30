@@ -12,6 +12,7 @@ cast_size: 30
 cast_size_caption: "15 men, 15 women"
 premiere_caption: "MTV · 2003"
 host_caption: "Olympic skier, first season at the helm"
+shape_h2: "Thirty cast, split by gender."
 ---
 
 The cleanest format the franchise had attempted to date. Men on

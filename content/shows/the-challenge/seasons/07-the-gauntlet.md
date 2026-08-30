@@ -12,6 +12,7 @@ cast_size: 28
 premiere_caption: "MTV · 2004"
 host_caption: "second season at the helm"
 pull: "The season that turned the franchise from a team game into a survival game."
+shape_h2: "Twenty-eight cast, elimination round debuts."
 ---
 
 The format-defining season. MTV introduced The Gauntlet — a

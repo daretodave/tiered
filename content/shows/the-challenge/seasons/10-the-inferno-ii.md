@@ -12,6 +12,7 @@ cast_size: 24
 premiere_caption: "MTV · 2005"
 host_caption: "fifth season at the helm"
 pull: "The format finally caught up to its cast."
+shape_h2: "Twenty-four cast, a second Inferno."
 ---
 
 The tenth season and the franchise's second Inferno. MTV kept

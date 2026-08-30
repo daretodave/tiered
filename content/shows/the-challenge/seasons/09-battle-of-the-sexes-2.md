@@ -12,6 +12,7 @@ cast_size: 30
 cast_size_caption: "15 men, 15 women"
 premiere_caption: "MTV · late 2004"
 host_caption: "fourth season at the helm"
+shape_h2: "Thirty cast, a format sequel."
 ---
 
 The franchise's first format sequel. MTV ran the men-versus-women

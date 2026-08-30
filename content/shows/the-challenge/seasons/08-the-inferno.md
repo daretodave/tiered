@@ -11,6 +11,7 @@ format_caption: "elimination round rebranded"
 cast_size: 22
 premiere_caption: "MTV · 2004"
 host_caption: "third season at the helm"
+shape_h2: "Twenty-two cast, elimination gets renamed."
 ---
 
 The follow-up to The Gauntlet, with the elimination round

@@ -9,6 +9,7 @@ format_summary: "RW vs RR · stunt-heavy"
 format_caption: "first heavy lean into spectacle"
 cast_size: 14
 premiere_caption: "MTV · 2001"
+shape_h2: "Fourteen cast, stunts take over."
 ---
 
 The season where the franchise stopped pretending the missions
