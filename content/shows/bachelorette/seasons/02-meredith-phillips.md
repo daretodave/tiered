@@ -8,6 +8,7 @@ ep_count: 8
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired fall 2004 · Filmed in Agoura Hills"
+take_h2: "A softer sophomore outing."
 format_summary: "25 men · eight episodes"
 format_caption: "the quieter second swing"
 ---

@@ -8,6 +8,7 @@ ep_count: 12
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2011 · Thailand, Fiji, Phuket"
+take_h2: "Scale without losing warmth."
 format_summary: "25 men · first dentist lead"
 format_caption: "heaviest international run yet"
 ---

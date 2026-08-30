@@ -8,6 +8,7 @@ ep_count: 10
 location: Santa Susana, California
 host: Jesse Palmer
 eyebrow: "Aired summer 2024 · A franchise-first lead"
+take_h2: "History moves off-property."
 format_summary: "25 men · off the traditional mansion"
 format_caption: "Hummingbird Nest Ranch, Seattle, Hawaii, Australia, New Zealand"
 host_caption: "Jesse Palmer's third Bachelorette season"

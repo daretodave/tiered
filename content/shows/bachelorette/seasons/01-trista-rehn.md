@@ -8,6 +8,7 @@ ep_count: 6
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired winter 2003 · Filmed in Agoura Hills"
+take_h2: "The format's proof of concept."
 format_summary: "25 men · the format inverts"
 format_caption: "the franchise's first flip"
 host_caption: "Chris Harrison's first Bachelorette run"

@@ -8,6 +8,7 @@ ep_count: 13
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2019 · Youngest lead to date"
+take_h2: "One lead carries everything."
 format_summary: "30 men · the longest modern book"
 format_caption: "Scotland, Netherlands, Latvia, Greece"
 ---

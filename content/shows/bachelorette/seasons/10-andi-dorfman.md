@@ -8,6 +8,7 @@ ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2014 · International travel run"
+take_h2: "Sharp questions, sharper answers."
 format_summary: "25 men · first attorney lead"
 format_caption: "the era closes on confidence"
 ---

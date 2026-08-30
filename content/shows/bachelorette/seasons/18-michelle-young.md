@@ -8,6 +8,7 @@ ep_count: 11
 location: Indian Wells, California
 host: Tayshia Adams & Kaitlyn Bristowe
 eyebrow: "Aired fall 2021 · International travel returns"
+take_h2: "The show remembers its range."
 format_summary: "30 men · first overseas run since 2019"
 format_caption: "Indian Wells, Minnesota, Mexico"
 host_caption: "second alumnae-hosted season"

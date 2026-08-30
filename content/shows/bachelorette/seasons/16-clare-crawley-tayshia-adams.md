@@ -9,6 +9,7 @@ ep_count: 12
 location: La Quinta, California
 host: Chris Harrison
 eyebrow: "Aired fall 2020 · Single-resort production"
+take_h2: "An unrepeatable production experiment."
 format_summary: "Two leads · one resort, no travel"
 format_caption: "the first fall airing of the run"
 host_caption: "Chris Harrison hosting, JoJo Fletcher assisting"

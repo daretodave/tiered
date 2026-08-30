@@ -9,6 +9,7 @@ ep_count: 12
 location: Agoura Hills, California
 host: Jesse Palmer
 eyebrow: "Aired summer 2022 · True dual-lead season"
+take_h2: "Doubling the storytelling stakes."
 format_summary: "32 men · two co-leads, full season"
 format_caption: "France, Belgium, Netherlands, Mexico"
 host_caption: "Jesse Palmer's first Bachelorette season"

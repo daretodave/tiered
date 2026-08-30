@@ -8,6 +8,7 @@ ep_count: 9
 location: Agoura Hills, California
 host: Jesse Palmer
 eyebrow: "Aired summer 2023 · Tightest modern book"
+take_h2: "Brevity as an asset."
 format_summary: "25 men · the shortest run since 2008"
 format_caption: "Agoura Hills, New Orleans, Fiji"
 host_caption: "Jesse Palmer's second Bachelorette season"

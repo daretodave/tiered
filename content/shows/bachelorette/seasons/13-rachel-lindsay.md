@@ -8,6 +8,7 @@ ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2017 · First Black lead in franchise history"
+take_h2: "A milestone that delivers."
 format_summary: "31 men · the franchise's most overdue first"
 format_caption: "Norway, Denmark, Switzerland, Spain"
 ---

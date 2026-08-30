@@ -8,6 +8,7 @@ ep_count: 10
 location: Santa Ana Pueblo, New Mexico
 host: Tayshia Adams & Kaitlyn Bristowe
 eyebrow: "Aired summer 2021 · Bio-secure single resort"
+take_h2: "Peer energy behind the desk."
 format_summary: "30 men · first alumnae-hosted season"
 format_caption: "filmed at a New Mexico resort"
 host_caption: "first season hosted by former Bachelorettes"

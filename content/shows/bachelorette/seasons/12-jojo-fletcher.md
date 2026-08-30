@@ -8,6 +8,7 @@ ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2016 · International travel run"
+take_h2: "No experiment, just execution."
 format_summary: "26 men · drawn from the prior Bachelor"
 format_caption: "the standard modern template"
 ---

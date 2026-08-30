@@ -8,6 +8,7 @@ ep_count: 9
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired spring 2008 · Mansion plus travel"
+take_h2: "A confident second chapter."
 format_summary: "25 men · the post-hiatus reboot"
 format_caption: "the show comes back"
 ---

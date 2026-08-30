@@ -8,6 +8,7 @@ ep_count: 8
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired winter 2005 · Mansion plus travel"
+take_h2: "More instructive than memorable."
 format_summary: "25 men · second returnee lead"
 format_caption: "a Bachelor finalist returns"
 ---

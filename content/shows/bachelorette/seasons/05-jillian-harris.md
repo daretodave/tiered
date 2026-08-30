@@ -8,6 +8,7 @@ ep_count: 12
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2009 · International travel debut"
+take_h2: "The modern era begins."
 format_summary: "30 men · first Canadian lead"
 format_caption: "the passport opens"
 host_caption: "Chris Harrison's fifth Bachelorette season"

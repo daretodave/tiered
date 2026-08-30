@@ -8,6 +8,7 @@ ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
 eyebrow: "Aired summer 2010 · Heavy international run"
+take_h2: "The format hits its stride."
 format_summary: "25 men · travelogue confidence"
 format_caption: "the modern template lands"
 host_caption: "Chris Harrison's sixth Bachelorette season"
