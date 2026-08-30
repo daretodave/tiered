@@ -8,6 +8,7 @@ location: Las Vegas, Nevada
 host: Padma Lakshmi
 format_changes: []
 display_title: "Las Vegas: <em>the</em><br/>Voltaggio season"
+take_h2: "The bar every season chases."
 premiere_caption: "Bravo · Wednesday 10/9c"
 format_summary: "Standard format"
 format_caption: "deepest knife-skill cast on the show"

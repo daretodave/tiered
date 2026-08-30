@@ -2,6 +2,7 @@
 show: top-chef
 number: 11
 title: New Orleans
+take_h2: "The city does the arguing."
 premiere_date: 2013-10-02
 ep_count: 17
 location: New Orleans, Louisiana

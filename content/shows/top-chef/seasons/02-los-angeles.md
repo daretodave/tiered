@@ -11,6 +11,7 @@ eyebrow: "Aired fall 2006 · Padma Lakshmi debuts"
 lede: "Padma Lakshmi takes the host chair for the first time. Top Chef relocates to Los Angeles with Tom Colicchio still at the judge's table and Gail Simmons stepping into a permanent critic seat — the chair configuration the franchise would run for almost two decades."
 pull: "The season Top Chef found its host. Padma Lakshmi walks in and the show's voice arrives with her."
 shape_h2: "Thirteen episodes, two more than the debut season."
+take_h2: "The chair that lasted decades."
 format_summary: "Standard format"
 format_caption: "host chair settles"
 cast_size: 15

@@ -11,6 +11,7 @@ eyebrow: "Aired fall 2007 · Florida's cooking on its own terms"
 lede: "Top Chef heads to South Florida with Padma Lakshmi hosting and Tom Colicchio at the judge's table. Miami's Cuban-American and Caribbean culinary identity drives the brief, and the cast brings deeper resumes than the franchise had recruited before."
 pull: "The first Top Chef season where the city's cooking culture argued back."
 shape_h2: "Fourteen episodes, one longer than the season before it."
+take_h2: "The resumes get more serious."
 format_summary: "Standard format"
 format_caption: "regional ingredients pull harder than before"
 cast_size: 15

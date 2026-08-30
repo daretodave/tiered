@@ -11,6 +11,7 @@ eyebrow: "Aired spring 2021 · The alumni-judge season"
 lede: "Top Chef sets up in Portland under pandemic-era production constraints. Padma Lakshmi hosts and Tom Colicchio runs the judge's table, with a rotating roster of Top Chef alumni stepping in as guest judges in place of the usual in-person diners."
 pull: "The season where alumni filled the dining room — a constrained production that turned the limit into a format."
 shape_h2: "Fourteen episodes, unchanged as alumni step in as guest judges."
+take_h2: "Peers replace the dining room."
 format_summary: "Alumni guest judges"
 format_caption: "rotating returnee judging panel"
 cast_size: 15

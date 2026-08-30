@@ -2,6 +2,7 @@
 show: top-chef
 number: 9
 title: Texas
+take_h2: "The format learns to travel."
 premiere_date: 2011-11-02
 ep_count: 17
 location: Texas (Austin, San Antonio, Dallas, Houston)

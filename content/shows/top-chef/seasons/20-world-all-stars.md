@@ -12,6 +12,7 @@ eyebrow: "Aired spring 2023 · The international all-stars · Padma's last"
 lede: "Top Chef goes global. Alumni from Top Chef franchises around the world come to London to cook against each other, with the finale running in Paris. Padma Lakshmi hosts her final season, and Tom Colicchio runs a supersized judge's table."
 pull: "The international all-stars — global-franchise alumni in one kitchen, and Padma Lakshmi's last season."
 shape_h2: "Fourteen episodes, unchanged as the format shifts to international returnees."
+take_h2: "Rules this show never used."
 format_summary: "International returnees"
 format_caption: "global-franchise alumni, supersized eps"
 cast_size: 16

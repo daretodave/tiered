@@ -11,6 +11,7 @@ eyebrow: "Aired late 2012 · Pacific Northwest pantries"
 lede: "Top Chef heads to the Pacific Northwest with Padma Lakshmi hosting and Tom Colicchio at the judge's table. The season leans into Seattle's ingredient access — Pacific seafood, mushroom country, the regional pantry — and the cast argues hard against the Las Vegas standard."
 pull: "The Pacific Northwest season that gave Top Chef one of its deepest competitive benches."
 shape_h2: "Seventeen episodes, the third straight season at this length."
+take_h2: "The qualifying round becomes standard."
 format_summary: "Standard format"
 format_caption: "regional pantry drives the briefs"
 cast_size: 21
