@@ -10,6 +10,7 @@ ep_count: 19
 eyebrow: "Aired spring 2012 · Peak-era cast at its most combustible"
 lede: "Season seven runs the peak-era cast at maximum pressure. The social dynamics are now complex enough to generate real conflict without manufacture. Lydia McLaughlin's arrival adds a fresh perspective to a cast that has fully developed its fractures."
 pull: "The peak cast at its most volatile — social pressure running high, the OC world at full friction."
+take_h2: "History finally boils over."
 shape_h2: "Nineteen episodes, two shorter than season six."
 premiere_caption: "Bravo · April 2012"
 filming_caption: "Orange County · peak-era cast at maximum pressure"

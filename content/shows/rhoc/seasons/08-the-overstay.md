@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "Aired summer 2013 · Peak era stretches, external storylines pull focus"
 lede: "Season eight runs the peak-era cast through a longer episode order, and the extra run reveals the configuration's limits. The social dynamics are still present, but the season's attention increasingly pulls toward storylines outside the OC social world's natural architecture."
 pull: "The peak era beginning to drift — the cast is familiar, the social pressure is real, but the season struggles to focus it."
+take_h2: "A familiar cast loses altitude."
 shape_h2: "Twenty-one episodes, back up two from season seven."
 premiere_caption: "Bravo · June 2013"
 filming_caption: "Orange County · peak era stretches, focus drifts outward"

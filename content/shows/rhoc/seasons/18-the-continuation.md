@@ -12,6 +12,7 @@ episodes: 18
 eyebrow: "Aired fall 2023 · Shannon and Tamra axis continues in the modern era"
 lede: "The revival-era cast configuration continues, with Katie Ginella joining an ensemble shaped by Shannon Beador and Tamra Judge's ongoing dynamic."
 pull: "The modern era in steady state — capable cast, familiar tensions, running on established rails."
+take_h2: "Comfortable rhythms, no new pressure."
 shape_h2: "Eighteen episodes, unchanged from season seventeen."
 format_summary: "Real Housewives social reality format"
 cast_size: 6

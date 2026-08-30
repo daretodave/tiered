@@ -10,6 +10,7 @@ ep_count: 12
 eyebrow: "Aired spring 2009 · New cast, Coto de Caza's founding circle fractures outward"
 lede: "Season four marks the moment RHOC steps beyond its founding geography. Alexis Bellino joins a cast in transition as the show trades the tight Coto de Caza world for a wider OC. The format is fluent; the casting is finding its next footing."
 pull: "The founding circle opens up — and the show discovers what it gains and loses when the gates stop being the whole world."
+take_h2: "Community gives way to conflict."
 shape_h2: "Twelve episodes, two shorter than season three."
 premiere_caption: "Bravo · February 2009"
 filming_caption: "Orange County · show steps beyond founding geography"

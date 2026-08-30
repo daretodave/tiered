@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "Aired fall 2016 · Kelly Dodd debuts, volatility surges, execution uneven"
 lede: "Kelly Dodd's debut reshapes the group dynamic immediately — volatility the peak-era cast hadn't carried in some time. Some scenes are the sharpest the show produced in this stretch; others drift without narrative focus."
 pull: "New volatility, uneven delivery — the season burns bright in places and loses the thread in others."
+take_h2: "One arrival ignites the group."
 shape_h2: "Twenty-one episodes, one fewer than season ten."
 premiere_caption: "Bravo · November 2016"
 filming_caption: "Orange County · new arrival ignites fresh volatility"

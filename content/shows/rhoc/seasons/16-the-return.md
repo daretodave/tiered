@@ -12,6 +12,7 @@ episodes: 17
 eyebrow: "Aired winter 2021 · Heather Dubrow returns after a four-season absence"
 lede: "Heather Dubrow's return anchors the revival era's most purposeful cast reset — three departures, two new additions, and a social geometry that snaps into productive tension almost immediately."
 pull: "The revival era's strongest opening move — a cast rebuilt around a returning anchor with real social weight."
+take_h2: "The reset finds real traction."
 shape_h2: "Seventeen episodes, two more than season fifteen."
 format_summary: "Real Housewives social reality format"
 cast_size: 6

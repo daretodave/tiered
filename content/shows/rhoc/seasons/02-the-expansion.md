@@ -10,6 +10,7 @@ ep_count: 10
 eyebrow: "The founding cast returns — wider cast, higher stakes, season two"
 lede: "The founding cast reassembles with new additions and a show that now knows what to do with the setting. Season two is RHOC becoming fluent in its own format — more social geography, more competing dynamics, the Coto de Caza world running as a pressure system for the first time."
 pull: "The debut invented the format. The expansion proved it could hold."
+take_h2: "The format finds its confidence."
 shape_h2: "Ten episodes, three more than the debut."
 premiere_caption: "Bravo · January 2007"
 filming_caption: "Coto de Caza and wider Orange County"

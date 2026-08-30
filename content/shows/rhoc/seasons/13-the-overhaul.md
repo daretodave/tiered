@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "Aired summer 2018 · Two new cast members, one founding figure in a reduced role"
 lede: "Two new cast members, a franchise original in a reduced role, and a show in reconstruction mode. Gina Kirschenheiter and Emily Simpson bring genuine chemistry to each other; their integration with the existing group is a work in progress."
 pull: "The transition era fully underway — the show building a new cast while still running the old one."
+take_h2: "Two newcomers, one founder receding."
 shape_h2: "Twenty-two episodes, matching the show's longest run yet."
 premiere_caption: "Bravo · July 2018"
 filming_caption: "Orange County · transition era deepens, cast rebuilds"

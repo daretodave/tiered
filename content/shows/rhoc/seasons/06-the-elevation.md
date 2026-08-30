@@ -10,6 +10,7 @@ ep_count: 21
 eyebrow: "Aired spring 2011 · Peak era begins, new cast shifts the show's social register"
 lede: "Season six is where RHOC changes registers. Heather Dubrow and Peggy Tanous join a cast running in a more aspirational Orange County, and the show's social architecture shifts upward to match. The peak era opens with a cast that has genuine chemistry and competing ambitions."
 pull: "The OC social world steps up in class and ambition — and the show is sharp enough to use both."
+take_h2: "Aspiration finds a new gear."
 shape_h2: "Twenty-one episodes, three more than season five."
 premiere_caption: "Bravo · April 2011"
 filming_caption: "Orange County · peak era begins, register shifts up"

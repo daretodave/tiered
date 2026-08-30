@@ -10,6 +10,7 @@ ep_count: 22
 eyebrow: "Aired summer 2015 · New cast member, sharper confrontations, uneven energy"
 lede: "Season ten brings a new cast member into a settled group. Shannon Beador's domestic pressure runs as a structural thread. The Meghan-driven confrontations are among the sharper scenes the peak era produced, though not all threads carry equal weight."
 pull: "A new cast axis sharpens some scenes and exposes the unevenness of the rest."
+take_h2: "One newcomer changes the temperature."
 shape_h2: "Twenty-two episodes, the longest run so far."
 premiere_caption: "Bravo · June 2015"
 filming_caption: "Orange County · new cast axis sharpens the season"

@@ -10,6 +10,7 @@ ep_count: 20
 eyebrow: "Aired spring 2014 · Peak-era ensemble in its third year together"
 lede: "Season nine runs the peak-era cast with Shannon Beador now integrated into the social architecture. The format is fluent, the chemistry is real, and the cast's accumulated history generates genuine pressure in places. The season leans on patterns it knows well."
 pull: "The peak era running its established dynamics with competence — familiar architecture, honest execution."
+take_h2: "The peak era on autopilot."
 shape_h2: "Twenty episodes, one shorter than season eight."
 premiere_caption: "Bravo · March 2014"
 filming_caption: "Orange County · peak ensemble's third year together"

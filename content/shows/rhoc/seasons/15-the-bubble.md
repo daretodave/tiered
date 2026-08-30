@@ -12,6 +12,7 @@ episodes: 15
 eyebrow: "Aired fall 2020 · COVID-impacted production, filmed at a Newport Beach resort"
 lede: "Filmed at a Newport Beach resort under pandemic restrictions, season fifteen is one of the franchise's most unusual production contexts — a cast isolated by circumstance and a format compressed by it."
 pull: "The most constrained production in the show's run — the setting shrinks and so does the social range."
+take_h2: "Pandemic restrictions reshape the format."
 shape_h2: "Fifteen episodes, four fewer than season fourteen."
 format_summary: "Real Housewives social reality format"
 cast_size: 6
