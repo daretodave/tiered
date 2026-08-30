@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne, Darwin, Adelaide, Dandenong Ranges"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-one episodes, first of four straight seasons at this length."
+take_h2: "A milestone that earns itself."
 watch_list:
   - episode_label: "Gordon Week · Ramsay's debut"
     body: "Gordon Ramsay appears on the show for the first time. His dedicated week sets challenges drawn from his restaurants' kitchens, and his manner with the contestants is more measured than his international reputation suggests."

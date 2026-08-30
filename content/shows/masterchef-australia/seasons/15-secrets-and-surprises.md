@@ -16,6 +16,7 @@ format_caption: "no MasterClasses, secret apron concept"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 shape_h2: "Fifty episodes, the shortest run since the debut season."
+take_h2: "Genuine experiments, not fully tested."
 watch_list:
   - episode_label: "Secret apron mechanic"
     body: "Winners receive a special apron whose identity is kept hidden from other contestants. The format experiments with concealing strategic information rather than revealing it."

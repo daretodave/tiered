@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio + California on location"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-three episodes, one more than the season before it."
+take_h2: "The first real leap abroad."
 watch_list:
   - episode_label: "California Week · the format abroad"
     body: "The penultimate week takes the remaining field to San Francisco, Napa Valley, and San Diego. The challenges in unfamiliar kitchens, with local produce and a different culinary culture, are the most demanding the founding era has set."

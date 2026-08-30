@@ -18,6 +18,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Eighteen episodes, the shortest season the format has run."
+take_h2: "The honest, unpolished beginning."
 ---
 
 MasterChef Australia arrives with a nationwide talent search and a three-judge panel working out what the format could look like. Gary Mehigan, George Calombaris, and Matt Preston build their chemistry in real time. The format is finding its feet — the elimination mechanics are rough, the cooking aspirations are high, and the gap between the two is part of what makes it honest. The debut of a show that would define Australian food television.

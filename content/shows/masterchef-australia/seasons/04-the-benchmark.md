@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-two episodes, four more than the season before it."
+take_h2: "The format's high-water mark."
 ---
 
 Season four is the founding era at its ceiling. The home cook bench is the deepest the format has assembled — the cooking level across the full run holds at a standard that earlier seasons reached only in their best moments. Heston Blumenthal appears as a recurring creative force, setting challenges that push the cast beyond recipe memory. The judging panel is at its most authoritative. The season the rest of the franchise reaches for.

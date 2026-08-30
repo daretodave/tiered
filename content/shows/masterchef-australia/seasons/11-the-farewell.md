@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne, Brisbane, Noosa, Rottnest Island"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-one episodes, the second season running at this length."
+take_h2: "A capable, transitional goodbye."
 watch_list:
   - episode_label: "Former contestant mentors"
     body: "Three former high-achieving competitors take the mentor role, replacing Shannon Bennett. Their firsthand knowledge of what this competition asks changes the texture of the guidance they give."

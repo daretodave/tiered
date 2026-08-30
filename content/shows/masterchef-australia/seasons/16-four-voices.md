@@ -15,6 +15,7 @@ format_caption: "Hong Kong on location, 22-contestant cast"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio + Hong Kong on location"
 shape_h2: "Fifty episodes, the same length as the season before it."
+take_h2: "Growing pains, not yet resolved."
 watch_list:
   - episode_label: "Four-judge panel · early episodes"
     body: "Watch for how the expanded panel divides its authority. With four judges rather than three, the chemistry-building process is more complex — and the voices need to earn their individual distinctiveness."

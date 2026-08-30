@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-seven episodes, the founding era's second-longest run."
+take_h2: "Reliable, but not remarkable."
 ---
 
 Season five runs the format at a high level without the landmark energy of season four. The home cook cast is capable across the board, the elimination structure is clean, and the judging panel has the confidence of a group that no longer needs to prove the format. Mehigan, Calombaris, and Preston work with the authority of a settled unit. A reliable, well-executed season that sustains the founding era's standard without pushing at its edges.

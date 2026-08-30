@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Seventy episodes, nearly four times the debut season's eighteen."
+take_h2: "More episodes, a bigger test."
 ---
 
 Season two expands what the format tried in its debut — more home cooks, more episodes, a longer audition circuit. Mehigan, Calombaris, and Preston arrive with chemistry already built and the confidence to push the cooking harder. The longer run tests whether the elimination structure can sustain interest across a full arc, and the cast's ability to develop over the course of it justifies the length. The format is no longer inventing; it is testing itself.

@@ -16,6 +16,7 @@ premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio production"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Fifty-eight episodes, twelve fewer than the season before."
+take_h2: "Settled, and it shows."
 ---
 
 Season three arrives with the format knowing what it is. The audition circuit has a rhythm, the judging panel has built trust, and the home cooks who make it through are a more technically confident class than either prior season assembled. Mehigan, Calombaris, and Preston judge with authority rather than invention. The rough edges of the debut are gone; what remains is a competition with a clear standard and casting depth to meet it.

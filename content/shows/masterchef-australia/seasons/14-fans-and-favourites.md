@@ -16,6 +16,7 @@ format_caption: "merge in Week 6, Tasmania off-site"
 premiere_caption: "Network Ten · Sunday"
 filming_caption: "Melbourne studio + Tasmania on location"
 shape_h2: "Sixty-two episodes, breaking the run of four seasons at sixty-one."
+take_h2: "A strong premise, fading late."
 watch_list:
   - episode_label: "Fans vs. Favourites opening weeks"
     body: "The two groups run parallel tracks in the early episodes. The Fans arrive with enthusiasm but less competitive experience; the Favourites have a structural advantage the format makes explicit."
