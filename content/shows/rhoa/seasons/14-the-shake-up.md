@@ -3,6 +3,7 @@ show: rhoa
 number: 14
 slug: the-shake-up
 title: "The Shake-Up"
+take_h2: "Two changes at once, absorbed."
 canonical_position: 11
 premiere_date: "2022-05-01"
 location: "Atlanta, Georgia · Jamaica · New York City · Blue Ridge, Georgia"

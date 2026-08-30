@@ -3,6 +3,7 @@ show: rhoa
 number: 13
 slug: the-pause
 title: "The Pause"
+take_h2: "Careful television, made in a hard year."
 canonical_position: 15
 premiere_date: "2020-12-06"
 location: "Atlanta, Georgia · New Orleans, Louisiana"

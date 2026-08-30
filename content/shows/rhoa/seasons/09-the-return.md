@@ -3,6 +3,7 @@ show: rhoa
 number: 9
 slug: the-return
 title: "The Return"
+take_h2: "The chemistry snaps back into place."
 canonical_position: 6
 premiere_date: "2016-11-06"
 location: "Atlanta, Georgia · Maui, Hawaii"

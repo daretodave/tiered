@@ -3,6 +3,7 @@ show: rhoa
 number: 7
 slug: the-read
 title: "The Read"
+take_h2: "The sharpest tongues in franchise history."
 canonical_position: 5
 premiere_date: "2014-11-09"
 location: "Atlanta, Georgia · San Juan, Puerto Rico"

@@ -3,6 +3,7 @@ show: rhoa
 number: 17
 slug: the-clean-slate
 title: "The Clean Slate"
+take_h2: "No anchors left to hold the center."
 canonical_position: 16
 premiere_date: "2026-04-05"
 location: "Atlanta, Georgia · Scotland"

@@ -3,6 +3,7 @@ show: rhoa
 number: 1
 slug: the-debut
 title: "The Debut"
+take_h2: "Unpolished, and worth it anyway."
 canonical_position: 10
 premiere_date: "2008-10-07"
 location: "Atlanta, Georgia"

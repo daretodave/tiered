@@ -3,6 +3,7 @@ show: rhoa
 number: 5
 slug: the-peak
 title: "The Peak"
+take_h2: "The ceiling the franchise still cites."
 canonical_position: 1
 premiere_date: "2012-11-04"
 location: "Atlanta, Georgia"

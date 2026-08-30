@@ -3,6 +3,7 @@ show: rhoa
 number: 2
 slug: the-expansion
 title: "The Expansion"
+take_h2: "One new voice tips the balance."
 canonical_position: 8
 premiere_date: "2009-10-04"
 location: "Atlanta, Georgia"

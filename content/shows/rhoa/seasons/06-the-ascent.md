@@ -3,6 +3,7 @@ show: rhoa
 number: 6
 slug: the-ascent
 title: "The Ascent"
+take_h2: "Twenty-seven episodes, no weak link."
 canonical_position: 2
 premiere_date: "2013-11-03"
 location: "Atlanta, Georgia · Athens, Greece"

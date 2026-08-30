@@ -3,6 +3,7 @@ show: rhoa
 number: 16
 slug: the-new-guard
 title: "The New Guard"
+take_h2: "A rebuild with real Atlanta roots."
 canonical_position: 14
 premiere_date: "2024-05-05"
 location: "Atlanta, Georgia · Jamaica"

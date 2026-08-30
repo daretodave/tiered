@@ -3,6 +3,7 @@ show: rhoa
 number: 11
 slug: the-softer-season
 title: "The Softer Season"
+take_h2: "Quieter, softer, still functional."
 canonical_position: 12
 premiere_date: "2018-11-04"
 location: "Atlanta, Georgia · Tokyo, Japan"

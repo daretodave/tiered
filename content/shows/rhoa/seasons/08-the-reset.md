@@ -3,6 +3,7 @@ show: rhoa
 number: 8
 slug: the-reset
 title: "The Reset"
+take_h2: "A season missing its anchor."
 canonical_position: 17
 premiere_date: "2015-11-08"
 location: "Atlanta, Georgia"

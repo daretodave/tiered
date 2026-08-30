@@ -3,6 +3,7 @@ show: rhoa
 number: 12
 slug: the-bridge
 title: "The Bridge"
+take_h2: "Where the pre-pandemic run closes."
 canonical_position: 7
 premiere_date: "2019-11-03"
 location: "Atlanta, Georgia · Athens, Greece · Toronto · New York City"

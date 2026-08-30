@@ -3,6 +3,7 @@ show: rhoa
 number: 10
 slug: the-anniversary
 title: "The Anniversary"
+take_h2: "A milestone season, doubling as a hinge."
 canonical_position: 9
 premiere_date: "2017-11-05"
 location: "Atlanta, Georgia · Barcelona, Spain"

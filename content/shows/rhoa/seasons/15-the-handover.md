@@ -3,6 +3,7 @@ show: rhoa
 number: 15
 slug: the-handover
 title: "The Handover"
+take_h2: "Stability, just before the rupture."
 canonical_position: 13
 premiere_date: "2023-05-07"
 location: "Atlanta, Georgia · Portugal · Birmingham, Alabama"

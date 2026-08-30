@@ -3,6 +3,7 @@ show: rhoa
 number: 4
 slug: the-dynasty
 title: "The Dynasty"
+take_h2: "Old history finally pays off."
 canonical_position: 4
 premiere_date: "2011-11-06"
 location: "Atlanta, Georgia"
