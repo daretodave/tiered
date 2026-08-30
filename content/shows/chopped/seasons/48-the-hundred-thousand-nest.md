@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — three tournament blocks in a ro
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-eighth season at the helm"
 take_h2: "Three tournaments, nested twice over."
+shape_h2: "Twelve of thirteen, inside a bracket."
 watch_list:
   - episode_label: "Grudge Match · judges vs. former champions"
     body: "A five-episode tournament pits the judging panel against former champions, building to a $100,000 finale — the largest cash prize this canon has recorded. Watch the stakes climb across four qualifying rounds before the payoff."

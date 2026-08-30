@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, full length ag
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, ninth season at the helm"
 take_h2: "The format proves the dip was temporary."
+shape_h2: "Back to thirteen, no fanfare."
 watch_list:
   - episode_label: "Every episode · the baseline returns"
     body: "Season 9 runs a full thirteen episodes for the first time since Season 5. Watch how ordinary the recovery feels — nothing on screen marks the return, because nothing needed fixing."

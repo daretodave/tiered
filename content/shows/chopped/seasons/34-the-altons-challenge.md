@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — except the closing 5-episode to
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-fourth season at the helm"
 take_h2: "A guest architect takes over the basket."
+shape_h2: "Eight standard, then a five-part swing."
 watch_list:
   - episode_label: "Episodes 1-8 · the standard hour"
     body: "Season 34 opens with eight ordinary episodes, the format running exactly as it has for years. Watch this stretch as the season's baseline before the long gap and tournament that follow."

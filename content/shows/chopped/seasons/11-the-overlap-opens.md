@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, staggered rele
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, eleventh season at the helm"
 take_h2: "The release calendar gets crowded."
+shape_h2: "Overlaps two later seasons' calendars."
 watch_list:
   - episode_label: "Every episode · the format, unaffected"
     body: "Season 11 runs the standard closed-door format even as its air dates overlap with two later seasons. Watch how little the scheduling quirk actually touches a single episode's mechanics."

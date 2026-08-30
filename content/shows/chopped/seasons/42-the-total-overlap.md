@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, a themed one-o
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-second season at the helm"
 take_h2: "Fewer episodes, touching every neighbor."
+shape_h2: "Eight episodes, nineteen-month span."
 watch_list:
   - episode_label: "Every episode · five short of the baseline"
     body: "Season 42 runs eight episodes instead of the usual thirteen, tying the format's shortest counts. Watch it as another reminder of how much a short run costs a season on its own."

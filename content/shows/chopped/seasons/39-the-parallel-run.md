@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, no tournament 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-ninth season at the helm"
 take_h2: "Another season, same crowded window."
+shape_h2: "Standard count, nested calendar again."
 watch_list:
   - episode_label: "Every episode · a nested calendar"
     body: "Season 39 runs entirely inside Season 37's wider air window while Season 38, Season 40, and Season 41 all share pieces of the same calendar. Watch it as one of several seasons swallowed by this stretch's overlap."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part regional-ident
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-third season at the helm"
 take_h2: "A hub of its own, gap-riddled calendar."
+shape_h2: "Eight standalone, then a regional bracket."
 watch_list:
   - episode_label: "Eight openers · a themed run before the bracket"
     body: "Grilling, cheese, gargantuan surprises, and holiday hours each get a dedicated episode before any tournament begins. Watch this run of eight as the format's usual variety, spread out across the fall."

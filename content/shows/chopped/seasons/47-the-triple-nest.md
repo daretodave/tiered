@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — two tournament blocks, no stand
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-seventh season at the helm"
 take_h2: "Two tournaments, the widest containment yet."
+shape_h2: "Eleven bracket episodes, two standalone."
 watch_list:
   - episode_label: "Beat the Judge · six episodes, a new format"
     body: "Season 47 opens with six episodes pitting a single chef against one individual judge each hour, a head-to-head format the show has never run before. Watch how the closed-door premise bends around a duel instead of a four-chef field."

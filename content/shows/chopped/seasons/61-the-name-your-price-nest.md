@@ -18,6 +18,7 @@ format_caption: "five-episode auction-budget tournament, then 8 standard hours"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "An auction gimmick, no calendar of its own."
+shape_h2: "Five-part opener, eight standard hours."
 watch_list:
   - episode_label: "Eps 1-5 · Name Your Price"
     body: "A five-episode tournament has chefs bid a preliminary or finale budget on the basket's fourth ingredient, with unspent funds carrying real stakes into the finale. Watch it as a genuinely new tournament mechanic for this format."

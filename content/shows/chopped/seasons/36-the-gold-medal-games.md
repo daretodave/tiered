@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part games tourname
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-sixth season at the helm"
 take_h2: "A tournament opens the new year."
+shape_h2: "One opener, then a five-part swing."
 watch_list:
   - episode_label: "Episode 1 · the standard opener"
     body: "Season 36 opens with one ordinary hour before the tournament stretch begins. Watch it as the format's usual baseline, set just ahead of a real structural swing."

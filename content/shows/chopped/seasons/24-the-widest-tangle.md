@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, the widest tan
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-fourth season at the helm"
 take_h2: "The widest tangle yet."
+shape_h2: "Standard count, crowded calendar."
 watch_list:
   - episode_label: "Every episode · four seasons, start to finish"
     body: "Season 24 opens overlapping the tail of Season 22 and Season 23, then runs long enough to cover all of Season 25 and Season 26 at the other end. Watch it as the widest overlap footprint in the batch."

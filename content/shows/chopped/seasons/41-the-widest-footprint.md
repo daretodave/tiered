@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — one themed opener, no tournamen
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-first season at the helm"
 take_h2: "The widest footprint, without a shortened count."
+shape_h2: "One themed opener, twelve standard hours."
 watch_list:
   - episode_label: "Episode 1 · Ultimate Redemption"
     body: "A themed opening hour brings back the format's callback concept before the season settles into its regular run. Watch it as a one-off wrinkle, not a tournament."

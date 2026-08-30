@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard, except episode 8's ca
 cast_size_caption: "four competing chefs per episode, all-new except one callback hour"
 host_caption: "Ted Allen, third season at the helm"
 take_h2: "A single episode tests the format against experience."
+shape_h2: "A single callback hour, episode eight."
 watch_list:
   - episode_label: "Episodes 1-7 · the format unchanged"
     body: "Season 3 opens with seven straight hours of the pure premise — brand-new chefs, no history with the basket, no prior Chopped experience to lean on. Watch how the show keeps that baseline steady before episode 8 breaks it."

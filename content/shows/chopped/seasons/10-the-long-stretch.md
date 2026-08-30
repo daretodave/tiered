@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, extended air w
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, tenth season at the helm"
 take_h2: "The recovery holds a second time."
+shape_h2: "The longest air window yet."
 watch_list:
   - episode_label: "Every episode · confirmation, not novelty"
     body: "Season 10 runs the same full thirteen episodes Season 9 just re-established. Watch it as quiet proof the recovery wasn't a fluke."

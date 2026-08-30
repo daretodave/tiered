@@ -18,6 +18,7 @@ format_caption: "Legends tournament, then Hungry for Love pairs, then 3 standard
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "Two blocks, the thinnest standard stretch yet."
+shape_h2: "Ten of thirteen episodes, blocked."
 watch_list:
   - episode_label: "Eps 1-5 · Legends"
     body: "A five-episode tournament brings former champions back into the kitchen as sous chefs for the finale. Watch how the returning-champion idea gets reworked here into a support role rather than a rematch."

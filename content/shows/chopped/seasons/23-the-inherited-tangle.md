@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, an inherited o
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-third season at the helm"
 take_h2: "Overlap, inherited."
+shape_h2: "Six months, the tightest overlap window."
 watch_list:
   - episode_label: "Every episode · alongside most of Season 22"
     body: "Season 23 overlaps Season 21's final month, then runs alongside almost the entire course of Season 22. Watch it as a real tangle, though a lighter one than Season 22's own four-season footprint."

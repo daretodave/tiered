@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, shorter season
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, seventh season at the helm"
 take_h2: "The contraction begins."
+shape_h2: "Ten episodes, second straight cut."
 watch_list:
   - episode_label: "Every episode · a shorter clock"
     body: "Season 7 trims to ten episodes, the shortest run yet at that point. Watch whether the tighter schedule changes how quickly new casts cycle through the format."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — themed cuisine hours, no tourna
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "No bracket, the longest window yet."
+shape_h2: "Thirteen episodes, all themed cuisine hours."
 watch_list:
   - episode_label: "Every episode · zero tournament content"
     body: "All thirteen hours here run the standard format, no bracket or multi-episode gimmick anywhere in the season. Watch it as another entry in this canon's occasional no-tournament stretch."

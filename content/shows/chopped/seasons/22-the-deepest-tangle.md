@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, the deepest ta
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-second season at the helm"
 take_h2: "The batch's deepest tangle."
+shape_h2: "Ties Season 24 for deepest overlap."
 watch_list:
   - episode_label: "Every episode · four seasons touched"
     body: "Season 22 overlaps Season 20's tail, nearly all of Season 21, and both Season 23 and Season 24 at its far end. Watch it as the most tangled release schedule the format has aired."

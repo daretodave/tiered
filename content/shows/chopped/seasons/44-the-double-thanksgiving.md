@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — two holiday hours, no tournamen
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-fourth season at the helm"
 take_h2: "Two holiday hours, a crowded calendar."
+shape_h2: "Eleven-month run, five neighbors touched."
 watch_list:
   - episode_label: "Two Thanksgiving hours · a themed pair"
     body: "A pair of Thanksgiving-titled episodes air back to back in November, built around the holiday's ingredients rather than any returning-cast tournament. Watch how lightly the theme sits on the standard structure."

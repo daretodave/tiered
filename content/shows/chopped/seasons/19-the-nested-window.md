@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, nested inside 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, nineteenth season at the helm"
 take_h2: "Nested inside Season 18."
+shape_h2: "Five years since the debut."
 watch_list:
   - episode_label: "Every episode · almost entirely nested"
     body: "Season 19 runs from February to June 2014, sitting inside Season 18's own window for nearly its whole run. Watch it as the deepest single-season nest the format has aired yet."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — except episodes 10-13, a champi
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, second season at the helm"
 take_h2: "The format takes its first real detour."
+shape_h2: "Nine hours, then a Champions block."
 watch_list:
   - episode_label: "Episodes 1-9 · the standard hour"
     body: "The season's first nine hours run the pure format — new chefs, new panel, closed door, no returning cast. Watch how consistent Ted Allen keeps the pacing before the final stretch changes the rules."

@@ -18,6 +18,7 @@ format_caption: "five-episode tournament, then standard format the rest of the w
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "One tournament, one contained neighbor."
+shape_h2: "Five-part opener, eight standard closers."
 watch_list:
   - episode_label: "Eps 1-5 · Spin It to Win It"
     body: "A five-episode tournament opens the season before the standard format takes over. Watch it as the front-loaded structure this stretch of seasons keeps returning to."

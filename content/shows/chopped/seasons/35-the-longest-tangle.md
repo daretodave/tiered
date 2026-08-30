@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, scattered them
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-fifth season at the helm"
 take_h2: "Two neighbors, entangled for eight months."
+shape_h2: "Twenty episodes, tying the longest run."
 watch_list:
   - episode_label: "Every episode · eight months on the calendar"
     body: "Season 35 spans from July 2017 into March 2018, the longest single stretch the format has aired. Watch it as a season defined as much by its calendar as by its episodes."

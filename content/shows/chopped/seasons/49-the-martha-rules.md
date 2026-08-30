@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — two tournaments, one with guest
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-ninth season at the helm"
 take_h2: "Two tournaments, one guest-shaped."
+shape_h2: "Two five-part brackets, back to back."
 watch_list:
   - episode_label: "Comfort Food Feud · a five-part opener"
     body: "Bacon, burgers, mac and cheese, and pizza each headline a themed round before a finale closes the bracket. Watch the season lead with a tournament instead of easing into the standard format first."

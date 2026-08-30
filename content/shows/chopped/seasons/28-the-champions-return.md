@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — except episodes 1-5, a champion
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-eighth season at the helm"
 take_h2: "The format's best swing, run back."
+shape_h2: "Five-episode Champions block, up front."
 watch_list:
   - episode_label: "Episodes 1-5 · Champions, up front"
     body: "Season 28 opens with past winners returning to cook against each other, the same concept Season 2 introduced years earlier. Watch how placing the block at the start changes the season's whole shape."

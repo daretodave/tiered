@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — four ingredients per basket, pe
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fourth season at the helm"
 take_h2: "The basket finds its permanent shape."
+shape_h2: "Four ingredients, locked for good."
 watch_list:
   - episode_label: "Every basket · the new count"
     body: "Watch the reveal moment closely this season — every basket in every round now holds exactly four ingredients, a consistency earlier seasons didn't have. It becomes the rule the show still runs today."

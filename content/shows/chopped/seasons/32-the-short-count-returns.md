@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, shorter count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-second season at the helm"
 take_h2: "One episode short, again."
+shape_h2: "Twelve episodes, one below standard."
 watch_list:
   - episode_label: "Every episode · one below the standard count"
     body: "Season 32 runs twelve episodes instead of the thirteen the format usually holds to. Watch it as a mild, familiar shortfall rather than anything structurally new."

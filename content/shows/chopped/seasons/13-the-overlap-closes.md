@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, shorter count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirteenth season at the helm"
 take_h2: "The overlap closes, one episode short."
+shape_h2: "Twelve episodes, matching Season 6."
 watch_list:
   - episode_label: "Every episode · the last of the overlap chain"
     body: "Season 13 closes out the run of overlapping seasons that opened with Season 11. Watch how little the tangled release calendar changes about any single episode."

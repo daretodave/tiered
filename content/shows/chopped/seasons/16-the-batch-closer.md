@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, closing the st
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, sixteenth season at the helm"
 take_h2: "The settled run closes on a quiet note."
+shape_h2: "Nearly a year after Season 12."
 watch_list:
   - episode_label: "Every episode · unremarkable, in the best sense"
     body: "Season 16 runs the standard closed-door format with no returning-chef gimmick and no shortened count. Watch it as a clean example of the show at its most reliable."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, a week of dire
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, eighteenth season at the helm"
 take_h2: "A week of direct overlap."
+shape_h2: "Sixth calendar year on air."
 watch_list:
   - episode_label: "Every episode · a week ahead of schedule"
     body: "Season 18 premieres while Season 17 still has one week left on air, a tighter overlap than a tail-only tangle. Watch it as a small step up in scheduling density, not yet a real pileup."

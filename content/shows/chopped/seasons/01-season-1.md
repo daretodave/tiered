@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — one elimination each round"
 cast_size_caption: "four competing chefs per episode, an all-new lineup every hour"
 host_caption: "Ted Allen, first season at the helm"
 take_h2: "The format arrives already whole."
+shape_h2: "The appetizer round runs long."
 watch_list:
   - episode_label: "Every episode · the basket reveal"
     body: "Four chefs open a covered basket of mismatched ingredients with no idea what's inside. Watch how fast they read the assignment — the reveal sets the tone before a single pan hits the stove."

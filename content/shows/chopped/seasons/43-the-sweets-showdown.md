@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part all-dessert br
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-third season at the helm"
 take_h2: "A dessert bracket, folded in."
+shape_h2: "Eight standard, five an all-dessert bracket."
 watch_list:
   - episode_label: "Sweets Showdown · dessert rounds, then a finale"
     body: "Chocolate, doughnuts, cake, and ice cream each get a dedicated hour before a grand finale closes the bracket in late October. Watch the tournament narrow its theme tighter than any prior Chopped bracket."

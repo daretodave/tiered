@@ -18,6 +18,7 @@ format_caption: "a swapped round order once, a judging host once"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "Two firsts, and a calendar all its own."
+shape_h2: "One swapped round, one judging host."
 watch_list:
   - episode_label: "No Kid Hungry · swapped round order"
     body: "A charity episode replaces the usual appetizer-entrée-dessert structure with breakfast, lunch, and dessert rounds. Watch it as a rare change to the format's own course order."

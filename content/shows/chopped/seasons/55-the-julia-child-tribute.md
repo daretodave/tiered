@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — two tournament blocks, a tribut
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-fifth season at the helm"
 take_h2: "Two tournaments, a near-record run."
+shape_h2: "Nineteen episodes, third-longest run ever."
 watch_list:
   - episode_label: "Military Salute · a branch-of-service bracket"
     body: "Navy, Air Force, Marines, and Army each headline a themed round for charity stakes, building to a Finale — a branch-of-service bracket format the show has never tried before. Watch the four rounds compete under a shared organizing idea."

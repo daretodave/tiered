@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, one season's t
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, seventeenth season at the helm"
 take_h2: "A tail-end overlap returns."
+shape_h2: "Premieres before Season 16 wraps."
 watch_list:
   - episode_label: "Every episode · a mild overlap, not a tangle"
     body: "Season 17 shares a few months of air time with Season 16's back half, the first scheduling overlap in a while. Watch it as a shallow reopening of an old wrinkle, not a full pileup."

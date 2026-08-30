@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, no tournament 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, forty-sixth season at the helm"
 take_h2: "A brief tail, and a clean close."
+shape_h2: "Thirteen episodes, a tight turnaround."
 watch_list:
   - episode_label: "Every episode · a brief front-end overlap"
     body: "Season 46 premieres while Season 44 and Season 45 are both wrapping up, a light tail overlap rather than a real tangle. Watch it as one of the calmest calendars this stretch of seasons has produced."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a bigger, five-part Casino
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-fourth season at the helm"
 take_h2: "A total nest, a bigger bracket."
+shape_h2: "One opener, five-part sequel, seven closers."
 watch_list:
   - episode_label: "Casino Royale XL · a bigger sequel bracket"
     body: "Four battles and a grand finale scale up the earlier gambling-themed tournament into a larger version of itself. Watch how the format expands a proven idea rather than inventing a new one from scratch."

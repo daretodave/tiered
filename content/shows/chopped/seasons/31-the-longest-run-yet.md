@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a four-part Bobby Flay tou
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-first season at the helm"
 take_h2: "The longest run yet, almost entirely shared."
+shape_h2: "A four-part Beat Bobby Flay crossover."
 watch_list:
   - episode_label: "Every episode · a record-length season"
     body: "Season 31 runs twenty episodes, the most the format has ever produced in a single season. Watch it as the format's biggest swing at runtime yet."

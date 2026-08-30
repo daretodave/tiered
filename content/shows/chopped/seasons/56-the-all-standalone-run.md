@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, no tournament 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-sixth season at the helm"
 take_h2: "No bracket, a majority overlap."
+shape_h2: "Thirteen standalone, a five-month run."
 watch_list:
   - episode_label: "Every episode · zero tournament content"
     body: "All thirteen episodes here run the standard closed-door hour, no bracket or multi-episode gimmick anywhere in the season. Watch it as the first season in a long stretch to skip a tournament block entirely."

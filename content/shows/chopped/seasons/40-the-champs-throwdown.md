@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part $50,000 champi
 cast_size_caption: "four competing chefs per episode, past champions across the tournament block"
 host_caption: "Ted Allen, fortieth season at the helm"
 take_h2: "Returning champs, a crowded calendar."
+shape_h2: "Five-part bracket, a year-long overlap."
 watch_list:
   - episode_label: "Champs Throwdown · four battles and a finale"
     body: "Returning champions face off across four qualifying battles before a finale settles the $50,000 prize. Watch the bracket run through October and November inside an otherwise standard season."

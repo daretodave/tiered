@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, fully nested r
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-fifth season at the helm"
 take_h2: "Fully inside Season 24."
+shape_h2: "A full slate, Season 26 cuts to eight."
 watch_list:
   - episode_label: "Every episode · never running alone"
     body: "Season 25 airs entirely within Season 24's own window, with Season 26 joining in for the back half too. Watch it as the most fully contained overlap this stretch produces."

@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — one themed hour, no overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-seventh season at the helm"
 take_h2: "A clean calendar, for once."
+shape_h2: "One themed hour, otherwise unbothered."
 watch_list:
   - episode_label: "Every episode · no overlap at all"
     body: "Season 27 doesn't share its air dates with any other season, the first fully clean calendar in a while. Watch it as the format's plainest, least tangled run in some time."

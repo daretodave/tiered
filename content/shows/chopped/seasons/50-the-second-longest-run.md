@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — three distinct tournament/thema
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fiftieth season at the helm"
 take_h2: "Three blocks, one long calendar."
+shape_h2: "Eighteen episodes, five over the norm."
 watch_list:
   - episode_label: "Time Capsule · three themed hours, no bracket"
     body: "Sixties, nineties, and future-food themed episodes open the season as standalone hours rather than a tournament. Watch each one build a distinct decade's menu without any elimination bracket tying them together."

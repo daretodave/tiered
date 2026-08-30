@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part sous-chef job 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-second season at the helm"
 take_h2: "The cleanest calendar, plus real stakes."
+shape_h2: "Seven standalone, then a five-part swing."
 watch_list:
   - episode_label: "Seven openers · variety before the bracket"
     body: "Pie, pickles, deli sandwiches, tacos, and more each headline a standalone hour before any tournament begins. Watch this stretch as the format's usual thematic variety, running at full strength."

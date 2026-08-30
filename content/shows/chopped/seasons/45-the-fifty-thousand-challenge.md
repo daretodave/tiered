@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part returning-cham
 cast_size_caption: "four competing chefs per episode, past champions across the tournament block"
 host_caption: "Ted Allen, forty-fifth season at the helm"
 take_h2: "Returning champs open the new year."
+shape_h2: "Five-part opener, eight standard after."
 watch_list:
   - episode_label: "Champs Challenge · a five-part opener"
     body: "Season 45 leads with returning champions instead of closing on them, four qualifying rounds building to a grand finale. Watch the tournament set the tone before the standard format even gets a turn."

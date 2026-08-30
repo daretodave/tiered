@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part teen tournamen
 cast_size_caption: "four competing cooks per episode, teens across the tournament stretch"
 host_caption: "Ted Allen, twenty-ninth season at the helm"
 take_h2: "A new pool of competitors."
+shape_h2: "A five-part Teen Tournament threads through."
 watch_list:
   - episode_label: "Teen Tournament episodes · a different cast"
     body: "Five episodes swap the usual adult-chef pool for teenage cooks, a genuine change to who's standing at the station. Watch how the format holds up against competitors this age."

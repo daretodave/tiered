@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, a short count"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirtieth season at the helm"
 take_h2: "The short count returns."
+shape_h2: "Ties Season 26 at eight episodes."
 watch_list:
   - episode_label: "Every episode · tied for the shortest run"
     body: "Season 30 runs eight episodes, matching Season 26's low for the fewest the format has aired. Watch it as another reminder of how much a short count costs a season."

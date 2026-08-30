@@ -18,6 +18,7 @@ format_caption: "five-episode regional tournament, extended finale round, standa
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, {seasonOrdinalWord} season at the helm"
 take_h2: "Total containment, real tournament credit."
+shape_h2: "Five-part regional opener, extended finale."
 watch_list:
   - episode_label: "Eps 1-5 · Battle Italiano"
     body: "A five-episode regional tournament moves through Emilia-Romagna, Veneto, Puglia, and Tuscany before a finale. Watch the finale round specifically — its appetizer round runs a full thirty minutes, double the usual clock."

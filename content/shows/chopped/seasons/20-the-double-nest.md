@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, a double overl
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twentieth season at the helm"
 take_h2: "Two seasons overlap at once."
+shape_h2: "The milestone twentieth season overall."
 watch_list:
   - episode_label: "Every episode · a genuinely busy calendar"
     body: "Season 20 overlaps Season 18 through mid-May and the whole of Season 19 through early June, the first double overlap in this stretch. Watch it as the release calendar's busiest point yet."

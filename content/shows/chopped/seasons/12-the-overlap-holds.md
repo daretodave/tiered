@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, staggered rele
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twelfth season at the helm"
 take_h2: "The overlap reaches its densest point."
+shape_h2: "Sits inside two seasons' windows."
 watch_list:
   - episode_label: "Every episode · the format, steady underneath"
     body: "Season 12 runs the standard closed-door format at the center of the show's most overlapping release window. Watch how unaffected each individual episode is by the scheduling tangle around it."

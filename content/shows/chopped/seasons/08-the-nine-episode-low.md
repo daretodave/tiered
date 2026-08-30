@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — the format's shortest run yet"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, eighth season at the helm"
 take_h2: "The contraction bottoms out."
+shape_h2: "Nine episodes, the shortest yet."
 watch_list:
   - episode_label: "Every episode · the shortest run yet"
     body: "Nine episodes is the fewest the show had aired at this point. Watch whether the format still gives each cast enough room to make its case in a shorter overall season."

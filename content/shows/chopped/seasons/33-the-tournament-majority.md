@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — mostly a celebrity charity tour
 cast_size_caption: "four competitors per episode, celebrities across the tournament block"
 host_caption: "Ted Allen, thirty-third season at the helm"
 take_h2: "Mostly a tournament, barely a season."
+shape_h2: "Eight episodes, five a tournament."
 watch_list:
   - episode_label: "Star Power · the majority of the season"
     body: "Five of the season's eight episodes are a celebrity charity tournament, more than half the total run. Watch how thin the standard mystery-basket format actually gets here."

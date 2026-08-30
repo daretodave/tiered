@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — plus a five-part gambling-theme
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifty-first season at the helm"
 take_h2: "Stakes escalate, so does the overlap."
+shape_h2: "Five-part opener, seven standalone after."
 watch_list:
   - episode_label: "Casino Royale · stakes climb to $25,000"
     body: "Four qualifying battles build toward a finale with escalating gambling-themed stakes, a bracket idea the format has never tried before. Watch the tension mount round to round as the prize grows."

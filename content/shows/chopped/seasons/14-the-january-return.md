@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, no overlap"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fourteenth season at the helm"
 take_h2: "The format runs without a complication."
+shape_h2: "No overlap, full baseline again."
 watch_list:
   - episode_label: "Every episode · a clean, unclustered run"
     body: "Season 14 airs on its own calendar, clear of the overlap that tangled the three seasons before it. Watch the format run at full baseline with nothing else competing for the release window."

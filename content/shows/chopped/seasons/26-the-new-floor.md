@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, the shortest r
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-sixth season at the helm"
 take_h2: "The shortest run yet."
+shape_h2: "Wraps in about ten weeks."
 watch_list:
   - episode_label: "Every episode · five short of the baseline"
     body: "Season 26 runs eight episodes, the fewest the format has aired — below even Season 8's nine-episode low. Watch it as the clearest example yet of how much a short count costs a season."

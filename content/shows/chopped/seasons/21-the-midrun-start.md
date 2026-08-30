@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, a mid-run prem
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, twenty-first season at the helm"
 take_h2: "A premiere mid-run."
+shape_h2: "Premieres four months before Season 20 ends."
 watch_list:
   - episode_label: "Every episode · well ahead of Season 20's finish"
     body: "Season 21 premieres in mid-July 2014, while Season 20 still has more than four months left on air. Watch it as one deep, single-season overlap rather than a brief shared week."

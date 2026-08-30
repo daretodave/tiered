@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, brisk pace"
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifteenth season at the helm"
 take_h2: "The format picks up its own pace."
+shape_h2: "The tightest air window yet."
 watch_list:
   - episode_label: "Every episode · a brisker clock"
     body: "Season 15 runs its thirteen episodes over a shorter window than any full-baseline season before it. Watch how the tighter release schedule changes nothing about the format itself, only how fast it arrives."

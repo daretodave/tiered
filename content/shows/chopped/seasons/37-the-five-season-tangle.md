@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, no tournament 
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-seventh season at the helm"
 take_h2: "Five seasons, one crowded calendar."
+shape_h2: "Thirteen episodes, standard length holds."
 watch_list:
   - episode_label: "Every episode · the widest touch yet"
     body: "Season 37 catches Season 36's tail, contains nearly all of Season 38 and Season 39, and brushes Season 40 and Season 41 at its far end. Watch it as the broadest overlap footprint any standard season here has produced."

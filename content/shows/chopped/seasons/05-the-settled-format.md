@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — the standard format, no deviati
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, fifth season at the helm"
 take_h2: "The format runs clean, start to finish."
+shape_h2: "Thirteen episodes, zero deviations."
 watch_list:
   - episode_label: "Every episode · the format on autopilot"
     body: "No callback hours, no tournament blocks, no ingredient-count surprises — Season 5 just runs the rule Season 4 established. Watch how confidently the show moves now that the basket's shape is fixed."

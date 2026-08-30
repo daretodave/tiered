@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, fully nested r
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, thirty-eighth season at the helm"
 take_h2: "Nested inside a wider tangle."
+shape_h2: "Full run, inside Season 37's window."
 watch_list:
   - episode_label: "Every episode · never running solo"
     body: "Season 38 airs entirely within Season 37's own window, with Season 39, Season 40, and Season 41 all sharing pieces of the same calendar. Watch it as one of the most fully contained seasons the format has produced."

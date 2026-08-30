@@ -18,6 +18,7 @@ format_caption: "appetizer, entrée, dessert — standard format, shorter season
 cast_size_caption: "four competing chefs per episode, same all-new-hour format as always"
 host_caption: "Ted Allen, sixth season at the helm"
 take_h2: "The mainline format holds, on a shorter clock."
+shape_h2: "Twelve episodes, one below baseline."
 watch_list:
   - episode_label: "Every episode · one hour shorter overall"
     body: "Season 6 trims to twelve episodes instead of the thirteen the last four seasons ran. Watch whether the shorter season changes the pacing of how quickly new casts cycle through."
