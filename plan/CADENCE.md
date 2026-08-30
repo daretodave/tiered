@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-08-23 | next due 2026-08-30 |
+| season-sweep | 7 days | 2026-08-30 | next due 2026-09-06 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,74 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Eighth full weekly sweep, 2026-08-30 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows,
+cross-checked against the filesystem. The same 2 pre-existing tracked
+frontmatter/filed mismatches recur (`90-day-fiance` 11/12,
+`american-ninja-warrior` 17/18 — neither actionable this pass;
+`married-at-first-sight` is fully resolved at 20/20, confirmed still
+correct). Every one of the existing 43 starred gap-table rows was
+cross-checked against this pass's scout findings — all reconfirmed
+accurate, no premiere date has moved into the past since the prior
+sweep, nothing drained.
+
+**One table correction reversed a prior over-correction.** The
+2026-08-23 sweep collapsed `hells-kitchen` from `24/26, 2*` to
+`24/25, 1*`, reasoning that a Wikipedia episode-list check found no
+unaired episodes between S24 and S25. That check answered the wrong
+question — it can't detect a *separately renewed, not-yet-scheduled*
+Season 26, which is what the second slot represents. This pass's scout
+batch re-surfaced the Fox double-renewal (Season 25 **and** Season 26
+announced together, ~May 2026, both filming at Foxwoods Resort Casino,
+Connecticut) via two independent sources (Deadline, "Fox Renews Gordon
+Ramsay Shows Including Kitchen Nightmares"; TV Series Finale, "Hell's
+Kitchen: Seasons 25 & 26"). This matches a 2026-07-13 tick's own note
+that the 2026-08-23 sweep apparently missed. Season 25 has a confirmed
+premiere date (2026-09-24, reconfirmed this pass); Season 26 has none.
+Reverted to `hells-kitchen | 24/26 | 2*`.
+
+**One finale date flagged uncertain, no table action.**
+`below-deck-mediterranean` S11's finale is carried at 2026-09-14
+(corrected by the 2026-08-23 sweep from a stale 2026-08-24). This
+pass's scout found a conflicting read of Wikipedia's per-episode
+listing suggesting an 18-episode season running to ~2026-10-05, versus
+a 15-episode read (matching our current 2026-09-14 date) from a
+secondary tracker. Neither source is more authoritative than the
+official episode-count basis the prior correction used — not enough
+to justify a second flip. Left as-is; flagging for re-verification
+against Bravo's own schedule page as the date approaches.
+
+**One new calendar.yml addition.** `americas-got-talent` S21 is
+already fully filed (21/21) but its finale hasn't aired yet —
+confirmed for **2026-09-23** (two-night event, Sept 22 performances /
+Sept 23 results, per TV Insider and NBC Insider) — added to
+`content/calendar.yml` as `scheduled` so the phase-39 finale gate
+picks it up once it passes.
+
+**No other genuine new gaps.** Several near-term premiere dates were
+reconfirmed with no change to the table (`dancing-with-the-stars` S35
+premieres 2026-09-15, `dragrace-uk` S8 premieres 2026-09-03 with full
+cast announced, `rhony` S16 premieres 2026-09-08, `rhoslc` S7 premieres
+2026-09-16, `shark-tank` S18 premieres 2026-09-30, `survivor` S51
+premieres 2026-09-23, `the-voice` S30 premieres 2026-09-21) — all
+already correctly starred. `the-challenge` S42 ("Cutthroat," the
+franchise's first Paramount+-exclusive season) already premiered
+2026-08-05 and is currently airing — already correctly starred at
+`41/42, 1*`.
+
+**Two items investigated and closed as non-gaps (different show or
+already resolved).** `jersey-shore` — the reported "ending after
+Season 9" news is about *Jersey Shore Family Vacation*, a separate MTV
+revival series not currently in our catalog (which tracks only the
+original 2009–2012 run, correctly ended at 6/6). No action; a Family
+Vacation catalog entry would be a new-show question, and new-show
+creation is locked. `bachelorette` — this pass's scout surfaced
+pre-pull coverage of a planned 2026-03-22 Season 22 premiere
+(Taylor Frankie Paul); this doesn't contradict or update the
+already-tracked fact that ABC pulled the season days before air
+following a resurfaced controversy, airing status still unresolved.
+No table action, matches standing precedent.
 
 **Seventh full weekly sweep, 2026-08-23 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
@@ -776,7 +844,7 @@ new-show creation is locked to the biweekly show-add clock.
 | project-runway | 21/22 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
-| hells-kitchen | 24/25 | 1* |
+| hells-kitchen | 24/26 | 2* |
 | dragrace | 18/19 | 1* |
 | dragrace-allstars | 11/12 | 1* |
 | masked-singer | 14/15 | 1* |
@@ -2595,3 +2663,4 @@ No calendar or gap-table action.
 | 2026-08-09 | 1 (top-chef S24, newly confirmed-but-unaired; chopped's recurring "S63/S64" false positive re-flagged, not reopened) | 47 |
 | 2026-08-16 | 0 (every one of the 42 starred rows reconfirmed; two calendar.yml date/status corrections and a traitors "New Blood" disambiguation surfaced, no gap-table change — see notes) | 43 |
 | 2026-08-23 | 2 (dragrace S19 + dragrace-allstars S12, both officially confirmed via a single TVLine report — the All Stars 12 claim corrects the show's 2026-08-02 false positive with a genuine primary-source renewal this time; hells-kitchen's long-carried "+1 extra deferred slot" artifact corrected to 1, no second missing season ever existed) | 44 |
+| 2026-08-30 | 0 new (every one of 42 current rows reconfirmed accurate, none actionable; hells-kitchen's 2026-08-23 "correction" to 1* is itself reverted back to `24/26, 2*` — the second slot is a real, separately-announced Season 26 double-renewal, not a phantom; americas-got-talent S21 finale, 2026-09-23, added to calendar.yml since the show is fully filed but hasn't reached its finale yet) | 42 |
