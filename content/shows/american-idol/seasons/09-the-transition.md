@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 12
 eyebrow: "Aired winter–spring 2010 · Panel shifts and a departing anchor"
 shape_h2: "Forty-three episodes, panel turnover begins."
+take_h2: "The founding era winds down."
 lede: "Season nine runs under a transitional panel: Paula Abdul departed, Ellen DeGeneres joined with a warmth-first critique style. Mid-season, Simon Cowell announced he would leave after this run — turning the season into a farewell for the franchise's defining voice."
 pull: "One judge arriving, one departing, and the original panel's chemistry running out in real time."
 format_summary: "Talent competition · nationwide audition · viewer vote"

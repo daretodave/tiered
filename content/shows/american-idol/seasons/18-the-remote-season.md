@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 24
 eyebrow: "Aired spring 2020 · Competition disrupted by COVID-19"
 shape_h2: "Seventeen episodes, a remote finale."
+take_h2: "The season a pandemic reshaped."
 lede: "Season eighteen began with standard in-person auditions and ended unlike any season before it. The later competition rounds shifted to remote production, with contestants performing from home via video link — a constraint the format had never faced before or since."
 pull: "The only Idol season where the finale happened from living rooms — a production document for an unrepeatable circumstance."
 format_summary: "Talent competition · nationwide audition · remote finale"

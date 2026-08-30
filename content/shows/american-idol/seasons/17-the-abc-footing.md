@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 19
 eyebrow: "Aired spring 2019 · The revival finding its settled form"
 shape_h2: "Eighteen episodes, the second cycle."
+take_h2: "The novelty wears off first."
 lede: "Season seventeen returns Katy Perry, Lionel Richie, and Luke Bryan for a second ABC cycle. The debut novelty has settled into something more functional — a panel with shared shorthand and an audition circuit that knew what it was looking for."
 pull: "The ABC format without the debut buzz — a more grounded run that showed the panel had staying power."
 format_summary: "Talent competition · nationwide audition · viewer vote"

@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 8
 eyebrow: "Aired winter–spring 2016 · Fox's final season, billed as the Farewell Season"
 shape_h2: "Twenty-seven episodes, billed as final."
+take_h2: "Alumni return for the send-off."
 lede: "Fox announced this would be Idol's last Fox season before it aired. The production honored the framing — former contestants and judges returned, including Simon Cowell and Randy Jackson. Every live show carried the weight of a closing ceremony."
 pull: "A season shaped by its own ending — the farewell framing turns the competition into a retrospective in real time."
 format_summary: "Talent competition · nationwide audition · viewer vote"

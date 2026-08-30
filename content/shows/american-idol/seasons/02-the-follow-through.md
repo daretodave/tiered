@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 4
 eyebrow: "Aired winter–spring 2003 · Solo hosting, sharper format"
 shape_h2: "Thirty-six episodes, hosted solo now."
+take_h2: "The format's first real polish."
 lede: "Ryan Seacrest takes the stage alone as American Idol returns for its first full winter cycle. Simon Cowell, Randy Jackson, and Paula Abdul are back, and the panel arrives in season two with more authority and a clearer sense of what the competition is supposed to feel like."
 pull: "The first refinement — Seacrest solo, the panel in sync, and a production that knew its format."
 format_summary: "Talent competition · nationwide audition · viewer vote"

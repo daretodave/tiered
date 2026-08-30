@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 7
 eyebrow: "Aired winter–spring 2011 · Jennifer Lopez and Steven Tyler join the panel"
 shape_h2: "Forty-two episodes, two judges arrive."
+take_h2: "A new panel, a new tone."
 lede: "Season ten debuts Jennifer Lopez and Steven Tyler alongside Randy Jackson — a rebuilt panel that became a cultural event before the competition began. The trio moved away from the Cowell era's precision toward encouragement, introducing a new aesthetic frame for the format."
 pull: "A rebuilt panel that brought genuine star power and a different lens — the format's biggest reset since the debut."
 format_summary: "Talent competition · nationwide audition · viewer vote"

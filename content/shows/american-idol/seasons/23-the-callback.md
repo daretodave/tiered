@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 20
 eyebrow: "Aired spring 2025 · Carrie Underwood joins as judge"
 shape_h2: "Eighteen episodes, a winner returns."
+take_h2: "The franchise judges itself now."
 lede: "Season twenty-three introduces Carrie Underwood alongside Lionel Richie and Luke Bryan. Underwood won season four — making her the first Idol winner to return as a permanent judge. The new panel reset the ABC format heading into its eighth year."
 pull: "The first Idol winner to sit as a permanent judge — a panel reset with the franchise's own history written into the chair."
 format_summary: "Talent competition · nationwide audition · viewer vote"

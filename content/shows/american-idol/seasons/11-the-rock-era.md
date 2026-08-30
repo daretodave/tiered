@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 13
 eyebrow: "Aired winter–spring 2012 · The Lopez–Tyler panel's final season together"
 shape_h2: "Forty-two episodes, that panel's last."
+take_h2: "A rhythm found too late."
 lede: "Season eleven is the second and final run of the Lopez–Tyler–Jackson panel — both departed after this season. The panel had found its working rhythm by mid-run, warmer and more collaborative than the Cowell years, with Tyler's rock-lens shaping the competition's framing."
 pull: "The rock-era panel's farewell season — a full working rhythm reached just as the lineup dispersed."
 format_summary: "Talent competition · nationwide audition · viewer vote"

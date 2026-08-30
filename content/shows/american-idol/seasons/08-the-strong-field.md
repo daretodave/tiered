@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 6
 eyebrow: "Aired winter–spring 2009 · The original panel's final fully-intact season"
 shape_h2: "Forty-four episodes, the panel's last."
+take_h2: "The last unbroken lineup."
 lede: "Season eight runs with the complete original panel for the last time — Paula Abdul would depart after this season. The Hollywood round selected a top twelve with real range: gospel, theatrical pop, and voices outside any single commercial lane."
 pull: "The original panel's final intact season, and the strongest audition class they ever worked with."
 format_summary: "Talent competition · nationwide audition · viewer vote"

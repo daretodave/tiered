@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 15
 eyebrow: "Aired spring 2018 · First ABC season after a two-year hiatus"
 shape_h2: "Nineteen episodes, a new network."
+take_h2: "The revival's biggest opening night."
 lede: "American Idol moves to ABC with a new judging panel — Katy Perry, Lionel Richie, and Luke Bryan — and Ryan Seacrest at the helm. The debut drew strong ratings and a panel chemistry the format had been searching for since the Fox rotation years."
 pull: "A new network, three new judges, and the highest ABC-era ratings the show would see — the revival landing as a genuine television event."
 format_summary: "Talent competition · nationwide audition · viewer vote"

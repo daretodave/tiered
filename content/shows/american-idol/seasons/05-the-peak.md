@@ -9,6 +9,7 @@ host: Ryan Seacrest
 canonical_position: 1
 eyebrow: "Aired winter–spring 2006 · The highest-rated season in Idol history"
 shape_h2: "Forty-five episodes, the longest order."
+take_h2: "A field the format never topped."
 lede: "Season five drew the largest audience in American Idol history. The original-panel audition circuit had run long enough to surface its deepest field, and Simon Cowell, Randy Jackson, and Paula Abdul arrived in the most effective form of their original-panel dynamic."
 pull: "The highest-rated season in Idol history — the original panel, the deepest audition class, and a competition that felt genuinely unpredictable."
 format_summary: "Talent competition · nationwide audition · viewer vote"
