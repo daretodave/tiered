@@ -9,6 +9,7 @@ location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 8
 eyebrow: "MasterChef: Legends · Aired 2021"
+take_h2: "A genuine idea, interrupted."
 lede: "MasterChef: Legends pairs fifteen home cooks with a rotating roster of culinary legends joining the permanent panel each week. The season was filmed before the pandemic, halted, and completed over a year later."
 shape_h2: "Paused mid-season by the pandemic."
 pull: "The legends format is a genuine idea — fifteen cooks trying to impress the people who defined American cooking."

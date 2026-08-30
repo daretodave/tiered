@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 4
 eyebrow: "Aired summer 2012 · Format breakthrough"
+take_h2: "Cooking quality takes a leap."
 lede: "Season three is MasterChef hitting its stride. The home-cook field is more technically capable than either of its predecessors, the judging panel works in clear sync, and twenty episodes give the format room to build toward a competition that feels genuinely earned."
 shape_h2: "Team challenges join the format."
 pull: "The format at full confidence — sharper cooking, cleaner stakes, the best early run outside the founding season."

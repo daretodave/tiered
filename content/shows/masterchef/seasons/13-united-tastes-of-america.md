@@ -9,6 +9,7 @@ location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 11
 eyebrow: "MasterChef: United Tastes · Aired 2023"
+take_h2: "Two acts, one title."
 lede: "MasterChef: United Tastes of America divides twenty home cooks into four US regions for team challenges, then dissolves into individual competition at midseason. The regional framing carries the first half; the back half runs without it."
 shape_h2: "Same twenty-episode length continues."
 pull: "A strong regional premise that gives way to a standard individual competition once the teams dissolve."

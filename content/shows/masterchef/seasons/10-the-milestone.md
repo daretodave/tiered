@@ -8,6 +8,7 @@ location: "Los Angeles, California; Hatfield House, England"
 host: Gordon Ramsay
 canonical_position: 3
 eyebrow: "Aired summer 2019 · 10th season, England field trips"
+take_h2: "Ambition matches the anniversary."
 lede: "Season ten marks the show's tenth anniversary with its most expansive production to date — twenty-five episodes, field challenges filmed at Hatfield House in England, a Battle Pass mechanic, and guest judges including Grant Achatz and Masaharu Morimoto."
 shape_h2: "Ties season four's episode count."
 pull: "The franchise's most ambitious season — twenty-five episodes, two countries, and the format stretched to its limits."

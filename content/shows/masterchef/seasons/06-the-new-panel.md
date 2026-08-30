@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 9
 eyebrow: "Aired summer 2015 · Tosi joins, Elliot exits"
+take_h2: "The panel is still settling."
 lede: "Season six is a transitional year. Graham Elliot exits and Christina Tosi steps in, giving Ramsay a new creative foil and the show a pastry perspective it hadn't carried before. Twenty episodes run the familiar format while the new three-judge chemistry settles."
 shape_h2: "Cast ticks up to twenty-two."
 pull: "A panel overhaul in motion — the format holds steady while the judging dynamic rebuilds."

@@ -8,6 +8,7 @@ location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 14
 eyebrow: "Aired summer 2016 · The rotating judge experiment"
+take_h2: "An experiment with real costs."
 lede: "Season seven tries something new with the third-judge seat: a rotating cast of guest chefs — Wolfgang Puck, Aaron Sanchez, and others — cycles through the season alongside Ramsay and Tosi. The experiment produces an uneven panel dynamic and a three-way finale format."
 shape_h2: "The Skills Test challenge debuts."
 pull: "A noble experiment with a real cost — the rotating chair keeps the judging off-balance all season."
