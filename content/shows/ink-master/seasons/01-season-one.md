@@ -12,6 +12,7 @@ eyebrow: "Aired January 2012 · Spike TV's original tattoo competition"
 lede: "Ink Master's first season set the format's rules: working tattoo artists compete in live elimination challenges, tattooing real clients under a judging panel built from the tattoo industry itself. Dave Navarro hosts a premise nobody had tried on American television before."
 pull: "Working artists, real clients, and a judging panel drawn straight from the tattoo industry — a premise built to test craft under pressure that no other competition show had tried."
 shape_h2: "Ten episodes, the format's debut order."
+take_h2: "Still the format at its purest."
 format_summary: "Elimination tattoo challenges · live clients"
 format_caption: "Working artists, real clients, judged by the tattoo industry"
 cast_size: 16
