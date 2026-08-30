@@ -11,6 +11,7 @@ canonical_position: 44
 eyebrow: "Aired spring 2012 · Filmed in Samoa"
 lede: "The men-vs-women premise revived after eight years, with a structural twist — both tribes share a single beach for the pre-merge. The Upolu camp was the franchise's recurring base, and the format experimented with proximity as a casting pressure."
 pull: "One World is the season the show asked what happens when two tribes can never get away from each other. The answer reads on camera, for better and worse."
+shape_h2: "One beach, two full tribes."
 filming_caption: "Upolu · fourth consecutive Samoa shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

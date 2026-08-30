@@ -11,6 +11,7 @@ canonical_position: 32
 eyebrow: "Aired fall 2010 · Filmed in Nicaragua"
 lede: "The first Survivor shoot in Nicaragua. A new advantage — the Medallion of Power — arrives at the marooning, and idol-clue tweaks reshape the early game. The cast pushes back where the show pushes forward, and the season's reputation has stayed divided ever since."
 pull: "Nicaragua is the season the format experiments without the cast on side. Twists land where the players don't want them, and the texture shows it."
+shape_h2: "Age splits the two tribes."
 filming_caption: "San Juan del Sur · first Nicaragua shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

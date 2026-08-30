@@ -11,6 +11,7 @@ canonical_position: 34
 eyebrow: "Aired fall 2012 · Filmed in Caramoan"
 lede: "Three new tribes, each seeded with one returning player whose previous run ended early. The casting tightened the show's mid-era voice, and Caramoan's limestone coast gave the editors a backdrop they trusted."
 pull: "Philippines is the canon's quiet argument that the show always knew how to find a confident cast — when production let casting do its work."
+shape_h2: "Three tribes, one veteran each."
 filming_caption: "Caramoan · franchise's first Philippines shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

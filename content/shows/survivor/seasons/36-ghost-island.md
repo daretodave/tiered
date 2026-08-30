@@ -12,6 +12,7 @@ format_changes: [relic-mechanic, ghost-island-twist]
 eyebrow: "Aired spring 2018 · Filmed in Fiji"
 lede: "Twenty new players and a twist built on the franchise's own history — relics from past seasons collected on a separate island. Shot on the Mamanucas, the season runs as a twist-heavy entry that asks the cast to play around the show's accumulated mythology."
 pull: "Ghost Island is the franchise mining its own archive. The mechanic is the hook, but the season works when the cast plays through it instead of around it."
+shape_h2: "Twenty newcomers, one relic twist."
 filming_caption: "Mamanuca · fourth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

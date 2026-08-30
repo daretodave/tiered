@@ -12,6 +12,7 @@ canonical_position: 24
 eyebrow: "Aired fall 2004 · Filmed in Vanuatu"
 lede: "The second gender-divided season, set on Efate in Vanuatu, framed by a ceremonial marooning the show stages with unusual ritual weight. The premiere leans into the Pacific setting in a way Survivor hadn't quite tried before."
 pull: "Vanuatu carries the texture of a place the show actually took seriously. The cultural staging isn't decoration — it sets the tone for thirteen episodes."
+shape_h2: "Eighteen castaways, split nine each."
 filming_caption: "Efate · ceremonial premiere staging"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

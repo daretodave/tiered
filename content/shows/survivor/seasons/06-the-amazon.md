@@ -12,6 +12,7 @@ canonical_position: 16
 eyebrow: "Aired spring 2003 · Filmed in Brazil"
 lede: "The first gender-divided Survivor — men against women on the banks of the Rio Negro. The conceit is provocation, the location is genuinely difficult, and the show stages the tribal politics with more bite than the early seasons usually allowed."
 pull: "The Amazon doesn't pretend the gender split is a fair fight. It films what happens when the format applies pressure to the premise."
+shape_h2: "Tribes split along gender lines."
 filming_caption: "Rio Negro · deep-jungle camp"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

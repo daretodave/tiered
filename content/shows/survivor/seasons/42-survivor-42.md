@@ -11,6 +11,7 @@ format_changes: [numbered-branding, twenty-six-day-format]
 eyebrow: "Aired spring 2022 · Filmed in Fiji"
 lede: "The second season under the numbered-only branding, run on the 26-day clock the new era installed. Eighteen new players across three tribes on the Mamanucas, with the post-2020 mechanics now established rather than experimental."
 pull: "Survivor 42 is the new era past its proving stretch. The format reset has stopped being a question and started being the show's default shape."
+shape_h2: "Eighth straight shoot, same islands."
 filming_caption: "Mamanuca · eighth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"

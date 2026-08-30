@@ -12,6 +12,7 @@ canonical_position: 45
 eyebrow: "Aired fall 2014 · Filmed in Nicaragua"
 lede: "The Blood vs. Water premise run a second time, this time with eighteen new players in nine pairs — siblings, parents, partners — split across two tribes. Shot on a new Nicaraguan beach the franchise would use twice in a row."
 pull: "San Juan del Sur is the paired-cast premise without the returnee credential. The casting bench has to carry the relationship math alone."
+shape_h2: "Nine pairs, no veteran anchor."
 filming_caption: "San Juan del Sur · franchise's first Nicaragua shoot of the modern run"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

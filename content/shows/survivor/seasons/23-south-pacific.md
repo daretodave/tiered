@@ -11,6 +11,7 @@ canonical_position: 28
 eyebrow: "Aired fall 2011 · Filmed in Samoa"
 lede: "The second Redemption Island season, with two veterans — Coach and Ozzy — anchoring the casting. Shot on the Upolu beach the show now treated as a recurring base. The first season the franchise committed to returnees in matched pairs as a casting move."
 pull: "South Pacific is where the show learns to make Redemption Island work. The mechanic settles; the casting frame around veterans-in-pairs sticks."
+shape_h2: "Duels return for another season."
 filming_caption: "Upolu · third consecutive Samoa shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

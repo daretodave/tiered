@@ -11,6 +11,7 @@ format_changes: [twenty-six-day-format]
 eyebrow: "Aired fall 2025 · Filmed in Fiji"
 lede: "A new-era run on the 26-day clock, with three tribes of new players on the Mamanucas. The format is fully settled by now — the season lives on the casting bench it brings to the marooning, slotted one rung above the milestone closer."
 pull: "Survivor 49 is the new era running clean, one rung above the milestone closer. The format is no longer the question; the bench is, and the canon holds the slot provisional until the next post-finale revisit."
+shape_h2: "Season forty-nine, same three tribes."
 filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"

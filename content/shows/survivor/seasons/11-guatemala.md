@@ -12,6 +12,7 @@ canonical_position: 22
 eyebrow: "Aired fall 2005 · Filmed at Yaxhá"
 lede: "Survivor's first ruins-set season, camped within the Yaxhá archaeological park in northern Guatemala. The eleventh season also tries the show's first soft returnee twist — two veterans slotted into a fresh cast, a structural idea the franchise keeps borrowing back from later."
 pull: "Guatemala stages a Mesoamerican location with rare seriousness. The ruins aren't backdrop — they're a working camp the show treats with weight."
+shape_h2: "Sixteen rookies, two folded in."
 filming_caption: "Yaxhá ruins · jungle interior"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ canonical_position: 40
 eyebrow: "Aired fall 2017 · Filmed in Fiji"
 lede: "Three new tribes split by archetypal frame — heroes, healers, hustlers — the casting team's read on what motivates a modern Survivor applicant. Shot on the Mamanucas, the season runs as a clean three-tribe twist-heavy entry."
 pull: "Heroes vs. Healers vs. Hustlers is the casting department asking what archetype means in 2017. The cast plays the brief without being defined by it."
+shape_h2: "Three archetypes, eighteen new players."
 filming_caption: "Mamanuca · third consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ format_changes: [mentor-island-twist]
 eyebrow: "Aired fall 2019 · Filmed in Fiji"
 lede: "A mentor-island twist anchors the season — two returning legends set up on a separate beach, coaching new players who visit one at a time. Twenty newcomers on the Mamanucas, running as a twist-heavy entry built around the franchise's own elder statespeople."
 pull: "Island of the Idols is the show putting its history in a teaching role. The mentor frame is novel, and the cast's reactions to it carry the season's texture."
+shape_h2: "Two legends coach from afar."
 filming_caption: "Mamanuca · seventh consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

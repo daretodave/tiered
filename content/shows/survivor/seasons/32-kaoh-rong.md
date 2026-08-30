@@ -12,6 +12,7 @@ canonical_position: 36
 eyebrow: "Aired spring 2016 · Filmed in Cambodia"
 lede: "The second Brains/Brawn/Beauty run, two years after Cagayan installed the template. Shot on Koh Rong, the season turned heat and humidity into a visible character — the conditions read on camera in a way classic-era shoots rarely allowed."
 pull: "Kaôh Rōng is the rare returning-format season that earns the reprise. The premise works because the cast plays the archetype, not the label."
+shape_h2: "Three archetypes, six players each."
 filming_caption: "Koh Rong · first Cambodian shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

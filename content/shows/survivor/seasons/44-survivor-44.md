@@ -11,6 +11,7 @@ format_changes: [twenty-six-day-format]
 eyebrow: "Aired spring 2023 · Filmed in Fiji"
 lede: "Another well-liked new-era run, on the 26-day clock with three tribes of new players on the Mamanucas. By season 44 the reset has matured into a format the show executes with confidence rather than caution."
 pull: "Survivor 44 is the new era at full confidence. The format knows what it is, and the cast arrives knowing exactly what game they signed up for."
+shape_h2: "Tenth Fiji shoot, familiar shape."
 filming_caption: "Mamanuca · tenth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"

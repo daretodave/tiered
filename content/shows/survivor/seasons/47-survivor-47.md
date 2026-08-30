@@ -11,6 +11,7 @@ format_changes: [twenty-six-day-format]
 eyebrow: "Aired fall 2024 · Filmed in Fiji"
 lede: "A strong recent new-era entry, on the 26-day clock with three tribes of new players on the Mamanucas. By season 47 the format has matured enough that a good cast can run it at the top of the new era's range."
 pull: "Survivor 47 is the new era showing its ceiling. With the format settled, a confident bench is all the season needs to land near the top of its era."
+shape_h2: "Thirteenth straight season on Mamanuca."
 filming_caption: "Mamanuca · thirteenth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"

@@ -11,6 +11,7 @@ canonical_position: 41
 eyebrow: "Aired spring 2017 · Filmed in Fiji"
 lede: "Twenty returning players, all cast under the premise that each had made a meaningful move in their original run. Shot on the Mamanucas, the season inherited the location the franchise was settling into and asked an all-returnee bench to play under it."
 pull: "Game Changers is the all-star format running on a casting brief that polarized the fandom. The premise was loud; the season delivered on its own terms."
+shape_h2: "Twenty veterans, two starting tribes."
 filming_caption: "Mamanuca · second consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

@@ -11,6 +11,7 @@ canonical_position: 31
 eyebrow: "Aired spring 2007 · Filmed in Fiji"
 lede: "A structural experiment the show had been circling — one tribe at a luxury camp, the other given nothing. The premise asks the cast to play under unequal conditions through the pre-merge, and the season's reputation hinges on how that asymmetry lands."
 pull: "Fiji is the season the format reaches for an idea that the cast has to carry alone. The premise is loud; the back-half is where the work happens."
+shape_h2: "Nineteen castaways, an unequal split."
 filming_caption: "Macuata coast · first of many Fiji shoots"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

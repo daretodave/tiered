@@ -10,6 +10,7 @@ format_changes: [schoolyard-pick]
 canonical_position: 29
 eyebrow: "Aired fall 2002 · Filmed in Thailand"
 lede: "Shot on an uninhabited island off Thailand's western coast, with a marooning that asked the two oldest castaways to draft their own tribes on the beach. The casting choice frames the season — a tonally serious cast and a setting that doesn't accommodate."
+shape_h2: "Sixteen players, one schoolyard draft."
 filming_caption: "Ko Tarutao · uninhabited Andaman island"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

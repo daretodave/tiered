@@ -12,6 +12,7 @@ canonical_position: 14
 eyebrow: "Aired winter 2001 · Filmed in Queensland"
 lede: "The post-Super Bowl premiere that turned Survivor into a national obsession. A red-dust station in Queensland, two tribes, and a country watching together — week one drew over forty million viewers, the highest the show would ever hit."
 pull: "The season that proved Borneo wasn't a fluke. The audience had questions. Outback had answers."
+shape_h2: "Thirteen episodes, two tribes only."
 filming_caption: "cattle station, inland Queensland"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "42 days in country"

@@ -11,6 +11,7 @@ canonical_position: 17
 eyebrow: "Aired fall 2006 · Filmed in the Cook Islands"
 lede: "A casting premise the show backed away from after one cycle — four tribes drawn along ethnic lines. The premise dominates the early run; once the format reshuffles, the season settles into a strong classic-era game on one of the cleanest lagoons Survivor ever shot."
 pull: "Cook Islands is the season where the show's casting net visibly widened. The opening twist gets the attention; the reshaped post-merge cast is the durable contribution."
+shape_h2: "Four tribes, one mid-game mutiny."
 filming_caption: "Aitutaki lagoon · turquoise water"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

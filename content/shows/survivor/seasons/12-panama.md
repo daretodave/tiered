@@ -12,6 +12,7 @@ canonical_position: 18
 eyebrow: "Aired spring 2006 · Filmed in Panama"
 lede: "The season that introduces the two mechanics modern Survivor leans on hardest — Exile Island and the hidden immunity idol. Sixteen castaways drop in as four tribes of four, an opening structure the show has never quite tried at this density since."
 pull: "Panama is the moment the modern game gets installed. The hidden idol and Exile Island arrive in the same season, and the show never fully looks back."
+shape_h2: "Four tribes shrink to two."
 filming_caption: "Pearl Islands · returning S07/S08 country"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ canonical_position: 4
 eyebrow: "Aired spring 2008 · Filmed in the Philippines"
 lede: "The returnee-versus-newbie experiment that finally landed the format the show had reached for since All-Stars. Ten favorites opposite ten fans who'd applied to play. The post-merge stretch is the dense strategic run every modern season tries to imitate."
 pull: "Micronesia is the moment the returnee format clicks. Ten and ten, two clean premises, a cast that plays the game like the game finally caught up to them."
+shape_h2: "Ten favorites, ten fans."
 filming_caption: "Palaui · returning Philippines location"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

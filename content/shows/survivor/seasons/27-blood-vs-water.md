@@ -12,6 +12,7 @@ canonical_position: 39
 eyebrow: "Aired fall 2013 · Filmed in Caramoan"
 lede: "Ten returning players brought back opposite ten loved ones — partners, siblings, parents — split into two tribes. Redemption Island returns as the structural mechanic, and the paired-cast premise produced a casting shape the franchise had never quite tried before."
 pull: "Blood vs. Water is the season the show asked what relationship pressure could do to the format. The answer reshaped how returnee seasons cast their benches."
+shape_h2: "Pairs split immediately into tribes."
 filming_caption: "Caramoan · franchise's second consecutive shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ canonical_position: 26
 eyebrow: "Aired spring 2011 · Filmed in Nicaragua"
 lede: "The first Redemption Island season — voted-out players head to a parallel beach to play duels for re-entry, instead of going home. Two returnees, Boston Rob and Russell, anchor the casting. The mechanic creates a pacing problem the format would spend a decade learning to manage."
 pull: "Redemption Island is the season the show stops sending people home. The format the franchise still runs in modified form gets invented here."
+shape_h2: "Elimination detours to a duel."
 filming_caption: "Nicaragua · second consecutive San Juan del Sur shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ canonical_position: 21
 eyebrow: "Aired spring 2004 · Filmed in Panama"
 lede: "Survivor's first returnees season, dropped behind Super Bowl XXXVIII. Eighteen veterans from the first seven casts, split into three tribes on the same Panamanian beaches S07 used. The franchise's first attempt at building a season out of its own history."
 pull: "All-Stars is the proof of concept the format needed. The blueprint for every returnee season since gets written here, sometimes by accident."
+shape_h2: "Eighteen veterans, three starting tribes."
 filming_caption: "Pearl Islands · re-used S07 locations"
 premiere_caption: "CBS · Sunday post-Super Bowl, then Thursday"
 episodes_caption: "39 days in country"

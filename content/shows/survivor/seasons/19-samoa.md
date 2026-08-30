@@ -11,6 +11,7 @@ canonical_position: 25
 eyebrow: "Aired fall 2009 · Filmed in Samoa"
 lede: "The nineteenth season opens on the Upolu beach the show would return to for Heroes vs. Villains. The casting and editorial frame builds around a single dominant personality whose play reshaped what the format would accept as a villain archetype for years afterward."
 pull: "Samoa is the season that recast the villain mold. The format leans into a single player to an unusual degree, and the cast feels the weight."
+shape_h2: "Twenty players, no format twist."
 filming_caption: "Upolu · first of three Samoa shoots"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

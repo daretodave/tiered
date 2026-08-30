@@ -12,6 +12,7 @@ format_changes: [underdog-vs-advantaged-split]
 eyebrow: "Aired fall 2018 · Filmed in Fiji"
 lede: "Two tribes split by the casting team's read on who life handed an edge to and who had to scrap for it — Davids against Goliaths. Twenty new players on the Mamanucas, running as one of the strongest twist-heavy entries the era produced."
 pull: "David vs. Goliath is the casting frame doing real work. The underdog premise is the hook, but the bench is deep enough that the season never has to lean on it."
+shape_h2: "Twenty players, two clean tribes."
 filming_caption: "Mamanuca · fifth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

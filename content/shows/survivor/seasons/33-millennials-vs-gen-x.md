@@ -12,6 +12,7 @@ canonical_position: 38
 eyebrow: "Aired fall 2016 · Filmed in Fiji"
 lede: "The first season shot on the Mamanuca Islands, the location the show would settle into long-term. The cast splits along generational lines — one tribe of millennials, one of Gen X — and the premise plays as a casting frame the editors lean on without overworking."
 pull: "Millennials vs. Gen X is the season Survivor finds Fiji, and Fiji finds Survivor. The franchise's permanent base starts here."
+shape_h2: "Two tribes, one generation gap."
 filming_caption: "Mamanuca · first Fiji shoot of the modern run"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

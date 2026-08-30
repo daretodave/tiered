@@ -11,6 +11,7 @@ format_changes: [twenty-six-day-format]
 eyebrow: "Aired fall 2022 · Filmed in Fiji"
 lede: "A well-liked new-era entry, run on the 26-day clock with three tribes of new players on the Mamanucas. By season 43 the format reset has stabilized into a rhythm the cast and the show both trust."
 pull: "Survivor 43 is the new era running clean. The format reset stopped feeling like a compromise and started producing seasons that just work."
+shape_h2: "Ninth trip to the Mamanucas."
 filming_caption: "Mamanuca · ninth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "26 days in country"

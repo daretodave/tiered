@@ -11,6 +11,7 @@ canonical_position: 15
 eyebrow: "Aired fall 2007 · Filmed in China"
 lede: "Opening at the gates of the Forbidden City, then a lakeside camp in Jiangxi. The show's first shoot inside the country required a long sign-off, and the result is one of the cleanest mid-2000s seasons — confident cast, strong location, almost no structural noise."
 pull: "China is the season everything goes right and almost nothing gets in the way. The cast does the work; the location does the rest."
+shape_h2: "No twists, two even tribes."
 filming_caption: "Jiangxi Province · lakeside camps"
 premiere_caption: "CBS · Thursday 8/7c"
 episodes_caption: "39 days in country"

@@ -12,6 +12,7 @@ canonical_position: 48
 eyebrow: "Aired spring 2013 · Filmed in Caramoan"
 lede: "The Fans vs. Favorites premise revived, five years after Micronesia. Ten favorites from recent seasons opposite ten fans who applied to play, shot on the Caramoan beach the franchise was now treating as a recurring Philippines base."
 pull: "Caramoan is the canon's reminder that returning to a premise is hard. The casting choices polarized the fandom in ways Micronesia had not."
+shape_h2: "Ten favorites return, ten fans."
 filming_caption: "Caramoan · third consecutive Philippines shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"

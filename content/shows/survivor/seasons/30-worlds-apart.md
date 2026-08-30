@@ -12,6 +12,7 @@ canonical_position: 42
 eyebrow: "Aired spring 2015 · Filmed in Nicaragua"
 lede: "Three tribes split by the casting team's read on working life — white collar, blue collar, no collar. Shot on the San Juan del Sur beach the franchise had used the prior fall. The premise leans on class as casting frame, and the cast plays it loudly."
 pull: "Worlds Apart is the class-split season the canon has to weigh honestly. The premise produced casting heat the franchise never quite ran the same way again."
+shape_h2: "Three tribes, split by collar."
 filming_caption: "San Juan del Sur · second consecutive shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
 episodes_caption: "39 days in country"
