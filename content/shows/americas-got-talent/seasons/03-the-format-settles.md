@@ -14,6 +14,7 @@ format_caption: "founding era at full confidence"
 premiere_caption: "NBC · Tuesday 8/7c"
 host_caption: "Second season at the helm"
 shape_h2: "Springer's second and final year."
+take_h2: "Springer's era at its peak."
 watch_list:
   - episode_label: "Auditions · the first online submissions"
     body: "Season three accepts MySpace video submissions for producer consideration ahead of in-person tryouts — the first time the open call extends beyond a physical audition line."

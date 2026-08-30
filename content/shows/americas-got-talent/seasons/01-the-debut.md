@@ -15,6 +15,7 @@ format_caption: "the season that defined the format"
 premiere_caption: "NBC · Tuesday 8/7c"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Ten episodes, one host only."
+take_h2: "No format to copy."
 watch_list:
   - episode_label: "Auditions · a format with no precedent yet"
     body: "America's Got Talent beats its own, more famous UK counterpart to air by a full year — Britain's Got Talent was shelved amid a broadcaster dispute and didn't premiere until June 2007. The open-call idea launches here first, with no franchise template to lean on."

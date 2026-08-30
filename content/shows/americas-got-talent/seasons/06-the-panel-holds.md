@@ -14,6 +14,7 @@ format_caption: "same panel, one more year"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Third season at the helm"
 shape_h2: "Founding panel's second year together."
+take_h2: "The trio's quiet final year."
 watch_list:
   - episode_label: "Auditions · signs instead of buzzers"
     body: "For diver Darren Taylor, known as Professor Splash, a safety exception moves his act outside the studio entirely. The judges attend in person and vote with hand-carried signs instead of their usual buzzers."

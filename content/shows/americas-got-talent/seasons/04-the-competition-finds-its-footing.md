@@ -14,6 +14,7 @@ format_caption: "panel reset, format arrives"
 premiere_caption: "NBC · Tuesday 8/7c"
 host_caption: "First season at the helm"
 shape_h2: "Cannon debuts, panel fully resets."
+take_h2: "Where the format finally clicked."
 watch_list:
   - episode_label: "Auditions · the panel deliberates on tape"
     body: "The Las Vegas boot camp round is dropped in favor of 'Vegas Verdicts' — judges review taped auditions and deliberate as a group before advancing acts, a process modeled on the UK format."

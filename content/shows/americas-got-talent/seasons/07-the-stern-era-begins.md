@@ -14,6 +14,7 @@ format_caption: "panel reset, new critical voice"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Fourth season at the helm"
 shape_h2: "Stern joins, panel turns sharper."
+take_h2: "A sharper critical voice arrives."
 watch_list:
   - episode_label: "Auditions · a venue built for one judge"
     body: "Howard Stern's SiriusXM commitments keep him in New York, so production moves the live rounds to Newark's NJPAC — a rare mid-run venue shift built around a single judge's calendar."

@@ -14,6 +14,7 @@ format_caption: "COVID production, adjusted live format"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Second season at the helm"
 shape_h2: "Pandemic cuts the live audience."
+take_h2: "A stage the pandemic shrank."
 watch_list:
   - episode_label: "Auditions · Roberta Battaglia's Golden Buzzer"
     body: "Sofia Vergara's first-ever Golden Buzzer press, in her debut season at the table, goes to the eleven-year-old singer."

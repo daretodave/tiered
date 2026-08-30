@@ -14,6 +14,7 @@ format_caption: "three consecutive seasons, same panel configuration"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Fifth season at the helm"
 shape_h2: "Third straight year, same panel."
+take_h2: "Competent, and nothing more."
 watch_list:
   - episode_label: "Premiere · the first audience Golden Buzzer"
     body: "South Africa's Mzansi Youth Choir performs a song written by the prior season's Nightbirde, and for the first time in the show's history the studio audience — not a judge — triggers the buzzer."

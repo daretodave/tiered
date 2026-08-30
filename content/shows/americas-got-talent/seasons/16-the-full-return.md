@@ -14,6 +14,7 @@ format_caption: "first full live-audience season since the pandemic"
 premiere_caption: "NBC · Tuesday 9/8c"
 host_caption: "Third season at the helm"
 shape_h2: "Full live audiences return again."
+take_h2: "The live room comes back."
 watch_list:
   - episode_label: "Auditions · Nightbirde's Golden Buzzer"
     body: "Simon Cowell presses within the first minutes of her audition, a moment the show leans on hard through the rest of the season's marketing."

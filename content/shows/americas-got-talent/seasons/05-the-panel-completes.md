@@ -14,6 +14,7 @@ format_caption: "founding era closes"
 premiere_caption: "NBC · Tuesday 8/7c"
 host_caption: "Second season at the helm"
 shape_h2: "Founding panel's first year set."
+take_h2: "A founding identity, fully set."
 watch_list:
   - episode_label: "Quarterfinals · two new paths back"
     body: "Season five adds two new quarterfinal formats. A YouTube quarterfinal draws acts the judges pick from online video submissions, with one slot decided by viewer vote, while a Wildcard quarterfinal lets each judge bring back about four previously eliminated acts for another shot."
