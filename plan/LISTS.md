@@ -11211,3 +11211,50 @@ last time a curator actually looked.
   new season, a finale-gate pickup extending an existing single-show
   list, or an oversight-authorized scout-research process to reach facts
   outside the repo's own season-file text.
+- **2026-08-30, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation): zero-ship.** First Rule 3 pass logged since
+  2026-08-25's twentieth same-day pass — the intervening five days were
+  spent on `take_h2` drain work per the loop's standing redirect (see the
+  repeated "Redirected this tick's slot to the `take_h2`
+  `content:check` warning" notes above). Re-confirmed both standing
+  blockers fresh rather than trusting the prior week's summaries:
+  `plan/CADENCE.md`'s 2026-08-30 eighth full weekly sweep reconfirmed
+  every one of the 42 starred gap-table rows accurate and found zero new
+  seasons (the last new gap-table entries landed 2026-08-23, all
+  confirmed-but-unaired) — Rule 2 stays stalled, and no new raw season
+  text has entered the catalog since the 2026-08-25 exhaustion day, so a
+  keyword sweep over an unchanged corpus was expected to reproduce
+  unchanged results. Read the full Ledger (182 rows) fresh and confirmed
+  no `tone`/`structure`/`craft`/`era` row sits below the ≥3-distinct-show
+  floor. Rather than re-run an already-exhausted blind sweep, chased five
+  angles that read fresh against my own read of the twenty 2026-08-25
+  passes, each grep-verified before being ruled out: (1) **Traitors as a
+  cross-franchise alumni-casting clearinghouse** — re-confirmed this is
+  the pre-existing 2026-07-26 finding: fully claimed and already extended
+  at `familiar-faces-wrong-franchise` (Traitors S01-S03 all staked,
+  3/11 entries), a depth-add territory, not a new slug. (2) **judge/panel
+  override-vote mechanics** (Instant Save, Judges' Save, Diamond Power of
+  Veto-style saves) — reconfirmed dead per this file's own repeated prior
+  findings (lines ~245, ~546, ~5270, ~9897, ~10071): every hit is
+  single-show or already claimed. (3) **twin-swap / body-double / lie-
+  detector-polygraph twist devices** — grepped `twin twist|twin swap|
+  body double|polygraph|lie detector` catalog-wide: 1 hit (Bachelor in
+  Paradise S03), sub-floor. (4) **family-edition / multi-generational
+  cast twist** — grepped `[Ff]amily [Ee]dition|multi-generation|three
+  generations|parent.child (pair|team)`: hits confined to Amazing Race
+  S08 alone (no second show runs an equivalent family-cast twist),
+  single-show and sub-floor for a cross-canon list, and Amazing Race
+  already has deep single-show coverage elsewhere in the ledger. (5)
+  **crossover episode / shared-screen event across two sister shows** —
+  grepped `crossover episode|shared the screen|joint episode`: 1 hit
+  (Chopped S61), sub-floor. Also spot-checked a digital-detox/phone-
+  confiscation angle as a possible distinct thesis from the already-
+  shipped no-contact-loophole territory and confirmed it resolves to the
+  same ground already staked at `the-blackout-had-a-loophole` (craft).
+  No `content/themes/*.md` file written or edited this pass; no ledger
+  row changed. Consistent with issue #758's standing saturation verdict —
+  the catalog remains exhausted for keyword-driven discovery absent new
+  raw season text. The next unlock remains unchanged: Rule 2 filing a
+  new season, a finale-gate pickup extending an existing single-show
+  list, or an oversight-authorized scout-research process to reach facts
+  outside the repo's own season-file text.
