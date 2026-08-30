@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-23 at commit 5abd7a16
-> Pass count: 66
+> Last pass: 2026-08-30 at commit 6a26f261
+> Pass count: 67
 
 ## Considered (awaiting promotion)
 
@@ -22,6 +22,68 @@
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
 -->
+
+<!-- Pass 67 (2026-08-30, commit 6a26f261, cloud) — 0 new phase-shape
+     candidates filed; three reinforcement updates appended below (#33,
+     #34, #35).
+     Window since pass 66 (5abd7a16, 2026-08-23): 7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: season-sweep ran earlier this same tick's window
+     (eighth full pass, 0 new gaps, gap count held at 42); show-add stays
+     LOCKED (gap table non-zero). Step 2.0's shipping-mode gate stayed
+     lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate is
+     explicitly closed this window — `plan/CRITIQUE.md` carries 2 pending
+     HIGH findings (meta-description-echoes-lede, vote-pair pre-vote
+     triple-stack, both bumped MED→HIGH at pass 147), and `/march` Step 2
+     will not re-dispatch `/critique` until `/iterate` clears at least one
+     — condition 3 of the critique gate failed, correctly skipped. Step
+     3a/3b empty (no pending phase rows, no Pending category:data AUDIT
+     rows). Step 3b.5 matched its usual candidate, the standing Rule 2
+     season-fill drain row (score 4.5) — but every one of the
+     `plan/CADENCE.md` gap table's 42 rows is starred (confirmed-but-
+     unaired), the same full-board-stall state documented at the
+     2026-07-18 tick, so no season was actually actionable this tick;
+     `/ship-content` would have exited cleanly. This tick's dispatch
+     treated that as a fall-through (matching the 07-18 precedent) rather
+     than executing a no-op ship-content call. `/expand`'s own gate then
+     opened independently (posture bold, last pass 7 days ago — past the
+     48h threshold — live AUDIT.md signal present, no phase/data work
+     pending) and fired, reaching this pass.
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 4 real rows — night.yml
+       starvation (HIGH, 6.4), e2e-full duration-ceiling (MED, 5.4), the-
+       voice factual corruption (HIGH, 4.8), YEAR_TENURE_RE teen-number
+       gap (LOW, 2.7, below filing bar). The first three all map onto
+       already-filed candidates (#35, #34, #36 respectively) — reinforced
+       in place with fresh evidence rather than refiled. Live-verified via
+       `gh run list`/`gh run view --log` against `night.yml` and
+       `e2e-full.yml`'s actual recent run history (not just re-reading the
+       AUDIT row text) — both patterns are still active and unresolved;
+       see each candidate's pass-67 update for specifics, including a
+       same-day, live-caught repro of the night/march concurrency-group
+       eviction mechanism during this very tick.
+     - `plan/CRITIQUE.md` Pending: the two newly-HIGH systemic findings
+       (meta-description-echoes-lede, vote-pair pre-vote triple-stack)
+       were evaluated against the phase-candidate bar and judged NOT
+       phase-shape — each is a single shared-component/template fix (a
+       meta-description helper, VotePair's pre-vote copy), sized right
+       for the single `/iterate` tick the critique gate's own note already
+       expects to clear it, not a multi-file or multi-phase scope. Left
+       for `/iterate` rather than filed as a new candidate.
+     - `spec.md` / `design/`: no diff since pass 66 (`git log -p
+       --since=2026-08-23 -- spec.md design/` empty on both paths).
+     - GitHub issues: `triage:loop-queued` label shows 4 open (#787, #785,
+       #754, #636) — checked each against `plan/AUDIT.md`; #787 and #785
+       are already resolved in AUDIT (commit ae97eb95) but left open on
+       GitHub (a close-comment step apparently didn't run) — a mechanical
+       `/iterate`-scale cleanup, not phase-shape signal, not filed. #636
+       is the live e2e-full mirror already folded into candidate #34.
+       #754 (themed-list extend tracking issue) shows no new information
+       beyond its own content commit.
+     No genuinely new candidate concept surfaced this pass — every live
+     signal traced back to an already-filed, well-scored candidate with a
+     clear promotion recommendation sitting in front of `/oversight`.
+     Reinforcing in place instead. -->
 
 <!-- Pass 66 (2026-08-23, commit 5abd7a16, cloud) — 0 new phase-shape
      candidates filed; two reinforcement updates appended below (#28, #33).
@@ -822,6 +884,29 @@ e2e-full.yml` needs the `workflows` OAuth scope the cloud loop's
 local session — a human pushing the workflow-file edit is the only
 path that closes this one.
 
+**Update (expand pass 67, 2026-08-30, cloud march):** the breach is
+still live and now visibly teetering right at the 75-minute wall
+rather than clearing it with margin. Checked the last several
+`e2e-full` runs directly via `gh run view --log`: 08-27 (run
+33025850485, 10,557 tests) and 08-28 (run 33133693773, 10,557
+tests) both hit the identical `##[error] ... has timed out after 75
+minutes` wall; 08-28's late trigger (run 33219380847, 10,565 tests)
+timed out too; but 08-29's run (33280261007, same 10,565 tests)
+posted `success` at `10565 passed (1.2h)` — 72 minutes, inside the
+wall with only ~3 minutes of margin. Catalog growth has slowed
+sharply (10,544 at the 08-11 close-out → 10,565 now, +21 over 19
+days, versus +40% in the prior stretch) since recent content ticks
+have mostly been Rule-3 list extends and take/shape drains on
+already-filed seasons rather than new season files — but the
+crawl is still failing more nights than not (checked the 10 most
+recent `e2e-full` runs: 7 failures, 3 successes, all on the
+identical duration-ceiling signature, zero quality regressions).
+No new scope information — same fix (Playwright `--shard`), same
+`workflows`-OAuth-scope cloud blocker. Restating the pass-63
+recommendation unchanged: this is ripe for `/oversight` promotion,
+not further reinforcement passes — the signal has been stable and
+unambiguous for over a month.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -920,6 +1005,32 @@ Softening from "single most urgent of the four" to "still urgent,
 currently dormant" — #36 (the-voice) is the one candidate whose cost
 is actively growing rather than intermittent, and should lead the
 next `/oversight` session ahead of this one. Still unpromoted 14
+days after filing.
+
+**Update (expand pass 67, 2026-08-30, cloud march):** the starvation
+pattern is not dormant — `gh run list --workflow night.yml` shows 7
+more cancellations in the 12 nights since the 08-10 update (08-19,
+08-21, 08-23, 08-24, 08-26, 08-29, and today 08-30), a higher rate
+than the "every 3-5 nights" baseline noted at filing. Caught a clean,
+fresh repro of the exact diagnosed mechanism live during this tick:
+today's night run (33306737061, queued 10:32:43Z) sits bracketed by
+march run 33306027579 (started 10:15:20Z, still in-progress) and the
+next march trigger 33307197099 (queued 10:44:15Z) — and that second
+march run was itself cancelled too, not night. Reading the fuller
+day's `march.yml` run history shows this isn't only a night-specific
+problem: march-vs-march queue collisions are common in the same
+window (33304767824 also cancelled at 09:44:02Z), because march's own
+polling cadence is tight enough (successive triggers ~25-30 minutes
+apart against runs that themselves take 30-60+ minutes) that the
+shared concurrency group's "most-recently-queued-wins" rule evicts
+queued runs of *either* workflow, not just night's. This slightly
+broadens the candidate's value case beyond "protect night's daily
+slot" — a queued-but-never-started run burns no runner minutes
+itself, but each eviction silently delays that tick's dispatch by
+~25-60 minutes with no log or signal, the same silent-gap failure
+mode the original finding named for night, just lower-stakes when
+it happens between two march ticks instead of skipping a whole day
+of digest. No change to score or scope sketch; still unpromoted 34
 days after filing.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
@@ -1631,6 +1742,34 @@ preempts all three lower-priority branches in one place rather than
 needing a duplicated check ahead of each. Score unchanged at 5.5 (the
 new evidence sharpens the fix's correct location, not its urgency or
 size); still unpromoted 36 days after filing.
+
+**Update (expand pass 67, 2026-08-30, cloud march):** a third,
+distinct confirmation this tick, and it exposes a new wrinkle the
+scope sketch hasn't priced in. Step 3b.5 matched its usual candidate
+— the standing season-fill drain row (`category: content-gaps`,
+score 4.5) — while three unrelated `category: bug` rows sat Pending
+in `plan/AUDIT.md` scoring well above the proposed 5.0 carve-out
+threshold: the night.yml starvation row (6.4), the e2e-full
+duration-ceiling row (5.4), and the-voice factual-corruption row
+(4.8, just under threshold but still HIGH severity). This time
+`/ship-content` itself found nothing actionable — every row in
+`plan/CADENCE.md`'s season gap table is currently starred
+(confirmed-but-unaired), a known stall state — so the tick fell
+through to Step 3c (`/expand`) anyway, and the bug rows still didn't
+reach `/iterate`. The new wrinkle: today's fallthrough happened by
+*coincidence* (the gap table happened to be fully stalled this exact
+tick), not by the mechanism this candidate proposes. On a tick where
+even one gap-table row were actionable, Step 3b.5 would have
+dispatched `/ship-content` to author it — correctly, by the letter
+of the current rules — and the three waiting bug rows (one of them
+actively degrading, per candidate #35's own pass-67 update) would
+have waited a full tick longer with no carve-out to preempt it. This
+sharpens the urgency case without changing scope: the candidate's
+proposed fix would have made no difference to this specific tick's
+outcome (the stall already produced the right fallthrough), but it
+remains the only thing that reliably produces that outcome on the
+much more common tick where content work IS actionable. Score
+unchanged at 5.5; still unpromoted 43 days after filing.
 
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
