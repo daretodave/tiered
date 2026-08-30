@@ -8,6 +8,7 @@ ep_count: 10
 location: Harptree Court, Somerset
 host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2012 · Harptree Court, year one"
+take_h2: "A young format grows up."
 format_summary: "First year at Harptree Court"
 format_caption: "the tent moves to Harptree Court for the first time"
 filming_caption: "Harptree Court, Somerset, the show's new home"

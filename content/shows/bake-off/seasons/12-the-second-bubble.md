@@ -8,6 +8,7 @@ ep_count: 10
 location: Down Hall Hotel, Hatfield Heath, Essex
 host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2021 · The second and final COVID-bubble series"
+take_h2: "Novelty turns into constraint."
 lede: "The second bubble year. The production returned to Down Hall Hotel for another sealed-off shoot under COVID protocols, with Noel Fielding and Matt Lucas working their second run together and Prue Leith and Paul Hollywood back on the bench."
 pull: "The bubble premise stops being a novelty and starts being a constraint. A competent run carrying the same production weight as the year before, with less of the first one's strangeness to recommend it."
 shape_h2: "A tenth year, same length."

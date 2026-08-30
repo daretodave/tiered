@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Noel Fielding and Alison Hammond
 eyebrow: "Aired autumn 2023 · Alison Hammond's first run at the tent flap"
+take_h2: "The chemistry reset it needed."
 lede: "The Hammond arrival. Alison Hammond joined Noel Fielding at the tent flap after Matt Lucas departed, and the series ran as the first after the producers scrapped nationally-themed weeks, swapping in general and party-cake categories instead."
 pull: "The chemistry reset the Channel 4 era needed. A new presenter pairing with visible warmth, and a format quietly rebuilt to stop leaning on national themes."
 shape_h2: "Twelve years, national themes dropped."

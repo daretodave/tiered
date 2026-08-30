@@ -8,6 +8,7 @@ ep_count: 10
 location: Down Hall Hotel, Hatfield Heath, Essex
 host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2020 · The COVID-bubble series, Matt Lucas's first run"
+take_h2: "Bake Off inside a biosphere."
 lede: "The pandemic series. The production sealed cast and crew into a self-contained bubble at Down Hall Hotel, relocating from Welford Park, and Matt Lucas joined Noel Fielding at the tent flap as Sandi Toksvig stepped away."
 pull: "The series Bake Off shot inside a biosphere — a compressed bubble production that tells you more about how television survived 2020 than about the format itself."
 shape_h2: "The tightest schedule yet."

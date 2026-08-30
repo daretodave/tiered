@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2017 · The Channel 4 era opens"
+take_h2: "Three changes, one steady tent."
 lede: "The Channel 4 reset. Sandi Toksvig and Noel Fielding replace Mel and Sue at the tent flap, Prue Leith joins Paul Hollywood at the judge's table, and the show keeps Welford Park as the one piece of continuity carrying the audience across."
 pull: "A structural experiment the franchise pulled off in one move — new network, new hosts, new judge, same tent. The series the Channel 4 era was built on."
 shape_h2: "A sixth year, same episode count."

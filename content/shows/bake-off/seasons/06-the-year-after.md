@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2015 · Welford Park, year two"
+take_h2: "The best run came late."
 lede: "The series that consolidated the prior year's peak. Welford Park was now the show's permanent home, the BBC One audience had locked in, and the casting class arrived with a denser end-to-end bench than the run before it."
 pull: "The BBC era at full confidence — same tent, same lineup, sharper format. The series that quietly argues Bake Off's best run came late, not early."
 shape_h2: "The fourth year at ten episodes."

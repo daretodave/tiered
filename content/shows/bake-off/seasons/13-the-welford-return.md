@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Noel Fielding and Matt Lucas
 eyebrow: "Aired autumn 2022 · The tent returns to Welford Park"
+take_h2: "A comeback, and a reckoning."
 lede: "The Welford return. The production moved out of the COVID bubble and back to Welford Park, with Noel Fielding and Matt Lucas working Lucas's final run together and Prue Leith and Paul Hollywood anchoring the bench in the show's longtime home."
 pull: "The series that put the tent back where it belonged. A confident return marked by a themed-week controversy that pushed the producers to rethink how Bake Off frames a culture."
 shape_h2: "Eleven years, still ten episodes."

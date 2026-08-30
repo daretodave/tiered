@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2018 · Channel 4, year two"
+take_h2: "The bench arrives fully stocked."
 format_summary: "New lineup's second year settles in"
 format_caption: "the new lineup running smoothly in its second year"
 filming_caption: "Welford Park, Berkshire, Channel 4 year two"

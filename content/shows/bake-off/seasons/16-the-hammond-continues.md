@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Noel Fielding and Alison Hammond
 eyebrow: "Aired autumn 2025 · Hammond's third run, the format running on rails"
+take_h2: "Comfortable, and least distinctive."
 lede: "The Hammond continues. Alison Hammond and Noel Fielding worked a third run together, with Prue Leith and Paul Hollywood on the bench and a themed roster continuing the post-national format — the same lineup, one year further in."
 pull: "The pairing stops needing an origin story. A third consecutive year with no lineup change and no format news — the show at its most comfortable and its least distinctive."
 shape_h2: "Unchanged since 2012."

@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Sandi Toksvig and Noel Fielding
 eyebrow: "Aired late summer 2019 · Sandi Toksvig's last run at the tent flap"
+take_h2: "A season built on discipline."
 format_summary: "Toksvig-Fielding pairing's last run"
 format_caption: "the Toksvig-Fielding presenter pair's final run together"
 filming_caption: "Welford Park, Berkshire, Channel 4 year three"

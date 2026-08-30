@@ -8,6 +8,7 @@ ep_count: 10
 location: Welford Park, Berkshire
 host: Noel Fielding and Alison Hammond
 eyebrow: "Aired autumn 2024 · Hammond's second run, the post-national format settled"
+take_h2: "Little here to argue about."
 lede: "The Hammond settles. Alison Hammond and Noel Fielding worked their second run together, with Prue Leith and Paul Hollywood on the bench and a themed-week roster — a 1970s Week among them — that continued the post-national format."
 pull: "The new pairing stops being new. A settled, competent run that confirms the post-2023 format works without giving the canon much to argue about."
 shape_h2: "Thirteen years, unbroken at ten."

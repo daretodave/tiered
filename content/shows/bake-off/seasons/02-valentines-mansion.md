@@ -8,6 +8,7 @@ ep_count: 8
 location: Valentines Mansion, Redbridge, London
 host: Mel Giedroyc and Sue Perkins
 eyebrow: "Aired late summer 2011 · The tent at Valentines Mansion"
+take_h2: "Fixing the tent in place."
 format_summary: "First series to fix at one estate"
 format_caption: "the second series and the first to fix the tent to one estate"
 filming_caption: "Valentines Mansion in east London"
