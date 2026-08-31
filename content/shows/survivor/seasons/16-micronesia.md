@@ -2,6 +2,7 @@
 show: survivor
 number: 16
 title: "Micronesia: Fans vs. Favorites"
+take_h2: "The returnee format, perfected."
 display_title: "Micronesia: <em>Fans vs.</em><br/>Favorites"
 premiere_date: 2008-02-07
 ep_count: 14

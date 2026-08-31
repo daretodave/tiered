@@ -2,6 +2,7 @@
 show: survivor
 number: 29
 title: San Juan del Sur
+take_h2: "Paired casting, no veterans."
 display_title: "San Juan del Sur — <em>Blood</em><br/>vs. Water"
 premiere_date: 2014-09-24
 ep_count: 14

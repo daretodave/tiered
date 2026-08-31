@@ -2,6 +2,7 @@
 show: survivor
 number: 24
 title: One World
+take_h2: "One beach, no escape."
 premiere_date: 2012-02-15
 ep_count: 14
 location: Upolu, Samoa

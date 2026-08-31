@@ -2,6 +2,7 @@
 show: survivor
 number: 30
 title: Worlds Apart
+take_h2: "Class as casting frame."
 display_title: "Worlds Apart — <em>Collar</em><br/>vs. Collar vs. Collar"
 premiere_date: 2015-02-25
 ep_count: 14

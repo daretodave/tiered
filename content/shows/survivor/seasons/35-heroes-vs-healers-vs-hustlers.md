@@ -2,6 +2,7 @@
 show: survivor
 number: 35
 title: Heroes vs. Healers vs. Hustlers
+take_h2: "Archetypes, redefined for 2017."
 display_title: "<em>Heroes</em><br/>vs. Healers vs. Hustlers"
 premiere_date: 2017-09-27
 ep_count: 14

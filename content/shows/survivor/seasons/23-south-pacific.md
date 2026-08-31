@@ -2,6 +2,7 @@
 show: survivor
 number: 23
 title: South Pacific
+take_h2: "Redemption Island, finally tightened."
 premiere_date: 2011-09-14
 ep_count: 14
 location: Upolu, Samoa

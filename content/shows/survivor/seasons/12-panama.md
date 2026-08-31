@@ -2,6 +2,7 @@
 show: survivor
 number: 12
 title: Panama
+take_h2: "Exile Island's format debut."
 display_title: "Panama: <em>Exile</em><br/>Island"
 premiere_date: 2006-02-02
 ep_count: 14

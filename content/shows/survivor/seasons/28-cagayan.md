@@ -2,6 +2,7 @@
 show: survivor
 number: 28
 title: Cagayan
+take_h2: "Where the modern game began."
 premiere_date: 2014-02-26
 ep_count: 14
 location: Cagayan, Philippines

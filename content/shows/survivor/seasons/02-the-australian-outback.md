@@ -2,6 +2,7 @@
 show: survivor
 number: 2
 title: The Australian Outback
+take_h2: "The franchise's first blockbuster."
 display_title: "The Australian<br/>Outback"
 premiere_date: 2001-01-28
 ep_count: 13

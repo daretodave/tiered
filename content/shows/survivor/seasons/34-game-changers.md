@@ -2,6 +2,7 @@
 show: survivor
 number: 34
 title: Game Changers
+take_h2: "The all-star cast, polarized."
 premiere_date: 2017-03-08
 ep_count: 14
 location: Mamanuca Islands, Fiji

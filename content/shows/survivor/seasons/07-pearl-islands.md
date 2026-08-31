@@ -2,6 +2,7 @@
 show: survivor
 number: 7
 title: Pearl Islands
+take_h2: "Classic-era casting at its peak."
 premiere_date: 2003-09-18
 ep_count: 14
 location: Pearl Islands, Panama

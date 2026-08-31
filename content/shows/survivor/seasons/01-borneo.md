@@ -2,6 +2,7 @@
 show: survivor
 number: 1
 title: Borneo
+take_h2: "Survivor's founding document."
 premiere_date: 2000-05-31
 ep_count: 13
 location: Pulau Tiga, Malaysia

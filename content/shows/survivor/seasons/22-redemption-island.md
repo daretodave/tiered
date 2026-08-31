@@ -2,6 +2,7 @@
 show: survivor
 number: 22
 title: Redemption Island
+take_h2: "Elimination stops being final."
 display_title: "Redemption<br/><em>Island</em>"
 premiere_date: 2011-02-16
 ep_count: 14

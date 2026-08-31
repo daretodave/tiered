@@ -2,6 +2,7 @@
 show: survivor
 number: 3
 title: Africa
+take_h2: "Survival over strategy."
 premiere_date: 2001-10-11
 ep_count: 13
 location: Shaba National Reserve, Kenya

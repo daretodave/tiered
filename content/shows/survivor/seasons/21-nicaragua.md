@@ -2,6 +2,7 @@
 show: survivor
 number: 21
 title: Nicaragua
+take_h2: "Twists that outran the cast."
 premiere_date: 2010-09-15
 ep_count: 14
 location: San Juan del Sur, Nicaragua

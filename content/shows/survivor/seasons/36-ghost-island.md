@@ -3,6 +3,7 @@ show: survivor
 number: 36
 canonical_position: 33
 title: Ghost Island
+take_h2: "The show mines its archive."
 display_title: "<em>Ghost</em><br/>Island"
 premiere_date: 2018-02-28
 ep_count: 14

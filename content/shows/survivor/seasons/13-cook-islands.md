@@ -2,6 +2,7 @@
 show: survivor
 number: 13
 title: Cook Islands
+take_h2: "The casting net widens."
 premiere_date: 2006-09-14
 ep_count: 14
 location: Aitutaki, Cook Islands

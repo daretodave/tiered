@@ -2,6 +2,7 @@
 show: survivor
 number: 10
 title: Palau
+take_h2: "A one-time structural gamble."
 premiere_date: 2005-02-17
 ep_count: 14
 location: Koror, Palau

@@ -3,6 +3,7 @@ show: survivor
 number: 46
 canonical_position: 43
 title: Survivor 46
+take_h2: "The format fades, cast leads."
 premiere_date: 2024-02-28
 ep_count: 13
 location: Mamanuca Islands, Fiji

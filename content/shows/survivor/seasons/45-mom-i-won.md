@@ -2,6 +2,7 @@
 show: survivor
 number: 45
 title: Survivor 45
+take_h2: "No longer a compromise."
 premiere_date: 2023-09-27
 ep_count: 14
 location: Mamanuca Islands, Fiji

@@ -3,6 +3,7 @@ show: survivor
 number: 37
 canonical_position: 11
 title: David vs. Goliath
+take_h2: "The casting frame's ceiling."
 display_title: "David <em>vs.</em><br/>Goliath"
 premiere_date: 2018-09-26
 ep_count: 14

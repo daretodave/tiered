@@ -2,6 +2,7 @@
 show: survivor
 number: 4
 title: Marquesas
+take_h2: "Strategy learns to improvise."
 premiere_date: 2002-02-28
 ep_count: 13
 location: Nuku Hiva, Marquesas Islands

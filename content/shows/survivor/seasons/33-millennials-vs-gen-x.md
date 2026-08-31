@@ -2,6 +2,7 @@
 show: survivor
 number: 33
 title: Millennials vs. Gen X
+take_h2: "Fiji becomes the permanent home."
 display_title: "<em>Millennials</em><br/>vs. Gen X"
 premiere_date: 2016-09-21
 ep_count: 14

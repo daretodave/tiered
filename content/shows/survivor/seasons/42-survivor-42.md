@@ -3,6 +3,7 @@ show: survivor
 number: 42
 canonical_position: 37
 title: Survivor 42
+take_h2: "Past the proving stretch."
 premiere_date: 2022-03-09
 ep_count: 13
 location: Mamanuca Islands, Fiji

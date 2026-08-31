@@ -2,6 +2,7 @@
 show: survivor
 number: 18
 title: "Tocantins"
+take_h2: "Classic-era Survivor's last stand."
 display_title: "Tocantins: <em>The</em><br/>Brazilian Highlands"
 premiere_date: 2009-02-12
 ep_count: 14

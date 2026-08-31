@@ -3,6 +3,7 @@ show: survivor
 number: 49
 canonical_position: 49
 title: Survivor 49
+take_h2: "Provisional, pending its verdict."
 premiere_date: 2025-09-24
 ep_count: 13
 location: Mamanuca Islands, Fiji

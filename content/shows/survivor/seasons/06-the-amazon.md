@@ -2,6 +2,7 @@
 show: survivor
 number: 6
 title: The Amazon
+take_h2: "Gender split as provocation."
 display_title: "The<br/>Amazon"
 premiere_date: 2003-02-13
 ep_count: 13

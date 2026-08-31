@@ -2,6 +2,7 @@
 show: survivor
 number: 15
 title: China
+take_h2: "Classic-era Survivor at its cleanest."
 premiere_date: 2007-09-20
 ep_count: 14
 location: Jiangxi Province, China

@@ -3,6 +3,7 @@ show: survivor
 number: 38
 canonical_position: 46
 title: Edge of Extinction
+take_h2: "A structural swing, unresolved."
 display_title: "Edge <em>of</em><br/>Extinction"
 premiere_date: 2019-02-20
 ep_count: 14

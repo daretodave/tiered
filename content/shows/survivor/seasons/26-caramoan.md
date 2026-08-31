@@ -2,6 +2,7 @@
 show: survivor
 number: 26
 title: Caramoan
+take_h2: "A revival that couldn't compete."
 display_title: "Caramoan — <em>Fans vs.</em><br/>Favorites"
 premiere_date: 2013-02-13
 ep_count: 14

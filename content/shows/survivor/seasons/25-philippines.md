@@ -2,6 +2,7 @@
 show: survivor
 number: 25
 title: Philippines
+take_h2: "A quiet strategic high point."
 premiere_date: 2012-09-19
 ep_count: 14
 location: Caramoan, Philippines

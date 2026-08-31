@@ -3,6 +3,7 @@ show: survivor
 number: 43
 canonical_position: 19
 title: Survivor 43
+take_h2: "Running clean, at last."
 premiere_date: 2022-09-21
 ep_count: 13
 location: Mamanuca Islands, Fiji

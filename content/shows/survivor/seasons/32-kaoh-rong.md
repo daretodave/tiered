@@ -2,6 +2,7 @@
 show: survivor
 number: 32
 title: Kaôh Rōng
+take_h2: "The archetype split, repeated."
 display_title: "Kaôh Rōng — <em>Brains</em><br/>Brawn &amp; Beauty"
 premiere_date: 2016-02-17
 ep_count: 14

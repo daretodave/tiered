@@ -2,6 +2,7 @@
 show: survivor
 number: 31
 title: Cambodia
+take_h2: "Second chances, proven repeatable."
 premiere_date: 2015-09-23
 ep_count: 14
 location: Koh Rong, Cambodia

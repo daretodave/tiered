@@ -2,6 +2,7 @@
 show: survivor
 number: 17
 title: "Gabon"
+take_h2: "Landscape over gameplay, again."
 display_title: "Gabon: <em>Earth's</em><br/>Last Eden"
 premiere_date: 2008-09-25
 ep_count: 14

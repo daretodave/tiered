@@ -3,6 +3,7 @@ show: survivor
 number: 39
 canonical_position: 35
 title: Island of the Idols
+take_h2: "History cast as mentorship."
 display_title: "Island <em>of the</em><br/>Idols"
 premiere_date: 2019-09-25
 ep_count: 14

@@ -2,6 +2,7 @@
 show: survivor
 number: 9
 title: Vanuatu
+take_h2: "The slower gender-split rematch."
 display_title: "Vanuatu: <em>Islands</em><br/>of Fire"
 premiere_date: 2004-09-16
 ep_count: 13

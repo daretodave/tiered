@@ -2,6 +2,7 @@
 show: survivor
 number: 27
 title: Blood vs. Water
+take_h2: "The template for paired casts."
 display_title: "<em>Blood</em><br/>vs. Water"
 premiere_date: 2013-09-18
 ep_count: 14

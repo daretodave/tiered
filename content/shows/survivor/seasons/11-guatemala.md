@@ -2,6 +2,7 @@
 show: survivor
 number: 11
 title: Guatemala
+take_h2: "The pre-merge peak, unfinished."
 display_title: "Guatemala: <em>The</em><br/>Maya Empire"
 premiere_date: 2005-09-15
 ep_count: 14

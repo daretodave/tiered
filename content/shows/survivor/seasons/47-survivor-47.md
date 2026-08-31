@@ -3,6 +3,7 @@ show: survivor
 number: 47
 canonical_position: 13
 title: Survivor 47
+take_h2: "New-era Survivor, cast-carried."
 premiere_date: 2024-09-18
 ep_count: 13
 location: Mamanuca Islands, Fiji

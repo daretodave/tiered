@@ -3,6 +3,7 @@ show: survivor
 number: 44
 canonical_position: 20
 title: Survivor 44
+take_h2: "Full confidence, no hesitation."
 premiere_date: 2023-03-01
 ep_count: 13
 location: Mamanuca Islands, Fiji

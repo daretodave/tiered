@@ -2,6 +2,7 @@
 show: survivor
 number: 8
 title: All-Stars
+take_h2: "The first returnee blueprint."
 display_title: "All-<em>Stars</em>"
 premiere_date: 2004-02-01
 ep_count: 13

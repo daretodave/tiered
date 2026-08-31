@@ -2,6 +2,7 @@
 show: survivor
 number: 41
 title: New Era I
+take_h2: "The format reset, landed."
 premiere_date: 2021-09-22
 ep_count: 13
 location: Mamanuca Islands, Fiji

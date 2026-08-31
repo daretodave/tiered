@@ -2,6 +2,7 @@
 show: survivor
 number: 40
 title: Winners at War
+take_h2: "The all-winners milestone."
 premiere_date: 2020-02-12
 ep_count: 14
 location: Mamanuca Islands, Fiji

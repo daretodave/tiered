@@ -2,6 +2,7 @@
 show: survivor
 number: 5
 title: Thailand
+take_h2: "The format's outer edge."
 premiere_date: 2002-09-19
 ep_count: 13
 location: Ko Tarutao, Thailand

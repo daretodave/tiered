@@ -3,6 +3,7 @@ show: survivor
 number: 48
 canonical_position: 47
 title: Survivor 48
+take_h2: "A settled, reliable watch."
 premiere_date: 2025-02-26
 ep_count: 13
 location: Mamanuca Islands, Fiji

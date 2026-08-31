@@ -2,6 +2,7 @@
 show: survivor
 number: 14
 title: Fiji
+take_h2: "A premise carried alone."
 premiere_date: 2007-02-08
 ep_count: 14
 location: Macuata Province, Fiji

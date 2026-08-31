@@ -2,6 +2,7 @@
 show: survivor
 number: 19
 title: Samoa
+take_h2: "The villain mold, recast."
 premiere_date: 2009-09-17
 ep_count: 14
 location: Upolu, Samoa
