@@ -2417,14 +2417,30 @@ export function collectShowCardTaglineOpenerOverlapIssues(): Failure[] {
 // the same commit that flips the flag. One-line toggle mirroring the
 // STRICT family. Exported so the vitest suite can exercise it
 // directly against a temp content tree.
+//
+// Critique pass 149 HIGH (systemic, meta descriptions echoing on-page
+// copy verbatim): a show whose `tagline` is ≤ 160 chars was exempted
+// from this check entirely — but `descriptionFor()` passes a short
+// tagline straight through unclipped, so it lands in
+// <meta name="description"> byte-for-byte identical to the full
+// tagline the show-page hero renders. That's a full-sentence verbatim
+// duplicate, not a truncation defect, so it gets its own message
+// (there's no mid-clause cut to point at). Same fix either way: author
+// a `card_tagline` that diverges from the tagline.
 export function collectCardTaglineGapIssues(): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
-    if (show.tagline.length <= 160) continue
     if (show.card_tagline) continue
+    if (show.tagline.length > 160) {
+      issues.push({
+        file: `content/shows/${show.slug}.md (tagline)`,
+        message: `tagline is ${show.tagline.length} chars (> 160) and no \`card_tagline\` override is present — \`descriptionFor()\` truncates mid-clause at 159 chars + ellipsis, producing an unfinished thought in SERP snippets and social share cards. Author a \`card_tagline\` (≤ 155 chars, ending at a natural clause boundary, third-person editorial register) so the SERP description reads as a complete sentence. See plan/CRITIQUE.md passes 52 / 54 / 55 (phase 17).`,
+      })
+      continue
+    }
     issues.push({
       file: `content/shows/${show.slug}.md (tagline)`,
-      message: `tagline is ${show.tagline.length} chars (> 160) and no \`card_tagline\` override is present — \`descriptionFor()\` truncates mid-clause at 159 chars + ellipsis, producing an unfinished thought in SERP snippets and social share cards. Author a \`card_tagline\` (≤ 155 chars, ending at a natural clause boundary, third-person editorial register) so the SERP description reads as a complete sentence. See plan/CRITIQUE.md passes 52 / 54 / 55 (phase 17).`,
+      message: `tagline is ${show.tagline.length} chars (≤ 160) and no \`card_tagline\` override is present — \`descriptionFor()\` passes the tagline straight through unclipped, so <meta name="description"> reads byte-for-byte identical to the show-page hero's tagline: a full-sentence verbatim duplicate a crawler sees twice on one page. Author a \`card_tagline\` (≤ 155 chars, third-person editorial register, a genuinely different angle from the tagline) so the SERP description and hero copy diverge. See plan/CRITIQUE.md pass 149.`,
     })
   }
   return issues

@@ -132,7 +132,18 @@ export function seasonDisplayTitle(show: Show, season: Season): string {
 // the rare lede that overruns the SEO budget goes through
 // `clipToSeoBudget` (critique pass 62/67 — clause-boundary aware, not
 // a raw word-boundary cut).
+//
+// CRITIQUE pass 149 HIGH: reusing `lede` as the meta description means
+// the exact same sentence appears twice on the page — once in
+// <meta name="description">, once in the on-page hero — which crawlers
+// read as duplicate content. `meta_description` is the escape hatch: a
+// curator can author a distinct SEO snippet for a season whose lede is
+// worth quoting on-page but shouldn't be echoed verbatim in the meta
+// tag. Checked first; absent value falls through to the lede/template
+// chain unchanged.
 function descriptionFor(showName: string, season: Season): string {
+  const metaDescription = season.meta_description?.trim()
+  if (metaDescription) return metaDescription
   const lede = season.lede?.trim()
   if (!lede) {
     return `Vote and discuss ${showName} season ${season.number}: ${season.title}.`

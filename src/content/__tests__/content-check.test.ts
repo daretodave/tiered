@@ -7155,11 +7155,25 @@ featured: false
     expect(issues[0]!.message).toMatch(/160/)
   })
 
-  it('passes a show whose tagline is exactly 160 chars with no card_tagline', () => {
+  it('flags a show whose tagline is exactly 160 chars with no card_tagline — verbatim-duplicate message, not the truncation message', () => {
     const tagline = 'A' + ' '.repeat(0) + 'x'.repeat(159)
     const exactly160 = tagline.slice(0, 160)
     expect(exactly160.length).toBe(160)
     makeShowWithTaglineAndOptionalCard(tmp, 'short', exactly160)
+    const issues = collectCardTaglineGapIssues()
+    expect(issues).toHaveLength(1)
+    expect(issues[0]!.file).toBe('content/shows/short.md (tagline)')
+    expect(issues[0]!.message).toMatch(/card_tagline/)
+    expect(issues[0]!.message).toMatch(/verbatim duplicate/)
+  })
+
+  it('passes a show whose tagline is short and card_tagline is present', () => {
+    makeShowWithTaglineAndOptionalCard(
+      tmp,
+      'short',
+      'A short tagline under the limit.',
+      'A genuinely different card tagline.',
+    )
     expect(collectCardTaglineGapIssues()).toEqual([])
   })
 

@@ -13,7 +13,13 @@ const TIER_DESCRIPTION_FRAGMENT: Record<ShowTier, string> = {
   B: 'B tier is in review',
 }
 
-const OPENER = 'Reality-TV canons, sorted by how settled the ranking feels.'
+// critique pass 149: this used to open with the exact same clause as
+// ShowsHero's on-page lede ("Reality-TV canons, sorted by how settled
+// the ranking feels") — a verbatim duplicate between the meta
+// description and the H1/lede a crawler sees on the same page. Reworded
+// to cover the same ground (reality-TV canons, sorted by how settled
+// the read feels) without repeating the hero's exact wording.
+const OPENER = 'tiered.tv ranks reality-TV canons by how settled each one feels.'
 
 export function buildShowsMetaDescription(
   populatedTiers: Iterable<ShowTier>,

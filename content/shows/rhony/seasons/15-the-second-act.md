@@ -9,6 +9,7 @@ location: "New York City · Portugal · Casablanca"
 ep_count: 18
 eyebrow: "The reboot cast finding its confidence"
 lede: "Season fifteen takes the reboot cast to Portugal and Casablanca — the trip tests what they're made of when Manhattan's scaffolding is gone. With a season's worth of shared history, the cast brings genuine friction to the material. The Moroccan leg carries a quiet echo."
+meta_description: "RHONY's rebooted cast heads to Portugal and Casablanca for season 15, a confident second year that premieres June 2024 on Bravo."
 pull: "The second year is where a reboot cast stops performing and starts being themselves."
 take_h2: "Year two, more confidence."
 shape_h2: "Eighteen episodes, one wife added back."

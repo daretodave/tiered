@@ -109,7 +109,7 @@ describe('OpenGraphImage — eyebrow, title, blurb', () => {
   it('derives the blurb from only the populated tiers, mirroring generateMetadata\'s SEO description', () => {
     OpenGraphImage()
     expect(lastCall()?.blurb).toBe(
-      'Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review.',
+      'tiered.tv ranks reality-TV canons by how settled each one feels. S tier is format-defining, A tier has the deep canon, B tier is in review.',
     )
   })
 
@@ -117,7 +117,7 @@ describe('OpenGraphImage — eyebrow, title, blurb', () => {
     getAllShowsMock.mockReturnValue([show('survivor', 'S'), show('the-circle', 'B')])
     OpenGraphImage()
     expect(lastCall()?.blurb).toBe(
-      'Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, B tier is in review.',
+      'tiered.tv ranks reality-TV canons by how settled each one feels. S tier is format-defining, B tier is in review.',
     )
   })
 

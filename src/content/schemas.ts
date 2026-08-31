@@ -137,6 +137,16 @@ export const seasonFrontmatterSchema = z.object({
   // surface (eyebrow, pull quote, details strip).
   eyebrow: z.string().min(1).max(80).optional(),
   lede: z.string().min(1).max(280).optional(),
+  // Critique pass 149 HIGH (systemic, 7 pages across 4 passes): the
+  // season page's meta description defaults to the on-page `lede`
+  // (clipped), which crawlers then see duplicated verbatim between
+  // <meta name="description"> and the page's own hero copy. This is
+  // the season-page analog of `card_tagline` on shows — an explicit
+  // opt-out for the rare season whose `lede` is quotable on-page but
+  // makes a poor, non-duplicate SEO snippet. Preferred over `lede` in
+  // `descriptionFor()`; absent value falls back to the existing
+  // lede/template chain unchanged.
+  meta_description: z.string().min(1).max(160).optional(),
   body: z.string().min(1).optional(),
   pull: z.string().min(1).max(600).optional(),
   // Section 01 ("The take") H2 override. Critique pass-47 MED (issue
