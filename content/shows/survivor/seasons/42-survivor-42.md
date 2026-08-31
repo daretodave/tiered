@@ -27,11 +27,11 @@ watch_list:
   - episode_label: "Ep 1 · new-era default"
     body: "The 26-day format opens without the proving-ground energy the first reset carried. The mechanics are established and the cast plays them as a known quantity."
   - episode_label: "Ep 4 · pre-merge texture"
-    body: "Confessional time spreads across the bench. The casting leans on superfans who studied the new-era playbook before applying."
+    body: "Confessional time spreads across the bench. The casting leans on superfans who studied the post-reset playbook before applying."
   - episode_label: "Ep 7 · merge cycle"
     body: "The merge runs at the compressed pace the 26-day clock forces. The strategic vocabulary moves fast."
   - episode_label: "Ep 12 · final stretch"
-    body: "The journeys and advantages stay live into the closing rounds. The new-era grammar reads through the finale."
+    body: "The journeys and advantages stay live into the closing rounds. The season's own grammar reads clean through the finale."
 ---
 
 Survivor 42 is the new era past its proving stretch. The second

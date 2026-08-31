@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 1 · paired arrival"
     body: "Nine pairs of loved ones arrive together and are immediately split across two beaches. The premise repeats the prior Blood vs. Water structure with all-newbie casting."
   - episode_label: "Ep 4 · pre-merge texture"
-    body: "The pre-merge stretch shows the casting weight Blood vs. Water carried with returnees. Without the prior context, the editors lean on relationship math the audience has to build from scratch."
+    body: "The pre-merge stretch shows the casting weight the family-pairing format carried when returning players anchored it. Without that prior context, the editors lean on relationship math the audience has to build from scratch."
   - episode_label: "Ep 9 · merge cycle"
     body: "The merge episode is where the season finds clearer footing. The cast settles into the strategic register the franchise expected by 2014."
   - episode_label: "Ep 13 · final stretch"

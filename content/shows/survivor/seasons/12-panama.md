@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 6 · the idol"
     body: "The hidden immunity idol is introduced and the cast starts to grasp what kind of object it really is. The idol's grammar gets written across the back half of the season."
   - episode_label: "Ep 11 · post-merge"
-    body: "The endgame is the first time the show plays a merge with both Exile Island and an idol live in the game. The strategic texture of every season since starts here."
+    body: "The endgame becomes the format's proving ground for pairing an idol with the banishment twist inside the same merge. The strategic texture of every season since starts here."
 ---
 
 The twelfth season returns to the Pearl Islands and installs

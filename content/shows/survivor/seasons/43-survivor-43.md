@@ -31,7 +31,7 @@ watch_list:
   - episode_label: "Ep 7 · merge cycle"
     body: "The merge runs dense and fast under the compressed clock. The strategic vocabulary lands cleanly."
   - episode_label: "Ep 12 · final stretch"
-    body: "The new-era mechanics carry into the closing rounds without clutter. The format runs at its settled pace through the finale."
+    body: "The season's mechanics carry into the closing rounds without clutter. The format runs at its settled pace through the finale."
 ---
 
 Survivor 43 is the new era running clean. By the fall of 2022

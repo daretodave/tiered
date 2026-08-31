@@ -26,7 +26,7 @@ episode_heat: [hot, hot, med, hot, hot, hot, hot, hot, med, hot, hot, hot, hot, 
 episode_heat_caption: "loud all the way through"
 watch_list:
   - episode_label: "Ep 1 · collar brief"
-    body: "The casting premise is unembarrassed about itself. Each tribe arrives with strong internal voices and a confidence the format would lean on through the pre-merge."
+    body: "The casting premise is unembarrassed about itself. Each tribe arrives with strong internal voices and a confidence the format would lean on well past the merge point."
   - episode_label: "Ep 4 · pre-merge heat"
     body: "Confrontational chemistry on at least one tribe runs unusually hot for early-season Survivor. The editors let the friction breathe."
   - episode_label: "Ep 8 · merge cycle"

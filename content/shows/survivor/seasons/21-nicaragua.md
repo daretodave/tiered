@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ep 4 · age split"
     body: "The tribes are divided by age — players over 40 versus players under 30 — and the early episodes play the demographic premise straight. The split runs its course before the merge."
   - episode_label: "Ep 8 · idol clue tweaks"
-    body: "A reworked idol-clue system means players are hunting for the idol differently than in prior seasons. The mechanic doesn't quite settle."
+    body: "A reworked idol-clue system means players are hunting for the idol differently than in prior seasons. The new mechanic never fully finds its rhythm."
   - episode_label: "Ep 13 · final stretch"
     body: "The endgame lands as the show was hoping for more than the cast could deliver. The pacing is uneven through the final act."
 ---

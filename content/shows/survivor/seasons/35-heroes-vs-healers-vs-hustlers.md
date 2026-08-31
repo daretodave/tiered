@@ -32,7 +32,7 @@ watch_list:
   - episode_label: "Ep 8 · merge cycle"
     body: "The merge runs at the dense pace the twist-heavy era had taught the format to deliver. The strategic vocabulary moves quickly."
   - episode_label: "Ep 13 · final stretch"
-    body: "The final-tribal mechanics carry the casting frame all the way through. The archetypal premise still reads in the closing arguments."
+    body: "The final-tribal mechanics carry the three-way split all the way through. The archetypal premise still reads in the closing arguments."
 ---
 
 Three tribes split by archetypal frame — heroes, healers,

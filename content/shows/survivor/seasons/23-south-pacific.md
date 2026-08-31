@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Ep 8 · faith and frame"
     body: "The pre-merge cast brings an unusually expressive frame around belief and identity, and the editing lets the texture sit. Watch the show negotiate material it doesn't usually touch."
   - episode_label: "Ep 12 · late game"
-    body: "The post-merge run benefits from a settled Redemption Island mechanic. The pacing is the cleanest the format had managed with the parallel-game device."
+    body: "The post-merge run benefits from a mechanic settling into its second outing. The pacing is the cleanest the format had managed with the parallel-game device."
 ---
 
 The twenty-third season returns to Upolu for a second

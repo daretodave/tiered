@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 1 · four tribes"
     body: "The marooning splits the cast into four tribes drawn along ethnic lines, a casting premise the show pitched as social experiment and the cast plays as a game. The opening hour earns its own attention even before the reshuffle arrives."
   - episode_label: "Ep 3 · early reshuffle"
-    body: "Production folds the four tribes back into two earlier than the premise suggested it would. Watch how quickly the season rewires itself once the original tribal grammar dissolves."
+    body: "Production folds the four-way split back into two earlier than the marooning implied it would. Watch how quickly the season rewires itself once the original tribal grammar dissolves."
   - episode_label: "Ep 7 · mutiny"
     body: "A mid-game mutiny option appears at a reward, and the show lets it land without narration. The mechanic recasts the social map in a single beat."
   - episode_label: "Ep 11 · post-merge run"

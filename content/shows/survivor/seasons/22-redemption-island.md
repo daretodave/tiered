@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 9 · returnee texture"
     body: "Two returning veterans anchor the social game, and the post-merge run leans heavily on the casting credential they carry. The format trusts the returnees with screen time."
   - episode_label: "Ep 13 · final stretch"
-    body: "The endgame is the format's first attempt at a finale that includes a Redemption Island re-entry. The structural ambition is real, the execution is uneven."
+    body: "The endgame is the format's first attempt at a finale built around a parallel-beach re-entry. The structural ambition is real, the execution is uneven."
 ---
 
 The twenty-second season introduces the Redemption Island

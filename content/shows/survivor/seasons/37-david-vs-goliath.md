@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 4 · pre-merge texture"
     body: "Confessional time distributes across nearly the whole cast. Watch the show trust an ensemble this wide to carry full talking-head stretches."
   - episode_label: "Ep 8 · merge cycle"
-    body: "The merge runs at a high strategic temperature. The vocabulary moves fast and the casting frame still reads through it."
+    body: "The merge runs at a high strategic temperature. The vocabulary moves fast and the underdog split still reads through it."
   - episode_label: "Ep 13 · final stretch"
     body: "The premise carries all the way into the closing arguments. The underdog framing still anchors the late-game reads."
 ---
