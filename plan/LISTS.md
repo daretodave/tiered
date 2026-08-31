@@ -11326,3 +11326,18 @@ last time a curator actually looked.
   consistent with issue #758 and the 2026-08-30 pass one day prior —
   the catalog is exhausted for keyword-driven discovery absent new raw
   season text or an oversight-authorized scout-research pass.
+- 2026-08-31, same-day re-check (cloud march tick, `/ship-content`
+  dispatch): re-confirmed the immediately-prior pass's saturation
+  finding before falling through to the watch_list cross-callout
+  side-drain (see `plan/AUDIT.md` round 7). One additional near-miss
+  chased and rejected: a "judging panel expands to four" angle
+  (Bake Off's Prue Leith joining Paul Hollywood, AGT's Mel B/Heidi
+  Klum-era four-chair panel, The Voice's rotating four-coach format) —
+  rejected because it does not clear the ≥3-show cross-canon floor on
+  a *shared* mechanic: Bake Off's bench is two judges plus two
+  presenters (never a four-judge panel), AGT's four-chair panel is a
+  judge-count fact already staked under the panel-reshuffle framing
+  logged in `plan/AUDIT.md`'s AGT off-by-one row, and The Voice is the
+  frozen show (issue #762, not to be touched). No genuinely distinct
+  three-show grounding found. No `content/themes/*.md` file written;
+  no ledger row changed.
