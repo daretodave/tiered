@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 1 · ten weddings"
     body: "The season opens with its biggest cast by far, ten couples meeting for the first time, a genuine scale-up from every prior run."
   - episode_label: "Early eps · a bigger ensemble"
-    body: "With ten couples now in the mix, group scenes carry more of the storytelling than in earlier, smaller seasons. Watch how the format manages that many relationships at once."
+    body: "With the cast nearly doubled from the year before, group scenes carry more of the storytelling than in earlier, smaller seasons. Watch how the format manages that many relationships at once."
   - episode_label: "Mid-season · the rematch twist"
     body: "The season introduces a genuine structural first — a mechanic that lets two participants leave their original matches and try again with each other. Watch for how the format frames this shift."
   - episode_label: "Commitment ceremonies"

@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 1 · a new expert at the altar"
     body: "Alessandra Rampolla joins John Aiken and Mel Schilling for the first time, replacing a panel member who'd been there since the show's early years."
   - episode_label: "Early eps · nine weddings"
-    body: "The season opens with nine couples, a slightly smaller starting cohort than the year before, before more couples join as the weeks go on."
+    body: "The season opens with nine couples, a slightly smaller starting cohort than the year before, before the cast expands as the weeks go on."
   - episode_label: "Mid-season · new additions"
     body: "Three more couples join partway through, growing the cast to twelve and keeping the season's energy fresh as it runs long."
   - episode_label: "Commitment ceremonies"

@@ -31,7 +31,7 @@ watch_list:
   - episode_label: "Commitment ceremonies"
     body: "With the largest cast the format had run to date, the check-in episodes carry a heavier structural load than in any prior season."
   - episode_label: "Final stretch · Decision Day"
-    body: "The season's Decision Day stretch closes out its longest run yet, against the backdrop of the rule change that defined the season's public conversation."
+    body: "The season's Decision Day stretch closes out its longest run yet, against the backdrop of the controversy that defined the season's public conversation."
 ---
 
 Season six is the format's biggest by episode count — 41 episodes and twelve couples once two mid-season additions arrive. It's also the most controversial: a mid-experiment rule change let two participants leave their original matches and re-pair with each other, a decision that generated significant public backlash and an online petition. The season's scale is real, but the rule change, not the format itself, became the story.

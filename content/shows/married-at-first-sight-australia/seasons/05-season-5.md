@@ -31,7 +31,7 @@ watch_list:
   - episode_label: "Commitment ceremonies"
     body: "The expert panel's check-ins track an even wider spread of couples than the year before, a format now fully comfortable at scale."
   - episode_label: "Final stretch · Decision Day"
-    body: "The season closes out its largest cast yet with a Decision Day stretch that gives every couple room to reach its own outcome."
+    body: "The season closes out its biggest run yet with a Decision Day stretch that gives every couple room to reach its own outcome."
 ---
 
 Season five holds the format at roughly the same scale as the year before — eleven couples, 32 episodes, the same three-expert panel. The season's most notable casting choice is a participant from the previous run getting matched again, a first for the format and a real test of whether lightning can strike twice inside the same experiment. Otherwise, it's a confident, steady season.

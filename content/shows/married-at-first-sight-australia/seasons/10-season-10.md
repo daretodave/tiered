@@ -23,7 +23,7 @@ episodes_caption: "Thirty-six episodes, with ten couples growing to twelve mid-s
 host_caption: "Fourth season for the Aiken–Schilling–Rampolla panel"
 watch_list:
   - episode_label: "Ep 1 · ten weddings"
-    body: "The season opens with ten couples, with more set to join mid-run, continuing the format's now-standard mid-season expansion."
+    body: "The season opens with ten couples, with more set to join later, continuing the format's now-standard pattern of adding couples partway through."
   - episode_label: "Mid-season · swap week"
     body: "The season's biggest structural first arrives: a partner swap week that shuffles the couples' usual pairings for a stretch of the experiment. Watch how differently each couple handles it."
   - episode_label: "Mid-season · new additions"

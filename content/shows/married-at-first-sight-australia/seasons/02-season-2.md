@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Early eps · four weddings"
     body: "With only four couples, each wedding gets more room to breathe than the format usually allows. Watch how the season uses that space to build early tension."
   - episode_label: "Mid-season · daily life"
-    body: "The four couples settle into shared routines, and the season leans on ordinary domestic friction rather than manufactured conflict to test each pairing."
+    body: "The cast settles into shared routines, and the season leans on ordinary domestic friction rather than manufactured conflict to test each pairing."
   - episode_label: "Commitment ceremonies"
     body: "Regular check-ins with the expert panel give each couple a chance to speak candidly about how the experiment is going, a format beat that becomes a franchise staple starting here."
   - episode_label: "Final stretch · Decision Day"

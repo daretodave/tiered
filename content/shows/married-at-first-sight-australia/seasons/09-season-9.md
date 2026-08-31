@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Mid-season · daily life"
     body: "With the panel now in its second year together, the season settles into a confident, familiar rhythm without much structural novelty."
   - episode_label: "Commitment ceremonies"
-    body: "The check-ins track a full slate of couples across a long episode order, one of the format's steadier runs in recent years."
+    body: "The check-ins track a full slate of couples across a long episode order, one of the format's steadier runs to date."
   - episode_label: "Final stretch · Decision Day"
     body: "The season closes out its long run with a Decision Day stretch that plays it straight, no new twist to complicate the format."
 ---
