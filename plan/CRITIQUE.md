@@ -1,5 +1,40 @@
 # CRITIQUE
 
+> Last pass: 2026-08-31 at commit 5d9e1f6f
+> Pass count: 149
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 149
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/love-is-blind/season/columbus`, `/shows`,
+> `/themes/not-who-they-say-they-are`, `/shows/project-runway?view=canon`
+> anon; `/u/e2e`, `/shows/love-is-blind/season/columbus?view=community`,
+> `/shows/dragrace-allstars/season/season-11?view=community`,
+> `/shows/the-voice/season/the-finale?view=community` authed. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 mobile overflow, all pages 200, no spoiler leaks). 4
+> findings filed (1 bump to HIGH, 2 MED, 1 LOW): the "WHY THIS SLOT
+> re-paraphrases body copy" systemic row (pass-148, tracked since
+> top-chef/bake-off) reproduced on Project Runway (Seasons 1 and 4) —
+> now four confirmed shows, bumped MED→HIGH; a new cross-callout
+> phrase-repetition instance on a themed list page
+> (`/themes/not-who-they-say-they-are`, "concealment mechanic"
+> repeated across 6+ entries) — the first confirmed instance of the
+> watch_list/season-page repetition-drain class showing up on a
+> themed list; dragrace-allstars Season 11's "eighteen queens, three
+> six-queen brackets" fact restated five times on one community page;
+> love-is-blind Columbus's "shape of the season" subhead promises an
+> episode-count comparison the body never delivers. Two reader
+> observations dropped at self-assessment: a low-confidence
+> text-extraction artifact on Project Runway's tab-badge spacing
+> (couldn't distinguish real bug from whitespace-in-DOM-extraction),
+> and three community pages all reading "0 votes" (reader itself
+> flagged as plausibly expected test-account state, not a bug).
+>
+> ───── Pass 148 metadata kept below for history ─────
+
 > Last pass: 2026-08-31 at commit 9ea56bcd
 > Pass count: 148
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3814,14 +3849,41 @@
 
 ## Pending
 
-### [MED] [anon] /shows/hells-kitchen?view=canon — the "WHY THIS SLOT" callout re-paraphrases the season's own body copy instead of adding new context
-- pass: 148 (commit 9ea56bcd)
+### [MED] [anon] /shows/dragrace-allstars/season/season-11?view=community — the "eighteen queens, three six-queen brackets" fact is restated near-verbatim five times on one page
+- pass: 149 (commit 5d9e1f6f)
 - viewport: desktop
 - category: voice
-- observation: Season 5's body paragraph and its adjacent "WHY THIS SLOT" rationale box make the identical argument in different words — a third instance of this exact pattern, already tracked on top-chef's Las Vegas #1 slot and bake-off's Slot #1. WHY THIS SLOT should be doing a different job (comparison to the neighboring slots, or the gap between editor and community rank) rather than re-deriving the season's own take from scratch.
-- evidence: Season 5 body: "Season five sits at the top of the early canon because the cooking was genuinely serious... The format had found its ceiling." WHY THIS SLOT: "Season five brought a cast that took the cooking more seriously than any prior group, which raised the level of every dinner service. The format earns its most competitive iteration here." Same pattern repeats on Season 4.
-- suggested fix: Now three confirmed instances (top-chef, bake-off, hells-kitchen) — worth a corpus-wide check of the WHY THIS SLOT field generation for restatement-of-body-copy before the current line-item basis grows further, similar to the meta-description systemic row below.
-- source: browser (critique-pass-148, anon)
+- observation: The lede, the cast-size subcaption, the section-02 subhead, the section-02 opening sentence, and the premiere watch-for callout all restate the same "eighteen returning queens, three six-queen brackets" fact with only minor wording changes. A second repeated pair — "bracket tournament, tightened" — appears in the eyebrow, the take headline, and the section-02 opener. Same class of defect as the ongoing watch_list cross-callout drain already running across the catalog (see recent commit history), just not yet reached this show/season.
+- evidence: Eyebrow: "A SECOND BRACKET TOURNAMENT, TIGHTENED"; lede: "Eighteen returning queens split into three six-queen brackets again"; cast-size sub: "eighteen returning queens, three six-queen brackets"; s02 header: "Eighteen queens, unchanged from last year"; s02 body opener: "Season 11 reruns Season 10's bracket-tournament shape and tightens it. Eighteen returning queens split into three six-queen brackets"; watch-for: "Eighteen queens divide into three named brackets."
+- suggested fix: Let one or two fields own the exact numeric fact (e.g. lede + cast-size caption) and rewrite the section-02 subhead/opener and watch-for bullet to add something new — how the brackets differ from last year's, or a specific bracket matchup — instead of restating the count. Scoped to `content/shows/dragrace-allstars/seasons/11-season-11.md`.
+- source: browser (critique-pass-149, authed)
+
+### [MED] [anon] /themes/not-who-they-say-they-are — the phrase "concealment mechanic" (or a close variant) recurs near-verbatim across at least 6 of 13 ranked entries
+- pass: 149 (commit 5d9e1f6f)
+- viewport: desktop
+- category: voice
+- observation: Entries #01, #03, #04, #05, #06, #08, #09, and #10 all lean on "concealment mechanic," "concealment premise," "concealment," or "concealment holds up" to make the same point, reading as a template word rather than varied per-entry language. This is the themed-list-page instance of the same cross-callout phrase-repetition class the loop has been draining on show/season pages for the past several ticks.
+- evidence: "#06 ... concealment mechanic gets harder to play against, not easier." / "#08 ... hands the concealment mechanic to players who know exactly how to work it." / "#10 ... concealment mechanic gets a fresh set of unknowns to work with."
+- suggested fix: Run the same cross-callout phrase-repetition drain already applied to season pages against `content/themes/not-who-they-say-they-are.md`'s ranked entries — vary the word choice per entry (e.g. "disguise," "cover story," "the lie," "what they're hiding") rather than repeating "concealment mechanic."
+- source: browser (critique-pass-149, anon)
+
+### [LOW] [anon] /shows/love-is-blind/season/columbus — section subhead promises an episode-count comparison the body paragraph never delivers
+- pass: 149 (commit 5d9e1f6f)
+- viewport: desktop
+- category: comprehension
+- observation: The "THE SHAPE OF THE SEASON" subhead reads "Ten seasons, same episode count," but the paragraph beneath it is entirely about tone/pacing/stakes reset after Denver — it never mentions episode count. A reader scanning subheads for orientation gets a false cue about what the paragraph actually covers.
+- evidence: Subhead: "Ten seasons, same episode count." Body: "Columbus resets the tone after Denver's subdued run: the pod conversations move fast from the opening episode, stakes show up early instead of staying ambient..." — no episode-count content follows.
+- suggested fix: Either fold an episode-count sentence into the body paragraph, or rewrite the subhead to match the tone/pacing content that's actually there. Scoped to `content/shows/love-is-blind/seasons/10-columbus.md`.
+- source: browser (critique-pass-149, anon)
+
+### [HIGH] systemic (bumped MED→HIGH at pass-149) — the "WHY THIS SLOT" callout re-paraphrases the season's own body copy instead of adding new context
+- pass: 149 (commit 5d9e1f6f); prior: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: voice
+- observation: Now confirmed on **four** shows — top-chef's Las Vegas #1 slot, bake-off's Slot #1, hells-kitchen (Season 5 and Season 4), and Project Runway (Season 4 and Season 1, freshly found at pass-149, independently — the reader was not told about this row). Every instance is the same defect: the body paragraph and the adjacent "WHY THIS SLOT" rationale box make the identical argument in different words instead of the callout doing a different job (comparison to neighboring slots, or the gap between editor and community rank).
+- evidence: hells-kitchen S5 body: "Season five sits at the top of the early canon because the cooking was genuinely serious... The format had found its ceiling." WHY THIS SLOT: "Season five brought a cast that took the cooking more seriously than any prior group, which raised the level of every dinner service. The format earns its most competitive iteration here." Project Runway S4 body: "the judging stays aligned in a way the show rarely achieves again" vs WHY THIS SLOT: "a judges' table operating in unbroken agreement" — same claim, different words, no new information added.
+- suggested fix: Four confirmed instances across four different shows warrants the corpus-wide check flagged at pass-148 rather than continued one-off fixes — audit the WHY THIS SLOT field generation pattern across all canon.md files for restatement-of-body-copy, similar to the meta-description systemic row below.
+- source: browser (critique-pass-149, anon; prior: critique-pass-148, anon)
 
 ### [MED] [authed] /shows/traitors-uk/season/series-4?view=community — "the shape of the season" and "where it sits in the canon" sections repeat a near-identical sentence with only a word or two swapped
 - pass: 148 (commit 9ea56bcd)
