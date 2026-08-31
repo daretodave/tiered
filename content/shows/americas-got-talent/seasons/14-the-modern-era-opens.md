@@ -21,9 +21,9 @@ watch_list:
   - episode_label: "Auditions · Detroit Youth Choir's buzzer"
     body: "Terry Crews's host buzzer goes to the ensemble in his first season behind the desk, a big full-cast spectacle suited to his hosting energy."
   - episode_label: "Auditions · Luke Islam's Golden Buzzer"
-    body: "Julianne Hough's first Golden Buzzer as a judge goes to the twelve-year-old singer, one of several young vocalists to earn a buzzer across a season stacked with kid performers."
+    body: "Julianne Hough's first buzzer as a judge goes to the twelve-year-old singer, one of several young vocalists to earn a buzzer across a season stacked with kid performers."
   - episode_label: "Auditions · Tyler Butler-Figueroa's buzzer"
-    body: "Simon Cowell presses for the eleven-year-old violinist, a rare instrumental pick from a panel that otherwise spends its buzzers on vocalists this season."
+    body: "Simon Cowell presses for the preteen violinist, a rare instrumental pick from a panel that otherwise spends its buzzers on vocalists this season."
   - episode_label: "Auditions · Joseph Allen's Golden Buzzer"
     body: "Howie Mandel's press rounds out a season where every judge and the host used their buzzer on a different kind of act — violinist, singer, choir, and everything between."
 ---

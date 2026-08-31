@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Auditions · six cities, one deep pool"
     body: "Open auditions run across six cities — Dallas, Los Angeles, New York, Portland, Chicago, and Universal Orlando Resort. Roughly 70,000 hopefuls nationwide narrow down to the 108 acts sent to Las Vegas week."
   - episode_label: "Finale · a ratings record"
-    body: "The season five finale draws about 16.41 million viewers, a broadcast record for the franchise at that point."
+    body: "The finale draws about 16.41 million viewers, a broadcast record for the franchise's run to that point."
 ---
 
 Season five is the founding era's closing chapter rather than its high point. Nick Cannon is now fully settled as host, and Howie Mandel, Sharon Osbourne, and Piers Morgan run their first complete season together after the prior year's transition. The three-way dynamic — Mandel's enthusiasm, Osbourne's directness, Morgan's precision — has a full season to develop shorthand. The audition pool holds the format's open-call range. A functional, stable close to the era that built the show's identity.

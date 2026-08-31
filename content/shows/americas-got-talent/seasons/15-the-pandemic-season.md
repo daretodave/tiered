@@ -17,7 +17,7 @@ shape_h2: "Pandemic cuts the live audience."
 take_h2: "A stage the pandemic shrank."
 watch_list:
   - episode_label: "Auditions · Roberta Battaglia's Golden Buzzer"
-    body: "Sofia Vergara's first-ever Golden Buzzer press, in her debut season at the table, goes to the eleven-year-old singer."
+    body: "Sofia Vergara's first-ever buzzer press, in her debut season at the table, goes to the eleven-year-old singer."
   - episode_label: "Auditions · Brandon Leake's Golden Buzzer"
     body: "Howie Mandel presses for the spoken-word poet, a genre the format rarely rewards this deep into a season stacked with vocalists."
   - episode_label: "Auditions · Cristina Rae's Golden Buzzer"

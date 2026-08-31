@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Auditions · Courtney Hadwin's Golden Buzzer"
     body: "Howie Mandel's press goes to the thirteen-year-old singer, and the judging table's emotional register shifts for the rest of the episode — one of the format's more unguarded audition moments."
   - episode_label: "Auditions · Amanda Mena's Golden Buzzer"
-    body: "Mel B presses for the teenage singer, spending her buzzer on a vocalist for the second year running."
+    body: "Mel B presses for the teenage standout, spending her buzzer on a singer for the second year running."
   - episode_label: "Auditions · Makayla Phillips's Golden Buzzer"
     body: "Heidi Klum's press goes to the teenage singer, rounding out a panel that spends its full complement of presses on vocal performances this season."
 ---

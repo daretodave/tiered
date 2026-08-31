@@ -21,9 +21,9 @@ watch_list:
   - episode_label: "Auditions · Mayyas's tribute buzzer"
     body: "The Lebanese dance troupe's audition doubles as a tribute to the prior season's Nightbirde, and Sofía Vergara sends them straight to the live shows mid-performance."
   - episode_label: "Auditions · Chapel Hart's five-way buzzer"
-    body: "An original country song earns all four judges and Terry Crews pressing together — only the second time in the show's history a judge-and-host press has landed on one act at once."
+    body: "An original country song earns all four judges and the host pressing together — only the second time in the show's history a judge-and-host press has landed on one act at once."
   - episode_label: "Midseason · a Golden Buzzer retrospective hour"
-    body: "The competition pauses for a full episode as the panel ranks its favorite Golden Buzzer moments in the show's history — a nostalgia beat, not a competition round."
+    body: "The competition pauses for a full episode as the panel ranks its favorite buzzer moments from years past — a nostalgia beat, not a competition round."
 ---
 
 Season seventeen benefits from the simplest structural advantage in a panel competition: a year of actual chemistry. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have stopped building their dynamic and started operating on it. The judging rounds are more assured than the prior year's full debut, and the critiques carry the ease of people who know where each other stands. A solid post-pandemic season — the format runs with the confidence a settled judging table provides.

@@ -21,7 +21,7 @@ watch_list:
   - episode_label: "Auditions · six ambulance calls"
     body: "Howie Mandel later tells Jimmy Fallon that ambulances were called six times during season six's auditions, after contestants hurt themselves mid-performance."
   - episode_label: "Premiere · a series-high opening"
-    body: "The season six premiere pulls in 15.28 million viewers, the biggest series premiere in the show's history to that point."
+    body: "The premiere pulls in 15.28 million viewers, the biggest series opener in the show's history to that point."
   - episode_label: "Quarterfinals · the new format returns"
     body: "The YouTube and Wildcard quarterfinal formats introduced the year before carry over into season six as Quarterfinals 5 and 6, giving the live rounds two distinct paths back into the competition."
   - episode_label: "Auditions · eight cities on the road"

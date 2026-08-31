@@ -21,7 +21,7 @@ watch_list:
   - episode_label: "Auditions · Hundred Fingers' double buzzer"
     body: "The South Korean magic group becomes the first act in the show's history to earn two separate Golden Buzzers in the same season — the first from Howie Mandel, the second later in the run."
   - episode_label: "Premiere · a three-buzzer opener"
-    body: "Fourteen-year-old Lai Noelle earns Simon Cowell's buzzer after Sofía Vergara steps back mid-reach to let him press first — one of three Golden Buzzers the premiere hands out."
+    body: "Fourteen-year-old Lai Noelle earns Simon Cowell's buzzer after Sofía Vergara steps back mid-reach to let him press first — one of three buzzers the premiere hands out."
   - episode_label: "Auditions · Isaac Atkins's leave audition"
     body: "An active-duty Army sergeant on leave, who'd only started posting singing videos about a year earlier, earns Mel B's buzzer."
 ---

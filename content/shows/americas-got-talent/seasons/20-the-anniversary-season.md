@@ -21,7 +21,7 @@ watch_list:
   - episode_label: "Midseason · the 20th Birthday special"
     body: "A two-hour, non-competitive primetime special marks the anniversary with a nostalgia mega-mix and judge reflections — Richard Goodall, the prior season's janitor-turned-singer, returns to perform live."
   - episode_label: "Quarterfinals · Mama Duke's live-show buzzer"
-    body: "Mel B presses her live-show Golden Buzzer for rapper-vocalist Mama Duke's original track, comparing her to Missy Elliott mid-performance."
+    body: "The returning judge presses her live-show Golden Buzzer for rapper-vocalist Mama Duke's original track, comparing her to Missy Elliott mid-performance."
   - episode_label: "New this season · two host buzzers"
     body: "Terry Crews is given two Golden Buzzers of his own to award during auditions, on top of the judges' now-doubled allotment."
 ---
