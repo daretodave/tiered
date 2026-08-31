@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The cast carries the rotating-pair instability into the final's physical work."
 shape_h2: "Thirty cast, partners rotate each round."
+take_h2: "A moving-target pair format."
 ---
 
 A spy-themed season built on partners that rotate every round —

@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 16 · endurance close"
     body: "The closing run of a 16-episode season. The cast carries the season's accumulated grievances into the final's physical work."
 shape_h2: "Twenty-eight cast, vendetta-premise casting."
+take_h2: "History does the work."
 ---
 
 An individual season built on a grudge premise — every player

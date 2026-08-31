@@ -10,6 +10,7 @@ format_caption: "first heavy lean into spectacle"
 cast_size: 14
 premiere_caption: "MTV · 2001"
 shape_h2: "Fourteen cast, stunts take over."
+take_h2: "Missions stop being filler."
 ---
 
 The season where the franchise stopped pretending the missions

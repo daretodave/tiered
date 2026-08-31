@@ -12,6 +12,7 @@ cast_size: 22
 premiere_caption: "MTV · 2004"
 host_caption: "third season at the helm"
 shape_h2: "Twenty-two cast, elimination gets renamed."
+take_h2: "A place, not a moment."
 ---
 
 The follow-up to The Gauntlet, with the elimination round

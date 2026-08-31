@@ -30,6 +30,7 @@ watch_list:
   - episode_label: "Ep 10 · final approach"
     body: "Pairs running through late-season endurance work with a year of pair-format muscle memory built across the cast pool. Watch the choreography reads cleaner than in the first Rivals."
 shape_h2: "Twenty-eight cast, second pairs of rivals."
+take_h2: "A year of execution shows."
 ---
 
 The pairs-of-rivals format with a year of execution under its

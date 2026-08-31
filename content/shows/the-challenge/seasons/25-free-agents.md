@@ -29,6 +29,7 @@ watch_list:
   - episode_label: "Ep 12 · endurance run"
     body: "Late-stage missions where the solo geometry gets to perform. Watch the camera hold on individual reactions for longer than a pair or team season would have allowed."
 shape_h2: "Twenty-eight cast, weekly vote-out debuts."
+take_h2: "The solo format, matured."
 ---
 
 The solo format question of The Duel and The Duel II asked a

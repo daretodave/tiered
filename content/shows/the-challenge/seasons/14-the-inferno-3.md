@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2007"
 host_caption: "fourth season at the helm"
 pull: "The franchise consolidates rather than discovers."
 shape_h2: "Twenty-four cast, third Inferno run."
+take_h2: "Consolidating, not discovering."
 ---
 
 Good Guys versus Bad Asses for the third time, with the format

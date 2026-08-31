@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The mixed cast carries the season's fresh-blood premise into the final's physical work."
 shape_h2: "Thirty cast, outside-Champions fresh blood."
+take_h2: "A genuine casting swing."
 ---
 
 Franchise returnees mixed with competitors from outside the

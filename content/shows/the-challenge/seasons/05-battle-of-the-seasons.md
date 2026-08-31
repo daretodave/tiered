@@ -10,6 +10,7 @@ format_caption: "first season-by-season grouping"
 cast_size: 28
 premiere_caption: "MTV · 2002"
 shape_h2: "Twenty-eight cast, grouped by season."
+take_h2: "A durable structural idea."
 ---
 
 The season that introduced the season-versus-season structure

@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2006"
 host_caption: "third season at the helm"
 pull: "The proof that a Challenge season could stand on personal arc rather than team grammar."
 shape_h2: "Twenty cast, individual format debuts."
+take_h2: "Standing without team grammar."
 ---
 
 The franchise's first individual format. No teams, no pairs —

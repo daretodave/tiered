@@ -29,6 +29,7 @@ watch_list:
   - episode_label: "Ep 12 · final approach"
     body: "The format's final-round geometry. Pairs running through endurance work as a single body. Watch the shot language tilt from individual reaction to two-person physical synchronization."
 shape_h2: "Twenty-eight cast, pairs format debuts."
+take_h2: "Rivalry becomes a teammate."
 ---
 
 The franchise's first pairs format, and the season that invents

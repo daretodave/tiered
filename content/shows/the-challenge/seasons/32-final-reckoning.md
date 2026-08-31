@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 21 · endurance approach"
     body: "The closing stretch of the franchise's longest season. The fixed pairs run the final's physical work as a single body."
 shape_h2: "Twenty-eight cast, franchise's longest season yet."
+take_h2: "A trilogy's uneven payoff."
 ---
 
 Fixed partner pairs close out the Reckoning trilogy, the

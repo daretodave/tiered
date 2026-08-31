@@ -30,6 +30,7 @@ watch_list:
   - episode_label: "Ep 11 · pair geometry"
     body: "Late-stage missions where partners who once shared a bed have to physically sync through endurance work. Watch the editing find the moments where the choreography becomes muscle memory."
 shape_h2: "Twenty-eight cast, first exes-as-teammates season."
+take_h2: "Peak modern-era chemistry."
 ---
 
 Peak modern-era cast chemistry. MTV took 14 former couples and

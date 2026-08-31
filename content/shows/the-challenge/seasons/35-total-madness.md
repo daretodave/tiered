@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The cast carries the season's distinct safety stakes into the final's physical work."
 shape_h2: "Twenty-eight cast, red-skull mechanic debuts."
+take_h2: "A real rule change."
 ---
 
 An individual game set in an underground bunker, with a

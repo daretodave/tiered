@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The all-veteran cast carries the shared stakes into the final's physical work."
 shape_h2: "Twenty-six cast, all never-won veterans."
+take_h2: "A filter, not a format."
 ---
 
 A cast with no rookies and no prior champions — every player a

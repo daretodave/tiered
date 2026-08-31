@@ -11,6 +11,7 @@ cast_size: 12
 cast_size_caption: "6 Real World, 6 Road Rules"
 premiere_caption: "MTV · 2000"
 shape_h2: "Twelve cast, second crossover try."
+take_h2: "Proof the format has legs."
 ---
 
 The second crossover, and the one that proved the first was not

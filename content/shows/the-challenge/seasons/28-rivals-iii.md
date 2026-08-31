@@ -30,6 +30,7 @@ watch_list:
   - episode_label: "Ep 11 · pair geometry"
     body: "Late-stage endurance work where pairs synchronize through cold-weather conditions. Watch the camera find the moments where the cold itself produces involuntary collaboration between rivals."
 shape_h2: "Twenty-six cast, third pairs of rivals."
+take_h2: "Iteration, not discovery."
 ---
 
 The third pairs-of-rivals season, the run where the franchise's

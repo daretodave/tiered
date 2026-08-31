@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2010"
 host_caption: "ninth season at the helm"
 pull: "How much of The Challenge is the cast continuity, and how much is replaceable?"
 shape_h2: "Thirty-two cast, European pairing sequel."
+take_h2: "The same question, less heat."
 ---
 
 The franchise's second vet-and-rookie pairing experiment, with

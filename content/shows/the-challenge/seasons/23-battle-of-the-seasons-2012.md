@@ -29,6 +29,7 @@ watch_list:
   - episode_label: "Ep 11 · late tightening"
     body: "Cast count drops far enough that the editing room can finally find a rhythm. The franchise's grammar reasserts itself in the back third — the missions sharpen, the confessionals carry."
 shape_h2: "Twenty-four cast, season-grouping idea repeats."
+take_h2: "A strong concept, weaker take."
 ---
 
 The weaker take on a strong concept. MTV reprised the S5

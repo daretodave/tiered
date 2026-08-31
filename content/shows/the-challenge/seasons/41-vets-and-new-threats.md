@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 19 · final stretch"
     body: "The closing run before the two-part reunion. A season built on shifting partner status carries that tension into the final's physical demands."
 shape_h2: "Thirty-two cast, points-based partner lock-in."
+take_h2: "A three-phase pair contest."
 ---
 
 MTV filmed the season across Santiago and the Andes Mountains,

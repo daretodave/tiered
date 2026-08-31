@@ -12,6 +12,7 @@ cast_size_caption: "veterans from RR seasons 1–3"
 premiere_caption: "MTV · summer 1998"
 filming_caption: "an RV crossing the American West"
 shape_h2: "Seven cast, first crossover."
+take_h2: "The franchise's rough draft."
 ---
 
 MTV's first attempt to spin Road Rules into something more

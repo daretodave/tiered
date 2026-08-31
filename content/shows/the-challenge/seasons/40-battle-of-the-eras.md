@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 19 · anniversary close"
     body: "The closing stretch of a 40th-season event. The cross-era cast carries the franchise's accumulated history into the final's physical work."
 shape_h2: "Thirty-two cast, four eras represented."
+take_h2: "History becomes the spine."
 ---
 
 The 40th-season anniversary event — four teams split by the

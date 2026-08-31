@@ -32,6 +32,7 @@ watch_list:
   - episode_label: "Ep 19 · endurance close"
     body: "The closing stretch. The mixed-experience cast carries the veteran-versus-rookie tension into the final's physical work."
 shape_h2: "Thirty-four cast, heaviest rookie infiltration yet."
+take_h2: "A real casting gamble."
 ---
 
 A spy-themed season that loads the cast with rookie Agents

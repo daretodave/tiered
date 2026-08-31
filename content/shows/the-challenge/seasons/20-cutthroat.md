@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2010"
 host_caption: "tenth season at the helm"
 pull: "A late-era format pivot the franchise carried forward in shape, if not in name."
 shape_h2: "Thirty cast, first three-team split."
+take_h2: "A pivot carried forward."
 ---
 
 The franchise's first three-team experiment. MTV split the cast

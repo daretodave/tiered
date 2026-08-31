@@ -30,6 +30,7 @@ watch_list:
   - episode_label: "Ep 10 · endurance work"
     body: "Late-stage missions where family pairs perform synchronized endurance work. Watch the editing find the moments where shared upbringing reads as physical sync."
 shape_h2: "Twenty-eight cast, family-tied rookies debut."
+take_h2: "Fresh Meat's sibling format."
 ---
 
 The franchise's clearest experiment in importing fresh

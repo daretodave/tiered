@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2008"
 host_caption: "fifth season at the helm"
 pull: "A closer to the Gauntlet-branded era of the franchise."
 shape_h2: "Twenty-eight cast, third Gauntlet return."
+take_h2: "Closing an era's chapter."
 ---
 
 The third Gauntlet, a Veterans versus Rookies split for the

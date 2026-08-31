@@ -31,6 +31,7 @@ watch_list:
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The duos carry the imported-loyalty stakes into the final's physical work."
 shape_h2: "Twenty-eight cast, real-life duos paired."
+take_h2: "Loyalty imported, not manufactured."
 ---
 
 Pre-existing real-life duos cast as fixed pairs — the pair

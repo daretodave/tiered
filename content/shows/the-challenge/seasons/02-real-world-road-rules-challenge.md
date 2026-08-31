@@ -11,6 +11,7 @@ cast_size: 12
 cast_size_caption: "6 Real World, 6 Road Rules"
 premiere_caption: "MTV · 1999"
 shape_h2: "Twelve cast, first head-to-head."
+take_h2: "Locks in the team spine."
 ---
 
 The season that named the show. MTV took six Real World alumni

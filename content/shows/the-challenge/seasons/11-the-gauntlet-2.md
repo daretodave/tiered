@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2005"
 host_caption: "first season at the helm"
 pull: "TJ Lavin steps in and the franchise's modern register starts here."
 shape_h2: "Twenty-eight cast, new host debuts."
+take_h2: "Proof the format repeats."
 ---
 
 The sequel to the franchise-defining Gauntlet, and the first

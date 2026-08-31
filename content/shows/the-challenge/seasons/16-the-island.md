@@ -13,6 +13,7 @@ premiere_caption: "MTV · 2008"
 host_caption: "sixth season at the helm"
 pull: "The Challenge the show wasn't going to be — demonstrated and set aside."
 shape_h2: "Fourteen cast, bare-beach survival experiment."
+take_h2: "The show it wasn't."
 ---
 
 The franchise's Survivor experiment. MTV stripped the format

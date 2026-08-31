@@ -32,6 +32,7 @@ watch_list:
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The mixed international cast carries the rivalry premise into the final's physical work."
 shape_h2: "Thirty cast, US-vs-UK rivalry premise."
+take_h2: "The surprise already spent."
 ---
 
 The fresh-blood format returns with a US-versus-UK rivalry
