@@ -11,6 +11,7 @@ format_changes:
   - "U-Turn moved to the Detour decision point"
   - "First-ever route stop in Zimbabwe"
 canonical_position: 31
+take_h2: "Sharper tools, same standard shape."
 premiere_caption: "CBS · Friday"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

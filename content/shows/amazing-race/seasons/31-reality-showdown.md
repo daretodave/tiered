@@ -16,6 +16,7 @@ cast_size: 22
 cast_size_caption: "5 AR · 3 Survivor · 3 Big Brother"
 eyebrow: "Aired spring 2019 · The first cross-franchise field"
 shape_h2: "Cross-franchise alumni, three shows."
+take_h2: "Three shows' instincts, one road."
 lede: "Eleven teams drawn from across CBS reality — five from The Amazing Race, three from Survivor, three from Big Brother — racing a single global route."
 pull: "The first time the franchise opened its starting line to alumni of other shows — three games' worth of strategy in one field."
 watch_list:

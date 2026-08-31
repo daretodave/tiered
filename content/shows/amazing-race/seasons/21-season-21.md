@@ -8,6 +8,7 @@ location: "Global route, starting Los Angeles, California, finishing in New York
 host: Phil Keoghan
 format_changes: []
 canonical_position: 30
+take_h2: "Competent, and comfortable with it."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

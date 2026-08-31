@@ -8,6 +8,7 @@ location: "Global route, starting Los Angeles, California"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 12
+take_h2: "A brisk run under pressure."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

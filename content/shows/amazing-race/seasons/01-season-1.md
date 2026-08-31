@@ -8,6 +8,7 @@ location: "Global route, starting New York"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 5
+take_h2: "Where the format begins."
 premiere_caption: "CBS · Wednesday 9/8c"
 format_summary: "11 teams of 2 · standard"
 format_caption: "the show finding the format on-air"

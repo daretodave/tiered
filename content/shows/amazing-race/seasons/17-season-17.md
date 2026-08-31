@@ -8,6 +8,7 @@ location: "Global route, starting Boston, Massachusetts"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 18
+take_h2: "Polish without a new argument."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

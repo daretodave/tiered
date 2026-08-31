@@ -17,6 +17,7 @@ cast_size: 28
 cast_size_caption: "14 teams of 2"
 eyebrow: "Aired spring 2025 · Record 14-team cast"
 shape_h2: "Fourteen teams, twist every leg."
+take_h2: "A concept layered, not reshaped."
 lede: "Branded a season of surprises: the largest US cast the franchise has ever run, fourteen teams, with every leg built to carry a twist."
 pull: "Fourteen teams — the biggest US cast ever — and a structure where every single leg is engineered to spring something on the field."
 watch_list:

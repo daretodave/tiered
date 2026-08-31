@@ -8,6 +8,7 @@ location: "Global route, starting Santa Monica, California"
 host: Phil Keoghan
 format_changes: [summer-slot]
 canonical_position: 4
+take_h2: "Proof summer works too."
 premiere_caption: "CBS · Tuesday 9/8c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

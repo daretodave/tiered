@@ -8,6 +8,7 @@ location: "Global route, starting French Polynesia, finishing in Washington, DC"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 22
+take_h2: "Still finding fresh geography."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

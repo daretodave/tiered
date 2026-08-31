@@ -8,6 +8,7 @@ location: "Global route, starting Miami, Florida"
 host: Phil Keoghan
 format_changes: [first-all-stars]
 canonical_position: 2
+take_h2: "The template every returnee follows."
 display_title: "All <em>Stars</em>"
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "All-Stars · returnees"

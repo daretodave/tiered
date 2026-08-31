@@ -8,6 +8,7 @@ location: "Global route, starting Los Angeles, California"
 host: Phil Keoghan
 format_changes: [ten-team-cast]
 canonical_position: 8
+take_h2: "Full trust, fully earned."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "10 teams of 2 · trimmed cast"
 cast_size: 20

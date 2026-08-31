@@ -17,6 +17,7 @@ cast_size: 26
 cast_size_caption: "13 teams of 2"
 eyebrow: "Aired fall 2023 · Record 13-team field"
 shape_h2: "Record field, ninety-minute episodes."
+take_h2: "The biggest field, given room."
 lede: "The largest field the franchise had ever run — thirteen teams across roughly 23,800 miles, three continents, and nine countries, broadcast in feature-length 90-minute episodes."
 pull: "Thirteen teams, three continents, and the move to 90-minute episodes: the biggest field the race had ever sent out, given room to breathe."
 watch_list:

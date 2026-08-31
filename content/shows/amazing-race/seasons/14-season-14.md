@@ -8,6 +8,7 @@ location: "Global route, starting Locarno, Switzerland"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 20
+take_h2: "Solid, predictable, dependable."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

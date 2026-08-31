@@ -10,6 +10,7 @@ format_changes:
   - "Introduced the Save"
   - "Blind Detour"
 canonical_position: 27
+take_h2: "A small tool, big future."
 premiere_caption: "CBS · Friday"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

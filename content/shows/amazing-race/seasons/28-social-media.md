@@ -18,6 +18,7 @@ cast_size: 22
 cast_size_caption: "11 teams of 2"
 eyebrow: "Aired spring 2016 · The social-media casting season"
 shape_h2: "Hometown starts, three first-time stops."
+take_h2: "A tweak, not a rewrite."
 lede: "Eleven social-media personalities, each paired with a relative or friend, left from their own hometowns into a route that touched three countries the race had never visited."
 pull: "A casting concept that turns the starting line into eleven separate front doors — and the route into a feed."
 watch_list:

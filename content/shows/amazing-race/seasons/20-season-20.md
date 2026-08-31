@@ -8,6 +8,7 @@ location: "Global route, starting Santa Barbara, California, finishing in Hawaii
 host: Phil Keoghan
 format_changes: []
 canonical_position: 28
+take_h2: "A well-worn lane."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22

@@ -8,6 +8,7 @@ location: "Global route, starting Los Angeles, California"
 host: Phil Keoghan
 format_changes: []
 canonical_position: 17
+take_h2: "Sharper geography than its neighbors."
 premiere_caption: "CBS · Sunday 8/7c"
 format_summary: "12 teams of 2 · standard"
 cast_size: 24

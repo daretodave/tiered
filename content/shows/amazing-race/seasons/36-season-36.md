@@ -17,6 +17,7 @@ cast_size: 26
 cast_size_caption: "13 teams of 2"
 eyebrow: "Aired spring 2024 · Charter-plane route"
 shape_h2: "Charter flights, all-Americas route."
+take_h2: "The most self-contained outing yet."
 lede: "The all-Americas season: roughly 11,711 miles across two continents and eight countries, run on a chartered Global Crossing Airlines A320 rather than commercial flights, with no non-elimination legs."
 pull: "A charter plane, no non-elimination legs, and a route that never leaves the Americas — the most self-contained outing the modern franchise has run."
 watch_list:

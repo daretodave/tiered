@@ -8,6 +8,7 @@ location: "Global route, starting Long Beach, California"
 host: Phil Keoghan
 format_changes: [first-crossover-returnees]
 canonical_position: 1
+take_h2: "The moment it went national."
 premiere_caption: "CBS · Tuesday 9/8c"
 format_summary: "11 teams of 2 · standard"
 cast_size: 22
