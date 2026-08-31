@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Early run · the twin twist"
     body: "The show reuses the sibling-linked rose mechanic from the year before, this time built around a pair of twins whose fates on the beach are tied together."
   - episode_label: "Midseason · the house adjusts"
-    body: "With the early disciplinary exit already reshaping the group, watch how the remaining cast recalibrates its alliances faster than a normal season would need to."
+    body: "With the early producer-ordered removal already reshaping the group, watch how the remaining cast recalibrates its alliances faster than a normal season would need to."
   - episode_label: "Finale · Sayulita's second run closes"
     body: "Season three wraps its second Sayulita summer having tested the format against an unusual early disruption — a stress test the show hadn't faced in its first two years."
 ---

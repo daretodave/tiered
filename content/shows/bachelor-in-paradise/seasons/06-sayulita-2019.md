@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Midseason · the structure holds"
     body: "Watch how the men's-week/women's-week rose split accommodates the new pairing without changing the ceremony format for anyone else on the beach."
   - episode_label: "Finale · a hosting era closes"
-    body: "Season six closes out Chris Harrison's run as host, the longest tenure any single host has had on this show."
+    body: "This finale closes out Chris Harrison's run as host, the longest tenure any single host has had on this show."
 ---
 
 Season six runs thirteen episodes, the franchise's longest to that point, and it's Chris Harrison's final season hosting the show. It's also a format first: the franchise's first same-sex couple appears on the beach, and the rose-ceremony structure gets a real accommodation for it, with each partner distributing roses during their own designated week rather than forcing the format to pick one.

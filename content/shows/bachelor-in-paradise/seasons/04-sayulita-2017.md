@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Mid-shoot · the production pause"
     body: "Filming stops for about a week and a half in June 2017 after an on-set misconduct allegation involving two cast members. An investigation clears the production, and filming resumes."
   - episode_label: "Late run · a smaller group finishes"
-    body: "The two cast members named in the investigation don't return to active participation, leaving a visibly smaller group to close out the run than the one that started it."
+    body: "The two contestants named in the investigation don't return to active participation, leaving a visibly smaller group to close out the run than the one that started it."
 ---
 
 Season four introduces Wells Adams as the beach bartender, a role he'd keep for years to come. It's also the show's most disrupted production: filming halts in June 2017 after an on-set misconduct allegation, and though an investigation clears the show within days, two cast members don't return. The season lands at nine episodes — its shortest run yet.

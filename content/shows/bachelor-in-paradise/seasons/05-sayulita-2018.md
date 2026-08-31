@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Early run · the international guests"
     body: "Contestants from Bachelorette Canada, Bachelor New Zealand, and Bachelor Japan join the beach for the first time, a genuinely global cast expansion the format hadn't tried before."
   - episode_label: "Midseason · a guest behind the bar"
-    body: "Wells Adams gets company at the bar when a guest bartender from Bachelor Japan joins him, a small but pointed nod to the season's international framing."
+    body: "Wells Adams gets company at the bar when a guest bartender from one of the visiting international franchises joins him, a small but pointed nod to the season's global framing."
   - episode_label: "Late run · fresh faces from the flagship"
     body: "Contestants freshly eliminated from the concurrently airing US Bachelorette season arrive on the beach, blurring the line between the two shows' calendars."
 ---

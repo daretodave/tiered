@@ -24,7 +24,7 @@ watch_list:
   - episode_label: "Premiere · a new country"
     body: "The show leaves Mexico for the first time, relocating to Costa Rica after nine straight seasons in Sayulita, and returns to its traditional summer premiere slot."
   - episode_label: "Early run · a wider cast net"
-    body: "Contestants pulled from the Golden Bachelor and Golden Bachelorette spinoffs join the beach for the first time, an age-inclusive casting expansion the format hadn't tried before."
+    body: "Contestants pulled from the Golden Bachelor and Golden Bachelorette spinoffs join the beach, an age-inclusive casting expansion the format hadn't tried before."
   - episode_label: "Midseason · two bartenders"
     body: "Hannah Brown joins Wells Adams behind the bar, expanding a role that had belonged to one person for years into a duo."
   - episode_label: "Later run · a new vote"

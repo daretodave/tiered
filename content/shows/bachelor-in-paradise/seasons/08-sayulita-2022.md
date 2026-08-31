@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Post-ceremony-two · the Casa Amor twist"
     body: "After the second rose ceremony, men and women split into separate groups, each introduced to an entirely new set of contestants — a format borrowed from Love Island UK and unlike anything the show had tried before."
   - episode_label: "Later run · the groups reunite"
-    body: "Watch how the format handles bringing the split groups back together, after each side spent time getting to know an entirely new cast."
+    body: "Watch how the format handles bringing the split groups back together, after each side spent time getting to know a completely unfamiliar set of faces."
 ---
 
 Season eight brings in Jesse Palmer as host and shifts the show's calendar to a fall premiere for the first time. Sixteen episodes — the largest order in franchise history — make room for the format's biggest structural swing yet: after the second rose ceremony, the cast splits by gender, and each group meets an entirely new set of contestants, a Casa Amor-style twist borrowed from Love Island UK.
