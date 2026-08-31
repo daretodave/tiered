@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · the city as texture"
     body: "Portland's food, music, and DIY culture shows up throughout, distinct from the format's more polished recent city settings."
   - episode_label: "Final episodes · the loft wraps"
-    body: "Worth watching as a closing bookend — the franchise retires its founding opening narration right after this run."
+    body: "Worth watching as a closing bookend — the franchise retires this narration style right after this run."
 ---
 
 A group of strangers move into a Portland loft, each pursuing an individually chosen job rather than a shared group assignment. It's the last Real World season to open with the franchise's long-running seven-strangers narration, retired the following season after more than two decades on air. Portland's independent, DIY-leaning culture gives the run a distinct backdrop for a format quietly closing out an era.

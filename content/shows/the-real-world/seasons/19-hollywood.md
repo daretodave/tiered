@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Early episodes · auditions replace the group job"
     body: "Instead of one shared job, the season follows individual auditions and industry gigs — the biggest structural swing the format had made in years."
   - episode_label: "Mid-season · the city as circuit"
-    body: "Los Angeles's entertainment industry becomes the season's real backdrop, more than the house itself."
+    body: "Los Angeles's audition-and-pitch circuit becomes the season's real backdrop, more than the house itself."
   - episode_label: "Final episodes · the run closes"
     body: "Worth watching for how the season's format experiment plays out — a clear precursor to the more produced, ambition-driven seasons the franchise would run later."
 ---

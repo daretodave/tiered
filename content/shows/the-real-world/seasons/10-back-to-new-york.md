@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Mid-season · New York, a decade later"
     body: "Worth comparing to the original 1992 season — the city, the format, and the cameras have all changed considerably in the years between."
   - episode_label: "Final episodes · the loft wraps"
-    body: "The season closes on a much larger, more polished production than the franchise's earliest New York run, a decade almost to the day later."
+    body: "The season closes on a much larger, more polished production than the franchise's earliest Manhattan run, a decade almost to the day later."
 ---
 
 Back to New York is the season that breaks the franchise's unwritten new-city-every-year rule, and the show treats the return as an event. The production scale is obviously bigger than anything the format had used before, and the job-triggers-eviction wrinkle raises the stakes of the group-job structure. It's the first "sequel city" season, a format the show wouldn't revisit again for decades.

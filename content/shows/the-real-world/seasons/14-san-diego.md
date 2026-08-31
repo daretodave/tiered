@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · the individual jobs"
     body: "Each roommate's separate job placement, a structure carried over from Paris, keeps several storylines running in parallel rather than centered on one shared task."
   - episode_label: "Final episodes · the house wraps"
-    body: "Worth comparing to Paris's quieter, more observational tone from the season before — San Diego runs at a noticeably higher register throughout."
+    body: "Worth comparing to Paris's quieter, more observational tone from the season before — this cast runs at a noticeably higher register throughout."
 ---
 
 San Diego's bayfront house gives the season a striking, sun-lit setting, and this cast built fast, confrontational chemistry from the opening episodes. The individual-jobs structure introduced in Paris carries over here, with each roommate placed separately across the city rather than sharing one task. It's widely regarded as one of the franchise's more combustible casts, a season people still cite when talking about the show's mid-2000s run.

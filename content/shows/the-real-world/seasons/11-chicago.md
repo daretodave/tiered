@@ -22,7 +22,7 @@ watch_list:
   - episode_label: "Ep 1 · the Wicker Park storefront"
     body: "The converted bookstore-and-coffeehouse setting puts the cast in full public view — watch how differently that shapes the season compared to prior seasons' more private houses."
   - episode_label: "Early episodes · local friction"
-    body: "This shoot drew visible pushback from Wicker Park residents over the production's presence — a rare instance of the neighborhood itself becoming part of the season's texture."
+    body: "This shoot drew visible pushback from the neighborhood's residents over the production's presence — a rare instance of the block itself becoming part of the season's texture."
   - episode_label: "Mid-season · the parks department job"
     body: "The group job places the cast with the city parks department, a public-service assignment distinct from the media and retail jobs of recent seasons."
   - episode_label: "Mid-season · a cast milestone"

@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · island life sets the pace"
     body: "Notice how much slower and sunnier this season's rhythm feels compared to the East Coast and international runs before it."
   - episode_label: "Later episodes · the cast settles into the job"
-    body: "Watch how the surf-shop assignment becomes a recurring backdrop for group scenes through the back half of the season."
+    body: "Watch how the Waikiki job becomes a recurring backdrop for group scenes through the back half of the season."
   - episode_label: "Final episodes · the beach house wraps"
     body: "The Hawaii setting closes out a season that leaned harder on location and atmosphere than any of the prior seven runs."
 ---

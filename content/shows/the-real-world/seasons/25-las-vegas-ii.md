@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · the charity work"
     body: "The group's shared assignment interning with a charitable organization gives the season a different texture than the original Vegas run's nightclub job."
   - episode_label: "Final episodes · the penthouse wraps"
-    body: "Worth watching against the 2002 Las Vegas season for how the format's second trip to the strip differs from its first."
+    body: "Compare this run directly to the 2002 original for how the format's second trip to the strip differs from its first."
 ---
 
 Seven strangers share a penthouse suite at the Hard Rock Hotel, the format's second trip to Las Vegas nearly a decade after the original run reinvented the show. The cast, interning together with a charitable organization, is the smallest the franchise had cast since Hollywood. The resort setting recalls the 2002 season without repeating its structure, giving this run its own footing on familiar ground.

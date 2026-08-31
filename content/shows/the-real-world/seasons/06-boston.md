@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Mid-season · New England as a backdrop"
     body: "Boston is the only Real World season set in New England — notice how the city's texture differs from the prior warm-weather and international locations."
   - episode_label: "Final episodes · the season closes"
-    body: "Watch for the connections this cast built with the after-school program's kids — a rare instance of the group job producing genuine community ties on screen."
+    body: "Watch for the connections this cast built with the after-school program's kids — a rare instance of the placement producing genuine community ties on screen."
 ---
 
 Boston is a formalizing season more than an innovating one — it takes the group-job structure Miami introduced and pairs it with a new promotional tool, the pre-broadcast casting special, that becomes a recurring franchise habit. The firehouse setting gives it a distinct look, and this cast would also become one of the earliest groups to cross over into the franchise's Challenge spinoff format.

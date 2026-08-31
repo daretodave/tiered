@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · the coastline as backdrop"
     body: "La Jolla's beach setting gives the season a laid-back visual register distinct from the format's recent city-loft runs."
   - episode_label: "Final episodes · the house wraps"
-    body: "Worth watching against the 2004 San Diego season for how the format's second coastal trip compares."
+    body: "Worth watching against 2004's original run for how the format's second coastal trip compares."
 ---
 
 Seven strangers share a La Jolla beach house, seven years after the franchise's first San Diego season, working together at House of Blues. The group job marks a return to the shared-assignment structure after a run of seasons built around individual pursuits. The coastal setting gives the run a relaxed visual register, distinct from the city lofts the format had leaned on recently.

@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Later episodes · the Road Rules crossover"
     body: "Watch for a crossover stunt with sister series Road Rules — an early example of the franchise's shows sharing cast and screen time."
   - episode_label: "Final episodes · the mansion wraps"
-    body: "The season closes out a decade of format-building with nearly every established structural piece — group job, group trip, crossover — running at once."
+    body: "The season closes out a decade of format-building with nearly every established structural piece — the shared work assignment, the international excursion, the crossover — running at once."
 ---
 
 New Orleans is the season where the format's house style fully sets in: a group job, an international group trip, and a crossover stunt with a sister series, all in one run. It doesn't introduce a new structural idea so much as prove how comfortably the established pieces now fit together — a competent, confident execution of a format a decade into refining itself.

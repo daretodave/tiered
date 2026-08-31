@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ongoing · personal phones"
     body: "This is the first season to give roommates personal smartphones for outside contact, replacing the shared house phone room — watch for how it changes the group's isolation."
   - episode_label: "Final episodes · the house settles"
-    body: "Worth watching for how fourteen roommates, half of them carrying real history, eventually find a working rhythm."
+    body: "Worth watching for how fourteen roommates, half of them already tied to someone in the house, eventually find a working rhythm."
 ---
 
 Seven original roommates share a Capitol Hill house with seven newcomers who were told, during the casting process, they'd been picked for Road Rules — the actual twist, that each one has genuine prior history with an original roommate, stays hidden until move-in day. It's also the first season to swap the shared house phone for personal smartphones, giving the cast direct outside contact for the first time.

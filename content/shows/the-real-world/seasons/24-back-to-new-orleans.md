@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Mid-season · the rebuilding work"
     body: "The cast's group assignment centers on post-Katrina volunteer rebuilding — a more civic-minded job than most of the format's group tasks."
   - episode_label: "Final episodes · the residence wraps"
-    body: "Worth comparing directly to the original 2000 New Orleans season for how much the city, and the format, had changed."
+    body: "Worth comparing directly to the original 2000 season here for how much the city, and the format, had changed."
 ---
 
 Eight strangers share an Uptown New Orleans residence, a decade after the franchise's first visit to the city, this time taking on volunteer rebuilding work in the years following Hurricane Katrina. It's the first Real World season housed in a residential property rather than a built commercial set. The return gives the season real weight, letting a familiar city carry a genuinely different kind of assignment.

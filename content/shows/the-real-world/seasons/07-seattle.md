@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · the prior friendship plays out"
     body: "Watch how two roommates' prior college relationship colors the group dynamic differently than a house of total strangers would."
   - episode_label: "Later episodes · the live broadcast"
-    body: "The season builds toward the cast producing and hosting a live radio broadcast — a rare instance of the group job culminating in a single on-air event."
+    body: "The season builds toward the cast producing and hosting a live radio broadcast — a rare instance of the shared assignment culminating in a single on-air event."
   - episode_label: "Final episodes · Elliott Bay as backdrop"
     body: "The waterfront pier setting gives the season's final stretch a distinct look compared to the format's prior indoor-house seasons."
 ---
