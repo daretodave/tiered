@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2015 · The celebrity-guest twist"
 format_summary: "17 houseguests · weekly guest-driven twists"
 format_caption: "a rotating celebrity installs the week's wrench"
+take_h2: "Tried once, walked back."
 ---
 
 The summer the producers handed weekly twist authority to a rotating cast of celebrity guests, each landing in the BB studio to drop a new mechanic into the game. The Takeover device pulls the show's pacing in five directions at once, and the cast — seventeen houseguests including a mid-season twin reveal — never quite settles into the rhythm a Big Brother summer wants. A season the franchise tried, learned from, and quietly walked back. Useful for the experiment.

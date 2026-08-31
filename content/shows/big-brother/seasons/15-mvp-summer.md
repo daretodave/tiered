@@ -10,6 +10,7 @@ host: Julie Chen
 eyebrow: "Aired summer 2013 · The season the feeds outpaced the broadcast"
 format_summary: "16 houseguests · viewer-voted MVP nominee"
 format_caption: "the public chose a third nominee each week"
+take_h2: "Interesting twist, hard aftermath."
 ---
 
 The MVP twist hands the public a third nomination each week and the season aspires to a structurally tighter game. What it became is something else — the run the live feeds outpaced the broadcast on, and the one CBS had to address on air when houseguest conduct kept landing outside what the edit could hold. The season aged hard, and aged fast. Worth knowing as part of franchise text. Worth watching only with that text in hand.
