@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ep 8 · Madison pivot"
     body: "Mid-season the season moves across the state. The cast cooks against regional pantries the franchise's road-show grammar carries cleanly into the new era."
   - episode_label: "Ep 12 · finals run-up"
-    body: "The closing stretch across Wisconsin. The cast has spent the runway adapting under a new host, and the finals approach reads off the season's regional structure."
+    body: "The closing stretch across Wisconsin. The cast has spent the runway adapting to Kish's judging register, and the finals approach reads off the season's regional structure."
 ---
 
 Wisconsin. Top Chef opens a new era — Kristen Kish takes the

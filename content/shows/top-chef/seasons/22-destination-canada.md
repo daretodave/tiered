@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 4 · Toronto brief"
     body: "An Elimination Challenge built around Toronto's culinary range. The brief rewards chefs who read a city the flagship had never cooked in."
   - episode_label: "Ep 8 · Alberta pivot"
-    body: "Mid-season the season relocates to the Calgary–Canmore corridor. The cast cooks against mountain-and-prairie pantries the road-show grammar handles cleanly."
+    body: "Mid-season the season relocates to the Calgary–Canmore corridor. The cast cooks against mountain-and-prairie pantries the flagship's international format handles cleanly."
   - episode_label: "Ep 12 · finals run-up"
     body: "The closing stretch across Canada. The cast has spent the runway adapting across borders and regions, and the finals approach reads off the season's international structure."
 ---

@@ -26,7 +26,7 @@ watch_list:
     body: "Challenges built around the Pacific Northwest's seafood access. Watch the judge's table read the food against the city's working fish markets — regional fluency matters here in a way it would not in a generic coastal city."
   - episode_label: "Ep 9 · Restaurant Wars"
     body: "A Seattle staging of the recurring service format. The cast's technical depth shows in the plate composition — this is restaurant-level food, not stunt cooking."
-  - episode_label: "Ep 13 · late-stage briefs"
+  - episode_label: "Ep 13 · pantry squeeze"
     body: "Mid-late challenges where the regional pantry tightens the brief. The cooks who treat Seattle as a generic city take a hit; the ones who read the location deliver."
   - episode_label: "Ep 16 · finals run-up"
     body: "Late-stage Elimination Challenges where the season's bench depth produces the cleanest cooking on the show in years."

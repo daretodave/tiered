@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 5 · borough geography"
     body: "Challenges built around specific NYC neighborhoods. The show argues that New York is not one food culture but several adjacent ones — and the cast has to read the difference."
   - episode_label: "Ep 8 · Restaurant Wars"
-    body: "A New York staging of the recurring service format. The pressure of cooking restaurant food in the city that knows it best is the season's clearest argument."
+    body: "A Manhattan staging of the recurring service format. The pressure of cooking restaurant food in the city that knows it best is the season's clearest argument."
   - episode_label: "Ep 11 · finals run-up"
     body: "Late-stage Elimination Challenges where the format finds the edges of what the cast can deliver. The season runs hot in its closing stretch."
 ---

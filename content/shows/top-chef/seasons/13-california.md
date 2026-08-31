@@ -25,9 +25,9 @@ watch_list:
   - episode_label: "Ep 4 · wine country brief"
     body: "An Elimination Challenge built around Northern California's wine and produce infrastructure. The brief tests pairing fluency, not just cooking."
   - episode_label: "Ep 8 · coastal pivot"
-    body: "Mid-season the season relocates south. Watch how the editing handles the transition — the franchise's road-show grammar at its most confident."
+    body: "Mid-season the season relocates south. Watch how the editing handles the transition — the franchise's city-hopping rhythm at its most confident."
   - episode_label: "Ep 11 · LA finale run-up"
-    body: "The season's closing stretch in Southern California. The cast has spent the runway adapting to new kitchens, and the finals approach reads cleanly off the format's road-show muscle."
+    body: "The season's closing stretch in Southern California. The cast has spent the runway adapting to new kitchens, and the finals approach reads cleanly off the format's relocation confidence."
 ---
 
 California. Top Chef goes back on the road. A multi-city

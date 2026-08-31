@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 8 · Restaurant Wars"
     body: "An all-star staging of Restaurant Wars. The format pushes harder because the chefs have all run it before and know exactly what the judges watch for."
   - episode_label: "Ep 12 · finals run-up"
-    body: "The closing stretch with a season of returnee pressure behind it. The technical ceiling of the fan-favorite bench shows in the finals approach."
+    body: "The closing stretch with a season of returnee pressure behind it. The technical ceiling of the veteran bench shows in the finals approach."
 ---
 
 All-Stars L.A. Top Chef brings back a roster of fan-favorite

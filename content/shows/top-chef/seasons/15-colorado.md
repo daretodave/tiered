@@ -25,9 +25,9 @@ watch_list:
   - episode_label: "Ep 5 · altitude brief"
     body: "An Elimination Challenge that leans into Colorado's elevation, where cooking times and techniques shift. The brief tests adaptation as much as technique."
   - episode_label: "Ep 9 · mountain-town pivot"
-    body: "Mid-season the season relocates into Colorado's resort towns. Watch how the editing handles the geographical transition with the road-show grammar at its mature pacing."
+    body: "Mid-season the season relocates into Colorado's resort towns. Watch how the editing handles the geographical transition with the franchise's well-worn multi-stop rhythm."
   - episode_label: "Ep 12 · finals run-up"
-    body: "The closing stretch in the mountains. The cast has spent the runway adapting to thin-air kitchens, and the finals approach reads off the season's road-show structure."
+    body: "The closing stretch in the mountains. The cast has spent the runway adapting to thin-air kitchens, and the finals approach reads off the season's practiced relocation format."
 ---
 
 Colorado. Top Chef takes the road show to altitude, running
