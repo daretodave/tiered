@@ -14,6 +14,7 @@ format_caption: "first rural-archetype Bachelor"
 cast_size: 30
 filming_caption: "Agoura Hills · Iowa hometown stretch"
 host_caption: "Chris Harrison's nineteenth season"
+take_h2: "A window the franchise kept reopening."
 ---
 
 The franchise's first rural-archetype lead — an Iowa farmer from a town small enough that the producers shot the hometown stretch as an editorial set piece. Arlington gets airtime no Bachelor location had received outside the international travel runs. The casting tilts toward women who register the contrast on camera, and the cocktail parties carry a different charge knowing where the season is heading. Chris Harrison hosts a season that opens a casting window the franchise kept revisiting.

@@ -10,6 +10,7 @@ host: Chris Harrison
 eyebrow: "Aired winter 2012 · Sonoma winemaker"
 format_summary: "25 women · Sonoma winemaker lead"
 format_caption: "vineyard returnee from a prior season"
+take_h2: "Remembered for friction, not romance."
 ---
 
 A Sonoma winemaker takes the mansion after a prior run on the sister franchise — the kind of casting the producers had been refining since Andrew Firestone's vineyard run nine seasons earlier. Travel dates revisit prestige stops: Park City, San Francisco, Puerto Rico, Belize, Switzerland. The cocktail-party energy reads more confrontational than the prior winter, and the producers lean into it. Chris Harrison hosts a season remembered for casting friction more than romance.
