@@ -211,8 +211,22 @@ export function VotePair({
   // on the target, not the signed net — the pass-34 retarget
   // from "net votes" stays; only the wording around it moves.
   const roundedCount = Math.round(state.count)
+  // Critique pass-147 HIGH: for a signed-in non-voter the zero-state
+  // `zeroLabel` CTA ("be the first to vote") stacked directly under a
+  // state cap already reading "you haven't voted yet" plus VoteRowHead's
+  // "Your vote / cast vote" eyebrow — the same "no vote yet" fact stated
+  // four times in a five-line block. `zeroLabel`'s CTA framing is only
+  // load-bearing for anon viewers, who see no cap and no eyebrow; a
+  // signed-in non-voter gets the plain tally wording instead, same as
+  // any other count.
   const displayLabel =
-    roundedCount === 0 ? zeroLabel : roundedCount === 1 ? labelSingular : label
+    roundedCount === 0
+      ? signedIn
+        ? label
+        : zeroLabel
+      : roundedCount === 1
+        ? labelSingular
+        : label
   // ariaSubject stays pinned to the plural `label` regardless of the
   // zero-state swap — the aria-labels describe the vote *action*
   // ("Vote on votes so far"), not the current tally's wording.

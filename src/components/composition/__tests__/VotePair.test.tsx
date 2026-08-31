@@ -269,6 +269,27 @@ describe('<VotePair>', () => {
       expect(labelText()).toBe('no votes yet')
     })
 
+    it('swaps the zero-state CTA for the plain tally label when the viewer is signed in (critique pass-147 HIGH)', async () => {
+      // A signed-in non-voter already reads "you haven't voted
+      // yet" from the state cap and "cast vote" from VoteRowHead's
+      // eyebrow — stacking the `zeroLabel` CTA under a "0" restated
+      // the same fact a third and fourth time. Anon viewers see
+      // neither the cap nor the eyebrow, so their zero-state CTA is
+      // unchanged.
+      getBody = { ok: true, value: 0, count: 0, signedIn: true }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('votes so far')
+      expect(labelText()).not.toBe('be the first to vote')
+    })
+
+    it('keeps the zero-state CTA for anonymous viewers', async () => {
+      getBody = { ok: true, value: 0, count: 0, signedIn: false }
+      render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+      await flushAsync()
+      expect(labelText()).toBe('be the first to vote')
+    })
+
     it('flips to the zero-state invitation after a singular-count round-trip retract', async () => {
       getBody = { ok: true, value: 1, count: 1 }
       render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
