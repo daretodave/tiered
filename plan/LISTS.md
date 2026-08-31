@@ -11258,3 +11258,71 @@ last time a curator actually looked.
   new season, a finale-gate pickup extending an existing single-show
   list, or an oversight-authorized scout-research process to reach facts
   outside the repo's own season-file text.
+- **2026-08-31, `/march` Step 3b.5 tick (`/ship-content` Rule 3,
+  content-curator direct invocation): zero-ship.** Confirmed Rule 2 is
+  still stalled (the full `plan/CADENCE.md` gap table is starred
+  confirmed-but-unaired) and the `take_h2`/`shape_h2` side-drain is
+  exhausted catalog-wide except the frozen `the-voice` (issue #762, not
+  touched). No list is 90-day review-due. Worked the priority order
+  fresh rather than trusting yesterday's summary. (1) **Priority 1,
+  `one-season-two-flags`** (structure, 9 entries): ran an independent
+  regex sweep (`international|nationality|two countries|split.*flag|
+  cast.*abroad|dual.?nation`) across every `content/shows/**/seasons/*
+  .md`. Every hit resolved to either an already-staked entry on this
+  list or a false positive — `top-chef/seasons/14-charleston.md` only
+  matches on the substring "country" inside "Lowcountry," and
+  `top-chef/seasons/22-destination-canada.md` is a cross-border-shoot-
+  on-unchanged-cast pattern this file has already logged and rejected
+  for this exact season. Also read `rhodubai/seasons/01-season-1.md` in
+  full — its international premise runs the whole show, not one
+  structural season, so it's off-thesis for this list same as the
+  standing rejection pattern. No 10th entry exists; 9/9 stands.
+  (2) **Priority 2, other sub-10 non-single lists**: enumerated every
+  `content/themes/*.md` by entry count and category. Every list under
+  10 entries is either `category: single` (out of scope per the brief:
+  `new-house-rules-every-time-the-castle-reopens`,
+  `the-return-trip-built-into-the-format`,
+  `every-season-strikes-a-different-bargain-with-lana`,
+  `the-quiet-register-was-the-whole-point-until-ibiza`,
+  `the-series-the-uk-edition-finally-made-its-own`,
+  `home-seasons-waited-relocation-seasons-didnt`,
+  `seven-ways-to-break-the-same-app`, `survivor-pillars`,
+  `the-blueprint-gets-rewritten-every-winter`,
+  `the-wait-between-seasons-was-never-the-same-twice`,
+  `it-took-five-seasons-to-find-a-home`) or an already-flagged dead end
+  (`the-calendar-moved-the-format-didnt` at 6,
+  `the-pitch-names-where-the-idea-came-from` at 3) or the
+  already-exhausted `the-vote-left-the-phone-line` (era, 9 entries —
+  re-read the file in full; its extremely deep prior sweep history
+  across The Voice, Masked Singer, Big Brother, Love Island US/UK, Drag
+  Race/All Stars, DWTS, AGT, Idol, and SYTYCD still leaves no
+  ungrounded 10th channel-migration season). No extend candidate
+  cleared. (3) **Priority 3, new-list invention**: tried four fresh
+  angles before landing on the one worth logging in depth.
+  Producer-credit, theme-song/title-sequence, and sponsor/brand-
+  integration angles all returned zero or single-show hits on a direct
+  grep sweep. A social-media/influencer-casting angle looked promising
+  off `amazing-race/seasons/28-social-media.md` but that season is
+  already triple-staked (`the-roster-was-the-twist`,
+  `the-cast-arrived-pre-famous`, `when-the-cast-was-already-related`)
+  and no second show grounds an equivalent brief. The deepest chase was
+  **`below-deck-down-under` as a new `category: single` list** (4 filed
+  seasons, no dedicated single-show list yet, and a real-looking
+  escalating-scale thesis: episode count 10→10→17→18, yacht size and
+  distance from Australian home waters both climbing season over
+  season, crew maturity arc from founding cast to veteran charter crew
+  by S4). Read all four season files and the show's own `canon.md` in
+  full — the canon already performs this exact escalating-scale
+  ranking editorially, and a `show: below-deck-down-under` grep across
+  every theme file confirmed all four seasons' headline facts are
+  already staked, several twice, across `the-paycheck-writes-the-plot`,
+  `two-channels-same-night`, `a-change-of-address`,
+  `familiar-faces-wrong-franchise`, `new-flags-planted-fast`,
+  `built-for-the-drop`, and `best-location-reveals`. This matches this
+  file's own prior finding at line ~8094 verbatim ("every season's
+  headline fact is already staked elsewhere") — a tenth-plus
+  independent confirmation of the same dead end. No `content/themes/
+  *.md` file written or edited this pass; no ledger row changed. Fully
+  consistent with issue #758 and the 2026-08-30 pass one day prior —
+  the catalog is exhausted for keyword-driven discovery absent new raw
+  season text or an oversight-authorized scout-research pass.
