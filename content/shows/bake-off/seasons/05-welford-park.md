@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 5 · the famous episode"
     body: "A widely-discussed signature challenge runs into the warm weather. Worth watching for how the editing handles a production complication and how the tent responds in real time."
   - episode_label: "Ep 7 · technical sharpens"
-    body: "The technical-bench expectations tighten. Mary Berry and Paul Hollywood are working a judging cadence at its peak, and the casting class has settled into who pushes whom."
+    body: "The technical-bench expectations tighten. The judges are working a cadence at its peak, and the casting class has settled into who pushes whom."
   - episode_label: "Ep 9 · semi-final"
     body: "The bench thins to its strongest bakers. Watch the showstopper construction and the way the editing trusts each remaining baker to carry their own bench without underlining the stakes."
 ---

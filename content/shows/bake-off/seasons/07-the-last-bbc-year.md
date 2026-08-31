@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 5 · botanical week"
     body: "A new theme stretches the bench. Watch the signature challenge framing — the production is willing to ask more of the bakers than the early years would have."
   - episode_label: "Ep 7 · the bench tightens"
-    body: "The casting class thins. Mary Berry and Paul Hollywood are working a judging cadence at full strength, and the technical sharpens visibly across the run."
+    body: "The bench thins to its steadiest bakers. The judging pair is working a cadence at full strength, and the technical sharpens visibly across the run."
   - episode_label: "Ep 10 · the close"
     body: "The series brings its bench to the final challenge. Worth the watch for the texture of a lineup quietly closing a chapter — the editing knows what the run is and trusts the moment."
 ---

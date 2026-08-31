@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 5 · the comedy lands"
     body: "Mel Giedroyc and Sue Perkins find the warmth that defined their tenure. The pacing of their tent-flap interruptions sharpens noticeably across the back half of the run."
   - episode_label: "Ep 6 · the close"
-    body: "The pilot brings its bakers to the final challenge. Watch the editing as the production figures out how to send a Bake Off series off — the grammar fans now expect was being written here for the first time."
+    body: "The pilot brings its bakers to the final challenge. Watch the editing as the production figures out how to send a Bake Off series off — the grammar fans now expect was being written here with no established playbook to follow."
 ---
 
 The original Bake Off. The series toured the UK rather than fixing itself to one estate, with the production moving between historic locations across a six-episode run. Mary Berry and Paul Hollywood read younger and more cautious here, and Mel Giedroyc and Sue Perkins are inventing their double-act in real time. The cast plays it earnest, the bench is gentler, and the format is working out what it wants to be. A canonical entry for what it taught the show.

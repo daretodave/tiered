@@ -30,7 +30,7 @@ watch_list:
   - episode_label: "Ep 6 · the handshake era"
     body: "Paul Hollywood's reward gesture starts becoming part of the bench's vocabulary in the Channel 4 era. The broadcast leans into the moment in a way the BBC run did not need to."
   - episode_label: "Ep 9 · semi-final"
-    body: "The bench thins to its strongest bakers. The new lineup has earned its place by this point, and the showstoppers carry visible craft under the new judging dynamic."
+    body: "The bench thins to its strongest bakers. The replacement pairing has earned its place by this point, and the showstoppers carry visible craft under the changed judging chemistry."
 ---
 
 The Channel 4 reset, and a structural experiment the franchise pulled off in one move. Sandi Toksvig and Noel Fielding replaced Mel and Sue at the tent flap, Prue Leith joined Paul Hollywood at the judge's table, and the show kept its location at Welford Park as the one piece of continuity carrying the audience across. The technical bench reads a touch firmer under the new judging dynamic, and the casting class is strong enough to absorb the change.

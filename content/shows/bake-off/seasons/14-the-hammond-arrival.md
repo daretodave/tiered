@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Ep 2 · the new category format"
     body: "The run works the first themed weeks built after national themes were scrapped — general and party-cake categories instead. Notice how the format reframes a week without leaning on a country."
   - episode_label: "Ep 5 · the bench mid-run"
-    body: "Prue Leith and Paul Hollywood work a technical at full discipline. The casting class reads strong, and the new presenter pairing has settled into the room by this point."
+    body: "Prue Leith and Paul Hollywood work a technical at full discipline. The casting class reads strong, and the Hammond-Fielding duo has settled into the room by this point."
   - episode_label: "Ep 8 · the run narrows"
     body: "The competition thins to its strongest bakers. The Hammond pairing has earned its place, and the showstoppers carry the run's confidence."
 ---

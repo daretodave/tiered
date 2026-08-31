@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 6 · the bench mid-run"
     body: "Prue Leith and Paul Hollywood run a technical at the bench's familiar discipline. The casting class reads competent, and the pairing carries the middle of the run without strain."
   - episode_label: "Ep 9 · the run narrows"
-    body: "The competition thins to its strongest bakers. The settled pairing has its rhythm, and the showstoppers close the run with the format's by-now-familiar craft."
+    body: "The competition thins to its strongest bakers. The Hammond-Fielding duo has its rhythm, and the showstoppers close the run with the format's by-now-familiar craft."
 ---
 
 The Hammond settles, a series where the new pairing stops being new. Alison Hammond and Noel Fielding worked a confident second run, with Prue Leith and Paul Hollywood on the bench and a themed roster continuing the post-national format. The casting class reads competent, the bench holds its discipline, and the run confirms the rebuilt format works. A settled watch more than a memorable one, for completists tracking the current era.

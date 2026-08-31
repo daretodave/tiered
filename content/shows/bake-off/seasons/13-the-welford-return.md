@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Ep 4 · a themed week draws criticism"
     body: "One of the run's nationally-themed weeks attracted cultural-appropriation criticism on broadcast and pushed the producers toward dropping the format. Worth watching as the moment Bake Off rethinks how it frames a culture."
   - episode_label: "Ep 6 · the bench mid-run"
-    body: "Prue Leith and Paul Hollywood work a technical at full discipline. The casting class reads denser than the bubble years, with the room back at its proper scale."
+    body: "Prue Leith and Paul Hollywood work a technical at full discipline. The casting class reads denser than the pandemic-era runs, with the room back at its proper scale."
   - episode_label: "Ep 9 · the run narrows"
     body: "The competition thins to its strongest bakers. The post-bubble tent is operating at its familiar rhythm, and the showstoppers carry visible craft."
 ---

@@ -24,11 +24,11 @@ watch_list:
   - episode_label: "Ep 1 · the lineup arrives"
     body: "The casting class introduces itself. Notice how quickly the broadcast lets the bakers do the work — the editing has stopped explaining what Bake Off is and trusts the audience to know."
   - episode_label: "Ep 3 · bread week"
-    body: "Paul Hollywood works the bench at peak form. The technical-challenge framing is firmer than the prior year, and the casting class is pushing each other across the lineup."
+    body: "Paul Hollywood works the bench at peak form. The technical-challenge framing is firmer than the prior year, and the bakers are pushing each other across the lineup."
   - episode_label: "Ep 5 · pastry week"
     body: "Mary Berry's bench leans into the precision-pastry tradition. Watch the showstopper construction and the way the editing trusts the camera to do the work without underlining the craft."
   - episode_label: "Ep 8 · double-batch challenge"
-    body: "The technical bench asks the bakers to scale up. The room responds with the kind of confidence a strong casting class brings to a settled format."
+    body: "The technical bench asks the bakers to scale up. The room responds with the kind of confidence a strong bench brings to a settled format."
   - episode_label: "Ep 9 · semi-final"
     body: "The bench thins to its strongest bakers. Mel Giedroyc and Sue Perkins are at peak tent-flap rhythm, and the showstoppers carry visible weight."
 ---
