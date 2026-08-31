@@ -1,5 +1,45 @@
 # CRITIQUE
 
+> Last pass: 2026-08-31 at commit 9ea56bcd
+> Pass count: 148
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 148
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/traitors-uk/season/series-4`, `/shows`,
+> `/themes/best-reunion-specials`, `/shows/hells-kitchen?view=canon`
+> anon; `/u/e2e`, `/shows/traitors-uk/season/series-4?view=community`,
+> `/shows/hells-kitchen/season/battle-of-the-states?view=community`,
+> `/shows/chopped?view=community` authed. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 mobile
+> overflow, all pages 200, no spoiler leaks). The 2026-08-31 signed-in
+> vote-pair zero-state fix (issue #799) was spot-checked live on two
+> community pages — holds, no stacking regression. 6 findings filed
+> (0 HIGH, 4 MED, 2 LOW): the meta-description-echoes-lede systemic
+> row (pass-141/146/147) reproduced twice more, on hells-kitchen's
+> canon page and traitors-uk series-4 — now 7 confirmed pages, folded
+> into the existing HIGH row rather than filed separately;
+> hells-kitchen canon's "WHY THIS SLOT" callout re-paraphrases its own
+> season body copy almost verbatim, a third instance of the same
+> pattern already tracked on top-chef and bake-off; traitors-uk
+> series-4's "shape of the season" and "where it sits in the canon"
+> sections repeat a near-identical sentence with only a word or two
+> swapped; hells-kitchen's battle-of-the-states FILMED stat caption
+> bare-restates its own value line, a third instance of the
+> bare-restatement-caption pattern already tracked on rhony and
+> queer-eye; traitors-uk series-4's breadcrumb labels the season
+> "SEASON 4" while the rest of the page correctly uses "Series" (the
+> UK format's own vocabulary); and the season's rank-scale widget
+> (peak/here/tail) has no accessible text summary of the actual
+> position, relying entirely on visual placement. One LOW finding
+> also flags traitors-uk series-4's PREMIERED date (Jan 1, 2026) as a
+> suspicious placeholder needing data verification, not just a copy
+> issue.
+>
+> ───── Pass 147 metadata kept below for history ─────
+
 > Last pass: 2026-08-26 at commit 5bb341ce
 > Pass count: 147
 > Gated: NO — the vote-pair pre-vote triple-stack HIGH (pass-146/147)
@@ -3774,6 +3814,60 @@
 
 ## Pending
 
+### [MED] [anon] /shows/hells-kitchen?view=canon — the "WHY THIS SLOT" callout re-paraphrases the season's own body copy instead of adding new context
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: voice
+- observation: Season 5's body paragraph and its adjacent "WHY THIS SLOT" rationale box make the identical argument in different words — a third instance of this exact pattern, already tracked on top-chef's Las Vegas #1 slot and bake-off's Slot #1. WHY THIS SLOT should be doing a different job (comparison to the neighboring slots, or the gap between editor and community rank) rather than re-deriving the season's own take from scratch.
+- evidence: Season 5 body: "Season five sits at the top of the early canon because the cooking was genuinely serious... The format had found its ceiling." WHY THIS SLOT: "Season five brought a cast that took the cooking more seriously than any prior group, which raised the level of every dinner service. The format earns its most competitive iteration here." Same pattern repeats on Season 4.
+- suggested fix: Now three confirmed instances (top-chef, bake-off, hells-kitchen) — worth a corpus-wide check of the WHY THIS SLOT field generation for restatement-of-body-copy before the current line-item basis grows further, similar to the meta-description systemic row below.
+- source: browser (critique-pass-148, anon)
+
+### [MED] [authed] /shows/traitors-uk/season/series-4?view=community — "the shape of the season" and "where it sits in the canon" sections repeat a near-identical sentence with only a word or two swapped
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: voice
+- observation: Two adjacent sections open with the same sentence in all but a couple of words, reading as padding rather than two sections each earning their place.
+- evidence: "The shape of the season": "Series 4 arrives as the format's most confident outing yet: the same cloak-and-Round-Table game at Ardross Castle, but backed for the first time by a companion after-show, Uncloaked, hosted by Ed Gamble, dissecting each episode's fallout. Claudia Winkleman returns for a fourth run..." — "Where it sits in the canon": "Series 4 arrives as the format's most assured outing to date: the same cloak-and-Round-Table game at Ardross Castle, but backed for the first time by a companion after-show, Uncloaked, hosted by Ed Gamble, unpacking each episode as it airs. Claudia Winkleman returns for a fourth run..."
+- suggested fix: Keep the season-summary sentence in one section only; let "where it sits in the canon" open directly with the comparative claim (slot, gap vs. adjacent seasons) instead of re-describing the season first.
+- source: browser (critique-pass-148, authed)
+
+### [MED] [authed] /shows/hells-kitchen/season/battle-of-the-states?view=community — the FILMED stat caption bare-restates the value line directly above it
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: voice
+- observation: Same string rendered twice in a row with zero added texture — a third confirmed instance of the bare-restatement-caption defect class, joining the open rhony and queer-eye rows below.
+- evidence: "FILMED / Foxwoods Resort Casino, Ledyard, Connecticut / Foxwoods Resort Casino, Ledyard, Connecticut"
+- suggested fix: Suppress the caption line when it would render identically to the value, or write a distinct caption (e.g. "second consecutive season at Foxwoods"). With three shows now confirmed (rhony, queer-eye, hells-kitchen), this is a strong candidate for the same corpus-wide `isBareRestatement()` fix already proposed on the rhony row rather than a fourth one-off patch.
+- source: browser (critique-pass-148, authed)
+
+### [LOW] [anon] /shows/traitors-uk/season/series-4 — breadcrumb labels the season "SEASON 4" while the rest of the page correctly uses the show's own "Series" vocabulary
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: navigation
+- observation: The breadcrumb trail is the one place on the page that doesn't use the UK-format-correct noun.
+- evidence: Breadcrumb: "SHOWS / THE TRAITORS (UK) / SEASON 4". Page H1: "Series 4 (2026)". Adjacent-canon links: "Series 1 (2022)", "Series 3 (2025)".
+- suggested fix: Render the breadcrumb's season crumb using the show's own season-noun (e.g. "Series" for UK-format shows) instead of a hardcoded "Season" label.
+- source: browser (critique-pass-148, anon)
+
+### [MED] [anon] /shows/traitors-uk/season/series-4 — the canon rank-scale widget has no accessible text summary of the season's actual position
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: a11y
+- observation: The peak/here/tail rank scale relies entirely on a visually-positioned marker with two end labels; there's no plain-language summary in the accessible text for a screen-reader user to know where "here" actually falls.
+- evidence: DOM order reads "Editor's Canon, 4 seasons, #03, of 4, here, #01 canon peak, #04 the tail" — the containing `<aside aria-label="Rank and vote">` doesn't carry the position itself, and the `.scale-track` element has no descriptive `aria-label`.
+- suggested fix: Add a plain-language `aria-label` to the rank-scale track, e.g. "Ranked #3 of 4 in the canon, near the top."
+- source: browser (critique-pass-148, anon)
+
+### [LOW] [authed] /shows/traitors-uk/season/series-4?view=community — PREMIERED date (Jan 1, 2026) reads as a placeholder rather than a real UK broadcast date
+- pass: 148 (commit 9ea56bcd)
+- viewport: desktop
+- category: comprehension
+- observation: January 1 is an unlikely actual air date for a winter BBC series and undermines confidence in the surrounding factual copy if it's a stand-in rather than the confirmed date. The frontmatter (`content/shows/traitors-uk/seasons/04-series-4.md`) carries `premiere_date: 2026-01-01` literally, so this may be a real data gap rather than a display bug.
+- evidence: "PREMIERED / Jan 1, 2026 / BBC One · launched January 2026"
+- suggested fix: Confirm the real UK premiere date for Series 4 and backfill it; if genuinely unconfirmed at time of writing, show month-only precision instead of a specific day so the UI doesn't imply false precision.
+- source: browser (critique-pass-148, authed)
+
 ### [MED] [anon+authed] /shows/rhony/season/the-second-act — the FILMED stat caption bare-restates the value line above it, just reformatted from middot- to comma-separated
 - pass: 147 (commit HEAD)
 - viewport: desktop, mobile
@@ -3810,14 +3904,14 @@
 - suggested fix: Cap the description at a full clause/sentence boundary under ~155 chars instead of a mid-thought ellipsis truncation, per the same `clipToSeoBudget` fix already applied to survivor-50 (pass-141/145).
 - source: browser (critique-pass-146, anon)
 
-### [HIGH] systemic (bumped MED→HIGH at pass-147, fifth recurrence) — meta descriptions echo their own page's lede/H1 verbatim, across five separate pages and three prior fix rounds
-- pass: 147 (commit HEAD), originally filed pass 146 (commit bbc5263b)
+### [HIGH] systemic (bumped MED→HIGH at pass-147, now confirmed on 7 pages across 4 passes) — meta descriptions echo their own page's lede/H1 verbatim
+- pass: 148 (commit 9ea56bcd), bumped pass 147 (commit HEAD), originally filed pass 146 (commit bbc5263b)
 - viewport: desktop
 - category: seo
-- observation: The pass-141 systemic finding (meta descriptions reusing on-page lede/H1 copy verbatim on love-island-uk, survivor-50, and /themes) was marked resolved via three one-off field rewrites. It reproduced a fourth time on `/shows` index at pass-146. Pass-147's anon walk found a **fifth** instance on `/shows/rhony/season/the-second-act`: the meta description is a verbatim copy of the page's lede sentence, including the em dash. Five occurrences across three passes with three rounds of per-page patches confirms the root cause is structural (the meta-description generation step itself, or a missing content-check invariant), not any individual page's copy — bumping to HIGH to reflect that per-page whack-a-mole has definitively failed as a fix strategy.
-- evidence: `/shows` meta description: "Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review." On-page lede: "Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most..." — same opening clause verbatim. `/shows/rhony/season/the-second-act` meta description: "Season fifteen takes the reboot cast to Portugal and Casablanca — the trip tests what they're made of when Manhattan's scaffolding is gone." — identical to the on-page lede's opening sentence, em dash included.
+- observation: The pass-141 systemic finding (meta descriptions reusing on-page lede/H1 copy verbatim on love-island-uk, survivor-50, and /themes) was marked resolved via three one-off field rewrites. It reproduced a fourth time on `/shows` index at pass-146, a fifth on `/shows/rhony/season/the-second-act` at pass-147. Pass-148's anon walk found a **sixth and seventh** instance: `/shows/hells-kitchen?view=canon`'s meta/og/twitter description is a verbatim copy of its hero-lede paragraph, and `/shows/traitors-uk/season/series-4`'s description/og/twitter all match its lede verbatim too. Seven occurrences across four passes with three rounds of per-page patches confirms the root cause is structural (the meta-description generation step itself, or a missing content-check invariant), not any individual page's copy — this remains the highest-value fix in the queue.
+- evidence: `/shows` meta description: "Reality-TV canons, sorted by how settled the ranking feels. S tier is format-defining, A tier has the deep canon, B tier is in review." On-page lede: "Reality-TV canons, sorted by how settled the ranking feels — by which formats have earned a defensible canon, not which shows I love most..." — same opening clause verbatim. `/shows/rhony/season/the-second-act` meta description: "Season fifteen takes the reboot cast to Portugal and Casablanca — the trip tests what they're made of when Manhattan's scaffolding is gone." — identical to the on-page lede's opening sentence, em dash included. `/shows/hells-kitchen?view=canon`: both `<p class="hero-lede">` and `<meta name="description">` read "Gordon Ramsay's kitchen runs on heat, repetition, and the gap between what you think you can cook and what a real service demands. The format never blinked." `/shows/traitors-uk/season/series-4`: hero-lede and description/og:description/twitter:description all read "The format's biggest production yet: Claudia Winkleman returns to Ardross Castle for a fourth run..." verbatim.
 - suggested fix: Rather than editing individual strings, add a `content-check.ts` invariant (or a shared `buildMetadata` helper default) that flags any page-level `description` sharing a long verbatim substring with its own lede/H1, so this class of drift is caught at author time across the whole corpus instead of recurring one page at a time. This is now the highest-value fix in the queue — it will retroactively prevent every future recurrence of this exact defect class instead of resolving one more instance.
-- source: browser (critique-pass-146, anon; critique-pass-147, anon)
+- source: browser (critique-pass-146, anon; critique-pass-147, anon; critique-pass-148, anon)
 
 ### [MED] [authed] /shows/queer-eye/season/las-vegas?view=community — the FILMED stat caption bare-restates the location value one field above it
 - pass: 146 (commit bbc5263b)
