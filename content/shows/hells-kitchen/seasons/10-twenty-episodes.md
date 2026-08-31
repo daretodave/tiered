@@ -18,6 +18,7 @@ premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Twenty episodes, four more than season nine."
+take_h2: "Ambition outrunning the format."
 ---
 
 Season ten is the format's largest expansion to date: twenty episodes, celebrity guests at dinner service, gender teams held throughout. The extra length gives the cast room to breathe but dilutes the sustained pressure that makes Hell's Kitchen's dinner service work. Celebrity appearances add energy to individual evenings but pull focus from the culinary competition at the show's core. A season that reaches for scope and earns its place at the bottom of the founding era.

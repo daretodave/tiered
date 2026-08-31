@@ -19,6 +19,7 @@ premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "California"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Same sixteen-chef cast, split down the middle."
+take_h2: "The boldest structural swing yet."
 ---
 
 Season eighteen opens with the show's most inventive cast split: eight first-time contestants against eight veterans from prior seasons. The structural hook drives the early episodes; the mid-season restructure — six simultaneous team swaps, the most in a single episode — reshuffles the dynamics and gives the back half its own shape. The veteran half of the cast raises the cooking floor throughout. The most structurally ambitious of the themed-era runs.

@@ -18,6 +18,7 @@ premiere_caption: "Fox · Tuesday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "One chef fewer than season six."
+take_h2: "Skill over spectacle."
 ---
 
 Season seven is a competent, steady Hell's Kitchen that trades some dramatic chaos for a higher cooking floor. The cast's ability to complete the opening dinner service — something no prior group had managed — signals the shift in register. Andi Van Willigan's arrival behind the Red Team pass brings a new authority to that side of the kitchen. The season runs cleanly without burning particularly bright. A reliable middle-era entry that holds its own without standing out.

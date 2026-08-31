@@ -18,6 +18,7 @@ premiere_caption: "Fox · Thursday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The show's first non-summer premiere."
+take_h2: "A bench built to cook."
 ---
 
 Season five moved to a January premiere and brought the most credentialed cast the early run had seen. The bench was deep enough that dinner services ran at a higher floor than any prior season: less meltdown for spectacle's sake, more culinary competition. Ramsay's notes landed with more force because the contestants had the technique to hear them. The black jacket stretch felt earned, not predetermined. The early format at its most serious, which is the right register for it.

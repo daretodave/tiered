@@ -19,6 +19,7 @@ premiere_caption: "Fox · Thursday 9/8c"
 filming_caption: "Los Angeles, California"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The franchise's third age-based casting experiment."
+take_h2: "A premise that didn't last."
 ---
 
 Battle of the Ages opens with a clean premise — twentysomethings against fortysomethings — then reorganizes by gender after three episodes. The shift is honest about what the age gap could and couldn't sustain as a competitive structure. Christina Wilson and Jason Santos return as sous-chefs on opposite sides of the pass. What remains is a standard Hell's Kitchen run with a decorated entry point and a cast that knows exactly who they are competing against once the reorganization lands.

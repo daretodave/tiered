@@ -18,6 +18,7 @@ premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Three more episodes than season eleven."
+take_h2: "Immunity changes the math."
 ---
 
 Season twelve opens the evolution era with a genuine structural addition. The Power Apron gives the weekly challenge winner a one-time immunity — a strategic layer the founding-era format never carried. Eighteen chefs and seventeen episodes give the mechanic room to pay off across multiple eliminations. The dinner service core stays intact, but the social dynamics shift when chefs know one of their number is holding a safety net. A modest innovation the evolution era built from.

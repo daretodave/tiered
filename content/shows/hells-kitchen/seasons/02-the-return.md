@@ -18,6 +18,7 @@ premiere_caption: "Fox · Monday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Fifteen episodes, one more than the debut."
+take_h2: "Refinement over reinvention."
 ---
 
 The format returns with more editorial confidence. The cast carries more range than the debut group — stronger kitchen backgrounds, more distinct personalities — and the production team had learned which moments to hold on and which to cut through. Ramsay's demands have settled into their television register: demanding without being formless, specific enough that the cast knows what they are being judged against. The dinner service chaos is still the engine, but the show is steering it now.

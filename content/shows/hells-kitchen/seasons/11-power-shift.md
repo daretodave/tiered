@@ -18,6 +18,7 @@ premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Six fewer episodes than season ten."
+take_h2: "A tidy founding-era exit."
 ---
 
 Season eleven closes the founding era with more control than the sprawl of season ten. The format is fully settled, the kitchen mechanics are clean, and the tighter fourteen-episode run keeps the pace from slipping. A mid-season twist to the punishment structure adds a small wrinkle without disrupting the dinner service core. The sixteen-chef cast works at a solid level throughout. Not a standout, but a competent exit from the founding run.

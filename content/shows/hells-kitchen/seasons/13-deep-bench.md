@@ -18,6 +18,7 @@ premiere_caption: "Fox · Friday 9/8c"
 filming_caption: "Culver City, Los Angeles"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "One more episode than season twelve."
+take_h2: "Technique raises the pressure."
 ---
 
 Season thirteen's argument rests on its cast. The evolution era raised the technical baseline, and this season sits near the top of that trend — the bench is skilled enough that dinner service failures carry more weight, because you can see what these chefs are capable of at their ceiling. Eighteen episodes give the dynamic room to accumulate. The format doesn't change; the cast makes you watch the cooking more closely than usual.
