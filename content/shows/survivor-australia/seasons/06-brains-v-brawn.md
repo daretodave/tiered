@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Early eps · Queensland setting"
     body: "The domestic filming location is a character in its own right. The inland Queensland heat, the red dirt, and the remote Cloncurry environment give the season a visual texture unlike every Samoa and Fiji run before it."
   - episode_label: "Mid-game · archetype friction"
-    body: "The mid-game is where the Brains-versus-Brawn framing generates its most interesting dynamics. Watch for how the archetype labels shape players' strategic identities and the social assumptions the cast makes about each other across the merge."
+    body: "The mid-game is where the tribe-by-archetype framing generates its most interesting dynamics. Watch for how the archetype labels shape players' strategic identities and the social assumptions the cast makes about each other across the merge."
 ---
 
 When COVID closed international borders, Australian Survivor came home to Queensland's outback — and the domestic setting worked. The Brains-versus-Brawn tribe split gave the season a cast contrast that played out across 24 episodes of inland heat and red dirt. The archetype divide generated strategic energy that carried the format through a constrained production window, and the Queensland visual register distinguished this season from every Samoa and Fiji run before it.

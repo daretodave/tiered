@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Early eps · champions tribe"
     body: "The champions tribe is built around athletes who understand team structure and competitive discipline. Watch how those instincts translate — and sometimes don't — into the social and strategic game the format actually rewards."
   - episode_label: "Mid-game · tribe dynamics"
-    body: "The mid-game is where the champions-versus-contenders framing pays off most clearly. The social friction between two very different casts generates strategic energy that the earlier Australian seasons found harder to sustain across a 25-episode run."
+    body: "The mid-game is where the cross-tribe cast split pays off most clearly. The social friction between two very different casts generates strategic energy that the earlier Australian seasons found harder to sustain across a 25-episode run."
   - episode_label: "Post-merge · format at full strength"
     body: "The post-merge stretch runs at the Australian version's best pace. The cast fills the longer episode runtime purposefully, and the editing trusts the audience to follow complex strategic play across multiple tribal councils."
 ---

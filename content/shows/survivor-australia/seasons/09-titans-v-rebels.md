@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Early eps · tribe dynamics"
     body: "The early episodes show how the archetype labels shape strategic behavior. Power figures used to leading and underdogs used to adapting create different tribal cultures, and those cultures collide at the swap and merge."
   - episode_label: "Post-merge · end game"
-    body: "The post-merge stretch runs at the show's standard 24-episode pace. Watch for how the Titans-versus-Rebels framing plays out once the tribes are dissolved — whether the archetype labels still carry strategic weight in a merged game."
+    body: "The post-merge stretch runs at the show's standard 24-episode pace. Watch for how the achiever-versus-underdog split plays out once the tribes are dissolved — whether those original identities still carry weight in a merged game."
 ---
 
 Back in Samoa with a new cast and a clean archetype divide — achievers and power figures versus free spirits and underdogs — Titans V Rebels ran at the Australian version's established pace. Twenty-four episodes, 24 players, 47 days. The format used the cast contrast competently through the merge and into the end game. A solid season that runs at the show's full register without reaching for a new ceiling.

@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Early eps · cast dynamics"
     body: "With 24 players across two tribes, the early episodes have more social complexity than a smaller cast can generate. Notice how alliances form differently when there are more people to account for in every vote."
   - episode_label: "Ongoing · episode rhythm"
-    body: "The longer episode format is the most distinctive thing about the Australian version. Watch for how the show uses that runtime — the strategic conversations that a shorter cut would lose."
+    body: "The longer episode format is the most distinctive thing about this Network 10 cut. Watch for how the show uses that runtime — the strategic conversations that a shorter edit would lose."
 ---
 
 Australian Survivor launched with 24 players in Samoa and a format that gave itself more room than the American original — longer episodes, a bigger cast, and a pace that rewards endurance over flash. The production was finding its footing, but the cast played hard and the strategic register the show would build on was visible from the start. The season established the Australian version's identity, and the later seasons build on what it assembled here first.
