@@ -20,7 +20,7 @@ cast_size: 7
 cast_size_caption: "Bryant, Darby, Osefo, Rusch, Stewart, Glover, Massie"
 watch_list:
   - episode_label: "Season-long · Huger's absence"
-    body: "Karen Huger doesn't appear as a full-time housewife this season, a real-world legal matter keeping her off-camera for the main run. Watch for how the group's social dynamic shifts without its longest-running cast member."
+    body: "Karen Huger doesn't appear as a regular cast member this season, a real-world legal matter keeping her off-camera for the main run. Watch for how the group's social dynamic shifts without its longest-running fixture."
   - episode_label: "New faces · Glover and Massie join"
     body: "Tia Glover and Angel Massie step in as new full-time housewives in a season already reshaped by one major absence. Watch for how two newcomers find their footing in an unusually unsettled cast."
   - episode_label: "Post-finale · an interview segment"

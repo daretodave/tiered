@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 1–3 · gear recalibration"
     body: "Fiordland's climate is wetter and more unpredictable than South West Tasmania. Watch for which gear-list choices from the first season's playbook still hold up and which need rethinking for fjord country."
   - episode_label: "Ongoing · rainforest ecology"
-    body: "The temperate rainforest gives the self-filmed footage a different visual register than the open buttongrass moorland. Notice how each survivalist sources food and builds shelter in an environment with dense canopy and steep gradient."
+    body: "The temperate rainforest gives the recorded footage a different visual register than the open buttongrass moorland. Notice how each survivalist sources food and builds shelter in an environment with dense canopy and steep gradient."
   - episode_label: "Ongoing · psychological arc"
     body: "The extended isolation in Fiordland's dramatic terrain tends to sharpen the internal monologue structure of the self-filmed format. This is the season where the Australian version's documentary texture finds its most sustained form."
 ---

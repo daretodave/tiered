@@ -24,7 +24,7 @@ watch_list:
   - episode_label: "Ep 1 · Camp Director"
     body: "A Day-One power hands one houseguest authority over the opening week before anyone has read the room. Watch how fast the early alliance lines snap into place around it."
   - episode_label: "Ep 2 · the back room opens"
-    body: "Camp Comeback is explained: an eviction does not mean a departure yet. The room reacts to the idea that the people they vote out are still in the building."
+    body: "The premise gets its full explanation: an eviction does not mean a departure yet. The room reacts to the idea that the people they vote out are still in the building."
   - episode_label: "Ep 6 · first Whacktivity"
     body: "The Whacktivity comps begin dispensing secret powers. Note which houseguests chase the mechanic and which play around it — the season's strategists sort here."
   - episode_label: "Ep 20 · the comeback path"

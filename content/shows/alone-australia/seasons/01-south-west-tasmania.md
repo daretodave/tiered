@@ -21,11 +21,11 @@ filming_caption: "South West Tasmania · founding shoot for the Australian forma
 episodes_caption: "Twelve episodes — one shorter than the West Coast Range return three years later"
 watch_list:
   - episode_label: "Ep 1 · first camp"
-    body: "Watch how each survivalist selects their base camp site. Shelter decisions made in the first hours shape the whole run — and the South West Tasmanian terrain offers very different options than anything from the US version."
+    body: "Watch how each survivalist selects their base camp site. Shelter decisions made in the first hours shape the whole run — and Tasmania's alpine-to-moorland terrain offers very different options than anything from the US version."
   - episode_label: "Ep 1–3 · gear in action"
     body: "The ten-item gear lists reveal each survivalist's survival philosophy. Early episodes show which choices hold up against the buttongrass moorland environment and which don't."
   - episode_label: "Ongoing · weather pressure"
-    body: "South West Tasmania's weather is the season's consistent antagonist. Watch for how the self-filmed footage captures the physical and psychological toll of sustained wet and cold."
+    body: "South West Tasmania's weather is the season's consistent antagonist. Watch for how the recorded footage captures the physical and psychological toll of sustained wet and cold."
   - episode_label: "Ongoing · self-documentation rhythm"
     body: "The self-filmed structure means the camera becomes part of each survivalist's daily routine. Notice how different people use it differently — some as a journal, some as a practical log, some as emotional release."
 ---

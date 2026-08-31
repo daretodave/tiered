@@ -22,7 +22,7 @@ cast_size_caption: "Sixteen houseguests; four entered as coaches before converti
 host_caption: "Julie Chen's fourteenth summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the coaches arrive"
-    body: "Four returning veterans are introduced as coaches rather than players, each drafting a team of newbies. Watch how the draft dynamics seed the early-season alliance math."
+    body: "Four returning veterans are introduced as coaches rather than players, each drafting a team of newbies. Watch how the draft dynamics seed the early-season loyalty lines."
   - episode_label: "Ep 5 · the coaches' challenge"
     body: "The coaches compete in their own weekly competition for outcomes the houseguests cannot directly affect. The framing creates two parallel games happening in one room."
   - episode_label: "Ep 11 · the structural pivot"

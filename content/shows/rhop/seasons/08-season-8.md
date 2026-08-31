@@ -20,7 +20,7 @@ cast_size: 8
 cast_size_caption: "Bryant, Darby, Dixon, Huger, Dillard, Osefo, Thornton, Ihim"
 watch_list:
   - episode_label: "New face · Nneka Ihim joins"
-    body: "Ihim steps in as the eighth full-time housewife, growing the cast to its largest size yet. Watch for how the show balances that many voices across a single season."
+    body: "Ihim steps in as the eighth full-season cast member, growing the cast to its largest size yet. Watch for how the show balances that many voices across a single season."
   - episode_label: "Full run · a record-size ensemble"
     body: "Eight full-time housewives share the season, more than RHOP has ever run at once. Watch for how the show divides its attention across a cast this large."
 ---

@@ -20,7 +20,7 @@ cast_size: 7
 cast_size_caption: "Bryant, Darby, Huger, Osefo, Thornton, Rusch, Stewart"
 watch_list:
   - episode_label: "Cast reset · three exits, two new faces"
-    body: "Three full-time housewives from the prior season don't return, and two new voices step into the gap. Watch for how the remaining group handles rebuilding its social footing with a roster this changed."
+    body: "Three housewives from the prior season's lineup don't return, and two new voices step into the gap. Watch for how the remaining group handles rebuilding its social footing with a roster this changed."
   - episode_label: "New addition · a promotion to full cast"
     body: "Keiarna Stewart moves up from a recurring role to the main cast after one season on the show's edges. Watch for how a familiar face lands differently once she's a full-time housewife."
 ---

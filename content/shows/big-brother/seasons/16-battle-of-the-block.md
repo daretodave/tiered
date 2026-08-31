@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 6 · Team America installed"
     body: "Three houseguests are voted by the public into a separate side mission, paid in cash for completed tasks. The twist turns parts of the cast into players within players."
   - episode_label: "Ep 14 · the Detonators form"
-    body: "An alliance emerges that becomes part of the season's spine. Notice how the room reorganizes around it once the twin-HoH math starts contracting."
+    body: "An alliance emerges that becomes part of the season's spine. Notice how the room reorganizes around it once the dual-seat math starts contracting."
   - episode_label: "Ep 30 · the late stretch"
     body: "The twist stack thins out as the cast contracts. The texture of the final stretch is what reveals how much weight the format was carrying earlier in the run."
 ---
