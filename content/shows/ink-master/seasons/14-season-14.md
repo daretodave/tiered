@@ -24,7 +24,7 @@ watch_list:
   - episode_label: "Premiere · a new host, a new network"
     body: "Joel Madden takes over hosting duties as the show moves to Paramount+ — watch how quickly the new format settles into the judging rhythm that made the earlier seasons work."
   - episode_label: "Early eps · four judges instead of two"
-    body: "The panel expands to four voices for the first time, giving critiques more range — worth watching how the added perspectives change the table talk compared to earlier seasons."
+    body: "The panel expands to four voices for the first time, giving critiques more range — worth watching how the added perspectives change the table talk once the larger panel settles in."
   - episode_label: "Throughout · Dave Navarro's new role"
     body: "Navarro doesn't disappear — he returns in a smaller, recurring capacity, introducing twists rather than running the show day to day. Watch for how the show frames his reduced presence."
 ---

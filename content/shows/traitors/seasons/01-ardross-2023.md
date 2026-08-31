@@ -28,7 +28,7 @@ watch_list:
     body: "The daily prize-pot missions establish the rhythm — group challenges feeding a shared jackpot while suspicion builds underneath."
   - episode_label: "Ep 4 · The Armory"
     body: "The season-one Armory mechanic, later retired, gives players a path to protection. A structural wrinkle unique to this first run."
-  - episode_label: "Ep 6 · Round Table heat"
+  - episode_label: "Ep 6 · Banishment heat"
     body: "The banishment votes sharpen as alliances form across the alumni/civilian divide. The format's central tension comes into focus."
   - episode_label: "Ep 9 · The endgame build"
     body: "The late stretch tightens the deduction game. Watch how the original cast navigates the format's closing pressure."

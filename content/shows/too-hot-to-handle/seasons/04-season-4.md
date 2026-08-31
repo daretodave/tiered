@@ -22,7 +22,7 @@ host_caption: "Fourth season with Lana at the helm"
 watch_list:
   - episode_label: "Ep 1 · a different show entirely"
     body: "The cast is told they're filming Wild Love, a completely different series with its own branding, a cover story built to stop anyone who recognizes the real format from gaming it."
-  - episode_label: "A familiar face hosts the cover story"
+  - episode_label: "A familiar face plays along"
     body: "Mario Lopez plays along as the fictional Wild Love's guest host, part of the elaborate misdirection before the cast learns the truth."
   - episode_label: "New challenge formats"
     body: "Watch for new workshop and trust-test challenges, including a high-stakes 'red button' test, that this season introduces to the format."

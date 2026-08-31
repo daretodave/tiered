@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-cycle · the Comeback Queen"
     body: "Each bracket cycle carries its own reentry chance for an eliminated queen, distinct from Season 10's single judge-selected Wildcard Lottery reserved for right before the finale. Watch for how a per-cycle reentry option changes the calculation inside each bracket, not just at the end."
   - episode_label: "Semifinal stretch · six queens converge"
-    body: "Two queens per bracket — six total — advance to the semifinal round, a smaller field than Season 10's nine-queen semifinal. Watch how the tighter cutoff changes the shape of the final stretch."
+    body: "Two queens per bracket — six total — advance to the semifinal round, the smallest semifinal field the format has run. Watch how the pared-down bracket reshapes momentum heading into the finale."
   - episode_label: "Finale · the $200,000 Lip Sync Smackdown"
     body: "The season closes with a Lip Sync Smackdown finale carrying the franchise's largest publicized cash prize to date. Watch for how the show stages a finale built around that number."
 ---

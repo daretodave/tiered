@@ -28,7 +28,7 @@ watch_list:
   - episode_label: "Ep 7 · Malta stretch"
     body: "The travel run reaches Malta, a destination the franchise had not tried. The cinematography commits to the island fully."
   - episode_label: "Ep 10 · Tulum close"
-    body: "Final dates move through Tulum. The franchise stages a finale runway shot with the care the modern era had been building toward."
+    body: "Final dates move through Tulum. The franchise stages a finale runway shot with the polish this season had been building toward."
 ---
 
 Eleven episodes move at a traditional clip: weekly rose ceremonies without a structural twist, so the drama sits entirely in the room, not the format. The deep opening field thins quickly before the season shifts into its travel run — Malta, then Montreal, then Tulum, each stop narrowing the frame as episodes close in on the finale. Jesse Palmer, three seasons into hosting, keeps the pacing brisk and the cocktail-party rhythm steady throughout.

@@ -22,9 +22,9 @@ watch_list:
   - episode_label: "Format · a three-part reunion"
     body: "For the first time, the reunion runs across three parts instead of the usual single episode. Watch for how the expanded format changes the pacing of the show's traditional season-closer."
   - episode_label: "Bonus · a post-reunion episode"
-    body: "A bonus episode, billed as a post-reunion coda, follows the three-part reunion. Watch for how the show uses the extra runway after its usual closing point."
+    body: "A bonus episode, billed as a post-reunion coda, follows the season's extended send-off. Watch for how the show uses the extra runway after its usual closing point."
   - episode_label: "Reception · a record audience"
-    body: "The season's reunion draws the largest same-day audience in the show's history. Watch for how the expanded format and the reshaped cast combine to draw that response."
+    body: "The season's reunion draws the largest same-day audience the format has ever pulled. Watch for how the longer rollout and the reshaped cast combine to draw that response."
 ---
 
 Summer House's tenth season brings the biggest cast overhaul in the show's history: six new members join the main cast, the largest single-season addition yet, while several longtime faces step away. The season also debuts a three-part reunion format, replacing the usual single episode, plus a post-reunion bonus episode. Sixteen regular episodes carry the season before that extended send-off begins.

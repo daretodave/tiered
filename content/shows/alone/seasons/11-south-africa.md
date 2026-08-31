@@ -24,7 +24,7 @@ format_changes:
   - "Arid semi-desert biome; heat and water scarcity replace cold and precipitation as primary threats"
 watch_list:
   - episode_label: "Ep 1 · The Karoo arrival"
-    body: "The opening episode establishes how radically the biome differs from prior locations. Survivalists accustomed to wet, cold wilderness have to recalibrate entirely for heat management and water sourcing."
+    body: "The opening episode establishes how radically the biome differs from prior locations. Survivalists accustomed to wet, cold wilderness have to recalibrate entirely for a landscape built around heat and shade discipline."
   - episode_label: "Ep 3 · Water and wildlife"
     body: "By the third episode the water-sourcing challenge dominates. South Africa also introduces large-wildlife pressure that no prior Alone location carried — a new layer of environmental tension."
 ---

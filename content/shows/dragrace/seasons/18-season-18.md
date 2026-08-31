@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Ep 9 · the judging split widens"
     body: "A stretch of challenges where the panel's polish praise and its inconsistent call-to-call critiques both show up in the same episode. Watch for the gap between the room's reaction and the scorecard."
   - episode_label: "Ep 13 · setting up the rewrite"
-    body: "The season starts laying groundwork for a finale that won't run the usual top-two lip sync. Watch how the back stretch reshapes itself around a format the cast hasn't faced before."
+    body: "The season starts laying groundwork for a finale that won't run the show's standard sudden-death format. Watch how the back stretch reshapes itself around a shape the cast hasn't faced before."
   - episode_label: "Ep 16 · restructured finale"
     body: "The finale swaps the usual top-two lip sync for a full eliminated-cast tournament ahead of the final round. Watch how the new shape changes the hour's rhythm."
 ---
