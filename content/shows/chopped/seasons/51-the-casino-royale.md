@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Every episode · deep inside Season 50's run"
     body: "Roughly the first eleven of this season's thirteen weeks air while Season 50 is still going, even though Season 50 itself only loses its final third to the overlap. Watch it as a lopsided calendar tangle, not a simple shared tail."
   - episode_label: "Basket reveal · steady through the bracket"
-    body: "The four-ingredient rule holds in the Casino Royale rounds exactly as it does everywhere else. Watch the reveal for that same constraint no matter how high the stakes climb."
+    body: "The four-ingredient rule holds in the bracket rounds exactly as it does everywhere else. Watch the reveal for that same constraint no matter how far the stakes rise."
   - episode_label: "Season close · April 2022"
     body: "Season 51 closes out in early April 2022, well after most of its own run has shared the calendar with one long-running neighbor. Watch this run as a real tournament swing tangled in a one-sided overlap."
 ---

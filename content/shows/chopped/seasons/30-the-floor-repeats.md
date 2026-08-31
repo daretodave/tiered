@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Judges' table · sharp across fewer hours"
     body: "The rotating panel's critique doesn't thin out just because there are fewer episodes to spread it across. Watch the judges argue with the same specificity as any full-length season."
   - episode_label: "Season close · December 2016"
-    body: "Season 30 closes out in late December 2016, most of its back half sharing the calendar with Season 31's much longer run. Watch this run as a short, crowded entry."
+    body: "Season 30 closes out in late December 2016, most of its back half sharing the calendar with the much longer run Season 31 puts together. Watch this run as a short, crowded entry."
 ---
 
 Eight episodes carry Season 30 through fall and winter 2016, tying Season 26 for the fewest the format has aired. It premieres just days before Season 29 wraps, then spends most of its own back half sharing the calendar with Season 31's much longer run. Nothing about an individual hour falters — the locked basket, three-round elimination, and Ted Allen's hosting all run exactly as designed. There's simply less of this season than the baseline promises.

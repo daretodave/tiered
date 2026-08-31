@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Basket reveal · the same rule, unbothered"
     body: "The four-ingredient basket never wavered during the shorter seasons, and it doesn't change here either. Watch the reveal moment for the same consistency the format has held since Season 4."
   - episode_label: "Judges' table · a familiar rhythm"
-    body: "The rotating panel settles back into a full-length season without missing a beat. Watch the critique hold the same specificity across all thirteen episodes."
+    body: "The rotating panel settles back into a full-length season without missing a beat. Watch the critique hold the same specificity from the first hour to the last."
   - episode_label: "Season close · proof the dip wasn't permanent"
     body: "Season 9 closes out a two-season contraction cleanly. Watch it as the format's clearest answer yet to the question of whether the shorter runs meant something bigger."
 ---

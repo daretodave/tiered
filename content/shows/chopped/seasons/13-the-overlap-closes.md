@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Every episode · the last of the overlap chain"
     body: "Season 13 closes out the run of overlapping seasons that opened with Season 11. Watch how little the tangled release calendar changes about any single episode."
   - episode_label: "Basket reveal · the standard rule, unshortened"
-    body: "Even with one fewer episode this season, the four-ingredient basket holds exactly as it has since Season 4. Watch the reveal for that same steady constraint."
+    body: "Watch the reveal for that same steady constraint — even with one fewer episode this season, the four-ingredient basket holds exactly as it has since Season 4."
   - episode_label: "Judges' table · same panel, shorter season"
     body: "The rotating panel's critique doesn't dip just because the season runs one episode short. Watch the judges argue with the same precision as any full-length run."
   - episode_label: "Season close · back to a clean calendar next"

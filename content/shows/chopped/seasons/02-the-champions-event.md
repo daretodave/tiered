@@ -25,11 +25,11 @@ watch_list:
   - episode_label: "Episode 10 · the Champions block opens"
     body: "Past winners return to compete against each other for the first time in the show's history. Watch how the format shifts once the chefs already know exactly how the basket works."
   - episode_label: "Episodes 10-13 · cumulative stakes"
-    body: "Prize money carries across all four Champions episodes rather than resetting each hour. Watch how that changes the calculus at the judges' table — a chef isn't just cooking for one round anymore."
+    body: "Prize money carries across all four Champions episodes rather than resetting each hour. Watch how that changes the math on scoring night — a chef isn't just cooking for one round anymore."
   - episode_label: "Judges' table · reading returning chefs"
     body: "The panel already knows these competitors' track records. Watch how the critique sharpens when the judges are evaluating chefs who've been through the format's pressure before."
   - episode_label: "Season close · the model for a spinoff"
-    body: "The Champions block runs months before Food Network spins the concept into its own standalone series. Watch this as the format's first proof that past winners make compelling television on their own."
+    body: "This four-episode run proves the concept months before Food Network spins it into its own standalone series. Watch it as the format's first evidence that past winners make compelling television on their own."
 ---
 
 Nine ordinary hours give way to a four-episode Champions block: past winners return to cook against each other, with prize money carrying across the whole stretch instead of resetting each hour. It's the closed-door format's first real departure — and a preview of the standalone tournament series the network would launch that same year.

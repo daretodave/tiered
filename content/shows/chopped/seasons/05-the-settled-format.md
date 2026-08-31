@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Basket reveal · consistency across the season"
     body: "Every basket this season holds exactly four ingredients, no exceptions across all thirteen episodes. Watch how that predictability lets you compare one chef's read of a basket directly against another's."
   - episode_label: "Judges' table · sharper by repetition"
-    body: "By Season 5 the panel has settled into the rhythm of the new format too. Watch how the critique gets more specific once judges aren't adjusting for a shifting ingredient count round to round."
+    body: "By Season 5 the panel has settled into the rhythm of the new format too. Watch how the critique gets more specific once the judges aren't adjusting for a shifting basket size round to round."
   - episode_label: "Season close · the quiet baseline"
     body: "Season 5 doesn't introduce anything new — that's the point. Watch it as the clearest version of the show's core mechanic, unclouded by a tournament block or a one-off callback episode."
 ---

@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Spring 2011 · a franchise expanding around it"
     body: "The season's run overlaps with Food Network debuting a separately branded All-Stars special elsewhere on the network. Watch Season 6 itself as a standard-format hour, unrelated to that adjacent launch."
   - episode_label: "Judges' table · same panel mechanics"
-    body: "The panel's rotating three-chef structure doesn't change with the shorter episode count. Watch the critique hold the same specificity it did across the four prior seasons."
+    body: "The panel's rotating three-chef structure doesn't change with the shorter clock this season runs on. Watch the critique hold the same specificity it did across the four prior seasons."
 ---
 
 Twelve episodes instead of the usual thirteen carry the standard closed-door format through winter and spring 2011, the same window Food Network launches its separately branded Chopped All-Stars special elsewhere on the network. The mainline mechanic — locked basket, rotating judging panel, three-round structure — runs entirely unchanged underneath a slightly shorter overall clock.

@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "The standard hours · the format's usual shape"
     body: "Eight regular episodes carry the rest of the season, the ordinary closed-door premise unchanged. Watch them as the season's tether back to the format everywhere else in this canon."
   - episode_label: "Basket reveal · steady on both sides"
-    body: "The four-ingredient rule holds in the tournament and the standard hours alike. Watch the reveal for that same constraint no matter the stakes."
+    body: "The four-ingredient rule holds in the tournament and the ordinary episodes alike. Watch the reveal for that same constraint no matter the stakes."
   - episode_label: "Season close · a year-long overlap"
     body: "Season 40 closes out in July 2019, nearly a full year after it began, its calendar overlapping several neighboring seasons throughout. Watch this run as the busiest tournament season the format has produced."
 ---

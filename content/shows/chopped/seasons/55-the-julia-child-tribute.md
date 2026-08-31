@@ -27,9 +27,9 @@ watch_list:
   - episode_label: "The standard hours · variety on both sides"
     body: "Three standalone openers and six standalone episodes in the middle carry the rest of the season, the usual thematic variety intact. Watch these as the tether back to the format everywhere else in this canon."
   - episode_label: "Every episode · touching two neighboring seasons"
-    body: "Season 55 overlaps roughly four months of Season 53's tail and roughly three and a half months of Season 56's front stretch. Watch this as two separate, substantial tangles rather than one deep one."
+    body: "Season 55 overlaps roughly four months at the tail of Season 53 and roughly three and a half months into the front of the season after it. These are two separate, substantial tangles rather than one deep one — watch for the seams on both sides."
   - episode_label: "Nineteen episodes · the third-longest run"
-    body: "Only Season 50's eighteen and the record-holding twenty-episode seasons run longer than this one. Watch the extra length carry two full tournament blocks instead of the usual one."
+    body: "Only the eighteen-episode Season 50 and the record-holding twenty-episode seasons run longer than this one. Watch the extra length carry two full tournament blocks instead of the usual one."
   - episode_label: "Season close · December 2023"
     body: "Season 55 closes out in mid-December 2023, more than eight months after it began. Watch this run as the format's densest tournament stretch balanced against a genuinely tangled calendar."
 ---

@@ -31,7 +31,7 @@ watch_list:
   - episode_label: "Basket reveal · steady across the gaps"
     body: "The four-ingredient rule holds in every standalone hour and every regional round alike, whatever the calendar is doing around it. Watch the reveal for that same constraint no matter how wide the season stretches."
   - episode_label: "Season close · August 2023"
-    body: "Season 53 closes out in early August 2023, nearly ten months after it began. Watch this run as a genuinely new regional bracket tucked inside the most gap-riddled calendar this batch has produced."
+    body: "Season 53 closes out in early August 2023, nearly ten months after it began. Watch this run as a genuinely new geographic tournament tucked inside the most gap-riddled calendar this batch has produced."
 ---
 
 Thirteen episodes stretch from October 2022 into August 2023 — an unusually wide ten-month span for just thirteen hours — opening with eight standalone episodes, then closing with a five-part All-American Showdown tournament built around regional identity. Season 53 brushes Season 52 briefly at its own start, fully contains Season 54's entire window, and overlaps roughly four months of Season 55's front stretch — a hub, defined as much by its gaps as by its bracket.

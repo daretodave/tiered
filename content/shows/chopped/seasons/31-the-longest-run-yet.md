@@ -21,7 +21,7 @@ take_h2: "The longest run yet, almost entirely shared."
 shape_h2: "A four-part Beat Bobby Flay crossover."
 watch_list:
   - episode_label: "Every episode · a record-length season"
-    body: "Season 31 runs twenty episodes, the most the format has ever produced in a single season. Watch it as the format's biggest swing at runtime yet."
+    body: "Season 31 runs twenty hours, more than the format has ever produced in one stretch. Watch it as the format's biggest swing at runtime yet."
   - episode_label: "Beat Bobby Flay · a crossover tournament"
     body: "A four-part tournament folds a familiar guest chef into the standard elimination structure. Watch how the crossover format bends the usual mystery-basket premise without breaking it."
   - episode_label: "Every episode · concurrent with Season 30"
@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Judges' table · sharp across twenty episodes"
     body: "The rotating panel's critique doesn't dilute across the format's longest season yet. Watch the judges argue with the same precision at episode twenty as at episode one."
   - episode_label: "Season close · December 2016"
-    body: "Season 31 closes out in late December 2016, just over a week after Season 30 wraps. Watch this run as the format's longest and most tangled season to date."
+    body: "Season 31 closes out in late December 2016, just over a week after Season 30 wraps. Watch this run as the longest stretch the format has produced, and its most tangled to date."
 ---
 
 Twenty episodes make Season 31 the longest run the format has aired, weaving a four-part Chopped: Beat Bobby Flay tournament through the standard hours. For nearly the whole of its run, Season 31 shares the calendar with Season 30's own back half — two seasons airing concurrently for more than two months. The mystery basket, three-round elimination, and Ted Allen's hosting all hold steady underneath both the extra length and the crowded calendar.

@@ -23,13 +23,13 @@ watch_list:
   - episode_label: "Every episode · eight months on the calendar"
     body: "Season 35 spans from July 2017 into March 2018, the longest single stretch the format has aired. Watch it as a season defined as much by its calendar as by its episodes."
   - episode_label: "Early run · overlapping almost all of Season 34"
-    body: "Season 35 shares the calendar with nearly the entirety of Season 34's own run. Watch this stretch as the deepest single-season overlap the format has produced to this point."
+    body: "Season 35 shares nearly its entire calendar with the season right before it. Watch this stretch as the deepest overlap between two consecutive seasons the format has produced to this point."
   - episode_label: "Late run · handing into Season 36"
     body: "As Season 34 wraps, Season 36 premieres and overlaps Season 35's own back stretch instead. Watch the entanglement shift from one neighbor to the next without a real break."
   - episode_label: "A themed hour · a holiday special folded in"
     body: "A couple of scattered themed episodes, including a holiday-timed hour, sit inside the standard run. Watch how lightly these sit on top of the usual mystery-basket structure."
   - episode_label: "Season close · March 2018"
-    body: "Season 35 closes out in early March 2018, nearly eight months after it began. Watch this run as the longest and most entangled single season the format has aired."
+    body: "Season 35 closes out in early March 2018, the far end of the format's longest calendar run yet. Watch this run as the longest and most entangled single season the format has aired."
 ---
 
 Twenty episodes stretch across nearly eight months, tying the format's longest run, and overlap almost the entirety of Season 34's own run before handing off into an overlap with Season 36 too. No tournament block sits inside this one — just a couple of scattered themed episodes on an otherwise standard run. The locked basket, three-round structure, and Ted Allen's hosting hold steady underneath the longest, most tangled calendar the format has produced.

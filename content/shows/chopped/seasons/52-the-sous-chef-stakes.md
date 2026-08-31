@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Every episode · a one-week brush with Season 53"
     body: "Season 52's own six-and-a-half-month run touches only Season 53, and only for about a week at the very end. Watch this as the lightest overlap this batch of seasons has produced."
   - episode_label: "Season close · October 2022"
-    body: "Season 52 closes out in late October 2022, its calendar nearly untouched by any other season. Watch this run as a genuinely novel tournament stakes gimmick on the cleanest schedule in the batch."
+    body: "Season 52 closes out in late October 2022, its calendar nearly untouched by any other season. Watch this run as a genuinely novel tournament stakes idea on the cleanest schedule in the batch."
 ---
 
 Thirteen episodes run from April into October 2022, seven standalone themed hours giving way to a five-part Desperately Seeking Sous-Chef tournament — chefs competing for real staff jobs at the judges' own restaurants — before a single finale closes things out. The season's own six-and-a-half-month run touches only Season 53, and only for about a week at its very end. A genuinely new stakes idea, on the cleanest calendar this batch has produced.

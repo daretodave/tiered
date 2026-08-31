@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Grudge Match · judges vs. former champions"
     body: "A five-episode tournament pits the judging panel against former champions, building to a $100,000 finale — the largest cash prize this canon has recorded. Watch the stakes climb across four qualifying rounds before the payoff."
   - episode_label: "Meat Fight · four rounds, one animal each"
-    body: "Goat, pork, beef, and bison each get a dedicated episode in this four-part tournament immediately following Grudge Match. Watch the format narrow its theme animal by animal rather than course by course."
+    body: "Goat, pork, beef, and bison each get a dedicated episode in this four-part tournament immediately following the five-part cash bracket. Watch the format narrow its theme animal by animal rather than course by course."
   - episode_label: "Hangry Baskets · spills into next season"
     body: "Three Hangry Baskets episodes air here, with a fourth, Late Night, actually airing at the start of Season 49 instead. Watch for the rare case of a tournament block crossing an official season boundary."
   - episode_label: "Every episode · nested in two seasons at once"

@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Every episode · zero tournament content"
     body: "All thirteen episodes here run the standard closed-door hour, no bracket or multi-episode gimmick anywhere in the season. Watch it as the first season in a long stretch to skip a tournament block entirely."
   - episode_label: "Halloween, Friendsgiving · themed, no bracket"
-    body: "A Halloween-titled episode and a Friendsgiving-titled episode each get a themed hour, but neither builds into a multi-episode structure. Watch how lightly these sit on the standard format compared to a real tournament."
+    body: "A Halloween-titled episode and a Friendsgiving-titled episode each get a themed hour, but neither builds into a multi-part structure. Watch how lightly these sit on the standard format compared to a real tournament."
   - episode_label: "Every episode · majority shares S55's calendar"
     body: "Roughly three and a half of this season's own five months run while Season 55 is still airing, the majority of Season 56's own release window. Watch this as a real overlap despite touching only one other season."
   - episode_label: "Basket reveal · the standard rule, unchanged"

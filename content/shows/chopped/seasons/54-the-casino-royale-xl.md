@@ -27,9 +27,9 @@ watch_list:
   - episode_label: "Every episode · entirely inside Season 53"
     body: "Season 54's full run sits inside Season 53's own window, with no other season touching it at any point. Watch it as an even more total containment than this canon's previous single-season nests."
   - episode_label: "Basket reveal · unbothered by the nest"
-    body: "The four-ingredient rule holds in the tournament and the standard hours alike, regardless of what else is airing. Watch the reveal for that same steady constraint."
+    body: "The four-ingredient rule holds in the tournament and the ordinary episodes alike, regardless of what else is airing. Watch the reveal for that same steady constraint."
   - episode_label: "Season close · March 2023"
-    body: "Season 54 closes out in late March 2023, its entire run absorbed by one neighboring season throughout. Watch this run as a proven tournament idea scaled up, inside the tightest single-season nest yet."
+    body: "Season 54 closes out in late March 2023, its entire run absorbed by one neighboring season throughout. Watch this run as a proven tournament idea scaled up, inside the tightest one-season fit yet."
 ---
 
 Thirteen episodes run from December 2022 into March 2023, opening with one standalone hour before a five-part Casino Royale XL tournament — an explicitly larger sequel to an earlier gambling-themed bracket — then closing with seven standalone hours. The season's entire run sits inside Season 53's own window, with nothing else touching it at any point — an even more total containment than this canon's previous single-season nests.

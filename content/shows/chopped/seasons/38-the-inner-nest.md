@@ -23,9 +23,9 @@ watch_list:
   - episode_label: "Every episode · never running solo"
     body: "Season 38 airs entirely within Season 37's own window, with Season 39, Season 40, and Season 41 all sharing pieces of the same calendar. Watch it as one of the most fully contained seasons the format has produced."
   - episode_label: "Basket reveal · the standard rule, unbothered"
-    body: "The four-ingredient basket holds exactly as it has since Season 4, whatever else is sharing the release calendar. Watch the reveal for that same steady constraint."
+    body: "The four-ingredient basket holds exactly as it has since Season 4, no matter how many other seasons share the release window. Watch the reveal for that same steady constraint."
   - episode_label: "Judges' table · sharp, nested or not"
-    body: "The rotating panel's critique runs at full strength even contained inside another season's window. Watch the judges argue with the same specificity as any standalone run."
+    body: "The rotating panel's critique runs at full strength no matter how many neighbors surround it. Watch the judges argue with the same specificity as any standalone run."
   - episode_label: "Season close · May 2019"
     body: "Season 38 closes out in late May 2019, just after Season 39 wraps alongside it. Watch this run as a fully nested entry rather than a sprawling one."
 ---

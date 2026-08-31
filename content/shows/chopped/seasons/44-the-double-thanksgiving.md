@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "The rest of the season · the usual shape"
     body: "Eleven ordinary hours carry the season everywhere else, the closed-door premise unchanged. Watch them as the tether back to the format this canon measures everywhere else."
   - episode_label: "Basket reveal · steady through the holidays"
-    body: "The four-ingredient rule holds in the Thanksgiving hours exactly as it does everywhere else. Watch the reveal for that same constraint, seasonal ingredients or not."
+    body: "The four-ingredient rule holds in the holiday episodes exactly as it does everywhere else. Watch the reveal for that same constraint, seasonal ingredients or not."
   - episode_label: "Season close · August 2020"
     body: "Season 44 closes out in early August 2020, nearly eleven months after it began, its run touching several neighboring seasons along the way. Watch this run as a long, crowded, holiday-adjacent season."
 ---

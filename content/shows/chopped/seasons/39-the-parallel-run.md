@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Judges' table · sharp despite the tangle"
     body: "The rotating panel's critique doesn't dilute just because three other seasons are on the calendar at the same time. Watch the judges argue with the same specificity as any standalone run."
   - episode_label: "Season close · May 2019"
-    body: "Season 39 closes out in mid-May 2019, a few weeks ahead of Season 38's own finish. Watch this run as the tighter of two seasons nested this deep."
+    body: "Season 39 closes out in mid-May 2019, a few weeks before Season 38 wraps its own run. Watch this run as the tighter of two seasons nested this deep."
 ---
 
 Thirteen episodes run from June 2018 into May 2019, sitting inside Season 37's window alongside Season 38 and overlapping Season 40 and Season 41 as well. The format doesn't register any of that crowding — the locked basket, three-round structure, and Ted Allen's hosting play out exactly as they always have. It's the tighter of the two seasons nested this deep, closing out a few weeks before Season 38 does.

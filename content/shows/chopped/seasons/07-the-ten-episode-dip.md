@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Basket reveal · the standard rule holds"
     body: "The four-ingredient basket Season 4 fixed carries through unchanged despite the shorter run. Watch how settled the mechanic feels even as the episode count contracts further."
   - episode_label: "Judges' table · same panel mechanics"
-    body: "The rotating three-chef panel doesn't change with the shorter season. Watch the critique hold the same specificity it did across the six prior seasons."
+    body: "The rotating three-chef panel doesn't change with fewer episodes on the clock. Watch the critique hold the same specificity it did across the six prior seasons."
   - episode_label: "Season close · a contraction still in progress"
     body: "Season 7 isn't the bottom of the dip — that comes next season. Watch this run as the middle chapter of a contraction the format hadn't yet reversed."
 ---

@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Episode 8 · four familiar faces"
     body: "Four chefs who'd previously come up short in a Chopped final get a rare second shot. Watch how differently they approach the basket reveal, knowing exactly how fast a small mistake can end the hour."
   - episode_label: "Episode 8 · the judges' memory"
-    body: "The panel is tasting chefs whose prior Chopped run they may already know. Watch whether that history changes the tenor of the critique, or whether the judges taste blind to reputation the same as always."
+    body: "The panel is tasting chefs whose past appearance on the show they may already remember. Watch whether that history changes the tenor of the critique, or whether the judges taste blind to reputation the same as always."
   - episode_label: "Episodes 9-13 · back to baseline"
     body: "After the callback hour, the season returns to entirely new casts for its final stretch. Watch how quickly the format snaps back to the closed-door premise once the one-off experiment ends."
 ---

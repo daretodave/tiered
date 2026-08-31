@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "The standard hours · the format's usual shape"
     body: "Eight regular episodes bookend the tournament, running the ordinary closed-door premise. Watch them as the season's tether back to the format everywhere else in this canon."
   - episode_label: "Basket reveal · unbothered by the theme"
-    body: "The four-ingredient rule holds in both the dessert bracket and the standard hours. Watch the reveal for that same steady constraint no matter which format is running."
+    body: "The four-ingredient rule holds in both the dessert bracket and the ordinary episodes. Watch the reveal for that same steady constraint no matter which format is running."
   - episode_label: "Season close · February 2020"
     body: "Season 43 closes out in late February 2020, its run overlapping several neighboring seasons along the way. Watch this run as a tightly themed tournament inside a busier-than-usual calendar."
 ---
