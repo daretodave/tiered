@@ -17,6 +17,7 @@ host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · September 2012"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Thirteen episodes, an All-Stars edition."
+take_h2: "Returning talent, a raised floor."
 ---
 
 Season fifteen ran the first All-Stars edition of the format — a returning cast of former competitors who brought retained choreographic technique back into the ballroom. The early episodes reflected that immediately: the usual week-one adjustment period was compressed because the cast had been there before. Thirteen episodes gave the competitive arc full room. The nostalgia energy gave the season a distinct emotional register that standard casts can't replicate.

@@ -17,6 +17,7 @@ host_caption: "First season with Tyra Banks as host"
 premiere_caption: "ABC · September 2020"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Thirteen episodes, a solo new host."
+take_h2: "Two disruptions, one season."
 ---
 
 Season twenty-nine carried two disruptions at once. The COVID-19 pandemic removed the live studio audience the format depends on for vote-energy and atmosphere, and a complete host replacement — Tyra Banks arriving after 28 seasons of Tom Bergeron — changed the desk dynamic from the first episode. Banks brought a different energy and her debut generated real viewer discussion. The competitive cast delivered a workable season; the format ran at reduced atmosphere throughout.

@@ -17,6 +17,7 @@ host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · March 2007"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Ten episodes, new pros arrive."
+take_h2: "Depth that carried a decade."
 ---
 
 Season four ran ten episodes in spring 2007 and introduced new professional dancers who would define the show's competitive identity across the following decade. The celebrity cast delivered the format's expected blend of serious competitors and entertaining novices. As the third season in as many years to deliver strong ratings, it showed that the format was not cycling through novelty but building a genuine audience. The pro roster that emerged here carried the show through its peak years.

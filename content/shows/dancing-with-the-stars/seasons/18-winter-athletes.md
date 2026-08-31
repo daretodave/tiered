@@ -17,6 +17,7 @@ host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · March 2014"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Ten episodes, an Olympic-heavy roster."
+take_h2: "The adjustment curve compressed early."
 ---
 
 Season eighteen drew on the 2014 Winter Olympics and Paralympic Games to assemble a cast that mixed elite athletes with entertainment-world celebrities. Athletic and Paralympic competitors arrived with physical discipline that compressed the usual week-one adjustment curve. That casting angle gave early episodes stronger choreographic texture than the spring slot typically produces, and the competitive field stayed more open for longer. Among the single-abc-era spring seasons, it stands apart for its casting input.

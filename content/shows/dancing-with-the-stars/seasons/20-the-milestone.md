@@ -17,6 +17,7 @@ host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · March 2015"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Ten episodes, the 20th-season marker."
+take_h2: "Anniversary weight, no format shift."
 ---
 
 Season twenty carried the promotional weight of the show's twentieth-season mark. The anniversary framing was visible in ABC's marketing, but the format itself ran without structural change — ten episodes, the standard celebrity-professional pairing structure, weekly eliminations in the familiar competitive shape. The cast covered a reasonable spread of backgrounds, and the choreographic arc played out as the format typically delivers it. As a milestone, the season was noted; as a competitive season, it delivered reliably without distinction.

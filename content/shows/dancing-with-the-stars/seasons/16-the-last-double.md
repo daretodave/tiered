@@ -17,6 +17,7 @@ host_caption: "{seasonOrdinalWord} season with Tom Bergeron at the helm"
 premiere_caption: "ABC · March 2013"
 filming_caption: "CBS Television City, Los Angeles"
 shape_h2: "Eleven episodes, down two from fall."
+take_h2: "An era closes, unannounced."
 ---
 
 Season sixteen was the last spring season before the show moved to a single-season-per-year format starting with season seventeen. The double-cycle era ran its final edition without fanfare: eleven episodes, a standard celebrity cast, weekly eliminations in the familiar competitive shape. The format delivered its core pleasures reliably. What the season marks editorially is the close of an eight-year, two-seasons-per-year model that defined the show's early identity.
