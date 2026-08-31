@@ -10,6 +10,7 @@ eyebrow: "Aired spring 2005 · a downtown loft running the established format co
 lede: "A downtown loft in Austin hosts a season that runs the format's established pieces — individual jobs, city-as-backdrop, seven roommates — without pushing into new territory. It's a competent, comfortable entry in the franchise's mid-2000s stretch."
 pull: "By 2005, the format knew exactly what it was — Austin just runs it well."
 shape_h2: "Twenty-four episodes, no structural swing this time."
+take_h2: "Confidence, not experimentation, defines it."
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "a competent, comfortable season without a major structural swing"
 premiere_caption: "MTV · premiered March 2005"

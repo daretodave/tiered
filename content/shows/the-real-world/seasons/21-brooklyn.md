@@ -10,6 +10,7 @@ eyebrow: "Aired spring 2009 · the franchise's first openly transgender cast mem
 lede: "A DUMBO loft overlooking the Brooklyn Bridge hosts a cast that includes the franchise's first openly transgender roommate — a genuine casting milestone seventeen years into the show's run. The individual-jobs structure continues, with the group placed separately across the city."
 pull: "A casting first the franchise had never made before, in a city it had started in seventeen years earlier."
 shape_h2: "Twenty-four episodes, a genuine casting first."
+take_h2: "Seventeen years, then home again."
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "the franchise's first openly transgender cast member"
 premiere_caption: "MTV · premiered March 2009"

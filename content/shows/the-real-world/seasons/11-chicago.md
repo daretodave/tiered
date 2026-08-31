@@ -10,6 +10,7 @@ eyebrow: "Aired winter 2002 · the tightest production turnaround of the early r
 lede: "A converted bookstore and coffeehouse in Wicker Park hosts a cast that includes two openly gay roommates for the first time. Production began almost immediately after the prior season wrapped, and the Wicker Park shoot drew real community pushback over the crew's presence."
 pull: "The fastest turnaround the format had run yet — and the first season the neighborhood pushed back on camera."
 shape_h2: "Twenty-four episodes, a cast milestone reached."
+take_h2: "The block didn't want cameras."
 format_summary: "Group-job format · 24 episodes"
 format_caption: "tightest production turnaround of the franchise's early run"
 premiere_caption: "MTV · premiered January 2002"

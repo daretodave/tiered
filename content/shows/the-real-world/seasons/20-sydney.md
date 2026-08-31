@@ -10,6 +10,7 @@ eyebrow: "Aired summer 2007 · the first season shot outside North America or Eu
 lede: "Sydney breaks the format's geographic pattern entirely — the first Real World season filmed outside North America or Europe. A house overlooking the harbor gives the season a genuinely different skyline and pace than any prior run."
 pull: "The season that took the format to the other side of the world, and let the city do a lot of the talking."
 shape_h2: "Twenty-four episodes, the format's first overseas season."
+take_h2: "A skyline unlike any other."
 format_summary: "Individual-jobs format · 24 episodes"
 format_caption: "first season filmed outside North America or Europe"
 premiere_caption: "MTV · premiered June 2007"

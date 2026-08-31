@@ -9,6 +9,7 @@ eyebrow: "Aired fall 2006 · the season that traded group jobs for showbiz ambit
 lede: "A Hollywood Hills house hosts a cast explicitly pursuing entertainment-industry careers — auditions, gigs, and pitches replace the shared group job that had defined the format for a decade."
 pull: "The season that stopped asking the cast to share a job and started asking them to chase a career."
 shape_h2: "Career gigs replace the group job."
+take_h2: "Seven arcs, running in parallel."
 format_summary: "Career-pursuit format · individual gigs"
 format_caption: "the clearest structural pivot since the group-job era began"
 premiere_caption: "MTV · premiered fall 2006"

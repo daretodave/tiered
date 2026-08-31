@@ -10,6 +10,7 @@ eyebrow: "Aired summer 2000 · the season that leaned hardest into franchise cro
 lede: "The Belfort Mansion hosts a cast whose group job runs a public-access TV station, with rotating producer duties. The cast also takes a group trip to South Africa, and the season features a crossover stunt with sister series Road Rules."
 pull: "By 2000, the format had a house style — and New Orleans runs every piece of it at once."
 shape_h2: "Twenty-three episodes, every format piece at once."
+take_h2: "Confidence without a new idea."
 format_summary: "Group-job format · 23 episodes"
 format_caption: "franchise crossover with Road Rules, plus an international trip"
 premiere_caption: "MTV · premiered June 2000"
