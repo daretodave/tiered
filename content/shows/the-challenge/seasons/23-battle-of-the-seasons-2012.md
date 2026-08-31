@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 5 · roster math"
     body: "Mid-early mission where the six-team geometry produces the worst of both worlds — too many teams to track, not enough cast on each to build internal politics. The structural problem of the season in one episode."
   - episode_label: "Ep 8 · team dissolution"
-    body: "House dynamics where original-season loyalty starts losing to in-house pragmatism. The architecture's whole premise gets quietly contradicted in the confessionals."
+    body: "House dynamics where old-crew loyalty starts losing to in-house pragmatism. The architecture's whole premise gets quietly contradicted in the confessionals."
   - episode_label: "Ep 11 · late tightening"
     body: "Cast count drops far enough that the editing room can finally find a rhythm. The franchise's grammar reasserts itself in the back third — the missions sharpen, the confessionals carry."
 shape_h2: "Twenty-four cast, season-grouping idea repeats."

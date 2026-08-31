@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ep 10 · Iceland grammar"
     body: "Reykjavík missions where the volcanic terrain widens the visual register. The location is doing editorial work across a long run."
   - episode_label: "Ep 15 · partner gambits"
-    body: "Mid-run beats where players game the rotating-partner rule to engineer favorable pairings. The room math is the season's engine."
+    body: "Mid-run beats where players game the reshuffle mechanic to engineer favorable pairings. The room math is the season's engine."
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The cast carries the rotating-pair instability into the final's physical work."
 shape_h2: "Thirty cast, partners rotate each round."

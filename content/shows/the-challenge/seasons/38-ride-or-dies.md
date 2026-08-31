@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ep 10 · Buenos Aires grammar"
     body: "Argentina missions where the urban-and-terrain mix widens the visual register across a long run."
   - episode_label: "Ep 15 · pair pressure"
-    body: "Mid-run beats where house politics strain the real-life bonds. The room math complicates loyalties the season started with as fixed."
+    body: "Mid-run beats where house politics strain the bonds each duo brought into the house. The room math complicates loyalties the season started with as fixed."
   - episode_label: "Ep 20 · endurance close"
     body: "The closing stretch of a 21-episode season. The duos carry the imported-loyalty stakes into the final's physical work."
 shape_h2: "Twenty-eight cast, real-life duos paired."

@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ep 8 · bunker claustrophobia"
     body: "Mid-run house dynamics where the confined setting sharpens the confessional register. The space itself is doing editorial work."
   - episode_label: "Ep 13 · path math"
-    body: "Late-stage beats where the red-skull mechanic governs who has secured a path to the final. The room math is built around the new rule."
+    body: "Late-stage beats where the skull-based safeguard determines who has secured a path to the final. The room math resolves around it."
   - episode_label: "Ep 17 · endurance close"
     body: "The closing run. The cast carries the season's distinct safety stakes into the final's physical work."
 shape_h2: "Twenty-eight cast, red-skull mechanic debuts."

@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Ep 4 · returnee fatigue"
     body: "First mid-mission where the cast's awareness of the format produces a register of professional rivalry rather than personal grievance. The format is now a job the cast has done before."
   - episode_label: "Ep 8 · location grammar"
-    body: "Patagonia missions where the visual register does heavy lifting the format itself can no longer surprise the audience with. The wind, the scale, the cliff-side endurance work."
+    body: "Patagonia missions where the visual register does heavy lifting the format itself can no longer surprise the audience with. The wind, the scale, the cliff-side physical grind."
   - episode_label: "Ep 11 · pair geometry"
     body: "Late-stage endurance work where pairs synchronize through cold-weather conditions. Watch the camera find the moments where the cold itself produces involuntary collaboration between rivals."
 shape_h2: "Twenty-six cast, third pairs of rivals."

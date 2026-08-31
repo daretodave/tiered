@@ -28,9 +28,9 @@ watch_list:
   - episode_label: "Ep 9 · Thailand grammar"
     body: "Phuket and Chiang Mai missions where the terrain widens the visual register. Notice how the location does work the format can no longer surprise the audience with."
   - episode_label: "Ep 14 · divide pressure"
-    body: "Mid-run beats where the US-versus-UK frame is tested by individual self-interest. The room math complicates the clean archetype."
+    body: "Mid-run beats where the international split is tested by individual self-interest. The room math complicates the clean archetype."
   - episode_label: "Ep 17 · endurance close"
-    body: "The closing run. The mixed international cast carries the rivalry premise into the final's physical work."
+    body: "The closing run. The mixed international cast carries the national rivalry into the final's physical work."
 shape_h2: "Thirty cast, US-vs-UK rivalry premise."
 take_h2: "The surprise already spent."
 ---

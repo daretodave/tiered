@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Ep 3 · partner trust"
     body: "First mission where the family architecture produces the season's distinctive register — a veteran asking their sibling to physically commit at a Challenge scale. The Fresh Meat question with blood stakes."
   - episode_label: "Ep 6 · house politics"
-    body: "Mid-season house dynamics where the veteran-and-family pair architecture produces a different kind of alliance than rivalry or exes formats. The room feels more protective and more cautious."
+    body: "Mid-season house dynamics where the veteran-and-family pairing forms a different kind of alliance than rivalry or exes formats. The room feels more protective and more cautious."
   - episode_label: "Ep 10 · endurance work"
     body: "Late-stage missions where family pairs perform synchronized endurance work. Watch the editing find the moments where shared upbringing reads as physical sync."
 shape_h2: "Twenty-eight cast, family-tied rookies debut."
