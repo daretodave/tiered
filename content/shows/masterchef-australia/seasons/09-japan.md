@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Power Pin · strategic mechanic"
     body: "The Power Pin gives its holder fifteen extra minutes in any future challenge, held through finals. The timing of when contestants choose to use it becomes its own competitive story."
   - episode_label: "Yotam Ottolenghi · guest appearance"
-    body: "Ottolenghi's challenge is one of the season's most technically interesting single-episode guest appearances in the founding era — flavor thinking rather than precision technique."
+    body: "Ottolenghi's challenge is one of the season's most technically interesting single-episode guest turns — flavor thinking rather than precision technique."
   - episode_label: "Second Chance Cook-Off"
     body: "Eliminated contestants get a route back into the competition. The returning field adds a layer of pressure to the active contestants."
 ---

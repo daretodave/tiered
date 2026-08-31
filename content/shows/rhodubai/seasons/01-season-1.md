@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Mid-season · Group trip"
     body: "The cast leaves Dubai for a getaway that puts the group's alliances under real pressure, away from the controlled environment of home turf."
   - episode_label: "Reunion · The recap"
-    body: "The reunion gathers the full cast to address the season's tension face to face — the traditional Housewives capstone, staged for the first time with this group."
+    body: "The reunion gathers the full cast to address the season's tension face to face — the traditional Housewives capstone, staged here with this brand-new group."
 ---
 
 Six women in Dubai's international expat scene bring the Housewives format to the Gulf for the first time. Caroline Stanbury, Chanel Ayan, Sara Al Madani, Nina Ali, Lesa Milan, and Caroline Brooks anchor a founding cast built on relocated wealth rather than old family money, and the show treats that specificity — global money, global personalities — as the point rather than the backdrop.

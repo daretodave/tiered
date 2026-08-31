@@ -26,7 +26,7 @@ watch_list:
   - episode_label: "Ep 5 · New chemistry"
     body: "By this stretch the new creative team has found its footing. Notice how the workroom mentor's read differs from the classic era's — a different presence in the same room."
   - episode_label: "Ep 10 · Late run"
-    body: "The pre-finale field narrows here. Watch the rebuilt judges' table operate at speed once the new chemistry has settled."
+    body: "The pre-finale field narrows here. Watch the rebuilt judges' table operate at speed once the ensemble settles into its rhythm."
 ---
 
 The reboot. Project Runway returns to Bravo with the biggest reset in its history — a new host, a former winner installed as the workroom mentor, and a refreshed judges' table, all in the Manhattan workroom the format was built around. The new creative team finds its chemistry quickly, and the season's argument is that the format survives a full personnel change because the format was always the show. The canon places it at the top of the modern era.

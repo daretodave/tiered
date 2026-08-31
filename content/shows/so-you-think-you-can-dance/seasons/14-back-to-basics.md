@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Ep 5 · the panel settles"
     body: "Nigel Lythgoe and Mary Murphy anchor the judging panel, joined by newcomer Vanessa Hudgens."
   - episode_label: "Ep 10 · the Top 10 format holds"
-    body: "The season keeps the Top 10 live-show structure the format has relied on across recent years."
+    body: "The season keeps the Top 10 structure the format has relied on across recent years."
 ---
 
 Season fourteen course-corrects after a year built entirely around

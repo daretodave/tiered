@@ -23,7 +23,7 @@ watch_list:
   - episode_label: "Ep 6 · Veteran chemistry"
     body: "By this stretch the returning cast has reformed its dynamics. Notice how prior history between designers reshapes the workroom energy."
   - episode_label: "Ep 11 · Late run"
-    body: "The pre-finale field tightens here. Watch experienced benches operate at a level a first-time cast can't — the all-stars premise paying off."
+    body: "The pre-finale field tightens here. Watch experienced benches operate at a level a first-time cast can't — the deep roster paying off."
 ---
 
 The veterans edition. Project Runway's twentieth season recasts itself with fourteen designers from its history for a milestone all-stars cycle, with no single host — mentor Christian Siriano and the judges panel carry the season instead. The returning cast brings prior history into the Manhattan workroom, and the editing leans on the chemistry returnees bring to a room they already know. The canon places it mid-pack — a celebratory premise with experienced benches, even where the frame leans on nostalgia.

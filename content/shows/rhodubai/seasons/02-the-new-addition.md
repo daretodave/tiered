@@ -24,9 +24,9 @@ watch_list:
   - episode_label: "Early run · Back on home turf"
     body: "The group picks back up with Dubai's usual social calendar, dinners and outings that re-establish who's aligned with whom before the season's bigger swing."
   - episode_label: "Mid-season · Bali"
-    body: "The cast trades Dubai for a group trip to Bali, and the change of scenery puts the season's dynamics through a real stress test away from home-turf comforts."
+    body: "The cast trades Dubai for a group trip to Bali, and the change of scenery puts the season's dynamics through a real stress test away from familiar ground."
   - episode_label: "Late run · Building to the reunion"
-    body: "The back half tightens the season's threads before the cast reconvenes for the traditional Housewives reunion, staged with this expanded lineup for the first time."
+    body: "The back half tightens the season's threads before the cast reconvenes for the traditional Housewives reunion, staged here with this expanded lineup."
   - episode_label: "Reunion · The recap"
     body: "The full cast — including the new addition — sits down to address the season face to face, closing out RHODubai's longest run yet."
 ---

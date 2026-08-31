@@ -25,7 +25,7 @@ watch_list:
   - episode_label: "Ep 3 · auditions wrap"
     body: "The audition round closes across Los Angeles and Brooklyn, New York, before callbacks narrow the field further."
   - episode_label: "Ep 7 · the roster tightens"
-    body: "A mid-season cut trims the group advancing toward the live shows, tightening the competition heading into its second half."
+    body: "A mid-season cut trims the group advancing toward the finals, tightening the competition heading into its second half."
   - episode_label: "Ep 9 · the live shows begin"
     body: "The trimmed field moves into the live rounds, with the season's four-judge panel weighing in on every performance."
 ---
