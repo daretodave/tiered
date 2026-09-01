@@ -8,7 +8,7 @@ premiere_date: "2023-08-22"
 host: "Ted Allen"
 ep_count: 13
 cast_size: 4
-eyebrow: "Aired late 2023–winter 2024 · Food Network · no tournament, a majority overlap"
+eyebrow: "Aired summer 2023–winter 2024 · Food Network · no tournament, a majority overlap"
 lede: "Thirteen episodes run from August 2023 into January 2024, all of them standalone hours — including a Halloween-themed episode and a Friendsgiving-themed episode — with no tournament bracket of any kind, a rarity in this stretch of the show's run."
 pull: "Season 56 has nothing but format execution to offer against a real problem — roughly three and a half of its own five months share the calendar with Season 55, the majority of its own release window."
 premiere_caption: "Food Network · August 2023 into January 2024"

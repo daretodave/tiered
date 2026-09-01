@@ -7,7 +7,7 @@ ep_count: 14
 location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 3
-eyebrow: "Aired summer 2005 · The debut season"
+eyebrow: "Aired spring–summer 2005 · The debut season"
 lede: "Hell's Kitchen opens with Gordon Ramsay running a working restaurant in Los Angeles and a dozen aspiring chefs who had no idea what they were walking into. The format invents its elimination grammar in real time."
 pull: "The original. Everything the format became starts with this dinner service."
 format_summary: "Red vs. blue teams · chef elimination"

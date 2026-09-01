@@ -8,7 +8,7 @@ host: "Matt Iseman, Akbar Gbaja-Biamila, and Zuri Hall"
 aired_year: 2021
 location: "Tacoma, Washington and Universal Studios Hollywood, California · national finals in Las Vegas, Nevada"
 canonical_position: 11
-eyebrow: "Aired summer 2021 · NBC"
+eyebrow: "Aired spring–summer 2021 · NBC"
 lede: "Season thirteen restores the full-length season and brings National Finals back to Las Vegas, reinstating the million-dollar grand prize. Qualifying still runs a reduced two-location model, but a new Split Decision mechanic and teenager-inclusive family teams add fresh texture."
 pull: "Vegas is back, the prize is back, and a new choice-driven obstacle mechanic gives the format something to talk about."
 shape_h2: "Twelve episodes, two locations."

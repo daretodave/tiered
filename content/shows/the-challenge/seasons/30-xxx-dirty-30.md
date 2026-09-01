@@ -8,7 +8,7 @@ host: TJ Lavin
 premiere_date: 2017-08-22
 ep_count: 19
 location: Iceland
-eyebrow: "Aired fall 2017 · The franchise's milestone season"
+eyebrow: "Aired summer–fall 2017 · The franchise's milestone season"
 lede: "30th-season returnees event. Multiple structural twists across the run — ambushes, a redemption-house elimination track, the longest cast list the franchise had assembled. Filmed across Iceland. The run that the next era reset off of."
 pull: "The franchise's milestone season — returnee depth that only thirty seasons of casting could produce, and the run the next era reset off of."
 format_summary: "Returnees · Multi-twist"

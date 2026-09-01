@@ -7,7 +7,7 @@ premiere_date: "2017-05-02"
 location: "Dubrovnik, Croatia / Amalfi Coast, Italy"
 host: "Sandy Yawn"
 ep_count: 16
-eyebrow: "The franchise's creative peak — Adriatic summer at full strength"
+eyebrow: "The franchise's creative peak — Adriatic spring-into-summer at full strength"
 take_h2: "The franchise's high-water mark."
 shape_h2: "Two coasts, one peak."
 lede: "Season 2 took the fleet from Dubrovnik's old city walls south to the Amalfi Coast, and the format arrived in full. A cast generating friction across every department, a captain whose authority was tested and held, and a Mediterranean backdrop that earned every frame."

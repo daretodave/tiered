@@ -8,7 +8,7 @@ host: TJ Lavin
 premiere_date: 2021-08-11
 ep_count: 20
 location: Vrsar, Croatia
-eyebrow: "Aired fall 2021 · Heavy rookie infiltration"
+eyebrow: "Aired summer–fall 2021 · Heavy rookie infiltration"
 lede: "A spy-themed season that loads the cast with rookie Agents infiltrating a pool of veteran Operatives — the heaviest fresh-blood injection the franchise had run. Filmed in Vrsar, Croatia. The veteran-versus-rookie tension is the season's organizing structural argument."
 pull: "The heaviest rookie infiltration the franchise had attempted — fresh Agents against veteran Operatives, with the cast question front and center."
 format_summary: "Rookies vs veterans · Spy theme"

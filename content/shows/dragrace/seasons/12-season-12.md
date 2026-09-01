@@ -8,7 +8,7 @@ location: Los Angeles, California
 host: RuPaul Charles
 format_changes: [remote-produced-finale]
 canonical_position: 5
-eyebrow: "Aired spring 2020 · VH1 · the remote-finale season"
+eyebrow: "Aired winter–spring 2020 · VH1 · the remote-finale season"
 take_h2: "History rewrote the finale."
 lede: "A strong VH1 cast whose run collided with the world shutting down — the finale was produced remotely, the first time the franchise had to rebuild its biggest hour from scratch."
 shape_h2: "A strong contest, interrupted."

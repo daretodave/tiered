@@ -8,7 +8,7 @@ host: TJ Lavin
 premiere_date: 2019-08-28
 ep_count: 18
 location: Chiang Mai & Phuket, Thailand
-eyebrow: "Aired fall 2019 · US-vs-UK rivalry premise"
+eyebrow: "Aired summer–fall 2019 · US-vs-UK rivalry premise"
 lede: "The fresh-blood format returns with a US-versus-UK rivalry premise layered on top. The international cast divide gives the editing room a clean archetype frame. Filmed across Chiang Mai and Phuket, Thailand, with the structural surprise of the first run by now familiar."
 pull: "The fresh-blood sequel, with a US-versus-UK rivalry premise added — iteration on a strong idea with the surprise already spent."
 format_summary: "Returnees + US-vs-UK"
