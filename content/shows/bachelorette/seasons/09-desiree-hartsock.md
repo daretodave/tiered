@@ -7,7 +7,7 @@ premiere_date: 2013-05-27
 ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
-eyebrow: "Aired summer 2013 · Mansion plus international run"
+eyebrow: "Aired spring–summer 2013 · Mansion plus international run"
 take_h2: "A gentler middle-canon entry."
 format_summary: "25 men · first bridal-stylist lead"
 format_caption: "softer-textured Bachelorette"

@@ -7,7 +7,7 @@ premiere_date: 2018-05-28
 ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
-eyebrow: "Aired summer 2018 · Heavy international run"
+eyebrow: "Aired spring–summer 2018 · Heavy international run"
 take_h2: "Steady hand, warm cast."
 format_summary: "28 men · drawn from the prior Bachelor"
 format_caption: "Richmond, Utah, Bahamas, Thailand, Maldives"

@@ -7,7 +7,7 @@ premiere_date: 2015-05-18
 ep_count: 11
 location: Agoura Hills, California
 host: Chris Harrison
-eyebrow: "Aired summer 2015 · Two leads, one vote"
+eyebrow: "Aired spring–summer 2015 · Two leads, one vote"
 take_h2: "A gamble that paid off."
 format_summary: "25 men · the premiere splits the lead"
 format_caption: "the contestant-vote experiment"

@@ -7,7 +7,7 @@ premiere_date: 2012-05-14
 ep_count: 11
 location: Charlotte, North Carolina
 host: Chris Harrison
-eyebrow: "Aired summer 2012 · Filmed around the lead's life"
+eyebrow: "Aired spring–summer 2012 · Filmed around the lead's life"
 take_h2: "Real life reshapes the format."
 format_summary: "25 men · first home-state season"
 format_caption: "the franchise leaves the mansion"
