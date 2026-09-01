@@ -7,7 +7,7 @@ ep_count: 14
 location: "Los Angeles, California; Rio de Janeiro and São Paulo, Brazil"
 host: Tyra Banks
 canonical_position: 16
-eyebrow: "Aired spring 2013 · The CW · first male contestants in show history"
+eyebrow: "Aired winter–spring 2013 · The CW · first male contestants in show history"
 lede: "Cycle 20 is the show's most significant casting expansion: male contestants compete for the first time in the show's history, creating a fully co-ed competition. Brazil — covering both Rio de Janeiro and São Paulo — provides the international backdrop."
 pull: "The format opens up in a way it hadn't since the UPN era — male contestants change what the competition is actually measuring."
 format_summary: "Modeling competition · co-ed cast"

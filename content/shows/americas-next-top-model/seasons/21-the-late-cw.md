@@ -7,7 +7,7 @@ ep_count: 14
 location: "Los Angeles, California"
 host: Tyra Banks
 canonical_position: 22
-eyebrow: "Aired fall 2013 · The CW · entirely domestic, no international leg"
+eyebrow: "Aired summer–fall 2013 · The CW · entirely domestic, no international leg"
 lede: "Cycle 21 returns to the standard open-casting competition format after two cycles of structural experimentation. Produced entirely within Los Angeles, it foregoes the international leg that had been the show's most consistent creative engine since cycle three."
 pull: "The standard format without the international component — the cycle runs reliably but offers nothing the CW era hadn't already done better."
 format_summary: "Modeling competition · domestic only"

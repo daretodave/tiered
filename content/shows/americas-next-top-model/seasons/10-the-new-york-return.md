@@ -7,7 +7,7 @@ ep_count: 13
 location: "New York City, New York; Rome, Italy"
 host: Tyra Banks
 canonical_position: 8
-eyebrow: "Aired spring 2008 · The CW · New York City returns as primary base"
+eyebrow: "Aired winter–spring 2008 · The CW · New York City returns as primary base"
 lede: "After five cycles based in Los Angeles, the show returns to New York City — and the move changes the production's register. Paulina Porizkova joins the permanent panel, the casting expands to 14 contestants, and Rome provides the international component."
 pull: "A homecoming that reinvigorates the format — New York sharpens everything the show does with light and fashion context."
 format_summary: "Modeling competition · NYC homecoming"

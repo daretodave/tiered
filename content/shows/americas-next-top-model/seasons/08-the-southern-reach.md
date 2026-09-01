@@ -7,7 +7,7 @@ ep_count: 12
 location: "Los Angeles, California; Sydney, Australia"
 host: Tyra Banks
 canonical_position: 10
-eyebrow: "Aired spring 2007 · The CW · first Oceania visit"
+eyebrow: "Aired winter–spring 2007 · The CW · first Oceania visit"
 lede: "Sydney gives the show its first look at Oceania, and the location delivers — the photoshoot creative uses the harbour and coastal settings with genuine editorial ambition. The CW finale drew record viewership for the network at that point."
 pull: "A clean competition format with a strong location and a settled panel — the show running at confident mid-cycle form."
 format_summary: "Modeling competition · first Australia trip"
