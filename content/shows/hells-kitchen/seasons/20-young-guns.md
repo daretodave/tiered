@@ -16,7 +16,7 @@ format_caption: "all chefs 24 or under; first age-restricted season"
 cast_size: 18
 cast_size_caption: "eighteen chefs, all 24 or younger"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Las Vegas, Nevada"
+filming_caption: "A second straight season at Caesars Palace, following January's debut."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The second premiere date of 2021."
 take_h2: "Energy without the experience."

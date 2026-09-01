@@ -16,7 +16,7 @@ format_caption: "20-chef cast, one representative per state"
 cast_size: 20
 cast_size_caption: "twenty chefs, one from each represented U.S. state"
 premiere_caption: "Fox · Thursday 9/8c"
-filming_caption: "Foxwoods Resort Casino, Ledyard, Connecticut"
+filming_caption: "A second consecutive season inside Foxwoods, after last year's move east."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Twenty states set the pace."
 take_h2: "Breadth as the casting bet."

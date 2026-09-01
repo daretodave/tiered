@@ -16,7 +16,7 @@ format_caption: "international cast; last California-based season"
 cast_size: 18
 cast_size_caption: "eighteen chefs, international field"
 premiere_caption: "Fox · Thursday 9/8c"
-filming_caption: "Los Angeles, California"
+filming_caption: "Los Angeles for a second straight year, following season 21's return."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Seventh straight season at sixteen episodes."
 take_h2: "A theme the cast earns."

@@ -16,7 +16,7 @@ format_caption: "20s vs. 40s cast, reorganized by gender after episode 3"
 cast_size: 18
 cast_size_caption: "eighteen chefs, split by generation"
 premiere_caption: "Fox · Thursday 9/8c"
-filming_caption: "Los Angeles, California"
+filming_caption: "Back in Los Angeles after two seasons filming inside Caesars Palace."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The franchise's third age-based casting experiment."
 take_h2: "A premise that didn't last."

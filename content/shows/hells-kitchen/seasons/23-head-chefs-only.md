@@ -16,7 +16,7 @@ format_caption: "all-EC and head-chef cast; first East Coast production"
 cast_size: 18
 cast_size_caption: "eighteen working head chefs and executive chefs"
 premiere_caption: "Fox · Thursday 9/8c"
-filming_caption: "Foxwoods Resort Casino, Ledyard, Connecticut"
+filming_caption: "A cross-country move after two Los Angeles seasons and two in Vegas."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "First season filmed outside California."
 take_h2: "No rookies in this kitchen."

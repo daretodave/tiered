@@ -16,7 +16,7 @@ format_caption: "first rookies-vs-veterans structure; teams restructured mid-sea
 cast_size: 16
 cast_size_caption: "eight rookies, eight returning veterans"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "California"
+filming_caption: "The last of eighteen straight California seasons before the Vegas move."
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Same sixteen-chef cast, split down the middle."
 take_h2: "The boldest structural swing yet."
