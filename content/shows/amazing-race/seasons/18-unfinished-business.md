@@ -8,7 +8,7 @@ location: "Global route, starting Palm Springs, California, finishing in Miami, 
 host: Phil Keoghan
 format_changes: [all-returnee-cast]
 canonical_position: 14
-eyebrow: "Aired spring 2011 · All-returnee cast"
+eyebrow: "Aired winter–spring 2011 · All-returnee cast"
 shape_h2: "Second returnee outing, eleven teams."
 take_h2: "History re-tested, years later."
 lede: "The franchise's second full returnee outing, four years after All-Stars. Eleven teams from prior seasons came back to take another swing at the route, with the editing room leaning into the histories the audience already had with them."
