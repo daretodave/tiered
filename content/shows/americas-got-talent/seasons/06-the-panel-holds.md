@@ -6,7 +6,7 @@ premiere_date: 2011-05-31
 location: New Jersey / Hollywood, California
 host: Nick Cannon
 canonical_position: 10
-eyebrow: "Aired summer 2011 · The founding-adjacent panel's second season together"
+eyebrow: "Aired spring–summer 2011 · The founding-adjacent panel's second season together"
 lede: "Piers Morgan, Sharon Osbourne, and Howie Mandel run a second consecutive season as a trio, the same dynamic from the year before with no changes at the table. Nothing on screen signals it, but it is the trio's last season together."
 pull: "A quiet, functional season from a panel about to change — though nobody watching yet knows it."
 format_summary: "Variety competition · open audition · viewer vote"

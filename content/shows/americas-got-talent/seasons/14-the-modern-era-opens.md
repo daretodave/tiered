@@ -6,7 +6,7 @@ premiere_date: 2019-05-28
 location: Pasadena, California
 host: Terry Crews
 canonical_position: 14
-eyebrow: "Aired summer 2019 · Terry Crews hosts, two new judges join"
+eyebrow: "Aired spring–summer 2019 · Terry Crews hosts, two new judges join"
 lede: "Terry Crews takes over as host and two new judges — Julianne Hough and Gabrielle Union — join Simon Cowell and Howie Mandel at the table. The dual overhaul at host and panel makes this the most structurally unsettled season since the format's early years."
 pull: "A new host and two new judges arriving together give the season a debut-year volatility — something at the table is always finding its footing."
 format_summary: "Variety competition · open audition · viewer vote"

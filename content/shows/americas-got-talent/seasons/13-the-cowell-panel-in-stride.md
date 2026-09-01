@@ -6,7 +6,7 @@ premiere_date: 2018-05-29
 location: New Jersey / Hollywood, California
 host: Tyra Banks
 canonical_position: 12
-eyebrow: "Aired summer 2018 · Cowell panel's most assured run"
+eyebrow: "Aired spring–summer 2018 · Cowell panel's most assured run"
 lede: "The Simon Cowell–Mel B–Howie Mandel–Heidi Klum panel enters its third season together, and the chemistry has settled into something confident and reliable. Tyra Banks returns as host, and the format runs with a practiced ease that rewards broad audition variety."
 pull: "Three years of the same panel produces shorthand — the critique is faster, the disagreements are sharper, and the competition moves with real efficiency."
 format_summary: "Variety competition · open audition · viewer vote"

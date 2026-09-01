@@ -6,7 +6,7 @@ premiere_date: 2012-05-14
 location: New Jersey / Hollywood, California
 host: Nick Cannon
 canonical_position: 6
-eyebrow: "Aired summer 2012 · Howard Stern joins, sharpest panel of the era"
+eyebrow: "Aired spring–summer 2012 · Howard Stern joins, sharpest panel of the era"
 lede: "Howard Stern replaces Piers Morgan as judge, bringing celebrity credibility and a willingness to say uncomfortable truths about acts that aren't ready for prime time. Sharon Osbourne and Howie Mandel remain, and the panel dynamic shifts immediately."
 pull: "The judging table got sharper, the critique got more honest, and the show found a voice it had been circling since the debut."
 format_summary: "Variety competition · open audition · viewer vote"

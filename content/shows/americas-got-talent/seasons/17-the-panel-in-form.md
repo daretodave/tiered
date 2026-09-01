@@ -6,7 +6,7 @@ premiere_date: 2022-05-31
 location: Hollywood, California
 host: Terry Crews
 canonical_position: 18
-eyebrow: "Aired summer 2022 · Cowell-Klum-Vergara-Mandel panel, second full year"
+eyebrow: "Aired spring–summer 2022 · Cowell-Klum-Vergara-Mandel panel, second full year"
 lede: "Season seventeen runs the same four-person panel for a second complete year together. Simon Cowell, Heidi Klum, Sofia Vergara, and Howie Mandel have built real shorthand, and the judging table operates with the assurance that only comes from a year of actual chemistry."
 pull: "A second season together lets the panel stop negotiating with itself and start doing the work — the judging is sharper for it."
 format_summary: "Variety competition · open audition · viewer vote"

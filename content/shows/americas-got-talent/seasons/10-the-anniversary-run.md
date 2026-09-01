@@ -6,7 +6,7 @@ premiere_date: 2015-05-26
 location: New Jersey / New York City
 host: Nick Cannon
 canonical_position: 9
-eyebrow: "Aired summer 2015 · 10th season, full five-judge panel"
+eyebrow: "Aired spring–summer 2015 · 10th season, full five-judge panel"
 lede: "The show's tenth season runs the Mel B and Heidi Klum panel alongside Howard Stern and Howie Mandel for a third consecutive year together. The anniversary framing brings ceremonial weight, and the format leans into its own history."
 pull: "Ten seasons in, the format has enough of a record to look back on — and a panel settled enough to carry the competition without drama at the judging table."
 format_summary: "Variety competition · open audition · viewer vote"
