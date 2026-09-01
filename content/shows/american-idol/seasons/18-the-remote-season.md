@@ -7,7 +7,7 @@ ep_count: 17
 location: Hollywood, California
 host: Ryan Seacrest
 canonical_position: 24
-eyebrow: "Aired spring 2020 · Competition disrupted by COVID-19"
+eyebrow: "Aired winter–spring 2020 · Competition disrupted by COVID-19"
 shape_h2: "Seventeen episodes, a remote finale."
 take_h2: "The season a pandemic reshaped."
 lede: "Season eighteen began with standard in-person auditions and ended unlike any season before it. The later competition rounds shifted to remote production, with contestants performing from home via video link — a constraint the format had never faced before or since."
