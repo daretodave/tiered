@@ -7,7 +7,7 @@ ep_count: 21
 location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 12
-eyebrow: "Aired summer 2017 · Sanchez joins full-time"
+eyebrow: "Aired spring–summer 2017 · Sanchez joins full-time"
 take_h2: "A trio that won't last."
 lede: "Season eight closes the rotating-judge experiment and gives MasterChef a stable panel again: Gordon Ramsay, Aaron Sanchez, and Christina Tosi. Sanchez takes the permanent third seat; Tosi is in her final season. Twenty-one episodes run the standard format."
 shape_h2: "A stable panel, twenty-one episodes."

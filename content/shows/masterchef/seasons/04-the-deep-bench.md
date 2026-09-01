@@ -7,7 +7,7 @@ ep_count: 25
 location: Los Angeles, California
 host: Gordon Ramsay
 canonical_position: 1
-eyebrow: "Aired summer 2013 · The founding era's peak"
+eyebrow: "Aired spring–summer 2013 · The founding era's peak"
 take_h2: "The founding era's high point."
 lede: "Season four is MasterChef at its founding-era best. The largest cast in the show's early run, twenty-five episodes, and a deep amateur bench with real technique — a three-judge panel in full sync, and challenges that consistently deliver."
 shape_h2: "Cast grows to twenty-three cooks."
