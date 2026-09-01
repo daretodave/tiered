@@ -9,7 +9,7 @@ ep_count: 13
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [twenty-six-day-format]
-eyebrow: "Aired spring 2024 · Filmed in Fiji"
+eyebrow: "Aired winter–spring 2024 · Filmed in Fiji"
 lede: "A solid mid-pack new-era run, on the 26-day clock with three tribes of new players on the Mamanucas. The format is fully established here; the season lives or dies on the casting bench it brings."
 pull: "Survivor 46 is the new era running on cast. The format is no longer the story — the players are, and the season's texture follows their energy."
 shape_h2: "Twelfth Fiji shoot, three-tribe format."

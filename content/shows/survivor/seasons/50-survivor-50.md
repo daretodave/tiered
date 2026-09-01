@@ -9,7 +9,7 @@ ep_count: 13
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [all-returnee-cast, fan-voted-format]
-eyebrow: "Aired spring 2026 · all-returnee cast"
+eyebrow: "Aired winter–spring 2026 · all-returnee cast"
 lede: "All 24 castaways returning, spanning the show's entire run, for the biggest cast yet — with game mechanics the fans voted on themselves."
 pull: "Survivor 50 pulls its entire cast from the show's own history — winners, near-misses, and one-season wonders alike — the largest roster the franchise has fielded. The season's mechanics carry an audience's fingerprints too: months before the marooning, fans voted on the format itself, shaping the game before a single tribe stepped off the boat."
 shape_h2: "A record twenty-four returning players."

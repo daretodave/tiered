@@ -10,7 +10,7 @@ ep_count: 14
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [edge-of-extinction-twist, mixed-new-and-returning]
-eyebrow: "Aired spring 2019 · Filmed in Fiji"
+eyebrow: "Aired winter–spring 2019 · Filmed in Fiji"
 lede: "The Edge of Extinction mechanic debuts — voted-out players get the choice to stay in the game's orbit on a separate beach. A mixed cast of new players and returning faces on the Mamanucas, running as one of the era's more divisive structural experiments."
 pull: "Edge of Extinction is the franchise testing how far it can stretch elimination. The mechanic is bold and the fandom has never agreed on whether it lands."
 shape_h2: "Elimination stops being permanent here."

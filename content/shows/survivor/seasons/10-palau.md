@@ -9,7 +9,7 @@ location: Koror, Palau
 host: Jeff Probst
 format_changes: [pre-marooning-cut, schoolyard-pick]
 canonical_position: 7
-eyebrow: "Aired spring 2005 · Filmed in Palau"
+eyebrow: "Aired winter–spring 2005 · Filmed in Palau"
 lede: "The tenth season opens on a boat with twenty castaways and a cut to be made before anybody reaches a beach. The structural twist front-loads pressure that the season carries the whole way through. Palau is shot through with World War II history the show actively uses."
 pull: "Palau makes a structural argument early and never lets up. The first episode is one of the most consequential premieres the show has ever staged."
 shape_h2: "Twenty aboard, two cut early."

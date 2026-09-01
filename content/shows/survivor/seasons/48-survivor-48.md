@@ -9,7 +9,7 @@ ep_count: 13
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [twenty-six-day-format]
-eyebrow: "Aired spring 2025 · Filmed in Fiji"
+eyebrow: "Aired winter–spring 2025 · Filmed in Fiji"
 lede: "A complete new-era run on the now-fully-settled 26-day clock, with three tribes of new players on the Mamanucas. By season 48 the format is settled grammar — what the season is depends on the casting bench it brings to the marooning."
 pull: "Survivor 48 is the new era running as a known quantity. A full discourse cycle later it reads as a clean, competently built run, and the canon settles it just above the era's polarizing premise-revival."
 shape_h2: "Fourteenth consecutive shoot in Fiji."
