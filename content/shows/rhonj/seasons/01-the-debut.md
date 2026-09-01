@@ -14,7 +14,7 @@ take_h2: "Chemistry, not manufacture."
 pull: "The founding confrontation at the dinner table entered the cultural vocabulary because the cast brought it — not because the show manufactured it."
 shape_h2: "Immediate heat, unformed structure."
 premiere_caption: "Bravo · May 2009"
-filming_caption: "Franklin Lakes and surrounding New Jersey"
+filming_caption: "Franklin Lakes · the franchise's founding backdrop"
 format_summary: "Social reality"
 format_caption: "Original five-woman founding cast"
 cast_size: 5

@@ -11,7 +11,7 @@ shape_h2: "A pared-back travel itinerary."
 pull: "A season still finding its argument — early enough that the verdict is provisional."
 take_h2: "The verdict stays provisional."
 premiere_caption: "Bravo · October 2024"
-filming_caption: "Beverly Hills, Mexico"
+filming_caption: "Beverly Hills · a Mexico departure from the usual European circuit"
 format_summary: "Social reality"
 format_caption: "Bozoma Saint John joins · cast stabilizing"
 ---

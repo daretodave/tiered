@@ -14,7 +14,7 @@ take_h2: "Finding its footing."
 pull: "The format gains its footing. The social architecture of north Jersey becomes less backdrop and more structure."
 shape_h2: "A gradual pressure build."
 premiere_caption: "Bravo · May 2010"
-filming_caption: "Franklin Lakes and surrounding New Jersey"
+filming_caption: "Franklin Lakes · the same social world, one year on"
 format_summary: "Social reality"
 format_caption: "Original founding cast returns"
 cast_size: 5

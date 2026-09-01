@@ -16,7 +16,7 @@ pull: "A solid Caribbean run that holds its own in the middle of the pack."
 format_summary: "Superyacht charter · Caribbean"
 format_caption: "Superyacht charter, Antiguan waters"
 host_caption: "Captain Lee Rosbach's {seasonOrdinal} season at the helm"
-filming_caption: "Antigua, Caribbean"
+filming_caption: "Antigua · the Caribbean return after S7's Thailand detour"
 premiere_caption: "Bravo · 2020"
 ---
 
