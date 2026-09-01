@@ -1033,6 +1033,16 @@ it happens between two march ticks instead of skipping a whole day
 of digest. No change to score or scope sketch; still unpromoted 34
 days after filing.
 
+**Update (digest 2026-09-01):** worst run since the original 07-21
+week-long gap — **three consecutive nights lost**: `gh run list
+--workflow night` shows 08-29 (33248067249), 08-30 (33306737061,
+already counted in the 08-30 update above), and 08-31 (33383044473)
+all `conclusion: cancelled`, zero jobs started on any of the three.
+`plan/DIGEST.md` sat frozen on its 2026-08-28 snapshot for the
+entire 3-night span until tonight's tick (this commit) got through.
+Same unfixed mechanism each time — no new evidence, just the longest
+unbroken loss streak since filing 42 days ago. Still unpromoted.
+
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
      critique-pass evidence (passes 90-93).
