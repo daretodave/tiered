@@ -15,7 +15,7 @@ format_summary: "Group-job format · 12 episodes"
 format_caption: "the only Real World season filmed in the Caribbean"
 premiere_caption: "MTV · premiered summer 2012"
 episodes_caption: "Only the second season filmed outside the contiguous US, after Hawaii"
-filming_caption: "An estate on Hassel Island, U.S. Virgin Islands"
+filming_caption: "Thirteen years after Hawaii's 1999 debut off the US mainland."
 cast_size: 7
 cast_size_caption: "Seven roommates working at a local ocean park"
 watch_list:

@@ -15,7 +15,7 @@ format_summary: "Streaming-era format · 12 eps"
 format_caption: "the first season released on Facebook Watch instead of MTV broadcast"
 premiere_caption: "Facebook Watch · premiered summer 2019"
 episodes_caption: "The classic 1990s title sequence returns, revived for a new platform"
-filming_caption: "The Urban Oasis Bed and Breakfast, Atlanta, GA"
+filming_caption: "Premieres nearly three years after the previous season, Seattle: Bad Blood."
 cast_size: 7
 cast_size_caption: "Seven roommates, cast from the franchise's widest age range yet"
 watch_list:

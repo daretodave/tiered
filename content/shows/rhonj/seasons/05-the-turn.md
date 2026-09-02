@@ -14,7 +14,7 @@ take_h2: "Catching its breath."
 pull: "The franchise catching its breath — and doing it with more grace than you'd expect."
 shape_h2: "A deliberate de-escalation."
 premiere_caption: "Bravo · July 2013"
-filming_caption: "Montville, New Jersey and surrounding areas"
+filming_caption: "Last of three Montville seasons; later seasons don't name a town."
 format_summary: "Social reality, reconciliation arc"
 format_caption: "Five-person cast, reconciliation season"
 cast_size: 5

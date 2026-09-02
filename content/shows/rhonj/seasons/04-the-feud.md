@@ -14,7 +14,7 @@ take_h2: "Pressure without setup."
 pull: "Less setup, more pressure. The franchise's most focused early season."
 shape_h2: "Sustained pressure, zero slack."
 premiere_caption: "Bravo · May 2012"
-filming_caption: "Montville, New Jersey and surrounding areas"
+filming_caption: "The middle season of the three filmed in Montville."
 format_summary: "Social reality, family conflict arc"
 format_caption: "Cast adjusted, family divide at peak"
 cast_size: 5

@@ -14,7 +14,7 @@ take_h2: "Proximity as format."
 pull: "Proximity is the format. Season three understood that before any other season did."
 shape_h2: "Tightly wound, no release."
 premiere_caption: "Bravo · May 2011"
-filming_caption: "Montville, New Jersey and surrounding areas"
+filming_caption: "First of three seasons filmed in Montville, after two in Franklin Lakes."
 format_summary: "Expanded cast, family dynamics"
 format_caption: "Cast expanded to seven, family fracture arc"
 cast_size: 7

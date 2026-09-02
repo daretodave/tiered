@@ -16,7 +16,7 @@ format_summary: "Group-job format · 12 episodes"
 format_caption: "the first season housed in a residential property"
 premiere_caption: "MTV · premiered summer 2010"
 episodes_caption: "A decade after the first New Orleans visit, now in the shorter format"
-filming_caption: "An Uptown residence, New Orleans, LA"
+filming_caption: "The franchise's first New Orleans stay was the Garden District, not Uptown."
 cast_size: 8
 cast_size_caption: "Eight roommates doing post-Katrina rebuilding work"
 watch_list:
