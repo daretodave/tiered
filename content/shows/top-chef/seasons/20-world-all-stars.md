@@ -18,7 +18,7 @@ format_caption: "global-franchise alumni, supersized eps"
 cast_size: 16
 cast_size_caption: "sixteen alumni from worldwide franchises"
 premiere_caption: "Bravo · Thursday 9/8c"
-filming_caption: "London · finale in Paris"
+filming_caption: "London · the first Top Chef US season filmed outside North America"
 host_caption: "Padma Lakshmi's nineteenth and final season"
 watch_list:
   - episode_label: "Ep 1 · global alumni walk in"

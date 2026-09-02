@@ -17,7 +17,7 @@ format_caption: "Key returning cast member; virtual reunion"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · November 2019"
-filming_caption: "Atlanta, Georgia · Athens, Greece · Toronto · New York"
+filming_caption: "Athens leg — the franchise's second trip there, after Season 6"
 ---
 
 Season twelve carries more weight than its episode count suggests. A key returning cast member sharpened the season's dynamics — the group was more engaged with her back in it — and the 26-episode run gave the show room to develop those threads. Athens and New York gave the season its travel highlights. The virtual reunion, filmed under COVID restrictions, was a first for Bravo and gives the season a historic quality that sits outside the drama itself.

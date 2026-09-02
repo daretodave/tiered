@@ -15,7 +15,7 @@ pull: "Functional Below Deck — the format working reliably even when the cast 
 format_summary: "Charter yacht · USVI"
 format_caption: "Superyacht charter, U.S. Virgin Islands waters"
 host_caption: "{seasonOrdinalWord} season with Captain Lee Rosbach at the helm"
-filming_caption: "St. John, U.S. Virgin Islands"
+filming_caption: "St. John, USVI · the fourth distinct Caribbean island in four seasons"
 premiere_caption: "Bravo · 2016"
 ---
 

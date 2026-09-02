@@ -16,7 +16,7 @@ format_caption: "First Labrador run; subarctic coastal wilderness"
 cast_size: 10
 cast_size_caption: "Ten survivalists working through the franchise's shortest summer nights."
 premiere_caption: "History Channel · June 2022"
-filming_caption: "Labrador, Canada"
+filming_caption: "Labrador, Canada · revisited a season later as a winter shoot"
 host: "Colby Donaldson"
 host_caption: "Third season at the helm"
 ---

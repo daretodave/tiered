@@ -17,7 +17,7 @@ format_caption: "Season premiere moved from November to May"
 cast_size: 6
 cast_size_caption: "Six full-time Housewives"
 premiere_caption: "Bravo · May 2022"
-filming_caption: "Atlanta, Georgia · Jamaica · New York"
+filming_caption: "Jamaica leg — the franchise's first trip there, revisited in S16"
 ---
 
 Season fourteen made two simultaneous changes: a longtime supporting player promoted to full-time status, and the franchise moved its premiere window by six months. Both shifts are audible in the season's texture. The promoted cast member brought decades of franchise history into a full-time slot, which gave her central storyline genuine weight. Jamaica was the season's strongest stretch. A conflict between two established cast members carried the Atlanta material. Functional, occasionally sharp, rarely at the show's ceiling.

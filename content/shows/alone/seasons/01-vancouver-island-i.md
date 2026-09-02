@@ -16,7 +16,7 @@ format_caption: "10 solo survivalists, each self-documenting with provided camer
 cast_size: 10
 cast_size_caption: "Ten strangers with no earlier season's playbook to learn from."
 premiere_caption: "History Channel · June 2015"
-filming_caption: "Quatsino Sound, Vancouver Island, BC"
+filming_caption: "Quatsino Sound, BC · reused in Season 2 and the Season 4 pairs format"
 ---
 
 Season one invented the format live. Ten survivalists arrived on Vancouver Island's Quatsino Sound with ten chosen items and a camera kit — no crew on location, no daily contact. The self-documentation structure, the gear-list discipline, the tap-out mechanic, the isolation as the dramatic engine: all of it took shape here for the first time. The location is cold, wet, and genuinely demanding. The season earns its place in the canon as the run that made everything else possible.
