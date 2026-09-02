@@ -14,7 +14,7 @@ pull: "The BBC era at full confidence — same tent, same lineup, sharper format
 shape_h2: "The fourth year at ten episodes."
 format_summary: "Full BBC One audience, Welford"
 format_caption: "the BBC One audience locked in, the bench at full confidence"
-filming_caption: "Welford Park, Berkshire, year two"
+filming_caption: "Welford Park's second year, on the way to six straight before the 2020 bubble"
 premiere_caption: "BBC One · Wednesday evenings"
 episodes_caption: "Four years running now at ten episodes, a length nobody comments on anymore."
 cast_size: 12

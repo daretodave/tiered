@@ -17,7 +17,7 @@ format_caption: "Cast change · international group trip"
 cast_size: 6
 cast_size_caption: "Cindy Barshop joins the cast"
 premiere_caption: "Bravo · April 2011"
-filming_caption: "New York City and Marrakesh, Morocco"
+filming_caption: "Marrakesh — the group's first stop outside the Americas, a year after St. John"
 ---
 
 RHONY at full operational pressure, with a group trip to Morocco stripping away the city's social scaffolding and pushing the cast into close quarters without escape. New cast member Cindy Barshop brings productive friction by not quite fitting the existing dynamic. The season is dense, occasionally exhausting, and exactly what the format looks like when it operates without a safety valve. The show at full volume.

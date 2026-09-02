@@ -14,7 +14,7 @@ pull: "The pairing stops needing an origin story. A third consecutive year with 
 shape_h2: "Unchanged since 2012."
 format_summary: "Hammond's third run, lineup unchanged"
 format_caption: "Hammond's third run, no format changes reported"
-filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
+filming_caption: "Welford Park's tenth year, a fourth straight since the 2022 bubble return"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Unchanged since 2012 — ten episodes, a fourteenth year at that length."
 cast_size: 12

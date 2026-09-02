@@ -14,7 +14,7 @@ pull: "The new pairing stops being new. A settled, competent run that confirms t
 shape_h2: "Thirteen years, unbroken at ten."
 format_summary: "Hammond's second run settles in"
 format_caption: "Hammond's settled second run, the post-national format"
-filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
+filming_caption: "Welford Park's ninth year, its third straight since the 2022 bubble return"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Thirteen years unbroken at ten episodes — the longest stable run yet."
 cast_size: 12

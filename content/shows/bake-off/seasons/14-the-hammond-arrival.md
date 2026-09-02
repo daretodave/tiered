@@ -14,7 +14,7 @@ pull: "The chemistry reset the Channel 4 era needed. A new presenter pairing wit
 shape_h2: "Twelve years, national themes dropped."
 format_summary: "Hammond's first run at the tent"
 format_caption: "Hammond's first run, the post-national-themes format"
-filming_caption: "Welford Park, Berkshire — the settled Channel 4 home"
+filming_caption: "Welford Park's eighth year, and its second straight since the 2022 bubble return"
 premiere_caption: "Channel 4 · Tuesday evenings"
 episodes_caption: "Twelve years now at ten episodes, holding steady through the presenter change."
 cast_size: 12
