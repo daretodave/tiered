@@ -17,7 +17,7 @@ format_caption: "Entirely new cast"
 cast_size: 5
 cast_size_caption: "Five new Housewives"
 premiere_caption: "Bravo · July 2023"
-filming_caption: "New York City, Anguilla"
+filming_caption: "The show's first two-location season since season four, twelve years earlier."
 ---
 
 Season fourteen is the reboot's premise more than its proof. A new cast had to earn the franchise's identity without the original run's accumulated history behind them. The five newcomers are individually interesting and Manhattan gives them material, but the season has the energy of a pilot stretched across twenty episodes — finding cast chemistry, establishing what RHONY looks like in a different register. The Anguilla trip provides a setting test. The foundation is laid here rather than the building.

@@ -17,7 +17,7 @@ format_caption: "Kristen Taekman joins"
 cast_size: 7
 cast_size_caption: "One new cast member joins"
 premiere_caption: "Bravo · April 2013"
-filming_caption: "New York City, Hamptons, St. Barths"
+filming_caption: "The show's first Caribbean stop since St. John, three years earlier."
 ---
 
 Season six finds its footing outside Manhattan. The Hamptons setting tightens the social world the way a group house always does — the usual city escape routes disappear and the cast has to sit with each other. Kristen Taekman's arrival adds a fresh point of friction without disrupting the cast's established chemistry. The St. Barths trip carries enough heat to anchor the back half. A solid mid-run entry, not trying to reinvent the wheel.

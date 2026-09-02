@@ -17,7 +17,7 @@ format_caption: "Barbara Kavovit joins briefly"
 cast_size: 7
 cast_size_caption: "One short-run addition"
 premiere_caption: "Bravo · April 2018"
-filming_caption: "New York City, Miami, Rome"
+filming_caption: "Miami's second appearance, three years after its debut in season eight."
 ---
 
 Season eleven carries more beneath the surface than a typical RHONY run. Personal weight shapes what the cast brings to each social situation, and the season lets that weight sit rather than deflect. The Rome trip anchors the back half — the production quality and the emotional stakes aligned there in a way that elevated the material above its surrounding episodes. Dense, occasionally draining, but consistently engaged with its own cast. The city scenes have unusual gravity for the franchise.

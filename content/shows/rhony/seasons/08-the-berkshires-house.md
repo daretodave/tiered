@@ -17,7 +17,7 @@ format_caption: "Jules Wainstein joins"
 cast_size: 7
 cast_size_caption: "One new cast member joins"
 premiere_caption: "Bravo · April 2015"
-filming_caption: "New York City, Miami, Berkshires"
+filming_caption: "First season since season five without a Caribbean or international stop."
 ---
 
 Season eight is a transitional year. Jules Wainstein joins an established cast and the season has the slightly uneven texture of a show redistributing its weight — some strong individual episodes, some that coast. Dorinda Medley's Berkshires house appears as a group destination for the first time and immediately proves its value: close quarters, established tensions, no city to absorb the fallout. The Miami trip adds a change of scenery without quite adding momentum. A watchable but uneven entry.

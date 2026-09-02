@@ -17,7 +17,7 @@ format_caption: "Tinsley Mortimer joins"
 cast_size: 7
 cast_size_caption: "Tinsley Mortimer joins"
 premiere_caption: "Bravo · April 2016"
-filming_caption: "New York City, Mexico, Berkshires"
+filming_caption: "Mexico is a first; the Berkshires house is already on its second season."
 ---
 
 Season nine is RHONY at a mid-run high point. Tinsley Mortimer's arrival brings a new register to the cast — a specific kind of New York social currency that the show hadn't quite had before. The core cast dynamics had matured into something the season could use rather than simply establish. The Mexico trip and the return to the Berkshires each deliver. The Manhattan scenes are sharp. The social pressures feel lived-in and specific. A season that earns its reputation.

@@ -17,7 +17,7 @@ format_caption: "Bethenny Frankel returns · Dorinda Medley joins"
 cast_size: 7
 cast_size_caption: "Bethenny returns after S3"
 premiere_caption: "Bravo · July 2014"
-filming_caption: "New York City, Turks & Caicos, Montauk"
+filming_caption: "A second straight Caribbean destination, after St. Barths the year before."
 ---
 
 The season organized around a gravitational event: Bethenny Frankel's return after four seasons away. The cast had evolved into something without her, and her reentry forced a recalibration the show let play out without interference. Dorinda Medley joined simultaneously and arrived fully formed — sharp, funny, and immediately essential. The Turks and Caicos trip added the requisite group-travel pressure. A season with a clear engine, a strong cast, and the confidence to let the central tension breathe.

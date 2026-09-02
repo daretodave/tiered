@@ -17,7 +17,7 @@ format_caption: "Leah McSweeney joins"
 cast_size: 6
 cast_size_caption: "Leah McSweeney joins"
 premiere_caption: "Bravo · April 2019"
-filming_caption: "New York City, Cancún, Newport"
+filming_caption: "A second Mexico stop, three years after season nine's trip."
 ---
 
 Leah McSweeney's debut is the most energized cast-addition story since the earlier runs. She arrived without deference to the existing hierarchy and the show let that friction play out. The established cast had to respond rather than absorb, which sharpened everyone. Newport adds its own class register — useful contrast against the Manhattan baseline. A mid-run entry with a genuine cast story at its center.

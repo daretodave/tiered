@@ -18,7 +18,7 @@ format_caption: "Reboot cast continues with adjustments"
 cast_size: 6
 cast_size_caption: "Returning reboot cast with changes"
 premiere_caption: "Bravo · June 2024"
-filming_caption: "New York City, Portugal, Casablanca"
+filming_caption: "First three-location season since the single-stop season fourteen."
 ---
 
 Season fifteen is the reboot in its second year, and the difference from the premiere is audible. The cast had developed real history — the kind that generates genuine friction rather than first-meeting performance. The Portugal and Casablanca trip adds the format's most useful variable: close quarters, no escape, no home turf. The Moroccan geography carries an echo of the original run that the season doesn't force. More confident than the reboot premiere, if not yet essential.

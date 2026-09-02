@@ -17,7 +17,7 @@ format_caption: "Eboni K. Williams joins"
 cast_size: 6
 cast_size_caption: "Eboni K. Williams joins"
 premiere_caption: "Bravo · May 2021"
-filming_caption: "New York City, Newport, Florida"
+filming_caption: "Newport's second appearance in three seasons, after debuting in season twelve."
 ---
 
 Season thirteen has a built-in problem: it was filmed when New York's social world — the very thing that gives RHONY its engine — was operating under real disruption. The city couldn't function as the show needed it to. Eboni K. Williams' addition brought a fresh editorial perspective and an ambition to engage the city's social landscape, but the season couldn't fully deliver on that ambition given its circumstances. A document of a difficult moment more than a functioning season.
