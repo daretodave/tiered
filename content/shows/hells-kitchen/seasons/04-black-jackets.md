@@ -15,7 +15,7 @@ format_caption: "black jacket milestone prominent"
 cast_size: 16
 cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Four seasons into what becomes a fifteen-year Culver City run"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixteen chefs, one more than season three."
 take_h2: "Tension sustained end to end."

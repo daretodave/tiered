@@ -15,7 +15,7 @@ format_caption: "first refinement of the format"
 cast_size: 12
 cast_size_caption: "twelve chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Culver City's second season, about a year after the debut"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Fifteen episodes, one more than the debut."
 take_h2: "Refinement over reinvention."

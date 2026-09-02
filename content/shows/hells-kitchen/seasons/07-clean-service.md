@@ -15,7 +15,7 @@ format_caption: "first completed opening dinner service"
 cast_size: 16
 cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Tuesday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Seven seasons deep into the Culver City run"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "One chef fewer than season six."
 take_h2: "Skill over spectacle."

@@ -15,7 +15,7 @@ format_caption: "Power Apron immunity mechanic introduced"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Season twelve, three seasons from the last Culver City run"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Three more episodes than season eleven."
 take_h2: "Immunity changes the math."

@@ -15,7 +15,7 @@ format_caption: "first mid-season contestant return"
 cast_size: 17
 cast_size_caption: "seventeen chefs, two teams"
 premiere_caption: "Fox · Tuesday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "The sixth of fifteen Culver City seasons"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Seventeen chefs, the largest cast yet."
 take_h2: "New wrinkles, real payoff."

@@ -15,7 +15,7 @@ format_caption: "one of the evolution era's strongest technical casts"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "The thirteenth of fifteen Culver City seasons"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "One more episode than season twelve."
 take_h2: "Technique raises the pressure."

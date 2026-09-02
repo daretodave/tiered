@@ -15,7 +15,7 @@ format_caption: "franchise-record 20-episode run; celebrity guests"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "A tenth season at Culver City, five still to come"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Twenty episodes, four more than season nine."
 take_h2: "Ambition outrunning the format."

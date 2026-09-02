@@ -15,7 +15,7 @@ format_caption: "gender teams held the full competition"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Nine of fifteen seasons filmed at Culver City"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Two more chefs than season eight."
 take_h2: "Two teams, never one."

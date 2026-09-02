@@ -15,7 +15,7 @@ format_caption: "new maitre d'; third season in 18 months"
 cast_size: 16
 cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Wednesday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Culver City's eighth season, roughly its midpoint"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Just four months behind season seven."
 take_h2: "Solid, but missing the edge."

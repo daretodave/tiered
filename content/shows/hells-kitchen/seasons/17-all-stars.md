@@ -16,7 +16,7 @@ format_caption: "first all-star edition; all sixteen had earned black jackets"
 cast_size: 16
 cast_size_caption: "sixteen returning black-jacket alumni"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Hollywood, Los Angeles"
+filming_caption: "Hollywood's second year, All Stars breaking in the new set"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Two fewer chefs than season sixteen."
 take_h2: "Everyone already earned it."

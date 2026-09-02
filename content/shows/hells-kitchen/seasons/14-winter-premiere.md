@@ -15,7 +15,7 @@ format_caption: "first winter premiere since the founding era"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Culver City's fourteenth season"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Same run length, a new premiere slot."
 take_h2: "Dependable, never quite loud."

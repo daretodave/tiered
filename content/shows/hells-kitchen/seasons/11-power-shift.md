@@ -15,7 +15,7 @@ format_caption: "mid-season format twist on punishment challenges"
 cast_size: 16
 cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Culver City's eleventh season"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Six fewer episodes than season ten."
 take_h2: "A tidy founding-era exit."

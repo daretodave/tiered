@@ -15,7 +15,7 @@ format_caption: "final numbered season before themed editions"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "The fifteenth season Hell's Kitchen filmed at Culver City"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Third straight season at eighteen episodes."
 take_h2: "A tighter, more purposeful run."

@@ -15,7 +15,7 @@ format_caption: "third season, format still solidifying"
 cast_size: 15
 cast_size_caption: "fifteen chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "The third of fifteen seasons based at Culver City"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Three more chefs, one fewer episode."
 take_h2: "Growing pains that mattered."

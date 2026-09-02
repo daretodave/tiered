@@ -15,7 +15,7 @@ format_caption: "the season that invented the format"
 cast_size: 12
 cast_size_caption: "twelve chefs, two teams"
 premiere_caption: "Fox · Monday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "The first of fifteen seasons Hell's Kitchen filmed at Culver City"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Fourteen episodes launch the format."
 take_h2: "The rough edges work."

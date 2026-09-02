@@ -15,7 +15,7 @@ format_caption: "last standard-format season before themed run"
 cast_size: 18
 cast_size_caption: "eighteen chefs, two teams"
 premiere_caption: "Fox · Friday 9/8c"
-filming_caption: "Hollywood, Los Angeles"
+filming_caption: "The first season filmed at the new Hollywood soundstage"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Two fewer episodes than season fifteen."
 take_h2: "No theme, just craft."

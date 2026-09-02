@@ -15,7 +15,7 @@ format_caption: "most credentialed cast of the early run"
 cast_size: 16
 cast_size_caption: "sixteen chefs, two teams"
 premiere_caption: "Fox · Thursday 9/8c"
-filming_caption: "Culver City, Los Angeles"
+filming_caption: "Culver City's fifth season, still years from the Hollywood move"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "The show's first non-summer premiere."
 take_h2: "A bench built to cook."
