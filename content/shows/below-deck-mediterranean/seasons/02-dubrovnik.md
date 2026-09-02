@@ -15,7 +15,7 @@ pull: "The season that made the clearest case for what this spinoff could do wit
 format_summary: "Charter yacht · Adriatic / Amalfi"
 format_caption: "Superyacht charter, Croatian and Italian waters"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Dubrovnik, Croatia and Amalfi Coast, Italy"
+filming_caption: "The franchise's first Croatian coast, four years before Sibenik's return"
 premiere_caption: "Bravo · May 2017"
 ---
 

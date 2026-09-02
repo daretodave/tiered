@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "The Fab Five return, chemistry already set"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Eight episodes, arriving just over four months after the debut season."
-filming_caption: "Atlanta and surrounding Georgia suburbs"
+filming_caption: "The same Atlanta metro as Season 1, four months later"
 ---
 
 Season two stays in Atlanta's orbit but pushes the format further than the debut run dared — the show casts its net wider for who counts as a nominee, and the result is some of the reboot's most affecting hours. The Fab Five's rapport, already comfortable by episode one, does the real work. Eight episodes, same house-call structure, more range in who gets the week.

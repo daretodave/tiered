@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "The complete original Fab Five, together one more time"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Seven episodes — fewer than any season before it."
-filming_caption: "New Orleans, Louisiana"
+filming_caption: "The first of two consecutive seasons based in New Orleans"
 ---
 
 New Orleans gives the Fab Five a new city, and the season plays the format exactly as it always has — five specialists, one nominee, seven episodes, no structural surprises. What's worth flagging is the cast: this is the last time the complete original Fab Five works together before any change to the design chair. Filmed back-to-back with the season that follows, it plays like a confident final lap ahead of the format's first real personnel shift.

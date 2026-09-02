@@ -15,7 +15,7 @@ format_caption: "solo game, grudge-driven casting"
 cast_size: 28
 cast_size_caption: "individual players, carried rivalries"
 premiere_caption: "MTV · winter 2018"
-filming_caption: "Gibraltar, Marbella, and Prague"
+filming_caption: "The first three-country shoot after nine straight one-country seasons"
 host_caption: "TJ Lavin, sixteenth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, med, hot, hot, med, med, hot, hot, med, hot, hot]
 episode_heat_caption: "slow open, back-half tightens"

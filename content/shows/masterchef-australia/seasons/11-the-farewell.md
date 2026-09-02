@@ -13,7 +13,7 @@ pull: "The founding trio's last season together — a full-length competition wi
 format_summary: "Home cook competition · founding trio final season"
 format_caption: "three-finalist grand finale, new mentors"
 premiere_caption: "Network Ten · Sunday"
-filming_caption: "Melbourne, Brisbane, Noosa, Rottnest Island"
+filming_caption: "A second straight multi-city tour, after The Anniversary's four-stop sweep"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-one episodes, the second season running at this length."
 take_h2: "A capable, transitional goodbye."

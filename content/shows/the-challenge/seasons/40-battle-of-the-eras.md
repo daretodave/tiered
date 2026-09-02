@@ -15,7 +15,7 @@ format_caption: "split by debut era, milestone event"
 cast_size: 32
 cast_size_caption: "four eras, one house"
 premiere_caption: "MTV · summer 2024"
-filming_caption: "Ho Chi Minh City; Palawan"
+filming_caption: "The franchise's first stops in both Vietnam and the Philippines"
 host_caption: "TJ Lavin, twenty-fifth season at the helm"
 episode_heat: [med, med, hot, med, hot, hot, med, hot, hot, hot, med, hot, hot, hot, med, hot, hot, hot, med, hot, hot]
 episode_heat_caption: "cross-era friction keeps the floor high"

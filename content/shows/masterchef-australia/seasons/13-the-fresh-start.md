@@ -13,7 +13,7 @@ pull: "The new panel's first ordinary season — a capable new cast finding its 
 format_summary: "Home cook competition · new panel, new cast"
 format_caption: "three Immunity Pins, Second Chance Week"
 premiere_caption: "Network Ten · Sunday"
-filming_caption: "Melbourne, Uluru, Apollo Bay, Daylesford"
+filming_caption: "The first multi-location shoot since Back to Win stayed put in Melbourne"
 shape_h2: "Sixty-one episodes, closing out four straight seasons at this length."
 take_h2: "New cast, panel still adjusting."
 watch_list:

@@ -15,7 +15,7 @@ pull: "The format's edgiest stretch — a different captain, a different coast, 
 format_summary: "Charter yacht · Western Mediterranean"
 format_caption: "Superyacht charter, Spanish and Maltese waters"
 host_caption: "Third season at the helm with Captain João Franco"
-filming_caption: "Barcelona, Spain and Malta"
+filming_caption: "Malta's first appearance, four years before it anchored its own season"
 premiere_caption: "Bravo · June 2018"
 ---
 

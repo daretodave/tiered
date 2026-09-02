@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "Jeremiah Brent joins as design specialist"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Ten episodes — the longest order of the Netflix run"
-filming_caption: "Las Vegas, Nevada"
+filming_caption: "Sandwiched between New Orleans's two-parter and D.C.'s three-jurisdiction sprawl"
 ---
 
 Las Vegas gives the format its biggest structural test since the reboot began: Jeremiah Brent steps into the design chair, the first change to any of the five specialist roles since 2018. Rather than shrink the season to ease the transition, Netflix hands it the longest episode order of the run, giving Brent room to settle in without rushing. The city is new too — the first time the show has set up in Las Vegas.

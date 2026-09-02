@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "The Fab Five, with two extra episodes to work with"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Ten episodes — the show's longest run yet"
-filming_caption: "Philadelphia, Pennsylvania"
+filming_caption: "The third home city, after two seasons anchored around Kansas City"
 ---
 
 Philadelphia gets ten episodes instead of the usual eight, and the extra runway suits the format well — the Fab Five's conversations have more room before the show cuts to the reveal, and the city itself gives the season a distinct urban backdrop after two seasons in the midwest. It's the most confident the format has looked since the founding run, expanded without feeling padded.

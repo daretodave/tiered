@@ -16,7 +16,7 @@ format_caption: "fresh-blood sequel, international split"
 cast_size: 30
 cast_size_caption: "international cast, rivalry frame"
 premiere_caption: "MTV · fall 2019"
-filming_caption: "Chiang Mai and Phuket, Thailand"
+filming_caption: "The franchise's third Thai season, after Rivals II and Invasion of the Champions"
 host_caption: "TJ Lavin, nineteenth season at the helm"
 episode_heat: [med, cold, med, med, hot, med, med, hot, med, hot, hot, med, hot, hot, med, hot, hot, hot]
 episode_heat_caption: "rivalry frame carries the back-half"

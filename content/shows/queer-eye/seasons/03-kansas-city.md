@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "The Fab Five, working outside Georgia for the first time"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Eight episodes, arriving nine months after season two — the longest gap yet."
-filming_caption: "Kansas City, Missouri"
+filming_caption: "The franchise's first stop outside Georgia"
 ---
 
 Kansas City is the reboot's first time filming outside metro Atlanta, and the show holds its shape well under the move. Eight episodes, the same five-specialist structure, and a midwestern backdrop that gives the season its own flavor without asking the format to bend. It plays like confirmation the show works anywhere, not proof it needed Georgia specifically.

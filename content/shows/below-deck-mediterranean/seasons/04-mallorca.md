@@ -15,7 +15,7 @@ pull: "Functional Below Deck Mediterranean — beautiful western Med waters, rel
 format_summary: "Charter yacht · Western Mediterranean"
 format_caption: "Superyacht charter, Spanish waters"
 host_caption: "{seasonOrdinalWord} season with Captain Sandy Yawn at the helm"
-filming_caption: "Mallorca and Ibiza, Spain"
+filming_caption: "A second straight Spanish coast, one season before Lake Como's freshwater break"
 premiere_caption: "Bravo · June 2019"
 ---
 

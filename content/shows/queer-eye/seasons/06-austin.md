@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "The Fab Five, settled into the expanded episode count"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Ten episodes, premiering on New Year's Eve — an unusual release date."
-filming_caption: "Austin, Texas"
+filming_caption: "The longest gap between seasons yet, about a year and a half after Philadelphia"
 ---
 
 Austin gives the Fab Five a new backdrop and keeps the ten-episode length Philadelphia introduced, but otherwise plays it straight — same structure, same rhythm, no format wrinkles. It's a dependable season rather than an essential one: solid hero-makeover episodes that execute the format well without pushing it anywhere it hasn't already been. The Fab Five's chemistry, several cities removed from Georgia, is fully second nature by now.

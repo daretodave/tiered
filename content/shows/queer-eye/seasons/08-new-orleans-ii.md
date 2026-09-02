@@ -17,7 +17,7 @@ cast_size: 5
 cast_size_caption: "Bobby Berk's final season as design specialist"
 premiere_caption: "Netflix · full season drop"
 episodes_caption: "Six episodes — cut from a planned seven"
-filming_caption: "New Orleans, Louisiana"
+filming_caption: "The same 2022 New Orleans shoot as Season 7, delayed by a security pause"
 ---
 
 Season eight returns to New Orleans for a second round, shot in the same 2022 block as the season before it — but real-world trouble left its mark. Two carjacking incidents near the production forced a security pause that summer, and the added cost led producers to cut the order from seven episodes to six. It's also Bobby Berk's last season as design specialist, closing his run before the franchise's first cast change.

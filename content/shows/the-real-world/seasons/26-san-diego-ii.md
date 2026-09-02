@@ -15,7 +15,7 @@ format_summary: "Group-job format · 12 episodes"
 format_caption: "the show's second visit to San Diego"
 premiere_caption: "MTV · premiered fall 2011"
 episodes_caption: "Seven years after the first San Diego run, back in the shorter format"
-filming_caption: "A beachfront house in La Jolla, San Diego"
+filming_caption: "A La Jolla shoreline, distinct from the 2004 season's bay-front house"
 cast_size: 7
 cast_size_caption: "Seven roommates working together at House of Blues"
 watch_list:

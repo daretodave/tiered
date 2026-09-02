@@ -15,7 +15,7 @@ format_caption: "bonds imported from outside"
 cast_size: 28
 cast_size_caption: "14 pre-existing duos"
 premiere_caption: "MTV · fall 2022"
-filming_caption: "Buenos Aires, Argentina"
+filming_caption: "The second Argentina stop, seven years after Battle of the Exes II visited"
 host_caption: "TJ Lavin, twenty-third season at the helm"
 episode_heat: [med, med, cold, med, hot, med, hot, hot, med, hot, hot, med, hot, hot, med, hot, hot, hot, med, hot, hot]
 episode_heat_caption: "real-bond stakes raise the back-half"

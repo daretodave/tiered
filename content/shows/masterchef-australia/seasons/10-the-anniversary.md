@@ -13,7 +13,7 @@ pull: "A tenth anniversary season that brought Gordon Ramsay to Australian home-
 format_summary: "Home cook competition · 10th anniversary"
 format_caption: "Gordon Week, Ten-Year Superpower apron"
 premiere_caption: "Network Ten · Sunday"
-filming_caption: "Melbourne, Darwin, Adelaide, Dandenong Ranges"
+filming_caption: "The anniversary season's four-stop tour, most locations to that point"
 host_caption: "{seasonOrdinalWord} season at the helm"
 shape_h2: "Sixty-one episodes, first of four straight seasons at this length."
 take_h2: "A milestone that earns itself."
