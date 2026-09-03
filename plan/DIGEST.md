@@ -1,61 +1,164 @@
-# tiered.tv — morning briefing
+# DIGEST — 2026-09-03
 
-> Written nightly by `/digest` (the night shift,
-> `.github/workflows/night.yml`). Overwritten whole each tick;
-> history lives in git.
-
-# DIGEST — 2026-09-02
+> Overwritten whole each night by `/digest`. History lives in git,
+> not in this file.
 
 ## Headline
 
-**A clean 26-hour window: one content-gap defect class closed catalog-wide, a second cut nearly in half, and both of the loop's two chronic red flags (the e2e-full duration ceiling, the night-shift starvation race) came back green two nights running.** The season-eyebrow calendar-drift drain (issue #317, critique pass-33) finished its last three shows — americas-got-talent (10 seasons), bachelorette (11), survivor (18), 39 seasons across 3 shows — and `pnpm content:check` now confirms **zero** remaining instances catalog-wide, closing the track end-to-end. The `filming_caption` bare-restatement drain (started 09-01) ran five more rounds (2 through 6), fully clearing hells-kitchen, below-deck, love-island-us, top-chef, rhoa, alone, rhonj, the-real-world, rhony, and bake-off; the ad-hoc estimate is down from ~94 at round 1 to **~58 remaining**, still no dedicated `content-check.ts` collector for this class. Catalog held flat at 68 shows / 1048 seasons / 68 canons / 181 themes; content-check's *mechanized* warning count sits at 130 (down from 169 at the last digest). `e2e-full` broke a two-night red streak (08-30, 08-31) with a green run on 09-01; the night shift itself ran clean both 09-01 and tonight, breaking the three-night starvation streak the last briefing flagged. Deploy is green at HEAD (`d8d9310c`). Two long-standing findings still need eyes: the-voice's 8-file factual corruption (issue #762) and the night.yml concurrency race (candidate #35, issue #763) — both cloud-blocked, both now 43 days unpromoted.
+A clean, high-output day: 12 shipping commits, critique pass 150
+fired and all 5 of its findings (2 HIGH, 2 MED, 1 LOW) drained
+same-day. Breadth verdict is green. One transient march crash
+(API overload, self-recovered) is the only blemish. Rule 2 stays
+locked at a 42-show gap table (all starred, confirmed-but-unaired)
+and Rule 3's idea space stays saturated per issue #758 — today's
+entire content output came from the critique-redirect path, which
+is working exactly as designed.
 
 ## While you were out
 
-| Time (UTC) | Verb | Outcome |
-|---|---|---|
-| 14:09 (09-01) | content-gap | shipped — season-eyebrow calendar-drift drain, americas-got-talent (10 seasons) |
-| 17:58 | content-gap | shipped — season-eyebrow calendar-drift drain, bachelorette (11 seasons) |
-| 20:50 | content-gap | shipped — season-eyebrow calendar-drift drain, survivor (18 seasons) — **track closed catalog-wide**, zero instances remain |
-| 23:35 | content-gap | shipped — `filming_caption` bare-restatement drain round 2 — hells-kitchen (6/6) |
-| 01:42 (09-02) | content-gap | shipped — `filming_caption` drain round 3 — below-deck, love-island-us, top-chef, rhoa, alone |
-| 06:25 | content-gap | shipped — `filming_caption` drain round 4 — rhonj + the-real-world (6 instances, 2 shows fully cleared) |
-| 10:38 | content-gap | shipped — `filming_caption` drain round 5 — rhony fully cleared (10 seasons) |
-| 15:05 | content-gap | shipped — `filming_caption` drain round 6 — bake-off fully cleared (7) + a rhony round-5 correction (2 missed instances) |
+| time (UTC) | commit | verb | outcome |
+|---|---|---|---|
+| 15:05 | dedc5094 | content | filming_caption bare-restatement drain round 6 (bake-off, rhony) |
+| 15:05 | d8d9310c | audit | progress note for round 6 |
+| 15:15 | 607a86f7 | digest | 2026-09-02 nightly briefing |
+| 18:47 | ab2df09f | content | filming_caption bare-restatement drain round 7 (hells-kitchen) |
+| 18:48 | 62aab5a3 | audit | progress note for round 7 |
+| 22:00 | ab1b8f7d | content | filming_caption bare-restatement drain round 8 (below-deck-med, masterchef-au, queer-eye, the-challenge, the-real-world) |
+| 22:00 | 4c53a8f0 | audit | progress note for round 8 |
+| 00:20 | 8db89494 | content | WHY THIS SLOT restatement drain — top-chef, bake-off, hells-kitchen, project-runway, the-voice |
+| 00:27 | 4dbdea4f | audit | HIGH bare-restatement finding closed |
+| 01:34 | e9650396 | critique | pass 150 — 5 fresh findings (2 HIGH, 2 MED, 1 LOW) |
+| 07:13 | 0a93f65d | content | pass-150 HIGH findings drained (survivor s50, amazing-race canon) |
+| 07:24 | 4940bc06 | audit | pass-150 HIGH findings marked addressed |
+| 12:28 | fa64c3eb | content | pass-150 MED/LOW findings drained |
+| 12:30 | 11e6a15f | audit | pass-150 MED/LOW findings marked addressed |
+| 11:42 (no-op) | — | march | **crashed** — transient `API Error: 529 Overloaded`, no code shipped, no-op. Auto-appended to the recurring crash-tracker issue #565 (14-day dedup match). Self-recovered by the next scheduled tick. |
 
-One `march` tick (08-31T19:44) failed on the stale "Prompt is too long" signature already tracked by issue #565 — commented on the existing issue rather than filing a duplicate, self-recovered on the next scheduled trigger, no lost work. Every other tick in the window landed a ship; no true no-ops.
+37 of 40 tracked march runs since 2026-08-31 succeeded; the 3
+non-successes are 1 genuine crash (today, transient overload) and
+2 GitHub-side cancellations (concurrency-group churn, not agent
+failures).
 
 ## The saga
 
-**Rule 2 (season-fill):** still fully stalled — the `plan/CADENCE.md` gap table held at 42 gap-slots / 42 shows on its last sweep (2026-08-30), every slot starred confirmed-but-unaired. The standing AUDIT row (line 31, score 4.5) continues to ride its two fallback side-drains.
+**Rule 2 (season-fill drain):** flat. The gap table has read 42
+starred (confirmed-but-unaired) rows since the 2026-08-30 eighth
+full weekly sweep — nothing actionable, nothing to drain. Next
+sweep due 2026-09-06. `show-add` stays LOCKED (won't arm until the
+table reads zero). Near-term real events that will unlock fresh
+Rule 2 material once they air: Survivor S51 (2026-09-23, CBS,
+confirmed), The Voice S30 (2026-09-21, NBC, confirmed — but see
+"Needs you," this show's back catalog is under a content freeze),
+America's Got Talent S21 finale (2026-09-23).
 
-**Fallback drain #1 — season-eyebrow calendar drift (issue #317, critique pass-33): CLOSED.** The three shows left at the last briefing (americas-got-talent, bachelorette, survivor — 39 seasons) all drained this window. `pnpm content:check` confirms zero remaining catalog-wide. This closes the second defect class end-to-end in two consecutive windows (after `watch_list` cross-callout repetition closed the window before).
+**Rule 3 (themed lists):** saturated per issue #758 — the idea
+space has been exhaustively searched for weeks with no new raw
+material. No list-drain activity today.
 
-**Fallback drain #2 — `filming_caption` bare-restatement: ~58/~94 remaining.** Started 09-01 (round 1, 7 instances, no dedicated linter). Rounds 2–6 this window cleared hells-kitchen (6), below-deck/love-island-us/top-chef/rhoa/alone (round 3, count folded into the running estimate), rhonj + the-real-world (6, 2 shows fully cleared), rhony (10, full clear), and bake-off (7, full clear) plus a 2-instance correction to round 5's rhony claim. Remaining, per the tick's own running estimate: the-challenge, sytycd, the-real-world (partial), and others — dispatcher's call next content-gap tick.
+**Content-gap redirect (issue #758's escape valve):** carried the
+entire day's content output. Critique pass 150 filed 5 findings at
+01:34 and all 5 were drained within the same 26-hour window — 2
+HIGH (Survivor 50's fan-vote/cast-size fact repeated 4-6x across
+sections; a fifth show, Amazing Race, caught by the "WHY THIS
+SLOT re-paraphrases body copy" systemic defect class first found
+on top-chef/bake-off) and 2 MED + 1 LOW (Big Brother's "three
+stacked twists" restated 4x; Top Chef's LCK rule-change restated
+5x; two themed lists over-concentrating entries in 2 shows each,
+left as a future-extension guideline rather than retrofitted).
+Separately, an 8-round `filming_caption` bare-restatement sweep
+ran across the day (rounds 6-8: bake-off, rhony, hells-kitchen,
+below-deck-med, masterchef-au, queer-eye, the-challenge,
+the-real-world) plus a `slot_argument` ("WHY THIS SLOT") sweep
+across top-chef, bake-off, hells-kitchen, project-runway, and
+the-voice's founding-five span (S1-S5 only — S22-29 stays frozen
+per the corruption block).
 
-**Rule 3 (themed lists):** silent again this window, 181 held flat — same saturation `plan/LISTS.md` and issue #758 already document; the content-gap side-drains keep winning Step 3b.5.
+Catalog stands at 68 shows / 1048 seasons / 68 canons / 181 themes
+(per the last verify-gate `content:check` run).
 
 ## Queues now
 
-- `plan/AUDIT.md` Pending: 6 open rows — 1 standing content-gaps drain (line 31, the two side-drains above), 2 LOW (SERP-truncation, `YEAR_TENURE_RE` teen-number gap), 1 MED (e2e-full duration ceiling, updated tonight), 2 HIGH (the-voice 8-file corruption; night.yml starvation race, updated tonight).
-- `plan/CRITIQUE.md` Pending: 38 rows (1 HIGH, 18 MED, 17 LOW+unclassified) as of pass-149 (last run 2026-08-31/09-01 window). The one open HIGH is systemic: the "WHY THIS SLOT" canon callout re-paraphrasing body copy, now confirmed on 4 shows (top-chef, bake-off, hells-kitchen, project-runway) — ripe for the corpus-wide check pass-148 already flagged.
-- `plan/PHASE_CANDIDATES.md`: pass 67 (2026-08-30), 28 candidates awaiting promotion, latest numbered #37. Candidates #34 (shard the e2e-full crawl) and #35 (decouple night.yml's concurrency group) remain the two standing `/oversight` recommendations, both now 43 days unpromoted.
-- Open `triage:needs-user`: #762 (the-voice corruption, HIGH), #763 (night.yml race, tied to candidate #35), #758 (content-gap dispatch starving `/iterate` — filed 08-08, likely stale given both side-drains and CRITIQUE passes are shipping regularly now; worth a `/triage` pass to confirm and close). #777, #586, #565, #399, #398 are older, largely self-resolved incident issues.
-- Open `triage:loop-queued`: #787, #785 (both stale cloud-march-failure issues from 08-22/08-23), #754 (themed-list Rule-3 pass 22, likely superseded by the saturation finding above), #636 (the e2e-full duration-ceiling origin issue, still active — same track as the AUDIT MED row).
+- **`plan/CRITIQUE.md`**: pass 150 (2026-09-03, today) — fully
+  drained same-day, first time in a while a pass closed out
+  same-window rather than carrying leftovers. 8 rows remain `[ ]`
+  in the file, but 7 of them are `[needs-user-call]`-flagged
+  (genuine editorial/product tradeoffs already surfaced for a
+  human decision — B-tier browse filters, the meta-count-vs-date
+  chip label, the ISR/dynamic-caching investigation split, the
+  own-profile stat-chip question) and the 8th is a LOW,
+  not-urgent themed-list concentration note. Nothing pending is
+  cloud-actionable right now.
+- **`plan/AUDIT.md`**: 5 real pending rows (excluding the row
+  template). 2 HIGH: the-voice factual corruption (issue #762,
+  `triage:needs-user`, blast-radius fix needs a dedicated
+  oversight-reviewed pass) and the night.yml/march
+  concurrency-eviction race (issue #763, `triage:needs-user`,
+  needs a workflow-file edit the cloud token can't push). 1 MED:
+  the e2e-full 75-minute duration-ceiling breach pattern (BLOCKED
+  FROM CLOUD, same OAuth-scope wall) — though the two most recent
+  breadth runs both came back green, so this is currently quiet.
+  2 LOW: themed-list SERP description-length budget (parked,
+  needs an oversight call between a mass-trim pass and relaxing
+  the budget) and the `YEAR_TENURE_RE` teens/bare-"ten" regex gap
+  (re-scoped, genuinely not a one-tick fix, tangled with the
+  the-voice freeze).
+- **`plan/PHASE_CANDIDATES.md`**: last pass 67 (2026-08-30), ~30
+  considered rows awaiting promotion. The two most load-bearing —
+  #34 (shard the e2e-full crawl) and #35 (decouple night.yml's
+  concurrency group) — are both unpromoted 43+ days now and are
+  the direct fixes for the two HIGH AUDIT rows above. Both are
+  workflow-file edits the cloud loop cannot push; both are ready
+  to apply at the next local `/oversight` session.
+- **Open `triage:needs-user`**: 8 issues, most stale. The two live
+  ones are #762 (the-voice corruption) and #758 (content-gap
+  starvation escape valve, working as designed, itself needs no
+  further action). #565 (recurring crash-tracker) just got a
+  fresh comment today from the transient 529 overload.
+- **Open `triage:loop-queued`**: 4 issues; #636 (nightly e2e-full
+  duration-ceiling, mirrors the AUDIT MED row) is the only live
+  one — #785/#787/#754 all read as already resolved via linked
+  commits.
 
 ## Needs you
 
-- **The-voice factual corruption (issue #762, AUDIT line 661, HIGH):** 8 season files + show frontmatter need a dedicated verify-and-rewrite pass with a canon rebase — blast radius too large for autonomous dispatch, needs a human-reviewed tick.
-- **night.yml concurrency race (issue #763, candidate #35):** workflow-file edit, blocked from cloud (`ACTIONS_PAT` lacks the `workflows` OAuth scope). Two clean nights in a row now, but the race itself is unfixed — still needs a local `/oversight` session to apply.
-- **e2e-full duration ceiling (candidate #34):** same cloud-permission block as above. Green last night, but the underlying 75-minute wall vs. a growing catalog is unresolved.
-- **issue #758** likely stale — worth a `/triage` look to confirm the content-gap-starves-iterate concern no longer holds and close it out.
+1. **the-voice factual corruption (issue #762)** — 8 season files
+   (S22-29) carry conflated dates/casts and a fabricated "series
+   finale" that produces a live false "the show has ended" claim.
+   Fix is an 8-file renumbering cascade with a canon rebase and
+   themed-list cross-reference sweep — correctly gated behind a
+   human-reviewed session, not a cloud tick. The Voice's real S30
+   premieres 2026-09-21; that date will make the live-false-claim
+   problem more visible, not less, the longer this sits.
+2. **Two workflow-file infra fixes, both blocked from cloud push**
+   — candidate #34 (shard the e2e-full crawl, breadth run has
+   been recurring on a duration-ceiling wall on and off for 43
+   days, currently quiet but unfixed) and candidate #35 (decouple
+   night.yml's concurrency group from march, the digest has gone
+   dark for multi-night stretches four times since 2026-07-21,
+   most recently two clean nights running as of yesterday). Both
+   are ready-to-apply, low-risk, sitting in
+   `plan/PHASE_CANDIDATES.md`, waiting only on a local session
+   with `workflows` OAuth scope.
+3. **7 `[needs-user-call]` CRITIQUE rows** are genuine
+   editorial/product tradeoffs (browse-filter taxonomy decisions,
+   a chip-label naming reversal, an ISR/dynamic split, an
+   own-profile empty-state reversal) that the loop has correctly
+   declined to auto-resolve. None urgent; worth a batch pass next
+   `/oversight`.
 
 ## Today's intent
 
-**Saga:** keep draining `filming_caption` bare-restatement — next up per the tick's own estimate: the-challenge, sytycd, the remaining the-real-world seasons, and whatever else the next round's scan turns up (~58 instances left, no collector yet to make this exact).
-
-**Top non-content finding:** the pending CRITIQUE HIGH — systemic "WHY THIS SLOT" canon-callout restatement, now confirmed on 4 shows. Worth the corpus-wide audit pass-148 called for rather than another one-off fix.
+Rule 2/3 stay locked/saturated — expect another content-gap
+redirect day. The `filming_caption` and `slot_argument` sweeps are
+mid-drain (both systemic defect classes, not yet corpus-clean);
+picking up where round 8 left off is the highest-value next content
+move. Top non-content finding: the two infra candidates (#34, #35)
+remain the standing `/oversight` recommendation — nothing new to
+add to that ask today.
 
 ## Tuning proposals
 
-None new this cycle. Candidates #34 (shard the e2e-full crawl) and #35 (decouple night.yml's concurrency group) remain the standing, unpromoted recommendations — both reinforced with tonight's clean-run data in `plan/AUDIT.md` rather than re-filed. No newly mistuned gate observed: the dispatch cadence, content-gap side-drains, and critique cadence all look healthy this window.
+None. The content-gap redirect mechanism (issue #758) worked
+exactly as intended today — same-day critique-pass closure is the
+best turnaround this loop has produced in weeks. No new gate
+mistuning observed in today's pulse.
