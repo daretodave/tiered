@@ -1,39 +1,42 @@
 # CRITIQUE
 
-> Last pass: 2026-08-31 at commit 5d9e1f6f
-> Pass count: 149
+> Last pass: 2026-09-03 at commit 4dbdea4f
+> Pass count: 150
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 149
+> `/march` Step 2's normal rate-limited cadence is active. Pass 150
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
-> `/`, `/shows/love-is-blind/season/columbus`, `/shows`,
-> `/themes/not-who-they-say-they-are`, `/shows/project-runway?view=canon`
-> anon; `/u/e2e`, `/shows/love-is-blind/season/columbus?view=community`,
-> `/shows/dragrace-allstars/season/season-11?view=community`,
-> `/shows/the-voice/season/the-finale?view=community` authed. Both
+> `/`, `/shows/survivor/season/survivor-50`, `/shows`,
+> `/shows/amazing-race?view=canon`, `/themes` anon;
+> `/u/e2e`, `/shows/survivor/season/survivor-50?view=community`,
+> `/shows/big-brother/season/a-summer-of-mystery?view=community`,
+> `/shows/top-chef/season/carolinas?view=community` authed. Both
 > passes came back mechanically clean (0 console errors, 0 failed
-> requests, 0 mobile overflow, all pages 200, no spoiler leaks). 4
-> findings filed (1 bump to HIGH, 2 MED, 1 LOW): the "WHY THIS SLOT
-> re-paraphrases body copy" systemic row (pass-148, tracked since
-> top-chef/bake-off) reproduced on Project Runway (Seasons 1 and 4) —
-> now four confirmed shows, bumped MED→HIGH; a new cross-callout
-> phrase-repetition instance on a themed list page
-> (`/themes/not-who-they-say-they-are`, "concealment mechanic"
-> repeated across 6+ entries) — the first confirmed instance of the
-> watch_list/season-page repetition-drain class showing up on a
-> themed list; dragrace-allstars Season 11's "eighteen queens, three
-> six-queen brackets" fact restated five times on one community page;
-> love-is-blind Columbus's "shape of the season" subhead promises an
-> episode-count comparison the body never delivers. Two reader
-> observations dropped at self-assessment: a low-confidence
-> text-extraction artifact on Project Runway's tab-badge spacing
-> (couldn't distinguish real bug from whitespace-in-DOM-extraction),
-> and three community pages all reading "0 votes" (reader itself
-> flagged as plausibly expected test-account state, not a bug).
+> requests, 0 mobile overflow, all pages 200, no spoiler leaks). 5
+> findings filed (2 HIGH, 2 MED, 1 LOW): Survivor 50's season page
+> restates its two headline facts (the fan-voted format, the
+> 24-returnee record cast) across four to six sections apiece with
+> almost no new angle added each time — the most severe single-page
+> repetition instance found to date, filed as two rows (one per
+> fact chain); the "WHY THIS SLOT re-paraphrases body copy" systemic
+> row (tracked since top-chef/bake-off, four shows drained this
+> week) reproduced on The Amazing Race's canon page — a fifth show,
+> not yet in the drain; big-brother's newest season restates "three
+> stacked twists" four times before the watch-for section even
+> lists them individually; top-chef's newest season restates its
+> Last Chance Kitchen entry-rule change five times, crowding out any
+> other characterization of the season. Two reader observations
+> dropped at self-assessment: a low-confidence text-extraction
+> artifact on the Amazing Race canon page's tab/badge spacing
+> (same class dropped at pass 149 — can't distinguish real bug from
+> whitespace-in-DOM-extraction without a visual check); and
+> Survivor 50's community page reading "0 votes" under "community
+> rank updates weekly" copy (same class dismissed at pass 149 as
+> plausibly expected test-account state, not a bug).
 >
-> ───── Pass 148 metadata kept below for history ─────
+> ───── Pass 149 metadata kept below for history ─────
 
 > Last pass: 2026-08-31 at commit 9ea56bcd
 > Pass count: 148
@@ -3848,6 +3851,51 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon+authed] /shows/survivor/season/survivor-50 — the fan-voted-format fact is restated near-verbatim across six sections
+- pass: 150 (commit 4dbdea4f)
+- viewport: desktop
+- category: voice
+- observation: The single fact that fans voted on the season's game mechanics is restated in the tagline, the FORMAT metadata caption, THE TAKE, THE SHAPE OF THE SEASON, and two separate WHAT TO WATCH FOR callouts (EP 2 and EP 12) — six sections, each rewording the same sentence rather than adding a new angle. The most severe single-page instance of the cross-callout phrase-repetition class found to date (prior worst case was dragrace-allstars Season 11 at five restatements, pass 149).
+- evidence: Tagline: "...with game mechanics the fans voted on themselves"; FORMAT caption: "Fans voted on tribe colors, food rations, and the final stretch"; THE TAKE: "fans voted on the format itself, shaping the game before a single tribe stepped off the boat"; SHAPE OF THE SEASON: "Fans shaped the mechanics themselves, casting votes across four rounds"; EP 2 callout: "The season's rules were shaped by an outside vote months earlier"; EP 12 callout: "The fan vote also shaped the season's endgame format".
+- suggested fix: Let the FORMAT metadata field and the tagline own the raw fact (a vote happened, on what). Rewrite THE TAKE, THE SHAPE OF THE SEASON, and the two watch-for callouts so each surfaces a distinct angle — audience psychology, in-game friction the vote created, or the specific mechanic each episode's callout is actually about — instead of re-announcing that a vote happened. Scoped to `content/shows/survivor/seasons/50-survivor-50.md`.
+- source: browser (critique-pass-150, anon + authed)
+
+### [MED] [anon] /shows/survivor/season/survivor-50 — the "24 returning players, largest cast" fact is restated three times with no new information added
+- pass: 150 (commit 4dbdea4f)
+- viewport: desktop
+- category: voice
+- observation: THE TAKE ("the largest roster the franchise has fielded"), the CAST SIZE metadata row ("24 players — largest cast in franchise history"), and THE SHAPE OF THE SEASON heading ("A record twenty-four returning players") all state the same record-cast fact with no section adding detail beyond it.
+- evidence: THE TAKE: "the largest roster the franchise has fielded"; CAST SIZE metadata: "24 players — largest cast in franchise history"; SHAPE OF THE SEASON heading: "A record twenty-four returning players".
+- suggested fix: Keep the raw number in the CAST SIZE metadata row only; drop the "largest cast" framing from THE TAKE and let THE SHAPE OF THE SEASON's heading argue why the size matters (e.g. how it changes tribe dynamics or voting blocs) rather than restating the record. Scoped to `content/shows/survivor/seasons/50-survivor-50.md`.
+- source: browser (critique-pass-150, anon)
+
+### [HIGH] [anon] /shows/amazing-race?view=canon — WHY THIS SLOT re-paraphrases body copy almost verbatim, a fifth show in the systemic pattern
+- pass: 150 (commit 4dbdea4f)
+- viewport: desktop
+- category: voice
+- observation: The WHY THIS SLOT callout on the #01 Season 7 entry condenses the body paragraph's own facts into a shorter restatement rather than adding new argument, and the same pattern repeats on the #02 All-Stars entry. This is the same systemic defect already drained this week on top-chef, bake-off, hells-kitchen, project-runway, and the-voice — Amazing Race was not in that batch and reproduces the identical pattern.
+- evidence: Body (Season 7): "A pair of crossover Survivor returnees gave CBS the publicity moment, and the casting around them runs three pairs deep... The route through South America and southern Africa delivers some of the show's most photogenic leg-work..."; WHY THIS SLOT: "A pair of crossover Survivor returnees, a route through South America and southern Africa, and a casting bench around the headliners that runs three pairs deep. The publicity moment lands and the show holds onto the audience after."
+- suggested fix: Same fix already applied to the five drained shows — give WHY THIS SLOT a distinct job (the counterfactual of what the canon loses without this season, or a direct comparison to the season immediately below it) instead of compressing the body paragraph. Scoped to `content/shows/amazing-race/canon.md` (or wherever the canon rationale for Season 7 and the All-Stars entry live).
+- source: browser (critique-pass-150, anon)
+
+### [MED] [authed] /shows/big-brother/season/a-summer-of-mystery?view=community — "three stacked twists" is restated four times before the season's individual twists are ever listed
+- pass: 150 (commit 4dbdea4f)
+- viewport: desktop
+- category: voice
+- observation: The subtitle, THE TAKE, THE SHAPE OF THE SEASON, and WHERE IT SITS IN THE CANON all restate that the season stacks three twists, using near-identical phrasing each time, before the WHAT TO WATCH FOR section gets around to naming the twists individually.
+- evidence: Subtitle: "...layers on three twists"; THE TAKE: "can carry three stacked twists without curdling into stunt television"; SHAPE OF THE SEASON: "stacks three mechanics into one run"; WHERE IT SITS IN THE CANON: "runs three overlapping devices in one stretch".
+- suggested fix: State the twist count once, up top (subtitle or THE TAKE). Rewrite THE SHAPE OF THE SEASON and WHERE IT SITS IN THE CANON to argue about what the twists mean for the season's ranking rather than re-counting them. Scoped to `content/shows/big-brother/seasons/27-a-summer-of-mystery.md`.
+- source: browser (critique-pass-150, authed)
+
+### [LOW] [authed] /shows/top-chef/season/carolinas?view=community — the Last Chance Kitchen entry-rule change is restated five times, crowding out any other characterization of the season
+- pass: 150 (commit 4dbdea4f)
+- viewport: desktop
+- category: voice
+- observation: The tagline, THE TAKE, THE SHAPE OF THE SEASON, WHERE IT SITS IN THE CANON, and the EP 6 watch-for callout all lead with the same Last Chance Kitchen entry-rule fact, leaving little room for the season's other details (the Whitewater Center Quickfire, the cast's life-partners/twin-brothers casting wrinkle) to surface anywhere.
+- evidence: Tagline: "...a Last Chance Kitchen rule change that delays how chefs get back in"; THE TAKE: "Last Chance Kitchen's redrawn stakes"; SHAPE OF THE SEASON: "Last Chance Kitchen's new entry rule"; WHERE IT SITS IN THE CANON: "Last Chance Kitchen changed its entry rule this season, delaying..."; EP 6 callout: "the season's longer wait for a second chance".
+- suggested fix: Reserve the LCK-delay explanation for WHERE IT SITS IN THE CANON, since it's doing ranking work there. Let THE TAKE and THE SHAPE OF THE SEASON lead with a different season detail before circling back to LCK once. Scoped to `content/shows/top-chef/seasons/23-carolinas.md`.
+- source: browser (critique-pass-150, authed)
 
 ### [MED] [anon] /shows/dragrace-allstars/season/season-11?view=community — the "eighteen queens, three six-queen brackets" fact is restated near-verbatim five times on one page
 - pass: 149 (commit 5d9e1f6f)
