@@ -34,10 +34,9 @@ watch_list:
 ---
 
 Big Brother's twenty-seventh summer redresses the compound as
-Hotel Mystère and stacks three mechanics into one run: a
-revived Block Buster turns nominations into a three-way safety
-competition, a Mastermind power set drops surprise advantages
-mid-game, and a Week 9 stretch swaps the vote for an elimination
-competition outright. Sixteen houseguests, a premiere-night
-mystery arrival, and Julie Chen Moonves back at the helm for
-another summer.
+Hotel Mystère, and the twist stack changes the house's rhythm
+more than any single mechanic could — safety, power and even
+the vote itself all shift hands at different points, so the
+paranoia compounds instead of resetting week to week. Sixteen
+houseguests, a premiere-night mystery arrival, and Julie Chen
+Moonves back at the helm for another summer.

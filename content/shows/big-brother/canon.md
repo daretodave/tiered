@@ -178,7 +178,7 @@ tag: The most twist-stacked summer since Battle of the Block — three overlappi
 slot_argument: Block Buster's three-way safety competition, a surprise Mastermind power set, and a one-off elimination-by-competition week all land in the same summer, and all three stay houseguest-run rather than system-run.
 community_rank_hint: rank=18 delta=0 sentiment=hold
 
-Eighteenth, sitting just below the Hacker Summer's single clean mechanic and just above Houseguests vs. the AI, which hands its twist authority to a system rather than a room. A Summer of Mystery runs three overlapping devices in one stretch — the Block Buster twist, the Mastermind power set, and the Week 9 vote swap — and all three stay houseguest-administered, which is enough to clear the AI-controlled season below it, but three stacked mechanics can't out-argue the Hacker Summer's single sharpened hook. A past-winner cameo folds into the twist rather than anchoring a full returnee run, so density earns the slot, not lineage.
+Eighteenth, sitting just below the Hacker Summer's single clean mechanic and just above Houseguests vs. the AI, which hands its twist authority to a system rather than a room. A Summer of Mystery runs a dense stack of overlapping devices in one stretch, and all of them stay houseguest-administered, which is enough to clear the AI-controlled season below it, but a crowded rule book still can't out-argue the Hacker Summer's single sharpened hook. A past-winner cameo folds into the twist stack rather than anchoring a full returnee run, so density earns the slot, not lineage.
 
 ## 26. Houseguests vs. the AI
 
