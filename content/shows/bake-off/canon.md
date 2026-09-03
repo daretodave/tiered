@@ -27,7 +27,7 @@ era_bands:
 ## 5. The Welford Peak
 
 tag: The BBC-era ceiling — the format running at its sharpest under the original lineup.
-slot_argument: A series that combined a strong technical bench with a casting class fans cite by first name years later — peak form, not the valedictory lap the next series down settles for.
+slot_argument: Ranked over The Last BBC Year and The Year After because those series play as its aftermath — the valedictory lap and the confirmation round. Every later cycle borrows its shape from this one, not the other way round.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 The high-water mark of the BBC era, and the series the rest of the canon gets argued against. The tent had relocated to Welford Park for this run, the audience had crossed over from BBC Two to BBC One, and the casting class arrived with the kind of personalities the broadcast can hang a ten-week run on. Mary Berry and Paul Hollywood worked a technical bench at its sharpest, and Mel Giedroyc and Sue Perkins kept the room loose enough that nothing curdled. This is the series long-running fans point to when they argue Bake Off was operating at peak form, and the one that turned the show into appointment television.

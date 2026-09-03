@@ -31,7 +31,7 @@ era_bands:
 ## 4. New York
 
 tag: The peak. Strongest cast end to end, judges in lockstep, runway shows that hold up critique by critique.
-slot_argument: Fifteen designers whose confessionals fans still quote, a judges' table operating in unbroken agreement, and a Manhattan workroom doing every bit of editorial work the format asks. The closest the show has come to a working blueprint.
+slot_argument: Ranked over Season One because a format that already works beats a format still inventing itself — Season One gets credit for drafting the grammar this season perfects. Fifteen designers, tighter room, cleaner argument.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season four sits at the top because every later cycle measures
@@ -49,7 +49,7 @@ themselves against.
 ## 1. New York
 
 tag: The foundational document of fashion competition as a genre.
-slot_argument: Twelve designers, a Parsons workroom, a host the audience is meeting for the first time, and a mentor figuring out the format alongside them. Every later season is a refinement of what this one drafted in real time.
+slot_argument: One slot behind Season Four because a format ranks below the season that perfected it. What Season One has that Four doesn't: the grammar finding itself in real time, unpolished and unrepeatable.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Season one earns the second slot as the genre's foundational

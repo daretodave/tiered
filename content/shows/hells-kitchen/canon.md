@@ -28,7 +28,7 @@ era_bands:
 ## 5. Season 5
 
 tag: The format at its most competitive — a deep bench raising the floor.
-slot_argument: Season five brought a cast that took the cooking more seriously than any prior group, which raised the level of every dinner service. The format earns its most competitive iteration here.
+slot_argument: Sits above Season Four because discipline beats volatility — the cooking holds steady all season instead of leaning on drama. Season One invented the format; this is what it looks like once the kitchen caught up.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season five sits at the top of the early canon because the cooking was genuinely serious. The cast arrived with real kitchen credentials across the board, which meant the dinner services ran at a higher floor than any prior season — less meltdown for its own sake, more actual competition. Ramsay's notes landed with more weight because the contestants had the technique to hear them. The black jacket stretch felt earned rather than predetermined. The format had found its ceiling, and this is what that ceiling looks like.
@@ -36,7 +36,7 @@ Season five sits at the top of the early canon because the cooking was genuinely
 ## 4. Season 4
 
 tag: The season that proved the format could sustain its dramatic register across a full run.
-slot_argument: Season four is Hell's Kitchen sustaining its dramatic register across an entire season without losing the plot. The kitchen tension was real and the cast was the most volatile the show had produced to that point.
+slot_argument: One slot behind Season Five because volatility carries this season more than technique does — Season Five swaps energy for discipline and edges it out. Still the louder, more entertaining watch of the two.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Season four is the format sustaining its dramatic register for the longest stretch the early seasons managed. The cast was the most volatile the show had assembled to that point — genuine kitchen talent sitting alongside personalities that made every dinner service unpredictable — and the production had learned how to frame both without choosing between them. Ramsay's demands felt matched to what the cast could actually deliver. The format had matured enough by this point that the drama read as earned. A reliable, high-energy season that holds up.

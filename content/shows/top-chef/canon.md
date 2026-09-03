@@ -25,7 +25,7 @@ era_bands:
 ## 6. Las Vegas
 
 tag: The deepest bench Top Chef has ever cast — brothers cooking against each other on a roster of kitchen veterans.
-slot_argument: Ranked above All-Stars because the case rests on a first-time bench, not eighteen returning alumni. Las Vegas argues raw cooking depth beats returnee history, with no competitor sharing prior screen time.
+slot_argument: Ranked one slot above All-Stars because an unproven bench beats eighteen returning alumni the judges already know. All-Stars leans on returnee history to fill its runway; Las Vegas has none to borrow and still sets the standard.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Las Vegas tops the canon because the bench was the deepest the
