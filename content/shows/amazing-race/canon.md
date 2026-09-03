@@ -31,7 +31,7 @@ era_bands:
 ## 7. Season 7
 
 tag: The franchise peak — the season the race moved from cult favorite to network anchor.
-slot_argument: A pair of crossover Survivor returnees, a route through South America and southern Africa, and a casting bench around the headliners that runs three pairs deep. The publicity moment lands and the show holds onto the audience after.
+slot_argument: Ranked first, above All-Stars, because a publicity moment that builds a network audience outweighs a template later seasons merely follow — Season 7 is the reason there was an audience left for All-Stars to inherit.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season 7 sits at the top because this is the season the race
@@ -48,7 +48,7 @@ race season produced a sharper jump in audience and prestige.
 ## 11. All-Stars
 
 tag: The first full returnee season — the template every later all-stars event answers to.
-slot_argument: Eleven teams pulled from the first ten outings, a Miami start, and the kind of confrontational chemistry that only shared race history can produce. The argument the show makes here is the same Survivor made with its first all-stars run.
+slot_argument: Ranked second, behind Season 7's ratings jump, because a returnee outing that borrows its audience can't out-argue the season that built it. Stays ahead of Season 3 below — carrying a returnee field outweighs merely scaling to twelve teams.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 All-Stars is the race's first full returnee outing, and the canon
