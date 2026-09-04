@@ -3920,7 +3920,7 @@
 
 ## Pending
 
-### [MED] [authed] /shows/the-circle/season/disrupter-mode?view=community — the "smallest cast, 10 players" fact is restated near-verbatim across seven sections
+### [MED] [authed] /shows/the-circle/season/disrupter-mode?view=community — the "smallest cast, 10 players" fact is restated near-verbatim across seven sections — RESOLVED
 - pass: 151 (commit f945f171)
 - viewport: desktop
 - category: voice
@@ -3928,6 +3928,7 @@
 - evidence: Header: "THE CLOSING CHAPTER OF THE SHOW'S NETFLIX RUN"; lede: "pulls the cast down to just 10 players, the smallest group in the show's US run"; THE TAKE: "The smallest cast yet"; EPISODES caption: "the smallest cast in the show's history, just 10 players"; CAST SIZE caption: "Ten players, the smallest cast of the show's US run"; CANON: "Ten players is the smallest cast the US run has tried"; WHAT TO WATCH FOR #1: "Just 10 players enter the building this time, the tightest field the US format has run"
 - suggested fix: Let CAST SIZE own the exact number and superlative; rewrite the lede/THE TAKE/EPISODES caption/CANON rationale/watch-for bullet to each add a distinct angle (what the smaller cast changes about alliance dynamics, pacing, or the finale math) instead of repeating "smallest cast, 10 players." Scoped to `content/shows/the-circle/seasons/07-disrupter-mode.md` and `content/shows/the-circle/canon.md`.
 - source: browser (critique-pass-151, authed)
+- RESOLVED (2026-09-04, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled, Rule 3 confirmed saturated, the standing row's slot_argument/closing-clause side-drain exhausted catalog-wide the prior tick): THE TAKE (`take_h2`) was already distinct ("The sharpest edges yet."). Rewrote the remaining five offenders — `lede` drops the "smallest group in the show's US run" clause and keeps only the bare "10 players" fact; `episodes_caption` now argues episode-count stability instead ("the same length every season has run since the second" — verified 13 episodes across every season since S2, only S1 ran 12); the watch-for bullet's label/body now argue what a smaller room does to weekly stakes rather than restating the superlative; `canon.md`'s `tag`/`slot_argument`/prose rewritten to argue the ranking on mechanical-sharpness grounds relative to Season 1 (the rank-2 neighbor) instead of re-deriving the cast-size fact — `cast_size_caption` ("Ten players, the smallest cast of the show's US run") is now the sole owner of the exact number+superlative. All fields stay under their schema char caps (`tag` 91/120, `slot_argument` 238/240, `episodes_caption` 74/80). Spoiler discipline P0 intact — format/structure facts only.
 
 ### [MED] [authed] /shows/selling-sunset/season/season-9 — the reunion-return and new-agent facts are restated across five sections, and the meta description is a verbatim duplicate of the lede's opening sentence
 - pass: 151 (commit f945f171)
@@ -4010,7 +4011,7 @@
 - suggested fix: Keep the season-summary sentence in one section only; let "where it sits in the canon" open directly with the comparative claim (slot, gap vs. adjacent seasons) instead of re-describing the season first.
 - source: browser (critique-pass-148, authed)
 
-### [MED] [authed] /shows/hells-kitchen/season/battle-of-the-states?view=community — the FILMED stat caption bare-restates the value line directly above it
+### [MED] [authed] /shows/hells-kitchen/season/battle-of-the-states?view=community — the FILMED stat caption bare-restates the value line directly above it — RESOLVED
 - pass: 148 (commit 9ea56bcd)
 - viewport: desktop
 - category: voice
@@ -4018,6 +4019,7 @@
 - evidence: "FILMED / Foxwoods Resort Casino, Ledyard, Connecticut / Foxwoods Resort Casino, Ledyard, Connecticut"
 - suggested fix: Suppress the caption line when it would render identically to the value, or write a distinct caption (e.g. "second consecutive season at Foxwoods"). With three shows now confirmed (rhony, queer-eye, hells-kitchen), this is a strong candidate for the same corpus-wide `isBareRestatement()` fix already proposed on the rhony row rather than a fourth one-off patch.
 - source: browser (critique-pass-148, authed)
+- RESOLVED (discovered fixed 2026-09-04, cloud march tick): `content/shows/hells-kitchen/seasons/24-battle-of-the-states.md`'s `filming_caption` already reads "A second consecutive season inside Foxwoods, after last year's move east." — the bare-restatement was fixed at commit `cdfb9912` ("content: filming_caption bare-restatement drain round 2 — hells-kitchen") on a prior tick, but this row was never ticked resolved. No further change needed; row closed on discovery.
 
 ### [LOW] [anon] /shows/traitors-uk/season/series-4 — breadcrumb labels the season "SEASON 4" while the rest of the page correctly uses the show's own "Series" vocabulary
 - pass: 148 (commit 9ea56bcd)
@@ -4046,7 +4048,7 @@
 - suggested fix: Confirm the real UK premiere date for Series 4 and backfill it; if genuinely unconfirmed at time of writing, show month-only precision instead of a specific day so the UI doesn't imply false precision.
 - source: browser (critique-pass-148, authed)
 
-### [MED] [anon+authed] /shows/rhony/season/the-second-act — the FILMED stat caption bare-restates the value line above it, just reformatted from middot- to comma-separated
+### [MED] [anon+authed] /shows/rhony/season/the-second-act — the FILMED stat caption bare-restates the value line above it, just reformatted from middot- to comma-separated — RESOLVED
 - pass: 147 (commit HEAD)
 - viewport: desktop, mobile
 - category: voice
@@ -4054,6 +4056,7 @@
 - evidence: Value: "New York City · Portugal · Casablanca" immediately followed by caption: "New York City, Portugal, Casablanca" — only the separator character changed.
 - suggested fix: Broaden `isBareRestatement()` in `src/content/__tests__/filming-caption-distinct.test.ts` to normalize separator characters (middot vs comma vs "and") before comparing caption against value, catching this reformatted-duplicate shape corpus-wide, not just this one page. Then rewrite `content/shows/rhony/seasons/15-the-second-act.md`'s `filming_caption` to add real texture (e.g. what changed about filming across three cities/countries instead of just listing them a second time).
 - source: browser (critique-pass-147, anon + authed)
+- RESOLVED (discovered fixed 2026-09-04, cloud march tick): `content/shows/rhony/seasons/15-the-second-act.md`'s `filming_caption` already reads "First three-location season since the single-stop season fourteen." — the bare-restatement was fixed at commit `70235038` ("content: filming_caption bare-restatement drain round 5 — rhony") on a prior tick, but this row was never ticked resolved. The `isBareRestatement()` broadening suggestion was not applied — the shared helper's pass-114 note already documents why a blanket separator/prefix-normalization widening false-positives on 15+ shows' legitimate location-truncation convention; the safer, already-established pattern is a per-content fix, which is what shipped. No further change needed; row closed on discovery.
 
 ### [MED] [authed] /shows/bake-off?view=community — the weekly community-vote question is a run-on sentence nesting two comparisons with an unclear referent
 - pass: 147 (commit HEAD)
@@ -4082,7 +4085,7 @@
 - suggested fix: Cap the description at a full clause/sentence boundary under ~155 chars instead of a mid-thought ellipsis truncation, per the same `clipToSeoBudget` fix already applied to survivor-50 (pass-141/145).
 - source: browser (critique-pass-146, anon)
 
-### [MED] [authed] /shows/queer-eye/season/las-vegas?view=community — the FILMED stat caption bare-restates the location value one field above it
+### [MED] [authed] /shows/queer-eye/season/las-vegas?view=community — the FILMED stat caption bare-restates the location value one field above it — RESOLVED
 - pass: 146 (commit bbc5263b)
 - viewport: desktop
 - category: voice
@@ -4090,6 +4093,7 @@
 - evidence: "FILMED\nLas Vegas, Nevada, USA\nLas Vegas, Nevada\nPREMIERED\nDec 11, 2024\nNetflix · full season drop" — contrast with the other three stat blocks, which each add new info.
 - suggested fix: Rewrite `filming_caption` to a fact the location value doesn't already carry (e.g. "First time the Fab Five has set up here"). Also broaden `isBareRestatement()` in `src/content/__tests__/filming-caption-distinct.test.ts` to catch a caption that's just the location string with no prefix at all, not only the "Filmed <preposition>" forms, so this shape is caught corpus-wide.
 - source: browser (critique-pass-146, authed)
+- RESOLVED (discovered fixed 2026-09-04, cloud march tick): `content/shows/queer-eye/seasons/09-las-vegas.md`'s `filming_caption` already reads "Sandwiched between New Orleans's two-parter and D.C.'s three-jurisdiction sprawl" — the bare-restatement was fixed at commit `ab1b8f7d` ("content: filming_caption bare-restatement drain round 8 — below-deck-med, masterchef-au, queer-eye, the-challenge, the-real-world") on a prior tick, but this row was never ticked resolved. The `isBareRestatement()` broadening suggestion was not applied — see the rhony row above for why that widening is deliberately out of scope. No further change needed; row closed on discovery.
 
 ### [LOW] [authed] /shows/dragrace/season/season-18?view=community — the HOST stat caption partially restates the host's name before adding its one new fact
 - pass: 146 (commit bbc5263b)

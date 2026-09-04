@@ -18,11 +18,11 @@ weekly_question: "With the full seven-season run now ranked, does Season 7's sma
 
 ## 7. Season 7
 
-tag: The smallest cast the format has run, and its sharpest set of blocking twists.
-slot_argument: Ten players, the tightest field the format has run, layered with Disrupter Mode, a secret-superinfluencer round, and blocking rounds that send home one name instead of two — twists that sharpen the game itself.
+tag: Every twist actually changes how the rate-and-block game plays, not just who's in the room.
+slot_argument: Where Season 1 proves the format's rawest form, Season 7 proves six seasons of iteration can still sharpen it further — Disrupter Mode, a secret superinfluencer round, and one-name blocking rounds change decisions, not just decorate them.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
-Season 7 takes the top slot for doing more with less. Ten players is the smallest cast the US run has tried, and that scarcity sharpens every single rating — there's nowhere to hide in a room that small. Disrupter Mode splits the cast between blocking immunity and real disadvantage, a secret superinfluencer can decide a blocking without the room ever finding out who, and some rounds send home just one name instead of the usual pair. None of it plays as a gimmick bolted onto the format; every twist changes how the rate-and-block mechanic actually plays. As the Netflix run's final chapter, it closes strong.
+Season 7 takes the top slot for how much its twists actually change the way the game plays, not for the smaller room they're set in. Disrupter Mode splits the cast between blocking immunity and real disadvantage, a secret superinfluencer can decide a blocking without the room ever finding out who, and some rounds send home just one name instead of the usual pair. None of it plays as a gimmick bolted onto the format — six seasons in, the rate-and-block mechanic is still getting sharper, not just smaller. It closes the Netflix run on its most mechanically confident season, the exact opposite of coasting to the finish.
 
 ## 1. Season 1
 
