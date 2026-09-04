@@ -1,5 +1,73 @@
 # CRITIQUE
 
+> Last pass: 2026-09-04 at commit f945f171
+> Pass count: 151
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> `/march` Step 2's normal rate-limited cadence is active. Pass 151
+> ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
+> headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `/`, `/shows/selling-sunset/season/season-9`, `/shows`,
+> `/shows/masterchef?view=canon`, `/themes/who-actually-got-the-vote`
+> anon; `/u/e2e`, `/shows/selling-sunset/season/season-9?view=community`,
+> `/shows/the-circle/season/disrupter-mode?view=community`,
+> `/shows/project-runway/season/new-york-2025?view=community` authed.
+> Both passes came back mechanically clean (0 console errors, 0
+> failed requests, 0 mobile overflow, all pages 200, no spoiler
+> leaks). 6 findings filed (0 HIGH, 5 MED, 1 LOW): the tracked
+> headline-fact-repetition pattern reproduced on three new pages —
+> the-circle's newest season restates its "smallest cast, 10
+> players" fact across seven sections (the most severe count found
+> to date), selling-sunset's newest season restates its
+> reunion-return/new-agent facts across five sections plus a
+> verbatim meta-description duplicate of the lede, and
+> project-runway's Freeform-relaunch season restates the
+> Klum-returns fact across six sections; the "WHY THIS SLOT
+> re-paraphrases body copy" systemic row (tracked since
+> top-chef/bake-off/amazing-race) reproduced on MasterChef's canon
+> page — a sixth show, not yet in the drain; MasterChef's show page
+> also has a genuinely new, distinct SEO bug — `?view=canon` folds
+> its canonical to the clean base URL but `?view=community` sets its
+> own self-referential canonical with a different `<title>`, so the
+> two toggle-states of one page look like two separate documents to
+> search engines. One LOW navigation finding: `?view=community` is a
+> silent no-op on season-detail routes (confirmed by exact-text diff
+> with and without the param) — the toggle is only wired on the
+> show-index route, so a stray link/bookmark to that URL shape
+> renders the anonymous season page with no error and no indication
+> the param was ignored. Two reader observations dropped at
+> self-assessment: a FILMED-caption bare-restatement instance on
+> selling-sunset (same tracked class already fixed on
+> rhony/queer-eye/hells-kitchen — folded into the standing
+> corpus-wide fix candidate rather than filed as a seventh one-off);
+> and a low-confidence /u/e2e zero-state framing note the reader
+> itself flagged as "may already be correct, confirmation only."
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 mobile overflow, all pages 200, no spoiler leaks). 5
+> findings filed (2 HIGH, 2 MED, 1 LOW): Survivor 50's season page
+> restates its two headline facts (the fan-voted format, the
+> 24-returnee record cast) across four to six sections apiece with
+> almost no new angle added each time — the most severe single-page
+> repetition instance found to date, filed as two rows (one per
+> fact chain); the "WHY THIS SLOT re-paraphrases body copy" systemic
+> row (tracked since top-chef/bake-off, four shows drained this
+> week) reproduced on The Amazing Race's canon page — a fifth show,
+> not yet in the drain; big-brother's newest season restates "three
+> stacked twists" four times before the watch-for section even
+> lists them individually; top-chef's newest season restates its
+> Last Chance Kitchen entry-rule change five times, crowding out any
+> other characterization of the season. Two reader observations
+> dropped at self-assessment: a low-confidence text-extraction
+> artifact on the Amazing Race canon page's tab/badge spacing
+> (same class dropped at pass 149 — can't distinguish real bug from
+> whitespace-in-DOM-extraction without a visual check); and
+> Survivor 50's community page reading "0 votes" under "community
+> rank updates weekly" copy (same class dismissed at pass 149 as
+> plausibly expected test-account state, not a bug).
+>
+> ───── Pass 150 metadata kept below for history ─────
+
 > Last pass: 2026-09-03 at commit 4dbdea4f
 > Pass count: 150
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -3851,6 +3919,60 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /shows/the-circle/season/disrupter-mode?view=community — the "smallest cast, 10 players" fact is restated near-verbatim across seven sections
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: voice
+- observation: The header meta line, the lede, THE TAKE, the EPISODES caption, the CAST SIZE caption, the CANON rationale, and the first WHAT TO WATCH FOR bullet all restate the same "smallest cast in the show's US run, 10 players" fact with only minor wording changes — the most severe single-fact repetition count found in any critique pass to date. Same class of defect as the ongoing cross-callout repetition drain already running across the catalog (Survivor 50, Big Brother, dragrace-allstars, perfect-match, etc.), just not yet reached this show/season.
+- evidence: Header: "THE CLOSING CHAPTER OF THE SHOW'S NETFLIX RUN"; lede: "pulls the cast down to just 10 players, the smallest group in the show's US run"; THE TAKE: "The smallest cast yet"; EPISODES caption: "the smallest cast in the show's history, just 10 players"; CAST SIZE caption: "Ten players, the smallest cast of the show's US run"; CANON: "Ten players is the smallest cast the US run has tried"; WHAT TO WATCH FOR #1: "Just 10 players enter the building this time, the tightest field the US format has run"
+- suggested fix: Let CAST SIZE own the exact number and superlative; rewrite the lede/THE TAKE/EPISODES caption/CANON rationale/watch-for bullet to each add a distinct angle (what the smaller cast changes about alliance dynamics, pacing, or the finale math) instead of repeating "smallest cast, 10 players." Scoped to `content/shows/the-circle/seasons/07-disrupter-mode.md` and `content/shows/the-circle/canon.md`.
+- source: browser (critique-pass-151, authed)
+
+### [MED] [authed] /shows/selling-sunset/season/season-9 — the reunion-return and new-agent facts are restated across five sections, and the meta description is a verbatim duplicate of the lede's opening sentence
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: voice
+- observation: THE TAKE, the EPISODES caption, the FORMAT caption, the CAST SIZE caption, the SHAPE section, and the CANON rationale all restate the same two headline facts (the reunion special's return, Sandra Vergara joining as a new agent) with only minor wording changes. Separately, the page's `<meta name="description">` is an exact verbatim copy of the lede's opening sentence up to the truncation point, not just a paraphrase — a stronger case of the tracked meta-echoes-lede pattern (7+ pages already confirmed) than the usual near-duplicate.
+- evidence: THE TAKE: "The reunion comes back — and brings someone new."; EPISODES caption: "Ten episodes plus a standalone reunion, back after a season without one"; FORMAT caption: "the reunion special returns after a season off"; CAST SIZE caption: "Thirteen agents, including newcomer Sandra Vergara"; SHAPE: "Season 9 adds Sandra Vergara to the Oppenheim Group's roster and brings the reunion special back after Season 8's one-season gap"; CANON: "The reunion's return and the new-agent addition carry this season's rank." Meta: "Season 9 brings Sandra Vergara into the Oppenheim Group as a new agent and restores the standalone reunion after Season 8 skipped it…" — identical to the lede's opening clause.
+- suggested fix: Assign the reunion-return fact to SHAPE and the Vergara-joins fact to CAST SIZE; rewrite THE TAKE/EPISODES caption/CANON rationale to add a distinct angle instead of repeating either fact. Write the meta description as an independent summary sentence rather than truncating the lede verbatim. Scoped to `content/shows/selling-sunset/seasons/09-season-9.md` and `content/shows/selling-sunset/canon.md`.
+- source: browser (critique-pass-151, anon+authed)
+
+### [MED] [authed] /shows/project-runway/season/new-york-2025?view=community — the Heidi-Klum-returns/Freeform-relaunch fact is restated across six sections
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: voice
+- observation: The header meta line, the lede, THE TAKE, SHAPE, the CANON rationale, and the HOST caption all restate the same "Heidi Klum returns to host after eight seasons away, Freeform relaunch" fact with only minor wording changes.
+- evidence: Header: "THE FREEFORM RELAUNCH"; lede: "brings Heidi Klum back to the host chair after eight seasons away"; THE TAKE: "The comeback. New network, returning host..."; SHAPE: "Project Runway leaves Bravo, bringing Heidi Klum back to host after eight seasons away"; CANON: "Heidi Klum's return energizes the format immediately"; HOST caption: "Heidi Klum returns after an eight-year absence"
+- suggested fix: Let HOST caption own the Klum-returns fact exclusively; rewrite the lede/THE TAKE/SHAPE/CANON rationale to each add a distinct angle (the judges'-table rebuild, the network move's stakes, the workroom's new energy) instead of repeating the same return claim. Scoped to `content/shows/project-runway/seasons/21-new-york-2025.md` and `content/shows/project-runway/canon.md`.
+- source: browser (critique-pass-151, authed)
+
+### [MED] [anon] /shows/masterchef?view=canon — the "WHY THIS SLOT" callout bare-restates the analysis paragraph directly above it
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: voice
+- observation: At least two of five S-tier entries (Season 4, Season 9) have a "WHY THIS SLOT" capsule that condenses the same facts already stated in the paragraph above it, adding no new reasoning. Same systemic pattern already tracked since top-chef/bake-off/amazing-race (five shows drained or flagged) — MasterChef is a sixth show, not yet in the drain.
+- evidence: Season 4 body: "...the field had genuine spread... Twenty-five episodes is the founding era's longest run... Ramsay's three-judge panel was at peak chemistry, and it showed in how the cooking was framed." Season 4 WHY THIS SLOT: "Season four brought the largest cast and the most episodes in the founding era, and the depth showed in the cooking." — same three facts (cast size, episode count, cooking quality), no added angle.
+- suggested fix: Give WHY THIS SLOT a distinct job — comparative context vs. the slot above/below it in the canon — rather than a condensed rehash of the paragraph it sits under. Scoped to `content/shows/masterchef/canon.md`.
+- source: browser (critique-pass-151, anon)
+
+### [MED] [anon] /shows/masterchef — `?view=canon` and `?view=community` set inconsistent canonical URLs for the same toggle page
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: seo
+- observation: `?view=canon` correctly folds its canonical back to the clean base URL, but `?view=community` sets its own canonical to itself including the query string — search engines see two separate canonical documents (with different `<title>` tags) for what is one toggle-state page.
+- evidence: `?view=canon` → `<link rel="canonical" href="https://tiered.tv/shows/masterchef">`; `?view=community` → `<link rel="canonical" href="https://tiered.tv/shows/masterchef?view=community">`, `<title>MasterChef — community rank — tiered.tv</title>`.
+- suggested fix: Make `?view=community` also canonicalize to the clean base URL (or, if community rank deserves independent indexing, apply that consistently to both view states rather than just one). Likely a shared-component fix in the show-page canonical/metadata logic, not per-show content.
+- source: browser (critique-pass-151, anon)
+
+### [LOW] [authed] /shows/selling-sunset/season/season-9?view=community — `?view=community` is a silent no-op on season-detail routes
+- pass: 151 (commit f945f171)
+- viewport: desktop
+- category: navigation
+- observation: Rendered text is byte-identical with and without the `?view=community` param (confirmed by direct text diff, 3265 chars exact match), and the canonical link strips the param. The community-view toggle is only implemented on the show-index route (`/shows/[show]/page.tsx`); the season-detail route never reads the `view` searchParam. A stray share link, internal link, or bookmark using this URL shape renders with no error and no indication the param was ignored.
+- evidence: Diffed rendered body text of `/shows/selling-sunset/season/season-9?view=community` vs `/shows/selling-sunset/season/season-9` — identical. Confirmed via source: only `src/app/shows/[show]/page.tsx` and `CanonTabSwitch.tsx` read the `view` param; the season-detail route (`src/app/shows/[show]/season/[slug]/page.tsx`) does not.
+- suggested fix: Either implement a real community-vote pane on the season route for this param, or strip/ignore the param cleanly at the routing layer instead of leaving it as an inert query string readers might reasonably expect to do something.
+- source: browser (critique-pass-151, authed)
 
 ### [MED] [anon] /shows/dragrace-allstars/season/season-11?view=community — the "eighteen queens, three six-queen brackets" fact is restated near-verbatim five times on one page
 - pass: 149 (commit 5d9e1f6f)
