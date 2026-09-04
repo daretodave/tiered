@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-08-30 at commit 6a26f261
-> Pass count: 67
+> Last pass: 2026-09-04 at commit b68021b8
+> Pass count: 68
 
 ## Considered (awaiting promotion)
 
@@ -21,6 +21,65 @@
 **Filed:** <ISO date>
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 68 (2026-09-04, commit b68021b8, cloud) — 0 new phase-shape
+     candidates filed; three reinforcement updates appended below (#34,
+     #35, #29).
+     Window since pass 67 (c9802abc, 2026-08-30): 5 days / 132 commits.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 1.5: season-sweep last ran 2026-08-30, next due
+     2026-09-06 — not due; show-add stays LOCKED (gap table non-zero, 44
+     shows carry a gap per the eighth full sweep, all starred). Step 2.0's
+     shipping-mode gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase
+     rows). The critique gate did not fire: last pass (151) landed the
+     same day at commit f945f171, only 11 commits and ~23h41m before this
+     tick — just short of both the 12-commit and 24-hour thresholds. Step
+     3a/3b empty (no pending phase rows, no Pending category:data AUDIT
+     rows). Step 3b.5 matched its usual candidate, the standing Rule 2
+     season-fill drain row (score 4.5) — but every one of the
+     `plan/CADENCE.md` gap table's 44 rows is starred (confirmed-but-
+     unaired), the same full-board-stall state pass 67 and multiple prior
+     ticks documented, so no season was actually actionable. Rule 3
+     (themed lists) stays locked behind the non-zero gap table. This left
+     the dispatch to fall through to `/expand`'s own gate, which opened
+     independently (posture bold, last pass 5 days / 132 commits ago —
+     past both the 20-commit and 48h thresholds — live AUDIT.md signal
+     present, no phase/data work pending) and fired, reaching this pass.
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): the same 5 real rows as
+       pass 67 — night.yml starvation (HIGH, 6.4), e2e-full
+       duration-ceiling (MED, 5.4), the-voice factual corruption (HIGH,
+       4.8), theme-description SERP-budget (LOW, 1.5, deliberately below
+       filing bar), YEAR_TENURE_RE teen-number gap (LOW, 2.7, below filing
+       bar). The first three map onto already-filed candidates (#35, #34,
+       #36 respectively) — reinforced in place with fresh
+       `gh run list`/`gh run view --log` evidence against `night.yml` and
+       `e2e-full.yml`'s actual run history rather than refiled; #36
+       (the-voice) had no new evidence since its last addendum, left
+       untouched to avoid a content-free reinforcement note. The two LOW
+       rows are unchanged and remain below the phase-candidate filing bar
+       (deliberately, per their own text).
+     - `plan/CRITIQUE.md` Pending: tonight's own `/digest` pass (same
+       commit window) independently found the Pending section has grown
+       to 43 rows spanning passes 137-151 — larger than any recent digest
+       estimated — and spot-checked at least one row as already-fixed but
+       never closed. This is not a new candidate concept; it's the exact
+       failure mode candidate #29 (archive closed rows) already names,
+       now with a concrete, first-hand instance. Folded into #29's
+       reinforcement below rather than filed separately, matching
+       `/digest`'s own conclusion.
+     - `spec.md` / `design/`: no diff since pass 67 (`git log -p
+       --since=2026-08-30 -- spec.md design/` empty on both paths).
+     - GitHub issues: `triage:loop-queued` shows the same 4 open issues as
+       pass 67 (#787, #785, #754, #636), `triage:needs-user` the same 8 —
+       no new issue filed since pass 67, confirmed via `createdAt` on both
+       label queries. No new triage-pattern signal.
+     No genuinely new candidate concept surfaced this pass — every live
+     signal traced back to an already-filed, well-scored candidate. #29's
+     score bump (5.6 → 6.4) ties it with #35 for highest-scored unpromoted
+     candidate in the file this pass, well ahead of #34 (5.4) and #36
+     (4.8).
 -->
 
 <!-- Pass 67 (2026-08-30, commit 6a26f261, cloud) — 0 new phase-shape
@@ -907,6 +966,25 @@ recommendation unchanged: this is ripe for `/oversight` promotion,
 not further reinforcement passes — the signal has been stable and
 unambiguous for over a month.
 
+**Update (expand pass 68, 2026-09-04, cloud march):** the pattern
+holds exactly at the pass-67 baseline, no drift either direction.
+Checked the 10 most recent `e2e-full` runs directly (08-25 through
+09-04): 7 failures, 3 successes, the identical split pass 67 found,
+all on the same 75-minute duration-ceiling signature. Tonight's own
+run (09-04, 33823160574) timed out at 9,218 of 10,565 tests complete
+(87.3%) — confirmed via `gh run view --log` (`Running 10565 tests
+using 1 worker` at 00:50:22Z, killed at 02:04:59Z right after test
+9218, a `smoke-mobile.spec.ts` case). Catalog size is now fully flat
+at 10,565 (unchanged since the count pass 67 cited) — the
+content-side growth that was previously eroding the wall's margin has
+stopped, but the crawl still fails more nights than not against the
+existing catalog alone, confirming this is a pure single-worker
+throughput problem, not a catalog-growth-outpacing-the-wall problem.
+No new scope information; same fix (Playwright `--shard`), same
+`workflows`-OAuth-scope cloud blocker. 44 days unpromoted since
+filing (07-22) — restating pass-63/67's unchanged recommendation:
+ripe for `/oversight` promotion, not further reinforcement passes.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -1042,6 +1120,23 @@ all `conclusion: cancelled`, zero jobs started on any of the three.
 entire 3-night span until tonight's tick (this commit) got through.
 Same unfixed mechanism each time — no new evidence, just the longest
 unbroken loss streak since filing 42 days ago. Still unpromoted.
+
+**Update (expand pass 68, 2026-09-04, cloud march):** the most
+encouraging window since filing — `gh run list --workflow night.yml`
+shows **4 consecutive clean runs** (09-01 through 09-04, all
+`conclusion: success`), the longest unbroken clean streak on record,
+immediately following the worst-yet 3-night loss streak (08-29
+through 08-31) the 09-01 digest update reported. The underlying
+mechanism is entirely unchanged — no code or workflow-file edit has
+shipped — so this reads as favorable scheduling luck (fewer
+march-trigger collisions landing in night's ~10:3x UTC queue window
+this week), not a fix; the same eviction race documented since
+07-27 will resume whenever timing lines up again, exactly as the
+08-06/08-10/08-27 "one clean night" false dawns already logged here
+did. Softening urgency slightly relative to #34 (which shows no such
+respite) but not the score or scope sketch — still the standing
+`/oversight` recommendation, now 39 days unpromoted since filing
+(07-27).
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
@@ -2873,11 +2968,13 @@ change to estimated phases.
 
 ### 29. Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
 
-**Score:** 5.6 (impact: 7 — raised at pass 58 from a projected risk to a *confirmed*
-live failure: a plain `Read` of `plan/CADENCE.md` failed outright this tick on the
-same token-ceiling class this candidate names; ease: 8 — mechanical move of already-
-`[x]`-closed rows to a new archive file, git history keeps everything regardless,
-no schema or gate-logic change)
+**Score:** 6.4 (impact: 8 — raised at pass 68 from a read-ceiling risk to a
+*confirmed silent bookkeeping-accuracy defect*: the same tick's own `/digest`
+pass found `plan/CRITIQUE.md`'s Pending section has drifted to 43 unreconciled
+rows including at least one already-fixed-but-never-closed finding, directly
+traceable to the absence of the archive mechanism this candidate proposes;
+ease: 8 — mechanical move of already-`[x]`-closed rows to a new archive file,
+git history keeps everything regardless, no schema or gate-logic change)
 **Source pass:** digest 2026-07-09
 **Filed:** 2026-07-09
 **Why:** A cloud march tick failed 2026-07-08T22:04Z (run 28978947705) with `SDK
@@ -2973,6 +3070,30 @@ verbatim — informal proof the archive pattern this candidate proposes works
 in practice, just not yet applied to the two files that need it most. Still
 unpromoted, now 3 consecutive expand passes (52, digest 07-18, 58) finding
 worsening evidence with zero mitigation shipped.
+
+**Update (expand pass 68, 2026-09-04, cloud march):** both file-growth and
+functional-failure evidence escalated sharply since the pass-58
+reinforcement, 40 days ago — this candidate itself had become one of the
+file's own stalest reinforcement gaps. `plan/CRITIQUE.md` is now 5,919
+lines / 2.1MB (was 3,818 lines at pass 58, +55%); `plan/PHASE_CANDIDATES.md`
+(this file) is now 6,327 lines / 401KB (was 4,966, +27%). Fresh first-hand
+failure this same tick: a plain `Read` of `plan/CADENCE.md` failed outright
+("File content (65604 tokens) exceeds maximum allowed tokens (25000)"), and
+listing `plan/AUDIT.md`'s pending rows via `grep` twice returned a truncated
+2KB preview instead of full output — the identical ceiling-breach class
+first confirmed at pass 58 against CADENCE.md alone is now routine rather
+than occasional. Tonight's `/digest` pass independently surfaced the
+clearest functional consequence yet: `plan/CRITIQUE.md`'s Pending section
+holds 43 rows spanning passes 137-151 (not the "handful" recent digests had
+estimated), and a spot-check found at least one row (the pass-139/142
+"voters, last 7 days · 0" contradiction) already fixed in code but never
+moved to Done — silent ledger drift this candidate's archive mechanism
+would directly prevent, since a bounded live file is small enough to audit
+in one pass instead of estimated from memory. Score raised 5.6 → 6.4 (see
+above) — now tied with #35 for the highest-scored unpromoted candidate in
+the file. 57 days unpromoted since original filing (07-09), 40 days since
+the last reinforcement — recommend leading the next `/oversight` session
+with this one, alongside #35.
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
