@@ -66,11 +66,11 @@ Season 2 is the first season to grow the ensemble rather than just return it. Ro
 
 ## 9. Season 9
 
-tag: The season that brings the reunion back — and brings a new agent with it.
-slot_argument: Sandra Vergara joins the roster, and the standalone reunion returns after Season 8 skipped it, with Tan France back to host again. Real recovery, even if it's restoring ground rather than breaking new.
+tag: The season that gets the reunion back, without matching the spark that made it matter the first time.
+slot_argument: Ranks below Season 5, which built this same two-part structure from nothing — restoring a format element is a smaller lift than inventing it. Ranks above Season 6, whose turnover left the show without that structure at all.
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
-The reunion's return and the new-agent addition carry this season's rank — together, they're the format's biggest structural hook coming back right when the canon needed it to. That combination gives the ensemble fresh friction to work through once the ten-episode main run wraps. It doesn't reinvent anything Season 5 didn't already establish, and a comeback still reads as a comeback rather than a leap forward. But putting the reunion back in place, with new blood in the mix, earns this season a real step up from the one before it.
+Season 9's rank sits on a comparison, not a standalone case. Season 5 gets credit for adding the reunion special to the format; Season 9 only gets it back after Season 8 dropped it, which is real but smaller work — recovery instead of invention. That still clears Season 6, where three departures reshaped the office but left the show without the two-part structure at all. Ten episodes and a returning reunion give the ensemble a real stage to work through, even if the season itself breaks no new ground.
 
 ## 6. Season 6
 
