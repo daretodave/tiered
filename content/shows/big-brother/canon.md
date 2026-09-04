@@ -151,7 +151,7 @@ Fourteenth, another case of an originator ranking ahead of a season that borrows
 ## 24. Festie Besties
 
 tag: The modern era stacking its conceits into one mechanism — a fate-sharing twist.
-slot_argument: A coherent binding-group experiment in the Duos lineage, layered with a hidden backstage game. Twist-dense by design, which is both the argument and the ceiling.
+slot_argument: A coherent binding-group experiment in the Duos lineage, layered with a hidden backstage game. Twist-dense by design, and the fate-sharing mechanic is the reason later seasons keep borrowing its shape.
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Fifteenth, one slot above a season that carries a bigger reputation than its canon placement suggests. Festie Besties ranks below Cliques Summer because it inherits rather than invents the sorting logic, but it edges ahead of Den of Temptation at #16 on sheer density — two twists running at once, both landing, is a harder needle to thread than the single-returnee-and-statue premise the season below it builds around. The modern era likes to call Den of Temptation its anchor text, and the canon doesn't dispute the ambition, but a season that stacks more mechanics and keeps them legible earns the nod here.
@@ -183,7 +183,7 @@ Eighteenth, sitting just below the Hacker Summer's single clean mechanic and jus
 ## 26. Houseguests vs. the AI
 
 tag: The most twist-mechanized framing the franchise has attempted.
-slot_argument: A coherent close to the streaming-era stretch — the twist authority handed to a system. Ambitious framing on a solid newbie bench; the machinery is both the argument and the ceiling.
+slot_argument: A coherent close to the streaming-era stretch — the twist authority handed to a system. Ambitious framing on a solid newbie bench; handing the mechanic to a system rather than a person is the choice that defines its slot.
 community_rank_hint: rank=19 delta=-1 sentiment=down
 
 Nineteenth, sitting below every houseguest-administered twist above it for the same reason — when a system rather than a person runs the mechanic, the canon treats the season as one degree more distant from what makes Big Brother work. That's the case against ranking Houseguests vs. the AI any higher than the Hacker Summer or the twist-stacked summer directly above it. It stays ahead of America's Player at #20 because the newbie cast here is sharper, and the machinery, however dominant, resolves into a coherent single argument — the double-barreled twist stack one slot down never fully resolves into one.
@@ -214,11 +214,11 @@ Twenty-second, ranked below Exes in the House because a season split five ways b
 
 ## 21. Camp Comeback
 
-tag: The streaming era's hardest reach for a re-entry engine — and the run is part of franchise text.
-slot_argument: The structural swing is real and the Camp Comeback mechanic is ambitious, but the season around it is part of franchise text for reasons the broadcast had to work around. Slot honors the reach; placement honors the run.
+tag: The streaming era's hardest reach for a re-entry engine — and a season now remembered for more than its format.
+slot_argument: The structural swing is real and the Camp Comeback mechanic is ambitious, but the season carries a shadow no rulebook could contain. Slot honors the reach; placement answers to everything else the summer carried.
 community_rank_hint: rank=23 delta=-1 sentiment=down
 
-Twenty-third, held down by circumstances the show itself had to address rather than by any failure of the re-entry concept, which is more ambitious on paper than almost anything ranked below it. Camp Comeback reaches for a structural idea — evicted players staying in the game with a live path back — that no season above BB Takeover would have attempted, and on format ambition alone this would sit much higher. It stays ahead of Project DNA because a full-season structural mechanic, even one overshadowed by what the season became, is a bigger swing than a single-twist gimmick confined to a handful of houseguests.
+Twenty-third, held down by circumstances the show itself had to address rather than by any failure of the re-entry concept, which is more ambitious on paper than almost anything ranked below it. Camp Comeback reaches for a structural idea — evicted players staying in the game with a live path back — that no season above BB Takeover would have attempted, and on format ambition alone this would sit much higher. It stays ahead of Project DNA because a full-season structural mechanic, even one that outside events came to overshadow, is a bigger swing than a single-twist gimmick confined to a handful of houseguests.
 
 ## 5. Project DNA
 
@@ -239,10 +239,10 @@ Twenty-fifth, kept out of the bottom two spots by format-historical weight alone
 ## 15. MVP Summer
 
 tag: The season the live feeds outpaced the broadcast.
-slot_argument: A season that aged hard and aged fast. The MVP twist is structurally interesting; the run around it is part of franchise text for reasons the broadcast had to address on air.
+slot_argument: A season that aged hard and aged fast. The MVP twist is structurally interesting; the summer around it drew scrutiny the broadcast spent the season managing.
 community_rank_hint: rank=26 delta=-7 sentiment=down
 
-Twenty-sixth, the clearest gap in the canon between what a season's twist promised and what the season became. The MVP mechanic is a genuinely interesting structural idea, a real jump from anything in the tier above it, and on format alone this might outrank the Pilot. It doesn't, because what the room made of that structure overrides the mechanic's own merits. It still finishes ahead of the Winter Couples at the bottom of the canon because MVP Summer's problems came from within a normal summer format; Winter Couples never had a normal summer to work with in the first place, which is the harder deficit to overcome.
+Twenty-sixth, the clearest gap in the canon between what a season's twist promised and what actually took over the summer. The MVP mechanic is a genuinely interesting structural idea, a real jump from anything in the tier above it, and on format alone this might outrank the Pilot. It doesn't, because what the room made of that structure overrides the mechanic's own merits. It still finishes ahead of the Winter Couples at the bottom of the canon because MVP Summer's problems came from within a normal summer format; Winter Couples never had a normal summer to work with in the first place, which is the harder deficit to overcome.
 
 ## 9. The Winter Couples
 
