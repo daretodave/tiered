@@ -92,6 +92,30 @@ already-tracked fact that ABC pulled the season days before air
 following a resurfaced controversy, airing status still unresolved.
 No table action, matches standing precedent.
 
+**Calendar correction, 2026-09-04 tick (cloud march, outside the weekly sweep
+cadence).** The phase-39 finale gate fired on `alone` season 13, reading
+`content/calendar.yml`'s `finale_date: 2026-09-03`. Before shipping the
+post-finale shift note, this tick re-researched the date directly and found
+the 2026-09-03 figure was a mislabeled episode: "Subzero" (episode 12 of 13,
+the penultimate medical-check episode) aired 2026-09-02; the actual finale
+("Worlds Apart," episode 13) is dated 2026-09-09 across three independent
+trackers (Wikipedia's season page, Wikipedia's "List of Alone episodes," and
+pogdesign.co.uk), all agreeing on the full 13-episode June 17 → September 9
+weekly cadence. No post-finale recap/winner coverage exists anywhere,
+confirming the season had not concluded as of this tick's reference date
+(2026-09-04). `content/calendar.yml` corrected to `finale_date: 2026-09-09`;
+the premature `plan/AUDIT.md` finale-shift row (filed this same tick, before
+the correction) was retracted rather than shipped — writing a settled
+post-finale ranking-shift note for a season that hasn't aired yet would be an
+editorial-accuracy error, the same class of bug the below-deck-mediterranean
+/ hells-kitchen date-uncertainty notes above guard against. The gate will
+correctly re-fire once 2026-09-09 passes and no marker exists yet for this
+season. Also worth noting for future research on this season: it's the
+franchise's first internationally-cast season (ten survivalists from seven
+countries, filmed in the Richardson Mountains near Aklavik, Northwest
+Territories — a new location, not a repeat of season 7/12's Great Slave Lake
+Arctic runs), format facts only, no outcome.
+
 **Seventh full weekly sweep, 2026-08-23 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (same 3 pre-existing tracked
