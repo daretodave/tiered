@@ -27,7 +27,7 @@ era_bands:
 ## 6. Series 6 (2024)
 
 tag: The cash-prize series — twenty-five thousand pounds changes what winning means.
-slot_argument: A first for the franchise anywhere: real money on the line, a finale that trades the usual final two for four, and guest judges spanning pop, comedy and fashion.
+slot_argument: Ranks above Series 4's history-making firsts, because turning the finale into a genuine four-way and putting real money on the line for the first time anywhere in the franchise outweighs any one casting landmark.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Series 6 takes the top slot because it's the boldest single swing the UK edition has ever taken, and the first of its kind anywhere in the Drag Race franchise. For the first time, the show puts real money on the line — twenty-five thousand pounds — turning the competition's stakes into something concrete rather than symbolic. The finale matches that ambition, breaking from the standard final-two format to run a four-way structure instead. Guest judges across the run, from Alison Goldfrapp to Simon Le Bon, bring range without diluting the panel's rhythm. It's a season that reshapes what winning the UK edition actually means, and it earns the top spot for that alone.
@@ -35,7 +35,7 @@ Series 6 takes the top slot because it's the boldest single swing the UK edition
 ## 4. Series 4 (2022)
 
 tag: The history-makers — a landmark cast moment and a franchise-first without RuPaul.
-slot_argument: Dakota Schiffer becomes the UK edition's first out trans woman contestant, and Michelle Visage runs an episode solo — a first for Drag Race anywhere in the world.
+slot_argument: Ranks below Series 6's cash-prize swing, but above Series 2's cast expansion, because two franchise firsts — a trans contestant, a solo-hosted episode — outweigh simply growing the cast and the studio.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Series 4 earns the runner-up slot for two firsts that matter beyond the UK edition alone. Dakota Schiffer becomes the first out trans woman to compete on the British version, a landmark casting moment the season treats as simply part of the workroom rather than a headline. Later in the run, Michelle Visage steps into the host's chair for an episode in RuPaul's absence, the first time any Drag Race edition worldwide has had to run without him. The panel, now a settled foursome of RuPaul Charles, Michelle Visage, Alan Carr and Graham Norton, holds steady through both moments. It's a season defined by how naturally it absorbs genuine firsts.
@@ -43,7 +43,7 @@ Series 4 earns the runner-up slot for two firsts that matter beyond the UK editi
 ## 2. Series 2 (2021)
 
 tag: The breakout cast — the series that proved the UK edition could stand fully on its own two heels.
-slot_argument: A bigger cast, a bigger studio at Pinewood, and a panel — RuPaul Charles, Michelle Visage, and a rotating third chair — settling into its own rhythm. Ten episodes of confidence rather than course-correction.
+slot_argument: Ranks below Series 4's casting firsts, but above Series 7's new twist, because finding its own voice at a bigger studio matters more to the format's history than one more secret-vote mechanic.
 community_rank_hint: rank=3 delta=-2 sentiment=hold
 
 Series 2 holds the third slot as the series where the UK edition stopped feeling like an experiment and started feeling like itself. The production moved to Pinewood Studios and the episode count grew to ten, giving the cast room to build real chemistry across the run. RuPaul Charles and Michelle Visage anchor a panel that finally sounds like itself rather than an import, and Snatch Game leans harder into British pastiche than the pilot managed. Two later series would out-argue it on sheer structural ambition, but Series 2 remains the moment the format found its own voice, and that's worth ranking highly on its own terms.
@@ -51,7 +51,7 @@ Series 2 holds the third slot as the series where the UK edition stopped feeling
 ## 7. Series 7 (2025)
 
 tag: The Lucky Cow — the twist that hands the cast its own vote.
-slot_argument: A new secret-vote mechanic lets the queens themselves grant a reprieve, guest judges span music and comedy, and the season settles into the show's same-night simulcast rhythm.
+slot_argument: Ranks below Series 2's voice-finding expansion, but above Series 3's regional move, because handing the cast a genuine new game mechanic edges out a season whose biggest swing was relocating production.
 community_rank_hint: rank=4 delta=0 sentiment=hold
 
 Series 7 lands at four for introducing The Lucky Cow, a genuinely new piece of game mechanics rather than a scale-up of what came before. The twist lets the cast itself vote in secret to grant a reprieve to whichever bottom queen the room believes deserves another shot, handing real power to the contestants rather than the panel alone. Guest judges including Nadine Coyle and Jane Horrocks bring range across the run, and the season airs in the now-settled same-night rhythm of an iPlayer premiere followed by a BBC Three broadcast an hour later. A confident, format-curious entry that keeps the show evolving rather than repeating itself.
@@ -59,7 +59,7 @@ Series 7 lands at four for introducing The Lucky Cow, a genuinely new piece of g
 ## 3. Series 3 (2021)
 
 tag: The Manchester move — the first series to build its home outside London.
-slot_argument: The production relocates outside London for the first time, and the scale grows with it. A matured panel, a settled ten-episode format, and the RuPeter Badge tradition now fully in place.
+slot_argument: Ranks below Series 7's new game mechanic, but above Series 5's steadier run, because leaving London for the first time counts as more of a structural first than a season built around a no-elimination cushion.
 community_rank_hint: rank=5 delta=-3 sentiment=hold
 
 Series 3 settles into the fifth slot on the strength of its own expansion, even as four other seasons in the canon now edge ahead of it on structural ambition. The show leaves London for the first time, relocating production to Manchester, and the move gives the season a texture distinct from the two series before it. RuPaul Charles and Michelle Visage anchor a fully settled panel, with the RuPeter Badge tradition now an established fixture rather than a new addition. The ten-episode run carries a confident regional energy, proof the format could travel inside its own country. It's a strong, polished season — just not one built around a genuine format first.
