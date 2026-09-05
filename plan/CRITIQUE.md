@@ -1,13 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-09-05 at commit 9b014bce
-> Pass count: 152
+> Last pass: 2026-09-05 at commit dedb99b7
+> Pass count: 153
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 152
+> `/march` Step 2's normal rate-limited cadence is active. Pass 153
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
-> `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
+> `CRITIQUE_SESSION_COOKIE`. URL set: `/shows/traitors/season/ardross-2026`,
+> `/shows/the-voice/season/the-finale`, `/shows/big-brother?view=canon`,
+> `/shows/below-deck-mediterranean/season/dubrovnik-ii`, `/themes` anon;
+> `/u/e2e`, `/shows/traitors/season/ardross-2026?view=community`,
+> `/shows/big-brother/season/a-summer-of-mystery?view=community`,
+> `/shows/naked-and-afraid/season/the-active-season?view=community`
+> authed. Both passes came back mechanically clean (0 console errors,
+> 0 failed requests, no overflow, all 200s, auth confirmed via
+> `@e2e` chrome) and no spoiler leaks were found on any of the nine
+> pages, including The Voice's series-finale season page. 6 findings
+> filed (2 HIGH, 3 MED, 1 LOW): the tracked cross-field repetition
+> pattern (same fact restated near-verbatim across the "shape of the
+> season" and "where it sits in the canon" sections) reproduced on
+> three brand-new shows this pass — `traitors`, `below-deck-mediterranean`,
+> and `naked-and-afraid` — corroborated independently on `traitors` by
+> both the anon and authed passes on the same page. Given three fresh
+> instances in one pass, the naked-and-afraid finding's suggested fix
+> flags that the standing season-fill drain row may want a
+> template-level content-check invariant rather than continuing to
+> patch discovered instances one at a time. One MED SEO finding:
+> the-voice's finale-season `meta_description` is truncated mid-clause
+> in the source HTML (not a capture artifact). One MED comprehension
+> finding: big-brother's newest season opens "THE TAKE" on a comparison
+> to a season not yet named, unresolved until three sections later. One
+> LOW: a new instance of the already-tracked "Aired" vs. "Premiered"
+> eyebrow terminology drift, this time on traitors's newest season. The
+> old pass-152 metadata below is retained for history; see it for that
+> pass's own findings and the dragrace-uk spoiler-leak context.
+>
+> --- pass 152 metadata (superseded) ---
+> Last pass: 2026-09-05 at commit 9b014bce
+> Pass count: 152
+> Rotated to a fresh URL set:
 > `/`, `/shows/dragrace-uk/season/series-7`, `/shows`,
 > `/shows/shark-tank?view=canon`, `/themes/best-villain-editing`
 > anon; `/u/e2e`, `/shows/jersey-shore/season/the-final-season?view=community`,
@@ -5689,6 +5721,60 @@
 - suggested fix: Drop the `source === 'votes'` gate on the zero-clause in `CommunityLiveStrip.tsx` (or add an equivalent one) so it also fires whenever `lastRecomputeAt` is non-null and `votersThisWeek === 0`, regardless of `source` — the ambiguity is about the timestamp+zero combination, not the source label. Update the component's own comment, which currently states the now-disproven assumption.
 - source: browser (critique-pass-142, authed)
 - RESOLVED (2026-08-25, cloud march tick): applied the suggested fix verbatim — dropped the `source === 'votes'` gate on the zero-clause in `CommunityLiveStrip.tsx`, replacing it with `lastRecomputeAt != null`, so the "(no new votes since last update)" clause now fires on the timestamp+zero combination regardless of source label. Rewrote the component's own code comment to state the corrected rationale instead of the disproven `source`-scoped assumption. Added a regression test (`CommunityLiveStrip.test.tsx`) covering the canon-mirroring + non-null-timestamp + zero-voters case. Verify gate green: fast gate, build clean, e2e 4879/4879 passed (30.3m). — aeeb6fb3
+
+### [HIGH] [anon] [authed] /shows/traitors/season/ardross-2026 — the lede, "THE SHAPE OF THE SEASON," and "WHERE IT SITS IN THE CANON" all restate the same cast/format facts with no new angle
+- pass: 153 (commit dedb99b7)
+- viewport: desktop, mobile
+- category: voice
+- observation: Corroborated independently by both the anon and authed passes on the same page. The hero lede and the two body sections each restate "an all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact," and both prose sections separately conclude with a near-identical "no reinvention here" line.
+- evidence: Lede: "An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact." Section 02: "...An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here..." Section 03: "Season four returns an all-celebrity cast to Ardross Castle with Alan Cumming and carries the three-episode drop then weekly model over intact. There is no reinvention here, and none is asked for..."
+- suggested fix: Let the lede own the cast/format facts; rewrite "Where It Sits in the Canon" to argue the canon-slot rationale comparatively against Season 3 instead of re-deriving the same premiere facts and closing line a second and third time. Content-only, `content/shows/traitors/seasons/04-ardross-2026.md` + `canon.md`.
+- source: browser (critique-pass-153, anon + authed, desktop)
+
+### [HIGH] [anon] /shows/below-deck-mediterranean/season/dubrovnik-ii — "the shape of the season" and "where it sits in the canon" restate the identical yacht/chef/crew roster near-verbatim
+- pass: 153 (commit dedb99b7)
+- viewport: desktop
+- category: voice
+- observation: Both sections restate the same fact set — new yacht name, new chef, all four returning core crew members — in near-identical sentence structure with almost no new angle added at the second telling.
+- evidence: Sec 02: "The M/Y Akira One is new to the fleet, and so is Chef Joy Lefaucheur running the galley. Captain Sandy Yawn, Chief Stew Aesha Scott, Bosun Nathan Gallagher, and deckhand Joe Bradley return as the crew's core..." Sec 03: "The M/Y Akira One is new to the fleet, and Chef Joy Lefaucheur is new to the galley. Captain Sandy Yawn, Chief Stew Aesha Scott, Bosun Nathan Gallagher, and deckhand Joe Bradley return as the crew's core..."
+- suggested fix: Let "Shape of the Season" own the full crew/yacht roster; rewrite the canon rationale to argue the #07-of-11 slot without re-listing the same four crew names and the yacht/chef facts already given one section up. Content-only, `content/shows/below-deck-mediterranean/canon.md`.
+- source: browser (critique-pass-153, anon)
+
+### [MED] [authed] /shows/naked-and-afraid/season/the-active-season — the 21-day paired-survival format fact repeats near-verbatim across two sections, the same repetition class recurring on a third new show this pass
+- pass: 153 (commit dedb99b7)
+- viewport: desktop
+- category: comprehension
+- observation: Same defect class as the two findings above, on a show not yet touched by the ongoing repetition drain — three independent instances surfacing in a single critique pass suggests the pattern is systemic to the season-page "shape of the season" / "where it sits in the canon" template pairing, not isolated per-show content bugs.
+- evidence: Section 02: "The 21-day paired-survival premise runs here as it has since 2013 — two strangers, remote wilderness, nothing provided ... For now, it sits here honestly." Section 03: "The 21-day paired-survival format runs here as it has across nineteen seasons — two strangers, remote wilderness, nothing provided ... For now, it holds this slot honestly."
+- suggested fix: Rewrite "Where It Sits in the Canon" to argue the slot comparatively against a neighboring season instead of re-deriving the format premise already stated in "Shape of the Season." Content-only, `content/shows/naked-and-afraid/canon.md`. Given three fresh instances this pass alone, the standing season-fill drain row in `plan/AUDIT.md` may want to widen its scope to a template-level content-check invariant rather than continuing to patch discovered instances one at a time.
+- source: browser (critique-pass-153, authed)
+
+### [MED] [anon] /shows/the-voice/season/the-finale — the `<meta name="description">` tag ends mid-clause on an em-dash and ellipsis in the source HTML
+- pass: 153 (commit dedb99b7)
+- viewport: desktop
+- category: seo
+- observation: Confirmed via raw HTML, not a capture-tool truncation artifact — the meta description itself is cut off before its payoff clause, though the on-page lede completes the sentence.
+- evidence: `<meta name="description" content="Reba McEntire, Michael Bublé, Adam Levine, and Kelsea Ballerini — Ballerini on her coaching debut…"/>` — the lede continues "...filled out the coaching panel, bringing the show to a close..." but the meta tag stops before that clause.
+- suggested fix: Regenerate this season's `meta_description` frontmatter field as a complete sentence within ~155 characters instead of an em-dash aside cut off before its payoff. Content-only, `content/shows/the-voice/seasons/29-the-finale.md`.
+- source: browser (critique-pass-153, anon)
+
+### [MED] [authed] /shows/big-brother/season/a-summer-of-mystery?view=community — "THE TAKE" opens on a comparison that isn't explained until three sections later
+- pass: 153 (commit dedb99b7)
+- viewport: desktop
+- category: comprehension
+- observation: The page's opening thesis references a season the reader hasn't been introduced to yet, so a first-time reader hits an unexplained claim at the very top of the page; the comparison only resolves once they reach the canon-placement section.
+- evidence: Section 01 ("The Take"): "Human-run beats system-run." — this only resolves at Section 03: "...just above Houseguests vs. the AI, which hands its twist authority to a system rather than a room."
+- suggested fix: Either name "Houseguests vs. the AI" in the take headline itself, or rewrite the headline so it's self-contained without requiring the canon-slot paragraph to decode it. Content-only, `content/shows/big-brother/seasons/27-a-summer-of-mystery.md`.
+- source: browser (critique-pass-153, authed)
+
+### [LOW] [anon] /shows/traitors/season/ardross-2026 — the eyebrow's "Aired" doesn't match the PREMIERED field label used elsewhere on the page
+- pass: 153 (commit dedb99b7)
+- viewport: mobile
+- category: comprehension
+- observation: Same terminology-drift class already fixed on `alone`'s Arctic-run season — a new instance on a different show. The eyebrow reads "Aired winter 2026" while the PREMIERED detail field lower on the page states the same fact with a different verb.
+- evidence: Eyebrow: "AIRED WINTER 2026 · THE NEWEST ENTRY, THE FORMAT RUNNING SMOOTHLY" vs. metadata field: "PREMIERED / Jan 8, 2026" on the same rendered page.
+- suggested fix: Standardize on "Premiered" in the `eyebrow` frontmatter field to match the PREMIERED detail-field label and the convention used elsewhere in the catalog. Content-only, `content/shows/traitors/seasons/04-ardross-2026.md`.
+- source: browser (critique-pass-153, anon)
 
 ## Done
 - [x] [MED] [authed] /shows/big-brother/season/a-summer-of-mystery?view=community — "three stacked twists" was restated four times before the season's individual twists were ever listed (subtitle, THE TAKE, THE SHAPE OF THE SEASON, WHERE IT SITS IN THE CANON). (URL: /shows/big-brother/season/a-summer-of-mystery, source: browser, critique-pass-150, authed) — RESOLVED fa64c3eb (2026-09-03, cloud march tick, content-gap side-drain per the standing Season-fill drain row in `plan/AUDIT.md`): rewrote the markdown body to argue what the twist stack does to the house's rhythm (paranoia compounding week to week) instead of re-counting three mechanics; rewrote canon.md's WHERE IT SITS IN THE CANON rationale to argue density-vs-the-Hacker-Summer's-single-hook rather than re-listing the Block Buster/Mastermind/Week-9 devices by name. Subtitle/lede left as the sole owner of the raw "three twists" fact per the suggested fix. Content-only, two files. Spoiler discipline P0 intact — no outcome/eviction facts touched. Verify gate green: 199 test files / 3679 unit tests, content:check ok (68 shows/1048 seasons/68 canons/181 themes/3 legal docs), build clean, 4882 e2e (30.9m). No GitHub issue was mirrored for this finding (browser-critique-sourced, never opened as a discrete issue), so no Closes clause applies.
