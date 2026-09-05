@@ -16,7 +16,7 @@ format_summary: "Social reality"
 format_caption: "Seventeen episodes, two new faces, a two-part reunion"
 episodes_caption: "A fourth straight season at the show's longest length"
 take_h2: "A smaller circle, finding its footing."
-shape_h2: "Eight returners, two new faces, one two-part reunion."
+shape_h2: "A four-to-one returner ratio, the calmest since the reset."
 ---
 
-Season eleven follows Southern Charm's heaviest turnover season with a comparatively settled lineup: eight returning cast members are joined by two new additions, Charley Manley and Whitner Slagsvol. Seventeen episodes, closing with a two-part reunion, give the reshaped ensemble time to establish its own rhythm after a season built almost entirely around change. It's the clearest test yet of whether the show's Charleston social order can rebuild itself.
+Season eleven follows Southern Charm's heaviest turnover season by doing the opposite: settling. With the core group largely intact and only two new names to fold in, the season has room to let established relationships pick back up instead of spending its runway on introductions. The two-part reunion closes out a stretch built to prove whether Charleston's social order can hold steady without the noise of constant new arrivals.
