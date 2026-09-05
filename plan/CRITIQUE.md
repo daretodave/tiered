@@ -1,48 +1,44 @@
 # CRITIQUE
 
-> Last pass: 2026-09-04 at commit f945f171
-> Pass count: 151
+> Last pass: 2026-09-05 at commit 9b014bce
+> Pass count: 152
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 151
+> `/march` Step 2's normal rate-limited cadence is active. Pass 152
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. Rotated to a fresh URL set:
-> `/`, `/shows/selling-sunset/season/season-9`, `/shows`,
-> `/shows/masterchef?view=canon`, `/themes/who-actually-got-the-vote`
-> anon; `/u/e2e`, `/shows/selling-sunset/season/season-9?view=community`,
-> `/shows/the-circle/season/disrupter-mode?view=community`,
-> `/shows/project-runway/season/new-york-2025?view=community` authed.
-> Both passes came back mechanically clean (0 console errors, 0
-> failed requests, 0 mobile overflow, all pages 200, no spoiler
-> leaks). 6 findings filed (0 HIGH, 5 MED, 1 LOW): the tracked
-> headline-fact-repetition pattern reproduced on three new pages —
-> the-circle's newest season restates its "smallest cast, 10
-> players" fact across seven sections (the most severe count found
-> to date), selling-sunset's newest season restates its
-> reunion-return/new-agent facts across five sections plus a
-> verbatim meta-description duplicate of the lede, and
-> project-runway's Freeform-relaunch season restates the
-> Klum-returns fact across six sections; the "WHY THIS SLOT
-> re-paraphrases body copy" systemic row (tracked since
-> top-chef/bake-off/amazing-race) reproduced on MasterChef's canon
-> page — a sixth show, not yet in the drain; MasterChef's show page
-> also has a genuinely new, distinct SEO bug — `?view=canon` folds
-> its canonical to the clean base URL but `?view=community` sets its
-> own self-referential canonical with a different `<title>`, so the
-> two toggle-states of one page look like two separate documents to
-> search engines. One LOW navigation finding: `?view=community` is a
-> silent no-op on season-detail routes (confirmed by exact-text diff
-> with and without the param) — the toggle is only wired on the
-> show-index route, so a stray link/bookmark to that URL shape
-> renders the anonymous season page with no error and no indication
-> the param was ignored. Two reader observations dropped at
-> self-assessment: a FILMED-caption bare-restatement instance on
-> selling-sunset (same tracked class already fixed on
-> rhony/queer-eye/hells-kitchen — folded into the standing
-> corpus-wide fix candidate rather than filed as a seventh one-off);
-> and a low-confidence /u/e2e zero-state framing note the reader
-> itself flagged as "may already be correct, confirmation only."
+> `/`, `/shows/dragrace-uk/season/series-7`, `/shows`,
+> `/shows/shark-tank?view=canon`, `/themes/best-villain-editing`
+> anon; `/u/e2e`, `/shows/jersey-shore/season/the-final-season?view=community`,
+> `/shows/southern-charm/season/season-11?view=community`,
+> `/shows/alone/season/arctic-ii?view=community` authed. Both passes
+> came back mechanically clean on the walker's own checks (0 console
+> errors, 0 failed requests, 0 mobile overflow, all pages 200) but
+> the qualitative read surfaced a genuinely new class of finding:
+> **the first confirmed spoiler leak `/critique` has found** —
+> dragrace-uk series-7 names its Miss Congeniality winner outright,
+> twice, which meets agents.md §7's "winners" spoiler definition
+> regardless of the season having aired. 6 findings filed (1 HIGH,
+> 4 MED, 1 LOW): the tracked
+> headline-fact-repetition pattern reproduced on four new pages —
+> dragrace-uk's newest series restates three separate facts (Pinewood
+> filming location, episode-count/Lucky-Cow debut, simulcast timing)
+> across 2-3 sections apiece; southern-charm's newest season restates
+> both its cast-addition fact and its episode-count/reunion fact
+> across four placements each; jersey-shore's final season restates
+> its pregnancy fact plus a FILMED-caption bare-restatement of the
+> same tracked class already fixed on rhony/queer-eye/hells-kitchen;
+> and alone's newest Arctic season restates its "twelfth roster"
+> framing across three sections. One LOW comprehension finding:
+> alone's `eyebrow` field says "Aired" where every other sampled
+> season (and the page's own PREMIERED detail field) says "Premiered"
+> — a small but real terminology drift. One dropped candidate at
+> self-assessment: the anon pass flagged the walker's own 4000-char
+> capture cap as limiting repetition-scan coverage on long pages
+> (`/shows`, `/shows/shark-tank`) — this is a critique-tooling
+> observation, not a site defect, so it wasn't filed as a Pending row;
+> worth a future `scripts/critique-walk.mjs` improvement if it recurs.
 > passes came back mechanically clean (0 console errors, 0 failed
 > requests, 0 mobile overflow, all pages 200, no spoiler leaks). 5
 > findings filed (2 HIGH, 2 MED, 1 LOW): Survivor 50's season page
@@ -3919,6 +3915,60 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon] /shows/dragrace-uk/season/series-7 — the Miss Congeniality winner is named outright, twice — this is a spoiler under the site's own P0 definition
+- pass: 152 (commit 9b014bce)
+- viewport: desktop, mobile
+- category: voice
+- observation: The season's episode-10 watch-for entry and the closing sentence of the markdown body both name Chai T Grande as the Miss Congeniality winner. `agents.md` §7 defines spoilers as "winners, eliminations, plot beats, deaths, twists, finale outcomes, relationship outcomes" — Miss Congeniality is a cast-voted award with a named winner, which is squarely a "winner" reveal by that definition, regardless of the season having already aired (the whole premise of "no spoilers" is that outcomes stay hidden for readers who haven't watched yet, aired or not). Every prior critique pass's mechanical spoiler check has come back clean; this is the first confirmed spoiler leak found by `/critique`.
+- evidence: `content/shows/dragrace-uk/seasons/07-series-7.md` watch_list: "Chai T Grande is named the season's Miss Congeniality, a title that rewards the room's read on its own cast chemistry." Markdown body closing sentence: "Chai T Grande takes home Miss Congeniality."
+- suggested fix: Rewrite both spots to describe the moment/mechanic without naming the winner — e.g. "the room crowns its own Miss Congeniality, a title decided entirely by cast vote" for the watch-for entry, and drop the naming sentence from the markdown body entirely (the mechanic is already covered by the watch-for entry). Content-only, one file, two fields.
+- source: browser (critique-pass-152, anon, desktop+mobile — reproduced identically at both viewports, confirming a content-level defect, not a rendering artifact)
+
+### [MED] [anon] /shows/dragrace-uk/season/series-7 — three separate facts are each restated near-verbatim across 2-3 sections
+- pass: 152 (commit 9b014bce)
+- viewport: desktop, mobile
+- category: voice
+- observation: Same cross-field repetition defect class already drained across the catalog, reproducing here as three separate instances on one page: (1) the Pinewood Studios filming location appears in the eyebrow, the FILMED field value, and the FILMED field's own caption; (2) the episode-count/Lucky-Cow-debut fact appears in both the EPISODES caption and the FORMAT caption; (3) the same-night iPlayer/BBC-Three simulcast timing is restated in the PREMIERED caption, the "shape of the season" paragraph, and the "where it sits in canon" paragraph.
+- evidence: eyebrow: "Aired autumn 2025 · Filmed at Pinewood Studios"; `location`: "Pinewood Studios, Buckinghamshire, England"; `filming_caption`: "Filmed at Pinewood Studios, Buckinghamshire". `episodes_caption`: "Ten episodes, first series with The Lucky Cow"; `format_caption`: "12 queens, debut of The Lucky Cow twist". `premiere_caption`: "BBC Three · iPlayer 8pm, BBC Three 9pm same night"; shape paragraph: "keeps the now-familiar simulcast rhythm, landing on iPlayer at eight and BBC Three an hour later"; canon paragraph: "airs in the now-settled same-night rhythm of an iPlayer premiere followed by a BBC Three broadcast an hour later."
+- suggested fix: Let `filming_caption` own a fact the eyebrow/location don't (e.g. what's distinct about this shoot, matching the pattern already used on `alone`'s Arctic-run captions), and drop the Pinewood mention from the eyebrow. Give `format_caption` a fact `episodes_caption` hasn't covered (e.g. panel detail). Keep the simulcast detail in `premiere_caption` only and let both prose sections cover different ground. Scoped to `content/shows/dragrace-uk/seasons/07-series-7.md`.
+- source: browser (critique-pass-152, anon, desktop+mobile)
+
+### [MED] [authed] /shows/southern-charm/season/season-11?view=community — the cast-addition and episode/reunion facts are each restated 3-4 times across the page
+- pass: 152 (commit 9b014bce)
+- viewport: desktop
+- category: voice
+- observation: The "eight returning cast members plus new additions Charley Manley and Whitner Slagsvol" fact and the "seventeen episodes, two-part reunion" fact are each restated near-verbatim across the tagline, the FORMAT field caption, the "shape of the season" header+body, and the "where it sits in the canon" body — four placements apiece with no new angle added at any repetition.
+- evidence: `lede`: "welcoming Charley Manley and Whitner Slagsvol alongside eight returning cast members across seventeen episodes, including a two-part reunion"; `format_caption`: "Seventeen episodes, two new faces, a two-part reunion"; `shape_h2`: "Eight returners, two new faces, one two-part reunion."; body: "eight returning cast members are joined by two new additions, Charley Manley and Whitner Slagsvol. Seventeen episodes, closing with a two-part reunion..."
+- suggested fix: State the named-cast composition and episode/reunion count once each (the lede and FORMAT caption are enough); rewrite the "shape of the season" and "where it sits in canon" prose to argue what the settled lineup or reunion structure changes about the season rather than re-listing the same names and counts. Scoped to `content/shows/southern-charm/seasons/11-season-11.md`.
+- source: browser (critique-pass-152, authed)
+
+### [MED] [authed] /shows/jersey-shore/season/the-final-season?view=community — the pregnancy fact is restated near-verbatim, and the FILMED caption bare-restates its own value
+- pass: 152 (commit 9b014bce)
+- viewport: desktop
+- category: voice
+- observation: The "visibly pregnant cast member, a first for the show" fact appears near-identically in the markdown body and is echoed again in a canon-placement context. Separately, the FILMED field's caption just repeats the location value one field above it with a single word added ("boardwalk"), the same bare-restatement class already fixed elsewhere in the catalog (hells-kitchen, queer-eye, rhony) but not yet applied to this show.
+- evidence: body: "Production continues around a visibly pregnant cast member, a first for the show and a reminder of how much time has passed since the group first moved in together." `location`: "Seaside Heights, New Jersey"; `filming_caption`: "Seaside Heights boardwalk, New Jersey".
+- suggested fix: Keep the pregnancy detail in one place; rewrite `filming_caption` to add a fact the location value doesn't already carry (e.g. what's distinct about filming this final run), matching the pattern used on `alone`'s captions. Scoped to `content/shows/jersey-shore/seasons/06-the-final-season.md`.
+- source: browser (critique-pass-152, authed)
+
+### [MED] [authed] /shows/alone/season/arctic-ii?view=community — the "twelfth roster" fact is restated near-verbatim across three sections
+- pass: 152 (commit 9b014bce)
+- viewport: desktop
+- category: voice
+- observation: The CAST SIZE caption, the "shape of the season" header, and the "where it sits in canon" body all lean on the same "twelfth roster/run" framing as the season's defining fact, with no distinct angle added at each repetition.
+- evidence: `cast_size_caption`: "Ten survivalists, the twelfth roster in the franchise's history."; `shape_h2`: "Twelfth roster, familiar ground."; canon body: "...the Colby-era format is confident enough in its twelfth run to sustain it."
+- suggested fix: Let `cast_size_caption` own the "twelfth roster" framing; rewrite the canon-placement paragraph to argue the rank on different grounds (e.g. what the second Arctic outing changes tactically vs. the first). Scoped to `content/shows/alone/seasons/12-arctic-ii.md` and `content/shows/alone/canon.md`.
+- source: browser (critique-pass-152, authed)
+
+### [LOW] [authed] /shows/alone/season/arctic-ii?view=community — the eyebrow's "Aired" doesn't match the PREMIERED field label used elsewhere on the page
+- pass: 152 (commit 9b014bce)
+- viewport: desktop
+- category: comprehension
+- observation: This season's `eyebrow` frontmatter reads "Aired summer 2025," while the PREMIERED detail field lower on the page (and every other sampled season page's eyebrow, including jersey-shore and southern-charm) uses "Premiered." A reader scanning the top of the page and the detail card gets two different verbs for the same fact.
+- evidence: `eyebrow`: "Aired summer 2025 · Second Arctic run, Canadian subarctic" vs. jersey-shore's `eyebrow`: "Premiered October 2012 · MTV" and southern-charm's `eyebrow`: "Premiered November 2025 · Bravo".
+- suggested fix: Standardize on "Premiered" in the `eyebrow` field to match the PREMIERED detail-field label and the convention used on other season pages. Scoped to `content/shows/alone/seasons/12-arctic-ii.md`.
+- source: browser (critique-pass-152, authed)
 
 ### [MED] [authed] /shows/the-circle/season/disrupter-mode?view=community — the "smallest cast, 10 players" fact is restated near-verbatim across seven sections — RESOLVED
 - pass: 151 (commit f945f171)
