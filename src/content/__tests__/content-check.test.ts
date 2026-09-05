@@ -5631,22 +5631,18 @@ featured: false
     rmSync(tmp, { recursive: true, force: true })
   })
 
-  it('flags 12 shows at the live catalog (this commit drains Survivor; the other 12 catch in subsequent drain ticks)', () => {
+  it('flags zero shows at the live catalog (corpus drain complete, 2026-09-05)', () => {
     setContentRoot(null)
     __resetContentCache()
     const issues = collectShowBlurbTaglineCountRepetitionIssues()
-    // Survivor was the critique-named offender drained this commit.
-    // The corpus sweep names 12 others (amazing-race, bachelor,
-    // bachelorette, bake-off, big-brother, dragrace, love-island-uk,
-    // love-island-us, project-runway, the-challenge, top-chef,
-    // traitors) — same lax→strict pattern as
+    // Survivor was the critique-named offender drained first; the
+    // remaining 12 (amazing-race, bachelor, bachelorette, bake-off,
+    // big-brother, dragrace, love-island-uk, love-island-us,
+    // project-runway, the-challenge, top-chef, traitors) were rewritten
+    // in the 2026-09-05 cloud march tick — same lax→strict pattern as
     // SEASON_EYEBROW_CALENDAR_STRICT / WATCHLIST_PHRASE_REPETITION_STRICT.
-    // The invariant ships warn-only; the next drain ticks rewrite each
-    // show's tagline and the final drain tick flips strict + this
-    // expectation lands at zero.
-    expect(issues.length).toBe(12)
-    const offenders = issues.map((i) => i.file).sort()
-    expect(offenders).not.toContain('content/shows/survivor.md')
+    // The invariant now ships strict at floor 0.
+    expect(issues.length).toBe(0)
   })
 
   it('flags a show whose blurb AND tagline both open on `<N> seasons`', () => {

@@ -8,7 +8,7 @@ palette:
 seasons: 16
 status: airing
 blurb: "16 seasons. A tent, a field, a sponge."
-tagline: "16 seasons of amateur bakers in a white tent on a country estate, racing the clock through signature, technical, and showstopper. The gentlest competition on television, and somehow the most watchable."
+tagline: "Amateur bakers in a white tent on a country estate, racing the clock through signature, technical, and showstopper. The gentlest competition on television, and somehow the most watchable."
 card_tagline: "16 seasons of home bakers under canvas, working three rounds a week toward a cake stand and a handshake. Impossibly gentle, never boring."
 tier: A
 network: "Channel 4"

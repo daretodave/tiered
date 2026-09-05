@@ -8,7 +8,7 @@ palette:
 seasons: 4
 status: airing
 blurb: "4 seasons. Murder, banishment, breakfast."
-tagline: "4 seasons of reality alumni in cloaks at a Scottish castle, lying to each other over candlelit dinners while Alan Cumming arches an eyebrow. The American adaptation that figured out the format faster than anyone expected."
+tagline: "Reality alumni in cloaks at a Scottish castle, lying to each other over candlelit dinners while Alan Cumming arches an eyebrow. The American adaptation that figured out the format faster than anyone expected."
 card_tagline: "A Scottish castle, cloaked veterans turning on each other over dinner, Alan Cumming presiding — the American version nailed this fast."
 tier: A
 network: "Peacock"

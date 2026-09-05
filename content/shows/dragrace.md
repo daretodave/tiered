@@ -8,7 +8,7 @@ palette:
 seasons: 18
 status: airing
 blurb: "18 seasons. Quiet velvet, loud pink."
-tagline: "18 seasons of queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
+tagline: "Queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
 card_tagline: "18 seasons deep, this is still the show every other drag competition measures itself against — the one that turned werk into an actual economy."
 tier: S
 network: "MTV"

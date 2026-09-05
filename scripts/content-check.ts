@@ -3081,20 +3081,17 @@ function main(): number {
     }
   }
 
-  // Critique pass-37 MED (issue #333): ships LAX during the corpus
-  // drain — this commit's Survivor tagline rewrite drops the
-  // critique-named offender, but a sweep of the catalog finds 12
-  // other shows whose `blurb` and `tagline` both open on a `<N>
-  // seasons` clause (amazing-race, bachelor, bachelorette, bake-off,
-  // big-brother, dragrace, love-island-uk, love-island-us,
-  // project-runway, the-challenge, top-chef, traitors). The wider
-  // drain is per-tick `/iterate` work; this commit ships the
-  // invariant warn-only, so the next drain ticks each rotate one
-  // show's tagline and the final drain tick flips
-  // SHOW_COUNT_RESTATE_STRICT to true. One-line toggle mirroring
+  // Critique pass-37 MED (issue #333): ships strict at floor 0 —
+  // the corpus drain (cloud march, 2026-09-05 tick) rewrote the
+  // taglines of the last 12 offenders (amazing-race, bachelor,
+  // bachelorette, bake-off, big-brother, dragrace, love-island-uk,
+  // love-island-us, project-runway, the-challenge, top-chef,
+  // traitors) following Survivor's earlier fix; a full catalog
+  // sweep confirms zero shows remain whose `blurb` and `tagline`
+  // both open on a `<N> seasons` clause. One-line toggle mirroring
   // SEASON_EYEBROW_CALENDAR_STRICT / WATCHLIST_PHRASE_REPETITION_STRICT
   // above (the lax→strict pattern).
-  const SHOW_COUNT_RESTATE_STRICT = false
+  const SHOW_COUNT_RESTATE_STRICT = true
   const showCountRestateIssues = collectShowBlurbTaglineCountRepetitionIssues()
   if (SHOW_COUNT_RESTATE_STRICT) {
     failures.push(...showCountRestateIssues)

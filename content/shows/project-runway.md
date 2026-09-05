@@ -8,7 +8,7 @@ palette:
 seasons: 21
 status: airing
 blurb: "21 seasons. Make it work, on the runway."
-tagline: "21 seasons of designers at sewing machines in a Manhattan workroom, racing a clock toward a runway show that judges everything. The format that made fashion competition a genre, still the one to beat."
+tagline: "Designers at sewing machines in a Manhattan workroom, racing a clock toward a runway show that judges everything. The format that made fashion competition a genre, still the one to beat."
 card_tagline: "Two decades-plus of aspiring designers racing a ticking clock inside a Manhattan workroom before a runway verdict decides who's actually got the eye."
 tier: A
 network: "Freeform"

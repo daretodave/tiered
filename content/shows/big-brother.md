@@ -8,7 +8,7 @@ palette:
 seasons: 27
 status: airing
 blurb: "27 seasons. The house is always watching."
-tagline: "27 seasons of houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre, and still the loudest room on summer television."
+tagline: "Houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre, and still the loudest room on summer television."
 card_tagline: "The alliance game that turns strangers into full-time strategists, one live eviction at a time."
 tier: A
 network: "CBS"

@@ -8,7 +8,7 @@ palette:
 seasons: 41
 status: airing
 blurb: "41 seasons. Reality alumni, full contact."
-tagline: "41 seasons of reality veterans hurling themselves off cliffs, into water, and at each other, in service of a final that punishes the legs and the lungs. The longest-running competition on MTV, and the genre's true combat league."
+tagline: "Reality veterans hurling themselves off cliffs, into water, and at each other, in service of a final that punishes the legs and the lungs. The longest-running competition on MTV, and the genre's true combat league."
 card_tagline: "Four decades of reality TV's toughest returnees throwing themselves at obstacles, oceans, and each other — MTV's longest-running proving ground."
 tier: A
 network: "MTV"

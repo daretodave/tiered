@@ -8,7 +8,7 @@ palette:
 seasons: 13
 status: airing
 blurb: "13 seasons. Mallorca, golden hour, Casa Amor."
-tagline: "13 seasons of singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015, summer and winter editions included."
+tagline: "Singles in a Mallorca villa, recoupling at the fire pit and reading text messages aloud. The original that the rest of the world has been adapting since 2015, summer and winter editions included."
 card_tagline: "Two seasons a year, one villa, endless recoupling — the format every other country's version traces back to."
 tier: A
 network: "ITV2"

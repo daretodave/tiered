@@ -8,7 +8,7 @@ palette:
 seasons: 29
 status: airing
 blurb: "29 seasons. One rose at a time."
-tagline: "29 seasons of one man, twenty-something women, and a mansion in Agoura Hills. The franchise that turned the rose ceremony into a national vocabulary, running uninterrupted since 2002."
+tagline: "One man, a mansion in Agoura Hills, and twenty-something women all chasing the same rose. The franchise that turned the rose ceremony into a national vocabulary, running uninterrupted since 2002."
 card_tagline: "A single suitor, a shrinking field of women, and one rose deciding who stays each week — the format has run since 2002."
 tier: A
 network: "ABC"
