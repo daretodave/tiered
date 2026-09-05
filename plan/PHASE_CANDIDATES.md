@@ -985,6 +985,14 @@ No new scope information; same fix (Playwright `--shard`), same
 filing (07-22) — restating pass-63/67's unchanged recommendation:
 ripe for `/oversight` promotion, not further reinforcement passes.
 
+**Update (digest 2026-09-05):** tonight's `e2e-full` run (33933576183,
+2026-09-05T00:37:16Z) finished green in 71m19s — under the 75-minute
+wall this time, unlike 7 of the last 10 runs pass-68 counted. One
+green run doesn't change the diagnosis (single-worker throughput
+against a flat 10,565-test catalog is still the bottleneck; this run
+just landed on the fast side of its own variance). 45 days unpromoted
+since filing (07-22) — unchanged recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -1137,6 +1145,15 @@ did. Softening urgency slightly relative to #34 (which shows no such
 respite) but not the score or scope sketch — still the standing
 `/oversight` recommendation, now 39 days unpromoted since filing
 (07-27).
+
+**Update (digest 2026-09-05):** first clean-queue (not clean-window)
+data point — tonight's `night` trigger landed at 13:29:26Z mid-`march`
+run (33966499034, cleared 13:37:53Z), queued instead of getting
+evicted, and started at 13:37:54Z. Confirms the group's queueing
+behaves as documented at least some of the time; doesn't retire the
+finding since eviction still depends on whether a *second* march
+trigger lands before the first clears. 40 days unpromoted since
+filing (07-27) — unchanged recommendation.
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
