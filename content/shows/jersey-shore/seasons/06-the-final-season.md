@@ -16,8 +16,8 @@ format_caption: "the final season of the original run"
 cast_size: 7
 cast_size_caption: "The same seven roommates for one final summer"
 premiere_caption: "MTV · closing season of the original run"
-filming_caption: "Seaside Heights boardwalk, New Jersey"
+filming_caption: "The fourth and final season filmed at this Seaside Heights house"
 episodes_caption: "Thirteen episodes filmed around a cast member's pregnancy, a series first."
 ---
 
-The original run closes with all seven roommates back in the Seaside Heights house for one final summer, thirteen episodes that wrap up the format MTV built three years earlier. Production continues around a visibly pregnant cast member, a first for the show and a reminder of how much time has passed since the group first moved in together. Nothing about the format changes for one last run — same house, same boardwalk, same seven people closing it out together.
+The original run closes with all seven roommates back in the Seaside Heights house for one final summer, thirteen episodes that wrap up the format MTV built three years earlier. The season leans on years of built-in chemistry rather than any new wrinkle — every joke and blowup lands because the group already knows how the others will react. Nothing about the format changes for one last run — same house, same boardwalk, same seven people closing it out together.

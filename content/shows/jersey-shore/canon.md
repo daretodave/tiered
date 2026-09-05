@@ -62,10 +62,10 @@ Florence is the show's one real swing at reinvention, and it lands as a solid, i
 ## 6. The Final Season
 
 tag: The last lap — closing out the original run on familiar terms.
-slot_argument: The full cast returns for one final Seaside Heights summer, and production continues around a visibly pregnant cast member, a first for the show. A victory-lap season more than a reinvention.
+slot_argument: The full cast returns for one final Seaside Heights summer, running out the format on comfort and familiarity rather than any new wrinkle. A victory-lap season more than a reinvention.
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
-The final season isn't trying to reinvent anything, and that's mostly fine for where it sits in the run. All seven roommates return to the Seaside Heights house for one last summer, closing out the format MTV built three years earlier with thirteen episodes that feel like a lap of familiar territory rather than a fresh argument. Production continues around a visibly pregnant cast member, a first for the show and a real marker of how much time has passed since the group first moved in together. It ranks above the truncated fifth season on sheer episode count and cast comfort, but a full-strength cast running out the string is still running out the string.
+The final season isn't trying to reinvent anything, and that's mostly fine for where it sits in the run. All seven roommates return to the Seaside Heights house for one last summer, closing out the format MTV built three years earlier with thirteen episodes that feel like a lap of familiar territory rather than a fresh argument. The season's confidence comes from familiarity rather than incident — years of established rivalries and alliances do the heavy lifting without needing a single new storyline to justify the runtime. It ranks above the truncated fifth season on sheer episode count and cast comfort, but a full-strength cast running out the string is still running out the string.
 
 ## 5. Season 5
 
