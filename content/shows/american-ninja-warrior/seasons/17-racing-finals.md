@@ -7,7 +7,7 @@ ep_count: 13
 host: "Matt Iseman, Akbar Gbaja-Biamila, and Zuri Hall"
 aired_year: 2025
 location: "Las Vegas, Nevada — Qualifiers, Semifinals, and National Finals"
-canonical_position: 15
+canonical_position: 16
 eyebrow: "Aired Jun–Aug 2025 · NBC"
 lede: "Season seventeen collapses the show's geography — Qualifiers, Semifinals, and National Finals all film on the Las Vegas Strip, zero touring. Finals drop the standard four-stage climb for a head-to-head racing bracket built from returning obstacles, including Cannonball Alley."
 pull: "Zero touring, a racing bracket instead of the tower, and a finale betting on speed instead of the climb that built the show."

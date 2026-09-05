@@ -1,13 +1,13 @@
 ---
 show: american-ninja-warrior
 editor: "tiered.tv editor"
-last_revised: 2026-07-14
+last_revised: 2026-09-05
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor, watching American Ninja Warrior as a course-design problem as much as a competition. The obstacles are the real cast members here — grip strength gets tested one way in Venice and another way on the Vegas finals stage. I track how each season's course design changes what a run actually asks of a competitor."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things: course integrity — whether the stage design actually separates skill from luck; field depth — whether the competitors entering a season could plausibly test the course as built; and pacing — whether a season respects the difference between a qualifying round and a finals stage. Novelty obstacles matter less than whether the whole course holds together."
 meth_when_h: "When I revisit"
-meth_when_p: "Seventeen seasons are seeded now, from the show's tryout-era debut through the year touring contracted to a single Las Vegas address. Nothing sits at the top by default anymore — course integrity, field depth, and pacing decide the order, and a pandemic-disrupted season can rank below a founding one. Expect more movement as later seasons get added."
+meth_when_p: "Eighteen seasons are seeded now, from the show's tryout-era debut through the year touring contracted to a single Las Vegas address. Nothing sits at the top by default anymore — course integrity, field depth, and pacing decide the order, and a pandemic-disrupted season can rank below a founding one. Expect more movement as later seasons get added."
 tier_s_blurb: "American Ninja Warrior at its most complete — a course that finds the exact edge of what the field can do, and a finals stage that earns its buildup."
 tier_a_blurb: "Strong seasons where the course design and the field are evenly matched — hard enough to matter, fair enough to reward genuine skill."
 tier_b_blurb: "Solid seasons that run the format cleanly — dependable obstacles, a competent field, nothing that changes how the show gets talked about."
@@ -25,7 +25,7 @@ era_bands:
     range: [2016, 2019]
   - key: contraction-era
     label: "Contraction era"
-    range: [2020, 2025]
+    range: [2020, 2026]
 ---
 
 # Editor's Canon — American Ninja Warrior
@@ -85,6 +85,10 @@ Season sixteen holds the line season fifteen drew rather than pulling the show b
 ## 2. Boot Camp
 
 Season two is the first sign this could be more than a Sasuke tryout. Boot Camp, a team-based elimination stage in the California mountains, gives the format a genuine second act — a stage that tests something different than the Venice qualifiers do, which is the beginning of real pacing. But the field is still small and single-city, and the course itself is closer to season one's roughness than to what the show becomes later. It's a step in the right direction more than an arrival, which is exactly what a season this early should be.
+
+## 18. The Tripleheader
+
+Season eighteen keeps season seventeen's central bet — no touring, every round still filmed in Las Vegas — but reorganizes the same field into three named qualifying regions: West, Central, and East. That's a structural fix, not a return to real touring, so field depth stays exactly as capped as it was a year earlier. The new two-round Regional Finals, ending in a three-lane Tripleheader race, and the Women's Bonus Tournament are genuine additions this methodology rewards — real fairness built into the course, not just a broadcast gimmick. National Finals still skip the vertical climb, so the core complaint holds. A season that adds structure without adding geography edges just above the one that started the contraction.
 
 ## 17. The Racing Finals
 

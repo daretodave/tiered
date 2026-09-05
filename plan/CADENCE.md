@@ -24,6 +24,29 @@ that.
 
 ## Season gap table
 
+**Rule 2 pick, 2026-09-05 tick (cloud march):** re-verified the three
+nearest-dated stall candidates flagged as of the 2026-08-30 sweep before
+falling back to a full re-scan. `american-ninja-warrior` S18's true finale
+("National Finals 4," episode 13 of 13) is confirmed aired **2026-08-31**
+— two independent sources (NBC Insider's own episode guide, Celeb Dirty
+Laundry's dated recap) agree. Drained: `18-the-tripleheader.md` filed
+(premiere 2026-06-08, all-Vegas three-region qualifying restructure,
+all-racing National Finals held over from S17, new Women's Bonus
+Tournament), `canon.md` fully rebased — inserted at rank 15 (just above
+S17, whose Vegas-only field-depth cap and all-racing finals critique
+S18 shares, offset by genuine regional/fairness additions S17 didn't
+have), S17/S1/S12 shifted down one rank each with `canonical_position`
+corrected in their own files, `era_bands`' `contraction-era` widened
+[2020,2025] → [2020,2026], `meth_when_p` bumped "Seventeen" →
+"Eighteen" seasons. **Gap table row removed — show fully drained at
+18/18.** `rhoc` S20 and `the-challenge` S42 "Cutthroat" were also
+checked: neither has a Bravo/MTV-labeled finale yet (rhoc's episode
+schedule runs through ~2026-10-08 per Wikipedia; Cutthroat's full
+episode order is still unpublished, sources conflict on whether it's
+concluded — stays deferred, re-check closer to late September).
+**42 shows now carry a gap · 43 gap-slots total → 41 shows · 42
+gap-slots total** after the american-ninja-warrior removal.
+
 **Eighth full weekly sweep, 2026-08-30 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem. The same 2 pre-existing tracked
@@ -874,7 +897,6 @@ new-show creation is locked to the biweekly show-add clock.
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | 90-day-fiance | 11/12 | 1* |
-| american-ninja-warrior | 17/18 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
 | dragrace-uk | 7/8 | 1* |
 | rhom | 7/8 | 1* |
