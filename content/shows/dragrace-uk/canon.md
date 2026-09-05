@@ -54,7 +54,7 @@ tag: The Lucky Cow — the twist that hands the cast its own vote.
 slot_argument: Ranks below Series 2's voice-finding expansion, but above Series 3's regional move, because handing the cast a genuine new game mechanic edges out a season whose biggest swing was relocating production.
 community_rank_hint: rank=4 delta=0 sentiment=hold
 
-Series 7 lands at four for introducing The Lucky Cow, a genuinely new piece of game mechanics rather than a scale-up of what came before. The twist lets the cast itself vote in secret to grant a reprieve to whichever bottom queen the room believes deserves another shot, handing real power to the contestants rather than the panel alone. Guest judges including Nadine Coyle and Jane Horrocks bring range across the run, and the season airs in the now-settled same-night rhythm of an iPlayer premiere followed by a BBC Three broadcast an hour later. A confident, format-curious entry that keeps the show evolving rather than repeating itself.
+Series 7 lands at four for introducing The Lucky Cow, a genuinely new piece of game mechanics rather than a scale-up of what came before. The twist lets the cast itself vote in secret to grant a reprieve to whichever bottom queen the room believes deserves another shot, handing real power to the contestants rather than the panel alone. Guest judges including Nadine Coyle and Jane Horrocks bring range across the run, and the real test is whether one new mechanic is enough to keep the room's power dynamic interesting past its debut season. A confident, format-curious entry that keeps the show evolving rather than repeating itself.
 
 ## 3. Series 3 (2021)
 

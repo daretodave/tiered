@@ -8,16 +8,16 @@ premiere_date: 2025-09-25
 ep_count: 10
 location: "Pinewood Studios, Buckinghamshire, England"
 host: "RuPaul Charles"
-eyebrow: "Aired autumn 2025 · Filmed at Pinewood Studios"
+eyebrow: "Aired autumn 2025"
 lede: "Series 7 hands the cast its own power with The Lucky Cow, a new secret-vote twist that lets the queens grant a bottom performer a second chance. Guest judges include Nadine Coyle and Jane Horrocks."
 pull: "The queens get a vote of their own for the first time — The Lucky Cow hands the room real power over who stays."
 take_h2: "The cast gains real power."
 shape_h2: "Two platforms, one premiere night."
 format_summary: "Standard format · 10 episodes"
-format_caption: "12 queens, debut of The Lucky Cow twist"
+format_caption: "12 queens, guest panel spans music and comedy"
 premiere_caption: "BBC Three · iPlayer 8pm, BBC Three 9pm same night"
 episodes_caption: "Ten episodes, first series with The Lucky Cow"
-filming_caption: "Filmed at Pinewood Studios, Buckinghamshire"
+filming_caption: "The show's fifth series at this Pinewood soundstage"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
 watch_list:
   - episode_label: "Ep 1 · a new twist enters the workroom"
@@ -28,4 +28,4 @@ watch_list:
     body: "The room crowns its own Miss Congeniality, a cast-voted title that rewards how well a queen reads the room's own chemistry."
 ---
 
-Series 7 introduces The Lucky Cow, a new twist that lets the cast itself intervene: queens secretly vote to grant a reprieve to whichever bottom queen the room feels deserves a second chance. Guest judges include Nadine Coyle and Jane Horrocks, and the season keeps the now-familiar simulcast rhythm, landing on iPlayer at eight and BBC Three an hour later.
+Series 7 introduces The Lucky Cow, a new twist that lets the cast itself intervene: queens secretly vote to grant a reprieve to whichever bottom queen the room feels deserves a second chance. Guest judges include Nadine Coyle and Jane Horrocks, and the twist keeps the workroom guessing about who actually holds the leverage once the vote goes to the cast itself.
