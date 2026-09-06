@@ -1,12 +1,42 @@
 # CRITIQUE
 
-> Last pass: 2026-09-05 at commit dedb99b7
-> Pass count: 153
+> Last pass: 2026-09-06 at commit 91a26c8e
+> Pass count: 154
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> `/march` Step 2's normal rate-limited cadence is active. Pass 153
+> `/march` Step 2's normal rate-limited cadence is active. Pass 154
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE`. URL set: `/`, `/shows/american-ninja-warrior/
+> season/the-tripleheader`, `/shows`, `/search`, `/themes` anon;
+> `/u/e2e`, `/shows/american-ninja-warrior/season/the-tripleheader?view=
+> community`, `/shows/survivor?view=canon`, `/shows/top-chef/season/
+> carolinas?view=community` authed. Both passes came back mechanically
+> clean (0 console errors, 0 failed requests, no mobile overflow, auth
+> confirmed via `@e2e` chrome), and no spoiler leaks were found on any
+> page. Self-assessment dropped four of six raw candidates as false
+> positives after source verification: `/search` renders the homepage
+> by design (Phase 29 middleware redirect retiring the standalone
+> search page for the cmd+K overlay — not a bug); the home-hero vs
+> `/shows`-hero "revised" date difference is two different, correctly
+> computed metrics (one show's canon revision vs. catalog-wide latest),
+> not staleness; `/shows/[show]/season/[slug]?view=community` is
+> genuinely inert (the season page reads no `view` search param) but
+> the product never links a season page with that param — an artifact
+> of the pass's own URL construction, not a reachable defect; and the
+> `/u/e2e` empty-state sparseness/footer-overlap observation contradicts
+> four already-shipped critique passes (22/26/28/39) that deliberately
+> minimized this exact surface — filing it again would be arguing
+> against settled editorial intent, not a new defect. 2 findings filed
+> (0 HIGH, 2 MED, 0 LOW), both independently corroborated by both the
+> anon and authed pass on the same page: American Ninja Warrior S18's
+> "three named qualifying regions" fact restated across six placements
+> (location, lede, format_caption, episode_label, body, and canon.md),
+> and a host-name spelling mismatch (`Gbajabiamila` in the HOST field
+> vs `Gbaja-Biamila` in its own caption) on the same season page.
+>
+> Pass 153 (2026-09-05, commit dedb99b7) ran in the cloud loop via
+> Path A2, both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE`. URL set: `/shows/traitors/season/ardross-2026`,
 > `/shows/the-voice/season/the-finale`, `/shows/big-brother?view=canon`,
 > `/shows/below-deck-mediterranean/season/dubrovnik-ii`, `/themes` anon;
@@ -3947,6 +3977,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the "three named qualifying regions" fact is restated near-verbatim across six sections
+- pass: 154 (commit 91a26c8e)
+- viewport: desktop, mobile
+- category: voice
+- observation: The same fact — the field now splits into three named qualifying regions (West, Central, East) — is stated in near-identical phrasing six separate times: the `location` field, the `lede`, `format_caption`, an `episode_label`, the markdown body, and canon.md's Season 18 rationale. Both the anon pass (lede/shape/canon) and the authed pass (FORMAT subtitle/shape/canon) independently flagged this on the same page, the highest placement count found for this defect class to date.
+- evidence: `location`: "Las Vegas, Nevada — West, Central, and East Regional Qualifiers..."; `lede`: "splits the field into three named qualifying regions — West, Central, and East"; `format_caption`: "the same Vegas field regrouped into three named qualifying regions"; `episode_label`: "Qualifiers · West, Central, East"; body: "Qualifiers now run as three named regions — West, Central, and East"; canon.md: "reorganizes the same field into three named qualifying regions: West, Central, and East" (content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md lines 9,12,16,19,34; content/shows/american-ninja-warrior/canon.md line 91)
+- suggested fix: Let `location` and `episode_label` carry the bare geography fact (their normal job). Rewrite `format_caption`, the body, and canon.md's rationale to each argue a distinct angle — e.g. `format_caption` on what changed structurally about Regional Finals instead of re-naming the regions; the body on what the regional split does to travel/scheduling; canon.md's rationale on the comparative rank argument (already partly does this) without re-deriving the region names. Scoped to `content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md` and `content/shows/american-ninja-warrior/canon.md`.
+- source: browser (critique-pass-154, anon+authed, corroborated independently by both passes)
+
+### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the host's surname is spelled two different ways on the same page
+- pass: 154 (commit 91a26c8e)
+- viewport: desktop, mobile
+- category: comprehension
+- observation: The HOST field spells the host's surname "Gbajabiamila" (no hyphen); the `host_caption` directly beneath it spells the same name "Gbaja-Biamila" (hyphenated). Both the anon and authed pass independently caught the mismatch on the same page.
+- evidence: `host`: "Matt Iseman, Akbar Gbajabiamila, and Zuri Hall"; `host_caption`: "eighth season with Iseman, Gbaja-Biamila, and Hall" (content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md lines 7,17)
+- suggested fix: Pick one spelling and use it in both the `host` field and `host_caption`. Cross-check the show's other season files for the same host to confirm which spelling is used consistently elsewhere in the catalog, then standardize this file to match. Scoped to `content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md`.
+- source: browser (critique-pass-154, anon+authed, corroborated independently by both passes)
 
 ### [HIGH] [anon] /shows/dragrace-uk/season/series-7 — the Miss Congeniality winner is named outright, twice — this is a spoiler under the site's own P0 definition
 - pass: 152 (commit 9b014bce)
