@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-08-30 | next due 2026-09-06 |
+| season-sweep | 7 days | 2026-09-06 | next due 2026-09-13 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,69 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Ninth full weekly sweep, 2026-09-06 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows,
+cross-checked against the filesystem (frontmatter `seasons:` vs. filed season
+files — only the pre-existing `90-day-fiance` 11/12 mismatch recurs, already
+tracked and non-actionable). Every one of the 41 starred gap-table rows was
+cross-checked against this pass's scout findings — **all reconfirmed
+accurate, no new genuine gap found, nothing drained.** Gap table unchanged at
+41 shows / 42 gap-slots.
+
+**One flagged uncertainty resolved.** `below-deck-mediterranean` S11's finale
+date (carried at 2026-09-14 since the 2026-08-23 sweep, flagged uncertain by
+the 2026-08-30 sweep against a conflicting 18-episode/Oct-5 read) is now
+confirmed **2026-09-14, 15 episodes** — this pass cross-checked Bravo's own
+premiere-date press coverage (June 8, 2026 premiere) against an
+episode-by-episode third-party schedule and the arithmetic agrees (June 8 +
+14 weekly episodes = Sept 14). The conflicting "18 episodes" figure was
+traced to a mix-up with Season 10's episode count (which did run 18
+episodes, Sept 2025–Jan 2026). `content/calendar.yml`'s existing
+`finale_date: 2026-09-14` entry needs no change — it was already correct.
+
+**One apparent new gap investigated and closed as a numbering-scheme
+non-issue.** A scout batch initially flagged "Chopped Season 64 premiered
+March 17, 2026" against our tracked count of 62 filed seasons — a
+seemingly two-season jump. A targeted follow-up check against Wikipedia's
+"List of Chopped episodes" (the scheme our season files follow) confirms
+**62 is current and correct**: Wikipedia consolidates into 62 seasons
+(latest running July 29, 2025 – May 5, 2026), while IMDb/Rotten
+Tomatoes/TMDB split the same content into a finer-grained scheme that
+reaches "Season 64" for the identical episodes. No table action — our
+numbering convention is internally consistent and matches the authoritative
+source we key off.
+
+**One pre-existing star flagged for re-verification (no table action).**
+`vanderpump-rules` carries a confirmed pending gap (`12/13, 1*`) implying an
+already-confirmed Season 13 renewal. This pass's scout batch found the
+opposite signal — Bravo's most recent (May 2026) renewal slate coverage did
+not include Vanderpump Rules, with reporting describing the show as
+"notably absent." This doesn't meet the bar to unstar the row (the original
+star presumably traces to an earlier sweep's positive source this pass
+didn't re-locate), but it's a genuine conflict worth a closer look next
+sweep — if no Season 13 renewal surfaces by the next pass, downgrade the
+row.
+
+**No other genuine new gaps.** Every recently-aired or newly-confirmed
+season surfaced by this pass's scout batches was cross-checked against our
+own frontmatter/filed state and found already correctly reflected: `alone`
+S13 (confirmed premiered 2026-06-17, matches existing `12/13` star and the
+2026-09-09 calendar finale entry), `rhoc` S20 (confirmed already airing
+since 2026-07-09 — matches the existing `19/20` star exactly; last pass's
+"neither has a finale yet" note and this pass's independent scout read are
+the same fact, not a contradiction), `big-brother` S28, `project-runway`
+S22, `selling-sunset` S10, `southern-charm` S12, `top-chef` S24, `the-circle`
+S8 (Hulu move, no date), `love-is-blind` S11, `masked-singer` S15,
+`below-deck` S13, `below-deck-down-under` S5, `dragrace` S19,
+`dragrace-allstars` S12, `traitors-uk` S5, `rhonj` S15 — all already
+starred with matching pending-season slots, none aired yet where unstarred.
+`queer-eye` (final season, already `status: ended`) and
+`so-you-think-you-can-dance` (cancelled May 2026, already `status: ended`)
+were both independently reconfirmed already correct in frontmatter — no
+change needed. `below-deck-adventure` (single 2022 season, still no S2
+announced) and `americas-next-top-model` (revival is rumor-stage only, no
+network/date) reconfirmed correctly excluded from the gap table.
 
 **Rule 2 pick, 2026-09-05 tick (cloud march):** re-verified the three
 nearest-dated stall candidates flagged as of the 2026-08-30 sweep before
