@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-04 at commit b68021b8
-> Pass count: 68
+> Last pass: 2026-09-06 at commit 020ac9a0
+> Pass count: 69
 
 ## Considered (awaiting promotion)
 
@@ -21,6 +21,68 @@
 **Filed:** <ISO date>
 **Why:** <one-paragraph rationale>
 **Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 69 (2026-09-06, cloud march) — 0 new phase-shape candidates
+     filed; three reinforcement updates appended below (#25, #28, #35).
+     Window since pass 68 (b68021b8, 2026-09-04): 2 days / 20 commits.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
+     season-sweep ran earlier this same tick's window (ninth full pass, 0
+     new gaps, gap held at 41 shows/42 gap-slots, all starred); show-add
+     stays LOCKED. Step 2.0's shipping-mode gate stayed lifted (Phase 36
+     `[x]`, no `[ ]` phase rows). The critique gate did not fire: last
+     pass (153) landed the same window at commit dedb99b7, only 6 commits
+     and ~15.5h before this tick — short of both the 12-commit and 24-hour
+     thresholds. Step 3a/3b empty (no pending phase rows, no Pending
+     category:data AUDIT rows). Step 3b.5 matched its usual candidate,
+     the standing Rule 2 season-fill drain row (score 4.5) — but every one
+     of the `plan/CADENCE.md` gap table's 42 slots is starred
+     (confirmed-but-unaired), the same full-board-stall state passes
+     67/68 and this same tick's own sweep documented, so no season was
+     actually actionable. Rule 3 (themed lists) stays locked behind the
+     non-zero gap table. This left the dispatch to fall through to
+     `/expand`'s own gate, which opened independently (posture bold, last
+     pass exactly 20 commits ago — meeting the 20-commit threshold — live
+     AUDIT.md signal present, no phase/data work pending) and fired,
+     reaching this pass.
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): the same 3 real
+       HIGH/MED rows as recent passes — night.yml starvation (HIGH, 6.4),
+       e2e-full duration-ceiling (MED/HIGH-equivalent, 5.4), the-voice
+       factual corruption (HIGH, 4.8) — mapping onto already-filed
+       candidates #35, #34, #36 respectively; no new AUDIT row since
+       pass 68.
+     - `plan/CRITIQUE.md` Pending: passes 152 and 153 (2026-09-05,
+       2026-09-06) both landed since pass 68 and both reproduced the
+       exact cross-field-repetition defect class candidates #25 (season-
+       body/canon-rationale echo) and #28 (stat-tile value/caption
+       duplicate) already track — `below-deck-mediterranean/
+       dubrovnik-ii` (HIGH, still Pending), `naked-and-afraid/
+       the-active-season` (MED, resolved same-day), `dragrace-uk/
+       series-7` and `jersey-shore/the-final-season` (both #28-shape,
+       resolved same-day). Reinforced #25 and #28 in place with this
+       fresh evidence rather than filing a new candidate — both already
+       name these exact shapes in their scope sketches.
+     - `spec.md` / `design/`: no diff since pass 68 (`git log -p
+       --since=2026-09-04 -- spec.md design/` empty on both paths).
+     - GitHub issues: `triage:loop-queued` shows 4 open issues,
+       `triage:needs-user` shows 8 — identical counts to pass 68, no new
+       issue filed since. No new triage-pattern signal.
+     - Workflow health: `gh run list --workflow night.yml` shows 6
+       consecutive `success` runs (09-01 through 09-06), extending
+       pass-68's 4-run streak — reinforced #35 with the extended data
+       while holding score (still a live, unfixed race condition, just
+       currently lucky). `gh run list --workflow e2e-full.yml` shows the
+       same failure cadence already logged by today's digest — no new
+       information beyond what's already in #34's record, left untouched
+       this pass to avoid a content-free reinforcement note.
+     No genuinely new candidate concept surfaced this pass — every live
+     signal traced back to an already-filed, well-scored candidate. #28
+     (8.7) and #25 (8.3) remain the file's two highest-scored unpromoted
+     candidates, both now past 55 days unpromoted despite continuous
+     fresh evidence every 1-2 weeks — the strongest case in the file for
+     `/oversight` promotion at the next session.
 -->
 
 <!-- Pass 68 (2026-09-04, commit b68021b8, cloud) — 0 new phase-shape
@@ -1166,6 +1228,21 @@ behaves as documented at least some of the time; doesn't retire the
 finding since eviction still depends on whether a *second* march
 trigger lands before the first clears. 40 days unpromoted since
 filing (07-27) — unchanged recommendation.
+
+**Update (expand pass 69, 2026-09-06, cloud march):** the clean streak
+pass-68 flagged now extends to **6 consecutive successful runs**
+(09-01 through 09-06, `gh run list --workflow night.yml` confirms all
+`conclusion: success`) — the longest unbroken run on record, more than
+double pass-68's 4-run count. Still reads as favorable scheduling luck
+rather than a fix: no code or workflow-file edit has shipped, the
+shared-concurrency-group mechanism is byte-for-byte the one diagnosed
+07-27, and the 08-29→08-31 three-night loss streak proves the race is
+still fully live whenever collision timing turns unfavorable again.
+Softening urgency further relative to #34/#25/#28 (all of which show
+continued live recurrence this same window) given the sustained
+respite, but holding score and scope — a race condition that hasn't
+fired in 6 days is not a race condition that's been fixed. 41 days
+unpromoted since filing (07-27).
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
@@ -2567,9 +2644,35 @@ the very next commit window after pass 48's filing, the shortest gap yet between
 reinforcements; raised again at pass 57 — 12th and 13th independent instances,
 one of them ruling out "thin season" as an excuse)
 **Source pass:** 44 (reinforced pass 46, 47, 48, 49, reinforced again pass 56, 57,
-reinforced again pass 64)
+reinforced again pass 64, reinforced again pass 69)
 **Filed:** 2026-07-06 (reinforced 2026-07-07, 2026-07-08, 2026-07-08, 2026-07-09,
-2026-07-16, 2026-07-22, 2026-08-20)
+2026-07-16, 2026-07-22, 2026-08-20, 2026-09-06)
+**Pass-69 reinforcement (two more fresh instances, one still unresolved, two months
+unpromoted):** Critique passes 152/153 (2026-09-05/06, the two most recent passes)
+each found a fresh instance of this exact defect class within 24 hours of each
+other: `below-deck-mediterranean/season/dubrovnik-ii` (HIGH — "Shape of the Season"
+and "Where It Sits in the Canon" restate the identical yacht/chef/crew roster
+near-verbatim, still Pending as of this filing) and `naked-and-afraid/season/
+the-active-season` (MED — the 21-day paired-survival format fact repeats
+near-verbatim across the same two sections, RESOLVED same-day). The critique
+finding on naked-and-afraid explicitly flagged the pattern itself: "three
+independent instances surfacing in a single critique pass suggests the pattern is
+systemic to the season-page 'shape of the season' / 'where it sits in the canon'
+template pairing, not isolated per-show content bugs" — the critique tooling is
+now naming this exact candidate's thesis unprompted. `traitors/season/ardross-2026`
+also closed a third instance of the pair (pass-153, same day) despite the page
+having already been individually patched at pass-127 for a *different* field pair
+on the same page — continuing the pass-64 finding that field-by-field reactive
+edits relocate the defect rather than closing the class. All three September
+instances were absorbed by the standing `plan/AUDIT.md` season-fill-drain row's
+content-gap side-drain mechanism (Rule 2 fully stalled on every gap-table show
+being confirmed-but-unaired, so critique-found repetition fixes are currently the
+row's only active output) rather than by any structural gate — zero instances
+have ever been caught pre-ship. This candidate is now **62 days unpromoted**
+(filed 2026-07-06) and sits second only to #28 (8.7) among unpromoted candidates
+by score, ahead of every other row in the file. Repeating the pass-64
+recommendation without qualification: this is ripe for `/oversight` promotion,
+not a fourth consecutive reinforcement-only pass.
 **Pass-64 reinforcement (five weeks unreinforced despite the highest instance rate
 yet — eight-plus new occurrences, two genuinely new shows, same-page re-recurrence
 on already-"fixed" pages):** No expand pass touched this candidate between pass-57
@@ -2785,8 +2888,26 @@ proposes to gate; raised again at pass 57 by a third defect shape — cross-tile
 restatement, not just same-pair; raised again at pass 58 by five simultaneous fresh
 instances in one critique pass, across four different shows, on both the exact-pair
 and cross-tile shapes this candidate already names)
-**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57, 58)
-**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22, 2026-07-26)
+**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57, 58, 69)
+**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22, 2026-07-26,
+2026-09-06)
+**Pass-69 reinforcement (six weeks unreinforced, two more confirmed instances):**
+critique pass-152 (2026-09-05) found two independent same-pair instances the six-
+pair scope sketch already names: `dragrace-uk/season/series-7` (the Pinewood
+filming location restated across the eyebrow, the FILMED value, and the FILMED
+caption — a three-way same-fact restatement, not just the documented two-field
+pair) and `jersey-shore/season/the-final-season` (the FILMED caption bare-restating
+its own location value one field above it, the exact same-pair shape closed on
+hells-kitchen/queer-eye/rhony months ago, recurring on a show not yet touched by
+the drain). Both were resolved reactively the same day via the standing
+`plan/AUDIT.md` season-fill-drain row's content-gap side-drain — the same
+"reactive, never structural" pattern this candidate has documented since pass 48.
+41 days since the last reinforcement (pass-58, 2026-07-26) despite the pending
+queue continuing to surface fresh instances every few critique passes; still the
+highest-scored unpromoted candidate in the file (8.7) and now **59 days
+unpromoted** (filed 2026-07-08). No new sub-shape this pass — the existing six-pair
+scope sketch already covers both instances found. Standing recommendation
+unchanged: ripe for `/oversight` promotion.
 **Pass-58 reinforcement (five fresh instances in a single critique pass, pass-104):**
 still zero pre-ship gate, and the defect class keeps landing on newly-authored or
 newly-promoted content exactly as predicted. All five are currently Pending in
