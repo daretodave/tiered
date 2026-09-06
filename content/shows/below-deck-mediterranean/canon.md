@@ -84,7 +84,7 @@ tag: A yacht and crew mostly new to the franchise return to the location that pr
 slot_argument: Dubrovnik gave the franchise its high-water mark in Season 2; Season 11 sends Sandy back to those waters on a new yacht with a rebuilt crew. The location argument is strong; the cast case is still unproven this early.
 community_rank_hint: rank=7 delta=0 sentiment=hold
 
-Season 11 sends Below Deck Mediterranean back to Dubrovnik for the first time since the location produced the franchise's peak season. The M/Y Akira One is new to the fleet, and Chef Joy Lefaucheur is new to the galley. Captain Sandy Yawn, Chief Stew Aesha Scott, Bosun Nathan Gallagher, and deckhand Joe Bradley return as the crew's core, working alongside a largely rebuilt deck and interior team. The location callback is a real hook — nobody is claiming a new crew will replicate what made Season 2 work, only that the Adriatic waters behind the franchise's best season are back in the frame. Where this one lands long-term depends on chemistry the record doesn't have yet.
+Season 11 sends Below Deck Mediterranean back to Dubrovnik for the first time since the location produced the franchise's peak season, and that callback is a stronger location claim than Barcelona II's repeat trip or even Athens's genuine geographic first. What holds it below Barcelona II is the absence of a comparable format wrinkle — no structural charter twist, just a returning setting worked by a mostly new crew. That puts Season 11 in the same company as Athens: a strong hook paired with an unproven cast case. The location argument carries it this far; the chemistry argument is still being written.
 
 ## 9. Season 9 — Athens
 

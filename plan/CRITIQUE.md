@@ -5731,6 +5731,7 @@
 - evidence: Sec 02: "The M/Y Akira One is new to the fleet, and so is Chef Joy Lefaucheur running the galley. Captain Sandy Yawn, Chief Stew Aesha Scott, Bosun Nathan Gallagher, and deckhand Joe Bradley return as the crew's core..." Sec 03: "The M/Y Akira One is new to the fleet, and Chef Joy Lefaucheur is new to the galley. Captain Sandy Yawn, Chief Stew Aesha Scott, Bosun Nathan Gallagher, and deckhand Joe Bradley return as the crew's core..."
 - suggested fix: Let "Shape of the Season" own the full crew/yacht roster; rewrite the canon rationale to argue the #07-of-11 slot without re-listing the same four crew names and the yacht/chef facts already given one section up. Content-only, `content/shows/below-deck-mediterranean/canon.md`.
 - source: browser (critique-pass-153, anon)
+- RESOLVED (2026-09-06, cloud march tick, content-gap redirect per issue #758): rewrote canon.md's Season 11 rationale to argue the rank-7 slot comparatively against its canon neighbors (Barcelona II above, Athens below) instead of re-listing the yacht name, chef name, and four crew members already owned by the season file. `tag`, `slot_argument`, and `community_rank_hint` left unchanged; season file untouched.
 
 ### [MED] [authed] /shows/naked-and-afraid/season/the-active-season — the 21-day paired-survival format fact repeats near-verbatim across two sections, the same repetition class recurring on a third new show this pass
 - pass: 153 (commit dedb99b7)
