@@ -32,4 +32,4 @@ watch_list:
     body: "The late stretch tightens the pressure. The newest season working the format toward its close."
 ---
 
-Season four is the latest chapter, the machine running with ease. An all-celebrity cast returns to Ardross Castle with Alan Cumming, the three-episode drop then weekly model carried over intact. There is no reinvention here — the show executes a settled formula confidently, the candlelit Round Table and prize-pot missions running on rails. The season's strength is craft, not spectacle: a fluent cast keeps the hour moving without a structural wrinkle like Season 3's mid-game arrivals to lean on.
+Where Season 3 leaned on its mid-game arrivals to reshuffle alliances, this run adds nothing structural and doesn't need to — the candlelit Round Table and prize-pot missions carry the hour on execution alone. The season's strength is craft, not spectacle: a fluent celebrity cast keeps the pace tight without a twist to lean on. That absence of a wrinkle is the argument for where this season sits — clean, competent, betting on cast chemistry over a new mechanic.
