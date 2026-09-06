@@ -8,8 +8,8 @@ premiere_date: 2025-06-05
 location: "Northwest Territories, Canada"
 eyebrow: "Aired summer 2025 · Second Arctic run, Canadian subarctic"
 take_h2: "Same demands, new faces."
-shape_h2: "Twelfth roster, familiar ground."
-lede: "Season twelve returned to the Canadian Arctic — the environment that opened the Colby era — with a new cast and the format confidence of a show in its twelfth run. The second Arctic outing: same extreme demands, different survivalists."
+shape_h2: "Same terrain, sharper baseline."
+lede: "Season twelve returned to the Canadian Arctic — the environment that opened the Colby era — with an entirely new cast facing the same unforgiving demands. The second outing: identical extreme conditions, survivalists who have never set foot here before."
 pull: "The Arctic returns, and the format has the depth to meet it again."
 format_summary: "Solo survival · self-filmed · hosted"
 format_caption: "Second Arctic run; Northwest Territories, Canada"
@@ -21,11 +21,10 @@ host: "Colby Donaldson"
 host_caption: "Sixth season at the helm"
 ---
 
-Twelve seasons in, Alone doesn't need a gimmick to stay
-compelling — repeating a location and trusting the cast alone to
-make the season distinct is its own kind of confidence, the
-opposite of a franchise reaching for a twist to justify another
-run. The intensive shelter demands, the caloric math, the
-sub-zero stretches: none of it gets easier with familiarity,
-which is exactly the point. A season that proves the format's
-depth rather than its need for reinvention.
+A second visit to the same brutal terrain strips away the
+mystery a first-time location usually supplies — every hazard
+this cast meets, an earlier cast already met on camera. That
+baseline raises the bar for what counts as smart play rather
+than lucky. The shelter demands, the caloric math, the sub-zero
+stretches have not gotten any easier for having a precedent; a
+known hazard sharpens the comparison instead of softening it.

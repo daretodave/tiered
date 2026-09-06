@@ -110,7 +110,7 @@ tag: A second Arctic run — familiar terrain, new cast, the format in its matur
 slot_argument: Second Arctic run: a new cast, the same extreme demands, without the novelty of a first visit. Reliable in the format's mature phase, held back by comparison to season seven's opening statement.
 community_rank_hint: rank=11 delta=0 sentiment=hold
 
-Eleventh for a second Arctic run that delivered the format competently but couldn't match the structural landmark of the first. Great Slave Lake in the Northwest Territories is one of the show's most demanding environments — the sub-Arctic conditions that made season seven a standout are unchanged — but the novelty of the location's first appearance in the canon was season seven's to own. A new cast facing the same extreme conditions is still compelling television, and the Colby-era format is confident enough in its twelfth run to sustain it. A solid entry that earns its place without resetting expectations.
+Eleventh for a second Arctic run that delivered the format competently but couldn't match the structural landmark of the first. Great Slave Lake in the Northwest Territories is one of the show's most demanding environments — the sub-Arctic conditions that made season seven a standout are unchanged — but the novelty of the location's first appearance in the canon was season seven's to own. A new cast facing the same extreme conditions makes for compelling television precisely because production and viewers now have a season-seven baseline to measure every call against — this cast can't claim the dangers were unknown, only that they answered them differently. A solid entry that earns its place without resetting expectations.
 
 ## 4. Season 4 — Pairs (2017)
 
