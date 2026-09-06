@@ -993,6 +993,18 @@ against a flat 10,565-test catalog is still the bottleneck; this run
 just landed on the fast side of its own variance). 45 days unpromoted
 since filing (07-22) — unchanged recommendation.
 
+**Update (digest 2026-09-06):** the green run was the variance, not a
+trend break — tonight's run (34001648876, 2026-09-06T00:34:40Z) hit
+the standard 75-minute wall again, `Running 10573 tests using 1
+worker`, 9,033 of 10,573 complete (85.4%) at cutoff, worse than
+09-04's 87.3%. All completed checks passing. Catalog basically flat
+(10,565→10,573). This is the same single-worker throughput ceiling
+pass-67/68 already diagnosed conclusively — no new scope information,
+just another data point in a five-week-old, unambiguous signal. 47
+days unpromoted since filing (07-22) — restating the standing
+recommendation unchanged: this is ripe for `/oversight` promotion,
+not further reinforcement passes.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
