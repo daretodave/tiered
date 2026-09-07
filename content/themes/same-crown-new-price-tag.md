@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-09-07
 featured: false
 related:
   - who-actually-got-the-vote
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "An anniversary special cuts the prize pool in half on purpose."
     blurb: "A tenth-anniversary crossover trims the game to sixteen days and halves the standard prize money to match. A celebratory format that treats a smaller purse as part of the concept, not a budget cut."
+  - show: american-ninja-warrior
+    season: 18
+    season_label: "S18"
+    rank: 17
+    title: "A new women's bracket adds a second prize alongside the standing payout."
+    blurb: "The field's top four women face off in a single-elimination round worth an extra $50,000, stacked on top of the show's usual $250,000 champion purse instead of replacing it."
 ---
