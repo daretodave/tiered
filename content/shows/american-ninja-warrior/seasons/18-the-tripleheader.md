@@ -4,7 +4,7 @@ number: 18
 title: "The Tripleheader"
 premiere_date: 2026-06-08
 ep_count: 13
-host: "Matt Iseman, Akbar Gbajabiamila, and Zuri Hall"
+host: "Matt Iseman, Akbar Gbaja-Biamila, and Zuri Hall"
 aired_year: 2026
 location: "Las Vegas, Nevada — West, Central, and East Regional Qualifiers, Regional Finals, and National Finals"
 canonical_position: 15
