@@ -3996,6 +3996,7 @@
 - evidence: `host`: "Matt Iseman, Akbar Gbajabiamila, and Zuri Hall"; `host_caption`: "eighth season with Iseman, Gbaja-Biamila, and Hall" (content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md lines 7,17)
 - suggested fix: Pick one spelling and use it in both the `host` field and `host_caption`. Cross-check the show's other season files for the same host to confirm which spelling is used consistently elsewhere in the catalog, then standardize this file to match. Scoped to `content/shows/american-ninja-warrior/seasons/18-the-tripleheader.md`.
 - source: browser (critique-pass-154, anon+authed, corroborated independently by both passes)
+- RESOLVED (2026-09-07, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled, every gap-table row confirmed-but-unaired; Rule 3 saturated per #758): cross-checked every other season file for this host across the show's catalog — "Gbaja-Biamila" (hyphenated) is used consistently in all 16 other season files and canon.md. Standardized S18's `host` field from "Gbajabiamila" to "Gbaja-Biamila" to match `host_caption` on the same page and every sibling file. One field, one file, no other change.
 
 ### [HIGH] [anon] /shows/dragrace-uk/season/series-7 — the Miss Congeniality winner is named outright, twice — this is a spoiler under the site's own P0 definition
 - pass: 152 (commit 9b014bce)
