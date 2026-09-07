@@ -13,7 +13,7 @@ lede: "Season eighteen keeps every round in Las Vegas but splits the field into 
 pull: "Same city, new map: three regions, a head-to-head Tripleheader round, and a finals stage still betting on speed over the climb."
 shape_h2: "One city splits into three regions."
 format_summary: "Vegas regions · all-racing finals"
-format_caption: "the same Vegas field regrouped into three named qualifying regions"
+format_caption: "Regional Finals gain a second round, capped by the Tripleheader race"
 host_caption: "eighth season with Iseman, Gbaja-Biamila, and Hall"
 watch_list:
   - episode_label: "Qualifiers · West, Central, East"
@@ -31,4 +31,4 @@ watch_list:
 take_h2: "The course reorganizes without leaving Vegas."
 ---
 
-Season eighteen keeps American Ninja Warrior's Vegas-only address but reshapes how the field gets there: Qualifiers now run as three named regions — West, Central, and East — before Regional Finals add a new two-round structure capped by the three-lane Tripleheader race. National Finals stay all-racing for a second straight year. The hosting trio returns, and a new Women's Bonus Tournament adds a $50,000 prize for the field's top four women.
+Season eighteen keeps American Ninja Warrior's Vegas-only address but splits qualifying into smaller regional pools — a scheduling fix that shrinks how many competitors face off in one qualifying block, not a return to touring separate cities. Regional Finals then add a new two-round structure capped by the three-lane Tripleheader race. National Finals stay all-racing for a second straight year. The hosting trio returns, and a new Women's Bonus Tournament adds a $50,000 prize for the field's top four women.

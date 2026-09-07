@@ -88,7 +88,7 @@ Season two is the first sign this could be more than a Sasuke tryout. Boot Camp,
 
 ## 18. The Tripleheader
 
-Season eighteen keeps season seventeen's central bet — no touring, every round still filmed in Las Vegas — but reorganizes the same field into three named qualifying regions: West, Central, and East. That's a structural fix, not a return to real touring, so field depth stays exactly as capped as it was a year earlier. The new two-round Regional Finals, ending in a three-lane Tripleheader race, and the Women's Bonus Tournament are genuine additions this methodology rewards — real fairness built into the course, not just a broadcast gimmick. National Finals still skip the vertical climb, so the core complaint holds. A season that adds structure without adding geography edges just above the one that started the contraction.
+Season eighteen keeps season seventeen's central bet — no touring, every round still filmed in Las Vegas — but splits the same field into regional qualifying brackets instead of running it as one pool. That's a structural fix, not a return to real touring, so field depth stays exactly as capped as it was a year earlier. The new two-round Regional Finals, ending in a three-lane Tripleheader race, and the Women's Bonus Tournament are genuine additions this methodology rewards — real fairness built into the course, not just a broadcast gimmick. National Finals still skip the vertical climb, so the core complaint holds. A season that adds structure without adding geography edges just above the one that started the contraction.
 
 ## 17. The Racing Finals
 
