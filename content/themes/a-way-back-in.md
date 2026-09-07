@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-10
+last_revised: 2026-09-07
 featured: false
 related:
   - best-challenge-design
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "A new Judges' Callbacks round gives select acts a second chance at reaching the live shows."
     blurb: "The same four-judge panel returns for year two, but a new mechanic sits underneath it — acts that don't clear an earlier round outright can get pulled back for one more shot at the judges before the live-show cutoff arrives."
+  - show: americas-got-talent
+    season: 5
+    season_label: "S05"
+    rank: 16
+    title: "A Wildcard quarterfinal opens a path back for cut acts"
+    blurb: "Season five debuts a Wildcard quarterfinal where each judge brings back about four eliminated acts for another shot, plus a new YouTube-submission quarterfinal — the founding panel's first structural route back into the competition."
 ---
