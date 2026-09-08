@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-15
+last_revised: 2026-09-08
 featured: false
 related:
   - same-crown-new-price-tag
@@ -109,4 +109,10 @@ entries:
     rank: 16
     title: "Seven roommates, the smallest group since the show's Hollywood run"
     blurb: "A second trip to Las Vegas comes back with a noticeably thinner cast than the original visit, the smallest the franchise had fielded in years. A shared charity job stands in for the group's usual house dynamic."
+  - show: married-at-first-sight
+    season: 20
+    season_label: "S20 · Seattle"
+    rank: 17
+    title: "Seven couples give the matching format its largest cast yet"
+    blurb: "The five-couple norm of recent seasons jumps to seven pairs for the show's Pacific Northwest debut, while the expert panel narrows from three voices to two to manage the bigger field. The biggest cast the format has fielded gets matched by its leanest matching team."
 ---

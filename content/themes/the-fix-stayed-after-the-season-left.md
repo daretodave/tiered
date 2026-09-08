@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-09-08
 featured: false
 related:
   - tried-once-never-repeated
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "A choice-driven obstacle mechanic debuts quietly and keeps getting reused."
     blurb: "Season thirteen introduces Split Decision alongside a restored Vegas finale — the kind of add that could've been a one-season experiment. Season fourteen's own copy confirms otherwise: the mechanic returns for a third run, already a fixture."
+  - show: american-ninja-warrior
+    season: 18
+    season_label: "S18"
+    rank: 12
+    title: "An all-racing finals format holds for a second season, and stops reading as a one-year stunt."
+    blurb: "Season seventeen dropped the traditional four-stage climb for a head-to-head racing bracket at Nationals. Season eighteen keeps that same all-racing format rather than reverting to the tower — the first real proof the swap was a permanent fix."
 ---
