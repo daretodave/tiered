@@ -1,8 +1,31 @@
 # CRITIQUE
 
-> Last pass: 2026-09-06 at commit 91a26c8e
-> Pass count: 154
+> Last pass: 2026-09-08 at commit 891a8bfe
+> Pass count: 155
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 155 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/chopped/season/the-double-first`, `/shows`,
+> `/themes/best-non-winning-runs`, `/shows/bake-off?view=canon` anon;
+> `/sign-in`, `/u/e2e`, `/shows/too-hot-to-handle/season/season-6?view=
+> community`, `/shows/chopped?view=community` authed. Anon pass came
+> back with zero new findings (every initially-flagged candidate was
+> already tracked in Pending or Done). Authed pass surfaced 4
+> candidates; self-assessment kept 3 and dropped 1 false positive (the
+> footer theme-toggle glyph already carries a correct
+> `aria-label="Switch to {mode} mode"` in `ThemeToggle.tsx` — the
+> reader's text-only extraction couldn't see the attribute, only the
+> `aria-hidden` glyph span). 3 findings filed (1 HIGH, 1 MED, 1 LOW).
+> The HIGH is the second confirmed spoiler leak `/critique` has ever
+> found (after pass-152's dragrace-uk Miss Congeniality reveal):
+> Too Hot to Handle Season 6's page states outright, in four places,
+> that the finale prize payout splits across multiple winning
+> couples/a single rather than going to one couple — independently
+> verified via external research as a finale-night group-vote outcome
+> (not a pre-announced format twist), squarely a "finale outcome" under
+> the site's own spoiler definition.
 > `/march` Step 2's normal rate-limited cadence is active. Pass 154
 > ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs` —
 > headless chromium, fresh isolated context, no Chrome MCP needed),
@@ -3977,6 +4000,33 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [authed] /shows/too-hot-to-handle/season/season-6 — the finale's multi-winner prize split is stated outright, four times — a spoiler under the site's own P0 definition
+- pass: 155 (commit 891a8bfe)
+- viewport: desktop
+- category: voice
+- observation: The season page states, as settled fact, that the final prize payout splits across more than one winning couple (plus a winning single) rather than going to a single couple — in the `lede`, `episodes_caption`, the markdown body, and a `watch_list` entry. This reads as a format description in the copy's own voice, but it is not: external research (Netflix's own pre-release marketing, TVLine, Marie Claire, ScreenRant) confirms the publicized Season 6 twists were the "Bad Lana" AI and a bigger prize pool — never a multi-winner split. Post-finale coverage (Distractify, MEAWW, TVInsider) confirms the split resulted from a 7-1 group vote in the last episode, awarding $100k to one couple and $25k separately to a single contestant — a finale-night plot outcome, not a pre-known rule. `agents.md` §7 defines spoilers as "winners, eliminations, plot beats, deaths, twists, finale outcomes, relationship outcomes" and explicitly carves out "format changes" as fair game — this fact is the result of the format, not the format itself, so it falls on the spoiler side of that line. Same defect class as the pass-152 dragrace-uk Miss Congeniality reveal (RESOLVED 2026-09-05): a finale-night outcome stated as page copy, missed because it doesn't name an individual person.
+- evidence: `content/shows/too-hot-to-handle/seasons/06-season-6.md` — `lede`: "a prize split across multiple winners for the first time"; `episodes_caption`: "Ten episodes end with a prize payout split across multiple winners, a first."; markdown body: "the prize splits across more than one winning couple for the first time"; `watch_list` episode 4 (`"The prize structure widens"`): "the final payout is built to split across more than one winning couple plus a winning single."
+- suggested fix: Remove the multi-winner-split fact from all four placements; it cannot be safely reframed as a format detail because it isn't one — it only exists because of what happens in the finale. Replace each placement with a different, spoiler-safe fact about the season (e.g. the Bad Lana twist, the Triton Villa move, the returning-alumni casting — all already covered elsewhere on the page and confirmed pre-announced/structural). The `watch_list` "The prize structure widens" entry in particular should either be dropped or rewritten around a non-outcome angle (e.g. that the overall prize pool grew, a pre-announced fact per Marie Claire's coverage, without stating how or whether it ends up divided). Content-only, `content/shows/too-hot-to-handle/seasons/06-season-6.md`.
+- source: browser (critique-pass-155, authed), externally verified via scout research (Netflix Tudum, Marie Claire, ScreenRant pre-release marketing; Distractify, MEAWW, TVInsider post-finale coverage)
+
+### [MED] [authed] /shows/too-hot-to-handle/season/season-6 — "The Take" header and its own pull-quote are a near-verbatim restatement of each other
+- pass: 155 (commit 891a8bfe)
+- viewport: desktop
+- category: voice
+- observation: The season's `take_h2` field and its `pull` field state the identical claim with almost no new wording — one reads as a compressed echo of the other rather than two distinct editorial beats.
+- evidence: `content/shows/too-hot-to-handle/seasons/06-season-6.md` — `take_h2`: "The rule gets a mirror image."; `pull`: "The rule that built the whole show finally gets a mirror image."
+- suggested fix: Rewrite `pull` to add a fact or angle `take_h2` doesn't already state — e.g. what the Bad Lana inversion changes about how the cast plays the season, rather than restating that a mirror image exists. Scoped to `content/shows/too-hot-to-handle/seasons/06-season-6.md`.
+- source: browser (critique-pass-155, authed)
+
+### [LOW] [authed] /shows/chopped?view=community — the mobile header drops the "(canon order)" qualifier, leaving 0% approval rows with no context
+- pass: 155 (commit 891a8bfe)
+- viewport: mobile
+- category: comprehension
+- observation: The desktop community-rank table header shows "Approval (canon order)" when the table is mirroring canon order rather than live votes (via `.col-bar-note`, added at pass-104/#660 for exactly this ambiguity). At the ≤640px breakpoint, `.col-bar` — which carries that qualifier — is hidden entirely per `canon.css`, and the mobile-only `.col-pct-mobile-label` shows bare "Appr." with no canon-order note. A mobile reader sees every row at 0% approval with nothing explaining why. Related to the still-open pass-141 finding on `/shows/love-island-uk?view=community` (mobile drops the "7D" column) — same shared `CommunityRankList` component losing disambiguating header context at the same breakpoint, different missing qualifier.
+- evidence: `src/styles/canon.css` — desktop: `Approval` + `<span className="col-bar-note"> (canon order)</span>` inside `.col-bar`; mobile media query (max-width: 640px) hides `.col-bar` and shows `.col-pct-mobile-label` ("Appr. ") with no equivalent qualifier.
+- suggested fix: Add a compact mobile-only qualifier near `.col-pct-mobile-label` (e.g. "Appr. (canon) %") when `source !== 'votes'`, mirroring the desktop `.col-bar-note` logic in `CommunityRankList.tsx`. Consider resolving alongside the pass-141 7D-column row since both are the same component/breakpoint losing context.
+- source: browser (critique-pass-155, authed)
 
 ### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the "three named qualifying regions" fact is restated near-verbatim across six sections
 - pass: 154 (commit 91a26c8e)
