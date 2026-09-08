@@ -399,7 +399,13 @@ describe('seasonDisplayTitle — shared title framing (critique-pass-68 MED)', (
   it('drops the "S<N>" prefix when a milestone title already carries the show name and season number (critique-pass-73 MED)', () => {
     const show = makeShow({ name: 'Survivor', slug: 'survivor' })
     const season = makeSeason({ number: 50, title: 'Survivor 50' })
-    expect(seasonDisplayTitle(show, season)).toBe('Survivor — Survivor 50')
+    expect(seasonDisplayTitle(show, season)).toBe('Survivor 50')
+  })
+
+  it('does not restate the show name when the title is already self-naming (critique-pass-141 LOW)', () => {
+    const show = makeShow({ name: 'Survivor', slug: 'survivor' })
+    const season = makeSeason({ number: 42, title: 'Survivor 42' })
+    expect(seasonDisplayTitle(show, season)).toBe('Survivor 42')
   })
 
   it('drops the "S<N>" prefix when the title is the generic label spelled out in words (critique-pass-92 MED)', () => {

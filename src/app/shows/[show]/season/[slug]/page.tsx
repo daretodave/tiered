@@ -108,6 +108,13 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 // One") hits the same stutter in word form ("Ink Master S1 —
 // Season One") and slipped through both existing branches. Compare
 // against the capitalized spelled-out form too.
+//
+// CRITIQUE pass 141 LOW: a milestone title that already carries the
+// show name ("Survivor 50") still stuttered even after the S<N>
+// prefix was dropped — prepending the show name a second time
+// produced "Survivor — Survivor 50" in the rendered `<title>`. The
+// show name only needs stating once; when the title is self-naming,
+// return it bare.
 export function seasonDisplayTitle(show: Show, season: Season): string {
   if (season.title === `Season ${season.number}`) {
     return `${show.name} — ${season.title}`
@@ -121,7 +128,7 @@ export function seasonDisplayTitle(show: Show, season: Season): string {
     season.title.includes(show.name) &&
     season.title.includes(String(season.number))
   ) {
-    return `${show.name} — ${season.title}`
+    return season.title
   }
   return `${show.name} S${season.number} — ${season.title}`
 }
