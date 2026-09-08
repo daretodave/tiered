@@ -9,13 +9,13 @@ location: "Triton Villa, Turks and Caicos"
 host: "Lana (AI voice)"
 eyebrow: "Aired summer 2024 · the series finale season, and its most elaborate"
 take_h2: "The rule gets a mirror image."
-shape_h2: "The prize splits, for once."
-lede: "The final season moves into a new villa, the Triton Villa, and throws more at the format than any run before it: a counterpart AI, Bad Lana, who inverts the core rule for stretches of the season, and a prize split across multiple winners for the first time."
+shape_h2: "The biggest prize pool yet."
+lede: "The final season moves into a new villa, the Triton Villa, and throws more at the format than any run before it: a counterpart AI, Bad Lana, who inverts the core rule for stretches of the season, and the franchise's largest prize pool to date."
 pull: "The rule that built the whole show finally gets a mirror image."
 format_summary: "Villa retreat · Bad Lana twist"
 format_caption: "A counterpart AI inverts the no-penalty rule for stretches of the season"
 premiere_caption: "Netflix · July 2024, staggered release"
-episodes_caption: "Ten episodes end with a prize payout split across multiple winners, a first."
+episodes_caption: "Ten episodes play out for the franchise's biggest prize pool to date."
 cast_size: 16
 cast_size_caption: "Sixteen singles, including two returning alumni from earlier seasons."
 host_caption: "Sixth and final season with Lana at the helm"
@@ -26,8 +26,8 @@ watch_list:
     body: "Watch for a second AI voice entering the mix, one that inverts the show's core no-penalty rule for stretches of the season."
   - episode_label: "Familiar faces return"
     body: "Two alumni from earlier seasons re-enter as new cast members, the franchise's first attempt at crossover casting."
-  - episode_label: "The prize structure widens"
-    body: "For the first time, the final payout is built to split across more than one winning couple plus a winning single."
+  - episode_label: "The pool is bigger this time"
+    body: "Netflix built this season around its largest overall prize pool yet, announced going in — distinct from how the payout actually plays out by the finale."
 ---
 
-Too Hot to Handle closes its run with its most elaborate structural swing yet. A counterpart AI, Bad Lana, inverts the no-penalty rule for stretches of the season, the prize splits across more than one winning couple for the first time, and this cast, unlike every season before it, knows exactly which show they signed up for. Two alumni from earlier seasons return as new entrants, the franchise's first crossover casting, in a new villa built for the occasion.
+Too Hot to Handle closes its run with its most elaborate structural swing yet. A counterpart AI, Bad Lana, inverts the no-penalty rule for stretches of the season, the overall prize pool grows to its largest size in the show's run, and this cast, unlike every season before it, knows exactly which show they signed up for. Two alumni from earlier seasons return as new entrants, the franchise's first crossover casting, in a new villa built for the occasion.

@@ -18,7 +18,7 @@ entries:
     season_label: "S06"
     rank: 1
     title: "The finale season stacks a mirror-image twist on top of everything else"
-    blurb: "A counterpart AI flips the no-touching rule for stretches of the season, the prize splits more than one way for the first time, and two alumni re-enter as new cast members. The final season throws more at its own format than any run before it."
+    blurb: "A counterpart AI flips the no-touching rule for stretches of the season, the overall prize pool grows to its largest size yet, and two alumni re-enter as new cast members. The final season throws more at its own format than any run before it."
   - show: too-hot-to-handle
     season: 4
     season_label: "S04"

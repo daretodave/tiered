@@ -19,10 +19,10 @@ weekly_question: "With the full six-season run wrapped, does the finale season s
 ## 6. Season 6
 
 tag: The finale season, and the format's most elaborate swing at itself.
-slot_argument: Six seasons in, the show turns its own rule inside out with a counterpart AI, splits its prize across more than one couple for the first time, and lets a cast walk in already knowing the show they've joined.
+slot_argument: Six seasons in, the show turns its own rule inside out with a counterpart AI, builds toward its largest prize pool yet, and lets a cast walk in already knowing the show they've joined.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
-Season six takes the top slot because six years in, the show finally turns its own foundational rule against itself. A counterpart AI, Bad Lana, inverts the no-penalty mechanic for stretches of the run, upending the calculus that's driven every earlier season. The prize splits across more than one winning couple for the first time, this cast walks in already knowing exactly which show they've joined, a first for the franchise, and two alumni from earlier seasons return as new entrants, the format's first crossover casting. No other season stacks this many structural firsts into one run, and as the series finale, it earns the benefit of every doubt.
+Season six takes the top slot because six years in, the show finally turns its own foundational rule against itself. A counterpart AI, Bad Lana, inverts the no-penalty mechanic for stretches of the run, upending the calculus that's driven every earlier season. The overall prize pool grows to its largest size in the show's run, this cast walks in already knowing exactly which show they've joined, a first for the franchise, and two alumni from earlier seasons return as new entrants, the format's first crossover casting. No other season stacks this many structural firsts into one run, and as the series finale, it earns the benefit of every doubt.
 
 ## 1. Season 1 (2020)
 

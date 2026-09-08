@@ -41,8 +41,8 @@ entries:
     season: 6
     season_label: "S06"
     rank: 5
-    title: "The finale season splits the pot more ways than the format ever had."
-    blurb: "For the first time, the final payout stretches across more than one winning couple plus a winning single, closing out the run with the widest prize structure the format has tried."
+    title: "The finale season pays out its biggest prize pool yet."
+    blurb: "The overall prize pool grows to its largest size across the show's six-season run, closing out the franchise on its biggest financial swing yet — a fitting cap on a format that rewrote its own payout rules almost every year."
   - show: alone-frozen
     season: 1
     season_label: "S01 · Labrador"
