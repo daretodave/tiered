@@ -243,6 +243,23 @@ function yearCaptionFor(season: Season): string | undefined {
   return undefined
 }
 
+// critique-pass-140 LOW: shows whose season titles are bare "Season
+// NN" literals (no nickname) put a second number right next to the
+// canon-rank tag — e.g. "#38 IN CANON" pointing at "Season 37" reads
+// as a labeling mismatch at a glance, even though the body copy
+// explains canon rank is intentionally decoupled from season number.
+// A one-line caption on the adjacent card itself carries that same
+// disclaimer to the spot where the collision is actually seen.
+const BARE_SEASON_TITLE_RE = /^Season (\d+)$/i
+
+function canonOrderCaptionFor(title: string, rank: number | null): string | undefined {
+  if (rank == null) return undefined
+  const match = BARE_SEASON_TITLE_RE.exec(title.trim())
+  if (!match) return undefined
+  if (Number(match[1]) === rank) return undefined
+  return 'Canon rank, not season order'
+}
+
 export function adjacentByCanon(
   show: Show,
   seasons: Season[],
@@ -255,11 +272,14 @@ export function adjacentByCanon(
   const toSide = (s: Season | undefined | null): AdjacentSide | null => {
     if (!s) return null
     const titleCollides = s.title === current.title
+    const rank = s.canonical_position ?? null
     return {
       href: `/shows/${show.slug}/season/${s.slug}`,
-      rank: s.canonical_position ?? null,
+      rank,
       title: s.title,
-      caption: s.tag ?? (titleCollides ? yearCaptionFor(s) : undefined),
+      caption:
+        s.tag ??
+        (titleCollides ? yearCaptionFor(s) : canonOrderCaptionFor(s.title, rank)),
     }
   }
   if (pos === -1) {

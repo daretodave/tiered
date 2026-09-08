@@ -876,6 +876,70 @@ describe('adjacentByCanon — critique-pass-129 title-collision caption fallback
   })
 })
 
+describe('adjacentByCanon — critique-pass-140 bare-title canon-order caption fallback', () => {
+  // Amazing Race titles every season "Season NN" with no nickname, so
+  // canon rank #38 pointing at "Season 37" reads as a labeling
+  // mismatch at a glance even though the divergence is intentional.
+  const show = makeShow({ slug: 'amazing-race', name: 'The Amazing Race' })
+
+  it('adds a disambiguating caption when a bare "Season NN" title diverges from canon rank', () => {
+    const current = makeSeason({
+      show: 'amazing-race',
+      number: 38,
+      slug: 'season-38',
+      title: 'Season 38',
+      canonical_position: 37,
+    })
+    const nextNeighbor = makeSeason({
+      show: 'amazing-race',
+      number: 37,
+      slug: 'season-37',
+      title: 'Season 37',
+      canonical_position: 38,
+    })
+    const { next } = adjacentByCanon(show, [current, nextNeighbor], current)
+    expect(next?.caption).toBe('Canon rank, not season order')
+  })
+
+  it('leaves the caption undefined when the bare "Season NN" title matches canon rank', () => {
+    const current = makeSeason({
+      show: 'amazing-race',
+      number: 36,
+      slug: 'season-36',
+      title: 'Season 36',
+      canonical_position: 36,
+    })
+    const prevNeighbor = makeSeason({
+      show: 'amazing-race',
+      number: 35,
+      slug: 'season-35',
+      title: 'Season 35',
+      canonical_position: 35,
+    })
+    const { prev } = adjacentByCanon(show, [prevNeighbor, current], current)
+    expect(prev?.caption).toBeUndefined()
+  })
+
+  it('does not apply the canon-order caption to nicknamed (non-numeric) titles', () => {
+    const current = makeSeason({
+      show: 'amazing-race',
+      number: 5,
+      slug: 'all-stars',
+      title: 'All-Stars',
+      canonical_position: 3,
+    })
+    const nextNeighbor = makeSeason({
+      show: 'amazing-race',
+      number: 4,
+      slug: 'the-bahamas',
+      title: 'The Bahamas',
+      canonical_position: 4,
+    })
+    const { next } = adjacentByCanon(show, [current, nextNeighbor], current)
+    expect(next?.caption).toBeUndefined()
+  })
+})
+
 describe('adjacentSectionH2For — Section 05 "Adjacent in the canon" subhead', () => {
   // critique-pass-29 LOW: the legacy "Read next." subhead framed both
   // adjacent cards (a canon-above neighbor and a canon-below one) as
