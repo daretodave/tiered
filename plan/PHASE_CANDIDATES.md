@@ -1067,6 +1067,23 @@ days unpromoted since filing (07-22) — restating the standing
 recommendation unchanged: this is ripe for `/oversight` promotion,
 not further reinforcement passes.
 
+**Update (digest 2026-09-08, covering 09-07 and 09-08):** two more
+red nights, no green in between — the streak is now **3 consecutive
+red `e2e-full` runs** (09-06, 09-07, 09-08). 09-07's run
+(34070594162) hit the wall at 9,192/10,573 (86.9%, the best showing
+since 09-04's 87.3%); 09-08's run (34174840735) dropped back to
+9,030/10,573 (85.4%, tying 09-06's low). Catalog held exactly flat
+at 10,573 tests across all three nights — this is pure single-worker
+throughput variance around a fixed ceiling, not a shrinking or
+growing catalog. Both runs die on the identical `timeout-minutes: 75`
+wall with every completed check passing; issue #636 picked up its
+41st and 42nd "Recurred" comments. No new scope information — same
+fix (Playwright `--shard`), same `workflows`-OAuth-scope cloud
+blocker. **48 days unpromoted since filing (07-22).** Restating the
+unchanged standing recommendation: this is ripe for `/oversight`
+promotion, not further reinforcement passes — the signal has been
+stable and unambiguous for nearly seven weeks.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
