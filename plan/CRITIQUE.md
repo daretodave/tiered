@@ -4368,6 +4368,7 @@
 - evidence: Show page title (Love Island UK): "Love Island UK — the canon, no spoilers — tiered.tv". Season page title: "Survivor — Survivor 50 — tiered.tv".
 - suggested fix: Standardize season-page titles to a pattern like "Survivor 50 — the canon, no spoilers — tiered.tv" so the show name isn't stated twice and the branding phrase stays consistent with show pages. Check the shared title-building helper in `src/lib/seo.ts` for how season titles diverge from show titles.
 - source: browser (critique-pass-141, anon)
+- resolved: 2026-09-08, cloud march tick, content-gap redirect per issue #758 (Rule 2 gap table fully starred, Rule 3 list ideas saturated — oldest unresolved CRITIQUE finding picked instead). Root cause was in `seasonDisplayTitle()` (`src/app/shows/[show]/season/[slug]/page.tsx`): the milestone-title branch re-prefixed the show name even when the title already carried it (e.g. "Survivor 50"), producing "Survivor — Survivor 50" in the rendered `<title>`. Changed that branch to return the title bare. Generalizes past the flagged S50 to every self-naming Survivor milestone title (42–50). Two unit tests added/updated in the co-located test file. Verify gate green: fast gate (199 test files/3681 unit tests, test:scripts 146/146, content:check ok), build clean (1515/1515 static pages), e2e 4885/4885 passed (30.8m). Shipped at a178205a.
 
 ### [LOW] /shows/survivor/season/survivor-50 — "RETURNING CASTAWAYS ONLY" eyebrow reads as an access restriction on first parse
 - pass: 141 (commit 949a34d3)
