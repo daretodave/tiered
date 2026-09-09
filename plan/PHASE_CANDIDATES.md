@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-06 at commit 020ac9a0
-> Pass count: 69
+> Last pass: 2026-09-09 at commit 93860a98
+> Pass count: 70
 
 ## Considered (awaiting promotion)
 
@@ -23,8 +23,136 @@
 **Scope sketch:** <2-3 lines of what would ship>
 -->
 
-<!-- Pass 69 (2026-09-06, cloud march) — 0 new phase-shape candidates
-     filed; three reinforcement updates appended below (#25, #28, #35).
+<!-- Pass 70 (2026-09-09, cloud march) — 1 new phase-shape candidate filed
+     (#38, spoiler-language heuristic gate); two reinforcement updates
+     appended below (#25, #33).
+     Window since pass 69 (86c88f89, 2026-09-06T16:58:53Z): 33 commits /
+     ~77 hours.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-06, ninth full pass, next due
+     2026-09-13; gap table held at 41 shows/42 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The
+     critique gate did not fire: last pass (156) landed the same calendar
+     day at commit ae289b02, only 4 commits before this tick and carrying
+     a Pending HIGH finding — both the commit-count/hours thresholds and
+     the "no pending HIGH" condition failed. Step 3a/3b empty (no pending
+     phase rows, no Pending category:data AUDIT rows). Step 3b.5 matched
+     its usual candidate, the standing Rule 2 season-fill drain row
+     (score 4.5) — but the CADENCE gap table was independently
+     re-confirmed unchanged from this same calendar day's four prior
+     content-gap ticks (all 42 slots starred, confirmed-but-unaired), and
+     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
+     51 days) had nothing due — the fourth of today's own ticks had
+     already exhausted a fresh Rule 3 concept search 2h14m before this
+     one started. Re-running that exact search within the same two-hour
+     window was judged not to add information, so this tick treated
+     content as having fallen through (matching pass-67's precedent of
+     Step 3b.5 yielding on a genuine full-board stall) rather than filing
+     a fifth same-day reconfirmation-only commit. This left the dispatch
+     to fall through to `/expand`'s own gate, which opened independently
+     (posture bold, 33 commits / ~77h since pass 69 — both thresholds
+     clear, live AUDIT.md + CRITIQUE.md signal present, no phase/data
+     work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): the same 3 real
+       HIGH/MED rows as recent passes — night.yml starvation (HIGH, 6.4),
+       e2e-full duration-ceiling (MED/HIGH-equivalent, 5.4), the-voice
+       factual corruption (HIGH, 4.8) — mapping onto already-filed
+       candidates #35, #34, #36 respectively, both already
+       `triage:needs-user` and awaiting a local `/oversight` session; no
+       new AUDIT row since pass 69.
+     - `plan/CRITIQUE.md` Pending: passes 154, 155, and 156 all landed
+       since pass 69. Three of five findings from that window were
+       already RESOLVED same-day by the content-gap side-drain mechanic
+       (ANW repetition + host-spelling, too-hot-to-handle prize-split
+       spoiler + Take/pull echo). Two remain Pending: (1)
+       `/shows/vanderpump-rules/season/season-12` — "Shape of the
+       Season"/"Where It Sits in the Canon" near-verbatim cast-turnover
+       restatement, the exact defect class candidate #25 already tracks
+       (reinforced below); (2) `/shows` tier-section `<h3>` heading-level
+       a11y issue — a single page-template fix, not a cluster, left for
+       `/iterate` rather than filed as a candidate. More importantly,
+       pass 156 also reproduced a third independent instance (after
+       pass-152 dragrace-uk, pass-155 too-hot-to-handle) of a spoiler
+       leak the site's only mechanical spoiler gate — a narrow
+       Survivor-only proper-noun blocklist
+       (`collectThemedEntrySpoilerIssues`) — structurally cannot catch:
+       a named individual winner, a multi-field outcome-as-fact leak, and
+       now an unverified "twist" characterization, each on a different
+       show and surface (season page fields, themed-list entry). All
+       three were HIGH severity, all three were caught only by manual
+       critique after already shipping to production. This crossed the
+       signal-multiplicity bar for a new candidate — filed as #38 below.
+     - `spec.md` / `design/`: no diff since pass 69 (`git log -p
+       --since=2026-09-06 -- spec.md design/` empty on both paths).
+     - GitHub issues: `triage:loop-queued` shows 4 open, `triage:needs-user`
+       shows 8 — same counts as pass 69's window, no new pattern.
+     #25 and #33 are the two rows this pass's fresh evidence maps onto
+     most directly; reinforced both in place below.
+-->
+
+### 38. Spoiler-language heuristic gate — content-check should flag outcome/twist-coded phrasing, not just a proper-noun blocklist
+
+**Score:** 7.5 (impact: 9, ease: 5 → 4.5 base + 2.0 signal multiplicity (three
+independent critique passes, three different shows, three different surface
+shapes, all converging on the same mechanical gap) + 1.0 cheap-and-impactful
+(single content-check addition, protects the whole-site brand promise going
+forward))
+**Source pass:** 70
+**Filed:** 2026-09-09
+**Why:** `agents.md` §7 makes spoiler discipline P0 — "the seasons, ranked. no
+spoilers" is the brand promise itself, not an editorial nicety. The only
+mechanical defense in `scripts/content-check.ts` today is
+`collectThemedEntrySpoilerIssues` — a hand-curated proper-noun blocklist
+(`Edge of Extinction`, `Redemption Island`, `fire token`), scoped to Survivor
+only and to themed-list `entries[].blurb` only. It has never been extended
+since it shipped (critique pass-13, 2026-05-xx). In the last five weeks,
+`/critique` has independently caught three live, production-shipped spoiler
+leaks this blocklist structurally cannot see, because none of them are a
+blocklisted proper noun: pass-152 named an individual Miss Congeniality
+winner on `dragrace-uk/season/series-7` (a person's name, not a "twist
+mechanic"); pass-155 stated a finale prize-split outcome as settled fact
+across five separate fields on `too-hot-to-handle/season/season-6` (`lede`,
+`episodes_caption`, markdown body, a `watch_list` entry, and `shape_h2` —
+none of them a themed-list entry blurb); pass-156 used spoiler-coded "twist"
+language on a themed-list entry (`too-few-to-call-it-all-stars` #03) whose
+pre-announced status was never verified before shipping. All three were HIGH
+severity, all three reached production before a human-style critique pass
+caught them, and all three were fixed as one-off content rewrites with no
+change to the mechanical gate — the same shape of gap candidate #25
+(verbatim-argument echo) documents for repetition, now showing up for
+spoilers. Three independent instances, three different shows, three
+different field shapes, in five weeks is a pattern, not noise.
+**Scope sketch:** Extend `scripts/content-check.ts` with a second, broader
+spoiler-risk pass distinct from the existing proper-noun blocklist:
+- A curated list of outcome-signaling *phrase patterns* (not proper nouns) —
+  "names the winner", "is crowned", "takes home", "wins the season", "splits
+  the prize", "reveals that" combined with a definitive/past-tense frame,
+  etc. — scanned across every season-page prose field (`lede`, `pull`,
+  `episodes_caption`, `format_caption`, body, `watch_list` entries,
+  `shape_h2`) and every `canon.md` rationale/`slot_argument`, not just
+  themed-list blurbs.
+- Ship as a **warning, not a hard fail** at first (false-positive risk is
+  real — "the format changes for the first time" is fine, "the winner is
+  crowned for the first time" is not, and a regex can't reliably tell them
+  apart) — surface matches in `pnpm content:check` output for
+  `content-curator`/reviewer attention, the same posture
+  `collectThemedEntrySpoilerIssues` could have started at before going
+  strict.
+- Fold the check into `ship-content`'s pre-flight checklist (§2.5) and
+  `/critique`'s own spoiler-check pass so both the authoring and detection
+  sides gain the same net.
+- Leave the existing Survivor proper-noun blocklist as-is — it's a
+  different, complementary defense (named mechanics vs. generic outcome
+  language), not something this replaces.
+**Estimated phases:** 1.
+**Conflicts:** none. Complements — does not duplicate — the pass-13
+themed-entry spoiler blocklist and the general spoiler-discipline language in
+`agents.md` §7 / `ship-content.md` §5.2.
+
+
      Window since pass 68 (b68021b8, 2026-09-04): 2 days / 20 commits.
      Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
      issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
@@ -2011,6 +2139,32 @@ remains the only thing that reliably produces that outcome on the
 much more common tick where content work IS actionable. Score
 unchanged at 5.5; still unpromoted 43 days after filing.
 
+**Update (expand pass 70, 2026-09-09, cloud march):** the most extreme
+version of the stall pattern yet — not one stalled tick but **four
+same-day** content-gap ticks (00:56Z, 06:53Z, 17:06Z, 19:49Z) all
+independently reconfirming the identical CADENCE gap-table stall (all 42
+slots starred, confirmed-but-unaired) and an identical Rule 3 zero-ship
+(a fresh concept search finding nothing not already staked in the 183-row
+`plan/LISTS.md` ledger). This tick is a fifth, and rather than run a near-
+certain-to-be-redundant fifth reconfirmation within the same two-hour
+window, it treated the stall as already-established and fell through to
+`/expand` directly — which is exactly the "genuinely no actionable content
+work" case the pass-67 update first named, except this time the
+fallthrough was a **reasoned judgment call**, not the pass-67 "coincidence"
+the gap table happened to be fully stalled. That distinction matters: it
+means the mechanism this candidate proposes isn't just missing for the
+common case (content work IS actionable, bug rows wait indefinitely) — it's
+also missing for the stalled case, where every tick has to independently
+re-derive "is there really nothing to do" from first principles instead of
+reading it off a structural signal. A cheap per-tick staleness check (e.g.
+"has the standing Rule-2 row's CADENCE state changed since the last
+content-gap tick within N hours? if not, and Rule 3 has no review due,
+treat the row as non-actionable this tick without re-running the full
+search") would remove the ambiguity this candidate's carve-out doesn't by
+itself resolve. Score unchanged at 5.5; still the highest-scored unpromoted
+candidate whose fix is purely a `skills/march.md` conditional, now **53
+days unpromoted**.
+
 ### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
 
 **Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
@@ -2906,6 +3060,19 @@ spanning at least 18 distinct shows, with a same-day recurrence rate that has
 never required more than ~24 hours to produce fresh evidence at any check-in
 since pass-56. Score held at 8.3 (ceiling); still the highest-scored
 unpromoted candidate in the file, six weeks after filing.
+
+**Pass-70 reinforcement (still-Pending instance, first re-occurrence since
+the pass-69 pair):** Critique pass-156 (2026-09-09) found a fresh instance —
+`/shows/vanderpump-rules/season/season-12` — "Shape of the Season" and
+"Where It Sits in the Canon" restate the identical Lisa Vanderpump-only-
+holdover / ten-new-regulars / four-prior-appearances fact set in near-
+identical sentence structure, still Pending as of this filing (not yet
+absorbed by a content-gap side-drain tick). This is the first genuinely new
+show hit by this defect class since the pass-69 below-deck-mediterranean/
+naked-and-afraid pair — the instance rate has not slowed. Net since filing
+(2026-07-06): 21+ instances documented, now spanning at least 19 distinct
+shows. Score held at 8.3 (ceiling); now **65 days unpromoted**, still the
+second-highest-scored unpromoted candidate in the file behind only #28.
 
 ### 28. Stat-tile value/caption literal-duplicate invariant
 
