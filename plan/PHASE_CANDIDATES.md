@@ -1084,6 +1084,18 @@ unchanged standing recommendation: this is ripe for `/oversight`
 promotion, not further reinforcement passes — the signal has been
 stable and unambiguous for nearly seven weeks.
 
+**Update (digest 2026-09-09):** the streak broke — 09-09's run
+(34297549504) finished **green**, completing the full 10,012-test
+crawl in 70m22s (01:05:49–02:16:11 UTC), inside the 75-minute wall
+with roughly 5 minutes to spare. That margin is thin, not
+reassuring: at the throughput this run demonstrated (~142
+tests/min single-worker), the catalog has only about 700 tests of
+headroom before the wall breaches again on a normal night, let alone
+a slower one — the exact linear-growth mechanism that eroded the
+original 50-minute ceiling. No scope change to the fix; **49 days
+unpromoted since filing (07-22).** One green night doesn't retire
+this candidate, it just delays the next breach by a few nights.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
