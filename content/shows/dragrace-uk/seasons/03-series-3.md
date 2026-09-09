@@ -19,6 +19,7 @@ premiere_caption: "BBC Three · iPlayer, September 2021"
 episodes_caption: "Ten episodes, matching the prior series' run"
 filming_caption: "Manchester · Northern England's broadcast hub"
 host_caption: "RuPaul, {seasonOrdinalWord} series at the helm"
+cast_size_caption: "Mostly new queens, with a couple returning from earlier series."
 watch_list:
   - episode_label: "Ep 1 · the show leaves London"
     body: "The UK edition relocates production to Manchester for the first time. Notice how the change in setting shows up in the texture of the workroom, not just the postcode."

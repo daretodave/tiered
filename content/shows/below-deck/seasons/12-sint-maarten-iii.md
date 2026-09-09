@@ -18,6 +18,7 @@ format_caption: "Superyacht charter, Sint Maarten · Anguilla · St. Barths"
 host_caption: "Captain Kerry Titheradge's second season at the helm."
 filming_caption: "Sint Maarten, Anguilla, St. Barths · first multi-island charter route"
 premiere_caption: "Bravo · 2025"
+cast_size_caption: "A mostly new crew, with a few returning deckhands and stews from past seasons."
 ---
 
 The third Below Deck visit to Sint Maarten expanded well beyond the island's familiar waters. Charters moved between Sint Maarten, Anguilla, and St. Barths — more logistical complexity than a single-anchorage season, and three distinct Caribbean environments. Captain Kerry Titheradge's second run showed a more settled command presence, and crew dynamics sharpened across the broader range. The island-hopping structure is the most notable format innovation the franchise has introduced in recent seasons.

@@ -11,6 +11,7 @@ eyebrow: "Aired spring–summer 2015 · Two leads, one vote"
 take_h2: "A gamble that paid off."
 format_summary: "25 men · the premiere splits the lead"
 format_caption: "the contestant-vote experiment"
+cast_size_caption: "25 men, including one or two returning from Bachelor/Bachelorette."
 ---
 
 The season that opened with a fork in the road. The premiere arrives with two potential leads — Britt Nilsson and Kaitlyn Bristowe — and hands the choice to the men in a first-night vote, a structural gamble the franchise had never tried. The premise reshapes the opening hour into something tense and unusually live. Eleven episodes, a sharp and quick-witted lead at the center, and a casting bench loud enough to carry the experiment. A modern franchise peak.
