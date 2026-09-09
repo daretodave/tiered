@@ -1,23 +1,29 @@
 # CRITIQUE
 
-> Last pass: 2026-09-08 at commit 891a8bfe
-> Pass count: 155
+> Last pass: 2026-09-09 at commit ae289b02
+> Pass count: 156
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 155 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 156 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/shows/chopped/season/the-double-first`, `/shows`,
-> `/themes/best-non-winning-runs`, `/shows/bake-off?view=canon` anon;
-> `/sign-in`, `/u/e2e`, `/shows/too-hot-to-handle/season/season-6?view=
-> community`, `/shows/chopped?view=community` authed. Anon pass came
-> back with zero new findings (every initially-flagged candidate was
-> already tracked in Pending or Done). Authed pass surfaced 4
-> candidates; self-assessment kept 3 and dropped 1 false positive (the
-> footer theme-toggle glyph already carries a correct
-> `aria-label="Switch to {mode} mode"` in `ThemeToggle.tsx` — the
-> reader's text-only extraction couldn't see the attribute, only the
-> `aria-hidden` glyph span). 3 findings filed (1 HIGH, 1 MED, 1 LOW).
+> `/shows/vanderpump-rules/season/season-12`, `/shows`,
+> `/themes/too-few-to-call-it-all-stars`, `/shows/naked-and-afraid?view=
+> canon` anon; `/sign-in`, `/u/e2e`, `/shows/vanderpump-rules/season/
+> season-12?view=community`, `/shows/naked-and-afraid?view=community`
+> authed. Both passes came back clean on auth/console/mobile-overflow
+> mechanics (0 console errors, 0 failed requests, 0 horizontal overflow
+> at 375px). 3 new findings filed (1 HIGH, 2 MED) — a fresh voice/spoiler
+> flag on the just-shipped `too-few-to-call-it-all-stars` list, a fresh
+> shape/canon duplication instance on vanderpump-rules S12, and an a11y
+> heading-level issue on `/shows`. 3 further candidates each reproduced
+> an already-open systemic finding on a new show/route (masterchef's
+> `?view=community` canonical bug on naked-and-afraid, selling-sunset's
+> season-detail `?view=community` no-op on vanderpump-rules, love-island-uk's
+> mobile 7D-column drop on naked-and-afraid) — appended as confirming
+> instances to the existing rows instead of filing duplicates, per §5
+> dedup rule; two of those three bumped in severity given the
+> now-confirmed systemic (component-level) scope.
 > The HIGH is the second confirmed spoiler leak `/critique` has ever
 > found (after pass-152's dragrace-uk Miss Congeniality reveal):
 > Too Hot to Handle Season 6's page states outright, in four places,
@@ -4001,6 +4007,33 @@
 
 ## Pending
 
+### [HIGH] [anon] /themes/too-few-to-call-it-all-stars — entry #03 names and characterizes a season's premiere-night plot twist
+- pass: 156 (commit ae289b02)
+- viewport: desktop
+- category: voice
+- observation: Entry #03 (The Bachelorette Season 11 — Kaitlyn Bristowe) describes the season's own premiere-night structural surprise — the show revealing two potential leads and having contestants vote between them — using spoiler-coded language ("twist") rather than the pre-announced-format framing the rest of the ledger uses for similar structural facts. `agents.md` §7 lists "twists" as a spoiler category and treats the "aired long ago" fact as irrelevant to whether something reads as a spoiler on this site; the format-change carve-out only covers facts that were publicly pre-announced before the season aired, and this entry's phrasing doesn't establish that this one was. Same defect class as the pass-152 dragrace-uk Miss Congeniality reveal and the pass-155 too-hot-to-handle prize-split leak (both RESOLVED) — a plot beat framed as page copy.
+- evidence: "The familiar faces barely register against the premiere's own splashier twist — two leads, one first-night vote."
+- suggested fix: Research whether the two-lead premiere format was pre-announced in ABC's pre-season marketing (if so, reframe as a structural/format fact, matching the carve-out); if not confirmed pre-announced, drop the "twist" characterization entirely and describe only the casting fact (returning contestants folded into a new pool) that the list's own thesis needs. Content-only, `content/themes/too-few-to-call-it-all-stars.md`.
+- source: browser (critique-pass-156, anon, via Path A2)
+
+### [MED] [anon+authed] /shows/vanderpump-rules/season/season-12 — "the shape of the season" and "where it sits in the canon" restate the identical cast-turnover fact set near-verbatim
+- pass: 156 (commit ae289b02)
+- viewport: desktop
+- category: comprehension
+- observation: Both sections restate the same fact set — Lisa Vanderpump the only holdover from Season 11, ten new regulars, four of whom had smaller earlier appearances — in near-identical sentence structure with almost no new angle added at the second telling. Same repetition class already drained across dancing-with-the-stars, shark-tank, the-voice, chopped, below-deck-mediterranean, and others; not yet reached this show.
+- evidence: Shape: "Lisa Vanderpump is the only name back from Season 11; ten new regulars take over the floor, four of whom had smaller appearances in earlier seasons." Canon: "Lisa Vanderpump is the only face carried over from Season 11 — every other regular and recurring cast member is gone, replaced by ten new names, four of whom had smaller appearances earlier in the show's run."
+- suggested fix: Let "Shape of the Season" own the full cast-turnover recap; rewrite `content/shows/vanderpump-rules/canon.md`'s Season 12 rationale to argue the #12-of-12 slot comparatively against the adjacent canon neighbor (Season 9) instead of re-listing the same headcount facts.
+- source: browser (critique-pass-156, both anon and authed passes independently surfaced this on the same page)
+
+### [MED] [anon] /shows — the S/A/B tier-section descriptive sentence is marked up as an `<h3>` sibling to every show-name heading in that tier
+- pass: 156 (commit ae289b02)
+- viewport: desktop
+- category: a11y
+- observation: Each tier section's descriptive blurb ("The shows where the format invented or perfected itself.") renders as an `<h3 class="tier-name">`, the same heading level used for every individual show name in that tier's grid. A screen-reader user navigating by heading level 3 hits the section blurb as a sibling heading to "Survivor" and "RuPaul's Drag Race," with no structural cue distinguishing "section description" from "grid item."
+- evidence: `<h2 class="tier-letter">S</h2><div class="tier-desc"><span class="tier-tag">Format-defining</span><h3 class="tier-name">The shows where the format invented or perfected itself.</h3></div>` followed by sibling-level `<h3>Survivor</h3>`, `<h3>RuPaul's Drag Race</h3>`.
+- suggested fix: Demote the tier-description sentence to a non-heading element (e.g. a `<p>` under the `.tier-tag` span) so heading-level navigation distinguishes the section blurb from the show-name grid items it sits beside. Component fix in the `/shows` page template, not per-show content.
+- source: browser (critique-pass-156, anon)
+
 ### [HIGH] [authed] /shows/too-hot-to-handle/season/season-6 — the finale's multi-winner prize split is stated outright, four times — a spoiler under the site's own P0 definition
 - pass: 155 (commit 891a8bfe)
 - viewport: desktop
@@ -4147,7 +4180,7 @@
 - suggested fix: Give WHY THIS SLOT a distinct job — comparative context vs. the slot above/below it in the canon — rather than a condensed rehash of the paragraph it sits under. Scoped to `content/shows/masterchef/canon.md`.
 - source: browser (critique-pass-151, anon)
 
-### [MED] [anon] /shows/masterchef — `?view=canon` and `?view=community` set inconsistent canonical URLs for the same toggle page
+### [HIGH] [anon] /shows/masterchef — `?view=canon` and `?view=community` set inconsistent canonical URLs for the same toggle page
 - pass: 151 (commit f945f171)
 - viewport: desktop
 - category: seo
@@ -4155,6 +4188,7 @@
 - evidence: `?view=canon` → `<link rel="canonical" href="https://tiered.tv/shows/masterchef">`; `?view=community` → `<link rel="canonical" href="https://tiered.tv/shows/masterchef?view=community">`, `<title>MasterChef — community rank — tiered.tv</title>`.
 - suggested fix: Make `?view=community` also canonicalize to the clean base URL (or, if community rank deserves independent indexing, apply that consistently to both view states rather than just one). Likely a shared-component fix in the show-page canonical/metadata logic, not per-show content.
 - source: browser (critique-pass-151, anon)
+- confirmed systemic (2026-09-09, critique pass-156, authed): reproduced identically on `/shows/naked-and-afraid?view=community` — same `<link rel="canonical">`-includes-query-string bug, same `?view=canon` vs `?view=community` asymmetry. Two independent shows confirm this is a shared show-index canonical/metadata bug, not a masterchef-specific content issue — severity bumped MED → HIGH given it affects every show-index page's SEO, not one show.
 
 ### [LOW] [authed] /shows/selling-sunset/season/season-9?view=community — `?view=community` is a silent no-op on season-detail routes
 - pass: 151 (commit f945f171)
@@ -4164,6 +4198,7 @@
 - evidence: Diffed rendered body text of `/shows/selling-sunset/season/season-9?view=community` vs `/shows/selling-sunset/season/season-9` — identical. Confirmed via source: only `src/app/shows/[show]/page.tsx` and `CanonTabSwitch.tsx` read the `view` param; the season-detail route (`src/app/shows/[show]/season/[slug]/page.tsx`) does not.
 - suggested fix: Either implement a real community-vote pane on the season route for this param, or strip/ignore the param cleanly at the routing layer instead of leaving it as an inert query string readers might reasonably expect to do something.
 - source: browser (critique-pass-151, authed)
+- confirmed systemic (2026-09-09, critique pass-156, authed): reproduced identically on `/shows/vanderpump-rules/season/season-12?view=community` — byte-identical render with and without the param. Second confirmed instance of the season-detail route family never reading `view`; severity held at LOW (still no error, just an inert param) but scope confirmed component-level, not per-show.
 
 ### [MED] [anon] /shows/dragrace-allstars/season/season-11?view=community — the "eighteen queens, three six-queen brackets" fact is restated near-verbatim five times on one page
 - pass: 149 (commit 5d9e1f6f)
@@ -4381,7 +4416,7 @@
 - source: browser (critique-pass-141, anon)
 - resolved: 2026-08-24, cloud march tick, content-gap redirect per issue #758. Reworded `content/shows/survivor/seasons/50-survivor-50.md`'s `eyebrow` from "Aired spring 2026 · returning castaways only" to "Aired spring 2026 · all-returnee cast" — drops the ambiguous "only" qualifier while keeping the established "Aired <season> <year> · <detail>" pattern shared by every sibling Survivor season eyebrow. Verify gate green: fast gate (199 test files/3667 unit tests, content:check ok), build clean (1513/1513 static pages), e2e 4879/4879 passed (29.5m). Shipped at c592d9be.
 
-### [LOW] /shows/love-island-uk?view=community — mobile drops the 7D trend column while the page-level "voters, last 7 days" stat stays visible
+### [MED] /shows/love-island-uk?view=community — mobile drops the 7D trend column while the page-level "voters, last 7 days" stat stays visible
 - pass: 141 (commit 949a34d3)
 - viewport: mobile
 - category: mobile
@@ -4389,6 +4424,7 @@
 - evidence: Desktop table header: "RANK / SEASON / APPROVAL / % / 7D / VOTES". Mobile table header: "RANK / SEASON / APPR. % / VOTES" (no 7D column).
 - suggested fix: Either keep a compact 7D indicator in the mobile row layout, or rephrase the page-level stat label so it doesn't imply per-row detail exists when the table can't show it at this breakpoint.
 - source: browser (critique-pass-141, mobile, authed)
+- confirmed systemic (2026-09-09, critique pass-156, authed): reproduced identically on `/shows/naked-and-afraid?view=community` mobile — same shared `CommunityRankList` component dropping the 7D column at ≤640px. Related to the still-open pass-104 finding above (line ~27 of this section) on the same component losing disambiguating header context at the same breakpoint. Two confirmed instances plus one related component-context bug; severity bumped LOW → MED given the now-confirmed systemic, cross-show scope.
 
 ### [MED] /shows/amazing-race/season/season-38 — the meta description, the "Shape of the Season" body, and the "What to Watch For" bullets all restate the same two facts three ways
 - pass: 140 (commit 9cc9376a)
