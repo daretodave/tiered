@@ -11341,3 +11341,83 @@ last time a curator actually looked.
   frozen show (issue #762, not to be touched). No genuinely distinct
   three-show grounding found. No `content/themes/*.md` file written;
   no ledger row changed.
+- **2026-09-08, cloud `/march` tick (`/ship-content` Rule 3,
+  content-curator direct invocation): zero-ship.** Re-confirmed both
+  standing blockers fresh rather than trusting the brief's summary:
+  `plan/CADENCE.md`'s ninth full weekly sweep (2026-09-06) still reads
+  41 shows / 42 gap-slots, every row starred confirmed-but-unaired —
+  Rule 2 stays stalled. No ledger row clears the 90-day review floor
+  (`survivor-pillars` still the oldest `last_reviewed` at 2026-07-31).
+  Excluded `the-fix-stayed-after-the-season-left` and
+  `the-cast-outgrew-the-format` (both extended earlier today, commit
+  bb499ffd) from any further work this tick per the standing
+  instruction not to re-touch a list already extended same-day.
+  **Priority 1** (below-floor census): re-walked every `content/
+  themes/*.md` by entry/show count; every `tone`/`structure`/`craft`/
+  `era` row still clears the ≥3-distinct-show floor and sits at or
+  above the 10-entry range; no fresh headroom since the 2026-08-31
+  full census. **Priority 2** (freshly-touched season files): traced
+  today's other commits — `too-hot-to-handle/seasons/06-season-6.md`
+  (pass-155 spoiler-fix touch, no new facts added),
+  `american-ninja-warrior/seasons/18-the-tripleheader.md` (pass-154
+  host-name-spelling fix, no new facts), and yesterday's `a-way-back-
+  in` AGT S05 extend. Read `18-the-tripleheader.md` in full against a
+  fresh `show: american-ninja-warrior` grep across every theme file
+  and confirmed the season is now **completely drained**: the
+  three-region qualifying split + Tripleheader mechanic stakes
+  `the-finals-never-run-the-same-course-twice` rank 8, the all-racing
+  finals holding a second year stakes `the-fix-stayed-after-the-
+  season-left` rank 12 (today), and the new Women's Bonus Tournament
+  stakes `same-crown-new-price-tag` rank 17 (yesterday) — every
+  `watch_list` fact in the file is now staked somewhere. **Priority
+  3** (new-list invention): chased one genuinely fresh angle in real
+  depth before rejecting it. **Seeded returnee(s), not a branded
+  All-Stars event** — the specific device of blending one to three
+  known alumni into an otherwise all-new/rookie cast as a casting
+  frame, distinct from both `best-returnees` (full all-returnee
+  branded events) and from `the-fix-stayed-after-the-season-left`'s
+  mechanic-longevity thesis. Grounded four clean, previously-unstaked
+  hits on a `returning` sweep across every `content/shows/**/seasons/
+  *.md`: Survivor S23 South Pacific (two returning veterans anchor a
+  hero-vs-villain casting frame for an otherwise new 16-player cast —
+  confirmed via a full `show: survivor` grep across every theme file
+  that S23 has zero prior ledger appearances anywhere); Survivor S25
+  Philippines (three new tribes, each seeded with one returning player
+  whose prior run ended early — also zero prior ledger appearances);
+  Too Hot to Handle S06 (two alumni re-enter as new cast members, the
+  season's own file calls it "the franchise's first attempt at
+  crossover casting" — its only other ledger appearances stake the
+  prize-pool and final-season facts, not this one); and a softer
+  fourth, Big Brother S19 Den of Temptation (one returning houseguest
+  anchors the summer), which is textured into `the-twist-is-the-
+  format` rank 6's blurb but not staked there as the primary thesis
+  (that entry's stake is the goddess-statue mechanic). Chased five
+  more candidates for the same angle and rejected every one on
+  overlap: Ink Master S07 "Revenge" (8 rookies vs. 8 veterans), S11
+  "Grudge Match" (two veteran team captains), and S13 "Turf War" (four
+  veteran-led squads) are all already staked under this exact device
+  at `the-team-rule-never-makes-it-to-a-second-season` (ranks 4, 8,
+  10); Hell's Kitchen S18 "Rookies vs. Veterans" is already staked at
+  `one-rule-fills-every-seat` rank 10 with near-identical framing;
+  Chopped's various returning-champion blocks (S02, S03, S28, S40,
+  S45) are all already staked at `when-the-basket-became-a-bracket`
+  and/or `the-fix-stayed-after-the-season-left`. Also checked whether
+  Survivor S23 belongs on the existing `the-dividing-line-was-drawn-
+  before-day-one` (category: single) instead of a new list — rejected
+  as off-thesis: that list is specifically about splitting the *whole*
+  tribe by a trait before day one (brains/brawn/beauty, gender,
+  generation), and S23's device (two veteran anchors inside an
+  otherwise-undivided new cast) isn't a tribe split at all. Net: only
+  three distinct shows and four entries clear this angle cleanly —
+  short of a credible launch size (the catalog's practical floor for
+  a new cross-canon list runs 8–9 entries at minimum, per
+  `one-season-two-flags` and `the-vote-left-the-phone-line`). Logging
+  the four clean facts here (Survivor S23, Survivor S25, Too Hot to
+  Handle S06, and the softer Big Brother S19 lead) rather than forcing
+  a thin launch, so a future pass — ideally after a scout-assisted
+  sweep of shows this repo's season files don't cover in enough detail
+  (Drag Race, Amazing Race, MasterChef Australia all plausibly run
+  this device and came back empty on a text-only grep) — can extend
+  straight to a launch-ready list instead of re-deriving this search.
+  No `content/themes/*.md` file written or edited this pass; no
+  ledger row changed besides this note.
