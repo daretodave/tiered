@@ -3,7 +3,7 @@ show: alone
 number: 12
 slug: arctic-ii
 title: "The Arctic II"
-canonical_position: 11
+canonical_position: 12
 premiere_date: 2025-06-05
 location: "Northwest Territories, Canada"
 eyebrow: "Aired summer 2025 · Second Arctic run, Canadian subarctic"

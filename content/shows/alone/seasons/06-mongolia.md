@@ -3,7 +3,7 @@ show: alone
 number: 6
 slug: mongolia
 title: "Mongolia"
-canonical_position: 7
+canonical_position: 8
 premiere_date: 2019-06-06
 location: "Ulaan Taiga, Mongolia"
 eyebrow: "Aired summer 2019 · First solo Mongolia run, closing the no-host era"

@@ -3,7 +3,7 @@ show: alone
 number: 9
 slug: labrador
 title: "Labrador"
-canonical_position: 9
+canonical_position: 10
 premiere_date: 2022-06-09
 location: "Labrador, Newfoundland and Labrador, Canada"
 eyebrow: "Aired summer 2022 · First Labrador run, subarctic coastal Canada"

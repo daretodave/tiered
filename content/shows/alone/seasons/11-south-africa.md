@@ -3,7 +3,7 @@ show: alone
 number: 11
 slug: south-africa
 title: "South Africa"
-canonical_position: 5
+canonical_position: 6
 premiere_date: 2024-06-06
 location: "Northern Cape, South Africa"
 eyebrow: "Aired summer 2024 · First African location, arid Karoo terrain"

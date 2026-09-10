@@ -3,7 +3,7 @@ show: alone
 number: 8
 slug: northern-patagonia
 title: "Northern Patagonia"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2021-06-03
 location: "Northern Patagonia, Argentina"
 eyebrow: "Aired summer 2021 · Second Patagonia run, northern Argentine wilderness"

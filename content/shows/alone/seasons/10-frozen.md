@@ -3,7 +3,7 @@ show: alone
 number: 10
 slug: frozen
 title: "Frozen"
-canonical_position: 8
+canonical_position: 9
 premiere_date: 2023-06-08
 location: "Labrador, Newfoundland and Labrador, Canada"
 eyebrow: "Aired summer 2023 · Winter-survival format, Labrador in the cold"

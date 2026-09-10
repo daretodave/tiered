@@ -945,7 +945,6 @@ new-show creation is locked to the biweekly show-add clock.
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
 | below-deck | 12/13 | 1* |
-| alone | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
 | alone-australia | 3/4 | 1* |
 | the-challenge | 41/42 | 1* |
@@ -1070,6 +1069,29 @@ with `vanderpump-rules`, tie-broken alphabetically). See
 `plan/AUDIT.md` standing row for the twelve authored fragments.
 743 → 731 remaining corpus-wide. Next actionable Rule 2 check remains
 the weekly sweep, due 2026-08-30.
+
+**Finale-shift drain, 2026-09-10 tick (cloud march):** the phase-39
+finale gate fired on `alone` season 13 (finale "Worlds Apart" aired
+2026-09-09, confirmed 13-episode run per the 2026-09-04 CADENCE
+correction above). The season had never been filed — this was the
+starred `12/13, 1*` gap row above becoming actionable the moment the
+finale passed, the same pattern `rhoa` S17 and `married-at-first-
+sight` S20 hit. Filed `content/shows/alone/seasons/
+13-world-championship.md` (premiere 2026-06-17, 13 episodes,
+Richardson Mountains near Aklavik — the franchise's first
+internationally-cast season, ten survivalists from seven countries)
+and rebased `canon.md`: Season 13 inserted at rank 5 (ahead of
+Season 11's single-location first, on the strength of a casting-pool
+first rather than a location-only first; behind Season 5's returnee
+experiment), cascading ranks 5–12 → 6–13 across the eight affected
+season files' `canonical_position` and canon prose ordinals.
+`content/shows/alone.md` frontmatter `seasons: 12 → 13`, blurb count
+bumped. `content/calendar.yml`'s `alone` row flipped `scheduled →
+aired`. Gap table row removed below — `alone` fully drained at
+13/13, gap 41 shows/42 slots → 40 shows/41 slots. Spoiler discipline
+P0 held: the new season body and canon rationale cover casting scope
+and location only, no winner, elimination, or finale outcome named
+anywhere.
 
 ## Sweep notes (2026-08-09, fifth full pass)
 
