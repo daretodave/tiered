@@ -31,9 +31,10 @@ watch_list:
     body: "An eight-episode season, down from ten and twelve before it, closes out a staggered release with the expanded villa still sorting its final pairs."
 ---
 
-Nick Lachey hosts a fourth season, again in Tulum, Mexico. For
-the first time the pool leans hard on non-Netflix franchises:
-Married at First Sight Australia and Vanderpump Rules alums mix
-in alongside returning dating-show veterans. The mixer mechanic
-returns to keep re-entries in play, folding eliminated
-contestants back into the matching pool mid-season.
+Nick Lachey returns to Tulum for a fourth season, but the shape
+underneath the new faces has changed more than the cast list.
+Eight episodes is the tightest run yet — down from ten and
+twelve before it — while the villa itself grows to twenty, the
+biggest group the format has run. That squeeze compresses the
+mixer mechanic's usual rhythm: re-entries and new pairings now
+have less time to settle before the season closes out.

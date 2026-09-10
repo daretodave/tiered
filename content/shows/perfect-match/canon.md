@@ -74,17 +74,16 @@ solid season, just a notch below the two ahead of it.
 ## 4. Season 4
 
 tag: The broadest cast yet, but the shortest season — and the format's first real reach outside its own universe.
-slot_argument: Twenty contestants and franchises far outside Netflix's own dating shows — Married at First Sight Australia, Vanderpump Rules — fill the villa, while the episode count drops to eight, the format's tightest run.
+slot_argument: Season three's breadth-over-depth problem gets worse here — a bigger villa and a tighter episode count leave even less room for any match to develop before the season ends.
 community_rank_hint: rank=4 delta=0 sentiment=hold
 
-Season four lands last for two reasons that work against each
-other. The villa grows to twenty contestants, the biggest cast
-the show has run, but the episode count shrinks to eight — the
-shortest season yet, down from ten and twelve before it. That's
-less time to let the mixer mechanic's re-entries and new matches
-actually breathe. The casting also leans hardest yet on shows
-outside Netflix's own dating universe — Married at First Sight
-Australia and Vanderpump Rules alums join for name recognition
-the crossover premise used to generate on its own. It's not a bad
-season, but it reads like a format reaching outward for a spark
-it used to make in-house.
+Season four lands last because it inherits season three's
+breadth problem and adds a time squeeze on top. Season three at
+least had ten episodes to let its expanded door of newcomers and
+castoffs settle into real matches; season four's twenty-person
+villa gets only eight episodes to work with, the shortest run
+yet, leaving even less room for the mixer mechanic's re-entries
+to pay off before the season closes. It's not a bad season —
+Nick Lachey's hosting still keeps a growing structure legible —
+but it's the first time the format's expansion outpaces the time
+it gives itself to justify it.
