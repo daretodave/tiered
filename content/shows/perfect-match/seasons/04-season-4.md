@@ -10,6 +10,7 @@ ep_count: 8
 aired_year: 2026
 location: "Tulum, Mexico"
 host: "Nick Lachey"
+meta_description: "Nick Lachey hosts a fourth season in Tulum, Mexico, its villa filled for the first time with alumni from Married at First Sight Australia and Vanderpump Rules."
 cast_size: 20
 cast_size_caption: "The villa's biggest cast yet"
 format_changes: ["Episode count cut to eight", "Villa cast expanded to twenty", "First season casting heavily from non-Netflix-original franchises"]
