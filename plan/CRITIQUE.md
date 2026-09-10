@@ -4015,6 +4015,7 @@
 - evidence: "The familiar faces barely register against the premiere's own splashier twist — two leads, one first-night vote."
 - suggested fix: Research whether the two-lead premiere format was pre-announced in ABC's pre-season marketing (if so, reframe as a structural/format fact, matching the carve-out); if not confirmed pre-announced, drop the "twist" characterization entirely and describe only the casting fact (returning contestants folded into a new pool) that the list's own thesis needs. Content-only, `content/themes/too-few-to-call-it-all-stars.md`.
 - source: browser (critique-pass-156, anon, via Path A2)
+- RESOLVED (2026-09-10, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled (`plan/CADENCE.md` 41 shows/42 gap-slots all confirmed-but-unaired), Rule 3 idea space independently reconfirmed exhausted): scout-verified the two-lead/night-one-vote format was ABC-pre-announced on March 9, 2015 ("After the Final Rose" special), over two months before the May 18, 2015 premiere — ABC News itself covered it as pre-season news; only the vote's winner was withheld pre-air. Reframed the blurb from spoiler-coded "twist" language to a pre-announced structural-format fact, without naming the vote's outcome. Shipped at `60c99ed5`.
 
 ### [MED] [anon+authed] /shows/vanderpump-rules/season/season-12 — "the shape of the season" and "where it sits in the canon" restate the identical cast-turnover fact set near-verbatim
 - pass: 156 (commit ae289b02)
