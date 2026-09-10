@@ -63,14 +63,18 @@ export async function generateMetadata({
   // CRITIQUE pass 104/105 HIGH: the consolidated show page (phase 33)
   // renders two distinct views off one route via `?view=community`,
   // but metadata never varied by that param — every visitor to the
-  // community vote table got the canon page's title and a canonical
-  // pointing at the plain /shows/<slug> URL, describing content the
-  // page wasn't showing them. Self-referential per view.
+  // community vote table got the canon page's title, describing
+  // content the page wasn't showing them. Title/description vary by
+  // view; the canonical does not — pass 151/156 HIGH found the
+  // self-referential `?view=community` canonical conflicting with the
+  // canon branch's clean-URL canonical below, presenting crawlers two
+  // canonical documents for one client-side toggle state. Both
+  // branches now fold to the same clean base URL.
   if (sp.view === 'community') {
     return buildMetadata({
       title: `${show.name} — community rank`,
       description: `See how tiered.tv readers are voting on every ${show.name} season, no spoilers.`,
-      path: `/shows/${show.slug}?view=community`,
+      path: `/shows/${show.slug}`,
       image: `/shows/${show.slug}/opengraph-image`,
     })
   }

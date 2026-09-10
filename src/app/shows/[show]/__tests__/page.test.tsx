@@ -166,15 +166,20 @@ describe('generateMetadata — community view (?view=community)', () => {
     expect(meta.title).toBe('Survivor — community rank')
   })
 
-  it('points the community view canonical at the self-referential ?view=community URL', async () => {
+  // CRITIQUE pass 151/156 HIGH: a self-referential ?view=community
+  // canonical conflicted with the canon branch's clean-URL canonical,
+  // presenting crawlers two canonical documents for one client-side
+  // toggle state (confirmed systemic across masterchef and
+  // naked-and-afraid). The community view keeps its own title/
+  // description but now folds its canonical back to the clean base
+  // URL, matching the canon view.
+  it('folds the community view canonical back to the clean base URL, matching the canon view', async () => {
     getShowMock.mockReturnValue(makeShow({ slug: 'top-chef' }))
     const meta = await generateMetadata({
       params: { show: 'top-chef' },
       searchParams: Promise.resolve({ view: 'community' }),
     })
-    expect(meta.alternates?.canonical).toBe(
-      'https://tiered.tv/shows/top-chef?view=community',
-    )
+    expect(meta.alternates?.canonical).toBe('https://tiered.tv/shows/top-chef')
   })
 
   // CRITIQUE pass 107 MED: the pass-104/105 title/canonical fix above
