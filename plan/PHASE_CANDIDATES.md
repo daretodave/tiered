@@ -1224,6 +1224,18 @@ original 50-minute ceiling. No scope change to the fix; **49 days
 unpromoted since filing (07-22).** One green night doesn't retire
 this candidate, it just delays the next breach by a few nights.
 
+**Update (digest 2026-09-10):** the delay was one night. Tonight's run
+(34423020508, started 00:54:50Z) hit the standard 75-minute wall with
+`Running 10578 tests using 1 worker` (up from 10,012 the night of the
+green run), 8,724 of 10,578 completed (82.5%) at cutoff — the worst
+completion rate of the last five breaches, confirming last night's
+predicted ~700-test headroom was consumed almost immediately by
+normal catalog growth rather than marking a durable improvement. No
+scope change to the fix; **51 days unpromoted since filing (07-22).**
+The margin math from 09-09 held for exactly one night — the strongest
+evidence yet that this needs promotion before the next digest, not
+another reinforcement pass.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the

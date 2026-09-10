@@ -1,155 +1,147 @@
-# DIGEST — 2026-09-09
+# DIGEST — 2026-09-10
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-Another clean sweep: all 6 tracked `march` runs since yesterday's
-digest succeeded, zero crashes, zero self-heals. Rule 3 broke its own
-saturation ceiling for a day — a brand-new themed list,
-`too-few-to-call-it-all-stars` (10 entries, 9 shows), shipped mid-window
-— only for critique pass 156 to catch a spoiler-coded "twist" phrase
-in that same list's entry #03 a few hours later (filed as this pass's
-HIGH, same-day-adjacent rather than same-tick). Pass 156 also filed 2
-MED findings (a shape/canon near-duplicate on vanderpump-rules S12, an
-a11y heading-level slip on `/shows`) and reconfirmed 3 already-tracked
-systemic bugs on new pages. The other real story tonight is
-`e2e-full`: it broke its 3-night breach streak, finishing **green** in
-70m22s — but that's only ~5 minutes under the 75-minute wall, so the
-margin is thin, not a resolution. Content otherwise idled: Rule 2
-stayed fully stalled (41 shows/42 gap-slots, all confirmed-but-unaired)
-and Rule 3 zero-shipped twice after its one list-and-extend burst,
-falling back to draining the CRITIQUE.md Pending queue (a pass-155 MED
-pull-quote near-duplicate on too-hot-to-handle S06) when both primary
-rules had nothing left to give. Deploy is ready at HEAD (a0124937).
-Nothing needs a same-day fire drill.
+Six for six again: every tracked `march` run since yesterday's digest
+succeeded, zero crashes, zero self-heals. Content mixed a real
+season-fill with the usual redirect pattern — Alone Season 13 landed
+as a fresh season+canon insertion (it aired 2026-06-17 but was never
+authored, caught by the finale-gate), a themed-list extend
+(`one-season-two-flags`) picked it up same-window, and critique
+pass-156's HIGH spoiler finding (`too-few-to-call-it-all-stars` rank
+3) got scout-verified and reframed rather than gutted — the two-lead
+premiere format was ABC-pre-announced two months out, so only the
+"twist" framing needed to go, not the fact. `/expand` pass 70 filed
+one new candidate (#38, a spoiler-language heuristic for
+content-check) and reinforced two others. The one story that needs
+attention: **`e2e-full` broke its 3-night breach streak on 09-09
+(green, 70m22s, ~5min margin) and lost it again the very next
+night** — tonight's run completed only 82.5% before the 75-minute
+wall, the worst completion of the last five breaches. Candidate #34
+(shard the crawl) is now **51 days unpromoted**; the 09-09 green run's
+predicted ~700-test headroom lasted exactly one night. Deploy is
+ready at HEAD (7050cd87).
 
 ## While you were out
 
 | time (UTC) | commit | verb | outcome |
 |---|---|---|---|
-| 18:34 | 4b290aa7 / 0b3b90af | content / audit | fix pull-quote near-duplicate — too hot to handle S06 (critique pass-155 MED, content-gap redirect) |
-| 21:48–21:53 | bb499ffd / 7aece0b7 | content / audit | themed-list extend — the-cast-outgrew-the-format + the-fix-stayed-after-the-season-left |
-| 00:56 | a51f1a7d | audit | content-gap progress note — Rule 2 stalled, Rule 3 zero-ship (21st zero-ship pass) |
-| 02:34 | d65385b3 / edebabb7 | content / audit | rule-3 new list — too-few-to-call-it-all-stars (10 entries, 9 shows) |
-| 06:53 | ae289b02 | audit | content-gap progress note — Rule 2 stalled, Rule 3 zero-ship (second tick same day) |
-| 12:35 | a0124937 | critique | pass 156 — 3 findings (1 HIGH, 2 MED), 3 systemic confirmations |
+| 17:06 | 93860a98 | audit | content-gap progress note — Rule 2 stalled, Rule 3 zero-ship (third tick) |
+| 19:49 | 8b72f492 | audit | content-gap progress note — Rule 2 stalled, Rule 3 zero-ship (fourth tick) |
+| 22:09 | 9be68841 | expand | pass 70 — 1 candidate filed (#38, spoiler-language heuristic), 2 reinforced |
+| 01:01 | 54e9c167 / 432d6bee | content / audit | Alone S13 finale-shift — never-authored aired season inserted, canon rebased |
+| 06:00 | 60c99ed5 / d2aaae7f | content / critique | spoiler-language fix — too-few-to-call-it-all-stars rank 3 (pass-156 HIGH resolved) |
+| 10:35 | f4eb82d8 / 7050cd87 | content / audit | themed-list extend — one-season-two-flags picks up Alone S13 |
 
-6 of 6 tracked `march` runs since yesterday's digest (14:47 09-08
-through 12:35 09-09 UTC) succeeded — no crashes, no self-heals, every
+6 of 6 tracked `march` runs since yesterday's digest (16:52 09-09
+through 10:01 09-10 UTC) succeeded — no crashes, no self-heals, every
 tick shipped a real change (no no-op ticks logged this window).
 
 ## The saga
 
-**Rule 2 (season-fill drain):** stayed fully stalled — unchanged since
-the ninth weekly sweep (2026-09-06): all 41 gap-table rows (42
-gap-slots) confirmed-but-unaired, nothing drained, nothing new found.
-Next full sweep due 2026-09-13. `show-add` stays LOCKED.
+**Rule 2 (season-fill drain):** the CADENCE gap table itself stayed
+stalled all window (41 shows/42 gap-slots, all confirmed-but-unaired,
+next sweep due 2026-09-13) — but the finale-gate found separate,
+real work outside the gap table: Alone Season 13 aired 2026-06-17 and
+was never authored at all. Today's tick treated it as a fresh
+season+canon insertion (new season file, canon rebased to rank 13 at
+slot 5), the first non-drain-table season-fill in a while.
 
-**Rule 3 (themed lists):** the most active window in a while — one
-extension (`the-cast-outgrew-the-format` + `the-fix-stayed-after-the-
-season-left`, both gaining entries) and one brand-new list
-(`too-few-to-call-it-all-stars`, 10 entries across 9 shows), the first
-new list since issue #758's 181/181 saturation finding. Then two
-zero-ship ticks in a row as the fresh-angle search came up dry again
-(21st and 22nd zero-ship passes, per the progress notes) — so the
-saturation verdict holds outside of the one list this window produced.
-Catalog now **182/182** themes.
+**Rule 3 (themed lists):** quiet after last window's burst — one
+extend (`one-season-two-flags`, 9→10 entries, 9→10 shows, picking up
+the freshly-filed Alone S13 season) and two zero-ship ticks
+documenting an exhausted fresh-angle search before that. Catalog
+holds at **182/182** themes (extend, not new, so no net change).
 
-**Content-gap redirect:** with both primary rules quiet for most of
-the window, one tick pulled from the `/critique` Pending queue instead
-— the pass-155 MED pull-quote near-duplicate fix on too-hot-to-handle
-S06. Same weeks-long redirect pattern: mechanical fallback classes
-keep the dispatcher shipping real fixes while Rule 2 stays gated and
-Rule 3 mostly saturated.
+**Content-gap redirect:** with Rule 2's gap table locked and Rule 3's
+idea space reconfirmed exhausted twice, one tick pulled the highest-
+value target available — critique pass-156's unresolved HIGH spoiler
+finding. Scout research confirmed the two-lead Bachelorette S11
+premiere format was pre-announced by ABC two months before air, so
+the fix reframed the "twist" language as a disclosed structural fact
+instead of removing it outright — the spoiler-safe version of a
+format detail, per the P0 definition's own carve-out.
 
-**Notable cross-tick catch:** critique pass 156's HIGH finding flags
-`too-few-to-call-it-all-stars` — the list this very window's Rule-3
-tick shipped — for spoiler-coded "twist" language in its Bachelorette
-S11 entry. The list and its own defect both landed inside 26 hours;
-worth watching whether new-list Rule-3 ships need a same-tick voice
-self-check rather than waiting for the next critique pass to catch it.
-
-Catalog holds at **68 shows / 1049 seasons / 68 canons / 182 themes /
-3 legal docs** — seasons flat (Rule 2 stalled), themes +1 (Rule 3's
-one new list).
+Catalog holds at **68 shows / 1050 seasons / 68 canons / 182 themes /
+3 legal docs** — seasons +1 (Alone S13), themes flat (extend only).
 
 ## Queues now
 
-- **`plan/CRITIQUE.md`**: pass 156 (today) filed 3 new findings (1
-  HIGH voice/spoiler flag on the just-shipped `too-few-to-call-it-all-
-  stars` list, 2 MED — vanderpump-rules S12 shape/canon duplication,
-  `/shows` tier-heading a11y) and appended 3 confirming systemic
-  instances to already-tracked rows (masterchef's `?view=community`
-  canonical bug reproduced on naked-and-afraid, selling-sunset's
-  season-detail `?view=community` no-op reproduced on
-  vanderpump-rules, love-island-uk's mobile 7D-column drop reproduced
-  on naked-and-afraid — two of the three bumped severity given the
-  now-confirmed systemic scope). The 6 `[needs-user-call]` editorial-
-  judgment rows are unchanged (home compact-tile cap, `/shows` B-tier
-  sub-grouping — now cited on two more shows this pass, `/themes` stat
-  chip label, `/u/e2e` record scaffold, dynamic-vs-ISR caching split),
-  all still routed for `/oversight`, none auto-resolvable.
+- **`plan/CRITIQUE.md`**: pass 156's HIGH resolved this window,
+  leaving 2 MED findings Pending (vanderpump-rules S12 shape/canon
+  near-duplicate, `/shows` tier-heading a11y level). The 6
+  `[needs-user-call]` editorial-judgment rows are unchanged, still
+  routed for `/oversight`. **~26 hours and 9 commits have now passed
+  since pass 156 (a0124937, 09-09 12:35Z) with no pending HIGH** —
+  both critique-gate thresholds (24h / 12 commits, no-pending-HIGH)
+  are close to or past due; expect pass 157 on the next `march` tick.
 - **`plan/AUDIT.md`**: standing rows unchanged in count — the
-  season-fill STANDING ROW (MED, stalled since the 09-06 sweep), 2
-  HIGH (the-voice factual corruption issue #762, unchanged 32 days;
-  night.yml concurrency-starvation issue #763 — now **8 clean
-  night.yml runs in a row**, 09-01 through tonight), 1 MED
-  (e2e-full duration-ceiling — broke its 3-night breach streak
-  tonight, finishing green with only ~5 minutes of margin), 2 LOW
-  (SERP description budget; `YEAR_TENURE_RE` regex gap).
-- **`plan/PHASE_CANDIDATES.md`**: 28 candidates awaiting promotion
-  (correcting an undercount in recent digests). Candidate #34 (shard
-  e2e-full) got tonight's reinforcement update — the breach streak
-  broke, but the ~5-minute margin on a green run keeps the standing
-  recommendation unchanged; now **49 days unpromoted**. Candidate #35
-  (decouple night.yml's concurrency group) has gone 8 clean nights
-  with no new occurrence to reinforce.
+  season-fill STANDING ROW (MED, gap table stalled since 09-06), 2
+  HIGH (the-voice factual corruption issue #762, unchanged 33 days;
+  night.yml concurrency-starvation issue #763 — now **9 clean
+  night.yml runs in a row**), 1 MED (e2e-full duration-ceiling —
+  breach streak resumed after a one-night green outlier, worst
+  completion yet), 2 LOW (SERP description budget; `YEAR_TENURE_RE`
+  regex gap).
+- **`plan/PHASE_CANDIDATES.md`**: ~29 candidates awaiting promotion
+  (28 carried from yesterday + pass 70's new #38). Candidate #34
+  (shard e2e-full) got tonight's reinforcement — 82.5% completion,
+  the worst of the last five breaches, now **51 days unpromoted**.
+  Candidate #35 (decouple night.yml's concurrency group) has gone 9
+  clean nights with no new occurrence to reinforce.
 - **Open `triage:needs-user`**: 8 issues, unchanged — #762 and #763
   remain the two live ones needing an actual decision, both untouched
-  since 2026-08-08 (32 days).
+  since 2026-08-08 (33 days). #758 (content-gap dispatch starving
+  /iterate) picked up another same-day reconfirmation comment but no
+  state change.
 - **Open `triage:loop-queued`**: 4 issues (#636, #754, #785, #787) —
-  same set as recent digests. #636 (e2e-full tracking issue) is due
-  its next "Recurred" comment only if tomorrow breaches again.
+  same set as recent digests. #636 (e2e-full tracking issue) got its
+  41st "Recurred" comment tonight.
 
 ## Needs you
 
-1. **Two ready-to-apply workflow-file fixes, both roughly seven weeks
-   unpromoted, both blocked from cloud push** — candidate #34 (shard
-   the e2e-full crawl, 49 days) and candidate #35 (decouple night.yml's
-   concurrency group, 44 days at filing, quiet for 8 nights). Tonight's
-   green e2e-full run (70m22s, ~5 min under the 75-min wall) doesn't
-   change the recommendation — the margin is too thin for the catalog's
-   current growth trajectory to hold much longer.
-2. **the-voice factual corruption (issue #762) — 12 days to premiere.**
-   S22-29 stays frozen pending a human-reviewed 8-file renumbering fix.
-   The show's live frontmatter still reads `status: ended`; S30
-   premieres 2026-09-21 (NBC).
-3. **CRITIQUE.md Pending queue keeps growing slightly faster than the
-   content-gap redirect drains it this window** — pass 156 added 3 new
-   rows, only 1 pass-155 row was resolved. Not urgent on its own, but
-   worth naming since Rule 2/Rule 3 both spent most of the window idle
-   and the redirect only had bandwidth for one fix.
+1. **Candidate #34 (shard e2e-full) is now 51 days unpromoted, and
+   tonight's data is the strongest case yet.** The 09-09 green run's
+   own math predicted roughly 700 tests of headroom before the next
+   breach; tonight consumed that in a single night and finished at
+   82.5% — the worst completion of the last five breaches. This is a
+   `.github/workflows/e2e-full.yml` edit the cloud loop structurally
+   cannot push (no `workflows` OAuth scope). A local/`/oversight`
+   session is the only path to promotion.
+2. **the-voice factual corruption (issue #762) — 11 days to
+   premiere.** S22-29 stays frozen pending a human-reviewed 8-file
+   renumbering fix. The show's live frontmatter still reads
+   `status: ended`; S30 premieres 2026-09-21 (NBC).
+3. **Critique gate looks primed to fire on the next `march` tick** —
+   both time/commit thresholds are past due and pass 156's HIGH is
+   now resolved, clearing the last blocking condition. Nothing to
+   action, just a heads-up that pass 157 findings should show up in
+   tomorrow's pulse.
 
 ## Today's intent
 
-Content-gap ticks should keep pulling from CRITIQUE.md's Pending queue
-(now including pass 156's 3 fresh rows) while Rule 2 stays locked
-until the 2026-09-13 sweep and Rule 3 returns to its post-list lull.
-Top non-content finding: candidate #34 (shard e2e-full) is now 49 days
-unpromoted, and tonight's green run — despite breaking the breach
-streak — only reinforces that the fix is needed soon rather than
-resolving the underlying issue.
+Content-gap ticks should keep working the CRITIQUE.md Pending queue
+(2 MED rows left from pass 156) once pass 157 files its own findings,
+while Rule 2 stays locked until the 2026-09-13 sweep and Rule 3 sits
+in its post-extend lull. Top non-content finding, unchanged in kind
+but sharper in evidence: candidate #34 (shard e2e-full) at 51 days
+unpromoted is no longer a slow-burn signal — tonight's worst-yet
+completion rate argues for promotion before the next digest, not
+another reinforcement pass.
 
 ## Tuning proposals
 
 No new candidates filed tonight. One reinforcement update: candidate
-#34 got tonight's green-run data point (70m22s, ~5 min margin under
-the 75-min wall) appended directly to its existing write-up in
-`plan/PHASE_CANDIDATES.md` — this is evidence-gathering on an
-already-filed, already-unpromoted candidate, not a new proposal. No
-gate mistuning observed otherwise: critique fired on schedule (pass
-156, including catching a same-window Rule-3 list's spoiler-coded
-phrasing), the content-gap redirect handled the dual-stall gap as
-designed, and all 6 march runs finished clean with zero no-ops.
+#34 got tonight's breach data (82.5% completion, worst of the last
+five) appended directly to its existing write-up in
+`plan/PHASE_CANDIDATES.md`, plus a matching continuity update to the
+source row in `plan/AUDIT.md` (which had missed logging 09-08's
+breach explicitly — folded in retroactively this tick). This is
+evidence-gathering on an already-filed, already-unpromoted candidate,
+not a new proposal. No gate mistuning observed otherwise: `/expand`
+fired on schedule (pass 70), the content-gap redirect handled the
+dual-stall gap as designed, and all 6 march runs finished clean with
+zero no-ops.
