@@ -1,13 +1,13 @@
 ---
 slug: one-season-two-flags
 title: "One season, two flags"
-description: "Most competition formats stay inside one country's casting pool without ever spelling out why. These nine seasons broke that habit on purpose — splitting the cast along a national line, or importing a whole roster from a sibling edition, for exactly one run."
-tagline: "A show's casting call usually stays inside its own borders by default, not by rule. <b>These are the seasons that broke that default on purpose — one national divide or one borrowed roster, structural for exactly one run and never repeated the same way twice.</b>"
+description: "Most competition formats stay inside one country's casting pool without ever spelling out why. Ten seasons broke that habit on purpose — a national-line split, an imported roster, or a genuinely global field, for exactly one run."
+tagline: "A show's casting call usually stays inside its own borders by default, not by rule. <b>These are the seasons that broke that default on purpose — one national divide, one borrowed roster, or one global field, structural for exactly one run and never repeated the same way twice.</b>"
 category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-09-10
 featured: false
 related:
   - familiar-faces-wrong-franchise
@@ -55,16 +55,22 @@ entries:
     rank: 7
     title: "An American Dream theme staffed by a genuinely international brigade, not just American hopefuls."
     blurb: "Eighteen chefs from well outside the usual domestic pool cook under a theme explicitly about American opportunity, in the show's last California-based season. The contrast between the theme and the cast's range does real editorial work."
+  - show: alone
+    season: 13
+    season_label: "S13 · World Championship"
+    rank: 8
+    title: "The solo-survival format opens its casting pool past North America for the first time."
+    blurb: "Ten survivalists from seven countries replace the usual domestic-only field — no national-line split, no imported roster, just the show's casting call finally going global for one run. A new stretch of Arctic terrain comes with it."
   - show: perfect-match
     season: 4
     season_label: "S04"
-    rank: 8
+    rank: 9
     title: "The crossover pool finally reaches past America's own dating shows into an international one."
     blurb: "Three seasons of pulling alumni from Love Is Blind and Too Hot to Handle give way to a fourth that also recruits from Married at First Sight Australia and Vanderpump Rules. Eight episodes, the shortest run yet, hold the villa's biggest cast."
   - show: bachelor-in-paradise
     season: 5
     season_label: "S05"
-    rank: 9
+    rank: 10
     title: "A Winter-Games-style crossover folds in whole delegations from three sibling international editions at once."
     blurb: "Contestants from Bachelorette Canada, Bachelor New Zealand, and Bachelor Japan join the domestic cast in a Winter-Games-style crossover, an import the spinoff never repeated. Nineteen arrive day one, with sixteen more staggering in later."
 ---
