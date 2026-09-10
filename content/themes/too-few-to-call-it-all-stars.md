@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-09-09
+last_revised: 2026-09-10
 featured: false
 related:
   - the-fix-stayed-after-the-season-left
@@ -30,7 +30,7 @@ entries:
     season_label: "S11 · Kaitlyn Bristowe"
     rank: 3
     title: "A new suitor pool, with a couple of names fans already know."
-    blurb: "Kaitlyn Bristowe's season fills its pool with twenty-five men and folds in one or two who'd already competed on an earlier Bachelor or Bachelorette. The familiar faces barely register against the premiere's own splashier twist — two leads, one first-night vote."
+    blurb: "Kaitlyn Bristowe's season fills its pool with twenty-five men and folds in one or two who'd already competed on an earlier Bachelor or Bachelorette. The familiar faces register less than the premiere's real draw — ABC's pre-announced dual-lead format, settled by a night-one vote."
   - show: big-brother
     season: 19
     season_label: "S19 · Den of Temptation"
