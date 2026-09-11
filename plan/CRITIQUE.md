@@ -1,8 +1,34 @@
 # CRITIQUE
 
-> Last pass: 2026-09-09 at commit ae289b02
-> Pass count: 156
+> Last pass: 2026-09-11 at commit 51312421
+> Pass count: 157
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 157 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/married-at-first-sight/season/seattle`,
+> `/shows/big-brother/season/a-summer-of-mystery`, `/themes`,
+> `/themes/who-actually-got-the-vote` anon; `/sign-in`, `/u/e2e`,
+> `/shows/married-at-first-sight/season/seattle?view=community`,
+> `/shows/american-idol?view=community` authed. Both passes came back
+> clean on auth/console/mobile-overflow mechanics (0 console errors, 0
+> failed requests, 0 horizontal overflow at 375px, no spoiler leaks).
+> 1 new finding filed (MED) — married-at-first-sight Season 20's three
+> headline facts (Seattle location, largest-ever cast, two-expert panel)
+> restated near-verbatim across five sections, the same repetition class
+> drained across dozens of other shows but not yet reached this one. One
+> further candidate (american-idol's community-table "APPROVAL (canon
+> order)" / bare "%" header reading as disconnected fragments) reproduced
+> the already-open pass-155 chopped finding on the desktop viewport this
+> time, not just mobile — appended as a confirming instance instead of a
+> duplicate row, per §5 dedup rule, and bumped LOW → MED given the
+> confusion is no longer purely a mobile-breakpoint issue. `/sign-in`
+> again correctly redirected the signed-in visitor to `/` (reconfirmed,
+> not a bug — matches every prior pass's finding). Auth handshake
+> confirmed live (authenticated:cloud). No pending HIGH findings remain
+> open ahead of this pass; the site continues to read clean on the P0
+> spoiler check.
 > Pass 156 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4007,6 +4033,15 @@
 
 ## Pending
 
+### [MED] [anon+authed] /shows/married-at-first-sight/season/seattle — the season's three headline facts are restated near-verbatim across five separate sections
+- pass: 157 (commit 51312421)
+- viewport: desktop
+- category: voice
+- observation: The same three facts — first-ever Seattle filming location, largest cast in show history (seven couples vs. the recent five), and the expert panel cut from three to two (Paul C. Brunson and Dr. Lisa Paz taking over) — are restated in near-identical order and phrasing across the eyebrow, the lede, "THE TAKE," "THE SHAPE OF THE SEASON," and "WHERE IT SITS IN THE CANON." A reader who finishes the lede gets no new information from any of the four sections that follow it. Same repetition class already drained across dozens of shows (dancing-with-the-stars, shark-tank, the-voice, chopped, below-deck-mediterranean, perfect-match, amazing-race, and others); not yet reached this show/season.
+- evidence: Eyebrow: "FIRST-EVER SEATTLE SEASON, THE SHOW'S LARGEST CAST." Lede: "Season 20 is the first to film in Seattle, and it fields the largest cast in the show's history — seven couples instead of the recent five. The expert panel is rebuilt from three to two, with Paul C. Brunson and Dr. Lisa Paz taking over the matching process." THE TAKE: "Seven couples, two experts, one new city — Seattle stacks more format change than the show has tried since it left New York for the first time." WHERE IT SITS IN THE CANON: "Two experts instead of three... Seven couples, the largest cast the show has fielded... Add a first-ever Seattle season..."
+- suggested fix: Keep the lede as the single fact summary; rewrite "THE TAKE" and "WHERE IT SITS IN THE CANON" to add editorial judgment (pacing, tone, how the format change plays out) or argue the canon-slot comparison against an adjacent season, rather than re-listing the same three facts a third and fourth time. Content-only, `content/shows/married-at-first-sight/seasons/20-seattle.md` (+ `canon.md` Season 20 rationale for the canon-slot section).
+- source: browser (critique-pass-157, anon lede/shape overlap + authed full 5-way confirmation, via Path A2)
+
 ### [HIGH] [anon] /themes/too-few-to-call-it-all-stars — entry #03 names and characterizes a season's premiere-night plot twist
 - pass: 156 (commit ae289b02)
 - viewport: desktop
@@ -4055,7 +4090,7 @@
 - source: browser (critique-pass-155, authed)
 - RESOLVED (2026-09-08, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled (`plan/CADENCE.md`'s 41 shows/42 gap-slots all confirmed-but-unaired), Rule 3 not review-due (oldest `last_reviewed` 2026-07-18, well inside the 90-day window)): rewrote `pull` to "Six seasons of protecting a couple's money by staying apart, flipped for stretches of the season into protecting it by staying close." — states the actual behavioral consequence of the Bad Lana inversion (a distinct fact from take_h2's terse header and from format_caption's already-owned "AI inverts the rule" mechanic), format/structural detail only, no outcome or plot beat. Full verify gate green (fast gate 199/199 test files, 3683/3683 tests, content:check ok — 68 shows/1049 seasons/68 canons/181 themes/3 legal docs; build clean, 1515 static pages; e2e 4885/4885 passed, 32.3m). Shipped at `4b290aa7`.
 
-### [LOW] [authed] /shows/chopped?view=community — the mobile header drops the "(canon order)" qualifier, leaving 0% approval rows with no context
+### [MED] [authed] /shows/chopped?view=community — the mobile header drops the "(canon order)" qualifier, leaving 0% approval rows with no context
 - pass: 155 (commit 891a8bfe)
 - viewport: mobile
 - category: comprehension
@@ -4063,6 +4098,7 @@
 - evidence: `src/styles/canon.css` — desktop: `Approval` + `<span className="col-bar-note"> (canon order)</span>` inside `.col-bar`; mobile media query (max-width: 640px) hides `.col-bar` and shows `.col-pct-mobile-label` ("Appr. ") with no equivalent qualifier.
 - suggested fix: Add a compact mobile-only qualifier near `.col-pct-mobile-label` (e.g. "Appr. (canon) %") when `source !== 'votes'`, mirroring the desktop `.col-bar-note` logic in `CommunityRankList.tsx`. Consider resolving alongside the pass-141 7D-column row since both are the same component/breakpoint losing context.
 - source: browser (critique-pass-155, authed)
+- confirmed systemic (2026-09-11, critique pass-157, authed): reproduced on desktop this time — `/shows/american-idol?view=community`'s header renders as "APPROVAL (canon order)" immediately followed by a bare "%", reading as two disconnected fragments even on the viewport where the qualifier is present, especially with every row at 0% (no votes yet). Same shared `CommunityRankList` header confusion is not purely a mobile-breakpoint problem — it's the underlying header composition being unclear on both viewports. Severity bumped LOW → MED given the confusion now confirmed on the viewport that was assumed to be the "working" reference case.
 
 ### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the "three named qualifying regions" fact is restated near-verbatim across six sections
 - pass: 154 (commit 91a26c8e)
