@@ -1236,6 +1236,17 @@ The margin math from 09-09 held for exactly one night — the strongest
 evidence yet that this needs promotion before the next digest, not
 another reinforcement pass.
 
+**Update (digest 2026-09-11):** still breaching, but not worsening —
+tonight's run (34548135786, started 00:53:24Z) hit the standard
+75-minute wall with `Running 10586 tests using 1 worker` (up from
+10,578), 9,232 of 10,586 completed (87.2%) at cutoff — better
+completion than 09-10's 82.5% low, closer to the 09-07/09-08 range,
+but still a full breach with zero test-quality regression. No scope
+change to the fix; **52 days unpromoted since filing (07-22).** Six
+of the last seven nights (09-06 through 09-11, only 09-09 green) have
+now breached the wall — the pattern is stable, not improving; still
+the standing `/oversight` recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
