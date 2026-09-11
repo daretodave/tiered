@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-09-07
+last_revised: 2026-09-11
 featured: false
 related:
   - best-challenge-design
@@ -91,22 +91,28 @@ entries:
     rank: 13
     title: "A judge-picked Wildcard Lottery brings one eliminated queen back for one last shot before the finale."
     blurb: "Unlike the season-long ladders of earlier All Stars runs, this format saves its comeback chance for one pre-finale twist, decided by judge vote instead of a competition among the eliminated — the mechanic still finding new shapes at the franchise's biggest scale."
+  - show: project-runway
+    season: 22
+    season_label: "S22 · New York"
+    rank: 14
+    title: "A new 'Siriano Save' lets the mentor, not the judges or the cast, pick one eliminated designer's way back in."
+    blurb: "Christian Siriano gets a direct hand in who stays, reclaiming one eliminated designer back into the workroom alongside a double-elimination episode. Unlike this list's earned or voted comebacks, the Save is one mentor's call — a single reclaim, no competition required."
   - show: dragrace
     season: 18
     season_label: "S18"
-    rank: 14
+    rank: 15
     title: "A rebuilt finale hands the whole eliminated cast one last shot at the crown."
     blurb: "Season eighteen scraps the usual top-two lip sync and runs a full tournament for everyone the show already sent home, right before the final round. Nearly the entire cast gets a genuine route back into contention at the season's biggest moment."
   - show: americas-got-talent
     season: 21
     season_label: "S21"
-    rank: 15
+    rank: 16
     title: "A new Judges' Callbacks round gives select acts a second chance at reaching the live shows."
     blurb: "The same four-judge panel returns for year two, but a new mechanic sits underneath it — acts that don't clear an earlier round outright can get pulled back for one more shot at the judges before the live-show cutoff arrives."
   - show: americas-got-talent
     season: 5
     season_label: "S05"
-    rank: 16
+    rank: 17
     title: "A Wildcard quarterfinal opens a path back for cut acts"
     blurb: "Season five debuts a Wildcard quarterfinal where each judge brings back about four eliminated acts for another shot, plus a new YouTube-submission quarterfinal — the founding panel's first structural route back into the competition."
 ---
