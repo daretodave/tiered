@@ -33,6 +33,24 @@ cross-checked against this pass's scout findings — **all reconfirmed
 accurate, no new genuine gap found, nothing drained.** Gap table unchanged at
 41 shows / 42 gap-slots.
 
+**Rule 2 drain, 2026-09-11 tick (cloud march, finale-gate-triggered):**
+`project-runway` S22's finale (confirmed aired 2026-09-10 via
+`content/calendar.yml`) transitioned the show's starred `21/22, 1*`
+row from confirmed-but-unaired to genuinely filed. Season 22 (22
+designers — the largest cast in franchise history, Tyra Banks
+joining the judges' table alongside returning Nina Garcia and Law
+Roach, a new "Siriano Save" mentor-reclaim mechanic, a Season 21
+alumni crossover episode) drained; `canon.md` fully rebased —
+Season 22 inserted at rank 6 (strong on cast/judges/format per the
+show's own methodology, but ranked below Season 9's proven
+rewatch value since a freshly aired season hasn't earned that yet),
+every shifted season's `canonical_position` rewritten to match
+(verified unbroken 1–22 sequence). `era_bands`' `freeform-era`
+[2025, 2026] already covered the air date, no widening needed. Show
+frontmatter `seasons` bumped 21→22, blurb count updated. Gap table
+row removed — show fully drained. **40 shows / 41 gap-slots
+remaining.**
+
 **One flagged uncertainty resolved.** `below-deck-mediterranean` S11's finale
 date (carried at 2026-09-14 since the 2026-08-23 sweep, flagged uncertain by
 the 2026-08-30 sweep against a conflicting 18-episode/Oct-5 read) is now
@@ -950,7 +968,6 @@ new-show creation is locked to the biweekly show-add clock.
 | the-challenge | 41/42 | 1* |
 | big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
-| project-runway | 21/22 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
 | hells-kitchen | 24/26 | 2* |
