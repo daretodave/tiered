@@ -48,7 +48,7 @@ entries:
     season_label: "S01 · Vancouver Island I"
     rank: 6
     title: "The founding shoot proved the wilderness could carry the whole show"
-    blurb: "Quatsino Sound's cold, wet terrain set the survival math before any other season existed for comparison. Every harsher location the franchise chased later — Arctic cold, southern-hemisphere winter, desert heat — is still judged by the bar this founding shoot set first."
+    blurb: "Quatsino Sound's cold, wet terrain set the survival math before any other season existed for comparison. Every harsher location the franchise chased later — Arctic cold, southern-hemisphere winter, desert heat — is still judged by the bar this original season set first."
   - show: alone-australia
     season: 1
     season_label: "S01 · South West Tasmania"

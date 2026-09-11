@@ -66,7 +66,7 @@ entries:
     season_label: "S02 · Western Australia"
     rank: 9
     title: "Ningaloo Reef trades marina glamour for the franchise's most remote water yet."
-    blurb: "Season two moves the franchise to Western Australia's Ningaloo Reef — the franchise's most remote charter yet — trading the Whitsundays' tourist infrastructure for longer open-water passages and fewer port calls. The isolation sets the register before the first guest boards."
+    blurb: "Season two moves the franchise off Western Australia's remote northwest coast, trading the Whitsundays' tourist infrastructure for longer open-water passages and fewer port calls. The isolation of this new charter ground sets the season's register before the first guest boards."
   - show: alone-australia
     season: 2
     season_label: "S02 · Fiordland"

@@ -18,7 +18,7 @@ entries:
     season_label: "S01 · New York"
     rank: 1
     title: "The experts finish the whole decision before the couple says hello."
-    blurb: "New York hands the whole decision to a panel of relationship experts — matched, legally married, and only then allowed to talk. No format on this list hands over more control before the couple has said a word."
+    blurb: "New York hands the entire process to a panel of relationship experts — matched, legally married, and only then allowed to talk. No format on this list hands over more control before the couple has said a word."
   - show: married-at-first-sight-australia
     season: 12
     season_label: "S12"

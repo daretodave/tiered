@@ -19,7 +19,7 @@ entries:
     season_label: "S01"
     rank: 1
     title: "A rate-and-block debut tests three separate episode drops instead of one"
-    blurb: "Season one splits its twelve episodes into three release drops instead of a single weekly episode or a one-day dump — an early, tentative version of the batch-release rhythm the show settles into a season later."
+    blurb: "Season one splits its twelve episodes into three distinct release batches rather than a single weekly episode or a one-day dump, staggering the premiere across multiple dates — an early, tentative version of the rhythm the show settles into permanently one season later."
   - show: the-circle
     season: 2
     season_label: "S02"

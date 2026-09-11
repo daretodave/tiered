@@ -48,7 +48,7 @@ entries:
     season_label: "S01 · The Debut"
     rank: 6
     title: "The panel critique became the real climax, not the photos"
-    blurb: "The debut cycle drafted the grammar every modeling competition since has borrowed — a photoshoot that mostly exists to generate a reaction, and a panel critique that carries the episode's actual weight."
+    blurb: "The debut cycle drafted the grammar every modeling competition since has borrowed — a photoshoot that mostly exists to generate a reaction, and a judging round that carries the episode's actual weight."
   - show: americas-got-talent
     season: 1
     season_label: "S01 · The Debut"

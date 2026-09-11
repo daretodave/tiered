@@ -54,7 +54,7 @@ entries:
     season_label: "S10 · Return of the Masters"
     rank: 7
     title: "Spike becomes Paramount Network mid-run, and nothing else about the season moves."
-    blurb: "Ink Master's tenth season opens on Spike and closes on the freshly renamed Paramount Network, with Dave Navarro hosting straight through the handoff. The season's new team format arrives on its own terms, unrelated to the channel's name change."
+    blurb: "Ink Master's tenth season opens on Spike and wraps after a corporate rebrand renames the channel mid-run. Dave Navarro hosts straight through, without any break in the handoff. The season's new team format arrives on its own terms, its rollout entirely unrelated to the rebrand."
   - show: americas-next-top-model
     season: 6
     season_label: "S06 · The Network Finale"

@@ -90,5 +90,5 @@ entries:
     season_label: "S59"
     rank: 13
     title: "Former champions leave the audience and step back in as the finale's sous chefs."
-    blurb: "A five-episode Legends tournament brings past champions back into the kitchen, not to cook against the field again but to assist the finalists as sous chefs under the clock. A support role built from the season's own history, not a rematch."
+    blurb: "A five-episode Legends tournament brings past champions back into the kitchen, not to cook against the field again but to assist the finalists as extra hands under the clock. A support role built from the season's own history, not a rematch."
 ---

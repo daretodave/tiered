@@ -72,5 +72,5 @@ entries:
     season_label: "S05"
     rank: 10
     title: "A Winter-Games-style crossover folds in whole delegations from three sibling international editions at once."
-    blurb: "Contestants from Bachelorette Canada, Bachelor New Zealand, and Bachelor Japan join the domestic cast in a Winter-Games-style crossover, an import the spinoff never repeated. Nineteen arrive day one, with sixteen more staggering in later."
+    blurb: "Contestants from Bachelorette Canada, Bachelor New Zealand, and Bachelor Japan join the domestic cast for a one-time event styled after the Winter Games, pulling in entire casts from three overseas franchises in a move the spinoff never repeated. Nineteen arrive day one."
 ---

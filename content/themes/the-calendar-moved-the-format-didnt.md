@@ -48,5 +48,5 @@ entries:
     season_label: "S05"
     rank: 6
     title: "The format's first winter premiere, years before it becomes a pattern"
-    blurb: "The first four seasons all premiere in late spring or summer. Season five moves to a January debut instead, the format's first winter slot — seven years before Season 14 revisits the idea. The brigade, the pass, and the block run exactly as built."
+    blurb: "The first four seasons all premiere in late spring or summer. Season five instead moves to a January debut, the show's earliest cold-weather slot yet — seven years ahead of Season 14, which later revisits the idea. The brigade, the pass, and the block run exactly as built."
 ---

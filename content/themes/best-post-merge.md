@@ -90,7 +90,7 @@ entries:
     season_label: "S25 · Free Agents"
     rank: 13
     title: "A weekly vote-out sharpens as the solo field narrows toward the finish."
-    blurb: "Every player runs solo, with a weekly vote-out sending someone into a head-to-head elimination match. As the field narrows, late missions hold on individual endurance the format rarely affords elsewhere — the mechanic the franchise leaned on for years after."
+    blurb: "Every player competes solo, and one person is voted out each week before facing a rival in a head-to-head elimination match to survive. With fewer competitors left as the season goes on, late missions lean harder on individual endurance than the format usually allows."
   - show: top-chef
     season: 4
     season_label: "S04 · Chicago"

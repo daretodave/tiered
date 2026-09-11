@@ -24,7 +24,7 @@ entries:
     season_label: "S04 · Pairs"
     rank: 2
     title: "Ten solo survivalists become seven two-person teams, a premise swap the format only tries once."
-    blurb: "Season four drops seven pairs into Quatsino Sound instead of the usual lone competitors, sharing the isolation the format is built on. The show returns to solo survivalists the very next season and never revisits teams."
+    blurb: "Season four drops seven pairs into Quatsino Sound instead of the usual lone competitors, sharing the isolation the format is built on. The show returns to individual survivalists the very next season and never revisits teams."
   - show: big-brother
     season: 9
     season_label: "S09 · The Winter Couples"

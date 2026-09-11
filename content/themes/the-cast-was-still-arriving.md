@@ -78,5 +78,5 @@ entries:
     season_label: "S17 · Denver"
     rank: 11
     title: "The blind-marriage format's first mid-experiment swap arrives sixteen seasons in"
-    blurb: "After sixteen seasons of locking every couple in from day one, Denver breaks the pattern: when one bride's match doesn't work out, production pairs her groom with a brand-new participant partway through the experiment already underway."
+    blurb: "After sixteen prior installments of locking every couple in from day one, Denver breaks the established pattern: when one bride's match doesn't work out, production pairs her groom with a brand-new participant partway through an experiment already underway."
 ---

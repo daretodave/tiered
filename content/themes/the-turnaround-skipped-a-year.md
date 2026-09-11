@@ -36,7 +36,7 @@ entries:
     season_label: "S10"
     rank: 4
     title: "The same host's first summer closes the tightest same-host turnaround here"
-    blurb: "Series 10 marks Maya Jama's first summer edition, arriving just 140 days after her winter debut as the format settles into its mature modern shape. No other pair in this list moves the same host between editions this fast."
+    blurb: "Series 10 marks Maya Jama's summer debut, arriving just 140 days after her winter debut as the format settles into its mature modern shape. No other pair in this list moves the same host between editions this fast."
   - show: the-circle
     season: 6
     season_label: "S06"

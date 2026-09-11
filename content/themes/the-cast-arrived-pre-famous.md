@@ -60,7 +60,7 @@ entries:
     season_label: "S05"
     rank: 8
     title: "A contestant walks in already carrying his family's boxing fame instead of a modeling portfolio."
-    blurb: "Tommy Fury enters the show's biggest-rated original-era summer with a public profile carried over from his family's boxing career — an early signal of the villa's later shift toward already-recognizable casting."
+    blurb: "Tommy Fury enters the show's biggest-rated original-era summer already known to viewers, his public profile rooted in the Fury name and its history in the boxing ring rather than modeling work. It's an early signal of the villa's later shift toward already-recognizable casting."
   - show: selling-sunset
     season: 6
     season_label: "S06"

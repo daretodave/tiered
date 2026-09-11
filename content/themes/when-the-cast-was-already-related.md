@@ -89,7 +89,7 @@ entries:
     season_label: "S15 · The Fashion Pivot"
     rank: 13
     title: "Eight cycles later, a second sibling pair joins a season staged around reinvention."
-    blurb: "Cycle fifteen's overhaul of the prize package and its all-Italy shoot arrive alongside a quieter first: the show's second-ever sibling pair, the first since Cycle seven put real family stakes back into the cast."
+    blurb: "Cycle fifteen's overhaul of the prize package and its all-Italy shoot arrive alongside a quieter first: the show's second-ever pair of siblings, the first since Cycle seven put real family stakes back into the cast."
   - show: top-chef
     season: 23
     season_label: "S23 · Carolinas"

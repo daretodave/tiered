@@ -72,7 +72,7 @@ entries:
     season_label: "S31"
     rank: 10
     title: "Fifteen years of network broadcast end with a quiet move to streaming."
-    blurb: "Dancing with the Stars leaves ABC's schedule for Disney+, ending a decade and a half as a network broadcast staple. The format itself barely changes — only the screen it reaches viewers on does."
+    blurb: "Dancing with the Stars leaves ABC's schedule for Disney+, closing out a decade and a half as a broadcast-television fixture ahead of its streaming-era handoff. The format itself hardly changes — only the screen audiences use to catch it each week does."
   - show: americas-next-top-model
     season: 23
     season_label: "S23"

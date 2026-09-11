@@ -79,7 +79,7 @@ entries:
     season_label: "S17 · All Stars"
     rank: 11
     title: "Sixteen black-jacket winners come back and raise the floor, not just the stakes."
-    blurb: "Sixteen previous black-jacket winners return for the franchise's first all-star edition, every one of them already fluent in the format. The risk was a flatter, meltdown-light season; instead the cooking sharpens and the field runs tighter than any cast before it."
+    blurb: "Sixteen former champions return for the franchise's first all-star edition, each one already fluent in the format's rhythms. The risk was a flatter, meltdown-light season; instead the cooking sharpens and the field runs tighter than any cast before it."
   - show: rhoc
     season: 19
     season_label: "S19"

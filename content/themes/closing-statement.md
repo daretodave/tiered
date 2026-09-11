@@ -24,7 +24,7 @@ entries:
     season_label: "S06 · The Final Season"
     rank: 2
     title: "All seven roommates come home for one last summer, and the title says exactly what it is."
-    blurb: "MTV brings the original cast back to Seaside Heights for a victory lap instead of a reinvention. Thirteen episodes, the same seven roommates, and a season that knows going in it's the last one."
+    blurb: "MTV brings the original cast back to Seaside Heights for a victory lap instead of a reinvention, reuniting all seven original roommates under one roof again. Thirteen episodes run through one more summer together, and the season knows going in that it's the last one."
   - show: too-hot-to-handle
     season: 6
     season_label: "S06"

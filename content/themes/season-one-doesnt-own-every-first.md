@@ -36,7 +36,7 @@ entries:
     season_label: "S06"
     rank: 4
     title: "A same-sex couple appears on the beach, and the rose ceremony bends to fit."
-    blurb: "Six seasons in, Paradise welcomes its first pairing outside the usual man-woman roster, and producers rework the rose ceremony so each half of every pair distributes its own roses in a designated week. A format anchored to one ceremony finds room to hold two."
+    blurb: "Six seasons in, Paradise welcomes its first pairing outside the show's usual man-woman roster, and producers rework the flower-giving ceremony so each half of the couple distributes its own during a designated week rather than sharing one distribution."
   - show: bachelor
     season: 18
     season_label: "S18 · Juan Pablo Galavis"

@@ -61,7 +61,7 @@ entries:
     season_label: "S22"
     rank: 8
     title: "A judge's real goodbye gives the closing episodes an occasion the format hadn't earned on its own."
-    blurb: "Katy Perry's mid-run exit turns the last stretch into a genuine send-off for seven seasons of panel chemistry, not a staged one. The closing register works because the circumstance was real, and the finale earns weight the format hadn't been carrying all year."
+    blurb: "Katy Perry's mid-run exit turns the last stretch into a genuine send-off for seven seasons of panel chemistry, not a staged one. The closing register works because the circumstance was real, giving the finale a weight this competition rarely earns."
   - show: ink-master
     season: 17
     season_label: "S17 · Hometown Heroes"

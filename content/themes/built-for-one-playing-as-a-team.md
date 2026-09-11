@@ -76,7 +76,7 @@ entries:
     season_label: "S12 · Fresh Meat"
     rank: 11
     title: "The franchise's first pairing experiment forces solo competitors to sink or swim together."
-    blurb: "Each returning veteran drafts a rookie stranger from outside the cast, and every mission — and every elimination — falls on the pair as a single unit. The franchise's first paired format, testing whether team stakes could hold against its usual individual rhythm."
+    blurb: "Each returning veteran drafts a rookie stranger from outside the cast, and every mission — along with every elimination — falls on the pair together as a single unit rather than on either partner alone. This debut paired format tested whether team stakes could hold up."
   - show: the-challenge
     season: 41
     season_label: "S41 · Vets & New Threats"

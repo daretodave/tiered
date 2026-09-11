@@ -72,7 +72,7 @@ entries:
     season_label: "S14 · Charleston"
     rank: 10
     title: "A split cast of rookies and returning veterans doubles the season's depth."
-    blurb: "Charleston splits its roster between new chefs and returning veterans brought back to raise the level, and no single half carries the story. The deep bench works every Lowcountry challenge together — the season's shape comes from the whole kitchen, not one standout cook."
+    blurb: "Charleston splits its roster evenly between new chefs and previously competing cooks brought back to raise the level, and no single half carries the season's story on its own. The deep bench works every Lowcountry challenge together — the shape comes from the kitchen."
   - show: big-brother
     season: 6
     season_label: "S06"

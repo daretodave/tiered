@@ -108,5 +108,5 @@ entries:
     season_label: "S23 · Carolinas"
     rank: 16
     title: "Charlotte borrows a whole cast from Charleston's own show for one guest stretch."
-    blurb: "Carolinas sets aside a guest stretch billed outright as a Southern Charm crossover, bringing Charleston's Bravo ensemble into the kitchen alongside established culinary guests. The recognition comes from a completely different franchise, not a rival kitchen."
+    blurb: "Carolinas sets aside a full stretch of episodes billed outright as a Southern Charm crossover event, bringing Charleston's Bravo ensemble into the kitchen alongside established culinary guests. The recognition comes from a completely different franchise, not a rival kitchen."
 ---

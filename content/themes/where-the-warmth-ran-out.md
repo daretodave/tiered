@@ -42,7 +42,7 @@ entries:
     season_label: "S01"
     rank: 5
     title: "Old Miami friendships meet new money, and the warmth never fully survives it."
-    blurb: "The season's own pitch pairs years of real friendship with family-business ambition and new money, treating that pairing as the whole hook. Six women who've known each other for years spend the season finding out how much ambition that friendship can actually hold."
+    blurb: "The season's own pitch pairs years of real friendship with family-business ambition and fresh money, treating that pairing as the whole hook. Six women who've known each other for years spend the season finding out how much ambition that friendship can actually hold."
   - show: southern-charm
     season: 1
     season_label: "S01"
