@@ -2,7 +2,7 @@
 show: project-runway
 number: 15
 title: New York
-canonical_position: 18
+canonical_position: 19
 premiere_date: 2016-09-15
 location: New York City
 host: Heidi Klum

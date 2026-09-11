@@ -2,7 +2,7 @@
 show: project-runway
 number: 10
 title: New York
-canonical_position: 8
+canonical_position: 9
 premiere_date: 2012-07-19
 ep_count: 14
 location: New York City

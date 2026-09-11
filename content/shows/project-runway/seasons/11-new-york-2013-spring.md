@@ -2,7 +2,7 @@
 show: project-runway
 number: 11
 title: New York
-canonical_position: 10
+canonical_position: 11
 premiere_date: 2013-01-24
 location: New York City
 host: Heidi Klum

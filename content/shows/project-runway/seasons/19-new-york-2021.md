@@ -2,7 +2,7 @@
 show: project-runway
 number: 19
 title: New York
-canonical_position: 19
+canonical_position: 20
 premiere_date: 2021-10-14
 location: New York City
 host: Karlie Kloss

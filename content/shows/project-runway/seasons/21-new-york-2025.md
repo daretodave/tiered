@@ -2,7 +2,7 @@
 show: project-runway
 number: 21
 title: New York
-canonical_position: 16
+canonical_position: 17
 premiere_date: 2025-07-31
 ep_count: 10
 location: New York City

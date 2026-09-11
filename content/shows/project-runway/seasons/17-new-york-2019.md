@@ -2,7 +2,7 @@
 show: project-runway
 number: 17
 title: New York
-canonical_position: 9
+canonical_position: 10
 premiere_date: 2019-03-14
 location: New York City
 host: Karlie Kloss

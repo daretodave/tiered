@@ -3,7 +3,7 @@ show: project-runway
 number: 20
 title: New York
 display_title: "New York<br/><em>All-Stars</em>"
-canonical_position: 15
+canonical_position: 16
 premiere_date: 2023-06-15
 location: New York City
 eyebrow: "Aired summer 2023 · Filmed in Manhattan · Returning-veterans edition"
