@@ -1,8 +1,42 @@
 # CRITIQUE
 
-> Last pass: 2026-09-11 at commit 51312421
-> Pass count: 157
+> Last pass: 2026-09-12 at commit 0de556b9
+> Pass count: 158
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 158 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/rhoc/season/the-resurfacing`, `/shows`,
+> `/themes/never-needed-a-villain`, `/themes` anon; `/u/e2e`,
+> `/shows/summer-house/season/overhaul-summer?view=community`,
+> `/sign-in`, `/shows/rhoc?view=community`,
+> `/shows/traitors-uk/season/series-4?view=community` authed. Both
+> passes came back clean on auth/console/mobile-overflow mechanics (0
+> console errors, 0 failed requests, 0 horizontal overflow at 375px, no
+> spoiler leaks). 2 new findings filed (0 HIGH, 1 MED, 1 LOW) — RHOC
+> Season 19's Gretchen-Rossi-return and Katie-Ginella-exit facts each
+> restated near-verbatim across two to three sections plus the meta
+> description (the cross-callout repetition class already drained
+> across dozens of other shows, reaching a fresh show here), and the
+> `/shows` + `/themes` index pages both falling back to the site-wide
+> root OG image instead of a page-specific one. One further candidate
+> (rhoc's community-rank table header reading as disconnected
+> fragments, reproduced on both desktop and mobile) matched the
+> already-open pass-155/157 chopped/american-idol systemic finding —
+> appended as a confirming instance instead of a duplicate row, per §5
+> dedup rule. A borderline spoiler-adjacent candidate (RHOC S19 stating
+> a cast member's run "closes out here") was investigated and dropped:
+> the same cast-departure-as-fact convention already appears across a
+> dozen other shows in the catalog (rhod, married-at-first-sight-
+> australia, masterchef-australia, dancing-with-the-stars, summer-
+> house, too-hot-to-handle, the-apprentice, and others) — settled
+> editorial precedent, not a new spoiler category. `/sign-in` again
+> correctly redirected the signed-in visitor to `/` (reconfirmed).
+> `/u/e2e`'s empty state and the vote-pair zero-state fix both
+> reconfirmed holding with no regression. Auth handshake confirmed live
+> (authenticated:cloud). No pending HIGH findings remain open ahead of
+> this pass; the site continues to read clean on the P0 spoiler check.
 > Pass 157 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4033,6 +4067,24 @@
 
 ## Pending
 
+### [MED] [anon] /shows/rhoc/season/the-resurfacing — the season's Gretchen-Rossi-return and Katie-Ginella-exit facts are each restated near-verbatim across two to three sections, plus the meta description
+- pass: 158 (commit 0de556b9)
+- viewport: desktop
+- category: voice
+- observation: The "Gretchen Rossi returns as a friend of the housewives after twelve years away" fact is stated in near-identical phrasing in the lede, "The shape of the season," and "Where it sits in the canon," with a fourth close echo in the meta description and a fifth partial echo in the eyebrow — the highest placement count for this fact-repetition class found in this show's catalog entry. Separately, "Katie Ginella's run with the show closes out here" appears verbatim, word for word, in both "The shape of the season" and "Where it sits in the canon." Same repetition class already drained across dozens of other shows (dancing-with-the-stars, shark-tank, the-voice, chopped, below-deck-mediterranean, vanderpump-rules, and others); not yet reached this show.
+- evidence: Lede: "Gretchen Rossi returns as a friend of the housewives after twelve years away, giving the season its most-asked-for comeback story." Body section 2: "...adds the year's headline draw: Gretchen Rossi returns as a friend of the housewives after twelve years away." Canon.md: "...layers in the year's biggest marketing swing: Gretchen Rossi returns as a friend of the housewives after twelve years away, giving the season a hook..." Both sections also share, verbatim: "Katie Ginella's run with the show closes out here."
+- suggested fix: Let the lede own the Gretchen Rossi fact in full; rewrite the markdown body and canon.md's Season 19 rationale to argue a distinct angle (what the friend-of-status limit means for the season's social geometry, or the comparative canon-slot argument) instead of re-stating the same clause. Same treatment for the Katie Ginella fact — state it once (body or canon, not both) and let the other section argue what her exit means for the cast going forward. Content-only, `content/shows/rhoc/seasons/19-the-resurfacing.md` + `content/shows/rhoc/canon.md` Season 19 rationale.
+- source: browser (critique-pass-158, anon, via Path A2)
+
+### [LOW] [anon] /shows and /themes — both index pages fall back to the site-wide root OG image instead of a page-specific one
+- pass: 158 (commit 0de556b9)
+- viewport: desktop
+- category: seo
+- observation: Detail pages (e.g. `/shows/rhoc/season/the-resurfacing`, `/themes/never-needed-a-villain`) each generate their own `og:image` via a per-route `opengraph-image` route, but the two index/hub pages — `/shows` and `/themes` — both fall through to the site-wide root image, so link previews for either hub page look identical to the homepage's.
+- evidence: `og:image` for `/shows` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes/never-needed-a-villain` = `https://tiered.tv/themes/never-needed-a-villain/opengraph-image`.
+- suggested fix: Add a dedicated `opengraph-image` route for `/shows` and `/themes` (matching the pattern already used by detail pages and other pillar pages), or confirm the shared fallback is intentional if a dedicated hub-page image isn't worth the asset. Likely a small addition to `app/shows/opengraph-image.tsx` and `app/themes/opengraph-image.tsx` following the existing per-route convention — brander sub-agent territory if new art is needed, though a text-only OG treatment matching the site's type-only visual law would suffice.
+- source: browser (critique-pass-158, anon, via Path A2)
+
 ### [MED] [anon+authed] /shows/married-at-first-sight/season/seattle — the season's three headline facts are restated near-verbatim across five separate sections
 - pass: 157 (commit 51312421)
 - viewport: desktop
@@ -4099,6 +4151,7 @@
 - suggested fix: Add a compact mobile-only qualifier near `.col-pct-mobile-label` (e.g. "Appr. (canon) %") when `source !== 'votes'`, mirroring the desktop `.col-bar-note` logic in `CommunityRankList.tsx`. Consider resolving alongside the pass-141 7D-column row since both are the same component/breakpoint losing context.
 - source: browser (critique-pass-155, authed)
 - confirmed systemic (2026-09-11, critique pass-157, authed): reproduced on desktop this time — `/shows/american-idol?view=community`'s header renders as "APPROVAL (canon order)" immediately followed by a bare "%", reading as two disconnected fragments even on the viewport where the qualifier is present, especially with every row at 0% (no votes yet). Same shared `CommunityRankList` header confusion is not purely a mobile-breakpoint problem — it's the underlying header composition being unclear on both viewports. Severity bumped LOW → MED given the confusion now confirmed on the viewport that was assumed to be the "working" reference case.
+- confirmed systemic (2026-09-12, critique pass-158, authed): reproduced on a third/fourth instance — `/shows/rhoc?view=community` on desktop shows the identical "APPROVAL (canon order)" / bare "%" disconnected-fragment header, and on mobile the same table collapses to "RANK / SEASON / APPR. % / VOTES" with the 7D column dropped and "APPR." carrying no adjacent label explaining the abbreviation (same collapse pattern as the original chopped/love-island-uk mobile finding). Now confirmed on both viewports across four unrelated shows spanning three passes.
 
 ### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the "three named qualifying regions" fact is restated near-verbatim across six sections
 - pass: 154 (commit 91a26c8e)
