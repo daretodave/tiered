@@ -18,13 +18,13 @@ entries:
     season_label: "S02 · The Australian Outback"
     rank: 1
     title: "The Super Bowl lead-out that set Survivor's audience ceiling"
-    blurb: "CBS slotted the season two premiere right behind Super Bowl XXXV, and the audience followed — over forty million viewers watched week one, still the biggest single audience Survivor has ever drawn."
+    blurb: "CBS slotted the season two premiere directly behind the year's highest-rated football broadcast, and the audience followed — over forty million viewers watched week one, still the biggest single audience Survivor has ever drawn."
   - show: american-idol
     season: 5
     season_label: "S05"
     rank: 2
     title: "The highest-rated season American Idol ever aired"
-    blurb: "Season five's audition field ran deeper than any before it, and the audience followed — this is Idol's highest-rated season, full stop."
+    blurb: "Season five's audition field ran deeper than any before it, and the audience followed — this remains the show's best Nielsen performance to date, full stop."
   - show: dancing-with-the-stars
     season: 5
     season_label: "S05"
@@ -96,5 +96,5 @@ entries:
     season_label: "S10"
     rank: 14
     title: "The three-part reunion that broke the show's own audience record"
-    blurb: "The tenth season pairs its biggest-ever cast overhaul with a first-of-its-kind three-part reunion, and the payoff shows up in the numbers — the reunion night draws the largest same-day audience the show has pulled in ten seasons."
+    blurb: "The tenth season pairs its biggest-ever cast overhaul with a format-first multi-night send-off, and the payoff shows up in the numbers — reunion night draws the largest same-day audience the show has pulled in ten seasons."
 ---

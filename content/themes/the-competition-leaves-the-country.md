@@ -18,7 +18,7 @@ entries:
     season_label: "S22 · Destination Canada"
     rank: 1
     title: "The flagship kitchen leaves the United States for the first time."
-    blurb: "Top Chef relocates its entire competition to Canada for the first time, splitting production between Toronto and the Calgary-Canmore corridor. Kristen Kish's second season as host carries the format's biggest geographic swing yet."
+    blurb: "Top Chef relocates its entire competition to Canada, splitting production between Toronto and the Calgary-Canmore corridor. Kristen Kish's second season as host carries the format's biggest geographic swing the kitchen has attempted yet."
   - show: masterchef-australia
     season: 9
     season_label: "S09 · Japan"
@@ -36,7 +36,7 @@ entries:
     season_label: "S15 · Dynamic Duos"
     rank: 4
     title: "The US flagship leaves Los Angeles for the first time in its run."
-    blurb: "Every prior season anchored MasterChef in Los Angeles. Season fifteen moves the whole competition to Melbourne instead, running twenty-four home cooks as twelve pairs through a kitchen the flagship had never used before."
+    blurb: "Every prior season anchored MasterChef in its longtime home city. Season fifteen moves the whole competition to Melbourne instead, running twenty-four home cooks as twelve pairs through a kitchen the flagship had never used before."
   - show: americas-next-top-model
     season: 6
     season_label: "S06 · The Network Finale"
@@ -66,7 +66,7 @@ entries:
     season_label: "S10 · The Milestone"
     rank: 9
     title: "A tenth-anniversary season stages its field challenges on another continent."
-    blurb: "MasterChef's tenth season is its most expansive yet — twenty-five episodes, a new Battle Pass mechanic, and field challenges filmed at Hatfield House in England alongside the usual Los Angeles studio work."
+    blurb: "MasterChef's tenth season is its most expansive yet — twenty-five episodes, a new Battle Pass mechanic, and a stretch of challenges filmed at Hatfield House in England alongside the usual Los Angeles studio work."
   - show: americas-next-top-model
     season: 16
     season_label: "S16 · The Morocco Cycle"

@@ -24,7 +24,7 @@ entries:
     season_label: "S02"
     rank: 2
     title: "Cat Deeley takes the microphone and never lets go of it again."
-    blurb: "Season two hands hosting duties to Cat Deeley as the judging panel widens to six rotating names, a much bigger structural shift than a single new face at the desk. The Vegas callback format the season locks in becomes the show's long-term template."
+    blurb: "Season two hands hosting duties to Deeley as the judging panel widens to six rotating names, a much bigger structural shift than a single new face at the desk. The Vegas callback format the season locks in becomes the show's long-term template."
   - show: the-challenge
     season: 11
     season_label: "S11 · The Gauntlet 2"
@@ -42,7 +42,7 @@ entries:
     season_label: "S29"
     rank: 5
     title: "Tyra Banks replaces Tom Bergeron in the middle of the show's strangest season."
-    blurb: "Season twenty-nine pairs a pandemic-altered production with a full host change, as Banks arrives after twenty-eight seasons of Tom Bergeron and Erin Andrews at the desk. The ballroom format holds its shape around a genuinely new anchor."
+    blurb: "Season twenty-nine pairs a pandemic-altered production with a full host change, arriving after twenty-eight seasons of the desk's longtime anchor alongside Erin Andrews. The ballroom format holds its shape around a genuinely new voice at the microphone."
   - show: top-chef
     season: 21
     season_label: "S21 · Wisconsin"
@@ -90,7 +90,7 @@ entries:
     season_label: "S06"
     rank: 13
     title: "Laura Whitmore opens the post-Flack era in a brand-new location."
-    blurb: "The first winter edition moves the villa to Cape Town and hands hosting to Laura Whitmore in the same swing. A new continent and a new host arrive together, and the format proves — a little unevenly — that it travels."
+    blurb: "The first winter edition moves the villa to Cape Town and hands hosting duties to the show's next anchor in the same swing. A new continent and a new host arrive together, and the format proves — a little unevenly — that it travels."
   - show: bachelorette
     season: 19
     season_label: "S19 · Gabby Windey & Rachel Recchia"
