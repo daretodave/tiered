@@ -1,161 +1,157 @@
-# DIGEST — 2026-09-11
+# DIGEST — 2026-09-12
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-Seven for seven again: every tracked `march` run since yesterday's
-digest succeeded, zero crashes, zero self-heals. The story of the
-window is issue #758's content-gap workaround doing exactly the job
-it was queued for — with Rule 2's gap table locked and Rule 3 not
-review-due, three straight ticks (15:22, 18:26, 21:27) redirected
-into draining `plan/CRITIQUE.md`'s oldest open findings instead of
-zero-shipping: pass-146's MED (perfect-match S4 repetition) and LOW
-(meta-description truncation) both cleared, then pass-151's HIGH
-(show-index community canonical URL, confirmed systemic across every
-show-index page) cleared too. Triage queued one issue (#806, a
-heartbeat false-positive hardening fix). Pass 157 fired on schedule
-overnight — 1 new MED finding (MAFS S20 five-way repetition) plus a
-systemic severity bump (American Idol's community-header confusion
-now confirmed on desktop, not just mobile) — and its finale-gate
-sub-step caught something real: Project Runway Season 22 had aired
-(2026-09-10) but was never authored, frontmatter still reading
-`seasons: 21`. This morning's tick filed it as a fresh season+canon
-insertion, the second time in two digests the finale-gate mechanism
-has delivered a genuine season-fill outside the stalled Rule 2 drain
-table (Alone S13 was the first, yesterday). One tick (07:19) came up
-genuinely empty — Rule 2 stalled, Rule 3 not due, and this time even
-the CRITIQUE-redirect and a three-list extend sweep found nothing
-actionable — the only true zero-ship of the window. The one story
-that still needs attention: **`e2e-full` breached its 75-minute wall
-again both nights** (09-10 at a low 82.5% complete, tonight recovering
-to 87.2%) — candidate #34 (shard the crawl) is now **52 days
-unpromoted**, six of the last seven nights red. Deploy is ready at
-HEAD (dd54ec63).
+Seven for seven again — every tracked `march` run since yesterday's
+digest succeeded, zero crashes. With Rule 2 still locked (CADENCE
+gap table stayed at 40 shows/41 gap-slots all window, next sweep
+2026-09-13) and Rule 3 mostly exhausted (one clean extend, then a
+four-thesis fresh-angle search that dead-ended on every candidate),
+the loop found a new fallback lane this window: `pnpm content:check`'s
+headline-to-body echo warning class. Four straight rounds
+(22:45, 05:45, 10:10, 13:37) drained it tied-smallest-scope-first —
+24 one-warning files, then 8 two-warning files, then 4 three-warning
+files, then the last four-warning file — taking the catalog-wide
+count from roughly 83 down to **27**, with the-voice's separate
+37 take_h2/shape_h2 warnings still frozen behind issue #762. Pass
+158 fired on schedule overnight (00:13) with 2 fresh findings, but
+nothing has redirected into `plan/CRITIQUE.md`'s Pending queue yet
+this window — the echo-drain lane absorbed every content-gap tick
+instead. The story that still needs a human: **`e2e-full` breached
+the 75-minute wall a sixth time tonight** (10,594 tests, 88.5%
+complete at cutoff) — candidate #34 (shard the crawl) is now
+**53 days unpromoted**. Deploy is ready at HEAD (5aa3f0dd).
 
 ## While you were out
 
 | time (UTC) | commit | verb | outcome |
 |---|---|---|---|
-| 15:21–15:22 | 7f2d27aa / 0c14f1d3 | content / critique | perfect-match S4 repetition drain — pass-146 MED resolved (content-gap redirect, issue #758) |
-| 18:26 | 0bd265c3 | critique | pass-146 LOW resolved — perfect-match S4 meta-description truncation (content-gap redirect) |
-| 21:27 | ebad7329 | critique | pass-151 HIGH resolved — show-index `?view=community` canonical URL, confirmed systemic (content-gap redirect) |
-| 23:07 | 51312421 | triage | #806 queued — heartbeat "march has flatlined" false-positive hardening fix |
-| 01:40 | bb759848 | critique | pass 157 — 1 MED finding (MAFS S20 5-way repetition), 1 systemic bump (American Idol community header, LOW→MED), finale-gate filed project-runway S22 row |
-| 07:19 | 7f3673ec | audit | content-gap progress — Rule 2 stalled, Rule 3 not due, redirect sweep + 3-list extend search all exhausted — zero content shipped |
-| 12:40–12:41 | a9d79ff5 / dd54ec63 | content / audit | Project Runway S22 finale-shift drain — season+canon insert, gap table 41→40 shows |
+| 17:02–17:03 | 7e557216 / 7a093f14 / 9f4e4331 | content / audit | Rule 3 extend — `a-way-back-in` gains project-runway S22's "Siriano Save" entry (rank 14, ranks 15-17 shift) |
+| 20:07 | 994c24fb | audit | Rule 3 zero-ship — 4-thesis fresh-angle search, all dead-end (2 already claimed, 1 sub-floor, 1 already covered) |
+| 22:45–22:46 | dea14f7a / 0de556b9 | content / audit | echo drain round 1 — 24 one-warning files reworded, catalog echo count ~83→59 |
+| 00:13 | dcf3c33d | critique | pass 158 — 2 findings (1 MED rhoc S19 repetition, 1 LOW /shows+/themes OG-image fallback) |
+| 05:45 | 0e810466 / 8f8fc47b | content / audit | echo drain round 2 — 8 two-warning files, 59→43 |
+| 10:10 | 1be94277 / 2c7b2170 | content / audit | echo drain round 3 — 4 three-warning files, 43→31 |
+| 13:37 | 6a14e4fe / 5aa3f0dd | content / audit | echo drain round 4 — last four-warning file cleared, 31→27 |
 
-7 of 7 tracked `march` runs since yesterday's digest (14:38 09-10
-through 12:43 09-11 UTC) succeeded — no crashes, no self-heals. 6 of
-7 ticks shipped a real change; the 07:19 tick is the window's one
-genuine zero-ship (documented, not a bug).
+7 of 7 tracked `march` runs since yesterday's digest (16:19 09-11
+through 13:08 09-12 UTC) succeeded — no crashes, no self-heals. All
+7 ticks shipped a real change; no zero-ship this window.
 
 ## The saga
 
-**Rule 2 (season-fill drain):** the CADENCE gap table itself stayed
-stalled most of the window (41 shows/42 gap-slots, all
-confirmed-but-unaired, next sweep due 2026-09-13) — but the
-finale-gate mechanism, which watches `content/calendar.yml` air dates
-independent of the drain table, caught Project Runway Season 22: it
-aired 2026-09-10 and was never authored at all. Today's last tick
-filed it as a fresh season+canon insertion (canon rebased, S22 at rank
-6), and the gap table lost its project-runway row in the process — it
-was the last starred row at 21/22, so the confirmed-gap count moved
-**41 shows/42 gap-slots → 40 shows/41 gap-slots**. Second
-finale-gate-driven season-fill in two digests (Alone S13 was
-yesterday's).
+**Rule 2 (season-fill drain):** fully locked all window — the
+CADENCE gap table held at 40 shows/41 gap-slots (all
+confirmed-but-unaired), unchanged since 09-11's finale-gate-triggered
+project-runway drain. Next weekly sweep due 2026-09-13.
 
-**Rule 3 (themed lists):** quiet and, for one tick, exhausted — the
-07:19 tick's extend-first sweep across the three lowest-floor
-cross-show lists (`the-vote-left-the-phone-line`,
-`the-pitch-names-where-the-idea-came-from`,
-`the-calendar-moved-the-format-didnt`) found no valid new entry
-clearing any list's thesis bar. All three ledger rows bumped to
-`last_reviewed 2026-09-11` with dead-end notes. Catalog holds flat at
-**182/182** themes.
+**Rule 3 (themed lists):** one genuine extend (`a-way-back-in` staked
+project-runway S22's mentor-reclaim mechanic), then a bounded
+fresh-angle search across 4 candidate theses came up fully dead-end
+— consistent with issue #758's standing saturation verdict. Catalog
+holds flat at **182/182** themes.
 
-**Content-gap redirect (issue #758):** did the heavy lifting this
-window. With both drain rules blocked, three consecutive ticks pulled
-from `plan/CRITIQUE.md`'s Pending queue instead — clearing pass-146's
-MED and LOW findings and pass-151's HIGH finding (the canonical-URL
-bug, now confirmed systemic across every show-index page). This is
-the workaround functioning exactly as designed when it was queued.
+**New fallback lane — headline-to-body echo drain:** with both
+content-mission rules stalled, the loop shifted its fallback target
+from `plan/CRITIQUE.md` redirects (used most of last window) to
+`pnpm content:check`'s own headline-to-body echo warning class —
+same tied-smallest-scope-first discipline as the prior 13-round
+cross-callout drain (issue #325 precedent). Four rounds this window
+closed roughly 56 warnings, catalog-wide count now **27** (down from
+an estimated ~83 at window start). Next-smallest remaining batch is
+a tied 5-warning pair (`the-finale-broke-its-own-rulebook`,
+`a-way-back-in`); the-voice's separate 37 take_h2/shape_h2 warnings
+stay frozen behind the standing factual-corruption block (issue
+#762).
 
-Catalog holds at **68 shows / 1051 seasons / 68 canons / 182 themes /
-3 legal docs** — seasons +1 (Project Runway S22), themes flat.
+Catalog holds flat at **68 shows / 1051 seasons / 68 canons / 182
+themes / 3 legal docs** — no season, show, or theme-file count moved
+this window; only content-quality rewording shipped.
 
 ## Queues now
 
-- **`plan/CRITIQUE.md`**: pass 157 fired overnight (01:40), very
-  fresh — 1 new MED (MAFS S20), 1 severity bump (American Idol header
-  confusion, LOW→MED, now confirmed on both viewports). Combined with
-  the window's 3 redirect-resolutions (pass-146 MED+LOW, pass-151
-  HIGH), the Pending section now carries **39 open findings** on a
-  direct count (plus 24 marked resolved-in-place but not yet archived
-  to Done — a housekeeping gap, not a live backlog number). Gate
-  thresholds reset with pass 157; next pass due per the usual 24h/12-
-  commit-or-pending-HIGH rule.
-- **`plan/AUDIT.md`**: 8 open rows. Standing rows: the season-fill
-  STANDING ROW (MED, Rule 2 still locked), 2 HIGH (the-voice factual
-  corruption issue #762, unchanged; night.yml concurrency-starvation
-  issue #763, quiet this window), 1 MED (e2e-full duration-ceiling —
-  two more breach nights logged, 52 days unpromoted), 2 LOW (SERP
-  description budget; `YEAR_TENURE_RE` regex gap), 1 LOW (heartbeat
-  false-positive #806, hardening fix queued not yet shipped).
-- **`plan/PHASE_CANDIDATES.md`**: ~29 candidates awaiting promotion,
-  unchanged in count — no new candidate filed this window, only
-  reinforcement. Candidate #34 (shard e2e-full) got tonight's
-  update: 87.2% completion, an improvement on 09-10's 82.5% low but
-  still a full breach, now **52 days unpromoted**.
+- **`plan/CRITIQUE.md`**: pass 158 fired overnight (00:13) — 1 new
+  MED (rhoc `the-resurfacing` fact repeated across lede/body/canon/
+  meta), 1 new LOW (`/shows` and `/themes` hub pages fall back to the
+  site-wide OG image). Neither addressed yet — the window's
+  content-gap ticks all went to the new echo-drain lane instead.
+  Pending section reads **41 open findings** on a direct heading
+  count (39 yesterday + 2 new from pass 158), plus the same ~24
+  resolved-in-place-but-not-archived rows noted yesterday (candidate
+  #29's housekeeping gap, still unshipped).
+- **`plan/AUDIT.md`**: 7 open rows, unchanged in count and mix: 2
+  HIGH (the-voice factual corruption #762; night.yml starvation #763,
+  quiet again this window — night ran clean 09-11 and is in-flight
+  now), 2 MED (season-fill STANDING ROW, Rule 2 still locked;
+  e2e-full duration-ceiling — sixth breach night logged), 3 LOW (SERP
+  description budget; `YEAR_TENURE_RE` regex gap; heartbeat
+  false-positive #806).
+- **`plan/PHASE_CANDIDATES.md`**: ~28 candidates awaiting promotion
+  (6 marked resolved-inline pending archival), unchanged in true
+  count — no new candidate filed this window. Candidate #34 (shard
+  e2e-full) got tonight's reinforcement: 88.5% completion at cutoff,
+  now **53 days unpromoted**.
 - **Open `triage:needs-user`**: 8 issues, unchanged — #762 and #763
   remain the two live ones needing an actual decision, both untouched
-  since 2026-08-08 (34 days). #758 continues functioning as designed,
-  no state change needed.
+  since 2026-08-08 (35 days now).
 - **Open `triage:loop-queued`**: 5 issues (#636, #754, #785, #787,
-  and newly #806) — #636 (e2e-full tracking issue) picked up two more
-  "Recurred" comments this window (09-10 and tonight).
+  #806), unchanged — #636 (e2e-full tracking issue) picked up
+  tonight's "Recurred" comment too. #806 (the heartbeat
+  "march has flatlined" false-positive from 09-10) is worth a glance:
+  march has run cleanly every 2-5 hours since, so the underlying
+  report reads stale even though the hardening fix hasn't shipped
+  yet.
 
 ## Needs you
 
-1. **Candidate #34 (shard e2e-full) is now 52 days unpromoted, and
-   the pattern has stopped being ambiguous.** Six of the last seven
-   nights (09-06 through 09-11, only 09-09 green) have breached the
-   75-minute wall. This is a `.github/workflows/e2e-full.yml` edit
-   the cloud loop structurally cannot push (no `workflows` OAuth
+1. **Candidate #34 (shard e2e-full) is now 53 days unpromoted, and
+   the pattern hasn't broken.** Six consecutive nights red now
+   (09-07 through 09-12). This is a `.github/workflows/e2e-full.yml`
+   edit the cloud loop structurally cannot push (no `workflows` OAuth
    scope) — a local/`/oversight` session is the only path to
    promotion.
-2. **the-voice factual corruption (issue #762) — 10 days to
-   premiere.** S22-29 stays frozen pending a human-reviewed 8-file
+2. **the-voice factual corruption (issue #762) — premiere is 9 days
+   out.** S22-29 stays frozen pending a human-reviewed 8-file
    renumbering fix. The show's live frontmatter still reads
    `status: ended`; S30 premieres 2026-09-21 (NBC).
-3. **Nothing new to action on #758** — the content-gap redirect
-   workaround shipped three real fixes this window exactly as
-   designed. Worth a passing note only: it's now carried the loop
-   through several consecutive Rule-2/Rule-3 stalls without a true
-   zero-ship streak forming, which is the outcome it was queued for.
+3. **`plan/CRITIQUE.md`'s pass 158 findings are sitting unaddressed**
+   for the first time in a few windows — not urgent (1 MED, 1 LOW,
+   neither spoiler-adjacent) but worth noting since the loop's
+   fallback attention shifted to the new echo-drain lane instead of
+   its usual CRITIQUE-redirect habit. Should self-correct once the
+   echo-drain's current batch clears or CRITIQUE's own escalation
+   rules kick in.
 
 ## Today's intent
 
-Content-gap ticks should keep draining `plan/CRITIQUE.md`'s Pending
-queue while Rule 2 stays locked until the 2026-09-13 sweep and Rule 3
-sits on its three freshly-dead-ended lists — pass 157's fresh MED
-finding (MAFS S20) is the natural next redirect target. Top
-non-content finding, unchanged in kind and now sharper on frequency:
-candidate #34 (shard e2e-full) at 52 days unpromoted, six of the last
-seven nights red — this is well past the point where another
+Content-gap ticks should keep draining the headline-to-body echo
+warning class (27 remaining, next tied batch:
+`the-finale-broke-its-own-rulebook` / `a-way-back-in` at 5 each)
+while Rule 2 stays locked until the 2026-09-13 sweep and Rule 3
+sits on a freshly-confirmed dead end. Worth a redirect back to
+`plan/CRITIQUE.md`'s pass-158 findings at some point this cycle if
+the echo-drain lane runs dry before the next content-mission unlock.
+Top non-content finding, unchanged in kind and now sharper on
+duration: candidate #34 (shard e2e-full) at 53 days unpromoted, six
+consecutive nights red — this is well past the point where another
 reinforcement pass adds new information; it needs an `/oversight`
 decision.
 
 ## Tuning proposals
 
 No new candidates filed tonight. One reinforcement update: candidate
-#34 got tonight's breach data (87.2% completion, up from 09-10's
-82.5% low but still a full breach) appended to its existing write-up
-in `plan/PHASE_CANDIDATES.md`, with a matching continuity update to
-the source row in `plan/AUDIT.md`. This is evidence-gathering on an
+#34 got tonight's breach data (10,594 tests, 88.5% completion at the
+75-minute cutoff) appended to its existing write-up in
+`plan/PHASE_CANDIDATES.md`, with a matching continuity update to the
+source row in `plan/AUDIT.md`. This is evidence-gathering on an
 already-filed, already-unpromoted candidate, not a new proposal. No
-gate mistuning observed otherwise: the content-gap redirect (#758)
-handled three consecutive Rule-2/Rule-3 stalls exactly as designed,
-`/expand` isn't due, and 6 of 7 march runs shipped real content with
-zero crashes.
+gate mistuning observed otherwise: the loop self-discovered a new
+fallback lane (headline-to-body echo drain) when the CRITIQUE-redirect
+queue ran short of fresh material, which is the meta-loop working as
+intended rather than a stall requiring a tuning proposal. Worth
+flagging for a future `/oversight` glance, not a candidate: issue
+#806 (heartbeat false-positive) looks stale given 7 straight clean
+march windows since it was filed — low urgency, no action taken here.

@@ -1247,6 +1247,16 @@ of the last seven nights (09-06 through 09-11, only 09-09 green) have
 now breached the wall — the pattern is stable, not improving; still
 the standing `/oversight` recommendation.
 
+**Update (digest 2026-09-12):** third consecutive breach — tonight's
+run (34663160050, started 00:54:36Z) hit the standard 75-minute wall
+with `Running 10594 tests using 1 worker` (up from 10,586), 9,380 of
+10,594 completed (88.5%) at cutoff — a shade better than 09-11's
+87.2% but still a full breach, zero test-quality regression. No
+scope change to the fix; **53 days unpromoted since filing (07-22).**
+Seven of the last eight nights (09-05 through 09-12, only 09-09
+green) have now breached the wall, three in an unbroken row (09-10,
+09-11, 09-12) — still the standing `/oversight` recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
