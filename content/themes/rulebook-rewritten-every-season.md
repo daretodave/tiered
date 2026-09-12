@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-27
+last_revised: 2026-09-12
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -89,8 +89,8 @@ entries:
     season: 8
     season_label: "S08"
     rank: 13
-    title: "The field returns to twenty, and fans can vote online instead of just by phone."
-    blurb: "A reduced eleven-dancer season gives way to the classic twenty again, and the All-Stars mechanic narrows to a late-round fixture. Text and online voting open for the first time alongside the phone lines."
+    title: "The field snaps back to twenty, and the All-Stars mechanic gets demoted to a late-round fixture."
+    blurb: "Last season's reduced eleven-dancer field reverts to the classic twenty, but the All-Stars innovation doesn't disappear — it just waits, joining only once the competition narrows to the Top 10. A hybrid correction, not a full reversal."
   - show: so-you-think-you-can-dance
     season: 10
     season_label: "S10"
