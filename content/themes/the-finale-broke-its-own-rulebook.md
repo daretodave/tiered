@@ -24,19 +24,19 @@ entries:
     season_label: "S10 · Seattle"
     rank: 2
     title: "A chef eliminated weeks earlier walks back in for the last cook."
-    blurb: "Every earlier elimination in the season is final — once a chef is cut, the competition moves on without them. The finale breaks that rule: the Last Chance Kitchen bracket feeds a previously eliminated chef into the last cook."
+    blurb: "Every earlier elimination in the season is final — once a chef is cut, the competition moves on without them. The finale breaks that rule: the Last Chance Kitchen bracket feeds a previously eliminated chef back into the competition for the final round."
   - show: dragrace
     season: 9
     season_label: "S09"
     rank: 3
     title: "The bottom two disappears, and the whole final field lip syncs at once."
-    blurb: "All season, only the two lowest-scoring queens face off in the lip sync while everyone else stands safely aside. The finale drops that structure — every remaining competitor lip syncs at once, in a single smackdown for the crown."
+    blurb: "All season, only the two lowest-scoring queens face off for their spot while everyone else stands safely aside. The finale drops that structure — every remaining competitor takes the stage at once, in a single smackdown for the crown."
   - show: dragrace
     season: 18
     season_label: "S18"
     rank: 4
     title: "The eliminated cast comes back for one more round before the final three."
-    blurb: "Every earlier elimination all season sends the bottom two into a lip sync and out the door for good. The finale changes the terms — the whole eliminated cast returns for a tournament before the last round even starts."
+    blurb: "Every earlier elimination all season sends the bottom two into a lip sync and out the door for good. The finale changes the terms — everyone the show already sent home returns for a tournament before the last round even starts."
   - show: traitors
     season: 3
     season_label: "S03"
@@ -84,7 +84,7 @@ entries:
     season_label: "S13 · Houston"
     rank: 12
     title: "Decision Day trades the group ceremony for a private one."
-    blurb: "Every earlier Commitment Ceremony gathers every couple in one room with the experts to decide who stays married. Decision Day breaks that pattern — each couple meets separately, declaring their own choice with nobody else in the room."
+    blurb: "Every earlier Commitment Ceremony gathers every couple in one room with the experts to decide who stays married. The finale breaks that pattern — each couple meets separately, declaring their own choice with nobody else in the room."
   - show: dancing-with-the-stars
     season: 2
     season_label: "S02"
@@ -102,5 +102,5 @@ entries:
     season_label: "S04"
     rank: 15
     title: "The elimination clock stops running before the final leg even starts."
-    blurb: "Every earlier leg ends with the last team to check in going home. The final leg changes the terms — with only three teams left, nobody gets eliminated mid-route. It's a straight race to the mat, first team there wins."
+    blurb: "Every earlier leg ends with the last team to check in going home. The last stretch changes the terms — with only three teams left, nobody gets eliminated mid-route. It's a straight race to the mat, first team there wins."
 ---

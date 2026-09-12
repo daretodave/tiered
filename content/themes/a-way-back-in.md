@@ -30,7 +30,7 @@ entries:
     season_label: "S27 · Blood vs. Water"
     rank: 3
     title: "Redemption Island returns for a second run, now with real relationship stakes on every duel."
-    blurb: "Ten returning players compete opposite ten loved ones, with the comeback beach back as the structural spine. Pairing the mechanic with relationship stakes gives it a weight the format hadn't found on the first attempt."
+    blurb: "Ten returning players compete opposite ten loved ones, with the comeback beach back as the structural spine. Facing a partner across the mat gives the mechanic a weight the format hadn't found on its first attempt."
   - show: perfect-match
     season: 2
     season_label: "S02"
@@ -42,7 +42,7 @@ entries:
     season_label: "S04"
     rank: 5
     title: "A lip sync round gives an eliminated queen a direct route back into the competition."
-    blurb: "LaLaParUza pulls eliminated queens back for a shot at re-entry through the lip sync, on top of a week that suspends elimination entirely. Two structural swings in one season for a format that usually keeps its rules steady."
+    blurb: "LaLaParUza pulls eliminated queens back for a shot at re-entry, on top of a week that suspends elimination entirely. Two structural swings in one season for a format that usually keeps its rules steady."
   - show: masterchef-australia
     season: 9
     season_label: "S09 · Japan"
@@ -54,7 +54,7 @@ entries:
     season_label: "S12 · Redemption"
     rank: 7
     title: "A new host era opens with a beach designed specifically to keep voted-out players in the game."
-    blurb: "Redemption Beach lets voted-out players compete for a way back in, resetting the format's target math from the first tribal council. It's a confident structural statement to open a new hosting chapter on."
+    blurb: "Redemption Beach lets the tribe's earliest outcasts compete for a way back in, resetting the format's target math from the first tribal council. It's a confident structural statement to open a new hosting chapter on."
   - show: top-chef
     season: 23
     season_label: "S23 · Carolinas"
@@ -66,7 +66,7 @@ entries:
     season_label: "S08"
     rank: 9
     title: "A vote can undo a dumping days after it already happened."
-    blurb: "Three Fiji summers in, the villa gets its boldest structural swing yet — a new mechanic lets islanders vote to reverse someone's dumping days after it happens, a genuine door back in wired directly into the format."
+    blurb: "Three Fiji summers in, the villa gets its boldest structural swing yet — a new mechanic lets islanders vote to undo an exit after it happens, a genuine door back in wired directly into the format."
   - show: bachelor-in-paradise
     season: 2
     season_label: "S02"
@@ -114,5 +114,5 @@ entries:
     season_label: "S05"
     rank: 17
     title: "A Wildcard quarterfinal opens a path back for cut acts"
-    blurb: "Season five debuts a Wildcard quarterfinal where each judge brings back about four eliminated acts for another shot, plus a new YouTube-submission quarterfinal — the founding panel's first structural route back into the competition."
+    blurb: "Season five debuts a bring-back round where each judge selects about four eliminated acts for another shot, plus a new YouTube-submission quarterfinal — the founding panel's first structural route back into the competition."
 ---
