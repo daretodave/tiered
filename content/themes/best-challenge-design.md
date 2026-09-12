@@ -108,11 +108,11 @@ entries:
     season_label: "S38"
     rank: 16
     title: "One new route mechanic debuts, small in scale but genuinely new."
-    blurb: "A U-Turn penalty now follows a team that survives a non-elimination leg, paired with a new Double U-Turn Vote — a private ballot, public reveal mid-route. The season's own text calls it the one genuinely new mechanic, modest next to Season 37's toolkit but real."
+    blurb: "A U-Turn penalty now follows a team that survives a non-elimination leg, paired with a new Double U-Turn Vote — a private ballot, public reveal mid-route. The season's own text frames it as the lone fresh addition, modest next to Season 37's toolkit but real."
   - show: alone-the-skills-challenge
     season: 1
     season_label: "S01"
     rank: 17
     title: "One rotating construction brief carries the entire spinoff format."
-    blurb: "Alone: The Skills Challenge drops wilderness endurance for a single construction brief each episode — shelter, bridge, trap — judged against three fixed criteria by a fellow alumnus. The season doesn't lean on a challenge twist. The challenge design is the entire format."
+    blurb: "Alone: The Skills Challenge drops wilderness endurance for a single hands-on brief each episode — shelter, bridge, trap — scored against three fixed criteria by a fellow alumnus. The season doesn't lean on a challenge twist. The challenge design is the entire format."
 ---

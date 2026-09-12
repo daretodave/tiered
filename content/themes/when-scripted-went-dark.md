@@ -96,7 +96,7 @@ entries:
     season_label: "S08 · Italian Riviera"
     rank: 14
     title: "The charter moves west to the Italian Riviera in the middle of a second Hollywood strike"
-    blurb: "Season eight premieres September 25, 2023, squarely inside the joint WGA/SAG-AFTRA walkout, relocating the charter west to Genoa and the Italian Riviera for the first time. Bravo's unscripted slate keeps its charters moving with no scripted writers' room to answer to."
+    blurb: "Season eight premieres September 25, 2023, squarely inside the joint WGA/SAG-AFTRA walkout, relocating the charter west to Genoa's coastline for the first time. Bravo's unscripted slate keeps its charters moving with no scripted writers' room to answer to."
   - show: project-runway
     season: 20
     season_label: "S20 · New York"
@@ -108,7 +108,7 @@ entries:
     season_label: "S14"
     rank: 16
     title: "A full-cast reboot premieres two days into the second, added strike"
-    blurb: "Season fourteen's five-Housewife reboot premieres July 16, 2023, two days after SAG-AFTRA joins the WGA's already-running walkout. An entirely new cast carries the franchise's identity while Bravo's unscripted machine keeps running through the labor stoppage."
+    blurb: "Season fourteen's five-Housewife relaunch arrives July 16, 2023, two days after SAG-AFTRA joins the WGA's already-running walkout. An entirely new cast carries the franchise's identity while Bravo's unscripted machine keeps running through the labor stoppage."
   - show: love-island-us
     season: 5
     season_label: "S05"

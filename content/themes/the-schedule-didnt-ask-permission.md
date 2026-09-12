@@ -36,7 +36,7 @@ entries:
     season_label: "S06 · Brains V Brawn"
     rank: 4
     title: "Closed international borders push the season out of its usual overseas setting and into the outback"
-    blurb: "When COVID closes international borders, Australian Survivor comes home to inland Queensland instead of a Pacific island — the franchise's first entirely domestic season, with the Brains-versus-Brawn tribe split carrying the format without leaving Australia."
+    blurb: "When COVID shuts down overseas travel, Australian Survivor comes home to inland Queensland instead of a Pacific island — the franchise's first entirely domestic season, with the Brains-versus-Brawn tribe split carrying the format without leaving Australia."
   - show: dragrace-uk
     season: 6
     season_label: "S06"
@@ -78,7 +78,7 @@ entries:
     season_label: "S11 · The Pause"
     rank: 11
     title: "Pandemic protocols shrink the episode order and cut the group trips the format runs on"
-    blurb: "Reduced contact and limited travel strip out the group trips, restaurant scenes, and shared spaces the format normally runs on, and the episode count shrinks to match. The same core cast returns — the production conditions decide what kind of season this can be."
+    blurb: "Reduced contact and limited travel strip out the cast getaways, restaurant scenes, and shared spaces the format normally runs on, and the episode count shrinks to match. The same core cast returns — the production conditions decide what kind of season this can be."
   - show: rhop
     season: 10
     season_label: "S10"

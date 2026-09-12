@@ -18,7 +18,7 @@ entries:
     season_label: "S15"
     rank: 1
     title: "The one summer the live feeds carried the whole story"
-    blurb: "Big Brother's fifteenth season is the clearest case in the format's history — the day-to-day narrative moved to the 24/7 live feeds, and the edited broadcast spent the summer catching up to what feed-watchers already knew. No franchise season leans harder on that split."
+    blurb: "Big Brother's fifteenth season is the clearest case in the format's history — the day-to-day narrative moved to the 24/7 feed, and the edited broadcast spent the summer catching up to what feed-watchers already knew. No franchise season leans harder on that split."
   - show: big-brother
     season: 8
     season_label: "S08"
@@ -66,7 +66,7 @@ entries:
     season_label: "S05"
     rank: 9
     title: "A new weekly aftershow gives the UK edition its own backstage venue"
-    blurb: "Series 5 pairs its calmest cast yet with a first: a dedicated weekly aftershow letting eliminated queens keep talking past the main broadcast. Not required to follow the competition, but the first real companion program the UK edition can call its own."
+    blurb: "Series 5 pairs its calmest cast yet with a first: a dedicated after-hours companion letting eliminated queens keep talking past the main broadcast. Not required to follow the competition, but the first real program this British installment can call its own."
   - show: top-chef
     season: 23
     season_label: "S23"

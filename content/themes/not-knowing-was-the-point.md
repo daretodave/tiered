@@ -66,13 +66,13 @@ entries:
     season_label: "S26 · Blind Date"
     rank: 9
     title: "Racing partners meet for the first time at the starting line"
-    blurb: "Five blind-date pairs become racing partners with zero warmup, running the same twelve-leg route as six established couples already paired off. The casting experiment turns the very first leg into a first date and a first race at once."
+    blurb: "Five blind-date pairs become teammates on the road with zero warmup, running the same twelve-leg route as six established couples already paired off. The casting experiment turns the very first leg into a first date and a first race at once."
   - show: amazing-race
     season: 35
     season_label: "S35"
     rank: 10
     title: "A U-Turn vote that keeps its target hidden until the move is already made"
-    blurb: "The largest field the race had ever fielded gets a new Blind U-Turn vote added to its toolkit — a strategic weapon teams can use without immediately revealing who they aimed it at. One more way the season folds not-knowing into the gameplay itself."
+    blurb: "The largest field the race had ever fielded gets a new Blind U-Turn mechanic added to its toolkit — a strategic weapon teams can use without immediately revealing who they aimed it at. One more way the season folds not-knowing into the gameplay itself."
   - show: love-island-uk
     season: 12
     season_label: "S12"

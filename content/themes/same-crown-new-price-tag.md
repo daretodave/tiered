@@ -42,7 +42,7 @@ entries:
     season_label: "S06"
     rank: 5
     title: "The finale season pays out its biggest prize pool yet."
-    blurb: "The overall prize pool grows to its largest size across the show's six-season run, closing out the franchise on its biggest financial swing yet — a fitting cap on a format that rewrote its own payout rules almost every year."
+    blurb: "The overall purse grows to its largest size across the show's six-season run, closing out the franchise on its biggest financial swing yet — a fitting cap on a format that rewrote its own payout rules almost every year."
   - show: alone-frozen
     season: 1
     season_label: "S01 · Labrador"
@@ -96,7 +96,7 @@ entries:
     season_label: "S07 · Military Appreciation"
     rank: 14
     title: "The grand prize doubles to one million dollars, and never goes back."
-    blurb: "Season seven's win jumps to one million dollars in a single stroke, arriving alongside a six-city qualifying expansion and a harder Vegas course. The number becomes the format's standard payout in every full season that follows."
+    blurb: "Season seven's win jumps to seven figures in a single stroke, arriving alongside a six-city qualifying expansion and a harder Vegas course. The number becomes the format's standard payout in every full season that follows."
   - show: americas-next-top-model
     season: 15
     season_label: "S15"

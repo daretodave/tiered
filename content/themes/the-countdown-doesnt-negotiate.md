@@ -36,7 +36,7 @@ entries:
     season_label: "S01"
     rank: 4
     title: "The mystery box and the pressure test both run on a visible clock from day one"
-    blurb: "Home cooks face a timed mystery box challenge, then a pressure test with its own hard cutoff, in the very first season. The judging panel is still finding its chemistry, but the clock's authority over the kitchen is never in question."
+    blurb: "Home cooks face a timed surprise-ingredient challenge, then a high-stakes cook-off with its own hard cutoff, in the very first season. The judging panel is still finding its chemistry, but the clock's authority over the kitchen is never in question."
   - show: american-ninja-warrior
     season: 1
     season_label: "S01"
@@ -78,7 +78,7 @@ entries:
     season_label: "S23 · Carolinas"
     rank: 11
     title: "The Quickfire clock survives a move to a whitewater center"
-    blurb: "Carolinas stages a Quickfire outside any kitchen at all, at the U.S. National Whitewater Center, and the timed-challenge format holds up without a single stove nearby. Twenty seasons in, the clock is sturdier than the room it usually runs in."
+    blurb: "Carolinas stages a Quickfire outside any kitchen at all, on the rapids of a national whitewater course, and the timed-challenge format holds up without a single stove nearby. Twenty seasons in, the clock is sturdier than the room it usually runs in."
   - show: american-ninja-warrior
     season: 16
     season_label: "S16"
