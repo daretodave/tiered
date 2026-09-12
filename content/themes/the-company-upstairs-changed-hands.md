@@ -25,7 +25,7 @@ entries:
     season_label: "S13 · Cook Islands"
     rank: 2
     title: "Cook Islands premieres eight months into CBS's life as its own company"
-    blurb: "Cook Islands airs September 14, 2006, eight months after Viacom splits into two public companies and CBS Corporation takes ownership of the network broadcasting it. The four-tribe opening twist dominates the conversation; the reorg upstairs gets none of it."
+    blurb: "The four-tribe twist that opens the season airs September 14, 2006, comfortably inside CBS's first year as a standalone company after splitting from Viacom. That structural gimmick dominates the conversation; the reorg upstairs gets none of it."
   - show: amazing-race
     season: 10
     season_label: "S10"
@@ -43,7 +43,7 @@ entries:
     season_label: "S01"
     rank: 5
     title: "A format built from nothing launches three months after Comcast takes NBC's parent"
-    blurb: "The Voice premieres April 26, 2011, three months after Comcast completes its takeover of NBCUniversal from GE. Four coaches in spinning chairs debut a format built from scratch — the biggest ownership change in NBC's history goes unmentioned on screen."
+    blurb: "The Voice premieres April 26, 2011, three months after Comcast completes its takeover of NBCUniversal from GE. Four coaches in spinning chairs introduce a competition nobody in the U.S. had tried before — the biggest ownership change in NBC's history goes unmentioned on screen."
   - show: americas-got-talent
     season: 6
     season_label: "S06"
@@ -85,7 +85,7 @@ entries:
     season_label: "S09"
     rank: 12
     title: "A flagship season premieres nine days after Discovery and WarnerMedia merge"
-    blurb: "TLC's corporate parent becomes Warner Bros. Discovery on April 8, 2022, and season nine follows nine days later on April 17. The real headline is a first crossover couple from a spinoff show; the merger closes without a credit."
+    blurb: "TLC's corporate parent becomes Warner Bros. Discovery on April 8, 2022, and season nine follows just over a week later on April 17. The real headline is a first crossover couple from a spinoff show; the merger closes without a credit."
   - show: naked-and-afraid
     season: 14
     season_label: "S14"
@@ -97,7 +97,7 @@ entries:
     season_label: "S49"
     rank: 14
     title: "A settled new-era season premieres seven weeks into a brand-new corporate parent"
-    blurb: "Survivor 49 premieres September 24, 2025, about seven weeks after Paramount Global's merger with Skydance Media closes, forming Paramount Skydance Corporation. Three new tribes on the Mamanucas carry the real headline; the ownership change doesn't get a mention."
+    blurb: "Survivor 49 premieres September 24, 2025, well under two months after Paramount Global's merger with Skydance Media closes, forming Paramount Skydance Corporation. Three new tribes on the Mamanucas carry the real headline; the ownership change doesn't get a mention."
   - show: amazing-race
     season: 38
     season_label: "S38"
