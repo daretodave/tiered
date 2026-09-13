@@ -4,7 +4,7 @@ number: 1
 title: "South West Tasmania"
 take_h2: "The format's founding proof."
 shape_h2: "Weather wears the field down."
-canonical_position: 2
+canonical_position: 3
 premiere_date: 2023-03-29
 ep_count: 12
 location: "South West Tasmania, Australia"

@@ -89,6 +89,20 @@ already in calendar.yml), `americas-got-talent` S21 finale (2026-09-23,
 already in calendar.yml) — all already correctly starred/tracked, nothing
 new to add.
 
+**Rule 2 drain, 2026-09-13 tick (cloud march, sweep-triggered):**
+`alone-australia` drained 3/4 → 4/4. Season 4 ("Sápmi, Finland," Arctic
+setting, 10 episodes, premiered 2026-07-15, confirmed complete by this
+pass's sweep) filed with a full editorial block + watch_list; canon.md
+rebased to insert Season 4 at rank 1 (the format's biggest location-risk
+leap yet, per the canon's own location-first methodology) — Fiordland
+drops to 2, South West Tasmania to 3, West Coast Range to 4, all
+`canonical_position` values rewritten to match. `era_bands` widened with
+a new `arctic-era [2026, 2026]` band alongside the existing `founding-era
+[2023, 2025]` band, keeping full aired-span coverage. Show frontmatter
+`seasons: 3 → 4`; blurb/card_tagline updated to reflect the fourth
+location. Gap row removed from the table below — the show is fully
+drained. 40 shows / 41 gap-slots → 39 shows / 40 gap-slots.
+
 **Ninth full weekly sweep, 2026-09-06 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (frontmatter `seasons:` vs. filed season
@@ -1029,7 +1043,6 @@ new-show creation is locked to the biweekly show-add clock.
 | the-voice | 29/30 | 1* |
 | below-deck | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
-| alone-australia | 3/4 | 1* |
 | the-challenge | 41/42 | 1* |
 | big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
