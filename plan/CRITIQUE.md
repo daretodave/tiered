@@ -1,8 +1,42 @@
 # CRITIQUE
 
-> Last pass: 2026-09-12 at commit 0de556b9
-> Pass count: 158
+> Last pass: 2026-09-13 at commit aeec2a31
+> Pass count: 159
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 159 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/rhobh/season/the-renewal`, `/shows/so-you-think-you-can-dance/canon`,
+> `/shows/bachelorette`, `/themes/it-took-five-seasons-to-find-a-home` anon;
+> `/`, `/shows/rhobh/season/the-renewal`, `/shows/bachelorette?view=community`,
+> `/u/e2e` authed. Both passes came back clean on auth/console/mobile-overflow
+> mechanics (0 console errors, 0 failed requests, 0 horizontal overflow at
+> 375px, no spoiler leaks). 2 new findings filed (0 HIGH, 2 MED, 0 LOW) —
+> RHOBH's the-renewal season restating its three headline facts (Saint John's
+> arrival, the Mexico location, the unproven new-era cast) across five
+> surfaces including an un-overridden meta description (the cross-callout
+> repetition class already drained across dozens of shows, reaching a fresh
+> show here), and a template-level a11y heading-skip (`<h2>` straight to
+> `<h4>`, no `<h3>`) on the show-home season-card and theme-card grids,
+> confirmed on two unrelated shows. One further candidate (the mobile
+> community-rank header dropping its "(canon order)" qualifier and 7D column,
+> reproduced on `/shows/bachelorette?view=community`) matched the
+> already-open pass-155/157/158 chopped/american-idol/rhoc systemic finding —
+> appended as a fifth confirming instance and bumped MED → HIGH given how
+> widely and cleanly it's now reproduced, per §5 dedup rule. A candidate
+> flagging the `/canon` URL's 308 redirect to the show-home page was
+> investigated and dropped: Phase 33 intentionally consolidated `/canon` and
+> `/community` into the unified show page (`?view=` query param) — documented
+> in `apps/e2e/src/fixtures/canonical-urls.ts`, not a regression. A candidate
+> flagging the comment thread's missing empty-state line for a signed-in
+> viewer was investigated and dropped: `CommentThread.tsx`'s own docstring
+> (pass-36 #335, pass-42 #362) documents that authed viewers deliberately
+> drop the empty-state line because the input affordance above already
+> carries the invitation — working as designed, not a regression. No pending
+> HIGH findings remained open ahead of this pass (the one previously-open
+> HIGH — too-few-to-call-it-all-stars — was already RESOLVED); the site
+> continues to read clean on the P0 spoiler check across all 9 URLs visited.
 > Pass 158 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4067,6 +4101,24 @@
 
 ## Pending
 
+### [MED] [anon+authed] /shows/rhobh/season/the-renewal — the season's three headline facts (Bozoma Saint John joining, the Mexico location, the cast's unproven new-era identity) are restated near-verbatim across five surfaces, including the meta description
+- pass: 159 (commit aeec2a31)
+- viewport: desktop
+- category: comprehension
+- observation: The meta/og/twitter description is a verbatim, ellipsis-truncated copy of the on-page lede's first two sentences; the same three facts (Saint John's arrival, the Mexico trip as a geographic departure, the cast still settling its identity) then repeat in near-identical phrasing across "The Shape of the Season," "Where It Sits in the Canon," and the FILMED sidebar caption. This season has no `meta_description` frontmatter override set, so it falls through to the raw `lede` path the pass-146/147 systemic fix (#801) built the escape hatch for — same repetition class already drained across dozens of shows; not yet reached this one.
+- evidence: Meta description: "Bozoma Saint John arrives as the new-cast era looks to stabilize. The Mexico location marks a geographic departure for the franchise…" — identical to the lede's opening two sentences. Section 02 ("Shape of the Season"): "Bozoma Saint John arrives and adds a distinct energy to a cast still working out its new-era identity. The Mexico trip is a geographic novelty for the franchise." Section 03 ("Where It Sits in the Canon"): "Bozoma Saint John's arrival adds a distinct energy to a cast that is still working out its new-era identity, and the Mexico trip is a genuine geographic novelty for a franchise that has leaned heavily on the same European circuit." FILMED caption: "Beverly Hills · a Mexico departure from the usual European circuit."
+- suggested fix: Add a `meta_description` override (the field the #801 fix built for exactly this case) that summarizes the season without quoting the lede verbatim. Rewrite "Where It Sits in the Canon" to argue the canon-slot placement against an adjacent RHOBH season instead of re-deriving the same three facts a third time; let "Shape of the Season" keep ownership of the season-content recap. Content-only, `content/shows/rhobh/seasons/15-the-renewal.md` (+ `canon.md` Season 15 rationale).
+- source: browser (critique-pass-159, anon lede/meta/body overlap + authed full confirmation, via Path A2)
+
+### [MED] [anon] /shows/[show] canon/theme card grid — the season-card and themed-list-card grids skip a heading level, jumping from `<h2>` straight to `<h4>` with no `<h3>` in between
+- pass: 159 (commit aeec2a31)
+- viewport: desktop
+- category: a11y
+- observation: On the show-home canon/community template, the section header "The seasons worth watching again next week." renders as `<h2>`, immediately followed by season-card titles rendered as `<h4 class="cp-mid-title">` with no `<h3>` in between. The same jump recurs lower on the page: the "Themed lists for <Show>" section header is `<h2>`, immediately followed by `<h4>` theme-card titles. Confirmed on two unrelated shows (`/shows/bachelorette`, `/shows/so-you-think-you-can-dance`), so this is template-level, not a one-page typo. A screen-reader user navigating by heading level has no level-3 landmark between the section header and its grid items.
+- evidence: `/shows/bachelorette` raw HTML: `<h2>The seasons worth watching again next week.</h2>...<h4 class="cp-mid-title">Emily Maynard</h4>` — no `<h3>` between them. Same pattern at `<h2 id="show-themes-bachelorette">Themed lists for The Bachelorette</h2>...<h4>A guest spot with room to grow</h4>`.
+- suggested fix: Promote the season-card and theme-card title elements from `<h4>` to `<h3>` so heading levels stay sequential under each `<h2>` section header. Component-level fix in the show-home season-card/theme-card template, not per-show content.
+- source: browser (critique-pass-159, anon, confirmed on 2 shows)
+
 ### [MED] [anon] /shows/rhoc/season/the-resurfacing — the season's Gretchen-Rossi-return and Katie-Ginella-exit facts are each restated near-verbatim across two to three sections, plus the meta description
 - pass: 158 (commit 0de556b9)
 - viewport: desktop
@@ -4142,7 +4194,7 @@
 - source: browser (critique-pass-155, authed)
 - RESOLVED (2026-09-08, cloud march tick, content-gap redirect per issue #758 — Rule 2 fully stalled (`plan/CADENCE.md`'s 41 shows/42 gap-slots all confirmed-but-unaired), Rule 3 not review-due (oldest `last_reviewed` 2026-07-18, well inside the 90-day window)): rewrote `pull` to "Six seasons of protecting a couple's money by staying apart, flipped for stretches of the season into protecting it by staying close." — states the actual behavioral consequence of the Bad Lana inversion (a distinct fact from take_h2's terse header and from format_caption's already-owned "AI inverts the rule" mechanic), format/structural detail only, no outcome or plot beat. Full verify gate green (fast gate 199/199 test files, 3683/3683 tests, content:check ok — 68 shows/1049 seasons/68 canons/181 themes/3 legal docs; build clean, 1515 static pages; e2e 4885/4885 passed, 32.3m). Shipped at `4b290aa7`.
 
-### [MED] [authed] /shows/chopped?view=community — the mobile header drops the "(canon order)" qualifier, leaving 0% approval rows with no context
+### [HIGH] [authed] /shows/chopped?view=community — the mobile header drops the "(canon order)" qualifier, leaving 0% approval rows with no context
 - pass: 155 (commit 891a8bfe)
 - viewport: mobile
 - category: comprehension
@@ -4152,6 +4204,7 @@
 - source: browser (critique-pass-155, authed)
 - confirmed systemic (2026-09-11, critique pass-157, authed): reproduced on desktop this time — `/shows/american-idol?view=community`'s header renders as "APPROVAL (canon order)" immediately followed by a bare "%", reading as two disconnected fragments even on the viewport where the qualifier is present, especially with every row at 0% (no votes yet). Same shared `CommunityRankList` header confusion is not purely a mobile-breakpoint problem — it's the underlying header composition being unclear on both viewports. Severity bumped LOW → MED given the confusion now confirmed on the viewport that was assumed to be the "working" reference case.
 - confirmed systemic (2026-09-12, critique pass-158, authed): reproduced on a third/fourth instance — `/shows/rhoc?view=community` on desktop shows the identical "APPROVAL (canon order)" / bare "%" disconnected-fragment header, and on mobile the same table collapses to "RANK / SEASON / APPR. % / VOTES" with the 7D column dropped and "APPR." carrying no adjacent label explaining the abbreviation (same collapse pattern as the original chopped/love-island-uk mobile finding). Now confirmed on both viewports across four unrelated shows spanning three passes.
+- confirmed systemic (2026-09-13, critique pass-159, authed): reproduced on a fifth instance — `/shows/bachelorette?view=community` at 375px shows the same mobile header collapse ("RANK / SEASON / APPR. % / VOTES", no "(canon order)" qualifier, no 7D column). Five unrelated shows across four passes now confirm this is a `CommunityRankList` component defect, not a per-show content issue. Severity bumped MED → HIGH — the fix is well-scoped (one component, `src/styles/canon.css` + `CommunityRankList.tsx`) and the defect has now reproduced widely enough that it's actively misleading readers on every 0%-approval row they hit on mobile.
 
 ### [MED] [anon+authed] /shows/american-ninja-warrior/season/the-tripleheader — the "three named qualifying regions" fact is restated near-verbatim across six sections
 - pass: 154 (commit 91a26c8e)
