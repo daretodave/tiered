@@ -1,13 +1,13 @@
 ---
 slug: too-few-to-call-it-all-stars
 title: "Too Few to Call It All-Stars"
-description: "Not every returnee season goes all-star. These ten add one, two, or three familiar faces into an otherwise new or rookie cast — the quiet version of the twist, tested without staging a whole reunion."
-tagline: "A branded All-Stars season announces itself with a full cast of familiar faces and reunion energy built into the premise. <b>These ten do something quieter — one, two, or three returning players folded into an otherwise new or rookie cast, testing whether familiarity changes the room without staging the whole event.</b>"
+description: "Not every returnee season goes all-star. These fifteen add one, two, or three familiar faces into an otherwise new or rookie cast — the quiet version of the twist, tested without staging a whole reunion."
+tagline: "A branded All-Stars season announces itself with a full cast of familiar faces and reunion energy built into the premise. <b>These fifteen do something quieter — one, two, or three returning players folded into an otherwise new or rookie cast, testing whether familiarity changes the room without staging the whole event.</b>"
 category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-09-10
+last_revised: 2026-09-13
 featured: false
 related:
   - the-fix-stayed-after-the-season-left
@@ -73,4 +73,34 @@ entries:
     rank: 10
     title: "One returning captain, an otherwise clean-slate crew."
     blurb: "Seychelles moves the format entirely outside Australian waters, handing a new superyacht to a roster assembled almost entirely from scratch. Jason Chambers keeps the wheel he's held since the format began — the season's one returning face amid an otherwise fresh lineup."
+  - show: dragrace
+    season: 3
+    season_label: "S03"
+    rank: 11
+    title: "The franchise's first repeat competitor joins an all-new cast."
+    blurb: "Shangela, eliminated in the first episode of Season 2, gets folded into Season 3 as the show's only familiar name in a field that's otherwise brand new. The move barely registers against the season's real headline: Michelle Visage joins the judging panel for good."
+  - show: dragrace
+    season: 9
+    season_label: "S09"
+    rank: 12
+    title: "A returning queen revealed as the season's fourteenth competitor."
+    blurb: "Cynthia Lee Fontaine, eliminated early in Season 8, is the last name unveiled at the close of the Season 9 premiere — added only after a field of thirteen entirely new queens is already set. One familiar face, saved for the very end of the introduction."
+  - show: dragrace
+    season: 10
+    season_label: "S10"
+    rank: 13
+    title: "One early-exit queen gets a straight second try."
+    blurb: "Season 10 casts Eureka O'Hara — whose ninth-season run ended early — as its only returning queen, seeded into an otherwise all-new field from the start rather than reintroduced through a mid-season twist."
+  - show: ink-master
+    season: 4
+    season_label: "S04"
+    rank: 14
+    title: "One Season Three artist gets a single comeback slot."
+    blurb: "Season Four folds in Kyle Dunbar, a Season 3 competitor, as a lone returning artist inside an otherwise all-new sixteen-person roster. The comeback barely registers against the season's real headline: a new power play letting winners send a rival straight to the bottom."
+  - show: project-runway
+    season: 22
+    season_label: "S22 · New York"
+    rank: 15
+    title: "One Season 21 designer inside the largest cast yet."
+    blurb: "Joseph McRae is the only name the show asks back from Season 21, seeded into a record twenty-two-person field that's otherwise brand new. The single returnee is a footnote next to the season's real firsts — a three-judge table and a mentor-run save."
 ---
