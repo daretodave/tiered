@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-09-06 | next due 2026-09-13 |
+| season-sweep | 7 days | 2026-09-13 | next due 2026-09-20 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,71 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Tenth full weekly sweep, 2026-09-13 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows, cross-
+checked against the filesystem (frontmatter `seasons:` vs. filed season files
+— only the pre-existing `90-day-fiance` 11/12 mismatch recurs, already tracked
+and non-actionable). Gap-slot count unchanged at **40 shows / 41 gap-slots**
+(the 2026-09-11 project-runway drain baseline), but two genuine finds land
+this pass.
+
+**One row loses its star — genuinely aired, ready for Rule 2.**
+`alone-australia` Season 4 (Arctic/Sápmi Finland setting, 10 episodes,
+premiered 2026-07-15) has now **completed its full run** — a dated recap
+(TV Tonight, published early September 2026) confirms the season concluded
+with a crowned winner. The `3/4, 1*` row transitions from
+confirmed-but-unaired to directly actionable: next Rule 2 pick should treat
+this as a real, filed-ready gap rather than a starred placeholder. No table
+count change (still 1 gap-slot), just a status change within the row.
+
+**One calendar.yml gap closed.** `masterchef` (US) Season 16 ("Global
+Gauntlet") was filed mid-air months ago as a provisional entry (per
+`canon.md`: "this ranking is provisional and will be revisited in full when
+the season completes its run") but never got a `content/calendar.yml` row,
+so the phase-39 finale gate had no way to pick it up once the season wraps.
+Finale Part 2 is confirmed for **2026-09-17** (TheViewersGuide episode
+schedule, Gold Derby's Part 1 recap) — added as `scheduled` so the gate
+fires correctly in four days and the provisional ranking gets its proper
+post-finale revisit.
+
+**One calendar.yml hygiene fix.** `project-runway` Season 22's row still
+read `status: scheduled` even though the 2026-09-11 tick's Rule 2 drain
+already filed and canon-ranked the season off this same finale (confirmed
+aired 2026-09-10). Cosmetic only — the gate keys off `finale_date`, not
+`status` — but corrected to `aired` to match every other post-drain row's
+convention.
+
+**One flagged uncertainty resolved in favor of keeping the star.** The
+2026-09-06 sweep flagged `vanderpump-rules`'s `12/13, 1*` row for
+re-verification after finding the show conspicuously absent from Bravo's
+May 2026 public renewal slate, with instructions to downgrade the row if no
+Season 13 renewal surfaced by this pass. This pass found the opposite: the
+renewal was actually confirmed twice — once early (TMZ, 2026-02-21, well
+before the May Upfronts) and once explicitly reaffirming it after the
+Upfronts omission sparked cancellation chatter (RealityTea/AOL, 2026-05-12,
+citing network sources that Season 13 "is still happening"). The Upfronts
+absence reads as a scheduling omission, not a signal — row stays starred,
+no downgrade. No premiere date yet.
+
+**One premiere-date correction (no gap-table action).** `rhop` Season 11's
+tracked premiere date (carried as 2026-10-05 since an earlier sweep) is
+superseded by firmer, more recent sourcing: Bravo's own "everything to
+know" page and Deadline's cast-announcement piece (2026-04-10) both give
+**2026-10-11** as the premiere. Corrected in narrative tracking; the row
+itself (`10/11, 1*`) needs no count change.
+
+**No other genuine new gaps.** Every other near-term premiere/finale date
+surfaced by this pass's scout batches was reconfirmed already correctly
+reflected: `dancing-with-the-stars` S35 (2026-09-15), `dragrace-uk` S8
+(premiered 2026-09-03, finale 2026-11-05 — new date, too far out to act on
+yet), `rhony` S16 (premiered 2026-09-08), `rhoslc` S7 (2026-09-16),
+`shark-tank` S18 (2026-09-30), `survivor` S51 (2026-09-23), `the-voice` S30
+(2026-09-21), `hells-kitchen` S25 (2026-09-24), `the-challenge` S42
+(already airing since 2026-08-05), `big-brother` S28 finale (2026-10-01,
+already in calendar.yml), `americas-got-talent` S21 finale (2026-09-23,
+already in calendar.yml) — all already correctly starred/tracked, nothing
+new to add.
 
 **Ninth full weekly sweep, 2026-09-06 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
