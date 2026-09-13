@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-09-08
+last_revised: 2026-09-13
 featured: false
 related:
   - same-crown-new-price-tag
@@ -61,58 +61,64 @@ entries:
     rank: 8
     title: "Twenty designers stretch the Parsons workroom past its old limit"
     blurb: "The cast jumps from sixteen to twenty, the largest group the format had tried, and the show chooses to absorb the extra bodies rather than shrink the room back down. The workroom simply gets fuller."
+  - show: project-runway
+    season: 22
+    season_label: "S22 · New York"
+    rank: 9
+    title: "Twenty-two designers stretch the workroom past the record its own ninth season set"
+    blurb: "Season nine set the franchise's cast-size record at twenty designers back in 2011. Season twenty-two breaks it again, filling the Manhattan workroom with twenty-two — and adding a third seat to the judges' table just to manage the larger room."
   - show: top-chef
     season: 10
     season_label: "S10 · Seattle"
-    rank: 9
+    rank: 10
     title: "Twenty-one chefs give the format its deepest bench yet"
     blurb: "A qualifying round trims the field before the season proper even starts, but what survives that cut is still more than most cycles carry into week one. The extra depth shows in how far the technical cooking goes before the pack thins."
   - show: dragrace-allstars
     season: 6
     season_label: "S06"
-    rank: 10
+    rank: 11
     title: "Thirteen returning queens give All Stars its biggest cast yet, right as the show moves to a new streaming home"
     blurb: "The spin-off's largest cast to that point lands the same season the show relocates to Paramount+. The record would not stand for long, but this is where All Stars first tested a bench this deep."
   - show: dragrace-allstars
     season: 10
     season_label: "S10 · Tournament of All Stars"
-    rank: 11
+    rank: 12
     title: "Eighteen queens split into three brackets, the biggest All Stars field yet"
     blurb: "A record cast forces the format to reinvent its own shape, splitting the roster into three separate bracket groups instead of running one wide field. Size becomes the whole structural argument."
   - show: dragrace-allstars
     season: 7
     season_label: "S07 · All Winners"
-    rank: 12
+    rank: 13
     title: "Eight past champions, the smallest All Stars roster in years"
     blurb: "A cast built entirely of former winners runs small on purpose, trading a wide field for a tight one — and drops weekly elimination outright, since a roster this size doesn't need the usual thinning mechanic."
   - show: masterchef
     season: 11
     season_label: "S11"
-    rank: 13
+    rank: 14
     title: "Fifteen home cooks, the tightest field since the very first season"
     blurb: "A rotating guest-judge format keeps the panel busy, so the season pulls the contestant pool back down to its smallest size in a decade. Fewer cooks means every challenge gets more screen time to breathe."
   - show: so-you-think-you-can-dance
     season: 7
     season_label: "S07 · The All-Stars Season"
-    rank: 14
+    rank: 15
     title: "Finalist field drops from twenty to eleven, the tightest run the format had fielded to that point"
     blurb: "The All-Stars pairing mechanic draws the attention, but the smaller pool is what lets each returning specialist actually anchor a full episode instead of splitting time across a much larger bench. Six women, five men — one week's whole show rests on that count."
   - show: the-circle
     season: 7
     season_label: "S07"
-    rank: 15
+    rank: 16
     title: "Ten players, the smallest room the format has ever run"
     blurb: "The US version strips its cast down further than it ever had, and the format tightens right along with it — new blocking rules that can send home one name instead of the usual pair. Fewer players raises the weight of every profile."
   - show: the-real-world
     season: 25
     season_label: "S25 · Las Vegas (2011)"
-    rank: 16
+    rank: 17
     title: "Seven roommates, the smallest group since the show's Hollywood run"
     blurb: "A second trip to Las Vegas comes back with a noticeably thinner cast than the original visit, the smallest the franchise had fielded in years. A shared charity job stands in for the group's usual house dynamic."
   - show: married-at-first-sight
     season: 20
     season_label: "S20 · Seattle"
-    rank: 17
+    rank: 18
     title: "Seven couples give the matching format its largest cast yet"
     blurb: "The five-couple norm of recent seasons jumps to seven pairs for the show's Pacific Northwest debut, while the expert panel narrows from three voices to two to manage the bigger field. The biggest cast the format has fielded gets matched by its leanest matching team."
 ---
