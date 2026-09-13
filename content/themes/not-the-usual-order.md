@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-09-12
 featured: false
 related:
   - before-the-spinoff-had-a-name
@@ -24,13 +24,13 @@ entries:
     season_label: "S01"
     rank: 2
     title: "Seven episodes to test a format nobody else on network TV was running"
-    blurb: "ABC ordered Shark Tank's first season short — seven episodes against a run that would later settle near two dozen. The five-shark panel and the pitch format needed no second draft. The thin episode count is the only rough edge left."
+    blurb: "ABC ordered Shark Tank's first season short — well under half the run that would later settle near two dozen. The five-shark panel and the pitch format needed no second draft. The thin order is the only rough edge left."
   - show: bachelorette
     season: 1
     season_label: "S01 · Trista Rehn"
     rank: 3
     title: "Six episodes, because the format itself was still an experiment"
-    blurb: "The Bachelorette's first season ran six episodes, roughly half the length later seasons would settle into. The tight order compressed every rose ceremony and cocktail party into load-bearing television — proof the flipped format could carry a full season."
+    blurb: "The Bachelorette's first season ran roughly half the length later seasons would settle into. The tight order compressed every rose ceremony and cocktail party into load-bearing television — proof the flipped format could carry a full season."
   - show: dancing-with-the-stars
     season: 1
     season_label: "S01 · The Premiere"
@@ -42,13 +42,13 @@ entries:
     season_label: "S01"
     rank: 5
     title: "Eight episodes for an experiment with zero precedent"
-    blurb: "Three couples, matched sight unseen, tried across eight episodes — a fraction of the length the format would run once Nine committed to it season after season. No returning cast, no established rhythm, just the premise tested cold."
+    blurb: "Three couples, matched sight unseen, tried the premise across a fraction of the length the format would run once Nine committed to it season after season. No returning cast, no established rhythm, just cold execution."
   - show: rhoc
     season: 1
     season_label: "S01 · The Debut"
     rank: 6
     title: "Seven episodes before anyone knew a Housewives franchise existed"
-    blurb: "The show that invented the Housewives format ran its first season at roughly a third of the length later Orange County seasons would carry. No franchise, no template, no reason yet to order more than seven episodes."
+    blurb: "The show that invented the Housewives format ran its first season at roughly a third of the length later Orange County seasons would carry. No franchise, no template, no reason yet to order a longer run."
   - show: love-island-uk
     season: 1
     season_label: "S01"
@@ -60,7 +60,7 @@ entries:
     season_label: "S11 · Australia V The World"
     rank: 8
     title: "A tenth-anniversary special built to run half the usual length"
-    blurb: "Australia V The World compressed the format on purpose: ten episodes and a 16-day game instead of the standard mid-twenties episode count and 47-day run. Half the season, half the prize pool, a genuinely different shape of game."
+    blurb: "Australia V The World compressed the format on purpose: ten episodes and a 16-day game instead of the standard mid-twenties episode count and 47-day run. A shorter season, a smaller prize pool, and a genuinely different shape of game entirely."
   - show: american-ninja-warrior
     season: 4
     season_label: "S04"
@@ -78,7 +78,7 @@ entries:
     season_label: "S05"
     rank: 11
     title: "Eighteen episodes give the founding era its longest run yet"
-    blurb: "The cast's social geometry has finally settled, freeing season five to let competing storylines unfold in parallel rather than compete for scarce time. The order runs eighteen episodes — six more than the year before, and the founding era's longest yet."
+    blurb: "The cast's social geometry has finally settled, freeing season five to let competing storylines unfold in parallel rather than compete for scarce time. The order stretches six installments longer than the year before — the founding era's longest yet."
   - show: 90-day-fiance
     season: 10
     season_label: "S10"
