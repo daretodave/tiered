@@ -6,7 +6,7 @@ category: craft
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-09-13
 featured: false
 related:
   - firsts
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "A fjord jump hands the Australian format a scale it had never touched."
     blurb: "Alone Australia's second season leaves the country for the first time, swapping Tasmania's moorland for New Zealand's fjord terrain and rainforest. The scale reads immediately, and the cast's opening camp calls show the environment doing real work before the competition starts."
+  - show: alone-australia
+    season: 4
+    season_label: "S04 · Sápmi, Finland"
+    rank: 11
+    title: "An Arctic first hands Sápmi the format's coldest opening yet."
+    blurb: "Sápmi's opening episode announces the format's first-ever Arctic terrain — a cold-weather leap from three seasons of wet, temperate ground. The reveal leans on climate alone, not scale, to set the season's register before a survivalist speaks."
 ---
