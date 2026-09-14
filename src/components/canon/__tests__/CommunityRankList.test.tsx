@@ -213,4 +213,26 @@ describe('<CommunityRankList>', () => {
       pctHeader?.querySelector('.col-pct-mobile-label'),
     ).toHaveTextContent('Appr.')
   })
+
+  it('the mobile % column header also carries the canon-order qualifier when the list is not yet live-vote-driven, so 0%-everywhere rows are not unexplained on mobile (regression guard for critique pass-159 HIGH)', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    const { container } = render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
+    )
+    const pctHeader = container.querySelector('.col-pct')
+    expect(
+      pctHeader?.querySelector('.col-pct-mobile-note'),
+    ).toHaveTextContent('(canon)')
+  })
+
+  it('does not show the mobile canon-order qualifier once the list is live-vote-driven', () => {
+    const entries = [
+      row(1, 20, 'Heroes vs. Villains', { approval: 0.9, voteCount: 50 }),
+    ]
+    const { container } = render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
+    )
+    const pctHeader = container.querySelector('.col-pct')
+    expect(pctHeader?.querySelector('.col-pct-mobile-note')).toBeNull()
+  })
 })

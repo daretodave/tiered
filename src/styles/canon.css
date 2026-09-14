@@ -1116,6 +1116,21 @@
      bare "%" left in .col-pct has no label — give it one at this
      breakpoint only (critique pass-138, #758 content-gap redirect). */
   .col-pct-mobile-label { display: inline; }
+  /* The desktop .col-bar-note "(canon order)" qualifier lives in the
+     hidden .col-bar column, so a canon-mirrored table reads as bare
+     0%-everywhere rows on mobile with nothing explaining why — same
+     CommunityRankList component losing disambiguating header context
+     at this breakpoint (critique pass-155/159, #758 content-gap
+     redirect, severity raised to HIGH after 5 confirmed instances).
+     Stack a compact "(canon)" note on its own line under "Appr." —
+     the 44px column has no room for it inline. */
+  .col-pct-mobile-note {
+    display: block;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--ink-40);
+    line-height: 1.3;
+  }
 }
 
 @media (max-width: 560px) {

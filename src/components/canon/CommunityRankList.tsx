@@ -48,7 +48,13 @@ export function CommunityRankList({
           {!live ? <span className="col-bar-note"> (canon order)</span> : null}
         </span>
         <span className="col-pct col-r">
-          <span className="col-pct-mobile-label">Appr. </span>%
+          <span className="col-pct-mobile-label">
+            Appr.
+            {!live ? (
+              <span className="col-pct-mobile-note"> (canon)</span>
+            ) : null}{' '}
+          </span>
+          %
         </span>
         <span
           className="col-trend col-r"
