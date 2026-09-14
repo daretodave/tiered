@@ -1,8 +1,40 @@
 # CRITIQUE
 
-> Last pass: 2026-09-13 at commit aeec2a31
-> Pass count: 159
+> Last pass: 2026-09-14 at commit 7eeb9379
+> Pass count: 160
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 160 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/top-chef/season/carolinas`, `/shows/top-chef`, `/themes`,
+> `/themes/not-the-usual-order` anon; `/`,
+> `/shows/top-chef/season/carolinas?view=community`, `/u/e2e`,
+> `/shows/top-chef?view=community` authed. Both passes came back clean on
+> auth/console/mobile-overflow mechanics (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px, no spoiler leaks across all 9
+> URLs — verified directly against "WHAT TO WATCH FOR" and canon-slot copy
+> that could easily have leaked an outcome). 2 new findings filed (0 HIGH,
+> 2 MED, 0 LOW) — Top Chef Carolinas restating two separate facts (the
+> Charlotte/Greenville/Asheville location clause verbatim between meta
+> description and hero lede; Kristen Kish's "third season as host" across
+> five surfaces) — the same cross-callout repetition class already drained
+> across dozens of shows, reaching a fresh show here — and a comprehension
+> finding new to this pass: the Top Chef show-home "Themed lists for Top
+> Chef" section dumps ~41 list titles into one flat, ungrouped grid under a
+> single `<h2>`, unlike `/themes` itself which buckets its 182 lists by
+> tone/structure/craft/era. A candidate reproducing the authed
+> `/shows/top-chef?view=community` "voters, last 7 days · 0" beside
+> nonzero per-row vote totals was investigated and dropped: this exact
+> page + mechanism was already found and fixed at pass-122 (relabel to
+> explicit "VOTERS, LAST 7 DAYS") and the pass-139 zero-clause fix
+> (`CommunityLiveStrip.tsx`, "(no new votes since last update)") is
+> confirmed live in the captured copy — the underlying all-time-vs-7-day
+> scoping is a documented by-design distinction (both numbers are
+> individually honest), not a regression; re-filing would just cycle
+> another wording tweak against a decision already made. No pending HIGH
+> findings remained open ahead of this pass; the site continues to read
+> clean on the P0 spoiler check.
 > Pass 159 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4100,6 +4132,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/top-chef/season/carolinas — two separate facts (the location clause and Kristen Kish's tenure as host) are each restated near-verbatim across multiple surfaces, including the meta description
+- pass: 160 (commit 7eeb9379)
+- viewport: desktop
+- category: voice
+- observation: The meta description is copied verbatim as the opening sentence of the hero lede — a first-time reader scanning from the tab title into the page hits the identical sentence twice. Separately, "Kristen Kish's third season as host" (or a close paraphrase) is restated across five sections of the same page: the lede, the HOST metadata row, THE TAKE, WHERE IT SITS IN THE CANON, and the first WHAT TO WATCH FOR entry. Same repetition class already drained across dozens of other shows (dancing-with-the-stars, shark-tank, the-voice, chopped, married-at-first-sight, and others); not yet reached Top Chef.
+- evidence: Meta description: "A Charlotte-centered season with stops in Greenville, Asheville and the U.S. National Whitewater Center." — identical to the hero lede's opening sentence. Host fact: lede "Kristen Kish's third season as host"; HOST row "Kristen Kish's third season as host"; WHERE IT SITS IN THE CANON "Kristen Kish's third season at the host chair"; EP 1 of WHAT TO WATCH FOR "Kristen Kish opening her third season at the host chair."
+- suggested fix: Add a `meta_description` override (the field the #801 fix built for exactly this case) that summarizes the season without quoting the lede verbatim. Keep the host-tenure fact once in the HOST metadata row's caption and rewrite THE TAKE / WHERE IT SITS IN THE CANON / the EP 1 watch-for entry to each argue a distinct angle instead of re-stating it. Content-only, `content/shows/top-chef/seasons/23-carolinas.md` (+ `canon.md` Season 23 rationale).
+- source: browser (critique-pass-160, anon, via Path A2)
+
+### [MED] [anon] /shows/top-chef — the "Themed lists for Top Chef" section dumps roughly 41 list titles into one flat, ungrouped grid under a single `<h2>`, unlike `/themes` itself which buckets its 182 lists by tone/structure/craft/era
+- pass: 160 (commit 7eeb9379)
+- viewport: desktop
+- category: comprehension
+- observation: The show-home cross-reference section renders all of Top Chef's themed-list appearances as one undifferentiated `.lists-grid` of ~41 cards with no sub-grouping, immediately after the tightly curated canon sections above it. `/themes` (the site's own index for the same content) groups its far larger 182-list catalog by tone/structure/craft/era/single-show, so the contrast reads as a step down in curation quality on a show-level page a reader is likely to linger on.
+- evidence: `<section class="show-themes"><h2 id="show-themes-top-chef">Themed lists for Top Chef.</h2>...<div class="lists-grid">` with ~41 flat `<a class="list-card">` entries (e.g. "A second life, built into the format," "Before the spinoff had a name," "Running long, running short," "When the vote came back tied") and no category headers between them.
+- suggested fix: Group the show-page theme cross-references by the same tone/structure/craft/era taxonomy `/themes` uses, or cap the visible list with a "show more" affordance once it exceeds a threshold. Component-level fix in the show-home theme-card grid template, not per-show content.
+- source: browser (critique-pass-160, anon, via Path A2)
 
 ### [MED] [anon+authed] /shows/rhobh/season/the-renewal — the season's three headline facts (Bozoma Saint John joining, the Mexico location, the cast's unproven new-era identity) are restated near-verbatim across five surfaces, including the meta description
 - pass: 159 (commit aeec2a31)
