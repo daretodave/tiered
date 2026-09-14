@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-24
+last_revised: 2026-09-14
 featured: false
 related:
   - running-on-muscle-memory
@@ -97,4 +97,28 @@ entries:
     rank: 14
     title: "The three-part reunion that broke the show's own audience record"
     blurb: "The tenth season pairs its biggest-ever cast overhaul with a format-first multi-night send-off, and the payoff shows up in the numbers — reunion night draws the largest same-day audience the show has pulled in ten seasons."
+  - show: traitors
+    season: 2
+    season_label: "S02"
+    rank: 15
+    title: "Peacock's biggest reality debut, and it wasn't close"
+    blurb: "Season two's premiere lifted the show's own launch audience by more than seventy-five percent over season one, becoming Peacock's most-watched reality series debut and the most-watched unscripted premiere across every US streaming platform that week."
+  - show: bachelor-in-paradise
+    season: 4
+    season_label: "S04"
+    rank: 16
+    title: "The franchise's best-ever Paradise premiere"
+    blurb: "Season four's premiere drew Bachelor in Paradise's largest audience yet in the key demo, up from the season before it — the summer spinoff finally posting a number the flagship show would recognize as its own."
+  - show: love-is-blind
+    season: 8
+    season_label: "S08 · Minneapolis"
+    rank: 17
+    title: "The most-charted unscripted show Nielsen has tracked"
+    blurb: "By the time this season wrapped, Love Is Blind had logged more weeks in Nielsen's streaming Top 10 than any other unscripted series on record — the run that turned a hit format into the platform's most durable one."
+  - show: masked-singer
+    season: 1
+    season_label: "S01"
+    rank: 18
+    title: "The premiere that reset the format on network TV"
+    blurb: "Fox's biggest live-action unscripted rating in seven years greeted the debut, and the audience grew even larger across the next three days of delayed viewing — the kind of launch number competition shows on broadcast rarely see."
 ---
