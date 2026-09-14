@@ -11581,3 +11581,85 @@ last time a curator actually looked.
   nearest Big Brother facts. Next unlock is the same as prior
   zero-ship passes: Rule 2 filing a new season, or a scout-assisted
   sweep for facts outside the repo's own season-file text.
+- **2026-09-14, cloud march tick (`/ship-content` Rule 3, content-curator
+  direct invocation): zero-ship.** Re-confirmed both standing blockers
+  fresh rather than trusting the brief's summary. **Rule 2:** read
+  `plan/CADENCE.md`'s tenth full weekly sweep (2026-09-13 tick, next due
+  2026-09-20) and the live gap table directly — 39 rows, every single one
+  still carries the `*` confirmed-but-unaired marker (the one row that lost
+  its star this sweep, `alone-australia` S4, was already drained same-day
+  per this file's own 2026-09-13 note and the season's own `best-location-
+  reveals` extend). Cross-checked `content/calendar.yml` against today
+  (2026-09-14): `below-deck-mediterranean` S11 is the only `scheduled` row
+  with a finale date of today, not yet aired; every other row is already
+  `aired` and already has a filed shift note or extend. No actionable Rule
+  2 row. **Rule 3 review-due:** no ledger row clears the 90-day floor
+  (`survivor-pillars` still the oldest `last_reviewed`, well under the
+  threshold). Chased six genuinely fresh angles this pass, distinct from
+  every one logged in this file's prior Notes/Ideas entries, all rejected:
+  (1) **streaming-platform migration as its own era/craft cut** — grepped
+  `Peacock|Disney\+|Paramount\+|streaming` across every show/season file
+  and found real candidates (RHOM S04's Peacock revival, Ink Master S14's
+  Paramount+ move, DWTS S31's Disney+ move) — read `moving-day` (structure,
+  11 entries/11 shows) in full and confirmed total preemption: every one of
+  these plus Love Island US S04, Project Runway S21, Drag Race S09, Drag
+  Race All Stars S03, American Idol S16, ANTM S23, and Bake Off S08 is
+  already ranked there under the identical network-or-platform-move thesis.
+  (2) **cross-franchise in-episode cameo, distinct from `familiar-faces-
+  wrong-franchise`'s full-cast-import angle** — grepped `crossed over|guest
+  appearance on|cameo(ed)? on|appeared on (the |a )?sister show|joined the
+  cast of`: 3 hits (rhom, the-voice, bake-off canon), each a different,
+  unrelated fact wearing similar phrasing — no shared thesis, sub-floor. (3)
+  **a non-competition format adding a physical-endurance component** —
+  grepped `physical (challenge|endurance|fitness)|endurance component|added
+  a fitness`: zero hits catalog-wide. (4) **judging-panel size literally
+  growing (not turning over)** — grepped `panel (grew|grows|expanded|shrank|
+  shrunk) to|added a (fourth|third|second) judge|judges? (grew|grows) from`:
+  one hit (`married-at-first-sight` S15, and that's the panel of
+  relationship experts, not a judged-competition panel — off-thesis
+  regardless), sub-floor. (5) **military-service casting brief** — grepped
+  `military|veteran of the (armed forces|army|navy)|former (soldier|
+  marine)|deployed overseas`: 2 shows (bachelor, american-ninja-warrior),
+  sub-floor. (6) **literal name-your-price / auction / sealed-vote
+  mechanics** — grepped `auction| recount|anonymous (vote|ballot)|sealed
+  envelope|coin (toss|flip)`: 2 hits, both Chopped (`the-name-your-price-
+  nest` and its own canon), single-show, sub-floor. **Era-category headroom
+  audit:** read all ten live `category: era` files' `era_range` spans in
+  full (`twice-in-one-year` [2002,2013], `when-scripted-went-dark`
+  [2007,2023], `the-vote-left-the-phone-line` [2002,2026], `the-season-
+  everyone-got-their-audience-back` [2021,2023], `the-company-upstairs-
+  changed-hands` [2006,2025], `the-batch-drop-settles-in` [2020,2026],
+  `the-cast-arrived-pre-famous` [2016,2023], `pandemic-seasons`
+  [2020,2021], `pre-recap-culture-seasons` [1992,2008], `no-template-to-
+  copy` [2000,2005]) — the founding/pre-recap era, the network-
+  consolidation era, the streaming-batch era, the pandemic, the social-
+  media-fame casting era, and the phone-to-app vote-mechanic era are all
+  already claimed; no clean, ungrepped year-bounded gap surfaced. **Cross-
+  canon floor re-census:** independently re-verified `the-vote-left-the-
+  phone-line` (era, 9 entries) clears the floor at 4 distinct shows
+  (dancing-with-the-stars, american-idol, americas-got-talent, so-you-
+  think-you-can-dance) — not a floor violation, contrary to what its small
+  entry count might suggest. Re-ran the informal sub-10-entry census and
+  confirmed every list under 10 entries is `category: single`,
+  mathematically capped at its own show's current aired-season count
+  (`new-house-rules-every-time-the-castle-reopens` 4/4, `the-blueprint-
+  gets-rewritten-every-winter` 4/4, `the-quiet-register-was-the-whole-
+  point-until-ibiza` 5/5, `home-seasons-waited-relocation-seasons-didnt`
+  6/6, `every-season-strikes-a-different-bargain-with-lana` 6/6,
+  `the-wait-between-seasons-was-never-the-same-twice` 7/7, `seven-ways-
+  to-break-the-same-app` 7/7, `the-series-the-uk-edition-finally-made-
+  its-own` 7/7, `it-took-five-seasons-to-find-a-home` 8/8, `some-seasons-
+  rebuild-the-roster-others-just-move-the-furniture` 9/9, `survivor-
+  pillars` 4/4) — no headroom until Rule 2 files a new season for any of
+  them. **Under-served single-show census:** re-checked season counts for
+  the seven shows below the 10-season single-list floor
+  (`alone-australia` 4, `alone-frozen` 1, `alone-the-skills-challenge` 1,
+  `below-deck-adventure` 1, `below-deck-down-under` 4, `perfect-match` 4,
+  `rhodubai` 2) — all unchanged from the 2026-08-23 census, none clears
+  the floor. Net: no `content/themes/*.md` file written or edited this
+  tick; no ledger row changed besides this note. Zero is a valid outcome
+  this tick — every angle chased either landed inside an already-shipped
+  list's address or failed the ≥3-distinct-show cross-canon floor. Next
+  unlock remains Rule 2 filing a new season, or an oversight-authorized
+  scout-research process to reach facts outside the repo's own season-
+  file text.
