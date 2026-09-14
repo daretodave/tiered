@@ -11513,3 +11513,71 @@ last time a curator actually looked.
   standing "zero is a valid outcome" rule — both named leads and all
   four named alternates independently re-confirmed dead, and the one
   fresh angle chased resolved to already-comprehensive prior art.
+- **2026-09-13, cloud `/march` tick (content-curator direct
+  invocation, single-list-ship task): zero-ship.** Excluded
+  `too-few-to-call-it-all-stars`, `best-location-reveals`, and
+  `the-cast-outgrew-the-format` per the standing no-same-day-re-touch
+  rule (all three extended earlier today). Rule 2 re-confirmed
+  stalled (gap table fully starred, unchanged). Chased five distinct
+  candidate threads, all dead: **(1)** independently re-derived the
+  "seeded returnee(s), not a branded All-Stars event" concept flagged
+  as thin-but-promising in the 2026-09-08 note, and ran a fresh
+  `returning|alumn|veteran` sweep across every `content/shows/**/
+  seasons/*.md` looking for entries beyond the four that note already
+  found. Turned up Survivor S11 Guatemala ("slots two returning
+  players into an otherwise new cast") and Big Brother S18 ("Vets and
+  Newbies Reprise," `format_summary: "16 houseguests · four vets,
+  twelve newbies"`) as candidates — then discovered the whole concept
+  had *already shipped* under this exact thesis as
+  `too-few-to-call-it-all-stars` (extended earlier today to 15
+  entries, including the S23/S25/S06-THTH/S19-BB facts the 2026-09-08
+  note had logged as insufficient) — an off-limits list this tick, so
+  moot regardless of whether S11/S18 would clear it. Confirmed via a
+  full `show: survivor` + `season: 11` grep that S11 Guatemala's own
+  "two returning players" fact is independently already staked at
+  `the-fix-stayed-after-the-season-left` rank 10 ("a soft version of
+  a twist the show would later run at full scale"). **(2)** Big
+  Brother S18's returnee-reprise angle, considered as an extend
+  candidate for `the-fix-stayed-after-the-season-left` (the durable-
+  mechanic thesis) instead — rejected: that list's existing Big
+  Brother S13 sibling entries (`every-summer-gets-its-own-twist` rank
+  9: "The returnee mix every later all-star summer borrows from
+  starts here") already narrate S13's veterans-and-newbies engine as
+  a thing later seasons revisit, so staking S18 as "the show reaches
+  for the engine again" would restate that framing rather than add a
+  new fact. **(3)** Big Brother S18's own Battle-Back mechanic
+  (evicted houseguest gets a route back into the game), considered
+  for `a-way-back-in` (structural-comeback-mechanic thesis) — rejected
+  as a literal duplicate: S18's only other ledger appearance,
+  `every-summer-gets-its-own-twist` rank 14, already titles the entry
+  "...and an evicted houseguest gets a way back in" — the exact
+  phrase this list's own title uses. **(4)** Married at First Sight
+  Australia S05 ("a participant from the previous season gets matched
+  again, a first for the format") — a clean, independently-discovered
+  single-returnee-into-fresh-cast fact on a show with zero presence in
+  the seeded-returnee search so far — rejected: already staked
+  near-verbatim at `the-reshuffle-stays-in-house` rank 7 ("A face from
+  the year before gets matched again, a different kind of recycling").
+  **(5)** RHOM S04's revival-cast-continuity fact (Lisa Hochstein and
+  Alexia Nepola as "the only returning full-timers" in an otherwise
+  new Peacock-reboot cast) — confirmed genuinely unstaked via a full
+  `show: rhom` + `season: 4` grep (the show's two existing ledger
+  appearances, `moving-day` and `the-wait-between-seasons-was-never-
+  the-same-twice`, stake the network-platform-move and gap-length
+  facts respectively, not cast continuity) — but rejected as a launch
+  path: it's a single data point on a single show, RHOM already runs
+  its own dedicated `category: single` list on a different axis (the
+  release-gap one), and no other Bravo/Peacock revival in the catalog
+  carries a comparable "kept exactly two legacy cast members" fact
+  strong enough to build a cross-canon `tone`/`craft` list around
+  (the ledger's own prior passes already closed out RHONY S14, Queer
+  Eye S01, and other reboot-adjacent candidates as saturated). No
+  `content/themes/*.md` file written or edited this pass; no ledger
+  row changed besides this note. Net: the seeded-returnee vein is now
+  conclusively drained (its last four independently-findable facts all
+  resolve into the freshly-shipped `too-few-to-call-it-all-stars`),
+  and the two adjacent mechanic-durability/comeback-mechanic lists
+  it's most likely to spill into are both already covering their
+  nearest Big Brother facts. Next unlock is the same as prior
+  zero-ship passes: Rule 2 filing a new season, or a scout-assisted
+  sweep for facts outside the repo's own season-file text.
