@@ -10104,6 +10104,39 @@ last time a curator actually looked.
   The next unlock remains Rule 2 filing a new season, or an oversight-
   authorized scout-research process to reach facts outside the repo's
   own season-file text.
+- 2026-09-15 zero-ship tick, second same-day pass (cloud march, delegated
+  to a `content-curator` agent for an independent search): five fresh
+  angles chased, all rejected.
+  - real-family / blood-relative casting as the structural engine
+    (Amazing Race S08 Family Edition, Survivor S27/S29 Blood vs. Water
+    + Survivor Australia S07, Big Brother S05 Project DNA twins + S16
+    twin HoH, The Challenge S27 Battle of the Bloodlines, MasterChef
+    S15 Dynamic Duos, Top Chef S23 Carolinas twin brothers, Bachelor in
+    Paradise S03 twin-linked rose twist) — rejected: `when-the-cast-
+    was-already-related` already ships this exact thesis, 15 entries
+    across 12 shows, covering every fact found here verbatim.
+  - confessional / Diary Room / Beach Hut as a craft device (the
+    second-channel narration mechanic) — rejected:
+    `straight-to-camera-never-to-each-other` (category: craft) already
+    ships this exact thesis.
+  - tiebreaker / sudden-death / overtime mechanics — rejected: already
+    split across `when-the-vote-came-back-tied` and `best-finales`,
+    sub-floor headroom for a third angle.
+  - production-halt / delayed-premiere disruption (distinct from
+    pandemic-seasons) — rejected: same "on-location production hazard"
+    vein already logged rejected (this file, 2026-07-26 entry on
+    labor-strikes); only 5 hits (SYTYCD S17, MasterChef S11, Bachelor
+    in Paradise S04), too thin to stand alone from `pandemic-seasons`.
+  - casting-diversity firsts (first openly-out contestant, etc.) —
+    rejected: only 2 theme files touch it incidentally, no concentrated
+    cross-show vein, overlaps the already-rejected judging-panel
+    demographic-firsts angle.
+  - Independently corroborates the same-day earlier pass's conclusion
+    (six angles rejected, census categories reconfirmed capped) via
+    different starting points. No `content/themes/*.md` file written
+    or edited. The catalog (180+ shipped lists) has saturated the
+    structural/craft/tone/era space to the point where new-angle
+    ideation converges on already-shipped lists rather than gaps.
 
 ## Notes
 
