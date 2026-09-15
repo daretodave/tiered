@@ -1,7 +1,7 @@
 ---
 show: below-deck-mediterranean
 editor: tiered.tv editor
-last_revised: 2026-08-10
+last_revised: 2026-09-15
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. Every aired season of Below Deck Mediterranean, from the Montenegro origin through the Dubrovnik II run. The ranking weights cast chemistry across all three departments, location quality, captain authority, and what each season added to the format. Outcomes and firings don't move the needle. The season that runs the format cleanest earns the slot."
 meth_how_h: "How I weigh it"
@@ -70,21 +70,21 @@ community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Season 6 returned to Croatia — Sibenik's Dalmatian coast carrying a different character than Dubrovnik. The M/Y Lady Michelle gave the production a new yacht profile to work with, and an 18-episode run gave the season room to develop its crew dynamics across multiple departments. Captain Sandy's command faced the department-level friction the format runs on. The Adriatic setting delivered visually without asking for editorial assistance. A dependable mid-run entry that earns its place in the canon without reaching the upper tier.
 
+## 11. Season 11 — Dubrovnik II
+
+tag: A rebuilt crew and new yacht return to the franchise's best waters — and the location bet paid off.
+slot_argument: Dubrovnik gave the franchise its peak in Season 2; Season 11 sent Sandy back with a new yacht and a rebuilt crew, and the bet paid off. Record ratings and a season 12 renewal settle the cast case Barcelona II's wrinkle couldn't.
+community_rank_hint: rank=6 delta=1 sentiment=up
+
+Season 11 sent Below Deck Mediterranean back to Dubrovnik for the first time since the location produced the franchise's peak season, and the bet paid off across the board. The premiere drew the franchise's best ratings in years, reviews praised the crew's whole-department chemistry over the old hookup-drama register, and Bravo renewed the show for a twelfth season before the finale even aired. That settles the cast case Season 2 first proved possible. Barcelona II's charter-guest matchmaker twist is a real format wrinkle, but a location this strong paired with chemistry this reviewed clears it. Season 11 moves up.
+
 ## 10. Season 10 — Barcelona II
 
 tag: A Barcelona return with a genuine format first — a new yacht and a charter-guest matchmaker twist.
 slot_argument: Barcelona II lacks Athens's or Como's claim to new geography — a second trip to the same city. What it adds is a real format wrinkle (the matchmaker charter), a new yacht, and an 18-episode run. Dependable, Sibenik-mold, not groundbreaking.
-community_rank_hint: rank=6 delta=0 sentiment=hold
+community_rank_hint: rank=7 delta=-1 sentiment=down
 
 Season 10 sends Below Deck Mediterranean back to Barcelona for the first time since Season 3, this time with Captain Sandy Yawn in command rather than João Franco. The location argument is weaker than Malta's or Athens's — this is a return, not a first — but the season adds real texture elsewhere. The M/Y Bravado, a new 147-foot yacht, gives the production a different profile to shoot, and the 18-episode run matches Sibenik's length. The charter-guest matchmaker twist is a genuine format first, the kind of structural addition the methodology rewards. It lands where Sibenik does: a dependable mid-canon season that works the format cleanly without redefining it.
-
-## 11. Season 11 — Dubrovnik II
-
-tag: A yacht and crew mostly new to the franchise return to the location that produced its best season.
-slot_argument: Dubrovnik gave the franchise its high-water mark in Season 2; Season 11 sends Sandy back to those waters on a new yacht with a rebuilt crew. The location argument is strong; the cast case is still unproven this early.
-community_rank_hint: rank=7 delta=0 sentiment=hold
-
-Season 11 sends Below Deck Mediterranean back to Dubrovnik for the first time since the location produced the franchise's peak season, and that callback is a stronger location claim than Barcelona II's repeat trip or even Athens's genuine geographic first. What holds it below Barcelona II is the absence of a comparable format wrinkle — no structural charter twist, just a returning setting worked by a mostly new crew. That puts Season 11 in the same company as Athens: a strong hook paired with an unproven cast case. The location argument carries it this far; the chemistry argument is still being written.
 
 ## 9. Season 9 — Athens
 
