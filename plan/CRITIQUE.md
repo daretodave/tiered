@@ -1,8 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-09-14 at commit 7eeb9379
-> Pass count: 160
+> Last pass: 2026-09-15 at commit cf50047f
+> Pass count: 161
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 161 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted the
+> two most recently filed surfaces (Below Deck Mediterranean's post-finale
+> S11 content and Alone Australia's freshly-drained S4 Sápmi/Finland
+> season) plus a general sweep: `/`, `/shows/below-deck-mediterranean`,
+> `/shows/alone-australia/season/sapmi-finland`, `/themes/been-here-before`,
+> `/themes` anon; `/`, `/shows/below-deck-mediterranean?view=community`,
+> `/u/e2e`, `/themes/when-the-chairs-turned-over`,
+> `/shows/alone-australia/season/sapmi-finland?view=community` authed.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px) with no spoiler leaks on
+> either freshly-filed surface. 2 new findings filed (0 HIGH, 1 MED, 1
+> LOW): a verified, reproduced edge case in the shared `clipToSeoBudget()`
+> helper (`src/lib/seo.ts`) where its em-dash clause-boundary preference
+> (added at pass-68) or a plain long comma-list can both land the SERP
+> snippet cut before any of a lede's actual descriptive content —
+> reproduced directly against both the Alone Australia S4 and Below Deck
+> Mediterranean S11 ledes; and Below Deck Mediterranean's "best premiere
+> numbers in years / renewed before the finale aired" fact restated
+> near-verbatim across the show canon page, the season page, and a
+> themed-list entry — the same cross-surface repetition class drained on
+> dozens of other shows, reaching this one fresh. Three candidates were
+> investigated and dropped at self-assessment: an authed-pass claim of
+> "no sign-out affordance anywhere" was a false positive — `HeaderView.tsx`
+> deliberately collapses `@handle` + `Sign out` behind a tap-to-reveal
+> account menu (documented since pass-45), and the static capture never
+> clicked it; a claim that the themed-list "Save" button ignores
+> authenticated state is accurate but by design (`ListDetailTools.tsx`'s
+> own comment scopes Save to device-local, reader-only actions — not a
+> defect); and a "`?view=community` is a dead param on season-detail
+> URLs" finding was reproducible but unreachable — no component anywhere
+> in the app ever emits that query shape on a season URL, so it was an
+> artifact of the orchestrator's own test-URL choice, not a real user
+> path. No pending HIGH findings remained open ahead of this pass; the
+> site continues to read clean on the P0 spoiler check.
 > Pass 160 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4132,6 +4169,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/alone-australia/season/sapmi-finland, /shows/below-deck-mediterranean/season/dubrovnik-ii — `clipToSeoBudget()` can clip a meta description before any of the lede's actual descriptive content
+- pass: 161 (commit cf50047f)
+- viewport: desktop
+- category: seo
+- observation: The shared SEO-snippet clipper in `src/lib/seo.ts` has two edge cases that both land the cut too early on long, punctuation-heavy ledes, reproduced directly on two freshly-filed season pages. (1) Alone Australia S4's lede is "The Australian version goes furthest yet. Ten survivalists self-film in Finland's Sápmi region — Arctic terrain, a different cold-weather skill set, and the biggest environmental leap since the move to Fiordland. The format's boldest location bet to date." The pass-68 em-dash-preference override (added to avoid stopping mid-list) fires here and clips at the em dash — even though a later, more complete comma boundary exists that would keep "Arctic terrain, a different cold-weather skill set" in the snippet. Rendered: "The Australian version goes furthest yet. Ten survivalists self-film in Finland's Sápmi region…" — the entire descriptive payload of the sentence is discarded. (2) Below Deck Mediterranean S11's lede is "...aboard the new M/Y Akira One, with Aesha Scott, Nathan Gallagher, and Joe Bradley anchoring a mostly rebuilt crew..." — no em dash present, so the function just takes the last comma inside the 159-char budget, which happens to land after the first of three listed cast names. Rendered: "...aboard the new M/Y Akira One, with Aesha Scott…" — reads as an arbitrary cutoff mid-enumeration, precisely the "stopping mid-list" failure mode the em-dash override was written to prevent, just via the plain-comma path instead.
+- evidence: Reproduced directly with `node -e` against `clipToSeoBudget()`'s current implementation (`src/lib/seo.ts:88-120`) using both ledes verbatim from `content/shows/alone-australia/seasons/04-sapmi-finland.md` and `content/shows/below-deck-mediterranean/seasons/11-dubrovnik-ii.md`; both season pages source their meta/og/twitter description from this exact function via `descriptionFor()` in `src/app/shows/[show]/season/[slug]/page.tsx:151-159` (no `meta_description` override authored on either season, so both fall through to the `clipToSeoBudget(lede)` branch).
+- suggested fix: In `clipToSeoBudget`, don't let the em-dash override win when it discards a comma cut that's meaningfully closer to the budget (e.g. only prefer the em dash if the comma cut it's overriding is more than ~20 chars earlier than the em dash itself) — this fixes case (1) without reopening the original pass-68 mid-list problem it was added for. For case (2), add a lightweight enumerated-list detector (e.g. don't accept a comma cut if the text immediately following it, within the next ~15 chars, matches `/^\s*[A-Z][a-z]+.*,.*\band\b/` — a strong "more items and a conjunction follow" signal) so a plain Oxford-comma list doesn't get cut mid-enumeration either. Both fixes are localized to the existing function; add regression tests pinning both ledes verbatim (matching the existing pass-62/67/79 regression-test pattern in `src/lib/__tests__/seo.test.ts`).
+- source: browser (critique-pass-161, anon)
+
+### [LOW] [anon] /shows/below-deck-mediterranean — the "best premiere numbers in years / renewed for a twelfth season before the finale even aired" fact for S11 (Dubrovnik II) is restated near-verbatim across three separate surfaces on the site
+- pass: 161 (commit cf50047f)
+- viewport: desktop
+- category: voice
+- observation: The same fact, in near-identical phrasing, appears on the show canon page, the season's own page, and a themed-list entry that references the season. Show page: "The premiere drew the franchise's best ratings in years... Bravo renewed the show for a twelfth season before the finale even aired." Season page (`/shows/below-deck-mediterranean/season/dubrovnik-ii`): "posted the franchise's best premiere numbers in years, and Bravo renewed it for a twelfth season before the run even finished." Themed list (`/themes/been-here-before`, entry #06, filed this same week per the ab99ff14 Rule-3 staking tick): "the franchise's best premiere numbers in years, and a season 12 renewal announced before this one even wrapped." A reader who lands on more than one of these — a plausible path given the show page links to both the season and the themed list — reads the same fact restated in barely-varied words each time, the same cross-callout repetition class already drained across dozens of other shows (e.g. issue #-adjacent pass-150/153/160 fixes on Top Chef, Big Brother, Traitors), reaching Below Deck Mediterranean fresh here.
+- evidence: Verbatim strings quoted above from `content/shows/below-deck-mediterranean/canon.md`, `content/shows/below-deck-mediterranean/seasons/11-dubrovnik-ii.md`, and `content/themes/been-here-before.md` entry #06.
+- suggested fix: Pick one surface as the sole owner of the raw "best premiere numbers in years / renewed before finale aired" fact (following the established precedent — usually the season page's `pull` or lede, since that's the season's own record) and rewrite the other two to argue a different angle using the same underlying fact — e.g. the canon rationale could argue what the early renewal *means* for the season's canon slot (network confidence as a signal), and the themed-list entry could tie the fact back to the list's own thesis (freshly-filed seasons staking early claims) rather than re-deriving the premiere-numbers fact itself. Content-only, up to three files, following the standard voice-repetition fix pattern already applied dozens of times.
+- source: browser (critique-pass-161, anon)
 
 ### [MED] [anon] /shows/top-chef/season/carolinas — two separate facts (the location clause and Kristen Kish's tenure as host) are each restated near-verbatim across multiple surfaces, including the meta description
 - pass: 160 (commit 7eeb9379)
