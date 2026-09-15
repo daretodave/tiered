@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-22
+last_revised: 2026-09-15
 featured: false
 related:
   - best-hosting
@@ -139,4 +139,10 @@ entries:
     rank: 21
     title: "A new sous chef quietly becomes a fixture behind the pass."
     blurb: "Andi Van Willigan takes the Red Team pass, a post she'd hold for three more seasons — the kind of change that never gets its own storyline, just a steadier authority on that side of the kitchen from here on."
+  - show: project-runway
+    season: 22
+    season_label: "S22 · New York"
+    rank: 22
+    title: "The judges' table settles into three permanent seats for the first time."
+    blurb: "Tyra Banks joins Nina Garcia and Law Roach as the panel's third permanent judge, on a season that also fields the franchise's largest cast to date. The table finally settles into a fixed three-seat shape the reboot had been chasing all along."
 ---
