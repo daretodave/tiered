@@ -1092,7 +1092,7 @@
   color: color-mix(in oklab, var(--show-ink) 55%, transparent);
   display: flex; align-items: center; gap: 10px;
 }
-.list-card h4 {
+.list-card h3 {
   font-family: var(--serif); font-weight: 500; font-size: 22px;
   color: var(--show-ink); margin: 0;
   letter-spacing: -0.015em; line-height: 1.2; text-wrap: balance;

@@ -52,7 +52,7 @@ export function FeaturedThemes({ show, showName }: FeaturedThemesProps) {
                   list &middot; {count} {count === 1 ? 'entry' : 'entries'}
                 </span>
               </div>
-              <h4>{theme.title}</h4>
+              <h3>{theme.title}</h3>
               {theme.description ? (
                 <p className="list-card-blurb">{theme.description}</p>
               ) : null}

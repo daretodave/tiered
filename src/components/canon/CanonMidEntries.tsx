@@ -49,7 +49,7 @@ export function CanonMidEntries({
               </div>
             </div>
             <div>
-              <h4 className="cp-mid-title">{entry.title}</h4>
+              <h3 className="cp-mid-title">{entry.title}</h3>
               {entry.tag ? <p className="cp-mid-tag">{entry.tag}</p> : null}
               <p className="cp-mid-blurb">{entry.rationale}</p>
               <div className="cp-mid-meta">
