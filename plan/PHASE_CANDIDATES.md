@@ -9,8 +9,8 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-09 at commit 93860a98
-> Pass count: 70
+> Last pass: 2026-09-16 at commit 17d830ee
+> Pass count: 71
 
 ## Considered (awaiting promotion)
 
@@ -92,6 +92,158 @@
      #25 and #33 are the two rows this pass's fresh evidence maps onto
      most directly; reinforced both in place below.
 -->
+
+<!-- Pass 71 (2026-09-16, cloud march) — 2 new phase-shape candidates filed
+     (#39 heartbeat flatline-alert hardening, #40 YEAR_TENURE_RE teen-number
+     blind spot). No reinforcements — the usual reinforcement targets (#25,
+     #30, #33) had no fresh signal since their last touch.
+     Window since pass 70 (93860a98, 2026-09-09T19:49:03Z): 69 commits /
+     ~7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-13, tenth full pass, next due
+     2026-09-20; gap table held at 40 shows/41 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (161) landed 2026-09-15, only 6 commits
+     before this tick and under the 24h spacing floor (~23h20m elapsed) —
+     both the commit-count and hours thresholds failed. Step 3a/3b empty
+     (no pending phase rows, no Pending category:data AUDIT rows). Step
+     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
+     but the CADENCE gap table was independently re-confirmed unchanged
+     from this same calendar day's earlier tick (commit 17d830ee, ~2.5h
+     prior: all 41 slots starred, confirmed-but-unaired), and
+     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
+     58 days) had nothing due. The same earlier tick had already logged a
+     Rule 3 zero-ship (rejected duplicate AGT S02 candidate) against a
+     backdrop of 9+ consecutive same-day zero-ship passes documented across
+     late August through mid-September (issue #758's saturation streak).
+     Re-running that search within the same day was judged not to add
+     information, so this tick treated content as having fallen through
+     (matching pass-70's precedent) rather than filing a second
+     reconfirmation-only commit. This left the dispatch to fall through to
+     `/expand`'s own gate, which opened independently (posture bold, 69
+     commits / ~7 days since pass 70 — both thresholds clear by a wide
+     margin, live AUDIT.md + CRITIQUE.md signal present, no phase/data
+     work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total. The
+       recurring HIGH/MED cluster (night.yml starvation, e2e-full
+       duration-ceiling, the-voice factual corruption) maps onto
+       already-filed candidates #35, #34, #36 — no new evidence to
+       reinforce with this pass. Two LOW rows are genuinely new signal:
+       a heartbeat-workflow false-positive (user-issue #806, root-caused
+       and a concrete fix already sketched inline, score 2.1 — stuck below
+       the 3.0 `/iterate` dispatch floor with no other consumer) and a
+       `YEAR_TENURE_RE` teen-number blind spot in
+       `scripts/content-check.ts` (surfaced by CRITIQUE pass-80, corpus
+       -scanned with ~10 concrete allowlist candidates identified, score
+       2.7 — same below-floor situation). Both are real, scoped,
+       self-contained engineering fixes that no dispatch path currently
+       picks up — filed as #39 and #40.
+     - `plan/CRITIQUE.md` Pending: 8 rows. Three `[needs-user-call]` rows
+       (home-page mobile catalog list, `/u/[handle]` own-profile bareness,
+       `/themes` stat-chip date-vs-count ambiguity) are genuine editorial
+       calls already correctly parked for a human `/oversight` session, not
+       phase-shape gaps — left as-is. The two B-tier browse-scale findings
+       (pass-77, pass-121) are both already tracked and reinforced inside
+       candidate #30 (last reinforced pass-64); no new pass number beyond
+       what #30 already cites, so no further reinforcement filed. One
+       finding (dragrace/season-structure themed-list routes) and one
+       (theme entry concentration) read as single-surface content tweaks,
+       not phase-shape.
+     - `spec.md` / `design/`: no diff since pass 70 (`git log -p
+       --since=2026-09-09 -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+-->
+
+### 40. `YEAR_TENURE_RE` teen-number blind spot — extend the editorial-tenure-honesty gate to season-level sources
+
+**Score:** 3.0 (impact: 4, ease: 5 → base 2.0 + 1.0 cheap-and-impactful (single
+regex + type extension, closes a real gap in an existing P0-adjacent
+invariant))
+**Source pass:** 71
+**Filed:** 2026-09-16
+**Why:** Phase 43's editorial-tenure-honesty invariant
+(`collectYearTenureIssues` in `scripts/content-check.ts`) is supposed to catch
+every hardcoded year-tenure claim across show/season/canon copy, but
+`YEAR_TENURE_RE` only matches spelled-out tens (twenty through ninety) — teen
+phrases like "fourteen-year" or "twelve years in" are structurally invisible
+to it. This was surfaced as a fix suggestion attached to CRITIQUE pass-80's
+The Voice finding (closed via commit 0c917a9 / issue #504) but deliberately
+deferred rather than shipped alongside the content fix, because a corpus scan
+(`grep` across `content/shows/*.md`, `*/seasons/*.md`, `*/canon.md`) found the
+widening isn't a simple regex edit: at least 10 existing teen-number tenure
+phrases are historical facts anchored to a specific past season's air date
+(e.g. `amazing-race/seasons/11-all-stars.md` "first ten years back on the
+starting line", `big-brother/canon.md` "returns after fourteen years"), not
+live claims against "today." Naively widening the regex today would fail
+every one of those ten on the very next tick, since `TENURE_ANCHOR_ALLOWLIST`
+only exempts entries keyed by (show, canon-entry-title) — season-level
+eyebrow/lede/pull sources have no `entryTitle` and can't be allowlisted
+through that path. This is exactly signal A's shape from `skills/expand.md`
+§4 (an audit finding that's real but not a one-line fix) with a twist: it's
+LOW severity (2.7) rather than high-impact, so it sits stuck below
+`/iterate`'s 3.0 dispatch floor indefinitely with no other path to ship.
+**Scope sketch:** Extend the `TenureAnchor`/`isAnchorAllowed` machinery in
+`scripts/content-check.ts` to accept season-level sources (not just canon
+entries) — likely a new anchor key shape keyed on (show, season number,
+field) rather than (show, canon-entry-title). Populate the ~10 already-
+identified historical phrases as allowlist rows (cross-verify each against
+its season's actual air date at fix time, per the corpus-scan list in the
+AUDIT.md row). Widen `YEAR_TENURE_RE` to also match teen numbers
+(ten/eleven/twelve/thirteen/.../nineteen) once every existing hit has a home
+(either the allowlist or a genuine rewrite to a token/milestone form).
+Single-file engineering change, one content-check colocated test extension,
+no page code.
+**Source signals:**
+- `plan/AUDIT.md` [LOW] row (score 2.7): `YEAR_TENURE_RE` only matches
+  spelled-out tens, teen-number tenure phrases structurally invisible to the
+  editorial-tenure-honesty invariant; ~10 historical teen-number phrases
+  already catalogued via corpus scan.
+- CRITIQUE pass-80 (closed, commit 0c917a9 / issue #504): the original
+  finding whose suggested fix ("widen `YEAR_TENURE_RE` to also match teen
+  numbers") was deferred rather than shipped, creating this exact gap.
+**Conflicts:** none — extends an existing, already-shipped-strict invariant
+(phase 43) rather than introducing a new rule; doesn't touch `spec.md` or the
+URL contract.
+
+### 39. Heartbeat flatline-alert false-positive hardening — require persistence across reads before paging
+
+**Score:** 4.4 (impact: 3, ease: 8 → base 2.4 + 2.0 cheap-and-impactful
+(single-workflow-file fix, root cause already diagnosed, exact remedy already
+sketched inline in the audit row))
+**Source pass:** 71
+**Filed:** 2026-09-16
+**Why:** `.github/workflows/heartbeat.yml`'s "alarm if march has not
+completed a tick in 14h" step filed a false-positive issue (#806,
+2026-09-10) claiming no completed march tick in 86 hours. The audit row
+verified via `gh run list --workflow march --status completed` that march
+ticks had actually completed every 2-6h continuously through the claimed gap
+window — the check reads only the single most-recent `--status completed`
+run via `-L 1`, and at the moment it queried (5 minutes after a new march run
+had started but before it finished), the GitHub Actions API's "most recent
+completed" read appears to have returned a stale result rather than the true
+last-completed run (~2.3h prior), most likely a transient API
+read-consistency glitch rather than a real gap. A false "the loop has
+flatlined" alarm is exactly the kind of noise that erodes trust in the
+heartbeat mechanism and wastes a triage cycle on a non-issue — the opposite
+of what the heartbeat exists to do. This is a real, scoped signal (score
+2.1) sitting below `/iterate`'s 3.0 dispatch floor with no other consumer;
+the audit row itself already sketches the fix, it just needs a phase slot to
+land in.
+**Scope sketch:** Harden `.github/workflows/heartbeat.yml`'s flatline check
+so a single stale API read can't page a false alarm — either (a) require the
+gap to persist across two consecutive 6h heartbeat firings before creating
+an issue, or (b) check the last 3 completed runs (`-L 3`) via the GitHub API
+and alarm only if all three reads agree the gap is real, rather than trusting
+one `-L 1` read. Single workflow-file change; no app code touched.
+**Source signals:**
+- `plan/AUDIT.md` [LOW] row (score 2.1, user-issue #806): full root-cause
+  analysis already done, false-positive confirmed via `gh run list`
+  cross-check, fix approach already sketched ("next:" note inline).
+**Conflicts:** none — CI/ops-only, doesn't touch `spec.md`, the URL
+contract, or any content rule.
 
 ### 38. Spoiler-language heuristic gate — content-check should flag outcome/twist-coded phrasing, not just a proper-noun blocklist
 
