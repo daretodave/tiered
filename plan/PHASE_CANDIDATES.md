@@ -1257,6 +1257,25 @@ Seven of the last eight nights (09-05 through 09-12, only 09-09
 green) have now breached the wall, three in an unbroken row (09-10,
 09-11, 09-12) — still the standing `/oversight` recommendation.
 
+**Update (digest 2026-09-16, catching up four nights):** the breach
+streak extended every night since the last update. 09-13's run
+(34728429419) hit the wall with `Running 10594 tests using 1 worker`
+(flat vs. 09-12), 9,053 of 10,594 completed (85.4%); 09-14's run
+(34793638737) breached with the catalog up to 10,602 tests, 8,920
+completed (84.1%); 09-15's run (34916176869) breached again, flat at
+10,602, 9,247 completed (87.2%); tonight's 09-16 run (35042761077)
+breached a fourth time, still flat at 10,602 tests, 9,006 completed
+(84.9%). Notably the catalog stopped growing across all three most
+recent nights (10,602 flat 09-14 through 09-16) — the wall is now
+purely a single-worker throughput ceiling, not a moving target from
+content growth, which makes the sharding fix this candidate proposes
+a durable resolution rather than a stopgap against continued growth.
+All completed checks passing every night, zero test-quality
+regression. Seven of the last seven nights (09-10 through 09-16) have
+now breached the wall in an unbroken row — the longest unbroken
+streak logged yet. No scope change to the fix; **57 days unpromoted
+since filing (07-22).**
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
