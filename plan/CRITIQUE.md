@@ -1,8 +1,49 @@
 # CRITIQUE
 
-> Last pass: 2026-09-15 at commit cf50047f
-> Pass count: 161
+> Last pass: 2026-09-16 at commit b0af7a0d
+> Pass count: 162
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 162 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted two
+> freshly-touched surfaces (Bake Off's just-rewritten weekly community-vote
+> question, Project Runway's newly-filed New York 2026 season) plus a
+> general sweep: `/`, `/shows/bake-off?view=community`, `/shows`,
+> `/themes/the-season-the-audience-showed-up-all-at-once`, `/themes` anon;
+> `/`, `/shows/bake-off?view=community`, `/u/e2e`,
+> `/themes/the-season-the-audience-showed-up-all-at-once`,
+> `/shows/project-runway/season/new-york-2026?view=community` authed.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px) with no spoiler leaks anywhere
+> sampled. 2 new findings filed (0 HIGH, 1 MED, 1 LOW): the newly-filed
+> Project Runway New York 2026 season restates its cast-size/judges-table/
+> Siriano-Save fact set near-verbatim across "the shape of the season" and
+> "where it sits in the canon" — the same cross-section repetition class
+> drained on dozens of other shows, reaching this fresh season on its first
+> critique pass; and that same season's eyebrow reads "Aired summer 2026"
+> against the detail card's "PREMIERED / Jul 9, 2026" a few lines down — a
+> second, previously-single-instance-only reproduction of the still-open
+> pass-152 Aired/Premiered verb-mismatch class. Two candidates were
+> investigated and dropped at self-assessment: an anon-pass claim that Bake
+> Off's weekly community-vote question ("Does the final BBC year hold up
+> against the peak Welford run on rewatch?") is ambiguous because "The Last
+> BBC Year" allegedly shares a "Welford peak" caption with the season the
+> question means to contrast against turned out to rest on a mis-citation —
+> direct `curl` inspection of the live page confirms that caption
+> ("The series that confirmed the Welford peak...") belongs to a third,
+> unrelated season (rank 5, "The Year After"), not rank 2; the two seasons
+> the question actually names ("The Welford Peak," rank 1, and "The Last
+> BBC Year," rank 2) are unambiguous, adjacently-ranked, and literally
+> titled to match the question's paraphrase. A second claim — Bake Off's
+> mobile community table dropping the "7D" trend column — is a real,
+> reproducible third instance of an already-tracked, still-open systemic
+> `CommunityRankList` defect (pass-104/pass-156, previously confirmed on
+> love-island-uk and naked-and-afraid); filing a fourth near-duplicate row
+> for the same untouched systemic fix adds no new information, so it was
+> dropped rather than re-filed. No pending HIGH findings remained open
+> ahead of this pass; the site continues to read clean on the P0 spoiler
+> check.
 > Pass 161 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4169,6 +4210,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /shows/project-runway/season/new-york-2026 — "the shape of the season" and "where it sits in the canon" restate the identical cast-size/judges-table/Siriano-Save fact set near-verbatim
+- pass: 162 (commit b0af7a0d)
+- viewport: desktop
+- category: voice
+- observation: Sections 02 ("The shape of the season") and 03 ("Where it sits in the canon") restate the same four facts in near-identical order — twenty-two designers/largest cast ever, the Manhattan workroom, Tyra Banks joining returners Nina Garcia and Law Roach, and the Siriano Save giving the mentor a hand in who survives. Section 01 ("The take") compresses the same four facts a third time. Same cross-section repetition class already drained on dozens of other shows; this is the season's first critique pass, so it's a fresh instance rather than a regression.
+- evidence: SHAPE (`content/shows/project-runway/seasons/22-new-york-2026.md`): "...Twenty-two designers — the largest cast the show has ever run — fill the Manhattan workroom, and a fuller judges' table adds Tyra Banks alongside returners Nina Garcia and Law Roach. The season's real structural first is the Siriano Save, handing the mentor a direct hand in who survives." CANON (`content/shows/project-runway/canon.md`, Season 22 rationale): "...Twenty-two designers fill the Manhattan workroom, the largest cast the show has ever run, and the judges' table finally reads settled — Tyra Banks joins returners Nina Garcia and Law Roach... The real addition is the Siriano Save, handing mentor Christian Siriano a direct hand in who survives an elimination..."
+- suggested fix: Let the season body (SHAPE) keep sole ownership of the cast-size/panel/Save fact set. Rewrite `canon.md`'s Season 22 rationale to argue only the comparative canon-slot reasoning (why rank 6, not the season above or below) instead of re-deriving the same three facts. Content-only, `content/shows/project-runway/canon.md` (Season 22 rationale block).
+- source: browser (critique-pass-162, authed)
+
+### [LOW] [authed] /shows/project-runway/season/new-york-2026 — the eyebrow's "Aired summer 2026" doesn't match the PREMIERED detail field's "Jul 9, 2026" a few lines down
+- pass: 162 (commit b0af7a0d)
+- viewport: desktop
+- category: comprehension
+- observation: A second, independent instance of the still-open pass-152 verb-mismatch finding on `/shows/alone/season/arctic-ii` (that row's suggested fix was scoped to one file). This season's eyebrow uses "Aired" while the detail card a few sections down uses "Premiered" for the identical date fact — reproducing on a different show confirms the underlying convention drift isn't isolated to Alone.
+- evidence: Eyebrow: "Aired summer 2026 · Filmed in Manhattan · Freeform's second season". Detail card: "PREMIERED / Jul 9, 2026". Source: `content/shows/project-runway/seasons/22-new-york-2026.md`.
+- suggested fix: Standardize on "Premiered" in the `eyebrow` field to match the PREMIERED detail-field label, per the same fix already suggested for the still-open Alone row. Given this is now a two-show reproduction, worth considering a lightweight `content-check` invariant (flag any season eyebrow starting with "Aired" while a `premiere_date` also renders a PREMIERED field) the next time a content tick touches this class, rather than treating each recurrence as an isolated one-file fix. Content-only, `content/shows/project-runway/seasons/22-new-york-2026.md`.
+- source: browser (critique-pass-162, authed)
 
 ### [MED] [anon] /shows/alone-australia/season/sapmi-finland, /shows/below-deck-mediterranean/season/dubrovnik-ii — `clipToSeoBudget()` can clip a meta description before any of the lede's actual descriptive content
 - pass: 161 (commit cf50047f)
