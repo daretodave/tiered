@@ -4368,6 +4368,7 @@
 - evidence: "THIS WEEK'S QUESTION — Does the final BBC year hold up against the peak Welford run as Bake Off's high-water mark on rewatch in 2026?"
 - suggested fix: Split into one plain comparison and drop the redundant "high-water mark" clause, e.g. "Does the final BBC year hold up against the peak Welford run on rewatch?" Content-only, one field (likely the weekly-question copy source for bake-off).
 - source: browser (critique-pass-147, authed)
+- resolved: 2026-09-16, cloud march tick, content-gap redirect per issue #758. Rewrote `content/shows/bake-off/canon.md`'s `weekly_question` to the suggested one-comparison form, dropping the redundant "high-water mark" clause. Picked up per the established dispatch-starvation workaround: Rule 2 (season-fill) confirmed fully starred in `plan/CADENCE.md` (38 gap-slots/38 shows), Rule 3 (themed lists) confirmed saturated (no ledger row review-due in `plan/LISTS.md`; oldest `last_reviewed` `survivor-pillars` at 2026-07-31, well under the 90-day floor). Verify gate green: fast gate (199 files/3687 tests, content:check ok — 68 shows/1052 seasons/68 canons/182 themes), build clean (1516 static pages), e2e 4897/4897 passed (31.8m). Shipped at aa4b08bf.
 
 ### [LOW] [authed] /shows/dragrace/season/season-18?view=community — the HOST stat caption partially restates the host's name before adding its one new fact
 - pass: 146 (commit bbc5263b)
