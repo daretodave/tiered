@@ -12,7 +12,7 @@ tier_s_blurb: Format-defining or unrepeatable. The series that fixed what a peak
 tier_a_blurb: Deep canon. Defensible at any kitchen table, even when the era around it dates.
 tier_b_blurb: Strong but era-bound. Worth the watch, less worth the argument.
 tier_c_blurb: Historical texture more than rewarding rewatch. Useful for completists, optional for everyone else.
-weekly_question: Does the final BBC year hold up against the peak Welford run as Bake Off's high-water mark on rewatch in 2026?
+weekly_question: Does the final BBC year hold up against the peak Welford run on rewatch?
 era_bands:
   - key: bbc
     label: BBC era
