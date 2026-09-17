@@ -175,4 +175,27 @@ test.describe('mobile @ 375px viewport', () => {
       ).toBeLessThanOrEqual(1)
     })
   }
+
+  // Regression guard for critique pass-141/156 MED: the 7D trend column
+  // was dropped entirely below the 640px breakpoint while the page-level
+  // "voters, last 7 days" stat stayed visible above the table, reading
+  // as contradictory. love-island-uk was the pass-141 repro case.
+  test('community rank table keeps the 7D trend column visible at 375px (critique pass-141/156)', async ({
+    page,
+  }) => {
+    const response = await page.goto('/shows/love-island-uk?view=community', {
+      waitUntil: 'domcontentloaded',
+    })
+    expect(response?.status()).toBe(200)
+
+    const header = page.getByTestId('community-rank-cols').locator('.col-trend')
+    await expect(header).toBeVisible()
+    await expect(header).toHaveText('7d')
+
+    const overflow = await page.evaluate(() => ({
+      scrollWidth: document.documentElement.scrollWidth,
+      clientWidth: document.documentElement.clientWidth,
+    }))
+    expect(overflow.scrollWidth - overflow.clientWidth).toBeLessThanOrEqual(1)
+  })
 })

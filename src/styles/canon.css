@@ -1104,14 +1104,28 @@
        APPROVAL % number takes its place rather than disappearing outright
        (critique pass 104, #660) — the lede copy on this page promises
        "the share of 'in' votes orders every season," so the metric that
-       backs that sentence must survive down to 375px. */
-    grid-template-columns: 40px 1fr 44px 66px;
-    column-gap: 10px;
+       backs that sentence must survive down to 375px. The 7D trend column
+       gets the same treatment (critique pass-141/156 MED, confirmed
+       systemic across two shows): the page-level "voters, last 7 days"
+       stat stays visible at this breakpoint, so dropping the per-season
+       trend read as contradictory — a reader could see the aggregate but
+       not which seasons moved. A narrow fifth column keeps it, shrunk to
+       fit rather than removed. */
+    grid-template-columns: 40px 1fr 44px 34px 58px;
+    column-gap: 8px;
   }
   .cp-cl-cols .col-bar,
   .cp-cl-row .cp-clr-bar { display: none; }
   .cp-cl-cols .col-pct,
   .cp-cl-row .cp-clr-pct { display: block; }
+  .cp-cl-cols .col-trend { display: block; }
+  .cp-cl-row .cp-clr-trend,
+  .cp-cl-row .cp-clr-trend-pill { display: inline-flex; }
+  .cp-cl-row .cp-clr-trend,
+  .cp-cl-row .cp-clr-trend-pill {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
   /* The desktop "Approval" header (.col-bar) is hidden above, so the
      bare "%" left in .col-pct has no label — give it one at this
      breakpoint only (critique pass-138, #758 content-gap redirect). */
