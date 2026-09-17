@@ -1,8 +1,39 @@
 # CRITIQUE
 
-> Last pass: 2026-09-16 at commit b0af7a0d
-> Pass count: 162
+> Last pass: 2026-09-17 at commit 06edc64d
+> Pass count: 163
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 163 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted two
+> freshly-touched surfaces (Project Runway's New York 2026 season, whose
+> canon rationale was just rewritten this same day to drop a restated
+> fact set, and the-city-already-had-a-show's just-completed round-7 echo
+> drain) plus a general sweep: `/`, `/shows/project-runway/season/
+> new-york-2026`, `/shows`, `/themes/the-city-already-had-a-show`,
+> `/themes` anon; `/`, `/shows/project-runway/season/new-york-2026`,
+> `/u/e2e`, `/themes/the-city-already-had-a-show`, `/sign-in` authed.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px) with no spoiler leaks anywhere
+> sampled. 2 new findings filed (0 HIGH, 2 MED, 0 LOW): the Project Runway
+> season's authed "Also appears in" module mixes sentence-case and full
+> Title Case theme titles in the same four-item row, a catalog-wide defect
+> reaching 4 of 182 theme titles; and the-city-already-had-a-show's
+> round-7 echo drain (same-day commit dd3704e6) missed two of its
+> eighteen entries — ranks 9 and 11 still repeat "the same Strip" / "the
+> same year" verbatim between title and blurb. One candidate was
+> investigated and dropped at self-assessment: an anon-pass claim that
+> `/themes` shows the same list twice (once in the featured rail, once in
+> the by-tone grid) with two different descriptions turned out to be
+> working as designed — the schema's `featured_pull` field exists
+> specifically to give the featured-rail card shorter pull-quote copy
+> distinct from the full `description` field used in the browsable index
+> (`src/lib/themes-format.ts` falls back to `description` only when
+> `featured_pull` is absent), and the dual-rendering itself was a
+> deliberate pass-40 fix (#353) to keep every list visible in the
+> chip-filtered grid. No pending HIGH findings remained open ahead of
+> this pass; the site continues to read clean on the P0 spoiler check.
 > Pass 162 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4210,6 +4241,24 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/project-runway/season/new-york-2026 — the "Also appears in" cross-reference module mixes sentence-case and full Title Case theme titles in the same list
+- pass: 163 (commit 06edc64d)
+- viewport: desktop
+- category: voice
+- observation: The season page's "Also appears in" module renders four themed-list titles side by side; three follow the site's established sentence-case convention (capitalize only the first word and proper nouns) and one renders in full Title Case, reading as a style break within a single scannable module. Confirmed catalog-wide: 4 of 182 theme titles in `content/themes/*.md` use full Title Case while the other ~178 use sentence-case, and nothing in `src/styles/screens.css` normalizes casing (`.appears-row .name` has no `text-transform`), so the raw frontmatter renders verbatim everywhere the title appears — themes index, the list's own hero, and every "Also appears in" module.
+- evidence: Live authed appears-row module on `/shows/project-runway/season/new-york-2026`: "A way back in", "The cast outgrew the format", "Too Few to Call It All-Stars", "When the chairs turned over" — the third breaks sentence-case. Catalog-wide grep confirms the same defect in three more theme titles: `content/themes/every-season-split-the-room-differently.md` (`title: "Every Season Split the Room Differently"`), `content/themes/the-founding-five-kept-getting-replaced.md` (`title: "The Founding Five Kept Getting Replaced"`), `content/themes/the-roster-never-held-still.md` (`title: "The Roster Never Held Still"`). Colon-subtitle titles (e.g. "Love Island US: it took five seasons to find a home") were excluded as legitimate — proper-noun prefix + lowercase continuation already matches convention.
+- suggested fix: Content-only — re-case the `title:` frontmatter field in the four listed `content/themes/*.md` files to sentence-case (capitalize only the first word and any proper nouns), matching the other 178 theme titles. No component change needed since rendering is already verbatim from frontmatter.
+- source: browser (critique-pass-163, authed)
+
+### [MED] [anon] /themes/the-city-already-had-a-show — two entries missed the round-7 headline-to-body echo drain that just swept the other 16
+- pass: 163 (commit 06edc64d)
+- viewport: desktop
+- category: voice
+- observation: The 2026-09-17 "echo drain round 7" (commit dd3704e6) reworded most of this list's entries to remove headline-to-body noun-phrase echoes, but two entries still carry the exact defect class the round targeted. Rank 9 (Love Island US S02) repeats "the same Strip" verbatim between title and blurb. Rank 11 (America's Next Top Model S08 / RHOS Sydney pairing) repeats "the same year" between title and blurb.
+- evidence: `content/themes/the-city-already-had-a-show.md` rank 9 — title: "A dating show reroutes its villa to the same Strip a cooking competition used years earlier" / blurb: "...but a rival culinary format had already staked out the same Strip more than a decade before." Rank 11 — title: "Sydney Harbour gets a modeling shoot the same year a share-house crew moves into the same view" / blurb begins "...uses the famous harbor for the show's first Oceania trip in 2007. That same year, an unrelated MTV format ships a whole cast..."
+- suggested fix: Apply the same round-7 treatment to ranks 9 and 11 — reword the blurb's echoing noun phrase ("the same Strip" → "the Strip" / "that stretch of the Strip"; "That same year" → a non-echoing temporal marker) so the two remaining entries match the other 16 already swept.
+- source: browser (critique-pass-163, anon)
 
 ### [LOW] [authed] /shows/project-runway/season/new-york-2026 — the eyebrow's "Aired summer 2026" doesn't match the PREMIERED detail field's "Jul 9, 2026" a few lines down
 - pass: 162 (commit b0af7a0d)
