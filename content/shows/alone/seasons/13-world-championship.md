@@ -17,6 +17,7 @@ filming_caption: "Richardson Mountains, Northwest Territories · new Arctic site
 host: "Colby Donaldson"
 host_caption: "Seventh season at the helm"
 shape_h2: "Seven countries, one field."
+take_h2: "A global test of identity."
 aired_year: 2026
 episodes: 13
 ep_count: 13

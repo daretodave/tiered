@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-09-17
 featured: false
 related:
   - away-from-home-turf
@@ -18,7 +18,7 @@ entries:
     season_label: "S16"
     rank: 1
     title: "Marrakech becomes a modeling-competition set five weeks before a Housewives cast arrives"
-    blurb: "Cycle 16 shoots its international leg in Marrakech's medina, premiering in March 2011. An unrelated Bravo cast premieres its own Marrakesh season five weeks later — neither production had any reason to know about the other."
+    blurb: "Cycle 16 shoots its international leg in Marrakech's medina, premiering in March 2011. An unrelated Bravo cast premieres its own Marrakesh season a little over a month on — neither production had any reason to know about the other."
   - show: rhony
     season: 4
     season_label: "S04"
@@ -30,7 +30,7 @@ entries:
     season_label: "S34 · War of the Worlds 2"
     rank: 3
     title: "A rivalry-format cast claims the Phuket coast five weeks before Below Deck's crew anchors there"
-    blurb: "War of the Worlds 2 films across Chiang Mai and Phuket, premiering in August 2019. A Bravo charter show anchors off the same Andaman coastline five weeks later that October — different network, different genre, same stretch of water."
+    blurb: "War of the Worlds 2 films across Chiang Mai and Phuket, premiering in August 2019. A Bravo charter show anchors off the same Andaman coastline just over a month on, that October — different network, different genre, same stretch of water."
   - show: below-deck
     season: 7
     season_label: "S07 · Thailand"
@@ -42,13 +42,13 @@ entries:
     season_label: "S06"
     rank: 5
     title: "A 2006 photoshoot claims the Phuket coast a superyacht would anchor in years later"
-    blurb: "Cycle 6's Southeast Asia leg uses Phuket's temples and coastline for its final UPN photoshoots in 2006. A yacht-charter format picks the same waters for a full season years later."
+    blurb: "Cycle 6's Southeast Asia leg uses Phuket's temples and coastline for its final UPN photoshoots in 2006. A yacht-charter format picks the same waters for a full season more than a decade on."
   - show: the-circle
     season: 3
     season_label: "S03"
     rank: 6
     title: "The Circle's Manchester complex gets company from a completely different competition"
-    blurb: "Season 3 runs its cloning twist through the same Salford, Greater Manchester complex the show always uses. Months later, a lip-sync competition sets up its own workroom in the same city."
+    blurb: "Season 3 runs its cloning twist through the same Salford, Greater Manchester site the show always uses. Months later, a lip-sync competition sets up its own workroom in the same city."
   - show: dragrace-uk
     season: 3
     season_label: "S03"
@@ -66,7 +66,7 @@ entries:
     season_label: "S02"
     rank: 9
     title: "A dating show reroutes its villa to the same Strip a cooking competition used years earlier"
-    blurb: "Pandemic travel rules push the villa onto a Cromwell hotel rooftop in Las Vegas in 2020. The format never uses the city again, but a cooking competition had already staked out the same Strip years earlier."
+    blurb: "Pandemic travel rules push the villa onto a Cromwell hotel rooftop in Las Vegas in 2020. The format never uses the city again, but a rival culinary format had already staked out the same Strip more than a decade before."
   - show: the-real-world
     season: 31
     season_label: "S31 · Go Big or Go Home (2016)"
@@ -78,7 +78,7 @@ entries:
     season_label: "S08"
     rank: 11
     title: "Sydney Harbour gets a modeling shoot the same year a share-house crew moves into the same view"
-    blurb: "The Southern Reach uses Sydney Harbour for the show's first Oceania trip in 2007. The same year, an unrelated MTV format ships a whole cast to a house overlooking the same harbor."
+    blurb: "The Southern Reach uses the famous harbor for the show's first Oceania trip in 2007. That same year, an unrelated MTV format ships a whole cast to a house overlooking the water."
   - show: the-real-world
     season: 33
     season_label: "S33 · Atlanta (2019)"
@@ -96,29 +96,29 @@ entries:
     season_label: "S05 · Miami (1996)"
     rank: 14
     title: "A share-house crew claims Miami Beach well before Bravo builds a Housewives cast there"
-    blurb: "Season five's Rivo Alto Island house introduces the franchise's group-job structure in 1996, a real turning point. Miami wouldn't get its own Housewives cast until 2011 — this crew got there first."
+    blurb: "Season five's Rivo Alto Island house introduces the franchise's group-job structure in 1996, a real turning point. Miami wouldn't get its own Bravo ensemble until 2011 — this crew got there first."
   - show: top-chef
     season: 3
     season_label: "S03 · Miami"
     rank: 15
     title: "A cooking competition works Miami's kitchens years before a Housewives cast moves in"
-    blurb: "Season three treats Miami's Cuban-American kitchens as a real brief, not scenery, in 2007. Bravo wouldn't give the city a Housewives cast of its own until 2011."
+    blurb: "Season three treats Miami's Cuban-American kitchens as a real brief, not scenery, in 2007. Bravo wouldn't stake this city with a franchise of its own until 2011."
   - show: love-is-blind
     season: 7
     season_label: "S07 · Washington D.C."
     rank: 16
     title: "The pods land in a metro area a Housewives cast already calls turf, one bridge over"
-    blurb: "Season seven's D.C. run in 2024 is the strongest pod experiment since Seattle. Potomac's Housewives cast has worked the DC suburbs a bridge away since 2016."
+    blurb: "Season seven's D.C. run in 2024 is the strongest pod experiment since Seattle. Potomac's Bravo ensemble has worked the DC suburbs a bridge away since 2016."
   - show: bachelor
     season: 15
     season_label: "S15"
     rank: 17
     title: "A hometown finale claims Cape Town nine years before a whole dating-show villa does"
-    blurb: "Season 15's finale swing lands in Cape Town in 2011, the furthest a hometown leg had traveled to that point. An unrelated dating format claims the exact same skyline for a full season nine years later."
+    blurb: "Season 15's finale swing lands in the Cape in 2011, the furthest a hometown leg had traveled to that point. An unrelated dating format claims the exact same skyline for a full season nearly a decade on."
   - show: love-island-uk
     season: 6
     season_label: "S06"
     rank: 18
     title: "A winter villa relocates to the same Cape Town skyline a Bachelor finale already used"
-    blurb: "The franchise's first winter edition moves its whole villa to Cape Town in 2020, new host and new continent at once. A returning Bachelor had already used the same city for a single finale leg nine years earlier."
+    blurb: "The franchise's first winter edition moves its whole villa to South Africa in 2020, new host and new continent at once. A returning Bachelor had already used the same city for a single finale leg nine years earlier."
 ---

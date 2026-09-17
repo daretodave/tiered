@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-09-15
+last_revised: 2026-09-17
 featured: false
 related:
   - the-place-fought-back
@@ -48,7 +48,7 @@ entries:
     season_label: "S11 · Dubrovnik II"
     rank: 6
     title: "A new yacht and a new galley boss prove Dubrovnik's magic wasn't a one-time thing."
-    blurb: "Captain Sandy Yawn returns to Dubrovnik for the first time since Season 2, aboard a new yacht with a mostly rebuilt crew under a new chef. The bet pays off: the franchise's best premiere numbers in years, and a season 12 renewal announced before this one even wrapped."
+    blurb: "Captain Sandy Yawn returns to Dubrovnik for the first time since Season 2, sailing a different superyacht with a mostly rebuilt crew under a new chef. The bet pays off: the franchise's best premiere numbers in years, and a season 12 renewal announced before this one even wrapped."
   - show: survivor-australia
     season: 10
     season_label: "S10 · Brains V Brawn II"
