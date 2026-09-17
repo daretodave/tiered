@@ -1428,6 +1428,19 @@ now breached the wall in an unbroken row — the longest unbroken
 streak logged yet. No scope change to the fix; **57 days unpromoted
 since filing (07-22).**
 
+**Update (digest 2026-09-17):** eighth consecutive breach — tonight's
+run (35169164707, started 01:05:13Z) hit the standard 75-minute wall
+with `Running 10602 tests using 1 worker` (flat vs. 09-16), 9,092 of
+10,602 completed (85.8%) at cutoff, mid-range for this streak. Catalog
+has now held exactly flat at 10,602 tests for four straight nights
+(09-14 through 09-17), reinforcing the 09-16 update's read: this is a
+pure single-worker throughput ceiling, not a growing target. All
+completed checks passing, zero test-quality regression. No scope
+change to the fix; **58 days unpromoted since filing (07-22).** Eight
+of the last eight nights (09-10 through 09-17) have now breached the
+wall in an unbroken row — still the standing `/oversight`
+recommendation, now the file's longest-running unpromoted candidate.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -1603,6 +1616,21 @@ Softening urgency further relative to #34/#25/#28 (all of which show
 continued live recurrence this same window) given the sustained
 respite, but holding score and scope — a race condition that hasn't
 fired in 6 days is not a race condition that's been fixed. 41 days
+unpromoted since filing (07-27).
+
+**Update (digest 2026-09-17):** the clean streak kept extending and
+never broke — `gh run list --workflow night` shows **11 consecutive
+successful runs** (09-06 through 09-16, tonight's 09-17 run in
+flight at digest time), nearly double pass-69's 6-run count and the
+longest unbroken streak on record by a wide margin. Still reads as
+favorable scheduling luck, not a fix — no `night.yml` or `march.yml`
+edit has shipped since the 07-27 diagnosis, and the underlying
+most-recently-queued-wins eviction mechanism is unchanged. Given 11
+days with zero occurrences, further softening urgency relative to
+#34 (which just posted its 58th unpromoted day with an unbroken
+8-night breach streak, the opposite trend) — recommend #34 lead the
+next `/oversight` session, with #35 following once a genuine
+eviction recurs to re-confirm the race is still live. 52 days
 unpromoted since filing (07-27).
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
