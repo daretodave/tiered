@@ -121,18 +121,17 @@ tag: The record-scale season — the Freeform era's second year settles its judg
 slot_argument: Twenty-two designers push past the franchise's previous cast record, a fuller three-judge panel finally fixes the continuity problem the prior season carried, and the Siriano Save gives the mentor's chair a genuine structural first.
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
-Season twenty-two is the Freeform era stopping to build a
-format instead of just resetting one. Twenty-two designers fill
-the Manhattan workroom, the largest cast the show has ever run,
-and the judges' table finally reads settled — Tyra Banks joins
-returners Nina Garcia and Law Roach, closing the continuity gap
-the prior season's thinned-out panel left open. The real
-addition is the Siriano Save, handing mentor Christian Siriano
-a direct hand in who survives an elimination, a genuine
-structural first for the franchise. A crossover challenge
-pulling back six alumni ties the cycle to the season before it.
-tiered.tv places it sixth because the season delivers on scale,
-panel, and format at once.
+Season twenty-two is what happens after season nine has already
+answered the scale question. Nine proved a bigger workroom
+doesn't dilute the format; twenty-two clears that same bar and
+then builds new structure on top of it in the same cycle, which
+is more than a confident, format-preserving run like season
+three ever attempts — the gap between them is ambition, not
+execution. But twenty-two still sits one slot below season nine,
+because proving the format could hold at scale at all is rarer
+than adding mechanics to scale someone else already proved
+works. tiered.tv places it sixth because building well on a
+solved problem still counts for less than solving it first.
 
 ## 3. New York
 
