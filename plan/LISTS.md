@@ -11696,3 +11696,65 @@ last time a curator actually looked.
   unlock remains Rule 2 filing a new season, or an oversight-authorized
   scout-research process to reach facts outside the repo's own season-
   file text.
+- **2026-09-17, content-curator direct invocation (third same-day pass,
+  independent of the two zero-ship passes already run today per the
+  brief's summary — narrator/voiceover, fan-vote authority, LGBTQ+
+  casting firsts, sister-show crossovers, back-to-back filming,
+  title-sequence changes, aftercare, wildcard scoring, cash-prize
+  milestones, spinoff genealogy): zero-ship.** Confirmed `CROSS_SHOW_STRICT
+  = true` in `scripts/content-check.ts` (line 2833) — the phase-41
+  cross-canon floor is already strict, not lax, so no live `tone` /
+  `structure` / `craft` / `era` list can be sitting under 3 distinct
+  shows; the "extend an under-floor list" fallback path is foreclosed
+  by construction, not just by search. Ran a fresh `grep -c '^  - show:'
+  content/themes/*.md` census across all 182 files: every file under
+  10 entries is `category: single`, each mathematically capped at its
+  own show's current aired-season count (`the-pitch-names-where-the-
+  idea-came-from` 3/3 craft at exactly the 3-show floor, `the-calendar-
+  moved-the-format-didnt` 6/6 craft, both already logged dead ends in
+  this file) — no fresh headroom found beyond the 2026-09-14 census.
+  Chased two angles far enough to draft before rejecting: **(1) the
+  two-episode "split premiere" as a cast-scale structural device** —
+  grepped `split-premiere|two-part premiere|premiere.{0,20}split` across
+  every season file; found dragrace S06/S15 (both already staked under
+  this identical fact in the single-show `the-season-structure-never-
+  holds-still`, rank 3 and rank 5 — a duplicate stake to restake them),
+  dragrace-allstars S10/S11 (a different fact — tournament-bracket
+  convergence, not cast-scale premiere splitting), ink-master S12 (a
+  gender-split draft, off-thesis), bachelorette S11 (a split-lead vote,
+  not a split premiere episode), and project-runway S21/S22 (genuinely
+  unclaimed for this specific fact — checked every existing PR S21/S22
+  ledger appearance in `new-network-same-rulebook`, `the-workroom-
+  outlasted-the-network`, `moving-day`, `when-the-chairs-turned-over`,
+  `the-mic-changed-hands`, `a-way-back-in`, `the-cast-outgrew-the-
+  format`, and `too-few-to-call-it-all-stars` — none stakes the
+  two-part-premiere-structure fact itself). Net: only 1 distinct show
+  (project-runway) clears without a duplicate-stake violation — well
+  short of the 3-show cross-canon floor, rejected. **(2) per-episode
+  runtime changes (60↔90 minute swings, merged broadcasts, feature-
+  length premieres) as a craft cut** — grepped `90-minute|feature-
+  length|extended runtime` and drafted a working entry list (amazing-
+  race S35/S36, survivor S45, dragrace S15, big-brother S27,
+  married-at-first-sight S10, american-ninja-warrior S15/S16) before
+  discovering the whole thesis already ships in full as `running-long-
+  running-short` (craft, 16 entries across 12 shows, `last_revised`
+  2026-08-25) — every one of the drafted entries already sits on that
+  list under near-identical framing. Also checked and rejected as too
+  thin for a standalone cross-show list: on-air branded subtitles
+  (`the-circle` S05 "Singles," `alone` S05 "Redemption") — only 2-3
+  clean hits, and the branding-event angle these subtitles mark is
+  already covered by other lists' own theses (comeback, returnee-
+  cast); language-barrier-as-format-first (jersey-shore S04 Florence,
+  the-real-world S13 Paris) — thin, and the underlying fact (filmed
+  entirely outside the US) is already the address of `away-from-home-
+  turf` / `home-seasons-waited-relocation-seasons-didnt`; pre-existing-
+  friendship casting brief (only `the-real-world` S07 grounds cleanly,
+  single hit). No `content/themes/*.md` file written or edited this
+  tick; no ledger row changed besides this note. Independently
+  corroborates the 2026-09-14/09-15 conclusion: the catalog (182
+  shipped lists) has saturated the structural/craft/tone/era space to
+  the point where every fresh-angle thread this pass pulled on either
+  terminates inside an already-shipped list's address or fails the
+  ≥3-distinct-show floor before a draft can clear it. Next unlock is
+  unchanged: Rule 2 filing a new season, or an oversight-authorized
+  scout pass for facts outside the repo's own season-file text.
