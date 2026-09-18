@@ -11758,3 +11758,64 @@ last time a curator actually looked.
   ≥3-distinct-show floor before a draft can clear it. Next unlock is
   unchanged: Rule 2 filing a new season, or an oversight-authorized
   scout pass for facts outside the repo's own season-file text.
+- **2026-09-18, content-curator direct invocation (`/ship-content`
+  Rule 3 dispatch): zero-ship.** Rule 2 re-confirmed stalled
+  (`plan/CADENCE.md` gap table fully starred, no actionable finale
+  row). No ledger row past the 90-day review floor. Brief named three
+  specific leads as the newest unmined material — checked all three
+  against the live ledger and this file's own history before touching
+  anything else. **(1) alone-australia S04 "Sápmi, Finland"** — already
+  fully mined: its Arctic-first location-reveal fact is staked at
+  `best-location-reveals` rank 11 (extended 2026-09-13, same day the
+  season file landed), and `the-place-fought-back`'s
+  location-as-antagonist thesis already seats alone-australia three
+  times over (S01/S02/S03), at this ledger's own informal 3-entry
+  per-show cap — a fourth entry there would either restate the
+  already-shipped location-reveal fact under a thinner frame or break
+  a cap this ledger otherwise holds consistently. No genuinely fresh,
+  unclaimed facet found. **(2) project-runway S22 "New York"** — three
+  of its four headline facts are already staked: the Tyra Banks
+  three-seat judges'-table consolidation (`when-the-chairs-turned-over`
+  rank 22, 2026-09-15), the Siriano Save reclaim mechanic (`a-way-back-
+  in` rank 14, 2026-09-11), and the 22-designer record cast size
+  (`the-cast-outgrew-the-format` rank 9, 2026-09-13). The season's
+  two-part immunity/elimination premiere split was independently
+  chased and rejected in this file's own 2026-09-17 third-pass note
+  (only 1 distinct show clears without a duplicate-stake violation,
+  well short of the 3-show floor). Checked the one remaining unstaked
+  fact — a mid-run crossover challenge bringing back six S21 alumni for
+  a single episode (`format_changes[3]` in the season's own file) —
+  against every existing list's thesis: doesn't fit `a-way-back-in`
+  (that list's thesis is a route back in for a contestant eliminated
+  *within* the same season, not a guest cameo by alumni from the prior
+  season) or `too-few-to-call-it-all-stars` (seeded returnee casting
+  for a full season, not a one-off guest episode). Searched the wider
+  catalog for a matching same-franchise-alumni-guest-episode fact to
+  clear the 3-show floor on a new list: Top Chef S18 Portland (a
+  full-season rotating-alumni-judge device, already spent elsewhere per
+  this file's own prior notes), Too Hot to Handle S06 (two alumni
+  re-enter as new cast members — a seeded-returnee-casting fact, a
+  different shape), and Chopped S02 (a four-episode past-champions
+  tournament block, not a single guest cameo) — none share PR S22's
+  exact one-off-single-challenge-cameo shape, confirming this file's
+  standing 2026-08-23 "clip-show/crossover-episode" dead-end verdict
+  still holds even against the freshest season file. Only 1 clean show;
+  rejected. **(3) masterchef Season 16 "Global Gauntlet" finale-shift**
+  — the canon rank-shift itself (S16 moving above S15 in the C-tier
+  rankings) is a canon-level, single-show, necessarily
+  ranking-adjacent fact with no clean spoiler-safe cross-show framing,
+  and no list in the ledger stakes "post-finale rank movement" as a
+  thesis. The season's own structural fact (twenty home cooks, four
+  regional World Cup-style groups) is already staked three times over
+  (`one-rule-fills-every-seat`, `one-season-two-flags` rank 4,
+  `the-competition-leaves-the-country` rank 11) — confirmed via a full
+  `masterchef` + `season: 16` grep across this ledger. No unstaked
+  facet found. All three named leads are drained. Given the volume of
+  same-day and cross-tick zero-ship passes already logged against the
+  full catalog (issue #758), did not re-run a blind full sweep this
+  tick — the marginal angles it would surface are the same ones this
+  file has already logged dead dozens of times over. No
+  `content/themes/*.md` file written or edited this tick; no ledger row
+  changed besides this note. Next unlock is unchanged: Rule 2 filing a
+  new season, or an oversight-authorized scout pass for facts outside
+  the repo's own season-file text.
