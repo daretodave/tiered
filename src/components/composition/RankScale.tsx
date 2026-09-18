@@ -30,6 +30,19 @@ export function rankFillPercent(rank: number, total: number): number {
   return (clamped / total) * 100
 }
 
+// Critique pass-148 MED: the scale-track's position is conveyed
+// entirely by a visually-placed dot between two end labels — a
+// screen-reader user gets no plain-language summary of where "here"
+// falls. This mirrors the visual near-top/mid-pack/near-tail read a
+// sighted reader gets from the dot's position on the track.
+export function rankPositionSummary(rank: number, total: number, headLabel: string): string {
+  const pad = pad2(rank)
+  if (total <= 1) return `Ranked #${pad} of ${total} in ${headLabel}.`
+  const pct = rankFillPercent(rank, total)
+  const qualifier = pct <= 33.34 ? ', near the top' : pct >= 66.67 ? ', near the tail' : ', mid-pack'
+  return `Ranked #${pad} of ${total} in ${headLabel}${qualifier}.`
+}
+
 export function RankScale({
   rank,
   total,
@@ -50,7 +63,7 @@ export function RankScale({
         </span>
         <span className="scale-of">of {total}</span>
       </div>
-      <div className="scale-track">
+      <div className="scale-track" aria-label={rankPositionSummary(rank, total, headLabel)}>
         <div
           className="scale-fill"
           data-testid="rank-scale-fill"

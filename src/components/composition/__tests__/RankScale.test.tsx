@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { RankScale, rankFillPercent } from '../RankScale'
+import { RankScale, rankFillPercent, rankPositionSummary } from '../RankScale'
 
 describe('rankFillPercent', () => {
   it('matches the design source for rank=7/47 (≈14.9%)', () => {
@@ -25,6 +25,32 @@ describe('rankFillPercent', () => {
 
   it('returns 0 (the peak end) for a sole #1-of-1 entry, not 100 (the tail)', () => {
     expect(rankFillPercent(1, 1)).toBe(0)
+  })
+})
+
+describe('rankPositionSummary (critique pass-148 MED)', () => {
+  it('describes a near-top rank', () => {
+    expect(rankPositionSummary(1, 47, "Editor's Canon")).toBe(
+      "Ranked #01 of 47 in Editor's Canon, near the top."
+    )
+  })
+
+  it('describes a mid-pack rank', () => {
+    expect(rankPositionSummary(24, 47, "Editor's Canon")).toBe(
+      "Ranked #24 of 47 in Editor's Canon, mid-pack."
+    )
+  })
+
+  it('describes a near-tail rank', () => {
+    expect(rankPositionSummary(47, 47, "Editor's Canon")).toBe(
+      "Ranked #47 of 47 in Editor's Canon, near the tail."
+    )
+  })
+
+  it('drops the position qualifier for a sole #1-of-1 entry', () => {
+    expect(rankPositionSummary(1, 1, "Editor's Canon")).toBe(
+      "Ranked #01 of 1 in Editor's Canon."
+    )
   })
 })
 
@@ -103,5 +129,19 @@ describe('<RankScale>', () => {
       .getByTestId('rank-scale-here')
       .closest('.scale-here') as HTMLElement
     expect(dot.style.left).toMatch(/^0(\.00)?%$/)
+  })
+
+  it('gives the scale-track a plain-language aria-label (critique pass-148 MED)', () => {
+    render(<RankScale rank={2} total={4} />)
+    expect(
+      screen.getByLabelText("Ranked #02 of 4 in Editor's Canon, mid-pack.")
+    ).toBeInTheDocument()
+  })
+
+  it('uses the custom headLabel in the scale-track aria-label', () => {
+    render(<RankScale rank={1} total={10} headLabel="Community rank" />)
+    expect(
+      screen.getByLabelText('Ranked #01 of 10 in Community rank, near the top.')
+    ).toBeInTheDocument()
   })
 })
