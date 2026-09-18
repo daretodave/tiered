@@ -38,7 +38,7 @@ tag: The most elaborate production yet — a fourth Highland run confident enoug
 slot_argument: Series 4 pairs the standard format with Uncloaked, a companion after-show hosted by Ed Gamble, and a cast that clearly arrives Traitors-literate. Sits just below the peak on production polish, ahead of the more compressed Series 3.
 community_rank_hint: rank=3 delta=0 sentiment=hold
 
-Series 4 arrives as the format's most assured outing to date: the same cloak-and-Round-Table game at Ardross Castle, but backed for the first time by a companion after-show, Uncloaked, hosted by Ed Gamble, unpacking each episode as it airs. Claudia Winkleman returns for a fourth run, and the production leans into the format's own mythology rather than reinventing it, which mostly works — the cast clearly arrives Traitors-literate, changing the usual rhythm of suspicion. It sits just below the format's peak, ahead of the previous series, on the strength of that production polish and a genuinely engaged cast.
+Series 4 sits just below the format's peak, ahead of the more compressed Series 3, on the strength of two things the earlier runs didn't have: Uncloaked giving the format its first companion after-show, and a cast that arrives already fluent in the cloak-and-Round-Table rhythm rather than learning it on camera. That fluency changes the usual pace of suspicion — the group plays the game instead of discovering it — and four Highland runs in, the production has the confidence to let familiarity work for it rather than chase reinvention. It's not quite Series 2's tension, but it's the clearest runner-up the format has produced.
 
 ## 3. Series 3 (2025)
 
