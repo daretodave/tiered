@@ -1441,6 +1441,18 @@ of the last eight nights (09-10 through 09-17) have now breached the
 wall in an unbroken row — still the standing `/oversight`
 recommendation, now the file's longest-running unpromoted candidate.
 
+**Update (digest 2026-09-18):** the eight-night breach streak broke
+— tonight's run (35293694466, started 01:05:44Z) finished in
+1h12m30s, `Running 10603 tests using 1 worker`, all 10,603 passed.
+Catalog grew by exactly 1 test (masterchef finale-shift landed
+overnight) after four flat nights. First green night since 09-09,
+but the margin under the 75-minute wall is thin (~2.5 minutes) —
+reads as the wall holding tonight, not the single-worker throughput
+ceiling this candidate targets resolving itself. No scope change to
+the fix; **59 days unpromoted since filing (07-22)** — still the
+file's longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -1632,6 +1644,17 @@ days with zero occurrences, further softening urgency relative to
 next `/oversight` session, with #35 following once a genuine
 eviction recurs to re-confirm the race is still live. 52 days
 unpromoted since filing (07-27).
+
+**Update (digest 2026-09-18):** streak extends to 12 — 09-17's
+run (createdAt 15:08:24Z) posted `success`, and tonight's 09-18 run
+(this tick) is in flight with no contention signature observed. The
+two candidates' trends have now diverged further: #34 just posted
+its *first* green night in nine (see its 09-18 update), still a
+fragile ~2.5-minute margin under the wall, while #35's mechanism has
+gone unobserved for 12 straight nights. No `night.yml` edit has
+shipped; the underlying eviction race is unchanged. Recommendation
+holds: #34 leads the next `/oversight` session. 53 days unpromoted
+since filing (07-27).
 
 <!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
      filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
