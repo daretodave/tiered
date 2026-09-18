@@ -1,13 +1,13 @@
 ---
 show: masterchef
 editor: tiered.tv editor
-last_revised: 2026-06-21
+last_revised: 2026-09-18
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched MasterChef across its run with the specific interest of someone who cares about food television as a format — not just the cooking, but whether the show makes the cooking matter. Home-cook competitions require a different kind of scrutiny than professional-kitchen shows. The bar is aspirational by design, and I hold the ranking to that design."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — casting depth, whether the amateur bench had enough skill to sustain a full run; judging clarity, whether the panel made cooking legible as a standard rather than spectacle; and format integrity, whether the weekly challenges built to something that felt earned. The mystery box is the constant. Everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now covers all sixteen seasons — the full founding era, the rotation and evolution years, and the modern themed runs through the current airing season. Rankings in the lower third are provisional and will shift as the run develops further distance."
+meth_when_p: "The canon now covers all sixteen seasons — the full founding era, the rotation and evolution years, and the modern themed runs through the most recently completed season. Rankings in the lower third are still settling and may shift as the newest structural experiments earn more distance from air date."
 tier_s_blurb: "MasterChef at its ceiling — the format and the cast pushing each other to a level that justifies the whole enterprise."
 tier_a_blurb: "Strong MasterChef. A deep bench, real culinary range, and stakes that hold up across the whole run — the format performing near its best."
 tier_b_blurb: "Solid MasterChef. Strong amateur talent and clear judging carry a season that respects what home cooks can do, even without a standout run."
@@ -139,18 +139,18 @@ community_rank_hint: rank=14 delta=0 sentiment=hold
 
 Season seven is an experiment with a real structural cost. Rotating the third-judge seat through Wolfgang Puck, Aaron Sanchez, and other guest chefs introduces fresh culinary perspectives each week but prevents the panel from developing any continuity. The Skills Test is a genuine addition to the format's challenge vocabulary. The three-way finale is a structural innovation. But the judging dynamic resets with every guest, and the season never builds the cumulative authority that a settled panel carries. The innovation is real; the trade-off is real too.
 
+## 16. Global Gauntlet
+
+tag: The most globally-structured season in the US run — a four-region format that carried its shape the whole way through.
+slot_argument: Season sixteen split twenty home cooks into four regional groups under a World Cup-inspired bracket. The structure held for the entire run rather than dissolving at midseason, the kind of follow-through the canon rewards.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+MasterChef: Global Gauntlet is the US series' first season built on a genuinely international structural premise — four regional groups (Europe, Asia-Pacific, Africa, and the Americas) competing under World Cup-inspired bracket mechanics, filmed in Toronto. Gordon Ramsay, Joe Bastianich, and Tiffany Derry judge. The regional team framework is the most globally-minded casting and structural concept the US franchise has attempted, and unlike United Tastes of America's regional groups, which dissolved at midseason, Global Gauntlet's four-region build carried its structure through the full run. That follow-through is what separates a strong premise from a sustained one, and it's what earns this season the stronger claim among the show's most structurally ambitious modern entries.
+
 ## 15. Dynamic Duos
 
 tag: New city, new judge, new format — the show reinventing itself in three directions at once.
 slot_argument: Season fifteen is the most structurally radical modern entry: pairs throughout, first season outside LA, Tiffany Derry's first full year. The pairs format changes every challenge. Whether it fully sustains is the open question.
-community_rank_hint: rank=15 delta=0 sentiment=hold
-
-MasterChef: Dynamic Duos moves the production to Melbourne for the first time, installs Tiffany Derry as the third permanent judge replacing Sanchez, and runs twenty-four home cooks as twelve pairs for the full run. Married couples, siblings, parent-and-child teams, and best friends cook together under elimination pressure, which changes the dynamic of every challenge. The pairs structure brings a different kind of tension than individual play. The season is the most ambitious structural reinvention since the mentorship year, and it carries more uncertainty about whether the format holds than any prior entry.
-
-## 16. Global Gauntlet
-
-tag: The most globally-structured season in the US run — currently airing, provisionally ranked.
-slot_argument: Season sixteen takes MasterChef to Toronto with twenty home cooks in four global regional groups, competing under a World Cup-inspired bracket structure. Currently mid-run; all observations are based on aired episodes. Ranking provisional.
 community_rank_hint: rank=16 delta=0 sentiment=hold
 
-MasterChef: Global Gauntlet is the US series' first season with a genuinely international structural premise — four regional groups (Europe, Asia-Pacific, Africa, the Americas) competing under World Cup-inspired mechanics, filmed in Toronto. Gordon Ramsay, Joe Bastianich, and Tiffany Derry return as the judging panel. The regional team framework is the most globally-minded casting and structural concept the US franchise has attempted. The World Cup scheduling hiatus mid-season makes a final editorial accounting difficult. This ranking is provisional and will be revisited in full when the season completes its run.
+MasterChef: Dynamic Duos moves the production to Melbourne for the first time, installs Tiffany Derry as the third permanent judge replacing Sanchez, and runs twenty-four home cooks as twelve pairs for the full run. Married couples, siblings, parent-and-child teams, and best friends cook together under elimination pressure, which changes the dynamic of every challenge. The pairs structure brings a different kind of tension than individual play. The season is the most ambitious structural reinvention since the mentorship year, and it carries more uncertainty about whether the format holds than any prior entry.

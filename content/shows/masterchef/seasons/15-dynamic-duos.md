@@ -7,7 +7,7 @@ premiere_date: 2025-05-21
 ep_count: 18
 location: Melbourne, Australia
 host: Gordon Ramsay
-canonical_position: 15
+canonical_position: 16
 eyebrow: "MasterChef: Dynamic Duos · Filmed in Melbourne"
 take_h2: "Reinvention on every front."
 lede: "MasterChef: Dynamic Duos sends twenty-four home cooks to Melbourne — the first US season outside Los Angeles — competing as twelve pairs throughout: married couples, siblings, and parent-and-child teams. Tiffany Derry joins Ramsay and Bastianich."
