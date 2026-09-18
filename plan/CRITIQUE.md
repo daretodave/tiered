@@ -1,8 +1,37 @@
 # CRITIQUE
 
-> Last pass: 2026-09-17 at commit 06edc64d
-> Pass count: 163
+> Last pass: 2026-09-18 at commit badef7cd
+> Pass count: 164
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 164 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted the
+> freshly-filed Alone Australia Season 4 (Sápmi, Finland) page, newly
+> promoted to the top canon slot by the 2026-09-13 sweep-triggered drain,
+> plus a general sweep: `/`, `/shows/alone-australia/season/sapmi-finland`,
+> `/shows`, `/shows/alone-australia?view=canon`,
+> `/themes/where-the-warmth-ran-out` anon; `/`,
+> `/shows/alone-australia/season/sapmi-finland`,
+> `/shows/alone-australia?view=community`, `/sign-in`, `/u/e2e` authed.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px) with no spoiler leaks anywhere
+> sampled. 3 new findings filed (0 HIGH, 1 MED, 2 LOW): the Season 4 page
+> restates its "biggest swing/leap since Fiordland" claim across four
+> separate content fields (lede, body paragraph, a `watch_list` bullet,
+> and canon.md's own rationale); the FORMAT and CAST SIZE detail-card
+> captions restate the identical "first Arctic conditions" fact back to
+> back; and the eyebrow's "Aired" doesn't match the PREMIERED detail-field
+> label — a third reproduction of a pattern already tracked twice
+> (project-runway new-york-2026, alone arctic-ii), both still open.
+> One candidate was investigated and dropped at self-assessment: an
+> anon-pass claim that the season page's "Where it sits in the canon"
+> section duplicates canon.md's Season 4 rationale verbatim turned out to
+> be working as designed — that section deliberately quotes the canon
+> rationale in full, a documented pass-49 fix (`page.tsx` comment,
+> `whereItSitsCopy()`) for a previously-empty stub section, not an
+> unintended duplication. No pending HIGH findings remained open ahead of
+> this pass; the site continues to read clean on the P0 spoiler check.
 > Pass 163 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4241,6 +4270,33 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon+authed] /shows/alone-australia/season/sapmi-finland — the "biggest swing/leap since Fiordland" claim is restated across four separate content fields
+- pass: 164 (commit badef7cd)
+- viewport: desktop
+- category: voice
+- observation: The freshly-filed Alone Australia Season 4 season carries the same underlying comparison — this run is the format's biggest location swing since the move to Fiordland — restated, barely reworded, in four independent frontmatter/body fields across two files: the season page's `lede`, its body paragraph, a `watch_list` bullet, and canon.md's Season 4 `slot_argument`/rationale. A reader working through the page top to bottom (or clicking through to the canon list) meets the identical comparison five times in different clothing.
+- evidence: `content/shows/alone-australia/seasons/04-sapmi-finland.md` `lede`: "...the biggest environmental leap since the move to Fiordland." Body paragraph: "...the biggest swing the Australian version has taken since it first left Australian soil for New Zealand." `watch_list` 4th entry: "This marks the biggest location swing since the move to Fiordland." `content/shows/alone-australia/canon.md` Season 4 rationale: "It's the biggest swing the Australian version has taken since the Fiordland leap, and it clears the bar Fiordland set." A related sub-fact (10 episodes tying Fiordland for tightest run) is also restated three times across the detail card, "shape of the season," and "where it sits in the canon."
+- suggested fix: Keep the "biggest swing since Fiordland" framing in one place — canon.md's rationale does the most editorial work with it — and rewrite the season page's `lede`, body paragraph, and `watch_list` bullet to argue distinct angles (e.g. what changed on the ground, what the pacing felt like, what the crew had to solve) rather than re-asserting the same comparison each time. Content-only, two files.
+- source: browser (critique-pass-164, anon + authed)
+
+### [LOW] [authed] /shows/alone-australia/season/sapmi-finland — the FORMAT and CAST SIZE detail-card captions restate the identical fact
+- pass: 164 (commit badef7cd)
+- viewport: desktop
+- category: voice
+- observation: Two adjacent detail-card captions on the same page state the same fact back to back — that this is a 10-person cast facing Arctic conditions for the first time — reading as filler rather than two distinct pieces of information.
+- evidence: `content/shows/alone-australia/seasons/04-sapmi-finland.md` `format_caption`: "10 solo survivalists, the show's first Arctic location." `cast_size_caption`: "Ten survivalists, the first cast to face Arctic conditions."
+- suggested fix: Drop the Arctic-conditions clause from one caption. `cast_size_caption` could instead note something cast-specific (e.g. a return-vs-first-timer split, if sourced) rather than re-deriving `format_caption`'s point. Content-only, one field.
+- source: browser (critique-pass-164, authed)
+
+### [LOW] [authed] /shows/alone-australia/season/sapmi-finland — the eyebrow's "Aired" doesn't match the PREMIERED field label used elsewhere on the page
+- pass: 164 (commit badef7cd)
+- viewport: desktop
+- category: comprehension
+- observation: This season's `eyebrow` frontmatter reads "Aired July 2026," while the PREMIERED detail field lower on the page states the same fact under a different verb. This is a third reproduction of a pattern already tracked twice and still open (project-runway new-york-2026, alone arctic-ii) — confirms the drift isn't isolated to those two shows.
+- evidence: Eyebrow: "Aired July 2026 · The show's first Arctic season." Detail card: "PREMIERED / Jul 15, 2026 / SBS · July 2026."
+- suggested fix: Standardize on "Premiered" in the `eyebrow` field to match the PREMIERED detail-field label, per the same fix already suggested for the two still-open rows. Given this is now a three-show reproduction, worth adding a lightweight `content-check` invariant (flag any season `eyebrow` starting with "Aired" while the page also renders a PREMIERED field from `premiere_date`) the next time a content tick touches this class, rather than a fourth isolated one-file fix. Content-only, `content/shows/alone-australia/seasons/04-sapmi-finland.md`.
+- source: browser (critique-pass-164, authed)
 
 ### [MED] [anon] /shows/project-runway/season/new-york-2026 — the "Also appears in" cross-reference module mixes sentence-case and full Title Case theme titles in the same list
 - pass: 163 (commit 06edc64d)
