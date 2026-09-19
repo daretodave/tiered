@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-09-19
 featured: false
 related:
   - new-flags-planted-fast
@@ -30,13 +30,13 @@ entries:
     season_label: "S01"
     rank: 3
     title: "A celebrity panel guesses at a face they can't see, and the format needs no bedding-in."
-    blurb: "Four masked celebrities hide inside elaborate costumes while a panel and studio audience try to guess who's underneath from voice and clues alone. The concealment premise — panel versus disguise — arrives fully formed in the first episode."
+    blurb: "Four masked celebrities hide inside elaborate costumes while a panel and studio audience try to guess who's underneath from voice and clues alone. The mask-versus-panel matchup arrives fully formed in the first episode."
   - show: the-circle
     season: 3
     season_label: "S03"
     rank: 4
     title: "A blocked player gets to steal someone else's profile and keep playing under it."
-    blurb: "Season three lets an eliminated player clone another contestant's identity and re-enter the game as them, doubling the concealment the format already runs on personas. A second layer of disguise stacked on top of the first."
+    blurb: "Season three lets an eliminated player clone another contestant's identity and re-enter the game as them, doubling the cover story the format already runs on invented personas. A second layer stacked directly on top of the first."
   - show: traitors
     season: 1
     season_label: "S01"
@@ -48,7 +48,7 @@ entries:
     season_label: "S02"
     rank: 6
     title: "A cast that already knows the game sharpens the deception instead of dulling it."
-    blurb: "Series two brings back the deduction format with a cast fluent in how the show works, tightening the read-and-mislead dynamic between Traitors and faithful. The concealment mechanic gets harder to play against, not easier."
+    blurb: "Series two brings back the deduction format with a cast fluent in how the show works, tightening the read-and-mislead dynamic between Traitors and faithful. The lie gets harder to play against, not easier."
   - show: the-circle
     season: 1
     season_label: "S01"
@@ -60,19 +60,19 @@ entries:
     season_label: "S02"
     rank: 8
     title: "An all-returning cast raises the stakes on a game already staked on hidden roles."
-    blurb: "Season two swaps the civilian mix for a cast of recognizable faces who already understand the deduction game, then hands the concealment mechanic to players who know exactly how to work it. The season the format broke out on."
+    blurb: "Season two swaps the civilian mix for a cast of recognizable faces who already understand the deduction game, then hands the ruse to players who already know exactly how to work it. The season the format broke out on."
   - show: masked-singer
     season: 6
     season_label: "S06"
     rank: 9
     title: "The costumes get more elaborate, and the guessing game gets harder to win."
-    blurb: "Season six pushes the show's disguise design further than any prior run, giving the panel less to work with even as the celebrities inside get bigger. The concealment holds up under more scrutiny than ever."
+    blurb: "Season six pushes the show's costume design further than any prior run, giving the panel less to work with even as the celebrities inside get bigger. What's hidden holds up under more scrutiny than ever."
   - show: traitors
     season: 3
     season_label: "S03"
     rank: 10
     title: "New players enter mid-game and reshuffle who the group even has to suspect."
-    blurb: "An all-celebrity cast returns for season three, and a wave of mid-season additions widens the deduction pool right when the Round Table dynamics had started to settle. The concealment mechanic gets a fresh set of unknowns to work with."
+    blurb: "An all-celebrity cast returns for season three, and a wave of mid-season additions widens the deduction pool right when the Round Table dynamics had started to settle. The deception gets a fresh set of unknowns to work with."
   - show: masked-singer
     season: 14
     season_label: "S14"
@@ -84,7 +84,7 @@ entries:
     season_label: "S06"
     rank: 12
     title: "Every houseguest walks in already hiding a real connection to someone else in the house."
-    blurb: "Fourteen houseguests move into the Studio City house, and every single one is secretly paired with somebody else already inside. The alliance math gets dense before the first competition even airs, and the concealment is the whole engine, not a mid-season swerve."
+    blurb: "Fourteen houseguests move into the Studio City house, and every single one is secretly paired with somebody else already inside. The alliance math gets dense before the first competition even airs, and the hidden role is the whole engine, not a mid-season swerve."
   - show: big-brother
     season: 18
     season_label: "S18"
