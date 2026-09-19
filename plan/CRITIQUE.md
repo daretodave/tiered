@@ -4460,6 +4460,7 @@
 - evidence: Eyebrow: "A SECOND BRACKET TOURNAMENT, TIGHTENED"; lede: "Eighteen returning queens split into three six-queen brackets again"; cast-size sub: "eighteen returning queens, three six-queen brackets"; s02 header: "Eighteen queens, unchanged from last year"; s02 body opener: "Season 11 reruns Season 10's bracket-tournament shape and tightens it. Eighteen returning queens split into three six-queen brackets"; watch-for: "Eighteen queens divide into three named brackets."
 - suggested fix: Let one or two fields own the exact numeric fact (e.g. lede + cast-size caption) and rewrite the section-02 subhead/opener and watch-for bullet to add something new — how the brackets differ from last year's, or a specific bracket matchup — instead of restating the count. Scoped to `content/shows/dragrace-allstars/seasons/11-season-11.md`.
 - source: browser (critique-pass-149, authed)
+- resolved: 2026-09-19, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred, Rule 3 saturated). Left the lede + `cast_size_caption` as the two fields owning the "eighteen queens, three six-queen brackets" numeric fact per the suggested fix. Rewrote `shape_h2` ("A narrower cut through the same brackets."), the body opener (drops the queen/bracket count, keeps the three-episode-stretch + top-two-advance + Comeback Queen + host/finale facts), and the first `watch_list` entry (keeps the new Orange/Pink/Purple bracket-color detail, drops the restated "eighteen-queen, three-bracket" clause) so none of the three re-derive the count. Also softened the secondary "tightened" echo across `shape_h2`/body by using "narrows the cut" instead. Content-only, one file (`content/shows/dragrace-allstars/seasons/11-season-11.md`), body still 62 words (50-80 floor/ceiling intact).
 
 ### [MED] [anon] /themes/not-who-they-say-they-are — the phrase "concealment mechanic" (or a close variant) recurs near-verbatim across at least 6 of 13 ranked entries
 - pass: 149 (commit 5d9e1f6f)
@@ -4506,6 +4507,7 @@
 - evidence: "PREMIERED / Jan 1, 2026 / BBC One · launched January 2026"
 - suggested fix: Confirm the real UK premiere date for Series 4 and backfill it; if genuinely unconfirmed at time of writing, show month-only precision instead of a specific day so the UI doesn't imply false precision.
 - source: browser (critique-pass-148, authed)
+- investigated (2026-09-19, cloud march tick): scout-verified against three independent sources (Deadline's Dec 2025 BBC premiere-date announcement, Heart, and Wikipedia citing the BBC) — The Traitors UK Series 4 genuinely premiered 1 January 2026 on BBC One. The frontmatter's `premiere_date: 2026-01-01` is factually correct, not a placeholder; it just happens to land on New Year's Day. No content change made — the finding's premise (that the date looks unconfirmed) doesn't hold once checked against real sourcing.
 
 ### [MED] [authed] /shows/bake-off?view=community — the weekly community-vote question is a run-on sentence nesting two comparisons with an unclear referent
 - pass: 147 (commit HEAD)
