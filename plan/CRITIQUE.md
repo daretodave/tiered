@@ -4488,6 +4488,7 @@
 - evidence: Shape: "Lisa Vanderpump is the only name back from Season 11; ten new regulars take over the floor, four of whom had smaller appearances in earlier seasons." Canon: "Lisa Vanderpump is the only face carried over from Season 11 — every other regular and recurring cast member is gone, replaced by ten new names, four of whom had smaller appearances earlier in the show's run."
 - suggested fix: Let "Shape of the Season" own the full cast-turnover recap; rewrite `content/shows/vanderpump-rules/canon.md`'s Season 12 rationale to argue the #12-of-12 slot comparatively against the adjacent canon neighbor (Season 9) instead of re-listing the same headcount facts.
 - source: browser (critique-pass-156, both anon and authed passes independently surfaced this on the same page)
+- resolved: 2026-09-19, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred, Rule 3 fresh-material search exhausted). Season page's body paragraph keeps the full cast-turnover recap unchanged. Rewrote `content/shows/vanderpump-rules/canon.md`'s Season 12 rationale to argue the #12 slot comparatively against Season 9 (the canon's other reset season) instead of re-listing the same headcount facts. Content-only, one file.
 
 ### [MED] [anon] /shows — the S/A/B tier-section descriptive sentence is marked up as an `<h3>` sibling to every show-name heading in that tier
 - pass: 156 (commit ae289b02)
