@@ -1,8 +1,44 @@
 # CRITIQUE
 
-> Last pass: 2026-09-18 at commit badef7cd
-> Pass count: 164
+> Last pass: 2026-09-19 at commit 4d875a01
+> Pass count: 165
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 165 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted
+> MasterChef's freshly-relevant Global Gauntlet season (finale aired
+> 2026-09-17) and two recently-touched surfaces (Drag Race All Stars
+> Season 11, twice patched this same tick for repetition; Traitors UK
+> Series 4, recently premiere-date-verified) plus a general sweep: `/`,
+> `/shows/masterchef/season/global-gauntlet`, `/shows`,
+> `/shows/dragrace-allstars/season/season-11`,
+> `/themes/best-non-winning-runs` anon;
+> `/shows/masterchef/season/global-gauntlet?view=community`,
+> `/shows/dragrace-allstars/season/season-11?view=community`,
+> `/shows/traitors-uk/season/series-4`, `/sign-in`, `/u/e2e` authed. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px) with no spoiler leaks anywhere
+> sampled. 5 new findings filed (0 HIGH, 2 MED, 3 LOW): MasterChef's
+> Global Gauntlet page restates its judges/regions/World-Cup-bracket fact
+> set across the lede, "shape of the season," and "where it sits in the
+> canon" sections plus the meta sidebar — the same repetition class two
+> other shows just had fixed this same tick; the traitors-uk-family
+> `canonOrderCaptionFor` disambiguation caption (added at pass-140 for
+> title collisions like "Season NN") only matches the regex
+> `/^Season (\d+)$/i`, so international shows using "Series N" numbering
+> (traitors-uk, dragrace-uk, etc.) never get the caption despite carrying
+> the identical rank/number mismatch risk; the Real Housewives franchise
+> is inconsistent about the definite article across ten shows (six drop
+> "The," four keep it, against Bravo's own consistently-"The" branding);
+> dragrace-allstars season-11's `watch_list` "Mid-cycle · the Comeback
+> Queen" entry still fully re-explains the reentry mechanic even after
+> this same tick's canon.md-reference-only fix (pass-130) narrowed every
+> *other* field — the watch-list entry was never in scope of that fix;
+> and the same page's PREMIERED sidebar field repeats "May 2026" on two
+> consecutive lines for a streaming-only show with no weekly timeslot to
+> report instead. No pending HIGH findings remained open ahead of this
+> pass; the site continues to read clean on the P0 spoiler check.
 > Pass 164 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4270,6 +4306,51 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon+authed] /shows/masterchef/season/global-gauntlet — the judges/regions/World-Cup-bracket fact set is restated near-verbatim across the lede, "shape of the season," and "where it sits in the canon" sections, plus the meta sidebar
+- pass: 165 (commit 4d875a01)
+- viewport: desktop
+- category: voice
+- observation: Season 16's core fact cluster — Gordon Ramsay/Joe Bastianich/Tiffany Derry judging, twenty home cooks split into four regional groups (Europe, Asia-Pacific, Africa, Americas), a World-Cup-inspired bracket structure, and the Toronto filming location — appears near-identically in three separate prose sections plus the FORMAT/CAST SIZE sidebar tiles. Same defect class already fixed this same tick on alone-australia S4 and dragrace-allstars season-11.
+- evidence: Anon pass — "Gordon Ramsay, Joe Bastianich, and Tiffany Derry" appears 3x identically; "four regional groups" / "Europe, Asia-Pacific, Africa, and the Americas" appears 3x identically; "twenty home cooks" 3x; "World Cup" 6x across a ~3,500-character page. Authed pass — confirmed the same pattern reading section 02 ("MasterChef: Global Gauntlet took the show to Toronto with twenty home cooks sorted into four regional groups...") against section 03 ("...built on a genuinely international structural premise — four regional groups...competing under World Cup-inspired bracket mechanics, filmed in Toronto...") — same fact set, light rewording only.
+- suggested fix: Let the lede + meta sidebar own the raw fact set (judges/regions/format/location). Rewrite "shape of the season" to describe what playing across four regions actually changes structurally (e.g. travel/rest between rounds, how the bracket seeds), and rewrite "where it sits in the canon" to argue the ranking comparatively against a sibling season instead of re-summarizing the season's own facts. Content-only, `content/shows/masterchef/seasons/16-global-gauntlet.md` + `canon.md`.
+- source: browser (critique-pass-165, anon + authed)
+
+### [MED] [authed] /shows/traitors-uk/season/series-4 — the "Canon rank, not season order" disambiguation caption never fires for "Series N"-numbered shows, only "Season NN"
+- pass: 165 (commit 4d875a01)
+- viewport: desktop
+- category: comprehension
+- observation: `canonOrderCaptionFor()` (`src/app/shows/[show]/season/[slug]/page.tsx:260-268`), added at pass-140 to disambiguate an adjacent-season card whose bare numbered title doesn't match its own canon rank, matches only `/^Season (\d+)$/i`. Traitors UK (and any other "Series N"-numbered international format) never matches that regex, so the identical mismatch — an adjacent link reading "#04 IN CANON → Series 3" — ships with no caption, while the same situation on a "Season N" show (e.g. dragrace-allstars) correctly shows "Canon rank, not season order."
+- evidence: traitors-uk desktop+mobile: "← #02 IN CANON / Series 1 (2022) / #04 IN CANON → / Series 3 (2025)" — no caption. dragrace-allstars desktop+mobile, same adjacent-module structure: "← #08 IN CANON / Season 6 / Canon rank, not season order / #10 IN CANON → / Season 3 / Canon rank, not season order" — caption present both times.
+- suggested fix: Widen `BARE_SEASON_TITLE_RE` (or add a sibling pattern) to also match `/^Series (\d+)$/i`, reusing the same `canonOrderCaptionFor` numeric-mismatch check. One regex, one file, covers every "Series N" show site-wide (traitors-uk, dragrace-uk, and future additions) the way the pass-140 fix already covers every "Season N" show.
+- source: browser (critique-pass-165, authed)
+
+### [LOW] [anon] / (home) — the Real Housewives franchise is inconsistent about the definite article across ten shows
+- pass: 165 (commit 4d875a01)
+- viewport: desktop
+- category: comprehension
+- observation: Six Real Housewives franchise entries drop "The" from their `name` field (Atlanta, Beverly Hills, Orange County, New Jersey, New York City, Salt Lake City) while four keep it (Dallas, Dubai, Miami, Potomac), even though Bravo's own branding consistently uses "The Real Housewives of ___" for every city. The home page's franchise list renders both forms back to back.
+- evidence: `content/shows/rhoa.md:3` `name: "Real Housewives of Atlanta"`; `content/shows/rhobh.md:3` `name: "Real Housewives of Beverly Hills"`; `content/shows/rhoc.md:3` `name: "Real Housewives of Orange County"`; `content/shows/rhonj.md:3` `name: "Real Housewives of New Jersey"`; `content/shows/rhony.md:3` `name: "Real Housewives of New York City"`; `content/shows/rhoslc.md:3` `name: "Real Housewives of Salt Lake City"` — vs. `content/shows/rhod.md:3` `name: "The Real Housewives of Dallas"`; `content/shows/rhodubai.md:3` `name: "The Real Housewives of Dubai"`; `content/shows/rhom.md:3` `name: "The Real Housewives of Miami"`; `content/shows/rhop.md:3` `name: "The Real Housewives of Potomac"`.
+- suggested fix: Normalize all ten `content/shows/rho*.md` `name` fields to consistently include "The" (Bravo's own convention), then check any downstream string constants that assume the shorter form (slugs, canonical URLs, tests asserting on rendered `name`) still pass. Content-only.
+- source: browser (critique-pass-165, anon)
+
+### [LOW] [anon] /shows/dragrace-allstars/season/season-11 — the `watch_list` "Mid-cycle · the Comeback Queen" entry still fully re-explains the reentry mechanic, outside the scope of this same tick's canon.md-only fix
+- pass: 165 (commit 4d875a01)
+- viewport: desktop
+- category: voice
+- observation: Pass-130's fix (resolved 2026-08-24) narrowed canon.md's Season 11 rationale to reference "the Comeback Queen twist" by name only, leaving the lede + "shape of the season" body as the two fields that fully explain the mechanic. The page's `watch_list` entry was outside that fix's scope and still gives a full third explanation: "Each bracket cycle carries its own reentry chance for an eliminated queen...how a tighter cutoff changes how a bracket plays its points" — restating both the reentry mechanic and the tightened-cutoff fact the lede and body already fully cover.
+- evidence: Lede: "...a Comeback Queen can reenter each bracket cycle." Body: "A new Comeback Queen mechanic gives each bracket its own reentry chance for an eliminated queen..." Watch-list "Mid-cycle · the Comeback Queen" body: "Each bracket cycle carries its own reentry chance for an eliminated queen...watch how a tighter cutoff changes how a bracket plays its points."
+- suggested fix: Rewrite the watch-list entry to point at a specific, forward-looking detail (e.g. which bracket's reentry matters most given the field, or a scoring-margin detail) instead of re-deriving the mechanic definition a third time. Content-only, `content/shows/dragrace-allstars/seasons/11-season-11.md` `watch_list`.
+- source: browser (critique-pass-165, anon)
+
+### [LOW] [anon] /shows/dragrace-allstars/season/season-11 — the PREMIERED sidebar field repeats the same month on two consecutive lines
+- pass: 165 (commit 4d875a01)
+- viewport: desktop
+- category: comprehension
+- observation: The meta sidebar's PREMIERED stat reads "May 8, 2026" on its value line and "Paramount+ · May 2026" on its caption line directly beneath — the caption restates the same month already given one line above instead of adding a distinct fact, the way broadcast shows use the caption slot for a timeslot detail (e.g. MasterChef's "Fox · Wednesday 8/7c").
+- evidence: Rendered sidebar: "PREMIERED / May 8, 2026 / Paramount+ · May 2026."
+- suggested fix: For streaming-only shows without a weekly timeslot, drop the redundant month from the caption and use the slot for something distinct (e.g. release cadence, or just the platform name alone). Scoped to `premiere_caption` in `content/shows/dragrace-allstars/seasons/11-season-11.md`, and worth checking whether the pattern recurs on other streaming-only shows.
+- source: browser (critique-pass-165, anon)
 
 ### [MED] [anon+authed] /shows/alone-australia/season/sapmi-finland — the "biggest swing/leap since Fiordland" claim is restated across four separate content fields
 - pass: 164 (commit badef7cd)
