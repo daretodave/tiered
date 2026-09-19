@@ -1453,6 +1453,16 @@ the fix; **59 days unpromoted since filing (07-22)** — still the
 file's longest-unpromoted candidate, still the standing `/oversight`
 recommendation.
 
+**Update (digest 2026-09-19):** second consecutive green night —
+tonight's run (35411130727, started 00:58:21Z) again finished under
+the wall, all tests passing. Two green nights in a row after the
+eight-night breach streak, but nothing about the single-worker
+throughput ceiling this candidate targets has actually changed —
+still a relief reading, not a fix. No scope change; **60 days
+unpromoted since filing (07-22)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
