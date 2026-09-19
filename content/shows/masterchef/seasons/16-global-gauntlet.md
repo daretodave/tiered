@@ -20,4 +20,4 @@ premiere_caption: "Fox · Wednesday 8/7c"
 host_caption: "Gordon Ramsay, {seasonOrdinal} season as host"
 ---
 
-MasterChef: Global Gauntlet took the show to Toronto with twenty home cooks sorted into four regional groups — Europe, Asia-Pacific, Africa, and the Americas — competing under a bracket structure drawn from World Cup tournament mechanics. Gordon Ramsay, Joe Bastianich, and Tiffany Derry judged. The regional framing is the most internationally ambitious structure the US series has attempted, and the four-group build held its shape for the entire run.
+Playing the season as four separate regional brackets changes the tempo of the early rounds — a cook's toughest competition for weeks is the field inside their own bracket, not the roster at large, so eliminations feel contained until the brackets collide in the back half. Every early challenge doubles as bracket seeding rather than a flat elimination ladder, which is what gives the season's shape its distinct rhythm: contained tension first, widening stakes once regional winners start facing off.
