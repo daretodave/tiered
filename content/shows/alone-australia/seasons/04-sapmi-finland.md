@@ -10,7 +10,7 @@ ep_count: 10
 location: "Sápmi, Finland"
 format_changes: []
 eyebrow: "Aired July 2026 · The show's first Arctic season"
-lede: "The Australian version goes furthest yet. Ten survivalists self-film in Finland's Sápmi region — Arctic terrain, a different cold-weather skill set, and the biggest environmental leap since the move to Fiordland. The format's boldest location bet to date."
+lede: "The Australian version goes furthest yet. Ten survivalists self-film in Finland's Sápmi region — Arctic terrain and a cold-weather skill set the format has never asked of a cast before. The format's boldest location bet to date."
 pull: "Arctic Finland gave the Australian version its coldest, hardest terrain yet — and a new ceiling to clear."
 format_summary: "Solo survival · self-filmed"
 format_caption: "10 solo survivalists, the show's first Arctic location"
@@ -27,7 +27,7 @@ watch_list:
   - episode_label: "Ongoing · light and pace"
     body: "Arctic daylight patterns shift the rhythm of each day's self-filmed footage. Notice how the season's pacing differs from the wet, temperate conditions of the first three seasons."
   - episode_label: "Ongoing · production step change"
-    body: "This marks the biggest location swing since the move to Fiordland. Notice how the crew's remote logistics and each survivalist's routine adapt to a genuinely new climate for the format."
+    body: "Notice how the crew's remote logistics and each survivalist's daily routine adapt to a genuinely new climate for the format — from equipment care to how far help could realistically reach in an emergency."
 ---
 
-The Australian version's boldest location leap yet went to Finland's Sápmi region — Arctic terrain that puts ten survivalists into cold-weather survival for the first time in the format's run. Ten episodes, tied with Fiordland for the tightest order yet, mark a genuine departure from the wet, temperate conditions of the first three seasons. The season aired its full run this year, the biggest swing the Australian version has taken since it first left Australian soil for New Zealand.
+The Australian version's boldest location leap yet went to Finland's Sápmi region — Arctic terrain that puts ten survivalists into cold-weather survival for the first time in the format's run. Ten episodes, tied with Fiordland for the tightest order yet, mark a genuine departure from the wet, temperate conditions of the first three seasons. Producing self-filmed footage in sub-zero conditions forced new solutions for camera care, battery life, and daylight scheduling that no earlier season had to solve.
