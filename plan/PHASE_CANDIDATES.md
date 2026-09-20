@@ -1463,6 +1463,17 @@ unpromoted since filing (07-22)** — still the file's
 longest-unpromoted candidate, still the standing `/oversight`
 recommendation.
 
+**Update (digest 2026-09-20):** the two-night green streak broke —
+tonight's run (35479351263, started 00:39:44Z) hit the standard
+75-minute wall again, `Running 10603 tests using 1 worker` (flat vs.
+09-18/09-19), 9,104 of 10,603 completed (85.9%) at cutoff, all
+completed checks passing, zero test-quality regression. This is the
+expected reversion, not new evidence — two green nights were never
+going to retire a fixed single-worker throughput ceiling. No scope
+change to the fix; **61 days unpromoted since filing (07-22)** —
+still the file's longest-unpromoted candidate, still the standing
+`/oversight` recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
