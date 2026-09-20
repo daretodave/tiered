@@ -4343,6 +4343,7 @@
 - evidence: Lede: "...a Comeback Queen can reenter each bracket cycle." Body: "A new Comeback Queen mechanic gives each bracket its own reentry chance for an eliminated queen..." Watch-list "Mid-cycle · the Comeback Queen" body: "Each bracket cycle carries its own reentry chance for an eliminated queen...watch how a tighter cutoff changes how a bracket plays its points."
 - suggested fix: Rewrite the watch-list entry to point at a specific, forward-looking detail (e.g. which bracket's reentry matters most given the field, or a scoring-margin detail) instead of re-deriving the mechanic definition a third time. Content-only, `content/shows/dragrace-allstars/seasons/11-season-11.md` `watch_list`.
 - source: browser (critique-pass-165, anon)
+- resolved: 2026-09-20, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred at 44/44 gap-slots per the same-day eleventh sweep, Rule 3 review floor not due). Rewrote the watch_list entry to drop the restated mechanic definition and Season 10 Wildcard Lottery comparison, replacing it with a forward-looking structural observation (scoring position on reentry, timing sensitivity of early- vs. late-cycle reentry) not stated anywhere else on the page. Content-only, one file. Shipped at `fe5a3fb3`.
 
 ### [LOW] [anon] /shows/dragrace-allstars/season/season-11 — the PREMIERED sidebar field repeats the same month on two consecutive lines
 - pass: 165 (commit 4d875a01)
