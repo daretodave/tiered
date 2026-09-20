@@ -6,7 +6,7 @@ palette:
   ink:     "#EDE8D8"
   primary: "#D44018"
 seasons: 18
-status: airing
+status: hiatus
 blurb: "18 seasons. Australia's home-cook competition, run on depth and a panel that never blinked."
 tagline: "Across eighteen seasons on Network Ten, the Australian version built its own culinary register — deeper casts, longer seasons, and a judging standard that made home-cook competition serious food television."
 card_tagline: "The home-cook competition that made food television serious — eighteen seasons of deeper casts and the culinary standard the format reaches for."

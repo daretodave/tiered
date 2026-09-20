@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-09-13 | next due 2026-09-20 |
+| season-sweep | 7 days | 2026-09-20 | next due 2026-09-27 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,78 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Eleventh full weekly sweep, 2026-09-20 tick (cloud march, Rule 1a):** 6 `scout`
+batches (≤12 shows each) covered every one of the 68 catalogued shows,
+cross-checked against the filesystem (frontmatter `seasons:` vs. filed season
+files — only the pre-existing `90-day-fiance` 11/12 mismatch recurs, already
+tracked and non-actionable). **Two genuine new gaps found, both officially
+confirmed via named trade-press sources, neither previously tracked:**
+
+- **american-ninja-warrior** — NBC has renewed the show for **both Season 19
+  and Season 20** (confirmed alongside the Season 18 winner announcement,
+  Deadline, late Aug 2026); no premiere date for either. This show was fully
+  drained at 18/18 by an earlier tick (the 2026-07-18 finale-shift drain) and
+  has carried no gap since — this is a fresh double-renewal, not a re-flag of
+  the old row. Added as `american-ninja-warrior | 18/20 | 2*` (same
+  double-slot convention as `hells-kitchen`'s confirmed S25+S26 renewal).
+- **survivor-australia** — renewed for a thirteenth season per Who Magazine's
+  coverage of the Season 12 "Redemption" finale; no title or premiere date
+  yet. Distinct from the 2026-07-19 false positive on this same show (that
+  was a numbering-convention collision on already-filed seasons 11/12, not a
+  genuine gap) — this is a first-time, dated renewal confirmation for a show
+  that has otherwise sat gap-free at 12/12 since. Added as
+  `survivor-australia | 12/13 | 1*`.
+
+**Eight `status:` frontmatter corrections (hygiene, same commit).** Scout
+research this pass surfaced eight shows whose frontmatter still reads
+`status: airing` despite their most recent season having fully concluded
+with no successor currently broadcasting — the same drift class the
+2026-08-02 `the-circle` correction fixed. Corrected to `status: hiatus`:
+`dragrace` (S18 finale 2026-04-17), `masked-singer` (S14 finale 2026-04-01),
+`married-at-first-sight` (S20 finale 2026-08-27), `masterchef-australia`
+(S18 finale 2026-08-09), `masterchef` (S16 finale Part 2, 2026-09-16 —
+already fully processed via this same session's finale-gate drain),
+`top-chef` (S23 finale 2026-06-08), `traitors` [US] (S4 finale/reunion
+2026-02-26), and `rhonj` (S14 finished airing back in Aug 2024; S15 is
+renewed and in production but has no premiere date, so the show reads
+between-seasons, not currently airing). None of these eight carry a season-
+count change — all are already fully filed at their current count; this is
+a status-field-only fix so the site stops claiming a show is airing when it
+isn't.
+
+**No other genuine new gaps.** Every other near-term premiere/finale surfaced
+by this pass's scout batches was cross-checked against the existing 40-show
+gap table and reconfirmed already correctly tracked, not new:
+`amazing-race` S39 (2026-09-30), `bake-off` S17 (2026-09-22), `hells-kitchen`
+S25 (2026-09-24), `the-voice` S30 (2026-09-21), `shark-tank` S18
+(2026-09-30), `survivor` S51 (2026-09-23), `dancing-with-the-stars` S35
+(already airing since 2026-09-15), `dragrace-uk` S8 (already airing since
+2026-09-03), `rhoc` S20 (already airing since 2026-07-09), `rhony` S16
+(already airing since 2026-09-08), `the-challenge` S42 (already airing since
+2026-08-05), `bachelor` S30 and `bachelor-in-paradise` S11 (both renewed,
+pushed to 2027), `below-deck` S13 and `below-deck-down-under` S5 (both
+renewed, undated), `love-island-uk` S14 (announced for 2027) — all already
+starred with matching pending-season slots, nothing to add.
+
+**Two items investigated and closed as non-gaps (recurring, already
+resolved patterns).** `chopped`'s third-party "Season 63/64" indexing
+artifact resurfaced again — same source-confusion pattern resolved
+2026-07-16 (Food Network's own 62-season numbering is authoritative), not
+reopened. `jersey-shore` — "Family Vacation" spinoff coverage resurfaced
+again; this catalog tracks only the original 2009–2012 run (correctly ended
+at 6/6), and a Family Vacation entry would be a new-show question,
+currently locked. `bachelorette` S22's pulled-from-air status (unresolved
+since March 2026) was reconfirmed with no new information — stays excluded
+per standing precedent.
+
+**One imminent-but-not-yet-aired reconfirmation.** `americas-got-talent`
+S21's finale airs 2026-09-22/23 (two-night event) — already correctly
+tracked in `content/calendar.yml` as `scheduled`; not aired as of this tick.
+
+**68 shows catalogued · 42 shows carry a gap · 44 gap-slots total** (40
+shows / 41 gap-slots baseline from the 2026-09-13 tick + `american-
+ninja-warrior`'s 2 slots + `survivor-australia`'s 1 slot).
 
 **Tenth full weekly sweep, 2026-09-13 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows, cross-
@@ -2890,3 +2962,7 @@ No calendar or gap-table action.
 | 2026-08-16 | 0 (every one of the 42 starred rows reconfirmed; two calendar.yml date/status corrections and a traitors "New Blood" disambiguation surfaced, no gap-table change — see notes) | 43 |
 | 2026-08-23 | 2 (dragrace S19 + dragrace-allstars S12, both officially confirmed via a single TVLine report — the All Stars 12 claim corrects the show's 2026-08-02 false positive with a genuine primary-source renewal this time; hells-kitchen's long-carried "+1 extra deferred slot" artifact corrected to 1, no second missing season ever existed) | 44 |
 | 2026-08-30 | 0 new (every one of 42 current rows reconfirmed accurate, none actionable; hells-kitchen's 2026-08-23 "correction" to 1* is itself reverted back to `24/26, 2*` — the second slot is a real, separately-announced Season 26 double-renewal, not a phantom; americas-got-talent S21 finale, 2026-09-23, added to calendar.yml since the show is fully filed but hasn't reached its finale yet) | 42 |
+| 2026-09-06 | 0 new (ninth full sweep, all 41 rows reconfirmed accurate, none actionable) | 42 |
+| 2026-09-11 | Rule 2 drain, not a sweep (project-runway S22 finale-gate drain — fully filed, gap-slot removed) | 41 |
+| 2026-09-13 | 0 new (tenth full sweep, all 41 rows reconfirmed accurate; alone-australia status-only update and a masterchef calendar.yml addition, neither a count change) | 41 |
+| 2026-09-20 | 3 (american-ninja-warrior S19+S20 double-renewal [2 slots] + survivor-australia S13 renewal [1 slot], both first-time confirmations; 8 status-field hygiene corrections airing→hiatus for concluded shows with no season currently broadcasting, no count change) | 44 |

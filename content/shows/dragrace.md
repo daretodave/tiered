@@ -6,7 +6,7 @@ palette:
   ink: "#F2E1D2"
   primary: "#E64B86"
 seasons: 18
-status: airing
+status: hiatus
 blurb: "18 seasons. Quiet velvet, loud pink."
 tagline: "Queens at a Los Angeles workroom, sewing through mini-challenges and lip-syncing for their lives on a pink-lit runway. The format that built a global drag economy and still sets the bar every other franchise chases."
 card_tagline: "18 seasons deep, this is still the show every other drag competition measures itself against — the one that turned werk into an actual economy."
