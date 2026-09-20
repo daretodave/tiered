@@ -24,7 +24,7 @@ watch_list:
   - episode_label: "Early run · the advancement bar tightens"
     body: "Each bracket runs its own three-episode stretch, but only the top two scorers move on this time, not the top three Season 10 allowed. Watch how a tighter cutoff changes how a bracket plays its points."
   - episode_label: "Mid-cycle · the Comeback Queen"
-    body: "Each bracket cycle carries its own reentry chance for an eliminated queen, distinct from Season 10's single judge-selected Wildcard Lottery reserved for right before the finale. Watch for how a per-cycle reentry option changes the calculation inside each bracket, not just at the end."
+    body: "A queen who reenters doesn't get a fresh bracket, she steps back into one that's already partway scored, other queens' points already banked. Watch how a reentry's timing, early or late in a cycle, changes how much ground she has to make up."
   - episode_label: "Semifinal stretch · six queens converge"
     body: "Two queens per bracket — six total — advance to the semifinal round, the smallest semifinal field the format has run. Watch how the pared-down bracket reshapes momentum heading into the finale."
   - episode_label: "Finale · the $200,000 Lip Sync Smackdown"
