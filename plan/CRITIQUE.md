@@ -1,8 +1,35 @@
 # CRITIQUE
 
-> Last pass: 2026-09-19 at commit 4d875a01
-> Pass count: 165
+> Last pass: 2026-09-20 at commit 0bfe8ec1
+> Pass count: 166
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 166 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted the
+> flagship Survivor 50 season (not recently sampled) and Amazing Race
+> Season 38 (a page whose pass-140 fix explicitly left the "Route · the
+> European arc" watch_list entry untouched): `/`,
+> `/shows/survivor/season/survivor-50`, `/shows`,
+> `/shows/survivor?view=canon`, `/themes` anon; `/u/e2e`,
+> `/shows/survivor/season/survivor-50?view=community`,
+> `/shows/survivor?view=canon`, `/themes`,
+> `/shows/amazing-race/season/season-38?view=community` authed. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px), auth handshake confirmed
+> healthy (`@e2e` chrome renders correctly, comment backend live and
+> correctly empty rather than stuck), and no spoiler leaks anywhere
+> sampled. 3 new findings filed (0 HIGH, 2 MED, 1 LOW), the same
+> recurring fact-restatement defect class on two pages not covered by
+> this tick's earlier fixes: Survivor 50's "The take" and "The shape of
+> the season" sections restate the same all-era-cast fact in near-synonym
+> phrasing, and its FORMAT meta field / EP2 callout restate the same
+> fan-vote mechanics detail; Amazing Race Season 38's "Route · the
+> European arc" watch_list entry — the one field the pass-140 fix
+> explicitly left alone — restates the same seven-country route list
+> already given in "The shape of the season" body. No pending HIGH
+> findings remained open ahead of this pass; the site continues to read
+> clean on the P0 spoiler check.
 > Pass 165 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4306,6 +4333,36 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /shows/amazing-race/season/season-38 — the "Route · the European arc" watch_list entry restates the same seven-country route list already given in "The shape of the season" body
+
+- pass: 166 (commit 0bfe8ec1)
+- viewport: desktop
+- category: voice
+- observation: The pass-140 fix to this page (resolved 2026-08-24) rewrote three of the four flagged `watch_list` entries but explicitly left the fourth ("Route · the European arc") untouched. That entry now reproduces the exact same defect class on the one field the prior fix skipped: it restates the body's seven-country route list almost verbatim instead of adding new information.
+- evidence: `content/shows/amazing-race/seasons/38-season-38.md` "Shape of the season" body: "into a 7,500-mile route through the Czech Republic, Hungary, Croatia, Romania, Greece, Italy, and France before a final leg to New York City." Watch-list "Route · the European arc": "Hoorn through the Czech Republic, Hungary, Croatia, Romania, Greece, Italy, and France before a final leg back to a New York City finish." Same seven-country list, same closing clause, ~40 words apart on the same page.
+- suggested fix: Rewrite the "Route · the European arc" watch_list entry to point at a specific leg-order or pacing detail worth watching for, rather than re-listing the countries already named in "The shape of the season." Content-only, `content/shows/amazing-race/seasons/38-season-38.md` `watch_list` field. Same fix pattern already applied to the page's other three watch_list entries at pass-140.
+- source: browser (critique-pass-166, authed)
+
+### [MED] [anon] /shows/survivor/season/survivor-50 — "The take" and "The shape of the season" sections restate the same all-era-cast fact in near-synonym phrasing
+
+- pass: 166 (commit 0bfe8ec1)
+- viewport: desktop
+- category: voice
+- observation: Section 01 ("The take") and section 02 ("The shape of the season") both open by describing the same fact — an all-era cast mixing past champions with players who never won, sharing one set of four tribes — using different words for the identical claim, back to back on the page.
+- evidence: Section 01 (`pull`): "Survivor 50 pulls its cast from the show's entire history — winners, near-misses, and one-season wonders who never quite closed the deal, sharing the same four tribes for the first time." Section 02 body: "Rather than an all-winners lineup, the cast mixes past champions, multi-time returnees, and finalists who never quite closed the deal — a quarter-century of different eras and strategic instincts sharing the same four tribes." `content/shows/survivor/seasons/50-survivor-50.md`.
+- suggested fix: Let section 01 own the "who" (the cast composition, across eras). Rewrite section 02 to open with the tribe-mixing mechanic itself — how eras collide inside the format — without restating the cast-composition clause a second time. Content-only, one file.
+- source: browser (critique-pass-166, anon)
+
+### [LOW] [anon] /shows/survivor/season/survivor-50 — the FORMAT meta field and the Episode 2 "what to watch for" callout restate the same fan-vote mechanics detail
+
+- pass: 166 (commit 0bfe8ec1)
+- viewport: desktop
+- category: voice
+- observation: The same three-item fan-vote detail (tribe colors, food rations, final stretch/endgame shape) is stated in full twice on the page — once in the FORMAT sidebar field, once in the Episode 2 watch-for callout — with no new information added the second time.
+- evidence: FORMAT field: "Fans voted on tribe colors, food rations, and the final stretch." EP2 callout: "Watch for the first on-screen calls of tribe colors, food rations, and endgame shape — mechanics locked in across four separate rounds of voting during the prior season's broadcast..." `content/shows/survivor/seasons/50-survivor-50.md`.
+- suggested fix: In the EP2 callout, reference the fan-voted mechanic once by name (e.g. "the fan-voted mechanics from Format") instead of re-listing all three specifics a second time. Content-only, one field.
+- source: browser (critique-pass-166, anon)
 
 ### [MED] [anon+authed] /shows/masterchef/season/global-gauntlet — the judges/regions/World-Cup-bracket fact set is restated near-verbatim across the lede, "shape of the season," and "where it sits in the canon" sections, plus the meta sidebar
 - pass: 165 (commit 4d875a01)
