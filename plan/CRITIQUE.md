@@ -4354,6 +4354,7 @@
 - evidence: Section 01 (`pull`): "Survivor 50 pulls its cast from the show's entire history — winners, near-misses, and one-season wonders who never quite closed the deal, sharing the same four tribes for the first time." Section 02 body: "Rather than an all-winners lineup, the cast mixes past champions, multi-time returnees, and finalists who never quite closed the deal — a quarter-century of different eras and strategic instincts sharing the same four tribes." `content/shows/survivor/seasons/50-survivor-50.md`.
 - suggested fix: Let section 01 own the "who" (the cast composition, across eras). Rewrite section 02 to open with the tribe-mixing mechanic itself — how eras collide inside the format — without restating the cast-composition clause a second time. Content-only, one file.
 - source: browser (critique-pass-166, anon)
+- resolved: 2026-09-21, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred at 44/44 gap-slots per the 2026-09-20 eleventh sweep, Rule 3 review floor not due). Section 02 body rewritten to open with the tribe-randomization mechanic itself instead of restating the cast-composition clause section 01's `pull` already owns. Content-only, one file. Shipped at `9c06eb63`.
 
 ### [LOW] [anon] /shows/survivor/season/survivor-50 — the FORMAT meta field and the Episode 2 "what to watch for" callout restate the same fan-vote mechanics detail
 
