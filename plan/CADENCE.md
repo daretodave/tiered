@@ -24,6 +24,25 @@ that.
 
 ## Season gap table
 
+**Finale-gate false trigger corrected, 2026-09-21 tick (cloud march):**
+the phase-39 gate fired on `content/calendar.yml`'s `90-day-fiance`
+season 12 row (`finale_date: 2026-09-20`, now in the past), filing an
+AUDIT.md finale-shift row. Scout research before authoring found the
+tracked date was wrong: 2026-09-20 is Tell-All **Part 2** of a
+three-part Tell-All, not the season's actual close. TVmaze + two
+independent outlets confirm the regular-season finale (episode 18)
+aired 2026-09-06, and the season's full run — Tell-All included, same
+precedent this canon's own Season 11 and Season 8 entries already
+follow — doesn't close until Tell-All **Part 3** airs 2026-09-27, still
+six days out from this tick. Corrected `calendar.yml`'s finale_date to
+2026-09-27 so the gate fires accurately once the season is genuinely
+complete; the premature AUDIT.md row was removed rather than resolved
+(no shift note is owed yet — nothing aired that the row's premise
+depended on). Row stays starred `11/12, 1*` in the table below; revisit
+once 2026-09-27 passes. No other gap-table row was actionable this
+tick (all 40 remaining rows are starred/confirmed-but-unaired), so this
+correction is the tick's full content-side contribution.
+
 **Eleventh full weekly sweep, 2026-09-20 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (frontmatter `seasons:` vs. filed season
