@@ -1026,6 +1026,16 @@ git log, which is how this pass found it.
 - GH issue #565 (178 comments, open since 2026-07-12) and issue #777
   (filed 08-16, triaged today) — both need a human's eyes at the next
   `/oversight` session; neither is loop-fixable.
+**Update (digest 2026-09-21):** the tightest same-day clustering of this
+failure class since filing — 3 of 4 `march` ticks on 2026-09-20 crashed on
+the identical org-access-toggle error within an 8-hour span (14:20, 17:39,
+22:20 UTC, run IDs 35516192289/35526552659/35541344191, each appending a
+"Recurred" comment to issue #565 rather than a fresh filing). Prior
+occurrences of this class were spread across multi-day windows (08-16→08-20,
+and isolated single recurrences); a single afternoon losing 3 of 4 ticks is
+new evidence of intra-day burstiness, not just multi-day outages. No scope
+change to the fix sketch above — data point only, for the next `/oversight`
+session.
 
 ### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim
 
