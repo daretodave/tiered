@@ -1,35 +1,38 @@
 # CRITIQUE
 
-> Last pass: 2026-09-20 at commit 0bfe8ec1
-> Pass count: 166
+> Last pass: 2026-09-21 at commit 73dd0977
+> Pass count: 167
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 166 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 167 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
-> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set targeted the
-> flagship Survivor 50 season (not recently sampled) and Amazing Race
-> Season 38 (a page whose pass-140 fix explicitly left the "Route · the
-> European arc" watch_list entry untouched): `/`,
-> `/shows/survivor/season/survivor-50`, `/shows`,
-> `/shows/survivor?view=canon`, `/themes` anon; `/u/e2e`,
-> `/shows/survivor/season/survivor-50?view=community`,
-> `/shows/survivor?view=canon`, `/themes`,
-> `/shows/amazing-race/season/season-38?view=community` authed. Both
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set deliberately
+> targeted two of the least-sampled shows in the whole critique history
+> (4-5 prior mentions each, vs. 20-100+ for most of the catalog):
+> So You Think You Can Dance's Atlanta season and Alone: The Skills
+> Challenge's lone Season 1: `/`,
+> `/shows/so-you-think-you-can-dance/season/atlanta`, `/shows`,
+> `/shows/alone-the-skills-challenge/season/season-1`, `/themes` anon;
+> `/u/e2e`, `/shows/so-you-think-you-can-dance/season/atlanta?view=community`,
+> `/shows/alone-the-skills-challenge/season/season-1?view=community`,
+> `/shows/so-you-think-you-can-dance?view=canon`, `/themes` authed. Both
 > passes came back mechanically clean (0 console errors, 0 failed
 > requests, 0 horizontal overflow at 375px), auth handshake confirmed
-> healthy (`@e2e` chrome renders correctly, comment backend live and
-> correctly empty rather than stuck), and no spoiler leaks anywhere
-> sampled. 3 new findings filed (0 HIGH, 2 MED, 1 LOW), the same
-> recurring fact-restatement defect class on two pages not covered by
-> this tick's earlier fixes: Survivor 50's "The take" and "The shape of
-> the season" sections restate the same all-era-cast fact in near-synonym
-> phrasing, and its FORMAT meta field / EP2 callout restate the same
-> fan-vote mechanics detail; Amazing Race Season 38's "Route · the
-> European arc" watch_list entry — the one field the pass-140 fix
-> explicitly left alone — restates the same seven-country route list
-> already given in "The shape of the season" body. No pending HIGH
-> findings remained open ahead of this pass; the site continues to read
-> clean on the P0 spoiler check.
+> healthy (`@e2e` chrome renders correctly, comment composer shows the
+> "held for review" moderation copy correctly), and no spoiler leaks
+> anywhere sampled. 4 new findings filed (0 HIGH, 3 MED, 1 LOW): the
+> same recurring fact-restatement defect class surfaced independently
+> on both freshly-sampled shows — Alone: The Skills Challenge Season 1's
+> construction-brief list repeats near-verbatim across its lede, body,
+> and canon.md rationale (both anon and authed passes caught this
+> independently, filed once), and So You Think You Can Dance's Atlanta
+> season repeats its relocation/video-submission/Top-100 fact set across
+> the same three fields; plus a corpus-wide eyebrow-format outlier on
+> the same Alone: The Skills Challenge page, and So You Think You Can
+> Dance's show-level blurb/tagline pair both hinging on the identical
+> "not about celebrities" claim. No pending HIGH findings remained open
+> ahead of this pass; the site continues to read clean on the P0 spoiler
+> check.
 > Pass 165 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4333,6 +4336,46 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon+authed] /shows/alone-the-skills-challenge/season/season-1 — the lede, season body, and canon.md rank-1 rationale all restate the same construction-brief list and cast/judging mechanics near-verbatim
+
+- pass: 167 (commit 73dd0977)
+- viewport: desktop
+- category: voice
+- observation: The five-item construction-brief list (shelter, bridge, watercraft, trap, oven) plus the format facts (one alumni judge, three competitors, shared tool kit, home terrain, no elimination arc) repeat almost word-for-word across three separate fields on one page: the hero lede, the season body ("The shape of the season"), and canon.md's rank-1 rationale. Both the anon and authed passes flagged this defect independently on the same page.
+- evidence: `content/shows/alone-the-skills-challenge/seasons/01-season-1.md` lede: "Each week, one former Alone contestant issues a bushcraft construction challenge — shelter, bridge, watercraft, trap, oven — to three other Alone alumni, who build simultaneously from their own home terrain with a shared tool kit..." vs. its own body: "a judge from the Alone alumni pool challenges three fellow veterans to build something specific — a functional shelter, a watercraft, a bridge, a food trap — in three days, using a shared limited tool kit..." vs. `content/shows/alone-the-skills-challenge/canon.md` "## 1. Season 1" rationale: "Each episode issues a single construction brief — shelter, watercraft, bridge, trap, oven — to three Alone veterans building simultaneously from their own terrain with a shared limited tool kit."
+- suggested fix: Let the lede own the challenge-type list and cast mechanics. Rewrite the canon.md rationale to argue why the format specifically earns the #1 slot (alumni credibility, judging rigor, the craft-competition framing already gestured at in canon.md's own `tag` field) instead of re-listing the same five challenge types and cast breakdown a third time. Content-only, `content/shows/alone-the-skills-challenge/canon.md`.
+- source: browser (critique-pass-167, anon+authed)
+
+### [LOW] [authed] /shows/alone-the-skills-challenge/season/season-1 — the eyebrow field is a bare "Season N · Year" with no verb or network, the sole outlier across the entire season-file corpus
+
+- pass: 167 (commit 73dd0977)
+- viewport: desktop
+- category: comprehension
+- observation: The season's eyebrow line reads "Season 1 · 2022" with no premiere verb and no network — every other checked season file (including So You Think You Can Dance's Atlanta season, walked the same pass) follows a "Premiered/Aired/Debuted &lt;Month Year&gt; · &lt;Network&gt;" convention.
+- evidence: `content/shows/alone-the-skills-challenge/seasons/01-season-1.md:11` `eyebrow: "Season 1 · 2022"` — the season's own `premiere_caption` field two lines below already carries the missing facts: `"History Channel · August 2022"`.
+- suggested fix: Rewrite the eyebrow to match the corpus convention using facts already present in the file's own `premiere_caption`, e.g. "Premiered August 2022 · History Channel." Content-only, one field.
+- source: browser (critique-pass-167, authed)
+
+### [MED] [anon] /shows/so-you-think-you-can-dance/season/atlanta — the lede, season body, and canon.md rank-18 rationale all restate the same Atlanta-relocation fact set near-verbatim
+
+- pass: 167 (commit 73dd0977)
+- viewport: desktop
+- category: voice
+- observation: The relocation/format-change fact set for this season (move to Atlanta's Pullman Yards, video submissions replacing the open-call tour, a Top 100 invited sight-unseen, judges-only elimination replacing the public vote) is restated almost identically across the hero lede, the season body, and canon.md's rank-18 rationale.
+- evidence: `content/shows/so-you-think-you-can-dance/seasons/18-atlanta.md` lede: "Production relocates entirely to Atlanta's Pullman Yards, the first time the show has filmed outside its usual Los Angeles base, and the open-audition tour gives way to video submissions, with a Top 100 invited directly to Atlanta." vs. `content/shows/so-you-think-you-can-dance/canon.md` "## 18. The Atlanta Season" rationale: "Production leaves Los Angeles entirely for Atlanta's Pullman Yards, the open-call audition tour gives way to video submissions, and a Top 100 gets invited to the city sight unseen..."
+- suggested fix: Keep the relocation/video-submission/Top-100 fact set owned by the lede. Rewrite the canon.md rationale to argue the #18 slot comparatively (why this is the format's most-restructured run relative to its 17 predecessors, building on canon.md's own `slot_argument` field) rather than re-establishing the same premise a third time. Content-only, `content/shows/so-you-think-you-can-dance/canon.md`.
+- source: browser (critique-pass-167, anon)
+
+### [MED] [authed] /shows/so-you-think-you-can-dance — the show's `blurb` and `tagline` both hinge on the identical "not about celebrities" claim, rendered one directly under the other in the hero
+
+- pass: 167 (commit 73dd0977)
+- viewport: desktop
+- category: voice
+- observation: `blurb` (the short hero subtitle) and `tagline` (the longer meta-column sentence) are meant to serve distinct purposes per the CLAUDE.md field spec, but both fields here lead with the same "dancers/contestants judged on skill, not celebrities" concept plus the same Fox/2005-2024 run-length fact, so the hero reads as one claim stated twice rather than two fields each earning their space.
+- evidence: `content/shows/so-you-think-you-can-dance.md` `blurb`: "18 seasons. Dancers, not celebrities, competing on technique alone." vs. `tagline`: "So You Think You Can Dance judged contestants on dance skill alone — open auditions, choreography rounds, a live public vote, no celebrity partners. Fox ran the series for nineteen years, 2005 to 2024, before ending it for good."
+- suggested fix: Give `blurb` a distinct hook (e.g. lead with the judges-only-vote overhaul in the final season, or a specific numeric fact) and reserve the "no celebrities, skill-only" format-defining claim for `tagline` alone, so the two fields don't cover the same ground twice in the hero. Content-only, one field.
+- source: browser (critique-pass-167, authed)
 
 ### [MED] [authed] /shows/amazing-race/season/season-38 — the "Route · the European arc" watch_list entry restates the same seven-country route list already given in "The shape of the season" body
 
