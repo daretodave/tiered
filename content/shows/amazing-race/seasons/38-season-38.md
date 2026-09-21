@@ -29,7 +29,7 @@ watch_list:
   - episode_label: "Format · the new U-Turn penalty"
     body: "The season doubles down on U-Turn twists: alongside the survivor penalty, a Double U-Turn Vote debuts here too, a private ballot with a public reveal mid-route that adds a second layer of strategy to the format's oldest wrinkle."
   - episode_label: "Route · the European arc"
-    body: "Hoorn through the Czech Republic, Hungary, Croatia, Romania, Greece, Italy, and France before a final leg back to a New York City finish."
+    body: "Seven countries back to back with no home base to reset from — worth watching whether a cast whose reads are built on one stationary room shows the strain of compounding border-to-border fatigue before the individual legs even get hard."
 ---
 
 A historic franchise crossover. Thirteen teams of two, each
