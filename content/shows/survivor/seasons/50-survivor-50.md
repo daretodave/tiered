@@ -32,10 +32,9 @@ watch_list:
     body: "The final stretch wasn't designed by producers reading years of tape — it was designed by an audience with the same access to that tape. Watch whether players who've studied the show's usual endgame shapes for a living can out-think a structure their own fans built to surprise them."
 ---
 
-Rather than an all-winners lineup, the cast mixes past
-champions, multi-time returnees, and finalists who never quite
-closed the deal — a quarter-century of different eras and
-strategic instincts sharing the same four tribes. Locking
+Randomizing that cast across four tribes — rather than
+clustering likely allies by era or prior friendship — means no
+bloc arrives with a built-in strategic shorthand. Locking
 players who've studied decades of prior seasons into tribes
 with no single generational identity forces alliances across
 strategic vocabularies that don't naturally overlap. Probst
