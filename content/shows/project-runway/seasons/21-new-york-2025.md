@@ -8,8 +8,8 @@ ep_count: 10
 location: New York City
 host: Heidi Klum
 eyebrow: "Aired summer 2025 · Filmed in Manhattan · The Freeform relaunch"
-lede: "The Freeform relaunch. Project Runway leaves Bravo for the first time in its modern era and brings Heidi Klum back to the host chair after eight seasons away, with a rebuilt judges' table finding a livelier, more personality-driven register."
-pull: "The comeback. New network, returning host, same Manhattan workroom — the show resets around a face the audience already knows."
+lede: "The Freeform relaunch. Project Runway leaves Bravo for the first time in its modern era, rebuilding its judges' table around first-time judge Law Roach's blunt, single-question critique style and finding a livelier, more personality-driven register."
+pull: "The reset. New network, rebuilt judges' table, same Manhattan workroom — the season trades some craft focus for a higher-drama register."
 shape_h2: "Ten episodes, a two-part opener."
 take_h2: "More energy than polish."
 premiere_caption: "Freeform · Thursdays, streaming next-day on Hulu"
@@ -32,4 +32,4 @@ watch_list:
     body: "Roach's judging philosophy sharpens into a recognizable through-line by this stretch — a single blunt question applied to every look. Watch how it reshapes the critique language the panel had been using all season."
 ---
 
-The Freeform relaunch. Project Runway leaves Bravo, bringing Heidi Klum back to host after eight seasons away alongside first-time judge Law Roach. The premiere's team-house twist gives the season a livelier, more personality-driven register, even as a shorter runtime leaves less room for the workroom to breathe. The canon reads it as a genuine reset rather than a retread — energetic and uneven, pitched at a wider audience than the craft-first cycles it follows.
+The Freeform relaunch. Project Runway leaves Bravo for the first time in its modern era, pairing a rebuilt judges' table — Law Roach joining the panel — with a two-part team-house premiere that gives the season a livelier, more personality-driven register. A shorter runtime leaves less room for the workroom to breathe, and the canon reads it as a genuine reset rather than a retread — energetic and uneven, pitched at a wider audience than the craft-first cycles it follows.

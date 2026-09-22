@@ -321,10 +321,10 @@ community_rank_hint: rank=17 delta=0 sentiment=hold
 
 Season twenty-one is the show's biggest reset since the
 Bravo-to-Lifetime years, and the canon reads it as a genuine jolt
-rather than a retread. Heidi Klum's return energizes the format
-immediately, and first-time judge Law Roach brings a blunt,
-single-question critique style that sharpens the table's voice.
-But the compressed runtime pulls focus away from the workroom
+rather than a retread. The network move gives the format real
+momentum out of the gate, and first-time judge Law Roach brings a
+blunt, single-question critique style that sharpens the table's
+voice. But the compressed runtime pulls focus away from the workroom
 process toward interpersonal conflict, and the panel itself
 reads less settled than the show's steadiest cycles — Nina
 Garcia's reduced presence across the early run undercuts the
