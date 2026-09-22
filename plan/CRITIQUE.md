@@ -4661,6 +4661,7 @@
 - evidence: Subhead: "Ten seasons, same episode count." Body: "Columbus resets the tone after Denver's subdued run: the pod conversations move fast from the opening episode, stakes show up early instead of staying ambient..." — no episode-count content follows.
 - suggested fix: Either fold an episode-count sentence into the body paragraph, or rewrite the subhead to match the tone/pacing content that's actually there. Scoped to `content/shows/love-is-blind/seasons/10-columbus.md`.
 - source: browser (critique-pass-149, anon)
+- resolved: 2026-09-22, cloud march tick, content-gap redirect (Rule 2 fully stalled at 44/44 CADENCE gap-slots per the 2026-09-20 eleventh sweep; Rule 3 review floor not due). Folded a thirteen-episode-order clause ("holds for a third straight season, no snap back to the founding ten") into the body paragraph rather than rewriting the shape_h2 subhead, preserving this show's shape_h2 convention of episode-count/structural comparisons (Chicago, Seattle, Minneapolis, Denver all follow the same pattern). Content-only, one field. Shipped at (this commit).
 
 ### [MED] [authed] /shows/traitors-uk/season/series-4?view=community — "the shape of the season" and "where it sits in the canon" sections repeat a near-identical sentence with only a word or two swapped
 - pass: 148 (commit 9ea56bcd)
