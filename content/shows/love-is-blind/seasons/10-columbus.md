@@ -23,4 +23,4 @@ filming_caption: "Columbus · tenth city, a return to form"
 premiere_caption: "Netflix · February 2026"
 ---
 
-Columbus resets the tone after Denver's subdued run: the pod conversations move fast from the opening episode, stakes show up early instead of staying ambient, and production keeps pace with the energy. It stops short of the founding batch's top tier, but it's the clearest sign yet of what the format can do when everyone at the pods is actually trying.
+Columbus resets the tone after Denver's subdued run: the pod conversations move fast from the opening episode, stakes show up early instead of staying ambient, and production keeps pace with the energy. The thirteen-episode order holds for a third straight season, no snap back to the founding ten. It stops short of the founding batch's top tier, but it's the clearest sign yet of what the format can do when everyone at the pods is actually trying.
