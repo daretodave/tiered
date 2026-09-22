@@ -344,14 +344,13 @@ tag: The relocation — production moves to Atlanta, and the vote moves to the j
 slot_argument: A full relocation, video-submission auditions instead of an open-call tour, and judges-only voting make season eighteen the format's most restructured run, closing out the series on its most-changed footing.
 community_rank_hint: rank=18 delta=0 sentiment=hold
 
-Season eighteen closes the canon for now, and it earns the spot
-honestly — this is the most-altered version of the format the show
-ever aired. Production leaves Los Angeles entirely for Atlanta's
-Pullman Yards, the open-call audition tour gives way to video
-submissions, and a Top 100 gets invited to the city sight unseen
-rather than discovered on the road. Auditions play out
-documentary-style on a flat floor with no stage and no live
-audience, and eliminations run on judges' calls alone, without the
-public vote that anchored every prior season. JoJo Siwa's arrival on
-the panel is a small change against a season that rewrites nearly
-everything else about how the show gets made.
+Season eighteen closes the canon for now, and it earns the spot by
+being the season that changes the most rather than the season that
+performs best. Every one of its seventeen predecessors kept some
+version of the open-call tour and a public vote; this one keeps
+neither. That shift changes what the show is arguing for: technique
+read by a panel of experts instead of chemistry read by a voting
+audience. JoJo Siwa's arrival on the panel is a footnote next to
+that — the real story is a season willing to drop the two mechanics
+that had defined the format since season one, betting the show
+still works with neither.
