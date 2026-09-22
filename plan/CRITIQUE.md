@@ -1,37 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-09-21 at commit 73dd0977
-> Pass count: 167
+> Last pass: 2026-09-22 at commit 1650b60f
+> Pass count: 168
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 167 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 168 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set deliberately
-> targeted two of the least-sampled shows in the whole critique history
-> (4-5 prior mentions each, vs. 20-100+ for most of the catalog):
-> So You Think You Can Dance's Atlanta season and Alone: The Skills
-> Challenge's lone Season 1: `/`,
-> `/shows/so-you-think-you-can-dance/season/atlanta`, `/shows`,
-> `/shows/alone-the-skills-challenge/season/season-1`, `/themes` anon;
-> `/u/e2e`, `/shows/so-you-think-you-can-dance/season/atlanta?view=community`,
-> `/shows/alone-the-skills-challenge/season/season-1?view=community`,
-> `/shows/so-you-think-you-can-dance?view=canon`, `/themes` authed. Both
+> targeted shows with little to no prior critique coverage: Ink Master's
+> Hometown Heroes, Hell's Kitchen's Battle of the States, MAFS Australia
+> Season 13, and Bachelorette's Jenn Tran season: `/`,
+> `/shows/ink-master/season/hometown-heroes`, `/shows/hells-kitchen`,
+> `/themes`, `/shows` anon;
+> `/shows/hells-kitchen/season/battle-of-the-states?view=community`,
+> `/shows/americas-next-top-model?view=community`,
+> `/shows/married-at-first-sight-australia/season/season-13?view=community`,
+> `/shows/bachelorette/season/jenn-tran`, `/u/e2e` authed. Both
 > passes came back mechanically clean (0 console errors, 0 failed
 > requests, 0 horizontal overflow at 375px), auth handshake confirmed
-> healthy (`@e2e` chrome renders correctly, comment composer shows the
-> "held for review" moderation copy correctly), and no spoiler leaks
-> anywhere sampled. 4 new findings filed (0 HIGH, 3 MED, 1 LOW): the
-> same recurring fact-restatement defect class surfaced independently
-> on both freshly-sampled shows — Alone: The Skills Challenge Season 1's
-> construction-brief list repeats near-verbatim across its lede, body,
-> and canon.md rationale (both anon and authed passes caught this
-> independently, filed once), and So You Think You Can Dance's Atlanta
-> season repeats its relocation/video-submission/Top-100 fact set across
-> the same three fields; plus a corpus-wide eyebrow-format outlier on
-> the same Alone: The Skills Challenge page, and So You Think You Can
-> Dance's show-level blurb/tagline pair both hinging on the identical
-> "not about celebrities" claim. No pending HIGH findings remained open
-> ahead of this pass; the site continues to read clean on the P0 spoiler
+> healthy (`@e2e` chrome renders correctly, `/u/e2e` account page
+> resolved via the header's account-chrome link, vote-pair and
+> comment-input affordances render correctly in their pre-interaction
+> authed states), and no spoiler leaks anywhere sampled (the MAFS
+> Australia Mel Schilling mention is real-world context, explicitly
+> framed as not a plot twist). 5 new findings filed (0 HIGH, 5 MED):
+> the same recurring fact-restatement defect class surfaced on four
+> separate pages — Ink Master's Hometown Heroes repeats its
+> four-finalist and hometown-region facts three times each across
+> lede/shape/watch-list (both anon and authed passes caught this
+> independently at both viewports, filed once); Hell's Kitchen's
+> Battle of the States restates its one-chef-per-state cast fact across
+> six fields; MAFS Australia Season 13 restates its Mel Schilling
+> tribute across five fields; and Bachelorette's Jenn Tran season body
+> and canon.md rank-9 rationale restate nearly the same paragraph.
+> Plus a genuinely different class: the `/themes` "Featured this month"
+> strip reads "Featured for August 2026" — a month stale against the
+> page's own September "LISTS REVISED" stat, because all four currently
+> `featured: true` themes carry early-August `last_revised` dates (the
+> derivation logic itself is correct by design; the featured set just
+> needs a curator swap). No pending HIGH findings remained open ahead
+> of this pass; the site continues to read clean on the P0 spoiler
 > check.
 > Pass 165 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
@@ -4336,6 +4344,56 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /themes — the "Featured this month" strip's badge reads "Featured for August 2026" while the site is now well into September
+
+- pass: 168 (commit 1650b60f)
+- viewport: desktop
+- category: comprehension
+- observation: `ListsFeaturedRow` derives its "Featured for <month>" label from the latest `last_revised` date across the four `featured: true` themes, by design (per the pass-24 #269 fix, to avoid build-time date drift). All four currently-featured themes carry an early-August `last_revised` (2026-08-04 through 2026-08-06), so the badge reads "Featured for August 2026" on a September 22 visit — a full month stale — while the page's own ambient stat block two rows below correctly reads "September 2026 · LISTS REVISED", so the two claims disagree on the same page.
+- evidence: `src/components/lists/ListsFeaturedRow.tsx:31-34` (`canonRevisedLabelFromIso(latestFeaturedRevised(featured))`); `content/themes/best-finales.md`, `best-comeback-seasons.md`, `best-villain-editing.md`, `best-premieres.md` all carry `last_revised: 2026-08-0[4-6]`.
+- suggested fix: Curator swap: pick four different `featured: true` themes whose `last_revised` is genuinely within September (or bump `last_revised` on the current four if their content was in fact reworked this month), so the derived badge matches the current month again. Content-only, `content/themes/*.md` frontmatter — no code change, the derivation logic itself is correct by design.
+- source: browser (critique-pass-168, anon)
+
+### [MED] [anon+authed] /shows/ink-master/season/hometown-heroes — the four-finalist-finale and hometown-pride facts are each restated near-verbatim three times within the season page's own sections
+
+- pass: 168 (commit 1650b60f)
+- viewport: desktop + mobile (identical body text at both widths, confirming a content issue not a layout artifact)
+- category: voice
+- observation: Distinct from the already-resolved pass-143-class finding on this show (which was scoped to canon.md vs. season body) — this repetition is entirely within the season body's own sections, which that prior fix didn't touch. The four-finalist fact and the hometown-region fact each appear three times: lede, "The shape of the season," and "What to watch for."
+- evidence: `content/shows/ink-master/seasons/17-hometown-heroes.md` lede: "The finale runs four finalists deep, only the second time the format has ever expanded past its usual three-person close." vs. shape section: "only the second time in the show's history that four artists reach the last round instead of the usual three." vs. watch_list FINALE bullet: "Only the second time in the show's history the finale has run four-deep." Same triple-restatement pattern for the hometown-region fact across the same three sections.
+- suggested fix: Let "What to watch for" own the plain statement of both facts (it's list-formatted, so restating there reads least redundant). Rewrite the lede and "shape of the season" prose to reference the facts obliquely or add a new angle (e.g. what the four-finalist format does to pacing) instead of re-deriving the same sentence structure. Content-only, one file.
+- source: browser (critique-pass-168, anon+authed, confirmed at both viewports)
+
+### [MED] [authed] /shows/hells-kitchen/season/battle-of-the-states — the one-chef-per-state cast fact is restated near-verbatim across six fields on the same page
+
+- pass: 168 (commit 1650b60f)
+- viewport: desktop
+- category: voice
+- observation: The "twenty chefs, one per U.S. state" fact appears in the eyebrow, lede, `format_summary`, `format_caption`, `cast_size_caption`, and the "Shape of the season" body opening — six placements restating the identical premise on one page render.
+- evidence: `content/shows/hells-kitchen/seasons/24-battle-of-the-states.md` eyebrow: "One chef per U.S. state"; lede: "Twenty chefs — one representing each of twenty U.S. states"; `format_summary`: "one-per-state cast"; `format_caption`: "20-chef cast, one representative per state"; `cast_size_caption`: "twenty chefs, one from each represented U.S. state"; body: "twenty chefs — each representing a different U.S. state."
+- suggested fix: Keep the full one-per-state fact in the lede only. `format_caption` and `cast_size_caption` sit stacked in the same stat rail restating the identical clause twice in a row — rewrite both to each add a fact the lede doesn't already own (e.g. the elimination format, the prize, a specific state detail) instead of re-deriving the cast structure a third and fourth time. Content-only, one file.
+- source: browser (critique-pass-168, authed)
+
+### [MED] [authed] /shows/married-at-first-sight-australia/season/season-13 — the Mel Schilling tribute fact is restated near-verbatim across five fields on the same page
+
+- pass: 168 (commit 1650b60f)
+- viewport: desktop
+- category: voice
+- observation: "Mel Schilling's final season with the panel she helped build (since season two) — she died during this season's broadcast run" is restated in the eyebrow, lede, pull quote, host caption, and the "Shape of the season" body opening — five separate placements of the same fact.
+- evidence: `content/shows/married-at-first-sight-australia/seasons/13-season-13.md` eyebrow: "Mel Schilling's final season with the panel"; lede: "Mel Schilling's final season with the panel she helped build since season two — she died during this season's broadcast run"; pull: "Mel Schilling's final season closes a decade on the panel she helped define"; `host_caption`: "Mel Schilling's final season on the expert panel"; body: "Mel Schilling's final season with the expert panel she helped build from season two onward — she died during this season's broadcast run, a loss the show and its long-running panel felt deeply."
+- suggested fix: Keep the full fact in the lede only (canon.md's own `tag`/`slot_argument` for this season already reference it more obliquely — mirror that pattern here). Rewrite the pull, `host_caption`, and body opening to reference the tribute without re-deriving the full clause four more times on one page. Content-only, one file.
+- source: browser (critique-pass-168, authed)
+
+### [MED] [authed] /shows/bachelorette/season/jenn-tran — the season body and canon.md rank-9 rationale restate nearly the same paragraph, same four facts in the same order
+
+- pass: 168 (commit 1650b60f)
+- viewport: desktop
+- category: voice
+- observation: The Rachel Lindsay comparison, first-Asian-American-lead milestone, Agoura-Hills-to-Hummingbird-Nest-Ranch venue move, and the ten-episode/~25-men/four-country travel/Jesse-Palmer's-third-season format facts appear in the same order with only light rewording in both the season body and canon.md's rank-9 rationale.
+- evidence: season body: "The franchise's most overdue first since Rachel Lindsay. A physician-assistant student becomes the first Asian American lead in Bachelor or Bachelorette history, and the producers move the home base off the traditional Agoura Hills mansion to Hummingbird Nest Ranch... Ten episodes, roughly twenty-five men, a summer run, and travel to Seattle, Hawaii, Australia, and New Zealand under Jesse Palmer's third season." vs. `content/shows/bachelorette/canon.md` rank-9 rationale: "The franchise's most historically significant season since Rachel Lindsay's. A physician-assistant student becomes the first Asian American lead in Bachelor or Bachelorette history, and the producers pair the milestone with a structural shift, moving the home base from the traditional Agoura Hills mansion to Hummingbird Nest Ranch... Ten episodes, roughly twenty-five men, and travel to Seattle, Hawaii, Australia, and New Zealand under Jesse Palmer's third season." (`content/shows/bachelorette/seasons/21-jenn-tran.md`; `canon.md` line 91)
+- suggested fix: Keep the full milestone/format fact set in the season body only. Rewrite canon.md's rank-9 rationale to argue the slot comparatively — why it beats the well-built-but-unambitious entries below it but sits below the structural-courage tier above — instead of re-deriving the same four facts already stated verbatim in the body. Content-only, `content/shows/bachelorette/canon.md`.
+- source: browser (critique-pass-168, authed)
 
 ### [MED] [anon+authed] /shows/alone-the-skills-challenge/season/season-1 — the lede, season body, and canon.md rank-1 rationale all restate the same construction-brief list and cast/judging mechanics near-verbatim
 
