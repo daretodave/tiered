@@ -30,7 +30,7 @@ era_bands:
 ## 4. The Deep Bench
 
 tag: The format at its most competitive — a roster deep enough to push every round.
-slot_argument: Season four brought the largest cast and the most episodes in the founding era, and the depth showed in the cooking. The weekly challenges carried real stakes because the bench could meet them.
+slot_argument: The founding era's deepest bench meeting the format on its own terms — no mentorship conceit, no international scale to lean on. A harder case for the top slot than Season nine's structural gambit just below it.
 community_rank_hint: rank=1 delta=0 sentiment=hold
 
 Season four sits at the top of the founding canon on the strength of its roster. Twenty-three home cooks entered the competition, and the field had genuine spread — self-taught cooks with real technique alongside more instinctive cooks whose dishes surprised the judges in a different direction. Twenty-five episodes is the founding era's longest run, and the format earns the length because the bench can sustain the pressure across it. The mystery box challenges never felt like filler. The team challenges surfaced real culinary disagreements. Ramsay's three-judge panel was at peak chemistry, and it showed in how the cooking was framed.
@@ -38,7 +38,7 @@ Season four sits at the top of the founding canon on the strength of its roster.
 ## 9. The Mentorship
 
 tag: The show's most structurally ambitious season — twenty-four cooks, three mentors, one kitchen.
-slot_argument: Season nine invented a new format logic: each judge drafted and mentored eight home cooks for the full run. The personal investment changed how the challenges landed. No other season restructured the competition at this depth.
+slot_argument: Falls short of Season four's raw bench depth but clears Season ten's production reach — the mentorship draft earns its slot by sustaining that structural risk across the full run, not by scale.
 community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Season nine is the most inventive entry in the full MasterChef run. The three-judge mentorship draft — Ramsay, Bastianich, and Sanchez each selecting and coaching eight home cooks from start to finish — changes the stakes of every challenge. When a mentor's cook is eliminated, it means something different than when a stranger goes home. The largest main-competition cast in the show's history, twenty-three episodes, and a format that sustains its structural logic across the full run rather than discarding it at midseason. This is what MasterChef looks like when it trusts a big idea all the way.
