@@ -1,140 +1,143 @@
-# DIGEST — 2026-09-21
+# DIGEST — 2026-09-22
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-A day split cleanly in two: the afternoon/evening of 09-20 lost
-three of four `march` ticks to the org-access-toggle outage
-(issue #565) in under 8 hours, then the loop went fully green
-overnight and stayed green all morning — one critique pass (166,
-3 findings) and three content-gap redirect-fallback fixes (90 Day
-Fiancé S12 finale date, Amazing Race S38 watch_list repetition,
-Survivor 50 cast-composition repetition) shipped clean. The
-nightly `e2e-full` breadth crawl came back **green** for the
-first time in three nights, breaking the prior digest's reported
-breach. Rule 2 stays structurally locked at 44/44 starred
-gap-slots; the redirect fallback carried the entire content
-window again. Deploy is ready at HEAD (45bffdb).
+A clean, fully-green day after yesterday's org-access outage: all
+5 tracked `march` ticks in the last 26h shipped real work — zero
+crashes, zero no-ops, no candidate #37 recurrence. One critique
+pass (167, 4 findings) plus four canon-repetition redirect fixes
+across four different shows (Alone: The Skills Challenge,
+So You Think You Can Dance, MasterChef, Project Runway) — pass
+167's own fact-restatement findings turned into same-window fixes,
+continuing the pattern from the last several digests. The nightly
+`e2e-full` breadth crawl reverted to **red** after Sunday's green
+night — the same chronic single-worker duration-ceiling breach
+(candidate #34, now 63 days unpromoted), not a test regression.
+Rule 2 stays locked at 44/44 starred gap-slots; catalog holds flat
+at 68 shows / 1,052 seasons / 182 themes. Deploy is ready at HEAD
+(4720a968).
 
 ## While you were out
 
 | time (UTC) | commit | verb | outcome |
 |---|---|---|---|
-| 14:20–14:39 (09-20) | — | march (crashed) | issue #565 recurrence — org-access toggle disabled |
-| 17:39–17:42 (09-20) | — | march (crashed) | issue #565 recurrence, same class, ~3h later |
-| 19:46–20:01 (09-20) | 06195ee7 | critique | pass 166 — 3 findings (0 high, 2 medium, 1 low) |
-| 22:20–22:23 (09-20) | — | march (crashed) | issue #565 recurrence, third in one afternoon/evening |
-| 00:29–01:18 (09-21) | 355a9584 | audit | 90-day-fiance S12 finale-date correction |
-| 00:39–01:58 (09-21) | — | e2e-full (nightly) | **green** — first green night in three, breaks the prior digest's reported breach |
-| 05:28–06:16 (09-21) | f3d88cee, 6884e4ce | content + audit | amazing-race S38 watch_list repetition redirect fix |
-| 11:05–11:50 (09-21) | 9c06eb63, 45bffdbd | content + audit | survivor-50 cast-composition repetition redirect fix |
+| 17:11–17:27 (09-21) | ce313e6a | critique | pass 167 — 4 findings (0 high, 3 medium, 1 low) |
+| 21:13–21:56 (09-21) | 1d4a1ae4, 1d7674d6 | content + audit | alone-the-skills-challenge canon repetition redirect fix |
+| 00:16–00:58 (09-22) | b5d5eedb, 0cd2f9e6 | content + audit | so-you-think-you-can-dance Atlanta canon repetition redirect fix |
+| 01:26–02:44 (09-22) | — | e2e-full (nightly) | **red** — 75-min wall, 9,248/10,603 (87.2%) complete, all passing — chronic, candidate #34 |
+| 05:22–06:07 (09-22) | 1431a86d, 586599b8 | content + audit | masterchef canon rationale + repetition redirect fix |
+| 10:19–11:04 (09-22) | 703b2f5d, 4720a968 | content + audit | project-runway new-york-2025 canon repetition redirect fix |
 
-4 of 7 tracked `march` ticks shipped real work (1 critique pass +
-3 redirect-fallback content fixes); 3 crashed on the same known,
-non-actionable-from-cloud org-access class — the worst single-day
-concentration of that failure since the original 4-day 08-16→08-20
-outage (candidate #37, still unpromoted).
+5 of 5 tracked `march` ticks shipped real work — the first fully
+clean, fully-shipping 26h window in recent digest history. All
+four content fixes hit the same defect class pass 167 (and the two
+passes before it) flagged: canon.md rationale repeating lede/body
+facts verbatim. The redirect fallback is working through that
+backlog show by show.
 
 ## The saga
 
 **Rule 2 (season-fill drain):** unchanged since 09-20's sweep —
 gap table holds at **44 shows/44 slots**, every row starred
-confirmed-but-unaired. No new sweep due this window (weekly
-cadence, last ran 09-20). Structurally locked, same as every
-digest since 09-04.
+confirmed-but-unaired. No sweep due this window (weekly cadence,
+last ran 09-20, next due ~09-27). Structurally locked, same as
+every digest since 09-04.
 
 **Rule 3 (themed lists):** no ship this window; no commit touched
-`content/themes/`.
+`content/themes/`. Catalog holds at 182 themes.
 
-**The redirect fallback carried the window again.** Two of pass-
-165/166's own repetition findings landed as fixes: Survivor 50's
-cast-composition restatement (flagged in pass 166, fixed same
-window) and Amazing Race Season 38's watch_list route repetition
-(the field pass-140's earlier fix had explicitly left untouched,
-now closed). A third fix — 90 Day Fiancé Season 12's finale date —
-was a factual correction, not a repetition fix. Catalog holds flat
-at **68 shows / 1,052 seasons / 68 canons** — no new season or
-list filed this window, all three ships rewrote existing files.
+**The redirect fallback carried the entire window.** Four of four
+content ships were canon-repetition fixes, each closing a finding
+pass 165/166/167 raised on a different show — the fact-restatement
+defect class (canon.md rationale re-stating lede/body facts nearly
+verbatim) that's recurred independently across at least six shows
+now (Alone: The Skills Challenge, So You Think You Can Dance,
+MasterChef, Project Runway this window; Drag Race All Stars and
+others in prior windows). Catalog holds flat at **68 shows /
+1,052 seasons / 68 canons / 182 themes** — no new season or list
+filed this window, all four ships rewrote existing files.
 
 ## Queues now
 
-- **`plan/CRITIQUE.md`**: pass 166 (2026-09-20 19:58, commit
-  06195ee7), 3 findings (0 HIGH, 2 MED, 1 LOW) — both MED findings
-  are the same fact-restatement class flagged on Survivor 50, one
-  of which was fixed this window; the LOW (Amazing Race S38
-  watch_list) was also fixed this window. Pass is same-day fresh.
-  File still too large for a direct `Read`; `grep`/`awk` remain
-  the only safe access path.
+- **`plan/CRITIQUE.md`**: pass 167 (2026-09-21 17:23, commit
+  ce313e6a), 4 findings (0 HIGH, 3 MED, 1 LOW) — the same
+  fact-restatement class surfaced independently on both
+  freshly-sampled shows this pass (Alone: The Skills Challenge,
+  So You Think You Can Dance), both since fixed. No pending HIGH
+  findings. File still too large for a direct `Read`; `grep`/`awk`
+  remain the only safe access path.
 - **`plan/AUDIT.md`**: 7 Pending rows, unchanged count from
   yesterday: 2 HIGH (the-voice factual corruption #762, still
-  frozen — S30's confirmed 2026-09-21 premiere is **today**; night-
-  shift starvation row / candidate #35, no new occurrence, clean
-  streak continues), 2 MED (season-fill drain, 44/44 all-starred,
-  no change; e2e-full duration-ceiling row, candidate #34, back to
-  green after 09-20's breach), 3 LOW (SERP description budget;
+  frozen, stale since 2026-08-08 — no calendar.yml entry ever
+  landed for the S30 premiere either; night-shift concurrency row
+  / candidate #35, no new occurrence since 09-07), 2 MED
+  (season-fill drain, 44/44 all-starred, no change; e2e-full
+  duration-ceiling row, candidate #34, back to red tonight after
+  09-21's green — see above), 3 LOW (SERP description budget;
   `YEAR_TENURE_RE` teen-number gap; heartbeat false-positive #806,
   no recurrence).
 - **`plan/PHASE_CANDIDATES.md`**: last `/expand` pass still
-  2026-09-16 (commit 17d830ee, pass 71) — **5 days with no pass
+  2026-09-16 (commit 17d830ee, pass 71) — **6 days with no pass
   now**, one day longer than yesterday's digest flagged. 39
   numbered candidates under "Considered (awaiting promotion)."
-  Candidate #34 (shard e2e-full) is now **62 days unpromoted**,
-  still the file's longest-lived open item; candidate #37
-  (org-access fallback) is the one most reinforced by today's
-  pulse — see Needs you.
+  Candidate #34 (shard e2e-full) is now **63 days unpromoted**,
+  still the file's longest-lived open item.
 - **Open `triage:needs-user`**: 8 issues, unchanged — #762
-  (the-voice) is now maximally time-pressured with S30 premiering
-  today.
+  (the-voice) remains the oldest live urgency, now over 6 weeks
+  since last comment despite S30's 09-21 premiere having already
+  passed.
 - **Open `triage:loop-queued`**: 5 issues, unchanged (#636, #754,
   #785, #787, #806).
 
 ## Needs you
 
-1. **the-voice factual corruption (issue #762) — S30 premieres
-   today, 2026-09-21.** S22-29 stays frozen pending a human-
-   reviewed 8-file renumbering fix; live frontmatter still reads
-   `status: hiatus` with a false "show has ended" framing that
-   today's real premiere makes more visible than at any prior
-   digest.
-2. **Candidate #37 (org-access fallback for cloud workflows) just
-   got its clearest reinforcement yet.** Three of four `march`
-   ticks failed to the same org-access-toggle class within an
-   8-hour span on 09-20 (14:20, 17:39, 22:20 UTC) — a tighter
-   clustering than any single day logged since the original 4-day
-   outage that filed the candidate. The fix (an `ANTHROPIC_API_KEY`
-   fallback, or at minimum a faster same-day alert) is a
-   cost/reliability tradeoff only a human should make.
-3. **Candidate #34 (shard e2e-full) crossed 62 unpromoted days**,
-   though tonight's run came back green — still the file's
-   longest-unpromoted candidate, still blocked on a
-   `.github/workflows/e2e-full.yml` edit the cloud loop cannot
-   push.
-4. **`/expand` hasn't run in 5 days** (last pass 09-16, count 71).
+1. **the-voice factual corruption (issue #762) is going stale.**
+   No comment since 2026-08-08, S30 premiered 2026-09-21 as
+   predicted, and `content/shows/the-voice.md` still reads
+   `status: hiatus` with the false "show has ended" framing live.
+   The fix needs a human-reviewed 8-file renumbering — it can't
+   ship from the loop.
+2. **`/expand` hasn't run in 6 days** (last pass 09-16, count 71).
    No queue-starvation symptom yet (39 candidates still sit
-   "awaiting promotion"), but worth a look if the gap stretches
-   further.
+   "awaiting promotion"), but the gap is growing one day at a
+   time with no sign of the next pass.
+3. **Candidate #34 (shard e2e-full) crossed 63 unpromoted days**,
+   the single longest-lived item in `plan/PHASE_CANDIDATES.md`.
+   Tonight's run reverted to red on the same chronic wall — still
+   blocked on a `.github/workflows/e2e-full.yml` edit the cloud
+   loop cannot push (lacks `workflows` OAuth scope).
+4. **Issue #758** (content-gap dispatch potentially starving
+   `/iterate`) sits quiet since 2026-09-18 — today's pulse shows
+   no starvation symptom (critique + 4 distinct content fixes all
+   shipped), but it's worth a look next time a starved-queue day
+   recurs.
 
 ## Today's intent
 
 Rule 2 stays locked at 44/44 starred; expect the redirect fallback
-to keep carrying content ticks until a real air date lands on one
-of those rows or the next weekly sweep (due ~09-27) turns one.
-Top non-content finding: today's clustered org-access failures
-make candidate #37 the strongest live case for the next
-`/oversight` session, just ahead of issue #762's now-same-day
-urgency.
+to keep working through the fact-restatement backlog (at least two
+more shows flagged in pass 165/166 not yet confirmed fixed) until
+the next weekly sweep (due ~09-27) turns a real season, or a fresh
+critique pass surfaces new targets. Top non-content finding:
+candidate #34 crossing 63 unpromoted days on a chronic, well-
+documented, cloud-unfixable timeout — still the strongest
+standing case for the next `/oversight` session, just ahead of
+issue #762's stale-but-urgent the-voice fix.
 
 ## Tuning proposals
 
-No new meta-loop tuning candidates filed tonight — no mistuned
-gate observed; the redirect fallback continues working as
-designed. One reinforcement appended to an already-open candidate,
-data-only (no gate, cadence, or rule edited):
+No new meta-loop tuning candidates filed tonight — no fresh
+mistuned gate observed; the redirect fallback continues working
+as designed and today's dispatch showed no starvation symptom.
+One reinforcement appended directly to the standing AUDIT.md row
+(established pattern for this recurring finding, not a new
+candidate):
 
-- **Candidate #37** (org-access fallback): the 09-20 clustering
-  (3 failures in 8 hours, all issue #565's known class) is the
-  clearest same-day case for this candidate since it was filed —
-  noted here for the next `/oversight` session, not filed as a
-  new candidate.
+- **Candidate #34** (shard e2e-full): tonight's breach (run
+  35675731787, 9,248/10,603 complete, 87.2%) extends the
+  alternating breach/green/breach pattern with no clear trend
+  either direction after 63 days — still the standing
+  `/oversight` recommendation, unchanged in substance.
