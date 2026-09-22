@@ -8,7 +8,8 @@ sentiment: hold
 status: growing
 curator: "tiered.tv editor"
 last_revised: 2026-09-17
-featured: false
+featured: true
+featured_pull: "Fifteen return trips ranked by how much genuinely changed on the second pass, not how much just coasted on the first visit's momentum."
 related:
   - the-place-fought-back
   - tried-once-never-repeated

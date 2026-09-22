@@ -7,7 +7,8 @@ sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-09-13
-featured: false
+featured: true
+featured_pull: "Eleven openings where the marooning, the castle, the villa, or the city did the season's format-statement work before the cast said a word."
 related:
   - firsts
   - best-premieres

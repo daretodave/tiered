@@ -7,7 +7,7 @@ sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-08-06
-featured: true
+featured: false
 featured_pull: "Twelve premiere episodes that laid down the format statement in hour one and never had to restate it."
 related:
   - firsts

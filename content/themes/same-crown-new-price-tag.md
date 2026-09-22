@@ -8,7 +8,8 @@ sentiment: hold
 status: growing
 curator: "tiered.tv editor"
 last_revised: 2026-09-07
-featured: false
+featured: true
+featured_pull: "Ten seasons where the format held steady but what winning actually paid out — cash, credit, a shared pot — got rewritten mid-run."
 related:
   - who-actually-got-the-vote
   - best-challenge-design

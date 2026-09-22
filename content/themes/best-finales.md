@@ -7,7 +7,7 @@ sentiment: verdict
 status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-08-05
-featured: true
+featured: false
 featured_pull: "Ten finales that cleared the altitude their seasons had been building toward — nothing handed over, nothing flinched."
 related:
   - best-returnees

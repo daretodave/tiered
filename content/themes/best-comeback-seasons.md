@@ -7,7 +7,7 @@ sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-08-05
-featured: true
+featured: false
 featured_pull: "Twelve comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
 related:
   - best-returnees

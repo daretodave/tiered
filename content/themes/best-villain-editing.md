@@ -7,7 +7,7 @@ sentiment: consensus
 status: stable
 curator: "tiered.tv editor"
 last_revised: 2026-08-04
-featured: true
+featured: false
 featured_pull: "Five seasons where the antagonist arc ran the room — not a subplot, the whole narrative spine the rest of the cast played inside."
 related:
   - best-returnees
