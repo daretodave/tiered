@@ -1,6 +1,6 @@
 ---
 slug: rhoslc
-name: "Real Housewives of Salt Lake City"
+name: "The Real Housewives of Salt Lake City"
 palette:
   paper:   "#131A22"
   ink:     "#F2ECDD"

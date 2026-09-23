@@ -1,6 +1,6 @@
 ---
 slug: rhoa
-name: "Real Housewives of Atlanta"
+name: "The Real Housewives of Atlanta"
 palette:
   paper: "#1A0C10"
   ink:   "#F5E8DC"

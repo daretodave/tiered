@@ -1,6 +1,6 @@
 ---
 slug: rhoc
-name: "Real Housewives of Orange County"
+name: "The Real Housewives of Orange County"
 palette:
   paper: "#0A1C2B"
   ink:   "#FDEBD4"

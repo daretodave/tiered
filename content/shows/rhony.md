@@ -1,6 +1,6 @@
 ---
 slug: rhony
-name: "Real Housewives of New York City"
+name: "The Real Housewives of New York City"
 palette:
   paper: "#1B1020"
   ink: "#F2EAF5"

@@ -24,7 +24,7 @@ era_bands:
     range: [2022, 2026]
 ---
 
-# Editor's Canon — Real Housewives of New Jersey
+# Editor's Canon — The Real Housewives of New Jersey
 
 ## 3. The Divide
 

@@ -15,7 +15,7 @@ tier_c_blurb: "Seasons where cast turbulence outweighs what the season otherwise
 weekly_question: "Which RHOSLC season best balances the show's social specificity with a cast that actually holds together?"
 ---
 
-# Editor's Canon — Real Housewives of Salt Lake City
+# Editor's Canon — The Real Housewives of Salt Lake City
 
 ## 1. Season 1
 

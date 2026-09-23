@@ -28,7 +28,7 @@ era_bands:
     range: [2021, 2026]
 ---
 
-# Editor's Canon — Real Housewives of Orange County
+# Editor's Canon — The Real Housewives of Orange County
 
 ## 2. The Expansion
 

@@ -21,7 +21,7 @@ era_bands:
     range: [2023, 2026]
 ---
 
-# Editor's Canon — Real Housewives of New York City
+# Editor's Canon — The Real Housewives of New York City
 
 ## 3. Season 3 — Scary Island
 

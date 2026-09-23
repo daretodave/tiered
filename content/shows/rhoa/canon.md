@@ -28,7 +28,7 @@ era_bands:
     range: [2023, 2026]
 ---
 
-# Editor's Canon — Real Housewives of Atlanta
+# Editor's Canon — The Real Housewives of Atlanta
 
 ## 5. Season 5 — The Peak
 

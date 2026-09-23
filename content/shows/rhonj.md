@@ -1,6 +1,6 @@
 ---
 slug: rhonj
-name: "Real Housewives of New Jersey"
+name: "The Real Housewives of New Jersey"
 palette:
   paper: "#1A1510"
   ink:   "#F0EAE0"

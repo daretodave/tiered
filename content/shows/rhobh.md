@@ -1,6 +1,6 @@
 ---
 slug: rhobh
-name: "Real Housewives of Beverly Hills"
+name: "The Real Housewives of Beverly Hills"
 palette:
   paper: "#180A10"
   ink:   "#F5EAE0"
