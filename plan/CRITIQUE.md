@@ -1,8 +1,37 @@
 # CRITIQUE
 
-> Last pass: 2026-09-22 at commit 1650b60f
-> Pass count: 168
+> Last pass: 2026-09-23 at commit 5cb1805c
+> Pass count: 169
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 169 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows`, `/shows/survivor`, `/shows/survivor/season/survivor-50`,
+> `/themes`, `/themes/best-finales` anon; `/`,
+> `/shows/survivor/season/heroes-vs-villains`, `/u/e2e`, `/mod`,
+> `/settings`, `/account` authed. Both passes came back mechanically
+> clean (0 console errors, 0 failed requests, 0 horizontal overflow at
+> 375px), auth handshake healthy (`@e2e` chrome renders correctly
+> throughout, `/mod` correctly denies the non-mod test user, `/sign-in`
+> correctly redirects an already-signed-in user), and no spoiler leaks
+> anywhere sampled. 5 new findings filed (0 HIGH, 5 MED): the
+> recurring fact-restatement defect class surfaced on two more pages —
+> Survivor 50 restates its "fiftieth season" milestone four times
+> (HOST tile, body, canon slot_argument, canon body) and Heroes vs.
+> Villains restates its "twenty returnees, two tribes" fact four times
+> (FORMAT, CAST SIZE, "the take," canon rationale). Two systemic a11y
+> defects: the vote-button aria-label duplicates the show name on any
+> season whose title already starts with the show name (e.g. "Vote up
+> Survivor Survivor 50"), and `SeasonHero.tsx`'s `<br/>` handling in
+> `display_title` drops the word boundary, so "Heroes vs. Villains"
+> reads as "Heroes vs.Villains" to a screen reader — both likely affect
+> more than the one page each was caught on. Plus one consistency gap:
+> the signed-in header's nav links and account-menu trigger have no
+> `:focus-visible` ring while other interactive chrome (skip-link,
+> comment textarea, search input) does. No pending HIGH findings
+> remained open ahead of this pass; the site continues to read clean
+> on the P0 spoiler check.
 > Pass 168 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4344,6 +4373,56 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/survivor/season/survivor-50 — the "fiftieth season" milestone fact is restated near-verbatim four times on one page
+
+- pass: 169 (commit 5cb1805c)
+- viewport: desktop
+- category: voice
+- observation: The fact that this is Probst's/the show's fiftieth season is restated four separate times: the HOST meta tile, the season body paragraph, and twice in the canon rationale block (`slot_argument` and the prose paragraph below it).
+- evidence: `content/shows/survivor/seasons/50-survivor-50.md` `host_caption`: "fiftieth season at the helm"; body: "Probst hosts his fiftieth season on the islands." `content/shows/survivor/canon.md` "## 50. Survivor 50" `slot_argument`: "The fiftieth season closes the show's first quarter-century..."; body: "The fiftieth season ran through spring 2026 on the same 26-day format..." All four render on the single `/shows/survivor/season/survivor-50` page.
+- suggested fix: Let the HOST tile own the "fiftieth season" fact alone. Rewrite the season body's closing sentence to describe what the milestone does to the format rather than restating "fiftieth season." In canon.md, collapse `slot_argument` and the body paragraph into one argument — `slot_argument` is now fully redundant with the body's own point. Content-only, two files.
+- source: browser (critique-pass-169, anon)
+
+### [MED] [anon] /shows/survivor/season/survivor-50 — the vote-button aria-labels duplicate the show name when a season's title already starts with the show name
+
+- pass: 169 (commit 5cb1805c)
+- viewport: desktop
+- category: a11y
+- observation: The three vote-button aria-labels read "Vote on Survivor Survivor 50", "Vote up Survivor Survivor 50", "Vote down Survivor Survivor 50" — the show name doubled, because the label template concatenates "Survivor" with the season title "Survivor 50" verbatim. Confirmed this is title-dependent, not universal: the same component on `/shows/survivor/season/heroes-vs-villains` correctly renders "Vote up Survivor Heroes vs. Villains" with no duplication, since that season's title doesn't start with the show name.
+- evidence: raw HTML on `/shows/survivor/season/survivor-50`: `aria-label="Vote on Survivor Survivor 50"`, `aria-label="Vote up Survivor Survivor 50"`, `aria-label="Vote down Survivor Survivor 50"`.
+- suggested fix: In the vote-button aria-label template, detect (or omit) the show-name prefix when the season title already starts with it, so numbered-title seasons (any `<Show> <N>` pattern) don't double the show name. Likely affects other numbered-season pages beyond Survivor 50 — worth a repo-wide grep for season titles that start with their own show name.
+- source: browser (critique-pass-169, anon)
+
+### [MED] [authed] /shows/survivor/season/heroes-vs-villains — the season H1's accessible name loses the word boundary across a forced `<br/>` line break
+
+- pass: 169 (commit 5cb1805c)
+- viewport: desktop
+- category: a11y
+- observation: `display_title: "Heroes <em>vs.</em><br/>Villains"` renders with no space adjacent to the `<br/>`, so `document.querySelector('h1').textContent` reads "Heroes vs.Villains" with no space — a screen reader announces it as one run-on token instead of "Heroes vs. Villains."
+- evidence: `content/shows/survivor/seasons/20-heroes-vs-villains.md` line 5: `display_title: "Heroes <em>vs.</em><br/>Villains"`; component: `src/components/composition/SeasonHero.tsx` renders the title tokens with no space token adjacent to the literal `<br />`.
+- suggested fix: In `SeasonHero.tsx`, ensure a space is preserved across the `<br/>` boundary in the accessible name (either insert a literal space token when rendering, or require `display_title` authors to leave a trailing space before `<br/>`). Shared component — any show/season using `<br/>` in `display_title` likely has the same defect; worth a repo-wide check after the fix.
+- source: browser (critique-pass-169, authed)
+
+### [MED] [authed] /shows/survivor/season/heroes-vs-villains — the "twenty returnees, two tribes" cast fact is restated near-verbatim four times on one page
+
+- pass: 169 (commit 5cb1805c)
+- viewport: desktop
+- category: voice
+- observation: The fact that twenty returning players split into a heroes tribe and a villains tribe is restated four separate times: the FORMAT meta field, the CAST SIZE meta field, the opening line of "THE TAKE," and the opening line of "WHERE IT SITS IN THE CANON."
+- evidence: FORMAT: "Returnees · 2 tribes / all-veteran cast"; CAST SIZE: "20 players / 10 heroes, 10 villains"; THE TAKE: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast..."; WHERE IT SITS: "Twenty returning players, two clean tribal premises, a decade of accumulated context..." — all on `/shows/survivor/season/heroes-vs-villains`.
+- suggested fix: Keep the fact once in the meta strip (FORMAT/CAST SIZE). Rewrite "THE TAKE" and "WHERE IT SITS" to build on it rather than re-deriving it — "WHERE IT SITS" in particular should open on canon-placement reasoning, not repeat the tribe/headcount. Content-only, one file.
+- source: browser (critique-pass-169, authed)
+
+### [MED] [authed] / (home, signed-in) — the header's nav links and account-menu trigger have no `:focus-visible` ring, unlike other interactive chrome
+
+- pass: 169 (commit 5cb1805c)
+- viewport: desktop
+- category: a11y
+- observation: Tabbing to the header "Shows" link or the `@e2e` account-menu trigger falls back to the thin unstyled browser default focus ring (`outlineStyle: auto`, `outlineWidth: 1px`, no box-shadow), while other interactive elements in the same system (skip-to-main link, comment textarea, search input) get a deliberate 2px `var(--color-primary-base)`/`var(--show-primary)` ring with offset.
+- evidence: computed style on the header "Shows" link: `outlineStyle: 'auto', outlineWidth: '1px', boxShadow: 'none'`. Contrast with `src/app/globals.css` (`.skip-to-main:focus-visible { outline: 2px solid var(--color-primary-base) }`), `src/styles/screens.css` (`.comment-ta:focus-visible { outline: 2px solid var(--show-primary); outline-offset: 4px }`), `src/styles/search.css` (`.search-input:focus-visible { ... }`). No equivalent rule exists for header nav `a` or `.site-header-user-trigger`.
+- suggested fix: Add a `:focus-visible` rule for header nav links and `.site-header-user-trigger` matching the 2px show-primary/brand-primary ring used elsewhere, so focus treatment is consistent across the chrome.
+- source: browser (critique-pass-169, authed)
 
 ### [MED] [anon] /themes — the "Featured this month" strip's badge reads "Featured for August 2026" while the site is now well into September
 
