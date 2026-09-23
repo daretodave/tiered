@@ -6280,6 +6280,7 @@
 - evidence: Section 02: "The 21-day paired-survival premise runs here as it has since 2013 — two strangers, remote wilderness, nothing provided ... For now, it sits here honestly." Section 03: "The 21-day paired-survival format runs here as it has across nineteen seasons — two strangers, remote wilderness, nothing provided ... For now, it holds this slot honestly."
 - suggested fix: Rewrite "Where It Sits in the Canon" to argue the slot comparatively against a neighboring season instead of re-deriving the format premise already stated in "Shape of the Season." Content-only, `content/shows/naked-and-afraid/canon.md`. Given three fresh instances this pass alone, the standing season-fill drain row in `plan/AUDIT.md` may want to widen its scope to a template-level content-check invariant rather than continuing to patch discovered instances one at a time.
 - source: browser (critique-pass-153, authed)
+- resolved (2026-09-23, commit 274e06cc): rewrote the rank-19 rationale in `content/shows/naked-and-afraid/canon.md` to argue the slot comparatively against Season 18 (shared open question of format fatigue, incomplete record vs. a closed and settling one) instead of re-deriving the paired-survival premise the season file already owns. 113 words, within the 80-120 word canon-rationale band.
 
 ### [MED] [anon] /shows/the-voice/season/the-finale — the `<meta name="description">` tag ends mid-clause on an em-dash and ellipsis in the source HTML
 - pass: 153 (commit dedb99b7)
