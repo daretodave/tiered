@@ -22,11 +22,11 @@ cast_size_caption: "Fifteen artists, narrowing to a rare four-finalist finale."
 host_caption: "Joel Madden's fourth season at the helm"
 watch_list:
   - episode_label: "Premiere · hometown pride sets the frame"
-    body: "The season opens by tying each artist to a home region — watch how that regional-pride framing shapes early challenge themes without ever softening the technical judging."
+    body: "Each artist's home region shows up as flash themes and client call-outs from the first challenge on — watch which regions get leaned on hardest early, usually a tell for who the season is building toward."
   - episode_label: "Mid-season · the field narrows toward four"
-    body: "The competition builds toward a rare four-finalist close instead of the format's usual three — worth watching how the show paces the field to support one more finalist than normal."
+    body: "With one more finalist slot up for grabs than a typical season, watch which artists start pulling clear as the technical bar rises — the bubble between third and fourth is where this season's real tension sits."
   - episode_label: "Finale · four finalists instead of three"
-    body: "Only the second time in the show's history the finale has run four-deep — a genuine structural rarity worth knowing about going in."
+    body: "A fourth canvas means the judges split their attention and airtime four ways instead of three — watch whether that extra round rewards depth or just spreads the same scrutiny thinner across the field."
 ---
 
-Hometown Heroes ties each of its fifteen artists to a home region, running that hometown-pride framing through the season's challenges without loosening the technical judging underneath it. The real structural news is the finale: only the second time in the show's history that four artists reach the last round instead of the usual three, giving the format one extra finalist's worth of work to weigh before it closes.
+The hometown framing mostly shows up in challenge dressing — location-themed flash, regional clients, hometown callbacks — rather than in how the artists get judged, which stays on technique start to finish. The bigger shift is structural: an extra finalist means one more full canvas to shoot, judge, and weigh before a winner gets named, so the back half compresses its usual mid-season narrowing to make room for that round at the close.
