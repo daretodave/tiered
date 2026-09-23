@@ -9,10 +9,67 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-16 at commit 17d830ee
-> Pass count: 71
+> Last pass: 2026-09-23 at commit 564a202d
+> Pass count: 72
 
 ## Considered (awaiting promotion)
+
+<!-- Pass 72 (2026-09-23, cloud march) — 0 new phase-shape candidates filed;
+     1 reinforcement (#34, now 63 days unpromoted).
+     Window since pass 71 (564a202d, 2026-09-16T18:04:32Z): 61 commits /
+     ~7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-20, eleventh full pass, next due
+     2026-09-27; gap table held at 42 shows/44 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (168) landed 2026-09-22, only 5 commits
+     before this tick and under the 24h spacing floor (~14h elapsed) —
+     both the commit-count and hours thresholds failed. Step 3a/3b empty
+     (no pending phase rows, no Pending category:data AUDIT rows). Step
+     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
+     but the CADENCE gap table's all 42 rows remain starred/confirmed-but-
+     unaired (independently re-confirmed this tick), and Rule 3 stays
+     locked while the gap table is non-zero per `plan/LISTS.md`'s own
+     mission statement — so ship-content's own Step 1 queue read found no
+     genuinely actionable row despite the nominal score, exited cleanly
+     ("no content queue"), and the caller fell through per its documented
+     contract. This left the dispatch to fall through to `/expand`'s own
+     gate, which opened independently (posture bold, 61 commits / ~7 days
+     since pass 71 — both thresholds clear, live AUDIT.md + CRITIQUE.md
+     signal present, no phase/data work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total, unchanged
+       in substance from pass 71's review. The recurring HIGH/MED cluster
+       (night.yml starvation → #35, e2e-full duration-ceiling → #34, the-
+       voice factual corruption → #36) still maps onto already-filed
+       candidates with no new scope information — except #34's source row,
+       which picked up ~13 more digest updates since pass 71 and crossed a
+       persistence milestone (63 days unpromoted, now explicitly the
+       file's longest-unpromoted candidate per the row's own 2026-09-22
+       text) — reinforced. #35's source row went quiet after 2026-09-07
+       (no new occurrence logged in 16 days) — a genuine change but not
+       one that raises urgency, so left unreinforced. #36 (the-voice) has
+       had no update since its 2026-08-08 triage labeling — unreinforced,
+       still correctly parked `needs-user`. Two LOW rows (heartbeat
+       false-positive → #39, `YEAR_TENURE_RE` teen-number gap → #40)
+       unchanged since their pass-71 filing.
+     - `plan/CRITIQUE.md` Pending: 8 rows, same set reviewed at pass 71.
+       Three `[needs-user-call]` rows already correctly parked for a human
+       `/oversight` session (home-page mobile catalog list, `/u/[handle]`
+       own-profile bareness, `/themes` stat-chip date-vs-count ambiguity,
+       `/shows` B-tier×2 already inside candidate #30, pass-96 dynamic-
+       serving mystery needing dashboard access this loop doesn't have).
+       No new pass numbers beyond what existing candidates already cite.
+     - `spec.md` / `design/`: no diff since pass 71 (`git log
+       17d830ee..HEAD -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+     - Commit pattern since pass 71: 61 commits, near-entirely the
+       standard content-gap redirect / critique / digest / sweep cadence
+       — no cluster suggesting an unplanned surface.
+-->
+
 
 <!-- Format:
 ### <NN>. <Phase title>
@@ -1157,8 +1214,22 @@ the live blast radius is larger than one page, not smaller.
 **Score:** 6.6 (impact: 7, ease: 6 → 4.2 base + 2.4 signal multiplicity — raised at
 pass 59 from persistence evidence: same breach recurring nightly, unaddressed 6 days
 after filing)
-**Source pass:** 57 (reinforced pass 59)
-**Filed:** 2026-07-22 (reinforced 2026-07-28)
+**Source pass:** 57 (reinforced pass 59, reinforced pass 72)
+**Filed:** 2026-07-22 (reinforced 2026-07-28, reinforced 2026-09-23)
+**Pass-72 reinforcement (persistence milestone, still unpromoted):**
+`plan/AUDIT.md`'s source row (line 663... see the e2e-full row) logged a fresh
+digest update as recently as 2026-09-22 (yesterday) — the alternating
+breach/green/breach pattern is unchanged after 63 days with "no clear trend
+either direction," and the row now explicitly calls this "the file's longest-
+unpromoted candidate." No new scope information this pass (the fix shape and
+the cloud `workflows`-OAuth-scope blocker are unchanged since filing) — this
+reinforcement is a pure persistence signal: 63 days unpromoted is an order of
+magnitude past the 6-10 day figures cited at the last reinforcement (pass 59),
+and the underlying single-worker bottleneck this candidate targets has not
+been touched by any of the ~20 digest updates logged against the source row
+in the interim. Score held at 6.6 (no new scope information to justify a
+further bump, per the same reasoning pass-59 applied) — flagging again for
+`/oversight` as the standing recommendation, now overdue by a wide margin.
 **Pass-59 reinforcement (persistence, still unpromoted):** `plan/AUDIT.md`'s
 source row (line 619) confirms the same breach has now recurred **every single
 night since filing** — 7 consecutive red `e2e-full` runs (2026-07-21 through
