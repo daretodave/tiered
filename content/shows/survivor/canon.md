@@ -912,17 +912,17 @@ the casting and the season's standing.
 ## 50. Survivor 50
 
 tag: The milestone closer, provisionally placed.
-slot_argument: The fiftieth season closes the show's first quarter-century. The canon takes the tail slot provisionally — milestone seasons hold pending the next discourse cycle.
+slot_argument: The canon takes the tail slot provisionally — freshly aired seasons hold pending the next discourse cycle.
 community_rank_hint: rank=50 delta=0 sentiment=hold
 
 Survivor 50 sits at the bottom of the canon for a plain reason:
-it's brand new. The fiftieth season ran through spring 2026 on
-the same 26-day format the franchise settled into years ago, so
-there's no structural argument driving the placement — just a
-fresh cast and a round-number milestone. The canon hasn't had
-time to see how this season holds up against the rest of the
-field, and the order revisits its bottom slots less often than
-its top ones. Fiftieth is a placeholder here, not a verdict: it
+it's brand new. This season ran through spring 2026 on the same
+26-day format the franchise settled into years ago, so there's
+no structural argument driving the placement — just a fresh
+cast and a round-number milestone. The canon hasn't had time to
+see how this season holds up against the rest of the field, and
+the order revisits its bottom slots less often than its top
+ones. The round number is a placeholder here, not a verdict: it
 holds until the next full canon pass revisits the bottom slots,
 then it's weighed on its own merits instead of just landing
 where every brand-new season starts out.

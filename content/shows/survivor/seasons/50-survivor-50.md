@@ -37,5 +37,6 @@ clustering likely allies by era or prior friendship — means no
 bloc arrives with a built-in strategic shorthand. Locking
 players who've studied decades of prior seasons into tribes
 with no single generational identity forces alliances across
-strategic vocabularies that don't naturally overlap. Probst
-hosts his fiftieth season on the islands.
+strategic vocabularies that don't naturally overlap. Probst is
+the only face who's clocked every one of those eras himself, on
+the same beach where all of them began.
