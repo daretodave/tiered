@@ -1,8 +1,36 @@
 # CRITIQUE
 
-> Last pass: 2026-09-23 at commit 5cb1805c
-> Pass count: 169
+> Last pass: 2026-09-24 at commit 7d6424d1
+> Pass count: 170
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 170 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/top-chef`, `/shows/top-chef/season/carolinas`, `/shows`,
+> `/themes/best-challenge-design` anon; `/`,
+> `/shows/top-chef/season/carolinas`, `/u/e2e`, `/mod`, `/settings`,
+> `/account` authed. Both passes came back mechanically clean (0
+> console errors, 0 failed requests, 0 horizontal overflow at 375px),
+> auth handshake healthy (`@e2e` chrome renders correctly on every
+> authed URL). `/settings` and `/account` 404 — confirmed these routes
+> were never built and nothing in the product links to them (no
+> `/settings` or `/account` reference anywhere in `src/`), so this is a
+> page-set curation artifact, not a product gap; not filed. `/mod`
+> correctly gated the non-mod `e2e@pantheon.app` test account, but that
+> also means the moderation queue UI itself went unaudited this pass —
+> noted for a future pass with a mod-role test account, not filed as a
+> product finding. 2 new findings filed (0 HIGH, 1 MED, 1 LOW): the
+> `/mod` access-denied copy leaks the auth vendor's admin-console name
+> to end users, breaking the plain-spoken voice; and Top Chef Carolinas'
+> community vote block reads "be the first to vote" roughly six months
+> after the season aired, undercutting the homepage's "live, restless"
+> framing of community rank. Two other reader-surfaced observations
+> (Carolinas' near-verbatim host/cast-fact repetition; `/shows` and
+> `/themes` sharing the sitewide OG image) were dropped as exact
+> duplicates of already-open Pending rows. No pending HIGH findings
+> remained open ahead of this pass; the site continues to read clean on
+> the P0 spoiler check.
 > Pass 169 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4373,6 +4401,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /mod — the access-denied copy names the internal auth vendor and admin console to end users
+
+- pass: 170 (commit 7d6424d1)
+- viewport: desktop
+- category: voice
+- observation: A signed-in reader without the moderation role sees copy that leaks an implementation detail — the name of the auth vendor's admin console — instead of a plain-spoken instruction. Breaks the "knowledgeable peer" voice, which never surfaces vendor/tooling names to readers.
+- evidence: `src/app/(default)/mod/page.tsx:72` renders "Your account is signed in but doesn't have the moderation role. If you should have access, ask the admin to grant the mod role in the Auth0 dashboard."
+- suggested fix: Drop the vendor name and console reference — "Ask a tiered.tv admin to add moderator access to your account."
+- source: browser (critique-pass-170, authed)
+
+### [LOW] [anon] /shows/top-chef/season/carolinas — the zero-vote community block reads as an abandoned feature months after the season aired
+
+- pass: 170 (commit 7d6424d1)
+- viewport: desktop
+- category: comprehension
+- observation: Top Chef Carolinas premiered 2026-03-09 (roughly six months before this pass) yet its community vote block still reads "0 / BE THE FIRST TO VOTE," which sits oddly against the homepage's framing of community rank as "live, restless, real numbers per season." A season this far past air with zero votes reads as neglected rather than freshly published.
+- evidence: rendered vote block: "0 / BE THE FIRST TO VOTE / one vote per reader; change your mind within 72h. community rank updates weekly." Homepage lede: "One you vote — live, restless, real numbers per season."
+- suggested fix: Content/product question, not a code bug per se — either seed early community votes before a season page ships, or soften the empty-state copy on seasons that have been live for months so "be the first" doesn't read as stale. Flagging for iterate/editorial judgment rather than prescribing the fix.
+- source: browser (critique-pass-170, anon)
 
 ### [MED] [anon] /shows/survivor/season/survivor-50 — the "fiftieth season" milestone fact is restated near-verbatim four times on one page
 
