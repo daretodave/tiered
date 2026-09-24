@@ -4462,6 +4462,7 @@
 - evidence: FORMAT: "Returnees · 2 tribes / all-veteran cast"; CAST SIZE: "20 players / 10 heroes, 10 villains"; THE TAKE: "Twenty returnees split into a heroes tribe and a villains tribe, filmed on the Samoan coast..."; WHERE IT SITS: "Twenty returning players, two clean tribal premises, a decade of accumulated context..." — all on `/shows/survivor/season/heroes-vs-villains`.
 - suggested fix: Keep the fact once in the meta strip (FORMAT/CAST SIZE). Rewrite "THE TAKE" and "WHERE IT SITS" to build on it rather than re-deriving it — "WHERE IT SITS" in particular should open on canon-placement reasoning, not repeat the tribe/headcount. Content-only, one file.
 - source: browser (critique-pass-169, authed)
+- RESOLVED (2026-09-24, cloud march tick, commit bd897819): rewrote the season's `pull` field and `canon.md`'s slot #02 rationale so both open on structural/canon-placement reasoning (the tribe line's pre-merge work, the ten-season accumulated context) instead of restating the twenty-returnee/two-tribe headcount already carried by the FORMAT and CAST SIZE meta fields. Content-only, two files. Picked up per the established dispatch-starvation workaround (issue #758): Rule 2 (season-fill) fully starred in `plan/CADENCE.md` (all gap-slots confirmed-but-unaired), no actionable filesystem gap this tick. Verify gate green: fast gate clean, build 1519/1519 static pages, e2e 4898/4898 passed (31.2m).
 
 ### [MED] [authed] / (home, signed-in) — the header's nav links and account-menu trigger have no `:focus-visible` ring, unlike other interactive chrome
 
