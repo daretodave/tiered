@@ -55,17 +55,17 @@ slot_argument: The hero/villain split is the format. Drawing the line down the m
 community_rank_hint: rank=2 delta=1 sentiment=up
 
 Heroes vs. Villains is the all-star format running at its
-ceiling. Twenty returning players, two clean tribal premises, a
-decade of accumulated context — every move lands with the weight
-of seasons of prior text. The casting team gets it right: a
-confessional read hits harder when you already have a
-relationship with the speaker, and Samoa pushes physical play
-into a place earlier returnee seasons never reached. Episodes
-run dense in a way the merge alone cannot deliver. The second
-slot belongs to it by default. No other all-star attempt sustains
-this much pressure across this many recognizable faces, and decades
-on, the rest of the format is still measured against this
-stretch of TV.
+ceiling. A decade of accumulated context means every move lands
+with the weight of prior seasons of text, and the tribe line down
+the bench does the season's structural work before the merge ever
+reshuffles anything. The casting team gets it right: a
+confessional hits harder with an existing relationship behind it,
+and Samoa pushes physical play into a place earlier returnee
+seasons never reached. Episodes run dense in a way the merge
+alone cannot deliver. The second slot belongs to it by default.
+No other all-star attempt sustains this much pressure across this
+many recognizable faces, and decades on, the format is still
+measured against this stretch of TV.
 
 ## 1. Borneo
 
