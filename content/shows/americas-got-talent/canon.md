@@ -1,7 +1,7 @@
 ---
 show: americas-got-talent
 editor: tiered.tv editor
-last_revised: 2026-06-22
+last_revised: 2026-09-24
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched America's Got Talent as a variety format — not just as a showcase of individual moments but as a competition with judging chemistry, structural logic, and a casting philosophy that either surfaces surprising acts or defaults to the safe and familiar. The founding era sets the standard; everything after has to clear it."
 meth_how_h: "How I weigh it"
@@ -159,7 +159,7 @@ tag: Same panel, second year, and — for once — a genuine format twist to go 
 slot_argument: Cowell, Mandel, Vergara, and Mel B return for a second year, the shorthand from S20 in place. This one adds real stakes too — double Golden Buzzers and a new Judges' Callbacks round. Chemistry plus surprise beats chemistry alone.
 community_rank_hint: { rank: 17, delta: 0, sentiment: hold }
 
-Season twenty-one earns a slot above the canon's other second-year-panel argument because it pairs the same trick with something new. Simon Cowell, Howie Mandel, Sofia Vergara, and Mel B return unchanged from the anniversary season, and a year of chemistry together makes the judging table faster and more assured than the reset before it. But the format doesn't just coast on shorthand — for the third time in the show's run, every judge gets two Golden Buzzers instead of one, and a new Judges' Callbacks round hands select acts another shot at the live rounds. A settled table with genuine structural stakes attached outranks the seasons that only had the chemistry.
+Season twenty-one earns a slot above the canon's other second-year-panel argument because it pairs the same trick with something new. Cowell, Mandel, Vergara, and Mel B return unchanged, and a year of chemistry makes the table faster and more assured than the reset before it. The format doesn't just coast on shorthand — for the third time in the show's run, every judge gets two Golden Buzzers, and a new Judges' Callbacks round hands select acts another shot at the live rounds. A settled table with structural stakes outranks chemistry-only seasons. A post-finale asterisk: back surgery kept Cowell off the panel for the finale, KSI filling in for a season built all year on the same four judges.
 
 ## 17. The Panel in Form
 

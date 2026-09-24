@@ -24,6 +24,8 @@ watch_list:
     body: "Fourteen-year-old Lai Noelle earns Simon Cowell's buzzer after Sofía Vergara steps back mid-reach to let him press first — one of three buzzers the premiere hands out."
   - episode_label: "Auditions · Isaac Atkins's leave audition"
     body: "An active-duty Army sergeant on leave, who'd only started posting singing videos about a year earlier, earns Mel B's buzzer."
+  - episode_label: "Finale · Cowell's empty chair"
+    body: "Back surgery keeps Simon Cowell off the panel entirely for both finale broadcasts. Britain's Got Talent's KSI sits in for him, closing out a season built on panel continuity with the one judge who defined it absent."
 ---
 
-Season twenty-one is the Cowell-Mandel-Vergara-Mel B panel's second year together, and the shorthand shows in how fast the table moves — critiques land quicker, disagreements resolve without the feeling-out period the prior season needed. The doubled Golden Buzzers change the math too: a judge doesn't have to hoard the moment for one favorite, so the buzzer starts landing earlier instead of building toward a single late peak.
+Season twenty-one is the Cowell-Mandel-Vergara-Mel B panel's second year together, and the shorthand shows in how fast the table moves — critiques land quicker, disagreements resolve without the feeling-out period the prior season needed. The doubled Golden Buzzers change the math too: a judge doesn't hoard the moment for one favorite, so it lands earlier instead of building toward one peak. The one crack: back surgery kept Cowell off the panel for the finale, KSI sitting in for both nights.
