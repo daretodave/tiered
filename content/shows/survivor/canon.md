@@ -926,3 +926,22 @@ ones. The round number is a placeholder here, not a verdict: it
 holds until the next full canon pass revisits the bottom slots,
 then it's weighed on its own merits instead of just landing
 where every brand-new season starts out.
+
+## 51. Survivor 51
+
+tag: The freshly aired tail, awaiting its first discourse cycle.
+slot_argument: Days into its run, with a twist premise built to reference the entire format's history. The canon holds it at the tail, provisionally, until there's enough of the season to weigh.
+community_rank_hint: rank=51 delta=0 sentiment=hold
+
+Survivor 51 sits at the tail of the canon for a simple reason:
+it just started. The Open Era brands itself around
+unpredictability — advantages and mechanics from anywhere in the
+show's history can resurface without warning, and the two-hour
+premiere alone reportedly pulled from six prior seasons before
+adding three new wrinkles. Twenty-one first-time castaways, the
+franchise's first odd-numbered cast since 2007, return the show
+to the Mamanucas for a nineteenth consecutive Fiji shoot, with a
+new Million Dollar Coin Toss layered over the prize pot. None of
+that is a verdict. The canon holds this slot the way it holds
+every freshly aired season's, until a full discourse cycle gives
+the placement something to argue against.

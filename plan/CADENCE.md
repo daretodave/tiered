@@ -24,6 +24,26 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-09-25 tick (cloud march): survivor 50/51 → 51/51, gap
+row removed.** Survivor Season 51 ("The Open Era") premiered 2026-09-23 —
+two days before this tick — so the cached `1*` (confirmed-but-unaired) star
+on the survivor row was stale; scout-verified premiere facts (Mamanuca
+Islands, Fiji, 19th consecutive Fiji shoot; Jeff Probst; 21 first-time
+castaways, first odd-numbered cast since 2007; the "Open Era" full-history
+twist-recurrence premise; the Million Dollar Coin Toss prize mechanic) were
+all pre-season/format-level, spoiler-safe, and public before or at premiere.
+Filed `content/shows/survivor/seasons/51-survivor-51.md` (76-word body),
+appended `## 51. Survivor 51` to `canon.md` as a pure tail entry (rank 51,
+provisionally placed, matching the same "freshly aired, holds the tail
+pending discourse" framing Survivor 50 used at its own premiere — no other
+ranks shifted), and bumped `content/shows/survivor.md`'s `seasons: 50` to
+`51`. `era_bands`' `new-era` band already covers `[2021, 2026]`, so no
+widening was needed. Survivor was picked smallest-gap-first, tier-S
+tie-break (the catalog's only tier-S shows are survivor and dragrace) over
+the other gap-1 rows also confirmed already-airing as of the 2026-09-20
+sweep (the-challenge, rhony, rhoc, dragrace-uk, dancing-with-the-stars) —
+those remain queued for future Rule 2 ticks.
+
 **Finale-gate false trigger corrected, 2026-09-21 tick (cloud march):**
 the phase-39 gate fired on `content/calendar.yml`'s `90-day-fiance`
 season 12 row (`finale_date: 2026-09-20`, now in the past), filing an
@@ -1126,7 +1146,6 @@ new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
-| survivor | 50/51 | 1* |
 | amazing-race | 38/39 | 1* |
 | rhony | 15/16 | 1* |
 | dancing-with-the-stars | 34/35 | 1* |
