@@ -10137,6 +10137,47 @@ last time a curator actually looked.
     or edited. The catalog (180+ shipped lists) has saturated the
     structural/craft/tone/era space to the point where new-angle
     ideation converges on already-shipped lists rather than gaps.
+- 2026-09-25 zero-ship tick (cloud march, `/ship-content` Rule 3
+  dispatch): Rule 2 drained Survivor 51 this same tick — the only
+  fresh grounding material available (filed via CADENCE.md, premiere
+  2026-09-23). Chased every angle its own season file supports:
+  - Million Dollar Coin Toss reward-for-advantage mechanic —
+    rejected: `same-crown-new-price-tag` (category: structure, 17
+    entries, 8 shows, already above the cross-canon floor) ships this
+    exact "reward changes, format holds" thesis; adding S51 here would
+    be an extend on an already-healthy list, not a new concept, and a
+    second list built on the same fact would fail the distinct-angle
+    gate.
+  - Two-hour special premiere runtime — rejected: `running-long-
+    running-short` (category: craft, 16 entries, 12 shows) already
+    stakes this exact runtime-change vein with directly parallel
+    entries (Big Brother S27, Masked Singer S14, AGT S20); same
+    above-floor-extend problem.
+  - Open Era twist-pool premise (stacking twists pulled from six past
+    seasons alongside three new ones) — rejected: grepped for a
+    parallel "greatest-hits mechanic pool" premise on Big Brother and
+    other returning-twist formats; no cross-show match, concept is
+    Survivor-specific and fails the ≥3-distinct-show floor outright.
+  - First odd-numbered cast since 2007 / 21-person cast math —
+    rejected: overlaps existing cast-size-themed lists' territory,
+    too thin as its own cross-show vein without duplicating them.
+  - Occupational-range casting brief (wrestler / attorney / voice
+    actress in one cast) — rejected: catalog-wide grep for comparable
+    "wildly mixed occupational brief" entries on other shows returned
+    effectively one hit; can't clear the floor.
+  - 19th consecutive Fiji filming-location streak — rejected: the
+    exact "unbroken address streak" thesis is already exhaustively
+    mined for Bake Off at `the-tent-moved-more-than-the-show-admits`
+    (category: single); reusing the pattern for Survivor's Fiji run
+    would read as a template fill, and Big Brother's comparable
+    fixed-lot angle is already staked under a different facet at
+    `every-summer-gets-its-own-twist`.
+  No `content/themes/*.md` file written or edited this tick. The
+  Voice was not consulted or cited anywhere in this pass (its S22-29
+  factual-corruption bug row was never in scope — no candidate angle
+  touched the show at all). Next unlock: Rule 2 filing another show's
+  season, or a genuinely new angle unrelated to today's Survivor
+  drop.
 
 ## Notes
 

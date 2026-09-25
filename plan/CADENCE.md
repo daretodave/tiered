@@ -63,6 +63,20 @@ once 2026-09-27 passes. No other gap-table row was actionable this
 tick (all 40 remaining rows are starred/confirmed-but-unaired), so this
 correction is the tick's full content-side contribution.
 
+**Rule 2 stall, 2026-09-25 tick, second pass (cloud march):** re-checked the
+gap table after the survivor drain above — every remaining row is starred
+confirmed-but-unaired (`90-day-fiance` is the nearest, gated on Tell-All Part
+3 airing 2026-09-27, still two days out from this tick). No row actionable.
+Fell through to Rule 3; `content-curator` chased six angles grounded in the
+freshly-filed Survivor 51 (Million Dollar Coin Toss, two-hour premiere
+runtime, the Open Era twist-pool premise, cast-size/odd-cast-count framing,
+occupational-casting-brief, the 19-year Fiji filming streak) and rejected all
+six — each either duplicated an already-above-floor list's exact thesis or
+failed the ≥3-distinct-show cross-canon floor. Zero-ship; see `plan/LISTS.md`
+Ideas log for the full grounding per candidate. Next unlock: the weekly
+sweep due 2026-09-27, or another Rule 2 drain once a new gap-slot ages into
+actionable.
+
 **Eleventh full weekly sweep, 2026-09-20 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (frontmatter `seasons:` vs. filed season
