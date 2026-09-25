@@ -65,11 +65,11 @@ export default async function ModPage() {
           </p>
         </header>
         <p className="text-ink-1">
-          If you should have access, ask the admin to grant the{' '}
+          If you should have access, ask a tiered.tv admin to add{' '}
           <code className="rounded bg-paper-2 px-1.5 py-0.5 font-mono text-sm text-ink-0">
             mod
           </code>{' '}
-          role in the Auth0 dashboard.
+          access to your account.
         </p>
       </section>
     )
