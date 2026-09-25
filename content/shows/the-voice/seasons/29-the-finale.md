@@ -15,6 +15,7 @@ format_caption: "Series finale season; Kelsea Ballerini's coaching debut"
 cast_size: 4
 cast_size_caption: "Coaches: Reba McEntire, Michael Bublé, Adam Levine, Kelsea Ballerini"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
+meta_description: "The Voice closes out its fourteen-year run with Reba McEntire, Michael Bublé, Adam Levine, and coaching newcomer Kelsea Ballerini rounding out the panel."
 premiere_caption: "NBC · September 2025"
 filming_caption: "Los Angeles · Kelsea Ballerini's debut in the show's closing season"
 ---
