@@ -90,6 +90,21 @@ describe('<ShowsTile>', () => {
     expect(tile.textContent).not.toContain('canon + community')
   })
 
+  it('small variant with status at/past the review floor renders no pill — the tier header already states review status once (critique pass-143)', () => {
+    render(
+      <ShowsTile
+        show={show({ slug: 'chopped', name: 'Chopped' })}
+        variant="small"
+        status={{ shipped: 62, target: 3 }}
+      />,
+    )
+    const tile = screen.getByTestId('shows-tile')
+    expect(screen.queryByTestId('show-tile-status')).not.toBeInTheDocument()
+    expect(tile.textContent).not.toContain('review in progress')
+    const tag = tile.querySelector('.show-tile-tag')
+    expect(tag?.textContent).toBe('Reality competition · CBS')
+  })
+
   it('singularizes "season" when a show has exactly one', () => {
     render(<ShowsTile show={show({ seasons: 1 })} variant="regular" />)
     const meta = screen.getByTestId('shows-tile').textContent ?? ''

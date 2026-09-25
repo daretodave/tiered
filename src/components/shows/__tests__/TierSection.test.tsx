@@ -79,4 +79,14 @@ describe('<TierSection>', () => {
     const pill = screen.getByTestId('show-tile-status')
     expect(pill.textContent).toContain('0 of 3 canon entries')
   })
+
+  it('B tier show whose canon has cleared the review floor renders no per-card pill — the section header already states review status once (critique pass-143)', () => {
+    render(
+      <TierSection
+        tier="B"
+        shows={[show({ slug: 'chopped', name: 'Chopped', tier: 'B' })]}
+      />,
+    )
+    expect(screen.queryByTestId('show-tile-status')).not.toBeInTheDocument()
+  })
 })

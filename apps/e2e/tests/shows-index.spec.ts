@@ -85,7 +85,7 @@ test.describe('/shows tier-list', () => {
     expect(unique.size).toBe(slugs.length)
   })
 
-  test('B-tier tiles render the in-progress status pill; S-tier do not', async ({
+  test('B-tier tiles render the in-progress status pill only when a show has not yet cleared the review floor; S-tier never does', async ({
     page,
   }) => {
     await page.goto('/shows', { waitUntil: 'domcontentloaded' })
@@ -93,16 +93,26 @@ test.describe('/shows tier-list', () => {
     // B may have fully drained (phase 26 promotes shows out of B as
     // their canon matures). After critique-pass-50 #412 the empty
     // B-band is hidden entirely — when no show carries `tier === 'B'`
-    // the section is absent from the DOM. When present, every tile
-    // must carry the in-progress status pill. The S-tier no-pill
-    // invariant below always holds.
+    // the section is absent from the DOM. Per critique-pass-143, the
+    // per-card pill only renders while a show's canon is still below
+    // the review floor (the tier header already states the tier-wide
+    // "review in progress" status once, so repeating it on every
+    // fully-drained card is redundant) — so the pill count on a mature
+    // catalog can legitimately be 0, or less than the tile count. The
+    // S-tier no-pill invariant below always holds.
     const bSection = page.getByTestId('tier-section').filter({
       has: page.locator('[data-tier="B"]'),
     })
     if ((await bSection.count()) > 0) {
+      const bTiles = bSection.getByTestId('shows-tile')
       const bPills = bSection.getByTestId('show-tile-status')
-      expect(await bPills.count()).toBeGreaterThan(0)
-      await expect(bPills.first()).toBeVisible()
+      const pillCount = await bPills.count()
+      const tileCount = await bTiles.count()
+      expect(pillCount).toBeLessThanOrEqual(tileCount)
+      if (pillCount > 0) {
+        await expect(bPills.first()).toBeVisible()
+        await expect(bPills.first()).toContainText('of')
+      }
     }
 
     const sSection = page.getByTestId('tier-section').filter({

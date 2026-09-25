@@ -36,6 +36,12 @@ export function ShowsTile({ show, variant, status }: ShowsTileProps) {
     '--tile-primary': show.palette.primary,
   } as CSSProperties
   const bulletSize = variant === 'small' ? 10 : 12
+  // The section header already states tier-wide review status once
+  // (see TierHead + tierMeta's B-tier copy) — repeating "review in
+  // progress" on every card once a show's canon clears the floor adds
+  // no information. Only the partial-progress state ("N of T canon
+  // entries") is genuinely per-show news.
+  const showPill = status !== undefined && status.shipped < status.target
 
   return (
     <Link
@@ -48,12 +54,12 @@ export function ShowsTile({ show, variant, status }: ShowsTileProps) {
       style={tileStyle}
     >
       <div>
-        {status ? (
+        {showPill && status ? (
           <ShowsStatusPill shipped={status.shipped} target={status.target} />
         ) : null}
         <div
           className="show-tile-head"
-          style={status ? { marginTop: 14 } : undefined}
+          style={showPill ? { marginTop: 14 } : undefined}
         >
           <Bullet color={show.palette.primary} size={bulletSize} />
           <span className="show-tile-tag">{tagText(show)}</span>
