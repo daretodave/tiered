@@ -4411,6 +4411,8 @@
 - evidence: `src/app/(default)/mod/page.tsx:72` renders "Your account is signed in but doesn't have the moderation role. If you should have access, ask the admin to grant the mod role in the Auth0 dashboard."
 - suggested fix: Drop the vendor name and console reference — "Ask a tiered.tv admin to add moderator access to your account."
 - source: browser (critique-pass-170, authed)
+- issue: #816
+- RESOLVED (2026-09-25, cloud march tick, commit b72e97f2): rewrote the access-denied copy from "ask the admin to grant the mod role in the Auth0 dashboard" to "ask a tiered.tv admin to add mod access to your account" — drops the vendor name and console reference entirely, same instruction. Content-only, one file. Verify gate green: fast gate (199 test files/3693 unit tests, content:check ok), build clean (1519 static pages), e2e 4898/4898 passed (32.4m).
 
 ### [LOW] [anon] /shows/top-chef/season/carolinas — the zero-vote community block reads as an abandoned feature months after the season aired
 
