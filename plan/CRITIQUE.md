@@ -1,35 +1,43 @@
 # CRITIQUE
 
-> Last pass: 2026-09-24 at commit 7d6424d1
-> Pass count: 170
+> Last pass: 2026-09-25 at commit e9de6844
+> Pass count: 171
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 170 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 171 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/shows/top-chef`, `/shows/top-chef/season/carolinas`, `/shows`,
-> `/themes/best-challenge-design` anon; `/`,
-> `/shows/top-chef/season/carolinas`, `/u/e2e`, `/mod`, `/settings`,
-> `/account` authed. Both passes came back mechanically clean (0
-> console errors, 0 failed requests, 0 horizontal overflow at 375px),
-> auth handshake healthy (`@e2e` chrome renders correctly on every
-> authed URL). `/settings` and `/account` 404 — confirmed these routes
-> were never built and nothing in the product links to them (no
-> `/settings` or `/account` reference anywhere in `src/`), so this is a
-> page-set curation artifact, not a product gap; not filed. `/mod`
-> correctly gated the non-mod `e2e@pantheon.app` test account, but that
-> also means the moderation queue UI itself went unaudited this pass —
-> noted for a future pass with a mod-role test account, not filed as a
-> product finding. 2 new findings filed (0 HIGH, 1 MED, 1 LOW): the
-> `/mod` access-denied copy leaks the auth vendor's admin-console name
-> to end users, breaking the plain-spoken voice; and Top Chef Carolinas'
-> community vote block reads "be the first to vote" roughly six months
-> after the season aired, undercutting the homepage's "live, restless"
-> framing of community rank. Two other reader-surfaced observations
-> (Carolinas' near-verbatim host/cast-fact repetition; `/shows` and
-> `/themes` sharing the sitewide OG image) were dropped as exact
-> duplicates of already-open Pending rows. No pending HIGH findings
-> remained open ahead of this pass; the site continues to read clean on
+> `/shows/the-voice/season/the-finale`, `/shows`,
+> `/shows/dragrace/season/season-18?view=community`, `/themes` anon;
+> `/`, `/shows/the-voice/season/the-finale`, `/u/e2e`,
+> `/shows/dragrace/season/season-18?view=community`, `/mod` authed.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow at 375px), auth handshake healthy
+> (`@e2e` chrome renders correctly on every authed URL, `data-signed-in`
+> confirmed true). `/mod` access-denied copy re-verified clean (the
+> pass-170 vendor-name fix holds). 2 new findings filed (0 HIGH, 2 MED,
+> 0 LOW): `/shows/dragrace/season/season-18`'s meta description's
+> word-boundary fallback lands on "full" — a dangling adjective with no
+> noun, the same defect class as the already-fixed stop-word/ordinal
+> trims but on a fresh trigger word; and the shared `VotePair` component
+> has no `aria-live` region, so a screen-reader user who casts a vote
+> gets no announcement that it registered. One existing row bumped
+> LOW→MED: `?view=community`'s silent no-op on season-detail routes now
+> has a third confirmed instance (dragrace) across three separate
+> passes, making it a reliable defect rather than a per-show fluke. Two
+> other reader-surfaced observations were dropped as duplicates of
+> already-open rows: the same `?view=community` no-op (folded into the
+> severity bump above) and a `Cache-Control: private, no-cache` finding
+> on `/shows/the-voice/season/the-finale` (already tracked as a
+> needs-user-call investigation, unresolved since pass-96, covering the
+> same season/show-detail route family). A third reader-surfaced item —
+> the comment thread showing no explicit empty-state text for signed-in
+> viewers — was assessed and dropped, not filed: `CommentThread.tsx`'s
+> own in-source comment (pass-36 #335, pass-42 #362) documents this as
+> intentional design, not a gap — authed viewers deliberately drop the
+> empty-state line because the input affordance above already carries
+> the invitation. No pending HIGH findings remained open ahead of this
+> pass; the site continues to read clean on
 > the P0 spoiler check.
 > Pass 169 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
@@ -4402,6 +4410,26 @@
 
 ## Pending
 
+### [MED] [anon] /shows/dragrace/season/season-18 — the meta-description word-boundary fallback lands on a dangling adjective ("full") with no noun
+
+- pass: 171 (commit e9de6844)
+- viewport: desktop
+- category: seo
+- observation: The season's `<meta name="description">` is generated from `lede` via `clipToSeoBudget()` with no `meta_description` override authored. The 174-char lede runs past the 159-char budget; the only comma in range (after "record,") sits before the 60%-of-budget `minCut` threshold so the clause-boundary branch correctly declines it, and the function falls through to the raw word-boundary fallback — which lands on "full," an adjective with no noun, one word before the sentence's actual payoff ("eliminated-cast tournament"). Rendered: "...trades the usual top-two lip sync for a full…". This is the same defect class already fixed twice for other trigger words (pass-79's trailing stop-words denylist, pass-136's trailing-ordinal trim) but "full" is in neither list, so the fallback still produces a dangling modifier here.
+- evidence: Reproduced directly against the current `clipToSeoBudget()` implementation (`src/lib/seo.ts:88-120`) using the exact lede from `content/shows/dragrace/seasons/18-season-18.md:12` — confirmed the clause-boundary comma (index 79) falls short of `minCut` (95), so the word-boundary fallback fires and returns `"...for a full…"` verbatim, matching the live rendered meta tag.
+- suggested fix: Content-level fix is simplest and matches how most instances of this defect class have been closed (rewrite `lede` in `content/shows/dragrace/seasons/18-season-18.md` so the sentence's payoff clause lands earlier, or add a `meta_description` override via the existing `descriptionFor()` escape hatch — see the-voice's `29-the-finale.md` precedent). If this keeps recurring on fresh trigger words, the more systemic fix is teaching the word-boundary fallback to also reject a cut landing on a bare adjective immediately preceding the window's true end (harder to generalize safely than the stop-word/ordinal lists — recommend content-level fix first).
+- source: web-fetch (critique-pass-171, anon)
+
+### [MED] [authed] vote-pair (confirmed on /shows/the-voice/season/the-finale and /shows/dragrace/season/season-18) — the vote count has no `aria-live` region, so a screen-reader user gets no announcement after casting a vote
+
+- pass: 171 (commit e9de6844)
+- viewport: desktop
+- category: a11y
+- observation: The vote-pair component's vote-state cap and vote-count elements carry no `aria-live` attribute anywhere in their markup. A sighted user casting a vote sees the count update and a delta-animation flash; a screen-reader user gets no announcement that the vote registered, what the new count is, or that the state cap changed from "you haven't voted yet."
+- evidence: Rendered DOM on `/shows/the-voice/season/the-finale`: `<div class="vote-state-cap" data-vote-state="none">you haven't voted yet</div>` and `<div class="vote-count"><span class="vote-num" data-testid="vote-count">0</span><span class="vote-label">votes so far</span></div>` — zero occurrences of `aria-live` anywhere in the page source. Same absence confirmed on `/shows/dragrace/season/season-18`, so this is a shared-component gap, not a page-specific one.
+- suggested fix: Add `aria-live="polite"` to the vote-count/vote-state-cap wrapper in the shared `VotePair` component (`src/components/composition/VotePair.tsx`) so the count and state-cap text update is announced after a click. Component-only, no visual change.
+- source: web-fetch (critique-pass-171, authed)
+
 ### [MED] [authed] /mod — the access-denied copy names the internal auth vendor and admin console to end users
 
 - pass: 170 (commit 7d6424d1)
@@ -4829,7 +4857,7 @@
 - source: browser (critique-pass-151, anon)
 - resolved: 2026-09-22, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred at 44/44 gap-slots per the 2026-09-20 eleventh sweep; oldest unresolved content-only MED finding in the backlog). Rewrote Season 4's `slot_argument` to argue the top slot comparatively against Season 9's structural gambit instead of re-stating cast size and episode count. Rewrote Season 9's `slot_argument` to argue its #2 slot comparatively against Season 4 above it and Season 10 below it (sustained structural risk vs. raw depth vs. scale) instead of re-stating the mentorship-draft mechanics. Both fields verified under the 240-char `slot_argument` schema cap. Content-only, one file. Shipped at `1431a86d`.
 
-### [LOW] [authed] /shows/selling-sunset/season/season-9?view=community — `?view=community` is a silent no-op on season-detail routes
+### [MED] [authed] /shows/selling-sunset/season/season-9?view=community — `?view=community` is a silent no-op on season-detail routes (severity bumped LOW→MED at pass-171, third confirmed instance across three passes)
 - pass: 151 (commit f945f171)
 - viewport: desktop
 - category: navigation
@@ -4838,6 +4866,7 @@
 - suggested fix: Either implement a real community-vote pane on the season route for this param, or strip/ignore the param cleanly at the routing layer instead of leaving it as an inert query string readers might reasonably expect to do something.
 - source: browser (critique-pass-151, authed)
 - confirmed systemic (2026-09-09, critique pass-156, authed): reproduced identically on `/shows/vanderpump-rules/season/season-12?view=community` — byte-identical render with and without the param. Second confirmed instance of the season-detail route family never reading `view`; severity held at LOW (still no error, just an inert param) but scope confirmed component-level, not per-show.
+- confirmed systemic, third instance (2026-09-25, critique pass-171, anon): reproduced identically on `/shows/dragrace/season/season-18?view=community` — full text diff against the same URL without the param came back byte-identical, and no Canon/Community tab or toggle exists anywhere on the page. Three confirmed instances across three separate passes (151, 156, 171) on three different shows makes this a reliably reproducible defect in the season-detail route family, not a per-show fluke — bumping LOW→MED. Still no error thrown and the param strips cleanly from canonical links, so holding below HIGH.
 
 ### [MED] [anon] /shows/dragrace-allstars/season/season-11?view=community — the "eighteen queens, three six-queen brackets" fact is restated near-verbatim five times on one page
 - pass: 149 (commit 5d9e1f6f)
