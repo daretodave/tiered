@@ -1,8 +1,36 @@
 # CRITIQUE
 
-> Last pass: 2026-09-25 at commit e9de6844
-> Pass count: 171
+> Last pass: 2026-09-26 at commit 6113bf9e
+> Pass count: 172
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 172 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/survivor/season/survivor-51`, `/shows`, `/shows/survivor`,
+> `/themes` anon; `/`, `/shows/survivor/season/survivor-51`, `/u/e2e`,
+> `/shows/survivor/season/survivor-51?view=community`, `/mod` authed.
+> Anon pass came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport), but hand-review
+> of the captures surfaced 3 new findings (0 HIGH, 2 MED, 1 LOW), all
+> content-staleness defects traceable to Survivor 51's 2026-09-23
+> premiere not fully propagating through the show's own metadata: the
+> show-page hero blurb still reads "50 seasons" against the adjacent
+> "51 SEASONS IN CANON" stat tile three days after the new season
+> shipped; the season page's own eyebrow still reads "Premiering fall
+> 2026" against the "PREMIERED Sep 23, 2026" fact block on the same
+> page; and canon.md's `last_revised` (June 2026) predates the
+> post-premiere #51 slot prose actually authored into that same file.
+> Spoiler discipline held clean throughout — Survivor 51 copy stays
+> strictly pre-air/format-level, no outcome or placement beat leaked.
+> Authed pass came back fully clean (0 findings): auth chrome correct
+> on every URL (`authState: "authenticated:cloud"`), and the two
+> targeted verifications both passed — the freshly-shipped season-detail
+> `?view=community` 308 redirect (commit 6fe08cc8) confirmed live via
+> direct `curl` (`HTTP/2 308` → clean canonical URL, rendered body
+> matches the clean-URL capture exactly), and Survivor 51 re-confirmed
+> spoiler-clean on the authed pass too. No pending HIGH findings remain
+> open ahead of this pass.
 > Pass 171 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4409,6 +4437,36 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/survivor — hero blurb still reads "50 seasons" against the adjacent "51 SEASONS IN CANON" stat tile
+
+- pass: 172 (commit 6113bf9e)
+- viewport: desktop, mobile
+- category: comprehension
+- observation: The show-page hero states two different season counts four lines apart. The hero blurb reads "50 seasons. One torch at a time." but the meta-stat block directly beneath it reads "51 SEASONS IN CANON." A first-time reader hits the contradiction before finishing the hero block. This is a fresh regression, not a re-surfaced defect — the count was correctly 50 when the show page's hero copy was last critiqued (passes 37/49, different defect shapes); it only went stale when Survivor 51 was added to canon three days before this pass.
+- evidence: Rendered text on `/shows/survivor`: "Survivor\n\n50 seasons. One torch at a time.\n\n51\nSEASONS IN CANON\nJune 2026\nCANON REVISED". `content/shows/survivor.md` frontmatter has `seasons: 51` but `blurb: "50 seasons. One torch at a time."` — the blurb field wasn't bumped when Survivor 51 was filed.
+- suggested fix: Update `content/shows/survivor.md`'s `blurb` from "50 seasons. One torch at a time." to "51 seasons. One torch at a time." to match the `seasons: 51` field and the adjacent stat block.
+- source: browser (critique-pass-172, anon)
+
+### [MED] [anon] /shows/survivor/season/survivor-51 — the season's own eyebrow still reads "Premiering fall 2026" three days after air, contradicting the fact block on the same page
+
+- pass: 172 (commit 6113bf9e)
+- viewport: desktop, mobile
+- category: comprehension
+- observation: The page's eyebrow tag reads "PREMIERING FALL 2026 · FILMED IN FIJI" (forward-looking, pre-air framing) directly above the H1, while the fact block further down the same page states "PREMIERED Sep 23, 2026" (past tense, three days before this pass). Sibling season files show the established pattern once a season has aired: survivor-50's eyebrow reads "Aired winter–spring 2026 · all-returnee cast," survivor-49's reads "Aired fall 2025 · Filmed in Fiji" — survivor-51's `eyebrow` field was never updated off the pre-premiere string after the season actually started airing.
+- evidence: Rendered text on `/shows/survivor/season/survivor-51`: "PREMIERING FALL 2026 · FILMED IN FIJI\nSurvivor 51" ... later on the same page: "PREMIERED\nSep 23, 2026\nCBS · two-hour special premiere". `content/shows/survivor/seasons/51-survivor-51.md`'s `eyebrow: "Premiering fall 2026 · Filmed in Fiji"` matches sibling seasons' pre-air convention but was never flipped post-premiere.
+- suggested fix: Update `eyebrow` in `content/shows/survivor/seasons/51-survivor-51.md` to an airing-in-progress framing consistent with sibling seasons, e.g. "Airing fall 2026 · Filmed in Fiji" while the season is still airing, flipping to "Aired fall 2026 · Filmed in Fiji" (matching the S49/S50 pattern) once the season concludes.
+- source: browser (critique-pass-172, anon)
+
+### [LOW] [anon] /shows/survivor — canon.md's `last_revised` timestamp (June 2026) predates the post-premiere Survivor 51 prose actually authored into the same file
+
+- pass: 172 (commit 6113bf9e)
+- viewport: desktop
+- category: comprehension
+- observation: Both `/shows/survivor` and the home page report "CANON REVISED June 2026," but `content/shows/survivor/canon.md`'s "## 51. Survivor 51" entry contains editorial prose ("Days into its run...") that could only have been written after the 2026-09-23 premiere — meaning the file was substantively edited well after June 2026, but its `last_revised` frontmatter field was never bumped to reflect that edit.
+- evidence: `content/shows/survivor/canon.md` frontmatter: `last_revised: 2026-06-17`; same file's "## 51. Survivor 51" `slot_argument`: "Days into its run, with a twist premise built to reference the entire format's history."
+- suggested fix: Bump `last_revised` in `content/shows/survivor/canon.md` to the actual date the #51 slot was authored so the rendered "CANON REVISED" stat stays accurate.
+- source: browser (critique-pass-172, anon)
 
 ### [MED] [anon] /shows/dragrace/season/season-18 — the meta-description word-boundary fallback lands on a dangling adjective ("full") with no noun
 
