@@ -8,7 +8,7 @@ premiere_date: 2026-09-23
 location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [open-era-twist-pool, million-dollar-coin-toss]
-eyebrow: "Premiering fall 2026 · Filmed in Fiji"
+eyebrow: "Airing fall 2026 · Filmed in Fiji"
 lede: "Twenty-one new castaways — the show's first odd-numbered cast since 2007 — open a season built around a single premise: any advantage or twist mechanic from the show's history can resurface at any point, in any order, without warning."
 pull: "Survivor 51's whole premise is that the show's own history is now a loaded toolbox — Probst has described the two-hour premiere alone as stacking seven twists borrowed from six past seasons with three brand-new ones."
 shape_h2: "One season, every era's twist pool."
