@@ -9,10 +9,73 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-23 at commit 564a202d
-> Pass count: 72
+> Last pass: 2026-09-26 at commit c66d6e53
+> Pass count: 73
 
 ## Considered (awaiting promotion)
+
+<!-- Pass 73 (2026-09-26, cloud march) — 1 new phase-shape candidate filed
+     (#41, show-page ISR + client-hydrated ranking widget). No reinforcements
+     — #34's source row logged one more digest update (2026-09-24) but no new
+     scope information since pass 72's reinforcement 3 days ago, so a repeat
+     reinforcement note was skipped as premature (mirrors the pass-59→72 gap
+     convention: reinforce at milestones, not every pass).
+     Window since pass 72 (564a202d, 2026-09-23T01:39:52Z): 25 commits / ~77
+     hours.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-20, next due 2026-09-27); show-add
+     stays LOCKED (non-zero gap table). Step 2.0's shipping-mode gate stayed
+     lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
+     fire: last pass (171) landed 2026-09-25 at commit e9de6844, only 3
+     commits before this tick and well under the 24h spacing floor (~15h
+     elapsed) — both thresholds failed. Step 3a/3b empty (no pending phase
+     rows, no Pending category:data AUDIT rows). Step 3b.5's standing Rule 2
+     season-fill row (score 4.5) was not redispatched this tick: the prior
+     same-day tick (commit c66d6e53, HEAD) had already re-verified the
+     CADENCE gap table against the filesystem within the same calendar day
+     and found zero commits / zero new season files / zero calendar events
+     crossed since its own prior zero-ship — re-running that identical
+     search against identical state would only reproduce the same null
+     result a third time this day, so this tick treated it as already
+     answered rather than filing a redundant reconfirmation commit. This
+     left the dispatch to fall through to `/expand`'s own gate, which opened
+     independently (posture bold, 25 commits / ~77h since pass 72 — both
+     thresholds clear, live CRITIQUE.md signal present, no phase/data work
+     pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 7 rows, unchanged in
+       substance from pass 72's review — all map onto already-filed
+       candidates (#34, #35, #36, #39, #40) or are deliberately-below-floor
+       (theme-description SERP-budget, score 1.5). #34's source row picked
+       up one more digest update (2026-09-24) with no new scope information
+       — see reinforcement note above. #36 (the-voice) unchanged since its
+       2026-08-08 triage labeling, still correctly parked `needs-user`.
+     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 72
+       minus one closure. Six of seven are `[needs-user-call]` rows already
+       correctly parked for a human `/oversight` session (home-page mobile
+       catalog list, `/shows` B-tier×2 — inside candidate #30, `/themes`
+       stat-chip date-vs-count ambiguity, `/u/[handle]` own-profile
+       bareness) or single-surface content tweaks (theme entry
+       concentration). The seventh — pass-96's `/shows/[show]` +
+       `/themes/[theme]` + `/shows/[show]/season/[slug]` Cache-Control /
+       TTFB finding — was re-read in full this pass: it splits into two
+       parts, (a) the show-page's `force-dynamic` forcing the whole page off
+       the CDN edge for one live widget's sake (well-scoped, low-risk,
+       reuses the phase-36 auth-island client-hydration pattern), and (b) an
+       unidentified cause making the season/theme routes (pure SSG, no
+       `dynamic` export, no live data) serve the same private/no-cache
+       headers anyway (needs Vercel dashboard/build-log access this loop
+       doesn't have, genuinely can't be root-caused blind). Part (a) alone
+       is real, scoped, and had never been filed as its own numbered
+       candidate — #31 (resolved) targeted the same file's *query latency*,
+       not its *cache-header* shape, so this is a distinct, uncaptured gap.
+       Filed as #41, scoped to part (a) only; part (b) stays flagged
+       needs-user pending dashboard access.
+     - `spec.md` / `design/`: no diff since pass 72 (`git log -p
+       --since=2026-09-23 -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+-->
 
 <!-- Pass 72 (2026-09-23, cloud march) — 0 new phase-shape candidates filed;
      1 reinforcement (#34, now 63 days unpromoted).
@@ -213,6 +276,84 @@
        --since=2026-09-09 -- spec.md design/` empty on both paths).
      - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
 -->
+
+### 41. Show-page ISR + client-hydrated ranking widget — stop forcing the whole page off the CDN edge for one live number
+
+**Score:** 5.0 (impact: 6, ease: 7 → 4.2 base + 0.8 signal multiplicity —
+reuses phase-36's auth-island client-hydration pattern; same source file as
+resolved candidate #31)
+**Source pass:** 73
+**Filed:** 2026-09-26
+**Why:** `src/app/shows/[show]/page.tsx:37` sets `dynamic = 'force-dynamic'`
+— a deliberate phase-35 fix so the live Supabase community-ranking aggregate
+never goes stale (closing the earlier "refresh always shows 0" bug), and
+that freshness guarantee is correct and must not be reverted. But the fix
+takes the entire page dynamic — hero, blurb, canon prose, stat tiles, none
+of it live or personalized — just because one small widget needs live data.
+Critique pass-96 measured the cost: `/shows/dragrace` serves
+`Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate`
+with `x-vercel-cache: MISS` on every anonymous request (TTFB 190-557ms),
+versus `public, max-age=0, must-revalidate` + `x-vercel-cache: HIT` (~100ms)
+on the edge-cached hub pages (`/`, `/shows`, `/themes`). The URL contract
+already documents `/api/ranking/[show]` as "cached aggregate, served via
+ISR," and phase 36 already proved the exact hybrid pattern works for a
+different live widget: a bold-but-tiny `GET /api/auth/me` client island
+hydrates auth-state chrome over an otherwise-cacheable page. This is signal
+B's shape from `skills/expand.md` §4 (a critique finding real enough to
+need an architecture change, not a one-line fix) — and distinct from
+resolved candidate #31, which profiled the same file's *query latency*
+(fixed via `Promise.all`) but left the *rendering mode* untouched; the
+`force-dynamic` export candidate #31 explicitly said not to revert is the
+actual remaining cost here, paid via cache headers rather than compute
+time. Scoped deliberately to this one route family: pass-96's finding also
+names two more routes (`/themes/[theme]`, `/shows/[show]/season/[slug]`)
+serving the identical private/no-cache headers with no `dynamic` export, no
+`cookies()`/`headers()` call, and no live data fetch anywhere in their
+render path — confirmed clean via `pnpm build` (`generateStaticParams`,
+1,044+ and 178+ paths, `●` SSG, no revalidate window) — a mystery this loop
+cannot root-cause without Vercel dashboard/build-log access. That half
+stays a `[needs-user-call]` row in `plan/CRITIQUE.md`, not phase scope;
+filing it as part of this candidate's estimate would misrepresent an
+unscoped investigation as a scoped fix.
+**Scope sketch:**
+- Remove `dynamic = 'force-dynamic'` from `src/app/shows/[show]/page.tsx`;
+  let the page shell return to ISR (static + revalidate), matching every
+  other content page's caching shape.
+- Client-hydrate just the live community-ranking numbers (rank order,
+  approval %, vote counts, trend) from the already-ISR-cached
+  `/api/ranking/[show]` route — same shape as the existing `/api/auth/me`
+  client island (phase 36), not a new pattern.
+- Confirm the "refresh always shows 0" bug (the original reason for
+  `force-dynamic`) cannot recur: the widget's own client-side fetch must
+  bypass any page-level cache the shell now carries.
+- Colocated test asserting the page component no longer exports
+  `dynamic = 'force-dynamic'` AND the ranking widget still reflects a fresh
+  vote within one client refresh (no stale-zero regression).
+- Explicitly out of scope: the season/theme dynamic-serving mystery
+  (pass-96 part b) — recommend a separate Vercel dashboard/build-log
+  investigation at the next `/oversight` session before any code is
+  written against it.
+**Source signals:**
+- `plan/CRITIQUE.md` [MED, needs-user-call] pass-96 finding (URL:
+  `/shows/dragrace`, `/themes/the-season-structure-never-holds-still`,
+  `/themes/the-finals-never-run-the-same-course-twice`) — cache-header +
+  TTFB measurements, root-cause confirmed for the show-page third via
+  `force-dynamic`, ruled out for the other two via a clean `pnpm build`
+  trace.
+- Candidate #31 (resolved, pass 53) — same file, established the
+  `Promise.all` query-latency fix while explicitly preserving
+  `force-dynamic`; this candidate targets the rendering-mode cost that fix
+  left untouched.
+- Phase 36 (auth-state chrome) — the client-hydration-over-a-cacheable-shell
+  pattern this candidate reuses, already shipped and proven on the same
+  page family.
+**Estimated phases:** 1 (single-route rendering-mode change + client
+hydration; the season/theme half is explicitly excluded from this
+estimate).
+**Conflicts:** none. Independent of #30 (browse-filter chips) and #34
+(e2e sharding) — different code paths; may be worth bundling into one
+"catalog-scale infrastructure" oversight session alongside those if the
+user wants to address the pattern class in one sitting.
 
 ### 40. `YEAR_TENURE_RE` teen-number blind spot — extend the editorial-tenure-honesty gate to season-level sources
 
