@@ -4457,6 +4457,8 @@
 - evidence: Rendered DOM on `/shows/the-voice/season/the-finale`: `<div class="vote-state-cap" data-vote-state="none">you haven't voted yet</div>` and `<div class="vote-count"><span class="vote-num" data-testid="vote-count">0</span><span class="vote-label">votes so far</span></div>` — zero occurrences of `aria-live` anywhere in the page source. Same absence confirmed on `/shows/dragrace/season/season-18`, so this is a shared-component gap, not a page-specific one.
 - suggested fix: Add `aria-live="polite"` to the vote-count/vote-state-cap wrapper in the shared `VotePair` component (`src/components/composition/VotePair.tsx`) so the count and state-cap text update is announced after a click. Component-only, no visual change.
 - source: web-fetch (critique-pass-171, authed)
+- issue: #818
+- RESOLVED (2026-09-26, cloud march tick, commit 0ff3655d): added `aria-live="polite"` to the shared `vote-pair-stack` wrapper in `VotePair.tsx` so both the state cap and the count are announced after a vote — component-only, no visual change. Verify gate green: fast gate (199 test files/3698 unit tests, content:check ok), build clean (1520 static pages), e2e 4969/4969 passed (31.8m).
 
 ### [MED] [authed] /mod — the access-denied copy names the internal auth vendor and admin console to end users
 
