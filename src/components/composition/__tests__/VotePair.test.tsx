@@ -64,6 +64,16 @@ describe('<VotePair>', () => {
     expect(screen.getByTestId('vote-down')).toBeEnabled()
   })
 
+  // Critique pass-171 MED: casting a vote produced no screen-reader
+  // announcement — neither the count nor the state cap sat inside
+  // an `aria-live` region.
+  it('wraps the state cap + count in an aria-live=polite region so a vote is announced', () => {
+    render(<VotePair initialCount={0} targetType="season" targetId="survivor:20" />)
+    expect(
+      screen.getByTestId('vote-pair-stack').getAttribute('aria-live'),
+    ).toBe('polite')
+  })
+
   it('clicking up adds the viewer to the voter count, locks both buttons, and POSTs to /api/vote', () => {
     render(<VotePair initialCount={5} targetType="season" targetId="survivor:20" />)
     fireEvent.click(screen.getByTestId('vote-up'))

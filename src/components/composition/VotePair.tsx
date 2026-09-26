@@ -259,10 +259,15 @@ export function VotePair({
   const showStateCap = signedIn
 
   return (
+    // Critique pass-171 MED: neither the state cap nor the count
+    // carried an `aria-live` region, so a screen-reader user got
+    // no announcement after casting a vote. `polite` on the shared
+    // ancestor covers both texts without touching layout.
     <div
       className="vote-pair-stack"
       data-testid="vote-pair-stack"
       data-signed-in={signedIn ? 'true' : 'false'}
+      aria-live="polite"
     >
     {showStateCap ? (
       <div
