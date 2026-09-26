@@ -77,6 +77,18 @@ Ideas log for the full grounding per candidate. Next unlock: the weekly
 sweep due 2026-09-27, or another Rule 2 drain once a new gap-slot ages into
 actionable.
 
+**Rule 2 stall reconfirmed, 2026-09-26 tick (cloud march), no re-chase:**
+re-verified against the filesystem before dispatching content-curator again
+— zero commits and zero new season files landed since the 2026-09-25 second
+pass above (commit `8d10a6e0`), so the gap table and the Survivor-51
+grounding material are byte-for-byte unchanged. `90-day-fiance` remains the
+sole nearest slot, still gated on Tell-All Part 3 (2026-09-27, one day out).
+Per the 2026-09-18 precedent of not blind-re-sweeping already-saturated
+ground, skipped a redundant full Rule 3 re-chase rather than spawn
+`content-curator` for a predictable repeat of the six-angle rejection
+logged above. Next unlock unchanged: the weekly sweep due 2026-09-27, or
+90-day-fiance's finale crossing that same date.
+
 **Eleventh full weekly sweep, 2026-09-20 tick (cloud march, Rule 1a):** 6 `scout`
 batches (≤12 shows each) covered every one of the 68 catalogued shows,
 cross-checked against the filesystem (frontmatter `seasons:` vs. filed season

@@ -10178,6 +10178,21 @@ last time a curator actually looked.
   touched the show at all). Next unlock: Rule 2 filing another show's
   season, or a genuinely new angle unrelated to today's Survivor
   drop.
+- **2026-09-26, `/march` Step 3b.5 dispatch (cloud march): skipped
+  redundant re-chase, no ledger/content change.** State re-verified
+  against the filesystem before touching anything: zero commits and
+  zero new season files landed since the 2026-09-25 second-pass
+  zero-ship immediately above (commit `8d10a6e0`), so the Rule 2 gap
+  table and the Survivor-51 grounding material are unchanged.
+  `90-day-fiance` remains the only near-term unlock, still gated on
+  Tell-All Part 3 (2026-09-27, one day out). Re-dispatching
+  `content-curator` to re-run the identical six-angle search against
+  identical state would reproduce the same six rejections logged
+  above for no new information — so, per the 2026-09-18 precedent of
+  not blind-re-sweeping known-saturated ground, this tick logs the
+  null result directly instead. No `content/themes/*.md` file
+  touched; no ledger row changed. Next unlock: the weekly sweep due
+  2026-09-27, or 90-day-fiance's finale crossing that same date.
 
 ## Notes
 
