@@ -79,6 +79,32 @@ export const seasonRedirects: SeasonRedirect[] = [
   ...buildSlugAliasRedirects(),
 ]
 
+// CRITIQUE pass-151/156/171 MED: `?view=community` (copied from a
+// show-page share link, or hand-typed) rendered byte-identical content
+// on the season-detail route — confirmed reproducible on three
+// separate shows across three passes, since this route never had a
+// second view to switch to. The season page now redirects any `?view`
+// param away to the clean canonical URL rather than silently ignoring
+// it. One row per show (its first canonical season) is enough to
+// assert the contract without exploding fixture size.
+function buildSeasonViewRedirects(): SeasonRedirect[] {
+  const firstByShow = new Map<string, SeasonRedirect>()
+  for (const row of canonicalUrls) {
+    if (row.pattern !== '/shows/[show]/season/[slug]') continue
+    if (!row.show || !row.seasonSlug) continue
+    if (firstByShow.has(row.show)) continue
+    const toPath = `/shows/${row.show}/season/${row.seasonSlug}`
+    firstByShow.set(row.show, {
+      show: row.show,
+      fromPath: `${toPath}?view=community`,
+      toPath,
+    })
+  }
+  return [...firstByShow.values()].sort((a, b) => a.show.localeCompare(b.show))
+}
+
+export const seasonViewRedirects: SeasonRedirect[] = buildSeasonViewRedirects()
+
 // Phase 33: the standalone /canon + /community routes 308 into the
 // consolidated show page. One pair of rows per show — the smoke /
 // redirect walker asserts the 308 + Location so external links and

@@ -46,6 +46,7 @@ import { numberToWords } from '@/lib/show-tenure'
 import { readVote } from '@/lib/supabase/server'
 
 type Params = { show: string; slug: string }
+type Search = { view?: string }
 
 export function generateStaticParams(): Params[] {
   const out: Params[] = []
@@ -531,7 +532,23 @@ export function seasonHeroBylineFor(canonRank: number | null) {
 // in `-<n>` (e.g. `survivor-46`) still serve directly.
 const DIGIT_PARAM_RE = /^\d+$/
 
-export default async function SeasonPage({ params }: { params: Params }) {
+// CRITIQUE pass-151/156/171 MED: the show-index route renders two
+// distinct views off `?view=community` (src/app/shows/[show]/page.tsx),
+// but this season-detail route never had a second view to switch to —
+// the canon commentary and the live vote/community elements already
+// render together on every season page. A stray `?view=...` copied
+// from a show-page share link (or hand-typed) rendered byte-identical
+// content with no error and no indication the param did nothing,
+// confirmed reproducible on three separate shows across three passes.
+// Redirect it away rather than leave it as a silent no-op, matching
+// the digit-form/alias redirects below.
+export default async function SeasonPage({
+  params,
+  searchParams,
+}: {
+  params: Params
+  searchParams?: Promise<Search>
+}) {
   const show = getShow(params.show)
   if (!show) notFound()
   if (DIGIT_PARAM_RE.test(params.slug)) {
@@ -560,6 +577,11 @@ export default async function SeasonPage({ params }: { params: Params }) {
       }
     }
     notFound()
+  }
+
+  const sp = (await searchParams) ?? {}
+  if (sp.view != null) {
+    permanentRedirect(`/shows/${show.slug}/season/${season.slug}`)
   }
 
   // Critique pass-84 HIGH: this route is dynamically rendered per

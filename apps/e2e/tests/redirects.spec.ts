@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { seasonRedirects } from '../src/fixtures/redirect-fixtures'
+import { seasonRedirects, seasonViewRedirects } from '../src/fixtures/redirect-fixtures'
 
 // Phase 31a: every digit-form season URL 308s to its canonical
 // slug form. The page-level resolver in src/app/shows/[show]/season/[slug]
@@ -62,6 +62,34 @@ for (const r of seasonRedirects) {
       new URL(href ?? '').pathname,
       `rel=canonical on ${r.toPath} must target the slug form (got ${href})`,
     ).toBe(r.toPath)
+  })
+}
+
+// CRITIQUE pass-151/156/171 MED — a stray `?view=...` on a season-detail
+// URL (copied from a show-page share link, or hand-typed) used to render
+// byte-identical content with no error, since this route never had a
+// second view to switch to. It now 308s any `?view` param away to the
+// clean canonical URL instead.
+for (const r of seasonViewRedirects) {
+  test(`season view-param redirect: ${r.fromPath} → ${r.toPath}`, async ({
+    page,
+    request,
+  }) => {
+    const head = await request.get(r.fromPath, { maxRedirects: 0 })
+    expect(
+      head.status(),
+      `${r.fromPath} must 308 (permanent) — got ${head.status()}`,
+    ).toBe(308)
+    expect(new URL(head.headers().location, 'http://x').pathname).toBe(
+      r.toPath,
+    )
+
+    const response = await page.goto(r.fromPath, {
+      waitUntil: 'domcontentloaded',
+    })
+    expect(response?.status()).toBe(200)
+    expect(new URL(page.url()).pathname).toBe(r.toPath)
+    expect(new URL(page.url()).search).toBe('')
   })
 }
 
