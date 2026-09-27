@@ -1,8 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-09-26 at commit 6113bf9e
-> Pass count: 172
+> Last pass: 2026-09-27 at commit c95dc753
+> Pass count: 173
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 173 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/shark-tank/season/season-17`, `/shows`, `/themes`,
+> `/themes/best-non-winning-runs` anon; `/`,
+> `/shows/shark-tank/season/season-17`, `/u/e2e`,
+> `/shows/shark-tank/season/season-17?view=community`, `/mod` authed —
+> a deliberate rotation off the last several passes' survivor/dragrace
+> heavy set onto Shark Tank, untouched by critique since pass 84. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport). Filed 1 new
+> finding (0 HIGH, 1 MED, 0 LOW): the authed pass found Shark Tank
+> Season 17's two headline facts (Wednesday timeslot move, Lubetzky
+> going full-time) restated near-verbatim across at least 8 fields
+> spanning both the season file and canon.md (`lede`, `pull`, `take_h2`,
+> `format_caption`, `cast_size_caption`, a `watch_list` entry, plus
+> canon.md's `tag`, `slot_argument`, and prose) — the same
+> single-fact-owner drift class fixed dozens of times elsewhere in the
+> catalog. Three raw observations were dropped at self-assessment: a
+> dark-mode toggle "no accessible name" a11y claim was a false
+> positive (`ThemeToggle.tsx` already carries a correct
+> `aria-label="Switch to {mode} mode"`, the reader misread the
+> `aria-hidden` glyph span as the accessible name); a zero-vote-count
+> observation on the same season page a year post-premiere was dropped
+> as a real-data product-engagement state, not a fixable defect; and a
+> HIGH "spoiler-adjacent slug" claim on `/themes/best-non-winning-runs`
+> (the slug names an outcome class the softened title/description
+> deliberately avoid stating) was dropped as already-litigated —
+> pass-54 (2026-06-16) considered the identical
+> slug-vs-title/description mismatch on this exact list and explicitly
+> kept the slug for URL stability, the same precedent pass-53 set for
+> `/themes/best-premieres`; re-opening it here would just re-litigate a
+> settled call. Spoiler discipline held clean throughout — Shark Tank
+> S17 copy stays strictly format/casting-level (timeslot, panel
+> composition), no outcome or placement beat leaked. No pending HIGH
+> findings remain open ahead of this pass.
 > Pass 172 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4437,6 +4474,16 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /shows/shark-tank/season/season-17 — two headline facts restated near-verbatim across at least 8 fields spanning the season file and canon.md
+
+- pass: 173 (commit c95dc753)
+- viewport: desktop
+- category: voice
+- observation: Season 17's two headline facts — the Wednesday timeslot move and Daniel Lubetzky becoming a full-time shark — are restated with only light rewording across `lede`, `pull`, `take_h2`, `format_caption`, `cast_size_caption`, and the first `watch_list` entry in `content/shows/shark-tank/seasons/17-season-17.md`, and again in canon.md's `tag`, `slot_argument`, and prose paragraph for the same season. A reader scrolling top to bottom (or reading the season page then clicking through to canon) encounters the identical two sentences reworded seven or eight times before hitting any new information — the same single-fact-owner drift class fixed dozens of times elsewhere in the catalog (traitors/ardross-2026, below-deck-mediterranean/dubrovnik-ii, alone/arctic-ii, and others).
+- evidence: `lede`: "Daniel Lubetzky sits as a full-time shark for the first time, while Mark Cuban isn't part of the rotation" / `pull`: "A new night, a new full-time shark, and the loudest guest lineup yet" / `format_caption`: "A new timeslot and a new full-time seat at the table" / `cast_size_caption`: "Daniel Lubetzky's first season as a full-time shark" / `watch_list[1].body`: "Watch Daniel Lubetzky settle into a permanent seat after seasons as a recurring guest" / canon.md `tag`: "The new panel settles in — Lubetzky's first full season, a new night, and the loudest guest lineup yet" / canon.md `slot_argument`: "A timeslot move to Wednesday, a newly full-time shark, and a guest rotation pulling louder names than any prior season" — all restate the identical two facts.
+- suggested fix: Leave `lede` (season file) as the sole owner of the raw facts. Rewrite `pull`, `take_h2`, `format_caption`, and `cast_size_caption` to each argue a distinct angle (e.g. what the new night does to the show's pacing/ratings context, what the guest-chair trend signals structurally) rather than re-deriving timeslot/Lubetzky. Rewrite canon.md's `tag`/`slot_argument`/prose to argue the #9 canon-slot comparison against neighboring seasons (per the established pattern — see the Done section's near-verbatim-restatement fixes) instead of restating the same two facts a third and fourth time.
+- source: browser (critique-pass-173, authed)
 
 ### [MED] [anon] /shows/dragrace/season/season-18 — the meta-description word-boundary fallback lands on a dangling adjective ("full") with no noun
 
