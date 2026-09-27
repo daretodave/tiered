@@ -1,13 +1,13 @@
 ---
 slug: the-ten-items-are-never-the-same-ten-items
 title: "Alone: the ten items are never the same ten items"
-description: "Every Alone season starts with the same rule: pick ten items before you ever see the terrain. This ranks all twelve seasons by how completely that fixed rule ends up meaning something different once the conditions change."
-tagline: "Alone's only fixed rule is choosing ten items before you've seen the ground you'll survive on. <b>This ranks all twelve seasons by how completely that season's conditions rewrote what those ten items were actually for.</b>"
+description: "Every Alone season starts with the same rule: pick ten items before you ever see the terrain. This ranks all thirteen seasons by how completely that fixed rule ends up meaning something different once the conditions change."
+tagline: "Alone's only fixed rule is choosing ten items before you've seen the ground you'll survive on. <b>This ranks all thirteen seasons by how completely that season's conditions rewrote what those ten items were actually for.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-09-27
 featured: false
 related:
   - rulebook-rewritten-every-season
@@ -67,21 +67,27 @@ entries:
     title: "The same broad region as season three, but a cooler, denser face of it"
     blurb: "Northern Patagonia's lake country and denser forest ask for a different ten items than the southern stretch season three mapped — recognizably the same biome, but not a repeat of what worked there."
   - show: alone
+    season: 13
+    season_label: "S13"
+    rank: 10
+    title: "A new corner of the same Arctic changes what the ten items need to do"
+    blurb: "Season thirteen stays in the Northwest Territories, but the Richardson Mountains near Aklavik are new ground, distinct from the Great Slave Lake terrain seasons seven and twelve already used. Same broad region, an unfamiliar specific site to pack for."
+  - show: alone
     season: 1
     season_label: "S01"
-    rank: 10
+    rank: 11
     title: "The ten-items rule invented from zero, with nothing to calibrate against"
     blurb: "The origin run assembled the gear-list discipline live, with no precedent for what ten items should even accomplish. Every later season's choices are a reaction to a standard this one had to invent outright."
   - show: alone
     season: 12
     season_label: "S12"
-    rank: 11
+    rank: 12
     title: "The same Arctic ground as season seven, testing whether the items still mean what they meant"
     blurb: "A new cast returns to the same terrain that opened the Colby era, facing identical extreme demands with no novelty of a first visit to lean on. The clearest repeat test the format has run."
   - show: alone
     season: 2
     season_label: "S02"
-    rank: 12
+    rank: 13
     title: "The same location, the same rules, and the items landed almost identically"
     blurb: "Season two returns to Quatsino Sound with a more prepared field but the same conditions season one used — the control case that proved the format's core conceit holds rather than complicating what the ten items mean."
 ---
