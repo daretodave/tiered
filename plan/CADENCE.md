@@ -24,6 +24,19 @@ that.
 
 ## Season gap table
 
+**Rule 2 stall reconfirmed, Rule 3 dispatch, 2026-09-27 tick (cloud march):**
+re-verified against the filesystem before dispatching — the twelfth sweep
+below (same-day, earlier tick) already confirmed every one of the 43
+gap-table rows is starred (confirmed-but-unaired); `90-day-fiance`'s
+Tell-All Part 3 finale-date is today (2026-09-27) but `content/calendar.yml`
+still reads `status: scheduled` and `scripts/finale-gate.mjs` confirmed 0
+finales due, so no row crossed into actionable. Fell through to Rule 3:
+`content-curator` extended `content/themes/two-coasts-one-open-call.md`
+(single-show, no cross-canon floor) with an America's Got Talent S21 entry
+grounded in the season's own `location` frontmatter field — see
+`plan/LISTS.md`'s ledger row for the full grounding + rejected-candidate
+trail. No gap-table change this tick.
+
 **Twelfth full weekly sweep, 2026-09-27 tick (cloud march, Rule 1a):** 6
 `scout` batches (≤12 shows each) covered every one of the 68 catalogued
 shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
