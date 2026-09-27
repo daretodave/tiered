@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-09-20 | next due 2026-09-27 |
+| season-sweep | 7 days | 2026-09-27 | next due 2026-10-04 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,67 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Twelfth full weekly sweep, 2026-09-27 tick (cloud march, Rule 1a):** 6
+`scout` batches (≤12 shows each) covered every one of the 68 catalogued
+shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
+filed season files — only the pre-existing `90-day-fiance` 11/12 mismatch
+recurs, already tracked and non-actionable).
+
+**Table-integrity bug found and fixed.** The two genuine finds logged by
+the 2026-09-20 sweep — `american-ninja-warrior` (S19+S20 double-renewal,
+`18/20, 2*`) and `survivor-australia` (S13 renewal per Who Magazine,
+`12/13, 1*`) — were narrated as "added" in that tick's commit but never
+physically landed as rows in the table below (same class of drift as the
+2026-08-28 `married-at-first-sight` "Table correction" incident). Both
+citations were re-verified this tick and are still accurate; both rows are
+now actually inserted below.
+
+**Two genuine new gaps found.** `married-at-first-sight` (US) — Season 21
+already renewed and currently casting in Charlotte, NC; no premiere date
+yet (the show cleared to gap-free 20/20 on 2026-08-28, so this is a fresh
+post-clearance renewal, not a re-flag). Added as `married-at-first-sight |
+20/21 | 1*`. `love-island-uk` — Series 14 officially confirmed with open
+casting for 2027; this row had been referenced in prose by an earlier tick
+("already starred with matching pending-season slots") but, per the same
+audit, was never actually present in the table — added now as
+`love-island-uk | 13/14 | 1*`.
+
+**Three status-field hygiene corrections (hiatus → airing).**
+`dancing-with-the-stars` (S35 premiered 2026-09-15, confirmed still
+broadcasting), `hells-kitchen` (S25 premiered 2026-09-24), `the-voice`
+(S30 premiered 2026-09-21) — all three had stale `status: hiatus`
+frontmatter despite a season currently airing. No season-count change on
+any of the three; this is the same drift class the 2026-09-20 tick's
+eight-show hygiene pass fixed.
+
+**Reconfirmed non-gaps (recurring, already-resolved patterns — not
+reopened).** `chopped`'s third-party "Season 63/64" indexing artifact
+resurfaced again (Food Network's own 62-season numbering stays
+authoritative). `survivor-australia`'s Wikipedia/press numbering for
+"Australia V The World" / "Redemption" (which a scout batch this tick
+again reported as unfiled "S13/S14") is the same numbering-convention
+collision closed 2026-07-19 — both titles are already filed as this
+catalog's seasons 11 and 12 under Network 10's own numbering; no content
+is missing. `bachelorette` S22's pulled-from-air status (unresolved since
+March 2026) was reconfirmed with no new information — stays excluded per
+standing precedent.
+
+**No row lost its star.** Every already-starred, currently-airing season
+this tick's scouts touched — `bake-off` S17 (now Channel 4-confirmed at
+2026-09-22, resolving a previous "unconfirmed date" flag, still mid-run),
+`big-brother` S28 (airing since 2026-07-09, concludes 2026-10-01, not yet
+aired at this tick), `dragrace-uk` S8 (airing through 2026-11-05), `rhoc`
+S20, `rhony` S16, `rhoslc` S7, `the-challenge` S42, `dancing-with-the-
+stars` S35, `hells-kitchen` S25, `the-voice` S30 — remains mid-run, none
+concluded. No row actionable for Rule 2 this tick; this tick's own
+mandate is the sweep itself, not a drain.
+
+**68 shows catalogued · 41 shows carry a gap · 43 gap-slots total**
+(37 shows / 38 gap-slots physically present in the table before this
+tick + `american-ninja-warrior`'s 2 slots (bug-fix restoration) +
+`survivor-australia`'s 1 slot (bug-fix restoration) + `married-at-first-
+sight`'s 1 slot (new) + `love-island-uk`'s 1 slot (new)).
 
 **Rule 2 drain, 2026-09-25 tick (cloud march): survivor 50/51 → 51/51, gap
 row removed.** Survivor Season 51 ("The Open Era") premiered 2026-09-23 —
@@ -1209,6 +1270,10 @@ new-show creation is locked to the biweekly show-add clock.
 | summer-house | 10/11 | 1* |
 | traitors-uk | 4/5 | 1* |
 | top-chef | 23/24 | 1* |
+| american-ninja-warrior | 18/20 | 2* |
+| survivor-australia | 12/13 | 1* |
+| married-at-first-sight | 20/21 | 1* |
+| love-island-uk | 13/14 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
@@ -3030,3 +3095,4 @@ No calendar or gap-table action.
 | 2026-09-11 | Rule 2 drain, not a sweep (project-runway S22 finale-gate drain — fully filed, gap-slot removed) | 41 |
 | 2026-09-13 | 0 new (tenth full sweep, all 41 rows reconfirmed accurate; alone-australia status-only update and a masterchef calendar.yml addition, neither a count change) | 41 |
 | 2026-09-20 | 3 (american-ninja-warrior S19+S20 double-renewal [2 slots] + survivor-australia S13 renewal [1 slot], both first-time confirmations; 8 status-field hygiene corrections airing→hiatus for concluded shows with no season currently broadcasting, no count change) | 44 |
+| 2026-09-27 | 4 (2 bug-fix restorations — american-ninja-warrior + survivor-australia were logged "added" on 2026-09-20 but never physically inserted as table rows, same drift class as the 2026-08-28 married-at-first-sight correction, fixed this tick; 2 genuine new — married-at-first-sight [US] S21 renewal [1 slot] + love-island-uk S14 [1 slot, also a previously-uninserted row]; 3 status-field hygiene corrections hiatus→airing for dancing-with-the-stars/hells-kitchen/the-voice, all confirmed mid-run; chopped + survivor-australia-numbering + bachelorette false positives reconfirmed, not reopened) | 43 |
