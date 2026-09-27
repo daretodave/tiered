@@ -2,12 +2,12 @@
 slug: two-coasts-one-open-call
 title: "Two coasts, one open call"
 description: "America's Got Talent's live rounds didn't stay on one coast — a decade split between Hollywood and New Jersey, one solitary year in Pasadena, then a pandemic detour before Hollywood finally held for good. Ranked by how much that address moved."
-tagline: "The founding seasons ran from one unbroken Hollywood address. Then New Jersey entered the record, Pasadena got one solitary year, and the pandemic even renamed the address itself before Hollywood finally won for good. <b>This ranks all twenty seasons by how much that shifting production geography actually mattered.</b>"
+tagline: "The founding seasons ran from one unbroken Hollywood address. Then New Jersey entered the record, Pasadena got one solitary year, and the pandemic even renamed the address itself before Hollywood finally won for good. <b>This ranks all twenty-one seasons by how much that shifting production geography actually mattered.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-09-27
 featured: false
 related:
   - the-command-held-for-ten-seasons-then-didnt
@@ -133,4 +133,10 @@ entries:
     rank: 20
     title: "The founding era closes without ever moving"
     blurb: "Season five closes out five straight years filmed at a single Hollywood address, a stretch the modern era doesn't match again until a decade later. Before Howard Stern's arrival forces the first coast question, this is the format at its most geographically settled."
+  - show: americas-got-talent
+    season: 21
+    season_label: "S21"
+    rank: 21
+    title: "Six straight years, the longest single-address run yet"
+    blurb: "Season twenty-one keeps the same Hollywood credit season sixteen re-established, now six years unbroken — the longest single-address run the format has ever held. The panel's second year together needs the record to say nothing at all."
 ---
