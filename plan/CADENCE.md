@@ -24,6 +24,19 @@ that.
 
 ## Season gap table
 
+**Rule 2 stall reconfirmed, Rule 3 dispatch, 2026-09-27 tick (cloud march,
+second same-day tick):** re-verified against the filesystem before
+dispatching — no state change since the prior tick's reconfirmation below
+(same 43 gap-slots, all still starred confirmed-but-unaired). Fell through
+to Rule 3: LISTS.md's ledger showed zero review-due rows and the
+two-coasts-one-open-call lead was already drained by the prior tick, so
+`content-curator` ran a fresh `category: single` coverage census across
+all 76 single-show lists and extended `content/themes/the-ten-items-are-
+never-the-same-ten-items.md` (Alone) with a Season 13 entry grounded in
+the season's own `location` frontmatter field — see `plan/LISTS.md`'s
+ledger row for the full grounding + rejected-candidate trail. List is now
+fully capped (13/13). No gap-table change this tick.
+
 **Rule 2 stall reconfirmed, Rule 3 dispatch, 2026-09-27 tick (cloud march):**
 re-verified against the filesystem before dispatching — the twelfth sweep
 below (same-day, earlier tick) already confirmed every one of the 43
