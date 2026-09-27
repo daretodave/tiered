@@ -24,6 +24,25 @@ that.
 
 ## Season gap table
 
+**Rule 2 unstalled — table-staleness bug found and fixed, 2026-09-27 tick
+(cloud march, third same-day tick).** A scout delta-check dispatched
+before falling to Rule 3 (per the prior two same-day ticks' pattern) found
+the "all 43 rows starred confirmed-but-unaired" verdict itself was stale:
+four rows had already premiered — `rhony` S16 (2026-09-08),
+`the-voice` S30 (2026-09-21), `dancing-with-the-stars` S35
+(2026-09-15), and `traitors` S5 "New Blood" (2026-09-17) — all of it
+already visible in this file's own prior notes (lines 79, 306-308,
+479-481, 743-744) but never actually reflected in the table's star column
+by the ticks that logged those dates. Same drift class as the
+2026-08-28 `married-at-first-sight` and 2026-09-20
+`american-ninja-warrior`/`survivor-australia` table-integrity incidents
+above. Fixed this tick: `rhony` drained (Season 16 filed, canon rebased,
+row removed — table now 42 shows); `the-voice`, `dancing-with-the-stars`,
+`traitors` unstarred (still genuine gaps, no longer confirmed-but-unaired
+— actionable for the next Rule 2 pick). Shipped Season 16 as this tick's
+Rule 2 unit (`content: season backfill — rhony`) rather than falling
+through to Rule 3.
+
 **Rule 2 stall reconfirmed, Rule 3 dispatch, 2026-09-27 tick (cloud march,
 second same-day tick):** re-verified against the filesystem before
 dispatching — no state change since the prior tick's reconfirmation below
@@ -1260,10 +1279,9 @@ new-show creation is locked to the biweekly show-add clock.
 | show | filed/declared | gap |
 |---|---|---|
 | amazing-race | 38/39 | 1* |
-| rhony | 15/16 | 1* |
-| dancing-with-the-stars | 34/35 | 1* |
+| dancing-with-the-stars | 34/35 | 1 |
 | rhonj | 14/15 | 1* |
-| the-voice | 29/30 | 1* |
+| the-voice | 29/30 | 1 |
 | below-deck | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
 | the-challenge | 41/42 | 1* |
@@ -1281,7 +1299,7 @@ new-show creation is locked to the biweekly show-add clock.
 | dragrace-uk | 7/8 | 1* |
 | rhom | 7/8 | 1* |
 | the-circle | 7/8 | 1* |
-| traitors | 4/5 | 1* |
+| traitors | 4/5 | 1 |
 | shark-tank | 17/18 | 1* |
 | southern-charm | 11/12 | 1* |
 | vanderpump-rules | 12/13 | 1* |

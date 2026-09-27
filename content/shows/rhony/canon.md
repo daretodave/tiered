@@ -1,13 +1,13 @@
 ---
 show: rhony
 editor: tiered.tv editor
-last_revised: 2026-06-20
+last_revised: 2026-09-27
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched RHONY from the original cast through the reboot. The ranking weighs what each season contributed to the format's identity — cast chemistry, setting, how the city itself functions as a character, and whether the season produced television that holds up on a second pass. One read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "The New York social world is the constant; the cast is the variable. Seasons that used Manhattan's specific pressures — the social circuit, the class friction, the city's way of making people perform — earn more than seasons that treat it as backdrop. Group trips matter: they strip the city's release valves and show what the cast is made of."
 meth_when_h: "When I revisit"
-meth_when_p: "All fifteen seasons are ranked here — the full original cast era and the reboot's opening two years. The reboot earns its own positions on merit, not sentiment. Rankings shift when a new season changes the relative argument; the order is a snapshot, not a verdict that closes."
+meth_when_p: "All sixteen seasons are ranked here — the full original cast era and the reboot's opening three years. The reboot earns its own positions on merit, not sentiment. Rankings shift when a new season changes the relative argument; the order is a snapshot, not a verdict that closes."
 tier_s_blurb: "The season that defined what RHONY could be at its ceiling — produced television that gets referenced for years."
 tier_a_blurb: "The seasons that defined what RHONY is — culturally significant, cast-driven, and genuinely difficult to look away from."
 tier_b_blurb: "Strong and watchable, with moments that earned their place in the canon. The format working, if not quite at its ceiling."
@@ -135,10 +135,18 @@ community_rank_hint: rank=14 delta=0 sentiment=hold
 
 Season fourteen is the reboot's premise before it becomes its proof. A completely new cast — Jessel Taank, Ubah Hassan, Erin Lichy, Sai De Silva, and Brynn Whitfield — had to establish RHONY's New York identity without any of the original run's accumulated social history to draw on. The five newcomers are individually compelling, the Manhattan setting provides material, but the season reads as a long pilot: establishing dynamics, testing chemistry, asking whether the franchise's identity is in the cast or in the city. The Anguilla trip gives the season a destination. The answer to whether the reboot works comes in year two.
 
+## 16. Season 16 — The Legacy Return
+
+tag: A second full-cast overhaul, still finding out what it is.
+slot_argument: Carole Radziwill's return after eight seasons away is a genuine hook, but the season is airing into a cast that's turned over twice in three years. Too early to call it more than that — the low slot reflects the uncertainty, not a verdict.
+community_rank_hint: rank=15 delta=0 sentiment=hold
+
+Season sixteen asks RHONY to rebuild its cast for the second time in three seasons, and that repetition is the thing to watch. Carole Radziwill's return after eight years away is a real hook. She was one of the sharpest voices the original run produced, and she gives the three newcomers a legacy presence to play off. But a cast that's turned over twice this quickly hasn't earned the benefit of the doubt the way season fifteen's steadier year two did. The season is still airing as of this writing, and its position here reflects that: too early to call it having found its footing, not bad enough to call it a failure.
+
 ## 13. Season 13 — The Empty City
 
 tag: A season the format wasn't built to produce.
 slot_argument: Filmed when New York's social world was disrupted, the show's engine was unavailable. The season registers as a document of a difficult moment. The bottom slot reflects the situation, not the cast.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+community_rank_hint: rank=16 delta=0 sentiment=hold
 
 Season thirteen has a built-in problem that no amount of good casting could solve: it was filmed when the New York social world that gives RHONY its engine was operating under real disruption. The city couldn't function the way the show depends on it to function. Eboni K. Williams' addition brought genuine ambition — a different editorial perspective on what RHONY's New York could be — but the season couldn't fully deliver on that ambition given its circumstances. The trips to Newport and Florida were useful but couldn't replace what Manhattan wasn't providing. A document of a difficult moment. The bottom slot reflects the situation, not the cast.

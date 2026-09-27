@@ -3,7 +3,7 @@ show: rhony
 number: 13
 slug: the-empty-city
 title: "The Empty City"
-canonical_position: 15
+canonical_position: 16
 premiere_date: "2021-05-04"
 location: "New York City · Newport · Florida"
 ep_count: 18
