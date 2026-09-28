@@ -24,6 +24,29 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-09-27 tick (cloud march, fourth same-day tick): traitors
+4/5 → 5/5, gap row removed.** Picked `traitors` off the prior tick's
+newly-unstarred trio (`the-voice`, `dancing-with-the-stars`, `traitors`, all
+gap=1) via the tie-break rule — traitors is tier A, both siblings are tier B.
+Filed Season 5, "The Traitors: New Blood" (`content/shows/traitors/seasons/
+05-new-blood.md`) — the franchise's first all-civilian cast (22 contestants,
+no reality alumni or celebrities, ~80,000 applicants) and first US season on
+broadcast NBC rather than Peacock-exclusive; premiered 2026-09-17, still
+airing (finale 2026-11-19), so the season file and its canon entry are
+pre-season/format-only per spoiler discipline — ranked on premise, not
+execution, and flagged in-copy as reassessed once the season wraps. Canon
+rebased: New Blood slots at rank 3 (behind S2's breakout and S1's origin,
+ahead of S3/S4's incremental all-celebrity runs) — its cast-model and
+network pivot is a structural first comparable in kind to Season 2's own
+pivot. `canonical_position` rewritten for S3 (3→4) and S4 (4→5) in the same
+commit; `era_bands` gained a `new-blood-era` (2026) band, closing the
+`all-celebrity-era` at 2025; show frontmatter bumped `seasons: 4→5`,
+`status: hiatus→airing`, `network: "Peacock"→"NBC/Peacock"`, and the stale
+`blurb` "4 seasons" corrected to "5 seasons." Traitors fully drained — row
+removed below, table now 41 shows / 41 gap-slots (`the-voice` and
+`dancing-with-the-stars` remain the two unstarred, actionable rows for the
+next Rule 2 pick).
+
 **Rule 2 unstalled — table-staleness bug found and fixed, 2026-09-27 tick
 (cloud march, third same-day tick).** A scout delta-check dispatched
 before falling to Rule 3 (per the prior two same-day ticks' pattern) found
@@ -1299,7 +1322,6 @@ new-show creation is locked to the biweekly show-add clock.
 | dragrace-uk | 7/8 | 1* |
 | rhom | 7/8 | 1* |
 | the-circle | 7/8 | 1* |
-| traitors | 4/5 | 1 |
 | shark-tank | 17/18 | 1* |
 | southern-charm | 11/12 | 1* |
 | vanderpump-rules | 12/13 | 1* |
