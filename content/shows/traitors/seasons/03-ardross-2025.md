@@ -3,7 +3,7 @@ show: traitors
 number: 3
 slug: ardross-2025
 title: "Season 3 (2025)"
-canonical_position: 3
+canonical_position: 4
 premiere_date: 2025-01-09
 ep_count: 12
 location: Ardross Castle, Scottish Highlands, Scotland

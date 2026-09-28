@@ -3,7 +3,7 @@ show: traitors
 number: 4
 slug: ardross-2026
 title: "Season 4 (2026)"
-canonical_position: 4
+canonical_position: 5
 premiere_date: 2026-01-08
 ep_count: 12
 location: Ardross Castle, Scottish Highlands, Scotland

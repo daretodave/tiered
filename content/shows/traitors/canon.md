@@ -1,14 +1,14 @@
 ---
 show: traitors
 editor: tiered.tv editor
-last_revised: 2026-05-17
+last_revised: 2026-09-27
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've watched every American season from the mixed-cast original through the most recent all-celebrity run at Ardross Castle. The ranking is one editor's read, calibrated against what reasonable Traitors fans agree on after arguing — weighing production craft, format execution, and historical consequence, never who was lying. It's a read, not a verdict."
+meth_who_p: "tiered.tv's editor. I've watched every American season from the mixed-cast original through the newest all-civilian run at Ardross Castle. The ranking is one editor's read, calibrated against what reasonable Traitors fans agree on after arguing — weighing production craft, format execution, and historical consequence, never who was lying. It's a read, not a verdict."
 meth_how_h: "How I weigh it"
 meth_how_p: "I rank on format execution, casting energy, production confidence, and how much each season mattered to the American show's arc. A breakout that defined the reputation outranks the rougher origin; the origin outranks a clean later run on consequence. Outcomes never factor in — who survived a Round Table carries no weight, only how well the hour itself runs."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon moves when a new season airs and settles, or when the community vote shifts enough to argue a reorder. I revisit after each Peacock run concludes and reassess the newest season against the established ones. The order below reflects the show through its fourth season; later seasons slot in on merit."
-tier_s_blurb: "The full American run: the civilian-mix origin, the all-celebrity breakout, and two confident follow-throughs that proved the Round Table format does not need reinventing."
+meth_when_p: "The canon moves when a new season airs and settles, or when the community vote shifts enough to argue a reorder. I revisit after each run concludes and reassess the newest season against the established ones. The order below reflects the show through its fifth, currently-airing season, ranked on premise alone until it wraps."
+tier_s_blurb: "The full American run: the civilian-mix origin, the all-celebrity breakout, two confident follow-throughs, and the newest all-civilian pivot still proving itself."
 tier_a_blurb: "The peak and the foundation. The breakout that defined the show's American reputation and the rougher origin everything stands on."
 tier_b_blurb: "The all-celebrity machine running well — confident, repeatable seasons doing the format right without reinventing it."
 weekly_question: "Does the all-celebrity breakout earn the top spot, or does the mixed-cast original still set the bar?"
@@ -18,7 +18,10 @@ era_bands:
     range: [2023, 2023]
   - key: all-celebrity-era
     label: "All-celebrity era"
-    range: [2024, 2026]
+    range: [2024, 2025]
+  - key: new-blood-era
+    label: "New Blood era"
+    range: [2026, 2026]
 ---
 
 # Editor's Canon — The Traitors
@@ -39,18 +42,26 @@ community_rank_hint: rank=2 delta=0 sentiment=hold
 
 Second because origin matters. The inaugural season had to invent the American version of the format in real time — the cloaks, the candlelit Round Table, the nightly murders, the prize-pot missions, the season-only Armory — all assembled live on screen at Ardross Castle. Its distinctive 50/50 cast of ten reality-TV alumni and ten members of the public is a structure no later season repeats, and it gives this run a texture all its own. It is rougher than the polished all-celebrity years, and that roughness is part of why it ranks here: you can watch the show learn itself. Nothing that follows exists without this run laying the track. Historically essential.
 
+## 5. New Blood (2026)
+
+tag: The franchise's first all-civilian cast — ranked provisionally, on premise.
+slot_argument: A genuine structural pivot — no reality alumni, no celebrities, and the franchise's first move off Peacock-exclusive to broadcast NBC. Ranked on that premise alone; still airing, execution not yet assessed.
+community_rank_hint: rank=3 delta=0 sentiment=hold
+
+Season five is a genuine structural swing, not a repeat. The cast goes all-civilian for the first time in the franchise's history — no reality alumni, no celebrities — reversing the pivot Season 2 made, betting instead on twenty-two strangers nobody already recognizes. It also carries the franchise's first move off Peacock-exclusive and onto broadcast NBC, a distribution shift as consequential as any cast choice. Both changes are real, not cosmetic, and they earn a rank above the two confident, familiar all-celebrity runs beneath it. But the season is still airing, and nothing here reflects how it plays out — this is a premise ranking, not an execution one. It will move once the season concludes.
+
 ## 3. Season 3 (2025)
 
 tag: The all-celebrity machine running confidently, with a fresh twist.
 slot_argument: Another all-reality cast, the weekly model settled, and a mid-game-additions twist as its structural wrinkle. Well-run and assured, without the origin weight or the cultural surge above it.
-community_rank_hint: rank=3 delta=0 sentiment=hold
+community_rank_hint: rank=4 delta=0 sentiment=hold
 
-Third as the season the machine ran with full confidence. Season three brings another all-reality and celebrity cast back to Ardross under Alan Cumming, with the three-episode drop then weekly model now completely settled. Its structural wrinkle is the mid-game player additions — a fresh wave entering after the initial cohort, around the second episode, reshuffling alliances mid-stream and giving the season a distinct shape. It is executed cleanly, sharply paced, and assured throughout. What keeps it below the top two is consequence: it lacks the historical weight of the original and the cultural surge of the breakout. A clean, confident run that simply did not have to invent anything.
+Fourth as the season the machine ran with full confidence. Season three brings another all-reality and celebrity cast back to Ardross under Alan Cumming, with the three-episode drop then weekly model now completely settled. Its structural wrinkle is the mid-game player additions — a fresh wave entering after the initial cohort, around the second episode, reshuffling alliances mid-stream and giving the season a distinct shape. It is executed cleanly, sharply paced, and assured throughout. What keeps it below the top two is consequence: it lacks the historical weight of the original and the cultural surge of the breakout. A clean, confident run that simply did not have to invent anything.
 
 ## 4. Season 4 (2026)
 
-tag: The newest entry — the format running smoothly, slotting in on merit.
+tag: The steady follow-through — the format running smoothly, slotting in on merit.
 slot_argument: An all-celebrity cast, the weekly model carried over intact, no reinvention. A clean, well-made run that has not yet had time to prove where it belongs.
-community_rank_hint: rank=4 delta=0 sentiment=hold
+community_rank_hint: rank=5 delta=0 sentiment=hold
 
-Fourth because it repeats Season 3's format without repeating its structural wrinkle. Where Season 3 earned its slot by introducing mid-game arrivals that reshuffled the field, Season 4 runs the identical machine with no new mechanic to argue for it — competent execution, but nothing that pushes the format forward the way the season above it did. It is a clean, well-made run that simply has not had the time the earlier runs have had to prove its place in the canon, and it may climb as the conversation around it matures, but on structural contribution alone it sits below the season it most resembles.
+Fifth because it repeats Season 3's format without repeating its structural wrinkle. Where Season 3 earned its slot by introducing mid-game arrivals that reshuffled the field, Season 4 runs the identical machine with no new mechanic to argue for it — competent execution, but nothing that pushes the format forward the way the season above it did. It is a clean, well-made run that simply has not had the time the earlier runs have had to prove its place in the canon, and it may climb as the conversation around it matures, but on structural contribution alone it sits below the season it most resembles.
