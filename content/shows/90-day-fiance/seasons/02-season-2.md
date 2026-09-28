@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 2
 slug: season-2
 title: "Season 2 (2014)"
-canonical_position: 10
+canonical_position: 11
 premiere_date: 2014-10-19
 ep_count: 12
 aired_year: 2014

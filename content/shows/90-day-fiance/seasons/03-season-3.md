@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 3
 slug: season-3
 title: "Season 3 (2015)"
-canonical_position: 11
+canonical_position: 12
 premiere_date: 2015-10-11
 ep_count: 12
 aired_year: 2015

@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 10
 slug: season-10
 title: "Season 10 (2023)"
-canonical_position: 9
+canonical_position: 10
 premiere_date: 2023-10-08
 ep_count: 20
 aired_year: 2023

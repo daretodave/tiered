@@ -1,13 +1,13 @@
 ---
 show: 90-day-fiance
 editor: tiered.tv editor
-last_revised: 2026-07-14
+last_revised: 2026-09-28
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. 90 Day Fiancé's flagship series now has eleven seasons seeded, with a twelfth currently airing. The ranking weighs the K-1 visa premise's structural tension and how honestly the format treats the couples navigating it, never the marriages themselves. Not claiming to be objective. Trying to be honest."
+meth_who_p: "tiered.tv's editor. 90 Day Fiancé's flagship series now has twelve seasons seeded. The ranking weighs the K-1 visa premise's structural tension and how honestly the format treats the couples navigating it, never the marriages themselves. Not claiming to be objective. Trying to be honest."
 meth_how_h: "How I weigh it"
 meth_how_p: "The K-1 visa clock is the format's engine, so the ranking looks at how much genuine tension that ninety-day deadline generates: paperwork stress, culture shock, skeptical families. Seasons that introduce a genuine structural first — a returning couple, a bigger ensemble, a new kind of cast — rank above ones that simply repeat the shape before them."
 meth_when_h: "When I revisit"
-meth_when_p: "This canon opened with one season and now spans eleven, added in a single backfill pass across a decade of episodes. Every later season is judged on how honestly it handles the same clock the founding season set. Expect further rebases once season twelve's ninety days finish airing."
+meth_when_p: "This canon opened with one season and now spans twelve, added in a single backfill pass across a decade of episodes plus each season since. Every later season is judged on how honestly it handles the same clock the founding season set."
 tier_s_blurb: "S-tier means the visa clock generates real tension — a genuine structural first, a founding format, or a comeback couple that raises the stakes instead of coasting on the format's default shape."
 tier_a_blurb: "A-tier seasons stretch the format in a real way — a bigger ensemble, a franchise-defining milestone, a crossover cast — without quite matching the top tier's structural weight."
 tier_b_blurb: "B-tier seasons run the format competently, folding in returning or crossover couples without adding a genuinely new kind of stake to the visa clock."
@@ -26,6 +26,9 @@ era_bands:
   - key: throuple-era
     label: "Throuple era"
     range: [2025, 2025]
+  - key: reset-era
+    label: "Reset era"
+    range: [2026, 2026]
 ---
 
 # Editor's Canon — 90 Day Fiancé
@@ -78,11 +81,19 @@ community_rank_hint: rank=6 delta=0 sentiment=hold
 
 Season six ranks sixth for a bookend distinction that only reveals itself years later: it's the last time the flagship show casts six entirely new couples with zero returning or crossover pairings. Every season after this one folds in at least one familiar face until the format resets to an all-new cast again nearly a decade on. That gives season six a clean, format-forward texture — six fresh couples running the same visa clock without any prior-season context to lean on. It's not the season people point to for a genuine structural first, but its place as the format's last full reset before comeback casting becomes routine earns it real editorial weight.
 
+## 12. Season 12 (2026)
+
+tag: The first all-new cast since Season 6 — the comeback device set aside for one season.
+slot_argument: Ranks below Season 6's own all-new-cast bookend, but above Season 9's crossover first, because resetting years of comeback casting outweighs adding one more migrating couple to a familiar lineup.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season twelve answers the question season six's canon entry raised years ago: does the format still work without any returning or crossover couples to lean on? Seven entirely new couples run the visa clock with zero built-in audience history, the first time that's happened since 2018 — six straight seasons had folded in at least one comeback or crossover pairing before this one set the device aside. That's not a structural first in the way the throuple casting or the seven-couple ensemble were, but reversing a six-season trend on purpose is a real editorial swing, not a coast. The canon ranks it seventh, just below the season it's answering and just above the crossover device it temporarily retires.
+
 ## 9. Season 9 (2022)
 
 tag: The first crossover from a spinoff series.
-slot_argument: Ranks below Season 6's all-new cast, but above Season 8, because a couple migrating in from a different spinoff is the more meaningful casting first, ahead of simply fielding a third returning pair.
-community_rank_hint: rank=7 delta=0 sentiment=hold
+slot_argument: Ranks below Season 12's comeback-free reset, but above Season 8, because a couple migrating in from a different spinoff is the more meaningful casting first, ahead of simply fielding a third returning pair.
+community_rank_hint: rank=8 delta=0 sentiment=hold
 
 Season nine ranks seventh for a crossover the franchise hadn't tried before: a couple arriving from spinoff series The Other Way rather than a prior flagship season. Six new couples fill out the rest of the cast, running the standard visa clock, but the crossover pairing is the season's real contribution — proof that the TLC universe has gotten big enough for couples to migrate between shows, not just return to the one they started on. The season also arrives after the longest gap between flagship runs in franchise history. The canon ranks it above seasons with a similar cast size because the crossover device meaningfully expands what casting the format is willing to attempt.
 
@@ -90,7 +101,7 @@ Season nine ranks seventh for a crossover the franchise hadn't tried before: a c
 
 tag: Comeback casting becomes the norm — three returning couples at once.
 slot_argument: Ranks below Season 9's crossover first, but above Season 10, because stacking three returning couples in a single season pushes the comeback device further than repeating last year's single crossover slot.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Season eight ranks eighth because it's the season that turns the comeback-couple device from an occasional device into a habit: three returning couples share the cast with four new ones, the biggest returning lineup the franchise had assembled. That mix gives the season a denser texture than an all-new cast — the visa clock runs against relationships the audience already has history with, alongside fresh pairings still building that history. Production spans the pandemic window, and the season closes with a two-part Tell All, both facts that mark it as a transitional run. The canon slots it mid-table because the returning-heavy cast is a genuine format contribution, even if the season doesn't introduce a structural first of its own.
 
@@ -98,7 +109,7 @@ Season eight ranks eighth because it's the season that turns the comeback-couple
 
 tag: The crossover pattern becomes routine — tying the franchise's episode-count record.
 slot_argument: Ranks below Season 8's returning-heavy cast, but above Season 2, because matching the franchise's longest episode order still edges out a scale-up whose only trick was one extra couple.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season ten ranks ninth because its structural contribution is real but no longer novel: a second consecutive season crosses a couple over from a spinoff, this time from Before the 90 Days, following the pattern season nine set. Six new couples round out the cast, and the season ties the franchise's episode-count record, giving the visa clock more room to run across a slightly wider cast than most prior years. What keeps it below its immediate predecessor is exactly that lack of novelty — the crossover device reads as routine here rather than as a genuine format expansion. Still a solid, well-built season, just one executing an established pattern rather than writing a new one.
 
@@ -106,7 +117,7 @@ Season ten ranks ninth because its structural contribution is real but no longer
 
 tag: The template-setting scale-up — six couples instead of five.
 slot_argument: Ranks below Season 10's crossover-and-record season, but above Season 3, because setting the six-couple template still moves the format forward, even modestly, in a way a pure repeat season never does.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Season two ranks tenth because its contribution is structural but modest: it's the first season to scale the cast from five couples to six, setting an ensemble size the format returns to for most of its run. The visa clock still generates real tension here — partners navigating paperwork, culture shock, and skeptical families across a wider spread of countries — but the season doesn't add a new kind of risk to the format the way a returning couple or an expanded ensemble does. It's competent execution of a scale-up rather than an argument for what the format could become next. The canon ranks it above the season that follows because setting the template still counts for something.
 
@@ -114,6 +125,6 @@ Season two ranks tenth because its contribution is structural but modest: it's t
 
 tag: The season that lets the premise coast.
 slot_argument: Ranks below Season 2, because repeating the same six-couple shape with no new wrinkle is exactly the kind of coasting the canon ranks lowest, once a template already exists to repeat.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Season three sits at the bottom of the canon because it's the clearest example of a season letting the premise coast. Six couples run the same visa clock the prior season established, new partners arrive from a fresh mix of countries, and the show closes with a Tell All reunion — all comfortable, all familiar, none of it pushing the format anywhere new. That's not a knock on the couples themselves; the paperwork stress and culture-shock texture are still present. But against a canon that increasingly rewards seasons for taking structural risks — a bigger ensemble, a returning couple, a crossover pairing — a season that simply repeats the prior year's shape has to rank last.

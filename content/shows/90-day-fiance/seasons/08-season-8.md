@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 8
 slug: season-8
 title: "Season 8 (2020)"
-canonical_position: 8
+canonical_position: 9
 premiere_date: 2020-12-06
 ep_count: 19
 aired_year: 2020

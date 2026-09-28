@@ -3,7 +3,7 @@ show: 90-day-fiance
 number: 9
 slug: season-9
 title: "Season 9 (2022)"
-canonical_position: 7
+canonical_position: 8
 premiere_date: 2022-04-17
 ep_count: 19
 aired_year: 2022
