@@ -24,6 +24,34 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-09-28 tick (cloud march): dancing-with-the-stars
+34/35 → 35/35, gap row removed.** Picked `dancing-with-the-stars` off the
+prior tick's newly-unstarred pair (`the-voice`, `dancing-with-the-stars`,
+both tier B, gap=1) via the tie-break rule — both same tier, older
+`est_year` wins (dancing-with-the-stars 2005 vs. the-voice 2011). Filed
+Season 35, "Fall 2026" (`content/shows/dancing-with-the-stars/seasons/
+35-fall-2026.md`) — a record-tying 16-couple cast (ties Seasons 9 and 31),
+the franchise's first pairing of a reigning Olympic champion with a
+reigning Paralympic champion, and a pro dancer competing while pregnant, a
+series first; premiered 2026-09-15, still airing (finale late November),
+so the season file and its canon entry are pre-season/format-only per
+spoiler discipline — ranked on premise, not execution, and flagged
+in-copy as reassessed once the season closes, following the same pattern
+as the `traitors` S5 drain below. Canon rebased: Fall 2026 slots at a
+provisional rank 32 — record cast size and the Olympic/Paralympic casting
+first earn real weight, but this canon ranks on celebrity arc,
+choreographic ambition, and voting tension, which a still-airing season
+hasn't produced evidence for yet. `canonical_position` rewritten for S29
+(32→33) and S33 (33→34) and S34 (34→35) in the same commit. Scout research
+also surfaced a factual staleness bug in Season 34's copy: it framed the
+season as running "before" a hiatus that never happened (the show has run
+continuously; `status` was already `airing`, not `hiatus`) — corrected the
+season file and canon entry to drop the false hiatus framing in the same
+commit. `era_bands`' existing `simulcast-era` [2023, 2026] already covers
+the new season's year, no widening needed. Dancing-with-the-stars fully
+drained — row removed below, table now 40 shows / 40 gap-slots (`the-voice`
+remains the sole unstarred, actionable row for the next Rule 2 pick).
+
 **Rule 2 drain, 2026-09-27 tick (cloud march, fourth same-day tick): traitors
 4/5 → 5/5, gap row removed.** Picked `traitors` off the prior tick's
 newly-unstarred trio (`the-voice`, `dancing-with-the-stars`, `traitors`, all
@@ -1302,7 +1330,6 @@ new-show creation is locked to the biweekly show-add clock.
 | show | filed/declared | gap |
 |---|---|---|
 | amazing-race | 38/39 | 1* |
-| dancing-with-the-stars | 34/35 | 1 |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1 |
 | below-deck | 12/13 | 1* |

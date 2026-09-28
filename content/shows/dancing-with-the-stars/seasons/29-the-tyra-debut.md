@@ -3,7 +3,7 @@ show: dancing-with-the-stars
 number: 29
 slug: the-tyra-debut
 title: "The Tyra Debut"
-canonical_position: 32
+canonical_position: 33
 premiere_date: "2020-09-14"
 location: "Los Angeles, California"
 host: "Tyra Banks"

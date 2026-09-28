@@ -276,26 +276,34 @@ community_rank_hint: rank=31 delta=0 sentiment=hold
 
 Season thirty brought back the studio audience after the COVID-altered run of the prior year and added Alfonso Ribeiro as co-host — a former DWTS champion who brought ballroom fluency to the hosting desk. Both changes stabilized the format's atmosphere. Thirteen episodes gave the competitive arc full room to develop, and the season ran at a reliable level without the production constraints or debut uncertainty that defined the prior year. It reads as the Tyra-era season that came closest to the show's pre-pandemic competitive texture.
 
+## 35. Fall 2026
+
+tag: A record-tying cast size — sixteen couples, arriving with no finale to judge it against yet.
+slot_argument: Season thirty-five earns a provisional thirty-second for a record cast and an Olympic/Paralympic casting first. This canon ranks on arc and voting tension, which a still-airing season can't supply yet. The slot holds until it closes.
+community_rank_hint: rank=32 delta=0 sentiment=hold
+
+Season thirty-five fields sixteen celebrity-professional pairs, tying seasons nine and thirty-one for the largest cast the format has assembled. The distinction is real: this is the first season to pair a reigning Olympic champion with a reigning Paralympic champion, and a pro dancer competed while pregnant, a series first. None of that is nothing. But this canon ranks on celebrity arc, choreographic ambition, and judging-voting tension — categories a season still two months from its finale hasn't produced evidence for yet. The provisional thirty-second slot credits the premise without pretending to know how the arc resolves. Expect this position to move once the season closes.
+
 ## 29. The Tyra Debut
 
 tag: A host transition and a pandemic-altered format in the same run — two disruptions, one season.
-slot_argument: Season twenty-nine earns thirty-second for two simultaneous disruptions: no live audience and a host replacement after 28 seasons. Historical weight is real; the competitive season was constrained by forces outside the format.
-community_rank_hint: rank=32 delta=0 sentiment=hold
+slot_argument: Season twenty-nine earns thirty-third for two simultaneous disruptions: no live audience and a host replacement after 28 seasons. Historical weight is real; the competitive season was constrained by forces outside the format.
+community_rank_hint: rank=33 delta=0 sentiment=hold
 
 Season twenty-nine carried more off-floor context than any season in the run's history. The COVID-19 pandemic removed the studio audience that the format's live-vote energy depends on, and a complete host replacement — Tyra Banks stepping in after 28 seasons of Tom Bergeron — arrived in the same run. Both disruptions shaped every episode. The competitive cast delivered a workable season under real production constraints, and Banks's debut generated viewer discussion about the transition. As a piece of format history it carries significant weight; as a competitive television season it was hemmed in on both sides.
 
 ## 33. Fall 2024
 
 tag: The Hough/Ribeiro partnership in its second year — reliable but without a defining contribution.
-slot_argument: Season thirty-three sits thirty-third as the simulcast era's most standard entry. The hosting team settled in, the competitive format ran cleanly, and no casting angle or structural decision changed the texture of the run.
-community_rank_hint: rank=33 delta=0 sentiment=hold
+slot_argument: Season thirty-three sits thirty-fourth as the simulcast era's most standard entry. The hosting team settled in, the competitive format ran cleanly, and no casting angle or structural decision changed the texture of the run.
+community_rank_hint: rank=34 delta=0 sentiment=hold
 
 Season thirty-three gave the Julianne Hough and Alfonso Ribeiro partnership a second run together. The hosting dynamic was more settled than the debut year, the simulcast on Disney+ and ABC continued, and twelve competitive episodes delivered the format's established arc without notable deviation. The competitive cast brought a workable range of celebrity backgrounds, and the elimination structure stayed coherent through the back half. No casting thread or format adjustment made the season distinct from its immediate neighbors. It runs competently and earns its place at the base of the simulcast-era entries.
 
 ## 34. Fall 2025
 
-tag: The simulcast era's closing entry — the format running at steady state before the hiatus.
-slot_argument: Season thirty-four sits last as the show's most recent entry before hiatus. Reliable delivery, no distinguishing cast angle or structural contribution — the format running cleanly at the base of a long catalog.
-community_rank_hint: rank=34 delta=0 sentiment=hold
+tag: The simulcast era's third straight season — the format running at a steady state, no fresh angle.
+slot_argument: Season thirty-four sits last as the simulcast era's steadiest entry. Reliable delivery, no distinguishing cast angle or structural contribution — the format running cleanly at the base of a long catalog.
+community_rank_hint: rank=35 delta=0 sentiment=hold
 
-Season thirty-four sits last for the same reason its immediate predecessor sits thirty-third, pushed one step further: by its third year, the Hough/Ribeiro partnership had nothing left to distinguish itself with. Season thirty-three could still claim a settling-in arc against its debut year; this one can't even claim that, since the format was already fully settled and running on repetition rather than a fresh angle. Arriving as the show's most recent entry before hiatus adds a marker of finality, but no editorial weight — the season itself contributes nothing that thirty-three, or the rest of the simulcast era, hadn't already delivered.
+Season thirty-four sits last for the same reason its immediate predecessor sits one slot above it: by its third year, the Hough/Ribeiro partnership had nothing left to distinguish itself with. Season thirty-three could still claim a settling-in arc against its debut year; this one can't even claim that, since the format was already fully settled and running on repetition rather than a fresh angle. It closed out the simulcast era's third straight year on the same rhythm — no casting thread, no format adjustment, nothing that thirty-three, or the rest of the simulcast era, hadn't already delivered.
