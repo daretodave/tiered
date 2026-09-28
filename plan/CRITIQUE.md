@@ -1,5 +1,43 @@
 # CRITIQUE
 
+> Last pass: 2026-09-28 at commit 576769c1
+> Pass count: 174
+> Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 174 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/dancing-with-the-stars/season/fall-2026`,
+> `/shows/traitors/season/new-blood`, `/shows/the-voice`, `/themes`,
+> `/themes/built-for-the-drop` anon;
+> `/shows/dancing-with-the-stars/season/fall-2026?view=community`,
+> `/shows/traitors/season/new-blood`, `/u/e2e`,
+> `/shows/the-voice?view=community`, `/sign-in`, `/shows` authed —
+> rotated onto the two seasons the 2026-09-28 CADENCE drain just filed
+> (Dancing with the Stars S35, Traitors S5 "New Blood") plus a
+> re-check of the-voice's tagline fix from the prior commit. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport); no spoiler
+> leakage on either in-progress season (verified against raw HTML,
+> not just rendered text). Filed 2 new findings (0 HIGH, 2 MED, 0 LOW).
+> Four raw observations were dropped at self-assessment after code
+> verification: a DWTS-S35 meta-description "truncated mid-sentence"
+> claim was a false positive — it's `clipToSeoBudget()`'s documented
+> em-dash clause-boundary fallback firing correctly and landing on a
+> complete noun phrase, not a defect; a `/u/e2e` "no comments section"
+> claim was a false positive — the e2e bot account currently has zero
+> comments AND zero votes, so `isPopulatedProfile()` correctly renders
+> the empty state (`src/lib/profile/context.ts:114`), not a bug; a
+> the-voice community-view "0% approval on zero-vote rows" observation
+> re-raised a documented, deliberate design decision from pass-117/118
+> (`CommunityRankList.tsx:71-75`, the "honest-zero" convention) with no
+> new evidence to revisit it; and a Traitors-season "finale date named
+> in the watch-list" observation was dropped as non-actionable — a
+> public broadcast date is not a spoiler and the suggested fix was
+> speculative. Prior pass-173 metadata kept below for history.
+>
+> ───── Pass 173 metadata kept below for history ─────
+>
 > Last pass: 2026-09-27 at commit c95dc753
 > Pass count: 173
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
@@ -4474,6 +4512,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /themes/[theme] — meta descriptions are never passed through `clipToSeoBudget()`, so 168 of 182 themed-list pages ship a search-snippet description over the ~160-char budget
+
+- pass: 174 (commit 576769c1)
+- viewport: desktop
+- category: seo
+- observation: `src/app/(default)/themes/[theme]/page.tsx:39` passes `theme.description` straight into `buildMetadata()` with no clipping call. `buildMetadata()` itself (`src/lib/seo.ts:161-176`) never clips either — it assumes the caller already budgeted the string. The two show/season page families both call `clipToSeoBudget(lede)` before `buildMetadata()` (confirmed: `grep -rl clipToSeoBudget src/app` returns only `shows/[show]/page.tsx` and `shows/[show]/season/[slug]/page.tsx`), but the themes page family never does. A corpus sweep of every `content/themes/*.md` `description` field found 168 of 182 (92%) exceed 160 characters — e.g. `built-for-the-drop.md`'s description is 244 chars, `a-dating-experiment-still-writing-its-own-rulebook.md` is 279 chars. This isn't a one-off content miss; it's a missing call in the page's metadata builder, so essentially the entire themed-list catalog under-serves search-result snippets (Google truncates around ~155-160 chars, landing mid-sentence on most theme pages).
+- evidence: `src/app/(default)/themes/[theme]/page.tsx:37-40` — `return buildMetadata({ title: ..., description: theme.description, ... })`, no `clipToSeoBudget()` call anywhere in the file. Corpus check: `for f in content/themes/*.md; do desc=$(grep -m1 "^description:" "$f" | sed 's/^description: *//'); echo ${#desc}; done` → 168/182 lengths exceed 160.
+- suggested fix: Wrap the `description` argument at `themes/[theme]/page.tsx:39` (and the `/themes` index page's own `buildMetadata()` call, if its description is also content-authored) in `clipToSeoBudget(theme.description)`, mirroring the show/season page precedent. Content-only field, no schema change — the full `description` still renders in the page body; only the meta-tag argument changes.
+- source: browser (critique-pass-174, anon)
+
+### [MED] [anon] /shows/dancing-with-the-stars/season/fall-2026, /shows/traitors/season/new-blood — each freshly-filed season's single headline fact is restated near-verbatim 5-6 times across the page
+
+- pass: 174 (commit 576769c1)
+- viewport: desktop
+- category: voice
+- observation: Both seasons the 2026-09-28 CADENCE drain just filed independently show the same defect: a single headline fact is restated with only light rewording across the eyebrow, lede, a meta-panel field, and two body sections, before any new information appears. On DWTS S35 the fact is "ties Seasons 9/31 for largest cast at 16 couples" (eyebrow, lede, FORMAT meta, CAST SIZE meta, "The shape of the season," "Where it sits in the canon" — six near-identical restatements). On Traitors S5 "New Blood" the fact is "first all-civilian cast, no alumni/celebrities" (eyebrow, lede, FORMAT meta, meta subtext, "The shape of the season," "Where it sits in the canon" — five near-identical restatements). This is the same single-fact-owner drift class fixed repeatedly elsewhere in the catalog (most recently pass-173's Shark Tank S17 finding), but its appearance on both same-day season drains suggests the season-fill drafting pattern itself over-anchors on one differentiator fact rather than a page-specific miss.
+- evidence: DWTS S35 — eyebrow "A RECORD-TYING 16-COUPLE CAST"; lede "ties the series record for largest cast — sixteen celebrity-professional pairs"; FORMAT meta "Ties Seasons 9 and 31 for the largest cast in series history"; CAST SIZE meta "Ties seasons nine and thirty-one for the largest field ever fielded"; SHAPE section "tying the record held by seasons nine and thirty-one"; WHERE IT SITS section "tying seasons nine and thirty-one for the largest cast the format has assembled." Traitors New Blood — eyebrow "THE FRANCHISE'S FIRST ALL-CIVILIAN CAST"; lede "swaps its celebrity-and-alumni model for its first all-civilian cast"; FORMAT meta "All-civilian cast · broadcast NBC premiere" / "First season without a single reality-TV alum or celebrity"; SHAPE section "its first all-civilian cast, no reality alumni or celebrities anywhere in the mix"; WHERE IT SITS section "The cast goes all-civilian for the first time in the franchise's history — no reality alumni, no celebrities."
+- suggested fix: Content-curator pass on both season files (`content/shows/dancing-with-the-stars/seasons/35-fall-2026.md`, `content/shows/traitors/seasons/05-new-blood.md`): keep the lede as the sole owner of the raw fact, and rewrite the meta-panel captions + one of the two body sections (SHAPE or WHERE IT SITS) to argue a distinct angle instead of re-deriving the same comparison — e.g. DWTS's "Where it sits in the canon" could argue the provisional rank against neighboring seasons rather than restate the cast-size record a sixth time; Traitors's meta subtext could point at the network-pivot angle (Peacock-exclusive → NBC/Peacock) instead of repeating "all-civilian." If this recurs on the next season-fill drain too, consider a `content-check` invariant flagging the same clause repeated ≥4 times across a season's editorial fields, mirroring the existing theme-level verb-stem/phrase-repetition checks.
+- source: browser (critique-pass-174, anon)
 
 ### [MED] [authed] /shows/shark-tank/season/season-17 — two headline facts restated near-verbatim across at least 8 fields spanning the season file and canon.md
 
