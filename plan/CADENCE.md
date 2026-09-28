@@ -24,6 +24,33 @@ that.
 
 ## Season gap table
 
+**Rule 2 blocked, 2026-09-28 tick (cloud march, second same-day tick):**
+`the-voice` was the sole unstarred, actionable gap row (29/30) left after
+the dancing-with-the-stars drain above, but filing a mechanical "Season 30"
+season file is unsafe: issue #762 (open, `triage:needs-user`) documents
+confirmed, deep factual corruption across `content/shows/the-voice/seasons/
+22-29*.md` — a phantom "spring 2022" entry cascades a +1 numbering offset
+through the whole 22-29 span (conflated casts, a real season missing a
+file entirely, a fabricated "series finale" that never aired). Our
+catalog's "season 29" does not reliably correspond to the real NBC season
+29, so a new "season 30" file would extend the corruption rather than
+reflect reality — the issue explicitly scopes this as a dedicated
+human-judgment fix (re-verify all 8 seasons source-by-source, decide
+file-count/insertion treatment), not a same-tick patch. Re-starred
+`the-voice`'s row below (`1*`) with this note so future ticks don't
+mechanically re-pick it; it stays blocked until a human resolves #762 (see
+`plan/AUDIT.md` for the standing HIGH corruption row). Gap table now
+effectively zero-actionable again (40 shows / 40 gap-slots, all starred).
+Shipped this tick's content-gap unit from the next-highest-scored AUDIT.md
+row instead: `content/shows/the-voice.md`'s `tagline`/`card_tagline`
+carried a false "signed off" / "chairs turned one last time" framing
+(stale copy from before Season 30's premiere, `status` was already
+corrected to `airing` in a prior tick) — rewritten to reflect an active,
+still-running franchise, and to use the `{yearsWord}` token instead of a
+hardcoded year count per the phase-43 tenure-honesty discipline. This
+touches only show-level frontmatter copy, not the corrupted season files
+— #762's scope is untouched by this commit.
+
 **Rule 2 drain, 2026-09-28 tick (cloud march): dancing-with-the-stars
 34/35 → 35/35, gap row removed.** Picked `dancing-with-the-stars` off the
 prior tick's newly-unstarred pair (`the-voice`, `dancing-with-the-stars`,
@@ -1331,7 +1358,7 @@ new-show creation is locked to the biweekly show-add clock.
 |---|---|---|
 | amazing-race | 38/39 | 1* |
 | rhonj | 14/15 | 1* |
-| the-voice | 29/30 | 1 |
+| the-voice | 29/30 | 1* |
 | below-deck | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
 | the-challenge | 41/42 | 1* |
