@@ -24,6 +24,26 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain (finale-shift), 2026-09-28 tick (cloud march, third same-day
+tick): 90-day-fiance 11/12 → 12/12, gap row removed.** Not a smallest-gap
+Rule 2 pick — every remaining gap-table row was starred (confirmed-but-
+unaired) per the sweeps above, so Rule 2 itself stayed non-actionable this
+tick. Instead picked up the standing finale-shift row filed by
+`scripts/finale-gate.mjs` for 90-day-fiance Season 12 (finale aired
+2026-09-27): the show's frontmatter already declared `seasons: 12` but no
+season file existed. Filed Season 12 (`content/shows/90-day-fiance/seasons/
+12-season-12.md`) — seven entirely new couples, zero returning or crossover
+pairings, the first fully fresh cast since Season 6 (2018), a deliberate
+reversal of the comeback/crossover casting the franchise had leaned on for
+six straight seasons; ranked on premise/casting only, no relationship
+outcomes. Canon rebased: Season 12 slots at rank 7, just below Season 6's
+own all-new-cast bookend and above Season 9's crossover-first entry —
+Seasons 9/8/10/2/3 shift down one rank each, `canonical_position` rewritten
+in every shifted season file to match. `era_bands` gained a `reset-era`
+[2026, 2026] band, closing `throuple-era` at 2025. Show fully drained — row
+removed below, table now 37 shows / 37 gap-slots (`the-voice` remains
+blocked behind issue #762; no other row is actionable).
+
 **Rule 2 blocked, 2026-09-28 tick (cloud march, second same-day tick):**
 `the-voice` was the sole unstarred, actionable gap row (29/30) left after
 the dancing-with-the-stars drain above, but filing a mechanical "Season 30"
@@ -1371,7 +1391,6 @@ new-show creation is locked to the biweekly show-add clock.
 | dragrace-allstars | 11/12 | 1* |
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
-| 90-day-fiance | 11/12 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
 | dragrace-uk | 7/8 | 1* |
 | rhom | 7/8 | 1* |
