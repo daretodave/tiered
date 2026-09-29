@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-28
+last_revised: 2026-09-29
 featured: false
 related:
   - the-cast-outgrew-the-format
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "For the first time, the clock runs on three people instead of two."
     blurb: "Season eleven casts a three-person unit as a single storyline alongside six traditional couples, the biggest change to the show's core premise since it began. The clock has always assumed two people and a deadline — this asks what it looks like with three."
+  - show: 90-day-fiance
+    season: 12
+    season_label: "S12"
+    rank: 12
+    title: "The flagship returns to an all-new cast for the first time since season six."
+    blurb: "Season twelve casts seven entirely new couples with no returning or crossover pairings in the lineup, the first time that's happened since season six. Six seasons of comeback and spinoff crossover casting pause, if only for one round on the clock."
 ---
