@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-09-29
 featured: false
 related:
   - firsts
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "The VH1 relaunch swaps hosts and adds a scoring gimmick that never settles in."
     blurb: "Top Model leaves the CW for VH1 with a new host taking over from Tyra Banks and social-media metrics folded into the judging. The pieces don't cohere, and the show's own canon calls this its lowest point."
+  - show: traitors
+    season: 5
+    season_label: "S05"
+    rank: 12
+    title: "The only entry here moving off streaming instead of onto it."
+    blurb: "Four seasons in, The Traitors leaves Peacock exclusivity for broadcast NBC, next-day streaming folded in as the backup, not the headline. Every other season on this list swapped a network platform for a streaming one — this is the swing in reverse."
 ---
