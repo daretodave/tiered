@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-09-29
 featured: false
 related:
   - the-slow-build-was-the-point
@@ -85,6 +85,12 @@ entries:
     rank: 12
     title: "Before any season had a head start, this one didn't even have a format yet"
     blurb: "Six episodes into a brand-new American format, nobody had a training edge to lean on because the show itself hadn't been tested yet. Every later head-start season and blank-slate season both trace back to this starting line."
+  - show: dancing-with-the-stars
+    season: 35
+    season_label: "S35 · Fall 2026"
+    rank: 13
+    title: "A reigning Olympic champion and a reigning Paralympic champion shared a cast for the first time"
+    blurb: "Past Olympic and Paralympic casts got a head start one credential at a time. This field carries both at once — a reigning champion from each Games sharing a sixteen-couple cast, the largest ever. Whether a double head start actually holds is the season's real question."
 ---
 
 # Some casts didn't need week one
