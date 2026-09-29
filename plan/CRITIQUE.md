@@ -1,8 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-09-28 at commit 576769c1
-> Pass count: 174
+> Last pass: 2026-09-29 at commit bbef2177
+> Pass count: 175
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 175 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/90-day-fiance/season/season-12`, `/shows`,
+> `/themes/the-clock-had-to-make-room`,
+> `/themes/some-casts-didnt-need-week-one`, `/themes` anon;
+> `/shows/90-day-fiance/season/season-12?view=community`,
+> `/themes/the-clock-had-to-make-room`, `/u/e2e`, `/shows`, `/sign-in`
+> authed — rotated onto the freshly-filed 90 Day Fiancé Season 12
+> (finale-shift drain) and the two themed lists extended this week
+> (`the-clock-had-to-make-room`, `some-casts-didnt-need-week-one`).
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport, H1 present on
+> every page); no spoiler leakage found on the freshly-aired season
+> (verified against raw HTML, not just rendered text — all-new-cast
+> premise/casting facts only, no relationship outcomes). Filed 4 new
+> findings (0 HIGH, 1 MED, 3 LOW). Two raw observations were dropped at
+> self-assessment after code verification: an authed-pass claim that
+> `?view=community` silently 308s away on season-detail routes was a
+> false positive — that 308 redirect (commit `6fe08cc8`, 2026-09-26) IS
+> the shipped fix for the exact defect class CRITIQUE passes 151/156/171
+> already tracked (a stray `?view=` param rendering byte-identical
+> content with no error); `/shows?view=community` being a no-op is
+> equally expected since the community-view toggle was only ever a
+> show-detail feature, never a show-index one. A `/u/e2e` "no
+> comment-history section" claim was also a false positive — same root
+> cause pass-174 already assessed and dropped: the e2e bot account has
+> zero comments and zero votes, so `isPopulatedProfile()`
+> (`src/lib/profile/context.ts:118`) correctly renders the empty state
+> rather than the populated `Recent comments` section
+> (`src/app/(default)/u/[handle]/page.tsx:205-219`) — not a structural
+> gap. No pending HIGH findings remained open ahead of this pass; the
+> site continues to read clean on the P0 spoiler check.
+>
+> ───── Pass 174 metadata kept below for history ─────
+>
 > Pass 174 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4512,6 +4549,46 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /themes — the 182-entry "All lists" catalog renders list titles as `<span>`, not headings, so screen-reader users can only heading-jump to the 3 featured cards
+
+- pass: 175 (commit bbef2177)
+- viewport: desktop
+- category: a11y
+- observation: `/themes`' "Featured this month" section renders its 3 cards' titles as `<h3>{theme.title}</h3>` (`src/components/lists/FeaturedCard.tsx:64`), but the "All lists" catalog below renders all 182 entries' titles as `<span className="list-row-title">{theme.title}</span>` (`src/components/lists/ListRow.tsx:39`). A screen-reader user navigating by heading can reach the 3 featured lists but has no heading-level way to jump to any of the other 179 — they'd have to read the entire flat text stream sequentially. `/shows` doesn't share this gap: all 68 tier tiles correctly use `<h3 className="show-tile-name">` (`src/components/home/ShowTile.tsx:45`, `src/components/shows/ShowsTile.tsx:67`), so this is an isolated `/themes`-template regression, not a site-wide convention.
+- evidence: `src/components/lists/ListRow.tsx:39` — `<span className="list-row-title">{theme.title}</span>`; `src/components/lists/FeaturedCard.tsx:64` — `<h3>{theme.title}</h3>`; `src/components/lists/ListsAllSection.tsx:37,57` — the "All lists" `<h2>` section wraps `<ListRow>` for every catalog entry.
+- suggested fix: Change `ListRow`'s `list-row-title` element from `<span>` to a heading tag (`<h3>` or `<h4>`, matching the section's `<h2>` nesting) so all 182 entries become heading-navigable, matching the `/shows` tile pattern. Styling can stay identical via the existing `.list-row-title` class.
+- source: browser (critique-pass-175, anon)
+
+### [LOW] [anon] /shows/90-day-fiance/season/season-12 — the "Where it sits in the canon" paragraph breaks the site's plain-sentence voice with a clause-stacked, metaphor-heavy sentence
+
+- pass: 175 (commit bbef2177)
+- viewport: desktop
+- category: voice
+- observation: The canon-fit paragraph on the freshly-filed Season 12 page departs from bearings' "confident, warm, plain-spoken... plain sentences over clever ones" mandate — one 33-word sentence stacks two subordinate clauses around a sports metaphor, following a rhetorical question two sentences earlier.
+- evidence: "does the format still work without any returning or crossover couples to lean on?" ... "That's not a structural first in the way the throuple casting or the seven-couple ensemble were, but reversing a six-season trend on purpose is a real editorial swing, not a coast." — `content/shows/90-day-fiance/canon.md`, Season 12 entry.
+- suggested fix: Split into two plain declarative sentences; drop the "editorial swing, not a coast" metaphor and the rhetorical question, and state the comparison to the throuple/seven-couple firsts directly.
+- source: web-fetch (critique-pass-175, anon)
+
+### [LOW] [anon] /shows/90-day-fiance/season/season-12 (mobile) — the "no returning couples" fact is restated near-verbatim across three consecutive page sections
+
+- pass: 175 (commit bbef2177)
+- viewport: mobile
+- category: voice
+- observation: The freshly-filed Season 12 page shows the same single-fact-owner drift class documented repeatedly elsewhere (most recently pass-174's DWTS S35 / Traitors New Blood finding, itself following dozens of prior instances), but spanning three distinct on-page blocks rather than two: "THE TAKE" pull-quote, the "THE SHAPE OF THE SEASON" heading, and that section's own body sentence all restate "no returning/crossover couples" with only light rewording before any new information appears.
+- evidence: "01 THE TAKE — No comeback couples to lean on, for the first time in years. Seven strangers-to-the-audience couples, the comeback device set aside for one season." followed immediately by "02 THE SHAPE OF THE SEASON — Seven couples, zero returning faces. Season twelve resets the flagship to a fully new cast: seven couples, none returning or crossing over from a prior season..." — all three clauses restate the identical fact.
+- suggested fix: Let "THE TAKE" carry the single fact alone; open "THE SHAPE OF THE SEASON" with a different angle (episode count, premiere timing, or the Tell All structure) before circling back to cast-freshness. This is the fourth+ instance of this defect class this month — pass-174 already floated a systemic fix (a `content-check` invariant flagging the same clause repeated ≥4 times across a season's editorial fields); worth promoting from "consider" to "do" if a fifth instance appears.
+- source: browser (critique-pass-175, authed)
+
+### [LOW] [authed] /themes/the-clock-had-to-make-room — the save button reads "Save (this device)" even for a signed-in reader, with no indication the save is (or isn't) tied to the account
+
+- pass: 175 (commit bbef2177)
+- viewport: desktop
+- category: comprehension
+- observation: The themed-list save affordance is labeled "Save (this device)" even when the visitor is signed in (`@e2e` confirmed in header chrome). For an authenticated reader this reads as a downgrade — the copy gives no indication the save could instead follow the account, so a signed-in reader has no reason to expect (or not expect) it to persist across devices.
+- evidence: `<button aria-label="Save 90 Day Fiancé: the clock had to make room" data-testid="list-save" data-saved="false">Save (this device)</button>` — rendered verbatim on the request made with the authenticated `__session` cookie.
+- suggested fix: For authenticated sessions, either persist saves to the account and change the label to "Save," or keep device-local saves but note in copy/tooltip that signing in doesn't change that — so it reads as a deliberate choice, not an oversight.
+- source: web-fetch (critique-pass-175, authed)
 
 ### [MED] [anon] /themes/[theme] — meta descriptions are never passed through `clipToSeoBudget()`, so 168 of 182 themed-list pages ship a search-snippet description over the ~160-char budget
 
