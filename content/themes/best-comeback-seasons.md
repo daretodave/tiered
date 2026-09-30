@@ -6,9 +6,9 @@ category: tone
 sentiment: warm-up
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-09-30
 featured: false
-featured_pull: "Twelve comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
+featured_pull: "Thirteen comeback seasons that had everything to lose — hiatus, milestone, all-star reunion, a repeated risk — and came back earning it."
 related:
   - best-returnees
   - best-finales
@@ -86,4 +86,10 @@ entries:
     rank: 12
     title: "A twelve-years-gone original returns to a cast that had already found its footing on its own."
     blurb: "Gretchen Rossi comes back as a friend of the Housewives after more than a decade away, the season's clear marketing hook. The cast around her doesn't structurally need the jolt, but a return this delayed still earns its moment on screen."
+  - show: rhony
+    season: 16
+    season_label: "S16 · The Legacy Return"
+    rank: 13
+    title: "A legacy face returns to steady a cast mid-rebuild."
+    blurb: "Carole Radziwill returns to full-time duty after eight seasons away, the marquee fix for a cast that's turned over completely twice in three years. Three newcomers join the holdovers, and early episodes play old New York against new before any verdict lands."
 ---
