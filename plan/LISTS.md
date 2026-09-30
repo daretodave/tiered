@@ -10283,6 +10283,80 @@ last time a curator actually looked.
   show). List now runs 12 entries across 12 shows. Files touched this
   tick: `content/themes/moving-day.md` (new entry + `last_revised`
   bump), `plan/LISTS.md` (this note + ledger row).
+- **2026-09-30, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship, no content or ledger row change.** Re-verified
+  the standing blockers fresh before touching anything: `plan/CADENCE.md`
+  still reads 37 shows / 37 gap-slots, every row starred confirmed-but-
+  unaired except `the-voice`, which stays untouched behind open issue
+  #762 (confirmed S22-29 factual corruption, needs human judgment — out
+  of scope for this tick and every tick until that issue closes). The
+  three season files that grounded the prior three ticks (DWTS S35,
+  90-day-fiance S12, Traitors S05) are now fully drained — DWTS S35
+  shipped to `some-casts-didnt-need-week-one`, and both remaining
+  deferred candidates (90-day-fiance S12 → `the-clock-had-to-make-room`,
+  Traitors S05 → `moving-day`) already landed across the two 2026-09-29
+  ticks immediately above. No new season files have appeared since, so
+  this tick needed genuinely fresh research rather than a re-stake.
+  Ran a full per-show coverage census (one `show: <slug>` grep per show
+  across every `content/themes/*.md`, all 67 shows in `content/shows/`)
+  looking for an entirely unmined show that might anchor a brand-new
+  list on its own recent seasons — every show already carries
+  substantial existing coverage (counts ranged from roughly 3 to over
+  100 occurrences catalog-wide); no candidate cleared.
+  Chased two fresh cross-canon angles beyond the per-show census:
+  - Viral / social-media pre-fame casting (contestants who arrived
+    already carrying a public following from modeling, broadcast, or
+    social media, distinct from the reality-alumni crossover angle
+    `familiar-faces-wrong-franchise` already exhausts) — rejected. The
+    existing `the-cast-arrived-pre-famous` (category: era, range
+    2016-2023, 11 entries / 8 shows) already stakes this exact vein.
+    Fresh candidates outside its era window (Survivor Australia S05,
+    Love Island US S07) each returned only a single comparable
+    catalog-wide hit on grep — sub-floor, can't clear the ≥3-distinct-
+    show cross-canon requirement as their own list, and extending the
+    existing era-bounded list with an out-of-range season would break
+    its `era_range` framing.
+  - Panel/judging table expands from three chairs to four for the first
+    time (a structural-firsts angle distinct from a departure/arrival
+    reshuffle) — looked genuinely promising on first pass, with five
+    candidate seasons across four shows (SYTYCD S15 tWitch Boss joins as
+    4th judge; SYTYCD S13 Maddie Ziegler joins on the full "Next
+    Generation" rebrand; MasterChef Australia S16 "Four Voices" expands
+    to four judges; Married at First Sight S15 "San Diego" expands its
+    expert panel to four; Chopped S62 "Ted's Takeover" seats the host as
+    a one-episode fourth judge). Exhaustively grepped every candidate
+    against the full ledger before staking any of them and every single
+    one turned out already claimed:
+    - SYTYCD S15's four-judge fact is already the primary thesis at
+      `when-the-chairs-turned-over` rank 17 (category: craft, 22
+      entries) — a list whose entire founding premise IS "a judge/coach
+      panel changed shape," making it the natural home this angle would
+      have reinvented from scratch.
+    - MAFS S15's four-expert fact is already the primary thesis at
+      `the-matching-experts-never-sit-still-for-long` rank 2 ("panel
+      adds a fourth chair instead of swapping a seat" — the exact
+      phrasing this pass would have reached for).
+    - Chopped S62's fact is already the primary thesis at
+      `when-the-basket-became-a-bracket` rank 8 ("Ted's Takeover puts
+      Ted Allen in the judges' seats as a fourth panelist for one
+      episode").
+    - MasterChef Australia S16 is the most exhausted of the five: its
+      four-judge-panel fact is the PRIMARY thesis of not one but two
+      separate existing entries (`same-license-different-rules` rank 3,
+      `the-toolkit-never-sat-still` rank 3), and appears as a secondary
+      clause in three more (`someone-else-held-the-chair-for-a-while`
+      rank 9 — guest judges test the newly-widened panel;
+      `the-other-side-of-the-table` rank 12 — one of the four new
+      judges once competed as a home cook herself;
+      `the-competition-leaves-the-country` rank 6 — "the same season the
+      judging panel expands to four voices back home in Melbourne").
+    With every candidate season already claimed, the angle itself is
+    fully mined out — there's no fresh entry point left, cross-canon or
+    single-show.
+  No `content/themes/*.md` file written or edited this tick; no ledger
+  row changed except this note. Next unlock: Rule 2 filing a new season
+  (the-voice excepted), or the weekly sweep due 2026-10-04 surfacing a
+  fresh angle this pass didn't reach.
 
 ## Notes
 
