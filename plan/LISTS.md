@@ -10357,6 +10357,59 @@ last time a curator actually looked.
   row changed except this note. Next unlock: Rule 2 filing a new season
   (the-voice excepted), or the weekly sweep due 2026-10-04 surfacing a
   fresh angle this pass didn't reach.
+- **2026-09-30, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, narrow re-pass): zero-ship, no content or ledger row
+  change.** Targeted re-check of the two newest season files
+  (`90-day-fiance` S12, `dancing-with-the-stars` S35) specifically for
+  any distinguishing fact the prior same-day pass (the note immediately
+  above, filed 01:31 UTC) hadn't already drained. Confirmed the prior
+  note's own summary first: both season's headline facts are shipped —
+  90-day-fiance S12's all-new-cast reset is the rank-11 entry at
+  `the-clock-had-to-make-room` (single, last_revised 2026-09-29,
+  "the flagship returns to an all-new cast for the first time since
+  season six"), and DWTS S35's Olympic/Paralympic double-pairing (plus
+  its record-tying sixteen-couple field, stated in the same entry) is
+  the rank-13 entry at `some-casts-didnt-need-week-one` (single,
+  last_revised 2026-09-29). Both confirmed via a fresh full `show:
+  90-day-fiance`/`show: dancing-with-the-stars` grep across every
+  `content/themes/*.md` — no double-dip, no gap.
+  Two facts from the two season files remained unstaked after that
+  check, and both were chased to a dead end:
+  - DWTS S35's pro dancer competing while pregnant (stated as "a series
+    first" in the season's own lede) — genuinely unclaimed; a full
+    `content/themes/*.md` grep for "pregnan" returns zero hits. But the
+    only comparable production-fact peer anywhere in the catalog is
+    Jersey Shore S06 ("thirteen episodes filmed around a cast member's
+    pregnancy, a series first" — also its own stated "series first," a
+    near-identical fact class: a competitor/cast member, not a host or
+    judge, continuing to appear on camera through a real pregnancy).
+    RHOA S11's "Porsha Williams' pregnancy arc" is a different kind of
+    fact — an in-season storyline reveal built around a named cast
+    member's personal life, not a stated production/scheduling fact —
+    and leaning on it just to clear a headcount floor would be the
+    weak-grounding move the gate exists to block, plus it edges toward
+    naming a real person against a personal-life beat with no clean
+    upside. Two legitimately comparable shows is one short of the
+    ≥3-distinct-show cross-canon floor this category requires. Checked
+    the existing on-camera-life-event coverage too, in case this
+    already had a home: `someone-else-held-the-chair-for-a-while`,
+    `the-panel-turned-over-more-than-the-contestants-did`, and
+    `the-extra-seat-is-never-a-swap` (all surfaced by the 2026-08-10
+    pass, line ~7687 of this file) cover a host/judge being *covered
+    for* during an absence — a materially different fact from a
+    competitor *staying on screen and competing* through one. Genuinely
+    open ground, but not a three-show list today.
+  - DWTS S35's record-tying sixteen-couple field (ties seasons 9 and
+    31) — this is exactly the founding thesis of the existing
+    `the-cast-outgrew-the-format` (category: structure, "the headcount
+    itself became the format's central bet"), which carries zero DWTS
+    entries yet. A new list built on this fact would run well past the
+    40% natural-overlap ceiling against that list — it's an extend
+    candidate for a future review batch, not a new list of its own.
+  Next unlock unchanged from the note above: a new season landing via
+  Rule 2, or the 2026-10-04 weekly sweep. If `the-cast-outgrew-the-
+  format` comes up due for review before then, stake DWTS S35 (and
+  S09/S31, if ungrounded) there rather than re-opening this search.
 
 ## Notes
 
