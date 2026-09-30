@@ -1,8 +1,38 @@
 # CRITIQUE
 
-> Last pass: 2026-09-29 at commit bbef2177
-> Pass count: 175
+> Last pass: 2026-09-30 at commit 1517c887
+> Pass count: 176
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 176 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/big-brother/season/a-summer-of-mystery`, `/shows`,
+> `/themes/moving-day`, `/shows/survivor/season/survivor-51`, `/themes`
+> anon; `/shows/big-brother/season/a-summer-of-mystery?view=community`,
+> `/themes/moving-day`, `/u/e2e`, `/shows`, `/sign-in` authed — rotated
+> onto the freshly content-gap-fixed Big Brother Season 27 page, the
+> freshly-extended `moving-day` themed list, and Survivor 51 (not
+> resampled since pass 172/pre-premiere). Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 horizontal
+> overflow on either viewport, H1/canonical/OG present on every page);
+> no spoiler leakage anywhere (raw HTML checked, not just rendered
+> text — format/twist disclosures only, no eliminations or winners).
+> Filed 1 new finding (0 HIGH, 1 MED, 0 LOW): a fresh, previously
+> undocumented instance of the site's tracked single-fact-owner-drift
+> voice pattern on `/shows/survivor/season/survivor-51` (two distinct
+> facts each restated 3-5 times across the page). Several other
+> candidates were checked against `plan/CRITIQUE.md` and correctly
+> dropped as already-tracked or false positives: the big-brother page's
+> own fact-repetition (already the pattern's textbook exemplar, patched
+> immediately prior at `b1d1958c`), the `?view=community` season-route
+> param strip (tracked across 15+ prior passes), the `moving-day`
+> "Save (this device)" copy (already an open LOW), `/sign-in`'s
+> signed-in redirect (307 → `/`, working as intended), and the
+> `/shows` B-tier canon-count pill / `/themes` badge-legend gap (both
+> already resolved/tracked). No pending HIGH findings remained open
+> ahead of this pass; the site continues to read clean on the P0
+> spoiler check.
 > Pass 175 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4549,6 +4579,16 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/survivor/season/survivor-51 — two headline facts each restated near-verbatim 3-5 times across the page
+
+- pass: 176 (commit 1517c887)
+- viewport: desktop
+- category: voice
+- observation: The same single-fact-owner drift class fixed dozens of times elsewhere in the catalog appears fresh on Survivor 51, previously unfiled for this page. The premiere's "seven twists from six past seasons plus three new ones" stat is restated near-verbatim in "THE TAKE," "THE SHAPE OF THE SEASON," and "WHERE IT SITS IN THE CANON." Separately, "first odd-numbered cast since 2007" is restated five times: the lede, the CAST SIZE meta field, "THE SHAPE OF THE SEASON," "WHERE IT SITS IN THE CANON," and the EP1 "ODD CAST MATH" watch-for entry.
+- evidence: THE TAKE: "Probst has described the two-hour premiere alone as stacking seven twists borrowed from six past seasons with three brand-new ones." THE SHAPE OF THE SEASON (same page): "Probst has described the two-hour premiere alone as stacking seven twists from six past seasons with three brand-new ones." WHERE IT SITS IN THE CANON (same page): "...the two-hour premiere alone reportedly pulled from six prior seasons before adding three new wrinkles." The "first odd-numbered cast since 2007" clause recurs across the lede, CAST SIZE meta, and both body sections plus the EP1 watch-for entry.
+- suggested fix: Let "THE SHAPE OF THE SEASON" own both the premiere-twist-count fact and the odd-cast fact in full; rewrite "THE TAKE" and "WHERE IT SITS IN THE CANON" to reference either fact obliquely (or pivot to a distinct angle — e.g. what the twist-density does to early strategy, or how the odd cast size affects the merge math) rather than re-deriving the same numbers. Content-only, `content/shows/survivor/seasons/51-survivor-51.md` + `content/shows/survivor/canon.md`.
+- source: browser (critique-pass-176, anon)
 
 ### [MED] [anon] /themes — the 182-entry "All lists" catalog renders list titles as `<span>`, not headings, so screen-reader users can only heading-jump to the 3 featured cards
 
