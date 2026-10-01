@@ -91,5 +91,5 @@ entries:
     season_label: "S16 · The Legacy Return"
     rank: 13
     title: "A legacy face returns to steady a cast mid-rebuild."
-    blurb: "Carole Radziwill returns to full-time duty after eight seasons away, the marquee fix for a cast that's turned over completely twice in three years. Three newcomers join the holdovers, and early episodes play old New York against new before any verdict lands."
+    blurb: "Carole Radziwill returns to full-time duty after eight years away, the marquee fix for a cast that's turned over completely twice in three years. Three newcomers join the holdovers, and early episodes play old New York against new before any verdict lands."
 ---

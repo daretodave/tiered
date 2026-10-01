@@ -138,7 +138,7 @@ Season fourteen is the reboot's premise before it becomes its proof. A completel
 ## 16. Season 16 — The Legacy Return
 
 tag: A second full-cast overhaul, still finding out what it is.
-slot_argument: Carole Radziwill's return after eight seasons away is a genuine hook, but the season is airing into a cast that's turned over twice in three years. Too early to call it more than that — the low slot reflects the uncertainty, not a verdict.
+slot_argument: Carole Radziwill's return after eight years away is a genuine hook, but the season is airing into a cast that's turned over twice in three years. Too early to call it more than that — the low slot reflects the uncertainty, not a verdict.
 community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Season sixteen asks RHONY to rebuild its cast for the second time in three seasons, and that repetition is the thing to watch. Carole Radziwill's return after eight years away is a real hook. She was one of the sharpest voices the original run produced, and she gives the three newcomers a legacy presence to play off. But a cast that's turned over twice this quickly hasn't earned the benefit of the doubt the way season fifteen's steadier year two did. The season is still airing as of this writing, and its position here reflects that: too early to call it having found its footing, not bad enough to call it a failure.

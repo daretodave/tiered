@@ -20,11 +20,11 @@ premiere_caption: "Bravo · September 2026"
 filming_caption: "Began filming in New York in early March, ahead of a private-island trip."
 watch_list:
   - episode_label: "Premiere · Carole's return"
-    body: "Carole Radziwill steps back into full cast duty for the first time since season ten, an eight-season gap. How she settles into a reshuffled group is the season's biggest pre-air question."
+    body: "Carole Radziwill steps back into full cast duty for the first time since season ten, an eight-year gap. How she settles into a reshuffled group is the season's biggest pre-air question."
   - episode_label: "Early eps · Martha Stewart cameo"
     body: "Martha Stewart appears this season, announced ahead of the premiere. Where it lands in the run isn't confirmed, but it's the kind of guest spot that reorders a scene."
   - episode_label: "Ongoing · generational split"
     body: "Trailer cuts tease friction between the legacy trio plus Radziwill and the three newcomers. Whether that split holds as the real story or fades early is worth watching."
 ---
 
-Season sixteen tears the cast down again, just three years into the reboot. Carole Radziwill's return after eight seasons away is the marquee hook, giving the newcomers a legacy foil in the room. Three fresh Housewives and one friend of the show fill out the rest. The season is still airing, and early episodes lean into the friction between old New York and new, with no verdict yet.
+Season sixteen tears the cast down again, just three years into the reboot. Carole Radziwill's return after eight years away is the marquee hook, giving the newcomers a legacy foil in the room. Three fresh Housewives and one friend of the show fill out the rest. The season is still airing, and early episodes lean into the friction between old New York and new, with no verdict yet.
