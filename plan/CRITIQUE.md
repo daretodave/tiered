@@ -1,8 +1,43 @@
 # CRITIQUE
 
-> Last pass: 2026-09-30 at commit 1517c887
-> Pass count: 176
+> Last pass: 2026-10-01 at commit 85ef95ec
+> Pass count: 177
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 177 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/themes/the-cast-outgrew-the-format`, `/themes/best-comeback-seasons`,
+> `/shows`, `/shows/amazing-race/season/family-edition` anon;
+> `/themes/the-cast-outgrew-the-format`, `/shows/amazing-race/season/
+> family-edition`, `/u/e2e`, `/shows`, `/sign-in` authed — rotated onto
+> the two themed lists shipped/extended today (`the-cast-outgrew-the-
+> format`, `best-comeback-seasons`) and the Amazing Race Family Edition
+> season the new list references. Both passes came back mechanically
+> clean (0 console errors, 0 failed requests, 0 horizontal overflow on
+> either viewport, H1/canonical/OG present on every page); no spoiler
+> leakage anywhere (the one airing-season page sampled, RHONY S16,
+> correctly hedges with no verdict on an active season). Filed 2 new
+> findings (1 HIGH, 1 MED, 0 LOW): a HIGH self-contradiction on
+> `/shows/rhony/season/the-legacy-return` where "eight seasons away" (season
+> body, canon.md's own `slot_argument`, and the new `best-comeback-seasons`
+> theme entry) contradicts "eight years away" stated two lines later in
+> canon.md's own rationale prose for the same season — and the math backs
+> "years," not "seasons" (seasons 11-15 were skipped, a 5-season/8-year
+> gap, not an 8-season gap); and a fresh instance of the tracked
+> single-fact-owner-drift pattern on `/shows/amazing-race/season/
+> family-edition`, here as a near-verbatim duplicate paragraph (not just
+> restated facts) between the season body and canon.md's rationale.
+> Three other candidates were checked and correctly dropped as
+> already-tracked: the new theme's DWTS S35 entry repeating the "ties
+> Seasons 9/31" fact (reinforces the existing pass-174 Pending row), the
+> "Save (this device)" authed copy on theme pages (reinforces the
+> existing pass-175 Pending row), and `best-comeback-seasons`' lede
+> double-register metaphor (previously checked and dropped as
+> below-threshold). `?view=community` does not apply to theme routes
+> (no searchParams handling on that page family — confirmed from source,
+> not a defect). No pending HIGH findings remained open ahead of this
+> pass; the site continues to read clean on the P0 spoiler check.
 > Pass 176 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4579,6 +4614,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon] /shows/rhony/season/the-legacy-return — self-contradicting "eight seasons" vs. "eight years" for Carole Radziwill's absence, rendered on the same page
+
+- pass: 177 (commit 85ef95ec)
+- viewport: desktop
+- category: comprehension
+- observation: The season file's markdown body and `watch_list` entry state Carole Radziwill has been away "eight seasons," while `canon.md`'s own rationale paragraph for the same season states she's been away "eight years" — both render on the single `/shows/rhony/season/the-legacy-return` page (the body under the lede, the canon prose under "WHERE IT SITS IN THE CANON"), so a reader sees both claims in one scroll. `canon.md` even contradicts itself: its own `slot_argument` field says "eight seasons away" two lines before its body prose says "eight years away." The season-count math backs "years," not "seasons": her last full-time season was season ten, current is season sixteen, so only seasons eleven through fifteen (five seasons) separate them — an eight-year real-world gap (2018-2026), not an eight-season one. The incorrect "eight seasons" phrasing also propagates into the freshly-shipped `/themes/best-comeback-seasons` rank-13 entry blurb.
+- evidence: `content/shows/rhony/seasons/16-the-legacy-return.md:30` (body) — "Carole Radziwill's return after eight seasons away is the marquee hook"; same file's `watch_list` (line 23) — "an eight-season gap"; vs. `content/shows/rhony/canon.md:144` — "Carole Radziwill's return after eight years away is a real hook" (same file's own `slot_argument` at line 141 says "eight seasons away" — internally inconsistent with its own body paragraph two lines later). Also `content/themes/best-comeback-seasons.md:94` — "returns to full-time duty after eight seasons away."
+- suggested fix: Standardize on "eight years away" (the real-world-accurate, internally-consistent framing already used correctly in `canon.md`'s own body prose) across all four locations: the season file's markdown body, its `watch_list` entry, `canon.md`'s `slot_argument` field, and the `best-comeback-seasons.md` theme entry blurb. Content-only, three files, no schema change.
+- source: browser (critique-pass-177, anon)
+
+### [MED] [anon] /shows/amazing-race/season/family-edition — season body and canon.md rationale are a near word-for-word duplicate paragraph, rendered twice on the same page
+
+- pass: 177 (commit 85ef95ec)
+- viewport: desktop
+- category: voice
+- observation: Same defect class documented and fixed dozens of times elsewhere in the catalog (season-body paragraph vs. `canon.md` rationale paraphrase), fresh and previously unfiled on this page. Here it's unusually blatant: the middle two sentences are copied verbatim, not just paraphrased, with only bookend clauses differing.
+- evidence: Season body (`content/shows/amazing-race/seasons/08-family-edition.md`): "Ten teams of four — parents with their kids — ran an eleven-leg route that stayed almost entirely within the continental US, with short detours into Mexico, Costa Rica, and Canada. The four-person format crowded the vans and slowed the airport-to-airport rhythm the audience had come to expect. Phil Keoghan hosts with care. The experiment never returned." `canon.md` ("## 8. Family Edition"): "...Ten teams of four — parents with their kids — ran an eleven-leg route that stayed almost entirely within the continental US, with short detours into Mexico, Costa Rica, and Canada. The four-person teams crowded the vans and slowed the airport-to-airport rhythm the audience had come to expect, and the domestic route gave up the geographic argument the show relies on. Phil Keoghan hosts with care. The canon places it thirteenth because the experiment never returned..." Both render on the live page: the first under the H1 lede, the second under "WHERE IT SITS IN THE CANON" a few hundred pixels below.
+- suggested fix: Keep the season body as the sole owner of the route/format-crowding/host facts. Rewrite `canon.md`'s "## 8. Family Edition" rationale to argue the #13 canon slot comparatively (why it sits below Season 9's "reset" — which `canon.md` itself already frames as snapping back from "the Family Edition experiment" — and above/below its other low-canon neighbors) instead of re-deriving the same route/crowding sentence. Content-only, `content/shows/amazing-race/canon.md`.
+- source: browser (critique-pass-177, anon)
 
 ### [MED] [anon] /shows/survivor/season/survivor-51 — two headline facts each restated near-verbatim 3-5 times across the page
 
