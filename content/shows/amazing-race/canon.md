@@ -227,17 +227,19 @@ context is more interesting than the hour itself.
 
 tag: The format experiment the franchise pulled back from — historic, ungainly, never repeated.
 
-Family Edition sits at the bottom of the canon because the format
-does not run cleanly in the configuration this season delivers.
-Ten teams of four — parents with their kids — ran an eleven-leg
-route that stayed almost entirely within the continental US, with
-short detours into Mexico, Costa Rica, and Canada. The
-four-person teams crowded the vans and slowed the
-airport-to-airport rhythm the audience had come to expect, and
-the domestic route gave up the geographic argument the show
-relies on. Phil Keoghan hosts with care. The canon places it
-thirteenth because the experiment never returned — and the
-franchise's reluctance to retry it is the verdict.
+Family Edition's problem sits inside the format itself, not around
+it. Season 12 runs the franchise's standard two-person shape
+cleanly and loses ground only to a tightened, strike-era
+production calendar — an outside constraint, not a design flaw.
+Family Edition's four-person teams never fit race mechanics built
+for pairs, and the franchise has never tried the configuration
+again. That is exactly the kind of result this methodology
+rewards: a season that permanently narrows what the format is
+allowed to attempt outranks one that merely reruns an idea already
+proven, which is Unfinished Business's ceiling as the weaker of
+the franchise's two returnee outings. The experiment failed, but
+the failure settled a real question. A competent rerun settles
+nothing.
 
 ## 18. Unfinished Business
 
