@@ -24,6 +24,35 @@ that.
 
 ## Season gap table
 
+**Finale-shift drain, 2026-10-02 tick (cloud march): big-brother Season 28
+("Time Trip") filed — not a prior gap-table row.** The phase-39 finale gate
+fired on `big-brother` season 28 (finale aired 2026-10-01, per
+`content/calendar.yml`) and filed the standing `category: content-gaps,
+source: self` row in `plan/AUDIT.md`. Unlike the 90-day-fiance/alone/rhoa
+pattern, this show's frontmatter had not yet been bumped to declare the
+season (`seasons: 27`, matching the 27 filed season files), so it never
+appeared as a starred or unstarred row in this table — the gap only became
+visible once the calendar flagged the finale. Filed
+`content/shows/big-brother/seasons/28-time-trip.md` (premiere 2026-07-09,
+17 houseguests, a "BB Time Capsule" twist that revives a power or
+punishment from a past season each week, stacked with Block Buster and a
+final-five Pharaoh's Jewels twist, timed to land the franchise's 1,000th
+episode mid-season) and rebased `canon.md`: Time Trip inserted at rank 18,
+just below the Hacker Summer's single clean mechanic and just above A
+Summer of Mystery's own twist-stacked reskin — the historical-revival
+angle (turning 27 prior summers into this season's twist engine) is a
+conceptual swing the canon treats as a genuine first. `canonical_position`
+rewritten for the ten seasons from the old rank 18 through 27 (A Summer of
+Mystery, Houseguests vs. the AI, America's Player, Exes in the House, BB
+Takeover, Camp Comeback, Project DNA, the Pilot, MVP Summer, the Winter
+Couples), each shifting down one rank; `era_bands`' `streaming-era`
+widened to `[2019, 2026]`. Show frontmatter `seasons: 27 → 28`, blurb
+corrected to "28 seasons." Does not change the 37-shows/37-gap-slots count
+above — big-brother was never counted in that table. Spoiler discipline P0
+held: the season file and canon rationale name the twist mechanics and the
+1,000th-episode milestone only, no winner, elimination, or finale outcome
+anywhere.
+
 **Rule 2 drain (finale-shift), 2026-09-28 tick (cloud march, third same-day
 tick): 90-day-fiance 11/12 → 12/12, gap row removed.** Not a smallest-gap
 Rule 2 pick — every remaining gap-table row was starred (confirmed-but-
