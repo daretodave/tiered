@@ -1,182 +1,153 @@
-# DIGEST — 2026-10-01
+# DIGEST — 2026-10-02
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-Five clean `march` ticks since last night's briefing, zero
-dispatcher crashes, catalog flat. Rule 2 stayed fully stalled all
-window (37/37 gap-slots, every row starred confirmed-but-unaired
-except `the-voice`, still blocked behind #762), so the loop worked
-its fallback lanes: two Rule 3 themed-list extends (`the-cast-
-outgrew-the-format` gained a Dancing with the Stars S35 entry,
-`best-comeback-seasons` gained an RHONY S16 entry), a logged
-zero-ship Rule 3 research pass, critique pass 177 (2 findings — 1
-HIGH, 1 MED), and a content-gap redirect that closed the HIGH
-same-day (RHONY's "eight seasons" vs. "eight years"
-self-contradiction, standardized on the math-correct "eight years"
-across four files). **The red streak broke:** `e2e-full` posted
-**green** last night (01:48–03:03 UTC, 75m duration — the same wall
-candidate #34 targets, but this run finished clean inside it) after
-three consecutive red nights through 2026-09-30. Deploy is ready at
-HEAD `ffa844d9`. Catalog holds at **68 shows / 1,057 seasons / 68
-canons / 182 themes**.
+Five `march` ticks since last night's briefing, four clean and one
+timeout (06:11–07:44 UTC, same class as issue #565 — SDK call hit
+its 90-minute wall with no agent output, nothing to route). The
+four clean ticks shipped a content-gap redirect (RHONY's pass-177
+HIGH, closed same-day — see yesterday's briefing), a duplicate-
+rationale fix (Amazing Race Family Edition), a Big Brother Season
+28 finale-shift backfill (catalog's first new season since
+yesterday), and critique pass 178 (2 MED, 0 HIGH). `e2e-full`
+reverted to red overnight (02:00–03:18 UTC, 85.3% complete — 9,144
+of 10,719 tests — the same duration-ceiling wall candidate #34
+targets; last night's near-miss at 99.8% was the outlier, not a
+trend). Deploy is ready at HEAD `4e9f4272`. Catalog holds at **68
+shows / 1,058 seasons / 68 canons / 182 themes**.
 
-One correction to last night's briefing: the "83-row CRITIQUE.md
-pending queue" figure was wrong. A fresh, careful count this tick
-(the file mixes an older `- [ ]` checkbox format with a newer
-`### [SEV]` heading format introduced around pass-170+, and a naive
-grep undercounts the newer rows) puts the true open count at **55**
-(0 HIGH, 32 MED, 23 LOW), 7 of them `[needs-user-call]`. Noted here
-so the number doesn't propagate further; see Queues now below for
-the corrected baseline.
+One correction worth flagging: last night's "corrected" CRITIQUE.md
+pending count of 55 undercounted again. A fresh header-level count
+this tick (`### [SEV]` entries between `## Pending` and `## Done`)
+finds **87 headed findings**, only 5 of which carry an in-place
+resolved/closed marker — genuinely open is closer to **82** (1
+HIGH, 51 MED, 30 LOW). The file itself is now **7,114 lines**, up
+from 2,967 when candidate #29 (archive closed rows) was filed on
+2026-07-09 — the exact bookkeeping-accuracy risk that candidate
+named is compounding in real time. See Tuning proposals.
 
 ## While you were out
 
 | time (UTC) | commit | verb | outcome |
 |---|---|---|---|
-| 19:13 (09-30) | ff45c15d | content (Rule 3, zero-ship) | targeted re-pass on two newest seasons; no candidate cleared the excellence gate — logged, not silent |
-| 23:26 (09-30) | d67b507e, 0d0c5af1 | content (Rule 3) | themed-list extend — `best-comeback-seasons` gains rank-13 RHONY S16 entry (12→13 entries, 10→11 shows) |
-| — 01:48–03:03 | — | e2e-full (nightly) | **green** — breaks the three-night red streak, 75m duration (same wall as the red runs, this one finished clean) |
-| 02:24–02:25 | 9bfe503f, 85ef95ec | content (Rule 3) | themed-list extend — `the-cast-outgrew-the-format` gains rank-8 DWTS S35 entry (18→19 entries, 15→16 shows) |
-| 08:00 | c1042342 | critique | pass 177 — 2 findings (1 high, 1 med, 0 low) |
-| 16:02 | e479b844, ffa844d9 | content (gap redirect) | RHONY `the-legacy-return` "eight seasons" vs. "eight years" self-contradiction fixed same-day, closing critique pass-177's HIGH across 3 files |
+| 15:20–16:05 (10-01) | e479b844, ffa844d9 | content (gap redirect) | RHONY `the-legacy-return` "eight seasons" vs. "eight years" fixed — closes pass-177 HIGH same-day |
+| 20:29–21:23 (10-01) | 53485113, 031ec9a0 | content (gap redirect) | Amazing Race `family-edition` near-verbatim duplicate paragraph between season body and `canon.md` rationale — pass-178's precursor MED, closed |
+| 00:13–01:11 | 66c10e74, aeccb6ff | content (finale-shift) | Big Brother Season 28 ("Time Trip") filed — frontmatter bumped 27→28, canon rebased rank 18, 10 `canonical_position` shifts; not a gap-table row, caught by the phase-39 finale gate |
+| 02:00–03:18 | — | e2e-full (nightly) | **red** — 75-minute wall hit at 9,144/10,719 tests (85.3%), reverting last night's 99.8% near-miss; all completed checks passed, zero test-quality regression |
+| 06:11–07:44 | — | march (timeout) | SDK call hit the action's 90-minute wall with zero turns of output after init — same pattern as issue #565, routed there automatically, nothing for `/iterate` to action |
+| 13:10–13:20 | 4e9f4272 | critique | pass 178 — 2 findings (0 high, 2 medium, 0 low) |
 
-All 5 ticks shipped real work (one a deliberately logged zero-ship,
-not a silent no-op); no dispatcher crashes this window.
+4 of 5 `march` ticks shipped real work; 1 timed out with no output
+(known SDK-prompt-growth class, not a new failure mode).
 
 ## The saga
 
-**Rule 2 (season-fill drain):** fully non-actionable the entire
-window. Gap table unchanged at **37 shows / 37 gap-slots**; every
-row is starred confirmed-but-unaired except `the-voice`, still
-blocked behind issue #762's unresolved factual-corruption fix. Next
-sweep due 2026-10-04 — the only near-term lever that could reopen
-Rule 2 before then is a real air date crossing on an already-starred
-row.
+**Rule 2 (season-fill drain):** still fully non-actionable by its
+own gap table — every one of the 38 gap-table rows remains starred
+confirmed-but-unaired. Big Brother Season 28 shipped anyway, but
+through the separate phase-39 finale gate (the show's frontmatter
+hadn't yet declared the season, so it was never a gap-table row).
+Next weekly sweep due 2026-10-04.
 
-**Rule 3 (themed lists):** two genuine extends this window plus one
-honestly logged zero-ship. A narrow same-day re-pass first came back
-empty (90-day-fiance S12 and DWTS S35's headline facts already
-claimed elsewhere), then a widened net across the three
-most-recently-filed seasons cleared RHONY S16 ("The Legacy Return" —
-Carole Radziwill's full-time return onto a twice-overhauled cast,
-added to `best-comeback-seasons`) and DWTS S35 (record-tying 16-pair
-cast + first Olympic/Paralympic pairing, added to `the-cast-
-outgrew-the-format`). Alone S13 and Traitors S05 both dead-ended on
-the same pass (facts already staked elsewhere, or too close to
-existing framing).
+**Content-gap redirects:** two same-day closures this window,
+both following the established issue-#758 pattern — RHONY's
+internally self-contradicting "eight seasons"/"eight years" (pass-
+177 HIGH) and Amazing Race's duplicate rationale paragraph (a
+precursor to pass-178, same single-fact-owner-drift defect class
+fixed repeatedly across the catalog: ink-master, hells-kitchen,
+90-day-fiance S12, survivor-51).
 
-**Content-gap redirect:** same-day closure of critique pass-177's
-HIGH — RHONY's `the-legacy-return` season body, `watch_list` entry,
-and `canon.md`'s own `slot_argument` field all said "eight seasons
-away" for Carole Radziwill's absence, while `canon.md`'s own
-rationale prose two lines later said "eight years away" —
-internally self-contradicting within one file, and visibly
-contradicting within one page scroll. The math backs "years" (season
-ten to season sixteen is a five-season/eight-year gap): standardized
-on "eight years away" across all four locations, including the
-freshly-shipped `best-comeback-seasons` entry it had already
-propagated into. Followed the established content-gap-redirect
-pattern (issue #758) rather than hunting a third same-day Rule 3
-candidate.
+**Big Brother Season 28:** the first season filed since yesterday's
+briefing, timed to the franchise's 1,000th episode. Spoiler
+discipline held — twist mechanics and the milestone only, no
+outcome named anywhere in the file or canon rationale. Note:
+critique pass 178 immediately flagged this same page for restating
+the 1,000th-episode fact five times across five fields — see
+Queues now.
 
-**e2e-full breadth watch:** the three-night red streak (candidate
-#34's single-worker throughput ceiling) broke last night — the run
-finished **green** in 75 minutes, the same duration as the red
-nights but this time inside the wall rather than hitting it
-mid-suite. Candidate #34 itself is unchanged in substance (still a
-fixed single-worker ceiling, still needs sharding) — a green night
-doesn't retire the underlying fix, just means tonight's catalog size
-happened to clear it. Now **71 days unpromoted** since filing
-(2026-07-22), still the file's longest-lived open candidate.
+**e2e-full breadth watch:** back to red after one green night.
+9,144/10,719 (85.3%) complete at the 75-minute wall — worse than
+09-29's 86.1% and well off 09-30's 99.8% near-miss, confirming the
+near-miss was the outlier the 09-30 digest already called it, not
+a trend toward clearing the ceiling. Candidate #34 (shard the
+crawl) now **72 days unpromoted** (filed 2026-07-22).
 
-Catalog: **68 shows / 1,057 seasons / 68 canons / 182 themes** —
-flat overnight (both content ticks extended existing lists plus one
-same-day redirect fix; no new season or list filed, Rule 2 stayed
-dry).
+Catalog: **68 shows / 1,058 seasons / 68 canons / 182 themes** —
++1 season overnight (Big Brother S28); no new show (Rule 3 locked
+behind the gap table), no new theme.
 
 ## Queues now
 
-- **`plan/CRITIQUE.md`**: last pass 177 (2026-10-01, commit
-  c1042342), 2 new findings (1 HIGH — resolved same-day, 1 MED, 0
-  LOW). The HIGH (RHONY self-contradiction) closed same-day per the
-  content-gap redirect above; the MED (Amazing Race `family-edition`
-  — a near word-for-word duplicate paragraph between the season body
-  and `canon.md`'s rationale, unusually blatant) remains open.
-  **Corrected pending count: 55 open findings (0 HIGH, 32 MED, 23
-  LOW)**, 7 explicitly parked `needs-user-call` — see the Headline
-  correction above for why last night's "83" was wrong. Most of the
-  55 are single-surface content/voice fixes or a11y/SEO items
-  already well-scoped for `/iterate`.
-- **`plan/AUDIT.md`**: 8 open rows (7 non-content-gaps + the standing
-  content-gaps season-fill row) — 2 HIGH (`the-voice` factual
-  corruption #762, frozen since 2026-08-08; the historical
-  night.yml-starvation row), 1 standing MED (season-fill drain,
-  37/37, all starred), 1 MED (e2e-full duration-ceiling — green last
-  night, but the underlying ceiling candidate is unchanged), 2 LOW
-  (SERP description budget; `YEAR_TENURE_RE` teen-number gap), 1 LOW
-  (heartbeat false-positive #806, no recurrence since filing).
+- **`plan/CRITIQUE.md`**: last pass 178 (2026-10-02, commit
+  4e9f4272), 2 new MED findings (0 HIGH, 0 LOW) — a five-way
+  fact-repetition on the freshly-filed Big Brother S28 page, and a
+  stale "Featured for September" badge on `/themes` now that
+  October has started (third recurrence of this exact mechanism,
+  closed twice before at pass-103 and pass-168). **Pending count:
+  87 headed findings, ~82 genuinely open** (1 HIGH, 51 MED, 30 LOW)
+  — see Headline correction; last night's "55" figure undercounted.
+- **`plan/AUDIT.md`**: 8 open rows, unchanged in substance — 2 HIGH
+  (`the-voice` factual corruption #762, frozen since 2026-08-08;
+  the historical night.yml-starvation row, quiet since 09-07), 1
+  standing MED (season-fill drain, 38/38, all starred), 1 MED
+  (e2e-full duration-ceiling — back to red this tick, appended as
+  a fresh update), 2 LOW (SERP description budget;
+  `YEAR_TENURE_RE` teen-number gap), 1 LOW (heartbeat
+  false-positive #806, no recurrence since filing).
 - **`plan/PHASE_CANDIDATES.md`**: last `/expand` pass still 73
-  (2026-09-26, commit c66d6e53) — no new pass this window, 5 days
-  since last. Candidate #34 (shard e2e-full) crossed **71 days
-  unpromoted**; last night's green run is a relief reading, not new
-  evidence against the fix — still the standing `/oversight`
-  recommendation.
-- **Open `triage:needs-user`**: 9 issues, unchanged from yesterday —
-  #762 (the-voice) remains the oldest live urgency; several stale
-  from June–August (#398, #399, #565, #586, #758, #763, #777) plus
-  #817 (self-resolved digest crash from 09-25).
+  (2026-09-26) — 6 days since last, one past the loop's typical
+  cadence. Candidate #34 (shard e2e-full) at **72 days unpromoted**
+  with fresh red-run evidence; candidate #29 (archive closed
+  ledger rows) at **85 days unpromoted** with fresh evidence of its
+  own (see Headline).
+- **Open `triage:needs-user`**: 9 issues, unchanged from yesterday
+  — #762 (the-voice) remains the oldest live urgency.
 - **Open `triage:loop-queued`**: 5 issues, unchanged (#636, #754,
   #785, #787, #806).
-- **0 unlabeled open issues** — `/march` Step 1's triage sweep has
-  nothing waiting.
+- **0 unlabeled open issues.**
 
 ## Needs you
 
-1. **Candidate #34 (shard e2e-full) crossed 71 unpromoted days**,
-   still blocked on a `.github/workflows/e2e-full.yml` edit the
-   cloud loop cannot push (lacks the `workflows` OAuth scope). Last
-   night's run finished green, but that's the ceiling clearing by
-   margin on a flat-catalog night, not the fix landing — worth
-   promoting now rather than waiting for the next red night to force
-   the issue again.
-2. **the-voice factual corruption (issue #762) is still going
-   stale.** No comment since 2026-08-08. Still needs a
-   human-reviewed fix — can't ship from the loop given the blast
-   radius (8-file renumbering cascade + canon rebase) — and it's the
-   sole blocker keeping Rule 2 from fully draining the gap table.
-3. **9 open `triage:needs-user` issues**, several stale (oldest:
+1. **Candidate #29 (archive closed CRITIQUE.md/AUDIT.md rows) is
+   85 days unpromoted and the risk it named is now visibly
+   compounding** — the file has grown from 2,967 to 7,114 lines
+   since filing, and this tick's own pending-count exercise
+   rediscovered the undercounting problem the candidate predicted
+   (two consecutive nights now got the count wrong using the same
+   naive method). This is no longer a hypothetical read-ceiling
+   risk; it's an active bookkeeping-accuracy defect recurring
+   nightly.
+2. **Candidate #34 (shard e2e-full) crossed 72 unpromoted days**,
+   and tonight's run reverted to red at 85.3% complete after one
+   green night — the alternating pattern continues with no
+   structural fix landing. Still blocked on a workflow-file edit
+   the cloud loop's token can't push.
+3. **the-voice factual corruption (issue #762) is still going
+   stale** — no comment since 2026-08-08, still the sole blocker
+   keeping Rule 2 from ever reaching a fully-drained gap table even
+   hypothetically.
+4. **9 open `triage:needs-user` issues**, several stale (oldest:
    #398/#399 from 2026-06-11). Worth an `/oversight` sweep to close
    what's since been superseded.
-4. **55-row CRITIQUE.md pending queue** (32 MED, 23 LOW) is large
-   enough that a few high-leverage single-file fixes (the fresh
-   Amazing Race duplicate-paragraph MED, the `/themes`
-   heading-navigation a11y gap) are sitting open behind lower-value
-   rows purely by queue order. A scored sweep could surface the best
-   `/iterate` picks faster than sequential reading.
 
 ## Today's intent
 
-With Rule 2 fully starred and Rule 3 freshly mined (two extends
-landed this window), expect the next tick to pick up a well-scoped
-CRITIQUE finding — the fresh Amazing Race `family-edition`
-duplicate-paragraph MED (pass-177, same defect class fixed dozens of
-times elsewhere in the catalog) is the cleanest single-file pick
-sitting open. Top non-content signal: candidate #34's 71-day
-unpromoted mark (Needs you #1) is the single clearest case for an
-`/oversight` pickup — it's fully diagnosed, well-scoped, and blocked
-purely on OAuth scope the loop doesn't have.
+Rule 2 stays fully starred until the 10-04 sweep, so expect the
+next ticks to work CRITIQUE's queue — pass-178's two fresh MEDs
+are both clean single-surface fixes (the Big Brother fact-owner
+consolidation, the `/themes` featured-badge month rotation,
+already a known three-time-recurring curation gap). Top non-content
+signal: candidate #29's 85-day mark (Needs you #1) is now backed by
+same-tick evidence of the exact defect it predicted — the clearest
+`/oversight` pickup on the board, ahead even of candidate #34.
 
 ## Tuning proposals
 
-None filed tonight. No fresh gate-mistuning or starvation pattern
-surfaced this window — Rule 2/Rule 3 handed off cleanly, the
-content-gap-redirect pattern closed a same-day HIGH cleanly, and
-`/expand`'s cadence gates correctly stayed closed (no new pass due,
-5 days since pass 73). The e2e-full pattern is unchanged in shape
-from prior assessment — already fully diagnosed as candidate #34 —
-and last night's green run doesn't change that diagnosis, just
-confirms the ceiling is marginal rather than broken outright (see
-Needs you #1 for the promotion ask, not a new proposal).
+No new candidates filed tonight — both live signals already have
+filed, scored candidates (#29, #34) that this tick's pulse
+reinforces with fresh evidence rather than needing a new filing.
+Flagging both for `/oversight` promotion per Needs you #1 and #2;
+neither should be re-filed or re-scored, just picked up.
