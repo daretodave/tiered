@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-10-02
 featured: false
 related:
   - best-hosting
@@ -115,4 +115,10 @@ entries:
     rank: 17
     title: "One rotating construction brief carries the entire spinoff format."
     blurb: "Alone: The Skills Challenge drops wilderness endurance for a single hands-on brief each episode — shelter, bridge, trap — scored against three fixed criteria by a fellow alumnus. The season doesn't lean on a challenge twist. The challenge design is the entire format."
+  - show: survivor
+    season: 51
+    season_label: "S51"
+    rank: 18
+    title: "Any twist from the show's history can resurface, and that rule is the whole season."
+    blurb: "The premiere alone reportedly stacks seven twists pulled from six past seasons alongside three brand-new ones. The mechanic isn't a single advantage or a single episode gimmick — the format's entire back catalog becoming fair game, at any time, is the premise."
 ---
