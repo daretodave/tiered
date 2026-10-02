@@ -2,7 +2,7 @@
 show: big-brother
 number: 27
 title: A Summer of Mystery
-canonical_position: 18
+canonical_position: 19
 premiere_date: 2025-07-10
 ep_count: 39
 location: Studio City, California

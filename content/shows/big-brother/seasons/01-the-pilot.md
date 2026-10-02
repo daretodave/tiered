@@ -2,7 +2,7 @@
 show: big-brother
 number: 1
 title: The Pilot
-canonical_position: 25
+canonical_position: 26
 premiere_date: 2000-07-05
 ep_count: 70
 location: Studio City, California

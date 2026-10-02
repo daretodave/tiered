@@ -2,7 +2,7 @@
 show: big-brother
 number: 17
 title: BB Takeover
-canonical_position: 22
+canonical_position: 23
 premiere_date: 2015-06-24
 ep_count: 37
 location: Studio City, California
