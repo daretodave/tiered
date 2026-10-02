@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-03
+last_revised: 2026-10-02
 featured: false
 related:
   - milestones-spent-not-marked
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "A goddess statue starts handing out powers with a real cost attached."
     blurb: "Den of Temptation lets the public unlock three temptations across the summer, each one carrying a cursed trade-off the houseguest who takes it has to gamble on. The advantage is real, and so is the price for taking it."
+  - show: big-brother
+    season: 28
+    season_label: "S28 · Time Trip"
+    rank: 12
+    title: "A weekly trip into the vault risks a punishment, not just a missed power."
+    blurb: "The BB Time Capsule sends one houseguest, chosen by a viewer vote, into a vault each week. Clear the challenge and a power from a past season comes back into play; miss it, and the cost is a punishment pulled from the same archive instead."
 ---
