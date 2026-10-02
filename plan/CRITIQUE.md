@@ -1,33 +1,37 @@
 # CRITIQUE
 
-> Last pass: 2026-10-01 at commit 85ef95ec
-> Pass count: 177
+> Last pass: 2026-10-02 at commit aeccb6ff
+> Pass count: 178
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 177 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 178 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/themes/the-cast-outgrew-the-format`, `/themes/best-comeback-seasons`,
-> `/shows`, `/shows/amazing-race/season/family-edition` anon;
-> `/themes/the-cast-outgrew-the-format`, `/shows/amazing-race/season/
-> family-edition`, `/u/e2e`, `/shows`, `/sign-in` authed — rotated onto
-> the two themed lists shipped/extended today (`the-cast-outgrew-the-
-> format`, `best-comeback-seasons`) and the Amazing Race Family Edition
-> season the new list references. Both passes came back mechanically
+> `/shows/big-brother/season/time-trip`, `/shows`,
+> `/shows/rhony/season/the-legacy-return`, `/themes` anon;
+> `/shows/big-brother/season/time-trip`,
+> `/shows/amazing-race/season/family-edition`, `/u/e2e`, `/shows`,
+> `/sign-in` authed — rotated onto the freshly-filed Big Brother Season 28
+> "Time Trip" page (finale-shift drain, this tick) and two prior-pass fix
+> verifications (RHONY "eight years" HIGH, Amazing Race Family Edition
+> duplicate-rationale MED — both pass-177 findings, both confirmed
+> genuinely closed, not re-filed). Both passes came back mechanically
 > clean (0 console errors, 0 failed requests, 0 horizontal overflow on
-> either viewport, H1/canonical/OG present on every page); no spoiler
-> leakage anywhere (the one airing-season page sampled, RHONY S16,
-> correctly hedges with no verdict on an active season). Filed 2 new
-> findings (1 HIGH, 1 MED, 0 LOW): a HIGH self-contradiction on
-> `/shows/rhony/season/the-legacy-return` where "eight seasons away" (season
-> body, canon.md's own `slot_argument`, and the new `best-comeback-seasons`
-> theme entry) contradicts "eight years away" stated two lines later in
-> canon.md's own rationale prose for the same season — and the math backs
-> "years," not "seasons" (seasons 11-15 were skipped, a 5-season/8-year
-> gap, not an 8-season gap); and a fresh instance of the tracked
-> single-fact-owner-drift pattern on `/shows/amazing-race/season/
-> family-edition`, here as a near-verbatim duplicate paragraph (not just
-> restated facts) between the season body and canon.md's rationale.
+> either viewport, correct heading hierarchy, `/sign-in` 307-redirects an
+> authed session to `/`); spoiler discipline held on Big Brother Time Trip
+> (twist mechanics + the 1,000th-episode milestone only, zero
+> winner/eviction/outcome leakage, "no spoilers" badge + held-comment
+> copy both correct in the authed comment composer). Filed 2 new findings
+> (0 HIGH, 2 MED, 0 LOW): a fresh single-fact-owner-drift instance on
+> `/shows/big-brother/season/time-trip` — the "1,000th episode" milestone
+> fact is restated near-verbatim 5 times across the premiere caption, THE
+> TAKE, THE SHAPE OF THE SEASON, WHERE IT SITS IN THE CANON, and the
+> WATCH FOR mid-season bullet; and a recurrence of the `/themes`
+> "Featured for \<month\>" badge going stale against the page's own
+> "LISTS REVISED" stat (same mechanism as the pass-103 and pass-168
+> closures — the three currently-featured themes' `last_revised` tops out
+> at September 17, so the badge reads "Featured for September 2026" while
+> the ambient stat two rows below reads "October 2026 · LISTS REVISED").
 > Three other candidates were checked and correctly dropped as
 > already-tracked: the new theme's DWTS S35 entry repeating the "ties
 > Seasons 9/31" fact (reinforces the existing pass-174 Pending row), the
@@ -4614,6 +4618,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/big-brother/season/time-trip — the "1,000th episode" milestone fact is restated near-verbatim 5 times across the page
+
+- pass: 178 (commit aeccb6ff)
+- viewport: desktop
+- category: voice
+- observation: The franchise's-1,000th-episode fact appears in five distinct fields on the same page, each near-verbatim: the `premiere_caption` meta ("CBS · the franchise's 1,000th episode aired mid-season"), the `pull`/THE TAKE quote ("lands its milestone episode in the middle of a season built to look backward on purpose"), the `eyebrow` ("the franchise's 1,000th episode"), the `watch_list` mid-season entry (episode_label "Mid-season · the 1,000th episode" + body "Big Brother airs the first 1,000th episode of any US primetime series mid-run"), and the season body text ("a mid-season milestone in the show's 1,000th [episode]"). Same single-fact-owner-drift defect class fixed repeatedly elsewhere in the catalog (ink-master, hells-kitchen, 90-day-fiance S12, survivor-51, amazing-race Family Edition), fresh here on a page filed this same tick.
+- evidence: `content/shows/big-brother/seasons/28-time-trip.md` — `eyebrow` (line 10), `pull` (line 12), `premiere_caption` (line 18), `watch_list` episode_label + body (lines 30-31), body text (line 41) all carry the "1,000th episode" fact.
+- suggested fix: Let one field own the fact in full — the `watch_list` mid-season entry is the natural owner since it's the most specific (names it as a first for any US primetime series). Trim the `eyebrow`, `pull`, `premiere_caption`, and body text to reference the milestone obliquely (e.g. "landed mid-season," "arrives at a real production milestone") rather than re-deriving the "1,000th episode" phrase each time. Content-only, `content/shows/big-brother/seasons/28-time-trip.md`.
+- source: browser (critique-pass-178, anon)
+
+### [MED] [anon] /themes — the "Featured this month" strip's badge reads "Featured for September 2026" while the site is now well into October
+
+- pass: 178 (commit aeccb6ff)
+- viewport: desktop
+- category: comprehension
+- observation: `ListsFeaturedRow` derives its "Featured for \<month\>" label from the latest `last_revised` date across the three `featured: true` themes, by design (per the pass-24 #269 fix, to avoid build-time date drift). The three currently-featured themes (`best-location-reveals`, `been-here-before`, `same-crown-new-price-tag` — swapped in by the pass-168 closure on 2026-09-22) carry `last_revised` dates of 2026-09-13, 2026-09-17, and 2026-09-07, so the badge reads "Featured for September 2026" on an October 2 visit, while the page's own ambient stat block reads "October 2026 · LISTS REVISED" two rows below — the two claims disagree on the same page. Third recurrence of this exact mechanism (closed pass-103 on 2026-08-12, closed pass-168 on 2026-09-22); the underlying cause is unchanged — the featured rotation is curated by hand and drifts a month stale roughly every 3-5 weeks as the Rule 3 content drain keeps revising non-featured lists faster than the featured set rotates.
+- evidence: `src/components/lists/ListsFeaturedRow.tsx:31-34` (`canonRevisedLabelFromIso(latestFeaturedRevised(featured))`); `content/themes/best-location-reveals.md`, `been-here-before.md`, `same-crown-new-price-tag.md` carry `last_revised: 2026-09-13`, `2026-09-17`, `2026-09-07` respectively; overall catalog max `last_revised` across all themes is 2026-10-01.
+- suggested fix: Curator swap: pick three `featured: true` themes whose `last_revised` is genuinely within October (there are several September 27-October 1 revised themes in the catalog per the overall max), each authoring `featured_pull` per the STRICT `content-check` invariant per the pass-168 closure's own playbook. Content-only, `content/themes/*.md` frontmatter — no code change, the derivation logic itself is correct by design and has now proven correct across three closures. Worth considering whether this recurring ~monthly staleness warrants a standing cadence note in `plan/LISTS.md` so a future tick rotates the featured set proactively rather than waiting for critique to catch it each time.
+- source: browser (critique-pass-178, anon)
 
 ### [HIGH] [anon] /shows/rhony/season/the-legacy-return — self-contradicting "eight seasons" vs. "eight years" for Carole Radziwill's absence, rendered on the same page
 
