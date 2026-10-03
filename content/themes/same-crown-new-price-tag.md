@@ -7,7 +7,7 @@ category: structure
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-09-07
+last_revised: 2026-10-03
 featured: true
 featured_pull: "Ten seasons where the format held steady but what winning actually paid out — cash, credit, a shared pot — got rewritten mid-run."
 related:
@@ -116,4 +116,10 @@ entries:
     rank: 17
     title: "A new women's bracket adds a second prize alongside the standing payout."
     blurb: "The field's top four women face off in a single-elimination round worth an extra $50,000, stacked on top of the show's usual $250,000 champion purse instead of replacing it."
+  - show: survivor
+    season: 51
+    season_label: "S51"
+    rank: 18
+    title: "A coin flip lets any castaway grow the season's prize pot mid-game."
+    blurb: "Survivor 51 adds a Million Dollar Coin Toss: any castaway can trigger it to push the prize pot from one million toward two. For the first time, growing the money on the line becomes a decision a player makes mid-game, not a fixed number set on day one."
 ---
