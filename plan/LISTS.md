@@ -12255,3 +12255,69 @@ last time a curator actually looked.
   price-tag.md` (new entry, `last_revised` bump to 2026-10-03),
   `plan/LISTS.md` (ledger row + this note). Next unlock: a new season
   landing via Rule 2, or the next weekly sweep.
+
+- **2026-10-03, `/march` cloud tick (`/ship-content` Rule 3 dispatch,
+  second same-day invocation): zero-ship.** Re-verified both standing
+  blockers fresh rather than trusting the prior pass's cache:
+  `plan/CADENCE.md`'s gap table still reads 37 shows / 37 gap-slots,
+  every row starred confirmed-but-unaired except `the-voice` (blocked
+  behind open issue #762, left untouched per the standing
+  instruction) — Rule 2 stays non-actionable. No ledger row clears
+  the 90-day review floor (oldest `last_reviewed` still
+  `survivor-pillars` at 2026-07-31). The immediately preceding same-day
+  tick had already exhausted the six freshest season files
+  (big-brother S28, dancing-with-the-stars S35, traitors S05,
+  amazing-race S38, rhony S16, survivor S51) down to one clean hit
+  (survivor S51, shipped to `same-crown-new-price-tag`); this pass
+  looked for different facets on those same seasons plus fresh ground
+  elsewhere, and came up empty on every lead chased. **amazing-race
+  S38** — tried its full Big Brother-alumni competing field (every one
+  of thirteen teams carries a former US houseguest) against
+  `familiar-faces-wrong-franchise`, which already stakes a materially
+  identical fact for this exact show: S31's rank-3 entry ("five
+  Amazing Race teams line up against three Survivor duos and three Big
+  Brother duos") already claims amazing-race's CBS-sibling-alumni-field
+  premise. S38 reads as the same mechanic taken to its logical extreme
+  (one franchise instead of two, every team instead of some), not a
+  materially distinct facet — too close to a duplicate to stake a
+  second time on the same list, confirmed via a full `show:
+  amazing-race` grep of the file. **the-challenge S01 "Road Rules All
+  Stars"** — its "charity prize" line (`lede`: "a charity prize on the
+  line") looked like a clean fit for `same-crown-new-price-tag`'s
+  reward-structure thesis, but a full-text check turned up the
+  identical fact already staked, essentially verbatim, as the rank-1
+  founding entry on `when-the-reward-pointed-somewhere-else`
+  ("MTV's Road Rules alumni chased missions... for a charity payout
+  instead of a personal one — the format's very first prize pointed
+  somewhere other than the winner's pocket"). Dead on arrival.
+  **rhodubai S02 "The New Addition"** — read the season file fresh for
+  anything left unclaimed; confirmed via six separate grep checks that
+  every stated fact (five-of-six-returning cast with the headcount
+  landing back at six, the full-cast Bali detour, the reunion staged
+  with the expanded lineup, the founding cast's pre-fame modeling
+  credentials, the relocated-wealth premise) is already staked across
+  `the-couch-kept-adding-chairs`, `away-from-home-turf` (twice, S01 and
+  S02), `best-reunion-specials`, `the-cast-arrived-pre-famous`, and
+  `wealth-as-the-whole-pitch`. Nothing left to stake. **americas-got-
+  talent S19 "The Klum Departure"** — its own `pull`/`lede` frame a
+  four-year-stable judging panel closing out right before Heidi Klum's
+  exit, which read promising for `when-the-chairs-turned-over`'s
+  panel-does-real-editorial-work thesis. Rejected on a close read of
+  the list's own prior logged search (2026-08-22 extend note, this
+  file): AGT S20 "The Anniversary Season" already stakes the mirror
+  image of this exact fact at `milestones-spent-not-marked` rank 11
+  ("a judging configuration that had run unchanged for four straight
+  seasons gets rebuilt") — S19 is the same four-years-stable-then-
+  change beat, told from the season before the rebuild instead of the
+  season of the rebuild itself, too close to re-stake under a
+  different anchor season. Also checked S19's two mechanical tweaks
+  (each judge gets a second Golden Buzzer; the Golden Buzzer becomes
+  available during the live shows for the first time, not just
+  auditions) against `a-way-back-in` (off-thesis — advancing a live
+  act isn't an eliminated-contestant comeback mechanic) and `the-
+  advantage-was-never-free` (off-thesis — no stated cost attached to
+  holding either buzzer); both too thin and too procedural, grounded
+  in a single watch_list bullet each, to carry a confident standalone
+  entry. No `content/themes/*.md` file written or edited this tick; no
+  ledger row changed besides this note. Next unlock is unchanged: Rule
+  2 filing a new season, or the next weekly sweep.
