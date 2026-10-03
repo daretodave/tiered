@@ -1,8 +1,41 @@
 # CRITIQUE
 
-> Last pass: 2026-10-02 at commit aeccb6ff
-> Pass count: 178
+> Last pass: 2026-10-03 at commit 73e68696
+> Pass count: 179
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 179 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/themes/best-challenge-design`, `/themes/the-advantage-was-never-free`,
+> `/shows`, `/themes` anon; `/shows/big-brother/season/time-trip`,
+> `/u/e2e`, `/sign-in`, `/themes/best-challenge-design`, `/shows`
+> authed — rotated onto the two freshly-shipped Rule 3 themed-list
+> extends (`best-challenge-design`, `the-advantage-was-never-free`) and a
+> re-check of the still-open pass-178 Big Brother Time Trip finding. Both
+> passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport, H1/canonical/OG
+> present on every capture); `/sign-in` confirmed a genuine server-side
+> 307 redirect for an already-authed session (not client-side chrome
+> swap only). Spoiler discipline held on both themed lists — all 30
+> combined entries (18 + 12) stayed at the format/mechanic level with
+> zero winner/eliminee/outcome leakage, including the exile-adjacent
+> Survivor Redemption Island / Edge of Extinction entries. Filed 0 new
+> findings this pass. The pass-178 MED ("1,000th episode" restated 5x on
+> Big Brother Time Trip) was reconfirmed still present via full rendered
+> `innerText` and intentionally NOT re-filed (already open, correctly
+> tracked). The `/themes` "Featured for September 2026" vs. "LISTS
+> REVISED October 2026" pass-178 MED is also reconfirmed still present
+> and not re-filed. Four other candidate observations on the authed pass
+> were checked against prior closures and correctly dropped as
+> already-resolved-by-design, not regressions: the zero-vote plain-tally
+> wording (pass-147 HIGH fix, intentional authed/anon split), the
+> device-scoped "Save (this device)" label (closed #272/#377), `/u/e2e`'s
+> crawler-only third-person meta description (pass-45 #1139, by design),
+> and the comment composer's "held briefly for review" microcopy (a
+> landed fix, not a new defect). No pending HIGH findings remained open
+> ahead of this pass; the site continues to read clean on the P0 spoiler
+> check.
 > Pass 178 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
