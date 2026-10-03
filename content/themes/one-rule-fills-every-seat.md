@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-13
+last_revised: 2026-10-03
 featured: false
 related:
   - when-the-cast-was-already-related
@@ -115,4 +115,10 @@ entries:
     rank: 17
     title: "Every seat goes to a contestant 5'7\" or shorter, no exceptions."
     blurb: "Fourteen models come in under one explicit height cap, with the international leg swapped for domestic-only stops the same cycle. The premise is airtight as a casting rule, but the show's own read is blunt: novelty over depth once the season plays out."
+  - show: traitors
+    season: 5
+    season_label: "S05"
+    rank: 18
+    title: "Every seat goes to a stranger with no camera history at all."
+    blurb: "No reality alumni, no celebrities — the full twenty-two-player cast comes from a reported 80,000-plus applicants, a first for a franchise built on familiar faces. The castle and the game stay the same. Who's allowed to play doesn't."
 ---
