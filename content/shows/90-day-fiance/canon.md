@@ -87,7 +87,7 @@ tag: The first all-new cast since Season 6 — the comeback device set aside for
 slot_argument: Ranks below Season 6's own all-new-cast bookend, but above Season 9's crossover first, because resetting years of comeback casting outweighs adding one more migrating couple to a familiar lineup.
 community_rank_hint: rank=7 delta=0 sentiment=hold
 
-Season twelve answers the question season six's canon entry raised years ago: does the format still work without any returning or crossover couples to lean on? Seven entirely new couples run the visa clock with zero built-in audience history, the first time that's happened since 2018 — six straight seasons had folded in at least one comeback or crossover pairing before this one set the device aside. That's not a structural first in the way the throuple casting or the seven-couple ensemble were, but reversing a six-season trend on purpose is a real editorial swing, not a coast. The canon ranks it seventh, just below the season it's answering and just above the crossover device it temporarily retires.
+Season twelve answers a question season six's canon entry raised years ago. Seven entirely new couples run the visa clock with zero built-in audience history, the first time that's happened since 2018 — six straight seasons had folded in at least one comeback or crossover pairing before this one set the device aside. That's a smaller structural move than the throuple casting or the seven-couple ensemble, both genuine firsts for the format. But reversing a six-season casting trend on purpose still counts as a real editorial choice. The canon ranks it seventh, just below the season it's answering and just above the crossover device it temporarily retires.
 
 ## 9. Season 9 (2022)
 
