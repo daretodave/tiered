@@ -12470,3 +12470,67 @@ last time a curator actually looked.
   (new entry, 15 renumbered ranks, `last_revised` bump to 2026-10-03),
   `plan/LISTS.md` (ledger row + this note). Next unlock: a new season
   landing via Rule 2, or the next weekly sweep.
+
+- **2026-10-03 — fifth same-day Rule 3 pass, zero-ship.** Rule 2 and
+  the 90-day review floor remain non-actionable (same state the fourth
+  pass above left them in — no ledger row clears review, no canon
+  gap is fillable). Picked up the brief's named thread first:
+  amazing-race S38's Double U-Turn Vote. Read
+  `content/shows/amazing-race/seasons/38-season-38.md` in full — the
+  season carries three distinct format facts (a Big Brother US
+  crossover cast, a new U-Turn penalty for teams that survive a
+  non-elimination leg, and the Double U-Turn Vote itself: a private
+  ballot with a public reveal mid-route). Grepped
+  `show: amazing-race` + `season: 38` across every
+  `content/themes/*.md` and found all three already staked, each at
+  a clean editorial home: the crossover cast at
+  `the-roster-was-the-twist` rank 1; the U-Turn-penalty-plus-Double-
+  U-Turn-Vote pairing verbatim at `best-challenge-design` rank 16
+  ("A U-Turn penalty now follows a team that survives a
+  non-elimination leg, paired with a new Double U-Turn Vote — a
+  private ballot, public reveal mid-route."); the merger-timing
+  premiere fact at `the-company-upstairs-changed-hands` rank 15. No
+  facet of S38 is left unstaked — this thread is fully closed, not
+  just mid-research.
+
+  With that thread closed, ran a fresh sweep of every season with a
+  2025 or 2026 `premiere_date` across the catalog (grepped
+  `content/shows/**/seasons/*.md`) rather than re-touching the
+  dead-ends the fourth pass already logged. Checked, and rejected,
+  every candidate turned up: americas-got-talent S21's double Golden
+  Buzzer (single-show dead end, logged previously at the twenty-sixth
+  Rule-3 pass note); alone S13 and masterchef S16's international-
+  cast facts (both already the backbone of `one-season-two-flags`,
+  whose own thesis — a casting call that crosses its usual national
+  line — pre-empts the angle entirely, down to using these same two
+  seasons); survivor-australia S12's Redemption Beach twist and host
+  handoff (staked at `a-way-back-in` rank 7 and `the-mic-changed-
+  hands` rank 18 respectively); alone-australia S04's Arctic-first
+  location (staked at `best-location-reveals` rank 11); american-idol
+  S24's single-venue Nashville consolidation and voting-app
+  retirement (staked at `the-open-call-built-the-format` rank 1 and
+  `the-vote-left-the-phone-line` rank 8); dragrace S18 (exhaustively
+  staked across six separate lists — grandmother-granddaughter
+  casting, finale restructure, and more, nothing left ungrounded);
+  90-day-fiance S12's all-new-cast-since-S6 fact (staked verbatim at
+  `the-clock-had-to-make-room` rank 12); traitors-uk S04's Uncloaked
+  aftershow (staked at `the-broadcast-wasnt-the-whole-show` rank 7);
+  hells-kitchen S24's one-chef-per-state casting and ink-master S17's
+  four-finalist finale (both staked at multiple lists apiece). Three
+  more candidates yielded nothing stakeable at all: love-is-blind S10
+  is pure quality assessment with no structural fact; bake-off S16's
+  own frontmatter calls itself the format's "least distinctive"
+  season with "no format news"; naked-and-afraid S18/S19 and
+  survivor-australia S10 offered only a longevity note and a
+  host-farewell fact too close to the already-staked S12 handoff
+  entry to clear a fresh angle. One candidate — married-at-first-
+  sight-australia S13 — was set aside on sensitivity grounds (a cast
+  member's real death during the broadcast window) rather than
+  format-fit; not pursued as list material regardless of overlap
+  status.
+
+  No ledger row updated, no `content/themes/*.md` file touched this
+  tick — nothing cleared the excellence gate's distinct-angle test
+  without duplicating an existing stake. Next unlock: a new season
+  landing via Rule 2, or the next weekly sweep surfacing a season not
+  yet checked against this ledger.
