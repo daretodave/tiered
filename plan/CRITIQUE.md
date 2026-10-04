@@ -4771,6 +4771,7 @@
 - evidence: "does the format still work without any returning or crossover couples to lean on?" ... "That's not a structural first in the way the throuple casting or the seven-couple ensemble were, but reversing a six-season trend on purpose is a real editorial swing, not a coast." — `content/shows/90-day-fiance/canon.md`, Season 12 entry.
 - suggested fix: Split into two plain declarative sentences; drop the "editorial swing, not a coast" metaphor and the rhetorical question, and state the comparison to the throuple/seven-couple firsts directly.
 - source: web-fetch (critique-pass-175, anon)
+- resolved (2026-10-04, cloud march tick, content-gap redirect — standing season-fill row stalled on Rule 2 and Rule 3 both exhausted for the day, per `plan/AUDIT.md` row 31's progress log). Rewrote the rationale: dropped the rhetorical question and the clause-stacked sports-metaphor sentence, split into two plain declaratives that compare directly against the throuple casting and seven-couple ensemble firsts. 106 words (floor 80-120). Commit d3fc2415.
 
 ### [LOW] [anon] /shows/90-day-fiance/season/season-12 (mobile) — the "no returning couples" fact is restated near-verbatim across three consecutive page sections
 
@@ -4781,6 +4782,7 @@
 - evidence: "01 THE TAKE — No comeback couples to lean on, for the first time in years. Seven strangers-to-the-audience couples, the comeback device set aside for one season." followed immediately by "02 THE SHAPE OF THE SEASON — Seven couples, zero returning faces. Season twelve resets the flagship to a fully new cast: seven couples, none returning or crossing over from a prior season..." — all three clauses restate the identical fact.
 - suggested fix: Let "THE TAKE" carry the single fact alone; open "THE SHAPE OF THE SEASON" with a different angle (episode count, premiere timing, or the Tell All structure) before circling back to cast-freshness. This is the fourth+ instance of this defect class this month — pass-174 already floated a systemic fix (a `content-check` invariant flagging the same clause repeated ≥4 times across a season's editorial fields); worth promoting from "consider" to "do" if a fifth instance appears.
 - source: browser (critique-pass-175, authed)
+- resolved (2026-10-04, cloud march tick, content-gap redirect — same tick as the adjacent pass-175 canon.md fix above). Gave `shape_h2` + the body's opening sentence their own angle (episode count + Tell All structure — "Eighteen episodes, closing with a three-part Tell All in September 2026") instead of restating "zero returning faces," which `take_h2`/`pull` already own. Body circles back to the cast-freshness fact in its second sentence, matching the convention `take_h2`/`pull` already use for their owned fact. Commit d3fc2415.
 
 ### [LOW] [authed] /themes/the-clock-had-to-make-room — the save button reads "Save (this device)" even for a signed-in reader, with no indication the save is (or isn't) tied to the account
 
