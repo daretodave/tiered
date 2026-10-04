@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-09-27 | next due 2026-10-04 |
+| season-sweep | 7 days | 2026-10-04 | next due 2026-10-11 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,49 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Thirteenth full weekly sweep, 2026-10-04 tick (cloud march, Rule 1a):** 6
+`scout` batches (≤12 shows each) covered every one of the 68 catalogued
+shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
+filed season files — zero mismatches this tick, every show's declared
+count equals its filed-season-file count).
+
+**Stale row removed.** `big-brother` was still physically carried in the
+table below at `27/28 | 1*` even though the 2026-10-02 finale-shift drain
+(see entry below) bumped the show to `seasons: 28` and filed the season
+three ticks ago — that tick's own narration incorrectly assumed the row
+had never existed, so the physical removal never happened. Removed now;
+the show is fully drained at 28/28.
+
+**One genuine new gap found.** `rhobh` (Real Housewives of Beverly Hills)
+— Season 16 is in active casting with named returning cast (Leah Remini,
+Tracy Tutor) confirmed per Deadline, Aug 2026; no premiere date announced
+yet. Added as `rhobh | 15/16 | 1*`.
+
+**Reconfirmed non-gaps (recurring, already-resolved patterns — not
+reopened).** `chopped`'s third-party "Season 63/64" indexing artifact
+resurfaced again in this tick's scout batch — Food Network's own
+62-season numbering stays authoritative, already closed by an earlier
+tick (see the Chopped entry further below); no action. Every other
+already-starred, currently-airing or confirmed-but-unaired row this
+tick's scouts touched — `amazing-race` S39, `bake-off` S17, `below-deck`
+S13 (premieres 2026-10-12), `dragrace-uk` S8, `rhoc` S20, `rhoslc` S7,
+`shark-tank` S18, `the-challenge` S42, `hells-kitchen` S25/26,
+`love-is-blind` S11 (premieres 2026-10-14), `rhop` S11 (premieres
+2026-10-11), `the-voice` S30 (still blocked on issue #762) — remains
+mid-run or unaired, none concluded; no star changes.
+
+**Calendar additions.** Two newly-confirmed, precisely-dated finales not
+yet in `content/calendar.yml`, added as `status: scheduled`:
+`dancing-with-the-stars` S35 (finale 2026-11-24, per Wikipedia/TVInsider)
+and `love-is-blind` S11 (finale 2026-11-04, weekly Netflix drop schedule
+per Wikipedia). Both will surface via the phase-39 finale gate once their
+dates pass.
+
+**68 shows catalogued · 37 shows carry a gap · 39 gap-slots total**
+(36 shows / 38 gap-slots before this tick's edits − 1 stale `big-brother`
+row removed + 1 new `rhobh` row added = net even on count, but the
+removal/addition pair corrects the catalog's true state).
 
 **Finale-shift drain, 2026-10-02 tick (cloud march): big-brother Season 28
 ("Time Trip") filed — not a prior gap-table row.** The phase-39 finale gate
@@ -1411,7 +1454,6 @@ new-show creation is locked to the biweekly show-add clock.
 | below-deck | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
 | the-challenge | 41/42 | 1* |
-| big-brother | 27/28 | 1* |
 | bachelor | 29/30 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
@@ -1442,6 +1484,7 @@ new-show creation is locked to the biweekly show-add clock.
 | survivor-australia | 12/13 | 1* |
 | married-at-first-sight | 20/21 | 1* |
 | love-island-uk | 13/14 | 1* |
+| rhobh | 15/16 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23

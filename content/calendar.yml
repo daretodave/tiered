@@ -100,3 +100,11 @@ finales:
     season: 16
     finale_date: 2026-09-17
     status: aired
+  - show: dancing-with-the-stars
+    season: 35
+    finale_date: 2026-11-24
+    status: scheduled
+  - show: love-is-blind
+    season: 11
+    finale_date: 2026-11-04
+    status: scheduled
