@@ -9,10 +9,96 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-09-26 at commit c66d6e53
-> Pass count: 73
+> Last pass: 2026-10-04 at commit 6d1d104e
+> Pass count: 74
 
 ## Considered (awaiting promotion)
+
+<!-- Pass 74 (2026-10-04, cloud march) — 0 new phase-shape candidates filed.
+     No reinforcements — the one candidate with fresh same-day evidence
+     (#29, append-only-ledger file-size wall) was already reinforced hours
+     earlier in this same calendar day by the night-shift `/digest` run
+     (commit 6d1d104e) with the sharper 256KB-Read-tool-failure numbers
+     across all three affected files (CRITIQUE.md 2.29MB, AUDIT.md 1.27MB,
+     newly-named LISTS.md 1.27MB) — re-reinforcing again this pass would
+     only restate the same evidence digest already filed same-day, the
+     exact "don't reinforce twice in one day on no new information" logic
+     pass 73 already applied to #34.
+     Window since pass 73 (c66d6e53, 2026-09-26T02:07:26Z): 77 commits /
+     ~8.7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last run this same calendar day, 2026-10-04,
+     13th full pass; next due 2026-10-11); show-add stays LOCKED (37
+     shows / 39 gap-slots, all starred, non-zero). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (180) landed the same calendar day at
+     commit 9999e538's sibling e20e428b, only 4 commits before this tick
+     and well under the 24h spacing floor — both thresholds failed. Step
+     3a/3b empty (no pending phase rows, no Pending `category: data` AUDIT
+     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was not
+     redispatched this tick: today's own weekly sweep (9999e538) and five
+     same-day Rule 3 research/extend ticks (ending at 2798e873/f57c45e6,
+     ~3 hours before this tick started) had already exhaustively
+     re-confirmed the CADENCE gap table fully starred (Rule 2 non-
+     actionable) and walked every 2025/2026-premiere-season candidate
+     against the Rule 3 excellence gate with nothing clearing it — the
+     `plan/LISTS.md` notes block explicitly logs "next unlock: a new
+     season landing via Rule 2, or the next weekly sweep," neither of
+     which had happened again in the ~3 hours since. Re-running that exact
+     same search against identical state would only reproduce the same
+     null result a sixth time today, so this tick treated content as
+     already answered and fell through to `/expand`'s own gate, which
+     opened independently (posture bold, 77 commits / ~8.7 days since pass
+     73 — both thresholds clear well past the 20-commit/48h floor, live
+     AUDIT.md + CRITIQUE.md signal present, no phase/data work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): same 5 real rows as
+       pass 73's review (`YEAR_TENURE_RE` teen-number gap → #40, e2e-full
+       duration-ceiling → #34, the-voice factual corruption → #36,
+       night.yml digest-starvation → #35, heartbeat false-positive → #39),
+       unchanged in substance. #34's source row picked up ~14 more nightly
+       digest updates since pass 73 (63 → 75 days unpromoted, the
+       alternating breach/green pattern holding with "no clear trend
+       either direction") but no new scope information — matches pass
+       73's own reasoning for skipping a reinforcement 3 days after pass
+       72's; this pass is 8 days past pass 73's note with the identical
+       story, so left unreinforced again rather than restating the same
+       "still the file's longest-unpromoted candidate" line a third time
+       in the candidates file itself (the nightly digest already carries
+       that drumbeat in `plan/AUDIT.md` and `plan/DIGEST.md`). #36
+       (the-voice) unchanged since 2026-08-08 triage labeling, still
+       correctly parked `needs-user`, issue #762 still open.
+     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 73.
+       All seven are `[needs-user-call]` rows already correctly parked
+       for a human `/oversight` session (home-page mobile catalog list,
+       `/shows` B-tier×2 — inside candidate #30, `/themes` stat-chip
+       date-vs-count ambiguity, `/u/[handle]` own-profile bareness, pass-96
+       show/season/theme Cache-Control split — part (a) already filed as
+       #41, part (b) still needs-user) or a single-surface content tweak
+       (two-themed-list entry-concentration note, LOW, not a cluster). No
+       new pass numbers beyond what existing candidates already cite.
+     - `spec.md` / `design/`: no diff since pass 73
+       (`git log --oneline c66d6e53..HEAD -- spec.md design/` empty on
+       both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+       `triage:loop-queued` shows 5 open (#806 heartbeat → #39, #787/#785
+       e2e vote-state-pill cross-spec flake → both RESOLVED ae97eb95
+       2026-08-23 per `plan/AUDIT.md`'s own closure notes but never
+       issue-closed, #754 a stale content-ship mirror tracking issue with
+       no new information) — identical set and identical disposition to
+       several prior passes' review of the same four issues (first
+       flagged as already-resolved-but-dangling as far back as pass 62);
+       not filed as a fresh candidate since multiple prior passes already
+       looked at this exact pattern with no new evidence and chose not to
+       escalate it — no reason to reverse that call on the same facts.
+       `triage:needs-user` shows 9 open, no new cluster pattern vs. prior
+       passes' counts.
+     - Commit pattern since pass 73: 77 commits, near-entirely the
+       standard content-gap (season-sweep/Rule-3-extend/zero-ship) +
+       critique + digest cadence — no cluster suggesting an unplanned
+       surface.
+-->
 
 <!-- Pass 73 (2026-09-26, cloud march) — 1 new phase-shape candidate filed
      (#41, show-page ISR + client-hydrated ranking widget). No reinforcements
