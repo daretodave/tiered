@@ -1,8 +1,46 @@
 # CRITIQUE
 
-> Last pass: 2026-10-03 at commit 73e68696
-> Pass count: 179
+> Last pass: 2026-10-04 at commit 9999e538
+> Pass count: 180
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
+> Pass 180 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/themes/season-one-doesnt-own-every-first`,
+> `/themes/the-matching-experts-never-sit-still-for-long`, `/shows`,
+> `/themes`, `/shows/big-brother/season/time-trip` anon;
+> `/shows/big-brother/season/time-trip`, `/u/e2e`, `/sign-in`,
+> `/themes/season-one-doesnt-own-every-first`, `/shows` authed —
+> rotated onto the two freshly-shipped Rule 3 themed-list extends
+> (`season-one-doesnt-own-every-first`,
+> `the-matching-experts-never-sit-still-for-long`). Both passes came
+> back mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, H1/canonical/OG present on
+> every capture); `/sign-in` confirmed a genuine server-side redirect
+> for an already-authed session; auth chrome (`@e2e` account menu,
+> vote-pair `signed-in-no-vote` state with `aria-live`, comment
+> composer) all rendered correctly. Spoiler discipline held on both
+> themed lists — zero winner/eliminee/outcome leakage. One candidate
+> HIGH finding was investigated and dropped as a false positive: the
+> reader flagged Married at First Sight S14 ("Boston II")'s lede/theme
+> blurb saying the panel "carries over unchanged from Houston" as
+> contradicting the city-return framing ("returns to Boston... since
+> Season 6") — re-verified against `content/shows/married-at-first-sight/
+> seasons/13-houston.md` and the two clauses refer to different things
+> (the *city* returns to Boston, last seen in S6; the *panel/format*
+> carries over from the immediately-preceding S13, titled "Houston") —
+> coherent, not an error. A second candidate (authed empty comment
+> thread on the Big Brother season page) was also dropped — `CommentThread.tsx`'s
+> own docstring (pass-36 #335, pass-42 #362) documents the missing
+> empty-state line as intentional design, already adjudicated across
+> multiple prior passes. One new LOW finding filed: adjacent ranks #7/#8
+> on `the-matching-experts-never-sit-still-for-long` both lean on the
+> identical "last season ... together" construction in headline and
+> closing blurb line, back-to-back — the recurring near-verbatim-phrase
+> defect class this catalog has flagged before. No pending HIGH findings
+> remained open ahead of this pass; the site continues to read clean on
+> the P0 spoiler check.
 > Pass 179 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
@@ -4651,6 +4689,16 @@
 > findings deduped by message.
 
 ## Pending
+
+### [LOW] [anon] /themes/the-matching-experts-never-sit-still-for-long — adjacent ranks #7/#8 both lean on the identical "last season ... together" construction
+
+- pass: 180 (commit 9999e538)
+- viewport: desktop
+- category: voice
+- observation: Rank #7 (Atlanta, S03) headline reads "The founding four run their last season together," closing with "...the last season before Miami rebuilds the table around a single holdover." Rank #8 (Philadelphia, S08), rendered immediately after, headline reads "A second straight hold turns out to be the panel's last together," closing with "...this is the last season this exact panel sits at the table together." Two consecutive entries landing on the same "last ... together" word pair in both headline and closing line reads as the editorial voice repeating itself rather than varying the framing — the recurring near-verbatim-phrase defect class this catalog has flagged and fixed many times before on other lists/shows.
+- evidence: `content/themes/the-matching-experts-never-sit-still-for-long.md:56-57` (rank 7) and `:62-63` (rank 8), rendered back-to-back on the live page.
+- suggested fix: Vary rank #8's closer so it doesn't restate "last ... together" right after rank #7 uses the same pairing — e.g. "this panel never sits at this table again" or similar. Content-only edit to one blurb field.
+- source: browser (critique-pass-180, anon)
 
 ### [MED] [anon] /shows/big-brother/season/time-trip — the "1,000th episode" milestone fact is restated near-verbatim 5 times across the page
 
