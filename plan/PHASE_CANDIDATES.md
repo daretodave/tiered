@@ -3939,6 +3939,26 @@ the file. 57 days unpromoted since original filing (07-09), 40 days since
 the last reinforcement — recommend leading the next `/oversight` session
 with this one, alongside #35.
 
+**Update (digest 2026-10-04):** the ceiling-breach class has moved from a
+token-count problem to a hard tool-level file-size wall. `plan/CRITIQUE.md`
+is now 7,195 lines / 2.29MB; `plan/AUDIT.md` is 705 lines / 1.27MB. Both
+fail a plain `Read` outright tonight with "File content exceeds maximum
+allowed size (256KB)" — not the 25K-token ceiling cited at every prior
+reinforcement, a different and stricter limit, meaning every one of this
+file's own past growth numbers understated how bad the read-ceiling has
+gotten (1.27MB and 2.29MB are 5x and 9x the 256KB wall, not just over a
+token budget). New file hitting the identical class for the first time:
+`plan/LISTS.md` (the Rule-3 ledger, not named in this candidate's original
+scope) is now also 1.27MB / 184 rows and fails the same `Read` call —
+confirms this is a structural pattern across every append-only ledger the
+loop writes to, not just the two files filed against. Scope-widening note
+for whenever this ships: `plan/LISTS.md` needs the same archive-or-prune
+treatment (e.g. move fully-reviewed, long-stable rows to a `LISTS_ARCHIVE.md`
+or compress old review notes to one line) or it will hit this exact wall
+next. 87 days unpromoted since original filing (07-09), 30 days since the
+last reinforcement (pass 68, 09-04) — three files now in the same broken
+state this candidate was filed to fix.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
