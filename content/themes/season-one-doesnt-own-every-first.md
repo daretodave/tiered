@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-22
+last_revised: 2026-10-03
 featured: false
 related:
   - firsts
@@ -115,6 +115,12 @@ entries:
     rank: 17
     title: "Eleven seasons in, Beverly Hills casts its first Asian American Housewife."
     blurb: "Crystal Kung Minkoff's arrival lands the same season Sutton Stracke is promoted from friend of the group to full cast member — the biggest configuration shift of the franchise's later run, arriving well after the show had already found its footing."
+  - show: dancing-with-the-stars
+    season: 35
+    season_label: "S35 · Fall 2026"
+    rank: 18
+    title: "A pro dancer, competing pregnant, becomes a series first."
+    blurb: "Thirty-five seasons into the format's run, one professional partner competed while pregnant — a milestone the show had never fielded before. The record-tying sixteen-couple cast got the headlines; this personal first quietly matched it."
 ---
 
 # Season one doesn't own every first
