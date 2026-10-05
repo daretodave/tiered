@@ -1,20 +1,36 @@
 # CRITIQUE
 
-> Last pass: 2026-10-04 at commit 9999e538
-> Pass count: 180
+> Last pass: 2026-10-05 at commit cf805933
+> Pass count: 181
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 180 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 181 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/themes/season-one-doesnt-own-every-first`,
-> `/themes/the-matching-experts-never-sit-still-for-long`, `/shows`,
-> `/themes`, `/shows/big-brother/season/time-trip` anon;
-> `/shows/big-brother/season/time-trip`, `/u/e2e`, `/sign-in`,
-> `/themes/season-one-doesnt-own-every-first`, `/shows` authed —
-> rotated onto the two freshly-shipped Rule 3 themed-list extends
-> (`season-one-doesnt-own-every-first`,
-> `the-matching-experts-never-sit-still-for-long`). Both passes came
+> `/shows/dragrace/season/season-18`, `/shows/90-day-fiance/season/season-12`,
+> `/shows`, `/search` anon; `/`, `/u/e2e`, `/sign-in`,
+> `/shows/dragrace/season/season-18`, `/shows/90-day-fiance/season/season-12`
+> authed — rotated onto two pages with content-only critique-redirect fixes
+> that landed in the prior two ticks (dragrace `host_caption` re-voice,
+> 90-day-fiance Season 12 canon.md/`shape_h2` rewrite) to confirm those fixes
+> read cleanly, plus `/search` and `/shows` as fresh pillar/signature-feature
+> coverage. Both fixes verified clean, no new drift. 2 new findings filed
+> (0 high, 1 med, 1 low): `/shows`' OG-image wiring gap (severity raised
+> LOW→MED from the pass-158 row — root cause corrected: the per-route
+> `opengraph-image.tsx` already exists and renders, it's just never
+> referenced from `generateMetadata()`, not "no route exists" as originally
+> filed) and a fresh `seasonDisplayTitle()` branch gap (`Season N (YYYY)`
+> shape triple-restates the season number/year in 25 season files across
+> 4 shows — a known, deliberately-scoped-out gap from the pass-68 fix
+> reaching its moment, not a regression). No pending HIGH findings remained
+> open ahead of this pass. Mechanically clean on both passes (0 console
+> errors, 0 failed requests, 0 horizontal overflow on either viewport,
+> H1/canonical/OG present on every capture except the one OG finding
+> above); `/sign-in` confirmed a genuine server-side redirect for an
+> already-authed session; auth chrome (`@e2e` account menu, vote-pair
+> pre-vote state, comment composer attribution) all rendered correctly.
+> Spoiler discipline held — no outcome/winner/elimination leakage on
+> either season page. Prior pass-180 summary follows. Both passes came
 > back mechanically clean (0 console errors, 0 failed requests, 0
 > horizontal overflow on either viewport, H1/canonical/OG present on
 > every capture); `/sign-in` confirmed a genuine server-side redirect
@@ -4690,6 +4706,16 @@
 
 ## Pending
 
+### [LOW] [authed] /shows/90-day-fiance/season/season-12 (and 24 other seasons across 4 shows) — document `<title>` triple-restates the season number/year via a `seasonDisplayTitle()` branch gap
+
+- pass: 181 (commit cf805933)
+- viewport: desktop
+- category: seo
+- observation: Document `<title>` stutters the season identifier three ways: numeral prefix, spelled-out label, and parenthetical year — all carrying the same temporal fact already present in the fact block's premiere date. `seasonDisplayTitle()` (`src/app/shows/[show]/season/[slug]/page.tsx:119-135`) has three guard branches that drop the redundant `S<N>` prefix (bare `Season N`, spelled-out `Season One`, and "title contains both show name and number"), but none fire when `season.title` is `"Season 12 (2026)"` — it doesn't match the bare-numeral regex exactly (trailing `(2026)` breaks the `===` check) and doesn't contain the show name, so it falls through to the unconditional `${show.name} S${season.number} — ${season.title}` template. The pass-68 fix that introduced the first guard branch explicitly scoped this exact shape out at the time ("titles carrying extra info... are out of scope and keep the prefix" — see the pass-68 Done entry), so this is a known, deliberately-deferred gap reaching its moment rather than a surprise regression.
+- evidence: Live title: `90 Day Fiancé S12 — Season 12 (2026) — tiered.tv`. `grep -rn '^title: "Season [0-9]* (20[0-9][0-9])"' content/shows/*/seasons/*.md` returns 25 matching season files across 4 shows (90-day-fiance, love-island-us, too-hot-to-handle, traitors) — all render the identical three-way stutter.
+- suggested fix: Extend `seasonDisplayTitle()`'s guard set with a fourth branch matching `/^Season \d+ \(\d{4}\)$/` (or `/^Season \d+ \(\d{4}\)$/i` to be safe) that drops the `S<N>` prefix for that form too, parallel to the existing bare-numeral and spelled-out branches. Single function, no visual change for titles that already carry extra non-year info (e.g. "Season 3: Redemption") — those still intentionally keep the prefix per the pass-68 scoping decision. Add unit test cases for the new branch plus a non-firing control (a title with extra info beyond the year).
+- source: browser (critique-pass-181, authed, via Path A2 — reader sub-agent, cloud)
+
 ### [LOW] [anon] /themes/the-matching-experts-never-sit-still-for-long — adjacent ranks #7/#8 both lean on the identical "last season ... together" construction
 
 - pass: 180 (commit 9999e538)
@@ -5206,14 +5232,14 @@
 - suggested fix: Let the lede own the Gretchen Rossi fact in full; rewrite the markdown body and canon.md's Season 19 rationale to argue a distinct angle (what the friend-of-status limit means for the season's social geometry, or the comparative canon-slot argument) instead of re-stating the same clause. Same treatment for the Katie Ginella fact — state it once (body or canon, not both) and let the other section argue what her exit means for the cast going forward. Content-only, `content/shows/rhoc/seasons/19-the-resurfacing.md` + `content/shows/rhoc/canon.md` Season 19 rationale.
 - source: browser (critique-pass-158, anon, via Path A2)
 
-### [LOW] [anon] /shows and /themes — both index pages fall back to the site-wide root OG image instead of a page-specific one
-- pass: 158 (commit 0de556b9)
+### [MED] [anon] /shows and /themes — both index pages fall back to the site-wide root OG image instead of a page-specific one
+- pass: 181 (commit cf805933)
 - viewport: desktop
 - category: seo
-- observation: Detail pages (e.g. `/shows/rhoc/season/the-resurfacing`, `/themes/never-needed-a-villain`) each generate their own `og:image` via a per-route `opengraph-image` route, but the two index/hub pages — `/shows` and `/themes` — both fall through to the site-wide root image, so link previews for either hub page look identical to the homepage's.
-- evidence: `og:image` for `/shows` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes/never-needed-a-villain` = `https://tiered.tv/themes/never-needed-a-villain/opengraph-image`.
-- suggested fix: Add a dedicated `opengraph-image` route for `/shows` and `/themes` (matching the pattern already used by detail pages and other pillar pages), or confirm the shared fallback is intentional if a dedicated hub-page image isn't worth the asset. Likely a small addition to `app/shows/opengraph-image.tsx` and `app/themes/opengraph-image.tsx` following the existing per-route convention — brander sub-agent territory if new art is needed, though a text-only OG treatment matching the site's type-only visual law would suffice.
-- source: browser (critique-pass-158, anon, via Path A2)
+- observation: Detail pages (e.g. `/shows/rhoc/season/the-resurfacing`, `/themes/never-needed-a-villain`) each generate their own `og:image` via a per-route `opengraph-image` route, but the two index/hub pages — `/shows` and `/themes` — both fall through to the site-wide root image, so link previews for either hub page look identical to the homepage's. Severity raised LOW→MED and root cause corrected this pass: `/shows` is **not** missing a dedicated OG image route — `src/app/shows/opengraph-image.tsx` already exists (shipped at the pass-118 "RESOLVED" note below this same finding's prior life, then relocated out of `(default)/` by the pass-141/142 route-group hash fix) and renders correctly when hit directly. The gap is that `src/app/(default)/shows/page.tsx`'s `generateMetadata()` never passes an `image` argument to `buildMetadata()` (confirmed: `grep -n "image:" "src/app/(default)/shows/page.tsx"` returns nothing), so `buildMetadata()`'s unconditional explicit-image fallback (`src/lib/seo.ts:170-172`, `defaultOgImage`) permanently shadows the file-convention route — the same wiring-gap class the pass-69/#448 fix closed for show/season/theme pages, but that fix's scope never included the two index pages. `/themes` (the index, not `/themes/[theme]`) genuinely has no dedicated route at all — confirmed via `find src/app -iname "*opengraph-image*"`, no `src/app/themes/opengraph-image.tsx` exists — so that half of the finding stands as originally filed.
+- evidence: `og:image` for `/shows` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes` = `https://tiered.tv/opengraph-image`; `og:image` for `/themes/never-needed-a-villain` = `https://tiered.tv/themes/never-needed-a-villain/opengraph-image`. Live-verified again this pass (pass-181, anon, via Path A2) — unchanged across 23 passes. `src/app/shows/opengraph-image.tsx` exists and renders its own `buildOgImage()` call (eyebrow "tiered.tv · Shows", title "All shows") but is unreachable from the page's `<head>` tags because nothing references it.
+- suggested fix: Two separate fixes, one per page. `/shows`: thread `image: '/shows/opengraph-image'` through the `buildMetadata()` call in `src/app/(default)/shows/page.tsx`'s `generateMetadata()`, mirroring the already-shipped pattern in `src/app/shows/[show]/page.tsx:78`. Smallest possible diff — the art already exists, this is pure wiring. `/themes`: still needs a new `opengraph-image.tsx` route under `src/app/themes/` (not `(default)/`, per the pass-141/142 route-group lesson) following the `/shows` route's own `buildOgImage()` pattern, plus the matching `image:` argument threaded through `src/app/(default)/themes/page.tsx`'s `generateMetadata()`. Add a regression test per page pinning `openGraph.images` to the per-route path.
+- source: browser (critique-pass-158, anon, via Path A2); re-verified + root-cause-corrected critique-pass-181, anon, via Path A2 (reader sub-agent, cloud)
 
 ### [MED] [anon+authed] /shows/married-at-first-sight/season/seattle — the season's three headline facts are restated near-verbatim across five separate sections
 - pass: 157 (commit 51312421)
