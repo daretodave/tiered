@@ -10504,6 +10504,67 @@ last time a curator actually looked.
   `last_revised` bump), `plan/LISTS.md` (ledger row + this note). Next
   unlock: a new season landing via Rule 2, or the 2026-10-04 weekly
   sweep.
+- **2026-10-05, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship.** Re-verified both standing blockers fresh:
+  `plan/CADENCE.md`'s thirteenth weekly sweep (2026-10-04) leaves the
+  gap table 37 shows / 37 gap-slots, every row starred
+  confirmed-but-unaired (including the one new find, `rhobh` 15/16,
+  Season 16 in casting with no premiere date) except `the-voice`
+  (blocked behind open issue #762, left untouched) — Rule 2
+  non-actionable. No ledger row clears the 90-day review floor
+  (oldest `last_reviewed` still `survivor-pillars` at 2026-07-31, 66
+  days old). Both leads named in this tick's brief turned out to
+  already be closed by the five same-day Rule 3 passes on 2026-10-03
+  (see the two entries immediately above, further up this section):
+  **traitors (US) S05 "New Blood"'s** all-civilian/no-prior-camera-
+  history casting fact — the live candidate flagged 2026-09-30 — was
+  shipped on 2026-10-03 (third same-day pass) to `one-rule-fills-
+  every-seat` rank 18, a clean craft-category home that never needed
+  a second comparable show (the list's thesis is casting rules
+  deciding every seat, not comebacks-to-a-founding-rule specifically),
+  so there is no remaining "second/third comparable season" search to
+  run — the lead is resolved, not open. **Season files filed since
+  2026-10-01** — confirmed via `plan/CADENCE.md`'s drain log that only
+  one landed in that window, `big-brother` S28 "Time Trip" (filed
+  2026-10-02, finale-shift drain; `rhobh` S16 is gap-table-only, no
+  season file, confirmed unaired) — and S28 was already combed twice
+  on 2026-10-03: the BB Time Capsule vault mechanic is staked at
+  `the-advantage-was-never-free` rank 12, and the 1,000th-episode
+  milestone was confirmed sub-floor (no second show with a comparable
+  raw-episode-count milestone). Re-read the season file fresh for a
+  third facet not yet logged: `cast_size_caption` states 14
+  houseguests at the premiere plus three surprise entrants "across
+  the opening week." Checked this against `the-cast-was-still-
+  arriving` (structure, 11 entries / 9 shows, the natural home for a
+  door-stays-open-past-casting fact) — but that list's own logged
+  discipline (2026-08-01 extend note, this file) explicitly rejected
+  Jersey Shore S03 and Selling Sunset S05/S09 on the identical defect:
+  a new face joining at the *start* of a season isn't a mid-run
+  arrival, and every entry the list actually carries (Real World S31,
+  Too Hot to Handle S05, MAFS Denver, etc.) lands its newcomer
+  genuinely mid-run. BB S28's three entrants land inside the premiere
+  week itself, not mid-season — the same start-of-season defect,
+  confirmed via a full `show: big-brother` grep that S28 has exactly
+  one prior ledger appearance (`the-advantage-was-never-free`).
+  Declined to force it in. Ran three more fresh-angle checks before
+  closing out: (1) pregnancy-affecting-production as a cross-show
+  axis — `pregnan|maternity|due date` across every
+  `content/shows/**/seasons/*.md` surfaces exactly two hits,
+  dancing-with-the-stars S35 (a pro competing while pregnant, a series
+  first) and jersey-shore S06 (filming scheduled around a cast
+  member's pregnancy) — two shows, sub-floor, and the two facts aren't
+  even the same mechanism (competing-while-pregnant vs.
+  production-schedule accommodation); (2) Survivor S51's "first
+  odd-numbered cast since 2007" (21 castaways) — confirmed via grep
+  it's a single-show fact, no second show in the catalog states a
+  comparable odd/even cast-parity fact; (3) DWTS S35's two-night
+  premiere and fourth-season host-continuity facts — both single-show,
+  the host fact is continuity rather than a change or new editorial
+  role (the thesis `best-hosting` requires), neither clears a floor or
+  fits an existing thesis. No `content/themes/*.md` file written or
+  edited this tick; no ledger row changed besides this note. Next
+  unlock: a new season landing via Rule 2, or the 2026-10-11 weekly
+  sweep.
 
 ## Notes
 
