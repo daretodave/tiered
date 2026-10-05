@@ -14,7 +14,7 @@ shape_h2: "A hotter, confrontational workroom."
 premiere_caption: "Logo · Monday 10/9c"
 format_summary: "Standard format"
 format_caption: "last pre-Visage panel"
-host_caption: "RuPaul, last season with the original panel"
+host_caption: "Last season with the original panel"
 ---
 
 The first step up. Season 2 drops the soft filter from the

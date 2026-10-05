@@ -20,7 +20,7 @@ cast_size: 14
 cast_size_caption: "franchise-first drag grandmother-and-granddaughter pairing"
 filming_caption: "Sunset Las Palmas Studios · the franchise's longtime soundstage"
 ep_count: 16
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 watch_list:
   - episode_label: "Ep 1 · premiere read"
     body: "A veteran-heavy cast steps out under the franchise's biggest MTV premiere numbers yet. Watch how a room full of seasoned queens changes the opening night's temperature."

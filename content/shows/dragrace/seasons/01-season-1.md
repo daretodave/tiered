@@ -14,7 +14,7 @@ shape_h2: "A soft-filtered pilot season."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format · pilot"
 format_caption: "soft-filter era"
-host_caption: "RuPaul, season one at the table"
+host_caption: "Season one at the table"
 ---
 
 The one that started it, and it shows. Season 1 runs short,

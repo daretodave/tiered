@@ -15,7 +15,7 @@ shape_h2: "Episodes shrink to sixty minutes."
 premiere_caption: "MTV · Friday 8/7c"
 format_summary: "Standard format · two-part premiere"
 format_caption: "largest premiere cast yet"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 watch_list:
   - episode_label: "Premiere · the runtime cut"
     body: "The MTV move quietly halves each episode from ninety minutes to sixty, clearing room for a companion series. Viewer pushback is immediate and loud, and the ninety-minute runtime returns for the back half of the season — a rare mid-run reversal."

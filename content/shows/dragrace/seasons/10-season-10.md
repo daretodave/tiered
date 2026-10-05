@@ -14,7 +14,7 @@ shape_h2: "The franchise's highest budget yet."
 premiere_caption: "VH1 · Thursday 8/7c"
 format_summary: "Standard format"
 format_caption: "VH1 at full confidence"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The season the VH1 jump fully pays off. Season 10 is built start

@@ -15,7 +15,7 @@ shape_h2: "The judging rhythm locks in."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "first Visage-panel season"
-host_caption: "RuPaul, with Michelle Visage debuting"
+host_caption: "Michelle Visage debuts on the panel"
 ---
 
 The hinge season. Season 3 is where Michelle Visage takes the

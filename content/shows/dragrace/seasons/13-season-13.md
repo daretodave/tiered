@@ -15,7 +15,7 @@ shape_h2: "Filmed under tightened conditions."
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format · new premiere"
 format_caption: "restructured opening"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The season that rewired its first episode. Season 13 opens

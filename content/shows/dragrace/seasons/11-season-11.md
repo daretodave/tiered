@@ -14,7 +14,7 @@ shape_h2: "Drama outruns the runway craft."
 premiere_caption: "VH1 · Thursday 9/8c"
 format_summary: "Standard format"
 format_caption: "high-friction casting"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 A season built on combustible casting. Season 11 stacks the

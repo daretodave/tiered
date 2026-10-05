@@ -14,7 +14,7 @@ shape_h2: "Panel and cast finally align."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "Logo at full stride"
-host_caption: "RuPaul, with the Visage panel set"
+host_caption: "The Visage-era panel locks into place"
 ---
 
 The season the Logo formula clicks fully into place. Season 4

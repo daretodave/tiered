@@ -15,7 +15,7 @@ shape_h2: "The prize purse goes up."
 premiere_caption: "MTV · Friday 8/7c"
 format_summary: "Standard format · new opening mechanic"
 format_caption: "first-impression rate-a-queen, higher prize"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The season that rewired its first impression. Season 16

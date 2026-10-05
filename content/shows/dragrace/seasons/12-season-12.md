@@ -15,7 +15,7 @@ shape_h2: "A strong contest, interrupted."
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format · remote finale"
 format_caption: "first remotely produced finale"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The season history interrupted. Season 12 ran a strong, varied

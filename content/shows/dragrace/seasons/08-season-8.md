@@ -14,7 +14,7 @@ shape_h2: "A glossy handoff season."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "Logo's glossiest year"
-host_caption: "RuPaul, with the Visage panel"
+host_caption: "The Visage panel holds steady"
 ---
 
 The most polished season Logo produced before handing off to

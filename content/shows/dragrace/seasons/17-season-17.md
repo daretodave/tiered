@@ -14,7 +14,7 @@ shape_h2: "No structural swing this year."
 premiere_caption: "MTV · Friday 8/7c"
 format_summary: "Standard format · modern era"
 format_caption: "current production scale"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The most recent flagship. Season 17 runs a standard MTV-era

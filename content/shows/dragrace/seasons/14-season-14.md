@@ -14,7 +14,7 @@ shape_h2: "A trans male performer debuts."
 premiere_caption: "VH1 · Friday 8/7c"
 format_summary: "Standard format · expanded cast"
 format_caption: "largest workroom to date"
-host_caption: "RuPaul, with Michelle Visage"
+host_caption: "Michelle Visage anchors the panel"
 ---
 
 The season that opened the workroom wider. Season 14 fields

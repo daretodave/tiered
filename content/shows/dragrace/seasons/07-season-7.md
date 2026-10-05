@@ -14,7 +14,7 @@ shape_h2: "A cooler, uneven workroom."
 premiere_caption: "Logo · Monday 9/8c"
 format_summary: "Standard format"
 format_caption: "last Logo season"
-host_caption: "RuPaul, closing the Logo era"
+host_caption: "Closing out the Logo era"
 ---
 
 The last Logo-era season, and an uneven one. Season 7 runs a
