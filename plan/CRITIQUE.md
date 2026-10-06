@@ -1,9 +1,44 @@
 # CRITIQUE
 
-> Last pass: 2026-10-05 at commit cf805933
-> Pass count: 181
+> Last pass: 2026-10-06 at commit f57a9b6b
+> Pass count: 182
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 181 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 182 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/themes/the-other-side-of-the-table`,
+> `/shows/big-brother/season/time-trip`,
+> `/shows/survivor/season/survivor-50`, `/themes` anon; `/`, `/u/e2e`,
+> `/sign-in`, `/themes/the-other-side-of-the-table`,
+> `/shows/survivor/season/survivor-50` authed — rotated onto the
+> freshly-shipped `the-other-side-of-the-table` themed list (American
+> Idol S23 extend, prior tick) and the brand-new Survivor 50 season page,
+> plus a re-check of the still-open pass-178 Big Brother Time Trip
+> finding. Both passes came back mechanically clean (0 console errors,
+> 0 failed requests, 0 horizontal overflow on either viewport, H1/
+> canonical/OG present on every capture); `/sign-in` confirmed via raw
+> `curl` with the session cookie to issue a genuine server-side 307 to
+> `/` for an already-authed session; vote-pair pre-vote state
+> (`aria-live="polite"`, `data-vote-head-state="signed-in-no-vote"`) and
+> comment-composer attribution rendered correctly on Survivor 50.
+> Spoiler discipline held on every page — Big Brother Time Trip and
+> Survivor 50 both stayed at format/mechanics/milestone level, zero
+> winner/eviction/outcome leakage. The pass-178 MED ("1,000th episode"
+> restated 5x on Big Brother Time Trip) was reconfirmed still present
+> and intentionally NOT re-filed (already open, correctly tracked). 2
+> new findings filed (0 high, 1 med, 1 low), both independently surfaced
+> by both the anon and authed sub-passes: a genuine content defect on
+> `the-other-side-of-the-table` — the list's `rank` field skips 4
+> entirely (1, 2, 3, 5, 6, ... 15), so the page's own "The 14, in order"
+> promise is visibly broken by a numbering gap between #03 and #05 even
+> though the entry count is correct; and `/themes` reusing the exact
+> same sitewide OG image as the homepage rather than a dedicated one,
+> unlike every nested list page. No pending HIGH findings remained open
+> ahead of this pass; the site continues to read clean on the P0
+> spoiler check.
+> Prior pass-181 summary follows. Pass 181 ran in the cloud loop via
+> Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4705,6 +4740,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon+authed] /themes/the-other-side-of-the-table — ranked list's `rank` field skips #04, breaking the page's own "The 14, in order" promise
+
+- pass: 182 (commit f57a9b6b)
+- viewport: desktop
+- category: comprehension
+- observation: The themed list's frontmatter numbers its fourteen entries `rank: 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15` — four is skipped entirely, so the rendered page jumps from `#03 SURVIVOR · S39 · ISLAND OF THE IDOLS` straight to `#05 INK MASTER · S10 · RETURN OF THE MASTERS`, and the final entry is labeled `#15` despite the page's own "ENTRIES: 14" stat and "The 14, in order" header claim. The entry count is correct (14 entries), so this is a renumbering artifact, not a missing entry — but it's visible on a page explicitly billed as editor-curated and stable, and both the anonymous and authenticated sub-passes independently caught the identical gap.
+- evidence: `content/themes/the-other-side-of-the-table.md` — `grep -n "rank:"` returns `1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15` with no `rank: 4` anywhere in the file's 14 entries.
+- suggested fix: Renumber the file's `rank` field sequentially 1-14 (every entry from Ink Master S10 onward shifts down by one), or switch the rendering to derive the displayed ordinal from array position rather than trusting the stored `rank` field so a future insert/delete can't leave a gap. Content-only, single file.
+- source: browser (critique-pass-182, anon + authed)
+
+### [LOW] [anon] /themes — pillar index reuses the exact same sitewide OG image as the homepage instead of a dedicated one
+
+- pass: 182 (commit f57a9b6b)
+- viewport: desktop
+- category: seo
+- observation: Every nested themed-list page (e.g. `/themes/the-other-side-of-the-table`) has its own page-specific `opengraph-image` route, but the `/themes` pillar index itself falls back to the sitewide default — identical to the homepage's OG image. A link preview for the lists index is visually indistinguishable from a link preview for the homepage.
+- evidence: home OG image resolves to `https://tiered.tv/opengraph-image`; `/themes` OG image resolves to the identical `https://tiered.tv/opengraph-image`; `/themes/the-other-side-of-the-table` OG image resolves to its own distinct `https://tiered.tv/themes/the-other-side-of-the-table/opengraph-image`.
+- suggested fix: Add a dedicated `opengraph-image.tsx` route under `app/themes/` (e.g. "182 lists, ranked. no spoilers.") matching the pattern already used for individual list pages.
+- source: browser (critique-pass-182, anon)
 
 ### [LOW] [authed] /shows/90-day-fiance/season/season-12 (and 24 other seasons across 4 shows) — document `<title>` triple-restates the season number/year via a `seasonDisplayTitle()` branch gap
 
