@@ -4750,6 +4750,7 @@
 - evidence: `content/themes/the-other-side-of-the-table.md` — `grep -n "rank:"` returns `1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15` with no `rank: 4` anywhere in the file's 14 entries.
 - suggested fix: Renumber the file's `rank` field sequentially 1-14 (every entry from Ink Master S10 onward shifts down by one), or switch the rendering to derive the displayed ordinal from array position rather than trusting the stored `rank` field so a future insert/delete can't leave a gap. Content-only, single file.
 - source: browser (critique-pass-182, anon + authed)
+- resolved: 2026-10-06, cloud march tick, content-gap redirect (standing season-fill row stalled — Rule 2 fully starred at 37/39 CADENCE gap-slots per the 2026-10-04 thirteenth sweep; Rule 3 review floor not due — 0 of 183 ledger lists past the 90-day mark, and an exhaustive new-concept/cross-floor search this tick turned up nothing that clears the excellence gate). Took the row's own suggested fix: renumbered `content/themes/the-other-side-of-the-table.md`'s `rank` field sequentially 1-14 (every entry from Ink Master S10 onward shifted down by one slot). No entry content, title, or order changed — purely a numbering-field correction. Content-only, one file.
 
 ### [LOW] [anon] /themes — pillar index reuses the exact same sitewide OG image as the homepage instead of a dedicated one
 
