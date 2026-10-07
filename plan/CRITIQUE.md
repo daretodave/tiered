@@ -1,9 +1,40 @@
 # CRITIQUE
 
-> Last pass: 2026-10-06 at commit f57a9b6b
-> Pass count: 182
+> Last pass: 2026-10-07 at commit 990f72cb
+> Pass count: 183
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 182 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 183 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/traitors/season/new-blood`,
+> `/shows/dancing-with-the-stars/season/fall-2026`,
+> `/themes/season-one-doesnt-own-every-first`, `/shows` anon; `/`,
+> `/shows/traitors/season/new-blood`,
+> `/shows/dancing-with-the-stars/season/fall-2026`, `/u/e2e`, `/shows`
+> authed — rotated onto the two freshly-backfilled season pages (Traitors
+> S5 "New Blood," DWTS S35 "Fall 2026") plus a recently-extended themed
+> list and the `/shows` tier-pillar page. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0 horizontal
+> overflow on either viewport, H1/canonical/OG present on every capture);
+> authed pass independently verified via raw SSR `curl` that the session
+> cookie produces real auth (sign-in link replaced with `/u/e2e`, live
+> vote-pair buttons reflecting actual unvoted state, comment composer
+> attribution, spoiler-safe empty-vote profile) and reconfirmed the
+> pass-134/u-handle opengraph-image fix still holds (200 image/png on
+> all 4 relevant routes). Spoiler discipline held — zero outcome/
+> winner/elimination leakage on either fresh season page. 1 new finding
+> filed (0 high, 0 med, 1 low): a HOST-caption bare-restatement on both
+> fresh season pages, the same shape as the already-resolved dragrace
+> fix, recurring because that fix was content-level rather than a
+> `content-check` invariant. The still-open pass-174 MED (single-fact-
+> owner drift on these same two pages) was reconfirmed present and
+> found broader than first scoped (two more facts per page also drift)
+> — appended as a confirmation note to the existing row rather than
+> re-filed, since the existing suggested fix already covers it. No
+> pending HIGH findings remained open ahead of this pass.
+> Prior pass-182 summary follows. Pass 182 ran in the cloud loop via
+> Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4741,6 +4772,16 @@
 
 ## Pending
 
+### [LOW] [anon] /shows/traitors/season/new-blood, /shows/dancing-with-the-stars/season/fall-2026 — HOST meta caption bare-restates the host name shown one line above, a recurrence of the pattern the pass-146/dragrace fix already addressed
+
+- pass: 183 (commit 990f72cb)
+- viewport: desktop
+- category: comprehension
+- observation: The HOST stat's caption field re-states the host's full name from the primary value directly above it before adding any new fact — the same shape as the dragrace `host_caption` defect that was re-voiced show-wide on 2026-10-05 (pass-146 finding, resolved). That fix was content-level (one show's 15 season files), not a template or `content-check` invariant, so it didn't prevent the identical shape from being authored fresh into two of the very next season-fill drains. Traitors New Blood: HOST "Alan Cumming" → caption "Alan Cumming's fifth season at the castle." DWTS Fall 2026: HOST "Julianne Hough, Alfonso Ribeiro" → caption "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts." Both captions would read just as clearly leading with the new fact alone.
+- evidence: `content/shows/traitors/seasons/05-new-blood.md` `host_caption: "Alan Cumming's fifth season at the castle"` directly below `host: "Alan Cumming"`; `content/shows/dancing-with-the-stars/seasons/35-fall-2026.md` `host_caption: "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts"` directly below `host: "Julianne Hough, Alfonso Ribeiro"`.
+- suggested fix: Trim both captions to the new fact only — e.g. "Fifth season at the castle" and "Fourth season as co-hosts" — content-only, two files. Since this is the second time this exact shape has needed a reactive fix (first dragrace, now traitors + DWTS), consider adding a lax-mode `content-check` invariant (`collectHostCaptionBareRestatementIssues`) mirroring the existing `episodes_caption`/`cast_size_caption` bare-restatement guards, so future season-fill drains get caught at the gate rather than needing another critique pass to notice.
+- source: browser (critique-pass-183, anon)
+
 ### [MED] [anon+authed] /themes/the-other-side-of-the-table — ranked list's `rank` field skips #04, breaking the page's own "The 14, in order" promise
 
 - pass: 182 (commit f57a9b6b)
@@ -4895,6 +4936,7 @@
 - evidence: DWTS S35 — eyebrow "A RECORD-TYING 16-COUPLE CAST"; lede "ties the series record for largest cast — sixteen celebrity-professional pairs"; FORMAT meta "Ties Seasons 9 and 31 for the largest cast in series history"; CAST SIZE meta "Ties seasons nine and thirty-one for the largest field ever fielded"; SHAPE section "tying the record held by seasons nine and thirty-one"; WHERE IT SITS section "tying seasons nine and thirty-one for the largest cast the format has assembled." Traitors New Blood — eyebrow "THE FRANCHISE'S FIRST ALL-CIVILIAN CAST"; lede "swaps its celebrity-and-alumni model for its first all-civilian cast"; FORMAT meta "All-civilian cast · broadcast NBC premiere" / "First season without a single reality-TV alum or celebrity"; SHAPE section "its first all-civilian cast, no reality alumni or celebrities anywhere in the mix"; WHERE IT SITS section "The cast goes all-civilian for the first time in the franchise's history — no reality alumni, no celebrities."
 - suggested fix: Content-curator pass on both season files (`content/shows/dancing-with-the-stars/seasons/35-fall-2026.md`, `content/shows/traitors/seasons/05-new-blood.md`): keep the lede as the sole owner of the raw fact, and rewrite the meta-panel captions + one of the two body sections (SHAPE or WHERE IT SITS) to argue a distinct angle instead of re-deriving the same comparison — e.g. DWTS's "Where it sits in the canon" could argue the provisional rank against neighboring seasons rather than restate the cast-size record a sixth time; Traitors's meta subtext could point at the network-pivot angle (Peacock-exclusive → NBC/Peacock) instead of repeating "all-civilian." If this recurs on the next season-fill drain too, consider a `content-check` invariant flagging the same clause repeated ≥4 times across a season's editorial fields, mirroring the existing theme-level verb-stem/phrase-repetition checks.
 - source: browser (critique-pass-174, anon)
+- confirmed still open (2026-10-07, critique pass 183, anon): both pages still exhibit the drift, and it's broader than originally scoped — DWTS S35 also restates the Olympic/Paralympic-champion pairing + pregnant-pro-dancer facts near-verbatim 3 times (lede, "Shape of the Season," "Where it Sits in the Canon") beyond the cast-size-record fact already filed, and Traitors New Blood also duplicates its "80,000-plus applicants" + "first broadcast-NBC season" sentence verbatim between the lede and "Shape of the Season" beyond the all-civilian-cast fact already filed. Same root cause (season-fill drafting over-anchors on headline facts across every editorial field) — not filing as separate rows since the suggested fix (a full content-curator rewrite pass on both files) already covers these too. Strengthens the case for the suggested `content-check` repeated-clause invariant, since two independent facts per page are now confirmed drifting, not one.
 
 ### [MED] [authed] /shows/shark-tank/season/season-17 — two headline facts restated near-verbatim across at least 8 fields spanning the season file and canon.md
 
