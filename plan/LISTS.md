@@ -10565,6 +10565,45 @@ last time a curator actually looked.
   edited this tick; no ledger row changed besides this note. Next
   unlock: a new season landing via Rule 2, or the 2026-10-11 weekly
   sweep.
+- **2026-10-07, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship.** Extend-target sweep first: ran a full
+  `grep -c '^  - show:'` across every `content/themes/*.md`, cross-
+  referenced against the ledger's category column, and hand-checked
+  every tone/structure/craft/era list sitting at a low raw entry count
+  for distinct-show risk — `the-pitch-names-where-the-idea-came-from`
+  (craft, 3 entries: american-ninja-warrior, bachelor-in-paradise,
+  the-challenge — 3 distinct, clears), `the-calendar-moved-the-format-
+  didnt` (craft, 6 entries: shark-tank, bachelor-in-paradise,
+  hells-kitchen, amazing-race — 4 distinct, clears), and
+  `the-vote-left-the-phone-line` (era, 9 entries: dancing-with-the-
+  stars, american-idol, americas-got-talent, so-you-think-you-can-
+  dance — 4 distinct, clears). No sub-floor list found — every
+  non-single list already clears ≥3 distinct shows. Then ran four
+  from-scratch concept searches before falling back to invention
+  attempts: (1) formalized on-camera mental-health support (therapist/
+  counselor added to a format) — grepped `content/shows` for
+  therapist/psycholog/aftercare; only one genuine on-camera-counseling-
+  as-a-format-first hit (`bachelor-in-paradise` S10's relationship
+  therapist cameo, "a franchise first for that kind of on-camera
+  counseling role"), sub-floor; (2) first-HD-broadcast as a production
+  milestone — only two hits (`so-you-think-you-can-dance` S07,
+  `americas-got-talent` S04), sub-floor; (3) a casting/representation-
+  milestone list built on first-deaf/first-transgender/first-same-sex-
+  couple facts across `the-circle` S05, `the-real-world` S21,
+  `americas-next-top-model` Cycle 11, `married-at-first-sight-
+  australia` S03, and `bachelor-in-paradise` S06 — a genuinely
+  promising cross-show angle on paper, but a direct grep of
+  `content/themes` for `transgender|same-sex|first deaf|first openly`
+  surfaced that every one of those exact facts is already staked,
+  nearly verbatim, in the existing `season-one-doesnt-own-every-first`
+  list (18 entries, craft category) — 100% overlap, dead end; (4) the
+  90-day-fiance S12 "first all-new cast since season six" fact (filed
+  2026-10-02-adjacent) — confirmed already staked at
+  `the-company-upstairs-changed-hands` rank 12. No fresh angle cleared
+  the ~40% overlap ceiling or the cross-canon floor. No
+  `content/themes/*.md` file written or edited this tick; no ledger
+  row changed besides this note. Next unlock: a new season landing via
+  Rule 2, or the 2026-10-11 weekly sweep.
 
 ## Notes
 
