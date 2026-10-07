@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-25
+last_revised: 2026-10-07
 featured: false
 related:
   - not-the-usual-order
@@ -85,28 +85,34 @@ entries:
     rank: 12
     title: "A two-hour premiere clears extra room before the panel even finishes changing."
     blurb: "Season fourteen opens with a feature-length hour to handle a new panelist's debut alongside the usual disguise reveals, then settles back into the format's standard weekly length for the rest of the run."
+  - show: traitors
+    season: 5
+    season_label: "S05"
+    rank: 13
+    title: "The premiere and the finale both buy extra time; the ten weeks between them don't."
+    blurb: "Twelve episodes hold New Blood's standard length for ten of them. Only the two-hour premiere — introducing the franchise's first all-civilian cast — and the two-hour finale run long, a bookend shape none of this list's other entries share."
   - show: top-chef
     season: 20
     season_label: "S20 · World All-Stars"
-    rank: 13
+    rank: 14
     title: "The judges' table itself gets supersized to fit the international bench."
     blurb: "World All-Stars pulls sixteen alumni from Top Chef franchises worldwide into London kitchens for the format's biggest cast yet. The show's own copy admits the elimination challenge and closing judging session both run long, giving the deeper bench room to argue its case."
   - show: dragrace
     season: 15
     season_label: "S15"
-    rank: 14
+    rank: 15
     title: "The network move trims the episode clock in half, and the backlash sends it back."
     blurb: "MTV's arrival comes with a quiet cut: episodes shrink from ninety minutes to sixty. Fan backlash is immediate, and the longer runtime returns before the season wraps — one of the rare runtime bets the format reverses in real time, not the following year."
   - show: americas-got-talent
     season: 20
     season_label: "S20 · The Anniversary Season"
-    rank: 15
+    rank: 16
     title: "A milestone special buys two hours the regular broadcast never spends."
     blurb: "A two-hour, non-competitive primetime special marks the show's 20th anniversary midseason, apart from the regular audition and live-show hours. The extra runtime goes to a nostalgia mega-mix and judge reflections, not a new round of competition."
   - show: survivor-australia
     season: 1
     season_label: "S01 · The Original"
-    rank: 16
+    rank: 17
     title: "Longer episodes, not just a bigger cast, mark the format's Australian debut."
     blurb: "The show's own copy calls out the extra runtime directly — room for strategic conversation a tighter cut would lose. Twenty-four players also get more airtime per week than Borneo's sixteen ever did, making this a runtime bet as much as a cast-size one."
 ---
