@@ -10683,6 +10683,65 @@ last time a curator actually looked.
   Next unlock: a new season landing via Rule 2, or the 2026-10-11
   weekly sweep.
 
+- **2026-10-08, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, second same-day pass): zero-ship, small warning fix
+  taken instead.** Re-verified both standing blockers fresh:
+  `plan/CADENCE.md`'s gap table non-actionable (68 shows catalogued,
+  37 shows / 39 gap-slots, every row starred confirmed-but-unaired),
+  zero ledger rows clear the 90-day `last_reviewed` review floor
+  (oldest still `survivor-pillars` at 2026-07-31). Ran a from-scratch
+  concept search across more than ten candidate angles before
+  falling back: (1) pandemic/COVID-era production disruption —
+  re-confirmed `pandemic-seasons` (19+ entries) already owns every
+  hit a fresh `pandemic|COVID|bubble|quarantine` grep surfaced; (2)
+  first-HD-broadcast as a production milestone — only two shows
+  state it (so-you-think-you-can-dance S07, americas-got-talent S04),
+  sub-floor, previously logged; (3) Real World S24's "first season
+  housed in a residential property rather than a built commercial
+  set" — already double-staked verbatim at `the-house-that-kept-
+  changing` rank 13 and `been-here-before` rank 5; (4) Survivor S51's
+  Million Dollar Coin Toss and "any twist can resurface" format
+  thesis — both already staked (`same-crown-new-price-tag` rank 18,
+  `best-challenge-design` rank 18); S51's odd-numbered-cast fact is
+  confirmed single-show per the 2026-10-05 note; (5) a hurricane/
+  natural-disaster production-disruption angle — only Real World S24
+  references Hurricane Katrina rebuilding work, and that season's own
+  facts are already spent per (3); a catalog-wide `hurricane|evacuat|
+  wildfire|typhoon|flood|earthquake` grep surfaced nothing else; (6)
+  The Apprentice S8's double-elimination-plus-five-criteria-final-task
+  fact — single-show, no comparable second show found; (7) an injury/
+  medevac mid-season production-disruption angle — a catalog grep for
+  `injur|medevac|medically evacuated|hospitali` returned six files,
+  but every hit was a false positive on "hospitality" (tourism-economy
+  jobs, superyacht hospitality instincts), not an actual injury fact;
+  (8)-(12) swept the catalog's least-mined shows by name — rhoslc,
+  rhodubai, rhom, rhod, perfect-match, the-ultimatum, queer-eye,
+  alone-frozen, alone-the-skills-challenge, below-deck-adventure,
+  below-deck-down-under, traitors-uk — and confirmed via a full
+  `show: <slug>` grep across every `content/themes/*.md` that each is
+  already carrying multiple single-show list entries per season
+  (queer-eye alone has three single-show lists — `a-show-that-never-
+  had-a-home-address`, `the-format-never-blinked`, `the-room-kept-
+  changing-size` — each already staking all ten seasons). No angle
+  cleared the ~40% overlap ceiling or the cross-canon floor without
+  duplicating an existing stake. Took the small fallback instead: a
+  lax-mode `pnpm content:check` "within-entry headline-to-body echo"
+  warning on `running-long-running-short` entry #18 (Survivor S51) —
+  title and blurb both carried the content bigram "format's standard"
+  (title: "...twice as long as the format's standard hour..."; blurb:
+  "...reverts to the format's standard length."). Reworded the title's
+  phrase to "the format's usual hour" — a one-word swap that preserves
+  the title's meaning exactly and clears the echo without touching the
+  blurb, rank, entry count, or `last_revised` (no ranking/fact change,
+  purely a phrasing dedup). The other three logged warnings
+  (`same-crown-new-price-tag` #18, `someone-else-held-the-chair-for-a-
+  while` #12, `the-other-side-of-the-table` #2) are left for a future
+  pass — one fix per tick, per the standing one-unit cap. Files
+  touched: `content/themes/running-long-running-short.md` (title
+  wording only), `plan/LISTS.md` (this note). No ledger row's
+  `last_revised`/`last_reviewed` changed. Next unlock: a new season
+  landing via Rule 2, or the 2026-10-11 weekly sweep.
+
 ## Notes
 
 - **2026-09-09, `/ship-content` Rule 3 tick (content-curator direct

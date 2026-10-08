@@ -119,6 +119,6 @@ entries:
     season: 51
     season_label: "S51"
     rank: 18
-    title: "The premiere alone runs twice as long as the format's standard hour, and needs every extra minute."
+    title: "The premiere alone runs twice as long as the format's usual hour, and needs every extra minute."
     blurb: "A two-hour special premiere is the runtime bet here — room enough to stack Probst's described seven borrowed twists and three new ones before the cast even builds camp. Every episode after reverts to the format's standard length."
 ---
