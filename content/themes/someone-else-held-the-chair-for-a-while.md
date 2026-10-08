@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-11
+last_revised: 2026-10-08
 featured: false
 related:
   - the-mic-changed-hands
@@ -79,4 +79,10 @@ entries:
     rank: 11
     title: "Two outside chefs join the table just to mark the number ten"
     blurb: "Ramsay, Sanchez, and Bastianich stay put for the tenth season — nobody's seat is in danger. Grant Achatz and Masaharu Morimoto guest judge alongside them anyway, chairs added purely to mark the occasion rather than cover for anyone missing."
+  - show: americas-got-talent
+    season: 10
+    season_label: "S10 · The Anniversary Run"
+    rank: 12
+    title: "The guest chair gets real voting power, not just a seat at the table"
+    blurb: "Rotating guest judges have sat in on audition rounds for years, but this is the first season to hand them their own Golden Buzzer — letting an outside name send an act straight to the live shows, not just offer an opinion from the guest chair."
 ---
