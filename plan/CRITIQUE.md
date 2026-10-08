@@ -1,9 +1,52 @@
 # CRITIQUE
 
-> Last pass: 2026-10-07 at commit 990f72cb
-> Pass count: 183
+> Last pass: 2026-10-08 at commit 0a312b4a
+> Pass count: 184
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 183 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 184 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/big-brother/season/time-trip`, `/shows`,
+> `/themes/someone-else-held-the-chair-for-a-while`, `/themes` anon;
+> `/`, `/shows/big-brother/season/time-trip`, `/u/e2e`, `/shows`,
+> `/themes/running-long-running-short` authed — rotated onto the
+> freshly-filed Big Brother Time Trip season page and the two newest
+> Rule 3 themed-list extends plus both pillar indexes. Both passes came
+> back mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, H1/canonical/dedicated-OG
+> present on every capture); authed pass independently confirmed real
+> auth (`@e2e` chrome, live unvoted vote-pair state, live comment
+> composer, no "sign in to comment" fallback). Spoiler discipline held
+> on both fresh pages — format/mechanic/casting facts only, no outcome
+> leakage. 2 new findings filed (1 high, 0 med, 1 low): a stale
+> `featured_pull` ("Ten seasons") on `same-crown-new-price-tag` that
+> never updated as the list grew to 18 entries, and a repeated "A
+> judge's seat [gets/goes to] ... instead of ..." sentence template on
+> adjacent ranks #2/#3 of `someone-else-held-the-chair-for-a-while`.
+> Two more candidate findings were dropped as false positives after
+> re-verification against the actual codebase: an EPISODES-caption
+> "Forty-one episodes" read flagged as a bare-restatement, but
+> `isEpisodesCaptionBareRestatement()` (`scripts/content-check.ts:2297`)
+> deliberately treats spelled-out counts as a distinct stylistic choice,
+> not a restatement, by design; and a home-hero "Sign in to count at
+> full weight" sighting on the authed pass turned out to be a curl/SSR
+> artifact (the sentence is suppressed client-side post-hydration once
+> `/api/auth/me` resolves `signedIn: true`, per the pass-64/76 fix and
+> its dedicated test) rather than a real signed-in-reader regression. A
+> third candidate (`/themes/running-long-running-short`'s "Save (this
+> device)" label for a signed-in reader) reconfirmed the already-open
+> pass-175 row verbatim — not re-filed. Two existing Pending rows were
+> reinforced rather than duplicated: the pass-183 HOST-caption
+> bare-restatement row gained a third occurrence
+> (`big-brother/seasons/28-time-trip.md`) and bumped LOW → MED; the
+> pass-178 big-brother single-fact-owner-drift row gained a
+> confirmation note that the "built to look backward" construction
+> recurs a third time on the same page, independent of the originally
+> flagged "1,000th episode" fact. No pending HIGH findings remained
+> open ahead of this pass (the sole HIGH row, pass-177 RHONY
+> eight-years, already carries its own 2026-10-01 resolved note).
+> Prior pass-183 summary follows. Pass 183 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4772,15 +4815,35 @@
 
 ## Pending
 
-### [LOW] [anon] /shows/traitors/season/new-blood, /shows/dancing-with-the-stars/season/fall-2026 — HOST meta caption bare-restates the host name shown one line above, a recurrence of the pattern the pass-146/dragrace fix already addressed
+### [HIGH] [anon] /themes/same-crown-new-price-tag — featured_pull claims "Ten seasons" while the list itself carries 18 entries
 
-- pass: 183 (commit 990f72cb)
+- pass: 184 (commit 0a312b4a)
 - viewport: desktop
 - category: comprehension
-- observation: The HOST stat's caption field re-states the host's full name from the primary value directly above it before adding any new fact — the same shape as the dragrace `host_caption` defect that was re-voiced show-wide on 2026-10-05 (pass-146 finding, resolved). That fix was content-level (one show's 15 season files), not a template or `content-check` invariant, so it didn't prevent the identical shape from being authored fresh into two of the very next season-fill drains. Traitors New Blood: HOST "Alan Cumming" → caption "Alan Cumming's fifth season at the castle." DWTS Fall 2026: HOST "Julianne Hough, Alfonso Ribeiro" → caption "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts." Both captions would read just as clearly leading with the new fact alone.
-- evidence: `content/shows/traitors/seasons/05-new-blood.md` `host_caption: "Alan Cumming's fifth season at the castle"` directly below `host: "Alan Cumming"`; `content/shows/dancing-with-the-stars/seasons/35-fall-2026.md` `host_caption: "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts"` directly below `host: "Julianne Hough, Alfonso Ribeiro"`.
-- suggested fix: Trim both captions to the new fact only — e.g. "Fifth season at the castle" and "Fourth season as co-hosts" — content-only, two files. Since this is the second time this exact shape has needed a reactive fix (first dragrace, now traitors + DWTS), consider adding a lax-mode `content-check` invariant (`collectHostCaptionBareRestatementIssues`) mirroring the existing `episodes_caption`/`cast_size_caption` bare-restatement guards, so future season-fill drains get caught at the gate rather than needing another critique pass to notice.
-- source: browser (critique-pass-183, anon)
+- observation: The theme's `featured_pull` field — the copy rendered on the `/themes` pillar's featured strip, the highest-visibility single sentence the list gets — opens "Ten seasons where the format held steady..." The list's own `entries` array runs `rank: 1` through `rank: 18`, sequential and complete; eighteen distinct seasons, not ten. The field was written when the list had ten entries and never updated across the eight Rule 3 extend ticks that grew it to its current size, so the single most prominent sentence about the list is now factually wrong on its own pillar page.
+- evidence: `content/themes/same-crown-new-price-tag.md:12` — `featured_pull: "Ten seasons where the format held steady but what winning actually paid out — cash, credit, a shared pot — got rewritten mid-run."`; same file's `entries` array (lines 16-124) contains 18 sequential `rank` values, 1 through 18, with zero gaps.
+- suggested fix: Rewrite `featured_pull` to "Eighteen seasons where..." (or reframe the opener entirely to avoid hardcoding a count that will drift again at the next extend — e.g. derive the stat from `entries.length` at render time the way the page's own "N ENTRIES" stat tile already does, rather than hand-authoring the number into prose). Content-only if the simple reword is taken; a small template change if the derive-at-render path is preferred. Single file either way.
+- source: browser (critique-pass-184, anon)
+
+### [MED] [anon] /themes/someone-else-held-the-chair-for-a-while — adjacent ranks #2/#3 both lean on the identical "A judge's seat [gets/goes to] ... instead of ..." sentence template
+
+- pass: 184 (commit 0a312b4a)
+- viewport: desktop
+- category: voice
+- observation: Rank #2 (Drag Race All Stars S02) title reads "A judge's seat gets a season-long guest instead of a substitute for one week." Rank #3 (So You Think You Can Dance S08), rendered immediately after, title reads "A judge's seat goes to a rotating cast of guests instead of a successor." Both open with the identical subject ("A judge's seat") and the identical "[verb] ... instead of ..." contrast structure, back-to-back — the same recurring near-identical-adjacent-entry defect class this catalog has repeatedly flagged and fixed on other lists (e.g. pass-180's "last ... together" pair).
+- evidence: `content/themes/someone-else-held-the-chair-for-a-while.md:22` (rank 2 title) and `:25` (rank 3 title), rendered back-to-back on the live page.
+- suggested fix: Vary rank #3's opener so it doesn't restate "A judge's seat [verb] ... instead of ..." immediately after rank #2 uses the same shape — e.g. "So You Think You Can Dance leaves the third chair open all season rather than naming a successor." Content-only edit to one `title` field.
+- source: browser (critique-pass-184, anon)
+
+### [MED] [anon] /shows/traitors/season/new-blood, /shows/dancing-with-the-stars/season/fall-2026, /shows/big-brother/season/time-trip — HOST meta caption bare-restates the host name shown one line above, a recurrence of the pattern the pass-146/dragrace fix already addressed (bumped LOW → MED at pass 184: third occurrence)
+
+- pass: 183 (commit 990f72cb); reconfirmed + extended pass 184 (commit 0a312b4a)
+- viewport: desktop
+- category: comprehension
+- observation: The HOST stat's caption field re-states the host's full name from the primary value directly above it before adding any new fact — the same shape as the dragrace `host_caption` defect that was re-voiced show-wide on 2026-10-05 (pass-146 finding, resolved). That fix was content-level (one show's 15 season files), not a template or `content-check` invariant, so it didn't prevent the identical shape from being authored fresh into two of the very next season-fill drains, and now a third: Traitors New Blood: HOST "Alan Cumming" → caption "Alan Cumming's fifth season at the castle." DWTS Fall 2026: HOST "Julianne Hough, Alfonso Ribeiro" → caption "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts." Big Brother Time Trip (pass-184, freshly spotted): HOST "Julie Chen Moonves" → caption "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm" (renders "Julie Chen Moonves, twenty-eighth summer at the helm"). All three would read just as clearly leading with the new fact alone, dropping the restated name.
+- evidence: `content/shows/traitors/seasons/05-new-blood.md` `host_caption: "Alan Cumming's fifth season at the castle"` directly below `host: "Alan Cumming"`; `content/shows/dancing-with-the-stars/seasons/35-fall-2026.md` `host_caption: "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts"` directly below `host: "Julianne Hough, Alfonso Ribeiro"`; `content/shows/big-brother/seasons/28-time-trip.md:22` `host_caption: "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm"` directly below `host: "Julie Chen Moonves"` at line 9.
+- suggested fix: Trim all three captions to the new fact only — e.g. "Fifth season at the castle," "Fourth season as co-hosts," and "Twenty-eighth summer at the helm" — content-only, three files. Three occurrences across three separate season-fill drains is strong enough signal now to add the lax-mode `content-check` invariant (`collectHostCaptionBareRestatementIssues`) mirroring the existing `episodes_caption`/`cast_size_caption` bare-restatement guards (`scripts/content-check.ts:2297`/`2336`), so future season-fill drains get caught at the gate rather than needing another critique pass to notice each new instance.
+- source: browser (critique-pass-183, anon; critique-pass-184, anon + authed)
 
 ### [MED] [anon+authed] /themes/the-other-side-of-the-table — ranked list's `rank` field skips #04, breaking the page's own "The 14, in order" promise
 
@@ -4832,6 +4895,7 @@
 - evidence: `content/shows/big-brother/seasons/28-time-trip.md` — `eyebrow` (line 10), `pull` (line 12), `premiere_caption` (line 18), `watch_list` episode_label + body (lines 30-31), body text (line 41) all carry the "1,000th episode" fact.
 - suggested fix: Let one field own the fact in full — the `watch_list` mid-season entry is the natural owner since it's the most specific (names it as a first for any US primetime series). Trim the `eyebrow`, `pull`, `premiere_caption`, and body text to reference the milestone obliquely (e.g. "landed mid-season," "arrives at a real production milestone") rather than re-deriving the "1,000th episode" phrase each time. Content-only, `content/shows/big-brother/seasons/28-time-trip.md`.
 - source: browser (critique-pass-178, anon)
+- reconfirmed pass 184 (commit 0a312b4a): still open, and the same page carries a second, independent instance of the identical defect class — the construction "built to look backward" (not "1,000th episode" this time) recurs near-verbatim in `pull` (line 12, "...a season built to look backward on purpose"), the `watch_list` mid-season entry body (line 31, "...a season already built to look backward"), and the closing body sentence (line 43, "...another summer built to look backward on purpose"). Same root cause (the page over-derives its own theme across fields), different phrase. The existing suggested fix's "let one field own the fact" principle covers this too — worth widening the fix's scope to also vary the "built to look backward" closer in two of its three occurrences, not just the 1,000th-episode phrase, while the file is being edited anyway.
 
 ### [MED] [anon] /themes — the "Featured this month" strip's badge reads "Featured for September 2026" while the site is now well into October
 
