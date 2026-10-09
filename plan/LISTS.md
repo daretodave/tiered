@@ -12771,3 +12771,75 @@ last time a curator actually looked.
   without duplicating an existing stake. Next unlock: a new season
   landing via Rule 2, or the next weekly sweep surfacing a season not
   yet checked against this ledger.
+
+- **2026-10-09, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship.** Re-verified both standing blockers fresh
+  against `plan/CADENCE.md`'s thirteenth weekly sweep (2026-10-04):
+  gap table still 37 shows / 39 gap-slots, every row starred
+  confirmed-but-unaired except `the-voice` (blocked behind open issue
+  #762, untouched) — Rule 2 non-actionable. No ledger row clears the
+  90-day `last_reviewed` floor (oldest still `survivor-pillars` at
+  2026-07-31, 70 days old). The Ideas parking lot carried no live
+  unshipped concept, so this was a from-scratch invention attempt.
+  Chased five candidate angles, all dead-ended on inspection:
+  - **rhodubai's "relocated wealth, not inherited money" founding
+    premise** (S01's own lede: "a social world built on relocated
+    wealth rather than inherited local money"). Read both rhodubai
+    season files in full. Confirmed via a full `show: rhodubai` grep
+    across every `content/themes/*.md` that this exact fact is
+    already the rank-1 entry on `wealth-as-the-whole-pitch` (category:
+    tone, 14 entries / 9 shows), titled almost verbatim "A cast built
+    entirely on relocated wealth, not inherited money." Fully spent.
+  - **below-deck-down-under's season-over-season march toward more
+    remote water** (Whitsundays → Ningaloo Reef → Seychelles →
+    Canouan). Read all four season files. The S01→S02 remoteness jump
+    is already staked at `best-location-reveals` rank 9 ("Ningaloo
+    Reef trades marina glamour for the franchise's most remote water
+    yet"); the S02→S03 and S03→S04 relocations are already staked at
+    `a-change-of-address` ranks 1-2 (the Seychelles and Canouan moves,
+    framed as the franchise leaving Australian waters first, then the
+    Caribbean). No facet of this show's location arc is left
+    unstaked.
+  - **cross-franchise "going live for the first time" as its own
+    angle** — a fresh grep (`live for the first time|first live
+    finale|broadcasts? (go|went|move) live`) surfaced exactly three
+    distinct-show hits: Ink Master S02 (first live finale), So You
+    Think You Can Dance S07 (performance broadcasts move from taped to
+    live), Shark Tank S14 (one live broadcast). All three clear the
+    ≥3-show floor on paper, but a follow-up grep showed the entire
+    angle is already shipped, verbatim, as `live-without-a-net`
+    (category: craft, 11 entries / 6 shows, status: stable) — which
+    already carries all three seasons found here plus Dancing with the
+    Stars S01, AGT S15/S16, and Love Island US S08. 100% overlap, not
+    an extend opportunity (list is already comprehensive and marked
+    stable, not growing).
+  - **"filmed back-to-back with an adjacent season" as a production-
+    overlap angle** — re-ran the 2026-08-09 eleventh-pass grep
+    (`back-to-back|filmed together|shot back to back|filmed
+    concurrently|same shoot|in tandem with|same production block`)
+    fresh against the full catalog. Same result as that prior pass:
+    only two distinct shows carry a genuine production-overlap
+    statement in their own season-file text (The Circle S02/S07, Queer
+    Eye S07) — still one show short of the cross-canon floor. No new
+    season file has added a third since August.
+  - **systematic re-check of the catalog's lightest-touched Bravo/
+    anthology shows** — ran individual `show:` greps (count mode, to
+    avoid the batched-grep truncation bug from earlier in this
+    session) across rhonj, rhop, southern-charm, vanderpump-rules,
+    summer-house, love-is-blind, 90-day-fiance, married-at-first-
+    sight-australia, survivor-australia, dragrace-allstars, and
+    bake-off. Every one of these eleven shows already anchors its own
+    dedicated single-show list covering its complete season range
+    (`the-social-geometry-resets-then-it-holds`, `full-time-was-a-
+    status-not-a-promise`, `the-founding-seven-slowly-rebuilt`,
+    `the-map-outlasted-the-cast`, `the-roster-never-held-still`,
+    `a-dating-experiment-still-writing-its-own-rulebook` plus
+    `fifteen-and-fifteen-every-single-season`, `the-clock-had-to-make-
+    room`, `the-episode-order-never-found-its-ceiling` plus `the-
+    reshuffle-stays-in-house`, `sorted-before-they-landed`, `no-
+    season-sends-a-queen-home-the-same-way-twice`, `the-tent-moved-
+    more-than-the-show-admits`). No gap in that coverage surfaced a
+    fresh thread.
+  No `content/themes/*.md` file written or edited this tick; no
+  ledger row changed besides this note. Next unlock: a new season
+  landing via Rule 2, or the 2026-10-11 weekly sweep.
