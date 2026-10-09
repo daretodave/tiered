@@ -1,9 +1,44 @@
 # CRITIQUE
 
-> Last pass: 2026-10-08 at commit 0a312b4a
-> Pass count: 184
+> Last pass: 2026-10-09 at commit fb041cff
+> Pass count: 185
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 184 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 185 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/big-brother/season/time-trip`, `/shows`,
+> `/themes/every-summer-gets-its-own-twist`, `/themes` anon; `/`,
+> `/shows/big-brother/season/time-trip`, `/u/e2e`, `/shows`,
+> `/themes/every-summer-gets-its-own-twist` authed — rotated onto the
+> newest Rule 3 themed-list extend plus both pillar indexes. Both passes
+> came back mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, H1/canonical/OG present on
+> every capture); authed pass confirmed real auth (`@e2e` chrome, live
+> unvoted vote-pair state on Big Brother Time Trip, real (empty) `/u/e2e`
+> member record, no sign-in wall). 1 new finding filed (0 high, 1 med,
+> 0 low): Big Brother Time Trip's `pull` field claims "27 years of
+> history" for a show with `est_year: 2000` airing in 2026 — only 26
+> years have elapsed, confirmed against the derived-tenure convention
+> (`src/lib/show-tenure.ts`) that renders Survivor's identical
+> est_year/current-year span as "twenty-six years in." Two candidates
+> were dropped at self-assessment: a HOST/FILMED/EPISODES caption-echo
+> read on the same page turned out to be entirely covered ground — the
+> EPISODES half is an intentional non-bug per
+> `isEpisodesCaptionBareRestatement()`, and the HOST half reconfirms
+> the already-open, already-MED pass-183/184 HOST-caption row verbatim
+> (same file named there), so nothing new to file or bump; and the
+> authed pass's own discovery that `scripts/critique-walk.mjs` still
+> caps body-text capture at 4000 chars (blocking verification of the
+> comment-composer focus ask on content-heavy pages) is the same
+> tooling-not-product-defect call an earlier pass already made on this
+> exact cap — not re-filed, flagging again here in case a future pass
+> wants to finally raise it. No pending HIGH findings remained open
+> ahead of this pass (the two `### [HIGH]` rows still physically under
+> `## Pending` — same-crown-new-price-tag featured_pull and rhony
+> eight-years — each already carry their own resolved note).
+> Prior pass-184 summary follows. Pass 184 ran in the cloud loop via
+> Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4814,6 +4849,16 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /shows/big-brother/season/time-trip — pull field claims "27 years of history" for a 26-year-old span
+
+- pass: 185 (commit fb041cff)
+- viewport: desktop
+- category: comprehension
+- observation: The season's `pull` field — a prominent lede-adjacent sentence — opens "Time Trip bets that the house's 27 years of history can become a game mechanic in its own right." Big Brother's `est_year` is 2000 and this season airs in 2026, so only 26 calendar years separate the two — not 27. The sibling flagship show Survivor shares the identical `est_year: 2000`, and its own tenure copy (rendered via the `{yearsWord}` derived-tenure token in `src/lib/show-tenure.ts`, not hand-authored) correctly reads "twenty-six years in" for the same 2000-to-2026 span on the home hero. Big Brother's `pull` field hand-authors the number instead of deriving it, and lands on the wrong one.
+- evidence: `content/shows/big-brother/seasons/28-time-trip.md:12` — `pull: "Time Trip bets that the house's 27 years of history can become a game mechanic in its own right..."`; `content/shows/big-brother.md:15` — `est_year: 2000`; `content/shows/survivor.md:15` — `est_year: 2000` with `card_tagline: "Still finding new ways to ask who you really are, {yearsWord} years in."` rendering "twenty-six" for the same current year via `src/lib/show-tenure.ts`.
+- suggested fix: Change "27 years of history" to "26 years of history" in `content/shows/big-brother/seasons/28-time-trip.md`'s `pull` field. The `{yearsWord}` token system is scoped to `tagline`/`card_tagline` only (per `src/lib/show-tenure.ts`'s own comments), so a season-level `pull` field can't adopt it directly without a schema change — a hand-corrected literal is the right-sized fix here, not a token migration. Content-only, one field. Spoiler discipline P0 intact (tenure-year fact only, no outcome exposure).
+- source: browser (critique-pass-185, anon)
 
 ### [HIGH] [anon] /themes/same-crown-new-price-tag — featured_pull claims "Ten seasons" while the list itself carries 18 entries
 
