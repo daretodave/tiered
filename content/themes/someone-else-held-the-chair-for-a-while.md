@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-10-08
+last_revised: 2026-10-09
 featured: false
 related:
   - the-mic-changed-hands
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "The guest chair gets real voting power, not just a seat at the table"
     blurb: "Rotating guest judges have sat in on audition rounds for years, but this is the first season to hand them their own Golden Buzzer — letting an outside name send an act straight to the live shows, not just offer an opinion from the guest chair."
+  - show: americas-got-talent
+    season: 21
+    season_label: "S21"
+    rank: 13
+    title: "A settled four-judge panel loses its most famous chair right before the finale."
+    blurb: "Back surgery keeps Simon Cowell off the panel for both finale broadcasts, the one gap this season's otherwise settled four-judge table has. Britain's Got Talent's KSI covers the seat — a cross-franchise guest, not an internal substitute."
 ---
