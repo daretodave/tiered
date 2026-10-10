@@ -9,7 +9,7 @@ location: Studio City, California
 host: Julie Chen Moonves
 eyebrow: "Aired summer 2026 · the franchise's 1,000th episode"
 lede: "Season 28 redresses the compound as a time-travel house, decade-themed rooms and all, and ties a new weekly twist directly into the show's own back catalog."
-pull: "Time Trip bets that the house's 27 years of history can become a game mechanic in its own right — and lands its milestone episode in the middle of a season built to look backward on purpose."
+pull: "Time Trip bets that the house's 26 years of history can become a game mechanic in its own right — and lands its milestone episode in the middle of a season built to look backward on purpose."
 shape_h2: "A weekly trip into the vault, win or lose."
 take_h2: "The past, reinstalled as a twist."
 format_summary: "17 houseguests · a past-powers revival twist"
