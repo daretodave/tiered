@@ -1,23 +1,36 @@
 # CRITIQUE
 
-> Last pass: 2026-10-09 at commit fb041cff
-> Pass count: 185
+> Last pass: 2026-10-10 at commit 383a5dab
+> Pass count: 186
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 185 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 186 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/shows/big-brother/season/time-trip`, `/shows`,
-> `/themes/every-summer-gets-its-own-twist`, `/themes` anon; `/`,
-> `/shows/big-brother/season/time-trip`, `/u/e2e`, `/shows`,
-> `/themes/every-summer-gets-its-own-twist` authed — rotated onto the
-> newest Rule 3 themed-list extend plus both pillar indexes. Both passes
-> came back mechanically clean (0 console errors, 0 failed requests, 0
-> horizontal overflow on either viewport, H1/canonical/OG present on
-> every capture); authed pass confirmed real auth (`@e2e` chrome, live
-> unvoted vote-pair state on Big Brother Time Trip, real (empty) `/u/e2e`
-> member record, no sign-in wall). 1 new finding filed (0 high, 1 med,
-> 0 low): Big Brother Time Trip's `pull` field claims "27 years of
+> `/shows/top-chef/season/carolinas`, `/shows`,
+> `/themes/built-for-one-playing-as-a-team`, `/themes` anon; `/`,
+> `/shows/top-chef/season/carolinas`, `/u/e2e`, `/shows`,
+> `/themes/built-for-one-playing-as-a-team` authed — rotated onto a
+> previously-unvisited themed list plus a canonical-detail page distinct
+> from pass 185's rotation. Both passes came back mechanically clean
+> (0 console errors, 0 failed requests, 0 horizontal overflow on either
+> viewport, H1/canonical/OG present on every capture); authed pass
+> confirmed real auth (`@e2e` chrome, signed-in-no-vote state on Top
+> Chef Carolinas, real (empty) `/u/e2e` member record, no sign-in wall,
+> SSR already emits signed-in chrome — no flash-of-signed-out). Of 4
+> anon-pass candidates, 3 were dropped on self-assessment: one (Top
+> Chef Carolinas host-tenure/LCK-rule restatement) duplicates the
+> already-pending pass-160 row on the same page; one (rank-scale
+> "canon peak"/"the tail" labels) misreads `RankScale.tsx` — those are
+> static descriptive endpoint labels, not unlabeled interactive
+> elements, and the track already carries a full `aria-label` summary
+> per the pass-43/74/148 accessibility fixes; one (a quoted canon
+> "closing verdict" line) could not be re-verified — the exact string
+> does not appear anywhere in `content/shows/top-chef/canon.md` or the
+> rendered page source. 1 new finding filed (0 high, 1 med, 0 low):
+> a themed-list sentence-template echo on `built-for-one-playing-as-
+> a-team`, below. Pass 185's own filed finding remains open — see next
+> entry: Big Brother Time Trip's `pull` field claims "27 years of
 > history" for a show with `est_year: 2000` airing in 2026 — only 26
 > years have elapsed, confirmed against the derived-tenure convention
 > (`src/lib/show-tenure.ts`) that renders Survivor's identical
@@ -4849,6 +4862,16 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [anon] /themes/built-for-one-playing-as-a-team — roughly half the entries open with the identical "cast-count noun verb team-math" sentence shape, three of them back-to-back at the top
+
+- pass: 186 (commit 383a5dab)
+- viewport: desktop
+- category: voice
+- observation: Ranks #1-#3 — the first three entries a reader scrolls past — each open with the same "[cast-count] [cast noun] [become/face/travel-to-compete-as] [team noun]" sentence shape: "Ten solo survivalists become seven two-person teams...", "Nine rookie shops face nine veteran shops...", "Twenty-four home cooks travel to a new city to compete as twelve pairs...". Three more entries further down the list (#4, #5, #8) echo a looser version of the same shape ("Mentors and apprentices compete as linked teams...", "Three past champions each lead a six-artist team...", "Sixteen houseguests move in already coupled up..."). That's 6 of the list's 12 entries sharing one opening grammar, with the tightest three landing consecutively at the very top where a reader's template-detection is sharpest. The remaining 6 entries (#6, #7, #9-#12) each open differently, so this isn't full-catalog templating — it's concentrated at the list's most-read position.
+- evidence: `content/themes/built-for-one-playing-as-a-team.md` entry blurbs, lines 21 ("Ten solo survivalists become seven two-person teams sharing the same isolation the format is built on..."), 27 ("Nine rookie shops face nine veteran shops in a tag-team elimination format..."), 33 ("Twenty-four home cooks travel to a new city to compete as twelve pairs throughout..."), 39 ("Mentors and apprentices compete as linked teams instead of lone entrants..."), 45 ("Three past champions each lead a six-artist team, facing off directly..."), 62 ("Sixteen houseguests move in already coupled up, filling a winter slot...").
+- suggested fix: Rewrite entries #2 and #3 (the two directly following the list's own rank-#1 template-setter) to open on something other than a cast-count-plus-team-math clause — e.g. lead with the stakes or the structural consequence instead of the mechanic, the same technique already used site-wide to break up adjacent-entry template echoes (e.g. the pass-41 A-tier `card_tagline` fix, the pass-180 "last ... together" adjacency fix). Content-only, two `blurb` fields, no schema change. Spoiler discipline P0 intact — format-mechanics only, no outcome/elimination exposure on any of the six entries touched.
+- source: browser (critique-pass-186, anon)
 
 ### [MED] [anon] /shows/big-brother/season/time-trip — pull field claims "27 years of history" for a 26-year-old span
 
