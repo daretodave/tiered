@@ -57,7 +57,7 @@ tag: The biggest format bet since the founding lineup — a new city, a record c
 slot_argument: Seattle stacks three firsts at once — the show's first Pacific Northwest season, its largest cast at seven couples, and a full panel overhaul down to two experts. No season outside the founding two has taken this many swings at once.
 community_rank_hint: rank=3 delta=0 sentiment=hold
 
-Seattle earns this spot by raising the real stakes of the matching itself, not just moving cities. Two experts instead of three means each match carries more individual judgment and less committee cover — a genuine test of whether the format's psychological stakes hold with fewer voices at the table. Seven couples, the largest cast the show has fielded, means more legal marriages and more pressure on the experts' process at once. Add a first-ever Seattle season, and this is the most structurally ambitious run since the founding two proved the premise could travel. It doesn't unseat New York or its sequel, but it edges past every panel swap and cast expansion ranked below it.
+Atlanta closed out the founding four-expert panel, settling into a format that already knew its own shape. Seattle tests the opposite bet, trimming that panel down to two — a far bigger swing in how much individual judgment each voice carries than any cast-size record could argue on its own. That risk is why Seattle sits ahead of Atlanta's steadier, more settled run despite Atlanta's historical weight as the format's last founding-panel season. It still trails New York and its sequel, though — those two seasons carry the lower-risk-tolerance origin story this format had to invent from nothing, and nothing since has matched that first-mover stakes.
 
 ## 3. Atlanta
 
