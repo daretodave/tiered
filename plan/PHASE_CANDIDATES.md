@@ -4045,6 +4045,27 @@ next. 87 days unpromoted since original filing (07-09), 30 days since the
 last reinforcement (pass 68, 09-04) — three files now in the same broken
 state this candidate was filed to fix.
 
+**Update (digest 2026-10-10):** the original failure mode — not just the
+file-size-wall `Read` ceiling, the actual SDK-level crash this candidate was
+filed against — recurred directly: the 2026-10-09T23:56:20Z cloud `march`
+tick (run 38006815107) burned 62 turns / ~37 minutes / $4.86 before dying
+with `error: Claude Code returned an error result: Prompt is too long`,
+auto-filed as a comment on issue #565. This is the first occurrence of that
+specific crash class since 2026-10-02 (8 days quiet) and only the second
+since mid-September — rarer than the 2026-07/08 daily-recurrence peak, but
+confirms the underlying mechanism is still live, not just a cold historical
+citation. File growth continues unabated in the interim: `plan/CRITIQUE.md`
+is now 7,456 lines / 2.32MB (was 7,195/2.29MB at the 10-04 reinforcement),
+`plan/AUDIT.md` 705 lines / 1.29MB (unchanged line count, same file), and
+`plan/LISTS.md` 12,845 lines / 1.31MB — all three still past the 256KB
+single-`Read` wall this candidate names. This file itself (`plan/PHASE_
+CANDIDATES.md`) is now 7,398 lines / 470KB, the fourth append-only ledger
+approaching the same ceiling it was originally scoped to fix only for the
+other three. 93 days unpromoted since original filing (07-09), 6 days since
+the last reinforcement (digest 10-04) — still the file's longest-standing
+unpromoted item and now carrying a fresh, dated production-crash data
+point rather than only file-size arithmetic.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
