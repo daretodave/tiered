@@ -20,6 +20,23 @@ gated by the excellence gate (bearings Rule 3): distinct angle
 every entry earning its slot, schema + cross-canon floor
 strict. A tick may ship zero lists rather than a mediocre one.
 
+## Featured rotation
+
+The `/themes` "Featured this month" badge derives its month
+label from the latest `last_revised` across the three
+`featured: true` themes (by design, to avoid build-time date
+drift — pass-24 #269). Because the featured set is swapped by
+hand, it drifts a month stale every ~3-5 weeks as Rule 3 keeps
+revising non-featured lists faster than the featured trio
+rotates — this has recurred three times (closed pass-103
+2026-08-12, pass-168 2026-09-22, pass-178 2026-10-10). **Any
+Rule 3 content tick that touches the ledger should check**: if
+the oldest of the three `featured: true` themes' `last_revised`
+trails the catalog max by more than ~3 weeks, swap it for one of
+the most-recently-revised eligible themes (author `featured_pull`
+on the incoming theme) in the same commit, no separate audit row
+needed.
+
 ## Ledger
 
 12 lists at reset (2026-07-12). `last_reviewed` seeded from

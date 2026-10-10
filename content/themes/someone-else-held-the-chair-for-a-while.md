@@ -8,7 +8,8 @@ sentiment: hold
 status: growing
 curator: "tiered.tv editor"
 last_revised: 2026-10-09
-featured: false
+featured: true
+featured_pull: "Guest judges, celebrity rotations, and future full-timers who covered an empty seat without ever pausing the show."
 related:
   - the-mic-changed-hands
   - the-panel-turned-over-more-than-the-contestants-did

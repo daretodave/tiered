@@ -8,7 +8,8 @@ sentiment: hold
 status: growing
 curator: "tiered.tv editor"
 last_revised: 2026-10-06
-featured: false
+featured: true
+featured_pull: "Past winners and alumni who traded a second shot at the trophy for a coach's chair or judge's seat."
 related:
   - when-the-chairs-turned-over
   - the-mic-changed-hands
