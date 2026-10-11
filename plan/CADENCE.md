@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-10-04 | next due 2026-10-11 |
+| season-sweep | 7 days | 2026-10-11 | next due 2026-10-18 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,68 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Fourteenth full weekly sweep, 2026-10-11 tick (cloud march, Rule 1a):** 6
+`scout` batches (≤12 shows each) covered every one of the 68 catalogued
+shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
+filed season files — zero mismatches this tick, every show's declared
+count equals its filed-season-file count).
+
+**One genuine new gap found.** `traitors` (US) — Season 6 cast was
+revealed 2026-09-18 (TVLine) with the premiere confirmed for "January
+2027" (month-level date, exact day not yet set) — the same
+month-precision confirmation standard already used for `dragrace` S19
+below. Traitors fully drained to 5/5 on 2026-09-27 (New Blood), so this
+is a fresh post-drain renewal, not a re-flag. Added as `traitors | 5/6 |
+1*`.
+
+**Three items investigated and closed as non-gaps (recurring or
+misattributed, not reopened).** `big-brother` — a scout batch cited "Season
+29 premiered July 9, 2026," but 2026-07-09 is the confirmed premiere date
+of Season 28 ("Time Trip," filed this past week via the finale gate,
+finale 2026-10-01) — the scout mislabeled the already-filed season, not a
+real Season 29; the show is correctly complete at 28/28. `chopped` — the
+third-party "Season 63/64" indexing artifact resurfaced again; Food
+Network's own 62-season numbering stays authoritative, closed 2026-07-16,
+not reopened. `jersey-shore` — "Jersey Shore Family Vacation" spinoff
+coverage resurfaced again; this catalog tracks only the original
+2009–2012 run, correctly ended at 6/6 — a Family Vacation entry is a
+new-show question, locked to the biweekly show-add clock.
+
+**One conflicting signal, no table action.** `below-deck-adventure` — a
+scout batch cited a "Season 2, May 17" premiere (Dexerto), but this
+contradicts at least three independent prior reconfirmations (most
+recently the 2026-09-20 sweep) that the show still carries a single 2022
+season with no S2 announced, and the citing scout itself couldn't pin
+down a year for the claim. Mirrors the 2026-09-13 `vanderpump-rules`
+conflicting-signal pattern — kept excluded pending a cleaner citation
+next sweep rather than acted on now.
+
+**No star changes.** Every already-starred, currently-airing or
+confirmed-but-unaired row this tick's scouts touched — `amazing-race` S39,
+`bake-off` S17, `below-deck` S13 (premiered 2026-10-12), `below-deck-
+down-under` S5, `dragrace-uk` S8, `dragrace` S19, `dragrace-allstars` S12,
+`hells-kitchen` S25/26, `love-is-blind` S11 (premiered 2026-10-14),
+`love-island-uk` S14, `masked-singer` S15, `rhobh` S16, `rhoc` S20,
+`rhom` S8, `rhonj` S15, `rhop` S11 (premiered 2026-10-11), `rhoslc` S7,
+`selling-sunset` S10, `shark-tank` S18, `southern-charm` S12,
+`summer-house` S11, `the-challenge` S42, `the-circle` S8 (Hulu move, no
+date), `the-voice` S30 (still blocked on issue #762), `top-chef` S24,
+`traitors-uk` S5, `vanderpump-rules` S13 — remains mid-run, unaired, or
+dateless, none newly concluded or newly dated; no star changes.
+`bachelorette` S22's pulled-from-air status stays excluded per standing
+precedent. `southern-charm` S12 now carries a specific premiere date
+(2026-11-12, per TheAshleysRealityRoundup) refining the prior "May 2026
+confirmed, no date" note — premiere-date refinement only, no table
+action. `love-island-us` S9 and `married-at-first-sight` (US) S21 and
+`masterchef` (US) S17 remain renewed-but-dateless — correctly excluded
+per the announced-without-date threshold, watch list for next sweep.
+
+**No calendar additions.** No newly-confirmed finale dates surfaced this
+pass beyond what's already in `content/calendar.yml`.
+
+**68 shows catalogued · 38 shows carry a gap · 40 gap-slots total**
+(37 shows / 39 gap-slots before this tick + `traitors`'s 1 new slot).
 
 **Thirteenth full weekly sweep, 2026-10-04 tick (cloud march, Rule 1a):** 6
 `scout` batches (≤12 shows each) covered every one of the 68 catalogued
@@ -3307,3 +3369,5 @@ No calendar or gap-table action.
 | 2026-09-13 | 0 new (tenth full sweep, all 41 rows reconfirmed accurate; alone-australia status-only update and a masterchef calendar.yml addition, neither a count change) | 41 |
 | 2026-09-20 | 3 (american-ninja-warrior S19+S20 double-renewal [2 slots] + survivor-australia S13 renewal [1 slot], both first-time confirmations; 8 status-field hygiene corrections airing→hiatus for concluded shows with no season currently broadcasting, no count change) | 44 |
 | 2026-09-27 | 4 (2 bug-fix restorations — american-ninja-warrior + survivor-australia were logged "added" on 2026-09-20 but never physically inserted as table rows, same drift class as the 2026-08-28 married-at-first-sight correction, fixed this tick; 2 genuine new — married-at-first-sight [US] S21 renewal [1 slot] + love-island-uk S14 [1 slot, also a previously-uninserted row]; 3 status-field hygiene corrections hiatus→airing for dancing-with-the-stars/hells-kitchen/the-voice, all confirmed mid-run; chopped + survivor-australia-numbering + bachelorette false positives reconfirmed, not reopened) | 43 |
+| 2026-10-04 | 0 net (1 genuine new — rhobh S16 renewal [1 slot] — offset by 1 stale-row cleanup — big-brother S28 physically removed after its finale-gate drain completed three ticks prior but the removal itself had never landed; net even on count) | 39 |
+| 2026-10-11 | 1 (traitors [US] S6, officially dated "January 2027" per TVLine, fresh post-drain renewal; big-brother/chopped/jersey-shore false positives reconfirmed and closed, not reopened; below-deck-adventure conflicting signal flagged for next sweep, no table action) | 40 |
