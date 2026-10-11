@@ -1,13 +1,38 @@
 # CRITIQUE
 
-> Last pass: 2026-10-10 at commit 383a5dab
-> Pass count: 186
+> Last pass: 2026-10-10 at commit c8fc6b43
+> Pass count: 187
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 186 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 187 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
-> `/shows/top-chef/season/carolinas`, `/shows`,
+> `/shows/bachelor/season/grant-ellis`, `/shows`,
+> `/themes/every-season-strikes-a-different-bargain-with-lana`, `/themes`
+> anon; `/`, `/shows/bachelor/season/grant-ellis`, `/u/e2e`, `/shows`,
+> `/themes/every-season-strikes-a-different-bargain-with-lana` authed —
+> rotated onto a previously-unvisited season page (Bachelor S29, "Grant
+> Ellis") plus a previously-unvisited themed list (Too Hot to Handle's
+> "every season strikes a different bargain with Lana"), both distinct
+> from pass 186's rotation. Both passes came back mechanically clean (0
+> console errors, 0 failed requests, 0 horizontal overflow on either
+> viewport, H1/canonical/OG present on every capture); authed pass
+> confirmed real auth (`authenticated:cloud`, `@e2e` chrome visible on
+> every page). The anon and authed passes independently converged on
+> the same strongest finding — a page-wide fact-restatement defect on
+> the Bachelor Grant Ellis page — which was merged into one HIGH row
+> rather than filed twice. Of the remaining candidates, one (zero-vote
+> community block reading as abandoned) was recognized as a second
+> instance of the already-pending pass-170 Top Chef Carolinas finding
+> and merged into that row (bumped LOW → MED) rather than filed as a
+> new row. Filed 4 new findings (1 high, 0 med, 3 low) plus one
+> severity bump on an existing row. No pending HIGH findings remained
+> open ahead of this pass.
+> Prior pass-186 summary follows. Pass 186 ran in the cloud loop via
+> Path A2 (`scripts/critique-walk.mjs` — headless chromium, fresh
+> isolated context, no Chrome MCP needed), both anon and authed passes
+> with a freshly-minted `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`.
+> URL set: `/`, `/shows/top-chef/season/carolinas`, `/shows`,
 > `/themes/built-for-one-playing-as-a-team`, `/themes` anon; `/`,
 > `/shows/top-chef/season/carolinas`, `/u/e2e`, `/shows`,
 > `/themes/built-for-one-playing-as-a-team` authed — rotated onto a
@@ -4863,6 +4888,46 @@
 
 ## Pending
 
+### [HIGH] [anon+authed] /shows/bachelor/season/grant-ellis — the season's two headline facts ("second Black Bachelor" and "fastest turnaround") are each restated 3-5 times across nearly every section on the page
+
+- pass: 187 (commit c8fc6b43)
+- viewport: desktop
+- category: voice
+- observation: Worse in scope than any currently-pending fact-restatement case. Four related facts — "second Black Bachelor," the "fastest turnaround" from contestant to lead, "nine episodes," and the Edinburgh stop — are restated across the eyebrow, lede, pull quote, THE TAKE heading+body, THE SHAPE OF THE SEASON body, the FORMAT field's own summary+caption pair, the CAST SIZE caption, the EPISODES caption, the FILMED caption, and two of the four WHAT TO WATCH FOR entries (Ep 1, Ep 2). Nearly every section on the page is a rephrasing of the same two or three sentences rather than adding new information, which reads as template-generated rather than the "knowledgeable peer" voice the brand promises. Both the anonymous and authenticated passes independently flagged this same page, converging on the same root cause.
+- evidence: `content/shows/bachelor/seasons/29-grant-ellis.md` — `eyebrow: "...Second Black Bachelor"`; `lede`: "...franchise's second Black Bachelor...fastest turnaround...Nine episodes...first stop in Edinburgh..."; `pull: "Ellis is the fastest turnaround the format has staged..."`; `format_summary: "Traditional format, nine-episode run"`; `format_caption` restates the turnaround again; `cast_size_caption: "Twenty-five women met the franchise's second Black Bachelor lead"`; `episodes_caption: "Nine episodes — the fewest since 2008's season twelve"`; the Ep1/Ep2 `watch_list` entries each reference the same casting-first/turnaround facts a fifth and sixth time. Rendered page text confirms all of these appear verbatim in sequence.
+- suggested fix: Let the lede and THE TAKE jointly own the "second Black Bachelor" and "fastest turnaround" facts in full. Rewrite the FORMAT caption, CAST SIZE caption, and the Ep1/Ep2 watch-list entries to each carry a genuinely new observation (travel logistics, a production detail, an early-game dynamic) instead of re-deriving the same two casting-precedent facts already stated twice in the header block. Content-only, one file (`content/shows/bachelor/seasons/29-grant-ellis.md`), four to six fields. Spoiler discipline P0 intact — casting/format facts only, no outcome exposure.
+- source: browser (critique-pass-187, anon + authed)
+
+### [LOW] [anon] /shows/bachelor/season/grant-ellis — meta description truncates mid-clause right before the em dash introducing the season's second precedent, reading as an unfinished thought
+
+- pass: 187 (commit c8fc6b43)
+- viewport: desktop
+- category: seo
+- observation: The rendered meta description cuts off with an ellipsis exactly where the source `lede` sentence continues into its second clause, so the search-result/social-preview snippet reads as abandoned mid-sentence rather than a complete thought.
+- evidence: rendered description: "The franchise's second Black Bachelor takes the mansion in the fastest turnaround the show has staged…" — the source `lede` in `content/shows/bachelor/seasons/29-grant-ellis.md` continues "— cast the same year he appeared on the preceding Bachelorette season," which `clipToSeoBudget()` truncates before reaching.
+- suggested fix: Either author a dedicated `meta_description`-equivalent field that's a complete standalone sentence within the ~160-char SEO budget, or adjust the lede's first clause to be independently complete so the clip point lands on a full thought. Content-only, one field.
+- source: browser (critique-pass-187, anon)
+
+### [LOW] [anon] /themes/every-season-strikes-a-different-bargain-with-lana — ranked entries carry a "→" link affordance but the two related-list cards below them don't, making it unclear at a glance that those cards are also clickable
+
+- pass: 187 (commit c8fc6b43)
+- viewport: desktop
+- category: navigation
+- observation: Every ranked entry (#01-#06) ends with a "→" signaling it's a link. The two cards under "MORE LISTS IN THIS VEIN" carry no equivalent cue in the rendered text, so the two navigation zones on the same page read inconsistently — one visibly clickable, one ambiguous.
+- evidence: ranked entries render "...throws more at its own format than any run before it.\n→"; the related-list cards render their blurb text with no trailing → before the next card begins.
+- suggested fix: Add the same "→" affordance to the related-list cards so both navigation zones on the page read consistently as clickable. Likely a shared component fix (wherever the related-list card markup lives) rather than a per-theme content change — check if other themed-list pages have the same gap before scoping as content-only vs. component-level.
+- source: browser (critique-pass-187, anon)
+
+### [LOW] [authed] /themes/every-season-strikes-a-different-bargain-with-lana — rank #1 entry's title and blurb both lean on the identical "final/finale season" framing back to back
+
+- pass: 187 (commit c8fc6b43)
+- viewport: desktop
+- category: voice
+- observation: Rank #1's title and blurb both open on the same framing word, landing twice in two consecutive lines of copy a reader takes in together.
+- evidence: `content/themes/every-season-strikes-a-different-bargain-with-lana.md` rank 1 — `title: "The finale season stacks a mirror-image twist on top of everything else"`; blurb ends "...The final season throws more at its own format than any run before it."
+- suggested fix: Drop "final/finale season" from one of the two lines so the blurb adds a new angle rather than restating the title's own framing. Content-only, one field.
+- source: browser (critique-pass-187, authed)
+
 ### [MED] [anon] /themes/built-for-one-playing-as-a-team — roughly half the entries open with the identical "cast-count noun verb team-math" sentence shape, three of them back-to-back at the top
 
 - pass: 186 (commit 383a5dab)
@@ -5117,14 +5182,15 @@
 - issue: #816
 - RESOLVED (2026-09-25, cloud march tick, commit b72e97f2): rewrote the access-denied copy from "ask the admin to grant the mod role in the Auth0 dashboard" to "ask a tiered.tv admin to add mod access to your account" — drops the vendor name and console reference entirely, same instruction. Content-only, one file. Verify gate green: fast gate (199 test files/3693 unit tests, content:check ok), build clean (1519 static pages), e2e 4898/4898 passed (32.4m).
 
-### [LOW] [anon] /shows/top-chef/season/carolinas — the zero-vote community block reads as an abandoned feature months after the season aired
+### [MED] [anon] /shows/top-chef/season/carolinas, /shows/bachelor/season/grant-ellis — the zero-vote community block reads as an abandoned feature months after the season aired (bumped LOW → MED at pass 187: second occurrence, second flagship show)
 
-- pass: 170 (commit 7d6424d1)
+- pass: 170 (commit 7d6424d1); reconfirmed + extended pass 187 (commit c8fc6b43)
 - viewport: desktop
 - category: comprehension
-- observation: Top Chef Carolinas premiered 2026-03-09 (roughly six months before this pass) yet its community vote block still reads "0 / BE THE FIRST TO VOTE," which sits oddly against the homepage's framing of community rank as "live, restless, real numbers per season." A season this far past air with zero votes reads as neglected rather than freshly published.
-- evidence: rendered vote block: "0 / BE THE FIRST TO VOTE / one vote per reader; change your mind within 72h. community rank updates weekly." Homepage lede: "One you vote — live, restless, real numbers per season."
-- suggested fix: Content/product question, not a code bug per se — either seed early community votes before a season page ships, or soften the empty-state copy on seasons that have been live for months so "be the first" doesn't read as stale. Flagging for iterate/editorial judgment rather than prescribing the fix.
+- observation: Top Chef Carolinas premiered 2026-03-09 (roughly six months before pass 170) yet its community vote block still reads "0 / BE THE FIRST TO VOTE," which sits oddly against the homepage's framing of community rank as "live, restless, real numbers per season." Pass 187 found the identical shape on a second flagship show: Bachelor Season 29 ("Grant Ellis," aired winter 2025, well over a year before this pass) renders the same "0 / BE THE FIRST TO VOTE" block. Two independent instances on two separate flagship franchises is strong enough signal that this isn't a one-off stale page — it's a systemic gap in how community vote counts get seeded (or how the empty state reads) for any back-catalog season.
+- evidence: Top Chef Carolinas rendered vote block: "0 / BE THE FIRST TO VOTE / one vote per reader; change your mind within 72h. community rank updates weekly." Bachelor Grant Ellis rendered vote block: "Does this belong in the community top 10? CAST A VOTE COUNTS MORE ONCE YOU SIGN IN 0 BE THE FIRST TO VOTE." Homepage lede: "One you vote — live, restless, real numbers per season."
+- suggested fix: Content/product question, not a code bug per se — either seed early community votes before a season page ships, or soften the empty-state copy specifically for seasons that have been live for months/years so "be the first" doesn't read as stale on well-aged pages. Flagging for iterate/editorial judgment rather than prescribing the fix. Given two instances now, worth considering a systemic empty-state copy change (e.g. age-aware copy swap past some threshold) rather than per-page patches.
+- source: browser (critique-pass-170, anon; critique-pass-187, anon)
 - source: browser (critique-pass-170, anon)
 
 ### [MED] [anon] /shows/survivor/season/survivor-50 — the "fiftieth season" milestone fact is restated near-verbatim four times on one page
