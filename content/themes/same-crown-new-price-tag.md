@@ -120,6 +120,6 @@ entries:
     season: 51
     season_label: "S51"
     rank: 18
-    title: "A coin flip lets any castaway grow the season's prize pot mid-game."
+    title: "A coin flip hands the cast control over how big the purse grows."
     blurb: "Survivor 51 adds a Million Dollar Coin Toss: any castaway can trigger it to push the prize pot from one million toward two. For the first time, growing the money on the line becomes a decision a player makes mid-game, not a fixed number set on day one."
 ---

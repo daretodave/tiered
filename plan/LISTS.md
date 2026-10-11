@@ -12860,3 +12860,48 @@ last time a curator actually looked.
   No `content/themes/*.md` file written or edited this tick; no
   ledger row changed besides this note. Next unlock: a new season
   landing via Rule 2, or the 2026-10-11 weekly sweep.
+
+- **2026-10-11, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship, small warning fix taken instead.**
+  Re-verified both standing blockers fresh: `plan/CADENCE.md`'s gap
+  table still non-actionable (every slot starred confirmed-but-
+  unaired), and zero ledger rows clear the 90-day `last_reviewed`
+  floor (oldest still `survivor-pillars` at 2026-07-31, 72 days old
+  as of today — inside the window). Ran a from-scratch concept search
+  before falling back: (1) a "pre-existing romantic couple cast
+  individually on a non-dating show" angle, distinct from the sibling/
+  parent framing already on `when-the-cast-was-already-related` — dead
+  on inspection, since that list's own description line already
+  states its scope as "siblings, spouses, parents, even a set of
+  twins," and its rank-14 Top Chef S23 entry explicitly frames a real-
+  life couple as "a second genuine family tie," so a split-out list
+  would be near-total thesis overlap, not a distinct angle; (2) a
+  network-move angle — already double-covered by
+  `the-workroom-outlasted-the-network` and `new-network-same-rulebook`;
+  (3) a sweep for any of the catalog's 68 shows with zero themed-list
+  appearances at all, checked via individual `show: <slug>` greps
+  across every `content/themes/*.md` — every single show already
+  appears in at least one list, so a "first-ever appearance for this
+  show" angle isn't available as a shortcut into a new list. With no
+  angle clearing the ~40% overlap ceiling, took the small fallback
+  precedent set by the 2026-10-08 second same-day pass: one of the
+  three outstanding lax-mode `pnpm content:check` "within-entry
+  headline-to-body echo" warnings logged that day
+  (`same-crown-new-price-tag` #18, `someone-else-held-the-chair-for-a-
+  while` #12, `the-other-side-of-the-table` #2) was still unresolved.
+  Fixed `same-crown-new-price-tag` rank 18 (Survivor S51's Million
+  Dollar Coin Toss entry): the title and blurb both carried the exact
+  phrases "any castaway," "prize pot," and "mid-game." Reworded the
+  title only, from "A coin flip lets any castaway grow the season's
+  prize pot mid-game." to "A coin flip hands the cast control over how
+  big the purse grows." — preserves the entry's meaning exactly, clears
+  all three echoed phrases, and touches neither the blurb, the rank,
+  the entry count, nor `last_revised` (no ranking/fact change, purely
+  a phrasing dedup, consistent with the 10-08 precedent). The other
+  two logged warnings (`someone-else-held-the-chair-for-a-while` #12,
+  `the-other-side-of-the-table` #2) remain for a future pass — one fix
+  per tick, per the standing one-unit cap. Files touched:
+  `content/themes/same-crown-new-price-tag.md` (title wording only),
+  `plan/LISTS.md` (this note). No ledger row's `last_revised`/
+  `last_reviewed` changed. Next unlock: a new season landing via
+  Rule 2, or the 2026-10-11 weekly sweep.
