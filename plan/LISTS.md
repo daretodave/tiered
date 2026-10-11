@@ -12905,3 +12905,29 @@ last time a curator actually looked.
   `plan/LISTS.md` (this note). No ledger row's `last_revised`/
   `last_reviewed` changed. Next unlock: a new season landing via
   Rule 2, or the 2026-10-11 weekly sweep.
+
+- **2026-10-11, `/ship-content` Rule 3 tick (cloud march, second
+  same-day pass): small fallback fix, one unit.** Re-verified both
+  standing blockers fresh, no state change since the earlier same-day
+  pass above: `plan/CADENCE.md`'s gap table still non-actionable
+  (every one of the 40 gap-slots starred confirmed-but-unaired per
+  today's fourteenth weekly sweep — `rhop` S11 premiered today but a
+  day-one premiere carries no writable content yet, consistent with
+  the sweep's own "no star changes" verdict), and zero ledger rows
+  clear the 90-day `last_reviewed` floor (oldest still
+  `survivor-pillars` at 2026-07-31, 72 days old, inside the window).
+  Took the next item off the earlier pass's own two-item carry list:
+  `someone-else-held-the-chair-for-a-while` entry #12's title ("The
+  guest chair gets real voting power, not just a seat at the table")
+  and blurb both closed on the literal noun-phrase "guest chair."
+  Reworded the blurb's closing clause only — "not just offer an
+  opinion from the guest chair" → "not just weigh in from the
+  sidelines" — same meaning, clears the echo; title, rank, entry
+  count, and `last_revised` untouched. One fix per tick, per the
+  standing cap. Files touched: `content/themes/someone-else-held-the-
+  chair-for-a-while.md` (entry #12 blurb only), `plan/LISTS.md` (this
+  note). One warning of this class remains outstanding
+  (`someone-else-held-the-chair-for-a-while` #13, `settled
+  four-judge`) alongside `the-other-side-of-the-table` #2 — both carry
+  forward for a future pass. Next unlock: a new season landing via
+  Rule 2, or the 2026-10-18 weekly sweep.

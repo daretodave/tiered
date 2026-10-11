@@ -85,7 +85,7 @@ entries:
     season_label: "S10 · The Anniversary Run"
     rank: 12
     title: "The guest chair gets real voting power, not just a seat at the table"
-    blurb: "Rotating guest judges have sat in on audition rounds for years, but this is the first season to hand them their own Golden Buzzer — letting an outside name send an act straight to the live shows, not just offer an opinion from the guest chair."
+    blurb: "Rotating guest judges have sat in on audition rounds for years, but this is the first season to hand them their own Golden Buzzer — letting an outside name send an act straight to the live shows, not just weigh in from the sidelines."
   - show: americas-got-talent
     season: 21
     season_label: "S21"
