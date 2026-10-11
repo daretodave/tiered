@@ -1782,6 +1782,19 @@ change to the fix; **61 days unpromoted since filing (07-22)** —
 still the file's longest-unpromoted candidate, still the standing
 `/oversight` recommendation.
 
+**Update (digest 2026-10-11):** the longest green streak this
+candidate has recorded — seven consecutive nights, 10-04 through
+10-10, latest clocked 74m38s against the 75-minute wall — broke
+exactly as the 10-10 digest flagged it would ("margin is thinning,
+not widening"): tonight's run (38102237540, started 01:33:33Z) hit
+the wall at 9,278/10,012 (92.7%), all completed checks passing. See
+`plan/AUDIT.md`'s e2e-full row for the full update. No scope change
+to the fix — sharding across parallel Playwright workers remains the
+only thing that retires this ceiling rather than just riding it.
+**82 days unpromoted since filing (07-21)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
