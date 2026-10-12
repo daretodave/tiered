@@ -2,7 +2,7 @@
 show: below-deck
 number: 10
 title: "St. Lucia"
-canonical_position: 12
+canonical_position: 13
 location: "St. Lucia, Caribbean"
 host: "Captain Lee Rosbach / Captain Sandy Yawn"
 premiere_date: "2022-10-01"

@@ -2,7 +2,7 @@
 show: below-deck
 number: 9
 title: "St. Kitts"
-canonical_position: 11
+canonical_position: 12
 location: "St. Kitts, Caribbean"
 host: "Captain Lee Rosbach"
 premiere_date: "2021-11-01"

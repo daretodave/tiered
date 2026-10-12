@@ -1,13 +1,13 @@
 ---
 show: below-deck
 editor: tiered.tv editor
-last_revised: 2026-08-14
+last_revised: 2026-10-12
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. The ranking covers the full run — Lee Rosbach's decade at the helm (seasons 1–10) and Kerry Titheradge's opening seasons (seasons 11–12). It weighs location character, cast chemistry, captain-authority dynamics, and what each season contributed to the format. Outcomes don't figure in. It is one read, held with confidence."
+meth_who_p: "tiered.tv's editor. The ranking covers the full run — Lee Rosbach's decade at the helm (seasons 1–10) and Kerry Titheradge's opening seasons (seasons 11–13). It weighs location character, cast chemistry, captain-authority dynamics, and what each season contributed to the format. Outcomes don't figure in. It is one read, held with confidence."
 meth_how_h: "How I weigh it"
 meth_how_p: "Cast dynamics come first, but location and charter-guest variety shape the season's texture. A season that generates friction across multiple departments — deck, interior, galley — earns more than one that confines it to a single storyline. The seasons that taught the show what it was receive credit for laying the groundwork."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon now spans twelve seasons and both captain eras. The Lee-to-Kerry transition is fully seeded and ranked on merit. The ranking will shift as the Kerry era extends. Both eras get judged by the same standard — location, cast, captain authority — so the ranking earns its order rather than assumes it."
+meth_when_p: "The canon now spans thirteen seasons and both captain eras. The Lee-to-Kerry transition is fully seeded and ranked on merit. The ranking will shift as the Kerry era extends. Both eras get judged by the same standard — location, cast, captain authority — so the ranking earns its order rather than assumes it."
 tier_s_blurb: "The Bahamas peak and the Tahiti high-water mark — the two seasons where location, cast, and production ran at full capacity."
 tier_a_blurb: "The origin run and format-consolidation seasons that built the show's identity, plus the best of the newer locations."
 tier_b_blurb: "Reliable Below Deck — functional seasons that deliver the format without a defining moment."
@@ -80,11 +80,19 @@ community_rank_hint: rank=7 delta=0 sentiment=hold
 
 The British Virgin Islands season is Below Deck finding its stride. The format was no longer assembling itself — it knew what it was — and the production deployed that confidence in a location that suited the show. Captain Lee's authority over the deck was more sharply defined, the chief stew hierarchy generated cleaner drama, and the charter guests delivered the range of demands that test a crew in different ways. The BVI's sheltered anchorages and open passages gave the cameras material they used well. Not as vivid as the Bahamas or the Sint Maarten return, but a necessary consolidation season.
 
+## 13. Season 13 — Phuket
+
+tag: A return to the franchise's best-reviewed overseas location — new yacht, same captain, unproven ensemble.
+slot_argument: Phuket matches the premise elements the franchise's strongest seasons share — a distinct international setting, a captain with real authority — without a single aired hour yet. Provisional.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Phuket gives the franchise its first return engagement with a location that already produced one of its best seasons. Captain Kerry Titheradge enters his third season with the kind of settled command the Grenada and Sint Maarten III runs built toward, and most of the senior interior and galley team — chief stew, second stew, chef — carries over intact. A brand-new motoryacht replaces last season's vessel, giving the production a fresh canvas inside a setting it already knows how to frame. The deck and the rest of interior arrive mostly new, which is the real variable here. Premise alone earns Phuket a solid mid-pack slot above the format's more routine Caribbean runs; aired episodes will decide whether it climbs.
+
 ## 8. Season 8 — Antigua
 
 tag: Reliable Caribbean Below Deck — Antigua delivers the format's mechanics without a standout season.
 slot_argument: The Antigua season returned the franchise to familiar Caribbean territory after Thailand and delivered the cross-department friction the format runs on. Competent and watchable, without the visual novelty of the Tahiti or Thailand runs.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Antigua brought Below Deck back to the Caribbean after the Thailand detour. English Harbour's sheltered waters and Antigua's open blue-water passages gave the production a capable visual backdrop, and the crew generated cross-department friction — deck pressure, interior hierarchy, galley tension — that made the format work as expected. Charter guests ranged widely in their demands. Captain Lee commanded his eighth season with the dry authority the show had built its identity around. Reliable and competent, without the location novelty or the cast chemistry that lifts a season above the middle of the pack.
 
@@ -92,7 +100,7 @@ Antigua brought Below Deck back to the Caribbean after the Thailand detour. Engl
 
 tag: Island-hopping across three Caribbean destinations — the most ambitious charter range in the franchise's run.
 slot_argument: Sint Maarten III expanded the charter map to Anguilla and St. Barths — more logistical complexity, three distinct Caribbean environments, and the most notable structural innovation the franchise has introduced in recent seasons.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 The third Sint Maarten season expanded the charter range to Anguilla and St. Barths, giving the format more logistical complexity than a single-anchorage season allows and giving the cameras three distinct Caribbean environments to work with. Captain Kerry Titheradge's second run showed a more settled command presence, and the broader geographic scope sharpened the crew dynamics in ways a fixed location doesn't produce. The island-hopping structure is the most notable format innovation the franchise has introduced in the current era, and it gives the season a shape none of the previous Sint Maarten visits had.
 
@@ -100,7 +108,7 @@ The third Sint Maarten season expanded the charter range to Anguilla and St. Bar
 
 tag: Reliable Below Deck — the St. John season works through its charter run without a defining moment.
 slot_argument: The weakest of the early seasons, which still means functional Below Deck. Beautiful USVI waters, Captain Lee holding command — but cast chemistry doesn't generate the friction that elevates the format above its mechanics.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 The U.S. Virgin Islands run is solid — Captain Lee holding command, the interior and deck departments generating their customary tension, charter guests presenting the usual range of expectations. The St. John waters are beautiful and the production knew how to frame them. What's missing is the kind of sustained cast chemistry that elevates the format beyond its mechanics. The season works through its episodes without a moment that demands full attention. A functional entry that shows the format running reliably even when the cast doesn't spark. The Tahiti and Thailand seasons would later demonstrate what the mid-run could look like at its best.
 
@@ -108,7 +116,7 @@ The U.S. Virgin Islands run is solid — Captain Lee holding command, the interi
 
 tag: A compact Caribbean run — fifteen episodes, a reliable format, and a lower ceiling than the seasons around it.
 slot_argument: The shortest Lee-era season, St. Kitts covered the format's fundamentals in a tighter arc than usual. Crew dynamics generated friction but without the extended development the longer seasons allow.
-community_rank_hint: rank=11 delta=0 sentiment=hold
+community_rank_hint: rank=12 delta=0 sentiment=hold
 
 St. Kitts gave Below Deck a compact fifteen-episode run against the island's green volcanic coastline and clear Caribbean waters. The shorter order meant the season moved quickly through its charter rotation, generating crew friction at pace but without the extended arcs the longer seasons allow. The deck and interior departments produced the expected hierarchy drama, and Captain Lee held command across a tighter timeline than usual. Functional and watchable, but the format needs room to breathe, and fifteen episodes doesn't give it much. The shortest Lee-era season is also among the thinner ones.
 
@@ -116,6 +124,6 @@ St. Kitts gave Below Deck a compact fifteen-episode run against the island's gre
 
 tag: The mid-season captain change gave St. Lucia a structural anomaly no other Below Deck season shares.
 slot_argument: A serviceable Caribbean season with a structural anomaly: a mid-season captain change neither captain fully owns. The St. Lucia setting is capable; the seam between command styles limits how far the season travels.
-community_rank_hint: rank=12 delta=0 sentiment=hold
+community_rank_hint: rank=13 delta=0 sentiment=hold
 
 St. Lucia's season is structurally unlike any other Below Deck run. A mid-season captain change — Lee Rosbach commanding the opening episodes and returning for the finale stretch, with Sandy Yawn bridging the bulk of the charter run — gave the season a shape neither captain fully owns. The St. Lucia waters offered the franchise a lush, Piton-shadowed backdrop. Crew dynamics adjusted around the transition, which added a layer of uncertainty the format doesn't usually carry. Serviceable in its individual parts, but the structural seam between two command styles limits the season's overall coherence.

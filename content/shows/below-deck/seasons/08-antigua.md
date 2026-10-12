@@ -2,7 +2,7 @@
 show: below-deck
 number: 8
 title: "Antigua"
-canonical_position: 8
+canonical_position: 9
 location: "Antigua"
 host: "Captain Lee Rosbach"
 premiere_date: "2020-11-01"

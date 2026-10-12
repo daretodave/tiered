@@ -2,7 +2,7 @@
 show: below-deck
 number: 12
 title: "Sint Maarten III"
-canonical_position: 9
+canonical_position: 10
 location: "Sint Maarten, Anguilla, St. Barths"
 host: "Captain Kerry Titheradge"
 premiere_date: "2025-02-01"
