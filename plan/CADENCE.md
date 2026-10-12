@@ -24,6 +24,30 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-12 tick (cloud march): rhop 10/11 → 11/11, gap row
+removed.** Picked `rhop` off the prior tick's sweep — the 2026-10-11 sweep's
+"no star changes" note listed both `rhop` S11 (premiered 2026-10-11) and
+`below-deck` S13 (premiered 2026-10-12) as still starred, but a staleness
+check against today's date found rhop's premiere had already passed the
+sweep-dated star by a full day, while below-deck's premieres same-day as
+this tick — rhop was the less ambiguous, actionable pick of the two. Filed
+Season 11 (`content/shows/rhop/seasons/11-season-11.md`) — Karen Huger
+returns as a full-time housewife for the first time since Season 9,
+directly answering Season 10's defining absence, while Courtney Ajinça
+joins new and Keiarna Stewart and Angel Massie exit; premiered 2026-10-11,
+still airing, so the season file and its canon entry are
+pre-season/format-only per spoiler discipline — ranked on premise, not
+execution, following the same provisional pattern as the `traitors` S5 and
+`dancing-with-the-stars` Fall 2026 drains above. Canon rebased: Season 11
+slots at a provisional rank 8 — Huger's return directly answers the exact
+deficiency that sent Season 10 to the bottom of this canon, but the season
+carries its own churn and is only one episode in, so the slot holds
+provisionally. `canonical_position` rewritten for S8 (8→9), S9 (9→10), and
+S10 (10→11) in the same commit; show frontmatter bumped `seasons: 10→11`,
+blurb corrected to "11 seasons." `era_bands`' existing `rebuild-era`
+[2025, 2026] already covers the new season's year, no widening needed.
+Rhop fully drained — row removed below, table now 37 shows / 39 gap-slots.
+
 **Fourteenth full weekly sweep, 2026-10-11 tick (cloud march, Rule 1a):** 6
 `scout` batches (≤12 shows each) covered every one of the 68 catalogued
 shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
@@ -1536,7 +1560,6 @@ new-show creation is locked to the biweekly show-add clock.
 | love-island-us | 8/9 | 1* |
 | married-at-first-sight-australia | 13/14 | 1* |
 | masterchef | 16/17 | 1* |
-| rhop | 10/11 | 1* |
 | rhoslc | 6/7 | 1* |
 | selling-sunset | 9/10 | 1* |
 | summer-house | 10/11 | 1* |
@@ -3371,3 +3394,4 @@ No calendar or gap-table action.
 | 2026-09-27 | 4 (2 bug-fix restorations — american-ninja-warrior + survivor-australia were logged "added" on 2026-09-20 but never physically inserted as table rows, same drift class as the 2026-08-28 married-at-first-sight correction, fixed this tick; 2 genuine new — married-at-first-sight [US] S21 renewal [1 slot] + love-island-uk S14 [1 slot, also a previously-uninserted row]; 3 status-field hygiene corrections hiatus→airing for dancing-with-the-stars/hells-kitchen/the-voice, all confirmed mid-run; chopped + survivor-australia-numbering + bachelorette false positives reconfirmed, not reopened) | 43 |
 | 2026-10-04 | 0 net (1 genuine new — rhobh S16 renewal [1 slot] — offset by 1 stale-row cleanup — big-brother S28 physically removed after its finale-gate drain completed three ticks prior but the removal itself had never landed; net even on count) | 39 |
 | 2026-10-11 | 1 (traitors [US] S6, officially dated "January 2027" per TVLine, fresh post-drain renewal; big-brother/chopped/jersey-shore false positives reconfirmed and closed, not reopened; below-deck-adventure conflicting signal flagged for next sweep, no table action) | 40 |
+| 2026-10-12 | Rule 2 drain, not a sweep (rhop S11 — fully filed, gap-slot removed) | 39 |
