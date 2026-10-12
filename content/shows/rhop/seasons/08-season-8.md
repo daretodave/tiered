@@ -3,7 +3,7 @@ show: rhop
 number: 8
 slug: season-8
 title: "Season 8"
-canonical_position: 8
+canonical_position: 9
 premiere_date: "2023-11-05"
 location: "Potomac, Maryland"
 ep_count: 21

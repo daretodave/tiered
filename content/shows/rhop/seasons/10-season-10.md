@@ -3,7 +3,7 @@ show: rhop
 number: 10
 slug: season-10
 title: "Season 10"
-canonical_position: 10
+canonical_position: 11
 premiere_date: "2025-10-05"
 location: "Potomac, Maryland"
 ep_count: 20

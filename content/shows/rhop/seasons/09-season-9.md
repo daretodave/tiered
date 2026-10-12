@@ -3,7 +3,7 @@ show: rhop
 number: 9
 slug: season-9
 title: "Season 9"
-canonical_position: 9
+canonical_position: 10
 premiere_date: "2024-10-06"
 location: "Potomac, Maryland"
 ep_count: 20

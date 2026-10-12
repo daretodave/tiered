@@ -1,18 +1,18 @@
 ---
 show: rhop
 editor: "tiered.tv editor"
-last_revised: 2026-07-14
+last_revised: 2026-10-12
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. All ten RHOP seasons are ranked here, weighed for how clearly Potomac's old-money-versus-new-money hierarchy plays out and how well each season's cast holds together. A reshuffled roster that keeps that tension specific ranks above one that just adds new names. The goal is honesty about what's on screen, not a claim to be right."
+meth_who_p: "tiered.tv's editor. All eleven RHOP seasons are ranked here, weighed for how clearly Potomac's old-money-versus-new-money hierarchy plays out and how well each season's cast holds together. A reshuffled roster that keeps that tension specific ranks above one that just adds new names. The goal is honesty about what's on screen, not a claim to be right."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most here — whether Potomac's social world reads as genuinely specific rather than a generic Housewives backdrop, whether the old-money-versus-new-money tension generates real friction rather than sitting as scenery, and whether each season's cast brings enough chemistry to carry it, roster changes included."
 meth_when_h: "When I revisit"
-meth_when_p: "All ten seasons are ranked now, from the 2016 debut through the show's tenth season in 2025–2026. Positions will keep shifting as new seasons air — especially once it's clear whether a reshaped cast can hold the old-money-versus-new-money tension that makes RHOP worth ranking in the first place."
+meth_when_p: "All eleven seasons are ranked now, from the 2016 debut through the show's eleventh season in 2026. Positions will keep shifting as new seasons air — especially once it's clear whether a reshaped cast can hold the old-money-versus-new-money tension that makes RHOP worth ranking in the first place."
 tier_s_blurb: "Seasons where Potomac's old-money-versus-new-money tension and the cast's chemistry combine at full intensity — the show at its most distinct."
 tier_a_blurb: "Confident seasons that use Potomac's social hierarchy with real purpose, even without reaching the format-defining bar."
 tier_b_blurb: "The show's default tier — a season that runs the format competently on a strong cast, without yet setting the standard."
 tier_c_blurb: "Seasons where cast turnover left Potomac's social hierarchy thinner than the format at its best, no matter how large the roster got."
-weekly_question: "Now that all ten seasons are ranked, does Season 7's cast stability beat Season 1's original spark?"
+weekly_question: "Now that all eleven seasons are ranked, does Season 7's cast stability beat Season 1's original spark?"
 era_bands:
   - key: founding-era
     label: "Founding era"
@@ -86,11 +86,19 @@ community_rank_hint: rank=7 delta=0 sentiment=hold
 
 Season two ranks in the back half because its sophomore-season instability is visible on screen. Monique Samuels joins as a new full-time housewife, expanding the founding group, but Katie Rost's run ends partway through filming, and the remaining cast has to find a new footing mid-shoot rather than across a full, settled season. Fourteen episodes make it the shortest order in the show's history, which doesn't give the reshaped group much time to establish the kind of layered dynamics the higher-ranked seasons run on. The old-money-versus-new-money tension is present in flashes, but a season built around a disruption doesn't have the same room to develop it as one built on continuity.
 
+## 11. Season 11
+
+tag: Karen Huger's full-time return, ranked provisionally on premise alone.
+slot_argument: Huger's return directly answers the exact deficiency that put Season 10 last — the old-money anchor this canon rewards most. But the season carries its own real churn, so the slot holds provisionally until it's proven on screen.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season eleven ranks here on premise, not execution. Karen Huger returns as a full-time housewife for the first time since Season 9, directly answering the absence that sent Season 10 to the bottom of this canon — the old-money anchor the format's central tension depends on most. That's real structural weight. But the season is only one episode into its run, and it carries its own churn: Keiarna Stewart and Angel Massie are gone, Courtney Ajinça is new, and Robyn Dixon and Monique Samuels return only as friends of the show. Huger's presence buys back what Season 10 lost. Whether the cast turns that into real chemistry is still unproven, so the slot holds provisionally rather than settled.
+
 ## 8. Season 8
 
 tag: The largest cast in RHOP history, on the eve of major turnover.
 slot_argument: Season eight grows to eight full-time housewives, the biggest group yet, but the season plays in hindsight like the last stop before two of the show's longest-running cast members step away. Big roster, uncertain footing.
-community_rank_hint: rank=8 delta=0 sentiment=hold
+community_rank_hint: rank=9 delta=0 sentiment=hold
 
 Season eight sits in the canon's lower third because size alone doesn't buy stability. Nneka Ihim joins as the group's eighth full-time housewife, the largest cast RHOP has ever run, filmed over the summer of 2023. On its own terms the season holds together — nobody leaves mid-shoot the way Season 2 did — but it turns out to be Candiace Dillard Bassett's and Robyn Dixon's last as full-time housewives, two of the show's longest-running cast members, and the season plays differently once that context is visible. Ihim's run doesn't extend past this one season either. A crowded cast spreads the old-money-versus-new-money dynamic thin rather than sharpening it, which is why it ranks below the leaner, steadier seasons above it.
 
@@ -98,7 +106,7 @@ Season eight sits in the canon's lower third because size alone doesn't buy stab
 
 tag: The heaviest cast reshuffle in show history.
 slot_argument: Three housewives don't return and two new ones step in, leaving the group to rebuild its social order almost from scratch. Real churn, and the specificity that defines this canon's top tier hasn't had time to reform yet.
-community_rank_hint: rank=9 delta=0 sentiment=hold
+community_rank_hint: rank=10 delta=0 sentiment=hold
 
 Season nine ranks near the bottom because it's RHOP's most disrupted season, and the disruption shows. Candiace Dillard Bassett, Robyn Dixon, and Nneka Ihim all step away, and the show brings in Stacey Rusch as a new full-time housewife while promoting Keiarna Stewart from a recurring role — more than a third of the cast is new or newly elevated. Five returning housewives anchor a group still finding its footing rather than deepening ground it's already covered, including Mia Thornton in her final season as a full-timer. The old-money-versus-new-money hierarchy that defines this canon's best seasons needs continuity to land, and this much turnover hasn't left room to earn it.
 
@@ -106,6 +114,6 @@ Season nine ranks near the bottom because it's RHOP's most disrupted season, and
 
 tag: The season the show's longest-running old-money anchor isn't there.
 slot_argument: Karen Huger doesn't appear as a full-time housewife for the first time in ten seasons, a real-world absence that hits directly at the specific tension this canon rewards most. The lowest slot, for a real structural reason.
-community_rank_hint: rank=10 delta=0 sentiment=hold
+community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Season ten sits last because it's missing the one element this canon has rewarded most since the debut: Karen Huger. A real-world legal matter keeps Huger off the main season for the first time in RHOP's history — she turns up only in a post-finale interview segment — and her absence lands directly on the old-money side of the show's defining tension. Tia Glover and Angel Massie join as new full-time housewives, and Mia Thornton exits after four seasons, leaving a reshuffled cast still finding its shape. That's not a knock on anyone's effort. It's simply a season built around the format's central hierarchy, missing its most identifiable old-money figure.
