@@ -1795,6 +1795,15 @@ only thing that retires this ceiling rather than just riding it.
 longest-unpromoted candidate, still the standing `/oversight`
 recommendation.
 
+**Update (digest 2026-10-12):** breached again the very next night —
+the first back-to-back red pair since the 08-15→08-21 mixed week.
+Tonight's run (38194318853, started 02:03:49Z) hit the same wall at
+8,889/10,719 (82.9%), zero actual test failures. See `plan/AUDIT.md`'s
+e2e-full row for the full update. No scope change to the fix.
+**83 days unpromoted since filing (07-21)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
