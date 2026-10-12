@@ -24,6 +24,33 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-12 tick (cloud march, second this day): below-deck
+12/13 → 13/13, gap row removed.** Picked `below-deck` off the row this same
+day's prior tick had deferred — that tick's own note read "below-deck's
+premieres same-day as this tick," and this fresh tick (later the same
+calendar date) found Season 13 (Phuket, Thailand) had now actually
+premiered (2026-10-12, Bravo). Filed Season 13
+(`content/shows/below-deck/seasons/13-phuket.md`) — a new motoryacht (Azul
+V) replaces Season 12's St. David, Captain Kerry Titheradge enters his
+third season, and most of the senior interior/galley crew (chief stew,
+second stew, chef) returns alongside a mostly-new deck/interior roster;
+premiered today, still airing, so the season file and its canon entry are
+pre-season/format-only per spoiler discipline — ranked on premise, not
+execution, same provisional pattern as the `rhop` S11 drain just above.
+Episode count not confirmed by any primary source as of this tick — field
+omitted rather than guessed. Canon rebased: Season 13 slots at a
+provisional rank 8 — the premise elements (a return to the franchise's
+best-reviewed overseas location, a new vessel, a captain settled into his
+third season) earn a solid mid-pack slot above the format's routine
+Caribbean entries, but below every fully-aired season this canon has
+already evaluated on tape. `canonical_position` rewritten for S8 (8→9), S9
+(9→10), S4 (10→11), S9-old/St. Kitts (11→12), and S10/St. Lucia (12→13) in
+the same commit; show frontmatter bumped `seasons: 12→13`, blurb/tagline/
+card_tagline corrected to "13"/"thirteen." `era_bands`' existing
+`titheradge-era` [2024, 2026] already covers the new season's year, no
+widening needed. Below Deck fully drained — row removed below, table now
+35 shows / 37 gap-slots.
+
 **Rule 2 drain, 2026-10-12 tick (cloud march): rhop 10/11 → 11/11, gap row
 removed.** Picked `rhop` off the prior tick's sweep — the 2026-10-11 sweep's
 "no star changes" note listed both `rhop` S11 (premiered 2026-10-11) and
@@ -1537,7 +1564,6 @@ new-show creation is locked to the biweekly show-add clock.
 | amazing-race | 38/39 | 1* |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
-| below-deck | 12/13 | 1* |
 | love-is-blind | 10/11 | 1* |
 | the-challenge | 41/42 | 1* |
 | bachelor | 29/30 | 1* |
