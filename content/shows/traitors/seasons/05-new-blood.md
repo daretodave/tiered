@@ -27,9 +27,9 @@ watch_list:
   - episode_label: "Ep 5 · The weekly rhythm begins"
     body: "The schedule settles into single weekly episodes. Worth watching for how an all-civilian field handles the pressure without a reality-TV playbook to fall back on."
   - episode_label: "Ep 8 · The midpoint"
-    body: "Roughly the season's halfway point, and the first time this format has played to a broadcast Thursday-night audience rather than a streaming-only one."
+    body: "Roughly the season's halfway point, and the format's first outing in front of a broadcast Thursday-night audience rather than a streaming-only one."
   - episode_label: "Ep 11-12 · The finale build"
-    body: "The two-hour finale closes out the season on November 19. Watch for how a cast with no reality-TV reputation to protect plays the endgame differently."
+    body: "The two-hour finale closes out the season on November 19. Watch for how a cast with no on-camera persona to protect plays the endgame differently."
 ---
 
 Season five is the franchise's biggest swing yet: its first all-civilian cast, no reality alumni or celebrities anywhere in the mix, drawn from a reported 80,000-plus applicants. It's also the first US season on broadcast NBC rather than Peacock-exclusive. Filmed at the familiar Ardross Castle under Alan Cumming, the premise alone makes this the most structurally interesting season since the show's early run.

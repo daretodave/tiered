@@ -20,9 +20,9 @@ watch_list:
   - episode_label: "Season-long · Huger's full-time return"
     body: "Karen Huger returns as a full-time housewife for the first time since Season 9, after sitting out Season 10's main run entirely. Watch for how the group's old-money-versus-new-money dynamic shifts now that its longest-running anchor is back full time."
   - episode_label: "New housewife · Courtney Ajinça joins"
-    body: "Event designer Courtney Ajinça joins as the season's new full-time housewife, stepping into a cast that's also absorbing two exits and one major return. Watch for how a newcomer finds her footing amid that much simultaneous change."
+    body: "Event designer Courtney Ajinça joins as the season's newest housewife, stepping into a cast that's also absorbing two exits and one major return. Watch for how a newcomer finds her footing amid that much simultaneous change."
   - episode_label: "Friends of the show · Dixon and Samuels"
-    body: "Robyn Dixon and Monique Samuels, both former full-time housewives from different eras of the show, return this season in a recurring friend-of-the-show capacity. Watch for how two familiar faces reenter the social circle without full-time billing."
+    body: "Robyn Dixon and Monique Samuels, both former housewives from different eras of the show, return this season in a recurring friend-of-the-show capacity. Watch for how two familiar faces reenter the social circle without a cast seat of their own."
 ---
 
 Season eleven brings Karen Huger back as a full-time housewife for the first time since Season 9, directly answering the gap that defined Season 10. Courtney Ajinça joins as a new full-time housewife, while Keiarna Stewart and Angel Massie exit the main cast. Robyn Dixon and Monique Samuels return in a recurring friend-of-the-show capacity. It's a season built around one major return, with its own real turnover on either side of it.
