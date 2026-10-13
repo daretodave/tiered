@@ -13048,3 +13048,24 @@ last time a curator actually looked.
   tick. Files touched: `plan/LISTS.md` only (this entry). Next
   unlock: `love-is-blind` S11 premieres 2026-10-14, or the 2026-10-18
   weekly sweep.
+
+- **2026-10-13, cloud march tick: zero-ship, declined to re-walk
+  saturated ground.** Re-verified both standing blockers fresh:
+  `plan/CADENCE.md`'s gap table non-actionable (36 shows / 36
+  gap-slots, every row starred confirmed-but-unaired — nearest
+  unlock `love-is-blind` S11 premieres 2026-10-14). Rule 3 was
+  already exhaustively re-walked by the immediately preceding tick
+  this same day (13 fresh candidate angles, all rejected on
+  near-100% overlap with existing lists — see note directly above).
+  Running a fourth from-scratch concept search in one day against
+  the same saturated catalog would have been pure repetition, so
+  this tick skipped straight to the established small-fallback
+  pattern instead: `pnpm content:check` surfaced 3 genuine
+  `watch_list` cross-callout phrase-repetition warnings (issue #325)
+  on seasons the catalog shipped in the last 24-48 hours — rhop S11,
+  traitors S05 "New Blood," amazing-race S38. Reworded the
+  duplicate-side wording in each entry (wording only, no rank/fact/
+  canon change). content-check warnings 45 → 38. No ledger row
+  touched (no `content/themes/*.md` file edited). Commit 38bbae13.
+  Next unlock unchanged: `love-is-blind` S11 (2026-10-14) or the
+  2026-10-18 weekly sweep.
