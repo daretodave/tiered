@@ -1804,6 +1804,16 @@ e2e-full row for the full update. No scope change to the fix.
 longest-unpromoted candidate, still the standing `/oversight`
 recommendation.
 
+**Update (digest 2026-10-13):** breached a third consecutive night —
+a new record for this row. Tonight's run (38341294843, started
+03:21:07Z) hit the same wall at 8,860/10,735 (82.5%), zero actual test
+failures. Three-in-a-row surpasses both the 08-15→08-21 mixed week and
+the 10-11→10-12 pair logged two nights ago. See `plan/AUDIT.md`'s
+e2e-full row for the full update. No scope change to the fix — sharding
+remains the only thing that retires this ceiling. **84 days unpromoted
+since filing (07-21)** — still the file's longest-unpromoted candidate,
+still the standing `/oversight` recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -4087,6 +4097,32 @@ other three. 93 days unpromoted since original filing (07-09), 6 days since
 the last reinforcement (digest 10-04) — still the file's longest-standing
 unpromoted item and now carrying a fresh, dated production-crash data
 point rather than only file-size arithmetic.
+
+**Update (digest 2026-10-13):** this tick's own pulse-gathering surfaced
+the sharpest evidence yet for this candidate — not just that the files are
+large, but that the size wall is actively corrupting the digest's own
+reporting. Tonight, for the first time, a full line-by-line count of
+`plan/CRITIQUE.md`'s Pending section was possible (by reading the file in
+line-range slices rather than one `Read` call, since the whole file is
+2.3MB and fails outright): **102 open findings**, spanning passes 137
+through 188, only 6 of them tagged `[needs-user-call]`. Last night's digest
+(2026-10-12) reported "8 unresolved rows... nearly all tagged
+needs-user-call" — almost certainly a partial read of a recent slice of
+the file mistaken for the whole Pending section, not a real count. This is
+worse than this candidate's pass-68 finding (43 unreconciled rows, which
+first raised this from a read-ceiling risk to a confirmed bookkeeping
+defect): the backlog has grown 43→102 in roughly nine weeks (filed
+2026-07-09), and the file's size now makes the backlog itself invisible to
+normal tooling, which is a new failure mode beyond "big file is slow to
+read" — it means nobody (human or agent) has had an accurate picture of
+how much is actually open since at least pass 137. `plan/AUDIT.md`'s own
+8-row Pending count was independently re-verified this tick and held
+accurate (unchanged), so the miscount is specific to CRITIQUE.md's much
+larger size (2.3MB vs AUDIT's 1.3MB) — further evidence this is a sliding
+scale, not a binary pass/fail. 96 days unpromoted since original filing
+(07-09) — still the file's longest-standing unpromoted item, and the one
+whose absence is now measurably degrading the loop's own situational
+awareness, not just its token budget.
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 

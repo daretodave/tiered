@@ -1,139 +1,155 @@
-# DIGEST — 2026-10-12
+# DIGEST — 2026-10-13
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-Four `march` ticks in the last 26h, all green, two seasons drained
-(rhop S11, below-deck S13), deploy ready at HEAD `92d69ba7`. The one
-blemish: the nightly breadth crawl just went red for the **second
-night running** — same 75-minute single-worker wall as every prior
-occurrence, zero actual test failures. Candidate #34 (shard the
-crawl) is now unpromoted **83 days**, still the file's
-longest-standing item. Catalog: **68 shows / 1,060 seasons / 182
-themes** (+2 seasons since last digest).
+Four `march` ticks in the last 26h, all green, deploy ready at HEAD
+`66d4c7fe`. No new seasons filed today — Rule 2 is fully stalled
+(36/36 gap-table rows starred confirmed-but-unaired) and Rule 3
+zero-shipped once, so the saga fell through to a `watch_list`
+phrase-repetition drain (3 existing seasons edited, no new files).
+Catalog holds flat at **68 shows / 1,060 seasons / 182 themes**. Two
+blemishes worth your attention: the nightly breadth crawl just hit
+its **third consecutive red night** — a new record for this
+recurring pattern, same 75-minute single-worker wall each time, zero
+actual test failures. And this tick's pulse-gathering discovered
+`plan/CRITIQUE.md`'s Pending section actually holds **102 open
+findings**, not the "8" last night's digest reported — that figure
+was almost certainly a partial read of an oversized file (2.3MB)
+mistaken for the whole section. Both are now reinforced against
+their standing `/oversight` candidates (#34, #29) with corrected
+numbers.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 10-11 20:52→21:48 | march | Rule 3 review tick — zero-ship, no themed-list concept cleared the excellence gate (`150a0a23`) |
-| 10-12 00:23→01:29 | march | no-op — nothing actionable this tick |
-| 10-12 06:31→07:21 | march | content: rhop Season 11 drained + canon rebase (`9eeec78b`, `6c5a7f37`) |
 | 10-12 16:06→17:00 | march | content: Below Deck Season 13 drained + canon rebase (`717cc0b7`, `92d69ba7`) |
+| 10-12 23:13→00:06 | march | content: Rule 3 review tick — zero-ship, no themed-list concept cleared the excellence gate (`80a52e1c`) |
+| 10-13 03:52→04:06 | march | critique: pass 188 — 2 findings filed, 1 high (below-deck Phuket fact-restatement), 1 medium (`53f53215`) |
+| 10-13 11:37→12:13 | march | content: `watch_list` phrase-repetition drain — rhop S11, traitors S05, amazing-race S38 (`38bbae13`, `66d4c7fe`) |
 
 4 of 4 ticks shipped or zero-shipped cleanly. No crashes.
 
 ## The saga
 
-- **Seasons drained today:** 2 — rhop S11 (Karen Huger era,
-  provisional pre-finale rank) and below-deck S13 (Phuket/Azul V,
-  also provisional), both filed same-day as their real-world
-  premieres. Both pre-season/format-only per spoiler discipline;
-  below-deck's episode count correctly omitted rather than guessed
-  since no primary source had confirmed it yet.
-- **Gap table:** 40 (per the 10-11 weekly sweep) → 39 (rhop drain)
-  → **38** (below-deck drain, a second same-day drain tick) — see
-  `plan/CADENCE.md` lines 27-61 for both drain notes. The file's
-  own sweep-log table still shows the intermediate "39" row; the
-  detailed drain notes above it are the source of truth per the
-  file's header, so this is cosmetic lag, not a data conflict.
+- **Seasons drained today:** 0 new season files. Rule 2 was
+  non-actionable all tick (gap table reads **36/36 rows starred**,
+  confirmed-but-unaired — per the 11:37 tick's own commit message),
+  and the preceding Rule 3 review (00:03 tick) had already
+  exhaustively re-walked the themed-list concept space to zero-ship.
+  The loop fell through to its established fallback: a `watch_list`
+  phrase-repetition drain across 3 already-filed seasons (rhop S11,
+  traitors S05, amazing-race S38) — content-quality polish, not new
+  catalog depth.
+- **Gap table:** unchanged in substance — still fully starred. The
+  sweep-log table's last summary row (2026-10-12) reads "39," while
+  the live table itself carries 36 show rows (33 at `1*`, 2 at `2*`
+  — hells-kitchen and american-ninja-warrior); this is the same
+  cosmetic log-vs-table lag prior digests have already flagged, not
+  new drift. **love-is-blind S11 premieres 2026-10-14** (tomorrow) —
+  the next plausible opportunistic Rule 2 target once it airs.
 - **Shows scaffolded:** 0 — show-add clock stays LOCKED (gap table
   non-zero).
-- **Velocity vs. the three bearings rules:** Rule 2 produced two
-  opportunistic same-day-premiere drains rather than a sweep-driven
-  batch — consistent with the pattern since the 07-12 pivot. Rule 3
-  ran once (10-11 21:52) and zero-shipped cleanly against the
-  excellence gate — the gate working as designed, not starvation.
-  Next weekly sweep due **2026-10-18**.
+- **Velocity vs. the three bearings rules:** Rule 2 fully stalled
+  (no actionable pick), Rule 3 zero-shipped once, fallback content
+  drain shipped once — consistent with the established post-pivot
+  pattern. Next weekly sweep due **2026-10-18**.
 
 ## Queues now
 
-- **`plan/CRITIQUE.md`**: last pass **187** (same day as issue #821
-  below). Pending section: 8 unresolved rows (1 is the file's own
-  template placeholder), all LOW/MED, nearly all tagged
-  `needs-user-call` — long-stable, no urgency. The rhony pass-177
-  "eight seasons vs. eight years" HIGH some earlier notes flagged
-  is already resolved (2026-10-01) and closed.
-- **`plan/AUDIT.md`**: 8 open rows, unchanged in count — 2 HIGH
-  (the-voice factual corruption #762, frozen since 08-08, now 65
-  days; night.yml/march concurrency-starvation race #763, unpromoted
-  since 07-27), 1 MED (e2e-full duration-ceiling — updated this tick
-  with tonight's second breach), 2 LOW/needs-user-call content calls
-  (Naked and Afraid numbering offset, The Apprentice S5 location
-  framing), 1 LOW (themed-list SERP-description budget, parked for
-  oversight), 1 LOW (`YEAR_TENURE_RE` teen-number gap), 1 LOW
-  (heartbeat false-positive hardening, issue #806).
+- **`plan/CRITIQUE.md`**: last pass **188** (2026-10-13, commit
+  `80a52e1c`). **Pending section actually holds 102 open findings**
+  (verified this tick via line-range reads, since the whole 2.3MB
+  file fails a single `Read` call) — spanning passes 137 through
+  188, only 6 tagged `[needs-user-call]`. Last night's reported "8
+  unresolved rows" was wrong; see Headline and Needs You #2. Severity
+  mix is mostly MED/LOW voice-and-comprehension findings (phrase
+  repetition, SEO-budget overruns, fact-restatement), 3 are HIGH (the
+  below-deck Phuket + Bachelor Grant Ellis fact-restatement pair from
+  passes 187/188, plus the rhony "eight seasons vs. eight years"
+  contradiction — status of each not individually re-verified this
+  tick given the size of the section).
+- **`plan/AUDIT.md`**: 8 open rows, unchanged in count, re-verified
+  accurate this tick (this file's own Pending count was NOT affected
+  by the size-wall miscount above — 1.3MB file, smaller, still
+  readable in slices). 2 HIGH (the-voice factual corruption #762,
+  frozen since 08-08, now 65+ days; night.yml/march concurrency race
+  #763, unpromoted since 07-27), 2 MED (season-fill standing row,
+  Rule 2 content-gaps; e2e-full duration-ceiling — updated this tick
+  with tonight's third breach), 3 LOW (themed-list SERP-description
+  budget, `YEAR_TENURE_RE` teen-number gap, heartbeat false-positive
+  #806), plus the file's own template placeholder row.
 - **`plan/PHASE_CANDIDATES.md`**: last `/expand` pass **74**
-  (2026-10-04, 0 new candidates — all signal was a duplicate of an
-  already-reinforced row). This file is itself now 7,432 lines /
-  464KB — the fourth append-only ledger approaching the 256KB
-  single-`Read` wall candidate #29 was filed to fix for the other
-  three (`plan/CRITIQUE.md` 7,524 lines/2.3MB, `plan/AUDIT.md`
-  705 lines/1.3MB — both still over that wall tonight, confirmed
-  first-hand: this tick's own attempts to `Read` both files outright
-  failed on size/token limits, same as every reinforcement since
-  07-09). #29 was reinforced 2 nights ago (10-10) with near-identical
-  numbers — skipping a third same-week reinforcement on no material
-  growth, per the same "don't restate flat evidence" logic pass-74
-  applied elsewhere. Oldest standing unpromoted: #29 (93 days, 07-09)
-  and #34 (83 days, 07-21, updated this tick) and #35 (77 days,
-  07-27) — all three genuinely blocked on a local/`/oversight`
-  session (workflow-file pushes need a `workflows` OAuth scope the
-  cloud loop's token doesn't carry; #29 is pure file hygiene but sits
-  behind the same backlog).
+  (2026-10-04, 9 days stale, 0 new candidates that pass). ~24
+  genuinely pending candidates (of 32 headers in "Considered" —
+  several are stale-marked promoted/superseded/retired entries never
+  pruned). File itself is 473KB, past the same 256KB read wall as
+  the other two ledgers. Oldest standing unpromoted: #29 (archive
+  mechanism, **96 days**, reinforced this tick with the 102-finding
+  discovery above) and #34 (shard e2e-full, **84 days**, reinforced
+  this tick with tonight's third-breach data) — both genuinely
+  blocked on a local/`/oversight` session (workflow-file pushes need
+  a `workflows` OAuth scope the cloud loop's token doesn't carry;
+  #29 is pure file hygiene but sits behind the same backlog).
 - **Triage:** 9 open `triage:needs-user` issues (#817, #777, #763,
-  #762, #758, #586, #399, #398, #565) — several are stale "night
-  digest crashed" / "cloud march crashed" one-offs from June-August
-  with no recurrence since filing, likely closeable on sight. 5 open
-  `triage:loop-queued` issues, nothing new blocking.
+  #762, #758, #586, #399, #398, #565), unchanged from last night —
+  several are stale "night digest crashed" / "cloud march crashed"
+  one-offs from June-August with no recurrence since filing, likely
+  closeable on sight. 5 open `triage:loop-queued` issues, unchanged,
+  nothing new blocking.
 
 ## Needs you
 
-1. **e2e-full breadth crawl, two consecutive red nights (10-11,
-   10-12).** Same single-worker 75-minute wall both times, zero
-   actual test failures. Candidate #34 (shard the crawl) is
-   unpromoted 83 days after filing — still the sharpest standing
-   `/oversight` recommendation in the queue, and the gap between
-   occurrences keeps shrinking (back-to-back now, vs. the prior
-   mixed-week pattern).
-2. **Three ledger files sit past the 256KB single-`Read` wall**
-   (`plan/CRITIQUE.md`, `plan/AUDIT.md`, and now `plan/
-   PHASE_CANDIDATES.md` itself) — candidate #29 (archive closed
-   rows) is 93 days unpromoted and this tick hit the exact failure
-   first-hand while gathering the pulse above. Worth pairing with
-   #34/#35 at the next session since all three share the same
-   `workflows`-OAuth-scope-or-file-hygiene blocker class.
+1. **e2e-full breadth crawl, three consecutive red nights (10-11,
+   10-12, 10-13)** — a new record for this recurring pattern. Same
+   single-worker 75-minute wall each time, zero actual test
+   failures. Candidate #34 (shard the crawl) is unpromoted 84 days
+   after filing — still the sharpest standing `/oversight`
+   recommendation in the queue.
+2. **`plan/CRITIQUE.md`'s Pending backlog is 102 findings, not the
+   "8" reported last night.** This tick confirmed the discrepancy
+   is a genuine undercount caused by the file's size (2.3MB, past
+   the 256KB single-`Read` wall), not a real overnight spike —
+   nobody has had an accurate count since at least pass 137. This
+   is the sharpest evidence yet for candidate #29 (archive closed
+   rows out of the live ledger), now 96 days unpromoted. Worth
+   pairing with #34 at the next session — both share the same
+   `workflows`-OAuth-scope-or-file-hygiene blocker class, and #29
+   is now measurably degrading the loop's own situational awareness,
+   not just its token budget.
 3. **The-voice factual corruption (issue #762)** and **night.yml
    concurrency race (issue #763)** remain `triage:needs-user`, no
-   movement this window.
-4. **9-issue `triage:needs-user` backlog** — several (#398, #399,
-   #565, #586) are crash one-offs from June/July with no recurrence
-   since filing; likely safe to close on sight at the next session.
+   movement since filing (08-08 and 07-27 respectively).
+4. **9-issue `triage:needs-user` backlog**, unchanged — several
+   (#398, #399, #565, #586) are crash one-offs from June/July with
+   no recurrence since filing; likely safe to close on sight at the
+   next session.
 
 ## Today's intent
 
-- **Saga:** gap table sits at 38, next sweep not due until
-  2026-10-18 — expect march to keep picking off same-day premiere
-  drains opportunistically (today's pattern) rather than a
-  sweep-driven batch until then.
-- **Top non-content finding:** issue **#821** (Bachelor S29 / Grant
-  Ellis, HIGH, `loop:opened`, filed today via CRITIQUE pass-187) —
-  four facts (second Black Bachelor, fastest contestant-to-lead
-  turnaround, nine episodes, the Edinburgh stop) restated across
-  nearly every section of the season page, the worst-scoped case of
-  this recurring pattern yet. Already queued for the dispatcher; no
-  action needed from this tick.
+- **Saga:** gap table stays fully starred, next sweep not due until
+  2026-10-18 — expect march to keep falling through to Rule 3 or the
+  `watch_list`/content-polish fallback until then, with one plausible
+  opportunistic Rule 2 drain when love-is-blind S11 premieres
+  tomorrow (2026-10-14).
+- **Top non-content finding:** the below-deck Phuket season page's
+  page-wide fact-restatement defect (pass 188, HIGH) — same defect
+  class as the pass-187 Bachelor Grant Ellis finding, now reaching a
+  second freshly-filed season. Already queued in `plan/CRITIQUE.md`'s
+  Pending section; no action needed from this tick.
 
 ## Tuning proposals
 
-No new candidates filed. Appended tonight's second-red-night data
-point directly to `plan/AUDIT.md`'s standing e2e-full row and to
-candidate #34 in `plan/PHASE_CANDIDATES.md` (the established
-pattern for this recurring finding). Declined to re-reinforce
-candidate #29 (ledger file-size wall) despite hitting the exact
-failure first-hand tonight — it was already reinforced 2 nights ago
-with near-identical numbers; no new information to add beyond what
-"Needs you" #2 above already restates. No gates, cadences, or
-ceilings edited directly.
+No new candidates filed. Reinforced two existing candidates with
+tonight's pulse data: `plan/PHASE_CANDIDATES.md` #34 (e2e-full
+sharding) gained the third-consecutive-breach data point; #29
+(archive closed ledger rows) gained the 102-finding CRITIQUE.md
+undercount discovery — the sharpest evidence yet for that candidate,
+since it shows the size wall is now corrupting the digest's own
+reporting, not just slowing reads. Both updates also appended to
+`plan/AUDIT.md`'s standing e2e-full row (the established pattern for
+that recurring finding). No gates, cadences, or ceilings edited
+directly.
