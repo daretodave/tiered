@@ -12992,3 +12992,59 @@ last time a curator actually looked.
   weekly sweep — re-running any of the six new-concept angles or the
   three sub-floor lists before then would reproduce today's dead ends
   against an unchanged corpus.
+
+- **2026-10-12, `/ship-content` Rule 3 tick (content-curator direct
+  invocation, third same-day cloud march dispatch): zero-ship — no
+  unit cleared the excellence gate.** Rule 2 drained two shows earlier
+  this same day (`rhop` 10/11→11/11, `below-deck` 12/13→13/13, both
+  picked off the 2026-10-11 sweep's star list after a staleness check
+  found their premieres had already passed) but both are now fully
+  drained; re-verified `plan/CADENCE.md` directly — the only
+  remaining dated starred row within range, `love-is-blind` S11,
+  premieres 2026-10-14 (two days out, still future), so Rule 2 is
+  genuinely non-actionable again this tick. Zero ledger rows clear
+  the 90-day `last_reviewed` floor (oldest still `survivor-pillars`
+  at 73 days). Ran 13 fresh candidate angles, none previously logged
+  in this history: (1) mentor/coach structural mechanic (MasterChef
+  S09 "The Mentorship," Big Brother S14 "Coaches Twist," Ink Master
+  S06 "Master vs. Apprentice") — rejected, too heterogeneous as one
+  thesis and the strongest instances overlap `built-for-one-playing-
+  as-a-team` / `the-other-side-of-the-table`; (2) team-captain draft
+  mechanic (Big Brother S14/S23, Ink Master S06/S08/S09/S10) —
+  rejected, near-identical cast of seasons to `built-for-one-playing-
+  as-a-team`, well past the 40% overlap ceiling; (3) judges/alumni
+  crossing into judge/mentor/host roles — rejected, 100% overlap with
+  `the-other-side-of-the-table`'s existing thesis (14 entries, 9
+  shows); (4) companion podcast as production craft — zero hits
+  catalog-wide; (5) theme song / composer / soundtrack craft angle —
+  zero hits; (6) sponsor / product-placement / brand-partnership
+  craft angle — zero hits; (7) confessional/diary-room becoming a
+  visible format element — zero hits, distinct from the already-
+  shipped `when-the-crew-stepped-into-frame`; (8) burn-off/aired-out-
+  of-production-order episodes — only 5 scattered, mostly tangential
+  hits (SYTYCD canon, RHOM, AGT S01, Amazing Race S32 + canon), too
+  thin to ground 10 entries on one coherent mechanic; (9) winter-
+  edition scheduling as its own cut — rejected, Big Brother S09
+  "Winter Couples" already triple-staked (`tried-once-never-
+  repeated`, `twice-in-one-year`, `built-for-one-playing-as-a-team`)
+  and Love Island UK's winter launches already anchor `the-mic-
+  changed-hands` (S06, S09) — remaining pool reads as a reskin; (10)
+  hidden-camera/contestants-unaware-they're-competing — zero hits;
+  (11) scoring-system/point-scale change as a craft angle — only
+  single-show hits (Naked and Afraid's PSR mechanic, Drag Race All
+  Stars), sub-floor; (12) set/studio physical redesign mid-run,
+  distinct from location or network moves — zero hits; (13)
+  consolation/runner-up prize mechanic — only single-show hits (Drag
+  Race All Stars S07 "All Winners"), sub-floor. No angle cleared the
+  ≥3-distinct-show cross-canon floor without colliding, at or near
+  100% overlap, with an existing list (`built-for-one-playing-as-a-
+  team`, `the-other-side-of-the-table`, `someone-else-held-the-chair-
+  for-a-while`, `the-mic-changed-hands`, `two-channels-same-night`,
+  `tried-once-never-repeated`) — the team-draft/mentor/host-vacancy/
+  winner-crosses-the-table space is now comprehensively mined across
+  Big Brother, Ink Master, MasterChef, The Voice, American Idol,
+  Survivor, Project Runway, SYTYCD, Bachelorette, Shark Tank, and
+  MasterChef Australia. No `content/themes/*.md` file touched this
+  tick. Files touched: `plan/LISTS.md` only (this entry). Next
+  unlock: `love-is-blind` S11 premieres 2026-10-14, or the 2026-10-18
+  weekly sweep.
