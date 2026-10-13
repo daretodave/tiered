@@ -1,9 +1,43 @@
 # CRITIQUE
 
-> Last pass: 2026-10-10 at commit c8fc6b43
-> Pass count: 187
+> Last pass: 2026-10-13 at commit 80a52e1c
+> Pass count: 188
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 187 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 188 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/below-deck/season/phuket`, `/shows`,
+> `/themes/thirteen-was-the-promise-not-the-rule`, `/themes` anon; `/`,
+> `/shows/below-deck/season/phuket`, `/u/e2e`, `/shows`,
+> `/themes/thirteen-was-the-promise-not-the-rule` authed — rotated onto
+> the freshly-filed Below Deck Phuket season page (premiered
+> 2026-10-12) and a previously-unvisited themed list, both distinct
+> from pass 187's rotation. Both passes came back mechanically clean
+> (0 console errors, 0 failed requests, 0 horizontal overflow on
+> either viewport, H1/canonical/OG present on every capture); authed
+> pass confirmed real auth (`authenticated:e2e` chrome visible on
+> every page). The anon and authed passes independently converged on
+> the same strongest finding — a page-wide fact-restatement defect on
+> the Below Deck Phuket page, the same defect class just reaching this
+> brand-new season — merged into one HIGH row rather than filed
+> twice. Three candidate findings were dropped at self-assessment, all
+> matching previously-litigated false positives found in `plan/CRITIQUE.md`
+> history: `/u/e2e`'s apparent missing "Sign out" control (checked
+> against `src/components/chrome/HeaderView.tsx` — Sign out exists
+> inside the accessible `role="menu"` account-disclosure, just not
+> visible in the walk script's flat extracted text; same false
+> positive already closed once before), the `/themes/[theme]` "SAVE
+> (THIS DEVICE)" label reading oddly when signed in (deliberate,
+> litigated and closed across three prior passes — #272, #377, #385 —
+> the device-scope qualifier is intentional honesty, not a
+> regression), and `/u/e2e` lacking an account-settings link (the
+> pass-45/48 header-menu fix deliberately kept the disclosure to two
+> entries — "Your record" + "Sign out" — with no settings-page link,
+> since `/settings` is a future-phase route the chrome shouldn't
+> promise yet). Filed 2 new findings (1 high, 1 med, 0 low). No
+> pending HIGH findings remained open ahead of this pass.
+> Prior pass-187 summary follows. Pass 187 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4887,6 +4921,26 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon+authed] /shows/below-deck/season/phuket — the "third season" / Thailand-return continuity facts are restated across nearly every section on the page, including a verbatim meta-description/lede duplicate
+
+- pass: 188 (commit 80a52e1c)
+- viewport: desktop
+- category: voice
+- observation: Same defect class as the pass-187 Bachelor Grant Ellis HIGH, now reaching this freshly-filed season page (premiered 2026-10-12, provisional/pre-season per spoiler discipline). The meta description is copied verbatim as the opening sentence of the hero lede, so a reader scanning from a tab/share preview into the page hits the identical sentence twice. Separately, Captain Kerry Titheradge's "third season" continuity fact is restated five times across the page (lede, THE TAKE, THE SHAPE OF THE SEASON, WHERE IT SITS IN THE CANON, HOST caption); the lede and THE SHAPE OF THE SEASON body are near-verbatim restatements of the same sentence beyond just that one fact; and the FILMED caption opens by repeating its own value verbatim ("Phuket, Thailand" then "Phuket, Thailand · franchise's first return since 2019") where the sibling FORMAT/HOST captions on the same page integrate new information without that repeat. Confirmed identical on both desktop and mobile renders, both anon and authed passes independently surfaced instances of the same page-wide pattern.
+- evidence: `content/shows/below-deck/seasons/13-phuket.md` — `pull`/meta description: "Below Deck returns to Thailand for the first time since Season 7, anchoring in Phuket aboard a brand-new motoryacht, Azul V." is identical to the `lede`'s opening sentence. Third-season mentions: `lede` "Captain Kerry Titheradge begins his third season"; `take_h2`/body "a captain settled into his third season"; `shape_h2`/body "Captain Kerry Titheradge enters his third season with a familiar senior team" (near-duplicate of the lede's own clause); `host_caption`: "Captain Kerry Titheradge's third season at the helm." `filming_caption`: "Phuket, Thailand · franchise's first return since 2019" repeats the bare FILMED stat value ("Phuket, Thailand") before adding the new fact, unlike `format_caption`: "Superyacht charter, Phuket waters · new vessel, same captain" which doesn't repeat the FORMAT stat's own value.
+- suggested fix: Add a standalone meta-description-equivalent sentence distinct from the lede's opener (the field pass-160/#801 built for exactly this case). Keep the third-season/captain-continuity fact in the HOST caption only; rewrite THE SHAPE OF THE SEASON and WHERE IT SITS IN THE CANON to each argue a distinct angle (new yacht, new deck/interior roster, canon-slot reasoning) without re-opening on "third season." Drop the repeated "Phuket, Thailand" opener from `filming_caption` and lead straight with the new fact. Content-only, one file, four to five fields. Spoiler discipline P0 intact — premise/format facts only, no outcome exposure on this still-airing season.
+- source: browser (critique-pass-188, anon + authed)
+
+### [MED] [anon] /themes/thirteen-was-the-promise-not-the-rule — entry #10's closing sentence is grammatically broken, missing the em-dash construction the rest of the list relies on
+
+- pass: 188 (commit 80a52e1c)
+- viewport: desktop
+- category: comprehension
+- observation: Entry #10 (Chopped Season 1) ends on an unparseable clause — the sentence reads as if em-dashes were dropped during authoring, leaving a dangling fragment that breaks the otherwise clean, confident "knowledgeable peer" voice the rest of the list maintains.
+- evidence: rendered entry #10 body: "The format Food Network barely touched since started here, at exactly thirteen." — confirmed present in both desktop and mobile captures.
+- suggested fix: Restore the intended em-dash construction, e.g. "The format — which Food Network has barely touched since — started here, at exactly thirteen." Content-only edit to the entry's body field in `content/themes/thirteen-was-the-promise-not-the-rule.md`.
+- source: browser (critique-pass-188, anon)
 
 ### [HIGH] [anon+authed] /shows/bachelor/season/grant-ellis — the season's two headline facts ("second Black Bachelor" and "fastest turnaround") are each restated 3-5 times across nearly every section on the page
 
