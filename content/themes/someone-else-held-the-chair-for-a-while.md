@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-10-09
+last_revised: 2026-10-14
 featured: true
 featured_pull: "Guest judges, celebrity rotations, and future full-timers who covered an empty seat without ever pausing the show."
 related:
@@ -91,5 +91,5 @@ entries:
     season_label: "S21"
     rank: 13
     title: "A settled four-judge panel loses its most famous chair right before the finale."
-    blurb: "Back surgery keeps Simon Cowell off the panel for both finale broadcasts, the one gap this season's otherwise settled four-judge table has. Britain's Got Talent's KSI covers the seat — a cross-franchise guest, not an internal substitute."
+    blurb: "Back surgery keeps Simon Cowell off both finale broadcasts — the only absence all season from an otherwise unbroken judging table. Britain's Got Talent's KSI covers the seat, a cross-franchise guest rather than an internal substitute."
 ---

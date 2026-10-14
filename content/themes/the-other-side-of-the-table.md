@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-10-06
+last_revised: 2026-10-14
 featured: true
 featured_pull: "Past winners and alumni who traded a second shot at the trophy for a coach's chair or judge's seat."
 related:
@@ -25,7 +25,7 @@ entries:
     season_label: "S23 · The Callback"
     rank: 2
     title: "A past champion takes a permanent seat at her own show's judging table for the first time."
-    blurb: "Carrie Underwood won this show as a contestant years before she joined its panel — now she judges alongside Lionel Richie and Luke Bryan. It's the franchise's first time handing one of its own champions a permanent chair, not a guest slot."
+    blurb: "Carrie Underwood won this show as a contestant years before she joined its panel — now she judges alongside Lionel Richie and Luke Bryan. No former champion had ever been handed a permanent chair before hers, only the occasional guest slot."
   - show: survivor
     season: 39
     season_label: "S39 · Island of the Idols"
