@@ -3,7 +3,7 @@ show: love-is-blind
 number: 9
 slug: denver
 title: "Denver"
-canonical_position: 10
+canonical_position: 11
 premiere_date: 2025-10-01
 ep_count: 13
 location: "Denver, Colorado"

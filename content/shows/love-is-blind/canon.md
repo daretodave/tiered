@@ -1,15 +1,15 @@
 ---
 show: love-is-blind
 editor: tiered.tv editor
-last_revised: 2026-06-20
+last_revised: 2026-10-14
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've watched all ten seasons from the Atlanta original through Columbus. The ranking weighs the pod experiment, the casting energy, and the production confidence — never the altar outcomes. One editor's honest read, open to revision when the room argues convincingly."
+meth_who_p: "tiered.tv's editor. I've watched all eleven seasons from the Atlanta original through Boston. The ranking weighs the pod experiment, the casting energy, and the production confidence — never the altar outcomes. One editor's honest read, open to revision when the room argues convincingly."
 meth_how_h: "How I weigh it"
 meth_how_p: "I rank on how cleanly the pod experiment runs, how engaged the cast is with the format, and how much each season advances or tests the show's premise. A season where the connection-building phase feels earned outranks one where the pods feel like a formality. Altar results carry zero weight here — only how well the hour runs getting there."
 meth_when_h: "When I revisit"
-meth_when_p: "This is the full ten-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S6–S10 are newly slotted and the established-era rankings are the most provisional."
+meth_when_p: "This is the full eleven-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S11 just premiered and holds provisionally; the rest of the established-era rankings remain the most fluid."
 tier_s_blurb: "Seattle's cleanest pod run, Chicago's polish, D.C.'s established-era peak, the Atlanta original that built the format, and Columbus's late-run bounce-back — five seasons where the experiment felt genuinely earned."
-tier_b_blurb: "Ten seasons that prove the pod experiment is a durable format — from the Atlanta original that built the blueprint through the Columbus season that reminded the established era what the show is capable of."
+tier_b_blurb: "Eleven seasons that prove the pod experiment is a durable format — from the Atlanta original that built the blueprint through the Columbus season that reminded the established era what the show is capable of."
 weekly_question: "Does the founding batch still set the bar, or has a later city done the pod experiment better?"
 era_bands:
   - key: lachey-founding
@@ -61,6 +61,14 @@ slot_argument: The Columbus cast re-engages with the blind-dating premise at a l
 community_rank_hint: rank=5 delta=0 sentiment=hold
 
 Fifth places Columbus above Houston and Minneapolis but short of the founding batch's top two. Set against Houston specifically: Houston runs the format competently and nothing breaks, but Columbus's early episodes push past the small-talk phase faster, which is the gap between a season viewers stay tuned into and one they coast through. Chicago and Atlanta keep the top two slots on first-mover history and tighter execution, a bar Columbus doesn't clear — but nothing behind it in the running order engages at Columbus's level, and that's what fifth is measuring.
+
+## 11. Boston
+
+tag: The eleventh city, ranked provisionally on premise alone.
+slot_argument: Boston brings the standard thirty-person cast and no announced twist — nothing yet to distinguish it, but none of Charlotte's or Denver's documented weaknesses either. The slot holds provisionally.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Sixth ranks Boston on premise, not execution — only the first episode batch is out as of this writing. The thirty-person cast and standard pod-to-altar format mirror what the established era has been running since Seattle, with an unusually wide spread of casting professions as the one notable pre-air signal. That's not enough to place it near Columbus's demonstrated bounce-back, but there's also no sign yet of the inconsistency that sank Charlotte or the subdued energy that defines Denver. It sits just below Columbus, ahead of the established era's more proven middle tier, and the slot is explicitly a hold — due for a real re-rank once the season plays out.
 
 ## 5. Houston
 

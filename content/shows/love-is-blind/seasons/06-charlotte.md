@@ -3,7 +3,7 @@ show: love-is-blind
 number: 6
 slug: charlotte
 title: "Charlotte"
-canonical_position: 8
+canonical_position: 9
 premiere_date: 2024-02-14
 ep_count: 13
 location: "Charlotte, North Carolina"

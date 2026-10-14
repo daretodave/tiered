@@ -3,7 +3,7 @@ show: love-is-blind
 number: 8
 slug: minneapolis
 title: "Minneapolis"
-canonical_position: 7
+canonical_position: 8
 premiere_date: 2025-02-14
 ep_count: 14
 location: "Minneapolis, Minnesota"
