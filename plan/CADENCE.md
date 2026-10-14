@@ -24,6 +24,38 @@ that.
 
 ## Season gap table
 
+**Table correction, 2026-10-14 tick (cloud march, second this day):**
+re-checked Rule 2 actionability for a fresh dispatch and found two drift
+bugs, same class as the 2026-08-28 married-at-first-sight correction and
+the 2026-09-27 american-ninja-warrior/survivor-australia restoration —
+a narrative progress note claimed a table edit that the same commit never
+physically made. (1) The prior tick's own commit (`219401c3`) stated
+"Love Is Blind fully drained — row removed below" but never removed the
+physical `| love-is-blind | 10/11 | 1* |` row — removed now, confirmed via
+`content/shows/love-is-blind.md` (`seasons: 11`) and `canon.md` (eleven
+ranked entries). (2) The 2026-10-11 full sweep's own text said `traitors`
+(US) was "Added as `traitors | 5/6 | 1*`" for the fresh Season 6
+cast-reveal/January-2027-premiere renewal, but no such row was ever
+physically inserted — added now. Net: table corrected from the stale
+35-row/37-slot physical state to 35 shows / 37 gap-slots (one row swapped,
+not a net change — love-is-blind's removal and traitors' addition each
+move the count by exactly one in opposite directions). No other row
+re-verified as actionable this tick: every remaining starred row's
+premiere date is still either mid-run/unaired/dateless (per the
+2026-10-11 sweep's "no star changes" note) or in the future
+(southern-charm 2026-11-12, traitors January 2027) — Rule 2 non-actionable
+again after today's earlier love-is-blind drain. Took the established
+fallback instead: re-ran `pnpm content:check` and found the next clean
+batch in the already-flagged `the-voice` take_h2 backfill (issue #393) —
+seasons 11-21 (11 files), explicitly named as "the natural next batch" by
+the 2026-10-14 (first tick) `29d7dbad` commit that drained seasons 1-10.
+Confirmed 11-21 sit outside the frozen `the-voice` S22-29
+factual-corruption range (issue #762, `triage:needs-user` — left
+untouched, including its cosmetic `shape_h2`/`take_h2` gaps, pending the
+dedicated fix that issue calls for). `content-check` warnings 29 → 18 (all
+18 remaining are the frozen S22-29 cluster). Row stays Pending (standing
+row per its own definition); Rule 2 gap table still non-zero.
+
 **Rule 2 drain, 2026-10-14 tick (cloud march): love-is-blind 10/11 → 11/11,
 gap row removed.** Picked `love-is-blind` as the next premiere-date to
 cross into the present — the 2026-10-11 sweep's "no star changes" note
@@ -1587,7 +1619,6 @@ new-show creation is locked to the biweekly show-add clock.
 | amazing-race | 38/39 | 1* |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
-| love-is-blind | 10/11 | 1* |
 | the-challenge | 41/42 | 1* |
 | bachelor | 29/30 | 1* |
 | american-idol | 24/25 | 1* |
@@ -1619,6 +1650,7 @@ new-show creation is locked to the biweekly show-add clock.
 | married-at-first-sight | 20/21 | 1* |
 | love-island-uk | 13/14 | 1* |
 | rhobh | 15/16 | 1* |
+| traitors | 5/6 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
