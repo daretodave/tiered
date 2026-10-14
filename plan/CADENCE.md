@@ -24,6 +24,29 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-14 tick (cloud march): love-is-blind 10/11 → 11/11,
+gap row removed.** Picked `love-is-blind` as the next premiere-date to
+cross into the present — the 2026-10-11 sweep's "no star changes" note
+dated Season 11's premiere "2026-10-14" (today). Scout-verified via
+Wikipedia/Netflix Tudum/Variety/Boston Globe: Season 11 is set in Boston
+(the franchise's 11th US city), premiered today with a batch-plus-weekly
+release (5 episodes at launch, weekly through the confirmed 2026-11-04
+finale already in `content/calendar.yml`), 30-person cast (15/15), hosts
+unchanged (Nick and Vanessa Lachey), no format twist announced. Filed
+Season 11 (`content/shows/love-is-blind/seasons/11-boston.md`) —
+pre-season/format-only per spoiler discipline, same provisional pattern as
+the `rhop` S11 and `below-deck` S13 drains this week — ranked on premise,
+not outcome (only 5 of 12 episodes released at filing time). Canon
+rebased: Boston slots at a provisional rank 6 — the standard cast size and
+no announced twist give no basis for a top or bottom slot, but nothing yet
+resembling Charlotte's inconsistency or Denver's low energy either;
+`canonical_position` rewritten for Houston (6→7), Minneapolis (7→8),
+Charlotte (8→9), Dallas (9→10), and Denver (10→11) in the same commit;
+show frontmatter bumped `seasons: 10→11`, blurb corrected to "11 seasons."
+`era_bands`' existing `lachey-estab` [2024, 2026] already covers the new
+season's year, no widening needed. Love Is Blind fully drained — row
+removed below, table now 34 shows / 36 gap-slots.
+
 **Rule 2 drain, 2026-10-12 tick (cloud march, second this day): below-deck
 12/13 → 13/13, gap row removed.** Picked `below-deck` off the row this same
 day's prior tick had deferred — that tick's own note read "below-deck's
