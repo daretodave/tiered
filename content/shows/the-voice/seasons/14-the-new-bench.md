@@ -18,6 +18,7 @@ host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2018"
 filming_caption: "Los Angeles · Kelly Clarkson's debut as a former winner turned coach"
 shape_h2: "Spring slot, fourteenth cycle on time."
+take_h2: "The era's best debut."
 ---
 
 Kelly Clarkson's coaching debut in season fourteen was the most compelling new-coach arrival the ascendant era produced. A competition winner stepping to the other side of the format gave her blind audition pitch a register unlike any coach before her — she knew what it felt like to stand on that stage. The dynamic with Blake Shelton and Adam Levine had genuine competitive heat. A strong mid-run season, elevated by one debut.

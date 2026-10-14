@@ -18,6 +18,7 @@ host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · September 2018"
 filming_caption: "Los Angeles · Clarkson and Hudson's first shared coaching panel"
 shape_h2: "Fall cycle, the pattern unbroken."
+take_h2: "An underrated coaching pair."
 ---
 
 Season fifteen paired two of the format's most credentialed coaches — Kelly Clarkson and Jennifer Hudson — on the same panel for the first time. The blind auditions reflected the potential: four coaches with distinct but overlapping musical instincts competing over the same singers. Blake Shelton and Adam Levine's experience anchored the season without dominating. A well-cast coaching table that deserved more attention than it received.

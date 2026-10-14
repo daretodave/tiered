@@ -18,6 +18,7 @@ host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · October 2020"
 filming_caption: "Los Angeles · the first cycle produced fully under pandemic protocols"
 shape_h2: "October start, a month later."
+take_h2: "Shaped by circumstance, not content."
 ---
 
 Season nineteen carried the full weight of pandemic production from its first episode. Blind auditions, battles, and live shows all ran under COVID protocols — the format adjustments visible in staging, audience, and general atmosphere. Gwen Stefani, John Legend, Blake Shelton, and Kelly Clarkson made the coaching dynamic work within those limits. A season defined more by its circumstances than its content.

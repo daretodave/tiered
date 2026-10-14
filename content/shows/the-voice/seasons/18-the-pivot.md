@@ -18,6 +18,7 @@ host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
 premiere_caption: "NBC · February 2020"
 filming_caption: "Los Angeles · Nick Jonas's debut cycle, finale shot remotely for COVID"
 shape_h2: "A season interrupted mid-production."
+take_h2: "Resilience, tested in real time."
 ---
 
 Season eighteen didn't get to be the season it started as. Nick Jonas's coaching debut generated real interest — a former child star turned pop artist, biography unlike any coach before him — and the blind auditions ran with the energy a debut carries. Then COVID arrived and the live shows moved remote. The season is notable for both: a compelling new arrival and a format stress-tested in real time.
