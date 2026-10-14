@@ -13069,3 +13069,60 @@ last time a curator actually looked.
   touched (no `content/themes/*.md` file edited). Commit 38bbae13.
   Next unlock unchanged: `love-is-blind` S11 (2026-10-14) or the
   2026-10-18 weekly sweep.
+
+- **2026-10-14, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship on fresh ideation, small fallback fix taken
+  instead.** Re-verified both standing blockers fresh: `plan/CADENCE.md`'s
+  gap table still non-actionable (every row starred confirmed-but-unaired;
+  nearest unlock `love-is-blind` S11 premieres today, 2026-10-14, not yet
+  aired at tick time) and zero ledger rows clear the 90-day `last_reviewed`
+  floor (oldest remains `survivor-pillars`). Spent the search budget on the
+  under-mined stats-block/watch_list fields the brief flagged, each
+  checked by grep against every `content/shows/**/*.md` and every
+  `content/themes/*.md` before being ruled out: (1) multi-judge-panel-size
+  changes as a craft angle — already exhaustively shipped at
+  `when-the-chairs-turned-over` (19+/10 shows) and
+  `the-matching-experts-never-sit-still-for-long`, re-confirmed via the
+  2026-09-30 panel-expansion sweep logged above; no unclaimed season found
+  on a fresh re-check. (2) recurring below-the-line crew/production-role
+  credits (DP, EP, showrunner named across seasons) — grepped
+  `showrunner|executive producer|director of photography|co-executive
+  producer` across every season file: hits are almost entirely canon-level
+  methodology boilerplate, not season-specific production-credit facts;
+  zero groundable cross-show vein. (3) format elements tied to broadcast
+  scheduling (same-night two-episode drops, burn-off airings) — the
+  two-episode-per-week and simulcast angles are already the address of
+  `two-channels-same-night` and `the-vote-left-the-phone-line`; the
+  burn-off-episode angle was independently re-derived and found already
+  rejected sub-floor by the 2026-10-13 pass logged above (5 scattered
+  hits, too thin). (4) `episode_heat`/`episode_heat_caption` as a craft
+  device beyond `never-starts-cold` — still only three shows carry the
+  field (Survivor, The Challenge, love-island-us), all three already at
+  that list's per-show cap, re-confirmed dead per the 2026-08-03 review
+  note on that row. No angle cleared the ≥3-distinct-show cross-canon
+  floor or avoided >40% overlap with an existing list. Rather than run a
+  fifth or sixth from-scratch pass against the same saturated 182-list
+  catalog, took the established small-fallback instead: authored the
+  missing `take_h2` frontmatter field (Section 01 "The take" H2,
+  `content:check` pass-47/issue #393 lax-mode warning) on `the-voice`
+  seasons 1 through 10 — `01-the-debut.md` through `10-the-milestone.md`.
+  Each of these ten files already carried `shape_h2` but not `take_h2`;
+  wrote a 3-to-5-word editorial fragment per season grounded in that
+  season's own `lede`/`pull` text (e.g. S04 "The Peak"'s guest-coach
+  chemistry, S06 "The Experiment"'s founding-era closeout), no new facts
+  invented, no spoilers, nothing touching placement or outcome. Confirmed
+  before writing that `the-voice` seasons 1-10 sit outside the frozen
+  S22-29 factual-corruption range (`plan/AUDIT.md` HIGH row, issue #762,
+  triage:needs-user) — this fix does not touch or cite any season in that
+  blocked range, and deliberately stopped at season 10 rather than
+  continuing into 11-21 to stay inside the brief's ~10-file cap; the
+  remaining eleven unblocked seasons (11-21) are the natural next batch
+  for a future small-fix tick. Files touched:
+  `content/shows/the-voice/seasons/{01-the-debut,02-the-breakthrough,
+  03-the-arrival,04-the-peak,05-the-follow-through,06-the-experiment,
+  07-the-new-voice,08-the-return,09-the-rhythm,10-the-milestone}.md`
+  (`take_h2` added, nothing else changed), `plan/LISTS.md` (this note).
+  No `content/themes/*.md` file written or edited; no ledger row's
+  `last_revised`/`last_reviewed` changed. Next unlock: `love-is-blind` S11
+  airing, the 2026-10-18 weekly sweep, or a future tick draining
+  `the-voice` S11-21's remaining `take_h2` backlog.

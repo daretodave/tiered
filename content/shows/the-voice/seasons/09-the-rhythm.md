@@ -11,6 +11,7 @@ eyebrow: "Gwen Stefani returns; the ascendant era finds its stride"
 lede: "Season nine brought Gwen Stefani back to the coaching panel alongside Pharrell Williams, Blake Shelton, and Adam Levine. The combination was more settled than her debut cycle — coaches who knew the dynamics, competing with sharper instincts."
 pull: "The ascendant era at its most assured — coaches knowing exactly what they want."
 shape_h2: "Fall cycle, same steady clip."
+take_h2: "The era hits its stride."
 format_summary: "Blind audition competition"
 format_caption: "Gwen Stefani returns to the coaching panel"
 cast_size: 4
