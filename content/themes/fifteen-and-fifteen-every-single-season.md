@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-10-15
 featured: false
 related:
   - the-episode-order-never-found-its-ceiling
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "Ten seasons in, thirteen episodes and a reunion is the format's real shape"
     blurb: "Columbus repeats the same thirteen-episode, reunion-included structure Denver just confirmed. A decade into the format, the only real growth it ever kept was one extra hour, not two."
+  - show: love-is-blind
+    season: 11
+    season_label: "S11 · Boston"
+    rank: 11
+    title: "Eleven cities in, the one number that still hasn't moved"
+    blurb: "Boston keeps the pod math at fifteen and fifteen, the same split every city has run since Atlanta. The season's own pitch says it outright: no new mechanic, no new wrinkle, just a new zip code for strangers to bet on the same question."
 ---
