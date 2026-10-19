@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-10-11 | next due 2026-10-18 |
+| season-sweep | 7 days | 2026-10-19 | next due 2026-10-26 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,67 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Fifteenth full weekly sweep, 2026-10-19 tick (cloud march, Rule 1a).** 6
+`scout` batches (≤12 shows each) covered every one of the 68 catalogued
+shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
+filed season files — zero mismatches this tick, every show's declared
+count equals its filed-season-file count, across all 68 shows).
+
+**Zero new gaps — all 35 starred rows reconfirmed, none resolved.** Every
+currently-starred row this tick's scouts touched independently confirmed
+still accurate at its existing star count: `amazing-race` S39 (premiered
+2026-09-30/10-01), `rhoc` S20 (premiered 2026-07-09), `rhoslc` S7
+(premiered 2026-09-16), `shark-tank` S18 (premiered 2026-09-30),
+`the-challenge` S42 (premiered 2026-08-05), `the-voice` S30 (premiered
+2026-09-21), `bake-off` S17 (premiered 2026-09-22), `dragrace-uk` S8
+(premiered 2026-09-03), `dragrace` S19 (renewed, 2027), `dragrace-allstars`
+S12 (renewed), `masked-singer` S15 (renewed), `below-deck-down-under` S5
+(renewed), `bachelor-in-paradise` S11 (pushed to summer 2027), `rhom` S8
+(paused again), `the-circle` S8 (resumed production, moving to Hulu,
+targeting 2027), `southern-charm` S12 (premiere confirmed 2026-11-12),
+`vanderpump-rules` S13 (renewed, no premiere date), `ink-master` S18 (no
+renewal yet — row stays on its existing confirmed slot), `love-island-us`
+S9 (renewed, summer 2027), `married-at-first-sight-australia` S14
+(in production, 2027), `masterchef` S17 (renewed, ~2027),
+`selling-sunset` S10 (renewed + cast confirmed, no premiere date),
+`summer-house` (no new signal), `traitors-uk` S5 (expected ~Jan 2027),
+`top-chef` S24 (renewed, spring 2027), `american-ninja-warrior` S19/S20
+(double-renewed, 2027), `survivor-australia` (no new signal),
+`married-at-first-sight` [US] S21 (filming through Oct 2026, no premiere
+date), `love-island-uk` S14 (applications just opened), `rhobh` S16 (cast
+confirmed, no premiere date), `rhonj` S15 (renewed, filming underway, no
+premiere date), `traitors` [US] S6 (cast revealed, "January 2027").
+`american-idol` S25 and `bachelor` S30 carry no new signal beyond their
+existing renewal-without-date star. No row crossed from confirmed-but-
+unaired into premiered-this-week territory, so nothing was actionable for
+a Rule 2 drain this tick.
+
+**Two status-worth-watching items surfaced, no table action.**
+`dragrace-uk` — BBC confirmed (Deadline, Sept 2026) it is cancelling the
+franchise beyond the already-airing Series 8, citing a £500M savings
+mandate; producer World of Wonder says it intends to move the format to
+its own Wow Presents Plus streaming service, but no renewal exists yet on
+any platform. Leaving status `airing` (Series 8 is still broadcasting) and
+the existing `7/8` star as-is; flag for a status re-check once Series 8
+concludes and no successor platform is confirmed. `the-circle` — the
+Netflix→Hulu move + resumed Atlanta production (confirmed, July 2026) is
+already captured by the existing `7/8` star; no count or status change
+needed since nothing has aired yet.
+
+**One conflicting signal, reconfirmed closed, not reopened.**
+`below-deck-adventure` — this sweep's scout batch independently
+reconfirmed the show "still cancelled after 1 season," matching every
+prior reconfirmation back through 2026-09-20. The 2026-10-11 sweep's
+flagged "conflicting signal" (an uncorroborated Dexerto "Season 2, May 17"
+claim) did not resurface this tick — closed, no table action.
+
+Net: gap table unchanged at 35 shows / 37 gap-slots. Cross-grep clean
+across all 68 shows (zero frontmatter/season-file drift). Took the
+established fallback and re-ran `pnpm content:check` to confirm nothing
+new surfaced there either — 16 warnings, all inside the frozen
+`the-voice` S22-29 cluster (issue #762, `triage:needs-user`), untouched per
+standing instruction.
 
 **Table correction, 2026-10-14 tick (cloud march, second this day):**
 re-checked Rule 2 actionability for a fresh dispatch and found two drift
@@ -3476,3 +3537,7 @@ No calendar or gap-table action.
 | 2026-10-04 | 0 net (1 genuine new — rhobh S16 renewal [1 slot] — offset by 1 stale-row cleanup — big-brother S28 physically removed after its finale-gate drain completed three ticks prior but the removal itself had never landed; net even on count) | 39 |
 | 2026-10-11 | 1 (traitors [US] S6, officially dated "January 2027" per TVLine, fresh post-drain renewal; big-brother/chopped/jersey-shore false positives reconfirmed and closed, not reopened; below-deck-adventure conflicting signal flagged for next sweep, no table action) | 40 |
 | 2026-10-12 | Rule 2 drain, not a sweep (rhop S11 — fully filed, gap-slot removed) | 39 |
+| 2026-10-12 | Rule 2 drain, not a sweep (below-deck S13 — fully filed, gap-slot removed) | 37 |
+| 2026-10-14 | Rule 2 drain, not a sweep (love-is-blind S11 — fully filed, gap-slot removed) | 36 |
+| 2026-10-14 | Table correction, not a sweep (love-is-blind removal physically landed late + traitors [US] S6 physically inserted — net zero, one row swapped for another) | 37 |
+| 2026-10-19 | 0 (fifteenth full sweep, all 35 starred rows reconfirmed accurate across the full 68-show catalog; cross-grep clean; dragrace-uk BBC-cancellation and the-circle Hulu-move status items surfaced, no table action; below-deck-adventure conflicting signal reconfirmed closed, not reopened) | 37 |
