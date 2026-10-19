@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-10-19
 featured: false
 related:
   - a-change-of-address
@@ -73,4 +73,10 @@ entries:
     rank: 10
     title: "The show leaves Bravo entirely for the first time in its modern run."
     blurb: "Freeform picks up the show and streams it next-day on Hulu and Disney+, while the cast still works out of the same kind of Manhattan workroom the format opened with. The letterhead changes; the workroom doesn't."
+  - show: project-runway
+    season: 22
+    season_label: "S22 · New York"
+    rank: 11
+    title: "The cast and the judges' table both swell, and the workroom holds anyway."
+    blurb: "Tyra Banks joins Nina Garcia and Law Roach at a three-judge table, the largest cast in franchise history fills the room, and a new Siriano Save lets the mentor pull one designer back in — all under the same Manhattan roof the format has used since season one."
 ---
