@@ -1,112 +1,131 @@
-# DIGEST — 2026-10-14
+# DIGEST — 2026-10-19
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-A quiet, productive day on the content saga — the-voice's `take_h2`
-backlog fully drained and a CADENCE table-drift bug caught and fixed
-same-day — but the nightly breadth crawl just set an unwelcome record:
-**four consecutive red `e2e-full` nights**, surpassing yesterday's
-three-night streak. Zero test failures each night; it's the same
-75-minute single-worker wall, 85 days unpromoted on the shard fix
-(candidate #34). Deploy is green at HEAD.
+**The loop was dark for roughly four days.** Starting 2026-10-15
+11:15 UTC, every `march` tick failed with the same cause — "You're
+out of extra usage · resets 8am (UTC)" — a Claude Code subscription
+usage-cap exhaustion, not a code regression. 26 consecutive `march`
+failures and 2 consecutive `night`/digest failures followed (this is
+the first digest since 2026-10-14; 2026-10-17 and 2026-10-18's night
+runs both hit the same cap). Only 2 commits landed in that entire
+window, both in the few hours *before* the cap hit. The cap reset
+this morning and the very next scheduled tick (11:14:57Z) succeeded
+cleanly, shipping a routine season sweep (0 new, gap holds at 37).
+Deploy is green at HEAD (`c7b9118c`). `e2e-full` stayed red both
+nights — same long-standing single-worker duration-ceiling story
+(candidate #34), not a new issue.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 10-13 18:30 | march | failed — known issue #565 org-access crash class (8th+ recurrence since 07-12), no new root cause |
-| 10-13 23:06 | march | failed — same issue #565 crash class; stranded the `loop:content` mirror issue #823 (Amazing Race S39) open mid-ship |
-| 10-14 02:09 | march | success — content: `take_h2` backfill, the-voice seasons 1-10 |
-| 10-14 08:00 | march | success — content: season backfill, love-is-blind S11 (Boston); CADENCE gap row removed, show fully drained |
-| 10-14 14:01 | march | success — content: `take_h2` backfill, the-voice seasons 11-21; caught + fixed a CADENCE table-drift bug (love-is-blind/traitors rows not physically applied as narrated) |
-| nightly | e2e-full | **failed** (4th consecutive) — 8,855/10,735 complete (82.5%) at the 75-min wall, zero test failures |
-| nightly | night (prior) | success (2026-10-13 digest shipped clean) |
+| 10-14 19:35 | march | success — content: fix within-entry echo, two themed lists |
+| 10-15 05:45 | march | success — content: Rule 3 fresh-season extends, three themed lists |
+| 10-15 11:15 → 10-19 05:19 | march | **26 consecutive failures** — "out of extra usage," cap exhaustion, zero code involved |
+| 10-17 13:49 | night | failed — same cap exhaustion; no digest shipped |
+| 10-18 14:04 | night | failed — same cap exhaustion; no digest shipped |
+| 10-18 00:39 / 10-19 00:49 | e2e-full | failed both nights — known single-worker wall (candidate #34), ~76-82% complete at the 75-min cutoff, zero test failures |
+| 10-19 11:14:57 | march | **success** — first tick after the 8am UTC reset; shipped season sweep (gap 37, unchanged) |
+| 10-19 17:03 | night | this tick (digest) |
 
-3 of 5 march ticks shipped; the 2 failures share one known root cause
-(issue #565), not new regressions.
+2 of ~29 scheduled march windows in the period produced a commit;
+the gap is entirely usage-cap, not a shipping problem — the two
+ticks that *did* run before the cap hit shipped clean, and the one
+tick after the reset also shipped clean.
 
 ## The saga
 
-**Season-fill (Rule 2):** love-is-blind fully drained (10/11 → 11/11,
-gap row removed) — Season 11 (Boston) filed pre-season/format-only per
-spoiler discipline, canon rebased (Houston/Minneapolis/Charlotte/
-Dallas/Denver each shifted one rank). Gap table now reads **35 shows /
-37 gap-slots** (was 36/40 three nights ago at the 10-11 sweep) — net
-progress despite a same-day drift-bug correction (a narrated "row
-removed" from the 10-14 first tick hadn't physically landed; fixed in
-the second tick along with a missing `traitors` row insertion).
+**Season-fill (Rule 2) / sweep:** the 2026-10-19 sweep (15th full
+pass) reconfirmed all 35 starred CADENCE rows across the 68-show
+catalog — gap holds at **37 shows / slots**, unchanged from the
+2026-10-14 table correction. No drain capacity was available during
+the outage window to make progress beyond the sweep itself.
 
-**content-check backlog:** the-voice's `take_h2` gap (season-page
-Section 01 H2 verbatim-restating-H1 defect, issue #393) is now fully
-backfilled for seasons 1-21 across today's two ticks. Warning count:
-29 → 18, and **all 18 remaining sit inside the frozen the-voice S22-29
-factual-corruption range** (issue #762, `triage:needs-user` — correctly
-left untouched pending the dedicated fix that issue calls for, not a
-missed drain).
+**Rule 3 (themed-list extend):** three fresh-season extends shipped
+in the narrow pre-cap window (10-15 05:45 tick) plus an echo fix to
+two existing lists (10-14 19:35 tick) — both land before the digest
+gap opens.
 
-**Velocity vs. the three bearings rules:** Rule 2 (season-fill) is
-live and draining — 1 full show cleared today. Rule 3 (themed-list
-extend) didn't fire this window; Rule 2 had actionable picks both
-ticks so no fallback was needed. No new show added (Rule 1 — correctly
-locked, gap table non-zero).
+**Velocity vs. the three bearings rules:** effectively paused for 4
+days by an external constraint (subscription usage), not a queue or
+gate problem. The one post-reset tick correctly fell through to the
+standing Rule-2 sweep cadence rather than forcing a pick.
 
 ## Queues now
 
-- **CADENCE gap table:** 35 shows / 37 gap-slots (smallest-gap-first:
-  amazing-race, rhonj, the-voice, the-challenge, bachelor,
-  american-idol, rhoc all sit at 1 missing season — next sweep due
-  2026-10-18).
-- **content:check:** 18 warnings, 100% inside the frozen the-voice
-  S22-29 range (issue #762).
-- **plan/CRITIQUE.md:** last pass 188 (commit 80a52e1c) — several
-  `[needs-user-call]` rows still pending oversight judgment (oldest:
-  pass-37 `/u/[handle]` stat-chip scaffold question, pass-77/pass-121
-  `/shows` B-tier filter-taxonomy question).
-- **plan/PHASE_CANDIDATES.md:** 33 pending candidates. Candidate #34
-  (shard the e2e-full crawl) is the standing longest-unpromoted item —
-  now **85 days** unpromoted, score 6.6.
-- **Open `triage:needs-user` issues:** 9 (oldest: #399, 2026-06-11 —
-  13 authed e2e specs red on main, since superseded by many green
-  runs; likely stale and worth a closing pass). **`triage:loop-queued`:**
-  5.
+- **CADENCE gap table:** 37 shows/slots, unchanged since 2026-10-14;
+  next sweep not due until next week.
+- **plan/CRITIQUE.md:** last pass 188 (commit 80a52e1c, 2026-10-13)
+  — stale 6 days purely from the outage; several `[needs-user-call]`
+  rows still pending oversight (oldest: pass-37 `/u/[handle]`
+  stat-chip question, pass-77/121 `/shows` B-tier filter-taxonomy
+  question, pass-96 season/theme dynamic-cache mystery).
+- **plan/PHASE_CANDIDATES.md:** last pass 74 (commit 6d1d104e,
+  2026-10-04) — also stale purely from the outage. Candidate #34
+  (shard e2e-full) remains the longest-unpromoted cloud-blocked item.
+- **Open `triage:needs-user`:** 9 (oldest #399, 2026-06-11, likely
+  stale per prior digest note). **`triage:loop-queued`:** 5. **Open
+  unlabeled issues:** 0.
+- **Ledger file sizes** (candidate #29's own signal, re-measured this
+  tick): `plan/CRITIQUE.md` 2.3MB, `plan/AUDIT.md` 1.3MB,
+  `plan/LISTS.md` 1.3MB, `plan/PHASE_CANDIDATES.md` 468KB — flat vs.
+  the 2026-10-04 measurement, but see Tuning proposals below for new
+  production evidence this is no longer theoretical.
 
 ## Needs you
 
-- **Candidate #34 (shard e2e-full across parallel workers)** — 85
-  days unpromoted, now directly responsible for a 4-night red streak
-  with zero actual test regressions each night. The cloud loop cannot
-  fix this itself (`ACTIONS_PAT` lacks the `workflows` OAuth scope to
-  edit `.github/workflows/e2e-full.yml`). This is the single highest-
-  leverage `/oversight` action available right now.
-- **Issue #823** (`loop:content` mirror, "Amazing Race S39") is stuck
-  open — the 10-13 23:06 tick crashed mid-ship before closing it. No
-  data corruption (the season file was never written), but it'll sit
-  open until a future Rule 2 tick picks amazing-race off the gap table
-  (currently the joint-smallest gap, 38/39) and closes it naturally.
-  Flagging in case it looks stale before then.
-- **9 open `triage:needs-user` / 5 `triage:loop-queued` issues**, some
-  dating back to June. Worth a `/triage` sweep pass to confirm which
-  are still live vs. closeable-as-stale (e.g. #399's "13 authed e2e
-  specs red" predates ~130 subsequent green `e2e-full` runs).
-- Deploy is green at HEAD (083d884) — no action needed there.
+- **The usage-cap outage itself.** No code or gate was at fault, but
+  4 days of silence with 26 identically-failing CI runs is exactly
+  the kind of thing a human notices before the loop does. Worth
+  deciding whether the march cadence should back off automatically
+  after repeated identical cap failures (see Tuning proposals) or
+  whether this is a one-off to shrug off. Filed as a HIGH row in
+  `plan/AUDIT.md` this tick, `[needs-user-call]` — same cloud-scope
+  limitation as candidate #34 (no workflow-file write access from
+  `ACTIONS_PAT`).
+- **Candidate #34 (shard e2e-full)** remains the standing highest-
+  leverage `/oversight` action blocking a green nightly breadth run
+  — unchanged story, now compounded by the outage's own 2 extra red
+  nights.
+- **9 open `triage:needs-user` / 5 `triage:loop-queued` issues**,
+  unreviewed since before the outage — worth a `/triage` sweep once
+  the loop has run a few clean ticks to re-establish cadence.
+- Deploy is green at HEAD (`c7b9118c`) — no action needed there.
 
 ## Today's intent
 
-Next Rule 2 pick should be whichever 1*-gap show's premiere date has
-most recently crossed into the present per the 2026-10-11 sweep notes
-(amazing-race S39 and rhonj are both joint-smallest and worth a fresh
-date check first). Top non-content finding: get candidate #34 in
-front of `/oversight` — it's the oldest unpromoted candidate in the
-file and the only thing standing between the loop and a green nightly
-breadth run.
+Let the loop re-establish normal cadence for a few ticks before
+treating the quiet window as anything beyond what it was. Top
+non-content finding: the usage-cap outage write-up above and its
+`plan/AUDIT.md` row are the thing most worth a human's attention
+right now — not because anything broke, but because 4 days of silent
+identical failures is worth knowing about before it happens again.
 
 ## Tuning proposals
 
-None new this tick. Candidate #34 already carries the standing
-recommendation (reinforced at passes 57/59/72) — the digest's job is
-to keep the evidence current, not re-file it; see `plan/AUDIT.md`'s
-e2e-full breadth row for the day-by-day record and the 2026-10-14
-update appended this tick.
+Two filed as `plan/PHASE_CANDIDATES.md`-bound signals this tick
+(not promoted — `/oversight` only):
+
+1. **New: march cadence has no backoff on identical cap-exhaustion
+   failures.** 26 consecutive ticks over 4 days each independently
+   discovered the same "out of extra usage" state and burned a full
+   CI run finding out again. A cheap guard (e.g. skip the tick if
+   the prior tick's failure log contains the same "out of extra
+   usage" string and the reset time hasn't passed) would turn 26
+   wasted runs into 1. Low urgency — self-healed at the cap reset —
+   but free to fix and currently invisible without this digest.
+2. **Reinforcing #29 (append-only ledger file-size wall) with fresh
+   production evidence.** Previously a theoretical risk flagged at
+   2026-10-04 file-size measurements; this window's march-failure
+   logs showed "Prompt is too long" as the literal SDK error on
+   multiple distinct dates before the cap outage even started
+   (2026-10-09 run 38006815107, 2026-10-13 runs 38482214109 /
+   38447328001, 2026-10-14 run 38662419536) — all four reading one
+   or more of the now-1-2MB ledger files. This is no longer a future
+   risk; it is an active, recurring cause of lost ticks independent
+   of the usage-cap story above. Worth bumping #29's priority at the
+   next `/oversight` pass.
