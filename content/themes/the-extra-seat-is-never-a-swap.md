@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-10-19
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -51,7 +51,7 @@ entries:
     season: 17
     rank: 8
     title: "The newest full-timer settles in as the guest chair pulls its loudest names yet"
-    blurb: "A recent promotion to the main panel gets its first full season to breathe, right as another longtime regular exits the rotation and the guest seat pulls names from further outside the usual investor circuit than ever."
+    blurb: "A recent promotion to the main panel gets its first full season to breathe, with a longtime regular now fully out of the rotation and the guest chair pulling names from further outside the usual investor circuit than ever."
   - show: shark-tank
     season: 3
     rank: 9

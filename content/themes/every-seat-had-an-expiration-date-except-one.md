@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-21
+last_revised: 2026-10-19
 featured: false
 related:
   - the-panel-turned-over-more-than-the-contestants-did
@@ -17,7 +17,7 @@ entries:
     season: 23
     season_label: "S23 · The VH1 Relaunch"
     rank: 1
-    title: "The host chair changes hands for the only time in fifteen years."
+    title: "The host chair changes hands for the only time in thirteen years."
     blurb: "Rita Ora takes over hosting for the network move to VH1 — the one cycle in the show's history without Tyra Banks in the chair. The panel around her rebuilds too, and neither swap has time to settle before the season ends."
   - show: americas-next-top-model
     season: 24
@@ -42,7 +42,7 @@ entries:
     season_label: "S09 · The China Turn"
     rank: 5
     title: "The panel's longest-running fixture closes out her seat."
-    blurb: "Twiggy wraps her run as a permanent judge here, ending a stretch that started three years earlier. The table has to find its next fixture from this cycle forward, and the competition itself draws a more divided response without her."
+    blurb: "Twiggy wraps her run as a permanent judge here, ending a stretch that started three cycles earlier. The table has to find its next fixture from this cycle forward, and the competition itself draws a more divided response without her."
   - show: americas-next-top-model
     season: 10
     season_label: "S10 · The New York Return"
