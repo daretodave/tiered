@@ -4124,6 +4124,31 @@ scale, not a binary pass/fail. 96 days unpromoted since original filing
 whose absence is now measurably degrading the loop's own situational
 awareness, not just its token budget.
 
+**Update (digest 2026-10-20):** the fix pattern this candidate proposes
+just got proven cheap and effective, as a side effect rather than a
+dedicated effort. Today's `/iterate` tick swept `plan/CRITIQUE.md` for
+rows that carried an inline `- resolved:` note but had never been moved
+from `## Pending` to `## Done` — a bookkeeping gap in the content-gap-
+redirect workflow running since 2026-08-24. 39 such rows were found and
+condensed into the file's one-line `## Done` format (verbatim resolved
+notes preserved, multi-paragraph Pending blocks collapsed). Side effect:
+`plan/CRITIQUE.md` dropped from 2.3MB to 890KB in one commit — exactly
+the archive-and-condense mechanism this candidate has proposed since
+07-09, demonstrated manually on one file without a dedicated archive
+file or skill change. Genuinely-open Pending findings also dropped from
+a stale 102 (the 10-13 reinforcement's count, now confirmed to have
+included 39 phantom rows) to 63 real ones — the bookkeeping drift this
+candidate's pass-68 reinforcement first flagged as a "confirmed silent
+bookkeeping-accuracy defect" was real and has now been corrected once.
+`plan/AUDIT.md` (1.3MB) has not had the equivalent sweep and still fails
+a plain `Read` outright this tick (confirmed again: "File content
+(1.2MB) exceeds maximum allowed size (256KB)") — same 256KB wall first
+hit 2026-10-04, unchanged, on the one major ledger nobody's condensed
+yet. 103 days unpromoted since original filing (07-09). Recommend
+promoting at the next `/oversight`: the scope sketch's archive-file
+mechanism is no longer a theoretical hygiene proposal, it's a proven-
+cheap fix with a same-day before/after measurement.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
