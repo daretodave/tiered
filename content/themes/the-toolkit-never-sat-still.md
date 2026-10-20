@@ -1,13 +1,13 @@
 ---
 slug: the-toolkit-never-sat-still
 title: "The toolkit never sat still"
-description: "MasterChef Australia rebuilds its own machinery almost every season — audition formats, mentor rotations, advantage mechanics, even the size of the judging panel. This ranks all seventeen seasons by how much each one actually reshaped the show."
-tagline: "Home-cook competitions don't usually redesign their own machinery this often — a new advantage mechanic most years, the judging panel growing from three chairs to four, mentors and finale formats quietly rewritten underneath. <b>This tracks all seventeen seasons by what got rebuilt, not by who won.</b>"
+description: "MasterChef Australia rebuilds its own machinery almost every season — audition formats, mentor rotations, advantage mechanics, even the size of the judging panel. This ranks all eighteen seasons by how much each one actually reshaped the show."
+tagline: "Home-cook competitions don't usually redesign their own machinery this often — a new advantage mechanic most years, the judging panel growing from three chairs to four, mentors and finale formats quietly rewritten underneath. <b>This tracks all eighteen seasons by what got rebuilt, not by who won.</b>"
 category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-22
+last_revised: 2026-10-20
 featured: false
 related:
   - every-season-tests-a-new-theory-of-the-kitchen
@@ -86,33 +86,39 @@ entries:
     title: "The format tests whether a much longer season can still hold together."
     blurb: "Season two extends the episode count well past the debut's run, the first real test of whether the competition's structure can sustain a full-length season rather than an introductory one."
   - show: masterchef-australia
+    season: 18
+    season_label: "S18 · Open Call"
+    rank: 13
+    title: "Auditions move back on screen for the first time in five years, met by a panel already three seasons settled."
+    blurb: "Forty hopefuls compete across three broadcast audition episodes for twenty-four spots, a format element the show hadn't used since series thirteen. The panel, unchanged for a third straight season, meets the return without any other structural twist alongside it."
+  - show: masterchef-australia
     season: 7
     season_label: "S07 · The Return"
-    rank: 13
+    rank: 14
     title: "The Power Apron format settles, and the recurring mentor role changes hands."
     blurb: "Shannon Bennett takes over as recurring Immunity mentor from Kylie Kwong, and a returning guest chef anchors a second consecutive dedicated week — the format running its year-old mechanic with more confidence, not a new one."
   - show: masterchef-australia
     season: 3
     season_label: "S03 · The Refinement"
-    rank: 14
+    rank: 15
     title: "The format finds a settled rhythm without adding a single new mechanic."
     blurb: "No new advantage, no panel change, no relocation — season three's whole swing is internal, the audition circuit and elimination structure finally running with the confidence the first two seasons were still building toward."
   - show: masterchef-australia
     season: 1
     season_label: "S01 · The Debut"
-    rank: 15
+    rank: 16
     title: "The season with nothing yet built to swing away from."
     blurb: "No Australian template existed before this one — a three-judge panel and a nationwide audition search invent the format's grammar in real time, rough edges and all, before there's anything established yet to rewrite."
   - show: masterchef-australia
     season: 4
     season_label: "S04 · The Benchmark"
-    rank: 16
+    rank: 17
     title: "A recurring guest's own challenges become a structural fixture, not a one-off."
     blurb: "A recurring celebrity chef's appearances stop functioning as a single guest slot and start operating as a creative force across the whole season, setting a template for how later seasons would build entire weeks around one distinctive cook."
   - show: masterchef-australia
     season: 5
     season_label: "S05 · The Full Stride"
-    rank: 17
+    rank: 18
     title: "The one founding-era season that changes nothing on purpose."
     blurb: "No new advantage, no panel shake-up, no relocation — season five is the format running its established template at full confidence, the control case against every season around it that reached for a structural swing instead."
 ---
