@@ -1,9 +1,41 @@
 # CRITIQUE
 
-> Last pass: 2026-10-13 at commit 80a52e1c
-> Pass count: 188
+> Last pass: 2026-10-20 at commit fa5bb4ef
+> Pass count: 189
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 188 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 189 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/bachelor/season/grant-ellis`, `/shows/love-is-blind/season/boston`,
+> `/themes/best-comeback-seasons`, `/shows` anon; `/`,
+> `/shows/bachelor/season/grant-ellis`, `/shows/love-is-blind/season/boston`,
+> `/u/e2e`, `/themes/best-comeback-seasons` authed — rotated onto the
+> just-patched Bachelor Grant Ellis page (checking whether commit
+> fa5bb4ef's restatement fix actually landed clean), a fresh Love Is
+> Blind Boston season backfill, and a recently-shipped themed list,
+> distinct from pass 188's rotation except for `/shows`. Both passes
+> came back mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, H1/canonical/OG present on
+> every capture); authed pass confirmed real auth (`authenticated:cloud`
+> chrome visible on every page; `/u/e2e` rendered "Member since May
+> 2026" / "No votes yet"). The anon and authed passes independently
+> converged on the same strongest finding: the fa5bb4ef fix narrowed
+> Grant Ellis's restatement defect to five sole-owner fields as
+> intended, but missed a sixth site entirely — `canon.md`'s rationale
+> paragraph, a separate file the fix's scope never mentioned, still
+> restates the identical casting-precedent facts — merged into one HIGH
+> row rather than filed twice. A second, independent instance of the
+> same canon.md-re-derives-season-body-facts defect class surfaced on
+> Love Is Blind Boston (filed as its own MED row — no existing pending
+> row covered that page). One candidate (homepage "REST OF THE INDEX"
+> repeated genre-tag text reading noisy once linearized to flat text)
+> was dropped at self-assessment — the reader's own evidence couldn't
+> confirm whether the rendered grid visually mitigates the repetition,
+> and an unconfirmed layout concern isn't actionable as written. Filed 4
+> new findings (1 high, 2 med, 1 low). No pending HIGH findings remained
+> open ahead of this pass.
+> Prior pass-188 summary follows. Pass 188 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4921,6 +4953,46 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon+authed] /shows/bachelor/season/grant-ellis — canon.md's rationale paragraph restates the casting-precedent facts the fa5bb4ef fix never touched, a sixth near-verbatim site on the page
+
+- pass: 189 (commit fa5bb4ef)
+- viewport: desktop
+- category: voice
+- observation: The fa5bb4ef fix (pass-187 resolution) explicitly left the eyebrow, lede, pull, THE TAKE, and THE SHAPE OF THE SEASON as the sole owners of the "second Black Bachelor" and "fastest turnaround" fact pair, and rewrote four other flagged fields to stop re-deriving it. But the fix's scope was limited to `content/shows/bachelor/seasons/29-grant-ellis.md` — it never touched `content/shows/bachelor/canon.md`, whose Season 29 rationale paragraph restates the identical fact pair in full, with the Matt James and Nick Viall names added on top. A reader scrolling from THE SHAPE OF THE SEASON into WHERE IT SITS IN THE CANON a few hundred pixels below hits the same two facts a sixth time on one page — the exact fatigue the original pass-187 finding described, just relocated to a file outside the fix's blast radius rather than eliminated.
+- evidence: THE SHAPE body (`29-grant-ellis.md`): "Grant Ellis becomes the franchise's second Black Bachelor, cast the same year he appeared as a contestant on the preceding Bachelorette season — the fastest turnaround from suitor to lead the show has staged." `canon.md` line 101 (Season 29 rationale): "He's the franchise's second Black Bachelor, four years after Matt James made the position possible, and he's also the fastest the show has ever moved a face from contestant to lead — cast the same year he appeared on the preceding Bachelorette season, a turnaround quicker than even Nick Viall's much-discussed recycling." Both render on the live page.
+- suggested fix: Rewrite `canon.md`'s Season 29 rationale paragraph to argue only the comparative canon-slot reasoning (why #10, relative to Juan Pablo Galavis above and Nick Viall below, per the adjacent `slot_argument` fields already in the file) without re-deriving the "second Black Bachelor" / "same-year turnaround" facts THE SHAPE already owns — the same treatment the fa5bb4ef fix applied within the season file, extended to the canon.md file it didn't reach. Content-only, `content/shows/bachelor/canon.md`.
+- source: browser (critique-pass-189, anon+authed)
+
+### [MED] [anon] /shows/bachelor/season/grant-ellis — the episode-count fact ("nine episodes") is restated across six fields, a second restatement defect on the same page distinct from the casting-precedent one
+
+- pass: 189 (commit fa5bb4ef)
+- viewport: desktop
+- category: voice
+- observation: Independent of the casting-precedent fact pair above, the season's nine-episode runtime is separately restated six times with only light rewording. This fact wasn't in scope of the fa5bb4ef fix (which addressed the casting-precedent fact only), so the same defect class is live on this page a second time, on a different fact, right now.
+- evidence: lede: "Nine episodes, the shortest run in years"; `episodes_caption`: "Nine episodes — the fewest since 2008's season twelve."; `format_summary`: "Traditional format, nine-episode run"; body: "nine episodes keep the run tight"; `canon.md` line 101: "nine episodes is the tightest runway the modern era has allowed"; `watch_list` Ep 8 body: "Nine episodes keep the pacing brisk from open to finale."
+- suggested fix: Keep `episodes_caption`'s "fewest since 2008" framing as the sole owner of the episode-count observation. Rewrite `format_summary`, the body's closing clause, `canon.md`'s "tightest runway" clause, and the Ep 8 `watch_list` closer to each state a different consequence of the short run (pacing of travel legs, cut frequency, etc.) instead of re-asserting "nine episodes" with a near-synonymous adjective. Content-only, `content/shows/bachelor/seasons/29-grant-ellis.md` + `content/shows/bachelor/canon.md`.
+- source: browser (critique-pass-189, anon)
+
+### [MED] [authed] /shows/love-is-blind/season/boston — canon.md's rationale paragraph re-derives the cast-size/format facts "the shape of the season" already owns, the same defect class just found on grant-ellis
+
+- pass: 189 (commit fa5bb4ef)
+- viewport: desktop
+- category: voice
+- observation: Same single-fact-owner drift class documented and fixed dozens of times elsewhere in the catalog (amazing-race/family-edition, shark-tank/season-17, bachelorette/jenn-tran, and others) — fresh and previously unfiled on this page. THE SHAPE OF THE SEASON already states the cast size and pod-to-altar format; WHERE IT SITS IN THE CANON restates both facts rather than arguing the canon-slot comparison.
+- evidence: THE SHAPE: "thirty singles, pods, proposal, a first meeting, and a wedding sprint toward the altar." WHERE IT SITS IN THE CANON: "The thirty-person cast and standard pod-to-altar format mirror what the established era has been running since Seattle."
+- suggested fix: Let THE SHAPE OF THE SEASON keep sole ownership of the cast-size/format facts. Rewrite WHERE IT SITS IN THE CANON to argue the comparative canon-slot case only (why this season sits where it does relative to Columbus/Charlotte/Denver, per the sentences that follow) without re-stating "thirty-person cast" / "pod-to-altar format." Content-only, `content/shows/love-is-blind/canon.md`.
+- source: browser (critique-pass-189, authed)
+
+### [LOW] [authed] /shows/love-is-blind/season/boston — "where it sits in the canon" references prior seasons by bare city name with no cue they're prior seasons of the same show
+
+- pass: 189 (commit fa5bb4ef)
+- viewport: desktop
+- category: comprehension
+- observation: The canon-placement paragraph leans on bare city names (Seattle, Columbus, Charlotte, Denver) as comparison points without identifying them as prior Love Is Blind seasons. A reader landing directly on this season page via search or a shared link has no cue that these are other seasons of the same show rather than unrelated references.
+- evidence: "That's not enough to place it near Columbus's demonstrated bounce-back, but there's also no sign yet of the inconsistency that sank Charlotte or the subdued energy that defines Denver."
+- suggested fix: Add a light in-line qualifier on first use (e.g., "Columbus's demonstrated bounce-back" → "the Columbus season's demonstrated bounce-back") or hyperlink each city name to its season page — gives a cold-landing reader the context without padding the prose. Content-only, `content/shows/love-is-blind/canon.md`.
+- source: browser (critique-pass-189, authed)
 
 ### [MED] [anon] /themes/thirteen-was-the-promise-not-the-rule — entry #10's closing sentence is grammatically broken, missing the em-dash construction the rest of the list relies on
 
