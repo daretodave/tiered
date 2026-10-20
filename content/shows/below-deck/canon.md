@@ -86,7 +86,7 @@ tag: A return to the franchise's best-reviewed overseas location — new yacht, 
 slot_argument: Phuket matches the premise elements the franchise's strongest seasons share — a distinct international setting, a captain with real authority — without a single aired hour yet. Provisional.
 community_rank_hint: rank=8 delta=0 sentiment=hold
 
-Phuket gives the franchise its first return engagement with a location that already produced one of its best seasons. Captain Kerry Titheradge enters his third season with the kind of settled command the Grenada and Sint Maarten III runs built toward, and most of the senior interior and galley team — chief stew, second stew, chef — carries over intact. A brand-new motoryacht replaces last season's vessel, giving the production a fresh canvas inside a setting it already knows how to frame. The deck and the rest of interior arrive mostly new, which is the real variable here. Premise alone earns Phuket a solid mid-pack slot above the format's more routine Caribbean runs; aired episodes will decide whether it climbs.
+Phuket's premise clears a higher bar than Antigua's on location pedigree alone — a setting that already produced one of the franchise's best seasons, beyond the visual novelty Antigua's own entry disclaims. But it sits below the BVI, whose rank was never about location: that season earned its slot through sharper captain authority and stronger cast dynamics, ground Phuket can't claim with no footage aired. The BVI and Antigua seasons already delivered on what makes each work; Phuket is still a bet on a location's track record carrying a new, untested crew. Provisional by design, the rank reflects confidence in the setting, not the season.
 
 ## 8. Season 8 — Antigua
 
