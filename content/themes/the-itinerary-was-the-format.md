@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-10-21
 featured: false
 related:
   - the-format-learned-to-travel
@@ -59,8 +59,8 @@ entries:
     season: 12
     season_label: "S12 · The South American Stretch"
     rank: 8
-    title: "The only cycle that ever sets foot in South America"
-    blurb: "São Paulo is a stop the show never repeats before or after, treated as a real editorial context rather than a scenic detour. Of every continent the show visited across its run, this is the one it touched exactly once."
+    title: "The first cycle to set foot in South America"
+    blurb: "São Paulo gives the format its first stop on the continent, treated as a real editorial context rather than a scenic detour. The show returns to Brazil only once more, eight cycles later, so this stays the rarer of the two stamps."
   - show: americas-next-top-model
     season: 13
     season_label: "S13 · The Height Experiment"
