@@ -13229,3 +13229,101 @@ last time a curator actually looked.
   the identical ground before new grounding material exists (a
   fresh Rule 2 season landing, or the next review-floor crossing on
   2026-10-21).
+- **2026-10-21, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship.** Re-confirmed both standing blockers:
+  Rule 2 non-actionable (CADENCE gap table, all 35 starred rows
+  confirmed-but-unaired across 68 shows, zero file/frontmatter
+  mismatches per the 2026-10-19 sweep) and the 90-day review floor
+  crossing referenced by yesterday's note landed exactly one row
+  (`survivor-pillars`, `last_revised: 2026-07-23` → 90 days as of
+  today) — too thin on its own to warrant a review-batch pass
+  (floor is ≥5 rows due), so left untouched per the established
+  threshold.
+  This pass's main work was a full `category: single` show-gap
+  census — not a fresh cross-show axis hunt, since dozens of prior
+  passes (logged throughout this file) have already exhausted that
+  approach session over session. Ran a `show: <slug>$` occurrence
+  count against every `content/themes/*.md` file for all 65 shows
+  in `content/shows/*.md`, then opened the highest-count file for
+  every show whose dominant hit wasn't already confirmed in a prior
+  pass's notes, to check whether that show's seasons are already
+  comprehensively claimed by a dedicated single list. Result: every
+  single show in the catalog already has at least one fully (or
+  near-fully) populated `category: single` list, and the
+  format-heavy shows have several apiece — confirmed today,
+  specifically, for: `rhom` (`the-wait-between-seasons-was-never-
+  the-same-twice`, 7/7), `jersey-shore` (`home-seasons-waited-
+  relocation-seasons-didnt`, 6/6), `love-is-blind` (`a-dating-
+  experiment-still-writing-its-own-rulebook`, 10/10 — this is the
+  show behind the 10-hit `love-island-uk`-adjacent count that an
+  earlier pass's shorthand had mis-attributed), `married-at-first-
+  sight` (`the-matching-experts-never-sit-still-for-long`, 19/20 —
+  distinct from `every-season-strikes-a-different-bargain-with-
+  lana`, which is actually Too Hot to Handle, not MAFS, correcting
+  a mis-read from an earlier census pass), `selling-sunset`
+  (`some-seasons-rebuild-the-roster-others-just-move-the-furniture`,
+  9/9), `below-deck-sailing-yacht` (`the-quiet-register-was-the-
+  whole-point-until-ibiza`, 5/5), `below-deck-mediterranean`
+  (`the-command-held-for-ten-seasons-then-didnt`, 11/11), `rhoa`
+  (`the-anchor-count-set-the-ceiling`), `rhoc` (`the-founding-five-
+  kept-getting-replaced`), `rhonj` (`the-social-geometry-resets-
+  then-it-holds`), `southern-charm` (`the-founding-seven-slowly-
+  rebuilt`), `survivor-australia` (`sorted-before-they-landed`),
+  `chopped` (three separate single lists: `when-the-basket-became-
+  a-bracket`, `thirteen-was-the-promise-not-the-rule`, `no-season-
+  here-got-the-calendar-to-itself`), `big-brother` (two: `the-
+  twist-is-the-format`, `every-summer-gets-its-own-twist`),
+  `ink-master` (four: `the-team-rule-never-makes-it-to-a-second-
+  season`, `the-judging-table-never-got-to-coast`, `the-team-
+  never-means-the-same-thing-twice`, `every-season-split-the-room-
+  differently`), `top-chef` (`the-format-learned-to-travel`,
+  18/23+), `dragrace-uk` (`the-series-the-uk-edition-finally-made-
+  its-own`), `the-circle` (`seven-ways-to-break-the-same-app`),
+  `bake-off` (`the-tent-moved-more-than-the-show-admits`),
+  `americas-next-top-model` (two: `the-itinerary-was-the-format`,
+  `every-seat-had-an-expiration-date-except-one`), `naked-and-
+  afraid` (`the-shifting-yardstick`), `summer-house` (`the-roster-
+  never-held-still`), `masked-singer` (`the-masks-changed-every-
+  week-the-panel-never-did`), `hells-kitchen` (two: `the-numbers-
+  ran-out-casting-became-the-format`, `everything-but-the-pass-
+  keeps-changing`), `rhoslc` (`four-names-never-leave-the-
+  credits`), `rhod` (`the-schedule-kept-changing-as-much-as-the-
+  cast`), `americas-got-talent` (`two-coasts-one-open-call`),
+  `vanderpump-rules` (`the-map-outlasted-the-cast`), `traitors` /
+  `traitors-uk` (both too thin on their own for a 10-entry single
+  list — 5 and 4 installments respectively — and their obvious
+  cross-show pairing, a same-format-different-rules comparison, is
+  already fully staked at `same-license-different-rules` ranks 2
+  and 8). Also re-confirmed the five shows too thin on season count
+  for any standalone single list (`perfect-match` 4, `the-
+  ultimatum` 4, `below-deck-adventure` 1, `below-deck-down-under`
+  4, `rhodubai` 2) — unchanged from a prior pass's finding.
+  Beyond the census, re-tried five additional axes a wider net
+  might have missed, all dead: (1) a cross-show "returned after a
+  multi-year network hiatus" structural cut, distinct from RHOM's
+  own single-show gap list — already fully claimed by `new-network-
+  same-rulebook` (American Idol's ABC return, Project Runway's
+  Bravo/Freeform moves, Bake Off's Channel 4 reset all restate the
+  identical thesis); (2) a cross-show "biggest/smallest prize pool
+  in franchise history" angle — re-ran the `biggest (prize|
+  jackpot)|grand prize (doubled|grew)` grep a prior pass already
+  used, still zero hits; (3) a "guest judge/star crossing in from a
+  different franchise" angle — already comprehensively staked at
+  `familiar-faces-wrong-franchise` (16 entries) and `a-guest-spot-
+  with-room-to-grow` (12 entries); (4) a Below Deck-family "new
+  vessel as the season's headline" angle — re-confirmed the prior
+  2026-08-11 finding that only one season catalog-wide (BDM S11)
+  phrases a new yacht as a stated structural fact, sub-floor even
+  for a single show; (5) exes/rivals-as-casting-premise's open
+  fifth-show search (flagged still-open at the 2026-07-xx pass
+  logged near line 4030) — no new candidate surfaced this pass
+  either, remains an extend-not-new-list lead regardless.
+  No `content/themes/*.md` file written, no ledger row added. This
+  pass's distinct contribution versus the many prior zero-ships: a
+  genuinely complete single-show census (not just a sampled one),
+  confirming the `category: single` fallback path named in the
+  Rule 3 brief is now about as saturated as the cross-show axis
+  space already was. The next actionable Rule 3 lead is unchanged:
+  a new season landing via Rule 2, a finale-gate pickup, or an
+  oversight-authorized scout-research process to ground a genuinely
+  new fact the existing season files don't yet state.
