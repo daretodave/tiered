@@ -1814,6 +1814,20 @@ remains the only thing that retires this ceiling. **84 days unpromoted
 since filing (07-21)** — still the file's longest-unpromoted candidate,
 still the standing `/oversight` recommendation.
 
+**Update (digest 2026-10-21):** the alternating pattern holds, no
+trend either direction. Since the 10-14 AUDIT.md log entry: 10-15 and
+10-16 came back green, 10-17 through 10-19 breached three nights
+straight, 10-20 came back green, and tonight's run (39526452277,
+started 01:17:32Z) breached again at 8,643/10,743 (80.5%), zero actual
+test failures among completed checks — the same 75-minute single-
+worker wall every time. Total test count (10,743) is flat-to-slightly-up
+vs. the 10-14 count (10,735), tracking the content saga's steady
+catalog growth. Auto-filed as a recurrence comment on issue #636
+rather than a fresh issue (14-day staleness-bound dedupe working as
+designed). No scope change to the fix. **92 days unpromoted since
+filing (07-21)** — still the file's longest-unpromoted candidate,
+still the standing `/oversight` recommendation.
+
 ### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
 
 **Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
@@ -4148,6 +4162,29 @@ yet. 103 days unpromoted since original filing (07-09). Recommend
 promoting at the next `/oversight`: the scope sketch's archive-file
 mechanism is no longer a theoretical hygiene proposal, it's a proven-
 cheap fix with a same-day before/after measurement.
+
+**Update (digest 2026-10-21):** the original SDK-crash failure mode
+recurred again, 11 days after the 2026-10-10 occurrence this candidate
+last cited. The 2026-10-21T14:40:38Z cloud `march` tick (run
+39618924091) died with the identical `error: Claude Code returned an
+error result: Prompt is too long`, auto-filed as a comment on issue
+#565 at 15:44:52Z (the same tracking issue the 10-09 crash landed on) —
+confirming this is a recurring class, not a one-off, and that issue
+#565 is quietly accumulating recurrence comments with no dedicated fix
+in flight. This is the only march failure in an otherwise clean
+5-of-6 window (the other 5 scheduled ticks in the last 26h all shipped
+content/critique commits), so the crash rate is low but non-zero and
+tracks the same mechanism as before: a long-running tick's context
+grows past the SDK's prompt ceiling, most plausibly from reading one
+of the oversized ledgers this candidate names. File sizes this tick:
+`plan/CRITIQUE.md` 876KB (essentially unchanged since the 10-20
+condensing), `plan/AUDIT.md` 1.27MB (still uncondensed, still fails a
+plain `Read` outright), `plan/LISTS.md` 1.29MB, `plan/PHASE_CANDIDATES.md`
+(this file) 466KB. 104 days unpromoted since original filing (07-09) —
+still the file's longest-standing unpromoted item, now with a second
+dated production-crash data point bracketing the 10-20 proof-of-fix
+evidence on either side: the fix works when applied, the crash keeps
+recurring when it isn't.
 
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
