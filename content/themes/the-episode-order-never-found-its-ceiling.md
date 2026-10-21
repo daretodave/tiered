@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-23
+last_revised: 2026-10-21
 featured: false
 related:
   - the-cast-was-still-arriving
@@ -41,8 +41,8 @@ entries:
     season: 11
     season_label: "S11"
     rank: 5
-    title: "Thirty-eight episodes make this the longest season, until the next one beats it"
-    blurb: "Season eleven runs longer than every season before it, a record that lasts exactly one year. Twelve couples carry the format's now-familiar scale without a single new structural idea attached to the extra runtime."
+    title: "Thirty-eight episodes put this one within two of a five-year-old record, not past it"
+    blurb: "Season eleven runs second only to season six's then-record forty-one episodes, its cast growing from nine to twelve couples with a same-sex male couple among the new arrivals. The swap-week mechanic returns unchanged from the year before — size does the talking, not structure."
   - show: married-at-first-sight-australia
     season: 9
     season_label: "S09"
