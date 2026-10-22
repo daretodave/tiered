@@ -54,10 +54,10 @@ Season six earns its high slot for doing something the format hadn't done before
 ## 10. Season 10
 
 tag: The first season outside Mexico, and the first to draw on the Golden Bachelor's age-inclusive casting.
-slot_argument: After nine straight years in Sayulita, the show relocates to Costa Rica, expands casting to the Golden spinoffs for the first time, and adds a second bartender and a new voting mechanic — a genuine refresh after a two-year gap.
+slot_argument: After eight seasons in Sayulita, the show relocates to Costa Rica, expands casting to the Golden spinoffs for the first time, and adds a second bartender and a new voting mechanic — a genuine refresh after a two-year gap.
 community_rank_hint: rank=4 delta=0 sentiment=hold
 
-Season ten earns a high slot for how much it actually changes after a two-year gap off the air. The relocation to Costa Rica ends a nine-season run in Sayulita, and it's paired with real structural movement elsewhere: contestants from the Golden Bachelor and Golden Bachelorette spinoffs join the cast for the first time, a genuinely age-inclusive expansion the format hadn't tried before. Hannah Brown joins Wells Adams behind the bar, doubling a role that had been solo for years, and later episodes introduce a voting-based mechanic for deciding who distributes roses. That's four real changes in one season, and the show pulls off all of them without losing its footing.
+Season ten earns a high slot for how much it actually changes after a two-year gap off the air. The relocation to Costa Rica ends an eight-season run in Sayulita, and it's paired with real structural movement elsewhere: contestants from the Golden Bachelor and Golden Bachelorette spinoffs join the cast for the first time, a genuinely age-inclusive expansion the format hadn't tried before. Hannah Brown joins Wells Adams behind the bar, doubling a role that had been solo for years, and later episodes introduce a voting-based mechanic for deciding who distributes roses. That's four real changes in one season, and the show pulls off all of them without losing its footing.
 
 ## 5. Season 5
 

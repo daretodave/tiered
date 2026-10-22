@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-24
+last_revised: 2026-10-22
 featured: false
 related:
   - the-format-learned-to-travel
@@ -18,7 +18,7 @@ entries:
     season_label: "S06"
     rank: 1
     title: "The reset that actually held: new host, new villa, and the numbers agreed"
-    blurb: "Ariana Madix takes over hosting, a brand-new villa replaces the old build, and the launch moves earlier into June. The season becomes the most-watched in the show's history — proof this particular reset was the one worth keeping."
+    blurb: "Ariana Madix takes over hosting, a brand-new villa replaces the old build, and the launch moves earlier into June. The season becomes the show's most-watched to that point — proof this particular reset was the one worth keeping."
   - show: love-island-us
     season: 4
     season_label: "S04"

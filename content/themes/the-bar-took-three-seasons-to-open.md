@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-24
+last_revised: 2026-10-22
 featured: false
 related: []
 entries:
@@ -15,7 +15,7 @@ entries:
     season: 10
     season_label: "S10"
     rank: 1
-    title: "A solo bar seat becomes a two-person job, nine years in"
+    title: "A solo bar seat becomes a two-person job, eight years in"
     blurb: "Wells Adams goes from the show's only fixture behind the bar to half of one, with Hannah Brown joining for season ten. The role the format spent years building finally gets doubled instead of replaced."
   - show: bachelor-in-paradise
     season: 7
