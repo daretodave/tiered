@@ -13327,3 +13327,28 @@ last time a curator actually looked.
   a new season landing via Rule 2, a finale-gate pickup, or an
   oversight-authorized scout-research process to ground a genuinely
   new fact the existing season files don't yet state.
+- **2026-10-22, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship.** Re-confirmed both standing blockers
+  fresh: `plan/CADENCE.md`'s gap table unchanged at 35 shows/37
+  gap-slots (all starred confirmed-but-unaired, next sweep
+  2026-10-26), and the 90-day review floor cleared zero rows
+  (oldest `last_reviewed` is 2026-07-25, one day under the floor —
+  nowhere near the ≥5-rows-due batch threshold). Rather than
+  re-walk the 2026-10-21 tick's just-completed exhaustive
+  single-show census and five-axis cross-show re-chase (both
+  logged immediately above, concluding full saturation), ran five
+  fresh candidate angles: endurance/marathon-challenge format (36
+  grep hits, but all cluster inside The Challenge/Naked and
+  Afraid/Alone — already fully owned by existing single lists);
+  tax-incentive/overseas-filming-for-incentive (zero hits
+  catalog-wide, sub-floor); on-camera therapist/mental-health
+  support (re-confirms prior sub-floor finding, one hit); live-feed/
+  24-7-stream (Big Brother only, single-show, already owned);
+  alumni-turned-host (zero hits); alumni-crossing-to-the-judges'-
+  table (fully pre-owned by `the-other-side-of-the-table`,
+  `last_revised: 2026-10-14`). No candidate cleared the cross-canon
+  floor or the ~40% overlap ceiling. No `content/themes/*.md` file
+  written, no ledger row touched. Next unlock unchanged: a new
+  season landing via Rule 2, a finale-gate pickup, or scout-
+  authorized research to ground a fact the existing season files
+  don't yet state.
