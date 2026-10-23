@@ -10758,6 +10758,81 @@ last time a curator actually looked.
   wording only), `plan/LISTS.md` (this note). No ledger row's
   `last_revised`/`last_reviewed` changed. Next unlock: a new season
   landing via Rule 2, or the 2026-10-11 weekly sweep.
+- **2026-10-23, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship, no content or ledger row change.** Chased
+  one genuinely promising lead to a full dead end, then swept three
+  smaller angles before closing out.
+  - **"A jury of the already-eliminated gets a formal vote on the
+    outcome" (distinct from `a-way-back-in`'s return-to-COMPETE
+    mechanic — this is eliminated contestants retaining a *say*
+    without re-entering the game)** — the strongest-looking lead
+    going in, with a real grep hit set: `dragrace-allstars` S03
+    (eliminated queens vote on the final four), `dragrace-allstars`
+    S08 (fan vote on eliminated queens' side game, "Fame Games"),
+    `ink-master` S16 (Jury of Peers, eliminated artists vote at the
+    finale), `ink-master` S07 (jury of previously-eliminated artists
+    gets input alongside the judges "for the first time"), and
+    `project-runway` S22 (eliminated designers "pulled back into the
+    season's voting math through a jury-style redemption mechanic").
+    Drafted the shape of the list before checking each candidate
+    against the full ledger — and every single one of the first
+    three turned out already staked, nearly verbatim: `dragrace-
+    allstars` S03's jury fact is `no-season-sends-a-queen-home-the-
+    same-way-twice` rank 8 ("Eliminated queens come back as a jury to
+    decide who lip syncs for the crown"); S08's fan-vote fact is
+    double-staked at that same list's rank 11 and at `who-actually-
+    got-the-vote` rank 10; `ink-master` S16's Jury of Peers fact is
+    `the-team-never-means-the-same-thing-twice` rank 6 ("a jury built
+    from the eliminated... gets a real vote at the finale" —
+    word-for-word the thesis this pass would have reached for).
+    Confirmed via a full `show: dragrace-allstars` and `show:
+    ink-master` grep across every `content/themes/*.md`. That leaves
+    only `ink-master` S07 (confirmed genuinely fresh — none of its
+    five other ledger appearances touch the finale-jury fact
+    specifically, all stake runtime/format-split facets instead) and
+    `project-runway` S22's voting-math jury (also fresh, distinct from
+    that season's already-claimed Siriano Save entry at `a-way-back-
+    in` rank 14) — two shows, sub-floor for the ≥3-distinct-show
+    cross-canon requirement, and too thin on entry count regardless.
+    The angle itself isn't new ground; it's already scattered,
+    piecemeal, across three existing lists. **Flag for future ticks:**
+    treat the eliminated-cast-retains-a-vote vein as fully mined —
+    check `no-season-sends-a-queen-home-the-same-way-twice`,
+    `the-team-never-means-the-same-thing-twice`, and `who-actually-
+    got-the-vote` before ever proposing a "jury" or "eliminated cast
+    votes" angle again.
+  - Premiere scheduled immediately behind a major external sporting
+    event (Super Bowl lead-out, post-Olympics casting pool) — a full
+    `Super Bowl|Olympics|World Cup` grep across every `content/shows`
+    file returns exactly two shows: `survivor` (S02, S08, both
+    post-Super Bowl lead-outs) and `dancing-with-the-stars` (S18
+    Winter Olympics casting, S23 post-Rio Olympics casting) — each a
+    single show, each sub-floor on its own, and the Survivor fact is
+    already staked verbatim at `the-season-the-audience-showed-up-
+    all-at-once`. The two shows also aren't the same mechanism
+    (lead-out scheduling vs. casting-pool timing), so they can't be
+    merged into one list either.
+  - A combined cast assembled from multiple *sibling* international
+    editions of the same franchise (thinking of the "Drag Race UK vs
+    the World" shape) — rejected before drafting: `one-season-two-
+    flags` already ships this exact thesis end to end (`top-chef`
+    S20 "World All-Stars," `masterchef` S16 "Global Gauntlet,"
+    `americas-next-top-model` S18 "The British Invasion,"
+    `perfect-match` S04, `bachelor-in-paradise` S05's three-delegation
+    Winter Games crossover), and `familiar-faces-wrong-franchise`
+    already covers the single-import variant (`perfect-match` S01,
+    `traitors` S02/S03). A fresh list on the same premise would clear
+    well past the 40% overlap ceiling against both.
+  - Finale relocating to a different city/country than the rest of
+    the season aired from — grepped `finale.{0,30}(moves|relocat|
+    different (city|country|location)|flies to)` catalog-wide;
+    returned one irrelevant hit (`married-at-first-sight` S13, a
+    negative/non-event). Zero real grounding; `best-location-reveals`
+    and `the-competition-leaves-the-country` already own the location
+    space that does have real hits.
+  No `content/themes/*.md` file written or edited this tick; no
+  ledger row changed. Next unlock: a new season landing via Rule 2, or
+  the 2026-10-25 weekly sweep.
 
 ## Notes
 
