@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-10-23
 featured: false
 related:
   - the-season-structure-never-holds-still
@@ -41,8 +41,8 @@ entries:
     season: 4
     season_label: "S04"
     rank: 5
-    title: "Two franchise firsts land here, but they're history more than house style"
-    blurb: "Dakota Schiffer's historic casting and Michelle Visage's solo-hosted episode are firsts for Drag Race anywhere in the world, not just the UK. Landmark moments, though the format around them still runs the standard shape."
+    title: "A UK first and a franchise first land here, but they're history more than house style"
+    blurb: "Dakota Schiffer's historic casting is a first for the UK edition, and Michelle Visage's solo-hosted episode is a first for Drag Race anywhere in the world. Landmark moments, though the format around them still runs the standard shape."
   - show: dragrace-uk
     season: 5
     season_label: "S05"

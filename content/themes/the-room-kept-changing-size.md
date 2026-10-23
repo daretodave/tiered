@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-25
+last_revised: 2026-10-23
 featured: false
 related:
   - the-episode-order-never-found-its-ceiling
@@ -24,7 +24,7 @@ entries:
     season_label: "S09 · Las Vegas"
     rank: 2
     title: "The longest order in the show's history lands the same year the design chair changes hands"
-    blurb: "Ten episodes — a first for the format — arrive right when a new specialist needs room to find his footing. Netflix could have shrunk the season to smooth the transition. It does the opposite."
+    blurb: "Ten episodes — tying the format's longest order, first set by Philadelphia — arrive right when a new specialist needs room to find his footing. Netflix could have shrunk the season to smooth the transition. It does the opposite."
   - show: queer-eye
     season: 8
     season_label: "S08 · New Orleans II"
@@ -36,7 +36,7 @@ entries:
     season_label: "S05 · Philadelphia"
     rank: 4
     title: "The format asks for more room for the first time, and gets it"
-    blurb: "Ten episodes replace the standard eight, and the extra length changes how conversations land before the reveal. After two seasons at the same runtime, this is the first sign the format could simply ask for more."
+    blurb: "Ten episodes replace the standard eight, and the extra length changes how conversations land before the reveal. After four seasons at the same runtime, this is the first sign the format could simply ask for more."
   - show: queer-eye
     season: 7
     season_label: "S07 · New Orleans"
