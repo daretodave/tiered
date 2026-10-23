@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-07-29
+last_revised: 2026-10-23
 featured: false
 related:
   - no-season-here-got-the-calendar-to-itself
@@ -72,7 +72,7 @@ entries:
     season_label: "S1"
     rank: 10
     title: "The debut season that set the standard everything above departs from"
-    blurb: "Season 1 runs thirteen self-contained episodes, four new chefs an hour — the count every season on this list either fell short of or ran past. The format Food Network barely touched since started here, at exactly thirteen."
+    blurb: "Season 1 runs thirteen self-contained episodes, four new chefs an hour — the count every season on this list either fell short of or ran past. The format — which Food Network has barely touched since — started here, at exactly thirteen."
 ---
 
 Chopped's four-ingredient basket has run unchanged since Season 4, but the thirteen-episode season length around it has flexed far more than the format itself — dropping as low as eight episodes twice over and stretching as high as twenty. This ranks the seasons that broke from the standard by how far they deviated, bookended by the debut that set the baseline and the recovery that proved the dips were never permanent.
