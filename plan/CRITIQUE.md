@@ -1,9 +1,48 @@
 # CRITIQUE
 
-> Last pass: 2026-10-20 at commit fa5bb4ef
-> Pass count: 189
+> Last pass: 2026-10-23 at commit faceb537
+> Pass count: 190
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 189 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 190 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/below-deck/season/phuket`, `/themes`, `/shows/below-deck`,
+> `/themes/who-actually-got-the-vote` anon; `/`,
+> `/shows/below-deck/season/phuket`, `/u/e2e`, `/shows/below-deck`,
+> `/themes/who-actually-got-the-vote` authed — rotated onto the Phuket
+> season page specifically to check whether the pass-188 HIGH-fix
+> (80a52e1c, which rewrote its canon-slot rationale to compare against
+> the BVI/Antigua neighbors) reads clean, the Below Deck show/canon page
+> itself, the `/themes` pillar index, and a fresh themed list, distinct
+> from pass 189's rotation entirely except the stable `/u/e2e` anchor.
+> Both passes came back mechanically clean (0 console errors, 0 failed
+> requests, 0 horizontal overflow on either viewport, title/description/
+> canonical/og:image present on every capture); authed pass confirmed
+> real auth (`@e2e` chrome on every page, Phuket's vote block in its
+> personalized "you haven't voted yet" state, `/u/e2e` rendering real
+> profile data). Strongest finding: the pass-188 fix correctly removed
+> Phuket's restatement defect but the replacement comparison paragraph
+> is a single dense, multi-clause sentence that also assumes the reader
+> has already visited the Antigua season page — filed as MED (new
+> defect, introduced by the prior fix, not previously tracked). Two
+> more filed: `/themes`' four-word status-badge vocabulary (`stable
+> list` / `growing` / `started <year>` / `updated <recency>` —
+> `ThemeStatus` in `src/lib/themes-format.ts`) has no on-page legend
+> distinguishing the states, a different gap than the already-resolved
+> community-trend `◆ HOLD` legend fix (pass 140); and Below Deck's own
+> canon page `WHY THIS SLOT` boxes for ranks #01/#02 open with an
+> identical sentence template back-to-back, the same defect class
+> already tracked for themed lists now recurring on a show canon page.
+> Both filed LOW. One candidate dropped at self-assessment: Phuket's
+> "Also appears in" section initially read as self-referential
+> (re-displaying its own Editor's Canon rank), but re-verification
+> against the resolved #511 `hasCrossRef` logic confirmed it also
+> carries a genuine themed-list cross-reference (`the-charter-map-as-
+> the-whole-story`) — working as intended, not a defect. Filed 3 new
+> findings (0 high, 1 med, 2 low). No pending HIGH findings remained
+> open ahead of this pass.
+> Prior pass-189 summary follows. Pass 189 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4953,6 +4992,36 @@
 > findings deduped by message.
 
 ## Pending
+
+### [MED] [authed] /shows/below-deck/season/phuket — the pass-188 fix's replacement canon-comparison sentence is a single dense, multi-clause construction that also assumes the reader has already visited the Antigua season page
+
+- pass: 190 (commit faceb537)
+- viewport: desktop, mobile
+- category: voice
+- observation: Pass 188 (80a52e1c) rewrote this page's "where it sits in the canon" paragraph to compare Phuket's slot against its BVI/Antigua neighbors, correctly removing the prior restatement defect. The replacement reads as a single long sentence nesting two separate comparisons, and the Antigua half ("beyond the visual novelty Antigua's own entry disclaims") leans on a specific claim from a different page's prose that this page never restates or summarizes — a first-time reader on this page alone can't resolve it. Confirmed present at both desktop and mobile viewports (375px line wrapping makes the nested clauses harder to track, not easier).
+- evidence: "Phuket's premise clears a higher bar than Antigua's on location pedigree alone — a setting that already produced one of the franchise's best seasons, beyond the visual novelty Antigua's own entry disclaims. But it sits below the BVI, whose rank was never about location: that season earned its slot through sharper captain authority and stronger cast dynamics, ground Phuket can't claim with no footage aired."
+- suggested fix: Split into two shorter sentences, one per comparison (vs. Antigua, vs. BVI), and make the Antigua clause self-contained — state what Antigua's entry argues in a few words rather than only referencing it. `content/shows/below-deck/canon.md`, Season 13 `slot_argument` or rationale field, within the existing word/char budget.
+- source: browser (critique-pass-190, anon+authed)
+
+### [LOW] [anon] /themes — the four-word status-badge vocabulary (`stable list` / `growing` / `started <year>` / `updated <recency>`) carries no on-page legend distinguishing what each state means
+
+- pass: 190 (commit faceb537)
+- viewport: desktop
+- category: comprehension
+- observation: `ThemeStatus` (`src/lib/themes-format.ts`, `formatThemeStatus()`) renders one of four distinct lifecycle labels per list card across the `/themes` index and featured rail. The hero's existing gloss ("Every list here is editor-signed and stable — written once, revised when I change my mind, not vote-driven") only explains the `stable` state; a reader scanning cards that read `growing`, `started 2026`, or `updated this year` has no on-page cue for how those differ from `stable` or from each other. Distinct from the already-resolved community-trend `◆ HOLD` badge legend (pass 140, `CanonEraToolbar`'s `.cp-community-legend`) — that fix covers a different badge on a different surface.
+- evidence: cards observed back-to-back: "11 SHOWS · 13 ENTRIES STABLE LIST", "16 SHOWS · 18 ENTRIES GROWING", "7 SHOWS · 13 ENTRIES STARTED 2026", plus "UPDATED THIS YEAR" variants elsewhere in the grid.
+- suggested fix: Extend the existing `lists-hero-meta` gloss (`src/components/lists/ListsHero.tsx`) to name all four states in one sentence (e.g. "stable means settled, growing means still taking entries, started/updated mark when a list is new or was last touched"), mirroring the pattern already used for the community-trend legend.
+- source: browser (critique-pass-190, anon)
+
+### [LOW] [authed] /shows/below-deck — the show's own canon-ranking page "WHY THIS SLOT" boxes for ranks #01/#02 open with an identical sentence template back-to-back
+
+- pass: 190 (commit faceb537)
+- viewport: desktop
+- category: voice
+- observation: The `slot_argument` callouts for Below Deck's top two canon entries both open with the exact same clause shape — "The <Season> season is the <superlative claim>" — immediately followed by a feature list, back-to-back. This is the same sentence-template-reuse defect class already tracked for themed-list entries, now recurring on a show's own canon page rather than a themed list.
+- evidence: #01: "The Bahamas season is the first time Below Deck ran at full capacity: confident production, friction across all three departments, and a location the cameras knew how to frame." #02: "The Tahiti season is the strongest mid-run Below Deck entry — seventeen episodes, cast friction across all..."
+- suggested fix: Vary the opening clause of one of the two entries so adjacent ranks don't read from the identical template — argue #02's slot comparatively against #01 and #03 instead of restating the "season is the X" superlative shape. `content/shows/below-deck/canon.md`.
+- source: browser (critique-pass-190, authed)
 
 ### [MED] [anon] /shows/bachelor/season/grant-ellis — the episode-count fact ("nine episodes") is restated across six fields, a second restatement defect on the same page distinct from the casting-precedent one
 
