@@ -1,9 +1,46 @@
 # CRITIQUE
 
-> Last pass: 2026-10-23 at commit faceb537
-> Pass count: 190
+> Last pass: 2026-10-24 at commit 37660861
+> Pass count: 191
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 190 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 191 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/bachelor-in-paradise/season/costa-rica`,
+> `/shows/bachelor-in-paradise`,
+> `/themes/the-team-rule-never-makes-it-to-a-second-season`, `/themes`
+> anon; `/`, `/shows/bachelor-in-paradise/season/costa-rica`, `/u/e2e`,
+> `/shows/bachelor-in-paradise`,
+> `/themes/the-team-rule-never-makes-it-to-a-second-season` authed —
+> rotated onto Bachelor in Paradise's freshly-authored Costa Rica
+> season (Season 10), its show page, and a freshly-authored Ink Master
+> themed list, distinct from pass 190's Below Deck rotation entirely
+> except the stable `/u/e2e` anchor. Both passes came back mechanically
+> clean (0 console errors, 0 failed requests, 0 horizontal overflow on
+> either viewport, title/description/canonical/OG present on every
+> capture); authed pass confirmed real auth (`@e2e` chrome on every
+> page, Costa Rica's vote block in its personalized not-yet-voted
+> state, the Ink Master list's signed-in save affordance rendering
+> correctly). Strongest finding, independently surfaced by both passes:
+> the Costa Rica season page restates the same handful of facts
+> (Costa Rica relocation ending the Sayulita run, Golden Bachelor/ette
+> cast expansion, Hannah Brown joining Wells Adams, the new rose-vote
+> mechanic) verbatim or near-verbatim across the lede, the body, and
+> three of the four standard editorial sections — the same
+> restatement defect class already fixed for Below Deck Phuket (pass
+> 188, 80a52e1c) and Bachelor Grant Ellis (pass 189), now a fresh
+> instance on a different season — merged into one HIGH row. Two more
+> filed: the season's FILMED stat caption duplicates its own stat
+> value (`Costa Rica` / `Costa Rica · first BiP season filmed outside
+> Mexico`), the same caption-restates-the-field class tracked
+> elsewhere (pass 87, Jersey Shore pass 152) now recurring here — LOW;
+> and the `/themes` pillar index has no dedicated `opengraph-image`
+> route and falls back to the generic homepage OG card, unlike every
+> `/themes/[theme]` detail page which has its own — LOW. Filed 3 new
+> findings (1 high, 0 med, 2 low). No pending HIGH findings remained
+> open ahead of this pass.
+> Prior pass-190 summary follows. Pass 190 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -4992,6 +5029,36 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon+authed] /shows/bachelor-in-paradise/season/costa-rica — the season's handful of facts (Costa Rica relocation, Golden Bachelor/ette cast expansion, Hannah Brown joining Wells Adams, the new rose-vote mechanic) restate verbatim or near-verbatim across the lede, the body, and three of the four standard editorial sections
+
+- pass: 191 (commit 37660861)
+- viewport: desktop, mobile
+- category: voice
+- observation: The anon pass caught one literal duplicate — the frontmatter `lede`'s cast-expansion sentence reappears word-for-word inside the body's "THE SHAPE OF THE SEASON" section. The authed pass independently found the same root defect at wider scope: "THE TAKE," "THE SHAPE OF THE SEASON," "WHERE IT SITS IN THE CANON," and four of five "WHAT TO WATCH FOR" bullets all re-describe the same four facts (relocation, Golden-spinoff cast, two-bartender arrangement, new vote mechanic) rather than each section arguing a distinct angle. No sibling Bachelor in Paradise season file repeats a lede sentence verbatim in its body, and the canonical reference page (`design/tiered.tv · Heroes vs. Villains.html`) uses these same four section headers to cover four genuinely different subjects (cast dynamics, pacing, ranking debate, specific moments) — this page instead reads as templated fact-repetition. Same defect class already fixed for Below Deck Phuket (pass 188, `80a52e1c`) and Bachelor Grant Ellis (pass 189, `fa5bb4ef`), now a fresh instance on a different, newly-authored season.
+- evidence: `content/shows/bachelor-in-paradise/seasons/10-costa-rica.md` lede: "...The cast expands to include contestants from the Golden Bachelor and Golden Bachelorette spinoffs, and Hannah Brown joins Wells Adams behind the bar." Body section 02 ("THE SHAPE OF THE SEASON"): "...The cast expands to include contestants from the Golden Bachelor and Golden Bachelorette spinoffs, and Hannah Brown joins Wells Adams behind the bar..." — identical sentence (lines 16 and 36). "THE TAKE": "First season outside Mexico, first to draw from the Golden spinoffs, and the first with two bartenders behind the bar." "WHERE IT SITS IN CANON": "The relocation to Costa Rica ends an eight-season run in Sayulita... Hannah Brown joins Wells Adams behind the bar, doubling a role... later episodes introduce a voting-based mechanic..." "WHAT TO WATCH FOR" bullets 1-4 restate the identical relocation/cast/bartender/vote facts a third or fourth time; only bullet 5 (guest therapist) is new information.
+- suggested fix: Delegate to `content-curator` to rewrite so each of the four sections contributes a distinct observation per the Heroes vs. Villains model, mirroring the Phuket (`80a52e1c`) and Grant Ellis fixes — the lede keeps the summary facts, the body adds pacing/structure detail, canon argues the ranking debate against neighboring seasons, and "What to Watch For" names specific moments (currently only the guest-therapist bullet does this) rather than re-listing facts already stated twice. Worth a follow-up sweep of other recently-authored season pages for the same template drift.
+- source: browser (critique-pass-191, anon+authed, independently convergent)
+
+### [LOW] [anon] /shows/bachelor-in-paradise/season/costa-rica — the FILMED stat caption duplicates its own stat value
+
+- pass: 191 (commit 37660861)
+- viewport: desktop
+- category: visual
+- observation: The FILMED stat renders as "Costa Rica" followed immediately by a caption that also opens with "Costa Rica," reading as a stutter to a first-time visitor. The show's established `filming_caption` convention (lead with a shortened place name, then add a distinguishing clause) only avoids this collision when the location field has a city/country split to shorten — every other Bachelor in Paradise season's location is "City, Mexico," so the caption's city-only prefix never literally equals the full stat value above it. This season's location is the bare country name, so the caption's leading word duplicates the stat exactly. Same caption-restates-the-field defect class already tracked at pass 87 (an earlier Bachelor in Paradise season) and pass 152 (Jersey Shore) — recurring here on a different show entry.
+- evidence: Rendered text: "FILMED / Costa Rica / Costa Rica · first BiP season filmed outside Mexico". Source: `location: "Costa Rica"`, `filming_caption: "Costa Rica · first BiP season filmed outside Mexico"` (`content/shows/bachelor-in-paradise/seasons/10-costa-rica.md` lines 10, 19). Compare sibling `01-tulum.md`: `location: "Tulum, Mexico"` / `filming_caption: "Tulum · Caribbean coast beneath the clifftop Maya ruins"` — no literal duplicate because the stat value includes the country.
+- suggested fix: Give this season a more specific `location` value (a named beach/town in Costa Rica) so the caption's leading place-name no longer equals the full stat value, or drop the repeated place-name prefix from this entry's `filming_caption` specifically.
+- source: browser (critique-pass-191, anon)
+
+### [LOW] [anon] /themes — the pillar index has no dedicated `opengraph-image` route and falls back to the generic homepage OG card
+
+- pass: 191 (commit 37660861)
+- viewport: desktop
+- category: seo
+- observation: A social share of the `/themes` list index looks identical to a share of the homepage, because the index has no bespoke OG image. Every `/themes/[theme]` detail page already has its own dynamic OG image route, so this is the one themes-pillar surface that doesn't match the per-route-OG convention the rest of the site follows (shows, seasons, and individual themes all have bespoke OG images).
+- evidence: Captured `ogImage` for `/themes`: `https://tiered.tv/opengraph-image` — identical to the home page's OG image. Repo check: `src/app/themes/[theme]/opengraph-image.tsx` exists; no equivalent `src/app/themes/opengraph-image.tsx` for the index route.
+- suggested fix: Add an `opengraph-image.tsx` route for `/themes` (e.g. a card reading "Lists — N rankings, no spoilers") so shares of the pillar page are distinguishable from the homepage share card. Pattern already exists at the `[theme]` level to port from.
+- source: browser (critique-pass-191, anon)
 
 ### [MED] [authed] /shows/below-deck/season/phuket — the pass-188 fix's replacement canon-comparison sentence is a single dense, multi-clause construction that also assumes the reader has already visited the Antigua season page
 
