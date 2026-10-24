@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-26
+last_revised: 2026-10-24
 featured: false
 related:
   - the-cast-was-still-arriving
@@ -32,7 +32,7 @@ entries:
     season: 11
     rank: 4
     title: "The swap week returns and stops being a novelty"
-    blurb: "A second run of the partner-swap mechanic, and the longest season yet at 38 episodes, prove the reshuffle wasn't a one-off experiment. The format treats its own signature twist as routine now, not a stunt worth announcing twice."
+    blurb: "A second run of the partner-swap mechanic runs 38 episodes, second only to season six's record, and proves the reshuffle wasn't a one-off experiment. The format treats its own signature twist as routine now, not a stunt worth announcing twice."
   - show: married-at-first-sight-australia
     season: 12
     rank: 5
