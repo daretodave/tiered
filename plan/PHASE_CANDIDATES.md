@@ -9,10 +9,57 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-10-04 at commit 6d1d104e
-> Pass count: 74
+> Last pass: 2026-10-24 at commit 4e9830a0
+> Pass count: 75
 
 ## Considered (awaiting promotion)
+
+<!-- Pass 75 (2026-10-24, cloud march) — 0 new phase-shape candidates
+     filed. One reinforcement: candidate #37 (cloud workflow outage
+     fallback) gained a second, distinct root-cause signature — the
+     2026-10-15→10-19 ~4.25-day blackout (`plan/AUDIT.md` [HIGH, score
+     2.7, filed 2026-10-19]) died on a usage-cap-exhaustion error string,
+     not the org-access-toggle error #37 was filed against — strengthening
+     the structural-gap case without changing score or scope.
+     Window since pass 74 (6d1d104e, 2026-10-04T16:00:06Z): 102 commits /
+     ~20 days — the longest gap between expand passes to date, driven by
+     the 2026-10-15→10-19 usage-cap outage itself eating ~4 of those days.
+     Signal sweep across all 8 lettered sources (§4 of skills/expand.md)
+     found nothing novel: AUDIT.md's 8 Pending top-level rows all map to
+     existing candidates (the-voice corruption → #36, night-shift silent
+     failure + cloud-loop outage → #37, e2e-full duration ceiling → #34,
+     YEAR_TENURE_RE teen gap → #40, heartbeat false-positive → #39); the
+     one row flagging impact≥8/ease≤4 (the cloud-loop-dark row) is the
+     reinforcement captured above. CRITIQUE.md's 65 Pending rows (0 HIGH,
+     39 MED, 26 LOW) cluster on the same verbatim-argument-echo pattern
+     candidate #25 already owns, plus a recurring eyebrow/PREMIERED-label
+     mismatch already tracked inline in #25's own reinforcement history
+     (pass-56/90/93/125) — neither needed a fresh filing. Triage backlog
+     (5 `loop-queued`, 8 `needs-user`) clusters on march/night concurrency
+     contention, already #35's territory. spec.md and design/ saw zero
+     commits in the window — no drift signal. Commit mix (105 classified:
+     48% content, 26% audit, 14% digest, 10% critique, 2% sweep, 1%
+     expand) shows no refactor-pattern alarm — the loop spent the window
+     on ordinary content velocity, not firefighting. `01_build_plan.md`
+     has no `[skipped]` phases.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last run 2026-10-19, 15th full pass; next due
+     2026-10-26); show-add stays LOCKED (35 shows / 37 gap-slots, all
+     starred, non-zero). Step 2.0's shipping-mode gate stayed lifted
+     (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
+     fire: last pass (190) landed only 4 commits / ~22.5h before this
+     tick — both the 12-commit and 24h thresholds failed. Step 3a/3b
+     empty (no pending phase rows, no Pending `category: data` AUDIT
+     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was
+     checked and found non-actionable this tick: the 2026-10-19 sweep
+     reconfirmed all 35 gap-table rows starred confirmed-but-unaired, and
+     Rule 3 had no actionable target either — the 90-day review floor's
+     next two lists don't cross due until 2026-10-25 (today's two prior
+     commits already cleared the day-90 cohort), and no new-list concept
+     cleared the excellence gate (catalog saturation, per the 2026-10-23
+     Ideas-log dead-ends). Zero-ship fell through per `skills/ship-
+     content.md` failure mode 5, landing on this expand pass. -->
 
 <!-- Pass 74 (2026-10-04, cloud march) — 0 new phase-shape candidates filed.
      No reinforcements — the one candidate with fresh same-day evidence
@@ -1320,6 +1367,30 @@ and isolated single recurrences); a single afternoon losing 3 of 4 ticks is
 new evidence of intra-day burstiness, not just multi-day outages. No scope
 change to the fix sketch above — data point only, for the next `/oversight`
 session.
+**Update (expand pass 75, 2026-10-24):** a second, distinct root-cause
+signature has now independently produced the identical symptom. `plan/
+AUDIT.md` [HIGH, score 2.7, filed 2026-10-19] documents a ~4.25-day total
+blackout (2026-10-15T11:15Z → 2026-10-19T05:19Z) — 26 consecutive `march`
+failures and 2 consecutive `night` failures — but this time the error
+string is `Claude Code returned an error result: You're out of extra usage
+· resets 8am (UTC)`, a subscription usage-cap exhaustion, not the org-
+access-disabled toggle this candidate was filed against. Same effect
+(every cloud-scheduled workflow shares one auth/quota path, zero fallback,
+multi-day total silence), different trigger — strengthening the case that
+the gap is structural (single point of failure across both failure modes)
+rather than a one-off config fluke tied to one specific error string. Also
+confirms the fix sketch's item (2) and (3) both land on the same `ACTIONS_
+PAT` workflows-OAuth-scope blocker candidate #34 already carries (editing
+`march.yml`/`night.yml` to add a pre-flight usage check or failure-count
+alert requires exactly the scope this repo's cloud token lacks) — the two
+candidates are now confirmed to share their remaining blocker, not just
+their symptom. `plan/DIGEST.md`'s 2026-10-19 edition proposed the same
+direction independently (check the prior run's failure string for this
+exact signature and skip, not fail, until the stated reset time) before
+being overwritten by the next night's edition — worth the next `/oversight`
+session pulling that proposal back in verbatim rather than re-deriving it.
+No score change — still correctly scored on the org-access evidence alone;
+this update is breadth-of-cause evidence, not fresh urgency.
 
 ### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim
 
