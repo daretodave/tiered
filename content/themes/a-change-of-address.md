@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-31
+last_revised: 2026-10-24
 featured: false
 related:
   - moving-day
@@ -85,4 +85,10 @@ entries:
     rank: 12
     title: "A single-anchorage format expands into three ports in one season."
     blurb: "The franchise's third trip to Sint Maarten doesn't stay there. Charters add stops in Anguilla and St. Barths, the most logistically ambitious route any Below Deck season has tried."
+  - show: bachelor-in-paradise
+    season: 10
+    season_label: "S10"
+    rank: 13
+    title: "Eight seasons in one beach town, then a new country."
+    blurb: "Bachelor in Paradise returned to the same Sayulita beach every summer before this one. Season ten relocates the whole format to Costa Rica, the first time the show has filmed outside Mexico, and slides back into its old summer premiere slot."
 ---
