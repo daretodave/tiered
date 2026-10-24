@@ -16,7 +16,7 @@ eyebrow: "Premiered July 2025 · First season filmed outside Mexico"
 lede: "After eight seasons in Sayulita, the show relocates to Costa Rica and returns to its traditional summer slot. The cast expands to include contestants from the Golden Bachelor and Golden Bachelorette spinoffs, and Hannah Brown joins Wells Adams behind the bar."
 pull: "First season outside Mexico, first to draw from the Golden spinoffs, and the first with two bartenders behind the bar."
 premiere_caption: "ABC · July 2025"
-filming_caption: "Costa Rica · first BiP season filmed outside Mexico"
+filming_caption: "First BiP season filmed outside Mexico"
 format_summary: "Costa Rica relocation · age-inclusive casting"
 format_caption: "first season to include Golden Bachelor/ette contestants"
 host_caption: "Jesse Palmer's third season hosting"
@@ -33,4 +33,4 @@ watch_list:
     body: "A relationship therapist makes a guest appearance to work with the cast, a franchise first for that kind of on-camera counseling role."
 ---
 
-Season ten ends the show's eight-season run in Sayulita and relocates to Costa Rica, the first time the format has filmed outside Mexico, while returning to its traditional summer premiere. The cast expands to include contestants from the Golden Bachelor and Golden Bachelorette spinoffs, and Hannah Brown joins Wells Adams behind the bar. Later episodes add a voting-based mechanic for deciding who distributes roses.
+Season ten runs ten episodes and returns to the franchise's traditional summer premiere slot after several years away from it. Instead of front-loading every change into the premiere, the season spaces its new elements out: the second bartender doesn't arrive until midseason, and the new rose-distribution vote mechanic doesn't surface until the back half of the run. The format settles into something familiar before it starts testing itself.
