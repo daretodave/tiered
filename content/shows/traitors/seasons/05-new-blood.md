@@ -15,7 +15,7 @@ lede: "A structural first. The franchise swaps its celebrity-and-alumni model fo
 pull: "No one already knows how to play this game on camera — that's the whole bet."
 format_summary: "All-civilian cast · broadcast NBC premiere"
 format_caption: "First season without a single reality-TV alum or celebrity"
-host_caption: "Alan Cumming's fifth season at the castle"
+host_caption: "Fifth season at the castle"
 premiere_caption: "NBC · Thursdays 8pm ET, next-day on Peacock"
 episodes_caption: "Twelve episodes, two-hour premiere and finale bookends"
 filming_caption: "Ardross Castle · a fifth Highland run, filmed May–June 2026"

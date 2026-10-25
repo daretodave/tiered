@@ -19,7 +19,7 @@ premiere_caption: "CBS · the franchise's 1,000th episode aired mid-season"
 episodes_caption: "Forty-one episodes built around a weekly trip into the show's own history"
 cast_size: 17
 cast_size_caption: "14 at the premiere, plus three surprise entrants across the opening week"
-host_caption: "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm"
+host_caption: "{seasonOrdinalWord} summer at the helm"
 watch_list:
   - episode_label: "Ep 1 · the house redressed"
     body: "The premiere reveals a compound rebuilt around decade-themed rooms — '80s, Y2K, and beyond — and introduces fourteen houseguests before the first surprise entrants land."
