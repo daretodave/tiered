@@ -10833,6 +10833,58 @@ last time a curator actually looked.
   No `content/themes/*.md` file written or edited this tick; no
   ledger row changed. Next unlock: a new season landing via Rule 2, or
   the 2026-10-25 weekly sweep.
+- **2026-10-25, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship, no content or ledger row change.** Pulled
+  the full 182-file ledger and cross-referenced show/season coverage
+  density before brainstorming — several "under-mined" shows named in
+  the 2026-10-08 note turned out to carry 9-29 cross-list mentions
+  each, confirming they're already heavily worked. Eleven candidates
+  drafted and rejected, each checked against the ledger by direct read
+  before being closed out:
+  - Theme nights/genre-costume episodes (DWTS, SYTYCD, Idol) —
+    identical mechanic every season, no season-file grounding for the
+    specific theme-night facts needed; high fabrication risk.
+  - Blind-judgment formats (Voice blind auditions, Love Is Blind pods,
+    Masked Singer reveals, Traitors blind banishment) — fully owned by
+    `not-knowing-was-the-point`, already spanning the-voice,
+    ink-master, masterchef, masterchef-australia, chopped,
+    amazing-race, love-island-uk.
+  - Team-instead-of-individual format twist — owned by
+    `built-for-one-playing-as-a-team`; the Big Brother coach-season
+    instance already claimed inside `the-twist-is-the-format`.
+  - Permanent host-succession across franchises — fully owned by
+    `the-mic-changed-hands`, already spanning 15+ shows.
+  - In-season redemption/comeback brackets (Last Chance Kitchen,
+    RuDemption, Camp Comeback, Perfect Match's mixer) — fully owned by
+    `a-way-back-in`, spanning 11 shows.
+  - Crew/production machinery breaking into frame (medical taps,
+    injury-forced schedule changes) — fully owned by
+    `when-the-crew-stepped-into-frame`, spanning 9 shows.
+  - Pre-air skepticism a premiere had to answer (reboot doubts,
+    platform-move doubts, casting-gamble doubts) — fully owned by
+    `the-doubters-had-to-walk-it-back`, spanning 15 shows.
+  - Sophomore season proving the debut wasn't a fluke — fully owned by
+    `proving-the-debut-wasnt-luck`, spanning 15 shows.
+  - "Friend-of-the-cast" promotion pipeline generalized beyond RHOBH —
+    the billing convention is RHOBH-exclusive per
+    `the-friend-credit-became-the-farm-system`; no other ensemble
+    franchise runs an identical formal credit tier, so a cross-show
+    version risks sub-floor grounding on an already-claimed concept.
+  - Alumni-turned-host/judge crossover (contestant graduates to
+    hosting, or judges a sibling franchise) — clean cross-franchise
+    instances too thin to clear the 3-distinct-show floor without
+    inventing connections the season files don't document; the
+    same-show version returns no clean hits on host-field inspection.
+  - Cross-show "twist inflation" craft list generalizing The Circle's
+    and Big Brother's season-by-season mechanic escalation — both
+    anchor shows already have dedicated single-show twist-ranking
+    lists (`seven-ways-to-break-the-same-app`,
+    `the-twist-is-the-format`) that would supply well over 40% of any
+    cross-show version's natural entries, failing the distinct-angle
+    gate outright.
+  No `content/themes/*.md` file written or edited this tick; no
+  ledger row changed. Next unlock: a new season landing via Rule 2, or
+  the 2026-10-26 weekly sweep.
 
 ## Notes
 
