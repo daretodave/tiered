@@ -4257,6 +4257,28 @@ dated production-crash data point bracketing the 10-20 proof-of-fix
 evidence on either side: the fix works when applied, the crash keeps
 recurring when it isn't.
 
+**Update (digest 2026-10-25) — sharper root cause, not just a size
+reading.** Gathering tonight's pulse, a plain `Read` of
+`plan/AUDIT.md` (1,309,875 bytes) failed outright as expected, but a
+follow-up attempt to read just its first 250 lines via `offset`/
+`limit` *also* failed the 25,000-token ceiling — surprising for 250
+lines, until `awk '{print length}'` found why: **one single line is
+654,455 bytes**, exactly half the file's total 1,309,875. That line
+is the standing `[MED] Season-fill drain (STANDING ROW — oversight
+2026-07-12)` row (line 31) — by design it never closes ("THIS ROW
+STAYS PENDING until the gap table reads zero") and every Rule 2 drain
+tick appends a fresh prose progress note to the same line with no
+trimming, summarization, or rotation. This is a narrower, more
+tractable failure mode than the "360 of 385 rows are closed dead
+weight" case this candidate's scope sketch already targets — it is
+one open row growing unboundedly, not many closed rows accumulating.
+Same archive mechanism this candidate proposes would fix it if
+extended slightly: periodically compact or rotate a single standing
+row's own historical log (plausibly into `plan/CADENCE.md`, where the
+gap table the row tracks already lives) rather than only moving
+`[x]`-closed rows out. Not filing as a separate candidate — this is
+an implementation-scope refinement of #29, not a different problem.
+
 ### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
 
 **Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
