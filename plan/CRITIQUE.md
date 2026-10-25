@@ -1,9 +1,45 @@
 # CRITIQUE
 
-> Last pass: 2026-10-24 at commit 37660861
-> Pass count: 191
+> Last pass: 2026-10-25 at commit 89c285a7
+> Pass count: 192
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 191 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 192 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/below-deck-down-under/season/canouan`,
+> `/shows/below-deck-down-under`, `/themes/new-network-same-rulebook`,
+> `/themes` anon; `/`, `/shows/below-deck-down-under/season/canouan`,
+> `/u/e2e`, `/shows/below-deck-down-under`,
+> `/themes/new-network-same-rulebook` authed — rotated onto Below Deck
+> Down Under's Season 4 (Canouan) and a freshly-picked, never-before-
+> critiqued themed list, distinct from pass 191's Bachelor in Paradise/
+> Ink Master rotation except the stable `/u/e2e` anchor. Both passes
+> came back mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, single `<h1>` per page,
+> title/description/canonical/OG present on every capture); authed
+> pass confirmed real auth (`@e2e` chrome on every page, the signed-in
+> profile shell at `/u/e2e`). Strongest finding, independently
+> surfaced by both passes: the Canouan season page restates the same
+> two headline facts (the Caribbean move anchoring Katina off Canouan;
+> the veteran-crew + franchise-first charter-crossover pairing)
+> near-verbatim four times across the meta description, hero lede,
+> "the take" capsule, and the body's section-02 opener — the same
+> restatement defect class already fixed for Below Deck Phuket and
+> Bachelor in Paradise Costa Rica, now a fresh instance on a different
+> show — filed as one HIGH row. Two more filed: the Season 4 canon
+> rationale is restated within its own season page and then
+> copy-pasted verbatim onto the show page's canon card — MED; and the
+> "How I weigh it" panel drops the host's surname where every other
+> mention on the page uses the full name — LOW. Two existing Pending
+> rows were reinforced rather than duplicated: the stat-tile
+> value/caption bare-restatement row (now a fourth occurrence, and the
+> first to span HOST/FORMAT/PREMIERED rather than HOST alone — bumped
+> MED → HIGH) and the authed "Save (this device)" row (now confirmed
+> on a second, unrelated themed list — bumped LOW → MED). Filed 3 new
+> findings (1 high, 1 med, 1 low) plus 2 severity bumps on existing
+> rows. No pending HIGH findings remained open ahead of this pass.
+> Prior pass-191 summary follows. Pass 191 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -5140,14 +5176,14 @@
 - suggested fix: Vary rank #3's opener so it doesn't restate "A judge's seat [verb] ... instead of ..." immediately after rank #2 uses the same shape — e.g. "So You Think You Can Dance leaves the third chair open all season rather than naming a successor." Content-only edit to one `title` field.
 - source: browser (critique-pass-184, anon)
 
-### [MED] [anon] /shows/traitors/season/new-blood, /shows/dancing-with-the-stars/season/fall-2026, /shows/big-brother/season/time-trip — HOST meta caption bare-restates the host name shown one line above, a recurrence of the pattern the pass-146/dragrace fix already addressed (bumped LOW → MED at pass 184: third occurrence)
+### [HIGH] [anon+authed] /shows/traitors/season/new-blood, /shows/dancing-with-the-stars/season/fall-2026, /shows/big-brother/season/time-trip, /shows/below-deck-down-under/season/canouan — stat-tile captions bare-restate the value shown directly above, a recurrence of the pattern the pass-146/dragrace fix already addressed (bumped LOW → MED at pass 184: third occurrence; bumped MED → HIGH at pass 192: fourth occurrence, and the first to span three different tiles — HOST, FORMAT, and PREMIERED — rather than HOST alone)
 
-- pass: 183 (commit 990f72cb); reconfirmed + extended pass 184 (commit 0a312b4a)
+- pass: 183 (commit 990f72cb); reconfirmed + extended pass 184 (commit 0a312b4a); reconfirmed + extended pass 192 (cloud march)
 - viewport: desktop
 - category: comprehension
-- observation: The HOST stat's caption field re-states the host's full name from the primary value directly above it before adding any new fact — the same shape as the dragrace `host_caption` defect that was re-voiced show-wide on 2026-10-05 (pass-146 finding, resolved). That fix was content-level (one show's 15 season files), not a template or `content-check` invariant, so it didn't prevent the identical shape from being authored fresh into two of the very next season-fill drains, and now a third: Traitors New Blood: HOST "Alan Cumming" → caption "Alan Cumming's fifth season at the castle." DWTS Fall 2026: HOST "Julianne Hough, Alfonso Ribeiro" → caption "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts." Big Brother Time Trip (pass-184, freshly spotted): HOST "Julie Chen Moonves" → caption "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm" (renders "Julie Chen Moonves, twenty-eighth summer at the helm"). All three would read just as clearly leading with the new fact alone, dropping the restated name.
-- evidence: `content/shows/traitors/seasons/05-new-blood.md` `host_caption: "Alan Cumming's fifth season at the castle"` directly below `host: "Alan Cumming"`; `content/shows/dancing-with-the-stars/seasons/35-fall-2026.md` `host_caption: "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts"` directly below `host: "Julianne Hough, Alfonso Ribeiro"`; `content/shows/big-brother/seasons/28-time-trip.md:22` `host_caption: "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm"` directly below `host: "Julie Chen Moonves"` at line 9.
-- suggested fix: Trim all three captions to the new fact only — e.g. "Fifth season at the castle," "Fourth season as co-hosts," and "Twenty-eighth summer at the helm" — content-only, three files. Three occurrences across three separate season-fill drains is strong enough signal now to add the lax-mode `content-check` invariant (`collectHostCaptionBareRestatementIssues`) mirroring the existing `episodes_caption`/`cast_size_caption` bare-restatement guards (`scripts/content-check.ts:2297`/`2336`), so future season-fill drains get caught at the gate rather than needing another critique pass to notice each new instance.
+- observation: Stat-tile caption fields re-state the value shown directly above them before adding any new fact — the same shape as the dragrace `host_caption` defect that was re-voiced show-wide on 2026-10-05 (pass-146 finding, resolved). That fix was content-level (one show's 15 season files), not a template or `content-check` invariant, so it didn't prevent the identical shape from being authored fresh into three more season-fill drains since: Traitors New Blood: HOST "Alan Cumming" → caption "Alan Cumming's fifth season at the castle." DWTS Fall 2026: HOST "Julianne Hough, Alfonso Ribeiro" → caption "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts." Big Brother Time Trip: HOST "Julie Chen Moonves" → caption "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm". Below Deck Down Under Canouan (pass-192, freshly spotted, and the first case where the defect isn't confined to HOST): HOST "Jason Chambers" → caption "fourth season with Captain Jason Chambers at the helm" (name repeated); FORMAT "Superyacht · Canouan, Caribbean" → caption "Charter superyacht, Caribbean waters" (both nouns repeated); PREMIERED "Feb 2, 2026" → caption "Bravo/Peacock · February 2026" (month/year repeated). All four occurrences would read just as clearly leading with the new fact alone, dropping the restated value.
+- evidence: `content/shows/traitors/seasons/05-new-blood.md` `host_caption: "Alan Cumming's fifth season at the castle"` directly below `host: "Alan Cumming"`; `content/shows/dancing-with-the-stars/seasons/35-fall-2026.md` `host_caption: "Fourth season with Julianne Hough and Alfonso Ribeiro as co-hosts"` directly below `host: "Julianne Hough, Alfonso Ribeiro"`; `content/shows/big-brother/seasons/28-time-trip.md:22` `host_caption: "Julie Chen Moonves, {seasonOrdinalWord} summer at the helm"` directly below `host: "Julie Chen Moonves"` at line 9; `content/shows/below-deck-down-under/seasons/04-canouan.md` — `host_caption`, `format_caption`, and the PREMIERED caption each restate their sibling value field verbatim, confirmed on both the anon and authed pass-192 walks.
+- suggested fix: Trim all four shows' captions to the new fact only — content-only, four files. Four occurrences across four separate season-fill drains, now spanning three distinct tile types (HOST, FORMAT, PREMIERED), is strong enough signal to add the lax-mode `content-check` invariant (generalizing the proposed `collectHostCaptionBareRestatementIssues` into a value/caption bare-restatement check applied across `host_caption`, `format_caption`, and any premiere-date caption field) mirroring the existing `episodes_caption`/`cast_size_caption` bare-restatement guards (`scripts/content-check.ts:2297`/`2336`), so future season-fill drains get caught at the gate rather than needing another critique pass to notice each new instance.
 - source: browser (critique-pass-183, anon; critique-pass-184, anon + authed)
 
 ### [LOW] [anon] /themes — pillar index reuses the exact same sitewide OG image as the homepage instead of a dedicated one
@@ -5244,15 +5280,15 @@
 - source: browser (critique-pass-175, authed)
 - resolved (2026-10-04, cloud march tick, content-gap redirect — same tick as the adjacent pass-175 canon.md fix above). Gave `shape_h2` + the body's opening sentence their own angle (episode count + Tell All structure — "Eighteen episodes, closing with a three-part Tell All in September 2026") instead of restating "zero returning faces," which `take_h2`/`pull` already own. Body circles back to the cast-freshness fact in its second sentence, matching the convention `take_h2`/`pull` already use for their owned fact. Commit d3fc2415.
 
-### [LOW] [authed] /themes/the-clock-had-to-make-room — the save button reads "Save (this device)" even for a signed-in reader, with no indication the save is (or isn't) tied to the account
+### [MED] [authed] /themes/the-clock-had-to-make-room, /themes/new-network-same-rulebook — the save button reads "Save (this device)" even for a signed-in reader, with no indication the save is (or isn't) tied to the account (bumped LOW → MED at pass 192: second occurrence, confirmed systemic across themed lists)
 
-- pass: 175 (commit bbef2177)
+- pass: 175 (commit bbef2177); reconfirmed pass 192 (cloud march)
 - viewport: desktop
 - category: comprehension
-- observation: The themed-list save affordance is labeled "Save (this device)" even when the visitor is signed in (`@e2e` confirmed in header chrome). For an authenticated reader this reads as a downgrade — the copy gives no indication the save could instead follow the account, so a signed-in reader has no reason to expect (or not expect) it to persist across devices.
-- evidence: `<button aria-label="Save 90 Day Fiancé: the clock had to make room" data-testid="list-save" data-saved="false">Save (this device)</button>` — rendered verbatim on the request made with the authenticated `__session` cookie.
+- observation: The themed-list save affordance is labeled "Save (this device)" even when the visitor is signed in (`@e2e` confirmed in header chrome). For an authenticated reader this reads as a downgrade — the copy gives no indication the save could instead follow the account, so a signed-in reader has no reason to expect (or not expect) it to persist across devices. Pass 192 reconfirmed the identical copy on a second, unrelated themed list, confirming this is the shared list-save component's behavior rather than a one-off.
+- evidence: `<button aria-label="Save 90 Day Fiancé: the clock had to make room" data-testid="list-save" data-saved="false">Save (this device)</button>` — rendered verbatim on the request made with the authenticated `__session` cookie. Pass 192: `/themes/new-network-same-rulebook` rendered "ENTRIES 13 UNIQUE SHOWS 7 CURATED BY tiered.tv editor LAST REVISED July 2026 SAVE (THIS DEVICE) SHARE" directly below header chrome showing `@e2e`.
 - suggested fix: For authenticated sessions, either persist saves to the account and change the label to "Save," or keep device-local saves but note in copy/tooltip that signing in doesn't change that — so it reads as a deliberate choice, not an oversight.
-- source: web-fetch (critique-pass-175, authed)
+- source: web-fetch (critique-pass-175, authed); browser (critique-pass-192, authed)
 
 ### [MED] [anon] /themes/[theme] — meta descriptions are never passed through `clipToSeoBudget()`, so 168 of 182 themed-list pages ship a search-snippet description over the ~160-char budget
 
@@ -5676,6 +5712,33 @@
 - suggested fix: Standardize on "Premiered" in the `eyebrow` frontmatter field to match the PREMIERED detail-field label and the convention used elsewhere in the catalog. Content-only, `content/shows/traitors/seasons/04-ardross-2026.md`.
 - source: browser (critique-pass-153, anon)
 - investigated: 2026-09-23, cloud march tick. Same false-positive class as the rest of this cluster (passes 152/162/164): "elsewhere in the catalog" is asserted but not true — 709 season files use "Aired" vs. 134 "Premiered," and every other Traitors season eyebrow already uses "Aired." Trialed and reverted the "Premiered" edit. No content-check invariant added; leaving open rather than resolved.
+
+### [HIGH] [anon+authed] /shows/below-deck-down-under/season/canouan — the same two headline facts are restated near-verbatim four times across the meta description, hero lede, "the take" capsule, and the body's section-02 opener
+- pass: 192 (cloud march)
+- viewport: desktop
+- category: voice
+- observation: Two facts — the franchise's move into the Caribbean (anchoring Katina off Canouan) and the pairing of a veteran crew with a franchise-first celebrity-charter crossover — are stated in near-identical phrasing four separate times on one page: the meta description, the hero lede, the condensed "the take" capsule, and the opening sentence of body section 02 ("The shape of the season"). A reader hits the same claim four times before reaching the canon-ranking section, reading as templated/unedited prose rather than the "plain sentences over clever ones" house voice.
+- evidence: Lede: "Season four moved the franchise into the Caribbean, anchoring Katina off Canouan and pairing Captain Jason Chambers with a veteran crew carrying decades of Below Deck experience, plus a franchise-first charter crossover with a full reality cast aboard as guests." "The take" capsule: "A veteran deck, a Caribbean backdrop, and a charter crossover the franchise had never tried before — the format's highest-pressure test yet." Section 02 opener: "Below Deck Down Under's fourth season moved the franchise into the Caribbean, anchoring Katina off Canouan for a second run after its Seychelles introduction. Captain Jason Chambers led a veteran crew ... carrying decades of Below Deck experience. A franchise-first charter crossover brought the full cast of The Real Housewives of Salt Lake City aboard as guests..." The meta description truncates to the same opening sentence as the lede. Independently confirmed on both the anon and authed pass-192 walks.
+- suggested fix: Let section 02 lead with new information (crew names, episode-count framing, or a production detail not yet stated) and keep the Caribbean/crossover framing owned by the lede alone; trim "the take" capsule to a single new angle instead of re-summarizing both facts a third time. Content-only, `content/shows/below-deck-down-under/seasons/04-canouan.md`. Spoiler discipline P0 intact (format/production facts only).
+- source: browser (critique-pass-192, anon + authed)
+
+### [MED] [anon+authed] /shows/below-deck-down-under/season/canouan, /shows/below-deck-down-under — the Season 4 Editor's Canon rationale is restated across its own blurb/"why this slot" callout, then copy-pasted verbatim onto the show page's canon card
+- pass: 192 (cloud march)
+- viewport: desktop
+- category: comprehension
+- observation: The Season 4 canon entry's core justification (a veteran crew's accumulated experience, plus a structural-first charter crossover) is stated three times within the season page alone (short blurb, "why this slot" callout, and the "where it sits in the canon" rationale paragraph), and then that same rationale paragraph is reused character-for-character on the show page's Editor's Canon card for the same season — so a reader who clicks from the show page into the season page reads the identical paragraph twice with zero new information added.
+- evidence: Season-page blurb: "The Caribbean run — veteran crew, a franchise-first charter crossover, the branch's tensest season yet." "Why this slot": "Season four earns the top slot on crew register — decades of combined Below Deck experience joining Captain Jason's deck — and a genuine structural first, a full celebrity charter crossover." Season-page "where it sits in the canon" / show-page canon card (identical on both): "Set against the other three, the case for the top slot is about maturity, not ambition alone. The Whitsundays earned the runner-up spot on origin friction, but a debut cast still finding the format can't out-argue a deck that already knows itself. ... Canouan inherits that scale without the turnover — the chemistry is settled, not settling — and adds a structural first none of the other three have. That combination is why it tops the list."
+- suggested fix: Give the show-page canon card its own shorter summary (a sentence or two distinct from the season page's reasoning) and reserve the full "where it sits in the canon" paragraph for the season page only — same fix shape as the recently-resolved below-deck/phuket canon-rationale-density defect, applied here to a different show. Content-only, `content/shows/below-deck-down-under/canon.md`. Spoiler discipline P0 intact.
+- source: browser (critique-pass-192, anon + authed)
+
+### [LOW] [authed] /shows/below-deck-down-under — the editorial "How I weigh it" panel drops the host's surname where every other mention on the page uses the full name
+- pass: 192 (cloud march)
+- viewport: desktop
+- category: voice
+- observation: The "How I weigh it" panel refers to the host as "Captain Jason," while the "Who ranks it" panel and the hero tagline on the same page both use the full "Captain Jason Chambers" — an inconsistent naming convention within one page.
+- evidence: "How I weigh it" panel: "...then how sharply Captain Jason's command had to work in each new context." "Who ranks it" panel (same page): "Captain Jason Chambers a constant throughout." Hero tagline: "Captain Jason Chambers, Australian waters..."
+- suggested fix: Use the full name "Captain Jason Chambers" consistently across the WHO/HOW/WHEN editorial panels. Content-only, `content/shows/below-deck-down-under/canon.md`.
+- source: browser (critique-pass-192, authed)
 
 ## Done
 - [x] [MED] [authed] /shows/below-deck/season/phuket — the pass-188 fix's replacement canon-comparison sentence is a single dense, multi-clause construction that also assumes the reader has already visited the Antigua season page (pass: 190 (commit faceb537)) — RESOLVED (2026-10-25, cloud march tick, content-gap redirect — Rule 2 non-actionable, `plan/CADENCE.md` gap table unchanged at 35 shows/37 gap-slots all starred confirmed-but-unaired per the 2026-10-19 sweep, next sweep not due until 2026-10-26; Rule 3 research exhaustively chased to dead ends across the 2026-10-20 through 2026-10-24 ticks per `plan/LISTS.md`'s Notes log, so this tick picked the top-scoring pending MED critique finding instead of repeating a dead-end brainstorm): split `content/shows/below-deck/canon.md`'s Season 13 (Phuket) rationale's dense opening sentence into two independently-parseable sentences — one argues the Phuket-vs-Antigua comparison, one argues the Phuket-vs-BVI comparison. Made the Antigua reference self-contained by stating what Antigua's own entry argues ("reliability over novelty, disclaiming any visual distinction") instead of only gesturing at a claim the reader would need to have already read on a different page. Closing three sentences (both seasons already delivering on what makes each work, Phuket as a location-pedigree bet, "provisional by design") kept in substance with only connective-tissue adjustments. Final paragraph: 117 words, within the 80-120 `rationaleBody` budget. `tag`/`slot_argument`/`community_rank_hint` lines and every other entry in the file left untouched. Delegated to `content-curator`. Spoiler discipline P0 intact — Season 13 is still unaired, premise/format/location facts only, no outcomes. No GitHub issue was mirrored for this finding (browser-critique-sourced), so no Closes clause applies.
