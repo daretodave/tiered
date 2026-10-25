@@ -86,7 +86,7 @@ tag: A return to the franchise's best-reviewed overseas location — new yacht, 
 slot_argument: Phuket matches the premise elements the franchise's strongest seasons share — a distinct international setting, a captain with real authority — without a single aired hour yet. Provisional.
 community_rank_hint: rank=8 delta=0 sentiment=hold
 
-Phuket's premise clears a higher bar than Antigua's on location pedigree alone — a setting that already produced one of the franchise's best seasons, beyond the visual novelty Antigua's own entry disclaims. But it sits below the BVI, whose rank was never about location: that season earned its slot through sharper captain authority and stronger cast dynamics, ground Phuket can't claim with no footage aired. The BVI and Antigua seasons already delivered on what makes each work; Phuket is still a bet on a location's track record carrying a new, untested crew. Provisional by design, the rank reflects confidence in the setting, not the season.
+Phuket's premise clears a higher bar than Antigua's on location pedigree alone — a setting that already produced one of the franchise's best seasons. Antigua's own entry argues reliability over novelty, disclaiming any visual distinction; Phuket's Andaman Sea backdrop has no such disclaimer to make. But it sits below the BVI. That season's rank was never about location — it earned its slot through sharper captain authority and stronger cast dynamics, ground Phuket can't claim with no footage aired. The BVI and Antigua seasons already delivered on what makes each work; Phuket is still a bet on a location's track record carrying a new, untested crew. Provisional by design, the rank reflects confidence in the setting, not the season.
 
 ## 8. Season 8 — Antigua
 
