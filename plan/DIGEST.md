@@ -1,176 +1,155 @@
-# DIGEST — 2026-10-25
+# DIGEST — 2026-10-26
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**Clean window, zero friction.** All 7 scheduled `march` ticks
-produced a commit and all 7 were green — no crashes, no no-ops,
-a cleaner run than yesterday's single `401 Bad credentials`
-hiccup. Critique pass 191 landed (1 HIGH + 2 LOW) and the HIGH
-got fixed in the very next tick, same window — Pending HIGH
-count is back to zero, same clean state the loop has held for
-three digests running. Rule 2 (season-fill) stayed fully starved
-on the unchanged CADENCE gap table; Rule 3 (themed lists) spent
-two of the seven ticks reconfirming catalog saturation
-(zero-ship) and one tick landing a genuine extend (Bachelor in
-Paradise S10 into `a-change-of-address`). Breadth (`e2e-full`)
-green both nights. Deploy ready at HEAD (`456d4e42`). While
-writing this digest I hit the exact failure candidate #29
-describes firsthand — a plain `Read` of `plan/AUDIT.md` (1.31MB)
-fails outright — and traced it to a sharper root cause than any
-prior reinforcement has recorded: see Tuning proposals.
+**The loop has been down for ~20 hours.** Every cloud `march`
+tick since 2026-10-25T20:41:31Z (5 in a row, through tonight's
+15:04 UTC attempt) has crashed in under a minute — before any
+agent work even starts — because GitHub's `ubuntu-latest` runner
+now resolves to Ubuntu 26.04 and the pinned `@playwright/test`
+(resolves to `1.60.0`) refuses to install Chromium on it:
+`Error: ERROR: Playwright does not support chromium on
+ubuntu26.04-x64`. The nightly breadth run (`e2e-full`,
+2026-10-26T00:58Z) died on the identical line. This is not a repo
+regression — it's GitHub's runner image outrunning Playwright's
+distro-support table, and it's hitting other repos across GitHub
+this week too. Confirmed fix exists and is cheap: **Playwright
+1.61.0 added Ubuntu 26.04 support**. Filed HIGH in
+`plan/AUDIT.md` with the exact fix (bump `@playwright/test` +
+`@axe-core/playwright` in `apps/e2e/package.json`, re-lock,
+re-verify) — unlike the still-open 2026-10-15 usage-cap row, this
+one is a plain dependency bump, not a workflow-file edit, so it
+does **not** need the `workflows` OAuth scope the loop's token
+lacks. It should be shippable by the very next `/iterate` or
+`/march` tick with no human intervention required. Last ship
+before the outage: 2026-10-25T18:40:53Z (commit `35f58e9b`,
+closing pass 192's HIGH critique finding). Today's 2026-10-26
+season-sweep (`plan/CADENCE.md` Rule 1a, due today) has not run —
+nothing can complete `pnpm verify` while this sits open.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 10-24 13:55–14:13 | march | success — expand: pass 75, 0 new candidates, 1 reinforcement (#37) |
-| 10-24 ~14:03–14:20 | night | success — digest: 2026-10-24 |
-| 10-24 17:18–17:32 | march | success — critique: pass 191, 3 findings (1 high, 0 med, 2 low) |
-| 10-24 19:47–20:39 | march | success — content: extend `a-change-of-address` with Bachelor in Paradise S10 |
-| 10-24 22:22–23:06 | march | success — content: fix bachelor-in-paradise/costa-rica restatement defect — closed pass 191's HIGH + its bundled LOW |
-| 10-25 00:31–01:20 | march | success — content: Rule 3 90-day review, 2 lists reconfirmed, zero drift |
-| 10-25 05:17–06:09 | march | success — content: Rule 3 research, zero-ship, no candidate cleared |
-| 10-25 10:08–10:48 | march | success — content: fix below-deck/phuket canon rationale density defect — closed pass 190's MED |
+| 10-25 14:33–15:18 | march | success — critique: pass 192, 3 findings (1 high, 1 med, 1 low) |
+| 10-25 17:51–18:42 | march | success — content: fix stat-tile caption bare-restatement across 4 shows — closed pass 192's HIGH |
+| 10-25 20:41–20:42 | march | **failure** — Playwright/ubuntu26.04 install crash begins |
+| 10-25 23:07–23:08 | march | **failure** — same cause |
+| 10-26 01:42–01:43 | march | **failure** — same cause |
+| 10-26 00:58 | e2e-full (breadth) | **failure** — same cause, new "Recurred" comment on issue #636 |
+| 10-26 07:40–07:41 | march | **failure** — same cause |
+| 10-26 15:04–15:05 | march | **failure** — same cause, 5th in a row |
+| 10-26 ~16:50 | night | this tick — digest: 2026-10-26 |
 
-7 of 7 scheduled march windows produced a commit; all 7 green.
-No crashes, no no-ops — a fully clean 26-hour window.
+2 of 7 scheduled march windows in the full lookback produced a
+commit; the other 5 — every single tick since 20:41:31Z — crashed
+before doing any work. Each crash auto-filed a "Recurred" comment
+onto issue #565 (now 246 comments on a "Cloud march tick crashed"
+thread open since 2026-07-12) — the 14-day title-match dedup
+correctly found a same-titled open issue and appended rather than
+filing fresh, but #565 now carries a diagnosis for an unrelated
+root cause from July. That's a known, already-tracked dedup
+limitation (candidate #32's history) — not re-filed tonight.
 
 ## The saga
 
-**Season-fill (Rule 2):** fully stalled, unchanged for the third
-consecutive digest. CADENCE gap table holds at **35 shows / 37
-gap-slots**, every row starred confirmed-but-unaired since the
-2026-10-19 sweep (15th full pass) — no actionable target exists
-until the next sweep (due 2026-10-26). Zero seasons drained, zero
-shows scaffolded this window.
+**Season-fill (Rule 2):** unchanged at **35 shows / 37
+gap-slots** since the 2026-10-19 sweep (15th full pass), all
+rows starred confirmed-but-unaired. Today's 2026-10-26 sweep
+(due per `plan/CADENCE.md`'s 7-day clock) has not run and cannot
+run until the CI outage clears — it needs a full `pnpm verify`
+pass same as any ship.
 
-**Rule 3 (themed-list extend/review):** one genuine extend (the
-20:37 tick), two zero-ships. The 00:31 tick cleared a 90-day
-review cohort (2 lists, zero drift); the 05:17 tick ran fresh
-Rule 3 research and found nothing clearable — both consistent
-with the "concept-space saturation" pattern `plan/LISTS.md`'s
-Notes log has logged since mid-October. The one real ship: Costa
-Rica's Bachelor in Paradise S10 landed in `a-change-of-address`.
+**Rule 3 / critique:** one real content ship landed before the
+outage — the pass-192 HIGH (stat-tile caption bare-restatement
+across 4 season files: traitors, dancing-with-the-stars,
+big-brother, below-deck-down-under) was fixed same-window
+(commit `35f58e9b`). That is the last commit the loop has
+produced. Pass 192 itself (commit `89c285a7`, 2026-10-25) also
+surfaced one fresh MED (below-deck-down-under's canon rationale
+duplicated verbatim between season page and show page) and one
+LOW (host name dropped to "Captain Jason" in one panel) — both
+still open, untouched since filing, because every tick since has
+died before reaching any ship logic.
 
-**Critique:** pass 191 landed (17:18, commit `1a017cca`) — 3
-fresh findings (1 HIGH, 0 MED, 2 LOW), rotating onto Bachelor in
-Paradise's Costa Rica season, its show page, and a fresh Ink
-Master themed list. The HIGH (verbatim restatement across lede/
-body/three editorial sections) and one bundled LOW (stat-caption
-duplicate) were fixed the very next tick (22:22, commit
-`830293c0`) — same window, same file. A separate fix (10:08,
-commit `456d4e42`) closed pass 190's outstanding MED (the Below
-Deck/Phuket canon-rationale dense sentence). Pending count: **65**
-(0 HIGH, 38 MED, 27 LOW) — net flat vs. yesterday's 65 (+3
-pass-191 findings, −2 same-window fixes, −1 from pass-190's MED
-closing, +1 rounding against yesterday's provisional count).
-Zero HIGH rows open — the third consecutive clean digest on this
-metric.
-
-**Velocity vs. the three bearings rules:** Rule 2 fully starved,
-unchanged four digests running. Rule 3 carried most of the
-window (one extend + two review/research zero-ships). Critique
-cadence is current (pass 191 landed inside this window) and both
-its urgent findings closed same-day — the tightest find-to-fix
-loop logged in recent digests.
+**Velocity vs. the three bearings rules:** total standstill since
+20:41:31Z yesterday. Zero seasons drained, zero shows scaffolded,
+zero critique findings closed, zero list extends — not because
+any rule is starved of targets (Rule 3 has a live pending HIGH
+sitting untouched), but because the CI gate itself is broken and
+nothing can get through `pnpm verify` to ship at all. This is a
+different failure shape than prior digests' "Rule 2 starved,
+Rule 3 covering" — tonight is "every rule blocked by infra," full
+stop.
 
 ## Queues now
 
 - **CADENCE gap table:** 35 shows/37 gap-slots, unchanged since
-  2026-10-19; next sweep due 2026-10-26.
-- **plan/CRITIQUE.md:** last pass 191 (commit `1a017cca`,
-  2026-10-24T17:30Z), current. 65 pending findings (0 HIGH, 38
-  MED, 27 LOW) — flat vs. yesterday.
+  2026-10-19. 2026-10-26 sweep is due but blocked.
+- **plan/CRITIQUE.md:** last pass 192 (commit `89c285a7`,
+  2026-10-25T15:15Z), 25h+ stale — next pass is blocked behind
+  the same CI outage. **67 pending** (1 HIGH, 39 MED, 27 LOW).
+  The 1 pending HIGH (below-deck-down-under four-way restatement,
+  pass 192) is the next target the moment a tick can ship again.
 - **plan/PHASE_CANDIDATES.md:** last pass 75 (commit `c6ca5335`,
-  2026-10-24T14:11Z), one day old — current. 0 new candidates
-  filed since; ~23 candidates sit in "Considered" awaiting
-  `/oversight` promotion; top-scored: #28 (8.7, stat-tile
-  invariant), #25 (8.3, canon-echo gate), #34 (6.6, e2e sharding),
-  #29 (6.4, archive the ledger), #36 (6.0, the-voice remediation
-  plan), #33 (5.5, content-gaps bug-priority carve-out), #37
-  (5.4, cloud-outage fallback).
+  2026-10-24), 2 days old, flat — 41 candidates filed total (#1–41),
+  ~31 still sit in "Considered" awaiting `/oversight` promotion;
+  top-scored unchanged from last digest: #28 (8.7, stat-tile
+  invariant), #25 (8.3, canon-echo gate), #34 (6.6, e2e sharding).
+- **plan/AUDIT.md:** 1 new HIGH filed tonight (this CI outage).
+  Other open rows unchanged: the standing season-fill row, the
+  the-voice corruption HIGH (#762, frozen, needs-user), the
+  2026-10-15 usage-cap-outage HIGH (needs-user-call, no
+  recurrence since), the heartbeat false-positive LOW, two
+  content-hygiene LOWs.
 - **Open `triage:needs-user`:** 9 (unchanged, mostly stale
   June–September crash/night-digest issues). **`triage:
-  loop-queued`:** 5 (unchanged, Aug–Sept). **Open unlabeled
-  issues:** 0.
+  loop-queued`:** 5 (unchanged, Aug–Sept, includes #636 — the
+  e2e-full breadth tracker, which picked up tonight's recurrence).
 - **Ledger file sizes:** `plan/LISTS.md` 1.31MB (flat).
-  `plan/AUDIT.md` 1.25MB (flat vs. yesterday's reading, still
-  fails a plain `Read` — confirmed again tonight, see Tuning
-  proposals for a sharper root-cause finding). `plan/CRITIQUE.md`
-  889KB (flat, up slightly from 882KB — pass 191's net+1 finding).
-  `plan/PHASE_CANDIDATES.md` 473KB (flat — no edits since pass 75).
+  `plan/AUDIT.md` 1.25MB (+1 HIGH row tonight). `plan/CRITIQUE.md`
+  897KB (up from 889KB — pass 192's net new findings).
+  `plan/PHASE_CANDIDATES.md` 474.5KB (flat).
 
 ## Needs you
 
-- **the-voice content corruption — 91 days open, needs-user.**
-  `content/shows/the-voice/seasons/22-29.md` + the show
-  frontmatter carry a confirmed factual corruption producing a
-  live, reader-facing false claim that the show has ended (real
-  S29 aired February 2026, S30 confirmed airing September 2026).
-  Flagged since 2026-07-26 given the blast radius (8-file
-  renumbering cascade + canon rebase + themed-list cross-reference
-  sweep) — `plan/AUDIT.md`'s standing HIGH row, GitHub issue #762,
-  phase candidate #36. Nothing in the loop's own gates can safely
-  pick this up; it needs an `/oversight` session.
-- **`/oversight` backlog — 105 days since last promotion
-  (2026-07-12).** ~23 phase candidates sit in "Considered,"
-  including two scoring 8+ (#28 stat-tile invariant at 8.7, #25
-  canon-echo gate at 8.3) that have been ready to ship for months.
-  Worth a dedicated promotion pass independent of any single new
-  signal.
-- **Night-shift concurrency race (candidate #35) — 90 days
-  unpromoted.** `night.yml` shares a concurrency group with
-  `march` and can still be silently evicted before it starts; the
-  last confirmed occurrence logged was 2026-09-07. Tonight's run
-  landed clean, but the underlying race documented in
-  `plan/AUDIT.md`'s standing HIGH row is unfixed either way.
-- **Cloud-loop usage-cap blackout has no self-healing path
-  (needs-user-call).** The 2026-10-15→10-19 ~4.25-day outage (26
-  failed march ticks, 2 failed night ticks) died purely on Claude
-  Code subscription usage-cap exhaustion, with each failed tick
-  independently rediscovering the same exhausted state rather than
-  backing off until the known reset time. The mechanical fix needs
-  `.github/workflows/*.yml` write access the loop's `ACTIONS_PAT`
-  doesn't have — same structural gap as candidate #37. `plan/
-  AUDIT.md` row, filed 2026-10-19, still open, no recurrence since.
+- **CI outage is the priority — but should NOT need a human
+  hand.** The fix (bump Playwright to `^1.61.0`) is a normal
+  dependency change within the loop's existing write permissions.
+  Flagging here only because every hour it sits open is an hour
+  of zero velocity and a red breadth gate; if the next `/iterate`
+  or `/march` tick doesn't pick it up as the top-scored AUDIT row
+  (score 6.3, now the highest-scored open bug), that itself would
+  be worth an `/oversight` look.
+- **the-voice content corruption — still open, needs-user,**
+  unresolved since 2026-07-26 (issue #762, `plan/AUDIT.md` HIGH
+  row, phase candidate #36). No change this window.
+- **`/oversight` backlog — still ~105+ days since last
+  promotion** (2026-07-12). ~31 phase candidates sit in
+  "Considered," two scoring 8+ and ready to ship for months.
+- **2026-10-15 usage-cap outage row** — still open
+  (needs-user-call, same `workflows`-scope wall as this outage's
+  durable fix would hit if a `runs-on` pin were chosen instead of
+  the Playwright version bump). No recurrence since.
 
 ## Today's intent
 
-- Next content drain: no Rule 2 target exists until the
-  2026-10-26 sweep; expect the loop to keep working Rule 3
-  review cohorts in the meantime — the concept-space is reading
-  as saturated, so further zero-ships there are not a sign of
-  trouble.
-- Top non-content priority: the-voice corruption and the
-  `/oversight` promotion backlog remain squarely human-review
-  items — neither can move further without a local `/oversight`
-  session, and both are now past the 90-day mark.
-- Watch: the 2026-10-26 season-sweep is tomorrow — if it unstars
-  even one of the 35 confirmed-but-unaired rows, that's the next
-  Rule 2 drain target and the first since 2026-10-19.
+1. **Unblock the loop first.** Ship the `@playwright/test`
+   version bump (`plan/AUDIT.md` HIGH row filed tonight) — nothing
+   else can ship until `pnpm verify` can complete a clean e2e
+   install again.
+2. Once unblocked: the overdue 2026-10-26 season-sweep
+   (`plan/CADENCE.md` Rule 1a).
+3. Then: the sole pending HIGH critique finding (below-deck-down-
+   under's Canouan four-way restatement, pass 192) per the
+   standing redirect order.
 
 ## Tuning proposals
 
-Filed a reinforcement to **candidate #29** (archive closed
-CRITIQUE.md / AUDIT.md rows) with a sharper root cause than any
-prior reinforcement recorded: while gathering tonight's pulse, a
-plain `Read` of `plan/AUDIT.md` (1,309,875 bytes) failed outright,
-and a follow-up offset/limit read of just its first 250 lines
-*also* failed the 25,000-token ceiling — not because of aggregate
-file length, but because **one single line is 654,455 bytes long**
-(line 31, the standing `[MED] Season-fill drain` row), accounting
-for exactly half the file's total size by itself. That row is
-designed to stay open indefinitely ("THIS ROW STAYS PENDING until
-the gap table reads zero") and accumulates a fresh prose progress
-note every drain tick with no trimming or summarization — a
-distinct, narrower failure mode than the general "360 of 385
-rows are closed dead weight" case candidate #29's scope sketch
-already targets. Filed as a note on #29 rather than a new
-candidate, since the fix (cap or periodically compact a single
-standing row's accumulated history, e.g. into `plan/CADENCE.md`
-where the gap table itself already lives) is a natural extension
-of the same archive mechanism, not a different one. Not applying
-directly — proposal only, per the meta-loop rail.
+None. Tonight's finding is a dependency-version bug with a
+confirmed, in-permission fix — it belongs in `plan/AUDIT.md` as a
+HIGH bug row (filed above), not a gate/cadence tuning proposal.
+No PHASE_CANDIDATES entry needed.
