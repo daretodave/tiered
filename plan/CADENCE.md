@@ -1778,7 +1778,6 @@ new-show creation is locked to the biweekly show-add clock.
 
 | show | filed/declared | gap |
 |---|---|---|
-| amazing-race | 38/39 | 1* |
 | rhonj | 14/15 | 1* |
 | the-voice | 29/30 | 1* |
 | bachelor | 29/30 | 1* |
@@ -3644,3 +3643,4 @@ No calendar or gap-table action.
 | 2026-10-19 | 0 (fifteenth full sweep, all 35 starred rows reconfirmed accurate across the full 68-show catalog; cross-grep clean; dragrace-uk BBC-cancellation and the-circle Hulu-move status items surfaced, no table action; below-deck-adventure conflicting signal reconfirmed closed, not reopened) | 37 |
 | 2026-10-27 | 2 (sixteenth full sweep, survivor S52 renewal + below-deck-mediterranean S12 renewal, both first-time confirmations and genuinely new rows; chopped's recurring "S63/S64" false positive reconfirmed closed, not reopened; too-hot-to-handle S7 casting call flagged but below the confirmed-renewal bar, not added; the-circle Hulu date firmed to 2026-11-17, rhoc S20 + rhonj S15 descriptive updates, no count change on either) | 39 |
 | 2026-10-27 | Rule 2 drain, not a sweep (the-challenge S42 Cutthroat — filed provisional/premise-only while airing, gap-slot removed) | 38 |
+| 2026-10-27 | Rule 2 drain, not a sweep (amazing-race S39 — filed provisional/premise-only while airing, gap-slot removed) | 37 |

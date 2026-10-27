@@ -5,9 +5,9 @@ palette:
   paper: "#0B2540"
   ink: "#F1E3C2"
   primary: "#F2B233"
-seasons: 38
+seasons: 39
 status: airing
-blurb: "38 seasons. 11 teams, one route marker at a time."
+blurb: "39 seasons. 11 teams, one route marker at a time."
 tagline: "Strangers racing through airports with backpacks, chasing a route marker across the globe. The longest-running travel competition on television — a cross-continent mechanic that has held its shape across {yearsWord} years of starting lines. I've ranked every leg of every one."
 card_tagline: "Airports and backpacks, route markers and taxi queues across six continents — {yearsWord} years of travel competition that still shapes the genre."
 tier: A
