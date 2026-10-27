@@ -1,4 +1,4 @@
-import { type Browser, expect, test } from '@playwright/test'
+import { type Browser, type Page, expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
 
@@ -97,6 +97,30 @@ async function castOneSession(
     await ctx.close()
   }
 }
+
+// #809: the % column header carries its own "(canon)" qualifier at
+// every width where it shows, so a canon-mirrored table never reads
+// "Approval (canon order)" beside a bare, unexplained "%".
+async function expectPctQualifier(page: Page) {
+  const response = await page.goto('/shows/love-island-uk?view=community', {
+    waitUntil: 'domcontentloaded',
+  })
+  expect(response?.status()).toBe(200)
+  const list = page.getByTestId('community-rank-list')
+  const note = page.getByTestId('community-rank-cols').locator('.col-pct .col-pct-note')
+  if ((await list.getAttribute('data-source')) === 'votes') {
+    await expect(note).toHaveCount(0)
+    return
+  }
+  await expect(note).toBeVisible()
+  await expect(note).toHaveText('(canon)')
+}
+
+test('community rank % header carries the canon qualifier on desktop (#809)', async ({
+  page,
+}) => {
+  await expectPctQualifier(page)
+})
 
 test.describe('live community pane (votes cleared the threshold)', () => {
   test('renders Supabase-derived counters once voters >= threshold', async ({
@@ -197,5 +221,11 @@ test.describe('mobile @ 375px viewport', () => {
       clientWidth: document.documentElement.clientWidth,
     }))
     expect(overflow.scrollWidth - overflow.clientWidth).toBeLessThanOrEqual(1)
+  })
+
+  test('community rank % header keeps the canon qualifier at 375px (#809)', async ({
+    page,
+  }) => {
+    await expectPctQualifier(page)
   })
 })
