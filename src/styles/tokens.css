@@ -6,7 +6,7 @@
  *          register theme tokens that drive utility classes.
  * Dark-mode tokens are the default at :root. Light-mode overrides
  * apply only when the inline head script sets html[data-theme='light']
- * pre-paint. See plan/phases/phase_1_bootstrap.md Section 5c.
+ * pre-paint. See plan/README.md Section 5c.
  */
 
 @theme {

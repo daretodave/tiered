@@ -9,10 +9,48 @@
 > at standard cadence and files candidates here. `/oversight`
 > is the only path to promote.
 
-> Last pass: 2026-10-24 at commit 4e9830a0
-> Pass count: 75
+> Last pass: 2026-10-27 at commit 212a55dd
+> Pass count: 76
+> Last field research: 2026-10-27
+
+## Pending
+
+### [ ] [score 6.0] Graduated spoiler-risk labeling instead of a binary spoiler flag
+- proposed: 2026-10-27 (research)
+- source signals: field (2026-10-27): Some entertainment coverage grades a piece's spoiler risk on a scale tied to how far behind a reader might be, rather than a single binary spoiler/no-spoiler toggle.
+- rationale: tiered.tv's whole premise is spoiler-safe coverage, currently enforced as a binary content-check gate (outcome language blocked outright). A graduated framing — e.g. distinguishing 'safe even mid-season' from 'safe only once a season has aired a few episodes' — is a pattern worth weighing against the current all-or-nothing gate, though the editorial voice may already prefer the simpler binary for…
+- proposed scope: No code implied yet — a candidate for /oversight to weigh against the existing spoiler-discipline P0 gate (content-check's outcome-language blocklist) before any scope is sketched; the binary gate may already be the deliberately simpler, more trustworthy choice.
+- estimated chunks: unknown until specced
+- conflicts: none known.
+- generator: research · filed 2026-10-27
 
 ## Considered (awaiting promotion)
+
+<!-- Pass 76 (2026-10-27, cloud march) — 0 new phase-shape candidates
+     filed directly (one field candidate, "graduated spoiler-risk
+     labeling," already landed this tick via the research generator
+     under the new `## Pending` header above). Signal sweep across all
+     8 lettered sources (§4 of skills/expand.md): spec.md drift (D) was
+     cosmetic only (a4fa6242's phases-table path fix, no scope change);
+     design/ (E) untouched since pass 75; commit-pattern (G) showed
+     nothing clustering beyond routine digest/critique/content upkeep.
+     The one real finding this pass: running the aged-promotion knob
+     (`Promote: aged`) surfaced that `promote.mjs pick` cannot see any
+     of the ~23 live pre-v2 candidates below (#19-#41) — they sit under
+     this legacy `### <NN>. <title>` / `**Score:** X` schema, which the
+     nexus v2 upgrade (a4fa6242) left untouched, and the new tooling
+     only reads the `### [ ] [score X.Y]` schema under `## Pending`.
+     Filed as an AUDIT.md [MED] bug row (score 3.0) rather than a
+     candidate here — it's a mechanical migration/reformatting job, not
+     a new feature, and it's the direct explanation for why candidate
+     #34 (97+ days overdue, score 6.6, explicitly "the file's longest-
+     unpromoted candidate") didn't get picked by this pass's aged-
+     promotion step despite clearing every one of its thresholds.
+     Separately, today's SLA/triage housekeeping relabeled #636 (the
+     candidate #34's own tracking issue) to triage:needs-user — no
+     candidate-level change, noted for continuity. Also closed #785 and
+     #787, an unrelated pair already resolved by ae97eb95 and never
+     closed. -->
 
 <!-- Pass 75 (2026-10-24, cloud march) — 0 new phase-shape candidates
      filed. One reinforcement: candidate #37 (cloud workflow outage
