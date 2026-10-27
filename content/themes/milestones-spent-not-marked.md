@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-10-27
 featured: false
 related:
   - best-comeback-seasons
@@ -98,58 +98,64 @@ entries:
     rank: 14
     title: "A milestone season structures its entire arc around one returning cast member's comeback."
     blurb: "The tenth season doesn't just note the anniversary — it centers a season-long arc and a Barcelona trip around bringing back a central figure from the show's early run, reshaping the cast by the finale."
+  - show: rhoc
+    season: 20
+    season_label: "S20 · The Homecoming"
+    rank: 15
+    title: "A twentieth-anniversary season rebuilds its cast around Vicki Gunvalson's full-time return."
+    blurb: "Billed as the franchise's 20th-anniversary showcase, the season brings Vicki Gunvalson back full-time after thirteen seasons away and adds a new full cast member — genuine structural moves, even as reviews on the season's pacing ran mixed."
   - show: the-voice
     season: 20
     season_label: "S20 · The Decade"
-    rank: 15
+    rank: 16
     title: "The tenth-anniversary cycle mostly proves the format survived the two years before it."
     blurb: "The occasion coincides with the first full production cycle free of pandemic limits, and the returning coach lineup reads more like a recovery season than a deliberate anniversary swing."
   - show: americas-got-talent
     season: 10
     season_label: "S10 · The Anniversary Run"
-    rank: 16
+    rank: 17
     title: "Ten seasons in, the milestone mostly means a settled panel gets to enjoy its own history."
     blurb: "The judging panel's second year running together brings real chemistry, but nothing about the audition format or the live rounds changes because the number happens to be ten."
   - show: the-voice
     season: 10
     season_label: "S10 · The Milestone"
-    rank: 17
+    rank: 18
     title: "A new coaching pair gives the tenth season energy, but the milestone itself changes nothing."
     blurb: "Five years of spinning chairs gets acknowledged in the framing, and a fresh coaching combination livens up the auditions — a confident, unremarkable cycle wearing an anniversary label."
   - show: american-idol
     season: 20
     season_label: "S20 · The Anniversary"
-    rank: 18
+    rank: 19
     title: "Alumni callbacks and retrospective packages carry the milestone more than the competition does."
     blurb: "The twentieth season leans on returning faces and look-back segments to sell the occasion, while the judging panel runs its established rhythm with nothing structurally new underneath it."
   - show: shark-tank
     season: 10
     season_label: "S10"
-    rank: 19
+    rank: 20
     title: "A 200th-episode victory lap keeps the tank's own format untouched."
     blurb: "The tenth-anniversary premiere doubles as the show's 200th overall episode, and a guest-shark rotation marks the occasion — including a former pitcher back to judge instead of pitch. The classic six and the pitch format itself don't move an inch."
   - show: naked-and-afraid
     season: 10
     season_label: "S10 · The Decade Mark"
-    rank: 20
+    rank: 21
     title: "A stripped-down format has nowhere to hide a milestone that doesn't actually change anything."
     blurb: "Season ten lands on the round number mid-transition from an earlier casting shift, and the show doesn't pretend the occasion resolved anything — just two people, 21 days, same as always."
   - show: masked-singer
     season: 10
     season_label: "S10 · The Milestone"
-    rank: 21
+    rank: 22
     title: "The tenth season's whole argument is that the format didn't need to change for the occasion."
     blurb: "Same panel, same costume conceit, same structure that worked at the debut — reaching double digits without an overhaul is the point here, not a workaround for skipping one."
   - show: project-runway
     season: 10
     season_label: "S10 · New York"
-    rank: 22
+    rank: 23
     title: "Ten cycles in, the workroom doesn't even pause to mark the number."
     blurb: "The tenth-season milestone arrives with the same sixteen-designer format, the same Parsons workroom, and a judges' table that no longer needs an introduction. Nearly two hundred episodes deep, the show takes stock of its own run without slowing down to celebrate it."
   - show: dancing-with-the-stars
     season: 20
     season_label: "S20 · The Milestone"
-    rank: 23
+    rank: 24
     title: "The promotional campaign is the only place the milestone actually shows up."
     blurb: "ABC leans hard into the twentieth-season marketing, but the season itself runs ten standard episodes with the usual pairing structure — the anniversary changed the graphics, not the format."
 ---
