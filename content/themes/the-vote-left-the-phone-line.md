@@ -8,7 +8,8 @@ sentiment: hold
 status: started
 curator: "tiered.tv editor"
 last_revised: 2026-10-26
-featured: false
+featured: true
+featured_pull: "Toll-free numbers and text codes gave way to an app or a streaming platform — the audience vote's quiet infrastructure upgrade, franchise by franchise."
 related:
   - who-actually-got-the-vote
 era_range: [2002, 2026]

@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-10-07
+last_revised: 2026-10-27
 featured: false
 related:
   - not-the-usual-order
@@ -121,4 +121,22 @@ entries:
     rank: 18
     title: "The premiere alone runs twice as long as the format's usual hour, and needs every extra minute."
     blurb: "A two-hour special premiere is the runtime bet here — room enough to stack Probst's described seven borrowed twists and three new ones before the cast even builds camp. Every episode after reverts to the format's standard length."
+  - show: survivor
+    season: 50
+    season_label: "S50"
+    rank: 19
+    title: "The fiftieth premiere runs a full hour longer than the format's usual length."
+    blurb: "A three-hour special opens the milestone season instead of the standard hour, room enough to maroon the largest cast the format has ever fielded before a single vote is cast. Every episode after it returns to the format's normal runtime."
+  - show: dancing-with-the-stars
+    season: 35
+    season_label: "S35 · Fall 2026"
+    rank: 20
+    title: "A record-tying cast needs two nights just to get through the premiere."
+    blurb: "Introducing the biggest field the format has ever fielded takes more than one broadcast — the premiere splits across two nights before the season settles into its usual weekly hour."
+  - show: married-at-first-sight
+    season: 12
+    season_label: "S12 · Atlanta II"
+    rank: 21
+    title: "A second trip to the same city comes with a three-hour premiere to introduce five couples at once."
+    blurb: "Returning to a filming city the format last used years earlier, Atlanta II also stretches its premiere to three hours — enough room to match the show's now-standard five-couple cast in one sitting."
 ---
