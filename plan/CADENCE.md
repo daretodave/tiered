@@ -24,6 +24,33 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-27 tick (cloud march, second this day): rhoc
+19/20 → 20/20, gap row removed.** Every remaining gap-table row was
+starred (confirmed-but-unaired) per this tick's own sweep below, except
+one that crossed into the present since the sweep text was written: the
+sweep's own "Two cosmetic enrichments" note flagged `rhoc` Season 20
+("Mad Money") as having fully aired on 2026-10-22 — five days before this
+tick — with "the frontmatter bump happens at drain time per standing
+practice." That's exactly this drain. Filed Season 20
+(`content/shows/rhoc/seasons/20-the-homecoming.md`) — Vicki Gunvalson
+returns full-time for the first time since Season 13, Carmella Garcia
+joins as the new full cast member, Katie Ginella's run closes out;
+premise/reception only (mixed reviews on pacing), no fight/breakup/
+reunion-outcome content, per spoiler discipline P0. Canon rebased:
+"The Homecoming" inserted at rank 19 — above Season 15's pandemic-
+constrained "Bubble" (now rank 20, last in the canon) because the premise
+levers (Vicki's return, Carmella's debut) still earn more than a
+production-limited season, but below every other revival-era entry since
+the available reception data points to underused potential rather than a
+season that cashed in its two biggest cast moves. `canonical_position`
+rewritten for Season 15 (19→20) to match. Show frontmatter bumped
+`seasons: 19→20`, blurb corrected to "20 seasons." `era_bands`' existing
+`revival-era` [2021, 2026] already covers the new season's year, no
+widening needed. RHOC fully drained — row removed below, table now 36
+shows / 38 gap-slots.
+
+---
+
 **Sixteenth full weekly sweep, 2026-10-27 tick (cloud march, Rule 1a).** 6
 `scout` batches (≤12 shows each) covered every one of the 68 catalogued
 shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
@@ -1757,7 +1784,6 @@ new-show creation is locked to the biweekly show-add clock.
 | the-challenge | 41/42 | 1* |
 | bachelor | 29/30 | 1* |
 | american-idol | 24/25 | 1* |
-| rhoc | 19/20 | 1* |
 | hells-kitchen | 24/26 | 2* |
 | dragrace | 18/19 | 1* |
 | dragrace-allstars | 11/12 | 1* |

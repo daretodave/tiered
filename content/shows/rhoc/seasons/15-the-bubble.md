@@ -2,7 +2,7 @@
 show: rhoc
 number: 15
 title: "The Bubble"
-canonical_position: 19
+canonical_position: 20
 location: "Newport Beach, California"
 host: Andy Cohen
 premiere_date: "2020-10-14"

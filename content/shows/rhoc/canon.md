@@ -1,13 +1,13 @@
 ---
 show: rhoc
 editor: tiered.tv editor
-last_revised: 2026-07-13
+last_revised: 2026-10-27
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. All nineteen seasons of RHOC ranked here — the founding Coto de Caza era through the revival era's current run. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
+meth_who_p: "tiered.tv's editor. All twenty seasons of RHOC ranked here — the founding Coto de Caza era through the revival era's current run. The ranking weighs how well each season used the show's social architecture: the gated-community world, cast economic register, and the setting that gave the franchise its identity before the format had a name."
 meth_how_h: "How I weigh it"
 meth_how_p: "Originator status doesn't automatically confer quality. Seasons are weighed on what they did with the format — whether the social world generated genuine pressure or coasted on novelty, whether the casting carried the episodes or the production filled around it. The OC setting is a constant; the question is always whether it earns its keep."
 meth_when_h: "When I revisit"
-meth_when_p: "All nineteen seasons are seeded here — the founding era through the revival era. The ranking covers the full run to date; the order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
+meth_when_p: "All twenty seasons are seeded here — the founding era through the revival era. The ranking covers the full run to date; the order is a snapshot, held with confidence. I'm not claiming to be objective. I'm trying to be honest."
 tier_s_blurb: "Seasons where the OC social world functions as genuine pressure system — casting confident, format fluent, the setting doing real narrative work."
 tier_a_blurb: "Seasons where the Orange County architecture works — cast chemistry with stakes, the gated-community premise running with purpose and clarity."
 tier_b_blurb: "Solid seasons running the format competently — watchable, with enough genuine social texture to earn their place, even when the casting or situation wasn't at peak pressure."
@@ -174,10 +174,18 @@ community_rank_hint: rank=18 delta=0 sentiment=hold
 
 Season eighteen continues the revival-era configuration with Katie Ginella joining an ensemble that has settled into its social geometry. The Shannon Beador and Tamra Judge dynamic that structured season seventeen remains the show's central axis, and the production runs that architecture competently across the season. The cast knows its own patterns well enough to generate credible friction. The season is solid and watchable — the show running a capable configuration without pushing the format to new pressure. Honest, middle-tier television that belongs in the lower half of the canon without embarrassment.
 
+## 20. The Homecoming
+
+tag: The format's two biggest levers in one season — pulled, but not fully cashed in.
+slot_argument: Vicki Gunvalson's return and Carmella Garcia's debut are the revival era's two biggest levers, but reception points to underuse. Ranks above S15's constrained production; below every other revival-era entry on execution.
+community_rank_hint: rank=19 delta=new sentiment=hold
+
+Season twenty stacks the revival era's two biggest levers into one run: Vicki Gunvalson back as a full-time housewife for the first time since season thirteen, and Carmella Garcia stepping in as the new full cast member after Katie Ginella's exit. Either change alone would be the year's headline. Together they promise the format's sharpest configuration since Heather Dubrow's own comeback season, but the execution doesn't fully cash that in — critical response points to slower pacing and storylines that repeat rather than build. Above the pandemic-constrained season fifteen, where the limits were never a choice. Below every other revival-era season that used its premise more completely.
+
 ## 15. The Bubble
 
 tag: The most constrained production in the show's run — pandemic context shapes everything.
 slot_argument: Last in the canon. The COVID bubble production compresses the social world the format depends on, and the constrained geography limits what the cast can do. A capable cast in an impossible context — the constraints are the story.
-community_rank_hint: rank=19 delta=0 sentiment=hold
+community_rank_hint: rank=20 delta=0 sentiment=hold
 
 Season fifteen is the franchise's most constrained production: filmed under pandemic restrictions at a Newport Beach resort, the cast confined to tighter geography than any prior Orange County season. The bubble setting limits the spontaneous movement and outside-world texture that give the format its social range — the show runs best when the Orange County world is open, and this season starts with it closed. The cast generates moments of genuine chemistry. But the production context defines the season more than the cast does, and the format can't fully recover from the constraint. Last in the canon, honestly placed.
