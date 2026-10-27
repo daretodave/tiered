@@ -1,155 +1,152 @@
-# DIGEST — 2026-10-26
+# DIGEST — 2026-10-27
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**The loop has been down for ~20 hours.** Every cloud `march`
-tick since 2026-10-25T20:41:31Z (5 in a row, through tonight's
-15:04 UTC attempt) has crashed in under a minute — before any
-agent work even starts — because GitHub's `ubuntu-latest` runner
-now resolves to Ubuntu 26.04 and the pinned `@playwright/test`
-(resolves to `1.60.0`) refuses to install Chromium on it:
-`Error: ERROR: Playwright does not support chromium on
-ubuntu26.04-x64`. The nightly breadth run (`e2e-full`,
-2026-10-26T00:58Z) died on the identical line. This is not a repo
-regression — it's GitHub's runner image outrunning Playwright's
-distro-support table, and it's hitting other repos across GitHub
-this week too. Confirmed fix exists and is cheap: **Playwright
-1.61.0 added Ubuntu 26.04 support**. Filed HIGH in
-`plan/AUDIT.md` with the exact fix (bump `@playwright/test` +
-`@axe-core/playwright` in `apps/e2e/package.json`, re-lock,
-re-verify) — unlike the still-open 2026-10-15 usage-cap row, this
-one is a plain dependency bump, not a workflow-file edit, so it
-does **not** need the `workflows` OAuth scope the loop's token
-lacks. It should be shippable by the very next `/iterate` or
-`/march` tick with no human intervention required. Last ship
-before the outage: 2026-10-25T18:40:53Z (commit `35f58e9b`,
-closing pass 192's HIGH critique finding). Today's 2026-10-26
-season-sweep (`plan/CADENCE.md` Rule 1a, due today) has not run —
-nothing can complete `pnpm verify` while this sits open.
+**The loop recovered and then had a very big day.** Last night's
+digest closed on a 20-hour CI outage (Playwright couldn't install
+Chromium on GitHub's new Ubuntu 26.04 runner image) with a
+confirmed, in-permission fix queued. That fix (`@playwright/test`
+1.60→1.64) landed first thing this morning and the loop has been
+green since — 9 of the 11 scheduled `march` ticks since last
+digest shipped, 2 isolated crashes cleared on retry with no
+recurrence. Once unblocked, the loop didn't just catch up, it
+restructured: the **nexus v2 upgrade merged** (plan moves from
+flat phases to specs+chunks, PR #826), the owner set **`Improve:
+bold`** the same window, and a same-day `/expand` pass caught and
+fixed a schema gap — the ~23 legacy v1 candidates migrated into
+the new `Pending` list weren't visible to the new `Promote: aged`
+tooling at all. They are now, and that surfaced something worth a
+human look tonight: 8 candidates already clear the aged-promotion
+bar (floor 6.0, 21+ days old), top of the stack scoring 9.4, but
+every cloud checkout lacks the `.owner` marker — so
+`promote.mjs pick` can only `ask`, never auto-promote. The valve
+is open; only a local `/oversight` session can actually turn it.
+Content-wise: rhoc fully drained to 20/20 (Season 20 "The
+Homecoming" filed + canon rebased), the 16th weekly season sweep
+found 2 new renewals (survivor S52, below-deck-mediterranean S12),
+and critique pass 193 filed a fresh HIGH — rhoc's new Homecoming
+page states Vicki Gunvalson's return gap two different ways
+("13 seasons away" vs. "since season thirteen") — still open and
+the top target for the next tick.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 10-25 14:33–15:18 | march | success — critique: pass 192, 3 findings (1 high, 1 med, 1 low) |
-| 10-25 17:51–18:42 | march | success — content: fix stat-tile caption bare-restatement across 4 shows — closed pass 192's HIGH |
-| 10-25 20:41–20:42 | march | **failure** — Playwright/ubuntu26.04 install crash begins |
-| 10-25 23:07–23:08 | march | **failure** — same cause |
-| 10-26 01:42–01:43 | march | **failure** — same cause |
-| 10-26 00:58 | e2e-full (breadth) | **failure** — same cause, new "Recurred" comment on issue #636 |
-| 10-26 07:40–07:41 | march | **failure** — same cause |
-| 10-26 15:04–15:05 | march | **failure** — same cause, 5th in a row |
-| 10-26 ~16:50 | night | this tick — digest: 2026-10-26 |
+| seven_day utilization | — | unknown (no cached reading) |
+| 10-26 20:44–20:45 | march | **failure** — Playwright/Ubuntu-26.04 Chromium crash continuing from last digest |
+| 10-27 00:13–00:23 | march | success — Playwright bumped to 1.64 (closes the outage) + a security dependency pass (next, vitest, zod, postcss, vite) |
+| 10-27 00:37–02:04 | march (two overlapping ticks) | success — big catch-up batch: rhoc Season 20 "The Homecoming" filed + canon rebased + drained to 20/20; 16th weekly season sweep (2 new gap rows, net 36 shows/38 slots); Amazing Race S39 + The Challenge S42 "Cutthroat" backfilled; the-voice S22-30 corrected against the real NBC run; one themed list extended; a community rank-% header fix; a bachelor/grant-ellis fact fix; e2e vote-spec state isolation fixed; e2e-full sharded across 5 jobs |
+| 10-27 02:04–02:40 | march | success — nexus v2 upgrade merged (PR #826: specs+chunks); `Improve: bold` set by the owner; night shift given its own concurrency group; setup-action fix |
+| 10-27 02:22 | march | **failure** — isolated crash, cleared on next retry, no recurrence |
+| 10-27 02:40–04:37 | march | success — caught up after the retry |
+| 10-27 03:20–04:37 | march | success — expand pass 76: field research filed 1 candidate; found and same-day fixed the v1-candidate schema gap (legacy candidates invisible to `Promote: aged`) |
+| 10-27 05:25–05:46 | march | success — critique pass 193 (4 findings: 1 HIGH, 2 MED, 1 LOW); a stuck-tick-retries-with-nothing-ready bug fixed; a cadence cron-line-with-trailing-comment parsing bug fixed |
+| 10-27 10:36–12:43 | march (3 ticks) | success — CI scheduling hardening (march now fires at :07/:47 off the top of the hour; chained/retried ticks now reach the model under the github-actions bot identity; the cloud Bash ceiling raised to an hour for long foreground gate legs); Rule 3 review batch (4 themed lists re-reviewed, no factual drift) |
 
-2 of 7 scheduled march windows in the full lookback produced a
-commit; the other 5 — every single tick since 20:41:31Z — crashed
-before doing any work. Each crash auto-filed a "Recurred" comment
-onto issue #565 (now 246 comments on a "Cloud march tick crashed"
-thread open since 2026-07-12) — the 14-day title-match dedup
-correctly found a same-titled open issue and appended rather than
-filing fresh, but #565 now carries a diagnosis for an unrelated
-root cause from July. That's a known, already-tracked dedup
-limitation (candidate #32's history) — not re-filed tonight.
+## Shipped
 
-## The saga
-
-**Season-fill (Rule 2):** unchanged at **35 shows / 37
-gap-slots** since the 2026-10-19 sweep (15th full pass), all
-rows starred confirmed-but-unaired. Today's 2026-10-26 sweep
-(due per `plan/CADENCE.md`'s 7-day clock) has not run and cannot
-run until the CI outage clears — it needs a full `pnpm verify`
-pass same as any ship.
-
-**Rule 3 / critique:** one real content ship landed before the
-outage — the pass-192 HIGH (stat-tile caption bare-restatement
-across 4 season files: traitors, dancing-with-the-stars,
-big-brother, below-deck-down-under) was fixed same-window
-(commit `35f58e9b`). That is the last commit the loop has
-produced. Pass 192 itself (commit `89c285a7`, 2026-10-25) also
-surfaced one fresh MED (below-deck-down-under's canon rationale
-duplicated verbatim between season page and show page) and one
-LOW (host name dropped to "Captain Jason" in one panel) — both
-still open, untouched since filing, because every tick since has
-died before reaching any ship logic.
-
-**Velocity vs. the three bearings rules:** total standstill since
-20:41:31Z yesterday. Zero seasons drained, zero shows scaffolded,
-zero critique findings closed, zero list extends — not because
-any rule is starved of targets (Rule 3 has a live pending HIGH
-sitting untouched), but because the CI gate itself is broken and
-nothing can get through `pnpm verify` to ship at all. This is a
-different failure shape than prior digests' "Rule 2 starved,
-Rule 3 covering" — tonight is "every rule blocked by infra," full
-stop.
+- **CI outage closed.** `@playwright/test` 1.60→1.64 restores
+  Chromium installs on GitHub's Ubuntu 26.04 runners — last
+  night's HIGH `plan/AUDIT.md` row, now ticked `[x]` (green for
+  10+ commits since).
+- **Nexus v2 upgrade** (PR #826): the plan moves from flat phases
+  to specs+chunks. `Improve: bold` set by the owner the same
+  window; the night shift gets its own concurrency group.
+- **Content:** rhoc fully drained (Season 20 "The Homecoming"
+  filed, canon rebased, frontmatter bumped 19→20 seasons);
+  Amazing Race S39 + The Challenge S42 "Cutthroat" backfilled;
+  the-voice S22-30 corrected against the real NBC run (issue
+  #762 lineage); one themed list extended; 4 Rule 3 ledger rows
+  re-reviewed with no drift found.
+- **16th weekly season sweep:** 2 new gap-table rows — `survivor`
+  (S52 renewed/filmed, no premiere date) and
+  `below-deck-mediterranean` (S12 renewed). Net: 36 shows / 38
+  gap-slots, every row starred confirmed-but-unaired.
+- **critique pass 193:** 4 fresh findings on rhoc's new Homecoming
+  page — 1 HIGH (Vicki Gunvalson's return gap stated two ways:
+  "13 seasons away" vs. "since season thirteen"), 2 MED
+  (near-verbatim fact restatement across sections; a canon
+  rationale re-derives the body prose above it), 1 LOW (HOST stat
+  caption bare-restates its own value).
+- **expand pass 76:** field research filed 1 candidate
+  ("graduated spoiler-risk labeling"); found and same-day fixed
+  the schema gap keeping ~23 legacy v1 candidates invisible to
+  `promote.mjs`.
+- **Reliability:** e2e vote specs no longer share mutable state;
+  `e2e-full` sharded across 5 jobs; a tick that lost background
+  work no longer retries when nothing is actually ready; a
+  cadence cron-line-with-trailing-comment parsing bug fixed.
 
 ## Queues now
 
-- **CADENCE gap table:** 35 shows/37 gap-slots, unchanged since
-  2026-10-19. 2026-10-26 sweep is due but blocked.
-- **plan/CRITIQUE.md:** last pass 192 (commit `89c285a7`,
-  2026-10-25T15:15Z), 25h+ stale — next pass is blocked behind
-  the same CI outage. **67 pending** (1 HIGH, 39 MED, 27 LOW).
-  The 1 pending HIGH (below-deck-down-under four-way restatement,
-  pass 192) is the next target the moment a tick can ship again.
-- **plan/PHASE_CANDIDATES.md:** last pass 75 (commit `c6ca5335`,
-  2026-10-24), 2 days old, flat — 41 candidates filed total (#1–41),
-  ~31 still sit in "Considered" awaiting `/oversight` promotion;
-  top-scored unchanged from last digest: #28 (8.7, stat-tile
-  invariant), #25 (8.3, canon-echo gate), #34 (6.6, e2e sharding).
-- **plan/AUDIT.md:** 1 new HIGH filed tonight (this CI outage).
-  Other open rows unchanged: the standing season-fill row, the
-  the-voice corruption HIGH (#762, frozen, needs-user), the
-  2026-10-15 usage-cap-outage HIGH (needs-user-call, no
-  recurrence since), the heartbeat false-positive LOW, two
-  content-hygiene LOWs.
-- **Open `triage:needs-user`:** 9 (unchanged, mostly stale
-  June–September crash/night-digest issues). **`triage:
-  loop-queued`:** 5 (unchanged, Aug–Sept, includes #636 — the
-  e2e-full breadth tracker, which picked up tonight's recurrence).
-- **Ledger file sizes:** `plan/LISTS.md` 1.31MB (flat).
-  `plan/AUDIT.md` 1.25MB (+1 HIGH row tonight). `plan/CRITIQUE.md`
-  897KB (up from 889KB — pass 192's net new findings).
-  `plan/PHASE_CANDIDATES.md` 474.5KB (flat).
+- **plan:** 0 specs, 0 chunks left, 0 held — the v2 upgrade
+  landed with an empty table. Building is idle; the AUDIT/
+  CRITIQUE/CADENCE maintenance queues are carrying the loop.
+- **plan/AUDIT.md:** 1 pending (the standing Season-fill drain
+  row — stays open by design until the CADENCE gap table reads
+  zero; every row is currently starred/unaired).
+- **plan/CRITIQUE.md:** 71 pending, last pass 16h ago (pass 193,
+  commit `514b6d8f`).
+- **plan/CANDIDATES.md:** 21 pending (20 >21d), oldest 167d.
+  Support (fix-all): 0 open user issues · first response none (0
+  opened in 7d) · close 2191.2h mean (6 closed in 7d).
+- **Candidate cap:** 15 (current count 21, 6 over) — no cuts
+  since the last digest (`promote.mjs cuts --since 2026-10-26` →
+  none); the cap-cut sweep hasn't run this window.
+- **Open `triage:needs-user` / `needs-user` / `triage:loop-queued`
+  / `loop-queued`:** 0 across all four labels. Only 2 open issues
+  total (#827 content gap, #828 critique-filed HIGH), neither
+  flagged for a human call.
+- **data/BACKLOG.md:** no data-layer backlog file exists.
+- **Deploy:** ready at HEAD `4854d01`.
+- **CADENCE gap table:** 36 shows / 38 gap-slots, every row
+  starred confirmed-but-unaired as of today's sweep + drain.
+- **Breadth (`e2e-full`):** green — latest run
+  (2026-10-27T03:36–04:35Z) passed; read, not re-run, per the
+  standing rule for this tick.
+- **seven_day utilization:** unknown (no cached reading).
 
 ## Needs you
 
-- **CI outage is the priority — but should NOT need a human
-  hand.** The fix (bump Playwright to `^1.61.0`) is a normal
-  dependency change within the loop's existing write permissions.
-  Flagging here only because every hour it sits open is an hour
-  of zero velocity and a red breadth gate; if the next `/iterate`
-  or `/march` tick doesn't pick it up as the top-scored AUDIT row
-  (score 6.3, now the highest-scored open bug), that itself would
-  be worth an `/oversight` look.
-- **the-voice content corruption — still open, needs-user,**
-  unresolved since 2026-07-26 (issue #762, `plan/AUDIT.md` HIGH
-  row, phase candidate #36). No change this window.
-- **`/oversight` backlog — still ~105+ days since last
-  promotion** (2026-07-12). ~31 phase candidates sit in
-  "Considered," two scoring 8+ and ready to ship for months.
-- **2026-10-15 usage-cap outage row** — still open
-  (needs-user-call, same `workflows`-scope wall as this outage's
-  durable fix would hit if a `runs-on` pin were chosen instead of
-  the Playwright version bump). No recurrence since.
+- **oversight needed: candidate queue silting (20 pending >21d,
+  oldest 167d).**
+- **`Promote: aged` is live (`Improve: bold`, set today) but the
+  valve can't turn itself from the cloud.** 8 Pending candidates
+  already clear the floor (6.0) and the age bar (21d): top of the
+  stack is `[score 9.4] Show canon completeness lax→strict gate`
+  (proposed 2026-06-15, 134d old). Every cloud checkout lacks the
+  `.owner` marker (`scripts/owner.mjs`), so `promote.mjs pick`
+  returns `ask` instead of `pick` — this is the intended trust
+  boundary, not a bug, but it means the dial's promise ("the loop
+  pushes past the plan as far as it can justify") only actually
+  fires from a local, owner-mode `/oversight` session.
+  **auto-promoted none, 8 awaiting.**
+- No `escalate #N` rows (0 open user issues), no blocked specs
+  (`Held` lane empty), no open needs-user issues, no
+  `motion stalled` (this week already clears the floor), no
+  `rotate` rows (0 secret-audit events).
 
 ## Today's intent
 
-1. **Unblock the loop first.** Ship the `@playwright/test`
-   version bump (`plan/AUDIT.md` HIGH row filed tonight) — nothing
-   else can ship until `pnpm verify` can complete a clean e2e
-   install again.
-2. Once unblocked: the overdue 2026-10-26 season-sweep
-   (`plan/CADENCE.md` Rule 1a).
-3. Then: the sole pending HIGH critique finding (below-deck-down-
-   under's Canouan four-way restatement, pass 192) per the
-   standing redirect order.
+1. The plan table is empty — the next ready work is the
+   CRITIQUE queue's one open HIGH: pass 193's Vicki Gunvalson
+   "13 seasons away" vs. "since season thirteen" contradiction on
+   rhoc's new Homecoming season page. That's the top target for
+   the next `/march` or `/iterate` tick.
+2. At the next local `/oversight` session: turn the
+   `Promote: aged` valve (8 candidates waiting, top-scored at
+   9.4) and weigh the broader candidate-queue silting (20 of 21
+   pending are over 21 days old).
 
 ## Tuning proposals
 
-None. Tonight's finding is a dependency-version bug with a
-confirmed, in-permission fix — it belongs in `plan/AUDIT.md` as a
-HIGH bug row (filed above), not a gate/cadence tuning proposal.
-No PHASE_CANDIDATES entry needed.
+None. Both of today's real gaps — the CI outage and the
+v1-candidate schema migration — were plain bugs with
+in-permission fixes, and both are already shipped. The
+`promote.mjs` "ask" behavior for non-owner (cloud) checkouts is
+working as designed (`scripts/owner.mjs`'s deliberate trust
+boundary), not a mistuned gate — nothing to propose.
