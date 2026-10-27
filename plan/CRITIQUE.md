@@ -1,9 +1,47 @@
 # CRITIQUE
 
-> Last pass: 2026-10-25 at commit 89c285a7
-> Pass count: 192
+> Last pass: 2026-10-27 at commit 72f85b9b
+> Pass count: 193
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 192 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 193 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/rhoc/season/the-homecoming`, `/shows/rhoc`, `/themes`,
+> `/themes/the-vote-left-the-phone-line` anon; `/`,
+> `/shows/rhoc/season/the-homecoming`, `/u/e2e`, `/shows/rhoc`,
+> `/themes/the-vote-left-the-phone-line` authed — rotated onto RHOC's
+> freshly-filed Season 20 ("The Homecoming," filed earlier the same
+> day's weekly-sweep tick), its show page, and a themed list extended
+> earlier today, distinct from pass 192's Below Deck Down Under
+> rotation except the stable `/u/e2e` anchor. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, title/description/canonical/
+> OG present on every capture); authed pass confirmed real auth (`@e2e`
+> chrome on every page). Strongest finding: the season page's eyebrow
+> states Vicki Gunvalson returns "after 13 seasons away" while the body
+> states she returns "for the first time since season thirteen" (twice)
+> — two different numbers for the same gap, a self-contradiction the
+> reader can't reconcile in their head, the same defect class as the
+> already-resolved rhony "eight seasons" vs "eight years" HIGH finding
+> — filed HIGH. Two more filed: the season page restates its headline
+> facts (Vicki's return, Carmella Garcia joining, Katie Ginella's exit,
+> mixed reception) near-verbatim across the eyebrow/lede/shape/take
+> sections, including an identical "Billed as..." opening clause twice
+> — MED; and the show page's canon.md Season 1/2 rationale
+> (`slot_argument`) re-derives the same "format gains operational
+> fluency" observation the body prose directly above it already states
+> — MED, the same canon-rationale-restatement class already fixed
+> elsewhere (below-deck/phuket, project-runway/new-york-2026,
+> love-is-blind/boston). One more filed: the season page's HOST stat
+> caption bare-restates the tile's own value before adding new
+> information ("Andy Cohen" / "Andy Cohen hosts the reunion") — LOW,
+> the same stat-tile-caption class already fixed across traitors/
+> dancing-with-the-stars/big-brother/below-deck-down-under, now a fresh
+> instance on a show not previously swept. Filed 4 new findings (1
+> high, 2 med, 1 low). No pending HIGH findings remained open ahead of
+> this pass.
+> Prior pass-192 summary follows. Pass 192 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -5065,6 +5103,46 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon] /shows/rhoc/season/the-homecoming — the eyebrow's "13 seasons away" and the body's "since season thirteen" give the reader two different numbers for the same gap
+
+- pass: 193 (commit 72f85b9b)
+- viewport: desktop
+- category: comprehension
+- observation: The page's eyebrow frames Vicki Gunvalson's return as coming "after 13 seasons away," while the body (in both "the shape of the season" and the canon-adjacent framing) says she returns "for the first time since season thirteen." Season thirteen to season twenty is a seven-season gap (or six seasons away, counting seasons 14-19) — not thirteen. The eyebrow appears to have conflated "season thirteen" (the season number) with a duration count, producing a self-contradiction a reader doing the math in their head will immediately catch. Same defect class as the already-resolved rhony "eight seasons" vs. "eight years" HIGH finding (pass 177).
+- evidence: frontmatter `eyebrow`: "Aired summer 2026 · Vicki Gunvalson returns full-time after 13 seasons away"; body: "Vicki Gunvalson returns as a full-time housewife for the first time since season thirteen."
+- suggested fix: Fix the eyebrow's duration figure to match the body's "season thirteen" reference — either "after 7 seasons" (20 − 13) or "after 6 seasons away" (the number of intervening seasons), whichever the editorial team verifies against the real season count. Content-only, `content/shows/rhoc/seasons/20-the-homecoming.md` (`eyebrow` field).
+- source: web-fetch (critique-pass-193, anon)
+
+### [MED] [anon] /shows/rhoc/season/the-homecoming — the season's headline facts restate near-verbatim across the eyebrow, lede, shape, and take sections, including an identical "Billed as..." opening clause twice
+
+- pass: 193 (commit 72f85b9b)
+- viewport: desktop
+- category: voice
+- observation: Vicki Gunvalson's return, Carmella Garcia joining, Katie Ginella's exit, and the "mixed reception" verdict are each stated with only light rewording across four separate fields/sections on the same page, including two sentences that open with the identical "Billed as..." construction.
+- evidence: `pull`: "Billed as the franchise's 20th-anniversary showcase, the season drew mixed reviews for pacing that slows more than it should — the marquee comeback promises more than the hour-to-hour delivers." Body: "Billed as a milestone season, the reception landed mixed — the format's biggest levers didn't fully pay off."
+- suggested fix: Let `pull` keep sole ownership of the "billed as / mixed reception" verdict. Rewrite the body's closing sentence to argue a distinct angle (e.g. what specifically underdelivered — pacing, screen time balance — rather than restating that reception was mixed) and drop the second "Billed as..." opener. Content-only, `content/shows/rhoc/seasons/20-the-homecoming.md`.
+- source: web-fetch (critique-pass-193, anon)
+
+### [MED] [anon] /shows/rhoc — the canon rationale for Seasons 1 and 2 re-derives the observation the body prose directly above it already makes
+
+- pass: 193 (commit 72f85b9b)
+- viewport: desktop
+- category: comprehension
+- observation: Season 2's `slot_argument` ("WHY THIS SLOT" callout) and its own body paragraph both independently state that the show gains "format fluency/confidence" in its second season — the same canon-rationale-restates-the-body defect class already fixed on other shows' canon pages (below-deck/phuket, project-runway/new-york-2026, love-is-blind/boston), not previously flagged on RHOC.
+- evidence: body: "The format confidence that the debut couldn't have yet arrives here in full: the production reads the cast's dynamics with fluency..."; `slot_argument`: "The format gains operational fluency here — more cast movement, higher dramatic stakes, and the show beginning to understand what it actually is."
+- suggested fix: Rewrite Season 2's `slot_argument` in `content/shows/rhoc/canon.md` to argue only the comparative canon-slot case against its neighbor (Season 1, rank 2) instead of re-stating the "format gains fluency" observation the body already owns.
+- source: web-fetch (critique-pass-193, anon)
+
+### [LOW] [anon] /shows/rhoc/season/the-homecoming — the HOST stat caption bare-restates the tile's own value before adding new information
+
+- pass: 193 (commit 72f85b9b)
+- viewport: desktop
+- category: voice
+- observation: The HOST stat tile's value is "Andy Cohen"; its caption opens by repeating that name verbatim before adding the one new fact (that he hosts the reunion). Same stat-tile-caption bare-restatement class already fixed across traitors/dancing-with-the-stars/big-brother/below-deck-down-under (pass 183/184/192); RHOC hadn't been swept for this yet.
+- evidence: `host`: "Andy Cohen"; `host_caption`: "Andy Cohen hosts the reunion".
+- suggested fix: Drop the restated name and lead with the new detail: `host_caption: "Hosts the reunion"`. Content-only, `content/shows/rhoc/seasons/20-the-homecoming.md`.
+- source: web-fetch (critique-pass-193, anon)
 
 ### [LOW] [anon] /themes — the pillar index has no dedicated `opengraph-image` route and falls back to the generic homepage OG card
 
