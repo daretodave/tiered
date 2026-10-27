@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-10-26
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched The Challenge since MTV's first RV pulled out in 1998, and I've replayed every founding-era season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable franchise fans agree on after a long argument. Not the only ranking — the one I'd defend in a group chat.
 meth_how_h: "How I weigh it"
@@ -25,7 +25,7 @@ era_bands:
     range: [2006, 2015]
   - key: returnee-era
     label: Returnee era
-    range: [2016, 2025]
+    range: [2016, 2026]
 ---
 
 # Editor's Canon — The Challenge
@@ -619,7 +619,7 @@ genuine rule sequence, not a reskinned trade — the same
 three-act discipline that separates it from its neighbors. It
 slots above Battle of the Bloodlines, which solves the same
 fresh-blood problem through blood relation rather than an open
-casting draft, and just below Spies, Lies & Allies, whose
+casting draft, and two slots above Spies, Lies & Allies, whose
 rookie-infiltration gamble runs longer and lands less cleanly.
 The New Threats side pulls from outside the franchise's usual
 pool, the same returnee-era question its neighbors ask, but the
@@ -627,13 +627,30 @@ pair mechanic's tighter structural spine earns it the higher
 slot. Santiago and the Andes widen the register further. The
 canon ranks it new and rising as the format keeps evolving.
 
+## 42. Cutthroat
+
+tag: The three-team format revived on a new platform — ranked provisionally on premise while the season airs.
+slot_argument: One slot below Vets & New Threats, since reviving a format is a smaller swing than a season-long points system; above Spies, Lies & Allies on the format it brings back. Provisional.
+community_rank_hint: rank=35 delta=0 sentiment=hold
+
+Cutthroat sits thirty-fifth as a provisional read on premise
+alone. The original three-team season is one of the canon's
+better-regarded format experiments, and this revival keeps its
+core: a draft builds the teams, team dailies drive nominations,
+and a single elimination round settles each week. The cast mixes
+long-time franchise names with players from Survivor, Big Brother,
+The Amazing Race and Love Island USA, and the move to Paramount+
+gives the season a fresh production home in Thailand. None of that
+is proof yet. The slot holds until the final airs, then the season
+earns its real position.
+
 ## 37. Spies, Lies & Allies
 
 tag: The heaviest rookie infiltration the franchise had attempted — a real casting gamble, unevenly carried.
 slot_argument: A spy-themed season that loads the cast with rookie Agents against veteran Operatives. The deepest fresh-blood injection the show had run, filmed in Croatia.
-community_rank_hint: rank=35 delta=new sentiment=hold
+community_rank_hint: rank=36 delta=new sentiment=hold
 
-Spies, Lies & Allies sits thirty-fifth as the deepest rookie
+Spies, Lies & Allies sits thirty-sixth as the deepest rookie
 infiltration the franchise had attempted. Loading the cast with
 newcomers against a veteran pool is a real casting gamble — the
 editing has to make the audience care about a class deeper in
@@ -648,9 +665,9 @@ ambitious casting, unevenly held together.
 
 tag: The franchise's first staged returnees-arrival season — the structural twist is the cast arrival itself.
 slot_argument: Newer players spend the opening stretch in the standard team format. Mid-season, a wave of Challenge champions arrives to take over. Filmed in Krabi, Thailand. The structural beat the franchise has revisited several times since.
-community_rank_hint: rank=36 delta=-7 sentiment=down
+community_rank_hint: rank=37 delta=-7 sentiment=down
 
-Invasion of the Champions sits thirty-sixth as the franchise's
+Invasion of the Champions sits thirty-seventh as the franchise's
 first attempt at staged returnees-arrival storytelling, with
 the structural twist being the cast arrival itself. Newer
 players spent the opening stretch running a standard team
@@ -666,9 +683,9 @@ it down as the rule-changing returnee seasons rank above it.
 
 tag: The fresh-blood sequel with a US-vs-UK frame added — iteration with the surprise already spent.
 slot_argument: The outside-pool premise returns with an international rivalry layered on top, filmed across Thailand. A sharper organizing hook on a familiar idea.
-community_rank_hint: rank=37 delta=new sentiment=hold
+community_rank_hint: rank=38 delta=new sentiment=hold
 
-War of the Worlds 2 sits thirty-seventh as iteration on a strong
+War of the Worlds 2 sits thirty-eighth as iteration on a strong
 idea with the surprise already spent. The fresh-blood premise
 returns with a US-versus-UK rivalry layered on top — a sharper
 organizing hook than the first run had, but the structural
@@ -684,9 +701,9 @@ made.
 
 tag: The third Rivals — structural argument established; the season reads as iteration rather than discovery.
 slot_argument: Third pairs-of-rivals season, filmed in Patagonia. The format the franchise built off Rivals' invention, now well into its iteration cycle.
-community_rank_hint: rank=38 delta=-8 sentiment=down
+community_rank_hint: rank=39 delta=-8 sentiment=down
 
-Rivals III sits thirty-eighth as the third pass at the
+Rivals III sits thirty-ninth as the third pass at the
 pairs-of-rivals format, and the season the structural surprise
 has fully run out. MTV cast another set of disliked-pair
 teammates, ran them through Patagonian terrain, and built the
@@ -702,9 +719,9 @@ original Rivals still earns the structural slot.
 
 tag: A grudge-premise individual game — steady execution on a familiar shape, the cast's history doing the work.
 slot_argument: An individual season where every player carried a vendetta, the editing leaning on prior-season history. Filmed across Gibraltar, Marbella, and Prague.
-community_rank_hint: rank=39 delta=new sentiment=hold
+community_rank_hint: rank=40 delta=new sentiment=hold
 
-Vendettas sits thirty-ninth as a competent grudge-premise
+Vendettas sits fortieth as a competent grudge-premise
 individual game that runs on a familiar shape. Every player
 walks in carrying a vendetta, and the casting lets the cast's
 accumulated history organize the hour rather than a new rule.
@@ -720,9 +737,9 @@ list rewards.
 
 tag: The weaker take on a strong concept — the team-grouping architecture didn't fully land the second time.
 slot_argument: Reprise of the S5 season-grouping idea, six teams of four grouped by their original Real World, Road Rules, or Fresh Meat season. Filmed in Turkey. The architecture works as a one-off, not as a repeat.
-community_rank_hint: rank=40 delta=-9 sentiment=down
+community_rank_hint: rank=41 delta=-9 sentiment=down
 
-Battle of the Seasons sits fortieth as the franchise's
+Battle of the Seasons sits forty-first as the franchise's
 second pass at the season-grouping architecture and the run
 that demonstrated the idea worked better as a one-off. MTV
 grouped six teams of four by their original Real World, Road
@@ -738,9 +755,9 @@ near-floor read on a confident but uneven season.
 
 tag: A casting filter, not a format — a thin hook on familiar grammar, near the floor of the canon.
 slot_argument: A cast of veterans who had never won, no rookies and no prior champions. The premise is a filter on the roster rather than a change to the game. Filmed in Croatia.
-community_rank_hint: rank=41 delta=new sentiment=down
+community_rank_hint: rank=42 delta=new sentiment=down
 
-Battle for a New Champion sits forty-first as the honest
+Battle for a New Champion sits forty-second as the honest
 bottom-of-canon read on the returnee era. The no-winners
 premise is a casting filter, not a format — the game runs on
 familiar grammar while the editing leans on the never-won frame
