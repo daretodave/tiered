@@ -47,14 +47,15 @@ export function CommunityRankList({
           Approval
           {!live ? <span className="col-bar-note"> (canon order)</span> : null}
         </span>
+        {/* The % column carries its own canon qualifier at every
+            breakpoint where it is visible (#809). On desktop the
+            "(canon order)" note sits under Approval, one column over,
+            so a bare "%" beside it read as a stray fragment; on mobile
+            the Approval column is hidden. "(canon)" stacks under the
+            % itself so the value column explains its own 0%s. */}
         <span className="col-pct col-r">
-          <span className="col-pct-mobile-label">
-            Appr.
-            {!live ? (
-              <span className="col-pct-mobile-note"> (canon)</span>
-            ) : null}{' '}
-          </span>
-          %
+          <span className="col-pct-mobile-label">Appr. </span>%
+          {!live ? <span className="col-pct-note">(canon)</span> : null}
         </span>
         <span
           className="col-trend col-r"

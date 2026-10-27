@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { CommunityRankList } from '../CommunityRankList'
@@ -221,7 +223,7 @@ describe('<CommunityRankList>', () => {
     )
     const pctHeader = container.querySelector('.col-pct')
     expect(
-      pctHeader?.querySelector('.col-pct-mobile-note'),
+      pctHeader?.querySelector('.col-pct-note'),
     ).toHaveTextContent('(canon)')
   })
 
@@ -233,6 +235,30 @@ describe('<CommunityRankList>', () => {
       <CommunityRankList entries={entries} showSlug="survivor" source="votes" />,
     )
     const pctHeader = container.querySelector('.col-pct')
-    expect(pctHeader?.querySelector('.col-pct-mobile-note')).toBeNull()
+    expect(pctHeader?.querySelector('.col-pct-note')).toBeNull()
+  })
+
+  it('ties the canon qualifier to the % column at desktop too, not only inside the mobile-only label (regression guard for #809, pass-157/158)', () => {
+    const entries = [row(1, 20, 'Heroes vs. Villains')]
+    const { container } = render(
+      <CommunityRankList entries={entries} showSlug="survivor" source="canon" />,
+    )
+    const pctHeader = container.querySelector('.col-pct') as HTMLElement
+    const note = pctHeader.querySelector('.col-pct-note')
+    expect(note).toHaveTextContent('(canon)')
+    // The note must not live inside .col-pct-mobile-label, which is
+    // display:none above 640px — that is what left desktop reading
+    // "Approval (canon order)" beside a bare, unexplained "%".
+    expect(note?.closest('.col-pct-mobile-label')).toBeNull()
+    expect(pctHeader).toHaveTextContent('%')
+
+    // And the stylesheet shows the note at base (desktop) width rather
+    // than gating it behind the 640px media query.
+    const css = readFileSync(
+      join(__dirname, '..', '..', '..', 'styles', 'canon.css'),
+      'utf-8',
+    )
+    const base = css.slice(0, css.indexOf('@media'))
+    expect(base).toMatch(/\.col-pct-note\s*{[^}]*display:\s*block/)
   })
 })
