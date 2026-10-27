@@ -11,7 +11,7 @@ eyebrow: "Miley Cyrus and Alicia Keys debut together — the chairs reset"
 lede: "Season eleven brought two coaching debuts at once — Miley Cyrus and Alicia Keys alongside Blake Shelton and Adam Levine. The dual arrivals gave the blind auditions different energy: four coaches with wider musical range than the show had assembled."
 pull: "Two new voices at the table — the coaching dynamic resets in a single season."
 format_summary: "Blind audition competition"
-format_caption: "Miley Cyrus and Alicia Keys debut as coaches"
+format_caption: "First real-time playoff vote, cast only through the app and Twitter"
 cast_size: 4
 cast_size_caption: "Coaches: Blake Shelton, Adam Levine, Miley Cyrus, Alicia Keys"
 host_caption: "Carson Daly — {seasonOrdinalWord} season at the helm"
