@@ -2,6 +2,12 @@ import { test, expect, type Page } from '@playwright/test'
 import { urlsForRun } from '../src/fixtures/sample-urls'
 import { pageReads, type PageReadAssertion } from '../src/fixtures/page-reads'
 
+// Sharding (#636): every test in this file is independent (no hooks,
+// no shared state), so it opts into parallel mode. With workers: 1
+// nothing changes locally, but the nightly E2E_FULL crawl can split
+// this file across `--shard` jobs instead of pinning it to one.
+test.describe.configure({ mode: 'parallel' })
+
 // Some console errors are unavoidable in dev / preview (font 404s in
 // hermetic mode, hot-reload chatter, etc.). Filter narrowly to keep
 // the gate signal high. Adjust only with a Decision recorded in the

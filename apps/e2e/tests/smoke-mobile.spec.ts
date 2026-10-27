@@ -2,6 +2,12 @@ import { test, expect } from '@playwright/test'
 import { urlsForRun } from '../src/fixtures/sample-urls'
 import { pageReads } from '../src/fixtures/page-reads'
 
+// Sharding (#636): every test in this file is independent (no hooks,
+// no shared state), so it opts into parallel mode. With workers: 1
+// nothing changes locally, but the nightly E2E_FULL crawl can split
+// this file across `--shard` jobs instead of pinning it to one.
+test.describe.configure({ mode: 'parallel' })
+
 // Mobile pass at 375px (iPhone SE) viewport. Every page that exists at
 // the desktop pass must reflow cleanly: no horizontal overflow, H1 in
 // view. Reflow violations fail the gate. Same JSON-LD assertions —
