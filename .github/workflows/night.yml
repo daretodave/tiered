@@ -16,7 +16,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: march              # one cloud writer at a time, ever
+  # Its own group, not march's: GitHub keeps one pending run per
+  # group and cancels it when the next queues, so a digest waiting
+  # behind a long tick was evicted by march's next cron (#763). The
+  # digest is notes-only and its push rebases on a rejection.
+  group: night
   cancel-in-progress: false
 
 jobs:
@@ -89,7 +93,8 @@ jobs:
 
                   Cloud-Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            5. One commit (digest: <YYYY-MM-DD>), push, exit. If the tick
+            5. One commit (digest: <YYYY-MM-DD>), push (rejected: git pull
+               --rebase, push again), exit. If the tick
                cannot ship cleanly, exit with a one-line note in this log
                — do not half-commit.
         env:

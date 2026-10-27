@@ -164,6 +164,12 @@ If any row scores ≥ 3.0:
 - Execute its procedure end-to-end.
 - Return.
 
+If ship-content has nothing to ship this tick (Rule 2 stalled on
+starred, unaired gaps and no Rule 3 list clears its bar), fall
+through: do not redirect into a CRITIQUE or AUDIT row from here.
+3b and `/iterate` own that work and score it against everything
+else (#758: the redirect starved `/iterate` for weeks).
+
 (tiered.tv's live content-velocity rules live in
 `plan/bearings.md` "Content velocity & editorial cadence".
 Per the 2026-07-12 oversight pivot: **new-show creation is

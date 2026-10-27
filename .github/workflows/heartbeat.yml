@@ -22,10 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_REPO: ${{ github.repository }}
     steps:
       - name: Cancel wedged runs (in_progress > 2h)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           now=$(date -u +%s)
           for wf in march night; do
@@ -47,6 +48,8 @@ jobs:
           done
 
       - name: Alarm if march has not completed a tick in 14h
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           last=$(gh run list --workflow march --status completed -L 1 \
             --json updatedAt --jq '.[0].updatedAt // empty')
