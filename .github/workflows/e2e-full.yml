@@ -23,14 +23,27 @@ concurrency:
 
 jobs:
   e2e-full:
+    # Sharded (#636). One job walked the whole catalog on a single
+    # Playwright worker and wall-clock grew linearly with it: 10,743
+    # tests took ~73 min by 2026-10, against a 75-min step ceiling, so
+    # most nights timed out at ~93%. Each shard now does its own setup
+    # (deps, Chromium, local Supabase, build) and runs 1/SHARDS of the
+    # crawl against its own hermetic DB. The big read-only crawl specs
+    # opt into `describe.configure({ mode: 'parallel' })` so Playwright
+    # can split them across shards at test granularity; the stateful
+    # specs stay whole files. At 5 shards the crawl is ~15 min per
+    # shard; when that creeps toward the step timeout, raise SHARDS
+    # (both the matrix list and the --shard denominator), do not bump
+    # the timeout.
+    name: e2e-full (shard ${{ matrix.shard }}/5)
     runs-on: ubuntu-latest
-    # Generous: cold full crawl is ~build 6m + ~2700+ specs ~20m +
-    # setup; sized well above that so a slow runner never false-fails
-    # and files a spurious issue.
-    timeout-minutes: 90
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false   # every shard reports; one red shard != stop the rest
+      matrix:
+        shard: [1, 2, 3, 4, 5]
     permissions:
       contents: read
-      issues: write   # failure -> tracking issue
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -82,15 +95,11 @@ jobs:
         run: pnpm build
         timeout-minutes: 20
 
-      - name: Exhaustive e2e crawl (E2E_FULL=1)
-        run: pnpm e2e:full
-        # 50 was breached three nights running (2026-07-06/09/10) at
-        # 92-97% complete — single-worker wall-clock scales linearly
-        # with the catalog (7,098 tests as of 2026-07-11). 75 leaves
-        # headroom inside the 90-minute job budget (~20-25 min of
-        # setup+build precede this step). If 75 stops being enough,
-        # the real fix is sharding the crawl, not another bump.
-        timeout-minutes: 75
+      - name: Exhaustive e2e crawl (E2E_FULL=1), shard ${{ matrix.shard }}/5
+        run: pnpm e2e:full --shard=${{ matrix.shard }}/5
+        # ~15 min per shard at 5 shards (2026-10). Ample headroom inside
+        # the 60-min job budget (~15 min of setup+build precede this).
+        timeout-minutes: 40
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
@@ -120,10 +129,22 @@ jobs:
           docker ps -q | xargs -r docker kill || true
           echo "drain complete"
 
+  report:
+    # One issue/comment per failed night, not one per shard: this job
+    # waits for every shard and runs only when at least one failed
+    # (a timed-out shard counts as failed).
+    name: file failure issue
+    needs: e2e-full
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write   # failure -> tracking issue
+    steps:
       - name: File an issue on failure
-        if: failure()
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
+          GH_REPO: ${{ github.repository }}   # no checkout in this job
         run: |
           # Staleness bound (candidate #32): only a RECENTLY-updated open
           # issue suppresses a fresh filing — a stale thread absorbed the
