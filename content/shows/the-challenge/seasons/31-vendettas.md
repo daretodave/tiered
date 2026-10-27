@@ -1,7 +1,7 @@
 ---
 show: the-challenge
 number: 31
-canonical_position: 39
+canonical_position: 40
 title: Vendettas
 host: TJ Lavin
 premiere_date: 2018-01-02
