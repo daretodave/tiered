@@ -406,7 +406,7 @@ Notes:
 **Mode: bold** (default).
 
 `/expand` runs at standard cadence and files candidates to
-`plan/PHASE_CANDIDATES.md`. `/oversight` promotes them to the
+`plan/CANDIDATES.md`. `/oversight` promotes them to the
 build plan. This balances autonomous growth (the loop notices
 gaps and proposes work) with human curation (only promoted
 candidates ship).
@@ -880,3 +880,42 @@ pnpm build:icons      # regenerate favicon set from public/sigil.svg
 supabase db push      # apply pending migrations to remote
 supabase db reset     # local: drop + replay all migrations + seed
 ```
+
+## Loop knobs
+
+`Improve: bold` (set 2026-10-27 via the owner): the loop pushes past
+the plan as far as it can justify. Every knob follows the dial
+unless it has its own line below (`nexus/customization/improvement-dial.md`;
+`node scripts/plan/improve.mjs` prints what resolves):
+
+- Support `fix-all`: a collaborator's bug or small enhancement is fixed
+  in the tick (or plotted Asap), not only triaged.
+- Promote `aged`: a Pending candidate that scores at the floor and has
+  aged promotes itself behind the `loop:veto` hold window.
+- Generators: the kit's three (issue-age, stale-candidate, motion).
+- Research `weekly`: `/march` reads the field on the topics below and
+  files at most 3 `field` candidates a run.
+- UI walk `both`: `/critique`'s reader and `/iterate` dimension H
+  browse the live site.
+- `loop: on`, `stall_action: promote`, cadence eager (march.yml's
+  ceiling of 60 stays).
+
+- Improve: bold
+- Research topics: reality TV season rankings and fan discourse; competition-show format changes and casting trends; community voting and ranking UX on fan sites; editorial list and canon features on entertainment sites; spoiler-safe coverage of airing seasons
+
+**UI:** `url https://tiered.tv`
+
+**UI routes:** `/`, `/shows`, `/lists`, `/shows/survivor`, `/shows/survivor?view=community`, `/shows/survivor/season/heroes-vs-villains`
+
+## Generators
+
+When no chunk is ready, `/march`'s stock `refill` lane runs each
+generator listed here (`nexus/concepts/generators.md`). No list
+line here hands the list to the improvement dial (bold: the kit's
+three, at the lines below, plus any project generator):
+
+<!--
+- issue-age · daily · target 3 · cap 5/wk
+- stale-candidate · weekly · target 2 · cap 2/wk
+- motion · daily · target 1 · cap 1/wk
+-->

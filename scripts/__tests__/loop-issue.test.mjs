@@ -7,11 +7,14 @@
 // pure-functional pieces (argv parsing, body builders, URL → number
 // extraction, phase title prefix matching) and label palette
 // invariants. The full open/close + phase find-or-reopen flow is
-// verified live on the first /iterate / /ship-a-phase tick after
+// verified live on the first /iterate / /ship-a-chunk tick after
 // merge.
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
+
+import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 import { __test } from '../loop-issue.mjs'
 
@@ -21,16 +24,20 @@ const {
   buildCloseCommentBody,
   buildPhaseResumeCommentBody,
   buildPhaseShippedCommentBody,
-  buildContentResumeCommentBody,
-  extractClosesNumber,
   phaseTitlePrefix,
   isPhaseMatch,
-  contentTitleSuffix,
-  isContentMatch,
   LABEL_PALETTE,
   VALID_SEVERITY,
   VALID_CATEGORY,
   VALID_SOURCE,
+  MIRROR_KINDS,
+  resolveSubcommand,
+  specTitlePrefix,
+  isSpecMatch,
+  buildMirrorTitle,
+  buildMirrorResumeCommentBody,
+  buildMirrorShippedCommentBody,
+  isMainModule,
 } = __test
 
 test('parseArgs parses standard flag/value pairs', () => {
@@ -138,6 +145,7 @@ test('LABEL_PALETTE has every label the open + phase-open paths apply', () => {
     'seo',
     'a11y',
     'perf',
+    'ui',
   ]
   for (const name of required) {
     assert.ok(LABEL_PALETTE[name], `missing palette entry: ${name}`)
@@ -145,64 +153,98 @@ test('LABEL_PALETTE has every label the open + phase-open paths apply', () => {
   }
 })
 
-test('extractClosesNumber reads a trailer on its own line', () => {
-  const message = 'feat: phase 12 — thing\n\n- did stuff\n\nCloses #405\n'
-  assert.equal(extractClosesNumber(message), 405)
-})
-
-test('extractClosesNumber returns null when no trailer is present (Phase 44 regression)', () => {
-  const message = 'feat: BRAND_SPELLING_STRICT invariant — phase 44\n\n- did stuff\n'
-  assert.equal(extractClosesNumber(message), null)
-})
-
-test('extractClosesNumber does not match "Closes #N" mentioned mid-sentence, only its own line', () => {
-  const message = 'docs: explain that pushing Closes #405 style trailers auto-closes issues\n'
-  assert.equal(extractClosesNumber(message), null)
-})
-
-test('extractClosesNumber picks the phase mirror number even when the trailer looks like a phase ordinal (Phase 46 regression shape)', () => {
-  // The Phase 46 bug wasn't a parsing bug — the wrong number was written
-  // into the trailer in the first place. This test just documents that
-  // extraction is number-agnostic; verify-close-trailer's title-prefix
-  // check (not this function) is what catches the wrong-number case.
-  const message = 'feat: colocated-test gate — phase 46\n\nCloses #46\n'
-  assert.equal(extractClosesNumber(message), 46)
-})
-
-test('contentTitleSuffix builds a " — <name>" suffix', () => {
-  assert.equal(contentTitleSuffix('90 Day Fiancé'), ' — 90 Day Fiancé')
-  assert.equal(contentTitleSuffix('Married at First Sight Australia'), ' — Married at First Sight Australia')
-})
-
-test('isContentMatch matches by title suffix, unit-type prefix agnostic', () => {
-  assert.equal(isContentMatch('content: season-batch — 90 Day Fiancé', '90 Day Fiancé'), true)
-  assert.equal(isContentMatch('content: new-show — 90 Day Fiancé', '90 Day Fiancé'), true)
-  assert.equal(isContentMatch('content: season-batch — Selling Sunset', '90 Day Fiancé'), false)
-})
-
-test('isContentMatch does not false-positive on a name that is a substring of another', () => {
-  // "Love Island" must not match a title actually about "Love Island UK".
-  assert.equal(isContentMatch('content: season-batch — Love Island UK', 'Love Island'), false)
-  assert.equal(isContentMatch('content: season-batch — Love Island', 'Love Island'), true)
-})
-
-test('buildContentResumeCommentBody mentions the unit name + ISO timestamp', () => {
-  const body = buildContentResumeCommentBody({ unit: 'Married at First Sight Australia' })
-  assert.match(body, /Married at First Sight Australia/)
-  assert.match(body, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/)
-  assert.match(body, /resumed/i)
-})
-
-test('LABEL_PALETTE has the loop:content label for the content-open path', () => {
-  assert.ok(LABEL_PALETTE['loop:content'])
-  assert.match(LABEL_PALETTE['loop:content'].color, /^[0-9a-f]{6}$/)
-})
-
 test('VALID_* enums match the documented brief', () => {
   assert.deepEqual([...VALID_SEVERITY].sort(), ['high', 'low', 'med'])
   assert.deepEqual(
     [...VALID_CATEGORY].sort(),
-    ['a11y', 'bug', 'content', 'data', 'docs', 'enhancement', 'perf', 'seo'],
+    ['a11y', 'bug', 'content', 'data', 'docs', 'enhancement', 'perf', 'seo', 'ui'],
   )
   assert.deepEqual([...VALID_SOURCE].sort(), ['audit', 'external', 'reader', 'user'])
+})
+
+// --- spec-open / spec-close (the v2 mirror verbs) ---------------------
+
+test('resolveSubcommand maps spec-open/spec-close to the spec kind', () => {
+  assert.deepEqual(resolveSubcommand('spec-open'), { action: 'open', kind: 'spec', deprecated: false })
+  assert.deepEqual(resolveSubcommand('spec-close'), { action: 'close', kind: 'spec', deprecated: false })
+})
+
+test('resolveSubcommand keeps phase-open/phase-close as deprecated aliases', () => {
+  assert.deepEqual(resolveSubcommand('phase-open'), { action: 'open', kind: 'phase', deprecated: true })
+  assert.deepEqual(resolveSubcommand('phase-close'), { action: 'close', kind: 'phase', deprecated: true })
+  assert.equal(resolveSubcommand('open'), null)
+  assert.equal(resolveSubcommand('spec-reopen'), null)
+})
+
+test('MIRROR_KINDS: spec reads --spec, titles "Spec NN — ", labels loop:spec', () => {
+  assert.equal(MIRROR_KINDS.spec.flag, 'spec')
+  assert.equal(MIRROR_KINDS.spec.word, 'Spec')
+  assert.equal(MIRROR_KINDS.spec.label, 'loop:spec')
+  assert.equal(MIRROR_KINDS.phase.flag, 'phase')
+  assert.equal(MIRROR_KINDS.phase.label, 'loop:phase')
+  assert.match(LABEL_PALETTE['loop:spec'].color, /^[0-9a-f]{6}$/)
+})
+
+test('spec-open args parse to the spec id, title, and body file', () => {
+  const flags = parseArgs(['--spec', '35', '--title', 'finish v2', '--body-file', 'b.md'])
+  assert.equal(flags[MIRROR_KINDS.spec.flag], '35')
+  assert.equal(flags.title, 'finish v2')
+  assert.equal(flags['body-file'], 'b.md')
+})
+
+test('specTitlePrefix is "Spec NN — " and isSpecMatch is anchored', () => {
+  assert.equal(specTitlePrefix('35'), 'Spec 35 — ')
+  assert.equal(isSpecMatch('Spec 35 — finish v2', '35'), true)
+  assert.equal(isSpecMatch('Spec 35 — finish v2', '3'), false)
+  assert.equal(isSpecMatch('Spec 3 — x', '35'), false)
+  assert.equal(isSpecMatch('Phase 35 — finish v2', '35'), false)
+})
+
+test('buildMirrorTitle prefixes a bare title and keeps an already-prefixed one', () => {
+  assert.equal(buildMirrorTitle('spec', '35', 'finish v2'), 'Spec 35 — finish v2')
+  assert.equal(buildMirrorTitle('spec', '35', 'Spec 35 — finish v2'), 'Spec 35 — finish v2')
+  assert.equal(buildMirrorTitle('phase', '16a', 'Phase 16a — E2E'), 'Phase 16a — E2E')
+  assert.equal(buildMirrorTitle('phase', '16a', 'E2E'), 'Phase 16a — E2E')
+})
+
+test('buildMirrorResumeCommentBody names the spec and the resume time', () => {
+  const body = buildMirrorResumeCommentBody({ kind: 'spec', id: '35' })
+  assert.match(body, /^Spec 35 work resumed at \d{4}-\d{2}-\d{2}T/)
+})
+
+test('buildMirrorShippedCommentBody names the spec, commit, and URL', () => {
+  const body = buildMirrorShippedCommentBody({
+    kind: 'spec',
+    id: '35',
+    commit: 'c429be9',
+    deployUrl: 'https://example.com',
+  })
+  assert.match(body, /^Spec 35 shipped in c429be9\./)
+  assert.match(body, /https:\/\/example\.com/)
+  assert.match(body, /Closes #N/)
+})
+
+test('phase builders stay byte-compatible through the alias', () => {
+  assert.equal(
+    buildPhaseShippedCommentBody({ phaseId: '7', commit: 'abc', deployUrl: 'u' }),
+    buildMirrorShippedCommentBody({ kind: 'phase', id: '7', commit: 'abc', deployUrl: 'u' }),
+  )
+})
+
+// --- entry-point detection --------------------------------------------
+
+test('isMainModule matches the script path, including Windows paths', () => {
+  const script = path.resolve('scripts', 'loop-issue.mjs')
+  const url = pathToFileURL(script).href
+  assert.equal(isMainModule(url, script), true)
+})
+
+test('isMainModule rejects a different file that shares the basename', () => {
+  const script = path.resolve('scripts', 'loop-issue.mjs')
+  const other = path.resolve('elsewhere', 'loop-issue.mjs')
+  assert.equal(isMainModule(pathToFileURL(script).href, other), false)
+})
+
+test('isMainModule is false when argv[1] is missing (imported by a runner)', () => {
+  assert.equal(isMainModule('file:///x/loop-issue.mjs', undefined), false)
 })

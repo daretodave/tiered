@@ -11,7 +11,10 @@ Argument handling:
 - `audit` → audit-only, dry-run; emit findings to `plan/AUDIT.md`,
   no fixes.
 - `<focus>` → bias toward `content-gaps`, `data-gaps`, `seo`,
-  `links`, `a11y`, `tests`, `perf`, `external-critique`.
+  `links`, `a11y`, `tests`, `perf`, `ui`, `loop`,
+  `external-critique`.
+- `careful` → no hand-off to `/expand` when nothing scores
+  3.0 or more (a careful `/march`; `skills/iterate.md` §6).
 
 Be bold about delegating:
 - `scout` for web research.
@@ -23,7 +26,7 @@ Be bold about delegating:
 `plan/AUDIT.md` `> Bias: <category>` line (set by `/oversight`)
 weights that category 1.5x.
 
-After commit + push + deploy:check, return cleanly. Don't stop
+After commit + land + deploy:check, return cleanly. Don't stop
 unless §6 (failure modes) applies.
 
 Argument: $ARGUMENTS

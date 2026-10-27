@@ -238,7 +238,7 @@ watch_list:
 ```
 
 Frontmatter for a themed list — **the 19f schema** (see
-`plan/phases/phase_19f_lists_schema.md` for the source). Every
+`plan/README.md` for the source). Every
 field below is required unless marked optional:
 
 ```yaml

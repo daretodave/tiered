@@ -25,7 +25,7 @@
 # `finale_date < today`. No duplicate (show, season) pair.
 #
 # Seeded 2026-05-19 from scout-cited public network / press
-# dates — see plan/phases/phase_39_calendar_finale_gate.md.
+# dates — see plan/README.md.
 
 finales:
   - show: survivor

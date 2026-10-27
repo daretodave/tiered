@@ -213,10 +213,10 @@ does the right thing end-to-end.
 
 | Skill | Source of truth | What it does |
 |---|---|---|
-| `ship-a-phase` | `skills/ship-a-phase.md` | Ship one phase from the build plan. |
+| `ship-a-chunk` | `skills/ship-a-chunk.md` | Ship one phase from the build plan. |
 | `ship-data` | `skills/ship-data.md` | Ship one Supabase migration or data ops change. |
 | `ship-content` | `skills/ship-content.md` | Ship one content unit (show, season blurbs, themed list, missing facade). Content velocity. |
-| `plan-a-phase` | `skills/plan-a-phase.md` | Refine the next phase brief, no code. |
+| `plan-a-spec` | `skills/plan-a-spec.md` | Refine the next phase brief, no code. |
 | `iterate` | `skills/iterate.md` | Audit + ship one improvement. |
 | `critique` | `skills/critique.md` | External-observer pass; writes to `plan/CRITIQUE.md`. |
 | `triage` | `skills/triage.md` | Issue review; routes to backlogs. |
@@ -228,10 +228,10 @@ does the right thing end-to-end.
 ### Invocation
 
 ```
-/ship-a-phase                 # ship next pending phase
+/ship-a-chunk                 # ship next pending phase
 /ship-data                    # ship next Supabase change (migration / RLS / data fix)
 /ship-content                 # ship next content gap (show / canon / theme / facade)
-/plan-a-phase                 # refine next phase brief
+/plan-a-spec                 # refine next phase brief
 /iterate                      # audit + ship one improvement
 /critique                     # external-observer pass
 /triage                       # review unlabeled issues
@@ -287,13 +287,13 @@ failure-mode condition rather than inventing a placeholder.
 | What tiered.tv is | `spec.md` |
 | Stack, conventions, defaults, voice | `plan/bearings.md` |
 | External-service config status | `setup/00_files.md` |
-| What ships next | `plan/steps/01_build_plan.md` |
-| How a phase is built | `plan/phases/phase_<N>_<topic>.md` |
+| What ships next | `plan/README.md` |
+| How a phase is built | `plan/README.md<N>_<topic>.md` |
 | How a skill works | `skills/<skill>.md` |
 | What a sub-agent does | `.claude/agents/<name>.md` |
 | Latest weaknesses | `plan/AUDIT.md` |
 | Critique queue | `plan/CRITIQUE.md` |
-| Phase candidates from `/expand` | `plan/PHASE_CANDIDATES.md` |
+| Phase candidates from `/expand` | `plan/CANDIDATES.md` |
 | Visual law (UI, brand, chrome, page composition) | `design/CLAUDE.md` then `design/tiered.tv · *.html` |
 | Design tokens | `design/tokens.json` |
 | Design compositions (page shells, interactions) | `design/compositions/screens.{jsx,css}`, `design/compositions/interactions.jsx` |

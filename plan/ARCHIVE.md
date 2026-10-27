@@ -1,0 +1,65 @@
+# Archive
+
+> Append-only: one line per finished chunk, added in the commit
+> that closes it. Never edited or reordered.
+
+---
+- 2026-05-12 · 01 · Bootstrap · 67a59737
+- 2026-05-12 · 02 · Content layer · 0bed2198
+- 2026-05-12 · 03 · URL contract + hermetic e2e infrastructure + `mint-e2e-cookie.mjs` · 134b45bc
+- 2026-05-12 · 04 · tiered.tv facade primitives · 9fd0c1df
+- 2026-05-12 · 04 · 4a: Composition primitives · d47734f4
+- 2026-05-12 · 05 · Three pioneer show facades · 05cec00d
+- 2026-05-12 · 06 · Show home page · dd07262f
+- 2026-05-12 · 07 · Editor's Canon page · 22c96bb8
+- 2026-05-12 · 08 · Community Rank page · 722edd3c
+- 2026-05-13 · 09 · Single season page · 82a83dcb
+- 2026-05-13 · 10 · Auth integration · 58d71224
+- 2026-05-13 · 11 · Vote backend · c049640c
+- 2026-05-13 · 12 · Comment backend · 3346d27a
+- 2026-05-13 · 13 · Moderation queue page `/mod` · 66ae771c
+- 2026-05-13 · 14 · Themed lists · 1ccd7953
+- 2026-05-13 · 15 · Search · 1171a259
+- 2026-05-13 · 16 · Home page hero · bfdb1d82
+- 2026-05-13 · 17 · SEO meta + sitemaps + structured data · 32d03485
+- 2026-05-13 · 18 · Performance + a11y polish · 706e9252
+- 2026-05-13 · 19 · `/critique` + `/triage` wiring · 1df60861
+- 2026-05-13 · 19 · 19a: Scorched earth · 34b5da3a
+- 2026-05-13 · 19 · 19b: Chrome + brand mark + bounded layout · a83970f3
+- 2026-05-13 · 19 · 19c: Show + season pages to spec · ef15cc9d
+- 2026-05-13 · 19 · 19d: Interaction primitives to spec · 7d0ef292
+- 2026-05-13 · 19 · 19e: Homepage to spec · d4d58529
+- 2026-05-13 · 19 · 19f: Themed-list schema refresh + curator updates · 3a8f0167
+- 2026-05-13 · 19 · 19g: Lists overview to spec · ac56bfef
+- 2026-05-13 · 19 · 19h: List detail page to spec · bcab7d35
+- 2026-05-13 · 20 · `/ship-content` skill landed + first show backfill · 5f508eda
+- 2026-05-13 · 21 · Show backfill round 2 · 301aeb73
+- 2026-05-13 · 22 · Show backfill round 3 · 5854a9a3
+- 2026-05-14 · 23 · Themed lists round 1 · 713e921e
+- 2026-05-14 · 24 · Themed lists round 2 · f9244808
+- 2026-05-14 · 25 · Canon iteration · b232052b
+- 2026-05-14 · 26 · 26a: Season data-shape evolution + existing-content backfill · 46d817cb
+- 2026-05-14 · 27 · Homepage rework to spec · 8ea38951
+- 2026-05-14 · 28 · `/shows` tier-list page to spec · 6b43fd48
+- 2026-05-14 · 29 · Inline search overlay; retire `/search` · 6f7af420
+- 2026-05-14 · 30 · Season detail page rework to spec · 0b40d5d6
+- 2026-05-14 · 31 · 31a: Schema, content-check invariants · 76fa56c8
+- 2026-05-15 · 31 · 31b: Canon data drain · c030823f
+- 2026-05-15 · 31 · 31c: Canon + Community page rebuild, show-home chip wiring · 51dcf574
+- 2026-05-16 · 33 · 33a: Show page consolidation core · f23cda37
+- 2026-05-16 · 33 · 33b: Era toolbar + season-page bolt-ons · 31137c5e
+- 2026-05-16 · 37 · Show + season design-fidelity nits · 48175f91
+- 2026-05-17 · 26 · Season backfill, full drain · a78fa774
+- 2026-05-17 · 32 · RSS feeds · 990b4cfe
+- 2026-05-17 · 34 · Era-band drain · 0cf7cdc2
+- 2026-05-17 · 35 · Live community data · 65bf4710
+- 2026-05-17 · 36 · Auth-state chrome + comment read/display · f7a2d0c6
+- 2026-05-17 · 38 · `/u/[handle]` real public profile · 81739d7c
+- 2026-05-19 · 39 · `content/calendar.yml` + finale-event detection hook · fd658a4e
+- 2026-05-19 · 40 · Cloud-runnable `/critique` via a Playwright reader path · 4fd9e001
+- 2026-05-22 · 41 · Cross-canon themed-list drain · d9ab6fa0
+- 2026-05-23 · 42 · Colocated-test coverage gate · 8d711965
+- 2026-05-24 · 43 · Editorial-copy honesty sweep + derived-count invariant · 5e218090
+- 2026-06-12 · 44 · Brand-spelling discipline · f218541f
+- 2026-06-12 · 45 · Editorial-cliché repetition guard · 9b0c3203
+- 2026-06-12 · 46 · Colocated-test coverage gate extended to `src/app/**` · 2e359ba0

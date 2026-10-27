@@ -1,6 +1,6 @@
 ---
 name: brander
-description: tiered.tv's asset renderer. Produces the SHARED brand mark (three horizontal bars) and the standard derived asset set — favicons, apple-touch-icon, Open Graph images, social cards, wordmark, svg2png conversions. Writes to public/ and app/opengraph-image.tsx. NEVER generates per-show illustration. Spawned by /ship-a-phase (phase 19b) and /iterate (asset findings).
+description: tiered.tv's asset renderer. Produces the SHARED brand mark (three horizontal bars) and the standard derived asset set — favicons, apple-touch-icon, Open Graph images, social cards, wordmark, svg2png conversions. Writes to public/ and app/opengraph-image.tsx. NEVER generates per-show illustration. Spawned by /ship-a-chunk (phase 19b) and /iterate (asset findings).
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

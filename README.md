@@ -25,18 +25,18 @@ The product spec is in [`spec.md`](./spec.md). The autonomous build loop is docu
 
 This project is shipped by a small set of autonomous skills, each invoked as a Claude Code slash command. Skills are **source-of-truth** files (under `skills/`) — the slash commands are thin pointers. Other AI clients can follow the skill files directly.
 
-### `/ship-a-phase`
+### `/ship-a-chunk`
 
-Ship the next pending phase of the [build plan](./plan/steps/01_build_plan.md) end-to-end: code, unit tests, e2e tests, commit, push. The Vercel deploy follows automatically.
+Ship the next pending phase of the [build plan](plan/README.md) end-to-end: code, unit tests, e2e tests, commit, push. The Vercel deploy follows automatically.
 
 ```
-/ship-a-phase                       # next [ ] phase
-/ship-a-phase phase 19c             # specific phase by number
-/ship-a-phase phase 19c dry-run     # plan + emit brief, no code commit
-/loop 30m /ship-a-phase             # autonomous, every 30 min
+/ship-a-chunk                       # next [ ] phase
+/ship-a-chunk phase 19c             # specific phase by number
+/ship-a-chunk phase 19c dry-run     # plan + emit brief, no code commit
+/loop 30m /ship-a-chunk             # autonomous, every 30 min
 ```
 
-Source: [`skills/ship-a-phase.md`](./skills/ship-a-phase.md)
+Source: [`skills/ship-a-chunk.md`](./skills/ship-a-chunk.md)
 
 ### `/ship-data`
 
@@ -64,16 +64,16 @@ Ship one content unit end-to-end (show, canon batch, themed list). The four cont
 
 Source: [`skills/ship-content.md`](./skills/ship-content.md)
 
-### `/plan-a-phase`
+### `/plan-a-spec`
 
-A thinking pass — refines the next phase brief without shipping code. Useful before a long autonomous run so `/ship-a-phase` has zero ambiguity.
+A thinking pass — refines the next phase brief without shipping code. Useful before a long autonomous run so `/ship-a-chunk` has zero ambiguity.
 
 ```
-/plan-a-phase                       # refine next pending phase
-/plan-a-phase phase 19c             # refine a specific phase
+/plan-a-spec                       # refine next pending phase
+/plan-a-spec phase 19c             # refine a specific phase
 ```
 
-Source: [`skills/plan-a-phase.md`](./skills/plan-a-phase.md)
+Source: [`skills/plan-a-spec.md`](./skills/plan-a-spec.md)
 
 ### `/iterate`
 
@@ -120,7 +120,7 @@ Source: [`skills/triage.md`](./skills/triage.md)
 
 ### `/expand`
 
-The **plan-expansion** pass. Reads accumulated signals (audit findings, critique findings, GH issues, spec drift, design landings, data growth) and proposes new phase candidates to [`plan/PHASE_CANDIDATES.md`](./plan/PHASE_CANDIDATES.md). `/oversight` reviews and promotes — the build plan grows when reality demands it, but never without a human gate.
+The **plan-expansion** pass. Reads accumulated signals (audit findings, critique findings, GH issues, spec drift, design landings, data growth) and proposes new phase candidates to [`plan/CANDIDATES.md`](./plan/CANDIDATES.md). `/oversight` reviews and promotes — the build plan grows when reality demands it, but never without a human gate.
 
 Posture is set to **bold** in `bearings.md`. Rate-limited (≥20 commits or ≥48h between passes). Caps at 3 candidates per pass — boldness is not flooding.
 
@@ -149,7 +149,7 @@ The outer dispatcher. Picks the right thing to do automatically:
 
 - unlabeled issues exist → behaves as `/triage`
 - critique due (rate-limited) → behaves as `/critique`
-- pending phase → behaves as `/ship-a-phase`
+- pending phase → behaves as `/ship-a-chunk`
 - pending data → behaves as `/ship-data`
 - pending content gap → behaves as `/ship-content`
 - expand due + bold posture → behaves as `/expand`

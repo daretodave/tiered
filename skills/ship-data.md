@@ -1,24 +1,5 @@
 # Skill: ship-data
 
-> **tiered.tv DB posture.** Per `plan/bearings.md` "Database
-> posture" and `agents.md` §8: tiered.tv v1 is an experiment.
-> The agent has full destructive authority on Supabase — drop
-> tables, drop indexes, truncate, rewrite migrations, drop the
-> entire database if a clean rebuild is the simplest path
-> forward. No confirmation required. The audit trail is git
-> (every migration is a committed file under
-> `supabase/migrations/`) and Supabase's daily backups (7-day
-> retention on free tier).
->
-> **tiered.tv's `ship-data` is Supabase-shaped.** Records live
-> in Postgres tables, not markdown files. Migrations are
-> versioned `.sql` files at `supabase/migrations/NNNN_<topic>.sql`.
-> Schema validation runs via `supabase db lint`. Loaders live
-> in `src/lib/db/<entity>.ts` returning typed query results.
-> Every dispatch SHOULD also consider whether `ship-content`
-> (markdown content gaps under `content/`) is the better
-> target — see `march.md` Step 3b vs 3b.5.
->
 > **Full autonomy.** Add, repair, or normalize one entity in the
 > project's data layer. Validate, commit (or upsert), confirm
 > deploy, return.
@@ -72,7 +53,7 @@ and skip `/ship-data` entirely. `/march` handles its absence.
   source schema), regenerate / migrate, proceed.
 - **Cross-reference broken → repair, don't ignore.** Create
   parent / vendor / referenced stubs in the same commit.
-- **Audit finds 50 problems → ship one fix per phase, not all
+- **Audit finds 50 problems → ship one fix per tick, not all
   at once.**
 
 ## 4. Provenance — AI-generated vs user-sourced
@@ -197,7 +178,7 @@ Pattern A:
 ```bash
 git add data/<entity>/<slug>.json [+ schema if changed]
 git commit -m "data: add <entity> <slug>"
-git push origin main
+# land per owner mode: skills/next/land.md §6
 ```
 
 Pattern B (external DB):
@@ -212,7 +193,7 @@ git commit -m "data: schema <entity> + insert <slug>
 Record inserted to DB. Migration: <file>.
 DB ID: <id>.
 "
-git push origin main
+# land per owner mode: skills/next/land.md §6
 ```
 
 The actual record lives in the DB; the commit captures intent
@@ -227,7 +208,7 @@ git commit -m "data: synced <entity> <slug> to <provider>
 
 External ID: <id>.
 "
-git push origin main
+# land per owner mode: skills/next/land.md §6
 ```
 
 Pattern D: combine.
@@ -302,11 +283,11 @@ Commit each category as its own commit.
 
 1. **Validation fails ≥3 times on same root cause.**
 2. **`pnpm deploy:check` fails ≥3 times** after a data ship.
-3. **`VERCEL_TOKEN` missing** (deploy:check exit 3).
+3. **`<PROVIDER_AUTH_TOKEN>` missing** (deploy:check exit 3).
 4. **External DB / SaaS unreachable.** Surface; the next tick
    retries.
 5. **Schema change requires migration of >20 records.** That's
-   a `/plan-a-phase` task; not bundled here.
+   a `/plan-a-spec` task; not bundled here.
 6. **AI-generated record has unverifiable factual claims** that
    scout can't cite. Mark `verified: false`, file as
    `[needs-user-call]` in audit, ship anyway with the unverified
@@ -329,11 +310,11 @@ data/schemas/<entity>.schema.json
 data/<entity>/<slug>.json
 <schema-package>/src/schemas/<entity>.ts  # only if extending schema
 
-# Validate + commit + push + deploy
+# Validate + commit + land + deploy
 pnpm data:validate
 git add <explicit files>
 git commit -m "..."
-git push origin main
+# land per owner mode: skills/next/land.md §6
 pnpm deploy:check
 ```
 
