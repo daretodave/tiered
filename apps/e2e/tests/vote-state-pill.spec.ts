@@ -100,11 +100,28 @@ async function setVote(page: Page, value: VoteValue): Promise<void> {
 let communityVoter: Awaited<ReturnType<BrowserContext['storageState']>> | null =
   null
 
+// An explicitly empty jar. The runner's `browser.newContext()` applies
+// the ambient `use` options, and in CI that carried the authed e2e
+// storageState into this hook — the "anon" seed vote was really the
+// authed user's, so the authed beforeEach reset wiped it and the
+// count read 0 (nightly e2e-full shard 5, run 40435126178).
+const EMPTY_JAR = { cookies: [], origins: [] }
+
 test.beforeAll(async ({ browser }) => {
-  const ctx = await browser.newContext()
+  const ctx = await browser.newContext({ storageState: EMPTY_JAR })
   try {
     const page = await ctx.newPage()
     await page.goto('/', { waitUntil: 'domcontentloaded' })
+    // The seed must be a genuinely separate anon voter, never the
+    // authed e2e user, or the authed tests' resets erase it.
+    const who = await page.evaluate(async (targetId) => {
+      const r = await fetch(
+        `/api/vote?targetType=season&targetId=${encodeURIComponent(targetId)}`,
+        { credentials: 'include' },
+      )
+      return await r.json()
+    }, SEASON_TARGET)
+    expect(who.signedIn, 'community seed voter must be anon').toBe(false)
     await setVote(page, 1)
     communityVoter = await ctx.storageState()
   } finally {
