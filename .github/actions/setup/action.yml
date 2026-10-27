@@ -1,0 +1,56 @@
+name: setup
+description: >-
+  The project's toolchain for a cloud tick: one place for it, used
+  by march.yml's owner job and its pull-request build job alike
+  (and night.yml). Adjust for your stack; keep it free of secrets.
+
+runs:
+  using: composite
+  steps:
+    # Moved from the v1 march.yml by nexus upgrade: the job's toolchain steps, verbatim.
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Set up Node 22
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
+
+    # Hermetic e2e cache. Phase 3 wires the harness; until then
+    # this step is a no-op (apps/e2e/ doesn't exist yet).
+    - name: Cache Playwright browsers
+      if: hashFiles('apps/e2e/package.json') != ''
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-${{ runner.os }}-${{ hashFiles('apps/e2e/package.json', 'pnpm-lock.yaml') }}
+        restore-keys: |
+          playwright-${{ runner.os }}-
+
+    - name: Install Playwright browsers (chromium only)
+      if: hashFiles('apps/e2e/package.json') != ''
+      shell: bash
+      run: pnpm e2e:install
+
+    # Supabase CLI for the hermetic e2e leg. Docker is pre-installed
+    # on ubuntu-latest; setup-cli adds the `supabase` binary. The
+    # playwright webServer chain in apps/e2e/playwright.config.ts
+    # then runs `supabase start` (idempotent — fast cache hit if
+    # we pre-start here) and `supabase db reset --no-seed` before
+    # `next start`. Skipped if supabase/ isn't on the branch yet.
+    - name: Install Supabase CLI
+      if: hashFiles('supabase/config.toml') != ''
+      uses: supabase/setup-cli@v1
+      with:
+        # Pinned (issue #416/#480) — see e2e-full.yml for rationale.
+        version: 2.106.0
+
+    - name: Pre-start Supabase containers
+      if: hashFiles('supabase/config.toml') != ''
+      shell: bash
+      run: supabase start
