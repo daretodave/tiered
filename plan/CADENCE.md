@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-10-19 | next due 2026-10-26 |
+| season-sweep | 7 days | 2026-10-27 | next due 2026-11-03 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,80 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Sixteenth full weekly sweep, 2026-10-27 tick (cloud march, Rule 1a).** 6
+`scout` batches (≤12 shows each) covered every one of the 68 catalogued
+shows, cross-checked against the filesystem (frontmatter `seasons:` vs.
+filed season files — zero mismatches this tick, every show's declared
+count equals its filed-season-file count, across all 68 shows).
+
+**Two genuine new gap-table rows.** `survivor` — Season 52 is already
+renewed and confirmed filmed (wrapped in Fiji as part of CBS's combined
+2026-27 renewal), Jeff Probst returning, no premiere date set yet (early
+estimates point to March 2027, low confidence). Added as `survivor |
+51/52 | 1*`. `below-deck-mediterranean` — Season 12 renewal officially
+announced 2026-08-06 (with a Summer House crossover), no premiere date
+yet. Added as `below-deck-mediterranean | 11/12 | 1*`. Neither show
+previously carried a row.
+
+**Recurring false positive, reconfirmed closed, not reopened.** `chopped`
+— a scout batch again surfaced third-party "Season 63/64" claims
+(IMDb/TMDB listings, a seasontracker.tv page). This is the exact
+streaming-"Volume"-branding source-confusion pattern investigated and
+resolved 2026-07-16 and re-flagged-and-closed on at least three
+subsequent sweeps (2026-08-02, 2026-08-09, 2026-10-11): both frontmatter
+and all 62 filed season files correctly sit at 62/62, cross-verified
+against Wikipedia + epguides.com episode dates in the original
+investigation. No reopening.
+
+**Flagged but NOT added — below the confirmed-renewal bar.**
+`too-hot-to-handle` — Netflix opened a public casting call for Season 7
+on 2026-08-14 (the first time the network has publicly promoted a THTH
+casting call since the show's Season 6 finale closed out the franchise
+in 2024). This is casting activity, not a confirmed renewal — the same
+bar that has kept `the-ultimatum` S5 and `bachelorette` S22 off the
+table in prior sweeps. Status stays `ended`; re-check next sweep for a
+formal Netflix renewal announcement or cast reveal.
+
+**One status-worth-watching item, reconfirmed with a firmer date, no
+table action.** `the-circle` — the Hulu revival (already carried at
+`7/8, 1*` since the prior sweep) now has a confirmed premiere: 2026-11-17,
+hosted by Tinx, five weeks of episodes through a 2026-12-18 finale,
+confirmed via Deadline 2026-10-21. Note updated from "targeting 2027" to
+the firm date; some trackers label this "Season 8," but the cast format
+has changed substantially (celebrity + everyday-player mix, live-ish
+audience voting) — whether it counts as a numbered franchise season is
+an editorial call left to whichever Rule 2 drain tick picks it up, not
+decided here.
+
+**Two cosmetic enrichments, no table or count change.** `rhoc` — Season
+20 (carried at `19/20, 1*`) has now fully aired: 16-episode finale "Mad
+Money" aired 2026-10-22. The row stays as-is; the frontmatter bump
+happens at drain time per standing practice. `rhonj` — Season 15
+(carried at `14/15, 1*`) now has a narrowed premiere window (December
+2026, exact date TBA) and a fully confirmed cast, per Reality Tea
+2026-10-21 — descriptive detail only, no count change.
+
+**Reconfirmed, no table action (same open items as prior sweeps).**
+`bachelorette` — Season 22 remains pulled by ABC with no rescheduled air
+date or formal cancellation found; stays out of the gap table pending an
+official ABC decision, same bar as every sweep since March 2026.
+`vanderpump-rules` — a separate Bravo limited series, "Vanderpump Rules:
+Lisa Las Vegas," premiered 2026-10-20; this is a distinct spinoff, not a
+numbered VPR season, and new-show creation is locked to the biweekly
+show-add clock — not catalogued. `jersey-shore` — the "Jersey Shore:
+Family Vacation" spinoff is ending its run on MTV after 9 seasons; this
+is out of scope for the original `jersey-shore` slug's count, which
+remains correctly at 6/6 ended.
+
+Net: gap table grows from 35 shows / 37 gap-slots to **37 shows / 39
+gap-slots** (2 genuine new rows, each 1*). Cross-grep clean across all 68
+shows (zero frontmatter/season-file drift). `pnpm content:check` re-run
+to confirm nothing new surfaced there either — 16 warnings, all inside
+the frozen `the-voice` S22-29 cluster (issue #762, `triage:needs-user`),
+untouched per standing instruction.
+
+---
 
 **Fifteenth full weekly sweep, 2026-10-19 tick (cloud march, Rule 1a).** 6
 `scout` batches (≤12 shows each) covered every one of the 68 catalogued
@@ -1712,6 +1786,8 @@ new-show creation is locked to the biweekly show-add clock.
 | love-island-uk | 13/14 | 1* |
 | rhobh | 15/16 | 1* |
 | traitors | 5/6 | 1* |
+| survivor | 51/52 | 1* |
+| below-deck-mediterranean | 11/12 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
@@ -3541,3 +3617,4 @@ No calendar or gap-table action.
 | 2026-10-14 | Rule 2 drain, not a sweep (love-is-blind S11 — fully filed, gap-slot removed) | 36 |
 | 2026-10-14 | Table correction, not a sweep (love-is-blind removal physically landed late + traitors [US] S6 physically inserted — net zero, one row swapped for another) | 37 |
 | 2026-10-19 | 0 (fifteenth full sweep, all 35 starred rows reconfirmed accurate across the full 68-show catalog; cross-grep clean; dragrace-uk BBC-cancellation and the-circle Hulu-move status items surfaced, no table action; below-deck-adventure conflicting signal reconfirmed closed, not reopened) | 37 |
+| 2026-10-27 | 2 (sixteenth full sweep, survivor S52 renewal + below-deck-mediterranean S12 renewal, both first-time confirmations and genuinely new rows; chopped's recurring "S63/S64" false positive reconfirmed closed, not reopened; too-hot-to-handle S7 casting call flagged but below the confirmed-renewal bar, not added; the-circle Hulu date firmed to 2026-11-17, rhoc S20 + rhonj S15 descriptive updates, no count change on either) | 39 |
