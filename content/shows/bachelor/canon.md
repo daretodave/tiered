@@ -94,11 +94,11 @@ community_rank_hint: rank=9 delta=new sentiment=warm-up
 Casting depth is the whole case for slotting Joey Graziadei this high. The field here reads more chemistry-forward than Ben Higgins's breakout modern-era cast a few slots up, and the limo line plays at a level of recruitment confidence the post-2016 run had been building toward without quite reaching. It doesn't out-argue Matt James's precedent-setting run just above it — a first is a first — but it beats every other modern season on cast alone. Eleven tight episodes and a three-stop international swing (Malta, Montreal, Tulum) keep the format from ever feeling padded. Jesse Palmer, three seasons in, handles the pacing with total ease. A season that earns its slot on personnel, not on what the format tried.
 
 ## 29. Grant Ellis
-tag: The franchise's second Black lead, and the fastest turnaround from contestant to Bachelor the show has staged.
+tag: The franchise's second Black lead, cast while his Bachelorette run was still fresh.
 slot_argument: Sits directly below Joey Graziadei's cast-first case — two casting precedents stacked in one run still can't outweigh a season built on chemistry alone.
 community_rank_hint: rank=10 delta=new sentiment=warm-up
 
-Grant Ellis sits at the exact point where the double casting-precedent case runs out of runway. Joey Graziadei's field one slot up wins on pure chemistry — the deepest cast the modern era has assembled — and that argument still beats a season built on stacked precedent alone. Juan Pablo Galavis, one slot down, holds a single first, and a clean single first still outlasts two stacked precedents compressed into the franchise's tightest runway. Nine episodes don't leave room to build the kind of cast depth Joey's season did. Edinburgh gives the travel run new ground, but new ground doesn't out-argue new chemistry. Tenth holds: below the cast-first case, just above the next first in line.
+Grant Ellis sits at the exact point where a casting-precedent case runs out of runway. Joey Graziadei's field one slot up wins on pure chemistry — the deepest cast the modern era has assembled — and that argument still beats a season whose headline is who got cast. Juan Pablo Galavis, one slot down, carries a precedent of his own, and the two firsts weigh close enough that the tighter-paced run here keeps the edge. The compact schedule is the ceiling: a short order doesn't leave room to build the cast depth Joey's season had. Tenth holds: below the cast-first case, just above the next first in line.
 
 ## 18. Juan Pablo Galavis
 tag: The franchise's first Latino lead — a casting precedent the show built a year of debate around.
