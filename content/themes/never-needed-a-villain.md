@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-08-04
+last_revised: 2026-10-26
 featured: false
 related:
   - best-villain-editing
@@ -80,8 +80,8 @@ entries:
     title: "A returning guest mentor treats the format like a shared project"
     blurb: "Marco Pierre White returns for a second straight dedicated week, an unusual distinction that reads as real investment rather than a one-off stunt, and the kitchen's whole register plays collegial rather than adversarial."
   - show: the-voice
-    season: 26
-    season_label: "S26 · The Duo"
+    season: 25
+    season_label: "S25 · The Duo"
     rank: 12
     title: "Two coaches occupy one chair, arguments and all, as a shared decision"
     blurb: "Dan + Shay's shared coaching seat turns the format's usual solo pitch into a genuine collaboration — two voices working out a recruiting call together instead of one coach selling a room on their own."

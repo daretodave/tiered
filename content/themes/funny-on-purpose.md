@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-08-01
+last_revised: 2026-10-26
 featured: false
 related:
   - played-it-straight
@@ -92,8 +92,8 @@ entries:
     title: "A new judge brings comedy-warmth to a seat built for tension"
     blurb: "Ellen DeGeneres joins the panel with a critique style built on humor rather than confrontation, a real departure for a judging seat that had always supplied the emotional counterweight. The comic register holds even as the rest of the panel's chemistry runs out."
   - show: the-voice
-    season: 27
-    season_label: "S27 · The Wild Card"
+    season: 26
+    season_label: "S26 · The Wild Card"
     rank: 14
     title: "The most eclectic panel yet tips the format toward spectacle"
     blurb: "Two new coaches' debut produces genuine comic unpredictability, but the entertainment value comes at the expense of competitive heat. The clearest case on this list of a season that stakes everything on the joke landing over the game."

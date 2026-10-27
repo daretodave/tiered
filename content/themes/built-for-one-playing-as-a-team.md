@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-10
+last_revised: 2026-10-26
 featured: false
 related:
   - the-judges-picked-a-side
@@ -66,8 +66,8 @@ entries:
     title: "A five-episode block pairs contestants up mid-season, then lets go."
     blurb: "A stretch called Hungry for Love teams contestants into dating-themed pairs for five hours, breaking the one-chef-per-basket premise the format has run since its first episode — before reverting for the season's final stretch."
   - show: the-voice
-    season: 26
-    season_label: "S26 · The Duo"
+    season: 25
+    season_label: "S25 · The Duo"
     rank: 10
     title: "One coaching chair holds two coaches for the first time in the format's run."
     blurb: "A country duo shares a single seat on the panel, making recruiting decisions together instead of alone. The season is remembered for the structural novelty more than the competitive heat it produced."

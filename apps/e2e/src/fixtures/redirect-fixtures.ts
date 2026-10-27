@@ -58,6 +58,10 @@ function buildSeasonRedirects(): SeasonRedirect[] {
 // e2e package intentionally has no @/ alias into src/.
 const SEASON_SLUG_ALIASES: Record<string, Record<string, string>> = {
   survivor: { 'heroes-villains': 'heroes-vs-villains' },
+  'the-voice': {
+    'the-anchor': 'the-reset',
+    'the-finale': 'battle-of-champions',
+  },
 }
 
 function buildSlugAliasRedirects(): SeasonRedirect[] {

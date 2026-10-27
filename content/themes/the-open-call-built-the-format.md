@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-09
+last_revised: 2026-10-26
 featured: false
 related:
   - best-premieres
@@ -74,7 +74,7 @@ entries:
     title: "The tryout hid the singer and the format never looked back"
     blurb: "Four coaches sat in spinning chairs with their backs to the stage, judging strangers on sound alone. The blind audition arrived fully formed in week one and became the format's whole identity."
   - show: the-voice
-    season: 27
+    season: 26
     season_label: "S27"
     rank: 11
     title: "Four mismatched ears made the blind audition a real gamble again"

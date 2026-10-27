@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-09-15
+last_revised: 2026-10-26
 featured: false
 related:
   - best-hosting
@@ -18,7 +18,7 @@ entries:
     season_label: "S24"
     rank: 1
     title: "The season with no founding-era coach left in any chair."
-    blurb: "Blake Shelton is gone, and for the first time there's no original-panel voice in the chairs at all. Reba McEntire and Chance the Rapper's simultaneous debuts force the blind auditions to make sense in a new way, and the format holds together anyway."
+    blurb: "Blake Shelton is gone, and for the first time there's no original-panel voice in the chairs at all. Reba McEntire's debut has to anchor a panel with no founding voice beside her, and the format holds together anyway."
   - show: masterchef-australia
     season: 12
     season_label: "S12 · Back to Win"

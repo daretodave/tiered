@@ -1678,7 +1678,6 @@ new-show creation is locked to the biweekly show-add clock.
 | show | filed/declared | gap |
 |---|---|---|
 | rhonj | 14/15 | 1* |
-| the-voice | 29/30 | 1* |
 | bachelor | 29/30 | 1* |
 | american-idol | 24/25 | 1* |
 | rhoc | 19/20 | 1* |
@@ -3541,3 +3540,4 @@ No calendar or gap-table action.
 | 2026-10-19 | 0 (fifteenth full sweep, all 35 starred rows reconfirmed accurate across the full 68-show catalog; cross-grep clean; dragrace-uk BBC-cancellation and the-circle Hulu-move status items surfaced, no table action; below-deck-adventure conflicting signal reconfirmed closed, not reopened) | 37 |
 | 2026-10-26 | Rule 2 drain, not a sweep (the-challenge S42 Cutthroat — filed provisional/premise-only while airing, gap-slot removed) | 36 |
 | 2026-10-26 | Rule 2 drain, not a sweep (amazing-race S39 — filed provisional/premise-only while airing, gap-slot removed) | 35 |
+| 2026-10-26 | Rule 2 drain, not a sweep (the-voice S22-S30 corrected per issue #762 — real S28/S29 filed, S30 filed provisional while airing, gap-slot removed) | 34 |

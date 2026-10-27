@@ -16,6 +16,15 @@ export const SEASON_SLUG_ALIASES: Readonly<
   Record<string, Readonly<Record<string, string>>>
 > = {
   survivor: { 'heroes-villains': 'heroes-vs-villains' },
+  // The Voice S22-S29 renumbering (issue #762): two files described
+  // seasons that never aired as written. `the-anchor` duplicated the
+  // real season 24 lineup, and `the-finale` claimed a series finale
+  // that never happened; both slugs now 308 to the real season they
+  // were standing in for.
+  'the-voice': {
+    'the-anchor': 'the-reset',
+    'the-finale': 'battle-of-champions',
+  },
 }
 
 export function resolveSeasonSlugAlias(
