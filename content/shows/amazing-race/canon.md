@@ -1,7 +1,7 @@
 ---
 show: amazing-race
 editor: tiered.tv editor
-last_revised: 2026-06-17
+last_revised: 2026-10-26
 meth_who_h: "Who ranks it"
 meth_who_p: tiered.tv's editor. I've watched The Amazing Race since the original Keoghan summer in 2001 and I've replayed every season that lands on this list. The ranking is one editor's read first, calibrated against what reasonable race fans agree on after a long argument. The point isn't to be right; it's to be honest.
 meth_how_h: "How I weigh it"
@@ -669,3 +669,20 @@ Head-to-Head. The canon places it thirty-eighth because the
 twist-saturation premise is a concept layer rather than a
 format argument, and it now sits below the crossover season,
 whose cross-franchise lineage makes the more concrete case.
+
+## 39. Season 39
+
+tag: An Express Pass for every team — ranked provisionally on premise while the season airs.
+slot_argument: Thirteen simultaneous Express Passes and a new Roadside Assistance option are real rule changes, but none has played out over a full route yet. Held at the floor until the finale airs.
+community_rank_hint: rank=39 delta=0 sentiment=hold
+
+Season 39 enters the canon at the floor as a provisional read,
+not a verdict. The premise is better than the slot suggests:
+handing every team an Express Pass turns the franchise's most
+prized advantage into a timing decision, and Roadside Assistance
+changes who has to carry a Roadblock. The return to first-time
+racers after the Big Brother crossover is a sound casting call,
+and Albania gives the route a country the format had never used.
+None of that has been tested across a full race yet. The canon
+places it thirty-ninth until the finale airs, and expects it to
+move once the route plays out.
