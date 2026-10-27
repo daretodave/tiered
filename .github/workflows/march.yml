@@ -29,7 +29,7 @@ run-name: march ${{ inputs.verb || 'march' }} ${{ inputs.reason }}
 
 on:
   schedule:
-    - cron: '*/40 * * * *'   # every 40 min UTC (fires :00 and :40)
+    - cron: '7,47 * * * *'   # twice an hour UTC, off :00 (GitHub drops top-of-hour runs under load)
   workflow_dispatch:
     inputs:
       verb:

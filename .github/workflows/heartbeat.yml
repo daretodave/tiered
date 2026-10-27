@@ -10,7 +10,7 @@ name: heartbeat
 
 on:
   schedule:
-    - cron: '15 */6 * * *'  # every 6h, offset from march's :00/:40 firings
+    - cron: '15 */6 * * *'  # every 6h, offset from march's :07/:47 firings
   workflow_dispatch:
 
 permissions:
