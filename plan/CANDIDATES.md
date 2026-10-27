@@ -24,431 +24,8 @@
 - conflicts: none known.
 - generator: research · filed 2026-10-27
 
-## Considered (awaiting promotion)
-
-<!-- Pass 76 (2026-10-27, cloud march) — 0 new phase-shape candidates
-     filed directly (one field candidate, "graduated spoiler-risk
-     labeling," already landed this tick via the research generator
-     under the new `## Pending` header above). Signal sweep across all
-     8 lettered sources (§4 of skills/expand.md): spec.md drift (D) was
-     cosmetic only (a4fa6242's phases-table path fix, no scope change);
-     design/ (E) untouched since pass 75; commit-pattern (G) showed
-     nothing clustering beyond routine digest/critique/content upkeep.
-     The one real finding this pass: running the aged-promotion knob
-     (`Promote: aged`) surfaced that `promote.mjs pick` cannot see any
-     of the ~23 live pre-v2 candidates below (#19-#41) — they sit under
-     this legacy `### <NN>. <title>` / `**Score:** X` schema, which the
-     nexus v2 upgrade (a4fa6242) left untouched, and the new tooling
-     only reads the `### [ ] [score X.Y]` schema under `## Pending`.
-     Filed as an AUDIT.md [MED] bug row (score 3.0) rather than a
-     candidate here — it's a mechanical migration/reformatting job, not
-     a new feature, and it's the direct explanation for why candidate
-     #34 (97+ days overdue, score 6.6, explicitly "the file's longest-
-     unpromoted candidate") didn't get picked by this pass's aged-
-     promotion step despite clearing every one of its thresholds.
-     Separately, today's SLA/triage housekeeping relabeled #636 (the
-     candidate #34's own tracking issue) to triage:needs-user — no
-     candidate-level change, noted for continuity. Also closed #785 and
-     #787, an unrelated pair already resolved by ae97eb95 and never
-     closed. -->
-
-<!-- Pass 75 (2026-10-24, cloud march) — 0 new phase-shape candidates
-     filed. One reinforcement: candidate #37 (cloud workflow outage
-     fallback) gained a second, distinct root-cause signature — the
-     2026-10-15→10-19 ~4.25-day blackout (`plan/AUDIT.md` [HIGH, score
-     2.7, filed 2026-10-19]) died on a usage-cap-exhaustion error string,
-     not the org-access-toggle error #37 was filed against — strengthening
-     the structural-gap case without changing score or scope.
-     Window since pass 74 (6d1d104e, 2026-10-04T16:00:06Z): 102 commits /
-     ~20 days — the longest gap between expand passes to date, driven by
-     the 2026-10-15→10-19 usage-cap outage itself eating ~4 of those days.
-     Signal sweep across all 8 lettered sources (§4 of skills/expand.md)
-     found nothing novel: AUDIT.md's 8 Pending top-level rows all map to
-     existing candidates (the-voice corruption → #36, night-shift silent
-     failure + cloud-loop outage → #37, e2e-full duration ceiling → #34,
-     YEAR_TENURE_RE teen gap → #40, heartbeat false-positive → #39); the
-     one row flagging impact≥8/ease≤4 (the cloud-loop-dark row) is the
-     reinforcement captured above. CRITIQUE.md's 65 Pending rows (0 HIGH,
-     39 MED, 26 LOW) cluster on the same verbatim-argument-echo pattern
-     candidate #25 already owns, plus a recurring eyebrow/PREMIERED-label
-     mismatch already tracked inline in #25's own reinforcement history
-     (pass-56/90/93/125) — neither needed a fresh filing. Triage backlog
-     (5 `loop-queued`, 8 `needs-user`) clusters on march/night concurrency
-     contention, already #35's territory. spec.md and design/ saw zero
-     commits in the window — no drift signal. Commit mix (105 classified:
-     48% content, 26% audit, 14% digest, 10% critique, 2% sweep, 1%
-     expand) shows no refactor-pattern alarm — the loop spent the window
-     on ordinary content velocity, not firefighting. `plan/README.md`
-     has no `[skipped]` phases.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last run 2026-10-19, 15th full pass; next due
-     2026-10-26); show-add stays LOCKED (35 shows / 37 gap-slots, all
-     starred, non-zero). Step 2.0's shipping-mode gate stayed lifted
-     (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
-     fire: last pass (190) landed only 4 commits / ~22.5h before this
-     tick — both the 12-commit and 24h thresholds failed. Step 3a/3b
-     empty (no pending phase rows, no Pending `category: data` AUDIT
-     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was
-     checked and found non-actionable this tick: the 2026-10-19 sweep
-     reconfirmed all 35 gap-table rows starred confirmed-but-unaired, and
-     Rule 3 had no actionable target either — the 90-day review floor's
-     next two lists don't cross due until 2026-10-25 (today's two prior
-     commits already cleared the day-90 cohort), and no new-list concept
-     cleared the excellence gate (catalog saturation, per the 2026-10-23
-     Ideas-log dead-ends). Zero-ship fell through per `skills/ship-
-     content.md` failure mode 5, landing on this expand pass. -->
-
-<!-- Pass 74 (2026-10-04, cloud march) — 0 new phase-shape candidates filed.
-     No reinforcements — the one candidate with fresh same-day evidence
-     (#29, append-only-ledger file-size wall) was already reinforced hours
-     earlier in this same calendar day by the night-shift `/digest` run
-     (commit 6d1d104e) with the sharper 256KB-Read-tool-failure numbers
-     across all three affected files (CRITIQUE.md 2.29MB, AUDIT.md 1.27MB,
-     newly-named LISTS.md 1.27MB) — re-reinforcing again this pass would
-     only restate the same evidence digest already filed same-day, the
-     exact "don't reinforce twice in one day on no new information" logic
-     pass 73 already applied to #34.
-     Window since pass 73 (c66d6e53, 2026-09-26T02:07:26Z): 77 commits /
-     ~8.7 days.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last run this same calendar day, 2026-10-04,
-     13th full pass; next due 2026-10-11); show-add stays LOCKED (37
-     shows / 39 gap-slots, all starred, non-zero). Step 2.0's shipping-mode
-     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
-     gate did not fire: last pass (180) landed the same calendar day at
-     commit 9999e538's sibling e20e428b, only 4 commits before this tick
-     and well under the 24h spacing floor — both thresholds failed. Step
-     3a/3b empty (no pending phase rows, no Pending `category: data` AUDIT
-     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was not
-     redispatched this tick: today's own weekly sweep (9999e538) and five
-     same-day Rule 3 research/extend ticks (ending at 2798e873/f57c45e6,
-     ~3 hours before this tick started) had already exhaustively
-     re-confirmed the CADENCE gap table fully starred (Rule 2 non-
-     actionable) and walked every 2025/2026-premiere-season candidate
-     against the Rule 3 excellence gate with nothing clearing it — the
-     `plan/LISTS.md` notes block explicitly logs "next unlock: a new
-     season landing via Rule 2, or the next weekly sweep," neither of
-     which had happened again in the ~3 hours since. Re-running that exact
-     same search against identical state would only reproduce the same
-     null result a sixth time today, so this tick treated content as
-     already answered and fell through to `/expand`'s own gate, which
-     opened independently (posture bold, 77 commits / ~8.7 days since pass
-     73 — both thresholds clear well past the 20-commit/48h floor, live
-     AUDIT.md + CRITIQUE.md signal present, no phase/data work pending).
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): same 5 real rows as
-       pass 73's review (`YEAR_TENURE_RE` teen-number gap → #40, e2e-full
-       duration-ceiling → #34, the-voice factual corruption → #36,
-       night.yml digest-starvation → #35, heartbeat false-positive → #39),
-       unchanged in substance. #34's source row picked up ~14 more nightly
-       digest updates since pass 73 (63 → 75 days unpromoted, the
-       alternating breach/green pattern holding with "no clear trend
-       either direction") but no new scope information — matches pass
-       73's own reasoning for skipping a reinforcement 3 days after pass
-       72's; this pass is 8 days past pass 73's note with the identical
-       story, so left unreinforced again rather than restating the same
-       "still the file's longest-unpromoted candidate" line a third time
-       in the candidates file itself (the nightly digest already carries
-       that drumbeat in `plan/AUDIT.md` and `plan/DIGEST.md`). #36
-       (the-voice) unchanged since 2026-08-08 triage labeling, still
-       correctly parked `needs-user`, issue #762 still open.
-     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 73.
-       All seven are `[needs-user-call]` rows already correctly parked
-       for a human `/oversight` session (home-page mobile catalog list,
-       `/shows` B-tier×2 — inside candidate #30, `/themes` stat-chip
-       date-vs-count ambiguity, `/u/[handle]` own-profile bareness, pass-96
-       show/season/theme Cache-Control split — part (a) already filed as
-       #41, part (b) still needs-user) or a single-surface content tweak
-       (two-themed-list entry-concentration note, LOW, not a cluster). No
-       new pass numbers beyond what existing candidates already cite.
-     - `spec.md` / `design/`: no diff since pass 73
-       (`git log --oneline c66d6e53..HEAD -- spec.md design/` empty on
-       both paths).
-     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
-       `triage:loop-queued` shows 5 open (#806 heartbeat → #39, #787/#785
-       e2e vote-state-pill cross-spec flake → both RESOLVED ae97eb95
-       2026-08-23 per `plan/AUDIT.md`'s own closure notes but never
-       issue-closed, #754 a stale content-ship mirror tracking issue with
-       no new information) — identical set and identical disposition to
-       several prior passes' review of the same four issues (first
-       flagged as already-resolved-but-dangling as far back as pass 62);
-       not filed as a fresh candidate since multiple prior passes already
-       looked at this exact pattern with no new evidence and chose not to
-       escalate it — no reason to reverse that call on the same facts.
-       `triage:needs-user` shows 9 open, no new cluster pattern vs. prior
-       passes' counts.
-     - Commit pattern since pass 73: 77 commits, near-entirely the
-       standard content-gap (season-sweep/Rule-3-extend/zero-ship) +
-       critique + digest cadence — no cluster suggesting an unplanned
-       surface.
--->
-
-<!-- Pass 73 (2026-09-26, cloud march) — 1 new phase-shape candidate filed
-     (#41, show-page ISR + client-hydrated ranking widget). No reinforcements
-     — #34's source row logged one more digest update (2026-09-24) but no new
-     scope information since pass 72's reinforcement 3 days ago, so a repeat
-     reinforcement note was skipped as premature (mirrors the pass-59→72 gap
-     convention: reinforce at milestones, not every pass).
-     Window since pass 72 (564a202d, 2026-09-23T01:39:52Z): 25 commits / ~77
-     hours.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last 2026-09-20, next due 2026-09-27); show-add
-     stays LOCKED (non-zero gap table). Step 2.0's shipping-mode gate stayed
-     lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
-     fire: last pass (171) landed 2026-09-25 at commit e9de6844, only 3
-     commits before this tick and well under the 24h spacing floor (~15h
-     elapsed) — both thresholds failed. Step 3a/3b empty (no pending phase
-     rows, no Pending category:data AUDIT rows). Step 3b.5's standing Rule 2
-     season-fill row (score 4.5) was not redispatched this tick: the prior
-     same-day tick (commit c66d6e53, HEAD) had already re-verified the
-     CADENCE gap table against the filesystem within the same calendar day
-     and found zero commits / zero new season files / zero calendar events
-     crossed since its own prior zero-ship — re-running that identical
-     search against identical state would only reproduce the same null
-     result a third time this day, so this tick treated it as already
-     answered rather than filing a redundant reconfirmation commit. This
-     left the dispatch to fall through to `/expand`'s own gate, which opened
-     independently (posture bold, 25 commits / ~77h since pass 72 — both
-     thresholds clear, live CRITIQUE.md signal present, no phase/data work
-     pending).
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): 7 rows, unchanged in
-       substance from pass 72's review — all map onto already-filed
-       candidates (#34, #35, #36, #39, #40) or are deliberately-below-floor
-       (theme-description SERP-budget, score 1.5). #34's source row picked
-       up one more digest update (2026-09-24) with no new scope information
-       — see reinforcement note above. #36 (the-voice) unchanged since its
-       2026-08-08 triage labeling, still correctly parked `needs-user`.
-     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 72
-       minus one closure. Six of seven are `[needs-user-call]` rows already
-       correctly parked for a human `/oversight` session (home-page mobile
-       catalog list, `/shows` B-tier×2 — inside candidate #30, `/themes`
-       stat-chip date-vs-count ambiguity, `/u/[handle]` own-profile
-       bareness) or single-surface content tweaks (theme entry
-       concentration). The seventh — pass-96's `/shows/[show]` +
-       `/themes/[theme]` + `/shows/[show]/season/[slug]` Cache-Control /
-       TTFB finding — was re-read in full this pass: it splits into two
-       parts, (a) the show-page's `force-dynamic` forcing the whole page off
-       the CDN edge for one live widget's sake (well-scoped, low-risk,
-       reuses the phase-36 auth-island client-hydration pattern), and (b) an
-       unidentified cause making the season/theme routes (pure SSG, no
-       `dynamic` export, no live data) serve the same private/no-cache
-       headers anyway (needs Vercel dashboard/build-log access this loop
-       doesn't have, genuinely can't be root-caused blind). Part (a) alone
-       is real, scoped, and had never been filed as its own numbered
-       candidate — #31 (resolved) targeted the same file's *query latency*,
-       not its *cache-header* shape, so this is a distinct, uncaptured gap.
-       Filed as #41, scoped to part (a) only; part (b) stays flagged
-       needs-user pending dashboard access.
-     - `spec.md` / `design/`: no diff since pass 72 (`git log -p
-       --since=2026-09-23 -- spec.md design/` empty on both paths).
-     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
--->
-
-<!-- Pass 72 (2026-09-23, cloud march) — 0 new phase-shape candidates filed;
-     1 reinforcement (#34, now 63 days unpromoted).
-     Window since pass 71 (564a202d, 2026-09-16T18:04:32Z): 61 commits /
-     ~7 days.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last 2026-09-20, eleventh full pass, next due
-     2026-09-27; gap table held at 42 shows/44 gap-slots, all starred);
-     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
-     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
-     gate did not fire: last pass (168) landed 2026-09-22, only 5 commits
-     before this tick and under the 24h spacing floor (~14h elapsed) —
-     both the commit-count and hours thresholds failed. Step 3a/3b empty
-     (no pending phase rows, no Pending category:data AUDIT rows). Step
-     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
-     but the CADENCE gap table's all 42 rows remain starred/confirmed-but-
-     unaired (independently re-confirmed this tick), and Rule 3 stays
-     locked while the gap table is non-zero per `plan/LISTS.md`'s own
-     mission statement — so ship-content's own Step 1 queue read found no
-     genuinely actionable row despite the nominal score, exited cleanly
-     ("no content queue"), and the caller fell through per its documented
-     contract. This left the dispatch to fall through to `/expand`'s own
-     gate, which opened independently (posture bold, 61 commits / ~7 days
-     since pass 71 — both thresholds clear, live AUDIT.md + CRITIQUE.md
-     signal present, no phase/data work pending).
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total, unchanged
-       in substance from pass 71's review. The recurring HIGH/MED cluster
-       (night.yml starvation → #35, e2e-full duration-ceiling → #34, the-
-       voice factual corruption → #36) still maps onto already-filed
-       candidates with no new scope information — except #34's source row,
-       which picked up ~13 more digest updates since pass 71 and crossed a
-       persistence milestone (63 days unpromoted, now explicitly the
-       file's longest-unpromoted candidate per the row's own 2026-09-22
-       text) — reinforced. #35's source row went quiet after 2026-09-07
-       (no new occurrence logged in 16 days) — a genuine change but not
-       one that raises urgency, so left unreinforced. #36 (the-voice) has
-       had no update since its 2026-08-08 triage labeling — unreinforced,
-       still correctly parked `needs-user`. Two LOW rows (heartbeat
-       false-positive → #39, `YEAR_TENURE_RE` teen-number gap → #40)
-       unchanged since their pass-71 filing.
-     - `plan/CRITIQUE.md` Pending: 8 rows, same set reviewed at pass 71.
-       Three `[needs-user-call]` rows already correctly parked for a human
-       `/oversight` session (home-page mobile catalog list, `/u/[handle]`
-       own-profile bareness, `/themes` stat-chip date-vs-count ambiguity,
-       `/shows` B-tier×2 already inside candidate #30, pass-96 dynamic-
-       serving mystery needing dashboard access this loop doesn't have).
-       No new pass numbers beyond what existing candidates already cite.
-     - `spec.md` / `design/`: no diff since pass 71 (`git log
-       17d830ee..HEAD -- spec.md design/` empty on both paths).
-     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
-     - Commit pattern since pass 71: 61 commits, near-entirely the
-       standard content-gap redirect / critique / digest / sweep cadence
-       — no cluster suggesting an unplanned surface.
--->
-
-
-<!-- Format:
-### <NN>. <Phase title>
-**Score:** N.N (impact: N, ease: N)
-**Source pass:** <expand pass number>
-**Filed:** <ISO date>
-**Why:** <one-paragraph rationale>
-**Scope sketch:** <2-3 lines of what would ship>
--->
-
-<!-- Pass 70 (2026-09-09, cloud march) — 1 new phase-shape candidate filed
-     (#38, spoiler-language heuristic gate); two reinforcement updates
-     appended below (#25, #33).
-     Window since pass 69 (86c88f89, 2026-09-06T16:58:53Z): 33 commits /
-     ~77 hours.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last 2026-09-06, ninth full pass, next due
-     2026-09-13; gap table held at 41 shows/42 gap-slots, all starred);
-     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
-     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The
-     critique gate did not fire: last pass (156) landed the same calendar
-     day at commit ae289b02, only 4 commits before this tick and carrying
-     a Pending HIGH finding — both the commit-count/hours thresholds and
-     the "no pending HIGH" condition failed. Step 3a/3b empty (no pending
-     phase rows, no Pending category:data AUDIT rows). Step 3b.5 matched
-     its usual candidate, the standing Rule 2 season-fill drain row
-     (score 4.5) — but the CADENCE gap table was independently
-     re-confirmed unchanged from this same calendar day's four prior
-     content-gap ticks (all 42 slots starred, confirmed-but-unaired), and
-     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
-     51 days) had nothing due — the fourth of today's own ticks had
-     already exhausted a fresh Rule 3 concept search 2h14m before this
-     one started. Re-running that exact search within the same two-hour
-     window was judged not to add information, so this tick treated
-     content as having fallen through (matching pass-67's precedent of
-     Step 3b.5 yielding on a genuine full-board stall) rather than filing
-     a fifth same-day reconfirmation-only commit. This left the dispatch
-     to fall through to `/expand`'s own gate, which opened independently
-     (posture bold, 33 commits / ~77h since pass 69 — both thresholds
-     clear, live AUDIT.md + CRITIQUE.md signal present, no phase/data
-     work pending).
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): the same 3 real
-       HIGH/MED rows as recent passes — night.yml starvation (HIGH, 6.4),
-       e2e-full duration-ceiling (MED/HIGH-equivalent, 5.4), the-voice
-       factual corruption (HIGH, 4.8) — mapping onto already-filed
-       candidates #35, #34, #36 respectively, both already
-       `triage:needs-user` and awaiting a local `/oversight` session; no
-       new AUDIT row since pass 69.
-     - `plan/CRITIQUE.md` Pending: passes 154, 155, and 156 all landed
-       since pass 69. Three of five findings from that window were
-       already RESOLVED same-day by the content-gap side-drain mechanic
-       (ANW repetition + host-spelling, too-hot-to-handle prize-split
-       spoiler + Take/pull echo). Two remain Pending: (1)
-       `/shows/vanderpump-rules/season/season-12` — "Shape of the
-       Season"/"Where It Sits in the Canon" near-verbatim cast-turnover
-       restatement, the exact defect class candidate #25 already tracks
-       (reinforced below); (2) `/shows` tier-section `<h3>` heading-level
-       a11y issue — a single page-template fix, not a cluster, left for
-       `/iterate` rather than filed as a candidate. More importantly,
-       pass 156 also reproduced a third independent instance (after
-       pass-152 dragrace-uk, pass-155 too-hot-to-handle) of a spoiler
-       leak the site's only mechanical spoiler gate — a narrow
-       Survivor-only proper-noun blocklist
-       (`collectThemedEntrySpoilerIssues`) — structurally cannot catch:
-       a named individual winner, a multi-field outcome-as-fact leak, and
-       now an unverified "twist" characterization, each on a different
-       show and surface (season page fields, themed-list entry). All
-       three were HIGH severity, all three were caught only by manual
-       critique after already shipping to production. This crossed the
-       signal-multiplicity bar for a new candidate — filed as #38 below.
-     - `spec.md` / `design/`: no diff since pass 69 (`git log -p
-       --since=2026-09-06 -- spec.md design/` empty on both paths).
-     - GitHub issues: `triage:loop-queued` shows 4 open, `triage:needs-user`
-       shows 8 — same counts as pass 69's window, no new pattern.
-     #25 and #33 are the two rows this pass's fresh evidence maps onto
-     most directly; reinforced both in place below.
--->
-
-<!-- Pass 71 (2026-09-16, cloud march) — 2 new phase-shape candidates filed
-     (#39 heartbeat flatline-alert hardening, #40 YEAR_TENURE_RE teen-number
-     blind spot). No reinforcements — the usual reinforcement targets (#25,
-     #30, #33) had no fresh signal since their last touch.
-     Window since pass 70 (93860a98, 2026-09-09T19:49:03Z): 69 commits /
-     ~7 days.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
-     season-sweep not due (last 2026-09-13, tenth full pass, next due
-     2026-09-20; gap table held at 40 shows/41 gap-slots, all starred);
-     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
-     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
-     gate did not fire: last pass (161) landed 2026-09-15, only 6 commits
-     before this tick and under the 24h spacing floor (~23h20m elapsed) —
-     both the commit-count and hours thresholds failed. Step 3a/3b empty
-     (no pending phase rows, no Pending category:data AUDIT rows). Step
-     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
-     but the CADENCE gap table was independently re-confirmed unchanged
-     from this same calendar day's earlier tick (commit 17d830ee, ~2.5h
-     prior: all 41 slots starred, confirmed-but-unaired), and
-     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
-     58 days) had nothing due. The same earlier tick had already logged a
-     Rule 3 zero-ship (rejected duplicate AGT S02 candidate) against a
-     backdrop of 9+ consecutive same-day zero-ship passes documented across
-     late August through mid-September (issue #758's saturation streak).
-     Re-running that search within the same day was judged not to add
-     information, so this tick treated content as having fallen through
-     (matching pass-70's precedent) rather than filing a second
-     reconfirmation-only commit. This left the dispatch to fall through to
-     `/expand`'s own gate, which opened independently (posture bold, 69
-     commits / ~7 days since pass 70 — both thresholds clear by a wide
-     margin, live AUDIT.md + CRITIQUE.md signal present, no phase/data
-     work pending).
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total. The
-       recurring HIGH/MED cluster (night.yml starvation, e2e-full
-       duration-ceiling, the-voice factual corruption) maps onto
-       already-filed candidates #35, #34, #36 — no new evidence to
-       reinforce with this pass. Two LOW rows are genuinely new signal:
-       a heartbeat-workflow false-positive (user-issue #806, root-caused
-       and a concrete fix already sketched inline, score 2.1 — stuck below
-       the 3.0 `/iterate` dispatch floor with no other consumer) and a
-       `YEAR_TENURE_RE` teen-number blind spot in
-       `scripts/content-check.ts` (surfaced by CRITIQUE pass-80, corpus
-       -scanned with ~10 concrete allowlist candidates identified, score
-       2.7 — same below-floor situation). Both are real, scoped,
-       self-contained engineering fixes that no dispatch path currently
-       picks up — filed as #39 and #40.
-     - `plan/CRITIQUE.md` Pending: 8 rows. Three `[needs-user-call]` rows
-       (home-page mobile catalog list, `/u/[handle]` own-profile bareness,
-       `/themes` stat-chip date-vs-count ambiguity) are genuine editorial
-       calls already correctly parked for a human `/oversight` session, not
-       phase-shape gaps — left as-is. The two B-tier browse-scale findings
-       (pass-77, pass-121) are both already tracked and reinforced inside
-       candidate #30 (last reinforced pass-64); no new pass number beyond
-       what #30 already cites, so no further reinforcement filed. One
-       finding (dragrace/season-structure themed-list routes) and one
-       (theme entry concentration) read as single-surface content tweaks,
-       not phase-shape.
-     - `spec.md` / `design/`: no diff since pass 70 (`git log -p
-       --since=2026-09-09 -- spec.md design/` empty on both paths).
-     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
--->
-
-### 41. Show-page ISR + client-hydrated ranking widget — stop forcing the whole page off the CDN edge for one live number
+### [ ] [score 5.0] Show-page ISR + client-hydrated ranking widget — stop forcing the whole page off the CDN edge for one live number
+- proposed: 2026-09-26, v1 candidate #41 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.0 (impact: 6, ease: 7 → 4.2 base + 0.8 signal multiplicity —
 reuses phase-36's auth-island client-hydration pattern; same source file as
@@ -526,7 +103,8 @@ estimate).
 "catalog-scale infrastructure" oversight session alongside those if the
 user wants to address the pattern class in one sitting.
 
-### 40. `YEAR_TENURE_RE` teen-number blind spot — extend the editorial-tenure-honesty gate to season-level sources
+### [ ] [score 3.0] `YEAR_TENURE_RE` teen-number blind spot — extend the editorial-tenure-honesty gate to season-level sources
+- proposed: 2026-09-16, v1 candidate #40 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 3.0 (impact: 4, ease: 5 → base 2.0 + 1.0 cheap-and-impactful (single
 regex + type extension, closes a real gap in an existing P0-adjacent
@@ -577,7 +155,8 @@ no page code.
 (phase 43) rather than introducing a new rule; doesn't touch `spec.md` or the
 URL contract.
 
-### 39. Heartbeat flatline-alert false-positive hardening — require persistence across reads before paging
+### [ ] [score 4.4] Heartbeat flatline-alert false-positive hardening — require persistence across reads before paging
+- proposed: 2026-09-16, v1 candidate #39 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 4.4 (impact: 3, ease: 8 → base 2.4 + 2.0 cheap-and-impactful
 (single-workflow-file fix, root cause already diagnosed, exact remedy already
@@ -614,7 +193,8 @@ one `-L 1` read. Single workflow-file change; no app code touched.
 **Conflicts:** none — CI/ops-only, doesn't touch `spec.md`, the URL
 contract, or any content rule.
 
-### 38. Spoiler-language heuristic gate — content-check should flag outcome/twist-coded phrasing, not just a proper-noun blocklist
+### [ ] [score 7.5] Spoiler-language heuristic gate — content-check should flag outcome/twist-coded phrasing, not just a proper-noun blocklist
+- proposed: 2026-09-09, v1 candidate #38 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 7.5 (impact: 9, ease: 5 → 4.5 base + 2.0 signal multiplicity (three
 independent critique passes, three different shows, three different surface
@@ -1341,7 +921,8 @@ themed-entry spoiler blocklist and the general spoiler-discipline language in
      recurrence, not a silent reopen).
 -->
 
-### 37. Cloud workflows need a fallback (or at least faster escalation) for org-level Claude access outages
+### [ ] [score 5.4] Cloud workflows need a fallback (or at least faster escalation) for org-level Claude access outages
+- proposed: 2026-08-20, v1 candidate #37 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.4 (impact: 9, ease: 6 — every cloud-scheduled workflow shares
 one auth path with no fallback and no dedicated alert, but the true root
@@ -1430,1034 +1011,8 @@ session pulling that proposal back in verbatim rather than re-deriving it.
 No score change — still correctly scored on the org-access evidence alone;
 this update is breadth-of-cause evidence, not fresh urgency.
 
-### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim
-
-**Score:** 6.0 (impact: 8, ease: 6 → 4.8 base + 2.0 signal multiplicity/urgency —
-a currently-LIVE reader-facing false claim on a shipped show page, and the
-source AUDIT row itself explicitly asks for `/expand` treatment given the
-blast radius; -0.8 for genuine scope uncertainty — the fix touches file
-renumbering, a canon rebase, and cross-catalog reference cleanup, closer to
-"3+ phases or unclear scope" than a clean 1-phase ship)
-**Source pass:** 59
-**Filed:** 2026-07-28
-**Why:** `plan/AUDIT.md` (line 621) documents a confirmed, deep factual
-corruption across `content/shows/the-voice/seasons/22-*.md` through
-`29-*.md` (8 files) plus the show's own frontmatter — not a simple
-off-by-one numbering issue, but conflated cast lists, wrong premiere dates,
-a duplicated real season, an omitted real season (the actual on-screen
-Blake Shelton farewell has no filed season at all), and a fabricated
-"series finale" that never happened. The blast radius is live and reader-
-facing right now: `content/shows/the-voice.md` reads `status: hiatus` and
-its `blurb`/`tagline`/`card_tagline` state the show "signed off" after a
-"fourteen-year run" — a false claim on a production page. Root cause: a
-phantom "spring 2022" season was inserted for a broadcast year where NBC
-actually ran only one cycle (confirmed via Hollywood Reporter + TV Series
-Finale), and that single insertion cascades a +1 offset through every
-later file, compounding into the outright cast/date conflations. This is
-exactly the case `/expand` exists to catch: an audit finding that scores
-moderately on the standard impact×ease formula (4.8) but whose true scope
-— renumber/insert/verify across 8+ files, rebase canon ranks, cross-check
-every themed-list entry citing `show: the-voice` with season ≥22, and
-regenerate e2e canonical-URL fixtures after the renames — is structurally
-too large and too fabrication-risk-sensitive to hand to a single
-autonomous content tick with no review checkpoint. The AUDIT row's own
-filing explicitly recommends promoting this to a dedicated phase or a
-direct oversight-reviewed tick rather than letting a routine Rule 2 drain
-touch it.
-**Source signals:**
-- `plan/AUDIT.md` [HIGH, score 4.8] filed 2026-07-26 during a cloud
-  `/march` tick's Rule 3 research pass (8th pass), escalated same-day (9th
-  pass) with a full scout-verified season-by-season accounting against
-  Wikipedia + NBC Insider/Today.com sourcing. Still Pending as of this
-  filing.
-- The row itself blocks further the-voice content authoring ("do not
-  author new the-voice content depending on any specific season number
-  ≥22's real-world event") until this resolves — an active constraint on
-  the standing Rule 2 season-fill drain, not just a cosmetic content bug.
-- Confirmed real, still-unaired seasons exist that the catalog has never
-  filed: real NBC Season 29 (Feb 2026, first-ever 3-coach "Battle of
-  Champions" format) and real Season 30 (confirmed airing Sep 2026) — both
-  currently invisible to readers because the catalog's own (wrong)
-  `29-the-finale.md` claims the show already ended.
-**Scope sketch:**
-- A dedicated scout-verification pass re-confirming each of the 8 affected
-  files' real-world cast/date/event against primary sourcing (Wikipedia
-  per-season articles, NBC Insider, Today.com) — largely already done by
-  the AUDIT row's own 9th-pass research; this step is closer to a
-  transcription/formalization of existing findings than fresh research.
-- Decide file-count treatment: real Season 23 (Shelton's true on-screen
-  farewell) has no filed season at all and needs insertion, which shifts
-  every later file's number — a rename, not just a content edit, so every
-  shifted season's `NN-<slug>.md` filename and `canonical_position` moves.
-- Rewrite `content/shows/the-voice.md`: `status: hiatus` → `airing`, strip
-  the false "signed off"/"fourteen-year run" framing from
-  `blurb`/`tagline`/`card_tagline`.
-- Author the two real unfiled seasons (S29 "Battle of Champions," Feb 2026;
-  S30, Sep 2026 — casting/coaches only, spoiler-safe, no outcomes since
-  S30 hasn't aired at filing time).
-- Rebase `canon.md` fully across the renumbered range — ranks and
-  `canonical_position` for every season from 22 onward.
-- Cross-check every `content/themes/*.md` entry citing `show: the-voice`
-  with `season` ≥ 22 for now-wrong `season_label`/title references (the
-  19f schema's `related`/entry-title-must-match-frontmatter invariant
-  makes stale entries a `content:check` failure risk once the source
-  files renumber).
-- Regenerate/verify `apps/e2e/src/fixtures/canonical-urls.ts` picks up the
-  renamed slugs automatically (it's content-loader-derived, per bearings)
-  — confirm no stale hardcoded reference survives elsewhere.
-**Estimated phases:** 1, but an unusually dense one — file renumbering +
-canon rebase + cross-catalog reference cleanup in a single commit is a
-larger, higher-fabrication-risk unit than a normal Rule 2 drain tick;
-`/oversight` may prefer to review the scout-verification output before
-authorizing the autonomous loop to touch the renumbering, given how much
-of the original corruption already came from an unsupervised assumption
-(unbroken twice-yearly cadence) compounding silently across 8 files.
-**Conflicts:** none with `spec.md` or the URL contract — this is a
-content-accuracy fix, not a new surface. Overlaps operationally with the
-standing Rule 2 season-fill drain row (both touch `content/shows/the-voice/`),
-but the AUDIT row explicitly blocks routine Rule 2 authoring on this show
-until the corruption resolves, so this should ship as its own reviewed
-unit rather than fall out of an ordinary drain tick.
-
-**Update (expand pass 60, 2026-08-10):** confirmed a second live
-instance of the exact same fabricated "series finale" claim, in a
-themed list rather than the show page — `content/themes/closing-
-statement.md`'s `show: the-voice, season: 29` entry (rank 3)
-restates "Fourteen years in, The Voice closes... The season plays
-with the focus a real series finale earns" nearly verbatim to the
-already-documented false claim. Git-blamed to `92d1be9b`
-(2026-07-17), which **predates** the 07-26 discovery entirely — this
-was never caught by the addendum that flagged the one other
-post-discovery violation (`9ec927d9`). Found via `git log -p
---since=2026-07-28 -- content/themes/` while gathering this pass's
-signals; exactly the cross-catalog reference risk this candidate's
-own scope sketch already named ("cross-check every
-`content/themes/*.md` entry citing `show: the-voice` with season ≥
-22"), now with a second concrete confirmed hit. Filed as a scoped,
-independent single-entry fix — `plan/AUDIT.md` [HIGH, score 7.2],
-not folded into this candidate's own scope, since a deletion (drop
-the entry, renumber ranks) carries none of the renumbering/fact-
-verification risk the full remediation does and doesn't need to
-wait for it. That AUDIT row now outscores every other Pending
-content-gaps row, so the next `/march` Step 3b.5 dispatch should
-pick it up directly. This candidate's own scope (the full 8-file
-remediation) is unchanged and still recommended for a dedicated
-oversight-reviewed session — the new finding raises confidence that
-the live blast radius is larger than one page, not smaller.
-
-### 34. Shard the e2e-full breadth crawl across parallel Playwright workers
-
-**Score:** 6.6 (impact: 7, ease: 6 → 4.2 base + 2.4 signal multiplicity — raised at
-pass 59 from persistence evidence: same breach recurring nightly, unaddressed 6 days
-after filing)
-**Source pass:** 57 (reinforced pass 59, reinforced pass 72)
-**Filed:** 2026-07-22 (reinforced 2026-07-28, reinforced 2026-09-23)
-**Pass-72 reinforcement (persistence milestone, still unpromoted):**
-`plan/AUDIT.md`'s source row (line 663... see the e2e-full row) logged a fresh
-digest update as recently as 2026-09-22 (yesterday) — the alternating
-breach/green/breach pattern is unchanged after 63 days with "no clear trend
-either direction," and the row now explicitly calls this "the file's longest-
-unpromoted candidate." No new scope information this pass (the fix shape and
-the cloud `workflows`-OAuth-scope blocker are unchanged since filing) — this
-reinforcement is a pure persistence signal: 63 days unpromoted is an order of
-magnitude past the 6-10 day figures cited at the last reinforcement (pass 59),
-and the underlying single-worker bottleneck this candidate targets has not
-been touched by any of the ~20 digest updates logged against the source row
-in the interim. Score held at 6.6 (no new scope information to justify a
-further bump, per the same reasoning pass-59 applied) — flagging again for
-`/oversight` as the standing recommendation, now overdue by a wide margin.
-**Pass-59 reinforcement (persistence, still unpromoted):** `plan/AUDIT.md`'s
-source row (line 619) confirms the same breach has now recurred **every single
-night since filing** — 7 consecutive red `e2e-full` runs (2026-07-21 through
-2026-07-27, run IDs tracked in issue #636's comment thread, one "Recurred"
-comment per night), each dying on the identical 75-minute wall with all
-completed checks passing. Candidate #34 itself has sat unpromoted for 6 days
-with the standing recommendation unchanged (shard, don't bump the timeout a
-third time). No new scope information this pass — the fix shape and the cloud
-`workflows`-OAuth-scope blocker are exactly as documented at filing — this is
-a pure urgency signal: every day this stays unpromoted is another guaranteed
-red night with zero new information, burning CI minutes for no signal.
-**Why:** The nightly `e2e-full` breadth crawl went red again at
-2026-07-21T00:41:24Z (run 29787007925) — not a test regression, the same
-duration-ceiling breach class as superseded candidate #26: all 9,278 of 9,278
-completed checks passed, but the "Exhaustive e2e crawl (E2E_FULL=1)" step hit
-`.github/workflows/e2e-full.yml`'s `timeout-minutes: 75` wall with 734 of
-10,012 tests still remaining (92.7% complete). Candidate #26 already fixed this
-once (2026-07-12, `timeout-minutes` 50→75) after four consecutive red nights,
-but explicitly flagged the bump as a stopgap: the workflow file itself still
-carries the comment "If 75 stops being enough, the real fix is sharding the
-crawl, not another bump" (`.github/workflows/e2e-full.yml:92`). Nine days
-later, it stopped being enough — test count grew from 7,138 (at the 50→75
-bump) to 10,012 (+40%), tracking the content saga's own perpetual season-drain
-mandate exactly as candidate #26 predicted it would. The crawl runs Playwright
-with `workers: 1` (`apps/e2e/playwright.config.ts:82`), so wall-clock scales
-linearly with total page count and every future content tick makes the next
-breach arrive sooner. A third timeout bump would only buy a few more weeks
-before recurring a third time — the structural bottleneck (single worker) is
-unaddressed either way. **BLOCKED FROM CLOUD**: the fix requires editing
-`.github/workflows/e2e-full.yml`, which the cloud loop's `ACTIONS_PAT` cannot
-push (lacks the `workflows` OAuth scope — the identical blocker candidate #26
-and issue #416/#480 already hit on this same file family). Filed as a fresh
-candidate rather than reopening #26 (which is marked resolved/superseded) —
-same convention as how a recurrence of #32's dedupe fix would get its own
-number.
-**Source signals:**
-- `plan/AUDIT.md` [MED, score 5.4] "Nightly e2e-full breadth crawl went red
-  again 2026-07-21T00:41:24Z" — filed 2026-07-21 via `/triage` of issue #636,
-  explicitly cites the workflow file's own "shard, not another bump" comment
-  and flags BLOCKED FROM CLOUD.
-- GitHub issue #636 (open, `triage:loop-queued`), 1:1 mirror of the AUDIT row,
-  no independent new information beyond it.
-- Candidate #26 itself (superseded 2026-07-12) — its own scope sketch already
-  named sharding as the necessary follow-up "once even 75 minutes stops being
-  enough," which is exactly what happened.
-**Scope sketch:**
-- Convert the single "Exhaustive e2e crawl" step in
-  `.github/workflows/e2e-full.yml` into a matrix of N parallel jobs, each
-  running `pnpm --dir apps/e2e exec playwright test --shard=<i>/<N>`
-  (Playwright's built-in sharding flag — no config-file change needed beyond
-  passing the flag). Pick N (likely 4) so each shard's wall-clock comfortably
-  fits inside a much shorter per-shard timeout, well under the current
-  75-minute wall.
-- Keep `workers: 1` per shard (unchanged) if the single-worker constraint
-  exists for a reason (e.g. Supabase container contention under `E2E_FULL=1`)
-  — verify that assumption at implementation time; if it was only ever a
-  historical default, consider raising both shard count and per-shard workers
-  together for a bigger win.
-- The "Pre-start Supabase containers" and "Production build" steps either
-  need to run once and be shared (build artifact reuse across matrix jobs) or
-  be duplicated per shard — duplication is simpler to ship first, artifact
-  sharing is the natural follow-up if setup cost dominates.
-- Same `workflows`-scope cloud blocker as candidate #26/#32/issue #416 —
-  ships via `/oversight` in a local session, not through `plan/README.md`.
-  Recommend bundling with any other pending workflow-file edits in the same
-  session per the established pattern.
-**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
-ships via `/oversight` directly, same precedent as candidate #26/#32).
-**Conflicts:** none. Supersedes-in-spirit candidate #26 (same root cause,
-now proven the timeout-bump approach doesn't scale) without literally
-reopening it.
-
-**Update (digest 2026-08-06):** two more red nights (08-04 run
-30959832574, 08-05 run 31056138181), both dying on the identical
-75-minute wall — **16 consecutive red nights now** (07-21 through
-08-05). The catalog has held flat at 10,485 tests for both nights (no
-growth since 08-03), and completion held flat too (~89.5% both nights,
-9,399/10,485 on 08-04 per the prior digest, 9,389/10,485 on 08-05) —
-the erosion trend has plateaued rather than reversing, likely
-because this window's content ships were Rule-3 themed-list extends
-(which don't add new e2e URLs) rather than new season files. Still
-unpromoted 16 days after filing.
-
-**Update (digest 2026-08-09):** four more red nights (08-06, 08-07
-×2 runs, 08-08), same 75-minute wall each time — **20 consecutive
-red nights now** (07-20 through 08-08, or 20 counting back one
-further than the 08-06 update's window). Catalog grew slightly to
-10,510 tests (from 10,485), a MasterChef Australia season backfill
-landing in this window. All completed checks continue to pass; this
-remains a pure duration-ceiling breach, not a quality regression.
-Still unpromoted 19 days after filing.
-
-**Update (digest 2026-08-10):** the 9-consecutive-red streak (07-31
-through 08-08) broke — the 2026-08-09 run posted `success`, the
-first green `e2e-full` since 07-30. Catalog size is unchanged
-(still 10,500+ tests, single worker), so this reads as inconclusive
-rather than resolved: either the run got lucky on timing/contention,
-or something else shaved enough wall-clock to clear the 75-minute
-wall this one time. Recommend one or two more nights of observation
-before either promoting or deprioritizing — a second consecutive
-green run would meaningfully weaken the case for sharding; a
-reversion to red would confirm the plateau noted at 08-09 was
-temporary, not a trend break. Still unpromoted 20 days after filing.
-
-**Update (digest 2026-08-11):** the observation window resolved —
-2026-08-10's run (31441429717) posted `failure`, the identical
-75-minute-wall duration-ceiling breach (9,462 of 10,544 tests
-complete, 89.7%, run 23:16:11→00:30:47 UTC = 74m36s). The 08-09
-green run was the outlier, not a trend break: single-night
-recoveries on a fixed 75-minute wall against a catalog that only
-grows were always going to happen occasionally by timing/contention
-luck, but the structural bottleneck (`workers: 1`,
-`apps/e2e/playwright.config.ts:82`) is unchanged and the catalog
-(10,544 tests, +34 since 08-09) hasn't shrunk. This closes the
-observation window opened at 08-10 — recommend promoting at the
-next `/oversight` session rather than watching for a third data
-point; every additional red night is CI minutes burned for zero new
-information, exactly the pass-59 urgency signal restated. Still
-unpromoted 21 days after filing (07-22 filing, 07-28 reinforcement).
-
-**Update (expand pass 63, 2026-08-16, cloud march):** the 08-11
-close-out held — six more consecutive red nights since (08-10 through
-08-15), same 75-minute-wall duration-ceiling breach each time, no
-further green outliers. Issue #636 picked up another same-day
-recurrence comment this morning (2026-08-16T00:23:45Z, run
-31913822337). `night.yml` itself stayed green for 5 straight runs in
-the same window (08-11 through 08-15) — the sibling starvation
-candidate (#35) shows no new evidence this window, this remains a
-pure e2e-full/sharding problem, not a scheduling one. No change to
-score or scope sketch — still blocked from cloud (`.github/workflows/
-e2e-full.yml` needs the `workflows` OAuth scope the cloud loop's
-`ACTIONS_PAT` lacks). 26 days unpromoted since filing (07-22 filing,
-07-28 reinforcement). Ripe for `/oversight` promotion at the next
-local session — a human pushing the workflow-file edit is the only
-path that closes this one.
-
-**Update (expand pass 67, 2026-08-30, cloud march):** the breach is
-still live and now visibly teetering right at the 75-minute wall
-rather than clearing it with margin. Checked the last several
-`e2e-full` runs directly via `gh run view --log`: 08-27 (run
-33025850485, 10,557 tests) and 08-28 (run 33133693773, 10,557
-tests) both hit the identical `##[error] ... has timed out after 75
-minutes` wall; 08-28's late trigger (run 33219380847, 10,565 tests)
-timed out too; but 08-29's run (33280261007, same 10,565 tests)
-posted `success` at `10565 passed (1.2h)` — 72 minutes, inside the
-wall with only ~3 minutes of margin. Catalog growth has slowed
-sharply (10,544 at the 08-11 close-out → 10,565 now, +21 over 19
-days, versus +40% in the prior stretch) since recent content ticks
-have mostly been Rule-3 list extends and take/shape drains on
-already-filed seasons rather than new season files — but the
-crawl is still failing more nights than not (checked the 10 most
-recent `e2e-full` runs: 7 failures, 3 successes, all on the
-identical duration-ceiling signature, zero quality regressions).
-No new scope information — same fix (Playwright `--shard`), same
-`workflows`-OAuth-scope cloud blocker. Restating the pass-63
-recommendation unchanged: this is ripe for `/oversight` promotion,
-not further reinforcement passes — the signal has been stable and
-unambiguous for over a month.
-
-**Update (expand pass 68, 2026-09-04, cloud march):** the pattern
-holds exactly at the pass-67 baseline, no drift either direction.
-Checked the 10 most recent `e2e-full` runs directly (08-25 through
-09-04): 7 failures, 3 successes, the identical split pass 67 found,
-all on the same 75-minute duration-ceiling signature. Tonight's own
-run (09-04, 33823160574) timed out at 9,218 of 10,565 tests complete
-(87.3%) — confirmed via `gh run view --log` (`Running 10565 tests
-using 1 worker` at 00:50:22Z, killed at 02:04:59Z right after test
-9218, a `smoke-mobile.spec.ts` case). Catalog size is now fully flat
-at 10,565 (unchanged since the count pass 67 cited) — the
-content-side growth that was previously eroding the wall's margin has
-stopped, but the crawl still fails more nights than not against the
-existing catalog alone, confirming this is a pure single-worker
-throughput problem, not a catalog-growth-outpacing-the-wall problem.
-No new scope information; same fix (Playwright `--shard`), same
-`workflows`-OAuth-scope cloud blocker. 44 days unpromoted since
-filing (07-22) — restating pass-63/67's unchanged recommendation:
-ripe for `/oversight` promotion, not further reinforcement passes.
-
-**Update (digest 2026-09-05):** tonight's `e2e-full` run (33933576183,
-2026-09-05T00:37:16Z) finished green in 71m19s — under the 75-minute
-wall this time, unlike 7 of the last 10 runs pass-68 counted. One
-green run doesn't change the diagnosis (single-worker throughput
-against a flat 10,565-test catalog is still the bottleneck; this run
-just landed on the fast side of its own variance). 45 days unpromoted
-since filing (07-22) — unchanged recommendation.
-
-**Update (digest 2026-09-06):** the green run was the variance, not a
-trend break — tonight's run (34001648876, 2026-09-06T00:34:40Z) hit
-the standard 75-minute wall again, `Running 10573 tests using 1
-worker`, 9,033 of 10,573 complete (85.4%) at cutoff, worse than
-09-04's 87.3%. All completed checks passing. Catalog basically flat
-(10,565→10,573). This is the same single-worker throughput ceiling
-pass-67/68 already diagnosed conclusively — no new scope information,
-just another data point in a five-week-old, unambiguous signal. 47
-days unpromoted since filing (07-22) — restating the standing
-recommendation unchanged: this is ripe for `/oversight` promotion,
-not further reinforcement passes.
-
-**Update (digest 2026-09-08, covering 09-07 and 09-08):** two more
-red nights, no green in between — the streak is now **3 consecutive
-red `e2e-full` runs** (09-06, 09-07, 09-08). 09-07's run
-(34070594162) hit the wall at 9,192/10,573 (86.9%, the best showing
-since 09-04's 87.3%); 09-08's run (34174840735) dropped back to
-9,030/10,573 (85.4%, tying 09-06's low). Catalog held exactly flat
-at 10,573 tests across all three nights — this is pure single-worker
-throughput variance around a fixed ceiling, not a shrinking or
-growing catalog. Both runs die on the identical `timeout-minutes: 75`
-wall with every completed check passing; issue #636 picked up its
-41st and 42nd "Recurred" comments. No new scope information — same
-fix (Playwright `--shard`), same `workflows`-OAuth-scope cloud
-blocker. **48 days unpromoted since filing (07-22).** Restating the
-unchanged standing recommendation: this is ripe for `/oversight`
-promotion, not further reinforcement passes — the signal has been
-stable and unambiguous for nearly seven weeks.
-
-**Update (digest 2026-09-09):** the streak broke — 09-09's run
-(34297549504) finished **green**, completing the full 10,012-test
-crawl in 70m22s (01:05:49–02:16:11 UTC), inside the 75-minute wall
-with roughly 5 minutes to spare. That margin is thin, not
-reassuring: at the throughput this run demonstrated (~142
-tests/min single-worker), the catalog has only about 700 tests of
-headroom before the wall breaches again on a normal night, let alone
-a slower one — the exact linear-growth mechanism that eroded the
-original 50-minute ceiling. No scope change to the fix; **49 days
-unpromoted since filing (07-22).** One green night doesn't retire
-this candidate, it just delays the next breach by a few nights.
-
-**Update (digest 2026-09-10):** the delay was one night. Tonight's run
-(34423020508, started 00:54:50Z) hit the standard 75-minute wall with
-`Running 10578 tests using 1 worker` (up from 10,012 the night of the
-green run), 8,724 of 10,578 completed (82.5%) at cutoff — the worst
-completion rate of the last five breaches, confirming last night's
-predicted ~700-test headroom was consumed almost immediately by
-normal catalog growth rather than marking a durable improvement. No
-scope change to the fix; **51 days unpromoted since filing (07-22).**
-The margin math from 09-09 held for exactly one night — the strongest
-evidence yet that this needs promotion before the next digest, not
-another reinforcement pass.
-
-**Update (digest 2026-09-11):** still breaching, but not worsening —
-tonight's run (34548135786, started 00:53:24Z) hit the standard
-75-minute wall with `Running 10586 tests using 1 worker` (up from
-10,578), 9,232 of 10,586 completed (87.2%) at cutoff — better
-completion than 09-10's 82.5% low, closer to the 09-07/09-08 range,
-but still a full breach with zero test-quality regression. No scope
-change to the fix; **52 days unpromoted since filing (07-22).** Six
-of the last seven nights (09-06 through 09-11, only 09-09 green) have
-now breached the wall — the pattern is stable, not improving; still
-the standing `/oversight` recommendation.
-
-**Update (digest 2026-09-12):** third consecutive breach — tonight's
-run (34663160050, started 00:54:36Z) hit the standard 75-minute wall
-with `Running 10594 tests using 1 worker` (up from 10,586), 9,380 of
-10,594 completed (88.5%) at cutoff — a shade better than 09-11's
-87.2% but still a full breach, zero test-quality regression. No
-scope change to the fix; **53 days unpromoted since filing (07-22).**
-Seven of the last eight nights (09-05 through 09-12, only 09-09
-green) have now breached the wall, three in an unbroken row (09-10,
-09-11, 09-12) — still the standing `/oversight` recommendation.
-
-**Update (digest 2026-09-16, catching up four nights):** the breach
-streak extended every night since the last update. 09-13's run
-(34728429419) hit the wall with `Running 10594 tests using 1 worker`
-(flat vs. 09-12), 9,053 of 10,594 completed (85.4%); 09-14's run
-(34793638737) breached with the catalog up to 10,602 tests, 8,920
-completed (84.1%); 09-15's run (34916176869) breached again, flat at
-10,602, 9,247 completed (87.2%); tonight's 09-16 run (35042761077)
-breached a fourth time, still flat at 10,602 tests, 9,006 completed
-(84.9%). Notably the catalog stopped growing across all three most
-recent nights (10,602 flat 09-14 through 09-16) — the wall is now
-purely a single-worker throughput ceiling, not a moving target from
-content growth, which makes the sharding fix this candidate proposes
-a durable resolution rather than a stopgap against continued growth.
-All completed checks passing every night, zero test-quality
-regression. Seven of the last seven nights (09-10 through 09-16) have
-now breached the wall in an unbroken row — the longest unbroken
-streak logged yet. No scope change to the fix; **57 days unpromoted
-since filing (07-22).**
-
-**Update (digest 2026-09-17):** eighth consecutive breach — tonight's
-run (35169164707, started 01:05:13Z) hit the standard 75-minute wall
-with `Running 10602 tests using 1 worker` (flat vs. 09-16), 9,092 of
-10,602 completed (85.8%) at cutoff, mid-range for this streak. Catalog
-has now held exactly flat at 10,602 tests for four straight nights
-(09-14 through 09-17), reinforcing the 09-16 update's read: this is a
-pure single-worker throughput ceiling, not a growing target. All
-completed checks passing, zero test-quality regression. No scope
-change to the fix; **58 days unpromoted since filing (07-22).** Eight
-of the last eight nights (09-10 through 09-17) have now breached the
-wall in an unbroken row — still the standing `/oversight`
-recommendation, now the file's longest-running unpromoted candidate.
-
-**Update (digest 2026-09-18):** the eight-night breach streak broke
-— tonight's run (35293694466, started 01:05:44Z) finished in
-1h12m30s, `Running 10603 tests using 1 worker`, all 10,603 passed.
-Catalog grew by exactly 1 test (masterchef finale-shift landed
-overnight) after four flat nights. First green night since 09-09,
-but the margin under the 75-minute wall is thin (~2.5 minutes) —
-reads as the wall holding tonight, not the single-worker throughput
-ceiling this candidate targets resolving itself. No scope change to
-the fix; **59 days unpromoted since filing (07-22)** — still the
-file's longest-unpromoted candidate, still the standing `/oversight`
-recommendation.
-
-**Update (digest 2026-09-19):** second consecutive green night —
-tonight's run (35411130727, started 00:58:21Z) again finished under
-the wall, all tests passing. Two green nights in a row after the
-eight-night breach streak, but nothing about the single-worker
-throughput ceiling this candidate targets has actually changed —
-still a relief reading, not a fix. No scope change; **60 days
-unpromoted since filing (07-22)** — still the file's
-longest-unpromoted candidate, still the standing `/oversight`
-recommendation.
-
-**Update (digest 2026-09-20):** the two-night green streak broke —
-tonight's run (35479351263, started 00:39:44Z) hit the standard
-75-minute wall again, `Running 10603 tests using 1 worker` (flat vs.
-09-18/09-19), 9,104 of 10,603 completed (85.9%) at cutoff, all
-completed checks passing, zero test-quality regression. This is the
-expected reversion, not new evidence — two green nights were never
-going to retire a fixed single-worker throughput ceiling. No scope
-change to the fix; **61 days unpromoted since filing (07-22)** —
-still the file's longest-unpromoted candidate, still the standing
-`/oversight` recommendation.
-
-**Update (digest 2026-10-11):** the longest green streak this
-candidate has recorded — seven consecutive nights, 10-04 through
-10-10, latest clocked 74m38s against the 75-minute wall — broke
-exactly as the 10-10 digest flagged it would ("margin is thinning,
-not widening"): tonight's run (38102237540, started 01:33:33Z) hit
-the wall at 9,278/10,012 (92.7%), all completed checks passing. See
-`plan/AUDIT.md`'s e2e-full row for the full update. No scope change
-to the fix — sharding across parallel Playwright workers remains the
-only thing that retires this ceiling rather than just riding it.
-**82 days unpromoted since filing (07-21)** — still the file's
-longest-unpromoted candidate, still the standing `/oversight`
-recommendation.
-
-**Update (digest 2026-10-12):** breached again the very next night —
-the first back-to-back red pair since the 08-15→08-21 mixed week.
-Tonight's run (38194318853, started 02:03:49Z) hit the same wall at
-8,889/10,719 (82.9%), zero actual test failures. See `plan/AUDIT.md`'s
-e2e-full row for the full update. No scope change to the fix.
-**83 days unpromoted since filing (07-21)** — still the file's
-longest-unpromoted candidate, still the standing `/oversight`
-recommendation.
-
-**Update (digest 2026-10-13):** breached a third consecutive night —
-a new record for this row. Tonight's run (38341294843, started
-03:21:07Z) hit the same wall at 8,860/10,735 (82.5%), zero actual test
-failures. Three-in-a-row surpasses both the 08-15→08-21 mixed week and
-the 10-11→10-12 pair logged two nights ago. See `plan/AUDIT.md`'s
-e2e-full row for the full update. No scope change to the fix — sharding
-remains the only thing that retires this ceiling. **84 days unpromoted
-since filing (07-21)** — still the file's longest-unpromoted candidate,
-still the standing `/oversight` recommendation.
-
-**Update (digest 2026-10-21):** the alternating pattern holds, no
-trend either direction. Since the 10-14 AUDIT.md log entry: 10-15 and
-10-16 came back green, 10-17 through 10-19 breached three nights
-straight, 10-20 came back green, and tonight's run (39526452277,
-started 01:17:32Z) breached again at 8,643/10,743 (80.5%), zero actual
-test failures among completed checks — the same 75-minute single-
-worker wall every time. Total test count (10,743) is flat-to-slightly-up
-vs. the 10-14 count (10,735), tracking the content saga's steady
-catalog growth. Auto-filed as a recurrence comment on issue #636
-rather than a fresh issue (14-day staleness-bound dedupe working as
-designed). No scope change to the fix. **92 days unpromoted since
-filing (07-21)** — still the file's longest-unpromoted candidate,
-still the standing `/oversight` recommendation.
-
-### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out
-
-**Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
-loop's only human-facing instrument, with a mechanical, well-understood fix)
-**Source pass:** digest, 2026-07-27
-**Filed:** 2026-07-27
-**Why:** `plan/DIGEST.md` sat frozen on its 2026-07-20 snapshot for a full
-week — the six daily night runs after it (07-21 through 07-26) all show
-`conclusion: cancelled` in `gh run list --workflow night`, and the run before
-that (07-20) burned its full 30-minute job timeout. Root cause confirmed via
-`gh run view --log` on every run: `night.yml` intentionally shares the
-`march` concurrency group (`cancel-in-progress: false`) so its commit never
-races a concurrent march push — but march fires roughly hourly while night
-fires once a day, and GitHub Actions concurrency groups only keep the
-*most-recently-queued* run per group. Every night trigger that landed while a
-march run was in progress got queued, and the next march trigger (almost
-always <1h later) silently evicted it before it started — no error, no log,
-nothing. Worse, cancelled runs don't hit the workflow's `if: failure()`
-issue-filing step, so this produced zero signal anywhere: no GitHub issue,
-no AUDIT row, no comment — only visible by reading raw run history by hand,
-which is exactly how tonight's tick found it. The cost isn't just a missing
-status page: for that week, the breadth-verdict escalation, the saga
-progress report, and the meta-loop's tuning-proposal cadence all went dark
-at once, since digest is the only thing that does any of the three.
-**Source signals:**
-- `plan/AUDIT.md` [HIGH, score 6.4] filed this tick with the full run-by-run
-  evidence (six cancelled runs' database IDs, the one timeout, the
-  `if: failure()` blind spot).
-- `.github/workflows/night.yml`'s own header comment, which states the
-  shared-group rationale plainly ("Shares the march concurrency group so
-  cloud writers never race") — the intent was sound, the failure mode
-  (starvation, not racing) wasn't anticipated.
-**Scope sketch:**
-- Give `night.yml` its own concurrency group (e.g. `group: night`) instead
-  of sharing `march`'s, so its daily trigger can never be evicted by an
-  hourly march run queuing behind it.
-- The original race this guarded against (night's commit landing mid-march-
-  push) needs a lighter substitute: since the digest commit only ever touches
-  `plan/DIGEST.md` (+ occasional `plan/AUDIT.md` / `plan/CANDIDATES.md`
-  rows, never code), a `git pull --ff-only` immediately before the commit
-  step (already implied by skills/digest.md §3 step 1, but re-run it right
-  before the final commit too) plus a retry-once-on-push-rejection loop
-  would cover the actual risk (a lost push) without needing a shared queue.
-- Alternative if a shared queue is still preferred: bump `night.yml`'s
-  `timeout-minutes` well past march's typical run length (some march ticks
-  run 50+ minutes) so a queued night run has enough runway to actually start
-  and finish once it's next in line, rather than dying to the job timeout
-  the way the 07-20 run did.
-- Likely the identical `workflows` OAuth-scope cloud-permission blocker as
-  candidates #26/#34 (this is a `.github/workflows/night.yml` edit) — verify
-  at implementation time; if blocked, bundle with #26/#34's other pending
-  workflow-file edits in the same local/`/oversight` session.
-**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
-ships via `/oversight` directly, same precedent as candidate #26/#34).
-**Conflicts:** none.
-
-**Update (digest 2026-08-06):** the starvation race fired again —
-2026-08-05's night run (31000808252, created 11:16:35Z) shows
-`conclusion: cancelled`, confirmed via bracketing `march` runs
-(10:34:07Z→12:07:02Z and 11:27:38Z→13:26:17Z) matching the exact
-diagnosed mechanism: the daily trigger queued mid-march-run and the
-next hourly march trigger evicted it before it started. This is the
-third confirmed loss since the 2026-07-27 diagnosis (07-28, 07-30, now
-08-05) — a loss roughly every 3-5 nights, not self-resolving. This
-particular loss cost a full day of `plan/DIGEST.md` staleness (frozen
-on its 08-04 snapshot until this tick caught up), the same failure
-mode as the original week-long blackout, just shorter because the next
-day's run happened to get a clear runway. Still unpromoted 10 days
-after filing.
-
-**Update (digest 2026-08-09):** worst recurrence yet — **two
-consecutive nights lost**, not one. `gh run list --workflow night`
-shows 08-07 (created 10:46:40Z) and 08-08 (created 10:43:05Z) both
-`conclusion: cancelled`, back to back, the first time this has
-happened since the 07-27 diagnosis (prior losses were isolated:
-07-28, 07-30, 08-01, 08-02, 08-05 — never two in a row). The result
-was a 3-day digest blackout (frozen on the 08-06 snapshot through
-08-09), the longest since the original week-long outage that
-prompted this candidate's filing. The loss cadence itself is also
-accelerating: 5 losses in the 12 nights since diagnosis (07-28,
-07-30, 08-01, 08-02, 08-05, 08-07, 08-08 — 7 losses in 13 nights,
-not the "every 3-5 nights" rate noted at the 08-06 update). Now the
-single most urgent of the four unpromoted candidates in this file —
-recommend promoting ahead of #34/#33/#36 given it is actively
-degrading rather than holding steady. Still unpromoted 13 days
-after filing.
-
-**Update (digest 2026-08-10):** 08-09's night run posted `success`
-— the first clean run since the 08-07/08-08 back-to-back loss, and
-tonight's tick (08-10, this one) is running now with no contention
-signs. One clean night doesn't retire the finding — the root cause
-(the shared concurrency group's most-recently-queued-wins eviction)
-is completely unchanged, and the 08-06 update already showed a
-single clean night (08-06 itself) sitting between two loss clusters.
-Softening from "single most urgent of the four" to "still urgent,
-currently dormant" — #36 (the-voice) is the one candidate whose cost
-is actively growing rather than intermittent, and should lead the
-next `/oversight` session ahead of this one. Still unpromoted 14
-days after filing.
-
-**Update (expand pass 67, 2026-08-30, cloud march):** the starvation
-pattern is not dormant — `gh run list --workflow night.yml` shows 7
-more cancellations in the 12 nights since the 08-10 update (08-19,
-08-21, 08-23, 08-24, 08-26, 08-29, and today 08-30), a higher rate
-than the "every 3-5 nights" baseline noted at filing. Caught a clean,
-fresh repro of the exact diagnosed mechanism live during this tick:
-today's night run (33306737061, queued 10:32:43Z) sits bracketed by
-march run 33306027579 (started 10:15:20Z, still in-progress) and the
-next march trigger 33307197099 (queued 10:44:15Z) — and that second
-march run was itself cancelled too, not night. Reading the fuller
-day's `march.yml` run history shows this isn't only a night-specific
-problem: march-vs-march queue collisions are common in the same
-window (33304767824 also cancelled at 09:44:02Z), because march's own
-polling cadence is tight enough (successive triggers ~25-30 minutes
-apart against runs that themselves take 30-60+ minutes) that the
-shared concurrency group's "most-recently-queued-wins" rule evicts
-queued runs of *either* workflow, not just night's. This slightly
-broadens the candidate's value case beyond "protect night's daily
-slot" — a queued-but-never-started run burns no runner minutes
-itself, but each eviction silently delays that tick's dispatch by
-~25-60 minutes with no log or signal, the same silent-gap failure
-mode the original finding named for night, just lower-stakes when
-it happens between two march ticks instead of skipping a whole day
-of digest. No change to score or scope sketch; still unpromoted 34
-days after filing.
-
-**Update (digest 2026-09-01):** worst run since the original 07-21
-week-long gap — **three consecutive nights lost**: `gh run list
---workflow night` shows 08-29 (33248067249), 08-30 (33306737061,
-already counted in the 08-30 update above), and 08-31 (33383044473)
-all `conclusion: cancelled`, zero jobs started on any of the three.
-`plan/DIGEST.md` sat frozen on its 2026-08-28 snapshot for the
-entire 3-night span until tonight's tick (this commit) got through.
-Same unfixed mechanism each time — no new evidence, just the longest
-unbroken loss streak since filing 42 days ago. Still unpromoted.
-
-**Update (expand pass 68, 2026-09-04, cloud march):** the most
-encouraging window since filing — `gh run list --workflow night.yml`
-shows **4 consecutive clean runs** (09-01 through 09-04, all
-`conclusion: success`), the longest unbroken clean streak on record,
-immediately following the worst-yet 3-night loss streak (08-29
-through 08-31) the 09-01 digest update reported. The underlying
-mechanism is entirely unchanged — no code or workflow-file edit has
-shipped — so this reads as favorable scheduling luck (fewer
-march-trigger collisions landing in night's ~10:3x UTC queue window
-this week), not a fix; the same eviction race documented since
-07-27 will resume whenever timing lines up again, exactly as the
-08-06/08-10/08-27 "one clean night" false dawns already logged here
-did. Softening urgency slightly relative to #34 (which shows no such
-respite) but not the score or scope sketch — still the standing
-`/oversight` recommendation, now 39 days unpromoted since filing
-(07-27).
-
-**Update (digest 2026-09-05):** first clean-queue (not clean-window)
-data point — tonight's `night` trigger landed at 13:29:26Z mid-`march`
-run (33966499034, cleared 13:37:53Z), queued instead of getting
-evicted, and started at 13:37:54Z. Confirms the group's queueing
-behaves as documented at least some of the time; doesn't retire the
-finding since eviction still depends on whether a *second* march
-trigger lands before the first clears. 40 days unpromoted since
-filing (07-27) — unchanged recommendation.
-
-**Update (expand pass 69, 2026-09-06, cloud march):** the clean streak
-pass-68 flagged now extends to **6 consecutive successful runs**
-(09-01 through 09-06, `gh run list --workflow night.yml` confirms all
-`conclusion: success`) — the longest unbroken run on record, more than
-double pass-68's 4-run count. Still reads as favorable scheduling luck
-rather than a fix: no code or workflow-file edit has shipped, the
-shared-concurrency-group mechanism is byte-for-byte the one diagnosed
-07-27, and the 08-29→08-31 three-night loss streak proves the race is
-still fully live whenever collision timing turns unfavorable again.
-Softening urgency further relative to #34/#25/#28 (all of which show
-continued live recurrence this same window) given the sustained
-respite, but holding score and scope — a race condition that hasn't
-fired in 6 days is not a race condition that's been fixed. 41 days
-unpromoted since filing (07-27).
-
-**Update (digest 2026-09-17):** the clean streak kept extending and
-never broke — `gh run list --workflow night` shows **11 consecutive
-successful runs** (09-06 through 09-16, tonight's 09-17 run in
-flight at digest time), nearly double pass-69's 6-run count and the
-longest unbroken streak on record by a wide margin. Still reads as
-favorable scheduling luck, not a fix — no `night.yml` or `march.yml`
-edit has shipped since the 07-27 diagnosis, and the underlying
-most-recently-queued-wins eviction mechanism is unchanged. Given 11
-days with zero occurrences, further softening urgency relative to
-#34 (which just posted its 58th unpromoted day with an unbroken
-8-night breach streak, the opposite trend) — recommend #34 lead the
-next `/oversight` session, with #35 following once a genuine
-eviction recurs to re-confirm the race is still live. 52 days
-unpromoted since filing (07-27).
-
-**Update (digest 2026-09-18):** streak extends to 12 — 09-17's
-run (createdAt 15:08:24Z) posted `success`, and tonight's 09-18 run
-(this tick) is in flight with no contention signature observed. The
-two candidates' trends have now diverged further: #34 just posted
-its *first* green night in nine (see its 09-18 update), still a
-fragile ~2.5-minute margin under the wall, while #35's mechanism has
-gone unobserved for 12 straight nights. No `night.yml` edit has
-shipped; the underlying eviction race is unchanged. Recommendation
-holds: #34 leads the next `/oversight` session. 53 days unpromoted
-since filing (07-27).
-
-<!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
-     filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
-     critique-pass evidence (passes 90-93).
-     Window since pass 55 (426ec40, 2026-07-12): ~4 days / 120 commits. Both
-     thresholds met (20 commits, 48 hours).
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled issues;
-     Step 1.5 cadence gates found neither the season-sweep (due 2026-07-19) nor
-     show-add (locked, gap table non-zero) clock due; Step 2.0's shipping-mode
-     gate is lifted (Phase 36 [x]) so the critique rate-limit applied normally —
-     it did NOT fire this tick because a Pending [HIGH] finding already sits
-     queued (pass-93, dragrace season-18 missing `pull` field), which blocks
-     condition 3 of the gate. Step 3a (phase) and 3b (data) both empty. Step
-     3b.5 (content-gaps) was checked carefully: both Pending content-gaps rows
-     — the standing Rule 2 season-fill drain and a `source: self` finale-shift
-     row for Love Island US season 8 — were verified non-actionable this tick.
-     Every remaining `plan/CADENCE.md` gap-table row (30 shows) is starred
-     (confirmed-but-unaired or still-airing, not yet concluded); the closest to
-     resolving is alone-australia (Season 4 premiered 2026-07-15, one day before
-     this tick, but hasn't concluded). The finale-shift row is blocked on the
-     same reunion-deferral precedent already documented by a 2026-07-13 drain
-     tick (Love Island US season 8's regular run concluded but its reunion special
-     is confirmed for 2026-08-31 — not yet aired). Bearings' Rule 3 (themed
-     lists) is explicitly gated to fire "only once the gap table reads zero,"
-     which it has not literally reached, so list work was not started
-     unilaterally from this tick. This left Step 3c (expand) as the correct
-     dispatch per march's own documented order.
-     Signals reviewed:
-     - plan/AUDIT.md Pending (non-content-gaps): 6 rows — a mobile-overflow bug
-       (score 5.4), a ship-content issue-mirror idempotency gap (score 3.0), a
-       YEAR_TENURE_RE teen-number blind spot (score 2.7), a themed-list category
-       enum drift doc gap (score 2.4), plus the two content-gaps rows already
-       covered above. All are single-tick-sized fixes already well-scoped for
-       `/iterate`, not phase-shape candidates — none proposed as new expand
-       candidates.
-     - plan/CRITIQUE.md Pending: 29 rows (passes 83-93), mostly single-page LOW
-       content nits already suited to individual `/iterate` fixes. Three rows
-       mapped directly onto existing filed candidates rather than new signal:
-       pass-90 (Chopped S4 PREMIERED caption) and pass-93 (Top Chef Carolinas
-       FILMED/FORMAT caption) both reinforce candidate #28 (stat-tile
-       value/caption literal-duplicate invariant, score 8.3) — reinforcement
-       note added. pass-92 (three freshly-shipped single-canon shows sharing
-       near-identical canon-rationale opener/closer templating) is a related but
-       distinct cross-show sub-pattern of candidate #25 (canon-rationale/
-       season-body verbatim-argument echo gate, score 8.0) — reinforcement note
-       added, flagged as an open scope question for `/oversight` rather than
-       silently folded in, since the detection mechanic would differ (cross-show
-       vs. cross-file-same-show). pass-91 ("51+ tiles" on the still-unfiltered
-       B tier) confirms candidate #30's growth trend (39→51+ tiles across 5
-       passes) — reinforcement note added, with a correction: the original
-       "grows every tick" rationale is now stale since the 2026-07-12 pivot
-       locked new-show creation to the biweekly clock; the compounding argument
-       still holds, just at a slower cadence.
-     - GH issues: 1 open (`triage:loop-queued` #568), already mirrored 1:1 as
-       the AUDIT.md mobile-overflow bug row above — no new signal.
-     - spec.md / design/: no commits touching either since pass 55 (2026-07-12).
-     No candidate scored high enough on fresh, uncaptured signal to justify a
-     4th new numbered candidate this pass — every strong signal traced back to
-     an already-filed, well-scored candidate awaiting `/oversight` promotion.
--->
-
-<!-- Pass 55 (2026-07-12, commit 426ec40) — 0 new phase-shape candidates filed;
-     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
-     passes 43/45/46/51/54 made — filed WAVE 11, see candidate #24's update below),
-     no new numbered candidate this pass.
-     Window since pass 54 (e40486c, 2026-07-11): ~12.5 hours / 20 commits. Commit
-     threshold met (20 ≥ 20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 10 (5 shows, filed
-       pass 54) fully drained within a day of filing (Traitors UK, MAFS Australia,
-       Real World, Ink Master, So You Think You Can Dance all resolved [x]), the
-       exact recurring stall candidate #24 names, again caught structurally by
-       march's own Step 3b.5 finding the queue empty and falling through to this
-       expand dispatch. Filed WAVE 11 (5 shows: Big Brother UK, RuPaul's Drag Race
-       Down Under, Love Island Australia, The Real Housewives: Ultimate Girls Trip,
-       Selling the OC — all international-edition/spinoff extensions of existing
-       clusters, since WAVE 10 closed the catalog's remaining format-diversity gaps).
-       All scored ≥3.0 so the next march tick's Step 3b.5 has real work. Candidate
-       #24 reinforced (fifth consecutive empty-queue occurrence, see update above).
-     - AUDIT.md other Pending rows: still exactly 2 real rows plus the recurring
-       HIGH — the e2e-full crawl timeout row (candidate #26) recurred a fourth time
-       this window (2026-07-11T23:19:19Z, run 29171935246, per the 2026-07-12
-       digest), now 5 days unpromoted across four red nights; the dedupe
-       staleness-bound row (candidate #32, filed 2026-07-11) remains unchanged,
-       1 day unpromoted. The Supabase CLI pin (issue #416) and the
-       `YEAR_TENURE_RE` engineering row (score 2.7) are both unchanged, no new
-       signal. Neither #26 nor #32 gets a body edit this pass — both are already
-       fully described with their latest evidence directly in the AUDIT.md HIGH
-       row and the digest's 2026-07-12 recommendation to promote both (plus the
-       Supabase pin) at the next local/oversight session stands unchanged; nothing
-       for `/expand` itself to add beyond what's already on record.
-     - CRITIQUE.md: 23 live Pending findings, pass-92 (5 findings: 3 MED, 2 LOW)
-       landed since pass 54's pass-91. No new HIGH findings, no new 3+ clustering
-       on one URL/family beyond what existing candidates already cover: pass-92's
-       Ink Master season-title stutter finding is the same defect class as the
-       pass-73-fixed numeral-form stutter (spelled-out-ordinal variant, single
-       instance) — below the 3-instance clustering bar, left for `/iterate`/
-       `/ship-content` drains. The SYTYCD tenure-overshoot finding and the
-       cross-show canon-rationale templated-phrasing finding are similarly
-       single-cluster, contained fixes — no new candidate warranted.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean). No new issue
-       activity beyond what candidates #26/#32/#416 already track.
-     - spec.md + design/: no changes since pass 54 (`git log e40486c..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 20 commits since pass 54 — content-drain velocity (5 new
-       shows scaffolded, several audit-finding-close content fixes), one critique
-       pass (92), one digest. Matches the standing perpetual-mandate cadence — no
-       refactor-smell cluster, no new signal warranting a fresh numbered candidate
-       this pass.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
-     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying signal
-     this pass beyond the AUDIT.md-recorded #26 recurrence noted above. #24 —
-     reinforced (fifth consecutive empty-queue occurrence, see update above). -->
-
-<!-- Pass 54 (2026-07-11, commit e40486c) — 0 new phase-shape candidates filed;
-     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
-     passes 43/45/46/51 made), plus reinforced existing candidate #24.
-     Window since pass 53 (c50bf0a, same day): ~4.5 hours / 7 commits. Commit
-     threshold (≥20) not met, and last-pass timestamp is under 24h — this pass
-     ran because march's own dispatch chain (Step 1 triage clean, Step 2 critique
-     gate not due, Step 3a/3b/3b.5 all empty) fell through to Step 3c, whose own
-     conditions independently qualify: posture bold, ≥20-commits-OR-signal-present
-     is satisfied via the "signal worth examining" clause (AUDIT.md has 2 Pending
-     rows) plus this being a genuinely idle dispatch slot with no phase/data/
-     content-gap work queued.
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 9 (5 shows, filed
-       pass 51) fully drained this week (rhodubai, summer-house,
-       bachelor-in-paradise, dragrace-allstars, chopped all resolved [x]), the
-       exact recurring stall candidate #24 names, now caught structurally by
-       march's own Step 3b.5 finding the queue empty and falling through to
-       this expand dispatch — see candidate #24's reinforcement below. Filed
-       WAVE 10 (5 shows: The Traitors UK — original edition of the catalogued
-       US `traitors` flavor; Married at First Sight Australia — higher-profile
-       international edition of the catalogued `married-at-first-sight` US
-       flavor; The Real World — genre-founding MTV docusoap, no founding-era
-       title currently represented; Ink Master — tattoo-competition format, no
-       body-art competition cluster yet; So You Think You Can Dance —
-       contestant-pro dance competition, no dance-competition format alongside
-       the catalogued Dancing with the Stars). All scored ≥3.0 so the next
-       march tick's Step 3b.5 has real work.
-     - AUDIT.md other Pending rows: still exactly 2 — e2e-full crawl timeout
-       (candidate #26) and Supabase CLI version pin (issue #416), both
-       unchanged and explicitly BLOCKED FROM CLOUD. The `YEAR_TENURE_RE`
-       engineering row (score 2.7) also unchanged, still single-source and
-       below the phase-candidate filing bar.
-     - CRITIQUE.md: 16 live Pending findings (14 LOW, 1 MED, down from pass
-       53's 17), pass-90 (1 finding, already closed same-tick) landed since
-       pass 53's pass-89. No new HIGH findings, no new 3+ clustering on one
-       URL/family beyond what existing candidates already cover: the
-       below-deck era-band-range finding (pass-56) reinforces the same class
-       as the pending pass-53 Alone finding, both already fully inside
-       candidate #14's scope per prior-pass notes — no new filing. The
-       /shows B-tier filter finding (pass-77) is already candidate #30's
-       exact scope — no new filing. The best-finales cross-entry `final
-       tribal` echo (pass-36) and the masterchef tier-blurb template overlap
-       (pass-71) are each single-instance content nits below the 3-instance
-       clustering bar — left for `/iterate`/`/ship-content` drains.
-     - GitHub issues: 0 unlabeled (triage gate clean). #521 (signed-in CTA
-       flash, HIGH, still open) and #480/#416 (cloud-permission-blocked,
-       unchanged) carry no new clustering signal. #398/#399/#405/#400 are
-       stale loop-opened issues from mid-June with no new activity — not a
-       fresh signal, already the exact pattern candidate #32 names.
-     - spec.md + design/: no changes since pass 53 (`git log c50bf0a..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 7 commits since pass 53 — 3 audit-finding-close content
-       fixes (tagline echo, cast-cast word-tic repetition, timestamp refresh
-       across 9 canon files) each paired with its audit-closure commit, plus
-       critique pass 90 itself. Pure content-drain + critique-response
-       velocity, matching the standing perpetual-mandate cadence — no
-       refactor-smell cluster, no new signal warranting a fresh numbered
-       candidate this pass.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
-     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
-     signal this pass. #24 — reinforced (fourth consecutive empty-queue
-     occurrence, see update above). -->
-
-<!-- Pass 52 (2026-07-11, commit 15f80fb) — 2 new phase-shape candidates filed
-     (#30, #31), plus reinforced existing candidate #29.
-     Window since pass 51 (f0b101e, 2026-07-10): ~12 hours / 21 commits. Commit
-     threshold met (21 ≥ 20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — WAVE 9 (5 shows, filed
-       pass 51) fully drained same-window (chopped, rupauls-drag-race-all-stars,
-       bachelor-in-paradise, summer-house, real-housewives-of-dubai all resolved
-       [x]). Same recurring empty-queue pattern candidate #24 already names; left
-       for the next march tick's Step 3b.5 to refill per Rule 1.
-     - AUDIT.md other Pending rows: e2e-full crawl timeout (candidate #26) and
-       Supabase CLI version pin (issue #416) both remain explicitly BLOCKED FROM
-       CLOUD, unchanged. New row this window: `YEAR_TENURE_RE` teen-number gap
-       (engineering, score 2.7, filed 2026-07-08) — single-source, below the
-       3.0 iterate threshold, scope already self-described as a contained
-       one-tick fix rather than a phase-shape gap. Not filed as a candidate;
-       left for a future `/iterate` tick with headroom, or a direct oversight
-       pick.
-     - CRITIQUE.md: 21 live Pending findings (mostly LOW, 2 MED), pass-87 (3
-       findings) landed since pass 51's pass-86. Two fresh signals cleared the
-       filing bar:
-       (1) pass-87 [MED] `/shows/the-apprentice` (and `/shows/survivor`) TTFB
-       runs 3-6x slower than every other page walked, correlating with canon
-       size, not show identity — `dynamic = 'force-dynamic'` (phase-35, kept
-       intentionally for ranking freshness) means the per-request assembly cost
-       scales with season count. Filed as new candidate #31. Cross-references
-       candidate #26 (e2e-full crawl timeout) — different subsystems (render
-       latency vs. CI wall-clock) but the same underlying stressor: catalog
-       growth (58 shows / 717 seasons and climbing per Rule 1's perpetual
-       mandate) outpacing infrastructure sized for an earlier catalog size.
-       (2) pass-77 [LOW] `/shows` B-tier holds 39 shows in one flat scroll with
-       no filter/sort beyond global search — still Pending, unaddressed across
-       10 passes since filing. The catalog has grown past 39 in the B tier
-       alone since pass-77 filed this (58 shows total now). Every show page
-       already has an era-filter affordance (phase 33/34) for browsing within
-       a show; the top-level index has no equivalent for browsing across shows.
-       `network`/`genre_tag` frontmatter already exists per CLAUDE.md's show-
-       identity table — no new content fields needed. Filed as new candidate
-       #30.
-       Era-range chip findings (below-deck LEE/TITHERADGE ERA, row 2798) remain
-       fully inside candidate #14's existing scope — no new filing, cited as
-       reinforcement in #14 by a prior pass already.
-       Remaining LOW findings (stat-tile caption phrasing, sentence fragments,
-       hyphenation drift, era-band explanatory text) are one-off content
-       nitpicks below the phase-shape bar — left for `/iterate`/`/ship-content`
-       drains.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
-       unchanged, no new clustering signal.
-     - spec.md + design/: no changes since pass 51 (`git log f0b101e..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 21 commits since pass 51 — 5 new-show scaffolds (chopped,
-       rupauls-drag-race-all-stars, bachelor-in-paradise, summer-house,
-       real-housewives-of-dubai) each paired with an audit content-gap close,
-       2 critique passes (86, 87), 4 audit-finding content fixes (host bare-
-       surname, era-range clarity, filming_caption, B-tier pill a11y label),
-       1 digest. Pure content-drain + critique-response velocity, matching the
-       standing perpetual-mandate cadence — no refactor-smell cluster.
-     - File-size check (candidate #29's own signal): `plan/CRITIQUE.md` now
-       3,201 lines / 1.5MB (was 3,096 at pass-51's digest reading, +105 lines
-       in ~1 day — growth continues unabated). `plan/CANDIDATES.md`
-       itself has now grown to 4,106 lines / 248KB — larger than `AUDIT.md`
-       (523 lines / 392KB) and approaching the same class of problem #29
-       already names for CRITIQUE.md. Reinforced below with a scope-widening
-       note.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25/
-     #26/#27/#28 — all unchanged, no new reinforcing or disqualifying signal
-     this pass. #29 — reinforced (continued CRITIQUE.md growth + new
-     CANDIDATES.md self-growth signal). #30/#31 — new this pass. -->
-
-<!-- Digest 2026-07-11 (commit 3b8709b) — 1 new tuning proposal filed (#32) per
-     skills/digest.md §5, reading the pulse since digest 2026-07-10 (fbd7806).
-     e2e-full's HIGH AUDIT row (candidate #26's evidence base) recurred a third
-     consecutive night (2026-07-06, 2026-07-09, 2026-07-10 — run 29130142942),
-     and the same tick window's 2026-07-10T18:13Z cloud march crash (run
-     29113747919) was silently absorbed by its own workflow's title-dedupe
-     search into a month-old stale issue (#398, open since 2026-06-11,
-     untouched). That confirms the title-dedupe blind spot the pass-51 digest
-     first flagged on #416 is not e2e-full-specific — it recurs on any
-     workflow whose failure-issue dedupe search lacks a staleness bound. Filed
-     as its own candidate rather than folded into #26 since the fix (bound the
-     dedupe search's `state:open` to a recency window) is orthogonal to #26's
-     timeout-bump fix, even though both land in workflow YAML blocked by the
-     same `workflows`-OAuth-scope cloud gap. -->
-
-<!-- Pass 53 (2026-07-11, commit c50bf0a) — 0 new candidates filed; 2 existing
-     candidates materially updated instead.
-     Window since pass 52 (03625c7, same day): ~4 hours / 20 commits. Commit
-     threshold met (20 >= 20) — cadence gate holds even within one calendar
-     day since pass 52 already burned its 48h alternative path.
-     Signals reviewed:
-     - Candidate #31 (large-canon TTFB) — RESOLVED this window, directly, not
-       via phase promotion. Commit 75108d4 ("perf: parallelize community-
-       ranking Supabase reads", closes #541, audit finding
-       `the-apprentice-ttfb`) confirmed the candidate's own working theory
-       (four sequential Supabase awaits in `getCommunityRanking`) and fixed
-       it with `Promise.all`, `force-dynamic` freshness intact. Struck
-       through per #17/#27 precedent; zero open signal remains.
-     - Candidate #16 (/u/[handle] stat-chip scaffold) — conflict correction,
-       not new filing. Re-reading its scope sketch against a still-Pending
-       CRITIQUE pass-37 `[needs-user-call]` row on the same URL (`/u/e2e`)
-       surfaced that the candidate's zeroed-chip framing directly reopens
-       CRITIQUE pass-28 #293's deliberate removal of that exact pattern
-       (`ProfileEmpty.tsx:28-36` + a pinned regression test at
-       `ProfileEmpty.test.tsx:178`). Was filed with "Conflicts: None" — now
-       corrected with the citation and a scope narrowing (non-empty case
-       only) so `/oversight` doesn't promote a candidate that silently
-       relitigates an already-closed editorial call.
-     - AUDIT.md: still 2 real Pending rows (e2e-full timeout, Supabase CLI
-       pin), both unchanged and explicitly BLOCKED FROM CLOUD — same as pass
-       52. The `YEAR_TENURE_RE` engineering row (score 2.7) also unchanged,
-       still single-source and below the phase-candidate filing bar. Four
-       AUDIT rows closed this window (americas-next-top-model overlap,
-       below-deck-down-under fragment, the-circle canon-rationale
-       restatement, the-circle vote-question) — all one-tick content/code
-       fixes, not phase-shape gaps.
-     - CRITIQUE.md: pass 88 landed this window (2 MED findings, both closed
-       same-tick via direct fixes — see AUDIT rows above). Pending count
-       dropped 21 → 17 (mostly LOW, 1 MED). No new HIGH findings, no new
-       3+ clustering on one URL/family; the one [MED][needs-user-call] row
-       (pass-37, `/u/e2e`) is pre-existing and already folded into the
-       candidate #16 correction above rather than filed as its own row.
-     - GitHub issues: 0 unlabeled (triage gate clean). Noted but not filed:
-       issue #521 ("Signed-in vote/comment CTAs flash anon...") sits open
-       and unclosed even though its near-duplicate #522 (same underlying
-       auth-state-flash bug, same critique pass-84 origin) closed via the
-       fix pass 88 re-verified. Single stale-duplicate instance — doesn't
-       clear the "2+ independent signals" filing bar on its own, and closing
-       a duplicate issue is a mechanical `/iterate`-scale action, not a
-       phase-shape gap. Left as a note for a future tick to close #521
-       directly with a reference to #522's fix commit.
-     - spec.md + design/: no changes since pass 52 (`git log 15f80fb..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 20 commits since pass 52 — mostly content-fix pairs
-       (audit finding + its content/code close), 1 perf fix, 1 critique
-       pass, 1 digest. No refactor-smell cluster; matches the standing
-       content-drain + critique-response cadence.
-     Existing candidates status: #14/#15/#18/#19/#20/#21/#22/#23/#24/#25/
-     #26/#28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
-     signal this pass. #16 — conflict correction (see above). #31 —
-     resolved, struck through (see above). -->
-
-### 33. content-gaps gate (Step 3b.5) needs a bug-priority carve-out
+### [ ] [score 5.5] content-gaps gate (Step 3b.5) needs a bug-priority carve-out
+- proposed: 2026-07-18, v1 candidate #33 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.5 (impact: 7 — the gate is documented to fire "on most
 content-eligible ticks indefinitely" now that Rule 3 is the perpetual
@@ -2904,533 +1459,8 @@ itself resolve. Score unchanged at 5.5; still the highest-scored unpromoted
 candidate whose fix is purely a `skills/march.md` conditional, now **53
 days unpromoted**.
 
-### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
-
-**Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
-independent workflows, three total incidents, but capped by the same
-`workflows`-scope cloud blocker as candidates #26 and issue #416/#480)
-**Source pass:** digest 2026-07-11
-**Filed:** 2026-07-11
-**Why:** Both `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
-dedupe their auto-filed failure issues with a bare `gh issue list --search
-'in:title "<prefix>" state:open'` check — if any open issue matches the title
-prefix, the workflow skips filing a new one, regardless of how old that issue
-is or whether it describes the same incident. This has now silently swallowed
-signal three times: the 2026-07-09 e2e-full recurrence and the 2026-07-10
-e2e-full recurrence (run 29130142942) both got absorbed into stale issue #416
-(filed 2026-06-14 for an unrelated Supabase-CLI transient, still open a month
-later), and the 2026-07-10T18:13Z march crash (run 29113747919) got absorbed
-into stale issue #398 (filed 2026-06-11, untouched since one triage comment
-the same day). In all three cases the fresh incident's own run link never
-reached any visible tracker — the only record is the raw workflow log, which
-nobody reads unless a digest happens to go looking. The march crash self-
-healed on retry this time (content kept shipping within the hour), but the
-e2e-full recurrence is a real, worsening breadth-ceiling problem (candidate
-#26) that has now gone three nights without its own issue thread, relying
-entirely on the digest manually re-reading the AUDIT.md row to notice the
-pattern.
-**Scope sketch:**
-- Add a recency bound to both dedupe searches — e.g. `state:open
-  updated:>=<N-days-ago>` (7-14 days is a reasonable default) — so an issue
-  that hasn't been touched in weeks no longer suppresses a fresh incident's
-  filing.
-- Alternative/complementary: instead of skipping filing entirely, post a
-  comment with the new run's link onto the existing open issue when the
-  dedupe search does match — preserves the "don't spam duplicate issues"
-  intent while keeping every incident's evidence visible on the thread.
-- Touches `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
-  (and possibly `night.yml` if it carries the same pattern — verify at
-  fix-time). Same cloud-permission blocker as candidate #26 and issue
-  #416/#480: the cloud loop's `ACTIONS_PAT` lacks the `workflows` OAuth scope
-  to push workflow-file edits. Bundle with those two in the same local/
-  `/oversight` session — three one-line-to-few-line diffs in the same file
-  family, same blocker.
-
-**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
-ships via `/oversight` directly, same path as candidate #26 and the Supabase
-CLI pin).
-**Conflicts:** none. Complements candidate #26 (same file family, same cloud
-blocker, orthogonal fix — recommend landing all three permission-blocked
-workflow diffs in one local session).
-
-<!-- Pass 48 (2026-07-08, commit a9bb688) — 1 new phase-shape candidate filed (#28),
-     plus reinforced existing candidate #25 and updated existing candidate #27.
-     Window since pass 47 (566fc6f, 2026-07-08): ~4 hours / 20 commits. Commit
-     threshold met (exactly 20 ≥ 20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — same recurring empty-queue
-       pattern candidate #24 already names. Left for the next march tick's Step
-       3b.5 to refill per Rule 1, consistent with pass 47's own note that the
-       direct-action move is reserved for dispatch time, not expand time.
-     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
-       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
-       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
-     - CRITIQUE.md: 38 live Pending findings (mostly LOW, 1 MED — The Voice
-       tenure/status contradiction, pass-80, unresolved as of this filing). Pass 80
-       ran since pass 47 (4 findings: 0 high, 2 medium, 2 low) and its own drain
-       closed 2 more instances of candidate #25's exact defect class this window
-       (Perfect Match #501, The Voice #502 — both "canon.md rationale restates the
-       season body's own closing argument near-verbatim," fixed as one-off content
-       edits rather than through a gate). That's the third and fourth reinforcing
-       instance since pass 47 alone (signal count 7 → 9 shows) — reinforced below.
-       Separately, the FILMED-caption drain (issue #498, first batch shipped pass
-       47-adjacent, this window shipped its 3rd through 6th and FINAL batches —
-       139 total files across 22 shows, drain now complete, 0 remaining) is the
-       same root-cause shape as candidate #25 (content authored without checking
-       a sibling field, producing literal duplication) but on a different field
-       pair (`location`/`filming_caption` vs canon-rationale/season-body) and
-       shipped with **no accompanying content-check gate**, unlike the sibling
-       `meth_who_p` plural-voice defect (#329/#357) which got one after its drain.
-       Filed as new candidate #28 — confirmed via direct grep across the catalog
-       that the other 5 stat-tile value/caption pairs (`format_summary`/
-       `format_caption`, `cast_size`/`cast_size_caption`, `premiere_date`/
-       `premiere_caption`, `ep_count`/`episodes_caption`, `host`/`host_caption`)
-       currently carry zero literal duplicates, so a gate can ship at strict
-       floor-0 immediately across all six pairs rather than needing a lax/warn
-       period. clipToSeoBudget cluster (candidate #27): one of its two open
-       findings (pass-79 stop-word, issue #503) was fixed directly this window
-       via `trimTrailingStopWords()` (commit dd43d38) — a targeted one-line-deny-
-       list fix, not the candidate's full "rank marks by boundary strength"
-       rewrite. The other open finding (pass-68 em-dash-vs-comma preference,
-       still Pending in CRITIQUE.md) is unresolved. Updated below — scope narrowed
-       to the remaining em-dash-preference fix only, score adjusted down since
-       half its evidence resolved via a direct `/iterate` patch rather than
-       needing phase promotion, matching the candidate's own original hedge
-       ("may ship as a same-tick fix rather than needing a numbered phase").
-       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
-       Australia), unchanged, still below the 3-instance clustering bar.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
-       unchanged, no new clustering signal.
-     - spec.md + design/: no changes since pass 47 (`git log 566fc6f..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 8 commits since pass 47 — 2 FILMED-caption drain batches
-       (closing the 139-file drain), 1 B-tier lede voice fix, 1 villa/house
-       self-contradiction fix, 1 canon-duplication fix (Perfect Match), 1
-       canon-duplication fix (The Voice), 1 SEO stop-word fix, 1 critique pass
-       (80), 1 digest. Pure content-drain + critique-response velocity, matching
-       the standing perpetual-mandate cadence.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
-     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
-     reinforced (signal count 7 → 9 shows). #27 — updated (narrowed scope, score
-     down). #28 — new this pass. -->
-
-<!-- Pass 47 (2026-07-08, commit 566fc6f) — 1 new phase-shape candidate filed (#27),
-     plus reinforced existing candidate #25.
-     Window since pass 46 (51e09a9, 2026-07-07): ~13 hours / 21 commits. Commit
-     threshold met (21 ≥ 20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 8 (5 shows, filed pass
-       46) fully drained same-day (dragrace-uk, rhod, shark-tank, the-ultimatum,
-       perfect-match all resolved [x]), the same recurring empty-queue pattern
-       candidate #24 already names. Not re-filing a wave 9 this pass — Rule 1's
-       direct-action move is reserved for when the queue is actually empty at
-       dispatch time; this expand pass ran ahead of the next march tick, so the
-       queue-refill decision is left to whichever tick's Step 3b.5 finds it empty.
-     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
-       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
-       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
-     - CRITIQUE.md: 40 live Pending findings (mostly LOW, a handful MED), up from
-       30 last pass — pass-78 (5 findings) and pass-79 (5 findings) both landed
-       since. Two signals worth acting on:
-       (1) Perfect Match's canon-rationale/season-body echo (pass-79) is the exact
-       defect class candidate #25 already scopes — reinforced below, signal count
-       6 → 7 shows, notable because this is the first instance caught on a show
-       still in its first week of life, strengthening the "gate would pay for
-       itself immediately" case.
-       (2) Two separate LOW/MED findings on `clipToSeoBudget()` (pass-68 em-dash-
-       vs-comma preference, pass-79 stop-word trailing) sit unresolved on the exact
-       same 20-line function that already absorbed one earlier fix (pass 62/67).
-       Filed as new candidate #27 — 3 total fix events on one function is signal
-       multiplicity the same shape as #25's pattern, just on a code path instead
-       of a content-authoring one.
-       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
-       Australia), unchanged. Voice-rotation "we" leftover (tierLede.ts B-tier,
-       pass-79) is a single remaining instance — below the 3-instance clustering
-       bar, left for `/iterate` as a one-line content fix rather than filed as an
-       expand candidate.
-     - GitHub issues: 1 unlabeled-adjacent (#416, already tracked, cloud-blocked).
-       No new clustering signal.
-     - spec.md + design/: no changes since pass 46 (`git log 51e09a9..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 21 commits since pass 46 — dominated by 4 new-show scaffolds
-       (dragrace-uk, rhod, shark-tank, the-ultimatum, perfect-match; the 5th,
-       drag-race-uk, counted with the batch), 1 Shark Tank CAST SIZE fix, 1 Shark
-       Tank season drain (S2-S6), 2 critique passes (78, 79) each with a paired
-       drain-batch fix commit (FILMED-caption self-duplication, 29 files across
-       2 batches). Pure content-drain + critique-response velocity, matching the
-       standing perpetual-mandate cadence; no fix-cluster signal beyond the two
-       captured above.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
-     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
-     reinforced (see above): signal count 6 → 7 shows. #27 — new this pass. -->
-
-<!-- Pass 46 (2026-07-07, commit 51e09a9) — 0 new phase-shape candidates filed;
-     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
-     passes 43/45 made), plus reinforced existing candidate #25.
-     Window since pass 45 (d6f2372, 2026-07-06): ~14 hours / 20 commits. Commit
-     threshold met (exactly 20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 7 (5 shows, filed pass
-       45) fully drained same-day, so the queue is empty again, the same recurring
-       stall the pass 43/45 log entries and still-pending candidate #24 both name.
-       Took the direct action Rule 1 mandates: filed a "NEW SHOW QUEUE — WAVE 8"
-       batch of 5 Pending category: content-gaps rows straight into plan/AUDIT.md
-       (RuPaul's Drag Race UK, The Real Housewives of Dallas, Shark Tank, The
-       Ultimatum, Perfect Match — none previously in content/shows/), all scoring
-       ≥3.0 so the next march tick's Step 3b.5 has real work to dispatch to
-       /ship-content. One extends the dragrace flavor family (Drag Race UK), one
-       extends the Housewives cluster (Dallas, 8th core edition) per bearings'
-       "Cross-flavor list capture" guidance, three are fresh unscripted formats
-       (Shark Tank, The Ultimatum, Perfect Match) not yet represented in any
-       existing cluster. Candidate #24 remains pending — the process-hardening fix
-       is still worth oversight's review, but the immediate content gap is closed.
-     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
-       timeout, filed as digest signal 2026-07-07 and mirrored as candidate #26;
-       Supabase CLI version pin) both remain explicitly BLOCKED FROM CLOUD — need
-       a `workflows`-scoped token only available to a local `/oversight` session.
-       Unchanged, no new signal.
-     - CRITIQUE.md: 30 live Pending findings (29 LOW, 1 MED) plus 3 findings closed
-       this window (#488/#489/#490). #488 (Big Brother canon-rationale/season-body
-       duplication, systemic across all 26 seasons) is the single most important
-       signal this pass — it is the exact defect class candidate #25 already
-       scopes, and it's the 4th-through-6th confirmed instance depending on how
-       RHOSLC/MAFS (both cited inline by the #488 finding as prior fixes of the
-       same class) are counted. Reinforced candidate #25 below: signal count now 6
-       shows, impact bumped 7→8 because this instance proved the cost scales with
-       show size (a 26-season rewrite, not a one-scene edit) rather than staying a
-       flat per-instance cost — a materially stronger case for promotion than pass
-       44's original 3-instance filing had. "drain"-word jargon cluster still at 2
-       instances (ANTM, MasterChef Australia), unchanged, still below the
-       3-instance clustering bar. Era-label-opacity cluster (candidate #14)
-       unchanged. No other new clusters found scanning the remaining 29 rows.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean). #480 (workflows-
-       permission blocker, needs-user) and #416 (Supabase CLI pin) both unchanged,
-       no clustering signal beyond what candidate #26 and the AUDIT row already
-       capture.
-     - spec.md + design/: no changes since pass 45 (`git log d6f2372..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 20 commits since pass 45 — dominated by wave-7 content-drain
-       pairs (RHOP, The Circle, RHOM, Too Hot to Handle, Southern Charm — 5 new
-       shows, 10 commits), 1 critique pass (77, 2 findings), 3 critique-finding
-       closures (#488/#489/#490), 1 auth-chrome bug fix (home hero sign-in CTA),
-       1 digest. Pure drain/critique-response velocity, no fix-cluster signal
-       beyond the #488 reinforcement captured above.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
-     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
-     reinforced (see above): score 6.9 → 7.7, signal count 3 → 6 shows. -->
-
-<!-- Pass 45 (2026-07-06, commit d6f2372) — 0 new phase-shape candidates filed;
-     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same
-     move pass 43 made for wave 6).
-     Window since pass 44 (1067802, 2026-07-06): ~14 hours / 11 commits. Commit
-     threshold (≥20) not met on its own, but the last-digest note explicitly
-     flagged this exact stall risk and the show-queue trigger (≤2 Pending rows)
-     independently qualifies this pass regardless of the commit-count clock.
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 6 (5 shows, filed
-       pass 43) fully drained same-day per the 2026-07-05 digest, so the queue
-       is empty again. This is precisely the stall pattern candidate #24 (still
-       awaiting oversight promotion) describes, and the digest's own "watch
-       whether pass 45 refills promptly" note names this pass by number. Took
-       the direct action Rule 1 mandates (as pass 43 did) rather than only
-       re-filing #24's meta-fix: filed a "NEW SHOW QUEUE — WAVE 7" batch of 5
-       Pending category: content-gaps rows straight into plan/AUDIT.md (Real
-       Housewives of Potomac, The Circle, Real Housewives of Miami, Too Hot to
-       Handle, Southern Charm — none previously in content/shows/), all
-       scoring ≥3.0 so the next march tick's Step 3b.5 has real work to
-       dispatch to /ship-content. Two of the five extend the existing 6-show
-       Housewives cluster (RHOP, RHOM) per bearings' "Cross-flavor list
-       capture" guidance; the other three (The Circle, Too Hot to Handle,
-       Southern Charm) are fresh Netflix/Bravo formats not yet represented.
-       Candidate #24 remains pending — the process-hardening fix (an explicit,
-       un-skippable checklist line in skills/expand.md) is still worth
-       oversight's review so a third stall doesn't require a digest nudge to
-       catch, but the immediate content gap is closed for this cycle.
-     - AUDIT.md other Pending rows: only the one non-content-gaps row (Supabase
-       CLI version pin, category: bug) — explicitly marked BLOCKED FROM CLOUD
-       2026-07-06 (needs a `workflows`-scoped token only available to a local
-       `/oversight` session). Unchanged, no new signal.
-     - CRITIQUE.md: 31 Pending rows (29 LOW, 1 MED, 1 SEV). Re-scanned for new
-       clusters. The heaviest URL cluster (4 findings on
-       /shows/survivor/season/heroes-vs-villains) is expected — it's the
-       gold-standard reference page every critique pass walks most carefully —
-       and each of the 4 is a distinct, already-scoped one-off fix (a11y
-       aria-hidden count, spec-row grammar tile, duplicate-rank-token mobile
-       stack, within-page hyphenation drift), not a shared root cause; none
-       promotes to a phase-shape candidate. big-brother (3), the-apprentice
-       (2), jersey-shore (2), below-deck (2) clusters checked individually —
-       same shape, no shared root cause found. Existing candidate #25
-       (canon-rationale echo gate) unchanged, still awaiting promotion.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416 unchanged
-       (same Supabase CLI pin, single stale item, no clustering signal).
-     - spec.md + design/: no changes since pass 44 (`git log 1067802..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 11 commits since pass 44 — dominated by critique-pass-75
-       finding closures (4 content/copy fixes) plus one canon-rationale
-       rewrite and one B-tier tag reword. Pure critique-response velocity, no
-       fix-cluster signal beyond what's captured above.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25 —
-     all unchanged, no new reinforcing or disqualifying signal this pass. -->
-
-<!-- Pass 44 (2026-07-06, commit 1067802) — 1 new candidate filed (#25).
-     Window since pass 43 (3d38fc8, 2026-07-05): ~13 hours / 21 commits. Commit
-     threshold met (≥20).
-     Signals reviewed:
-     - AUDIT.md: 0 Pending rows of the `- [ ] [SEV] ... (category: ...)` bullet
-       shape. One heading-style row remains (`### [user-issue #416] [LOW] Pin
-       Supabase CLI version...`, score 4.8) — unchanged since pass 41/42/43,
-       single item, /iterate-shaped, not a clustering signal.
-     - CRITIQUE.md: ~20 Pending rows across passes 51-74. Re-scanned specifically
-       for new clusters not previously assessed. Found one: the canon-rationale /
-       season-body verbatim-argument duplication defect (pass-73 Survivor 50
-       finding) explicitly names itself "the same duplication class as the
-       resolved Bachelor S28 finding (issue #464)... now confirmed on a third
-       show" — cross-referencing GitHub confirms #464 and #459 (Love Island UK)
-       are both CLOSED, each fixed as an isolated content edit. Three independent
-       shows, three separate fix events, same root cause, never caught before
-       ship. This is a real, previously-unassessed cluster (not mentioned in any
-       prior pass's "existing candidates status" — checked via grep). Filed as
-       new candidate #25: extend the existing verbatim-phrase-echo n-gram
-       technique (`collectThemedEntryVerbatimPhraseEchoIssues` in
-       `scripts/content-check.ts:1262`, already proven for themed-list title↔blurb
-       pairs) to canon rationale ↔ season body pairs.
-     - The other clustering candidate considered — "drain"-word jargon leakage
-       (ANTM pass-64, MasterChef Australia pass-62) — remains at 2 instances,
-       still below the 3-instance clustering bar per pass-40's explicit
-       assessment (unchanged; no new "drain"-word instance found this pass). The
-       CAST SIZE templated-caption finding (pass-67) flags a *possibly* related
-       drain-script-default pattern but is a single instance with a suggestion to
-       audit further, not itself a cluster — noted but not promoted; a future
-       pass should re-check if a third instance of either sub-class appears.
-     - GitHub issues: 0 unlabeled this tick (triage gate clean); #416 unchanged,
-       single stale item, no clustering signal.
-     - spec.md + design/: no changes since pass 43 (`git log 3d38fc8..HEAD --
-       spec.md design/` empty).
-     - Commit pattern: 21 commits since pass 43 — dominated by content-drain
-       pairs (90 Day Fiancé, Vanderpump Rules, RHOSLC shows; Queer Eye and Jersey
-       Shore season drains; American Ninja Warrior, Married at First Sight shows),
-       plus a vote-floor bug fix, a critique pass (74), a Survivor 50 content
-       backfill, and an SEO title-template fix. Pure drain/critique-response
-       velocity, no fix-cluster signal beyond what's captured above.
-     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24 — all
-     unchanged, no new reinforcing or disqualifying signal this pass. -->
-
-<!-- Pass 43 (2026-07-05, commit 3d38fc8) — 0 new phase-shape candidates filed;
-     dispatched directly into plan/AUDIT.md instead per bearings Rule 1.
-     Window since pass 42 (48ec163, 2026-07-04): ~17 hours / 23 commits. Commit
-     threshold met (≥20).
-     Signals reviewed:
-     - AUDIT.md show-queue: 0 Pending "Add show" rows — the queue had run
-       completely dry across the last two expand passes (41, 42), tripping
-       bearings.md's "must never run dry, propose the next wave once Pending
-       show rows drop to ≤2" mandate (Rule 1). This is exactly the gap
-       candidate #24 (filed by /digest 2026-07-05, still awaiting promotion)
-       describes — two passes silently skipped the trigger. Rather than only
-       filing #24's meta-fix (amend skills/expand.md), this pass took the
-       direct action Rule 1 actually mandates: filed a "NEW SHOW QUEUE — WAVE
-       6" batch of 5 Pending category: content-gaps rows straight into
-       plan/AUDIT.md (90 Day Fiancé, Vanderpump Rules, Real Housewives of Salt
-       Lake City, Married at First Sight, American Ninja Warrior — none
-       previously in content/shows/), all scoring ≥3.0 so the next march tick's
-       Step 3b.5 has real work to dispatch to /ship-content. Candidate #24
-       remains pending — the process-hardening fix (making the checklist
-       un-skippable in skills/expand.md) is still worth oversight's review so a
-       third pass doesn't repeat the miss, but the immediate content gap is
-       now closed for this cycle.
-     - AUDIT.md Rule 2 gap (separate from the show queue): diffing show
-       frontmatter `seasons:` against actual season files found two more
-       broken promises — Queer Eye (1/8 files) and Jersey Shore (1/6 files)
-       were explicitly promised as "sibling rows, later tick" on 2026-07-04
-       (twice, in the Apprentice and Selling Sunset drain-row bodies) but
-       never actually filed. Filed both now as Pending season-drain rows
-       (scores 3.5 / 3.0); Jersey Shore's row carries forward the original
-       Miami/Italy season-numbering research flag from its show-scaffold row
-       so /ship-content doesn't skip the verification step.
-     - AUDIT.md needs-user-call rows: 2, both unchanged from pass 41/42
-       (Naked and Afraid S12/13/15/16 numbering, Apprentice S5 LA-framing) —
-       editorial-call blockers, oversight resolves, not phase shapes.
-     - CRITIQUE.md: pass 73 ran this window (commit 60aaca6, 5 findings: 2
-       HIGH + 3 MED, all on /shows/survivor/season/survivor-50 — thin content
-       record, a vote-shift-pill vote-floor bug, a stale "no votes yet" banner
-       against a nonzero votes column, a duplicated canon/body rationale, and
-       a title stutter). Five findings clustered on one URL looks like
-       candidate #24-style signal multiplicity at first glance, but only 2 of
-       the 5 are HIGH (shape B's threshold is "3+ HIGH on the same URL") and
-       each has an independent, cheap, single-surface fix — no shared root
-       cause ties them together (content thinness, a missing vote-floor
-       guard, stale banner copy, prose duplication, and a title-builder edge
-       case are five unrelated defect classes that happen to land on the same
-       freshly-scaffolded page). Correctly /iterate-shaped, not phase-shaped;
-       left pending for the next iterate tick to drain one at a time.
-     - GitHub issues: 0 unlabeled (triage gate was clean this tick); #416
-       (Supabase CLI pin, category: bug, score 4.8) remains the sole
-       long-open row, unchanged from prior passes, not a clustering signal.
-     - spec.md + design/: no changes since pass 42 (`git log 5e3f57f..HEAD --
-       spec.md design/` returns empty).
-     - Commit pattern: 23 commits, all content-drain / audit-finding-fix
-       pairs (Bachelor format_summary batch across two ticks, a critique pass,
-       a digest) — pure drain velocity, no new fix-cluster signal.
-     Existing candidates status: #11/#12/#14/#15/#16/#17/#18/#19/#20/#21/#22/
-     #23/#24 — all unchanged, no new reinforcing or disqualifying signal this
-     pass beyond #24's practical resolution-in-part noted above. -->
-
-<!-- Pass 42 (2026-07-04, commit 5e3f57f) — 0 new candidates filed; no new signal.
-     Window since pass 41 (61432a0, 2026-07-04): ~11 hours / 20 commits. Commit
-     threshold met (≥20).
-     Signals reviewed:
-     - AUDIT.md: 2 pending rows, both unchanged from pass 41 — Naked and Afraid
-       S12/13/15/16 premiere-numbering discrepancy and The Apprentice S5
-       LA-framing question, both explicitly `[needs-user-call]` (scores 3.15,
-       2.8, capped). Editorial-call blockers, not phase shapes; oversight
-       resolves.
-     - CRITIQUE.md: pass 70 ran this window and filed 0 new findings (commit
-       ba0f29e) — first clean pass since the loop reopened the shipping-mode
-       gate. No new clusters to evaluate; existing pending rows unchanged from
-       pass 41's review, all already absorbed by #13 (shipped, registry-based
-       drain in progress via /iterate), #14 (era-label opacity), or #15
-       (canon-completeness gate).
-     - GitHub issues: 1 `triage:loop-queued` (#416, unchanged, 3+ weeks stale) —
-       same single item pass 41 noted; no clustering signal.
-     - spec.md + design/: no changes since pass 41.
-     - Commit pattern: 20 commits, all content-drain / audit-finding-fix pairs
-       (Selling Sunset S2-6, Apprentice S6-10, hedge-phrase batch drain, yearsWord
-       capitalization fix, Section 03 quote fix, ANTM terminology, jersey-shore
-       caption, /shows hero relabel, Windows path-matching fix) plus pass 41's
-       own expand commit and a digest. Pure drain velocity; no new fix-cluster.
-     Existing candidates status: #11/#12/#14/#15/#16/#18/#19/#20/#21/#22/#23 —
-     all unchanged, no new reinforcing signal this pass. #13 — shipped; its
-     registry continues absorbing hedge-phrase instances via /iterate (3 more
-     drained this window, commit ac081a7). -->
-
-<!-- Pass 41 (2026-07-04, commit 61432a0) — 0 new candidates filed; #14 and #15
-     reinforced with new signals.
-     Window since pass 40 (81e56e8, 2026-07-03): ~17 hours / 21 commits. Commit
-     threshold met (≥20).
-     Signals reviewed:
-     - AUDIT.md: 2 pending rows. (a) category: engineering — check-test-colocation
-       Windows path-matching bug (score 3.5, single instance, /iterate-shaped).
-       (b) category: content-gaps — Naked and Afraid S12/13/15/16 premiere-date
-       numbering discrepancy, explicitly filed `[needs-user-call]` (score 3.15,
-       capped) — a genuine editorial-call blocker, not a phase shape; oversight
-       resolves. Neither clusters into new phase-shape work.
-     - CRITIQUE.md: 43 `- [ ]` rows physically present under `## Pending`
-       (previous passes' shorthand "0/N pending" summaries undercounted — the
-       section mixes resolved `[x]` rows in with live `[ ]` ones and a naive
-       section-boundary scan misses this; corrected here for future passes).
-       Direct verification found several of these rows are stale — already
-       fixed by commits in this window without the CRITIQUE.md row being
-       flipped to `[x]` (e.g. the ANTM/MasterChef Australia `meth_when_p`
-       "drain completes"/"drain continues" jargon rows no longer match current
-       content; the masked-singer/below-deck-mediterranean/below-deck-sailing-
-       yacht/DWTS lowercase-after-period quotes no longer match current
-       content). This is a CRITIQUE.md bookkeeping gap for `/iterate` to close
-       on pickup, not an expand-shaped signal.
-     - New/reinforcing clusters checked against existing candidates:
-       (a) The verbatim hedge "I'm not claiming to be objective. I'm trying to
-       be honest/fair." now appears in 12 canon files
-       (`rg -l "I'm not claiming to be objective" content/shows/*/canon.md`).
-       This is NOT a new candidate — Phase 45 (candidate #13,
-       CLICHE_REPETITION_STRICT) already shipped the extensible cross-corpus
-       phrase-frequency registry this exact pattern is built for; adding this
-       phrase as a fourth registered pattern + draining it is `/iterate`-shaped
-       registry-extension work, not a new phase.
-       (b) `tier_s_blurb` completeness (candidate #15): direct verification
-       (`rg --files-without-match tier_s_blurb content/shows/*/canon.md`)
-       confirms **0 of 43 shows** now lack the field — the 20-file content
-       batch candidate #15 scoped was fully drained this window (commit
-       51dd0fd + 2952ae1, prior to this pass). Candidate #15 updated below:
-       remaining scope is now the `content-check.ts` gate alone (smaller,
-       cheaper, stronger case for promotion — the recurrence-risk the gate
-       exists to close is now proven real at 46% of the pass-40 catalog).
-       (c) Era-band label opacity (candidate #14): 2 more live instances
-       confirmed — `/shows/below-deck` "LEE ERA"/"TITHERADGE ERA" chips
-       (pass-56, CRITIQUE.md:2008) and `/shows/alone` "no-host era" reference
-       (pass-?, CRITIQUE.md:2195) both lack season-range context, exactly the
-       defect class #14 already scopes. Reinforcement noted below; no new
-       candidate.
-     - GitHub issues: 1 `triage:loop-queued` (#416, nightly e2e-full red from
-       2026-06-14) — single stale item (3 weeks old, deploy is green today),
-       no clustering signal.
-     - spec.md + design/: no changes since pass 40.
-     - Commit pattern: 21 commits — dominated by critique passes 68/69 +
-       their per-finding drain commits (OG-image wiring, season-page title/
-       ordinal fixes, VotePair accessible name, ANTM host_caption, American
-       Idol methodology, Naked and Afraid premiere dates, tier_s_blurb batch).
-       Pure drain velocity; no 5+ commit fix-cluster on a single code surface
-       beyond what candidates #13/#14/#15 already cover.
-     Existing candidates status: #11/#12 — still awaiting promotion, no new
-     signal. #13 — shipped as Phase 45; its registry is the live mechanism
-     that should absorb the new hedge-phrase signal above via `/iterate`, not
-     a fresh candidate. #14 — reinforced (2 new era-label instances, both
-     within existing scope). #15 — reinforced + scope narrowed (content batch
-     complete; only the code gate remains). #16 — still `[needs-user-call]`.
-     #18/#19 — still awaiting promotion, no new signal this pass. #20/#21/#22
-     — no new instances this pass. #23 — spot-checked against current content;
-     the CRITIQUE.md-cited instances no longer reproduce (already drained),
-     no live instances found via corpus scan; leaving as-is pending a fresh
-     critique pass rather than downgrading on a spot-check alone. -->
-
-<!-- Pass 39 (2026-06-22, commit 295b6cc) — 0 new candidates filed; AUDIT content-gap rows filed.
-     Window since pass 38 (0721747, 2026-06-21): 1 day (21h) / 22 commits. Commit threshold met (≥20).
-     Signals reviewed:
-     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained again. bearings Rule 1 "keep
-       the queue fed" mandate fired: wave-5 season-drain rows (RHONJ S6–S14, RHOC S4–S18,
-       AGT S6–S20, Naked and Afraid S6–S19, Masked Singer S6–S13) + wave-6 new show rows
-       (America's Next Top Model, The Apprentice US, Queer Eye, Selling Sunset, Jersey Shore)
-       filed to AUDIT.md in this same commit. Not phase shape — content-velocity rows.
-     - CRITIQUE.md: 20+ pending rows across passes 54–63. No new clusters emerge above the
-       candidates already filed (#20 inline coverage note, #21 meth_who_p guard, #22 tagline
-       years-vs-seasons). Pass 63 filed 3 new findings: American Idol meth_when_p stale (MED,
-       content fix → iterate); American Idol tier_s_blurb/tier_a_blurb absent (LOW, covered by
-       #15); /shows "SEASONS RANKED" stat inaccuracy (LOW, iterate-shaped UI fix — rename
-       label or change data source). None rise above existing candidates in score.
-     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — unchanged, workflow-blocked.
-     - spec.md + design/: no changes.
-     - Commit pattern: 22 commits — 5 content ticks (American Idol S16–23, RHOBH S6–15,
-       AGT/Naked/Masked new shows, RHOA S16 fix), 1 critique pass (63). Pure content velocity;
-       no code-surface clustering.
-     Existing candidates status:
-       #15 (CANON_COMPLETENESS_STRICT) — now 6 tier_s_blurb violators (added American Idol
-       to RHONY/Voice/RHOA/DWTS/BDM); strengthened for promotion. #18 (header affordance) —
-       awaiting promotion. #20 (inline coverage note) — awaiting promotion; 1 new signal
-       (pass-63 confirms MCA partial coverage still undisclosed inline). #21 (meth_who_p guard)
-       — awaiting promotion. #22 (tagline years-vs-seasons) — awaiting promotion; 0 new cases. -->
-
-<!-- Pass 38 (2026-06-21, commit 0721747) — 3 candidates filed.
-     Window since pass 37 (14a50a1, 2026-06-20): 1 day / 20 commits. Exact threshold met.
-     Signals reviewed:
-     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained. bearings Rule 1 "keep
-       the queue fed" mandate fired: wave-5 season-drain rows (American Idol S6–S23,
-       MasterChef Australia S6–S16, RHOBH S6–S15, RHOA S16) + wave-5 new show rows
-       (RHONJ, RHOC, AGT, Naked and Afraid, The Masked Singer) filed to AUDIT.md in this
-       same commit. Not a phase shape — content-velocity rows go to AUDIT.
-     - CRITIQUE.md: 20 pending rows across passes 51–62. Three clusters rise to phase shape:
-       (1) Partial-canon inline disclosure absent — 5 shows (Survivor AU pass-58, Love Is
-       Blind pass-58, DWTS pass-59, RHOBH pass-62, MCA pass-62), all MED severity, all
-       missing the same UI signal near the ranking list (new candidate #20). (2) meth_who_p
-       misleading completeness language — 3 shows (Love Is Blind "all five seeded" pass-58,
-       DWTS "covers the full run" pass-59, MCA tagline years-vs-seasons pass-62), 3 distinct
-       critique passes, same reader-trust root cause (new candidate #21). (3) Tagline
-       years-vs-seasons conflict — 2 shows (MCA, RHOBH), 1 critique pass — below 3-show
-       threshold but structural risk grows with catalog (new candidate #22, lower score).
-       Remaining rows (tier_s_blurb absent × 5 shows — RHONY/Voice/RHOA/DWTS/BDM) reinforce
-       existing candidate #15 (CANON_COMPLETENESS_STRICT gate) — not a new candidate.
-     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — single-item, workflow-
-       permission-blocked for cloud; /iterate handles locally. Not a phase shape.
-     - spec.md + design/: no changes since pass 37.
-     - Commit pattern: 20 commits — 4 content ticks (new shows + season drains), 2 critique
-       passes (61/62), 4 audit-closure pairs, 1 critique-find closure. No 5+ fix-cluster
-       on any code surface. Two new shows (RHOBH, MCA) generated 5 critique findings on
-       the same tick — the partial-canon class is now structurally recurrent.
-     Existing candidates status:
-       #14 (era filter empty state) — awaiting promotion; primary MED driver (TITHERADGE ERA)
-       still Pending. #15 (CANON_COMPLETENESS_STRICT gate) — reinforced by 5 tier_s_blurb
-       violations across 5 shows + 4 critique passes; strengthened for promotion. #16
-       (/u/[handle] stat chips) — [needs-user-call]; skip. #18 (header handle affordance) —
-       awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
-       awaiting promotion; still valid, single finding. -->
-
-### 30. `/shows` B-tier browse filter — network/genre chips
+### [ ] [score 5.2] `/shows` B-tier browse filter — network/genre chips
+- proposed: 2026-07-11, v1 candidate #30 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.2 (impact: 6, ease: 7 → 4.2 base + 1.0 signal multiplicity —
 catalog growth reinforces)
@@ -3491,73 +1521,8 @@ across-show) though both extend the same toolbar interaction pattern —
 worth a shared-component pass if both ship close together, not a blocker
 to either shipping alone.
 
-### 31. Large-canon show-page TTFB regression — profile + optimize per-request render cost ~~(resolved — shipped pre-promotion, pass 53)~~
-
-**Score:** 4.5 (impact: 7, ease: 5 → 3.5 base + 1.0 signal multiplicity —
-correlates with #26's catalog-scale stressor)
-**Source pass:** 52
-**Filed:** 2026-07-11
-**Pass-53 update:** resolved directly via `/iterate`, no phase promotion
-needed. Commit 75108d4 (audit finding `the-apprentice-ttfb`, closes #541)
-confirmed the working theory this candidate's scope sketch predicted:
-`getCommunityRanking` was awaiting four independent Supabase queries
-(`compute_weighted_rank` RPC, trailing-7d voters, baseline snapshot, latest
-snapshot) sequentially, so per-request time was their sum rather than their
-max. Firing them concurrently with `Promise.all` — `force-dynamic` rendering
-(phase 35's freshness fix) left untouched — closes the confirmed bottleneck
-without the caching workaround this candidate's scope sketch explicitly
-warned against. Verify gate green (2828 unit / 3343 e2e) at fix-time. This
-mirrors the exact "may ship as a same-tick `/iterate` fix rather than
-needing a numbered phase" hedge candidates #24/#27 also called out and had
-play out the same way. Zero open signal remains on this candidate; leaving
-it filed (struck through, mirroring #17/#27 precedent) as the historical
-record if a fresh large-canon page reintroduces the sequential-await
-pattern. `/oversight` can treat this as closed.
-**Source signals:**
-- Critique pass-87 [MED] `/shows/the-apprentice` and `/shows/survivor` (the
-  site's two largest-canon shows) render 3-6x slower than every other page
-  walked that pass. Repeated `curl -w` samples: apprentice 1.68s/1.11s/
-  1.15s/0.90s, survivor 1.13s/0.90s/0.86s, vs. `/` at 0.23s and a 1-entry
-  canon page (`/shows/chopped/season/season-1`) at 0.34s — the gap tracks
-  canon/season count, not show identity.
-- Cross-reference: candidate #26 (e2e-full crawl timeout undersized for
-  catalog growth) is a different subsystem (CI wall-clock vs. render
-  latency) hitting the identical root stressor — the catalog has grown
-  past what the surrounding infrastructure was sized for, and both
-  symptoms will keep recurring as Rule 1's perpetual show-growth mandate
-  continues.
-
-**Why:** `src/app/shows/[show]/page.tsx:37` sets `dynamic = 'force-dynamic'`
-deliberately (phase-35 fix for a "community ranking shows stale 0" bug) —
-that freshness guarantee is correct and must not be reverted. But nobody
-has profiled where the per-request time actually goes on large-canon pages;
-the AUDIT finding's own working theory (community-ranking aggregate query
-scaling with row count, or redundant content-file reads across the season
-list) is plausible but unconfirmed. This is exactly the kind of
-"reality has outgrown the plan" gap `/expand` exists to catch: phase 18
-("Performance + a11y polish") shipped when the catalog was much smaller,
-and nothing since has re-profiled the hot path against today's scale.
-Left unaddressed, this gets worse on every tick that adds a season to
-Survivor or the Apprentice, and will eventually surface as a Core Web
-Vitals regression on the site's two flagship show pages.
-**Scope sketch:**
-- Profile `getAllSeasons` / `getCanon` / `getCommunityRanking` on
-  `/shows/[show]/page.tsx` for a large-canon show under realistic load —
-  identify the actual hot path (not just the working theory).
-- Optimize the confirmed bottleneck: likely indexing, per-request
-  memoization, or narrowing the community-ranking query — without adding
-  page-level caching that would resurrect the phase-35 staleness bug.
-- Unit/perf test that pins the fix (e.g. assert a bounded query count or
-  render time budget for a large-canon fixture) so a future regression is
-  caught before it needs another critique pass to surface.
-**Estimated phases:** 1 (profiling + targeted optimization; scope may
-narrow once the actual bottleneck is confirmed).
-**Conflicts:** none. Independent of #26 — different code paths, same root
-stressor (catalog scale); may be worth bundling into one "catalog-scale
-infrastructure" oversight session alongside #26 and #29 if the user wants
-to address the pattern class in one sitting rather than three.
-
-### 25. Canon-rationale/season-body verbatim-argument echo gate
+### [ ] [score 8.3] Canon-rationale/season-body verbatim-argument echo gate
+- proposed: 2026-07-06, v1 candidate #25 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 8.3 (impact: 8, ease: 8 → 6.4 base + 1.9 signal multiplicity, impact bumped
 7→8 at pass 46 — the class now costs a full-show rewrite, not a one-scene edit;
@@ -3813,7 +1778,8 @@ naked-and-afraid pair — the instance rate has not slowed. Net since filing
 shows. Score held at 8.3 (ceiling); now **65 days unpromoted**, still the
 second-highest-scored unpromoted candidate in the file behind only #28.
 
-### 28. Stat-tile value/caption literal-duplicate invariant
+### [ ] [score 8.7] Stat-tile value/caption literal-duplicate invariant
+- proposed: 2026-07-08, v1 candidate #28 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 8.7 (impact: 8, ease: 9 → 7.2 base + 1.5 signal multiplicity — a single
 critique finding that was itself already systemic across 139 files/22 shows, same
@@ -4051,7 +2017,8 @@ now shows the same field triggers both defect classes this file
 separately tracks (#25 and #28). Score unchanged at 8.7 (ceiling); no
 change to estimated phases.
 
-### 29. Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
+### [ ] [score 6.4] Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
+- proposed: 2026-07-09, v1 candidate #29 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 6.4 (impact: 8 — raised at pass 68 from a read-ceiling risk to a
 *confirmed silent bookkeeping-accuracy defect*: the same tick's own `/digest`
@@ -4317,201 +2284,8 @@ gap table the row tracks already lives) rather than only moving
 `[x]`-closed rows out. Not filing as a separate candidate — this is
 an implementation-scope refinement of #29, not a different problem.
 
-### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
-
-**Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
-change, but capped by the same `workflows`-scope cloud blocker as candidate-adjacent
-issue #416/#480)
-**Source pass:** digest 2026-07-07
-**Filed:** 2026-07-07
-**Why:** The nightly `e2e-full` run at 2026-07-06T23:27Z (run 28830277979) went red
-— but not from a test regression. All 6,409 checks that completed passed; the run
-hit `.github/workflows/e2e-full.yml`'s hard `timeout-minutes: 50` cap on the
-"Exhaustive e2e crawl" step with only 164 of 6,573 total tests left (97.5%
-complete, ~460ms/test average). The crawl runs Playwright with a single worker
-(`Running 6573 tests using 1 worker`), so its wall-clock duration scales linearly
-with total page count — and total page count scales directly with the content
-saga's own perpetual mandate (bearings Rule 1/Rule 2: 53 shows, 700 seasons and
-climbing as of this digest). This is the second distinct failure class to hit this
-exact step (2026-06-14 original was a Supabase release-API flake during CLI setup,
-now tracked as issue #416/#480 with its own pending AUDIT.md fix; 2026-07-06 is a
-genuine duration-ceiling breach with zero flakiness involved) — and unlike the
-Supabase flake, this one will recur on a predictable schedule as the catalog keeps
-growing, not an occasional one-off. Filed as a candidate rather than edited
-directly per the meta-loop rail (`skills/digest.md` §5 "never edit gates, cadences,
-ceilings, or rules directly").
-**Scope sketch:**
-- Raise `timeout-minutes` on the "Exhaustive e2e crawl (E2E_FULL=1)" step in
-  `.github/workflows/e2e-full.yml` from 50 to ~75. The job-level `timeout-minutes:
-  90` has headroom for this — the preceding "Pre-start Supabase containers" (5 min)
-  and "Production build" (20 min) steps observed to consume roughly 20-25 minutes
-  before the crawl starts, leaving ~65-70 minutes of job budget available to the
-  crawl step today.
-- Treat the timeout bump as a near-term patch, not a permanent fix: file a follow-up
-  scope note (or a fresh candidate when the signal recurs) for a sharded/
-  parallel-worker exhaustive crawl once even 75 minutes stops being enough — the
-  single-worker constraint is the actual structural bottleneck, the timeout number
-  is just the symptom.
-- Same blocker as issue #416/#480: this touches `.github/workflows/e2e-full.yml`,
-  which the cloud loop's `ACTIONS_PAT` cannot push (lacks `workflows` OAuth scope).
-  Bundle this fix with the Supabase CLI pin in the same local/`/oversight` session —
-  both are one-line workflow-file diffs blocked by the identical permission gap.
-
-**Estimated phases:** 0 (workflow-config change, not a build-plan phase — ships via
-`/oversight` directly the same way the Supabase CLI pin was scoped to, not through
-`plan/README.md`).
-**Conflicts:** none. Complements issue #416/#480 (same file family, same cloud
-blocker, different root cause) — recommend landing both in the same local session.
-
-### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches ~~(superseded — both open signals shipped pre-promotion)~~
-
-**Score:** 4.8 (impact: 6, ease: 8 → 4.8 base, signal-multiplicity bonus dropped —
-see pass-48 update)
-**Source pass:** 47 (updated pass 48, closed out pass 50)
-**Filed:** 2026-07-08 (updated 2026-07-08, both signals resolved by 2026-07-09)
-**Pass-50 update:** the last remaining open signal — the pass-68 em-dash-vs-comma
-mark-preference bug (`src/lib/seo.ts:34-37`) — **resolved this window**, directly
-via `/iterate` (commit 0d0527d, issue #518): the clause-boundary scan now backs the
-cut off to the em dash whenever a comma/semicolon/colon it would otherwise prefer
-falls after it in the same window, matching this candidate's own scope-sketch intent
-without a full mark-strength-ranking rewrite. Pinned with the exact jersey-shore lede
-as a regression case in `seo.test.ts`. Both of this candidate's two open signals
-(pass-79 stop-word, resolved pass-48; pass-68 em-dash preference, resolved pass-50)
-have now shipped as targeted `/iterate` fixes rather than a coordinated rewrite —
-exactly the hedge the pass-48 update called out as the likely outcome. **Zero open
-signals remain** and a fresh grep of `src/lib/seo.ts` + CRITIQUE.md finds no third
-instance pending. Recommend `/oversight` treat this candidate as closed; leaving it
-filed (struck through in the title, mirroring candidate #17's precedent) as the
-historical record if a fourth edge case surfaces on the same function later.
-**Pass-48 update:** the pass-79 stop-word finding (issue #503) this candidate cited
-as its second open signal was **resolved this window** — directly, via a targeted
-`trimTrailingStopWords()` deny-list helper (commit dd43d38), not via this
-candidate's broader "rank marks by boundary strength" rewrite. That's the candidate's
-own original hedge playing out exactly as anticipated ("may ship as a same-tick
-`/iterate` fix rather than needing a numbered phase"). Only **one** open signal
-remains: the pass-68 em-dash-vs-comma mark-preference bug (`src/lib/seo.ts:34-37`,
-still Pending in CRITIQUE.md as of this filing). With one of two signals resolved
-outside the phase-candidate pipeline, the "3 distinct fix events" multiplicity
-argument no longer holds at its original strength — score recalculated without the
-+1.5 bonus. Recommend `/iterate` pick up the remaining em-dash-preference fix
-directly (same shape, same file, same low cost as the stop-word fix that just
-shipped) rather than waiting for phase promotion; leaving this row filed mainly so
-the pattern (a function that's absorbed 3 edge-case patches across 3 critique
-passes) stays visible if a 4th instance surfaces.
-**Source signals:**
-- The function's own code comment (`src/lib/seo.ts:12-21`) documents a prior fix:
-  critique pass 62/67 found the original implementation cut mid-clause ("…and Heston
-  Blumenthal appears as a…"), which the current clause-boundary-aware version was
-  written to fix.
-- Critique pass-68 [LOW] `/shows/jersey-shore/season/season-1` (commit 7173f3a) — the
-  clause-boundary scan (`src/lib/seo.ts:34-37`) takes `Math.max` across four mark
-  types (`,`, `;`, `:`, `—`) with no preference order, so a mid-list comma occurring
-  after an em-dash wins the cut even though the em-dash is the stronger boundary,
-  producing a dangling single list item ("…MTV builds its format around the group's
-  own energy — gym…"). **Still unresolved** (CRITIQUE.md pending row).
-- Critique pass-79 [MED] `/shows/perfect-match/season/season-1` — the word-boundary
-  fallback (`src/lib/seo.ts:42-44`, fires when no clause mark falls within the last
-  40% of the budget) has no stop-word guard, so it can land the cut on "the…" instead
-  of a real word, reproduced directly against Perfect Match S1's lede.
-  **RESOLVED pass-48 window** — `trimTrailingStopWords()` helper added (commit
-  dd43d38), CRITIQUE.md row closed (issue #503, commit a9bb688).
-- Signal multiplicity: now **2 distinct fix events on one function** (was 3) — an
-  original clause-unaware bug (fixed pre-pass-47) and one remaining open edge case
-  (em-dash preference). The 3rd event (stop-word) resolved outside this candidate's
-  scope this window, so the "underspec'd, needs a coordinated rewrite" case is
-  weaker than originally filed — see pass-48 update above.
-**Why:** Two independent, unrelated-looking LOW/MED findings (jersey-shore em-dash
-list, perfect-match stop-word) both trace to the same 20-line function and the same
-underlying gap — the heuristic optimizes for "find *a* punctuation mark in range"
-rather than "find the *strongest* clause boundary and never land on a function
-word." Patching each instance individually (as the two pending rows currently
-propose) fixes today's two reproductions but not the next one a future long-lede
-show will surface; a small rewrite that (a) ranks mark types by boundary strength
-instead of taking a flat `Math.max`, and (b) trims trailing stop words after any
-fallback cut, closes the whole edge-case class in the one function rather than
-leaving a third patch for a future pass to find.
-**Scope sketch:**
-- Rewrite the clause-boundary scan to prefer stronger marks (em-dash > colon/
-  semicolon > comma) rather than whichever occurs latest in the window, fixing the
-  pass-68 case.
-- Add a short stop-word deny-list (`the`, `a`, `an`, `and`, `or`, `of`, `to`) applied
-  after the word-boundary fallback cut, trimming one more word back if the cut lands
-  on one, fixing the pass-79 case.
-- Expand `src/lib/__tests__/seo.test.ts` with both pending findings' exact ledes
-  pinned as regression cases, plus the existing Heston Blumenthal case already
-  covered, so all three known edge cases live in one test file going forward.
-- Content-only cleanup: once the function is fixed, the two CRITIQUE.md pending rows
-  (pass-68, pass-79) close as a side effect of the code fix rather than needing
-  separate content edits.
-**Estimated phases:** 1 (small — one function, one test file; may ship as a
-same-tick `/iterate` fix rather than needing a numbered build-plan phase, but filed
-here since it's a code change, not content, and the recurring-patch pattern is worth
-recording even if it ships quickly).
-**Conflicts:** none.
-
-### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit ~~(retired — 2026-07-12 oversight pivot: new-show creation is LOCKED and the queue-refill nudge no longer exists; the biweekly show-add clock in `plan/CADENCE.md` owns future additions)~~
-
-**Score:** 4.5 (impact: 6, ease: 7.5 — process/gate tuning, not user-facing)
-**Source pass:** filed by `/digest` 2026-07-05, not an expand pass (meta-loop rail — proposal only)
-**Filed:** 2026-07-05
-**Why:** `plan/bearings.md` lines 543–551 (Rule 1 "keep the queue fed") states the new-show
-`plan/AUDIT.md` Pending-row queue "must never run dry" and that `/expand` should propose a
-fresh wave once Pending show rows drop to ≤2. The queue has sat at exactly 0 rows since
-before the 2026-07-04 digest, and two consecutive expand passes since then (pass 41,
-2026-07-04, and pass 42, 2026-07-04 later the same day) each filed 0 new candidates — neither
-pass's "Signals reviewed" note mentions the show queue at all, only AUDIT's needs-user-call
-rows and CRITIQUE clusters. This suggests the ≤2-row trigger is not part of `/expand`'s
-actual signal checklist (it may only be evaluated implicitly, or was folded into the general
-AUDIT.md scan and silently passed over because the two remaining rows there are
-needs-user-call and easy to skip past). Two passes running the queue empty without
-proposing a refill is itself the evidence — the mandate isn't self-enforcing.
-**Scope sketch:** Add an explicit, un-skippable checklist line to `skills/expand.md`'s
-procedure: "read `plan/AUDIT.md`'s content-gaps rows tagged as show-queue entries; if
-Pending count ≤2, propose the next wave (3-5 shows) before scoring anything else." Cheap
-process fix — no code, just a skill-file amendment plus, once promoted, one expand pass
-that actually files wave 7.
-**Update (expand pass 51, 2026-07-10):** the queue ran dry again (0 Pending show rows,
-same failure this candidate describes) and this pass caught it manually by reading the
-AUDIT.md Pending section directly rather than via an enforced checklist — filed WAVE 9
-(5 shows: RHODubai, Summer House, Bachelor in Paradise, RuPaul's Drag Race All Stars,
-Chopped). This is now the third time the queue has been caught empty by manual review
-rather than a structural gate (waves 7, 8, 9 each followed a stall). The scope sketch
-above remains unpromoted and is the actual fix — `/oversight` should promote this to a
-skill-file amendment so the check stops depending on the expand pass author remembering
-to look.
-**Update (expand pass 54, 2026-07-11):** the queue ran dry a fourth time — wave 9's five
-rows all resolved [x] this week (RHODubai, Summer House, Bachelor in Paradise, RuPaul's
-Drag Race All Stars, Chopped all shipped by content-drain ticks in the days after filing),
-running Pending show rows back to exactly 0. This time the empty queue was caught by
-`/march`'s own Step 3b.5 (not a manual expand-pass review) — the content-gap dispatch
-found zero Pending `category: content-gaps` rows and fell through to the expand gate,
-which is precisely how this march tick ended up here. That's a *structural* catch, not
-authorial vigilance, which is mild evidence the failure mode is self-correcting at the
-march level even without this candidate's proposed skill-file amendment — but it only
-caught the empty queue one dispatch cycle after it went dry (this tick), not before, so
-the underlying "±0 for a stretch" gap the candidate describes still happened. Filed WAVE
-10 (5 shows: The Traitors UK, Married at First Sight Australia, The Real World, Ink
-Master, So You Think You Can Dance). Fourth consecutive empty-queue occurrence across
-waves 7/8/9/10 reinforces the same underlying point — score unchanged, still unpromoted.
-**Update (expand pass 55, 2026-07-12):** the queue ran dry a fifth time — wave 10's five
-rows all resolved [x] within a day of filing (Traitors UK, MAFS Australia, Real World,
-Ink Master, So You Think You Can Dance all shipped by content-drain ticks in the same
-window), running Pending show rows back to exactly 0 again. Caught the same structural
-way as pass 54 — `/march`'s own Step 3b.5 found zero Pending `category: content-gaps`
-rows and fell through to the expand gate. Filed WAVE 11 (5 shows: Big Brother UK,
-RuPaul's Drag Race Down Under, Love Island Australia, The Real Housewives: Ultimate
-Girls Trip, Selling the OC) — this wave leans entirely on international-edition/spinoff
-depth rather than new format clusters, since WAVE 10 closed the catalog's remaining
-format-diversity gaps (body-art, dance). Fifth consecutive empty-queue occurrence across
-waves 7/8/9/10/11 — the underlying cadence question this candidate raises (should the
-queue be refilled proactively at ≤2 rather than caught reactively at 0 by march's
-fallthrough) remains open and unpromoted. The march-level fallthrough catch continues to
-work every time it's been tested (passes 54, 55), which is real evidence the reactive
-path is reliable enough in practice that the proactive skill-file amendment may be
-lower-priority than this candidate's score implies — noting that for `/oversight`'s
-next review rather than pre-judging it here.
-
-### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
+### [ ] [score 6.6] Inline partial-canon coverage disclosure — ranking-list coverage note
+- proposed: 2026-06-21, v1 candidate #20 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
 **Source pass:** 38
@@ -4567,7 +2341,8 @@ partial-canon shows automatically without per-show content authoring.
 paths: #20 is the product-visible component addition; #21 is the authoring-discipline gate.
 Both should land; #20 is higher urgency (reader-visible today on 5+ shows).
 
-### 21. meth_who_p misleading-completeness guard + content-check gate
+### [ ] [score 5.5] meth_who_p misleading-completeness guard + content-check gate
+- proposed: 2026-06-21, v1 candidate #21 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.5 (impact: 6, ease: 8 → 4.8 base + 0.7 signal multiplicity)
 **Source pass:** 38
@@ -4617,7 +2392,8 @@ show's canon draft cannot ship with misleading language — the verify gate bloc
 **Conflicts:** Complementary to candidate #20 (inline UI note). #20 fixes the reader-visible
 gap; #21 fixes the authoring source. No URL change. No schema change. SEO-neutral.
 
-### 22. Tagline years-vs-seasons clarification gate
+### [ ] [score 5.5] Tagline years-vs-seasons clarification gate
+- proposed: 2026-06-21, v1 candidate #22 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.5 (impact: 6, ease: 9 → 5.4 base + 0.1 weak multiplicity)
 **Source pass:** 38
@@ -4667,7 +2443,8 @@ helper already exists in `src/lib/show-tenure.ts` (or equivalent) from phase 43.
 change. No schema change. Complements candidates #20 and #21 — together the three
 candidates make partial-canon honesty structural rather than one-off.
 
-### 23. Prose sentence-capitalization invariant (post-period lowercase-start guard)
+### [ ] [score 6.4] Prose sentence-capitalization invariant (post-period lowercase-start guard)
+- proposed: 2026-07-03, v1 candidate #23 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 6.4 (impact: 6, ease: 9 → 5.4 base + 1.0 signal multiplicity)
 **Source pass:** 40
@@ -4834,7 +2611,8 @@ one content-check invariant, same shape as candidates #12/#17/#22.
      #18 (signed-in header affordance) — awaiting promotion. #19 (last-revised
      source-of-record) — awaiting promotion. -->
 
-### 18. Signed-in header handle affordance — profile link + sign-out popover
+### [ ] [score 6.6] Signed-in header handle affordance — profile link + sign-out popover
+- proposed: 2026-06-17, v1 candidate #18 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
 **Source pass:** 35
@@ -4880,7 +2658,8 @@ endpoint and `/u/[handle]` already exist per the locked URL contract).
 **Conflicts:** None. Complementary to #16 (profile record zone). No URL
 change, no schema change, no new page family.
 
-### 19. Chrome revised-date source-of-record: `lastRevised(scope)` helper
+### [ ] [score 5.5] Chrome revised-date source-of-record: `lastRevised(scope)` helper
+- proposed: 2026-06-17, v1 candidate #19 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.5 (impact: 5, ease: 8 → 4.0 base + 1.5 cheap-and-impactful)
 **Source pass:** 35
@@ -4963,89 +2742,8 @@ phases 43/44/45/46.
      1 LOW, /iterate); (b) stale-copy sweep (B-tier tier-explainer +
      /themes lede, both 30+ days pending, both single-surface /iterate). -->
 
-### 17. SEO description gate — card_tagline completeness invariant ~~(superseded — shipped pre-promotion)~~
-
-**Score:** 5.0 (impact: 5, ease: 8 → 4.0 base + 1 signal multiplicity)
-**Source pass:** 34
-**Filed:** 2026-06-16
-**Status:** Superseded. Shipped at `seo: add card_tagline to 12 shows — CARD_TAGLINE_STRICT invariant` (in the 11-commit window since pass 34 filed this candidate). The `CARD_TAGLINE_STRICT` flag is now live in `scripts/content-check.ts` and all violators were drained in the same commit. No promotion needed.
-**Source signals:**
-- Critique pass-52 [LOW] /shows/below-deck meta description truncates
-  mid-clause: tagline is 195 chars, no `card_tagline`; `descriptionFor()`
-  slices at 159 chars producing an unfinished thought in SERP.
-- Critique pass-54 [LOW] /shows/project-runway + /shows/big-brother
-  both lack `card_tagline`; taglines exceed 160 chars; SERP snippets
-  truncate mid-clause on both.
-- Pattern: 3 distinct shows across 2 critique passes, same structural
-  gap (tagline > 160 chars, absent card_tagline).
-- The `card_tagline` field is optional per schema; the loader falls back
-  to the full tagline, silently producing overlong SERP descriptions.
-
-**Why:** Three shows exhibit the same gap: a `tagline` exceeding the
-160-char SERP budget with no `card_tagline` fallback, causing
-`descriptionFor()` to slice mid-clause in every case. A visitor
-reading the search result sees an incomplete thought. This is the
-same lax→strict verify-gate mechanic established by phases 41–46:
-add a `collectCardTaglineGapIssues()` invariant in
-`scripts/content-check.ts` that warns when `tagline.length > 160`
-AND `card_tagline` is absent, drain the three known violators, flip
-strict. The invariant prevents any future show addition from landing
-with truncated SERP copy. The 3-show cross-pass recurrence (2 critique
-passes, 3 distinct shows) confirms this is structural recurrence, not
-a one-off authoring mistake. The `card_tagline` field already exists in
-the schema and CLAUDE.md spec; making it required-when-long closes the
-gap without a schema change.
-
-**Scope sketch:**
-- `scripts/content-check.ts` — add `CARD_TAGLINE_STRICT` flag +
-  `collectCardTaglineGapIssues()`: iterate show frontmatter; emit issue
-  when `tagline.length > 160` AND `card_tagline` is absent. Lax mode
-  logs; strict fails. Colocated unit tests (pass / fail / absent cases).
-- Author `card_tagline` (≤155 chars, complete clause) for the three
-  known violators: `content/shows/below-deck.md`,
-  `content/shows/project-runway.md`, `content/shows/big-brother.md`.
-- Flip `CARD_TAGLINE_STRICT = true` in the same commit (all violators
-  drained before flip; same day-one-strict pattern as phase 44).
-- Update `content-curator` brief: `card_tagline` is required when
-  `tagline > 160 chars`.
-
-**Estimated phases:** 1.
-**Conflicts:** None. No URL change. No UI change. SEO-only impact.
-Complements pass-54 pending critique finding which individually patches
-one show at a time — this phase patches all three and closes the vector.
-
-<!-- Pass 33 (2026-06-15, commit 6bfb784) — 3 candidates filed.
-     Window since pass 32 (14cd563, 2026-06-12): 3 days / 27 commits.
-     Signals reviewed:
-     - AUDIT.md: 1 pending bug row (Supabase CLI pin #416, score 4.8,
-       category: bug — single item, /iterate handles, not a phase shape).
-     - CRITIQUE.md: 26 pending rows (up from 14 at pass 32 — 12 net new
-       from passes 51+52). Three clusters rose to phase-candidate level:
-       (1) era filter tab UX — 3 rows on the same CanonEraToolbar
-       mechanism (TITHERADGE ERA zero entries MED, KISH ERA opaque LOW,
-       COLBY ERA same-class drop from pass-52 cap); (2) show canon
-       completeness — 3 rows clustering around new B-tier shows with
-       partial canons (S-tier blurb dup MED, era coverage LOW, home stat
-       LOW); (3) user profile record zone — 1 MED standalone finding
-       (/u/[handle] stat-chip scaffold absent after phase-38 ship).
-       Remaining 20 rows are MED/LOW findings individually addressable
-       by /iterate in 1–2 ticks each; none cluster into new phase shapes.
-     - Triage: 1 loop-queued issue (#416, Nightly e2e-full gateway
-       timeout) — same as AUDIT bug row above; not a phase shape.
-     - spec.md + design/: no changes since pass 32.
-     - Data growth: 22 shows now (vs 13 at pass 31 / 13 at pass 32) — 9
-       shows added in the pass-32→33 window; this growth is what seeded
-       the B-tier/new-show completeness signal.
-     - Commit pattern: 27 commits — content ticks (10 show additions) +
-       2 critique passes + 6 audit drains. No multi-tick fix patterns on
-       any single surface.
-     Below-threshold candidates noted: (a) Survivor hero breadcrumb
-     placement (1 MED, single DOM reorder, /iterate); (b) HvV Section 03
-     stub (1 MED, content gap, /ship-content); (c) HvV comment composer
-     affordance (1 MED, /iterate); (d) /about 80-120 word promise
-     (1 MED, single copy edit extending phase-43 pattern, /iterate). -->
-
-### 14. Era filter tab polish — empty state + contextual label
+### [ ] [score 5.8] Era filter tab polish — empty state + contextual label
+- proposed: 2026-06-15, v1 candidate #14 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.8 (impact: 7, ease: 7 → 4.9 base + 1.3 signal multiplicity —
 reinforced pass 41)
@@ -5103,7 +2801,8 @@ content-check gate for era band coverage). Independent fix paths:
 #14 is the product-visible render fix; #15 is the invariant gate.
 Ship in any order; both should eventually land.
 
-### 15. Show canon completeness lax→strict gate
+### [ ] [score 9.4] Show canon completeness lax→strict gate
+- proposed: 2026-06-15, v1 candidate #15 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 9.4 (impact: 9, ease: 9 → 8.1 base + 1.3 signal multiplicity — content
 batch now fully drained, narrowing remaining scope to the gate alone; cheaper
@@ -5205,7 +2904,8 @@ shipped ahead of promotion).
 era tabs; #15 addresses the content-check gate that prevents the
 content authoring gap from shipping. Independent and complementary.
 
-### 16. /u/[handle] record stat-chip scaffold
+### [ ] [score 5.0] /u/[handle] record stat-chip scaffold
+- proposed: 2026-06-15, v1 candidate #16 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 5.0 (impact: 6, ease: 7 → 4.2 base + 1 cheap-and-impactful)
 **Source pass:** 33
@@ -6668,7 +4368,8 @@ No URL change either way.
      re-exhausted state. Bumping metadata; awaiting the next pass'
      cadence window for fresh signals to accumulate. -->
 
-### 03. Newsletter subscribe (Buttondown embed)
+### [ ] [score 3.0] Newsletter subscribe (Buttondown embed)
+- proposed: 2026-05-14, v1 candidate #03 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
 
 **Score:** 3.0 (impact: 4, ease: 5, +1 multi, -1 vendor)
 **Source pass:** 1
@@ -6697,6 +4398,2325 @@ or similar makes the sign-up trust signal real.
 **Estimated phases:** 1.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
+
+## Considered (awaiting promotion)
+
+<!-- Pass 76 (2026-10-27, cloud march) — 0 new phase-shape candidates
+     filed directly (one field candidate, "graduated spoiler-risk
+     labeling," already landed this tick via the research generator
+     under the new `## Pending` header above). Signal sweep across all
+     8 lettered sources (§4 of skills/expand.md): spec.md drift (D) was
+     cosmetic only (a4fa6242's phases-table path fix, no scope change);
+     design/ (E) untouched since pass 75; commit-pattern (G) showed
+     nothing clustering beyond routine digest/critique/content upkeep.
+     The one real finding this pass: running the aged-promotion knob
+     (`Promote: aged`) surfaced that `promote.mjs pick` cannot see any
+     of the ~23 live pre-v2 candidates below (#19-#41) — they sit under
+     this legacy `### <NN>. <title>` / `**Score:** X` schema, which the
+     nexus v2 upgrade (a4fa6242) left untouched, and the new tooling
+     only reads the `### [ ] [score X.Y]` schema under `## Pending`.
+     Filed as an AUDIT.md [MED] bug row (score 3.0) rather than a
+     candidate here — it's a mechanical migration/reformatting job, not
+     a new feature, and it's the direct explanation for why candidate
+     #34 (97+ days overdue, score 6.6, explicitly "the file's longest-
+     unpromoted candidate") didn't get picked by this pass's aged-
+     promotion step despite clearing every one of its thresholds.
+     Separately, today's SLA/triage housekeeping relabeled #636 (the
+     candidate #34's own tracking issue) to triage:needs-user — no
+     candidate-level change, noted for continuity. Also closed #785 and
+     #787, an unrelated pair already resolved by ae97eb95 and never
+     closed. -->
+
+<!-- Pass 75 (2026-10-24, cloud march) — 0 new phase-shape candidates
+     filed. One reinforcement: candidate #37 (cloud workflow outage
+     fallback) gained a second, distinct root-cause signature — the
+     2026-10-15→10-19 ~4.25-day blackout (`plan/AUDIT.md` [HIGH, score
+     2.7, filed 2026-10-19]) died on a usage-cap-exhaustion error string,
+     not the org-access-toggle error #37 was filed against — strengthening
+     the structural-gap case without changing score or scope.
+     Window since pass 74 (6d1d104e, 2026-10-04T16:00:06Z): 102 commits /
+     ~20 days — the longest gap between expand passes to date, driven by
+     the 2026-10-15→10-19 usage-cap outage itself eating ~4 of those days.
+     Signal sweep across all 8 lettered sources (§4 of skills/expand.md)
+     found nothing novel: AUDIT.md's 8 Pending top-level rows all map to
+     existing candidates (the-voice corruption → #36, night-shift silent
+     failure + cloud-loop outage → #37, e2e-full duration ceiling → #34,
+     YEAR_TENURE_RE teen gap → #40, heartbeat false-positive → #39); the
+     one row flagging impact≥8/ease≤4 (the cloud-loop-dark row) is the
+     reinforcement captured above. CRITIQUE.md's 65 Pending rows (0 HIGH,
+     39 MED, 26 LOW) cluster on the same verbatim-argument-echo pattern
+     candidate #25 already owns, plus a recurring eyebrow/PREMIERED-label
+     mismatch already tracked inline in #25's own reinforcement history
+     (pass-56/90/93/125) — neither needed a fresh filing. Triage backlog
+     (5 `loop-queued`, 8 `needs-user`) clusters on march/night concurrency
+     contention, already #35's territory. spec.md and design/ saw zero
+     commits in the window — no drift signal. Commit mix (105 classified:
+     48% content, 26% audit, 14% digest, 10% critique, 2% sweep, 1%
+     expand) shows no refactor-pattern alarm — the loop spent the window
+     on ordinary content velocity, not firefighting. `plan/README.md`
+     has no `[skipped]` phases.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last run 2026-10-19, 15th full pass; next due
+     2026-10-26); show-add stays LOCKED (35 shows / 37 gap-slots, all
+     starred, non-zero). Step 2.0's shipping-mode gate stayed lifted
+     (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
+     fire: last pass (190) landed only 4 commits / ~22.5h before this
+     tick — both the 12-commit and 24h thresholds failed. Step 3a/3b
+     empty (no pending phase rows, no Pending `category: data` AUDIT
+     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was
+     checked and found non-actionable this tick: the 2026-10-19 sweep
+     reconfirmed all 35 gap-table rows starred confirmed-but-unaired, and
+     Rule 3 had no actionable target either — the 90-day review floor's
+     next two lists don't cross due until 2026-10-25 (today's two prior
+     commits already cleared the day-90 cohort), and no new-list concept
+     cleared the excellence gate (catalog saturation, per the 2026-10-23
+     Ideas-log dead-ends). Zero-ship fell through per `skills/ship-
+     content.md` failure mode 5, landing on this expand pass. -->
+
+<!-- Pass 74 (2026-10-04, cloud march) — 0 new phase-shape candidates filed.
+     No reinforcements — the one candidate with fresh same-day evidence
+     (#29, append-only-ledger file-size wall) was already reinforced hours
+     earlier in this same calendar day by the night-shift `/digest` run
+     (commit 6d1d104e) with the sharper 256KB-Read-tool-failure numbers
+     across all three affected files (CRITIQUE.md 2.29MB, AUDIT.md 1.27MB,
+     newly-named LISTS.md 1.27MB) — re-reinforcing again this pass would
+     only restate the same evidence digest already filed same-day, the
+     exact "don't reinforce twice in one day on no new information" logic
+     pass 73 already applied to #34.
+     Window since pass 73 (c66d6e53, 2026-09-26T02:07:26Z): 77 commits /
+     ~8.7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 20 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last run this same calendar day, 2026-10-04,
+     13th full pass; next due 2026-10-11); show-add stays LOCKED (37
+     shows / 39 gap-slots, all starred, non-zero). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (180) landed the same calendar day at
+     commit 9999e538's sibling e20e428b, only 4 commits before this tick
+     and well under the 24h spacing floor — both thresholds failed. Step
+     3a/3b empty (no pending phase rows, no Pending `category: data` AUDIT
+     rows). Step 3b.5's standing Rule 2 season-fill row (score 4.5) was not
+     redispatched this tick: today's own weekly sweep (9999e538) and five
+     same-day Rule 3 research/extend ticks (ending at 2798e873/f57c45e6,
+     ~3 hours before this tick started) had already exhaustively
+     re-confirmed the CADENCE gap table fully starred (Rule 2 non-
+     actionable) and walked every 2025/2026-premiere-season candidate
+     against the Rule 3 excellence gate with nothing clearing it — the
+     `plan/LISTS.md` notes block explicitly logs "next unlock: a new
+     season landing via Rule 2, or the next weekly sweep," neither of
+     which had happened again in the ~3 hours since. Re-running that exact
+     same search against identical state would only reproduce the same
+     null result a sixth time today, so this tick treated content as
+     already answered and fell through to `/expand`'s own gate, which
+     opened independently (posture bold, 77 commits / ~8.7 days since pass
+     73 — both thresholds clear well past the 20-commit/48h floor, live
+     AUDIT.md + CRITIQUE.md signal present, no phase/data work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): same 5 real rows as
+       pass 73's review (`YEAR_TENURE_RE` teen-number gap → #40, e2e-full
+       duration-ceiling → #34, the-voice factual corruption → #36,
+       night.yml digest-starvation → #35, heartbeat false-positive → #39),
+       unchanged in substance. #34's source row picked up ~14 more nightly
+       digest updates since pass 73 (63 → 75 days unpromoted, the
+       alternating breach/green pattern holding with "no clear trend
+       either direction") but no new scope information — matches pass
+       73's own reasoning for skipping a reinforcement 3 days after pass
+       72's; this pass is 8 days past pass 73's note with the identical
+       story, so left unreinforced again rather than restating the same
+       "still the file's longest-unpromoted candidate" line a third time
+       in the candidates file itself (the nightly digest already carries
+       that drumbeat in `plan/AUDIT.md` and `plan/DIGEST.md`). #36
+       (the-voice) unchanged since 2026-08-08 triage labeling, still
+       correctly parked `needs-user`, issue #762 still open.
+     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 73.
+       All seven are `[needs-user-call]` rows already correctly parked
+       for a human `/oversight` session (home-page mobile catalog list,
+       `/shows` B-tier×2 — inside candidate #30, `/themes` stat-chip
+       date-vs-count ambiguity, `/u/[handle]` own-profile bareness, pass-96
+       show/season/theme Cache-Control split — part (a) already filed as
+       #41, part (b) still needs-user) or a single-surface content tweak
+       (two-themed-list entry-concentration note, LOW, not a cluster). No
+       new pass numbers beyond what existing candidates already cite.
+     - `spec.md` / `design/`: no diff since pass 73
+       (`git log --oneline c66d6e53..HEAD -- spec.md design/` empty on
+       both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+       `triage:loop-queued` shows 5 open (#806 heartbeat → #39, #787/#785
+       e2e vote-state-pill cross-spec flake → both RESOLVED ae97eb95
+       2026-08-23 per `plan/AUDIT.md`'s own closure notes but never
+       issue-closed, #754 a stale content-ship mirror tracking issue with
+       no new information) — identical set and identical disposition to
+       several prior passes' review of the same four issues (first
+       flagged as already-resolved-but-dangling as far back as pass 62);
+       not filed as a fresh candidate since multiple prior passes already
+       looked at this exact pattern with no new evidence and chose not to
+       escalate it — no reason to reverse that call on the same facts.
+       `triage:needs-user` shows 9 open, no new cluster pattern vs. prior
+       passes' counts.
+     - Commit pattern since pass 73: 77 commits, near-entirely the
+       standard content-gap (season-sweep/Rule-3-extend/zero-ship) +
+       critique + digest cadence — no cluster suggesting an unplanned
+       surface.
+-->
+
+<!-- Pass 73 (2026-09-26, cloud march) — 1 new phase-shape candidate filed
+     (#41, show-page ISR + client-hydrated ranking widget). No reinforcements
+     — #34's source row logged one more digest update (2026-09-24) but no new
+     scope information since pass 72's reinforcement 3 days ago, so a repeat
+     reinforcement note was skipped as premature (mirrors the pass-59→72 gap
+     convention: reinforce at milestones, not every pass).
+     Window since pass 72 (564a202d, 2026-09-23T01:39:52Z): 25 commits / ~77
+     hours.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-20, next due 2026-09-27); show-add
+     stays LOCKED (non-zero gap table). Step 2.0's shipping-mode gate stayed
+     lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique gate did not
+     fire: last pass (171) landed 2026-09-25 at commit e9de6844, only 3
+     commits before this tick and well under the 24h spacing floor (~15h
+     elapsed) — both thresholds failed. Step 3a/3b empty (no pending phase
+     rows, no Pending category:data AUDIT rows). Step 3b.5's standing Rule 2
+     season-fill row (score 4.5) was not redispatched this tick: the prior
+     same-day tick (commit c66d6e53, HEAD) had already re-verified the
+     CADENCE gap table against the filesystem within the same calendar day
+     and found zero commits / zero new season files / zero calendar events
+     crossed since its own prior zero-ship — re-running that identical
+     search against identical state would only reproduce the same null
+     result a third time this day, so this tick treated it as already
+     answered rather than filing a redundant reconfirmation commit. This
+     left the dispatch to fall through to `/expand`'s own gate, which opened
+     independently (posture bold, 25 commits / ~77h since pass 72 — both
+     thresholds clear, live CRITIQUE.md signal present, no phase/data work
+     pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 7 rows, unchanged in
+       substance from pass 72's review — all map onto already-filed
+       candidates (#34, #35, #36, #39, #40) or are deliberately-below-floor
+       (theme-description SERP-budget, score 1.5). #34's source row picked
+       up one more digest update (2026-09-24) with no new scope information
+       — see reinforcement note above. #36 (the-voice) unchanged since its
+       2026-08-08 triage labeling, still correctly parked `needs-user`.
+     - `plan/CRITIQUE.md` Pending: 7 rows, same set reviewed at pass 72
+       minus one closure. Six of seven are `[needs-user-call]` rows already
+       correctly parked for a human `/oversight` session (home-page mobile
+       catalog list, `/shows` B-tier×2 — inside candidate #30, `/themes`
+       stat-chip date-vs-count ambiguity, `/u/[handle]` own-profile
+       bareness) or single-surface content tweaks (theme entry
+       concentration). The seventh — pass-96's `/shows/[show]` +
+       `/themes/[theme]` + `/shows/[show]/season/[slug]` Cache-Control /
+       TTFB finding — was re-read in full this pass: it splits into two
+       parts, (a) the show-page's `force-dynamic` forcing the whole page off
+       the CDN edge for one live widget's sake (well-scoped, low-risk,
+       reuses the phase-36 auth-island client-hydration pattern), and (b) an
+       unidentified cause making the season/theme routes (pure SSG, no
+       `dynamic` export, no live data) serve the same private/no-cache
+       headers anyway (needs Vercel dashboard/build-log access this loop
+       doesn't have, genuinely can't be root-caused blind). Part (a) alone
+       is real, scoped, and had never been filed as its own numbered
+       candidate — #31 (resolved) targeted the same file's *query latency*,
+       not its *cache-header* shape, so this is a distinct, uncaptured gap.
+       Filed as #41, scoped to part (a) only; part (b) stays flagged
+       needs-user pending dashboard access.
+     - `spec.md` / `design/`: no diff since pass 72 (`git log -p
+       --since=2026-09-23 -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+-->
+
+<!-- Pass 72 (2026-09-23, cloud march) — 0 new phase-shape candidates filed;
+     1 reinforcement (#34, now 63 days unpromoted).
+     Window since pass 71 (564a202d, 2026-09-16T18:04:32Z): 61 commits /
+     ~7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-20, eleventh full pass, next due
+     2026-09-27; gap table held at 42 shows/44 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (168) landed 2026-09-22, only 5 commits
+     before this tick and under the 24h spacing floor (~14h elapsed) —
+     both the commit-count and hours thresholds failed. Step 3a/3b empty
+     (no pending phase rows, no Pending category:data AUDIT rows). Step
+     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
+     but the CADENCE gap table's all 42 rows remain starred/confirmed-but-
+     unaired (independently re-confirmed this tick), and Rule 3 stays
+     locked while the gap table is non-zero per `plan/LISTS.md`'s own
+     mission statement — so ship-content's own Step 1 queue read found no
+     genuinely actionable row despite the nominal score, exited cleanly
+     ("no content queue"), and the caller fell through per its documented
+     contract. This left the dispatch to fall through to `/expand`'s own
+     gate, which opened independently (posture bold, 61 commits / ~7 days
+     since pass 71 — both thresholds clear, live AUDIT.md + CRITIQUE.md
+     signal present, no phase/data work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total, unchanged
+       in substance from pass 71's review. The recurring HIGH/MED cluster
+       (night.yml starvation → #35, e2e-full duration-ceiling → #34, the-
+       voice factual corruption → #36) still maps onto already-filed
+       candidates with no new scope information — except #34's source row,
+       which picked up ~13 more digest updates since pass 71 and crossed a
+       persistence milestone (63 days unpromoted, now explicitly the
+       file's longest-unpromoted candidate per the row's own 2026-09-22
+       text) — reinforced. #35's source row went quiet after 2026-09-07
+       (no new occurrence logged in 16 days) — a genuine change but not
+       one that raises urgency, so left unreinforced. #36 (the-voice) has
+       had no update since its 2026-08-08 triage labeling — unreinforced,
+       still correctly parked `needs-user`. Two LOW rows (heartbeat
+       false-positive → #39, `YEAR_TENURE_RE` teen-number gap → #40)
+       unchanged since their pass-71 filing.
+     - `plan/CRITIQUE.md` Pending: 8 rows, same set reviewed at pass 71.
+       Three `[needs-user-call]` rows already correctly parked for a human
+       `/oversight` session (home-page mobile catalog list, `/u/[handle]`
+       own-profile bareness, `/themes` stat-chip date-vs-count ambiguity,
+       `/shows` B-tier×2 already inside candidate #30, pass-96 dynamic-
+       serving mystery needing dashboard access this loop doesn't have).
+       No new pass numbers beyond what existing candidates already cite.
+     - `spec.md` / `design/`: no diff since pass 71 (`git log
+       17d830ee..HEAD -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+     - Commit pattern since pass 71: 61 commits, near-entirely the
+       standard content-gap redirect / critique / digest / sweep cadence
+       — no cluster suggesting an unplanned surface.
+-->
+
+
+<!-- Format:
+### <NN>. <Phase title>
+**Score:** N.N (impact: N, ease: N)
+**Source pass:** <expand pass number>
+**Filed:** <ISO date>
+**Why:** <one-paragraph rationale>
+**Scope sketch:** <2-3 lines of what would ship>
+-->
+
+<!-- Pass 70 (2026-09-09, cloud march) — 1 new phase-shape candidate filed
+     (#38, spoiler-language heuristic gate); two reinforcement updates
+     appended below (#25, #33).
+     Window since pass 69 (86c88f89, 2026-09-06T16:58:53Z): 33 commits /
+     ~77 hours.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-06, ninth full pass, next due
+     2026-09-13; gap table held at 41 shows/42 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The
+     critique gate did not fire: last pass (156) landed the same calendar
+     day at commit ae289b02, only 4 commits before this tick and carrying
+     a Pending HIGH finding — both the commit-count/hours thresholds and
+     the "no pending HIGH" condition failed. Step 3a/3b empty (no pending
+     phase rows, no Pending category:data AUDIT rows). Step 3b.5 matched
+     its usual candidate, the standing Rule 2 season-fill drain row
+     (score 4.5) — but the CADENCE gap table was independently
+     re-confirmed unchanged from this same calendar day's four prior
+     content-gap ticks (all 42 slots starred, confirmed-but-unaired), and
+     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
+     51 days) had nothing due — the fourth of today's own ticks had
+     already exhausted a fresh Rule 3 concept search 2h14m before this
+     one started. Re-running that exact search within the same two-hour
+     window was judged not to add information, so this tick treated
+     content as having fallen through (matching pass-67's precedent of
+     Step 3b.5 yielding on a genuine full-board stall) rather than filing
+     a fifth same-day reconfirmation-only commit. This left the dispatch
+     to fall through to `/expand`'s own gate, which opened independently
+     (posture bold, 33 commits / ~77h since pass 69 — both thresholds
+     clear, live AUDIT.md + CRITIQUE.md signal present, no phase/data
+     work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): the same 3 real
+       HIGH/MED rows as recent passes — night.yml starvation (HIGH, 6.4),
+       e2e-full duration-ceiling (MED/HIGH-equivalent, 5.4), the-voice
+       factual corruption (HIGH, 4.8) — mapping onto already-filed
+       candidates #35, #34, #36 respectively, both already
+       `triage:needs-user` and awaiting a local `/oversight` session; no
+       new AUDIT row since pass 69.
+     - `plan/CRITIQUE.md` Pending: passes 154, 155, and 156 all landed
+       since pass 69. Three of five findings from that window were
+       already RESOLVED same-day by the content-gap side-drain mechanic
+       (ANW repetition + host-spelling, too-hot-to-handle prize-split
+       spoiler + Take/pull echo). Two remain Pending: (1)
+       `/shows/vanderpump-rules/season/season-12` — "Shape of the
+       Season"/"Where It Sits in the Canon" near-verbatim cast-turnover
+       restatement, the exact defect class candidate #25 already tracks
+       (reinforced below); (2) `/shows` tier-section `<h3>` heading-level
+       a11y issue — a single page-template fix, not a cluster, left for
+       `/iterate` rather than filed as a candidate. More importantly,
+       pass 156 also reproduced a third independent instance (after
+       pass-152 dragrace-uk, pass-155 too-hot-to-handle) of a spoiler
+       leak the site's only mechanical spoiler gate — a narrow
+       Survivor-only proper-noun blocklist
+       (`collectThemedEntrySpoilerIssues`) — structurally cannot catch:
+       a named individual winner, a multi-field outcome-as-fact leak, and
+       now an unverified "twist" characterization, each on a different
+       show and surface (season page fields, themed-list entry). All
+       three were HIGH severity, all three were caught only by manual
+       critique after already shipping to production. This crossed the
+       signal-multiplicity bar for a new candidate — filed as #38 below.
+     - `spec.md` / `design/`: no diff since pass 69 (`git log -p
+       --since=2026-09-06 -- spec.md design/` empty on both paths).
+     - GitHub issues: `triage:loop-queued` shows 4 open, `triage:needs-user`
+       shows 8 — same counts as pass 69's window, no new pattern.
+     #25 and #33 are the two rows this pass's fresh evidence maps onto
+     most directly; reinforced both in place below.
+-->
+
+<!-- Pass 71 (2026-09-16, cloud march) — 2 new phase-shape candidates filed
+     (#39 heartbeat flatline-alert hardening, #40 YEAR_TENURE_RE teen-number
+     blind spot). No reinforcements — the usual reinforcement targets (#25,
+     #30, #33) had no fresh signal since their last touch.
+     Window since pass 70 (93860a98, 2026-09-09T19:49:03Z): 69 commits /
+     ~7 days.
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
+     issues. Step 0.5 finale gate: 18 calendar entries, 0 due. Step 1.5:
+     season-sweep not due (last 2026-09-13, tenth full pass, next due
+     2026-09-20; gap table held at 40 shows/41 gap-slots, all starred);
+     show-add stays LOCKED (non-zero gap table). Step 2.0's shipping-mode
+     gate stayed lifted (Phase 36 `[x]`, no `[ ]` phase rows). The critique
+     gate did not fire: last pass (161) landed 2026-09-15, only 6 commits
+     before this tick and under the 24h spacing floor (~23h20m elapsed) —
+     both the commit-count and hours thresholds failed. Step 3a/3b empty
+     (no pending phase rows, no Pending category:data AUDIT rows). Step
+     3b.5 matched the standing Rule 2 season-fill drain row (score 4.5) —
+     but the CADENCE gap table was independently re-confirmed unchanged
+     from this same calendar day's earlier tick (commit 17d830ee, ~2.5h
+     prior: all 41 slots starred, confirmed-but-unaired), and
+     `plan/LISTS.md`'s review nag (90-day cadence, oldest `last_reviewed`
+     58 days) had nothing due. The same earlier tick had already logged a
+     Rule 3 zero-ship (rejected duplicate AGT S02 candidate) against a
+     backdrop of 9+ consecutive same-day zero-ship passes documented across
+     late August through mid-September (issue #758's saturation streak).
+     Re-running that search within the same day was judged not to add
+     information, so this tick treated content as having fallen through
+     (matching pass-70's precedent) rather than filing a second
+     reconfirmation-only commit. This left the dispatch to fall through to
+     `/expand`'s own gate, which opened independently (posture bold, 69
+     commits / ~7 days since pass 70 — both thresholds clear by a wide
+     margin, live AUDIT.md + CRITIQUE.md signal present, no phase/data
+     work pending).
+     Signals reviewed:
+     - `plan/AUDIT.md` Pending (non-content-gaps): 8 rows total. The
+       recurring HIGH/MED cluster (night.yml starvation, e2e-full
+       duration-ceiling, the-voice factual corruption) maps onto
+       already-filed candidates #35, #34, #36 — no new evidence to
+       reinforce with this pass. Two LOW rows are genuinely new signal:
+       a heartbeat-workflow false-positive (user-issue #806, root-caused
+       and a concrete fix already sketched inline, score 2.1 — stuck below
+       the 3.0 `/iterate` dispatch floor with no other consumer) and a
+       `YEAR_TENURE_RE` teen-number blind spot in
+       `scripts/content-check.ts` (surfaced by CRITIQUE pass-80, corpus
+       -scanned with ~10 concrete allowlist candidates identified, score
+       2.7 — same below-floor situation). Both are real, scoped,
+       self-contained engineering fixes that no dispatch path currently
+       picks up — filed as #39 and #40.
+     - `plan/CRITIQUE.md` Pending: 8 rows. Three `[needs-user-call]` rows
+       (home-page mobile catalog list, `/u/[handle]` own-profile bareness,
+       `/themes` stat-chip date-vs-count ambiguity) are genuine editorial
+       calls already correctly parked for a human `/oversight` session, not
+       phase-shape gaps — left as-is. The two B-tier browse-scale findings
+       (pass-77, pass-121) are both already tracked and reinforced inside
+       candidate #30 (last reinforced pass-64); no new pass number beyond
+       what #30 already cites, so no further reinforcement filed. One
+       finding (dragrace/season-structure themed-list routes) and one
+       (theme entry concentration) read as single-surface content tweaks,
+       not phase-shape.
+     - `spec.md` / `design/`: no diff since pass 70 (`git log -p
+       --since=2026-09-09 -- spec.md design/` empty on both paths).
+     - GitHub issues: 0 unlabeled (Step 1 already confirmed this).
+-->
+
+### 36. the-voice factual-corruption remediation — re-verify 8 season files, insert 2 missing real seasons, fix the live false "show has ended" claim ~~(resolved — seasons 22-30 corrected against the NBC run, cad5046b, #762)~~
+
+**Score:** 6.0 (impact: 8, ease: 6 → 4.8 base + 2.0 signal multiplicity/urgency —
+a currently-LIVE reader-facing false claim on a shipped show page, and the
+source AUDIT row itself explicitly asks for `/expand` treatment given the
+blast radius; -0.8 for genuine scope uncertainty — the fix touches file
+renumbering, a canon rebase, and cross-catalog reference cleanup, closer to
+"3+ phases or unclear scope" than a clean 1-phase ship)
+**Source pass:** 59
+**Filed:** 2026-07-28
+**Why:** `plan/AUDIT.md` (line 621) documents a confirmed, deep factual
+corruption across `content/shows/the-voice/seasons/22-*.md` through
+`29-*.md` (8 files) plus the show's own frontmatter — not a simple
+off-by-one numbering issue, but conflated cast lists, wrong premiere dates,
+a duplicated real season, an omitted real season (the actual on-screen
+Blake Shelton farewell has no filed season at all), and a fabricated
+"series finale" that never happened. The blast radius is live and reader-
+facing right now: `content/shows/the-voice.md` reads `status: hiatus` and
+its `blurb`/`tagline`/`card_tagline` state the show "signed off" after a
+"fourteen-year run" — a false claim on a production page. Root cause: a
+phantom "spring 2022" season was inserted for a broadcast year where NBC
+actually ran only one cycle (confirmed via Hollywood Reporter + TV Series
+Finale), and that single insertion cascades a +1 offset through every
+later file, compounding into the outright cast/date conflations. This is
+exactly the case `/expand` exists to catch: an audit finding that scores
+moderately on the standard impact×ease formula (4.8) but whose true scope
+— renumber/insert/verify across 8+ files, rebase canon ranks, cross-check
+every themed-list entry citing `show: the-voice` with season ≥22, and
+regenerate e2e canonical-URL fixtures after the renames — is structurally
+too large and too fabrication-risk-sensitive to hand to a single
+autonomous content tick with no review checkpoint. The AUDIT row's own
+filing explicitly recommends promoting this to a dedicated phase or a
+direct oversight-reviewed tick rather than letting a routine Rule 2 drain
+touch it.
+**Source signals:**
+- `plan/AUDIT.md` [HIGH, score 4.8] filed 2026-07-26 during a cloud
+  `/march` tick's Rule 3 research pass (8th pass), escalated same-day (9th
+  pass) with a full scout-verified season-by-season accounting against
+  Wikipedia + NBC Insider/Today.com sourcing. Still Pending as of this
+  filing.
+- The row itself blocks further the-voice content authoring ("do not
+  author new the-voice content depending on any specific season number
+  ≥22's real-world event") until this resolves — an active constraint on
+  the standing Rule 2 season-fill drain, not just a cosmetic content bug.
+- Confirmed real, still-unaired seasons exist that the catalog has never
+  filed: real NBC Season 29 (Feb 2026, first-ever 3-coach "Battle of
+  Champions" format) and real Season 30 (confirmed airing Sep 2026) — both
+  currently invisible to readers because the catalog's own (wrong)
+  `29-the-finale.md` claims the show already ended.
+**Scope sketch:**
+- A dedicated scout-verification pass re-confirming each of the 8 affected
+  files' real-world cast/date/event against primary sourcing (Wikipedia
+  per-season articles, NBC Insider, Today.com) — largely already done by
+  the AUDIT row's own 9th-pass research; this step is closer to a
+  transcription/formalization of existing findings than fresh research.
+- Decide file-count treatment: real Season 23 (Shelton's true on-screen
+  farewell) has no filed season at all and needs insertion, which shifts
+  every later file's number — a rename, not just a content edit, so every
+  shifted season's `NN-<slug>.md` filename and `canonical_position` moves.
+- Rewrite `content/shows/the-voice.md`: `status: hiatus` → `airing`, strip
+  the false "signed off"/"fourteen-year run" framing from
+  `blurb`/`tagline`/`card_tagline`.
+- Author the two real unfiled seasons (S29 "Battle of Champions," Feb 2026;
+  S30, Sep 2026 — casting/coaches only, spoiler-safe, no outcomes since
+  S30 hasn't aired at filing time).
+- Rebase `canon.md` fully across the renumbered range — ranks and
+  `canonical_position` for every season from 22 onward.
+- Cross-check every `content/themes/*.md` entry citing `show: the-voice`
+  with `season` ≥ 22 for now-wrong `season_label`/title references (the
+  19f schema's `related`/entry-title-must-match-frontmatter invariant
+  makes stale entries a `content:check` failure risk once the source
+  files renumber).
+- Regenerate/verify `apps/e2e/src/fixtures/canonical-urls.ts` picks up the
+  renamed slugs automatically (it's content-loader-derived, per bearings)
+  — confirm no stale hardcoded reference survives elsewhere.
+**Estimated phases:** 1, but an unusually dense one — file renumbering +
+canon rebase + cross-catalog reference cleanup in a single commit is a
+larger, higher-fabrication-risk unit than a normal Rule 2 drain tick;
+`/oversight` may prefer to review the scout-verification output before
+authorizing the autonomous loop to touch the renumbering, given how much
+of the original corruption already came from an unsupervised assumption
+(unbroken twice-yearly cadence) compounding silently across 8 files.
+**Conflicts:** none with `spec.md` or the URL contract — this is a
+content-accuracy fix, not a new surface. Overlaps operationally with the
+standing Rule 2 season-fill drain row (both touch `content/shows/the-voice/`),
+but the AUDIT row explicitly blocks routine Rule 2 authoring on this show
+until the corruption resolves, so this should ship as its own reviewed
+unit rather than fall out of an ordinary drain tick.
+
+**Update (expand pass 60, 2026-08-10):** confirmed a second live
+instance of the exact same fabricated "series finale" claim, in a
+themed list rather than the show page — `content/themes/closing-
+statement.md`'s `show: the-voice, season: 29` entry (rank 3)
+restates "Fourteen years in, The Voice closes... The season plays
+with the focus a real series finale earns" nearly verbatim to the
+already-documented false claim. Git-blamed to `92d1be9b`
+(2026-07-17), which **predates** the 07-26 discovery entirely — this
+was never caught by the addendum that flagged the one other
+post-discovery violation (`9ec927d9`). Found via `git log -p
+--since=2026-07-28 -- content/themes/` while gathering this pass's
+signals; exactly the cross-catalog reference risk this candidate's
+own scope sketch already named ("cross-check every
+`content/themes/*.md` entry citing `show: the-voice` with season ≥
+22"), now with a second concrete confirmed hit. Filed as a scoped,
+independent single-entry fix — `plan/AUDIT.md` [HIGH, score 7.2],
+not folded into this candidate's own scope, since a deletion (drop
+the entry, renumber ranks) carries none of the renumbering/fact-
+verification risk the full remediation does and doesn't need to
+wait for it. That AUDIT row now outscores every other Pending
+content-gaps row, so the next `/march` Step 3b.5 dispatch should
+pick it up directly. This candidate's own scope (the full 8-file
+remediation) is unchanged and still recommended for a dedicated
+oversight-reviewed session — the new finding raises confidence that
+the live blast radius is larger than one page, not smaller.
+
+### 34. Shard the e2e-full breadth crawl across parallel Playwright workers ~~(resolved — the nightly crawl is sharded five ways, 47ce5d68)~~
+
+**Score:** 6.6 (impact: 7, ease: 6 → 4.2 base + 2.4 signal multiplicity — raised at
+pass 59 from persistence evidence: same breach recurring nightly, unaddressed 6 days
+after filing)
+**Source pass:** 57 (reinforced pass 59, reinforced pass 72)
+**Filed:** 2026-07-22 (reinforced 2026-07-28, reinforced 2026-09-23)
+**Pass-72 reinforcement (persistence milestone, still unpromoted):**
+`plan/AUDIT.md`'s source row (line 663... see the e2e-full row) logged a fresh
+digest update as recently as 2026-09-22 (yesterday) — the alternating
+breach/green/breach pattern is unchanged after 63 days with "no clear trend
+either direction," and the row now explicitly calls this "the file's longest-
+unpromoted candidate." No new scope information this pass (the fix shape and
+the cloud `workflows`-OAuth-scope blocker are unchanged since filing) — this
+reinforcement is a pure persistence signal: 63 days unpromoted is an order of
+magnitude past the 6-10 day figures cited at the last reinforcement (pass 59),
+and the underlying single-worker bottleneck this candidate targets has not
+been touched by any of the ~20 digest updates logged against the source row
+in the interim. Score held at 6.6 (no new scope information to justify a
+further bump, per the same reasoning pass-59 applied) — flagging again for
+`/oversight` as the standing recommendation, now overdue by a wide margin.
+**Pass-59 reinforcement (persistence, still unpromoted):** `plan/AUDIT.md`'s
+source row (line 619) confirms the same breach has now recurred **every single
+night since filing** — 7 consecutive red `e2e-full` runs (2026-07-21 through
+2026-07-27, run IDs tracked in issue #636's comment thread, one "Recurred"
+comment per night), each dying on the identical 75-minute wall with all
+completed checks passing. Candidate #34 itself has sat unpromoted for 6 days
+with the standing recommendation unchanged (shard, don't bump the timeout a
+third time). No new scope information this pass — the fix shape and the cloud
+`workflows`-OAuth-scope blocker are exactly as documented at filing — this is
+a pure urgency signal: every day this stays unpromoted is another guaranteed
+red night with zero new information, burning CI minutes for no signal.
+**Why:** The nightly `e2e-full` breadth crawl went red again at
+2026-07-21T00:41:24Z (run 29787007925) — not a test regression, the same
+duration-ceiling breach class as superseded candidate #26: all 9,278 of 9,278
+completed checks passed, but the "Exhaustive e2e crawl (E2E_FULL=1)" step hit
+`.github/workflows/e2e-full.yml`'s `timeout-minutes: 75` wall with 734 of
+10,012 tests still remaining (92.7% complete). Candidate #26 already fixed this
+once (2026-07-12, `timeout-minutes` 50→75) after four consecutive red nights,
+but explicitly flagged the bump as a stopgap: the workflow file itself still
+carries the comment "If 75 stops being enough, the real fix is sharding the
+crawl, not another bump" (`.github/workflows/e2e-full.yml:92`). Nine days
+later, it stopped being enough — test count grew from 7,138 (at the 50→75
+bump) to 10,012 (+40%), tracking the content saga's own perpetual season-drain
+mandate exactly as candidate #26 predicted it would. The crawl runs Playwright
+with `workers: 1` (`apps/e2e/playwright.config.ts:82`), so wall-clock scales
+linearly with total page count and every future content tick makes the next
+breach arrive sooner. A third timeout bump would only buy a few more weeks
+before recurring a third time — the structural bottleneck (single worker) is
+unaddressed either way. **BLOCKED FROM CLOUD**: the fix requires editing
+`.github/workflows/e2e-full.yml`, which the cloud loop's `ACTIONS_PAT` cannot
+push (lacks the `workflows` OAuth scope — the identical blocker candidate #26
+and issue #416/#480 already hit on this same file family). Filed as a fresh
+candidate rather than reopening #26 (which is marked resolved/superseded) —
+same convention as how a recurrence of #32's dedupe fix would get its own
+number.
+**Source signals:**
+- `plan/AUDIT.md` [MED, score 5.4] "Nightly e2e-full breadth crawl went red
+  again 2026-07-21T00:41:24Z" — filed 2026-07-21 via `/triage` of issue #636,
+  explicitly cites the workflow file's own "shard, not another bump" comment
+  and flags BLOCKED FROM CLOUD.
+- GitHub issue #636 (open, `triage:loop-queued`), 1:1 mirror of the AUDIT row,
+  no independent new information beyond it.
+- Candidate #26 itself (superseded 2026-07-12) — its own scope sketch already
+  named sharding as the necessary follow-up "once even 75 minutes stops being
+  enough," which is exactly what happened.
+**Scope sketch:**
+- Convert the single "Exhaustive e2e crawl" step in
+  `.github/workflows/e2e-full.yml` into a matrix of N parallel jobs, each
+  running `pnpm --dir apps/e2e exec playwright test --shard=<i>/<N>`
+  (Playwright's built-in sharding flag — no config-file change needed beyond
+  passing the flag). Pick N (likely 4) so each shard's wall-clock comfortably
+  fits inside a much shorter per-shard timeout, well under the current
+  75-minute wall.
+- Keep `workers: 1` per shard (unchanged) if the single-worker constraint
+  exists for a reason (e.g. Supabase container contention under `E2E_FULL=1`)
+  — verify that assumption at implementation time; if it was only ever a
+  historical default, consider raising both shard count and per-shard workers
+  together for a bigger win.
+- The "Pre-start Supabase containers" and "Production build" steps either
+  need to run once and be shared (build artifact reuse across matrix jobs) or
+  be duplicated per shard — duplication is simpler to ship first, artifact
+  sharing is the natural follow-up if setup cost dominates.
+- Same `workflows`-scope cloud blocker as candidate #26/#32/issue #416 —
+  ships via `/oversight` in a local session, not through `plan/README.md`.
+  Recommend bundling with any other pending workflow-file edits in the same
+  session per the established pattern.
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same precedent as candidate #26/#32).
+**Conflicts:** none. Supersedes-in-spirit candidate #26 (same root cause,
+now proven the timeout-bump approach doesn't scale) without literally
+reopening it.
+
+**Update (digest 2026-08-06):** two more red nights (08-04 run
+30959832574, 08-05 run 31056138181), both dying on the identical
+75-minute wall — **16 consecutive red nights now** (07-21 through
+08-05). The catalog has held flat at 10,485 tests for both nights (no
+growth since 08-03), and completion held flat too (~89.5% both nights,
+9,399/10,485 on 08-04 per the prior digest, 9,389/10,485 on 08-05) —
+the erosion trend has plateaued rather than reversing, likely
+because this window's content ships were Rule-3 themed-list extends
+(which don't add new e2e URLs) rather than new season files. Still
+unpromoted 16 days after filing.
+
+**Update (digest 2026-08-09):** four more red nights (08-06, 08-07
+×2 runs, 08-08), same 75-minute wall each time — **20 consecutive
+red nights now** (07-20 through 08-08, or 20 counting back one
+further than the 08-06 update's window). Catalog grew slightly to
+10,510 tests (from 10,485), a MasterChef Australia season backfill
+landing in this window. All completed checks continue to pass; this
+remains a pure duration-ceiling breach, not a quality regression.
+Still unpromoted 19 days after filing.
+
+**Update (digest 2026-08-10):** the 9-consecutive-red streak (07-31
+through 08-08) broke — the 2026-08-09 run posted `success`, the
+first green `e2e-full` since 07-30. Catalog size is unchanged
+(still 10,500+ tests, single worker), so this reads as inconclusive
+rather than resolved: either the run got lucky on timing/contention,
+or something else shaved enough wall-clock to clear the 75-minute
+wall this one time. Recommend one or two more nights of observation
+before either promoting or deprioritizing — a second consecutive
+green run would meaningfully weaken the case for sharding; a
+reversion to red would confirm the plateau noted at 08-09 was
+temporary, not a trend break. Still unpromoted 20 days after filing.
+
+**Update (digest 2026-08-11):** the observation window resolved —
+2026-08-10's run (31441429717) posted `failure`, the identical
+75-minute-wall duration-ceiling breach (9,462 of 10,544 tests
+complete, 89.7%, run 23:16:11→00:30:47 UTC = 74m36s). The 08-09
+green run was the outlier, not a trend break: single-night
+recoveries on a fixed 75-minute wall against a catalog that only
+grows were always going to happen occasionally by timing/contention
+luck, but the structural bottleneck (`workers: 1`,
+`apps/e2e/playwright.config.ts:82`) is unchanged and the catalog
+(10,544 tests, +34 since 08-09) hasn't shrunk. This closes the
+observation window opened at 08-10 — recommend promoting at the
+next `/oversight` session rather than watching for a third data
+point; every additional red night is CI minutes burned for zero new
+information, exactly the pass-59 urgency signal restated. Still
+unpromoted 21 days after filing (07-22 filing, 07-28 reinforcement).
+
+**Update (expand pass 63, 2026-08-16, cloud march):** the 08-11
+close-out held — six more consecutive red nights since (08-10 through
+08-15), same 75-minute-wall duration-ceiling breach each time, no
+further green outliers. Issue #636 picked up another same-day
+recurrence comment this morning (2026-08-16T00:23:45Z, run
+31913822337). `night.yml` itself stayed green for 5 straight runs in
+the same window (08-11 through 08-15) — the sibling starvation
+candidate (#35) shows no new evidence this window, this remains a
+pure e2e-full/sharding problem, not a scheduling one. No change to
+score or scope sketch — still blocked from cloud (`.github/workflows/
+e2e-full.yml` needs the `workflows` OAuth scope the cloud loop's
+`ACTIONS_PAT` lacks). 26 days unpromoted since filing (07-22 filing,
+07-28 reinforcement). Ripe for `/oversight` promotion at the next
+local session — a human pushing the workflow-file edit is the only
+path that closes this one.
+
+**Update (expand pass 67, 2026-08-30, cloud march):** the breach is
+still live and now visibly teetering right at the 75-minute wall
+rather than clearing it with margin. Checked the last several
+`e2e-full` runs directly via `gh run view --log`: 08-27 (run
+33025850485, 10,557 tests) and 08-28 (run 33133693773, 10,557
+tests) both hit the identical `##[error] ... has timed out after 75
+minutes` wall; 08-28's late trigger (run 33219380847, 10,565 tests)
+timed out too; but 08-29's run (33280261007, same 10,565 tests)
+posted `success` at `10565 passed (1.2h)` — 72 minutes, inside the
+wall with only ~3 minutes of margin. Catalog growth has slowed
+sharply (10,544 at the 08-11 close-out → 10,565 now, +21 over 19
+days, versus +40% in the prior stretch) since recent content ticks
+have mostly been Rule-3 list extends and take/shape drains on
+already-filed seasons rather than new season files — but the
+crawl is still failing more nights than not (checked the 10 most
+recent `e2e-full` runs: 7 failures, 3 successes, all on the
+identical duration-ceiling signature, zero quality regressions).
+No new scope information — same fix (Playwright `--shard`), same
+`workflows`-OAuth-scope cloud blocker. Restating the pass-63
+recommendation unchanged: this is ripe for `/oversight` promotion,
+not further reinforcement passes — the signal has been stable and
+unambiguous for over a month.
+
+**Update (expand pass 68, 2026-09-04, cloud march):** the pattern
+holds exactly at the pass-67 baseline, no drift either direction.
+Checked the 10 most recent `e2e-full` runs directly (08-25 through
+09-04): 7 failures, 3 successes, the identical split pass 67 found,
+all on the same 75-minute duration-ceiling signature. Tonight's own
+run (09-04, 33823160574) timed out at 9,218 of 10,565 tests complete
+(87.3%) — confirmed via `gh run view --log` (`Running 10565 tests
+using 1 worker` at 00:50:22Z, killed at 02:04:59Z right after test
+9218, a `smoke-mobile.spec.ts` case). Catalog size is now fully flat
+at 10,565 (unchanged since the count pass 67 cited) — the
+content-side growth that was previously eroding the wall's margin has
+stopped, but the crawl still fails more nights than not against the
+existing catalog alone, confirming this is a pure single-worker
+throughput problem, not a catalog-growth-outpacing-the-wall problem.
+No new scope information; same fix (Playwright `--shard`), same
+`workflows`-OAuth-scope cloud blocker. 44 days unpromoted since
+filing (07-22) — restating pass-63/67's unchanged recommendation:
+ripe for `/oversight` promotion, not further reinforcement passes.
+
+**Update (digest 2026-09-05):** tonight's `e2e-full` run (33933576183,
+2026-09-05T00:37:16Z) finished green in 71m19s — under the 75-minute
+wall this time, unlike 7 of the last 10 runs pass-68 counted. One
+green run doesn't change the diagnosis (single-worker throughput
+against a flat 10,565-test catalog is still the bottleneck; this run
+just landed on the fast side of its own variance). 45 days unpromoted
+since filing (07-22) — unchanged recommendation.
+
+**Update (digest 2026-09-06):** the green run was the variance, not a
+trend break — tonight's run (34001648876, 2026-09-06T00:34:40Z) hit
+the standard 75-minute wall again, `Running 10573 tests using 1
+worker`, 9,033 of 10,573 complete (85.4%) at cutoff, worse than
+09-04's 87.3%. All completed checks passing. Catalog basically flat
+(10,565→10,573). This is the same single-worker throughput ceiling
+pass-67/68 already diagnosed conclusively — no new scope information,
+just another data point in a five-week-old, unambiguous signal. 47
+days unpromoted since filing (07-22) — restating the standing
+recommendation unchanged: this is ripe for `/oversight` promotion,
+not further reinforcement passes.
+
+**Update (digest 2026-09-08, covering 09-07 and 09-08):** two more
+red nights, no green in between — the streak is now **3 consecutive
+red `e2e-full` runs** (09-06, 09-07, 09-08). 09-07's run
+(34070594162) hit the wall at 9,192/10,573 (86.9%, the best showing
+since 09-04's 87.3%); 09-08's run (34174840735) dropped back to
+9,030/10,573 (85.4%, tying 09-06's low). Catalog held exactly flat
+at 10,573 tests across all three nights — this is pure single-worker
+throughput variance around a fixed ceiling, not a shrinking or
+growing catalog. Both runs die on the identical `timeout-minutes: 75`
+wall with every completed check passing; issue #636 picked up its
+41st and 42nd "Recurred" comments. No new scope information — same
+fix (Playwright `--shard`), same `workflows`-OAuth-scope cloud
+blocker. **48 days unpromoted since filing (07-22).** Restating the
+unchanged standing recommendation: this is ripe for `/oversight`
+promotion, not further reinforcement passes — the signal has been
+stable and unambiguous for nearly seven weeks.
+
+**Update (digest 2026-09-09):** the streak broke — 09-09's run
+(34297549504) finished **green**, completing the full 10,012-test
+crawl in 70m22s (01:05:49–02:16:11 UTC), inside the 75-minute wall
+with roughly 5 minutes to spare. That margin is thin, not
+reassuring: at the throughput this run demonstrated (~142
+tests/min single-worker), the catalog has only about 700 tests of
+headroom before the wall breaches again on a normal night, let alone
+a slower one — the exact linear-growth mechanism that eroded the
+original 50-minute ceiling. No scope change to the fix; **49 days
+unpromoted since filing (07-22).** One green night doesn't retire
+this candidate, it just delays the next breach by a few nights.
+
+**Update (digest 2026-09-10):** the delay was one night. Tonight's run
+(34423020508, started 00:54:50Z) hit the standard 75-minute wall with
+`Running 10578 tests using 1 worker` (up from 10,012 the night of the
+green run), 8,724 of 10,578 completed (82.5%) at cutoff — the worst
+completion rate of the last five breaches, confirming last night's
+predicted ~700-test headroom was consumed almost immediately by
+normal catalog growth rather than marking a durable improvement. No
+scope change to the fix; **51 days unpromoted since filing (07-22).**
+The margin math from 09-09 held for exactly one night — the strongest
+evidence yet that this needs promotion before the next digest, not
+another reinforcement pass.
+
+**Update (digest 2026-09-11):** still breaching, but not worsening —
+tonight's run (34548135786, started 00:53:24Z) hit the standard
+75-minute wall with `Running 10586 tests using 1 worker` (up from
+10,578), 9,232 of 10,586 completed (87.2%) at cutoff — better
+completion than 09-10's 82.5% low, closer to the 09-07/09-08 range,
+but still a full breach with zero test-quality regression. No scope
+change to the fix; **52 days unpromoted since filing (07-22).** Six
+of the last seven nights (09-06 through 09-11, only 09-09 green) have
+now breached the wall — the pattern is stable, not improving; still
+the standing `/oversight` recommendation.
+
+**Update (digest 2026-09-12):** third consecutive breach — tonight's
+run (34663160050, started 00:54:36Z) hit the standard 75-minute wall
+with `Running 10594 tests using 1 worker` (up from 10,586), 9,380 of
+10,594 completed (88.5%) at cutoff — a shade better than 09-11's
+87.2% but still a full breach, zero test-quality regression. No
+scope change to the fix; **53 days unpromoted since filing (07-22).**
+Seven of the last eight nights (09-05 through 09-12, only 09-09
+green) have now breached the wall, three in an unbroken row (09-10,
+09-11, 09-12) — still the standing `/oversight` recommendation.
+
+**Update (digest 2026-09-16, catching up four nights):** the breach
+streak extended every night since the last update. 09-13's run
+(34728429419) hit the wall with `Running 10594 tests using 1 worker`
+(flat vs. 09-12), 9,053 of 10,594 completed (85.4%); 09-14's run
+(34793638737) breached with the catalog up to 10,602 tests, 8,920
+completed (84.1%); 09-15's run (34916176869) breached again, flat at
+10,602, 9,247 completed (87.2%); tonight's 09-16 run (35042761077)
+breached a fourth time, still flat at 10,602 tests, 9,006 completed
+(84.9%). Notably the catalog stopped growing across all three most
+recent nights (10,602 flat 09-14 through 09-16) — the wall is now
+purely a single-worker throughput ceiling, not a moving target from
+content growth, which makes the sharding fix this candidate proposes
+a durable resolution rather than a stopgap against continued growth.
+All completed checks passing every night, zero test-quality
+regression. Seven of the last seven nights (09-10 through 09-16) have
+now breached the wall in an unbroken row — the longest unbroken
+streak logged yet. No scope change to the fix; **57 days unpromoted
+since filing (07-22).**
+
+**Update (digest 2026-09-17):** eighth consecutive breach — tonight's
+run (35169164707, started 01:05:13Z) hit the standard 75-minute wall
+with `Running 10602 tests using 1 worker` (flat vs. 09-16), 9,092 of
+10,602 completed (85.8%) at cutoff, mid-range for this streak. Catalog
+has now held exactly flat at 10,602 tests for four straight nights
+(09-14 through 09-17), reinforcing the 09-16 update's read: this is a
+pure single-worker throughput ceiling, not a growing target. All
+completed checks passing, zero test-quality regression. No scope
+change to the fix; **58 days unpromoted since filing (07-22).** Eight
+of the last eight nights (09-10 through 09-17) have now breached the
+wall in an unbroken row — still the standing `/oversight`
+recommendation, now the file's longest-running unpromoted candidate.
+
+**Update (digest 2026-09-18):** the eight-night breach streak broke
+— tonight's run (35293694466, started 01:05:44Z) finished in
+1h12m30s, `Running 10603 tests using 1 worker`, all 10,603 passed.
+Catalog grew by exactly 1 test (masterchef finale-shift landed
+overnight) after four flat nights. First green night since 09-09,
+but the margin under the 75-minute wall is thin (~2.5 minutes) —
+reads as the wall holding tonight, not the single-worker throughput
+ceiling this candidate targets resolving itself. No scope change to
+the fix; **59 days unpromoted since filing (07-22)** — still the
+file's longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
+**Update (digest 2026-09-19):** second consecutive green night —
+tonight's run (35411130727, started 00:58:21Z) again finished under
+the wall, all tests passing. Two green nights in a row after the
+eight-night breach streak, but nothing about the single-worker
+throughput ceiling this candidate targets has actually changed —
+still a relief reading, not a fix. No scope change; **60 days
+unpromoted since filing (07-22)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
+**Update (digest 2026-09-20):** the two-night green streak broke —
+tonight's run (35479351263, started 00:39:44Z) hit the standard
+75-minute wall again, `Running 10603 tests using 1 worker` (flat vs.
+09-18/09-19), 9,104 of 10,603 completed (85.9%) at cutoff, all
+completed checks passing, zero test-quality regression. This is the
+expected reversion, not new evidence — two green nights were never
+going to retire a fixed single-worker throughput ceiling. No scope
+change to the fix; **61 days unpromoted since filing (07-22)** —
+still the file's longest-unpromoted candidate, still the standing
+`/oversight` recommendation.
+
+**Update (digest 2026-10-11):** the longest green streak this
+candidate has recorded — seven consecutive nights, 10-04 through
+10-10, latest clocked 74m38s against the 75-minute wall — broke
+exactly as the 10-10 digest flagged it would ("margin is thinning,
+not widening"): tonight's run (38102237540, started 01:33:33Z) hit
+the wall at 9,278/10,012 (92.7%), all completed checks passing. See
+`plan/AUDIT.md`'s e2e-full row for the full update. No scope change
+to the fix — sharding across parallel Playwright workers remains the
+only thing that retires this ceiling rather than just riding it.
+**82 days unpromoted since filing (07-21)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
+**Update (digest 2026-10-12):** breached again the very next night —
+the first back-to-back red pair since the 08-15→08-21 mixed week.
+Tonight's run (38194318853, started 02:03:49Z) hit the same wall at
+8,889/10,719 (82.9%), zero actual test failures. See `plan/AUDIT.md`'s
+e2e-full row for the full update. No scope change to the fix.
+**83 days unpromoted since filing (07-21)** — still the file's
+longest-unpromoted candidate, still the standing `/oversight`
+recommendation.
+
+**Update (digest 2026-10-13):** breached a third consecutive night —
+a new record for this row. Tonight's run (38341294843, started
+03:21:07Z) hit the same wall at 8,860/10,735 (82.5%), zero actual test
+failures. Three-in-a-row surpasses both the 08-15→08-21 mixed week and
+the 10-11→10-12 pair logged two nights ago. See `plan/AUDIT.md`'s
+e2e-full row for the full update. No scope change to the fix — sharding
+remains the only thing that retires this ceiling. **84 days unpromoted
+since filing (07-21)** — still the file's longest-unpromoted candidate,
+still the standing `/oversight` recommendation.
+
+**Update (digest 2026-10-21):** the alternating pattern holds, no
+trend either direction. Since the 10-14 AUDIT.md log entry: 10-15 and
+10-16 came back green, 10-17 through 10-19 breached three nights
+straight, 10-20 came back green, and tonight's run (39526452277,
+started 01:17:32Z) breached again at 8,643/10,743 (80.5%), zero actual
+test failures among completed checks — the same 75-minute single-
+worker wall every time. Total test count (10,743) is flat-to-slightly-up
+vs. the 10-14 count (10,735), tracking the content saga's steady
+catalog growth. Auto-filed as a recurrence comment on issue #636
+rather than a fresh issue (14-day staleness-bound dedupe working as
+designed). No scope change to the fix. **92 days unpromoted since
+filing (07-21)** — still the file's longest-unpromoted candidate,
+still the standing `/oversight` recommendation.
+
+### 35. Decouple `night.yml`'s concurrency group from `march` so the digest can't be starved out ~~(resolved — night.yml runs in its own concurrency group, ab328564)~~
+
+**Score:** 6.4 (impact: 8, ease: 8 — a full week of silently missing the
+loop's only human-facing instrument, with a mechanical, well-understood fix)
+**Source pass:** digest, 2026-07-27
+**Filed:** 2026-07-27
+**Why:** `plan/DIGEST.md` sat frozen on its 2026-07-20 snapshot for a full
+week — the six daily night runs after it (07-21 through 07-26) all show
+`conclusion: cancelled` in `gh run list --workflow night`, and the run before
+that (07-20) burned its full 30-minute job timeout. Root cause confirmed via
+`gh run view --log` on every run: `night.yml` intentionally shares the
+`march` concurrency group (`cancel-in-progress: false`) so its commit never
+races a concurrent march push — but march fires roughly hourly while night
+fires once a day, and GitHub Actions concurrency groups only keep the
+*most-recently-queued* run per group. Every night trigger that landed while a
+march run was in progress got queued, and the next march trigger (almost
+always <1h later) silently evicted it before it started — no error, no log,
+nothing. Worse, cancelled runs don't hit the workflow's `if: failure()`
+issue-filing step, so this produced zero signal anywhere: no GitHub issue,
+no AUDIT row, no comment — only visible by reading raw run history by hand,
+which is exactly how tonight's tick found it. The cost isn't just a missing
+status page: for that week, the breadth-verdict escalation, the saga
+progress report, and the meta-loop's tuning-proposal cadence all went dark
+at once, since digest is the only thing that does any of the three.
+**Source signals:**
+- `plan/AUDIT.md` [HIGH, score 6.4] filed this tick with the full run-by-run
+  evidence (six cancelled runs' database IDs, the one timeout, the
+  `if: failure()` blind spot).
+- `.github/workflows/night.yml`'s own header comment, which states the
+  shared-group rationale plainly ("Shares the march concurrency group so
+  cloud writers never race") — the intent was sound, the failure mode
+  (starvation, not racing) wasn't anticipated.
+**Scope sketch:**
+- Give `night.yml` its own concurrency group (e.g. `group: night`) instead
+  of sharing `march`'s, so its daily trigger can never be evicted by an
+  hourly march run queuing behind it.
+- The original race this guarded against (night's commit landing mid-march-
+  push) needs a lighter substitute: since the digest commit only ever touches
+  `plan/DIGEST.md` (+ occasional `plan/AUDIT.md` / `plan/CANDIDATES.md`
+  rows, never code), a `git pull --ff-only` immediately before the commit
+  step (already implied by skills/digest.md §3 step 1, but re-run it right
+  before the final commit too) plus a retry-once-on-push-rejection loop
+  would cover the actual risk (a lost push) without needing a shared queue.
+- Alternative if a shared queue is still preferred: bump `night.yml`'s
+  `timeout-minutes` well past march's typical run length (some march ticks
+  run 50+ minutes) so a queued night run has enough runway to actually start
+  and finish once it's next in line, rather than dying to the job timeout
+  the way the 07-20 run did.
+- Likely the identical `workflows` OAuth-scope cloud-permission blocker as
+  candidates #26/#34 (this is a `.github/workflows/night.yml` edit) — verify
+  at implementation time; if blocked, bundle with #26/#34's other pending
+  workflow-file edits in the same local/`/oversight` session.
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same precedent as candidate #26/#34).
+**Conflicts:** none.
+
+**Update (digest 2026-08-06):** the starvation race fired again —
+2026-08-05's night run (31000808252, created 11:16:35Z) shows
+`conclusion: cancelled`, confirmed via bracketing `march` runs
+(10:34:07Z→12:07:02Z and 11:27:38Z→13:26:17Z) matching the exact
+diagnosed mechanism: the daily trigger queued mid-march-run and the
+next hourly march trigger evicted it before it started. This is the
+third confirmed loss since the 2026-07-27 diagnosis (07-28, 07-30, now
+08-05) — a loss roughly every 3-5 nights, not self-resolving. This
+particular loss cost a full day of `plan/DIGEST.md` staleness (frozen
+on its 08-04 snapshot until this tick caught up), the same failure
+mode as the original week-long blackout, just shorter because the next
+day's run happened to get a clear runway. Still unpromoted 10 days
+after filing.
+
+**Update (digest 2026-08-09):** worst recurrence yet — **two
+consecutive nights lost**, not one. `gh run list --workflow night`
+shows 08-07 (created 10:46:40Z) and 08-08 (created 10:43:05Z) both
+`conclusion: cancelled`, back to back, the first time this has
+happened since the 07-27 diagnosis (prior losses were isolated:
+07-28, 07-30, 08-01, 08-02, 08-05 — never two in a row). The result
+was a 3-day digest blackout (frozen on the 08-06 snapshot through
+08-09), the longest since the original week-long outage that
+prompted this candidate's filing. The loss cadence itself is also
+accelerating: 5 losses in the 12 nights since diagnosis (07-28,
+07-30, 08-01, 08-02, 08-05, 08-07, 08-08 — 7 losses in 13 nights,
+not the "every 3-5 nights" rate noted at the 08-06 update). Now the
+single most urgent of the four unpromoted candidates in this file —
+recommend promoting ahead of #34/#33/#36 given it is actively
+degrading rather than holding steady. Still unpromoted 13 days
+after filing.
+
+**Update (digest 2026-08-10):** 08-09's night run posted `success`
+— the first clean run since the 08-07/08-08 back-to-back loss, and
+tonight's tick (08-10, this one) is running now with no contention
+signs. One clean night doesn't retire the finding — the root cause
+(the shared concurrency group's most-recently-queued-wins eviction)
+is completely unchanged, and the 08-06 update already showed a
+single clean night (08-06 itself) sitting between two loss clusters.
+Softening from "single most urgent of the four" to "still urgent,
+currently dormant" — #36 (the-voice) is the one candidate whose cost
+is actively growing rather than intermittent, and should lead the
+next `/oversight` session ahead of this one. Still unpromoted 14
+days after filing.
+
+**Update (expand pass 67, 2026-08-30, cloud march):** the starvation
+pattern is not dormant — `gh run list --workflow night.yml` shows 7
+more cancellations in the 12 nights since the 08-10 update (08-19,
+08-21, 08-23, 08-24, 08-26, 08-29, and today 08-30), a higher rate
+than the "every 3-5 nights" baseline noted at filing. Caught a clean,
+fresh repro of the exact diagnosed mechanism live during this tick:
+today's night run (33306737061, queued 10:32:43Z) sits bracketed by
+march run 33306027579 (started 10:15:20Z, still in-progress) and the
+next march trigger 33307197099 (queued 10:44:15Z) — and that second
+march run was itself cancelled too, not night. Reading the fuller
+day's `march.yml` run history shows this isn't only a night-specific
+problem: march-vs-march queue collisions are common in the same
+window (33304767824 also cancelled at 09:44:02Z), because march's own
+polling cadence is tight enough (successive triggers ~25-30 minutes
+apart against runs that themselves take 30-60+ minutes) that the
+shared concurrency group's "most-recently-queued-wins" rule evicts
+queued runs of *either* workflow, not just night's. This slightly
+broadens the candidate's value case beyond "protect night's daily
+slot" — a queued-but-never-started run burns no runner minutes
+itself, but each eviction silently delays that tick's dispatch by
+~25-60 minutes with no log or signal, the same silent-gap failure
+mode the original finding named for night, just lower-stakes when
+it happens between two march ticks instead of skipping a whole day
+of digest. No change to score or scope sketch; still unpromoted 34
+days after filing.
+
+**Update (digest 2026-09-01):** worst run since the original 07-21
+week-long gap — **three consecutive nights lost**: `gh run list
+--workflow night` shows 08-29 (33248067249), 08-30 (33306737061,
+already counted in the 08-30 update above), and 08-31 (33383044473)
+all `conclusion: cancelled`, zero jobs started on any of the three.
+`plan/DIGEST.md` sat frozen on its 2026-08-28 snapshot for the
+entire 3-night span until tonight's tick (this commit) got through.
+Same unfixed mechanism each time — no new evidence, just the longest
+unbroken loss streak since filing 42 days ago. Still unpromoted.
+
+**Update (expand pass 68, 2026-09-04, cloud march):** the most
+encouraging window since filing — `gh run list --workflow night.yml`
+shows **4 consecutive clean runs** (09-01 through 09-04, all
+`conclusion: success`), the longest unbroken clean streak on record,
+immediately following the worst-yet 3-night loss streak (08-29
+through 08-31) the 09-01 digest update reported. The underlying
+mechanism is entirely unchanged — no code or workflow-file edit has
+shipped — so this reads as favorable scheduling luck (fewer
+march-trigger collisions landing in night's ~10:3x UTC queue window
+this week), not a fix; the same eviction race documented since
+07-27 will resume whenever timing lines up again, exactly as the
+08-06/08-10/08-27 "one clean night" false dawns already logged here
+did. Softening urgency slightly relative to #34 (which shows no such
+respite) but not the score or scope sketch — still the standing
+`/oversight` recommendation, now 39 days unpromoted since filing
+(07-27).
+
+**Update (digest 2026-09-05):** first clean-queue (not clean-window)
+data point — tonight's `night` trigger landed at 13:29:26Z mid-`march`
+run (33966499034, cleared 13:37:53Z), queued instead of getting
+evicted, and started at 13:37:54Z. Confirms the group's queueing
+behaves as documented at least some of the time; doesn't retire the
+finding since eviction still depends on whether a *second* march
+trigger lands before the first clears. 40 days unpromoted since
+filing (07-27) — unchanged recommendation.
+
+**Update (expand pass 69, 2026-09-06, cloud march):** the clean streak
+pass-68 flagged now extends to **6 consecutive successful runs**
+(09-01 through 09-06, `gh run list --workflow night.yml` confirms all
+`conclusion: success`) — the longest unbroken run on record, more than
+double pass-68's 4-run count. Still reads as favorable scheduling luck
+rather than a fix: no code or workflow-file edit has shipped, the
+shared-concurrency-group mechanism is byte-for-byte the one diagnosed
+07-27, and the 08-29→08-31 three-night loss streak proves the race is
+still fully live whenever collision timing turns unfavorable again.
+Softening urgency further relative to #34/#25/#28 (all of which show
+continued live recurrence this same window) given the sustained
+respite, but holding score and scope — a race condition that hasn't
+fired in 6 days is not a race condition that's been fixed. 41 days
+unpromoted since filing (07-27).
+
+**Update (digest 2026-09-17):** the clean streak kept extending and
+never broke — `gh run list --workflow night` shows **11 consecutive
+successful runs** (09-06 through 09-16, tonight's 09-17 run in
+flight at digest time), nearly double pass-69's 6-run count and the
+longest unbroken streak on record by a wide margin. Still reads as
+favorable scheduling luck, not a fix — no `night.yml` or `march.yml`
+edit has shipped since the 07-27 diagnosis, and the underlying
+most-recently-queued-wins eviction mechanism is unchanged. Given 11
+days with zero occurrences, further softening urgency relative to
+#34 (which just posted its 58th unpromoted day with an unbroken
+8-night breach streak, the opposite trend) — recommend #34 lead the
+next `/oversight` session, with #35 following once a genuine
+eviction recurs to re-confirm the race is still live. 52 days
+unpromoted since filing (07-27).
+
+**Update (digest 2026-09-18):** streak extends to 12 — 09-17's
+run (createdAt 15:08:24Z) posted `success`, and tonight's 09-18 run
+(this tick) is in flight with no contention signature observed. The
+two candidates' trends have now diverged further: #34 just posted
+its *first* green night in nine (see its 09-18 update), still a
+fragile ~2.5-minute margin under the wall, while #35's mechanism has
+gone unobserved for 12 straight nights. No `night.yml` edit has
+shipped; the underlying eviction race is unchanged. Recommendation
+holds: #34 leads the next `/oversight` session. 53 days unpromoted
+since filing (07-27).
+
+<!-- Pass 56 (2026-07-16, commit b9ed14f, cloud) — 0 new phase-shape candidates
+     filed; reinforced 3 existing candidates instead (#25, #28, #30) with fresh
+     critique-pass evidence (passes 90-93).
+     Window since pass 55 (426ec40, 2026-07-12): ~4 days / 120 commits. Both
+     thresholds met (20 commits, 48 hours).
+     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled issues;
+     Step 1.5 cadence gates found neither the season-sweep (due 2026-07-19) nor
+     show-add (locked, gap table non-zero) clock due; Step 2.0's shipping-mode
+     gate is lifted (Phase 36 [x]) so the critique rate-limit applied normally —
+     it did NOT fire this tick because a Pending [HIGH] finding already sits
+     queued (pass-93, dragrace season-18 missing `pull` field), which blocks
+     condition 3 of the gate. Step 3a (phase) and 3b (data) both empty. Step
+     3b.5 (content-gaps) was checked carefully: both Pending content-gaps rows
+     — the standing Rule 2 season-fill drain and a `source: self` finale-shift
+     row for Love Island US season 8 — were verified non-actionable this tick.
+     Every remaining `plan/CADENCE.md` gap-table row (30 shows) is starred
+     (confirmed-but-unaired or still-airing, not yet concluded); the closest to
+     resolving is alone-australia (Season 4 premiered 2026-07-15, one day before
+     this tick, but hasn't concluded). The finale-shift row is blocked on the
+     same reunion-deferral precedent already documented by a 2026-07-13 drain
+     tick (Love Island US season 8's regular run concluded but its reunion special
+     is confirmed for 2026-08-31 — not yet aired). Bearings' Rule 3 (themed
+     lists) is explicitly gated to fire "only once the gap table reads zero,"
+     which it has not literally reached, so list work was not started
+     unilaterally from this tick. This left Step 3c (expand) as the correct
+     dispatch per march's own documented order.
+     Signals reviewed:
+     - plan/AUDIT.md Pending (non-content-gaps): 6 rows — a mobile-overflow bug
+       (score 5.4), a ship-content issue-mirror idempotency gap (score 3.0), a
+       YEAR_TENURE_RE teen-number blind spot (score 2.7), a themed-list category
+       enum drift doc gap (score 2.4), plus the two content-gaps rows already
+       covered above. All are single-tick-sized fixes already well-scoped for
+       `/iterate`, not phase-shape candidates — none proposed as new expand
+       candidates.
+     - plan/CRITIQUE.md Pending: 29 rows (passes 83-93), mostly single-page LOW
+       content nits already suited to individual `/iterate` fixes. Three rows
+       mapped directly onto existing filed candidates rather than new signal:
+       pass-90 (Chopped S4 PREMIERED caption) and pass-93 (Top Chef Carolinas
+       FILMED/FORMAT caption) both reinforce candidate #28 (stat-tile
+       value/caption literal-duplicate invariant, score 8.3) — reinforcement
+       note added. pass-92 (three freshly-shipped single-canon shows sharing
+       near-identical canon-rationale opener/closer templating) is a related but
+       distinct cross-show sub-pattern of candidate #25 (canon-rationale/
+       season-body verbatim-argument echo gate, score 8.0) — reinforcement note
+       added, flagged as an open scope question for `/oversight` rather than
+       silently folded in, since the detection mechanic would differ (cross-show
+       vs. cross-file-same-show). pass-91 ("51+ tiles" on the still-unfiltered
+       B tier) confirms candidate #30's growth trend (39→51+ tiles across 5
+       passes) — reinforcement note added, with a correction: the original
+       "grows every tick" rationale is now stale since the 2026-07-12 pivot
+       locked new-show creation to the biweekly clock; the compounding argument
+       still holds, just at a slower cadence.
+     - GH issues: 1 open (`triage:loop-queued` #568), already mirrored 1:1 as
+       the AUDIT.md mobile-overflow bug row above — no new signal.
+     - spec.md / design/: no commits touching either since pass 55 (2026-07-12).
+     No candidate scored high enough on fresh, uncaptured signal to justify a
+     4th new numbered candidate this pass — every strong signal traced back to
+     an already-filed, well-scored candidate awaiting `/oversight` promotion.
+-->
+
+<!-- Pass 55 (2026-07-12, commit 426ec40) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45/46/51/54 made — filed WAVE 11, see candidate #24's update below),
+     no new numbered candidate this pass.
+     Window since pass 54 (e40486c, 2026-07-11): ~12.5 hours / 20 commits. Commit
+     threshold met (20 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 10 (5 shows, filed
+       pass 54) fully drained within a day of filing (Traitors UK, MAFS Australia,
+       Real World, Ink Master, So You Think You Can Dance all resolved [x]), the
+       exact recurring stall candidate #24 names, again caught structurally by
+       march's own Step 3b.5 finding the queue empty and falling through to this
+       expand dispatch. Filed WAVE 11 (5 shows: Big Brother UK, RuPaul's Drag Race
+       Down Under, Love Island Australia, The Real Housewives: Ultimate Girls Trip,
+       Selling the OC — all international-edition/spinoff extensions of existing
+       clusters, since WAVE 10 closed the catalog's remaining format-diversity gaps).
+       All scored ≥3.0 so the next march tick's Step 3b.5 has real work. Candidate
+       #24 reinforced (fifth consecutive empty-queue occurrence, see update above).
+     - AUDIT.md other Pending rows: still exactly 2 real rows plus the recurring
+       HIGH — the e2e-full crawl timeout row (candidate #26) recurred a fourth time
+       this window (2026-07-11T23:19:19Z, run 29171935246, per the 2026-07-12
+       digest), now 5 days unpromoted across four red nights; the dedupe
+       staleness-bound row (candidate #32, filed 2026-07-11) remains unchanged,
+       1 day unpromoted. The Supabase CLI pin (issue #416) and the
+       `YEAR_TENURE_RE` engineering row (score 2.7) are both unchanged, no new
+       signal. Neither #26 nor #32 gets a body edit this pass — both are already
+       fully described with their latest evidence directly in the AUDIT.md HIGH
+       row and the digest's 2026-07-12 recommendation to promote both (plus the
+       Supabase pin) at the next local/oversight session stands unchanged; nothing
+       for `/expand` itself to add beyond what's already on record.
+     - CRITIQUE.md: 23 live Pending findings, pass-92 (5 findings: 3 MED, 2 LOW)
+       landed since pass 54's pass-91. No new HIGH findings, no new 3+ clustering
+       on one URL/family beyond what existing candidates already cover: pass-92's
+       Ink Master season-title stutter finding is the same defect class as the
+       pass-73-fixed numeral-form stutter (spelled-out-ordinal variant, single
+       instance) — below the 3-instance clustering bar, left for `/iterate`/
+       `/ship-content` drains. The SYTYCD tenure-overshoot finding and the
+       cross-show canon-rationale templated-phrasing finding are similarly
+       single-cluster, contained fixes — no new candidate warranted.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). No new issue
+       activity beyond what candidates #26/#32/#416 already track.
+     - spec.md + design/: no changes since pass 54 (`git log e40486c..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 54 — content-drain velocity (5 new
+       shows scaffolded, several audit-finding-close content fixes), one critique
+       pass (92), one digest. Matches the standing perpetual-mandate cadence — no
+       refactor-smell cluster, no new signal warranting a fresh numbered candidate
+       this pass.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
+     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying signal
+     this pass beyond the AUDIT.md-recorded #26 recurrence noted above. #24 —
+     reinforced (fifth consecutive empty-queue occurrence, see update above). -->
+
+<!-- Pass 54 (2026-07-11, commit e40486c) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45/46/51 made), plus reinforced existing candidate #24.
+     Window since pass 53 (c50bf0a, same day): ~4.5 hours / 7 commits. Commit
+     threshold (≥20) not met, and last-pass timestamp is under 24h — this pass
+     ran because march's own dispatch chain (Step 1 triage clean, Step 2 critique
+     gate not due, Step 3a/3b/3b.5 all empty) fell through to Step 3c, whose own
+     conditions independently qualify: posture bold, ≥20-commits-OR-signal-present
+     is satisfied via the "signal worth examining" clause (AUDIT.md has 2 Pending
+     rows) plus this being a genuinely idle dispatch slot with no phase/data/
+     content-gap work queued.
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 9 (5 shows, filed
+       pass 51) fully drained this week (rhodubai, summer-house,
+       bachelor-in-paradise, dragrace-allstars, chopped all resolved [x]), the
+       exact recurring stall candidate #24 names, now caught structurally by
+       march's own Step 3b.5 finding the queue empty and falling through to
+       this expand dispatch — see candidate #24's reinforcement below. Filed
+       WAVE 10 (5 shows: The Traitors UK — original edition of the catalogued
+       US `traitors` flavor; Married at First Sight Australia — higher-profile
+       international edition of the catalogued `married-at-first-sight` US
+       flavor; The Real World — genre-founding MTV docusoap, no founding-era
+       title currently represented; Ink Master — tattoo-competition format, no
+       body-art competition cluster yet; So You Think You Can Dance —
+       contestant-pro dance competition, no dance-competition format alongside
+       the catalogued Dancing with the Stars). All scored ≥3.0 so the next
+       march tick's Step 3b.5 has real work.
+     - AUDIT.md other Pending rows: still exactly 2 — e2e-full crawl timeout
+       (candidate #26) and Supabase CLI version pin (issue #416), both
+       unchanged and explicitly BLOCKED FROM CLOUD. The `YEAR_TENURE_RE`
+       engineering row (score 2.7) also unchanged, still single-source and
+       below the phase-candidate filing bar.
+     - CRITIQUE.md: 16 live Pending findings (14 LOW, 1 MED, down from pass
+       53's 17), pass-90 (1 finding, already closed same-tick) landed since
+       pass 53's pass-89. No new HIGH findings, no new 3+ clustering on one
+       URL/family beyond what existing candidates already cover: the
+       below-deck era-band-range finding (pass-56) reinforces the same class
+       as the pending pass-53 Alone finding, both already fully inside
+       candidate #14's scope per prior-pass notes — no new filing. The
+       /shows B-tier filter finding (pass-77) is already candidate #30's
+       exact scope — no new filing. The best-finales cross-entry `final
+       tribal` echo (pass-36) and the masterchef tier-blurb template overlap
+       (pass-71) are each single-instance content nits below the 3-instance
+       clustering bar — left for `/iterate`/`/ship-content` drains.
+     - GitHub issues: 0 unlabeled (triage gate clean). #521 (signed-in CTA
+       flash, HIGH, still open) and #480/#416 (cloud-permission-blocked,
+       unchanged) carry no new clustering signal. #398/#399/#405/#400 are
+       stale loop-opened issues from mid-June with no new activity — not a
+       fresh signal, already the exact pattern candidate #32 names.
+     - spec.md + design/: no changes since pass 53 (`git log c50bf0a..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 7 commits since pass 53 — 3 audit-finding-close content
+       fixes (tagline echo, cast-cast word-tic repetition, timestamp refresh
+       across 9 canon files) each paired with its audit-closure commit, plus
+       critique pass 90 itself. Pure content-drain + critique-response
+       velocity, matching the standing perpetual-mandate cadence — no
+       refactor-smell cluster, no new signal warranting a fresh numbered
+       candidate this pass.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#25/#26/
+     #28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
+     signal this pass. #24 — reinforced (fourth consecutive empty-queue
+     occurrence, see update above). -->
+
+<!-- Pass 52 (2026-07-11, commit 15f80fb) — 2 new phase-shape candidates filed
+     (#30, #31), plus reinforced existing candidate #29.
+     Window since pass 51 (f0b101e, 2026-07-10): ~12 hours / 21 commits. Commit
+     threshold met (21 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — WAVE 9 (5 shows, filed
+       pass 51) fully drained same-window (chopped, rupauls-drag-race-all-stars,
+       bachelor-in-paradise, summer-house, real-housewives-of-dubai all resolved
+       [x]). Same recurring empty-queue pattern candidate #24 already names; left
+       for the next march tick's Step 3b.5 to refill per Rule 1.
+     - AUDIT.md other Pending rows: e2e-full crawl timeout (candidate #26) and
+       Supabase CLI version pin (issue #416) both remain explicitly BLOCKED FROM
+       CLOUD, unchanged. New row this window: `YEAR_TENURE_RE` teen-number gap
+       (engineering, score 2.7, filed 2026-07-08) — single-source, below the
+       3.0 iterate threshold, scope already self-described as a contained
+       one-tick fix rather than a phase-shape gap. Not filed as a candidate;
+       left for a future `/iterate` tick with headroom, or a direct oversight
+       pick.
+     - CRITIQUE.md: 21 live Pending findings (mostly LOW, 2 MED), pass-87 (3
+       findings) landed since pass 51's pass-86. Two fresh signals cleared the
+       filing bar:
+       (1) pass-87 [MED] `/shows/the-apprentice` (and `/shows/survivor`) TTFB
+       runs 3-6x slower than every other page walked, correlating with canon
+       size, not show identity — `dynamic = 'force-dynamic'` (phase-35, kept
+       intentionally for ranking freshness) means the per-request assembly cost
+       scales with season count. Filed as new candidate #31. Cross-references
+       candidate #26 (e2e-full crawl timeout) — different subsystems (render
+       latency vs. CI wall-clock) but the same underlying stressor: catalog
+       growth (58 shows / 717 seasons and climbing per Rule 1's perpetual
+       mandate) outpacing infrastructure sized for an earlier catalog size.
+       (2) pass-77 [LOW] `/shows` B-tier holds 39 shows in one flat scroll with
+       no filter/sort beyond global search — still Pending, unaddressed across
+       10 passes since filing. The catalog has grown past 39 in the B tier
+       alone since pass-77 filed this (58 shows total now). Every show page
+       already has an era-filter affordance (phase 33/34) for browsing within
+       a show; the top-level index has no equivalent for browsing across shows.
+       `network`/`genre_tag` frontmatter already exists per CLAUDE.md's show-
+       identity table — no new content fields needed. Filed as new candidate
+       #30.
+       Era-range chip findings (below-deck LEE/TITHERADGE ERA, row 2798) remain
+       fully inside candidate #14's existing scope — no new filing, cited as
+       reinforcement in #14 by a prior pass already.
+       Remaining LOW findings (stat-tile caption phrasing, sentence fragments,
+       hyphenation drift, era-band explanatory text) are one-off content
+       nitpicks below the phase-shape bar — left for `/iterate`/`/ship-content`
+       drains.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
+       unchanged, no new clustering signal.
+     - spec.md + design/: no changes since pass 51 (`git log f0b101e..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 51 — 5 new-show scaffolds (chopped,
+       rupauls-drag-race-all-stars, bachelor-in-paradise, summer-house,
+       real-housewives-of-dubai) each paired with an audit content-gap close,
+       2 critique passes (86, 87), 4 audit-finding content fixes (host bare-
+       surname, era-range clarity, filming_caption, B-tier pill a11y label),
+       1 digest. Pure content-drain + critique-response velocity, matching the
+       standing perpetual-mandate cadence — no refactor-smell cluster.
+     - File-size check (candidate #29's own signal): `plan/CRITIQUE.md` now
+       3,201 lines / 1.5MB (was 3,096 at pass-51's digest reading, +105 lines
+       in ~1 day — growth continues unabated). `plan/CANDIDATES.md`
+       itself has now grown to 4,106 lines / 248KB — larger than `AUDIT.md`
+       (523 lines / 392KB) and approaching the same class of problem #29
+       already names for CRITIQUE.md. Reinforced below with a scope-widening
+       note.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25/
+     #26/#27/#28 — all unchanged, no new reinforcing or disqualifying signal
+     this pass. #29 — reinforced (continued CRITIQUE.md growth + new
+     CANDIDATES.md self-growth signal). #30/#31 — new this pass. -->
+
+<!-- Digest 2026-07-11 (commit 3b8709b) — 1 new tuning proposal filed (#32) per
+     skills/digest.md §5, reading the pulse since digest 2026-07-10 (fbd7806).
+     e2e-full's HIGH AUDIT row (candidate #26's evidence base) recurred a third
+     consecutive night (2026-07-06, 2026-07-09, 2026-07-10 — run 29130142942),
+     and the same tick window's 2026-07-10T18:13Z cloud march crash (run
+     29113747919) was silently absorbed by its own workflow's title-dedupe
+     search into a month-old stale issue (#398, open since 2026-06-11,
+     untouched). That confirms the title-dedupe blind spot the pass-51 digest
+     first flagged on #416 is not e2e-full-specific — it recurs on any
+     workflow whose failure-issue dedupe search lacks a staleness bound. Filed
+     as its own candidate rather than folded into #26 since the fix (bound the
+     dedupe search's `state:open` to a recency window) is orthogonal to #26's
+     timeout-bump fix, even though both land in workflow YAML blocked by the
+     same `workflows`-OAuth-scope cloud gap. -->
+
+<!-- Pass 53 (2026-07-11, commit c50bf0a) — 0 new candidates filed; 2 existing
+     candidates materially updated instead.
+     Window since pass 52 (03625c7, same day): ~4 hours / 20 commits. Commit
+     threshold met (20 >= 20) — cadence gate holds even within one calendar
+     day since pass 52 already burned its 48h alternative path.
+     Signals reviewed:
+     - Candidate #31 (large-canon TTFB) — RESOLVED this window, directly, not
+       via phase promotion. Commit 75108d4 ("perf: parallelize community-
+       ranking Supabase reads", closes #541, audit finding
+       `the-apprentice-ttfb`) confirmed the candidate's own working theory
+       (four sequential Supabase awaits in `getCommunityRanking`) and fixed
+       it with `Promise.all`, `force-dynamic` freshness intact. Struck
+       through per #17/#27 precedent; zero open signal remains.
+     - Candidate #16 (/u/[handle] stat-chip scaffold) — conflict correction,
+       not new filing. Re-reading its scope sketch against a still-Pending
+       CRITIQUE pass-37 `[needs-user-call]` row on the same URL (`/u/e2e`)
+       surfaced that the candidate's zeroed-chip framing directly reopens
+       CRITIQUE pass-28 #293's deliberate removal of that exact pattern
+       (`ProfileEmpty.tsx:28-36` + a pinned regression test at
+       `ProfileEmpty.test.tsx:178`). Was filed with "Conflicts: None" — now
+       corrected with the citation and a scope narrowing (non-empty case
+       only) so `/oversight` doesn't promote a candidate that silently
+       relitigates an already-closed editorial call.
+     - AUDIT.md: still 2 real Pending rows (e2e-full timeout, Supabase CLI
+       pin), both unchanged and explicitly BLOCKED FROM CLOUD — same as pass
+       52. The `YEAR_TENURE_RE` engineering row (score 2.7) also unchanged,
+       still single-source and below the phase-candidate filing bar. Four
+       AUDIT rows closed this window (americas-next-top-model overlap,
+       below-deck-down-under fragment, the-circle canon-rationale
+       restatement, the-circle vote-question) — all one-tick content/code
+       fixes, not phase-shape gaps.
+     - CRITIQUE.md: pass 88 landed this window (2 MED findings, both closed
+       same-tick via direct fixes — see AUDIT rows above). Pending count
+       dropped 21 → 17 (mostly LOW, 1 MED). No new HIGH findings, no new
+       3+ clustering on one URL/family; the one [MED][needs-user-call] row
+       (pass-37, `/u/e2e`) is pre-existing and already folded into the
+       candidate #16 correction above rather than filed as its own row.
+     - GitHub issues: 0 unlabeled (triage gate clean). Noted but not filed:
+       issue #521 ("Signed-in vote/comment CTAs flash anon...") sits open
+       and unclosed even though its near-duplicate #522 (same underlying
+       auth-state-flash bug, same critique pass-84 origin) closed via the
+       fix pass 88 re-verified. Single stale-duplicate instance — doesn't
+       clear the "2+ independent signals" filing bar on its own, and closing
+       a duplicate issue is a mechanical `/iterate`-scale action, not a
+       phase-shape gap. Left as a note for a future tick to close #521
+       directly with a reference to #522's fix commit.
+     - spec.md + design/: no changes since pass 52 (`git log 15f80fb..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 52 — mostly content-fix pairs
+       (audit finding + its content/code close), 1 perf fix, 1 critique
+       pass, 1 digest. No refactor-smell cluster; matches the standing
+       content-drain + critique-response cadence.
+     Existing candidates status: #14/#15/#18/#19/#20/#21/#22/#23/#24/#25/
+     #26/#28/#29/#30/#32 — all unchanged, no new reinforcing or disqualifying
+     signal this pass. #16 — conflict correction (see above). #31 —
+     resolved, struck through (see above). -->
+
+### 32. Failure-issue title-dedupe search needs a staleness bound ~~(resolved — applied via oversight 2026-07-12: 14-day `updated:>=` bound + recurrence-comment on e2e-full/march/night; heartbeat left as-is deliberately, its issues describe ongoing conditions)~~
+
+**Score:** 5.0 (impact: 6, ease: 8 → 4.8 base + 0.2 signal multiplicity — two
+independent workflows, three total incidents, but capped by the same
+`workflows`-scope cloud blocker as candidates #26 and issue #416/#480)
+**Source pass:** digest 2026-07-11
+**Filed:** 2026-07-11
+**Why:** Both `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
+dedupe their auto-filed failure issues with a bare `gh issue list --search
+'in:title "<prefix>" state:open'` check — if any open issue matches the title
+prefix, the workflow skips filing a new one, regardless of how old that issue
+is or whether it describes the same incident. This has now silently swallowed
+signal three times: the 2026-07-09 e2e-full recurrence and the 2026-07-10
+e2e-full recurrence (run 29130142942) both got absorbed into stale issue #416
+(filed 2026-06-14 for an unrelated Supabase-CLI transient, still open a month
+later), and the 2026-07-10T18:13Z march crash (run 29113747919) got absorbed
+into stale issue #398 (filed 2026-06-11, untouched since one triage comment
+the same day). In all three cases the fresh incident's own run link never
+reached any visible tracker — the only record is the raw workflow log, which
+nobody reads unless a digest happens to go looking. The march crash self-
+healed on retry this time (content kept shipping within the hour), but the
+e2e-full recurrence is a real, worsening breadth-ceiling problem (candidate
+#26) that has now gone three nights without its own issue thread, relying
+entirely on the digest manually re-reading the AUDIT.md row to notice the
+pattern.
+**Scope sketch:**
+- Add a recency bound to both dedupe searches — e.g. `state:open
+  updated:>=<N-days-ago>` (7-14 days is a reasonable default) — so an issue
+  that hasn't been touched in weeks no longer suppresses a fresh incident's
+  filing.
+- Alternative/complementary: instead of skipping filing entirely, post a
+  comment with the new run's link onto the existing open issue when the
+  dedupe search does match — preserves the "don't spam duplicate issues"
+  intent while keeping every incident's evidence visible on the thread.
+- Touches `.github/workflows/e2e-full.yml` and `.github/workflows/march.yml`
+  (and possibly `night.yml` if it carries the same pattern — verify at
+  fix-time). Same cloud-permission blocker as candidate #26 and issue
+  #416/#480: the cloud loop's `ACTIONS_PAT` lacks the `workflows` OAuth scope
+  to push workflow-file edits. Bundle with those two in the same local/
+  `/oversight` session — three one-line-to-few-line diffs in the same file
+  family, same blocker.
+
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase —
+ships via `/oversight` directly, same path as candidate #26 and the Supabase
+CLI pin).
+**Conflicts:** none. Complements candidate #26 (same file family, same cloud
+blocker, orthogonal fix — recommend landing all three permission-blocked
+workflow diffs in one local session).
+
+<!-- Pass 48 (2026-07-08, commit a9bb688) — 1 new phase-shape candidate filed (#28),
+     plus reinforced existing candidate #25 and updated existing candidate #27.
+     Window since pass 47 (566fc6f, 2026-07-08): ~4 hours / 20 commits. Commit
+     threshold met (exactly 20 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — same recurring empty-queue
+       pattern candidate #24 already names. Left for the next march tick's Step
+       3b.5 to refill per Rule 1, consistent with pass 47's own note that the
+       direct-action move is reserved for dispatch time, not expand time.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
+       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
+     - CRITIQUE.md: 38 live Pending findings (mostly LOW, 1 MED — The Voice
+       tenure/status contradiction, pass-80, unresolved as of this filing). Pass 80
+       ran since pass 47 (4 findings: 0 high, 2 medium, 2 low) and its own drain
+       closed 2 more instances of candidate #25's exact defect class this window
+       (Perfect Match #501, The Voice #502 — both "canon.md rationale restates the
+       season body's own closing argument near-verbatim," fixed as one-off content
+       edits rather than through a gate). That's the third and fourth reinforcing
+       instance since pass 47 alone (signal count 7 → 9 shows) — reinforced below.
+       Separately, the FILMED-caption drain (issue #498, first batch shipped pass
+       47-adjacent, this window shipped its 3rd through 6th and FINAL batches —
+       139 total files across 22 shows, drain now complete, 0 remaining) is the
+       same root-cause shape as candidate #25 (content authored without checking
+       a sibling field, producing literal duplication) but on a different field
+       pair (`location`/`filming_caption` vs canon-rationale/season-body) and
+       shipped with **no accompanying content-check gate**, unlike the sibling
+       `meth_who_p` plural-voice defect (#329/#357) which got one after its drain.
+       Filed as new candidate #28 — confirmed via direct grep across the catalog
+       that the other 5 stat-tile value/caption pairs (`format_summary`/
+       `format_caption`, `cast_size`/`cast_size_caption`, `premiere_date`/
+       `premiere_caption`, `ep_count`/`episodes_caption`, `host`/`host_caption`)
+       currently carry zero literal duplicates, so a gate can ship at strict
+       floor-0 immediately across all six pairs rather than needing a lax/warn
+       period. clipToSeoBudget cluster (candidate #27): one of its two open
+       findings (pass-79 stop-word, issue #503) was fixed directly this window
+       via `trimTrailingStopWords()` (commit dd43d38) — a targeted one-line-deny-
+       list fix, not the candidate's full "rank marks by boundary strength"
+       rewrite. The other open finding (pass-68 em-dash-vs-comma preference,
+       still Pending in CRITIQUE.md) is unresolved. Updated below — scope narrowed
+       to the remaining em-dash-preference fix only, score adjusted down since
+       half its evidence resolved via a direct `/iterate` patch rather than
+       needing phase promotion, matching the candidate's own original hedge
+       ("may ship as a same-tick fix rather than needing a numbered phase").
+       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
+       Australia), unchanged, still below the 3-instance clustering bar.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416/#480 both
+       unchanged, no new clustering signal.
+     - spec.md + design/: no changes since pass 47 (`git log 566fc6f..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 8 commits since pass 47 — 2 FILMED-caption drain batches
+       (closing the 139-file drain), 1 B-tier lede voice fix, 1 villa/house
+       self-contradiction fix, 1 canon-duplication fix (Perfect Match), 1
+       canon-duplication fix (The Voice), 1 SEO stop-word fix, 1 critique pass
+       (80), 1 digest. Pure content-drain + critique-response velocity, matching
+       the standing perpetual-mandate cadence.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (signal count 7 → 9 shows). #27 — updated (narrowed scope, score
+     down). #28 — new this pass. -->
+
+<!-- Pass 47 (2026-07-08, commit 566fc6f) — 1 new phase-shape candidate filed (#27),
+     plus reinforced existing candidate #25.
+     Window since pass 46 (51e09a9, 2026-07-07): ~13 hours / 21 commits. Commit
+     threshold met (21 ≥ 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 8 (5 shows, filed pass
+       46) fully drained same-day (dragrace-uk, rhod, shark-tank, the-ultimatum,
+       perfect-match all resolved [x]), the same recurring empty-queue pattern
+       candidate #24 already names. Not re-filing a wave 9 this pass — Rule 1's
+       direct-action move is reserved for when the queue is actually empty at
+       dispatch time; this expand pass ran ahead of the next march tick, so the
+       queue-refill decision is left to whichever tick's Step 3b.5 finds it empty.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout / candidate #26; Supabase CLI version pin / issue #416) both remain
+       explicitly BLOCKED FROM CLOUD, unchanged, no new signal.
+     - CRITIQUE.md: 40 live Pending findings (mostly LOW, a handful MED), up from
+       30 last pass — pass-78 (5 findings) and pass-79 (5 findings) both landed
+       since. Two signals worth acting on:
+       (1) Perfect Match's canon-rationale/season-body echo (pass-79) is the exact
+       defect class candidate #25 already scopes — reinforced below, signal count
+       6 → 7 shows, notable because this is the first instance caught on a show
+       still in its first week of life, strengthening the "gate would pay for
+       itself immediately" case.
+       (2) Two separate LOW/MED findings on `clipToSeoBudget()` (pass-68 em-dash-
+       vs-comma preference, pass-79 stop-word trailing) sit unresolved on the exact
+       same 20-line function that already absorbed one earlier fix (pass 62/67).
+       Filed as new candidate #27 — 3 total fix events on one function is signal
+       multiplicity the same shape as #25's pattern, just on a code path instead
+       of a content-authoring one.
+       "drain"-word jargon cluster still at 2 instances (ANTM, MasterChef
+       Australia), unchanged. Voice-rotation "we" leftover (tierLede.ts B-tier,
+       pass-79) is a single remaining instance — below the 3-instance clustering
+       bar, left for `/iterate` as a one-line content fix rather than filed as an
+       expand candidate.
+     - GitHub issues: 1 unlabeled-adjacent (#416, already tracked, cloud-blocked).
+       No new clustering signal.
+     - spec.md + design/: no changes since pass 46 (`git log 51e09a9..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 46 — dominated by 4 new-show scaffolds
+       (dragrace-uk, rhod, shark-tank, the-ultimatum, perfect-match; the 5th,
+       drag-race-uk, counted with the batch), 1 Shark Tank CAST SIZE fix, 1 Shark
+       Tank season drain (S2-S6), 2 critique passes (78, 79) each with a paired
+       drain-batch fix commit (FILMED-caption self-duplication, 29 files across
+       2 batches). Pure content-drain + critique-response velocity, matching the
+       standing perpetual-mandate cadence; no fix-cluster signal beyond the two
+       captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (see above): signal count 6 → 7 shows. #27 — new this pass. -->
+
+<!-- Pass 46 (2026-07-07, commit 51e09a9) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same move
+     passes 43/45 made), plus reinforced existing candidate #25.
+     Window since pass 45 (d6f2372, 2026-07-06): ~14 hours / 20 commits. Commit
+     threshold met (exactly 20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 7 (5 shows, filed pass
+       45) fully drained same-day, so the queue is empty again, the same recurring
+       stall the pass 43/45 log entries and still-pending candidate #24 both name.
+       Took the direct action Rule 1 mandates: filed a "NEW SHOW QUEUE — WAVE 8"
+       batch of 5 Pending category: content-gaps rows straight into plan/AUDIT.md
+       (RuPaul's Drag Race UK, The Real Housewives of Dallas, Shark Tank, The
+       Ultimatum, Perfect Match — none previously in content/shows/), all scoring
+       ≥3.0 so the next march tick's Step 3b.5 has real work to dispatch to
+       /ship-content. One extends the dragrace flavor family (Drag Race UK), one
+       extends the Housewives cluster (Dallas, 8th core edition) per bearings'
+       "Cross-flavor list capture" guidance, three are fresh unscripted formats
+       (Shark Tank, The Ultimatum, Perfect Match) not yet represented in any
+       existing cluster. Candidate #24 remains pending — the process-hardening fix
+       is still worth oversight's review, but the immediate content gap is closed.
+     - AUDIT.md other Pending rows: the two non-content-gaps rows (e2e-full crawl
+       timeout, filed as digest signal 2026-07-07 and mirrored as candidate #26;
+       Supabase CLI version pin) both remain explicitly BLOCKED FROM CLOUD — need
+       a `workflows`-scoped token only available to a local `/oversight` session.
+       Unchanged, no new signal.
+     - CRITIQUE.md: 30 live Pending findings (29 LOW, 1 MED) plus 3 findings closed
+       this window (#488/#489/#490). #488 (Big Brother canon-rationale/season-body
+       duplication, systemic across all 26 seasons) is the single most important
+       signal this pass — it is the exact defect class candidate #25 already
+       scopes, and it's the 4th-through-6th confirmed instance depending on how
+       RHOSLC/MAFS (both cited inline by the #488 finding as prior fixes of the
+       same class) are counted. Reinforced candidate #25 below: signal count now 6
+       shows, impact bumped 7→8 because this instance proved the cost scales with
+       show size (a 26-season rewrite, not a one-scene edit) rather than staying a
+       flat per-instance cost — a materially stronger case for promotion than pass
+       44's original 3-instance filing had. "drain"-word jargon cluster still at 2
+       instances (ANTM, MasterChef Australia), unchanged, still below the
+       3-instance clustering bar. Era-label-opacity cluster (candidate #14)
+       unchanged. No other new clusters found scanning the remaining 29 rows.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #480 (workflows-
+       permission blocker, needs-user) and #416 (Supabase CLI pin) both unchanged,
+       no clustering signal beyond what candidate #26 and the AUDIT row already
+       capture.
+     - spec.md + design/: no changes since pass 45 (`git log d6f2372..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 20 commits since pass 45 — dominated by wave-7 content-drain
+       pairs (RHOP, The Circle, RHOM, Too Hot to Handle, Southern Charm — 5 new
+       shows, 10 commits), 1 critique pass (77, 2 findings), 3 critique-finding
+       closures (#488/#489/#490), 1 auth-chrome bug fix (home hero sign-in CTA),
+       1 digest. Pure drain/critique-response velocity, no fix-cluster signal
+       beyond the #488 reinforcement captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#26 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. #25 —
+     reinforced (see above): score 6.9 → 7.7, signal count 3 → 6 shows. -->
+
+<!-- Pass 45 (2026-07-06, commit d6f2372) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1 (same
+     move pass 43 made for wave 6).
+     Window since pass 44 (1067802, 2026-07-06): ~14 hours / 11 commits. Commit
+     threshold (≥20) not met on its own, but the last-digest note explicitly
+     flagged this exact stall risk and the show-queue trigger (≤2 Pending rows)
+     independently qualifies this pass regardless of the commit-count clock.
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — wave 6 (5 shows, filed
+       pass 43) fully drained same-day per the 2026-07-05 digest, so the queue
+       is empty again. This is precisely the stall pattern candidate #24 (still
+       awaiting oversight promotion) describes, and the digest's own "watch
+       whether pass 45 refills promptly" note names this pass by number. Took
+       the direct action Rule 1 mandates (as pass 43 did) rather than only
+       re-filing #24's meta-fix: filed a "NEW SHOW QUEUE — WAVE 7" batch of 5
+       Pending category: content-gaps rows straight into plan/AUDIT.md (Real
+       Housewives of Potomac, The Circle, Real Housewives of Miami, Too Hot to
+       Handle, Southern Charm — none previously in content/shows/), all
+       scoring ≥3.0 so the next march tick's Step 3b.5 has real work to
+       dispatch to /ship-content. Two of the five extend the existing 6-show
+       Housewives cluster (RHOP, RHOM) per bearings' "Cross-flavor list
+       capture" guidance; the other three (The Circle, Too Hot to Handle,
+       Southern Charm) are fresh Netflix/Bravo formats not yet represented.
+       Candidate #24 remains pending — the process-hardening fix (an explicit,
+       un-skippable checklist line in skills/expand.md) is still worth
+       oversight's review so a third stall doesn't require a digest nudge to
+       catch, but the immediate content gap is closed for this cycle.
+     - AUDIT.md other Pending rows: only the one non-content-gaps row (Supabase
+       CLI version pin, category: bug) — explicitly marked BLOCKED FROM CLOUD
+       2026-07-06 (needs a `workflows`-scoped token only available to a local
+       `/oversight` session). Unchanged, no new signal.
+     - CRITIQUE.md: 31 Pending rows (29 LOW, 1 MED, 1 SEV). Re-scanned for new
+       clusters. The heaviest URL cluster (4 findings on
+       /shows/survivor/season/heroes-vs-villains) is expected — it's the
+       gold-standard reference page every critique pass walks most carefully —
+       and each of the 4 is a distinct, already-scoped one-off fix (a11y
+       aria-hidden count, spec-row grammar tile, duplicate-rank-token mobile
+       stack, within-page hyphenation drift), not a shared root cause; none
+       promotes to a phase-shape candidate. big-brother (3), the-apprentice
+       (2), jersey-shore (2), below-deck (2) clusters checked individually —
+       same shape, no shared root cause found. Existing candidate #25
+       (canon-rationale echo gate) unchanged, still awaiting promotion.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean). #416 unchanged
+       (same Supabase CLI pin, single stale item, no clustering signal).
+     - spec.md + design/: no changes since pass 44 (`git log 1067802..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 11 commits since pass 44 — dominated by critique-pass-75
+       finding closures (4 content/copy fixes) plus one canon-rationale
+       rewrite and one B-tier tag reword. Pure critique-response velocity, no
+       fix-cluster signal beyond what's captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24/#25 —
+     all unchanged, no new reinforcing or disqualifying signal this pass. -->
+
+<!-- Pass 44 (2026-07-06, commit 1067802) — 1 new candidate filed (#25).
+     Window since pass 43 (3d38fc8, 2026-07-05): ~13 hours / 21 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 0 Pending rows of the `- [ ] [SEV] ... (category: ...)` bullet
+       shape. One heading-style row remains (`### [user-issue #416] [LOW] Pin
+       Supabase CLI version...`, score 4.8) — unchanged since pass 41/42/43,
+       single item, /iterate-shaped, not a clustering signal.
+     - CRITIQUE.md: ~20 Pending rows across passes 51-74. Re-scanned specifically
+       for new clusters not previously assessed. Found one: the canon-rationale /
+       season-body verbatim-argument duplication defect (pass-73 Survivor 50
+       finding) explicitly names itself "the same duplication class as the
+       resolved Bachelor S28 finding (issue #464)... now confirmed on a third
+       show" — cross-referencing GitHub confirms #464 and #459 (Love Island UK)
+       are both CLOSED, each fixed as an isolated content edit. Three independent
+       shows, three separate fix events, same root cause, never caught before
+       ship. This is a real, previously-unassessed cluster (not mentioned in any
+       prior pass's "existing candidates status" — checked via grep). Filed as
+       new candidate #25: extend the existing verbatim-phrase-echo n-gram
+       technique (`collectThemedEntryVerbatimPhraseEchoIssues` in
+       `scripts/content-check.ts:1262`, already proven for themed-list title↔blurb
+       pairs) to canon rationale ↔ season body pairs.
+     - The other clustering candidate considered — "drain"-word jargon leakage
+       (ANTM pass-64, MasterChef Australia pass-62) — remains at 2 instances,
+       still below the 3-instance clustering bar per pass-40's explicit
+       assessment (unchanged; no new "drain"-word instance found this pass). The
+       CAST SIZE templated-caption finding (pass-67) flags a *possibly* related
+       drain-script-default pattern but is a single instance with a suggestion to
+       audit further, not itself a cluster — noted but not promoted; a future
+       pass should re-check if a third instance of either sub-class appears.
+     - GitHub issues: 0 unlabeled this tick (triage gate clean); #416 unchanged,
+       single stale item, no clustering signal.
+     - spec.md + design/: no changes since pass 43 (`git log 3d38fc8..HEAD --
+       spec.md design/` empty).
+     - Commit pattern: 21 commits since pass 43 — dominated by content-drain
+       pairs (90 Day Fiancé, Vanderpump Rules, RHOSLC shows; Queer Eye and Jersey
+       Shore season drains; American Ninja Warrior, Married at First Sight shows),
+       plus a vote-floor bug fix, a critique pass (74), a Survivor 50 content
+       backfill, and an SEO title-template fix. Pure drain/critique-response
+       velocity, no fix-cluster signal beyond what's captured above.
+     Existing candidates status: #14/#15/#16/#18/#19/#20/#21/#22/#23/#24 — all
+     unchanged, no new reinforcing or disqualifying signal this pass. -->
+
+<!-- Pass 43 (2026-07-05, commit 3d38fc8) — 0 new phase-shape candidates filed;
+     dispatched directly into plan/AUDIT.md instead per bearings Rule 1.
+     Window since pass 42 (48ec163, 2026-07-04): ~17 hours / 23 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md show-queue: 0 Pending "Add show" rows — the queue had run
+       completely dry across the last two expand passes (41, 42), tripping
+       bearings.md's "must never run dry, propose the next wave once Pending
+       show rows drop to ≤2" mandate (Rule 1). This is exactly the gap
+       candidate #24 (filed by /digest 2026-07-05, still awaiting promotion)
+       describes — two passes silently skipped the trigger. Rather than only
+       filing #24's meta-fix (amend skills/expand.md), this pass took the
+       direct action Rule 1 actually mandates: filed a "NEW SHOW QUEUE — WAVE
+       6" batch of 5 Pending category: content-gaps rows straight into
+       plan/AUDIT.md (90 Day Fiancé, Vanderpump Rules, Real Housewives of Salt
+       Lake City, Married at First Sight, American Ninja Warrior — none
+       previously in content/shows/), all scoring ≥3.0 so the next march tick's
+       Step 3b.5 has real work to dispatch to /ship-content. Candidate #24
+       remains pending — the process-hardening fix (making the checklist
+       un-skippable in skills/expand.md) is still worth oversight's review so a
+       third pass doesn't repeat the miss, but the immediate content gap is
+       now closed for this cycle.
+     - AUDIT.md Rule 2 gap (separate from the show queue): diffing show
+       frontmatter `seasons:` against actual season files found two more
+       broken promises — Queer Eye (1/8 files) and Jersey Shore (1/6 files)
+       were explicitly promised as "sibling rows, later tick" on 2026-07-04
+       (twice, in the Apprentice and Selling Sunset drain-row bodies) but
+       never actually filed. Filed both now as Pending season-drain rows
+       (scores 3.5 / 3.0); Jersey Shore's row carries forward the original
+       Miami/Italy season-numbering research flag from its show-scaffold row
+       so /ship-content doesn't skip the verification step.
+     - AUDIT.md needs-user-call rows: 2, both unchanged from pass 41/42
+       (Naked and Afraid S12/13/15/16 numbering, Apprentice S5 LA-framing) —
+       editorial-call blockers, oversight resolves, not phase shapes.
+     - CRITIQUE.md: pass 73 ran this window (commit 60aaca6, 5 findings: 2
+       HIGH + 3 MED, all on /shows/survivor/season/survivor-50 — thin content
+       record, a vote-shift-pill vote-floor bug, a stale "no votes yet" banner
+       against a nonzero votes column, a duplicated canon/body rationale, and
+       a title stutter). Five findings clustered on one URL looks like
+       candidate #24-style signal multiplicity at first glance, but only 2 of
+       the 5 are HIGH (shape B's threshold is "3+ HIGH on the same URL") and
+       each has an independent, cheap, single-surface fix — no shared root
+       cause ties them together (content thinness, a missing vote-floor
+       guard, stale banner copy, prose duplication, and a title-builder edge
+       case are five unrelated defect classes that happen to land on the same
+       freshly-scaffolded page). Correctly /iterate-shaped, not phase-shaped;
+       left pending for the next iterate tick to drain one at a time.
+     - GitHub issues: 0 unlabeled (triage gate was clean this tick); #416
+       (Supabase CLI pin, category: bug, score 4.8) remains the sole
+       long-open row, unchanged from prior passes, not a clustering signal.
+     - spec.md + design/: no changes since pass 42 (`git log 5e3f57f..HEAD --
+       spec.md design/` returns empty).
+     - Commit pattern: 23 commits, all content-drain / audit-finding-fix
+       pairs (Bachelor format_summary batch across two ticks, a critique pass,
+       a digest) — pure drain velocity, no new fix-cluster signal.
+     Existing candidates status: #11/#12/#14/#15/#16/#17/#18/#19/#20/#21/#22/
+     #23/#24 — all unchanged, no new reinforcing or disqualifying signal this
+     pass beyond #24's practical resolution-in-part noted above. -->
+
+<!-- Pass 42 (2026-07-04, commit 5e3f57f) — 0 new candidates filed; no new signal.
+     Window since pass 41 (61432a0, 2026-07-04): ~11 hours / 20 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 2 pending rows, both unchanged from pass 41 — Naked and Afraid
+       S12/13/15/16 premiere-numbering discrepancy and The Apprentice S5
+       LA-framing question, both explicitly `[needs-user-call]` (scores 3.15,
+       2.8, capped). Editorial-call blockers, not phase shapes; oversight
+       resolves.
+     - CRITIQUE.md: pass 70 ran this window and filed 0 new findings (commit
+       ba0f29e) — first clean pass since the loop reopened the shipping-mode
+       gate. No new clusters to evaluate; existing pending rows unchanged from
+       pass 41's review, all already absorbed by #13 (shipped, registry-based
+       drain in progress via /iterate), #14 (era-label opacity), or #15
+       (canon-completeness gate).
+     - GitHub issues: 1 `triage:loop-queued` (#416, unchanged, 3+ weeks stale) —
+       same single item pass 41 noted; no clustering signal.
+     - spec.md + design/: no changes since pass 41.
+     - Commit pattern: 20 commits, all content-drain / audit-finding-fix pairs
+       (Selling Sunset S2-6, Apprentice S6-10, hedge-phrase batch drain, yearsWord
+       capitalization fix, Section 03 quote fix, ANTM terminology, jersey-shore
+       caption, /shows hero relabel, Windows path-matching fix) plus pass 41's
+       own expand commit and a digest. Pure drain velocity; no new fix-cluster.
+     Existing candidates status: #11/#12/#14/#15/#16/#18/#19/#20/#21/#22/#23 —
+     all unchanged, no new reinforcing signal this pass. #13 — shipped; its
+     registry continues absorbing hedge-phrase instances via /iterate (3 more
+     drained this window, commit ac081a7). -->
+
+<!-- Pass 41 (2026-07-04, commit 61432a0) — 0 new candidates filed; #14 and #15
+     reinforced with new signals.
+     Window since pass 40 (81e56e8, 2026-07-03): ~17 hours / 21 commits. Commit
+     threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 2 pending rows. (a) category: engineering — check-test-colocation
+       Windows path-matching bug (score 3.5, single instance, /iterate-shaped).
+       (b) category: content-gaps — Naked and Afraid S12/13/15/16 premiere-date
+       numbering discrepancy, explicitly filed `[needs-user-call]` (score 3.15,
+       capped) — a genuine editorial-call blocker, not a phase shape; oversight
+       resolves. Neither clusters into new phase-shape work.
+     - CRITIQUE.md: 43 `- [ ]` rows physically present under `## Pending`
+       (previous passes' shorthand "0/N pending" summaries undercounted — the
+       section mixes resolved `[x]` rows in with live `[ ]` ones and a naive
+       section-boundary scan misses this; corrected here for future passes).
+       Direct verification found several of these rows are stale — already
+       fixed by commits in this window without the CRITIQUE.md row being
+       flipped to `[x]` (e.g. the ANTM/MasterChef Australia `meth_when_p`
+       "drain completes"/"drain continues" jargon rows no longer match current
+       content; the masked-singer/below-deck-mediterranean/below-deck-sailing-
+       yacht/DWTS lowercase-after-period quotes no longer match current
+       content). This is a CRITIQUE.md bookkeeping gap for `/iterate` to close
+       on pickup, not an expand-shaped signal.
+     - New/reinforcing clusters checked against existing candidates:
+       (a) The verbatim hedge "I'm not claiming to be objective. I'm trying to
+       be honest/fair." now appears in 12 canon files
+       (`rg -l "I'm not claiming to be objective" content/shows/*/canon.md`).
+       This is NOT a new candidate — Phase 45 (candidate #13,
+       CLICHE_REPETITION_STRICT) already shipped the extensible cross-corpus
+       phrase-frequency registry this exact pattern is built for; adding this
+       phrase as a fourth registered pattern + draining it is `/iterate`-shaped
+       registry-extension work, not a new phase.
+       (b) `tier_s_blurb` completeness (candidate #15): direct verification
+       (`rg --files-without-match tier_s_blurb content/shows/*/canon.md`)
+       confirms **0 of 43 shows** now lack the field — the 20-file content
+       batch candidate #15 scoped was fully drained this window (commit
+       51dd0fd + 2952ae1, prior to this pass). Candidate #15 updated below:
+       remaining scope is now the `content-check.ts` gate alone (smaller,
+       cheaper, stronger case for promotion — the recurrence-risk the gate
+       exists to close is now proven real at 46% of the pass-40 catalog).
+       (c) Era-band label opacity (candidate #14): 2 more live instances
+       confirmed — `/shows/below-deck` "LEE ERA"/"TITHERADGE ERA" chips
+       (pass-56, CRITIQUE.md:2008) and `/shows/alone` "no-host era" reference
+       (pass-?, CRITIQUE.md:2195) both lack season-range context, exactly the
+       defect class #14 already scopes. Reinforcement noted below; no new
+       candidate.
+     - GitHub issues: 1 `triage:loop-queued` (#416, nightly e2e-full red from
+       2026-06-14) — single stale item (3 weeks old, deploy is green today),
+       no clustering signal.
+     - spec.md + design/: no changes since pass 40.
+     - Commit pattern: 21 commits — dominated by critique passes 68/69 +
+       their per-finding drain commits (OG-image wiring, season-page title/
+       ordinal fixes, VotePair accessible name, ANTM host_caption, American
+       Idol methodology, Naked and Afraid premiere dates, tier_s_blurb batch).
+       Pure drain velocity; no 5+ commit fix-cluster on a single code surface
+       beyond what candidates #13/#14/#15 already cover.
+     Existing candidates status: #11/#12 — still awaiting promotion, no new
+     signal. #13 — shipped as Phase 45; its registry is the live mechanism
+     that should absorb the new hedge-phrase signal above via `/iterate`, not
+     a fresh candidate. #14 — reinforced (2 new era-label instances, both
+     within existing scope). #15 — reinforced + scope narrowed (content batch
+     complete; only the code gate remains). #16 — still `[needs-user-call]`.
+     #18/#19 — still awaiting promotion, no new signal this pass. #20/#21/#22
+     — no new instances this pass. #23 — spot-checked against current content;
+     the CRITIQUE.md-cited instances no longer reproduce (already drained),
+     no live instances found via corpus scan; leaving as-is pending a fresh
+     critique pass rather than downgrading on a spot-check alone. -->
+
+<!-- Pass 39 (2026-06-22, commit 295b6cc) — 0 new candidates filed; AUDIT content-gap rows filed.
+     Window since pass 38 (0721747, 2026-06-21): 1 day (21h) / 22 commits. Commit threshold met (≥20).
+     Signals reviewed:
+     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained again. bearings Rule 1 "keep
+       the queue fed" mandate fired: wave-5 season-drain rows (RHONJ S6–S14, RHOC S4–S18,
+       AGT S6–S20, Naked and Afraid S6–S19, Masked Singer S6–S13) + wave-6 new show rows
+       (America's Next Top Model, The Apprentice US, Queer Eye, Selling Sunset, Jersey Shore)
+       filed to AUDIT.md in this same commit. Not phase shape — content-velocity rows.
+     - CRITIQUE.md: 20+ pending rows across passes 54–63. No new clusters emerge above the
+       candidates already filed (#20 inline coverage note, #21 meth_who_p guard, #22 tagline
+       years-vs-seasons). Pass 63 filed 3 new findings: American Idol meth_when_p stale (MED,
+       content fix → iterate); American Idol tier_s_blurb/tier_a_blurb absent (LOW, covered by
+       #15); /shows "SEASONS RANKED" stat inaccuracy (LOW, iterate-shaped UI fix — rename
+       label or change data source). None rise above existing candidates in score.
+     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — unchanged, workflow-blocked.
+     - spec.md + design/: no changes.
+     - Commit pattern: 22 commits — 5 content ticks (American Idol S16–23, RHOBH S6–15,
+       AGT/Naked/Masked new shows, RHOA S16 fix), 1 critique pass (63). Pure content velocity;
+       no code-surface clustering.
+     Existing candidates status:
+       #15 (CANON_COMPLETENESS_STRICT) — now 6 tier_s_blurb violators (added American Idol
+       to RHONY/Voice/RHOA/DWTS/BDM); strengthened for promotion. #18 (header affordance) —
+       awaiting promotion. #20 (inline coverage note) — awaiting promotion; 1 new signal
+       (pass-63 confirms MCA partial coverage still undisclosed inline). #21 (meth_who_p guard)
+       — awaiting promotion. #22 (tagline years-vs-seasons) — awaiting promotion; 0 new cases. -->
+
+<!-- Pass 38 (2026-06-21, commit 0721747) — 3 candidates filed.
+     Window since pass 37 (14a50a1, 2026-06-20): 1 day / 20 commits. Exact threshold met.
+     Signals reviewed:
+     - AUDIT.md: 0 pending rows — AUDIT show-queue fully drained. bearings Rule 1 "keep
+       the queue fed" mandate fired: wave-5 season-drain rows (American Idol S6–S23,
+       MasterChef Australia S6–S16, RHOBH S6–S15, RHOA S16) + wave-5 new show rows
+       (RHONJ, RHOC, AGT, Naked and Afraid, The Masked Singer) filed to AUDIT.md in this
+       same commit. Not a phase shape — content-velocity rows go to AUDIT.
+     - CRITIQUE.md: 20 pending rows across passes 51–62. Three clusters rise to phase shape:
+       (1) Partial-canon inline disclosure absent — 5 shows (Survivor AU pass-58, Love Is
+       Blind pass-58, DWTS pass-59, RHOBH pass-62, MCA pass-62), all MED severity, all
+       missing the same UI signal near the ranking list (new candidate #20). (2) meth_who_p
+       misleading completeness language — 3 shows (Love Is Blind "all five seeded" pass-58,
+       DWTS "covers the full run" pass-59, MCA tagline years-vs-seasons pass-62), 3 distinct
+       critique passes, same reader-trust root cause (new candidate #21). (3) Tagline
+       years-vs-seasons conflict — 2 shows (MCA, RHOBH), 1 critique pass — below 3-show
+       threshold but structural risk grows with catalog (new candidate #22, lower score).
+       Remaining rows (tier_s_blurb absent × 5 shows — RHONY/Voice/RHOA/DWTS/BDM) reinforce
+       existing candidate #15 (CANON_COMPLETENESS_STRICT gate) — not a new candidate.
+     - GitHub issues: 1 loop-queued (#416, Supabase CLI pin) — single-item, workflow-
+       permission-blocked for cloud; /iterate handles locally. Not a phase shape.
+     - spec.md + design/: no changes since pass 37.
+     - Commit pattern: 20 commits — 4 content ticks (new shows + season drains), 2 critique
+       passes (61/62), 4 audit-closure pairs, 1 critique-find closure. No 5+ fix-cluster
+       on any code surface. Two new shows (RHOBH, MCA) generated 5 critique findings on
+       the same tick — the partial-canon class is now structurally recurrent.
+     Existing candidates status:
+       #14 (era filter empty state) — awaiting promotion; primary MED driver (TITHERADGE ERA)
+       still Pending. #15 (CANON_COMPLETENESS_STRICT gate) — reinforced by 5 tier_s_blurb
+       violations across 5 shows + 4 critique passes; strengthened for promotion. #16
+       (/u/[handle] stat chips) — [needs-user-call]; skip. #18 (header handle affordance) —
+       awaiting promotion; still 0 new signals; still valid. #19 (revised-date helper) —
+       awaiting promotion; still valid, single finding. -->
+
+### 31. Large-canon show-page TTFB regression — profile + optimize per-request render cost ~~(resolved — shipped pre-promotion, pass 53)~~
+
+**Score:** 4.5 (impact: 7, ease: 5 → 3.5 base + 1.0 signal multiplicity —
+correlates with #26's catalog-scale stressor)
+**Source pass:** 52
+**Filed:** 2026-07-11
+**Pass-53 update:** resolved directly via `/iterate`, no phase promotion
+needed. Commit 75108d4 (audit finding `the-apprentice-ttfb`, closes #541)
+confirmed the working theory this candidate's scope sketch predicted:
+`getCommunityRanking` was awaiting four independent Supabase queries
+(`compute_weighted_rank` RPC, trailing-7d voters, baseline snapshot, latest
+snapshot) sequentially, so per-request time was their sum rather than their
+max. Firing them concurrently with `Promise.all` — `force-dynamic` rendering
+(phase 35's freshness fix) left untouched — closes the confirmed bottleneck
+without the caching workaround this candidate's scope sketch explicitly
+warned against. Verify gate green (2828 unit / 3343 e2e) at fix-time. This
+mirrors the exact "may ship as a same-tick `/iterate` fix rather than
+needing a numbered phase" hedge candidates #24/#27 also called out and had
+play out the same way. Zero open signal remains on this candidate; leaving
+it filed (struck through, mirroring #17/#27 precedent) as the historical
+record if a fresh large-canon page reintroduces the sequential-await
+pattern. `/oversight` can treat this as closed.
+**Source signals:**
+- Critique pass-87 [MED] `/shows/the-apprentice` and `/shows/survivor` (the
+  site's two largest-canon shows) render 3-6x slower than every other page
+  walked that pass. Repeated `curl -w` samples: apprentice 1.68s/1.11s/
+  1.15s/0.90s, survivor 1.13s/0.90s/0.86s, vs. `/` at 0.23s and a 1-entry
+  canon page (`/shows/chopped/season/season-1`) at 0.34s — the gap tracks
+  canon/season count, not show identity.
+- Cross-reference: candidate #26 (e2e-full crawl timeout undersized for
+  catalog growth) is a different subsystem (CI wall-clock vs. render
+  latency) hitting the identical root stressor — the catalog has grown
+  past what the surrounding infrastructure was sized for, and both
+  symptoms will keep recurring as Rule 1's perpetual show-growth mandate
+  continues.
+
+**Why:** `src/app/shows/[show]/page.tsx:37` sets `dynamic = 'force-dynamic'`
+deliberately (phase-35 fix for a "community ranking shows stale 0" bug) —
+that freshness guarantee is correct and must not be reverted. But nobody
+has profiled where the per-request time actually goes on large-canon pages;
+the AUDIT finding's own working theory (community-ranking aggregate query
+scaling with row count, or redundant content-file reads across the season
+list) is plausible but unconfirmed. This is exactly the kind of
+"reality has outgrown the plan" gap `/expand` exists to catch: phase 18
+("Performance + a11y polish") shipped when the catalog was much smaller,
+and nothing since has re-profiled the hot path against today's scale.
+Left unaddressed, this gets worse on every tick that adds a season to
+Survivor or the Apprentice, and will eventually surface as a Core Web
+Vitals regression on the site's two flagship show pages.
+**Scope sketch:**
+- Profile `getAllSeasons` / `getCanon` / `getCommunityRanking` on
+  `/shows/[show]/page.tsx` for a large-canon show under realistic load —
+  identify the actual hot path (not just the working theory).
+- Optimize the confirmed bottleneck: likely indexing, per-request
+  memoization, or narrowing the community-ranking query — without adding
+  page-level caching that would resurrect the phase-35 staleness bug.
+- Unit/perf test that pins the fix (e.g. assert a bounded query count or
+  render time budget for a large-canon fixture) so a future regression is
+  caught before it needs another critique pass to surface.
+**Estimated phases:** 1 (profiling + targeted optimization; scope may
+narrow once the actual bottleneck is confirmed).
+**Conflicts:** none. Independent of #26 — different code paths, same root
+stressor (catalog scale); may be worth bundling into one "catalog-scale
+infrastructure" oversight session alongside #26 and #29 if the user wants
+to address the pattern class in one sitting rather than three.
+
+### 26. e2e-full "Exhaustive e2e crawl" step timeout is undersized for the catalog's growth ~~(resolved — applied via oversight 2026-07-12: timeout-minutes 50→75 after a fourth consecutive red night; sharding remains the structural fix if 75 erodes)~~
+
+**Score:** 5.4 (impact: 6, ease: 9 — a one-line workflow-file numeric bump, no code
+change, but capped by the same `workflows`-scope cloud blocker as candidate-adjacent
+issue #416/#480)
+**Source pass:** digest 2026-07-07
+**Filed:** 2026-07-07
+**Why:** The nightly `e2e-full` run at 2026-07-06T23:27Z (run 28830277979) went red
+— but not from a test regression. All 6,409 checks that completed passed; the run
+hit `.github/workflows/e2e-full.yml`'s hard `timeout-minutes: 50` cap on the
+"Exhaustive e2e crawl" step with only 164 of 6,573 total tests left (97.5%
+complete, ~460ms/test average). The crawl runs Playwright with a single worker
+(`Running 6573 tests using 1 worker`), so its wall-clock duration scales linearly
+with total page count — and total page count scales directly with the content
+saga's own perpetual mandate (bearings Rule 1/Rule 2: 53 shows, 700 seasons and
+climbing as of this digest). This is the second distinct failure class to hit this
+exact step (2026-06-14 original was a Supabase release-API flake during CLI setup,
+now tracked as issue #416/#480 with its own pending AUDIT.md fix; 2026-07-06 is a
+genuine duration-ceiling breach with zero flakiness involved) — and unlike the
+Supabase flake, this one will recur on a predictable schedule as the catalog keeps
+growing, not an occasional one-off. Filed as a candidate rather than edited
+directly per the meta-loop rail (`skills/digest.md` §5 "never edit gates, cadences,
+ceilings, or rules directly").
+**Scope sketch:**
+- Raise `timeout-minutes` on the "Exhaustive e2e crawl (E2E_FULL=1)" step in
+  `.github/workflows/e2e-full.yml` from 50 to ~75. The job-level `timeout-minutes:
+  90` has headroom for this — the preceding "Pre-start Supabase containers" (5 min)
+  and "Production build" (20 min) steps observed to consume roughly 20-25 minutes
+  before the crawl starts, leaving ~65-70 minutes of job budget available to the
+  crawl step today.
+- Treat the timeout bump as a near-term patch, not a permanent fix: file a follow-up
+  scope note (or a fresh candidate when the signal recurs) for a sharded/
+  parallel-worker exhaustive crawl once even 75 minutes stops being enough — the
+  single-worker constraint is the actual structural bottleneck, the timeout number
+  is just the symptom.
+- Same blocker as issue #416/#480: this touches `.github/workflows/e2e-full.yml`,
+  which the cloud loop's `ACTIONS_PAT` cannot push (lacks `workflows` OAuth scope).
+  Bundle this fix with the Supabase CLI pin in the same local/`/oversight` session —
+  both are one-line workflow-file diffs blocked by the identical permission gap.
+
+**Estimated phases:** 0 (workflow-config change, not a build-plan phase — ships via
+`/oversight` directly the same way the Supabase CLI pin was scoped to, not through
+`plan/README.md`).
+**Conflicts:** none. Complements issue #416/#480 (same file family, same cloud
+blocker, different root cause) — recommend landing both in the same local session.
+
+### 27. `clipToSeoBudget()` heuristic keeps recurring one-off edge-case patches ~~(superseded — both open signals shipped pre-promotion)~~
+
+**Score:** 4.8 (impact: 6, ease: 8 → 4.8 base, signal-multiplicity bonus dropped —
+see pass-48 update)
+**Source pass:** 47 (updated pass 48, closed out pass 50)
+**Filed:** 2026-07-08 (updated 2026-07-08, both signals resolved by 2026-07-09)
+**Pass-50 update:** the last remaining open signal — the pass-68 em-dash-vs-comma
+mark-preference bug (`src/lib/seo.ts:34-37`) — **resolved this window**, directly
+via `/iterate` (commit 0d0527d, issue #518): the clause-boundary scan now backs the
+cut off to the em dash whenever a comma/semicolon/colon it would otherwise prefer
+falls after it in the same window, matching this candidate's own scope-sketch intent
+without a full mark-strength-ranking rewrite. Pinned with the exact jersey-shore lede
+as a regression case in `seo.test.ts`. Both of this candidate's two open signals
+(pass-79 stop-word, resolved pass-48; pass-68 em-dash preference, resolved pass-50)
+have now shipped as targeted `/iterate` fixes rather than a coordinated rewrite —
+exactly the hedge the pass-48 update called out as the likely outcome. **Zero open
+signals remain** and a fresh grep of `src/lib/seo.ts` + CRITIQUE.md finds no third
+instance pending. Recommend `/oversight` treat this candidate as closed; leaving it
+filed (struck through in the title, mirroring candidate #17's precedent) as the
+historical record if a fourth edge case surfaces on the same function later.
+**Pass-48 update:** the pass-79 stop-word finding (issue #503) this candidate cited
+as its second open signal was **resolved this window** — directly, via a targeted
+`trimTrailingStopWords()` deny-list helper (commit dd43d38), not via this
+candidate's broader "rank marks by boundary strength" rewrite. That's the candidate's
+own original hedge playing out exactly as anticipated ("may ship as a same-tick
+`/iterate` fix rather than needing a numbered phase"). Only **one** open signal
+remains: the pass-68 em-dash-vs-comma mark-preference bug (`src/lib/seo.ts:34-37`,
+still Pending in CRITIQUE.md as of this filing). With one of two signals resolved
+outside the phase-candidate pipeline, the "3 distinct fix events" multiplicity
+argument no longer holds at its original strength — score recalculated without the
++1.5 bonus. Recommend `/iterate` pick up the remaining em-dash-preference fix
+directly (same shape, same file, same low cost as the stop-word fix that just
+shipped) rather than waiting for phase promotion; leaving this row filed mainly so
+the pattern (a function that's absorbed 3 edge-case patches across 3 critique
+passes) stays visible if a 4th instance surfaces.
+**Source signals:**
+- The function's own code comment (`src/lib/seo.ts:12-21`) documents a prior fix:
+  critique pass 62/67 found the original implementation cut mid-clause ("…and Heston
+  Blumenthal appears as a…"), which the current clause-boundary-aware version was
+  written to fix.
+- Critique pass-68 [LOW] `/shows/jersey-shore/season/season-1` (commit 7173f3a) — the
+  clause-boundary scan (`src/lib/seo.ts:34-37`) takes `Math.max` across four mark
+  types (`,`, `;`, `:`, `—`) with no preference order, so a mid-list comma occurring
+  after an em-dash wins the cut even though the em-dash is the stronger boundary,
+  producing a dangling single list item ("…MTV builds its format around the group's
+  own energy — gym…"). **Still unresolved** (CRITIQUE.md pending row).
+- Critique pass-79 [MED] `/shows/perfect-match/season/season-1` — the word-boundary
+  fallback (`src/lib/seo.ts:42-44`, fires when no clause mark falls within the last
+  40% of the budget) has no stop-word guard, so it can land the cut on "the…" instead
+  of a real word, reproduced directly against Perfect Match S1's lede.
+  **RESOLVED pass-48 window** — `trimTrailingStopWords()` helper added (commit
+  dd43d38), CRITIQUE.md row closed (issue #503, commit a9bb688).
+- Signal multiplicity: now **2 distinct fix events on one function** (was 3) — an
+  original clause-unaware bug (fixed pre-pass-47) and one remaining open edge case
+  (em-dash preference). The 3rd event (stop-word) resolved outside this candidate's
+  scope this window, so the "underspec'd, needs a coordinated rewrite" case is
+  weaker than originally filed — see pass-48 update above.
+**Why:** Two independent, unrelated-looking LOW/MED findings (jersey-shore em-dash
+list, perfect-match stop-word) both trace to the same 20-line function and the same
+underlying gap — the heuristic optimizes for "find *a* punctuation mark in range"
+rather than "find the *strongest* clause boundary and never land on a function
+word." Patching each instance individually (as the two pending rows currently
+propose) fixes today's two reproductions but not the next one a future long-lede
+show will surface; a small rewrite that (a) ranks mark types by boundary strength
+instead of taking a flat `Math.max`, and (b) trims trailing stop words after any
+fallback cut, closes the whole edge-case class in the one function rather than
+leaving a third patch for a future pass to find.
+**Scope sketch:**
+- Rewrite the clause-boundary scan to prefer stronger marks (em-dash > colon/
+  semicolon > comma) rather than whichever occurs latest in the window, fixing the
+  pass-68 case.
+- Add a short stop-word deny-list (`the`, `a`, `an`, `and`, `or`, `of`, `to`) applied
+  after the word-boundary fallback cut, trimming one more word back if the cut lands
+  on one, fixing the pass-79 case.
+- Expand `src/lib/__tests__/seo.test.ts` with both pending findings' exact ledes
+  pinned as regression cases, plus the existing Heston Blumenthal case already
+  covered, so all three known edge cases live in one test file going forward.
+- Content-only cleanup: once the function is fixed, the two CRITIQUE.md pending rows
+  (pass-68, pass-79) close as a side effect of the code fix rather than needing
+  separate content edits.
+**Estimated phases:** 1 (small — one function, one test file; may ship as a
+same-tick `/iterate` fix rather than needing a numbered build-plan phase, but filed
+here since it's a code change, not content, and the recurring-patch pattern is worth
+recording even if it ships quickly).
+**Conflicts:** none.
+
+### 24. `/expand`'s new-show queue refill trigger — make Rule 1's "keep the queue fed" nudge explicit ~~(retired — 2026-07-12 oversight pivot: new-show creation is LOCKED and the queue-refill nudge no longer exists; the biweekly show-add clock in `plan/CADENCE.md` owns future additions)~~
+
+**Score:** 4.5 (impact: 6, ease: 7.5 — process/gate tuning, not user-facing)
+**Source pass:** filed by `/digest` 2026-07-05, not an expand pass (meta-loop rail — proposal only)
+**Filed:** 2026-07-05
+**Why:** `plan/bearings.md` lines 543–551 (Rule 1 "keep the queue fed") states the new-show
+`plan/AUDIT.md` Pending-row queue "must never run dry" and that `/expand` should propose a
+fresh wave once Pending show rows drop to ≤2. The queue has sat at exactly 0 rows since
+before the 2026-07-04 digest, and two consecutive expand passes since then (pass 41,
+2026-07-04, and pass 42, 2026-07-04 later the same day) each filed 0 new candidates — neither
+pass's "Signals reviewed" note mentions the show queue at all, only AUDIT's needs-user-call
+rows and CRITIQUE clusters. This suggests the ≤2-row trigger is not part of `/expand`'s
+actual signal checklist (it may only be evaluated implicitly, or was folded into the general
+AUDIT.md scan and silently passed over because the two remaining rows there are
+needs-user-call and easy to skip past). Two passes running the queue empty without
+proposing a refill is itself the evidence — the mandate isn't self-enforcing.
+**Scope sketch:** Add an explicit, un-skippable checklist line to `skills/expand.md`'s
+procedure: "read `plan/AUDIT.md`'s content-gaps rows tagged as show-queue entries; if
+Pending count ≤2, propose the next wave (3-5 shows) before scoring anything else." Cheap
+process fix — no code, just a skill-file amendment plus, once promoted, one expand pass
+that actually files wave 7.
+**Update (expand pass 51, 2026-07-10):** the queue ran dry again (0 Pending show rows,
+same failure this candidate describes) and this pass caught it manually by reading the
+AUDIT.md Pending section directly rather than via an enforced checklist — filed WAVE 9
+(5 shows: RHODubai, Summer House, Bachelor in Paradise, RuPaul's Drag Race All Stars,
+Chopped). This is now the third time the queue has been caught empty by manual review
+rather than a structural gate (waves 7, 8, 9 each followed a stall). The scope sketch
+above remains unpromoted and is the actual fix — `/oversight` should promote this to a
+skill-file amendment so the check stops depending on the expand pass author remembering
+to look.
+**Update (expand pass 54, 2026-07-11):** the queue ran dry a fourth time — wave 9's five
+rows all resolved [x] this week (RHODubai, Summer House, Bachelor in Paradise, RuPaul's
+Drag Race All Stars, Chopped all shipped by content-drain ticks in the days after filing),
+running Pending show rows back to exactly 0. This time the empty queue was caught by
+`/march`'s own Step 3b.5 (not a manual expand-pass review) — the content-gap dispatch
+found zero Pending `category: content-gaps` rows and fell through to the expand gate,
+which is precisely how this march tick ended up here. That's a *structural* catch, not
+authorial vigilance, which is mild evidence the failure mode is self-correcting at the
+march level even without this candidate's proposed skill-file amendment — but it only
+caught the empty queue one dispatch cycle after it went dry (this tick), not before, so
+the underlying "±0 for a stretch" gap the candidate describes still happened. Filed WAVE
+10 (5 shows: The Traitors UK, Married at First Sight Australia, The Real World, Ink
+Master, So You Think You Can Dance). Fourth consecutive empty-queue occurrence across
+waves 7/8/9/10 reinforces the same underlying point — score unchanged, still unpromoted.
+**Update (expand pass 55, 2026-07-12):** the queue ran dry a fifth time — wave 10's five
+rows all resolved [x] within a day of filing (Traitors UK, MAFS Australia, Real World,
+Ink Master, So You Think You Can Dance all shipped by content-drain ticks in the same
+window), running Pending show rows back to exactly 0 again. Caught the same structural
+way as pass 54 — `/march`'s own Step 3b.5 found zero Pending `category: content-gaps`
+rows and fell through to the expand gate. Filed WAVE 11 (5 shows: Big Brother UK,
+RuPaul's Drag Race Down Under, Love Island Australia, The Real Housewives: Ultimate
+Girls Trip, Selling the OC) — this wave leans entirely on international-edition/spinoff
+depth rather than new format clusters, since WAVE 10 closed the catalog's remaining
+format-diversity gaps (body-art, dance). Fifth consecutive empty-queue occurrence across
+waves 7/8/9/10/11 — the underlying cadence question this candidate raises (should the
+queue be refilled proactively at ≤2 rather than caught reactively at 0 by march's
+fallthrough) remains open and unpromoted. The march-level fallthrough catch continues to
+work every time it's been tested (passes 54, 55), which is real evidence the reactive
+path is reliable enough in practice that the proactive skill-file amendment may be
+lower-priority than this candidate's score implies — noting that for `/oversight`'s
+next review rather than pre-judging it here.
+
+### 17. SEO description gate — card_tagline completeness invariant ~~(superseded — shipped pre-promotion)~~
+
+**Score:** 5.0 (impact: 5, ease: 8 → 4.0 base + 1 signal multiplicity)
+**Source pass:** 34
+**Filed:** 2026-06-16
+**Status:** Superseded. Shipped at `seo: add card_tagline to 12 shows — CARD_TAGLINE_STRICT invariant` (in the 11-commit window since pass 34 filed this candidate). The `CARD_TAGLINE_STRICT` flag is now live in `scripts/content-check.ts` and all violators were drained in the same commit. No promotion needed.
+**Source signals:**
+- Critique pass-52 [LOW] /shows/below-deck meta description truncates
+  mid-clause: tagline is 195 chars, no `card_tagline`; `descriptionFor()`
+  slices at 159 chars producing an unfinished thought in SERP.
+- Critique pass-54 [LOW] /shows/project-runway + /shows/big-brother
+  both lack `card_tagline`; taglines exceed 160 chars; SERP snippets
+  truncate mid-clause on both.
+- Pattern: 3 distinct shows across 2 critique passes, same structural
+  gap (tagline > 160 chars, absent card_tagline).
+- The `card_tagline` field is optional per schema; the loader falls back
+  to the full tagline, silently producing overlong SERP descriptions.
+
+**Why:** Three shows exhibit the same gap: a `tagline` exceeding the
+160-char SERP budget with no `card_tagline` fallback, causing
+`descriptionFor()` to slice mid-clause in every case. A visitor
+reading the search result sees an incomplete thought. This is the
+same lax→strict verify-gate mechanic established by phases 41–46:
+add a `collectCardTaglineGapIssues()` invariant in
+`scripts/content-check.ts` that warns when `tagline.length > 160`
+AND `card_tagline` is absent, drain the three known violators, flip
+strict. The invariant prevents any future show addition from landing
+with truncated SERP copy. The 3-show cross-pass recurrence (2 critique
+passes, 3 distinct shows) confirms this is structural recurrence, not
+a one-off authoring mistake. The `card_tagline` field already exists in
+the schema and CLAUDE.md spec; making it required-when-long closes the
+gap without a schema change.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `CARD_TAGLINE_STRICT` flag +
+  `collectCardTaglineGapIssues()`: iterate show frontmatter; emit issue
+  when `tagline.length > 160` AND `card_tagline` is absent. Lax mode
+  logs; strict fails. Colocated unit tests (pass / fail / absent cases).
+- Author `card_tagline` (≤155 chars, complete clause) for the three
+  known violators: `content/shows/below-deck.md`,
+  `content/shows/project-runway.md`, `content/shows/big-brother.md`.
+- Flip `CARD_TAGLINE_STRICT = true` in the same commit (all violators
+  drained before flip; same day-one-strict pattern as phase 44).
+- Update `content-curator` brief: `card_tagline` is required when
+  `tagline > 160 chars`.
+
+**Estimated phases:** 1.
+**Conflicts:** None. No URL change. No UI change. SEO-only impact.
+Complements pass-54 pending critique finding which individually patches
+one show at a time — this phase patches all three and closes the vector.
+
+<!-- Pass 33 (2026-06-15, commit 6bfb784) — 3 candidates filed.
+     Window since pass 32 (14cd563, 2026-06-12): 3 days / 27 commits.
+     Signals reviewed:
+     - AUDIT.md: 1 pending bug row (Supabase CLI pin #416, score 4.8,
+       category: bug — single item, /iterate handles, not a phase shape).
+     - CRITIQUE.md: 26 pending rows (up from 14 at pass 32 — 12 net new
+       from passes 51+52). Three clusters rose to phase-candidate level:
+       (1) era filter tab UX — 3 rows on the same CanonEraToolbar
+       mechanism (TITHERADGE ERA zero entries MED, KISH ERA opaque LOW,
+       COLBY ERA same-class drop from pass-52 cap); (2) show canon
+       completeness — 3 rows clustering around new B-tier shows with
+       partial canons (S-tier blurb dup MED, era coverage LOW, home stat
+       LOW); (3) user profile record zone — 1 MED standalone finding
+       (/u/[handle] stat-chip scaffold absent after phase-38 ship).
+       Remaining 20 rows are MED/LOW findings individually addressable
+       by /iterate in 1–2 ticks each; none cluster into new phase shapes.
+     - Triage: 1 loop-queued issue (#416, Nightly e2e-full gateway
+       timeout) — same as AUDIT bug row above; not a phase shape.
+     - spec.md + design/: no changes since pass 32.
+     - Data growth: 22 shows now (vs 13 at pass 31 / 13 at pass 32) — 9
+       shows added in the pass-32→33 window; this growth is what seeded
+       the B-tier/new-show completeness signal.
+     - Commit pattern: 27 commits — content ticks (10 show additions) +
+       2 critique passes + 6 audit drains. No multi-tick fix patterns on
+       any single surface.
+     Below-threshold candidates noted: (a) Survivor hero breadcrumb
+     placement (1 MED, single DOM reorder, /iterate); (b) HvV Section 03
+     stub (1 MED, content gap, /ship-content); (c) HvV comment composer
+     affordance (1 MED, /iterate); (d) /about 80-120 word promise
+     (1 MED, single copy edit extending phase-43 pattern, /iterate). -->
 
 ### 09. Editorial-copy honesty sweep + derived-count invariant — PROMOTED as Phase 43 (oversight 2026-05-23)
 
