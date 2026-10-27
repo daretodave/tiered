@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: started
 curator: "tiered.tv editor"
-last_revised: 2026-08-24
+last_revised: 2026-10-26
 featured: false
 related:
   - best-location-reveals
@@ -80,8 +80,8 @@ entries:
     title: "A live audience and live phone votes earned a real verdict"
     blurb: "Six episodes, a studio audience, and a public that could phone in a vote — the format's first season proved a televised dance competition could carry the same kind of finish-line tension as a live game show."
   - show: the-voice
-    season: 26
-    season_label: "S26 · The Duo"
+    season: 25
+    season_label: "S25 · The Duo"
     rank: 12
     title: "The format's signature turn got a genuinely strange twist"
     blurb: "Dan + Shay shared a single coaching chair, so the show's whole reveal mechanic — one chair, one turn, one voice deciding — had to make room for two people making the call together. The novelty reshaped the moment itself."

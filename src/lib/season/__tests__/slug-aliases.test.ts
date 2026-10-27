@@ -24,6 +24,16 @@ describe('SEASON_SLUG_ALIASES — registered redirects', () => {
     )
   })
 
+  it('maps the retired The Voice slugs to the real seasons they stood in for', () => {
+    // Issue #762: `the-anchor` duplicated the real season 24 lineup and
+    // `the-finale` described a series finale that never aired. Old links
+    // land on the corrected season pages instead of a 404.
+    expect(SEASON_SLUG_ALIASES['the-voice']?.['the-anchor']).toBe('the-reset')
+    expect(SEASON_SLUG_ALIASES['the-voice']?.['the-finale']).toBe(
+      'battle-of-champions',
+    )
+  })
+
   it('every alias target is a non-empty kebab-case slug', () => {
     // Defensive: a regression that mapped a slug to '' or to a
     // value with bad characters would 308 to a 404 page. A bad

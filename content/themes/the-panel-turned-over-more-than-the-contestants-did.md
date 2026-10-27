@@ -7,7 +7,7 @@ category: single
 sentiment: hold
 status: stable
 curator: "tiered.tv editor"
-last_revised: 2026-08-06
+last_revised: 2026-10-26
 featured: false
 related:
   - when-the-chairs-turned-over
@@ -18,13 +18,13 @@ entries:
     season_label: "S24"
     rank: 1
     title: "The first panel with zero coaches left from the founding four"
-    blurb: "Reba McEntire and Chance the Rapper debut alongside Kelly Clarkson and a returning Niall Horan — the cleanest break the format ever made. No original-era anchor left in any chair, the widest-ranging panel the blind auditions had run in years."
+    blurb: "Reba McEntire debuts alongside John Legend, Gwen Stefani and a returning Niall Horan, the cleanest break the format ever made. No original-era anchor is left in any chair, and the blind auditions have to find a new center of gravity."
   - show: the-voice
     season: 23
     season_label: "S23"
     rank: 2
     title: "The show's last remaining founding coach leaves his chair for good"
-    blurb: "Twelve seasons after helping invent the format, Blake Shelton coaches his final cycle alongside a fresh debut from Niall Horan. It's the last time any of the original four coaches sit at the table before the panel resets completely."
+    blurb: "Blake Shelton, who had coached every season since the format launched, works his final cycle while Niall Horan and Chance the Rapper debut together. It's the last time any of the original four coaches sit at the table before the panel resets completely."
   - show: the-voice
     season: 1
     season_label: "S01"
@@ -32,8 +32,8 @@ entries:
     title: "The four chairs get invented from nothing, with no earlier lineup behind them"
     blurb: "Blake Shelton, Adam Levine, CeeLo Green, and Christina Aguilera build the blind-audition grammar live, in real time. Every later swap, guest cycle, and departure takes its shape in reference to this founding lineup — the one panel with no precedent behind it."
   - show: the-voice
-    season: 26
-    season_label: "S26"
+    season: 25
+    season_label: "S25"
     rank: 4
     title: "One chair holds two coaches for the only time in the show's run"
     blurb: "Dan + Shay share a single seat alongside Reba McEntire, John Legend, and Chance the Rapper — a structural first the format never repeats. Two voices making one recruiting pitch changes the shape of the blind auditions more than any solo debut."
@@ -56,11 +56,11 @@ entries:
     title: "The panel runs for the first time without the one coach who'd sat since season one"
     blurb: "Adam Levine's exit reshapes a table that had never once operated without him. Gwen Stefani's return brings familiarity back to the seat beside Blake Shelton, but the format is visibly adjusting to coordinates it had never used before."
   - show: the-voice
-    season: 28
-    season_label: "S28"
+    season: 27
+    season_label: "S27"
     rank: 8
-    title: "A founding coach returns to a chair he'd left six seasons earlier"
-    blurb: "Adam Levine rejoins Reba McEntire, Michael Bublé, and Snoop Dogg — coaches he'd never shared a table with before his own exit. The biggest return story the panel has staged, and proof the format still remembers its original chemistry."
+    title: "A founding coach returns to a chair he'd left ten seasons earlier"
+    blurb: "Adam Levine rejoins John Legend beside Michael Bublé and Kelsea Ballerini, two coaches he'd never shared a table with. The biggest return story the panel has staged, and proof the format still remembers its original chemistry."
   - show: the-voice
     season: 6
     season_label: "S06"
@@ -68,8 +68,8 @@ entries:
     title: "The founding era's last rotation closes out with a fully new pairing"
     blurb: "Pharrell Williams and Shakira take the seats CeeLo Green and Christina Aguilera vacate, closing the original four-coach chapter on a lineup that had never existed before. The next season opens into a different era entirely."
   - show: the-voice
-    season: 27
-    season_label: "S27"
+    season: 26
+    season_label: "S26"
     rank: 10
     title: "Two debuts land together with almost nothing in common musically"
     blurb: "Snoop Dogg and Michael Bublé join Reba McEntire and Gwen Stefani on the same premiere, the widest stylistic gap the panel has ever tried to seat at one table. The turnover here is about range, not just new names in the chairs."
@@ -99,10 +99,10 @@ entries:
     blurb: "Blake Shelton, Adam Levine, Alicia Keys, and Gwen Stefani had all coached before this cycle — the panel's lowest-turnover season, running entirely on returning chemistry instead of a single new face."
   - show: the-voice
     season: 29
-    season_label: "S29"
+    season_label: "S29 · Battle of Champions"
     rank: 15
-    title: "The newest chair the panel has filled to date"
-    blurb: "Kelsea Ballerini's debut joins Reba McEntire, Michael Bublé, and Adam Levine — the most recent turnover the table has run, in the most recently aired season on file."
+    title: "The panel shrinks to three chairs, every one held by a past winner"
+    blurb: "Kelly Clarkson returns beside John Legend and Adam Levine for the first season seated with only three coaches. The turnover here is subtraction: one chair removed, and only champions left in the ones that remain."
   - show: the-voice
     season: 14
     season_label: "S14"

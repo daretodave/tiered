@@ -7,7 +7,7 @@ category: tone
 sentiment: hold
 status: updated
 curator: "tiered.tv editor"
-last_revised: 2026-08-09
+last_revised: 2026-10-26
 featured: false
 related:
   - played-it-straight
@@ -128,11 +128,11 @@ entries:
     title: "Three trips through the same deadline, and the format stops explaining itself."
     blurb: "The premise doesn't need proving by its third run — propose, or trial-marry someone new from the group. The season's whole bet is that a new cast's own history can still make a deadline this familiar sting."
   - show: the-voice
-    season: 25
-    season_label: "S25"
+    season: 28
+    season_label: "S28"
     rank: 20
-    title: "A second year anchoring the panel, and the format stops needing to prove it."
-    blurb: "Reba McEntire's second cycle in the chair runs the blind auditions with practiced efficiency, and Gwen Stefani's return adds a familiar edge rather than a new one. No debut, no structural pivot — just a panel that already knows the job."
+    title: "No new coach for the first time in years, and the panel runs on experience."
+    blurb: "Michael Bublé, Reba McEntire, Niall Horan and Snoop Dogg had all sat in a chair before, the first lineup since season twenty without a debut. The blind auditions move with practiced efficiency, and the season leaves its novelty to the rulebook."
   - show: masterchef-australia
     season: 18
     season_label: "S18 · Open Call"
