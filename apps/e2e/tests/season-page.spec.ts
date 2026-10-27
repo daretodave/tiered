@@ -68,6 +68,23 @@ for (const url of seasonUrls) {
       await page.waitForTimeout(900)
       await expect(up).toBeEnabled()
       await expect(down).toBeEnabled()
+
+      // Re-click retracts — and leaves no residual vote on this
+      // season for a later spec to trip over (#785 / #787: residual
+      // votes on a shared target made other specs order-dependent).
+      await Promise.all([
+        page.waitForResponse(
+          (r) =>
+            r.url().includes('/api/vote') &&
+            r.request().method() === 'POST' &&
+            (r.request().postData() ?? '').includes('"value":0'),
+        ),
+        up.click(),
+      ])
+      await expect(page.getByTestId('vote-pair')).toHaveAttribute(
+        'data-vote-value',
+        '0',
+      )
     })
   })
 }

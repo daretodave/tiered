@@ -24,8 +24,14 @@ import { runA11yScan } from '../src/fixtures/a11y'
 const state = loadAuthedStorageState()
 const status = cookieCacheStatus()
 
-const SEASON_URL = '/shows/survivor/season/heroes-vs-villains'
-const VOTE_TARGET = 'survivor:20'
+// Test isolation (#785 / #787): this file owns its target. It used
+// to share `survivor:20` with vote-state-pill.spec.ts (votes) and
+// comment-read.spec.ts (comments) as the same authed e2e user, so
+// cross-file execution order leaked vote/comment state between them.
+// No other spec votes or comments on this season as the authed user,
+// and afterEach retracts this file's vote so it leaves none behind.
+const SEASON_URL = '/shows/survivor/season/david-vs-goliath'
+const VOTE_TARGET = 'survivor:37'
 const PENDING_PHRASE =
   'profile-spec pending sentinel — this must never surface publicly'
 
@@ -72,6 +78,21 @@ test.describe('public profile — populated, spoiler-safe, indexable', () => {
   )
 
   test.use({ storageState: state ?? undefined })
+
+  // Retract this file's vote from a fresh authed context (the tests
+  // clear their own page's cookies before the logged-out walk), so
+  // the authed user's "seasons voted" tally is back to its pre-spec
+  // value for whatever runs next.
+  test.afterEach(async ({ browser }) => {
+    const ctx = await browser.newContext({ storageState: state ?? undefined })
+    try {
+      const page = await ctx.newPage()
+      await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
+      expect(await castVote(page, 0)).toBe(200)
+    } finally {
+      await ctx.close()
+    }
+  })
 
   test('known handle renders activity to a logged-out visitor; pending never leaks', async ({
     page,

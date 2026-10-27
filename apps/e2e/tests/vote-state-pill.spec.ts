@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { type BrowserContext, expect, type Page, test } from '@playwright/test'
 import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 
 // #160 (critique pass-6) — the YOUR VOTE block must disambiguate
@@ -52,15 +52,78 @@ import { cookieCacheStatus, loadAuthedStorageState } from '../src/auth'
 // The pill ships from VotePair itself (driven by /api/vote
 // returning `signedIn` alongside the read-back value). Anon
 // viewers must never see the pill — the affordance is for
-// members only. Survivor S20 is the gold-standard reference
-// page the critique walks; same shape applies to every season
-// route since the component is global.
+// members only. The component is global, so the same shape
+// applies to every season route.
+//
+// Test isolation (#785 / #787): this file owns its vote target.
+// It used to share `survivor:20` with user-profile.spec.ts (same
+// authed e2e user), so cross-file execution order decided whether
+// the authed viewer was already "up" and whether the anon count
+// read 0 or 1. Now:
+//  - SEASON_TARGET is a season no other spec votes on as the authed
+//    user, and season-page.spec's sampled anon vote-up walk retracts
+//    its own votes, so nothing else leaves state on it.
+//  - beforeAll seeds exactly one anon "community" voter from a fresh
+//    context, so the count is >= 1 no matter what ran before;
+//    afterAll retracts it.
+//  - every authed test starts from a known no-vote state (beforeEach)
+//    and leaves none behind (afterEach), so user-profile's
+//    "1 season voted" count never sees this file's vote.
 
 const state = loadAuthedStorageState()
 const status = cookieCacheStatus()
 
-const SEASON_URL = '/shows/survivor/season/heroes-vs-villains'
-const SEASON_TARGET = 'survivor:20'
+const SEASON_URL = '/shows/survivor/season/millennials-vs-gen-x'
+const SEASON_TARGET = 'survivor:33'
+
+type VoteValue = -1 | 0 | 1
+
+async function setVote(page: Page, value: VoteValue): Promise<void> {
+  const res = await page.evaluate(
+    async ({ targetId, v }) => {
+      const r = await fetch('/api/vote', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ targetType: 'season', targetId, value: v }),
+        credentials: 'include',
+      })
+      return { status: r.status, body: await r.json() }
+    },
+    { targetId: SEASON_TARGET, v: value },
+  )
+  expect(res.status, `set vote ${value}: ${JSON.stringify(res.body)}`).toBe(200)
+  expect(res.body.value).toBe(value)
+}
+
+// The seeded community voter's cookie jar, so afterAll can retract
+// the very vote beforeAll cast.
+let communityVoter: Awaited<ReturnType<BrowserContext['storageState']>> | null =
+  null
+
+test.beforeAll(async ({ browser }) => {
+  const ctx = await browser.newContext()
+  try {
+    const page = await ctx.newPage()
+    await page.goto('/', { waitUntil: 'domcontentloaded' })
+    await setVote(page, 1)
+    communityVoter = await ctx.storageState()
+  } finally {
+    await ctx.close()
+  }
+})
+
+test.afterAll(async ({ browser }) => {
+  if (!communityVoter) return
+  const ctx = await browser.newContext({ storageState: communityVoter })
+  try {
+    const page = await ctx.newPage()
+    await page.goto('/', { waitUntil: 'domcontentloaded' })
+    await setVote(page, 0)
+  } finally {
+    await ctx.close()
+    communityVoter = null
+  }
+})
 
 test.describe('vote state pill — authed viewer sees disambiguation', () => {
   test.skip(
@@ -70,79 +133,95 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
 
   test.use({ storageState: state ?? undefined })
 
-  test('signed-in viewer sees disambiguated VotePair state (three-state cap triad)', async ({
-    page,
-  }) => {
+  // Known starting state: the authed viewer has not voted on this
+  // file's target. Load the page first so the fetch runs same-origin
+  // with the authed cookie jar.
+  test.beforeEach(async ({ page }) => {
     await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
-
-    // The /api/vote read-back must carry signedIn:true; that is
-    // the field VotePair gates the pill on. The vote read shares
-    // the same session-resolution path as the comment read, so a
-    // failure here is the same class as comment-read's
-    // signedIn-handshake regressions — easier to diagnose if
-    // pinned here too.
-    const api = await page.evaluate(async (targetId) => {
-      const res = await fetch(
-        `/api/vote?targetType=season&targetId=${encodeURIComponent(targetId)}`,
-        { headers: { accept: 'application/json' }, credentials: 'include' },
-      )
-      return await res.json()
-    }, SEASON_TARGET)
-    expect(api.ok).toBe(true)
-    expect(api.signedIn).toBe(true)
-
-    const stack = page.getByTestId('vote-pair-stack')
-    await expect(stack).toBeVisible()
-    await expect(stack).toHaveAttribute('data-signed-in', 'true')
-
-    // The pill declares one of three states for every signed-in
-    // viewer. Test runs share a hermetic DB across specs so the
-    // viewer's value is variable — assert all three shapes against
-    // the same source of truth.
-    const cap = page.getByTestId('vote-state-cap')
-    if (api.value === 1) {
-      await expect(cap).toHaveText('you voted higher')
-      await expect(cap).toHaveAttribute('data-vote-state', 'up')
-    } else if (api.value === -1) {
-      await expect(cap).toHaveText('you voted lower')
-      await expect(cap).toHaveAttribute('data-vote-state', 'down')
-    } else {
-      await expect(cap).toHaveText("you haven't voted yet")
-      await expect(cap).toHaveAttribute('data-vote-state', 'none')
-    }
-
-    // Pass-49 #410: the count's label is "vote(s) so far" on
-    // every state — the prior pass-34 "community vote(s)"
-    // framing surfaced as a staccato "1 / COMMUNITY VOTE" on
-    // the bare-integer + singular-noun pair (the staccato
-    // pass-49 closed). The "so far" suffix names the count as
-    // a tally with implicit time-context; the displayed integer
-    // is still the distinct voter count so the vote-pair cites
-    // the same canonical fact as the ShiftCard's `vote_count`.
-    // Tridirectional drift guard: the label must end with
-    // /votes? so far$/, must NEVER carry the pre-pass-34
-    // "net vote(s)" framing, AND must NEVER regress to the
-    // bare pass-34 "community vote(s)" framing.
-    const label = page.getByTestId('vote-pair').locator('.vote-label')
-    await expect(label).toHaveText(/votes? so far$/)
-    const labelText = (await label.textContent()) ?? ''
-    expect(labelText).not.toMatch(/net votes?/)
-    expect(labelText).not.toMatch(/^community votes?$/)
-
-    if (api.value === 0) {
-      // #207 (pass-15): the signed-in-no-vote head meta carries the
-      // bare imperative with no "this week" qualifier — the vote is
-      // a one-time per-reader act; only the recompute is weekly.
-      // Pass-22 swapped the literal from "cast yours" (clever-
-      // fragment elision) to the plain "cast vote".
-      const head = page.getByTestId('vote-row-head')
-      await expect(head).toHaveAttribute(
-        'data-vote-head-state',
-        'signed-in-no-vote',
-      )
-      await expect(head.locator('.meta')).toHaveText('cast vote')
-    }
+    await setVote(page, 0)
   })
+
+  // Leave no authed vote behind for any later spec.
+  test.afterEach(async ({ page }) => {
+    await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
+    await setVote(page, 0)
+  })
+
+  const triad: Array<{ value: VoteValue; text: string; attr: string }> = [
+    { value: 1, text: 'you voted higher', attr: 'up' },
+    { value: -1, text: 'you voted lower', attr: 'down' },
+    { value: 0, text: "you haven't voted yet", attr: 'none' },
+  ]
+
+  for (const shape of triad) {
+    test(`signed-in viewer sees disambiguated VotePair state (three-state cap triad: ${shape.attr})`, async ({
+      page,
+    }) => {
+      await setVote(page, shape.value)
+      await page.goto(SEASON_URL, { waitUntil: 'domcontentloaded' })
+
+      // The /api/vote read-back must carry signedIn:true; that is
+      // the field VotePair gates the pill on. The vote read shares
+      // the same session-resolution path as the comment read, so a
+      // failure here is the same class as comment-read's
+      // signedIn-handshake regressions — easier to diagnose if
+      // pinned here too.
+      const api = await page.evaluate(async (targetId) => {
+        const res = await fetch(
+          `/api/vote?targetType=season&targetId=${encodeURIComponent(targetId)}`,
+          { headers: { accept: 'application/json' }, credentials: 'include' },
+        )
+        return await res.json()
+      }, SEASON_TARGET)
+      expect(api.ok).toBe(true)
+      expect(api.signedIn).toBe(true)
+      expect(api.value).toBe(shape.value)
+      // The seeded community voter is always counted.
+      expect(Number(api.count)).toBeGreaterThanOrEqual(1)
+
+      const stack = page.getByTestId('vote-pair-stack')
+      await expect(stack).toBeVisible()
+      await expect(stack).toHaveAttribute('data-signed-in', 'true')
+
+      // The pill declares one of three states for every signed-in
+      // viewer; each shape is driven explicitly above.
+      const cap = page.getByTestId('vote-state-cap')
+      await expect(cap).toHaveText(shape.text)
+      await expect(cap).toHaveAttribute('data-vote-state', shape.attr)
+
+      // Pass-49 #410: the count's label is "vote(s) so far" on
+      // every state — the prior pass-34 "community vote(s)"
+      // framing surfaced as a staccato "1 / COMMUNITY VOTE" on
+      // the bare-integer + singular-noun pair (the staccato
+      // pass-49 closed). The "so far" suffix names the count as
+      // a tally with implicit time-context; the displayed integer
+      // is still the distinct voter count so the vote-pair cites
+      // the same canonical fact as the ShiftCard's `vote_count`.
+      // Tridirectional drift guard: the label must end with
+      // /votes? so far$/, must NEVER carry the pre-pass-34
+      // "net vote(s)" framing, AND must NEVER regress to the
+      // bare pass-34 "community vote(s)" framing.
+      const label = page.getByTestId('vote-pair').locator('.vote-label')
+      await expect(label).toHaveText(/votes? so far$/)
+      const labelText = (await label.textContent()) ?? ''
+      expect(labelText).not.toMatch(/net votes?/)
+      expect(labelText).not.toMatch(/^community votes?$/)
+
+      if (shape.value === 0) {
+        // #207 (pass-15): the signed-in-no-vote head meta carries the
+        // bare imperative with no "this week" qualifier — the vote is
+        // a one-time per-reader act; only the recompute is weekly.
+        // Pass-22 swapped the literal from "cast yours" (clever-
+        // fragment elision) to the plain "cast vote".
+        const head = page.getByTestId('vote-row-head')
+        await expect(head).toHaveAttribute(
+          'data-vote-head-state',
+          'signed-in-no-vote',
+        )
+        await expect(head.locator('.meta')).toHaveText('cast vote')
+      }
+    })
+  }
 
   test('raw SSR HTML already reflects signed-in state — no anon-shell flash for an authed viewer (critique pass-84 HIGH)', async ({
     context,
@@ -182,29 +261,36 @@ test.describe('vote state pill — authed viewer sees disambiguation', () => {
       'true',
     )
 
+    const pair = page.getByTestId('vote-pair')
+    const cap = page.getByTestId('vote-state-cap')
+    const up = page.getByTestId('vote-up')
+
+    // beforeEach cleared the viewer's vote; wait for the mount
+    // read-back to land so the click is not racing hydration.
+    await expect(cap).toHaveText("you haven't voted yet")
+    await expect(cap).toHaveAttribute('data-vote-state', 'none')
+    await expect(pair).toHaveAttribute('data-voted', 'none')
+
+    const posted = () =>
+      page.waitForResponse(
+        (r) => r.url().includes('/api/vote') && r.request().method() === 'POST',
+      )
+
     // Drive the pair through up-vote. The pill is owned by the
     // same component so the optimistic state must show in the
     // pill text immediately — no network round-trip required.
-    const up = page.getByTestId('vote-up')
-    // If the viewer is already "up", a second click retracts to
-    // the no-vote state and the pill flips to "you haven't voted
-    // yet". Either transition is a valid assertion as long as
-    // the pill stays in sync with the data-voted attr.
-    await up.click()
-    const pair = page.getByTestId('vote-pair')
-    const voted = await pair.getAttribute('data-voted')
-    const cap = page.getByTestId('vote-state-cap')
-    if (voted === 'up') {
-      await expect(cap).toHaveText('you voted higher')
-      await expect(cap).toHaveAttribute('data-vote-state', 'up')
-    } else if (voted === 'down') {
-      await expect(cap).toHaveText('you voted lower')
-      await expect(cap).toHaveAttribute('data-vote-state', 'down')
-    } else {
-      // Retract → the cap flips back to the no-vote declaration.
-      await expect(cap).toHaveText("you haven't voted yet")
-      await expect(cap).toHaveAttribute('data-vote-state', 'none')
-    }
+    await Promise.all([posted(), up.click()])
+    await expect(pair).toHaveAttribute('data-voted', 'up')
+    await expect(cap).toHaveText('you voted higher')
+    await expect(cap).toHaveAttribute('data-vote-state', 'up')
+
+    // A second click (after the lock lifts) retracts to the
+    // no-vote state and the pill flips back.
+    await expect(up).toBeEnabled()
+    await Promise.all([posted(), up.click()])
+    await expect(pair).toHaveAttribute('data-voted', 'none')
+    await expect(cap).toHaveText("you haven't voted yet")
+    await expect(cap).toHaveAttribute('data-vote-state', 'none')
   })
 })
 
@@ -227,6 +313,8 @@ test.describe('vote state pill — public never sees the pill', () => {
     }, SEASON_TARGET)
     expect(api.ok).toBe(true)
     expect(api.signedIn).toBe(false)
+    // beforeAll's seeded community voter.
+    expect(Number(api.count)).toBeGreaterThanOrEqual(1)
 
     // The pair itself still renders — voting is anon-eligible.
     await expect(page.getByTestId('vote-pair')).toBeVisible()
@@ -245,27 +333,11 @@ test.describe('vote state pill — public never sees the pill', () => {
     // an ambiguous "1 / COMMUNITY VOTE" staccato; the "so far"
     // suffix names the count as a tally, and the integer is
     // still the distinct voter count (matches the ShiftCard's
-    // `vote_count` framing). Tridirectional drift guard.
-    //
-    // AUDIT bug (2026-08-23, filed via #785/#787): this file runs
-    // in the same worker/order as `user-profile.spec.ts`, which
-    // casts (and never retracts) a vote on this same SEASON_TARGET.
-    // This spec's own "clicking up flips the pill" test can then
-    // retract that residual vote, so the true server-side count for
-    // SEASON_TARGET is not deterministic from this test's point of
-    // view — it depends on cross-file execution order. Rather than
-    // assume a nonzero count (VotePair renders the distinct
-    // `zeroLabel` "be the first to vote" instead of "N votes so far"
-    // when the count is 0 — see `VotePair.tsx`), branch on the
-    // count the anon API read itself just reported, the same way
-    // the "clicking up" test above branches on the observed
-    // post-click state instead of assuming one outcome.
+    // `vote_count` framing). Tridirectional drift guard. The
+    // count is >= 1 by construction (beforeAll), so the zero-state
+    // "be the first to vote" copy must not appear here.
     const label = page.getByTestId('vote-pair').locator('.vote-label')
-    if (Number(api.count) === 0) {
-      await expect(label).toHaveText('be the first to vote')
-    } else {
-      await expect(label).toHaveText(/votes? so far$/)
-    }
+    await expect(label).toHaveText(/votes? so far$/)
     const labelText = (await label.textContent()) ?? ''
     expect(labelText).not.toMatch(/net votes?/)
     expect(labelText).not.toMatch(/^community votes?$/)
