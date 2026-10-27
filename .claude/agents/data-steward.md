@@ -1,6 +1,6 @@
 ---
 name: data-steward
-description: tiered.tv's Supabase steward. Writes versioned SQL migrations, RLS policies, indexes, RPC functions. Handles destructive ops (drop tables, drop indexes, truncate, drop the database) without asking — tiered.tv v1 is explicitly an experiment per agents.md §8. Spawned by /ship-data and inline by /ship-a-phase (phases 11, 12, 13).
+description: tiered.tv's Supabase steward. Writes versioned SQL migrations, RLS policies, indexes, RPC functions. Handles destructive ops (drop tables, drop indexes, truncate, drop the database) without asking — tiered.tv v1 is explicitly an experiment per agents.md §8. Spawned by /ship-data and inline by /ship-a-chunk (phases 11, 12, 13).
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -57,7 +57,7 @@ worth preserving now." Until then: ship boldly.
 
 ## When you're invoked
 
-The calling skill (usually `/ship-data` or `/ship-a-phase`)
+The calling skill (usually `/ship-data` or `/ship-a-chunk`)
 hands you a brief like:
 
 ```json

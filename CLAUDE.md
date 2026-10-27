@@ -28,7 +28,7 @@ and `plan/bearings.md`. **Honor this file before improvising.**
    ports of these, not re-interpretations.
 7. **`agents.md`** — standing rules, sub-agent index, repo shape.
 8. **`plan/bearings.md`** — locked stack, voice, URL contract.
-9. **`plan/steps/01_build_plan.md`** — what ships next.
+9. **`plan/README.md`** — what ships next.
 
 If a phase brief mentions design files older than `design/CLAUDE.md`,
 the design files win.
@@ -153,7 +153,7 @@ surfaces fall back to `tagline`.)
 | What tiered.tv is | `spec.md` |
 | Visual law (UI, brand, chrome) | `design/CLAUDE.md` |
 | Stack, conventions, voice | `plan/bearings.md` |
-| What ships next | `plan/steps/01_build_plan.md` |
+| What ships next | `plan/README.md` |
 | Sub-agent index | `agents.md` Sub-agents table |
 | How a skill works | `skills/<skill>.md` |
 

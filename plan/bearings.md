@@ -406,7 +406,7 @@ Notes:
 **Mode: bold** (default).
 
 `/expand` runs at standard cadence and files candidates to
-`plan/PHASE_CANDIDATES.md`. `/oversight` promotes them to the
+`plan/CANDIDATES.md`. `/oversight` promotes them to the
 build plan. This balances autonomous growth (the loop notices
 gaps and proposes work) with human curation (only promoted
 candidates ship).
@@ -880,3 +880,28 @@ pnpm build:icons      # regenerate favicon set from public/sigil.svg
 supabase db push      # apply pending migrations to remote
 supabase db reset     # local: drop + replay all migrations + seed
 ```
+
+## Loop knobs
+
+Written by `nexus upgrade` (2026-10-27) at the values that keep the v1 loop's
+behaviour. Turn them up together with `Improve:` (off, gentle, steady, bold;
+the lines below override it), or each on its own, later: `Support:`
+(`nexus/customization/support.md`), `Promote:` and `stall_action`
+(aged promotion, the motion heartbeat), `loop:` (`/iterate` dimension
+I), `UI:` (the browser walk).
+
+- Improve: gentle
+- Support: triage-only
+- Promote: owner
+- stall_action: alert
+- loop: off
+
+**UI:** `none`
+
+## Generators
+
+When no chunk is ready, `/march`'s stock `refill` lane runs each
+generator listed here (`nexus/concepts/generators.md`). None listed
+means refill is a no-op.
+
+- (none)

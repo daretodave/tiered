@@ -259,7 +259,7 @@ Anti-tactics (deliberate non-goals): no AI-spam landing pages, no doorway pages,
 
 ---
 
-## Phases (sketch — `plan/steps/01_build_plan.md` will own the canonical list)
+## Phases (sketch — `plan/README.md` will own the canonical list)
 
 1. Bootstrap (Next.js + nexus overlay + Supabase + Auth0 wiring stubs).
 2. Static content layer (markdown loader, frontmatter validators, content schemas).

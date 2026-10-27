@@ -6,12 +6,13 @@
 > `/iterate` runs, your jot competes with every other finding
 > on impact × ease and almost certainly wins (user-source
 > findings carry a `+0.5` score bump — see
-> `iterate.md` §Scoring).
+> `iterate.md` §User-source bump).
 >
 > **Decide-and-ship.** No questions back. No `AskUserQuestion`.
-> Hard rule #6 (only `/oversight` asks the user anything)
-> stands intact — `/jot` consumes user input via the
-> slash-command argument, same shape as `/ship-data add ...`.
+> Hard rule #6 (`AskUserQuestion` confined to `/oversight` and
+> `/bootstrap`) stands intact — `/jot` consumes user input via
+> the slash-command argument, same shape as
+> `/ship-data add ...`.
 
 ## 1. Purpose
 
@@ -49,7 +50,7 @@ Examples:
 
 - **Never ask questions.** The user provided the input;
   decide the rest.
-- **Always commit and push.** Atomic. Otherwise the cloud loop
+- **Always commit and land.** Atomic. Otherwise the cloud loop
   can't see the new finding.
 - **Never run the verify gate.** No code change; nothing to
   verify.
@@ -109,7 +110,7 @@ drainage logic doesn't need any new code:
 - category: <inferred-or-overridden>
 - observation: <the user's text, verbatim, single line>
 - evidence: user-spotted at <ISO timestamp>
-- suggested_fix: [user has not specified — iterate to determine]
+- suggested fix: [user has not specified — iterate to determine]
 - source: user
 ```
 
@@ -118,12 +119,12 @@ Append to the **Pending** block of `plan/CRITIQUE.md`.
 If `plan/CRITIQUE.md` doesn't exist yet, create it with the
 standard header and a Pending block before appending.
 
-### Step 3 — Commit + push
+### Step 3 — Commit + land
 
 ```bash
 git add plan/CRITIQUE.md
 git commit -m "jot: <one-line observation summary, ≤ 70 chars>"
-git push origin main
+# land per owner mode: skills/next/land.md §6
 ```
 
 Commit body: leave empty. The CRITIQUE.md row carries the
@@ -160,13 +161,13 @@ score bump (see `iterate.md`) means user-source findings
 typically beat auto-detected findings at the same severity, so
 they get picked next time `/iterate` runs.
 
-**Caveat: `/march` ships pending phases first.** If thock has
-queued phases, `/iterate` doesn't fire by default. Two
+**Caveat: `/march` ships ready chunks first.** If the plan has
+ready chunks, `/iterate` doesn't fire by default. Two
 escapes:
 
 1. `/jot --severity high <text>` — high-severity findings
    have impact 8–10, dominating the rubric. Still doesn't
-   interrupt phase work but jumps the iterate queue when it
+   interrupt chunk work but jumps the iterate queue when it
    fires.
 2. `/jot <text>` then immediately `/iterate` — runs iterate
    once directly, drains the highest-scoring finding (almost
@@ -219,7 +220,7 @@ plan/CRITIQUE.md              # appends one row to Pending
 git pull --ff-only
 git add plan/CRITIQUE.md
 git commit -m "jot: ..."
-git push origin main
+# land per owner mode: skills/next/land.md §6
 
 # What it does NOT run
 pnpm verify                   # no code change

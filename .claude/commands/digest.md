@@ -1,30 +1,22 @@
 ---
-description: The night shift — write the morning briefing (plan/DIGEST.md) from the day's pulse, read the breadth verdict, propose tunings as candidates. Runs nightly via night.yml; never dispatched by /march.
+description: The night shift — morning briefing (plan/DIGEST.md), nightly breadth checks, tuning proposals as candidates.
 ---
 
-You are invoked under the `digest` skill — full autonomy, no
-review checkpoint. Read `skills/digest.md` end to end before
-touching anything else; that file is the single source of
-truth for this command.
+You are invoked under the `digest` skill — the nightly loop
+shape, not a dispatcher verb. Read `skills/digest.md` end to
+end before touching anything else.
 
-Your job: one nightly pass — pull, gather the pulse (git log,
-march/e2e-full/night run lists, queue states, deploy state),
-read the breadth verdict from the latest `e2e-full` run (never
-re-run it), overwrite `plan/DIGEST.md` whole with the morning
-briefing (the content saga's progress report front and
-center), file any tuning proposals as
-`plan/PHASE_CANDIDATES.md` candidates, then one commit
-`digest: <YYYY-MM-DD>` and push.
+Argument handling:
+- No argument → the full nightly pass.
 
-Hard rules:
-- **Notes-only commit — the `/jot` carve-out applies.** No
-  verify gate, no deploy gate; the digest writes `plan/`
-  prose only.
-- **Ship nothing else.** Breadth failures become HIGH
-  `plan/AUDIT.md` rows, not fixes.
-- **Proposals, never actions.** Only `/oversight` promotes.
-- **Atomic commit + push.** Cloud ticks carry the
-  `Cloud-Run:` trailer.
+Procedure: §3. Hard rules: §4. Failure modes: §5. Two rails
+that matter most: breadth failures become findings (the
+dispatcher fixes them tomorrow), and tuning proposals become
+candidates — the loop does not vote on its own
+constraints.
 
-Procedure: §3 of `skills/digest.md`. Failure modes: §5. Hard
-rules: §4.
+When invoked from the night workflow, the user is not
+present. One commit (`digest: <YYYY-MM-DD>`), push, return
+cleanly.
+
+Argument: $ARGUMENTS

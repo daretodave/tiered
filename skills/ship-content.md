@@ -227,7 +227,7 @@ Pre-flight checklist before committing a content tick:
   regex, exact phrase) — add a row only when the anchor is
   historically pinned to a specific aired season, never as a
   general escape valve. Detail:
-  `plan/phases/phase_43_editorial_honesty.md`.
+  `plan/README.md`.
 - **Rule 4 retired.** Historical content-gap rows tagged
   `category: facade-gap` are auto-marked `[x] superseded by 19a`
   and skipped. Do not file new ones.
@@ -634,7 +634,7 @@ git push origin main
 
 ```
 /march
-  Step 3a: pending phase?            → /ship-a-phase
+  Step 3a: pending phase?            → /ship-a-chunk
   Step 3b: pending data?             → /ship-data
   Step 3b.5: content-gap rows ≥3?    → /ship-content
   Step 3c: expand due?               → /expand
