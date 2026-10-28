@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-10-02
+last_revised: 2026-10-28
 featured: false
 related:
   - milestones-spent-not-marked
@@ -38,51 +38,57 @@ entries:
     title: "The Express Pass stops being a prize you keep and becomes one you owe someone."
     blurb: "Season 27 rewrites the franchise's oldest advantage: use it and the rules now require handing it to a rival team. A tool built to reward the holder turns into a decision about who deserves it next."
   - show: amazing-race
+    season: 39
+    season_label: "S39"
+    rank: 5
+    title: "Every team gets the format's oldest advantage, and the cost becomes a deadline."
+    blurb: "Season 39 puts every team on equal footing at the start line: all thirteen Express Passes expire after Leg 6, and only one team can redeem one on any single task. Holding yours too long is as risky as spending it too soon."
+  - show: amazing-race
     season: 32
     season_label: "S32"
-    rank: 5
+    rank: 6
     title: "A dormant power returns, handing one team the ability to freeze another cold."
     blurb: "Season 32 revives the Yield after more than a decade off the board — the power to make a rival team stop and wait. A back-to-basics route gets one genuinely aggressive tool dropped back into the field."
   - show: masterchef-australia
     season: 6
     season_label: "S06 · The Power Apron"
-    rank: 6
+    rank: 7
     title: "An edge built to outlast the challenge that awarded it."
     blurb: "Season six's Power Apron is the founding era's first advantage designed to follow its holder into future rounds instead of resolving on the spot. The show's whole strategic layer starts with this one object."
   - show: masterchef
     season: 10
     season_label: "S10 · The Milestone"
-    rank: 7
+    rank: 8
     title: "A Battle Pass rewires how immunity gets earned for the anniversary season."
     blurb: "It turns advantage from a single-challenge prize into something cooks stack up over multiple rounds, timed to the show's biggest production yet. A milestone spent on the format's own machinery, not just the guest list."
   - show: traitors
     season: 1
     season_label: "S01"
-    rank: 8
+    rank: 9
     title: "The Armory hands out protection, then the format quietly retires it."
     blurb: "Season one's Armory gives players a path to a shield of protection — specific enough to this debut run that the show drops it a year later. Even a one-season experiment reshapes how the next one takes shape."
   - show: traitors
     season: 2
     season_label: "S02"
-    rank: 9
+    rank: 10
     title: "Protection moves out of a fixed room and into the missions themselves."
     blurb: "Season two retires the Armory and lets shields come through challenge wins instead, changing the daily rhythm of who's safe and why. The advantage doesn't disappear — it just stops living in one place."
   - show: the-circle
     season: 2
     season_label: "S02"
-    rank: 10
+    rank: 11
     title: "A Superinfluencer round hands one player sole blocking power, no vote required."
     blurb: "For a single round, the season's top-rated player gets to block someone entirely alone, with no group input at all — a rare moment the rate-and-block format hands total authority to one profile instead of splitting it across the house."
   - show: big-brother
     season: 19
     season_label: "S19"
-    rank: 11
+    rank: 12
     title: "A goddess statue starts handing out powers with a real cost attached."
     blurb: "Den of Temptation lets the public unlock three temptations across the summer, each one carrying a cursed trade-off the houseguest who takes it has to gamble on. The advantage is real, and so is the price for taking it."
   - show: big-brother
     season: 28
     season_label: "S28 · Time Trip"
-    rank: 12
+    rank: 13
     title: "A weekly trip into the vault risks a punishment, not just a missed power."
     blurb: "The BB Time Capsule sends one houseguest, chosen by a viewer vote, into a vault each week. Clear the challenge and a power from a past season comes back into play; miss it, and the cost is a punishment pulled from the same archive instead."
 ---
