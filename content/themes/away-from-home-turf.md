@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-02
+last_revised: 2026-10-28
 featured: false
 related:
   - a-change-of-address
@@ -91,16 +91,22 @@ entries:
     rank: 13
     title: "The group trip stops being a set piece and starts setting up the twist"
     blurb: "An early trip does the format's usual scene-setting work here, but it also doubles as the mechanism that sets the season's namesake twist in motion — the device repurposed as plot engine, not just a change of scenery."
+  - show: rhoc
+    season: 20
+    season_label: "S20 · The Homecoming"
+    rank: 14
+    title: "A two-stop group trip widens the map, not the people"
+    blurb: "Season twenty sends the cast to both Las Vegas and Tokyo in one run. The season's own account is candid about the result — more map than movement, the group landing almost exactly where it started."
   - show: rhoa
     season: 8
     season_label: "S08"
-    rank: 14
+    rank: 15
     title: "The season that skips its own centerpiece, and the gap shows"
     blurb: "No international trip, a shorter episode order, and a new housewife whose register never quite lands — season eight is the clearest evidence of how much editorial weight the device usually carries, made visible by its absence."
   - show: americas-next-top-model
     season: 13
     season_label: "S13"
-    rank: 15
+    rank: 16
     title: "Dropping the international leg costs the format its strongest engine"
     blurb: "Cycle 13 swaps the usual trip abroad for domestic-only locations and narrows the cast around an explicit height cap. Both bets read as novelty rather than depth — proof that annual stretch overseas was doing real editorial work."
 ---
