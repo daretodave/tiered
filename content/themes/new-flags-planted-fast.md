@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-07-30
+last_revised: 2026-10-28
 featured: false
 related:
   - firsts
@@ -103,4 +103,10 @@ entries:
     rank: 15
     title: "An imported survival format proves it can stand on its own from the first episode."
     blurb: "Alone's Australian adaptation arrives with no earlier local season to study, and the founding run works out its own rhythm live — gear discipline, self-documentation, and the tap-out call all take shape in South West Tasmania's moorland."
+  - show: rhoa
+    season: 1
+    season_label: "S01"
+    rank: 16
+    title: "A second Housewives city arrives with no blueprint to borrow from, and writes its own in real time."
+    blurb: "Atlanta is the franchise's first expansion past Orange County, with no second city to study beforehand. The debut cast turns old names, new money, and television fame itself into the season's organizing logic from episode one — proof the format could travel at all."
 ---
