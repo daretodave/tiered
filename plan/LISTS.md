@@ -10955,6 +10955,77 @@ last time a curator actually looked.
     A future Rule 3 tick reaching for another "casting rule as
     the whole premise" angle should expect it to already be a
     sub-case of `one-rule-fills-every-seat` before drafting.
+- **2026-10-30, `/ship-content` Rule 3 tick (content-curator direct
+  invocation): zero-ship, no content or ledger row change.** Rule 2
+  re-confirmed non-actionable (CADENCE gap table fully starred,
+  confirmed-but-unaired). Tried both the invent and extend paths
+  before closing out.
+  - **Extend-first pass on the two clearest sub-floor/thin
+    candidates, read in full before drafting anything** (per the
+    standing "read the row's full history first" instruction):
+    `the-pitch-names-where-the-idea-came-from` (craft, 3 entries/3
+    shows) and `the-calendar-moved-the-format-didnt` (craft, 6
+    entries/4 shows). Independently re-derived candidates for both
+    — The Real World S31 (Challenge/Road Rules missions) for the
+    first, So You Think You Can Dance S06 "The Fall Season" and
+    Masked Singer S07 "The Midpoint" for the second — only to find,
+    on reading each row's full ledger history, that all three had
+    already been chased and explicitly rejected by prior passes
+    (2026-08-15/09-11/09-12 for the pitch-names row: Real World S31's
+    own `watch_list` calls its borrowed missions "the franchise's own
+    Challenge and Road Rules spinoffs," an in-franchise admission,
+    not a different production; 2026-08-15/08-21 for the calendar
+    row: SYTYCD S06's fall move is entangled with a forced World
+    Series collision already staked at the sibling list
+    `the-schedule-didnt-ask-permission` rank 6, and Masked Singer
+    S07's February-premiere fact is already staked verbatim at
+    `the-masks-changed-every-week-the-panel-never-did` rank 6). Both
+    edits were drafted, caught on a second read of the ledger
+    history, and reverted before commit — no content file changed.
+    **Flag for future ticks:** both rows are confirmed exhausted on
+    every angle tried five-plus times running; don't re-walk either
+    without new season text to search.
+  - **Single-show sweep for an unclaimed show with enough seasons to
+    support a fresh deep cut.** Checked queer-eye (10/10 seasons —
+    already fully claimed twice over, `the-format-never-blinked` and
+    `the-room-kept-changing-size`), married-at-first-sight-australia
+    (13/13 — already claimed by `the-episode-order-never-found-its-
+    ceiling`), dragrace-allstars (11/11 — already claimed by
+    `no-season-sends-a-queen-home-the-same-way-twice`), rhoslc
+    (already claimed by `four-names-never-leave-the-credits`),
+    rhobh/rhoa/rhonj/rhop/ink-master/bachelor-in-paradise/chopped/
+    naked-and-afraid (each already carrying one to three dedicated
+    single-show lists). traitors-uk (4 seasons) and rhodubai (2
+    seasons) are both too thin on material to support a 10-entry
+    single list. No unclaimed, sufficiently-stocked show found.
+  - **Fresh cross-show angles chased from scratch, each checked
+    against the full ledger before being judged dead:** (1) a
+    "different-franchise mechanic explicitly credited in a season's
+    own copy" angle beyond the three already at `the-pitch-names...`
+    — every `borrowed|credited|modeled on|inspired by` hit catalog-
+    wide resolves to either same-IP territorial licensing (Big
+    Brother's "the European original," AGT's "the UK format," DWTS's
+    "the BBC blueprint") or in-franchise self-reference, the same two
+    excluded classes that row has logged since 2026-08-08; (2) a
+    Below Deck multiverse "same charter format, four different
+    vessels" structure list — `new-flags-planted-fast` (craft,
+    revised two days ago) already stakes all four spinoffs' freshman
+    seasons on the identical format-inherited-then-earned-its-own-
+    identity thesis; (3) a deliberate mid-season broadcast hiatus/
+    split-into-two-parts structure list — catalog-wide grep for
+    `midseason break|winter hiatus|split into two parts` returned
+    zero hits; (4) a social-media/TikTok open-casting-call craft list
+    — only one season (`love-island-us` S07) states this explicitly,
+    sub-floor; (5) a former-contestant-becomes-producer craft list —
+    zero grounded hits catalog-wide; (6) a hyper-local "cast drawn
+    entirely from one city/state" casting-brief list — zero grounded
+    hits beyond a false-positive alumni match already claimed at
+    `one-rule-fills-every-seat`. No angle cleared the distinct-angle
+    gate, the cross-canon floor, or the fabrication-risk bar.
+  No `content/themes/*.md` file written or edited this tick (two
+  drafted edits were reverted before commit); no ledger row changed.
+  Next unlock: a new season landing via Rule 2, or the next weekly
+  sweep.
 
 ## Notes
 
