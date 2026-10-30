@@ -448,7 +448,7 @@ the entire visual contribution.
     `single` — `structure` for format/structural cuts:
     returnees, post-merge, reunion specials, firsts),
     `sentiment` (default `hold`), `status` (default `stable`),
-    `curator` (default `"tiered.tv Editors"`),
+    `curator` (default `"tiered.tv editor"`),
     `last_revised` (today's ISO date), `featured` (default
     false), `related` (0–2 sibling theme slugs).
   - For `category: era` lists, include `era_range: [<year>,
