@@ -1,135 +1,157 @@
-# DIGEST — 2026-10-29
+# DIGEST — 2026-10-30
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**Another quiet, steady content day, with one expensive no-op worth
-naming.** Four completed `march` ticks ran since last night's
-digest (one more still in progress as this digest is written);
-three shipped, one spent 48 minutes and $3.57 across 71 turns and
-landed nothing. Rule 2 (season-fill) stays locked out — the
-`plan/CADENCE.md` gap table is still fully starred — so content
-work kept falling through to Rule 3 (themed-list review/extend):
-`the-advantage-was-never-free` (+1, Amazing Race S39's Express
-Pass), `new-flags-planted-fast` (+1, RHOA S01's debut), and a
-five-list **review batch** (`survivor-pillars`,
-`new-network-same-rulebook`, `who-actually-got-the-vote`,
-`the-roster-was-the-twist`, `when-the-vote-came-back-tied` — the
-five oldest `last_reviewed` rows, now 9 lists past the 90-day mark)
-that found one qualifying addition (The Challenge S42 "Cutthroat"
-into `new-network-same-rulebook`) and reconfirmed the other four
-accurate with no ledger `last_revised` change. The costly no-op
-(09:51–10:41 UTC) is explainable rather than alarming: the plan
-table is empty, 20 of 21 candidates are locked behind owner-only
-aged promotion, and the open rhoc Homecoming HIGH finding (still
-unpatched, still the top target below) keeps `/march` Step 2's
-critique gate closed — so a tick that works the full dispatch
-order in good faith can genuinely come up with nothing to claim.
-Breadth is green, deploy is green, candidate silting is unchanged
-from last night and still needs an owner turn.
+**A quiet content night with one loose thread worth an owner's
+eye: the loop's own "landed" accounting doesn't match git.** Five
+`march` ticks completed since last night's digest. Two shipped
+real content — the themed lists `the-verdict-never-settled` (7
+entries/5 shows, tone) and `just-split-the-room-in-half` (10
+entries/6 shows, structure) — and one logged an honest zero-ship
+(Rule 3 research: two thin craft lists, a single-show sweep, six
+cross-show angles, every lead already claimed or sub-floor). The
+other two (01:22–02:47 and 07:44–08:52 UTC) are the odd part:
+GitHub Actions shows both completed successfully and the
+workflow's own idle-tracking step logged `Idle record: landed`
+for each, but `git log --all --grep` finds no commit on `main`
+carrying either run's `Cloud-Run:` trailer — by the git history
+this agent can see, nothing landed from either tick. Rule 2
+(season-fill) stays locked out (CADENCE gap table fully starred,
+36 shows / 38 gap-slots, next sweep due 2026-11-03). Breadth is
+green (latest `e2e-full` passed), deploy is green, and the
+candidate queue silting is unchanged and still needs an owner
+turn. One correction to last night's notes: CRITIQUE.md currently
+carries **two** open HIGH findings, not one — last night's "sole
+pending HIGH" (rhoc's Homecoming eyebrow/body number mismatch)
+is still open, but a second HIGH (below-deck-down-under/canouan's
+four-times-repeated headline facts, filed pass 192) was also open
+and wasn't named last night.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| seven_day utilization | — | unknown (no cached reading) |
-| 10-28 19:08–19:51 | march | success — themed list `the-advantage-was-never-free` extended (+1, Amazing Race S39's Express Pass entry, rank 5) |
-| 10-28 23:38–00:28 | march | success — themed list `new-flags-planted-fast` extended (+1, RHOA S01 "The Debut," rank 16) |
-| 10-29 02:55–03:35 | march | success — Rule 3 review batch: 5 lists reviewed (90-day mark), 1 qualifying add (`new-network-same-rulebook` +1, The Challenge S42) |
-| 10-29 09:51–10:41 | march | **no-op** — 71 turns, $3.57, 48 min; nothing landed. Plan table empty, candidate queue locked behind owner-only aged promotion, critique gate closed by the open rhoc HIGH — a full-dispatch tick with genuinely nothing to claim |
-| 10-29 16:53– | march | in progress at digest time; not yet concluded |
+| 10-29 16:53–17:48 | march | success — themed list `the-verdict-never-settled` shipped (7 entries/5 shows, tone category); concluded after last night's digest was written |
+| 10-29 21:45–22:43 | march | success — themed list `just-split-the-room-in-half` shipped (10 entries/6 shows, structure category) |
+| 10-30 01:22–02:47 | march | CI reports success, idle-tracker logged "landed" — **no matching commit found on `main`** (`git log --all --grep="Cloud-Run: .../41021973341\|.../40985500864"` returns nothing for either this run or the next); see Needs you |
+| 10-30 07:44–08:52 | march | same anomaly as above — CI success + "landed" logged, no corresponding commit on `main` |
+| 10-30 14:35–15:03 | march | success — Rule 3 research, honest zero-ship (two thin craft lists, single-show sweep, six cross-show angles, all dead ends; trail logged to `plan/LISTS.md` Ideas) |
 
 ## Shipped
 
-- **Content (2 themed-list extends + 1 five-list review batch,
-  Rule 3 fallback):** `the-advantage-was-never-free` (Amazing Race
-  S39, grounded in its own `format_changes`/`pull`/`format_caption`
-  fields, distinct from the list's existing S27 entry), `new-flags-
-  planted-fast` (RHOA S01, the franchise's first expansion beyond
-  Orange County, distinct from its existing wealth-pitch claim), and
-  the review batch (`survivor-pillars`, `new-network-same-rulebook`,
-  `who-actually-got-the-vote`, `the-roster-was-the-twist`, `when-
-  the-vote-came-back-tied` — all five `last_reviewed` bumped to
-  2026-10-29; only `new-network-same-rulebook` gained an entry, the
-  other four reconfirmed accurate with no qualifying new material).
-- **No Rule 2 (season-fill) work shipped** — the CADENCE gap table
-  stays fully starred (every row confirmed-but-unaired); Rule 2 has
-  nothing eligible until a real-world premiere date lands.
+- **Content (2 themed lists):** `the-verdict-never-settled`
+  (survivor x3 at the informal per-show cap, project-runway,
+  america's-next-top-model, bake-off, love-is-blind — shipped
+  lean at 7 of the usual 10-24 after excluding two near-duplicate
+  candidates) and `just-split-the-room-in-half` (survivor x3,
+  the-challenge x2, the-apprentice x2, bachelor-in-paradise,
+  so-you-think-you-can-dance, america's-next-top-model — gender
+  as sole casting rule, no franchise-shared angle rejected from
+  prior-art mining logged in the ledger row).
+- **No Rule 2 (season-fill) work shipped** — CADENCE gap table
+  stays fully starred; nothing eligible until a real premiere
+  date lands.
+- **Two ticks of unclear provenance** (01:22–02:47, 07:44–08:52)
+  — see Headline and Needs you. Treating these as no-ops for
+  queue-math purposes since no content/code change is visible on
+  `main`.
 
 ## Queues now
 
-- **plan:** 0 specs, 0 chunks left, 0 held — unchanged; building is
-  idle, the AUDIT/CRITIQUE/CADENCE maintenance queues and the
-  content mission are carrying the loop.
+- **plan:** 0 specs, 0 chunks left, 0 held — unchanged; building
+  is idle, AUDIT/CRITIQUE/CADENCE maintenance and the content
+  mission carry the loop.
 - **plan/AUDIT.md:** 0 pending — unchanged.
-- **plan/CRITIQUE.md:** 71 pending, last pass 3d ago (pass 193,
-  commit `72f85b9b`, 2026-10-27) — unchanged; no critique pass ran
-  this window (the open HIGH finding below keeps the gate closed).
-  4 of the 71 are standing `[needs-user-call]` rows.
-- **plan/CANDIDATES.md:** 21 pending (20 >21d), oldest 169d.
+- **plan/CRITIQUE.md:** 71 pending, last pass 4d ago (pass 193,
+  commit `72f85b9b`, 2026-10-27) — unchanged in count; no new
+  pass ran this window (both open HIGHs keep the gate closed).
+  2 HIGH / 41 MED / 28 LOW. Correction from last night: no
+  `[needs-user-call]`-tagged row is currently findable in the
+  Pending list by text search (last night's "4 of 71" figure
+  didn't reproduce — flagging rather than silently carrying it
+  forward).
+- **plan/CANDIDATES.md:** 21 pending (20 >21d), oldest 170d.
   Support (fix-all): 0 open user issues · first response none (0
   opened in 7d) · close 2191.2h mean (6 closed in 7d).
-- **Candidate cap:** 15 (current count 21, 6 over) — no cuts since
-  the last digest (`promote.mjs cuts --since 2026-10-28` → none).
+- **Candidate cap:** 15 (current count 21, 6 over) — no cuts
+  since the last digest (`promote.mjs cuts --since 2026-10-29` →
+  none).
 - **Open `triage:needs-user` / `loop:do`:** 0 across both labels.
 - **data/BACKLOG.md:** no data-layer backlog file exists.
-- **Deploy:** ready at HEAD `ea572b67`.
-- **CADENCE gap table:** unchanged, every row starred
-  confirmed-but-unaired; Rule 2 stays locked out until a real air
-  date lands.
-- **Breadth (`e2e-full`):** green — latest run (2026-10-29T02:06–
-  02:40Z) passed; read, not re-run, per the standing rule for this
-  tick.
+- **Deploy:** ready at HEAD `f37bb7ec`.
+- **CADENCE gap table:** unchanged, 36 shows / 38 gap-slots, every
+  row starred confirmed-but-unaired; next sweep due 2026-11-03.
+- **Breadth (`e2e-full`):** green — latest run (2026-10-30T02:24–
+  02:52Z) passed; read via `gh run list`, not re-run, per the
+  standing rule for this tick.
 - **seven_day utilization:** unknown (no cached reading).
-- **Motion:** 26 shipped last full week vs. floor 9.5 — `ok` (2026-
-  W44 already reaches the floor, 22 shipped so far).
+- **Motion:** 26 shipped last full week (W43) vs. floor 9.5 —
+  `ok`; 25 shipped so far in the current week (W44), already past
+  the floor.
 
 ## Needs you
 
+- **The idle-tracker/git-history mismatch on the 01:22–02:47 and
+  07:44–08:52 ticks.** Both runs' own "Idle record" step logged
+  `landed: true` (it checks `git log --all --grep` for a commit
+  carrying that run's `Cloud-Run:` trailer), but this digest's own
+  identical check against today's `main` finds no such commit for
+  either run URL. Either a race between that check and a later
+  rewrite of history, a transient git-state read, or a bug in the
+  landed-detection path — not root-caused this tick (notes-only,
+  no code changes permitted). Worth a look before trusting the
+  idle/no-op counters blindly; no content or queue-state harm is
+  visible (nothing is missing from the catalog), so this is a
+  instrumentation-trust finding, not a content-loss one.
 - **oversight needed: candidate queue silting (20 pending >21d,
-  oldest 169d).**
+  oldest 170d).**
 - **`Promote: aged` is live (`Improve: bold`) but the valve still
   can't turn itself from the cloud.** 8 Pending candidates clear
   both the floor (6.0) and the age bar (21d) — unchanged from last
   night: top of the stack is `[score 9.4] Show canon completeness
-  lax→strict gate` (proposed 2026-06-15, 136d old). Every cloud
+  lax→strict gate` (proposed 2026-06-15, 137d old). Every cloud
   checkout lacks the `.owner` marker, so `promote.mjs pick` returns
   `ask`, not `pick` — the intended trust boundary, not a bug; the
   dial only actually turns from a local, owner-mode `/oversight`
   session. **auto-promoted none, 8 awaiting.**
+- **Two open HIGH critique findings**, both content-only, one-field
+  fixes: (1) rhoc's Homecoming season eyebrow says "after 13
+  seasons away" while the body says "since season thirteen" — two
+  different numbers for the same gap
+  (`content/shows/rhoc/seasons/20-the-homecoming.md`'s `eyebrow`);
+  (2) below-deck-down-under's Canouan season restates its two
+  headline facts (Caribbean move, charter crossover) near-verbatim
+  four times across meta description, lede, "the take," and the
+  body's section-02 opener
+  (`content/shows/below-deck-down-under/seasons/04-canouan.md`).
+  Either is a same-shape, single-tick fix.
 - No `escalate #N` rows (0 open user issues), no blocked specs
-  (`Held` lane empty), no open needs-user issues, no new `[needs-
-  user-call]` rows beyond the 4 already-noted standing ones, no
-  `motion stalled` (this week already clears the floor), no
-  `rotate` rows (0 secret-audit events; this is a cloud run, so the
-  check is skipped anyway).
+  (`Held` lane empty), no open needs-user issues, no `motion
+  stalled` (this week already clears the floor), no `rotate` rows
+  (0 secret-audit events; this is a cloud run, so the check is
+  skipped anyway).
 
 ## Today's intent
 
-1. The plan table is empty — the next ready work is still
-   CRITIQUE's one open HIGH from pass 193: rhoc's new Homecoming
-   season page states Vicki Gunvalson's return gap two different
-   ways ("13 seasons away" in the eyebrow vs. "since season
-   thirteen" in the body). Content-only, one-field fix
-   (`content/shows/rhoc/seasons/20-the-homecoming.md`'s `eyebrow`).
-   Same top target as last night — still open, still the next
-   `/iterate` or `/march` pick, and still the thing standing between
-   the critique gate and its next pass.
-2. At the next local `/oversight` session: turn the `Promote: aged`
-   valve (8 candidates waiting, top-scored at 9.4) and weigh the
-   candidate-queue silting (20 of 21 pending are over 21 days old,
-   oldest 169d).
+1. The plan table is empty — the next ready work is either open
+   HIGH: rhoc's eyebrow/body number mismatch (still open since
+   last night) or below-deck-down-under's four-times-repeated
+   facts (open since pass 192, missed in last night's note).
+   Both are one-field content fixes and either clears the
+   critique gate for its next pass.
+2. At the next local `/oversight` session: turn the `Promote:
+   aged` valve (8 candidates waiting, top-scored 9.4), weigh the
+   candidate-queue silting (20 of 21 pending over 21 days old,
+   oldest 170d), and take a look at the idle-tracker/git-history
+   mismatch flagged above.
 
 ## Tuning proposals
 
-None. The 09:51 no-op is a correctly-handled edge case, not a
-mistuned gate: with the plan table empty, the candidate queue
-locked behind owner-only promotion, and the critique gate closed by
-the still-open rhoc HIGH, a full-dispatch tick genuinely had nothing
-to claim — it just took a long, costly path (71 turns) to conclude
-that cleanly rather than forcing work. Worth a human eye if this
-shape repeats (a cheaper early-exit when every queue is this
-exhausted would save real cost), but one instance isn't evidence of
-a gate that needs retuning.
+None filed as candidates this tick. The idle-tracker discrepancy
+above is a real anomaly but this pass couldn't isolate a root
+cause without re-running or modifying code (out of scope for a
+notes-only digest) — flagged in Needs you instead of guessed into
+a candidate that might misdiagnose it.
