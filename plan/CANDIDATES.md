@@ -15,6 +15,15 @@
 
 ## Pending
 
+### [ ] [score 5.4] `scripts/pulse.mjs` AUDIT pending count always reads 0 — wrong regex for `plan/AUDIT.md`'s row format
+- proposed: 2026-10-31 (digest)
+- source signals: digest (2026-10-31): `pulse.mjs`'s `countRows()` matches `^### \[(?!x\])` — a heading-style row, the shape `plan/CRITIQUE.md` actually uses (`### [HIGH] ...`). `plan/AUDIT.md`'s own template is `- [ ] [SEV] <description>` (a dash-bullet, never a `###` heading) — confirmed against its own in-file comment and every real row in its Pending section. So every night's pulse read `audit 0 pending` regardless of the true count; tonight's hand-count under `## Pending` found 5 real open rows (1 standing MED, 1 `[needs-user-call]` HIGH, 3 LOW), none of which any pulse-driven digest line has ever surfaced.
+- rationale: the digest's whole job is to compress the loop's state into one trustworthy snapshot; a silently-zero counter for an entire file is the opposite of that, and it already hid a real HIGH `[needs-user-call]` row (the Claude Code usage-cap outage backoff gap, filed 2026-10-19, score 2.7 — see tonight's `plan/DIGEST.md` Needs you) from every digest between 2026-10-19 and tonight.
+- proposed scope: widen `countRows()` (or add a second matcher) to also count `^- \[ \] \[` dash-bullet rows, scoped to `plan/AUDIT.md`'s call site only (leave `plan/CRITIQUE.md`'s heading-style count untouched) — single function, one colocated test asserting a dash-bullet Pending row is counted and a `[x]`-checked one is not.
+- estimated chunks: 1 (single script function + test)
+- conflicts: none known — `pulse.mjs` is read-only tooling, not a gate or content rule.
+- generator: digest · filed 2026-10-31
+
 ### [ ] [score 6.0] Graduated spoiler-risk labeling instead of a binary spoiler flag
 - proposed: 2026-10-27 (research)
 - source signals: field (2026-10-27): Some entertainment coverage grades a piece's spoiler risk on a scale tied to how far behind a reader might be, rather than a single binary spoiler/no-spoiler toggle.
