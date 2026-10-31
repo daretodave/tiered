@@ -24,6 +24,35 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-31 tick (cloud march, second this day): hells-kitchen
+24/26 → 25/26, gap narrows from 2\* to 1\*.** Picked off the prior tick's own
+flagged "stale-star" finding (below): that note identified `shark-tank` S18,
+`rhoslc` S7, `dragrace-uk` S8, and `hells-kitchen`'s S25 half as all already
+premiered despite being carried as starred/confirmed-but-unaired. Tie-break
+among the four gap=1 picks: all tier B, so oldest `est_year` wins —
+`hells-kitchen` (2005) over `shark-tank` (2009), `dragrace-uk` (2019), and
+`rhoslc` (2020). Scout-verified (TVInsider, EntertainmentNow, a Fox-affiliate
+wire piece, The Daily Meal): Season 25 premiered 2026-09-24 on Fox, still
+airing, no finale date confirmed. Filed Season 25
+(`content/shows/hells-kitchen/seasons/25-the-anniversary-class.md`) — the
+25th-season milestone repeats Season 20's all-under-25 casting conceit
+("25 Chefs Under 25" marketing wordplay; real confirmed cast size is 18, not
+25 — the "25" in the tagline is anniversary branding, not a headcount) and
+layers in anniversary programming (returning alumni, past challenges, a
+milestone dinner) as the one genuinely new wrinkle; third consecutive season
+at Foxwoods Resort Casino, Ledyard, CT; Michelle Tribble (3rd straight season)
+and James Avery return as sous-chefs. Premise/format only, per spoiler
+discipline P0 — still airing, zero outcomes. Canon rebased: appended as a
+pure tail entry (`## 25. Season 25`, `canonical_position: 25`) — no existing
+rank 1-24 shifted, since the rationale is explicit the season is both
+unproven (still airing) and a repeat of a prior conceit, not a new structural
+high-water mark. `era_bands`' `themed-era` [2018, 2026] already covers the
+new season's year, no widening needed. Show frontmatter bumped
+`seasons: 24→25`, blurb corrected to "25 seasons." Hells-kitchen's second
+slot (the still-unconfirmed, undated Season 26 half of the original
+double-renewal) stays starred — row updated to `25/26 | 1*` below, not
+removed.
+
 **Rule 2 drain, 2026-10-31 tick (cloud march): bake-off 16/17 → 17/17, gap
 row removed.** The 2026-10-19/2026-10-27 sweeps' "all starred rows
 reconfirmed" verdict for this row was itself stale: Series 17 premiered
@@ -1823,7 +1852,7 @@ new-show creation is locked to the biweekly show-add clock.
 | rhonj | 14/15 | 1* |
 | bachelor | 29/30 | 1* |
 | american-idol | 24/25 | 1* |
-| hells-kitchen | 24/26 | 2* |
+| hells-kitchen | 25/26 | 1* |
 | dragrace | 18/19 | 1* |
 | dragrace-allstars | 11/12 | 1* |
 | masked-singer | 14/15 | 1* |

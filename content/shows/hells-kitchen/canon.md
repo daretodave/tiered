@@ -216,3 +216,11 @@ slot_argument: The twentysomethings-versus-fortysomethings premise dissolved aft
 community_rank_hint: rank=24 delta=0 sentiment=hold
 
 Season twenty-one arrives with a specific premise — twentysomethings against fortysomethings — and commits to it for three episodes before reorganizing by gender into the show's standard red-and-blue alignment. What remains after that reorganization is a competent Hell's Kitchen run with Christina Wilson and Jason Santos on opposite sides of the pass. The cast is capable, the dinner services function, and the format delivers at its reliable level throughout. The season's ceiling is set by its opening act: a concept that promised something structurally new and then stepped back from it. The format underneath is fine. The promise wasn't kept.
+
+## 25. Season 25
+
+tag: A second lap on the age-ceiling cast, wrapped in 25th-season programming.
+slot_argument: Season twenty-five repeats Season Twenty's under-25 cast rather than clearing a new bar, and it's still airing — untested against the cast/drama/format rubric. The anniversary programming is the one genuine addition.
+community_rank_hint: rank=25 delta=0 sentiment=hold
+
+Season twenty-five arrives under an anniversary banner, tying its milestone to an age ceiling the show already tried on Season Twenty, and it's honest that this is a repeat more than a reinvention. The eighteen-chef cast runs the familiar red-and-blue gender split at Foxwoods for a third consecutive year, with Michelle Tribble and James Avery back at their posts. What's actually new is the anniversary programming: returning alumni, revisited challenges, and a milestone dinner woven through the episodes. That trim earns real credit. The underlying conceit does not, since it already ran once. The tail slot reflects both the repetition and a still-airing season nobody has fully evaluated yet.

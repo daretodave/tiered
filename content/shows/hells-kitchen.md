@@ -5,9 +5,9 @@ palette:
   paper: "#1C0808"
   ink: "#F0E8D8"
   primary: "#CC2412"
-seasons: 24
+seasons: 25
 status: airing
-blurb: "24 seasons. Gordon Ramsay's kitchen, everyone's trial by fire."
+blurb: "25 seasons. Gordon Ramsay's kitchen, everyone's trial by fire."
 tagline: "Gordon Ramsay's kitchen runs on heat, repetition, and the gap between what you think you can cook and what a real service demands. The format never blinked."
 card_tagline: "Two teams, one pass, and a chef who never lowers the temperature — dinner service pushed to its breaking point, season after season."
 tier: B
