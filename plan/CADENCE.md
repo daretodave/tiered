@@ -24,6 +24,48 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-10-31 tick (cloud march): bake-off 16/17 → 17/17, gap
+row removed.** The 2026-10-19/2026-10-27 sweeps' "all starred rows
+reconfirmed" verdict for this row was itself stale: Series 17 premiered
+2026-09-22 on Channel 4 (scout-verified: Stylist, Scotsman, Heart,
+TVInsider) — five weeks before this tick, well past the star. Filed
+Season 17 (`content/shows/bake-off/seasons/17-the-lawson-arrival.md`) —
+Nigella Lawson joins Paul Hollywood at the judge's table, replacing Prue
+Leith after the entirety of the Channel 4 era; Noel Fielding and Alison
+Hammond return unchanged for a fourth year. Premise/format only — the
+season is still airing (finale confirmed 2026-11-24, per Reelgood), so no
+episode outcomes; 12 bakers, 10 episodes, Welford Park. Canon rebased:
+"The Lawson Arrival" inserted at a provisional rank 14 — a genuine
+judging change earns more than another uneventful Hammond-era year, but
+stays below the proven "Hammond Arrival" reset (rank 10) until the
+series closes and the pairing's chemistry can be judged on tape, not
+premise. `canonical_position` rewritten for Season 16 "Hammond Continues"
+(14→15), Season 11 "Bubble Year" (15→16), and Season 12 "Second Bubble"
+(16→17) in the same commit. `era_bands`' `channel-4` band widened to
+[2017, 2026] to cover the new season's year. Show frontmatter bumped
+`seasons: 16→17`, blurb/card_tagline corrected to "17 seasons." Bake Off
+fully drained — row removed below.
+
+**Stale-star finding, same tick (flagged, not drained this tick).** While
+verifying bake-off, a fresh spot-check of three other rows the last two
+sweeps called "reconfirmed starred" found their premiere dates have also
+already passed: `shark-tank` S18 (premiered 2026-09-30), `rhoslc` S7
+(premiered 2026-09-16), and `dragrace-uk` S8 (premiered 2026-09-03, per
+this file's own line 621/743 notes — also still airing through
+2026-11-05). `hells-kitchen`'s S25 half of its 2* row also premiered
+2026-09-24 and remains unfiled. None of these were picked this tick —
+one unit per tick per `skills/ship-content.md` §5 — but the next Rule 2
+tick should treat these four as immediately actionable (gap=1 each,
+smallest-gap tie, pick by tier/est_year) rather than re-running the full
+weekly sweep to rediscover what's already confirmed here. This is the
+same "narrated but not verified against today's date" drift class as the
+2026-08-28 married-at-first-sight and 2026-09-27 table-integrity
+incidents above — the last two full sweeps' blanket "all starred rows
+reconfirmed" language did not actually re-check every row's premiere
+date against the sweep's own date.
+
+---
+
 **Rule 2 drain, 2026-10-27 tick (cloud march, second this day): rhoc
 19/20 → 20/20, gap row removed.** Every remaining gap-table row was
 starred (confirmed-but-unaired) per this tick's own sweep below, except
@@ -1793,7 +1835,6 @@ new-show creation is locked to the biweekly show-add clock.
 | shark-tank | 17/18 | 1* |
 | southern-charm | 11/12 | 1* |
 | vanderpump-rules | 12/13 | 1* |
-| bake-off | 16/17 | 1* |
 | ink-master | 17/18 | 1* |
 | love-island-us | 8/9 | 1* |
 | married-at-first-sight-australia | 13/14 | 1* |
@@ -3644,3 +3685,4 @@ No calendar or gap-table action.
 | 2026-10-27 | Rule 2 drain, not a sweep (the-challenge S42 Cutthroat — filed provisional/premise-only while airing, gap-slot removed) | 38 |
 | 2026-10-27 | Rule 2 drain, not a sweep (amazing-race S39 — filed provisional/premise-only while airing, gap-slot removed) | 37 |
 | 2026-10-27 | Rule 2 drain, not a sweep (the-voice S22-S30 corrected per issue #762 — real S28/S29 filed, S30 filed provisional while airing, gap-slot removed) | 36 |
+| 2026-10-31 | Rule 2 drain, not a sweep (bake-off S17 — fully filed, gap-slot removed; also flagged shark-tank/rhoslc/dragrace-uk/hells-kitchen as stale-starred, already-premiered rows for the next drain pick) | 32 shows / 34 gap-slots |

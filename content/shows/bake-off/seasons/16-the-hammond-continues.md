@@ -2,7 +2,7 @@
 show: bake-off
 number: 16
 title: The Hammond Continues
-canonical_position: 14
+canonical_position: 15
 premiere_date: 2025-09-02
 ep_count: 10
 location: Welford Park, Berkshire
