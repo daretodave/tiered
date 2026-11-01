@@ -3,11 +3,11 @@ show: hells-kitchen
 editor: tiered.tv editor
 last_revised: 2026-06-20
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-four seasons, and I've replayed the ones that keep coming up in arguments. The ranking weighs each season as a piece of television — cast energy, kitchen tension, how well the format delivered on its own promise. One read, held honestly."
+meth_who_p: "tiered.tv's editor. I've watched Hell's Kitchen across all twenty-five seasons, and I've replayed the ones that keep coming up in arguments. The ranking weighs each season as a piece of television — cast energy, kitchen tension, how well the format delivered on its own promise. One read, held honestly."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three lenses — cast, whether the bench had enough talent and personality to carry a dinner service; drama, whether the kitchen conflict felt earned rather than manufactured; and format integrity, whether the season's structure respected both the cooking and the competition. Ramsay is the constant; everything else is the variable."
 meth_when_h: "When I revisit"
-meth_when_p: "The canon grows as more seasons land. Twenty-four slots cover all three eras — the founding run, the evolution seasons, and the themed editions. Each new entry earns its place against what's already here, judged by the same three lenses: cast, drama, format integrity."
+meth_when_p: "The canon grows as more seasons land. Twenty-five slots cover all three eras — the founding run, the evolution seasons, and the themed editions. Each new entry earns its place against what's already here, judged by the same three lenses: cast, drama, format integrity."
 tier_s_blurb: "Five seasons where the cast could actually cook — the deepest technical benches of the founding run (S5, S4, S6), the original S1 debut, and S9's structurally distinct full-season team format."
 tier_a_blurb: "The rest of the founding run and the steady middle years — brigades with enough real cooks to make dinner service a contest rather than a pressure test."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
