@@ -62,6 +62,7 @@ const SEASON_SLUG_ALIASES: Record<string, Record<string, string>> = {
     'the-anchor': 'the-reset',
     'the-finale': 'battle-of-champions',
   },
+  'the-apprentice': { 'the-los-angeles-season': 'the-open-draft' },
 }
 
 function buildSlugAliasRedirects(): SeasonRedirect[] {

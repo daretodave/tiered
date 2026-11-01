@@ -9,6 +9,7 @@ meth_how_p: "Three lenses — task design, whether the week's challenge produced
 meth_when_h: "When I revisit"
 meth_when_p: "The canon opens with the founding era — S1 through S6, before the celebrity pivot. Those seasons set the standard. The celebrity era is weighed honestly against it. I revisit the top more than the tail; the tail does not teach much on replay. I am not claiming to be objective. I am trying to be honest."
 tier_s_blurb: "The five founding-era seasons in the canon so far — the sharpest task design, a boardroom with real stakes, and a cast that treated the competition as genuine business rather than television."
+tier_a_blurb: "The last founding-era season and the later runs that followed the celebrity pivot — weighed against the original standard, and at their best still setting tasks worth winning."
 tier_b_blurb: "Strong Apprentice. Well-designed tasks, a contestant pool with real competitive range, and a boardroom that feels like it has weight."
 weekly_question: "Which founding-era season made the strongest case for The Apprentice as a genuine business competition?"
 era_bands:
@@ -59,11 +60,11 @@ Season two is the format's first full refinement. The debut had invented the gra
 
 ## 5. Season Five
 
-tag: The LA relocation — the format transplanted to a new coast, still grounded in business tasks.
-slot_argument: Los Angeles gives the tasks a different backdrop while the business-competition core stays intact. The founding era's closing chapter before the celebrity pivot altered the show's DNA.
+tag: The open draft — teams picked by their leaders, not sorted by gender or background.
+slot_argument: The first season to let project managers build their own teams, with no immunity for a winning leader. A real rules change, though the tasks themselves run close to the template season four perfected.
 community_rank_hint: { rank: 5, delta: 0, sentiment: hold }
 
-Season five is the last founding-era season before the format began its shift toward celebrity casting, and it holds up as a genuine business competition. Los Angeles as a production base gave the tasks a different backdrop — entertainment-industry flavored challenges alongside the standard marketing and sales briefs — and the cast of eighteen had the competitive range the founding seasons depended on. The boardroom still weighed real business performance rather than TV presence. The canon places it fifth because the relocation adds texture without changing the format's core argument, and the season closes the founding era on solid ground.
+Season five changed how the founding format assigned accountability. Earlier seasons had split the cast by a fixed trait — men against women, degrees against street smarts — and season five threw that out: two project managers chose their sides pick by pick, and leading a winning task no longer protected anyone the next week. That puts every draft choice and every leadership turn on the record in the boardroom. The canon places it fifth because the change sharpens the show's internal logic without lifting the tasks above what seasons three and four were already doing well, and the stunt-heavy season that followed would lean on spectacle in a way this one never needed.
 
 ## 10. Season Ten
 

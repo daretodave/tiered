@@ -1,7 +1,7 @@
 ---
 show: naked-and-afraid
 editor: tiered.tv editor
-last_revised: 2026-06-23
+last_revised: 2026-11-01
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've tracked the format from the 2013 premiere through nineteen seasons, across every major location and format variation in the core series. The ranking weighs what each season contributed to the show's identity — the quality of the survival challenge, the cast energy, and how well the location served the format. This is one read, not a committee."
 meth_how_h: "How I weigh it"
@@ -75,7 +75,7 @@ community_rank_hint: rank=6 delta=0 sentiment=hold
 
 Sixth for the season that found the founding era in its most settled state. The PSR scoring language had been absorbed, the production rhythm had stabilized, and the format was no longer under pressure to prove its premise. Season six could focus on execution: more deliberate pairings, cleaner editing, locations chosen for how well they shaped the survival challenge rather than how exotic they photographed. The result was a season that delivered everything the format promised without the rawness of the early runs or the structural experimentation that would come later. Reliable is a quieter virtue, but it is a real one.
 
-## 7. Season 7 — The Range Season (2016)
+## 7. Season 7 — The Range Season (2017)
 
 tag: The founding era extending its geographic argument — more biomes, same 21-day clock.
 slot_argument: Season seven pushed location variety further than any founding-era season before it. A broader environmental range made the case that the 21-day premise held across terrain the show hadn't tested.
@@ -115,7 +115,7 @@ community_rank_hint: rank=11 delta=0 sentiment=hold
 
 Eleventh for the season that showed what the evolution era looked like once the searching stopped. Season nine had asked whether the format could evolve; season ten had held the uncertainty honestly. Season eleven arrived after those questions had been answered and production had settled into a new stable identity. The casting approach was more refined, the environmental pairings more deliberate, and a format this structurally spare shows clearly when the production knows exactly what it is doing. The evolution era's clearest self-portrait earns its place for delivering exactly that.
 
-## 13. Season 13 — The Return (2021/2022)
+## 13. Season 13 — The Return (2021)
 
 tag: The post-pandemic return — full-scale production back, the format resuming its argument.
 slot_argument: The first season back at full production scope after COVID — international locations, standard casting, the 21-day premise without constraint. Earns its slot for delivering the format at the reach it was built to operate at.
@@ -123,7 +123,7 @@ community_rank_hint: rank=12 delta=0 sentiment=hold
 
 Twelfth for the season that restored what season twelve couldn't access: the full environmental pressure the format depends on. The 21-day paired-survival premise needs remote wilderness, genuine exposure, and a production footprint large enough to place survivalists in conditions the show can't manufacture at reduced scale. Season thirteen delivered all of it. The evolution era closes with this run, and it closes at full scope — a genuine recovery that earns its placement above the constrained season by doing what the format is actually built to do.
 
-## 14. Season 14 — The Modern Opening (2022/2023)
+## 14. Season 14 — The Modern Opening (2022)
 
 tag: The modern era's first argument — a decade-plus format asking what comes next.
 slot_argument: Season fourteen opened the modern era with updated casting priorities and an evolved production approach. A transitional season at the start of a new phase, earning its rank for setting the modern era's terms.
@@ -131,7 +131,7 @@ community_rank_hint: rank=13 delta=0 sentiment=hold
 
 Thirteenth for the season that opened the modern era with a recalibration the format hadn't attempted since the evolution era began. A decade-plus run forces the question: what does paired survival look like when the audience already knows the premise thoroughly? Season fourteen answered by shifting casting priorities — the survivalist profiles recruited into the modern era emphasized different skill sets and backgrounds than the evolution era had favored. A transitional season, as all era-opening seasons are. It earns its rank for setting the modern era's terms rather than defaulting to what the evolution era had already established.
 
-## 15. Season 15 — The Standard Run (2023/2024)
+## 15. Season 15 — The Standard Run (2023)
 
 tag: The modern era finding its rhythm — the format reliable in a new key.
 slot_argument: Season fifteen arrived with the modern era's recalibration settled. Operating from current production assumptions without transition weight — the modern era's first confident second execution.
@@ -147,7 +147,7 @@ community_rank_hint: rank=15 delta=0 sentiment=hold
 
 Fifteenth and last in this batch for the season that aired under conditions the format wasn't built for. The 21-day paired-survival premise lives on environmental pressure — remote locations, genuine physical exposure, terrain that creates stakes the production can't substitute. COVID-era filming constraints reduced what was available, and the season reflects that reduction honestly rather than papering over it. A season shaped by external forces rather than creative choices tells you something real about the format: how much it depends on the production logistics no other element can replace.
 
-## 16. Season 16 — The Extended Modern (2024)
+## 16. Season 16 — The Extended Modern (2023)
 
 tag: The modern era at comfortable stride — past proving itself, not yet fully placed.
 slot_argument: Season sixteen sits in the modern era's settled middle stretch, operating from stable assumptions the opening and confirmation seasons established. The rank is a working position while the modern era's reputations are still accumulating.
@@ -157,11 +157,11 @@ Sixteenth for the season that arrived after the modern era had done its opening 
 
 ## 17. Season 17 — The Seventh Year (2024)
 
-tag: The modern era in close succession — two seasons in a single calendar year.
-slot_argument: A second 2024 season tested whether the format holds when the audience returns within months. Durable enough to make that case. Ranks here as a recent entry whose standing is still accumulating over time.
+tag: The modern era in close succession — back on air four months after the last premiere.
+slot_argument: Arriving four months after season sixteen tested whether the format holds when the audience returns within months. Durable enough to make that case. Ranks here as a recent entry whose standing is still accumulating over time.
 community_rank_hint: rank=17 delta=0 sentiment=hold
 
-Seventeenth for the season that demonstrated the modern era's willingness to run close. Naked and Afraid has always been a procedural in the best sense — a format with fixed rules that generates variable drama through the specific people and locations it combines. A second 2024 season tests whether the premise can sustain that pace without diluting itself. The 21-day paired-survival structure is spare enough that it either delivers or it doesn't; there is no production scaffolding to hide behind when it falls short. Season seventeen held. Its position here reflects how recently it aired, not a judgment on what it delivered.
+Seventeenth for the season that demonstrated the modern era's willingness to run close. Naked and Afraid has always been a procedural in the best sense — a format with fixed rules that generates variable drama through the specific people and locations it combines. A return four months after season sixteen's premiere tests whether the premise can sustain that pace without diluting itself. The 21-day paired-survival structure is spare enough that it either delivers or it doesn't; there is no production scaffolding to hide behind when it falls short. Season seventeen held. Its position here reflects how recently it aired, not a judgment on what it delivered.
 
 ## 18. Season 18 — The Long Haul (2025)
 

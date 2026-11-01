@@ -4,9 +4,9 @@ number: 9
 slug: the-recalibration
 title: "The Recalibration"
 canonical_position: 9
-premiere_date: 2018-02-01
+premiere_date: 2018-03-11
 location: "Multiple wilderness locations"
-eyebrow: "Aired winter 2018 · The evolution era opens"
+eyebrow: "Aired spring 2018 · The evolution era opens"
 lede: "Season nine opened the evolution era by asking what else the paired-survival format could hold. A new casting approach, untested environments, and a structural reconsideration of what the 21-day premise was actually measuring."
 pull: "The format's first season in a new era — the rules unchanged but the argument shifting underneath them."
 shape_h2: "A new era's first case."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · February 2018"
+premiere_caption: "Discovery Channel · March 2018"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

@@ -4,7 +4,7 @@ number: 15
 slug: the-standard-run
 title: "The Standard Run"
 canonical_position: 14
-premiere_date: 2023-01-01
+premiere_date: 2023-02-19
 location: "Multiple wilderness locations"
 eyebrow: "Aired 2023 · The modern era finding its rhythm"
 lede: "Season fifteen arrived after the modern era's recalibration had settled. Operating from the format's current assumptions without transitional weight — the modern era proving its approach repeatable, not just possible."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · 2023"
+premiere_caption: "Discovery Channel · February 2023"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

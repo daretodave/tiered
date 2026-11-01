@@ -4,7 +4,7 @@ number: 4
 slug: the-psr-season
 title: "The PSR Season"
 canonical_position: 2
-premiere_date: 2015-03-01
+premiere_date: 2015-04-19
 location: "Multiple wilderness locations"
 eyebrow: "Aired spring 2015 · The season that formalized the survival scoring system"
 lede: "Season four made the Primitive Survival Rating a prominent on-screen metric — a visible, trackable number that changed how the show talked about what it was measuring. Every season since inherited the language."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days · PSR scoring"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · March 2015"
+premiere_caption: "Discovery Channel · April 2015"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

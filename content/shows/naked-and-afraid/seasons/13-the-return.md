@@ -4,9 +4,9 @@ number: 13
 slug: the-return
 title: "The Return"
 canonical_position: 12
-premiere_date: 2022-01-01
+premiere_date: 2021-08-01
 location: "Multiple wilderness locations"
-eyebrow: "Aired 2022 · Full production scope resumed"
+eyebrow: "Aired summer 2021 · Full production scope resumed"
 lede: "Season thirteen brought the format back to full scale. International locations, standard casting, the 21-day premise operating without constraint — a recovery run that earns its placement by delivering the show at the reach it was designed for."
 pull: "The format back at full scope — what comes after a constrained season is proof of what the constraint cost."
 shape_h2: "Full scope, restored."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · 2022"
+premiere_caption: "Discovery Channel · August 2021"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

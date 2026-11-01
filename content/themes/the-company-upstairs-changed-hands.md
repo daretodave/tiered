@@ -7,7 +7,7 @@ category: era
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-08
+last_revised: 2026-11-01
 featured: false
 related:
   - no-template-to-copy
@@ -87,11 +87,11 @@ entries:
     title: "A flagship season premieres nine days after Discovery and WarnerMedia merge"
     blurb: "TLC's corporate parent becomes Warner Bros. Discovery on April 8, 2022, and season nine follows just over a week later on April 17. The real headline is a first crossover couple from a spinoff show; the merger closes without a credit."
   - show: naked-and-afraid
-    season: 14
-    season_label: "S14"
+    season: 15
+    season_label: "S15"
     rank: 13
-    title: "A survival format opens a new era under a brand-new corporate parent"
-    blurb: "Season fourteen premieres June 1, 2022, roughly two months after Warner Bros. Discovery officially forms around Discovery Channel's ownership. The season opens a new casting era for the paired-survival format; the merger upstairs isn't part of the pitch."
+    title: "A survival format's first premiere under a brand-new corporate parent"
+    blurb: "Season fifteen premieres February 19, 2023, about ten months after Warner Bros. Discovery forms — the first main-series season to open under the merged company. The modern era's recalibrated casting carries the season; the merger upstairs isn't part of the pitch."
   - show: survivor
     season: 49
     season_label: "S49"

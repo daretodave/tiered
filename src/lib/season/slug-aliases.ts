@@ -25,6 +25,11 @@ export const SEASON_SLUG_ALIASES: Readonly<
     'the-anchor': 'the-reset',
     'the-finale': 'battle-of-champions',
   },
+  // The Apprentice S5 retitle (AUDIT needs-user-call): the season was
+  // filed as "The Los Angeles Season", but it was based in New York
+  // with only the live finale in LA. Retitled for its real format
+  // change, the project-manager draft.
+  'the-apprentice': { 'the-los-angeles-season': 'the-open-draft' },
 }
 
 export function resolveSeasonSlugAlias(

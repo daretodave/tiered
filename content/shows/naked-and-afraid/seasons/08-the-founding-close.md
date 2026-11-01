@@ -4,7 +4,7 @@ number: 8
 slug: the-founding-close
 title: "The Founding Close"
 canonical_position: 8
-premiere_date: 2017-06-25
+premiere_date: 2017-07-30
 location: "Multiple wilderness locations"
 eyebrow: "Aired summer 2017 · The founding era's final run"
 lede: "Season eight closed the founding era with the format's vocabulary intact and its argument confirmed. Eight seasons in, the 21-day paired-survival premise had proven it could sustain a long run without needing to reinvent itself."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · June 2017"
+premiere_caption: "Discovery Channel · July 2017"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

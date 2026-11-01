@@ -4,9 +4,9 @@ number: 5
 slug: the-fifth-run
 title: "The Fifth Run"
 canonical_position: 5
-premiere_date: 2015-06-07
+premiere_date: 2015-10-04
 location: "Multiple wilderness locations"
-eyebrow: "Aired summer 2015 · The founding era at full stride"
+eyebrow: "Aired fall 2015 · The founding era at full stride"
 lede: "By season five the format had found its production rhythm. The casting was more refined, the location selection more deliberate, and the editing language more assured."
 pull: "Season five did what the show does, at the level the show had learned to aspire to."
 shape_h2: "The rhythm, now practiced."
@@ -15,7 +15,7 @@ format_summary: "Paired survival · 21 days"
 format_caption: "A man and a woman, stripped of everything, surviving naked for 21 days"
 cast_size: 2
 cast_size_caption: "Two survivalists per episode pairing"
-premiere_caption: "Discovery Channel · June 2015"
+premiere_caption: "Discovery Channel · October 2015"
 filming_caption: "Multiple remote wilderness locations"
 ---
 

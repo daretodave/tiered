@@ -7,7 +7,7 @@ category: craft
 sentiment: hold
 status: growing
 curator: "tiered.tv editor"
-last_revised: 2026-08-05
+last_revised: 2026-11-01
 featured: false
 related:
   - twice-in-one-year
@@ -62,17 +62,17 @@ entries:
     title: "The other half of that turnaround keeps the format running steady"
     blurb: "Season five returns to the same Emerald Pavilion villa and runs the rolling-cast structure at full confidence, no new mechanic layered on top of it. The two premieres land 219 days apart — tighter than every gap ranked above it here, wider than every gap ranked below."
   - show: naked-and-afraid
+    season: 15
+    season_label: "S15"
+    rank: 9
+    title: "A confirmation season opens a same-year pair"
+    blurb: "Season fifteen premieres in February 2023 and runs the modern era's recalibrated casting a second time to show it holds. The season that follows premieres 238 days later, in October of the same year — wider than the villa pair ranked above it, tighter than the pod pair below."
+  - show: naked-and-afraid
     season: 16
     season_label: "S16"
-    rank: 9
-    title: "A comfortable middle-era stretch still lands inside the same calendar year as its neighbor"
-    blurb: "Season sixteen runs the 21-day paired-survival format at a practiced pace, well past the uncertainty of the modern era's opening runs. The season that follows premieres 244 days later, past the midpoint of every gap ranked in this list."
-  - show: naked-and-afraid
-    season: 17
-    season_label: "S17"
     rank: 10
-    title: "A tightened cadence lands the format's second season eight months later, not twelve"
-    blurb: "Season seventeen premieres 244 days after its predecessor, well short of the usual full year between runs — the clearest sign yet that the show's production pipeline had sped up enough to sustain two seasons without the standard year-long gap."
+    title: "A fall premiere lands the format's second season of 2023, eight months later, not twelve"
+    blurb: "Season sixteen premieres October 15, 2023, 238 days after season fifteen, well short of the usual full year between runs. The 21-day paired-survival format runs at a practiced pace; the shorter turnaround changes the calendar, not the premise."
   - show: love-is-blind
     season: 2
     season_label: "S02 · Chicago"

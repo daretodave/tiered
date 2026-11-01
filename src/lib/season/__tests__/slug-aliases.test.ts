@@ -34,6 +34,14 @@ describe('SEASON_SLUG_ALIASES — registered redirects', () => {
     )
   })
 
+  it('maps the retired The Apprentice S5 slug to its corrected title', () => {
+    // S5 was filed as "The Los Angeles Season" but was New York-based
+    // with only the live finale in LA; retitled "The Open Draft".
+    expect(
+      SEASON_SLUG_ALIASES['the-apprentice']?.['the-los-angeles-season'],
+    ).toBe('the-open-draft')
+  })
+
   it('every alias target is a non-empty kebab-case slug', () => {
     // Defensive: a regression that mapped a slug to '' or to a
     // value with bad characters would 308 to a 404 page. A bad

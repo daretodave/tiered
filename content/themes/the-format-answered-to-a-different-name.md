@@ -63,10 +63,10 @@ entries:
     blurb: "A second mid-run reshuffle in as many seasons, paired with a boardroom that cuts three people one week and nobody the next. The celebrity era still hunting for a stable internal logic."
   - show: the-apprentice
     season: 5
-    season_label: "S05 · The Los Angeles Season"
+    season_label: "S05 · The Open Draft"
     rank: 9
-    title: "A cross-country move gives the tasks new scenery without touching the format."
-    blurb: "Production relocates to Los Angeles and the tasks pick up an entertainment-industry flavor, but two teams, weekly business briefs, and a boardroom judged on performance all stay exactly as they were."
+    title: "Leaders pick their own teams, and the premise barely notices."
+    blurb: "Project managers draft their sides instead of the cast being split by gender or background, and a winning leader loses next-week immunity. A sharper rulebook, but the same civilian hopefuls chasing the same job in the same New York boardroom."
   - show: the-apprentice
     season: 12
     season_label: "S12 · The Crossover"
