@@ -891,16 +891,26 @@ unless it has its own line below (`nexus/customization/improvement-dial.md`;
 - Support `fix-all`: a collaborator's bug or small enhancement is fixed
   in the tick (or plotted Asap), not only triaged.
 - Promote `aged`: a Pending candidate that scores at the floor and has
-  aged promotes itself behind the `loop:veto` hold window.
-- Generators: the kit's three (issue-age, stale-candidate, motion).
-- Research `weekly`: `/march` reads the field on the topics below and
-  files at most 3 `field` candidates a run.
+  aged promotes itself behind the `loop:veto` hold window. Throughput
+  knobs (nexus ca3c79f, set 2026-11-01): up to 3 a week, after 7 days,
+  behind a 1-day veto; `/march` Step 0 promotes while fewer than 2 specs
+  are open, and the pick prefers `kind: product` over `kind: guard`.
+- Generators: the kit's four (issue-age, stale-candidate, motion,
+  mirror-orphan).
+- Research `3d`: `/march` reads the field on the topics below every
+  three days and files at most 3 `field` candidates a run.
 - UI walk `both`: `/critique`'s reader and `/iterate` dimension H
   browse the live site.
 - `loop: on`, `stall_action: promote`, cadence eager (march.yml's
   ceiling of 60 stays).
 
 - Improve: bold
+- promote_per_week: 3
+- promote_after_days: 7
+- veto_days: 1
+- promote_queue_depth: 2
+- promote_prefer: product
+- Research: 3d
 - Research topics: reality TV season rankings and fan discourse; competition-show format changes and casting trends; community voting and ranking UX on fan sites; editorial list and canon features on entertainment sites; spoiler-safe coverage of airing seasons
 
 **UI:** `url https://tiered.tv`
