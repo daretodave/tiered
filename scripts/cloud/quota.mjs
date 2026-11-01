@@ -119,6 +119,48 @@ export function lastQuota(messages) {
   return last;
 }
 
+// The plain-text cap. When the subscription (or its extra usage) is spent, Claude Code ends the run with an
+// error result and no rate_limit_info, e.g. "You're out of extra usage · resets 8am (UTC)" or
+// "... resets Oct 19, 8am (UTC)". Without this the gate fails open and every tick until the reset burns a full
+// CI run rediscovering it (26 march + 2 night failures, 2026-10-15..19; plan/AUDIT.md HIGH row).
+const CAP_RE = /(?:out of (?:extra )?usage|hit your (?:usage )?limit)[^\n"]*?resets\s+(?:at\s+)?([^\n"(]*?)\s*\(UTC\)/i;
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+/** How long to hold off when the cap message names no readable reset. */
+export const CAP_FALLBACK_MS = 60 * 60 * 1000;
+
+/** A reset phrase ("8am", "Oct 19, 8am", "Nov 2 at 8:30pm") as the next matching UTC instant after `now`; null if unreadable. */
+export function capResetAt(phrase, now) {
+  const s = String(phrase ?? '').trim().toLowerCase();
+  const tm = /(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*$/.exec(s);
+  if (!tm) return null;
+  let h = Number(tm[1]);
+  const m = Number(tm[2] ?? 0);
+  if (tm[3] === 'pm' && h < 12) h += 12;
+  if (tm[3] === 'am' && h === 12) h = 0;
+  if (h > 23 || m > 59) return null;
+  const dm = /([a-z]{3})[a-z]*\.?\s+(\d{1,2})/.exec(s.slice(0, tm.index));
+  const t = now.getTime();
+  if (dm) {
+    const mon = MONTHS.indexOf(dm[1]);
+    if (mon < 0) return null;
+    let at = Date.UTC(now.getUTCFullYear(), mon, Number(dm[2]), h, m);
+    // A named date well behind now is next year's (a Jan 2 reset read on Dec 31).
+    if (at < t - 180 * 864e5) at = Date.UTC(now.getUTCFullYear() + 1, mon, Number(dm[2]), h, m);
+    return isoOf(at);
+  }
+  let at = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m);
+  if (at <= t) at += 864e5;
+  return isoOf(at);
+}
+
+/** A cap message anywhere in a run's raw output, as a rejected reading; null when there is none. */
+export function capFromText(text, now) {
+  const hit = CAP_RE.exec(String(text ?? ''));
+  if (!hit) return null;
+  const resetsAt = capResetAt(hit[1], now) ?? isoOf(now.getTime() + CAP_FALLBACK_MS);
+  return { utilization: 1, status: 'rejected', resetsAt };
+}
+
 /** The step-summary line. */
 export function quotaLine(q) {
   if (!q) return 'seven_day utilization: unknown (no rate_limit_event in this run)';
@@ -274,14 +316,17 @@ function emit(env, outputs, summary) {
   } catch {}
 }
 
-function read(f, { env }) {
+function read(f, { env, now = new Date() }) {
   const file = f._[0] || path.join(env.RUNNER_TEMP || '.', 'claude-execution-output.json');
   let q = null;
+  let raw = '';
   try {
-    q = lastQuota(parseMessages(fs.readFileSync(file, 'utf8')));
+    raw = fs.readFileSync(file, 'utf8');
+    q = lastQuota(parseMessages(raw));
   } catch {
     q = null;
   }
+  if (q?.status !== 'rejected') q = capFromText(raw, now) ?? q;
   const line = quotaLine(q);
   console.log(line);
   if (q) {
@@ -384,7 +429,7 @@ export async function main(argv, { env = process.env, run = shRun, now = new Dat
   const f = flags(rest);
   switch (cmd) {
     case 'read':
-      return read(f, { env });
+      return read(f, { env, now });
     case 'gate':
       return gate(f, { env, run, now });
     case 'dispatch':
