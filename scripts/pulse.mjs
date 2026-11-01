@@ -27,6 +27,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { main as motion } from './plan/motion.mjs'
+import { countRows, pendingSection } from './lib/plan-rows.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -47,24 +48,6 @@ function ago(iso) {
   const hours = ms / (1000 * 60 * 60)
   if (hours < 48) return `${Math.round(hours)}h ago`
   return `${Math.round(hours / 24)}d ago`
-}
-
-// The `## Pending` section; a file that keeps its open rows under
-// another heading is read whole (countRows skips addressed rows).
-function pendingSection(text) {
-  const lines = text.split(/\r?\n/)
-  const start = lines.findIndex((l) => /^## Pending\s*$/.test(l))
-  if (start === -1) return lines
-  const rest = lines.slice(start + 1)
-  const end = rest.findIndex((l) => /^## /.test(l))
-  return end === -1 ? rest : rest.slice(0, end)
-}
-
-// A finding row is `### [...]`: a `### [x]` one is addressed (some
-// files leave those under Pending), and a heading with no bracket
-// (a pass summary) is no finding.
-function countRows(section) {
-  return section.filter((l) => /^### \[(?!x\])/i.test(l)).length
 }
 
 function header(text, key) {
