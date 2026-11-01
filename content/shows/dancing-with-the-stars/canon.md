@@ -9,6 +9,7 @@ meth_how_p: "Three lenses: celebrity arc — does the celeb's improvement across
 meth_when_h: "When I revisit"
 meth_when_p: "After each season closes and occasionally after a themed edition — All-Stars or Athletes — reshuffles the cast frame enough to change how a nearby season reads. The catalog is large; I revisit the top of the canon more often than the tail."
 tier_s_blurb: "The first five seasons — the six-episode American debut, the format cadence that every later season inherited, and the fall 2007 run that drew the franchise's largest audience ever."
+tier_a_blurb: "The years after the ratings peak, when casting did the heavy lifting — an Olympic cast, an all-star return, and pro pairings that kept the live vote worth staying up for."
 tier_b_blurb: "Seasons that deliver the format's core pleasures — strong celebrity arcs, watchable choreography, live-vote drama — without a defining contribution to the show's identity."
 weekly_question: "Which DWTS season produced the best celebrity performance arc — one that genuinely changed how the show was watched?"
 era_bands:

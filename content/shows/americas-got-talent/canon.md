@@ -9,6 +9,7 @@ meth_how_p: "Three lenses — act variety, whether the audition pool delivers ge
 meth_when_h: "When I revisit"
 meth_when_p: "The canon opens with the founding era — seasons one through five, the years the format established what it was willing to try. Later seasons get added as scrutiny catches up. The founding five set the standard. I am not claiming to be objective. I am trying to be honest."
 tier_s_blurb: "The founding five seasons — the widest audition pools the show ever assembled, and a judging panel (Morgan, Norwood, Hasselhoff — Osbourne joins in season two — then Mandel) still discovering what the format could reward."
+tier_a_blurb: "The Stern and early Cowell years — panels with real friction, the Golden Buzzer reshaping how an audition lands, and a format confident enough to trust its own rhythm."
 tier_b_blurb: "Solid America's Got Talent. The audition pool delivers real range, the judging panel gives the acts something to push against, and the format keeps enough variety in the room to justify the open-call promise."
 weekly_question: "Which founding-era season made the strongest case for AGT as genuine prime-time variety television?"
 era_bands:

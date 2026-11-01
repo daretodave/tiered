@@ -10,6 +10,7 @@ import {
   collectAboutListTitleQuoteIssues,
   collectBackHalfHyphenIssues,
   collectCardTaglineGapIssues,
+  collectCanonTierBlurbIssues,
   collectFeaturedThemeMissingPullIssues,
   collectCanonDeltaZeroSentimentUpIssues,
   collectCanonMethSiblingsPluralEditorIssues,
@@ -7226,6 +7227,99 @@ entries:
 `,
   )
 }
+
+describe('content-check — canon tier-blurb gate (issue #829, CANON_TIER_BLURB_STRICT)', () => {
+  let tmp: string
+
+  // A canon of `count` entries (rank i ranks season i) with only the
+  // given tier blurbs authored. Ranks 1-5 render the S band, 6-15 A,
+  // 16-30 B, 31+ C (tierKeyForRank).
+  function makeTieredCanon(
+    root: string,
+    show: string,
+    count: number,
+    blurbs: { s?: string; a?: string; b?: string; c?: string } = {},
+  ): void {
+    makeShow(root, show)
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const blurbYaml = (['s', 'a', 'b', 'c'] as const)
+      .filter((k) => blurbs[k] != null)
+      .map((k) => `tier_${k}_blurb: ${JSON.stringify(blurbs[k])}`)
+      .join('\n')
+    const headings = Array.from(
+      { length: count },
+      (_, i) => `## ${i + 1}. Title ${i + 1}\n\n${ninetyWords}\n`,
+    ).join('\n')
+    writeFileSync(
+      file,
+      `---
+show: ${show}${blurbYaml ? `\n${blurbYaml}` : ''}
+---
+
+${headings}
+`,
+    )
+  }
+
+  const S = 'What earns a season the top of this show is a cast that plays.'
+  const A = 'Deep cuts here still reward a rewatch on a slow weeknight.'
+
+  beforeEach(() => {
+    tmp = mkdtempSync(path.join(tmpdir(), 'tiered-content-check-tier-blurb-'))
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a canon missing tier_s_blurb (the fallback repeats the S headline)', () => {
+    makeTieredCanon(tmp, 'alpha', 3)
+    const issues = collectCanonTierBlurbIssues()
+    expect(issues).toHaveLength(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md (tier_s_blurb)')
+    expect(issues[0]!.message).toMatch(/prints it twice/)
+    expect(issues[0]!.message).toMatch(/#829/)
+  })
+
+  it('passes a complete canon (S and A blurbs authored where both bands render)', () => {
+    makeTieredCanon(tmp, 'alpha', 12, { s: S, a: A })
+    expect(collectCanonTierBlurbIssues()).toEqual([])
+  })
+
+  it('flags a rendered A band with no tier_a_blurb as a completeness gap', () => {
+    makeTieredCanon(tmp, 'alpha', 8, { s: S })
+    const issues = collectCanonTierBlurbIssues()
+    expect(issues).toHaveLength(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/canon.md (tier_a_blurb)')
+    expect(issues[0]!.message).toMatch(/A band renders \(3 entries\)/)
+  })
+
+  it('ignores an absent tier_a_blurb when the canon is too short to render an A band', () => {
+    makeTieredCanon(tmp, 'alpha', 5, { s: S })
+    expect(collectCanonTierBlurbIssues()).toEqual([])
+  })
+
+  it('leaves absent B and C blurbs alone (their fallbacks differ from their headlines)', () => {
+    makeTieredCanon(tmp, 'alpha', 32, { s: S, a: A })
+    expect(collectCanonTierBlurbIssues()).toEqual([])
+  })
+
+  it('reports each show separately and skips shows with no canon', () => {
+    makeTieredCanon(tmp, 'alpha', 7)
+    makeTieredCanon(tmp, 'beta', 2, { s: S })
+    makeShow(tmp, 'gamma')
+    const files = collectCanonTierBlurbIssues().map((i) => i.file)
+    expect(files).toEqual([
+      'content/shows/alpha/canon.md (tier_s_blurb)',
+      'content/shows/alpha/canon.md (tier_a_blurb)',
+    ])
+  })
+})
 
 describe('content-check — theme tagline/description alignment (critique pass-48, issue #430)', () => {
   let tmp: string

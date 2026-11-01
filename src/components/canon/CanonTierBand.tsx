@@ -2,6 +2,7 @@ import type { CanonEntry, Season } from '@/content'
 import type { CommunitySignal } from '@/lib/community/live'
 import {
   DEFAULT_TIER_HEADINGS,
+  TIER_HEADLINES,
   tierRangeLabel,
   type TierBand,
 } from '@/lib/canon/tier-bands'
@@ -16,13 +17,6 @@ type CanonTierBandProps = {
   seasonOf: (entry: CanonEntry) => Season | undefined
   eraOf: (entry: CanonEntry) => string | undefined
   communitySignal: (entry: CanonEntry) => CommunitySignal | null
-}
-
-const TIER_HEADLINES: Record<TierBand['key'], string> = {
-  S: 'The seasons that defend the show.',
-  A: 'The seasons worth watching again next week.',
-  B: 'The seasons that count.',
-  C: 'The seasons that earned their peace.',
 }
 
 function bodyForBand(

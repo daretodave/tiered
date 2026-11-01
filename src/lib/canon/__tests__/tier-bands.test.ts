@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import {
   buildTierBands,
+  DEFAULT_TIER_HEADINGS,
+  fallbackDuplicatesHeadline,
+  TIER_HEADLINES,
   tierKeyForRank,
   tierRangeLabel,
   type TierKey,
@@ -67,5 +70,24 @@ describe('tierRangeLabel', () => {
   it('renders single-entry as the padded rank', () => {
     const bands = buildTierBands([entry(31)])
     expect(tierRangeLabel(bands[0]!)).toBe('31')
+  })
+})
+
+describe('fallbackDuplicatesHeadline', () => {
+  // Pins the current fact the content-check tier-blurb gate rests on:
+  // only S's blurb fallback is the same sentence as its headline.
+  it('is true for S and false for A/B/C', () => {
+    expect(fallbackDuplicatesHeadline('S')).toBe(true)
+    expect(fallbackDuplicatesHeadline('A')).toBe(false)
+    expect(fallbackDuplicatesHeadline('B')).toBe(false)
+    expect(fallbackDuplicatesHeadline('C')).toBe(false)
+  })
+
+  it('agrees with a direct comparison of the two string tables', () => {
+    for (const key of ['S', 'A', 'B', 'C'] as TierKey[]) {
+      expect(fallbackDuplicatesHeadline(key)).toBe(
+        DEFAULT_TIER_HEADINGS[key] === TIER_HEADLINES[key],
+      )
+    }
   })
 })

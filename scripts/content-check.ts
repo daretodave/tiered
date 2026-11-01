@@ -21,6 +21,12 @@ import {
 } from '../src/lib/canon/era-bands'
 import { extractPlacementOrdinal } from '../src/lib/canon/placement-ordinal'
 import {
+  DEFAULT_TIER_HEADINGS,
+  TIER_HEADLINES,
+  buildTierBands,
+  fallbackDuplicatesHeadline,
+} from '../src/lib/canon/tier-bands'
+import {
   SHOW_ANNIVERSARIES,
   numberToWords,
   yearsSinceEst,
@@ -2446,6 +2452,52 @@ export function collectCardTaglineGapIssues(): Failure[] {
   return issues
 }
 
+// Canon tier-blurb gate (issue #829, candidate "Show canon
+// completeness lax→strict gate"). CanonTierBand.tsx renders a band's
+// blurb as `band.blurb ?? DEFAULT_TIER_HEADINGS[key]` under the fixed
+// `TIER_HEADLINES[key]` <h2>. Two failure kinds, both checked only
+// for bands that actually render (a tier with no canon entries
+// renders no band, so its absent blurb is invisible):
+//   1. duplicate — the blurb is absent and the fallback is the same
+//      sentence as the headline, so the page prints it twice. Derived
+//      from the two string tables, not hardcoded: S today, and any
+//      other tier the moment its fallback is edited to match.
+//   2. completeness — the A band renders with no `tier_a_blurb`. The
+//      fallback differs from the headline, so nothing repeats, but the
+//      band reads as generic copy on a show's busiest tier.
+// Strict from day one: the S corpus was already at 0, and the same
+// change backfills the six canons whose A band rendered blurb-less.
+export function collectCanonTierBlurbIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    const bands = buildTierBands(canon.entries, {
+      s: canon.tier_s_blurb,
+      a: canon.tier_a_blurb,
+      b: canon.tier_b_blurb,
+      c: canon.tier_c_blurb,
+    })
+    const file = `content/shows/${show.slug}/canon.md`
+    for (const band of bands) {
+      if (band.blurb?.trim()) continue
+      const field = `tier_${band.key.toLowerCase()}_blurb`
+      if (fallbackDuplicatesHeadline(band.key)) {
+        issues.push({
+          file: `${file} (${field})`,
+          message: `the ${band.key} band renders with no \`${field}\`, so CanonTierBand falls back to "${DEFAULT_TIER_HEADINGS[band.key]}", the same sentence as the band's own headline; the page prints it twice. Author a \`${field}\` (10-40 words on what earns a season this tier on this show). See issue #829 (CANON_TIER_BLURB_STRICT).`,
+        })
+      } else if (band.key === 'A') {
+        issues.push({
+          file: `${file} (${field})`,
+          message: `the A band renders (${band.entries.length} entr${band.entries.length === 1 ? 'y' : 'ies'}) with no \`${field}\`, so it falls back to the generic "${DEFAULT_TIER_HEADINGS.A}" under the headline "${TIER_HEADLINES.A}" Author a \`${field}\` (10-40 words on what earns a season this tier on this show). See issue #829 (CANON_TIER_BLURB_STRICT).`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-48 MED (issue #430): the `tagline` field (on-page
 // serif lede on `/themes/[theme]`) and the `description` field
 // (catalog card copy on `/themes` + home featured rail + meta
@@ -3542,6 +3594,21 @@ function main(): number {
     failures.push(...canonDeltaZeroSentimentUpIssues)
   } else {
     for (const issue of canonDeltaZeroSentimentUpIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Issue #829: a rendered tier band with no authored blurb either
+  // repeats its own headline (S) or reads generic (A). Ships strict at
+  // 0 — the six A-band gaps are backfilled in the same change (see
+  // collectCanonTierBlurbIssues). One-line toggle mirroring the STRICT
+  // family above.
+  const CANON_TIER_BLURB_STRICT = true
+  const canonTierBlurbIssues = collectCanonTierBlurbIssues()
+  if (CANON_TIER_BLURB_STRICT) {
+    failures.push(...canonTierBlurbIssues)
+  } else {
+    for (const issue of canonTierBlurbIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

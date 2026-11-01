@@ -9,6 +9,7 @@ meth_how_p: "Three lenses — cast, whether the bench had enough talent and pers
 meth_when_h: "When I revisit"
 meth_when_p: "The canon grows as more seasons land. Twenty-four slots cover all three eras — the founding run, the evolution seasons, and the themed editions. Each new entry earns its place against what's already here, judged by the same three lenses: cast, drama, format integrity."
 tier_s_blurb: "Five seasons where the cast could actually cook — the deepest technical benches of the founding run (S5, S4, S6), the original S1 debut, and S9's structurally distinct full-season team format."
+tier_a_blurb: "The rest of the founding run and the steady middle years — brigades with enough real cooks to make dinner service a contest rather than a pressure test."
 tier_b_blurb: "Solid Hell's Kitchen. The format working at a consistent level — good kitchen tension, a cast worth watching across the full run."
 weekly_question: "Which early Hell's Kitchen season holds up best on a second pass — and does it still belong at the top?"
 era_bands:

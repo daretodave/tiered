@@ -9,6 +9,7 @@ meth_how_p: "I rank on how cleanly the pod experiment runs, how engaged the cast
 meth_when_h: "When I revisit"
 meth_when_p: "This is the full eleven-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S11 just premiered and holds provisionally; the rest of the established-era rankings remain the most fluid."
 tier_s_blurb: "Seattle's cleanest pod run, Chicago's polish, D.C.'s established-era peak, the Atlanta original that built the format, and Columbus's late-run bounce-back — five seasons where the experiment felt genuinely earned."
+tier_a_blurb: "The cities where the pods still produced real chemistry even when the season around them ran uneven — proof the experiment holds up away from its strongest casts."
 tier_b_blurb: "Eleven seasons that prove the pod experiment is a durable format — from the Atlanta original that built the blueprint through the Columbus season that reminded the established era what the show is capable of."
 weekly_question: "Does the founding batch still set the bar, or has a later city done the pod experiment better?"
 era_bands:

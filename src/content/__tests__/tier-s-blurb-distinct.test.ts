@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { getAllShows, getCanon } from '../index'
-import { buildTierBands, DEFAULT_TIER_HEADINGS } from '../../lib/canon/tier-bands'
+import { buildTierBands, TIER_HEADLINES } from '../../lib/canon/tier-bands'
 
 // Critique pass-52 MED closure (issue #418, below-deck) generalized at
 // pass-89 (issue #550, bachelor-in-paradise + dragrace-allstars): a
@@ -19,7 +19,7 @@ import { buildTierBands, DEFAULT_TIER_HEADINGS } from '../../lib/canon/tier-band
 // freshly-seeded show that ships without one.
 
 describe('canon S-tier blurb distinct from heading (pass-52 #418, generalized pass-89 #550)', () => {
-  const headline = DEFAULT_TIER_HEADINGS.S
+  const headline = TIER_HEADLINES.S
 
   for (const show of getAllShows()) {
     const canon = getCanon(show.slug)

@@ -17,6 +17,23 @@ const DEFAULT_BLURBS: Record<TierKey, string> = {
 
 export const DEFAULT_TIER_HEADINGS: Record<TierKey, string> = DEFAULT_BLURBS
 
+// The fixed `<h2>` each tier band renders (CanonTierBand.tsx). Lives
+// here, beside the blurb fallbacks, so scripts/content-check.ts can
+// compare the two: a band whose blurb is absent renders
+// `DEFAULT_TIER_HEADINGS[key]` under this headline, and where the two
+// strings are equal (S today) the page prints one sentence twice.
+export const TIER_HEADLINES: Record<TierKey, string> = {
+  S: 'The seasons that defend the show.',
+  A: 'The seasons worth watching again next week.',
+  B: 'The seasons that count.',
+  C: 'The seasons that earned their peace.',
+}
+
+/** True when a band with no authored blurb would repeat its own headline. */
+export function fallbackDuplicatesHeadline(key: TierKey): boolean {
+  return DEFAULT_TIER_HEADINGS[key].trim() === TIER_HEADLINES[key].trim()
+}
+
 export function tierKeyForRank(rank: number): TierKey {
   if (rank <= 5) return 'S'
   if (rank <= 15) return 'A'

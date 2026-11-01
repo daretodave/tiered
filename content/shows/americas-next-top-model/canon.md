@@ -9,6 +9,7 @@ meth_how_p: "Three lenses — casting, whether the contestant pool had real rang
 meth_when_h: "When I revisit"
 meth_when_p: "The canon opens with the founding UPN cycles — the era that established the format and the show's editorial voice. The CW years and the VH1 relaunch complete the picture across all 24 cycles. The UPN cycles establish what a strong ANTM season looks like. That bar carries through every cycle that followed."
 tier_s_blurb: "The founding UPN cycles — Tyra Banks inventing the format live, the casting pool widening fast, and the photoshoots pushing from studio sets into genuine location work."
+tier_a_blurb: "Cycles that kept the machine sharp after the founding run — the last UPN season, the move to The CW, and a high-fashion reinvention that raised the bar for every shoot."
 tier_b_blurb: "Strong ANTM. The casting pool has genuine range, the photoshoots produce real editorial work, and the season's structural choices give the competition room to breathe."
 weekly_question: "Which of the founding UPN cycles made the strongest case for ANTM as genuine competition television?"
 era_bands:
