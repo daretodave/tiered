@@ -63,3 +63,4 @@
 - 2026-06-12 · 44 · Brand-spelling discipline · f218541f
 - 2026-06-12 · 45 · Editorial-cliché repetition guard · 9b0c3203
 - 2026-06-12 · 46 · Colocated-test coverage gate extended to `src/app/**` · 2e359ba0
+- 2026-11-01 · 47 · spec complete: Canon tier-blurb gate (CANON_TIER_BLURB_STRICT + 6 `tier_a_blurb` backfills, #829) · d9af2506

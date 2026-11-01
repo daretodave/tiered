@@ -15,7 +15,7 @@
 
 ## Pending
 
-### [ ] [score 5.4] `scripts/pulse.mjs` AUDIT pending count always reads 0 — wrong regex for `plan/AUDIT.md`'s row format
+### [x] [score 5.4] `scripts/pulse.mjs` AUDIT pending count always reads 0 — wrong regex for `plan/AUDIT.md`'s row format
 - proposed: 2026-10-31 (digest)
 - source signals: digest (2026-10-31): `pulse.mjs`'s `countRows()` matches `^### \[(?!x\])` — a heading-style row, the shape `plan/CRITIQUE.md` actually uses (`### [HIGH] ...`). `plan/AUDIT.md`'s own template is `- [ ] [SEV] <description>` (a dash-bullet, never a `###` heading) — confirmed against its own in-file comment and every real row in its Pending section. So every night's pulse read `audit 0 pending` regardless of the true count; tonight's hand-count under `## Pending` found 5 real open rows (1 standing MED, 1 `[needs-user-call]` HIGH, 3 LOW), none of which any pulse-driven digest line has ever surfaced.
 - rationale: the digest's whole job is to compress the loop's state into one trustworthy snapshot; a silently-zero counter for an entire file is the opposite of that, and it already hid a real HIGH `[needs-user-call]` row (the Claude Code usage-cap outage backoff gap, filed 2026-10-19, score 2.7 — see tonight's `plan/DIGEST.md` Needs you) from every digest between 2026-10-19 and tonight.
@@ -23,6 +23,7 @@
 - estimated chunks: 1 (single script function + test)
 - conflicts: none known — `pulse.mjs` is read-only tooling, not a gate or content rule.
 - generator: digest · filed 2026-10-31
+- SHIPPED 2026-11-01 (local session, built directly): `countRows()` moved to `scripts/lib/plan-rows.mjs`, now counts both `### [..]` headings and top-level `- [..]` bullets (skipping `[x]` and rows inside HTML-comment templates) for every call site; CRITIQUE/CANDIDATES counts unchanged (71/22), AUDIT reads 7 instead of 0. Tests: `scripts/__tests__/plan-rows.test.mjs`.
 
 ### [ ] [score 6.0] Graduated spoiler-risk labeling instead of a binary spoiler flag
 - proposed: 2026-10-27 (research)
@@ -2809,109 +2810,6 @@ phase addresses both fix types plus drains the known instances.
 content-check gate for era band coverage). Independent fix paths:
 #14 is the product-visible render fix; #15 is the invariant gate.
 Ship in any order; both should eventually land.
-
-### [ ] [score 9.4] Show canon completeness lax→strict gate
-- proposed: 2026-06-15, v1 candidate #15 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 9.4 (impact: 9, ease: 9 → 8.1 base + 1.3 signal multiplicity — content
-batch now fully drained, narrowing remaining scope to the gate alone; cheaper
-and lower-risk than at any prior filing)
-**Source pass:** 33 (filed) → reinforced passes 35/36/38/39/40/41 (this pass)
-**Filed:** 2026-06-15 · **Reinforced:** 2026-07-04 (pass 41)
-**Pass-41 update:** the 20-file `tier_s_blurb` content batch this candidate
-scoped is now **fully drained** — direct verification this pass
-(`rg --files-without-match tier_s_blurb content/shows/*/canon.md`) returns
-zero files; all 43 shows in the current catalog carry the field. The batch
-landed via ordinary `/iterate` audit ticks (commits 51dd0fd + 2952ae1) ahead
-of promotion, not via this candidate. **This changes the remaining scope**:
-what's left to promote is the `content-check.ts` invariant alone (no content
-batch owed) — smaller, cheaper, and the recurrence risk it exists to close
-is now empirically proven (46% of the pass-40 catalog drifted before the
-gate existed). The scope sketch below is retained for the historical batch
-record but the batch itself no longer needs to ship with the promotion.
-**Source signals:**
-- Critique pass-52 [MED] /shows/below-deck — original finding: S-tier heading
-  and blurb identical, `tier_s_blurb` absent, fallback equals the heading.
-  (Resolved individually — see below.)
-- Passes 53–66 (16 additional critique rows, still Pending as of pass 40):
-  the-apprentice, masked-singer, americas-got-talent, americas-next-top-model,
-  american-idol (also missing `tier_a_blurb`), the-voice, rhoa,
-  dancing-with-the-stars — each an independent critique-filed instance of the
-  identical `tier_s_blurb`-absent visual duplication.
-- Pass-61 finding (`plan/CRITIQUE.md:2108`) explicitly names 8 more unfiled
-  violators found by direct corpus inspection: alone-australia, alone-frozen,
-  alone-the-skills-challenge, below-deck-adventure, below-deck-down-under,
-  below-deck-sailing-yacht, hells-kitchen, love-is-blind.
-- **Pass-40 direct verification** (this pass, `rg -L tier_s_blurb
-  content/shows/*/canon.md`): **20 of 43 shows in the live catalog (46% of
-  the entire show catalog) currently lack `tier_s_blurb`** — alone-australia,
-  alone-frozen, alone-the-skills-challenge, american-idol,
-  americas-got-talent, americas-next-top-model, below-deck-adventure,
-  below-deck-down-under, below-deck-sailing-yacht, dancing-with-the-stars,
-  hells-kitchen, jersey-shore, love-is-blind, masked-singer, queer-eye, rhoa,
-  rhobh, selling-sunset, the-apprentice, the-voice. (rhony, below-deck,
-  below-deck-mediterranean — cited in older critique rows — have since been
-  drained individually and are no longer violators; confirms the fix pattern
-  works but is not keeping pace with new-show velocity.)
-- Root cause confirmed in code: `src/components/canon/CanonTierBand.tsx:82`
-  — `const blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]` —
-  `DEFAULT_TIER_HEADINGS` (`src/lib/canon/tier-bands.ts:18`) is keyed by all
-  three tiers (S/A/B), so the same fallback-duplication bug can occur for
-  any tier, not only S — the invariant should check all three.
-- Signal multiplicity: now the single most cited recurring defect class in
-  `plan/CRITIQUE.md` (17+ Pending rows across 8+ distinct critique passes),
-  and independently reproducible via a one-line corpus grep. No candidate in
-  this file has anywhere near this volume of reinforcement.
-
-**Why:** This was already correctly diagnosed at filing (pass 33) as an
-architecturally-guaranteed recurrence — `CanonTierBand`'s fallback string
-equals its own headline string, so any show shipped without an explicit
-`tier_s_blurb` (or `tier_a_blurb`/`tier_b_blurb`) duplicates a sentence on
-its own page. What's changed by pass 40 is scale: the standing "always be
-adding new shows" mandate (`bearings.md` Rule 1) has driven the catalog from
-13 shows (pass 33) to 43 shows (pass 40), and this content-check gate was
-never promoted — so **every** new show authored since pass 33 without an
-explicit tier blurb has silently reproduced the bug. Nearly half the live
-catalog exhibits a reader-visible duplicated sentence today. This is no
-longer "one fix" scope, it's "backfill 20 files + ship the gate that stops
-the 21st." The fix mechanic is unchanged and proven (2 of the original
-violators — below-deck, rhony — were already drained by hand, confirming
-the remediation is mechanical and low-risk); what's missing is the
-verify-time gate that would have prevented the other 20.
-
-**Scope sketch:**
-- `scripts/content-check.ts` — add `CANON_COMPLETENESS_STRICT` flag:
-  (a) `collectTierBlurbIssues()`: emit issue when any of `tier_s_blurb` /
-  `tier_a_blurb` / `tier_b_blurb` is absent AND that tier's `DEFAULT_TIER_HEADINGS`
-  fallback would visually duplicate the tier's own headline (i.e. always,
-  since the fallback *is* the headline) — lax mode logs warning per missing
-  field; strict mode fails.
-  (b) `collectEraBandGapIssues()` (unchanged from original filing): emit
-  issue when any era band's `[start, end]` range contains no canon entry
-  whose `premiere_date` falls within it.
-- ~~Batch-author the missing field for all 20 currently-verified violators~~
-  — **done as of pass 41**, drained via ordinary iterate ticks ahead of
-  promotion (commits 51dd0fd + 2952ae1). No content batch owed at
-  promotion time; verify with a fresh `rg --files-without-match` pass at
-  ship-time in case new shows landed since.
-- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit — the corpus
-  is already at 0 violators, so this can ship strict from tick one
-  (mirrors the day-one-strict pattern of phases 44/45/46) with no drain
-  window required.
-- Update `content-curator` brief (and `skills/ship-content.md`'s new-show
-  checklist) so every new show is authored with all three tier blurbs from
-  the first tick — this is the actual recurrence-stopper; without it the
-  next 30 shows reset the clock exactly as the last 30 did.
-- Unit tests for `collectTierBlurbIssues` (pass / fail / all-three-tiers
-  cases) and a corpus regression-pin test asserting 0 violators — now a
-  same-tick assertion rather than a post-drain one.
-
-**Estimated phases:** 1 (now content-check invariant only, day-one-strict;
-no schema change, no URL change, no content batch — the batch already
-shipped ahead of promotion).
-**Conflicts:** Candidate #14 addresses the render-side empty state for
-era tabs; #15 addresses the content-check gate that prevents the
-content authoring gap from shipping. Independent and complementary.
 
 ### [ ] [score 5.0] /u/[handle] record stat-chip scaffold
 - proposed: 2026-06-15, v1 candidate #16 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -7616,6 +7514,121 @@ close, ↑/↓ navigation) matches what phase 29 e2e covers.
 
 **Promoted in:** oversight 2026-05-14 (retroactive)
 **Build-plan row:** Phase 29 — Inline search overlay; retire `/search` (`plan/README.md` line 101)
+
+### [promoted 2026-10-30 → spec 47] [score 6.0] Show canon completeness lax→strict gate
+- proposed: 2026-06-15, v1 candidate #15 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
+- promoted: 2026-10-30, auto (expand pass 77), veto #829
+- shipped: 2026-11-01, built on the owner's request ahead of the cloud loop. Pass 77 opened #829 and
+  re-scored the row 9.4 → 6.0 (only S's fallback equals its headline; A/B/C diverged since filing;
+  the era-band half shipped in phase 34), but its plan commit never reached main: no
+  `plan/47-*.md`, roadmap row, Held line or Promoted entry existed at build time, so this row was
+  still under `## Pending`. Shipped scope: `collectCanonTierBlurbIssues` in `scripts/content-check.ts`
+  (CANON_TIER_BLURB_STRICT = true; a rendered band whose fallback equals its headline, derived from
+  `TIER_HEADLINES` now exported by `src/lib/canon/tier-bands.ts`, plus a rendered A band with no
+  `tier_a_blurb`) and `tier_a_blurb` backfills on americas-got-talent, americas-next-top-model,
+  dancing-with-the-stars, hells-kitchen, love-is-blind, the-apprentice. Open follow-up: three
+  31+-entry canons render a C band with no `tier_c_blurb` (chopped, dancing-with-the-stars,
+  the-real-world); not a duplicate, left ungated.
+
+**Score:** 9.4 (impact: 9, ease: 9 → 8.1 base + 1.3 signal multiplicity — content
+batch now fully drained, narrowing remaining scope to the gate alone; cheaper
+and lower-risk than at any prior filing)
+**Source pass:** 33 (filed) → reinforced passes 35/36/38/39/40/41 (this pass)
+**Filed:** 2026-06-15 · **Reinforced:** 2026-07-04 (pass 41)
+**Pass-41 update:** the 20-file `tier_s_blurb` content batch this candidate
+scoped is now **fully drained** — direct verification this pass
+(`rg --files-without-match tier_s_blurb content/shows/*/canon.md`) returns
+zero files; all 43 shows in the current catalog carry the field. The batch
+landed via ordinary `/iterate` audit ticks (commits 51dd0fd + 2952ae1) ahead
+of promotion, not via this candidate. **This changes the remaining scope**:
+what's left to promote is the `content-check.ts` invariant alone (no content
+batch owed) — smaller, cheaper, and the recurrence risk it exists to close
+is now empirically proven (46% of the pass-40 catalog drifted before the
+gate existed). The scope sketch below is retained for the historical batch
+record but the batch itself no longer needs to ship with the promotion.
+**Source signals:**
+- Critique pass-52 [MED] /shows/below-deck — original finding: S-tier heading
+  and blurb identical, `tier_s_blurb` absent, fallback equals the heading.
+  (Resolved individually — see below.)
+- Passes 53–66 (16 additional critique rows, still Pending as of pass 40):
+  the-apprentice, masked-singer, americas-got-talent, americas-next-top-model,
+  american-idol (also missing `tier_a_blurb`), the-voice, rhoa,
+  dancing-with-the-stars — each an independent critique-filed instance of the
+  identical `tier_s_blurb`-absent visual duplication.
+- Pass-61 finding (`plan/CRITIQUE.md:2108`) explicitly names 8 more unfiled
+  violators found by direct corpus inspection: alone-australia, alone-frozen,
+  alone-the-skills-challenge, below-deck-adventure, below-deck-down-under,
+  below-deck-sailing-yacht, hells-kitchen, love-is-blind.
+- **Pass-40 direct verification** (this pass, `rg -L tier_s_blurb
+  content/shows/*/canon.md`): **20 of 43 shows in the live catalog (46% of
+  the entire show catalog) currently lack `tier_s_blurb`** — alone-australia,
+  alone-frozen, alone-the-skills-challenge, american-idol,
+  americas-got-talent, americas-next-top-model, below-deck-adventure,
+  below-deck-down-under, below-deck-sailing-yacht, dancing-with-the-stars,
+  hells-kitchen, jersey-shore, love-is-blind, masked-singer, queer-eye, rhoa,
+  rhobh, selling-sunset, the-apprentice, the-voice. (rhony, below-deck,
+  below-deck-mediterranean — cited in older critique rows — have since been
+  drained individually and are no longer violators; confirms the fix pattern
+  works but is not keeping pace with new-show velocity.)
+- Root cause confirmed in code: `src/components/canon/CanonTierBand.tsx:82`
+  — `const blurb = band.blurb ?? DEFAULT_TIER_HEADINGS[band.key]` —
+  `DEFAULT_TIER_HEADINGS` (`src/lib/canon/tier-bands.ts:18`) is keyed by all
+  three tiers (S/A/B), so the same fallback-duplication bug can occur for
+  any tier, not only S — the invariant should check all three.
+- Signal multiplicity: now the single most cited recurring defect class in
+  `plan/CRITIQUE.md` (17+ Pending rows across 8+ distinct critique passes),
+  and independently reproducible via a one-line corpus grep. No candidate in
+  this file has anywhere near this volume of reinforcement.
+
+**Why:** This was already correctly diagnosed at filing (pass 33) as an
+architecturally-guaranteed recurrence — `CanonTierBand`'s fallback string
+equals its own headline string, so any show shipped without an explicit
+`tier_s_blurb` (or `tier_a_blurb`/`tier_b_blurb`) duplicates a sentence on
+its own page. What's changed by pass 40 is scale: the standing "always be
+adding new shows" mandate (`bearings.md` Rule 1) has driven the catalog from
+13 shows (pass 33) to 43 shows (pass 40), and this content-check gate was
+never promoted — so **every** new show authored since pass 33 without an
+explicit tier blurb has silently reproduced the bug. Nearly half the live
+catalog exhibits a reader-visible duplicated sentence today. This is no
+longer "one fix" scope, it's "backfill 20 files + ship the gate that stops
+the 21st." The fix mechanic is unchanged and proven (2 of the original
+violators — below-deck, rhony — were already drained by hand, confirming
+the remediation is mechanical and low-risk); what's missing is the
+verify-time gate that would have prevented the other 20.
+
+**Scope sketch:**
+- `scripts/content-check.ts` — add `CANON_COMPLETENESS_STRICT` flag:
+  (a) `collectTierBlurbIssues()`: emit issue when any of `tier_s_blurb` /
+  `tier_a_blurb` / `tier_b_blurb` is absent AND that tier's `DEFAULT_TIER_HEADINGS`
+  fallback would visually duplicate the tier's own headline (i.e. always,
+  since the fallback *is* the headline) — lax mode logs warning per missing
+  field; strict mode fails.
+  (b) `collectEraBandGapIssues()` (unchanged from original filing): emit
+  issue when any era band's `[start, end]` range contains no canon entry
+  whose `premiere_date` falls within it.
+- ~~Batch-author the missing field for all 20 currently-verified violators~~
+  — **done as of pass 41**, drained via ordinary iterate ticks ahead of
+  promotion (commits 51dd0fd + 2952ae1). No content batch owed at
+  promotion time; verify with a fresh `rg --files-without-match` pass at
+  ship-time in case new shows landed since.
+- Flip `CANON_COMPLETENESS_STRICT = true` in the same commit — the corpus
+  is already at 0 violators, so this can ship strict from tick one
+  (mirrors the day-one-strict pattern of phases 44/45/46) with no drain
+  window required.
+- Update `content-curator` brief (and `skills/ship-content.md`'s new-show
+  checklist) so every new show is authored with all three tier blurbs from
+  the first tick — this is the actual recurrence-stopper; without it the
+  next 30 shows reset the clock exactly as the last 30 did.
+- Unit tests for `collectTierBlurbIssues` (pass / fail / all-three-tiers
+  cases) and a corpus regression-pin test asserting 0 violators — now a
+  same-tick assertion rather than a post-drain one.
+
+**Estimated phases:** 1 (now content-check invariant only, day-one-strict;
+no schema change, no URL change, no content batch — the batch already
+shipped ahead of promotion).
+**Conflicts:** Candidate #14 addresses the render-side empty state for
+era tabs; #15 addresses the content-check gate that prevents the
+content authoring gap from shipping. Independent and complementary.
 
 ## Rejected
 
