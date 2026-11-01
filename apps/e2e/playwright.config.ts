@@ -20,11 +20,19 @@ const BASE_URL = `http://127.0.0.1:${PORT}`
 // looks for containers under that name. Strip it before any
 // `supabase …` command so local-stack ops always match the
 // config.toml project_id ("tiered").
-const stripProjectId = 'unset SUPABASE_PROJECT_ID'
+//
+// The strip is shell-specific. `unset X; cmd` is sh-only: under
+// cmd.exe `unset` is not a command, so on Windows both supabase steps
+// used to print "step failed" and never run, the local DB was never
+// reset, and authed specs tripped on the previous run's rows (comment
+// dedupe, vote counters). cmd.exe clears a variable with `set X=`.
+const isWin = process.platform === 'win32'
+const withoutProjectId = (cmd: string) =>
+  isWin ? `set SUPABASE_PROJECT_ID=& ${cmd}` : `unset SUPABASE_PROJECT_ID; ${cmd}`
 
 const chain = [
-  `${stripProjectId}; supabase start`,
-  `${stripProjectId}; supabase db reset --no-seed`,
+  withoutProjectId('supabase start'),
+  withoutProjectId('supabase db reset --no-seed'),
   'node scripts/mint-e2e-cookie.mjs',
   'pnpm start',
 ]

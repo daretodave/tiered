@@ -1,6 +1,9 @@
 import { type Browser, type Page, expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
+import { showSlugsForRun } from '../src/fixtures/sample-urls'
+
+const RUN_SHOWS = showSlugsForRun()
 
 // Phase 33: the standalone /shows/[show]/community route is gone. It
 // 308s to /shows/[show]?view=community, which seeds the community
@@ -9,11 +12,11 @@ import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
 // the seeded community pane on the consolidated page.
 
 const showRows = canonicalUrls.filter(
-  (u) => u.pattern === '/shows/[show]' && u.show,
+  (u) => u.pattern === '/shows/[show]' && u.show && RUN_SHOWS.has(u.show),
 )
 
-const communityRedirects = rankingRedirects.filter((r) =>
-  r.fromPath.endsWith('/community'),
+const communityRedirects = rankingRedirects.filter(
+  (r) => r.fromPath.endsWith('/community') && RUN_SHOWS.has(r.show),
 )
 
 for (const r of communityRedirects) {

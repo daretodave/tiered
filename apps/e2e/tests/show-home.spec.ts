@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
+import { showSlugsForRun } from '../src/fixtures/sample-urls'
 
 // Sharding (#636): every test in this file is independent (no hooks,
 // no shared state), so it opts into parallel mode. With workers: 1
@@ -15,13 +16,18 @@ test.describe.configure({ mode: 'parallel' })
 // both panes SSR'd) + themed lists. The standalone /canon +
 // /community routes 308 here (see redirects.spec.ts).
 
-const showHomeUrls = canonicalUrls.filter((u) => u.pattern === '/shows/[show]')
-
 const EXPECTED_PALETTES: Record<string, { primary: string; ink: string; paper: string }> = {
   survivor: { primary: '#D55E36', ink: '#EFE2BD', paper: '#0E2A2A' },
   'top-chef': { primary: '#B86A2E', ink: '#ECDFC6', paper: '#1B2418' },
   dragrace: { primary: '#E64B86', ink: '#F2E1D2', paper: '#2D0B2A' },
 }
+
+// Archetype shows + the palette-pinned ones by default; every show
+// under E2E_FULL=1.
+const RUN_SHOWS = showSlugsForRun(Object.keys(EXPECTED_PALETTES))
+const showHomeUrls = canonicalUrls.filter(
+  (u) => u.pattern === '/shows/[show]' && u.show && RUN_SHOWS.has(u.show),
+)
 
 for (const url of showHomeUrls) {
   const slug = url.show ?? ''
@@ -356,6 +362,7 @@ const SHOWS_DIR = resolve(
 const showsWithEraBands = canonicalUrls
   .filter((u) => u.pattern === '/shows/[show]' && u.show)
   .map((u) => u.show as string)
+  .filter((slug) => RUN_SHOWS.has(slug))
   .filter((slug) => {
     const canon = resolve(SHOWS_DIR, slug, 'canon.md')
     return existsSync(canon) && /^era_bands:/m.test(readFileSync(canon, 'utf8'))

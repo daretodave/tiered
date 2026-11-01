@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { expect, test } from '@playwright/test'
 import { canonicalUrls } from '../src/fixtures/canonical-urls'
 import { rankingRedirects } from '../src/fixtures/redirect-fixtures'
+import { showSlugsForRun } from '../src/fixtures/sample-urls'
 
 // Sharding (#636): every test in this file is independent (no hooks,
 // no shared state), so it opts into parallel mode. With workers: 1
@@ -17,9 +18,11 @@ test.describe.configure({ mode: 'parallel' })
 // the 308 contract and that the canon pane renders on the
 // consolidated page.
 
+const RUN_SHOWS = showSlugsForRun()
 const showSlugs = canonicalUrls
   .filter((u) => u.pattern === '/shows/[show]' && u.show)
   .map((u) => u.show as string)
+  .filter((slug) => RUN_SHOWS.has(slug))
 
 // Derived from the filesystem, not hardcoded: the phase-26 / 31b
 // canon drain adds a canon.md per show one tick at a time, so a
@@ -35,8 +38,8 @@ const SHOWS_WITH_CANON = new Set(
   ),
 )
 
-const canonRedirects = rankingRedirects.filter((r) =>
-  r.fromPath.endsWith('/canon'),
+const canonRedirects = rankingRedirects.filter(
+  (r) => r.fromPath.endsWith('/canon') && RUN_SHOWS.has(r.show),
 )
 
 for (const r of canonRedirects) {

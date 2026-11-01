@@ -1,5 +1,15 @@
 import { expect, test } from '@playwright/test'
-import { seasonRedirects, seasonViewRedirects } from '../src/fixtures/redirect-fixtures'
+import {
+  seasonRedirects as allSeasonRedirects,
+  seasonViewRedirects as allSeasonViewRedirects,
+} from '../src/fixtures/redirect-fixtures'
+import { showSlugsForRun } from '../src/fixtures/sample-urls'
+
+// Archetype shows + the two shows carrying legacy slug aliases
+// (survivor, the-voice) by default; every show under E2E_FULL=1.
+const RUN_SHOWS = showSlugsForRun(['survivor', 'the-voice'])
+const seasonRedirects = allSeasonRedirects.filter((r) => RUN_SHOWS.has(r.show))
+const seasonViewRedirects = allSeasonViewRedirects.filter((r) => RUN_SHOWS.has(r.show))
 
 // Sharding (#636): every test in this file is independent (no hooks,
 // no shared state), so it opts into parallel mode. With workers: 1

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { canonicalUrls } from '../src/fixtures/canonical-urls'
+import { urlsForRun } from '../src/fixtures/sample-urls'
 
 // Sharding (#636): every test in this file is independent (no hooks,
 // no shared state), so it opts into parallel mode. With workers: 1
@@ -30,7 +30,7 @@ function isBoundedRoute(path: string): boolean {
   return BOUNDED_PREFIX_RE.test(path)
 }
 
-for (const url of canonicalUrls) {
+for (const url of urlsForRun()) {
   test.describe(`chrome: ${url.path}`, () => {
     test('renders exactly one header + one footer with brand lockup', async ({ page }) => {
       await page.goto(url.path, { waitUntil: 'domcontentloaded' })

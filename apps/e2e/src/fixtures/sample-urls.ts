@@ -89,3 +89,24 @@ export const sampleUrls: CanonicalUrl[] = [
 export function urlsForRun(): CanonicalUrl[] {
   return process.env['E2E_FULL'] === '1' ? canonicalUrls : sampleUrls
 }
+
+// The per-show face of the same switch, for specs that walk one test
+// (or one redirect) per show rather than per URL. Default = the
+// archetype shows plus any `pinned` slugs the calling spec asserts on
+// by name (a hardcoded palette, a slug alias). E2E_FULL=1 = every show.
+//
+// Before this existed, chrome / show-home / canon / community /
+// redirects iterated canonicalUrls directly, so the per-commit gate
+// grew with every season shipped (5,026 tests by 2026-11-01) and the
+// cloud verify leg outran its 30-minute window. Keep it flat.
+export function showSlugsForRun(pinned: readonly string[] = []): Set<string> {
+  const all = canonicalUrls
+    .filter((u) => u.pattern === '/shows/[show]' && u.show)
+    .map((u) => u.show as string)
+  if (process.env['E2E_FULL'] === '1') return new Set(all)
+  const known = new Set(all)
+  return new Set([
+    ...archetypeShows.map((u) => u.show as string),
+    ...pinned.filter((s) => known.has(s)),
+  ])
+}
