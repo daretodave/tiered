@@ -1,9 +1,41 @@
 # CRITIQUE
 
-> Last pass: 2026-10-27 at commit 72f85b9b
-> Pass count: 193
+> Last pass: 2026-11-01 at commit 37bc90d4
+> Pass count: 194
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
-> Pass 193 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> Pass 194 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
+> — headless chromium, fresh isolated context, no Chrome MCP needed),
+> both anon and authed passes with a freshly-minted
+> `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
+> `/shows/hells-kitchen/season/the-anniversary-class`,
+> `/shows/hells-kitchen`, `/themes`,
+> `/themes/the-ten-items-are-never-the-same-ten-items` anon; `/`,
+> `/shows/hells-kitchen/season/the-anniversary-class`, `/u/e2e`,
+> `/shows/hells-kitchen`,
+> `/themes/the-ten-items-are-never-the-same-ten-items` authed — rotated
+> onto Hell's Kitchen's freshly-filed Season 25 ("The Anniversary
+> Class," filed the 2026-10-31 Rule 2 drain), its show page, and a
+> recently-extended themed list, distinct from pass 193's RHOC
+> rotation except the stable `/u/e2e` anchor. Both passes came back
+> mechanically clean (0 console errors, 0 failed requests, 0
+> horizontal overflow on either viewport, title/description/canonical/
+> OG present on every capture); authed pass confirmed real auth (`@e2e`
+> chrome on every page, "Member since May 2026"). Strongest finding:
+> the show page's canon methodology copy (`meth_who_p`, `meth_when_p`
+> in `content/shows/hells-kitchen/canon.md`) still says "all
+> twenty-four seasons" / "Twenty-four slots cover all three eras" while
+> the page header now reads "25 SEASONS IN CANON" / "ALL 25" — stale
+> since the Season 25 drain bumped the canon count, the same
+> stale-count defect class fixed repeatedly elsewhere — filed HIGH.
+> One more filed: the-anniversary-class's description/take/shape/canon
+> fields each independently restate the same under-25-cast/
+> anniversary-trim fact with only light rewording — LOW, the same
+> single-fact-owner-drift class. One config finding: `plan/bearings.md`'s
+> `UI routes:` line lists `/lists`, which 404s live — the real pillar
+> page is `/themes`, already correct in the header nav — LOW. Filed 3
+> new findings (1 high, 2 low). No pending HIGH findings remained open
+> ahead of this pass.
+> Prior pass-193 summary follows. Pass 193 ran in the cloud loop via Path A2 (`scripts/critique-walk.mjs`
 > — headless chromium, fresh isolated context, no Chrome MCP needed),
 > both anon and authed passes with a freshly-minted
 > `CRITIQUE_SESSION_COOKIE` for `e2e@pantheon.app`. URL set: `/`,
@@ -5103,6 +5135,36 @@
 > findings deduped by message.
 
 ## Pending
+
+### [HIGH] [anon] /shows/hells-kitchen — the canon methodology copy says "all twenty-four seasons" / "Twenty-four slots" while the page header reads "25 SEASONS IN CANON"
+
+- pass: 194 (commit 37bc90d4)
+- viewport: desktop
+- category: comprehension
+- observation: `meth_who_p` and `meth_when_p` in `content/shows/hells-kitchen/canon.md` still say "all twenty-four seasons" and "Twenty-four slots cover all three eras" — stale since Season 25 ("The Anniversary Class") was filed and the canon count bumped to 25. A reader sees "25 / SEASONS IN CANON" / "ALL 25" in the header and "twenty-four seasons" two sections below.
+- evidence: `content/shows/hells-kitchen/canon.md:6` — "I've watched Hell's Kitchen across all twenty-four seasons"; line 10 — "Twenty-four slots cover all three eras."
+- suggested fix: Update `meth_who_p` and `meth_when_p` in `content/shows/hells-kitchen/canon.md` from "twenty-four" to "twenty-five" (or generalize to "every season").
+- source: web-fetch (critique-pass-194, anon)
+
+### [LOW] [anon] /shows/hells-kitchen/season/the-anniversary-class — the under-25-cast/anniversary-trim premise is restated near-verbatim across four fields on the same page
+
+- pass: 194 (commit 37bc90d4)
+- viewport: desktop
+- category: voice
+- observation: The season's meta description, "The take," "The shape of the season," and its canon "WHY THIS SLOT" callout each independently restate the same fact — the under-25 cast rule repeating Season 20, dressed in anniversary programming — with only light rewording. Same single-fact-owner-drift defect class fixed repeatedly elsewhere in the catalog.
+- evidence: description: "repeating the all-under-25 cast rule from Season 20, then layering in anniversary programming"; THE TAKE: "A second trip through the under-25 conceit, dressed in anniversary trim"; shape-of-season: "every chef is under 25, the same ceiling Season Twenty used... anniversary trappings"; canon slot: "tying its milestone to an age ceiling the show already tried on Season Twenty... anniversary programming."
+- suggested fix: Vary at least one of the four fields to add new information (e.g. a specific returning-alumni name or challenge) instead of re-paraphrasing the same under-25/anniversary fact. `content/shows/hells-kitchen/seasons/25-the-anniversary-class.md` + `canon.md`.
+- source: web-fetch (critique-pass-194, anon)
+
+### [LOW] [anon] /lists — `plan/bearings.md`'s `UI routes:` line points at a dead literal path; the real pillar page is `/themes`
+
+- pass: 194 (commit 37bc90d4)
+- viewport: desktop
+- category: config
+- observation: `plan/bearings.md`'s `UI routes:` line lists `/lists`, which 404s on the live site. The real pillar page is `/themes`, and the header nav's "Lists" label already points there correctly — this is a stale doc/config line, not a broken user-facing path.
+- evidence: scripted walk: `"route": "/lists"` → `"failed": ["404 GET /lists"]` on both viewports; site renders its real 404 page; `src/components/composition/TopNavTinted.tsx:16` — `{ href: '/themes', label: 'Lists' }`.
+- suggested fix: Update `plan/bearings.md`'s `UI routes:` line to read `/themes` instead of `/lists` so future critique/e2e passes don't walk a dead literal path.
+- source: walk (critique-pass-194, anon)
 
 ### [MED] [anon] /shows/rhoc/season/the-homecoming — the season's headline facts restate near-verbatim across the eyebrow, lede, shape, and take sections, including an identical "Billed as..." opening clause twice
 
