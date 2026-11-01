@@ -9,7 +9,7 @@ premiere_date: "2026-07-09"
 ep_count: 16
 aired_year: 2026
 episodes: 16
-eyebrow: "Aired summer 2026 · Vicki Gunvalson returns full-time after 13 seasons away"
+eyebrow: "Aired summer 2026 · Vicki Gunvalson full-time for the first time since season 13"
 lede: "Season twenty brings in Carmella Garcia, a former Playboy Playmate, as the year's new full housewife, and closes out Katie Ginella's run. Tamra Judge, Heather Dubrow, Shannon Beador, Gina Kirschenheiter, Emily Simpson, and Jennifer Pedranti hold the returning core together."
 pull: "Billed as the franchise's 20th-anniversary showcase, the season drew mixed reviews for pacing that slows more than it should — the marquee comeback promises more than the hour-to-hour delivers."
 take_h2: "Vegas and Tokyo widen the map, not the dynamics."
